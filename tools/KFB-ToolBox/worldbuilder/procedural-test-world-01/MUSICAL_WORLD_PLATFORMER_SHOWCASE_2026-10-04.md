@@ -1,6 +1,6 @@
 # KFB WB2 · Musical World / Platformer Audio Showcase · 2026-10-04
 
-**Status:** PREPARED · REQUIRED ONE-SHOT PRESENTATION SEAM · NOT YET IMPLEMENTED  
+**Status:** IMPLEMENTED · TOWN AUDIO BASELINE BROWSER PASS · FULL SHOWCASE UNPROVEN · CANDIDATE FROZEN  
 **Execution mode:** ONE_SHOT internal integration · no new Georg-facing micro-gate  
 **Receiving owner:** KFB WorldBuilder / WB2 · Draft PR #348  
 **Audio source owner:** KFB Audio & Soundscape Baseline v1 · Draft PR #352  
@@ -270,3 +270,8 @@ Those become additive after the first musical-world loop feels good in gameplay.
 **WSA / Codex One-Shot integrator on PR #348** consumes this as an internal presentation seam while continuing the existing recovery/completion run.
 
 Georg does not need a new setup action before the integrated candidate exists.
+
+
+## 2026-10-04 freeze evidence
+
+Canonical69-master consumer, shared physical ambience and Town playback are implemented and browser-proven. Entire Explore/Drive/Party/world-transition sequence and actual full concert/dance are not proven; latest Golden stops before Taxi entry. Preserve the implemented module; do not misread the original PREPARED plan as current implementation truth or infer a full musical/whole-game PASS. Resume via `FAILURE_RECOVERY_2026-10-04.json` only.

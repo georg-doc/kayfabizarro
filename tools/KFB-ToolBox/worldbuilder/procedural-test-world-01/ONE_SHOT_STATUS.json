@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
-  "state": "INTEGRATED_GOLDEN_JOURNEY_AND_STUDIO_BROWSER_GAUNTLET_RUNNING",
+  "state": "FROZEN_FAILED_CANDIDATE",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -23,14 +23,14 @@
     "playerMotion": "BROWSER_PASS_KEEP",
     "visibleFoundation": "SOURCE_FAMILY_TARGETED_REVIEW_PASS_WHOLE_GAME_REVIEW_PENDING",
     "residentsActivities": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "driveTaxi": "ACTUAL_BROWSER_PASS_GROUND_DRIVE_GROUND_6_0777M",
+    "driveTaxi": "PASS_PRIOR_1876_RUN_LATEST_433_ENDPOINT_FAIL",
     "chatterCards": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "dystopiaPerformance": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "utopiaProtopia": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "curtainCharacterSelect": "NATIVE_LOADER_BROWSER_PASS_CHARACTER_SELECT_PENDING",
     "almanacLeanMemory": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "siteWorldStudio": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "goldenJourneyE2E": "FAIL_NATIVE_ROAD_BRIDGEHEAD_SUPPORT_REPAIR_CANDIDATE",
+    "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
+    "goldenJourneyE2E": "FAIL_NATIVE_ENDPOINT_ARRIVAL_FROZEN",
     "publicStage": "NOT_DEPLOYED",
     "humanAcceptance": "NOT_REVIEWED",
     "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING"
@@ -72,7 +72,60 @@
     "criticContractMainHead": "b0696f7491450f03e0c6a1dce2a57ecfe21c0e74",
     "deterministicScreenshotHarness": "SOURCE_DETAIL_AND_INTEGRATED_WORLD_PRESETS_IMPLEMENTED",
     "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
-    "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE",
+    "wholeGameCritic": {
+      "result": "NOT_ACCEPTED_REQUIRED_EVIDENCE_MISSING",
+      "dimensions": [
+        {
+          "name": "SOURCE_FIDELITY",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "KFB_VISUAL_COHERENCE",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "WORLD_IDENTITY_AND_BIOGRAPHY",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "COMPOSITION_AND_LIVINGNESS",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "PLAYER_MOVEMENT_CAMERA_INTERACTION",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "RESIDENT_CARD_CHATTER",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "AUDIO_PERFORMANCE_FEEL",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "TECHNICAL_HEALTH",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "GOLDEN_JOURNEY_AND_PERSISTENCE",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        }
+      ],
+      "weightedScore": null,
+      "sourceFidelityWholePass": false,
+      "wholeJourneyPass": false,
+      "wholeFreshJourneyImportPass": false
+    },
     "externalCritic": "independent_critic · no production edits",
     "sourceInspection": "FOUR_BUILDING_FAMILIES_AND_CLOWN_FARMERS_LOREKEEPER_MONSTROSITY_DEMON_BUSH_ORIGINALS_VIEWED",
     "latestBrowserRun": {
@@ -170,22 +223,16 @@
     },
     "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
     "integratedBrowserLatestCompleted": {
-      "receivingHead": "1876ba8746e3ddf836a22bb283a9720eaf23c4b0",
-      "testedPRMergeHead": "4c435230094b642685dcd06d941b00f4c0c30f1d",
-      "run": 37196264077,
-      "artifact": 11301089964,
-      "sha256": "e4d6c112fac2b44b051716ecf9367aca633c7ed8e10161aac86175164d172d41",
-      "passedGates": 4,
-      "failedGate": "Dystopia walk route deadline900s",
-      "nativeTravelledM": 94.5915,
-      "nativeFinalPosition": [
-        10.772809831043979,
-        0.6,
-        18.360648016091492
-      ],
+      "run": 37199802833,
+      "job": 111428969457,
+      "receivingHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+      "testedMergeHead": "2ffd7041e931f308c1408e5a5b67c97102564e24",
+      "pass": 3,
+      "fail": 1,
+      "notRun": 8,
       "pageConsoleErrors": 0,
-      "wholeGamePass": false,
-      "otherWorkflows": "Source / Registry / R2D Browser / Librarian Browser all PASS"
+      "artifact": 11302144306,
+      "sha256": "3dbee626e50d1a72708a0fd7b83cf363709c155625b275df9c9ebef64b48c62d"
     },
     "heldInputRepair": {
       "status": "CANDIDATE_NOT_BROWSER_PROVEN",
@@ -244,7 +291,8 @@
       "teleports": false,
       "clockAcceleration": false,
       "rule": "Another non-improving Dystopia traversal failure freezes candidate and exports full failure recovery. No Stage without full journey."
-    }
+    },
+    "freezeIndependentCritic": "CONFIRMED_STOP_JUSTIFIED_NO_MORE_REPAIR"
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -261,13 +309,17 @@
     "sourceMaterial": 1,
     "DriverBrowserTraversalNonImproving": 0,
     "DystopiaRoadSupportNonImproving": 0,
-    "DystopiaBrowserTraversalNonImproving": 1
+    "DystopiaBrowserTraversalNonImproving": 1,
+    "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
   "openCoreBlockers": [
-    "Golden Journey full real-input browser proof pending",
-    "Fresh-context import proof pending",
-    "Native Studio palette, billboards and musical-world presentation intake pending",
-    "Whole-Game Critic required before Stage"
+    "Full four-world Golden Journey",
+    "Actual natural concert completion and learned dance in the journey",
+    "Utopia/Protopia ordered interactions and four Cards",
+    "Fresh-context Journey export/import/actual resume",
+    "Full CLI Studio gauntlet (supplementary GUI roundtrip passes)",
+    "61 canonical source/adapted/detail/integrated captures and final loaded-source audit",
+    "Whole nine-dimension score and integrated performance"
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -279,7 +331,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "GOLDEN_BROWSER_TRAVERSAL_FRESH_IMPORT_NATIVE_STUDIO_AND_MUSICAL_WORLD_CONTINUE",
+  "nextInternalAction": "RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -309,7 +361,7 @@
   },
   "lastImplementationCheckpoint": "1df8edaeb11b695821f73c695b328b00fd85e42f",
   "audioMusicalWorldShowcase": {
-    "status": "PREPARED_REQUIRED_PRESENTATION_NOT_IMPLEMENTED",
+    "status": "IMPLEMENTED_TOWN_AUDIO_BROWSER_PASS_FULL_SHOWCASE_UNPROVEN",
     "brief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE_2026-10-04.md",
     "fixture": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE.json",
     "audioSource": {
@@ -326,5 +378,7 @@
     "slice1": "Explore → movement/platformer lift → Drive → Dystopia party → Explore/world handoffs",
     "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
     "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
-  }
+  },
+  "frozenRuntimeHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+  "freezeRecovery": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.json"
 }
