@@ -1,3 +1,14 @@
+## 2026-10-04 · Coworker Card-Hex Combat Ascent One-Shot authorized
+
+- Georg explicitly authorized exactly one parallel Claude Coworker implementation run for the Card-Hex platformer/combat concept; this does not reopen Sol/Astra/provider comparison.
+- Combat implementation owner: Draft PR #19 · branch `coworker/card-hex-ascent-one-shot-2026-10-04` · start head `08e03682539ab7330793bb248bfc26766d3c5ee5`.
+- Binding brief: `slices/card-hex-combat-ascent-benchmark/COWORKER_ONE_SHOT_2026-10-04.md`; machine ledger: `STATUS.json`.
+- The brief includes KFB-adapted architecture-first, verification-first screenshot/JSON harness, module showcases/source isolation, internal fan-out with one Integrator, independent no-code External Critic, persistent scores/open issues, ranked repairs, Whole-Game Critic, blind A/B evidence and no micro-slice stop after internal PASS.
+- BLENDER-DUEL-01 source gate is closed on `georg-doc-patch-3`: Rig_Medium ranged library plus Blaster/Rifle/Minigun KFB weapon/socket files are binding; Rig_Large remains out of core scope.
+- Reserved final Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/` · NOT DEPLOYED.
+- KFB Hub now routes the active Coworker One-Shot. WB2 PR #348 remains independent and untouched by this lane.
+- No merge or Live promotion.
+
 ## 2026-10-04 · MVP1 product recovery · harness failure reclassified
 
 - Georg stopped further model-comparison/Combat benchmark spend until a working WorldBuilder MVP1 is delivered.
