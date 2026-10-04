@@ -73,6 +73,12 @@ Pinned model donors:
 - `FB_TEMPLATE_LOOK_v5.glb` @ `19088b142c6a7e7626f27fba8e80caf6ab2437c1`;
 - `FB_TEMPLATE_LOOK_v5b.glb` @ `23615cff`.
 
+
+Motion catalogue reality:
+- current-main `KFB_Motion_Library.catalog.json` blob `694d797702d126e71a724eab137197bf2a8e6914` contains **33** clip records;
+- later ToolBox Production history references Motion Library v3 with **204** clips at pin `4fa082714c7200f6926008a1cd0b34db8df4dbad`;
+- implementation must explicitly select/pin the intended verified catalogue and must not hardcode the older 179-count planning snapshot.
+
 Three stale current-main source-path assumptions were discovered and rejected instead of being copied into the new brief.
 
 ## Eraser
