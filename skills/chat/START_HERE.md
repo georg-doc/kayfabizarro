@@ -8,6 +8,35 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
+## 2026-10-04 · CURRENT FOUR-ISLAND SSOT RECOVERY
+
+PR #348 current binding implementation brief:
+
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md`
+
+Current product recovery is **all four existing islands**, not Town-only:
+
+- Town · seed 3 · burg
+- Dystopia · seed 11 · ignore_dystopia
+- Utopia · seed 17 · forget_utopia
+- Protopia · seed 23 · embrace_protopia
+
+Binding world form:
+- each island is one excavated tree-earth organism with visible roots;
+- each island has one large central Claymation **signature Life Tree**;
+- each Life Tree is unique to island + deck + zone and deterministic from its SSOT seed/profile;
+- each island uses its exact R2C palette across terrain/root body/Joyride presentation/environment accents while preserving source-asset identity;
+- all three current Track Core connections remain, but visible presentation must use Joyride J14/T4/K2 language;
+- buildings must use current VISIBLE_SOURCE_MANIFEST families and have **0 Track / bridgehead intersections**;
+- current code lacks Track clearance in building placement; this is a confirmed blocker.
+
+All current working WB2 systems remain KEEP.
+
+Update the **same GPT Site** after the four-island repair:
+`https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/`
+
+No new Site. No Cloudflare-first loop. No second Track/world owner.
+
 ## 2026-10-04 · CURRENT HUMAN RESULT · WORLD STUDIO VISUAL FAIL
 
 Georg freeplayed the primary World Studio GPT Site and returned **HUMAN VISUAL FAIL**.
