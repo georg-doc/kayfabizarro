@@ -59,6 +59,24 @@
       "path": "tools/world_atlas/source/lib/hex-grid.js",
       "ref": "main",
       "blobSha": "c6bb12c28d32ea6f51ea2c63db9475eaecc5754f"
+    },
+    {
+      "path": "tools/world_atlas/source/KayKit_Hex_Realm_S11.html",
+      "ref": "main",
+      "blobSha": "682683184be931b4058a0acaf27c34a6c6e69a80",
+      "role": "MANDATORY_PROJECT_MODULE"
+    },
+    {
+      "path": "tools/world_atlas/source/KayKit_Hex_Tile_Model_S12.html",
+      "ref": "main",
+      "blobSha": "413ad691baa1680256401e707c2c265481b29c01",
+      "role": "MANDATORY_PROJECT_MODULE"
+    },
+    {
+      "path": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "ref": "main",
+      "blobSha": "ac8a546fd28eb1cc1348153e1423b9a1bb95f7fa",
+      "role": "MANDATORY_EXISTING_GENERATOR"
     }
   ],
   "claySources": [
@@ -117,6 +135,23 @@
       "identity": "PROVEN"
     },
     {
+      "packId": "kaykit-medieval-snow-biome",
+      "displayName": "KayKit Medieval Snow Biome",
+      "creator": "KayKit",
+      "sourcePath": "media/3D_Assets/Kaykit_Medieval Snow Biome",
+      "assetSourceCommit": "ab65e8c46ca3c07db4294214a63384975fb7d0d9",
+      "licenseBlobSha": "1019e43f05b4dce92a7a97de949f6072d820ff7e",
+      "licenseIdentity": "KayKit : Medieval Builder Pack Patreon Bonus (1.0)",
+      "registryStatus": "REGISTRY_PENDING",
+      "modelFacts": {
+        "glb": 57,
+        "hexTileGlb": 42,
+        "objectGlb": 15,
+        "fbx": 21
+      },
+      "identity": "SOURCE_PROVEN"
+    },
+    {
       "packId": "glb-hexagon-kit",
       "creator": "Kenney",
       "registryCount": 72,
@@ -125,14 +160,10 @@
       "aliases": [
         "kenney_hexagon-kit"
       ],
-      "identity": "PROVEN_SINGLE_PACK_DEDUP_REQUIRED"
+      "identity": "PROVEN_SINGLE_PACK_DEDUP_REQUIRED",
+      "role": "SECONDARY_HEX_FAMILY_NOT_KAYKIT_3"
     }
   ],
-  "identityOpenItem": {
-    "userDescription": "three Hexagon kits from the K-Kit creator",
-    "repositoryFinding": "two KayKit hex-capable packs + one Kenney Hexagon Kit are currently source-proven",
-    "requiredAction": "resolve exact third KayKit source before any 3x-KayKit label; otherwise retain SOURCE_REQUIRED"
-  },
   "buildingPacks": [
     {
       "packId": "kaykit-city-builder-bits-1-0-free",
@@ -152,6 +183,18 @@
       "creator": "KayKit",
       "registryCount": 240,
       "blobSha": "b7bf6d532e3028a37c4080ae1c75a516e890a8b0"
+    },
+    {
+      "packId": "kaykit-medieval-snow-biome",
+      "creator": "KayKit",
+      "registryStatus": "REGISTRY_PENDING",
+      "sourcePath": "media/3D_Assets/Kaykit_Medieval Snow Biome",
+      "sourceCommit": "ab65e8c46ca3c07db4294214a63384975fb7d0d9",
+      "modelFacts": {
+        "objectGlb": 15,
+        "hexTileGlb": 42
+      },
+      "notes": "Snow buildings/nature include castle_snow, house_snow, archeryrange_snow, barracks_snow, lumbermill_snow, market_snow, mill_snow, mine_snow, watchtower_snow, watermill_snow, well_snow, forest/mountain/detail variants."
     },
     {
       "packId": "kenney-building-kit",
@@ -239,14 +282,54 @@
   },
   "generatorMap": [
     {
-      "id": "world-atlas-hex",
+      "id": "world-atlas-hex-s11",
       "source": "tools/world_atlas/source/KayKit_Hex_Realm_S11.html",
       "status": "EXISTING_OWNER_VIEW"
     },
     {
-      "id": "world-atlas-dungeon",
+      "id": "world-atlas-hex-model-s12",
+      "source": "tools/world_atlas/source/KayKit_Hex_Tile_Model_S12.html",
+      "status": "EXISTING_MENTAL_MODEL"
+    },
+    {
+      "id": "world-atlas-dungeon-s13-2",
       "source": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
-      "status": "EXISTING_OWNER_VIEW"
+      "status": "EXISTING_GENERATOR_OWNER"
+    },
+    {
+      "id": "bits-model-s14",
+      "source": null,
+      "status": "RECOVERY_REQUIRED"
+    },
+    {
+      "id": "space-base-s15",
+      "source": null,
+      "status": "RECOVERY_REQUIRED"
+    },
+    {
+      "id": "restaurant-s16",
+      "source": null,
+      "status": "RECOVERY_REQUIRED"
+    },
+    {
+      "id": "restaurant-s17",
+      "source": null,
+      "status": "RECOVERY_REQUIRED"
+    },
+    {
+      "id": "plant-prop-s18-s19",
+      "source": "tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/",
+      "status": "EXISTING_MODULE_FAMILY"
+    },
+    {
+      "id": "sample-atlas-s20",
+      "source": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/KayKit_Sample_Atlas_S20.html",
+      "status": "EXISTING_REFERENCE_ATLAS"
+    },
+    {
+      "id": "room-study-s21-s22",
+      "source": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/",
+      "status": "EXISTING_AUTHORING_DONOR"
     },
     {
       "id": "hex-terrain-generator-v1",
@@ -261,8 +344,129 @@
     {
       "id": "literal-data-generator",
       "source": null,
-      "status": "SOURCE_REQUIRED",
-      "notes": "No repo artifact found under literal Data Generator / Daten-Generator naming during prep search."
+      "status": "SOURCE_NAME_UNRESOLVED",
+      "notes": "Map against full Environment Atlas corpus/full export before using this label."
     }
-  ]
+  ],
+  "projectCorpusAudit": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/PROJECT_CORPUS_AUDIT.md",
+  "fullProjectExportRequest": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/FULL_PROJECT_EXPORT_REQUEST.md",
+  "identityCorrection": {
+    "previousFinding": "Prep originally found two KayKit hex-capable packs and treated the third as SOURCE_REQUIRED.",
+    "correctedByUserSource": "media/3D_Assets/Kaykit_Medieval Snow Biome/",
+    "currentFinding": "Three KayKit Hex-capable families are now source-proven: Medieval Hexagon, Medieval Builder, Medieval Snow Biome/Builder Patreon Bonus. Kenney Hex is additional."
+  },
+  "projectExports": [
+    {
+      "id": "world-atlas-r1",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/",
+      "coverage": "S1-S13.2 base/reviewed intake",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "plant-prop-v2",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/",
+      "coverage": "S18/S19 actual Plant Prop runtime, 27 files",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "room-study-s21",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/",
+      "coverage": "S20 Sample Atlas + S21 Room Study",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "room-study-s22",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/",
+      "coverage": "S22 lean handover / wall nodes / room editor / postmortems",
+      "status": "SOURCE_PRESENT_LEAN"
+    }
+  ],
+  "mandatoryProjectSlices": [
+    {
+      "id": "S11",
+      "name": "KayKit_Hex_Realm_S11",
+      "source": "tools/world_atlas/source/KayKit_Hex_Realm_S11.html",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "S12",
+      "name": "KayKit_Hex_Tile_Model_S12",
+      "source": "tools/world_atlas/source/KayKit_Hex_Tile_Model_S12.html",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "S13.2",
+      "name": "KayKit_Dungeon_Generator_S13_2",
+      "source": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "S14",
+      "name": "KayKit_Bits_Model_S14",
+      "source": null,
+      "status": "RECOVERY_REQUIRED",
+      "documentedBy": "S22 Housekeeping/Changelog"
+    },
+    {
+      "id": "S15",
+      "name": "KayKit_Space_Base_S15",
+      "source": null,
+      "status": "RECOVERY_REQUIRED",
+      "documentedBy": "S22 Housekeeping/Changelog"
+    },
+    {
+      "id": "S16",
+      "name": "KayKit_Restaurant_S16",
+      "source": null,
+      "status": "RECOVERY_REQUIRED",
+      "documentedBy": "S22 Housekeeping/Changelog"
+    },
+    {
+      "id": "S17",
+      "name": "KayKit_Restaurant_S17",
+      "source": null,
+      "status": "RECOVERY_REQUIRED",
+      "documentedBy": "S22 Changelog"
+    },
+    {
+      "id": "S18-S19",
+      "name": "KFB Plant Prop Lab v2",
+      "source": "tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/index.html",
+      "status": "SOURCE_PRESENT",
+      "modules": {
+        "plantEyes": {
+          "path": "src/plant-eyes.js",
+          "blobSha": "c14eb4b2a6cdde56bc18be1ab89a13793f2c4d95"
+        },
+        "plantRig": {
+          "path": "src/plant-rig.js",
+          "blobSha": "ed77c7cb4019bf54128e47ec4fcbad69c0d88995"
+        }
+      }
+    },
+    {
+      "id": "S20",
+      "name": "KayKit_Sample_Atlas_S20",
+      "source": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/KayKit_Sample_Atlas_S20.html",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "S21",
+      "name": "KayKit_Room_Study_S21",
+      "source": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/KayKit_Room_Study_S21.html",
+      "status": "SOURCE_PRESENT"
+    },
+    {
+      "id": "S22",
+      "name": "Wall nodes / R07 / R08 postmortem / editor direction",
+      "source": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/",
+      "status": "SOURCE_PRESENT_LEAN"
+    }
+  ],
+  "fullProjectRecovery": {
+    "recommended": true,
+    "reason": "Existing GitHub corpus is split; S14-S17 are documented but their actual runtime source files were not found in current lean exports.",
+    "requestFile": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/FULL_PROJECT_EXPORT_REQUEST.md",
+    "policy": "Additive source recovery only; compare exact source/status and never reconstruct missing runtime from prose."
+  }
 }
