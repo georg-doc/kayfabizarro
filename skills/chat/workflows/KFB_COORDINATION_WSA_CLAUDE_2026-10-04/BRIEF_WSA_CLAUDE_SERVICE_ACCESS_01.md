@@ -15,28 +15,36 @@ Claude Cowork reaches the **same** `/mcp` endpoint through a narrow service prin
 
 1. Production Control stays `custom` / private.
 2. Same endpoint: `https://kfb-production-control.frizzlebob.chatgpt.site/mcp`.
-3. A fixed secret request header on the Claude side; Sites service access lets the request through the private hosting boundary.
-4. Production Control maps it to an explicit allow-listed principal **`claude-cowork`** (separately **`claude-design`**, read-only, only if cheap).
-5. `claude-cowork` may: read current and history (`kfb_web_read`, artifact reads/links), write checkpoint / Return (`kfb_web_checkpoint`), upload checked artifacts (`kfb_web_artifact_save`, `_import`, `upload_*`).
-6. `claude-cowork` may not: delete anything, change layout, priority or board order, touch other users' records.
-7. Every write records agent principal, time and source; visible in the Control history.
-8. Existing ChatGPT/Codex access and per-user isolation unchanged.
+3. **Two independent access layers are mandatory:**
+   - **Sites service access credential** gets the request through the private hosting boundary;
+   - a separate **Production Control agent key** identifies/authorizes the caller as `claude-cowork`.
+   These are different secrets with different purposes and rotation.
+4. Production Control maps the valid agent key to the explicit allow-listed principal **`claude-cowork`**. Do not synthesize or impersonate an OpenAI user id. `claude-design` may be added separately as read-only only if that is trivial after Cowork works.
+5. **Data scope is explicit and shared:** `claude-cowork` reads/writes only the allow-listed shared **KFB production scope owned by Georg**, not records selected by `oai-authenticated-user-id` and not arbitrary user data. Existing human/OpenAI-user isolation remains unchanged for normal ChatGPT/Codex sessions.
+6. `claude-cowork` may: read current and history (`kfb_web_read`, artifact reads/links), write checkpoint / Return (`kfb_web_checkpoint`), upload checked artifacts (`kfb_web_artifact_save`, `_import`, `upload_*`).
+7. `claude-cowork` may not: delete anything, change layout, priority or board order, enumerate or touch any non-KFB/non-Georg production scope.
+8. Every service write records **production scope + agent principal + time + source**; visible in Control history. The record is not falsely attributed to Georg's OpenAI user id.
+9. Existing ChatGPT/Codex access and per-user isolation remain unchanged.
 
 ## Secret handling
 
-- **Georg** creates and enters the secret, on both sides. Neither WSA nor Claude writes the value into chat, GitHub, briefs, Returns or logs.
-- Claude side: verify which binding the Cowork client actually supports and document only the mechanism, never the value. Either a claude.ai custom connector with a fixed request header (Georg enters it in Connector settings), or the plugin's `.mcp.json` `headers` referencing an environment variable. If the plugin route needs a change, ship it as plugin v0.3.0 without any secret.
-- Rotation: document how Georg rotates or revokes the secret in one step.
+- **Georg** creates/enters both secrets. Neither WSA nor Claude writes either value into chat, GitHub, briefs, Returns or logs.
+- **Sites service credential:** configured only in the private Site/service-access boundary and matching Claude connector/service configuration.
+- **Agent key:** configured only in Production Control's secret store and Claude's connector/plugin environment/header configuration. It maps to `claude-cowork`; it is not the Sites token and not an OpenAI user token.
+- Claude side: verify which binding Cowork actually supports and document only header names/mechanism, never values. Either a claude.ai custom connector with fixed secret headers, or the plugin's `.mcp.json` headers referencing environment variables. If the plugin route needs a change, ship plugin v0.3.0 without secrets.
+- Rotation/revocation: document independent one-step rotation for the Sites credential and the agent key. Revoking the agent key must disable `claude-cowork` without changing human ChatGPT access.
 
 ## Tests (real, counted)
 
 1. Unauthenticated `POST /mcp` still `401` with discovery (unchanged).
-2. Wrong or missing header → rejected; no data in the response.
-3. Correct header → `initialize` and `tools/list` return the eleven `kfb_web_*` tools.
-4. `claude-cowork` read succeeds; checkpoint write succeeds and appears in history with principal + time + source.
-5. Forbidden actions (delete, priority/layout change) → rejected.
-6. `/api/control` and the UI still require the private Site login.
-7. Existing ChatGPT path still works (one read, one checkpoint).
+2. Missing/wrong **Sites service credential** → private hosting boundary rejects; no MCP data.
+3. Valid Sites credential + missing/wrong **agent key** → Production Control rejects; no KFB data.
+4. Both credentials correct → `initialize` and `tools/list` return the **11** existing `kfb_web_*` tools.
+5. `claude-cowork` read succeeds against the allow-listed shared KFB production scope even though no `oai-authenticated-user-id` exists.
+6. Checkpoint write succeeds and appears in history with KFB production scope + `claude-cowork` + time + source; no Georg/OpenAI impersonation.
+7. Attempt to read another/non-allow-listed user/scope → rejected/empty; forbidden actions (delete, priority/layout change) → rejected.
+8. `/api/control` and the UI still require the private Site login.
+9. Existing ChatGPT path still works unchanged (one read, one checkpoint under normal OpenAI user isolation).
 
 ## Then: Claude smoke (Claude Coworker runs it)
 
@@ -48,4 +56,4 @@ No public Site, no change to Hub or ToolBox visibility (Georg prefers them priva
 
 ## Exactly one next gate
 
-Production Control accepts the `claude-cowork` principal with the seven tests above passing. Then Claude runs the smoke.
+Production Control accepts the two-layer `claude-cowork` service path with the **nine** tests above passing, including shared-KFB-scope access without OpenAI-user impersonation. Then Claude runs the smoke.
