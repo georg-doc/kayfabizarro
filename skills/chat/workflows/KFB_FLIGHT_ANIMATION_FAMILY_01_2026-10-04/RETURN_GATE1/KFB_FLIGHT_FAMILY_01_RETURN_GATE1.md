@@ -83,3 +83,20 @@ Known limits:
 ## Next gate
 
 CARD_SURF with the Mannequin on the flight card (F2 and F3), then Superhero / Ultra Turbo Hero Man after the Mech look is accepted.
+
+
+## Gate 2 override · CARD_SURF rebrief · 2026-10-04
+
+Before CARD_SURF authoring, use:
+`skills/chat/workflows/KFB_FLIGHT_ANIMATION_FAMILY_01_2026-10-04/CARD_SURF_GATE2_REBRIEF_2026-10-04.md`.
+
+This supersedes the loose instruction “build the card from the card code in Blender” on one crucial point:
+
+- the production donor is the current **Travel `card-carrier.js`**, not the old rigid flight-acceptance/rig-measurement card;
+- Blender builds only a source-faithful **review/fit rig**;
+- Travel keeps world flight, banking, barrel-roll and card runtime ownership;
+- face ink follows current **KFB Ink Canon**;
+- slab sides use the current Combat-derived black-edge target, not pale/light paper sides;
+- isolate the card first, then add the Mannequin only after the card source/look gate passes.
+
+No Superhero / Ultra Turbo Hero Man work starts before CARD_SURF Gate 2 closes.
