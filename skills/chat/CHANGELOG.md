@@ -1,3 +1,15 @@
+## 2026-10-04 · MVP1 product recovery · harness failure reclassified
+
+- Georg stopped further model-comparison/Combat benchmark spend until a working WorldBuilder MVP1 is delivered.
+- Re-read PR #348 frozen failure recovery and corrected the hierarchy: the last failure is explicitly a **test-harness endpoint-arrival failure, not proof the Taxi runtime or bridge support failed**.
+- Preserved earlier real browser evidence: run 37196264077 · Ground→Drive→Ground PASS · 6.077702 m.
+- Corrected two-pass interpretation: two failed repairs of route-planner/input-bot/endpoint-classifier QA freeze that QA method unless the same defect is directly reproduced in the product.
+- Added binding `WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md`.
+- Added binding `COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md`.
+- PR #348 Return/Recovery/ONE_SHOT_STATUS now route to **MVP1-PLAYABLE-DELIVERY**: direct product smoke → actual WorldBuilder edit/sculpt/save/import → representative source-clean world → PUBLIC_VERIFIED World Studio MVP Stage → Georg freeplay.
+- Root START_HERE and KFB Hub updated; Combat benchmark PR #18 is HOLD until MVP1 human review.
+- No runtime implementation, merge or Live promotion in this routing correction.
+
 ## 2026-10-04 · Combat Platformer Benchmark planning
 
 - Added `skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md` as a central router only.
