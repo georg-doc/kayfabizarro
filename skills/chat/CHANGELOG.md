@@ -431,3 +431,24 @@ After publication:
 
 Per-eye/Survivalist is deferred until unified Site acceptance.
 
+
+
+## 2026-10-04 · Unified EyeRig ChatGPT Site publication
+
+### PUBLICATION
+PR #104's existing `Medium | Large | Legacy` EyeRig workbench was published by Work as one private ChatGPT Site without redesign:
+`https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+
+Publication identifiers:
+- version `appgprj_6ac1b73620f48191ae6e7f101f4b0786~appgver_5717d8849ad48191b6e277502df17312`
+- deployment `appgdep_6ac1b854cd3081919f783990f88039f4` · succeeded
+- publication source revision `4f8a82cbea7a0a8c82eafc917b7968b8e77d4e00`
+- owner source remained PR #104 @ `ad26045e8a7b389afe0c8127e80bb66f3e9f2ac3`
+
+Work smoke confirmed 55 Medium / 8 Large / 17 Legacy and the common control surface. Skull remained `HUMAN_REQUIRED`.
+The exact publication source static run was **187/191 PASS · 4 FAIL** locally; this is not a CI-PASS claim.
+
+Exactly one current EyeRig gate:
+`GEORG_EYERIG_UNIFIED_SITE_01`
+
+No merge or Live promotion.
