@@ -330,5 +330,13 @@
   "humanAcceptance": "PENDING_GEORG_FREEPLAY",
   "mode": "STAGE_ONLY",
   "quarantinedHarness": "Long-route waypoint/endpoint method",
-  "owners": "Existing WB2 only; scoped runtime closure preserves exact source bytes and relative imports. Canonical media refs remain remote pins."
+  "owners": "Existing WB2 only; scoped runtime closure preserves exact source bytes and relative imports. Canonical media refs remain remote pins.",
+  "publicBrowserVerification": {
+    "status": "BLOCKED_TOOL_SECURITY_POLICY_UNAVAILABLE",
+    "expectedSourceHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "attemptedExactUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
+    "reason": "Browser could not verify admin-enforced policy; access not granted. No bypass or alternate browser transport attempted.",
+    "newStudioImportSmoke": "BLOCKED_BY_SAME_BROWSER_SECURITY_CHECK",
+    "priorFreshAuthoringRoundtrip": "5/5 PASS, retained; not a new public Stage proof"
+  }
 }
