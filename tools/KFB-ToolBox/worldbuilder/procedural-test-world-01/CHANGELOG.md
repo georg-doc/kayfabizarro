@@ -140,3 +140,10 @@ Actual local browser boot loads all 10 critical phases, enters the existing four
 Latest pushed browser result at b14e5da1eed0f581aecdc2fe29acea258915b69d: 9/10 Player checks PASS, Sprint blocked by Town Home B; current placement repair moves the fallback ring from 11 to 16 metres. No full browser PASS claim. Native journey contracts: 4/4 PASS. Native source/PDF measured future Card-1 crops preserve four deck identities and standard Card shape. Source-only capture is not integrated journey acceptance.
 
 No Stage published, merge or Live promotion. Continue native Studio palette, four billboards, musical-world audio intake from PR #352, real Golden traversal/export/import and Whole-Game Critic in this same One-Shot.
+
+
+### Native Studio / musical-world checkpoint · 2026-10-04
+
+Foundation head 286b30163c1bd32e88823ea767dfbe451217443d passes all 10/10 actual Chromium Player checks (run 37185405987, page/console errors 0), source and Registry checks PASS. Current local pure contracts: 13/13 PASS (4 Journey + 9 world). Native Library search/Registry handoff, Hex placement, four native Clay Billboards, borrowed one-context Travel Audio/S16 music director, native Chatter subjects and learned same-mixer HipHop dance are integrated. Actual local product loads 10/10 required phases / 41 objects; ENTER starts a blob-verified canonical Town master and native physical wind/engine/water in the same shared graph. Collision support is hidden after scene rebuild; edited native buildings own collision. Source FrizzleBob and Clay Billboard were actually shown in isolation.
+
+Full Golden Journey, learned-dance browser proof, workspace/fresh-session import and Whole-Game Critic remain pending. A deterministic integrated Chromium harness now uses real keyboard/UI actions, actual native song end and downloaded fresh import; no reward injection, teleport or fake audio completion. Continue automatically. Stage remains RESERVED_NOT_DEPLOYED; no merge or Live promotion.

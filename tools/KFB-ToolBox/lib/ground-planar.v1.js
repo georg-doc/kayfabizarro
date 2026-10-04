@@ -1,7 +1,7 @@
 // Planar extraction of WB0 ground-controller.js: WASD semantics, backMul .55,
 // turnRate 2.35, body-relative orbit camera, exponential follow (14), RMB/wheel.
 // WB2 supplies all support/collision truth. Motion presentation is injected.
-export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groundAt,solidAt,speeds,present,hud,getActorProfileId=()=> 'Mannequin_Medium'}) {
+export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groundAt,solidAt,speeds,present,hud,getActorProfileId=()=> 'Mannequin_Medium',isMovementLocked=()=>false}) {
   const keys=new Set(),position=root.position,forward=new THREE.Vector3(),desiredCam=new THREE.Vector3(),lookAt=new THREE.Vector3(),desiredLook=new THREE.Vector3();
   const params={turnRate:2.35,backMul:.55,cameraDistance:bodyHeight*7,cameraHeight:bodyHeight*4.1,cameraLookHeight:bodyHeight*1.15,cameraLookAhead:bodyHeight*1.6,cameraSmooth:14};
   let on=false,heading=spawn.heading||0,speed=0,hold=0,yaw=0,pitch=0,drag=null,snapped=false;
@@ -17,7 +17,7 @@ export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groun
   }
   function update(dt){
     if(!on)return;dt=Math.min(.05,Math.max(0,dt));
-    const turn=(keys.has('KeyD')?1:0)-(keys.has('KeyA')?1:0),throttle=(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0),shift=keys.has('ShiftLeft')||keys.has('ShiftRight');
+    const locked=isMovementLocked(),turn=locked?0:(keys.has('KeyD')?1:0)-(keys.has('KeyA')?1:0),throttle=locked?0:(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0),shift=keys.has('ShiftLeft')||keys.has('ShiftRight');
     heading+=turn*params.turnRate*dt;hold=throttle>0?hold+dt:0;
     const target=throttle<0?-speeds.walk*params.backMul:throttle>0?(shift?speeds.sprint:THREE.MathUtils.lerp(speeds.walk,speeds.run,Math.min(hold/3,1))):0;
     speed+=THREE.MathUtils.clamp(target-speed,-12*dt,12*dt);

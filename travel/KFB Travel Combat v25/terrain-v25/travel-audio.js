@@ -118,7 +118,7 @@ export function createTravelAudio(opts = {}) {
     if (sfxManifest) return sfxManifest;
     const norm = (j) => (j && (j.sfx || j.events || (j.id ? null : j))) || null;
     let m = null;
-    for (const url of [RAW_ALT + AUDIO_DIR + 'sfx.json', LOCAL('./sfx.json')]) {
+    for (const url of [(opts.sourcePin?'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+opts.sourcePin+'/':RAW_ALT) + AUDIO_DIR + 'sfx.json', LOCAL('./sfx.json')]) {
       if (m) break;
       try { m = norm(await (await fetch(url)).json()); } catch (e) { /* nächster Versuch */ }
     }
@@ -127,7 +127,7 @@ export function createTravelAudio(opts = {}) {
   }
 
   function sfxUrl(file) {
-    return encodeURI(RAW_ALT + (file.includes('/') ? file : AUDIO_DIR + file));
+    return encodeURI((opts.sourcePin?'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+opts.sourcePin+'/':RAW_ALT) + (file.includes('/') ? file : AUDIO_DIR + file));
   }
 
   async function loadSfxBuffer(file) {
@@ -285,7 +285,7 @@ export function createTravelAudio(opts = {}) {
           rumbleGain, rumbleLp,
           noiseBuf, pulseGain, pulseDepth, analyser, freq, mood: M, musicGain: null };
     beat0 = ctx.currentTime;
-    startMusic();
+    if(opts.externalTransport){const gain=ctx.createGain();gain.gain.value=P.music*P.musicHead;gain.connect(master);A.musicGain=gain;}else startMusic();
     preloadSfx();
     master.gain.linearRampToValueAtTime(P.master, ctx.currentTime + 1.2);
     return true;
@@ -319,7 +319,7 @@ export function createTravelAudio(opts = {}) {
     for (let i = 0; i < A.oscs.length; i++) {
       A.oscs[i].frequency.setTargetAtTime(A.baseF[i] * (1 + h * 0.5 + Math.max(0, rate) * 0.05), t, 0.12);
     }
-    A.droneGain.gain.setTargetAtTime((0.13 + h * 0.10) * P.drone, t, 0.15);
+    A.droneGain.gain.setTargetAtTime((0.13 + h * 0.10) * P.drone * (1-duckAmt), t, 0.15);
     A.lp.frequency.setTargetAtTime(M.bright * (0.85 + h * 1.1) + Math.max(0, rate) * 300, t, 0.12);
     // MOTION: Fahrtwind ∝ heat², im Walk-Modus deutlich leiser (kein Fahrtwind zu Fuß)
     const windScale = src.mode === 'walk' ? 0.35 : 1;
@@ -500,6 +500,9 @@ export function createTravelAudio(opts = {}) {
   const hasSfx = (id) => !!(sfxManifest && sfxManifest[id]);
 
   return {
+    // Borrowers share this graph and must not close its context.
+    get sharedGraph(){return ctx&&A?{context:ctx,music:A.musicGain,fx:A.fxBus,master:A.master,owner:'KFB Travel Audio / canonical Jukebox'}:null;},
+    async physicalLoop(id,file){start();if(!ctx)return null;const buf=await loadSfxBuffer(file);if(!buf)throw Error('Required physical audio missing '+id);const src=ctx.createBufferSource(),gain=ctx.createGain();src.buffer=buf;src.loop=true;gain.gain.value=0;src.connect(gain);gain.connect(A.fxBus);src.start();return{id,setLevel(v){gain.gain.setTargetAtTime(Math.max(0,v),ctx.currentTime,.15)},setRate(v){src.playbackRate.setTargetAtTime(Math.max(.3,Math.min(2,v)),ctx.currentTime,.12)},dispose(){src.stop();src.disconnect();gain.disconnect()}};},
     name: 'travel-audio', start, update, setMood, sfx, loadJukebox, resume, addSfx, hasSfx,
     get ready() { return !!A; },
     // DAS ist das Gate für den Runner: Graph gebaut UND Uhr läuft UND nicht stummgeschaltet.
@@ -546,7 +549,7 @@ export function createTravelAudio(opts = {}) {
     setMusicVol(v) {
       P.music = Math.max(0, v);
       if (!A || !ctx) return;
-      if (A.musicGain) A.musicGain.gain.setTargetAtTime(P.music * P.musicHead, ctx.currentTime, 0.1);
+      if (A.musicGain) A.musicGain.gain.setTargetAtTime(P.music * P.musicHead * (1-duckAmt), ctx.currentTime, 0.1);
       if (P.music <= 0.001 && musicState) {
         try { musicState.src.onended = null; musicState.src.stop(); } catch (e) {}
         musicState = null; clearTimeout(restartT);
@@ -568,3 +571,4 @@ export function createTravelAudio(opts = {}) {
     },
   };
 }
+

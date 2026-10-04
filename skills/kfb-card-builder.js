@@ -402,6 +402,8 @@ export function createCardBuilder(opts = {}) {
     name: 'kfb-card-builder',
     // ---- Daten
     loadRegistry, loadDeck, pool: buildPool,
+    // Full deck cover uses the same pinned PDF/cache owner as card artwork.
+    async renderDeckCover(packId, targetW=P.pdfRes){await loadRegistry();const d=pmap[packId];if(!d?.pdf)throw Error('Deck cover source missing '+packId);return renderPage(fileUrl(d.pdf),1,targetW);},
     get decks() { return (registry && registry.decks) || []; },
     get cellAspect() { return cellAspect; },
     // S62 · Abnahme des Sollformats. Sagt für die letzte eingelegte Zelle, wie viel Papierrand

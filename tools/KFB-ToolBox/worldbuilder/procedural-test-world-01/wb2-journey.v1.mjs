@@ -1,6 +1,7 @@
 /* Lean receipts live in WB2's existing scene document. Cards/media remain canonical references. */
 export const JOURNEY_SCHEMA='kfb.golden-journey-memory/1';
 const PIN='b6afb431c25e48767bf875c8b2eb74866f6946e5';
+const PDF_PIN='9c2fee62b815f19cf967867f54985bd22e3f222b',CARD_BLOBS={'ignore_dystopia:1':'432416a81a42eca6440711597f22bd667c2d9cca','forget_utopia:1':'ab373a2c19e1ebc1694143d218037152853477cf','embrace_protopia:1':'ec7c6001fcd276685647a14a4146061224faabd7','anti_rules_toolkit:1':'b903037242ef1b10623ff43e43bcc1bb8889a7df'};
 export const OFFERS=Object.freeze({
   'town.clown':{id:'clown-onboarding',choice:'bingo',grant:'ignore_dystopia:1',opens:'quest.deliver.dystopia01.orc-band'},
   'town.driver':{id:'driver-key',choice:'bingo',grant:'item.taxi-key.01'},
@@ -15,7 +16,7 @@ export function memoryOf(doc){
 }
 export function createJourney(getDoc,{now=()=>new Date().toISOString()}={}){
   const owns=ref=>memoryOf(getDoc()).receipts.some(r=>r.ref===ref);
-  const remember=(ref,residentId,kind,extra={})=>{const m=memoryOf(getDoc());if(m.receipts.some(r=>r.ref===ref&&r.kind===kind))return null;const receipt={id:m.sessionId+':'+m.receipts.length,ref,kind,residentId,worldId:({town:'world.kfb-town',dystopia:'world.dystopia',utopia:'world.utopia',protopia:'world.protopia'})[residentId?.split('.')[0]]||null,seed:m.seed,time:now(),sourceCommit:PIN,...extra};m.receipts.push(receipt);return receipt;};
+  const remember=(ref,residentId,kind,extra={})=>{const m=memoryOf(getDoc());if(m.receipts.some(r=>r.ref===ref&&r.kind===kind))return null;const receipt={id:m.sessionId+':'+m.receipts.length,ref,kind,residentId,worldId:({town:'world.kfb-town',dystopia:'world.dystopia',utopia:'world.utopia',protopia:'world.protopia'})[residentId?.split('.')[0]]||null,seed:m.seed,time:now(),sourceCommit:PIN,...(kind==='card'?{assetSource:{commit:PDF_PIN,blob:CARD_BLOBS[ref],canonicalRef:ref}}:{}),...extra};m.receipts.push(receipt);return receipt;};
   return{owns,memory:()=>memoryOf(getDoc()),remember,
     offer(residentId){const offer=OFFERS[residentId];if(!offer)return null;const missing=(offer.requires||[]).filter(ref=>!owns(ref));return{...offer,residentId,missing,completed:memoryOf(getDoc()).completed.includes(offer.id)}},
     choose(residentId,choice){const offer=this.offer(residentId);if(!offer)throw Error('Unknown Golden Resident');remember('resident:'+residentId,residentId,'met');if(offer.missing.length)return{ok:false,reason:'prerequisite',missing:offer.missing};if(offer.completed)return{ok:true,repeated:true};if(choice!==offer.choice)return{ok:false,reason:'choice',choice};const m=memoryOf(getDoc());const receipt=offer.grant?remember(offer.grant,residentId,offer.grant.startsWith('item:')||offer.grant.startsWith('item.')?'item':'card',{choice,encounterId:offer.id}):remember('encounter:'+offer.id,residentId,'encounter',{choice});if(offer.closes)m.quests=m.quests.filter(q=>q!==offer.closes);if(offer.opens&&!m.quests.includes(offer.opens))m.quests.push(offer.opens);m.completed.push(offer.id);return{ok:true,receipt};},

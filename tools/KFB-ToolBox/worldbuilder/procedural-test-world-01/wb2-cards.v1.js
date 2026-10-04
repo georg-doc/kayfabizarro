@@ -5,7 +5,7 @@ const PIN='9c2fee62b815f19cf967867f54985bd22e3f222b';
 const raw=path=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+PIN+'/'+path.split('/').map(encodeURIComponent).join('/');
 export const CARD_REFS=Object.freeze(['ignore_dystopia:1','forget_utopia:1','embrace_protopia:1','anti_rules_toolkit:1']);
 export const CROP_EVIDENCE=Object.freeze({
-  futureDecks:'registry/assets/v1/decks/{ignore_dystopia,forget_utopia,embrace_protopia}.json @ 378b209355b13304e3cff656ec0806ca5b89df28',
+  futureDecks:{commit:PIN,page:2,onlyCard:1,method:'PDF Card-1 bounds measured at 1553 × 866; full deck is not crop-certified'},
   antiRules:{pdf:'media/kfb/Anti-Rules_Toolkit - ADD web ID.pdf',commit:PIN,blob:'b903037242ef1b10623ff43e43bcc1bb8889a7df',page:2,onlyCard:1,normalizedCrop:{x:.0971428571,y:.1651728553,w:.3978571429,h:.3841229193},semanticConflict:'PDF: Cry harder, Esq. / JSON: Dry leader. Busy. — PDF owns visual artwork'}
 });
 export function createMvpCards(){
@@ -22,7 +22,7 @@ export function createMvpCards(){
     const [deck,n]=ref.split(':');let resolve,reject;const ready=new Promise((ok,no)=>{resolve=ok;reject=no});
     const card=await builder.makeById(deck,+n,{width:3,onArt:()=>resolve(),onFail:e=>reject(Error('Required canonical card artwork: '+ref+' · '+e))});
     if(!card)throw Error('Canonical Card missing '+ref);card.group.name=ref;card.group.userData.cardRef=ref;
-    card.group.userData.sourceRecord={assetId:ref,packId:deck,source:{commit:PIN,path:'media/kfb/index.json',blobSha:null}};
+    card.group.userData.sourceRecord={assetId:ref,packId:deck,source:{commit:PIN,path:'media/kfb/'+builder.decks.find(d=>d.packId===deck).pdf,blobSha:({'ignore_dystopia':'432416a81a42eca6440711597f22bd667c2d9cca','forget_utopia':'ab373a2c19e1ebc1694143d218037152853477cf','embrace_protopia':'ec7c6001fcd276685647a14a4146061224faabd7','anti_rules_toolkit':'b903037242ef1b10623ff43e43bcc1bb8889a7df'})[deck]}};
     cards.set(ref,card);await ready;if(card.artState!=='artwork')throw Error('Canonical art not rendered '+ref);return card;
   },evidence(){return [...cards].map(([ref,c])=>({ref,artState:c.artState,sourcePin:PIN,cropEvidence:CROP_EVIDENCE}))}};
 }

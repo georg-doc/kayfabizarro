@@ -506,7 +506,7 @@ function updateSculptUi(){
   E('sculptUndo').disabled=!n;E('sculptClear').disabled=!n;
   const sculpting=sculptMode!=='off';
   E('brushGrp').hidden=!sculpting;E('objGrp').hidden=sculpting;
-  E('legend').hidden=!(sculpting&&UI.legend&&mode==='scene');
+  if(!HOST_PROPS.worldStudioMvp||!window.__wb2d?.mvp?.entered||(!PLAY?.on&&!window.__wb2d?.mvp?.drive?.active))E('legend').hidden=!(sculpting&&UI.legend&&mode==='scene');
   E('radiusOut').value=brushRadius().toFixed(2);E('strengthOut').value=brushStrength().toFixed(2);
 }
 function setTemporaryOrbit(on){
@@ -786,7 +786,8 @@ async function buildSceneObjects(token){
     if(token!==sceneLoadToken)return;
     const root=makeRoot(rec);
     let model;
-    if(rec.performanceSetId){const api=await import('../procedural-test-world-01/wb2-party.v1.js');const module=await api.createPartySet(rec.performanceSetId,{renderer});root.userData.lifecycle=module;root.userData.performanceSetId=rec.performanceSetId;model=module.root;}
+    if(rec.billboardWorldId){const api=await import('../procedural-test-world-01/wb2-billboards.v1.js');const module=await api.createWorldBillboard(rec.billboardWorldId,{renderer,cards:window.__wb2d.mvp.cards});root.userData.lifecycle=module;root.userData.billboardWorldId=rec.billboardWorldId;model=module.root;}
+    else if(rec.performanceSetId){const api=await import('../procedural-test-world-01/wb2-party.v1.js');const module=await api.createPartySet(rec.performanceSetId,{renderer});root.userData.lifecycle=module;root.userData.performanceSetId=rec.performanceSetId;model=module.root;}
     else if(rec.taxi){const api=await import('../procedural-test-world-01/wb2-taxi.v1.js');model=await api.createTaxiModel();}
     else if(rec.residentSetId){const api=await import('../procedural-test-world-01/wb2-residents.v1.js');const module=await api.createResidentSet(rec.residentSetId);root.userData.lifecycle=module;model=module.root;}
     else if(rec.registeredAssetId){const api=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');const record=Object.values(api.manifest.families).flat().find(r=>r.assetId===rec.registeredAssetId);if(!record)throw Error('Unknown registered source '+rec.registeredAssetId);model=await api.loadRegistered(record);await api.adaptRegistered(model);model.userData.sourceRecord=record;}
@@ -794,6 +795,7 @@ async function buildSceneObjects(token){
     if(token!==sceneLoadToken)return;
     root.add(model);
     root.userData.model=model;
+    root.userData.registeredAssetId=rec.registeredAssetId||null;
     if(rec.kind==='resident'&&!rec.residentSetId)groundModelLocal(model);
     if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
     PRES.onObject(root);
@@ -1158,12 +1160,12 @@ renderer.setAnimationLoop(()=>{
       groundModelLocal(actorRoot.userData.model);
     }
   }
-  for(const root of sceneObjects.values()){const life=root.userData.lifecycle;if(life&&root.visible&&!root.userData.performanceSetId){const near=!PLAY?.on||root.position.distanceTo(PLAY.position)<45;if(near)life.update(dt,(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)));}}
+  for(const root of sceneObjects.values()){const life=root.userData.lifecycle;if(life&&root.visible&&!root.userData.performanceSetId&&!root.userData.billboardWorldId){const near=!PLAY?.on||root.position.distanceTo(PLAY.position)<45;if(near)life.update(dt,(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)));}}
   window.__wb2d?.mvp?.update(dt);
   PRES.tick(clock.elapsedTime);
   if(PLAY&&mode==='scene')PLAY.update(dt);
   if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
-  EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on))controls.update();
+  EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on)&&controls.enabled)controls.update();
   if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
   window.__wb2d?.candidateEvidence?.sample();
 });
@@ -1258,6 +1260,7 @@ window.__wb2d={
   async mountSceneRecords(records){for(const rec of records){if(!rec.id||!rec.source?.path||!rec.source?.commit)throw Error('Scene source reference required');if(!sceneDoc.objects.some(r=>r.id===rec.id))sceneDoc.objects.push(deepClone(rec));}await rebuildSceneAfterDocChange();return records.map(r=>sceneObjects.get(r.id));},
   async applySceneDocument(d){if(d.format!=='kfb-worldbuilder-scene'||d.id!==DOC_ID)throw Error('Unexpected world document');sceneDoc=deepClone(d);ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();if(PLAY)PLAY.readDoc(sceneDoc);refreshDoc();return sceneDoc;},
   selectRoot,
+  registerDrawer(tab,title,pane){const b=document.createElement('button');b.id='tab'+tab;b.className='quiet';b.textContent=title;b.onclick=()=>openDrawer(tab);E('top').append(b);pane.id='pane'+tab;pane.hidden=true;E('drawer').append(pane);TABS[tab]=[pane.id,title,b.id];return b;},
   pauseForEncounter(){if(!PLAY)return;PLAY.setOn(false);PLAY.actor.holder.visible=true;EDIT.setOn(false);controls.enabled=false;E('dock').hidden=true;},
   worldSelftest:()=>runWorldSelfTest()
 };

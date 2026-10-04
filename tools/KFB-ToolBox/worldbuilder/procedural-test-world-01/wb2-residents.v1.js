@@ -50,7 +50,7 @@ export async function createResidentSet(id,{original=false,onProgress}={}){
   }
   const root=built.root;root.name=def.title;
   root.userData.residentSetId=def.id;
-  root.userData.sourceRecord={assetId:'resident-set/'+def.id,packId:module?'Resident Atlas S6':'Resident Atlas S16',source:{commit:module?S6_PIN:SOURCE_PIN,path:module?'tools/resident_atlas_s6/data/cast.js':S16_PATH,blobSha:null},assetPin:PIN.assets};
+  root.userData.sourceRecord={assetId:'resident-set/'+def.id,packId:module?'Resident Atlas S6':'Resident Atlas S16',source:{commit:module?S6_PIN:SOURCE_PIN,path:module?'tools/resident_atlas/modules/clown-juggling-island.module.json':S16_PATH,blobSha:null},assetPin:PIN.assets};
   for(const node of built.nodes.values()){const entry=node.userData.entry;if(entry?.a)node.userData.sourceRecord={assetId:entry.a,packId:def.residentId,source:{commit:entry.commit||PIN.assets,path:entry.a,blobSha:null}}}
   const groundActors=(groundAt)=>{if(!groundAt||module||!recipeUsed)return;for(const it of [recipeUsed.actor,...recipeUsed.signatureProps].filter(it=>it.rig&&!it.hover)){const node=built.nodes.get(it.id);if(!node)continue;const pos=node.getWorldPosition(new THREE.Vector3()),min=lowestPosedY(node,3),y=groundAt(pos.x,pos.z),scale=node.parent.getWorldScale(new THREE.Vector3()).y;if(Number.isFinite(min)&&Number.isFinite(y)&&Math.abs(scale)>.001){node.position.y+=(y-min)/scale;node.updateWorldMatrix(true,true)}}};
   const mixers=new Set([built.mixer,...(built.extraMixers||[])].filter(Boolean).map(m=>m.mixer));

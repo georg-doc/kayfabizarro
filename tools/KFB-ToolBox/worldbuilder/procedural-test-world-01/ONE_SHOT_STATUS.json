@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
-  "state": "GOLDEN_JOURNEY_NATIVE_INTEGRATION_BROWSER_IN_PROGRESS",
+  "state": "INTEGRATED_GOLDEN_JOURNEY_AND_STUDIO_BROWSER_GAUNTLET_RUNNING",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -73,13 +73,14 @@
     "deterministicScreenshotHarness": "SOURCE_DETAIL_AND_INTEGRATED_WORLD_PRESETS_IMPLEMENTED",
     "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
     "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE",
-    "externalCritic": "independent_critic · no production edits",
+    "externalCritic": "independent_critic \u00b7 no production edits",
     "sourceInspection": "FOUR_BUILDING_FAMILIES_AND_CLOWN_FARMERS_LOREKEEPER_MONSTROSITY_DEMON_BUSH_ORIGINALS_VIEWED",
     "latestBrowserRun": {
-      "id": 37183432860,
-      "head": "b14e5da1eed0f581aecdc2fe29acea258915b69d",
-      "result": "9_OF_10_PLAYER_CHECKS_PASS_SPRINT_BLOCKED_BY_TOWN_HOME",
-      "sourceWorldPngs": 16
+      "id": 37185405987,
+      "head": "286b30163c1bd32e88823ea767dfbe451217443d",
+      "result": "PASS",
+      "pageErrors": 0,
+      "consoleErrors": 0
     },
     "qaEnvironment": "SwiftShader capture scale .5; input proof .25; native physics unchanged. No performance PASS",
     "artifact": {
@@ -96,7 +97,8 @@
       ]
     },
     "journeyPureContracts": "4/4 PASS",
-    "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING"
+    "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING",
+    "localMvp": "Actual 10/10 loader; ENTER; 41 objects; canonical master blob PASS; one borrowed Travel Audio graph with wind/engine/water; native Clown Card; native Frizzle actor swap. Full Golden/browser persistence pending."
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -104,9 +106,11 @@
     "browserPlayer": "10/10 PASS",
     "resourceRegistry": "PASS",
     "pageErrors": 0,
-    "consoleErrors": 0
+    "consoleErrors": 0,
+    "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
+    "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
   },
-  "weakestRequiredDimension": "INTEGRATED_GOLDEN_JOURNEY_COMPLETENESS",
+  "weakestRequiredDimension": "FULL_GOLDEN_JOURNEY_AND_AUTHORING_FRESH_IMPORT_PROOF",
   "repairAttempts": {
     "sourceMaterial": 1
   },
@@ -170,7 +174,7 @@
         "stemFamilies": 29
       }
     },
-    "slice1": "Explore → movement/platformer lift → Drive → Dystopia party → Explore/world handoffs",
+    "slice1": "Explore \u2192 movement/platformer lift \u2192 Drive \u2192 Dystopia party \u2192 Explore/world handoffs",
     "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
     "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
   }
