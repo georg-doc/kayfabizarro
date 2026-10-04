@@ -1,5 +1,15 @@
 # CHANGELOG · Procedural Test World 01
 
+## 2026-10-04 · WORLD-CONVERGENCE-BASE-01 PASS
+
+- current-main source gate: **9/9 PASS** · run 37165910051 / job 111328623269;
+- Chromium/WebGL: **PASS** · run 37165909990 / job 111328623037;
+- browser artifact 11289562726 · sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d;
+- Resource Registry: **PASS** · run 37165909954 / job 111328623053;
+- clean current-main convergence gate closed;
+- next gate: WORLD-MULTI-ISLAND-CORRIDOR-01;
+- Motion / Player / Drive / Residents remain detached.
+
 ## 2026-10-04 · convergence repair pass 1
 
 - current-main R2D browser proof PASS at `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8` (run 37165723175 / job 111328087611);

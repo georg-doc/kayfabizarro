@@ -1,36 +1,39 @@
 # RECOVERY · WB2 convergence + Golden corridor
 
-Status: **WORLD-CONVERGENCE-BASE-01 · BROWSER PASS · SOURCE REPAIR 1**
+Status: **WORLD-CONVERGENCE-BASE-01 · PASS**
 
 Owner: KFB WorldBuilder / WB2
 Branch: `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`
 Base main: `9a1f43b628126bb633ed95c99310288f0a5f1a7c`
-Current implementation checkpoint: `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`
+Passing convergence head: `e1761c44159aaa81b26d243aadcc23cdd3b3836b`
 
 ## Product reality
 
-The proven WB2/R2D single-island owner is now re-homed on current main and has booted successfully in the real Chromium/WebGL proof.
-No Player, Drive, Residents or Travel host are active.
+The proven WB2/R2D single-island world owner is now re-homed on the current-main line and independently proven there.
+No stale PR #332 Hub/router/Motion state was imported.
+No Player, Drive, Residents, Combat or Travel host is active.
 
-## Current evidence
+## Current-branch evidence
 
-At `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`:
-- Procedural Test World R2D Browser · run `37165723175` · job `111328087611` · **PASS**.
-- KFB Production Resource Registry R0.1 · run `37165723168` · **PASS**.
-- Procedural Test World 01 source · run `37165723177` · job `111328087463` · **FAIL**.
+- Source workflow `37165910051` · job `111328623269` · **9/9 PASS**.
+- R2D Chromium/WebGL workflow `37165909990` · job `111328623037` · **PASS**.
+- Browser artifact `11289562726` · `sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d`.
+- Resource Registry workflow `37165909954` · job `111328623053` · **PASS**.
+- Repair Pass 1 changed evidence/profile metadata only; browser/runtime source stayed unchanged.
 
-The source test has one deterministic contract mismatch visible from the committed files:
-the test expects `SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED`, while the rehome profile still said donor-proof/rehome-pending.
-The browser run has now supplied that current-branch proof, so Repair Pass 1 updates only profile/evidence metadata and re-runs both gates.
+## Owner boundary
 
-Do not broaden this repair into world geometry.
+WB2 remains renderer/world/edit/support owner.
+Track Core remains road geometry owner.
+R2D core remains pure plan/height/mask data.
+Future consumers read world facts; they do not replace them.
 
-## Proven donor evidence
+## Exactly one next gate
 
-PR #332 remains historical source provenance only.
-Do not merge it or copy its stale Hub/router/Motion state.
+**WORLD-MULTI-ISLAND-CORRIDOR-01**
 
-## Next
-
-Re-run source + browser after Repair Pass 1.
-If both pass: mark WORLD-CONVERGENCE-BASE-01 PASS and begin WORLD-MULTI-ISLAND-CORRIDOR-01.
+Build Town + Dystopia + Utopia + Protopia as four world-recipe nodes with:
+- three Track-Core connections;
+- stable IDs / Golden-Journey anchors;
+- canonical satellite deck IDs and reviewed Card refs;
+- no Motion / Player / Drive / Residents yet.

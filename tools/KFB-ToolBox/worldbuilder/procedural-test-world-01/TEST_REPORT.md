@@ -1,39 +1,25 @@
 # TEST REPORT · WORLD-CONVERGENCE-BASE-01
 
-## Checkpoint `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`
+Status: **PASS**
 
-### Browser
-Workflow: Procedural Test World R2D Browser
-Run: `37165723175`
-Job: `111328087611`
-Result: **PASS**
+Passing head: `e1761c44159aaa81b26d243aadcc23cdd3b3836b`
 
-The workflow completed:
-- static syntax;
-- Playwright/Chromium install;
-- exact local HTTP entry boot;
-- Browser proof;
-- evidence artifact upload.
+| Gate | Evidence | Result |
+|---|---|---|
+| source/syntax | run 37165910051 · job 111328623269 | **9/9 PASS** |
+| Chromium/WebGL | run 37165909990 · job 111328623037 | **PASS** |
+| browser artifact | 11289562726 · sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d | **PRESENT** |
+| Resource Registry | run 37165909954 · job 111328623053 | **PASS** |
 
-### Resource Registry
-Run: `37165723168`
-Result: **PASS**
+Browser proof remains the exact WB2 R2D entry and checks:
+- WB2 owner / scene document;
+- continuous R2D terrain and Track Core road;
+- floating body / pond / creek / waterfall / P1+P2 nature;
+- source-backed B1/facade building owner;
+- no legacy `wi1-play`;
+- no Travel Globe / card-start host;
+- one renderer canvas;
+- no unexpected page/console errors.
 
-### Source contract
-Workflow: Procedural Test World 01
-Run: `37165723177`
-Job: `111328087463`
-Result: **FAIL**
-Syntax step: PASS
-Source tests: FAIL
-
-Known deterministic mismatch from committed inputs:
-`profile.proceduralDesign.natureMountStatus` did not match the source test's browser-verified status constant.
-The browser proof above now establishes that status on this branch.
-
-### Repair Pass 1
-Metadata/profile correction only.
-No runtime geometry, renderer, road, building or presentation code changes.
-
-Required next evidence:
-source PASS + browser PASS on the repair head.
+Repair history:
+the first source pass failed only on stale rehome profile status after the browser had proven current-branch mounting. Repair Pass 1 updated evidence metadata; no runtime source changed.
