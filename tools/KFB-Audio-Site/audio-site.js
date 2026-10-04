@@ -144,14 +144,14 @@ function renderSfx(){
  const shown=filtered.slice(0,60);
  $('#sfxStats').textContent=filtered.length+' matches'+(filtered.length>60?' · first 60':'');
  $('#sfxGrid').innerHTML=shown.map(x=>'<article class="track"><div><h3>'+escapeHtml(sfxLabel(x))+'</h3><div class="tiny">'+escapeHtml(x.pack)+' · '+escapeHtml(x.temporal.replace('_',' ').toLowerCase())+'</div></div><div class="track-actions"><button class="play" aria-label="Play SFX" data-sfx-play="'+escapeHtml(x.path)+'">▶</button></div></article>').join('');
- $('[data-sfx-play]').forEach(b=>b.onclick=()=>playSfx(b.dataset.sfxPlay));
+ document.querySelectorAll('[data-sfx-play]').forEach(b=>b.onclick=()=>playSfx(b.dataset.sfxPlay));
 }
 function playSfx(path){const x=(sfxLibrary?.assets||[]).find(a=>a.path===path);if(!x)return;const a=$('#preview');a.src=audioUrl(x.path);a.play().catch(()=>{});$('#nowTitle').textContent=sfxLabel(x);$('#nowMeta').textContent=x.pack}
 function fillSfxFilters(){
  const sel=$('#sfxUseCase'),uses=sfxLibrary?.taxonomy?.useCases||[];sel.insertAdjacentHTML('beforeend',uses.map(x=>'<option value="'+escapeHtml(x)+'">'+escapeHtml(x.replaceAll('_',' ').toLowerCase())+'</option>').join(''));
  const events=['click','pickup','jump','land','hit','engine','success','error'];
  $('#eventMap').innerHTML=events.map(x=>'<button data-event="'+x+'">'+x+'</button>').join('');
- $('[data-event]').forEach(b=>b.onclick=()=>{$('#sfxSearch').value=b.dataset.event;renderSfx()});
+ document.querySelectorAll('[data-event]').forEach(b=>b.onclick=()=>{$('#sfxSearch').value=b.dataset.event;renderSfx()});
  $('#sfxCount').textContent='· '+(sfxLibrary?.assets?.length||0).toLocaleString('en-US');
 }
 
