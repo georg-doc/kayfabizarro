@@ -1,3 +1,31 @@
+## 2026-10-04 · WSA One-Shot legacy-OSM contamination postmortem
+
+### HUMAN VISUAL FAIL
+- Georg's current WSA screenshot shows legacy Hürth/OSM-derived visible world content in the WB2/One-Shot candidate.
+- Code inspection proves the contamination is structural, not mysterious: `r2d-buildings.v1.js` actively loads `fixtures/huerth-b1-siblings-v0.json`, `tools/osm-city-lab/`, `wd1-city.js` and the Elastic-Hürth presenter, and `r2d-world.js` mounts that family into the visible four-island world.
+- Root cause sits in coordination/preflight: a mechanism/support/facade donor was promoted into visible content and then protected by “World PASS / do not rebuild”.
+- The current WSA Player work inherited the wrong visible foundation; this is not treated as an independent WSA invention.
+
+### BINDING RECOVERY
+- Added `recovery/POSTMORTEM_WSA_ONE_SHOT_LEGACY_OSM_CONTAMINATION_2026-10-04.md`.
+- Added `CURRENT_ONE_SHOT_VISUAL_RECOVERY_2026-10-04.md`.
+- Added machine-readable `MVP_VISIBLE_SOURCE_FIREWALL_2026-10-04.json`.
+- PR #348 classification is now:
+  - topology/owner/Track/anchors = PASS/KEEP;
+  - current visible environment foundation = **HUMAN FAIL**;
+  - Hürth/OSM visible content = rejected for the current MVP foundation;
+  - valid current WSA work is preserved pending its return.
+- One-Shot lock now separates topology PASS from visual acceptance and explicitly requires legacy visible-source cleanup before final review.
+- Production Control contract and Production SOP now type donor reuse by MECHANISM / PRESENTATION / CONTENT / DATA.
+- Fresh Chat Slice Protocol now starts with execution-mode precedence: ONE_SHOT internal checkpoints must not become serial Georg-facing micro-slices.
+- Productive Review policy now treats an actual wrong-source frame as HUMAN_VISUAL_FAIL even when browser/runtime tests are green.
+- Graveyard v1.8.0 / 58 graves adds **Der technische Donor, der zur Welt wurde**.
+
+### PROCESS LESSON
+Postmortems must reduce future ceremony, not create another gate. The accumulated safety rules had become a control-plane paradox: too cautious locally, insufficiently product-focused globally. Current correction keeps crash-safe checkpoints but restores the One-Shot as the execution unit.
+
+No destructive mutation of the currently running WSA/Work branch was made by this postmortem.
+
 ## 2026-10-04 · One-Shot execution drift correction
 
 ### PROCESS CORRECTION
