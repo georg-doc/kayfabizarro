@@ -30,7 +30,7 @@ for cid in ids:
         if v.get('yawRateDegPerSec'): f['runtimeYawRateDegPerSec']=round(v['yawRateDegPerSec'],1)
         if v.get('ikErr') is not None: f['ikHandErrorM']=round(v['ikErr'],4); f['palmToCentreDevDeg']=round(v['palmDev'],1)
         e['fluff'][rr]=f
-    e['comment']={'G1':'Push: wheelbarrow legs/rhythm kept; both palms on the ball back 20 deg above its equator, aimed at the ball centre. Ball stays in clip space; runtime rolls it and moves the root.',
+    e['comment']={'G1':'Push: wheelbarrow legs/rhythm kept; both palms on the ball back (20 deg above the equator on Medium, 30 deg on Large so the Large arms reach the smaller ladder ball), aimed at the ball centre. Ball stays in clip space; runtime rolls it and moves the root.',
        'G2':'Heavy push: walk_b legs, travel stripped, 0.75x speed, stronger lean.','G3':'Steering loop: runtime owns the turn (yaw rate given); clip carries the asymmetric step and body lean.',
        'G4':'Two-hand bench/ground work. Large uses the larger work chunk (Option A, decision c948e155): no arm correction.','G5':'One-hand work; Medium native, Large plain retarget.'}[vm['gap']]
     e['tags']=['fluff','work',vm['gap']]
@@ -41,7 +41,7 @@ for rr in ['Rig_Medium','Rig_Large']:
     libs[f'libs/{rr}/KFB_Motion_fluff01.glb']={'rig':rr,'group':'Fluff work motion pack 01 (FLUFF-01)','bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'clipCount':len(ids)}
 patch={'schema':'kfb.motion-catalog.v1/patch','batch':'FLUFF-01','date':'2026-10-04','base':'KFB_Motion_Library.catalog.json (+ patch_an01, patch_duel01)',
  'apply':'append clips[] to catalogue.clips and libraries{} to catalogue.libraries; clipCount +9. Nothing existing changes.',
- 'workpieceRule':'Option A (Production Control c948e155): Rig_Large two-hand work and push use a work chunk of radius 0.22 x body height. Presentation size only; inventory/resource/pickup value and global Fluff ball size stay runtime-owned.',
+ 'workpieceRule':'Push/steer balls follow the Fluff Mass Ladder (brief cd69323: 6 Small = 1 Medium, 3 Medium = 1 Large by volume): Medium ball r 0.477 m (0.22 x Medium body height, Blender reading), Large ball r 0.477 x 3^(1/3) = 0.689 m. Option A (Production Control c948e155): the Large two-hand bench/ground work chunk (knead_press, collect_debris) is r 0.22 x Large body height = 0.922 m. All sizes are presentation only; inventory/resource/pickup value stays runtime-owned.',
  'bodyHeight':{'Rig_Medium':2.17,'Rig_Large':4.19},'libraries':libs,'clips':clips}
 json.dump(patch,open('/tmp/f2/KFB_Motion_Library.catalog.patch_fluff01.json','w'),indent=1)
 print(len(clips),libs)

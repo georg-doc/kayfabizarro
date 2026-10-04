@@ -111,6 +111,10 @@ def ball_contacts(rig,seq,R,el_deg=20,reach=0.9,palm_gap=0.02):
         if d<reach: lo=m
         else: hi=m
     zc=(lo+hi)/2; C=np.array([xc,R,zc])
+    feas=np.mean([np.linalg.norm(tgt(zc,sd)[0]-sh[sd])/rig.armlen[sd] for sd in 'lr'])<=reach+0.01
+    if not feas and el_deg<75:   # ball too low to reach at this contact height: move contact up the ball's back
+        return ball_contacts(rig,seq,R,el_deg+5,reach,palm_gap)
+    ball_contacts.last_el=el_deg
     return C,{sd:(tgt(zc,sd)[0],-tgt(zc,sd)[1]) for sd in 'lr'},a
 def apply_push_arms(rig,seq,C,T):
     out=[]; x0={'l':None,'r':None}; errs=[]; palms=[]
