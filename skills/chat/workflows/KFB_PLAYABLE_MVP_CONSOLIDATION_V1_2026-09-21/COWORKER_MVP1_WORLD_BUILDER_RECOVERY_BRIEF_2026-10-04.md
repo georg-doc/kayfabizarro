@@ -5,6 +5,24 @@ Role: **senior recovery integrator / independent product diagnostician**
 Primary objective: **get Georg a working playable WorldBuilder MVP 1**
 Do not start Combat, model comparisons or new feature families.
 
+
+## DELIVERY SURFACE · GPT SITE PRIMARY
+
+Binding policy:
+`skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+
+The primary human/product surface for this recovery is the **World Studio GPT Site**.
+
+Do not start with Cloudflare publication.
+
+If the current Coworker environment cannot publish Sites:
+- leave exact QA-green Site-ready source;
+- record `SITES_PUBLISHER_REQUIRED`;
+- hand off to a Sites-capable executor;
+- do not substitute Cloudflare.
+
+Cloudflare is downstream compatibility/formal KFB-Hub mirror work when required.
+
 ## 1 · Read first
 
 GitHub current state wins.
@@ -44,7 +62,7 @@ Do **not** continue the previous executor's task list mechanically.
 
 Audit the actual product and flatten the current mess into one usable result:
 
-> **one source-clean, directly playable KFB WorldBuilder MVP 1 on the real KFB Cloudflare Stage.**
+> **one source-clean, directly playable KFB WorldBuilder MVP 1 as the World Studio GPT Site.**
 
 You are specifically asked to challenge the previous failure classification.
 
@@ -198,15 +216,15 @@ Do not repair:
 - optional content;
 unless they directly break the human MVP.
 
-### Phase D · Stage
+### Phase D · Site publish / downstream mirror
 
-Publish the integrated human MVP to:
+Publish/update the integrated human MVP through the **Sites workflow**.
 
-`https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/`
+Open the exact returned `.frizzlebob.chatgpt.site` URL and verify the expected revision.
+Persist Site project/version/deployment/source identity.
+Update KFB Hub metadata.
 
-Update the KFB Hub in the same publication batch.
-
-Open the exact URL and verify the expected revision.
+Only then create/verify a bounded Cloudflare KFB-Hub mirror when the current acceptance/public-compatibility contract requires it. A secondary mirror failure must not cause product rebuild or erase a verified Site.
 
 No GitHub Pages, raw CDN or local-only handoff.
 
@@ -270,7 +288,8 @@ with:
 - what you preserved;
 - what you repaired;
 - actual tests and counts;
-- direct Cloudflare Stage;
+- exact verified GPT Site URL and Site identity;
+- downstream Cloudflare mirror status when required;
 - visible browser proof;
 - known product defects;
 - quarantined QA-harness defects;
