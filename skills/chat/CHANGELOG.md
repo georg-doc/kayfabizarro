@@ -1,3 +1,26 @@
+## 2026-10-04 · WB2 current-main convergence + four-island corridor PASS
+
+### WORLD PREFLIGHT
+- Fresh current-main WorldBuilder candidate is Draft PR **#348** on `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`.
+- Old PR #332 is retained as donor/history only.
+- `WORLD-CONVERGENCE-BASE-01` is **PASS**: 9/9 source, Chromium/WebGL and Resource Registry green.
+- `WORLD-MULTI-ISLAND-CORRIDOR-01` is **PASS**:
+  - Town / Dystopia / Utopia / Protopia;
+  - three Track-Core `ROAD_BRIDGE` connections;
+  - stable Golden-Journey anchors;
+  - data-driven World Recipe set `kfb.mvp.archipelago.01`;
+  - canonical Dystopia/Utopia/Protopia deck + Card seed refs;
+  - R2C palette identities;
+  - existing WB2, R2D, P1/P2 nature and `kfb-facade-rule-v1` owners retained.
+- Tested corridor implementation head: `0841b89ae8274118687e946318458201b402c5b5`.
+- Corridor source: **9/9 PASS** · run `37166355940` / job `111329943298`.
+- Corridor Chromium/WebGL: **PASS** · run `37166356027` / job `111329943523`.
+- Browser artifact: `11289583486` · `sha256:c6a3da665ad0b113ac23a50c263fd36c7a3dc1478ef37f2f37a3508e013ad472`.
+- Resource Registry: **PASS** · run `37166355944` / job `111329943425`.
+- Current PR handoff head `08f8561ccfdb9ee0f7fd0d26a60eb54ee6865532` revalidated with all three workflows green.
+- No Player, Motion, Drive, Residents, Stage or Live promotion.
+- Exactly one next hard gate: **KAYKIT-NATIVE-BLENDER-BASELINE-01** on Motion PR #344.
+
 ## 2026-10-04 · Global KFB game context · pull, don't gate
 
 ### CURRENT_REFERENCE
