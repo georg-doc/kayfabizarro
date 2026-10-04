@@ -27,6 +27,22 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+
+## 2026-10-04 · KFB game bigger picture · global reference
+
+Current global product/context reference:
+`skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`
+
+Use it for major game/world/onboarding/progression decisions together with the public KFB and Cut&Play references:
+- https://kayfabizarro.pages.dev/#kfb
+- https://kayfabizarro.pages.dev/#cutplay
+
+Interpretation rule:
+- analog rules and meta-narration are origin/source references, not digital gameplay shackles;
+- keep the digital game outcome-open for chill/fun, exploration and player-created meaning;
+- the 3D target is a KFB claymation cartoon open world as a living toy;
+- **PULL, DON'T GATE** is a global game-design principle: prefer invitations, rewards, landmarks, Residents, Cards, music and return value over invisible walls, forced tutorial locks or one correct route. Gate rewards/handoffs rather than exploration wherever practical.
+
 ## 2026-10-04 · Site / God Mode / Lean Memory + One-Shot precheck
 
 Playable-MVP architecture now also has durable GitHub contracts for the Site-native Stage/Live world, God Mode Scene Composer and Lean Memory/Fractal Almanac persistence:
