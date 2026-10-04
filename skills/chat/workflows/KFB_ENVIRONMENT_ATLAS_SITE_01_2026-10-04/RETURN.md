@@ -1,6 +1,6 @@
-# RETURN · KFB Environment Atlas Site 01 · preparation
+# RETURN · KFB Environment Atlas Site 01 · full-project preparation
 
-Status: **READY FOR WORK IMPLEMENTATION · DRAFT PR · NO SITE/STAGE YET**
+Status: **READY FOR WORK IMPLEMENTATION · FULL PROJECT CORPUS SCOPE · DRAFT PR · NO SITE/STAGE YET**
 Date: 2026-10-04
 Workflow: `KFB-ENVIRONMENT-ATLAS-SITE-01`
 
@@ -10,133 +10,198 @@ Workflow: `KFB-ENVIRONMENT-ATLAS-SITE-01`
 - Branch: `chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04`
 - Draft PR: **#353**
 - Base: `main@9c2fee62b815f19cf967867f54985bd22e3f222b`
-- Prep evidence head before this Return: `025f29cd82feef6e1c8ec8ffcf3358f11f6edf45`
+- Branch head immediately before this Return update: `7ecd62a89f24e3e2138dce232be58bf3250bcdad`
 - Merge: **NOT PERFORMED**
 - Live promotion: **NOT PERFORMED**
 
-## Outcome prepared
+## Current outcome
 
-A Work-executable, owner-safe brief now exists for a KFB Environment Atlas Site that consolidates:
-
-- the currently source-proven Hex families and hard-earned connector/edge knowledge;
-- KayKit + Kenney building catalog discovery from the current Registry;
-- Clay deformation standards as a visual SSOT rather than undocumented parameters;
-- source isolation and exact provenance for every visual donor;
-- current Environment/Generator/Recipe donors as versioned views without creating a mega-runtime;
-- the 2026-10-04 OSM/Hürth visible-source firewall.
+The prepared Work assignment now covers the **full useful Claude Design project lineage "KayKit Environment Atlas"**, not only Hex + Buildings.
 
 Existing owners remain singular:
-- environment/hex: `tools/world_atlas`;
-- assets: `registry/assets/v1` + Asset Librarian;
+- Environment/Hex: `tools/world_atlas`;
+- asset truth: `registry/assets/v1` + Asset Librarian;
 - Clay style: current Clay Style SSOT;
-- World/game runtime: receiving WorldBuilder/WB2 owner, not this Site.
+- game/world runtime: receiving WorldBuilder/WB2 owner, not this Site;
+- EyeRig: existing KFB EyeRig owner; Plant Prop only adapts to it.
 
-## Files prepared
+The Site is a catalog / project-corpus / visual-SSOT / provenance surface. It must not become another world runtime, generator owner, asset library or EyeRig.
 
-- `WORK_BRIEF.md`
-- `SOURCE_MAP.json`
-- `PREP_EVIDENCE.md`
-- this `RETURN.md`
+## Corrected Hex source truth
 
-## Prep test result
+Georg supplied the exact missing third KayKit source:
 
-**22/22 static prep checks PASS.**
+`media/3D_Assets/Kaykit_Medieval Snow Biome/`
 
-Covered:
-- source-map validity;
-- current Hex family identity count;
-- 12 building-pack Registry shard counts;
-- direct Cloudflare Stage route contract;
-- no invented ChatGPT Site URL;
-- current 2-KayKit + 1-Kenney source identity;
-- source firewall;
-- literal Data Generator naming gap kept `SOURCE_REQUIRED`;
-- Kenney Hex duplicate alias evidence;
-- clean branch diff.
+Source proof:
+- R2D pin: `ab65e8c46ca3c07db4294214a63384975fb7d0d9`;
+- license blob: `1019e43f05b4dce92a7a97de949f6072d820ff7e`;
+- license identity: **KayKit : Medieval Builder Pack Patreon Bonus (1.0)**;
+- Models: **57 GLB + 21 FBX**;
+- GLB split: **42 Hex tiles + 15 object/building/nature assets**.
 
-Not tested / not claimed:
-- Site implementation;
-- browser/WebGL behavior;
-- screenshots;
-- ChatGPT Site;
-- Cloudflare Stage;
-- human acceptance.
+The three KayKit Hex-capable families are therefore:
 
-## Important source finding
-
-Georg described “the three Hexagon kits from the K-Kit creator”.
-
-Current GitHub source truth proves:
 1. KayKit Medieval Hexagon Pack;
-2. KayKit Medieval Builder Pack, including 128 measured hex tiles;
-3. Kenney Hexagon Kit / `GLB_hexagon_kit`.
+2. KayKit Medieval Builder Pack;
+3. KayKit Medieval Snow Biome / Medieval Builder Pack Patreon Bonus.
 
-It does **not currently prove a third distinct KayKit Hex pack**. Work must resolve that identity from an exact source before presenting a 3×KayKit label. This is already encoded in the brief and source map so it cannot be silently guessed.
+Kenney `GLB_hexagon_kit` remains an additional, separate secondary Hex family and must stay deduplicated from the `kenney_hexagon-kit` alias.
 
-## Clay finding
+No current Snow Biome Registry shard exists. Work must reconcile the existing exact source through the normal Registry/Librarian path or show it as `SOURCE_PROVEN / REGISTRY_PENDING`.
 
-The current Clay Style SSOT and Golden Matrix are branch-local on `work/clay-style-ssot-2026-10-01`, not on `main`.
+## Mandatory Environment Atlas project modules
 
-The Work brief pins their blobs and requires:
-`UNCHANGED SOURCE | LOCKED GOLDEN | CURRENT CANDIDATE | CONTACT/EDGE CLOSE-UP | COST`.
+These are explicitly in scope:
 
-`building_A` is the Golden master; `building_E` Golden support; Kenney starts as source evidence until explicitly promoted.
+- S11 `KayKit_Hex_Realm_S11`;
+- S12 `KayKit_Hex_Tile_Model_S12`;
+- S13 / S13.2+ Dungeon model/generator/light/props;
+- S14 `KayKit_Bits_Model_S14`;
+- S15 Space Base;
+- S16 Restaurant/Furniture;
+- S17 Restaurant placement grammar;
+- S18/S19 Plant Prop + EyeRig;
+- S20 Sample Atlas;
+- S21 Room Study + inline editor donor;
+- S22 wall nodes / room study / failure postmortems / editor-toolbox direction;
+- earlier useful active/frozen project donors according to current Housekeeping rather than file age.
 
-## Generator finding
+S11/S12/S13.2 are mandatory visible project modules, not merely hidden code dependencies.
 
-No current repo artifact was found under the literal names `Data Generator`, `Data-Generator`, `Daten Generator`, `Daten-Generator` or `Datengenerator`.
+## Existing corpus already recovered
 
-Related exact sources are mapped:
-- World Atlas Hex Realm;
-- Dungeon Generator S13.2;
-- Hex Terrain Generator v1;
-- Babel Hex Platform Generator;
-- R2C/R2D recipe/environment work.
+### S1–S13.2
+Reviewed World Atlas intake and promoted owner:
+`tools/world_atlas/`
+plus
+`tools/KFB-ToolBox/_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/`
 
-Work must map Georg's intended “Daten Generator” to exact provenance before naming/integrating it.
+### S18/S19 Plant Prop
+Actual 27-file runtime export:
+`tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/`
+
+Important exact modules:
+- `plant-eyes.js` blob `c14eb4b2a6cdde56bc18be1ab89a13793f2c4d95`;
+- `plant-rig.js` blob `ed77c7cb4019bf54128e47ec4fcbad69c0d88995`.
+
+`plant-eyes.js` explicitly adapts to existing KFB `pet-eye-rig.v6.js`; it is not a second eye system.
+
+### S20/S21
+17-file export:
+`tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/`
+
+### S22
+26-file lean handover:
+`tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/`
+
+## Recovery gap · S14–S17
+
+Current Housekeeping and Changelog document S14–S17 as built/active and preserve detailed measured behavior, but their actual runtime pages/modules were not found in the current lean exports.
+
+Recovery-required source includes, if still present in the Claude Design project:
+- `KayKit_Bits_Model_S14.html`;
+- `lib/bits-inventory.js`;
+- S14 measurement probes;
+- `KayKit_Space_Base_S15.html`;
+- `lib/space-grid.js`;
+- `KayKit_Restaurant_S16.html`;
+- `lib/restaurant-grid.js`;
+- `KayKit_Restaurant_S17.html`;
+- `lib/restaurant-plan.js`.
+
+**Do not reconstruct these runtimes from Changelog prose.**
+
+A precise full-project ZIP request is prepared in:
+`FULL_PROJECT_EXPORT_REQUEST.md`.
+
+The export is additive recovery only: compare exact source/status before importing and do not overwrite newer canonical GitHub source merely because it appears in the ZIP.
+
+## Prepared files
+
+Workflow folder:
+1. `WORK_BRIEF.md`
+2. `SOURCE_MAP.json`
+3. `PROJECT_CORPUS_AUDIT.md`
+4. `FULL_PROJECT_EXPORT_REQUEST.md`
+5. `PREP_EVIDENCE.md`
+6. this `RETURN.md`
+
+Central discovery metadata:
+7. `skills/chat/START_HERE.md`
+8. `skills/chat/REGISTRY.json`
+9. `skills/chat/CHANGELOG.md`
+10. `kfb-hub/index.html`
+
+## Tests / evidence
+
+Original preparation audit: **22/22 PASS**.
+
+Final pre-scope handoff verification: **15/15 PASS**.
+
+Full-project correction audit: **24/24 PASS**.
+
+The 24-pass correction audit verifies:
+- exactly three source-proven KayKit Hex families;
+- separate Kenney Hex family;
+- Snow 57 GLB / 42 Hex / 15 objects and exact license identity;
+- absence of a current Snow Registry shard;
+- exact S11/S12/S13.2 source pins;
+- Plant Prop 27-file export;
+- S20/S21 17-file export;
+- S22 26-file lean handover;
+- exact Plant EyeRig adapter + Plant rig blobs;
+- expected direct S14/S15/S16/S17 promoted-source recovery gap;
+- corpus audit and export request presence.
+
+## Clay visual SSOT
+
+Current Clay Style SSOT and Golden Matrix remain branch-local on `work/clay-style-ssot-2026-10-01`, not on main.
+
+Building evidence layout remains:
+
+`UNCHANGED SOURCE | LOCKED GOLDEN | CURRENT CANDIDATE | CONTACT/EDGE CLOSE-UP | COST`
+
+- `building_A` = Golden master;
+- `building_E` = Golden support;
+- Kenney/source families remain source evidence until explicitly promoted;
+- no universal torsion angle is accepted KFB truth.
+
+## Visible-source firewall
+
+The 2026-10-04 MVP source firewall remains binding.
+
+The Site must not silently load/fallback to:
+- `fixtures/huerth-b1-siblings-v0.json`;
+- `tools/osm-city-lab/`;
+- `elastic-grotesque-clay-huerth01`.
+
+Missing source means `SOURCE_REQUIRED` / `RECOVERY_REQUIRED`, not Legacy OSM or a generic substitute.
+
+## "Data Generator" label
+
+No exact current artifact was found under the literal names `Data Generator` / `Daten-Generator`.
+
+The full-project corpus now gives Work the correct source set against which to resolve that phrase. Do not invent a new owner to satisfy the name.
 
 ## Reserved routes
 
-- Human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/`
-- Existing public World Atlas: `https://kayfabizarro.pages.dev/world-atlas/` — protected / unchanged.
-- ChatGPT Site: **NOT CREATED**; record the real URL only after Work creates it.
+- Human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/` — **NOT DEPLOYED**
+- Existing public World Atlas: `https://kayfabizarro.pages.dev/world-atlas/` — protected / unchanged
+- ChatGPT Site: **NOT CREATED**; record the actual URL only after Work creates it
 
 ## Unresolved items
 
-1. Exact identity of the user-described third KayKit Hex pack.
-2. Exact source identity behind the phrase “Daten Generator”.
-3. Clay SSOT is current on PR/branch, not merged to `main`; Work must consume the pinned current source without pretending main already contains it.
-4. Site implementation/browser evidence does not exist yet by design.
+1. S14–S17 actual runtime source recovery from the full Claude Design project export.
+2. Snow Biome central Registry/Librarian reconciliation.
+3. Exact source identity behind Georg's phrase “Daten Generator”, if it is not one of the now-mapped project modules.
+4. Clay SSOT is current on its source branch/PR rather than main.
+5. Site implementation/browser evidence does not exist yet by design.
 
 ## One next gate
 
-**WORK EXECUTION ON PR #353**:
-continue this exact branch/PR, build the Site in one outcome, publish/verify the reserved direct Cloudflare Stage, create the actual ChatGPT Site, update Return/changelog/router/Hub, then hand Georg exactly one visual/catalog gate.
+**FULL PROJECT EXPORT RECOVERY + WORK EXECUTION ON PR #353**
+
+The full export may be supplied before or during Work. Work continues this exact branch/PR, reconciles missing project source without rebuilding it, builds one Site outcome, creates the actual ChatGPT Site, publishes/opens the reserved direct Cloudflare Stage, updates Return/changelog/router/Hub, then hands Georg exactly one **VISUAL / CATALOG / PROJECT-COMPLETENESS** review gate.
 
 No auto-merge. No Live promotion.
-
-
-## Final prep metadata checkpoint
-
-Central discovery metadata is included on this same branch:
-
-- `skills/chat/START_HERE.md` — current Environment Atlas Site routing note;
-- `skills/chat/REGISTRY.json` — `kfb-environment-atlas-site-01-2026-10-04` = `READY_FOR_WORK`;
-- `skills/chat/CHANGELOG.md` — additive 2026-10-04 prep entry;
-- `kfb-hub/index.html` — P0 Work/PREP card linked to this Work brief; no fake preview link.
-
-Changed-file set at handoff remains exactly 8 files:
-
-1. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/WORK_BRIEF.md`
-2. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/SOURCE_MAP.json`
-3. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/PREP_EVIDENCE.md`
-4. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/RETURN.md`
-5. `skills/chat/START_HERE.md`
-6. `skills/chat/REGISTRY.json`
-7. `skills/chat/CHANGELOG.md`
-8. `kfb-hub/index.html`
-
-Branch head immediately before this Return metadata update:
-`a3da9082da6bb4808541ed8a6c4fdc7adbd84962`.
-
-This Return update itself is the final Git file write of the preparation handoff; use its resulting commit as the exact execution head for Work/PR #353.
