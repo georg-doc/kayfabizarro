@@ -1,3 +1,18 @@
+## 2026-10-04 · Eingefrorener Vier-Insel-Kandidat auf bestehender GPT Site veröffentlicht
+
+[World Studio öffnen](https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/). Sites meldet **succeeded** (2026-10-04T18:51:43.186786+00:00). Die 92 eingefrorenen Laufzeitdateien wurden im Deployment-Archiv gegen die gesicherten Prüfsummen geprüft: **92/92 identisch**. Keine Produktänderung in diesem Publish-Gate.
+
+- Runtime-Quelle: `3d9aaf5f6623f9009d6e68dd3c042009a160b044`
+- Site-Quellcommit: `615df460fbee99561f294439d2963baa7cb2d5b5`
+- Site-Projekt: `appgprj_6ac27631f74c8191b52e4819c1973668`
+- Version: `appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74`
+- Deployment: `appgdep_6ac2a03072788191a4d542b2ea7b7301`
+- Bestehende private Zielgruppe erhalten; keine neue Site, keine Cloudflare-Änderung, kein Merge.
+
+**Veröffentlichung ist keine Abnahme.** Automatische Browserprüfung weiterhin nicht ausgeführt (Policy-Service nicht verfügbar). Aktueller nächster Gate: **Georg spielt Town, Dystopia, Utopia und Protopia auf derselben Site frei.** Technischer Beleg: `SITE_FROZEN_PUBLICATION_2026-10-04.json`. Ältere Abschnitte dokumentieren frühere Zustände.
+
+---
+
 ## 2026-10-04 · CURRENT GATE CORRECTION · PUBLISH CANDIDATE BEFORE AUTOMATED BROWSER QA
 
 The four-island recovery candidate is implemented and frozen, but the primary GPT Site still serves the older version.

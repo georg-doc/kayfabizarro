@@ -22,7 +22,7 @@
     "cloudflareRole": "SECONDARY_MIRROR"
   },
   "productOutcome": "PUBLISH_EXACT_FOUR_ISLAND_CANDIDATE_TO_EXISTING_GPT_SITE_FOR_HUMAN_FREEPLAY",
-  "state": "FOUR_ISLAND_CANDIDATE_SITE_PUBLICATION_REQUIRED",
+  "state": "FOUR_ISLAND_CANDIDATE_SITE_PUBLISHED_GEORG_FREEPLAY_PENDING",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -40,9 +40,9 @@
     "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
     "goldenJourneyE2E": "HARNESS_ENDPOINT_FAILURE_QUARANTINED_NOT_PRODUCT_FAILURE",
     "publicStage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
-    "humanAcceptance": "NOT_REVIEWED",
+    "humanAcceptance": "PENDING_GEORG_FREEPLAY",
     "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "primaryGptSite": "DEPLOYED_OWNER_PRIVATE_BROWSER_PLAY_UNVERIFIED"
+    "primaryGptSite": "PUBLISHED_FROZEN_CANDIDATE_BROWSER_UNVERIFIED"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -335,7 +335,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "SITE_PUBLISH_EXACT_92_FILE_CANDIDATE_TO_EXISTING_WORLD_STUDIO_PROJECT_THEN_GEORG_FREEPLAY",
+  "nextInternalAction": "GEORG_FREEPLAY_ALL_FOUR_ISLANDS_ON_SAME_GPT_SITE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -383,7 +383,7 @@
     "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
     "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
   },
-  "frozenRuntimeHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+  "frozenRuntimeHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
   "freezeRecovery": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.json",
   "failureClassificationOverride": {
     "previous": "FROZEN_FAILED_CANDIDATE",
@@ -508,34 +508,27 @@
     "Whole nine-dimension score and integrated performance"
   ],
   "openDeliveryVerification": [
-    "Public Stage browser smoke and current Studio laden file chooser smoke: browser security policy service unavailable."
+    "Georg freeplay acceptance pending; automated browser verification unavailable and nonblocking for publication."
   ],
   "primaryPlatform": "GPT_SITE",
   "primarySite": {
     "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
-    "deploymentId": "appgdep_6ac276cdd08481919ed7a436f9308775",
-    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
     "status": "succeeded",
     "audience": "OWNER_PRIVATE",
-    "sourceCommit": "45b28d444960cc0acab4a0a72359e5289e197506",
-    "sourceRuntimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
-    "exactRuntimeFiles": 80,
+    "sourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
+    "sourceRuntimeHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "exactRuntimeFiles": 92,
     "iframe": false,
     "newRuntimeOwner": false,
-    "browserPlayVerification": "NOT_RUN_TOOL_POLICY_SERVICE_UNAVAILABLE"
+    "browserPlayVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE"
   },
   "humanAcceptance": {
-    "status": "FAIL",
-    "date": "2026-10-04",
-    "evidence": "Georg freeplay screenshot from primary GPT Site",
-    "findings": [
-      "pale Track-Core road/bridge/support geometry dominates frame",
-      "Joyride/T4 clay-strand presentation missing",
-      "flat grey background/void dominates",
-      "source-clean objects read as sparse integration placement rather than living authored place"
-    ],
-    "record": "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md"
+    "status": "PENDING",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "gate": "Georg freeplay"
   },
   "joyridePresentation": {
     "status": "REQUIRED_MISSING",
@@ -601,9 +594,9 @@
     "paletteSource": "R2C PAL @ current main",
     "siteUpdate": "SAME_GPT_SITE_IN_PLACE",
     "implementationHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-    "status": "CANDIDATE_NOT_HUMAN_REVIEW_READY",
+    "status": "PUBLISHED_CANDIDATE_HUMAN_ACCEPTANCE_PENDING",
     "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/FOUR_ISLAND_RECOVERY_2026-10-04/RESULT.json",
-    "siteUpdated": false,
+    "siteUpdated": true,
     "browserBlock": "ADMIN_POLICY_SERVICE_UNAVAILABLE",
     "scope": [
       "Town",
@@ -611,7 +604,7 @@
       "Utopia",
       "Protopia"
     ],
-    "nextGate": "Regular browser full integration/visual/gameplay check; then same-Site update"
+    "nextGate": "Georg freeplays all four islands; deployment is not acceptance"
   },
   "publicationGateCorrection": {
     "date": "2026-10-04",
@@ -624,15 +617,49 @@
       "The current candidate is frozen as a complete 92-file runtime closure.",
       "Human freeplay on the private Site is the meaningful product gate."
     ],
-    "rule": "Automated browser verification is supplementary acceptance evidence here; it must not block publishing a private human-review candidate."
+    "rule": "Automated browser verification is supplementary acceptance evidence here; it must not block publishing a private human-review candidate.",
+    "completedDeploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
   },
   "site": {
     "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
     "project": "appgprj_6ac27631f74c8191b52e4819c1973668",
-    "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+    "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
     "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
     "runtimeClosureFiles": 92,
-    "status": "OLD_VERSION_LIVE_NEW_CANDIDATE_READY_FOR_IN_PLACE_SITE_UPDATE",
-    "next": "UPDATE_EXISTING_SITE_IN_PLACE"
+    "status": "FROZEN_92_FILE_CANDIDATE_PUBLISHED_GEORG_FREEPLAY_PENDING",
+    "next": "GEORG_FREEPLAY",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
+  },
+  "previousHumanAcceptance": {
+    "status": "FAIL",
+    "date": "2026-10-04",
+    "evidence": "Georg freeplay screenshot from primary GPT Site",
+    "findings": [
+      "pale Track-Core road/bridge/support geometry dominates frame",
+      "Joyride/T4 clay-strand presentation missing",
+      "flat grey background/void dominates",
+      "source-clean objects read as sparse integration placement rather than living authored place"
+    ],
+    "record": "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md"
+  },
+  "publicationReceipt": {
+    "schema": "kfb.site-frozen-publication/1",
+    "date": "2026-10-04T18:51:43.186786+00:00",
+    "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "status": "succeeded",
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "audience": "OWNER_PRIVATE",
+    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
+    "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "runtimeFiles": 92,
+    "archiveRuntimeHashMatches": 92,
+    "productEditsDuringPublish": 0,
+    "automaticBrowserVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE",
+    "humanAcceptance": "PENDING_GEORG_FREEPLAY",
+    "cloudflare": "UNTOUCHED",
+    "merge": "NONE"
   }
 }
