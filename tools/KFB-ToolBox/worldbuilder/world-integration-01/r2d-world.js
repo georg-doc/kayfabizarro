@@ -4,6 +4,13 @@ import { makeArchipelago } from '../procedural-test-world-01/r2d-archipelago.v1.
 import { mountR2DPresentation } from '../procedural-test-world-01/r2d-presentation.v1.js';
 import { mountR2DBuildings } from '../procedural-test-world-01/r2d-buildings.v1.js';
 
+import {reconcileRecoveryDocument} from '../procedural-test-world-01/recovery-document.v1.mjs';
+import {buildClayStrand} from '../procedural-test-world-01/joyride-strand.v1.js';
+import {prepareJoyride} from '../procedural-test-world-01/joyride-world-context.v1.js';
+import {signatureRecipe,createLifeTree,PALETTES} from '../procedural-test-world-01/signature-life-tree.v1.mjs';
+import {protectedAnchors} from '../procedural-test-world-01/world-clearance.v1.mjs';
+import {clayContext,adaptRegistered} from '../procedural-test-world-01/wb2-source-evidence.v1.js';
+
 const TRACK_PIN='64d8597c3dad1dc9814c794d4a566d589e1e1a25';
 const R2C_PIN='927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f';
 const TRACK_DIR='skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/BUILDER_2026-09-27/';
@@ -73,8 +80,9 @@ function singleWorld({id,Z,TC,ST,R2C,core}){
   };return W;
 }
 
-function archipelagoWorld({id,TC,ST,R2C,arch}){
+function archipelagoWorld({id,TC,ST,R2C,arch,joyride}){
   const group=new THREE.Group();group.name='R2D MVP archipelago';
+  const trees=new Map(),treeRecipes=arch.nodes.map(n=>signatureRecipe(n,joyride.corridors));
   const presentations=new Map(),buildingSets=new Map(),nodeGroups=new Map(),collisionBounds=new WeakMap();let editedBuildings=null,heightReader=null;
   const tile={cx:+arch.bounds.cx.toFixed(3),cz:+arch.bounds.cz.toFixed(3),size:arch.bounds.size,seg:256};
   const spawnAnchor=arch.anchorMap.get('town.spawn.market');
@@ -106,30 +114,33 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
     maskAt(x,z){const n=insideNode(x,z);return n?n.field.maskAt(x,z):'under'},
     groundAt(x,z,terrainHeight){const b=nearestBridge(x,z);const width=(b?.q?.prm?.width||0)/2+.5;if(b&&b.d<=width)return b.q.p[1];// Track Core roads include their authored off-island bridgeheads. SDF only bounds terrain, not a rendered road's support.
       const n=arch.nodes.find(n=>n.plan.roadDist(x,z)<=n.plan.hw+.2);if(n)return Math.max(terrainHeight,n.plan.roadY);return terrainHeight},
-    solidAt(x,z){if(editedBuildings){for(const root of editedBuildings()){if(!root.visible)continue;root.updateWorldMatrix(true,false);const key=root.matrixWorld.elements.join(','),old=collisionBounds.get(root);let b=old?.bounds;if(!old||old.key!==key||old.model!==root.userData.model){b=new THREE.Box3().setFromObject(root);collisionBounds.set(root,{key,bounds:b,model:root.userData.model})}if(x>=b.min.x&&x<=b.max.x&&z>=b.min.z&&z<=b.max.z)return b.max.y-b.min.y}return 0}for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q.height||0}return 0},
+    solidAt(x,z){for(const r of treeRecipes)if(Math.hypot(x-r.position[0],z-r.position[2])<r.trunkProfile.radius)return r.trunkProfile.height;if(editedBuildings){for(const root of editedBuildings()){if(!root.visible)continue;root.updateWorldMatrix(true,false);const key=root.matrixWorld.elements.join(','),old=collisionBounds.get(root);let b=old?.bounds;if(!old||old.key!==key||old.model!==root.userData.model){b=new THREE.Box3().setFromObject(root);collisionBounds.set(root,{key,bounds:b,model:root.userData.model})}if(x>=b.min.x&&x<=b.max.x&&z>=b.min.z&&z<=b.max.z)return b.max.y-b.min.y}return 0}for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q.height||0}return 0},
     adoptBuildingObjects(provider){editedBuildings=provider;for(const b of buildingSets.values())b.root.visible=false;},
-    buildingSceneRecords(){return [...buildingSets.values()].flatMap(b=>b.report.placed.map(p=>({id:p.id,name:p.assetId.split('/').pop(),kind:'prop',registeredAssetId:p.assetId,worldId:b.report.worldId,source:{...p.source,path:p.assetId},transform:{position:p.position,rotation:p.rotation,scale:[p.fitScale,p.fitScale,p.fitScale]}})))},
+    buildingSceneRecords(){return [...buildingSets.values()].flatMap(b=>b.report.placed.map(p=>({id:p.id,name:p.assetId.split('/').pop(),kind:'prop',registeredAssetId:p.assetId,worldId:b.report.worldId,legacyTransform:p.legacyTransform,source:{...p.source,path:p.assetId},transform:{position:p.position,rotation:p.rotation,scale:[p.fitScale,p.fitScale,p.fitScale]}})))},
+    reconcileDoc(doc){return reconcileRecoveryDocument(doc,W.buildingSceneRecords(),treeRecipes)},
     buildingAt(x,z){for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q}return null},
     patchDoc(doc){
       doc.id=W.docId;
       doc.terrain={seed:3,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};
       doc.objects=[];
-      doc.world={format:'kfb.r2d.archipelago-ref/1',provider:PROVIDER,recipeSet:arch.recipeSet.id,source:zone.provenance,graph:arch.worldGraph,player:{anchor:'town.spawn.market',position:[spawn.x,0,spawn.z],heading:spawn.heading}};
+      doc.world={format:'kfb.r2d.archipelago-ref/1',provider:PROVIDER,recipeSet:arch.recipeSet.id,source:zone.provenance,graph:arch.worldGraph,signatureLifeTrees:treeRecipes,placementRevision:'four-island-recovery-1',player:{anchor:'town.spawn.market',position:[spawn.x,0,spawn.z],heading:spawn.heading}};
       doc.sources.world={owner:'KFB WorldBuilder / WB2',terrain:'r2d-island-core.v1.js + r2d-archipelago.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'Registry native RED / Industrial / Space Base / GREEN',goldenJourney:'GOLDEN_JOURNEY_MVP_2026-10-04.json'};
       return doc;
     },
-    stage({camera,controls,fog}){camera.near=.1;camera.far=2400;camera.updateProjectionMatrix();controls.maxDistance=1100;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=260;fog.far=1150}},
+    stage({camera,controls,fog,background}){background?.set?.('#96bede');if(fog?.color)fog.color.set('#96bede');camera.near=.1;camera.far=2400;camera.updateProjectionMatrix();controls.maxDistance=1100;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=260;fog.far=1150}},
     async mount({scene,renderer,heightAt}){
       heightReader=heightAt;
+      const U=await clayContext();
       for(const n of arch.nodes){
         const ng=new THREE.Group();ng.name='R2D island · '+n.id;nodeGroups.set(n.id,ng);group.add(ng);
-        const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
-        const road=ST.buildTrack(THREE,n.plan.stream,mat);road.name='R2D Track Core road · '+n.id;road.userData.sourceRecord={assetId:road.name,packId:'Track Core',source:{commit:TRACK_PIN,path:TRACK_DIR+'stream-to-three.mjs'}};road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});ng.add(road);
-        const b=await mountR2DBuildings({group:ng,plan:n.plan,field:n.field,renderer});buildingSets.set(n.id,b);
+        const palette=PALETTES[n.recipe.biome],road=buildClayStrand(THREE,n.plan.stream,{U,palette,...joyride.contexts.get(n.id)});road.name='Joyride · '+n.id;ng.add(road);
+        const recipe=treeRecipes.find(r=>r.worldId===n.id),anchors=protectedAnchors(n.anchors),trunk={id:recipe.id,point:[recipe.position[0],recipe.position[2]],radius:recipe.trunkProfile.radius,kind:'root'};
+        const b=await mountR2DBuildings({group:ng,plan:n.plan,field:n.field,corridors:joyride.corridors,anchors,roots:[trunk]});buildingSets.set(n.id,b);
+        const tree=createLifeTree(THREE,recipe,n.plan,n.field,{corridors:joyride.corridors,anchors,buildings:b.report.placed});await adaptRegistered(tree.root,recipe.seed);trees.set(n.id,tree);ng.add(tree.root);
       }
       for(const c of arch.connections){
-        const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
-        const road=ST.buildTrack(THREE,c.stream,mat);road.name='R2D ROAD_BRIDGE · '+c.id;road.userData.sourceRecord={assetId:road.name,packId:'Track Core',source:{commit:TRACK_PIN,path:TRACK_DIR+'stream-to-three.mjs'}};road.userData.worldConnectionId=c.id;road.userData.kind='ROAD_BRIDGE';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);
+        const destination=arch.nodes.find(n=>n.id===c.to)||arch.nodes[0];
+        const road=buildClayStrand(THREE,c.stream,{U,palette:PALETTES[destination.recipe.biome],...joyride.contexts.get(c.id)});road.name='Joyride bridge · '+c.id;road.userData.worldConnectionId=c.id;road.userData.kind='ROAD_BRIDGE';group.add(road);
       }
       scene.add(group);
       W.log.push('R2D archipelago · '+arch.nodes.length+' islands · '+arch.connections.length+' Track Core bridges');
@@ -147,13 +158,13 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
       colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D archipelago support heightfield';
       for(const n of arch.nodes){
         const ng=nodeGroups.get(n.id),pal=R2C.PAL[n.recipe.biome]||R2C.PAL.burg;
-        if(!presentations.has(n.id))presentations.set(n.id,mountR2DPresentation({group:ng,supportTerrain:mesh,plan:n.plan,field:n.field,palette:pal}));
+        if(!presentations.has(n.id))presentations.set(n.id,mountR2DPresentation({group:ng,supportTerrain:mesh,plan:n.plan,field:n.field,palette:pal,lifeTreeRecipe:treeRecipes.find(r=>r.worldId===n.id)}));
         if(heightReader)presentations.get(n.id).refreshSurface(heightReader);
       }
     },
     onTerrain(){if(heightReader)for(const p of presentations.values())p.refreshSurface(heightReader);return aggregateSupport()},
     frameEdit(camera,controls){const {cx,cz,size}=arch.bounds;controls.target.set(cx,0,cz);camera.position.set(cx+size*.52,Math.max(150,size*.36),cz+size*.58);controls.update()},
-    tick(){},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},async setSky(v){W.skyMode=v;return v}
+    tick(){const time=performance.now()/1000;for(const t of trees.values())t.tick(time)},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},async setSky(v){W.skyMode=v;return v}
   };
   return W;
 }
@@ -164,7 +175,8 @@ export async function prepare(id){
   if(Z.archipelago){
     const res=await fetch(RECIPE_URL);if(!res.ok)throw new Error('world recipes '+res.status);
     const recipeSet=await res.json();
-    return archipelagoWorld({id,TC,ST,R2C,arch:makeArchipelago(recipeSet,TC)});
+    const arch=makeArchipelago(recipeSet,TC),joyride=await prepareJoyride(arch);
+    return archipelagoWorld({id,TC,ST,R2C,arch,joyride});
   }
   return singleWorld({id,Z,TC,ST,R2C,core:makeIslandCore(Z.seed,TC,Z.shape)});
 }

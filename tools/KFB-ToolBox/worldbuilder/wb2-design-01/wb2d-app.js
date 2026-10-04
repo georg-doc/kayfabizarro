@@ -980,7 +980,7 @@ function addProp(){
   if(sceneDoc.objects.some(o=>o.id===PROP.id))return;
   sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[1]));return rebuildSceneAfterDocChange();
 }
-async function rebuildSceneAfterDocChange(){sceneLoadToken++;buildTerrain();await buildSceneObjects(sceneLoadToken)}
+async function rebuildSceneAfterDocChange(){WORLD?.reconcileDoc?.(sceneDoc);sceneLoadToken++;buildTerrain();await buildSceneObjects(sceneLoadToken)}
 async function removeSelected(){
   if(!selected)return;
   const id=selected.userData.sceneObjectId;
@@ -1280,6 +1280,7 @@ try{
     await WORLD.mount({scene,renderer,getTerrain:()=>terrain,heightAt:(x,z)=>terrainHeightAt(x,z)});
     const saved=localStorage.getItem(STORAGE_KEY);
     if(saved){try{const d=JSON.parse(saved);if(d.format==='kfb-worldbuilder-scene'&&d.id===DOC_ID){sceneDoc=d;ensureSculpt(sceneDoc.terrain);E('saveState').textContent='Loaded saved world · '+(d.savedAt||'no timestamp')}}catch(err){console.warn('saved world unreadable',err)}}
+    WORLD.reconcileDoc?.(sceneDoc);
     actorSourceReady=propSourceReady=true;updateReviewUnlock();
     await showScene();
     if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED){setPlay(true);const EVID=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');window.__wb2d.candidateEvidence=EVID.createCandidateEvidence(window.__wb2d);if(QUERY.has('source-review'))await window.__wb2d.candidateEvidence.inspect(QUERY.get('source-review'),QUERY.get('variant')||'original');}

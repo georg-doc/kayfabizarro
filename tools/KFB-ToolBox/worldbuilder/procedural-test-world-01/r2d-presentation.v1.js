@@ -35,12 +35,12 @@ const rng=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.i
 
 function colorArray(hex){const c=new THREE.Color(hex);return[c.r,c.g,c.b]}
 
-export function buildIslandBody(plan,field,palette){
+export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
   const {c0,NA,edgeR,seed}=plan,NR=44,NU=30,rows=NR+1+NU;
   const pos=new Float32Array(rows*NA*3),col=new Float32Array(rows*NA*3);
   const grass=colorArray(palette.grass),grass2=colorArray(palette.grass2||palette.grass),hill=colorArray(palette.hill||palette.grass),
     paved=colorArray(palette.paved),sand=colorArray(palette.sand),lip=colorArray(palette.lip||palette.rock),rock=colorArray(palette.rock||palette.lip);
-  const R=rng(seed*31+7),depth=24+R()*7,edgeY=new Float32Array(NA);
+  const R=rng(seed*31+7),depth=13+R()*4,edgeY=new Float32Array(NA);
   let vi=0;
   const put=(x,y,z,c)=>{pos.set([x,y,z],vi*3);col.set(c,vi*3);vi++};
   for(let i=0;i<=NR;i++){
@@ -57,11 +57,11 @@ export function buildIslandBody(plan,field,palette){
     const s=j/NU;
     for(let a=0;a<NA;a++){
       const th=a/NA*Math.PI*2;
-      let rf=(1+.05*Math.sin(Math.min(1,s/.1)*Math.PI))*Math.pow(1-s,.8);
+      let rf=(1+.05*Math.sin(Math.min(1,s/.1)*Math.PI))*Math.pow(1-s,1.15);
       rf*=1+.1*fbm(th*2.2,s*5,seed+31)*sstep(.05,.3,s);
-      const rr=edgeR[a]*rf,y=edgeY[a]-.9*sstep(0,.1,s)-depth*Math.pow(s,1.25)+.8*fbm(th*3,s*3,seed+41)*sstep(.1,.4,s);
+      const rr=edgeR[a]*rf,y=edgeY[a]-.9*sstep(0,.1,s)-depth*Math.pow(s,.8)*(1+.16*Math.sin(th*3+seed)+.11*Math.sin(th*5-seed))+.8*fbm(th*3,s*3,seed+41)*sstep(.1,.4,s);
       const band=fbm(y*.35+th*.6,th,seed+51)>.05?.78:1,cw=rock.map(v=>v*band*(1-.25*s));
-      put(c0[0]+Math.cos(th)*rr,y,c0[1]+Math.sin(th)*rr,cw);
+      put(c0[0]+Math.cos(th)*rr+((lifeTreeRecipe?.position[0]??c0[0])-c0[0])*s*s,y,c0[1]+Math.sin(th)*rr+((lifeTreeRecipe?.position[2]??c0[1])-c0[1])*s*s,cw);
     }
   }
   const idx=[];
@@ -155,9 +155,9 @@ export function buildNatureGroup(plan,field,palette){
   return{group,report:{centres:centres.length,trees:trees.length,bushes:bushes.length,boulders:boulders.length,edgeRocks:edge.length,p2Details:Math.min(4,detail.length)}};
 }
 
-export function mountR2DPresentation({group,supportTerrain,plan,field,palette}){
+export function mountR2DPresentation({group,supportTerrain,plan,field,palette,lifeTreeRecipe=null}){
   if(supportTerrain)supportTerrain.visible=false;
-  const body=buildIslandBody(plan,field,palette);
+  const body=buildIslandBody(plan,field,palette,lifeTreeRecipe);
   const topMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
   const underMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
   const top=new THREE.Mesh(body.top,topMat);top.name='R2D continuous island top';top.castShadow=top.receiveShadow=true;
@@ -182,3 +182,4 @@ export function mountR2DPresentation({group,supportTerrain,plan,field,palette}){
     dispose(){group.remove(top,under,water.group,nature.group);body.top.dispose();body.under.dispose()}
   };
 }
+
