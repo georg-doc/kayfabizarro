@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.example/schemas/kfb.audio-visualizer-handoff.v1.schema.json",
+  "title": "KFB Audio Visualizer Handoff v1",
+  "description": "Read-only analysis payload from the existing audio owner to Hypernormalisation consumers. It does not own playback or create an AudioContext.",
+  "type": "object",
+  "required": [
+    "schema",
+    "source",
+    "frame"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.audio-visualizer-handoff.v1"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "owner",
+        "trackId",
+        "role"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trackId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "soundbedIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "role": {
+          "enum": [
+            "VOICE",
+            "UI",
+            "PLAYER_CRITICAL",
+            "WORLD_SFX",
+            "DIEGETIC_MUSIC",
+            "SCORE",
+            "LOCAL_AMBIENCE",
+            "GLOBAL_BED"
+          ]
+        },
+        "bpm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "meter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenanceRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "frame": {
+      "type": "object",
+      "required": [
+        "timeSec",
+        "beatPhase",
+        "kick",
+        "bass",
+        "mid",
+        "high",
+        "rms",
+        "transient",
+        "isPlaying",
+        "muted"
+      ],
+      "properties": {
+        "timeSec": {
+          "type": "number",
+          "minimum": 0
+        },
+        "beatPhase": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "barPhase": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "kick": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bass": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "mid": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "high": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rms": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "transient": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "isPlaying": {
+          "type": "boolean"
+        },
+        "muted": {
+          "type": "boolean"
+        },
+        "voiceFocus": {
+          "type": "boolean"
+        },
+        "clockRevision": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "controls": {
+      "type": "object",
+      "description": "Optional host state exposed for diagnostics only. Hypernormalisation may request mute/focus through host actions but does not write these values directly.",
+      "properties": {
+        "masterGain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "musicGain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ambienceGain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "voiceGain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
