@@ -1,6 +1,6 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.8.0 · 2026-10-04** · 58 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.9.0 · 2026-10-04** · 59 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
 
 ## Was das ist
 
@@ -63,6 +63,15 @@ Aus diesem Tag folgt: Der Coworker darf künftig Statusdaten aktualisieren, aber
 - Neue Bindung: Donor-Scope getrennt nach MECHANISM / PRESENTATION / CONTENT / DATA; sichtbare Quellen brauchen Allow-/Denylist.
 - Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_ONE_SHOT_LEGACY_OSM_CONTAMINATION_2026-10-04.md`.
 - Current recovery: `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURRENT_ONE_SHOT_VISUAL_RECOVERY_2026-10-04.md`.
+
+
+## Neu am 04.10.2026 — Sites-first / Cloudflare-Delivery-Fail
+
+- *Cloudflare vor der Site* (Large · Process/WSA): Production Hub, EyeRig, Asset Librarian und Audio existierten bereits als GPT-Site-Linie, mehrere Projektverträge sagten ausdrücklich Site-first bzw. Cloudflare nur Recovery/Regression. Der globale Root-Workflow blieb jedoch Cloudflare-first. WSA begann im MVP-Run deshalb erneut am Cloudflare-Mirror und wechselte erst nach Georgs Eingriff zum vereinbarten GPT-Site-Ziel.
+- Reißleine: **„Was ist die vereinbarte primäre Produktoberfläche?“**
+- Neue Bindung: GPT Site ist bei Site-capable KFB-Produkten die primäre Produkt-/Authoring-/Daily-Use-Oberfläche; Cloudflare ist nachgelagerter, begrenzter Kompatibilitäts-/KFB-Hub-Mirror, wenn benötigt. Fehlende Sites-Capability führt zum Sites-fähigen Handoff, nicht zum Host-Austausch.
+- Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md`.
+- Root-Policy: `skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`.
 
 ## Pflegeregel
 
