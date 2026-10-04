@@ -1,0 +1,347 @@
+{
+  "schema": "kfb.world-recipe-set/0.1",
+  "id": "kfb.mvp.archipelago.01",
+  "status": "MVP_FIXTURE_DERIVED",
+  "owner": "KFB WorldBuilder / WB2",
+  "globalReference": "skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md",
+  "goldenJourney": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/GOLDEN_JOURNEY_MVP_2026-10-04.json",
+  "layout": {
+    "source": "R2C directional relationship + current MVP topology",
+    "rule": "data-driven MVP scale; final distances remain tunable after native locomotion baseline",
+    "pullDontGate": true
+  },
+  "nodes": [
+    {
+      "id": "world.kfb-town",
+      "label": "KFB Town",
+      "seed": 3,
+      "biome": "burg",
+      "shape": "frei",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "deckId": null,
+      "cardRefs": [],
+      "billboard": {
+        "id": "billboard.town",
+        "startSurface": "kfb-standard-card-back",
+        "loop": "hypernormalisation"
+      },
+      "anchors": [
+        {
+          "id": "town.spawn.market",
+          "role": "spawn",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "town.resident.clown.onboarding",
+          "role": "resident-slot",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            -2,
+            0,
+            2
+          ]
+        },
+        {
+          "id": "town.resident.driver.taxi",
+          "role": "resident-slot",
+          "locator": {
+            "kind": "road",
+            "fraction": 0.28
+          },
+          "offset": [
+            -2,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "town.vehicle.taxi.01",
+          "role": "vehicle-slot",
+          "locator": {
+            "kind": "road",
+            "fraction": 0.28
+          },
+          "offset": [
+            2,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "billboard.town",
+          "role": "media",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            5,
+            0,
+            0
+          ]
+        }
+      ],
+      "motifTags": [
+        "market",
+        "royal-satire",
+        "layered-history",
+        "current-world",
+        "three-way-gateway"
+      ]
+    },
+    {
+      "id": "world.dystopia",
+      "label": "Dystopia",
+      "seed": 11,
+      "biome": "dystopia",
+      "shape": "frei",
+      "position": [
+        70,
+        -9,
+        180
+      ],
+      "deckId": "ignore_dystopia",
+      "cardRefs": [
+        "ignore_dystopia:1",
+        "ignore_dystopia:5",
+        "ignore_dystopia:6"
+      ],
+      "billboard": {
+        "id": "billboard.dystopia",
+        "startSurface": "deck-cover:ignore_dystopia",
+        "loop": "hypernormalisation"
+      },
+      "anchors": [
+        {
+          "id": "dystopia.party.pentagram",
+          "role": "performance-scene",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dystopia.party.orc-singer",
+          "role": "resident-slot",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            -3,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "billboard.dystopia",
+          "role": "media",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            5,
+            0,
+            -2
+          ]
+        }
+      ],
+      "motifTags": [
+        "alarm",
+        "ruin",
+        "warning",
+        "no-off-ramp",
+        "infernal-party"
+      ]
+    },
+    {
+      "id": "world.utopia",
+      "label": "Utopia",
+      "seed": 17,
+      "biome": "utopia",
+      "shape": "frei",
+      "position": [
+        180,
+        4,
+        -65
+      ],
+      "deckId": "forget_utopia",
+      "cardRefs": [
+        "forget_utopia:1",
+        "forget_utopia:2",
+        "forget_utopia:4"
+      ],
+      "billboard": {
+        "id": "billboard.utopia",
+        "startSurface": "deck-cover:forget_utopia",
+        "loop": "hypernormalisation"
+      },
+      "anchors": [
+        {
+          "id": "utopia.monstrosity.throne",
+          "role": "resident-slot",
+          "locator": {
+            "kind": "pad",
+            "index": 0
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "utopia.robot.works",
+          "role": "ambient-scene",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "billboard.utopia",
+          "role": "media",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            5,
+            0,
+            -2
+          ]
+        }
+      ],
+      "motifTags": [
+        "glossy-future",
+        "finished-city",
+        "signature-line",
+        "automation",
+        "controlled-convenience"
+      ]
+    },
+    {
+      "id": "world.protopia",
+      "label": "Protopia",
+      "seed": 23,
+      "biome": "protopia",
+      "shape": "frei",
+      "position": [
+        -200,
+        10,
+        95
+      ],
+      "deckId": "embrace_protopia",
+      "cardRefs": [
+        "embrace_protopia:1",
+        "embrace_protopia:5",
+        "embrace_protopia:6"
+      ],
+      "billboard": {
+        "id": "billboard.protopia",
+        "startSurface": "deck-cover:embrace_protopia",
+        "loop": "hypernormalisation"
+      },
+      "anchors": [
+        {
+          "id": "protopia.farm.social-core",
+          "role": "resident-set-slot",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "protopia.lorekeeper.plateau",
+          "role": "resident-slot",
+          "locator": {
+            "kind": "pad",
+            "index": 0
+          },
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "billboard.protopia",
+          "role": "media",
+          "locator": {
+            "kind": "plaza",
+            "name": "big"
+          },
+          "offset": [
+            5,
+            0,
+            -2
+          ]
+        }
+      ],
+      "motifTags": [
+        "repair",
+        "visible-seams",
+        "farm",
+        "shared-skill",
+        "right-sized-move"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "route.town-dystopia",
+      "kind": "ROAD_BRIDGE",
+      "from": "world.kfb-town",
+      "to": "world.dystopia",
+      "fromFraction": 0.2,
+      "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+    },
+    {
+      "id": "route.town-utopia",
+      "kind": "ROAD_BRIDGE",
+      "from": "world.kfb-town",
+      "to": "world.utopia",
+      "fromFraction": 0.5,
+      "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+    },
+    {
+      "id": "route.town-protopia",
+      "kind": "ROAD_BRIDGE",
+      "from": "world.kfb-town",
+      "to": "world.protopia",
+      "fromFraction": 0.8,
+      "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+    }
+  ]
+}

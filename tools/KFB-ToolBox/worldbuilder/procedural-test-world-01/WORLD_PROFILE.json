@@ -1,0 +1,309 @@
+{
+  "schema": "kfb.procedural-test-world/2",
+  "date": "2026-10-04",
+  "status": "WORLD_AND_KAYKIT_PLAYER_BROWSER_PASS",
+  "owner": "KFB WorldBuilder / WB2",
+  "checkpoint": "KFB-LOCO-WB2-PLAYER-01",
+  "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
+  "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "sourceDonor": {
+    "pr": 332,
+    "head": "e58d0ea4b97debbf8d0053d710612033b7e52908",
+    "latestBrowserProvenRuntime": "a18846cf8128e3e1facb0b51be0e6aff873d1244",
+    "browserRun": 37092514335,
+    "browserJob": 111115656852,
+    "browserArtifact": 11263101899,
+    "browserArtifactSha256": "74ab7902535bb67aa64fcb5b3f728424c9ce4ba9a87d0ea63cb18176f4d4661b",
+    "rule": "source-first rehome only; stale router/Hub/Motion state from PR #332 is not imported"
+  },
+  "world": {
+    "entry": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/PROCEDURAL_TEST_WORLD_01_SOURCE.html",
+    "play": true,
+    "camera": "ground",
+    "cardSystem": false,
+    "travelHost": false,
+    "profile": "r2d4",
+    "rendererOwner": "WB2",
+    "legacyPlayerLoaded": false,
+    "recipeSet": "kfb.mvp.archipelago.01",
+    "nodeCount": 4,
+    "connectionCount": 3,
+    "goldenAnchors": 14,
+    "pullDontGate": true
+  },
+  "proceduralDesign": {
+    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
+    "buildingMountStatus": "SOURCE_PROVEN_B1_FAMILY_ON_GENERATED_R2D_PADS_BROWSER_VERIFIED",
+    "buildingEvidence": {
+      "placed": 1,
+      "windows": 14,
+      "doors": 1,
+      "seed": 3
+    },
+    "natureModules": [
+      "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
+      "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
+    ],
+    "natureMountStatus": "SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED",
+    "materialDirection": {
+      "primaryLightweightCandidate": "clay_floor_001",
+      "heavyProceduralClay": "near/hero reference",
+      "finalRuntimeAdoption": "OPEN"
+    }
+  },
+  "futureMotionDock": {
+    "owner": "KFB ToolBox / KayKit-native locomotion baseline",
+    "pr": 344,
+    "observedHead": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+    "status": "NATIVE_KAYKIT_PLAYER_INTEGRATED_BROWSER_PASS",
+    "rule": "Consume the accepted native contract; do not repick or retime clips.",
+    "legacyWi1Play": "DISABLED_IN_THIS_ENTRY",
+    "contract": "KFB_KAYKIT_LOCO_SET_01.v1.json"
+  },
+  "consumerDock": {
+    "worldOwner": "KFB WorldBuilder / WB2",
+    "facts": [
+      "spawn",
+      "baseHeightAt(x,z)",
+      "groundAt(x,z,terrainHeight)",
+      "solidAt(x,z)",
+      "buildingAt(x,z)",
+      "Track Core route/support"
+    ],
+    "rule": "future Motion/Drive/Residents/Combat consume world facts; they do not replace world/render ownership"
+  },
+  "r2d": {
+    "donorPath": "tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/KFB_R2D_v0/island.js",
+    "donorBlob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d",
+    "seed": 3,
+    "biome": "burg",
+    "shape": "frei",
+    "integration": "source-derived plan/height/mask + visible body/water + P1/P2 nature + B1/facade buildings + Track Core inside WB2; no R2D renderer/camera/loop",
+    "donorPresentationEvidence": {
+      "depth": 25.4,
+      "bodyVertices": 14400,
+      "underside": true,
+      "pond": true,
+      "creek": true,
+      "waterfall": true,
+      "nature": {
+        "centres": 3,
+        "trees": 6,
+        "bushes": 6,
+        "boulders": 3,
+        "edgeRocks": 5,
+        "p2Details": 4
+      },
+      "buildings": {
+        "placed": 1,
+        "windows": 14,
+        "doors": 1,
+        "facadeRule": "kfb-facade-rule-v1"
+      }
+    }
+  },
+  "next": "Resident/activity seam within ONE_SHOT_INTEGRATION_LOCK_2026-10-04; internal checkpoint, no new Georg gate.",
+  "current": {
+    "testedImplementationHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
+    "source": {
+      "run": 37177630053,
+      "job": 111363480589,
+      "result": "PASS_13_OF_13"
+    },
+    "browser": {
+      "pass": 10,
+      "total": 10,
+      "run": 37177630060,
+      "job": 111363480592,
+      "artifact": 11293584372,
+      "digest": "sha256:943aa9daf8b71ecad996b0a508ac7b97c8678dda20aa8fb46818289786713991",
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "result": "PASS_10_OF_10"
+    },
+    "resourceRegistry": {
+      "run": 37177631103,
+      "job": 111363484135,
+      "result": "PASS"
+    }
+  },
+  "corridor": {
+    "recipePath": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORLD_RECIPES.json",
+    "archipelagoModule": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js",
+    "nodes": [
+      {
+        "id": "world.kfb-town",
+        "seed": 3,
+        "biome": "burg",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "deckId": null,
+        "cardRefs": [],
+        "anchors": [
+          "town.spawn.market",
+          "town.resident.clown.onboarding",
+          "town.resident.driver.taxi",
+          "town.vehicle.taxi.01",
+          "billboard.town"
+        ]
+      },
+      {
+        "id": "world.dystopia",
+        "seed": 11,
+        "biome": "dystopia",
+        "position": [
+          70,
+          -9,
+          180
+        ],
+        "deckId": "ignore_dystopia",
+        "cardRefs": [
+          "ignore_dystopia:1",
+          "ignore_dystopia:5",
+          "ignore_dystopia:6"
+        ],
+        "anchors": [
+          "dystopia.party.pentagram",
+          "dystopia.party.orc-singer",
+          "billboard.dystopia"
+        ]
+      },
+      {
+        "id": "world.utopia",
+        "seed": 17,
+        "biome": "utopia",
+        "position": [
+          180,
+          4,
+          -65
+        ],
+        "deckId": "forget_utopia",
+        "cardRefs": [
+          "forget_utopia:1",
+          "forget_utopia:2",
+          "forget_utopia:4"
+        ],
+        "anchors": [
+          "utopia.monstrosity.throne",
+          "utopia.robot.works",
+          "billboard.utopia"
+        ]
+      },
+      {
+        "id": "world.protopia",
+        "seed": 23,
+        "biome": "protopia",
+        "position": [
+          -200,
+          10,
+          95
+        ],
+        "deckId": "embrace_protopia",
+        "cardRefs": [
+          "embrace_protopia:1",
+          "embrace_protopia:5",
+          "embrace_protopia:6"
+        ],
+        "anchors": [
+          "protopia.farm.social-core",
+          "protopia.lorekeeper.plateau",
+          "billboard.protopia"
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "id": "route.town-dystopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.dystopia",
+        "fromFraction": 0.2,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      },
+      {
+        "id": "route.town-utopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.utopia",
+        "fromFraction": 0.5,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      },
+      {
+        "id": "route.town-protopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.protopia",
+        "fromFraction": 0.8,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      }
+    ],
+    "layoutStatus": "MVP_SCALE_DERIVED_FROM_R2C_DIRECTIONAL_RELATIONSHIP_TUNABLE_AFTER_NATIVE_MOTION",
+    "playerMounted": true,
+    "residentsMounted": false,
+    "driveMounted": false
+  },
+  "nativePlayer": {
+    "actorProfileId": "Mannequin_Medium",
+    "movementOwner": "tools/KFB-ToolBox/lib/ground-planar.v1.js",
+    "animationOwner": "wb2-player.v1.js",
+    "contract": "KFB_KAYKIT_LOCO_SET_01.v1.json",
+    "motionHead": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+    "testedHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
+    "sourceTests": {
+      "pass": 13,
+      "total": 13,
+      "run": 37177630053,
+      "job": 111363480589
+    },
+    "browser": {
+      "pass": 10,
+      "total": 10,
+      "run": 37177630060,
+      "job": 111363480592,
+      "artifact": 11293584372,
+      "digest": "sha256:943aa9daf8b71ecad996b0a508ac7b97c8678dda20aa8fb46818289786713991",
+      "pageErrors": 0,
+      "consoleErrors": 0
+    },
+    "assets": [
+      {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Medium.glb",
+        "blob": "c15d93a623acde4c08862290f4465bb994506fd8"
+      },
+      {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+        "blob": "5d16cb6815fc8371705147188813f851c10ba26a"
+      },
+      {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+        "blob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5"
+      }
+    ],
+    "stage": "NOT_PUBLISHED",
+    "nextInternalAction": "Resident/activity seam within existing One-Shot integration"
+  },
+  "worldBaselineEvidence": {
+    "testedImplementationHead": "0841b89ae8274118687e946318458201b402c5b5",
+    "source": {
+      "run": 37166355940,
+      "job": 111329943298,
+      "result": "PASS_9_OF_9"
+    },
+    "browser": {
+      "run": 37166356027,
+      "job": 111329943523,
+      "result": "PASS",
+      "artifact": 11289583486,
+      "digest": "sha256:c6a3da665ad0b113ac23a50c263fd36c7a3dc1478ef37f2f37a3508e013ad472"
+    },
+    "resourceRegistry": {
+      "run": 37166355944,
+      "job": 111329943425,
+      "result": "PASS"
+    }
+  }
+}
+

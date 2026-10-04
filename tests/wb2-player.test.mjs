@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {sampleLoco} from '../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/loco-blend.v1.mjs';
+const contract=JSON.parse(fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/KFB_KAYKIT_LOCO_SET_01.v1.json',import.meta.url),'utf8'));
+const anchors=contract.locomotion.anchors;
+test('every accepted speed anchor samples its original clip in seconds',()=>{for(const a of anchors){const s=sampleLoco(anchors,a.speed,.3,.4);assert.equal(s.rows.length,1);assert.equal(s.rows[0].clip,a.clip);assert.equal(s.rows[0].weight,1);assert.ok(Math.abs(s.rows[0].time-(a.role==='idle'?.4:((.3+a.leftFootDownPhase)%1)*a.cycleT))<1e-9);}});
+test('all ramp speeds have at most two neighbouring clips and normalized weights',()=>{for(let v=0;v<6;v+=.013){const s=sampleLoco(anchors,v,.98,4);assert.ok(s.rows.length<=2);assert.ok(Math.abs(s.rows.reduce((t,a)=>t+a.weight,0)-1)<1e-9);const ids=s.rows.map(r=>anchors.findIndex(a=>a.clip===r.clip));if(ids.length===2)assert.equal(ids[1]-ids[0],1);assert.ok(s.rows.every(a=>a.time>=0&&a.time<a.cycleT));}});
+test('Jog is a phase synchronized neighbour blend; idle is excluded from gait rate',()=>{const s=sampleLoco(anchors,(.98+3.303)/2,.2,.4);assert.deepEqual(s.rows.map(a=>a.clip),['Walking_B','Running_A']);assert.ok(Math.abs(s.phaseRate-(1/1.067+1/.8)/2)<1e-9);assert.equal(sampleLoco(anchors,.49,0,0).phaseRate,1/1.067);assert.equal(sampleLoco(anchors,0,0,0).phaseRate,0);});
+test('backward movement preserves the same speed parameter ladder',()=>{assert.deepEqual(sampleLoco(anchors,-2,.7,1),sampleLoco(anchors,2,.7,1));});
