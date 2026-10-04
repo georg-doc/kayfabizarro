@@ -5,7 +5,7 @@ Date: 2026-10-04
 Owner: **KFB ToolBox / ChatterBox content curation**
 Repo: `georg-doc/kayfabizarro`
 Branch: `planning/chatterbox-triplet-curator-site-2026-10-04`
-Base: `coworker/coordination-plan-2026-10-04@422c48e2a82b13c8ae380da70f6c66619639d8aa`
+Base synced: `coworker/coordination-plan-2026-10-04@b2ddd72346e3d804b53625f50addbba87be3c9a0`
 
 ## Outcome
 
@@ -51,6 +51,34 @@ Three regular Lean Cards:
 - Witch
 
 Lorekeeper remains a special Resident role.
+
+### Existing Triplet Review Stage · REUSE DONOR
+
+Current Coworker coordination head:
+`coworker/coordination-plan-2026-10-04@b2ddd72346e3d804b53625f50addbba87be3c9a0`
+
+Reuse:
+- `skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html`
+- `skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md`
+
+The existing review stage already provides:
+- the 20 candidate Triplets;
+- pair A/B/C;
+- current Card fixtures;
+- KEEP / CUT / CHANGE review;
+- import/export;
+- a simplified port of the #305 selection logic;
+- explicit current coverage-gap evidence.
+
+**Do not rebuild this from generic UI chrome.** Show/use this source object first, then grow it into the Site.
+
+The Site adds durable owner-safe capabilities around it:
+- schema-backed persistence;
+- quote-ID bridge;
+- Lean Card lens;
+- exact existing adapter seam;
+- accepted bubble presentation adapter;
+- Web Chat batch intake.
 
 ### Shared Triplet pool
 PR #310 donor:
