@@ -1,3 +1,36 @@
+## 2026-10-04 · CURRENT OVERRIDE · ONE TOOLBOX FRONT DOOR
+
+Binding surface contract:
+
+`../../skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md`
+
+The historical Stage-First / ToolBox Home / standalone-routing text below remains provenance and donor history.
+
+Current human rule:
+
+**There must be exactly one canonical KFB ToolBox front door.**
+
+Its job is to route current specialist tools, not to duplicate them.
+
+Current specialist Site targets:
+
+- EyeRig Workbench · `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+- Asset Librarian · `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`
+- Audio · `https://kfb-audio.frizzlebob.chatgpt.site`
+- FrankenStein Composer · `https://kfb-frankenstein-composer.frizzlebob.chatgpt.site`
+- Hypernormalisation Curator · `https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site`
+
+Prepared/current next ToolBox modules:
+- Environment Atlas;
+- ChatterBox + Comic VFX Studio;
+- 2D Animation / motion/rig surfaces only after exact owner/source reconciliation.
+
+Legacy ToolBox Home/Stage/standalone pages are **HISTORY / DONOR**, not competing current front doors.
+
+Before creating a new ToolBox Site, resolve whether a current GPT Site project already exists. If it exists, update it. Otherwise create exactly one.
+
+The ToolBox front door owns navigation/status only. Specialist tools retain their own runtime/authoring ownership.
+
 # KFB ToolBox v1 · Start here
 
 > **CURRENT OVERRIDE · 2026-09-18:** Lies zuerst [`_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`](_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md). Der vollständige Stage-First-v1-Export ist eingetroffen und als Intake geprüft. Die ältere A/B-/Birthday-Routinglogik unten bleibt Herkunft/History, nicht aktueller Ausführungsauftrag. **Birthday 2026 = FAIL / OUTDATED / ARCHIVED HISTORY.**
