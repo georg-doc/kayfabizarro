@@ -17,5 +17,12 @@
     "cloudflare": false,
     "status": "PUBLISH_TOOL_UNAVAILABLE_IN_THIS_CHAT"
   },
-  "nextGate": "KFB_AUDIO_SITE_PUBLISH_01"
+  "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
+  "audioSourceLock": {
+    "path": "tools/KFB-Audio-Site/source-lock.json",
+    "sourceRef": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
+    "masters": 44,
+    "stemFamilies": 14,
+    "soundscape": 5
+  }
 }

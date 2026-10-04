@@ -17,11 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            media/3D_Assets/Sounds
-            media/3D_Assets/Audio/Environment
-            media/3D_Assets/Audio/Other
-            media/3D_Assets/Audio/KFB Racer
-            media/3D_Assets/Audio/kenney_impact-sounds
+            media/3D_Assets/Sounds/jukebox.json
             tools/KFB-Audio-Site
             skills/chat/workflows/KFB_JUKEBOX_CATALOG_01_AUDIO_SITE_2026-10-04
           sparse-checkout-cone-mode: false
