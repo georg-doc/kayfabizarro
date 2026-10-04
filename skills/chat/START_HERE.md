@@ -31,6 +31,35 @@ Full scripted Golden Journey automation, 61 captures and whole nine-dimension sc
 
 No merge / no Live promotion.
 
+
+## 2026-10-04 · KFB FrankenStein Composer GPT Site · PLANNING READY
+
+New bounded ToolBox authoring surface:
+`skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/START_HERE.md`
+
+Owner:
+**KFB ToolBox**. The Composer is a frontend over existing graft/Face/Eye/Brow/Motion owners, not a new runtime owner.
+
+Outcome:
+- combine KFB/FrizzleBob head/face stack with compatible KayKit Rig_Medium / Rig_Large / proven Rig_Legacy bodies;
+- rig-aware Motion Library audition;
+- Pencil as a real PropActor host with EyeRig + clay lids + animated brows;
+- Eraser stays `SOURCE_REQUIRED` until the exact real source exists;
+- save/import reversible Actor Recipes while preserving `kfb.pets/1`.
+
+Source-first rule:
+**show each exact donor in isolation before integrating it.**
+
+Source audit:
+**12/12 PASS** for provenance/classification only. Runtime/browser/GPT Site/Stage are **NOT CREATED / NOT RUN**.
+
+Working branch:
+`planning/frankenstein-composer-gpt-site-2026-10-04`
+
+Reserved future public review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/frankenstein-composer/` · **NOT CREATED / NOT LIVE**.
+
+
 ## Start order
 
 1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.
