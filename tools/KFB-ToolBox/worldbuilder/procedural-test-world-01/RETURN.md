@@ -1,5 +1,23 @@
 # RETURN · WB2 current-main convergence + Golden corridor
 
+## 2026-10-04 · CURRENT RETURN OVERRIDE · MVP1 PLAYABLE DELIVERY
+
+The current branch contains substantially more than this historical world-preflight Return. Current recovery must be read from `RECOVERY.md`, `ONE_SHOT_STATUS.json` and the main MVP1 rebriefs.
+
+Product correction:
+- the latest frozen Golden Journey failure is a **QA-harness endpoint-arrival failure**, not evidence that the complete WorldBuilder product is unusable;
+- earlier direct browser evidence proves Ground → Drive → Ground over 6.077702 m;
+- native World Studio fresh-origin export/import/re-export is already 5/5 PASS;
+- many Residents/Card/Almanac/world features are implemented with full-browser acceptance still pending.
+
+Current product target is **MVP1-PLAYABLE-DELIVERY**, not another endpoint-repro micro-slice.
+
+Required next executor result:
+one real source-clean playable WorldBuilder MVP 1 at `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/`, publicly verified, then Georg freeplay.
+
+Do not claim full Golden Journey PASS unless proven. Do not withhold a meaningful playable MVP solely because the long-route automation remains HOLD.
+
+
 Status: **PASS · WORLD READY FOR MOTION ATTACHMENT**
 
 ## Product reality
