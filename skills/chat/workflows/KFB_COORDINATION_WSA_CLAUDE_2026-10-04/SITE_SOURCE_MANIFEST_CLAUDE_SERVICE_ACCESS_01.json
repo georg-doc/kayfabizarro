@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.site-source-candidate/1.0",
+  "slice": "CLAUDE_SERVICE_ACCESS_01",
+  "status": "SITE_SOURCE_READY_NOT_DEPLOYED",
+  "site": {
+    "projectId": "appgprj_6ab82e3950b88191a8ead3c495e21454",
+    "url": "https://kfb-production-control.frizzlebob.chatgpt.site",
+    "accessMode": "custom",
+    "sourceCommit": "cfe4c7917b90acaabd3fdc36565df2051fad0faf",
+    "sourceParent": "67a680820949568001553f15d83675d7f5d6a2eb",
+    "archiveSha256": "d606e4358a5cbf4682251673ed44f76dd1ad9305d3d7098f22801861c1002150",
+    "archiveBytes": 603625,
+    "archiveFileCount": 173
+  },
+  "currentProduction": {
+    "versionNumber": 78,
+    "versionId": "appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_855c03b14a448191b13ab7b4c2040aba",
+    "deploymentId": "appgdep_6ac2bc9f55e0819183bac00466aa3e5a",
+    "sourceCommit": "67a680820949568001553f15d83675d7f5d6a2eb"
+  },
+  "changedFiles": [
+    "README.md",
+    "app/mcp/access.ts",
+    "app/mcp/route.ts",
+    "app/page.tsx",
+    "cloudflare-env.d.ts",
+    "package.json",
+    "scripts/test-claude-service-access.mjs",
+    "scripts/test-control-plane-r3.mjs"
+  ],
+  "runtimeEnvironment": {
+    "required": [
+      "KFB_CLAUDE_COWORK_AGENT_KEY",
+      "KFB_PRODUCTION_SCOPE_OWNER_ID"
+    ],
+    "configuredInThisRun": false,
+    "secretValuesPersisted": false
+  },
+  "publication": {
+    "siteSourcePushed": true,
+    "savedVersionCreated": false,
+    "deploymentCreated": false,
+    "accessChanged": false
+  }
+}
