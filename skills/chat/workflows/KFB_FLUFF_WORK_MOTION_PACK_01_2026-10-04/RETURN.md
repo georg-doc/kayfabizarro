@@ -70,3 +70,32 @@ Only then does Blender proceed to Part 2 authoring.
 **BLENDER PART 1 · SOURCE AUDITION + REUSE MATRIX**
 
 No WorldBuilder implementation yet.
+
+
+## 2026-10-04 · Mass Ladder / Bigger Picture update
+
+The Blender brief now also carries the first-pass Fluff Mass Ladder:
+
+- 6 Small Fluff → 1 Medium Fluff;
+- 3 Medium Fluff → 1 Large Fluff;
+- therefore 18 Small → 1 Large.
+
+Default handling:
+- one Rig_Medium rolls one Medium ball;
+- one Rig_Large rolls one Large ball;
+- 2–3 Rig_Medium may cooperatively roll/place one Large ball.
+
+The resulting Medium/Large ball may preserve marbled color mixing from its source balls.
+
+Optional motion/reference extensions added to the audit:
+- cooperative Large-ball push;
+- foot-driven roll;
+- ball balance;
+- ball dance;
+- ball surf.
+
+These are secondary variants. Blender must not delay the core roll/work pack for them.
+
+Bigger-picture context is now explicit: Life Tree harvest → Fluff consolidation → rolling/work/dance → buildings/props/gifts/dungeons → damage/debris → recycling → Fluff again.
+
+World/runtime ownership remains unchanged.
