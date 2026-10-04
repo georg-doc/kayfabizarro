@@ -54,9 +54,9 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 
 
-## 2026-10-04 · Combat Card-Hex Ascent · HOLD UNTIL MVP1 HUMAN REVIEW
+## 2026-10-04 · Combat Card-Hex Ascent · SINGLE COWORKER ONE-SHOT AUTHORIZED
 
-The Combat benchmark planning is preserved but **HOLD**. Do not spend implementation/model-comparison budget on it until the WB2 WorldBuilder MVP 1 has been delivered to Georg and received a product-level human review.
+Georg explicitly authorized **one parallel Claude Coworker implementation run** while the WB2 MVP1 recovery continues. This is not a model comparison and does not authorize Sol/Astra/Claude-Design provider runs.
 
 Owner repo:
 `georg-doc/KFB-Combat-Arena`
@@ -64,6 +64,14 @@ Owner repo:
 Draft PR:
 **#18** · `planning/card-hex-combat-ascent-benchmark-2026-10-04`
 head `c75c943d41c3a691821df4855253423259302ce2`
+
+Coworker implementation:
+- Combat Draft PR **#19**
+- branch `coworker/card-hex-ascent-one-shot-2026-10-04`
+- start head `08e03682539ab7330793bb248bfc26766d3c5ee5`
+- binding brief: `slices/card-hex-combat-ascent-benchmark/COWORKER_ONE_SHOT_2026-10-04.md`
+- status: `slices/card-hex-combat-ascent-benchmark/STATUS.json`
+- final Stage target: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/` · NOT DEPLOYED.
 
 Read:
 - `slices/card-hex-combat-ascent-benchmark/START_HERE.md`
@@ -80,8 +88,7 @@ The three current KayKit Hex source families are:
 Benchmark purpose:
 freeze one identical base/source/acceptance packet, then later compare Sol/Work, Astra/Work and Claude Coworker on the same full implementation task. Claude Design Level 5 is a separate design-authoring comparison, not a replacement Combat runtime owner.
 
-**Do not start multiple implementation writers yet.**
-Current source-freeze blocker is the common Blender Duel return/state. The S17 Gunfight Duel is already human-positive foundation; the corrected Blaster/Rifle/Minigun Blender output is still pending.
+**Do not start additional implementation writers.** Exactly one Coworker run is authorized on PR #19. The Blender Duel source gate is now closed on `georg-doc-patch-3`; the returned Rig_Medium ranged library and `_KFB` weapon/socket files are binding for that run.
 
 Reserved future comparison Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-benchmark/` · **NOT DEPLOYED**.
@@ -89,9 +96,9 @@ Reserved future comparison Stage:
 This lane does not write to WB2 PR #348 and does not alter Live.
 
 
-## 2026-10-04 · Combat Platformer Benchmark · HOLD
+## 2026-10-04 · Combat Platformer Benchmark · COMPARISON HOLD / COWORKER RUN ACTIVE
 
-Preserved planning only. **No provider run, comparison, or further benchmark expansion until MVP1 WorldBuilder human review.**
+Model/provider comparison remains **HOLD**. The only active exception is the explicitly authorized Claude Coworker One-Shot on Combat PR #19; do not infer permission for Sol/Astra/Claude-Design runs.
 
 Current central router:
 `skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md`
