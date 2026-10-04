@@ -1,74 +1,107 @@
 # KFB Animation · aktueller Arbeitsstand
 
-Status date: 2026-10-03
-This file is the plain-language KFB routing reference for the portable animation skill. Current GitHub project state still wins.
+Status date: 2026-10-04
+Status: **NATIVE BASELINE COMPLETE · DECIDED MEDIUM LOCO SET READY FOR WB2 CONSUMER**
+This file is the plain-language KFB routing reference for the portable animation skill. Current project/branch Returns still win for exact implementation facts.
 
 ## Was ist der Stand?
 
-The general animation method is available at `skills/kfb-cartoon-animation/SKILL.md`.
+The failed mixed-source browser candidate remains archived evidence.
 
-The last playable browser motion test failed Georg's human review. Although automated checks could load clips and move the actor, the result had wrong step length, visible wobble/jitter, poor arm clearance, dirty gait changes and an unconvincing jump.
+The corrected KayKit-native Blender review on Motion PR #344 is **complete**.
 
-That browser candidate is frozen as **failed evidence**. It is not the KFB locomotion baseline, not a playable MVP and must not be integrated into World, Travel, Combat or Residents.
+Correct review priority:
+1. KayKit Character Animations 1.1;
+2. Mixamo / KFB Motion Library only for proven gaps.
 
-There is currently **no human-accepted ActionFigure locomotion runtime**.
+Correct review actors:
+- primary: **Mannequin_Medium**;
+- second: **FrizzleBob v5**;
+- ActionFigure was explicitly **not** the native baseline review actor.
 
-## Was bedeutet „Blender Baseline“?
+Native baseline result:
+**KEEP 21 · HOLD 3 · REJECT 0**.
 
-It is a simple quality comparison before game integration:
+## Georg's decided Medium locomotion set
 
-- the real KayKit ActionFigure;
-- the original KayKit Character Animations 1.1 clips;
-- normal playback speed;
-- a plain grid and consistent cameras;
-- no game controller, no world, no Mixamo and no visual effects.
+- Walk = `Walking_B`
+- Run = `Running_A`
+- Sprint = `Running_B`
+- Jog = speed/phase blend between Walking_B and Running_A
+- Walking_A / Walking_C remain calmer variants.
 
-Blender shows whether the source animations themselves look clean on the actual character: feet, step length, arms, loop seam and jump poses. It does **not** build the game movement yet.
+Machine-readable handover:
+Motion PR #344 →
+`KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`
+
+Reference handover:
+`KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
+
+Corrected visual reference:
+`KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4`
+
+## Documented gaps
+
+These are known gaps, not unfinished baseline work:
+- turn in place;
+- start / stop / pivot;
+- strafe walk;
+- Rig_Large coverage beyond its thinner native set.
+
+Do not send Blender back through the native baseline to solve them.
 
 ## Wer macht jetzt was?
 
-**Next executor:** Coworker / Blender MCP.
+**Next executor: WSA / Codex.**
 
-**Task:** create the isolated native KayKit comparison package and classify each original clip as:
+**Task: KFB-LOCO-WB2-PLAYER-01**
 
-- keep;
-- hold for repair;
-- reject.
+Receiving world:
+WB2 Draft PR #348.
 
-The output is a review scene/contact sheet plus a short table. No runtime integration is allowed in this pass.
+Goal:
+one Mannequin_Medium player uses the accepted KayKit speed/phase blend in the real browser-proven four-island world.
+
+The consumer may not:
+- re-pick or re-time the clips;
+- make ActionFigure the baseline actor;
+- restore the failed Mixamo-first ladder;
+- create a second locomotion state machine;
+- change WB2 world/support ownership.
 
 ## Was muss Georg tun?
 
-Paste this one message into the Coworker / Blender MCP chat:
+Start the WSA/Codex integration job from the current PR #348 brief.
 
-> Bitte führe den GitHub-Auftrag „KAYKIT-NATIVE-LOCOMOTION-BASELINE-01“ vollständig aus. Nutze die echte ActionFigure und ausschließlich die originalen KayKit Character Animations 1.1 bei normalem Tempo. Gib mir Bilder und eine leicht verständliche KEEP/HOLD/REJECT-Tabelle zurück. Kein Mixamo, kein Browser-Controller und keine Weltintegration.
-
-Georg does not need to supply clip names, paths, measurements or repository identifiers.
+No further Blender baseline action is required.
 
 ## Was passiert danach?
 
-1. Georg judges the native KayKit clips visually.
-2. Blender cleans only the accepted family and prepares starts, stops, gait changes and jump sequencing.
-3. Codex/WSA integrates that accepted family into one simple playable world test.
-4. Only after walking/running works cleanly do Drive and Combat join the test.
+1. WSA/Codex proves the Medium Player/Motion seam in WB2.
+2. Resident placement/Save/Reload follows through `WSA-RES-SET-01`.
+3. FrizzleBob/Character Select consumes the same shared player seam after its exact source pin is reconciled.
+4. Rig_Large is probed against the same semantic code path with its own measured capabilities.
+5. Drive and later Flight attach without replacing the Ground owner.
 
 ## Binding source priority
 
-For ActionFigure / Rig_Medium:
+For the basic locomotion set:
+1. KayKit Character Animations 1.1;
+2. accepted native variants;
+3. supplementary sources only for documented gaps.
 
-1. original KayKit Character Animations 1.1;
-2. accepted native KayKit variants;
-3. Mixamo / KFB Motion Library only for a proven missing role.
-
-Mixamo may not overwrite an available and accepted native KayKit role.
-
-Consumers must not create their own gait tables or animation state machines.
+Consumers must not create local gait tables that contradict the Motion owner.
 
 ## Technischer Nachweis — nur für die ausführenden Chats
 
-- Current prepared workflow: `skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/`
-- Current prepared draft: PR `#344`, branch `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
-- Read first: `START_HERE.md`, then `BRIEF_BLENDER_KAYKIT_NATIVE_BASELINE_01.md`
-- Failed archived browser lineage: PR `#333`; mixed Ladder lineage: PR `#336`
-- Canonical native mapping donor: `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`
-- Later runtime consumer: current procedural World candidate, only after native motion acceptance
+Motion owner:
+PR #344 · branch `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
+current corrected head: `dfb6b8a15b3f04c52f49825252fcaf60f45df51c`.
+
+Read:
+- `RETURN/KAYKIT_NATIVE_BASELINE_01_RETURN.md`
+- `KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
+- `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`
+
+Receiving owner:
+PR #348 · read `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
