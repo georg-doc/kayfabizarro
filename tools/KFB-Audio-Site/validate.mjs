@@ -1,11 +1,11 @@
 import fs from 'node:fs';import path from 'node:path';
 const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'../..');
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'media/3D_Assets/Sounds/jukebox.json'),'utf8'));
-const sound=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/soundscape-source.json'),'utf8'));
+const sound=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/soundscape-source.json'),'utf8'));const snapshot=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/catalog.snapshot.json'),'utf8'));
 const lock=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/source-lock.json'),'utf8'));
 const checks=[];const check=(n,o,d=null)=>{checks.push({name:n,ok:!!o,detail:d});if(!o)throw new Error(n+': '+JSON.stringify(d))};
 try{
- check('catalog version',catalog.version==='2.0.0',catalog.version);
+ check('catalog version',catalog.version==='2.0.0',catalog.version);check('site snapshot matches canonical catalog',JSON.stringify(snapshot)===JSON.stringify(catalog));
  check('54 catalog tracks',catalog.tracks.length===54,catalog.tracks.length);
  const ids=new Set(),files=new Set();for(const t of catalog.tracks){check('id unique '+t.id,!ids.has(t.id),t.id);ids.add(t.id);check('file unique '+t.id,!files.has(t.file),t.file);files.add(t.file)}
  const road=catalog.tracks.filter(t=>t.collection==='roadtrip-v2'),lockMasters=new Map(lock.roadTripV2.masters.map(x=>[x.path,x])),lockStems=new Map(lock.roadTripV2.stemFamilies.map(x=>[x.path,x]));

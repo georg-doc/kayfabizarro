@@ -4,8 +4,12 @@ let catalog=null,soundscape=null,intake=[];
 const audioUrl=file=>RAW+file.split('/').map(encodeURIComponent).join('/');
 const text=(v='')=>String(v??'');
 const escapeHtml=s=>text(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function firstJson(urls){let last=null;for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status+' '+u);return await r.json()}catch(e){last=e}}throw last||new Error('no JSON source')}
 async function load(){
-  [catalog,soundscape]=await Promise.all([fetch(RAW+'media/3D_Assets/Sounds/jukebox.json',{cache:'no-store'}).then(r=>r.json()),fetch('./soundscape-source.json',{cache:'no-store'}).then(r=>r.json())]);
+  [catalog,soundscape]=await Promise.all([
+    firstJson(['./catalog.snapshot.json','../../media/3D_Assets/Sounds/jukebox.json',RAW+'media/3D_Assets/Sounds/jukebox.json']),
+    firstJson(['./soundscape-source.json'])
+  ]);
   renderAll();bind();
 }
 function meta(t){const a=[];if(t.collection)a.push(t.collection);if(t.bpm)a.push(t.bpm+' BPM');if(t.stems)a.push((t.stems.policy==='certified'?'STEMS ✓':'stems source'));return a.join(' · ')}
