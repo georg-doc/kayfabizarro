@@ -1,101 +1,148 @@
-# RETURN · KFB Fluff Work Motion Pack 01 · Briefing Ready
+# RETURN · KFB Fluff Work Motion Pack 01 · Part 3 complete
 
-Status: **BRIEFING_READY · BLENDER PART 1 NEXT**  
+Status: **BLENDER PART 3 COMPLETE · RUNTIME CONSUMER PROOF NEXT**  
 Date: 2026-10-04  
 Repo: `georg-doc/kayfabizarro`  
-Branch: `planning/fluff-blender-slice-01-2026-10-04`
+Branch: `planning/fluff-blender-slice-01-2026-10-04`  
+Current head: `081023f51525b272d9d5197418fa9b25887b1737`  
+Draft PR: **#356**  
+Merge / Live: **NO / UNCHANGED**
 
-## What changed
+## Current product result
 
-The original Site-only Fluff brief was hardened for Blender MCP after executor review.
+The reuse-first Blender slice is complete through Part 3.
 
-The slice is now explicitly **reuse-first**:
+Delivered motion library delta:
+- Rig_Medium: **17 clips**;
+- Rig_Large: **13 clips**;
+- `KFB_Motion_fluff01.glb` for both rigs;
+- regenerated `KFB_Motion_Library.catalog.patch_fluff01.json`;
+- no new animation clip family is required.
 
-1. audition existing motions;
-2. prove actor rigs;
-3. show Medium / Large / High-Fluff / Low-Fluff in isolation;
-4. complete the reuse matrix;
-5. author only genuine gaps.
+Current Fluff mass/visual rule:
+- 6 Small = 1 Medium;
+- 3 Medium = 1 Large;
+- Small radius 0.20;
+- Medium radius 0.723;
+- Large radius 1.397;
+- rolled work-ball diameter ≈ 2/3 of the carrier body height;
+- irregular kneaded/lumpy clay form.
 
-## Source findings locked into the brief
+Implemented/proven in Blender:
+- push / heavy push / steer for Medium and Large;
+- Medium growing-ball push/steer from Medium → Large radius;
+- 2- and 3-worker cooperative Large-ball push;
+- ball surf / balance / dance;
+- foot-driven roll;
+- KayKit-native kick + existing header / head-bonk / side-kick / throw contact events;
+- 6→1 merge prop reference with gather / squash / POP / puff / settle;
+- High/Low / marbled Fluff look references.
 
-- Robot One = **Rig_Medium / 23 joints**.
-- Robot Two = **Rig_Medium / 23 joints**.
-- current `KayKit_Skeletons/Skeleton_Minion.glb` = **Rig_Medium** worker candidate.
-- the older Disco Skeleton Minion is **Rig_Legacy** and is not the default worker source for this slice.
-- `Rig_Large_Tools.glb` does **not** exist.
-- Rig_Medium already provides reusable `Interact`, `PickUp`, `Throw`, `Work_*`, `Working_*`, `Holding_*`, `Hammering`, `Pickaxing`, `Sawing`, etc.
-- the accepted KFB Motion Library already provides a two-rig Medium/Large base and a dance family.
-- the Utopia Robot charging-station donor is real and exact:
-  `media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/assets/gltf/Robot_ChargingStation.gltf`.
-- High/Low Fluff look must derive from the existing K1/K2 Knet toolchain, not an invented generic sphere style.
-- Life-Tree pickup remains walk-over/proximity; no crouch/bend pickup action.
+Orc push is now clean: **0.00 m ball penetration**. The Part-2 Large-push leg defect is closed.
 
-## Files
+## Open defects / decisions
 
-- `START_HERE.md` — binding Blender MCP executor brief.
-- `REUSE_MATRIX.md` — mandatory role → existing clip / gap audit before authoring.
-- `RETURN.md` — this checkpoint.
+### 1 · Robot One pushing the Large ball · GEORG LOOK DECISION
 
-## Evidence / tests
+On `*_big_a` at r 1.397, Robot One's large chibi head enters the ball by **0.38–0.45 m**.
 
-This checkpoint is a source/briefing audit, not Blender output.
+Repair pass 1 made it worse:
+- penetration up to 0.50 m;
+- hand IK error 4 cm;
+- loop seam jump 11°.
 
-Verified by repository evidence:
-- Motion Library source/Return read.
-- Registry motion inventory read.
-- Robot One / Robot Two rig evidence located.
-- current Skeleton Minion Rig_Medium evidence located.
-- Legacy Skeleton Minion conflict identified.
-- missing `Rig_Large_Tools.glb` confirmed in Resident Atlas Recovery.
-- exact Robot Charging Station source located.
-- K1/K2 clay source path identified.
+Repair was reverted.
 
-No animation was authored or runtime-tested by this chat.
+Options:
+- **A · cartoon clay dent / compression** around the head in the runtime;
+- **B · author a separate head-up push pose**.
 
-## Blender Part 1 required return
+No second Blender repair is justified until Georg chooses A or B.
 
-Blender MCP returns:
+### 2 · Orc foot-roll · MINOR / QUARANTINABLE
 
-- completed `REUSE_MATRIX.md`;
-- Medium/Large audition evidence;
-- Robot One / Robot Two / current Skeleton Minion evidence;
-- High- and Low-Fluff isolated look probes;
-- explicit list of genuine missing motions.
+Right leg penetrates the dribble ball by **0.19 m** at frame 18.
 
-Only then does Blender proceed to Part 2 authoring.
+Robot foot-roll is clean enough.
+
+This does not block the runtime consumer proof. Runtime may:
+- quarantine Orc foot-roll for v1; or
+- use a smaller Rig_Large dribble ball.
+
+### 3 · Orc ball rides · MINOR
+
+Surf/balance/dance legs enter the lumpy top by about **0.07–0.12 m**.
+
+Current read is standing in soft clay. Not a runtime blocker unless the integrated consumer looks wrong.
+
+### 4 · Marble look · GEORG LOOK DECISION
+
+- six-colour version = loud / tie-dye;
+- three-colour version = calmer.
+
+Both remain valid look references. Runtime must keep this as a configurable/look choice until Georg decides.
+
+### 5 · Runtime-specific items still unproven
+
+NOT_RUN in Blender:
+- actual KFB runtime radius blend;
+- runtime root placement for ball rides;
+- runtime consumption of contact events;
+- per-actor hand-radius offsets;
+- final runtime clay deformation/dent behavior.
+
+These belong to the receiving runtime proof, not to another Blender pass by default.
+
+## Exact Part 3 evidence
+
+Read:
+- `PART3_RETURN/RETURN.md`
+- `PART3_RETURN/TEST_REPORT.md`
+- `PART3_RETURN/REUSE_STATUS.md`
+- `PART3_RETURN/part3_metrics.json`
+
+Primary visual evidence:
+- `PART3_FLUFF_SIZES.png`
+- `PART3_PUSH_SISYPHOS_MEDIUM_LARGE.png`
+- `PART3_PUSH_SISYPHOS.mp4`
+- `PART3_COOP_LARGE_BALL.png`
+- `PART3_PLAY_CONTACTS.png`
+- `PART3_BALL_RIDE.png`
+- `FLUFF_MARBLED_LOOK.png`
+- `MERGE_6TO1_STRIP.png`
+
+## Ownership
+
+Blender owns:
+- authored/derived motion;
+- prop/reference timing;
+- contact/event metadata;
+- source measurements.
+
+Blender does **not** own:
+- world/building state;
+- construction economy;
+- ball physics;
+- clay deformation runtime;
+- gameplay/reward;
+- runtime actor selection.
+
+Those remain with the receiving KFB runtime/world owner.
 
 ## Exactly one next gate
 
-**BLENDER PART 1 · SOURCE AUDITION + REUSE MATRIX**
+**FLUFF_BUILDING_ASSEMBLY_KIT_01_RUNTIME_CONSUMER_PROOF**
 
-No WorldBuilder implementation yet.
+Use the Part-3 motion library as the source. Prove in the real runtime:
+1. Small→Medium→Large aggregation;
+2. Medium and Large roll/push;
+3. growing Medium worker ball;
+4. 2–3 worker Large-ball cooperation;
+5. one ball ride/play action;
+6. 6→1 merge POP;
+7. contact/event consumption;
+8. chosen clay deformation/look behavior.
 
+Do not reopen Blender authoring unless the real runtime proves a motion defect that cannot be solved by consumer configuration/deformation.
 
-## 2026-10-04 · Mass Ladder / Bigger Picture update
-
-The Blender brief now also carries the first-pass Fluff Mass Ladder:
-
-- 6 Small Fluff → 1 Medium Fluff;
-- 3 Medium Fluff → 1 Large Fluff;
-- therefore 18 Small → 1 Large.
-
-Default handling:
-- one Rig_Medium rolls one Medium ball;
-- one Rig_Large rolls one Large ball;
-- 2–3 Rig_Medium may cooperatively roll/place one Large ball.
-
-The resulting Medium/Large ball may preserve marbled color mixing from its source balls.
-
-Optional motion/reference extensions added to the audit:
-- cooperative Large-ball push;
-- foot-driven roll;
-- ball balance;
-- ball dance;
-- ball surf.
-
-These are secondary variants. Blender must not delay the core roll/work pack for them.
-
-Bigger-picture context is now explicit: Life Tree harvest → Fluff consolidation → rolling/work/dance → buildings/props/gifts/dungeons → damage/debris → recycling → Fluff again.
-
-World/runtime ownership remains unchanged.
+No merge. No Live promotion.
