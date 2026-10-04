@@ -1,79 +1,109 @@
 # KAYKIT-NATIVE-LOCOMOTION-BASELINE-01 · START HERE
 
-Status: **PREPARED · NO RUNTIME · NO MIXAMO**
-Date: 2026-10-03
+Status: **BASELINE COMPLETE · GEORG-DECIDED LOCO SET HANDED OVER · NO RUNTIME INTEGRATION YET**
+Date: 2026-10-04 status correction for work completed 2026-10-03
 Owner: KFB ToolBox / Animation-Motion authoring
-Next executor: **Coworker / Blender MCP**
+Completed executor: **Coworker / Blender MCP**
+Next executor: **WSA / Codex · WB2 Player integration**
 Draft PR: **#344**
 Branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
-Parent recovery: PR #333 @ `18c56bcec5b9f6aab7a6dca71479421a65e8e9ca`
 
-## Why this restart exists
+## Read first
 
-The mixed-source ActionFigure browser freeplay passed technical automation but failed Georg's human motion review as a whole.
+1. `GEORG_COWORKER_REVIEW/NOTE_TO_WSA.md`
+2. `GEORG_COWORKER_REVIEW/BRIEF_BLENDER_KAYKIT_NATIVE_BASELINE_01_REV.md`
+3. `RETURN/KAYKIT_NATIVE_BASELINE_01_RETURN.md`
+4. `KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
+5. corrected visual references:
+   - `KAYKIT_LOCO_SET_01/KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4`
+   - `KAYKIT_LOCO_SET_01/KAYKIT_LOCO_WEAPONS_03.mp4`
 
-Observed HUMAN FAIL:
-- step length does not match travel;
-- visible wobble / jitter;
-- arm pose reads too tight and intersects / presses into the torso;
-- gait transitions are not clean;
-- jump behaviour is not clean;
-- animation timing itself reads jerky.
+The old top-level status **PREPARED / NOT RUN** is superseded.
 
-The conceptual mistake is now explicit:
-**KayKit Character Animations 1.1 must be the primary locomotion source for KayKit ActionFigure / Rig_Medium.**
-Mixamo / KFB Motion Library is supplementary only after a native-source gap is proven.
+## What is finished
 
-This restores the existing canonical rule in:
-`tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`
-blob `3db9fbd482e6a527c417e79af826138ff28efa33`.
+The revised Blender gate used the correct source priority:
+**KayKit Character Animations 1.1 first. Mixamo / KFB Motion Library only for proven gaps.**
 
-That file already states:
-native KayKit roles are canonical; Mixamo / KFB Motion Library may not overwrite them.
+Primary review actor was:
+**KayKit Mannequin_Medium**.
 
-## Exact source actor
+FrizzleBob v5 is the second actor.
+**ActionFigure was explicitly NOT the primary review actor.**
 
-`media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb`
-blob `4785276defdb929cb397954eb74b76aecb84486b`
+Native baseline result:
+- KEEP 21
+- HOLD 3
+- REJECT 0
 
-## Exact animation source
+The full result, measurements and honest source gaps are in `RETURN/`.
 
-KayKit Character Animations 1.1 · Rig_Medium
-commit `b97b5ac55df2724fae623992433685583eece51e`
+## Georg's binding locomotion decisions
 
-First-pass GLBs only:
-- `Rig_Medium_General.glb` · blob `5d16cb6815fc8371705147188813f851c10ba26a`
-- `Rig_Medium_MovementBasic.glb` · blob `98e965e886ec539e80f8984a77a29b0c1c02e5e5`
-- `Rig_Medium_MovementAdvanced.glb` · blob `f3ea309627f3ad76b92b85877ebc46f945cd4f1d`
+Current Medium basic locomotion set:
 
-## Existing native measurement donors
+- **Walk = `Walking_B`**
+- **Run = `Running_A`**
+- **Sprint = `Running_B`**
+- **Jog = speed/phase blend between Walking_B and Running_A**
+- `Walking_A` and `Walking_C` remain calmer variants.
 
-1. Canonical KayKit profile:
-   `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`
-   blob `3db9fbd482e6a527c417e79af826138ff28efa33`
+Current source gaps:
+- turn in place;
+- start / stop / pivot;
+- strafe walk;
+- clean native jog clip is absent by design because jog is now a blend;
+- some weapon/sprint combinations remain limited.
 
-2. Joyride J14 ActionFigure profile:
-   `tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/j14-locomotion-profile.ActionFigure.json`
-   blob `f88522de6a6b087d9ff4d609e8ad0238072a848c`
+These are documented gaps.
+They are **not** a reason to rerun the native baseline.
 
-3. KCL-M1 ActionFigure measurements:
-   `tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/KCL_M1_MEASURED_PROFILE_CANDIDATE.json`
+## Runtime recipe WSA must consume
 
-Do not silently choose between J14/KCL speed measurements when they differ.
+Source:
+`KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
 
-## Exactly one gate
+The runtime reproduces the accepted one-parameter speed blend:
+- idle 0
+- walk `Walking_B` @ 0.980 m/s
+- run `Running_A` @ 3.303 m/s
+- sprint `Running_B` @ 5.255 m/s
 
-**KAYKIT-NATIVE-BLENDER-BASELINE-01**
+Rules:
+- at most two neighbouring locomotion clips active;
+- shared normalized gait phase;
+- per-clip left-foot-down phase offset;
+- phase rate derived from active clip periods;
+- world/root movement speed equals the speed parameter;
+- blend local rotations **and local translations**;
+- sample animation in seconds, never by assumed frame count.
+
+Weapon/grip corrections in Update 03 of the handover are the current source.
+
+## Next product gate
+
+**KFB-LOCO-WB2-PLAYER-01**
+
+Receiving owner:
+**KFB WorldBuilder / WB2 · Draft PR #348**
 
 Goal:
-prove which original KayKit Rig_Medium locomotion clips look and measure cleanly on the real ActionFigure **before** any controller, transition graph, runtime speed ladder or Mixamo gap-fill.
+attach the accepted Medium locomotion recipe to the already browser-proven four-island WB2 world.
 
-### Georg
+Do not:
+- rerun the Blender baseline;
+- re-pick clips;
+- re-rank KayKit vs Mixamo;
+- use ActionFigure as a new baseline decision;
+- create a consumer-local second locomotion state machine.
 
-**Deine einzige Aufgabe:** Coworker / Blender öffnen und ihm genau den vorbereiteten PR-#344-Auftrag geben. Du musst keine Animationsnamen, Parameter, Pfade oder technischen Entscheidungen ergänzen.
+## ActionFigure
 
-### What Georg receives next
+ActionFigure may later receive a **small compatibility smoke** for Curtain Character Select if needed.
+That is not a new baseline and must not block first WB2 Player integration.
 
-One Blender review scene / review package showing the real ActionFigure with the original KayKit locomotion candidates on a grid, plus a KEEP / HOLD / REJECT table.
+## Rig_Large
 
-Only after that result do we decide which native clips become the actual game baseline.
+Large transfer remains a follow-up after the Medium runtime seam works.
+Use the same semantic/runtime code path with separately measured Large data.
+Do not assume Medium speeds/translations transfer unchanged.
