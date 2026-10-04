@@ -32,6 +32,38 @@ Browser storage belongs to each origin: the Site opens its own world state. Exis
 Exactly one human gate: **Georg freeplays the MVP1 Site**. Enter, WASD/Shift/right-mouse camera, I at Clown, Tab Play/Build, Library object editing, terrain Raise/Lower, Welt sichern / Studio speichern / Studio laden. Keep the long-route bot quarantined. No merge, no new runtime architecture, no further content expansion in this recovery.
 
 
+
+## 2026-10-04 · CURRENT DELIVERY SURFACE: GPT SITES FIRST
+
+Binding policy:
+- `skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+- machine registry: `skills/chat/KFB_SITE_SURFACE_REGISTRY_2026-10-04.json`
+- incident: `skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md`
+
+For current Site-capable KFB tools, workbenches, authoring surfaces and MVP products:
+
+**GPT Site is the primary product/daily-use surface.**
+
+Cloudflare is downstream compatibility/public-regression/formal KFB-Hub acceptance infrastructure when required. It is not the default product-build loop.
+
+If a Sites-capable product has QA-green source but the current executor lacks Sites publishing capability:
+**hand off to a Sites-capable executor. Do not substitute Cloudflare.**
+
+Current productive/published Site lines:
+
+- Production Hub · `https://kfb-production-hub.frizzlebob.chatgpt.site`
+- EyeRig Workbench · `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/` · Georg human-accepted for continuation
+- Asset Librarian · `https://kfb-asset-librarian.frizzlebob.chatgpt.site/` · WSA QA 8/8 PASS
+- Audio · `https://kfb-audio.frizzlebob.chatgpt.site` · exact production Site visibly verified
+
+Current Site-native/prepared next lines:
+- Environment Atlas · PR #353
+- FrankenStein Composer · PR #355
+- Billboard Hypernormalisation Curator · PR #354
+- WorldBuilder / World Studio MVP · PR #348 · GPT Site is primary target; exact URL must come from Sites publishing
+
+Do not create a second productive Site for an owner that already has one.
+
 ## 2026-10-04 · CURRENT WB2 ONE-SHOT: MVP1 PRODUCT RECOVERY
 
 PR #348 remains the existing WB2 owner. The previous **FROZEN_FAILED_CANDIDATE** label is superseded as a whole-product classification.
@@ -398,7 +430,7 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - `KFB_PRODUCTION_CONTROL_CONTRACT.md` — binding source reconciliation, SSOT, branch, timeout, publication and playable-MVP rules
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
-- `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
+- `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → GPT Site first for Site-capable products → bounded Cloudflare KFB-Hub mirror when required; includes timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
