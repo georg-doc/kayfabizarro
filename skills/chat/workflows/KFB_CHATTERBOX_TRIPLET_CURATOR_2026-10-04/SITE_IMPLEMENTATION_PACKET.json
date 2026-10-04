@@ -80,6 +80,7 @@
     "live": "UNCHANGED"
   },
   "doneWhen": [
+    "all integrated shown characters use EyeRig instead of stock/source eyes",
     "Pair/Scene/Bubble lab visibly uses real Resident Atlas 3D models, not cutouts",
     "existing review stage workflow retained, not replaced",
     "20 seed records load",
@@ -102,5 +103,16 @@
     ],
     "requiredCharacterSource": "Resident Atlas exact 3D actors/sets/rigs proven in PR #310",
     "salvageRule": "Bubble geometry/VFX/layout/timing may be reused only after independent source isolation from the rejected cutout scene."
+  },
+  "characterPresentationDefault": {
+    "eyes": "EYERIG_V6",
+    "sourceIsolation": "ORIGINAL_SOURCE_EYES_ALLOWED_FOR_DONOR_PROOF_ONLY",
+    "integrated": "HIDE_REPLACE_SOURCE_EYES_AND_MOUNT_EYERIG",
+    "profilePriority": [
+      "APPROVED_OR_RECOVERED_PROFILE",
+      "SOURCE_DERIVED_PROFILE_TUNE"
+    ],
+    "stockEyeFallback": false,
+    "owner": "KFB ToolBox EyeRig PR #104 / shared EyeRig v6"
   }
 }
