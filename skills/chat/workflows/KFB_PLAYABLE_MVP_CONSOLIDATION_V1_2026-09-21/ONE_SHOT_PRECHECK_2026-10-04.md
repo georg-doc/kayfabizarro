@@ -241,20 +241,29 @@ This can ride inside `WORLD-MULTI-ISLAND-CORRIDOR-01` / `DECK-WORLD-SEED-01`; it
 
 These are not new runtime owners. They are cheap contracts/fixtures that make the final integration deterministic.
 
-### P1-7 · GOLDEN-FIXTURE-PACK-01
+### P1-7 · GOLDEN-FIXTURE-PACK-01 · PRODUCT DIRECTION LOCKED
 
-Freeze one concrete, deterministic first-run content set before integration:
-- Town spawn / first safe anchor;
-- first Resident;
-- first canonical Card;
-- first song/discovery;
-- first vehicle;
-- first satellite destination;
-- first active performance encounter;
-- return anchor;
-- exact save/import checkpoint.
+Current product fixture:
+`GOLDEN_JOURNEY_MVP_2026-10-04.md`
+with machine-readable companion:
+`GOLDEN_JOURNEY_MVP_2026-10-04.json`.
 
-The same fixture IDs feed world recipes, Resident/ChatterBox proof, Jukebox, Almanac and the final browser acceptance script.
+Locked first-run direction:
+- Town curtain → Clown onboarding;
+- first Resident = juggling Clown;
+- first Card = `ignore_dystopia:1 · The Doomsday Clock`;
+- optional Driver/taxi unlock in Town, but Drive is required in automated acceptance;
+- first satellite = Dystopia;
+- first Golden performance = Orc Band + Resident Disco + Demon Lord party;
+- Golden song = `demon-afro-strut · Demon Lord Afro-Strut 01`;
+- Golden dance unlock = `kfb_dance_hip_hop_a`;
+- Utopia courier Card = `forget_utopia:1 · The Glossy Horizon`;
+- Protopia courier Card = `embrace_protopia:1 · The Open Notebook`;
+- Anti-Rules courier Card = `anti_rules_toolkit:1 · The Rules Lawyer`;
+- final onboarding anchor = Lorekeeper;
+- save/import proves Almanac + NPC continuity.
+
+The journey is a reference/acceptance path, not an open-world movement lock.
 
 ### P1-8 · MVP-ID-NAMESPACE-01
 
@@ -442,38 +451,20 @@ Origin → First Use → Settlement → Institution/Power → Accretion/Scars �
 
 This should drive layout, props, architecture and Resident context.
 
-### Q2 · Golden Journey
-Lock the first complete player journey in narrative order.
+### Q2 · Golden Journey · RESOLVED FOR MVP FIXTURE
+See `GOLDEN_JOURNEY_MVP_2026-10-04.md`.
+The open-world remains free; the reference journey is Town → Dystopia → Utopia → Protopia/Lorekeeper with optional Town detours.
 
-Suggested template:
-1. spawn in Town;
-2. first Resident encounter;
-3. first real Card;
-4. first song/discovery;
-5. first God Mode or world-edit proof if authoring is part of the review;
-6. enter vehicle;
-7. choose first satellite;
-8. biome/audio transition;
-9. second Resident/context;
-10. return to Town;
-11. save/export;
-12. fresh import/resume;
-13. Almanac and NPC continuity prove memory.
+### Q3 · First Card/deck identity · RESOLVED FOR GOLDEN FIXTURE
+- Dystopia #1: The Doomsday Clock.
+- Utopia #1: The Glossy Horizon.
+- Protopia #1: The Open Notebook.
+- Anti-Rules #1: The Rules Lawyer.
+- Town billboard begins from the canonical KFB card backside / wordmark rather than a fourth future deck.
 
-The exact Resident/Card/song/first satellite should be chosen before final WSA execution.
-
-### Q3 · First Card/deck identity per island
-The four islands need one concrete Card/deck/media identity for the MVP fixture.
-Do not leave the billboard/Almanac content generic.
-
-### Q4 · First performance sequence
-All three modules stay in the MVP:
-- Orc Band;
-- Resident Disco;
-- Wrestling/Show Ring.
-
-Before One-Shot, decide which one is the **first active Golden performance encounter** in the acceptance journey.
-The other two still ship as usable world modules but need not carry equal narrative weight in the first 10–15 minutes.
+### Q4 · First performance sequence · RESOLVED FOR GOLDEN FIXTURE
+The first Golden performance encounter is the **Dystopia birthday party: Orc Band + Resident Disco + Demon Lord**.
+Wrestling/Show Ring remains an MVP world module but is not required as the first narrative performance beat.
 
 ## F · One-Shot branch strategy
 
