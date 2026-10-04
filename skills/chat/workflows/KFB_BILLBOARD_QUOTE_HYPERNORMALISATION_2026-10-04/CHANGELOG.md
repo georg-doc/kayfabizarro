@@ -42,3 +42,13 @@
 - First productive implementation is one continuous Work One-Shot using `WORK_ONE_SHOT_BRIEF.md`.
 - Planned formal Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-hypernorm-curator/`.
 - No merge, Stage deployment or Live promotion performed.
+
+## 2026-10-04 · Quote Pool Batch 01
+
+- Curated the first 10 canonical decks from `media/kfb/index.json` in normal Web Chat as a research/data slice.
+- Added `QUOTE_POOL_BATCH_01.json` as an additive schema-aligned shard: 30 researched quote candidates, exactly 3 per deck, with deck profiles, provenance, rights state, theme/biome tags, one FrizzleQuestion per quote and Brain Food references.
+- Provenance status: 27 primary/edition-verified or double-checked; 3 `SECONDARY_ONLY`; 0 `UNVERIFIED`.
+- Rights status: 21 `PUBLIC_DOMAIN_CONFIRMED`; 6 `RESEARCHED_RESTRICTED`; 2 `RESEARCHED_QUOTE_LIMIT_ONLY`; 1 `DRAFT_RIGHTS_UNKNOWN`.
+- Conservative open-source cases retained instead of promoted: Wittgenstein English translation, Woolf edition-level locator, Vertov English translation, Debord English-translation rights, plus territorial limits for Lippmann and Mencken.
+- No runtime, H13, Billboard, Audio, 3D, Stage, merge or Live changes.
+
