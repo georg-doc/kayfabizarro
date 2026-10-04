@@ -80,3 +80,34 @@ Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — correct only the case
 The browser gate is fully green. No remaining QA mismatch is known.
 
 Site publishing is not included in this PASS because Sites MCP is not available in the current Webchat toolset.
+
+## B / C / D update · COMPLETE PASS · 2026-10-05
+
+- tested GitHub head: `18fb126701d2412f6b5a5701f08dc5615f4069a2`;
+- run `37243655057`, job `111557176078`;
+- validator: **303/303 PASS**;
+- JavaScript syntax: **PASS**;
+- browser: **17/17 PASS**;
+- artifact: `11317963584`;
+- digest: `sha256:8e74665aaabf6bc9108025a4744e54a4dbca365610294e9b1f26fa0b26485842`.
+
+The 17 browser checks prove:
+1. source 0.2 marker;
+2. 54-track render;
+3. 44 RoadTrip-v2 stats;
+4. 14 stem-family filter;
+5. Mix view;
+6. three B/C/D controls;
+7. C default;
+8. manual B→C→D reaches D;
+9. exactly one AudioContext after transitions;
+10. D + separate TTS ducking reduces SCORE gain;
+11. TTS does not create a second AudioContext;
+12. external World adapter reaches B on the same context;
+13. Prompt Studio exposes B/C/D;
+14. Conversation-D request is grounded in the authored prompt pack;
+15. missing rain remains explicit;
+16. zero page errors;
+17. zero local HTTP errors.
+
+Sites source commit `b0a620777768c93c2b87a3215b4c8e8730609e53` was saved as version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`; deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded. The Sites screenshot visibly confirms `SITE SOURCE 0.2`, `ONE AUDIO CONTEXT` and 54/44/14. The exact owner-private URL opens to its ChatGPT sign-in boundary in the automation profile; therefore no unauthenticated claim of interactive production access is made.

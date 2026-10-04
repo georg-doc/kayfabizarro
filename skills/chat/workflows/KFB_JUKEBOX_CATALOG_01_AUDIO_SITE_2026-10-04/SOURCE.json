@@ -1,6 +1,6 @@
 {
-  "schema": "kfb.jukebox-catalog-audio-site/0.1",
-  "date": "2026-10-04",
+  "schema": "kfb.jukebox-catalog-audio-site/0.2",
+  "date": "2026-10-05",
   "owner": "KFB Audio & Soundscape Baseline v1",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
@@ -10,16 +10,22 @@
   "counts": {
     "catalogTracks": 54,
     "roadTripV2Masters": 44,
-    "pairedStemFamilies": 14
+    "pairedStemFamilies": 14,
+    "musicInteractionStates": 3,
+    "authoredPromptEntries": 12
   },
   "hosting": {
-    "desired": "GPT Site / Sites MCP",
+    "desired": "existing owner-private GPT Site / Sites",
     "cloudflare": false,
-    "status": "QA_GREEN_PUBLISH_PENDING",
-    "provenSitesSkill": "/Users/georg/.codex/plugins/cache/openai-curated-remote/sites/1.0.0-a/skills/sites/SKILL.md",
-    "currentWebchatSitesMcpAvailable": false
+    "status": "DEPLOYED_OWNER_PRIVATE",
+    "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "project": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "version": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587",
+    "deployment": "appgdep_6ac2e0e36dc48191bd0b49ecd828a500",
+    "sourceCommit": "b0a620777768c93c2b87a3215b4c8e8730609e53",
+    "access": "custom-owner-only"
   },
-  "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
+  "nextGate": "WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01",
   "audioSourceLock": {
     "path": "tools/KFB-Audio-Site/source-lock.json",
     "sourceRef": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
@@ -27,18 +33,28 @@
     "stemFamilies": 14,
     "soundscape": 5
   },
-  "status": "QA_GREEN_GPT_SITE_PUBLISH_ONLY",
-  "lastImplementationHead": "070fdaee25dfcdc671a0a29946092086c0a50562",
+  "musicInteraction": {
+    "contract": "tools/KFB-Audio-Site/music-interaction-states.json",
+    "promptPack": "tools/KFB-Audio-Site/prompts/KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md",
+    "states": ["B", "C", "D"],
+    "default": "C",
+    "audioContextOwners": 1,
+    "stemAvailability": "FUTURE_NOT_AVAILABLE",
+    "worldIntegration": "PREPARED_NOT_INTEGRATED",
+    "billboardContext": "prepared through external adapter metadata"
+  },
+  "status": "UPDATED_OWNER_PRIVATE_WORLD_ADAPTER_READY",
+  "lastImplementationHead": "18fb126701d2412f6b5a5701f08dc5615f4069a2",
   "qa": {
-    "run": 37173411886,
-    "job": 111350911259,
-    "sourceValidation": "PASS",
+    "run": 37243655057,
+    "job": 111557176078,
+    "sourceValidation": "303/303 PASS",
     "syntax": "PASS",
     "browser": {
-      "pass": 9,
-      "total": 9,
-      "artifact": 11292621270,
-      "digest": "sha256:6ae512c1dcce56140e7decf6b1fc8b0965a4ffe53b15c77708b4beb13883d4e6"
+      "pass": 17,
+      "total": 17,
+      "artifact": 11317963584,
+      "digest": "sha256:8e74665aaabf6bc9108025a4744e54a4dbca365610294e9b1f26fa0b26485842"
     }
   },
   "productionControlPreview": {
@@ -48,5 +64,5 @@
     "name": "KFB_Audio_Site_MVP_01.html",
     "sha256": "79f1411f6c5edf77c0bc0a68cb746f0bd1f9e953c552422ff0c226875d493cad"
   },
-  "testedImplementationHead": "b5835c521264eef6caf1e1260821c5e04f232fcd"
+  "testedImplementationHead": "18fb126701d2412f6b5a5701f08dc5615f4069a2"
 }
