@@ -8,6 +8,30 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
+## 2026-10-04 · CURRENT PRODUCT RETURN · GPT SITE IS PRIMARY
+
+Georg explicitly confirmed GPT Site as the first target platform. This supersedes older Cloudflare-only acceptance routing for this delivery.
+
+Current delivery Return: [PR #348 source/evidence](https://github.com/georg-doc/kayfabizarro/blob/a29dc620e9aac9148e33d3a2223dc063fe2cda2b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/RETURN.md).
+
+**Open the game:** https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site
+
+Native Sites deployment **SUCCEEDED**, initially owner-private for Georg. This is the full existing WB2 application, not an iframe or a rebuilt game. All 80 runtime files are exact source blobs from PR #348 runtime `38ff52138078472a8cc2f34fe19fc240ba91eb29`; only the host entrypoint base changes to `/tools/…`. The same Player, world, editor, terrain, Card/Resident and persistence owners remain.
+
+Site source commit: `45b28d444960cc0acab4a0a72359e5289e197506`  
+Project: `appgprj_6ac27631f74c8191b52e4819c1973668`  
+Version: `appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495`  
+Deployment: `appgdep_6ac276cdd08481919ed7a436f9308775`
+
+The Hub now routes to this primary Site at `cloudflare-live@5bc24120a0e7ee98abfb924a40aff33e059792dc`. The [Cloudflare Stage](https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/) is retained as a secondary mirror; its deployment at `6ec3e9dfb27d7db2b93ff52f58393e270e721513` succeeded. Neither hosting publication is a game Live promotion or human acceptance.
+
+**Verification limit:** deployment success is confirmed by Sites. New browser play verification remains unavailable because the browser's admin-enforced policy check could not be completed. Do not substitute deployment success for a game-play PASS. No bypass attempted. Product evidence remains 19/19 source tests, native loader 10/10, prior Player 10/10, four native representative world views, native edit/sculpt/save/reload and prior fresh authoring roundtrip 5/5. New Studio-laden button import smoke and public-host freeplay remain unverified. No product defect was independently reproduced in this recovery.
+
+Browser storage belongs to each origin: the Site opens its own world state. Existing Studio exports can be carried through the existing Studio laden importer; no silent migration is claimed.
+
+Exactly one human gate: **Georg freeplays the MVP1 Site**. Enter, WASD/Shift/right-mouse camera, I at Clown, Tab Play/Build, Library object editing, terrain Raise/Lower, Welt sichern / Studio speichern / Studio laden. Keep the long-route bot quarantined. No merge, no new runtime architecture, no further content expansion in this recovery.
+
+
 ## 2026-10-04 · CURRENT WB2 ONE-SHOT: MVP1 PRODUCT RECOVERY
 
 PR #348 remains the existing WB2 owner. The previous **FROZEN_FAILED_CANDIDATE** label is superseded as a whole-product classification.
