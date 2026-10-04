@@ -2382,3 +2382,14 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Added `KFB_PRODUCTION_CONTROL_CONTRACT.md` as the binding preflight for current-source reconciliation, one-owner/one-candidate discipline, timeout handling, publication and MVP claims.
 - The corrected Coworker/Blender review on the KayKit-native branch supersedes the original baseline brief: Mannequin first, all eight Rig_Medium files, honest gaps, creator-reference scan and pictures-first return.
 - No new browser/world locomotion integration is allowed before Georg reviews the native KayKit visual return.
+
+
+## 2026-10-04 · EyeRig profile recovery after unified Site PASS
+
+- Georg accepted the published unified Medium | Large | Legacy ChatGPT Site for continuation.
+- Missing latest Medium approvals are an origin-bound LocalStorage recovery issue, not a unified runtime failure.
+- newest durable file export found: `eye-rig-medium.batch (2).json` · 40 profiles · 2 ADJUSTED_APPROVED / 37 ADJUSTED / 1 UNREVIEWED;
+- Dropbox copy from 2026-10-02 17:35Z and PR #104 copy are semantically identical;
+- no newer EyeRig JSON export found in Dropbox or the current owner branch;
+- current gate: `EYE_RIG_PROFILE_RECOVERY_01` — export the remembered later state from the old Cloudflare Stage origin, compare, persist and import;
+- per-class import preserves Large/Legacy; no runtime change, merge or Live promotion.
