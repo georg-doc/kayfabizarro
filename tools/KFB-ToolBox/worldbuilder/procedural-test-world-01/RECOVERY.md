@@ -1,3 +1,42 @@
+## 2026-10-04 · CURRENT GATE CORRECTION · PUBLISH CANDIDATE BEFORE AUTOMATED BROWSER QA
+
+The four-island recovery candidate is implemented and frozen, but the primary GPT Site still serves the older version.
+
+**Do not wait for the regular browser automation to recover before publishing the private human-review candidate.**
+
+Current facts:
+- candidate runtime source head: `3d9aaf5f6623f9009d6e68dd3c042009a160b044`;
+- complete runtime closure: **92 files**;
+- handoff/meta head continues on PR #348;
+- current GPT Site project already exists: `appgprj_6ac27631f74c8191b52e4819c1973668`;
+- current published Site version is still the pre-recovery build;
+- automated browser access is blocked before page load by an external/admin policy-verification service;
+- that tool failure is **not** evidence that the candidate product is broken.
+
+This exact class was already seen on the previous Site publication: Sites deployment succeeded while browser freeplay verification remained blocked.
+
+Correct next sequence:
+
+1. publish/update the **existing** World Studio GPT Site in place using the exact frozen candidate;
+2. persist new Site version/deployment/source identity;
+3. return the same Site URL to Georg;
+4. Georg freeplays all four islands;
+5. repair only defects actually observed in the real published product;
+6. automated browser QA may be rerun later when its policy service is available.
+
+Primary Site:
+`https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/`
+
+Do not:
+- create a new Site;
+- wait indefinitely for browser policy service;
+- call deployment a product PASS;
+- claim current candidate accepted before Georg freeplay;
+- route back to Cloudflare-first.
+
+Exactly one current product gate:
+**publish exact four-island candidate to the existing private GPT Site → Georg freeplay.**
+
 ## 2026-10-04 · Vier-Insel-Recovery: Kandidat gesichert, Browserprüfung blockiert
 
 Die bestehende WB2-Welt enthält jetzt als Implementierungskandidat vier unterschiedliche, deterministische Lebensbäume, zusammenhängende Wurzel-/Erdkörper, die extrahierte Joyride-J14/T4-Präsentation und eine Gebäudeplatzierung mit vollständiger Grundrissprüfung. Noch keine Produktfreigabe und kein neuer Site-Stand.
