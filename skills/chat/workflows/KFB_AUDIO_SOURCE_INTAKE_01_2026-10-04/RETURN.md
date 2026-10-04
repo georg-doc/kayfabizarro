@@ -214,3 +214,52 @@ Tested product head:
 - digest `sha256:c60193657c499ce4fd17a8d06c982debb6e0e4a7efdef9dd2aff3f68f57e4bc2`
 
 Custom Model is ready. Next creative phase: `KFB_AUDIO_CUSTOM_MODEL_EVAL_01`.
+
+
+## SFX Library Index 01 · 2026-10-04
+
+The current GitHub audio pool is now indexed for the existing KFB Audio Site without creating a second registry or runtime owner.
+
+Pinned asset source:
+`main@ca4f953d0d5ca001b46f1d89b8908b80592a09c9`
+
+Canonical registry refreshed:
+- `media/3D_Assets/CATALOG/audio-catalog.json`
+- **2,084 audio files** = Audio **1,704** + Sounds **380**
+- formats: 892 WAV · 765 OGG · 426 MP3 · 1 M4A
+
+Derived Site discovery snapshot:
+- `tools/KFB-Audio-Site/sfx-library.snapshot.json`
+- all **1,704 Audio files**
+- pack/source, blob SHA, bytes/format, existing semantic roles, gameplay use-cases, verbs, temporal/spatial class, confidence/status and exact-duplicate counts
+- explicitly non-canonical; it derives from the refreshed shared catalog/source lock
+
+Important duplicate truth:
+- root interface OGG aliases: **100/100 exact** vs `kenney_interface-sounds/Audio/`
+- `Classic Arcade SFX/`: **80/80 exact** subset aliases of `Classic Arcade SFX Complete/`
+- S050C Dry/Wet same-name pairs: 84; only **32** are exact-byte duplicates
+
+Coverage:
+- 1,263 one-shots
+- 346 Combat candidates
+- 307 UI/HUD candidates
+- 321 Feedback/Reward candidates
+- 291 Object Interaction candidates
+- 125 Movement candidates
+- 143 Vehicle/Machine candidates
+- only 21 clear loop-class files
+
+Preserved source gaps:
+tyre/friction; physical rain/thunder; sustained crowd/venue; city/traffic; additional loopable workshop machinery.
+
+Evidence at implementation head `28ef0d5ad0e45f2ba32d17030542f94caa8cfd71`:
+- run `37185843367`
+- job `111387438944`
+- validator **45/45 PASS**
+- existing Site browser QA **14/14 PASS**
+- artifact `11296249195`
+- digest `sha256:0beeb50c4701a48ebd9921fcb2e5438d27f1001b7962ed1e6146cc00a8cd3199`
+
+This is data/index QA only. No SFX Library UI is claimed published.
+
+Exactly one next gate remains the existing **KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE**, expanded to add the searchable/auditionable SFX Library + Event Map to the same `kfb-audio` Site update. No second Site, no Cloudflare, no merge.
