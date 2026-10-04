@@ -1964,3 +1964,36 @@ Compare candidates by profile count, review/approval state and source coverage, 
 Per-eye/eyepatch remains deferred until profile recovery is resolved.
 
 No auto-merge or Live promotion.
+
+
+### EYE_RIG_PROFILE_RECOVERY_01 · evidence checkpoint
+
+Recovered export inventory:
+
+- Dropbox `/Mac/Downloads/eye-rig-medium.batch.json` · 2026-10-02 14:03Z · 252,623 B
+- Dropbox `/Mac/Downloads/eye-rig-medium.batch (1).json` · 2026-10-02 14:43Z · 303,709 B
+- Dropbox `/Mac/Downloads/eye-rig-medium.batch (2).json` · 2026-10-02 17:35Z · 363,596 B
+- GitHub PR #104 contains the same semantic 40-profile payload as `eye-rig-medium.batch (2).json` (blob `9e6f10068160cd2c66ee33660f7b1d927273524b`).
+
+40-profile state:
+- 40 selected / 40 profiles;
+- 2 `ADJUSTED_APPROVED`: `mannequin-medium`, `adventurer-rogue-hooded`;
+- 37 `ADJUSTED`;
+- 1 `UNREVIEWED`: `gothgirl`;
+- additive seven versus the earlier 33-profile export: `paladin-king`, `mummy-b`, `mummy-a`, `survivalist`, `hoarder`, `space-ranger-flight`, `combat-mech`.
+
+This does **not** match Georg's recollection of the later Stage session where many more actors were explicitly Approved. No newer EyeRig batch file was found in Dropbox or the current GitHub owner branch.
+
+Conclusion:
+the newest remembered approvals were most likely retained only in the old Cloudflare Stage origin's browser LocalStorage. They cannot be read from the new ChatGPT Site origin or from server-side GitHub/Dropbox unless exported.
+
+The current import path is safe for recovery:
+a `Rig_Medium` batch import applies only matching Medium profiles/current Medium selection and persists them into the existing shared storage object. It does not reset Large/Legacy profiles.
+
+Recovery action:
+open the old Stage in the same browser profile, export the Medium batch, then compare it against the known 40-profile file before committing/importing it.
+
+Old Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+No runtime change is made until the newest export is recovered.
