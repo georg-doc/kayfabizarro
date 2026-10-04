@@ -1,3 +1,39 @@
+## 2026-10-04 · HUMAN VISUAL FAIL · JOYRIDE DESIGN MISSING
+
+Georg freeplayed the primary GPT Site and returned a **HUMAN VISUAL FAIL**.
+
+This supersedes any implication that Site publication/source-clean assets are sufficient product acceptance.
+
+Observed product problem:
+- giant pale Track-Core road/bridge/support bands dominate the frame;
+- flat grey void/background;
+- sparse individual KayKit objects read as an integration scene rather than a living authored place;
+- the expected Joyride/T4 clay-road/world design is absent.
+
+Exact human-fail record:
+`HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md`
+
+Critical source fact:
+R2D explicitly left the Joyride clay-road presentation as an unresolved WSA task:
+`buildClayStrand(THREE, stream, …)`
+and defined DONE as the island road looking like J14 at driving height.
+
+The current product shipped without that presentation adapter.
+
+Current classification:
+- GPT Site hosting: PASS
+- WB2/Track mechanism: KEEP
+- Player/Residents/Card/God Mode/persistence: KEEP unless independently broken
+- Joyride visible road/world presentation: **MISSING**
+- Town composition/livingness: **HUMAN FAIL**
+- Site human acceptance: **FAIL**
+- Live: unchanged
+
+Exactly one next action:
+**one visual-world recovery in the existing WB2 owner: integrate the pinned Joyride/K2 presentation over the existing Track stream, repair composition/livingness, update the same GPT Site, then Georg freeplays again.**
+
+No new Site. No second road/world owner. No Cloudflare-first loop.
+
 ## 2026-10-04 · CURRENT PRODUCT RETURN · GPT SITE IS PRIMARY
 
 Georg explicitly confirmed GPT Site as the first target platform. This supersedes older Cloudflare-only acceptance routing for this delivery.
