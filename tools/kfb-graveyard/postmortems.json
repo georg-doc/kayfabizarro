@@ -1,7 +1,7 @@
 {
  "$schema": "kfb-postmortem-graveyard/v1",
- "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.8.0 (2026-10-04): neuer One-Shot/WSA-Lead-Fail — technischer Hürth/OSM-Donor wurde trotz fehlender visueller Abnahme als aktuelle KFB-Weltgrundlage promoted; daraus folgen typed donor scope + visible-source firewall.",
- "version": "1.8.0",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.9.0 (2026-10-04): WSA/Process-Fail — trotz etablierter GPT-Sites und Site-first Projektentscheidungen blieb der Root-Workflow Cloudflare-first; WSA begann erneut am Mirror statt an der Produktoberfläche.",
+ "version": "1.9.0",
  "updated": "2026-10-04",
  "graves": [
   {
@@ -809,6 +809,26 @@
     "false-green",
     "integration"
    ]
+  },
+  {
+   "id": "cloudflare-before-site",
+   "date": "2026-10-04",
+   "stone": "Hier ruht: Cloudflare vor der Site",
+   "hover": "Production Hub, EyeRig, Asset Librarian und Audio liefen bereits als GPT Sites, aber der Root-Workflow sagte weiter Cloudflare-first. WSA begann deshalb beim Mirror und wechselte erst nach Georgs Eingriff zur vereinbarten Site. Der Fehler war die falsche Delivery-Hierarchie, nicht fehlende Sites.",
+   "lesson": "Die primäre Produktoberfläche muss vor jedem Publish explizit aufgelöst werden. Bei Site-capable Produkten: GitHub → GPT Site → erst danach bounded Cloudflare-Mirror, wenn wirklich nötig. Fehlt der Sites-Publisher, wird an einen Sites-fähigen Executor übergeben — nicht der Host ausgetauscht.",
+   "trigger": "Was ist die vereinbarte primäre Produktoberfläche?",
+   "who": "process",
+   "size": "large",
+   "tags": [
+    "sites",
+    "cloudflare",
+    "delivery",
+    "routing",
+    "wsa",
+    "wiederholungstaeter"
+   ],
+   "pattern": "explicit-product-decision-overridden-by-stale-generic-workflow",
+   "source": "skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md"
   }
  ]
 }
