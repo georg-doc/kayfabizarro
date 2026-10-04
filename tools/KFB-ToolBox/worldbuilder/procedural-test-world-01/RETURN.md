@@ -1,3 +1,34 @@
+## 2026-10-04 · FOUR-ISLAND JOYRIDE / LIFE-TREE SSOT RECOVERY
+
+Current binding implementation brief:
+`WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md`
+
+Recovery scope is **all four existing islands**:
+
+- Town / burg / seed 3
+- Dystopia / ignore_dystopia / seed 11
+- Utopia / forget_utopia / seed 17
+- Protopia / embrace_protopia / seed 23
+
+Binding visual/world rules:
+- every island is one excavated tree-earth organism with visible roots;
+- every island has one large central Claymation signature Life Tree;
+- each Life Tree is unique to island + deck + zone, deterministic from the island/deck SSOT;
+- exact current R2C palette governs terrain/root body/Joyride presentation/environment accents;
+- current Track Core routes/support/collision stay KEEP;
+- visible Track presentation must use Joyride J14/T4/K2 language;
+- current building placement has no Track-clearance validation and must be repaired;
+- building↔Track intersections = 0, bridgehead intersections = 0, protected-anchor collisions = 0;
+- all four islands must be visually rebuilt in one integrated pass, not sequential Georg-facing slices.
+
+Working Player/Residents/Cards/God Mode/terrain edit/save/import/current Site remain KEEP.
+
+Primary Site remains:
+`https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/`
+
+Next product action:
+**execute the four-island SSOT recovery, update the same Site, then Georg freeplays all four islands.**
+
 ## 2026-10-04 · HUMAN VISUAL FAIL · JOYRIDE DESIGN MISSING
 
 Georg freeplayed the primary GPT Site and returned a **HUMAN VISUAL FAIL**.
