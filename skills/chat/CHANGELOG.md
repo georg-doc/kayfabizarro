@@ -6,7 +6,7 @@
 - Current default for Site-capable KFB tools/workbenches/authoring/MVP products is GitHub → GPT Site → exact Site verification; Cloudflare becomes downstream compatibility/public-regression/formal KFB-Hub mirror when required.
 - Missing Sites publishing capability must hand off to a Sites-capable executor; it must not silently substitute Cloudflare.
 - Updated root START_HERE, Chat/GitHub delivery workflow, Fresh Chat protocol, KFB Hub workflow card, WSA MVP1 rebrief, Coworker MVP1 rebrief, and Site/God Mode architecture.
-- Current Site inventory records Production Hub, EyeRig Workbench, Asset Librarian and Audio as published Site lines; Environment Atlas, FrankenStein Composer, Billboard Curator and World Studio as Site-native/prepared next lines.
+- Current Site inventory records Production Hub, EyeRig Workbench, Asset Librarian, Audio and World Studio MVP1 as published Site lines; Environment Atlas, FrankenStein Composer and Billboard Curator remain Site-native/prepared next lines.
 - Graveyard bumped to v1.9.0 / 59 graves with `Cloudflare vor der Site`; trigger: `Was ist die vereinbarte primäre Produktoberfläche?`.
 - No PR #348 runtime code was changed by this control-plane correction.
 
