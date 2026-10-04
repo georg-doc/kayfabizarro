@@ -6,6 +6,11 @@ import {sampleLoco} from './loco-blend.v1.mjs';
 const SOURCE_PIN='4398cd96499cd74c20b7be89e051a99121ea54c2';
 const BASE='media/3D_Assets/KayKit_Character_Animations_1.1/';
 const raw=path=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+SOURCE_PIN+'/'+path.split('/').map(encodeURIComponent).join('/');
+export const PLAYER_SOURCES=Object.freeze({
+ Mannequin_Medium:{commit:SOURCE_PIN,path:BASE+'Mannequin Character/characters/Mannequin_Medium.glb'},
+ FrizzleBob_v5b:{commit:'23615cffb515d03d2b6a0164b896dd08e3bc1bed',path:'tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb',blobSha:'24134a51793fef0dd8cab59bbf50b6b7c5960a45'}
+});
+export async function loadActorSource(profile){const src=PLAYER_SOURCES[profile];if(!src)throw Error('Unreviewed player profile '+profile);const g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+src.commit+'/'+src.path.split('/').map(encodeURIComponent).join('/'));g.scene.userData.sourceRecord={assetId:profile,packId:'KayKit Rig_Medium',source:src};return g.scene;}
 export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
   const response=await fetch(new URL('./KFB_KAYKIT_LOCO_SET_01.v1.json',import.meta.url));if(!response.ok)throw Error('Motion contract missing');
   const contract=await response.json(),anchors=contract.locomotion.anchors,loader=new GLTFLoader();
@@ -13,9 +18,9 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
     loader.loadAsync(raw(BASE+'Mannequin Character/characters/Mannequin_Medium.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_General.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb'))]);
-  const figure=model.scene,holder=new THREE.Group();holder.name='WB2 Player · Mannequin_Medium';holder.add(figure);holder.visible=false;
+  let figure=model.scene,profile='Mannequin_Medium';const holder=new THREE.Group();holder.name='WB2 Player · Mannequin_Medium';holder.add(figure);holder.visible=false;
   const names=new Set();figure.traverse(o=>{names.add(o.name);if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
-  const clips=[...general.animations,...movement.animations],mixer=new THREE.AnimationMixer(figure),actions=new Map(),bindings={};
+  const clips=[...general.animations,...movement.animations],actions=new Map();let mixer=new THREE.AnimationMixer(figure),bindings={};
   for(const a of anchors){
     const source=clips.find(c=>c.name===a.clip);if(!source)throw Error('Native clip missing: '+a.clip);
     // Same-rig source binding: preserve native translations/scales and all rotations.
@@ -32,12 +37,21 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
     for(const row of samples.rows){const action=actions.get(row.clip);action.time=row.time;action.setEffectiveWeight(row.weight);}
     mixer.update(0);figure.updateMatrixWorld(true);
   }
-  present(0,0);const box=new THREE.Box3().setFromObject(figure,true),bodyHeight=box.max.y-box.min.y;
+  present(0,0);const box=new THREE.Box3().setFromObject(figure,true);let bodyHeight=box.max.y-box.min.y;
   // Preserve the native metre rig; origin offset only, no consumer speed/rig rescale.
   figure.position.y=-box.min.y;scene.add(holder);
   const speeds=Object.fromEntries(anchors.map(a=>[a.role,a.speed]));
-  const ground=createPlanarGround({THREE,camera,dom,root:holder,bodyHeight,spawn:world.spawn,groundAt,solidAt:(x,z)=>world.solidAt(x,z),speeds,present,hud});
-  return Object.assign(ground,{actor:{holder,figure,mixer,report:{actor:'Mannequin_Medium',bindings,bodyHeight}},contract,
-    evidence(){return {owner:'WB2 shared planar Ground',animationOwner:'KayKit native speed/phase mixer',sourcePin:SOURCE_PIN,actorProfileId:'Mannequin_Medium',position:ground.position.toArray(),heading:ground.heading,speed:ground.speed,phase,rows:samples.rows,bindings,bodyHeight,groundY:groundAt(ground.position.x,ground.position.z),mixerCount:1}},
+  const ground=createPlanarGround({THREE,camera,dom,root:holder,bodyHeight,spawn:world.spawn,groundAt,getActorProfileId:()=>profile,solidAt:(x,z)=>world.solidAt(x,z),speeds,present,hud});
+  const api=Object.assign(ground,{actor:{holder,figure,mixer,report:{actor:'Mannequin_Medium',bindings,bodyHeight}},contract,
+    evidence(){return {owner:'WB2 shared planar Ground',animationOwner:'KayKit native speed/phase mixer',sourcePin:PLAYER_SOURCES[profile].commit,actorProfileId:profile,position:ground.position.toArray(),heading:ground.heading,speed:ground.speed,phase,rows:samples.rows,bindings,bodyHeight,groundY:groundAt(ground.position.x,ground.position.z),mixerCount:1}},
+    async setActor(next){
+      if(next===profile)return profile;const replacement=await loadActorSource(next),available=new Set();replacement.traverse(o=>{available.add(o.name);if(o.isMesh)o.castShadow=o.receiveShadow=true});
+      const nextBindings={},prepared=[];
+      for(const a of anchors){const src=clips.find(c=>c.name===a.clip);const tracks=src.tracks.filter(t=>{const name=t.name.slice(0,t.name.lastIndexOf('.'));if(available.has(name))return true;if(/^handslot[lr]$/.test(name))return false;throw Error('Required Medium bone missing '+next+': '+name)});prepared.push(new THREE.AnimationClip(src.name,src.duration,tracks.map(t=>t.clone())));nextBindings[src.name]={sourceTracks:src.tracks.length,boundTracks:tracks.length,duration:src.duration};}
+      const wasOn=ground.on;ground.setOn(false);mixer.stopAllAction();mixer.uncacheRoot(figure);holder.remove(figure);figure=replacement;holder.add(figure);mixer=new THREE.AnimationMixer(figure);actions.clear();bindings=nextBindings;profile=next;
+      for(const clip of prepared){const action=mixer.clipAction(clip);action.play();action.paused=true;action.setEffectiveWeight(0);actions.set(clip.name,action)}
+      phase=idleClock=0;present(0,0);const b=new THREE.Box3().setFromObject(figure,true);bodyHeight=b.max.y-b.min.y;figure.position.y=-b.min.y;holder.name='WB2 Player · '+next;api.actor={holder,figure,mixer,report:{actor:next,bindings,bodyHeight}};ground.setOn(wasOn);return profile;
+    }
   });
+  return api;
 }

@@ -1,7 +1,7 @@
 // Planar extraction of WB0 ground-controller.js: WASD semantics, backMul .55,
 // turnRate 2.35, body-relative orbit camera, exponential follow (14), RMB/wheel.
 // WB2 supplies all support/collision truth. Motion presentation is injected.
-export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groundAt,solidAt,speeds,present,hud}) {
+export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groundAt,solidAt,speeds,present,hud,getActorProfileId=()=> 'Mannequin_Medium'}) {
   const keys=new Set(),position=root.position,forward=new THREE.Vector3(),desiredCam=new THREE.Vector3(),lookAt=new THREE.Vector3(),desiredLook=new THREE.Vector3();
   const params={turnRate:2.35,backMul:.55,cameraDistance:bodyHeight*7,cameraHeight:bodyHeight*4.1,cameraLookHeight:bodyHeight*1.15,cameraLookAhead:bodyHeight*1.6,cameraSmooth:14};
   let on=false,heading=spawn.heading||0,speed=0,hold=0,yaw=0,pitch=0,drag=null,snapped=false;
@@ -34,7 +34,7 @@ export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groun
   function release(){drag=null;}dom.addEventListener('pointerup',release);dom.addEventListener('lostpointercapture',release);
   dom.addEventListener('wheel',e=>{if(!on)return;e.preventDefault();params.cameraDistance=THREE.MathUtils.clamp(params.cameraDistance*Math.exp(e.deltaY*.00045),bodyHeight*3.5,bodyHeight*14)},{passive:false});
   return {position,params,update,get on(){return on},get speed(){return speed},get heading(){return heading},setOn(v){on=!!v;root.visible=on;keys.clear();speed=0;hold=0;drag=null;snapped=false;if(on){present(0,0);syncCamera(0)}},handToOrbit(controls){controls.target.copy(lookAt);controls.update()},
-    writeDoc(doc){doc.world.player={actorProfileId:'Mannequin_Medium',worldId:doc.id,position:position.toArray(),heading,speed:0,intention:'idle'};},
-    readDoc(doc){const p=doc.world?.player;keys.clear();speed=0;hold=0;if(p?.worldId===doc.id&&p.actorProfileId==='Mannequin_Medium'&&p.position?.length===3&&p.position.every(Number.isFinite)&&Number.isFinite(p.heading)&&Number.isFinite(groundAt(p.position[0],p.position[2]))&&groundAt(p.position[0],p.position[2])>-30&&solidAt(p.position[0],p.position[2])===0){position.set(p.position[0],groundAt(p.position[0],p.position[2]),p.position[2]);heading=p.heading;}else{position.set(spawn.x,groundAt(spawn.x,spawn.z),spawn.z);heading=spawn.heading||0;}root.rotation.y=heading;snapped=false;}
+    writeDoc(doc){doc.world.player={actorProfileId:getActorProfileId(),worldId:doc.id,position:position.toArray(),heading,speed:0,intention:'idle'};},
+    readDoc(doc){const p=doc.world?.player;keys.clear();speed=0;hold=0;if(p?.worldId===doc.id&&p.actorProfileId===getActorProfileId()&&p.position?.length===3&&p.position.every(Number.isFinite)&&Number.isFinite(p.heading)&&Number.isFinite(groundAt(p.position[0],p.position[2]))&&groundAt(p.position[0],p.position[2])>-30&&solidAt(p.position[0],p.position[2])===0){position.set(p.position[0],groundAt(p.position[0],p.position[2]),p.position[2]);heading=p.heading;}else{position.set(spawn.x,groundAt(spawn.x,spawn.z),spawn.z);heading=spawn.heading||0;}root.rotation.y=heading;snapped=false;}
   };
 }

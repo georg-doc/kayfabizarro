@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
-  "state": "NATIVE_SOURCE_MODULE_INTAKE_IN_PROGRESS",
+  "state": "GOLDEN_JOURNEY_NATIVE_INTEGRATION_BROWSER_IN_PROGRESS",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -76,17 +76,15 @@
     "externalCritic": "independent_critic · no production edits",
     "sourceInspection": "FOUR_BUILDING_FAMILIES_AND_CLOWN_FARMERS_LOREKEEPER_MONSTROSITY_DEMON_BUSH_ORIGINALS_VIEWED",
     "latestBrowserRun": {
-      "id": 37181602603,
-      "head": "1df8edaeb11b695821f73c695b328b00fd85e42f",
-      "result": "FAIL_GROUND_RUN_SOFTWARE_TIMEOUT_AFTER_16_SOURCE_WORLD_CAPTURES",
-      "sourceWorldPngs": 16,
-      "pageErrors": 0,
-      "consoleErrors": 0
+      "id": 37183432860,
+      "head": "b14e5da1eed0f581aecdc2fe29acea258915b69d",
+      "result": "9_OF_10_PLAYER_CHECKS_PASS_SPRINT_BLOCKED_BY_TOWN_HOME",
+      "sourceWorldPngs": 16
     },
     "qaEnvironment": "SwiftShader capture scale .5; input proof .25; native physics unchanged. No performance PASS",
     "artifact": {
-      "id": 11295686317,
-      "sha256": "03020ece9352efd20f5f23ecdc2f067965e5e90767ddd37c51a83a5fe0f8a8dd"
+      "id": 11296770456,
+      "sha256": "e0aaf0fc34a3d8228c40662a39ef49dd31266d8b838cdc6f7015813456541853"
     },
     "independentCritic": {
       "result": "FOUNDATION_REPAIR_REQUIRED",
@@ -96,7 +94,9 @@
         "shared material facets too regular",
         "living place composition incomplete"
       ]
-    }
+    },
+    "journeyPureContracts": "4/4 PASS",
+    "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING"
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -111,10 +111,10 @@
     "sourceMaterial": 1
   },
   "openCoreBlockers": [
-    "source-clean native foundation implemented; integrated visual review and complete source audit pending",
-    "integrated Golden Journey systems are incomplete",
-    "fresh-session export/import persistence not yet proven",
-    "World Studio/Site Stage not yet implemented/published"
+    "Golden Journey full real-input browser proof pending",
+    "Fresh-context import proof pending",
+    "Native Studio palette, billboards and musical-world presentation intake pending",
+    "Whole-Game Critic required before Stage"
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -126,7 +126,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "VERIFY_REMAINING_SOURCE_ISOLATES_AND_CONTINUE_ACTUAL_RESIDENT_CARD_CURTAIN_GOLDEN_JOURNEY_IN_SAME_OWNER",
+  "nextInternalAction": "GOLDEN_BROWSER_TRAVERSAL_FRESH_IMPORT_NATIVE_STUDIO_AND_MUSICAL_WORLD_CONTINUE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",

@@ -187,6 +187,9 @@ export function createCardBuilder(opts = {}) {
     const pageNum = off + 1 + Math.floor((card.n - 1) / 4);
     const qi = (card.n - 1) % 4;
     const pg = await renderPage(fileUrl(rd.pdf), pageNum, P.pdfRes);
+    // Verified numbered crops override only their own cell; unmeasured siblings retain the deck grid.
+    const measured=rd.cardCrops?.[card.n];
+    if(measured){const cv=document.createElement('canvas');cv.width=Math.round(pg.width*measured.w);cv.height=Math.round(pg.height*measured.h);cellAspect=cv.width/cv.height;cv.getContext('2d').drawImage(pg,pg.width*measured.x,pg.height*measured.y,pg.width*measured.w,pg.height*measured.h,0,0,cv.width,cv.height);artCache.set(ck,cv);return cv;}
     const G = gridOf(rd);
     const gx = pg.width * G.x, gy = pg.height * G.y;
     const cw = Math.floor(pg.width * (G.w - G.gapX) / P.gridCols);

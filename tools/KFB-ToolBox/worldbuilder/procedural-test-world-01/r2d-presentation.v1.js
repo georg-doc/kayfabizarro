@@ -165,8 +165,16 @@ export function mountR2DPresentation({group,supportTerrain,plan,field,palette}){
   group.add(top,under);
   const water=buildWaterGroup(plan,field,palette);group.add(water.group);
   const nature=buildNatureGroup(plan,field,palette);group.add(nature.group);
+  const natureBases=[];nature.group.traverse(o=>{if(o.isInstancedMesh){const matrices=[];for(let i=0;i<o.count;i++){const m=new THREE.Matrix4();o.getMatrixAt(i,m);matrices.push(m)}natureBases.push({mesh:o,matrices})}});
   return{
     report:{schema:SCHEMA,depth:body.depth,bodyVertices:body.vertices,underside:true,...water.report,nature:nature.report},
+    refreshSurface(heightAt){
+      // This is the existing WB2 sculpt truth projected onto its visible R2D mesh.
+      // Underside shape, island topology and Track support remain their existing owners.
+      const pos=body.top.attributes.position;for(let i=0;i<45*plan.NA;i++){const x=pos.getX(i),z=pos.getZ(i);pos.setY(i,heightAt(x,z))}pos.needsUpdate=true;
+      body.top.computeVertexNormals();body.top.computeBoundingBox();body.top.computeBoundingSphere();body.under.computeBoundingBox();body.under.computeBoundingSphere();
+      for(const {mesh,matrices} of natureBases){matrices.forEach((base,i)=>{const m=base.clone(),x=m.elements[12],z=m.elements[14];m.elements[13]+=heightAt(x,z)-field.heightAt(x,z);mesh.setMatrixAt(i,m)});mesh.instanceMatrix.needsUpdate=true;mesh.computeBoundingSphere()}
+    },
     dispose(){group.remove(top,under,water.group,nature.group);body.top.dispose();body.under.dispose()}
   };
 }

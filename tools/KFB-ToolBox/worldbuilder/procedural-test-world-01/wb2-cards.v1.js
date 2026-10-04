@@ -10,9 +10,10 @@ export const CROP_EVIDENCE=Object.freeze({
 });
 export function createMvpCards(){
   const builder=createCardBuilder({THREE,params:{indexUrl:raw('media/kfb/index.json'),baseUrl:raw('media/kfb'),deckOverrides:{
-    ignore_dystopia:{pdf:'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf',data:'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json',cardGrid:{x:.06,y:.117,w:.879,h:.823,gapX:.09,gapY:.01}},
-    forget_utopia:{pdf:'Deck_A_UTOPIA_-_Forget_Utopia web H.pdf',data:'Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json',cardGrid:{x:.05,y:.037,w:.899,h:.947,gapX:.135,gapY:.01}},
-    embrace_protopia:{pdf:'Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1) web H.pdf',data:'Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json',cardGrid:{x:.048,y:.093,w:.903,h:.822,gapX:.022,gapY:.02}},
+    // These are measured Card 1 cells at native PDF image size 1553×866, never whole-deck certification.
+    ignore_dystopia:{cardCrops:{1:{"x":0.06696716,"y":0.15588915,"w":0.39021249,"h":0.37528868}},pdf:'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf',data:'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json',cardGrid:{x:.06,y:.117,w:.879,h:.823,gapX:.09,gapY:.01}},
+    forget_utopia:{cardCrops:{1:{"x":0.04893754,"y":0.03464203,"w":0.38892466,"h":0.45034642}},pdf:'Deck_A_UTOPIA_-_Forget_Utopia web H.pdf',data:'Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json',cardGrid:{x:.05,y:.037,w:.899,h:.947,gapX:.135,gapY:.01}},
+    embrace_protopia:{cardCrops:{1:{"x":0.04636188,"y":0.08198614,"w":0.43464263,"h":0.38568129}},pdf:'Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1) web H.pdf',data:'Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json',cardGrid:{x:.048,y:.093,w:.903,h:.822,gapX:.022,gapY:.02}},
     // Only the actually measured TL card is admitted; remaining Anti-Rules crops are unproven.
     anti_rules_toolkit:{allowedCardNumbers:[1],cardGrid:{x:.0971428571,y:.1651728553,w:.7957142858,h:.7682458386,gapX:0,gapY:0}}
   }}});

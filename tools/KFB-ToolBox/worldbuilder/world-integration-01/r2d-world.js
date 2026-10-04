@@ -75,7 +75,7 @@ function singleWorld({id,Z,TC,ST,R2C,core}){
 
 function archipelagoWorld({id,TC,ST,R2C,arch}){
   const group=new THREE.Group();group.name='R2D MVP archipelago';
-  const presentations=new Map(),buildingSets=new Map(),nodeGroups=new Map();
+  const presentations=new Map(),buildingSets=new Map(),nodeGroups=new Map();let editedBuildings=null,heightReader=null;
   const tile={cx:+arch.bounds.cx.toFixed(3),cz:+arch.bounds.cz.toFixed(3),size:arch.bounds.size,seg:256};
   const spawnAnchor=arch.anchorMap.get('town.spawn.market');
   const spawn={x:spawnAnchor.position[0],z:spawnAnchor.position[2],heading:spawnAnchor.heading||0,road:'Golden Journey · Town market'};
@@ -105,7 +105,9 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
     baseHeightAt,
     maskAt(x,z){const n=insideNode(x,z);return n?n.field.maskAt(x,z):'under'},
     groundAt(x,z,terrainHeight){const b=nearestBridge(x,z);const width=(b?.q?.prm?.width||0)/2+.5;if(b&&b.d<=width)return b.q.p[1];const n=insideNode(x,z);if(n&&n.plan.roadDist(x,z)<=n.plan.hw+.2)return Math.max(terrainHeight,n.plan.roadY);return terrainHeight},
-    solidAt(x,z){for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q.height||0}return 0},
+    solidAt(x,z){if(editedBuildings){for(const root of editedBuildings()){if(!root.visible)continue;const b=new THREE.Box3().setFromObject(root);if(x>=b.min.x&&x<=b.max.x&&z>=b.min.z&&z<=b.max.z)return b.max.y-b.min.y}return 0}for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q.height||0}return 0},
+    adoptBuildingObjects(provider){editedBuildings=provider;for(const b of buildingSets.values())b.root.visible=false;},
+    buildingSceneRecords(){return [...buildingSets.values()].flatMap(b=>b.report.placed.map(p=>({id:p.id,name:p.assetId.split('/').pop(),kind:'prop',registeredAssetId:p.assetId,worldId:b.report.worldId,source:{...p.source,path:p.assetId},transform:{position:p.position,rotation:p.rotation,scale:[p.fitScale,p.fitScale,p.fitScale]}})))},
     buildingAt(x,z){for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q}return null},
     patchDoc(doc){
       doc.id=W.docId;
@@ -116,7 +118,8 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
       return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=2400;camera.updateProjectionMatrix();controls.maxDistance=1100;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=260;fog.far=1150}},
-    async mount({scene,renderer}){
+    async mount({scene,renderer,heightAt}){
+      heightReader=heightAt;
       for(const n of arch.nodes){
         const ng=new THREE.Group();ng.name='R2D island · '+n.id;nodeGroups.set(n.id,ng);group.add(ng);
         const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
@@ -141,6 +144,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
       for(const n of arch.nodes){
         const ng=nodeGroups.get(n.id),pal=R2C.PAL[n.recipe.biome]||R2C.PAL.burg;
         if(!presentations.has(n.id))presentations.set(n.id,mountR2DPresentation({group:ng,supportTerrain:mesh,plan:n.plan,field:n.field,palette:pal}));
+        if(heightReader)presentations.get(n.id).refreshSurface(heightReader);
       }
     },
     onTerrain(){return aggregateSupport()},

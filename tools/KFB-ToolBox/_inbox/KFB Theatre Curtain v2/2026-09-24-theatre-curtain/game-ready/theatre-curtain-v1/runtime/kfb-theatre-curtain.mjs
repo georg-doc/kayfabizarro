@@ -204,6 +204,7 @@ export async function createSharedTheatreCurtain({renderer,options={}}){
   if(!renderer)throw Error('Shared renderer required');
   const c=new KFBTheatreCurtain(options);c.renderer=renderer;c.scene=new THREE.Group();
   await c.setMaterial(c.o.texture);
+  if(!c.material.map)throw new Error('Required original Curtain fabric did not load');
   const half=c.o.width/2,base=[half+.06,c.o.height,c.o.top,half];
   c.panels=[new Panel('left',...base),new Panel('right',...base)];
   for(const p of c.panels){const m=new THREE.Mesh(p.geometry,c.material);m.castShadow=m.receiveShadow=true;m.frustumCulled=false;c.meshes.push(m);c.scene.add(m)}
