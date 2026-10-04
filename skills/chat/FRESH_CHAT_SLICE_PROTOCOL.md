@@ -36,6 +36,30 @@ Current KFB MVP example:
 `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`
 = ONE_SHOT.
 
+
+## 0A. Resolve the primary delivery surface
+
+Before applying generic Stage/publication rules, read:
+
+`skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+
+For current Site-capable KFB tools/workbenches/authoring/MVP products, default:
+
+- `primary = GPT_SITE`
+- `secondary = CLOUDFLARE_KFB_HUB_MIRROR_WHEN_REQUIRED`
+
+A fresh executor must not infer Cloudflare-first from historical docs.
+
+If an existing productive Site exists, update that Site.
+
+If Sites publishing capability is unavailable:
+- persist exact Site-ready source;
+- record `SITES_PUBLISHER_REQUIRED`;
+- hand off to a Sites-capable executor;
+- do not silently substitute Cloudflare.
+
+Cloudflare mirror/public acceptance work is downstream and bounded. A mirror failure does not invalidate a verified Site product.
+
 ## 1. Recover before changing anything
 
 1. Read `START_HERE.md`, `REGISTRY.json` and the relevant router changelog delta.
@@ -87,7 +111,7 @@ A clear Georg instruction to proceed closes the current intermediate gate as a *
 - Use a reviewable branch/PR when that project's contract calls for one.
 - Save implementation, evidence and handoff in small checkpoints; after each GitHub write verify the exact branch head.
 - Treat timeouts as `UNKNOWN`, inspect before retrying, and never duplicate a commit on assumption.
-- When human Stage testing is genuinely required, use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub. Do not create Stage merely because the slice ended.
+- For Site-capable products, publish/update the GPT Site first. When a formal KFB-Hub/pages.dev acceptance mirror is genuinely required, use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub and create it downstream as a bounded mirror step. Do not create Cloudflare Stage merely because the slice ended.
 - Preserve existing working paths; make experiments reversible.
 - Reuse pinned donors before rebuilding.
 - Keep one writer for movement, camera, actor, audio state, asset truth and deployment.
