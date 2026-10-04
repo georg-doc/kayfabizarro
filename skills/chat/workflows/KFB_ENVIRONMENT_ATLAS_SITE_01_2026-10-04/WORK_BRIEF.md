@@ -19,13 +19,14 @@ Workflow: `KFB-ENVIRONMENT-ATLAS-SITE-01`
 
 ## 1 · Outcome
 
-Build a Site-native KFB Environment Atlas surface that makes the current environment truth impossible to miss:
+Build a Site-native KFB Environment Atlas surface that makes the **full useful Claude Design project lineage** impossible to miss:
 
-1. the complete verified Hex catalog;
-2. KayKit + Kenney building families from the central Registry;
+1. the complete verified Hex catalog, including all three KayKit Hex-capable families plus the separate Kenney Hex family;
+2. KayKit + Kenney building families from the central Registry and exact repo-backed sources that are not yet registry-indexed;
 3. the accepted/current clay-deformation standards as a **visual SSOT**;
 4. exact connector/edge/rotation/provenance knowledge already measured in the Hex/World work;
-5. a versioned map to current Environment/Generator/Recipe donors so later consumers reuse them rather than rediscovering them.
+5. the complete reusable Environment Atlas project corpus: S11/S12/S13.x, S14–S17 Bits/Space/Restaurant, S18/S19 Plant Prop + EyeRig, S20 Sample Atlas, S21 Room Study/Editor, S22 wall-node/postmortem line, plus earlier still-useful active donors;
+6. a versioned map to current Environment/Generator/Recipe donors so later consumers reuse them rather than rediscovering them.
 
 This is a **catalog + visual-standard + provenance surface**, not a new game runtime, city generator, WorldBuilder, Asset Librarian or universal deformer.
 
@@ -36,35 +37,41 @@ The Site should be available as a ChatGPT Site for cross-GPT work, while human a
 1. `skills/chat/START_HERE.md`
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
-4. this brief + `SOURCE_MAP.json`
-5. `tools/world_atlas/README.md`, `PROMOTION.md`, `docs/FEATURE_PARITY.md`, `docs/ARCHITECTURE.md`, `source/lib/hex-grid.js`
-6. current R2C:
+4. this brief + `SOURCE_MAP.json` + `PROJECT_CORPUS_AUDIT.md`
+5. `FULL_PROJECT_EXPORT_REQUEST.md` so missing project runtime files are recovered rather than reconstructed
+6. `tools/world_atlas/README.md`, `PROMOTION.md`, `docs/FEATURE_PARITY.md`, `docs/ARCHITECTURE.md`, `source/lib/hex-grid.js`
+7. mandatory current project pages: `source/KayKit_Hex_Realm_S11.html`, `source/KayKit_Hex_Tile_Model_S12.html`, `source/KayKit_Dungeon_Generator_S13_2.html`
+8. current R2C:
    `tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01/START_HERE.md`
    and `docs/RETURN.md`
-7. Clay:
+9. Clay:
    - `tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md`
    - `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md`
    - `work/clay-style-ssot-2026-10-01:tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md`
    - `work/clay-style-ssot-2026-10-01:tools/KFB-ToolBox/docs/KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md`
-8. visible-source firewall:
+10. visible-source firewall:
    `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/MVP_VISIBLE_SOURCE_FIREWALL_2026-10-04.json`
-9. measurement corpus:
+11. measurement corpus:
    `tools/KFB-ToolBox/_inbox/KFB Hex Assets Worldbuilding (WIP Exporte WS1)/kfb-hex-worldbuilder-corpus_2026-09-22/PACK_TRUTH.md`
-10. failed 2026-09-20 Hex Atlas only as measurement/recovery evidence, **not** as a scene/UI design instruction.
+12. current later-project exports listed in `PROJECT_CORPUS_AUDIT.md`, especially Plant Prop S18/S19, S20/S21 and S22
+13. failed 2026-09-20 Hex Atlas only as measurement/recovery evidence, **not** as a scene/UI design instruction.
 
 ## 3 · Source identity before UI
 
 ### 3.1 Hex families currently proven in GitHub
 
-Current Registry evidence proves these three catalog families:
+The user supplied the exact missing third KayKit source. The current Hex shelf is therefore:
 
-| Role | Canonical Registry pack | Current Registry count | Important evidence |
+| Role | Source | Current count/status | Important evidence |
 |---|---|---:|---|
-| KayKit Hex A | `kaykit-medieval-hexagon-pack-1-0-free` | 240 | current structural Registry; World Atlas S11/S12; R2C |
-| KayKit Hex B / Builder | `kaykit-medieval-builder-pack-1-0` | 233 | current structural Registry; unpack receipt has 226 GLB; 128 Builder hex tiles measured 2 × 2.309 |
-| Kenney Hex | `glb-hexagon-kit` | 72 | canonical repo mirror; `kenney_hexagon-kit` is a duplicate alias, not a fourth pack |
+| KayKit Hex A | `kaykit-medieval-hexagon-pack-1-0-free` | 240 Registry assets | current structural Registry; World Atlas S11/S12; R2C |
+| KayKit Hex B / Builder | `kaykit-medieval-builder-pack-1-0` | 233 Registry assets | unpack receipt has 226 GLB; 128 Builder hex tiles measured 2 × 2.309 |
+| KayKit Hex C / Snow | `media/3D_Assets/Kaykit_Medieval Snow Biome/` | Registry pending · source proven | pin `ab65e8c46ca3c07db4294214a63384975fb7d0d9`; 57 GLB = 42 Hex tiles + 15 objects; license identifies `Medieval Builder Pack Patreon Bonus (1.0)` |
+| Kenney Hex | `glb-hexagon-kit` | 72 Registry assets | separate secondary family; `kenney_hexagon-kit` is a duplicate alias, not another pack |
 
-**Identity discrepancy to resolve, not guess:** Georg referred to “the three Hexagon kits from the K-Kit creator”. Current repository evidence proves two KayKit hex-capable packs plus one Kenney Hexagon Kit. Before showing a “3 × KayKit” label, Work must locate an exact third KayKit source/Registry pack. If no exact source exists, show the two KayKit families and the Kenney family with the discrepancy recorded. Never fabricate or double-count a pack.
+**Correction:** the three KayKit Hex-capable families are now source-resolved. Kenney is additional, not the third KayKit family.
+
+The Snow Biome has no current dedicated Registry shard. Work must reconcile/index this exact existing repository source through the normal Registry/Librarian mechanism, or expose it as `SOURCE_PROVEN / REGISTRY_PENDING` until that completes. No local second catalog.
 
 ### 3.2 Pack-qualified keys are mandatory
 
@@ -94,6 +101,7 @@ Initial verified pack shelf must include at least:
 - `kaykit-city-builder-bits-1-0-free` — 45 Registry assets; includes `building_A…H` and `*_withoutBase`.
 - `kaykit-medieval-builder-pack-1-0` — 233 Registry assets.
 - `kaykit-medieval-hexagon-pack-1-0-free` — 240 Registry assets, including coloured building families.
+- KayKit Medieval Snow Biome / Builder Patreon Bonus — exact repo source, 15 object/building/nature GLBs plus 42 Hex tile GLBs; Registry reconciliation required.
 
 ### Kenney
 - `kenney-building-kit` — 84
@@ -179,16 +187,49 @@ This view links to canonical source docs; it does not duplicate their bodies int
 - tile-vs-fuge grammar;
 - explicit `UNSPECIFIED` where no connector is actually proven.
 
-### E · Recipes / Generators
+### E · Project Atlas / Slices
+The Site must expose the project lineage as a first-class inventory, with status and exact source:
+
+- S11 Hex Realm;
+- S12 Hex Tile Model;
+- S13 / S13.2 / later S13.x Dungeon model/generator/light/props;
+- S14 Bits Model;
+- S15 Space Base;
+- S16 Restaurant/Furniture;
+- S17 Restaurant placement grammar;
+- S18/S19 Plant Prop Lab, including EyeRig adapter and LivingProp rig;
+- S20 Sample Atlas;
+- S21 Room Study + inline editor donor;
+- S22 wall nodes, room study, failure/postmortem and editor-toolbox direction;
+- earlier active/frozen donors S2–S10 according to current Housekeeping.
+
+Each row/card must say `SOURCE_PRESENT | DOC_ONLY | RECOVERY_REQUIRED | FROZEN | SUPERSEDED | FAIL_HISTORY`. Do not flatten all of them to “current”.
+
+### F · Recipes / Generators
 V1 is an inventory/provenance view, not another generator owner. Surface and classify the existing work:
 - World Atlas S11/S12 Hex;
 - R2C Hex-Archipel catalog/recipe;
 - general `HEX_TERRAIN_GENERATOR_V1_BRIEF.md`;
 - Babel Hex Platform Generator recovery/brief;
 - Dungeon Generator S13.2;
+- S14 compatibility model, S15 Space Base and S16/S17 Restaurant builders when their actual source is recovered;
+- Plant Prop S18/S19 recipe/rig/eye adapter;
 - later R2D/environment recipe slices.
 
-No repository artifact named literally “Data Generator” was found during this preparation pass. If Georg's “Daten Generator” maps to a differently named current slice, Work must resolve that by exact source identity before labelling it. Do not invent a new generator to fill the naming gap.
+### G · Plant / Living Props
+Plant Prop is a named reusable project family, not generic scenery.
+
+Expose:
+- recipe/inventory;
+- pattern grammar;
+- STATIC / AMBIENT / AWARE rig levels;
+- `plant-eyes.js` dependency on existing KFB EyeRig v6;
+- pot/crown/float FaceHost logic;
+- current proofs, source refs and open risks.
+
+Do not create another EyeRig owner.
+
+No repository artifact named literally “Data Generator” was found during this preparation pass. The full-project capture now provides the correct place to map that phrase against S14–S22 and later environment-generator work. Resolve it by exact source identity before labelling it; do not invent a new generator.
 
 ## 7 · Asset Librarian relationship
 
@@ -244,9 +285,11 @@ The key interaction is inspection and comparison, not card-wall decoration.
 ## 11 · Acceptance contract
 
 ### Source/catalog
-- all three currently proven Hex catalog families resolve from the current Registry;
+- all three KayKit Hex-capable families resolve from exact source; Snow may be `REGISTRY_PENDING` until central indexing completes;
+- Kenney Hex is presented as a separate fourth/secondary Hex family;
 - no duplicate `kenney_hexagon-kit` / `GLB_hexagon_kit` presentation as two packs;
-- two KayKit-vs-three-KayKit identity discrepancy is explicitly resolved or retained as `SOURCE_REQUIRED`;
+- S11, S12 and S13.2 are explicit mandatory project modules, not buried source links;
+- S14–S17 actual source is recovered from the full project export or explicitly remains `RECOVERY_REQUIRED` — never reconstructed from prose;
 - every rendered model card has exact pack + path + source revision;
 - no basename collision can overwrite another pack.
 
@@ -261,6 +304,12 @@ The key interaction is inspection and comparison, not card-wall decoration.
 ### Firewall
 - automated scan/test proves banned Hürth/OSM visible source patterns are not loaded by the Site candidate;
 - missing source never falls back to legacy/generic content.
+
+### Project completeness
+- `PROJECT_CORPUS_AUDIT.md` is rendered/represented as project inventory;
+- Plant Prop S18/S19 including EyeRig is discoverable as a named reusable family;
+- S20/S21/S22 are represented with their current source/status;
+- a fresh Full Project Export is reconciled before final completeness if S14–S17 source remains missing.
 
 ### Browser
 Return actual counts, not “looks fine”:
