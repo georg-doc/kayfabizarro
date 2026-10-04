@@ -28,6 +28,30 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 
 
+## 2026-10-04 · CRITICAL CURRENT VISUAL RECOVERY · PR #348
+
+Georg's current WSA screenshot is a **HUMAN VISUAL FAIL**: legacy Hürth/OSM-derived building/presentation content is visibly active in the current WB2 candidate.
+
+Read before any fresh-chat continuation:
+- `skills/chat/recovery/POSTMORTEM_WSA_ONE_SHOT_LEGACY_OSM_CONTAMINATION_2026-10-04.md`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURRENT_ONE_SHOT_VISUAL_RECOVERY_2026-10-04.md`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/MVP_VISIBLE_SOURCE_FIREWALL_2026-10-04.json`
+
+Current classification of PR #348:
+- topology / owner / Track graph / Golden anchors = KEEP / PASS;
+- current Player/Motion work = preserve until WSA returns, then evaluate;
+- visible Hürth/OSM world content = **REJECTED FOR CURRENT MVP FOUNDATION**;
+- integrated MVP / visual world = NOT ACCEPTED;
+- Live = unchanged.
+
+Do not interpret earlier "world PASS" or "world ready" language as visual acceptance.
+Do not use this incident to restart a micro-slice cascade.
+After the currently running WSA/Work job returns, preserve valid work and do one integrated recovery/completion pass.
+
+Hard donor rule:
+**a donor may enter the product only in the dimensions for which it was accepted.**
+A mechanism donor is not automatically presentation/content/data authority.
+
 ## 2026-10-04 · KFB game bigger picture · global reference
 
 Current global product/context reference:
