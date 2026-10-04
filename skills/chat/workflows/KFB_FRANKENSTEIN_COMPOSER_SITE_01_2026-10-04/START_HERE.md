@@ -46,7 +46,9 @@ Do not retarget all bodies into one invented universal skeleton.
 
 ### 3. Head / Graft
 First production head family:
-- `FB_TEMPLATE_LOOK_v5.glb` / current FrizzleBob EarRig-v5 source;
+- exact pinned FrizzleBob EarRig-v5 donor: `tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb` @ `19088b142c6a7e7626f27fba8e80caf6ab2437c1` (blob `131d7c3862591708bbd4ad50af39093605b56b92`);
+- optional newer comparison donor: `FB_TEMPLATE_LOOK_v5b.glb` @ `23615cff` (blob `24134a51793fef0dd8cab59bbf50b6b7c5960a45`);
+- these model files are pinned historical GitHub donors and are not claimed to exist at the current `main` path;
 - existing FrankenStein graft chain:
   - `frizzlegraft-v1/graft-biped.v1.js`
   - `frizzlegraft-v1/facehost.v1.js`
@@ -62,7 +64,7 @@ Future KFB heads enter through the same measured HeadProfile/Graft seam, not by 
 Reuse the current Studio owners:
 - eyes: `pet-eye-rig.v6.js`;
 - brows: `brow-rig.v2.js`;
-- clay eyelids: current `clay-lids.v1` / Eye Actor Studio volume-lid donor with eyeball-bound auto-fit;
+- clay eyelids: current repository-resident `clay-lids.v1` candidate from the 2026-10-01 ToolBox session cut, preserving the Eye Actor Studio volume-lid lineage and eyeball-bound auto-fit;
 - mouth / viseme / rest-mouth: current Studio mouth owner;
 - ears: EarRig v5 / current ear-dangle owner;
 - face part mount: current FaceHost/face-mount chain;
@@ -148,9 +150,9 @@ Useful filters:
 - EyeRig v6: `tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js`
 - Brow rig: `tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js`
 - Frizzle graft: `tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/`
-- current clay-lid donor/contract: `tools/KFB-ToolBox/eye-actor-studio-v1/upper-lid-volume.v1.mjs` + `skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/EYELID_GEOMETRY_CONTRACT.v1.md`
+- current repository-resident clay-lid implementation candidate: `tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/kfb-lib/clay-lids.v1.js` (blob `d7cea2ae7be416f32d634190b335f1a40b29c7b2`); its history records derivation from the older Eye Actor Studio PR #159 donor, whose former main-style path is not present on current main
 - current accepted/newer ToolBox face-state evidence: `tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/`
-- FrizzleBob Ear Rig v5 source: `tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb`
+- FrizzleBob Ear Rig v5 source: pinned GitHub donor above, not a current-main path
 - Motion Library: `media/3D_Assets/Animations/KFB_Motion_Library/`
 - Pencil: exact source path above.
 
