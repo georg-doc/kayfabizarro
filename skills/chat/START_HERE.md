@@ -1471,3 +1471,17 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-04 · EyeRig unified Site PASS + profile recovery
+
+The single productive EyeRig workbench remains Draft PR #104 / `toolbox/eye-rig-batch-2026-09-18`, published as:
+`https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+
+Georg human-tested the unified `Medium | Large | Legacy` Site and accepted it for continuation.
+
+Current issue is data recovery, not runtime failure: the new Site origin cannot see the old Cloudflare Stage origin's LocalStorage even though both use `kfb.toolbox.eye-rig-batch.v0`.
+
+Newest durable Medium export currently found is the 40-profile `eye-rig-medium.batch (2).json`: 2 ADJUSTED_APPROVED / 37 ADJUSTED / 1 UNREVIEWED. Dropbox and PR #104 copies are semantically identical. Georg remembers a later Stage session with many more approvals, and no newer export is present in GitHub/Dropbox.
+
+Current gate: **EYE_RIG_PROFILE_RECOVERY_01** — export once from the old Stage in the same browser profile, compare against the 40er file, then persist/import the newest proven batch. Medium batch import preserves Large/Legacy. No merge or Live promotion.
