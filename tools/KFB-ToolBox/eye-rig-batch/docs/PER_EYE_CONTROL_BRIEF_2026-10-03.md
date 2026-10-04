@@ -1,8 +1,8 @@
 # EYE_RIG_PER_EYE_CONTROL_01
 
 Date: 2026-10-03  
-Status: DEFERRED_DETAIL_AFTER_LEGACY · not current gate  
-Current prerequisite: KLR-EYE-VIS-01 · Legacy 17-head visual review on PR #162  
+Status: DEFERRED_DETAIL_AFTER_UNIFIED_SITE · not current gate  
+Current prerequisite: EYE_RIG_UNIFIED_SITE_PUBLISH_01 → GEORG_EYERIG_UNIFIED_SITE_01 · unified Medium/Large/Legacy Site first  
 Owner: KFB ToolBox / Rigging  
 Repo: georg-doc/kayfabizarro  
 Branch: toolbox/eye-rig-batch-2026-09-18  
