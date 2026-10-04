@@ -119,6 +119,11 @@ Decision vocabulary:
 | celebrate_short | Cheering; accepted happy/dance accents | TODO | TODO | Robot/Skeleton | TODO |
 | pickup_react_short | Interact / Cheering / tiny dance accent | TODO | TODO | player/NPC-safe | TODO |
 | ball_bounce_reference | prop-only; no humanoid donor | n/a | n/a | High + Low Fluff | OPTIONAL NEW PROP REF |
+| coop_large_push | derive from roll_push / work candidates before new authoring | TODO | TODO | 2–3 Rig_Medium + Large ball | TODO |
+| foot_driven_roll | locomotion + ball contact reference; derive if possible | TODO | TODO | Robot/Skeleton | OPTIONAL |
+| ball_balance | balance/idle/dance donors; reference-only contact | TODO | TODO | Medium + Large ref | OPTIONAL |
+| ball_dance | accepted dance clips adapted to ball-top contact if viable | TODO | TODO | Medium + Large ref | OPTIONAL |
+| ball_surf | balance/dance reference; runtime owns travel | TODO | TODO | Medium + Large ref | OPTIONAL |
 
 ---
 
@@ -166,3 +171,24 @@ Before any new authored clip:
 6. explicit list of true remaining motion gaps.
 
 Only the final gap list becomes Part 2 authoring scope.
+
+
+---
+
+## Fluff Mass Ladder assumptions for the audition
+
+Use these as the first-pass visual/animation targets:
+
+- **6 Small Fluff → 1 Medium Fluff**
+- **3 Medium Fluff → 1 Large Fluff**
+- therefore **18 Small → 1 Large**
+
+Default handling:
+
+- one Rig_Medium → one Medium ball;
+- one Rig_Large → one Large ball;
+- 2–3 Rig_Medium → one Large ball cooperatively.
+
+These are first-pass construction ratios and must not be silently changed by Blender. If the measured actor/ball contact makes a ratio visually impossible, report the geometry/contact issue rather than changing the world rule.
+
+For the resulting Medium/Large ball, preserve visible marbling/mixed-color memory from the source balls where useful.
