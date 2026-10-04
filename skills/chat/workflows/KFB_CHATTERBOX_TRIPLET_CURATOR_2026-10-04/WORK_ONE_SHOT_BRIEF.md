@@ -1,9 +1,9 @@
-# WORK ONE-SHOT · KFB ChatterBox / Triplet Curator Site v1
+# WORK ONE-SHOT · KFB ChatterBox Site v1
 
 Status: **READY FOR SITES-CAPABLE IMPLEMENTATION**
 Date: 2026-10-04
 Execution mode: **ONE_SHOT**
-Owner: **KFB ToolBox / ChatterBox content curation**
+Owner: **KFB ChatterBox / KFB ToolBox**
 Repo: `georg-doc/kayfabizarro`
 Planning branch: `planning/chatterbox-triplet-curator-site-2026-10-04`
 Primary product: **one private GPT Site**
@@ -14,11 +14,11 @@ Live promotion: **NOT AUTHORIZED**
 
 Build the already-reserved ToolBox `chatterbox-comic-vfx` specialist lane as one coherent editor:
 
-**KFB ChatterBox / Triplet Curator**
+**KFB ChatterBox**
 
-The Site must make the shared Semantic Triplet pool easy to curate by Georg and easy to populate in batches from normal Web Chat while preserving all existing runtime owners.
+The Site must make the shared Semantic Triplet pool easy to curate by Georg and easy to populate in batches from normal Web Chat while preserving all existing runtime owners. It must also provide the bounded live Dialogue Lab defined in `CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md`: two-Resident LLM conversation testing, player Triplet/four-call interaction, Critic/Repair, reaction choreography, real-3D bubbles, browser TTS and Audio-owner ducking.
 
-This is the content-authoring counterpart to the Hypernormalisation Curator pattern.
+Triplet Curator is a module inside KFB ChatterBox, not a second product. This remains an authoring/evaluation surface rather than a second gameplay dialogue scheduler.
 
 ## Read first
 
@@ -38,6 +38,7 @@ This is the content-authoring counterpart to the Hypernormalisation Curator patt
    - `S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html`
    - `S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md`
 14. current Claude Design speech/thought-bubble Return when it exists
+15. `CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md`
 
 GitHub state at execution time wins.
 
@@ -167,7 +168,7 @@ Do **not** copy quote text, rights, source URL, Brain Food or FrizzleQuestion in
 
 If quote status/rights do not allow runtime/public use, the bridge must visibly mark that. It may still be an editorial reference.
 
-### E · Pair / Scene Lab
+### E · Pair / Scene / Dialogue Lab
 
 Inputs:
 - Resident A;
@@ -189,14 +190,30 @@ Output:
 - provenance;
 - presentation hints.
 
-No live LLM is required for v1.
+Live LLM testing is now required as a bounded authoring-lab feature.
 
-Use A/B/C S1 pair candidates as first fixtures:
+Required first comparison:
+- deterministic adapter baseline;
+- L0 shared-agent live generation;
+- L1 same-model, separate Resident-agent contexts;
+- L2 different model/profile per Resident remains optional until L0/L1 evidence justifies it.
+
+Start with exactly two Residents. Log prompt revision, model/provider label, turn provenance and session history. Do not create a second runtime scheduler.
+
+Use A/B/C S1 pair candidates as deterministic fixtures; the first live voice-distinctness acceptance pair is Goth Girl ↔ Clown:
 - Goth Girl × Clown × Standing Ovation;
 - Witch × Clown × Cortisol Economy;
 - Goth Girl × Witch × Doomsday Clock.
 
-### F · Bubble Preview
+### F · Critic / Repair
+
+Use a second LLM agent as a non-speaking critic. It reviews completed/on-demand conversation segments for Resident voice distinctness, repetition, Triplet integrity, turn causality, character-clamp violations, Fluff-o-lect compatibility, comic-dialogue economy and bold/italic emphasis conventions. Preserve originals; repairs create revisions. Allow KEEP/TUNE/CUT/PROMOTE_TO_POOL and durable negative-pattern/prompt-guardrail capture.
+
+### G · Reaction / Choreography
+
+Preview dialogue-linked reactions including KayfaBINGO/BONGO/BOGGLE/BLÖDSINN, What the FLUFF?! and Stay fluffy! through existing animation, EyeRig, gaze, facial-expression and VFX/SFX owners. No new animation owner.
+
+### H · Bubble / 3D Stage Preview
 
 This tab proves presentation compatibility; it does not author bubble geometry.
 
@@ -209,7 +226,11 @@ Required adapter behavior:
 
 The Triplet Site must remain functional if the bubble preview adapter is temporarily unavailable.
 
-### G · Import / Export / Diff
+### I · Audio / TTS
+
+Reuse the current KFB Audio owner: one AudioContext, browser speechSynthesis for first-pass dialogue audition, voice-activity signalling, mixer-owned ducking, and continuous music timeline while ducked. Per-Resident voice mapping is lab metadata, not canon.
+
+### J · Import / Export / Diff
 
 Support:
 - import exact seed;
@@ -222,6 +243,16 @@ Support:
 - export full authoring wrapper.
 
 No Site-local data is silently authoritative.
+
+## Player interaction in Dialogue Lab
+
+Support direct player-written Triplet replies plus four explicit calls:
+- KayfaBINGO!
+- KayfaBONGO!
+- KayfaBOGGLE?
+- BLÖDSINN!
+
+Log each action and its downstream Resident/critic response. Treat the dialogue-lab mapping as experimental digital behavior unless separately promoted.
 
 ## Normal Web Chat authoring loop
 
@@ -277,9 +308,14 @@ At minimum:
 - KEEP/TUNE/CUT;
 - edit one Triplet;
 - quote-ID link/unlink;
-- pair preview;
+- deterministic pair preview;
 - SILENCE case;
-- bubble preview;
+- 8–12 turn Goth Girl ↔ Clown L0 live run;
+- same-scene L1 isolated-agent live run;
+- player Triplet reply and one KayfaBOGGLE? or BLÖDSINN! intervention;
+- critic report + non-destructive repair revision;
+- real-3D bubble preview with Orbit/responsive checks;
+- browser TTS + Audio ducking;
 - import/export roundtrip;
 - zero page errors.
 
@@ -330,6 +366,10 @@ Georg opens the Triplet Curator and can, without GitHub editing:
 2. KEEP/TUNE/CUT them;
 3. edit/add a Triplet;
 4. link a real Hypernormalisation quote by ID;
-5. preview the result through one Resident pair and current bubble presentation.
+5. preview the result through one real-3D Resident pair and current bubble presentation;
+6. run and compare L0 shared-agent vs L1 isolated Resident agents;
+7. intervene with a Triplet or one of the four calls;
+8. inspect a Critic/Repair report;
+9. hear browser TTS while the existing Audio owner ducks correctly.
 
 Return **PASS / TUNE / FAIL** on the editor as an editorial tool.
