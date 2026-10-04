@@ -218,3 +218,15 @@ Site-first authoring is now the intended Audio workflow. Candidate source lives 
 - frozen after two repair passes;
 - next gate: `KFB_AUDIO_SITE_QA_RECOVERY_01`;
 - Sites MCP is required for final GPT Site publication.
+
+## CURRENT FOLLOW-UP · Music context B / C / D · 2026-10-05
+
+The existing KFB Audio Site now exposes three additive interaction states on the accepted one-AudioContext / semantic-bus / TTS-ducking architecture:
+
+- B movement/adventure;
+- C staying/cozy exploration;
+- D talking/social interaction.
+
+Manual selection, smooth AudioContext-clock transitions and an external World/context adapter are proven at `18fb126701d2412f6b5a5701f08dc5615f4069a2` with 303/303 static + 17/17 browser PASS. The private Site deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded. Stems remain future and absent.
+
+**Exactly one next gate:** `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — one bounded World MVP consumes the adapter, including Billboard/POI context; World must not fork the mixer, semantic buses, AudioContext or ducking owner.

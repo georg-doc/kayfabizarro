@@ -137,3 +137,21 @@ GPT Site publication has **not** been performed in this Webchat because its avai
 Cloudflare remains deliberately excluded.
 
 **Exactly one next gate:** `KFB_AUDIO_SITE_PUBLISH_01` — Sites-capable executor publishes the already QA-green source, connects the prepared integrated Site Chat context, opens the resulting `.frizzlebob.chatgpt.site` URL, and verifies this exact revision visually. No product repair should occur in that gate.
+
+## Current override · B / C / D interaction states · 2026-10-05
+
+The same Audio Site is now source `0.2` and deployed owner-private at `https://kfb-audio.frizzlebob.chatgpt.site`.
+
+- B = movement/adventure groove; C = staying/cozy exploration; D = talking/social interaction;
+- one lazy AudioContext, one AudioContext clock and the existing semantic buses remain authoritative;
+- TTS voice focus/ducking stays separate from D and adds to its speech-space target;
+- manual mixer selection and external `kfb:music-context` / `kfb:voice-focus` adapter events are available;
+- transitions are smooth gain ramps; no hard-switch or second clock is introduced;
+- stems are `FUTURE_NOT_AVAILABLE`; metadata/targets are ready but `audioFiles` is empty;
+- the existing authored B/C/D Base + Utopia/Dystopia/Protopia prompt pack is present in Prompt Studio;
+- World/Resident/POI/Billboard context may request a state later but does not become audio owner;
+- tested GitHub head `18fb126701d2412f6b5a5701f08dc5615f4069a2`: 303/303 static + 17/17 browser PASS;
+- Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`; deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded;
+- no merge, Live promotion or Cloudflare substitution.
+
+**Exactly one next gate:** `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — wire this contract into one bounded next World MVP, including Billboard/POI context, while preserving the World owner and the Audio owner's single runtime.

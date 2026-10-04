@@ -66,3 +66,15 @@
 - prepared Site Chat instructions/context are deployed and the Site retains this Codex thread as its edit context;
 - no Cloudflare route and no PR merge;
 - next gate `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01`.
+
+## 2026-10-05 · B / C / D interaction-state update
+
+- extended the existing Site/mixer in place with B movement, C staying and D talking;
+- retained one AudioContext and the current semantic buses; state transitions and A/B deck fades share its clock;
+- retained TTS ducking as a separate voice-focus path and added D speech-space bias;
+- added manual controls, external World/context events, B→C→D + TTS demo, mix targets and stem-ready/no-placeholder contracts;
+- added 12 authored Prompt Studio entries for Base/Utopia/Dystopia/Protopia across B/C/D;
+- GitHub head `18fb126701d2412f6b5a5701f08dc5615f4069a2`: 303/303 static + 17/17 browser PASS;
+- Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`, deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500`: SUCCEEDED;
+- World/Billboard integration is prepared but not performed; no Cloudflare, merge or Live promotion;
+- next gate `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01`.

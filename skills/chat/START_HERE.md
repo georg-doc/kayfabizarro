@@ -209,6 +209,19 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - exactly one next gate: `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01` — wait for Georg's rebrief.
 - no auto-merge.
 
+## 2026-10-05 · KFB Audio interaction states B / C / D
+
+- the existing private KFB Audio Site was extended in place; no new Site or audio runtime was created;
+- B = movement / adventure groove, C = staying / cozy exploration, D = talking / social interaction;
+- manual mixer controls and an external World/context adapter share one AudioContext, its current clock and the existing semantic buses;
+- D adds speech-space/transient/percussion restraint while the existing TTS ducking remains a separate additive path;
+- smooth target ramps and whole-master crossfades are current; certified same-family stems are contract-ready but `FUTURE_NOT_AVAILABLE` and no placeholder audio was added;
+- Prompt Studio now routes to 12 authored B/C/D prompt-pack entries;
+- GitHub head `18fb126701d2412f6b5a5701f08dc5615f4069a2`: 303/303 static and 17/17 browser PASS, run `37243655057`;
+- private Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`, deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500`: SUCCEEDED;
+- no Cloudflare substitution, merge or Live promotion;
+- exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — consume the adapter in one bounded next World MVP, including Billboard/POI context, without moving AudioContext/mixer ownership into World.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

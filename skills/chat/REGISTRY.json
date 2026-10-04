@@ -860,7 +860,7 @@
     {
       "id": "kfb-jukebox-catalog-01-audio-site-2026-10-04",
       "title": "KFB Audio Site · Jukebox Catalog 01",
-      "status": "QA_GREEN_GPT_SITE_PUBLISH_ONLY",
+      "status": "UPDATED_OWNER_PRIVATE_WORLD_ADAPTER_READY",
       "owner": "KFB Audio & Soundscape Baseline v1",
       "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
       "source": "tools/KFB-Audio-Site/",
@@ -868,10 +868,21 @@
       "counts": {
         "catalogTracks": 54,
         "roadTripV2Masters": 44,
-        "pairedStemFamilies": 14
+        "pairedStemFamilies": 14,
+        "musicInteractionStates": 3,
+        "authoredPromptEntries": 12
       },
-      "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
-      "note": "Full workflow green on implementation head b5835c52: validator/syntax PASS, browser 9/9 PASS. Publish only through Sites MCP; no Cloudflare. Current Webchat lacks Sites MCP."
+      "site": {
+        "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+        "project": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+        "version": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587",
+        "deployment": "appgdep_6ac2e0e36dc48191bd0b49ecd828a500",
+        "sourceCommit": "b0a620777768c93c2b87a3215b4c8e8730609e53",
+        "access": "owner-private"
+      },
+      "testedHead": "18fb126701d2412f6b5a5701f08dc5615f4069a2",
+      "nextGate": "WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01",
+      "note": "B movement, C staying and D talking are additive mix-target states on one AudioContext and the existing semantic buses. CI is 303/303 static plus 17/17 browser PASS. Stems remain FUTURE_NOT_AVAILABLE. Next consumer is one bounded World MVP with Billboard/POI context; no Cloudflare, merge or Live promotion."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

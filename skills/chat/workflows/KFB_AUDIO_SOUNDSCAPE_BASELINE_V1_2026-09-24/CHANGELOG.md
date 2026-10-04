@@ -1,5 +1,14 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-05 · B / C / D interaction-state seam
+
+- extended the existing private KFB Audio Site, not the public calibration runtime;
+- preserved one AudioContext, semantic buses and separate TTS ducking;
+- added B movement, C staying, D talking, smooth transitions, World/context adapter and 12 authored prompt entries;
+- 303/303 static + 17/17 browser PASS at `18fb126701d2412f6b5a5701f08dc5615f4069a2`;
+- private deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded;
+- next gate `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01`: one bounded World MVP with Billboard/POI context; no second runtime owner.
+
 ## 2026-10-04 · KFB Audio Site / Jukebox Catalog 01
 
 - built Site-first Audio authoring candidate; canonical Jukebox candidate now 54 tracks;

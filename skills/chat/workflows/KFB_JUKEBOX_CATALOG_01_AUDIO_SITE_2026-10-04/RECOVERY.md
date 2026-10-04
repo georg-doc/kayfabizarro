@@ -106,3 +106,17 @@ GPT Site publication has **not** been performed in this Webchat because its avai
 Cloudflare remains deliberately excluded.
 
 **Exactly one next gate:** `KFB_AUDIO_SITE_PUBLISH_01` — Sites-capable executor publishes the already QA-green source, connects the prepared integrated Site Chat context, opens the resulting `.frizzlebob.chatgpt.site` URL, and verifies this exact revision visually. No product repair should occur in that gate.
+
+## Current recovery checkpoint · 2026-10-05
+
+- branch: `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04`;
+- tested implementation head: `18fb126701d2412f6b5a5701f08dc5615f4069a2`;
+- CI: run `37243655057`, job `111557176078`, 303/303 static + 17/17 browser PASS;
+- browser artifact: `11317963584`, digest `sha256:8e74665aaabf6bc9108025a4744e54a4dbca365610294e9b1f26fa0b26485842`;
+- Site source commit: `b0a620777768c93c2b87a3215b4c8e8730609e53`;
+- Site version: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`;
+- deployment: `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded;
+- current visible revision marker: `SITE SOURCE 0.2` / `ONE AUDIO CONTEXT`;
+- unresolved by design: no stems, no World consumer integration, no public Site audience change;
+- do not reconstruct B/C/D in World; consume `music-interaction-states.json` and the exposed adapter;
+- exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01`.

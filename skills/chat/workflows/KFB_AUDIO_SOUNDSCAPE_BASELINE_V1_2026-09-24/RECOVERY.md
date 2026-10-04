@@ -235,3 +235,9 @@ If the next implementation gate fails twice on the same issue:
 - write exact failure evidence;
 - update this Recovery + Return + additive changelog;
 - do not replace the existing audio owners as a repair shortcut.
+
+## Current additive seam · 2026-10-05
+
+Recover B/C/D work from `tools/KFB-Audio-Site/music-interaction-states.json` and `window.KFBAudioSite.musicContext`; do not recreate it in World. Tested source is Draft PR #350 head `18fb126701d2412f6b5a5701f08dc5615f4069a2`; Sites deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded. D and TTS ducking are separate dimensions. Stems are `FUTURE_NOT_AVAILABLE`.
+
+Exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — bounded next-World-MVP consumer wiring with Billboard/POI metadata only.

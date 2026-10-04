@@ -1,5 +1,16 @@
 # KFB Chat Router · CHANGELOG
 
+## 2026-10-05 · KFB Audio Site B / C / D interaction seam
+
+- extended the same `tools/KFB-Audio-Site/` and private Site project with B movement, C staying and D talking;
+- retained one AudioContext, the existing semantic buses and separate TTS ducking; transitions use AudioContext time and continuous gain ramps;
+- added manual selection, external World/context events, state target metadata, a B→C→D + TTS demo and stem-ready contracts with no placeholder audio;
+- added 12 authored Prompt Studio entries covering Base/Utopia/Dystopia/Protopia for B, C and D;
+- GitHub head `18fb126701d2412f6b5a5701f08dc5615f4069a2`: validator 303/303 PASS, syntax PASS, browser 17/17 PASS; run `37243655057`, artifact `11317963584`;
+- updated existing private Site project to version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`; deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded;
+- retained the public Audio Calibration Hub route as the accepted listening reference; no Cloudflare write, merge or Live promotion;
+- exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — bounded integration in one next World MVP, with Billboard/POI context as a requester rather than a second runtime owner.
+
 ## 2026-10-04 · KFB Audio Site / Jukebox Catalog 01
 
 - created Site-first KFB Audio candidate and expanded canonical Jukebox to 54 tracks;

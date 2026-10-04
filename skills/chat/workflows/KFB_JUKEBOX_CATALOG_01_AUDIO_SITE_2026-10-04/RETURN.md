@@ -150,3 +150,40 @@ Live verification opened the exact production URL and visibly confirmed:
 No Cloudflare route was created and PR #350 was not merged.
 
 **Exactly one next gate:** `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01` — wait for Georg's bounded SFX/Sound-Bed Prompt-Bank rebrief before extending this Site.
+
+## Music interaction states B / C / D · COMPLETE · 2026-10-05
+
+The existing KFB Audio Site and mixer were extended in place. No new Site, AudioContext, clock, bus graph, player or placeholder audio was created.
+
+- B: movement / adventure groove;
+- C: staying / cozy exploration;
+- D: talking / social interaction;
+- per-state targets cover energy, density, music gain, transient/percussion restraint, speech-space/ducking bias, crossfade time and optional BPM/subdivision metadata;
+- all transitions schedule gain ramps on the one AudioContext clock;
+- D cooperates with the existing voice-focus/TTS ducking path; it does not replace it;
+- the external adapter accepts World/Resident/POI/Billboard context while the Audio Site remains runtime owner;
+- stems are contract-ready and explicitly `FUTURE_NOT_AVAILABLE`; no fake audio file is mapped;
+- Prompt Studio exposes the 12 existing authored B/C/D prompts.
+
+GitHub / QA:
+- repo `georg-doc/kayfabizarro`;
+- Draft PR #350;
+- branch `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04`;
+- tested implementation head `18fb126701d2412f6b5a5701f08dc5615f4069a2`;
+- CI run `37243655057`, job `111557176078`;
+- validator 303/303 PASS; JavaScript syntax PASS; browser 17/17 PASS;
+- artifact `11317963584`, digest `sha256:8e74665aaabf6bc9108025a4744e54a4dbca365610294e9b1f26fa0b26485842`.
+
+Site:
+- exact URL `https://kfb-audio.frizzlebob.chatgpt.site`;
+- project `appgprj_6ac1c73dc28881919123106bd6d3e90e`;
+- source commit `b0a620777768c93c2b87a3215b4c8e8730609e53`;
+- version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`;
+- deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500`: SUCCEEDED;
+- access remains `custom`, owner-private;
+- Sites deployment screenshot visibly shows `SITE SOURCE 0.2`, `ONE AUDIO CONTEXT` and catalog 54/44/14;
+- direct exact URL was opened; the automation browser reached the expected owner-private ChatGPT sign-in boundary, so interactive production behavior is evidenced by the same-source 17/17 browser artifact and deployment screenshot.
+
+No Cloudflare write, merge or Live promotion occurred.
+
+**Exactly one next gate:** `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — integrate the adapter in one bounded next World MVP, including Billboard/POI context, without transferring mixer/runtime ownership to World.
