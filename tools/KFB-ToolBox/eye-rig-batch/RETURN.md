@@ -1925,3 +1925,42 @@ On the Site, verify:
 Per-eye / eyepatch remains deferred until this unified Site gate is accepted.
 
 No auto-merge or Live promotion.
+
+
+## 2026-10-04 · HUMAN PASS · UNIFIED SITE FUNCTIONAL · PROFILE RECOVERY OPEN
+
+Georg reviewed the published unified ChatGPT Site and reported that the interface looks good and the tested functions appear to work.
+
+Accepted for continuation:
+- one shared `Medium | Large | Legacy` interface;
+- class switching;
+- Legacy roster/functionality;
+- controls;
+- bounded wheel zoom;
+- Neutral / Clay K1;
+- reload/persistence behavior on the Site itself.
+
+Therefore `GEORG_EYERIG_UNIFIED_SITE_01` is **HUMAN_ACCEPTED / PASS FOR CONTINUATION**.
+
+One data-state issue remains:
+the new ChatGPT Site does not contain Georg's most recently saved/approved EyeRig profiles from the older Stage session.
+
+Likely mechanism:
+the storage key is unchanged (`kfb.toolbox.eye-rig-batch.v0`), but browser LocalStorage is origin-bound. The old `kayfabizarro.pages.dev` Stage origin and the new `frizzlebob.chatgpt.site` origin do not share LocalStorage automatically.
+
+This is a profile/state recovery issue, not a failure of the unified runtime.
+
+### Exactly one next gate
+
+**EYE_RIG_PROFILE_RECOVERY_01**
+
+Recover the newest available Georg-authored batch from:
+1. committed GitHub inbox/source exports;
+2. Dropbox/toolbox exports;
+3. if necessary, one fresh export from the old Cloudflare Stage browser state.
+
+Compare candidates by profile count, review/approval state and source coverage, then import/persist the newest proven batch into the unified Site without resetting newer source/runtime work.
+
+Per-eye/eyepatch remains deferred until profile recovery is resolved.
+
+No auto-merge or Live promotion.
