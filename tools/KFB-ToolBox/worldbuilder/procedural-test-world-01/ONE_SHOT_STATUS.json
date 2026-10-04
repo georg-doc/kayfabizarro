@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "PLAYABLE_SOURCE_CLEAN_WB2_WORLD_BUILDER_MVP1_ON_VERIFIED_CLOUDFLARE_STAGE",
-  "state": "MVP1_PRODUCT_SMOKE_PASS_PUBLICATION_PREPARATION",
+  "state": "MVP1_RECOVERY_CHECKPOINT_READY_FOR_MODEL_SWITCH",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -445,12 +445,26 @@
       },
       {
         "seam": "Representative satellite visuals",
-        "classification": "UNPROVEN",
-        "evidence": "Source originals preserved; native integrated camera review still to capture."
+        "classification": "PRODUCT WORKS",
+        "evidence": "Actual fresh-origin current product native camera buttons Town/Dystopia/Utopia/Protopia all rendered and captured; RED/KenneyIndustrial/SpaceBase/GREEN visible; no rejected OSM foundation observed."
       }
     ],
     "productDefects": [],
     "humanGate": "Georg freeplays actual MVP1",
-    "stage": "PREPARING_NOT_DEPLOYED"
+    "stage": "PREPARED_NOT_DEPLOYED",
+    "runtimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "currentNextAction": "Resume same chat/PR. Finish current Studio import smoke, publish exact scoped80-file runtime closure with two updated blobs+index/DEPLOYMENT/Hub in one cloudflare-live batch, open exact Stage and verify source38ff521. Do not run/fix long-route bot.",
+    "tests": {
+      "localSource": 19,
+      "localPass": 19,
+      "currentFourWorldViews": 4,
+      "priorFreshOriginRoundtripComparisons": 5,
+      "currentSustainedPlayerInput": "Prior native10/10 kept; current CUA tap-only probe responsive, not new sustained-input certification"
+    },
+    "modelSwitch": {
+      "reason": "User reports selected model at capacity; safe checkpoint requested",
+      "scopeUnchanged": true,
+      "noNewChatRequired": true
+    }
   }
 }
