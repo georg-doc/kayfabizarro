@@ -13,7 +13,7 @@
     "residentTruth": "Resident Atlas + Lean Cards",
     "memory": "Journey / Resident Social Memory",
     "quotes": "Hypernormalisation Quote Pool PR #354",
-    "bubblePresentation": "current accepted bubble owner / pending Claude Design return"
+    "bubblePresentation": "existing accepted bubble owner; Claude cutout-character scene HUMAN_REJECTED"
   },
   "donors": {
     "reviewStage": {
@@ -80,6 +80,7 @@
     "live": "UNCHANGED"
   },
   "doneWhen": [
+    "Pair/Scene/Bubble lab visibly uses real Resident Atlas 3D models, not cutouts",
     "existing review stage workflow retained, not replaced",
     "20 seed records load",
     "review export imports without loss",
@@ -90,5 +91,16 @@
     "current accepted bubble source is shown in isolation before adapter integration",
     "desktop + narrow browser zero page errors",
     "exact Site identity persisted and ToolBox slot updated"
-  ]
+  ],
+  "claudeDesignCorrection": {
+    "status": "HUMAN_REJECTED_CHARACTER_PRESENTATION",
+    "finding": "Claude Design used cut-out figures instead of real 3D Resident models.",
+    "prohibited": [
+      "cut-out character figures",
+      "sprite/image-plane stand-ins",
+      "2D screenshots as Resident scene actors"
+    ],
+    "requiredCharacterSource": "Resident Atlas exact 3D actors/sets/rigs proven in PR #310",
+    "salvageRule": "Bubble geometry/VFX/layout/timing may be reused only after independent source isolation from the rejected cutout scene."
+  }
 }
