@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-04",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -227,6 +227,43 @@
         "production planning",
         "evidence discipline"
       ]
+    },
+    {
+      "id": "kfb-game-bigger-picture-2026-10-04",
+      "kind": "global-product-reference",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md",
+      "publicReferences": [
+        "https://kayfabizarro.pages.dev/#kfb",
+        "https://kayfabizarro.pages.dev/#cutplay"
+      ],
+      "loadWhen": [
+        "KFB game design",
+        "playable MVP",
+        "world building",
+        "Residents or ChatterBox",
+        "Cards or Almanac",
+        "progression or onboarding",
+        "transmedia",
+        "digital adaptation of analog KFB"
+      ],
+      "principles": [
+        "analog rules and Cut&Play are origin references, not digital gameplay shackles",
+        "KFB claymation cartoon open world as a living toy",
+        "broad-audience chill & fun transmedia experience",
+        "fractal storytelling across Deck, Card, world, Resident, dialogue, media and memory",
+        "pull, don't gate"
+      ],
+      "doesNotOwn": [
+        "runtime",
+        "analog rules canon",
+        "WorldBuilder",
+        "ChatterBox runtime",
+        "Card database",
+        "progression implementation"
+      ],
+      "note": "Global product/context reference. Preserve provenance and conceptual distinctions, but keep digital gameplay outcome-open. Invite and reward exploration; gate rewards/handoffs rather than the world wherever practical."
     },
     {
       "id": "kfb-meta-compendium-v1",
