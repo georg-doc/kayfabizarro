@@ -18,7 +18,10 @@ try{
  check('69 catalog tracks',await page.locator('#catalogGrid .track').count()===69,await page.locator('#catalogGrid .track').count());
  check('stats 59 / 29',await page.locator('#stats').innerText().then(x=>x.includes('59 world')&&x.includes('29 stems')));
  await page.selectOption('#stemFilter','stems');check('29 stem filter',await page.locator('#catalogGrid .track').count()===29,await page.locator('#catalogGrid .track').count());
- await page.click('[data-view="sources"]');check('17 Eleven tests',await page.locator('#candidateGrid .candidate').count()===17,await page.locator('#candidateGrid .candidate').count());
+ await page.click('[data-view="sources"]');
+ check('SFX count 1704',await page.locator('#sfxCount').innerText().then(x=>x.includes('1,704')));
+ await page.fill('#sfxSearch','jump');check('SFX jump search renders',await page.locator('#sfxGrid .track').count()>0,await page.locator('#sfxGrid .track').count());
+ check('17 Eleven tests',await page.locator('#candidateGrid .candidate').count()===17,await page.locator('#candidateGrid .candidate').count());
  check('rain remains source-required',await page.locator('#missingSources').innerText().then(x=>x.includes('Rain bank')&&x.includes('SOURCE_REQUIRED')));
  check('no page errors',result.errors.length===0,result.errors);check('no local HTTP errors',result.httpErrors.length===0,result.httpErrors);
  await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});result.status='PASS';

@@ -1,16 +1,17 @@
 const RAW='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let catalog=null,soundscape=null,sourceIntake=null,mixerData=null,intake=[];
+let catalog=null,soundscape=null,sourceIntake=null,mixerData=null,sfxLibrary=null,intake=[];
 const audioUrl=file=>RAW+file.split('/').map(encodeURIComponent).join('/');
 const text=(v='')=>String(v??'');
 const escapeHtml=s=>text(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function firstJson(urls){let last=null;for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status+' '+u);return await r.json()}catch(e){last=e}}throw last||new Error('no JSON source')}
 async function load(){
- [catalog,soundscape,sourceIntake,mixerData]=await Promise.all([
+ [catalog,soundscape,sourceIntake,mixerData,sfxLibrary]=await Promise.all([
    firstJson(['./catalog.snapshot.json','../../media/3D_Assets/Sounds/jukebox.json',RAW+'media/3D_Assets/Sounds/jukebox.json']),
    firstJson(['./soundscape-source.json']),
    firstJson(['./source-intake.v1.json']),
-   firstJson(['./world-mixer-recipes.json'])
+   firstJson(['./world-mixer-recipes.json']),
+   firstJson(['./sfx-library.snapshot.json'])
  ]);
  renderAll();bind();
 }
@@ -130,6 +131,30 @@ function renderSources(){
  $('#availableSources').innerHTML=soundscape.available.map(s=>'<div class="sourceitem"><div><b>'+escapeHtml(s.label)+'</b><br><small>'+escapeHtml(s.role)+'</small></div><span class="chip ok">source</span></div>').join('');
  $('#missingSources').innerHTML=soundscape.missing.map(s=>'<div class="sourceitem"><div><b>'+escapeHtml(s.label)+'</b><br><small>'+escapeHtml(s.need)+'</small></div><span class="chip missing">'+escapeHtml(s.status)+'</span></div>').join('');
 }
+
+function sfxLabel(x){return x.path.split('/').pop().replace(/\.(wav|ogg|mp3)$/i,'')}
+function renderSfx(){
+ const q=$('#sfxSearch').value.trim().toLowerCase(),use=$('#sfxUseCase').value,temp=$('#sfxTemporal').value;
+ const seen=new Set(),all=sfxLibrary?.assets||[];
+ const filtered=all.filter(x=>{
+   if(use&&!x.useCases?.includes(use))return false;if(temp&&x.temporal!==temp)return false;
+   if(q&&!JSON.stringify([x.path,x.pack,x.roles,x.useCases,x.verbs]).toLowerCase().includes(q))return false;
+   if(seen.has(x.blobSha))return false;seen.add(x.blobSha);return true;
+ });
+ const shown=filtered.slice(0,60);
+ $('#sfxStats').textContent=filtered.length+' matches'+(filtered.length>60?' · first 60':'');
+ $('#sfxGrid').innerHTML=shown.map(x=>'<article class="track"><div><h3>'+escapeHtml(sfxLabel(x))+'</h3><div class="tiny">'+escapeHtml(x.pack)+' · '+escapeHtml(x.temporal.replace('_',' ').toLowerCase())+'</div></div><div class="track-actions"><button class="play" aria-label="Play SFX" data-sfx-play="'+escapeHtml(x.path)+'">▶</button></div></article>').join('');
+ $('[data-sfx-play]').forEach(b=>b.onclick=()=>playSfx(b.dataset.sfxPlay));
+}
+function playSfx(path){const x=(sfxLibrary?.assets||[]).find(a=>a.path===path);if(!x)return;const a=$('#preview');a.src=audioUrl(x.path);a.play().catch(()=>{});$('#nowTitle').textContent=sfxLabel(x);$('#nowMeta').textContent=x.pack}
+function fillSfxFilters(){
+ const sel=$('#sfxUseCase'),uses=sfxLibrary?.taxonomy?.useCases||[];sel.insertAdjacentHTML('beforeend',uses.map(x=>'<option value="'+escapeHtml(x)+'">'+escapeHtml(x.replaceAll('_',' ').toLowerCase())+'</option>').join(''));
+ const events=['click','pickup','jump','land','hit','engine','success','error'];
+ $('#eventMap').innerHTML=events.map(x=>'<button data-event="'+x+'">'+x+'</button>').join('');
+ $('[data-event]').forEach(b=>b.onclick=()=>{$('#sfxSearch').value=b.dataset.event;renderSfx()});
+ $('#sfxCount').textContent='· '+(sfxLibrary?.assets?.length||0).toLocaleString('en-US');
+}
+
 function renderCandidates(){
  const status=$('#candidateStatus')?.value||'',category=$('#candidateCategory')?.value||'';
  const all=sourceIntake?.elevenLabs||[],xs=all.filter(x=>(!status||x.status===status)&&(!category||x.category===category));
@@ -160,9 +185,9 @@ function bind(){
  $('#worldToggle').onclick=toggleWorldPlayback;$('#worldAlt').onclick=cycleAlternate;$$('[data-world-fade]').forEach(b=>b.onclick=()=>setFadeSeconds(+b.dataset.worldFade));
  $$('[data-layer]').forEach(b=>b.onclick=()=>toggleLayer(b.dataset.layer));$('#voiceDuck').onclick=toggleVoice;
  ['#search','#collection','#stemFilter'].forEach(s=>$(s).addEventListener('input',renderCatalog));
- $('#candidateStatus').addEventListener('input',renderCandidates);$('#candidateCategory').addEventListener('input',renderCandidates);
+ $('#sfxSearch').addEventListener('input',renderSfx);$('#sfxUseCase').addEventListener('input',renderSfx);$('#sfxTemporal').addEventListener('input',renderSfx);$('#candidateStatus').addEventListener('input',renderCandidates);$('#candidateCategory').addEventListener('input',renderCandidates);
  const drop=$('#drop'),input=$('#files');drop.onclick=()=>input.click();input.onchange=e=>filesChanged(e.target.files);drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag')};drop.ondragleave=()=>drop.classList.remove('drag');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');filesChanged(e.dataTransfer.files)};
  $('#downloadIntake').onclick=downloadIntake;$('#buildPrompt').onclick=buildPrompt;$('#copyPrompt').onclick=()=>navigator.clipboard?.writeText($('#promptOut').value);
 }
-function renderAll(){renderWorld();renderCatalog();renderSources();fillCandidateFilters();renderCandidates();fillSelect($('#pRefs'));filesChanged([]);show('world')}
+function renderAll(){renderWorld();renderCatalog();renderSources();fillSfxFilters();renderSfx();fillCandidateFilters();renderCandidates();fillSelect($('#pRefs'));filesChanged([]);show('world')}
 load().catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:20px;color:#f88">'+escapeHtml(e.stack||e)+'</pre>')});
