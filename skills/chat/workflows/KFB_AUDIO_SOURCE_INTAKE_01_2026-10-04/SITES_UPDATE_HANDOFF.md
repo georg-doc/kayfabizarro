@@ -22,9 +22,9 @@ Candidate child source:
 ## Expected visible delta
 
 Catalog:
-- **55 total**
-- **45 RoadTrip-v2**
-- **15 stem families**
+- **60 total**
+- **50 RoadTrip-v2**
+- **20 stem families**
 - new `Rain percussion · Beetle / Ring` card with 107 BPM, source-only stems, human-positive tag.
 
 New tab:
@@ -43,15 +43,31 @@ Chat grounding:
 
 ## Evidence
 
-Run `37175035753` / job `111355208659`: browser **12/12 PASS**.  
-Artifact `11293330007`.  
-Digest `sha256:6a6c5c8cbe209915e8df7c5264fb9d89d0b88de6c721b3c3ce28fb4bbe632524`.
+Run `37176886034` / job `111360630704`: browser **12/12 PASS**.  
+Artifact `11293114042`.  
+Digest `sha256:9132d35e7fc34277a74e2c1c80b7a703bebc56026c18d969aba0781da71b1287`.
+
+## Additional human-positive Suno families
+
+The Site update must also include these five complete master+stem families now present in the QA-green catalog:
+- Rainy Graveyard · small-room jazz experiment · 89 BPM
+- Stormfront Ring · rockabilly electro-funk experiment · 120 BPM
+- Wet Neon Road · cosmic surf experiment · 104 BPM
+- Wet road rhythmic texture · Road radio · 105 BPM
+- Workshop machine pulse · Beetle / Maker Space · 119 BPM
+
+All stems remain `source-only`.
+
+Site Chat grounding also adds:
+- musical Ambient Beds as a separate layer between physical soundscape and driving/Jukebox music;
+- canonical Utopia/Dystopia/Protopia deck JSONs as semantic inspiration;
+- strict external-generator hygiene: no unexplained internal KFB/project/deck identifiers in Suno/ElevenLabs prompts.
 
 ## Acceptance
 
 1. Update existing `kfb-audio` Site project — do not create a sibling Site.
 2. Open exact live URL.
-3. Verify 55 / 45 / 15.
+3. Verify 60 / 50 / 20.
 4. Verify Source Lab = 17.
 5. Verify Rain remains SOURCE_REQUIRED.
 6. Verify Rain percussion card and human-positive tag.
