@@ -10,13 +10,30 @@ Current observed branch head at rebrief: `565fff80bda7fe39fbed1f3589adaeb3325dda
 Frozen runtime evidence head: `4334151bfbf230d33ad459f61cc0da595c1191a2`
 Frozen failure export head: `282e05e8f66a117a12165d9169cbc16de0e8fb7e`
 
+
+## 2026-10-04 · DELIVERY SURFACE CORRECTION · GPT SITE PRIMARY
+
+This rebrief originally named Cloudflare Stage as the product-delivery target. That is superseded.
+
+Current binding delivery policy:
+`skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+
+For MVP1:
+- **GPT Site is the primary product/daily-use surface.**
+- Build/QA the current WB2 product, then publish/update the World Studio GPT Site.
+- If the current executor lacks Sites publishing capability, hand off the exact QA-green source to a Sites-capable executor. Do not substitute Cloudflare.
+- Cloudflare is a downstream KFB-Hub compatibility/formal-acceptance mirror when required and must not become the blocking build loop.
+- Do not invent the final Site URL; return the exact `.frizzlebob.chatgpt.site` URL from Sites publication.
+
+The historical `pages.dev` references later in this document are secondary-mirror references, not the primary product host.
+
 ## 0 · Product mandate
 
 Stop treating the autonomous browser journey harness as the product.
 
 The product mandate is:
 
-> **Deliver a genuinely playable KFB WorldBuilder MVP 1 to Georg on one real Cloudflare Stage URL.**
+> **Deliver a genuinely playable KFB WorldBuilder MVP 1 to Georg as the World Studio GPT Site.**
 
 MVP 1 means Georg can open it, enter the world, move the player, use the WorldBuilder/God Mode, manipulate/save/reload the world, walk to meaningful content, use the already-proven Drive/Taxi seam where functional, and inspect the source-clean four-island world.
 
@@ -157,7 +174,7 @@ Produce the smallest **representative integrated product**, not a diagnostic sli
 
 A human must be able to:
 
-1. open the real Cloudflare Stage;
+1. open the exact published World Studio GPT Site;
 2. pass the real loading/Enter path;
 3. control the Player in Town;
 4. walk/run through actual source-clean world geometry;
@@ -237,7 +254,7 @@ Test:
 If Taxi direct product use works but route automation cannot certify it, mark:
 **PRODUCT PASS / AUTOMATED JOURNEY HARNESS HOLD**.
 
-### R5 · publish MVP 1 Stage
+### R5 · publish MVP 1 Site, then mirror if required
 
 When R1–R4 are product-usable and no fatal blocker exists:
 
@@ -327,7 +344,8 @@ Return:
 - exact repo / PR / branch / head;
 - what is directly playable;
 - what WorldBuilder operations work;
-- direct Cloudflare Stage URL;
+- exact verified GPT Site URL and Site project/version/deployment identity;
+- downstream Cloudflare mirror status when required;
 - public-browser verification;
 - actual test counts;
 - direct product screenshots;
