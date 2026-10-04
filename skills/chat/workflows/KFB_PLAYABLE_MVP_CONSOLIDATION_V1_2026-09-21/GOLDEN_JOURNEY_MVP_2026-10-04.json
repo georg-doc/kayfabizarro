@@ -59,7 +59,36 @@
     "curtain": "theatre-curtain-v1-donor",
     "loadingPlaque": "ui.clay.bloedsinn-loading",
     "enterPlaque": "ui.clay.enter",
-    "progress": "real-critical-loader-progress"
+    "progress": "real-critical-loader-progress",
+    "actorSelect": {
+      "optional": true,
+      "contract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md",
+      "desiredDefault": "player.frizzlebob-v5b",
+      "safeFallback": "player.actionfigure-medium",
+      "initialRoster": [
+        {
+          "id": "player.frizzlebob-v5b",
+          "rigFamily": "Rig_Medium",
+          "status": "SOURCE_PIN_RECONCILE"
+        },
+        {
+          "id": "player.actionfigure-medium",
+          "rigFamily": "Rig_Medium",
+          "status": "MOTION_BASELINE_OWNER_PR344"
+        },
+        {
+          "id": "player.blackknight-large",
+          "rigFamily": "Rig_Large",
+          "status": "CROSS_RIG_QA"
+        },
+        {
+          "id": "player.gothgirl-medium",
+          "rigFamily": "Rig_Medium",
+          "status": "OPTIONAL_STAGE_QA"
+        }
+      ],
+      "pullDontGate": true
+    }
   },
   "socialCalls": [
     "bingo",
