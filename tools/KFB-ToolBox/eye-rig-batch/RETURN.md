@@ -1873,3 +1873,55 @@ Per-eye / eyepatch remains deferred until after Site acceptance.
 
 No auto-merge or Live promotion.
 
+
+
+## 2026-10-04 · SITE PUBLISHED · GEORG UNIFIED HUMAN GATE OPEN
+
+Status: **CHATGPT SITE PUBLISHED · SOURCE OWNER UNCHANGED · HUMAN VISUAL ACCEPTANCE OPEN**
+
+Work published the existing unified PR #104 workbench without redesign.
+
+Publication:
+- Site: `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+- Site project: `appgprj_6ac1b73620f48191ae6e7f101f4b0786`
+- Version: `appgprj_6ac1b73620f48191ae6e7f101f4b0786~appgver_5717d8849ad48191b6e277502df17312`
+- Deployment: `appgdep_6ac1b854cd3081919f783990f88039f4` · succeeded
+- publication source revision: `4f8a82cbea7a0a8c82eafc917b7968b8e77d4e00`
+- owner source at publication: PR #104 / `toolbox/eye-rig-batch-2026-09-18` @ `ad26045e8a7b389afe0c8127e80bb66f3e9f2ac3`
+- 50 source-root files copied unchanged into the Site publication candidate
+- no merge, no Legacy iframe/second UI, no Cloudflare acceptance fork
+
+Published runtime smoke:
+- Medium roster: 55
+- Large roster: 8
+- Legacy roster: 17
+- Barbarian Default assembled through LegacyFaceHost + EyeRig v6
+- Skull remained `HUMAN_REQUIRED`
+- shared controls, views, Neutral / Clay K1, import/export and review controls present
+
+Published exact-source static contract:
+**187/191 PASS · 4 FAIL** locally in Work.
+The four existing deviations are:
+- `source-measured-explicit-candidate`
+- `placement-ranges-expanded`
+- `placement-range-auto-expands`
+- `roster-wired-before-control-init`
+
+This is not relabeled as CI PASS. The earlier focused unified source check remains **33/33 PASS**.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_UNIFIED_SITE_01**
+
+On the Site, verify:
+1. Medium loads with prior saved state;
+2. switch to Large;
+3. switch to Legacy and see all 17 heads in the same interface;
+4. load Barbarian Default plus one alternate Legacy head;
+5. confirm Skull remains clearly manual / HUMAN_REQUIRED;
+6. test numeric controls, bounded wheel zoom and Neutral / Clay K1;
+7. reload and confirm class + profile persistence.
+
+Per-eye / eyepatch remains deferred until this unified Site gate is accepted.
+
+No auto-merge or Live promotion.
