@@ -135,7 +135,27 @@
         "Library technical filenames"
       ]
     },
-    "partySupportRepair": "Actual DOM spatial readback: Dystopia ground/rootY -8.7417, but Band modelOffsetY8.8371/Disco8.7484. Generic receiver groundModelLocal duplicated donor support and caused apparent float. Preserve native donor local ground, exclude performanceSet from generic actor grounding; exact zero-offset check added to Golden loader gate."
+    "partySupportRepair": "Actual DOM spatial readback: Dystopia ground/rootY -8.7417, but Band modelOffsetY8.8371/Disco8.7484. Generic receiver groundModelLocal duplicated donor support and caused apparent float. Preserve native donor local ground, exclude performanceSet from generic actor grounding; exact zero-offset check added to Golden loader gate.",
+    "criticRound4": {
+      "status": "PARTIAL_TARGETED_REPAIRS_PASS_NO_WHOLE_GAME_PASS",
+      "partySupport": "PASS actual source offsets0 and image comparison",
+      "firstFrame": "PASS after two bounded Ground camera framing passes; castle/tavern whole, Player/Clown/I readable",
+      "optional": [
+        "dominant road band",
+        "uniform ground/sky",
+        "material polish"
+      ],
+      "localMetrics": {
+        "frames": 240,
+        "medianMs": 14.8,
+        "p95Ms": 17.9,
+        "drawCalls": 354,
+        "triangles": 409105,
+        "pixelRatio": 2,
+        "scope": "one local Town view only"
+      }
+    },
+    "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected."
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",

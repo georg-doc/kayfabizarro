@@ -204,3 +204,10 @@ Actual local authoring: isolated native green well placed, scaled1.25, workspace
 ## 2026-10-04 · Native Band/Disco support correction
 
 Actual browser spatial readback identified the Critic floating-group finding: correct Dystopia root/ground Y -8.7417, but receiver generic actor grounding added Band Y8.8371 and Disco Y8.7484. The native performance modules already own local grounding. Excluding performanceSet from the generic actor adjustment preserves their original local transforms; WB2 still owns island support. Golden checks now assert their actual model offset remains zero. Re-Critic and complete Golden PASS pending.
+
+
+## 2026-10-04 · Targeted visual re-Critic / readable Studio / planner cost
+
+Actual party support repair and second bounded first-frame camera correction received targeted independent PASS. Castle/tavern are fully visible; Player/Clown/I remain readable. Remaining road dominance and material polish are optional; no further camera CORE gate from this round. Full Whole-Game result still pending. Native Library uses German display labels, preserving Registry/source IDs and search; Sculpt main labels translated. Camera settings are changed only in the MVP consumer through existing Ground params, preserving the proven baseline controller. Actual local Town metric: 240frames, median14.8ms, p95 17.9ms,354drawcalls,409105triangles,pixelRatio2; no whole-game performance PASS.
+
+Harness planner now snapshots the actual registered static geometry bounds once instead of invoking building matrix serialization millions of times. It only plans real-input paths: native Ground retains all movement/collision authority and sampled step checks remain. No teleport, input clock acceleration, fabricated receipts or reward injection.
