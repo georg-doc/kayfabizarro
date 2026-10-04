@@ -3,6 +3,8 @@
 **Status:** READY FOR WSA WORKSHOP · SITE/UX PREPARATION ONLY · NO RUNTIME CHANGE  
 **Owner:** KFB Asset Registry / Asset Librarian  
 **Branch:** `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04`  
+**Draft PR:** `georg-doc/kayfabizarro#349`  
+**Reconciled current-main base:** `70716382720b3c6a7fc24d261d914602c2c2c3c2`  
 **Verified source-package checkpoint:** `3927b8dc9a9db927bb3e84ec5a54ff7dbb8ef7ab`  
 **WSA workflow:** `WSA-ASSET-LIBRARIAN-GPT-SITE-01`
 
