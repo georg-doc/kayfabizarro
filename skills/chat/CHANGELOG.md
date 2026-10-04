@@ -1,3 +1,12 @@
+## 2026-10-04 · Combat Platformer Benchmark planning
+
+- Added `skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md`.
+- Product concept: Combat Arena Cards as stable arena anchors + measured KayKit Hex traversal layers + Babel Chill & Fun jump mechanism + Resident Atlas S17 ranged combat/VFX + current audio ownership.
+- Benchmark design freezes one identical source/acceptance packet before comparing Sol/Work and Astra; Coworker is optional runtime datapoint, Claude Design Level 5 is a specialist level/look/traversal-design comparison rather than an unfair repo-integrator substitute.
+- BLENDER-DUEL-01 return is the only material source gate before freezing the benchmark packet.
+- Reserved Stage root: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/platformer-benchmark/` · NOT DEPLOYED.
+- No Combat runtime branch, merge, deployment or Live mutation was started by this planning checkpoint.
+
 ## 2026-10-04 · Combat Card-Hex Ascent provider benchmark prepared
 
 - Prepared a planning-only provider-neutral Combat benchmark in `georg-doc/KFB-Combat-Arena` Draft PR #18.
