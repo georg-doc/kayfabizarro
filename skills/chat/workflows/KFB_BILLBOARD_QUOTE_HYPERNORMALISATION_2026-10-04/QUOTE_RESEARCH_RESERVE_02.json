@@ -1,0 +1,1600 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-04T22:55:00Z",
+  "purpose": "Second unmapped, quality-first quote reserve for later curator mapping to canonical KFB decks, Cards, islands/biomes and Billboard placements; expands rotation depth so world contexts need not repeat the same few quotes.",
+  "sourcePolicy": "Research reserve only. Strong provenance and rights states are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Build enough semantic depth that a future island/Billboard context can rotate through a substantial approved subset before any repeat.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "This is research intent only; no runtime selector or island assignment is changed in this slice."
+  },
+  "candidates": [
+    {
+      "id": "qr-r02-doyle-theorize-before-data",
+      "text": "It is a capital mistake to theorize before one has data.",
+      "author": "Arthur Conan Doyle",
+      "work": "The Adventures of Sherlock Holmes — A Scandal in Bohemia",
+      "publicationYear": 1891,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/48320/48320-h/48320-h.htm",
+        "edition": "The Adventures of Sherlock Holmes, illustrated early edition transcription",
+        "pageOrLocator": "A Scandal in Bohemia",
+        "publicationYear": 1892,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in the story text; the story first appeared in 1891."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/48320/48320-h/48320-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "evidence",
+        "theory",
+        "investigation",
+        "confirmation-bias"
+      ],
+      "semanticAxes": [
+        "evidence↔theory",
+        "observation↔premature-explanation"
+      ],
+      "frizzleQuestion": "Which theory are you currently protecting by deciding too early what the evidence is supposed to mean?",
+      "brainFood": [
+        {
+          "label": "A Scandal in Bohemia — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/48320/48320-h/48320-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain edition text containing the exact line."
+        }
+      ],
+      "curatorNotes": "Useful diagnostic line for research, journalism, science and conspiracy contexts; the question turns it toward theory-protection rather than data worship.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-doyle-bricks-without-clay",
+      "text": "“Data! data! data!” he cried, impatiently. “I can't make bricks without clay.”",
+      "author": "Arthur Conan Doyle",
+      "work": "The Adventures of Sherlock Holmes — The Adventure of the Copper Beeches",
+      "publicationYear": 1892,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Adventures_of_Sherlock_Holmes.pdf/330",
+        "edition": "Validated scan of The Adventures of Sherlock Holmes",
+        "pageOrLocator": "The Adventure of the Copper Beeches; scan p. 330 / printed p. 289",
+        "publicationYear": 1892,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact passage verified against the scanned edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Adventures_of_Sherlock_Holmes.pdf/330",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "data",
+        "inference",
+        "model-building",
+        "investigation"
+      ],
+      "semanticAxes": [
+        "data↔model",
+        "material↔inference"
+      ],
+      "frizzleQuestion": "When does demanding more data improve the model, and when does it become a sophisticated excuse not to build one?",
+      "brainFood": [
+        {
+          "label": "Copper Beeches — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AThe_Adventures_of_Sherlock_Holmes.pdf/330",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Validated scan containing the exact passage."
+        }
+      ],
+      "curatorNotes": "Pairs well with, but does not duplicate, Doyle's anti-premature-theory line: this one asks when evidence collection itself can become avoidance.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-carroll-which-is-master",
+      "text": "The question is, which is to be master—that's all.",
+      "author": "Lewis Carroll",
+      "work": "Through the Looking-Glass, and What Alice Found There",
+      "publicationYear": 1871,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AThrough_the_Looking-Glass%2C_and_What_Alice_Found_There.djvu/144",
+        "edition": "Validated first-edition scan",
+        "pageOrLocator": "Chapter VI, Humpty Dumpty; printed p. 124",
+        "publicationYear": 1871,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified on the validated scan and the chapter transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AThrough_the_Looking-Glass%2C_and_What_Alice_Found_There.djvu/144",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "language",
+        "power",
+        "definition",
+        "framing"
+      ],
+      "semanticAxes": [
+        "meaning↔authority",
+        "language↔power"
+      ],
+      "frizzleQuestion": "When people fight over a word’s meaning, how often is the real dispute about who gets to set the rules?",
+      "brainFood": [
+        {
+          "label": "Through the Looking-Glass — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AThrough_the_Looking-Glass%2C_and_What_Alice_Found_There.djvu/144",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Validated scan with the full Humpty Dumpty exchange."
+        },
+        {
+          "label": "Through the Looking-Glass, Chapter VI",
+          "url": "https://en.wikisource.org/wiki/Through_the_Looking-Glass%2C_and_What_Alice_Found_There/Chapter_VI",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Chapter transcription used as wording cross-check."
+        }
+      ],
+      "curatorNotes": "A compact language/power hinge; strong for propaganda, rules, naming and framing without reducing the quote to a semantics joke.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-mackay-mad-in-herds",
+      "text": "they go mad in herds, while they only recover their senses slowly, and one by one.",
+      "author": "Charles Mackay",
+      "work": "Memoirs of Extraordinary Popular Delusions and the Madness of Crowds",
+      "publicationYear": 1841,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/24518/24518-h/24518-h.htm",
+        "edition": "Project Gutenberg transcription of the 1852 edition",
+        "pageOrLocator": "Preface",
+        "publicationYear": 1852,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact clause verified in two Project Gutenberg renderings; original work first published 1841."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/24518/24518-h/24518-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "crowds",
+        "delusion",
+        "social-contagion",
+        "recovery"
+      ],
+      "semanticAxes": [
+        "crowd↔individual",
+        "contagion↔recovery"
+      ],
+      "frizzleQuestion": "Why can belonging accelerate a delusion faster than individual reflection can dismantle it?",
+      "brainFood": [
+        {
+          "label": "Extraordinary Popular Delusions — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/24518/24518-h/24518-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain edition; passage in the preface."
+        }
+      ],
+      "curatorNotes": "The fragment preserves the strongest asymmetry—collective acceleration versus individual recovery—without reproducing the entire familiar paragraph.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-lebon-illusions-master",
+      "text": "Whoever can supply them with illusions is easily their master; whoever attempts to destroy their illusions is always their victim.",
+      "author": "Gustave Le Bon",
+      "work": "The Crowd: A Study of the Popular Mind",
+      "publicationYear": 1895,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/445/pg445.html.utf8",
+        "edition": "Early English edition transcription published by T. Fisher Unwin",
+        "pageOrLocator": "Book II, Chapter III, §2–3 context",
+        "publicationYear": 1896,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the early English edition transcription."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1896 English edition is public domain in the US, but this batch did not establish the translator's identity/term for EU publication. Keep out of public runtime until cleared.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/445/pg445.html.utf8",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "crowds",
+        "illusion",
+        "persuasion",
+        "authority"
+      ],
+      "semanticAxes": [
+        "illusion↔truth",
+        "persuasion↔victimhood"
+      ],
+      "frizzleQuestion": "Why can destroying a shared illusion threaten the messenger more than preserving the falsehood threatens the group?",
+      "brainFood": [
+        {
+          "label": "Le Bon, The Crowd — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/445/pg445.html.utf8",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Early English edition transcription containing the exact sentence."
+        }
+      ],
+      "curatorNotes": "Strong crowd-psychology candidate, but translation rights remain deliberately conservative for EU use.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-paine-habit-looks-right",
+      "text": "a long habit of not thinking a thing wrong, gives it a superficial appearance of being right",
+      "author": "Thomas Paine",
+      "work": "Common Sense",
+      "publicationYear": 1776,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://gutenberg.org/files/147/147-h/147-h.htm",
+        "edition": "1776 text transcription",
+        "pageOrLocator": "Introduction",
+        "publicationYear": 1776,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the standalone Gutenberg text and Paine collected writings."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://gutenberg.org/files/147/147-h/147-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "custom",
+        "legitimacy",
+        "habit",
+        "judgment"
+      ],
+      "semanticAxes": [
+        "custom↔legitimacy",
+        "habit↔judgment"
+      ],
+      "frizzleQuestion": "Which rule around you looks legitimate mainly because nobody remembers the moment it became optional?",
+      "brainFood": [
+        {
+          "label": "Common Sense — Project Gutenberg",
+          "url": "https://gutenberg.org/files/147/147-h/147-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text; opening introduction."
+        }
+      ],
+      "curatorNotes": "Not a generic revolution quote: it isolates the epistemic effect of habituation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-douglass-power-demand",
+      "text": "Power concedes nothing without a demand. It never did and it never will.",
+      "author": "Frederick Douglass",
+      "work": "West India Emancipation speech",
+      "publicationYear": 1857,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://home.nps.gov/frdo/learn/historyculture/thoughts-for-all-time.htm",
+        "edition": "Frederick Douglass National Historic Site quotation with speech attribution",
+        "pageOrLocator": "Canandaigua, New York, 4 August 1857",
+        "publicationYear": 1857,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified by the National Park Service and an NPS primary-source teaching packet."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://home.nps.gov/frdo/learn/historyculture/thoughts-for-all-time.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "power",
+        "resistance",
+        "demand",
+        "emancipation"
+      ],
+      "semanticAxes": [
+        "demand↔concession",
+        "power↔resistance"
+      ],
+      "frizzleQuestion": "What kind of power changes voluntarily, and what kind changes only when the cost of refusing becomes higher?",
+      "brainFood": [
+        {
+          "label": "Frederick Douglass NHS — Thoughts for All Time",
+          "url": "https://home.nps.gov/frdo/learn/historyculture/thoughts-for-all-time.htm",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-05",
+          "notes": "National Park Service source attributing the exact line to the 1857 West India Emancipation speech."
+        }
+      ],
+      "curatorNotes": "High-strength power mechanic; the question avoids turning it into a generic activism slogan.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-locke-law-ends-tyranny",
+      "text": "Where-ever law ends, tyranny begins",
+      "author": "John Locke",
+      "work": "Second Treatise of Government",
+      "publicationYear": 1689,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/7370/7370-h/7370-h",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "§202",
+        "publicationYear": 1689,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in §202 together with Locke's limiting clause about transgression to another's harm."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/7370/7370-h/7370-h",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "law",
+        "tyranny",
+        "authority",
+        "legitimacy"
+      ],
+      "semanticAxes": [
+        "law↔force",
+        "authority↔tyranny"
+      ],
+      "frizzleQuestion": "When authority breaks the rules that authorize it, what remains of authority besides organized force?",
+      "brainFood": [
+        {
+          "label": "Locke, Second Treatise — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text; §202 gives the line in context."
+        }
+      ],
+      "curatorNotes": "Short enough for a roadside board, but the question forces attention to legitimacy rather than merely anti-government rhetoric.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-madison-ambition-counteract",
+      "text": "Ambition must be made to counteract ambition.",
+      "author": "James Madison",
+      "work": "The Federalist No. 51",
+      "publicationYear": 1788,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://guides.loc.gov/federalist-papers/text-51-60",
+        "edition": "Library of Congress transcription",
+        "pageOrLocator": "Federalist No. 51",
+        "publicationYear": 1788,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact line verified by the Library of Congress and Yale Avalon Project."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://guides.loc.gov/federalist-papers/text-51-60",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "checks-and-balances",
+        "institution-design",
+        "ambition",
+        "government"
+      ],
+      "semanticAxes": [
+        "ambition↔ambition",
+        "virtue↔institutional-design"
+      ],
+      "frizzleQuestion": "Is a system safer when it depends on good people, or when it assumes motives will collide and designs the collision?",
+      "brainFood": [
+        {
+          "label": "Federalist No. 51 — Library of Congress",
+          "url": "https://guides.loc.gov/federalist-papers/text-51-60",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Library of Congress transcription."
+        },
+        {
+          "label": "Federalist No. 51 — Yale Avalon",
+          "url": "https://avalon.law.yale.edu/18th_century/fed51.asp?hl=en-US",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Independent text cross-check."
+        }
+      ],
+      "curatorNotes": "Useful for systems design far beyond constitutional politics: resilience built from countervailing incentives.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-montesquieu-check-power",
+      "text": "power should be a check to power.",
+      "author": "Montesquieu",
+      "work": "The Spirit of the Laws",
+      "publicationYear": 1748,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://constitutioncenter.org/the-constitution/historic-document-library/detail/montesquieuthe-spirit-of-the-laws-1748",
+        "edition": "National Constitution Center primary-source presentation",
+        "pageOrLocator": "Book XI, Chapter 4",
+        "publicationYear": 1748,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact clause verified on the Constitution Center text and its primary-source PDF."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying text and the historic English rendering used here are public domain.",
+        "evidenceUrl": "https://constitutioncenter.org/the-constitution/historic-document-library/detail/montesquieuthe-spirit-of-the-laws-1748",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "power",
+        "checks",
+        "liberty",
+        "institution-design"
+      ],
+      "semanticAxes": [
+        "power↔counterpower",
+        "liberty↔constraint"
+      ],
+      "frizzleQuestion": "Who checks the checker once every institution created to restrain power develops power and interests of its own?",
+      "brainFood": [
+        {
+          "label": "Montesquieu — National Constitution Center",
+          "url": "https://constitutioncenter.org/the-constitution/historic-document-library/detail/montesquieuthe-spirit-of-the-laws-1748",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Primary-source presentation with Book XI context."
+        }
+      ],
+      "curatorNotes": "Complements Madison but asks the recursive problem the slogan normally leaves hidden.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-twain-outside-influences",
+      "text": "We are creatures of outside influences; as a rule we do not think, we only imitate.",
+      "author": "Mark Twain",
+      "work": "Corn-Pone Opinions",
+      "publicationYear": 1923,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/68604/pg68604-images.html",
+        "edition": "Europe and Elsewhere, Harper & Brothers 1923 transcription",
+        "pageOrLocator": "Corn-Pone Opinions",
+        "publicationYear": 1923,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the posthumous essay collection; the essay was written earlier and first published here."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1923 publication is public domain in the US; Twain died in 1910, so author-term protection has long expired in the EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/68604/pg68604-images.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "conformity",
+        "imitation",
+        "opinion",
+        "social-pressure"
+      ],
+      "semanticAxes": [
+        "imitation↔thought",
+        "belonging↔independence"
+      ],
+      "frizzleQuestion": "Which opinion would become hardest to hold if it stopped earning you belonging, status, income, or applause?",
+      "brainFood": [
+        {
+          "label": "Corn-Pone Opinions — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/68604/pg68604-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Europe and Elsewhere (1923), full public-domain text."
+        }
+      ],
+      "curatorNotes": "Directly useful for filter bubbles, social media, politics and group identity without relying on a modern psychology slogan.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-santayana-fanaticism-aim",
+      "text": "Fanaticism consists in redoubling your effort when you have forgotten your aim",
+      "author": "George Santayana",
+      "work": "The Life of Reason: Reason in Common Sense",
+      "publicationYear": 1905,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://dev.gutenberg.org/cache/epub/15000/pg15000-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Reason in Common Sense; early chapter context",
+        "publicationYear": 1905,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in the full text and against the Santayana Edition's citation to Scribner's 1905, p. 13."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://dev.gutenberg.org/cache/epub/15000/pg15000-images.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "fanaticism",
+        "purpose",
+        "effort",
+        "goal-drift"
+      ],
+      "semanticAxes": [
+        "effort↔aim",
+        "persistence↔purpose"
+      ],
+      "frizzleQuestion": "What activity would you stop immediately if you judged it by its original aim instead of by the effort already invested?",
+      "brainFood": [
+        {
+          "label": "The Life of Reason — Project Gutenberg",
+          "url": "https://dev.gutenberg.org/cache/epub/15000/pg15000-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain full text."
+        },
+        {
+          "label": "Santayana Edition — quotations",
+          "url": "https://liberalarts.indianapolis.iu.edu/centers/santayana/about-george-santayana/quotations/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-05",
+          "notes": "Santayana Edition gives the 1905 Scribner's citation and p. 13 locator."
+        }
+      ],
+      "curatorNotes": "Strong against mission drift, bureaucratic escalation and ideological escalation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-sumner-folkways-right",
+      "text": "the folkways can make anything “right”",
+      "author": "William Graham Sumner",
+      "work": "Folkways",
+      "publicationYear": 1906,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://cuny.manifoldapp.org/read/9a85e859-3388-4d98-970d-87ebf01866c5/section/641fa3a7-67ce-4962-ab00-2957abf01874",
+        "edition": "Project Gutenberg text mirrored by CUNY Manifold",
+        "pageOrLocator": "§472, Obscenity",
+        "publicationYear": 1906,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the complete public-domain text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://cuny.manifoldapp.org/read/9a85e859-3388-4d98-970d-87ebf01866c5/section/641fa3a7-67ce-4962-ab00-2957abf01874",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "custom",
+        "morality",
+        "folkways",
+        "social-norms"
+      ],
+      "semanticAxes": [
+        "custom↔morality",
+        "conformity↔judgment"
+      ],
+      "frizzleQuestion": "If custom can make almost anything feel right, what standard can criticize a culture without pretending to stand outside culture?",
+      "brainFood": [
+        {
+          "label": "Sumner, Folkways — CUNY Manifold",
+          "url": "https://cuny.manifoldapp.org/read/9a85e859-3388-4d98-970d-87ebf01866c5/section/641fa3a7-67ce-4962-ab00-2957abf01874",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain Gutenberg text mirrored by CUNY."
+        }
+      ],
+      "curatorNotes": "Exact source says folkways, not 'mores'; kept verbatim to avoid a common paraphrase drift.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-hume-reason-slave-passions",
+      "text": "Reason is, and ought only to be the slave of the passions",
+      "author": "David Hume",
+      "work": "A Treatise of Human Nature",
+      "publicationYear": 1739,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://englishphilosophy.org/hume/thn/2/3/3",
+        "edition": "English Philosophical Texts Online, 1739 copytext",
+        "pageOrLocator": "Book II, Part III, Section III, ¶4",
+        "publicationYear": 1739,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified against the 1739 copytext."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://englishphilosophy.org/hume/thn/2/3/3",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "reason",
+        "desire",
+        "motivation",
+        "judgment"
+      ],
+      "semanticAxes": [
+        "passion↔reason",
+        "desire↔argument"
+      ],
+      "frizzleQuestion": "If reason mainly serves prior desires, which desire is quietly choosing the facts your reasoning finds persuasive?",
+      "brainFood": [
+        {
+          "label": "Hume THN 2.3.3 — English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/hume/thn/2/3/3",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Scholarly transcription using the 1739 copytext."
+        }
+      ],
+      "curatorNotes": "A strong tension-generator for rationalization, AI objectives, politics and personal decision-making.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-ruskin-no-wealth-but-life",
+      "text": "There is no Wealth but Life.",
+      "author": "John Ruskin",
+      "work": "Unto This Last",
+      "publicationYear": 1862,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Unto_This_Last_%28Ruskin%29",
+        "edition": "Public-domain text",
+        "pageOrLocator": "Essay IV, §77",
+        "publicationYear": 1862,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in Wikisource and the Project Gutenberg edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Unto_This_Last_%28Ruskin%29",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "wealth",
+        "life",
+        "economics",
+        "wellbeing"
+      ],
+      "semanticAxes": [
+        "wealth↔life",
+        "production↔wellbeing"
+      ],
+      "frizzleQuestion": "What would an economy measure if it treated the quality of lived life as output rather than a side effect?",
+      "brainFood": [
+        {
+          "label": "Ruskin, Unto This Last — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Unto_This_Last_%28Ruskin%29",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text; Essay IV, §77."
+        },
+        {
+          "label": "Unto This Last — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/36541/pg36541-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Independent public-domain edition."
+        }
+      ],
+      "curatorNotes": "Compact enough for a fast roadside read, but semantically broad across economics, medicine, work and worldbuilding.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-wilde-truth-rarely-simple",
+      "text": "The truth is rarely pure and never simple.",
+      "author": "Oscar Wilde",
+      "work": "The Importance of Being Earnest",
+      "publicationYear": 1895,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Act I",
+        "publicationYear": 1895,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact line verified in the play text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "truth",
+        "complexity",
+        "narrative",
+        "simplification"
+      ],
+      "semanticAxes": [
+        "complexity↔simplicity",
+        "truth↔narrative"
+      ],
+      "frizzleQuestion": "When does simplifying a truth make it usable, and when does simplification quietly replace it with something easier?",
+      "brainFood": [
+        {
+          "label": "The Importance of Being Earnest — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain play text; Act I."
+        }
+      ],
+      "curatorNotes": "Famous enough to recognize, but the question makes it about epistemic compression rather than wit for wit's sake.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-wilde-experience-mistakes",
+      "text": "Experience is the name everyone gives to their mistakes.",
+      "author": "Oscar Wilde",
+      "work": "Lady Windermere's Fan",
+      "publicationYear": 1892,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/38251/pg38251-images.html",
+        "edition": "Leonard Cresswell Ingleby, Oscar Wilde (1907), quoting the play dialogue",
+        "pageOrLocator": "Lady Windermere's Fan discussion; printed p. 118",
+        "publicationYear": 1907,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact dialogue line verified in an early public-domain book reproducing the scene."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/38251/pg38251-images.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "experience",
+        "mistakes",
+        "learning",
+        "self-narrative"
+      ],
+      "semanticAxes": [
+        "mistake↔learning",
+        "experience↔story"
+      ],
+      "frizzleQuestion": "What turns a mistake into experience: surviving it, understanding it, changing behavior, or merely retelling it well?",
+      "brainFood": [
+        {
+          "label": "Oscar Wilde (1907) — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/38251/pg38251-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Early public-domain discussion reproducing the exact Lady Windermere's Fan dialogue."
+        }
+      ],
+      "curatorNotes": "The question breaks the easy cynical punchline and asks what learning would actually require.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-babbage-wrong-figures",
+      "text": "Babbage, if you put into the machine wrong figures, will the right answers come out?",
+      "author": "Charles Babbage",
+      "work": "Passages from the Life of a Philosopher",
+      "publicationYear": 1864,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/57532/57532-h/57532-h.htm",
+        "edition": "Project Gutenberg transcription of the 1864 edition",
+        "pageOrLocator": "Chapter V, Difference Engine No. 1",
+        "publicationYear": 1864,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact question verified in Babbage's own memoir; he records being asked it twice by members of Parliament."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/57532/57532-h/57532-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "automation",
+        "input-quality",
+        "computation",
+        "responsibility"
+      ],
+      "semanticAxes": [
+        "input↔output",
+        "automation↔responsibility"
+      ],
+      "frizzleQuestion": "When a machine produces nonsense from bad inputs, why are humans so tempted to blame the machine instead of the question?",
+      "brainFood": [
+        {
+          "label": "Babbage, Passages from the Life of a Philosopher",
+          "url": "https://www.gutenberg.org/files/57532/57532-h/57532-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain memoir; Chapter V records the question verbatim."
+        }
+      ],
+      "curatorNotes": "A historically grounded precursor to garbage-in/garbage-out, with a useful human-responsibility twist.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-ferguson-action-not-design",
+      "text": "the result of human action, but not the execution of any human design.",
+      "author": "Adam Ferguson",
+      "work": "An Essay on the History of Civil Society",
+      "publicationYear": 1767,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/8646/pg8646.html",
+        "edition": "Eighth-edition public-domain text",
+        "pageOrLocator": "Part III, Section II",
+        "publicationYear": 1767,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact clause verified in the full text; Ferguson applies it to institutions nations 'stumble upon'."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/8646/pg8646.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "emergence",
+        "institutions",
+        "systems",
+        "unintended-consequences"
+      ],
+      "semanticAxes": [
+        "emergence↔design",
+        "action↔intention"
+      ],
+      "frizzleQuestion": "Which institution around you looks deliberately designed even though nobody could plausibly have planned the whole thing?",
+      "brainFood": [
+        {
+          "label": "Ferguson, Essay on Civil Society — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/8646/pg8646.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text containing the full emergent-order passage."
+        }
+      ],
+      "curatorNotes": "Excellent systems quote for worlds, markets, institutions and emergent game structures without requiring ideological mapping.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-bentham-can-they-suffer",
+      "text": "the question is not, Can they reason? nor, Can they talk? but, Can they suffer?",
+      "author": "Jeremy Bentham",
+      "work": "An Introduction to the Principles of Morals and Legislation",
+      "publicationYear": 1789,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://staging.oll.libertyfund.org/titles/bentham-an-introduction-to-the-principles-of-morals-and-legislation",
+        "edition": "Online Library of Liberty edition",
+        "pageOrLocator": "Chapter XVII, concluding note / note 122",
+        "publicationYear": 1789,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the full edition, in the note extending moral concern to non-human animals."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://staging.oll.libertyfund.org/titles/bentham-an-introduction-to-the-principles-of-morals-and-legislation",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "sentience",
+        "suffering",
+        "moral-status",
+        "animals"
+      ],
+      "semanticAxes": [
+        "sentience↔status",
+        "suffering↔reason"
+      ],
+      "frizzleQuestion": "What changes morally when the boundary of concern is drawn around suffering rather than intelligence, usefulness, language, or resemblance to us?",
+      "brainFood": [
+        {
+          "label": "Bentham — Online Library of Liberty",
+          "url": "https://staging.oll.libertyfund.org/titles/bentham-an-introduction-to-the-principles-of-morals-and-legislation",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Full text; Chapter XVII note contains the exact line."
+        }
+      ],
+      "curatorNotes": "Strong for biological, medical, animal, AI-sentience and moral-boundary contexts.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-burke-compromise-barter",
+      "text": "All government, indeed every human benefit and enjoyment, every virtue, and every prudent act, is founded on compromise and barter.",
+      "author": "Edmund Burke",
+      "work": "Speech on Conciliation with America",
+      "publicationYear": 1775,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Burke%27s_Speech_on_Conciliation_with_America/Speech",
+        "edition": "Public-domain speech text",
+        "pageOrLocator": "Conciliation with the Colonies; printed p. 91 in cited edition",
+        "publicationYear": 1775,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in the speech transcription and scan page."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Burke%27s_Speech_on_Conciliation_with_America/Speech",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "compromise",
+        "politics",
+        "pluralism",
+        "tradeoffs"
+      ],
+      "semanticAxes": [
+        "compromise↔principle",
+        "pluralism↔surrender"
+      ],
+      "frizzleQuestion": "Which compromise preserves a plural world, and which merely disguises the moment one side surrendered something it could not afford to lose?",
+      "brainFood": [
+        {
+          "label": "Burke, Conciliation with America — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Burke%27s_Speech_on_Conciliation_with_America/Speech",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain speech text."
+        },
+        {
+          "label": "Conciliation with America — scan p. 91",
+          "url": "https://en.wikisource.org/wiki/Page%3ABurke%27s_Speech_on_Conciliation_with_America.djvu/137",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Scan page containing the sentence."
+        }
+      ],
+      "curatorNotes": "Useful counterweight to maximalist politics: the question keeps the distinction between productive compromise and surrender open.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-keynes-trained-to-strive",
+      "text": "we have been trained too long to strive and not to enjoy.",
+      "author": "John Maynard Keynes",
+      "work": "Economic Possibilities for our Grandchildren",
+      "publicationYear": 1930,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.panarchy.org/keynes/possibilities.html",
+        "edition": "Full essay transcription",
+        "pageOrLocator": "Closing discussion of the future age of leisure and abundance",
+        "publicationYear": 1930,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in the full essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1930 work entered the US public domain on 1 Jan 2026; Keynes died in 1946, so EU author-term protection expired earlier.",
+        "evidenceUrl": "https://www.panarchy.org/keynes/possibilities.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "work",
+        "abundance",
+        "leisure",
+        "identity"
+      ],
+      "semanticAxes": [
+        "striving↔enjoyment",
+        "scarcity↔identity"
+      ],
+      "frizzleQuestion": "If scarcity stopped organizing your day tomorrow, which parts of your identity would survive the disappearance of striving?",
+      "brainFood": [
+        {
+          "label": "Keynes — Economic Possibilities for our Grandchildren",
+          "url": "https://www.panarchy.org/keynes/possibilities.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Full essay transcription containing the sentence in context."
+        }
+      ],
+      "curatorNotes": "A useful work/post-scarcity question that avoids both hustle propaganda and utopian certainty.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-marx-engels-ruling-ideas",
+      "text": "The ruling ideas of each age have ever been the ideas of its ruling class.",
+      "author": "Karl Marx and Friedrich Engels",
+      "work": "Manifesto of the Communist Party",
+      "publicationYear": 1848,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+        "edition": "Samuel Moore English translation based on the 1888 edition",
+        "pageOrLocator": "Chapter II, Proletarians and Communists",
+        "publicationYear": 1888,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact English wording verified in the public-domain translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The cited 19th-century Samuel Moore English translation is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "ideology",
+        "class",
+        "institutions",
+        "ideas"
+      ],
+      "semanticAxes": [
+        "material-power↔ideas",
+        "ideology↔common-sense"
+      ],
+      "frizzleQuestion": "How much of an era’s common sense is common because it is true, and how much because powerful institutions can repeat it?",
+      "brainFood": [
+        {
+          "label": "Communist Manifesto — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain English translation containing the exact sentence."
+        }
+      ],
+      "curatorNotes": "Map later by semantic fit, not by political label; the question makes the mechanism testable across institutions and ideologies.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-hume-mind-theatre",
+      "text": "The mind is a kind of theatre, where several perceptions successively make their appearance",
+      "author": "David Hume",
+      "work": "A Treatise of Human Nature",
+      "publicationYear": 1739,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://englishphilosophy.org/hume/thn/1/4/6",
+        "edition": "English Philosophical Texts Online, 1739 copytext",
+        "pageOrLocator": "Book I, Part IV, Section VI, ¶4",
+        "publicationYear": 1739,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact clause verified against the 1739 copytext and an 1888 scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://englishphilosophy.org/hume/thn/1/4/6",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "identity",
+        "perception",
+        "self",
+        "flux"
+      ],
+      "semanticAxes": [
+        "flux↔identity",
+        "perception↔self"
+      ],
+      "frizzleQuestion": "If the self is a sequence of scenes rather than a fixed object, what exactly is supposed to remain authentic across the edits?",
+      "brainFood": [
+        {
+          "label": "Hume THN 1.4.6 — English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/hume/thn/1/4/6",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Scholarly transcription from the 1739 copytext."
+        },
+        {
+          "label": "Treatise of Human Nature — 1888 scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ATreatise_of_Human_Nature_%281888%29.djvu/273",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Scan cross-check."
+        }
+      ],
+      "curatorNotes": "Naturally suited to H13's sequential images, memory, identity and character transformation without becoming a generic 'life is theatre' quote.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-austen-reasons-for-liking",
+      "text": "How quick come the reasons for approving what we like!",
+      "author": "Jane Austen",
+      "work": "Persuasion",
+      "publicationYear": 1818,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/105/old/105-h/105-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter II",
+        "publicationYear": 1818,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact sentence verified in the novel text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/105/old/105-h/105-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "rationalization",
+        "preference",
+        "bias",
+        "judgment"
+      ],
+      "semanticAxes": [
+        "preference↔reason",
+        "desire↔justification"
+      ],
+      "frizzleQuestion": "How quickly do reasons become convincing once they arrive after the conclusion we already wanted?",
+      "brainFood": [
+        {
+          "label": "Persuasion — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/105/old/105-h/105-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain novel text; Chapter II."
+        }
+      ],
+      "curatorNotes": "Extremely compact cognitive-bias line from a primary literary source, without modern pop-psych terminology.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-bierce-politics-interests",
+      "text": "A strife of interests masquerading as a contest of principles.",
+      "author": "Ambrose Bierce",
+      "work": "The Devil's Dictionary — Politics",
+      "publicationYear": 1911,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/972/pg972-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Entry: POLITICS",
+        "publicationYear": 1911,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact first sentence of the POLITICS definition verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/972/pg972-images.html",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "politics",
+        "interests",
+        "principles",
+        "incentives"
+      ],
+      "semanticAxes": [
+        "interests↔principles",
+        "public↔private"
+      ],
+      "frizzleQuestion": "Which public argument looks like a clash of principles until you map who materially gains from each outcome?",
+      "brainFood": [
+        {
+          "label": "The Devil's Dictionary — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/972/pg972-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text; POLITICS entry."
+        }
+      ],
+      "curatorNotes": "Bierce supplies a compact satirical compression; the question opens it into incentive analysis rather than cynicism for its own sake.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-bierce-history-account",
+      "text": "An account mostly false, of events mostly unimportant",
+      "author": "Ambrose Bierce",
+      "work": "The Devil's Dictionary — History",
+      "publicationYear": 1911,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/972/972-h/972-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Entry: HISTORY",
+        "publicationYear": 1911,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact opening clause of the HISTORY definition verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/972/972-h/972-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "history",
+        "selection",
+        "record",
+        "power"
+      ],
+      "semanticAxes": [
+        "record↔importance",
+        "history↔power"
+      ],
+      "frizzleQuestion": "What becomes history because it mattered, and what comes to matter because somebody had the power to record it?",
+      "brainFood": [
+        {
+          "label": "The Devil's Dictionary — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/972/972-h/972-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain text; HISTORY entry."
+        }
+      ],
+      "curatorNotes": "Paired with a non-cynical question about selection power, so it can live in history/archive contexts without becoming mere anti-history snark.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-blake-generalize-particularize",
+      "text": "To Generalize is to be an Idiot. To Particularize is the Alone Distinction of Merit.",
+      "author": "William Blake",
+      "work": "Annotations to Sir Joshua Reynolds's Discourses",
+      "publicationYear": 1808,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3ALife_of_William_Blake%2C_Gilchrist.djvu/381",
+        "edition": "Life of William Blake (1880), scan reproducing Blake's notes",
+        "pageOrLocator": "Vol. I, Chapter 29; scan p. 381 / printed p. 311",
+        "publicationYear": 1880,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact wording verified in the Gilchrist scan and a later verbatim Blake edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3ALife_of_William_Blake%2C_Gilchrist.djvu/381",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "generalization",
+        "particularity",
+        "art",
+        "abstraction"
+      ],
+      "semanticAxes": [
+        "generalization↔particularity",
+        "pattern↔detail"
+      ],
+      "frizzleQuestion": "When does abstraction reveal a pattern, and when does it erase the particular thing the pattern was meant to explain?",
+      "brainFood": [
+        {
+          "label": "Life of William Blake — scan p. 311",
+          "url": "https://en.wikisource.org/wiki/Page%3ALife_of_William_Blake%2C_Gilchrist.djvu/381",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "1880 scan reproducing Blake's Reynolds annotations."
+        },
+        {
+          "label": "Blake verbatim edition — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Page%3AThe_poetical_works_of_William_Blake%3B_a_new_and_verbatim_text_from_the_manuscript_engraved_and_letterpress_originals_%281905%29.djvu/262",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Independent wording cross-check."
+        }
+      ],
+      "curatorNotes": "Especially useful for AI abstraction, statistics, art and medical/general-vs-case reasoning.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-schopenhauer-field-of-vision",
+      "text": "Every man takes the limits of his own field of vision for the limits of the world.",
+      "author": "Arthur Schopenhauer",
+      "work": "Studies in Pessimism — Further Psychological Observations",
+      "publicationYear": 1851,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AStudies_in_Pessimism.pdf/73",
+        "edition": "T. Bailey Saunders English translation, scan",
+        "pageOrLocator": "Further Psychological Observations; printed p. 69",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact English sentence verified in the scan of the public-domain translation; underlying German appeared in Parerga and Paralipomena."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The underlying work and cited 19th-century English translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AStudies_in_Pessimism.pdf/73",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "perspective",
+        "reality",
+        "limits",
+        "projection"
+      ],
+      "semanticAxes": [
+        "perception↔reality",
+        "horizon↔world"
+      ],
+      "frizzleQuestion": "Which limit of your own perspective are you currently mistaking for a boundary of reality?",
+      "brainFood": [
+        {
+          "label": "Studies in Pessimism — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AStudies_in_Pessimism.pdf/73",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-05",
+          "notes": "Scan page containing the exact sentence."
+        }
+      ],
+      "curatorNotes": "A strong perspective/horizon line that maps naturally to islands, literal vistas, epistemology and social bubbles.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r02-eliot-moral-stupidity",
+      "text": "We are all of us born in moral stupidity, taking the world as an udder to feed our supreme selves",
+      "author": "George Eliot",
+      "work": "Middlemarch",
+      "publicationYear": 1872,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/145/145-h/145-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Book IV, Dorothea/Casaubon reflection",
+        "publicationYear": 1872,
+        "retrievedAt": "2026-10-05",
+        "notes": "Exact clause verified in the novel text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/145/145-h/145-h.htm",
+        "checkedAt": "2026-10-05"
+      },
+      "themes": [
+        "empathy",
+        "egocentrism",
+        "other-minds",
+        "moral-development"
+      ],
+      "semanticAxes": [
+        "self↔other",
+        "empathy↔egocentrism"
+      ],
+      "frizzleQuestion": "What changes when another person stops being a character in your story and becomes the center of a story you cannot see?",
+      "brainFood": [
+        {
+          "label": "Middlemarch — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/145/145-h/145-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-05",
+          "notes": "Public-domain novel text containing the full passage."
+        }
+      ],
+      "curatorNotes": "A psychologically rich counterweight to the power/media material in the reserve; useful for Residents, relationships, ethics and medicine.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
