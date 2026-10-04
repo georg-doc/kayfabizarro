@@ -1,3 +1,84 @@
+# RETURN · Asset Librarian GPT Site Phase A · 2026-10-04
+
+**Status:** BUILT · WSA BROWSER-QA PASS · PRIVATELY PUBLISHED · GEORG REVIEW OPEN  
+**Owner:** KFB Asset Registry / Asset Librarian  
+**KFB contract branch:** `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04`  
+**Draft PR:** `georg-doc/kayfabizarro#349`  
+**Site source head:** `d098d37a10b869a2a6d24c3c78e721991a4dc38f`  
+**WSA workflow:** `WSA-ASSET-LIBRARIAN-GPT-SITE-01`
+
+## Product reality
+
+Phase A is implemented and privately published as a GPT Site:
+
+https://kfb-asset-librarian.frizzlebob.chatgpt.site/
+
+The Site is now the real Phase-A human review surface. The existing Cloudflare Librarian remains unchanged as a compatibility/source surface during migration.
+
+## Implemented
+
+- Live Registry search with 120 ms debounce;
+- Registry-backed Family → Pack → Collection facets;
+- type and quick filters;
+- Gallery / List views;
+- image, audio and 3D inspector;
+- collapsed technical source details;
+- browser-local named Saved Set with notes and add/remove;
+- `kfb.asset-saved-set.v1` + `kfb.asset-handoff.v1` export;
+- shared `window.KFBAssetPicker` seam for later WorldBuilder reuse;
+- Intake remains visibly deferred to Phase C.
+
+## WSA evidence
+
+WSA browser QA: **8/8 PASS**, JavaScript syntax PASS, browser console errors **0**.
+
+Measured source facts:
+- Live Registry: **15,272 assets** at `64cbf1031392029f25110dd613247b32148aae42`;
+- KayKit: **21 packs**;
+- Tiny Treats: **8 packs**;
+- Bubbly Bathroom → Assets: **86 matches**.
+
+Site identity:
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`;
+- version: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_7b67368b03dc8191ba94361d3dc6f5c4`;
+- deployment: `appgdep_6ac1b3f370b081919bbb3fe2d1b8ec71`;
+- deployment status: `succeeded`;
+- access: private / owner.
+
+Durable WSA Return:
+`_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/RETURN_PHASE_A_SITE_2026-10-04.md`.
+
+This ChatGPT session could not anonymously fetch the private `chatgpt.site` surface, so it records the WSA QA/deployment evidence without claiming a second public-browser verification.
+
+## Protected boundaries
+
+- no second Registry;
+- no KFB GitHub Librarian runtime source was changed by the Site build;
+- no Cloudflare replacement/retirement;
+- no WorldBuilder scene-runtime owner;
+- no animation-compatibility promotion;
+- no motion scrub/transport revival.
+
+## Deferred
+
+Phase B:
+- durable multi-set persistence/import;
+- explicit WorldBuilder placement seam using the shared Picker contract.
+
+Phase C:
+- Intake / Dropbox / file adapters;
+- Registry reconciliation for accepted Intake assets.
+
+## Exactly one next gate
+
+**GEORG-REVIEW-GPT-SITE-PHASE-A**
+
+Georg reviews the private Site and returns PASS / TUNE / FAIL. Do not promote Phase B as current work before that review.
+
+---
+
+## Previous GPT Site preparation Return · historical
+
 # RETURN · Asset Librarian GPT Site Prep · 2026-10-04
 
 **Status:** READY FOR WSA WORKSHOP · SITE/UX PREPARATION ONLY · NO RUNTIME CHANGE  
