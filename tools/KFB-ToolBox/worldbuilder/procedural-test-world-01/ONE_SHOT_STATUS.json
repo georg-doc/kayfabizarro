@@ -1,0 +1,110 @@
+{
+  "schema": "kfb.one-shot-status/1",
+  "date": "2026-10-04",
+  "mode": "ONE_SHOT",
+  "owner": "KFB WorldBuilder / WB2",
+  "repo": "georg-doc/kayfabizarro",
+  "pr": 348,
+  "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "observedReturnedHead": "6ae41e370c930637d57a65d7da79b4131b08f9df",
+  "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
+    "status": "RESERVED_NOT_DEPLOYED",
+    "live": "UNCHANGED"
+  },
+  "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
+  "state": "POST_WSA_RECONCILE_READY",
+  "checkpointStatus": {
+    "topology": "PASS_KEEP",
+    "worldOwnership": "PASS_KEEP",
+    "trackGraph": "PASS_KEEP",
+    "goldenAnchors": "PASS_KEEP",
+    "playerMotion": "BROWSER_PASS_KEEP",
+    "visibleFoundation": "HUMAN_VISUAL_FAIL_REPLACE",
+    "residentsActivities": "NOT_COMPLETE",
+    "driveTaxi": "NOT_COMPLETE",
+    "chatterCards": "NOT_COMPLETE",
+    "dystopiaPerformance": "NOT_COMPLETE",
+    "utopiaProtopia": "NOT_COMPLETE",
+    "curtainCharacterSelect": "NOT_COMPLETE",
+    "almanacLeanMemory": "NOT_COMPLETE",
+    "siteWorldStudio": "NOT_COMPLETE",
+    "goldenJourneyE2E": "NOT_COMPLETE",
+    "publicStage": "NOT_DEPLOYED",
+    "humanAcceptance": "NOT_REVIEWED"
+  },
+  "visibleSourceFirewall": {
+    "rejectVisible": [
+      "fixtures/huerth-b1-siblings-v0.json",
+      "tools/osm-city-lab/",
+      "elastic-grotesque-clay-huerth01"
+    ],
+    "intended": {
+      "town": [
+        "KayKit Medieval Hex RED family",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "dystopia": [
+        "Kenney City Kit Industrial",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "utopia": [
+        "KayKit Space Base Bits",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "protopia": [
+        "KayKit Medieval Hex GREEN family",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ]
+    },
+    "hold": [
+      "Quaternius SciFi Ultimate Space Kit until isolated source proof"
+    ]
+  },
+  "verification": {
+    "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+    "criticContractMainHead": "b0696f7491450f03e0c6a1dce2a57ecfe21c0e74",
+    "deterministicScreenshotHarness": "REQUIRED_NEXT",
+    "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
+    "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE"
+  },
+  "lastProven": {
+    "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
+    "sourceTests": "13/13 PASS",
+    "browserPlayer": "10/10 PASS",
+    "resourceRegistry": "PASS",
+    "pageErrors": 0,
+    "consoleErrors": 0
+  },
+  "weakestRequiredDimension": "VISIBLE_FOUNDATION_SOURCE_FIDELITY",
+  "repairAttempts": {},
+  "openCoreBlockers": [
+    "visible legacy Huerth/OSM foundation must be removed/quarantined without regressing topology/player",
+    "integrated Golden Journey systems are incomplete",
+    "fresh-session export/import persistence not yet proven",
+    "World Studio/Site Stage not yet implemented/published"
+  ],
+  "quarantinedDeferred": [
+    "ActionFigure compatibility smoke",
+    "full Rig_Large parity",
+    "perfect cape secondary motion",
+    "Combat Mech patrol if source conflicts",
+    "full flight",
+    "wrestling combat physics",
+    "organ attractions",
+    "general inventory economy"
+  ],
+  "nextInternalAction": "POST_WSA_RECONCILE_THEN_CONTINUE_AUTOMATICALLY_THROUGH_FULL_ONE_SHOT",
+  "invalidStopMessages": [
+    "Player checkpoint complete",
+    "next internal step is Residents",
+    "local preview ready",
+    "module ready for integration",
+    "next WSA task is"
+  ]
+}
