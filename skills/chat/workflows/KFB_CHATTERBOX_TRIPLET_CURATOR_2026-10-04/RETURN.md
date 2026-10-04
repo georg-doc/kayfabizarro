@@ -120,9 +120,39 @@ https://kfb-toolbox.frizzlebob.chatgpt.site
 
 ## Validation
 
-Planning/data + donor validation: **14/14 PASS**.
+Planning/data/donor/Site-readiness validation: **34/34 PASS**.
 
 Runtime/browser/Site tests: **not run by scope**.
+
+## Migration / existing reviews
+
+The Cowork/sidebar review state is not assumed readable cross-origin by the future GPT Site.
+
+Instead, the current stage's existing JSON export becomes the formal import contract:
+`kfb.triplet-pool-review/1`.
+
+The Site imports those saved decisions directly:
+- keep → GEORG_KEEP
+- cut → GEORG_CUT
+- change → GEORG_TUNE
+
+So any review Georg performs now in the Cowork sidebar/Dropbox-stage workflow can be carried into the Site without doing it again.
+
+The Dropbox copy of `KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html` was independently found with the same filename and exact byte size (**26,833 bytes**) as the GitHub donor.
+
+## Quote bridge fixture
+
+PR #354 Batch 01 currently provides six real deck-level quote IDs for `forget_utopia` / `ignore_dystopia`.
+
+Important: none is a direct Batch-01 Card match for the three S1 Cards (#11 Standing Ovation, #30 Cortisol Economy, #1 Doomsday Clock). The Site may suggest deck-level quote refs editorially but must not auto-link them.
+
+## Work handoff
+
+Token-light executable handoff:
+`WORK_MIN.md`
+
+Machine-readable Site packet:
+`SITE_IMPLEMENTATION_PACKET.json`
 
 ## Publication state
 
