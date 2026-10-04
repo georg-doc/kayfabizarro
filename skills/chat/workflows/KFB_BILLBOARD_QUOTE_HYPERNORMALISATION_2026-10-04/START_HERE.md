@@ -331,9 +331,9 @@ No merge or Live promotion without Georg's named gate.
 
 ## Operating model · who does what
 
-### 1. Quote Curator Worker / research chat
+### 1. Quote Curator · normal ChatGPT Web Chat
 
-This is the pool-filling executor.
+This is the preferred pool-filling executor. Use a normal Web Chat with web research + GitHub access, not Work/WSA, unless a later batch becomes too large for the chat surface.
 
 It does NOT change H13, Billboard runtime, Audio runtime or the curator Site UI.
 
@@ -349,7 +349,7 @@ For each batch it:
 9. validates against QUOTE_POOL_SCHEMA.json;
 10. writes candidate data to the quote-pool branch / PR.
 
-Recommended batch size: 10 decks at a time, targeting 3–5 genuinely useful quote candidates per deck. Do not pad a deck with weak famous quotes merely to hit a count.
+Recommended batch size: 10 decks at a time, targeting 3–5 genuinely useful quote candidates per deck. The Web Chat researches the web, verifies sources, writes schema-valid candidate data to GitHub, verifies the exact branch head after every write, and then hands Georg only the Curator-Site review task. Do not pad a deck with weak famous quotes merely to hit a count.
 
 ### 2. Georg / Curator Site
 
@@ -379,6 +379,10 @@ Work/WSA consumes the approved/curated pool and builds the product integration:
 Work/WSA must not become the quote researcher except for a tiny fixture needed to prove the runtime.
 
 ## Pool-fill cadence
+
+Pool curation may start immediately in parallel with MVP1 because it is a data/research lane and does not modify the active game runtime. Runtime/3D integration remains queued behind its own gate.
+
+Preferred executor: **ChatGPT Web Chat**.
 
 Use an additive batch loop:
 
