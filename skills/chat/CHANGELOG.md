@@ -1,3 +1,16 @@
+## 2026-10-04 · Four-island SSOT recovery · Life Trees + Joyride + clearance
+
+- Georg clarified that the World Studio visual recovery must rebuild **all four existing islands** in current SSOT style, including Track, buildings, world composition and current gameplay anchors.
+- Added PR #348 binding rebrief `WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md`.
+- New binding island-form decision: each island is one excavated tree-earth organism with visible roots and one large central Claymation signature Life Tree.
+- Each Life Tree is deterministic and unique to island + deck + zone; no shared tree recolored four times.
+- Exact current R2C palette values are binding per island across terrain/root body/Joyride presentation/environment accents while preserving source asset identity.
+- Existing Track Core graph/support/collision remain authoritative; Joyride J14/T4/K2 is required as visible Track presentation.
+- Confirmed current `r2d-buildings.v1.js` places pad buildings without validating Track/bridge corridor clearance; 0 building↔Track / bridgehead / protected-anchor collisions is now a hard product gate.
+- Current building families stay source-locked: Town RED Medieval Hex; Dystopia Kenney Industrial; Utopia KayKit Space Base Bits; Protopia GREEN Medieval Hex.
+- Current GPT Site remains the single product surface and must be updated in place after the integrated repair.
+- No new Site, road owner, world owner, Player owner, Resident owner or save owner.
+
 ## 2026-10-04 · Sites-first delivery root correction
 
 - Added `POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md` after WSA again prioritized Cloudflare during MVP1 until Georg explicitly redirected it to Sites.
