@@ -60,6 +60,26 @@ Stage/Live publication.
 
 The Golden anchors already reserve their world-space targets, so those systems can attach without rebuilding the world.
 
+## Motion dependency correction · 2026-10-04
+
+Motion PR #344 is **already complete**.
+The stale PREPARED/NOT RUN router state has been corrected in the Motion owner.
+
+Current consumer source:
+`KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`
+on Motion PR #344.
+
+Binding Medium set:
+- Walk = Walking_B
+- Run = Running_A
+- Sprint = Running_B
+- Jog = Walk↔Run speed/phase blend
+- Mannequin_Medium = reviewed runtime fixture
+- ActionFigure = optional compatibility smoke only
+
 ## Exactly one next gate
 
-**KAYKIT-NATIVE-BLENDER-BASELINE-01**.
+**KFB-LOCO-WB2-PLAYER-01**.
+
+Executor: **WSA / Codex**.
+Brief: `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
