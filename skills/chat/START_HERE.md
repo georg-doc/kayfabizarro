@@ -56,6 +56,28 @@ Playable-MVP architecture now also has durable GitHub contracts for the Site-nat
 
 The precheck is binding preparation guidance for the final One-Shot. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. **World preflight is now PASS on Draft PR #348**: the current-main WB2/R2D convergence and the four-island Town/Dystopia/Utopia/Protopia corridor with three Track-Core connections, Golden-Journey anchors and canonical deck/Card seeds are browser-proven. PR #332 is donor/history only. The next hard gate is Motion PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`. Site-only planning is no longer the only copy of the architecture.
 
+## 2026-10-04 · Asset Librarian → GPT Site / shared Asset Picker
+
+Current WSA intake:
+`tools/asset_registry/librarian/_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/START_HERE.md`
+
+UI/picker contract:
+`tools/asset_registry/librarian/_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/UI_PICKER_CONTRACT.md`
+
+Workflow: **WSA-ASSET-LIBRARIAN-GPT-SITE-01**.
+
+Routing:
+- existing Asset Registry / Asset Librarian remains the single discovery/provenance owner;
+- GPT Site is the intended future primary human surface after WSA build + Georg review;
+- current Cloudflare Librarian remains unchanged compatibility/source surface during migration;
+- full Librarian and compact God Mode / WorldBuilder picker share one Registry-backed search/item model;
+- user-facing collections become Saved Sets while `kfb.asset-handoff.v1` remains the machine seam;
+- Intake/Dropbox/file sources stay visibly UNREGISTERED until the existing Registry ingestion accepts them;
+- WorldBuilder keeps scene placement/persistence ownership;
+- frozen PR #304 is donor only for its proven Family→Pack→Collection and Motion-on-real-actor core; never revive its failed scrub/transport bar.
+
+No GPT Site is claimed built or live by this preparation slice. Exactly one next gate: **WSA-ASSET-LIBRARIAN-GPT-SITE-01**.
+
 ## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
 
 Current Resident-Atlas source package for MVP/WSA intake:
