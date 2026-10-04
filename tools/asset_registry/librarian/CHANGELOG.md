@@ -1,5 +1,72 @@
 # Changelog · KFB Asset Librarian
 
+## GPT Site Phase A built · 2026-10-04
+
+Status: **BUILT · WSA BROWSER-QA 8/8 PASS · PRIVATELY PUBLISHED · GEORG REVIEW OPEN**
+
+### Result
+- Private GPT Site: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`.
+- Exact Site source head: `d098d37a10b869a2a6d24c3c78e721991a4dc38f`.
+- Deployment `appgdep_6ac1b3f370b081919bbb3fe2d1b8ec71` reports `succeeded`.
+- Live Registry observed by WSA: 15,272 assets at `64cbf1031392029f25110dd613247b32148aae42`.
+- Tiny Treats = 8 packs; Bubbly Bathroom → Assets = 86 matches.
+- Browser QA = **8/8 PASS**, JavaScript syntax PASS, 0 browser console errors.
+
+### Implemented
+- debounced live search;
+- Family → Pack → Collection facets;
+- type/quick filters;
+- Gallery/List;
+- image/audio/3D inspector;
+- browser-local named Saved Set + notes + add/remove;
+- `kfb.asset-saved-set.v1` wrapping `kfb.asset-handoff.v1`;
+- shared `window.KFBAssetPicker` seam;
+- Phase C Intake shown as deferred, not silently implemented.
+
+### Boundary
+- Site-owned source remains separate from KFB GitHub runtime;
+- PR #349 remains the durable KFB source contract/routing packet;
+- Cloudflare Librarian is unchanged compatibility/source surface;
+- no second Registry, WorldBuilder scene owner, animation compatibility promotion or scrub transport.
+
+### Verification note
+This chat could not anonymously fetch the private `chatgpt.site` review URL, so WSA deployment/browser evidence is recorded without claiming independent public-browser verification.
+
+### Next
+Exactly one gate: **GEORG-REVIEW-GPT-SITE-PHASE-A**.
+
+## GPT Site + shared Asset Picker preparation · 2026-10-04
+
+Status: **READY FOR WSA WORKSHOP · NO RUNTIME / DEPLOYMENT CHANGE**
+
+### Decision
+- Re-home the human-facing Librarian as a GPT Site after WSA implementation/review; keep the existing Cloudflare Librarian unchanged as migration compatibility.
+- Use one shared discovery/query/item model for the full Librarian and the compact God Mode / WorldBuilder picker.
+- Promote Family → Pack → Collection to primary browse facets using existing Registry facts.
+- Replace JSON-first human collection work with Saved Sets while preserving `kfb.asset-handoff.v1` as the machine handoff seam.
+- Keep upload/import material visibly `INTAKE / UNREGISTERED` until existing Registry ingestion accepts it.
+- Dropbox is an optional intake source, not Registry truth.
+
+### Reused donors
+- current main Librarian v1.7 search/filter/preview/selection/resource surfaces;
+- frozen PR #304 implementation `545853924c4c177b6e26af588020b7a59307bb71`: green Family/Pack/Collection browse + KayKit family facet + Motion-on-real-actor preview only.
+
+### Explicitly not reused
+- PR #304 motion scrub / new transport bar after its two-repair stop;
+- any parallel Registry, taxonomy, WorldBuilder scene owner or animation compatibility owner.
+
+### Prepared artifacts
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/START_HERE.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/UI_PICKER_CONTRACT.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/SOURCE_EVIDENCE.md`
+- KFB Production Control workflow `WSA-ASSET-LIBRARIAN-GPT-SITE-01`
+
+### Evidence
+No runtime source changed; no new browser/WebGL/deployment PASS is claimed. Source reconciliation and all preparation-file write-backs were verified on the exact branch.
+
+### Next
+Exactly one gate: **WSA-ASSET-LIBRARIAN-GPT-SITE-01** → build Phase A GPT Site and return one direct Site review link.
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision
