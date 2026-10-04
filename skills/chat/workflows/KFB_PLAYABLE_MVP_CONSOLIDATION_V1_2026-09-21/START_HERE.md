@@ -2,7 +2,7 @@
 
 The older foundation text below is historical planning context and must not override current routing.
 
-Current receiving world is **KFB WorldBuilder / WB2** on Draft PR #332, not the old Travel/TinySkies neutral host. Travel remains a later Flight/card consumer/donor.
+Current receiving world is **KFB WorldBuilder / WB2** on Draft PR #348 (`chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`). WORLD-CONVERGENCE-BASE-01 and WORLD-MULTI-ISLAND-CORRIDOR-01 are PASS. PR #332 is donor/history only. Travel remains a later Flight/card consumer/donor.
 
 Current Resident MVP intake:
 `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
@@ -27,7 +27,7 @@ Current Golden Journey / acceptance fixture:
 Machine-readable fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.json`
 
-**Do not start the final One-Shot from PR #332 directly.** The precheck records current main ↔ #332 divergence and requires a clean World convergence base first. The final WSA/Codex One-Shot starts only after the preflight gates listed there are closed and one frozen integration lock pins exact owners/refs.
+**Do not use PR #332 as the integration base.** Its proven WB2/R2D owner has been re-homed onto current-main PR #348, and the four-island corridor is browser-proven there. The final WSA/Codex One-Shot still waits for the remaining preflight gates and one frozen integration lock; PR #348 is the current world candidate, not an automatic merge/Live authorization.
 
 Source package:
 `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/`
