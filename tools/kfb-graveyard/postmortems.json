@@ -1,7 +1,7 @@
 {
  "$schema": "kfb-postmortem-graveyard/v1",
- "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.9.0 (2026-10-04): WSA/Process-Fail — trotz etablierter GPT-Sites und Site-first Projektentscheidungen blieb der Root-Workflow Cloudflare-first; WSA begann erneut am Mirror statt an der Produktoberfläche.",
- "version": "1.9.0",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.9.0 (2026-10-04): WSA/Process-Fail — trotz etablierter GPT-Sites und Site-first Projektentscheidungen blieb der Root-Workflow Cloudflare-first; WSA begann erneut am Mirror statt an der Produktoberfläche. · 1.10.0 (2026-10-04): Kosten-Fail — teure High-Reasoning-Kapazität wurde als Publishing-Fallback behandelt, obwohl Site-Publish deterministisch separierbar ist.",
+ "version": "1.10.0",
  "updated": "2026-10-04",
  "graves": [
   {
@@ -829,6 +829,26 @@
    ],
    "pattern": "explicit-product-decision-overridden-by-stale-generic-workflow",
    "source": "skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md"
+  },
+  {
+   "id": "premium-reasoning-for-publish",
+   "date": "2026-10-04",
+   "stone": "Hier ruht: High Reasoning fürs Publish-Klicken",
+   "hover": "Ein bereits gebauter, eingefrorener Site-Kandidat sollte noch einmal über ein teures High-Reasoning-Modell laufen, nur weil dieses die Sites-Capability hatte. Georg stoppte die Eskalation. Hosting ist kein Grund, Produkt-Reasoning erneut zu bezahlen.",
+   "lesson": "Build/Repair und Publish trennen. Ein QA-grüner Candidate hinterlässt ein exaktes Publish-Paket. PUBLISH_ONLY geht an den günstigsten Sites-fähigen Executor. Fehlt die Capability, warten/übergeben — nicht Reasoning-Tier hochschalten.",
+   "trigger": "Muss hier wirklich noch gedacht werden — oder nur publiziert?",
+   "who": "process",
+   "size": "large",
+   "tags": [
+    "cost",
+    "sites",
+    "publishing",
+    "model-routing",
+    "credits",
+    "wiederholungstaeter"
+   ],
+   "pattern": "capability-gap-causes-unnecessary-premium-model-escalation",
+   "source": "skills/chat/SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md"
   }
  ]
 }
