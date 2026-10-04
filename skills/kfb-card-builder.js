@@ -89,6 +89,8 @@ export function createCardBuilder(opts = {}) {
       try { registry = await (await fetch(url)).json(); break; } catch (e) { /* nächster */ }
     }
     if (!registry) registry = { decks: [], baseUrl: '' };
+    if(P.baseUrl)registry={...registry,baseUrl:P.baseUrl};
+    if(P.deckOverrides)registry={...registry,decks:(registry.decks||[]).map(d=>({...d,...(P.deckOverrides[d.packId]||{})}))};
     pmap = {};
     for (const d of (registry.decks || [])) pmap[d.packId] = d;
     return registry;
@@ -105,12 +107,12 @@ export function createCardBuilder(opts = {}) {
     try { raw = await (await fetch(fileUrl(rd.data))).json(); } catch (e) { deckCache.set(packId, []); return []; }
     const list = Array.isArray(raw) ? raw : (raw.cards || raw.data || []);
     const cards = list.map((c) => ({
-      n: c.cardNumber != null ? c.cardNumber : c.n,
-      title: c.cardName || c.t || '',
+      n: c.cardNumber != null ? c.cardNumber : (c.n ?? c.num),
+      title: c.cardName || c.t || c.name || '',
       power: c.power || c.p || '',
       lore: c.lore || c.l || '',
       deck: rd.title, packId, role: rd.role, gameMode: rd.gameMode,
-    })).filter((c) => c.n && c.title);
+    })).filter((c) => c.n && c.title && (!rd.allowedCardNumbers || rd.allowedCardNumbers.includes(c.n)));
     deckCache.set(packId, cards);
     return cards;
   }

@@ -122,7 +122,10 @@ export function buildNatureGroup(plan,field,palette){
   const scatter=(n,cx,cz,r0,r1,minD,test,tries=300)=>{const out=[];for(let k=0;k<tries&&out.length<n;k++){const a=R()*Math.PI*2,rr=r0+(r1-r0)*Math.sqrt(R()),x=cx+Math.cos(a)*rr,z=cz+Math.sin(a)*rr;if(!test(x,z)||[...out,...all].some(o=>Math.hypot(o[0]-x,o[1]-z)<minD))continue;out.push([x,z])}all.push(...out);return out};
   const centres=scatter(3,plan.c0[0],plan.c0[1],0,40,15,(x,z)=>free(x,z)&&-plan.sdf(x,z)>8,1200);
   const trees=[],bushes=[],boulders=[];
-  centres.forEach(c=>{trees.push(...scatter(2,c[0],c[1],0,5,3.4,free));bushes.push(...scatter(2,c[0],c[1],3.5,7,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
+  const entry=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
+  // Preserve native P1 geometry; keep tall vegetation out of the entry/camera corridor.
+  const treeFree=(x,z)=>free(x,z)&&Math.hypot(x-entry.x,z-entry.z)>18;
+  centres.forEach(c=>{trees.push(...scatter(2,c[0],c[1],0,5,3.4,treeFree));bushes.push(...scatter(2,c[0],c[1],3.5,7,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
   const edge=scatter(5,plan.c0[0],plan.c0[1],0,60,5,(x,z)=>{const e=-plan.sdf(x,z);return field.maskAt(x,z)==='edge'&&e>.8&&e<2.6},1500);
   const detailAnchor=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
   const detail=scatter(4,detailAnchor.x,detailAnchor.z,7,13,2.5,free,600);
@@ -136,7 +139,7 @@ export function buildNatureGroup(plan,field,palette){
   };
   const items=[
     instanced('P1 soft trees',buildP0BTreeGeometry(),trees,mats.tree,field,plan.seed,1),
-    instanced('P1 cushion bushes',buildT3BushGeometry(plan.seed+1801,1),bushes,mats.bush,field,plan.seed+1,1),
+    instanced('P1 cushion bushes',buildT3BushGeometry(plan.seed+1801,1),bushes,mats.bush,field,plan.seed+1,.28),
     instanced('P1 boulders',buildK1BoulderGeometry(),boulders,mats.rock,field,plan.seed+2,1),
     instanced('P1 accent edge rocks',buildT3AccentRockGeometry(plan.seed+1701,1),edge,mats.rock,field,plan.seed+3,.9)
   ].filter(Boolean);

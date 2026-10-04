@@ -124,7 +124,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
         const b=await mountR2DBuildings({group:ng,plan:n.plan,field:n.field,renderer});buildingSets.set(n.id,b);
       }
       for(const c of arch.connections){
-        const mat=new THREE.MeshStandardMaterial({color:0xc9a36f,roughness:1,metalness:0});
+        const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
         const road=ST.buildTrack(THREE,c.stream,mat);road.name='R2D ROAD_BRIDGE · '+c.id;road.userData.worldConnectionId=c.id;road.userData.kind='ROAD_BRIDGE';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);
       }
       scene.add(group);

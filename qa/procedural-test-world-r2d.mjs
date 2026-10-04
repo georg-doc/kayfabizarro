@@ -7,7 +7,7 @@ await fs.mkdir(outDir,{recursive:true});
 const browser=await chromium.launch({headless:true,...(process.env.KFB_CHROME?{executablePath:process.env.KFB_CHROME}:{}),args:['--use-gl=swiftshader','--enable-webgl','--ignore-gpu-blocklist']});
 const page=await browser.newPage({viewport:{width:1600,height:900}});
 const consoleErrors=[],pageErrors=[],problems=[],playerChecks=[];
-async function check(name,fn){try{const detail=await fn();playerChecks.push({name,pass:true,detail});}catch(e){playerChecks.push({name,pass:false,error:String(e)});problems.push(name+': '+String(e));}}
+async function check(name,fn){try{const detail=await fn();playerChecks.push({name,pass:true,detail});}catch(e){playerChecks.push({name,pass:false,error:String(e),runtime:await readPlayer().catch(()=>null)});problems.push(name+': '+String(e));}finally{for(const key of ['w','s','a','d','Shift'])await page.keyboard.up(key);}}
 const requireTrue=(value,message)=>{if(!value)throw Error(message);};
 const readPlayer=()=>page.evaluate(()=>window.__wb2d.play.evidence());
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
@@ -82,10 +82,15 @@ try{
   for(const worldId of ['world.kfb-town','world.dystopia','world.utopia','world.protopia']){
     await page.evaluate(id=>window.__wb2d.candidateEvidence.frameWorld(id),worldId);await page.waitForTimeout(750);
     await page.screenshot({path:outDir+'/'+worldId+'.integrated.png'});
+    sourceInspection.push({worldId,variant:'integrated',audit:await page.evaluate(()=>window.__wb2d.candidateEvidence.sourceAudit())});
+    await fs.writeFile(outDir+'/source-inspection.json',JSON.stringify(sourceInspection,null,2));
   }
   await page.evaluate(()=>{window.__wb2d.setPlay(true);document.body.dataset.candidateReady='WB2_READY'});
   await fs.writeFile(outDir+'/source-inspection.json',JSON.stringify(sourceInspection,null,2));
   await page.screenshot({path:outDir+'/player-town-idle.png'});
+  // Input semantics retain the actual RAF owner; reduce only software raster resolution.
+  await page.evaluate(()=>window.__wb2d.renderer.setPixelRatio(.25));
+  state.inputEvidenceRenderScale=.25;
   await check('native bindings and one mixer',async()=>{
     const p=await readPlayer();requireTrue(Object.keys(p.bindings).length===4,'four clips');
     requireTrue(Object.values(p.bindings).every(b=>b.boundTracks>=60&&b.sourceTracks-b.boundTracks===6),'only absent hand slots omitted');
@@ -94,21 +99,21 @@ try{
   await check('Town spawn and ground contact',async()=>{const p=await readPlayer();requireTrue(Math.hypot(p.position[0]-state.world.spawn.x,p.position[2]-state.world.spawn.z)<.01,'Town anchor');requireTrue(Math.abs(p.position[1]-p.groundY)<1e-6,'support');return p.position;});
   await check('W moves through Walk to Run',async()=>{
     const before=await readPlayer();await page.keyboard.down('w');await page.waitForTimeout(700);const walk=await readPlayer();
-    await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-3.303)<.001,null,{timeout:60000});const run=await readPlayer();await page.screenshot({path:outDir+'/player-town-run.png'});await page.keyboard.up('w');
+    await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-3.303)<.001,null,{timeout:180000});const run=await readPlayer();await page.screenshot({path:outDir+'/player-town-run.png'});await page.keyboard.up('w');
     requireTrue(Math.hypot(run.position[0]-before.position[0],run.position[2]-before.position[2])>1,'movement');
     requireTrue(walk.rows.some(r=>r.role==='walk'),'Walking_B active');requireTrue(Math.abs(run.speed-3.303)<.001,'Running_A anchor');
     requireTrue(run.rows.length===1&&run.rows[0].clip==='Running_A','run');return {before,walk,run};
   });
-  await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:30000});
+  await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:120000});
   await check('A turns left and D turns right',async()=>{const b=await readPlayer();await page.keyboard.down('a');await page.waitForTimeout(350);await page.keyboard.up('a');const l=await readPlayer();await page.keyboard.down('d');await page.waitForTimeout(350);await page.keyboard.up('d');const r=await readPlayer();requireTrue(l.heading<b.heading&&r.heading>l.heading,'turn semantics');return [b.heading,l.heading,r.heading];});
-  await check('S moves backward and returns to idle',async()=>{const b=await readPlayer();await page.keyboard.down('s');await page.waitForFunction(()=>window.__wb2d.play.speed<-.5,null,{timeout:30000});await page.waitForFunction(p=>{const a=window.__wb2d.play.position;return Math.hypot(a.x-p[0],a.z-p[2])>.12},b.position,{timeout:30000});const back=await readPlayer();await page.keyboard.up('s');await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:30000});const idle=await readPlayer();requireTrue(back.speed<0&&Math.hypot(back.position[0]-b.position[0],back.position[2]-b.position[2])>.1,'backward');requireTrue(idle.speed===0&&idle.rows[0].clip==='Idle_A','idle');return {back,idle};});
-  await check('Shift reaches Running_B sprint',async()=>{await page.keyboard.down('w');await page.keyboard.down('Shift');await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-5.255)<.001,null,{timeout:60000});const p=await readPlayer();await page.screenshot({path:outDir+'/player-town-sprint.png'});await page.keyboard.up('Shift');await page.keyboard.up('w');requireTrue(Math.abs(p.speed-5.255)<.001&&p.rows.length===1&&p.rows[0].clip==='Running_B','sprint anchor');return p;});
-  await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:30000});
+  await check('S moves backward and returns to idle',async()=>{const b=await readPlayer();await page.keyboard.down('s');await page.waitForFunction(()=>window.__wb2d.play.speed<-.5,null,{timeout:120000});await page.waitForFunction(p=>{const a=window.__wb2d.play.position;return Math.hypot(a.x-p[0],a.z-p[2])>.12},b.position,{timeout:120000});const back=await readPlayer();await page.keyboard.up('s');await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:120000});const idle=await readPlayer();requireTrue(back.speed<0&&Math.hypot(back.position[0]-b.position[0],back.position[2]-b.position[2])>.1,'backward');requireTrue(idle.speed===0&&idle.rows[0].clip==='Idle_A','idle');return {back,idle};});
+  await check('Shift reaches Running_B sprint',async()=>{await page.keyboard.down('w');await page.keyboard.down('Shift');await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-5.255)<.001,null,{timeout:180000});const p=await readPlayer();await page.screenshot({path:outDir+'/player-town-sprint.png'});await page.keyboard.up('Shift');await page.keyboard.up('w');requireTrue(Math.abs(p.speed-5.255)<.001&&p.rows.length===1&&p.rows[0].clip==='Running_B','sprint anchor');return p;});
+  await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:120000});
   await check('Ground camera owns orbit, zoom and follow',async()=>{
     const b=await page.evaluate(()=>({camera:window.__wb2d.camera.position.toArray(),position:window.__wb2d.play.position.toArray(),distance:window.__wb2d.play.params.cameraDistance,orbitEnabled:window.__wb2d.controls.enabled}));
     requireTrue(b.orbitEnabled===false,'WB2 edit orbit must release camera');
     await page.mouse.move(800,450);await page.mouse.down({button:'right'});await page.mouse.move(1000,450,{steps:6});await page.mouse.up({button:'right'});await page.mouse.wheel(0,-250);
-    await page.waitForFunction(b=>window.__wb2d.camera.position.distanceTo({x:b[0],y:b[1],z:b[2]})>.2,b.camera,{timeout:30000});
+    await page.waitForFunction(b=>window.__wb2d.camera.position.distanceTo({x:b[0],y:b[1],z:b[2]})>.2,b.camera,{timeout:120000});
     const a=await page.evaluate(()=>({camera:window.__wb2d.camera.position.toArray(),position:window.__wb2d.play.position.toArray(),distance:window.__wb2d.play.params.cameraDistance}));
     requireTrue(a.distance<b.distance&&a.position.every((v,i)=>Math.abs(v-b.position[i])<.001),'orbit/zoom changes camera, not player');return {before:b,after:a};
   });
@@ -117,7 +122,7 @@ try{
     const probes=await page.evaluate(()=>window.__wb2d.world.bridgeSupportSamples),results=[];
     for(const q of probes){
       await page.evaluate(q=>{const A=window.__wb2d,P=A.play;A.setPlay(false);const d=structuredClone(A.doc);d.world.player={actorProfileId:'Mannequin_Medium',worldId:d.id,position:q.point,heading:Math.atan2(q.next[0]-q.point[0],q.next[2]-q.point[2])};P.readDoc(d);A.setPlay(true);},q);
-      const before=await readPlayer();await page.keyboard.down('w');await page.waitForFunction(p=>{const a=window.__wb2d.play.position;return Math.hypot(a.x-p[0],a.z-p[2])>.3},before.position,{timeout:30000});const after=await readPlayer();await page.keyboard.up('w');
+      const before=await readPlayer();await page.keyboard.down('w');await page.waitForFunction(p=>{const a=window.__wb2d.play.position;return Math.hypot(a.x-p[0],a.z-p[2])>.3},before.position,{timeout:120000});const after=await readPlayer();await page.keyboard.up('w');
       requireTrue(Math.abs(before.position[1]-q.point[1])<.01,'bridge spawn '+q.id);
       requireTrue(Math.hypot(after.position[0]-before.position[0],after.position[2]-before.position[2])>.3,'bridge movement '+q.id);
       requireTrue(Math.abs(after.position[1]-after.groundY)<1e-6,'bridge support '+q.id);results.push({id:q.id,before,after});

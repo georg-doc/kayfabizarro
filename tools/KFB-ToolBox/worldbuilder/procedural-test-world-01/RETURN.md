@@ -141,3 +141,12 @@ Verified receiving base `3989ae8a6aa12f6c00004fcc39b884285ff51077`. Valid WB2 to
 Replaced the rejected OSM building presenter with 27 actual Registry-pinned native buildings: KayKit Medieval RED/GREEN, Kenney Industrial and KayKit Space Base. WB2 terrain, topology, Track and native Player remain the receiving owners. Original models of all four families were actually viewed in isolation. The independent critic rejected the first over-strong material pass; relief 0.15 preserved source identity and improved the isolated RED castle. Integrated Town was viewed locally with actual red buildings and zero browser console errors. This is not a whole-game or human acceptance.
 
 The previous browser evidence run 37180862299 timed out during a software-rendered screenshot, with zero recorded page/console errors. The harness now saves partial source evidence incrementally and declares half-resolution SwiftShader capture separately from native hardware visual review. Golden Journey, persistence and Stage remain incomplete; integration continues internally. No deployment or Live change.
+
+
+### 2026-10-04 — Native source intake / real evidence readback
+
+Exact tested head `1df8edaeb11b695821f73c695b328b00fd85e42f`: source tests 13/13 PASS; all 16 original/adapted/detail/integrated foundation PNGs captured. Browser run 37181602603 failed afterwards waiting for Ground Run under SwiftShader; zero recorded page/console errors. This is not a full browser PASS. Artifact 11295686317, SHA256 `03020ece9352efd20f5f23ecdc2f067965e5e90767ddd37c51a83a5fe0f8a8dd`.
+
+Independent source critic verified native silhouettes and ranked suppressed road vertex colours, oversized native T3 bushes, regular material facets and incomplete living composition. Receiving repairs preserve Track geometry/owner, scale the bush to .28 and reduce shared facet/crease strength. Input evidence uses .25 software render scale and longer wall-clock waits; physics remains unchanged. No performance acceptance is inferred from sparse/compilation frames.
+
+Original Clown juggling, Farmer Duo, Lorekeeper, Monstrosity, Demon and T3 bush were actually viewed in the shared WB2 renderer. Thin Resident Atlas, canonical Card Builder and native physical Curtain adapters are introduced without additional renderer/input/save owners. Required Anti-Rules Card 1 and FrizzleBob v5b sources were verified; they are not missing-source blockers. Golden Journey/Studio/persistence remain incomplete. Stage remains RESERVED_NOT_DEPLOYED. Continue internally.

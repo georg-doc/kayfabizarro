@@ -1,5 +1,6 @@
 /* Internal evidence adapter: uses the actual WB2 renderer, never a second world. */
 import * as THREE from 'three';
+import {buildP0BTreeGeometry,buildT3BushGeometry,SOURCE_PROVENANCE} from '../world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { makeClayRelief } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v2.js';
 import { makeToolReliefs } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v4.js';
@@ -28,14 +29,14 @@ export async function loadRegistered(record){
   const g=await cache.get(key);return g.scene.clone(true);
 }
 export async function adaptRegistered(root,seed=31){
-  const U=await clayContext(),QUIET={print:.3,dent:0,gouge:0,crack:0,stroke:1,facet:.9,crease:.5};
+  const U=await clayContext(),QUIET={print:.3,dent:0,gouge:0,crack:0,stroke:1,facet:.2,crease:.3};
   const profile={...PROFILES.house,...QUIET,legacy:0,tools:TOOLMIX.house};
   root.traverse(o=>{if(o.isMesh){o.geometry=seedGeometry(THREE,o.geometry.clone(),seed++);o.material=(Array.isArray(o.material)?o.material:[o.material]).map(src=>makeClayMaterial(THREE,U,{src,profile,palMap:false,reliefK:.15}));if(o.material.length===1)o.material=o.material[0];o.castShadow=o.receiveShadow=true}});
   return root;
 }
 export function createCandidateEvidence(A){
-  let isolate=null,restore=null,frameTimes=[],last=performance.now();
-  const sample=()=>{const now=performance.now();frameTimes.push(now-last);last=now;if(frameTimes.length>240)frameTimes.shift()};
+  let isolate=null,residentIsolate=null,restore=null,frameTimes=[],last=performance.now();
+  const sample=()=>{const now=performance.now();residentIsolate?.update(Math.min(.05,(now-last)/1000));frameTimes.push(now-last);last=now;if(frameTimes.length>240)frameTimes.shift();if(frameTimes.length>=120&&frameTimes.length%30===0){const sorted=[...frameTimes].sort((a,b)=>a-b);document.body.dataset.candidateMetrics=JSON.stringify({build:window.__kfbBuild||'LOCAL_UNSEALED',frames:frameTimes.length,medianMs:sorted[Math.floor(sorted.length/2)],p95Ms:sorted[Math.floor(sorted.length*.95)],drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles,pixelRatio:A.renderer.getPixelRatio(),camera:A.camera.position.toArray()})}};
   const sourceAudit=()=>{
     const rendered=new Map(),frustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(A.camera.projectionMatrix,A.camera.matrixWorldInverse));
     A.scene.traverseVisible(o=>{if(!o.isMesh)return;let q=o;while(q&&!q.userData?.sourceRecord)q=q.parent;const source=q?.userData?.sourceRecord;if(!source)return;const box=new THREE.Box3().setFromObject(o);if(frustum.intersectsBox(box)){const key=source.source.commit+'/'+source.assetId;const rec=rendered.get(key)||{assetId:source.assetId,packId:source.packId,commit:source.source.commit,blob:source.source.blobSha,meshCount:0};rec.meshCount++;rendered.set(key,rec)}});
@@ -45,17 +46,25 @@ export function createCandidateEvidence(A){
   };
   async function inspect(worldId,variant='original',index=0){
     if(!restore){const hidden=A.scene.children.filter(o=>!o.isLight);restore={hidden:hidden.map(o=>[o,o.visible]),camera:A.camera.position.clone(),target:A.controls.target.clone(),play:A.play.on};A.setPlay(false);hidden.forEach(o=>o.visible=false)}
-    if(isolate)A.scene.remove(isolate);
-    const record=manifest.families[worldId][index],root=await loadRegistered(record);
-    if(variant!=='original')await adaptRegistered(root);
+    if(isolate)A.scene.remove(isolate);residentIsolate?.dispose();residentIsolate=null;
+    const procedural=worldId.startsWith('nature.p1-'),bush=worldId==='nature.p1-bush';
+    const resident=worldId.startsWith('resident:'),curtain=worldId==='curtain',card=worldId.startsWith('card:');
+    if(card){const api=await import('./wb2-cards.v1.js'),owner=api.createMvpCards(),c=await owner.load(worldId.slice(5));residentIsolate={root:c.group,update(){},dispose:()=>{c.group.removeFromParent();owner.builder.dispose()},evidence:()=>owner.evidence()}}
+    if(curtain){const api=await import('../../_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs');const c=await api.createSharedTheatreCurtain({renderer:A.renderer});residentIsolate={root:c.scene,update:dt=>c.update(dt),dispose:()=>c.dispose(),evidence:()=>c.snapshot()};c.scene.userData.sourceRecord={assetId:'KFB Theatre Curtain',packId:'KFB Theatre Curtain v2',source:{commit:'1df8edaeb11b695821f73c695b328b00fd85e42f',path:'tools/KFB-ToolBox/_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs',blobSha:null}};}
+    if(resident){const api=await import('./wb2-residents.v1.js');residentIsolate=await api.createResidentSet(worldId.slice(9),{original:variant==='original'})}
+    const record=(resident||curtain||card)?residentIsolate.root.userData.sourceRecord:procedural?{assetId:bush?'T3_BUSH':'P0B_TREE',packId:'KFB Environment P1',source:{commit:'1df8edaeb11b695821f73c695b328b00fd85e42f',blobSha:'e64ed265882b973235cef04251073840e0231e72',path:'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs'},lineage:bush?SOURCE_PROVENANCE.t3:SOURCE_PROVENANCE.p0b}:manifest.families[worldId][index];
+    const root=(resident||curtain||card)?residentIsolate.root:procedural?new THREE.Mesh(bush?buildT3BushGeometry(1801,1):buildP0BTreeGeometry(),new THREE.MeshStandardMaterial({color:'#83b33d',roughness:1})):await loadRegistered(record);
+    if(variant!=='original'&&!resident&&!procedural&&!curtain&&!card)await adaptRegistered(root);
+    if(procedural&&variant!=='original'&&bush)root.scale.setScalar(.28);
     root.userData.sourceRecord=record;root.name='Registered source isolate · '+record.assetId;
     isolate=root;A.scene.add(root);root.updateMatrixWorld(true);
     const box=new THREE.Box3().setFromObject(root),centre=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),r=Math.max(size.x,size.y,size.z);
     A.camera.position.copy(centre).add(new THREE.Vector3(r*1.05,r*.65,r*1.55));A.controls.target.copy(centre);A.controls.update();
     if(variant==='detail'){A.camera.position.copy(centre).add(new THREE.Vector3(r*.25,r*.12,r*.45));A.controls.target.copy(centre);A.controls.update()}
-    document.body.dataset.candidateReady='SOURCE_ISOLATE_READY';return{record,variant,bounds:{min:box.min.toArray(),max:box.max.toArray()},sourceMeshes:root.children.length};
+    document.body.dataset.candidateReady='SOURCE_ISOLATE_READY';document.body.dataset.sourceInspection=JSON.stringify(residentIsolate?.evidence()||{assetId:record.assetId,variant});return{record,variant,bounds:{min:box.min.toArray(),max:box.max.toArray()},sourceMeshes:root.children.length};
   }
-  function release(){if(isolate)A.scene.remove(isolate);isolate=null;if(restore){restore.hidden.forEach(([o,v])=>o.visible=v);A.camera.position.copy(restore.camera);A.controls.target.copy(restore.target);A.controls.update();if(restore.play)A.setPlay(true);restore=null}document.body.dataset.candidateReady='WB2_READY'}
+  function release(){residentIsolate?.dispose();residentIsolate=null;if(isolate)A.scene.remove(isolate);isolate=null;if(restore){restore.hidden.forEach(([o,v])=>o.visible=v);A.camera.position.copy(restore.camera);A.controls.target.copy(restore.target);A.controls.update();if(restore.play)A.setPlay(true);restore=null}document.body.dataset.candidateReady='WB2_READY'}
+  document.body.dataset.movementProbe=JSON.stringify(Array.from({length:16},(_,i)=>{const x=A.world.spawn.x,z=A.world.spawn.z+i;return{distance:i,x,z,ground:A.terrainHeightAt(x,z),support:A.world.groundAt(x,z,A.terrainHeightAt(x,z)),building:A.world.buildingAt(x,z)}}));
   document.body.dataset.candidateReady='WB2_READY';
   function frameWorld(worldId){
     A.setPlay(false);const n=A.world.archipelago?.nodes.find(n=>n.id===worldId);if(!n)throw Error('world camera preset '+worldId);
