@@ -1,0 +1,460 @@
+{
+  "schema": "kfb.semantic-triplet-pool/0.1-candidate",
+  "status": "AUTHORING_CANDIDATE",
+  "owner": "ChatterBox content",
+  "rules": {
+    "grammar": [
+      "subject",
+      "connector",
+      "reframe"
+    ],
+    "closureOwner": "player/audience/world",
+    "sharedPool": true,
+    "privateResidentPools": false,
+    "defaultFluffReplacementsMax": 1,
+    "signatureMeans": "weight/provenance, not exclusive ownership or catchphrase"
+  },
+  "socialOperators": {
+    "bingo": {
+      "label": "KayfaBingo",
+      "effect": "LAND",
+      "nextMove": "acknowledge or hand closure back to player"
+    },
+    "bongo": {
+      "label": "KayfaBongo",
+      "effect": "HOLD",
+      "nextMove": "carry at least one semantic element from the previous triplet into one further beat"
+    },
+    "boggle": {
+      "label": "KayfaBoggle",
+      "effect": "REFRAME",
+      "nextMove": "reuse something already seen/heard but change its category, implication or frame"
+    },
+    "bloedsinn": {
+      "label": "BLÖDSINN!",
+      "effect": "OBJECT",
+      "nextMove": "challenge the current frame without forcing hostility"
+    }
+  },
+  "entries": [
+    {
+      "tripletId": "core.frame.01",
+      "signatureOf": [],
+      "subject": "Nothing changed",
+      "connector": "except the frame",
+      "reframe": "everything changed",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "frame",
+        "interpretation",
+        "card",
+        "world"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "frame",
+        "variant": "Nothing changed / except the FLUFF / everything changed"
+      }
+    },
+    {
+      "tripletId": "core.witness.01",
+      "signatureOf": [],
+      "subject": "One witness",
+      "connector": "after three retellings",
+      "reframe": "sounds like a crowd",
+      "relation": "ESCALATION",
+      "tags": [
+        "memory",
+        "witness",
+        "rumor"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "core.rule.01",
+      "signatureOf": [],
+      "subject": "Beautiful rule",
+      "connector": "until somebody uses it",
+      "reframe": "new rule",
+      "relation": "COLLISION",
+      "tags": [
+        "rule",
+        "performance",
+        "action"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "core.applause.01",
+      "signatureOf": [],
+      "subject": "Easy applause",
+      "connector": "before the thing lands",
+      "reframe": "expensive silence",
+      "relation": "MISFIT",
+      "tags": [
+        "performance",
+        "audience",
+        "status"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "thing",
+        "variant": "Easy applause / before the FLUFF lands / expensive silence"
+      }
+    },
+    {
+      "tripletId": "lorekeeper.provenance.01",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "subject": "You heard it",
+      "connector": "from someone who heard it",
+      "reframe": "now it sounds witnessed",
+      "relation": "ESCALATION",
+      "tags": [
+        "provenance",
+        "heard",
+        "witness"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "lorekeeper.provenance.02",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "subject": "Same story",
+      "connector": "different witness",
+      "reframe": "different fact",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "provenance",
+        "memory",
+        "witness"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "lorekeeper.provenance.03",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "subject": "Two memories",
+      "connector": "one missing source",
+      "reframe": "excellent theatre",
+      "relation": "MISFIT",
+      "tags": [
+        "memory",
+        "source",
+        "performance"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "source",
+        "variant": "Two memories / one missing FLUFF / excellent theatre"
+      }
+    },
+    {
+      "tripletId": "lorekeeper.unknown.01",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "subject": "Good question",
+      "connector": "no witness",
+      "reframe": "still a question",
+      "relation": "SYNERGY",
+      "tags": [
+        "unknown",
+        "uncertainty",
+        "witness"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "gothgirl.performance.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "subject": "Perfect performance",
+      "connector": "until you explained it",
+      "reframe": "now it has instructions",
+      "relation": "MISFIT",
+      "tags": [
+        "performance",
+        "explanation",
+        "authenticity"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "gothgirl.performance.02",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "subject": "The mistake",
+      "connector": "survived the polish",
+      "reframe": "keep that",
+      "relation": "SYNERGY",
+      "tags": [
+        "performance",
+        "mistake",
+        "polish"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "mistake",
+        "variant": "The FLUFF / survived the polish / keep that"
+      }
+    },
+    {
+      "tripletId": "gothgirl.applause.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "subject": "Everybody cheered",
+      "connector": "before it landed",
+      "reframe": "interesting",
+      "relation": "MISFIT",
+      "tags": [
+        "audience",
+        "applause",
+        "performance"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "gothgirl.silence.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "subject": "Room went quiet",
+      "connector": "right on the ugly part",
+      "reframe": "play that again",
+      "relation": "COLLISION",
+      "tags": [
+        "silence",
+        "performance",
+        "attention"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "ugly part",
+        "variant": "Room went quiet / right on the FLUFF / play that again"
+      }
+    },
+    {
+      "tripletId": "clown.stage.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "subject": "Big claim",
+      "connector": "one small stage",
+      "reframe": "your turn",
+      "relation": "ESCALATION",
+      "tags": [
+        "claim",
+        "performance",
+        "stake"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "stage",
+        "variant": "Big claim / one small FLUFF / your turn"
+      }
+    },
+    {
+      "tripletId": "clown.consensus.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "subject": "Everybody agrees",
+      "connector": "until somebody acts",
+      "reframe": "volunteer?",
+      "relation": "ESCALATION",
+      "tags": [
+        "consensus",
+        "action",
+        "status"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "clown.theory.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "subject": "Excellent theory",
+      "connector": "for one round",
+      "reframe": "hold this",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "theory",
+        "demonstration",
+        "physical"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "clown.authority.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "subject": "Important person",
+      "connector": "same cheap stool",
+      "reframe": "continue",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "authority",
+        "status",
+        "performance"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "stool",
+        "variant": "Important person / same cheap FLUFF / continue"
+      }
+    },
+    {
+      "tripletId": "witch.variable.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "subject": "Same story",
+      "connector": "one ingredient missing",
+      "reframe": "different creature",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "variable",
+        "condition",
+        "change"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "ingredient",
+        "variant": "Same story / one FLUFF missing / different creature"
+      }
+    },
+    {
+      "tripletId": "witch.dose.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "subject": "Strong cause",
+      "connector": "only at this dose",
+      "reframe": "so it has a dosage",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "cause",
+        "dose",
+        "condition"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "witch.falsifier.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "subject": "Strong belief",
+      "connector": "without a stopping condition",
+      "reframe": "untested ingredient",
+      "relation": "MISFIT",
+      "tags": [
+        "belief",
+        "test",
+        "condition"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "witch.substitution.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "subject": "Same result",
+      "connector": "with the source swapped",
+      "reframe": "interesting cause",
+      "relation": "SYNERGY",
+      "tags": [
+        "substitution",
+        "cause",
+        "experiment"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "source",
+        "variant": "Same result / with the FLUFF swapped / interesting cause"
+      }
+    }
+  ],
+  "residentWeights": {
+    "lorekeeper": {
+      "signatureWeight": 4,
+      "globalWeight": 1,
+      "relationBias": [
+        "CATEGORY_SHIFT",
+        "MISFIT"
+      ],
+      "fluffOlectBias": 0.15
+    },
+    "goth-girl": {
+      "signatureWeight": 4,
+      "globalWeight": 1,
+      "relationBias": [
+        "MISFIT",
+        "COLLISION"
+      ],
+      "fluffOlectBias": 0.25
+    },
+    "clown": {
+      "signatureWeight": 4,
+      "globalWeight": 1,
+      "relationBias": [
+        "ESCALATION",
+        "CATEGORY_SHIFT"
+      ],
+      "fluffOlectBias": 0.35
+    },
+    "witch": {
+      "signatureWeight": 4,
+      "globalWeight": 1,
+      "relationBias": [
+        "SYNERGY",
+        "CATEGORY_SHIFT"
+      ],
+      "fluffOlectBias": 0.3
+    }
+  },
+  "acceptance": [
+    "all residents select from one shared pool",
+    "signature weighting changes selection without creating private databases",
+    "shared pool never grants shared knowledge",
+    "BONGO can carry prior material for one beat",
+    "BOGGLE can reframe previously established material",
+    "BINGO can land/hand closure back",
+    "Fluff-o-lect uses only authored replacement targets",
+    "no resident becomes a catchphrase machine"
+  ]
+}
