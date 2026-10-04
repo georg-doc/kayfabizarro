@@ -204,3 +204,36 @@ The exact non-destructive export request is:
 `FULL_PROJECT_EXPORT_REQUEST.md`.
 
 Work may begin Site architecture from the existing source corpus, but final project-completeness acceptance must reconcile the new full export or explicitly preserve missing items as `RECOVERY_REQUIRED`.
+
+
+## Full-corpus correction audit · 24/24 PASS
+
+After the project-scope correction, a second static audit passed **24/24**.
+
+Covered:
+- current `SOURCE_MAP.json` parses;
+- exactly three KayKit Hex-capable families are represented;
+- one separate Kenney Hex family;
+- Snow Biome is `REGISTRY_PENDING`, not falsely claimed indexed;
+- Work brief carries the full Claude Design corpus scope;
+- S11/S12/S13.2 are explicit mandatory modules;
+- Plant/EyeRig is explicit;
+- Snow Models tree = 57 GLB;
+- Snow Hex GLB = 42;
+- Snow object/building/nature GLB = 15;
+- Snow license identity = Medieval Builder Pack Patreon Bonus 1.0;
+- current Registry index has no Snow Biome shard;
+- exact S11 blob pin matches;
+- exact S12 blob pin matches;
+- exact S13.2 blob pin matches;
+- Plant Prop export = 27 files;
+- S20/S21 export = 17 files;
+- S22 lean handover = 26 files;
+- `plant-eyes.js` exact blob matches;
+- `plant-eyes.js` explicitly reuses existing EyeRig v6;
+- `plant-rig.js` exact blob matches;
+- direct S14/S15/S16/S17 pages are absent at the expected promoted World Atlas paths, confirming the recovery gap;
+- `PROJECT_CORPUS_AUDIT.md` exists;
+- `FULL_PROJECT_EXPORT_REQUEST.md` exists.
+
+This audit replaces the earlier third-KayKit identity uncertainty. It does not claim that the missing S14–S17 runtime files have been recovered yet.
