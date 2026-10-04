@@ -53,6 +53,11 @@ Source-first rule:
 Source audit:
 **12/12 PASS** for provenance/classification only. Runtime/browser/GPT Site/Stage are **NOT CREATED / NOT RUN**.
 
+Georg has now authorized the implementation run. Current executor brief:
+`skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/WSA_WORK_ONE_SHOT.md`
+
+Execution mode: **ONE_SHOT**. WSA / ChatGPT Work continues through integrated Medium + Large + Pencil fixtures, round-trip, Site/Stage publication and visible verification; do not stop after internal checkpoints.
+
 Working branch:
 `planning/frankenstein-composer-gpt-site-2026-10-04`
 
