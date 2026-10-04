@@ -56,6 +56,35 @@ Playable-MVP architecture now also has durable GitHub contracts for the Site-nat
 
 The precheck is binding preparation guidance for the final One-Shot. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. **World preflight is now PASS on Draft PR #348**: the current-main WB2/R2D convergence and the four-island Town/Dystopia/Utopia/Protopia corridor with three Track-Core connections, Golden-Journey anchors and canonical deck/Card seeds are browser-proven. PR #332 is donor/history only. The next hard gate is Motion PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`. Site-only planning is no longer the only copy of the architecture.
 
+## 2026-10-04 · Asset Librarian GPT Site Phase A · current review gate
+
+Phase A is now **BUILT · WSA BROWSER-QA PASS · PRIVATELY PUBLISHED**.
+
+Direct private review Site:
+https://kfb-asset-librarian.frizzlebob.chatgpt.site/
+
+Site identity:
+- source head: `d098d37a10b869a2a6d24c3c78e721991a4dc38f`;
+- deployment: `appgdep_6ac1b3f370b081919bbb3fe2d1b8ec71` = `succeeded`;
+- access: private / owner.
+
+WSA evidence:
+- **8/8 browser QA PASS**;
+- JavaScript syntax PASS;
+- browser console errors: 0;
+- Live Registry: 15,272 assets at `64cbf1031392029f25110dd613247b32148aae42`;
+- Tiny Treats = 8 packs;
+- Bubbly Bathroom → Assets = 86 matches.
+
+Implemented Phase A: live search, Family→Pack→Collection, type/quick filters, Gallery/List, image/audio/3D inspector, browser-local Saved Set + candidate handoff export and shared `window.KFBAssetPicker` seam.
+
+Durable KFB return:
+`tools/asset_registry/librarian/_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/RETURN_PHASE_A_SITE_2026-10-04.md`.
+
+Owner boundaries remain unchanged. The Site-owned source is separate from KFB GitHub; Draft PR #349 remains the KFB contract/routing packet. Cloudflare Librarian remains compatibility/source surface during migration.
+
+Current next gate: **GEORG-REVIEW-GPT-SITE-PHASE-A**. Phase B (durable multi-set persistence/import + WorldBuilder placement seam) and Phase C (Intake/Dropbox/file adapters) wait behind that review.
+
 ## 2026-10-04 · Asset Librarian → GPT Site / shared Asset Picker
 
 Current WSA intake:
