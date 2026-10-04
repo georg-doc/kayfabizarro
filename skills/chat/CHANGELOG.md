@@ -1,3 +1,14 @@
+## 2026-10-04 · Asset Librarian GPT Site Phase A built
+
+- WSA workflow `WSA-ASSET-LIBRARIAN-GPT-SITE-01` returned a privately published GPT Site at `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`.
+- Exact Site-owned source head: `d098d37a10b869a2a6d24c3c78e721991a4dc38f`; deployment `appgdep_6ac1b3f370b081919bbb3fe2d1b8ec71` = `succeeded`.
+- WSA browser QA: **8/8 PASS**, JavaScript syntax PASS, 0 console errors.
+- Live Registry observed: **15,272 assets** at `64cbf1031392029f25110dd613247b32148aae42`; Tiny Treats = 8 packs; Bubbly Bathroom → Assets = 86 matches.
+- Phase A includes live search, Family→Pack→Collection, filters, Gallery/List, image/audio/3D inspector, browser-local Saved Set, candidate handoff export and shared `window.KFBAssetPicker` seam.
+- Site source remains separate from KFB GitHub; Draft PR #349 remains the durable KFB contract/routing packet. Cloudflare Librarian is unchanged compatibility/source surface.
+- Anonymous fetch from this chat could not resolve the private Site; record WSA deployment/browser evidence without claiming a second public-browser proof.
+- Phase B and C remain deferred. Exactly one next gate: **GEORG-REVIEW-GPT-SITE-PHASE-A**.
+
 ## 2026-10-04 · Asset Librarian GPT Site / shared picker WSA intake
 
 - Prepared fresh branch `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04` from current main without modifying Librarian runtime code.
