@@ -52,3 +52,17 @@
 - status now `QA_GREEN · GPT_SITE_PUBLISH_ONLY`;
 - no Cloudflare and no merge;
 - next gate `KFB_AUDIO_SITE_PUBLISH_01`.
+
+## 2026-10-04 · private GPT Site published
+
+- published the unchanged QA-green `tools/KFB-Audio-Site/` source as one private ChatGPT Site;
+- live URL: `https://kfb-audio.frizzlebob.chatgpt.site`;
+- Site project `appgprj_6ac1c73dc28881919123106bd6d3e90e`;
+- saved version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_d542a161ef6c8191adb7f80803df6984`;
+- deployment `appgdep_6ac1c79c42988191bdfb28bdfd75da14` succeeded;
+- Site source commit `a6e2f0a0d938531810a69701b249eb5a5eff1136`;
+- visually verified Catalog 54/44/14 plus Mix, Soundscape, Intake, Prompt Studio and Brief;
+- live browser warnings/errors: 0;
+- prepared Site Chat instructions/context are deployed and the Site retains this Codex thread as its edit context;
+- no Cloudflare route and no PR merge;
+- next gate `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01`.

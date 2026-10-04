@@ -121,3 +121,32 @@ GPT Site publication has **not** been performed in this Webchat because its avai
 Cloudflare remains deliberately excluded.
 
 **Exactly one next gate:** `KFB_AUDIO_SITE_PUBLISH_01` — Sites-capable executor publishes the already QA-green source, connects the prepared integrated Site Chat context, opens the resulting `.frizzlebob.chatgpt.site` URL, and verifies this exact revision visually. No product repair should occur in that gate.
+
+## Sites publication · COMPLETE · 2026-10-04
+
+`KFB_AUDIO_SITE_PUBLISH_01` is complete.
+
+- Site URL: `https://kfb-audio.frizzlebob.chatgpt.site`
+- Site project: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- saved version: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_d542a161ef6c8191adb7f80803df6984`
+- deployment: `appgdep_6ac1c79c42988191bdfb28bdfd75da14`
+- Site source commit: `a6e2f0a0d938531810a69701b249eb5a5eff1136`
+- access: owner-private (`custom`, owner only)
+- exact repository source: PR #350 branch `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04` at handoff head `758792d5b5d3465f9c8d1e8d7ee202e2cf90dd49`
+- tested implementation head: `b5835c521264eef6caf1e1260821c5e04f232fcd`
+- product-source diff between tested and handoff heads under `tools/KFB-Audio-Site/`: empty
+
+The deployment contains the prepared `SITE_CHAT_INSTRUCTIONS.md`, `site-chat-context.json`, intake contract and prompt references. Sites also records this Codex thread as `latest_edit_context`; no fake on-page chat widget was added.
+
+Live verification opened the exact production URL and visibly confirmed:
+1. Catalog: `54 shown · 54 catalog tracks · 44 RoadTrip v2 · 14 stem families`;
+2. Mix transition desk;
+3. Soundscape available/missing source bank;
+4. Intake surface;
+5. Prompt Studio;
+6. Brief/current audio rules;
+7. zero captured browser warnings or errors.
+
+No Cloudflare route was created and PR #350 was not merged.
+
+**Exactly one next gate:** `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01` — wait for Georg's bounded SFX/Sound-Bed Prompt-Bank rebrief before extending this Site.

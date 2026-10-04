@@ -194,6 +194,19 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - GPT Site source + integrated chat context are ready.
 - current Webchat does not expose Sites MCP; known KFB Sites lane is local skill `/Users/georg/.codex/plugins/cache/openai-curated-remote/sites/1.0.0-a/skills/sites/SKILL.md`.
 - exactly one next gate: `KFB_AUDIO_SITE_PUBLISH_01` — publish + open/verify exact GPT Site URL only; do not repair/rebuild product code.
+
+## 2026-10-04 · KFB Audio Site published
+
+- `KFB_AUDIO_SITE_PUBLISH_01`: COMPLETE;
+- private Site: `https://kfb-audio.frizzlebob.chatgpt.site`;
+- project `appgprj_6ac1c73dc28881919123106bd6d3e90e`;
+- version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_d542a161ef6c8191adb7f80803df6984`;
+- deployment `appgdep_6ac1c79c42988191bdfb28bdfd75da14`: SUCCEEDED;
+- exact branch/head: `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04@758792d5b5d3465f9c8d1e8d7ee202e2cf90dd49`;
+- live-visible proof: Catalog 54/44/14, Mix, Soundscape, Intake, Prompt Studio, Brief, zero browser warnings/errors;
+- Sites edit context points to the publishing Codex thread; prepared chat grounding files are deployed;
+- no Cloudflare and no merge;
+- exactly one next gate: `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01` — wait for Georg's rebrief.
 - no auto-merge.
 
 ## Hard rules

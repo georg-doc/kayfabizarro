@@ -1,5 +1,7 @@
 # KFB_AUDIO_SITE_PUBLISH_01 · SITES HANDOFF
 
+> **Closed 2026-10-04:** published owner-private at `https://kfb-audio.frizzlebob.chatgpt.site` as version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_d542a161ef6c8191adb7f80803df6984`; deployment `appgdep_6ac1c79c42988191bdfb28bdfd75da14` succeeded. Live-visible Catalog/Mix/Soundscape/Intake/Prompt Studio/Brief verification passed with zero captured browser warnings/errors. No Cloudflare, no merge.
+
 **Input is QA-green. Do not redesign or repair the product.**
 
 Repo: `georg-doc/kayfabizarro`  
