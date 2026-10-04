@@ -1,3 +1,14 @@
+## 2026-10-04 · PUBLISH_ONLY cost firewall
+
+- Georg explicitly forbade spending premium/high-reasoning credits merely to publish an already-built GPT Site candidate.
+- Added binding cost/reasoning firewall to `KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`.
+- Added reusable `SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md`.
+- Fresh Chat protocol now resolves `PUBLISH_ONLY` before delivery: use the lowest-cost / lowest-reasoning Sites-capable executor.
+- Capability gap no longer justifies a reasoning-tier upgrade: preserve exact publish packet, hand off/wait for a low-cost Sites-capable executor, do not substitute Cloudflare.
+- Premium/high reasoning may re-enter only if publication reveals a real engineering/code/architecture defect; then the task is no longer PUBLISH_ONLY.
+- Root START_HERE now carries the same cost firewall and model-choice precedence.
+- Graveyard bumped to v1.10.0 / 60 graves with `High Reasoning fürs Publish-Klicken`.
+
 ## 2026-10-04 · Four-island SSOT recovery · Life Trees + Joyride + clearance
 
 - Georg clarified that the World Studio visual recovery must rebuild **all four existing islands** in current SSOT style, including Track, buildings, world composition and current gameplay anchors.
