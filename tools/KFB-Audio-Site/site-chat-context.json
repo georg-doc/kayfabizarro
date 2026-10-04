@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.audio-site.chat-context/0.1",
+  "workflow": "KFB-AUDIO-SITE",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "sourceOfTruth": [
+    "media/3D_Assets/Sounds/jukebox.json",
+    "tools/KFB-Audio-Site/soundscape-source.json",
+    "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md"
+  ],
+  "responsibilities": [
+    "Find and compare catalog tracks without inventing missing metadata.",
+    "Draft Suno prompts that explicitly name selected KFB master references, mood/biome/resident role, negative space and stem priorities.",
+    "Treat uploaded songs/stems as intake artifacts first; never silently promote them into the canonical catalog.",
+    "For new source assets record provenance, exact filename, BPM if known, family/variant relation and stem policy.",
+    "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
+    "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries."
+  ],
+  "promptRecipe": {
+    "masterFirst": true,
+    "stemsAfterHumanSelection": true,
+    "avoid": [
+      "generic trailer music",
+      "EDM build/drop unless explicitly requested",
+      "bright cute mallets unless explicitly requested",
+      "invented source metadata"
+    ],
+    "output": [
+      "one Suno-ready prompt",
+      "suggested BPM/tonal center when justified",
+      "stem priority",
+      "2-4-master audition rule"
+    ]
+  },
+  "intakePolicy": {
+    "siteInbox": "KFB Production Control / KFB-AUDIO-SITE",
+    "maxArtifactNote": "Use authenticated Site persistence for uploads; GitHub promotion is a separate explicit step.",
+    "noCloudflareForIteration": true
+  }
+}

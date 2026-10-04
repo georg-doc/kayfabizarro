@@ -1,0 +1,87 @@
+{
+  "schema": "kfb.audio-site.soundscape-source/0.1",
+  "updated": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "rule": "Source registry only. Existing consumer runtimes keep gameplay/audio ownership.",
+  "available": [
+    {
+      "id": "wind",
+      "label": "Wind",
+      "role": "GLOBAL_BED",
+      "file": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "loop": true,
+      "status": "VERIFIED_SOURCE"
+    },
+    {
+      "id": "water-babble",
+      "label": "Water / babbling",
+      "role": "LOCAL_AMBIENCE",
+      "file": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "loop": true,
+      "status": "VERIFIED_SOURCE"
+    },
+    {
+      "id": "crowd-reaction",
+      "label": "Applause / sparse crowd reaction",
+      "role": "WORLD_SFX",
+      "file": "media/3D_Assets/Audio/Other/applause.wav",
+      "loop": false,
+      "status": "VERIFIED_SOURCE",
+      "note": "Reaction accent only; not a sustained crowd bed."
+    },
+    {
+      "id": "vehicle-v8",
+      "label": "V8 load loop",
+      "role": "PLAYER_CRITICAL",
+      "file": "media/3D_Assets/Audio/KFB Racer/KFB_V8_Load_Loop_10s_48k.wav",
+      "loop": true,
+      "status": "VERIFIED_SOURCE"
+    },
+    {
+      "id": "impact-metal",
+      "label": "Metal impact",
+      "role": "PLAYER_CRITICAL",
+      "file": "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg",
+      "loop": false,
+      "status": "VERIFIED_SOURCE"
+    }
+  ],
+  "missing": [
+    {
+      "id": "rain-bank",
+      "label": "Rain bank",
+      "need": "light / medium / heavy rain + surface variants",
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "id": "thunder-bank",
+      "label": "Thunder bank",
+      "need": "distant / mid / close thunder with tails",
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "id": "crowd-bed",
+      "label": "Sustained crowd / venue bed",
+      "need": "small room / street / ring / large venue",
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "id": "traffic-bed",
+      "label": "City / traffic bed",
+      "need": "urban distance / pass-bys / idle traffic",
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "id": "tire-friction",
+      "label": "Tyre / skid / friction",
+      "need": "sustained source suitable for Race; rejected oscillator friction is not reusable",
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "id": "voice-profiles",
+      "label": "Shared character voice profiles",
+      "need": "metadata + fallback policy; Travel FrizzleBob TTS is donor only",
+      "status": "CURATION_REQUIRED"
+    }
+  ]
+}

@@ -1,72 +1,1589 @@
 {
-  "version": "1.0.0",
-  "updated": "2026-07-18",
-  "note": "Ride-Musik-Auswahl. Jeder Track traegt seinen vollen Pfad ab Repo-Wurzel in 'file'; der Loader macht RAW + file. Optionale Felder 'srt' und 'booklet' machen aus einem Track die getaktete Regel-Tour. bpm nur gesetzt, wo bekannt (Van-Metronome-Familie = 104); fehlt es, faellt die Float-Kopplung auf 104 zurueck.",
+  "version": "2.0.0",
+  "updated": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "runtimeOwner": "Existing consumer AudioContext/Jukebox; Travel donor: georg-doc/KFB-Travel-Globe/travel/globe-v13/travel-audio.js",
+  "compatibility": "tracks[].id/title/file/bpm/loop remain backward-compatible with current Travel loader; all additional fields are optional metadata.",
+  "policies": {
+    "catalogVsUnlock": "Catalog membership does not imply player unlock. Unlock/discovery is consumer save state keyed by track id.",
+    "masterGroundTruth": "Complete authored master is the default playback/style reference.",
+    "stems": "Stem families are source-only unless individually listening-certified. Cross-song pitched stem mixing is disabled by default.",
+    "autoRadio": "Context selection may be weighted/seeded, but the Jukebox remains the catalog and playback source.",
+    "memory": "Lean Memory stores compact receipts pointing to track ids; it never duplicates audio binaries."
+  },
   "tracks": [
     {
       "id": "van_metronome",
       "title": "Van Metronome (Instrumental)",
       "file": "media/3D_Assets/Sounds/Van_Metronome_2026-07-17T163547.mp3",
       "bpm": 104,
-      "loop": true
-    },    
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
     {
       "id": "kfb_shepard_coaster",
       "title": "KFB Shepards Coaster (FrizzleTune)",
       "file": "media/3D_Assets/Sounds/KFB_Shepards_Coaster-SONG-Bob_01_A.mp3",
       "bpm": 90,
-      "loop": true
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "van_metronome_cover",
       "title": "KFB Rules (Van Metronome Cover, vocals)",
       "file": "media/3D_Assets/Sounds/KFB Roller coaster Van_Metronome 02 (cover).mp3",
       "bpm": 104,
-      "loop": false
+      "loop": false,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "kfb_metronome_v3",
       "title": "KFB Metronome v3 (Instrumental)",
       "file": "media/3D_Assets/Sounds/KFB Metronomes v3.mp3",
       "bpm": 104,
-      "loop": true
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "kfb_karaoke_metronome_v3",
       "title": "KFB Karaoke Metronome v3",
       "file": "media/3D_Assets/Sounds/KFB Karaoke Metronomes v3.mp3",
       "bpm": 104,
-      "loop": true
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "van_freestyle_v2_1",
       "title": "KFB Van Freestyle v2-1",
       "file": "media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-1.mp3",
-      "loop": true
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "van_freestyle_v2_2",
       "title": "KFB Van Freestyle v2-2",
       "file": "media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-2.mp3",
-      "loop": true
+      "loop": true,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "kayfabizarro_02_2",
       "title": "Kayfabizarro 02.2",
       "file": "media/3D_Assets/Sounds/Kayfabizarro 02.2.mp3",
-      "loop": false
+      "loop": false,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "kayfabizarro_02_2_2",
       "title": "Kayfabizarro 02.2-2",
       "file": "media/3D_Assets/Sounds/Kayfabizarro 02.2-2.mp3",
-      "loop": false
+      "loop": false,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     },
     {
       "id": "kayfabizarro_06_hook",
       "title": "Kayfabizarro 06 HOOK song (A+++ Cover)",
       "file": "media/3D_Assets/Sounds/Kayfabizarro 06 HOOK song - A+++ COVER 4.0.mp3",
-      "loop": false
+      "loop": false,
+      "collection": "legacy-kfb",
+      "masterGroundTruth": true,
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-awe-before-drama",
+      "title": "Awe Before Drama",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Awe Before Drama.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "d28fc9c27d5a6f725fdb93e21ca9fe0e8ce12b0d",
+        "size": 5228517,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 82,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Awe Before Drama Stems (82BPM)",
+        "treeSha": "e3812e460e80d985b95cad06748d1f195e88d659",
+        "policy": "source-only"
+      },
+      "moods": [
+        "awe",
+        "revelation"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-beetle-wrestling-entrance-01",
+      "title": "Beetle-Wrestling Entrance 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Beetle-Wrestling Entrance 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "ad66ac1c1d3c732f1bf7aca6ed4f21c03cb6b5dc",
+        "size": 5576973,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "event",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 118,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Beetle-Wrestling Entrance 01 Stems (118BPM)",
+        "treeSha": "9afe14b3743ceab21785993c6dbee7a00bcdf9c4",
+        "policy": "source-only"
+      },
+      "moods": [
+        "swagger",
+        "rockabilly",
+        "cosmic-surf",
+        "electro-funk"
+      ],
+      "family": "beetle-wrestling-entrance",
+      "variantOf": "roadtrip-v2-beetle-wrestling-entrance",
+      "variantLabel": "extended alternate"
+    },
+    {
+      "id": "roadtrip-v2-beetle-wrestling-entrance",
+      "title": "Beetle-Wrestling Entrance",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Beetle-Wrestling Entrance.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "1ab002ae0e9e41c83f5680593dc15888fecd0fa5",
+        "size": 2338338,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "signature",
+        "event",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 119,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Beetle-Wrestling Entrance Stems (119BPM)",
+        "treeSha": "f2d945d923f6e5f2c3f047fb13d381debe34a222",
+        "policy": "source-only"
+      },
+      "moods": [
+        "swagger",
+        "rockabilly",
+        "cosmic-surf",
+        "electro-funk"
+      ],
+      "family": "beetle-wrestling-entrance"
+    },
+    {
+      "id": "roadtrip-v2-buant-groove",
+      "title": "Buant Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Buant Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "42513aec6240fe200484f7ee0ca6128337ae2116",
+        "size": 5204155,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 105,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Buant Groove Stems (105BPM)",
+        "treeSha": "9eb067b56524aeabfc9afde8cb0a6b6603915d8f",
+        "policy": "source-only"
+      },
+      "moods": [
+        "sunshine",
+        "festival"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-checkpoint-rush-a",
+      "title": "Checkpoint Rush A",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Checkpoint Rush A.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "318a248a47639f414a820352764ed4dc46924c7b",
+        "size": 1830783,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-checkpoint-rush-b",
+      "title": "Checkpoint Rush B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Checkpoint Rush B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "5fde6bca3c025c4ff132c76ce1277d4267ad9d18",
+        "size": 1830492,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-cyclical-warmth",
+      "title": "Cyclical Warmth",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "0f544bd7e51b6b0f86f3996daa0a66b8d8be27ce",
+        "size": 4917339,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 76,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)",
+        "treeSha": "2d361010be073d717f6402bb26fd36b4cff84fbe",
+        "policy": "certified"
+      },
+      "moods": [
+        "neutral",
+        "world"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-demon-lord-afro-strut-01",
+      "title": "Demon Lord Afro-Strut 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Demon Lord Afro-Strut 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "530908085f34ef8c11901e2007bb915ad06492be",
+        "size": 2836256,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-dorian-rests",
+      "title": "Dorian Rests",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Dorian Rests.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "3ed68156675260e5f432201ae68ffa26426e0531",
+        "size": 4793277,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 66,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Dorian Rests Stems (66BPM)",
+        "treeSha": "2b7fe25fc402d32daf486f05ec6a4caf11925337",
+        "policy": "source-only"
+      },
+      "moods": [
+        "grief",
+        "loss"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-endless-forward-motion-a",
+      "title": "Endless Forward Motion A",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Endless Forward Motion A.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "441a5fb168086c32650cf658b90493b05ee569b5",
+        "size": 2775379,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-endless-forward-motion-b",
+      "title": "Endless Forward Motion B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Endless Forward Motion B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "9e81359a64c43a9977594810275fb78256cc5e77",
+        "size": 2738509,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-final-lap-lift-a",
+      "title": "Final Lap Lift A",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Final Lap Lift A.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "208fa9c909dc0366e207ccd2747594b2ecdd4943",
+        "size": 2838475,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-final-lap-lift-b",
+      "title": "Final Lap Lift B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Final Lap Lift B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "39d16a3f6339895efe9d88d992fe154ce52c3546",
+        "size": 2900394,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-infinite-ascent-groove-2026-07-23t000126-1",
+      "title": "Infinite_Ascent_Groove_2026-07-23T000126 (1)",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Infinite_Ascent_Groove_2026-07-23T000126 (1).mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "e8d0409a4b4fc85d0a814f26ae2fda19f7f491d2",
+        "size": 1457353,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-infinite-ascent-groove-2026-07-23t000126-2",
+      "title": "Infinite_Ascent_Groove_2026-07-23T000126 (2)",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Infinite_Ascent_Groove_2026-07-23T000126 (2).mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "5afe6c2b23f73e37bbfaef95a7786ce616413a3b",
+        "size": 1457353,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-kfb-bravenewworldnews-01",
+      "title": "KFB BraveNewWorldNews 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB BraveNewWorldNews 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "3cab9fca0af78f5967a3c6f40698e2154dd8b528",
+        "size": 2795810,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-kfb-desert-preacher-01",
+      "title": "KFB Desert Preacher 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB Desert Preacher 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "23b6253a7ac71517f6d0a61ee715ae771c916e28",
+        "size": 2852617,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-kfb-shepards-coaster-01",
+      "title": "KFB Shepards_Coaster 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB Shepards_Coaster 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "5b031c2252e07b515ca0d3a3eff3546c27143f42",
+        "size": 2048336,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-kfb-shepards-coaster-02",
+      "title": "KFB Shepards_Coaster 02",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB Shepards_Coaster 02.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "c3d0a8f8887b67da8802d9a582e4eccaa9e9816e",
+        "size": 1369919,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-lazy-pocket-groove",
+      "title": "Lazy Pocket Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Lazy Pocket Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "b6839e5ba001dde26cb1d3bab412517d75cf9752",
+        "size": 2698428,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-loping-groove",
+      "title": "Loping Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "04d08d460e0339504802fd9f77544a92661e2d54",
+        "size": 4986803,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 88,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)",
+        "treeSha": "578ea7c1b85bf8524c22a758d61391d7fedaa788",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-lush-break-3min",
+      "title": "Lush Break 3min",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Lush Break 3min.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "723050b8c579ece495c57ef9fca992ad34534dda",
+        "size": 4257394,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 67,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Lush Break 3min Stems (67BPM)",
+        "treeSha": "69f9601feafc3dc81f9996e4d9795f9198df0feb",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-modal-vamp",
+      "title": "Modal Vamp",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "aba134a31b995cb21270c61806f862e992e3bb2d",
+        "size": 4998903,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 77,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)",
+        "treeSha": "d25f2bc3b7641ec6baf8bc563ed044f4459190b4",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-neo-surf-trip-3min",
+      "title": "Neo Surf Trip 3min",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Neo Surf Trip 3min.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "a67b4834fa55483220da720584a24e09b3d5b94b",
+        "size": 4032936,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 112,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Neo Surf Trip 3min Stems (112BPM)",
+        "treeSha": "e2d1247c4570dbb5c494c43cd098b677d7f6fc10",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-night-circuit-runner-b",
+      "title": "Night Circuit Runner B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Night Circuit Runner B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "2e10fb6e1b0d8c89a8f5ec9618697803bf76bf1d",
+        "size": 2911373,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-night-circuit-runner",
+      "title": "Night Circuit Runner",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Night Circuit Runner.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "f1f573db8cf2f8359acc124d2cc85be8a578df74",
+        "size": 5688709,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-night-desert-lap-a",
+      "title": "Night Desert Lap A",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Night Desert Lap A.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "6d787c4b7c0df8f2d23a18c2265a6a4849f3e4ad",
+        "size": 2653809,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-night-desert-lap-b",
+      "title": "Night Desert Lap B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Night Desert Lap B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "0d79c9413e2b764af951e4dabf0460354032acd6",
+        "size": 4596161,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-orc-cumbia-wobble-01",
+      "title": "Orc Cumbia Wobble 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orc Cumbia Wobble 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "f48e7a10fd807f2b3cc31090658c67c75210d113",
+        "size": 2923400,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-orcish-municipal-hustle-2026-09-23t021219",
+      "title": "Orcish_Municipal_Hustle_2026-09-23T021219",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orcish_Municipal_Hustle_2026-09-23T021219.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "b841c4633d6a6645c49f5cece75867fe3e10e409",
+        "size": 2898685,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-orcish-street-corner-jam-2026-09-23t021322",
+      "title": "Orcish_Street_Corner_Jam_2026-09-23T021322",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orcish_Street_Corner_Jam_2026-09-23T021322.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "2feee310ba90ea710423b2d2710da34fad34e95a",
+        "size": 2897431,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-perpetual-motion-coaster-2026-07-22t234644",
+      "title": "Perpetual_Motion_Coaster_2026-07-22T234644",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Perpetual_Motion_Coaster_2026-07-22T234644.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "e34c0e521dafd05470010ff3dad1221629616b93",
+        "size": 1457353,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-roadtrip-lift-a",
+      "title": "Roadtrip Lift A",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Roadtrip Lift A.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "087f8bf906a5d1c98b2bcc5cc00ffc02df783281",
+        "size": 4123493,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-roadtrip-lift-b",
+      "title": "Roadtrip Lift B",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Roadtrip Lift B.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "ad66485f6bc7027a3f0ca370c1bc93ba8eec6217",
+        "size": 4338125,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-rubbish-groove-2min-a-extend-01",
+      "title": "Rubbish Groove 2min A extend 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+        "size": 3034265,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-skeleton-shuffle-deluxe-01",
+      "title": "Skeleton Shuffle Deluxe 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Skeleton Shuffle Deluxe 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "0ff611590d15cd9192da0364e5de9378e2110c88",
+        "size": 2863660,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-small-room-groove",
+      "title": "Small-Room Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "f7b5533d16017c980c74d5c5fc12e1f3aa982d21",
+        "size": 4676300,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 122,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)",
+        "treeSha": "a0ff8aa481d3b516842dbaba89ee69dab670f7d2",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-stalking-groove",
+      "title": "Stalking Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Stalking Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "492c8c2a94433ab1607b34651ea7efebf719106d",
+        "size": 2892408,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 107,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Stalking Groove Stems (107BPM)",
+        "treeSha": "3feaad0cb33335fc96ed9c3ee8b36d0eb81c46bb",
+        "policy": "source-only"
+      },
+      "moods": [
+        "dark",
+        "boss",
+        "combat"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-surf-groove-3min",
+      "title": "Surf Groove 3min",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Surf Groove 3min.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "7d84684b85528a176c92e3ebf5ecb56d4da20e82",
+        "size": 4592397,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "road",
+        "radio",
+        "score"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 100,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Surf Groove 3min Stems (100BPM)",
+        "treeSha": "fbd7eea86852f949e07fb02c3e16dfac8e5c9721",
+        "policy": "source-only"
+      },
+      "moods": [
+        "surf",
+        "groove",
+        "road"
+      ]
+    },
+    {
+      "id": "roadtrip-v2-the-street-orcs-groove-2026-09-23t020844",
+      "title": "The_Street_Orcs_Groove_2026-09-23T020844",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/The_Street_Orcs_Groove_2026-09-23T020844.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "f841e19594c9c302048f2d4883e1c95f050a15b5",
+        "size": 2897431,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-toy-soldier-brass-riot-01",
+      "title": "Toy Soldier Brass Riot 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Toy Soldier Brass Riot 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "d6278517b940b764d6ad79dc201115a9ffc756f9",
+        "size": 2935255,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-war-busker-groove",
+      "title": "War Busker Groove",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/War Busker Groove.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "e323c43d27a56ca03ab06e4c6b3abc5e71b792fa",
+        "size": 2866487,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
+    },
+    {
+      "id": "roadtrip-v2-warm-tape-saturation",
+      "title": "Warm Tape Saturation",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "3fa4ebaf22432d344714af3eefb0eea46cea7b97",
+        "size": 5535324,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "bpm": 75,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)",
+        "treeSha": "3feb586e85625b77772215ea42d9cb8bf86c3127",
+        "policy": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-witch-hat-acid-picnic-01",
+      "title": "Witch Hat Acid Picnic 01",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Witch Hat Acid Picnic 01.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "c4a5aa0ccc81befd50b4450ee5f9d2ff83d9e0cf",
+        "size": 2971817,
+        "provenance": "georg-doc/kayfabizarro main"
+      },
+      "roles": [
+        "catalog",
+        "radio"
+      ],
+      "tags": [
+        "roadtrip-v2"
+      ],
+      "autoRadio": {
+        "eligible": true,
+        "weight": 1
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      }
     }
   ]
 }
