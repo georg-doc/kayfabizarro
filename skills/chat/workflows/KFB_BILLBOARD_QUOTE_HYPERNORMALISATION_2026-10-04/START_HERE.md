@@ -327,3 +327,69 @@ One One-Shot should deliver a meaningful vertical slice rather than a chain of m
 - deterministic reload producing the same result.
 
 No merge or Live promotion without Georg's named gate.
+
+
+## Operating model · who does what
+
+### 1. Quote Curator Worker / research chat
+
+This is the pool-filling executor.
+
+It does NOT change H13, Billboard runtime, Audio runtime or the curator Site UI.
+
+For each batch it:
+1. reads the canonical deck registry and the selected decks' Card JSON;
+2. derives a compact thematic research brief from cardName / power / lore / artworkPrompt;
+3. searches for non-cliché quotations relevant to those themes;
+4. verifies exact wording against a primary source, reliable edition, archive or equivalent strong source;
+5. records provenance and publication/rights status;
+6. writes one strong FrizzleQuestion per quote;
+7. maps the quote to one or more deckIds and, where justified, specific Card refs;
+8. adds Brain Food links;
+9. validates against QUOTE_POOL_SCHEMA.json;
+10. writes candidate data to the quote-pool branch / PR.
+
+Recommended batch size: 10 decks at a time, targeting 3–5 genuinely useful quote candidates per deck. Do not pad a deck with weak famous quotes merely to hit a count.
+
+### 2. Georg / Curator Site
+
+Georg is the editorial gate, not the data-entry worker.
+
+Use the private KFB Hypernormalisation Curator Site to:
+- browse all 130 decks;
+- inspect candidate quotes and mappings;
+- edit wording/tags/question where useful;
+- reject cliché or weak material;
+- approve/private/public-status candidates where provenance and rights allow;
+- audition later audio/visualizer recipes and 3D Billboard results.
+
+The Site is the review/control surface. GitHub remains authoritative persistence.
+
+### 3. Work / WSA implementation
+
+Work/WSA consumes the approved/curated pool and builds the product integration:
+- H13 read-along adapter;
+- deterministic Card/Biome selector;
+- clay Billboard + full-screen control;
+- Audio visualizer handoff;
+- neutral 3D stage;
+- game integration;
+- Cloudflare Stage proof.
+
+Work/WSA must not become the quote researcher except for a tiny fixture needed to prove the runtime.
+
+## Pool-fill cadence
+
+Use an additive batch loop:
+
+`10 decks → 30–50 candidate quotes → schema/provenance check → Curator review → accepted/rejected states → next 10 decks`
+
+Continue until all 130 deck profiles have meaningful coverage.
+
+Coverage target is quality-first:
+- baseline: at least 3 strong curated quotes per deck where the source material supports it;
+- richer decks may have more;
+- individual quotes may map to several decks/cards;
+- Card-specific mappings are added only when the fit is actually specific.
+
+Do not fake completion. A deck may remain SEEDED/RESEARCHING until enough good material exists.
