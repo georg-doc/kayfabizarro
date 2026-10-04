@@ -1,5 +1,13 @@
 # CHANGELOG · Procedural Test World 01
 
+## 2026-10-04 · One-Shot routing correction
+
+- the Player brief remains useful as an internal implementation recipe;
+- it is no longer a separate Georg-facing next gate;
+- Resident-set, Site and Lean-Memory work are likewise internal checkpoints;
+- current execution authority is `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`;
+- WSA/Codex continues on PR #348 until one integrated Golden Journey candidate is ready or a real blocker/stop rule is reached.
+
 ## 2026-10-04 · Motion dependency correction / Player integration ready
 
 - corrected stale assumption that Motion PR #344 was still PREPARED/NOT RUN;
