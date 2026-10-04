@@ -8,17 +8,28 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
-## 2026-10-04 · CURRENT WB2 ONE-SHOT: FROZEN FAILED CANDIDATE
+## 2026-10-04 · CURRENT WB2 ONE-SHOT: MVP1 PRODUCT RECOVERY
 
-PR#348 remains the existing WB2 owner; no new executor or runtime. Two non-improving native traversal/endpoint-arrival repair passes reached the binding stop condition; independent Critic confirmed freeze.
+PR #348 remains the existing WB2 owner. The previous **FROZEN_FAILED_CANDIDATE** label is superseded as a whole-product classification.
 
-Verified freeze head: `282e05e8f66a117a12165d9169cbc16de0e8fb7e` on `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`.
-Read the immutable [failure recovery](https://github.com/georg-doc/kayfabizarro/blob/282e05e8f66a117a12165d9169cbc16de0e8fb7e/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.md) and accompanying JSON/Status/Return.
+The frozen evidence remains valid history, but its own JSON states that the last failure was a **test-harness endpoint-arrival failure, not proof that the Taxi runtime or bridge support failed**. Earlier run `37196264077` separately proves real Ground → Drive → Ground with **6.077702 m** of driving.
 
-Latest runtime4334151 / tested merge2ffd704:3Golden gatesPASS, Driver/Taxi arrivalFAIL,0browsererrors. Earlier1876 run proves Ground→Drive6.0777m→Ground; retain it as earlier evidence. Native Studio separate-origin export/import/re-export5/5PASS;19/19local source tests. Full Journey, fresh Journey import,61source captures and whole nine-dimension quality remain unproven. All whole scores withheld.
+Binding correction:
+- two failed repairs of a QA route-planner / key-driver / endpoint-certification method freeze that **harness method**;
+- they do not freeze the WorldBuilder product unless the same defect is directly reproduced in the product;
+- the old branch-local Player brief with "Exactly one next gate: WSA-RES-SET-01" is historical checkpoint guidance, not current execution authority.
 
-Reserved `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` remains NOT_DEPLOYED. No merge/Live promotion. Hub update is recovery metadata only, not a playable Stage.
-Exactly one next recovery gate: **RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01**, measuring actual key release/settled endpoint distance/native nearest identity in the same owner. No automatic third repair or micro-slice handoff. The successful native-road bridgehead support correction is KEEP, not declared failed by a run that never reached Dystopia.
+Current recovery authority:
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md`
+- PR #348 current `RECOVERY.md`, `RETURN.md`, and `ONE_SHOT_STATUS.json`.
+
+Current outcome:
+**MVP1-PLAYABLE-DELIVERY** — direct product smoke → real WorldBuilder/God Mode edit + terrain edit → save/export/import persistence → representative source-clean world → publish and visibly verify `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` → Georg freeplay.
+
+Full scripted Golden Journey automation, 61 captures and whole nine-dimension scoring are follow-up QA and may not suppress delivery of a meaningful playable MVP.
+
+No merge / no Live promotion.
 
 ## Start order
 
@@ -43,9 +54,9 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 
 
-## 2026-10-04 · Combat Card-Hex Ascent · provider benchmark planning
+## 2026-10-04 · Combat Card-Hex Ascent · HOLD UNTIL MVP1 HUMAN REVIEW
 
-A parallel **planning-only** benchmark lane is prepared in the Combat owner while the WB2 World One-Shot continues independently.
+The Combat benchmark planning is preserved but **HOLD**. Do not spend implementation/model-comparison budget on it until the WB2 WorldBuilder MVP 1 has been delivered to Georg and received a product-level human review.
 
 Owner repo:
 `georg-doc/KFB-Combat-Arena`
@@ -78,9 +89,9 @@ Reserved future comparison Stage:
 This lane does not write to WB2 PR #348 and does not alter Live.
 
 
-## 2026-10-04 · Combat Platformer Benchmark · planning ready
+## 2026-10-04 · Combat Platformer Benchmark · HOLD
 
-Parallel planning only; does **not** interrupt the current WB2 One-Shot.
+Preserved planning only. **No provider run, comparison, or further benchmark expansion until MVP1 WorldBuilder human review.**
 
 Current central router:
 `skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md`
