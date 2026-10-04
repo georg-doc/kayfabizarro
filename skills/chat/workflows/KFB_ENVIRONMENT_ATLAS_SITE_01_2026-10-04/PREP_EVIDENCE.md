@@ -126,3 +126,81 @@ For this Site, the stricter current KFB workflow applies: the **human test/accep
 - no Georg visual/catalog acceptance has occurred.
 
 Those are Work execution gates, not Prep PASS claims.
+
+
+## Scope correction · full Claude Design Environment Atlas corpus · 2026-10-04
+
+Georg clarified that the Site must capture the whole useful **KayKit Environment Atlas** Claude Design project, not only Hex + Buildings.
+
+### Third KayKit Hex source resolved
+
+Exact source:
+`media/3D_Assets/Kaykit_Medieval Snow Biome/`
+
+Verified:
+- source pin already used by R2D: `ab65e8c46ca3c07db4294214a63384975fb7d0d9`;
+- license identifies `KayKit : Medieval Builder Pack Patreon Bonus (1.0)`;
+- Models tree: 57 GLB + 21 FBX;
+- 42 GLB are Hex tiles;
+- 15 GLB are object/building/nature pieces.
+
+This **replaces** the earlier prep statement that the third distinct KayKit Hex source was unresolved.
+
+Current KayKit Hex-capable families:
+1. Medieval Hexagon Pack;
+2. Medieval Builder Pack;
+3. Medieval Snow Biome / Builder Patreon Bonus.
+
+Kenney `GLB_hexagon_kit` remains a separate fourth/secondary Hex family.
+
+No dedicated Snow Biome Registry shard was found; Work must reconcile it through the normal central Registry/Librarian process or show `SOURCE_PROVEN / REGISTRY_PENDING`.
+
+### Mandatory project modules added
+
+The Site must explicitly carry:
+- `KayKit_Hex_Realm_S11`;
+- `KayKit_Hex_Tile_Model_S12`;
+- `KayKit_Dungeon_Generator_S13_2`;
+- `KayKit_Bits_Model_S14`;
+- S15 Space Base;
+- S16/S17 Restaurant/Furniture;
+- S18/S19 Plant Prop + EyeRig;
+- S20 Sample Atlas;
+- S21 Room Study/editor;
+- S22 wall-node/postmortem/editor line.
+
+### Existing source coverage measured
+
+Current GitHub already contains:
+
+- World Atlas / reviewed S1–S13.2 intake;
+- Plant Prop v2 export: **27 files**, actual S18/S19 runtime/modules/proofs;
+- S20/S21 export: **17 files**;
+- S22 lean handover: **26 files**.
+
+Plant Prop source proof includes:
+- `plant-eyes.js` blob `c14eb4b2a6cdde56bc18be1ab89a13793f2c4d95`;
+- `plant-rig.js` blob `ed77c7cb4019bf54128e47ec4fcbad69c0d88995`;
+- explicit adapter to existing KFB EyeRig v6, not a second eye owner.
+
+### Recovery gap
+
+Current later Housekeeping/Changelog documents S14–S17 as built/active, including exact measured behavior, but the actual runtime files are not directly present in the lean exports found in GitHub.
+
+Most important missing source candidates:
+- `KayKit_Bits_Model_S14.html`;
+- `lib/bits-inventory.js`;
+- S14 measurement probes;
+- `KayKit_Space_Base_S15.html`;
+- `lib/space-grid.js`;
+- `KayKit_Restaurant_S16.html`;
+- `lib/restaurant-grid.js`;
+- `KayKit_Restaurant_S17.html`;
+- `lib/restaurant-plan.js`.
+
+Therefore a fresh **FULL PROJECT EXPORT WITH DOCS** is recommended.
+
+The exact non-destructive export request is:
+`FULL_PROJECT_EXPORT_REQUEST.md`.
+
+Work may begin Site architecture from the existing source corpus, but final project-completeness acceptance must reconcile the new full export or explicitly preserve missing items as `RECOVERY_REQUIRED`.
