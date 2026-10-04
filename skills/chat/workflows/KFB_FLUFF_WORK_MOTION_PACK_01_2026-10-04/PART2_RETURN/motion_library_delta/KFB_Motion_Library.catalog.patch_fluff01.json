@@ -4,7 +4,7 @@
  "date": "2026-10-04",
  "base": "KFB_Motion_Library.catalog.json (+ patch_an01, patch_duel01)",
  "apply": "append clips[] to catalogue.clips and libraries{} to catalogue.libraries; clipCount +9. Nothing existing changes.",
- "workpieceRule": "Option A (Production Control c948e155): Rig_Large two-hand work and push use a work chunk of radius 0.22 x body height. Presentation size only; inventory/resource/pickup value and global Fluff ball size stay runtime-owned.",
+ "workpieceRule": "Push/steer balls follow the Fluff Mass Ladder (brief cd69323: 6 Small = 1 Medium, 3 Medium = 1 Large by volume): Medium ball r 0.477 m (0.22 x Medium body height, Blender reading), Large ball r 0.477 x 3^(1/3) = 0.689 m. Option A (Production Control c948e155): the Large two-hand bench/ground work chunk (knead_press, collect_debris) is r 0.22 x Large body height = 0.922 m. All sizes are presentation only; inventory/resource/pickup value stays runtime-owned.",
  "bodyHeight": {
   "Rig_Medium": 2.17,
   "Rig_Large": 4.19
@@ -21,7 +21,7 @@
    "rig": "Rig_Large",
    "group": "Fluff work motion pack 01 (FLUFF-01)",
    "bytes": 532316,
-   "sha256": "fc157a431ede6da3a1663bfd109a5d66ffc7dd07b66c8af7917bca0eade4dd16",
+   "sha256": "1617dd6dc25756147a258c157c0dddd427b74c0e05bda88d6b1d34207fca4454",
    "clipCount": 9
   }
  },
@@ -114,7 +114,7 @@
        0.477,
        1.062
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
@@ -137,19 +137,19 @@
      "donor": "kfb_locomotion_wheelbarrow_walk_a",
      "note": "legs/root/rhythm unchanged; arms IK to ball back at 20 deg above equator, palms aimed at ball centre",
      "workpiece": {
-      "radius": 0.922,
-      "radiusOverBodyHeight": 0.22,
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
       "centre": [
        0.042,
-       0.922,
-       1.805
+       0.689,
+       1.021
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 30 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
        0.084,
-       0.086
+       0.085
       ],
       "r": [
        0.084,
@@ -159,11 +159,11 @@
      "trunkLeanDeg": 17.5,
      "seamExcessDeg": 0.0,
      "runtimeRootSpeedMps": 2.744,
-     "ikHandErrorM": 0.0029,
-     "palmToCentreDevDeg": 9.0
+     "ikHandErrorM": 0.0011,
+     "palmToCentreDevDeg": 5.0
     }
    },
-   "comment": "Push: wheelbarrow legs/rhythm kept; both palms on the ball back 20 deg above its equator, aimed at the ball centre. Ball stays in clip space; runtime rolls it and moves the root.",
+   "comment": "Push: wheelbarrow legs/rhythm kept; both palms on the ball back (20 deg above the equator on Medium, 30 deg on Large so the Large arms reach the smaller ladder ball), aimed at the ball centre. Ball stays in clip space; runtime rolls it and moves the root.",
    "tags": [
     "fluff",
     "work",
@@ -258,7 +258,7 @@
        0.477,
        1.377
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
@@ -281,30 +281,30 @@
      "donor": "kfb_locomotion_wheelbarrow_walk_b",
      "note": "walk_b root travel stripped (linear drift), time-stretched to 0.75x, arms IK as G1",
      "workpiece": {
-      "radius": 0.922,
-      "radiusOverBodyHeight": 0.22,
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
       "centre": [
        -0.056,
-       0.922,
-       2.631
+       0.689,
+       1.752
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 25 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
        0.084,
-       0.085
+       0.084
       ],
       "r": [
        0.084,
-       0.085
+       0.084
       ]
      },
      "trunkLeanDeg": 29.0,
-     "seamExcessDeg": 1.3,
+     "seamExcessDeg": 1.1,
      "runtimeRootSpeedMps": 2.069,
-     "ikHandErrorM": 0.0016,
-     "palmToCentreDevDeg": 5.9
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 3.8
     }
    },
    "comment": "Heavy push: walk_b legs, travel stripped, 0.75x speed, stronger lean.",
@@ -398,7 +398,7 @@
        0.477,
        1.445
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
@@ -422,31 +422,31 @@
      "donor": "kfb_locomotion_wheelbarrow_walk_turn_a",
      "note": "turn_a: root travel + yaw drift stripped (runtime turns the actor), loop crossfade 8 f, arms IK as G1",
      "workpiece": {
-      "radius": 0.922,
-      "radiusOverBodyHeight": 0.22,
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
       "centre": [
        0.008,
-       0.922,
-       2.832
+       0.689,
+       2.078
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
-       0.085,
-       0.085
+       0.084,
+       0.084
       ],
       "r": [
-       0.085,
-       0.085
+       0.084,
+       0.084
       ]
      },
      "trunkLeanDeg": 28.9,
      "seamExcessDeg": 4.0,
      "runtimeRootSpeedMps": 2.524,
      "runtimeYawRateDegPerSec": 35.2,
-     "ikHandErrorM": 0.0019,
-     "palmToCentreDevDeg": 8.3
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 4.3
     }
    },
    "comment": "Steering loop: runtime owns the turn (yaw rate given); clip carries the asymmetric step and body lean.",
@@ -540,7 +540,7 @@
        0.477,
        1.445
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
@@ -564,31 +564,31 @@
      "donor": "kfb_fluff_steer_left_a (mirror X)",
      "note": "mirror of steer_left across the sagittal plane",
      "workpiece": {
-      "radius": 0.922,
-      "radiusOverBodyHeight": 0.22,
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
       "centre": [
        -0.008,
-       0.922,
-       2.832
+       0.689,
+       2.078
       ],
-      "kind": "push (0.22 H, ground)"
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator"
      },
      "handToWorkpieceSurface": {
       "l": [
-       0.085,
-       0.085
+       0.084,
+       0.084
       ],
       "r": [
-       0.085,
-       0.085
+       0.084,
+       0.084
       ]
      },
      "trunkLeanDeg": 28.9,
      "seamExcessDeg": 4.0,
      "runtimeRootSpeedMps": 2.524,
      "runtimeYawRateDegPerSec": -35.2,
-     "ikHandErrorM": 0.0019,
-     "palmToCentreDevDeg": 8.3
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 4.3
     }
    },
    "comment": "Steering loop: runtime owns the turn (yaw rate given); clip carries the asymmetric step and body lean.",
