@@ -31,6 +31,15 @@ Current Golden Journey / acceptance fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.md`
 Machine-readable fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.json`
+
+Current independent critic contract:
+`ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+Current branch-local completion authority on PR #348:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`
+
+Reserved final human Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · **NOT DEPLOYED**.
 Current Curtain Character Select / cross-rig QA contract:
 `CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`
 
