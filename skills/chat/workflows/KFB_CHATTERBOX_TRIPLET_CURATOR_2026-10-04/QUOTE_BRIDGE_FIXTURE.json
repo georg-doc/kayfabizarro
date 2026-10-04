@@ -1,0 +1,80 @@
+{
+  "schema": "kfb.triplet-quote-bridge-fixture/1",
+  "date": "2026-10-04",
+  "canonicalOwner": {
+    "branch": "planning/billboard-quote-hypernorm-curator-2026-10-04",
+    "head": "05d61058eaaa8f465b4e2add08cffbf70752fe8f",
+    "batchPath": "skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_POOL_BATCH_01.json",
+    "batchBlob": "c1d1e5b454e8b14088d84359a5829a6b4e5dfc15",
+    "rule": "Quote text/provenance/rights/FrizzleQuestion stay canonical here; Triplet Curator persists quoteId references only."
+  },
+  "s1Cards": [
+    {
+      "pair": "A",
+      "cardRef": "forget_utopia#11",
+      "cardName": "The Standing Ovation",
+      "directQuoteCardMatchInBatch01": false
+    },
+    {
+      "pair": "B",
+      "cardRef": "ignore_dystopia#30",
+      "cardName": "The Cortisol Economy",
+      "directQuoteCardMatchInBatch01": false
+    },
+    {
+      "pair": "C",
+      "cardRef": "ignore_dystopia#1",
+      "cardName": "The Doomsday Clock",
+      "directQuoteCardMatchInBatch01": false
+    }
+  ],
+  "availableDeckLevelQuoteRefs": {
+    "forget_utopia": [
+      {
+        "quoteId": "q-b01-utopia-debord-spectacle-relation",
+        "status": "RESEARCHED",
+        "rights": "DRAFT_RIGHTS_UNKNOWN",
+        "provenance": "PRIMARY_OR_EDITION_VERIFIED",
+        "directCardRef": "forget_utopia#9"
+      },
+      {
+        "quoteId": "q-b01-utopia-thoreau-tools",
+        "status": "RESEARCHED",
+        "rights": "PUBLIC_DOMAIN_CONFIRMED",
+        "provenance": "DOUBLE_CHECKED",
+        "directCardRef": null
+      },
+      {
+        "quoteId": "q-b01-utopia-morris-hope-work",
+        "status": "RESEARCHED",
+        "rights": "PUBLIC_DOMAIN_CONFIRMED",
+        "provenance": "DOUBLE_CHECKED",
+        "directCardRef": null
+      }
+    ],
+    "ignore_dystopia": [
+      {
+        "quoteId": "q-b01-dystopia-simon-poverty-attention",
+        "status": "RESEARCHED",
+        "rights": "RESEARCHED_RESTRICTED",
+        "provenance": "DOUBLE_CHECKED",
+        "directCardRef": "ignore_dystopia#10"
+      },
+      {
+        "quoteId": "q-b01-dystopia-mencken-populace-alarmed",
+        "status": "RESEARCHED",
+        "rights": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "provenance": "DOUBLE_CHECKED",
+        "directCardRef": "ignore_dystopia#4"
+      },
+      {
+        "quoteId": "q-b01-dystopia-tocqueville-restrained-action",
+        "status": "RESEARCHED",
+        "rights": "PUBLIC_DOMAIN_CONFIRMED",
+        "provenance": "DOUBLE_CHECKED",
+        "directCardRef": "ignore_dystopia#45"
+      }
+    ]
+  },
+  "fixtureRule": "Do not auto-link a deck-level quote to S1 cards #11/#30/#1. The Site may offer these as editorial suggestions; Georg or Web Chat must explicitly link by quoteId."
+}
