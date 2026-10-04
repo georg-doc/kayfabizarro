@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.transition-profiles/1",
+  "version": "1.0.0",
+  "createdAt": "2026-09-28",
+  "route": "TD03 · Track Core v0.8.1 (lab-track/data/td03.stream.json, unverändert)",
+  "grammar": "skills/chat/workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/TRANSITION_GRAMMAR_T3_V1.md",
+  "seed": 20260928,
+  "axis": "u = (s - s0) / (s1 - s0) in Fahrtrichtung. Jeder Layer-Wert w = Anteil des Nicht-Track-Bioms (0 = Strecke, 1 = Stadt/Natur). sideLag verschiebt u je Seite um ±lag/2.",
+  "layers": {
+    "road": "Fahrbahnmasse: Knetflecken Bahn ↔ Stadtstraße/Naturweg, Kontaktfläche unverändert",
+    "mark_track": "Rand-Knetsegmente der Strecke: werden kürzer, versetzen sich, tauchen ab",
+    "mark_city": "Stadt-Mittelstriche und Ränder: tauchen auf, Zielrhythmik 3 m / 3 m",
+    "barrier": "Knetstrang/Prallwulst: niedriger (Stadt, nur am Boden) oder breiter + niedriger (Natur)",
+    "curb": "Bordstein aus gequetschten Knetsteinen: vereinzelt → durchgehend",
+    "sidewalk": "Stadtsockel + Gehwegplatten in drei Reihen, gestaffelt",
+    "props": "Häuser, Laternen, Bänke, Bäume (KayKit/Tiny Treats) erst nach der Großform",
+    "embank": "Böschung: Knetrücken wächst vom Tisch bis unter den Strang",
+    "ditch": "Graben zwischen Böschungskante und Zaunsockel",
+    "fence": "Zaunsockel → Pfosten → Tiny-Treats-Zaunfelder",
+    "nature": "Dreiergruppen Baum · zwei Büsche · Fels, jede dritte Stelle Sichtachse",
+    "light": "Licht/Mood-Preset (Hemisphäre, Sonne)",
+    "vfx": "Partikelprofil-Mischung Track ↔ Biom",
+    "pit": "reserviert (D1), in T4 nicht gebaut"
+  },
+  "families": {
+    "A_track_city": {
+      "from": "track", "to": "city", "sideLag": 0.08,
+      "windows": { "road": [0.05, 0.72], "mark_track": [0.10, 0.55], "mark_city": [0.45, 0.82], "barrier": [0.00, 0.55], "curb": [0.28, 1.00], "sidewalk": [0.40, 1.00], "props": [0.55, 1.00], "light": [0.30, 0.90], "vfx": [0.35, 0.75], "pit": [0.15, 0.88] },
+      "notes": "Landung → Stadtstraße. Außenmarkierung bricht zuerst, Mitte setzt später in Stadtrhythmik an. Wulst wird Bordstein, dahinter Stadtsockel, Gehweg, dann Häuser."
+    },
+    "B_track_nature": {
+      "from": "track", "to": "nature", "sideLag": 0.06,
+      "windows": { "road": [0.12, 0.70], "mark_track": [0.10, 0.60], "barrier": [0.00, 0.50], "embank": [0.08, 0.62], "ditch": [0.35, 0.80], "fence": [0.50, 0.95], "nature": [0.35, 1.00], "props": [0.60, 1.00], "light": [0.30, 0.90], "vfx": [0.30, 0.70], "pit": [0.15, 0.88] },
+      "notes": "Wulst wird zuerst breiter und niedriger, dann wächst die Böschung unter ihn. Zaun steht hinter Graben und Sockel, nicht an der Kante."
+    },
+    "C_nature_track": {
+      "from": "nature", "to": "track", "sideLag": 0.06,
+      "windows": { "props": [0.00, 0.30], "fence": [0.00, 0.40], "nature": [0.00, 0.55], "ditch": [0.10, 0.50], "embank": [0.30, 0.85], "barrier": [0.25, 0.80], "road": [0.20, 0.75], "mark_track": [0.55, 1.00], "light": [0.10, 0.70], "vfx": [0.30, 0.70] },
+      "notes": "Rückkehr vor dem Kicker (Beschleunigungsraum): Randmassen gehen zuerst, der Strang sammelt die Böschung ein, Markierungen erscheinen zuletzt vollständig. Keine gespiegelte Kopie von B."
+    },
+    "C_city_track_deck": {
+      "from": "city", "to": "track", "sideLag": 0.05,
+      "windows": { "road": [0.25, 0.80], "mark_city": [0.05, 0.45], "mark_track": [0.50, 1.00], "barrier": [0.30, 0.70], "curb": [0.00, 0.40], "light": [0.20, 0.80], "vfx": [0.30, 0.70] },
+      "notes": "Parkdeck-Ausfahrt auf 15 m Höhe. Bande bleibt Strang (Absturzkante, Bodenfaktor 0). Ersetzt die 24-m-Fleckenfuge von T3 an s = 605."
+    }
+  },
+  "zones": [
+    { "id": "ZC", "family": "C_city_track_deck", "s0": 560, "s1": 650, "sides": ["left", "right"], "anchor": "atrium_up (s 605)" },
+    { "id": "ZB", "family": "B_track_nature", "s0": 1195, "s1": 1285, "sides": ["left"], "anchor": "east_run (s 1206)", "sideNote": "rechts liegt TD03 selbst in 23–49 m Abstand auf 15 m Höhe; Böschung nur links (frei bis Tischrand)" },
+    { "id": "ZN", "family": "C_nature_track", "s0": 1300, "s1": 1395, "sides": ["left"], "anchor": "turn_east (s 1322) → std_jump (s 1387)" },
+    { "id": "ZA", "family": "A_track_city", "s0": 1470, "s1": 1570, "sides": ["left", "right"], "anchor": "landing (s 1468) → street_out (s 1530)" }
+  ],
+  "worldPresets": {
+    "canyon": { "trackBiome": "canyon", "city": { "plate": "#cbbba8", "walk": "#e7d9c5", "curb": "#f5ecdd", "mark": "#fbf7ee" }, "nature": { "grass": "#6aae4c", "ditch": "#3e7d46", "hill": "#7b5bb8", "path": "#8c7a60" }, "markTrack": "#f3e6cf" },
+    "bucht":  { "trackBiome": "coast",  "city": { "plate": "#e6d2a6", "walk": "#f5e7c8", "curb": "#fff5e4", "mark": "#fffaf0" }, "nature": { "grass": "#8fcf45", "ditch": "#3f9fa4", "hill": "#46adb2", "path": "#b89a6c" }, "markTrack": "#fff4e2" },
+    "otown":  { "trackBiome": "city",   "city": { "plate": "#bfc9c0", "walk": "#e9ddc8", "curb": "#f4ecdc", "mark": "#fbf7ee" }, "nature": { "grass": "#a9cf55", "ditch": "#2c8578", "hill": "#2f8f83", "path": "#86708c" }, "markTrack": "#f3ead8" }
+  },
+  "light": {
+    "track":  { "hemiSky": "#eef4fa", "hemiGround": "#9a8a78", "hemi": 1.05, "sun": "#fff4e6", "sunI": 2.9 },
+    "city":   { "hemiSky": "#f1eefa", "hemiGround": "#a28f86", "hemi": 1.1,  "sun": "#fff0e4", "sunI": 2.75 },
+    "nature": { "hemiSky": "#eef8e2", "hemiGround": "#8f9a6c", "hemi": 1.0,  "sun": "#fff7da", "sunI": 3.05 }
+  },
+  "sockets": {
+    "note": "Anschlussnamen nach TRANSITION_GRAMMAR_T3_V1 §Anschlussvertrag. Geometrie-Owner: Blender B0. T4 liefert nur Lage und Layer-Fenster.",
+    "names": ["centerline_in", "centerline_out", "surface_left", "surface_right", "barrier_left", "barrier_right", "curb_left", "curb_right", "sidewalk_left", "sidewalk_right", "nature_left", "nature_right", "pit_in", "pit_out"]
+  }
+}
+

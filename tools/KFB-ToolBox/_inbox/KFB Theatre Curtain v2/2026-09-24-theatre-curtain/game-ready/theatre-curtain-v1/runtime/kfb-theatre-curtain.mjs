@@ -197,3 +197,19 @@ export class KFBTheatreCurtain{
   dispose(){this.running=false;cancelAnimationFrame(this.raf);this.ro&&this.ro.disconnect();for(const p of this.panels)p.geometry.dispose();if(this.material)this.material.dispose();this.renderer&&this.renderer.dispose();this.renderer&&this.renderer.domElement.remove()}
 }
 export async function mountKFBTheatreCurtain(el,o={}){const c=new KFBTheatreCurtain(o);await c.mount(el);return c}
+
+/* Receiving-host seam: the same Panel physics, rail and material with a shared renderer/clock.
+   Existing standalone mount stays unchanged. The consumer owns placement and lifecycle. */
+export async function createSharedTheatreCurtain({renderer,options={}}){
+  if(!renderer)throw Error('Shared renderer required');
+  const c=new KFBTheatreCurtain(options);c.renderer=renderer;c.scene=new THREE.Group();
+  await c.setMaterial(c.o.texture);
+  if(!c.material.map)throw new Error('Required original Curtain fabric did not load');
+  const half=c.o.width/2,base=[half+.06,c.o.height,c.o.top,half];
+  c.panels=[new Panel('left',...base),new Panel('right',...base)];
+  for(const p of c.panels){const m=new THREE.Mesh(p.geometry,c.material);m.castShadow=m.receiveShadow=true;m.frustumCulled=false;c.meshes.push(m);c.scene.add(m)}
+  c.makeRail();
+  c.scene.name='KFB Theatre Curtain · shared-host';
+  c.dispose=()=>{for(const p of c.panels)p.geometry.dispose();c.material.dispose();c.scene.removeFromParent();};
+  return c;
+}

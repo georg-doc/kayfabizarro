@@ -89,6 +89,8 @@ export function createCardBuilder(opts = {}) {
       try { registry = await (await fetch(url)).json(); break; } catch (e) { /* nächster */ }
     }
     if (!registry) registry = { decks: [], baseUrl: '' };
+    if(P.baseUrl)registry={...registry,baseUrl:P.baseUrl};
+    if(P.deckOverrides)registry={...registry,decks:(registry.decks||[]).map(d=>({...d,...(P.deckOverrides[d.packId]||{})}))};
     pmap = {};
     for (const d of (registry.decks || [])) pmap[d.packId] = d;
     return registry;
@@ -105,12 +107,12 @@ export function createCardBuilder(opts = {}) {
     try { raw = await (await fetch(fileUrl(rd.data))).json(); } catch (e) { deckCache.set(packId, []); return []; }
     const list = Array.isArray(raw) ? raw : (raw.cards || raw.data || []);
     const cards = list.map((c) => ({
-      n: c.cardNumber != null ? c.cardNumber : c.n,
-      title: c.cardName || c.t || '',
+      n: c.cardNumber != null ? c.cardNumber : (c.n ?? c.num),
+      title: c.cardName || c.t || c.name || '',
       power: c.power || c.p || '',
       lore: c.lore || c.l || '',
       deck: rd.title, packId, role: rd.role, gameMode: rd.gameMode,
-    })).filter((c) => c.n && c.title);
+    })).filter((c) => c.n && c.title && (!rd.allowedCardNumbers || rd.allowedCardNumbers.includes(c.n)));
     deckCache.set(packId, cards);
     return cards;
   }
@@ -185,6 +187,9 @@ export function createCardBuilder(opts = {}) {
     const pageNum = off + 1 + Math.floor((card.n - 1) / 4);
     const qi = (card.n - 1) % 4;
     const pg = await renderPage(fileUrl(rd.pdf), pageNum, P.pdfRes);
+    // Verified numbered crops override only their own cell; unmeasured siblings retain the deck grid.
+    const measured=rd.cardCrops?.[card.n];
+    if(measured){const cv=document.createElement('canvas');cv.width=Math.round(pg.width*measured.w);cv.height=Math.round(pg.height*measured.h);cellAspect=cv.width/cv.height;cv.getContext('2d').drawImage(pg,pg.width*measured.x,pg.height*measured.y,pg.width*measured.w,pg.height*measured.h,0,0,cv.width,cv.height);artCache.set(ck,cv);return cv;}
     const G = gridOf(rd);
     const gx = pg.width * G.x, gy = pg.height * G.y;
     const cw = Math.floor(pg.width * (G.w - G.gapX) / P.gridCols);
@@ -397,6 +402,8 @@ export function createCardBuilder(opts = {}) {
     name: 'kfb-card-builder',
     // ---- Daten
     loadRegistry, loadDeck, pool: buildPool,
+    // Full deck cover uses the same pinned PDF/cache owner as card artwork.
+    async renderDeckCover(packId, targetW=P.pdfRes){await loadRegistry();const d=pmap[packId];if(!d?.pdf)throw Error('Deck cover source missing '+packId);return renderPage(fileUrl(d.pdf),1,targetW);},
     get decks() { return (registry && registry.decks) || []; },
     get cellAspect() { return cellAspect; },
     // S62 · Abnahme des Sollformats. Sagt für die letzte eingelegte Zelle, wie viel Papierrand

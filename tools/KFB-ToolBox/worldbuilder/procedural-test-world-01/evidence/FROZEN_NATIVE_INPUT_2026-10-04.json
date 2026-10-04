@@ -1,0 +1,1070 @@
+{
+  "head": "2ffd7041e931f308c1408e5a5b67c97102564e24",
+  "checks": [
+    {
+      "name": "native required loader and one scene owner",
+      "pass": true,
+      "error": null
+    },
+    {
+      "name": "verified world master and shared physical ambience",
+      "pass": true,
+      "error": null
+    },
+    {
+      "name": "Clown real card handoff",
+      "pass": true,
+      "error": null
+    },
+    {
+      "name": "Driver key and real Ground Drive Ground transition",
+      "pass": false,
+      "error": "Error: Taxi must be actual nearest target"
+    }
+  ],
+  "errors": [],
+  "runtime": {
+    "player": {
+      "owner": "WB2 shared planar Ground",
+      "animationOwner": "KayKit native speed/phase mixer",
+      "sourcePin": "23615cffb515d03d2b6a0164b896dd08e3bc1bed",
+      "actorProfileId": "FrizzleBob_v5b",
+      "position": [
+        -2.277879331779761,
+        0.597056957036587,
+        -21.1657564277385
+      ],
+      "heading": 2.937500000000001,
+      "speed": 0,
+      "phase": 0.6978060759908367,
+      "rows": [
+        {
+          "role": "idle",
+          "clip": "Idle_A",
+          "speed": 0,
+          "cycleT": 1.067,
+          "leftFootDownPhase": null,
+          "weight": 1,
+          "time": 0.5570000000003141
+        }
+      ],
+      "bindings": {
+        "Idle_A": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 1.0666667222976685
+        },
+        "Walking_B": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 1.0666667222976685
+        },
+        "Running_A": {
+          "sourceTracks": 68,
+          "boundTracks": 68,
+          "duration": 0.800000011920929
+        },
+        "Running_B": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 0.800000011920929
+        }
+      },
+      "bodyHeight": 2.928408771430441,
+      "dance": {
+        "active": false,
+        "source": null,
+        "time": 0
+      },
+      "groundY": 0.597056957036587,
+      "mixerCount": 1
+    },
+    "mvp": {
+      "ready": true,
+      "entered": true,
+      "nearestInteraction": {
+        "id": "town.driver",
+        "distance": 2.0968351373091756
+      },
+      "selectedTarget": "town.driver",
+      "phase": "PLAYING",
+      "movementOwner": "WB2 Ground",
+      "residentSets": [
+        {
+          "id": "town.clown",
+          "evidence": {
+            "id": "town.clown",
+            "recipe": "clown",
+            "nodeIds": [
+              "podium",
+              "clown",
+              "hammer",
+              "pin_blue",
+              "ball",
+              "podium_hoop",
+              "hoop",
+              "podium_dog",
+              "dog_yellow",
+              "dog_red",
+              "dog_green",
+              "bomb_a",
+              "bomb_b",
+              "pin_green",
+              "pin_red",
+              "bal_blue_l",
+              "bal_green_l",
+              "bal_red_l",
+              "bal_green_r",
+              "bal_blue_r",
+              "bal_yellow_r"
+            ],
+            "notes": [
+              "clown: Pose \"Idle_B\" (General) gebunden, 69/69 Tracks",
+              "Jonglage gebaut: 3-club cascade · 183.8 throws/min · 1.96 s loop. Apex 0.85, g 9.81, Flug 0.833 s. Timing kommt aus der Flugbahn, nicht aus getipptem BPM.",
+              "Jonglage: Handanker aus der Recipe-Pose gemessen (L [0.511 / 0.586 / 0.107], R [-0.523 / 0.552 / 0.071]); Arme werden pro Frame aus der Basispose restauriert und per CCD auf die Throw/Catch-Scoop-Ziele geführt. Initialer Restfehler L/R 0 / 0.",
+              "Jonglage: jede Keule macht 2 Halbdrehungen pro Flug. Integer-Halbdrehungen + 6-Beat-Phasenfunktion schließen Lage und Orientierung konstruktiv; kein Keyframe-Drift.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [
+              "Ballon-Schwebehöhen sind Bildabgleich, keine gemessene Registry-Größe.",
+              "Die geteilte Bibliothek hat 119 Clips in 7 Sets, aber keinen Balance-Clip — über die vollständige Clip-Liste geprüft, nicht vermutet.",
+              "Promo-Hintergrund ist ein Studio-Violett; die Atlas-Grundbeleuchtung bleibt neutral, damit Residents vergleichbar bleiben.",
+              "Mehr als drei Keulen bleiben OPEN. Der vorhandene Brief verlangt vor 4–6 Keulen eine Flugbahn-/Abstandsrechnung; v1 promotet deshalb bewusst nur die belegte 3-Keulen-Cascade."
+            ],
+            "mixers": 1,
+            "activity": {
+              "kind": "juggle-cascade-v1",
+              "enabled": true,
+              "stats": {
+                "maxResidual": 0.0001478677850732767,
+                "minClubDistance": 0.00006591904919700232,
+                "samples": 726,
+                "timing": {
+                  "count": 3,
+                  "apex": 0.85,
+                  "gravity": 9.81,
+                  "dwellBeats": 0.45,
+                  "spinHalfTurns": 2,
+                  "flightSec": 0.8325684563173398,
+                  "flightBeats": 2.55,
+                  "beatSec": 0.3264974338499372,
+                  "cycleBeats": 6,
+                  "cycleSec": 1.9589846030996232
+                },
+                "handAnchorsLocal": {
+                  "l": [
+                    0.5113696211064352,
+                    0.586283327130279,
+                    0.10736508088991026
+                  ],
+                  "r": [
+                    -0.5227283784740555,
+                    0.552123843969869,
+                    0.07118932536657765
+                  ]
+                },
+                "lastResidual": {
+                  "l": 0,
+                  "r": 0
+                }
+              }
+            },
+            "eyeRigs": []
+          }
+        },
+        {
+          "id": "town.driver",
+          "evidence": {
+            "id": "town.driver",
+            "recipe": "driver",
+            "nodeIds": [
+              "driver"
+            ],
+            "notes": [
+              "driver: Pose \"Idle_A\" (General) gebunden, 69/69 Tracks",
+              "driver: posierte Unterkante lag 0.122 neben dem Boden — nachgesetzt, Restfehler -0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [],
+            "mixers": 1,
+            "activity": null,
+            "eyeRigs": []
+          }
+        },
+        {
+          "id": "dystopia.demon",
+          "evidence": {
+            "id": "dystopia.demon",
+            "recipe": "demon-lord",
+            "nodeIds": [
+              "circle",
+              "demon",
+              "heart"
+            ],
+            "notes": [
+              "demon: Batch-EyeRig · Profil demon-lord (Rig_Large, ADJUSTED_APPROVED) · 70 Augen-Dreiecke an DemonLord_Head ausgeblendet (geklonte Geometrie) · Lid #b58f83 (RÜCKFALL (nicht gemessen)).",
+              "demon: Pose \"Idle_A\" (General) gebunden, 52/52 Tracks",
+              "demon: posierte Unterkante lag 0.456 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [
+              "Kein Beschwörungs-Clip — Rig_Large hat 34 Clips, keiner davon ein Ritual. Idle_A ist gesetzt.",
+              "Der Kreis liegt unbewegt am Boden: keine Glut-, Rauch- oder Rotationsanimation im Pack.",
+              "Nur ein Signatur-Slot belegbar plus Kreis als Habitat — und der Slot ist seit S31 keine Hand-Befestigung mehr, sondern eine freie Schwebeposition (float 1,9). Höhe und Abstand sind gesetzt und gegen das Artwork geprüft, nicht gemessen: es gibt keine Größe im Pack, die sagt, wo ein schwebendes Herz hängen soll."
+            ],
+            "mixers": 1,
+            "activity": null,
+            "eyeRigs": [
+              {
+                "status": "OK",
+                "actorId": "demon-lord"
+              }
+            ]
+          }
+        },
+        {
+          "id": "utopia.robots",
+          "evidence": {
+            "id": "utopia.robots",
+            "recipe": "robots",
+            "nodeIds": [
+              "robot_one",
+              "robot_two"
+            ],
+            "notes": [
+              "robot_one: Pose \"Idle_A\" (General) gebunden, 69/69 Tracks",
+              "robot_one: posierte Unterkante lag 0.125 neben dem Boden — nachgesetzt, Restfehler -0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "robot_two: Pose \"Idle_B\" (General) gebunden, 69/69 Tracks",
+              "robot_two: posierte Unterkante lag 0.092 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [],
+            "mixers": 2,
+            "activity": null,
+            "eyeRigs": []
+          }
+        },
+        {
+          "id": "utopia.monstrosity",
+          "evidence": {
+            "id": "utopia.monstrosity",
+            "recipe": "monstrosity",
+            "nodeIds": [
+              "monster",
+              "shield",
+              "pitchfork"
+            ],
+            "notes": [
+              "monster: Batch-EyeRig · Profil monstrosity (Rig_Large, ADJUSTED_APPROVED) · 76 Augen-Dreiecke an Monstrosity_Head ausgeblendet (geklonte Geometrie) · Lid #b58f83 (RÜCKFALL (nicht gemessen)).",
+              "monster: Pose \"Melee_Blocking\" (CombatMelee) gebunden, 69/69 Tracks",
+              "monster: posierte Unterkante lag 0.420 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "shield: Identitäts-Drehung beibehalten, nur 0.5 entlang der eigenen [0, 0, 1]-Achse aus der Faust weg geschoben.",
+              "shield steckt in \"handslotl\" — Handoff nennt den Bone \"handslot.l\"; der GLTFLoader entfernt den Punkt. Gleicher Bone, andere Schreibweise.",
+              "pitchfork steckt in \"handslotr\" — Handoff nennt den Bone \"handslot.r\"; der GLTFLoader entfernt den Punkt. Gleicher Bone, andere Schreibweise.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [
+              "Keine Kulisse im Pack. Habitat bleibt leer statt mit Fremdpack-Möbeln gefüllt zu werden — wie beim Black Knight. Der Recap-GIF zeigt eine Kopfsteinpflaster-Insel im Nadelwald; beides ist nicht Teil des Packs.",
+              "Medium-Ausführungen liegen als Größenvergleich daneben und sind zuschaltbar; sie sind nicht als Zweitbewaffnung gedacht und seit S20 nicht mehr die getragene Ausrüstung.",
+              "Zweite Textur (monstrosity_texture_B.png) liegt im Pack, ist aber nicht als Farbvariante angelegt.",
+              "Ob das Ungeheuer ein Town-Bewohner oder ein Gegner ist, ist eine Erzählentscheidung — der Atlas führt es als Resident-Kandidaten wie alle anderen."
+            ],
+            "mixers": 1,
+            "activity": null,
+            "eyeRigs": [
+              {
+                "status": "OK",
+                "actorId": "monstrosity"
+              }
+            ]
+          }
+        },
+        {
+          "id": "protopia.farmers",
+          "evidence": {
+            "id": "protopia.farmers",
+            "recipe": "farmers",
+            "nodeIds": [
+              "plot_a",
+              "plot_b",
+              "plot_c",
+              "plot_d",
+              "farmer_a",
+              "farmer_b",
+              "pitchfork",
+              "wheelbarrow",
+              "barrow_empty",
+              "lettuce_a",
+              "lettuce_b",
+              "carrot_a",
+              "carrot_b",
+              "carrot_c",
+              "lettuce_c"
+            ],
+            "notes": [
+              "farmer_a: Pose \"Waving\" (Simulation) gebunden, 69/69 Tracks",
+              "farmer_a: posierte Unterkante lag 0.120 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "farmer_b: Pose \"Digging\" (Tools) gebunden, 50/50 Tracks",
+              "farmer_b: posierte Unterkante lag 0.188 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "pitchfork: Identitäts-Drehung beibehalten, nur 0.62 entlang der eigenen [0, -1, 0]-Achse aus der Faust weg geschoben.",
+              "pitchfork steckt in \"handslotr\" — Handoff nennt den Bone \"handslot.r\"; der GLTFLoader entfernt den Punkt. Gleicher Bone, andere Schreibweise.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [
+              "Series 6 enthält kein Fahrzeug (alle 916 Assets geprüft). Falls später ein Traktor dazukommt, muss es ein Modell mit echtem Innenraum sein — der Kenney-Traktor hat einen geschlossenen Kabinenkörper.",
+              "Kein Fahr-Clip in der Bibliothek — über alle 119 Clips geprüft. Bleibt relevant, falls ein offenes Fahrzeug dazukommt.",
+              "Der Promo zeigt vier Farmer in zwei Farbvarianten (A und B je zweimal, unterschiedliche Haut und Kleidung). Der Pack hat zwei Modelle mit zwei Texturen — die vier Figuren des Renders sind nicht vier Assets."
+            ],
+            "mixers": 2,
+            "activity": null,
+            "eyeRigs": []
+          }
+        },
+        {
+          "id": "protopia.lorekeeper",
+          "evidence": {
+            "id": "protopia.lorekeeper",
+            "recipe": "lorekeeper",
+            "nodeIds": [
+              "tome",
+              "lorekeeper",
+              "staff"
+            ],
+            "notes": [
+              "lorekeeper: Pose \"Idle_A\" (General) gebunden, 69/69 Tracks",
+              "lorekeeper: posierte Unterkante lag 0.644 neben dem Boden — nachgesetzt, Restfehler 0.000. Ursache ist Box3: sie sieht die Skinning-Verformung nicht, also gründet sie die Bind-Pose (S9). Bei flachen Clips ist das sichtbar, bei Standposen nicht.",
+              "staff ausgerichtet: eigene 010-Achse auf Weltrichtung [0.18, 0.97, 0.12] gerechnet (erreicht [0.181, 0.976, 0.121]). Die Z-Achse von handslotr liegt bei [-0.836, 0, -0.548] — ohne Rechnung liegt die Requisite flach.",
+              "staff steckt in \"handslotr\" — Handoff nennt den Bone \"handslot.r\"; der GLTFLoader entfernt den Punkt. Gleicher Bone, andere Schreibweise.",
+              "Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen."
+            ],
+            "open": [
+              "Nur zwei der sechs Signatur-Slots sind belegbar: der Pack hat drei Modelle, davon eines die Figur. Aktivitäts-, Sozial- und Eigenheit-Slot bleiben leer, statt sie mit Fremdpack-Objekten zu füllen.",
+              "Die Kerzen am Pult sind unbewegt — keine Flammen-Animation im Pack.",
+              "Idle_A ist eine neutrale Standhaltung, keine Leseanimation. Eine Schicht-Pose wäre möglich (Holding_C bindet 34/67), ist aber nicht gesetzt: die Promo zeigt den Stab gestützt, nicht das Buch gehalten."
+            ],
+            "mixers": 1,
+            "activity": null,
+            "eyeRigs": []
+          }
+        },
+        {
+          "id": "dystopia.band",
+          "evidence": {
+            "kind": "band",
+            "source": {
+              "commit": "b6afb431c25e48767bf875c8b2eb74866f6946e5",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/resident-band-module-01.json"
+            },
+            "performers": [
+              "leader",
+              "guitarist",
+              "drummer",
+              "trumpeter"
+            ],
+            "open": [],
+            "clock": "injected SongTransport; no audio/player/render loop"
+          }
+        },
+        {
+          "id": "dystopia.disco",
+          "evidence": {
+            "kind": "disco",
+            "source": {
+              "commit": "b6afb431c25e48767bf875c8b2eb74866f6946e5",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/resident-disco-01.json"
+            },
+            "performers": [
+              "minion",
+              "avian",
+              "teen",
+              "soldier",
+              "witch",
+              "knight",
+              "monstrosity",
+              "demon",
+              "mc"
+            ],
+            "open": [],
+            "clock": "injected SongTransport; no audio/player/render loop"
+          }
+        },
+        {
+          "id": "billboard.town",
+          "evidence": {
+            "source": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+              "blobSha": "751b69099ceaad0c1cb2147dc38e6a538840a8a4"
+            },
+            "id": "billboard.town",
+            "nativeFaceSize": {
+              "w": 12,
+              "h": 6,
+              "unit": "m",
+              "aspect": "2:1",
+              "canvas": [
+                1024,
+                512
+              ]
+            },
+            "content": [
+              {
+                "path": "media/kfb/KayfaBizarro_Card_Backside_01.png",
+                "blob": "d63c82eda4b26c3220ed389cd0310d959cb734b1"
+              }
+            ],
+            "updates": 633,
+            "lod": "hidden",
+            "loop": "native Clay kaleido-cuts",
+            "owner": "WB2 frame / native BillboardScheduler"
+          }
+        },
+        {
+          "id": "billboard.dystopia",
+          "evidence": {
+            "source": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+              "blobSha": "751b69099ceaad0c1cb2147dc38e6a538840a8a4"
+            },
+            "id": "billboard.dystopia",
+            "nativeFaceSize": {
+              "w": 12,
+              "h": 6,
+              "unit": "m",
+              "aspect": "2:1",
+              "canvas": [
+                1024,
+                512
+              ]
+            },
+            "content": [
+              {
+                "path": "Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf",
+                "blob": "432416a81a42eca6440711597f22bd667c2d9cca"
+              }
+            ],
+            "updates": 1,
+            "lod": "hidden",
+            "loop": "native Clay kaleido-cuts",
+            "owner": "WB2 frame / native BillboardScheduler"
+          }
+        },
+        {
+          "id": "billboard.utopia",
+          "evidence": {
+            "source": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+              "blobSha": "751b69099ceaad0c1cb2147dc38e6a538840a8a4"
+            },
+            "id": "billboard.utopia",
+            "nativeFaceSize": {
+              "w": 12,
+              "h": 6,
+              "unit": "m",
+              "aspect": "2:1",
+              "canvas": [
+                1024,
+                512
+              ]
+            },
+            "content": [
+              {
+                "path": "Deck_A_UTOPIA_-_Forget_Utopia web H.pdf",
+                "blob": "ab373a2c19e1ebc1694143d218037152853477cf"
+              }
+            ],
+            "updates": 1,
+            "lod": "hidden",
+            "loop": "native Clay kaleido-cuts",
+            "owner": "WB2 frame / native BillboardScheduler"
+          }
+        },
+        {
+          "id": "billboard.protopia",
+          "evidence": {
+            "source": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+              "blobSha": "751b69099ceaad0c1cb2147dc38e6a538840a8a4"
+            },
+            "id": "billboard.protopia",
+            "nativeFaceSize": {
+              "w": 12,
+              "h": 6,
+              "unit": "m",
+              "aspect": "2:1",
+              "canvas": [
+                1024,
+                512
+              ]
+            },
+            "content": [
+              {
+                "path": "Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1) web H.pdf",
+                "blob": "ec7c6001fcd276685647a14a4146061224faabd7"
+              }
+            ],
+            "updates": 1,
+            "lod": "hidden",
+            "loop": "native Clay kaleido-cuts",
+            "owner": "WB2 frame / native BillboardScheduler"
+          }
+        }
+      ],
+      "cards": [
+        {
+          "ref": "ignore_dystopia:1",
+          "artState": "artwork",
+          "sourcePin": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+          "cropEvidence": {
+            "futureDecks": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "page": 2,
+              "onlyCard": 1,
+              "method": "PDF Card-1 bounds measured at 1553 × 866; full deck is not crop-certified"
+            },
+            "antiRules": {
+              "pdf": "media/kfb/Anti-Rules_Toolkit - ADD web ID.pdf",
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "blob": "b903037242ef1b10623ff43e43bcc1bb8889a7df",
+              "page": 2,
+              "onlyCard": 1,
+              "normalizedCrop": {
+                "x": 0.0971428571,
+                "y": 0.1651728553,
+                "w": 0.3978571429,
+                "h": 0.3841229193
+              },
+              "semanticConflict": "PDF: Cry harder, Esq. / JSON: Dry leader. Busy. — PDF owns visual artwork"
+            }
+          }
+        },
+        {
+          "ref": "forget_utopia:1",
+          "artState": "artwork",
+          "sourcePin": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+          "cropEvidence": {
+            "futureDecks": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "page": 2,
+              "onlyCard": 1,
+              "method": "PDF Card-1 bounds measured at 1553 × 866; full deck is not crop-certified"
+            },
+            "antiRules": {
+              "pdf": "media/kfb/Anti-Rules_Toolkit - ADD web ID.pdf",
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "blob": "b903037242ef1b10623ff43e43bcc1bb8889a7df",
+              "page": 2,
+              "onlyCard": 1,
+              "normalizedCrop": {
+                "x": 0.0971428571,
+                "y": 0.1651728553,
+                "w": 0.3978571429,
+                "h": 0.3841229193
+              },
+              "semanticConflict": "PDF: Cry harder, Esq. / JSON: Dry leader. Busy. — PDF owns visual artwork"
+            }
+          }
+        },
+        {
+          "ref": "embrace_protopia:1",
+          "artState": "artwork",
+          "sourcePin": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+          "cropEvidence": {
+            "futureDecks": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "page": 2,
+              "onlyCard": 1,
+              "method": "PDF Card-1 bounds measured at 1553 × 866; full deck is not crop-certified"
+            },
+            "antiRules": {
+              "pdf": "media/kfb/Anti-Rules_Toolkit - ADD web ID.pdf",
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "blob": "b903037242ef1b10623ff43e43bcc1bb8889a7df",
+              "page": 2,
+              "onlyCard": 1,
+              "normalizedCrop": {
+                "x": 0.0971428571,
+                "y": 0.1651728553,
+                "w": 0.3978571429,
+                "h": 0.3841229193
+              },
+              "semanticConflict": "PDF: Cry harder, Esq. / JSON: Dry leader. Busy. — PDF owns visual artwork"
+            }
+          }
+        },
+        {
+          "ref": "anti_rules_toolkit:1",
+          "artState": "artwork",
+          "sourcePin": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+          "cropEvidence": {
+            "futureDecks": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "page": 2,
+              "onlyCard": 1,
+              "method": "PDF Card-1 bounds measured at 1553 × 866; full deck is not crop-certified"
+            },
+            "antiRules": {
+              "pdf": "media/kfb/Anti-Rules_Toolkit - ADD web ID.pdf",
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "blob": "b903037242ef1b10623ff43e43bcc1bb8889a7df",
+              "page": 2,
+              "onlyCard": 1,
+              "normalizedCrop": {
+                "x": 0.0971428571,
+                "y": 0.1651728553,
+                "w": 0.3978571429,
+                "h": 0.3841229193
+              },
+              "semanticConflict": "PDF: Cry harder, Esq. / JSON: Dry leader. Busy. — PDF owns visual artwork"
+            }
+          }
+        }
+      ],
+      "memory": {
+        "schema": "kfb.golden-journey-memory/1",
+        "seed": 3,
+        "sessionId": "55d8c5b2-dbd7-4850-bc9b-fa140ca41c83",
+        "receipts": [
+          {
+            "id": "55d8c5b2-dbd7-4850-bc9b-fa140ca41c83:0",
+            "ref": "resident:town.clown",
+            "kind": "met",
+            "residentId": "town.clown",
+            "worldId": "world.kfb-town",
+            "seed": 3,
+            "time": "2026-10-04T11:49:42.051Z",
+            "sourceCommit": "b6afb431c25e48767bf875c8b2eb74866f6946e5"
+          },
+          {
+            "id": "55d8c5b2-dbd7-4850-bc9b-fa140ca41c83:1",
+            "ref": "ignore_dystopia:1",
+            "kind": "card",
+            "residentId": "town.clown",
+            "worldId": "world.kfb-town",
+            "seed": 3,
+            "time": "2026-10-04T11:49:54.460Z",
+            "sourceCommit": "b6afb431c25e48767bf875c8b2eb74866f6946e5",
+            "assetSource": {
+              "commit": "9c2fee62b815f19cf967867f54985bd22e3f222b",
+              "blob": "432416a81a42eca6440711597f22bd667c2d9cca",
+              "canonicalRef": "ignore_dystopia:1"
+            },
+            "choice": "bingo",
+            "encounterId": "clown-onboarding"
+          },
+          {
+            "id": "55d8c5b2-dbd7-4850-bc9b-fa140ca41c83:2",
+            "ref": "resident:town.driver",
+            "kind": "met",
+            "residentId": "town.driver",
+            "worldId": "world.kfb-town",
+            "seed": 3,
+            "time": "2026-10-04T11:52:35.483Z",
+            "sourceCommit": "b6afb431c25e48767bf875c8b2eb74866f6946e5"
+          },
+          {
+            "id": "55d8c5b2-dbd7-4850-bc9b-fa140ca41c83:3",
+            "ref": "item.taxi-key.01",
+            "kind": "item",
+            "residentId": "town.driver",
+            "worldId": "world.kfb-town",
+            "seed": 3,
+            "time": "2026-10-04T11:52:40.307Z",
+            "sourceCommit": "b6afb431c25e48767bf875c8b2eb74866f6946e5",
+            "choice": "bingo",
+            "encounterId": "driver-key"
+          }
+        ],
+        "quests": [
+          "quest.deliver.dystopia01.orc-band"
+        ],
+        "completed": [
+          "clown-onboarding",
+          "driver-key"
+        ]
+      },
+      "audio": {
+        "id": "roadtrip-v2-soul-r-and-b-ambient-bed",
+        "state": "bereit",
+        "blobOk": true,
+        "songTime": 57.4,
+        "playedSeconds": 208.032,
+        "heardIntervals": [
+          [
+            0,
+            208.032
+          ]
+        ],
+        "playing": true
+      },
+      "drive": {
+        "active": false,
+        "owner": "WB2 Ground",
+        "routeId": null,
+        "distanceM": 0,
+        "speed": 0,
+        "trackOwner": "Track Core",
+        "source": {
+          "commit": "64cbf1031392029f25110dd613247b32148aae42",
+          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf",
+          "blobSha": "266c1113a22f85ee6851b5dab6a89fc51726f4f8"
+        }
+      },
+      "musicalWorld": {
+        "source": {
+          "catalogPin": "137735599a4747a373c3f978799880ef2b1c45d5",
+          "catalogPath": "media/3D_Assets/Sounds/jukebox.json",
+          "catalogBlob": "bcd4b6c3100cb83adacd90eb85c3d87fc617bcff",
+          "contextOwner": "KFB Travel Audio",
+          "clockOwner": "S16 SongTransport"
+        },
+        "catalogCount": 69,
+        "currentTrack": "roadtrip-v2-soul-r-and-b-ambient-bed",
+        "targetTrack": null,
+        "transportState": "bereit",
+        "blobOk": true,
+        "sourcePin": "2c31790078ff4b33ef8062b1d6a84e8fc33752e6",
+        "contextOwner": "KFB Travel Audio / canonical Jukebox",
+        "contextState": "running",
+        "transportContext": "borrowed shared KFB Travel Audio",
+        "stateVector": {
+          "biome": "town",
+          "deckFamily": null,
+          "motion": 0,
+          "verticality": 0.597056957036587,
+          "airborne": false,
+          "drive": false,
+          "danger": 0,
+          "social": 0,
+          "weatherIntensity": 0,
+          "timeOfDay": "day",
+          "event": null,
+          "residentSignature": null,
+          "voiceFocus": false
+        },
+        "physicalAmbience": [
+          "wind",
+          "engine",
+          "water"
+        ],
+        "voiceDuck": 0,
+        "voiceAvailable": false,
+        "voiceActive": false,
+        "dialogueFocus": false,
+        "transitions": [
+          {
+            "type": "catalog",
+            "time": 27599.100000000006,
+            "count": 69,
+            "source": {
+              "catalogPin": "137735599a4747a373c3f978799880ef2b1c45d5",
+              "catalogPath": "media/3D_Assets/Sounds/jukebox.json",
+              "catalogBlob": "bcd4b6c3100cb83adacd90eb85c3d87fc617bcff",
+              "contextOwner": "KFB Travel Audio",
+              "clockOwner": "S16 SongTransport"
+            }
+          },
+          {
+            "type": "scheduled",
+            "time": 28073.20000000001,
+            "id": "roadtrip-v2-soul-r-and-b-ambient-bed",
+            "reason": "ENTER / Town identity",
+            "scheduledTime": 0,
+            "transitionClass": "phrase-tail / physical-ambience bridge",
+            "state": {}
+          },
+          {
+            "type": "physical-loops-ready",
+            "time": 37431.5,
+            "ids": [
+              "wind",
+              "engine",
+              "water"
+            ]
+          },
+          {
+            "type": "transition",
+            "time": 45476.20000000001,
+            "id": "roadtrip-v2-soul-r-and-b-ambient-bed",
+            "reason": "ENTER / Town identity",
+            "scheduledTime": 0,
+            "transitionClass": "phrase-tail / physical-ambience bridge",
+            "t": 0.6498000000000175,
+            "actualTime": 45476.20000000001
+          },
+          {
+            "type": "master-started",
+            "time": 50338.79999999999,
+            "id": "roadtrip-v2-soul-r-and-b-ambient-bed",
+            "blob": "eceb55f0d022f512c938c8ff77f715bcc65e3e39",
+            "sourcePin": "2c31790078ff4b33ef8062b1d6a84e8fc33752e6"
+          },
+          {
+            "type": "master-restarted",
+            "time": 262635.4,
+            "id": "roadtrip-v2-soul-r-and-b-ambient-bed"
+          }
+        ]
+      },
+      "studio": {
+        "owner": "Asset Librarian applyFilters / native Registry source handoff",
+        "sceneOwner": "WB2",
+        "editOwner": "ToolBox Edit Layer",
+        "saveOwner": "WB2 scene document",
+        "placementGrid": "native Hex Atlas hex-grid.js @ 9c2fee62",
+        "buildingCandidates": 25,
+        "residentCandidates": 7
+      },
+      "chatter": {
+        "feed": 0,
+        "card": 0,
+        "faction": 0,
+        "emote": 0,
+        "reply": 0,
+        "feeds": 0
+      },
+      "scenePlacements": [
+        {
+          "id": "town.clown",
+          "position": [
+            -21,
+            0.5387470976419637,
+            3
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 0.5387470976419637
+        },
+        {
+          "id": "town.driver",
+          "position": [
+            -4.034,
+            0.5962746106517198,
+            -20.02
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 0.5962746106517198
+        },
+        {
+          "id": "dystopia.demon",
+          "position": [
+            45,
+            -8.741736442629723,
+            177
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": -8.741736442629723
+        },
+        {
+          "id": "utopia.robots",
+          "position": [
+            169,
+            4.752976650043068,
+            -48
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 4.752976650043068
+        },
+        {
+          "id": "utopia.monstrosity",
+          "position": [
+            162.464,
+            4.644373978328608,
+            -63.078
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 4.644373978328608
+        },
+        {
+          "id": "protopia.farmers",
+          "position": [
+            -175,
+            10.743011301940818,
+            100
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 10.743011301940818
+        },
+        {
+          "id": "protopia.lorekeeper",
+          "position": [
+            -217.668,
+            10.150792418155316,
+            106.428
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 10.150792418155316
+        },
+        {
+          "id": "dystopia.band",
+          "position": [
+            42,
+            -8.741736442629723,
+            178
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": -8.741736442629723
+        },
+        {
+          "id": "dystopia.disco",
+          "position": [
+            45,
+            -8.741736442629723,
+            177
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": -8.741736442629723
+        },
+        {
+          "id": "billboard.town",
+          "position": [
+            -14,
+            0.6059399273482171,
+            1
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 0.6059399273482171
+        },
+        {
+          "id": "billboard.dystopia",
+          "position": [
+            50,
+            -8.741774936240052,
+            175
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": -8.741774936240052
+        },
+        {
+          "id": "billboard.utopia",
+          "position": [
+            174,
+            4.777903285308439,
+            -50
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 4.777903285308439
+        },
+        {
+          "id": "billboard.protopia",
+          "position": [
+            -170,
+            10.743011301940818,
+            98
+          ],
+          "modelOffset": [
+            0,
+            0,
+            0
+          ],
+          "groundY": 10.743011301940818
+        }
+      ],
+      "sceneObjectCount": 39
+    },
+    "boot": {
+      "phase": "PLAYING",
+      "loader": "{\"completed\":10,\"total\":10,\"ready\":true,\"steps\":[\"curtain\",\"world\",\"objects\",\"player\",\"card:ignore_dystopia:1\",\"card:forget_utopia:1\",\"card:embrace_protopia:1\",\"card:anti_rules_toolkit:1\",\"audio\",\"interaction\"]}",
+      "sceneLoad": "{\"id\":\"billboard.protopia\",\"completed\":38,\"total\":39}",
+      "residentLoad": "{\"id\":\"protopia.lorekeeper\",\"done\":3,\"total\":3,\"item\":\"staff\"}",
+      "metrics": "{\"build\":\"2ffd7041e931f308c1408e5a5b67c97102564e24\",\"frames\":240,\"medianMs\":252.20000000001164,\"p95Ms\":316.20000000001164,\"drawCalls\":101,\"triangles\":211514,\"pixelRatio\":0.125,\"camera\":[-7.61965854924574,16.703305106383866,4.64312417893055]}",
+      "graphics": {
+        "inputPixelRatio": 0.125,
+        "capturePixelRatio": 0.5,
+        "backend": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "sceneKeys": [
+        "world.kfb-town/building/0",
+        "world.kfb-town/building/1",
+        "world.kfb-town/building/2",
+        "world.kfb-town/building/3",
+        "world.kfb-town/building/4",
+        "world.kfb-town/building/5",
+        "world.kfb-town/building/6",
+        "world.dystopia/building/0",
+        "world.dystopia/building/1",
+        "world.dystopia/building/2",
+        "world.dystopia/building/3",
+        "world.dystopia/building/4",
+        "world.utopia/building/0",
+        "world.utopia/building/1",
+        "world.utopia/building/2",
+        "world.utopia/building/3",
+        "world.utopia/building/4",
+        "world.utopia/building/5",
+        "world.protopia/building/0",
+        "world.protopia/building/1",
+        "world.protopia/building/2",
+        "world.protopia/building/3",
+        "world.protopia/building/4",
+        "world.protopia/building/5",
+        "world.protopia/building/6",
+        "town.clown",
+        "town.driver",
+        "dystopia.demon",
+        "utopia.robots",
+        "utopia.monstrosity",
+        "protopia.farmers",
+        "protopia.lorekeeper",
+        "town.taxi",
+        "dystopia.band",
+        "dystopia.disco",
+        "billboard.town",
+        "billboard.dystopia",
+        "billboard.utopia",
+        "billboard.protopia"
+      ]
+    },
+    "on": true
+  }
+}

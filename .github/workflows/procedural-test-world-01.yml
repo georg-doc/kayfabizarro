@@ -1,0 +1,37 @@
+name: Procedural Test World 01
+on:
+  push:
+    branches:
+      - chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-*/**'
+      - 'tests/procedural-test-world-01.test.mjs'
+      - '.github/workflows/procedural-test-world-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js
+      - name: Source tests
+        run: node --test tests/procedural-test-world-01.test.mjs tests/wb2-player.test.mjs qa/wb2-journey.test.mjs

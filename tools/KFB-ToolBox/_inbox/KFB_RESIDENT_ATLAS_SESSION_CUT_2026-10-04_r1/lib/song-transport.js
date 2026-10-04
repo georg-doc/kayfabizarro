@@ -37,7 +37,7 @@ function mapper(map) {
   return { beatAt, timeAt, spbAt };
 }
 
-export function createSongTransport(song, { storeKey = null, onEnded = null } = {}) {
+export function createSongTransport(song, { storeKey = null, onEnded = null, getSharedGraph = null, requireVerified = false } = {}) {
   const keyOf = (s) => (!storeKey ? null : s.id && s.id !== 'rubbish-groove' ? storeKey + '.' + s.id : storeKey);
   const load = (s) => { try { const k = keyOf(s); return k ? JSON.parse(localStorage.getItem(k) || 'null') : null; } catch { return null; } };
   const clock = { bpm: 100, phase: 0, beatsPerBar: 4 };
@@ -45,7 +45,9 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
   const audio = new Audio();
   audio.preload = 'auto';
   let state = 'lädt', blobHash = null, blobOk = null, playing = false, freeT = 0, map = null, gen = 0, url = null;
-  const listeners = new Set();
+  const listeners = new Set();let heard=[],previousHeard=0,previousWall=performance.now();
+  audio.addEventListener('timeupdate',()=>{const t=audio.currentTime,wall=performance.now(),delta=t-previousHeard;if(playing&&!audio.seeking&&delta>0&&delta<=(wall-previousWall)/1000*1.5+.5){heard.push([previousHeard,t]);heard.sort((a,b)=>a[0]-b[0]);const merged=[];for(const span of heard){const last=merged.at(-1);if(last&&span[0]<=last[1]+.04)last[1]=Math.max(last[1],span[1]);else merged.push([...span])}heard=merged;}previousHeard=t;previousWall=wall;});
+  audio.addEventListener('seeked',()=>{previousHeard=audio.currentTime;previousWall=performance.now();});
   const emit = () => listeners.forEach((f) => f());
   async function fetchSong(s, my, wantPlay) {
     try {
@@ -68,7 +70,7 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
     emit();
   }
   function setSong(s, wantPlay = false) {
-    gen++;
+    gen++;heard=[];previousHeard=0;previousWall=performance.now();
     audio.pause(); playing = false;
     T.song = s;
     Object.assign(clock, { bpm: s.bpm, phase: s.phaseOffset, beatsPerBar: s.beatsPerBar || 4 }, load(s) || {});
@@ -78,14 +80,14 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
     fetchSong(s, gen, wantPlay);
   }
   audio.addEventListener('ended', () => { playing = false; emit(); if (onEnded) onEnded(T.song); });
-  let actx = null, anl = null, abuf = null, fbuf = null, level = 0.6, bass = 0.5;
+  let borrowed=false, srcNode=null, outputGain=null;let actx = null, anl = null, abuf = null, fbuf = null, level = 0.6, bass = 0.5;
   function ensureAnalyser() {
     if (actx || state !== 'bereit') return;
     try {
-      actx = new (window.AudioContext || window.webkitAudioContext)();
-      const src = actx.createMediaElementSource(audio);
+      const shared=getSharedGraph?.();if(getSharedGraph&&!shared)throw Error('Shared audio graph missing');borrowed=!!shared;actx=shared?.context||new (window.AudioContext || window.webkitAudioContext)();
+      const src = srcNode = actx.createMediaElementSource(audio);
       anl = actx.createAnalyser(); anl.fftSize = 1024; abuf = new Float32Array(anl.fftSize); fbuf = new Uint8Array(anl.frequencyBinCount);
-      src.connect(anl); anl.connect(actx.destination);
+      outputGain=actx.createGain();outputGain.gain.value=1;src.connect(anl);anl.connect(outputGain);outputGain.connect(shared?.music||actx.destination);
     } catch { actx = null; }
   }
   const songTime = () => (state === 'bereit' ? audio.currentTime : freeT);
@@ -97,6 +99,7 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
   const T = {
     song, clock,
     get playing() { return playing; }, get state() { return state; }, get blobOk() { return blobOk; }, get blobHash() { return blobHash; },
+    get playedSeconds(){return heard.reduce((n,s)=>n+s[1]-s[0],0);},get heardIntervals(){return heard.map(s=>[...s]);},
     get duration() { return audio.duration || T.song.duration || 120; },
     get mapped() { return !!map; },
     onChange(f) { listeners.add(f); return () => listeners.delete(f); },
@@ -126,7 +129,9 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
     },
     /* ohne Audiodatei läuft die Uhr frei weiter — der Host treibt sie mit tick(dt) */
     tick(dt) { if (playing && state !== 'bereit') freeT += dt; },
-    play() { playing = true; ensureAnalyser(); if (actx && actx.state === 'suspended') actx.resume(); if (state === 'bereit') audio.play().catch(() => { playing = false; emit(); }); emit(); },
+    setLevel(v,tau=.1){if(outputGain&&actx)outputGain.gain.setTargetAtTime(Math.max(0,Math.min(1,v)),actx.currentTime,tau);},
+    get audioContextOwner(){return borrowed?'borrowed shared KFB Travel Audio':'native S16';},
+    play() { if(requireVerified&&(state!=='bereit'||blobOk!==true))return false;playing = true; ensureAnalyser(); if (actx && actx.state === 'suspended') actx.resume(); if (state === 'bereit') audio.play().catch(() => { playing = false; emit(); }); emit(); },
     pause() { playing = false; audio.pause(); emit(); },
     toggle() { playing ? T.pause() : T.play(); },
     restart() { setSongTime(map ? T.seekTimeOfBeat(0) : clock.phase); emit(); },
@@ -142,7 +147,7 @@ export function createSongTransport(song, { storeKey = null, onEnded = null } = 
       const bp = T.beatPos(), bpb = clock.beatsPerBar;
       return { time: songTime(), dur: audio.duration || 0, playing, beatPos: bp, bar: Math.floor(bp / bpb) + 1, beat: Math.floor(mod(bp, bpb)) + 1, bpm: map ? +T.localBpm().toFixed(1) : clock.bpm, phase: clock.phase, shift: +shift().toFixed(3), mapped: !!map };
     },
-    dispose() { T.pause(); audio.src = ''; if (url) URL.revokeObjectURL(url); if (actx) actx.close(); listeners.clear(); }
+    dispose() { T.pause(); audio.src = ''; if (url) URL.revokeObjectURL(url); srcNode?.disconnect();anl?.disconnect();outputGain?.disconnect();if (actx&&!borrowed) actx.close();listeners.clear(); }
   };
   setSong(song);
   return T;

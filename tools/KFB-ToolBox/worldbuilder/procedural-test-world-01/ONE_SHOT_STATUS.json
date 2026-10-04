@@ -1,0 +1,665 @@
+{
+  "schema": "kfb.one-shot-status/1",
+  "date": "2026-10-04",
+  "mode": "ONE_SHOT",
+  "owner": "KFB WorldBuilder / WB2",
+  "repo": "georg-doc/kayfabizarro",
+  "pr": 348,
+  "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "observedReturnedHead": "6ae41e370c930637d57a65d7da79b4131b08f9df",
+  "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
+    "status": "SITE_DEPLOYED_HUMAN_VISUAL_FAIL",
+    "deploymentHead": "6ec3e9dfb27d7db2b93ff52f58393e270e721513",
+    "runtimeSourceHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "cloudflare": "SUCCESS",
+    "publicBrowserVerified": false,
+    "live": "UNCHANGED",
+    "role": "SECONDARY_CLOUDFLARE_MIRROR",
+    "hubHead": "5bc24120a0e7ee98abfb924a40aff33e059792dc",
+    "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "cloudflareRole": "SECONDARY_MIRROR"
+  },
+  "productOutcome": "PUBLISH_EXACT_FOUR_ISLAND_CANDIDATE_TO_EXISTING_GPT_SITE_FOR_HUMAN_FREEPLAY",
+  "state": "FOUR_ISLAND_CANDIDATE_SITE_PUBLISHED_GEORG_FREEPLAY_PENDING",
+  "checkpointStatus": {
+    "topology": "PASS_KEEP",
+    "worldOwnership": "PASS_KEEP",
+    "trackGraph": "PASS_KEEP",
+    "goldenAnchors": "PASS_KEEP",
+    "playerMotion": "BROWSER_PASS_KEEP",
+    "visibleFoundation": "FOUR_NATIVE_REPRESENTATIVE_VIEWS_PASS_HUMAN_FREEPLAY_PENDING",
+    "residentsActivities": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "driveTaxi": "PRIOR_DIRECT_PRODUCT_PASS_KEEP_OPTIONAL_NO_CURRENT_RECERTIFICATION",
+    "chatterCards": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "dystopiaPerformance": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "utopiaProtopia": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "curtainCharacterSelect": "NATIVE_LOADER_BROWSER_PASS_CHARACTER_SELECT_PENDING",
+    "almanacLeanMemory": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
+    "goldenJourneyE2E": "HARNESS_ENDPOINT_FAILURE_QUARANTINED_NOT_PRODUCT_FAILURE",
+    "publicStage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
+    "humanAcceptance": "PENDING_GEORG_FREEPLAY",
+    "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "primaryGptSite": "PUBLISHED_FROZEN_CANDIDATE_BROWSER_UNVERIFIED"
+  },
+  "visibleSourceFirewall": {
+    "rejectVisible": [
+      "fixtures/huerth-b1-siblings-v0.json",
+      "tools/osm-city-lab/",
+      "elastic-grotesque-clay-huerth01"
+    ],
+    "intended": {
+      "town": [
+        "KayKit Medieval Hex RED family",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "dystopia": [
+        "Kenney City Kit Industrial",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "utopia": [
+        "KayKit Space Base Bits",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ],
+      "protopia": [
+        "KayKit Medieval Hex GREEN family",
+        "current R2D terrain/nature",
+        "K2/v10 presentation"
+      ]
+    },
+    "hold": [
+      "Quaternius SciFi Ultimate Space Kit until isolated source proof"
+    ]
+  },
+  "verification": {
+    "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+    "criticContractMainHead": "b0696f7491450f03e0c6a1dce2a57ecfe21c0e74",
+    "deterministicScreenshotHarness": "SOURCE_DETAIL_AND_INTEGRATED_WORLD_PRESETS_IMPLEMENTED",
+    "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
+    "wholeGameCritic": {
+      "result": "NOT_ACCEPTED_REQUIRED_EVIDENCE_MISSING",
+      "dimensions": [
+        {
+          "name": "SOURCE_FIDELITY",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "KFB_VISUAL_COHERENCE",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "WORLD_IDENTITY_AND_BIOGRAPHY",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "COMPOSITION_AND_LIVINGNESS",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "PLAYER_MOVEMENT_CAMERA_INTERACTION",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "RESIDENT_CARD_CHATTER",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "AUDIO_PERFORMANCE_FEEL",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "TECHNICAL_HEALTH",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        },
+        {
+          "name": "GOLDEN_JOURNEY_AND_PERSISTENCE",
+          "score": null,
+          "status": "UNGRADED_WITHHELD"
+        }
+      ],
+      "weightedScore": null,
+      "sourceFidelityWholePass": false,
+      "wholeJourneyPass": false,
+      "wholeFreshJourneyImportPass": false
+    },
+    "externalCritic": "independent_critic · no production edits",
+    "sourceInspection": "FOUR_BUILDING_FAMILIES_AND_CLOWN_FARMERS_LOREKEEPER_MONSTROSITY_DEMON_BUSH_ORIGINALS_VIEWED",
+    "latestBrowserRun": {
+      "id": 37185405987,
+      "head": "286b30163c1bd32e88823ea767dfbe451217443d",
+      "result": "PASS",
+      "pageErrors": 0,
+      "consoleErrors": 0
+    },
+    "qaEnvironment": "SwiftShader input raster .125; canonical source/product captures .5 after two native rendered frames. Full scene and native simulation unchanged. No production performance PASS; actual GPU backend and frame metrics recorded.",
+    "artifact": {
+      "id": 11296770456,
+      "sha256": "e0aaf0fc34a3d8228c40662a39ef49dd31266d8b838cdc6f7015813456541853"
+    },
+    "independentCritic": {
+      "result": "FOUNDATION_REPAIR_REQUIRED",
+      "issues": [
+        "road source vertex colours suppressed",
+        "receiving T3 bush oversized",
+        "shared material facets too regular",
+        "living place composition incomplete"
+      ]
+    },
+    "journeyPureContracts": "4/4 PASS",
+    "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING",
+    "localMvp": "Actual 10/10 loader; ENTER; 39 canonical objects (25 native buildings + 14 gameplay/source objects); canonical master blob PASS; one borrowed Travel Audio graph with wind/engine/water; native Clown Card; native Frizzle actor swap. Full Golden/browser persistence pending.",
+    "latestIntegratedBrowserRun": {
+      "id": 37189602458,
+      "receivingHead": "4e270c314e47ffb2b12c921ea748f410b4c385ce",
+      "testedMergeHead": "c6e6be3eb95aa0718783eea9e64ad3cfce764803",
+      "result": "FAIL_BOOT_TIMEOUT_PROGRESS_TO_FARMERS",
+      "pageErrors": 0,
+      "consoleErrors": 1,
+      "artifact": 11299135235,
+      "sha256": "5b34f5104aee317ae873d90e7c3802303aebdc582d482c68d7266d5ea5ddb504",
+      "runtime": "Demon, Robots and Monstrosity completed; Farmers plot_d completed; 30/39 scene objects"
+    },
+    "coldLoadRepair": "Repair 1 reached Clown/Driver; repair 2 reached Demon/Robots/Monstrosity/Farmers. Both progressed; no two consecutive non-improving repairs. Next candidate defers invisible world rendering and resident updates behind opaque native loading Curtain, keeping one renderer/scene/owner. Actual requestdiagnostics identify 404 as Librarian relative browse-filters.css; module-relative path fixed.",
+    "criticRound2": {
+      "dimension": "partial Town source fidelity",
+      "score": 8,
+      "status": "PROVISIONAL_NO_WHOLE_GAME_PASS",
+      "repairs": [
+        "native Play/Edit controls retained; Journey file actions in Almanac; authoring files in Library",
+        "Native gameplay HUD reused for I prompt",
+        "Card subject subdialog respects native six-action limit"
+      ]
+    },
+    "localStudio": {
+      "status": "LOCAL_NATIVE_FRESH_SEPARATE_ORIGIN_IMPORT_EXPORT_5_OF_5_PASS",
+      "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/LOCAL_STUDIO_FRESH_IMPORT_2026-10-04.json",
+      "objects": 40,
+      "sculptStrokes": 1,
+      "checks": [
+        "schema",
+        "count40",
+        "sculptExact",
+        "editedObjectsExact",
+        "worldSourceExact"
+      ],
+      "wholeJourneyFreshContextPass": false
+    },
+    "criticRound3": {
+      "status": "PARTIAL_NO_WHOLE_GAME_PASS",
+      "improved": [
+        "grouped toolbar",
+        "native visible I hint",
+        "Billboard crop objection withdrawn against native kaleidoscope behavior"
+      ],
+      "open": [
+        "distant apparently floating Residents: diagnose source support and view",
+        "first frame castle/tavern crop and dominant road",
+        "Library technical filenames"
+      ]
+    },
+    "partySupportRepair": "Actual DOM spatial readback: Dystopia ground/rootY -8.7417, but Band modelOffsetY8.8371/Disco8.7484. Generic receiver groundModelLocal duplicated donor support and caused apparent float. Preserve native donor local ground, exclude performanceSet from generic actor grounding; exact zero-offset check added to Golden loader gate.",
+    "criticRound4": {
+      "status": "PARTIAL_TARGETED_REPAIRS_PASS_NO_WHOLE_GAME_PASS",
+      "partySupport": "PASS actual source offsets0 and image comparison",
+      "firstFrame": "PASS after two bounded Ground camera framing passes; castle/tavern whole, Player/Clown/I readable",
+      "optional": [
+        "dominant road band",
+        "uniform ground/sky",
+        "material polish"
+      ],
+      "localMetrics": {
+        "frames": 240,
+        "medianMs": 14.8,
+        "p95Ms": 17.9,
+        "drawCalls": 354,
+        "triangles": 409105,
+        "pixelRatio": 2,
+        "scope": "one local Town view only"
+      }
+    },
+    "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
+    "integratedBrowserLatestCompleted": {
+      "run": 37199802833,
+      "job": 111428969457,
+      "receivingHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+      "testedMergeHead": "2ffd7041e931f308c1408e5a5b67c97102564e24",
+      "pass": 3,
+      "fail": 1,
+      "notRun": 8,
+      "pageConsoleErrors": 0,
+      "artifact": 11302144306,
+      "sha256": "3dbee626e50d1a72708a0fd7b83cf363709c155625b275df9c9ebef64b48c62d"
+    },
+    "heldInputRepair": {
+      "status": "CANDIDATE_NOT_BROWSER_PROVEN",
+      "change": "Hold actual W/A/D keys until measured native position/heading progresses; bounded 15s per movement; cheap read-only native state polling",
+      "productControllerChanged": false,
+      "teleports": false,
+      "clockAcceleration": false
+    },
+    "semanticWaitRepair": {
+      "status": "CANDIDATE_NOT_BROWSER_PROVEN",
+      "changes": [
+        "Actual native offer completed before Escape",
+        "Existing encounter owner read-only current accessor; wait for leave before new input",
+        "Bounded native offer UI wait30s",
+        "Restore established input .25/capture .5 settings"
+      ],
+      "productBehaviorChanged": false
+    },
+    "continuousHeldInputCandidate": {
+      "status": "NOT_BROWSER_PROVEN",
+      "change": "Hold actual native key to measured waypoint progress / target heading, instead of tiny sequential key pulses. Native simulation and collisions unchanged. Include actual frame metrics in checkpoint. Fix capped telemetry ring cadence to every30frames."
+    },
+    "boundedSoftwareSemanticRepair": {
+      "status": "CANDIDATE_NOT_PROVEN",
+      "turnTimeoutSeconds": 60,
+      "segmentTimeoutSeconds": 120,
+      "routeTimeoutSeconds": 900,
+      "jobTimeoutMinutes": 60,
+      "performancePass": false,
+      "rule": "Native dt, speed, collision and full rendered scene unchanged; next non-improving Driver gate failure freezes candidate with complete failure recovery.",
+      "inputPixelRatio": 0.125,
+      "capturePixelRatio": 0.5
+    },
+    "localHeadlessHardware": "Unavailable: isolated installed Chrome launch terminated by platform EPERM even with execution escalation. Personal browser profile untouched; no further retry.",
+    "nativeRoadSupportRepair": {
+      "status": "CANDIDATE_NOT_BROWSER_PROVEN",
+      "defect": "Visible native island roads extend beyond island SDF. Ground wrongly rejected authored bridgehead outside SDF, producing -44m void immediately after bridge cap.",
+      "change": "Existing archipelago groundAt supports all actual node roads, bridge priority unchanged. No added road/controller/teleport.",
+      "isolatedTopology": {
+        "allThreeRoutesConnected": true,
+        "maxNativeSampleStepsM": [
+          0.4591426,
+          0.6201449,
+          0.6434145
+        ],
+        "buildingCollisionIncluded": false
+      },
+      "sourceTests": "19/19 PASS",
+      "harness": "Actual start connects to grid only after continuous native support/solid probes; complete route grid saved as artifact"
+    },
+    "boundedWaypointRepair": {
+      "status": "FINAL_BOUNDED_CANDIDATE",
+      "change": "Keep full contiguous straight grid runs, no artificial8m splits. After actual key-up, accept a waypoint physically crossed within1.35m of its segment instead of walking backwards. Record all actual before/after native state.",
+      "nativeRulesUnchanged": true,
+      "collisionBypass": false,
+      "teleports": false,
+      "clockAcceleration": false,
+      "rule": "Another non-improving Dystopia traversal failure freezes candidate and exports full failure recovery. No Stage without full journey."
+    },
+    "freezeIndependentCritic": "CONFIRMED_STOP_JUSTIFIED_NO_MORE_REPAIR"
+  },
+  "lastProven": {
+    "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
+    "sourceTests": "19/19 local PASS",
+    "browserPlayer": "10/10 PASS",
+    "resourceRegistry": "PASS",
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
+    "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
+  },
+  "weakestRequiredDimension": "HUMAN_RUNTIME_VISUAL_AND_PLAYABILITY_REVIEW",
+  "repairAttempts": {
+    "sourceMaterial": 1,
+    "DriverBrowserTraversalNonImproving": 0,
+    "DystopiaRoadSupportNonImproving": 0,
+    "DystopiaBrowserTraversalNonImproving": 1,
+    "NativeInputTraversalEndpointArrivalNonImproving": 2
+  },
+  "openCoreBlockers": [
+    "Actual runtime visual/playability of candidate is unreviewed because candidate is not yet published to the primary Site.",
+    "Automated browser QA remains blocked by external admin policy service; this is not a product blocker."
+  ],
+  "quarantinedDeferred": [
+    "ActionFigure compatibility smoke",
+    "full Rig_Large parity",
+    "perfect cape secondary motion",
+    "Combat Mech patrol if source conflicts",
+    "full flight",
+    "wrestling combat physics",
+    "organ attractions",
+    "general inventory economy"
+  ],
+  "nextInternalAction": "GEORG_FREEPLAY_ALL_FOUR_ISLANDS_ON_SAME_GPT_SITE",
+  "invalidStopMessages": [
+    "Player checkpoint complete",
+    "next internal step is Residents",
+    "local preview ready",
+    "module ready for integration",
+    "next WSA task is"
+  ],
+  "verifiedBaseHead": "3989ae8a6aa12f6c00004fcc39b884285ff51077",
+  "donorClassification": {
+    "KEEP": [
+      "WB2 owner",
+      "four-island topology",
+      "Track graph",
+      "Golden anchors",
+      "native Player/Motion"
+    ],
+    "REPLACE": [
+      "visible legacy building presenter"
+    ],
+    "QUARANTINE": [
+      "legacy OSM content/data/presentation",
+      "Quaternius SciFi until isolated proof"
+    ],
+    "REPAIR": [
+      "runtime source audit and deterministic screenshot evidence"
+    ]
+  },
+  "lastImplementationCheckpoint": "1df8edaeb11b695821f73c695b328b00fd85e42f",
+  "audioMusicalWorldShowcase": {
+    "status": "IMPLEMENTED_TOWN_AUDIO_BROWSER_PASS_FULL_SHOWCASE_UNPROVEN",
+    "brief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE_2026-10-04.md",
+    "fixture": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE.json",
+    "audioSource": {
+      "pr": 352,
+      "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+      "head": "137735599a4747a373c3f978799880ef2b1c45d5",
+      "testedProductHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
+      "counts": {
+        "masters": 69,
+        "roadTripWorld": 59,
+        "stemFamilies": 29
+      }
+    },
+    "slice1": "Explore → movement/platformer lift → Drive → Dystopia party → Explore/world handoffs",
+    "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
+    "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
+  },
+  "frozenRuntimeHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+  "freezeRecovery": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.json",
+  "failureClassificationOverride": {
+    "previous": "FROZEN_FAILED_CANDIDATE",
+    "current": "HARNESS_ENDPOINT_FREEZE_NOT_GLOBAL_PRODUCT_FAILURE",
+    "basis": [
+      "Frozen recovery explicitly says test harness endpoint arrival failure is not proof Taxi runtime or bridge support failed",
+      "Earlier run 37196264077 proved Ground→Drive→Ground with 6.077702m actual driving",
+      "Two-pass stop applies to harness method unless same defect is directly reproduced in product"
+    ]
+  },
+  "currentRecoveryAuthority": [
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md",
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md",
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/JOYRIDE_VISUAL_WORLD_RECOVERY_BRIEF_2026-10-04.md"
+  ],
+  "qaHarness": {
+    "status": "QUARANTINED_SUPPLEMENTARY_QA",
+    "goldenJourneyEndpointPlanner": "QUARANTINED",
+    "rule": "Do not infer product failure and do not block private Site publication from this tool blocker.",
+    "regularBrowser": "BLOCKED_EXTERNAL_ADMIN_POLICY_SERVICE"
+  },
+  "productRecovery": {
+    "authority": "WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md",
+    "receivingBase": "a4aef58ffc6ab252a4b53c018f4b482a7834d880",
+    "seams": [
+      {
+        "seam": "Loader/Enter",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native loader 10/10 READY and actual Enter PLAYING on unchanged runtime."
+      },
+      {
+        "seam": "Player/Ground/camera",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Prior native browser10/10 preserved; current direct W/D taps move position without bot. Sustained freeplay remains Georg gate."
+      },
+      {
+        "seam": "Clown/Card",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native I target Clown, actual bubble/BINGO response. Prior actual card receipt and persistence preserved."
+      },
+      {
+        "seam": "Studio Play/Build/source/edit/sculpt/save",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native original well isolate/place/scale1.25/move[-12.05,.3873,5.1953],41objects2strokes exported; native saved reload shows2strokes."
+      },
+      {
+        "seam": "Fresh authoring import",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Unchanged runtime prior actual separate-origin GUI import/reexport5/5 exact comparisons."
+      },
+      {
+        "seam": "Taxi/Drive",
+        "classification": "OPTIONAL",
+        "evidence": "Prior actual Ground Drive Ground6.077702mPASS; no current product defect reproduced."
+      },
+      {
+        "seam": "Long route planner/endpoint certification",
+        "classification": "HARNESS DEFECT",
+        "evidence": "Quarantined nonblocking bot arrival strategy; history retained. No further repairs in MVP1."
+      },
+      {
+        "seam": "Full concert/fourCardJourney/wholecritic",
+        "classification": "UNPROVEN",
+        "evidence": "Follow-up content/QA gates."
+      },
+      {
+        "seam": "Representative satellite visuals",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Actual fresh-origin current product native camera buttons Town/Dystopia/Utopia/Protopia all rendered and captured; RED/KenneyIndustrial/SpaceBase/GREEN visible; no rejected OSM foundation observed."
+      }
+    ],
+    "productDefects": [],
+    "humanGate": "Georg freeplays actual MVP1",
+    "stage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
+    "runtimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "currentNextAction": "Georg freeplays primary GPT Site; regular browser game verification remains open until policy service works. Preserve same WB2 owner; no bot repair.",
+    "tests": {
+      "localSource": 19,
+      "localPass": 19,
+      "currentFourWorldViews": 4,
+      "priorFreshOriginRoundtripComparisons": 5,
+      "currentSustainedPlayerInput": "Prior native10/10 kept; current CUA tap-only probe responsive, not new sustained-input certification"
+    },
+    "modelSwitch": {
+      "reason": "User reports selected model at capacity; safe checkpoint requested",
+      "scopeUnchanged": true,
+      "noNewChatRequired": true,
+      "resumed": true
+    },
+    "publicationEvidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/MVP1_STAGE_PUBLICATION_2026-10-04.json",
+    "publicationHead": "6ec3e9dfb27d7db2b93ff52f58393e270e721513",
+    "browserBlocker": {
+      "status": "BLOCKED_TOOL_SECURITY_POLICY_UNAVAILABLE",
+      "exactRouteAttempted": true,
+      "visibleRevisionVerified": false,
+      "reason": "Browser security check unavailable: admin-enforced policy could not be verified; access not granted.",
+      "bypassAttempted": false
+    },
+    "primarySite": {
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+      "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+      "deploymentId": "appgdep_6ac276cdd08481919ed7a436f9308775",
+      "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+      "status": "succeeded",
+      "audience": "OWNER_PRIVATE",
+      "sourceCommit": "45b28d444960cc0acab4a0a72359e5289e197506",
+      "sourceRuntimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+      "exactRuntimeFiles": 80,
+      "iframe": false,
+      "newRuntimeOwner": false,
+      "browserPlayVerification": "NOT_RUN_TOOL_POLICY_SERVICE_UNAVAILABLE"
+    },
+    "productDelivery": "PUBLISHED_PRIMARY_SITE_WITH_EXPLICIT_BROWSER_VERIFICATION_LIMIT"
+  },
+  "historicalWholeJourneyBlockers": [
+    "Full four-world Golden Journey",
+    "Actual natural concert completion and learned dance in the journey",
+    "Utopia/Protopia ordered interactions and four Cards",
+    "Fresh-context Journey export/import/actual resume",
+    "Full CLI Studio gauntlet (supplementary GUI roundtrip passes)",
+    "61 canonical source/adapted/detail/integrated captures and final loaded-source audit",
+    "Whole nine-dimension score and integrated performance"
+  ],
+  "openDeliveryVerification": [
+    "Georg freeplay acceptance pending; automated browser verification unavailable and nonblocking for publication."
+  ],
+  "primaryPlatform": "GPT_SITE",
+  "primarySite": {
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "status": "succeeded",
+    "audience": "OWNER_PRIVATE",
+    "sourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
+    "sourceRuntimeHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "exactRuntimeFiles": 92,
+    "iframe": false,
+    "newRuntimeOwner": false,
+    "browserPlayVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE"
+  },
+  "humanAcceptance": {
+    "status": "PENDING",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "gate": "Georg freeplay"
+  },
+  "joyridePresentation": {
+    "status": "REQUIRED_MISSING",
+    "pin": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+    "source": {
+      "trackLookV5Blob": "7c0d248391c3eaf1887a0afc97ee02b25f6dec85",
+      "roadMarkingsM1Blob": "68a0c21a2c68c0b7db72046146008b474979ec15",
+      "transitionAtlasV1Blob": "cfef150a74060bfc6ff00ab049529d8710845bfc"
+    },
+    "required": [
+      "T4 clay strand visual language",
+      "K2 clay material/presentation",
+      "M1/M2 road marking language",
+      "rounded clay barriers and band heads",
+      "transition atlas / clay patches instead of hard cuts",
+      "road visually integrated with rolling clay terrain",
+      "KFB clay VFX where relevant"
+    ],
+    "knownMissingModule": "buildClayStrand(THREE, stream, …)",
+    "rule": "Track Core remains route/support/collision owner; Joyride supplies PRESENTATION, not a second road runtime."
+  },
+  "fourIslandRecovery": {
+    "required": true,
+    "topology": "KEEP_CURRENT_WORLD_RECIPES",
+    "islands": {
+      "world.kfb-town": {
+        "seed": 3,
+        "biome": "burg",
+        "deckId": null,
+        "paletteKey": "burg",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.dystopia": {
+        "seed": 11,
+        "biome": "dystopia",
+        "deckId": "ignore_dystopia",
+        "paletteKey": "dystopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.utopia": {
+        "seed": 17,
+        "biome": "utopia",
+        "deckId": "forget_utopia",
+        "paletteKey": "utopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.protopia": {
+        "seed": 23,
+        "biome": "protopia",
+        "deckId": "embrace_protopia",
+        "paletteKey": "protopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      }
+    },
+    "islandForm": "EXCAVATED_TREE_WITH_VISIBLE_ROOTS",
+    "trackPresentation": "JOYRIDE_J14_T4_REQUIRED_OVER_EXISTING_TRACK_CORE",
+    "buildings": "VISIBLE_SOURCE_MANIFEST_ONLY_WITH_TRACK_CLEARANCE",
+    "clearance": {
+      "buildingTrackIntersectionsRequired": 0,
+      "bridgeheadIntersectionsRequired": 0,
+      "protectedAnchorCollisionsRequired": 0
+    },
+    "paletteSource": "R2C PAL @ current main",
+    "siteUpdate": "SAME_GPT_SITE_IN_PLACE",
+    "implementationHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "status": "PUBLISHED_CANDIDATE_HUMAN_ACCEPTANCE_PENDING",
+    "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/FOUR_ISLAND_RECOVERY_2026-10-04/RESULT.json",
+    "siteUpdated": true,
+    "browserBlock": "ADMIN_POLICY_SERVICE_UNAVAILABLE",
+    "scope": [
+      "Town",
+      "Dystopia",
+      "Utopia",
+      "Protopia"
+    ],
+    "nextGate": "Georg freeplays all four islands; deployment is not acceptance"
+  },
+  "publicationGateCorrection": {
+    "date": "2026-10-04",
+    "previousGate": "RESTORE_REGULAR_BROWSER_BEFORE_SITE_PUBLICATION",
+    "correctedGate": "PUBLISH_EXACT_FROZEN_CANDIDATE_TO_EXISTING_PRIVATE_GPT_SITE_NOW_THEN_GEORG_FREEPLAY",
+    "reason": [
+      "Automated browser access is blocked by an external admin policy service before page load.",
+      "This does not demonstrate a product defect.",
+      "The prior World Studio GPT Site was successfully deployed while the same browser-play verification remained unavailable.",
+      "The current candidate is frozen as a complete 92-file runtime closure.",
+      "Human freeplay on the private Site is the meaningful product gate."
+    ],
+    "rule": "Automated browser verification is supplementary acceptance evidence here; it must not block publishing a private human-review candidate.",
+    "completedDeploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
+  },
+  "site": {
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
+    "project": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "runtimeClosureFiles": 92,
+    "status": "FROZEN_92_FILE_CANDIDATE_PUBLISHED_GEORG_FREEPLAY_PENDING",
+    "next": "GEORG_FREEPLAY",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
+  },
+  "previousHumanAcceptance": {
+    "status": "FAIL",
+    "date": "2026-10-04",
+    "evidence": "Georg freeplay screenshot from primary GPT Site",
+    "findings": [
+      "pale Track-Core road/bridge/support geometry dominates frame",
+      "Joyride/T4 clay-strand presentation missing",
+      "flat grey background/void dominates",
+      "source-clean objects read as sparse integration placement rather than living authored place"
+    ],
+    "record": "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md"
+  },
+  "publicationReceipt": {
+    "schema": "kfb.site-frozen-publication/1",
+    "date": "2026-10-04T18:51:43.186786+00:00",
+    "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+    "status": "succeeded",
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "audience": "OWNER_PRIVATE",
+    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
+    "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "runtimeFiles": 92,
+    "archiveRuntimeHashMatches": 92,
+    "productEditsDuringPublish": 0,
+    "automaticBrowserVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE",
+    "humanAcceptance": "PENDING_GEORG_FREEPLAY",
+    "cloudflare": "UNTOUCHED",
+    "merge": "NONE"
+  }
+}

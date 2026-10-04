@@ -1,6 +1,6 @@
 const browseStyle=document.createElement('link');
 browseStyle.rel='stylesheet';
-browseStyle.href='./browse-filters.css';
+browseStyle.href=new URL('./browse-filters.css',import.meta.url).href;
 document.head.append(browseStyle);
 
 export const ASSET_TYPES = [
@@ -84,3 +84,4 @@ export function primaryRepresentations(records, { includeAnimationSources=false 
   }
   return output;
 }
+

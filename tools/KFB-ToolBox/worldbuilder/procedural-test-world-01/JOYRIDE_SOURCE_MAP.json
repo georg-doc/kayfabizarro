@@ -1,0 +1,70 @@
+{
+  "status": "IMPLEMENTATION_CANDIDATE_BROWSER_AND_CRITIC_PENDING",
+  "donorCommit": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+  "runtimeOwner": "WB2",
+  "geometryOwner": "Track Core",
+  "sources": {
+    "road-markings.m2.js": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/road-markings.m2.js",
+      "sha256": "5f5077526b9bac2c9f16d4db00ea909d704657121793b06297761c9857e9cf63"
+    },
+    "transition-atlas.v1.js": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-atlas.v1.js",
+      "sha256": "f994c5b0e16018609fc1341b8a934e2f7b46f6c9c5118771071f9dd4df2163f2"
+    },
+    "transition-profiles.v1.json": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-profiles.v1.json",
+      "sha256": "c2c4f613b9a6f1faea6591d4590075a0d8c436a03e2302c52903959d509698e1"
+    },
+    "crown-ao.v1.js": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/crown-ao.v1.js",
+      "sha256": "21b4cffc34a804cfebae0cf0dbbe5a77cc34acdff7f52a8791ee2234e8423277"
+    },
+    "road-markings.m1.json": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/road-markings.m1.json",
+      "sha256": "3a5ecb541e6618cee8478c6b5bf6edd0ea9161bdfef79bf782ca963a870cfdd2"
+    },
+    "road-markings.m2.json": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/road-markings.m2.json",
+      "sha256": "04af20042b2cfb1038da4eda82b8be3fb9293de0eac6ba7d15a4e4d9a0db226e"
+    },
+    "track-look.v5.js": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/track-look.v5.js",
+      "sha256": "2b61082320e53e42e8cd92c417517d652d8c6ebe603e956272e4040e6c0f6171"
+    },
+    "road-markings.m1.js": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/road-markings.m1.js",
+      "sha256": "80dfe07c3bb2a482cc472dd3f7300cf6570b4a3a2f399ef7b5d42609c06e89a7"
+    }
+  },
+  "explicitSeams": [
+    "No donor boot, renderer, camera, scene, input or route owner",
+    "Shared WB2 K2 uniforms; palette roles come from exact R2C palette",
+    "Native profile + curvature reused by both drawing and geometric clearance",
+    "Atlas stations mapped to existing stream fractions; ground factor relative to WB2 field",
+    "M2 connected parameter replaces donor global; no dead-end zebra on graph links",
+    "J13 exact cap triangulation retained; invalid triangulation throws instead of centroid-fan fallback",
+    "Suppress crossing end-lip capsules on connected graph endpoints; native rounded continuous side profiles retained",
+    "Tree branch/root recipes newly authored under four-island brief; H0 crown primitive composition reused",
+    "Generated building scale retained; actual vertex hull transformed before corridor/anchor/trunk checks",
+    "Saved user transforms preserved; unmodified prior generated transforms migrated"
+  ],
+  "notProven": [
+    "Browser boot",
+    "K2 shader compilation in current scene",
+    "First-frame/freeplay composition",
+    "Player/resident/card/drive/editor/save regressions",
+    "Existing Site update and exact version browser proof"
+  ],
+  "measured": {
+    "streamCount": 7,
+    "roadCentreDeviationM": 0,
+    "authoredScaleBuildings": 25,
+    "treeRecipes": 4,
+    "buildingTrackBridgeAnchorTrunkIntersections": 0,
+    "rootBuildingTriangleIntersections": 0,
+    "savedDocumentAssertions": 8,
+    "browser": "BLOCKED_ADMIN_POLICY_SERVICE_UNAVAILABLE",
+    "productAcceptance": "NOT_GRANTED"
+  }
+}

@@ -1,0 +1,426 @@
+[
+  {
+    "schema": "kfb.signature-life-tree/1",
+    "id": "world.kfb-town/life-tree",
+    "worldId": "world.kfb-town",
+    "seed": 781926921,
+    "worldSeed": 3,
+    "deckId": null,
+    "cardRefs": [],
+    "motifTags": [
+      "market",
+      "royal-satire",
+      "layered-history",
+      "current-world",
+      "three-way-gateway"
+    ],
+    "paletteKey": "burg",
+    "position": [
+      -16,
+      0.36367078022013133,
+      -8
+    ],
+    "trunkProfile": {
+      "height": 29,
+      "radius": 3.5,
+      "lean": [
+        -1,
+        2
+      ],
+      "layered": true
+    },
+    "branchGrammar": {
+      "directions": [
+        [
+          70,
+          180
+        ],
+        [
+          180,
+          -65
+        ],
+        [
+          -200,
+          95
+        ]
+      ],
+      "levels": [
+        0.69,
+        0.88,
+        0.77
+      ],
+      "reach": [
+        13,
+        16,
+        14
+      ]
+    },
+    "crownGrammar": {
+      "source": "H0 sphere-in-sphere",
+      "scale": [
+        1.25,
+        0.85,
+        1.15
+      ]
+    },
+    "surfaceRootGrammar": {
+      "count": 7,
+      "burrowAtTrack": true,
+      "protectAnchors": true
+    },
+    "hangingRootGrammar": {
+      "asymmetric": true,
+      "branchesPerRoot": 2,
+      "taper": ".02 at organic tips"
+    },
+    "embeddedPropMotifs": [
+      "layered-bark",
+      "three-future-branches",
+      "healed-seams"
+    ],
+    "livingLevel": "crown breath, WB2 tick",
+    "clearanceRadius": 4.5,
+    "sourceRefs": [
+      {
+        "commit": "425d07d25cde5a66703561be616bb23fb866f4d7",
+        "path": "WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md"
+      },
+      {
+        "blob": "069149449047ca88e9cd2792de041d1ef8f03ef7",
+        "path": "brain-world.v8.js",
+        "lines": "474–498",
+        "seam": "crown clumps at recipe branch tips; new branch/root grammar"
+      },
+      {
+        "blob": "46f7b65cc54db9b4a21cc64ef1abe56833c7c948",
+        "path": "plant-recipe.js",
+        "seam": "deterministic PlantRoot / CrownPivot recipe contract"
+      }
+    ],
+    "rootObstacleCount": 46
+  },
+  {
+    "schema": "kfb.signature-life-tree/1",
+    "id": "world.dystopia/life-tree",
+    "worldId": "world.dystopia",
+    "seed": 2758653206,
+    "worldSeed": 11,
+    "deckId": "ignore_dystopia",
+    "cardRefs": [
+      "ignore_dystopia:1",
+      "ignore_dystopia:5",
+      "ignore_dystopia:6"
+    ],
+    "motifTags": [
+      "alarm",
+      "ruin",
+      "warning",
+      "no-off-ramp",
+      "infernal-party"
+    ],
+    "paletteKey": "dystopia",
+    "position": [
+      82,
+      -8.847709941737914,
+      180
+    ],
+    "trunkProfile": {
+      "height": 35,
+      "radius": 2.7,
+      "lean": [
+        7,
+        -4
+      ],
+      "layered": false
+    },
+    "branchGrammar": {
+      "directions": [
+        [
+          -1,
+          0.2
+        ],
+        [
+          0.1,
+          1
+        ],
+        [
+          1,
+          0.6
+        ]
+      ],
+      "levels": [
+        0.47,
+        0.69,
+        0.95
+      ],
+      "reach": [
+        8,
+        7,
+        13
+      ]
+    },
+    "crownGrammar": {
+      "source": "H0 sphere-in-sphere",
+      "scale": [
+        0.65,
+        1.25,
+        0.7
+      ]
+    },
+    "surfaceRootGrammar": {
+      "count": 5,
+      "burrowAtTrack": true,
+      "protectAnchors": true
+    },
+    "hangingRootGrammar": {
+      "asymmetric": true,
+      "branchesPerRoot": 2,
+      "taper": ".02 at organic tips"
+    },
+    "embeddedPropMotifs": [
+      "scar",
+      "constricted-loop",
+      "warning-scar"
+    ],
+    "livingLevel": "crown breath, WB2 tick",
+    "clearanceRadius": 3.7,
+    "sourceRefs": [
+      {
+        "commit": "425d07d25cde5a66703561be616bb23fb866f4d7",
+        "path": "WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md"
+      },
+      {
+        "blob": "069149449047ca88e9cd2792de041d1ef8f03ef7",
+        "path": "brain-world.v8.js",
+        "lines": "474–498",
+        "seam": "crown clumps at recipe branch tips; new branch/root grammar"
+      },
+      {
+        "blob": "46f7b65cc54db9b4a21cc64ef1abe56833c7c948",
+        "path": "plant-recipe.js",
+        "seam": "deterministic PlantRoot / CrownPivot recipe contract"
+      }
+    ],
+    "rootObstacleCount": 52
+  },
+  {
+    "schema": "kfb.signature-life-tree/1",
+    "id": "world.utopia/life-tree",
+    "worldId": "world.utopia",
+    "seed": 1041795641,
+    "worldSeed": 17,
+    "deckId": "forget_utopia",
+    "cardRefs": [
+      "forget_utopia:1",
+      "forget_utopia:2",
+      "forget_utopia:4"
+    ],
+    "motifTags": [
+      "glossy-future",
+      "finished-city",
+      "signature-line",
+      "automation",
+      "controlled-convenience"
+    ],
+    "paletteKey": "utopia",
+    "position": [
+      172,
+      4.400481067513683,
+      -59
+    ],
+    "trunkProfile": {
+      "height": 31,
+      "radius": 2.9,
+      "lean": [
+        0,
+        0
+      ],
+      "layered": false
+    },
+    "branchGrammar": {
+      "directions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "levels": [
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "reach": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "crownGrammar": {
+      "source": "H0 sphere-in-sphere",
+      "scale": [
+        1.15,
+        0.65,
+        1.15
+      ]
+    },
+    "surfaceRootGrammar": {
+      "count": 6,
+      "burrowAtTrack": true,
+      "protectAnchors": true
+    },
+    "hangingRootGrammar": {
+      "asymmetric": true,
+      "branchesPerRoot": 2,
+      "taper": ".02 at organic tips"
+    },
+    "embeddedPropMotifs": [
+      "ordered-fork",
+      "maintenance-seam",
+      "public-canopy"
+    ],
+    "livingLevel": "crown breath, WB2 tick",
+    "clearanceRadius": 3.9,
+    "sourceRefs": [
+      {
+        "commit": "425d07d25cde5a66703561be616bb23fb866f4d7",
+        "path": "WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md"
+      },
+      {
+        "blob": "069149449047ca88e9cd2792de041d1ef8f03ef7",
+        "path": "brain-world.v8.js",
+        "lines": "474–498",
+        "seam": "crown clumps at recipe branch tips; new branch/root grammar"
+      },
+      {
+        "blob": "46f7b65cc54db9b4a21cc64ef1abe56833c7c948",
+        "path": "plant-recipe.js",
+        "seam": "deterministic PlantRoot / CrownPivot recipe contract"
+      }
+    ],
+    "rootObstacleCount": 39
+  },
+  {
+    "schema": "kfb.signature-life-tree/1",
+    "id": "world.protopia/life-tree",
+    "worldId": "world.protopia",
+    "seed": 632443478,
+    "worldSeed": 23,
+    "deckId": "embrace_protopia",
+    "cardRefs": [
+      "embrace_protopia:1",
+      "embrace_protopia:5",
+      "embrace_protopia:6"
+    ],
+    "motifTags": [
+      "repair",
+      "visible-seams",
+      "farm",
+      "shared-skill",
+      "right-sized-move"
+    ],
+    "paletteKey": "protopia",
+    "position": [
+      -210,
+      10.098594361160307,
+      101
+    ],
+    "trunkProfile": {
+      "height": 27,
+      "radius": 3.3,
+      "lean": [
+        -3,
+        -1
+      ],
+      "layered": false
+    },
+    "branchGrammar": {
+      "directions": [
+        [
+          1,
+          0.3
+        ],
+        [
+          -0.4,
+          1
+        ],
+        [
+          -1,
+          -0.3
+        ],
+        [
+          0.2,
+          -1
+        ]
+      ],
+      "levels": [
+        0.6,
+        0.85,
+        0.73,
+        0.96
+      ],
+      "reach": [
+        13,
+        9,
+        14,
+        8
+      ]
+    },
+    "crownGrammar": {
+      "source": "H0 sphere-in-sphere",
+      "scale": [
+        1.1,
+        1,
+        1.15
+      ]
+    },
+    "surfaceRootGrammar": {
+      "count": 8,
+      "burrowAtTrack": true,
+      "protectAnchors": true
+    },
+    "hangingRootGrammar": {
+      "asymmetric": true,
+      "branchesPerRoot": 2,
+      "taper": ".02 at organic tips"
+    },
+    "embeddedPropMotifs": [
+      "graft",
+      "repair-collar",
+      "shared-root-niches"
+    ],
+    "livingLevel": "crown breath, WB2 tick",
+    "clearanceRadius": 4.3,
+    "sourceRefs": [
+      {
+        "commit": "425d07d25cde5a66703561be616bb23fb866f4d7",
+        "path": "WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md"
+      },
+      {
+        "blob": "069149449047ca88e9cd2792de041d1ef8f03ef7",
+        "path": "brain-world.v8.js",
+        "lines": "474–498",
+        "seam": "crown clumps at recipe branch tips; new branch/root grammar"
+      },
+      {
+        "blob": "46f7b65cc54db9b4a21cc64ef1abe56833c7c948",
+        "path": "plant-recipe.js",
+        "seam": "deterministic PlantRoot / CrownPivot recipe contract"
+      }
+    ],
+    "rootObstacleCount": 51
+  }
+]

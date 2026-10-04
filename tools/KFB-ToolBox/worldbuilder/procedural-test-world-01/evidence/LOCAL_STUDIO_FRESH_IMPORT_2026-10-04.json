@@ -1,0 +1,95 @@
+{
+  "sourceExport": "local-authoring-workspace-with-sculpt.json",
+  "freshExport": "KFB_AuthoringWorkspace (2).json",
+  "checks": {
+    "schema": true,
+    "count40": true,
+    "sculptExact": true,
+    "editedObjectsExact": true,
+    "worldSourceExact": true
+  },
+  "editedObjects": [
+    {
+      "id": "studio.media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf#1791102264895-1",
+      "name": "building_well_green",
+      "kind": "prop",
+      "source": {
+        "blobSha": "7ba57e910857099027a14692fa421593b0b30c7b",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf",
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf"
+      },
+      "transform": {
+        "position": [
+          -19,
+          0.3873,
+          5.1953
+        ],
+        "rotation": [
+          0,
+          3.14159,
+          0
+        ],
+        "scale": [
+          1.25,
+          1.25,
+          1.25
+        ]
+      },
+      "registeredAssetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf"
+    }
+  ],
+  "sculpt": {
+    "version": 1,
+    "strokes": [
+      {
+        "mode": "raise",
+        "radius": 1.25,
+        "strength": 0.12,
+        "falloff": "smooth-c2",
+        "points": [
+          [
+            -20.0233,
+            0.2146
+          ],
+          [
+            -20.0951,
+            -0.0212
+          ],
+          [
+            -20.2723,
+            -0.2112
+          ]
+        ]
+      }
+    ]
+  },
+  "scope": "Native GUI separate-origin fresh session; not CLI fresh-context full Journey PASS",
+  "schema": "kfb.native-studio-fresh-import-evidence/1",
+  "actualInitial": {
+    "sceneObjectCount": 39,
+    "sculptStrokes": 0,
+    "receipts": 0
+  },
+  "actualImported": {
+    "sceneObjectCount": 40,
+    "sculptStrokes": 1,
+    "import": "PASS",
+    "phase": "PLAYING",
+    "movementOwner": "WB2 Ground"
+  },
+  "hardwareView": {
+    "build": "LOCAL_UNSEALED",
+    "scope": "One imported Town authoring view; no full-game performance PASS",
+    "medianMs": 28.4,
+    "p95Ms": 33.1,
+    "pixelRatio": 2,
+    "drawCalls": 348,
+    "triangles": 402189
+  },
+  "productSourceHead": "1876ba8746e3ddf836a22bb283a9720eaf23c4b0",
+  "independentGoldenTestHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+  "noWholeGameClaim": true
+}

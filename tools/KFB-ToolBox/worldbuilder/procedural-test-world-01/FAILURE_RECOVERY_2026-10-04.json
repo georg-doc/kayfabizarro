@@ -1,0 +1,653 @@
+{
+  "schema": "kfb.full-failure-recovery/1",
+  "date": "2026-10-04",
+  "owner": "KFB WorldBuilder / WB2",
+  "repo": "georg-doc/kayfabizarro",
+  "pr": 348,
+  "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "state": "FROZEN_FAILED_CANDIDATE",
+  "frozenRuntimeHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+  "priorMetadataHead": "4d63cc37e5aaf72a76668764dc53d81aa539082f",
+  "testedMergeHead": "2ffd7041e931f308c1408e5a5b67c97102564e24",
+  "stop": {
+    "contract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+    "quote": "After two non-improving passes: CORE blocker → freeze + failure-recovery export",
+    "seam": "Reliable native real-input traversal and endpoint arrival",
+    "passes": [
+      {
+        "head": "1876ba8746e3ddf836a22bb283a9720eaf23c4b0",
+        "run": 37196264077,
+        "result": "4 PASS; Dystopia route deadline900s;94.5915m native travel"
+      },
+      {
+        "head": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+        "run": 37199802833,
+        "result": "3 PASS; regression before Taxi entry; nearest Driver, not Taxi"
+      }
+    ],
+    "nonImprovingRepairPasses": 2,
+    "independentCritic": "STOP_JUSTIFIED_NO_MORE_REPAIRS"
+  },
+  "failure": {
+    "gate": "Driver key and real Ground Drive Ground transition",
+    "error": "Taxi must be actual nearest target",
+    "player": {
+      "owner": "WB2 shared planar Ground",
+      "animationOwner": "KayKit native speed/phase mixer",
+      "sourcePin": "23615cffb515d03d2b6a0164b896dd08e3bc1bed",
+      "actorProfileId": "FrizzleBob_v5b",
+      "position": [
+        -2.277879331779761,
+        0.597056957036587,
+        -21.1657564277385
+      ],
+      "heading": 2.937500000000001,
+      "speed": 0,
+      "phase": 0.6978060759908367,
+      "rows": [
+        {
+          "role": "idle",
+          "clip": "Idle_A",
+          "speed": 0,
+          "cycleT": 1.067,
+          "leftFootDownPhase": null,
+          "weight": 1,
+          "time": 0.5570000000003141
+        }
+      ],
+      "bindings": {
+        "Idle_A": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 1.0666667222976685
+        },
+        "Walking_B": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 1.0666667222976685
+        },
+        "Running_A": {
+          "sourceTracks": 68,
+          "boundTracks": 68,
+          "duration": 0.800000011920929
+        },
+        "Running_B": {
+          "sourceTracks": 69,
+          "boundTracks": 69,
+          "duration": 0.800000011920929
+        }
+      },
+      "bodyHeight": 2.928408771430441,
+      "dance": {
+        "active": false,
+        "source": null,
+        "time": 0
+      },
+      "groundY": 0.597056957036587,
+      "mixerCount": 1
+    },
+    "nearest": {
+      "id": "town.driver",
+      "distance": 2.0968351373091756
+    },
+    "diagnosis": "Last taxi grid endpoint[-2,-22] was accepted at distance<1.35m. Actual nearest remains Driver at2.096835m. Endpoint tolerance plus delayed native key release does not guarantee actual target identity. Assert correctly prevented false PASS.",
+    "productScope": "Test harness endpoint arrival failure; not proof the taxi runtime or bridge support failed.",
+    "noFurtherRepair": true
+  },
+  "actualResults": {
+    "latestGolden": {
+      "run": 37199802833,
+      "job": 111428969457,
+      "receivingHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
+      "testedMergeHead": "2ffd7041e931f308c1408e5a5b67c97102564e24",
+      "pass": 3,
+      "fail": 1,
+      "notRun": 8,
+      "pageConsoleErrors": 0,
+      "artifact": 11302144306,
+      "sha256": "3dbee626e50d1a72708a0fd7b83cf363709c155625b275df9c9ebef64b48c62d"
+    },
+    "priorDriver": {
+      "head": "1876ba8746e3ddf836a22bb283a9720eaf23c4b0",
+      "run": 37196264077,
+      "distanceM": 6.077702363804468,
+      "groundDriveGround": true
+    },
+    "sourceTests": {
+      "localPass": 19,
+      "localFail": 0,
+      "ciSource": "PASS",
+      "ciSourceCount": 15
+    },
+    "guiStudio": {
+      "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/LOCAL_STUDIO_FRESH_IMPORT_2026-10-04.json",
+      "checksPass": 5,
+      "objects": 40,
+      "sculptStrokes": 1,
+      "scope": "Separate-origin native GUI export/import/re-export; not full Journey fresh-context PASS"
+    },
+    "nativeRoadRepair": {
+      "source": "tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js",
+      "status": "KEEP_SOURCE_TESTED",
+      "islandRoadBridgeheadSupported": true,
+      "isolatedAllThreeRoutesConnected": true,
+      "fullCollisionBrowserJourneyUnproven": true
+    }
+  },
+  "wholeCritic": {
+    "result": "NOT_ACCEPTED_REQUIRED_EVIDENCE_MISSING",
+    "dimensions": [
+      {
+        "name": "SOURCE_FIDELITY",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "KFB_VISUAL_COHERENCE",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "WORLD_IDENTITY_AND_BIOGRAPHY",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "COMPOSITION_AND_LIVINGNESS",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "PLAYER_MOVEMENT_CAMERA_INTERACTION",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "RESIDENT_CARD_CHATTER",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "AUDIO_PERFORMANCE_FEEL",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "TECHNICAL_HEALTH",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      },
+      {
+        "name": "GOLDEN_JOURNEY_AND_PERSISTENCE",
+        "score": null,
+        "status": "UNGRADED_WITHHELD"
+      }
+    ],
+    "weightedScore": null,
+    "sourceFidelityWholePass": false,
+    "wholeJourneyPass": false,
+    "wholeFreshJourneyImportPass": false
+  },
+  "stage": {
+    "reservedUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
+    "status": "NOT_DEPLOYED",
+    "publicVerified": false,
+    "hubMeaning": "Recovery metadata only; no playable Stage link or quality claim",
+    "live": "UNCHANGED"
+  },
+  "protectedOwners": {
+    "sceneRendererEditSave": "WB2",
+    "terrain": "R2D / WB2",
+    "track": "Track Core",
+    "movement": "WB2 planar Ground / exclusive J14 Drive",
+    "animation": "One KayKit Player Mixer; exact accepted clip set",
+    "audio": "Travel Audio shared context / S16 SongTransport / canonical Jukebox",
+    "residents": "Native pinned Resident Atlas S6/S16",
+    "cardsMemory": "Native Card art / R9 Almanac / Lean receipts"
+  },
+  "requiredNotProven": [
+    "Full four-world Golden Journey",
+    "Actual natural concert completion and learned dance in the journey",
+    "Utopia/Protopia ordered interactions and four Cards",
+    "Fresh-context Journey export/import/actual resume",
+    "Full CLI Studio gauntlet (supplementary GUI roundtrip passes)",
+    "61 canonical source/adapted/detail/integrated captures and final loaded-source audit",
+    "Whole nine-dimension score and integrated performance"
+  ],
+  "nextGate": {
+    "id": "RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01",
+    "mode": "RECOVERY",
+    "action": "Reproduce native held-input/key-release/settled target arrival with actual nearest-ID and distances on preserved WB2 candidate before any renewed whole journey. No automatic third repair in this run.",
+    "preserve": [
+      "Native Ground collision/height/speed/dt",
+      "Native nearest resolver and encounter truth",
+      "Original donors and known earlier PASSes"
+    ],
+    "forbidden": [
+      "Teleport or position injection",
+      "Forced nearest target",
+      "Injected rewards or song completion",
+      "Second movement/runtime/audio owner",
+      "Replacing world/Residents with placeholders"
+    ]
+  },
+  "artifactClosure": [
+    {
+      "path": "overworld/overworld-v13_2026-08-12/overworld-v13/bubble-layout.js",
+      "gitBlobSha": "e84bbe454badddfbdaa64018e7e70de269a38a79",
+      "bytes": 13413
+    },
+    {
+      "path": "overworld/overworld-v13_2026-08-12/overworld-v13/bubble-ts.js",
+      "gitBlobSha": "c1a00182ba502419491cbf895bc269588554b566",
+      "bytes": 42111
+    },
+    {
+      "path": "overworld/overworld-v13_2026-08-12/overworld-v13/chatter-2d.js",
+      "gitBlobSha": "5817807624d6df7430ad399be763e1fa3385ac8b",
+      "bytes": 12037
+    },
+    {
+      "path": "overworld/overworld-v13_2026-08-12/overworld-v13/chatter-phrases.js",
+      "gitBlobSha": "830beafbc680d803e9825af2b6aba4b706932400",
+      "bytes": 9441
+    },
+    {
+      "path": "skills/kfb-card-builder.js",
+      "gitBlobSha": "2cc1a38d63c993ef9f1e201f8216a1034b2e7571",
+      "bytes": 23989
+    },
+    {
+      "path": "skills/kfb-card-format.js",
+      "gitBlobSha": "8a40d8d48a706982675f1388f0fec19b12d9dd16",
+      "bytes": 3395
+    },
+    {
+      "path": "skills/kfb-ink-canon.js",
+      "gitBlobSha": "55ce6da2805386bd6373d81d064a37fc7e0efacb",
+      "bytes": 19662
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-material.v10.js",
+      "gitBlobSha": "d994a9b656131be3b7a13d45edcb4253d34f3620",
+      "bytes": 35632
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-profiles.v2.js",
+      "gitBlobSha": "af57b88ae382a36514f9fa50beed5ab6ca18647a",
+      "bytes": 3546
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v2.js",
+      "gitBlobSha": "2bb843d29e9f2571f87d9e6210f34240b1a0a1a9",
+      "bytes": 9988
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v4.js",
+      "gitBlobSha": "7e01da48674c080d7b0aa9601cc88648d11035ff",
+      "bytes": 10061
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-toolmix.v1.js",
+      "gitBlobSha": "b9a039ccfb90ea04910db3cf05928817d92e9399",
+      "bytes": 1891
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs",
+      "gitBlobSha": "ef81fa4f35e4d34af6144de44e210b5e576b8054",
+      "bytes": 14737
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/textures/derek-rgb-ref.png",
+      "gitBlobSha": "9548595806461ede898c3c9de09a6905c20cc2ff",
+      "bytes": 509130
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js",
+      "gitBlobSha": "dfa04d9db909a3dcda20f862b8813bd16a6d186f",
+      "bytes": 7190
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-look.js",
+      "gitBlobSha": "e8d577629b3e2c580fec92717d433fd743a046a1",
+      "bytes": 22604
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/kfb-drive.k2b.js",
+      "gitBlobSha": "3c83b012cd4c534f716d9fa4167beb8870e7a9d6",
+      "bytes": 14044
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/cast.js",
+      "gitBlobSha": "ba8038f6e5b4305fe97baa4edaed82703c0b207b",
+      "bytes": 195924
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/disco-playlist-01.json",
+      "gitBlobSha": "4b666f1ce12008ebe24709b7b964275c6940114b",
+      "bytes": 18780
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json",
+      "gitBlobSha": "0ed0a157389e469ce8b6623bd4542ee49cd31a28",
+      "bytes": 303709
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/rig-large-reviewed.v1.json",
+      "gitBlobSha": "396af14c333bd6b98a41f47a7ca16fa48431e78e",
+      "bytes": 19591
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/atlas.js",
+      "gitBlobSha": "e63cd08ec32dcab9f804f9f8e5f8808aff095efd",
+      "bytes": 103480
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/band-module.js",
+      "gitBlobSha": "b608e857023061bd766c6c49a4fea71fac1f20fd",
+      "bytes": 35208
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/disco-ball-core.js",
+      "gitBlobSha": "c68ef58976dda75925bdf86c0a6b500155de2536",
+      "bytes": 25423
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/disco-ensemble.js",
+      "gitBlobSha": "38cc96ed6c54fda09843e7dc29d8fdd7c79870e7",
+      "bytes": 33162
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/props.js",
+      "gitBlobSha": "50f63795ba033d1fab397125474f22cb15b8b222",
+      "bytes": 5757
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/resident-collide.js",
+      "gitBlobSha": "5a12a389ae23145ccbc0dc7ef2d878449b6b9e64",
+      "bytes": 6922
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/rigwork.js",
+      "gitBlobSha": "94dd6f9545f12d31c536750fb488731538a47a1a",
+      "bytes": 11100
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/song-transport.js",
+      "gitBlobSha": "c7b6743428a12ebb2221011d00708de763914265",
+      "bytes": 10461
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/anchored-eyes.v1.js",
+      "gitBlobSha": "f646cee822c4aaef984179316e925848c03cb2fc",
+      "bytes": 3718
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/batch-eyes.v1.js",
+      "gitBlobSha": "04cc4478751526ef36e8ad138193b4e16d725008",
+      "bytes": 7544
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/donoreyes.v1.js",
+      "gitBlobSha": "b0b46bdca058e0feb3dbe18b7067b3d30e625395",
+      "bytes": 6867
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/eyeoval.v1.js",
+      "gitBlobSha": "90c5e44b17bbb59b1cc26dc5dc943f1091cd5b3b",
+      "bytes": 6797
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/face-color-sampler.v1.js",
+      "gitBlobSha": "7155595290f8d46bfec789cc50ce0ed2e0e7be5b",
+      "bytes": 4621
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/facehost.v1.js",
+      "gitBlobSha": "38ec7770f5fccf3aca93ee234f94b801d527d415",
+      "bytes": 6959
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/pet-eye-rig.v6.js",
+      "gitBlobSha": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+      "bytes": 20892
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/billboard.embed-spec.v1.json",
+      "gitBlobSha": "e4f413610f8aa3a33d7c1d17ca01a2763e778a50",
+      "bytes": 2232
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+      "gitBlobSha": "751b69099ceaad0c1cb2147dc38e6a538840a8a4",
+      "bytes": 24274
+    },
+    {
+      "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "gitBlobSha": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+      "bytes": 11419
+    },
+    {
+      "path": "tools/KFB-ToolBox/lib/ground-planar.v1.js",
+      "gitBlobSha": "94d1fd5a4ea680000132043fa580455e0abe4ea1",
+      "bytes": 5079
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/KFB_KAYKIT_LOCO_SET_01.v1.json",
+      "gitBlobSha": "7d83b294ba0422b2510bba1b53852fd0ccaba3b2",
+      "bytes": 3558
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/VISIBLE_SOURCE_MANIFEST.json",
+      "gitBlobSha": "d3f1e8b585d7ae9d7e872d300f6793ed7db6ade3",
+      "bytes": 42466
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORLD_RECIPES.json",
+      "gitBlobSha": "671c0a2712d68a3ea3b8637d509aaa890f64745a",
+      "bytes": 7584
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORLD_STUDIO_MVP_SOURCE.html",
+      "gitBlobSha": "f256a833e7e040aa794a042c4369a439906b7125",
+      "bytes": 991
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/loco-blend.v1.mjs",
+      "gitBlobSha": "2c316a34bd11e8c5f2ae0ff57e20fc0a6ed0f496",
+      "bytes": 794
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js",
+      "gitBlobSha": "833f22625884c5f061e5e76a7aeafafe8c206fe7",
+      "bytes": 6506
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js",
+      "gitBlobSha": "7bf529e77aec4e7d0a61de599f52553510aac275",
+      "bytes": 3454
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js",
+      "gitBlobSha": "ccb70f25c87d4c98a8ab53c807c7173a35be8b8f",
+      "bytes": 15526
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js",
+      "gitBlobSha": "cd6e369d3561b111136499712090556f04a7ed7f",
+      "bytes": 13473
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-almanac-fan.v1.js",
+      "gitBlobSha": "429c3934634b65e5cfe4cf9de936e8d647a2a3c5",
+      "bytes": 8335
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-billboards.v1.js",
+      "gitBlobSha": "8cc21b9344bf0a23802eb2677f7a16e0f93cd506",
+      "bytes": 4392
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-cards.v1.js",
+      "gitBlobSha": "e49ab0dcf649fe059d921a0f7fb9d055c248b3b9",
+      "bytes": 3484
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-journey.v1.mjs",
+      "gitBlobSha": "0f55c03d00e162528ee696158aed5ae70ab56a5b",
+      "bytes": 5470
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-musical-world.v1.js",
+      "gitBlobSha": "4142a1d08130169a7a93f0ede34056f114022328",
+      "bytes": 7395
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-mvp.v1.js",
+      "gitBlobSha": "96c762e6c87b48634ef5842cd9affd7cde8c73d5",
+      "bytes": 23148
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-party.v1.js",
+      "gitBlobSha": "78d4b2d83739dff43b254172818c94fcaf84e525",
+      "bytes": 1758
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-player.v1.js",
+      "gitBlobSha": "f91c81a7c54ba447f2e8782d7e9f13164de6bba3",
+      "bytes": 8022
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-residents.v1.js",
+      "gitBlobSha": "5a2041d8c70972d24312fe40f412b4b96bcc392f",
+      "bytes": 6855
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-source-evidence.v1.js",
+      "gitBlobSha": "622cb1ffbd6077d3374dd4b8a87a37f970620e1f",
+      "bytes": 11267
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-studio.v1.js",
+      "gitBlobSha": "a0d65f0654925592a7f69e9caabcf53b7557d1e4",
+      "bytes": 5906
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-taxi.v1.js",
+      "gitBlobSha": "1d7fbfa585eae773d7010bdf05560c0ce7ab5dee",
+      "bytes": 5609
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js",
+      "gitBlobSha": "2d69e1b270dd599a34f24ae28c28130602e5e73c",
+      "bytes": 77950
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js",
+      "gitBlobSha": "fc236b925678644c1905528d74d0fe1f586add9b",
+      "bytes": 5432
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+      "gitBlobSha": "182f7c42b709a00547a16cfe0040d5d636bdb680",
+      "bytes": 4102
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs",
+      "gitBlobSha": "b036b34b37cac1926550a58fe5bceae0c2478523",
+      "bytes": 8138
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
+      "gitBlobSha": "e64ed265882b973235cef04251073840e0231e72",
+      "bytes": 5613
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js",
+      "gitBlobSha": "183f8da713eb2d54109eccbbc15696fcdc429979",
+      "bytes": 14920
+    },
+    {
+      "path": "tools/asset_registry/librarian/asset-types.js",
+      "gitBlobSha": "1862ae1fa83a77e9f032a9d27dd64c18a42cc824",
+      "bytes": 5076
+    },
+    {
+      "path": "tools/asset_registry/librarian/browse-filters.css",
+      "gitBlobSha": "462eb373d131d2d70c4733be0a486882f958d08d",
+      "bytes": 2097
+    },
+    {
+      "path": "tools/asset_registry/librarian/registry.js",
+      "gitBlobSha": "391e7d1060442e1acee4f036cf5b9222ca28200b",
+      "bytes": 4082
+    },
+    {
+      "path": "tools/asset_registry/librarian/search.js",
+      "gitBlobSha": "5b0374abcca9dfe2606218b52f473afc784b8fb9",
+      "bytes": 4389
+    },
+    {
+      "path": "tools/asset_registry/librarian/state.js",
+      "gitBlobSha": "9c13dc61f1535b7c7b1843e6521eec4f03944440",
+      "bytes": 4242
+    },
+    {
+      "path": "tools/resident_atlas/life/encounter-bus.js",
+      "gitBlobSha": "f962350d35b59ef39fb44a8535efff51270c42b1",
+      "bytes": 5524
+    },
+    {
+      "path": "tools/resident_atlas/modules/runtime/s6-resident-module.js",
+      "gitBlobSha": "b1119333a1c36f35ebb2da0d03611357e498447d",
+      "bytes": 2375
+    },
+    {
+      "path": "tools/resident_atlas_s6/data/cast.js",
+      "gitBlobSha": "5e918ae1521e63d121558fb7aff4fd1f8239baec",
+      "bytes": 121795
+    },
+    {
+      "path": "tools/resident_atlas_s6/lib/atlas.js",
+      "gitBlobSha": "34c2f201b9d0864a1d5e4b65cfab6659ad899b89",
+      "bytes": 88002
+    },
+    {
+      "path": "tools/resident_atlas_s6/lib/juggle-math.js",
+      "gitBlobSha": "111f6d256f08f1ff51037acd1abc4180ffb83e31",
+      "bytes": 3125
+    },
+    {
+      "path": "tools/world_atlas/source/lib/hex-grid.js",
+      "gitBlobSha": "c6bb12c28d32ea6f51ea2c63db9475eaecc5754f",
+      "bytes": 23826
+    },
+    {
+      "path": "travel/KFB Travel Combat v25/terrain-v25/frizzlebob-voice.js",
+      "gitBlobSha": "6fc7d640313a20aee9e468c31cb8434bebfa7092",
+      "bytes": 9628
+    },
+    {
+      "path": "travel/KFB Travel Combat v25/terrain-v25/travel-audio.js",
+      "gitBlobSha": "f10915b048c82762a96d339499006e6ec8f6a8db",
+      "bytes": 31409
+    }
+  ],
+  "artifactPackages": [
+    {
+      "run": 37199802833,
+      "artifact": 11302144306,
+      "sha256": "3dbee626e50d1a72708a0fd7b83cf363709c155625b275df9c9ebef64b48c62d"
+    },
+    {
+      "run": 37196264077,
+      "artifact": 11301089964,
+      "sha256": "e4d6c112fac2b44b051716ecf9367aca633c7ed8e10161aac86175164d172d41"
+    },
+    {
+      "run": 37195086973,
+      "artifact": 11300991796,
+      "sha256": "6b1cdaf18ee43992f2cd7ee2bde6fd3ecbaf335cbcf1ce90f3cdabff2340dfd4"
+    }
+  ]
+}
