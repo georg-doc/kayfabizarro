@@ -8,6 +8,32 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
+## 2026-10-04 · CURRENT GATE · PUBLISH FOUR-ISLAND CANDIDATE NOW
+
+PR #348 now contains a frozen four-island recovery candidate.
+
+Candidate runtime source:
+`3d9aaf5f6623f9009d6e68dd3c042009a160b044`
+
+Complete runtime closure:
+**92 files**
+
+Current primary GPT Site still serves the older pre-recovery version:
+`https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/`
+
+The regular browser automation is blocked before page load because an external/admin policy-verification service is unavailable. This is a **TOOL BLOCKER**, not product evidence.
+
+Do **not** wait for that automation before updating the private human-review Site.
+
+Correct current sequence:
+1. update the existing Site project `appgprj_6ac27631f74c8191b52e4819c1973668` in place with the exact frozen candidate;
+2. persist new Site version/deployment/source identity;
+3. Georg freeplays all four islands;
+4. repair only real defects observed in the published candidate;
+5. rerun automated browser QA later when available.
+
+Do not create a new Site. Do not switch to Cloudflare-first. Do not call deployment itself a product PASS.
+
 ## 2026-10-04 · CURRENT FOUR-ISLAND SSOT RECOVERY
 
 PR #348 current binding implementation brief:
