@@ -16,6 +16,11 @@ Current pre-One-Shot audit:
 Current deck-driven world / Resident / ChatterBox / Card pipeline contract:
 `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
+Current Golden Journey / acceptance fixture:
+`GOLDEN_JOURNEY_MVP_2026-10-04.md`
+Machine-readable fixture:
+`GOLDEN_JOURNEY_MVP_2026-10-04.json`
+
 **Do not start the final One-Shot from PR #332 directly.** The precheck records current main ↔ #332 divergence and requires a clean World convergence base first. The final WSA/Codex One-Shot starts only after the preflight gates listed there are closed and one frozen integration lock pins exact owners/refs.
 
 Source package:
