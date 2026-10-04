@@ -208,6 +208,6 @@ This QA proves the data snapshot and existing Site source remain coherent. It do
 
 ## Exactly one next gate
 
-**KFB_AUDIO_SFX_LIBRARY_SITE_01**
+**KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE**
 
 Extend the existing KFB Audio Site with a searchable/auditionable SFX Library + Event Map backed by this snapshot, then update the existing Site project and verify the exact Site URL. Do not create a second Site.
