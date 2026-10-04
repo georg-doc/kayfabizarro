@@ -110,3 +110,95 @@ Current delivery intent:
 `WB2 runtime/source → World Studio GPT Site → Georg product use/review → bounded Cloudflare KFB-Hub mirror where required`
 
 Do not spend the active MVP recovery loop repeatedly publishing Cloudflare before the Site exists.
+
+
+## Cost / reasoning firewall · PUBLISH_ONLY
+
+Site publication is a **host operation**, not a high-reasoning production task.
+
+### Binding rule
+
+Once a product candidate is already:
+
+- source-complete;
+- QA-green enough for the named human review;
+- frozen to an exact GitHub head/runtime closure;
+
+the remaining Site publication task becomes:
+
+`PUBLISH_ONLY`
+
+A `PUBLISH_ONLY` task must be routed to the **lowest-cost / lowest-reasoning executor that has the required Sites publishing capability**.
+
+Do not spend premium/high-reasoning model credits merely to:
+
+- create/update an existing Site deployment;
+- upload/copy an exact frozen runtime closure;
+- set the existing Site source/version;
+- open the returned Site URL;
+- record project/version/deployment/source identity;
+- update Hub metadata;
+- report a host-only failure.
+
+### Forbidden escalation
+
+Wrong:
+
+`cheap/default executor lacks Sites capability → escalate to premium/high-reasoning model`
+
+Correct:
+
+`cheap/default executor lacks Sites capability → preserve exact publish packet → hand off/wait for a Sites-capable low-cost executor`
+
+A capability gap does **not** justify a reasoning-tier upgrade.
+
+### When premium reasoning is allowed
+
+A premium/high-reasoning executor may only re-enter if publication reveals a **real engineering problem** that changes product code or architecture, for example:
+
+- Site build cannot consume the frozen runtime without a code change;
+- source closure is incomplete or inconsistent;
+- owner/runtime conflict is discovered;
+- publication exposes a reproducible product defect requiring implementation repair.
+
+In that case the task is no longer `PUBLISH_ONLY`; it becomes a named engineering/recovery task.
+
+### No product redesign in publish lane
+
+A publish executor must not:
+
+- reinterpret product scope;
+- change model/provider strategy;
+- refactor the game/tool;
+- rebuild a Site from scratch when an owner Site exists;
+- switch hosts;
+- introduce another runtime/owner;
+- add QA gates that were not required by the frozen publish contract.
+
+### Required publish packet
+
+Every expensive build/recovery run must leave a cheap-publishable packet containing at minimum:
+
+- exact repo/branch/head;
+- exact runtime/source closure;
+- target existing Site project ID when known;
+- expected Site URL/owner identity when known;
+- publish/update instructions;
+- files/assets required;
+- current QA status;
+- explicit human gate after publication;
+- statement that no code change is authorized in `PUBLISH_ONLY`.
+
+The goal is that the expensive reasoning run can end **before** hosting work, without requiring another expensive reasoning run merely to publish.
+
+### Model-choice precedence
+
+For model/reasoning spend:
+
+1. explicit Georg instruction;
+2. current cost/reasoning policy;
+3. actual capability requirement;
+4. generic model recommendation.
+
+A generic recommendation may never reopen a model decision Georg already made.
+
