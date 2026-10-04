@@ -2,6 +2,21 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+
+## 2026-10-04 · FrankenStein Composer GPT Site · planning/source lock
+
+### DECISION
+New bounded authoring frontend: **KFB FrankenStein Composer**. It composes reversible Actor Recipes from existing ToolBox owners instead of creating a new rigging/runtime stack. Target combinations include KFB/FrizzleBob head + compatible Rig_Medium/Rig_Large/Rig_Legacy KayKit bodies and PropActor face life for Pencil; Eraser remains SOURCE_REQUIRED.
+
+### SOURCE AUDIT
+12/12 source/classification checks PASS. Current-main EyeRig v6, brow-rig v2, graft/FaceHost/headgraft, Pencil and Motion Library resolve. Exact FrizzleBob EarRig-v5/v5b model donors resolve only at their pinned historical GitHub revisions. The current repository-resident clay-lid implementation candidate is the 2026-10-01 ToolBox session-cut copy. Three stale current-main path assumptions were rejected and corrected.
+
+### BOUNDARY
+No GPT Site, Stage, browser runtime, motion playback or export round-trip has been created/tested in this planning slice. No second EyeRig/brow/motion owner. No placeholder Eraser. `kfb.pets/1` remains the primary actor contract.
+
+### NEXT
+Georg authorized implementation. WSA / ChatGPT Work now owns one continuous implementation run from `skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/WSA_WORK_ONE_SHOT.md`. It must build through real Medium + Large + Pencil fixtures, save/import, GPT Site when available, exact Cloudflare Stage verification and final Return; no intermediate micro-handoff.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
