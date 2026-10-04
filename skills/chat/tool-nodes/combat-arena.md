@@ -103,3 +103,29 @@ A stacked FrizzleBob player-presentation candidate is preserved on the Combat ow
 - full recovery: `slices/combat-fb-player-v5/START_HERE.md` in Combat PR #11
 
 Exactly one next gate: **FB-V5-RANGED-INPUT-PROBE-01** — instrument identical real-pointer delivery on Driver v4 and v5b before any further full-browser rerun. No third repair of the frozen acceptance gate.
+
+
+## Parallel planning lane · CARD-HEX COMBAT ASCENT benchmark · 2026-10-04
+
+This does **not** replace the current Combat runtime owner/state. It is a planning-only stacked benchmark above the current source-proven Brawl/Combat work.
+
+Owner repo: `georg-doc/KFB-Combat-Arena`  
+Draft PR: **#18**  
+Branch: `planning/card-hex-combat-ascent-benchmark-2026-10-04`  
+Head: `c75c943d41c3a691821df4855253423259302ce2`  
+Stacked base: PR #17 @ `e391536fb8307a11ccd09dd6f0b04a7e2110542d`
+
+Read in PR #18:
+- `slices/card-hex-combat-ascent-benchmark/START_HERE.md`
+- `slices/card-hex-combat-ascent-benchmark/BENCHMARK_CONTRACT.json`
+
+Concept:
+Combat Card stages + three source-proven KayKit Hex families + Babel jump-assist **MECHANISM** + S17 ranged-duel choreography + pending common Blender Duel freeze + existing Arena combat/VFX/SFX/reward owners.
+
+Provider comparison:
+Sol/Work vs Astra/Work vs Claude Coworker on one identical implementation contract; Claude Design Level 5 as a separate visual/level-authoring comparison.
+
+Do not start provider implementation branches until one common Blender Duel state is frozen. Do not write into the active WB2 World One-Shot from this lane.
+
+Reserved future comparison route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-benchmark/` · NOT DEPLOYED.
