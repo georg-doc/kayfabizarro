@@ -1,3 +1,13 @@
+## 2026-10-04 · Cross-project active work map
+
+- Reconciled current Web Chat/work lanes, GPT Sites, active implementation slices, donor/history PRs and next iteration order into `KFB_ACTIVE_WORK_MAP_2026-10-04.md`.
+- Current P0 product gates are exactly two: World Studio four-island freeplay and Card-Hex Combat Ascent S3 freeplay.
+- Updated Site registry to current reality: World Studio candidate republished; FrankenStein Composer and Hypernormalisation Curator Sites are now recorded as deployed.
+- Environment Atlas remains prepared/not published; Asset Librarian Phase A review open; Audio productive with consumer-driven update lane; EyeRig productive; Production Hub mirror active.
+- Research/data lanes such as Quote Pool may continue in normal Web Chat; Site publishing remains low-cost PUBLISH_ONLY; provider/model comparison remains HOLD.
+- Recommended next iterations: human reality check → core production toolchain → living-world content → gameplay integration → media/meta-world.
+- KFB Hub and START_HERE now link the Active Work Map.
+
 ## 2026-10-04 · PUBLISH_ONLY cost firewall
 
 - Georg explicitly forbade spending premium/high-reasoning credits merely to publish an already-built GPT Site candidate.
