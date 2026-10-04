@@ -1,4 +1,50 @@
+## 2026-10-04 · CURRENT PRODUCT RETURN · GPT SITE IS PRIMARY
+
+Georg explicitly confirmed GPT Site as the first target platform. This supersedes older Cloudflare-only acceptance routing for this delivery.
+
+**Open the game:** https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site
+
+Native Sites deployment **SUCCEEDED**, initially owner-private for Georg. This is the full existing WB2 application, not an iframe or a rebuilt game. All 80 runtime files are exact source blobs from PR #348 runtime `38ff52138078472a8cc2f34fe19fc240ba91eb29`; only the host entrypoint base changes to `/tools/…`. The same Player, world, editor, terrain, Card/Resident and persistence owners remain.
+
+Site source commit: `45b28d444960cc0acab4a0a72359e5289e197506`  
+Project: `appgprj_6ac27631f74c8191b52e4819c1973668`  
+Version: `appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495`  
+Deployment: `appgdep_6ac276cdd08481919ed7a436f9308775`
+
+The Hub now routes to this primary Site at `cloudflare-live@5bc24120a0e7ee98abfb924a40aff33e059792dc`. The [Cloudflare Stage](https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/) is retained as a secondary mirror; its deployment at `6ec3e9dfb27d7db2b93ff52f58393e270e721513` succeeded. Neither hosting publication is a game Live promotion or human acceptance.
+
+**Verification limit:** deployment success is confirmed by Sites. New browser play verification remains unavailable because the browser's admin-enforced policy check could not be completed. Do not substitute deployment success for a game-play PASS. No bypass attempted. Product evidence remains 19/19 source tests, native loader 10/10, prior Player 10/10, four native representative world views, native edit/sculpt/save/reload and prior fresh authoring roundtrip 5/5. New Studio-laden button import smoke and public-host freeplay remain unverified. No product defect was independently reproduced in this recovery.
+
+Browser storage belongs to each origin: the Site opens its own world state. Existing Studio exports can be carried through the existing Studio laden importer; no silent migration is claimed.
+
+Exactly one human gate: **Georg freeplays the MVP1 Site**. Enter, WASD/Shift/right-mouse camera, I at Clown, Tab Play/Build, Library object editing, terrain Raise/Lower, Welt sichern / Studio speichern / Studio laden. Keep the long-route bot quarantined. No merge, no new runtime architecture, no further content expansion in this recovery.
+
 # CHANGELOG · Procedural Test World 01
+
+## 2026-10-04 · MVP1 STAGE DEPLOYED · PUBLIC BROWSER CHECK BLOCKED
+
+This is the current status; earlier frozen/not-deployed/model-switch entries below are historical.
+
+**Product:** [KFB World Studio MVP1](https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/) · linked from [KFB Hub](https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/).
+
+Cloudflare confirms deployment SUCCESS at `6ec3e9dfb27d7db2b93ff52f58393e270e721513`. Exact runtime source is `38ff52138078472a8cc2f34fe19fc240ba91eb29`, existing Draft PR #348. All 83 published files match intended Git blobs; all 80 scoped runtime files match the source branch. The Stage and Hub were published together; the follow-up updates their explicit verification status. No merge, no Live promotion, no replacement of another runtime owner.
+
+**Public browser verification is NOT PASS.** The browser tool denied access to both localhost Studio import and the exact public Stage because its admin-enforced policy service was unavailable. No safety control was bypassed and no alternate transport was used to bypass that denial. Consequently no public screenshot, public Enter smoke, or visible revision confirmation is claimed. This is a TOOL BLOCKER, not an independently reproduced product defect. Hub and deployment manifest explicitly show the open browser check.
+
+Product evidence preserved:
+- 19/19 local source contracts PASS; fresh native loader 10/10 and actual Enter/Play/Build.
+- Prior native Player browser 10/10 PASS. Current W/D taps responsive; no new sustained movement certification.
+- Native Clown conversation/BINGO and existing Card receipt/persistence.
+- Original green KayKit well isolated, placed, scaled to 1.25 and moved; terrain sculpt; actual native save/export of 41 objects and 2 strokes; saved-world reload retains 2 strokes.
+- Prior separate-origin native GUI import/re-export 5/5 PASS (schema, object count, terrain, edited transform, source). The newly exposed **Studio laden** button is visible but its fresh file-picker smoke is blocked by the browser tool.
+- 4/4 native representative views captured: Town, Dystopia, Utopia, Protopia. No rejected OSM foundation observed.
+- Prior Ground → Drive → Ground over 6.077702 m remains KEEP/optional; not recertified today.
+
+Runtime changes in this recovery are only `wb2-mvp.v1.js` (expose the existing importer as Studio laden) and `wb2-studio.v1.js` (four existing world camera presets in Library). Both syntax checked. Supporting evidence: `evidence/MVP1_STAGE_PUBLICATION_2026-10-04.json` and four `evidence/mvp1-*.jpg` views.
+
+The long-route waypoint/key-driver/endpoint method is quarantined supplementary QA, not a product stop. Full concert/dance, four-Card journey and whole nine-dimension critic acceptance remain unproven follow-up work; they do not block this human MVP Stage.
+
+**Exactly one human gate: Georg freeplays MVP1.** Enter → WASD / Shift / right-mouse camera → I near Clown → Tab for Build → Library source object → terrain Raise/Lower → Welt sichern / Studio speichern. Studio laden uses the existing workspace importer. The only outstanding delivery verification is regular public browser smoke once the browser policy service is operational. Preserve the same source/Stage; do not restart the route bot or rebuild working systems.
 
 ## 2026-10-04 · One-Shot routing correction
 

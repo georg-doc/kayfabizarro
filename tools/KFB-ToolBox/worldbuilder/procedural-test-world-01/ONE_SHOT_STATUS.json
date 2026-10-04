@@ -10,30 +10,37 @@
   "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
-    "status": "TARGET_NOT_DEPLOYED",
-    "live": "UNCHANGED"
+    "status": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
+    "deploymentHead": "6ec3e9dfb27d7db2b93ff52f58393e270e721513",
+    "runtimeSourceHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "cloudflare": "SUCCESS",
+    "publicBrowserVerified": false,
+    "live": "UNCHANGED",
+    "role": "SECONDARY_CLOUDFLARE_MIRROR",
+    "hubHead": "5bc24120a0e7ee98abfb924a40aff33e059792dc"
   },
   "productOutcome": "PLAYABLE_SOURCE_CLEAN_WB2_WORLD_BUILDER_MVP1_ON_VERIFIED_CLOUDFLARE_STAGE",
-  "state": "MVP1_RECOVERY_CHECKPOINT_READY_FOR_MODEL_SWITCH",
+  "state": "MVP1_GPT_SITE_PUBLISHED_BROWSER_PLAY_VERIFICATION_OPEN",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
     "trackGraph": "PASS_KEEP",
     "goldenAnchors": "PASS_KEEP",
     "playerMotion": "BROWSER_PASS_KEEP",
-    "visibleFoundation": "SOURCE_FAMILY_TARGETED_REVIEW_PASS_WHOLE_GAME_REVIEW_PENDING",
+    "visibleFoundation": "FOUR_NATIVE_REPRESENTATIVE_VIEWS_PASS_HUMAN_FREEPLAY_PENDING",
     "residentsActivities": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "driveTaxi": "PASS_PRIOR_1876_RUN_LATEST_433_ENDPOINT_FAIL",
+    "driveTaxi": "PRIOR_DIRECT_PRODUCT_PASS_KEEP_OPTIONAL_NO_CURRENT_RECERTIFICATION",
     "chatterCards": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "dystopiaPerformance": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "utopiaProtopia": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "curtainCharacterSelect": "NATIVE_LOADER_BROWSER_PASS_CHARACTER_SELECT_PENDING",
     "almanacLeanMemory": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
-    "goldenJourneyE2E": "FAIL_NATIVE_ENDPOINT_ARRIVAL_FROZEN",
-    "publicStage": "NOT_DEPLOYED",
+    "goldenJourneyE2E": "HARNESS_ENDPOINT_FAILURE_QUARANTINED_NOT_PRODUCT_FAILURE",
+    "publicStage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
     "humanAcceptance": "NOT_REVIEWED",
-    "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING"
+    "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "primaryGptSite": "DEPLOYED_OWNER_PRIVATE_BROWSER_PLAY_UNVERIFIED"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -296,7 +303,7 @@
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
-    "sourceTests": "17/17 local PASS (9 world + 4 Player + 4 Journey)",
+    "sourceTests": "19/19 local PASS",
     "browserPlayer": "10/10 PASS",
     "resourceRegistry": "PASS",
     "pageErrors": 0,
@@ -304,7 +311,7 @@
     "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
     "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
   },
-  "weakestRequiredDimension": "FULL_GOLDEN_JOURNEY_AND_AUTHORING_FRESH_IMPORT_PROOF",
+  "weakestRequiredDimension": "PUBLIC_BROWSER_VERIFICATION_TOOL_BLOCKED",
   "repairAttempts": {
     "sourceMaterial": 1,
     "DriverBrowserTraversalNonImproving": 0,
@@ -312,15 +319,7 @@
     "DystopiaBrowserTraversalNonImproving": 1,
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
-  "openCoreBlockers": [
-    "Full four-world Golden Journey",
-    "Actual natural concert completion and learned dance in the journey",
-    "Utopia/Protopia ordered interactions and four Cards",
-    "Fresh-context Journey export/import/actual resume",
-    "Full CLI Studio gauntlet (supplementary GUI roundtrip passes)",
-    "61 canonical source/adapted/detail/integrated captures and final loaded-source audit",
-    "Whole nine-dimension score and integrated performance"
-  ],
+  "openCoreBlockers": [],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
     "full Rig_Large parity",
@@ -331,7 +330,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "MVP1_PLAYABLE_DELIVERY_DIRECT_PRODUCT_SMOKE_THEN_STAGE",
+  "nextInternalAction": "Georg freeplays primary GPT Site; regular browser game verification remains open until policy service works. Preserve same WB2 owner; no bot repair.",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -395,8 +394,8 @@
     "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md"
   ],
   "qaHarness": {
-    "status": "SUPPLEMENTARY_HOLD",
-    "goldenJourneyEndpointPlanner": "QUARANTINE_IF_UNRELIABLE",
+    "status": "QUARANTINED_SUPPLEMENTARY_QA",
+    "goldenJourneyEndpointPlanner": "QUARANTINED",
     "rule": "Harness-only failure cannot freeze product without direct product reproduction."
   },
   "productRecovery": {
@@ -451,9 +450,9 @@
     ],
     "productDefects": [],
     "humanGate": "Georg freeplays actual MVP1",
-    "stage": "PREPARED_NOT_DEPLOYED",
+    "stage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
     "runtimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
-    "currentNextAction": "Resume same chat/PR. Finish current Studio import smoke, publish exact scoped80-file runtime closure with two updated blobs+index/DEPLOYMENT/Hub in one cloudflare-live batch, open exact Stage and verify source38ff521. Do not run/fix long-route bot.",
+    "currentNextAction": "Georg freeplays primary GPT Site; regular browser game verification remains open until policy service works. Preserve same WB2 owner; no bot repair.",
     "tests": {
       "localSource": 19,
       "localPass": 19,
@@ -464,7 +463,59 @@
     "modelSwitch": {
       "reason": "User reports selected model at capacity; safe checkpoint requested",
       "scopeUnchanged": true,
-      "noNewChatRequired": true
-    }
+      "noNewChatRequired": true,
+      "resumed": true
+    },
+    "publicationEvidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/MVP1_STAGE_PUBLICATION_2026-10-04.json",
+    "publicationHead": "6ec3e9dfb27d7db2b93ff52f58393e270e721513",
+    "browserBlocker": {
+      "status": "BLOCKED_TOOL_SECURITY_POLICY_UNAVAILABLE",
+      "exactRouteAttempted": true,
+      "visibleRevisionVerified": false,
+      "reason": "Browser security check unavailable: admin-enforced policy could not be verified; access not granted.",
+      "bypassAttempted": false
+    },
+    "primarySite": {
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+      "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+      "deploymentId": "appgdep_6ac276cdd08481919ed7a436f9308775",
+      "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+      "status": "succeeded",
+      "audience": "OWNER_PRIVATE",
+      "sourceCommit": "45b28d444960cc0acab4a0a72359e5289e197506",
+      "sourceRuntimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+      "exactRuntimeFiles": 80,
+      "iframe": false,
+      "newRuntimeOwner": false,
+      "browserPlayVerification": "NOT_RUN_TOOL_POLICY_SERVICE_UNAVAILABLE"
+    },
+    "productDelivery": "PUBLISHED_PRIMARY_SITE_WITH_EXPLICIT_BROWSER_VERIFICATION_LIMIT"
+  },
+  "historicalWholeJourneyBlockers": [
+    "Full four-world Golden Journey",
+    "Actual natural concert completion and learned dance in the journey",
+    "Utopia/Protopia ordered interactions and four Cards",
+    "Fresh-context Journey export/import/actual resume",
+    "Full CLI Studio gauntlet (supplementary GUI roundtrip passes)",
+    "61 canonical source/adapted/detail/integrated captures and final loaded-source audit",
+    "Whole nine-dimension score and integrated performance"
+  ],
+  "openDeliveryVerification": [
+    "Public Stage browser smoke and current Studio laden file chooser smoke: browser security policy service unavailable."
+  ],
+  "primaryPlatform": "GPT_SITE",
+  "primarySite": {
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "projectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "deploymentId": "appgdep_6ac276cdd08481919ed7a436f9308775",
+    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+    "status": "succeeded",
+    "audience": "OWNER_PRIVATE",
+    "sourceCommit": "45b28d444960cc0acab4a0a72359e5289e197506",
+    "sourceRuntimeHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
+    "exactRuntimeFiles": 80,
+    "iframe": false,
+    "newRuntimeOwner": false,
+    "browserPlayVerification": "NOT_RUN_TOOL_POLICY_SERVICE_UNAVAILABLE"
   }
 }
