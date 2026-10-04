@@ -1,3 +1,27 @@
+## 2026-10-04 · Environment Atlas Site scope correction · full Claude Design project corpus
+
+- Georg resolved the previously open third-KayKit-Hex identity: `media/3D_Assets/Kaykit_Medieval Snow Biome/`, already consumed by R2D at `ab65e8c46ca3c07db4294214a63384975fb7d0d9`.
+- Source audit measured the Snow source as 57 GLB + 21 FBX in Models; 42 GLB are Hex tiles and 15 are object/building/nature pieces. Its license identifies it as `KayKit : Medieval Builder Pack Patreon Bonus (1.0)`. No dedicated Registry shard currently exists, so Work must reconcile it through the existing Registry/Librarian path rather than create a second catalog.
+- Correct current Hex classification: **three KayKit families** = Medieval Hexagon + Medieval Builder + Medieval Snow Biome/Builder Patreon Bonus; Kenney `GLB_hexagon_kit` is an additional secondary family and remains deduplicated from the `kenney_hexagon-kit` alias.
+- Scope widened from Hex+Buildings to the full useful Claude Design `KayKit Environment Atlas` project lineage. Mandatory project inventory now covers S11 Hex Realm, S12 Tile Model, S13.2 Dungeon Generator, S14–S17 Bits/Space/Restaurant, S18/S19 Plant Prop + EyeRig, S20 Sample Atlas, S21 Room Study/editor and S22 wall-node/postmortem/editor line, with earlier active/frozen donors retained by status.
+- Existing GitHub source coverage audited: reviewed World Atlas S1–S13.2 intake; Plant Prop v2 actual source/proofs (27 files); S20/S21 export (17 files); S22 lean handover (26 files).
+- Plant/EyeRig source is preserved as a named reusable family: `plant-eyes.js` is an adapter to existing KFB EyeRig v6, not a second eye owner; `plant-rig.js` owns only internal prop motion, not world transform/collision.
+- Important recovery gap: S14–S17 are documented in current Housekeeping/Changelog but their actual runtime pages/modules were not found in the current lean exports. Added `PROJECT_CORPUS_AUDIT.md` and `FULL_PROJECT_EXPORT_REQUEST.md`; final Site completeness should reconcile a fresh full Claude Design project export instead of reconstructing those runtimes from prose.
+- Draft PR remains #353; same branch, no Stage/Live/merge claim.
+
+## 2026-10-04 · Environment Atlas Site prep · Hex + Buildings visual SSOT
+
+- Opened Draft PR **#353** on `chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04` from `main@9c2fee62b815f19cf967867f54985bd22e3f222b`.
+- Owner remains `tools/world_atlas`; Registry/Asset Librarian remains asset truth; no second world runtime/library/deformer was created.
+- Added Work-ready `WORK_BRIEF.md`, pinned `SOURCE_MAP.json`, 22/22 PASS `PREP_EVIDENCE.md` and prep `RETURN.md` under `KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/`.
+- Pinned current Hex truth: KayKit Medieval Hexagon, KayKit Medieval Builder, and the single deduplicated Kenney/GLB Hexagon family. Current repo evidence does not yet prove the user-described third distinct KayKit Hex pack; Work must resolve exact source identity rather than guess.
+- Pinned current building Registry shelf across KayKit City Builder / Medieval packs and Kenney Building/Castle/Commercial/Industrial/Suburban/Factory/Fantasy Town/Modular packs.
+- Pinned current branch-local Clay Style SSOT / Golden Matrix and the building evidence layout `SOURCE | GOLDEN | CANDIDATE | CONTACT/EDGE | COST` with `building_A` master Golden and `building_E` Golden support.
+- Bound the 2026-10-04 visible-source firewall so Hürth/OSM sources cannot silently return as Site preview/fallback content.
+- Literal `Data Generator` / `Daten-Generator` naming was not source-resolved; related existing Hex/Dungeon/Babel/R2C/R2D generator/recipe donors are mapped and the literal label stays `SOURCE_REQUIRED`.
+- Reserved human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/` · **NOT DEPLOYED**.
+- No ChatGPT Site URL, browser proof, Stage, Live promotion or merge is claimed. Work continues the same PR and returns one Georg visual/catalog gate.
+
 ## 2026-10-04 · Playable MVP continuous One-Shot + independent Critic
 
 - Added binding `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`: deterministic screenshot/runtime evidence, independent no-code Critic, persisted scores/open issues, source-isolation proof, ranked repair loop and Whole-Game Critic.

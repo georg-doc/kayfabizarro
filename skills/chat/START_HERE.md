@@ -75,6 +75,24 @@ Hard donor rule:
 **a donor may enter the product only in the dimensions for which it was accepted.**
 A mechanism donor is not automatically presentation/content/data authority.
 
+## 2026-10-04 · Environment Atlas Site · Hex + Buildings visual SSOT prep
+
+Current preparation workflow:
+`skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/`
+
+Execution branch / Draft PR:
+- `chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04`
+- PR **#353**
+
+Owner rule:
+- existing `tools/world_atlas` remains Environment/Hex owner;
+- Registry + Asset Librarian remains asset truth;
+- current Clay Style SSOT remains visual/deformation truth;
+- the new Site is a projection/work surface, **not** a second World runtime, asset library or universal deformer.
+
+Reserved human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/` — **NOT DEPLOYED**.
+Work must continue the same branch/PR, create the actual ChatGPT Site without inventing its URL, then publish/verify this exact Cloudflare Stage before PUBLIC_VERIFIED. Legacy Hürth/OSM visible sources are default-denied by the current MVP source firewall. **Scope correction:** the Site captures the full useful Claude Design `KayKit Environment Atlas` lineage, not only Hex + Buildings. The three KayKit Hex-capable sources are now resolved as Medieval Hexagon, Medieval Builder and `Kaykit_Medieval Snow Biome` / Builder Patreon Bonus; Kenney Hex remains additional. Mandatory project modules include S11 Hex Realm, S12 Tile Model, S13.2 Dungeon Generator, S14–S17 Bits/Space/Restaurant, S18/S19 Plant Prop + EyeRig, S20/S21 and S22. Read `PROJECT_CORPUS_AUDIT.md`; S14–S17 actual runtime source remains recovery-required and should come from the prepared full-project export request rather than prose reconstruction.
+
 ## 2026-10-04 · KFB game bigger picture · global reference
 
 Current global product/context reference:
