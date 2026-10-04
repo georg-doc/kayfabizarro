@@ -60,6 +60,25 @@ If Sites publishing capability is unavailable:
 
 Cloudflare mirror/public acceptance work is downstream and bounded. A mirror failure does not invalidate a verified Site product.
 
+
+## 0B. Resolve cost / reasoning mode for delivery
+
+Read:
+`skills/chat/SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md`
+
+If engineering is already complete and the remaining task is only Site publication/update, classify the task:
+
+`PUBLISH_ONLY`
+
+Then:
+- use the lowest-cost / lowest-reasoning Sites-capable executor;
+- do not automatically escalate to a premium/high-reasoning model;
+- if Sites capability is unavailable, preserve the exact publish packet and hand off/wait;
+- do not substitute Cloudflare;
+- do not reopen product/model strategy.
+
+Only if publication reveals a real code/architecture defect does the job leave `PUBLISH_ONLY` and return to an engineering/recovery executor.
+
 ## 1. Recover before changing anything
 
 1. Read `START_HERE.md`, `REGISTRY.json` and the relevant router changelog delta.
