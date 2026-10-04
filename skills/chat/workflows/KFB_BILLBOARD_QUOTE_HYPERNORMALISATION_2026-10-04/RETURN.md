@@ -1,70 +1,101 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
 Date: 2026-10-04
-Status: PLANNING READY · IMPLEMENTATION NOT STARTED
-Owner: KFB ToolBox / Billboard Media Residency
+Status: QUOTE POOL BATCH 01 RESEARCH COMPLETE · GEORG CURATOR REVIEW PENDING
+Owner: KFB Quote Curator · normal Web Chat
+Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
-Last verified planning head before this Return write: 55d7db18a256439ee483ec62258a6a2f7649327f
+Draft PR: #354
+Last verified branch head before this Return write: ceeb39141a6a217912759463763be789210d69d4
 
-## Prepared
+## Batch 01 · canonical decks
 
-- H13 quote read-along loop with attribution and mandatory FrizzleQuestion.
-- Card/deck + biome/world deterministic selection.
-- Clay TV/full-screen control that keeps the same timeline.
-- Existing Audio-owner music/soundbeds feeding H13 visualizer sync.
-- Mute plus existing voice-duck behavior.
-- Brain Food links / optional QR.
-- Private curator/admin Site concept.
-- Clean neutral 3D Billboard test stage.
-- GitHub-backed curation scaffold for all 130 canonical decks.
+The first 10 canonical records from `media/kfb/index.json` were curated from their canonical Card JSONs:
 
-## Owners retained
+1. `1001_kayfabe_nights` — Uncle FrizzleBob's 1001 Kayfabe Nights — 3 candidates
+2. `ai_kayfabe` — Roko's Basilisk & The AI Kayfabe Takeover — 3 candidates
+3. `academic_anarchy_intellectual` — Unseal the Academic Anarchy — Academic Alphas vs Brain Benders — 3 candidates
+4. `anti_rules_toolkit` — The Anti-Rules Manifesto — 3 candidates
+5. `big_bad_brain_wrestling` — Big Bad Brain Wrestling — 3 candidates
+6. `brain_flipper_image_spots` — The Brain-Flipper Pack — 3 candidates
+7. `cinematic_kayfabizarro_2` — Cinematic Legacy & Motion Picture Kayfabe — 3 candidates
+8. `cosmic_grift_dark_journalism` — Cosmic Grift – Dark Journalism — 3 candidates
+9. `forget_utopia` — Forget Utopia — 3 candidates
+10. `ignore_dystopia` — IGNORE DYSTOPIA — Anatomy of a Trap (Deck B) — 3 candidates
 
-H13 remains the Hypernormalisation reference.
-Existing Billboard Context / clay Billboard stack remains physical/context owner.
-Existing Card registry/Builder remains Card owner.
-Existing Audio baseline/runtime remains audio owner.
-No second renderer, Card DB, palette mapper, AudioContext, mixer, input owner or memory owner.
+Total: **30 quote candidates**.
+
+Each candidate contains exact quote text, author/work/year where available, source URL, locator/edition context, retrieval date, verification state, honest rights state, themes, biome tags, at least one deck mapping, Card mapping only where concrete, exactly one FrizzleQuestion, and Brain Food references.
+
+## Provenance
+
+- VERIFIED (`PRIMARY_OR_EDITION_VERIFIED` or `DOUBLE_CHECKED`): **27**
+- `SECONDARY_ONLY`: **3**
+- `UNVERIFIED`: **0**
+
+The three deliberate `SECONDARY_ONLY` records are:
+- Ludwig Wittgenstein, `Philosophical Investigations` §23 — exact English wording cross-checked in strong secondary sources; authorized/edition-level English text not retrieved.
+- Virginia Woolf, `The Cinema` — exact wording verified in a reputable film-journal transcription; edition-level scan not retrieved.
+- Dziga Vertov, `Kino-Eye` — exact English wording cross-checked through Cambridge/Taylor & Francis citations to the Michelson/O'Brien edition; cited English edition not directly retrieved.
+
+## Rights
+
+- `PUBLIC_DOMAIN_CONFIRMED`: **21**
+- `RESEARCHED_RESTRICTED`: **6**
+- `RESEARCHED_QUOTE_LIMIT_ONLY`: **2**
+- `DRAFT_RIGHTS_UNKNOWN`: **1**
+
+Rights-sensitive/open cases:
+- Guy Debord, `The Society of the Spectacle`: archive wording is verified, but exact English-translation/publication rights are not established; remains `DRAFT_RIGHTS_UNKNOWN`.
+- Walter Lippmann, `Public Opinion` (1922): public domain in the US; EU author term remains ongoing; `RESEARCHED_QUOTE_LIMIT_ONLY`.
+- H. L. Mencken, `In Defense of Women` (1918): public domain in the US; EU author term remains active through 2026-12-31; `RESEARCHED_QUOTE_LIMIT_ONLY`.
+- Turing, Wiener, Wittgenstein English translation, Barthes English translation, Vertov English translation and Simon remain research/restricted candidates rather than public-runtime approvals.
+
+No quote is marked `APPROVED_PUBLIC` in this batch.
+
+## Validation evidence
+
+Repository-native data validation: **13/13 PASS**.
+
+Checked:
+- full `QUOTE_POOL_SCHEMA.json` structure recursively;
+- exact first-10 registry packId/title identity;
+- 10 batch deck profiles;
+- 30 unique quote IDs;
+- exactly 3 mapped candidates per deck;
+- all deck refs resolve;
+- all concrete Card refs resolve against the canonical Card JSONs;
+- exactly one FrizzleQuestion per quote;
+- provenance URLs present;
+- non-public rights records are not promoted;
+- verification and rights totals reconcile to 30.
+
+Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
+Screenshots/browser proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 ## Files
 
-Added under `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/`:
-- START_HERE.md
-- WORK_ONE_SHOT_BRIEF.md
-- QUOTE_POOL_SCHEMA.json
-- DECK_QUOTE_PROFILE_SEED.json
-- AUDIO_VISUALIZER_HANDOFF_SCHEMA.json
-- TEST_PLAN.md
-- CHANGELOG.md
-- RETURN.md
+Added:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_POOL_BATCH_01.json`
 
-Routing updated on this planning branch:
-- skills/chat/START_HERE.md
-- skills/chat/CHANGELOG.md
-- kfb-hub/index.html
+Updated:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/RETURN.md`
 
-## Evidence
+## Scope protection
 
-Planning/data checks: **8/8 PASS**.
-Verified 130 registry decks, 130 unique matching profiles, exact ID/title match, and both JSON contracts parse.
+Not changed:
+- H13
+- Billboard runtime/context
+- Audio
+- 3D
+- Stage/runtime implementation
+- Cloudflare/Live surfaces
+- main router or KFB Hub runtime
 
-Runtime/browser/audio/3D tests: NOT RUN.
-No screenshots because no runtime implementation was performed.
-
-## Publication
-
-Planned Stage:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-hypernorm-curator/`
-
-Status: NOT CREATED · NOT DEPLOYED · NOT PUBLIC_VERIFIED.
-
-No merge. No Live promotion. WB2 PR #348 unchanged.
-
-## Open
-
-Quote research/provenance, publication status per quote, Site implementation, H13 adapter, audio analysis adapter, 3D Stage, game Billboard integration, and later optional player-response persistence.
+No merge. No Live promotion.
 
 ## One next gate
 
-After the current MVP1 human-review gate clears, start one continuous Work implementation from `WORK_ONE_SHOT_BRIEF.md` and carry it through the integrated curator + 3D Stage + one complete quote/audio/FrizzleQuestion vertical slice before asking Georg for another product gate.
+**Georg Curator Review Batch 01.**
