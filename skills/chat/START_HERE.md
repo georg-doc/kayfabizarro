@@ -29,6 +29,41 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 
 
+
+## 2026-10-04 · Combat Card-Hex Ascent · provider benchmark planning
+
+A parallel **planning-only** benchmark lane is prepared in the Combat owner while the WB2 World One-Shot continues independently.
+
+Owner repo:
+`georg-doc/KFB-Combat-Arena`
+
+Draft PR:
+**#18** · `planning/card-hex-combat-ascent-benchmark-2026-10-04`
+head `c75c943d41c3a691821df4855253423259302ce2`
+
+Read:
+- `slices/card-hex-combat-ascent-benchmark/START_HERE.md`
+- `slices/card-hex-combat-ascent-benchmark/BENCHMARK_CONTRACT.json`
+
+Product direction:
+real Combat-Arena Card support surfaces + measured three-family KayKit Hex traversal + Babel Chill&Fun jump-assist MECHANISM + current ranged-duel/Blender source + existing Combat VFX/SFX/reward ownership.
+
+The three current KayKit Hex source families are:
+- Medieval Hexagon;
+- Medieval Builder;
+- Medieval Snow Biome.
+
+Benchmark purpose:
+freeze one identical base/source/acceptance packet, then later compare Sol/Work, Astra/Work and Claude Coworker on the same full implementation task. Claude Design Level 5 is a separate design-authoring comparison, not a replacement Combat runtime owner.
+
+**Do not start multiple implementation writers yet.**
+Current source-freeze blocker is the common Blender Duel return/state. The S17 Gunfight Duel is already human-positive foundation; the corrected Blaster/Rifle/Minigun Blender output is still pending.
+
+Reserved future comparison Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-benchmark/` · **NOT DEPLOYED**.
+
+This lane does not write to WB2 PR #348 and does not alter Live.
+
 ## 2026-10-04 · PR #348 RETURNED · CONTINUOUS ONE-SHOT + EXTERNAL CRITIC
 
 The WSA run has returned after the browser-green Player checkpoint instead of continuing through the full ONE_SHOT. Treat that Player work as **KEEP**, not as a new external gate.
