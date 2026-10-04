@@ -1481,3 +1481,16 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-04 · KFB Audio SFX Library Index 01
+
+- owner remains **KFB Audio & Soundscape Baseline v1**; no second audio runtime or Site;
+- asset source lock: `main@ca4f953d0d5ca001b46f1d89b8908b80592a09c9`;
+- canonical `media/3D_Assets/CATALOG/audio-catalog.json` refreshed to **2,084 audio files** = Audio 1,704 + Sounds 380;
+- derived existing-Site view: `tools/KFB-Audio-Site/sfx-library.snapshot.json` indexes all 1,704 Audio files with use-case/event/duplicate metadata;
+- exact alias truth: root interface 100/100 = nested Kenney interface; Classic Arcade small 80/80 = Complete subset; S050 Dry/Wet only 32/84 same-name pairs are exact;
+- one-shot pool is strong; continuous source gaps remain tyre/friction, physical rain/thunder, crowd/venue, city/traffic and additional machinery loops;
+- QA: run `37185843367`, validator **45/45 PASS**, existing Site browser **14/14 PASS**, artifact `11296249195`;
+- no SFX Library UI is claimed published;
+- exactly one next gate remains `KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE`, now expanded to publish Source Intake + SFX Library/Event Map into the **existing** `kfb-audio` Site only.
