@@ -12,7 +12,7 @@ try{
  await page.click('[data-scene="drive"]');
  check('Drive selects road master',await page.locator('#worldTitle').innerText().then(x=>x.includes('Wet Neon Road')));
  check('Drive activates scene',await page.locator('[data-scene="drive"]').evaluate(e=>e.classList.contains('active')));
- await page.click('[data-world-fade="16"]');check('16 second fade selected',await page.locator('[data-world-fade="16"]').evaluate(e=>e.classList.contains('active')));
+ await page.click('[data-world-fade="16"]');check('16 second fade selected',await page.locator('#world').evaluate(e=>e.dataset.fade==='16'));
  await page.click('#voiceDuck');check('Voice duck toggles',await page.locator('#voiceDuck').evaluate(e=>e.classList.contains('active')));
  await page.click('[data-view="catalog"]');
  check('69 catalog tracks',await page.locator('#catalogGrid .track').count()===69,await page.locator('#catalogGrid .track').count());
