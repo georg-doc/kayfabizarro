@@ -1,3 +1,16 @@
+## 2026-10-04 · Environment Atlas Site prep · Hex + Buildings visual SSOT
+
+- Opened Draft PR **#353** on `chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04` from `main@9c2fee62b815f19cf967867f54985bd22e3f222b`.
+- Owner remains `tools/world_atlas`; Registry/Asset Librarian remains asset truth; no second world runtime/library/deformer was created.
+- Added Work-ready `WORK_BRIEF.md`, pinned `SOURCE_MAP.json`, 22/22 PASS `PREP_EVIDENCE.md` and prep `RETURN.md` under `KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/`.
+- Pinned current Hex truth: KayKit Medieval Hexagon, KayKit Medieval Builder, and the single deduplicated Kenney/GLB Hexagon family. Current repo evidence does not yet prove the user-described third distinct KayKit Hex pack; Work must resolve exact source identity rather than guess.
+- Pinned current building Registry shelf across KayKit City Builder / Medieval packs and Kenney Building/Castle/Commercial/Industrial/Suburban/Factory/Fantasy Town/Modular packs.
+- Pinned current branch-local Clay Style SSOT / Golden Matrix and the building evidence layout `SOURCE | GOLDEN | CANDIDATE | CONTACT/EDGE | COST` with `building_A` master Golden and `building_E` Golden support.
+- Bound the 2026-10-04 visible-source firewall so Hürth/OSM sources cannot silently return as Site preview/fallback content.
+- Literal `Data Generator` / `Daten-Generator` naming was not source-resolved; related existing Hex/Dungeon/Babel/R2C/R2D generator/recipe donors are mapped and the literal label stays `SOURCE_REQUIRED`.
+- Reserved human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/` · **NOT DEPLOYED**.
+- No ChatGPT Site URL, browser proof, Stage, Live promotion or merge is claimed. Work continues the same PR and returns one Georg visual/catalog gate.
+
 ## 2026-10-04 · Playable MVP continuous One-Shot + independent Critic
 
 - Added binding `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`: deterministic screenshot/runtime evidence, independent no-code Critic, persisted scores/open issues, source-isolation proof, ranked repair loop and Whole-Game Critic.
