@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · Triplet-Pool Review Stage v1</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecd8;--card:#fbf7ec;--ink:#1d1a16;--mute:#6d6458;--line:#1d1a16;--acc:#c8402e;--keep:#2f7d4f;--cut:#b33a2a;--chg:#c7861c;--blue:#2d5e8c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 "Trebuchet MS",system-ui,sans-serif}
+header{padding:14px 18px 6px}
+h1{margin:0;font-size:22px;letter-spacing:.3px}
+.sub{color:var(--mute);font-size:13px;margin-top:3px}
+.warn{margin:8px 18px 0;padding:8px 12px;border:1.5px solid var(--line);border-radius:6px;background:#fff6d8;font-size:13px}
+.tabs{display:flex;gap:6px;padding:10px 18px 0;flex-wrap:wrap}
+.tab{border:2px solid var(--line);background:var(--card);padding:6px 12px;border-radius:7px 7px 0 0;cursor:pointer;font-weight:700}
+.tab.on{background:var(--ink);color:#fff}
+main{padding:0 18px 30px}
+section{display:none;border:2px solid var(--line);border-radius:0 8px 8px 8px;background:var(--card);padding:14px}
+section.on{display:block}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+select,button,textarea,input{font:inherit}
+select{padding:5px 8px;border:1.5px solid var(--line);border-radius:6px;background:#fff}
+button{border:2px solid var(--line);background:#fff;border-radius:7px;padding:6px 11px;cursor:pointer;font-weight:700}
+button:hover{transform:translateY(-1px)}
+button.call{min-width:120px}
+.c-bingo{background:#d9f0dc}.c-boggle{background:#dfe9f7}.c-bongo{background:#fbe6c8}.c-bloed{background:#f6d4cf}
+.cardbox{margin:10px 0;padding:10px 12px;border:2px dashed var(--line);border-radius:8px;background:#fff}
+.cardbox b{font-size:15px}.cardbox .pw{font-style:italic;color:#3b342c}
+.stage{position:relative;height:430px;border:2px solid var(--line);border-radius:10px;overflow:hidden;
+  background:linear-gradient(#cfe3ea 0 62%,#c9b48a 62% 100%)}
+.stage .floor{position:absolute;left:0;right:0;bottom:0;height:38%;background:repeating-linear-gradient(90deg,#c2ab7f 0 40px,#bea676 40px 80px);border-top:2px solid var(--line)}
+.fig{position:absolute;bottom:52px;width:150px;text-align:center}
+.fig.a{left:9%}.fig.b{right:9%}
+.fig .name{display:inline-block;margin-top:4px;padding:2px 8px;border:1.5px solid var(--line);border-radius:5px;background:#fff;font-weight:700;font-size:13px}
+.fig svg{display:block;margin:0 auto;overflow:visible}
+.fig.talk .mouth{animation:talk .18s infinite alternate}
+@keyframes talk{from{transform:scaleY(.3)}to{transform:scaleY(1.2)}}
+.mouth{transform-origin:center;transform-box:fill-box}
+.bubble{position:absolute;top:18px;max-width:46%;background:#fff;border:2px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:3px 3px 0 var(--line);opacity:0;transition:opacity .2s}
+.bubble.show{opacity:1}
+.bubble.a{left:3%}.bubble.b{right:3%}
+.bubble:after{content:"";position:absolute;bottom:-14px;width:22px;height:14px;background:#fff;border:2px solid var(--line);border-top:0;clip-path:polygon(0 0,100% 0,30% 100%)}
+.bubble.a:after{left:40px}.bubble.b:after{right:40px;transform:scaleX(-1)}
+.bubble.thought{border-style:dashed;border-radius:22px;font-style:italic;color:var(--mute)}
+.flip{display:flex;gap:6px;flex-wrap:wrap}
+.leaf{border:1.5px solid var(--line);border-radius:6px;padding:4px 7px;background:#fffdf6;transform:rotateX(90deg);transform-origin:top;transition:transform .32s cubic-bezier(.3,1.6,.5,1)}
+.leaf.in{transform:rotateX(0)}
+.leaf small{display:block;font-size:9.5px;color:var(--mute);letter-spacing:.4px;text-transform:uppercase}
+.meta{font-size:11px;color:var(--mute);margin-top:6px}
+.player{position:absolute;left:50%;transform:translateX(-50%);bottom:8px;background:var(--ink);color:#fff;border-radius:7px;padding:5px 12px;font-weight:700;opacity:0;transition:opacity .2s}
+.player.show{opacity:1}
+.log{margin-top:10px;max-height:180px;overflow:auto;font-size:12.5px;border-top:1.5px solid var(--line);padding-top:6px}
+.log div{padding:2px 0}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+.tri{border:2px solid var(--line);border-radius:8px;background:#fff;padding:9px 10px}
+.tri.k{border-color:var(--keep);box-shadow:inset 6px 0 0 var(--keep)}
+.tri.x{border-color:var(--cut);box-shadow:inset 6px 0 0 var(--cut);opacity:.75}
+.tri.c{border-color:var(--chg);box-shadow:inset 6px 0 0 var(--chg)}
+.tri .id{font:12px ui-monospace,Menlo,monospace;color:var(--mute)}
+.tri .parts{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0}
+.tri .parts span{border:1.5px solid var(--line);border-radius:5px;padding:2px 6px;background:#fffdf6}
+.pill{display:inline-block;font-size:11px;border:1px solid var(--mute);border-radius:10px;padding:0 6px;margin:1px 2px 1px 0;color:#3b342c}
+.rev{display:flex;gap:5px;margin-top:6px}
+.rev button{padding:3px 8px;font-size:12.5px}
+.rev button.on.kb{background:var(--keep);color:#fff}.rev button.on.xb{background:var(--cut);color:#fff}.rev button.on.cb{background:var(--chg);color:#fff}
+.tri textarea{width:100%;margin-top:6px;min-height:34px;border:1.5px solid var(--line);border-radius:6px;padding:4px 6px;font-size:13px}
+.new{background:#eef6ff}
+h3{margin:14px 0 6px;font-size:16px}
+.prof{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.prof div{border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;font-size:13px}
+.count{font-size:13px;color:var(--mute)}
+textarea.big{width:100%;min-height:120px;border:1.5px solid var(--line);border-radius:6px;font:12px ui-monospace,Menlo,monospace}
+@media (max-width:640px){.stage{height:470px}.fig{width:110px}.fig svg{width:110px}.bubble{max-width:62%;font-size:13px}.bubble.b{top:170px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>KFB · Triplet-Pool Review Stage</h1>
+  <div class="sub">20 Triplets aus PR #310 (<code>resident-chat-ensemble-data.mjs@7c6522fb</code>) · Status: von einem ChatGPT-Chat geschrieben, von Georg nie abgenommen</div>
+</header>
+<div class="warn">Die Bühne wählt Zeilen nach derselben Logik wie der getestete Kernel #305: eigene Signatur-Triplets zählen 4×, Bewohner-Vorlieben 1,4×, Kartenbezug 1,35×, gerade Gesagtes fast nie. Kein LLM. Was hier steht, ist Kandidat, kein Kanon.</div>
+<div class="tabs">
+  <div class="tab on" data-t="stage">Bühne</div>
+  <div class="tab" data-t="review">Review (20)</div>
+  <div class="tab" data-t="people">Bewohner &amp; Regeln</div>
+  <div class="tab" data-t="io">Export / Import</div>
+</div>
+<main>
+<section id="stage" class="on">
+  <div class="row">
+    <label>Paar <select id="pair">
+      <option value="A">A · Goth Girl × Clown</option>
+      <option value="B">B · Witch × Clown</option>
+      <option value="C">C · Goth Girl × Witch</option>
+    </select></label>
+    <label>Karte <select id="card"></select></label>
+    <button id="start">Szene starten</button>
+    <button id="reset">Zurücksetzen</button>
+  </div>
+  <div class="cardbox" id="cardbox"></div>
+  <div class="stage" id="st">
+    <div class="floor"></div>
+    <div class="bubble a" id="ba"></div>
+    <div class="bubble b" id="bb"></div>
+    <div class="fig a" id="fa"></div>
+    <div class="fig b" id="fb"></div>
+    <div class="player" id="pl"></div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <span style="font-weight:700">Du antwortest:</span>
+    <button class="call c-bingo" data-op="BINGO">KayfaBINGO!</button>
+    <button class="call c-boggle" data-op="BOGGLE">KayfaBOGGLE?</button>
+    <button class="call c-bongo" data-op="BONGO">KayfaBONGO!</button>
+    <button class="call c-bloed" data-op="BLOEDSINN">BLÖDSINN!</button>
+  </div>
+  <div class="meta">BINGO = landet, Abschluss geht an dich · BONGO = beim Material bleiben · BOGGLE = dasselbe umdeuten · BLÖDSINN = Einspruch gegen den Rahmen. Bedeutungen aus dem Pool-Datensatz (#310).</div>
+  <div class="log" id="log"></div>
+</section>
+
+<section id="review">
+  <div class="row"><span class="count" id="cnt"></span>
+    <label>Filter <select id="filt">
+      <option value="all">alle</option><option value="core">allgemein</option><option value="lorekeeper">Lorekeeper</option>
+      <option value="goth-girl">Goth Girl</option><option value="clown">Clown</option><option value="witch">Witch</option><option value="new">neu importiert</option>
+    </select></label>
+  </div>
+  <p class="meta">Pro Triplet: Behalten, Streichen oder Ändern, dazu eine Notiz. Wird in diesem Browser gespeichert. „Abspielen“ zeigt die Zeile auf der Bühne.</p>
+  <div class="list" id="list"></div>
+</section>
+
+<section id="people">
+  <h3>Bewohner (Profile aus #310, Kandidat)</h3>
+  <div class="prof" id="prof"></div>
+  <h3>Regeln, die schon beschlossen sind</h3>
+  <ul style="font-size:13.5px">
+    <li>Jeder der drei Teile trägt Bedeutung; mehr Gewicht heißt nicht mehr Wörter (Town §12.1).</li>
+    <li>Keine Kalendersprüche, keine beliebigen X-mit-Y-Kombinationen, keine Objekt-Füller. Koans und Haikus sind erlaubt (Georg, 03.10.).</li>
+    <li>Der Bewohner erklärt den Schluss nicht; die Lücke gehört dem Spieler (Town §11.3).</li>
+    <li>Ein gemeinsamer Pool; Signatur heißt Gewicht, nicht Catchphrase.</li>
+    <li>In der Welt alles Englisch. Erste Tests ohne Fluffolekt.</li>
+  </ul>
+</section>
+
+<section id="io">
+  <h3>Review exportieren</h3>
+  <div class="row"><button id="dl">Als JSON herunterladen</button><button id="cp">In Zwischenablage kopieren</button><span class="count" id="iomsg"></span></div>
+  <h3>Neue Kandidaten importieren</h3>
+  <p class="meta">JSON-Array mit Einträgen im Pool-Format (<code>tripletId, signatureOf, subject, connector, reframe, relation, tags</code>), z. B. aus dem Web-Chat. Sie erscheinen im Review als „neu“ und auf der Bühne.</p>
+  <textarea class="big" id="imp" placeholder='[ { "tripletId": "...", "signatureOf": ["clown"], "subject": "...", "connector": "...", "reframe": "...", "relation": "CATEGORY_SHIFT", "tags": ["..."] } ]'></textarea>
+  <div class="row" style="margin-top:6px"><button id="doimp">Importieren</button><button id="clrimp">Importierte entfernen</button></div>
+</section>
+</main>
+
+<script>
+const POOL0=[
+{tripletId:"core.frame.01",signatureOf:[],subject:"Nothing changed",connector:"except the frame",reframe:"everything changed",relation:"CATEGORY_SHIFT",tags:["frame","interpretation","card","world"]},
+{tripletId:"core.witness.01",signatureOf:[],subject:"One witness",connector:"after three retellings",reframe:"sounds like a crowd",relation:"ESCALATION",tags:["memory","witness","rumor"]},
+{tripletId:"core.rule.01",signatureOf:[],subject:"Beautiful rule",connector:"until somebody uses it",reframe:"new rule",relation:"COLLISION",tags:["rule","performance","action"]},
+{tripletId:"core.applause.01",signatureOf:[],subject:"Easy applause",connector:"before the thing lands",reframe:"expensive silence",relation:"MISFIT",tags:["performance","audience","status"]},
+{tripletId:"lorekeeper.provenance.01",signatureOf:["lorekeeper"],subject:"You heard it",connector:"from someone who heard it",reframe:"now it sounds witnessed",relation:"ESCALATION",tags:["provenance","heard","witness"]},
+{tripletId:"lorekeeper.provenance.02",signatureOf:["lorekeeper"],subject:"Same story",connector:"different witness",reframe:"different fact",relation:"CATEGORY_SHIFT",tags:["provenance","memory","witness"]},
+{tripletId:"lorekeeper.provenance.03",signatureOf:["lorekeeper"],subject:"Two memories",connector:"one missing source",reframe:"excellent theatre",relation:"MISFIT",tags:["memory","source","performance"]},
+{tripletId:"lorekeeper.unknown.01",signatureOf:["lorekeeper"],subject:"Good question",connector:"no witness",reframe:"still a question",relation:"SYNERGY",tags:["unknown","uncertainty","witness"]},
+{tripletId:"gothgirl.performance.01",signatureOf:["goth-girl"],subject:"Perfect performance",connector:"until you explained it",reframe:"now it has instructions",relation:"MISFIT",tags:["performance","explanation","authenticity"]},
+{tripletId:"gothgirl.performance.02",signatureOf:["goth-girl"],subject:"The mistake",connector:"survived the polish",reframe:"keep that",relation:"SYNERGY",tags:["performance","mistake","polish"]},
+{tripletId:"gothgirl.applause.01",signatureOf:["goth-girl"],subject:"Everybody cheered",connector:"before it landed",reframe:"interesting",relation:"MISFIT",tags:["audience","applause","performance"]},
+{tripletId:"gothgirl.silence.01",signatureOf:["goth-girl"],subject:"Room went quiet",connector:"right on the ugly part",reframe:"play that again",relation:"COLLISION",tags:["silence","performance","attention"]},
+{tripletId:"clown.stage.01",signatureOf:["clown"],subject:"Big claim",connector:"one small stage",reframe:"your turn",relation:"ESCALATION",tags:["claim","performance","stake"]},
+{tripletId:"clown.consensus.01",signatureOf:["clown"],subject:"Everybody agrees",connector:"until somebody acts",reframe:"volunteer?",relation:"ESCALATION",tags:["consensus","action","status"]},
+{tripletId:"clown.theory.01",signatureOf:["clown"],subject:"Excellent theory",connector:"for one round",reframe:"hold this",relation:"CATEGORY_SHIFT",tags:["theory","demonstration","physical"]},
+{tripletId:"clown.authority.01",signatureOf:["clown"],subject:"Important person",connector:"same cheap stool",reframe:"continue",relation:"CATEGORY_SHIFT",tags:["authority","status","performance"]},
+{tripletId:"witch.variable.01",signatureOf:["witch"],subject:"Same story",connector:"one ingredient missing",reframe:"different creature",relation:"CATEGORY_SHIFT",tags:["variable","condition","change"]},
+{tripletId:"witch.dose.01",signatureOf:["witch"],subject:"Strong cause",connector:"only at this dose",reframe:"so it has a dosage",relation:"CATEGORY_SHIFT",tags:["cause","dose","condition"]},
+{tripletId:"witch.falsifier.01",signatureOf:["witch"],subject:"Strong belief",connector:"without a stopping condition",reframe:"untested ingredient",relation:"MISFIT",tags:["belief","test","condition"]},
+{tripletId:"witch.substitution.01",signatureOf:["witch"],subject:"Same result",connector:"with the source swapped",reframe:"interesting cause",relation:"SYNERGY",tags:["substitution","cause","experiment"]}
+];
+const PROF={
+ "lorekeeper":{name:"Lorekeeper",color:"#7a6a9c",method:"PROVENANCE",want:"keep claims and stories connected to where they came from",irr:"second-hand claims presented as eyewitness fact",bias:["CATEGORY_SHIFT","MISFIT"],ops:["BINGO","BOGGLE"],deck:"epistemic_sabotage",note:"Sonderrolle (Meta-Archivar), nicht auf der Bühne"},
+ "goth-girl":{name:"Goth Girl",color:"#4b3a5c",method:"PERFORMANCE_TRUTH",want:"protect what actually lands before it is over-explained",irr:"forced enthusiasm and audience instructions",bias:["MISFIT","COLLISION"],ops:["BONGO","BOGGLE"],deck:"sonic_slaughterhouse"},
+ "clown":{name:"Clown",color:"#d2563f",method:"EMBODIED_STRESS_TEST",want:"make large claims acquire small visible stakes",irr:"abstract certainty with no action or risk",bias:["ESCALATION","CATEGORY_SHIFT"],ops:["BOGGLE","BLOEDSINN"],deck:"kayfabizarro_improv_comedy"},
+ "witch":{name:"Witch",color:"#3f7a4e",method:"ONE_VARIABLE_TRANSFORMATION",want:"find which variable actually causes the change",irr:"categories treated as explanations",bias:["SYNERGY","CATEGORY_SHIFT"],ops:["BONGO","BOGGLE"],deck:"dream_wrestling_with_kayfabe_freud"}
+};
+const CARDS={
+ ovation:{deck:"forget_utopia #11 · Forget Utopia",name:"The Standing Ovation",power:"Reward applause faster than questions. Make doubt feel rude.",tags:["applause","audience","consensus","performance","status"]},
+ cortisol:{deck:"ignore_dystopia #30 · Anatomy of a Trap",name:"The Cortisol Economy",power:"Sell the cortisol spike, then sell the relief, to the exact same customer.",tags:["cause","dose","condition","change","stake"]},
+ doomsday:{deck:"ignore_dystopia #1 · Anatomy of a Trap",name:"The Doomsday Clock",power:"Set a public timer near midnight and move the hands by announcement, never by event.",tags:["frame","witness","belief","rumor","authority"]}
+};
+const PAIRS={A:["goth-girl","clown","ovation"],B:["witch","clown","cortisol"],C:["goth-girl","witch","doomsday"]};
+const LS="kfb.tripletReview.v1";
+let store={rev:{},imported:[]};
+try{const s=JSON.parse(localStorage.getItem(LS)||"null");if(s)store=Object.assign(store,s)}catch(e){}
+const save=()=>{try{localStorage.setItem(LS,JSON.stringify(store))}catch(e){}};
+const pool=()=>POOL0.concat(store.imported.map(e=>Object.assign({_new:true},e)));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* tabs */
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{document.querySelectorAll(".tab,section").forEach(x=>x.classList.remove("on"));t.classList.add("on");$("#"+t.dataset.t).classList.add("on");if(t.dataset.t==="review")renderList()});
+
+/* figures */
+function figSVG(id){const p=PROF[id];return `<svg width="130" height="190" viewBox="0 0 130 190">
+<ellipse cx="65" cy="184" rx="44" ry="6" fill="#0003"/>
+<rect x="30" y="92" width="70" height="86" rx="26" fill="${p.color}" stroke="#1d1a16" stroke-width="3"/>
+<circle cx="65" cy="58" r="44" fill="${p.color}" stroke="#1d1a16" stroke-width="3"/>
+<circle cx="48" cy="52" r="15" fill="#fff" stroke="#1d1a16" stroke-width="2.5"/><circle class="pup" cx="51" cy="55" r="6" fill="#1d1a16"/>
+<circle cx="82" cy="52" r="15" fill="#fff" stroke="#1d1a16" stroke-width="2.5"/><circle class="pup" cx="79" cy="55" r="6" fill="#1d1a16"/>
+<ellipse class="mouth" cx="65" cy="80" rx="11" ry="5" fill="#1d1a16"/></svg><div class="name">${esc(p.name)}</div>`}
+
+/* kernel port (simplified from #305 prepareResidentTurn) */
+const words=t=>new Set(String(t||"").toLowerCase().replace(/[^a-z0-9\s-]/g," ").split(/\s+/).filter(w=>w.length>2&&!["the","and","for","with","that","this","you","one","now"].includes(w)));
+function concepts(e){const s=new Set(e.tags||[]);[e.subject,e.connector,e.reframe].forEach(v=>words(v).forEach(w=>s.add(w)));return s}
+function shares(e,prior){if(!prior)return false;const a=concepts(e),b=concepts(prior);for(const x of a)if(b.has(x))return true;return false}
+function allows(op,e,prior){
+ if(!op||op==="BINGO")return true;
+ if(op==="BONGO")return shares(e,prior);
+ if(op==="BOGGLE")return shares(e,prior)&&e.relation==="CATEGORY_SHIFT";
+ if(op==="BLOEDSINN")return e.relation==="COLLISION";
+ return false}
+function pick(speaker,op,prior,card,recent){
+ const P=PROF[speaker],cand=[];
+ for(const e of pool()){
+  const rev=store.rev[e.tripletId];if(rev&&rev.s==="x")continue;
+  const sig=e.signatureOf||[];const own=sig.includes(speaker);if(sig.length&&!own)continue;
+  if(!allows(op,e,prior))continue;
+  let w=own?4:1;
+  if(P.bias.includes(e.relation))w*=1.4;
+  if((e.tags||[]).some(t=>card.tags.includes(t)))w*=1.35;
+  if(recent.includes(e.tripletId))w*=0.03;
+  if(op==="BINGO"&&e.relation==="SYNERGY")w*=1.3;
+  if(op==="BOGGLE"&&e.relation==="CATEGORY_SHIFT")w*=1.5;
+  if(op==="BLOEDSINN"&&e.relation==="COLLISION")w*=1.5;
+  cand.push({e,w})}
+ const tot=cand.reduce((s,c)=>s+c.w,0);if(!tot)return null;
+ let r=Math.random()*tot;for(const c of cand){r-=c.w;if(r<0)return c.e}return cand[cand.length-1].e}
+
+/* stage state */
+let S={pair:"A",a:"goth-girl",b:"clown",card:CARDS.ovation,turn:null,prior:null,recent:[],started:false};
+function fillCards(){const sel=$("#card");sel.innerHTML=Object.entries(CARDS).map(([k,c])=>`<option value="${k}">${esc(c.name)}</option>`).join("")}
+function setPair(){const [a,b,ck]=PAIRS[$("#pair").value];S.a=a;S.b=b;$("#card").value=ck;setCard();
+ $("#fa").innerHTML=figSVG(a);$("#fb").innerHTML=figSVG(b);resetScene()}
+function setCard(){S.card=CARDS[$("#card").value];$("#cardbox").innerHTML=`<div class="meta">${esc(S.card.deck)}</div><b>${esc(S.card.name)}</b><div class="pw">${esc(S.card.power)}</div><div class="meta">Kartenbezug für die Gewichtung: ${S.card.tags.map(t=>`<span class="pill">${t}</span>`).join("")}</div>`}
+function resetScene(){S.prior=null;S.recent=[];S.started=false;S.turn=null;["#ba","#bb"].forEach(s=>{$(s).classList.remove("show");$(s).innerHTML=""});$("#pl").classList.remove("show");$("#log").innerHTML=""}
+function log(h){const d=document.createElement("div");d.innerHTML=h;$("#log").prepend(d)}
+function say(side,e,op){
+ const bub=side==="a"?$("#ba"):$("#bb"),other=side==="a"?$("#bb"):$("#ba"),fig=side==="a"?$("#fa"):$("#fb"),spk=side==="a"?S.a:S.b;
+ other.classList.remove("show");
+ document.querySelectorAll(".fig").forEach(f=>f.classList.remove("talk"));
+ if(!e){bub.className="bubble "+side+" thought show";bub.innerHTML="… (silence)<div class='meta'>Keine passende Zeile im Pool. Schweigen ist eine gültige Ausgabe.</div>";log(`<b>${PROF[spk].name}</b>: schweigt${op?` (nach ${op})`:""}`);return}
+ bub.className="bubble "+side+" show";
+ bub.innerHTML=`<div class="flip"><div class="leaf"><small>subject</small>${esc(e.subject)}</div><div class="leaf"><small>connector</small>${esc(e.connector)}</div><div class="leaf"><small>reframe</small>${esc(e.reframe)}</div></div><div class="meta">${esc(e.tripletId)} · ${e.relation}${e._new?" · NEU":""}</div>`;
+ const leaves=bub.querySelectorAll(".leaf");leaves.forEach((l,i)=>setTimeout(()=>l.classList.add("in"),180+i*420));
+ fig.classList.add("talk");setTimeout(()=>fig.classList.remove("talk"),180+3*420);
+ S.prior=e;S.recent.push(e.tripletId);S.recent=S.recent.slice(-4);
+ log(`<b>${PROF[spk].name}</b>${op?` <span class="pill">nach ${op}</span>`:""}: ${esc(e.subject)} / ${esc(e.connector)} / ${esc(e.reframe)} <span class="meta">${e.tripletId}</span>`)}
+$("#pair").onchange=setPair;$("#card").onchange=()=>{setCard();resetScene()};
+$("#reset").onclick=resetScene;
+$("#start").onclick=()=>{resetScene();S.started=true;S.turn="a";const e=pick(S.a,null,null,S.card,S.recent);say("a",e,null);S.turn="b";log(`<span class="meta">Karte gezeigt: ${esc(S.card.name)}</span>`)};
+document.querySelectorAll(".call").forEach(b=>b.onclick=()=>{
+ if(!S.started){$("#start").click();return}
+ const op=b.dataset.op,lbl=b.textContent;$("#pl").textContent="Du: "+lbl;$("#pl").classList.add("show");setTimeout(()=>$("#pl").classList.remove("show"),1400);
+ log(`<b>Du</b>: ${esc(lbl)}`);
+ const side=S.turn||"b",spk=side==="a"?S.a:S.b;
+ setTimeout(()=>{say(side,pick(spk,op,S.prior,S.card,S.recent),op);S.turn=side==="a"?"b":"a"},450)});
+
+/* review */
+function renderList(){
+ const f=$("#filt").value,P=pool();
+ const items=P.filter(e=>f==="all"||(f==="core"&&!(e.signatureOf||[]).length&&!e._new)||(f==="new"&&e._new)||(e.signatureOf||[]).includes(f));
+ const done=P.filter(e=>store.rev[e.tripletId]&&store.rev[e.tripletId].s).length;
+ $("#cnt").textContent=`${done} von ${P.length} bewertet · behalten ${P.filter(e=>(store.rev[e.tripletId]||{}).s==="k").length} · streichen ${P.filter(e=>(store.rev[e.tripletId]||{}).s==="x").length} · ändern ${P.filter(e=>(store.rev[e.tripletId]||{}).s==="c").length}`;
+ $("#list").innerHTML=items.map(e=>{const r=store.rev[e.tripletId]||{};const owner=(e.signatureOf||[]).map(id=>PROF[id]?PROF[id].name:id).join(", ")||"allgemein";
+ return `<div class="tri ${r.s||""} ${e._new?"new":""}" data-id="${esc(e.tripletId)}">
+ <div class="id">${esc(e.tripletId)} · ${esc(owner)}${e._new?" · NEU":""}</div>
+ <div class="parts"><span>${esc(e.subject)}</span><span>${esc(e.connector)}</span><span>${esc(e.reframe)}</span></div>
+ <div><span class="pill">${e.relation}</span>${(e.tags||[]).map(t=>`<span class="pill">${esc(t)}</span>`).join("")}</div>
+ <div class="rev"><button class="kb ${r.s==="k"?"on":""}" data-s="k">Behalten</button><button class="xb ${r.s==="x"?"on":""}" data-s="x">Streichen</button><button class="cb ${r.s==="c"?"on":""}" data-s="c">Ändern</button><button data-play="1">Abspielen</button></div>
+ <textarea placeholder="Notiz / gewünschte Änderung">${esc(r.n||"")}</textarea></div>`}).join("");
+ document.querySelectorAll(".tri").forEach(el=>{const id=el.dataset.id;
+  el.querySelectorAll("button[data-s]").forEach(b=>b.onclick=()=>{const r=store.rev[id]||{};r.s=r.s===b.dataset.s?null:b.dataset.s;store.rev[id]=r;save();renderList()});
+  el.querySelector("button[data-play]").onclick=()=>{const e=pool().find(x=>x.tripletId===id);document.querySelector('.tab[data-t="stage"]').click();const own=(e.signatureOf||[])[0];const side=own===S.b?"b":"a";say(side,e,null)};
+  el.querySelector("textarea").onchange=ev=>{const r=store.rev[id]||{};r.n=ev.target.value;store.rev[id]=r;save()}})}
+$("#filt").onchange=renderList;
+
+/* people */
+$("#prof").innerHTML=Object.entries(PROF).map(([id,p])=>`<div><b>${p.name}</b>${p.note?` <span class="pill">${p.note}</span>`:""}<br><span class="meta">Methode</span> ${p.method}<br><span class="meta">will</span> ${esc(p.want)}<br><span class="meta">reizt</span> ${esc(p.irr)}<br><span class="meta">bevorzugte Beziehungen</span> ${p.bias.join(", ")}<br><span class="meta">bevorzugte Zurufe</span> ${p.ops.join(", ")}<br><span class="meta">Deck-Kandidat</span> ${p.deck}</div>`).join("");
+
+/* io */
+function exportObj(){return{schema:"kfb.triplet-pool-review/1",date:new Date().toISOString(),source:"PR #310 resident-chat-ensemble-data.mjs@7c6522fb",reviewer:"Georg",
+ entries:pool().map(e=>({tripletId:e.tripletId,imported:!!e._new,decision:({k:"keep",x:"cut",c:"change"})[(store.rev[e.tripletId]||{}).s]||"open",note:(store.rev[e.tripletId]||{}).n||"",subject:e.subject,connector:e.connector,reframe:e.reframe,relation:e.relation,signatureOf:e.signatureOf||[],tags:e.tags||[]}))}}
+$("#dl").onclick=()=>{const b=new Blob([JSON.stringify(exportObj(),null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="KFB_TRIPLET_POOL_REVIEW_"+new Date().toISOString().slice(0,10)+".json";a.click();$("#iomsg").textContent="heruntergeladen"};
+$("#cp").onclick=async()=>{try{await navigator.clipboard.writeText(JSON.stringify(exportObj(),null,2));$("#iomsg").textContent="kopiert"}catch(e){$("#iomsg").textContent="Kopieren nicht erlaubt, bitte Download nutzen"}};
+$("#doimp").onclick=()=>{try{let a=JSON.parse($("#imp").value);if(!Array.isArray(a))a=a.entries||[];const ok=a.filter(e=>e&&e.tripletId&&e.subject&&e.connector&&e.reframe);
+ const ids=new Set(POOL0.map(e=>e.tripletId));store.imported=store.imported.filter(e=>!ok.some(n=>n.tripletId===e.tripletId)).concat(ok.filter(e=>!ids.has(e.tripletId)).map(e=>({tripletId:e.tripletId,signatureOf:e.signatureOf||[],subject:e.subject,connector:e.connector,reframe:e.reframe,relation:e.relation||"SYNERGY",tags:e.tags||[]})));
+ save();$("#iomsg").textContent=ok.length+" importiert";renderList()}catch(err){$("#iomsg").textContent="JSON fehlerhaft: "+err.message}};
+$("#clrimp").onclick=()=>{store.imported=[];save();$("#iomsg").textContent="importierte entfernt";renderList()};
+
+fillCards();setPair();renderList();
+</script>
+</body>
+</html>
