@@ -1,3 +1,16 @@
+## 2026-10-04 · Global KFB game context · pull, don't gate
+
+### CURRENT_REFERENCE
+- Added `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` and registered it as a first-class current reference.
+- Public origin references stay visible:
+  - `https://kayfabizarro.pages.dev/#kfb`
+  - `https://kayfabizarro.pages.dev/#cutplay`
+- Digital game target is a broad-audience chill & fun transmedia experience: comics/Cards become worlds, Residents, encounters, media, music and memory inside a KFB claymation cartoon open world as a living toy.
+- Cut&Play is used as a fractal storytelling grammar across Deck → World → Card → POI → Resident worldview → ChatterBox Triplet → Billboard → Almanac.
+- Analog/public rules and meta-narration are source/origin references, not constraints that automatically override better digital gameplay.
+- Global interaction principle: **PULL, DON'T GATE**. Prefer curiosity, rewards, Residents, Cards, music, landmarks and return value; gate rewards/handoffs rather than exploration wherever practical.
+- No runtime, Stage or Live change.
+
 ## 2026-10-04 · Golden Journey MVP fixture locked
 
 ### PRODUCT DIRECTION
