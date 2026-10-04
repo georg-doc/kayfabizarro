@@ -1,0 +1,910 @@
+{
+  "schema": "kfb.mvp-visible-source-manifest/1",
+  "owner": "KFB WorldBuilder / WB2",
+  "state": "SOURCE_INSPECTION_REQUIRED",
+  "bannedVisible": [
+    "fixtures/huerth-b1-siblings-v0.json",
+    "tools/osm-city-lab/",
+    "elastic-grotesque-clay-huerth01"
+  ],
+  "donorScope": {
+    "legacyCity": {
+      "MECHANISM": "HOLD_DECOUPLED_ONLY",
+      "PRESENTATION": "REJECT",
+      "CONTENT": "REJECT",
+      "DATA": "REJECT"
+    },
+    "nativePlayer": "KEEP",
+    "topology": "KEEP"
+  },
+  "families": {
+    "world.kfb-town": [
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "796eeb010c01ce97376749b77233417505646d5d",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_castle_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "7c9a573ecfb49ddaff4a292fb9f010949591f891",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_market_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "853afb548b9d9271d8d96408fc15e99042411585",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_home_A_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_B_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "836528131ecba18d36b1f59c3f5965471e89173b",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_B_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_B_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_B_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_home_B_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_tavern_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "b9bcd775e83b058dcf01a765239c8e30a541dfd4",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_tavern_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_tavern_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_tavern_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_tavern_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_blacksmith_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "230d04dc40acfdfded49b92dcfe141a5ec17aea0",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_blacksmith_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_blacksmith_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_blacksmith_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_blacksmith_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_well_red.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "8cc2ec48f04688c4cd5292c21b0939a52f5a06c3",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_well_red.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_well_red.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_well_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_well_red.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      }
+    ],
+    "world.dystopia": [
+      {
+        "assetId": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/building-a.glb",
+        "packId": "kenney-city-kit-industrial-1-0",
+        "source": {
+          "blobSha": "717c269f0ef87d616e58babfe6b9d4322aa97de9",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-a.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-a.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/building-b.glb",
+        "packId": "kenney-city-kit-industrial-1-0",
+        "source": {
+          "blobSha": "a145c04385a02eca4f0d1ba5546a3be0fe72ce07",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-b.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-b.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/building-c.glb",
+        "packId": "kenney-city-kit-industrial-1-0",
+        "source": {
+          "blobSha": "98280a98008b273cb175d94a57c99a110d6699f8",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-c.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-c.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/building-l.glb",
+        "packId": "kenney-city-kit-industrial-1-0",
+        "source": {
+          "blobSha": "57c17565b6d20c3a828649539e5bd8af60b6a3ef",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-l.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-l.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/building-q.glb",
+        "packId": "kenney-city-kit-industrial-1-0",
+        "source": {
+          "blobSha": "90784fcbec4dbeec373074e1f9795c4b771a4548",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-q.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB%20format/building-q.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_city-kit-industrial_1.0/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      }
+    ],
+    "world.utopia": [
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_A.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "aca2bdbe1913d128eb4ebfb3a3e4dca6b20c422e",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_A.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_A.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "basemodule_A.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_B.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "f4ee14c829cc2063c046a7fe5bce0dfc7c3d967e",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_B.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_B.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "basemodule_B.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_garage.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "ee134e16d4fd6ea4aa482ab29b956b630d73908a",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_garage.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_garage.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/basemodule_garage.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "basemodule_garage.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/roofmodule_solarpanels.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "3ca20744c7448ccc833215e85a93e02e3dd888ed",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/roofmodule_solarpanels.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/roofmodule_solarpanels.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/roofmodule_solarpanels.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "roofmodule_solarpanels.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/solarpanel.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "210f352790e595b010473d8794777faf047db423",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/solarpanel.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/solarpanel.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/solarpanel.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "solarpanel.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/windturbine_tall.gltf",
+        "packId": "kaykit-space-base-bits-1-0-free",
+        "source": {
+          "blobSha": "dcbadd5727075398343403eb4fe3ca676fb6cb17",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/windturbine_tall.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/windturbine_tall.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "spacebits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/windturbine_tall.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "windturbine_tall.bin"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      }
+    ],
+    "world.protopia": [
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "5bc968a7d9f4f1d2db803caf2d9067c877ea255e",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_windmill_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_A_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "9c96c7d032b8fd77772c58c59e90170241202b0f",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_A_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_A_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_A_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_home_A_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_B_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "c4318c4afe49be61a53c33fc42409f2ce70351f8",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_B_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_B_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_home_B_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_home_B_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_watermill_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "fe5b1a02871a0cd3aae7b7c6cc5c7452897678b1",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_watermill_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_watermill_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_watermill_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_watermill_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_lumbermill_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "235a3535dbc8ea56d3948ab299a223232e5d0865",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_lumbermill_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_lumbermill_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_lumbermill_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_lumbermill_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "7ba57e910857099027a14692fa421593b0b30c7b",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_well_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_well_green.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/building_grain.gltf",
+        "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+        "source": {
+          "blobSha": "999c9d427a8006eddef06e176a7193e94dad984a",
+          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/building_grain.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/building_grain.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/building_grain.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "building_grain.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/hexagons_medieval.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "hexagons_medieval.png"
+          }
+        ],
+        "scope": {
+          "CONTENT": "ALLOWED",
+          "PRESENTATION": "K2_V10_ADAPTATION_REQUIRES_PROOF",
+          "MECHANISM": "SOURCE_NATIVE",
+          "DATA": "REGISTERED"
+        }
+      }
+    ]
+  }
+}
