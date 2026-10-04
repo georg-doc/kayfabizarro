@@ -67,6 +67,29 @@ Before the final Golden Journey human candidate:
 - confirm KFB Town / Dystopia / Utopia / Protopia use intended current KFB source families;
 - only then claim the visual world as reviewable.
 
+
+## 2026-10-04 · WSA RETURNED AT INTERNAL PLAYER CHECKPOINT
+
+The WSA run returned after the native Player checkpoint instead of continuing through the One-Shot. This is **not** a new product gate and does not redefine the assignment.
+
+Returned Player work is KEEP. Current branch-local continuation authority on PR #348:
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json`
+
+Independent critic contract:
+- `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+The resumed executor must establish/extend the deterministic screenshot/evidence loop, use an independent no-code Critic, persist scores/open issues, and run a Whole-Game Critic before final Stage publication.
+
+Invalid stop pattern:
+> Player checkpoint complete → next internal step Residents.
+
+Correct behavior:
+> checkpoint PASS → persist/verify → critic/evidence where applicable → **continue automatically**.
+
+Reserved final human Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · NOT DEPLOYED.
+
 ## Single product outcome
 
 Deliver one coherent, playable KFB MVP candidate in which Georg can:
