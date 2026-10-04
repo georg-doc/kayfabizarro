@@ -21,8 +21,8 @@
     "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "cloudflareRole": "SECONDARY_MIRROR"
   },
-  "productOutcome": "SOURCE_CLEAN_JOYRIDE_KFB_WORLD_STUDIO_MVP1",
-  "state": "HUMAN_VISUAL_FAIL_JOYRIDE_RECOVERY_REQUIRED",
+  "productOutcome": "FOUR_COMPLETE_SSOT_ISLANDS_WITH_JOYRIDE_TRACK_SIGNATURE_LIFETREES_AND_ZERO_BUILDING_TRACK_INTERSECTIONS",
+  "state": "FOUR_ISLAND_JOYRIDE_LIFETREE_SSOT_RECOVERY_READY",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -313,7 +313,7 @@
     "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
     "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
   },
-  "weakestRequiredDimension": "JOYRIDE_PRESENTATION_AND_WORLD_COMPOSITION",
+  "weakestRequiredDimension": "FOUR_ISLAND_VISUAL_WORLD_COMPOSITION",
   "repairAttempts": {
     "sourceMaterial": 1,
     "DriverBrowserTraversalNonImproving": 0,
@@ -322,8 +322,12 @@
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
   "openCoreBlockers": [
-    "Joyride/T4 visible road presentation is missing from the published World Studio",
-    "Town/world composition and livingness are HUMAN FAIL at current first-frame quality"
+    "All four existing islands must be visually rebuilt in SSOT style, not only Town",
+    "Joyride/T4 track presentation is missing",
+    "Buildings currently lack Track/bridge clearance validation and can intersect road geometry",
+    "Each island requires one unique central signature Claymation Life Tree tied to island/deck/zone",
+    "Each island body must read as excavated tree-earth with visible roots, not flat slab/generic rock",
+    "All world presentation must respect the island's exact R2C palette without erasing source identity"
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -335,7 +339,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "VISUAL_WORLD_RECOVERY_JOYRIDE_PRESENTATION_AND_COMPOSITION_THEN_UPDATE_EXISTING_GPT_SITE",
+  "nextInternalAction": "EXECUTE_WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_THEN_UPDATE_SAME_GPT_SITE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -395,8 +399,9 @@
     ]
   },
   "currentRecoveryAuthority": [
-    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md",
-    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md"
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md",
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md",
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/JOYRIDE_VISUAL_WORLD_RECOVERY_BRIEF_2026-10-04.md"
   ],
   "qaHarness": {
     "status": "QUARANTINED_SUPPLEMENTARY_QA",
@@ -554,5 +559,49 @@
     ],
     "knownMissingModule": "buildClayStrand(THREE, stream, …)",
     "rule": "Track Core remains route/support/collision owner; Joyride supplies PRESENTATION, not a second road runtime."
+  },
+  "fourIslandRecovery": {
+    "required": true,
+    "topology": "KEEP_CURRENT_WORLD_RECIPES",
+    "islands": {
+      "world.kfb-town": {
+        "seed": 3,
+        "biome": "burg",
+        "deckId": null,
+        "paletteKey": "burg",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.dystopia": {
+        "seed": 11,
+        "biome": "dystopia",
+        "deckId": "ignore_dystopia",
+        "paletteKey": "dystopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.utopia": {
+        "seed": 17,
+        "biome": "utopia",
+        "deckId": "forget_utopia",
+        "paletteKey": "utopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      },
+      "world.protopia": {
+        "seed": 23,
+        "biome": "protopia",
+        "deckId": "embrace_protopia",
+        "paletteKey": "protopia",
+        "signatureLifeTree": "REQUIRED_UNIQUE"
+      }
+    },
+    "islandForm": "EXCAVATED_TREE_WITH_VISIBLE_ROOTS",
+    "trackPresentation": "JOYRIDE_J14_T4_REQUIRED_OVER_EXISTING_TRACK_CORE",
+    "buildings": "VISIBLE_SOURCE_MANIFEST_ONLY_WITH_TRACK_CLEARANCE",
+    "clearance": {
+      "buildingTrackIntersectionsRequired": 0,
+      "bridgeheadIntersectionsRequired": 0,
+      "protectedAnchorCollisionsRequired": 0
+    },
+    "paletteSource": "R2C PAL @ current main",
+    "siteUpdate": "SAME_GPT_SITE_IN_PLACE"
   }
 }
