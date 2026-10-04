@@ -1,4 +1,7 @@
 name: KFB JUKEBOX CATALOG 01 + Audio Site QA
+concurrency:
+  group: kfb-audio-site-${{ github.ref }}
+  cancel-in-progress: true
 on:
   push:
     branches: [chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04]
