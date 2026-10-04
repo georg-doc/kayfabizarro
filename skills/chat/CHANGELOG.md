@@ -1,3 +1,17 @@
+## 2026-10-04 · One-Shot execution drift correction
+
+### PROCESS CORRECTION
+- Georg flagged that current routing had drifted back into sequential micro-slices despite the explicit One-Shot goal.
+- Root cause: preflight dependencies were incorrectly promoted into separate user-facing execution gates after each proof.
+- The stale Motion #344 status amplified this: Motion was first treated as a blocker, then Player integration was promoted as the next separate blocker after Motion was corrected.
+- Binding correction: **One-Shot = one continuous WSA/Codex integration assignment with one product outcome.**
+- Small commits/tests/Return updates remain mandatory for crash safety, but they are internal checkpoints, not reasons to hand control back to Georg after every success.
+- New execution authority: `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`.
+- Current receiving branch remains World Draft PR #348.
+- Player/Motion, Resident-set, Golden Journey interactions, Drive, performance/audio, Curtain/Character Select, Almanac/Lean Memory and Site Stage are internal steps of the same One-Shot.
+- WSA/Codex stops only for a real owner/source contradiction, missing required source, genuine Georg-only product decision, or the two-repair stop rule.
+- No Runtime/Stage/Live change was made by this routing correction.
+
 ## 2026-10-04 · Motion #344 stale-status recovery → WB2 Player next
 
 ### CORRECTION
