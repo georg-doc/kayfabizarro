@@ -1,3 +1,13 @@
+## 2026-10-04 · Billboard Quote Hypernormalisation curator planning queued
+
+- Georg defined a future in-game Billboard quote loop: deterministic Card/deck + biome/world context → curated quotation → timed H13 Hypernormalisation read-along → attribution → exactly one FrizzleQuestion → optional Brain Food.
+- Added a clay TV/full-screen control requirement that preserves the same quote/audio/visualizer timeline across in-world and immersive view, with mute and existing voice-duck semantics.
+- Reconciled current donors: H13 is the current Hypernormalisation reference; Billboard Context PRs #321/#324/#326 and World Billboard Clay remain physical/context owners; current Card registry/Builder and accepted Audio baseline remain authoritative.
+- Planned a private `KFB Hypernormalisation Curator` admin/GPT Site with Decks, Quotes, Mappings, Audio, Validation and a clean neutral 3D Test Stage. Formal human acceptance remains a direct Cloudflare Stage route, not the private Site alone.
+- Verified canonical `media/kfb/index.json` contains **130 decks** and generated an exact 130-profile coverage seed. Planning/data validation: **8/8 PASS**.
+- Added quote-pool and audio-visualizer handoff schemas plus one continuous Work One-Shot brief.
+- Planning branch: `planning/billboard-quote-hypernorm-curator-2026-10-04`. Planned Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-hypernorm-curator/` · NOT CREATED. No merge / no Live promotion.
+
 ## 2026-10-04 · Coworker Card-Hex Combat Ascent One-Shot authorized
 
 - Georg explicitly authorized exactly one parallel Claude Coworker implementation run for the Card-Hex platformer/combat concept; this does not reopen Sol/Astra/provider comparison.
