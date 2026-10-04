@@ -274,3 +274,17 @@ Einziger nächster Gate: `RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01` im selben WB2
 
 Vertrag: [Independent External Critic Loop](https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md): „After two non-improving passes: CORE blocker → freeze + failure-recovery export“.
 
+
+
+## 2026-10-04 · MVP1 recovery reclassification · harness ≠ product
+
+- Georg rejected further model-comparison/Combat distraction before a working WorldBuilder MVP1 exists.
+- Re-read the frozen failure export and corrected the failure hierarchy.
+- Frozen JSON already states the last failure is a **test-harness endpoint-arrival failure, not proof Taxi runtime or bridge support failed**.
+- Preserved prior real browser proof: run 37196264077 · Ground→Drive→Ground · 6.077702 m.
+- Corrected two-pass semantics: two failed QA-harness repairs freeze/quarantine that harness strategy; they freeze the whole product only if the same blocker is directly reproduced in the product.
+- Marked historical KFB_LOCO_WB2_PLAYER_01 "Exactly one next gate: WSA-RES-SET-01" as superseded micro-checkpoint guidance.
+- Current branch Return/Recovery/ONE_SHOT_STATUS now route to **MVP1-PLAYABLE-DELIVERY**.
+- Added main WSA and Coworker MVP1 recovery rebriefs.
+- Current Stage target remains `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · not yet deployed.
+- No runtime implementation, merge or Live promotion in this control-plane correction.
