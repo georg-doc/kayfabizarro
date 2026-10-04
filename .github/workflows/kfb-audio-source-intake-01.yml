@@ -1,0 +1,40 @@
+name: KFB AUDIO SOURCE INTAKE 01
+on:
+  push:
+    branches: [chatgpt-web/kfb-audio-source-intake-01-2026-10-04]
+  pull_request:
+    paths:
+      - 'media/3D_Assets/Sounds/jukebox.json'
+      - 'tools/KFB-Audio-Site/**'
+      - 'skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/**'
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            media/3D_Assets/Sounds/jukebox.json
+            tools/KFB-Audio-Site
+            skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Validate intake
+        run: node tools/KFB-Audio-Site/validate.mjs
+      - name: Syntax check
+        run: node --check tools/KFB-Audio-Site/audio-site.js
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i -D playwright@1.55.0 >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Start preview
+        run: python3 -m http.server 4173 >/tmp/kfb-audio-intake.log 2>&1 &
+      - name: Browser QA
+        run: node tools/KFB-Audio-Site/qa.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-audio-source-intake-proof
+          path: kfb-audio-source-intake-proof/

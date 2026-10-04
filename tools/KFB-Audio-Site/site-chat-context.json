@@ -5,7 +5,10 @@
   "sourceOfTruth": [
     "media/3D_Assets/Sounds/jukebox.json",
     "tools/KFB-Audio-Site/soundscape-source.json",
-    "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md"
+    "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md",
+    "tools/KFB-Audio-Site/source-intake.v1.json",
+    "media/3D_Assets/CATALOG/audio-catalog.json",
+    "tools/KFB-Audio-Site/sfx-library.snapshot.json"
   ],
   "responsibilities": [
     "Find and compare catalog tracks without inventing missing metadata.",
@@ -14,7 +17,10 @@
     "For new source assets record provenance, exact filename, BPM if known, family/variant relation and stem policy.",
     "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
     "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries.",
-    "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track."
+    "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track.",
+    "When reviewing SFX tests, separate HUMAN_TUNE / UNREVIEWED candidates from VERIFIED_SOURCE; propose KEEP/TUNE/REJECT decisions instead of silently promoting them.",
+    "When drafting prompts for an external model, never pass internal KFB/meta identifiers unless the prompt also translates them into explicit audible qualities; prefer no internal identifiers at all.",
+    "Use the source-locked SFX Library snapshot to find candidate one-shots/loops by gameplay use-case, verb, temporal/spatial class and source family; suppress exact aliases by default and never treat filename inference as listening acceptance."
   ],
   "promptRecipe": {
     "masterFirst": true,
@@ -30,7 +36,9 @@
       "suggested BPM/tonal center when justified",
       "stem priority",
       "2-4-master audition rule"
-    ]
+    ],
+    "copyPasteBlock": "Single block only: BPM or BPM range + short direction phrase + Style prompt. Do not put explanatory meta outside the block when the user asks for a generator-ready prompt.",
+    "externalPromptFormatExample": "BPM: 60–72. Spacious, strange, contemplative. [style text follows]"
   },
   "intakePolicy": {
     "siteInbox": "KFB Production Control / KFB-AUDIO-SITE",
@@ -53,5 +61,30 @@
       "path": "tools/KFB-Audio-Site/prompts/SUNO_V6_PROMPTS_02_2026-09-19.md",
       "use": "compact Suno v6 road/race prompt grammar"
     }
-  ]
+  ],
+  "currentFeedback": {
+    "sfxPromptBank": "HUMAN_TUNE — previous SFX prompts were reported as not very good; do not imitate their wording by default.",
+    "elevenLabsTests": "Treat all current ElevenLabs files as audition candidates only, not accepted soundscape truth.",
+    "preferredSyncedTexture": "Rain percussion · Beetle / Ring · 107 BPM — human-positive style/texture reference, source-only stems."
+  },
+  "currentDirection": {
+    "ambientBedStrategy": "Prefer musical/instrumental ambient beds for biome/weather mood; literal nature SFX are secondary physical-world layers, not the main emotional carrier.",
+    "externalPromptAntiPattern": "Prompts sent to external generators must be self-contained and literal. Never include unexplained internal terms such as KFB, deck IDs, owner names, or project-specific shorthand. Translate all internal context into audible musical/acoustic properties.",
+    "ambiguityRule": "Avoid ambiguous sound words that can be interpreted as vocal/animal noises; describe acoustic source, envelope, space, and function explicitly.",
+    "transitionModel": "Treat ambient beds and road/action songs as DJ-like layers with phrase-aware crossfades; ordinary weather SFX need not be beat-synced.",
+    "customModelStrategy": "Reserve one Suno Custom Model slot for a coherent KFB World / musical-world model; keep the other two slots free. Curate a small coherent training set, and hold out several tracks for evaluation instead of feeding the entire catalog.",
+    "musicalToy": "Treat the world as a musical instrument: biome, weather, movement, social activity, Residents and events influence layered music states while physical SFX remain a supporting reality layer.",
+    "liveDjGameMix": "Use phrase-aware transitions, energy/tension/motion parameters, key/tempo compatibility, ambience bridges and stingers so exploration, driving, disco and action feel continuously mixed rather than playlist-switched.",
+    "paletteStatus": "Six-zone palette masters now also have source-only stem families. Evaluate the trained model before adding any new style zone.",
+    "modelTrainingStatus": "Custom Model training completed; model is ready for controlled breadth/drift evaluation.",
+    "sfxLibrary": "Indexed from main@ca4f953d0d5ca001b46f1d89b8908b80592a09c9: 1,704 Audio files. Strong one-shot pool; continuous physical-world gaps remain tyre/friction, rain/thunder, sustained crowd/venue, city/traffic and additional loopable machinery.",
+    "sfxDuplicatePolicy": "Root interface 100/100 exact aliases of kenney_interface-sounds/Audio; Classic Arcade small pack 80/80 exact subset aliases of Complete; hide exact aliases by default but retain provenance.",
+    "stemStatus": "29 RoadTrip-v2 stem families are present. Earlier Ambient Bed and six-zone pending-stem notes are superseded."
+  },
+  "deckAmbientSources": [
+    "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+    "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+    "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ],
+  "pendingStemDownloads": []
 }

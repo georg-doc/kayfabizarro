@@ -1,0 +1,164 @@
+{
+  "schema": "kfb.audio-site.world-mixer/0.1",
+  "updated": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "defaultRecipe": "journey",
+  "policy": {
+    "authoringSurfaceOnly": true,
+    "masterFirst": true,
+    "crossSongPitchedStemMix": false,
+    "physicalSfxFollowWorldTruth": true,
+    "consumerRuntimeKeepsAudioOwner": true
+  },
+  "recipes": [
+    {
+      "id": "journey",
+      "label": "Journey",
+      "scenes": [
+        {
+          "id": "town",
+          "label": "Town",
+          "mode": "Explore",
+          "tracks": [
+            "roadtrip-v2-folk-acoustic-storybook-bed",
+            "roadtrip-v2-soul-r-and-b-ambient-bed"
+          ],
+          "world": "wind",
+          "fade": 8
+        },
+        {
+          "id": "move",
+          "label": "Move",
+          "mode": "Traverse",
+          "tracks": [
+            "roadtrip-v2-cyclical-warmth",
+            "roadtrip-v2-cartoon-chase-capers-bed"
+          ],
+          "world": "wind",
+          "fade": 8
+        },
+        {
+          "id": "drive",
+          "label": "Drive",
+          "mode": "Road",
+          "tracks": [
+            "roadtrip-v2-wet-neon-road-cosmic-surf-experiment",
+            "roadtrip-v2-wet-road-rhythmic-texture-road-radio"
+          ],
+          "world": "wind",
+          "vehicle": "vehicle-v8",
+          "fade": 8
+        },
+        {
+          "id": "dystopia",
+          "label": "Dystopia",
+          "mode": "World",
+          "tracks": [
+            "roadtrip-v2-dystopia-ambient-bed",
+            "roadtrip-v2-rainy-graveyard-small-room-jazz-experiment"
+          ],
+          "world": "wind",
+          "fade": 8
+        },
+        {
+          "id": "party",
+          "label": "Party",
+          "mode": "Event",
+          "tracks": [
+            "roadtrip-v2-demon-lord-afro-strut-01",
+            "roadtrip-v2-stormfront-ring-rockabilly-electro-funk-experiment"
+          ],
+          "accent": "crowd-reaction",
+          "fade": 4
+        },
+        {
+          "id": "utopia",
+          "label": "Utopia",
+          "mode": "World",
+          "tracks": [
+            "roadtrip-v2-utopia-ambient-bed",
+            "roadtrip-v2-cinematic-epic-but-playable-bed"
+          ],
+          "world": "wind",
+          "fade": 8
+        },
+        {
+          "id": "protopia",
+          "label": "Protopia",
+          "mode": "World",
+          "tracks": [
+            "roadtrip-v2-protopia-ambient-bed",
+            "roadtrip-v2-folk-acoustic-storybook-bed"
+          ],
+          "world": "water-babble",
+          "fade": 8
+        },
+        {
+          "id": "reflect",
+          "label": "Reflect",
+          "mode": "Quiet",
+          "tracks": [
+            "roadtrip-v2-metaphysical-cosmic-ambient-bed",
+            "roadtrip-v2-piano-chamber-minimal-bed"
+          ],
+          "world": "water-babble",
+          "fade": 16
+        }
+      ]
+    },
+    {
+      "id": "moshpit",
+      "label": "Moshpit",
+      "scenes": [
+        {
+          "id": "soul",
+          "label": "Soul",
+          "mode": "Warm",
+          "tracks": [
+            "roadtrip-v2-soul-r-and-b-ambient-bed"
+          ],
+          "world": "wind",
+          "fade": 8
+        },
+        {
+          "id": "chase",
+          "label": "Chase",
+          "mode": "Fast",
+          "tracks": [
+            "roadtrip-v2-cartoon-chase-capers-bed"
+          ],
+          "world": "wind",
+          "fade": 4
+        },
+        {
+          "id": "cosmic",
+          "label": "Cosmic",
+          "mode": "Float",
+          "tracks": [
+            "roadtrip-v2-metaphysical-cosmic-ambient-bed"
+          ],
+          "fade": 16
+        },
+        {
+          "id": "road",
+          "label": "Road",
+          "mode": "Drive",
+          "tracks": [
+            "roadtrip-v2-wet-neon-road-cosmic-surf-experiment"
+          ],
+          "vehicle": "vehicle-v8",
+          "fade": 8
+        },
+        {
+          "id": "wonder",
+          "label": "Wonder",
+          "mode": "Reveal",
+          "tracks": [
+            "roadtrip-v2-cinematic-epic-but-playable-bed"
+          ],
+          "fade": 16
+        }
+      ]
+    }
+  ]
+}

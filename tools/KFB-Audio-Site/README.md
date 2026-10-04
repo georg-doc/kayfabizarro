@@ -4,8 +4,9 @@ A lean working surface over existing KFB audio owners.
 
 ## Human-facing purpose
 
+- use **World** as the primary Musical-World Mixer: scene → transition → physical layer;
 - browse and hear the canonical Jukebox;
-- compare complete-master transitions;
+- audition complete-master transitions inside Journey/Moshpit recipes;
 - see available vs missing soundscape source categories;
 - inspect new song/stem intake locally;
 - build grounded requests for integrated Site Chat.
@@ -26,3 +27,13 @@ The intended hosted Site adds integrated Chat using `site-chat-context.json` and
 ## Prompt / chat donors
 
 The Site package includes the existing KFB prompt families under `prompts/` plus `SITE_CHAT_INSTRUCTIONS.md`. These are grounding/reference material for integrated GPT Site chat, not hardcoded generation templates.
+
+
+## Minimal UI rule
+
+The Site is an authoring/listening surface, not a telemetry dashboard.
+
+Primary navigation stays compact:
+`World · Library · Sources · Prompt`.
+
+Technical IDs, hashes, provenance and stem diagnostics stay in source JSON / chat context rather than the main mixer face.

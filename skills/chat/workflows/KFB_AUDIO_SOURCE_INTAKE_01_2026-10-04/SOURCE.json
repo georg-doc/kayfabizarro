@@ -1,0 +1,179 @@
+{
+  "schema": "kfb.audio-source-intake-slice/1",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+  "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
+  "mainSourceRef": "main@26f67e3489411b13774ae6e239d97440210adedd",
+  "counts": {
+    "catalogTracks": 69,
+    "roadTripV2Masters": 59,
+    "stemFamilies": 29,
+    "elevenLabsTests": 17
+  },
+  "rainTexture": {
+    "id": "roadtrip-v2-rain-percussion-beetle-ring",
+    "bpm": 107,
+    "masterSha": "561a6772c01c1d496bf7e60de65c986f18ead413",
+    "stemTreeSha": "33eb03aa5e16ede119a274c05b263f2d9a291850",
+    "status": "HUMAN_POSITIVE_STYLE_REFERENCE"
+  },
+  "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
+  "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
+  "status": "WORLD_MIXER_CORE_GREEN_CURRENT_HEAD_FROZEN",
+  "testedHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
+  "qa": {
+    "run": 37183974727,
+    "job": 111379594367,
+    "validator": "PASS",
+    "syntax": "PASS",
+    "browser": {
+      "pass": 14,
+      "total": 14,
+      "artifact": 11296048368,
+      "digest": "sha256:c60193657c499ce4fd17a8d06c982debb6e0e4a7efdef9dd2aff3f68f57e4bc2"
+    }
+  },
+  "newSunoFamilies": [
+    {
+      "title": "Rainy Graveyard · small-room jazz experiment",
+      "bpm": 89,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Stormfront Ring · rockabilly electro-funk experiment",
+      "bpm": 120,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet Neon Road · cosmic surf experiment",
+      "bpm": 104,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet road rhythmic texture · Road radio",
+      "bpm": 105,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Workshop machine pulse · Beetle _ Maker Space",
+      "bpm": 119,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    }
+  ],
+  "deckAmbientSources": [
+    "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+    "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+    "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ],
+  "ambientDirection": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/AMBIENT_BED_DIRECTION_2026-10-04.md",
+  "ambientBedWinners": [
+    {
+      "title": "Utopia Ambient Bed",
+      "bpm": 73,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 11
+    },
+    {
+      "title": "Protopia Ambient Bed",
+      "bpm": 78,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 7
+    },
+    {
+      "title": "Dystopia Ambient Bed",
+      "bpm": 98,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
+    }
+  ],
+  "musicalWorldStrategy": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/KFB_MUSICAL_WORLD_STRATEGY_2026-10-04.md",
+  "nextCreativePhase": "KFB_AUDIO_CUSTOM_MODEL_EVAL_01",
+  "paletteExpansion": [
+    {
+      "title": "Soul / R&B Ambient Bed",
+      "bpm": 72,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 9
+    },
+    {
+      "title": "Piano / Chamber Minimal Bed",
+      "bpm": 125,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 10
+    },
+    {
+      "title": "Cinematic / Epic-but-Playable Bed",
+      "bpm": 80,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
+    },
+    {
+      "title": "Cartoon Chase / Capers Bed",
+      "bpm": 125,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
+    },
+    {
+      "title": "Folk / Acoustic / Storybook Bed",
+      "bpm": 79,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 11
+    },
+    {
+      "title": "Metaphysical / Cosmic Ambient Bed",
+      "bpm": 72,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 10
+    }
+  ],
+  "promptConvention": "ONE_COPY_BLOCK_BPM_DIRECTION_STYLE",
+  "customModelStatus": "READY_FOR_EVALUATION",
+  "customModelEval": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/CUSTOM_MODEL_EVAL_01.md",
+  "worldMixer": {
+    "schema": "kfb.audio-site.world-mixer/0.1",
+    "path": "tools/KFB-Audio-Site/world-mixer-recipes.json",
+    "primarySurface": "World",
+    "recipes": [
+      "journey",
+      "moshpit"
+    ],
+    "journeyScenes": 8,
+    "ui": "CLEAN_MINIMAL",
+    "status": "IMPLEMENTED_QA_PENDING",
+    "greenMixerHead": "471422243053ae695caf1578761aa3b3a45ed9aa",
+    "greenQa": {
+      "run": 37208076733,
+      "pass": 15,
+      "total": 15
+    },
+    "frozenHead": "2fe9701b0381c82f6defdbb745823664900fbc70",
+    "currentQa": "FAIL_SELECTOR_BINDING_AFTER_SFX_AUGMENTATION",
+    "recovery": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/WORLD_MIXER_FAILURE_RECOVERY.md",
+    "liveUpdated": false
+  }
+}

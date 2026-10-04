@@ -872,6 +872,22 @@
       },
       "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
       "note": "Full workflow green on implementation head b5835c52: validator/syntax PASS, browser 9/9 PASS. Publish only through Sites MCP; no Cloudflare. Current Webchat lacks Sites MCP."
+    },
+    {
+      "id": "kfb-audio-source-intake-01-2026-10-04",
+      "title": "KFB Audio · Source Intake 01",
+      "status": "QA_GREEN_SITE_UPDATE_PENDING",
+      "owner": "KFB Audio & Soundscape Baseline v1",
+      "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+      "site": "https://kfb-audio.frizzlebob.chatgpt.site/",
+      "counts": {
+        "catalogTracks": 55,
+        "roadTripV2Masters": 45,
+        "stemFamilies": 15,
+        "elevenLabsTests": 17
+      },
+      "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
+      "note": "Rain percussion human-positive texture reference; ElevenLabs tests audition-only; old SFX prompt bank HUMAN_TUNE."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

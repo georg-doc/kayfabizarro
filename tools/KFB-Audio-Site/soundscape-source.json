@@ -51,7 +51,8 @@
       "id": "rain-bank",
       "label": "Rain bank",
       "need": "light / medium / heavy rain + surface variants",
-      "status": "SOURCE_REQUIRED"
+      "status": "SOURCE_REQUIRED",
+      "note": "ElevenLabs light/heavy rain tests now exist in Source Lab but are HUMAN_TUNE, not accepted shared rain sources."
     },
     {
       "id": "thunder-bank",
