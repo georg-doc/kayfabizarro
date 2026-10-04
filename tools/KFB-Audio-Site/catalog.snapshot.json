@@ -1872,6 +1872,153 @@
         "status": "positive",
         "note": "Georg described the new experimental Suno songs as all very cool and musically enjoyable on 2026-10-04."
       }
+    },
+    {
+      "id": "roadtrip-v2-utopia-ambient-bed",
+      "title": "Utopia Ambient Bed",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Utopia Ambient Bed.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "b62de3fa33b49630dd37c65036f41a1120a2eeac",
+        "size": 5247496,
+        "provenance": "georg-doc/kayfabizarro main@9c2fee62b815f19cf967867f54985bd22e3f222b"
+      },
+      "roles": [
+        "catalog",
+        "ambient-bed",
+        "biome",
+        "style-reference"
+      ],
+      "tags": [
+        "roadtrip-v2",
+        "ambient-bed",
+        "forget_utopia"
+      ],
+      "autoRadio": {
+        "eligible": false,
+        "weight": 0
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "moods": [
+        "luminous",
+        "idyllic",
+        "polished",
+        "slightly-uncanny"
+      ],
+      "deckSemanticSource": "forget_utopia",
+      "humanReview": {
+        "status": "positive",
+        "note": "Georg selected this as one of the three winning Ambient Bed masters on 2026-10-04."
+      },
+      "stemAcquisition": {
+        "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+        "freeDownloadUnlocked": true,
+        "action": "Download the stems from Suno while the already-unlocked download remains available; attach as sibling stem family later.",
+        "stemPolicyWhenAdded": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-dystopia-ambient-bed",
+      "title": "Dystopia Ambient Bed",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Dystopia Ambient Bed.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "f142d9bc0d7394d49a309c4a09ee461b207f75dc",
+        "size": 5304073,
+        "provenance": "georg-doc/kayfabizarro main@9c2fee62b815f19cf967867f54985bd22e3f222b"
+      },
+      "roles": [
+        "catalog",
+        "ambient-bed",
+        "biome",
+        "style-reference"
+      ],
+      "tags": [
+        "roadtrip-v2",
+        "ambient-bed",
+        "ignore_dystopia"
+      ],
+      "autoRadio": {
+        "eligible": false,
+        "weight": 0
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "moods": [
+        "restrained-tension",
+        "dread",
+        "hypnotic",
+        "spacious"
+      ],
+      "deckSemanticSource": "ignore_dystopia",
+      "humanReview": {
+        "status": "positive",
+        "note": "Georg selected this as one of the three winning Ambient Bed masters on 2026-10-04."
+      },
+      "stemAcquisition": {
+        "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+        "freeDownloadUnlocked": true,
+        "action": "Download the stems from Suno while the already-unlocked download remains available; attach as sibling stem family later.",
+        "stemPolicyWhenAdded": "source-only"
+      }
+    },
+    {
+      "id": "roadtrip-v2-protopia-ambient-bed",
+      "title": "Protopia Ambient Bed",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Protopia Ambient Bed.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "6a7420d2e1e66b2171ee364c57c3043942f24818",
+        "size": 4853825,
+        "provenance": "georg-doc/kayfabizarro main@9c2fee62b815f19cf967867f54985bd22e3f222b"
+      },
+      "roles": [
+        "catalog",
+        "ambient-bed",
+        "biome",
+        "style-reference"
+      ],
+      "tags": [
+        "roadtrip-v2",
+        "ambient-bed",
+        "embrace_protopia"
+      ],
+      "autoRadio": {
+        "eligible": false,
+        "weight": 0
+      },
+      "memory": {
+        "collectible": true,
+        "receiptType": "music-memory"
+      },
+      "moods": [
+        "warm",
+        "organic",
+        "curious",
+        "quietly-optimistic"
+      ],
+      "deckSemanticSource": "embrace_protopia",
+      "humanReview": {
+        "status": "positive",
+        "note": "Georg selected this as one of the three winning Ambient Bed masters on 2026-10-04."
+      },
+      "stemAcquisition": {
+        "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+        "freeDownloadUnlocked": true,
+        "action": "Download the stems from Suno while the already-unlocked download remains available; attach as sibling stem family later.",
+        "stemPolicyWhenAdded": "source-only"
+      }
     }
   ]
 }

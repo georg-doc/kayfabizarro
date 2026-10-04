@@ -66,11 +66,31 @@
     "ambientBedStrategy": "Prefer musical/instrumental ambient beds for biome/weather mood; literal nature SFX are secondary physical-world layers, not the main emotional carrier.",
     "externalPromptAntiPattern": "Prompts sent to external generators must be self-contained and literal. Never include unexplained internal terms such as KFB, deck IDs, owner names, or project-specific shorthand. Translate all internal context into audible musical/acoustic properties.",
     "ambiguityRule": "Avoid ambiguous sound words that can be interpreted as vocal/animal noises; describe acoustic source, envelope, space, and function explicitly.",
-    "transitionModel": "Treat ambient beds and road/action songs as DJ-like layers with phrase-aware crossfades; ordinary weather SFX need not be beat-synced."
+    "transitionModel": "Treat ambient beds and road/action songs as DJ-like layers with phrase-aware crossfades; ordinary weather SFX need not be beat-synced.",
+    "customModelStrategy": "Reserve one Suno Custom Model slot for a coherent KFB World / musical-world model; keep the other two slots free. Curate a small coherent training set, and hold out several tracks for evaluation instead of feeding the entire catalog.",
+    "musicalToy": "Treat the world as a musical instrument: biome, weather, movement, social activity, Residents and events influence layered music states while physical SFX remain a supporting reality layer.",
+    "liveDjGameMix": "Use phrase-aware transitions, energy/tension/motion parameters, key/tempo compatibility, ambience bridges and stingers so exploration, driving, disco and action feel continuously mixed rather than playlist-switched."
   },
   "deckAmbientSources": [
     "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
     "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
     "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ],
+  "pendingStemDownloads": [
+    {
+      "title": "Utopia Ambient Bed",
+      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+      "freeDownloadUnlocked": true
+    },
+    {
+      "title": "Dystopia Ambient Bed",
+      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+      "freeDownloadUnlocked": true
+    },
+    {
+      "title": "Protopia Ambient Bed",
+      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
+      "freeDownloadUnlocked": true
+    }
   ]
 }

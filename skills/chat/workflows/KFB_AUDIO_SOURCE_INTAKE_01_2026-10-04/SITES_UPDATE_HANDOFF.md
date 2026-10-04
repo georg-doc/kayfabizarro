@@ -22,9 +22,9 @@ Candidate child source:
 ## Expected visible delta
 
 Catalog:
-- **60 total**
-- **50 RoadTrip-v2**
-- **20 stem families**
+- **63 total**
+- **53 RoadTrip-v2**
+- **20 current stem families + 3 pending Ambient Bed stem families**
 - new `Rain percussion · Beetle / Ring` card with 107 BPM, source-only stems, human-positive tag.
 
 New tab:
@@ -63,11 +63,22 @@ Site Chat grounding also adds:
 - canonical Utopia/Dystopia/Protopia deck JSONs as semantic inspiration;
 - strict external-generator hygiene: no unexplained internal KFB/project/deck identifiers in Suno/ElevenLabs prompts.
 
+## Three Ambient Bed winners
+
+Also include:
+- Utopia Ambient Bed
+- Dystopia Ambient Bed
+- Protopia Ambient Bed
+
+All three are human-positive masters. Their stems are not yet in GitHub. Keep the visible/source metadata status `STEMS_PENDING_UNLOCKED_DOWNLOAD`.
+
+Georg action outside the Site update: download the already-unlocked Suno stem packages while they remain available without another unlock.
+
 ## Acceptance
 
 1. Update existing `kfb-audio` Site project — do not create a sibling Site.
 2. Open exact live URL.
-3. Verify 60 / 50 / 20.
+3. Verify 63 / 53 / 20 (+3 pending stems).
 4. Verify Source Lab = 17.
 5. Verify Rain remains SOURCE_REQUIRED.
 6. Verify Rain percussion card and human-positive tag.
