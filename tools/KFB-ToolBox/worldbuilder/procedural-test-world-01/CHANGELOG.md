@@ -1,5 +1,17 @@
 # CHANGELOG · Procedural Test World 01
 
+## 2026-10-04 · four-island corridor candidate
+
+- added `WORLD_RECIPES.json`: Town / Dystopia / Utopia / Protopia as data-driven world recipes;
+- added `r2d-archipelago.v1.js`: pure translation/composition layer over the proven R2D core;
+- three inter-island routes are compiled by the existing Track Core `CONNECT` piece and labeled `ROAD_BRIDGE`;
+- added Golden-Journey anchors without mounting Residents;
+- added canonical Dystopia/Utopia/Protopia deck + Card seed refs;
+- reused R2C biome palettes;
+- compressed the old R2C directional layout to an MVP-scale fixture; final distance tuning waits for native Motion;
+- updated exact browser/source proof to the four-island world;
+- no Player, Drive, Residents, Combat, Stage or Live.
+
 ## 2026-10-04 · WORLD-CONVERGENCE-BASE-01 PASS
 
 - current-main source gate: **9/9 PASS** · run 37165910051 / job 111328623269;

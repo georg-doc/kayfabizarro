@@ -51,13 +51,13 @@ const meanPoint=fp=>{
 };
 const radiusOf=(pts,c)=>Math.max(...pts.map(p=>Math.hypot(p.x-c.x,p.z-c.z)));
 
-function transformDonor(rec,pad,index){
+function transformDonor(rec,pad,index,prefix='r2d'){
   const {pts,c}=meanPoint(rec.fp),rad=radiusOf(pts,c);
   if(!(rad>0))throw new Error('R2D building donor has zero footprint radius: '+rec.id);
   // Preserve source scale when it already fits. Otherwise uniformly shrink just enough to fit the authored R2D pad.
   const scale=Math.min(1,pad.r/rad);
   const fp=pts.map(p=>({x:pad.x+(p.x-c.x)*scale,z:pad.z+(p.z-c.z)*scale}));
-  const id='r2d-b1/'+index+'/'+rec.b1.lane;
+  const id=prefix+'/b1/'+index+'/'+rec.b1.lane;
   return{
     id,h:+(rec.h*scale).toFixed(4),hs:'r2d-pad-from-'+rec.hs,kind:rec.kind,name:rec.name,
     fp,roof:rec.roof,mc:rec.mc,minH:+((rec.minH||0)*scale).toFixed(4),
@@ -85,11 +85,12 @@ async function loadB1Donors(){
 }
 
 function makeZone(plan,donors){
-  const buildings=(plan.pads||[]).slice(0,donors.length).map((pad,i)=>transformDonor(donors[i],pad,i));
+  const prefix=plan.worldId||'r2d';
+  const buildings=(plan.pads||[]).slice(0,donors.length).map((pad,i)=>transformDonor(donors[i],pad,i,prefix));
   const maxR=Math.max(...plan.edgeR)+10;
   const roadLine=(plan.poly||[]).map(([x,z])=>({x,z}));
   return{
-    id:'r2d-b1-building-pads',
+    id:(plan.worldId||'r2d')+'/b1-building-pads',
     status:'SOURCE_DERIVED_B1_FAMILY_ON_R2D_PADS',
     rectW:{minX:plan.c0[0]-maxR,maxX:plan.c0[0]+maxR,minZ:plan.c0[1]-maxR,maxZ:plan.c0[1]+maxR},
     counts:{buildings:buildings.length,roads:roadLine.length?1:0,landuse:0},
@@ -131,7 +132,7 @@ export async function mountR2DBuildings({group,plan,field,renderer=null}){
   city.group.position.y=-Ly.plate;
   const stripped=stripNonBuildingPresentation(city);
   const support=city.support?.apply?.((x,z)=>field.heightAt(x,z))||null;
-  city.group.name='R2D B1 building family · '+CITY.FACADE_RULE.id;
+  city.group.name='R2D B1 building family · '+(plan.worldId||'r2d')+' · '+CITY.FACADE_RULE.id;
   group.add(city.group);
 
   const placed=zone.buildings.map(b=>{

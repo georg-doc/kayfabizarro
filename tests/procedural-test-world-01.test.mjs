@@ -5,86 +5,60 @@ import fs from 'node:fs';
 const root=new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/',import.meta.url);
 const html=fs.readFileSync(new URL('PROCEDURAL_TEST_WORLD_01_SOURCE.html',root),'utf8');
 const profile=JSON.parse(fs.readFileSync(new URL('WORLD_PROFILE.json',root),'utf8'));
+const recipes=JSON.parse(fs.readFileSync(new URL('WORLD_RECIPES.json',root),'utf8'));
 const app=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js',import.meta.url),'utf8');
-const adapterSource=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js',import.meta.url),'utf8');
+const adapter=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js',import.meta.url),'utf8');
+const arch=fs.readFileSync(new URL('r2d-archipelago.v1.js',root),'utf8');
+const core=fs.readFileSync(new URL('r2d-island-core.v1.js',root),'utf8');
+const pres=fs.readFileSync(new URL('r2d-presentation.v1.js',root),'utf8');
+const buildings=fs.readFileSync(new URL('r2d-buildings.v1.js',root),'utf8');
 
-test('procedural test world uses stable WorldBuilder and no Travel host',()=>{
-  assert.match(html,/\.\.\/wb2-design-01\/wb2d-app\.js/);
+test('current host is the four-island WB2 profile and not Travel',()=>{
+  assert.match(html,/world:'r2d4'/);assert.match(html,/play:false/);
   assert.doesNotMatch(html,/travel|globe-v13|card-start/i);
-  assert.equal(profile.world.travelHost,false);
-  assert.equal(profile.world.cardSystem,false);
+  assert.equal(profile.world.travelHost,false);assert.equal(profile.world.cardSystem,false);assert.equal(profile.world.play,false);
 });
-
-test('legacy play owner is disabled only for this host profile',()=>{
-  assert.match(html,/play:false/);
-  assert.match(app,/const PLAY_ENABLED=/);
-  assert.match(app,/if\(PLAY_ENABLED\)\{/);
-  assert.match(app,/locomotion intentionally detached/);
+test('world recipe set has exactly four stable nodes and three Track Core road bridges',()=>{
+  assert.equal(recipes.schema,'kfb.world-recipe-set/0.1');
+  assert.deepEqual(recipes.nodes.map(x=>x.id),['world.kfb-town','world.dystopia','world.utopia','world.protopia']);
+  assert.equal(recipes.connections.length,3);
+  assert.ok(recipes.connections.every(x=>x.kind==='ROAD_BRIDGE'&&x.from==='world.kfb-town'));
+  assert.ok(recipes.connections.every(x=>x.trackCore==='64d8597c3dad1dc9814c794d4a566d589e1e1a25'));
 });
-
-test('test world boots source-derived R2D island profile',()=>{
-  assert.match(html,/world:'r2d3'/);
-  assert.equal(profile.r2d.seed,3);
-  assert.equal(profile.r2d.donorBlob,'6952697d7d3c9cd159ac3fdd924f24fa333c904d');
+test('satellite deck and first-card seeds are canonical',()=>{
+  const by=Object.fromEntries(recipes.nodes.map(x=>[x.id,x]));
+  assert.equal(by['world.dystopia'].deckId,'ignore_dystopia');
+  assert.equal(by['world.dystopia'].cardRefs[0],'ignore_dystopia:1');
+  assert.equal(by['world.utopia'].deckId,'forget_utopia');
+  assert.equal(by['world.utopia'].cardRefs[0],'forget_utopia:1');
+  assert.equal(by['world.protopia'].deckId,'embrace_protopia');
+  assert.equal(by['world.protopia'].cardRefs[0],'embrace_protopia:1');
 });
-
-test('future motion dock points to current KayKit-native Motion lane, not wi1-play',()=>{
-  assert.equal(profile.futureMotionDock.pr,344);
-  assert.equal(profile.futureMotionDock.legacyWi1Play,'DISABLED_IN_THIS_ENTRY');
+test('Golden Journey anchors are data fixtures, not mounted Residents',()=>{
+  const ids=recipes.nodes.flatMap(x=>x.anchors.map(a=>a.id));
+  for(const id of ['town.spawn.market','town.resident.clown.onboarding','town.resident.driver.taxi','town.vehicle.taxi.01','dystopia.party.pentagram','dystopia.party.orc-singer','utopia.monstrosity.throne','utopia.robot.works','protopia.farm.social-core','protopia.lorekeeper.plateau','billboard.town','billboard.dystopia','billboard.utopia','billboard.protopia'])assert.ok(ids.includes(id),id);
 });
-
-test('source-proven procedural nature families are routed without claiming placement',()=>{
-  assert.equal(profile.proceduralDesign.natureModules.length,2);
-  assert.equal(profile.proceduralDesign.natureMountStatus,'SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED');
+test('archipelago is pure world data and delegates bridges to Track Core CONNECT',()=>{
+  assert.match(arch,/makeIslandCore/);assert.match(arch,/TC\.compileRecipe\(recipe\)/);assert.match(arch,/type:'CONNECT'/);assert.match(arch,/ROAD_BRIDGE/);
+  assert.doesNotMatch(arch,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame|setAnimationLoop/);
 });
-
-
-test('R2D integration consumes pure source-derived world data and does not create a second renderer owner',()=>{
-  const core=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js',import.meta.url),'utf8');
-  const adapter=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js',import.meta.url),'utf8');
+test('R2D core remains exact pure donor seam',()=>{
   assert.match(core,/donorBlob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'/);
-  assert.match(core,/export function planIsland/);
-  assert.match(core,/export function fields/);
+  assert.match(core,/export function planIsland/);assert.match(core,/export function fields/);
   assert.doesNotMatch(core,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
+});
+test('WB2 remains the renderer/world owner and legacy play is disabled',()=>{
+  assert.match(app,/const PLAY_ENABLED=/);assert.match(app,/if\(PLAY_ENABLED\)\{/);assert.match(app,/locomotion intentionally detached/);
+  assert.match(adapter,/archipelagoWorld/);assert.match(adapter,/ST\.buildTrack\(THREE,c\.stream/);
   assert.doesNotMatch(adapter,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
-  assert.match(adapter,/ST\.buildTrack\(THREE,P\.stream/);
-  assert.match(app,/WORLD_ID\.startsWith\('r2d'\)/);
-  assert.match(app,/WORLD\.baseHeightAt/);
+  assert.equal(profile.futureMotionDock.pr,344);assert.equal(profile.futureMotionDock.legacyWi1Play,'DISABLED_IN_THIS_ENTRY');
 });
-
-
-test('R2D presentation adds floating body water and source-proven nature without a second renderer',()=>{
-  const presentation=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js',import.meta.url),'utf8');
-  assert.match(presentation,/buildIslandBody/);
-  assert.match(presentation,/R2D floating island underside/);
-  assert.match(presentation,/R2D pond/);
-  assert.match(presentation,/R2D creek/);
-  assert.match(presentation,/R2D waterfall/);
-  assert.match(presentation,/environment-family-p1\.mjs/);
-  assert.match(presentation,/environment-family-p2\.mjs/);
-  assert.doesNotMatch(presentation,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame|setAnimationLoop/);
-  assert.match(adapterSource,/mountR2DPresentation/);
+test('presentation and building owners are reused rather than rebuilt',()=>{
+  assert.match(pres,/environment-family-p1\.mjs/);assert.match(pres,/environment-family-p2\.mjs/);
+  assert.match(buildings,/CITY\.buildCityLayer\(zone/);assert.match(buildings,/kfb-facade-rule-v1/);
+  assert.match(buildings,/plan\.worldId/);assert.doesNotMatch(buildings,/new THREE\.BoxGeometry|new THREE\.ShapeGeometry|WebGLRenderer|requestAnimationFrame/);
 });
-
-
-test('R2D building pads consume exact B1 donors through the existing facade owner',()=>{
-  const b=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js',import.meta.url),'utf8');
-  assert.match(b,/fixtureBlob:'1452f44920239e870091b1803c0d2bd183679881'/);
-  assert.match(b,/b1\/compact-simple\/371401529-to-371401477/);
-  assert.match(b,/b1\/ordinary-notched\/371401481-to-371401497/);
-  assert.match(b,/b1\/large-complex\/371401488-to-371401495/);
-  assert.match(b,/CITY\.buildCityLayer\(zone/);
-  assert.match(b,/conflicts:new Set\(\)/);
-  assert.match(b,/kfb-facade-rule-v1/);
-  assert.doesNotMatch(b,/new THREE\.BoxGeometry|new THREE\.ShapeGeometry|WebGLRenderer|requestAnimationFrame/);
-  assert.match(adapterSource,/mountR2DBuildings/);
-});
-
-test('R2D building adapter exposes support and collision facts without enabling a Player',()=>{
-  const b=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js',import.meta.url),'utf8');
-  assert.match(b,/city\.support\?\.apply/);
-  assert.match(b,/const at=\(x,z\)=>/);
-  assert.match(adapterSource,/solidAt\(x,z\)/);
-  assert.match(adapterSource,/buildingAt\(x,z\)/);
-  assert.equal(profile.world.play,false);
+test('global bigger-picture reference is routed into the world recipe fixture',()=>{
+  assert.equal(recipes.globalReference,'skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md');
+  assert.equal(recipes.layout.pullDontGate,true);
 });

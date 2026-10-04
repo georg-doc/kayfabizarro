@@ -1,27 +1,27 @@
-# RETURN · WB2 current-main convergence
+# RETURN · WB2 current-main convergence + Golden corridor
 
-Status: **PASS · READY FOR FOUR-ISLAND CORRIDOR**
+Status: **CORRIDOR IMPLEMENTED · TESTS PENDING**
 
 ## Product reality
 
-The neutral KFB world host is now on a fresh branch from current main and boots as the same proven WB2/R2D single-island world.
-The old PR #332 is donor/history, not the integration base.
+The clean WB2 convergence is already PASS.
+The same owner now contains the first four-island MVP corridor as one data-driven archipelago.
 
-## Passing evidence
+Visible target for the next browser proof:
+- 4 continuous R2D island bodies;
+- 3 Track Core bridge roads;
+- four distinct R2C biome palettes;
+- WB2 remains one renderer/world owner;
+- B1/facade building owner and P1/P2 nature remain reused.
 
-- Source: **9/9 PASS** · run `37165910051` / job `111328623269`.
-- Chromium/WebGL: **PASS** · run `37165909990` / job `111328623037`.
-- Evidence artifact: `11289562726`.
-- Artifact digest: `sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d`.
-- Resource Registry: **PASS** · run `37165909954` / job `111328623053`.
+World data also contains the Golden-Journey anchors and the three canonical future-deck seed sets.
 
-Visible/browser-proven world keeps:
-continuous R2D island body, floating underside, Track Core road, pond/creek/waterfall, P1/P2 nature and existing B1/facade building owner.
+## Not in this slice
 
-## Protected
-
-No Motion, Player, Drive, Residents, Combat, Stage or Live.
+No Player, Taxi, Clown, Band, Robots, Farmers, Lorekeeper or other Residents are mounted.
+No Motion or Drive code is loaded.
+Those attach only after this world gate.
 
 ## Next
 
-WORLD-MULTI-ISLAND-CORRIDOR-01 on this same branch/PR.
+Source + Chromium/WebGL corridor proof.

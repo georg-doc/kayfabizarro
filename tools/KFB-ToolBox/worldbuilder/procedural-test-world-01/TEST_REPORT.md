@@ -1,25 +1,16 @@
-# TEST REPORT · WORLD-CONVERGENCE-BASE-01
+# TEST REPORT · WORLD-MULTI-ISLAND-CORRIDOR-01
 
-Status: **PASS**
+Status: **PENDING**
 
-Passing head: `e1761c44159aaa81b26d243aadcc23cdd3b3836b`
+Precondition WORLD-CONVERGENCE-BASE-01 is PASS.
 
-| Gate | Evidence | Result |
-|---|---|---|
-| source/syntax | run 37165910051 · job 111328623269 | **9/9 PASS** |
-| Chromium/WebGL | run 37165909990 · job 111328623037 | **PASS** |
-| browser artifact | 11289562726 · sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d | **PRESENT** |
-| Resource Registry | run 37165909954 · job 111328623053 | **PASS** |
-
-Browser proof remains the exact WB2 R2D entry and checks:
-- WB2 owner / scene document;
-- continuous R2D terrain and Track Core road;
-- floating body / pond / creek / waterfall / P1+P2 nature;
-- source-backed B1/facade building owner;
-- no legacy `wi1-play`;
-- no Travel Globe / card-start host;
-- one renderer canvas;
-- no unexpected page/console errors.
-
-Repair history:
-the first source pass failed only on stale rehome profile status after the browser had proven current-branch mounting. Repair Pass 1 updated evidence metadata; no runtime source changed.
+Current corridor proof must establish:
+1. 4 stable world nodes.
+2. 3 Track Core `ROAD_BRIDGE` connections.
+3. Dystopia/Utopia/Protopia canonical deck IDs + first Card refs.
+4. Golden Journey anchor IDs resolve to 3D world positions.
+5. four R2D island presentation groups.
+6. four building-owner reports using `kfb-facade-rule-v1`.
+7. no legacy `wi1-play`, Travel Globe or card-start.
+8. one WB2 renderer canvas.
+9. no page/console errors.

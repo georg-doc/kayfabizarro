@@ -35,6 +35,7 @@ jobs:
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js
           node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
           node --check tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
       - name: Install Playwright

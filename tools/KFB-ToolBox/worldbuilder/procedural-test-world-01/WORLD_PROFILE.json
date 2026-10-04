@@ -1,9 +1,9 @@
 {
   "schema": "kfb.procedural-test-world/2",
   "date": "2026-10-04",
-  "status": "WORLD_CONVERGENCE_BASE_PASS",
+  "status": "WORLD_MULTI_ISLAND_CORRIDOR_CANDIDATE",
   "owner": "KFB WorldBuilder / WB2",
-  "checkpoint": "WORLD-CONVERGENCE-BASE-01",
+  "checkpoint": "WORLD-MULTI-ISLAND-CORRIDOR-01",
   "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "sourceDonor": {
@@ -22,9 +22,14 @@
     "camera": "wide",
     "cardSystem": false,
     "travelHost": false,
-    "profile": "r2d3",
+    "profile": "r2d4",
     "rendererOwner": "WB2",
-    "legacyPlayerLoaded": false
+    "legacyPlayerLoaded": false,
+    "recipeSet": "kfb.mvp.archipelago.01",
+    "nodeCount": 4,
+    "connectionCount": 3,
+    "goldenAnchors": 14,
+    "pullDontGate": true
   },
   "proceduralDesign": {
     "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
@@ -96,7 +101,7 @@
       }
     }
   },
-  "next": "WORLD-MULTI-ISLAND-CORRIDOR-01 · Town + Dystopia + Utopia + Protopia as world recipes with three Track-Core connections, Golden-Journey anchors and canonical deck/Card seeds. Still no Player/Drive/Residents.",
+  "next": "Run source + Chromium proof for the four-island corridor. No Motion/Player/Drive/Residents until PASS.",
   "current": {
     "head": "e1761c44159aaa81b26d243aadcc23cdd3b3836b",
     "source": {
@@ -116,5 +121,123 @@
       "job": 111328623053,
       "result": "PASS"
     }
+  },
+  "corridor": {
+    "recipePath": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORLD_RECIPES.json",
+    "archipelagoModule": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js",
+    "nodes": [
+      {
+        "id": "world.kfb-town",
+        "seed": 3,
+        "biome": "burg",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "deckId": null,
+        "cardRefs": [],
+        "anchors": [
+          "town.spawn.market",
+          "town.resident.clown.onboarding",
+          "town.resident.driver.taxi",
+          "town.vehicle.taxi.01",
+          "billboard.town"
+        ]
+      },
+      {
+        "id": "world.dystopia",
+        "seed": 11,
+        "biome": "dystopia",
+        "position": [
+          70,
+          -9,
+          180
+        ],
+        "deckId": "ignore_dystopia",
+        "cardRefs": [
+          "ignore_dystopia:1",
+          "ignore_dystopia:5",
+          "ignore_dystopia:6"
+        ],
+        "anchors": [
+          "dystopia.party.pentagram",
+          "dystopia.party.orc-singer",
+          "billboard.dystopia"
+        ]
+      },
+      {
+        "id": "world.utopia",
+        "seed": 17,
+        "biome": "utopia",
+        "position": [
+          180,
+          4,
+          -65
+        ],
+        "deckId": "forget_utopia",
+        "cardRefs": [
+          "forget_utopia:1",
+          "forget_utopia:2",
+          "forget_utopia:4"
+        ],
+        "anchors": [
+          "utopia.monstrosity.throne",
+          "utopia.robot.works",
+          "billboard.utopia"
+        ]
+      },
+      {
+        "id": "world.protopia",
+        "seed": 23,
+        "biome": "protopia",
+        "position": [
+          -200,
+          10,
+          95
+        ],
+        "deckId": "embrace_protopia",
+        "cardRefs": [
+          "embrace_protopia:1",
+          "embrace_protopia:5",
+          "embrace_protopia:6"
+        ],
+        "anchors": [
+          "protopia.farm.social-core",
+          "protopia.lorekeeper.plateau",
+          "billboard.protopia"
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "id": "route.town-dystopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.dystopia",
+        "fromFraction": 0.2,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      },
+      {
+        "id": "route.town-utopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.utopia",
+        "fromFraction": 0.5,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      },
+      {
+        "id": "route.town-protopia",
+        "kind": "ROAD_BRIDGE",
+        "from": "world.kfb-town",
+        "to": "world.protopia",
+        "fromFraction": 0.8,
+        "trackCore": "64d8597c3dad1dc9814c794d4a566d589e1e1a25"
+      }
+    ],
+    "layoutStatus": "MVP_SCALE_DERIVED_FROM_R2C_DIRECTIONAL_RELATIONSHIP_TUNABLE_AFTER_NATIVE_MOTION",
+    "playerMounted": false,
+    "residentsMounted": false,
+    "driveMounted": false
   }
 }

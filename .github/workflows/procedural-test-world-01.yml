@@ -32,5 +32,6 @@ jobs:
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js
       - name: Source tests
         run: node --test tests/procedural-test-world-01.test.mjs
