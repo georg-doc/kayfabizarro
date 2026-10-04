@@ -174,7 +174,7 @@ export function mountLegacyEyeProfile({THREE,faceHost,profile,expressionContract
         }
       };
     },
-    dispose(){detachEyeOval(rig);rig.dispose();}
+    dispose(){detachEyeOval(rig);rig.dispose();faceHost.dispose?.();}
   };
   log(`Legacy EyeRig v6 mounted · ${profile.actorId} · ${profile.status}`);
   return api;

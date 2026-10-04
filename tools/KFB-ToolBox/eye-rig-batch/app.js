@@ -5,6 +5,9 @@ import { mountKayKitEyes, deriveSourceAnchorSeed } from './lib/kaykit-eye-adapte
 import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
 import { sampleActorFaceColor } from './lib/face-color-sampler.v1.js';
 import { makeK1 } from './lib/clay-k1.js';
+import { assembleLegacy, replaceHead } from './lib/legacy/legacy-rig-adapter.v1.js';
+import { buildLegacyFaceHost, measureLegacyEyeCandidates, setLegacySourceEyeVisibility } from './lib/legacy/legacy-facehost.v1.js';
+import { makeLegacyEyeProfile, mountLegacyEyeProfile } from './lib/legacy-eye-adapter.v1.js';
 
 const DONOR_PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
 const DONOR_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${DONOR_PIN}/`;
@@ -29,6 +32,15 @@ const CLASS_CONFIG = {
     generalUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb',
     moveUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementBasic.glb',
     requiredClips:['Idle_A','Walking_A','Running_A']
+  },
+  Rig_Legacy:{
+    label:'Legacy',
+    catalogUrl:'./data/rig-legacy-heads.v0.json',
+    seedUrl:'./data/rig-legacy-default.v0.json',
+    reviewedUrl:'./data/rig-legacy-auto.v1.json',
+    defaultActor:'barbarian-default',
+    assembledMotion:true,
+    requiredClips:['Idle_A','Walking_A','Running_A']
   }
 };
 const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
@@ -44,6 +56,35 @@ const CLAY_FLOOR = {
 };
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 function sourceAssetUrl(ref,fallbackRevision){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ref?.revision||fallbackRevision}/${ref?.path||''}`); }
+function normalizeLegacyActorRecord(actor){
+  return {...actor,path:actor.sourcePath,revision:actor.sourceRevision,provenance:actor.provenance||'KayKit Dungeon Pack 1.0 / Legacy modular head source'};
+}
+function legacySourceUrl(path){
+  const src=state.legacyCatalog?.source;if(!src||!path)throw new Error('Legacy source catalog unavailable');
+  return sourceAssetUrl({path,revision:src.partsRevision},src.partsRevision);
+}
+function legacyRigUrl(){
+  const src=state.legacyCatalog?.source;if(!src)throw new Error('Legacy rig catalog unavailable');
+  return sourceAssetUrl({path:src.rigPath,revision:src.rigRevision},src.rigRevision);
+}
+function registerLegacyMotion(assembled){
+  state.clips.clear();
+  for(const clip of assembled?.animations||[])if(!state.clips.has(clip.name))state.clips.set(clip.name,clip);
+  const originals=[...state.clips.values()];
+  const pick=(patterns)=>originals.find((clip)=>patterns.some((rx)=>rx.test(clip.name)));
+  const aliases={
+    Idle_A:pick([/^Idle_A$/i,/^Idle$/i,/^Idle/i]),
+    Walking_A:pick([/^Walking_A$/i,/^Walking$/i,/^Walk/i]),
+    Running_A:pick([/^Running_A$/i,/^Running$/i,/^Run/i]),
+    Jump_Full_Short:pick([/^Jump_Full_Short$/i,/^Jump$/i,/^Jump/i])
+  };
+  for(const [name,clip] of Object.entries(aliases))if(clip)state.clips.set(name,clip);
+  state.motionReady=classConfig().requiredClips.every((n)=>state.clips.has(n));
+  gate('#gateMotion',state.motionReady?'pass':'fail');
+  $('#motionStatus').textContent=state.motionReady?`1 mixer · ${assembled?.animations?.length||0} Legacy source clips · Idle/Walk/Run mapped`:'Legacy motion aliases incomplete';
+  $$('.motion').forEach((b)=>{const n=b.dataset.motion;b.disabled=n!=='bind'&&!state.clips.has(n);});
+  return state.motionReady;
+}
 async function applyActorTextureOverride(figure,actor){
   const ref=actor?.textureOverride;
   if(!figure||!ref?.path)return null;
@@ -81,9 +122,10 @@ const state = {
   currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
   componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
+  legacyCatalog:null, legacyProfilesById:new Map(), legacyAssembly:null, legacyHeadPart:null, legacyMeasurement:null,
   appearanceManifest:null, appearanceByActor:{},
   stageLook:'neutral', clayK1:null, ground:null, neutralGroundMaterial:null, clayGroundMaterial:null, clayFloorLoad:null, wheelZoom:null,
-  selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
+  selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity']),Rig_Legacy:new Set(['barbarian-default'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
   expression:'neutral', sourceReady:false, cleanupReady:false, hostReady:false, eyeReady:false, motionReady:false
@@ -329,10 +371,18 @@ function refreshPlacementSourceUi(){
 function renderCleanup02Issue() {
   const badge=$('#cleanup02Badge'), note=$('#cleanup02Issue'), summary=$('#cleanup02Summary');
   if(!badge||!note||!summary)return;
+  if(state.rigClass==='Rig_Legacy'){
+    const m=state.legacyMeasurement, human=m?.status==='HUMAN_REQUIRED';
+    setBadge(badge,human?'HUMAN REQUIRED':m?.status==='MEASURED_CANDIDATE'?'LEGACY MEASURED':'LEGACY',human?'candidate':'pass');
+    note.textContent=human?'LegacyFaceHost could not prove a symmetric source-eye pair. Keep source eyes visible and tune manually.':m?.status==='MEASURED_CANDIDATE'?`LegacyFaceHost source pair · confidence ${m.confidence??'—'} · source eyes hidden only on runtime clone`:'Select a Legacy head to load its persisted source measurement.';
+    note.className=`cleanup-issue-note ${human?'decision':'note'}`;
+    summary.textContent='Legacy cleanup owner: LegacyFaceHost · black-material pair visibility only · source assets unchanged';
+    return;
+  }
   const issue=cleanup02Issue(state.currentActorId);
   if(issue){
     const human=issue.status==='HUMAN_DECISION_REQUIRED';
-    setBadge(badge,human?'HUMAN DECISION':'CHECK CLEANUP',human?'candidate':'candidate');
+    setBadge(badge,human?'HUMAN DECISION':'CHECK CLEANUP','candidate');
     note.textContent=`${issue.title} — ${issue.detail}`;
     note.className=`cleanup-issue-note ${human?'decision':'note'}`;
   }else{
@@ -343,6 +393,7 @@ function renderCleanup02Issue() {
   const s=state.cleanup02Review?.summary;
   summary.textContent=s ? `${s.currentRosterNotes} roster notes · ${s.humanDecisionTotal} human decisions total · off-roster: ${s.offRosterSummary}` : 'Cleanup02 review-note data loading…';
 }
+
 function sourceRef() {
   return { repo:'georg-doc/kayfabizarro', path:state.currentActor?.path || state.profile?.source?.path, revision:state.currentActor?.revision || state.profile?.source?.revision };
 }
@@ -545,19 +596,25 @@ function setTrackingMode(mode, persist=true) {
   if(persist) save();
 }
 function updateClassUi() {
-  const cfg=classConfig();
   const title=$('#rigClassTitle'); if(title) title.textContent=state.rigClass;
-  const marker=$('#rigClassMarker'); if(marker) marker.textContent=state.rigClass==='Rig_Large'
-    ? 'Rig_Large · calibrate Monstrosity first · PR #104'
-    : 'Rig_Medium · 27 actor review · PR #104';
+  const marker=$('#rigClassMarker');
+  if(marker){
+    if(state.rigClass==='Rig_Large') marker.textContent='Rig_Large · reviewed actor profiles · PR #104';
+    else if(state.rigClass==='Rig_Legacy') marker.textContent='Rig_Legacy · 17 persisted head profiles · unified PR #104';
+    else marker.textContent=`Rig_Medium · ${state.catalogs.Rig_Medium?.length||0} actor review · PR #104`;
+  }
   const hint=$('#classStatusHint');
-  if(hint) hint.textContent=state.rigClass==='Rig_Large'
-    ? (hasAcceptedClassDefault('Rig_Large') ? 'Large default set from Monstrosity · review the other Large actors' : 'No Large default yet · tune Monstrosity, then Set as Large default')
-    : 'Medium style default set · per-actor source placement is used when available';
+  if(hint){
+    if(state.rigClass==='Rig_Large') hint.textContent=hasAcceptedClassDefault('Rig_Large')?'Large default set from Monstrosity · review actor overrides':'Reviewed per-actor Large profiles · shared class default remains optional';
+    else if(state.rigClass==='Rig_Legacy') hint.textContent='Legacy 17/17 persisted candidates from PR #162 · same controls; Skull remains manual';
+    else hint.textContent='Medium style default set · per-actor source placement is used when available';
+  }
   const seedHint=$('#mediumSeedHint');
-  if(seedHint) seedHint.textContent=state.rigClass==='Rig_Large'
-    ? (hasAcceptedClassDefault('Rig_Large') ? 'Rig_Large default active · source measurement remains optional' : 'Large calibration start only · tune Monstrosity before setting the class default')
-    : 'Rig_Medium style default active · Cleanup02 placement anchors override position for fresh matched actors';
+  if(seedHint){
+    if(state.rigClass==='Rig_Large') seedHint.textContent=hasAcceptedClassDefault('Rig_Large')?'Rig_Large default active · source measurement remains optional':'Large reviewed per actor · class default not required';
+    else if(state.rigClass==='Rig_Legacy') seedHint.textContent='Rig_Legacy uses persisted source-measured profiles · no shared Legacy class default is inferred';
+    else seedHint.textContent='Rig_Medium style default active · Cleanup02 placement anchors override position for fresh matched actors';
+  }
   $$('[data-rig-class]').forEach((b)=>b.classList.toggle('active',b.dataset.rigClass===state.rigClass));
   const promote=$('#promoteClassDefaultBtn');
   if(promote){
@@ -566,6 +623,7 @@ function updateClassUi() {
     promote.textContent=hasAcceptedClassDefault('Rig_Large')?'Update Large default':'Set as Large default';
   }
 }
+
 function updateBatchUi() {
   const selected=state.selectedActors.size;
   const reviewed=(state.catalog||[]).filter((a)=>isReviewedState(currentReviewState(a.id))).length;
@@ -588,10 +646,12 @@ function promoteCurrentAsClassDefault(){
 function profileFromRig() {
   if (!state.eyes) return state.profile;
   const r = state.eyes.rig, report=state.eyes.report(), oldEye=state.profile.eye || {};
+  const hostReport=state.eyes.faceHost?.report||{}, cleanupReport=state.cleanup?.report||{};
   state.profile.faceHost = {
-    status:'OK', headBone:state.eyes.faceHost.report.head, headSize:clone(state.eyes.faceHost.report.headSize), facingSource:state.eyes.faceHost.report.facing
+    status:'OK', headBone:hostReport.head||hostReport.headBone||null, headSize:clone(hostReport.headSize||[]), facingSource:hostReport.facing||hostReport.facingSource||null,
+    ...(state.rigClass==='Rig_Legacy'?{headPart:hostReport.headPart||null,baseColor:hostReport.baseColor||null}: {})
   };
-  state.profile.sourceFace = { ...state.profile.sourceFace, ...clone(state.cleanup.report), connectedComponents: state.cleanup.report.connectedComponents };
+  state.profile.sourceFace = { ...state.profile.sourceFace, ...clone(cleanupReport), connectedComponents: cleanupReport.connectedComponents ?? state.profile.sourceFace?.connectedComponents ?? null };
   state.profile.eye = {
     anchor: clone(r.anchor), pupilStyle:r.pupilStyle, pupilSize:r.pupilSize, gloss:r.gloss,
     inset:r.inset, lidFit:r.lidFit, converge:r.converge, splay:r.splay,
@@ -679,17 +739,20 @@ function applyProfileToRig(profile) {
 
 function validateProfile(p) {
   if (!p || p.schema !== 'kfb.eye-profile/0.1-candidate') throw new Error('schema mismatch');
-  if (p.actorId !== state.seed.actorId) throw new Error('actorId mismatch');
-  if (p.source?.revision !== state.seed.source.revision || p.source?.path !== state.seed.source.path) throw new Error('source revision/path mismatch');
+  const actor=(state.catalogs[p.rigClass]||[]).find((a)=>a.id===p.actorId);
+  if(!actor) throw new Error('actorId not present in class catalog');
+  if(p.source?.path!==actor.path || p.source?.revision!==actor.revision) throw new Error('source revision/path mismatch');
   return p;
 }
 function validateImport(data) {
-  if(data?.schema==='kfb.eye-profile/0.1-candidate') return {kind:'profile',data:validateProfile(data)};
-  if(data?.schema==='kfb.eye-profile-batch/0.2-candidate'){
-    if(data.rigClass!=='Rig_Medium') throw new Error('batch rigClass mismatch');
+  if(data?.schema==='kfb.eye-profile/0.1-candidate'){
+    if(data.rigClass!==state.rigClass)throw new Error('profile rigClass mismatch');
+    return {kind:'profile',data:validateProfile(data)};
+  }
+  if(data?.schema==='kfb.eye-profile-batch/0.2-candidate'||data?.schema==='kfb.eye-profile-batch/0.2-reviewed'){
+    if(data.rigClass!==state.rigClass) throw new Error('batch rigClass mismatch');
     if(!Array.isArray(data.profiles)) throw new Error('batch profiles missing');
-    const current=data.profiles.find((p)=>p?.actorId===state.seed.actorId);
-    if(current) validateProfile(current);
+    for(const p of data.profiles)validateProfile(p);
     return {kind:'batch',data};
   }
   throw new Error('unsupported import schema');
@@ -719,6 +782,11 @@ function wireProfileIo() {
   };
   const resetCurrent=()=>{
     const actor=state.currentActor;if(!actor)return;
+    if(state.rigClass==='Rig_Legacy'){
+      const base=state.legacyProfilesById.get(actor.id);if(!base)return;
+      state.profile=clone(base);state.profiles[actor.id]=clone(state.profile);
+      applyProfileToRig(state.profile);save();renderRoster();log(`reset ${actor.label} to persisted Legacy candidate`);return;
+    }
     state.profile=applyAuthoringDefaultToProfile(makeActorProfile(actor),{markSession:false});
     state.profile.reviewState='UNREVIEWED';state.profiles[actor.id]=clone(state.profile);
     applyProfileToRig(state.profile);
@@ -871,6 +939,12 @@ function playMotion(name) {
 async function loadMotion(loader) {
   const cfg=classConfig();
   state.currentAction?.stop?.(); state.currentAction=null; state.clips.clear(); state.currentMotion='bind';
+  if(cfg.assembledMotion){
+    state.motionReady=false;gate('#gateMotion','pending');
+    $('#motionStatus').textContent='Legacy motion loads with assembled actor';
+    $$('.motion').forEach((b)=>{b.disabled=b.dataset.motion!=='bind';});
+    return;
+  }
   const [general,movement]=await Promise.all([loader.loadAsync(cfg.generalUrl),loader.loadAsync(cfg.moveUrl)]);
   [...general.animations,...movement.animations].forEach((c)=>{if(!state.clips.has(c.name))state.clips.set(c.name,c);});
   state.motionReady=cfg.requiredClips.every((n)=>state.clips.has(n));
@@ -932,7 +1006,80 @@ function wireComponentDiagnostic(camera,controls) {
   };
 }
 
+async function loadLegacyActor(actorId,{preserve=true}={}) {
+  const actor=actorById(actorId);if(!actor||state.switching)return false;
+  state.switching=true;
+  try{
+    if(preserve)storeCurrentProfile();
+    setLoading(true,`Loading ${actor.label} · Rig_Legacy assembly…`);
+    state.currentAction?.stop?.();state.currentAction=null;state.clayK1?.revert?.();
+    state.mixer?.stopAllAction?.();state.eyes?.dispose?.();state.cleanup?.dispose?.();
+    if(state.figure?.parent)state.figure.parent.remove(state.figure);
+    state.figure=null;state.eyes=null;state.cleanup=null;state.mixer=null;state.componentDiagnosticRestore=null;state.sourceAnchorSeed=null;state.textureOverrideReport=null;state.legacyAssembly=null;state.legacyHeadPart=null;state.legacyMeasurement=null;
+    state.currentActor=actor;state.currentActorId=actor.id;state.currentActorByClass[state.rigClass]=actor.id;
+    state.sourceReady=state.cleanupReady=state.hostReady=state.eyeReady=false;
+    gate('#gateSource','pending');gate('#gateCleanup','pending');gate('#gateHost','pending');gate('#gateEye','pending');
+    renderRoster();updateActorAudit();
+
+    const hostBody=state.legacyCatalog?.bodies?.[actor.hostBodyId];if(!hostBody)throw new Error(`Legacy host body missing: ${actor.hostBodyId}`);
+    const assembled=await assembleLegacy({THREE,loader:state.loader,rigUrl:legacyRigUrl(),partsUrl:legacySourceUrl(hostBody.path),catalogCharacter:hostBody,log});
+    state.legacyAssembly=assembled;
+    const figure=assembled.root;state.figure=figure;state.stageRoot.add(figure);
+    let headPart=assembled.parts.Head?.node;
+    if(actor.kind==='asset'){
+      const repl=await replaceHead({loader:state.loader,character:assembled,headUrl:legacySourceUrl(actor.assetPath),log});headPart=repl.headPart;
+    }
+    for(const extra of assembled.extras||[])if(extra.bone==='Head')extra.node.visible=false;
+    state.legacyHeadPart=headPart;
+    const norm=normalizeActor(figure);figure.visible=false;state.sourceReady=true;gate('#gateSource','pass');
+    log(`${actor.label} Legacy assembled · ${norm.sourceHeight} → ${norm.normalizedHeight} high`);
+
+    const faceHost=buildLegacyFaceHost({THREE,figure,headBone:assembled.headBone,headPart,log});
+    if(faceHost.status!=='OK')throw new Error(faceHost.reason||'LegacyFaceHost unsupported');
+    const measurement=measureLegacyEyeCandidates({THREE,headPart,faceHost});state.legacyMeasurement=measurement;
+    let profile=clone(state.profiles[actor.id]||state.legacyProfilesById.get(actor.id)||makeLegacyEyeProfile({actor,catalog:state.legacyCatalog,seed:state.classSeeds.Rig_Legacy,faceHost,measurement}));
+    if(profile.actorId!==actor.id||profile.rigClass!=='Rig_Legacy'||profile.source?.path!==actor.path)throw new Error(`Legacy persisted profile identity mismatch: ${actor.id}`);
+    profile.faceHost=clone(faceHost.report);profile.evidence={...(profile.evidence||{}),sourceIsolationPassed:true,unifiedWorkbench:true};
+    state.profile=profile;state.profiles[actor.id]=clone(profile);
+
+    const safe=measurement.status==='MEASURED_CANDIDATE';
+    setLegacySourceEyeVisibility(headPart,!safe);
+    const cleanup={
+      status:safe?'AUTO_CANDIDATE':'HUMAN_REQUIRED',active:safe,isolatedComponent:null,
+      report:{...clone(profile.sourceFace||{}),status:measurement.status,method:measurement.method||profile.sourceFace?.method||null,anchorCandidate:measurement.anchor||profile.sourceFace?.anchorCandidate||null,pair:measurement.pair||profile.sourceFace?.pair||null,confidence:measurement.confidence??profile.sourceFace?.confidence??null,candidateCount:measurement.candidateCount??profile.sourceFace?.candidateCount??0,removalMode:'runtime-black-material-visibility-only',sourceMeasuredSeed:{anchorCandidate:measurement.anchor||profile.sourceFace?.anchorCandidate||null,measurement:clone(measurement)}},
+      apply(hide){
+        if(!safe){setLegacySourceEyeVisibility(headPart,true);this.active=false;return false;}
+        setLegacySourceEyeVisibility(headPart,!hide);this.active=!!hide;return this.active;
+      },
+      dispose(){},
+      measureOnFaceHost(){return {status:measurement.status,anchorCandidate:measurement.anchor||null};},
+      setComponentIsolation(){return null;},clearComponentIsolation(){}
+    };
+    state.cleanup=cleanup;state.cleanupReady=safe;gate('#gateCleanup',safe?'pass':'fail');
+
+    state.mixer=new THREE.AnimationMixer(figure);registerLegacyMotion(assembled);
+    const eyes=mountLegacyEyeProfile({THREE,faceHost,profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,log});state.eyes=eyes;
+    markNoClay(eyes.rig?.rig);markNoClay(eyes.faceHost?.box);
+    state.hostReady=faceHost.status==='OK';state.eyeReady=!!eyes.eyeFrame();
+    gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
+    await setStageLook(state.stageLook,{persist:false});
+    figure.visible=true;
+    bindUiFromProfile();setView('front',window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);poseBind();
+    wireComponentDiagnostic(window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);
+    updateActorAudit();renderRoster();save();renderCleanup02Issue();
+    setLoading(false);setBadge($('#bootBadge'),state.sourceReady&&state.hostReady&&state.eyeReady?'READY':'CHECK',state.sourceReady&&state.hostReady&&state.eyeReady?'pass':'candidate');
+    return true;
+  }catch(err){
+    console.error(err);log(`Legacy actor load failed · ${actor.label} · ${err.message}`);
+    const p=clone(state.profiles[actor.id]||state.legacyProfilesById.get(actor.id)||{schema:'kfb.eye-profile/0.1-candidate',actorId:actor.id,rigClass:'Rig_Legacy',source:{path:actor.path,revision:actor.revision},eye:{anchor:{}}});
+    p.status='UNSUPPORTED';p.reviewState='UNSUPPORTED';p.technicalNote=`load failed: ${err.message}`;state.profiles[actor.id]=clone(p);state.profile=p;
+    renderRoster();save();setLoading(false);const info=$('#actorTechHint');if(info)info.textContent=`Unsupported · ${err.message}`;
+    setBadge($('#bootBadge'),'CHECK','candidate');return false;
+  }finally{state.switching=false;}
+}
+
 async function loadActor(actorId,{preserve=true}={}) {
+  if(state.rigClass==='Rig_Legacy')return loadLegacyActor(actorId,{preserve});
   const baseActor=actorById(actorId),actor=effectiveActor(baseActor); if(!actor||state.switching)return false;
   state.switching=true;
   try{
@@ -1041,7 +1188,7 @@ function wireRuntimeControls(camera,controls,renderer) {
   $$('.tool[data-view]').forEach((b)=> b.onclick=()=>setView(b.dataset.view,camera,controls));
   $$('[data-stage-look]').forEach((b)=>b.onclick=()=>setStageLook(b.dataset.stageLook).catch((err)=>log(`stage look failed · ${err.message}`)));
   $$('.motion').forEach((b)=> b.onclick=()=>playMotion(b.dataset.motion));
-  $('#cleanupToggle').onchange=(e)=>{ const on=state.cleanup.apply(e.target.checked); state.profile.sourceFace.status=on?'AUTO_CANDIDATE':'SOURCE_VISIBLE'; renderReport(); };
+  $('#cleanupToggle').onchange=(e)=>{ const on=state.cleanup.apply(e.target.checked); e.target.checked=!!state.cleanup.active; if(state.rigClass==='Rig_Legacy')state.profile.sourceFace.runtimeSourceEyesHidden=!!state.cleanup.active; else state.profile.sourceFace.status=on?'AUTO_CANDIDATE':'SOURCE_VISIBLE'; renderReport(); };
   $('#eyeRigToggle').onchange=(e)=>state.eyes.setVisible(e.target.checked);
   $('#hostDebugToggle').onchange=(e)=>{ const m=state.eyes.faceHost.box.material; m.opacity=e.target.checked?.16:0; m.wireframe=!!e.target.checked; m.color?.set(0xc93a36); m.depthTest=!e.target.checked; state.eyes.faceHost.box.renderOrder=e.target.checked?998:0; };
   $('#stage').onpointermove=(e)=>{ if(state.trackingMode!=='pointer')return; const r=e.currentTarget.getBoundingClientRect(); const nx=((e.clientX-r.left)/r.width)*2-1, ny=-(((e.clientY-r.top)/r.height)*2-1); state.eyes.setPointer(nx,ny); };
@@ -1086,32 +1233,39 @@ function wireRuntimeControls(camera,controls,renderer) {
 
 async function boot() {
   setBootProgress('Loading catalogs + source contracts…');
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,legacySeed,legacyCatalog,legacyReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.seedUrl).then((r)=>{if(!r.ok)throw new Error(`large seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`large catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`large reviewed ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Legacy.seedUrl).then((r)=>{if(!r.ok)throw new Error(`legacy seed ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Legacy.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`legacy catalog ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Legacy.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`legacy profiles ${r.status}`);return r.json();}),
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();}),
     fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();}),
     fetch(CLEANUP02_ANCHORS_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 anchors ${r.status}`);return r.json();}),
     fetch(APPEARANCE_VARIANTS_URL).then((r)=>{if(!r.ok)throw new Error(`appearance variants ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
-  state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed};
-  state.catalogs={Rig_Medium:mediumCatalog.actors||[],Rig_Large:largeCatalog.actors||[]};
+  state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed,Rig_Legacy:legacySeed};
+  state.legacyCatalog=legacyCatalog;
+  const legacyActors=(legacyCatalog.actors||[]).map(normalizeLegacyActorRecord);
+  state.catalogs={Rig_Medium:mediumCatalog.actors||[],Rig_Large:largeCatalog.actors||[],Rig_Legacy:legacyActors};
+  state.legacyProfilesById=new Map((legacyReviewed?.profiles||[]).map((p)=>[p.actorId,clone(p)]));
   window.__EYE_RIG_CONTRACT=contract;
   state.cleanup02Review=cleanup02Review;
   state.cleanup02Anchors=cleanup02Anchors;
   state.appearanceManifest=appearanceManifest;
-  setBootProgress(`Catalogs loaded · ${mediumCatalog.actors?.length||0} Medium / ${largeCatalog.actors?.length||0} Large · restoring profiles…`);
+  setBootProgress(`Catalogs loaded · ${mediumCatalog.actors?.length||0} Medium / ${largeCatalog.actors?.length||0} Large / ${legacyCatalog.actors?.length||0} Legacy · restoring profiles…`);
 
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
   for(const [k,v] of Object.entries(saved?.classDefaults||{})) if(state.classSeeds[k]&&v) state.classSeeds[k].authoringDefault=clone(v);
   state.profiles={};
   for(const p of largeReviewed?.profiles||[]) state.profiles[p.actorId]=clone(p);
+  for(const p of legacyReviewed?.profiles||[]) state.profiles[p.actorId]=clone(p);
   Object.assign(state.profiles,clone(saved?.profiles||{}));
   if(saved?.profile?.actorId&&!state.profiles[saved.profile.actorId])state.profiles[saved.profile.actorId]=clone(saved.profile);
   state.approvedProfiles={};
@@ -1124,7 +1278,8 @@ async function boot() {
   state.currentActorByClass=clone(saved?.currentActorByClass||{});
   state.selectedByClass={
     Rig_Medium:new Set(saved?.selectedByClass?.Rig_Medium?.length?saved.selectedByClass.Rig_Medium:['gothgirl']),
-    Rig_Large:new Set(saved?.selectedByClass?.Rig_Large?.length?saved.selectedByClass.Rig_Large:['monstrosity'])
+    Rig_Large:new Set(saved?.selectedByClass?.Rig_Large?.length?saved.selectedByClass.Rig_Large:['monstrosity']),
+    Rig_Legacy:new Set(saved?.selectedByClass?.Rig_Legacy?.length?saved.selectedByClass.Rig_Legacy:['barbarian-default'])
   };
   state.selectedActors=state.selectedByClass[state.rigClass];
   state.rosterFilter=saved?.rosterFilter||'all';
