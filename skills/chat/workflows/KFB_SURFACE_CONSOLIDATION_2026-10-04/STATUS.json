@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.surface-consolidation/1",
+  "date": "2026-10-04",
+  "mode": "RECOVERY_CONSOLIDATION",
+  "owner": "KFB production surfaces",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/surface-consolidation-2026-10-04",
+  "state": "WORK_HANDOVER_READY",
+  "humanRule": "ONE_BOOKMARK_PRODUCTION_HUB",
+  "canonical": {
+    "productionHub": {
+      "role": "HUMAN_FRONT_DOOR",
+      "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+      "status": "STALE_UNTIL_CONSOLIDATION_REPUBLISH"
+    },
+    "productionControl": {
+      "role": "CONTROL_LEDGER",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+      "status": "DATA_CURRENT_UI_STALE_UNTIL_CURRENT_HISTORY_SPLIT"
+    },
+    "toolbox": {
+      "role": "TOOLBOX_ROUTER",
+      "url": null,
+      "status": "RESOLVE_EXISTING_OR_CREATE_EXACTLY_ONE"
+    }
+  },
+  "specialistSites": [
+    "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/",
+    "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+    "https://kfb-audio.frizzlebob.chatgpt.site",
+    "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
+    "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
+  ],
+  "next": "WORK_RESOLVE_TOOLBOX_THEN_CONTROL_THEN_HUB_AND_VERIFY_ALL_THREE",
+  "forbidden": [
+    "duplicate dashboards",
+    "multiple current ToolBox front doors",
+    "Cloudflare-first fallback",
+    "specialist runtime duplication",
+    "automatic merge"
+  ]
+}
