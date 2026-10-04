@@ -96,7 +96,7 @@ The world remains open.
 
 ## Locked current inputs
 
-### World · PASS
+### World topology / ownership · PASS · visible foundation HUMAN FAIL
 Draft PR #348.
 
 Already proven:
@@ -107,7 +107,7 @@ Already proven:
 - canonical deck/Card seed refs;
 - one world/renderer/support owner.
 
-Do not rebuild the world.
+Do not rebuild the proven topology/owner graph. **Do replace/quarantine the rejected legacy Hürth/OSM visible-content path before final human review.**
 
 ### Motion · COMPLETE
 Motion PR #344 corrected head:
