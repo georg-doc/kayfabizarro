@@ -10,11 +10,11 @@
   "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
-    "status": "RESERVED_NOT_DEPLOYED",
+    "status": "TARGET_NOT_DEPLOYED",
     "live": "UNCHANGED"
   },
-  "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
-  "state": "FROZEN_FAILED_CANDIDATE",
+  "productOutcome": "PLAYABLE_SOURCE_CLEAN_WB2_WORLD_BUILDER_MVP1_ON_VERIFIED_CLOUDFLARE_STAGE",
+  "state": "MVP1_PRODUCT_RECOVERY_REBRIEF_READY",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -331,7 +331,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01",
+  "nextInternalAction": "MVP1_PLAYABLE_DELIVERY_DIRECT_PRODUCT_SMOKE_THEN_STAGE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -380,5 +380,23 @@
     "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
   },
   "frozenRuntimeHead": "4334151bfbf230d33ad459f61cc0da595c1191a2",
-  "freezeRecovery": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.json"
+  "freezeRecovery": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.json",
+  "failureClassificationOverride": {
+    "previous": "FROZEN_FAILED_CANDIDATE",
+    "current": "HARNESS_ENDPOINT_FREEZE_NOT_GLOBAL_PRODUCT_FAILURE",
+    "basis": [
+      "Frozen recovery explicitly says test harness endpoint arrival failure is not proof Taxi runtime or bridge support failed",
+      "Earlier run 37196264077 proved Ground→Drive→Ground with 6.077702m actual driving",
+      "Two-pass stop applies to harness method unless same defect is directly reproduced in product"
+    ]
+  },
+  "currentRecoveryAuthority": [
+    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md",
+    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md"
+  ],
+  "qaHarness": {
+    "status": "SUPPLEMENTARY_HOLD",
+    "goldenJourneyEndpointPlanner": "QUARANTINE_IF_UNRELIABLE",
+    "rule": "Harness-only failure cannot freeze product without direct product reproduction."
+  }
 }
