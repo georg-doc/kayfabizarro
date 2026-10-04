@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.triplet-curator-source/1",
+  "date": "2026-10-04",
+  "status": "PLANNING_READY",
+  "owner": "KFB ToolBox / ChatterBox content curation",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/chatterbox-triplet-curator-site-2026-10-04",
+  "base": {
+    "branch": "coworker/coordination-plan-2026-10-04",
+    "head": "422c48e2a82b13c8ae380da70f6c66619639d8aa"
+  },
+  "residentPrep": {
+    "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/",
+    "prepBlob": "f5764cf2393616a11fae0a6b59f6bb5db33c88df",
+    "leanCardSchemaBlob": "e78fd8be8a7360b1ddd4ebeae4e10cbf7fa407cc",
+    "cards": {
+      "clown": "05d5035a89457f2f17f949141effc42c269bdcc8",
+      "gothGirl": "d257f78d260ab6d12bc371ef258ef813f8c90503",
+      "witch": "56fb5e663e14dfdaee7bf48a9ec644630fe5d93f"
+    }
+  },
+  "tripletDonor": {
+    "pr": 310,
+    "branch": "chatgpt-web/resident-chat-ensemble-01b-2026-10-01",
+    "head": "7c6522fb24774ca5753fe8b5551b920479cc50dd",
+    "dataPath": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs",
+    "dataBlob": "cf975a72637630d97fc626962ef591b356ce0bbf",
+    "entryCount": 20,
+    "status": "AUTHORING_CANDIDATE"
+  },
+  "kernelDonor": {
+    "pr": 305,
+    "branch": "chatgpt-web/resident-chat-poc-01-2026-10-01",
+    "head": "5b595a075b789f683ef0871f8c24d95e96416449",
+    "tests": "29/29 PASS",
+    "owner": "existing Resident Chatter deterministic adapter"
+  },
+  "quoteBridge": {
+    "pr": 354,
+    "branch": "planning/billboard-quote-hypernorm-curator-2026-10-04",
+    "head": "05d61058eaaa8f465b4e2add08cffbf70752fe8f",
+    "schemaPath": "skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_POOL_SCHEMA.json",
+    "schemaBlob": "dc986b0eeece6e67d72b67dc1d6ff6de727358db",
+    "rule": "REFERENCE_BY_ID_ONLY"
+  },
+  "toolbox": {
+    "currentSurfaceBranch": "chatgpt-web/surface-consolidation-2026-10-04",
+    "head": "8f01af7fc38a388ba9fffa13638908165f8ccaa1",
+    "manifestPath": "tools/KFB-ToolBox/TOOLBOX_MANIFEST.json",
+    "manifestBlob": "7e5706ccb5996d60c3210a67e21266b4d5e8b01e",
+    "frontDoor": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "reservedSlot": "chatterbox-comic-vfx",
+    "reservedSlotStatus": "DESIGN_SITE_PLANNED"
+  },
+  "bubblePresentation": {
+    "existingOwners": [
+      "bubble-shaper.v3",
+      "bubbles.v4",
+      "bubbles.v5",
+      "KFB Ink Canon",
+      "NPC-CARD-SPEC-01 createBubbles"
+    ],
+    "incomingClaudeDesign": "PENDING_RETURN_AS_PRESENTATION_DONOR",
+    "ownershipRule": "PRESENTATION_ONLY_NO_DIALOGUE_OR_MEMORY_OWNERSHIP"
+  },
+  "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/",
+  "livePromotion": false
+}
