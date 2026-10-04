@@ -1,5 +1,15 @@
 # CHANGELOG · Procedural Test World 01
 
+## 2026-10-04 · Motion dependency correction / Player integration ready
+
+- corrected stale assumption that Motion PR #344 was still PREPARED/NOT RUN;
+- Motion owner now exposes the decided runtime contract `KFB_KAYKIT_LOCO_SET_01.v1.json`;
+- reviewed fixture = Mannequin_Medium; ActionFigure is not the baseline actor;
+- Walk = Walking_B · Run = Running_A · Sprint = Running_B · Jog = speed/phase blend;
+- added WSA/Codex execution brief `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`;
+- exactly one next gate is now **KFB-LOCO-WB2-PLAYER-01**;
+- no Player runtime code was changed by this documentation correction.
+
 ## 2026-10-04 · WORLD-MULTI-ISLAND-CORRIDOR-01 PASS
 
 - four world nodes browser-proven: Town / Dystopia / Utopia / Protopia;
