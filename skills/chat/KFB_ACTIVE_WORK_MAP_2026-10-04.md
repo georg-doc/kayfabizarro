@@ -90,6 +90,22 @@ These are source/data/tool lanes. None may displace World Studio or Combat human
 
 ## Published / usable
 
+### KFB Production Control
+URL:
+https://kfb-production-control.frizzlebob.chatgpt.site/
+
+Owner:
+KFB Production Control
+
+State:
+**PRODUCTIVE · CURRENT PORTFOLIO RECORDS REFRESHED**
+
+Current workflow:
+`KFB-PORTFOLIO-ROUTER-01`
+
+Current data now includes the portfolio board, two P0 human gates, P1 next briefings, cheap parallel lanes, provider-comparison HOLD and Production-Hub PUBLISH_ONLY status.
+
+
 ### KFB World Studio MVP1
 URL:
 https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/
@@ -207,11 +223,14 @@ Owner:
 HUB-CTRL / Production Hub
 
 State:
-**DEPLOYED PRIVATE MIRROR · MOBILE TUNE OPEN**
+**DEPLOYED PRIVATE MIRROR · CURRENT BOARD SOURCE REFRESHED · PUBLISH_ONLY PENDING**
+
+The GitHub source now has the reconciled Today list, Briefings, current quick links and Production Control link. Exact publish packet:
+`skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md`
 
 Role:
 one human entry point to the current production surfaces.
-Do not turn it into another runtime.
+Do not turn it into another runtime or spend High Reasoning on the host refresh.
 
 ## Prepared but not yet published
 
