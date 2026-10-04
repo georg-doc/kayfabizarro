@@ -372,3 +372,62 @@ Direct route:
 Per-eye / Survivalist remains documented but deferred until after Legacy visual acceptance.
 No merge or Live promotion.
 
+## 2026-10-04 · EyeRig · unified Site source ready
+
+### PRODUCT OWNER
+PR #104 is now the single productive EyeRig UI/runtime owner.
+
+One workbench now exposes:
+`Medium | Large | Legacy`
+
+The separate Legacy PR #162 UI is no longer the intended productive surface. PR #162 remains donor/evidence for the proven 17/17 Legacy profile layer and Legacy assembly/FaceHost path.
+
+### IMPLEMENTATION
+Unified source:
+- Medium 55
+- Large 8
+- Legacy 17
+- total 80 review identities
+
+Legacy construction is the only class-specific seam:
+exact Legacy source → proven modular assembly → LegacyFaceHost → persisted Legacy profile → existing EyeRig v6 → common #104 controls/review/persistence.
+
+Exact proven Legacy donor blobs were copied locally:
+- rig adapter `41ba111d264cb73f2b3fbd70370dbb0ba042c91d`
+- face host `186323777ff78a9e4f4a246ad10232dd8ef82bc9`
+
+Storage remains `kfb.toolbox.eye-rig-batch.v0`.
+
+### TESTED RESULT
+Focused unified readback: **33/33 PASS**.
+
+Expanded repository static contract:
+**160 assertions persisted · NOT_RUN** because no Actions run exists for the new head.
+
+Historical Legacy evidence remains historical:
+- 24/24 static + 247/247 browser/WebGL
+- 30/30 profile + 215/215 persisted remount
+
+### SITE
+Target is now one **ChatGPT Site** from:
+`tools/KFB-ToolBox/eye-rig-batch/`
+entrypoint `index.html`.
+
+Manifest:
+`site.manifest.json`
+
+Publishing brief:
+`docs/EYE_RIG_UNIFIED_SITE_01.md`
+
+Cloudflare is recovery/regression only for this tool; this slice does not create another Cloudflare acceptance fork.
+
+Current Webchat tooling has no Site create/publish action.
+
+Exactly one next gate:
+`EYE_RIG_UNIFIED_SITE_PUBLISH_01`
+
+After publication:
+`GEORG_EYERIG_UNIFIED_SITE_01`
+
+Per-eye/Survivalist is deferred until unified Site acceptance.
+
