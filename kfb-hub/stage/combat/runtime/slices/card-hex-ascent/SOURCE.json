@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.card-hex-ascent.source/1",
+  "product": "KFB Card-Hex Combat Ascent",
+  "owner": "georg-doc/KFB-Combat-Arena",
+  "branch": "coworker/card-hex-ascent-one-shot-2026-10-04",
+  "head": "0c9b2531c379f0ad6c32104fb424d93cb3a1ded3",
+  "increment": "S1",
+  "runtime": "slices/card-hex-ascent/ (three@0.160.1 ES modules; reuses modules/, cardbuilder/, assets/ of the Combat runtime)",
+  "pins": {
+    "kaykitCharactersAndAnimations": "georg-doc/kayfabizarro@378b209355b13304e3cff656ec0806ca5b89df28",
+    "blenderDuel01Weapons": "georg-doc/kayfabizarro@b7f6013bf00d0661ae943e69e7c3dfde38abcebd (georg-doc-patch-3)",
+    "rangedClipLibrary": "georg-doc/kayfabizarro@c59ded7b1dbfc4c42b5a6eae2b4218ebf7e66809 KFB_Motion_ranged.glb sha256 9308b6d3",
+    "hexFamilies": "georg-doc/kayfabizarro@2d958f1625ed2f8893949216c1bff7e79b038361 (PR #353; Snow pin ab65e8c4 byte-identical)",
+    "music": "georg-doc/kayfabizarro@c7e7dd085528af10d2c00a7349f295cb7cfa4233 Cartoon Chase _ Capers Bed 3 min.mp3 (jukebox humanReview positive)",
+    "skydome": "georg-doc/kayfabizarro@e95f7291cae15f5f0d5f441a5ddd6fecc4e0243c travel-v16 skydome-shader.js (same donor as the Combat melee lab)",
+    "cards": "Combat cardbuilder registry media/kfb/index.json (embrace_protopia:1, ignore_dystopia:1 Clown, forget_utopia:1, 1001_kayfabe_nights:5)"
+  },
+  "actors": {
+    "player": "UltraTurboHeroMan (Rig_Medium) + UltraTurboHeroMan_Blaster_KFB.glb / ToySoldier_Rifle_KFB.glb on handslot.r identity",
+    "enemies": "ToySoldier (Blaster duel, Rifle squad incl. elevated perch), CombatMech + CombatMech_Minigun_KFB.glb finale; KFB_Die_Arena_KFB.glb practice target"
+  },
+  "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/"
+}
