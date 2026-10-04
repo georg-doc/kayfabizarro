@@ -125,8 +125,8 @@
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "VIEW_WHEEL_HUMAN_ACCEPTED",
-    "nextGate": "KLR-EYE-VIS-01"
+    "status": "UNIFIED_SITE_PUBLICATION_PENDING",
+    "nextGate": "EYE_RIG_UNIFIED_SITE_PUBLISH_01"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -654,29 +654,81 @@
     "nextSlice": "KLR-EYE-VIS-01"
   },
   "currentNext": {
-    "status": "LEGACY_VISUAL_REVIEW_NEXT",
-    "gate": "KLR-EYE-VIS-01",
-    "reason": "Legacy coverage is the next major EyeRig expansion; per-eye eyepatch controls are a later detail.",
+    "status": "UNIFIED_SITE_PUBLISH_NEXT",
+    "gate": "EYE_RIG_UNIFIED_SITE_PUBLISH_01",
+    "reason": "Medium, Large and Legacy are consolidated in one accepted-interface owner. Final publication must now be one ChatGPT Site; no additional Cloudflare review fork.",
     "owner": {
-      "pr": 162,
-      "branch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
-      "head": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
-      "testedProfileHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066"
+      "pr": 104,
+      "branch": "toolbox/eye-rig-batch-2026-09-18"
     },
-    "legacy": {
-      "profiles": "17/17 persisted",
-      "measuredCandidates": 16,
-      "humanRequired": [
-        "Skull"
-      ],
-      "automaticBrowser": "247/247 PASS",
-      "persistedRemount": "215/215 PASS",
-      "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/"
-    },
+    "publicationTarget": "ChatGPT Site",
+    "afterPublish": "GEORG_EYERIG_UNIFIED_SITE_01",
     "deferredDetail": {
       "id": "EYE_RIG_PER_EYE_CONTROL_01",
-      "status": "DEFERRED_DETAIL_AFTER_LEGACY",
+      "status": "DEFERRED_DETAIL_AFTER_UNIFIED_SITE",
       "brief": "tools/KFB-ToolBox/eye-rig-batch/docs/PER_EYE_CONTROL_BRIEF_2026-10-03.md"
     }
+  },
+  "unifiedSite": {
+    "status": "SOURCE_TESTED_SITE_PUBLISH_PENDING_WORK",
+    "slice": "EYE_RIG_UNIFIED_SITE_01",
+    "owner": {
+      "repo": "georg-doc/kayfabizarro",
+      "branch": "toolbox/eye-rig-batch-2026-09-18",
+      "pr": 104,
+      "runtimeImplementation": "847954178551952c9f5860cede3cae7fe57bf3ed",
+      "testContract": "9247d6b3832bdb73fac20d55bf76a766bc2d4453",
+      "siteContract": "5084600906fd4cf1b85c237adbbf63730ff1ce62",
+      "evidence": "d70223e93ae8d8c81379a22c48f9f4b300d38034"
+    },
+    "productSurface": {
+      "sourceRoot": "tools/KFB-ToolBox/eye-rig-batch/",
+      "entrypoint": "index.html",
+      "classes": {
+        "Rig_Medium": 55,
+        "Rig_Large": 8,
+        "Rig_Legacy": 17
+      },
+      "totalReviewIdentities": 80,
+      "classSwitch": [
+        "Medium",
+        "Large",
+        "Legacy"
+      ],
+      "storageKey": "kfb.toolbox.eye-rig-batch.v0"
+    },
+    "legacyReuse": {
+      "sourcePR": 162,
+      "sourceBranch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+      "sourceProfiles": "17/17 persisted · 16 MEASURED_CANDIDATE · Skull HUMAN_REQUIRED",
+      "rigAdapterBlob": "41ba111d264cb73f2b3fbd70370dbb0ba042c91d",
+      "faceHostBlob": "186323777ff78a9e4f4a246ad10232dd8ef82bc9",
+      "historicalEvidence": "24/24 + 247/247 automatic · 30/30 + 215/215 persisted remount",
+      "productiveSeparateUi": false
+    },
+    "retained": [
+      "Control R2",
+      "inline numeric editing",
+      "25 families / 56 source appearances",
+      "bounded wheel zoom v2",
+      "Neutral / Clay K1",
+      "same profile/review persistence",
+      "same import/export workflow"
+    ],
+    "checks": {
+      "focused": "33/33 PASS",
+      "staticContract": "160 assertions persisted · NOT_RUN",
+      "githubActionsRuns": 0
+    },
+    "publication": {
+      "target": "ChatGPT Site",
+      "status": "PENDING_WORK",
+      "manifest": "tools/KFB-ToolBox/eye-rig-batch/site.manifest.json",
+      "brief": "tools/KFB-ToolBox/eye-rig-batch/docs/EYE_RIG_UNIFIED_SITE_01.md",
+      "cloudflareRole": "RECOVERY_REGRESSION_ONLY",
+      "noCloudflareAcceptanceForThisSlice": true
+    },
+    "nextGate": "EYE_RIG_UNIFIED_SITE_PUBLISH_01",
+    "firstSiteHumanGate": "GEORG_EYERIG_UNIFIED_SITE_01"
   }
 }
