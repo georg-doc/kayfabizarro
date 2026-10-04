@@ -1,5 +1,27 @@
 # RECOVERY · WB2 convergence + Golden corridor
 
+## 2026-10-04 · MVP1 PRODUCT RECOVERY OVERRIDE
+
+The current product is **NOT classified as globally failed merely because the Golden Journey input bot could not certify Taxi/Driver endpoint arrival**.
+
+Binding error analysis:
+- frozen JSON itself says: **test harness endpoint arrival failure; not proof the taxi runtime or bridge support failed**;
+- earlier browser run 37196264077 proved real Ground → Drive → Ground and 6.077702 m of driving;
+- the later regression proves QA navigation/endpoint certification instability, not necessarily product traversal failure;
+- the generic two-pass stop rule was applied at the wrong hierarchy: two failed harness repairs should freeze/quarantine that harness strategy unless the same defect is directly reproduced in the product.
+
+Current recovery authority:
+- main `WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md`;
+- main `COWORKER_MVP1_WORLD_BUILDER_RECOVERY_BRIEF_2026-10-04.md`.
+
+Immediate outcome is now **MVP1-PLAYABLE-DELIVERY**:
+boot/Enter → direct Player control → first meaningful interaction → real WorldBuilder/God Mode object edit + terrain edit → save/export → fresh reload/import persistence → representative source-clean four-island world → publish one verified Cloudflare Stage.
+
+Full scripted four-world Golden Journey automation, 61 screenshots and nine-dimension Whole-Game scoring are follow-up QA. They do not suppress a meaningful playable human MVP Stage.
+
+The historical `RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01` remains a useful QA investigation but is **not the current whole-product gate**.
+
+
 Status: **WORLD-CONVERGENCE-BASE-01 PASS · WORLD-MULTI-ISLAND-CORRIDOR-01 PASS**
 
 Owner: KFB WorldBuilder / WB2  
