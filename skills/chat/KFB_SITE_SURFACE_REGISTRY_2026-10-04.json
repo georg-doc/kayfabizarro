@@ -15,10 +15,13 @@
       "id": "kfb-production-hub",
       "owner": "KFB Production Hub / HUB-CTRL",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "DEPLOYED_PRIVATE_MIRROR",
+      "status": "DEPLOYED_PRIVATE_MIRROR_SOURCE_REFRESH_READY",
       "source": "PR #217",
-      "humanStatus": "MOBILE_TUNE_OPEN",
-      "notes": "Native Sites deployment succeeded; historical independent Site visual proof remained open."
+      "humanStatus": "CURRENT_BOARD_SOURCE_READY_PUBLISH_ONLY",
+      "notes": "GitHub Production Hub source refreshed to current portfolio board (Today, Briefings, quick links, Production Control link). Existing GPT Site still needs a deterministic in-place PUBLISH_ONLY update from the frozen source packet; do not use High Reasoning or create a second Site.",
+      "publishPacket": "skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md",
+      "publishSourceHead": "910864dd4cf5a112f5d6528d71436ecaa03e422f",
+      "hubSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38"
     },
     {
       "id": "kfb-eyerig-workbench",
@@ -96,5 +99,5 @@
       "notes": "Durable workflow/decision/return surface. Current portfolio records are refreshed from KFB_ACTIVE_WORK_MAP_2026-10-04; no separate runtime owner."
     }
   ],
-  "updatedAt": "2026-10-04T19:15:00+02:00"
+  "updatedAt": "2026-10-04T19:25:00+02:00"
 }
