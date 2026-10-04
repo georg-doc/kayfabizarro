@@ -69,7 +69,7 @@ function renderCandidates(){
  const all=sourceIntake?.elevenLabs||[],xs=all.filter(x=>(!status||x.status===status)&&(!category||x.category===category));
  $('#candidateStats').textContent=xs.length+' shown · '+all.length+' ElevenLabs tests · no accepted production sources';
  $('#candidateGrid').innerHTML=xs.map(x=>'<article class="track candidate"><div><h3>'+escapeHtml(x.label)+'</h3><div class="tiny">'+escapeHtml(x.category)+' · '+Math.round(x.size/1024)+' KB</div></div><div class="chips"><span class="chip '+(x.status==='HUMAN_TUNE'?'warn':'')+'">'+escapeHtml(x.status)+'</span><span class="chip">ElevenLabs</span></div><div class="tiny">'+escapeHtml(x.note||'')+'</div><div class="track-actions"><button class="play" data-candidate-play="'+escapeHtml(x.id)+'">Play test</button></div></article>').join('');
- $('[data-candidate-play]').forEach(b=>b.onclick=()=>playCandidate(b.dataset.candidatePlay));
+ document.querySelectorAll('[data-candidate-play]').forEach(b=>b.onclick=()=>playCandidate(b.dataset.candidatePlay));
 }
 function playCandidate(id){
  const x=(sourceIntake?.elevenLabs||[]).find(v=>v.id===id);if(!x)return;
