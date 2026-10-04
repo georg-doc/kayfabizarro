@@ -64,6 +64,34 @@ Reserved future comparison Stage:
 
 This lane does not write to WB2 PR #348 and does not alter Live.
 
+
+## 2026-10-04 · Combat Platformer Benchmark · planning ready
+
+Parallel planning only; does **not** interrupt the current WB2 One-Shot.
+
+Current benchmark brief:
+`skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md`
+
+Purpose:
+- compare a full Sol/Work vs Astra Combat-Platformer One-Shot on one frozen source packet;
+- optional Coworker runtime datapoint;
+- separate Claude Design Level-5 specialist benchmark for vertical level composition/look/traversal staging rather than pretending it is the same repo-integrator role.
+
+Product concept:
+- Combat Arena remains gameplay/runtime owner;
+- giant KFB Cards = stable combat arenas / level anchors;
+- three current KayKit Hex families = measured traversal islands/steps/ledges;
+- Babel Hex Generator contributes MECHANISM only: calculated Chill & Fun arcs, direct/double jump classes, bounded landing assist/rescue;
+- Resident Atlas S17 Gunfight Duel contributes ranged-combat presentation/VFX language;
+- BLENDER-DUEL-01 is the remaining source gate before freezing the exact benchmark packet;
+- future Flight/Card-Surf is a later upper-layer seam, not benchmark scope.
+
+Reserved Stage root:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/platformer-benchmark/`
+= RESERVED · NOT DEPLOYED.
+
+Do not create model-specific branches until BLENDER-DUEL-01 returns and the identical source/acceptance packet is frozen.
+
 ## 2026-10-04 · PR #348 RETURNED · CONTINUOUS ONE-SHOT + EXTERNAL CRITIC
 
 The WSA run has returned after the browser-green Player checkpoint instead of continuing through the full ONE_SHOT. Treat that Player work as **KEEP**, not as a new external gate.
