@@ -10,12 +10,36 @@
     "green": "#5f8f5b",
     "greenDark": "#3e6944",
     "water": "#4c8ca6",
-    "buildingWarm": ["#d7775f","#e1a36f","#c66f70"],
-    "buildingPale": ["#dccfb8","#c7d2c3","#d7c7ad"],
-    "buildingIndustrial": ["#6f7180","#81705f","#596b70"],
-    "roof": ["#5c4650","#6a5f5b","#4a5360"],
-    "accent": ["#d6a936","#72a6a1","#b85f76"],
-    "window": ["#31414a","#61767a","#d2aa4a"],
+    "buildingWarm": [
+      "#d7775f",
+      "#e1a36f",
+      "#c66f70"
+    ],
+    "buildingPale": [
+      "#dccfb8",
+      "#c7d2c3",
+      "#d7c7ad"
+    ],
+    "buildingIndustrial": [
+      "#6f7180",
+      "#81705f",
+      "#596b70"
+    ],
+    "roof": [
+      "#5c4650",
+      "#6a5f5b",
+      "#4a5360"
+    ],
+    "accent": [
+      "#d6a936",
+      "#72a6a1",
+      "#b85f76"
+    ],
+    "window": [
+      "#31414a",
+      "#61767a",
+      "#d2aa4a"
+    ],
     "streetSign": {
       "board": "#255a72",
       "text": "#f7efe0",
@@ -90,5 +114,58 @@
     "separateRoofCaps": false,
     "physicsGeometryRemainsUndeformed": true,
     "cityLabOwnsNoMovementEngine": true
+  },
+  "cityFurnitureR0": {
+    "status": "AUTHORED_TOPOLOGY_DEMO_NOT_OSM_SIGNAL_TRUTH",
+    "slotSpacingM": 48,
+    "curbExtraM": 0.9,
+    "signalCurbExtraM": 0.65,
+    "buildingClearanceM": 0.65,
+    "maxSignalJunctions": 4,
+    "maxStreetlights": 28,
+    "streetlightMinSpacingM": 38,
+    "maxBenches": 7,
+    "benchMinSpacingM": 75,
+    "maxHydrants": 9,
+    "hydrantMinSpacingM": 62,
+    "maxDumpsters": 4,
+    "dumpsterMinSpacingM": 110,
+    "assets": [
+      {
+        "id": "streetlight",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf",
+        "targetHeightM": 5.4
+      },
+      {
+        "id": "trafficlight_A",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_A.gltf",
+        "targetHeightM": 3.1
+      },
+      {
+        "id": "trafficlight_B",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_B.gltf",
+        "targetHeightM": 3.8
+      },
+      {
+        "id": "trafficlight_C",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_C.gltf",
+        "targetHeightM": 4.2
+      },
+      {
+        "id": "bench",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/bench.gltf",
+        "targetHeightM": 0.82
+      },
+      {
+        "id": "firehydrant",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf",
+        "targetHeightM": 0.78
+      },
+      {
+        "id": "dumpster",
+        "url": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/dumpster.gltf",
+        "targetHeightM": 1.42
+      }
+    ]
   }
 }
