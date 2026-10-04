@@ -905,6 +905,13 @@ async function showScene(){
 /* WORLD-INTEGRATION-01 · Play reads the WorldBuilder's own state: terrainHeightAt (base + sculpt),
    the zone's footprints and the edited scene objects. Edit and Play never hold two copies. */
 async function initPlay(){
+  if(HOST_PROPS.kaykitPlayer){
+    status('loading KayKit Mannequin player…');
+    const WP=await import('../procedural-test-world-01/wb2-player.v1.js');
+    PLAY=await WP.makePlayer({scene,camera,dom:renderer.domElement,world:WORLD,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),hud:E('wiState')});
+    PLAY.readDoc(sceneDoc);E('wiMotion').innerHTML='<option>KayKit · freigegebener Satz</option>';E('wiMotion').disabled=true;
+    WORLD.setScanRoots([PLAY.actor.holder,worldRoot]);refreshWorldFacts();return;
+  }
   status('loading player · FrizzleBob graft + KFB Motion Library…');
   const WP=await import('../world-integration-01/wi1-play.js');
   PLAY=await WP.makePlay({scene,camera,dom:renderer.domElement,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),obstacles:()=>[...sceneObjects.values()],hud:E('wiState'),log:t=>WORLD.log.push(t)});
@@ -921,13 +928,15 @@ function setPlay(on){
   PLAY.setOn(on);
   if(!on){EDIT.setOn(true);controls.enabled=true;PLAY.handToOrbit(controls)}
   E('dock').hidden=on;E('wiPlay').classList.toggle('active',on);E('wiEdit').classList.toggle('active',!on);
+  if(HOST_PROPS.kaykitPlayer){status(on?'W/S bewegen · A/D drehen · Shift sprinten · Tab bauen':'Bauen · Tab spielen','ok');return;}
   status(on?'play · W walk (hold → faster) · S back · A/D turn · Q/E strafe · Shift run (hold → sprint) · C crouch · Z sneak · X crawl · Space jump · Tab edit':'edit · 1 object · 2 raise · 3 lower · Tab play','ok');
 }
 function refreshWorldFacts(){
   if(!WORLD)return;
   const z=WORLD.zone,sp=WORLD.spawn,t=WORLD.tile,pv=z.provenance||{};
   let h='<b>'+z.id+'</b> · '+z.counts.buildings+' buildings · '+z.counts.roadParts+' road parts<br>'+(pv.normalizedSha256?'normalized sha256 '+pv.normalizedSha256.slice(0,16)+'… · ':'')+(pv.commit?'@'+String(pv.commit).slice(0,12):'')+'<br>spawn '+(sp.road||'zone centre')+' · edit tile '+t.size+' m @ '+(t.size/t.seg)+' m<br>© OpenStreetMap contributors · ODbL 1.0';
-  if(PLAY){
+  if(PLAY&&HOST_PROPS.kaykitPlayer){h+='<br><br><b>Player</b> Mannequin_Medium · KayKit native · W/S bewegen · A/D drehen · Shift sprinten';}
+  if(PLAY&&!HOST_PROPS.kaykitPlayer){
     const R=PLAY.actor.report,m=R.measured,V=PLAY.speeds;
     h+='<br><br><b>Player</b> '+R.actor+'<br>'+R.height.bodyM+' m body ('+R.height.withEarsM+' m with ears) · door/figure '+R.height.doorRatio+' · floor/figure '+R.height.floorRatio;
     h+='<br>'+Object.entries(R.clips).map(([k,c])=>k+' '+c.name).join(' · ');
@@ -1250,6 +1259,7 @@ try{
     if(saved){try{const d=JSON.parse(saved);if(d.format==='kfb-worldbuilder-scene'&&d.id===DOC_ID){sceneDoc=d;ensureSculpt(sceneDoc.terrain);E('saveState').textContent='Loaded saved world · '+(d.savedAt||'no timestamp')}}catch(err){console.warn('saved world unreadable',err)}}
     actorSourceReady=propSourceReady=true;updateReviewUnlock();
     await showScene();
+    if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED)setPlay(true);
     if(new URLSearchParams(location.search).get('selftest')==='wi1')await runWorldSelfTest();
   }else await showActor();
   if(!WORLD&&new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();

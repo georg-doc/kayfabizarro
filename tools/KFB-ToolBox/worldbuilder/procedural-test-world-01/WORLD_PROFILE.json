@@ -18,7 +18,7 @@
   },
   "world": {
     "entry": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/PROCEDURAL_TEST_WORLD_01_SOURCE.html",
-    "play": false,
+    "play": true,
     "camera": "wide",
     "cardSystem": false,
     "travelHost": false,
@@ -55,9 +55,10 @@
     "owner": "KFB ToolBox / KayKit-native locomotion baseline",
     "pr": 344,
     "observedHead": "779c68b2c71609e86710a8bd9fe05ffc6913014f",
-    "status": "PREPARED_FOR_BLENDER_NOT_RUN",
+    "status": "KFB-LOCO-WB2-PLAYER-01_IMPLEMENTED_UNVERIFIED",
     "rule": "attach only after the native Blender baseline is persisted; this world slice does not add locomotion",
-    "legacyWi1Play": "DISABLED_IN_THIS_ENTRY"
+    "legacyWi1Play": "DISABLED_IN_THIS_ENTRY",
+    "contract": "KFB_KAYKIT_LOCO_SET_01.v1.json"
   },
   "consumerDock": {
     "worldOwner": "KFB WorldBuilder / WB2",

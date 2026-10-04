@@ -70,3 +70,8 @@
 
 The 2026-10-03 PR #332 donor already proved the single-island body/water/nature/building composition in Chromium.
 That evidence is donor evidence only until reproduced on this current-main branch.
+
+
+## KFB-LOCO-WB2-PLAYER-01 · implementation checkpoint · 2026-10-04
+
+Owner WB2, existing PR #348. Added native Mannequin_Medium, pinned Motion #344 contract copy, shared planar WB0 Ground extraction and one speed/phase AnimationMixer. Four-island world/Track Core/render owners retained. Source regression 9/9 PASS; syntax PASS. Runtime/browser is NOT YET VERIFIED. No Stage/merge/Live. Next action: integrated browser input, native binding, support and save/resume proof; stop before Residents.

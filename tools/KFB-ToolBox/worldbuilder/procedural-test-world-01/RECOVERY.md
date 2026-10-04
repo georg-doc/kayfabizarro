@@ -69,3 +69,8 @@ Read: `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
 
 After that PASS:
 **WSA-RES-SET-01** for Resident placement/Save/Reload.
+
+
+## KFB-LOCO-WB2-PLAYER-01 · implementation checkpoint · 2026-10-04
+
+Owner WB2, existing PR #348. Added native Mannequin_Medium, pinned Motion #344 contract copy, shared planar WB0 Ground extraction and one speed/phase AnimationMixer. Four-island world/Track Core/render owners retained. Source regression 9/9 PASS; syntax PASS. Runtime/browser is NOT YET VERIFIED. No Stage/merge/Live. Next action: integrated browser input, native binding, support and save/resume proof; stop before Residents.

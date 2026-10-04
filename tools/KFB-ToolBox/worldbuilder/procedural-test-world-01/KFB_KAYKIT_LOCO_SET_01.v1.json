@@ -1,0 +1,135 @@
+{
+  "schema": "kfb.kaykit-loco-set/1",
+  "id": "KFB_KAYKIT_LOCO_SET_01",
+  "status": "GEORG_DECIDED_HANDOVER",
+  "source": {
+    "pack": "KayKit Character Animations 1.1",
+    "sourcePriority": "KAYKIT_NATIVE_FIRST",
+    "reviewActor": "Mannequin_Medium",
+    "secondaryActor": "FrizzleBob v5",
+    "actionFigureRole": "OPTIONAL_COMPATIBILITY_SMOKE_ONLY",
+    "branch": "coworker/kaykit-native-locomotion-baseline-01-2026-10-03",
+    "handover": "KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md",
+    "baseline": "RETURN/KAYKIT_NATIVE_BASELINE_01_RETURN.md",
+    "visualReference": "KAYKIT_LOCO_SET_01/KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4"
+  },
+  "units": {
+    "speed": "m/s rig units",
+    "time": "seconds",
+    "phase": "0..1"
+  },
+  "locomotion": {
+    "parameter": "speed",
+    "maxActiveClips": 2,
+    "anchors": [
+      {
+        "role": "idle",
+        "clip": "Idle_A",
+        "speed": 0,
+        "cycleT": 1.067,
+        "leftFootDownPhase": null
+      },
+      {
+        "role": "walk",
+        "clip": "Walking_B",
+        "speed": 0.98,
+        "cycleT": 1.067,
+        "leftFootDownPhase": 0
+      },
+      {
+        "role": "run",
+        "clip": "Running_A",
+        "speed": 3.303,
+        "cycleT": 0.8,
+        "leftFootDownPhase": 0.0833
+      },
+      {
+        "role": "sprint",
+        "clip": "Running_B",
+        "speed": 5.255,
+        "cycleT": 0.8,
+        "leftFootDownPhase": 0.125
+      }
+    ],
+    "jog": {
+      "mode": "BLEND",
+      "between": [
+        "walk",
+        "run"
+      ],
+      "dedicatedClip": null
+    },
+    "rules": [
+      "Weights are linear between neighbouring anchors.",
+      "At most two neighbouring locomotion clips are active.",
+      "Use one shared normalized gait phase.",
+      "Sample each active clip at ((phase + leftFootDownPhase) mod 1) * cycleT.",
+      "Phase rate is sum(weight/cycleT) / sum(weight) over active locomotion clips.",
+      "Idle uses its own clock.",
+      "World/root movement speed equals the speed parameter.",
+      "Blend local bone rotations with slerp and local bone translations with lerp.",
+      "Sample animation by seconds; never assume frame rate from file."
+    ]
+  },
+  "variants": {
+    "calmWalk": [
+      "Walking_A",
+      "Walking_C"
+    ],
+    "backwards": "Walking_Backwards",
+    "jumpChain": [
+      "Jump_Start",
+      "Jump_Idle",
+      "Jump_Land"
+    ],
+    "fullJumps": [
+      "Jump_Full_Short",
+      "Jump_Full_Long"
+    ],
+    "dodge": [
+      "Dodge_Forward",
+      "Dodge_Backward",
+      "Dodge_Left",
+      "Dodge_Right"
+    ]
+  },
+  "acceptance": {
+    "referenceRamp": "KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4",
+    "maxSteadyFootCreepM": 0.044,
+    "noPosePop": true,
+    "noTPoseFrame": true,
+    "noDoubleStepAtWalkRunBoundary": true
+  },
+  "gaps": {
+    "turnInPlace": "GAP",
+    "strafeWalk": "GAP",
+    "startStopPivot": "GAP",
+    "cleanNativeJog": "NOT_NEEDED_JOG_IS_BLEND",
+    "note": "These are documented gaps, not reasons to rerun the native baseline."
+  },
+  "firstRuntimeSlice": {
+    "id": "KFB-LOCO-WB2-PLAYER-01",
+    "receivingOwner": "KFB WorldBuilder / WB2 PR #348",
+    "include": [
+      "idle",
+      "walk",
+      "run",
+      "sprint",
+      "speed-phase blend",
+      "world grounding",
+      "camera consumption"
+    ],
+    "exclude": [
+      "jump integration",
+      "turn in place",
+      "strafe walk",
+      "start-stop clips",
+      "weapon carry",
+      "combat",
+      "drive",
+      "residents"
+    ],
+    "rule": "Do not re-pick or re-time clips in the consumer."
+  }
+}
+

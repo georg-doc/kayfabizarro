@@ -14,9 +14,9 @@ const pres=fs.readFileSync(new URL('r2d-presentation.v1.js',root),'utf8');
 const buildings=fs.readFileSync(new URL('r2d-buildings.v1.js',root),'utf8');
 
 test('current host is the four-island WB2 profile and not Travel',()=>{
-  assert.match(html,/world:'r2d4'/);assert.match(html,/play:false/);
+  assert.match(html,/world:'r2d4'/);assert.match(html,/play:true/);
   assert.doesNotMatch(html,/travel|globe-v13|card-start/i);
-  assert.equal(profile.world.travelHost,false);assert.equal(profile.world.cardSystem,false);assert.equal(profile.world.play,false);
+  assert.equal(profile.world.travelHost,false);assert.equal(profile.world.cardSystem,false);assert.equal(profile.world.play,true);
 });
 test('world recipe set has exactly four stable nodes and three Track Core road bridges',()=>{
   assert.equal(recipes.schema,'kfb.world-recipe-set/0.1');
@@ -47,7 +47,7 @@ test('R2D core remains exact pure donor seam',()=>{
   assert.match(core,/export function planIsland/);assert.match(core,/export function fields/);
   assert.doesNotMatch(core,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
 });
-test('WB2 remains the renderer/world owner and legacy play is disabled',()=>{
+test('WB2 remains renderer/world owner and the KayKit entry bypasses legacy play',()=>{
   assert.match(app,/const PLAY_ENABLED=/);assert.match(app,/if\(PLAY_ENABLED\)\{/);assert.match(app,/locomotion intentionally detached/);
   assert.match(adapter,/archipelagoWorld/);assert.match(adapter,/ST\.buildTrack\(THREE,c\.stream/);
   assert.doesNotMatch(adapter,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
