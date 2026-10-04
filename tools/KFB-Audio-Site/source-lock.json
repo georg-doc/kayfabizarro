@@ -1,7 +1,7 @@
 {
   "schema": "kfb.audio-source-lock/0.1",
   "generated": "2026-10-04",
-  "sourceRef": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
+  "sourceRef": "main@e4d67469d6b18dfaf4eafdddf6618ecf7c4d8904",
   "roadTripV2": {
     "masters": [
       {
@@ -267,6 +267,12 @@
         "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Witch Hat Acid Picnic 01.mp3",
         "sha": "c4a5aa0ccc81befd50b4450ee5f9d2ff83d9e0cf",
         "size": 2971817
+      },
+      {
+        "title": "Rain percussion · Beetle / Ring",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rain percussion · Beetle _ Ring.mp3",
+        "sha": "561a6772c01c1d496bf7e60de65c986f18ead413",
+        "size": 4343112
       }
     ],
     "stemFamilies": [
@@ -353,6 +359,12 @@
         "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)",
         "bpm": 75,
         "treeSha": "3feb586e85625b77772215ea42d9cb8bf86c3127"
+      },
+      {
+        "title": "Rain percussion · Beetle / Ring",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rain percussion · Beetle _ Ring Stems (107BPM)",
+        "bpm": 107,
+        "treeSha": "33eb03aa5e16ede119a274c05b263f2d9a291850"
       }
     ]
   },
@@ -381,6 +393,110 @@
       "path": "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg",
       "sha": "579953c73652b48dd1c4910135bd741ec73e4d8c",
       "size": null
+    }
+  ],
+  "intakeCandidates": [
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Clean_isolated_dry-a_#4-1791082029501.mp3",
+      "sha": "c333564d132115387b535ad88cd653e0e7bde2c1",
+      "size": 73197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Clean_tuned_vintage__#2-1791082740218.mp3",
+      "sha": "48b56b0ce11440be9cfb1d4f379930ccc1b89034",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Clean_tuned_vintage__#3-1791082731555.mp3",
+      "sha": "0fddc685ecc1776f09844d766af5cf13c577d136",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNBass-Dark_cinematic_groun-Elevenlabs.mp3",
+      "sha": "f21400d2ad386fc5d916b744fbbfeeaa7897c553",
+      "size": 721197,
+      "status": "UNREVIEWED"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNBass-Deep_bass_“doom”_or_-Elevenlabs.mp3",
+      "sha": "34f81caca36721862dad35dc0b0a1ea9c59be50a",
+      "size": 73197,
+      "status": "UNREVIEWED"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNBass-Low_droning_ambient_-Elevenlabs.mp3",
+      "sha": "b433779aac7b58ecce745778ccd3461fcec01656",
+      "size": 73197,
+      "status": "UNREVIEWED"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNBass-power_up_bubbles_bas-Elevenlabs.mp3",
+      "sha": "72a59735b0edcb725ba6504bd51ad78e1e87503c",
+      "size": 25389,
+      "status": "UNREVIEWED"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNDron-Ultra-high-quality,_-Elevenlabs.mp3",
+      "sha": "8dc1785c5d6702074c919b54711b2ebc7551fa3a",
+      "size": 721197,
+      "status": "UNREVIEWED"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_car_tire_ro_#1-1791082331112.mp3",
+      "sha": "bc89c3a3a9d5e7a9d87293c08b391b74cf80d375",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_heavy_rain__#2-1791081920535.mp3",
+      "sha": "b6cf3e907eab5edb8adac609be887a51a636617c",
+      "size": 481581,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_light_stead_#3-1791081817907.mp3",
+      "sha": "f1673eb0a641fe60680477b889c8dc5869eafa05",
+      "size": 481581,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_quirky_work_#4-1791082581803.mp3",
+      "sha": "332d24914772884be96116eb194d7f4965c37eb0",
+      "size": 481581,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_steady_tire_#1-1791082443239.mp3",
+      "sha": "cd01ab623d14db3599ce3d0e6814e877b394db71",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_tuned_vinta_#2-1791082666988.mp3",
+      "sha": "9755081584d69ca866e3d80a6a4dc8c988e8a728",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_tuned_vinta_#3-1791082676562.mp3",
+      "sha": "af95b5d7bc5680e675f588a8b979199a4092cc1d",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_tuned_vinta_#4-1791082681438.mp3",
+      "sha": "e057dead0a8fe7caf448329278803f7c73544284",
+      "size": 289197,
+      "status": "HUMAN_TUNE"
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Short,_isolated_dry-_#4-1791082119031.mp3",
+      "sha": "2563f9968dfc25fdd9d2c1730d7bbd152ed022cf",
+      "size": 49581,
+      "status": "HUMAN_TUNE"
     }
   ]
 }

@@ -1,14 +1,15 @@
 const RAW='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let catalog=null,soundscape=null,intake=[];
+let catalog=null,soundscape=null,sourceIntake=null,intake=[];
 const audioUrl=file=>RAW+file.split('/').map(encodeURIComponent).join('/');
 const text=(v='')=>String(v??'');
 const escapeHtml=s=>text(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function firstJson(urls){let last=null;for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status+' '+u);return await r.json()}catch(e){last=e}}throw last||new Error('no JSON source')}
 async function load(){
-  [catalog,soundscape]=await Promise.all([
+  [catalog,soundscape,sourceIntake]=await Promise.all([
     firstJson(['./catalog.snapshot.json','../../media/3D_Assets/Sounds/jukebox.json',RAW+'media/3D_Assets/Sounds/jukebox.json']),
-    firstJson(['./soundscape-source.json'])
+    firstJson(['./soundscape-source.json']),
+    firstJson(['./source-intake.v1.json'])
   ]);
   renderAll();bind();
 }
@@ -23,7 +24,7 @@ function renderCatalog(){
   return JSON.stringify([t.title,t.id,t.roles,t.moods,t.tags,t.family]).toLowerCase().includes(q);
  });
  $('#stats').textContent=filtered.length+' shown · '+all.length+' catalog tracks · '+all.filter(t=>t.collection==='roadtrip-v2').length+' RoadTrip v2 · '+all.filter(t=>t.stems).length+' stem families';
- $('#catalogGrid').innerHTML=filtered.map(t=>'<article class="track"><div><h3>'+escapeHtml(t.title)+'</h3><div class="tiny">'+escapeHtml(meta(t))+'</div></div><div class="chips">'+(t.roles||[]).map(x=>'<span class="chip">'+escapeHtml(x)+'</span>').join('')+(t.stems?.policy==='certified'?'<span class="chip ok">stem-certified</span>':'')+'</div><div class="track-actions"><button class="play" data-play="'+escapeHtml(t.id)+'">Play master</button><button data-ref="'+escapeHtml(t.id)+'">Use as ref</button></div></article>').join('');
+ $('#catalogGrid').innerHTML=filtered.map(t=>'<article class="track"><div><h3>'+escapeHtml(t.title)+'</h3><div class="tiny">'+escapeHtml(meta(t))+'</div></div><div class="chips">'+(t.roles||[]).map(x=>'<span class="chip">'+escapeHtml(x)+'</span>').join('')+(t.stems?.policy==='certified'?'<span class="chip ok">stem-certified</span>':'')+(t.humanReview?.status==='positive'?'<span class="chip ok">human-positive</span>':'')+'</div><div class="track-actions"><button class="play" data-play="'+escapeHtml(t.id)+'">Play master</button><button data-ref="'+escapeHtml(t.id)+'">Use as ref</button></div></article>').join('');
  $$('[data-play]').forEach(b=>b.onclick=()=>playTrack(b.dataset.play));
  $$('[data-ref]').forEach(b=>b.onclick=()=>addPromptRef(b.dataset.ref));
 }
@@ -62,13 +63,32 @@ function buildPrompt(){
  const mood=$('#pMood').value.trim()||'[mood]',biome=$('#pBiome').value.trim()||'[biome / place]',resident=$('#pResident').value.trim()||'[resident / performer]',role=$('#pRole').value;
  $('#promptOut').value='Create one Suno-ready KFB instrumental prompt for '+role+'. Mood: '+mood+'. Biome/place: '+biome+'. Resident/performer: '+resident+'.\n\nUse these existing KFB masters as style references, not as material to copy or cross-mix:\n'+(refs.length?refs.map(t=>'- '+t.title+(t.bpm?' · '+t.bpm+' BPM':'')+(t.moods?.length?' · '+t.moods.join('/'):'')).join('\n'):'- no reference selected yet')+'\n\nKeep the KFB audio rules: complete master first, 2–4 variants, human-select the winner, stems only afterward; preserve negative space for SFX/dialogue; avoid generic trailer/EDM cliché and invented source facts. Suggest BPM/tonal center only when musically justified. Return: main prompt + stem priority + selection note.';
 }
+
+function renderCandidates(){
+ const status=$('#candidateStatus')?.value||'',category=$('#candidateCategory')?.value||'';
+ const all=sourceIntake?.elevenLabs||[],xs=all.filter(x=>(!status||x.status===status)&&(!category||x.category===category));
+ $('#candidateStats').textContent=xs.length+' shown · '+all.length+' ElevenLabs tests · no accepted production sources';
+ $('#candidateGrid').innerHTML=xs.map(x=>'<article class="track candidate"><div><h3>'+escapeHtml(x.label)+'</h3><div class="tiny">'+escapeHtml(x.category)+' · '+Math.round(x.size/1024)+' KB</div></div><div class="chips"><span class="chip '+(x.status==='HUMAN_TUNE'?'warn':'')+'">'+escapeHtml(x.status)+'</span><span class="chip">ElevenLabs</span></div><div class="tiny">'+escapeHtml(x.note||'')+'</div><div class="track-actions"><button class="play" data-candidate-play="'+escapeHtml(x.id)+'">Play test</button></div></article>').join('');
+ $('[data-candidate-play]').forEach(b=>b.onclick=()=>playCandidate(b.dataset.candidatePlay));
+}
+function playCandidate(id){
+ const x=(sourceIntake?.elevenLabs||[]).find(v=>v.id===id);if(!x)return;
+ const a=$('#preview');a.src=audioUrl(x.file);a.play().catch(()=>{});
+ $('#nowTitle').textContent=x.label;$('#nowMeta').textContent=x.category+' · '+x.status+' · TEST CANDIDATE';
+}
+function fillCandidateFilters(){
+ const sel=$('#candidateCategory');if(!sel)return;
+ const cats=[...new Set((sourceIntake?.elevenLabs||[]).map(x=>x.category))].sort();
+ sel.insertAdjacentHTML('beforeend',cats.map(c=>'<option value="'+escapeHtml(c)+'">'+escapeHtml(c)+'</option>').join(''));
+}
+
 function show(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.tabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===id)))}
 function bind(){
  $$('.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.view));['#search','#collection','#stemFilter'].forEach(s=>$(s).addEventListener('input',renderCatalog));
  $('#playA').onclick=()=>{const x=loadMix('A');if(x){aMix.play();$('#nowTitle').textContent=x.t.title;$('#nowMeta').textContent='TRANSITION DECK A · MASTER'}};$('#playB').onclick=()=>{const x=loadMix('B');if(x){bMix.play();$('#nowTitle').textContent=x.t.title;$('#nowMeta').textContent='TRANSITION DECK B · MASTER'}};
  $('#xfade').oninput=e=>setFade(e.target.value);$$('[data-fade]').forEach(b=>b.onclick=()=>autoFade(+b.dataset.fade));$('#stopMix').onclick=()=>{aMix.pause();bMix.pause();clearInterval(fadeTimer)};
  const drop=$('#drop'),input=$('#files');drop.onclick=()=>input.click();input.onchange=e=>filesChanged(e.target.files);drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag')};drop.ondragleave=()=>drop.classList.remove('drag');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');filesChanged(e.dataTransfer.files)};
- $('#downloadIntake').onclick=downloadIntake;$('#buildPrompt').onclick=buildPrompt;$('#copyPrompt').onclick=()=>navigator.clipboard?.writeText($('#promptOut').value);
+ $('#candidateStatus')?.addEventListener('input',renderCandidates);$('#candidateCategory')?.addEventListener('input',renderCandidates);$('#downloadIntake').onclick=downloadIntake;$('#buildPrompt').onclick=buildPrompt;$('#copyPrompt').onclick=()=>navigator.clipboard?.writeText($('#promptOut').value);
 }
-function renderAll(){renderCatalog();fillSelect($('#deckA'));fillSelect($('#deckB'));$('#deckB').selectedIndex=Math.min(1,$('#deckB').options.length-1);fillSelect($('#pRefs'),false);renderSources();setFade(0);filesChanged([])}
+function renderAll(){renderCatalog();fillSelect($('#deckA'));fillSelect($('#deckB'));$('#deckB').selectedIndex=Math.min(1,$('#deckB').options.length-1);fillSelect($('#pRefs'),false);renderSources();fillCandidateFilters();renderCandidates();setFade(0);filesChanged([])}
 load().catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:20px;color:#f88">'+escapeHtml(e.stack||e)+'</pre>')});

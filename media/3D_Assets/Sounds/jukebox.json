@@ -1584,6 +1584,56 @@
         "collectible": true,
         "receiptType": "music-memory"
       }
+    },
+    {
+      "id": "roadtrip-v2-rain-percussion-beetle-ring",
+      "title": "Rain percussion · Beetle / Ring",
+      "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rain percussion · Beetle _ Ring.mp3",
+      "loop": false,
+      "collection": "roadtrip-v2",
+      "masterGroundTruth": true,
+      "source": {
+        "sha": "561a6772c01c1d496bf7e60de65c986f18ead413",
+        "size": 4343112,
+        "provenance": "georg-doc/kayfabizarro main@e4d67469d6b18dfaf4eafdddf6618ecf7c4d8904"
+      },
+      "roles": [
+        "catalog",
+        "synced-texture",
+        "style-reference",
+        "ring"
+      ],
+      "tags": [
+        "roadtrip-v2",
+        "suno-sounds",
+        "rain-percussion",
+        "beetle-ring",
+        "texture"
+      ],
+      "autoRadio": {
+        "eligible": false,
+        "weight": 0
+      },
+      "memory": {
+        "collectible": false,
+        "receiptType": "music-memory"
+      },
+      "bpm": 107,
+      "stems": {
+        "dir": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rain percussion · Beetle _ Ring Stems (107BPM)",
+        "treeSha": "33eb03aa5e16ede119a274c05b263f2d9a291850",
+        "policy": "source-only"
+      },
+      "moods": [
+        "rain",
+        "percussive",
+        "playful",
+        "ring"
+      ],
+      "humanReview": {
+        "status": "positive",
+        "note": "Georg marked this Suno Sounds synced texture experiment as cool on 2026-10-04."
+      }
     }
   ]
 }

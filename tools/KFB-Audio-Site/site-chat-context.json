@@ -5,7 +5,8 @@
   "sourceOfTruth": [
     "media/3D_Assets/Sounds/jukebox.json",
     "tools/KFB-Audio-Site/soundscape-source.json",
-    "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md"
+    "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md",
+    "tools/KFB-Audio-Site/source-intake.v1.json"
   ],
   "responsibilities": [
     "Find and compare catalog tracks without inventing missing metadata.",
@@ -14,7 +15,8 @@
     "For new source assets record provenance, exact filename, BPM if known, family/variant relation and stem policy.",
     "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
     "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries.",
-    "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track."
+    "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track.",
+    "When reviewing SFX tests, separate HUMAN_TUNE / UNREVIEWED candidates from VERIFIED_SOURCE; propose KEEP/TUNE/REJECT decisions instead of silently promoting them."
   ],
   "promptRecipe": {
     "masterFirst": true,
@@ -53,5 +55,10 @@
       "path": "tools/KFB-Audio-Site/prompts/SUNO_V6_PROMPTS_02_2026-09-19.md",
       "use": "compact Suno v6 road/race prompt grammar"
     }
-  ]
+  ],
+  "currentFeedback": {
+    "sfxPromptBank": "HUMAN_TUNE — previous SFX prompts were reported as not very good; do not imitate their wording by default.",
+    "elevenLabsTests": "Treat all current ElevenLabs files as audition candidates only, not accepted soundscape truth.",
+    "preferredSyncedTexture": "Rain percussion · Beetle / Ring · 107 BPM — human-positive style/texture reference, source-only stems."
+  }
 }

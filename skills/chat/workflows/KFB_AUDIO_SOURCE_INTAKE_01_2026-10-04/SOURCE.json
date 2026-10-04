@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.audio-source-intake-slice/1",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+  "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
+  "mainSourceRef": "main@e4d67469d6b18dfaf4eafdddf6618ecf7c4d8904",
+  "counts": {
+    "catalogTracks": 55,
+    "roadTripV2Masters": 45,
+    "stemFamilies": 15,
+    "elevenLabsTests": 17
+  },
+  "rainTexture": {
+    "id": "roadtrip-v2-rain-percussion-beetle-ring",
+    "bpm": 107,
+    "masterSha": "561a6772c01c1d496bf7e60de65c986f18ead413",
+    "stemTreeSha": "33eb03aa5e16ede119a274c05b263f2d9a291850",
+    "status": "HUMAN_POSITIVE_STYLE_REFERENCE"
+  },
+  "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
+  "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_REVIEW"
+}
