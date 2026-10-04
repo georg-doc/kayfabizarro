@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.eye-class-seed/0.1-candidate",
+  "rigClass": "Rig_Legacy",
+  "status": "AUTO_MEASURE_PER_HEAD_NO_ACCEPTED_CLASS_DEFAULT",
+  "reference": {
+    "legacyRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+    "legacyFaceHost": "tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-facehost.v1.js",
+    "eyeRig": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js"
+  },
+  "calibrationStart": {
+    "source": "existing Legacy RPG Rigging Lab candidate defaults; fallback only when source-eye pair cannot be measured",
+    "eye": {
+      "anchor": {
+        "dx": 0.4,
+        "dy": 0.05,
+        "ring": 0.15,
+        "track": 0.12
+      },
+      "pupilStyle": "matte-cute",
+      "pupilSize": 0.38,
+      "gloss": 0.1,
+      "inset": 0.18,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0.04,
+      "baseColor": null,
+      "lidColorMode": "face-base-darkened",
+      "oval": {
+        "w": 1,
+        "h": 1,
+        "d": 1,
+        "tilt": 0
+      },
+      "trackingMode": "life",
+      "fixedGaze": [
+        0,
+        0
+      ]
+    },
+    "blink": {
+      "minGap": 2.5,
+      "maxGap": 6.5,
+      "dur": 0.12
+    },
+    "life": {
+      "on": true,
+      "wander": 0.35,
+      "tremor": 0.18
+    },
+    "kinetics": {
+      "enabled": false,
+      "gain": 1,
+      "a": 0,
+      "c": 0,
+      "j": 0
+    }
+  },
+  "authoringDefault": null,
+  "measurementPolicy": {
+    "source": "LegacyFaceHost + black-material connected-component symmetry",
+    "onMeasured": "source measured dx/dy/ring override calibrationStart anchor; status AUTO_CANDIDATE",
+    "onHumanRequired": "retain calibrationStart only as visible fallback; status HUMAN_REQUIRED_FALLBACK_CANDIDATE",
+    "visualApproval": "never automatic"
+  },
+  "inheritance": {
+    "order": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "rigClass": "Rig_Legacy"
+  },
+  "protected": {
+    "sourceAssets": "never modify GLB/GLTF",
+    "sourceEyes": "hide only on cloned runtime material after source-isolation evidence",
+    "approval": "automated fit is candidate evidence, not Georg visual acceptance"
+  }
+}

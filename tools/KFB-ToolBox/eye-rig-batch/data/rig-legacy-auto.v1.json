@@ -1,0 +1,2676 @@
+{
+  "schema": "kfb.eye-profile-batch/0.2-candidate",
+  "owner": "KFB ToolBox / Rigging · Batch EyeRig Atlas",
+  "rigClass": "Rig_Legacy",
+  "status": "AUTO_CANDIDATE_16_MEASURED_1_HUMAN_REQUIRED",
+  "inheritanceOrder": [
+    "rigClass",
+    "character",
+    "session"
+  ],
+  "classDefault": null,
+  "source": {
+    "catalog": "data/rig-legacy-heads.v0.json",
+    "classSeed": "data/rig-legacy-default.v0.json",
+    "partsRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "legacyRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+    "eyeRigRevision": "5650b6c54d8789b20ea80abe857688173d506d3b"
+  },
+  "evidence": {
+    "generatedDate": "2026-09-21",
+    "workflowRun": 35661858046,
+    "job": 106538705766,
+    "static": "24/24 PASS",
+    "browser": "247/247 PASS",
+    "measuredCount": 16,
+    "humanRequiredCount": 1,
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "artifactId": 10667124760,
+    "artifactDigest": "sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26"
+  },
+  "visualAcceptance": {
+    "approved": false,
+    "note": "Automated source fit only. Georg visual review remains required. Skull requires manual placement review before approval."
+  },
+  "profiles": [
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "barbarian-default",
+      "label": "Barbarian · default",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_barbarian.gltf",
+        "node": "character_barbarianHead",
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "embedded"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "character_barbarianHead",
+        "headMeshes": [
+          "Cube014"
+        ],
+        "headSize": [
+          1.1755,
+          1.0517,
+          1.0644
+        ],
+        "headCenter": [
+          0,
+          0.5188,
+          0.0322
+        ],
+        "headVerts": 765,
+        "baseColor": "#f6c09c",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306
+        },
+        "pair": [
+          {
+            "mesh": "Cube014_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.1013,
+              0.3874
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube014_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.1013,
+              0.3834
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#f6c09c",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#f6c09c",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "barbarian-default",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "barbarian-a",
+      "label": "Barbarian Head A",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadA.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3995"
+        ],
+        "headSize": [
+          1.1755,
+          1.0517,
+          1.0644
+        ],
+        "headCenter": [
+          0,
+          0.5258,
+          0.0322
+        ],
+        "headVerts": 765,
+        "baseColor": "#9b5a45",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306
+        },
+        "pair": [
+          {
+            "mesh": "Cube3995_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.1013,
+              0.3874
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube3995_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.1013,
+              0.3834
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#9b5a45",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#9b5a45",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "barbarian-a",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "barbarian-b",
+      "label": "Barbarian Head B",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadB.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3996"
+        ],
+        "headSize": [
+          1.1755,
+          1.0517,
+          1.0644
+        ],
+        "headCenter": [
+          0,
+          0.5258,
+          0.0322
+        ],
+        "headVerts": 765,
+        "baseColor": "#c8855f",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306
+        },
+        "pair": [
+          {
+            "mesh": "Cube3996_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.1013,
+              0.3874
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube3996_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.1013,
+              0.3834
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#c8855f",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#c8855f",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "barbarian-b",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "barbarian-c",
+      "label": "Barbarian Head C",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadC.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3997"
+        ],
+        "headSize": [
+          1.1755,
+          1.0517,
+          1.0644
+        ],
+        "headCenter": [
+          0,
+          0.5258,
+          0.0322
+        ],
+        "headVerts": 765,
+        "baseColor": "#daae7e",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306
+        },
+        "pair": [
+          {
+            "mesh": "Cube3997_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.1013,
+              0.3874
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube3997_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.1013,
+              0.3834
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#daae7e",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.532,
+          "dy": -0.1927,
+          "ring": 0.1306,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#daae7e",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "barbarian-c",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "knight-default",
+      "label": "Knight · default",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf",
+        "node": "character_knightHead",
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "embedded"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "character_knightHead",
+        "headMeshes": [
+          "Cube015"
+        ],
+        "headSize": [
+          1.1755,
+          0.8511,
+          1.061
+        ],
+        "headCenter": [
+          0,
+          0.4139,
+          0.0475
+        ],
+        "headVerts": 498,
+        "baseColor": "#f6c09c",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6573,
+          "dy": -0.0024,
+          "ring": 0.1614
+        },
+        "pair": [
+          {
+            "mesh": "Cube015_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.001,
+              0.3721
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube015_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.001,
+              0.3681
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#f6c09c",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6573,
+          "dy": -0.0024,
+          "ring": 0.1614,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#f6c09c",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "knight-default",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "knight-a",
+      "label": "Knight Head A",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadA.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3998"
+        ],
+        "headSize": [
+          1.1755,
+          0.8511,
+          1.061
+        ],
+        "headCenter": [
+          0,
+          0.4255,
+          0.0475
+        ],
+        "headVerts": 507,
+        "baseColor": "#9b5a45",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.601,
+          "dy": 0.3478,
+          "ring": 0.3283
+        },
+        "pair": [
+          {
+            "mesh": "Cube3998_2",
+            "triangles": 380,
+            "center": [
+              -0.2556,
+              0.1473,
+              0.379
+            ],
+            "size": [
+              0.2794,
+              0.1423,
+              0.1892
+            ]
+          },
+          {
+            "mesh": "Cube3998_2",
+            "triangles": 380,
+            "center": [
+              0.2559,
+              0.1487,
+              0.379
+            ],
+            "size": [
+              0.2794,
+              0.1423,
+              0.1892
+            ]
+          }
+        ],
+        "confidence": 0.998,
+        "candidateCount": 15,
+        "candidates": [],
+        "faceColor": "#9b5a45",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 2
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.601,
+          "dy": 0.3478,
+          "ring": 0.3283,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#9b5a45",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "knight-a",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "knight-b",
+      "label": "Knight Head B",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadB.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3999"
+        ],
+        "headSize": [
+          1.1755,
+          0.8511,
+          1.061
+        ],
+        "headCenter": [
+          0,
+          0.4255,
+          0.0475
+        ],
+        "headVerts": 507,
+        "baseColor": "#c8855f",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6573,
+          "dy": -0.0024,
+          "ring": 0.1614
+        },
+        "pair": [
+          {
+            "mesh": "Cube3999_1",
+            "triangles": 54,
+            "center": [
+              -0.2762,
+              -0.001,
+              0.3721
+            ],
+            "size": [
+              0.1021,
+              0.1374,
+              0.0969
+            ]
+          },
+          {
+            "mesh": "Cube3999_1",
+            "triangles": 54,
+            "center": [
+              0.2833,
+              -0.001,
+              0.3681
+            ],
+            "size": [
+              0.0928,
+              0.1374,
+              0.1048
+            ]
+          }
+        ],
+        "confidence": 0.989,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#c8855f",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6573,
+          "dy": -0.0024,
+          "ring": 0.1614,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#c8855f",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "knight-b",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "knight-c",
+      "label": "Knight Head C",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadC.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube4000"
+        ],
+        "headSize": [
+          1.1755,
+          0.8511,
+          1.061
+        ],
+        "headCenter": [
+          0,
+          0.4255,
+          0.0475
+        ],
+        "headVerts": 507,
+        "baseColor": "#daae7e",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.601,
+          "dy": 0.3478,
+          "ring": 0.3283
+        },
+        "pair": [
+          {
+            "mesh": "Cube4000_2",
+            "triangles": 380,
+            "center": [
+              -0.2556,
+              0.1473,
+              0.379
+            ],
+            "size": [
+              0.2794,
+              0.1423,
+              0.1892
+            ]
+          },
+          {
+            "mesh": "Cube4000_2",
+            "triangles": 380,
+            "center": [
+              0.2559,
+              0.1487,
+              0.379
+            ],
+            "size": [
+              0.2794,
+              0.1423,
+              0.1892
+            ]
+          }
+        ],
+        "confidence": 0.998,
+        "candidateCount": 15,
+        "candidates": [],
+        "faceColor": "#daae7e",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 2
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.601,
+          "dy": 0.3478,
+          "ring": 0.3283,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#daae7e",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "knight-c",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "mage-default",
+      "label": "Mage · default",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_mage.gltf",
+        "node": "character_mageHead",
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "embedded"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "character_mageHead",
+        "headMeshes": [
+          "Cube016"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0508
+        ],
+        "headCenter": [
+          0,
+          0.4736,
+          0.0349
+        ],
+        "headVerts": 690,
+        "baseColor": "#f6c09c",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311
+        },
+        "pair": [
+          {
+            "mesh": "Cube016_2",
+            "triangles": 596,
+            "center": [
+              -0.2835,
+              0.0833,
+              0.3402
+            ],
+            "size": [
+              0.2239,
+              0.1243,
+              0.194
+            ]
+          },
+          {
+            "mesh": "Cube016_2",
+            "triangles": 596,
+            "center": [
+              0.2843,
+              0.0849,
+              0.3407
+            ],
+            "size": [
+              0.2245,
+              0.1239,
+              0.1926
+            ]
+          }
+        ],
+        "confidence": 0.997,
+        "candidateCount": 6,
+        "candidates": [],
+        "faceColor": "#f6c09c",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 2
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#f6c09c",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "mage-default",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "mage-a",
+      "label": "Mage Head A",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadA.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3533"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0508
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0349
+        ],
+        "headVerts": 690,
+        "baseColor": "#9b5a45",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311
+        },
+        "pair": [
+          {
+            "mesh": "Cube3533_2",
+            "triangles": 596,
+            "center": [
+              -0.2835,
+              0.0833,
+              0.3402
+            ],
+            "size": [
+              0.2239,
+              0.1243,
+              0.194
+            ]
+          },
+          {
+            "mesh": "Cube3533_2",
+            "triangles": 596,
+            "center": [
+              0.2843,
+              0.0849,
+              0.3407
+            ],
+            "size": [
+              0.2245,
+              0.1239,
+              0.1926
+            ]
+          }
+        ],
+        "confidence": 0.997,
+        "candidateCount": 6,
+        "candidates": [],
+        "faceColor": "#9b5a45",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 2
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#9b5a45",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "mage-a",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "mage-b",
+      "label": "Mage Head B",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadB.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3535"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0508
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0349
+        ],
+        "headVerts": 690,
+        "baseColor": "#c8855f",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6009,
+          "dy": -0.1047,
+          "ring": 0.1261
+        },
+        "pair": [
+          {
+            "mesh": "Cube3535_1",
+            "triangles": 58,
+            "center": [
+              -0.2886,
+              -0.0508,
+              0.3668
+            ],
+            "size": [
+              0.1269,
+              0.1177,
+              0.1327
+            ]
+          },
+          {
+            "mesh": "Cube3535_1",
+            "triangles": 59,
+            "center": [
+              0.2945,
+              -0.0508,
+              0.3668
+            ],
+            "size": [
+              0.1152,
+              0.1177,
+              0.1327
+            ]
+          }
+        ],
+        "confidence": 0.99,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#c8855f",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6009,
+          "dy": -0.1047,
+          "ring": 0.1261,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#c8855f",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "mage-b",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "mage-c",
+      "label": "Mage Head C",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadC.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3537"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0508
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0349
+        ],
+        "headVerts": 690,
+        "baseColor": "#daae7e",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311
+        },
+        "pair": [
+          {
+            "mesh": "Cube3537_2",
+            "triangles": 596,
+            "center": [
+              -0.2835,
+              0.0833,
+              0.3402
+            ],
+            "size": [
+              0.2239,
+              0.1243,
+              0.194
+            ]
+          },
+          {
+            "mesh": "Cube3537_2",
+            "triangles": 596,
+            "center": [
+              0.2843,
+              0.0849,
+              0.3407
+            ],
+            "size": [
+              0.2245,
+              0.1239,
+              0.1926
+            ]
+          }
+        ],
+        "confidence": 0.997,
+        "candidateCount": 8,
+        "candidates": [],
+        "faceColor": "#daae7e",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 3
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.5852,
+          "dy": 0.1733,
+          "ring": 0.2311,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#daae7e",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "mage-c",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "rogue-default",
+      "label": "Rogue · default",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_rogue.gltf",
+        "node": "character_rogueHead",
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "embedded"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "character_rogueHead",
+        "headMeshes": [
+          "Cube019"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0549
+        ],
+        "headCenter": [
+          -0.0007,
+          0.4773,
+          0.0369
+        ],
+        "headVerts": 723,
+        "baseColor": "#f6c09c",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416
+        },
+        "pair": [
+          {
+            "mesh": "Cube019_1",
+            "triangles": 58,
+            "center": [
+              -0.2886,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1269,
+              0.1374,
+              0.1327
+            ]
+          },
+          {
+            "mesh": "Cube019_1",
+            "triangles": 59,
+            "center": [
+              0.2945,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1152,
+              0.1374,
+              0.1327
+            ]
+          }
+        ],
+        "confidence": 0.994,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#f6c09c",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#f6c09c",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "rogue-default",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "rogue-a",
+      "label": "Rogue Head A",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadA.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3522"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0549
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0369
+        ],
+        "headVerts": 723,
+        "baseColor": "#9b5a45",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416
+        },
+        "pair": [
+          {
+            "mesh": "Cube3522_1",
+            "triangles": 58,
+            "center": [
+              -0.2886,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1269,
+              0.1374,
+              0.1327
+            ]
+          },
+          {
+            "mesh": "Cube3522_1",
+            "triangles": 59,
+            "center": [
+              0.2945,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1152,
+              0.1374,
+              0.1327
+            ]
+          }
+        ],
+        "confidence": 0.994,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#9b5a45",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#9b5a45",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "rogue-a",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "rogue-b",
+      "label": "Rogue Head B",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadB.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3524"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0549
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0369
+        ],
+        "headVerts": 723,
+        "baseColor": "#c8855f",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416
+        },
+        "pair": [
+          {
+            "mesh": "Cube3524_1",
+            "triangles": 58,
+            "center": [
+              -0.2886,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1269,
+              0.1374,
+              0.1327
+            ]
+          },
+          {
+            "mesh": "Cube3524_1",
+            "triangles": 59,
+            "center": [
+              0.2945,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1152,
+              0.1374,
+              0.1327
+            ]
+          }
+        ],
+        "confidence": 0.994,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#c8855f",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#c8855f",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "rogue-b",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "rogue-c",
+      "label": "Rogue Head C",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadC.gltf",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube3528"
+        ],
+        "headSize": [
+          1.1755,
+          0.9703,
+          1.0549
+        ],
+        "headCenter": [
+          0,
+          0.4852,
+          0.0369
+        ],
+        "headVerts": 723,
+        "baseColor": "#daae7e",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "MEASURED_CANDIDATE",
+        "method": "black-material connected-component symmetry",
+        "anchorCandidate": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416
+        },
+        "pair": [
+          {
+            "mesh": "Cube3528_1",
+            "triangles": 58,
+            "center": [
+              -0.2886,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1269,
+              0.1374,
+              0.1327
+            ]
+          },
+          {
+            "mesh": "Cube3528_1",
+            "triangles": 59,
+            "center": [
+              0.2945,
+              -0.0606,
+              0.3648
+            ],
+            "size": [
+              0.1152,
+              0.1374,
+              0.1327
+            ]
+          }
+        ],
+        "confidence": 0.994,
+        "candidateCount": 4,
+        "candidates": [],
+        "faceColor": "#daae7e",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 1
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.6009,
+          "dy": -0.125,
+          "ring": 0.1416,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#daae7e",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "AUTO_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "source black-eye geometry measurement",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "rogue-c",
+        "sessionAdjusted": false
+      }
+    },
+    {
+      "schema": "kfb.eye-profile/0.1-candidate",
+      "actorId": "skull",
+      "label": "Skull",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/skull.gltf.glb",
+        "node": null,
+        "revision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "kind": "asset"
+      },
+      "rigClass": "Rig_Legacy",
+      "faceHost": {
+        "status": "OK",
+        "schema": "kfb.legacy-facehost/0.1-candidate",
+        "headBone": "Head",
+        "headPart": "kfb-legacy-head-replacement",
+        "headMeshes": [
+          "Cube4001"
+        ],
+        "headSize": [
+          1.0473,
+          1.0321,
+          1.0352
+        ],
+        "headCenter": [
+          -0.0007,
+          0.4651,
+          -0.0242
+        ],
+        "headVerts": 527,
+        "baseColor": "#e7e7e7",
+        "facing": "+z authored legacy face"
+      },
+      "sourceFace": {
+        "schema": "kfb.source-face-report/0.1-candidate",
+        "status": "HUMAN_REQUIRED",
+        "method": null,
+        "anchorCandidate": null,
+        "pair": null,
+        "confidence": null,
+        "candidateCount": 1,
+        "candidates": [
+          {
+            "mesh": "Cube4001_1",
+            "material": "Black",
+            "triangles": 528,
+            "center": [
+              0.0001,
+              0.0154,
+              -0.0117
+            ],
+            "size": [
+              0.8918,
+              0.6283,
+              0.9704
+            ],
+            "radiusXY": 0.4459
+          }
+        ],
+        "faceColor": "#e7e7e7",
+        "faceColorSource": "legacy-facehost-material",
+        "removalMode": "runtime-black-material-visibility-only",
+        "sourceEyeCleanupVisuallyAccepted": false,
+        "runtimeHiddenBlackMaterials": 0,
+        "runtimeCleanupSkipped": "measurement not safe enough for automatic source-eye hiding"
+      },
+      "eye": {
+        "anchor": {
+          "dx": 0.4,
+          "dy": 0.05,
+          "ring": 0.15,
+          "track": 0.12
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.38,
+        "gloss": 0.1,
+        "inset": 0.18,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0.04,
+        "baseColor": "#e7e7e7",
+        "lidColorMode": "face-base-darkened",
+        "oval": {
+          "w": 1,
+          "h": 1,
+          "d": 1,
+          "tilt": 0
+        },
+        "trackingMode": "life",
+        "fixedGaze": [
+          0,
+          0
+        ]
+      },
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "life": {
+        "on": true,
+        "wander": 0.35,
+        "tremor": 0.18
+      },
+      "kinetics": {
+        "enabled": false,
+        "gain": 1,
+        "a": 0,
+        "c": 0,
+        "j": 0
+      },
+      "status": "HUMAN_REQUIRED_FALLBACK_CANDIDATE",
+      "evidence": {
+        "camera": "front",
+        "motionClip": "Idle",
+        "sourceIsolationRequired": true,
+        "sourceIsolationPassed": true,
+        "automatedMountPassed": true,
+        "eyeProfileVisuallyApproved": false
+      },
+      "calibration": {
+        "schema": "kfb.eye-legacy-auto/0.1-candidate",
+        "method": "Legacy calibrationStart fallback",
+        "sourceRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "generatedDate": "2026-09-21"
+      },
+      "reviewState": "UNREVIEWED",
+      "inheritance": {
+        "order": [
+          "rigClass",
+          "character",
+          "session"
+        ],
+        "rigClass": "Rig_Legacy",
+        "classSeed": "data/rig-legacy-default.v0.json",
+        "characterId": "skull",
+        "sessionAdjusted": false
+      }
+    }
+  ]
+}
