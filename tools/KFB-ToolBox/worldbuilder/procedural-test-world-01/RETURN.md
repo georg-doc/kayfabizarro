@@ -77,9 +77,14 @@ Binding Medium set:
 - Mannequin_Medium = reviewed runtime fixture
 - ActionFigure = optional compatibility smoke only
 
-## Exactly one next gate
+## One-Shot execution correction · 2026-10-04
 
-**KFB-LOCO-WB2-PLAYER-01**.
+`KFB-LOCO-WB2-PLAYER-01` is **not** a separate Georg-facing next gate.
+It is the first internal implementation checkpoint inside the current One-Shot.
 
-Executor: **WSA / Codex**.
-Brief: `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
+Current execution authority:
+`skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`.
+
+## Exactly one next action
+
+**WSA / Codex continues on this PR #348 through the One-Shot internal sequence until the integrated Golden Journey candidate is ready or a real blocker/stop rule is reached.**
