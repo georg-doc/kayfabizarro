@@ -8,6 +8,38 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
+## 2026-10-04 · CURRENT HUMAN RESULT · WORLD STUDIO VISUAL FAIL
+
+Georg freeplayed the primary World Studio GPT Site and returned **HUMAN VISUAL FAIL**.
+
+Primary Site remains:
+`https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/`
+
+The hosting/Sites delivery is not the failure.
+
+Visible product findings:
+- oversized pale Track-Core road/bridge/support presentation dominates Town;
+- flat grey void/background dominates the frame;
+- source-clean KayKit buildings/Residents/props read as sparse integration placement;
+- required Joyride/T4 clay-road design is missing;
+- world composition/livingness is not accepted.
+
+Exact PR #348 records:
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md`
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/JOYRIDE_VISUAL_WORLD_RECOVERY_BRIEF_2026-10-04.md`
+
+Required Joyride presentation source:
+`georg-doc/kayfabizarro@927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f`
+
+Track Core route/support/collision remains KEEP.
+Current technical/pale road presentation is REJECT as final KFB look.
+Joyride J14/T4 PRESENTATION is REQUIRED.
+
+Current next action:
+**one integrated visual-world recovery in existing WB2 → update the same GPT Site → Georg freeplays again.**
+
+No new Site. No second road/world owner. No Cloudflare-first loop.
+
 ## 2026-10-04 · CURRENT PRODUCT RETURN · GPT SITE IS PRIMARY
 
 Georg explicitly confirmed GPT Site as the first target platform. This supersedes older Cloudflare-only acceptance routing for this delivery.
@@ -60,7 +92,7 @@ Current Site-native/prepared next lines:
 - Environment Atlas · PR #353
 - FrankenStein Composer · PR #355
 - Billboard Hypernormalisation Curator · PR #354
-- WorldBuilder / World Studio MVP · PR #348 · `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` · Sites deployment SUCCEEDED · 80 runtime files exact to PR #348 runtime source · Georg freeplay gate OPEN
+- WorldBuilder / World Studio MVP · PR #348 · `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` · Sites deployment SUCCEEDED · current human status **FAIL: Joyride/T4 presentation missing; composition/livingness rejected**
 
 Do not create a second productive Site for an owner that already has one.
 
