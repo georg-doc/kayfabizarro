@@ -1,6 +1,6 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.8.0 · 2026-09-29** · 57 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.8.0 · 2026-10-04** · 58 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
 
 ## Was das ist
 
