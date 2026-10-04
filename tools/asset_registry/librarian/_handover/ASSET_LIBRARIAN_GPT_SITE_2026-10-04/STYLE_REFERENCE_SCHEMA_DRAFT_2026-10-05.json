@@ -31,16 +31,34 @@
     },
     "locator": {
       "page": 1,
-      "pageRange": [1, 1],
-      "cropNormalized": [0.0, 0.0, 1.0, 1.0],
+      "pageRange": [
+        1,
+        1
+      ],
+      "cropNormalized": [
+        0,
+        0,
+        1,
+        1
+      ],
       "sectionTitle": "optional"
     },
     "taxonomy": {
-      "domain": ["comic-drawing"],
-      "subject": ["clouds"],
-      "technique": ["shape-language"],
-      "useCases": ["environment-design"],
-      "media": ["line-art"]
+      "domain": [
+        "comic-drawing"
+      ],
+      "subject": [
+        "clouds"
+      ],
+      "technique": [
+        "shape-language"
+      ],
+      "useCases": [
+        "environment-design"
+      ],
+      "media": [
+        "line-art"
+      ]
     },
     "guidance": {
       "principles": [
@@ -83,7 +101,12 @@
         "documentId": "style-doc:example-book:vol-01",
         "documentVersion": 1,
         "page": 1,
-        "cropNormalized": [0.0, 0.0, 1.0, 1.0],
+        "cropNormalized": [
+          0,
+          0,
+          1,
+          1
+        ],
         "principles": [
           "Resolve the private source before use."
         ],
@@ -124,5 +147,15 @@
     "privatePdfInGitHub": false,
     "privatePdfOnPublicStage": false,
     "newProductiveSite": false
+  },
+  "preferredSourceExample": {
+    "creator": "The Etherington Brothers",
+    "collection": "How to Think When You Draw",
+    "canonicalUrl": "https://theetheringtonbrothers.blogspot.com/p/every-how-to-think-when-you-draw.html",
+    "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+    "accessRole": "CANONICAL_WEB_REFERENCE",
+    "permissionContext": "USER_REPORTED_DIRECT_PERMISSION",
+    "repostPolicy": "PREFER_OFFICIAL_SOURCE_OVER_REPOST",
+    "pinterestRole": "DISCOVERY_ONLY"
   }
 }
