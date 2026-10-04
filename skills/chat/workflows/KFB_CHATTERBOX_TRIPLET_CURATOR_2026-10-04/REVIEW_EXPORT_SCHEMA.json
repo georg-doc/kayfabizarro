@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.pages.dev/schemas/kfb.triplet-pool-review/1",
+  "title": "KFB Triplet Pool Review Export v1",
+  "description": "Exact import contract for exports from KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html and compatible Cowork sidebar/local review state.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "date",
+    "source",
+    "reviewer",
+    "entries"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.triplet-pool-review/1"
+    },
+    "date": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tripletId",
+          "imported",
+          "decision",
+          "note",
+          "subject",
+          "connector",
+          "reframe",
+          "relation",
+          "signatureOf",
+          "tags"
+        ],
+        "properties": {
+          "tripletId": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]+$"
+          },
+          "imported": {
+            "type": "boolean"
+          },
+          "decision": {
+            "enum": [
+              "open",
+              "keep",
+              "cut",
+              "change"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "connector": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reframe": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "CATEGORY_SHIFT",
+              "ESCALATION",
+              "COLLISION",
+              "MISFIT",
+              "SYNERGY"
+            ]
+          },
+          "signatureOf": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
