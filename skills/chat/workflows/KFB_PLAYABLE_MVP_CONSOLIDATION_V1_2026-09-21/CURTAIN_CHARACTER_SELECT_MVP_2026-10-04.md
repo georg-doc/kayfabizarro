@@ -62,24 +62,30 @@ Desired default:
 `player.frizzlebob-v5b`.
 
 Safe technical fallback until that proof:
-`player.actionfigure-medium`.
+`player.mannequin-medium`.
+
+ActionFigure remains an optional compatibility smoke only.
 
 ### Rig_Medium baseline
 
 Exact current native baseline owner:
 Motion Draft PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`.
 
-Primary Actor:
-ActionFigure · Rig_Medium.
+Primary reviewed fixture:
+**Mannequin_Medium · Rig_Medium**.
+
+Secondary actor:
+FrizzleBob v5.
+
+ActionFigure:
+optional compatibility smoke only; it is not the baseline decision.
 
 Primary animation source:
 KayKit Character Animations 1.1.
 
-Known current scope:
-General + MovementBasic + MovementAdvanced.
-
-Motion PR #344 remains:
-**PREPARED FOR BLENDER · NOT RUN**.
+Motion PR #344 native review is **COMPLETE**.
+Decided Medium set:
+Walking_B → Running_A → Running_B, with jog as a speed/phase blend.
 
 ### Existing Medium comparison donor
 
@@ -128,21 +134,26 @@ Therefore Large must never inherit the Medium ladder blindly.
    - Medium-host/graft lineage
    - source pin must be reconciled before runtime promotion
 
-2. **ActionFigure**
+2. **Mannequin_Medium**
    - Rig_Medium
    - native-motion reference / safe baseline
-   - primary Motion #344 review Actor
+   - primary Motion #344 review/runtime fixture
 
 3. **Black Knight**
    - Rig_Large
    - Large compatibility probe
    - exposes anatomy/scale/attachment/cape issues early
 
-### Optional Stage/QA candidate
+### Optional Stage/QA candidates
 
 4. **GothGirl**
    - Rig_Medium
    - second Medium anatomy/face/attachment reference
+
+5. **ActionFigure**
+   - Rig_Medium
+   - compatibility smoke only
+   - must not reopen baseline clip decisions
 
 Do not expose the whole Resident Atlas roster in the start screen for MVP.
 The Asset Librarian can later feed a larger source-clean player roster through the same contract.
@@ -201,10 +212,11 @@ Example:
 
 ```
 Rig_Medium:
-  WALK → native candidate after Blender review
-  RUN → native candidate after Blender review
-  SPRINT → native/variant only after accepted review
-  JUMP_* → native candidate after review
+  WALK → Walking_B
+  RUN → Running_A
+  SPRINT → Running_B
+  JOG → speed/phase blend WALK↔RUN
+  JUMP_* → native KEEP family, integration follows after the first Ground seam
 
 Rig_Large:
   WALK → native
@@ -332,11 +344,12 @@ FrizzleBob remains the desired product default once its source pin and Ground ad
 
 ## Next technical dependency
 
-Exactly one hard dependency remains:
-**KAYKIT-NATIVE-BLENDER-BASELINE-01**.
+The native Medium baseline is complete.
 
-While that runs, this Character Select contract can be prepared/persisted.
-After the Medium baseline is accepted:
-1. define Rig_Medium capability profile;
+Exactly one current hard dependency is now:
+**KFB-LOCO-WB2-PLAYER-01**.
+
+After the Medium Player seam is real in WB2:
+1. integrate FrizzleBob/Mannequin selector through the shared Player Actor profile;
 2. map/probe Rig_Large against the same semantic intents;
-3. integrate the selector with the Curtain and real WB2 Player seam.
+3. integrate the selector with the Curtain without creating a second movement owner.
