@@ -1137,3 +1137,16 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Work smoke confirmed 55 Medium / 8 Large / 17 Legacy, Barbarian Legacy assembly, Skull `HUMAN_REQUIRED`, shared controls and Clay K1;
 - exact publication source static run: **187/191 PASS · 4 FAIL**, documented rather than promoted to CI PASS;
 - current gate is now `GEORG_EYERIG_UNIFIED_SITE_01`.
+
+
+## 2026-10-04 · Profile recovery audit after unified Site PASS
+
+- unified ChatGPT Site human gate accepted for continuation;
+- missing latest Georg profile state traced to origin-bound LocalStorage rather than a broken Site runtime;
+- newest recoverable file export found: `eye-rig-medium.batch (2).json`, 40 Medium profiles;
+- Dropbox copy (2026-10-02 17:35Z) and PR #104 GitHub copy are semantically identical;
+- 40er state = 2 ADJUSTED_APPROVED / 37 ADJUSTED / 1 UNREVIEWED;
+- therefore it is not the later remembered many-Approved Stage state;
+- no newer EyeRig batch export found in Dropbox/current owner branch;
+- safe import seam verified: Medium batch import updates matching Medium profiles only and preserves Large/Legacy;
+- current gate remains `EYE_RIG_PROFILE_RECOVERY_01`: export from old Stage LocalStorage if still present, compare, then persist/import the newest proven batch.
