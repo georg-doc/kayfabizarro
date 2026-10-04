@@ -81,7 +81,7 @@ Current recovery authority:
 - PR #348 current `RECOVERY.md`, `RETURN.md`, and `ONE_SHOT_STATUS.json`.
 
 Current outcome:
-**MVP1-PLAYABLE-DELIVERY** — direct product smoke → real WorldBuilder/God Mode edit + terrain edit → save/export/import persistence → representative source-clean world → publish and visibly verify `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` → Georg freeplay.
+**MVP1-PLAYABLE-DELIVERY** — direct product smoke → real WorldBuilder/God Mode edit + terrain edit → save/export/import persistence → representative source-clean world → publish/update and visibly verify the **World Studio GPT Site** → persist exact Site identity → bounded Cloudflare KFB-Hub mirror only when required → Georg freeplay.
 
 Full scripted Golden Journey automation, 61 captures and whole nine-dimension scoring are follow-up QA and may not suppress delivery of a meaningful playable MVP.
 
