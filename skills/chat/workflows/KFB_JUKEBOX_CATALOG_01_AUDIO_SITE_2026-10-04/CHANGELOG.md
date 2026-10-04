@@ -40,3 +40,15 @@
 - remaining harness mismatch is case-sensitive `Master` versus lowercase generated copy;
 - no Site publication and no SFX/Sound-Bed Prompt Bank expansion;
 - next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02`.
+
+## 2026-10-04 · QA recovery 02 PASS
+
+- changed only the final case-sensitive Prompt Studio QA assertion;
+- implementation head `b5835c521264eef6caf1e1260821c5e04f232fcd` passed full workflow;
+- source/catalog validator PASS;
+- JavaScript syntax PASS;
+- browser **9/9 PASS**;
+- artifact `11292621270`, digest `sha256:6ae512c1dcce56140e7decf6b1fc8b0965a4ffe53b15c77708b4beb13883d4e6`;
+- status now `QA_GREEN · GPT_SITE_PUBLISH_ONLY`;
+- no Cloudflare and no merge;
+- next gate `KFB_AUDIO_SITE_PUBLISH_01`.

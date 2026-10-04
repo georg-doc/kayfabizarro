@@ -12,7 +12,7 @@ Read:
 
 Do not reintroduce Cloudflare for iteration.
 
-Exactly one next gate after green tests: `KFB_AUDIO_SITE_QA_RECOVERY_01`.
+Exactly one next gate after green tests: `KFB_AUDIO_SITE_PUBLISH_01`.
 
 ## QA stop / recovery · 2026-10-04
 
@@ -55,7 +55,7 @@ Hosting boundary:
 - Cloudflare is deliberately not substituted;
 - therefore no `.chatgpt.site` live URL is claimed.
 
-**Exactly one next gate:** `KFB_AUDIO_SITE_QA_RECOVERY_01` — in a fresh/Sites-capable executor, change only the stale browser expectation from 12 to 14, rerun the existing QA unchanged otherwise; if green, immediately continue to GPT Site publication/connect integrated Site Chat from the already-prepared source package.
+**Exactly one next gate:** `KFB_AUDIO_SITE_PUBLISH_01` — in a fresh/Sites-capable executor, change only the stale browser expectation from 12 to 14, rerun the existing QA unchanged otherwise; if green, immediately continue to GPT Site publication/connect integrated Site Chat from the already-prepared source package.
 
 ## Recovery 01 return · 2026-10-04
 
@@ -69,4 +69,40 @@ Hosting boundary:
 - no GPT Site version or URL was created;
 - planned SFX/Sound-Bed Prompt Bank remains deferred.
 
-Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — literal prompt assertion recovery only; full browser PASS is required before Sites publication.
+Exactly one next gate: `KFB_AUDIO_SITE_PUBLISH_01` — literal prompt assertion recovery only; full browser PASS is required before Sites publication.
+
+## QA recovery 02 · COMPLETE PASS · 2026-10-04
+
+The final stale prompt assertion was changed only from case-sensitive `Master` to case-insensitive `master`.
+
+Tested implementation head:
+`b5835c521264eef6caf1e1260821c5e04f232fcd`
+
+GitHub Actions:
+- run `37173411886`
+- job `111350911259`
+- source/catalog validator: PASS
+- JavaScript syntax: PASS
+- browser QA: **9/9 PASS**
+- artifact `11292621270`
+- digest `sha256:6ae512c1dcce56140e7decf6b1fc8b0965a4ffe53b15c77708b4beb13883d4e6`
+
+Browser gate now proves:
+1. Site marker;
+2. 54-track catalog render;
+3. 44 RoadTrip-v2 master count;
+4. 14 stem-family filter;
+5. Mix view;
+6. grounded Prompt Studio request;
+7. rain/SOURCE_REQUIRED gap visibility;
+8. zero page errors;
+9. zero local HTTP errors.
+
+Product source is therefore **QA_GREEN**.
+
+GPT Site publication has **not** been performed in this Webchat because its available toolset does not expose Sites MCP. The previously proven KFB Site publishing lane is the local Sites skill:
+`/Users/georg/.codex/plugins/cache/openai-curated-remote/sites/1.0.0-a/skills/sites/SKILL.md`
+
+Cloudflare remains deliberately excluded.
+
+**Exactly one next gate:** `KFB_AUDIO_SITE_PUBLISH_01` — Sites-capable executor publishes the already QA-green source, connects the prepared integrated Site Chat context, opens the resulting `.frizzlebob.chatgpt.site` URL, and verifies this exact revision visually. No product repair should occur in that gate.

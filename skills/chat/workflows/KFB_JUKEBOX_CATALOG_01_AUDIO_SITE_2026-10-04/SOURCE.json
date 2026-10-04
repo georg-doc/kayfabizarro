@@ -15,9 +15,11 @@
   "hosting": {
     "desired": "GPT Site / Sites MCP",
     "cloudflare": false,
-    "status": "PUBLISH_TOOL_UNAVAILABLE_IN_THIS_CHAT"
+    "status": "QA_GREEN_PUBLISH_PENDING",
+    "provenSitesSkill": "/Users/georg/.codex/plugins/cache/openai-curated-remote/sites/1.0.0-a/skills/sites/SKILL.md",
+    "currentWebchatSitesMcpAvailable": false
   },
-  "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_01",
+  "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
   "audioSourceLock": {
     "path": "tools/KFB-Audio-Site/source-lock.json",
     "sourceRef": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
@@ -25,32 +27,19 @@
     "stemFamilies": 14,
     "soundscape": 5
   },
-  "status": "CANDIDATE_FROZEN · SOURCE_VALIDATED · BROWSER_QA_EXPECTATION_RECOVERY_REQUIRED · GPT_SITE_PUBLISH_TOOL_UNAVAILABLE",
+  "status": "QA_GREEN_GPT_SITE_PUBLISH_ONLY",
   "lastImplementationHead": "070fdaee25dfcdc671a0a29946092086c0a50562",
   "qa": {
-    "run": 37168419769,
-    "job": 111336177063,
+    "run": 37173411886,
+    "job": 111350911259,
     "sourceValidation": "PASS",
     "syntax": "PASS",
     "browser": {
-      "status": "FAIL",
-      "checksReached": 4,
-      "passedBeforeFailure": 3,
-      "failure": "stale assertion expected 12 stem-filter items; actual 14",
-      "artifact": 11290582496,
-      "digest": "sha256:ff8f155fe10a6fccffd951fdd6503df4fd53b4eeb36e52f17c60eee517f5e649"
-    },
-    "repairPasses": [
-      {
-        "head": "7b480454f0dfb771e1a51e5e34609b7f29bf8069",
-        "result": "advanced from stale 10-track raw-main source to candidate snapshot"
-      },
-      {
-        "head": "070fdaee25dfcdc671a0a29946092086c0a50562",
-        "result": "advanced 52/42 stale counters; remaining stale 12→14 expectation exposed"
-      }
-    ],
-    "stopPolicy": "TWO_REPAIR_PASSES_REACHED"
+      "pass": 9,
+      "total": 9,
+      "artifact": 11292621270,
+      "digest": "sha256:6ae512c1dcce56140e7decf6b1fc8b0965a4ffe53b15c77708b4beb13883d4e6"
+    }
   },
   "productionControlPreview": {
     "workflow": "KFB-JUKEBOX-CATALOG-01",
@@ -58,5 +47,6 @@
     "fileId": "c974646c-7d1b-4550-803d-2922566925bd",
     "name": "KFB_Audio_Site_MVP_01.html",
     "sha256": "79f1411f6c5edf77c0bc0a68cb746f0bd1f9e953c552422ff0c226875d493cad"
-  }
+  },
+  "testedImplementationHead": "b5835c521264eef6caf1e1260821c5e04f232fcd"
 }

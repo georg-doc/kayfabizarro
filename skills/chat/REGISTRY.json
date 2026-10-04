@@ -860,7 +860,7 @@
     {
       "id": "kfb-jukebox-catalog-01-audio-site-2026-10-04",
       "title": "KFB Audio Site · Jukebox Catalog 01",
-      "status": "FROZEN_CANDIDATE_QA_EXPECTATION_RECOVERY_REQUIRED",
+      "status": "QA_GREEN_GPT_SITE_PUBLISH_ONLY",
       "owner": "KFB Audio & Soundscape Baseline v1",
       "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
       "source": "tools/KFB-Audio-Site/",
@@ -870,8 +870,8 @@
         "roadTripV2Masters": 44,
         "pairedStemFamilies": 14
       },
-      "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_01",
-      "note": "Site-first; no Cloudflare. Source validator/syntax PASS; browser proves 54/44 and stops on stale 12→14 test expectation after two repair passes. Sites MCP unavailable in current chat."
+      "nextGate": "KFB_AUDIO_SITE_PUBLISH_01",
+      "note": "Full workflow green on implementation head b5835c52: validator/syntax PASS, browser 9/9 PASS. Publish only through Sites MCP; no Cloudflare. Current Webchat lacks Sites MCP."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

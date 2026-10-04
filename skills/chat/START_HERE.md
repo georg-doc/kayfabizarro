@@ -184,6 +184,18 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — prompt assertion only; publish through Sites only after full browser PASS.
 - no auto-merge.
 
+## 2026-10-04 · KFB Audio Site QA GREEN
+
+- Draft PR #350 · branch `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04`.
+- tested implementation head: `b5835c521264eef6caf1e1260821c5e04f232fcd`.
+- source/catalog validator PASS · JS syntax PASS · browser **9/9 PASS**.
+- catalog: 54 total / 44 RoadTrip-v2 / 14 paired stem families.
+- Cloudflare is not used.
+- GPT Site source + integrated chat context are ready.
+- current Webchat does not expose Sites MCP; known KFB Sites lane is local skill `/Users/georg/.codex/plugins/cache/openai-curated-remote/sites/1.0.0-a/skills/sites/SKILL.md`.
+- exactly one next gate: `KFB_AUDIO_SITE_PUBLISH_01` — publish + open/verify exact GPT Site URL only; do not repair/rebuild product code.
+- no auto-merge.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
