@@ -174,10 +174,20 @@ Owner:
 ToolBox / EyeRig · PR #104 lineage
 
 State:
-**PRODUCTIVE · HUMAN ACCEPTED FOR CONTINUATION**
+**PRODUCTIVE · HUMAN ACCEPTED FOR CONTINUATION · PROFILE RECOVERY OPEN**
 
-Next:
-source/profile cleanup when demanded by current Residents/FrankenStein; no parallel EyeRig owner.
+Global presentation rule:
+**Integrated visible KFB characters use EyeRig v6 by default.** Untouched source eyes are donor-isolation only; integrated presentation hides/replaces source eyes through the existing cleanup/FaceHost path and mounts EyeRig. Use approved/recovered profiles first; otherwise source-derived candidate = `PROFILE_TUNE`. No stock-eye fallback and no parallel EyeRig owner.
+
+Current profile truth:
+- Medium roster 55; newest durable export 40 profiles and is older than Georg's later Stage session;
+- therefore `EYE_RIG_PROFILE_RECOVERY_01` is first;
+- 15 Medium identities are absent from the durable 40-profile export and remain `RECOVERY_OR_PROFILE_TUNE`;
+- Large durable approved = Monstrosity / Black Knight / Demon Lord / Orc Brute; FrostGolem / 4GTN / 4GTN Forgotten / Clanker remain review/tune;
+- Legacy 17/17 candidates need durable human review; Skull = HUMAN_REQUIRED.
+
+Durable TODO:
+`tools/KFB-ToolBox/eye-rig-batch/docs/EYERIG_CURRENT_TODO_2026-10-04.md`
 
 ### KFB FrankenStein Composer
 URL:
@@ -465,9 +475,12 @@ Goal:
 one real Rig_Medium composite + one Rig_Large composite + Pencil PropActor using existing owners.
 No generic Site expansion.
 
-### Slice M1 · Fluff Worker source audition
-Goal:
-reuse matrix from current Motion sources; author only proven gaps.
+### Slice M1 · Fluff Worker motion source · COMPLETE THROUGH PART 3
+Result:
+PR #356 now provides the consumer-ready Part-3 motion delta: Rig_Medium 17 clips, Rig_Large 13 clips, growing-ball variants, 2/3-worker Large-ball push, ball ride/play contact events and 6→1 merge reference. NEW CLIP REQUIRED: none.
+
+Next:
+`FLUFF_BUILDING_ASSEMBLY_KIT_01_RUNTIME_CONSUMER_PROOF`. Do not reopen Blender unless the real runtime proves a motion defect.
 
 ## P2 · CONTENT / SEMANTIC PRODUCTION
 
@@ -487,9 +500,8 @@ Then update existing Audio Site via PUBLISH_ONLY.
 Goal:
 promote only source-backed variants needed by actual Residents/activities.
 
-### Slice FL1 · Fluff construction/runtime consumer
-After Blender source audition:
-consume Worker motions and Fluff resource/build-stage logic in World Studio without creating another world owner.
+### Slice FL1 · Fluff construction/runtime consumer · NEXT
+Consume the finished PR #356 Part-3 Worker motions and Fluff resource/build-stage logic in the receiving runtime without creating another world owner. Visible worker characters use EyeRig v6 by default.
 
 ## P3 · INTEGRATION / EXPANSION
 
@@ -678,6 +690,6 @@ Do not use expensive reasoning simply because a connector/tool exists there.
 2. **Georg plays Card-Hex Combat Ascent S3.**
 3. Record PASS/TUNE/FAIL for each.
 4. Then run one bounded repair iteration per product, only from observed defects.
-5. In parallel, cheap lanes may continue Quote Pool research and Blender Fluff source audition because they do not mutate those game runtimes.
+5. In parallel, Quote Pool research may continue in Web Chat; EyeRig profile recovery may continue without runtime changes; Fluff proceeds only as the bounded runtime consumer proof because Blender Part 3 is complete.
 
 Everything else waits behind those decisions.
