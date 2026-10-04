@@ -334,3 +334,17 @@ Vertrag: [Independent External Critic Loop](https://github.com/georg-doc/kayfabi
 - Added main WSA and Coworker MVP1 recovery rebriefs.
 - Current Stage target remains `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · not yet deployed.
 - No runtime implementation, merge or Live promotion in this control-plane correction.
+
+
+## 2026-10-04 · Four-island Joyride / LifeTree SSOT recovery
+
+- Georg freeplay clarified the visual recovery scope: **all four existing islands**, not Town only.
+- Added binding `WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md`.
+- Each island is now defined as one excavated tree-earth organism with visible roots and one unique central Claymation signature Life Tree.
+- Signature tree is deterministic and unique to island + deck + zone; no recolored clone.
+- Exact R2C palette values are binding per island.
+- Existing Track Core topology/support/collision remain KEEP; Joyride J14/T4 presentation is required over the current stream.
+- Confirmed current building adapter does not check Track clearance before placement; 0 building↔Track/bridge intersections is now a hard acceptance condition.
+- Current source families remain Town RED Medieval Hex, Dystopia Kenney Industrial, Utopia KayKit Space Base Bits, Protopia GREEN Medieval Hex.
+- Player/Residents/Cards/God Mode/terrain/save/import/current GPT Site remain protected KEEP.
+- Same GPT Site will be updated in place after the integrated four-island repair.
