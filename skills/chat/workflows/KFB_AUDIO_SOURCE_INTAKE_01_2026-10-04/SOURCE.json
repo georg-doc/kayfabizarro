@@ -5,12 +5,11 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
   "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
-  "mainSourceRef": "main@9c2fee62b815f19cf967867f54985bd22e3f222b",
+  "mainSourceRef": "main@b6afb431c25e48767bf875c8b2eb74866f6946e5",
   "counts": {
     "catalogTracks": 63,
     "roadTripV2Masters": 53,
-    "stemFamilies": 20,
-    "pendingStemFamilies": 3,
+    "stemFamilies": 23,
     "elevenLabsTests": 17
   },
   "rainTexture": {
@@ -22,7 +21,7 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "QA_GREEN_SITE_UPDATE_PENDING",
+  "status": "IMPLEMENTATION_UPDATED_QA_PENDING",
   "testedHead": "0fa08a22e4e22bd24d5972e7e633a4e555184c26",
   "qa": {
     "run": 37180109710,
@@ -77,24 +76,27 @@
   "ambientBedWinners": [
     {
       "title": "Utopia Ambient Bed",
-      "status": "HUMAN_POSITIVE",
-      "stemAcquisition": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterSha": "b62de3fa33b49630dd37c65036f41a1120a2eeac"
-    },
-    {
-      "title": "Dystopia Ambient Bed",
-      "status": "HUMAN_POSITIVE",
-      "stemAcquisition": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterSha": "f142d9bc0d7394d49a309c4a09ee461b207f75dc"
+      "bpm": 73,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 11
     },
     {
       "title": "Protopia Ambient Bed",
-      "status": "HUMAN_POSITIVE",
-      "stemAcquisition": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterSha": "6a7420d2e1e66b2171ee364c57c3043942f24818"
+      "bpm": 78,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 7
+    },
+    {
+      "title": "Dystopia Ambient Bed",
+      "bpm": 98,
+      "status": "HUMAN_POSITIVE_MASTER",
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
     }
   ],
   "musicalWorldStrategy": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/KFB_MUSICAL_WORLD_STRATEGY_2026-10-04.md"

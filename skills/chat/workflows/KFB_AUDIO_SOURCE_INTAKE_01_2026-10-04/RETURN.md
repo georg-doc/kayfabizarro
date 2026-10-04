@@ -60,8 +60,8 @@ They are now cataloged as master Ground Truth / Ambient Bed / biome style refere
 Candidate counts after adding these masters:
 - **63 total catalog tracks**
 - **53 RoadTrip-v2 masters**
-- **20 current stem families**
-- plus **3 pending Ambient Bed stem families**
+- **23 current stem families**
+- the three Ambient Bed stem families are now present on main
 
 Strategic follow-up: `skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/KFB_MUSICAL_WORLD_STRATEGY_2026-10-04.md`.
 
@@ -87,3 +87,13 @@ Tested product head:
 Georg action: download the three already-unlocked Suno stem packages while that free unlocked download remains available.
 
 Next product phase after Site update: adaptive musical-world prototype `Explore → Drive → Event/Disco → Explore`.
+
+
+## Ambient Bed stems downloaded · 2026-10-04
+
+- Utopia Ambient Bed · **73 BPM** · 11 source stems
+- Protopia Ambient Bed · **78 BPM** · 7 source stems
+- Dystopia Ambient Bed · **98 BPM** · 12 source stems
+- all three remain `source-only` until listening certification;
+- separator labels such as Lead/Backing Vocals are not treated as semantic truth;
+- catalog target is now **63 total / 53 RoadTrip-v2 / 23 stem families**.

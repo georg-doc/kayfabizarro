@@ -1,7 +1,7 @@
 {
   "schema": "kfb.audio-source-lock/0.1",
   "generated": "2026-10-04",
-  "sourceRef": "main@9c2fee62b815f19cf967867f54985bd22e3f222b",
+  "sourceRef": "main@b6afb431c25e48767bf875c8b2eb74866f6946e5",
   "roadTripV2": {
     "masters": [
       {
@@ -443,6 +443,24 @@
         "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Workshop machine pulse · Beetle _ Maker Space Stems (119BPM)",
         "bpm": 119,
         "treeSha": "b749fb9455a927a781e1e60c1f7d7f12af51efa5"
+      },
+      {
+        "title": "Utopia Ambient Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Utopia Ambient Bed Stems (73BPM)",
+        "bpm": 73,
+        "treeSha": "9e6bd55bfa7198e87b8cd351289a133c2987c071"
+      },
+      {
+        "title": "Protopia Ambient Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Protopia Ambient Bed Stems (78BPM)",
+        "bpm": 78,
+        "treeSha": "7877ff47cff1065e091f5dac4f8819d2f3dd6303"
+      },
+      {
+        "title": "Dystopia Ambient Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Dystopia Ambient Bed Stems (98BPM)",
+        "bpm": 98,
+        "treeSha": "ab402ca48943a99f95a15019ab059f1572765892"
       }
     ]
   },
@@ -575,26 +593,6 @@
       "sha": "2563f9968dfc25fdd9d2c1730d7bbd152ed022cf",
       "size": 49581,
       "status": "HUMAN_TUNE"
-    }
-  ],
-  "pendingStemAcquisition": [
-    {
-      "title": "Utopia Ambient Bed",
-      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Utopia Ambient Bed.mp3"
-    },
-    {
-      "title": "Dystopia Ambient Bed",
-      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Dystopia Ambient Bed.mp3"
-    },
-    {
-      "title": "Protopia Ambient Bed",
-      "status": "STEMS_PENDING_UNLOCKED_DOWNLOAD",
-      "freeDownloadUnlocked": true,
-      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Protopia Ambient Bed.mp3"
     }
   ]
 }

@@ -156,3 +156,36 @@ Pass criterion: recognizable family resemblance without every output collapsing 
 3. Add musical metadata / transition annotation to a small representative subset, not the whole library.
 4. Prototype one adaptive scene: **Explore → Drive → Event/Disco → Explore**.
 5. Only after that prototype feels musical, train the single KFB World Custom Model and compare it against the same evaluation prompts.
+
+
+## Pool design before model training
+
+Do not optimize the future Custom Model around the current funk/surf/rockabilly bias.
+
+The 130-deck corpus spans medicine, politics, philosophy, metaphysics, conspiracy, science-fiction, fairy tale, psychology, creativity, history, comedy and more. The musical pool therefore needs **shared grammar with broad stylistic zones**, not one dominant genre.
+
+### Shared grammar across zones
+
+Keep these more stable than genre:
+- warm, human, slightly handmade production;
+- memorable but not overbearing motifs;
+- clear phrase structure for game transitions;
+- negative space for dialogue/SFX;
+- tonal/modal colors that can crossfade cleanly;
+- moderate dynamic range, no constant maximal loudness;
+- versions that tolerate reduction to ambient layers;
+- optional stems for later adaptive use.
+
+### Style zones to deliberately seed
+
+1. **Soul / R&B / Neo-Soul** — warm Rhodes, pocket drums, bass, subtle guitar, humane emotional center.
+2. **Piano / Chamber / Minimal** — felt piano, strings, woodwinds, small ensemble, reflective/philosophical/medical use.
+3. **Cinematic / Epic-but-playable** — broad harmony, restrained percussion, wonder/adventure, never trailer-wall by default.
+4. **Cartoon Chase / Capers** — pizzicato, brushed/snappy percussion, clarinet/brass accents, playful motion without slapstick overload.
+5. **Folk / Acoustic / Storybook** — acoustic guitar, hand percussion, fiddle/woodwinds, family/fairy-tale/travel warmth.
+6. **Dreamy / Metaphysical / Cosmic** — pads, processed piano/guitar, subtle pulse, spacious harmonic ambiguity.
+7. **Jazz / Lounge / Noir** — small-room jazz, muted brass/woodwinds, brushes, urban/night/philosophy.
+8. **Funk / Surf / Rockabilly / Groove** — retain current strength for driving, ring, disco and mischievous energy.
+9. **Minimal Electronic / Systems** — restrained synth pulses and texture for AI, science, technology, data and abstract decks.
+
+The training set should cover several zones but remain coherent through the shared grammar. If one genre appears in more than roughly a quarter of the initial training set, check for bias.
