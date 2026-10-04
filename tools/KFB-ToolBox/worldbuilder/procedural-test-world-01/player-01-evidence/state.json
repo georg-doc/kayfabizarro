@@ -1,0 +1,1638 @@
+{
+  "url": "http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/PROCEDURAL_TEST_WORLD_01_SOURCE.html",
+  "state": {
+    "world": {
+      "id": "r2d4",
+      "zoneId": "kfb-mvp-archipelago-01",
+      "status": "WORLD_MULTI_ISLAND_CORRIDOR_CANDIDATE",
+      "tile": {
+        "cx": -9.777,
+        "cz": 57.973,
+        "size": 528,
+        "seg": 256
+      },
+      "spawn": {
+        "x": -19,
+        "z": 1,
+        "heading": 0,
+        "road": "Golden Journey · Town market"
+      }
+    },
+    "graph": {
+      "schema": "kfb.world-graph/0.1",
+      "id": "kfb.mvp.archipelago.01",
+      "nodes": [
+        {
+          "id": "world.kfb-town",
+          "label": "KFB Town",
+          "deckId": null,
+          "cardRefs": [],
+          "biome": "burg",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "anchors": [
+            {
+              "id": "town.spawn.market",
+              "role": "spawn",
+              "worldId": "world.kfb-town",
+              "position": [
+                -19,
+                0.6,
+                1
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "town.resident.clown.onboarding",
+              "role": "resident-slot",
+              "worldId": "world.kfb-town",
+              "position": [
+                -21,
+                0.539,
+                3
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "town.resident.driver.taxi",
+              "role": "resident-slot",
+              "worldId": "world.kfb-town",
+              "position": [
+                -4.034,
+                -3.566,
+                -20.02
+              ],
+              "heading": 0.17565,
+              "locator": {
+                "kind": "road",
+                "fraction": 0.28
+              }
+            },
+            {
+              "id": "town.vehicle.taxi.01",
+              "role": "vehicle-slot",
+              "worldId": "world.kfb-town",
+              "position": [
+                -0.034,
+                -5.25,
+                -22.02
+              ],
+              "heading": 0.17565,
+              "locator": {
+                "kind": "road",
+                "fraction": 0.28
+              }
+            },
+            {
+              "id": "billboard.town",
+              "role": "media",
+              "worldId": "world.kfb-town",
+              "position": [
+                -14,
+                0.606,
+                1
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            }
+          ]
+        },
+        {
+          "id": "world.dystopia",
+          "label": "Dystopia",
+          "deckId": "ignore_dystopia",
+          "cardRefs": [
+            "ignore_dystopia:1",
+            "ignore_dystopia:5",
+            "ignore_dystopia:6"
+          ],
+          "biome": "dystopia",
+          "position": [
+            70,
+            -9,
+            180
+          ],
+          "anchors": [
+            {
+              "id": "dystopia.party.pentagram",
+              "role": "performance-scene",
+              "worldId": "world.dystopia",
+              "position": [
+                45,
+                -8.742,
+                177
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "dystopia.party.orc-singer",
+              "role": "resident-slot",
+              "worldId": "world.dystopia",
+              "position": [
+                42,
+                -8.742,
+                178
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "billboard.dystopia",
+              "role": "media",
+              "worldId": "world.dystopia",
+              "position": [
+                50,
+                -8.742,
+                175
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            }
+          ]
+        },
+        {
+          "id": "world.utopia",
+          "label": "Utopia",
+          "deckId": "forget_utopia",
+          "cardRefs": [
+            "forget_utopia:1",
+            "forget_utopia:2",
+            "forget_utopia:4"
+          ],
+          "biome": "utopia",
+          "position": [
+            180,
+            4,
+            -65
+          ],
+          "anchors": [
+            {
+              "id": "utopia.monstrosity.throne",
+              "role": "resident-slot",
+              "worldId": "world.utopia",
+              "position": [
+                162.464,
+                4.644,
+                -63.078
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "pad",
+                "index": 0
+              }
+            },
+            {
+              "id": "utopia.robot.works",
+              "role": "ambient-scene",
+              "worldId": "world.utopia",
+              "position": [
+                169,
+                4.753,
+                -48
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "billboard.utopia",
+              "role": "media",
+              "worldId": "world.utopia",
+              "position": [
+                174,
+                4.778,
+                -50
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            }
+          ]
+        },
+        {
+          "id": "world.protopia",
+          "label": "Protopia",
+          "deckId": "embrace_protopia",
+          "cardRefs": [
+            "embrace_protopia:1",
+            "embrace_protopia:5",
+            "embrace_protopia:6"
+          ],
+          "biome": "protopia",
+          "position": [
+            -200,
+            10,
+            95
+          ],
+          "anchors": [
+            {
+              "id": "protopia.farm.social-core",
+              "role": "resident-set-slot",
+              "worldId": "world.protopia",
+              "position": [
+                -175,
+                10.743,
+                100
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            },
+            {
+              "id": "protopia.lorekeeper.plateau",
+              "role": "resident-slot",
+              "worldId": "world.protopia",
+              "position": [
+                -217.668,
+                10.151,
+                106.428
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "pad",
+                "index": 0
+              }
+            },
+            {
+              "id": "billboard.protopia",
+              "role": "media",
+              "worldId": "world.protopia",
+              "position": [
+                -170,
+                10.743,
+                98
+              ],
+              "heading": 0,
+              "locator": {
+                "kind": "plaza",
+                "name": "big"
+              }
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "id": "route.town-dystopia",
+          "kind": "ROAD_BRIDGE",
+          "from": "world.kfb-town",
+          "to": "world.dystopia",
+          "owner": "Track Core",
+          "sampleCount": 380,
+          "lengthM": 189.25
+        },
+        {
+          "id": "route.town-utopia",
+          "kind": "ROAD_BRIDGE",
+          "from": "world.kfb-town",
+          "to": "world.utopia",
+          "owner": "Track Core",
+          "sampleCount": 460,
+          "lengthM": 229.32
+        },
+        {
+          "id": "route.town-protopia",
+          "kind": "ROAD_BRIDGE",
+          "from": "world.kfb-town",
+          "to": "world.protopia",
+          "owner": "Track Core",
+          "sampleCount": 502,
+          "lengthM": 250.34
+        }
+      ]
+    },
+    "doc": {
+      "format": "kfb-worldbuilder-scene",
+      "version": 1,
+      "id": "kfb-mvp-archipelago-01",
+      "world": {
+        "format": "kfb.r2d.archipelago-ref/1",
+        "provider": "kfb.r2d-worldbuilder-adapter/2",
+        "recipeSet": "kfb.mvp.archipelago.01",
+        "source": {
+          "source": "R2D v0 + current MVP world recipes",
+          "blob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d",
+          "recipeSet": "kfb.mvp.archipelago.01"
+        },
+        "graph": {
+          "schema": "kfb.world-graph/0.1",
+          "id": "kfb.mvp.archipelago.01",
+          "nodes": [
+            {
+              "id": "world.kfb-town",
+              "label": "KFB Town",
+              "deckId": null,
+              "cardRefs": [],
+              "biome": "burg",
+              "position": [
+                0,
+                0,
+                0
+              ],
+              "anchors": [
+                {
+                  "id": "town.spawn.market",
+                  "role": "spawn",
+                  "worldId": "world.kfb-town",
+                  "position": [
+                    -19,
+                    0.6,
+                    1
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "town.resident.clown.onboarding",
+                  "role": "resident-slot",
+                  "worldId": "world.kfb-town",
+                  "position": [
+                    -21,
+                    0.539,
+                    3
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "town.resident.driver.taxi",
+                  "role": "resident-slot",
+                  "worldId": "world.kfb-town",
+                  "position": [
+                    -4.034,
+                    -3.566,
+                    -20.02
+                  ],
+                  "heading": 0.17565,
+                  "locator": {
+                    "kind": "road",
+                    "fraction": 0.28
+                  }
+                },
+                {
+                  "id": "town.vehicle.taxi.01",
+                  "role": "vehicle-slot",
+                  "worldId": "world.kfb-town",
+                  "position": [
+                    -0.034,
+                    -5.25,
+                    -22.02
+                  ],
+                  "heading": 0.17565,
+                  "locator": {
+                    "kind": "road",
+                    "fraction": 0.28
+                  }
+                },
+                {
+                  "id": "billboard.town",
+                  "role": "media",
+                  "worldId": "world.kfb-town",
+                  "position": [
+                    -14,
+                    0.606,
+                    1
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "world.dystopia",
+              "label": "Dystopia",
+              "deckId": "ignore_dystopia",
+              "cardRefs": [
+                "ignore_dystopia:1",
+                "ignore_dystopia:5",
+                "ignore_dystopia:6"
+              ],
+              "biome": "dystopia",
+              "position": [
+                70,
+                -9,
+                180
+              ],
+              "anchors": [
+                {
+                  "id": "dystopia.party.pentagram",
+                  "role": "performance-scene",
+                  "worldId": "world.dystopia",
+                  "position": [
+                    45,
+                    -8.742,
+                    177
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "dystopia.party.orc-singer",
+                  "role": "resident-slot",
+                  "worldId": "world.dystopia",
+                  "position": [
+                    42,
+                    -8.742,
+                    178
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "billboard.dystopia",
+                  "role": "media",
+                  "worldId": "world.dystopia",
+                  "position": [
+                    50,
+                    -8.742,
+                    175
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "world.utopia",
+              "label": "Utopia",
+              "deckId": "forget_utopia",
+              "cardRefs": [
+                "forget_utopia:1",
+                "forget_utopia:2",
+                "forget_utopia:4"
+              ],
+              "biome": "utopia",
+              "position": [
+                180,
+                4,
+                -65
+              ],
+              "anchors": [
+                {
+                  "id": "utopia.monstrosity.throne",
+                  "role": "resident-slot",
+                  "worldId": "world.utopia",
+                  "position": [
+                    162.464,
+                    4.644,
+                    -63.078
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "pad",
+                    "index": 0
+                  }
+                },
+                {
+                  "id": "utopia.robot.works",
+                  "role": "ambient-scene",
+                  "worldId": "world.utopia",
+                  "position": [
+                    169,
+                    4.753,
+                    -48
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "billboard.utopia",
+                  "role": "media",
+                  "worldId": "world.utopia",
+                  "position": [
+                    174,
+                    4.778,
+                    -50
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "world.protopia",
+              "label": "Protopia",
+              "deckId": "embrace_protopia",
+              "cardRefs": [
+                "embrace_protopia:1",
+                "embrace_protopia:5",
+                "embrace_protopia:6"
+              ],
+              "biome": "protopia",
+              "position": [
+                -200,
+                10,
+                95
+              ],
+              "anchors": [
+                {
+                  "id": "protopia.farm.social-core",
+                  "role": "resident-set-slot",
+                  "worldId": "world.protopia",
+                  "position": [
+                    -175,
+                    10.743,
+                    100
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                },
+                {
+                  "id": "protopia.lorekeeper.plateau",
+                  "role": "resident-slot",
+                  "worldId": "world.protopia",
+                  "position": [
+                    -217.668,
+                    10.151,
+                    106.428
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "pad",
+                    "index": 0
+                  }
+                },
+                {
+                  "id": "billboard.protopia",
+                  "role": "media",
+                  "worldId": "world.protopia",
+                  "position": [
+                    -170,
+                    10.743,
+                    98
+                  ],
+                  "heading": 0,
+                  "locator": {
+                    "kind": "plaza",
+                    "name": "big"
+                  }
+                }
+              ]
+            }
+          ],
+          "connections": [
+            {
+              "id": "route.town-dystopia",
+              "kind": "ROAD_BRIDGE",
+              "from": "world.kfb-town",
+              "to": "world.dystopia",
+              "owner": "Track Core",
+              "sampleCount": 380,
+              "lengthM": 189.25
+            },
+            {
+              "id": "route.town-utopia",
+              "kind": "ROAD_BRIDGE",
+              "from": "world.kfb-town",
+              "to": "world.utopia",
+              "owner": "Track Core",
+              "sampleCount": 460,
+              "lengthM": 229.32
+            },
+            {
+              "id": "route.town-protopia",
+              "kind": "ROAD_BRIDGE",
+              "from": "world.kfb-town",
+              "to": "world.protopia",
+              "owner": "Track Core",
+              "sampleCount": 502,
+              "lengthM": 250.34
+            }
+          ]
+        },
+        "player": {
+          "anchor": "town.spawn.market",
+          "position": [
+            -19,
+            0,
+            1
+          ],
+          "heading": 0
+        }
+      }
+    },
+    "terrain": {
+      "name": "R2D archipelago support heightfield",
+      "vertices": 66049
+    },
+    "visible": {
+      "islandGroups": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bridges": [
+        true,
+        true,
+        true
+      ]
+    },
+    "anchorIds": [
+      "town.spawn.market",
+      "town.resident.clown.onboarding",
+      "town.resident.driver.taxi",
+      "town.vehicle.taxi.01",
+      "billboard.town",
+      "dystopia.party.pentagram",
+      "dystopia.party.orc-singer",
+      "billboard.dystopia",
+      "utopia.monstrosity.throne",
+      "utopia.robot.works",
+      "billboard.utopia",
+      "protopia.farm.social-core",
+      "protopia.lorekeeper.plateau",
+      "billboard.protopia"
+    ],
+    "presentations": [
+      "world.kfb-town",
+      "world.dystopia",
+      "world.utopia",
+      "world.protopia"
+    ],
+    "buildings": {
+      "world.kfb-town": {
+        "facadeRule": "kfb-facade-rule-v1",
+        "placed": 1,
+        "windows": 15,
+        "doors": 1
+      },
+      "world.dystopia": {
+        "facadeRule": "kfb-facade-rule-v1",
+        "placed": 1,
+        "windows": 14,
+        "doors": 1
+      },
+      "world.utopia": {
+        "facadeRule": "kfb-facade-rule-v1",
+        "placed": 1,
+        "windows": 15,
+        "doors": 1
+      },
+      "world.protopia": {
+        "facadeRule": "kfb-facade-rule-v1",
+        "placed": 2,
+        "windows": 22,
+        "doors": 2
+      }
+    },
+    "player": {
+      "owner": "WB2 shared planar Ground",
+      "animationOwner": "KayKit native speed/phase mixer",
+      "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+      "actorProfileId": "Mannequin_Medium",
+      "position": [
+        -19,
+        0.6002344460592335,
+        1
+      ],
+      "heading": 0,
+      "speed": 0,
+      "phase": 0,
+      "rows": [
+        {
+          "role": "idle",
+          "clip": "Idle_A",
+          "speed": 0,
+          "cycleT": 1.067,
+          "leftFootDownPhase": null,
+          "weight": 1,
+          "time": 0.05
+        }
+      ],
+      "bindings": {
+        "Idle_A": {
+          "sourceTracks": 69,
+          "boundTracks": 63,
+          "duration": 1.0666667222976685
+        },
+        "Walking_B": {
+          "sourceTracks": 69,
+          "boundTracks": 63,
+          "duration": 1.0666667222976685
+        },
+        "Running_A": {
+          "sourceTracks": 68,
+          "boundTracks": 62,
+          "duration": 0.800000011920929
+        },
+        "Running_B": {
+          "sourceTracks": 69,
+          "boundTracks": 63,
+          "duration": 0.800000011920929
+        }
+      },
+      "bodyHeight": 2.192545909798636,
+      "groundY": 0.6002344460592335,
+      "mixerCount": 1
+    },
+    "rendererCanvasCount": 1,
+    "loadedLegacy": {
+      "wi1Play": false,
+      "travelGlobe": false,
+      "cardStart": false
+    }
+  },
+  "playerChecks": [
+    {
+      "name": "native bindings and one mixer",
+      "pass": true,
+      "detail": {
+        "owner": "WB2 shared planar Ground",
+        "animationOwner": "KayKit native speed/phase mixer",
+        "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+        "actorProfileId": "Mannequin_Medium",
+        "position": [
+          -19,
+          0.6002344460592335,
+          1
+        ],
+        "heading": 0,
+        "speed": 0,
+        "phase": 0,
+        "rows": [
+          {
+            "role": "idle",
+            "clip": "Idle_A",
+            "speed": 0,
+            "cycleT": 1.067,
+            "leftFootDownPhase": null,
+            "weight": 1,
+            "time": 0.49999999999999994
+          }
+        ],
+        "bindings": {
+          "Idle_A": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Walking_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Running_A": {
+            "sourceTracks": 68,
+            "boundTracks": 62,
+            "duration": 0.800000011920929
+          },
+          "Running_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 0.800000011920929
+          }
+        },
+        "bodyHeight": 2.192545909798636,
+        "groundY": 0.6002344460592335,
+        "mixerCount": 1
+      }
+    },
+    {
+      "name": "Town spawn and ground contact",
+      "pass": true,
+      "detail": [
+        -19,
+        0.6002344460592335,
+        1
+      ]
+    },
+    {
+      "name": "W moves through Walk to Run",
+      "pass": true,
+      "detail": {
+        "before": {
+          "owner": "WB2 shared planar Ground",
+          "animationOwner": "KayKit native speed/phase mixer",
+          "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+          "actorProfileId": "Mannequin_Medium",
+          "position": [
+            -19,
+            0.6002344460592335,
+            1
+          ],
+          "heading": 0,
+          "speed": 0,
+          "phase": 0,
+          "rows": [
+            {
+              "role": "idle",
+              "clip": "Idle_A",
+              "speed": 0,
+              "cycleT": 1.067,
+              "leftFootDownPhase": null,
+              "weight": 1,
+              "time": 0.6
+            }
+          ],
+          "bindings": {
+            "Idle_A": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Walking_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Running_A": {
+              "sourceTracks": 68,
+              "boundTracks": 62,
+              "duration": 0.800000011920929
+            },
+            "Running_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 0.800000011920929
+            }
+          },
+          "bodyHeight": 2.192545909798636,
+          "groundY": 0.6002344460592335,
+          "mixerCount": 1
+        },
+        "walk": {
+          "owner": "WB2 shared planar Ground",
+          "animationOwner": "KayKit native speed/phase mixer",
+          "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+          "actorProfileId": "Mannequin_Medium",
+          "position": [
+            -19,
+            0.5976988106116796,
+            1.0828716666666667
+          ],
+          "heading": 0,
+          "speed": 1.0574333333333334,
+          "phase": 0.0942420337394565,
+          "rows": [
+            {
+              "role": "walk",
+              "clip": "Walking_B",
+              "speed": 0.98,
+              "cycleT": 1.067,
+              "leftFootDownPhase": 0,
+              "weight": 0.9666666666666666,
+              "time": 0.10055625000000008
+            },
+            {
+              "role": "run",
+              "clip": "Running_A",
+              "speed": 3.303,
+              "cycleT": 0.8,
+              "leftFootDownPhase": 0.0833,
+              "weight": 0.03333333333333339,
+              "time": 0.14203362699156516
+            }
+          ],
+          "bindings": {
+            "Idle_A": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Walking_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Running_A": {
+              "sourceTracks": 68,
+              "boundTracks": 62,
+              "duration": 0.800000011920929
+            },
+            "Running_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 0.800000011920929
+            }
+          },
+          "bodyHeight": 2.192545909798636,
+          "groundY": 0.5976988106116796,
+          "mixerCount": 1
+        },
+        "run": {
+          "owner": "WB2 shared planar Ground",
+          "animationOwner": "KayKit native speed/phase mixer",
+          "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+          "actorProfileId": "Mannequin_Medium",
+          "position": [
+            -19,
+            0.3873029200084181,
+            7.461639166666667
+          ],
+          "heading": 0,
+          "speed": 3.3029999999999977,
+          "phase": 0.28836984536082455,
+          "rows": [
+            {
+              "role": "run",
+              "clip": "Running_A",
+              "speed": 3.303,
+              "cycleT": 0.8,
+              "leftFootDownPhase": 0.0833,
+              "weight": 0.999999999999999,
+              "time": 0.2973358762886596
+            }
+          ],
+          "bindings": {
+            "Idle_A": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Walking_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Running_A": {
+              "sourceTracks": 68,
+              "boundTracks": 62,
+              "duration": 0.800000011920929
+            },
+            "Running_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 0.800000011920929
+            }
+          },
+          "bodyHeight": 2.192545909798636,
+          "groundY": 0.3873029200084181,
+          "mixerCount": 1
+        }
+      }
+    },
+    {
+      "name": "A turns left and D turns right",
+      "pass": true,
+      "detail": [
+        0,
+        -0.11750000000000001,
+        0
+      ]
+    },
+    {
+      "name": "S moves backward and returns to idle",
+      "pass": true,
+      "detail": {
+        "back": {
+          "owner": "WB2 shared planar Ground",
+          "animationOwner": "KayKit native speed/phase mixer",
+          "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+          "actorProfileId": "Mannequin_Medium",
+          "position": [
+            -19,
+            0.3873029200084181,
+            9.023839166666672
+          ],
+          "heading": 0,
+          "speed": -0.539,
+          "phase": 0.8110517050976722,
+          "rows": [
+            {
+              "role": "idle",
+              "clip": "Idle_A",
+              "speed": 0,
+              "cycleT": 1.067,
+              "leftFootDownPhase": null,
+              "weight": 0.44999999999999996,
+              "time": 0.7319999999999904
+            },
+            {
+              "role": "walk",
+              "clip": "Walking_B",
+              "speed": 0.98,
+              "cycleT": 1.067,
+              "leftFootDownPhase": 0,
+              "weight": 0.55,
+              "time": 0.8653921693392163
+            }
+          ],
+          "bindings": {
+            "Idle_A": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Walking_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Running_A": {
+              "sourceTracks": 68,
+              "boundTracks": 62,
+              "duration": 0.800000011920929
+            },
+            "Running_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 0.800000011920929
+            }
+          },
+          "bodyHeight": 2.192545909798636,
+          "groundY": 0.3873029200084181,
+          "mixerCount": 1
+        },
+        "idle": {
+          "owner": "WB2 shared planar Ground",
+          "animationOwner": "KayKit native speed/phase mixer",
+          "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+          "actorProfileId": "Mannequin_Medium",
+          "position": [
+            -19,
+            0.3873029200084181,
+            8.996889166666673
+          ],
+          "heading": 0,
+          "speed": 0,
+          "phase": 0.7641913489589656,
+          "rows": [
+            {
+              "role": "idle",
+              "clip": "Idle_A",
+              "speed": 0,
+              "cycleT": 1.067,
+              "leftFootDownPhase": null,
+              "weight": 1,
+              "time": 0.9319999999999897
+            }
+          ],
+          "bindings": {
+            "Idle_A": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Walking_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 1.0666667222976685
+            },
+            "Running_A": {
+              "sourceTracks": 68,
+              "boundTracks": 62,
+              "duration": 0.800000011920929
+            },
+            "Running_B": {
+              "sourceTracks": 69,
+              "boundTracks": 63,
+              "duration": 0.800000011920929
+            }
+          },
+          "bodyHeight": 2.192545909798636,
+          "groundY": 0.3873029200084181,
+          "mixerCount": 1
+        }
+      }
+    },
+    {
+      "name": "Shift reaches Running_B sprint",
+      "pass": true,
+      "detail": {
+        "owner": "WB2 shared planar Ground",
+        "animationOwner": "KayKit native speed/phase mixer",
+        "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+        "actorProfileId": "Mannequin_Medium",
+        "position": [
+          -19,
+          0.3873029200084181,
+          10.339639166666673
+        ],
+        "heading": 0,
+        "speed": 5.255,
+        "phase": 0.27865481906213896,
+        "rows": [
+          {
+            "role": "sprint",
+            "clip": "Running_B",
+            "speed": 5.255,
+            "cycleT": 0.8,
+            "leftFootDownPhase": 0.125,
+            "weight": 1,
+            "time": 0.3229238552497112
+          }
+        ],
+        "bindings": {
+          "Idle_A": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Walking_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Running_A": {
+            "sourceTracks": 68,
+            "boundTracks": 62,
+            "duration": 0.800000011920929
+          },
+          "Running_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 0.800000011920929
+          }
+        },
+        "bodyHeight": 2.192545909798636,
+        "groundY": 0.3873029200084181,
+        "mixerCount": 1
+      }
+    },
+    {
+      "name": "Ground camera owns orbit, zoom and follow",
+      "pass": true,
+      "detail": {
+        "before": {
+          "camera": [
+            -18.99999999999891,
+            9.376739044764907,
+            -1.9097685745334734
+          ],
+          "position": [
+            -19,
+            0.38730292000841815,
+            13.463639166666677
+          ],
+          "distance": 15.347821368590452,
+          "orbitEnabled": false
+        },
+        "after": {
+          "camera": [
+            -26.38196329716199,
+            9.376741150154036,
+            1.6700020571639749
+          ],
+          "position": [
+            -19,
+            0.38730292000841815,
+            13.463639166666677
+          ],
+          "distance": 13.714772458867817
+        }
+      }
+    },
+    {
+      "name": "save and reload resumes safely at idle",
+      "pass": true,
+      "detail": {
+        "owner": "WB2 shared planar Ground",
+        "animationOwner": "KayKit native speed/phase mixer",
+        "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+        "actorProfileId": "Mannequin_Medium",
+        "position": [
+          -19,
+          0.38730292000841815,
+          13.463639166666677
+        ],
+        "heading": 0,
+        "speed": 0,
+        "phase": 0,
+        "rows": [
+          {
+            "role": "idle",
+            "clip": "Idle_A",
+            "speed": 0,
+            "cycleT": 1.067,
+            "leftFootDownPhase": null,
+            "weight": 1,
+            "time": 0.05
+          }
+        ],
+        "bindings": {
+          "Idle_A": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Walking_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 1.0666667222976685
+          },
+          "Running_A": {
+            "sourceTracks": 68,
+            "boundTracks": 62,
+            "duration": 0.800000011920929
+          },
+          "Running_B": {
+            "sourceTracks": 69,
+            "boundTracks": 63,
+            "duration": 0.800000011920929
+          }
+        },
+        "bodyHeight": 2.192545909798636,
+        "groundY": 0.38730292000841815,
+        "mixerCount": 1
+      }
+    },
+    {
+      "name": "three Track Core bridge walks use WB2 support",
+      "pass": true,
+      "detail": [
+        {
+          "id": "route.town-dystopia",
+          "before": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              47.90387287968396,
+              -3.721513725112112,
+              52.19085660888947
+            ],
+            "heading": 0.6268199999801787,
+            "speed": 0,
+            "phase": 0,
+            "rows": [
+              {
+                "role": "idle",
+                "clip": "Idle_A",
+                "speed": 0,
+                "cycleT": 1.067,
+                "leftFootDownPhase": null,
+                "weight": 1,
+                "time": 0.2
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": -3.721513725112112,
+            "mixerCount": 1
+          },
+          "after": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              48.087890372579494,
+              -3.763883226316991,
+              52.44493476468583
+            ],
+            "heading": 0.6268199999801787,
+            "speed": 1.2123,
+            "phase": 0.286375351452671,
+            "rows": [
+              {
+                "role": "walk",
+                "clip": "Walking_B",
+                "speed": 0.98,
+                "cycleT": 1.067,
+                "leftFootDownPhase": 0,
+                "weight": 0.9,
+                "time": 0.30556249999999996
+              },
+              {
+                "role": "run",
+                "clip": "Running_A",
+                "speed": 3.303,
+                "cycleT": 0.8,
+                "leftFootDownPhase": 0.0833,
+                "weight": 0.09999999999999998,
+                "time": 0.29574028116213674
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": -3.763883226316991,
+            "mixerCount": 1
+          }
+        },
+        {
+          "id": "route.town-utopia",
+          "before": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              117.07266271378927,
+              2.104557390608346,
+              7.452241364830012
+            ],
+            "heading": 1.3763024123195684,
+            "speed": 0,
+            "phase": 0.3819206888472353,
+            "rows": [
+              {
+                "role": "idle",
+                "clip": "Idle_A",
+                "speed": 0,
+                "cycleT": 1.067,
+                "leftFootDownPhase": null,
+                "weight": 1,
+                "time": 0.7000000000000001
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": 2.104557390608346,
+            "mixerCount": 1
+          },
+          "after": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              117.38046444292796,
+              2.1157555075574015,
+              7.512873390061652
+            ],
+            "heading": 1.3763024123195684,
+            "speed": 1.2123,
+            "phase": 0.6682960402999063,
+            "rows": [
+              {
+                "role": "walk",
+                "clip": "Walking_B",
+                "speed": 0.98,
+                "cycleT": 1.067,
+                "leftFootDownPhase": 0,
+                "weight": 0.9,
+                "time": 0.713071875
+              },
+              {
+                "role": "run",
+                "clip": "Running_A",
+                "speed": 3.303,
+                "cycleT": 0.8,
+                "leftFootDownPhase": 0.0833,
+                "weight": 0.09999999999999998,
+                "time": 0.601276832239925
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": 2.1157555075574015,
+            "mixerCount": 1
+          }
+        },
+        {
+          "id": "route.town-protopia",
+          "before": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              -114.54074057796133,
+              4.565309001901144,
+              11.110773596544803
+            ],
+            "heading": -1.734191815200609,
+            "speed": 0,
+            "phase": 0.7638413776944706,
+            "rows": [
+              {
+                "role": "idle",
+                "clip": "Idle_A",
+                "speed": 0,
+                "cycleT": 1.067,
+                "leftFootDownPhase": null,
+                "weight": 1,
+                "time": 0.13300000000000045
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": 4.565309001901144,
+            "mixerCount": 1
+          },
+          "after": {
+            "owner": "WB2 shared planar Ground",
+            "animationOwner": "KayKit native speed/phase mixer",
+            "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+            "actorProfileId": "Mannequin_Medium",
+            "position": [
+              -114.8502787363501,
+              4.592915134435583,
+              11.05974149443517
+            ],
+            "heading": -1.734191815200609,
+            "speed": 1.2123,
+            "phase": 0.05021672914714159,
+            "rows": [
+              {
+                "role": "walk",
+                "clip": "Walking_B",
+                "speed": 0.98,
+                "cycleT": 1.067,
+                "leftFootDownPhase": 0,
+                "weight": 0.9,
+                "time": 0.05358125000000007
+              },
+              {
+                "role": "run",
+                "clip": "Running_A",
+                "speed": 3.303,
+                "cycleT": 0.8,
+                "leftFootDownPhase": 0.0833,
+                "weight": 0.09999999999999998,
+                "time": 0.10681338331771323
+              }
+            ],
+            "bindings": {
+              "Idle_A": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Walking_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 1.0666667222976685
+              },
+              "Running_A": {
+                "sourceTracks": 68,
+                "boundTracks": 62,
+                "duration": 0.800000011920929
+              },
+              "Running_B": {
+                "sourceTracks": 69,
+                "boundTracks": 63,
+                "duration": 0.800000011920929
+              }
+            },
+            "bodyHeight": 2.192545909798636,
+            "groundY": 4.592915134435583,
+            "mixerCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "native source isolate in the same WB2 renderer",
+      "pass": true,
+      "detail": "Native unscaled source; other geometry hidden only for capture"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "problems": []
+}
