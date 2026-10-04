@@ -252,6 +252,82 @@ Therefore:
 The answer is not to return to dozens of micro-gates.
 The answer is one strong **pre-run visual/source firewall**, then autonomous integration.
 
+## Systemic finding · the postmortem/control-plane paradox
+
+This incident is not only another isolated donor mistake.
+
+The accumulated KFB process rules themselves had become a failure amplifier.
+
+Each prior incident added another reasonable protection:
+- source-first;
+- one owner;
+- exact branch/head;
+- no visual substitution;
+- bounded slice;
+- gate proportionality;
+- two-pass stop;
+- Return/Recovery;
+- fresh-chat next gate;
+- Stage discipline;
+- no auto-merge.
+
+Individually these rules are good.
+
+But without an explicit **execution-mode precedence**, a fresh agent reading all of them tends to behave defensively:
+
+`inspect → narrow scope → prove donor → stop → hand off → open another slice`.
+
+That is exactly the micro-slice drift Georg objected to.
+
+The system optimized for avoiding local mistakes and accidentally made **finishing the product** harder.
+
+### Why this matters for the current failure
+
+The over-cautious control plane created two opposite errors at once:
+
+1. **Too cautious about integration breadth**
+   - Player, Residents, Site, Memory were repeatedly turned into separate gates.
+
+2. **Not cautious enough about the actual visible product**
+   - the Hürth/OSM technical fixture was allowed to become the visible world because its owner/tests were green.
+
+This is the central pathology:
+
+> **local proof substituted for global product judgment.**
+
+### Binding correction · execution-mode precedence
+
+Fresh chats must determine execution mode before applying process defaults:
+
+1. explicit current product/execution lock;
+2. current owner Return/Recovery;
+3. global owner/source invariants;
+4. generic slice protocol.
+
+For **ONE_SHOT** mode:
+- bounded-slice rules define internal checkpoints only;
+- crash-safe commits/tests continue;
+- human/executor handoff does not recur after every checkpoint;
+- optional failures quarantine/defer;
+- the agent continues until product outcome or real stop condition.
+
+For **BOUNDED_SLICE** mode:
+- the normal one-slice return model applies.
+
+This distinction is now persisted in `FRESH_CHAT_SLICE_PROTOCOL.md`.
+
+### Binding correction · rule budget
+
+Do not react to every new failure by adding another independent blocking gate.
+
+A new process rule must:
+- replace/supersede an overlapping old rule where possible;
+- state its precedence;
+- reduce ambiguity for a fresh chat;
+- not increase Georg's operational burden.
+
+The purpose of postmortems is to make the next run **simpler**, not more ceremonious.
+
 ## Binding corrections
 
 ### 1 · Typed donor scope
