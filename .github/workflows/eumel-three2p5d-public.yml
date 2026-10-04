@@ -1,0 +1,38 @@
+name: Eumel three2p5d Cloudflare proof
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/2D Animation Studio/proofs/eumel-three2p5d-v1/**'
+      - 'tools/2D Animation Studio/shared/renderers/three2p5d/**'
+      - 'tools/2D Animation Studio/shared/eye-rig/eye-rig-2d-adapter.v1.js'
+      - '.github/workflows/eumel-three2p5d-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/2D Animation Studio/proofs/eumel-three2p5d-v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify Eumel three2p5d on KFB Cloudflare
+        run: node "tools/2D Animation Studio/proofs/eumel-three2p5d-v1/qa/public.mjs"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eumel-three2p5d-public-proof
+          path: eumel-three2p5d-public-evidence
+          retention-days: 90

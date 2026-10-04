@@ -1,0 +1,2425 @@
+{
+  "schema": "doccheck.simblood.asset-coverage-matrix/0.2",
+  "updated": "2026-09-18",
+  "status": "LIVE_FROM_REFERENCE_WAVE3_PLUS_CURRENT_POC",
+  "policy": "Visual production matrix. Direct reference previews are shown only where a stable external image URL can be derived; reference images remain external/reference-only unless rights are separately cleared.",
+  "taxonomySource": "assets/reference-board/CELL_TAXONOMY_v0.3.json",
+  "referenceSource": "assets/reference-board/CELL_REFERENCE_ANCHORS_v0.1.json",
+  "counts": {
+    "entities": 80,
+    "withReferences": 31,
+    "withReferencePreview": 24,
+    "withDatasets": 39,
+    "withCurrentAssets": 8,
+    "missingAssetEntities": 72
+  },
+  "rows": [
+    {
+      "id": "RBC-NORM",
+      "label": "Normozyt / normaler Erythrozyt",
+      "kind": "cell_class",
+      "family": "rbc",
+      "priority": "P0",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Normocytic RBCs with lymphocyte comparator",
+          "url": "https://imagebank.hematology.org/image/60303/normocytic-rbcs-with-lymphocyte-for-comparison",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60303?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        },
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        },
+        {
+          "id": "txl_pbc",
+          "role": "curated/re-annotated detection dataset integrating four public resources; RBC/WBC/platelet bounding boxes",
+          "url": "https://github.com/lugan113/TXL-PBC_Dataset",
+          "license": "MIT repo/dataset; upstream provenance remains explicit production gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [
+        {
+          "id": "procedural-rbc-baseline",
+          "type": "procedural",
+          "status": "PROCEDURAL_POC",
+          "note": "Current normal-RBC baseline in Field Composer; not an approved production asset."
+        }
+      ],
+      "targetAssets": 5,
+      "missingAssets": 4,
+      "coverage": "partial"
+    },
+    {
+      "id": "RBC-MICRO",
+      "label": "Mikrozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Microcytosis with lymphocyte comparator",
+          "url": "https://imagebank.hematology.org/image/60302/microcytosis-with-lymphocyte-for-comparison",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60302?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-MACRO",
+      "label": "Makrozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-POLY",
+      "label": "Polychromatischer Erythrozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-HYPO",
+      "label": "Hypochromer Erythrozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Iron Deficiency Anemia Moderate",
+          "url": "https://imagebank.hematology.org/image/60220/iron-deficiency-anemia-moderate",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60220?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-SPH",
+      "label": "Sphärozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Spherocytes – Hereditary Spherocytosis",
+          "url": "https://imagebank.hematology.org/image/60308/spherocytes--hereditary-spherocytosis",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60308?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH supporting morphology images",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ijlh.12327",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-ELLIP",
+      "label": "Elliptozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Elliptocytes/Pencil cells",
+          "url": "https://imagebank.hematology.org/image/66392/elliptocytespencil-cells",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/66392?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-PENCIL",
+      "label": "Pencil Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Elliptocytes/Pencil cells",
+          "url": "https://imagebank.hematology.org/image/66392/elliptocytespencil-cells",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/66392?size=3"
+        },
+        {
+          "name": "Tyas RBCdataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8857444/",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-OVAL",
+      "label": "Ovalozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-STOMA",
+      "label": "Stomatozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-SCHISTO",
+      "label": "Schistozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ICSH 2021 Schistocyte Update",
+          "url": "https://www.icsh.org/2021-update-of-the-2012-icsh-recommendations-for-schistocytes",
+          "previewUrl": null
+        },
+        {
+          "name": "ASH Schistocytes",
+          "url": "https://imagebank.hematology.org/image/60306/schistocytes",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60306?size=3"
+        },
+        {
+          "name": "ASH Triangulocytes and Helmet Cells",
+          "url": "https://imagebank.hematology.org/image/60307/schistocytes--triangulocytes-and-helmet-cells",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60307?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-HELMET",
+      "label": "Helmet Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": "RBC-SCHISTO",
+      "references": [
+        {
+          "name": "ASH Triangulocytes and Helmet Cells",
+          "url": "https://imagebank.hematology.org/image/60307/schistocytes--triangulocytes-and-helmet-cells",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60307?size=3"
+        },
+        {
+          "name": "ICSH 2021 Schistocyte Update",
+          "url": "https://www.icsh.org/2021-update-of-the-2012-icsh-recommendations-for-schistocytes",
+          "previewUrl": null
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-ACANTH",
+      "label": "Akanthozyt",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Acanthocytes",
+          "url": "https://imagebank.hematology.org/image/60266/acanthocytes",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60266?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH supporting morphology images",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ijlh.12327",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-ECHINO",
+      "label": "Echinozyt / Burr Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Burr Cells or Echinocytes",
+          "url": "https://imagebank.hematology.org/atlas/60291",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60291?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH supporting morphology images",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ijlh.12327",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-TARGET",
+      "label": "Target Cell / Codocyte",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Target Cells",
+          "url": "https://imagebank.hematology.org/image/60310/target-cells",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60310?size=3"
+        },
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-DACRO",
+      "label": "Dacrozyt / Teardrop Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH supporting morphology images",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ijlh.12327",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "chula_rbc12",
+          "role": "RGB RBC shape/pathology smear donor with point labels",
+          "url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+          "license": "repo MIT; per-image/version production rights still explicit gate",
+          "caveat": null
+        },
+        {
+          "id": "tyas_rbcdataset",
+          "role": "isolated RBC morphology reference/donor",
+          "url": "https://data.mendeley.com/datasets/rfdz6wfzn4/1",
+          "license": "CC BY 4.0",
+          "caveat": "published single-cell representation uses green-channel/grayscale preprocessing"
+        },
+        {
+          "id": "pathologics_rbc",
+          "role": "large RBC segmentation/mask donor",
+          "url": "https://figshare.com/articles/dataset/PathOlOgics_RBCs_Cells_zip/24119511",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-SICKLE",
+      "label": "Sichelzelle",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH supporting morphology images",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ijlh.12327",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RBC-BITE",
+      "label": "Bite Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-BLISTER",
+      "label": "Blister Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-IRREG-CONTRACT",
+      "label": "Irregularly Contracted Cell",
+      "kind": "morphology_variant",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "ERY-BASO",
+      "label": "Basophiler Erythroblast",
+      "kind": "cell_class",
+      "family": "erythroid_precursor",
+      "priority": "P3",
+      "scope": "marrow_priority_peripheral_rare",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "ERY-POLY",
+      "label": "Polychromatischer Erythroblast",
+      "kind": "cell_class",
+      "family": "erythroid_precursor",
+      "priority": "P3",
+      "scope": "marrow_priority_peripheral_rare",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "ERY-ORTHO",
+      "label": "Orthochromatischer Erythroblast / nRBC",
+      "kind": "cell_class",
+      "family": "erythroid_precursor",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-NEUT-BAND",
+      "label": "Stabkerniger Neutrophiler",
+      "kind": "cell_class",
+      "family": "granulocyte",
+      "priority": "P2",
+      "scope": "peripheral_abnormal_or_low_normal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Band Neutrophil",
+          "url": "https://imagebank.hematology.org/image/60396/band-neutrophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60396?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-NEUT-SEG",
+      "label": "Segmentkerniger Neutrophiler",
+      "kind": "cell_class",
+      "family": "granulocyte",
+      "priority": "P0",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Segmented Neutrophil",
+          "url": "https://imagebank.hematology.org/image/60395/segmented-neutrophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60395?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        },
+        {
+          "id": "txl_pbc",
+          "role": "curated/re-annotated detection dataset integrating four public resources; RBC/WBC/platelet bounding boxes",
+          "url": "https://github.com/lugan113/TXL-PBC_Dataset",
+          "license": "MIT repo/dataset; upstream provenance remains explicit production gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [
+        {
+          "id": "pbc-neut-985930",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/neutrophil/BNE_985930.jpg",
+          "status": "PRE_QC_ACCEPT"
+        },
+        {
+          "id": "pbc-neut-100878",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/neutrophil/BNE_100878.jpg",
+          "status": "HOLD_EDGE"
+        },
+        {
+          "id": "pbc-neut-101007",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/neutrophil/BNE_101007.jpg",
+          "status": "PRE_QC_ACCEPT"
+        }
+      ],
+      "targetAssets": 5,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "WBC-EOS",
+      "label": "Eosinophiler Granulozyt",
+      "kind": "cell_class",
+      "family": "granulocyte",
+      "priority": "P1",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Normal Eosinophil",
+          "url": "https://imagebank.hematology.org/image/60933/eosinophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60933?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-BASO",
+      "label": "Basophiler Granulozyt",
+      "kind": "cell_class",
+      "family": "granulocyte",
+      "priority": "P1",
+      "scope": "peripheral_common_rare",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Basophil",
+          "url": "https://imagebank.hematology.org/image/60504/basophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60504?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-PROMYELO",
+      "label": "Promyelozyt",
+      "kind": "cell_class",
+      "family": "granulocytic_precursor",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-PROMYELO-BILOBED",
+      "label": "Bilobierter Promyelozyt",
+      "kind": "cell_class",
+      "family": "granulocytic_precursor",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-MYELO",
+      "label": "Myelozyt",
+      "kind": "cell_class",
+      "family": "granulocytic_precursor",
+      "priority": "P2",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-METAMYELO",
+      "label": "Metamyelozyt",
+      "kind": "cell_class",
+      "family": "granulocytic_precursor",
+      "priority": "P2",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-MYELOBLAST",
+      "label": "Myeloblast",
+      "kind": "cell_class",
+      "family": "blast",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-MONO",
+      "label": "Monozyt",
+      "kind": "cell_class",
+      "family": "monocytic",
+      "priority": "P0",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Monocyte",
+          "url": "https://imagebank.hematology.org/image/61933/monocyte",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/61933?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        },
+        {
+          "id": "txl_pbc",
+          "role": "curated/re-annotated detection dataset integrating four public resources; RBC/WBC/platelet bounding boxes",
+          "url": "https://github.com/lugan113/TXL-PBC_Dataset",
+          "license": "MIT repo/dataset; upstream provenance remains explicit production gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [
+        {
+          "id": "pbc-mono-100695",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/monocyte/MO_100695.jpg",
+          "status": "HOLD_MORPHOLOGY"
+        },
+        {
+          "id": "pbc-mono-101258",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/monocyte/MO_101258.jpg",
+          "status": "RECROP"
+        },
+        {
+          "id": "pbc-mono-102400",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/monocyte/MO_102400.jpg",
+          "status": "RECROP"
+        }
+      ],
+      "targetAssets": 5,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "WBC-MONOBLAST",
+      "label": "Monoblast",
+      "kind": "cell_class",
+      "family": "monocytic",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-PROMONO",
+      "label": "Promonozyt",
+      "kind": "cell_class",
+      "family": "monocytic",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "WBC-LYMPH-SMALL",
+      "label": "Kleiner reifer Lymphozyt",
+      "kind": "cell_class",
+      "family": "lymphoid",
+      "priority": "P0",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Mature Lymphocyte",
+          "url": "https://imagebank.hematology.org/image/63344/mature-lymphocyte",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/63344?size=3"
+        },
+        {
+          "name": "CellaVision Leukocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1162",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        },
+        {
+          "id": "rv_pbs",
+          "role": "multi-cell peripheral-smear instance-segmentation / WBC classification donor",
+          "url": "https://github.com/Jimut123/RV-PBS",
+          "license": "VERIFY",
+          "caveat": null
+        },
+        {
+          "id": "txl_pbc",
+          "role": "curated/re-annotated detection dataset integrating four public resources; RBC/WBC/platelet bounding boxes",
+          "url": "https://github.com/lugan113/TXL-PBC_Dataset",
+          "license": "MIT repo/dataset; upstream provenance remains explicit production gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [
+        {
+          "id": "pbc-lymph-100275",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/lymphocyte/LY_100275.jpg",
+          "status": "UNREVIEWED"
+        },
+        {
+          "id": "pbc-lymph-102859",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/lymphocyte/LY_102859.jpg",
+          "status": "UNREVIEWED"
+        },
+        {
+          "id": "pbc-lymph-10361",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/lymphocyte/LY_10361.jpg",
+          "status": "UNREVIEWED"
+        }
+      ],
+      "targetAssets": 5,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "WBC-LYMPH-LARGE",
+      "label": "Großer Lymphozyt",
+      "kind": "morphology_variant",
+      "family": "lymphoid",
+      "priority": "P2",
+      "scope": "peripheral_common_variant",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "WBC-LGL",
+      "label": "Large Granular Lymphocyte",
+      "kind": "morphology_variant",
+      "family": "lymphoid",
+      "priority": "P2",
+      "scope": "peripheral_variant",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-HAIRY",
+      "label": "Hairy Cell",
+      "kind": "cell_class",
+      "family": "lymphoid",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-NEOPLASTIC-LYMPH",
+      "label": "Neoplastischer Lymphozyt · Sammelklasse",
+      "kind": "cell_class",
+      "family": "lymphoid",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-REACTIVE-LYMPH",
+      "label": "Reaktiver Lymphozyt",
+      "kind": "morphology_variant",
+      "family": "lymphoid",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Reactive Lymphocyte",
+          "url": "https://imagebank.hematology.org/image/60514/reactive-lymphocyte",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60514?size=3"
+        },
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        },
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-ATYP-LYMPH",
+      "label": "Atypischer Lymphozyt",
+      "kind": "morphology_variant",
+      "family": "lymphoid",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "WBC-LYMPHOBLAST",
+      "label": "Lymphoblast",
+      "kind": "cell_class",
+      "family": "blast",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "WBC-PROLYMPH",
+      "label": "Prolymphozyt",
+      "kind": "cell_class",
+      "family": "lymphoid",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "WBC-PLASMA",
+      "label": "Plasmazelle",
+      "kind": "cell_class",
+      "family": "lymphoid",
+      "priority": "P3",
+      "scope": "peripheral_rare_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "PLT-NORM",
+      "label": "Thrombozyt",
+      "kind": "cell_class",
+      "family": "platelet",
+      "priority": "P0",
+      "scope": "peripheral_common",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Normal Platelet",
+          "url": "https://imagebank.hematology.org/atlas/60932",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60932?size=3"
+        },
+        {
+          "name": "CellaVision Thrombocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1166",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "acevedo_pbc",
+          "role": "normal WBC/erythroblast/platelet single-cell donor",
+          "url": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+          "license": "CC BY 4.0",
+          "caveat": null
+        },
+        {
+          "id": "wbcattplus",
+          "role": "WBC pixel segmentation / attribute reference",
+          "url": "https://github.com/apple2373/wbcattplus",
+          "license": "dataset card reported MIT; model/code production rights verify",
+          "caveat": null
+        },
+        {
+          "id": "txl_pbc",
+          "role": "curated/re-annotated detection dataset integrating four public resources; RBC/WBC/platelet bounding boxes",
+          "url": "https://github.com/lugan113/TXL-PBC_Dataset",
+          "license": "MIT repo/dataset; upstream provenance remains explicit production gate",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [
+        {
+          "id": "procedural-platelet-baseline",
+          "type": "procedural",
+          "status": "PROCEDURAL_POC",
+          "note": "Current typed procedural platelet baseline; dedicated reviewed asset pool pending."
+        }
+      ],
+      "targetAssets": 5,
+      "missingAssets": 4,
+      "coverage": "partial"
+    },
+    {
+      "id": "PLT-LARGE",
+      "label": "Großer Thrombozyt",
+      "kind": "morphology_variant",
+      "family": "platelet",
+      "priority": "P2",
+      "scope": "peripheral_variant",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "PLT-GIANT",
+      "label": "Riesenthrombozyt",
+      "kind": "morphology_variant",
+      "family": "platelet",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Giant Platelets",
+          "url": "https://imagebank.hematology.org/image/60930/giant-platelets",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60930?size=3"
+        },
+        {
+          "name": "CellaVision Thrombocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1166",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "PLT-SMALL",
+      "label": "Kleiner Thrombozyt",
+      "kind": "morphology_variant",
+      "family": "platelet",
+      "priority": "P3",
+      "scope": "peripheral_variant",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "PLT-HYPOGRAN",
+      "label": "Hypogranulärer Thrombozyt",
+      "kind": "morphology_variant",
+      "family": "platelet",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "PLT-GRAY",
+      "label": "Gray Platelet",
+      "kind": "morphology_variant",
+      "family": "platelet",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "MOD-HYPERSEG",
+      "label": "Hypersegmentierter Neutrophiler",
+      "kind": "morphology_variant",
+      "family": "neutrophil_modifier",
+      "priority": "P1",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Hypersegmented Neutrophil",
+          "url": "https://imagebank.hematology.org/image/60047/hypersegmented-neutrophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60047?size=3"
+        },
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 4,
+      "missingAssets": 4,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "MOD-HYPOSEG",
+      "label": "Hyposegmentierter / Pelger-Huët-artiger Neutrophiler",
+      "kind": "morphology_variant",
+      "family": "neutrophil_modifier",
+      "priority": "P2",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        },
+        {
+          "name": "ASH Atlas abnormal neutrophil categories",
+          "url": "https://imagebank.hematology.org/atlas-images",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "MOD-TOX-GRAN",
+      "label": "Toxische Granulation",
+      "kind": "morphology_variant",
+      "family": "neutrophil_modifier",
+      "priority": "P2",
+      "scope": "peripheral_reactive",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Toxic Granulation",
+          "url": "https://imagebank.hematology.org/image/60046/toxic-granulation",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60046?size=3"
+        },
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "MOD-HYPOGRAN",
+      "label": "Hypogranulierter Neutrophiler",
+      "kind": "morphology_variant",
+      "family": "neutrophil_modifier",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "MOD-DOHLE",
+      "label": "Döhle-Körperchen",
+      "kind": "inclusion",
+      "family": "neutrophil_modifier",
+      "priority": "P2",
+      "scope": "peripheral_reactive",
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Döhle bodies",
+          "url": "https://imagebank.hematology.org/image/60048/dhle-bodies",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60048?size=3"
+        },
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "MOD-AUER",
+      "label": "Auer-Stab",
+      "kind": "inclusion",
+      "family": "myeloid_blast_modifier",
+      "priority": "P3",
+      "scope": "peripheral_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-INCL-HJ",
+      "label": "Howell-Jolly-Körperchen",
+      "kind": "inclusion",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-INCL-PAPP",
+      "label": "Pappenheimer-Körperchen",
+      "kind": "inclusion",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RBC-INCL-STIPPLE",
+      "label": "Basophile Tüpfelung",
+      "kind": "inclusion",
+      "family": "rbc",
+      "priority": "P3",
+      "scope": "peripheral_abnormal",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "STATE-ANISO",
+      "label": "Anisozytose",
+      "kind": "population_state",
+      "family": "rbc_field",
+      "priority": "P1",
+      "scope": "field_state",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood · Anisocytosis",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH 2015 morphology recommendations",
+          "url": "https://www.icsh.org/recommendations-for-standardization-of-nomenclature-and-grading-of-peripheral-blood-cell",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "STATE-POIKILO",
+      "label": "Poikilozytose",
+      "kind": "population_state",
+      "family": "rbc_field",
+      "priority": "P1",
+      "scope": "field_state",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Erythrocytes in Peripheral Blood · Poikilocytosis",
+          "url": "https://www.cellavision.com/node/1165",
+          "previewUrl": null
+        },
+        {
+          "name": "ICSH 2015 morphology recommendations",
+          "url": "https://www.icsh.org/recommendations-for-standardization-of-nomenclature-and-grading-of-peripheral-blood-cell",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "STATE-ROULEAUX",
+      "label": "Rouleaux",
+      "kind": "population_state",
+      "family": "rbc_field",
+      "priority": "P2",
+      "scope": "field_state",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "STATE-AGGLUT",
+      "label": "Erythrozyten-Agglutination",
+      "kind": "population_state",
+      "family": "rbc_field",
+      "priority": "P2",
+      "scope": "field_state",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "STATE-PLT-AGG",
+      "label": "Thrombozytenaggregation / -clumps",
+      "kind": "artifact_or_other_finding",
+      "family": "platelet_field",
+      "priority": "P2",
+      "scope": "field_state",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Thrombocytes in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1166",
+          "previewUrl": null
+        },
+        {
+          "name": "ASH Atlas platelet aggregates and satellitosis",
+          "url": "https://imagebank.hematology.org/atlas-images",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ku_optofil_31k",
+          "role": "large standardized single-cell donor; 31,489 images / 13 classes",
+          "url": "https://zenodo.org/records/17333317",
+          "license": "VERIFY_DATASET_LICENSE",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "STATE-PLT-SAT",
+      "label": "Platelet Satellitism",
+      "kind": "artifact_or_other_finding",
+      "family": "platelet_field",
+      "priority": "P3",
+      "scope": "field_state",
+      "parent": null,
+      "references": [
+        {
+          "name": "CellaVision Other Findings in Peripheral Blood",
+          "url": "https://www.cellavision.com/node/1167",
+          "previewUrl": null
+        },
+        {
+          "name": "ASH Atlas platelet aggregates and satellitosis",
+          "url": "https://imagebank.hematology.org/atlas-images",
+          "previewUrl": null
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "FIND-SMUDGE",
+      "label": "Smudge Cell",
+      "kind": "artifact_or_other_finding",
+      "family": "wbc_field",
+      "priority": "P3",
+      "scope": "peripheral_finding",
+      "parent": null,
+      "references": [],
+      "datasets": [
+        {
+          "id": "tcia_matek",
+          "role": "WBC + precursor/pathology single-cell donor",
+          "url": "https://www.cancerimagingarchive.net/collection/aml-cytomorphology_lmu/",
+          "license": "CC BY 3.0 / TCIA policy",
+          "caveat": null
+        },
+        {
+          "id": "mll23",
+          "role": "expert-annotated single-cell WBC/pathology donor; 41,621 cells / 18 classes",
+          "url": "https://zenodo.org/records/14277609",
+          "license": "VERIFY_DATASET_LICENSE; publication/preprint is open access",
+          "caveat": null
+        }
+      ],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "FIND-MICROMEG",
+      "label": "Micromegakaryozyt",
+      "kind": "artifact_or_other_finding",
+      "family": "megakaryocytic",
+      "priority": "P3",
+      "scope": "peripheral_rare_pathologic",
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-NORMAL",
+      "label": "Normaler peripherer Ausstrich",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P0",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [
+        {
+          "id": "recipe-normal-poc",
+          "type": "recipe",
+          "status": "TECHNICAL_POC",
+          "note": "Current deterministic normal technical recipe."
+        }
+      ],
+      "targetAssets": 3,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "RECIPE-IDA",
+      "label": "Eisenmangel-Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P0",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [
+        {
+          "id": "recipe-ida-poc",
+          "type": "recipe",
+          "status": "TECHNICAL_PATHOLOGY_PLACEHOLDER",
+          "note": "Iron-deficiency-like technical recipe; medically unvalidated."
+        }
+      ],
+      "targetAssets": 3,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "RECIPE-TMA",
+      "label": "TMA / schistozytenreiches Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P0",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [
+        {
+          "id": "recipe-tma-poc",
+          "type": "recipe",
+          "status": "TECHNICAL_PATHOLOGY_PLACEHOLDER",
+          "note": "TMA-like technical recipe; medically unvalidated."
+        }
+      ],
+      "targetAssets": 3,
+      "missingAssets": 2,
+      "coverage": "partial"
+    },
+    {
+      "id": "RECIPE-MEGALO",
+      "label": "Megaloblastäres Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P1",
+      "scope": null,
+      "parent": null,
+      "references": [
+        {
+          "name": "ASH Macro-ovalocyte",
+          "url": "https://imagebank.hematology.org/image/66113/macroovalocyte-1",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/66113?size=3"
+        },
+        {
+          "name": "ASH Hypersegmented Neutrophil",
+          "url": "https://imagebank.hematology.org/image/60047/hypersegmented-neutrophil",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60047?size=3"
+        }
+      ],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "reference_only"
+    },
+    {
+      "id": "RECIPE-SPHERO",
+      "label": "Sphärozyten-dominantes Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-SICKLE",
+      "label": "Sichelzell-Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-THAL",
+      "label": "Thalassämie-/Target-cell-Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-REACTIVE-NEUT",
+      "label": "Reaktive Neutrophilie / toxische Veränderungen",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-REACTIVE-LYMPH",
+      "label": "Reaktive Lymphozytose",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-AML",
+      "label": "AML / Blast- und Vorläufer-Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P3",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-MDS",
+      "label": "MDS / dysplastisches Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P3",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    },
+    {
+      "id": "RECIPE-PLT-GIANT",
+      "label": "Thrombozytopenie-/Riesenthrombozyten-Muster",
+      "kind": "condition_recipe",
+      "family": "recipe",
+      "priority": "P2",
+      "scope": null,
+      "parent": null,
+      "references": [],
+      "datasets": [],
+      "currentAssets": [],
+      "targetAssets": 3,
+      "missingAssets": 3,
+      "coverage": "missing"
+    }
+  ]
+}

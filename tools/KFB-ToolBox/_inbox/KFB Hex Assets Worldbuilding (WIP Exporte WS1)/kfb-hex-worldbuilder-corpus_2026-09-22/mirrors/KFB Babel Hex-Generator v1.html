@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KFB · Babel Hex Platform Generator v1</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  /* Das UI ist das des Dungeon-Generators S13.2 — eine Zeile oben, alles andere hinter einem
+     Icon. Abweichungen sind Absicht und stehen in README.md: keine Herkunfts-, Lizenz- und
+     Registry-Tafeln, nur Bau, Aufstieg, Auswahl, Tasten. */
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden}
+  body{background:#120e18;color:#e6e0f0;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    -webkit-text-size-adjust:100%}
+  a{color:#b79ae0}a:hover{color:#cdb8ee}
+
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 0;grid-template-rows:38px minmax(0,1fr);height:100%}
+  #app.panel{grid-template-columns:minmax(0,1fr) 320px}
+  aside{display:none}
+  #app.panel aside{display:block}
+  #app.clean{grid-template-columns:minmax(0,1fr);grid-template-rows:0 minmax(0,1fr)}
+  #app.clean header,#app.clean aside,#app.clean #hint{display:none}
+  #app.clean #stage{grid-row:1/-1;grid-column:1/-1}
+  #exitClean{display:none;position:absolute;right:10px;top:10px;z-index:9;opacity:.32}
+  #exitClean:hover{opacity:1}
+  #app.clean #exitClean{display:block}
+
+  /* Eine Zeile, die nie umbricht: eine umbrechende Kopfzeile verschiebt bei jedem
+     Fensterwechsel die Szene um eine Zeilenhöhe. Auf schmal wird sie scrollbar, nicht hoch. */
+  header{grid-column:1/-1;display:flex;align-items:center;gap:6px;padding:0 8px;
+    border-bottom:1px solid #2a2135;background:#171122;flex-wrap:nowrap;
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  header::-webkit-scrollbar{display:none}
+  header>*{flex:0 0 auto}
+  h1{font:600 11px/1 ui-monospace,monospace;margin:0 4px 0 2px;color:#9385a8;letter-spacing:.14em}
+  .sep{width:1px;height:18px;background:#2f2640;margin:0 2px}
+  .spacer{flex:1 1 auto;min-width:6px}
+  button,select,input[type=text]{font:11px/1 inherit;padding:6px 8px;background:#1e1729;color:#e6e0f0;
+    border:1px solid #3b2f4d;border-radius:5px;cursor:pointer}
+  input[type=text]{cursor:text;width:56px;font-family:ui-monospace,monospace;text-align:center}
+  button:hover,select:hover{background:#281f36}
+  button[aria-pressed="true"]{background:#7a5ea8;border-color:#9b7fd0;color:#140f1d}
+  button:disabled{opacity:.35;cursor:default}
+  .ico{font-size:13px;line-height:1;padding:6px 9px}
+  .steps{display:flex;gap:0}
+  .steps button{border-radius:0;border-left-width:0}
+  .steps button:first-child{border-radius:5px 0 0 5px;border-left-width:1px}
+  .steps button:last-child{border-radius:0 5px 5px 0}
+  label.sl{display:flex;gap:6px;align-items:center;font:10px/1 ui-monospace,monospace;color:#8a7d9e}
+  input[type=range]{width:96px;accent-color:#9b7fd0}
+
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%;touch-action:none}
+  #hint{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;color:#bcb0d2;
+    background:#120e18d0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;max-width:58%;
+    pointer-events:none}
+  #boot{position:absolute;inset:0;display:grid;place-content:center;gap:8px;text-align:center;
+    background:#120e18;z-index:8;font:11px/1.6 ui-monospace,monospace;color:#8d81a1}
+  #boot b{display:block;font-size:11px;letter-spacing:.24em;color:#c9bcdd}
+  #boot.gone{display:none}
+
+  aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 28px;
+    overscroll-behavior:contain}
+  @media (max-width:1100px){
+    #app.panel{grid-template-columns:minmax(0,1fr) 0}
+    #app.panel aside{position:fixed;right:0;top:38px;bottom:0;width:min(320px,92vw);z-index:20;
+      box-shadow:-16px 0 44px #08060cc0}
+  }
+  details{border-bottom:1px solid #221a2f}
+  summary{font:600 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+    color:#8a7d9e;padding:11px 13px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-size:12px;color:#6d6084;width:8px}
+  details[open]>summary::before{content:"\2013"}
+  details[open]>summary{color:#c9bcdd}
+  summary:hover{background:#1c1428}
+  .body{padding:0 13px 13px;display:flex;flex-direction:column;gap:7px}
+  .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .row .grow{flex:1 1 auto}
+  .val{font:10px/1 ui-monospace,monospace;color:#c9bcdd;min-width:26px;text-align:right}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #241c31;
+    font:10px/1.55 ui-monospace,monospace;color:#8d81a1}
+  .kv b{color:#e0d6f2;font-weight:600}
+  .note{font-size:11.5px;color:#8d81a1;margin:0;text-wrap:pretty}
+  .steplist{display:flex;flex-direction:column;gap:2px}
+  .step{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;
+    font:10px/1.5 ui-monospace,monospace;padding:4px 6px;border-radius:5px;background:#0f0c16;
+    border:1px solid #241c31;cursor:pointer;color:#9c90b4}
+  .step:hover{border-color:#4b3c63}
+  .step.on{border-color:#9b7fd0;background:#1d1630;color:#e6e0f0}
+  .step i{font-style:normal;color:#6d6084}
+  .step .cls{padding:1px 5px;border-radius:3px;font-size:9px;letter-spacing:.06em}
+  .cls.direct{background:#1d2812;color:#b8dc9a}
+  .cls.double{background:#2a2312;color:#e3c684}
+  .cls.far{background:#301a15;color:#f0a58e}
+  .cls.start{background:#1a1d2e;color:#9fb4e0}
+  .keys{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font:10px/1.6 ui-monospace,monospace;color:#8d81a1}
+  .keys b{color:#c9bcdd;font-weight:600}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>BABEL</h1>
+    <input type="text" id="seed" value="B1" spellcheck="false" title="Seed">
+    <button id="roll" class="ico" title="New seed">↻</button>
+    <div class="sep"></div>
+    <span class="steps" id="modes">
+      <button data-mode="editor" aria-pressed="true">Editor</button>
+      <button data-mode="chill" aria-pressed="false">Chill &amp; Fun</button>
+      <button data-mode="play" aria-pressed="false">Play</button>
+    </span>
+    <div class="spacer"></div>
+    <button id="top" class="ico" title="Top view">⌖</button>
+    <button id="clean" class="ico" title="Hide interface">⛶</button>
+    <button id="panel" class="ico" aria-pressed="false" title="Panel">☰</button>
+  </header>
+  <div id="stage">
+    <canvas id="view"></canvas>
+    <div id="hint"></div>
+    <button id="exitClean" class="ico" title="Escape">✕</button>
+    <div id="boot"><b>BABEL HEX</b><span id="bootmsg">starting…</span></div>
+  </div>
+  <aside>
+    <details open>
+      <summary>Tower</summary>
+      <div class="body" id="build"></div>
+    </details>
+    <details open>
+      <summary>Climb</summary>
+      <div class="body" id="climb"></div>
+    </details>
+    <details id="selWrap">
+      <summary>Selection</summary>
+      <div class="body" id="sel"></div>
+    </details>
+    <details>
+      <summary>Keys</summary>
+      <div class="body">
+        <div class="keys">
+          <b>W A S D</b><span>move</span>
+          <b>Shift</b><span>run</span>
+          <b>Space</b><span>jump · twice = double jump</span>
+          <b>Drag</b><span>orbit · free in every mode</span>
+          <b>Wheel</b><span>zoom towards the cursor</span>
+          <b>Click</b><span>select a band (editor)</span>
+          <b>Esc</b><span>leave the clean view</span>
+        </div>
+      </div>
+    </details>
+  </aside>
+</div>
+<script type="module" src="./KFB_Babel_Hex_Generator_v1/src/app.js"></script>
+</body>
+</html>

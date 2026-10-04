@@ -1,0 +1,866 @@
+{
+  "schema": "kfb.chat-registry/0.1",
+  "updated": "2026-10-04",
+  "owner": "Georg / KFB",
+  "router": "skills/chat/START_HERE.md",
+  "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
+  "canonHomeMap": "skills/chat/meta/CANON_HOME_MAP.json",
+  "masterplanAddenda": [
+    "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
+    "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+    "skills/chat/masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md",
+    "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
+    "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md"
+  ],
+  "recoveryPath": "skills/chat/RECOVERY_PATH.md",
+  "freshChatSliceProtocol": "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+  "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
+  "inboxProtocol": "skills/chat/INBOX_PROTOCOL.md",
+  "privateInboxTarget": "georg-doc/KFB-Production-Inbox",
+  "privateInboxStatus": "PROVISIONING",
+  "legacyPublicIntake": "travel/wip/travel_globe_wsa/_inbox/",
+  "statusVocabulary": [
+    "CURRENT_CANON",
+    "CURRENT_TOOL",
+    "CURRENT_REFERENCE",
+    "CURRENT_PROJECT_SSOT",
+    "LEGACY_REFERENCE",
+    "SUPERSEDED",
+    "ARCHIVED_HISTORY",
+    "UNVERIFIED",
+    "EXPERIMENTAL"
+  ],
+  "entries": [
+    {
+      "id": "session-zip-v1",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.1",
+      "path": "skills/session_ZIP_v1.md",
+      "loadWhen": [
+        "/session-zip",
+        "Session Cut ZIP",
+        "Claude Design full export",
+        "complete handoff",
+        "chat recovery export",
+        "manual pasted session ZIP skill"
+      ],
+      "note": "Self-contained full Claude Design Session Cut + ZIP. Shortcut is optional: pasting the file/instructions with an export request is itself a trigger and export authorization. Includes closure, Handover, active Changelog, Source/Donor locks, asset inventory, voice-input ambiguity handling, manifest/checksums, embedded zipcheck.py, clean-run rules and failure-recovery escalation."
+    },
+    {
+      "id": "fresh-chat-slice-protocol",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+      "loadWhen": [
+        "fresh chat",
+        "cold start",
+        "parallel web slice",
+        "module or POC",
+        "next-day Work review"
+      ],
+      "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
+    },
+    {
+      "id": "kfb-clay-asset-studio",
+      "kind": "plugin-tool",
+      "status": "EXPERIMENTAL",
+      "version": "0.1.0",
+      "pluginId": "plugins_6ab7de04f0c881919ab552b1a8f702b3",
+      "releaseId": "pluginrel_6ab7de067680819184bb6c981df7489c",
+      "scope": "USER",
+      "discoverability": "PRIVATE",
+      "pluginUrl": "https://chatgpt.com/plugins/plugins_6ab7de04f0c881919ab552b1a8f702b3",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md",
+      "skill": "produce-clay-assets",
+      "loadWhen": [
+        "KFB clay textures",
+        "ClayBound production assets",
+        "seamless texture generation",
+        "clay masks or decals",
+        "DIY stop-motion material assets"
+      ],
+      "owns": [
+        "review-gated generation of one clay/craft raster asset at a time",
+        "50-item priority queue",
+        "tile/alpha QA reporting for generated candidates"
+      ],
+      "doesNotOwn": [
+        "KFB ToolBox runtime",
+        "Asset Librarian",
+        "Blender/MCP material implementation",
+        "game shader/runtime ownership",
+        "automatic asset promotion",
+        "Stage or Live deployment"
+      ],
+      "note": "Private personal plugin verified at v0.1.0. No asset generated or human-approved yet. First gate is Asset 1: Smooth matte clay seamless texture with source + 3x3 repeat review."
+    },
+    {
+      "id": "kfb-audio-soundscape-baseline-v1-2026-09-24",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md",
+      "recovery": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RECOVERY.md",
+      "return": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md",
+      "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/",
+      "stageStatus": "HUMAN_ACCEPTED",
+      "loadWhen": [
+        "KFB audio",
+        "soundscape",
+        "TTS or narrator ducking",
+        "shared SFX",
+        "music or Jukebox",
+        "audio calibration"
+      ],
+      "owns": [
+        "cross-project audio inventory and routing",
+        "semantic mix-role contract proposal",
+        "AUDIO-CAL-01 calibration/recovery"
+      ],
+      "doesNotOwn": [
+        "Travel audio runtime",
+        "Race physics or runtime",
+        "Combat runtime",
+        "Boxel gameplay",
+        "a replacement asset registry",
+        "automatic merge or Live promotion"
+      ],
+      "note": "AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED by Georg. Current mix/ducking direction is an accepted calibration reference. Remaining work is curation plus later owner-specific adoption; PR #205 still contains unmerged P0 implementation/test files.",
+      "humanResult": "PASS"
+    },
+    {
+      "id": "claude-design-failure-recovery",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md",
+      "loadWhen": [
+        "repeated Claude Design failure",
+        "visual repair loop",
+        "kit mental model failure",
+        "full codebase recovery export",
+        "failed candidate postmortem"
+      ],
+      "note": "After two repair passes without progress on the same gate, freeze and export the complete editable candidate, preserve evidence, record salvage and choose one smaller next gate. Export does not promote the failed candidate."
+    },
+    {
+      "id": "anti-slop-visual-brief-guardrails",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md",
+      "loadWhen": [
+        "visual brief",
+        "UI or HUD",
+        "source-backed 3D prop",
+        "Claude Design",
+        "asset identity",
+        "human visual gate"
+      ],
+      "note": "Mandatory donor-first and every-letter/pixel-pays-rent rules derived from the Georg-rejected HUD Rig v1. Source loading is not visual fidelity; no aesthetic fallback for mandated assets."
+    },
+    {
+      "id": "kfb-hub-ui-v2-2026-09-19",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md",
+      "loadWhen": [
+        "KFB Production Hub UI",
+        "Hub mobile UI",
+        "Hub split screen",
+        "Pocket Inbox",
+        "progressive disclosure"
+      ],
+      "owns": [
+        "Hub presentation brief",
+        "first-viewport content budget",
+        "desktop/split-screen/mobile design gate"
+      ],
+      "doesNotOwn": [
+        "project status truth",
+        "game runtime",
+        "Cloudflare deployment credentials"
+      ],
+      "note": "Lean Today-first Hub direction. Visible Inbox/dropzone, at most four current actions and four briefings; long lists are disclosed only on demand."
+    },
+    {
+      "id": "kfb-modular-minigame-hub-2026-09-19",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md",
+      "recoveryIntake": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/FAILURE_EXPORT_INTAKE.md",
+      "loadWhen": [
+        "3D mini-game hub",
+        "asset pack catalog",
+        "Tiny Treats scenery",
+        "Dungeon room POC",
+        "KayKit Hex platformer",
+        "Combat Arena platform level",
+        "ChatGPT Web comparison"
+      ],
+      "owns": [
+        "cross-slice briefing and sequence",
+        "catalog field contract",
+        "bounded C0/D01/H01/C01 return gates"
+      ],
+      "doesNotOwn": [
+        "Asset Library source assets",
+        "World Atlas runtime",
+        "Combat Arena runtime",
+        "FrizzleBob actor contract",
+        "automatic promotion or merge"
+      ],
+      "note": "Starts with a visual measured catalog, then routes three independent POCs. The verified Claude failure export is evidence/donor only; its large island generator and automatic diorama are rejected."
+    },
+    {
+      "id": "session-design-briefing",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.2",
+      "path": "skills/session-design-briefing.md",
+      "loadWhen": [
+        "design session",
+        "production planning",
+        "evidence discipline"
+      ]
+    },
+    {
+      "id": "kfb-game-bigger-picture-2026-10-04",
+      "kind": "global-product-reference",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md",
+      "publicReferences": [
+        "https://kayfabizarro.pages.dev/#kfb",
+        "https://kayfabizarro.pages.dev/#cutplay"
+      ],
+      "loadWhen": [
+        "KFB game design",
+        "playable MVP",
+        "world building",
+        "Residents or ChatterBox",
+        "Cards or Almanac",
+        "progression or onboarding",
+        "transmedia",
+        "digital adaptation of analog KFB"
+      ],
+      "principles": [
+        "analog rules and Cut&Play are origin references, not digital gameplay shackles",
+        "KFB claymation cartoon open world as a living toy",
+        "broad-audience chill & fun transmedia experience",
+        "fractal storytelling across Deck, Card, world, Resident, dialogue, media and memory",
+        "pull, don't gate"
+      ],
+      "doesNotOwn": [
+        "runtime",
+        "analog rules canon",
+        "WorldBuilder",
+        "ChatterBox runtime",
+        "Card database",
+        "progression implementation"
+      ],
+      "note": "Global product/context reference. Preserve provenance and conceptual distinctions, but keep digital gameplay outcome-open. Invite and reward exploration; gate rewards/handoffs rather than the world wherever practical."
+    },
+    {
+      "id": "kfb-meta-compendium-v1",
+      "kind": "meta-index",
+      "status": "CURRENT_REFERENCE",
+      "version": "1",
+      "path": "skills/chat/meta/KFB_META_COMPENDIUM_v1.md",
+      "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+      "loadWhen": [
+        "meta narrative",
+        "cross-module ideation",
+        "canon routing",
+        "KFB Town",
+        "module relationships"
+      ],
+      "notSSOT": true,
+      "note": "Index/routing reference from WS0. It points toward existing homes and drift risks; it does not override project/tool SSOTs, current GitHub state or canonical source documents. Version/status/count claims inside are snapshots unless independently verified."
+    },
+    {
+      "id": "kfb-town",
+      "kind": "living-concept",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "startHere": "skills/chat/town/START_HERE.md",
+      "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+      "owns": [
+        "Town-specific J-decisions",
+        "Town meta-narrative/world-design living state"
+      ],
+      "doesNotOwn": [
+        "Travel runtime",
+        "Combat runtime",
+        "ToolBox actor authoring",
+        "Museum runtime",
+        "global ChatterBox/Journey architecture"
+      ],
+      "note": "Current hub concept and ideation home. Not yet an implementation project or runtime SSOT."
+    },
+    {
+      "id": "kfb-cartoon-animation",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "2.0",
+      "declaredStatus": "canonical-draft",
+      "path": "skills/kfb-cartoon-animation/SKILL.md",
+      "loadWhen": [
+        "animation",
+        "procedural acting",
+        "cartoon motion",
+        "VFX choreography",
+        "camera choreography"
+      ],
+      "consumers": [
+        "animation-lab",
+        "frankenstein-studio",
+        "travel-globe",
+        "stunt-car-race",
+        "combat-arena",
+        "wissens-pilli"
+      ],
+      "legacyPath": "skills/kfb-cartoon-animation_v2.md",
+      "note": "Portable Agent-Skills folder; v2 path remains compatibility entry. Project/runtime SSOTs override generic method examples."
+    },
+    {
+      "id": "production-inbox",
+      "kind": "coordination",
+      "status": "UNVERIFIED",
+      "repository": "georg-doc/KFB-Production-Inbox",
+      "visibility": "private",
+      "provisioning": true,
+      "bootstrap": "skills/chat/INBOX_REPO_BOOTSTRAP.md",
+      "protocol": "skills/chat/INBOX_PROTOCOL.md",
+      "activeRoot": "_inbox/",
+      "archiveRoot": "_inbox/archiv/",
+      "note": "Target shared production inbox. Becomes active after Georg creates the empty private repository and the bootstrap is applied. Inbox packages never become implementation SSOTs by location alone."
+    },
+    {
+      "id": "kfb-design-bootstrap-v02",
+      "kind": "bootstrap",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/",
+      "routingSuccessor": "skills/chat/START_HERE.md",
+      "retainConcepts": [
+        "reuse-before-rebuild",
+        "host-contract",
+        "evidence-before-claim",
+        "human-visible-acceptance",
+        "additive-history"
+      ],
+      "doNotUseAsCurrentSSOTFor": [
+        "asset inventory",
+        "project status",
+        "module ownership",
+        "current tool versions"
+      ]
+    },
+    {
+      "id": "kfb-pet-studio-v12",
+      "kind": "tool-history",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB PetStudio/KFB Pet Studio v12 (WS0)/",
+      "currentSuccessor": "frankenstein-studio-v16"
+    },
+    {
+      "id": "frankenstein-studio-v16",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/",
+      "standalone": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/KFB-FrankenStein-Studio-v16-STANDALONE.html",
+      "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
+      "owns": [
+        "actor graft",
+        "look",
+        "material zones",
+        "head/face zones",
+        "pose measurement",
+        "card-rider measurement/export",
+        "weapon attachment/mod presentation measurement"
+      ],
+      "doesNotOwn": [
+        "Travel flight physics",
+        "game world movement",
+        "projectile logic",
+        "damage",
+        "runtime combat aim",
+        "consumer-specific world facing"
+      ]
+    },
+    {
+      "id": "frankenstein-studio-v17-wip",
+      "kind": "tool-candidate",
+      "status": "UNVERIFIED",
+      "masterplan": "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
+      "deliveryBrief": "skills/chat/backlog/CLAUDE_DESIGN_V17_ACTOR_PLATFORM_DELIVERABLES_2026-09-13.md",
+      "note": "WIP successor direction only. Do not promote over v16 until source revision, actor/profile exports, talk/viseme behavior, browser evidence, round-trip safety and Georg visual acceptance are pinned."
+    },
+    {
+      "id": "asset-librarian",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "tools/asset_registry/librarian/",
+      "live": "https://asset-librarian-v1-2-site-co.kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "toolNode": "skills/chat/tool-nodes/asset-librarian.md"
+    },
+    {
+      "id": "travel-globe",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Travel-Globe",
+      "toolNode": "skills/chat/tool-nodes/travel-globe.md",
+      "publicWip": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/"
+    },
+    {
+      "id": "combat-arena",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Combat-Arena",
+      "toolNode": "skills/chat/tool-nodes/combat-arena.md",
+      "consumer": "skills/chat/consumers/combat-web-chat.md"
+    },
+    {
+      "id": "stunt-car-race",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "recovery": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/RECOVERY.md",
+      "livingTrackLab": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/track-lab/LIVING_MASTERPLAN.md",
+      "wipStatus": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/track-lab/WIP_STATUS.json",
+      "experimentalLane": "ChatGPT_web/track-lab/",
+      "note": "Project SSOT. On 2026-09-17 Georg accepted the true-WebGL Track Lab direction after manual v0.5 freeplay. The Track Lab is an experimental accepted development lane, not yet a replacement for the production race runtime or its movement/camera/progress owners."
+    },
+    {
+      "id": "wissens-pilli",
+      "kind": "project",
+      "status": "UNVERIFIED",
+      "plannedPath": "micro-learning/wissens-pilli/",
+      "currentPublicStaging": "travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/",
+      "plannedPrivateIntake": "georg-doc/KFB-Production-Inbox/_inbox/DC MicroLearning WS1/",
+      "migrationPending": true,
+      "toolNode": "skills/chat/tool-nodes/wissens-pilli.md",
+      "currentInputs": [
+        "BRIEFING_STUDIO_Wissens-Pilli_Preparation_v0.1.md",
+        "CONCEPT_Wissens-Pilli_WS0_SceneAssembly_v0.1.md",
+        "DocCheck_Interactive_Microlearning_Living_Doc_v0.9.md"
+      ],
+      "note": "Intake/source package is present and the intended target path exists as a placeholder, but the implementation SSOT/runtime has not yet been promoted and pinned. Migrate the package to the private production inbox after that repository is provisioned."
+    },
+    {
+      "id": "sim-blood",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/doccheck",
+      "path": "sim-blood/",
+      "startHere": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/START_HERE.md",
+      "recovery": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/RECOVERY.md",
+      "wipStatus": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/WIP_STATUS.json",
+      "living": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/LIVING_SIMBLOOD.md",
+      "accent": "#cc0033",
+      "activeWips": [
+        "field-composer-poc",
+        "reference-assets",
+        "cytodiff-audit",
+        "telehematology-use-cases",
+        "svg-morphology-renderer"
+      ],
+      "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Parallel SVG morphology renderer R&D reuses the same typed-cell/recipe/seed truth; it does not replace the true-alpha extraction lane. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch.",
+      "svgMorphologyBrief": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md",
+      "svgMorphologyStatus": "PARALLEL_RND_CLAUDE_DESIGN_BRIEF_READY"
+    },
+    {
+      "id": "knet-medizin",
+      "kind": "project",
+      "status": "CURRENT_REFERENCE",
+      "repository": "georg-doc/doccheck",
+      "path": "Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/",
+      "startHere": "https://github.com/georg-doc/doccheck/blob/main/Knet-Medizin%20Konzept/doccheck-slice/Knet-Medizin/START_HERE.md",
+      "currentMainHead": "087376ebed9f81fb3b0ad736535e218f34d2f806",
+      "activeCandidateBranch": "chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27",
+      "activeCandidatePR": "https://github.com/georg-doc/doccheck/pull/8",
+      "candidateBrief": "https://github.com/georg-doc/doccheck/blob/chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27/Knet-Medizin%20Konzept/doccheck-slice/Knet-Medizin/_handover/BRIEF_CLAUDE_DESIGN_CELL_FORGE_M1_2026-09-27.md",
+      "plannedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/doccheck/knet-medizin-cell-forge-m1/",
+      "stageStatus": "NOT_DEPLOYED",
+      "loadWhen": [
+        "Knet-Medizin",
+        "DocCheck clay medical microlearning",
+        "Cell Forge",
+        "Leukozyten-Werkstatt",
+        "medical claymation minigame"
+      ],
+      "owns": [
+        "Knet-Medizin interaction and presentation candidate",
+        "16:9 article-embed microlearning loop"
+      ],
+      "doesNotOwn": [
+        "SimBlood morphology Ground Truth",
+        "SimBlood true-alpha extraction PR #7",
+        "KFB Asset Registry or Librarian",
+        "global KFB game runtime",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "Main contains the M0 medical-clay proof and Concept v1. Draft PR #8 prepares the bounded M1-N segmented-neutrophil Cell Forge brief: Build → Smear → Verify → Repair. The candidate consumes SimBlood morphology truth and KFB/ClayBound donors; it is not deployed or human-accepted."
+    },
+    {
+      "id": "2d-animation-studio",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "tools/2D Animation Studio/",
+      "startHere": "tools/2D Animation Studio/START_HERE.md",
+      "recovery": "tools/2D Animation Studio/RECOVERY.md",
+      "wipStatus": "tools/2D Animation Studio/WIP_STATUS.json",
+      "inbox": "tools/2D Animation Studio/_inbox/",
+      "toolNode": "skills/chat/tool-nodes/2d-animation-studio.md",
+      "loadWith": [
+        "skills/kfb-cartoon-animation/SKILL.md"
+      ],
+      "firstLab": "tools/2D Animation Studio/labs/eumel-rig-lab/",
+      "owns": [
+        "2D/2.5D cutout rig authoring",
+        "part/pivot hierarchy and rig calibration",
+        "cartoon motion playback and clip calibration",
+        "animation-ready module export",
+        "mini-game actor/module handoff"
+      ],
+      "doesNotOwn": [
+        "source artwork identity until accepted intake explicitly promotes it",
+        "FrankenStein Studio 3D actor/look/material ownership",
+        "consumer-specific game rules",
+        "Travel/Combat/Race runtime movement owners"
+      ],
+      "relationshipToAnimationLab": "No supersession is claimed. 2D Animation Studio is the new pinned browser/tool lane for authored 2D/2.5D cutout rigs; the older Animation Lab node remains unresolved until explicitly reconciled.",
+      "note": "2D Animation Studio remains the source-exact cutout authoring/presentation owner. Prepared consumer lane now includes Eumel 2.5D Resident/DocCheck Project Island and a source-required Doccy quadruped template. World/collision/camera/gameplay remain consumer-owned; Resident promotion waits for a browser-proven three2p5d adapter.",
+      "toolboxBridge": "tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md",
+      "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
+      "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
+      "toolboxEyeRigBatch": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
+      "toolboxEyeRigBatchStatus": "UNIFIED_SITE_HUMAN_PASS_PROFILE_RECOVERY_OPEN",
+      "toolboxEyeRigBatchPR": 104,
+      "toolboxEyeRigBatchImplementation": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
+      "toolboxEyeRigBatchSourceHead": "d1a57c715d8056bb2d36ca3b6edc95237c2cb63b",
+      "toolboxEyeRigBatchStageSourceSnapshot": "b05172eccf4687cfd2e8523995d39611e62de81d",
+      "toolboxEyeRigBatchPublicProofRun": 35457983922,
+      "toolboxEyeRigBatchPublicProof": "95/95 PASS · 4/4 syntax · Large lid-color visual check next",
+      "toolboxEyeRigBatchVisualStatus": "UNIFIED_SITE_HUMAN_ACCEPTED",
+      "toolboxEyeRigBatchStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+      "toolboxEyeRigBatchSite": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/",
+      "toolboxEyeRigBatchUnifiedClasses": "Rig_Medium 55 · Rig_Large 8 · Rig_Legacy 17",
+      "toolboxEyeRigBatchSiteHumanResult": "PASS_FOR_CONTINUATION",
+      "toolboxEyeRigBatchProfileRecovery": "40-profile durable export = 2 ADJUSTED_APPROVED / 37 ADJUSTED / 1 UNREVIEWED; later many-approved Stage LocalStorage export still needed",
+      "toolboxEyeRigBatchIdentityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
+      "toolboxEyeRigBatchStagePublicationHead": "e9f97c594bce46607e95928dd349cf081c36783d",
+      "toolboxEyeRigBatchHistoricalPublicProofRun": 35460179569,
+      "toolboxEyeRigBatchComponentEvidence": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
+      "toolboxEyeRigBatchCalibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
+      "toolboxEyeRigBatchEvidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
+      "toolboxEyeRigBatchMediumDefaults": {
+        "dx": 0.295,
+        "dy": 0.045,
+        "ring": 0.153,
+        "track": 0.15,
+        "pupilSize": 0.34,
+        "inset": 0.4,
+        "lidFit": 0.9,
+        "converge": 0.18,
+        "splay": 0,
+        "gloss": 0.1,
+        "lidMode": "face-base-darkened"
+      },
+      "toolboxEyeRigBatchStudioControls": {
+        "oval": [
+          "width",
+          "height",
+          "depth",
+          "tilt"
+        ],
+        "tracking": [
+          "life",
+          "pointer",
+          "fixed"
+        ],
+        "batchSchema": "kfb.eye-profile-batch/0.2-candidate",
+        "inheritance": [
+          "rigClass",
+          "character",
+          "session"
+        ]
+      },
+      "toolboxEyeRigBatchNextGate": "EYE_RIG_PROFILE_RECOVERY_01",
+      "toolboxEyeRigBatchActorCatalog": {
+        "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
+        "count": 55,
+        "rigClass": "Rig_Medium",
+        "filters": [
+          "all",
+          "unreviewed",
+          "adjusted",
+          "unsupported"
+        ],
+        "workflow": [
+          "click actor",
+          "approve",
+          "adjusted approve",
+          "unsupported",
+          "next unreviewed"
+        ]
+      },
+      "toolboxEyeRigBatchLarge": {
+        "count": 4,
+        "actors": [
+          "Monstrosity",
+          "Black Knight",
+          "Demon Lord",
+          "Orc Brute"
+        ],
+        "acceptedProfiles": true,
+        "reviewedPath": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json",
+        "acceptedSource": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+        "acceptedSourceMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
+        "sharedClassDefault": false,
+        "lidColor": "AUTO_SOURCE_HEAD → EyeRig v6 darkened",
+        "motions": [
+          "Idle_A",
+          "Walking_A",
+          "Running_A"
+        ],
+        "jumpAvailable": false
+      },
+      "toolboxEyeRigBatchLoaderFix": {
+        "status": "FIXED",
+        "error": "Cannot read properties of undefined (reading 'push')",
+        "staleUnsupportedRecovery": true
+      },
+      "actorModuleContract": "tools/2D Animation Studio/contracts/kfb-2d-actor-module.v0.1-candidate.json",
+      "consumerMatrix": "tools/2D Animation Studio/docs/CONSUMER_MATRIX.md",
+      "toolboxManifest2D": "tools/2D Animation Studio/2D_TOOLBOX_MANIFEST.json",
+      "eumel2p5dResidentBinding": "tools/2D Animation Studio/consumers/eumel-resident/EUMEL_2P5D_RESIDENT_BINDING.v0.1.json",
+      "residentAtlasCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+      "doccyQuadrupedTemplate": "tools/2D Animation Studio/templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
+      "wsaResidentHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md",
+      "namedConsumers": [
+        "DocCheck Project Island",
+        "KFB Resident Atlas candidate",
+        "one later named KFB game consumer"
+      ],
+      "eumelGameReadyPackage": "game-ready/eumel-2p5d-actor/",
+      "eumelGameReadyStatus": "PACKAGE_METADATA_IMPLEMENTED_THREE2P5D_STATIC_PASS_BROWSER_CONSUMER_HUMAN_OPEN",
+      "toolboxEyeRigBatchLidColorFix": {
+        "status": "IMPLEMENTED",
+        "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
+        "oldFallback": "#b58f83",
+        "behavior": "measure each actor source head/face texture; EyeRig v6 darkens lids"
+      }
+    },
+    {
+      "id": "animation-lab",
+      "kind": "tool",
+      "status": "UNVERIFIED",
+      "toolNode": "skills/chat/tool-nodes/animation-lab.md",
+      "loadWith": [
+        "skills/kfb-cartoon-animation/SKILL.md"
+      ],
+      "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
+    },
+    {
+      "id": "canon-home-map",
+      "kind": "meta-index",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/meta/CANON_HOME_MAP.json",
+      "notSSOT": true,
+      "loadWhen": [
+        "canon consolidation",
+        "narrator reuse",
+        "FrizzleCrits",
+        "Hunky and Dory",
+        "D6 dimension colors"
+      ],
+      "note": "Located runtime sources and unresolved authoring homes are distinct. No source migration or promotion is performed by this map."
+    },
+    {
+      "id": "fractal-canvas-narrators-and-play",
+      "kind": "masterplan-addendum",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
+      "loadWhen": [
+        "Infinite Canvas of the Tenth Art",
+        "fractal design",
+        "satirical emergence",
+        "player closure",
+        "Triplet NPC",
+        "UFO aliens",
+        "cardboard mini games"
+      ],
+      "note": "Records explicit user direction separately from proposed implementation and future slices. No runtime or Town J-decision promotion."
+    },
+    {
+      "id": "chatterbox-tourbus-reuse",
+      "kind": "masterplan-addendum",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "sourceIndex": "skills/chat/meta/CHATTERBOX_TOURBUS_SOURCE_INDEX_2026-09-14.json",
+      "ideation": "skills/chat/town/LIVING_KFB_TOWN.md#11--zulauf-14092026--chatterbox-und-tourbus",
+      "loadWhen": [
+        "ChatterBox",
+        "NPC or mob chatter",
+        "NIE adapter",
+        "Tourbus",
+        "WaterBowser",
+        "Triplet livery",
+        "CCTV memory",
+        "FBX without Blender"
+      ],
+      "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
+    },
+    {
+      "id": "legacy-rpg-rigging-lab",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "path": "skills/chat/workflows/KAYKIT_LEGACY_RPG_RIGGING_2026-09-21/START_HERE.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21",
+      "draftPR": 155,
+      "owner": "KFB ToolBox / Rigging",
+      "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
+      "publicVerified": false,
+      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT F1 2/2 + 21/21; matrix 35/35 browser; KLR-EYE-01 24/24 + 247/247 generation and 30/30 + 215/215 persisted reconstruction",
+      "nextGate": "KLR-EYE-VIS-01 · visual review of all 17 Legacy heads; Skull manual placement or unsupported",
+      "owns": [
+        "Legacy RPG source catalog candidate",
+        "Legacy authoring/calibration candidate",
+        "LegacyFaceHost candidate"
+      ],
+      "doesNotOwn": [
+        "EyeRig v6 runtime",
+        "Rig_Medium/Rig_Large motion",
+        "Resident Atlas runtime",
+        "Combat/Travel/Race/Town gameplay",
+        "Pencil/CapsuleCarl/Eraser compatibility"
+      ],
+      "note": "Legacy actor kit/randomizer and 17/17 EyeRig profile layer are technically browser-proven. 16 profiles are MEASURED_CANDIDATE, Skull is HUMAN_REQUIRED. Cloudflare repository mirror is complete but exact pages.dev runtime verification from the current chat environment is pending. Combat/WhackMan integration remains deferred until visual review.",
+      "currentBranchHead": "0fbf240150fd32274cf93305c8014262b72b860a",
+      "baseTestedHead": "5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9",
+      "actorKit": {
+        "schema": "kfb.legacy-actor-recipe/0.1-candidate",
+        "intent": [
+          "Combat Arena monsters/enemies",
+          "KFB WhackMan player/ghost presentation",
+          "later KFB games"
+        ],
+        "pureCore": "PASS",
+        "browserIntegration": "PASS_AFTER_F1_AND_MATRIX",
+        "failedBranch": "chatgpt-web/klr-kit-01-failed-2026-09-21",
+        "failedHead": "e3a06e3451637a8b447192113cab43f3ece84cd8",
+        "rootCause": "Historical KLR-KIT edit regression resolved by F1; three-seed matrix subsequently passed",
+        "combatReceiver": {
+          "implementationPR": 5,
+          "implementationHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+          "meleePR": 7,
+          "meleeHead": "6df5d4cd3b5e17bacb32438beac528a37c943bb0"
+        },
+        "whackMan": "Dropbox concept/research input only; no pinned GitHub runtime owner"
+      },
+      "klrKitF1": {
+        "branch": "chatgpt-web/klr-kit-f1-2026-09-21",
+        "testedHead": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "run": 35552848730,
+        "job": 106190694773,
+        "artifact": 10618729208,
+        "digest": "sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64",
+        "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 21/21 browser PASS"
+      },
+      "klrKitMatrix": {
+        "branch": "chatgpt-web/klr-kit-matrix-2026-09-21",
+        "testedHead": "8197d8f1b6e1becc550b9eeb6d766b455a0b33ab",
+        "run": 35660231145,
+        "job": 106533462704,
+        "artifact": 10667035972,
+        "digest": "sha256:fb050fb44ceea245bfc1db1b243b47e2b2b811659b0e8d719616fecbcd09f625",
+        "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 35/35 browser PASS"
+      },
+      "eyeBatchNext": {
+        "id": "KLR-EYE-VIS-01",
+        "technicalStatus": "PASS",
+        "owner": "KFB ToolBox / Rigging · Batch EyeRig Atlas; EyeRig v6 runtime retained",
+        "branch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+        "draftPR": 162,
+        "currentHead": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
+        "persistedTestedHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066",
+        "profiles": 17,
+        "measuredCandidates": 16,
+        "humanRequired": [
+          "skull"
+        ],
+        "generation": {
+          "run": 35661858046,
+          "job": 106538705766,
+          "static": "24/24 PASS",
+          "browser": "247/247 PASS",
+          "artifact": 10667124760,
+          "digest": "sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26"
+        },
+        "reconstruction": {
+          "run": 35662264764,
+          "job": 106539992446,
+          "static": "30/30 PASS",
+          "browser": "215/215 PASS",
+          "artifact": 10667790643,
+          "digest": "sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1"
+        },
+        "reviewRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+        "publicVerified": false,
+        "humanAcceptance": "PENDING"
+      }
+    },
+    {
+      "id": "legacy-web-pet-v0",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/legacy-web-pet-v0-2026-09-21",
+      "draftPR": 157,
+      "owner": "KFB ToolBox / Legacy Web Pet presentation adapter",
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/",
+      "publicVerified": false,
+      "humanAcceptance": "PENDING",
+      "testedRuntimeHead": "f41c59a8178bf77266c0f776f2e20a7948ee6223",
+      "tested": "15/15 static + MV3 build PASS + 12/12 Web/Hub WebGL PASS; extension arbitrary-page ready gate failed twice",
+      "webHost": {
+        "result": "PASS",
+        "defaultCharacter": "Rogue",
+        "camp": "exact Orc Warband banner + two hostname-stable Warband props",
+        "actions": "real Rig_Legacy clips + VFX + user-gesture SFX",
+        "settings": "right-click character picker"
+      },
+      "extension": {
+        "manifest": "MV3",
+        "build": "PASS",
+        "browserInjection": "FROZEN_AFTER_TWO_ATTEMPTS",
+        "runs": [
+          35553680781,
+          35553968462
+        ],
+        "unknownBoundary": "content-script load vs host/frame boot"
+      },
+      "artifact": {
+        "id": 10619267683,
+        "digest": "sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3",
+        "note": "Web evidence only; validated extension ZIP was not produced because packaging was skipped after the failed injection gate."
+      },
+      "doesNotOwn": [
+        "Rig_Legacy animation source",
+        "Legacy actor identity",
+        "KFB Hub runtime ownership",
+        "LLM/chat runtime"
+      ],
+      "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
+      "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    }
+  ],
+  "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#121110;color:#ece6da;font-family:Archivo,sans-serif}a{color:#ece6da}a:hover{color:#ffd23f}</style>
+</helmet>
+<div style="display:flex;flex-direction:column;gap:28px;padding:32px;max-width:1600px;margin:0 auto">
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">KFB · H6 Slice A · Prüfbogen vor dem Schnitt (Regel 7)</div>
+    <h1 style="margin:0;font-size:44px;line-height:1;font-weight:800;font-stretch:78%">Karten-Crops · Exhibition-Trio</h1>
+    <p style="margin:0;max-width:860px;color:#d6cfc2;font-size:16px;text-wrap:pretty">Seiten kommen über <code>KFBCorpus.pageImage()</code> aus dem Deck Viewer v4. Gelb: Zellen nach <code>cardGrid</code>. Grün: Motivrahmen. Darunter die Schnitte in Arbeitsgröße.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#a39b8c">{{ status }}</div>
+  </header>
+  <sc-for list="{{ decks }}" as="d" hint-placeholder-count="3">
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-size:24px;font-weight:800;font-stretch:80%">{{ d.title }}</h2>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">{{ d.meta }}</div>
+      <canvas ref="{{ d.pageRef }}" width="1553" height="866" style="width:100%;height:auto;display:block;border:1px solid #2a2724;background:#000"></canvas>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+        <canvas ref="{{ d.cropRef }}" width="1600" height="460" style="grid-column:1/-1;width:100%;height:auto;display:block;background:#000"></canvas>
+      </div>
+    </section>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CORPUS = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@f3acaaeb98530dd9ffb7d200d61956891e738336/KFB%20Comic%20Card%20Deck%20Viewer%20v4%20(WS0)/deckviewer/kfb-corpus.js';
+const DECKS = [
+  { id: 'forget_utopia', grid: { x: .050, y: .037, w: .899, h: .947, gapX: .135, gapY: .010 }, motif: { x: .04, y: .1, w: .5, h: .8 } },
+  { id: 'ignore_dystopia', grid: { x: .060, y: .117, w: .879, h: .823, gapX: .090, gapY: .010 }, motif: { x: .04, y: .1, w: .5, h: .8 } },
+  { id: 'embrace_protopia', grid: { x: .048, y: .093, w: .903, h: .822, gapX: .022, gapY: .020 }, motif: { x: .04, y: .1, w: .5, h: .8 } }
+];
+const PAGE = 3;
+class Component extends DCLogic {
+  state = { status: 'lädt Corpus …', metas: {} };
+  pageEls = {}; cropEls = {};
+  refFns = {};
+  ref(kind, id) { const k = kind + id; return this.refFns[k] || (this.refFns[k] = el => { if (el) (kind === 'p' ? this.pageEls : this.cropEls)[id] = el; }); }
+  componentDidMount() {
+    const go = () => this.run().catch(e => this.setState({ status: 'Fehler: ' + (e && e.message || e) }));
+    if (window.KFBCorpus) return go();
+    const s = document.createElement('script'); s.src = CORPUS; s.onload = go; s.onerror = () => this.setState({ status: 'kfb-corpus.js nicht ladbar: ' + CORPUS }); document.head.appendChild(s);
+  }
+  async run() {
+    const cfg = await (await fetch('data/h6-card-crops.json', { cache: 'no-cache' })).json();
+    DECKS.forEach(D => { const c = cfg.decks.find(x => x.packId === D.id); if (c) { D.grid = c.cardGrid; D.motif = c.motifBox; } });
+    const C = window.KFBCorpus, reg = await C.registry();
+    this.setState({ status: 'Registry ' + reg.decks.length + ' Decks · rendere Seite ' + PAGE + ' je Deck …' });
+    for (const D of DECKS) {
+      const t0 = performance.now(), info = await C.cards(D.id), url = await C.pageImage(D.id, PAGE, 1553), t1 = performance.now();
+      const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+      const cards = info.cards.filter(c => c.page === PAGE);
+      this.setState(s => ({ metas: { ...s.metas, [D.id]: info.deckTitle + ' · Seite ' + PAGE + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' px · ' + Math.round(t1 - t0) + ' ms (inkl. Laden, IndexedDB-Cache danach) · Karten: ' + cards.map(c => c.n + ' ' + c.name).join(' | ') } }));
+      this.draw(D, img);
+    }
+    this.setState({ status: 'fertig' });
+  }
+  cells(D, W, H) {
+    const g = D.grid, cw = W * (g.w - g.gapX) / 2, ch = H * (g.h - g.gapY) / 2, out = [];
+    for (let q = 0; q < 4; q++) { const col = q % 2, row = q >> 1; out.push({ x: g.x * W + col * (cw + g.gapX * W), y: g.y * H + row * (ch + g.gapY * H), w: cw, h: ch }); }
+    return out;
+  }
+  draw(D, img) {
+    const pc = this.pageEls[D.id], cc = this.cropEls[D.id]; if (!pc || !cc) return;
+    pc.width = img.naturalWidth; pc.height = img.naturalHeight;
+    const x = pc.getContext('2d'); x.drawImage(img, 0, 0);
+    const cells = this.cells(D, pc.width, pc.height), m = D.motif;
+    x.lineWidth = 4; cells.forEach(c => { x.strokeStyle = '#ffd23f'; x.strokeRect(c.x, c.y, c.w, c.h); x.strokeStyle = '#7cff4f'; x.strokeRect(c.x + m.x * c.w, c.y + m.y * c.h, m.w * c.w, m.h * c.h); });
+    const y = cc.getContext('2d'); y.fillStyle = '#000'; y.fillRect(0, 0, cc.width, cc.height);
+    const th = 200, gap = 12; let px = 0;
+    cells.forEach((c, i) => { const w = th * c.w / c.h; y.drawImage(img, c.x, c.y, c.w, c.h, px, 0, w, th); const mw = th * (m.w * c.w) / (m.h * c.h); y.drawImage(img, c.x + m.x * c.w, c.y + m.y * c.h, m.w * c.w, m.h * c.h, px, th + gap + 30, Math.min(mw, 390), th * Math.min(1, 390 / mw)); px += Math.max(w, 390) + gap; });
+    y.fillStyle = '#a39b8c'; y.font = '600 14px "IBM Plex Mono"'; y.fillText('oben: Zelle nach cardGrid · unten: Motivrahmen', 0, th + gap + 18);
+  }
+  renderVals() {
+    return {
+      status: this.state.status,
+      decks: DECKS.map(D => ({ key: D.id, title: D.id, meta: this.state.metas[D.id] || 'lädt …', pageRef: this.ref('p', D.id), cropRef: this.ref('c', D.id) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

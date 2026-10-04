@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.public-app-manifest/0.1",
+  "build": "STUNT-WORLD-S1-CORRIDOR-20260919",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "testedRuntimeCommit": "d2529e634952f25d691d68873801b2651125ac0c",
+  "browserEvidenceCommit": "7208b4167df6fbea62703177301473eb841522d7",
+  "filePolicy": "9 exact Race runtime files + public Stage wrapper/provenance/deployment manifests; tests/private context excluded",
+  "files": {
+    "runtime/ChatGPT_web/osm-city-drive/index.html": {"sha256": "97d9d798b4ac15d232de2cdabc05a9f47ecb623dd411f5cbe8c9eb822d98f701","gitBlob": "96f4628a3798df71f3dbbc04607667c6c600827c","sourcePath": "ChatGPT_web/osm-city-drive/index.html"},
+    "runtime/ChatGPT_web/osm-city-drive/styles.css": {"sha256": "6827e2221a039c00ad2d1180fbc6cdacde8e152bb80ff3e14b08c8cd5764776e","gitBlob": "ad197725b2be6524577dc8a2bb70aa3b02bb732c","sourcePath": "ChatGPT_web/osm-city-drive/styles.css"},
+    "runtime/ChatGPT_web/osm-city-drive/city-drive-recipe.json": {"sha256": "255fffa9b91d14f8935999ad4c3452816f934168da6077e193a50bef873d99d5","gitBlob": "0674fba9763c9711eaa8a3ced26d76d5de6e5b31","sourcePath": "ChatGPT_web/osm-city-drive/city-drive-recipe.json"},
+    "runtime/ChatGPT_web/osm-city-drive/src/app.mjs": {"sha256": "aa0c3d5021445ec76fa007b32da8e9e3432ebd203aac7adc585f86c25edab4ad","gitBlob": "e7c78cddccde8a1b232f1ee7f5b2af1b8d78e274","sourcePath": "ChatGPT_web/osm-city-drive/src/app.mjs"},
+    "runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs": {"sha256": "1fc99a40c023542f51269b42c59156ea0bc3cf868396f903a63e901b88cf6195","gitBlob": "a600aedb4a364f2de13e1cb84cc5869e580c4a9f","sourcePath": "ChatGPT_web/osm-city-drive/src/city-geometry.mjs"},
+    "runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs": {"sha256": "17eb8d78ca28e6a7ee3f0b4879932105ada4e2123ee406a24b0e6b7f4cc4d920","gitBlob": "788de83c97d12ef71260be18c1996dae065e6e48","sourcePath": "ChatGPT_web/osm-city-drive/src/city-style.mjs"},
+    "runtime/ChatGPT_web/free-roam/site/physics.js": {"sha256": "e217ac8ffc75c3dce1159b844ea2045a0825ccc1027cc3e5ed734db9680737cd","gitBlob": "c8457bce24b270d65d2f24c94609db9169cc1927","sourcePath": "ChatGPT_web/free-roam/site/physics.js"},
+    "runtime/ChatGPT_web/free-roam/site/drive-intent.mjs": {"sha256": "61b55959a55b807a3b33eccd717142734bc5cc767828bc004a15ddc5792a2ea4","gitBlob": "bbf9c9f77ab96ca0ff96e68f84ccfe71b87434a6","sourcePath": "ChatGPT_web/free-roam/site/drive-intent.mjs"},
+    "runtime/ChatGPT_web/free-roam/site/world.js": {"sha256": "70395f3c654300cc8d6b132a67b83bbb200a0920203d4ee26ab747f3139f28ce","gitBlob": "fa14b407886175d140c7aece59caa7897e690216","sourcePath": "ChatGPT_web/free-roam/site/world.js"},
+    "index.html": {"sha256": "8b2e8af69454891bcf1d9ea9c496bedfb105a82a54697688321446ed7647079a","packagingRole": "stable Stage pointer"},
+    "PROVENANCE.md": {"sha256": "0f2178b1a3c8f5350992c9993c15410931ee10681bee8792738d51c7dca0a557","packagingRole": "public mirror provenance"},
+    "DEPLOYMENT.json": {"sha256": "b660136475991032f6eab87a12804f9bd3eaf4519eb795b1a8bbbe2b07b824b3","packagingRole": "deployment status"}
+  }
+}

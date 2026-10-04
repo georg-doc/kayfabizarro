@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.claude-design.session-cut/1",
+  "product": "WORLD-INTEGRATION-01 · WorldBuilder in der echten Welt",
+  "date": "2026-09-25T15:40:00Z",
+  "status": "BUILT · SELFTEST_PASS · HUMAN_GATE_PENDING",
+  "entryPoint": "KFB WORLD-INTEGRATION-01 · Hürth.dc.html",
+  "repoEntry": "tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html",
+  "repo": "georg-doc/kayfabizarro",
+  "base": {
+    "pr": 190,
+    "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+    "head": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
+    "wb2Design01AppBlob": "8a1e725ea83b309891eae8e0cfc87c7b2c398ccd"
+  },
+  "mainHeadRead": "a46dbdff1503 (short, as reported by the tree reader)",
+  "owners": {
+    "walker": "travel/KFB Travel Combat v25/terrain-v25/walk-controller.js @main (unchanged)",
+    "graft": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js via raw.githack @main (fallback jsDelivr @a46dbdff1503)",
+    "clips": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/* @aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+    "motionLibrary": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb @main",
+    "animationLabRule": "local KFB Animation Lab lab/locomotion.js + lab-v4/player.js + ground.js (read)",
+    "zone": "fixtures/huerth-crop-v0.json (frozen from tools/osm-city-lab/data/huerth-v0 @c049cae386e1)",
+    "cityDonors": "cartoon-city / kfb-city-v0 @c049cae386e1 · elastic-grotesque-clay @0c59e92d",
+    "sky": "travel/KFB Travel Combat v25/terrain-v25/skydome-shader.js @main via wd-sky.js"
+  },
+  "tests": {
+    "wi1Selftest": "PASS 26/26 (executed)",
+    "wb2Sandbox": "boot PASS (executed) · selftest 34/34 NOT_RUN",
+    "humanGate": "NOT_RUN"
+  }
+}

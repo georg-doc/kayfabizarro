@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.billboard-b2b-p1-source/0.1",
+  "id": "BILLBOARD-B2B-P1-2026-09-25",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
+  "baseB2a": {
+    "pr": 199,
+    "acceptedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+    "runtimeHead": "89065825448846beb2649082fc0c1bf25df20ccb",
+    "bbSceneBlob": "235b062f9d575a49a4c98d8be57d04d43acc2213",
+    "bb2aBootBlob": "95977402af7deaa96cfd37625276b210af15232b"
+  },
+  "gate1Donor": {
+    "source": "tools/KFB-ToolBox/_inbox/KFB Billboard Media Szene · B0 Source Proof/BILLBOARD_B0_SOURCE_PROOF_2026-09-24/bb-scene.js",
+    "drawCollageFaceLines": "358-401",
+    "billboardContentLines": "403-448",
+    "integration": "drawGate1CollageFace is copied verbatim and rendered first into each B2b composition"
+  },
+  "runtime": {
+    "mode": "COLLAGE",
+    "recipes": [
+      "HEADLINE_SHOCK",
+      "POSTER_STACK",
+      "SIGNAL_NOISE",
+      "ARCHIVE_FEVER"
+    ],
+    "grades": [
+      "WARM_DIRTY",
+      "COLD_PRINT",
+      "ACID_FAIRGROUND",
+      "MONO_PAPER"
+    ],
+    "treatments": [
+      "FLAT_COLLAGE",
+      "LIVING_SCREEN"
+    ],
+    "seed": 18472,
+    "canvas": "1280x720",
+    "tickFps": 12
+  },
+  "cc0Pool": "collage-provenance.json",
+  "protected": [
+    "CARD",
+    "COVER",
+    "VIDEO INLINE",
+    "SLOGAN",
+    "B2a front/rear CSS3D cull",
+    "accepted Kenney billboard body/face owner"
+  ],
+  "status": "IMPLEMENTED_NOT_TESTED",
+  "stageRoute": null,
+  "nextGate": "repository-native/browser proof"
+}

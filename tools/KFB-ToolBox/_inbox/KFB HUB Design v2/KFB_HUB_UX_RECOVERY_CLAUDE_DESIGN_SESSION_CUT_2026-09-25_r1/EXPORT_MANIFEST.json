@@ -1,0 +1,393 @@
+{
+  "schema": "kfb.claude-design-session-cut-manifest/1",
+  "exportedAt": "2026-09-25T18:44:06.442Z",
+  "root": "KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1",
+  "entryPoints": [
+    "code/KFB Hub UX Recovery v2.dc.html",
+    "code/Hub Donor Proof v2.dc.html"
+  ],
+  "files": [
+    {
+      "exportPath": "code/KFB Hub UX Recovery v2.dc.html",
+      "role": "ENTRY · Kandidat v2",
+      "size": 92258,
+      "sha256": "cf43f9847615711af1fa28dcb41054664c5c8422df51679e80ff6bc2c6dad7d1",
+      "status": "CANDIDATE",
+      "origin": "KFB Hub UX Recovery v2.dc.html",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "code/support.js",
+      "role": "DC-Runtime (von Claude Design bereitgestellt, nicht editiert)",
+      "size": 69150,
+      "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "status": "SHARED",
+      "origin": "support.js",
+      "changedThisSession": false,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "code/hub-recovery/embedded-registry-2026-09-25.js",
+      "role": "Eingebauter Registry-Fallback (Kopie registry/production/v1)",
+      "size": 268271,
+      "sha256": "053b45ec5d1df17ec8373f465f0468ba88173f3bbfddb2188792707dfa35b6c6",
+      "status": "ASSET",
+      "origin": "hub-recovery/embedded-registry-2026-09-25.js",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "code/hub-recovery/resident-overlay.v1.js",
+      "role": "Resident-Overlay v1.1 (Consumer, lädt beim Einschalten)",
+      "size": 12767,
+      "sha256": "173dde44f4c0750d835dd2ead6f1277da62fc32aaae5a5e9d28a5ea41ff2cf77",
+      "status": "CANDIDATE",
+      "origin": "hub-recovery/resident-overlay.v1.js",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "code/Hub Donor Proof v2.dc.html",
+      "role": "ENTRY · Donor-Beleg (dfaafac0 isoliert, 3 Breiten)",
+      "size": 7329,
+      "sha256": "04bf574d1144ac449ff0863d5abf8bfa57d542068578d4e4bbd196fa2898a49b",
+      "status": "FROZEN",
+      "origin": "Hub Donor Proof v2.dc.html",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "code/hub-recovery/donor/kfb-hub-v2-dfaafac.html",
+      "role": "Donor-Bytekopie kfb-hub/index.html @ dfaafac0",
+      "size": 114530,
+      "sha256": "ac89e153d396b94e6c00aae6aabc2652f732dd48c1c896e387207fe29c0e1078",
+      "status": "FROZEN",
+      "origin": "hub-recovery/donor/kfb-hub-v2-dfaafac.html",
+      "changedThisSession": false,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "code/KFB Hub UX Recovery v1.dc.html",
+      "role": "Kandidat v1 (zu kleinteilig) · Referenz",
+      "size": 82542,
+      "sha256": "585b37bafc3d4609fa4da47b87923b4af0444d84ba34aab455c1d666bebb09b0",
+      "status": "SUPERSEDED",
+      "origin": "KFB Hub UX Recovery v1.dc.html",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "docs/session/CHANGELOG.md",
+      "role": "Arbeitsdoku dieser Session (Original)",
+      "size": 4272,
+      "sha256": "877805d67a81d62ce75e2bda509ca9c71b94bce0bf0d58b85b5a7c73d054001d",
+      "status": "AKTIV",
+      "origin": "hub-recovery/CHANGELOG.md",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "docs/session/SOURCE.md",
+      "role": "Arbeitsdoku dieser Session (Original)",
+      "size": 1445,
+      "sha256": "5a720682ecb29fc48b82e090fc7f9d3ab12f710d67fee4a9568a985a116c30bd",
+      "status": "AKTIV",
+      "origin": "hub-recovery/SOURCE.md",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "docs/session/TEST_REPORT.md",
+      "role": "Arbeitsdoku dieser Session (Original)",
+      "size": 2099,
+      "sha256": "d5765c9c23a1e2882f0f744d9bd86ebba39604d85e935874d57ccb2874d82bf8",
+      "status": "AKTIV",
+      "origin": "hub-recovery/TEST_REPORT.md",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "docs/session/HANDOVER.md",
+      "role": "Arbeitsdoku dieser Session (Original)",
+      "size": 5947,
+      "sha256": "52213f9604aa4aa076afa9045d90dda8f089694817b0255658b8140a61fbe892",
+      "status": "AKTIV",
+      "origin": "hub-recovery/HANDOVER.md",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "docs/github.md",
+      "role": "Repo-Zuordnung / Last sync",
+      "size": 1161,
+      "sha256": "9d45d298baec23796ca528c3168990efee7c80f61411846ea3e7db4f9d8a1a99",
+      "status": "AKTIV",
+      "origin": "github.md",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/donor-split-909-paper.jpg",
+      "role": "Screenshot",
+      "size": 42357,
+      "sha256": "da3b884d58fa0eebe39e40eded3fcee5ba651239ade167230b03f8adc4275569",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/donor-split-909-paper.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_desktop-1440_paper.jpg",
+      "role": "Screenshot",
+      "size": 25706,
+      "sha256": "05e4983c709d12b80fd04fb91b09adbdebdb9ec16c0ba13a8983d7fb359bf30e",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_desktop-1440_paper.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_desktop-1440_dark.jpg",
+      "role": "Screenshot",
+      "size": 43027,
+      "sha256": "80b555cee3478b719e8d799cf4b1fde40030673aecb1916c4f68f4b17e90db9f",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_desktop-1440_dark.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_split-880_top.jpg",
+      "role": "Screenshot",
+      "size": 35417,
+      "sha256": "67998f5c451a6647fa82f3496d0015b2247943d741bddfed111ef1716453ef02",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_split-880_top.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_split-880_needs-running.jpg",
+      "role": "Screenshot",
+      "size": 38447,
+      "sha256": "cac0b952602df1c8722209112a9dc28126f5fcf889f4bc30fea99104a2c4b069",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_split-880_needs-running.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_mobile-390_top.jpg",
+      "role": "Screenshot",
+      "size": 25706,
+      "sha256": "05e4983c709d12b80fd04fb91b09adbdebdb9ec16c0ba13a8983d7fb359bf30e",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_mobile-390_top.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_mobile-390_needs.jpg",
+      "role": "Screenshot",
+      "size": 26752,
+      "sha256": "06a890d10c7295a6b01f6cbf27c10aae9f573778f009abbaf1682932f2a7dcb9",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_mobile-390_needs.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_resident-overlay_shadow-idle.jpg",
+      "role": "Screenshot",
+      "size": 39454,
+      "sha256": "2b40d5f42351426514c9d06645b6b60ca04441b0c3cbabcb6f6833f355f17dec",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_resident-overlay_shadow-idle.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "evidence/v2_resident-overlay_jump-clip.jpg",
+      "role": "Screenshot",
+      "size": 39681,
+      "sha256": "4d7d37efa79a02b7d420ab86c69051a93c244b28c8f84583f7b5874e51679195",
+      "status": "ASSET",
+      "origin": "hub-recovery/screenshots/v2_resident-overlay_jump-clip.jpg",
+      "changedThisSession": true,
+      "requiredToStart": false
+    },
+    {
+      "exportPath": "START_HERE.md",
+      "role": "Einstieg",
+      "size": 1187,
+      "sha256": "a4dc8e17d95c4717f9f60a46b43970a8a02d45d1c228495088d59622d90dcc94",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "RETURN.md",
+      "role": "Rückmeldung an HUB-CTRL",
+      "size": 926,
+      "sha256": "5a3b6828cedc0e4ff3bfee72ddea7f326b1dc9c27beab127ffee16d70577c796",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "HANDOVER.md",
+      "role": "Übergabe (Pflichtabschnitte A–J)",
+      "size": 4981,
+      "sha256": "cc62242bf862944c06359053a994d97ebca66d2a49641ca0d6a74ea4d9738c84",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "CURRENT_STATE.md",
+      "role": "Arbeitszustand",
+      "size": 1142,
+      "sha256": "1d1d534f7264374592ee1b35e3c1aba91601dc966f819b13e761f4b47c6c9615",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "CHANGELOG.md",
+      "role": "Aktives Changelog (Kopie von hub-recovery/CHANGELOG.md, append-only)",
+      "size": 4272,
+      "sha256": "877805d67a81d62ce75e2bda509ca9c71b94bce0bf0d58b85b5a7c73d054001d",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "HOUSEKEEPING.md",
+      "role": "Housekeeping",
+      "size": 1107,
+      "sha256": "b490cceec4a18a3d0ad1829a9d2ee764bff0b83b2187241538b266d635f4a8e2",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "SOURCE.json",
+      "role": "Source/Owner-Wahrheit",
+      "size": 3646,
+      "sha256": "c9da995830f532b156b0f89c843266b9eb47d97731217836dbb6455e221bfce6",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "TEST_REPORT.md",
+      "role": "Testbericht",
+      "size": 1872,
+      "sha256": "17ab4418c5de24f64b4a42677fffb5bcba899189e591bb301f1befccb4e406bc",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "NEXT_CHAT.md",
+      "role": "Cold Start",
+      "size": 743,
+      "sha256": "36473b39373ad0eba7fa74337eab3eace0552e08cf8089f5e68581c4f7d25a10",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "external/ASSET_REFS.md",
+      "role": "Asset-Inventar",
+      "size": 1484,
+      "sha256": "6af0dd89c214bfa5a27da1af4c45f82ada9fc5a46c36ec0f7810f4805bf2876f",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "external/NOT_EXPORTED.md",
+      "role": "Nicht exportiert",
+      "size": 291,
+      "sha256": "c8efe50e280f1e428a142607de7921c8349e93b62c9ffc16c7ef458a8b456417",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": true
+    },
+    {
+      "exportPath": "zipcheck.py",
+      "role": "Prüfscript",
+      "size": 1322,
+      "sha256": "88b6b35941222e0d9264cf0bc2e7218462e9594220da04bcb2ee6922d2923406",
+      "status": "AKTIV",
+      "origin": "generated",
+      "changedThisSession": true,
+      "requiredToStart": false
+    }
+  ],
+  "fileCount": 35,
+  "note": "fileCount includes EXPORT_MANIFEST.json and CHECKSUMS.sha256 (not self-hashed)",
+  "totalZipSize": null,
+  "totalUncompressedBytes": 1001291,
+  "externalDependencies": "external/ASSET_REFS.md",
+  "notExported": "external/NOT_EXPORTED.md",
+  "missing": [],
+  "evidence": [
+    "evidence/donor-split-909-paper.jpg",
+    "evidence/v2_desktop-1440_paper.jpg",
+    "evidence/v2_desktop-1440_dark.jpg",
+    "evidence/v2_split-880_top.jpg",
+    "evidence/v2_split-880_needs-running.jpg",
+    "evidence/v2_mobile-390_top.jpg",
+    "evidence/v2_mobile-390_needs.jpg",
+    "evidence/v2_resident-overlay_shadow-idle.jpg",
+    "evidence/v2_resident-overlay_jump-clip.jpg"
+  ],
+  "sourceRevision": {
+    "owner": "ef8dbb07032a1d148893f2e0a125e04fe90263fd",
+    "donor": "dfaafac070747f9543b5eb5a635e2aaa74e57b83",
+    "assets": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+    "registryFallback": "74c6fa5cd623dc378dec880905c6616f6a171754"
+  },
+  "activeChangelog": "CHANGELOG.md = copy of hub-recovery/CHANGELOG.md (only changelog of this strand)",
+  "checks": {
+    "requiredPresent": true,
+    "over2MB": [],
+    "localRefs": [
+      {
+        "ref": "support.js",
+        "inEntry": true,
+        "inPackage": true
+      },
+      {
+        "ref": "hub-recovery/embedded-registry-2026-09-25.js",
+        "inEntry": true,
+        "inPackage": true
+      },
+      {
+        "ref": "hub-recovery/resident-overlay.v1.js",
+        "inEntry": true,
+        "inPackage": true
+      }
+    ],
+    "zipcheckPy": "ZIPCHECK_NOT_RUN (no python); equivalent checks here",
+    "cleanRun": "CLEAN_RUN_NOT_EXECUTED"
+  },
+  "secretScan": {
+    "pattern": "/(ghp_[A-Za-z0-9]{20,}|github_pat_|api[_-]?key\\s*[:=]|secret\\s*[:=]|password\\s*[:=]|bearer\\s+[A-Za-z0-9]|Set-Cookie)/i",
+    "hits": []
+  }
+}

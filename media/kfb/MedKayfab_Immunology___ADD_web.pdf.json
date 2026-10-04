@@ -1,0 +1,561 @@
+{
+  "sourceFile": "MedKayfab_Immunology - ADD web.pdf",
+  "deckTitle": "MedKayfab: Immunology & Pathology Edition",
+  "deckType": "Medical Immunology Character Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T16:55:00",
+  "savedAt": "2026-06-19T16:55:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": ["educational", "workshop"],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Patty the Pattern Recognizer",
+      "grade": 2,
+      "power": "Sterile Alarm.",
+      "lore": "Recognizes PAMPs (microbes, e.g., flagellin via TLR5) and DAMPs (sterile danger signals). Triggers NF-kB signaling to initiate pro-inflammatory cytokine production.",
+      "gradeReason": "Named role clear, but NF-kB lore wall explains instead of invites performance.",
+      "artworkPrompt": "Style: Cartoon grotesque. Subject: Worm with binoculars scanning bacterial flags on pie crust. Mood: Alert paranoia."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Nelly the Neutrophil",
+      "grade": 1,
+      "power": "Oxidative Burst.",
+      "lore": "Arrives first via IL-8. Uses NADPH oxidase to make superoxide (HOCl). CGD patients lack this enzyme, suffering recurrent catalase-positive infections.",
+      "gradeReason": "\"First Responder\" + \"Oxidative Burst\" — you know exactly who to be and what to do.",
+      "artworkPrompt": "Style: Emergency action comic. Subject: Neutrophil firefighter sprinting into bacterial chaos spraying HOCl. Mood: Explosive urgency."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Mack the Macrophage",
+      "grade": 2,
+      "power": "Polarization.",
+      "lore": "M1 (IFN-γ-activated): kills pathogens with ROS, M2 (IL-4/IL-13-activated): promotes healing and fibrosis. Presents antigens on MHC II to CD4+ T cells.",
+      "gradeReason": "Two-state mechanic is playable but M1/M2 jargon needs context to perform.",
+      "artworkPrompt": "Style: Dual-persona portrait. Subject: Bear macrophage split between rage-mode and healing-mode with MHC II badge. Mood: Controlled duality."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Denise the Dendritic Cell",
+      "grade": 2,
+      "power": "Cross-Presentation.",
+      "lore": "The most powerful APC. Can uniquely present exogenous viral antigens on MHC I to prime naive CD8+ T cells in the lymph node.",
+      "gradeReason": "\"The Bridge\" is clear but cross-presentation MHC I/II mechanic is dense for newcomers.",
+      "artworkPrompt": "Style: Cosmic connector. Subject: Octopus-like APC bridging innate and adaptive realms in lymph node. Mood: Mysterious authority."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "NK the Natural Killer",
+      "grade": 1,
+      "power": "Missing Self Detection.",
+      "lore": "Kills virally infected or tumor cells that downregulate MHC I to hide from T cells. Uses perforin/granzyme. Performs ADCC via CD16.",
+      "gradeReason": "Kills cells hiding from T cells — instantly embody the immune hitman with no briefing.",
+      "artworkPrompt": "Style: Noir assassin. Subject: Bat-winged cell hunter stalking MHC-I-deficient tumor targets. Mood: Cold precision."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Compy the Complement",
+      "grade": 1,
+      "power": "The Unstoppable Cascade.",
+      "lore": "Classical, Lectin, and Alternative pathways converge on C3b opsonization and C5b-9 (MAC lysis). Regulated by CD55 (DAF) and CD59.",
+      "gradeReason": "\"Unstoppable Cascade\" from three lanes — domino metaphor plays itself at the table.",
+      "artworkPrompt": "Style: Domino action cartoon. Subject: Three-headed centipede triggering chain destruction ending in MAC pore. Mood: Inevitable momentum."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Anna Anaphylatoxin",
+      "grade": 1,
+      "power": "C3a: Panic. C5a: Chaos.",
+      "lore": "The alarm signals. C3a strongly attracts neutrophils and triggers mast cells. In sepsis, massive C5a causes simultaneous inflammation and neutrophil immunosuppression.",
+      "gradeReason": "Power says what to do — \"Panic\" then \"Chaos.\" Two acts, perfectly scripted.",
+      "artworkPrompt": "Style: Alarm-cartoon escalation. Subject: Monkey throwing panic grenades at mast cells while C5a tornado forms. Mood: Escalating panic."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Interferoni the Type I Interferon",
+      "grade": 2,
+      "power": "Viral Early Warning.",
+      "lore": "Triggered by viral nucleic acids. Signals via JAK-STAT to upregulate PKR (blocks viral translation) and increase MHC I expression on adjacent cells.",
+      "gradeReason": "\"Early Warning\" role is clear but JAK-STAT-PKR-MHC I chain is explaining not inviting.",
+      "artworkPrompt": "Style: Cartoon broadcast tower. Subject: Parrot sounding cGAS-STING alarm across cellular neighborhood. Mood: Alert broadcast."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Infla the Inflammation",
+      "grade": 1,
+      "power": "Controlled Chaos.",
+      "lore": "Vasodilation (histamine) → Permeability (bradykinin) → Diapedesis (selectins/integrins). Resolves via IL-10/TGF-β or progresses to chronic fibrosis.",
+      "gradeReason": "Five cardinal signs on the card — quiz mechanic built in, perform each one at the table.",
+      "artworkPrompt": "Style: Five-headed fire-and-water explosion. Subject: Dragon manifesting redness/heat/swelling/pain/loss of function simultaneously. Mood: Orchestrated mayhem."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Granny Granuloma",
+      "grade": 1,
+      "power": "The Walled Garden.",
+      "lore": "Built by macrophages + Th1 cells (IFN-γ) when acute clearance fails. Anti-TNF therapy (infliximab) destroys the wall, risking fatal reactivation of latent Tb.",
+      "gradeReason": "\"Walled Garden\" grandma locking away what she can't kill — total character, zero explanation needed.",
+      "artworkPrompt": "Style: Cozy horror. Subject: Grandmother tortoise building fortified stone wall around sleeping TB bacteria. Mood: Deceptive warmth."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Tommy T Cell",
+      "grade": 2,
+      "power": "The Two-Signal Verification.",
+      "lore": "Signal 1 = TCR + MHC. Signal 2 = Co-stimulation (CD28 + CD80/86). Without Signal 2, the T cell enters anergy (permanent shutdown).",
+      "gradeReason": "Two-signal mechanic is clean but the anergy-as-shutdown consequence needs prior context.",
+      "artworkPrompt": "Style: Security checkpoint cartoon. Subject: Bulldog T cell demanding two ID badges before activating or shutting down forever. Mood: Cautious bureaucracy."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Theo Th1",
+      "grade": 2,
+      "power": "Macrophage Recruitment.",
+      "lore": "Fights intracellular pathogens. Secretes IFN-γ to supercharge macrophages and upregulate MHC II. Drives delayed-type hypersensitivity and autoimmune tissue damage.",
+      "gradeReason": "\"Macrophage Recruitment\" is a role but IFN-γ supercharge landing needs IL-12 upstream context.",
+      "artworkPrompt": "Style: Military commander cartoon. Subject: Bulldog general rallying macrophage troops with IFN-γ bullhorn. Mood: Grim determination."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Tara Th2",
+      "grade": 2,
+      "power": "Parasite Purge.",
+      "lore": "Driven by IL-4. Secretes IL-4 (IgE class switch), IL-5 (eosinophil activation), and IL-13. The primary driver of Type I hypersensitivity (allergy/asthma).",
+      "gradeReason": "\"Parasite Purge\" is a role but cytokine alphabet needs prior taxonomy to land cold.",
+      "artworkPrompt": "Style: Pastoral action cartoon. Subject: Shepherd girl summoning eosinophil worm-hunters via IL-5 signal. Mood: Sweet but pathologically dangerous."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Rex Treg",
+      "grade": 1,
+      "power": "Civil War Prevention.",
+      "lore": "Suppresses immunity via IL-10, TGF-β, and CTLA-4 contact. FoxP3 mutation causes IPEX syndrome (lethal multi-organ autoimmunity in infant boys).",
+      "gradeReason": "\"Peacekeeper\" who stops civil war — instantly who you are and what you do at the table.",
+      "artworkPrompt": "Style: Calm authoritarian diplomat. Subject: Sloth general in blue beret separating fighting immune cells with CTLA-4 shield. Mood: Restrained dominance."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Barb B Cell",
+      "grade": 2,
+      "power": "Class Switch Recombination.",
+      "lore": "AID enzyme alters heavy chains. T-cell help (CD40L) is required for memory and switching. BTK mutation causes X-linked agammaglobulinemia (no mature B cells).",
+      "gradeReason": "\"Class Switch\" mechanic is solid but AID/BTK consequence chain needs background to perform.",
+      "artworkPrompt": "Style: Costume-change anime. Subject: Beaver B cell swapping armor types from IgM to IgG to IgA via AID. Mood: Adaptive elegance."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Iggy Immunoglobulin",
+      "grade": 2,
+      "power": "Fc Effector Module Swapping.",
+      "lore": "IgM (pentamer, immediate complement activator), IgG (most abundant, crosses placenta), IgA (dimer, mucosal), IgE (mast cell bound, allergies).",
+      "gradeReason": "\"5 Modular Outfits\" is fun but four isotype rules make it reference card over performance card.",
+      "artworkPrompt": "Style: Modular suit showcase. Subject: Chameleon immunoglobulin in five different armor outfits on rotating stand. Mood: Professional versatility."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Sadie the Cytotoxic T Cell",
+      "grade": 1,
+      "power": "Perforin Punch.",
+      "lore": "Recognizes antigens on MHC I. Kills via perforin (pores) + granzyme B (apoptosis). PD-1/PD-L1 checkpoint exhaustion in tumors.",
+      "gradeReason": "Sniper with a punch — \"Perforin Punch\" tells you the move the moment you read it.",
+      "artworkPrompt": "Style: Assassin action comic. Subject: CD8+ sniper cell punching holes in MHC-I-displaying tumor cells. Mood: Precise lethal efficiency."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Memo the Memory Cell",
+      "grade": 1,
+      "power": "Rapid Recall.",
+      "lore": "Lower activation threshold, larger clone size, and tissue-resident persistence (TRM cells). Basis of vaccine immunity and the germinal center reaction.",
+      "gradeReason": "Elephant memory metaphor + \"Rapid Recall\" — pure performance, zero explanation needed.",
+      "artworkPrompt": "Style: Military veteran portrait. Subject: Elephant soldier in filing room instantly recognizing old enemy pathogen. Mood: Confident battle readiness."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Cyndy Cytokine",
+      "grade": 2,
+      "power": "Escalation.",
+      "lore": "IL-8: neutrophil by NLRP3 inflammasome. IL-6 drives CRP in liver, elevated in COVID-19. TNF-α drives cachexia and sepsis. Suppressed by IL-10.",
+      "gradeReason": "\"Escalation\" lands but three-cytokine alphabet tour is encyclopedic not theatrical.",
+      "artworkPrompt": "Style: Alarm cascade cartoon. Subject: Messenger bird chain-launching escalating cytokine alerts toward liver and blood. Mood: Mounting urgency."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Kylie Cytokine Storm",
+      "grade": 1,
+      "power": "Hyperferritinemic Rampage.",
+      "lore": "Uncontrolled IL-6, IFN-γ, macrophage amplification. In primary HLH, missing lymphocyte perforin prevents CTLs from shutting off the loop.",
+      "gradeReason": "\"Hyperferritinemic Rampage\" — you're a bear in a tornado. Absolute theater.",
+      "artworkPrompt": "Style: Disaster rampage. Subject: Manic bear-twister destroying everything in unstoppable cytokine feedback loop. Mood: Catastrophic frenzy."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Gell and Coombs",
+      "grade": 2,
+      "power": "The Four Mischiefs.",
+      "lore": "I: Immediate IgE. II: Antibody-mediated surface cytotoxicity. III: Soluble immune complex depositing in tissues. IV: Delayed cell-activated (48-72h).",
+      "gradeReason": "Four-mischief taxonomy is memorable but needs prior exposure to fire each mechanism cold.",
+      "artworkPrompt": "Style: Taxonomist portrait duo. Subject: Two owl scholars cataloguing four types of immune sabotage in leather journals. Mood: Dry academic menace."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Ana Anaphylaxis",
+      "grade": 1,
+      "power": "Immediate Degranulation.",
+      "lore": "Allergen cross-links IgE on mast cells. Preformed histamine causes immediate vasodilation/bronchoconstriction. Epinephrine 1:1000 IM is the only first-line rescue (reverses shock via α1/β1/β2).",
+      "gradeReason": "Epinephrine dose right on card — embody mast cell and ER nurse simultaneously.",
+      "artworkPrompt": "Style: Emergency explosion comic. Subject: Hedgehog mast cell erupting histamine at cross-linked IgE antenna. Mood: Immediate life-or-death urgency."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Hemo the Hemolytic",
+      "grade": 1,
+      "power": "Friendly Fire MAC.",
+      "lore": "Antibodies attack specific cell surfaces. Causes Goodpasture's (anti-GBM), Autoimmune Hemolytic Anemia, and Myasthenia Gravis (receptor blockade without direct lysis).",
+      "gradeReason": "\"Friendly Fire\" — you know instantly the antibody shot the wrong target. No further coaching.",
+      "artworkPrompt": "Style: Battlefield tragedy. Subject: Antibody sniper accidentally shooting own red blood cell through scope. Mood: Tragic friendly fire."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Icko Immune Complex",
+      "grade": 2,
+      "power": "Glomerular Trap.",
+      "lore": "IgG complexes form in blood during antigen excess. They deposit in small vessels (glomeruli, synovium) = complement activation + neutrophil destruction (e.g., SLE, Serum Sickness).",
+      "gradeReason": "\"Glomerular Trap\" is vivid but antigen-excess deposition chain needs SLE context first.",
+      "artworkPrompt": "Style: Plumbing disaster cartoon. Subject: Antibody-antigen clusters clogging glomerular pipes triggering complement demolition crew. Mood: Slow catastrophic accumulation."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Della Delayed",
+      "grade": 2,
+      "power": "Th1 Grudge.",
+      "lore": "Cell-mediated, no antibodies! CD4+ Th1 cells recognize antigen, secrete IFN-γ, and activate macrophages. Drives contact dermatitis, tuberculin skin test, and Type 1 Diabetes.",
+      "gradeReason": "\"48-72 Hour Peak\" timing mechanic is clever; \"Grudge\" character is solid but lore is heavy.",
+      "artworkPrompt": "Style: Slow-burn revenge cartoon. Subject: Snail Th1 cell holding grudge, arriving 48 hours late fully armed. Mood: Delayed inevitability."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Allie Allergy",
+      "grade": 2,
+      "power": "The Allergic March.",
+      "lore": "Epithelial defect → Th2 dominance (IL-4/IL-5/IL-13). Allergen immunotherapy desensitizes by shifting the response from Th2 to Treg and inducing IgG4 blocking antibodies.",
+      "gradeReason": "\"Allergic March\" performs if you know the clinical term; bewildering if you don't.",
+      "artworkPrompt": "Style: Parade-gone-wrong cartoon. Subject: Skunk leading eczema-to-asthma march through body with IL-4 banner. Mood: Unstoppable allergic progression."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Masto the Mast Cell",
+      "grade": 2,
+      "power": "Leukotriene Sustenance.",
+      "lore": "Activation releases preformed histamine (minutes). Newly synthesized leukotrienes (hours later) cause bronchoconstriction 1000x more potent than histamine. Blocked by montelukast.",
+      "gradeReason": "Two-wave mechanic is teachable but \"Leukotriene Sustenance\" doesn't grab performers cold.",
+      "artworkPrompt": "Style: Two-stage bomb cartoon. Subject: Mast cell detonating histamine now, leukotrienes later in sustained bronchial assault. Mood: Staggered detonation."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Eosie the Eosinophil",
+      "grade": 2,
+      "power": "Major Basic Toxicity.",
+      "lore": "Releases Major Basic Protein (MBP) to kill helminths. Driven by IL-5 (Blocked therapeutically by mepolizumab). Causes tissue remodeling in asthma and Hypereosinophilic Syndrome.",
+      "gradeReason": "\"Toxicity\" mechanic is clear but MBP/IL-5/HES triple-tag buries the performance cue.",
+      "artworkPrompt": "Style: Tropical pest exterminator. Subject: Pink cobra spraying Major Basic Protein venom at helminth parasites. Mood: Toxic specialist efficiency."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Lupi the Lupus",
+      "grade": 1,
+      "power": "The Great Imitator.",
+      "lore": "Defective apoptotic cell clearance exposes nuclear antigens. TLR9/TLR7 activate Type I IFN and autoantibody production. Treat all patients with hydroxychloroquine.",
+      "gradeReason": "\"Great Imitator\" — classic identity. You ARE the disease that looks like everything else.",
+      "artworkPrompt": "Style: Disguise-master portrait. Subject: Fox in butterfly-rash mask mimicking seventeen different diseases. Mood: Theatrical deception."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Rhea Rheumatoid",
+      "grade": 2,
+      "power": "Pannus Invasion.",
+      "lore": "Synovial inflammation drives invasive pannus formation → cartilage/bone erosion. Anti-CCP antibodies (ACPA) are highly specific. Synovial fluid is neutrophil-rich with low glucose.",
+      "gradeReason": "\"Pannus Invasion\" is a solid action but pannus-concept needs prior anatomy grounding.",
+      "artworkPrompt": "Style: Gothic military invasion. Subject: Synovial tissue general eroding joint cartilage castle under HLA-DR4 banner. Mood: Relentless joint erosion."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Sid Sjögren",
+      "grade": 1,
+      "power": "Glandular Drought.",
+      "lore": "Lymphocytic infiltration destroys salivary/lacrimal glands (anti-Ro/SSA, anti-La/SSB). Causes extreme xerostomia/dry eyes, and can cause Type 1 Renal Tubular Acidosis.",
+      "gradeReason": "\"Glandular Drought\" — perform the desert mouth, the sandy eyes. Completely vivid.",
+      "artworkPrompt": "Style: Desert disaster portrait. Subject: Camel with cracked salivary glands and dry tear ducts in parched landscape. Mood: Arid glandular devastation."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Scleroder Max",
+      "grade": 2,
+      "power": "Fibrosis Architecture.",
+      "lore": "Endothelial injury → Raynaud's → TGF-β driven fibrosis. Diffuse (anti-Scl-70, early ILD) vs. Limited (anti-centromere). Renal crisis MUST be treated with ACE inhibitors despite AKI.",
+      "gradeReason": "\"Fibrosis Architecture\" is evocative but Diffuse/Limited antibody split needs prior mnemonics.",
+      "artworkPrompt": "Style: Armadillo fortress portrait. Subject: Armored armadillo building fibrotic skin walls over Raynaud's color-changing landscape. Mood: Rigid systemic entrapment."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Inflamma the Myopathy",
+      "grade": 2,
+      "power": "CD8+ Friendly Fire.",
+      "lore": "Polymyositis: CD8+ CTLs destroy muscle expressing aberrant MHC I. Dermatomyositis: Type I IFN drives microangiopathy (Gottron's papules, heliotrope rash). Anti-Jo-1 = antisynthetase syndrome.",
+      "gradeReason": "\"Friendly Fire\" callback is solid but poly vs. dermato diagnostic split needs a key.",
+      "artworkPrompt": "Style: Self-destruction action. Subject: Honey badger CTL attacking own muscle fibers with heliotrope rash markings. Mood: Painful autoimmune self-attack."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Vascy Vasculitis",
+      "grade": 2,
+      "power": "Caliber Classification.",
+      "lore": "Large (Giant Cell Arteritis = blindness risk, immediate steroids). Medium (PAN, Kawasaki). Small (ANCA-associated: GPA/Wegener's = PR3; MPA = MPO).",
+      "gradeReason": "Three-tier caliber sorting is logical but GPA/MPA acronym wall defeats cold performers.",
+      "artworkPrompt": "Style: Anatomical pipe diagram. Subject: Snake threading through large/medium/small vessels with targeted inflammatory damage. Mood: Infrastructure assault."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Betty B27",
+      "grade": 1,
+      "power": "The Backdoor Spondyloarthropathy.",
+      "lore": "HLA-B27 misfolding triggers the IL-23/IL-17 axis. Causes AS, Psoriatic, Reactive (can't see, pee, climb a tree), and IBD-arthritis. Sacroiliitis and enthesitis are hallmarks.",
+      "gradeReason": "\"Can't see, pee, climb a tree\" mnemonic — you'll never forget it or stop performing it.",
+      "artworkPrompt": "Style: Mnemonic comedy. Subject: Chameleon unable to see, pee, or climb a bent-spine bamboo. Mood: Absurdist educational theater."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Thyra Thyroid",
+      "grade": 2,
+      "power": "Receptor Mimicry.",
+      "lore": "Hashimoto's: Th1-mediated destruction → hypothyroidism. Graves' IgG mimics TSH, continually activating the receptor → hyperthyroidism and proptosis (orbital fibroblasts express TSH-R).",
+      "gradeReason": "Graves vs Hashimoto duality works but TSH-R/proptosis mechanism is explanation not invitation.",
+      "artworkPrompt": "Style: Jekyll-and-Hyde portrait. Subject: Bird split between sluggish hypothyroid and bulging-eyed hyperthyroid extremes. Mood: Hormonal dramatic contrast."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Diab the Type 1",
+      "grade": 1,
+      "power": "The Honeymoon Illusion.",
+      "lore": "CD8+ T cell-mediated destruction of beta cells. Anti-GAD65/IA-2 are markers, not the pathogenic drivers. Teplizumab (anti-CD3) can delay clinical onset in high-risk patients.",
+      "gradeReason": "\"Honeymoon Illusion\" — perform the false calm before the beta-cell crash. Brilliant framing.",
+      "artworkPrompt": "Style: Bittersweet romance tragedy. Subject: Bee in tuxedo destroying honeycomb pancreas while smiling at false plateau. Mood: Deceptive sweetness."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Good the Goodpasture",
+      "grade": 2,
+      "power": "Linear IF Strike.",
+      "lore": "IgG antibodies directly attack the GBM/alveolar membrane. Causes pulmonary hemorrhage + Rapidly Progressive GN. Immunofluorescence shows smooth, LINEAR IgG deposition.",
+      "gradeReason": "\"Linear IF Strike\" is precise but requires knowing IF pattern distinction — G2 for pre-context.",
+      "artworkPrompt": "Style: Direct strike cartoon. Subject: Mole antibody hammering straight linear lines across kidney basement membrane. Mood: Relentless linear assault."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Scid the Severe Combined",
+      "grade": 2,
+      "power": "Complete Void.",
+      "lore": "Complete failure of T-cell development (and often B/NK cells). Fatal if given live vaccines (e.g., BCG-fatal). Maternal T-cells crossing the placenta can cause fatal GVHD in the infant.",
+      "gradeReason": "\"Complete Void\" is performable but BCG-fatal/GVHD warnings are safety lore, not character beats.",
+      "artworkPrompt": "Style: Empty void portrait. Subject: Penguin chick in sterile bubble with zero immune cells to deploy. Mood: Defenseless isolation."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Aggie Agammaglobulinemia",
+      "grade": 2,
+      "power": "Encapsulated Vulnerability.",
+      "lore": "Pro-B fails to transition to pre-B. No mature B cells, no tonsils, no germinal centers. Highly susceptible to encapsulated bacteria (pneumococcus, H. influenzae) after maternal IgG fades at 6 months.",
+      "gradeReason": "\"Encapsulated Vulnerability\" is precise but the 6-month maternal IgG fade is lore not action.",
+      "artworkPrompt": "Style: Sad vulnerability cartoon. Subject: Hatching penguin without antibody shield facing armored pneumococcus at 6 months. Mood: Defenseless exposure."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Cody Common Variable",
+      "grade": 2,
+      "power": "Late-Onset Failure.",
+      "lore": "Normal B-cell numbers but defective antibody production (low IgG/IgA). Paradoxically presents with recurrent sinopulmonary infections, severe autoimmunity (cytopenias), and highly increased lymphoma risk.",
+      "gradeReason": "\"Late-Onset Failure\" + paradox framing is clever but triple-threat presentation needs guidance.",
+      "artworkPrompt": "Style: Late-blooming failure portrait. Subject: Ostrich with full B-cell army that forgot to manufacture antibody bullets. Mood: Baffling inadequacy."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Comple Complement Deficiency",
+      "grade": 1,
+      "power": "Neisseria Target.",
+      "lore": "MAC deficiency (C5-C9) specifically predisposes to meningococcal/gonococcal infections. C1-INH deficiency causes bradykinin-driven hereditary angioedema (unresponsive to epinephrine).",
+      "gradeReason": "One deficiency, one pathogen, one mnemonic. Textbook G1.",
+      "artworkPrompt": "Style: Bullseye targeting. Subject: Broken complement chain with Neisseria freely dancing through the C5-C9 gap. Mood: Precise predatory vulnerability."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Trans the Transplant",
+      "grade": 2,
+      "power": "Graft-vs-Host Betrayal.",
+      "lore": "Hyperacute rejection is driven by preformed donor-specific antibodies (prevented by crossmatching). GVHD occurs when donor T-cells attack recipient tissues (skin, gut, liver).",
+      "gradeReason": "\"Betrayal\" framing is theatrical but hyperacute/acute/chronic timeline needs scaffolding.",
+      "artworkPrompt": "Style: Double-cross thriller. Subject: Donor T cell turning on recipient skin, gut, and liver after inside job. Mood: Calculated insider betrayal."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Cyclo the Cyclosporin & Tacrolimus",
+      "grade": 2,
+      "power": "Calcineurin Blockade.",
+      "lore": "Bind cyclophilin/FKBP12 → inhibit calcineurin → block NFAT dephosphorylation → prevent IL-2 transcription. Highly nephrotoxic (afferent arteriolar constriction).",
+      "gradeReason": "Chain mechanism is logical but cyclophilin-FKBP-calcineurin-NFAT cascade is memorize not perform.",
+      "artworkPrompt": "Style: Molecular lock-and-key cartoon. Subject: Frog with wrench jamming calcineurin gear to silence IL-2 transcription. Mood: Surgical suppression."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Rapa the mTOR",
+      "grade": 2,
+      "power": "G1-S Barricade.",
+      "lore": "Binds FKBP12 to inhibit mTOR. Blocks IL-2-driven T-cell proliferation (not production). Non-nephrotoxic. Impairs wound healing, used post-transplant and for CAR-[T].",
+      "gradeReason": "\"Barricade\" is actionable but mTOR/FKBP12 disambiguation from Tacrolimus needs context.",
+      "artworkPrompt": "Style: Roadblock action. Subject: Rhinoceros stop-sign blocking G1-to-S cell cycle checkpoint non-nephrotoxically. Mood: Immovable proliferation obstruction."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Myco the Mycophenolate",
+      "grade": 2,
+      "power": "De Novo Starvation.",
+      "lore": "Inhibits inosine monophosphate dehydrogenase (IMPDH). Selectively starves T and B cells, which uniquely rely entirely on de novo purine synthesis and lack a salvage pathway. Teratogenic.",
+      "gradeReason": "\"De Novo Starvation\" is memorable but IMPDH selectivity logic needs prior purine-path context.",
+      "artworkPrompt": "Style: Famine strategy cartoon. Subject: Vulture cutting off lymphocyte purine supply line while leaving other cells unharmed. Mood: Cold metabolic siege."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Anti-TNF the Alliance",
+      "grade": 2,
+      "power": "Granuloma Breaker.",
+      "lore": "Blocks TNF-α signaling. Highly effective for RA and IBD. Because TNF maintains granulomas, blockade risks fatal reactivation of latent TB. (Etanercept is a decoy receptor, fails in IBD).",
+      "gradeReason": "\"Granuloma Breaker\" is vivid but TB-reactivation risk requires Granny Granuloma context.",
+      "artworkPrompt": "Style: Alliance action cartoon. Subject: Dragon duo smashing TNF wall but cracking open Granny's latent TB vault. Mood: Powerful with hidden catastrophic risk."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Check the Checkpoint",
+      "grade": 1,
+      "power": "Brake Release.",
+      "lore": "Anti-CTLA-4 (Ipilimumab) and anti-PD-1 (pembrolizumab) remove inhibitory brakes on T-cells to fight tumors. Causes severe immune-related adverse events (irAEs) like colitis and pneumonitis.",
+      "gradeReason": "\"Brake Release\" — pull the handbrake off, watch the immune system destroy tumors and everything else.",
+      "artworkPrompt": "Style: Race car sabotage. Subject: T cell with cut brakes racing full speed toward tumor, destroying colitis bystanders. Mood: Reckless liberation."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Jak the JAK Inhibitor",
+      "grade": 2,
+      "power": "Multi-Cytokine Silence.",
+      "lore": "Blocks intracellular JAK-STAT signaling, silencing dozens of cytokine signals simultaneously. Causes high risk of Varicella Zoster (shingles) reactivation—check immunity before starting.",
+      "gradeReason": "\"Silence\" metaphor is strong but silencing \"dozens of signals\" is abstract without a target.",
+      "artworkPrompt": "Style: Signal-jamming cartoon. Subject: Beaver damming intracellular cytokine river while shingles virus sneaks through unguarded. Mood: Broad suppression with hidden cost."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "IL-17 Ivan",
+      "grade": 2,
+      "power": "Epithelial Bodyguard.",
+      "lore": "IL-17 (from Th17) drives psoriasis and ankylosing spondylitis (axSpA). Anti-IL-17A is effective in skin/joints but worsens Inflammatory Bowel Disease because IL-17 is protective in the GI mucosa.",
+      "gradeReason": "\"Bodyguard\" role and \"Worsens IBD\" warning creates dual-identity needing two separate contexts.",
+      "artworkPrompt": "Style: Dual-role bodyguard. Subject: Dinosaur guard protecting skin and spine but inadvertently attacking own gut lining. Mood: Protective with hidden danger."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Cell the Cellular Pathology",
+      "grade": 3,
+      "power": "Adaptation.",
+      "lore": "Apoptosis is clean. Necrosis is inflammatory. Coagulative necrosis (ischemia) leaves ghost outlines. Liquefactive necrosis (brain/abscesses) causes enzymatic self-digestion.",
+      "gradeReason": "\"Adaptation.\" is a noun, not an action. Four morphologies listed, zero invitation to perform.",
+      "artworkPrompt": "Style: Pathology textbook illustration. Subject: Cell in four simultaneous death poses — coagulative, liquefactive, caseous, fat. Mood: Cold clinical taxonomy."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Nec Necroptosis & Pyroptosis",
+      "grade": 2,
+      "power": "Programmed Inflammation.",
+      "lore": "Death that shouts. Pyroptosis: inflammasome → caspase-1 → IL-1β release via gasdermin pores. Gain-of-function NLRP3 mutations cause CAPS (treat with anakinra).",
+      "gradeReason": "\"Death that shouts\" is G1 writing but gasdermin-NLRP3-CAPS chain immediately buries it.",
+      "artworkPrompt": "Style: Explosive inflammatory death. Subject: Cell exploding through gasdermin pores, shouting IL-1β cytokines in all directions. Mood: Loud programmed destruction."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Ferri the Fibrosis",
+      "grade": 2,
+      "power": "Rogue Healing.",
+      "lore": "Persistent TGF-β signaling activates Smad2/3 → fibroblast-to-myofibroblast transition → excessive architectural collagen (e.g., IPF, Cirrhosis). Pirfenidone blocks this pathway.",
+      "gradeReason": "\"Rogue Healing\" is a good villain concept but Smad2/3-myofibroblast chain explains not invites.",
+      "artworkPrompt": "Style: Overgrown factory. Subject: Spider weaving obsessive scar tissue over healthy lung with TGF-β silk thread. Mood: Relentless biological overbuilding."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Onco the Oncogenesis",
+      "grade": 1,
+      "power": "The Ten Broken Rules.",
+      "lore": "Hallmarks include immune evasion, replicative immortality, and the Warburg effect (aerobic glycolysis). Tumors actively recruit M2 macrophages and Tregs to suppress the local immune response.",
+      "gradeReason": "\"Ten Broken Rules\" turns cancer hallmarks into a game — enumerate them all at the table.",
+      "artworkPrompt": "Style: Rogue lawbreaker portrait. Subject: Octopus tumor systematically smashing ten immune rulebooks with Warburg glow. Mood: Anarchic immortal menace."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Immunology Attending",
+      "grade": 2,
+      "power": "Master Clinical Synthesis.",
+      "lore": "The ultimate quest: Every drug, mechanism, and pathology card interacts. If you give Anti-TNF to a RA patient, you disable Granny Granuloma. If you lack BTK, you lose Barb B-Cell.",
+      "gradeReason": "\"Master Synthesis\" meta-card is powerful for experienced players, bewildering for newcomers.",
+      "artworkPrompt": "Style: Wise professor portrait. Subject: Owl attending in white coat connecting entire immune web with case-study chalk lines. Mood: Authoritative clinical synthesis."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "FrizzleBob's Kayfabe Biologic Matrix",
+      "grade": 3,
+      "power": null,
+      "lore": "Anti-TNF (Infliximab/Adalimumab): TNF-α → RA, Crohn's, Psoriasis | Reactivates TB. JAK Inhibitor (Tofacitinib): JAK-STAT → RA, UC | Shingles (VZV) Reactivation. Anti-IL-17 (Secukinumab): IL-17A → Ankylosing Spondylitis | Worsens IBD. Anti-IL-4Rα (Dupilumab): Th2 Axis → Asthma, Atopic Derm | Eosinophilia (transient).",
+      "gradeReason": "Pure reference table — no character, no power, no invitation to perform anything.",
+      "artworkPrompt": "Style: Kayfabizarro infographic. Subject: FrizzleBob rabbit in lab coat presenting biologic drug comparison matrix. Mood: Educational summary reference."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {"G1": 19, "G2": 35, "G3": 2},
+  "overallScore": 8,
+  "verdict": "The Immunology & Pathology ADD deck is FrizzleBob's most medically comprehensive hit — 56 character cards covering innate immunity, adaptive immunity, autoimmune disease, and biologics with surgical precision and genuine theatrical flair. Top cards (Granny Granuloma, Betty B27's \"can't see pee climb a tree,\" Rex Treg, Ana Anaphylaxis) are pure table theater. The bottom tier — particularly Card 51 and Card 56 — anchors in explanation-mode rather than invitation-mode. Fix the two G3s and this deck ships clean. Table-ready: Y.",
+  "blurb": "56 character cards covering immune cells, autoimmunity, and biologics — built for medical students who learn by performing, not memorizing. FrizzleBob makes immunology stick.",
+  "viralScore": 8,
+  "qa": {"readability": 8, "artworkConsistency": 9, "overall": 8},
+  "coverQA": {
+    "coverVisual": "5 — Full-chaos FrizzleBob medical rampage illustration with rabbit, EPISTEMIC SABOTAGE badges, high energy",
+    "coverTitle": "5 — Bold, clear, immediately communicates scope: Immunology & Pathology Edition",
+    "coverVibeMatch": "5 — Perfect alignment between chaos-medicine tone and card content throughout",
+    "coverOriginality": "4 — Strong but follows established FrizzleBob/Kayfabizarro template",
+    "coverViral": "4 — Medical student would absolutely repost this, distinctive visual language",
+    "coverScore": 4.6,
+    "coverNote": "One of the stronger MedKayfab covers — the EPISTEMIC SABOTAGE and CHAOS MEDICINE badge callouts signal the tone immediately. The Uncle FrizzleBob byline anchors it to the universe. Rabbit-with-stethoscope energy is fully on-brand."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "Filename 'ADD' likely indicates this is an add-on/addendum to a base MedKayfab deck. Cards 1-16 (pages 2-5) appear unnumbered while cards 17-56 carry explicit card numbers — suggesting pages 2-5 may reprint core cards from a base deck for standalone usability. No RAF dice boxes detected. Decorative fonts baked into power text but remain readable. Card 56 (Biologic Matrix) is a reference table rather than a standard character card. 'KayfaBINGO' callout visible on page 3. Image-based PDF, no extractable text layer.",
+  "topCards": ["Granny Granuloma", "Betty B27", "Rex Treg"],
+  "worstCards": ["Cell the Cellular Pathology", "FrizzleBob's Kayfabe Biologic Matrix"],
+  "todos": {
+    "urgent": [
+      "Card 56 (Biologic Matrix) is a reference table, not a performative card — convert to character format or remove",
+      "Card 51 power 'Adaptation.' is a noun not an action — rewrite as performable prompt"
+    ],
+    "quickWins": [
+      "Add card numbers to pages 2-5 (cards 1-16 currently unnumbered)",
+      "Rename 'Cell the Cellular Pathology' to a personality-driven character name"
+    ],
+    "niceToHave": [
+      "Expand Card 56 Matrix into 4 individual biologic drug character cards",
+      "Add FrizzleBob narrative bridges between sections (innate → adaptive → autoimmune → drugs)"
+    ]
+  },
+  "hashtags": ["#MedKayfab", "#Immunology", "#Kayfabizarro", "#MedStudy", "#USMLEPrep", "#Pathology", "#MedTwitter"],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": ["classroom", "workshop", "conference"],
+  "channels": ["Gumroad", "TikTok", "Instagram", "Substack"]
+}

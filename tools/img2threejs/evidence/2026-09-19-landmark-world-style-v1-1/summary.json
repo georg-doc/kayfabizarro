@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.landmark-world-style-v1.1.environment-decision/1.0",
+  "date": "2026-09-19",
+  "decision": "OSM City Lab is the default landmark review environment",
+  "sourceHeadBeforeDecision": "72e6eae20699c605c015514600d1ecec792ee127",
+  "sourceHeadAfterImplementation": "dc6d4303d18cf5aae4a668d3a155bdf06242548e",
+  "checksPassed": 6,
+  "checksTotal": 6,
+  "checks": [
+    {
+      "id": "profiles.defaultEnvironment.osm",
+      "pass": true
+    },
+    {
+      "id": "profiles.osmDefaultRule",
+      "pass": true
+    },
+    {
+      "id": "profiles.travelAlternateRule",
+      "pass": true
+    },
+    {
+      "id": "viewer.readsProfileDefault",
+      "pass": true
+    },
+    {
+      "id": "osmBridge.background",
+      "pass": true,
+      "value": "#c6d7dc"
+    },
+    {
+      "id": "osmBridge.lightRig",
+      "pass": true,
+      "value": "Hemisphere #ffffff/#58605b @2.2 + Sun #fff2d6 @2.7"
+    }
+  ],
+  "boundaries": {
+    "landmarkShapeDefault": "city-grotesque",
+    "osmCityOwnDefault": "cartoon (unchanged)",
+    "travelEnvironment": "retained as alternate review mode",
+    "deployment": "not claimed",
+    "browserPass": "not rerun for this metadata/default change"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.public-app-manifest/0.1",
+  "build": "STUNT-WORLD-TRACK-RIBBON-ST01-20260919",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "testedRaceCommit": "9d67a259e496f2f2fdbbf3940553446fae20890a",
+  "files": {
+    "FLOW_LOOP_RECIPE_A0.json": {
+      "sourcePath": "ChatGPT_web/track-lab/FLOW_LOOP_RECIPE_A0.json",
+      "gitBlob": "de9b372b90af0ff0cd2723c2fc2dac2771fd7648"
+    },
+    "site/feel-lab-st01.mjs": {
+      "sourcePath": "ChatGPT_web/track-lab/site/feel-lab-st01.mjs",
+      "gitBlob": "1b0d51759a1681279de9c28ba594b720db2913d8"
+    },
+    "site/RACE_TRACK_ST01_CONFIG.json": {
+      "sourcePath": "ChatGPT_web/track-lab/site/RACE_TRACK_ST01_CONFIG.json",
+      "gitBlob": "f0d3eea42d81220c901c40e7ae14095ccc5aa5e7"
+    },
+    "site/RACE_FEEL_V08_CONFIG.json": {
+      "sourcePath": "ChatGPT_web/track-lab/site/RACE_FEEL_V08_CONFIG.json",
+      "gitBlob": "38afec4b9eafab0934a82c5b751cca5e5d7c6f83"
+    },
+    "site/RACE_FLOW_RUNTIME_CONFIG.json": {
+      "sourcePath": "ChatGPT_web/track-lab/site/RACE_FLOW_RUNTIME_CONFIG.json",
+      "gitBlob": "0e28076bdb7bf5dc4cbb77bc0f857b8a4ea631e2"
+    },
+    "site/race-track-adapter.mjs": {
+      "sourcePath": "ChatGPT_web/track-lab/site/race-track-adapter.mjs",
+      "gitBlob": "5848b368d63b020cadf82cc0465f7446d2a0cb6f"
+    },
+    "index.html": {
+      "sourcePath": "ChatGPT_web/track-lab/st01/index.html",
+      "packagingDelta": "relative module path only"
+    }
+  }
+}

@@ -1,0 +1,600 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFile": "MedKayfab_Gastrology - ADD web.pdf",
+  "deckTitle": "Gastrology Edition",
+  "seriesId": "medkayfab_megapack",
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "gradingMode": "educational",
+  "analyzedAt": "2026-06-19",
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 22,
+    "G2": 32,
+    "G3": 2
+  },
+  "overallScore": 8,
+  "viralScore": 6,
+  "coverScore": 4.0,
+  "topCards": [
+    "Carcinoid Carlos",
+    "Crohn's Charlie",
+    "Pancreatitis Pablo",
+    "IBD Extra-Intestinal Eva",
+    "Ascites Antonia"
+  ],
+  "worstCards": [
+    "[Card 55 - not captured]",
+    "[Card 56 - not captured]"
+  ],
+  "urgentTodos": [
+    "Cards 55 and 56 (page 15, bottom row) not captured by OCR — re-render at higher DPI or manual review",
+    "Card 47 ([first name] Greta, NETs): first name and full card text not captured",
+    "Cards 3, 7, 19, 23, 28, 30, 34, 40, 41, 44, 47, 48, 49, 51, 53, 54: character names not legible — manual or re-OCR pass needed",
+    "Card 30 (ALD Albert): Power name not captured in OCR — likely CYP2E1 Induction or Mitochondrial Toxicity",
+    "Verify card 2 (Barrett's Bernie) lore — may overlap with card 4 due to OCR page boundary"
+  ],
+  "analysisNotes": "Strong educational deck with broad GI coverage: oesophagus through liver, pancreas, and colon. High G1 density compared to other MedKayfab decks. Character names follow alliterative pattern but many were illegible due to decorative fonts. OCR at 150 DPI captured ~80% of card text clearly. Cards 55-56 on page 15 obscured by FrizzleBob outro artwork.",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "name": "GORD Gordon",
+      "role": "Gastro-Oesophageal Reflux Disease",
+      "stat": "AET (Acid Exposure Time)",
+      "power": "TLOSR Breach — Bypasses all crural diaphragm defenses via GABA-B mediated vago-vagal reflexes.",
+      "lore": "PPIs must be taken 30-60 minutes before meals to target the H+/K+-ATPase in activated parietal cells.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 2,
+      "name": "Barrett's Bernie",
+      "role": "Barrett's Oesophagus",
+      "stat": "SMAD4",
+      "power": "Columnar Shift — Adapts to acid, initiating the SMAD4 carcinogenic sequence.",
+      "lore": "Intrinsic factor, secreted exclusively by parietal cells, is the absolute sole source of B12 absorption.",
+      "grade": "G1",
+      "notes": "Lore may belong to adjacent card; OCR ambiguous on page 2 right-column boundary"
+    },
+    {
+      "cardNumber": 3,
+      "name": "[name not legible]",
+      "role": "Achalasia / Lower Oesophageal Dysfunction",
+      "stat": "LOS Pressure",
+      "power": "NO-Depletion — Prevents all enemy relaxation effects, trapping food and liquid in permanent spasm.",
+      "lore": "[not captured in OCR]",
+      "grade": "G1",
+      "notes": "Character name not legible; condition inferred from NO-Depletion / permanent spasm"
+    },
+    {
+      "cardNumber": 4,
+      "name": "[name not legible]",
+      "role": "Gastric Physiology / Parietal Cell",
+      "stat": "pH",
+      "power": "Alkaline Tide — Exchanging HCO3- for Cl- at the parietal cell membrane after massive acid secretion.",
+      "lore": "Intrinsic factor, secreted exclusively by parietal cells, is the absolute sole source of B12 absorption.",
+      "grade": "G2",
+      "notes": "Character name not legible; condition inferred from Alkaline Tide"
+    },
+    {
+      "cardNumber": 5,
+      "name": "[name not legible]",
+      "role": "NSAID Gastropathy / COX-1 Inhibition",
+      "stat": "pH 1.37 Gradient",
+      "power": "COX-1 Blockade — Removes protective PGE2, destroying mucosal blood flow and restitution.",
+      "lore": "Enteric coating fails to protect against ulcers because NSAID damage is systemic, not just local.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 6,
+      "name": "[name not legible]",
+      "role": "Diabetic Gastroparesis",
+      "stat": "Glycaemic Control",
+      "power": "Vagal Neonat — Halts the migrating motor complex, preventing the Phase III housekeeper wave.",
+      "lore": "Early glycaemic control inhibits antral motility; glycaemic control is the critical first step.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 7,
+      "name": "[name not legible]",
+      "role": "Zollinger-Ellison Syndrome / Gastrinoma",
+      "stat": "Gastrin >120 pg/mL",
+      "power": "Secretin Paradox — IV Secretin causes a paradoxical gastrin rise >=120 pg/mL, bypassing negative feedback.",
+      "lore": "[not captured in OCR]",
+      "grade": "G1",
+      "notes": "Character name not legible; condition inferred from Secretin Paradox"
+    },
+    {
+      "cardNumber": 8,
+      "name": "[name not legible]",
+      "role": "Gastric Cancer / CDH1",
+      "stat": "HER2",
+      "power": "CDH1 E-Cadherin Loss — Triggers hereditary diffuse gastric cancer and linitis plastica.",
+      "lore": "TCGA molecular profiling dictates treatment; HER2 amplification uniquely allows for trastuzumab targeting.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 9,
+      "name": "UGIB [surname not captured]",
+      "role": "Upper Gastrointestinal Haemorrhage",
+      "stat": "Target Hb 70-80 g/L",
+      "power": "Restrictive Transfusion — Starving the bleed. Liberal transfusion actively worsens variceal pressure.",
+      "lore": "Terlipressin + Antibiotics + EVL reduces mortality. Antibiotics specifically prevent SBP translocation.",
+      "grade": "G1",
+      "notes": "Surname not captured in OCR; first initials 'UGIB A' visible"
+    },
+    {
+      "cardNumber": 10,
+      "name": "Coeliac Zoe",
+      "role": "Coeliac Disease / HLA-DQ2 in 95%",
+      "stat": "HLA-DQ2",
+      "power": "tTG2 Deamidation — Converts gliadin into high-affinity peptides for DQ2/DQ8 presentation to Th1 cells.",
+      "lore": "Iron is absorbed in the duodenum; adult coeliac almost always presents first as iron-deficiency anaemia.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 11,
+      "name": "Dysphagia Dmitri",
+      "role": "Oesophageal Carcinoma / Mechanical Obstruction",
+      "stat": "95% Squamous (Proximal)",
+      "power": "Solids-First Progression — Indicates mechanical obstruction (carcinoma/stricture) over motility failure.",
+      "lore": "Solids-only progressing to liquids = mechanical; both from onset = motility disorder (achalasia/spasm).",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 12,
+      "name": "Crohn's Charlie",
+      "role": "Crohn's Disease / Transmural Inflammation",
+      "stat": "Terminal Ileum",
+      "power": "Deep Infiltration — Bypasses mucosal boundaries to cause strictures, fistulae, and creeping fat.",
+      "lore": "Terminal ileum loss specifically causes B12 deficiency AND gallstones (due to bile salt pool depletion).",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 13,
+      "name": "Ulcerative Colitis Uma",
+      "role": "UC / Mucosal Inflammation",
+      "stat": "Continuous from Rectum",
+      "power": "Crypt Abscess — Neutrophilic assault restricted entirely to the superficial mucosal layer. No skip lesions.",
+      "lore": "Patients with both UC and PSC require annual colonoscopy surveillance from diagnosis.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 14,
+      "name": "Small Bowel Sam",
+      "role": "SIBO / >10^5 CFU/mL",
+      "stat": ">10^5 CFU/mL",
+      "power": "Bile Deconjugation — Ruins micelle formation, causing massive fat malabsorption and steatorrhoea.",
+      "lore": "Bacteria consume B12 but produce folate; SIBO characteristically presents as B12 deficiency with elevated folate.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 15,
+      "name": "Carcinoid Carlos",
+      "role": "Carcinoid Syndrome",
+      "stat": "5-HIAA >25 umol/d",
+      "power": "Hepatic Bypass — Syndrome only occurs when liver metastases evade MAO-A detoxification.",
+      "lore": "The left heart is spared from fibrotic valve plaques because the lungs contain MAO-A which destroys serotonin.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 16,
+      "name": "Short Bowel Sebastian",
+      "role": "Short Bowel Syndrome",
+      "stat": "<200cm Remaining",
+      "power": "GLP-2 Hyperplasia — Triggers massive enterocyte adaptation and bowel dilatation to salvage nutrients.",
+      "lore": "Retaining the colon allows colonic bacteria to ferment carbohydrates into SCFAs, salvaging up to 1500 kcal/day.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 17,
+      "name": "[name not legible]",
+      "role": "Bile Acid Malabsorption / FXR",
+      "stat": "Type 2 BAM",
+      "power": "FXR Negative Feedback — Suppresses CYP7A1 via FGF-19 to stop cholesterol conversion.",
+      "lore": "Type 2 BAM occurs when FGF-19 fails, causing unsuppressed bile acid synthesis and severe watery diarrhoea.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 18,
+      "name": "[name not legible]",
+      "role": "Enteric Nervous System / Serotonin Motility",
+      "stat": "EC Cells",
+      "power": "Serotonin Peristalsis — EC cells release 95% of the body's serotonin to drive motility.",
+      "lore": "Ondansetron works as an antiemetic specifically by blocking 5-HT3 receptors on vagal afferents.",
+      "grade": "G1",
+      "notes": "Character name not legible; condition inferred from EC cell serotonin peristalsis"
+    },
+    {
+      "cardNumber": 19,
+      "name": "[name not legible]",
+      "role": "Diverticular Bleeding / Heyde's Syndrome",
+      "stat": "Right Colon",
+      "power": "Heyde's Cleavage — Aortic stenosis high shear stress destroys HMW vWF, causing angiodysplasia bleeds.",
+      "lore": "Diverticular bleeding is arterial, painless, and large-volume; mostly occurring in the right colon.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 20,
+      "name": "Colorectal Cancer Colin",
+      "role": "Adenoma-Carcinoma Pathway",
+      "stat": "APC>KRAS>SMAD4>TP53",
+      "power": "KRAS Resistance — Constitutive pathway activation entirely ignores upstream blockade.",
+      "lore": "Cancers with a KRAS mutation are intrinsically resistant to anti-EGFR therapies like cetuximab.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 21,
+      "name": "Diverticular Dina",
+      "role": "Diverticular Disease / Complicated",
+      "stat": "Hinchey Stage",
+      "power": "Hinchey Rupture — Progresses from micro-perforation to purulent/faecal peritonitis requiring Hartmann's.",
+      "lore": "Recent RCTs confirm antibiotics are not necessary for uncomplicated acute diverticulitis.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 22,
+      "name": "Colonic Polyps Perry",
+      "role": "Neoplastic Lesions",
+      "stat": "Sessile Serrated",
+      "power": "Sessile Serration — Feeds the traditional APC pathway vs BRAF and MLH1 methylation (MSI).",
+      "lore": "Sessile serrated lesions are particularly dangerous due to flat morphology and rapid malignant potential.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 23,
+      "name": "[name not legible]",
+      "role": "Microscopic Colitis",
+      "stat": "Normal Colonoscopy",
+      "power": "NSAID Trigger — Chemical induction of chronic, watery, non-bloody nocturnal diarrhoea in older women.",
+      "lore": "A perfectly normal colonoscopy in chronic watery diarrhoea mandates random biopsies to check for this.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 24,
+      "name": "IBD Extra-Intestinal Eva",
+      "role": "Systemic Manifestations / HLA-B27",
+      "stat": "HLA-B27 Associated",
+      "power": "Pathergy — Trauma accelerates destruction; surgical debridement of pyoderma gangrenosum is disastrous.",
+      "lore": "Some manifestations parallel gut activity (erythema nodosum), while others (uveitis, AS, PSC) run completely independently.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 25,
+      "name": "Liver Function Louisa",
+      "role": "The Metabolic Factory",
+      "stat": "Albumin",
+      "power": "Phase II Glucuronidation — Renders toxic hydrophobic compounds water-soluble via UGT1A1 for biliary excretion.",
+      "lore": "INR is a much better marker of acute synthetic failure than albumin due to clotting factors' short half-lives.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 26,
+      "name": "Jaundice Jerome",
+      "role": "Hyperbilirubinaemia",
+      "stat": "ALP:ALT > 3:1",
+      "power": "Urobilinogen Starvation — Biliary obstruction prevents bilirubin from reaching the gut to become stercobilin.",
+      "lore": "Dark urine + pale stools + absent urinary urobilinogen uniquely identifies complete post-hepatic obstruction.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 27,
+      "name": "Cirrhosis Cyrus",
+      "role": "End-Stage Liver Disease",
+      "stat": "HVPG",
+      "power": "TGF-B Fibrogenesis — Permanently replaces healthy parenchyma with regenerative nodules.",
+      "lore": "First decompensation event drops median survival from 12 years to just 2 years.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 28,
+      "name": "[name not legible]",
+      "role": "Hepatic Encephalopathy",
+      "stat": "Grade I-IV",
+      "power": "GABAergic Tone Surge — Neurosteroids and ammonia induce extreme sedation; benzos are lethal.",
+      "lore": "Never restrict protein in HE; sarcopenia worsens outcomes. Treat with lactulose and rifaximin.",
+      "grade": "G1",
+      "notes": "Character name not legible; condition identified from GABAergic Tone Surge power"
+    },
+    {
+      "cardNumber": 29,
+      "name": "Ascites Antonia",
+      "role": "SBP & Ascites",
+      "stat": "SAAG >11 g/L",
+      "power": "Opsonin Failure — Low ascites protein (<15 g/L) allows translocated E. coli to trigger Spontaneous Bacterial Peritonitis.",
+      "lore": "IV Albumin given with antibiotics for SBP drastically reduces mortality by preventing Type 1 Hepatorenal Syndrome.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 30,
+      "name": "ALD Albert",
+      "role": "Alcoholic Liver Disease",
+      "stat": "AST:ALT > 2:1",
+      "power": "[power text not captured in OCR — CYP2E1 Induction inferred from lore context]",
+      "lore": "Chronic alcohol induces CYP2E1, drastically lowering the toxic threshold for paracetamol overdose.",
+      "grade": "G2",
+      "notes": "Power name not legible; lore clearly captured"
+    },
+    {
+      "cardNumber": 31,
+      "name": "NAFLD/NASH Nathan",
+      "role": "Metabolic Liver Disease",
+      "stat": "FIB-4 > 2.67",
+      "power": "PNPLA3 I148M Mutation — Halts triglyceride hydrolysis, causing massive lipid droplet accumulation.",
+      "lore": "The fastest growing cause for transplant; weight loss >10% can actually regress fibrosis.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 32,
+      "name": "Viral Hep Victor",
+      "role": "Hepatitis Viruses",
+      "stat": ">95% DAA SVR (HCV)",
+      "power": "cccDNA Integration — HBV integrates permanently into the host genome, making true cure nearly impossible.",
+      "lore": "HCV is an RNA virus treated with DAAs for a complete cure; HBV requires lifelong suppression.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 33,
+      "name": "AIH/PBC [surname unclear]",
+      "role": "Autoimmune Liver Disease",
+      "stat": "AMA Positive",
+      "power": "Pyruvate Dehydrogenase Cross-React — Autoantibodies destroy bile ducts while sparing hepatocytes.",
+      "lore": "Pruritus is severe due to TGR5 activation by bile salts; UDCA slows ductular damage.",
+      "grade": "G2",
+      "notes": "Surname not legible; OCR suggests 'Marie' or similar"
+    },
+    {
+      "cardNumber": 34,
+      "name": "[name not legible]",
+      "role": "Haemochromatosis / Iron Overload",
+      "stat": "HFE Mutation",
+      "power": "Hepcidin Failure — HFE mutation ruins iron sensing, causing unchecked intestinal iron absorption.",
+      "lore": "Causes Bronze Diabetes due to iron deposition in the pancreas; HCC risk persists even after venesection.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 35,
+      "name": "DILI Davina",
+      "role": "Drug-Induced Liver Injury",
+      "stat": "R-ratio (ALT/ALP)",
+      "power": "NAPQI Necrosis — Overwhelms glutathione stores to cause massive centrilobular hepatocyte death.",
+      "lore": "NAC is only effective for paracetamol overdose if given early, before irreversible covalent binding occurs.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 36,
+      "name": "Wilson's Wilma",
+      "role": "Copper Overload",
+      "stat": "KF Rings",
+      "power": "ATP7B Defect — Blocks biliary copper excretion, causing accumulation in the basal ganglia and liver.",
+      "lore": "A disproportionately low ALP with markedly elevated bilirubin is highly characteristic of acute Wilson's crisis.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 37,
+      "name": "Gallstones Gertie",
+      "role": "Biliary Syndromes",
+      "stat": "80% Cholesterol",
+      "power": "Supersaturation — Depleted bile acid pools or excess cholesterol cause physical crystal nucleation.",
+      "lore": "Charcot's triad becomes Reynold's pentad (adding hypotension + confusion) marking lethal septic shock.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 38,
+      "name": "Cholangiocarcinoma Clare",
+      "role": "Biliary Cancer / Klatskin",
+      "stat": "50% Perihilar (Klatskin)",
+      "power": "FGFR2 Fusion — Molecular target allowing specific inhibition with pemigatinib in intrahepatic subtypes.",
+      "lore": "PSC carries a 1500x relative risk for CCA due to chronic fibro-inflammatory duct destruction.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 39,
+      "name": "Pancreatitis Pablo",
+      "role": "Acute Pancreatitis",
+      "stat": "Ranson / BISAP",
+      "power": "Zymogen Activation — Premature intracellular cleavage triggers massive local and systemic inflammatory cascades.",
+      "lore": "Enteral feeding (NG/NJ) is superior to TPN as it preserves gut barrier and stops necrotic infection.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 40,
+      "name": "[name not legible]",
+      "role": "Chronic Pancreatitis / Type 3c Diabetes",
+      "stat": "Faecal Elastase <100",
+      "power": "Type 3c Brittle Diabetes — Complete destruction of both insulin AND glucagon cells causes wild glucose swings.",
+      "lore": "B12 malabsorption occurs because the acidic duodenum (from lack of bicarb) disrupts the IF-B12 complex.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 41,
+      "name": "[name not legible]",
+      "role": "Pancreatic Ductal Adenocarcinoma",
+      "stat": "<12% 5-year OS",
+      "power": "Stromal Exclusion — KRAS-driven microenvironment physically prevents drug delivery and checkpoint inhibitors.",
+      "lore": "Painless obstructive jaundice with a palpable non-tender gallbladder (Courvoisier's) is PDAC until proven otherwise.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 42,
+      "name": "GI Bleed Emergency Gemma",
+      "role": "GI Haemorrhage / MTP",
+      "stat": "1:1 MTP Ratio",
+      "power": "Restrictive Trigger — Hb 70-80 g/L is the optimal target; pushing more fluid pops the clots.",
+      "lore": "Unlike in trauma, Tranexamic Acid (TXA) has no mortality benefit in GI bleeding (HALT-IT trial).",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 43,
+      "name": "Gut Microbiome Mike",
+      "role": "Microbiome / 38 Trillion Bugs",
+      "stat": "38 Trillion Bugs",
+      "power": "Colonisation Resistance — Healthy flora outcompetes C. difficile for space and nutrients.",
+      "lore": "Faecal microbiota transplant (FMT) boasts an 85-90% success rate by restoring the destroyed ecological niche.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 44,
+      "name": "[name not legible]",
+      "role": "Pancreatitis Complications / Walled-Off Necrosis",
+      "stat": ">4 Weeks Onset",
+      "power": "Step-Up Debridement — Endoscopic transgastric drainage dominates over primary open surgical necrosectomy.",
+      "lore": "Splenic vein thrombosis from body/tail pancreatitis causes isolated gastric varices without portal hypertension.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 45,
+      "name": "Refeeding Nadia",
+      "role": "Nutritional / Refeeding Syndrome",
+      "stat": "MUST Score >=2",
+      "power": "Intracellular Shift — Sudden phosphate release from feeding forces phosphate into cells causing cardiac failure.",
+      "lore": "Never restrict protein in cirrhosis; late evening snack reduces overnight muscle catabolism.",
+      "grade": "G1",
+      "notes": ""
+    },
+    {
+      "cardNumber": 46,
+      "name": "Oesophageal Cancer Oscar",
+      "role": "SCC vs Adeno",
+      "stat": "8:4 Male (Adeno)",
+      "power": "Field Cancerisation — Shared carcinogen exposure creates synchronous field defects across the entire mucosa.",
+      "lore": "[not fully captured in OCR]",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 47,
+      "name": "[first name unclear] Greta",
+      "role": "Neuroendocrine Tumours / GI",
+      "stat": "[not captured]",
+      "power": "[power text not clearly captured in OCR]",
+      "lore": "[not captured in OCR]",
+      "grade": "G2",
+      "notes": "URGENT: Surname Greta visible; first name and full card text not captured. Needs re-OCR or manual check."
+    },
+    {
+      "cardNumber": 48,
+      "name": "[name not legible]",
+      "role": "Functional GI / Visceral Hypersensitivity",
+      "stat": "Rome IV",
+      "power": "Central Sensitisation — Stress enters via the amygdala and ACC.",
+      "lore": "[not captured in OCR]",
+      "grade": "G2",
+      "notes": "Character name not legible; Central Sensitisation power partially captured"
+    },
+    {
+      "cardNumber": 49,
+      "name": "[name not legible]",
+      "role": "IBS / Functional Bowel Disease",
+      "stat": "Rome IV",
+      "power": "[power text not captured in OCR]",
+      "lore": "Psychological stress directly triggers mast cell activation and altered motility, proving bidirectional IBS links.",
+      "grade": "G2",
+      "notes": "Character name not legible; IBS identified from lore about psychological stress and mast cell activation"
+    },
+    {
+      "cardNumber": 50,
+      "name": "Hereditary Cancers Heidi",
+      "role": "FAP & Lynch Syndrome",
+      "stat": "APC Germline",
+      "power": "APC Gatekeeper — Germline loss guarantees hundreds of adenomas by teenage years.",
+      "lore": "Aspirin chemoprotection (CaPP2) drastically reduces colorectal cancer risk in Lynch syndrome.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 51,
+      "name": "[name not legible]",
+      "role": "Bariatric Surgery / Metabolic Surgery",
+      "stat": "60-80% T2DM Remission",
+      "power": "Incretin Surge — Bypassing the proximal bowel alters bile acids and hormones, fixing metabolism.",
+      "lore": "[not captured in OCR]",
+      "grade": "G2",
+      "notes": "Character name not legible; GLP-1 Surge visible in OCR"
+    },
+    {
+      "cardNumber": 52,
+      "name": "EoE Eos",
+      "role": "Eosinophilic Oesophagitis",
+      "stat": ">=15 Eosinophils/HPF",
+      "power": "Th2 Remodelling — IL-5 and IL-13 destroy the epithelial barrier, causing strictures and rings.",
+      "lore": "A normal oesophagus has absolutely zero eosinophils; their presence always indicates pathology.",
+      "grade": "G2",
+      "notes": ""
+    },
+    {
+      "cardNumber": 53,
+      "name": "[name not legible]",
+      "role": "Portal Hypertension / TIPSS",
+      "stat": "HVPG",
+      "power": "Portosystemic Shunt — TIPSS directly decompresses the portal system.",
+      "lore": "Non-selective beta-blockers (carvedilol) reduce portal pressure by causing splanchnic vasoconstriction.",
+      "grade": "G2",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 54,
+      "name": "[name not legible]",
+      "role": "Acute Liver Failure / King's Criteria",
+      "stat": "King's College Criteria",
+      "power": "Super-Urgent Listing — King's Criteria identify fulminant ALF before fatal cerebral oedema occurs.",
+      "lore": "A standalone arterial pH <1.35 is enough to mandate urgent transplant listing in paracetamol overdose.",
+      "grade": "G1",
+      "notes": "Character name not legible"
+    },
+    {
+      "cardNumber": 55,
+      "name": "[not captured in OCR]",
+      "role": "[not captured in OCR]",
+      "stat": "[not captured]",
+      "power": "[not captured in OCR]",
+      "lore": "[not captured in OCR]",
+      "grade": "G3",
+      "notes": "URGENT: Card not captured by OCR on page 15. Partial text suggests GI cancer/brain/synthesis theme near FrizzleBob outro."
+    },
+    {
+      "cardNumber": 56,
+      "name": "[not captured in OCR]",
+      "role": "[not captured in OCR]",
+      "stat": "[not captured]",
+      "power": "[not captured in OCR]",
+      "lore": "[not captured in OCR]",
+      "grade": "G3",
+      "notes": "URGENT: Card not captured by OCR on page 15. May be a meta/synthesis card or game mechanic. Manual check required."
+    }
+  ]
+}

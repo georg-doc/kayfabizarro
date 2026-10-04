@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.2d-resident-binding/0.1-candidate",
+  "updated": "2026-09-20",
+  "id": "doccheck-eumel-2p5d",
+  "displayName": "DocCheck Eumel",
+  "status": "PREPARED_CANDIDATE",
+  "actorClass": "biped-cutout",
+  "source": {
+    "illustratorBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "componentSvg": "tools/2D Animation Studio/labs/eumel-rig-lab/source-assets/EUMEL_SOURCE_COMPONENTS.svg",
+    "componentSvgBlobSha": "457bca8a76bd156ba627763098f0dcfc9a54edc1",
+    "rigContract": "tools/2D Animation Studio/labs/eumel-rig-lab/data/rig_contract.json",
+    "neutralBind": "tools/2D Animation Studio/labs/eumel-rig-lab/data/neutral_bind_pose.json"
+  },
+  "presentation": {
+    "defaultMode": "upright-yaw-billboard",
+    "allowedModes": [
+      "upright-yaw-billboard",
+      "world-facing-upright"
+    ],
+    "worldUp": "+Y",
+    "groundAnchor": "derived neutral foot baseline / consumer mount anchor",
+    "depthLayerOrder": [
+      "shadow-world",
+      "rear-legs",
+      "body",
+      "stethoscope",
+      "head",
+      "eyes-pupils",
+      "headwear"
+    ],
+    "depthPolicy": "small visual layer separation only; no fake perspective that changes source proportions"
+  },
+  "animation": {
+    "owner": "2D Animation Studio actor module",
+    "motionSkill": "skills/kfb-cartoon-animation_v2.md",
+    "initialStates": [
+      "neutral",
+      "idle",
+      "look",
+      "walk",
+      "hop",
+      "hampelmann"
+    ],
+    "eyeProtocol": "kfb.eye-rig.protocol/1",
+    "rootMotionPolicy": "PRESENTATION_ONLY_CONSUMER_OWNS_WORLD_TRANSLATION_AND_HEADING"
+  },
+  "resident": {
+    "class": "2p5d-cutout-resident",
+    "sceneModuleCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+    "mountSeam": "mount/update/dispose",
+    "collision": "NONE_FROM_ACTOR_MODULE",
+    "interactionProxy": "CONSUMER_DEFINED"
+  },
+  "consumers": {
+    "doccheckProjectIsland": {
+      "status": "PREPARED",
+      "environment": "consumer-selected exact KayKit 3D project-island set",
+      "accent": "#cc0033",
+      "note": "Exact KayKit pack and island composition must be selected/pinned separately."
+    },
+    "kfbResidentAtlas": {
+      "status": "PREPARED"
+    },
+    "kfbGames": {
+      "status": "NAMED_CONSUMER_REQUIRED_BEFORE_RUNTIME_WRITE"
+    }
+  },
+  "acceptance": {
+    "required": [
+      "2D Rig Lab browser visual pass",
+      "cross-render eye proof visual pass",
+      "world-space 2.5D adapter browser proof",
+      "Resident Atlas mount proof",
+      "Georg visual acceptance"
+    ]
+  }
+}

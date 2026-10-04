@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin:0; background: oklch(0.16 0.012 250); }
+  a { color: oklch(0.78 0.14 80); }
+  a:hover { color: oklch(0.85 0.12 80); }
+  @keyframes kfbFlip5 { 0%,19% { opacity:1; } 20%,100% { opacity:0; } }
+  @keyframes kfbFlip8 { 0%,11% { opacity:1; } 12.5%,100% { opacity:0; } }
+  @keyframes kfbFlip2 { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
+  @keyframes kfbFlip3 { 0%,32% { opacity:1; } 33%,100% { opacity:0; } }
+  @keyframes kfbFlip4 { 0%,24% { opacity:1; } 25%,100% { opacity:0; } }
+  @keyframes kfbFlip6 { 0%,16% { opacity:1; } 16.7%,100% { opacity:0; } }
+  @keyframes kfbHitBurst {
+    0% { transform:scale(0.35); opacity:0; filter:brightness(3) saturate(0.3); }
+    8% { transform:scale(1.05); opacity:1; filter:brightness(2.4) saturate(0.4); }
+    26% { transform:scale(1.1); opacity:1; filter:brightness(1.3) saturate(0.85); }
+    55% { transform:scale(1.18); opacity:0.85; filter:brightness(1) saturate(1); }
+    100% { transform:scale(1.3); opacity:0; filter:brightness(1) saturate(1); }
+  }
+  @keyframes kfbSheet6 { from { background-position: 0% 0%; } to { background-position: -500% 0%; } }
+</style>
+</helmet>
+<div style="max-width:1180px;margin:0 auto;padding:28px 24px 80px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:oklch(0.92 0.01 250);">
+
+  <div style="margin-bottom:22px;">
+    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.78 0.14 80);font-weight:700;">VFX-01</span>
+      <h1 style="font-size:26px;font-weight:700;margin:0;color:oklch(0.95 0.01 250);">Donor Census + Interactive VFX Review Bank</h1>
+    </div>
+    <p style="margin:8px 0 0;font-size:14px;color:oklch(0.62 0.02 250);max-width:820px;line-height:1.55;">
+      Real donor systems already in the repo, side by side. No new global VFX engine was built for this slice &mdash; every family below is either a pinned third-party asset pack or KFB's own existing shared Combat FX/SFX module, shown from its real source. No gameplay dependency. SFX implementation is the next slice.
+    </p>
+  </div>
+
+  <div style="background:oklch(0.24 0.03 40);border:1px solid oklch(0.4 0.08 40);border-radius:10px;padding:14px 16px;margin-bottom:24px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:oklch(0.8 0.12 55);margin-bottom:8px;">SOURCE_REQUIRED &mdash; named, not reconstructed</div>
+    <sc-for list="{{ sourceRequiredItems }}" as="item" hint-placeholder-count="4">
+      <div style="font-size:13px;color:oklch(0.85 0.02 250);margin-bottom:6px;line-height:1.45;">
+        <span style="font-family:ui-monospace,monospace;color:oklch(0.88 0.05 55);">{{ item.title }}</span>
+        <span style="color:oklch(0.62 0.02 250);"> &mdash; {{ item.detail }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+    <sc-for list="{{ families }}" as="f" hint-placeholder-count="6">
+      <button style="{{ f.btnStyle }}" onClick="{{ f.onClick }}">
+        <span style="{{ f.dotStyle }}"></span>
+        {{ f.displayLabel }}
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;justify-content:flex-end;margin-bottom:14px;">
+    <button style="{{ diagBtnStyle }}" onClick="{{ toggleDiagnostics }}">{{ diagLabel }}</button>
+  </div>
+
+  <div style="background:oklch(0.21 0.014 250);border:1px solid oklch(0.3 0.015 250);border-radius:12px;padding:22px;margin-bottom:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+      <div>
+        <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:oklch(0.62 0.02 250);margin-bottom:4px;">{{ activeObj.kind }}</div>
+        <h2 style="font-size:20px;font-weight:700;margin:0;color:oklch(0.95 0.01 250);">{{ activeObj.label }}</h2>
+      </div>
+      <span style="{{ activeStatusStyle }}">{{ activeObj.status }}</span>
+    </div>
+
+    <p style="font-size:14px;line-height:1.55;color:oklch(0.85 0.015 250);margin:0 0 14px;max-width:780px;">{{ activeObj.desc }}</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">
+      <sc-for list="{{ activeObj.semantic }}" as="tag" hint-placeholder-count="3">
+        <span style="background:oklch(0.3 0.05 80 / 35%);border:1px solid oklch(0.45 0.07 80);color:oklch(0.85 0.08 80);font-size:11px;padding:3px 9px;border-radius:100px;font-family:ui-monospace,monospace;">{{ tag }}</span>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ isBrackeys }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-color:#1c1f26;background-image:url('media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png');background-size:600% 500%;background-position:0% 0%;animation:kfbSheet6 1200ms steps(6) infinite;"></div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">explosion_6x5 &middot; row 1/5 animated</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-color:#1c1f26;background-image:url('media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/star_explosion_6x5.png');background-size:600% 500%;background-position:0% 0%;animation:kfbSheet6 1200ms steps(6) infinite;"></div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">star_explosion_6x5 &middot; row 1/5 animated</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-color:#1c1f26;background-image:url('media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png');background-size:600% 500%;background-position:0% 0%;animation:kfbSheet6 1200ms steps(6) infinite;"></div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">electric_ring_6x5 &middot; row 1/5 animated</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_01.png" alt="muzzle flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_02.png" alt="muzzle flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png" alt="muzzle flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_04.png" alt="muzzle flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_05.png" alt="muzzle flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">muzzle 01&ndash;05 cycled = sustained fire loop</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png" alt="muzzle_03 single frame" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">muzzle_03 alone &middot; single-shot candidate (player/FrizzleBob guns)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);aspect-ratio:2/1;background:#1c1f26;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_01.png" alt="slash 01" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_02.png" alt="slash 02" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_03.png" alt="slash 03" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_04.png" alt="slash 04" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">slash 01&ndash;04 &middot; 4 directional strikes, not frames</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_01.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip4 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_02.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip4 1000ms steps(1) infinite;animation-delay:-250ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_03.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip4 1000ms steps(1) infinite;animation-delay:-500ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_04.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip4 1000ms steps(1) infinite;animation-delay:-750ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">flame A (01&ndash;04) &middot; rounded blob shape</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_05.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_06.png" alt="flame frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:-450ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">flame B (05&ndash;06) &middot; tall tongue shape, separate loop</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_01.png" alt="fire frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_02.png" alt="fire frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:-450ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">fire_01&ndash;02</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);aspect-ratio:3/1;background:#1c1f26;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_01.png" alt="smoke 01" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_02.png" alt="smoke 02" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_03.png" alt="smoke 03" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">smoke 01&ndash;03 &middot; 3 variants, not frames</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);aspect-ratio:3/1;background:#1c1f26;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_01.png" alt="dirt 01" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_02.png" alt="dirt 02" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_03.png" alt="dirt 03" style="width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">dirt 01&ndash;03 &middot; 3 variants, not frames</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_01.png" alt="scorch frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_02.png" alt="scorch frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_03.png" alt="scorch frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">scorch_01&ndash;03</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_01.png" alt="light frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_02.png" alt="light frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_03.png" alt="light frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">light_01&ndash;03</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_01.png" alt="effect frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_02.png" alt="effect frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_03.png" alt="effect frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">effect_01&ndash;03</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_01.png" alt="magic frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_02.png" alt="magic frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:-450ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">magic_01&ndash;02</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_01.png" alt="circle frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_02.png" alt="circle frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_03.png" alt="circle frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_04.png" alt="circle frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_05.png" alt="circle frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">circle_01&ndash;05</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flare_01.png" alt="flare_01" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">flare_01 (only file, static)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scratch_01.png" alt="scratch_01" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">scratch_01 (only file, static)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isFreeHitVfx }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background:radial-gradient(circle,#241c14 0%,#1c1f26 70%);display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/FreeHitVfx/textures/t_stylizedhit_1.png" alt="t_stylizedhit_1 (2K), animated per the real ported burst curve" style="max-width:78%;max-height:78%;object-fit:contain;animation:kfbHitBurst 1400ms ease-out infinite;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">t_stylizedhit_1 &middot; pop &rarr; white-hot &rarr; dissolve (real ported curve)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isSmoke2d }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Chemical%20Smoke/PNG/Chemical%20Smoke_Frame_01.png" alt="Chemical Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Chemical%20Smoke/PNG/Chemical%20Smoke_Frame_03.png" alt="Chemical Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Chemical%20Smoke/PNG/Chemical%20Smoke_Frame_05.png" alt="Chemical Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Chemical%20Smoke/PNG/Chemical%20Smoke_Frame_07.png" alt="Chemical Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Chemical%20Smoke/PNG/Chemical%20Smoke_Frame_08.png" alt="Chemical Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Chemical Smoke &middot; animated (5/8)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Poisonous%20Smoke/PNG/Posionous%20Smoke_Frame_01.png" alt="Poisonous Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Poisonous%20Smoke/PNG/Posionous%20Smoke_Frame_04.png" alt="Poisonous Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Poisonous%20Smoke/PNG/Posionous%20Smoke_Frame_07.png" alt="Poisonous Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Poisonous%20Smoke/PNG/Posionous%20Smoke_Frame_10.png" alt="Poisonous Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Poisonous%20Smoke/PNG/Posionous%20Smoke_Frame_12.png" alt="Poisonous Smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Poisonous Smoke &middot; animated (5/12)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Blow/PNG/Smoke%20Blow_Frame_01.png" alt="Smoke Blow frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Blow/PNG/Smoke%20Blow_Frame_04.png" alt="Smoke Blow frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Blow/PNG/Smoke%20Blow_Frame_07.png" alt="Smoke Blow frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Blow/PNG/Smoke%20Blow_Frame_10.png" alt="Smoke Blow frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Blow/PNG/Smoke%20Blow_Frame_12.png" alt="Smoke Blow frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Smoke Blow &middot; animated (5/12)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_01.png" alt="Smoke Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_05.png" alt="Smoke Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_09.png" alt="Smoke Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_13.png" alt="Smoke Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_16.png" alt="Smoke Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Smoke Explosion &middot; animated (5/16)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Spell/PNG/Smoke%20Spell_Frame_01.png" alt="Smoke Spell frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Spell/PNG/Smoke%20Spell_Frame_03.png" alt="Smoke Spell frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Spell/PNG/Smoke%20Spell_Frame_05.png" alt="Smoke Spell frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Spell/PNG/Smoke%20Spell_Frame_07.png" alt="Smoke Spell frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Spell/PNG/Smoke%20Spell_Frame_08.png" alt="Smoke Spell frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Smoke Spell &middot; animated (5/8)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isTinySwords }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Dust_01.png" alt="Dust_01" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Dust_02.png" alt="Dust_02" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:-450ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Dust 01&rarr;02</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Explosion_01.png" alt="Explosion_01" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Explosion_02.png" alt="Explosion_02" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip2 900ms steps(1) infinite;animation-delay:-450ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Explosion 01&rarr;02</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Fire_01.png" alt="Fire_01" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Fire_02.png" alt="Fire_02" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Fire_03.png" alt="Fire_03" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;animation:kfbFlip3 1200ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Fire 01&rarr;02&rarr;03</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/2D_Assets/Tiny%20Swords%20%28Free%20Pack%29/Particle%20FX/Water%20Splash.png" alt="Water Splash" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Water Splash (only 1 file, static)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isExplosionsSmoke }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/explosions_smoke/explosionbig.gif" alt="explosionbig (animated)" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">explosionbig.gif</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/explosions_smoke/whitehotbig.gif" alt="whitehotbig (animated)" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">whitehotbig.gif</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="media/3D_Assets/FX_Visual/explosions_smoke/teleport.gif" alt="teleport (animated)" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">teleport.gif</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isKenneySmoke }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Black%20smoke/blackSmoke00.png" alt="Black smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Black%20smoke/blackSmoke06.png" alt="Black smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Black%20smoke/blackSmoke12.png" alt="Black smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Black%20smoke/blackSmoke18.png" alt="Black smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Black%20smoke/blackSmoke24.png" alt="Black smoke frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Black smoke &middot; animated (5/25)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Explosion/explosion00.png" alt="Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Explosion/explosion02.png" alt="Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Explosion/explosion04.png" alt="Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Explosion/explosion06.png" alt="Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Explosion/explosion08.png" alt="Explosion frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Explosion &middot; animated (5/9)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Fart/fart00.png" alt="Fart frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Fart/fart02.png" alt="Fart frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Fart/fart04.png" alt="Fart frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Fart/fart06.png" alt="Fart frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Fart/fart08.png" alt="Fart frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Fart &middot; animated (5/9)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Flash/flash00.png" alt="Flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Flash/flash02.png" alt="Flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Flash/flash04.png" alt="Flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Flash/flash06.png" alt="Flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/Flash/flash08.png" alt="Flash frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Flash &middot; animated (5/9)</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="position:relative;aspect-ratio:1;background:#1c1f26;overflow:hidden;">
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff00.png" alt="White puff frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:0ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff06.png" alt="White puff frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-200ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff12.png" alt="White puff frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-400ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff18.png" alt="White puff frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-600ms;" />
+            <img src="media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff24.png" alt="White puff frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;animation:kfbFlip5 1000ms steps(1) infinite;animation-delay:-800ms;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">White puff &middot; animated (5/25)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isBoxelPoc }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+        <div style="border-radius:8px;overflow:hidden;border:1px solid oklch(0.32 0.015 250);">
+          <div style="aspect-ratio:1;background-image:linear-gradient(45deg,#2a2f38 25%,transparent 25%),linear-gradient(-45deg,#2a2f38 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#2a2f38 75%),linear-gradient(-45deg,transparent 75%,#2a2f38 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#1c1f26;display:flex;align-items:center;justify-content:center;padding:8px;">
+            <img src="KFB%20Boxel%20Blitz/captures/01-v4-s9-final.png" alt="Boxel Blitz v4 run (context)" style="max-width:100%;max-height:100%;object-fit:contain;" />
+          </div>
+          <div style="font-size:10px;font-family:ui-monospace,monospace;color:oklch(0.6 0.02 250);padding:5px 7px;background:oklch(0.19 0.012 250);white-space:nowrap;">Boxel Blitz v4 run (context)</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isGrammar }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+        <div>
+          <canvas id="kfb-vfx-atlas-canvas" style="width:320px;height:240px;border-radius:8px;border:1px solid oklch(0.32 0.015 250);background:#1c1f26;display:block;"></canvas>
+          <div style="font-size:10px;color:oklch(0.55 0.02 250);margin-top:6px;max-width:320px;line-height:1.4;">live redraw of kfb-combat-atlas.js's 12 drawn cells (4&times;3), cell-for-cell from the real source</div>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:oklch(0.62 0.02 250);margin-bottom:8px;">cell order (UV index)</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <sc-for list="{{ cellNames }}" as="cell" hint-placeholder-count="12">
+              <span style="font-family:ui-monospace,monospace;font-size:11px;background:oklch(0.26 0.015 250);border:1px solid oklch(0.34 0.015 250);color:oklch(0.82 0.015 250);padding:3px 8px;border-radius:5px;">{{ cell }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid oklch(0.3 0.015 250);padding-top:16px;margin-top:4px;margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;flex-wrap:wrap;gap:6px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:oklch(0.62 0.02 250);">promote-candidate recipes &mdash; pick 3&ndash;5</div>
+          <div style="font-size:12px;font-family:ui-monospace,monospace;color:{{ promotedCountColor }};">{{ promotedCount }} / 5 selected</div>
+        </div>
+        <sc-for list="{{ recipes }}" as="r" hint-placeholder-count="10">
+          <label style="{{ r.rowStyle }}">
+            <input type="checkbox" checked="{{ r.checked }}" disabled="{{ r.disallowed }}" onChange="{{ r.onToggle }}" style="margin-top:3px;" />
+            <div>
+              <div style="font-size:13px;font-weight:600;color:oklch(0.92 0.01 250);">{{ r.title }} <span style="font-size:10px;font-weight:400;color:oklch(0.55 0.02 250);font-family:ui-monospace,monospace;">&middot; {{ r.id }}</span></div>
+              <div style="font-size:12px;color:oklch(0.68 0.015 250);margin-top:2px;">weapons: {{ r.weapons }}</div>
+              <div style="font-size:12px;color:oklch(0.62 0.015 250);margin-top:2px;line-height:1.4;">{{ r.note }}</div>
+            </div>
+          </label>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <div style="font-size:12px;font-family:ui-monospace,monospace;color:oklch(0.62 0.02 250);background:oklch(0.18 0.01 250);border-radius:8px;padding:10px 12px;margin-bottom:6px;line-height:1.65;word-break:break-word;">
+      <div><b style="color:oklch(0.78 0.02 250);">path</b>&nbsp; {{ activeObj.path }}</div>
+      <div><b style="color:oklch(0.78 0.02 250);">license</b>&nbsp; {{ activeObj.license }}</div>
+      <div><b style="color:oklch(0.78 0.02 250);">pin</b>&nbsp; {{ activeObj.pin }}</div>
+    </div>
+
+    <sc-if value="{{ diagnostics }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size:12px;color:oklch(0.75 0.1 55);background:oklch(0.24 0.03 55 / 45%);border:1px solid oklch(0.4 0.06 55);border-radius:8px;padding:10px 12px;margin-bottom:16px;line-height:1.5;">
+        <b>diagnostics</b> &mdash; {{ activeObj.diag }}
+      </div>
+    </sc-if>
+
+    <div style="display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;">
+      <span style="font-size:12px;color:oklch(0.62 0.02 250);margin-right:4px;">Georg's read on this family:</span>
+      <button style="{{ acceptBtnStyle }}" onClick="{{ setActiveVerdictKfb }}">&#10003; feels KFB</button>
+      <button style="{{ rejectBtnStyle }}" onClick="{{ setActiveVerdictReject }}">&#10007; reject</button>
+    </div>
+  </div>
+
+  <div style="margin-bottom:28px;padding-top:4px;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:oklch(0.5 0.02 250);margin-bottom:8px;">also present in the repo &mdash; not required by this slice</div>
+    <sc-for list="{{ extraDonors }}" as="e" hint-placeholder-count="4">
+      <div style="font-size:12px;color:oklch(0.6 0.015 250);margin-bottom:4px;line-height:1.5;"><span style="font-family:ui-monospace,monospace;color:oklch(0.68 0.02 250);">{{ e.name }}</span> &mdash; {{ e.detail }}</div>
+    </sc-for>
+  </div>
+
+  <div style="background:oklch(0.22 0.025 80 / 45%);border:1px solid oklch(0.4 0.06 80);border-radius:12px;padding:22px;">
+    <h3 style="margin:0 0 10px;font-size:15px;color:oklch(0.88 0.09 80);">Human gate &mdash; ask Georg only</h3>
+    <ol style="margin:0 0 16px;padding-left:20px;font-size:13px;color:oklch(0.85 0.015 250);line-height:1.65;">
+      <li>Which donor families feel KFB?</li>
+      <li>Which reject?</li>
+      <li>Which first 3&ndash;5 shared recipes should be promoted?</li>
+    </ol>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:oklch(0.62 0.02 250);margin-bottom:6px;">live summary from your picks above</div>
+    <textarea readOnly="{{ true }}" value="{{ summaryText }}" style="width:100%;min-height:150px;background:oklch(0.15 0.01 250);color:oklch(0.85 0.015 250);border:1px solid oklch(0.32 0.015 250);border-radius:8px;padding:10px;font-family:ui-monospace,monospace;font-size:12px;line-height:1.55;resize:vertical;box-sizing:border-box;"></textarea>
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap;">
+      <button style="{{ copyBtnStyle }}" onClick="{{ copySummary }}">{{ copyLabel }}</button>
+      <input type="text" placeholder="optional note for this review" value="{{ note }}" onChange="{{ setNote }}" style="flex:1;min-width:200px;background:oklch(0.15 0.01 250);color:oklch(0.85 0.015 250);border:1px solid oklch(0.32 0.015 250);border-radius:8px;padding:8px 10px;font-size:12px;box-sizing:border-box;" />
+    </div>
+  </div>
+
+  <div style="margin-top:22px;font-size:11px;color:oklch(0.5 0.015 250);text-align:center;line-height:1.6;">No new global VFX engine &middot; no gameplay dependency &middot; SFX implementation is the next slice &middot; no Cloudflare &middot; no WSA &middot; no merge/Live.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const OK = 'oklch(0.72 0.15 145)';
+const WARN = 'oklch(0.75 0.15 55)';
+const BAD = 'oklch(0.68 0.18 25)';
+const MUTED = 'oklch(0.6 0.02 250)';
+const ACCENT = 'oklch(0.78 0.14 80)';
+
+const CELL_NAMES = ['burst','star','puff','spark','splat','ring','streak','shard','tongue','card','stamp','smoke'];
+
+const FAMILIES = [
+  {
+    id: 'brackeys', label: 'Brackeys VFX Bundle', kind: 'Masks / flipbooks', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ media/3D_Assets/FX_Visual/brackeys_vfx_bundle/',
+    license: "CC0 (repackaged by Brackeys) \u2014 particle textures: Picster, Kenney \u00b7 flipbooks: Thomas Ich\u00e9 \u00b7 predrawn spritesheets: CodeManu",
+    pin: 'LICENSE & CREDITS.txt blob 2a10782d8761 \u00b7 predrawn/ 14 sheets \u00b7 particles/opague/ ALL 13 named families shown below (muzzle 5, slash 4, flame 6, fire 2, smoke 3, dirt 3, scorch 3, light 3, effect 3, magic 2, circle 5, flare 1, scratch 1 = 41 of 93 opaque files; matching particles/alpha/ masks exist 1:1 but are not separately shown)',
+    semantic: ['impact', 'charge', 'movement', 'zone', 'contact'],
+    desc: "Repackaged CC0 particle + flipbook + spritesheet bundle, followed to the end of every path depth per Georg's request. The 14 predrawn/ sheets animate through the real sheet's first row. Every individually-named family in particles/opague/ is now pulled in and cycling through its real numbered variants in order \u2014 muzzle-flash (muzzle), melee (slash), fire/flame/smoke/dirt/scorch (contact & surface residue), light/magic/circle (charge/zone), plus the two single-file families (flare, scratch) shown static since there's nothing to cycle. This pack is already a cited SOP donor \u2014 kfb-fx-sprites.js explicitly ports FreeHitVfx's pop/dissolve burst-shader curve for use with sheets exactly like these.",
+    images: [
+      { src: 'media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png', label: 'explosion_6x5' },
+      { src: 'media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/star_explosion_6x5.png', label: 'star_explosion_6x5' },
+      { src: 'media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png', label: 'electric_ring_6x5' }
+    ],
+    diag: "Corrected per Georg's read (visually confirmed): flame is 2 separate loops split 4+2, not 3+3 \u2014 flame_01\u201304 share one rounded blob silhouette, flame_05\u201306 are a distinct tall flame-tongue silhouette; slash's 4 files are directional strike variants (not sequential frames), shown side-by-side; muzzle's 5-file cycle is sustained/automatic fire \u2014 muzzle_03 alone is shown as a single-shot candidate for player/FrizzleBob guns; smoke and dirt were also flagged as likely variants rather than time-frames and are now shown side-by-side instead of cycling. fire/effect/scorch/light/magic/circle still cycle as before and carry the SAME open question (variant set vs. real animation frames) \u2014 not yet confirmed either way."
+  },
+  {
+    id: 'freehitvfx', label: 'FreeHitVfx (Godot)', kind: 'Hit-VFX SOP', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ media/3D_Assets/FX_Visual/FreeHitVfx/',
+    license: 'Free sample tier \u2014 unlimited personal/commercial use, no attribution required, no resale of the raw files, no NFT/training-data use.',
+    pin: 'README.md blob fdadd655571f \u00b7 textures/t_stylizedhit_1.png blob 657965edd036 (2K hand-drawn crimson slash)',
+    semantic: ['impact'],
+    desc: "A free one-effect sample of a 30-effect Godot 4 hit-VFX pack. The asset itself is ONE static hand-drawn texture \u2014 there is no frame sequence to animate here; the motion comes procedurally from a billboard burst shader + an expanding ring shader (Inspector-editable preset: core/main/accent color, duration, layer size/lifetime/spin/overshoot/dissolve), which is exactly why it's a strong melee/hit-zone donor semantically (its own tag is 'impact') rather than a movement/zone one. This is already an adopted SOP, not just a texture \u2014 kfb-fx-sprites.js (KFB-Combat-Arena) explicitly ports its pop-in / white-hot-core / noise-dissolve curve into KFB's own instanced sprite shader, so the melee-hit animation intelligence already crossed over even though this single PNG is static.",
+    images: [
+      { src: 'media/3D_Assets/FX_Visual/FreeHitVfx/textures/t_stylizedhit_1.png', label: 't_stylizedhit_1 (2K)' }
+    ],
+    diag: 'Only the free sample tier is in-repo (1 texture + README); the other 9 hand-drawn textures / 29 remaining effects from the paid pack are not present.'
+  },
+  {
+    id: 'smoke2d', label: 'Free Cartoon Smoke (2D)', kind: '2D flipbook pack', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ media/2D_Assets/free-cartoon-smoke-effects-asset-pack/',
+    license: 'CraftPix asset license (LICENSE_README.txt \u2192 craftpix.net/file-licenses)',
+    pin: '5 families, 56 frames total: Chemical Smoke (8) \u00b7 Poisonous Smoke (12) \u00b7 Smoke Blow (12) \u00b7 Smoke Explosion (16) \u00b7 Smoke Spell (8) \u00b7 + 6 icon thumbnails \u00b7 also registered in registry/assets/v1/packs/free-cartoon-smoke-effects-asset-pack.json',
+    semantic: ['movement', 'zone', 'charge'],
+    desc: "Hand-drawn 2D smoke flipbook families, each shown below actually cycling through 5 real sampled frames of its own sequence \u2014 distinct silhouettes per family (Blow = directional puff, Explosion = big rising burst, Spell/Poisonous = curling zone smoke), a closer match to KFB's SURFACE.energy / travel-schub smoke needs than the generic 3D smoke packs.",
+    images: [
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Smoke%20Explosion.png', label: 'Smoke Explosion' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Chemical%20Smoke.png', label: 'Chemical Smoke' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Poisonous%20Smoke.png', label: 'Poisonous Smoke' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Smoke%20Spell.png', label: 'Smoke Spell' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Smoke%20Blow.png', label: 'Smoke Blow' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Icons/PNG/Icons_Smoke.png', label: 'Smoke (generic)' },
+      { src: 'media/2D_Assets/free-cartoon-smoke-effects-asset-pack/Smoke%20Explosion/PNG/Smoke%20Explosion_Frame_08.png', label: 'Smoke Explosion \u00b7 frame 08/16' }
+    ],
+    diag: 'CraftPix license text in-repo is a link only (35 bytes) \u2014 exact commercial terms not fetched in this slice.'
+  },
+  {
+    id: 'tinyswords', label: 'Tiny Swords \u00b7 Particle FX', kind: '2D game-ready FX', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ "media/2D_Assets/Tiny Swords (Free Pack)/Particle FX/"',
+    license: 'CC0 \u2014 Pixel Frog',
+    pin: 'Full folder, 8 files: Dust_01/02 \u00b7 Explosion_01/02 \u00b7 Fire_01/02/03 \u00b7 Water Splash',
+    semantic: ['contact', 'impact', 'movement'],
+    desc: "Pixel Frog's tiny, flat, saturated FX sprites \u2014 already the house style for Nexus Castle/Village (BAUKASTEN-TinySwords.md). Corrected per Georg's read: these are laid out as separate TYPES (Dust, Explosion, Fire), each with its own real numbered variants \u2014 shown below as 3 separate small cycles (Dust 01\u219202, Explosion 01\u219202, Fire 01\u219202\u219203) in file order, not mashed into one 8-frame reel. Water Splash is the only file for its type and stays static.",
+    images: [],
+    diag: 'File-number order is shown as authored (01\u2192\u2026); whether that order is strictly "large\u2192small" intensity per Georg\u2019s recollection is his read, not confirmed from metadata in the files themselves.'
+  },
+  {
+    id: 'combatgrammar', label: 'KFB Combat Ink-Atlas + VFX Recipes', kind: 'Shared Combat FX/SFX module (KFB-owned)', status: 'LOCATED',
+    path: 'georg-doc/KFB-Combat-Arena @ modules/',
+    license: 'KFB-owned source \u2014 not a third-party asset',
+    pin: 'kfb-vfx-recipes.js v1.0.0 (29647 B, blob 5b1ac585517d) \u00b7 kfb-combat-atlas.js v2.2.0 (10413 B, blob f51bae7aefbf) \u00b7 kfb-fx-sprites.js (15536 B, blob df009798a097) \u00b7 + kfb-fx-flame.js, kfb-fx-trails.js, kfb-hit-response.js, kfb-combat-cues.js, kfb-combat-def.js \u00b7 SFX: kfb-combat-sfx.v2.json, kfb-arena-sfx.v4.json, kfb-sfx-layers.js, kfb-mech-audio.js',
+    semantic: ['impact', 'movement', 'charge', 'contact', 'zone', 'reveal'],
+    desc: "This is the actual existing \u201cshared Combat FX module\u201d the brief asks to pin \u2014 not a third-party pack. kfb-vfx-recipes.js is a data table (no renderer, owns nothing in the scene) describing 5 muzzle classes for 10 weapons, 4 travel shapes, a 9-phase impact timeline, 12 surface materials \u00d7 3 deformer classes, and one cascade grammar \u2014 each recipe machine-checked by its own gate for budget/anchor/cleanup rules. kfb-combat-atlas.js draws the actual 18-cell ink-mask atlas consumed by kfb-fx-sprites.js's instanced sprite renderer (the module that ported FreeHitVfx's burst/dissolve curve). The atlas below is redrawn live from that exact source, cell-for-cell.",
+    images: [],
+    diag: 'A literal file/design-doc named "KFB VFX v10.1" was not located; only version breadcrumbs ("gemessene Werte aus v10/v11", "Schussbahn v10") survive in code comments, referring to the combat-runtime lineage this module was measured against. Four design docs cited in kfb-vfx-recipes.js\u2019s own header \u2014 Visual FX/VFX_Guide_NO_KFB_DRIFT_v1.md, VFX_Basics+Repos+SOP_v1.md, docs/PLAN_vfx-werkbank-v13.md, KFB_COMBAT_FX_MENTAL_MODELS \u2014 returned 0 matches on a repo-wide search. Marked SOURCE_REQUIRED, not reconstructed.'
+  },
+  {
+    id: 'explosionssmoke', label: 'Explosions & Smoke (packed sheets)', kind: '3D-ready GIF/PNG bursts', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ media/3D_Assets/FX_Visual/explosions_smoke/',
+    license: 'Not stated in-repo (no LICENSE file alongside the pack) \u2014 treat as unverified until sourced.',
+    pin: '29 files: explosionbig/medium/blue/orange-smoke/purple-smoke, whitehotbig/medium, collision + 3 spark colors, fireimpact, impact_verticalring, teleport \u2014 each as matched .gif + .png, plus a packed-spritesheet HowTo (frames are NOT grid-aligned, a .plist maps positions)',
+    semantic: ['impact', 'movement', 'zone'],
+    desc: "Small pre-rendered burst/smoke/teleport GIFs, shown here actually animated (not the static PNG previews) \u2014 already looping frame sequences rather than raw single sprites. explosionbig/whitehotbig read as closer to a 3D muzzle-blast burst than the flatter 2D packs; teleport is the only \u2018portal/zone\u2019-shaped donor found in this census besides the ink-atlas ring cell.",
+    images: [],
+    diag: 'No license file travels with this folder (only a packed-spritesheet HowTo.md) \u2014 provenance/license is SOURCE_REQUIRED before any production use, unlike the other 4 asset packs which all carry explicit CC0/CraftPix/store terms.'
+  },
+  {
+    id: 'kenneysmoke', label: 'Kenney Smoke Particles', kind: '3D/2D CC0 particle pack', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ media/3D_Assets/FX_Visual/kenney_smoke-particles/',
+    license: 'CC0 \u2014 Kenney Vleugels (kenney.nl), credit appreciated but not required',
+    pin: 'license.txt blob bb734b6d5eb2 \u00b7 PNG/Black smoke/blackSmoke00\u201324.png (25) \u00b7 PNG/Explosion/explosion00\u201308.png (9) \u00b7 PNG/Fart/fart00\u201308.png (9) \u00b7 PNG/Flash/flash00\u201308.png (9) \u00b7 PNG/White puff/whitePuff00\u201324.png (25) \u2014 77 frames total, fully enumerated',
+    semantic: ['movement', 'impact', 'zone'],
+    desc: "Kenney's house-style flat CC0 smoke/puff/flash frames, organized by named sub-effect rather than by color variant like the other packs. Each sub-effect below is shown actually animating through 5 real sampled frames of its own sequence \u2014 Black smoke and White puff are dense 25-frame animations (dark vs. light drift), Explosion/Fart/Flash are shorter 9-frame bursts.",
+    images: [],
+    diag: '5 sampled frames per sub-effect are pulled in and cycled (25 of 77 total). The remaining frames are in-between steps of the same 5 looks, not distinct effects.'
+  },
+  {
+    id: 'boxelpoc', label: 'Boxel Blitz \u00b7 Audio-Feedback POC', kind: 'Feedback grammar POC', status: 'LOCATED',
+    path: 'georg-doc/kayfabizarro @ "KFB Boxel Blitz/audio-feedback-poc/"',
+    license: 'KFB-owned POC; consumes exact pinned KFB audio-library assets',
+    pin: 'index.html blob 1c645e932235 \u00b7 README/RETURN/evidence docs \u00b7 audio pin commit d78fa86226\u2026 \u00b7 browser evidence 8/8 PASS (Actions run 35417094183)',
+    semantic: ['contact', 'reveal'],
+    desc: "A standalone 3D POC proving a reusable arcade/cartoon feedback grammar (pickup, power-up, power-down, checkpoint ladder 1\u201310, cascade ladder 1\u201310) without touching Boxel Blitz v4 physics. The visible VFX is deliberately minimal \u2014 a small squash/stretch + one particle burst per event \u2014 the POC's real content is the audio ladder, not new visual FX. Its own human gate on the grammar is still OPEN.",
+    images: [
+      { src: 'KFB%20Boxel%20Blitz/captures/01-v4-s9-final.png', label: 'Boxel Blitz v4 run (context)' }
+    ],
+    diag: "The screenshot shown is a Boxel Blitz v4 run capture for orientation only \u2014 no screenshot of the audio-feedback POC's own squash/burst exists in-repo yet."
+  }
+];
+
+const RECIPES = [
+  { id: 'muzzle-schnell', group: 'Muzzle', title: 'Fast weapons \u2014 muzzle pop', weapons: 'stinger, hornet', note: 'Small directed star pop at the muzzle (45ms) + 2 scattered sparks. No camera, 160ms cleanup.' },
+  { id: 'muzzle-schrot', group: 'Muzzle', title: 'Shotgun \u2014 wide muzzle burst', weapons: 'scrap', note: 'Bigger muzzle burst (60ms) + 3 wide-scatter sparks. Small camera kick, 240ms cleanup.' },
+  { id: 'muzzle-blast', group: 'Muzzle', title: 'Rocket/mortar \u2014 anticipated blast', weapons: 'rocket, mortar', note: 'Anticipation (110ms), largest muzzle burst, rising smoke wisp, 2 shard sparks. Small camera kick, 620ms cleanup.' },
+  { id: 'muzzle-strahl', group: 'Muzzle', title: 'Beam/railgun \u2014 charge + plasma', weapons: 'beam, railgun', note: 'Charge dot (90ms) before the shot, plasma pop, 2 directed arc sparks. No camera, 180ms cleanup.' },
+  { id: 'muzzle-wurf', group: 'Muzzle', title: 'Thrown \u2014 windup puff', weapons: 'acid, dice, eyeball', note: 'Windup (140ms), soft puff, single dot spark. No camera, 200ms cleanup.' },
+  { id: 'travel-gerade', group: 'Travel', title: 'Straight flight', weapons: 'stinger, hornet, scrap', note: 'Mass + streak trail; the trail is never longer than the distance actually flown.' },
+  { id: 'travel-bogen', group: 'Travel', title: 'Arcing lob', weapons: 'acid, mortar, dice, eyeball', note: 'Mass + a following ground-shadow dot \u2014 the cheapest depth cue in the cartoon vocabulary.' },
+  { id: 'travel-schub', group: 'Travel', title: 'Rocket thrust', weapons: 'rocket', note: 'Mass + ONE dominant rising smoke ribbon + fire tick. The loop ends with the projectile, not after it.' },
+  { id: 'travel-strahl', group: 'Travel', title: 'Beam connection', weapons: 'beam, railgun', note: 'Tapering per-frame segment + plasma pop at contact \u2014 reads as a connection, not a slow projectile.' },
+  { id: 'cascade', group: 'Cascade', title: 'Chained combo reward', weapons: 'combo chain (3 beats)', note: 'Burst size falls, pitch and offset rise, exactly one hitstop. Must never cover the bodies it explains.' }
+];
+
+const SOURCE_REQUIRED = [
+  { title: 'skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/VFX_SFX_CONSOLIDATION_01.md', detail: 'not found at this path on georg-doc/kayfabizarro@main' },
+  { title: 'REVIEW_SCENE_BASE_V1.md', detail: 'not found at repo root (or searched) on georg-doc/kayfabizarro@main' },
+  { title: '"KFB VFX v10.1" module + design doc', detail: 'no single file/doc by this name; only version breadcrumbs ("v10/v11") inside kfb-vfx-recipes.js / kfb-fx-sprites.js comments' },
+  { title: 'VFX_Guide_NO_KFB_DRIFT_v1.md \u00b7 VFX_Basics+Repos+SOP_v1.md \u00b7 PLAN_vfx-werkbank-v13.md \u00b7 KFB_COMBAT_FX_MENTAL_MODELS', detail: 'all four cited by kfb-vfx-recipes.js\u2019s own header comment; 0 matches on a repo-wide search' }
+];
+
+const EXTRA_DONORS = [
+  { name: '"media/3D_Assets/FX_Visual/VFX Mysterious Objec - 192x192/"', detail: '20 pipo-* effect/object frames \u2014 spotted, not inspected' },
+  { name: 'media/3D_Assets/FX_Visual/Beams_BinbunVFX/', detail: '1 shared texture file \u2014 spotted, not inspected' }
+];
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { activeFamily: 'brackeys', diagnostics: false, verdicts: {}, promoted: {}, note: '', copied: false };
+  }
+
+  componentDidMount() { setTimeout(() => this._drawAtlas(), 0); }
+
+  _drawAtlas(triesLeft) {
+    if (this.state.activeFamily !== 'combatgrammar') return;
+    const left = triesLeft == null ? 20 : triesLeft;
+    const cv = document.getElementById('kfb-vfx-atlas-canvas');
+    if (!cv) { if (left > 0) setTimeout(() => this._drawAtlas(left - 1), 50); return; }
+    try {
+      this._paintAtlas(cv);
+    } catch (err) {
+      console.error('[vfx-review] atlas draw failed:', err && err.message, err && err.stack);
+    }
+  }
+
+  _paintAtlas(cv) {
+    const S = 96, COLS = 4, ROWS = 3;
+    cv.width = S * COLS; cv.height = S * ROWS;
+    const c = cv.getContext('2d');
+    if (!c) { console.error('[vfx-review] no 2d context'); return; }
+    c.fillStyle = '#1c1f26'; c.fillRect(0, 0, cv.width, cv.height);
+    let a = 4711;
+    const rnd = () => { a = (a * 1103515245 + 12345) & 0x7fffffff; return a / 0x7fffffff; };
+    const at = (i) => [(i % 4) * S + S / 2, Math.floor(i / 4) * S + S / 2];
+    const ring = (cx, cy, r, jit, n) => { const pts = []; for (let i = 0; i < n; i++) { const ang = (i / n) * Math.PI * 2, rr = r * (1 - jit / 2 + rnd() * jit); pts.push([cx + Math.cos(ang) * rr, cy + Math.sin(ang) * rr]); } return pts; };
+    const poly = (pts, style) => { c.beginPath(); c.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) c.lineTo(pts[i][0], pts[i][1]); c.closePath(); c.fillStyle = style; c.fill(); };
+    const soft = (cx, cy, r, al) => { const g = c.createRadialGradient(cx, cy, 0, cx, cy, r); g.addColorStop(0, 'rgba(255,255,255,' + al + ')'); g.addColorStop(0.55, 'rgba(255,255,255,' + (al * 0.6).toFixed(3) + ')'); g.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = g; c.beginPath(); c.arc(cx, cy, r, 0, 6.2832); c.fill(); };
+    const rays = (cx, cy, n, r0, r1, w, al) => { for (let i = 0; i < n; i++) { const ang = (i / n) * Math.PI * 2 + rnd() * 0.5, len = r1 * (0.6 + rnd() * 0.5), ww = w * (0.6 + rnd() * 0.8); const ux = Math.cos(ang), uy = Math.sin(ang), px = -uy, py = ux; poly([[cx + ux * r0 + px * ww, cy + uy * r0 + py * ww], [cx + ux * len, cy + uy * len], [cx + ux * r0 - px * ww, cy + uy * r0 - py * ww]], 'rgba(255,255,255,' + al + ')'); } };
+    let x, y;
+    [x, y] = at(0); poly(ring(x, y, S * 0.26, 0.42, 13), 'rgba(255,255,255,0.96)'); rays(x, y, 6, S * 0.2, S * 0.46, S * 0.05, 0.85);
+    [x, y] = at(1); rays(x, y, 5, S * 0.04, S * 0.45, S * 0.035, 1); poly(ring(x, y, S * 0.09, 0.3, 9), '#fff');
+    [x, y] = at(2); soft(x, y, S * 0.38, 0.62); soft(x - S * 0.1, y + S * 0.07, S * 0.22, 0.5); soft(x + S * 0.12, y - S * 0.05, S * 0.19, 0.45);
+    [x, y] = at(3); poly([[x, y - S * 0.42], [x + S * 0.07, y], [x, y + S * 0.42], [x - S * 0.07, y]], '#fff');
+    [x, y] = at(4); poly(ring(x, y, S * 0.25, 0.5, 15), 'rgba(255,255,255,0.95)');
+    for (let i = 0; i < 7; i++) { const ang = rnd() * 6.2832, d = S * (0.28 + rnd() * 0.16); poly(ring(x + Math.cos(ang) * d, y + Math.sin(ang) * d, S * (0.03 + rnd() * 0.05), 0.6, 8), 'rgba(255,255,255,0.85)'); }
+    [x, y] = at(5); c.strokeStyle = '#fff'; c.lineWidth = S * 0.045; c.lineJoin = 'round';
+    { const p = ring(x, y, S * 0.38, 0.12, 30); c.beginPath(); c.moveTo(p[0][0], p[0][1]); for (let i = 1; i < p.length; i++) c.lineTo(p[i][0], p[i][1]); c.closePath(); c.stroke(); }
+    [x, y] = at(6);
+    { const x0 = x - S * 0.46, x1 = x + S * 0.44, h = S * 0.1;
+      c.beginPath(); c.moveTo(x0, y); c.quadraticCurveTo(x + S * 0.1, y - h * 0.55, x1 - h, y - h); c.arc(x1 - h, y, h, -Math.PI / 2, Math.PI / 2); c.quadraticCurveTo(x + S * 0.1, y + h * 0.55, x0, y); c.closePath(); c.fillStyle = 'rgba(255,255,255,0.95)'; c.fill();
+      const hg = c.createLinearGradient(x1 - h * 2.6, 0, x1, 0); hg.addColorStop(0, 'rgba(255,255,255,0)'); hg.addColorStop(1, 'rgba(255,255,255,0.75)'); c.fillStyle = hg; c.fill();
+      c.save(); c.beginPath(); c.rect(x - S * 0.5, y - S * 0.5, S, S); c.clip(); c.globalCompositeOperation = 'destination-out';
+      const fg = c.createLinearGradient(x0, 0, x + S * 0.16, 0); fg.addColorStop(0, 'rgba(0,0,0,1)'); fg.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = fg; c.fillRect(x0, y - S * 0.2, S * 0.62, S * 0.4); c.restore(); }
+    [x, y] = at(7); poly([[x - S * 0.05, y - S * 0.4], [x + S * 0.11, y + S * 0.12], [x - S * 0.09, y + S * 0.4]], '#fff');
+    [x, y] = at(8);
+    { const p = []; for (let i = 0; i <= 16; i++) { const t = i / 16, ang = Math.PI * 2 * t; const r = S * (0.34 - 0.14 * Math.cos(ang)) * (0.9 + rnd() * 0.2); p.push([x + Math.sin(ang) * r * 0.75, y - Math.cos(ang) * r * 1.15]); } poly(p, 'rgba(255,255,255,0.95)'); }
+    [x, y] = at(9); c.save(); c.translate(x, y); c.rotate(-0.22); poly([[-S * 0.2, -S * 0.3], [S * 0.2, -S * 0.26], [S * 0.17, S * 0.3], [-S * 0.22, S * 0.27]], 'rgba(255,255,255,0.92)'); c.restore();
+    [x, y] = at(10); c.strokeStyle = 'rgba(255,255,255,0.95)'; c.lineWidth = S * 0.06;
+    { const p = [[-1, -1], [1, -0.94], [0.96, 1], [-0.95, 0.97]].map((q) => [x + q[0] * S * 0.3 + (rnd() - 0.5) * 3, y + q[1] * S * 0.3 + (rnd() - 0.5) * 3]); c.beginPath(); c.moveTo(p[0][0], p[0][1]); for (let i = 1; i < p.length; i++) c.lineTo(p[i][0], p[i][1]); c.closePath(); c.stroke(); }
+    [x, y] = at(11); soft(x, y, S * 0.46, 0.42); soft(x - S * 0.14, y - S * 0.1, S * 0.26, 0.3); soft(x + S * 0.13, y + S * 0.12, S * 0.24, 0.28);
+    c.strokeStyle = 'rgba(255,255,255,0.08)'; c.lineWidth = 1;
+    for (let i = 1; i < COLS; i++) { c.beginPath(); c.moveTo(i * S, 0); c.lineTo(i * S, cv.height); c.stroke(); }
+    for (let j = 1; j < ROWS; j++) { c.beginPath(); c.moveTo(0, j * S); c.lineTo(cv.width, j * S); c.stroke(); }
+  }
+
+  setFamily(id) { this.setState({ activeFamily: id }); if (id === 'combatgrammar') setTimeout(() => this._drawAtlas(), 0); }
+  toggleDiagnostics() { this.setState((s) => ({ diagnostics: !s.diagnostics })); }
+  setActiveVerdict(val) { this.setState((s) => ({ verdicts: { ...s.verdicts, [s.activeFamily]: s.verdicts[s.activeFamily] === val ? null : val } })); }
+  setNote(e) { this.setState({ note: e.target.value }); }
+
+  toggleRecipe(id) {
+    this.setState((s) => {
+      const promoted = { ...s.promoted };
+      const count = Object.keys(promoted).filter((k) => promoted[k]).length;
+      if (!promoted[id] && count >= 5) return s;
+      promoted[id] = !promoted[id];
+      if (!promoted[id]) delete promoted[id];
+      return { promoted };
+    });
+  }
+
+  _buildSummary() {
+    const accepted = FAMILIES.filter((f) => this.state.verdicts[f.id] === 'kfb').map((f) => f.label);
+    const rejected = FAMILIES.filter((f) => this.state.verdicts[f.id] === 'reject').map((f) => f.label);
+    const promoted = RECIPES.filter((r) => this.state.promoted[r.id]).map((r) => r.title + ' (' + r.id + ')');
+    const lines = ['KFB VFX-01 review \u2014 Georg\u2019s picks', ''];
+    lines.push('Feels KFB: ' + (accepted.length ? accepted.join(', ') : '(none picked yet)'));
+    lines.push('Reject: ' + (rejected.length ? rejected.join(', ') : '(none picked yet)'));
+    lines.push('Promote recipes: ' + (promoted.length ? promoted.join('; ') : '(none picked yet)'));
+    if (this.state.note) { lines.push(''); lines.push('Note: ' + this.state.note); }
+    return lines.join('\n');
+  }
+
+  copySummary() {
+    const text = this._buildSummary();
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied: true });
+    clearTimeout(this._copyTimer);
+    this._copyTimer = setTimeout(() => this.setState({ copied: false }), 1500);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const activeObj = FAMILIES.find((f) => f.id === s.activeFamily) || FAMILIES[0];
+    const isGrammar = activeObj.id === 'combatgrammar';
+    const statusColor = activeObj.status === 'LOCATED' ? OK : activeObj.status === 'PARTIAL' ? WARN : BAD;
+
+    const families = FAMILIES.map((f) => {
+      const isActive = f.id === s.activeFamily;
+      const verdict = s.verdicts[f.id];
+      const badge = verdict === 'kfb' ? ' \u2713' : verdict === 'reject' ? ' \u2717' : '';
+      const base = 'display:flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;';
+      const btnStyle = isActive
+        ? base + 'background:oklch(0.3 0.04 80);border:1px solid oklch(0.55 0.1 80);color:oklch(0.96 0.02 80);font-weight:600;'
+        : base + 'background:oklch(0.21 0.014 250);border:1px solid oklch(0.3 0.015 250);color:oklch(0.8 0.015 250);';
+      const fc = f.status === 'LOCATED' ? OK : f.status === 'PARTIAL' ? WARN : BAD;
+      return { id: f.id, displayLabel: f.label + badge, btnStyle, dotStyle: 'width:7px;height:7px;border-radius:50%;background:' + fc + ';flex-shrink:0;', onClick: () => this.setFamily(f.id) };
+    });
+
+    const promotedCount = Object.keys(s.promoted).filter((k) => s.promoted[k]).length;
+    const recipes = RECIPES.map((r) => {
+      const checked = !!s.promoted[r.id];
+      const disallowed = !checked && promotedCount >= 5;
+      return {
+        id: r.id, title: r.title, weapons: r.weapons, note: r.note, checked, disallowed,
+        onToggle: () => this.toggleRecipe(r.id),
+        rowStyle: 'display:flex;gap:10px;align-items:flex-start;padding:10px 4px;border-bottom:1px solid oklch(0.26 0.012 250);cursor:' + (disallowed ? 'not-allowed' : 'pointer') + ';opacity:' + (disallowed ? '0.45' : '1') + ';'
+      };
+    });
+
+    const activeVerdict = s.verdicts[s.activeFamily];
+    const btnBase = 'padding:6px 14px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;';
+    const acceptBtnStyle = btnBase + (activeVerdict === 'kfb' ? 'background:oklch(0.34 0.11 145);border-color:oklch(0.6 0.15 145);color:#fff;' : 'background:transparent;border-color:oklch(0.42 0.06 145);color:oklch(0.78 0.1 145);');
+    const rejectBtnStyle = btnBase + (activeVerdict === 'reject' ? 'background:oklch(0.32 0.12 25);border-color:oklch(0.58 0.16 25);color:#fff;' : 'background:transparent;border-color:oklch(0.42 0.07 25);color:oklch(0.78 0.11 25);');
+
+    return {
+      sourceRequiredItems: SOURCE_REQUIRED,
+      extraDonors: EXTRA_DONORS,
+      cellNames: CELL_NAMES,
+      families,
+      activeObj,
+      isFamily: !isGrammar,
+      isGrammar,
+      isBrackeys: activeObj.id === 'brackeys',
+      isFreeHitVfx: activeObj.id === 'freehitvfx',
+      isSmoke2d: activeObj.id === 'smoke2d',
+      isTinySwords: activeObj.id === 'tinyswords',
+      isBoxelPoc: activeObj.id === 'boxelpoc',
+      isExplosionsSmoke: activeObj.id === 'explosionssmoke',
+      isKenneySmoke: activeObj.id === 'kenneysmoke',
+
+      recipes,
+      promotedCount,
+      promotedCountColor: promotedCount >= 3 ? OK : MUTED,
+      diagnostics: s.diagnostics,
+      diagLabel: s.diagnostics ? 'diagnostics: on' : 'diagnostics: off',
+      diagBtnStyle: 'padding:6px 12px;border-radius:7px;font-size:11px;font-family:ui-monospace,monospace;cursor:pointer;' + (s.diagnostics ? 'background:oklch(0.3 0.05 55);border:1px solid oklch(0.5 0.08 55);color:oklch(0.9 0.05 55);' : 'background:transparent;border:1px solid oklch(0.35 0.015 250);color:oklch(0.6 0.02 250);'),
+      toggleDiagnostics: () => this.toggleDiagnostics(),
+      activeStatusStyle: 'font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:transparent;color:' + statusColor + ';border:1px solid ' + statusColor + ';',
+      setActiveVerdictKfb: () => this.setActiveVerdict('kfb'),
+      setActiveVerdictReject: () => this.setActiveVerdict('reject'),
+      acceptBtnStyle, rejectBtnStyle,
+      note: s.note,
+      setNote: (e) => this.setNote(e),
+      summaryText: this._buildSummary(),
+      copyLabel: s.copied ? 'copied \u2713' : 'copy summary',
+      copyBtnStyle: 'padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;background:' + ACCENT + ';border:1px solid ' + ACCENT + ';color:oklch(0.15 0.02 80);',
+      copySummary: () => this.copySummary()
+    };
+  }
+}
+
+</script>
+</body>
+</html>

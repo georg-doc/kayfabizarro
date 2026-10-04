@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Gitarren-Spielhaltung · Sonde 2 (Griffhand links)</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>body{background:#12110d;color:#e8e2cf;font:12px/1.5 ui-monospace,monospace;padding:16px}pre{white-space:pre-wrap}</style>
+</head>
+<body><pre id="out">messe …</pre>
+<script type="module">
+import * as THREE from 'three';
+import { instance, loadClips, findBone } from '../lib/atlas.js';
+
+const AN = 'media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/';
+const n = (v) => Math.round(v * 1000) / 1000;
+const med = await loadClips('Rig_Medium');
+const out = { rig: {}, slots: {}, tries: {} };
+
+/* ---------- Bone-Inventar: was kann ein Strum-Clip \u00fcberhaupt ansprechen? ---------- */
+{
+  const fig = await instance(AN + 'characters/gltf/Animatronic_Normal.glb');
+  const bones = [];
+  fig.traverse((o) => { if (o.isBone || o.type === 'Bone') bones.push(o); });
+  out.rig.count = bones.length;
+  out.rig.tree = bones.map((b) => {
+    const chain = [];
+    let p = b.parent;
+    while (p && (p.isBone || p.type === 'Bone')) { chain.push(p.name); p = p.parent; }
+    return b.name + (chain.length ? '  \u2190 ' + chain.join(' \u2190 ') : '  (root)');
+  });
+  /* Ruhelage der Arm-Bones: Basis f\u00fcr additive Anschlagbewegung */
+  const hit = med.find((c) => c.name === 'Holding_B');
+  const m = new THREE.AnimationMixer(fig);
+  const a = m.clipAction(hit.clip); a.play(); m.update(0); a.paused = true;
+  fig.updateWorldMatrix(true, true);
+  out.rig.restInPose = {};
+  for (const bn of bones.map((b) => b.name)) {
+    if (!/arm|hand|body|chest|head|spine|torso|hip|leg/i.test(bn)) continue;
+    const b = fig.getObjectByName(bn);
+    out.rig.restInPose[bn] = {
+      quat: b.quaternion.toArray().map(n),
+      eulerDeg: new THREE.Euler().setFromQuaternion(b.quaternion).toArray().slice(0, 3).map((r) => n(THREE.MathUtils.radToDeg(r))),
+      world: b.getWorldPosition(new THREE.Vector3()).toArray().map(n)
+    };
+  }
+  /* welche Tracks hat Holding_B \u00fcberhaupt? Ein Strum-Layer darf nur disjunkte treiben */
+  out.rig.holdingBTracks = hit.clip.tracks.map((t) => t.name);
+}
+
+/* ---------- Kandidaten: Gitarre an der LINKEN (Griff-)Hand ---------- */
+/* Anatomie: der Pivot sitzt oben im Hals \u2192 die Datei ist f\u00fcr die GRIFFhand gebaut.
+   Bei einer Rechtsh\u00e4nder-Gitarre h\u00e4lt die LINKE Hand den Hals, die rechte schl\u00e4gt an.
+   S26 h\u00e4ngte sie an handslot.r \u2014 damit zeigte der Hals \u00fcber die Brust ins Gesicht. */
+async function tryIt(pose, slot, aim, grip, roll) {
+  const fig = await instance(AN + 'characters/gltf/Animatronic_Normal.glb');
+  const hit = med.find((c) => c.name === pose);
+  const m = new THREE.AnimationMixer(fig);
+  const a = m.clipAction(hit.clip); a.play(); m.update(0); a.paused = true;
+  const g = await instance(AN + 'assets/gltf/Guitar.gltf');
+  const f = findBone(fig, slot);
+  f.bone.add(g); g.position.set(0, 0, 0);
+  fig.updateWorldMatrix(true, true);
+  const bq = f.bone.getWorldQuaternion(new THREE.Quaternion());
+  const axis = new THREE.Vector3(0, 1, 0);
+  const wantLocal = new THREE.Vector3(...aim).normalize().applyQuaternion(bq.clone().invert());
+  const q = new THREE.Quaternion().setFromUnitVectors(axis, wantLocal);
+  if (roll) q.multiply(new THREE.Quaternion().setFromAxisAngle(axis, THREE.MathUtils.degToRad(roll)));
+  g.quaternion.copy(q);
+  if (grip) g.position.add(axis.clone().applyQuaternion(q).multiplyScalar(grip));
+  fig.updateWorldMatrix(true, true);
+  const gb = new THREE.Box3().setFromObject(g);
+  const wq = g.getWorldQuaternion(new THREE.Quaternion());
+  const wp = (bn) => { const b = findBone(fig, bn); return b ? b.bone.getWorldPosition(new THREE.Vector3()) : null; };
+  const dist = (p) => p ? n(gb.clampPoint(p, new THREE.Vector3()).distanceTo(p)) : null;
+  const long = new THREE.Vector3(0, 1, 0).applyQuaternion(wq);
+  const normal = new THREE.Vector3(0, 0, 1).applyQuaternion(wq);
+  const gw = g.getWorldPosition(new THREE.Vector3());
+  /* Halsspitze = Pivot + 0,36 entlang der L\u00e4ngsachse; Korpusmitte = Pivot - 0,6 entlang */
+  const neckTip = gw.clone().add(long.clone().multiplyScalar(0.36));
+  const bodyMid = gw.clone().add(long.clone().multiplyScalar(-0.6));
+  const head = wp('head');
+  const strumHand = slot === 'handslot.l' ? wp('handslot.r') : wp('handslot.l');
+  return {
+    box: { min: gb.min.toArray().map(n), max: gb.max.toArray().map(n) },
+    bottomY: n(gb.min.y),
+    neckTip: neckTip.toArray().map(n),
+    neckTipToHead: head ? n(neckTip.distanceTo(head)) : null,
+    bodyMid: bodyMid.toArray().map(n),
+    strumHandToBodyMid: strumHand ? n(strumHand.distanceTo(bodyMid)) : null,
+    distHeadBox: dist(head),
+    faceNormal: normal.toArray().map(n),
+    elevationDeg: n(THREE.MathUtils.radToDeg(Math.asin(long.y)))
+  };
+}
+
+/* der Fehlerstand von S26 als Kontrollmessung */
+out.tries['S26-IST  r aim[.5,.82,.28] grip.45 roll90'] = await tryIt('Holding_B', 'handslot.r', [0.5, 0.82, 0.28], 0.45, 90);
+
+/* Griffhand links, Hals nach au\u00dfen (+x) und leicht nach vorn */
+for (const aim of [[0.75, 0.6, 0.28], [0.62, 0.72, 0.3], [0.85, 0.42, 0.32], [0.7, 0.52, 0.48]]) {
+  for (const grip of [0.3, 0.42]) {
+    out.tries[`l aim[${aim.join(',')}] grip${grip} roll0`] = await tryIt('Holding_B', 'handslot.l', aim, grip, 0);
+  }
+}
+/* Roll-Sweep auf dem besten Neigungskandidaten */
+for (const roll of [0, 45, 90, 135, 180, 225, 270, 315]) {
+  out.tries[`l aim[.75,.6,.28] grip.42 roll${roll}`] = await tryIt('Holding_B', 'handslot.l', [0.75, 0.6, 0.28], 0.42, roll);
+}
+/* zweite Pose als Alternative, falls Holding_B die Griffhand schlecht stellt */
+for (const pose of ['Holding_A', 'Holding_C', 'Idle_A']) {
+  out.tries[`${pose} l aim[.75,.6,.28] grip.42 roll0`] = await tryIt(pose, 'handslot.l', [0.75, 0.6, 0.28], 0.42, 0);
+}
+/* Handslot-Weltlagen zum Einordnen der Vorzeichen */
+{
+  const fig = await instance(AN + 'characters/gltf/Animatronic_Normal.glb');
+  const hit = med.find((c) => c.name === 'Holding_B');
+  const m = new THREE.AnimationMixer(fig);
+  const a = m.clipAction(hit.clip); a.play(); m.update(0); a.paused = true;
+  fig.updateWorldMatrix(true, true);
+  for (const bn of ['handslot.l', 'handslot.r', 'head', 'chest']) {
+    const f = findBone(fig, bn);
+    out.slots[bn] = f ? f.bone.getWorldPosition(new THREE.Vector3()).toArray().map(n) : null;
+  }
+}
+
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+window.__g = out;
+</script>
+</body>
+</html>

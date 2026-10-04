@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>KFB · OSM City Drive</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","@dimforge/rapier3d-compat/rapier.es.js":"https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/rapier.es.js"}}
+  </script>
+</head>
+<body>
+  <canvas id="view" tabindex="0" aria-label="Befahrbarer OSM-Stadtausschnitt"></canvas>
+  <header id="topbar">
+    <h1><span class="title-long" id="city-title-long">OSM · Fahrprobe</span><span class="title-short" id="city-title-short">OSM</span></h1>
+    <div class="primary-actions">
+      <button id="pause">Pause</button>
+      <button id="reset">Zurück</button>
+    </div>
+    <details id="tools-panel">
+      <summary>Mehr</summary>
+      <div class="tools-content">
+        <label>Stadt<select id="city-select"><option value="huerth-v0">Hürth</option><option value="ehrenfeld-huerth-corridor-v0">Hürth → Ehrenfeld</option><option value="ehrenfeld-v0">Ehrenfeld</option></select></label>
+        <label>Ansicht<select id="look-select"><option value="grotesque">Grotesk</option><option value="cartoon">Cartoon</option></select></label>
+        <a href="../osm-town-mvp/">← KFB Town</a>
+        <button id="camera">Freie Kamera</button>
+        <details id="facts-panel">
+          <summary>Diagnose</summary>
+          <pre id="facts"></pre>
+        </details>
+      </div>
+    </details>
+  </header>
+  <section id="hud" aria-live="polite">
+    <div><span id="speed">0</span> <span class="unit">km/h</span> · <span id="phase">LÄDT</span></div>
+    <div id="status">Die Stadt wird aufgebaut …</div>
+    <div id="sound-status">Klangfakten werden vorbereitet …</div>
+    <div class="small help-line">W/S fahren · A/D lenken · Q/E driften · Shift Schub · Leertaste Sprung · B Bremse · R zurück</div>
+  </section>
+  <nav id="touch" aria-label="Fahrsteuerung">
+    <button data-key="KeyA">←</button><button data-key="KeyW">↑</button><button data-key="KeyD">→</button><button data-key="KeyS">↓</button>
+    <button data-key="KeyB">Bremse</button><button data-key="ShiftLeft">Schub</button><button data-key="KeyQ">Drift L</button><button data-key="KeyE">Drift R</button><button data-key="Space">Sprung</button>
+  </nav>
+  <div id="gate">
+    <div class="panel">
+      <div class="eyebrow">C1 · echte OSM-Stadt + KFB-Stil + vorhandene Fahrbasis</div>
+      <h2 id="gate-title">Eine erste Runde<br>durch die Stadt.</h2>
+      <p>Fahre auf Straße, Gehweg und Freifläche durch den echten OpenStreetMap-Ausschnitt.</p>
+      <details class="gate-notes">
+        <summary>Was wird hier getestet?</summary>
+        <p class="small">Vorhandene Free-Roam-Fahrbasis, OSM-Straßen und -Gebäude sowie Fakten für den separaten Audio-Baustein. Noch nicht enthalten: Laufen, Bewohner und fertiger Ton.</p>
+      </details>
+      <p id="loading">Lädt …</p>
+      <div class="gate-actions">
+        <button id="start" disabled>Fahrt beginnen</button>
+        <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a>
+      </div>
+      <a id="local-link" hidden href="http://127.0.0.1:4173/ChatGPT_web/osm-city-drive/">Sicher über den lokalen Testserver öffnen</a>
+    </div>
+  </div>
+  <script type="module">
+    if (location.protocol === 'file:') {
+      const message = 'Diese Fahrprobe braucht einen lokalen Testserver. Direktes Öffnen als Datei wird vom Browser aus Sicherheitsgründen blockiert.';
+      document.getElementById('loading').textContent = message;
+      document.getElementById('local-link').hidden = false;
+      window.__OSM_CITY_DRIVE_ERROR__ = message;
+    } else {
+      import('./src/app.mjs').catch(error => {
+        document.getElementById('loading').textContent = `Start nicht möglich: ${error.message}`;
+        window.__OSM_CITY_DRIVE_ERROR__ = String(error.stack || error);
+        console.error(error);
+      });
+    }
+  </script>
+</body>
+</html>

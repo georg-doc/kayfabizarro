@@ -1,0 +1,66 @@
+{
+  "schema": "kfb.review-artifact-registry/1",
+  "updated": "2026-09-23",
+  "owner": "skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22",
+  "rules": {
+    "admission": "human-accepted artifact only",
+    "runtimeOwnership": "review harness never becomes product runtime owner",
+    "cloudflare": "deferred until a persistent/shared public gate is useful",
+    "timeout": "UNKNOWN until branch/file readback"
+  },
+  "donors": [
+    {
+      "id": "threejs-focus-review-v1",
+      "status": "VERIFIED_DONOR",
+      "humanAcceptance": "GEORG_ACCEPTED",
+      "acceptedDate": "2026-09-23",
+      "focusProfiles": [
+        "3d-architecture",
+        "source-object",
+        "material-light",
+        "motion-contact"
+      ],
+      "source": {
+        "repo": "georg-doc/KFB-Stunt-Car-Race",
+        "pr": 33,
+        "branch": "chat/racer-tarch0-sp13ktra-2026-09-23",
+        "runtimeHead": "b37cbad1038e669a0c9929d25789d54d0283b0fc",
+        "artifactCommit": "a8db68c15b658f9d96770946fe51c1f44915e74d",
+        "acceptanceCommit": "5736f149fcf6e80ef80bf41b74e5be44bc758cbb",
+        "artifactPath": "_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/KFB_Racer_TARCH0_R1_review.html",
+        "acceptancePath": "_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/R1_ACCEPTED.md",
+        "generatedSha256": "a6f9f3d0ff06d5de04c50fcd40214021ceb6a2895412ea20749efdacd78f3ee5",
+        "generatedBytes": 14428,
+        "githubBlobSha": "00f793e283c3b0d5851a9f1aecb4060a5bb2e08b"
+      },
+      "capabilities": [
+        "dominant-review-stage",
+        "named-camera-presets",
+        "orbit-zoom",
+        "layer-toggles",
+        "debug-overlay",
+        "compact-legend",
+        "source-revision-marker",
+        "scope-exclusions",
+        "single-html",
+        "zero-install",
+        "no-cloudflare"
+      ],
+      "protectedHarness": [
+        "panel-density",
+        "camera-interaction-grammar",
+        "button-toggle-grammar",
+        "responsive-layout",
+        "status-plaque-structure"
+      ],
+      "adaptationSeam": [
+        "review-title-source-scope",
+        "subject-data-or-source-backed-builder",
+        "camera-preset-targets",
+        "legend-layer-list",
+        "gate-specific-debug-overlay",
+        "gate-specific-diagnostics"
+      ]
+    }
+  ]
+}

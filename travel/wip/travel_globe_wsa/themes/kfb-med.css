@@ -1,0 +1,247 @@
+/* ============================================================================
+   KFB / MED — Design Token & Component Sheet
+   ----------------------------------------------------------------------------
+   Kanonische Design-Sprache für KayfaBizarro (Freestyle) und die MED / Clinical
+   Edition. Quelle der Wahrheit für Farben, Type, Rhythmus und die wiedererkenn-
+   baren UI-Primitive (Papier-Buttons/Tabs, Cut-out-Rahmen, harte Offset-Schatten).
+
+   PROVENIENZ — autoritativ
+   ------------------------
+   Werte 1:1 aus der KFB-3D-Table-Projekt-Kit (CLAUDE.md, "UI-Kit von
+   kayfabizarro.pages.dev konsolidiert"). Das ist die verbindliche Kit; frühere
+   Annahmen (dunkle Bühne, Skew-Buttons) sind damit ERSETZT durch: helles Papier,
+   harter Offset-Schatten ohne Blur, Radius 0, Irish-Grover-Buttons mit
+   Rotate-Hover, leichte Rotation überall (−1° bis 2°), nie steril gerade.
+
+   Verwendung
+   ----------
+   • JS-Komponenten (kfb-table.*.js) und klassische HTML/CSS-Views:
+       <link rel="stylesheet" href="/themes/kfb-med.css">
+       <button class="kfb-btn">DEAL</button>
+   • Design Components (.dc.html): NICHT verlinken (DCs stylen inline). Token-
+     WERTE unten 1:1 als Inline-Styles übernehmen — dieses File ist die Referenz.
+   ============================================================================ */
+
+:root {
+  /* — Papier (hell, warm) — der Grund, nicht dunkel ————————————————— */
+  --kfb-paper:       #f3ead3;  /* Standard-Papier / Seitengrund */
+  --kfb-paper-2:     #ece1c0;  /* zweite Papierlage */
+  --kfb-paper-3:     #e3d5af;  /* Schneidematte / tiefste Lage */
+  --kfb-card:        #f7f0da;  /* Kartenfläche (heller als Papier) */
+
+  /* — Tinte / Text (dunkel auf Papier) ——————————————————————————— */
+  --kfb-ink:         #1f1a14;  /* Primärtext, Outlines */
+  --kfb-ink-2:       #3a342a;  /* Fließtext */
+  --kfb-ink-mute:    #6f6450;  /* Sekundär / Labels */
+  --kfb-ink-faint:   #a89a78;  /* Fußnoten, deaktiviert */
+
+  /* — Kanten / Rahmen ————————————————————————————————————————— */
+  --kfb-border:      #d8c79c;
+  --kfb-border-hi:   #c2ad79;
+
+  /* — Akzente ——————————————————————————————————————————————— */
+  --kfb-accent:      #b8361f;  /* KFB-Rot (Wortmarke, CTAs, twist) */
+  --kfb-gold:        #8a6a16;
+  --kfb-teal:        #2f7a72;  /* kühler Akzent + MED-Signatur */
+  --kfb-cream:       #f6efd9;  /* Text auf Akzent */
+  --kfb-mark:        rgba(233,193,74,0.5); /* Marker-Swipe / Highlight */
+
+  /* — Verdicts / Calls (semantisch, gedruckt) ——————————————————— */
+  --kfb-push:        #4f6029;  /* +  King's Verdict push */
+  --kfb-hold:        #6e685a;  /* ±0 hold */
+  --kfb-twist:       #b8361f;  /* −  twist */
+  --kfb-bingo:       #4f6029;
+  --kfb-bongo:       #8a6f3e;
+  --kfb-boggle:      #5a6b76;
+  --kfb-blodsinn:    #b8361f;
+
+  /* Semantischer Editions-Akzent — pro <html data-edition> umgeschaltet */
+  --kfb-signal:      var(--kfb-accent);
+
+  /* — Typografie (nur 3 Fonts — die Kit) ——————————————————————
+     Irish Grover = Display/Wortmarke · Special Elite = Body/UI (Typewriter)
+     Shantell Sans = Karten-Handschrift + lesbarer Fließtext. */
+  --kfb-font-display: "Irish Grover", "Cooper Black", cursive;
+  --kfb-font-ui:      "Special Elite", ui-monospace, monospace;
+  --kfb-font-hand:    "Shantell Sans", "Comic Sans MS", sans-serif;
+
+  /* — Form / Rhythmus ————————————————————————————————————————
+     Radius 0 (Papier ist eckig). Harte Offset-Schatten, KEIN Blur. */
+  --kfb-radius: 0px;
+  --kfb-shadow:      3px 3px 0 rgba(31,26,20,0.18);
+  --kfb-shadow-lift: 5px 5px 0 rgba(31,26,20,0.22);
+  --kfb-tilt: -0.8deg;          /* Basis-Neigung; nie steril gerade */
+  --kfb-dur-fast: 120ms;
+  --kfb-dur: 200ms;
+  --kfb-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Editions-Umschaltung: <html data-edition="med"> ————————————————— */
+[data-edition="med"] { --kfb-signal: var(--kfb-teal); }
+
+/* ============================================================================
+   Flächen
+   ============================================================================ */
+.kfb-page {
+  background: var(--kfb-paper-2);
+  color: var(--kfb-ink);
+  font-family: var(--kfb-font-hand);
+}
+
+/* ============================================================================
+   Wortmarke — "Kayfa" (Tinte) + "Bizarro" (Cream auf Akzent, Marker-Swipe)
+   ============================================================================ */
+.kfb-wordmark {
+  font-family: var(--kfb-font-display);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--kfb-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  transform: rotate(var(--kfb-tilt));
+}
+.kfb-wordmark b {
+  font-weight: 400;
+  background: var(--kfb-accent);
+  color: var(--kfb-cream);
+  padding: 0.06em 0.28em;
+  margin-left: 0.18em;
+  box-shadow: var(--kfb-shadow);
+}
+
+/* ============================================================================
+   Kicker — Typewriter-Mikrolabel
+   ============================================================================ */
+.kfb-kicker {
+  font-family: var(--kfb-font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--kfb-ink-mute);
+}
+.kfb-kicker--signal { color: var(--kfb-signal); }
+
+/* ============================================================================
+   Buttons — Irish Grover, Akzent-Grund, Cream-Text, 2px Ink-Border.
+   Hover = anheben + leicht kippen + größerer harter Schatten.
+   ============================================================================ */
+.kfb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.05em;
+  background: var(--kfb-accent);
+  color: var(--kfb-cream);
+  border: 2px solid var(--kfb-ink);
+  border-radius: var(--kfb-radius);
+  box-shadow: var(--kfb-shadow);
+  font-family: var(--kfb-font-display);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transform: rotate(var(--kfb-tilt));
+  transition: transform var(--kfb-dur-fast) var(--kfb-ease),
+              box-shadow var(--kfb-dur-fast) var(--kfb-ease),
+              background var(--kfb-dur-fast) var(--kfb-ease);
+}
+.kfb-btn:hover {
+  transform: translate(-1px, -1px) rotate(-0.6deg);
+  box-shadow: var(--kfb-shadow-lift);
+}
+.kfb-btn:active { transform: translate(1px, 1px) rotate(0deg); box-shadow: var(--kfb-shadow); }
+
+/* Signal-Variante (folgt der Edition) */
+.kfb-btn--signal { background: var(--kfb-signal); }
+
+/* Papier-Variante (leise: Papiergrund, Ink-Text, Special Elite) */
+.kfb-btn--paper {
+  background: var(--kfb-card);
+  color: var(--kfb-ink);
+  font-family: var(--kfb-font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+/* ============================================================================
+   Tabs — Papier, leicht gekippt; aktiv = Akzent-Unterkante (hart, kein Blur)
+   ============================================================================ */
+.kfb-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.kfb-tab {
+  padding: 0.45em 0.9em;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--kfb-ink-mute);
+  font-family: var(--kfb-font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  cursor: pointer;
+  transform: rotate(var(--kfb-tilt));
+  transition: color var(--kfb-dur) var(--kfb-ease),
+              border-color var(--kfb-dur) var(--kfb-ease);
+}
+.kfb-tab:hover { color: var(--kfb-ink); }
+.kfb-tab[aria-selected="true"],
+.kfb-tab.is-active { color: var(--kfb-ink); border-bottom-color: var(--kfb-signal); }
+
+/* ============================================================================
+   Cut-out — Karten / Panels: Kartengrund, Ink/Border, harter Offset-Schatten,
+   Radius 0, leichte Rotation (abwechselnd).
+   ============================================================================ */
+.kfb-cut {
+  position: relative;
+  background: var(--kfb-card);
+  border: 1.5px solid var(--kfb-border-hi);
+  border-radius: var(--kfb-radius);
+  box-shadow: var(--kfb-shadow);
+  transform: rotate(var(--kfb-tilt));
+  transition: transform var(--kfb-dur) var(--kfb-ease),
+              box-shadow var(--kfb-dur) var(--kfb-ease);
+}
+.kfb-cut:nth-child(even) { transform: rotate(0.6deg); }
+.kfb-cut--interactive { cursor: pointer; }
+.kfb-cut--interactive:hover { transform: translate(-1px,-1px) rotate(-0.6deg); box-shadow: var(--kfb-shadow-lift); }
+.kfb-cut--marked { border-left: 3px solid var(--kfb-signal); }
+
+/* ============================================================================
+   Badge / Ruf-Marke — Irish Grover, Akzent-Grund, Cream, hart geschattet
+   ============================================================================ */
+.kfb-badge {
+  display: inline-block;
+  padding: 0.28em 0.6em;
+  background: var(--kfb-signal);
+  color: var(--kfb-cream);
+  font-family: var(--kfb-font-display);
+  font-size: 14px;
+  border-radius: var(--kfb-radius);
+  box-shadow: var(--kfb-shadow);
+  transform: rotate(-2deg);
+}
+
+/* ============================================================================
+   Chip — Special-Elite-Daten-Chip (Würfel/Zähler/Referenzen)
+   ============================================================================ */
+.kfb-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.22em 0.6em;
+  background: var(--kfb-paper);
+  border: 1.5px solid var(--kfb-border-hi);
+  border-radius: var(--kfb-radius);
+  box-shadow: var(--kfb-shadow);
+  font-family: var(--kfb-font-ui);
+  font-size: 12px;
+  color: var(--kfb-ink-2);
+}
+
+/* ============================================================================
+   Reduced motion
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .kfb-btn, .kfb-tab, .kfb-cut { transition: none; }
+}

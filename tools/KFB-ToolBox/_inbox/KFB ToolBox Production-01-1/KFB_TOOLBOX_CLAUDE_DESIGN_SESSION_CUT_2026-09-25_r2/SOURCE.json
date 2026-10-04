@@ -1,0 +1,123 @@
+{
+ "schema": "kfb.claude-design-session-cut/1",
+ "project": "KFB ToolBox",
+ "slice": "TOOLBOX-PRODUCTION-01 continuation",
+ "exportedAt": "2026-09-25T19:05:00Z",
+ "status": "CANDIDATE",
+ "revision": "r2",
+ "entrypoints": [
+  "KFB ToolBox Production-01.dc.html"
+ ],
+ "owner": {
+  "name": "ToolBox / Web-GitHub Bridge",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+  "head": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+  "pr": 204
+ },
+ "sources": [
+  {
+   "id": "runtime",
+   "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e"
+  },
+  {
+   "id": "motionLibrary",
+   "commit": "032c9d50cd5de6764fa37fec65cb203ed35fcb11"
+  },
+  {
+   "id": "kaykitStock",
+   "commit": "b97b5ac55df2724fae623992433685583eece51e"
+  },
+  {
+   "id": "legacy",
+   "commit": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0"
+  },
+  {
+   "id": "residentAssets",
+   "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+  },
+  {
+   "id": "earRig",
+   "pr": 214,
+   "commit": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+   "path": "tools/KFB-ToolBox/ear-rig/"
+  },
+  {
+   "id": "s39Band",
+   "commit": "b64d7edca3ec0d184d97f1b3a5db0103332e3e54",
+   "path": "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/"
+  },
+  {
+   "id": "wdSky",
+   "commit": "b64d7edca3ec0d184d97f1b3a5db0103332e3e54",
+   "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/wd-sky.js"
+  },
+  {
+   "id": "brief",
+   "commit": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+   "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md"
+  },
+  {
+   "id": "presentationRules",
+   "commit": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+   "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md"
+  }
+ ],
+ "donors": [
+  {
+   "id": "wd-light.js BASELINE",
+   "status": "DONOR_ONLY"
+  },
+  {
+   "id": "MUSIC-PERF timeline/audio",
+   "status": "DONOR_ONLY"
+  },
+  {
+   "id": "Resident Atlas CCD IK",
+   "status": "DONOR_ONLY (prototype evidence)"
+  }
+ ],
+ "contracts": [
+  "kfb-toolbox-workspace/1",
+  "kfb.pose-profile/0.1",
+  "kfb.motion-profile/0.1",
+  "kfb.locomotion-profile-set/0.1",
+  "kfb.ear-rig.v0",
+  "kfb.vehicle-surface-fit-profile/0.1",
+  "kfb.solver-gate/0.1",
+  "kfb.ear-review/0.1",
+  "kfb.resident-band-module/1",
+  "kfb-worldbuilder-scene/1"
+ ],
+ "assetRefs": [
+  "external/ASSET_REFS.md"
+ ],
+ "runtimeOwners": [
+  "pose-rig.v1 (owner fix, local)",
+  "locomotion-profiles.v1",
+  "ear-dangle.v1.js",
+  "edit-layer.js",
+  "graft-mount.v1",
+  "pet-eye-rig.v6",
+  "pet-mouth.v1",
+  "band-module.js"
+ ],
+ "protectedBoundaries": [
+  "no movement controller",
+  "Travel owns flight",
+  "WorldBuilder owns terrain/sky",
+  "Studio owns ear geometry/placement",
+  "one mixer per skinned actor",
+  "Motion Library never overwrites KayKit roles",
+  "solver A kept unless same-rig win"
+ ],
+ "voiceInputUncertain": [],
+ "missing": [
+  "CardCarrier (animated) model pin for CARD_SURF",
+  "GitHub push (403)"
+ ],
+ "storageKey": "kfb-toolbox-production-01",
+ "three": "0.160.0",
+ "pushed": false,
+ "nextGate": "GEORG REVIEW · CANONICAL LOCOMOTION + SHARED POSE/IK + FIRST EAR/PERFORMANCE CONSUMERS"
+}

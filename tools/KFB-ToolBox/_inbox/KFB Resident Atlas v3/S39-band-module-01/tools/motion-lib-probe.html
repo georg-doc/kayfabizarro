@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ml-probe</title></head><body>
+<script type="module">
+const o = {};
+const pr = await (await fetch('https://api.github.com/repos/georg-doc/kayfabizarro/pulls/209')).json();
+o.sha = pr.head.sha; o.ref = pr.head.ref; o.state = pr.state; o.merged = pr.merged;
+const base = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${o.sha}/media/3D_Assets/Animations/KFB_Motion_Library/`;
+const cat = await (await fetch(base + 'KFB_Motion_Library.catalog.json')).json();
+o.catKeys = Object.keys(cat).slice(0, 12);
+const clips = cat.clips || cat.motions || cat;
+const g = Array.isArray(clips) ? clips.find((c) => /guitar_a/.test(JSON.stringify(c))) : clips['kfb_music_guitar_a'];
+o.guitarA = JSON.stringify(g).slice(0, 700);
+const sha1 = async (u) => { const b = new Uint8Array(await (await fetch(u)).arrayBuffer()); const h = new TextEncoder().encode(`blob ${b.length}\0`); const a = new Uint8Array(h.length + b.length); a.set(h); a.set(b, h.length); return [b.length, [...new Uint8Array(await crypto.subtle.digest('SHA-1', a))].map((x) => x.toString(16).padStart(2, '0')).join('')]; };
+o.remote = await sha1(base + 'KFB_Motion_Library_Rig_Medium.glb');
+o.expected = '45e12910feffa236f368d1be5d1c9f97e371eacd';
+o.same = o.remote[1] === o.expected;
+const s = JSON.stringify(o); for (let i = 0; i < s.length; i += 470) console.log('M' + (i / 470), s.slice(i, i + 470));
+</script></body></html>

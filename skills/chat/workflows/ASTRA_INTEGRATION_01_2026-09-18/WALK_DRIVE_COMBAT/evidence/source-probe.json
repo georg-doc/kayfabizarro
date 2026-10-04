@@ -1,0 +1,55 @@
+{
+  "evidenceClass": "SOURCE_AUDIT_AND_ANALYTIC_PROBE_ONLY",
+  "date": "2026-09-18",
+  "node": "v22.16.0",
+  "donor": {
+    "repo": "georg-doc/kayfabizarro",
+    "path": "tools/world_atlas/source/scenes/city-block.js",
+    "gitBlob": "be8364bd6dec7b423d6cf3c48163e73fffd5d471",
+    "bytes": 6364
+  },
+  "recipe": {
+    "id": "CQ-S2_KENNEY_CITY_STREET_GRID",
+    "placements": 134,
+    "roadPlacements": 21,
+    "distinctRoadCells": 19,
+    "duplicateRoadCells": [
+      {
+        "cell": "4,2",
+        "placements": [
+          {"a": "roads:road-straight", "m": [4, 2], "r": 90, "y": 0},
+          {"a": "roads:road-crossing", "m": [4, 2], "r": 90, "y": 0}
+        ]
+      },
+      {
+        "cell": "7,5",
+        "placements": [
+          {"a": "roads:road-straight", "m": [7, 5], "r": 0, "y": 0},
+          {"a": "roads:road-crossing", "m": [7, 5], "r": 0, "y": 0}
+        ]
+      }
+    ],
+    "corridorPropCandidates": [
+      {"a": "roads:construction-cone", "m": [4, 8], "r": 0, "y": 0},
+      {"a": "roads:construction-barrier", "m": [4, 9], "r": 90, "y": 0}
+    ],
+    "roadPlacementsAfterProposedReplacement": 19
+  },
+  "tangentPlaneConstraint": {
+    "radius": 5,
+    "bodyHeight": 0.022,
+    "tolerancePolicy": "PROPOSAL: radial error <= 0.05 bodyHeight",
+    "proposedTolerance": 0.0011,
+    "planeRadiusLimit": 0.10488665310705649,
+    "upErrorDegreesAtLimit": 1.201736256698747,
+    "excludes": ["baked terrain variation", "road mesh thickness", "vehicle suspension", "dynamic contact", "rebase continuity"]
+  },
+  "checks": {
+    "sourceBlobMatches": true,
+    "duplicateRoadCellsConfirmed": true,
+    "corridorPropCellsConfirmed": true,
+    "replacementCountConfirmed": true,
+    "sphereEquationConfirmed": true
+  },
+  "notTested": ["GLB/GLTF geometry bounds", "asset sidecar closure", "Rapier dynamics", "braking/reverse", "spherical drive", "safe exit", "combat integration", "browser", "deployment", "human acceptance"]
+}

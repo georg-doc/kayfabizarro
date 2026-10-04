@@ -1,0 +1,786 @@
+{
+ "schema": "kfb.export-manifest/1.0",
+ "name": "KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1",
+ "entry": "KFB Joyride J14 · Travel Modes.dc.html",
+ "created": "2026-09-30",
+ "counts": {
+  "DOC": 9,
+  "EXPORTED": 39,
+  "EVIDENCE": 31,
+  "REPLAY_SOURCE": 6,
+  "EXPORTED_SPLIT": 9
+ },
+ "files": [
+  {
+   "path": "CHANGELOG.md",
+   "class": "DOC",
+   "bytes": 1583,
+   "sha256": "873cb9af1a662222e39fdef1d773242087fea761efb152e24bd1f71ef4ea297a"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "class": "DOC",
+   "bytes": 1227,
+   "sha256": "17385fed202450fa3613d8799b11cc6ec260f80b8827fb22335182c15c6f06a8"
+  },
+  {
+   "path": "HANDOVER.md",
+   "class": "DOC",
+   "bytes": 1918,
+   "sha256": "dcecf7d353422020b2e5edf7027aba1cbd69bf9cb22be82cb7c31fc5578e14c9"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "class": "DOC",
+   "bytes": 1075,
+   "sha256": "6b606fbf7e9fd329b9fab1b68e16d8aaebbbdfd1e8c998ee29fae73b3a0254a6"
+  },
+  {
+   "path": "KFB Joyride J14 · Travel Modes.dc.html",
+   "class": "EXPORTED",
+   "bytes": 60138,
+   "sha256": "de6ba8a60d8c5335e8e6a495693b6055e8451f9f025569ee3deb350c0a00411b"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "class": "DOC",
+   "bytes": 744,
+   "sha256": "a42dfce1a93f6ea08cd627de9dad32c8510820e64c30974005c3841f1e7cb8f6"
+  },
+  {
+   "path": "RETURN.md",
+   "class": "DOC",
+   "bytes": 7359,
+   "sha256": "798672c2110020b04c5f423b8f186fbc05eff4fac597f41b611b50307f65e5ba"
+  },
+  {
+   "path": "SOURCE.json",
+   "class": "DOC",
+   "bytes": 7478,
+   "sha256": "89b86b77f1458ae7901d6d4026a924a60b77e6c598b960e4c6899baab3306809"
+  },
+  {
+   "path": "START_HERE.md",
+   "class": "DOC",
+   "bytes": 1920,
+   "sha256": "579a7aaf8f0dbeeb11fe2915d0ea8554e71692d8e5d77e7e88340b6437058324"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "class": "DOC",
+   "bytes": 3521,
+   "sha256": "3448f5ae8ea6735505f15130b50bd93cb023509f4b2f0b4d768e653db8945c37"
+  },
+  {
+   "path": "bb-scene.js",
+   "class": "EXPORTED",
+   "bytes": 22997,
+   "sha256": "12a082b38a31ed7db325b53ee9e01f39dd12838c8db7c091c887f731ee67e305"
+  },
+  {
+   "path": "evidence/FIX_2026-09-30_WSA.md",
+   "class": "EVIDENCE",
+   "bytes": 7466,
+   "sha256": "dff7cac8af2d9cace1babe44164d730b1dfb0b21deaeb8c82182e2753f80eed9"
+  },
+  {
+   "path": "evidence/j14-actors.json",
+   "class": "EVIDENCE",
+   "bytes": 7959,
+   "sha256": "10c7327e3bdb2e45a5b2c763d6af2ad218fae8776846a64230c175075a48014e"
+  },
+  {
+   "path": "evidence/j14-clip-selection.json",
+   "class": "EVIDENCE",
+   "bytes": 5218,
+   "sha256": "847509539756d460e747c3241d9ff7aa1e116552f99fe4aa7b10f8997a20bb9f"
+  },
+  {
+   "path": "evidence/j14-locomotion-profile.ActionFigure.json",
+   "class": "EVIDENCE",
+   "bytes": 20205,
+   "sha256": "10e4b55acef5a2aed2dbb4871782ca78ab6553e1b03d258ab7407134f2afbf2f"
+  },
+  {
+   "path": "evidence/j14-pads.core.json",
+   "class": "EVIDENCE",
+   "bytes": 9305,
+   "sha256": "6a2f7448379a96c4906e04ad79674dad2cdef327bb19ee0d0ac285ffbcad0b81"
+  },
+  {
+   "path": "evidence/j14-probe-A.blackknight.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 69081,
+   "sha256": "3fa617404796c3b08067ab59c98b4cf2f47b63406ed7e43f4149e27c06a9820d"
+  },
+  {
+   "path": "evidence/j14-probe-A.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 71082,
+   "sha256": "8fa69d552e709f68914cb26aa1c9a6d657133008fc3f8c08b6cb77b8da5fdbc6"
+  },
+  {
+   "path": "evidence/j14-probe-B.blackknight.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 72016,
+   "sha256": "84b8a6275639bc09e111c093a40861f4d613d8b2dd6f2c62c01bab0d73ffeaaa"
+  },
+  {
+   "path": "evidence/j14-probe-B.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 75393,
+   "sha256": "705df546662c364c2d86ec21daaf3f6593513c9fc6f9ed3580e05477e69ef702"
+  },
+  {
+   "path": "evidence/j14-probe-C.blackknight.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 63886,
+   "sha256": "af6985eb456856122d21407f7d31045182338a0bc8c9b16c6cfd67799bcbad2f"
+  },
+  {
+   "path": "evidence/j14-probe-C.trace.json",
+   "class": "EVIDENCE",
+   "bytes": 64207,
+   "sha256": "46363a190542ac686bf8ac73598ae8b90218b05a85c9db53cbd577b3ba4fccba"
+  },
+  {
+   "path": "evidence/j14-probes.summary.json",
+   "class": "EVIDENCE",
+   "bytes": 4518,
+   "sha256": "c50cce03525e7e9fcdb9cd13930292bfb99859f92c8e62038dc7fe072d7348a6"
+  },
+  {
+   "path": "evidence/j14-profile-set.json",
+   "class": "EVIDENCE",
+   "bytes": 13291,
+   "sha256": "6952385252bae7e5b7e6a28c3d304ea6e7bab30ad5e519062d8d3c751d772558"
+  },
+  {
+   "path": "evidence/j14-round-gate.lap.json",
+   "class": "EVIDENCE",
+   "bytes": 36028,
+   "sha256": "e1970b02621a5c4e82b5d9ace466ad88597ae7a455e5cb348913a5f4ad70fc1b"
+  },
+  {
+   "path": "evidence/j14-walkability.derived.json",
+   "class": "EVIDENCE",
+   "bytes": 10895,
+   "sha256": "4175ce0bb97be76bd553777dc93ffec3931e44535788f450de7d6c2ca8b2d925"
+  },
+  {
+   "path": "evidence/screenshots/01-j14-A.jpg",
+   "class": "EVIDENCE",
+   "bytes": 35038,
+   "sha256": "4acfa859602cd75d14aa68058af0a55e758b3623b13c41ac26a71766fc2b7797"
+  },
+  {
+   "path": "evidence/screenshots/01-j14-B2.jpg",
+   "class": "EVIDENCE",
+   "bytes": 41512,
+   "sha256": "675ed3e2925a92e92ad30a8e34f85d4b934091af972851118f17d5230d01104a"
+  },
+  {
+   "path": "evidence/screenshots/01-j14-C.jpg",
+   "class": "EVIDENCE",
+   "bytes": 40282,
+   "sha256": "142c26d2b5be3af9285a58646e14f86472b08e341a8e6257ee12d760ead134b8"
+  },
+  {
+   "path": "evidence/screenshots/02-j14-A.jpg",
+   "class": "EVIDENCE",
+   "bytes": 49751,
+   "sha256": "b71f2dcb76a4e90017c5329d5643f565a6e4c30d6ae49610ab0ae863f7c746f3"
+  },
+  {
+   "path": "evidence/screenshots/02-j14-B.jpg",
+   "class": "EVIDENCE",
+   "bytes": 44542,
+   "sha256": "8a1c83241b528e8e2f187d41e502e660c30d9b211fb6ee0fe10ab87a198a4a13"
+  },
+  {
+   "path": "evidence/screenshots/02-j14-B2.jpg",
+   "class": "EVIDENCE",
+   "bytes": 41409,
+   "sha256": "8e090c4c20975f4e0df1a844176f33b6a2652590887aadd4dcd90f6fe9c6a54f"
+  },
+  {
+   "path": "evidence/screenshots/02-j14-C.jpg",
+   "class": "EVIDENCE",
+   "bytes": 49552,
+   "sha256": "60b26f651977abecb779ace36c34dadd32b711d228c05ccc44d21e3ee5e63a3b"
+  },
+  {
+   "path": "evidence/screenshots/03-j14-B.jpg",
+   "class": "EVIDENCE",
+   "bytes": 42403,
+   "sha256": "05c394bf118fd8805f08ca0ed250489e7a8e204fb0e373e6e3e960c63ffea61e"
+  },
+  {
+   "path": "evidence/screenshots/j14-01-start.jpg",
+   "class": "EVIDENCE",
+   "bytes": 49573,
+   "sha256": "78c1068ab88d7d128e30a0848069c3d7da986122078a514eb0c6e94fc81e407b"
+  },
+  {
+   "path": "evidence/screenshots/j14-02-lap-result.jpg",
+   "class": "EVIDENCE",
+   "bytes": 49105,
+   "sha256": "d2637b723e96bb29a0e8826be7a627571d5d1db4da707230e7654bce6af8ac70"
+  },
+  {
+   "path": "evidence/screenshots/j14-03-reject-safe-space.jpg",
+   "class": "EVIDENCE",
+   "bytes": 47763,
+   "sha256": "1370c1384226700e852e09632d6f3bc77f2aa3bb3ae4daa18470f5ec32581f5d"
+  },
+  {
+   "path": "evidence/screenshots/j14-04-enter-sequence.ActionFigure.jpg",
+   "class": "EVIDENCE",
+   "bytes": 53806,
+   "sha256": "90a7925db5122cef8cdbe6001a29c5b06fcecc094ff6e0250cbc6d1116030c82"
+  },
+  {
+   "path": "evidence/screenshots/j14-05-exit-sequence.ActionFigure.jpg",
+   "class": "EVIDENCE",
+   "bytes": 37916,
+   "sha256": "726f0174d4280718c440b839ee6611489672b6784985d577c9a09f6321ecbca7"
+  },
+  {
+   "path": "evidence/screenshots/j14-06-exit-jump.BlackKnight.jpg",
+   "class": "EVIDENCE",
+   "bytes": 52117,
+   "sha256": "2b2caf3337d6e352d8fbc9dce94f227166db2ea1e78aebdfc4296368b8451b77"
+  },
+  {
+   "path": "evidence/screenshots/j14-07-run.BlackKnight.jpg",
+   "class": "EVIDENCE",
+   "bytes": 19877,
+   "sha256": "1c5369d35190e5e7ce5e3a2541cb12b66d09f8e3a28e11977391fd846e653743"
+  },
+  {
+   "path": "evidence/screenshots/j14-lap-end.jpg",
+   "class": "EVIDENCE",
+   "bytes": 48934,
+   "sha256": "9fe17c92cc06fa6ccd2d10be522d9f8f3d1864475ef880b11d68feb12cf777bc"
+  },
+  {
+   "path": "github.md",
+   "class": "REPLAY_SOURCE",
+   "bytes": 1379,
+   "sha256": "eb331140a380343add7bda19d5c6f09b51807aa2f3b86d6714035049bced0c58"
+  },
+  {
+   "path": "lab-clay/clay-material.v10.js",
+   "class": "EXPORTED",
+   "bytes": 35632,
+   "sha256": "4d070ce1f9e0a23acd53573271f40492ea5d69b3e03648086ecc1376c9d482a9"
+  },
+  {
+   "path": "lab-clay/clay-material.v8.js",
+   "class": "EXPORTED",
+   "bytes": 30310,
+   "sha256": "2a7a1a546fec7608c97462a3226230477f921fb71f41571716e7a4ebe8bcde1d"
+  },
+  {
+   "path": "lab-clay/clay-profiles.v2.js",
+   "class": "EXPORTED",
+   "bytes": 3546,
+   "sha256": "2eecc234ef24d9d6655fa14b5645837cc456f43672707a25914ab95b01f9cd79"
+  },
+  {
+   "path": "lab-clay/clay-relief.v2.js",
+   "class": "EXPORTED",
+   "bytes": 9988,
+   "sha256": "82798dc88c0003e451bcfd05160810a498f892b470ec820cc4ced04bff64d792"
+  },
+  {
+   "path": "lab-clay/clay-relief.v4.js",
+   "class": "EXPORTED",
+   "bytes": 10061,
+   "sha256": "584a8b611f7eedd33ac1956c17e8f259d2c0a591524d1ecaaf94f59aba4a96a3"
+  },
+  {
+   "path": "lab-clay/clay-soften.v1.js",
+   "class": "EXPORTED",
+   "bytes": 7607,
+   "sha256": "64370e953195b7ab611358e63007b44b1567acf4fb61b134c7ef17b5be90a1a9"
+  },
+  {
+   "path": "lab-clay/clay-toolmix.v1.js",
+   "class": "EXPORTED",
+   "bytes": 1891,
+   "sha256": "ea61e784d4321b566cbe30b7de0ad2a9ec8dfaecaf81d36ee9861493c7dd32a0"
+  },
+  {
+   "path": "lab-drive/joyride-drive.j08.js",
+   "class": "REPLAY_SOURCE",
+   "bytes": 46168,
+   "sha256": "61d1c76c5e155adf9a31b8435284dc6ba2283acc7c65ff11ecb096367ba6a2c4"
+  },
+  {
+   "path": "lab-drive/joyride-drive.j09.js",
+   "class": "EXPORTED",
+   "bytes": 48204,
+   "sha256": "77077ee231e28854ed10f05daa72116d18f05e3755f7dc31768f5ace4544f6e2"
+  },
+  {
+   "path": "lab-drive/joyride.j06.json",
+   "class": "EXPORTED",
+   "bytes": 11668,
+   "sha256": "2be7c06b3cc8892a294fc52ce1f47ed3b29704244a05a1eb691cb3e0025868c3"
+  },
+  {
+   "path": "lab-drive/kfb-drive.k2.js",
+   "class": "EXPORTED",
+   "bytes": 13141,
+   "sha256": "12c280ba8eef16368b9091578befc5e3e744f945bf0b0a22f8124e957fee769d"
+  },
+  {
+   "path": "lab-drive/kfb-drive.k2b.js",
+   "class": "EXPORTED",
+   "bytes": 14044,
+   "sha256": "9118b15c7edb76a8293b9a38c7062a8b439ea868b608b2ab0653845e31bd1345"
+  },
+  {
+   "path": "lab-drive/kfb-drive.k3.js",
+   "class": "REPLAY_SOURCE",
+   "bytes": 14247,
+   "sha256": "989351757873cc56a132296582cd02b0b28991b12e2e9053042495d4257bc11f"
+  },
+  {
+   "path": "lab-drive/lean-pass.l2.js",
+   "class": "EXPORTED",
+   "bytes": 9849,
+   "sha256": "43308cc69878f2a38fedecc45cc50e85581f0f2f6cfef0cbd37983f57511bfc6"
+  },
+  {
+   "path": "lab-hud/cologne-audio.v1.js",
+   "class": "EXPORTED",
+   "bytes": 4616,
+   "sha256": "ca2548f4d1485709f63f09293b51c8ae4c359f32363b730937651a71f3d04c30"
+  },
+  {
+   "path": "lab-hud/fingerprints-512.png",
+   "class": "EXPORTED",
+   "bytes": 290972,
+   "sha256": "5986cdc15b6f4fe17f42d32c86c2aece5bce39fb1d0186b4c890f9db7ed27673"
+  },
+  {
+   "path": "lab-hud/jingles.v1.js",
+   "class": "EXPORTED",
+   "bytes": 1991,
+   "sha256": "35a208c73a9d69dfc1ea007b9b289cbf67392b02d0495601033d3a558853d5d7"
+  },
+  {
+   "path": "lab-track/core/presets.v012.json",
+   "class": "REPLAY_SOURCE",
+   "bytes": 14026,
+   "sha256": "a389c2515f31c959dbed165228b6196cfa8fde870cfdd1b5e6e2c6ed6fa72092"
+  },
+  {
+   "path": "lab-track/core/stream-to-three.v5.mjs",
+   "class": "EXPORTED",
+   "bytes": 36381,
+   "sha256": "1298d004c95c77b7551388e09df42b48d0c0a8abfc42cf6e408964d71d06add7"
+  },
+  {
+   "path": "lab-track/core/track-core.v012.mjs",
+   "class": "REPLAY_SOURCE",
+   "bytes": 136100,
+   "sha256": "0dbf45312802bc165e5b73b7aec5c23dc40893c2ef4c8445ba26d5188d2a396f"
+  },
+  {
+   "path": "lab-track/crown-ao.v1.js",
+   "class": "EXPORTED",
+   "bytes": 5157,
+   "sha256": "334f90222a96ac435cf4e4d0318a74f821e95193f687b5a2ddc952cf7fd188b4"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part01",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "13fc341df1da3875c39c5cca3ead41bdc2a50fbcef6f750bf5eef761c1c4ea9d"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part02",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "36a3517700477c6e5c102bb03280b9bb2610bdc0d4a4918cf7e80c0af366c8dd"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part03",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "b2fb98aa0959a8cf98a8f0e752be30535580c9743da941ca903de68a31478fc2"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part04",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "93eedbfd7e360869ac28d6ab6180662fc271720e109711c34e4defe4e1b7dcff"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part05",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "20568d29b247507bb34c74f3b60eb6b5ebe906d3944fd756cf49a0a5f02ab3cd"
+  },
+  {
+   "path": "lab-track/data/p1a-j14.stream.json.part06",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 850274,
+   "sha256": "53d68593efe9f550ff5725ca81ce853fca046e44c3a2de82ad048994e464c5e5"
+  },
+  {
+   "path": "lab-track/parcours/p1-recipes.js",
+   "class": "REPLAY_SOURCE",
+   "bytes": 9112,
+   "sha256": "26b8a0fc4e2506bc5538e2931350f8399b9b1439c3e24386554a27a91b10ac7c"
+  },
+  {
+   "path": "lab-track/prop-guard.p1.js",
+   "class": "EXPORTED",
+   "bytes": 2755,
+   "sha256": "70c1cb2509acd05b650057f41440cac302e221947d78755df611b83b1f384b32"
+  },
+  {
+   "path": "lab-track/road-markings.m1.js",
+   "class": "EXPORTED",
+   "bytes": 11632,
+   "sha256": "bc4f1425d38731e3a0bc226a947cbf8b102fc760362dea76896e56925803ed77"
+  },
+  {
+   "path": "lab-track/road-markings.m1.json",
+   "class": "EXPORTED",
+   "bytes": 13526,
+   "sha256": "50c15fdea4afa7fa56eca8968bbbdaf88c902af68871e6ac80a6bcfd70838928"
+  },
+  {
+   "path": "lab-track/road-markings.m2.js",
+   "class": "EXPORTED",
+   "bytes": 10232,
+   "sha256": "7f1176c28593df93c6d77bd4c2c2563c0edc974236dcbf75da41ea72f4a4d7da"
+  },
+  {
+   "path": "lab-track/road-markings.m2.json",
+   "class": "EXPORTED",
+   "bytes": 11496,
+   "sha256": "461a52587ea98ad0a41c5f193c54dbe03b1711c241b03a455eef94ae399f3a6e"
+  },
+  {
+   "path": "lab-track/track-look.v5.js",
+   "class": "EXPORTED",
+   "bytes": 54125,
+   "sha256": "e616a93755a0627c47faba6bddcf3a33ba395200effb046eac4c4021a9d3d59f"
+  },
+  {
+   "path": "lab-track/transition-atlas.v1.js",
+   "class": "EXPORTED",
+   "bytes": 40657,
+   "sha256": "def14193553ba58abc27efb062506cc62b4aa8ec6949e2aaffa392a40b4f565e"
+  },
+  {
+   "path": "lab-track/transition-profiles.v1.json",
+   "class": "EXPORTED",
+   "bytes": 5842,
+   "sha256": "e7956c2d66f2c61566e70e1099732b6f6f5a133e7f1abf7e5bcf6b008926b426"
+  },
+  {
+   "path": "lab-travel/headless-probe.j14.js",
+   "class": "EXPORTED",
+   "bytes": 6347,
+   "sha256": "f69625a185dbc22bb04b0b2154b57c1167d83457c0fd4718ecbf286c36c0e281"
+  },
+  {
+   "path": "lab-travel/pinned/anim-map.v1.js",
+   "class": "EXPORTED",
+   "bytes": 10914,
+   "sha256": "d4ac375b1e2b90faae5d22698d19dc4f99c29f5da76f707a3eda3cd9455483ce"
+  },
+  {
+   "path": "lab-travel/pinned/locomotion-profiles.v1.js",
+   "class": "EXPORTED",
+   "bytes": 11712,
+   "sha256": "a36716a3e868e700ae2259e47f39fe296556ba35b91d378da4941a8ddf65ceae"
+  },
+  {
+   "path": "lab-travel/pinned/walk-controller.js",
+   "class": "EXPORTED",
+   "bytes": 15527,
+   "sha256": "566db4e2be042e3102aaf29701050411cfad9a4f6656f909abe75cc3253c9b7b"
+  },
+  {
+   "path": "lab-travel/travel-core.j14.js",
+   "class": "EXPORTED",
+   "bytes": 24731,
+   "sha256": "079867b59b374de1d36c01bbcf4b483623fe31890421a12613be823dd782ed62"
+  },
+  {
+   "path": "lab-travel/travel-modes.j14.js",
+   "class": "EXPORTED",
+   "bytes": 11063,
+   "sha256": "e553c97fbd7c8726065afc51ea5ac6d4806766241d25352434a0bcb8cfd48a44"
+  },
+  {
+   "path": "lab-travel/walkability.j14.js",
+   "class": "EXPORTED",
+   "bytes": 7336,
+   "sha256": "9177e17ba9e7e2fdf55ac56500926f9a5e814384b361ac7888dc7b91faab05dd"
+  },
+  {
+   "path": "lab-vfx/clay-particle-profiles.v1.json",
+   "class": "EXPORTED",
+   "bytes": 26919,
+   "sha256": "3fe9f6c5c8c6dc86c8d5ca4fe5fd96883734c0fab1c2681917f998dbfe22319c"
+  },
+  {
+   "path": "lab-vfx/clay-vfx.v1.js",
+   "class": "EXPORTED",
+   "bytes": 17177,
+   "sha256": "4995b6f1ac2a0384ee99911f2de8bc93085baa50591d7d27bba7f89c2595c45f"
+  },
+  {
+   "path": "ref/clay-joebinns/Fingerprints01_3K.png.part01",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "b365599ba4ed3fd43018c843d990306c272b985089818426de284ac0e8a2b013"
+  },
+  {
+   "path": "ref/clay-joebinns/Fingerprints01_3K.png.part02",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 1900000,
+   "sha256": "257d7c4a6f3bdf253c946727100151fd1718bef8d6789822f512878b72b486ad"
+  },
+  {
+   "path": "ref/clay-joebinns/Fingerprints01_3K.png.part03",
+   "class": "EXPORTED_SPLIT",
+   "bytes": 899482,
+   "sha256": "217faa1cb19b0a34949df758af67d56cdeff27f90b7f3c4f5ff0f3b0786ed462"
+  },
+  {
+   "path": "support.js",
+   "class": "EXPORTED",
+   "bytes": 69150,
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+  },
+  {
+   "path": "wd-donors.js",
+   "class": "EXPORTED",
+   "bytes": 25501,
+   "sha256": "34b253a8b79a86fcc634d10c79a5ade5b8c7b4e3cf684a19a9f4f79b914b0971"
+  },
+  {
+   "path": "wd-registry.js",
+   "class": "EXPORTED",
+   "bytes": 3797,
+   "sha256": "0f1052a4e412759a8c5d05da390eac3313ccadf94e9d1b54bc1ec264139b9bed"
+  }
+ ],
+ "splitsToJoin": [
+  {
+   "file": "lab-track/data/p1a-j14.stream.json",
+   "bytes": 10350274,
+   "sha256": "4258c08f702cca3be77dde66d80ac66d5c65d760a48e51b088d005143cc5be09",
+   "parts": [
+    "lab-track/data/p1a-j14.stream.json.part01",
+    "lab-track/data/p1a-j14.stream.json.part02",
+    "lab-track/data/p1a-j14.stream.json.part03",
+    "lab-track/data/p1a-j14.stream.json.part04",
+    "lab-track/data/p1a-j14.stream.json.part05",
+    "lab-track/data/p1a-j14.stream.json.part06"
+   ]
+  },
+  {
+   "file": "ref/clay-joebinns/Fingerprints01_3K.png",
+   "bytes": 4699482,
+   "sha256": "4f5ada12ccddcd62e8b660b254eec9614b50ff1376ebc579ad693db9e66b94cf",
+   "parts": [
+    "ref/clay-joebinns/Fingerprints01_3K.png.part01",
+    "ref/clay-joebinns/Fingerprints01_3K.png.part02",
+    "ref/clay-joebinns/Fingerprints01_3K.png.part03"
+   ]
+  }
+ ],
+ "remote": [
+  {
+   "url": "https://unpkg.com/react@18.3.1/umd/react.production.min.js",
+   "by": [
+    "support.js"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js",
+   "by": [
+    "support.js"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js",
+   "by": [
+    "support.js"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/",
+   "by": [
+    "lab-hud/cologne-audio.v1.js",
+    "lab-hud/jingles.v1.js",
+    "bb-scene.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs",
+   "by": [
+    "bb-scene.js"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs",
+   "by": [
+    "bb-scene.js"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json",
+   "by": [
+    "bb-scene.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@",
+   "by": [
+    "lab-travel/headless-probe.j14.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@378b209355b13304e3cff656ec0806ca5b89df28/",
+   "by": [
+    "lab-track/transition-atlas.v1.js"
+   ],
+   "class": "PINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/resident_atlas_s6/lib/atlas.js",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/world_atlas/source/lib/kit-lab.js",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/KFB-ToolBox/kfb-rigs-embed-v3/",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/kfb-pets.js",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/src/plant-recipe.js",
+   "by": [
+    "wd-donors.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/registry/assets/v1",
+   "by": [
+    "wd-registry.js"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://unpkg.com/three@0.160.0/ (importmap)",
+   "by": [
+    "KFB Joyride J14 · Travel Modes.dc.html"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://fonts.googleapis.com (Bangers, Irish Grover, Nunito Sans)",
+   "by": [
+    "KFB Joyride J14 · Travel Modes.dc.html"
+   ],
+   "class": "CDN_EXTERNAL"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/2ff8b350beefe02912bbff6eeeead3882e583d08/media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/*.mp3",
+   "by": [
+    "KFB Joyride J14 · Travel Modes.dc.html"
+   ],
+   "class": "PINNED_REMOTE"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_*.gltf",
+   "by": [
+    "lab-drive/joyride.j06.json"
+   ],
+   "class": "UNPINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@43d39ef99a9e33c5ca2f6d490c4a94e35f77aa28/media/3D_Assets/KayKit_Mystery_Series6/{ActionFigure,BlackKnight}.glb",
+   "by": [
+    "lab-travel/headless-probe.j14.js"
+   ],
+   "class": "PINNED_REMOTE"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@b97b5ac55df2724fae623992433685583eece51e/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/{Rig_Medium,Rig_Large}/*.glb",
+   "by": [
+    "lab-travel/headless-probe.j14.js"
+   ],
+   "class": "PINNED_REMOTE"
+  }
+ ],
+ "secretScan": {
+  "patterns": [
+   "ghp_",
+   "github_pat_",
+   "sk-",
+   "AKIA",
+   "X-Amz-Signature",
+   "token/sig query",
+   "Bearer",
+   "PRIVATE KEY"
+  ],
+  "hits": []
+ },
+ "rules": {
+  "maxFileBytes": 2097152,
+  "over": []
+ }
+}

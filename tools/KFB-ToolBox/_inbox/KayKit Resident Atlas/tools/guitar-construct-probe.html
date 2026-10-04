@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Spielhaltung · konstruktiv aus dem Körperraum</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>body{background:#12110d;color:#e8e2cf;font:12px/1.5 ui-monospace,monospace;padding:16px}pre{white-space:pre-wrap}</style>
+</head>
+<body><pre id="out">rechne …</pre>
+<script type="module">
+import * as THREE from 'three';
+import { instance, loadClips, findBone } from '../lib/atlas.js';
+
+const AN = 'media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/';
+const n = (v) => Math.round(v * 1000) / 1000;
+const D = THREE.MathUtils.degToRad;
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+/* gemessene Gitarren-Anatomie (S28) */
+const NECK_GRIP = -0.14, BODY_MID = -0.56, FACE_Z = 0.043, BACK_Z = -0.1;
+const NECK = [-0.28, 0.14], BODY = [-0.92, -0.28];
+const out = { rig: {}, best: null, top: [], tested: 0, passed: 0 };
+
+const med = await loadClips('Rig_Medium');
+async function posed(clip = 'Holding_B') {
+  const fig = await instance(AN + 'characters/gltf/Animatronic_Normal.glb');
+  const hit = med.find((c) => c.name === clip);
+  const mix = new THREE.AnimationMixer(fig);
+  const act = mix.clipAction(hit.clip); act.play(); mix.update(0); act.paused = true;
+  fig.updateWorldMatrix(true, true);
+  return fig;
+}
+const fig = await posed();
+const B = (nm) => findBone(fig, nm).bone;
+const wp = (nm) => B(nm).getWorldPosition(new THREE.Vector3());
+
+/* Armreichweite = Summe der Segmentlängen, nicht die Luftlinie einer Pose */
+function reachOf(chain) {
+  let sum = 0;
+  for (let i = 0; i < chain.length - 1; i++) sum += wp(chain[i]).distanceTo(wp(chain[i + 1]));
+  return sum;
+}
+const chainR = ['upperarm.r', 'lowerarm.r', 'wrist.r', 'hand.r', 'handslot.r'];
+const chainL = ['upperarm.l', 'lowerarm.l', 'wrist.l', 'hand.l', 'handslot.l'];
+const shR = wp('upperarm.r'), shL = wp('upperarm.l');
+out.rig = { shoulderR: shR.toArray().map(n), shoulderL: shL.toArray().map(n),
+            reachR: n(reachOf(chainR)), reachL: n(reachOf(chainL)),
+            head: wp('head').toArray().map(n), chest: wp('chest').toArray().map(n) };
+
+/* Bauchfront + Rumpfvertices der posierten Figur */
+const torsoVerts = [];
+let BELLY = -9;
+fig.traverse((o) => {
+  if (!o.isSkinnedMesh && !o.isMesh) return;
+  const p = o.geometry.attributes.position;
+  const v = new THREE.Vector3();
+  for (let i = 0; i < p.count; i += 2) {
+    v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld);
+    if (v.y < 0.4 || v.y > 1.15) continue;
+    torsoVerts.push(v.clone());
+    if (Math.abs(v.x) < 0.3 && v.y > 0.55 && v.y < 1.0) BELLY = Math.max(BELLY, v.z);
+  }
+});
+out.rig.bellyFrontZ = n(BELLY);
+
+const guitar = await instance(AN + 'assets/gltf/Guitar.gltf');
+guitar.updateWorldMatrix(true, true);
+const gv = [];
+guitar.traverse((o) => {
+  if (!o.isMesh) return;
+  const p = o.geometry.attributes.position;
+  for (let i = 0; i < p.count; i += 2) gv.push(new THREE.Vector3().fromBufferAttribute(p, i).applyMatrix4(o.matrix));
+});
+const gvBody = gv.filter((v) => v.y <= BODY[1]);
+
+/* ---------- konstruktive Platzierung ----------
+   Statt Aufhängen an der Pfote und Hoffen: Anschlagpunkt zuerst in bequeme Reichweite der
+   rechten Schulter setzen, daraus die ganze Gitarre ableiten, dann beide Arme nachführen.
+   C = S + u*0,56 - nrm*(FACE_Z + front)  \u2014 S ist der Anschlagpunkt auf der Decke. */
+function build(E, A, rollDeg, sDir, sFrac, front) {
+  const u = V(Math.cos(D(E)) * Math.cos(D(A)), Math.sin(D(E)), Math.cos(D(E)) * Math.sin(D(A))).normalize();
+  /* Normale: Startnormale senkrecht zu u, dann um u gerollt */
+  let n0 = V(0, 0, 1).sub(u.clone().multiplyScalar(V(0, 0, 1).dot(u)));
+  if (n0.lengthSq() < 1e-6) n0 = V(0, 1, 0).sub(u.clone().multiplyScalar(u.y));
+  n0.normalize();
+  const nrm = n0.clone().applyAxisAngle(u, D(rollDeg));
+  const w = new THREE.Vector3().crossVectors(u, nrm).normalize();
+  const S = shR.clone().add(V(...sDir).normalize().multiplyScalar(sFrac * out.rig.reachR));
+  const C = S.clone().add(u.clone().multiplyScalar(-BODY_MID)).sub(nrm.clone().multiplyScalar(FACE_Z + front));
+  const G = C.clone().add(u.clone().multiplyScalar(NECK_GRIP));
+  const basis = new THREE.Matrix4().makeBasis(w, u, nrm);
+  const T = basis.clone().setPosition(C);
+  return { u, nrm, w, S, C, G, T };
+}
+function check(b) {
+  const distL = b.G.distanceTo(shL), distR = b.S.distanceTo(shR);
+  if (distL > out.rig.reachL * 0.94) return null;
+  if (distR > out.rig.reachR * 0.94) return null;
+  /* Bauchhöhe ist eine Anforderung, kein Bonus: der Korpus gehört vor den Bauch, nicht vor
+     die Brust. Korpusmitte = C + u*BODY_MID, gemessen gegen die Bauchmitte der Figur. */
+  const bodyMid = b.C.clone().add(b.u.clone().multiplyScalar(BODY_MID));
+  if (bodyMid.y < 0.56 || bodyMid.y > 0.86) return null;
+  const neckTip = b.C.clone().add(b.u.clone().multiplyScalar(0.356));
+  const headClear = neckTip.distanceTo(wp('head'));
+  if (headClear < 0.45) return null;
+  /* Anschlagrichtung: Weltsenkrechte in die Deckenebene projiziert */
+  const dir = V(0, -1, 0).sub(b.nrm.clone().multiplyScalar(V(0, -1, 0).dot(b.nrm)));
+  if (dir.lengthSq() < 1e-6) return null;
+  dir.normalize();
+  const vertShare = Math.abs(dir.y);
+  if (vertShare < 0.8) return null;
+  let minY = 9, hits = 0, closest = 9;
+  const v = new THREE.Vector3();
+  for (const lv of gv) { v.copy(lv).applyMatrix4(b.T); if (v.y < minY) minY = v.y; }
+  if (minY < 0.1) return null;
+  for (const lv of gvBody) {
+    v.copy(lv).applyMatrix4(b.T);
+    for (const tv of torsoVerts) {
+      const d = v.distanceTo(tv);
+      if (d < closest) closest = d;
+      if (d < 0.02) { hits++; break; }
+    }
+    if (hits > 0) return null;
+  }
+  return { headClear: n(headClear), minY: n(minY), torsoGap: n(closest),
+           vertShare: n(vertShare), dir: dir.toArray().map(n),
+           faceZ: n(b.nrm.z), faceY: n(b.nrm.y), bodyMidY: n(bodyMid.y),
+           reachMarginL: n(out.rig.reachL * 0.94 - distL), reachMarginR: n(out.rig.reachR * 0.94 - distR) };
+}
+
+const cands = [];
+for (const E of [18, 24, 30, 36, 42]) {
+  for (const A of [-6, 4, 14, 24]) {
+    for (let roll = 0; roll < 360; roll += 10) {
+      for (const sDir of [[0, -0.85, 0.55], [0.25, -0.9, 0.4], [-0.2, -0.75, 0.65], [0, -1, 0.3], [0.15, -0.65, 0.75]]) {
+        for (const sFrac of [0.6, 0.72, 0.84, 0.92]) {
+          out.tested++;
+          const b = build(E, A, roll, sDir, sFrac, 0.045);
+          const m = check(b);
+          if (!m) continue;
+          out.passed++;
+          cands.push({ E, A, roll, sDir, sFrac, ...m,
+            score: n(m.faceZ * 30 - Math.max(0, m.torsoGap - 0.045) * 45 + m.vertShare * 12
+                     + Math.min(m.reachMarginL, m.reachMarginR) * 20 - Math.abs(m.faceY) * 8
+                     - Math.abs(m.bodyMidY - 0.7) * 25) });
+        }
+      }
+    }
+  }
+}
+cands.sort((a, b) => b.score - a.score);
+out.top = cands.slice(0, 6);
+
+/* ---------- gewählten Kandidaten wirklich bauen: beide Arme nachführen ---------- */
+function reach(figure, chain, tipName, target, iters = 40) {
+  const t = target.clone();
+  const tip = findBone(figure, tipName).bone;
+  const bones = chain.map((c) => findBone(figure, c).bone);
+  const before = tip.getWorldPosition(new THREE.Vector3()).distanceTo(t);
+  const q = new THREE.Quaternion(), a = new THREE.Vector3(), bb = new THREE.Vector3();
+  for (let i = 0; i < iters; i++) {
+    for (const bone of bones) {
+      figure.updateWorldMatrix(true, true);
+      const bp = bone.getWorldPosition(new THREE.Vector3());
+      a.copy(tip.getWorldPosition(new THREE.Vector3())).sub(bp).normalize();
+      bb.copy(t).sub(bp).normalize();
+      q.setFromUnitVectors(a, bb);
+      const pq = bone.parent.getWorldQuaternion(new THREE.Quaternion());
+      bone.quaternion.premultiply(pq.clone().invert().multiply(q).multiply(pq));
+    }
+  }
+  figure.updateWorldMatrix(true, true);
+  return { before: n(before), after: n(tip.getWorldPosition(new THREE.Vector3()).distanceTo(t)) };
+}
+
+if (cands.length) {
+  const c = cands[0];
+  const b = build(c.E, c.A, c.roll, c.sDir, c.sFrac, 0.045);
+  const fig2 = await posed();
+  const rL = reach(fig2, ['upperarm.l', 'lowerarm.l', 'wrist.l'], 'handslot.l', b.G);
+  const rR = reach(fig2, ['upperarm.r', 'lowerarm.r', 'wrist.r'], 'handslot.r', b.S);
+  const inv = b.T.clone().invert();
+  const lLoc = findBone(fig2, 'handslot.l').bone.getWorldPosition(new THREE.Vector3()).applyMatrix4(inv);
+  const rLoc = findBone(fig2, 'handslot.r').bone.getWorldPosition(new THREE.Vector3()).applyMatrix4(inv);
+  /* Gitarre ans linke Handslot hängen: lokale Matrix = inv(Slot-Welt) * T */
+  const slot = findBone(fig2, 'handslot.l').bone;
+  const local = slot.matrixWorld.clone().invert().multiply(b.T);
+  const lp = new THREE.Vector3(), lq = new THREE.Quaternion(), ls = new THREE.Vector3();
+  local.decompose(lp, lq, ls);
+  out.best = { ...c, reachL: rL, reachR: rR,
+    gripLocal: lLoc.toArray().map(n), strumLocal: rLoc.toArray().map(n),
+    gripOnNeck: lLoc.y >= NECK[0] && lLoc.y <= NECK[1] && Math.abs(lLoc.x) < 0.11 && Math.abs(lLoc.z) < 0.11,
+    strumOverFace: rLoc.y >= BODY[0] && rLoc.y <= BODY[1] + 0.02 && Math.abs(rLoc.x) < 0.24 && rLoc.z > FACE_Z - 0.015,
+    attachLocal: { pos: lp.toArray().map(n), quatEulerDeg: new THREE.Euler().setFromQuaternion(lq).toArray().slice(0, 3).map((r) => n(THREE.MathUtils.radToDeg(r))) },
+    guitarWorld: { pos: b.C.toArray().map(n), long: b.u.toArray().map(n), normal: b.nrm.toArray().map(n) },
+    targets: { G: b.G.toArray().map(n), S: b.S.toArray().map(n) } };
+}
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+window.__c = out;
+</script>
+</body>
+</html>

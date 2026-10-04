@@ -1,0 +1,66 @@
+{
+  "$schema": "kfb.pet-library/1#pets[]",
+  "_art": "ENTWURF zur Aufnahme in die kanonische pet-LIBRARY.json (canonical: https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json). NICHT einspielen, ohne version zu zaehlen und updated zu setzen. Diese Datei ist ein Vorschlag, keine zweite Wahrheit.",
+  "_stand": "2026-08-29",
+  "_gegen": "pet-LIBRARY.json 0.4.3 (2026-07-18), Feldnamen daraus uebernommen, nicht erfunden.",
+
+  "pet": {
+    "id": "recherchi",
+    "name": "Recherchi",
+    "glb": null,
+    "body": "html-cube",
+    "role": "recherche-guide",
+    "color": "#FFFFFF",
+    "archetype": "deadpan",
+    "narratorPromptRef": null,
+    "eye": {
+      "anchor": { "dx": 0.275, "dy": -0.23, "ring": 0.26, "track": 0.14 },
+      "pupilStyle": "matte-cute",
+      "lids": { "upper": true, "lower": true },
+      "inset": 0.04,
+      "pupilSize": 0.30
+    },
+    "nose": {
+      "type": "ball-button",
+      "shape": "hemisphere",
+      "anchorFace": "scan",
+      "cx": 0.5,
+      "cy": 0.45,
+      "radius": 0.105,
+      "color": "#99CC33",
+      "press": { "depth": 0.55, "inMs": 70, "spring": "sd-critical", "bodyImpulse": "nudge" },
+      "act": "nose"
+    },
+    "defaultEmote": "neutral",
+    "skin": "html-faces",
+    "tuning": { "claySurface": 0.0, "jitter": 0.0 }
+  },
+
+  "_abweichungen": {
+    "glb": "null. Recherchi hat KEIN Kenney-GLB. Damit fehlen ihm die acht Clips (static, idle, walk, run, eat, dance, gesture-positive, gesture-negative) UND die Beingeometrie \u2014 beides steckt bei den 24 Pets im GLB. Das ist die eine offene Entscheidung, siehe _offen.1.",
+    "body": "html-cube \u2014 neuer Wert. Der Wirt baut den Koerper als RoundedBox und laesst die sechs Flaechen von aussen befuellen, statt ein Mesh zu laden.",
+    "skin": "html-faces \u2014 neuer Wert. Statt tint + fingerprint traegt der Koerper sechs DOM-Flaechen als Textur. material.presets greift dann nicht; der Koerper ist reinweiss und traegt keine Clay-Oberflaeche.",
+    "color": "#FFFFFF. Recherchis Koerper und Flaechen sind beide reinweiss \u2014 der Eindruck ist eine durchgehende Oberflaeche ohne aufgesetzte Panels. recolorDefault greift nicht.",
+    "eye.anchor": "Aus dem gemessenen Recherchi-Gesicht umgerechnet (Entwurfsrahmen 470 px: Augenbreite 26 %, Abstand 55 %, Mitte auf 27 % Hoehe). dy negativ = oberhalb der Wuerfelmitte. Die drei Zahlen sind die EINE Quelle \u2014 in Recherchi steht sie als `EYE` in `Recherchi v4.dc.html`, hier als anchor. Wer sie aendert, aendert sie an einer Stelle.",
+    "nose": "NEU (Setzung Lead 29.08.): die Nase ist ein 3D-Ball zum Eindruecken, kein gemalter Punkt. GEOMETRIE, nicht Textur — laege sie in der Flaeche, rasterte jeder Druck den ganzen Wuerfel neu. cx/cy/radius sind Anteile der Entwurfskante (470 px), press.depth ein Anteil des Ballradius. Feder = dasselbe sd() wie pet-puppet/pet-face/pet-motion, keine vierte. KEINE Anticipation: ein Knopf, der sich vor dem Druck bewegt, ist kaputt. Rueckkanal faceaction {act:'nose'}.",
+    "tuning": "Beides 0: keine Clay-Oberflaeche, kein Jitter. Recherchi ist ein Buerogeraet, kein Knettier."
+  },
+
+  "_offen": {
+    "1": "WOHER KOMMEN ROLLIS BEINE? Drei Wege, Entscheidung liegt beim Lead. (a) Spender-GLB: ein vorhandenes Cube-Pet liefert Beine und die acht Clips, der Rumpf wird durch den HTML-Wuerfel ersetzt \u2014 kein neues Asset, aber die Proportionen sind fremd. (b) Eigenes GLB: Beine und Clips fuer Recherchi modelliert, gleiche Node-Namen wie die 24 \u2014 sauber, braucht aber ein Asset im Repo. (c) Prozedurale Beine im Wirt: PetMotion bekommt ein Bein-Bauteil fuer koerperlose Arten. Ich empfehle (a) fuer den ersten Lauf und (b) als Ziel; (c) ist die teuerste Variante und die einzige, die ein zweites Bewegungssystem einfuehrt.",
+    "2": "ZWEI ANSPRUECHE AUF DEN MUND. Laut Treiber-Vertrag besitzt PetMouth den Mund. Recherchis Mund ist ein Eingabefeld. Das sind zwei Kanaele mit einem Namen. Vorschlag: der Viseme-Mund bleibt bei PetMouth, das Eingabefeld heisst NICHT Mund, sondern `face.input` und liegt auf der Flaeche \u2014 sonst haben zwei Besitzer einen Kanal, und genau daran ist der Travel-Cut gescheitert.",
+    "3": "html-faces als Faehigkeit im Katalog? Der Wirt waere dann in der Pflicht fuer Polyfill, Entwurfsrahmen (470 px) und Trefferausrichtung. Ohne die Zeile darf kein Modul die Flaechen anfassen.",
+    "5": "WAS TUT DER NASENDRUCK? Vorschlaege: Scan starten (\"Apportieren!\" wandert von der Schaltflaeche auf die Nase) · Ton aus/an · Recherchi wecken. Entscheidung ueber die Bedienung, nicht ueber den Knopf. Offen auch: ein Knopf je Flaeche oder nur im Gesicht (Vorschlag: einer, an der Gesichtsflaeche verankert, dreht mit), und ob er ein Geraeusch bekommt (dann in audio des Wirts, Regel standardmaessig aus).",
+    "4": "stripEyes gilt fuer Kenney-Geometrieaugen. Bei body=html-cube gibt es keine gebackenen Augen \u2014 das Feld ist wirkungslos, nicht falsch. Braucht eine Notiz im face-Block, damit niemand danach sucht."
+  },
+
+  "_faces": {
+    "_note": "Die Flaechenbelegung ist Recherchis eigene Tabelle, nicht Teil des Pet-Vertrags. Sie steht hier, damit der Wirt sie beim Eintragen sieht. Reihenfolge = Flaechenbelegung, max 6.",
+    "scan": "Gesicht: Augen, Nase, Chat-Eingabe, im Scan die Fortschrittszeile",
+    "board": "Board: ausgewaehlte Themen",
+    "quellen": "Rechercheschwerpunkte",
+    "filter": "Filter",
+    "material": "eigenes Material",
+    "brief": "Auftrag in eigenen Worten"
+  }
+}

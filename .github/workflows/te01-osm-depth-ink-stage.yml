@@ -1,0 +1,82 @@
+name: TE-01 OSM Depth + Ink Stage proof
+
+on:
+  push:
+    branches:
+      - main
+      - stage/te01-osm-depth-ink-2026-09-19
+    paths:
+      - 'kfb-hub/stage/stunt-world/te01-osm-depth-ink/**'
+      - 'kfb-hub/index.html'
+      - 'kfb-hub/stage/index.html'
+      - '.github/workflows/te01-osm-depth-ink-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/osm-city-drive/src/app.mjs
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/osm-city-drive/src/ink-world.mjs
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/free-roam/site/physics.js
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/free-roam/site/drive-intent.mjs
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/runtime/ChatGPT_web/free-roam/site/world.js
+          node --check kfb-hub/stage/stunt-world/te01-osm-depth-ink/public-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local Stage
+        run: |
+          python3 -m http.server 4173 > /tmp/te01-http.log 2>&1 &
+          sleep 2
+      - name: Local mirror browser proof
+        env:
+          TE01_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/stunt-world/te01-osm-depth-ink/
+          TE01_PROOF_DIR: te01-local-proof
+        run: node kfb-hub/stage/stunt-world/te01-osm-depth-ink/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: te01-osm-depth-ink-local-proof
+          path: te01-local-proof
+          retention-days: 14
+
+  public:
+    if: github.ref == 'refs/heads/main'
+    needs: mirror
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare Stage proof
+        env:
+          TE01_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/te01-osm-depth-ink/
+          TE01_PUBLIC: '1'
+          TE01_PROOF_DIR: te01-public-proof
+        run: node kfb-hub/stage/stunt-world/te01-osm-depth-ink/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: te01-osm-depth-ink-public-proof
+          path: te01-public-proof
+          retention-days: 14

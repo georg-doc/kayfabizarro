@@ -1,0 +1,165 @@
+{
+  "schema": "kfb.eumel.rig/0.2",
+  "updated": "2026-09-18",
+  "source": {
+    "illustrator": "../../_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "sourceBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "componentSvg": "../source-assets/EUMEL_SOURCE_COMPONENTS.svg",
+    "sourcePdfAlias": "../source-assets/_Dr_Vorlage_SOURCE_RENDER.pdf"
+  },
+  "hierarchy": {
+    "shadow": [
+      "rig-shadow"
+    ],
+    "root": [
+      "rig-leg-A",
+      "rig-leg-B",
+      "rig-body",
+      {
+        "stethoscope": [
+          "rig-steth-stem",
+          "rig-steth-tube",
+          {
+            "chest": [
+              "rig-chest-outer",
+              "rig-chest-inner"
+            ]
+          }
+        ]
+      },
+      {
+        "head": [
+          "rig-head",
+          "rig-mirror-outer",
+          "rig-mirror-inner",
+          {
+            "eyes": [
+              "rig-eye-A",
+              "rig-eye-B",
+              "rig-pupil-A",
+              "rig-pupil-B"
+            ]
+          },
+          {
+            "hat": [
+              "rig-foreground-black",
+              "rig-foreground-white"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sourceAnchors": {
+    "basePageMatrix": [
+      1,
+      0,
+      0,
+      -1,
+      65.8992538,
+      100.3503799
+    ],
+    "eyesPupilsPageMatrix": [
+      0.9612617,
+      -0.2756375,
+      -0.2756375,
+      -0.9612617,
+      55.6416054,
+      164.7832031
+    ],
+    "foregroundPageMatrix": [
+      0.9272031,
+      -0.3745238,
+      -0.3745238,
+      -0.9272031,
+      50.2205124,
+      160.031311
+    ],
+    "stethoscopeNestedMatrix": [
+      0.9135455,
+      -0.4067366,
+      0.4067366,
+      0.9135455,
+      -16.2523136,
+      -41.2725792
+    ]
+  },
+  "derivedRigPivots": {
+    "root": {
+      "x": 0.5,
+      "y": 0.55,
+      "status": "DERIVED"
+    },
+    "head": {
+      "x": 0.5,
+      "y": 0.86,
+      "status": "DERIVED"
+    },
+    "legA": {
+      "x": "targetHip.x",
+      "y": "targetHip.y",
+      "status": "DERIVED_FROM_NEUTRAL_BIND_PCA"
+    },
+    "legB": {
+      "x": "targetHip.x",
+      "y": "targetHip.y",
+      "status": "DERIVED_FROM_NEUTRAL_BIND_PCA"
+    },
+    "eyes": {
+      "x": 0.5,
+      "y": 0.5,
+      "status": "DERIVED"
+    },
+    "pupilA": {
+      "x": 0.5,
+      "y": 0.5,
+      "status": "DERIVED"
+    },
+    "pupilB": {
+      "x": 0.5,
+      "y": 0.5,
+      "status": "DERIVED"
+    },
+    "stethoscope": {
+      "x": 0.5,
+      "y": 0.1,
+      "status": "DERIVED"
+    },
+    "chest": {
+      "x": 0.5,
+      "y": 0.5,
+      "status": "DERIVED"
+    },
+    "shadow": {
+      "x": 0.5,
+      "y": 0.5,
+      "status": "DERIVED"
+    },
+    "kneeA": {
+      "x": "neutral_bind_pose.legA.knee.x",
+      "y": "neutral_bind_pose.legA.knee.y",
+      "status": "DERIVED_OPTIONAL_DEFORMER"
+    },
+    "kneeB": {
+      "x": "neutral_bind_pose.legB.knee.x",
+      "y": "neutral_bind_pose.legB.knee.y",
+      "status": "DERIVED_OPTIONAL_DEFORMER"
+    },
+    "hat": {
+      "x": 0.5,
+      "y": 0.82,
+      "status": "DERIVED_HEADWEAR_FOLLOW"
+    }
+  },
+  "hardConstraints": [
+    "no arms",
+    "source paths are not simplified or redrawn",
+    "stroke families remain distinct",
+    "forehead mirror remains source-flat with no invented gradient",
+    "eyes and pupils remain separate source groups",
+    "derived pivots are metadata only and never baked into source paths",
+    "hat/headwear source paths remain unchanged; animation uses wrapper transforms only"
+  ],
+  "neutralBindPose": "../data/neutral_bind_pose.json",
+  "sharedEyeRigProtocol": "../../../shared/eye-rig/eye-rig-protocol.v1.json"
+}

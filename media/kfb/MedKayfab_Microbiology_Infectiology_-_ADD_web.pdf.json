@@ -1,0 +1,599 @@
+{
+  "sourceFile": "MedKayfab_Microbiology_Infectiology - ADD web.pdf",
+  "deckTitle": "MedKayfab: Microbiology & Infectiology Edition",
+  "deckType": "Medical Education Card Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T18:30:00",
+  "savedAt": "2026-06-19T18:30:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "reference"
+  ],
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Gram the Stainer",
+      "grade": 2,
+      "power": "The Great Divide: Instantly sorts all bacterial enemies into two factions, determining which beta-lactam weapons will actually work.",
+      "lore": "Mycoplasma, Mycobacteria, and Treponema laugh at your dye. You cannot stain what has no warrior wall.",
+      "gradeReason": "Sorts factions but you watch the test, not embody anyone. Useful, not alive.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Purple-walled wizard sorting glowing bacteria into two factions. Mood: Clinical authority."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Staph the Golden",
+      "grade": 2,
+      "power": "Panton-Valentine Punch: Destroys incoming neutrophils to deal massive necrotizing tissue damage.",
+      "lore": "S. aureus bacteremia demands an echocardiogram. Every single time. No exceptions.",
+      "gradeReason": "Golden warrior menace is vivid but PVL nuance needs bedside table context to fully land.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Golden armoured Staph giant smashing neutrophil shields. Mood: Ruthless dominance."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Strep the Streaker",
+      "grade": 2,
+      "power": "Lancefield Shapeshift: Alters cell wall carbs to switch between causing strep throat, neonatal sepsis, and flesh-eating fasciitis.",
+      "lore": "Rheumatic fever only follows pharyngitis. NEVER skin infections.",
+      "gradeReason": "Lancefield shapeshift is vivid but mechanism requires flashcard mindset to play at table.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Cheetah-fast Strep morphing through three disease forms mid-sprint. Mood: Unpredictable speed."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Neisseria the Socialite",
+      "grade": 1,
+      "power": "TLR4 Overdrive: Detonates LPS to cause Waterhouse-Friderichsen bilateral adrenal hemorrhage in hours.",
+      "lore": "Neisseria gonorrhoeae petechial rash + fever = IV Ceftriaxone IMMEDIATELY. She does not wait for lumbar puncture.",
+      "gradeReason": "100% mucosal contact, TLR4 detonates DIC in hours. You ARE this bug at a crowded party.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Glamorous Neisseria socialite triggering adrenal explosion at hospital gala. Mood: Deadly elegance."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Pseudo the Opportunist",
+      "grade": 1,
+      "power": "Quorum Chat: Coordinates an irreradicable mucoid biofilm shield when members reach critical mass.",
+      "lore": "It intrinsically resists most drugs; target with Pip-Tazo, Ceftazidime, or Meropenem. Hot tub folliculitis and malignant otitis externa.",
+      "gradeReason": "Zero Ertapenem effectiveness. Quorum Chat biofilm shield. You immediately know who not to send.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Chameleon Pseudo hiding behind thick mucoid biofilm fortress. Mood: Opportunistic menace."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Clostridium the Anaerobe",
+      "grade": 2,
+      "power": "SNARE Snip: Tetanospasmin blocks inhibitory signals (spastic paralysis); Botulinum blocks acetylcholine (flaccid paralysis).",
+      "lore": "Heat kills the bacteria, but spores survive boiling. You must use the autoclave.",
+      "gradeReason": "SNARE snip is vivid but distinguishing tetanus/botulinum toxins needs table context to play cleanly.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Gas-masked Clostridium wielding dual toxin syringes in anaerobic fog. Mood: Apocalyptic paralysis."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "LPS the Endotoxin",
+      "grade": 3,
+      "power": "Jarisch-Herxheimer Surge: Detonates upon antibiotic death of spirochaetes, causing a massive 2-8 hour fever spike.",
+      "lore": "LPS causes SIRS and distributive shock. Do NOT stop antibiotics during a Herxheimer reaction.",
+      "gradeReason": "You can't perform being a molecule. JHR surge is knowledge, not a character move.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Exploding endotoxin molecular bomb with fever flames and shock wave. Mood: Systemic catastrophe."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Biofilm Billy",
+      "grade": 1,
+      "power": "Metabolic Dormancy: Slows growth to near-zero, rendering drugs that target active cell division completely useless.",
+      "lore": "You cannot cure a prosthetic joint or valve biofilm with drugs. The hardware must be removed.",
+      "gradeReason": "1000x tolerance, metabolic dormancy, hardware must come out. You know exactly what to do.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Slime-encased Billy bacteria laughing behind impenetrable green biofilm fortress. Mood: Untouchable smugness."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Pneumo the Encapsulated",
+      "grade": 2,
+      "power": "Splenic Bypass: Causes overwhelming fulminant sepsis within hours if the host lacks marginal zone B cells (asplenia).",
+      "lore": "Pneumo is the number one threat. Vaccinate and give prophylactic penicillin.",
+      "gradeReason": "Splenic bypass is horrifying but asplenia context makes it G1 only with proper setup.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Armoured turtle Pneumo charging through splenectomy gap at full speed. Mood: Unstoppable fulminant siege."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Listeria the Lurker",
+      "grade": 1,
+      "power": "Actin Rocket: Spreads from cell to cell without ever touching the extracellular space or facing an antibody.",
+      "lore": "Listeria monocytogenes is cautious here. Always add Amoxicillin to patients >80 or pregnant.",
+      "gradeReason": "4 degrees C growth. Actin rocket spreads cell-to-cell. Amoxicillin rule for elderly is immediate action.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Yeti Listeria surfing actin rockets cell-to-cell through refrigerator mist. Mood: Stealthy invasion."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "TB the Persister",
+      "grade": 1,
+      "power": "Phagosome Hack: Uses ESX-1 to prevent lysosome fusion, surviving happily inside the very cells meant to digest it.",
+      "lore": "Never treat active TB with one drug. RIPE (4 drugs) prevents the rapid emergence of resistance.",
+      "gradeReason": "40,000 years co-evolution. Phagosome hack. RIPE. This card IS survival itself embodied.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Ancient warrior TB enthroned inside glowing macrophage blocking lysosome attack. Mood: Eternal patience."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "MRSA the Resistance Fighter",
+      "grade": 1,
+      "power": "PBP2a Morph: Alters its penicillin-binding proteins so standard beta-lactams have zero affinity.",
+      "lore": "Daptomycin kills MRSA in the blood, but pulmonary surfactant inactivates it. Never use it for MRSA pneumonia.",
+      "gradeReason": "PBP2a morph, mecA gene in art, no Daptomycin for pneumonia. Crystal clarity on every field.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Golden MRSA soldier wearing mecA badge deflecting beta-lactam arrows with PBP2a shield. Mood: Impenetrable."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "E. coli the Versatile",
+      "grade": 2,
+      "power": "Shiga Strike: Inhibits the 60S ribosome, causing endothelial death and Hemolytic Uremic Syndrome (HUS).",
+      "lore": "Never give antibiotics for EHEC (O157:H7). It triggers massive toxin release and worsens HUS.",
+      "gradeReason": "80% of UTIs is arresting but the Shiga/HUS antibiotic-avoidance fork needs context to navigate live.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Versatile octopus E. coli juggling UTI cultures and Shiga toxin grenades simultaneously. Mood: Chaotic utility."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Klebsiella the Fortress",
+      "grade": 2,
+      "power": "Endogenous Seeding: Hypervirulent strains metastasize from liver abscesses directly into the eye.",
+      "lore": "KPC production destroys nearly all beta-lactams, requiring Ceftazidime-Avibactam combos to survive.",
+      "gradeReason": "String Test stat is distinctive but KPC combo therapy needs a study partner to embody.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Armoured turtle Klebsiella fortress firing KPC cannon at incoming antibiotics. Mood: Impregnable siege."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Salmonella the Traveller",
+      "grade": 1,
+      "power": "Macrophage Trojan: Hides in the reticuloendothelial system, causing a stepwise fever and relative bradycardia.",
+      "lore": "Treat Typhoid with antibiotics. Do NOT treat healthy non-typhoidal gastroenteritis with antibiotics (prolongs carriage).",
+      "gradeReason": "Macrophage Trojan is perfection. Never treat gastroenteritis with antibiotics. Immediately actionable rule.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Globe-trotting Salmonella hiding inside macrophage passport causing stepwise fever trail. Mood: Deceptive voyage."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Helicobacter the Ulcer Maker",
+      "grade": 1,
+      "power": "Oncogenic Hack: Over decades, CagA disrupts epithelial junctions, directly driving gastric adenocarcinoma.",
+      "lore": "Eradicating H. pylori causes complete remission in 75% of low-grade gastric MALT lymphomas.",
+      "gradeReason": "50% global carrier shock. CagA drives cancer. Eradication reverses MALT lymphoma. Unforgettable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Helicopter H. pylori drilling ulcers through stomach lining planting cancer seeds. Mood: Slow devastating oncogenesis."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Clostridium Difficile Diffe",
+      "grade": 2,
+      "power": "Rho GTPase Glucosylator: Toxins A & B collapse the host cytoskeleton, causing massive fluid secretion and cell death.",
+      "lore": "The ultimate cure for recurrent CDI is not Vancomycin or Fidaxomicin - it is replacing the microbiome via Fecal Microbiota Transplant (FMT).",
+      "gradeReason": "FMT as the ultimate cure is brilliant but >3 episodes stat needs the CDI backstory first.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Skunk Diffe spraying Toxins A and B at collapsing intestinal cells. Mood: Stinky devastating diarrhea."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Atypical Andy",
+      "grade": 2,
+      "power": "Beta-Lactam Immunity: With no cell wall or obligate intracellular hiding, standard penicillins pass right through them.",
+      "lore": "Mycoplasma causes cold agglutinin (IgM) autoimmune hemolytic anemia. Treat atypicals with Macrolides or Doxycycline.",
+      "gradeReason": "No cell wall equals beta-lactam immunity is elegant but cold agglutinin lore needs immunology context.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Ghostly invisible Andy organism letting penicillin bullets pass harmlessly through. Mood: Untouchable mystery."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Beta-Lactamase Betty",
+      "grade": 2,
+      "power": "Ring Hydrolysis: Catalytically opens the pharmacophore ring of penicillins, leaving the bacterial cell wall synthesis unthwarted.",
+      "lore": "Avibactam protects against Class A (KPC) and D (OXA), but does absolutely nothing against Class B metallo-beta-lactamases (NDM).",
+      "gradeReason": "Ring hydrolysis concept is clear but Ambler classes require a working reference to fully embody.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Beaver Betty snipping penicillin ring molecules with enzymatic shears. Mood: Methodical antibiotic sabotage."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Efflux Eddie",
+      "grade": 2,
+      "power": "Disinfectant Cross-Training: Exposure to hospital cleaning biocides upregulates these pumps, creating accidental antibiotic resistance.",
+      "lore": "ESBL + efflux co-expression + porin loss is a pan-resistant bacteria without acquiring a single new gene.",
+      "gradeReason": "Disinfectant cross-training origin story is clever but RND pump components remain dense for new players.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Tuxedo-clad Eddie bouncer pumping antibiotics out of bacterial nightclub entrance. Mood: Slick exclusion."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "HGT the Gene Trader",
+      "grade": 1,
+      "power": "Conjugation Pilus: Transfers multidrug resistance across entirely different bacterial species in a single physical handshake.",
+      "lore": "A patient who has never taken antibiotics can get an ESBL E. coli because veterinary and agricultural use breeds resistance that spreads laterally.",
+      "gradeReason": "Single handshake transfers resistance across species. One Health framework. You feel the pandemic forming.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Rat HGT broker shaking hands across species passing glowing resistance plasmid briefcase. Mood: Conspiratorial trade."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "VRE the Glycopeptide Evader",
+      "grade": 2,
+      "power": "Terminal Substitution: Rewrites its own cell wall precursor, retaining structural integrity while entirely evading glycopeptide blockade.",
+      "lore": "VRE endocarditis is highly lethal. Switch to Daptomycin (high dose) or Linezolid immediately.",
+      "gradeReason": "1000x reduction is concrete but Terminal Substitution mechanism needs biochem foundation to fully land.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Chameleon VRE rewriting D-Ala-D-Ala peptide chain to dodge Vancomycin laser. Mood: Molecular evasion."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Steward Stewart",
+      "grade": 1,
+      "power": "De-escalation Review: Strips away empiric broad-spectrum armor at 48-72h, switching to sniper-rifle targeted therapy based on culture data.",
+      "lore": "Shorter is better. A 5-day course for community-acquired pneumonia is just as effective as 10 days, and prevents collateral microbiome damage.",
+      "gradeReason": "De-escalation Review at 48-72h. Shorter is better. This is a person you can absolutely BE.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Owl steward stripping broad-spectrum armour and issuing narrow-spectrum targeted sword at 48h. Mood: Disciplined precision."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Carbapenem Carl",
+      "grade": 2,
+      "power": "Broad-Spectrum Nuke: Kills Gram positives, Gram negatives, Pseudomonas, and anaerobes simultaneously.",
+      "lore": "Carbapenem is the only member of the gang that cannot kill Pseudomonas. Don't send it to do Meropenem's job.",
+      "gradeReason": "Broad-spectrum nuke concept is clear but lore conflates Ertapenem limitation with Carbapenems generally.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Armoured Carl knight detonating nuclear antibiotic warhead across bacterial battlefield. Mood: Total annihilation."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "ESKAPE the Gang",
+      "grade": 2,
+      "power": "Inducible AmpC: Enterobacter pretends to be susceptible to 3rd-gen cephalosporins, then mutates mid-treatment to destroy them.",
+      "lore": "Contact precautions (gloves+gown) and hand hygiene are the only way to stop this gang from running the ICU.",
+      "gradeReason": "Gang metaphor works but inducible AmpC mid-treatment mutation is a specific knowledge trap for new players.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Six-member ESKAPE gang running hospital ICU as criminal turf. Mood: Organized resistance crime."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Pharmacokinetics Petra",
+      "grade": 3,
+      "power": "Continuous Infusion: Achieves 100% Time>MIC for Meropenem, keeping the drug constantly above the survival threshold of the bacteria.",
+      "lore": "Drug choice is everything. Only 50% of the Aminoglycosides need massive peaks; Beta lactams need constant presence.",
+      "gradeReason": "PK/PD as a character is abstract. AUC targets and Time>MIC need context to mean anything performative.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Professor Petra graphing drug concentration curves against bacterial MIC survival thresholds. Mood: Calculated precision."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Sepsis Sam",
+      "grade": 2,
+      "power": "Endothelial Leak: Inflammatory cytokines degrade the glycocalyx, turning closed vascular pipes into a porous, deadly sponge.",
+      "lore": "Sepsis kills through a dysregulated host response, not the pathogen directly. Lactate >=2 indicates tissue hypoxia.",
+      "gradeReason": "Endothelial leak is visceral. SOFA stat is dense at face value. Lactate rule anchors the card.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Sam the cascade monster dissolving blood vessel walls into leaking sponge. Mood: Systemic collapse."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Endocarditis Eddie",
+      "grade": 2,
+      "power": "Sterile Thrombus Base: Requires pre-existing turbulent flow or valve damage to create a sticky landing pad for passing bacteria.",
+      "lore": "Prosthetic valve endocarditis requires Rifampicin for biofilm penetration, but NEVER as monotherapy.",
+      "gradeReason": "Sterile thrombus base is the key insight. Vegetation >10mm and Rifampicin-never-monotherapy are actionable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Eddie bacteria landing on glistening vegetative thrombus pad on damaged heart valve. Mood: Parasitic settlement."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Meningitis Mike",
+      "grade": 1,
+      "power": "Endocochlear Inflammation: Causes severe, permanent hearing loss if not blunted by steroids.",
+      "lore": "Dexamethasone reduces mortality and hearing loss, but ONLY if given 15-30 minutes before the first antibiotic dose.",
+      "gradeReason": "Permanent deafness without steroids. Dexa BEFORE antibiotics. Time is hearing. You act NOW.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Inflamed Mike detonating fire inside skull meninges causing ear-splitting permanent damage. Mood: Racing urgency."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Pneumonia Petra",
+      "grade": 2,
+      "power": "Severity Stratification: Matches the clinical care setting perfectly to the objective risk of death.",
+      "lore": "Amoxicillin + Clarithromycin empirically covers typicals and atypicals. Add Levofloxacin if Legionella (hyponatraemia + confusion) is suspected.",
+      "gradeReason": "CURB-65 stratification as a power is clean and immediately applicable in emergency room context.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Petra measuring pneumonia severity on CURB-65 gauge directing patients into correct care lane. Mood: Clinical order."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "UTI Ursula",
+      "grade": 2,
+      "power": "Urease Stonecraftier: Proteus uses urease to create an alkaline environment, forging massive staghorn struvite calculi.",
+      "lore": "DO NOT TREAT asymptomatic bacteriuria in non-pregnant, non-surgical patients. It only selects for resistance.",
+      "gradeReason": "Don't treat asymptomatic bacteriuria rule is gold but Urease stonecraftier needs urinary context.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Ursula zombie army marching up urethra forging staghorn struvite stones in alkaline mist. Mood: Relentless invasion."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Septic Arthritis Sally",
+      "grade": 1,
+      "power": "Synovial Invasion: Bypasses standard defenses because the highly vascular synovial membrane lacks a basement membrane.",
+      "lore": "A septic joint is a surgical emergency requiring immediate drainage to stop protease destruction.",
+      "gradeReason": "48-72h to irreversible cartilage. Surgical emergency. This card screams at you to drain immediately.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Sally bacteria breaching synovial membrane dissolving cartilage with protease flamethrower. Mood: Destructive urgency."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Meningococcal Monica",
+      "grade": 1,
+      "power": "DIC Detonation: Microvascular thrombosis leads directly to tissue ischemia and adrenal hemorrhage.",
+      "lore": "Speed is everything. Give IM Benzylpenicillin or IV Cefotaxin in pre-hospital/pre-tests. The rash means DIC is already happening.",
+      "gradeReason": "12-24h to death. Give BenzylPen IM before tests. The rash means DIC is happening NOW.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Monica as grim reaper with 24h countdown clock triggering DIC cascade rash explosion. Mood: Absolute emergency."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Tropical Fever Theo",
+      "grade": 2,
+      "power": "PIEMP1 Cytoadherence: P. falciparum makes RBCs stick to endothelium, causing coma (cerebral malaria), avoiding splenic clearing.",
+      "lore": "Treat with Artemisinins or Quinine + Doxycycline in the liver, but only after checking for G6PD deficiency to avoid massive hemolysis.",
+      "gradeReason": "PIEMP1 cytoadherence is complex; G6PD check before Artemisinins is the memorably actionable rule.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Tropical Theo parasite gluing red blood cells to brain vessels with 48h fever clock. Mood: Cyclical menace."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "HIV the Retrovirus",
+      "grade": 2,
+      "power": "Error-Prone Replication: Mutates so fast that single-drug therapy guarantees instant resistance.",
+      "lore": "Undetectable = Untransmittable (U=U). However, prophylaxis (e.g., co-trimoxazole for PCP) must continue until the CD4 count recovers above 200.",
+      "gradeReason": "U=U is landmark. Error-prone replication explains single-drug failure. Strong card needing ART context.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: HIV retrovirus shapeshifting through mutations faster than drug molecules can target. Mood: Relentless evasion."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Fungal Fran",
+      "grade": 2,
+      "power": "Host-Defect Matcher: Only attacks specific immune gaps (e.g., Aspergillus targets neutropenia; Cryptococcus targets CD4 <50).",
+      "lore": "Echinocandins are amazing, but they miss Cryptococcus. This requires Amphotericin B plus flucytosine and must be managed immediately.",
+      "gradeReason": "Host-defect matcher concept is elegant but immune gap map requires clinical context to embody correctly.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Fran fungus studying immune deficiency chart to select correct vulnerable host target. Mood: Opportunistic calculation."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Immunocompromised Ian",
+      "grade": 2,
+      "power": "Febrile Emergency: A temperature in a neutropenic patient bypasses all waiting rooms directly to IV Pip-Tazo/Meropenem.",
+      "lore": "The specific immune defect perfectly predicts the organism: Asplenia = Encapsulated bacteria; T Cell deficit = Intracellular pathogens.",
+      "gradeReason": "Febrile Emergency bypasses the queue. Immune defect predicts organism. Strong framework card needing setup.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Patchy voodoo-doll Ian with ANC counter rushing past waiting room to IV drip. Mood: Urgent vulnerability."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Viral Hepatitis Victor",
+      "grade": 2,
+      "power": "Persistent Persistence: 95% of perinatally infected Hep B infants become chronic carriers, compared to 5-10%.",
+      "lore": "Tenofovir suppresses Hep B but rarely cures (due to cccDNA); DAAs completely cure Hep C in 8-12 weeks.",
+      "gradeReason": ">85% SVR cure rate for Hep C with DAAs is astonishing; perinatal chronicity 95% rule is vivid.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Victor virus hiding in cccDNA vault while Hep C rival surrenders to DAA cure. Mood: Stubborn persistence."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Hand Hygiene Hannah",
+      "grade": 1,
+      "power": "Chain Breaker: The single most statistically effective intervention in the history of infectious disease control.",
+      "lore": "Alcohol gel kills 99.9% of things, but does absolutely nothing to C. difficile spores or Norovirus. Soap and mechanical friction are required.",
+      "gradeReason": "Most effective intervention ever. Soap for C. diff spores. 5 WHO moments. Perfect accessible card.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Six-armed Hannah goddess breaking infection transmission chains with soap and alcohol foam. Mood: Protective triumph."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Zoonosis Zara",
+      "grade": 2,
+      "power": "Vector Jump: Uses an intermediate animal host to bypass human-to-human transmission barriers.",
+      "lore": "Lyme disease has been a ticking time bomb of rapidly spreading rickettsia; treat presumptively with Amoxicillin-Clavulanate, not standard Penicillin.",
+      "gradeReason": "Vector jump is immediately clear but Lyme treatment lore may contain a content error (Amox-Clav?).",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Zara zoonosis chain with ticks, bats and sandflies as cross-species relay runners. Mood: Cross-species threat."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Tropical Trio",
+      "grade": 2,
+      "power": "Granulomatous Fibrosis: Schistosoma eggs lodge in the liver, causing Symmers' pipe-stem portal fibrosis and varices without causing actual cirrhosis.",
+      "lore": "Chagas disease (T. cruzi) from the kissing bug is the most common cause of cardiomyopathy and apical aneurysms in Latin America.",
+      "gradeReason": "Three organisms in one card is ambitious; Schistosoma/Chagas distinction requires reference to play cleanly.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Three tropical parasites staging joint Latin American ambush on liver and heart. Mood: Neglected threat."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Prion Pete",
+      "grade": 1,
+      "power": "Exponential Misfold: Pure protein without nucleic acid self-amplifies by forcing conformational changes in host proteins.",
+      "lore": "Universal Stat: Resistant to standard sterilization. Surgical instruments require extended 134 degrees C autoclaving.",
+      "gradeReason": "Zero nucleic acid, self-replicating protein. STAT 0 DNA/RNA. Extended autoclave requirement crystal clear.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Pete protein origami crane converting normal prions into misfolded death through touch. Mood: Silent corruption."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Dengue Dan",
+      "grade": 1,
+      "power": "Antibody-Dependent Enhancement (ADE): Prior immunity to one serotype acts as a Trojan horse to deliver a different serotype directly into immune cells for severe shock.",
+      "lore": "Never give NSAIDs in Dengue fever: they inhibit platelets and massively increase the risk of hemorrhagic shock.",
+      "gradeReason": "ADE: prior immunity becomes a Trojan horse. Never NSAIDs. Hemorrhagic shock is the price. Unforgettable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Dan mosquito releasing Trojan horse antibody bomb delivering second serotype into immune cells. Mood: Immune betrayal."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Infection Control Iris",
+      "grade": 2,
+      "power": "The Spot Map: Transforms scattered clinical cases into a devastating clear geographical and temporal weapon.",
+      "lore": "The effective reproduction number must be driven below 1 to stop an outbreak. Quarantine, vaccination, and hygiene lower R.",
+      "gradeReason": "Spot Map as a power is vivid. R0>1 threshold is universally quotable. Needs epidemiology context.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Iris detective mapping outbreak spots on geographical plot drawing R0 curve below 1. Mood: Epidemiological mastery."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Candida Auris the Superbug",
+      "grade": 2,
+      "power": "Environmental Persistence: Unlike C. albicans, if surfaces are the outbreak source, treat with a chlorine-based surfactant.",
+      "lore": "Standard MALDI-TOF misidentifies it. If a dialysis patient has Candidaemia, suspect Auris. Echinocandins are your only reliable first line.",
+      "gradeReason": "30-60% mortality is sobering. MALDI-TOF misidentification note is the key clinical pearl to carry.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Auris sun character blazing through hospital surfaces as MALDI-TOF scanner shows wrong name. Mood: Misidentified menace."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Influenza Igor",
+      "grade": 1,
+      "power": "Neuraminidase Cleavage: Slices sialic acid to release millions of new self-replicated virions from the dying host cell.",
+      "lore": "Drift causes seasonal epidemics and ruins vaccines. Shift causes global pandemics because the human population has zero immunity.",
+      "gradeReason": "8 RNA segments ready for reassortment. Drift = epidemic. Shift = pandemic. Zero immunity. Clear alarm.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Igor influenza shapeshifter splitting into pandemic variant while neuraminidase scissors release viral army. Mood: Pandemic emergence."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Sepsis Six Sienna",
+      "grade": 1,
+      "power": "Noradrenaline Squeeze: Alpha-1 vasoconstriction clamps the floppy, leaky pipes to restore MAP >65mmHg.",
+      "lore": "Always take blood cultures BEFORE giving antibiotics, but do not delay antibiotics more than 45 minutes to get them.",
+      "gradeReason": "+7% mortality per delayed hour is all you need. Cultures before but act within 45 minutes.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Sienna paramedic racing hour-1 bundle clock while noradrenaline squeezes collapsing vasculature shut. Mood: Life-or-death sprint."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Tropical Neglected Nelly",
+      "grade": 2,
+      "power": "Low-Density Evasion: RCTs are amazing, but they can easily miss low-density parasitemia in early infection.",
+      "lore": "A negative rapid test does NOT exclude malaria. You must do thick and thin blood films, repeated over 48 hours.",
+      "gradeReason": "Negative rapid test doesn't exclude malaria is the most critical travel medicine rule. Solid card.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Nelly traveller overlooked by rapid test while Plasmodium hides in thick blood film. Mood: Missed diagnosis tension."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Sexually Transmitted Seb",
+      "grade": 2,
+      "power": "Argyll Robertson Pupil: Tertiary neurosyphilis corrupts the dorsal mid-brain - the pupils accommodate to distance, but refuse to react to light.",
+      "lore": "Treponemal tests stay positive for life. Always use non-treponemal tests to follow treatment. Treat all stages with Penicillin.",
+      "gradeReason": "Argyll Robertson pupil is a classic clinical sign but three STI organisms in one card dilutes focus.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Seb stylish worm with mismatched pupils representing syphilis, gonorrhoea and chlamydia trio. Mood: Deceptive charm."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Antimicrobial Resistance Global - Gram",
+      "grade": 2,
+      "power": "Market Failure: Short courses and drug competition mean pharmaceutical companies lose money curing people, so the pipeline is dead.",
+      "lore": "The One Health framework proves that antibiotic use in animals, plants, or humans eventually shares resistance genes with everything else.",
+      "gradeReason": "1.27M deaths in 2019 is a punch. Market failure as power is uniquely insightful systemic analysis.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Gram existential threat clock counting down AMR deaths while pharma pipeline runs dry. Mood: Civilizational alarm."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Nosocomial Nora",
+      "grade": 2,
+      "power": "Device Exploitation: Bypasses all natural skin and mucosal defenses by riding synthetic plastics directly into the sterile bloodstream and bladder.",
+      "lore": "The primary risk factor for a CAUTI is the presence of the catheter. Remove it.",
+      "gradeReason": "Remove the catheter is the power move. Device exploitation mechanism is immediately clear and actionable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Nora grim reaper skeleton riding catheter highway past all natural defenses into bloodstream. Mood: Hospital shadow."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Bone & Joint Infection Boris",
+      "grade": 2,
+      "power": "Cement Spacer: After ripping out the infected joint, an antibiotic-loaded cement block holds the space for 6 weeks until the war is won.",
+      "lore": "Rifampicin is mandatory for staphylococcal prosthetic infections because it penetrates biofilm, but it must NEVER be used as monotherapy.",
+      "gradeReason": "Cement Spacer as a power is memorable. Rifampicin biofilm rule and never-monotherapy are immediately actionable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Boris builder bacteria installing antibiotic cement spacer in exploded prosthetic hip joint. Mood: Prolonged siege warfare."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Infection in Pregnancy Irene",
+      "grade": 2,
+      "power": "First Trimester Teratogeny: The earlier the virus crosses the placenta during organogenesis, the more devastating the anatomical destruction.",
+      "lore": "Rubella is a live vaccine. Never give it during pregnancy. CMV is the most common cause of congenital sensorineural hearing loss.",
+      "gradeReason": "TORCH syndromes cover is broad but never-Rubella-vaccine and CMV-hearing-loss rules are memorably actionable.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Irene VIP placenta bouncer letting TORCH viruses slip past velvet rope in first trimester. Mood: Developmental catastrophe."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Antifungal Andy",
+      "grade": 2,
+      "power": "Drug-Interaction Nuke: Fluconazole and Voriconazole inhibit CYP enzymes so hard that co-administered transplant drugs (Tacrolimus) spike to toxic levels.",
+      "lore": "Echinocandins are empirical first-line for invasive candidiasis because they grossly avoid CYP interactions and kill azole-resistant strains.",
+      "gradeReason": "CYP3A4 as the stat is clever. Tacrolimus toxicity spike is vivid. Needs pharmacology baseline to land.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Andy hammer smashing CYP3A4 engine while Tacrolimus rocket overshoots to toxic levels. Mood: Pharmacological chain reaction."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The ID Attending",
+      "grade": 1,
+      "power": "Clinical Reasoning: Identifies the immune defect, generates the organism, applies the criteria, then cultures before treatment.",
+      "lore": "An isolated fact is useless. You must link the anatomical site, the immune defect, the resistance mechanism, and the pharmacokinetics to save the life.",
+      "gradeReason": "100% integration required. Clinical reasoning as THE power. Perfect capstone synthesis card for the deck.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Wise owl ID Attending orchestrating immune defect, organism and drug selection in perfect synthesis. Mood: Master integration."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Uncle FrizzleBob's Golden Rule",
+      "grade": 1,
+      "power": "Source Control: No amount of Meropenem will drain a pus-filled abscess. No amount of Vancomycin will remove an infected line.",
+      "lore": "The best antibiotic in the world cannot overcome physics or untreated plastic. If there is pus about, let it out. Stay fluffy.",
+      "gradeReason": "STAT: infinity. If there is pus about, let it out. Stay fluffy. Untoppable closer for the deck.",
+      "artworkPrompt": "Style: Medical cartoon kayfabe. Subject: Uncle FrizzleBob as Einstein pointing at pus-filled abscess with infinity stat above. Mood: Absolute law."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 20,
+    "G2": 34,
+    "G3": 2
+  },
+  "overallScore": 8,
+  "verdict": "A powerhouse educational deck that earns its G1s properly — Monica, Sienna, HGT, and the Golden Rule are genuinely table-stopping cards. The MedKayfab formula is fully operational: vivid character names, actionable clinical rules as lore, and enough FrizzleBob absurdity to make board-prep content feel like a game. Weakest entries (LPS the Endotoxin, PK/PD Petra) are abstract concepts that resist embodiment. One content QA flag: Carbapenem Carl's lore conflates Ertapenem with Carbapenems generically. Table-ready: Yes.",
+  "blurb": "56 microbiology and infectiology characters who teach clinical pearls through wrestling moves and catastrophic lore. Perfect for med students who need USMLE rules to stick.",
+  "viralScore": 7,
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 9,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob rabbit in lab coat wields spray gun and spiked mace, stomping flaming medical textbooks amid cartoon bacteria and a phage image; extremely dynamic and content-accurate",
+    "coverTitle": "5 — MedKayfab: Microbiology & Infectiology Edition is clear, specific, and instantly communicates the niche",
+    "coverVibeMatch": "5 — Art and title in perfect alignment; chaos of bacteria/textbooks/fire maps exactly to the deck tone",
+    "coverOriginality": "4 — FrizzleBob-on-burning-books is a recurring MedKayfab composition but micro-specific art elements (bacteriophage, cartoon pathogens) add real distinction",
+    "coverViral": "4 — Strong hook for medical student communities; burning textbooks image is inherently shareable",
+    "coverScore": 4.6,
+    "coverNote": "One of the stronger MedKayfab covers — the bacteriophage electron-microscopy inset is a nice touch of scientific authenticity. The 'Stay fluffy!' callout in the bottom-right is a perfect FrizzleBob signature. Georg von Westphalen credit top-left is clean."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 3,
+  "notes": "Image-based PDF, no extractable text layer. All card text read from rendered page images at 2x zoom (1491x832px per page). Three partial legibility issues: Helicobacter lore bottom line partially obscured; Fungal Fran lore small font; Zoonosis Zara lore possible content error (Amoxicillin-Clavulanate for Lyme is non-standard — standard is Doxycycline 100mg BD x21d or plain Amoxicillin). Carbapenem Carl lore issue: states 'Carbapenem is the only member of the gang that cannot kill Pseudomonas' but should specify Ertapenem — Meropenem and Piperacillin-Tazobactam DO cover Pseudomonas. Layout: standard 2x2 grid, 14 content pages + 1 cover = 56 cards exactly. RAF boxes not present.",
+  "topCards": [
+    "Meningococcal Monica",
+    "Sepsis Six Sienna",
+    "Uncle FrizzleBob's Golden Rule"
+  ],
+  "worstCards": [
+    "LPS the Endotoxin",
+    "Pharmacokinetics Petra"
+  ],
+  "todos": {
+    "urgent": [
+      "Fix Carbapenem Carl lore: 'Carbapenem' -> 'Ertapenem' to avoid clinical confusion",
+      "Verify Zoonosis Zara Lyme treatment lore: Amoxicillin-Clavulanate is non-standard; should be Doxycycline 100mg BD x21d or plain Amoxicillin"
+    ],
+    "quickWins": [
+      "Upgrade LPS Endotoxin to focus on JHR reaction as a playable event rather than an unembodable molecule",
+      "Add PDF text layer to enable copy-paste extraction in future sessions",
+      "Clarify Sepsis Sam STAT: SOFA >=2 above baseline (verify '22' against source image)"
+    ],
+    "niceToHave": [
+      "Split Sexually Transmitted Seb into separate Syphilis / GC+Chlamydia cards for sharper G1 focus",
+      "Tropical Trio could be three separate cards for better table play",
+      "Reframe Pharmacokinetics Petra as 'PK/PD Pete the Sniper' with a clearer performer role"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Microbiology",
+    "#Infectiology",
+    "#MedStudents",
+    "#USMLE",
+    "#Kayfabizarro",
+    "#MedicalEducation",
+    "#ClinicalMicrobiology"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Substack",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: MICROBIOLOGY & INFECTIOLOGY – The Bug-Drug Brawl (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the bug-drug match-ups, antimicrobial resistance, and the sepsis clock that starts ticking long before the lab ever calls back.\n\nA teenager arrives with a fever and a rash that does not blanch under your glass. You have a few minutes, not a few hours, and the lumbar puncture and the blood cultures can wait exactly as long as it takes you to push the first dose. Get the timing right and she walks out. Stall for the perfect workup and Meningococcal Monica writes the outcome for you. This is the discipline where the answer and the speed of the answer earn the same grade.\n\nMedKayfab Microbiology & Infectiology puts the bug, the drug, and the host in one ring as three fighters with opposing motives. Stop reciting the antibiogram. Start reading why a pathogen survives the dose you just gave it.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Meningococcal Monica, Sepsis Six Sienna, and Carbapenem Carl\n- Free lifetime updates as resistance patterns and guidelines evolve\n- CC BY-NC-SA 4.0 licence\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nMeningococcal Monica makes the whole case about speed: benzylpenicillin in the field beats a flawless diagnosis that lands an hour late. Sepsis Six Sienna drills the one sequence that matters, cultures drawn before the antibiotics but the antibiotics never held hostage to the cultures. Then the resistance roster walks in: Carbapenem Carl, the last-line heavyweight who still cannot touch every Pseudomonas; MRSA the Resistance Fighter, who shrugs off the drugs that flatten his cousins; and HGT the Gene Trader, the reason a patient who never once swallowed an antibiotic can carry one that beats yours. The deck closes on Uncle FrizzleBob's Golden Rule: the best antibiotic in the world cannot overcome physics or an untreated source. Drain the abscess. Pull the line. Then dose.\n\nHow it works\nEvery card is a cognitive anchor: the Character (the mnemonic), the Visual (the scene), the Stat Block, the Lore (the clinical story), and the Quest (the reasoning challenge). The Mechanism Flash mode is unforgiving here. Name the organism, the first-line drug, and the single move that loses the patient, in one sentence without looking, or the \"patient\" on the Stage doesn't make it.\n\nHonest cognitive load\nThis is a dense core deck. It rewards a preclinical student building the bug-drug map for the first time and a clinical-years student or junior doctor who needs empirical choices to hold under pressure on the ward and in the exam. It pairs naturally with Immunology & Pathology for the host side of every infection, with Pharmacology for the drugs themselves, and with Internal Medicine for the febrile inpatient who refuses to read the textbook.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. Student on a budget? Enter €0, no questions asked. Want to support more decks? Anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

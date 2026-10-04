@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Town Resident Atlas · S6 · Studio · Anfasser, Bone-Posing, Enthüllung</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#14130f;color:#f0ece2;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#e8c84a}a:hover{color:#f3dd82}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:9px;padding:9px 14px;border-bottom:1px solid #2c2a20;background:#1b1a13;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650;white-space:nowrap}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #403d2c;border-radius:4px;color:#e8c84a}
+  .tag.cand{color:#f0b37e;border-color:#6b4b2a}
+  .bar{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  button,select{font:12px/1 inherit;padding:7px 9px;background:#24221a;color:#f0ece2;border:1px solid #403d2c;border-radius:5px;cursor:pointer}
+  button:hover{background:#2f2c21}
+  button[aria-pressed="true"]{background:#c9a227;border-color:#e8c84a;color:#1a1710}
+  button.gz[aria-pressed="true"]{background:#6fd1ff;border-color:#9fe2ff;color:#0d1a20}
+  label.sl{display:flex;align-items:center;gap:6px;font:11px/1 ui-monospace,monospace;color:#b4ab8e}
+  input[type=range]{width:92px;accent-color:#e8c84a}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #refimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+  #hud{font:11px/1.6 ui-monospace,monospace;color:#ded7c2;background:#14130fcc;border:1px solid #403d2c80;padding:8px 10px;border-radius:6px;pointer-events:none;flex:1 1 auto;min-width:0}
+  #qa{position:absolute;left:12px;top:12px;font:11px/1.6 ui-monospace,monospace;padding:8px 10px;border-radius:6px;border:1px solid;max-width:52%}
+  .ok{background:#182412e6;border-color:#4d7a2e;color:#cfe9b4}
+  .bad{background:#2a1a12e6;border-color:#a2603a;color:#f5d3b8}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#f3ecd8;background:#14130fee;border:1px solid #403d2c;padding:8px 10px;border-radius:6px;display:none;max-width:44%}
+  #pick b{color:#6fd1ff;font-weight:600}
+  #dock{position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+  #dockrow{display:flex;width:100%;gap:10px;align-items:flex-end;justify-content:space-between}
+  #timeline{display:none;gap:8px;align-items:center;background:#14130fee;border:1px solid #403d2c;padding:7px 10px;border-radius:6px;pointer-events:auto;flex-wrap:wrap;justify-content:center;max-width:100%}
+  #timeline input{width:min(220px,34vw);accent-color:#6fd1ff}
+  #timeline span{font:11px/1 ui-monospace,monospace;color:#b4ab8e;min-width:104px}
+  #side{pointer-events:auto;flex:0 0 auto}
+  aside{border-left:1px solid #2c2a20;background:#171610;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#9c9377;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #26241b;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#eee7d2;text-align:right;word-break:break-word}
+  .note{font-size:12px;color:#a49b80}
+  .note li{margin-bottom:5px}
+  ul{margin:6px 0;padding-left:16px}
+  .warn{border:1px solid #6b5a2a;background:#241f10;color:#ecd9a7;padding:8px 10px;border-radius:5px;font-size:12px}
+  .warn ul{padding-left:15px;margin:4px 0 0}
+  .fix{border:1px solid #2a5a6b;background:#101f24;color:#bfe4f2;padding:8px 10px;border-radius:5px;font-size:12px;margin-bottom:8px}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #26241b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th{color:#9c9377;font-weight:500}
+  td.n,th.n{width:42px;text-align:right;color:#eee7d2}
+  .slot{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #26241b;font:11px/1.45 ui-monospace,monospace}
+  .slot i{color:#e8c84a;font-style:normal;width:14px;flex:none}
+  .slot div{min-width:0}
+  .slot small{display:block;color:#8e866c;word-break:break-all}
+  .extra i{color:#6d6650}
+  .studio{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .edit{display:flex;gap:6px;align-items:baseline;font:11px/1.5 ui-monospace,monospace;padding:4px 0;border-bottom:1px solid #26241b}
+  .edit b{color:#6fd1ff;font-weight:600;flex:none}
+  .edit span{color:#cfc7ac;min-width:0;flex:1;word-break:break-all}
+  .edit button{padding:2px 6px;font-size:10px}
+  .empty{color:#6d6650;font:11px/1.5 ui-monospace,monospace}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Resident Atlas · S6</h1>
+    <select id="who"></select>
+    <span class="tag cand">candidate-only</span>
+    <span class="tag" id="cnt">…</span>
+    <div class="bar">
+      <button id="vKey" aria-pressed="true">Key Art</button>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid">Raster</button>
+      <button id="vBox">Maße</button>
+      <button id="lAct" aria-pressed="true">Aktor</button>
+      <button id="lProp" aria-pressed="true">Requisiten</button>
+      <button id="lHab" aria-pressed="true">Habitat</button>
+      <button id="lOpt" aria-pressed="false">Optional</button>
+      <select id="clip"><option value="">Motion · Recipe-Pose</option></select>
+      <button id="mood">Golden Hour</button>
+      <label class="sl">Referenz <input id="opa" type="range" min="0" max="100" value="0"></label>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <img id="refimg" alt="Referenzbild">
+    <div id="qa" class="ok">lade…</div>
+    <div id="pick"></div>
+    <div id="dock">
+      <div id="timeline">
+        <button id="tPlay" aria-pressed="true">Pause</button>
+        <input id="tScrub" type="range" min="0" max="1000" value="0">
+        <span id="tRead">–</span>
+      </div>
+      <div id="dockrow">
+        <div id="hud">lade…</div>
+        <button id="side">Leiste ausblenden</button>
+      </div>
+    </div>
+  </div>
+  <aside>
+    <h2>Studio · Anfasser</h2>
+    <div class="fix" id="fix"></div>
+    <div class="studio">
+      <button class="gz" id="gOff" aria-pressed="true">Aus</button>
+      <button class="gz" id="gT">Verschieben</button>
+      <button class="gz" id="gR">Drehen</button>
+      <button class="gz" id="gS">Skalieren</button>
+    </div>
+    <div class="studio">
+      <select id="bone"><option value="">Bone posieren · keiner</option></select>
+    </div>
+    <div id="target" class="empty">Kein Ziel. Objekt anklicken oder Bone wählen.</div>
+    <h2>Gesammelt · <span id="ecnt">0</span> Korrekturen</h2>
+    <div id="edits"></div>
+    <div class="studio" style="margin-top:8px">
+      <button id="pPatch">Patch exportieren</button>
+      <button id="pCopy">In Zwischenablage</button>
+      <button id="pClear">Alles verwerfen</button>
+    </div>
+    <h2 id="rName">Resident</h2>
+    <div id="meta"></div>
+    <h2>Aktor · Quelle, Rig, Pose</h2>
+    <div id="actor"></div>
+    <h2>Signatur-Slots</h2>
+    <div id="slots"></div>
+    <h2>Gemessen · Laufzeit</h2>
+    <div id="bounds"></div>
+    <h2>Maße je Asset</h2>
+    <table><thead><tr><th>Asset</th><th class="n">x</th><th class="n">y</th><th class="n">z</th></tr></thead><tbody id="sizes"></tbody></table>
+    <h2>OPEN · QA</h2>
+    <div class="warn" id="open"></div>
+    <h2>Notizen</h2>
+    <div class="note"><ul id="notes"></ul></div>
+    <h2>Herkunft</h2>
+    <div id="prov"></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildVignette, arrange, respace, makeViewer, picker, measured, loadClips, bindReport, boneRig, PIN, REPO } from './lib/atlas.js';
+import { makeStudio, makeReveal } from './lib/studio.js';
+import { RESIDENTS, ENSEMBLE, SOURCES, SLOTS } from './data/cast.js';
+
+const $ = (id) => document.getElementById(id);
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+const hud = $('hud');
+const V = makeViewer($('c'), { fov: 28, mood: 'day' });
+const ST = makeStudio(V, $('c'));
+
+const who = $('who');
+for (const r of RESIDENTS) who.add(new Option(r.display, r.residentId));
+who.add(new Option('— Ensemble · Welle 1 —', '__ensemble'));
+
+const built = new Map();
+let cur = null, curRoot = null, baseBg = V.scene.background.clone();
+let revTime = 0, revPlaying = true;
+/* Builds are async and can take >10s. Without a sequence guard a slower earlier build
+   finishes AFTER a newer one and adds its root to the scene — two residents at once. */
+let showToken = 0;
+
+const actorOf = () => (cur && !cur.ensemble ? cur.nodes.get(cur.recipe.actor.id) : null);
+const tickActivity = (v, dt) => { if (v && v.activity && v.activity.enabled !== false) v.activity.update(dt); };
+V.post.add((dt) => {
+  if (cur && cur.ensemble) for (const v of cur.members) tickActivity(v, dt);
+  else tickActivity(cur, dt);
+  if (cur && !cur.ensemble && cur.rev && revPlaying) {
+    revTime += dt;
+    cur.rev.at(revTime);
+    const t = revTime % cur.rev.duration;
+    $('tScrub').value = Math.round((t / cur.rev.duration) * 1000);
+    $('tRead').textContent = `${t.toFixed(2)}s · ${phaseAt(t)}`;
+  }
+  ST.post(actorOf); // hand-posed bones win over the clip, re-applied every frame
+});
+function phaseAt(t) {
+  const ph = (cur && cur.rev && cur.rev.phases) || [];
+  let n = '–';
+  for (const [at, label] of ph) if (t >= at) n = label;
+  return n;
+}
+
+async function build(recipe) {
+  if (built.has(recipe.residentId)) return built.get(recipe.residentId);
+  const v = await buildVignette(recipe, (d, n, id) => { hud.textContent = `${recipe.name} · lade ${d}/${n} · ${id}`; });
+  v.recipe = recipe;
+  const applied = ST.applyNodes(recipe.residentId, v.nodes);
+  if (applied) v.notes.push(`${applied} gesammelte Studio-Korrektur(en) aus diesem Browser angewendet — nicht in data/cast.js.`);
+  v.rev = recipe.reveal ? makeReveal(v, recipe.reveal) : null;
+  built.set(recipe.residentId, v);
+  return v;
+}
+
+/* ---------- panel ---------- */
+const row = (rows) => rows.map(([k, val]) => `<div class="kv"><span>${k}</span><span>${val}</span></div>`).join('');
+function facts(v) {
+  const r = v.recipe;
+  $('rName').textContent = r.name;
+  $('meta').innerHTML = row([
+    ['Status', r.status], ['Town-Rolle', r.townRole], ['Habitat', r.habitatIntent],
+    ['Aktivität', r.activity], ['Pack', r.pack], ['Beziehungen', (r.relationships || []).join(' · ') || '–']
+  ]);
+  const af = measured.get(r.actor.a);
+  const seat = (v.nodes.get(r.actor.id) || {}).userData || {};
+  $('actor').innerHTML = row([
+    ['Asset', r.actor.a.replace('media/3D_Assets/', '')],
+    ['Commit', PIN.assets.slice(0, 12)],
+    ['Rig', r.actor.rigFamily + (af ? ` · ${af.joints.length} Joints` : '')],
+    ['Clips im GLB', af ? String(af.clips.length) : '–'],
+    ['handslot', af ? af.joints.filter((j) => /handslot/i.test(j)).join(', ') || 'keine' : '–'],
+    ['Textur', r.actor.texture || '–'],
+    ['Basis-Pose', v.mixer ? `${v.mixer.clip} · ${v.mixer.report.bound}/${v.mixer.report.total} Tracks` : 'keine'],
+    ['Aktivitäts-Runtime', v.activity ? v.activity.label : '–'],
+    ['Schicht-Pose', v.mixer && v.mixer.layer ? `${v.mixer.layer.clip} auf ${v.mixer.layer.maskRoot} · ${v.mixer.layer.upper} Tracks` : '–'],
+    ['Basis nach Maske', v.mixer && v.mixer.layer ? `${v.mixer.layer.lower} Tracks` : '–'],
+    ['Sitz-Ausrichtung', seat.seatFacts ? `Bone ${seat.seatFacts.bone} → ${seat.seatFacts.host} y=${seat.seatFacts.seatY}` : '–']
+  ]);
+  const props = [...(r.habitat || []), ...(r.signatureProps || [])];
+  $('slots').innerHTML = props.map((p) => `
+    <div class="slot${p.slot ? '' : ' extra'}"><i>${p.slot || '·'}</i><div>
+      ${p.role}${p.slot ? ` <span style="color:#8e866c">· ${SLOTS[p.slot]}</span>` : ''}
+      <small>${p.a.replace('media/3D_Assets/KayKit_Mystery_Series6/', '')}</small>
+      ${p.scaleNote ? `<small style="color:#c39a55">s=${p.s} · ${p.scaleNote}</small>` : ''}
+      ${p.hand ? `<small style="color:#6fd1ff">→ ${p.hand.bone}</small>` : ''}
+      ${p.optional ? '<small style="color:#c39a55">aus · Abweichung von der Promo, per „Optional“ zuschaltbar</small>' : ''}
+    </div></div>`).join('');
+  const ab = v.actorBounds;
+  $('bounds').innerHTML = row([
+    ['Aktor-Höhe (Rest-Pose)', ab ? f2(ab.height) : '–'],
+    ['Kopf-Bone (posiert)', v.headY != null ? f2(v.headY) : '–'],
+    ['Aktor-Grundfläche', ab ? `${f2(ab.footprint[0])} × ${f2(ab.footprint[1])}` : '–'],
+    ['Vignette', `${f2(v.bounds.size[0])} × ${f2(v.bounds.size[1])} × ${f2(v.bounds.size[2])}`],
+    ['Objekte', String(v.nodes.size)],
+    ['Enthüllung', v.rev ? `${v.rev.duration}s · Schleife` : '–']
+  ]);
+  const used = props.concat([r.actor]).map((p) => measured.get(p.a)).filter(Boolean);
+  const uniq = [...new Map(used.map((m) => [m.path, m])).values()].sort((a, b) => a.name.localeCompare(b.name));
+  $('sizes').innerHTML = uniq.map((m) => `<tr><td title="${m.path}">${m.name}</td><td class="n">${f2(m.size[0])}</td><td class="n">${f2(m.size[1])}</td><td class="n">${f2(m.size[2])}</td></tr>`).join('');
+  $('open').innerHTML = v.open.length ? `<ul>${v.open.map((o) => `<li>${o}</li>`).join('')}</ul>` : 'Keine offenen Punkte auf dieser Seite.';
+  $('notes').innerHTML = [...(r.notes || []), ...v.notes].map((n) => `<li>${n}</li>`).join('');
+  $('prov').innerHTML = row([
+    ['repo', REPO], ['assets @', PIN.assets.slice(0, 12)], ['anims @', PIN.anims.slice(0, 12)],
+    ['Pack-Shard', SOURCES.packShard.split(' (')[0]], ['Lizenz', 'CC0 · Kay Lousberg'],
+    ['Librarian', `<a href="${SOURCES.librarian}" target="_blank" rel="noreferrer">Quelle öffnen</a>`]
+  ]);
+  $('fix').innerHTML = v.mixer
+    ? 'Anfasser ändern nur diese Sitzung und werden unten gesammelt. <b>data/cast.js bleibt unberührt</b> — Patch exportieren und bewusst einpflegen.'
+    : 'Kein Aktor-Mixer — Anfasser wirken auf Objekte, Bone-Posing braucht eine gebundene Pose.';
+}
+
+function qa(v) {
+  const el = $('qa');
+  const fails = v.open.filter((o) => /lädt nicht|nicht gefunden|nicht ausführbar/.test(o));
+  el.className = fails.length ? 'bad' : 'ok';
+  el.textContent = fails.length
+    ? `${fails.length} Asset-/Bone-Fehler — siehe OPEN`
+    : `${v.nodes.size} Objekte geladen · alle Pfade auflösbar · ${v.open.length} OPEN-Punkte dokumentiert`;
+}
+
+/* ---------- motion audition ---------- */
+async function fillClips(v) {
+  const sel = $('clip');
+  sel.innerHTML = '<option value="">Motion · Recipe-Pose</option>';
+  const bsel = $('bone');
+  bsel.innerHTML = '<option value="">Bone posieren · keiner</option>';
+  if (!v || !v.recipe) return;
+  const actor = v.nodes.get(v.recipe.actor.id);
+  if (!actor) return;
+  for (const b of boneRig(actor).bones) bsel.add(new Option(b.name, b.name));
+  const clips = (v.mixer && v.mixer.clips) || await loadClips(v.recipe.actor.rig || 'Rig_Medium');
+  v.clipList = clips;
+  for (const c of clips) {
+    const rep = bindReport(actor, c.clip);
+    if (rep.bound) sel.add(new Option(`${c.name} · ${c.set} · ${rep.bound}/${rep.total}`, c.name));
+  }
+  /* Die Motion-Auswahl trieb nur den Haupt-Aktor. In Vignetten mit ZWEI Figuren (Orc Warband,
+     Animatronic, Farmers, Skeletons) blieb die zweite stehen — sie ist als Signatur-Requisite
+     geführt, nicht als Aktor, hat aber ihr eigenes poseInfo. Bespielt wird jetzt jede Figur,
+     die eine Pose trägt; wer den Clip nicht bindet, bleibt stehen und wird genannt. */
+  const figures = [...v.nodes.entries()].filter(([, n]) => n.userData.poseInfo);
+  sel.onchange = () => {
+    const pick = clips.find((c) => c.name === sel.value);
+    if (v.activity) {
+      v.activity.enabled = !pick;
+      if (!pick) v.activity.reset?.();
+    }
+    for (const m of V.mixers) V.mixers.delete(m);
+    for (const [, n] of figures) n.userData.poseInfo.mixer.stopAllAction();
+    if (!pick) {
+      for (const [, n] of figures) {
+        const pi = n.userData.poseInfo, e = n.userData.entry;
+        pi.action.reset().play();
+        if (pi.layer) pi.layer.action.reset().play();
+        if (e.poseFreeze === false) V.mixers.add(pi.mixer);
+        else { pi.mixer.update(e.poseTime ?? 0); pi.action.paused = true; if (pi.layer) pi.layer.action.paused = true; }
+      }
+      hud.textContent = `${v.recipe.name} · Recipe-Pose wiederhergestellt (${figures.length} ${figures.length === 1 ? 'Figur' : 'Figuren'})`;
+      return;
+    }
+    const played = [], skipped = [];
+    for (const [id, n] of figures) {
+      const rep = bindReport(n, pick.clip);
+      if (!rep.bound) { skipped.push(`${id} 0/${rep.total}`); continue; }
+      const mixer = new THREE.AnimationMixer(n);
+      mixer.clipAction(pick.clip).play();
+      V.mixers.add(mixer);
+      played.push(`${id} ${rep.bound}/${rep.total}`);
+    }
+    /* Konstruktiv gehaltene Instrumente (`hold`) stehen auf einer CCD-Armnachführung, die
+       GEGEN die Recipe-Pose gerechnet wurde. Ein anderer Clip überschreibt genau diese
+       Armdrehungen — das Instrument hängt dann nur noch am Handslot und die gemessene
+       Konstruktion (Korpus am Bauch, Anschlagpfote über der Decke) gilt nicht mehr. Das wird
+       gesagt statt stillschweigend gezeigt. */
+    const holdHosts = [...v.nodes.values()]
+      .filter((n) => n.userData.entry && n.userData.entry.hold)
+      .map((n) => n.userData.entry.hold.of);
+    const broken = played.map((p) => p.split(' ')[0]).filter((id) => holdHosts.includes(id));
+    hud.textContent = `Motion "${pick.name}" (${pick.set}) · ${played.join(', ')}${skipped.length ? ` · ohne Bindung: ${skipped.join(', ')}` : ''} · Vorschau-Evidenz, keine Retarget-Freigabe${broken.length ? ` · ACHTUNG: ${broken.join(', ')} hält ein Instrument konstruktiv — der Clip überschreibt die Armnachführung, die gemessene Haltung gilt in dieser Motion nicht` : ''}`;
+  };
+  bsel.onchange = () => {
+    if (!bsel.value) { ST.detach(); renderTarget(); return; }
+    const bone = actor.getObjectByName(bsel.value);
+    if (!bone) return;
+    freezeMotion('Bone-Posing');
+    ST.attach('bone', bone.name, bone, 'rotate');
+    setGizmoButtons('rotate');
+    V.select(null);
+    renderTarget();
+    hud.textContent = `Bone "${bone.name}" am Anfasser · Clip angehalten · jede Drehung wird gesammelt und überschreibt den Clip für diesen Bone`;
+  };
+}
+function freezeMotion(why) {
+  revPlaying = false;
+  if (cur && !cur.ensemble && cur.activity) cur.activity.enabled = false;
+  press($('tPlay'), false); $('tPlay').textContent = 'Abspielen';
+  for (const m of V.mixers) V.mixers.delete(m);
+  if (cur && cur.mixer) { cur.mixer.action.paused = true; if (cur.mixer.layer) cur.mixer.layer.action.paused = true; }
+  $('fix').innerHTML = `<b>${why}</b> hat Clip und Enthüllung angehalten — sonst überschreibt die Animation jeden Handgriff. Korrekturen werden unten gesammelt; <b>data/cast.js bleibt unberührt</b>.`;
+}
+
+/* ---------- studio UI ---------- */
+function setGizmoButtons(mode) {
+  press($('gOff'), !mode); press($('gT'), mode === 'translate');
+  press($('gR'), mode === 'rotate'); press($('gS'), mode === 'scale');
+}
+let gizmoMode = null;
+function setMode(mode) {
+  gizmoMode = mode;
+  setGizmoButtons(mode);
+  if (!mode) { ST.detach(); renderTarget(); return; }
+  if (ST.target) { freezeMotion('Anfasser'); ST.setMode(mode); }
+  hud.textContent = mode ? `Anfasser: ${mode} · Ziel anklicken · G/R/S wechseln, Esc löst` : 'Anfasser aus';
+  renderTarget();
+}
+$('gOff').onclick = () => setMode(null);
+$('gT').onclick = () => setMode('translate');
+$('gR').onclick = () => setMode('rotate');
+$('gS').onclick = () => setMode('scale');
+addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.key === 'g') setMode('translate');
+  if (e.key === 'r') setMode('rotate');
+  if (e.key === 's') setMode('scale');
+  if (e.key === 'Escape') { setMode(null); $('bone').value = ''; }
+});
+function renderTarget() {
+  const t = ST.target;
+  $('target').className = t ? '' : 'empty';
+  $('target').innerHTML = t
+    ? row([['Ziel', `${t.kind === 'bone' ? 'Bone' : 'Objekt'} ${t.id}`], ['Modus', gizmoMode || 'aus'],
+           ['Position', t.obj.position.toArray().map((x) => x.toFixed(3)).join(' / ')],
+           ['Drehung °', t.obj.rotation.toArray().slice(0, 3).map((x) => THREE.MathUtils.radToDeg(x).toFixed(1)).join(' / ')]])
+    : 'Kein Ziel. Objekt anklicken oder Bone wählen.';
+}
+function renderEdits() {
+  const rid = ST.residentId;
+  const e = ST.of(rid);
+  const rows = [];
+  for (const [id, t] of Object.entries(e.nodes || {}))
+    rows.push(`<div class="edit"><b>obj</b><span>${id} · p ${t.p.join('/')} · r ${t.r.join('/')}${t.s !== 1 ? ' · s ' + t.s : ''}</span><button data-k="node" data-i="${id}">×</button></div>`);
+  for (const [name, r] of Object.entries(e.bones || {}))
+    rows.push(`<div class="edit"><b>bone</b><span>${name} · ${r.join(' / ')}°</span><button data-k="bone" data-i="${name}">×</button></div>`);
+  $('edits').innerHTML = rows.join('') || '<div class="empty">Nichts gesammelt. Anfasser aktivieren, Objekt oder Bone anfassen.</div>';
+  $('ecnt').textContent = String(ST.count(rid));
+  for (const b of $('edits').querySelectorAll('button'))
+    b.onclick = () => { ST.dropOne(rid, b.dataset.k, b.dataset.i); hud.textContent = `Korrektur ${b.dataset.i} verworfen · Seite neu wählen, um sie zurückzusetzen`; };
+}
+ST.onChange(() => { renderEdits(); renderTarget(); });
+$('pClear').onclick = () => { ST.clear(ST.residentId); hud.textContent = 'Alle Korrekturen dieses Residents verworfen'; };
+function patch() {
+  const rid = ST.residentId;
+  const e = ST.of(rid);
+  return {
+    status: 'candidate-only · studio patch', residentId: rid, sourceRepo: REPO, sourceCommit: PIN.assets,
+    note: 'Handkorrekturen aus dem Atlas-Studio. Nicht automatisch in data/cast.js einpflegen — bewusst übernehmen.',
+    nodes: e.nodes || {}, bones: e.bones || {}
+  };
+}
+$('pPatch').onclick = () => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(patch(), null, 2)], { type: 'application/json' }));
+  a.download = ST.residentId + '.studio-patch.json';
+  a.click();
+};
+$('pCopy').onclick = async () => {
+  try { await navigator.clipboard.writeText(JSON.stringify(patch(), null, 2)); hud.textContent = 'Patch in der Zwischenablage'; }
+  catch { hud.textContent = 'Zwischenablage verweigert — „Patch exportieren“ nutzen'; }
+};
+
+/* ---------- timeline ---------- */
+$('tPlay').onclick = (e) => {
+  revPlaying = !revPlaying;
+  press(e.currentTarget, revPlaying);
+  e.currentTarget.textContent = revPlaying ? 'Pause' : 'Abspielen';
+  if (revPlaying && cur && cur.mixer && cur.recipe.actor.poseFreeze === false) V.mixers.add(cur.mixer.mixer);
+};
+$('tScrub').oninput = (e) => {
+  if (!cur || !cur.rev) return;
+  revPlaying = false; press($('tPlay'), false); $('tPlay').textContent = 'Abspielen';
+  revTime = (e.target.value / 1000) * cur.rev.duration;
+  cur.rev.at(revTime);
+  $('tRead').textContent = `${revTime.toFixed(2)}s · ${phaseAt(revTime)}`;
+  V.draw();
+};
+
+/* ---------- show ---------- */
+function clearStage() {
+  if (curRoot) V.scene.remove(curRoot);
+  for (const m of V.mixers) V.mixers.delete(m);
+  ST.detach(); setGizmoButtons(gizmoMode); V.select(null); V.showBounds(null);
+  $('pick').style.display = 'none';
+}
+async function show(id) {
+  const token = ++showToken;
+  clearStage();
+  ST.residentId = id;
+  renderEdits();
+  if (id === '__ensemble') {
+    const vs = [];
+    for (const rid of ENSEMBLE.members) vs.push(await build(RESIDENTS.find((r) => r.residentId === rid)));
+    const { stage, marks, width, slots } = arrange(vs, ENSEMBLE.gap);
+    if (token !== showToken) return;
+    curRoot = stage; V.scene.add(stage);
+    cur = { ensemble: true, members: vs, slots };
+    for (const v of vs) {
+      if (v.mixer && v.recipe.actor.poseFreeze === false) V.mixers.add(v.mixer.mixer);
+      for (const m of v.extraMixers || []) if (!m.action.paused) V.mixers.add(m.mixer);
+    }
+    V.frame(stage, [0.2, 0.3, 1], 1.08);
+    $('timeline').style.display = 'none';
+    $('refimg').style.display = 'none';
+    $('cnt').textContent = `${vs.reduce((a, v) => a + v.nodes.size, 0)} Objekte · ${vs.length} Residents`;
+    hud.textContent = `Ensemble Welle 1 · Breite ${f2(width)} · keine Höhen-Normalisierung`;
+    $('rName').textContent = 'Ensemble · Welle 1';
+    $('fix').textContent = 'Ensemble ist eine Ansicht, kein Arbeitsplatz — Anfasser wirken nur auf Resident-Seiten.';
+    $('meta').innerHTML = row([['Status', 'candidate-only'], ['Mitglieder', marks.map((m) => m.id).join(', ')], ['Abstand', f2(ENSEMBLE.gap)], ['Bodenebene', 'geteilt · y=0']]);
+    $('actor').innerHTML = row(vs.map((v) => [v.recipe.name, `Höhe ${f2(v.actorBounds.height)} · ${f2(v.bounds.size[0])} breit`]));
+    $('slots').innerHTML = vs.map((v) => `<div class="slot"><i>·</i><div>${v.recipe.name}<small>${v.nodes.size} Objekte · ${v.open.length} OPEN</small></div></div>`).join('');
+    const hs = vs.map((v) => v.actorBounds.height);
+    $('bounds').innerHTML = row([
+      ['Aktor-Höhen', hs.map(f2).join(' / ')],
+      ['Höhen-Spanne', f2(Math.max(...hs) - Math.min(...hs))],
+      ['Ensemble-Breite', f2(width)],
+      ['Objekte', String(vs.reduce((a, v) => a + v.nodes.size, 0))]
+    ]);
+    const all = [...measured.values()].sort((a, b) => a.name.localeCompare(b.name));
+    $('sizes').innerHTML = all.map((m) => `<tr><td title="${m.path}">${m.name}</td><td class="n">${f2(m.size[0])}</td><td class="n">${f2(m.size[1])}</td><td class="n">${f2(m.size[2])}</td></tr>`).join('');
+    $('open').innerHTML = `<ul>${vs.flatMap((v) => v.open.map((o) => `<li>${v.recipe.name}: ${o}</li>`)).join('') || '<li>keine</li>'}</ul>`;
+    $('notes').innerHTML = '<li>Ensemble stellt die Vignetten unverändert nebeneinander — Maßstabs- und Look-Unterschiede bleiben sichtbar.</li>';
+    $('prov').innerHTML = row([['repo', REPO], ['assets @', PIN.assets.slice(0, 12)], ['Lizenz', 'CC0 · Kay Lousberg']]);
+    $('qa').className = 'ok';
+    $('qa').textContent = `Ensemble geladen · ${vs.length} Vignetten auf geteilter Bodenebene`;
+    fillClips(null);
+    return;
+  }
+  const recipe = RESIDENTS.find((r) => r.residentId === id);
+  const v = await build(recipe);
+  if (token !== showToken) return;
+  curRoot = v.root; V.scene.add(v.root);
+  cur = v;
+  if (v.mixer && !v.mixer.action.paused) V.mixers.add(v.mixer.mixer);
+  for (const m of v.extraMixers || []) if (!m.action.paused) V.mixers.add(m.mixer);
+  revTime = 0; revPlaying = !!v.rev;
+  $('timeline').style.display = v.rev ? 'flex' : 'none';
+  press($('tPlay'), revPlaying); $('tPlay').textContent = 'Pause';
+  if (v.rev) v.rev.at(0);
+  frameKeyArt(v.root, recipe);
+  $('cnt').textContent = `${v.nodes.size} Objekte`;
+  const img = $('refimg');
+  img.style.display = '';
+  img.src = recipe.reference.src;
+  img.alt = recipe.reference.label;
+  hud.textContent = `${recipe.name} · Key Art · Objekt anklicken für Pfad, Rolle und Anfasser`;
+  facts(v); qa(v); fillClips(v); applyLayers();
+}
+
+/* ---------- views & layers ---------- */
+const press = (b, on) => b.setAttribute('aria-pressed', String(on));
+/* manualCamera escape hatch: Box3 is unreliable for a skinned mesh whose rest-pose vertex
+   extent doesn't match its posed size (see Black Knight) — V.frame's auto-fit then aims at
+   the wrong center from the wrong distance. A fixed cam/target sidesteps the bad box entirely. */
+function frameKeyArt(root, recipe) {
+  const mc = recipe.keyArt.manualCamera;
+  if (mc) {
+    V.camera.position.set(...mc.pos);
+    V.controls.target.set(...mc.target);
+    V.camera.near = 0.1; V.camera.far = 80;
+    V.camera.updateProjectionMatrix(); V.controls.update();
+  } else V.frame(root, recipe.keyArt.dir, recipe.keyArt.pad);
+  press($('vKey'), true); press($('vTop'), false);
+}
+function view(dir, pad, btn) {
+  if (!curRoot) return;
+  V.frame(curRoot, dir, pad);
+  press($('vKey'), btn === 'key'); press($('vTop'), btn === 'top');
+}
+$('vKey').onclick = () => {
+  const r = cur && cur.recipe;
+  if (r) frameKeyArt(curRoot, r); else view([0.2, 0.3, 1], 1.1, 'key');
+};
+$('vTop').onclick = () => view([0, 1, 0.0001], 1.1, 'top');
+$('vGrid').onclick = (e) => { V.grid.visible = !V.grid.visible; press(e.currentTarget, V.grid.visible); };
+$('vBox').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.showBounds(on ? curRoot : null); press(e.currentTarget, on);
+};
+function applyLayers() {
+  if (!cur) return;
+  const on = {
+    actor: $('lAct').getAttribute('aria-pressed') === 'true',
+    prop: $('lProp').getAttribute('aria-pressed') === 'true',
+    hab: $('lHab').getAttribute('aria-pressed') === 'true',
+    opt: $('lOpt').getAttribute('aria-pressed') === 'true'
+  };
+  /* Ensemble: same switches apply across every member. Hiding scenery is what makes the
+     scale comparison readable — with all habitats on, 11 vignettes span ~79 units and each
+     figure is down to a handful of pixels. */
+  const applyTo = (v) => {
+    for (const [id, node] of v.nodes) {
+      const e = node.userData.entry;
+      const isActor = id === v.recipe.actor.id;
+      const isHab = (v.recipe.habitat || []).some((h) => h.id === id);
+      const isExtra = e && !e.slot && !e.hand && !isActor && !isHab;
+      node.visible = isActor ? on.actor : isHab ? on.hab : on.prop;
+      if (isExtra && !on.hab) node.visible = false; // promo-extras count as scenery
+      if (e && e.optional) node.visible = node.visible && on.opt;
+    }
+  };
+  if (cur.ensemble) {
+    for (const v of cur.members) applyTo(v);
+    if (cur.slots) respace(cur.slots, ENSEMBLE.gap);
+    if (curRoot) V.frame(curRoot, [0.2, 0.3, 1], 1.06);
+    const n = cur.members.reduce((a, v) => a + [...v.nodes.values()].filter((x) => x.visible).length, 0);
+    const b = new THREE.Box3().setFromObject(curRoot);
+    hud.textContent = `Ensemble · ${n} sichtbare Objekte · Breite ${f2(b.max.x - b.min.x)}${on.hab ? '' : ' · Kulissen aus, Figuren neu verteilt'}`;
+    return;
+  }
+  applyTo(cur);
+  if (cur.rev && !revPlaying) cur.rev.at(revTime);
+}
+for (const btn of ['lAct', 'lProp', 'lHab', 'lOpt'])
+  $(btn).onclick = (e) => { press(e.currentTarget, e.currentTarget.getAttribute('aria-pressed') !== 'true'); applyLayers(); };
+
+let moodName = 'day';
+$('mood').onclick = (e) => {
+  moodName = moodName === 'day' ? 'golden' : 'day';
+  V.mood(moodName); baseBg = V.scene.background.clone();
+  e.currentTarget.textContent = moodName === 'day' ? 'Golden Hour' : 'Tageslicht';
+  press(e.currentTarget, moodName === 'golden');
+  $('opa').oninput({ target: $('opa') });
+};
+$('opa').oninput = (e) => {
+  const val = e.target.value / 100;
+  $('refimg').style.opacity = val;
+  const promo = cur && cur.recipe && cur.recipe.reference.promoBackground;
+  V.scene.background = (val > 0.02 && promo) ? new THREE.Color(promo) : baseBg;
+};
+$('side').onclick = (e) => {
+  const off = $('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+$('exp').onclick = () => {
+  const mk = (v) => ({
+    status: 'candidate-only', residentId: v.recipe.residentId, sourceRepo: REPO, sourceCommit: PIN.assets,
+    animationSource: { shard: SOURCES.animShard, commit: PIN.anims },
+    actor: {
+      assetPath: v.recipe.actor.a, role: 'resident', rigFamily: v.recipe.actor.rigFamily,
+      pose: v.mixer ? { clip: v.mixer.clip, set: v.mixer.set, source: v.mixer.source, trackBinding: v.mixer.report } : null,
+      layeredPose: v.mixer && v.mixer.layer ? { clip: v.mixer.layer.clip, set: v.mixer.layer.set, maskRoot: v.mixer.layer.maskRoot, upperTracks: v.mixer.layer.upper, lowerTracks: v.mixer.layer.lower } : null,
+      seatAlignment: (v.nodes.get(v.recipe.actor.id) || {}).userData?.seatFacts || null
+    },
+    habitat: (v.recipe.habitat || []).map((h) => ({ assetPath: h.a, role: h.role })),
+    signatureProps: (v.recipe.signatureProps || []).filter((p) => p.slot).map((p) => ({ assetPath: p.a, role: p.role, slot: p.slot })),
+    promoExtras: (v.recipe.signatureProps || []).filter((p) => !p.slot).map((p) => p.a),
+    reveal: v.recipe.reveal ? { duration: v.recipe.reveal.duration, phases: v.recipe.reveal.phases, trackCount: v.recipe.reveal.tracks.length } : null,
+    placements: Object.fromEntries([...v.nodes].map(([id, n]) => [id, { position: n.position.toArray().map((x) => +x.toFixed(4)), rotationYDeg: +THREE.MathUtils.radToDeg(n.rotation.y).toFixed(2), scale: +n.scale.x.toFixed(4), attachedTo: n.userData.attachedTo || null }])),
+    measured: Object.fromEntries([...v.nodes].map(([id, n]) => [id, measured.get(n.userData.entry.a) ? { size: measured.get(n.userData.entry.a).size.map((x) => +x.toFixed(4)) } : null])),
+    studioPatch: ST.of(v.recipe.residentId),
+    actorBounds: v.actorBounds, bounds: v.bounds,
+    notes: [...(v.recipe.notes || []), ...v.notes], open: v.open
+  });
+  const doc = cur && cur.ensemble
+    ? { status: 'candidate-only', ensembleId: ENSEMBLE.id, sourceRepo: REPO, sourceCommit: PIN.assets, gap: ENSEMBLE.gap, residents: cur.members.map(mk) }
+    : mk(cur);
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = (cur && cur.ensemble ? ENSEMBLE.id : cur.recipe.residentId) + '.atlas-recipe.json';
+  a.click();
+};
+
+picker($('c'), V, () => curRoot, (hit) => {
+  const el = $('pick');
+  if (!hit) { el.style.display = 'none'; if (!ST.target || ST.target.kind !== 'bone') ST.detach(); renderTarget(); return; }
+  const e = hit.entry, m = hit.facts;
+  el.style.display = 'block';
+  el.innerHTML = [
+    `<b>${e.id}</b> · ${e.role}${e.slot ? ` · Slot ${e.slot}` : ''}`,
+    m ? `Maße ${m.size.map(f2).join(' × ')}` : '',
+    hit.attachedTo ? `gesteckt an ${hit.attachedTo}` : '',
+    e.scaleNote ? `s=${e.s} (Vorschau-Korrektur)` : '',
+    `<span style="color:#8e866c">${e.a}</span>`
+  ].filter(Boolean).join('<br>');
+  if (gizmoMode) { $('bone').value = ''; freezeMotion('Anfasser'); ST.attach('node', e.id, hit.node, gizmoMode); }
+  renderTarget();
+});
+
+who.onchange = () => show(who.value);
+const requestedResident = new URLSearchParams(location.search).get('resident');
+const startResident = requestedResident && RESIDENTS.some((r) => r.residentId === requestedResident)
+  ? requestedResident : RESIDENTS[0].residentId;
+who.value = startResident;
+await show(startResident);
+window.__atlas = { V, ST, built, cur: () => cur, measured };
+</script>
+</body>
+</html>

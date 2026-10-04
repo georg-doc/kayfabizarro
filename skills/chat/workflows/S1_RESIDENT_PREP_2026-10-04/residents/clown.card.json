@@ -1,0 +1,243 @@
+{
+  "schema": "kfb.resident-lean-card/0.2",
+  "residentId": "clown",
+  "role": "regular",
+  "body": {
+    "actorId": {
+      "v": "clown",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/SOURCE.json@7c6522fb (PR #310)",
+      "status": "SOURCE"
+    },
+    "rigFamily": {
+      "v": "Rig_Medium",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/SOURCE.json@7c6522fb (PR #310)",
+      "status": "SOURCE"
+    },
+    "defaultPose": {
+      "v": "Idle_B",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/SOURCE.json@7c6522fb (PR #310)",
+      "status": "SOURCE"
+    },
+    "props": {
+      "v": [
+        "circus_podium",
+        "clown_hammer",
+        "juggling_pin_blue",
+        "clown_ball",
+        "circus_hoop"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE"
+    },
+    "habitat": {
+      "v": "circus podium / juggling",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN"
+    }
+  },
+  "archetype": {
+    "jungDrive": {
+      "v": "Jester + Rebel",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN"
+    },
+    "journeyFunction": {
+      "v": "Trickster",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN"
+    },
+    "frictionEngine": {
+      "v": "Cannot resist turning status into performance",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN"
+    }
+  },
+  "clamps": {
+    "clamp": {
+      "v": "Stress-tester of big claims",
+      "src": "archetype prefill from Jung drive (Georg 2026-10-02: fill sheets heuristically via archetypes); needs Georg OK",
+      "status": "PREFILL"
+    },
+    "method": {
+      "v": "EMBODIED_STRESS_TEST",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "Site-authored CANDIDATE"
+    },
+    "coreWant": {
+      "v": "make large claims acquire small visible stakes",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "Site-authored CANDIDATE"
+    },
+    "coreIrritation": {
+      "v": "abstract certainty with no action or risk",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "Site-authored CANDIDATE"
+    },
+    "contradiction": {
+      "v": "Cannot resist turning status into performance",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN",
+      "note": "Base-24 friction engine used as contradiction"
+    },
+    "failureLoop": {
+      "v": "turns claim into stunt -> stunt steals the scene -> point gets lost -> bigger stunt",
+      "src": "archetype prefill from Jung drive (Georg 2026-10-02: fill sheets heuristically via archetypes); needs Georg OK",
+      "status": "PREFILL"
+    },
+    "fears": {
+      "v": [
+        "an empty audience",
+        "being taken seriously only once",
+        "a stake nobody picks up"
+      ],
+      "src": "archetype prefill from Jung drive (Georg 2026-10-02: fill sheets heuristically via archetypes); needs Georg OK",
+      "status": "PREFILL"
+    },
+    "escalationStyle": {
+      "v": [
+        "claim→demonstration",
+        "authority→status-test",
+        "abstraction→physical-stake"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "transformBias doubles as escalation style"
+    },
+    "hiddenGoal": {
+      "status": "OPEN",
+      "note": "Georg, optional for S1"
+    },
+    "darkSecret": {
+      "status": "OPEN",
+      "note": "Georg, optional for S1"
+    },
+    "speechAvoid": {
+      "v": [
+        "random surreal nouns",
+        "circus puns",
+        "meme cadence",
+        "chaos-gremlin voice",
+        "explaining jokes"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "Site-authored CANDIDATE"
+    }
+  },
+  "cards": {
+    "signatureDeckCandidate": {
+      "v": "kayfabizarro_improv_comedy",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "candidate, not decided"
+    },
+    "deckLane": {
+      "v": "absurdity, anti-rules, comedy, embarrassment",
+      "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #07",
+      "status": "DESIGN"
+    },
+    "stance": {
+      "status": "OPEN"
+    },
+    "signatureCardRefs": {
+      "status": "OPEN"
+    }
+  },
+  "speech": {
+    "languageOwner": "ChatterBox + shared Triplet pool",
+    "signatureTripletRefs": {
+      "v": [
+        "clown.stage.01",
+        "clown.consensus.01",
+        "clown.theory.01",
+        "clown.authority.01"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "pool status AUTHORING_CANDIDATE; Georg review pending"
+    },
+    "relationBias": {
+      "v": [
+        "ESCALATION",
+        "CATEGORY_SHIFT"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE"
+    },
+    "transformBias": {
+      "v": [
+        "claim→demonstration",
+        "authority→status-test",
+        "abstraction→physical-stake"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE"
+    },
+    "preferredOperators": {
+      "v": [
+        "BOGGLE",
+        "BLOEDSINN"
+      ],
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE"
+    },
+    "attitudeBaseline": {
+      "v": {
+        "warmth": "MEDIUM",
+        "energy": "HIGH",
+        "pressure": "MEDIUM_HIGH",
+        "play": "HIGH",
+        "openness": "HIGH",
+        "reserve": "LOW_MEDIUM"
+      },
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE"
+    },
+    "fluffOlectBias": {
+      "v": "MEDIUM",
+      "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-data.mjs@7c6522fb (PR #310; Site-authored CANDIDATE, Production Control file dcbbde71 / 0d7d3aea)",
+      "status": "SOURCE",
+      "note": "first tests run without Fluffolekt (Georg 2026-10-03)"
+    }
+  },
+  "social": {
+    "moodStates": {
+      "v": [
+        "calm",
+        "stressed",
+        "breakdown",
+        "recovered"
+      ],
+      "src": "CritEngine/inbox/HUNKY_DORY_CtP-YAML-v6-5-2.yaml character_state_machine",
+      "status": "DESIGN",
+      "note": "state set only; transitions OPEN"
+    },
+    "closenessDefault": {
+      "status": "OPEN"
+    },
+    "heatDefault": {
+      "status": "OPEN"
+    }
+  },
+  "memory": {
+    "owner": "KFB Town Resident Social Memory",
+    "beliefSources": {
+      "v": [
+        "signature-deck",
+        "heard-from",
+        "seen",
+        "guessed"
+      ],
+      "src": "recon NPC_SOCIAL_MODEL_RESEARCH_2026-10-02.md §2-A",
+      "status": "DESIGN"
+    }
+  },
+  "openQuestions": [
+    "Georg: OK for the PREFILL clamp, failureLoop and fears?",
+    "Georg: review the Site-authored signature Triplets (pool status CANDIDATE)",
+    "Georg: signature deck and stance"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema": "kfb.landmark-world-style-v1.qa/1.0",
+  "date": "2026-09-19",
+  "evidenceClass": "CURRENT_GITHUB_SOURCE_EVAL",
+  "decision": {
+    "landmarkDefaultShapeMode": "city-grotesque",
+    "osmCityDefaultMode": "cartoon",
+    "osmCityDefaultUnchanged": true
+  },
+  "sourcePins": {
+    "kayfabizarroStart": "0f46003fa8ffd63c0b190c639a6a6c38bfec592b",
+    "raceStart": "de83868a4b1f06dc88730c564b2ebb63f9430d9d",
+    "travel": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+    "osmCityStyle": "f129cca3041b55b84de26048dad7aef8fac8b292",
+    "osmCityMaterials": "42cca129c5928f6178d0f7e1e0c06f7cc1a62b03",
+    "osmCityDeformer": "d08c19fc45d98546b7ef2803f2ddbcb73b7f6782",
+    "osmCityViewer": "181edccab50c2b127b95370cc67da55e138b7a78",
+    "travelSky": "04dd730ee735f064888e8472eff79583f17bebb0",
+    "travelMoods": "2747a526e2aa38989c9c4052304da8733662b61c",
+    "travelBiomes": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74",
+    "legacySkydomeDonor": "f747574d42835ffec335443dadc481f077e5dc2f",
+    "legacyWorldPalettesDonor": "f6121ae41f00804a321592f60cdefb78206e76c6"
+  },
+  "checksPassed": 1354,
+  "checksFailed": 0,
+  "tested": [
+    "Grotesque is the landmark default",
+    "OSM City Lab own default remains cartoon",
+    "current Travel and OSM source pins are exact",
+    "all six current modular landmarks have valid identity palettes",
+    "all six current modular landmarks generate finite Grotesque geometry",
+    "triangle counts are preserved by Grotesque presentation",
+    "ground anchors are preserved",
+    "all landmark mood/biome colour variants preserve source identity-palette saturation/lightness within quantization tolerances",
+    "all Travel biome floors remain valid and preserve saturation/lightness under mood hue mapping",
+    "Travel day/evening/night sky/light snapshot is structurally valid",
+    "Pilot 06 viewer source parses after module imports are stripped for source QA",
+    "Pilot 06 UI selects Grotesque by default and contains environment/mood/biome/time controls",
+    "genius-loci candidate catalogue has unique IDs and implementation metadata"
+  ],
+  "currentLandmarks": {
+    "eiffel": {
+      "triangles": 6060,
+      "bounds": {
+        "min": [
+          -62.5,
+          0,
+          -74.20426450323312
+        ],
+        "max": [
+          62.5,
+          330,
+          62.5
+        ]
+      }
+    },
+    "giza": {
+      "triangles": 342,
+      "bounds": {
+        "min": [
+          -284.25,
+          0,
+          -384.25
+        ],
+        "max": [
+          340.15,
+          146.5,
+          405.15
+        ]
+      }
+    },
+    "stonehenge": {
+      "triangles": 1596,
+      "bounds": {
+        "min": [
+          -15.176082604433255,
+          0,
+          -15.090718163454628
+        ],
+        "max": [
+          14.664851941845274,
+          6.55,
+          14.675
+        ]
+      }
+    },
+    "pentagon": {
+      "triangles": 11384,
+      "bounds": {
+        "min": [
+          -227.33377541936022,
+          0,
+          -239.0328771469232
+        ],
+        "max": [
+          227.33377541936022,
+          23.5,
+          194.37949129726164
+        ]
+      }
+    },
+    "spasskaya": {
+      "triangles": 3496,
+      "bounds": {
+        "min": [
+          -13.010471441663922,
+          0,
+          -12.677882346827932
+        ],
+        "max": [
+          8.775844212726584,
+          71.02242995412877,
+          8.846881796561679
+        ]
+      }
+    },
+    "kremlin-wall": {
+      "triangles": 5008,
+      "bounds": {
+        "min": [
+          -55.9860932500127,
+          0,
+          -8.766268325325559
+        ],
+        "max": [
+          55.45310246933914,
+          71.00811062835209,
+          9.452340432920915
+        ]
+      }
+    }
+  },
+  "environmentContract": {
+    "osm": "exact current City Lab background/fog/hemi/sun constants in authoring bridge",
+    "travel": "pinned exact current Travel sky-gradient and light colours/intensities; authoring viewer scales fog distances for metre framing only",
+    "moodRule": "hue-only relationship; landmark palette retains saturation/lightness",
+    "travelRuntimeOwner": "georg-doc/KFB-Travel-Globe",
+    "snapshotStatus": "derived noncanonical constants snapshot for public authoring viewer"
+  },
+  "sourceBlobs": {
+    "travel-visual-snapshot.v1.json": "15ceb79a20c97f011c4df74c40359e7d70bde7e8",
+    "landmark-style-profiles.v1.json": "340220d0795f555a8ca40df79dcceb14b75d09c0",
+    "landmark-world-style.mjs": "507f8a83280fe2c371f2317bc9647c2a6d4941ec",
+    "pilot-06/SLICE.md": "a3617d1be30ff990274a881f965d86d39a0e481b",
+    "pilot-06/viewer.mjs": "f3661611c4e50e507be11b7d097a9bc58c8b1f1c",
+    "pilot-06/index.html": "acacb242c2c63191b4f8522b37faeccf183d7e12",
+    "GENIUS_LOCI_CANDIDATES_V1.json": "4a61c9e42d66acd6096658027a5f44b5a14330d4",
+    "GENIUS_LOCI_CANDIDATES_2026-09-19.md": "c2f4116eedebb435029854e3e3d5fcd29f8e6454",
+    "check_landmark_world_style_v1.mjs": "fd1ab8392dc9b1379c0063d849807db927f9fbbc"
+  },
+  "browserWebGL": "NOT_RUN_IN_AGENT_ENVIRONMENT",
+  "publicDeployment": "NOT_CLAIMED",
+  "humanAcceptance": "PENDING_FOR_PILOT_06",
+  "limits": [
+    "Cologne Cathedral v0.2 remains accepted visual history but is not yet migrated into the modular Grotesque pipeline.",
+    "Generic Grotesque remains a presentation transform; physics/collision geometry stays with existing owners.",
+    "Travel snapshot is not a second SSOT and must be refreshed from the Travel repo when its visual owner changes.",
+    "Legacy skydome/world-palette donors are optional donors; current Travel sky presets/moods/biomes own the default world look."
+  ]
+}

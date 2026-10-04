@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Measure · kenney_racing-kit</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js"
+}}
+</script>
+<style>body{background:#111;color:#ccc;font:12px monospace;padding:10px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="out">measuring…</div>
+<script type="module">
+import * as THREE from 'three';
+import { measure, measureSurface, materialColor } from '../lib/kit-lab.js';
+
+const NAMES = ['roadStart','roadStraight','roadStraightLong','roadStraightArrow','roadStraightLongBump',
+ 'roadRamp','roadRampLong','roadCrossing','roadPitStraight','roadCornerSmall','roadCornerLarge','roadCornerLarger',
+ 'roadSplit','roadSplitLarge','roadEnd','barrierRed','barrierWhite','fenceStraight','fenceCurved','pylon',
+ 'flagCheckers','billboard','grandStand','grandStandRound','treeLarge','treeSmall','grass',
+ 'raceCarRed','raceCarGreen','raceCarOrange','raceCarWhite','tent','ramp'];
+
+const out = { measured: {}, surfaces: {}, colors: {} };
+for (const n of NAMES) {
+  try {
+    const m = await measure('racing', n);
+    out.measured[n] = m;
+  } catch (e) { out.measured[n] = { error: e.message }; }
+}
+for (const n of ['roadStart','roadStraight','roadStraightLong','roadStraightArrow','roadStraightLongBump',
+ 'roadRamp','roadRampLong','roadCrossing','roadPitStraight','roadCornerSmall','roadCornerLarge','roadCornerLarger',
+ 'roadSplit','roadSplitLarge','roadEnd']) {
+  try { out.surfaces[n] = await measureSurface('racing', n, { material: 'road' }); }
+  catch (e) { out.surfaces[n] = { error: e.message }; }
+}
+try { out.colors.grass = await materialColor('racing', 'roadStraight', 'grass'); } catch (e) {}
+window.RESULT = out;
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+</script>
+</body>
+</html>

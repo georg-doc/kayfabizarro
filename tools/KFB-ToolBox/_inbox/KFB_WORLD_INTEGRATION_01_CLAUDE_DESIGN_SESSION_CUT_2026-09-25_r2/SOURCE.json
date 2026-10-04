@@ -1,0 +1,133 @@
+{
+ "schema": "kfb.claude-design-session-cut/1",
+ "project": "KFB WorldBuilder",
+ "slice": "WORLD-INTEGRATION-01 · r2 continuation (shared ground locomotion + global OSM presentation)",
+ "exportedAt": "2026-09-25T19:25:00Z",
+ "status": "CANDIDATE · SELFTEST_PASS 55/55 (Hürth, Köln) · GEORG_REVIEW_PENDING",
+ "entrypoints": [
+  "KFB WORLD-INTEGRATION-01 · Hürth.dc.html",
+  "tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html",
+  "…/WORLD_INTEGRATION_01_SOURCE.html?world=cologne",
+  "…?selftest=wi1"
+ ],
+ "owner": {
+  "name": "WorldBuilder / Web-GitHub Bridge",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+  "head": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+  "pr": 204
+ },
+ "sources": [
+  {
+   "name": "WB2 WorldBuilder",
+   "role": "terrain/sculpt/objects/persistence",
+   "pin": "PR #190 @ec52eb746be8c1a0e6f3f3d62857ed4b3121b284 via WB2-DESIGN-01",
+   "use": "USED"
+  },
+  {
+   "name": "walk-controller.js (Travel Combat v25)",
+   "role": "movement/physics",
+   "pin": "main (UNPINNED_REMOTE)",
+   "use": "USED unchanged"
+  },
+  {
+   "name": "KayKit Character Animations 1.1 Rig_Medium",
+   "role": "canonical base locomotion",
+   "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+   "use": "USED"
+  },
+  {
+   "name": "frizzlegraft-v1",
+   "role": "actor/head/face",
+   "pin": "raw.githack main · fallback jsDelivr a46dbdff1503",
+   "use": "USED unchanged"
+  },
+  {
+   "name": "wd1-* (WB-D2)",
+   "role": "OSM presenter",
+   "pin": "project copy (wd1-city additive r2)",
+   "use": "USED"
+  },
+  {
+   "name": "OSM fixtures huerth-crop-v0 / huerth-alstaedten-v0 / cologne-dom-crop-v0",
+   "role": "geography",
+   "pin": "frozen fixtures (provenance in r1 / WB-D2)",
+   "use": "USED"
+  }
+ ],
+ "donors": [
+  {
+   "name": "KFB Animation Lab v1/v4",
+   "use": "DONOR_ONLY (binding rule, jump chain)"
+  },
+  {
+   "name": "KFB Motion Library Rig_Medium",
+   "pin": "main",
+   "use": "DONOR_ONLY (alt set kfb)"
+  },
+  {
+   "name": "Option C lab-v9 cologne-world.v1 / cologne-landmarks.v1",
+   "pin": "c049cae386e1",
+   "use": "USED (Dom/Hbf, Köln profile only)"
+  },
+  {
+   "name": "Elastic Grotesque Clay V2",
+   "pin": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+   "use": "USED"
+  },
+  {
+   "name": "cartoon-city / kfb-city-v0 / sky-presets",
+   "pin": "c049cae386e1",
+   "use": "USED"
+  },
+  {
+   "name": "WB-D1 roof donor normalBias 0.9",
+   "use": "NOT_USED literally — superseded by shadowFollow texel-scaled normalBias (WB-D2 v0.10 peter-panning finding)"
+  }
+ ],
+ "contracts": [
+  "kfb-worldbuilder-scene v1 (unchanged)",
+  "kfb.wi1.world-ref/0 (unchanged)",
+  "kfb.wi1.locomotion-consumed/2 (P.profile())",
+  "contracts/kfb-pet-graft-driver.v4.json (read)"
+ ],
+ "assetRefs": "external/ASSET_REFS.md",
+ "runtimeOwners": [
+  "movement = walk-controller v25",
+  "animation profile truth = ToolBox Animation Lab (consumer here)",
+  "terrain = WB2",
+  "geography = OSM City Lab",
+  "ordinary building presentation = wd1-city",
+  "landmarks = wd1-landmark + Option C donors",
+  "actor/face = frizzlegraft-v1"
+ ],
+ "protectedBoundaries": [
+  "no new walker/physics",
+  "no second Animation Lab UI",
+  "no new clips",
+  "no terrain/sculpt/persistence rewrite",
+  "no landmark geometry",
+  "no OSM invention",
+  "no Race/Flight/CardCarrier/corridor bake",
+  "no Blender route import without exact pin",
+  "no fake support plates"
+ ],
+ "voiceInputUncertain": [
+  "\"Lüt\" → Dom → \"Müllheim\"/Mülheim → \"SAG\"/SAE — route endpoints unresolved; nothing imported, no substitute route"
+ ],
+ "missing": [
+  "SOURCE_REQUIRED: exact Blender MCP route export/pin"
+ ],
+ "tests": {
+  "worldSelftestHuerth": "PASS 55/55 (executed)",
+  "worldSelftestCologne": "PASS 55/55 (executed)",
+  "worldSelftestAlstaedten": "NOT_RUN",
+  "wb2SandboxBoot": "PASS (executed)",
+  "wb2Selftest34": "NOT_RUN",
+  "human": "NOT_RUN",
+  "mobile": "NOT_RUN",
+  "zipcheck": "ZIPCHECK_NOT_RUN (no python) · equivalent JS check executed",
+  "cleanRun": "CLEAN_RUN_NOT_EXECUTED in browser · static clean check executed"
+ },
+ "nextGate": "GEORG REVIEW · SHARED GROUND LOCOMOTION + GLOBAL OSM PRESENTATION IN THE REAL WORLD"
+}

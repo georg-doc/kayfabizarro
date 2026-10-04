@@ -1,0 +1,16 @@
+{
+  "schema": "kfb.platformer-poc.portals/1",
+  "status": "CANDIDATE — Ziele sind Vorschläge des POC, nicht aus dem öffentlichen Hub gelesen. Der Web Lead gleicht die URLs bei der Integration ab.",
+  "note": "Kein Laufzeit-Scraping des öffentlichen Hubs. Jeder Eintrag ist Kandidatendatei, `resolved:false` heißt: URL ungeprüft.",
+  "portals": {
+    "kfb-hub": { "label": "KFB Project Island", "sub": "Hub centre", "url": "https://kayfabizarro.pages.dev/kfb-hub/", "resolved": false },
+    "world-travel": { "label": "World · Travel", "sub": "Travel runtime", "url": "https://kayfabizarro.pages.dev/kfb-hub/travel/", "resolved": false },
+    "free-roam-drive": { "label": "Free Roam · Drive", "sub": "fr-s04-01 · published candidate", "url": "https://kayfabizarro.pages.dev/kfb-hub/free-roam/", "resolved": true },
+    "stunt-race": { "label": "Stunt Race · BOX1", "sub": "Race candidate", "url": "https://kayfabizarro.pages.dev/kfb-hub/stunt-race/", "resolved": false },
+    "resident-atlas": { "label": "Resident Atlas", "sub": "Town cast", "url": "https://kayfabizarro.pages.dev/kfb-hub/resident-atlas/", "resolved": false },
+    "world-atlas": { "label": "World Atlas", "sub": "Kit lab", "url": "https://kayfabizarro.pages.dev/kfb-hub/world-atlas/", "resolved": false },
+    "toolbox": { "label": "ToolBox · Animation", "sub": "KFB-ToolBox apps", "url": "https://kayfabizarro.pages.dev/kfb-hub/toolbox/", "resolved": false },
+    "combat-arena": { "label": "Combat Arena", "sub": "Combat semantics owner", "url": "https://kayfabizarro.pages.dev/kfb-hub/combat-arena/", "resolved": false },
+    "osm-city": { "label": "OSM City Pilots", "sub": "Ehrenfeld · Hürth (later)", "url": "https://kayfabizarro.pages.dev/kfb-hub/osm/", "resolved": false }
+  }
+}

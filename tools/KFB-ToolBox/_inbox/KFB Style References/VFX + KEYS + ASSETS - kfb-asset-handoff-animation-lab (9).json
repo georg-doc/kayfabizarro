@@ -1,0 +1,3737 @@
+{
+  "schema": "kfb.asset-handoff.v1",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceCommit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+  "consumer": {
+    "consumerId": "animation-lab",
+    "displayName": "Animation Lab",
+    "selectionStatus": "candidate-only",
+    "allowedKinds": [
+      "model-3d"
+    ],
+    "usefulFacts": [
+      "rigFacts.hasSkin",
+      "rigFacts.jointCount",
+      "rigFacts.jointNames",
+      "rigFacts.animationCount",
+      "rigFacts.animationClips",
+      "rigFacts.skeletonSignatures"
+    ],
+    "requiredDownstreamValidation": [
+      "visual playback",
+      "pose/orientation",
+      "retarget compatibility when applicable"
+    ],
+    "ownerBoundary": "The Asset Librarian may recommend candidates but does not declare animation compatibility."
+  },
+  "selectionStatus": "candidate-only",
+  "suitabilityDecision": "owned-by-receiving-consumer",
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/KFB/Police car by Poly by Google - erAyhpZ-N2h.glb",
+      "name": "Police car by Poly by Google - erAyhpZ-N2h",
+      "path": "media/3D_Assets/KFB/Police car by Poly by Google - erAyhpZ-N2h.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 1119328,
+      "packId": "kfb",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "026ff4cb8657c3d54eefd1a61f357ab003052942",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Police%20car%20by%20Poly%20by%20Google%20-%20erAyhpZ-N2h.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KFB/Police%20car%20by%20Poly%20by%20Google%20-%20erAyhpZ-N2h.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_common.gltf.glb",
+      "name": "axe_common.gltf",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_common.gltf.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 12840,
+      "packId": "kaykit-legacy",
+      "collectionPath": "KayKit Dungeon Pack 1.0 2",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "e43da5681aad488849b38409b29b682a5aee7850",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_common.gltf.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_common.gltf.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_rare.gltf.glb",
+      "name": "axe_rare.gltf",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_rare.gltf.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 35440,
+      "packId": "kaykit-legacy",
+      "collectionPath": "KayKit Dungeon Pack 1.0 2",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "dfc73ddd2043c73b75cb98fdb98dbdbc2fa92795",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_rare.gltf.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_rare.gltf.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_uncommon.gltf.glb",
+      "name": "axe_uncommon.gltf",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/gltf/axe_uncommon.gltf.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 18648,
+      "packId": "kaykit-legacy",
+      "collectionPath": "KayKit Dungeon Pack 1.0 2",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "9e2f6a1ccf79b222045388705cfbf8d182654a2c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_uncommon.gltf.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit%20Legacy/KayKit%20Dungeon%20Pack%201.0%202/Models/gltf/axe_uncommon.gltf.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/gltf/orc_hammerAxe.gltf.glb",
+      "name": "orc_hammerAxe.gltf",
+      "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/gltf/orc_hammerAxe.gltf.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 30888,
+      "packId": "kaykit-legacy",
+      "collectionPath": "Orc Warband - legacy",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "dc9cc19220ea2ebcb1db4014281a4d7bac48aa8a",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit%20Legacy/Orc%20Warband%20-%20legacy/props/gltf/orc_hammerAxe.gltf.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit%20Legacy/Orc%20Warband%20-%20legacy/props/gltf/orc_hammerAxe.gltf.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+      "name": "axe_1handed",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3080,
+      "packId": "kaykit-adventurers-2-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "8ae1d6ebb4da537024e958c347a3f845db311fc9",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe_1handed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/axe_C.gltf",
+      "name": "axe_C",
+      "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/axe_C.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3037,
+      "packId": "kaykit-fantasyweaponsbits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "00060f40a2ae5e21bc445303a5378ec81e30dc2d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/axe_C.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/axe_C.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/axe_C.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe_C.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/weapons_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "weapons_bits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/CombatMech_Axe.gltf",
+      "name": "CombatMech_Axe",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/CombatMech_Axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3068,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "1 - July 2024 - Combat Mech",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "25a0e00ca885dd82d20738f219328d27451a6c82",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202024%20-%20Combat%20Mech/assets/gltf/CombatMech_Axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202024%20-%20Combat%20Mech/assets/gltf/CombatMech_Axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/CombatMech_Axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "CombatMech_Axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/combatmech_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "combatmech_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/carrot.gltf",
+      "name": "carrot",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/carrot.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3026,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "12 - June 2026 - Farmers",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "f3197218e517a8edf256f06ca6fc8575815c3ebc",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/12%20-%20June%202026%20-%20Farmers/gltf/carrot.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/12%20-%20June%202026%20-%20Farmers/gltf/carrot.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/carrot.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "carrot.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/farmer_texture_A.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "farmer_texture_A.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/assets/gltf/car.glb",
+      "name": "car",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/assets/gltf/car.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 323240,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "2 - August 2023 - Driver",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "7fef74a31bf1516840cc5a25107b0d048582d001",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202023%20-%20Driver/assets/gltf/car.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202023%20-%20Driver/assets/gltf/car.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe.gltf",
+      "name": "Orc_Axe",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3044,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "2 - August 2025 - Orc Brute",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "96ee0a2da260caae75971d2251f938fb60ee5a2f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202025%20-%20Orc%20Brute/gltf/Orc_Axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202025%20-%20Orc%20Brute/gltf/Orc_Axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "Orc_Axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/orcbrute_texture_A.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "orcbrute_texture_A.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe_Large.gltf",
+      "name": "Orc_Axe_Large",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe_Large.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3060,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "2 - August 2025 - Orc Brute",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "8167dba363a35bf9fef65d6eb12c572b0d35b85b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202025%20-%20Orc%20Brute/gltf/Orc_Axe_Large.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202025%20-%20Orc%20Brute/gltf/Orc_Axe_Large.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Axe_Large.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "Orc_Axe_Large.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/orcbrute_texture_A.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "orcbrute_texture_A.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/assets/gltf/axe.gltf",
+      "name": "axe",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/assets/gltf/axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3013,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "4 - October 2023 - Werewolf",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "b2b927d34a9b851153c97db2b65e26c7b0fa115d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202023%20-%20Werewolf/assets/gltf/axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202023%20-%20Werewolf/assets/gltf/axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/assets/gltf/axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/assets/gltf/werewolf_A.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "werewolf_A.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe.gltf",
+      "name": "FrostGolem_Axe",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3084,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "7 - January 2025 - FrostGolem",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "5cf221183b8da176e82937894ac18679019b658b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/7%20-%20January%202025%20-%20FrostGolem/assets/gltf/FrostGolem_Axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/7%20-%20January%202025%20-%20FrostGolem/assets/gltf/FrostGolem_Axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "FrostGolem_Axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/frostgolem_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "frostgolem_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe_Large.gltf",
+      "name": "FrostGolem_Axe_Large",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe_Large.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3100,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "7 - January 2025 - FrostGolem",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "b23c77709a777b0f76122ada4c0f4e4f844f34a8",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/7%20-%20January%202025%20-%20FrostGolem/assets/gltf/FrostGolem_Axe_Large.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/7%20-%20January%202025%20-%20FrostGolem/assets/gltf/FrostGolem_Axe_Large.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/FrostGolem_Axe_Large.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "FrostGolem_Axe_Large.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/assets/gltf/frostgolem_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "frostgolem_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.gltf",
+      "name": "Caveman_Axe",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3548,
+      "packId": "kaykit-mystery-series6",
+      "collectionPath": "8 - February 2025 - Caveman",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "c80fe195a49aaee053b830291230e5f0b25ebba8",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/8%20-%20February%202025%20-%20Caveman/assets/gltf/Caveman_Axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/8%20-%20February%202025%20-%20Caveman/assets/gltf/Caveman_Axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "Caveman_Axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "caveman_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+      "name": "axe",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3023,
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "f3d0277285d02e15b8bed571573557fff6a81bd7",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "name": "pickaxe",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3032,
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "1235e35980247001c123e77d0315d97bf1dc6cdd",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pickaxe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.gltf",
+      "name": "crate_carrots",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3046,
+      "packId": "kaykit-restaurant-bits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "9b0b7569cc55c96fdede01ed60a49e9617dfe0ad",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "crate_carrots.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/restaurantbits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "restaurantbits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot.gltf",
+      "name": "food_ingredient_carrot",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3076,
+      "packId": "kaykit-restaurant-bits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "7d3694a35b4f8822579f316da4f9975c36bb5a24",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "food_ingredient_carrot.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/restaurantbits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "restaurantbits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot_chopped.gltf",
+      "name": "food_ingredient_carrot_chopped",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot_chopped.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3097,
+      "packId": "kaykit-restaurant-bits-1-0-free",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "7982a23f2f34aed8041196344912c4b04e50b0b1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot_chopped.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot_chopped.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_carrot_chopped.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "food_ingredient_carrot_chopped.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/restaurantbits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "restaurantbits_texture.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf",
+      "name": "Pickup_KeyCard",
+      "path": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 19987,
+      "packId": "scifi-ultimate-space-kit-quaternius",
+      "collectionPath": "Items",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "d745f34a63cab403cf043bce118ecf27dbd6e8fb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/SciFI_Ultimate%20Space%20Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/SciFI_Ultimate%20Space%20Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/ambulance.glb",
+      "name": "ambulance",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/ambulance.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 233612,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "1d011a7daf7c66808d35e61b216ec48527b1fbeb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/ambulance.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/ambulance.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone-flat.glb",
+      "name": "cone-flat",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone-flat.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 16712,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "a6c5ac6975acd8f539137897c5427708f546335f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone.glb",
+      "name": "cone",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 16696,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "26a86e929268950773f734bbbd186001195c8c64",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bumper.glb",
+      "name": "debris-bumper",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bumper.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 11312,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "0fc70f29b45db13d8df1e87db2074c5200f40c61",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bumper.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bumper.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain-axle.glb",
+      "name": "debris-drivetrain-axle",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain-axle.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 18740,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "b92f96ddc5c59b2dbe7ce1ce49c589a1f6fced36",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain-axle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain-axle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain.glb",
+      "name": "debris-drivetrain",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 36896,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "521f532f65a507cbb0f6cdac8eeb629584f7cc1b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-a.glb",
+      "name": "debris-plate-small-a",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-a.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 4224,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "bceda4e31959e127f44383b3074e68653113944c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-a.glb",
+      "name": "debris-spoiler-a",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-a.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 5616,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "ff799f9ea513dbac53a657c8dd8dd39bea136399",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-b.glb",
+      "name": "debris-spoiler-b",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-b.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 8596,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "bbf8709f77374edaf89f9890b595bd8fafcbb9cb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-tire.glb",
+      "name": "debris-tire",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-tire.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 26548,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "e6b9ce16f22d5a5c5b59191567e63781596d133f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-tire.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-tire.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery-flat.glb",
+      "name": "delivery-flat",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery-flat.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 214456,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "05f8c907ef0770e9c0e737d0d0e9e0e913a8dee5",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery.glb",
+      "name": "delivery",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 240264,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "cda0403646891f88e60ee50c87ef0db373ba2d2c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/firetruck.glb",
+      "name": "firetruck",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/firetruck.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 232448,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "c59263d71420e0c3955cbab6f51e3bb3eb6e97ce",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/firetruck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/firetruck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/garbage-truck.glb",
+      "name": "garbage-truck",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/garbage-truck.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 268224,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "ea224168312070a51cc7d65e610e31bad5d3fae1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/garbage-truck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/garbage-truck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/hatchback-sports.glb",
+      "name": "hatchback-sports",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/hatchback-sports.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 197804,
+      "packId": "kenney-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "964c4db4004b62468ea19fdc75cb6ae19a4fc6ad",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/hatchback-sports.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_car-kit/Models/GLB%20format/hatchback-sports.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_toy-car-kit/Models/GLB format/gate-finish.glb",
+      "name": "gate-finish",
+      "path": "media/3D_Assets/kenney_toy-car-kit/Models/GLB format/gate-finish.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 9144,
+      "packId": "kenney-toy-car-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "9c30d021a4f813eb4fd9bb586d0b4a8634d47635",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_toy-car-kit/Models/GLB%20format/gate-finish.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_toy-car-kit/Models/GLB%20format/gate-finish.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_toy-car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/key.gltf",
+      "name": "key",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/key.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3027,
+      "packId": "kaykit-dungeon-pack-1-1-free-2",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "58920d940bfae50ce636e6e87c89992f9bd704fa",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/key.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/key.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/dungeon_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "dungeon_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/key.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "key.bin"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring.gltf",
+      "name": "keyring",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3045,
+      "packId": "kaykit-dungeon-pack-1-1-free-2",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "3e2fa08ef69212628c565967609ca40602773f9d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/keyring.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/keyring.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/dungeon_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "dungeon_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "keyring.bin"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring_hanging.gltf",
+      "name": "keyring_hanging",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring_hanging.gltf",
+      "kind": "model-3d",
+      "format": "gltf",
+      "sizeBytes": 3069,
+      "packId": "kaykit-dungeon-pack-1-1-free-2",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "source": {
+        "blobSha": "5d36b8a15b4d980e7c3811c6d945894664b8554d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/keyring_hanging.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/keyring_hanging.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/dungeon_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "dungeon_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring_hanging.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "keyring_hanging.bin"
+          }
+        ]
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/blood_impact_6x5.png",
+      "name": "blood_impact_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/blood_impact_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 9280,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "404f9dcd019a0bce8d27593785e2ac6cbd8a08a2",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/blood_impact_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/blood_impact_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/big_hit_6x5.png",
+      "name": "big_hit_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/big_hit_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 128799,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "fe0f4bed3b62c2e66ca29a6fde5c6ded20521714",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/big_hit_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/big_hit_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/charge_7x6.png",
+      "name": "charge_7x6",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/charge_7x6.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 100940,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "f3147332ea435b8f7c7607e6e87e3ff972070294",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/charge_7x6.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/charge_7x6.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_01.png",
+      "name": "dirt_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 46644,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5403e9f355870920d3a5b4c0077d05fe91dba64d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_01_a.png",
+      "name": "dirt_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 87630,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "f70b7b7f5b7529fd5f5c4d2d940c983adae86a78",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_02.png",
+      "name": "dirt_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 53980,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "50773906f5718e2f7abc07368fa88d4e0d04552d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_02_a.png",
+      "name": "dirt_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 109841,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "d2fa7f805ef7af4a9594fedc54f6a59569dcf7e9",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_03.png",
+      "name": "dirt_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 113946,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "b3348ee831f56db9bd7e2bebd9ca83fc6d5f6108",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/dirt_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_03_a.png",
+      "name": "dirt_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 236638,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "ab4eec02f0534dfb00ffda7427927c7c9dac44a1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/dirt_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_point_6x5.png",
+      "name": "fire_point_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_point_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 22729,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "972af9d3a1bfeb0f51ad1f373ea4eb354a911155",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_point_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_point_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_02_a.png",
+      "name": "fire_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 86171,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "6a9d20b841fe8103945a8b96a1b90da36ce99461",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_02.png",
+      "name": "fire_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 86394,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "3a6d258583f1de29482f3a7b576b3ec69d80e3cf",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_01_a.png",
+      "name": "fire_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 98017,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "acb3bac356746968c59fe76b7aa97d6c7aa75b6a",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/fire_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_01.png",
+      "name": "fire_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 96339,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5a6febda7a0a327e88c711b2537b4eb20684fe08",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/fire_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_02_a.png",
+      "name": "effect_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 46677,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "de4662e79eba6d8f95ed4d2f06020b82e0b99204",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_03.png",
+      "name": "effect_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 23312,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "8a63981b0eee66f509e7d525e7701dfa358dff21",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_03_a.png",
+      "name": "effect_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 27690,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "9d134d0a8c528cc8e10218577fd2c5762fb6ce86",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_01.png",
+      "name": "effect_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 30945,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "01030ababb5340ab8910033f061fe24e6144caf3",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/effect_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_01_a.png",
+      "name": "effect_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 35513,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2874dd39e212d5c179d46db25e7674a0dacfd2f2",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/effect_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png",
+      "name": "electric_ring_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 29128,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "7439cf49cfbf723358d48a1db4e0f135d984dd97",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/electric_ring_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png",
+      "name": "explosion_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 832686,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "e30f3f42ee7480bc1280bebd9c41e6af1c218e67",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/explosion_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_02_a.png",
+      "name": "flame_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 41890,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2b4ec50813da808876885981df21d63bad06b556",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_ring_6x5.png",
+      "name": "fire_ring_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_ring_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 64706,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "585d59a88debfca35853aa81479f7caab526adcb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_ring_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/fire_ring_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_01.png",
+      "name": "flame_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 35189,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "209fb9165b502addbfef48b214984ef825d8c239",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_01_a.png",
+      "name": "flame_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 30031,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5f75f8e18a22119f4642918a504f07ba1b2e8c51",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_02.png",
+      "name": "flame_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 45366,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "a6cab2af8f4f60f50574cadec3931799a7617d14",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_03.png",
+      "name": "flame_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 34261,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "a4ecbfec340714f656fab831addd636c011b5078",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_03_a.png",
+      "name": "flame_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 33199,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "f28fafc2b49a89a5667711d62d54a3df7d528d65",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_04.png",
+      "name": "flame_04",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_04.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 43388,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "b8b97f8e1e9f834090ef6be8b20d757c0fe33991",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_04.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_04.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_04_a.png",
+      "name": "flame_04_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_04_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 36591,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "8f1f0f06e44e71e6ef455c6d95425625a52b8c56",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_04_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_04_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_05.png",
+      "name": "flame_05",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_05.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 11404,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "37393951302dcc63f2e2fcb81a5f7f4c0c5ffc34",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_05.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_05.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flare_01_a.png",
+      "name": "flare_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flare_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 19843,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "e57b0551b558fa268e55553432142f486419bddb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flare_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flare_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flare_01.png",
+      "name": "flare_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flare_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 17953,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "25cb3a3aad11e3e6ffd11ca925713a476b5c283f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flare_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flare_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_06_a.png",
+      "name": "flame_06_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_06_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 11998,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "47cb92a77d2c4d11885695dfe1e51e652cd48ac2",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_06_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_06_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_06.png",
+      "name": "flame_06",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_06.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 13722,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2d5ec0dec3680ee1391040a8e2b4c0a8eeff48d6",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_06.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/flame_06.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_05_a.png",
+      "name": "flame_05_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_05_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 9460,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "161af94708aec1579aaad5acec29c78954576a6c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_05_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/flame_05_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/impact_white_6x4.png",
+      "name": "impact_white_6x4",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/impact_white_6x4.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 36390,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5ebffcfbf38ddda78c57b52f0be3806a5f694cc3",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/impact_white_6x4.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/impact_white_6x4.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_01.png",
+      "name": "magic_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 60113,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "c7cb57557fe3ca3e8297ecf6582051de8df21bc3",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_01_a.png",
+      "name": "magic_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 64685,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "64a66e94ab0bf1026df776bed9124900d5391627",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_02.png",
+      "name": "magic_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 68717,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "8b1893fcb1e132c778231aa53da02bb2e7c7a103",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/magic_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_02_a.png",
+      "name": "magic_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 73236,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "873cc336b88bf82d6f7d9ea5abe453e591ea5c2d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/magic_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_01.png",
+      "name": "muzzle_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 80802,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "6c406f79e255ac0bca67cabc244984d935054826",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_01_a.png",
+      "name": "muzzle_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 67429,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "23984b9721140611363f1fed02f3538e12b752e6",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_02.png",
+      "name": "muzzle_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 59278,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2a50701cb92d6a4f190e3e283539a5254df76c8b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_02_a.png",
+      "name": "muzzle_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 56755,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "0f26ac88a73080119e0bbfe5e464040b20ebd653",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png",
+      "name": "muzzle_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 58467,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "3aa9ca4f87f5476ef522727abcb88a168b097371",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_03_a.png",
+      "name": "muzzle_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 56837,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "6cb99deb7783b0eb0d87ec6d217ece01917a8c29",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_04.png",
+      "name": "muzzle_04",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_04.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 56666,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "3c87f1052cd484584fa3902d9b2f13ffd5f23240",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_04.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_04.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_04_a.png",
+      "name": "muzzle_04_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_04_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 53841,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5b3f13c6790e00a8e447a92397c1aaa45314a1da",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_04_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_04_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_05.png",
+      "name": "muzzle_05",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_05.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 56402,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "49805b1a42d39eab03f9d69de1aaec0eaba8a13b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_05.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/muzzle_05.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_05_a.png",
+      "name": "muzzle_05_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_05_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 52859,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "78b99209f90cbe0c93132b8b38580e61e460401c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_05_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/muzzle_05_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_01.png",
+      "name": "scorch_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 59486,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2b8d20b57ecf3bdd1128b8d8235d8bc1040db88b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_01_a.png",
+      "name": "scorch_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 56894,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "9705f1285784e855ab0371d5dd289499f4fa788f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_03_a.png",
+      "name": "scorch_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 79954,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5f1acbdde5762d00bfabd67bcca08629de99b1cb",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_03.png",
+      "name": "scorch_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 88181,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "9e95a4d0516eaeb8f650f361027d39a1087c93de",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_02_a.png",
+      "name": "scorch_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 66764,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "2d0b50d6343bc4e157c84e926fe34a696ba842df",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scorch_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_02.png",
+      "name": "scorch_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 71227,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "7388cf6f6f99dfbd68bc2d0c783afeffa070959c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scorch_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scratch_01.png",
+      "name": "scratch_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scratch_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 48136,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "05272d5d9928af8f5c95e5c11a8d2e5955dc9e93",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scratch_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/scratch_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scratch_01_a.png",
+      "name": "scratch_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scratch_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 42975,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "c4abc306359c76f80f5a1d7fa611cf025ea24093",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scratch_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/scratch_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_01.png",
+      "name": "slash_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 16775,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "d8684993cb1d3707281dd8b686b92c6bdd2ea2c1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_01_a.png",
+      "name": "slash_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 13926,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5ea25b0eb90b5c0210923b0cf0878c2552ceac2b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_02.png",
+      "name": "slash_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 28122,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "e39ead0dec6dbc4e398b104a84df0e2ba5259c6c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_02_a.png",
+      "name": "slash_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 23800,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "f5b8f2bcf957959554859bd1a9bc441e461c67fa",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_03.png",
+      "name": "slash_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 14700,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "547826e8bf8fa43769d39cc74d0b747208ad59f6",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_03_a.png",
+      "name": "slash_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 12383,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "b133a1f19c44a98701c5bb116190d2976b113d00",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_04.png",
+      "name": "slash_04",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_04.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 13373,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "f7b380974f1436f8e4a39c54e2b32a9c5c655ae0",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_04.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/slash_04.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_04_a.png",
+      "name": "slash_04_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_04_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 10790,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "396127779bb50220c8242aab91ec7286cad75dd3",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_04_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/slash_04_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_01.png",
+      "name": "smoke_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 86344,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "d6c947f57defdf66ba82053c0516d86f4e49b308",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+      "name": "smoke_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 30571,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "7cbc81b89d58671748e819f5f9756d5fbe53a477",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_03.png",
+      "name": "smoke_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 33642,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5a8e5c1c84a8204ceca60bc56fdabe3281e7c03d",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_02_a.png",
+      "name": "smoke_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 75456,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "59e73e8963b9f3d4b81904b439d5076ab4a2baa5",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_02.png",
+      "name": "smoke_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 86644,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "165f2e52a3c551963f1c9a07414257e335066c1e",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/smoke_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_01_a.png",
+      "name": "smoke_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 74799,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "02179493e153534ae7ff66a452553ba3c1390bf3",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_01.png",
+      "name": "light_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 60764,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "54f5686914c7ca116fad48136a87c6e6ce7ef3e5",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_01_a.png",
+      "name": "light_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 49838,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "4966191a458e1e916138548e428426402ab75c8b",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_02.png",
+      "name": "light_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 60327,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "98c240a029456b55283fa98a6cd978c226b07a59",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_02_a.png",
+      "name": "light_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 49473,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "1480d95742a28ac46d52b4c5cf626301bbffbbc2",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_03.png",
+      "name": "light_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 62268,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "edde7ef551cb728a11668c708f89bdc34fa1e0df",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/light_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_03_a.png",
+      "name": "light_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 51544,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "57cae8f060fba97cc6982d4324329f5bf35a4c81",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/light_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/lightstreaks_6x5.png",
+      "name": "lightstreaks_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/lightstreaks_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 486741,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "a1b3ca9e3df5486f9195c0047b312eae76f9998f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/lightstreaks_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/lightstreaks_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/dithered_fire_6x5.png",
+      "name": "dithered_fire_6x5",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/dithered_fire_6x5.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 98676,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "ddc07d8cac266f967a54b304860662239b8b111f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/dithered_fire_6x5.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/dithered_fire_6x5.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_01.png",
+      "name": "circle_01",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_01.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 35915,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "c8c2aca9bd62a4df5b5dc6cfe4eb4869570cddd1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_01.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_01_a.png",
+      "name": "circle_01_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_01_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 43706,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "ffc0593f8deb0ea0c6c98b83aa7aff9904096c61",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_01_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_01_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_02.png",
+      "name": "circle_02",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_02.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 30403,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "c98836c3fcdb634258cde688d0b9443debd8786a",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_02.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_02_a.png",
+      "name": "circle_02_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_02_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 35053,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "5bd90956a8d4229ce67e12ae1c24da6558797fd8",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_02_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_02_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_03.png",
+      "name": "circle_03",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_03.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 47065,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "572e9bb22c8c6a99764c863db962d2434dc528ab",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_03.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_05_a.png",
+      "name": "circle_05_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_05_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 29451,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "0f272a829a143848097dc2fd58137236d7d64e0a",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_05_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_05_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_05.png",
+      "name": "circle_05",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_05.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 27583,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "38b652670fa8f48a9a5f4cc3aaf119f4397fec75",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_05.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_05.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_04_a.png",
+      "name": "circle_04_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_04_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 39482,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "ccb3789c730ef5898212a3dc5955d194df012f70",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_04_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_04_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_04.png",
+      "name": "circle_04",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_04.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 30231,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "069856ba7865183553f11febf249a88c9ce30066",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_04.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/opague/circle_04.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    },
+    {
+      "assetId": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_03_a.png",
+      "name": "circle_03_a",
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_03_a.png",
+      "kind": "image-2d",
+      "format": "png",
+      "sizeBytes": 59571,
+      "packId": "fx-visual",
+      "collectionPath": "brackeys_vfx_bundle",
+      "source": {
+        "blobSha": "26d442fc261a07f4aa16c25ce4ff362b584a7a61",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_03_a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/circle_03_a.png",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "rigFacts": null,
+      "consumerKindAllowed": false
+    }
+  ]
+}

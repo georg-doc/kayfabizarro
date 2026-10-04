@@ -1,0 +1,22 @@
+{
+ "schema": "kfb.selftest-summary/1",
+ "page": "P08",
+ "actor": "frizzlebob-earrig-v5",
+ "runs": [
+  {
+   "at": "2026-10-01 run A",
+   "result": "26/27 · aborted at 22 (ReferenceError S0, my edit)"
+  },
+  {
+   "at": "2026-10-01 run B",
+   "result": "37/38",
+   "fail": [
+    "24 · stale eye reference after rebuild (x 0.211 → 0.211); yaw deltas already correct: side +90.0°, inward 22.5°"
+   ],
+   "pass_of_interest": [
+    "22 · dx 0.455 → 0.505 (step 0.05)"
+   ]
+  }
+ ],
+ "after": "test 24 fixed (eyes re-read); probe: splay 0/2/−0.5 → x 0.190 → 0.391, yaw 28.9 / 118.9 / 6.4 · full self-test NOT re-run after this fix"
+}

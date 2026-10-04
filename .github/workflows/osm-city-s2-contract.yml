@@ -1,0 +1,60 @@
+name: OSM City S2 export contract
+
+on:
+  push:
+    branches:
+      - main
+      - osm-city/s2-contract-hardening-2026-09-18
+    paths:
+      - 'tools/osm-city-lab/scenes/**'
+      - 'tools/osm-city-lab/src/export/**'
+      - 'tools/osm-city-lab/scripts/export-scene.mjs'
+      - 'tools/osm-city-lab/tests/check-consumer-contract.mjs'
+      - '.github/workflows/osm-city-s2-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-city-s2-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            tools/osm-city-lab/data/ehrenfeld-v0/normalized.json
+            tools/osm-city-lab/data/huerth-v0/normalized.json
+            tools/osm-city-lab/scenes
+            tools/osm-city-lab/scripts/export-scene.mjs
+            tools/osm-city-lab/src/export
+            tools/osm-city-lab/tests/check-consumer-contract.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regenerate both consumer scenes from committed normalized data
+        run: node tools/osm-city-lab/scripts/export-scene.mjs ehrenfeld-v0 huerth-v0
+      - name: Validate both city consumer exports
+        run: node tools/osm-city-lab/tests/check-consumer-contract.mjs ehrenfeld-v0 huerth-v0
+      - name: Main must already contain the deterministic export
+        if: github.ref_name == 'main'
+        run: git diff --exit-code -- tools/osm-city-lab/scenes
+      - name: Commit repaired branch scenes
+        if: github.ref_name != 'main'
+        run: |
+          git config user.name "KFB OSM City Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add tools/osm-city-lab/scenes/ehrenfeld-v0.json tools/osm-city-lab/scenes/huerth-v0.json
+          if git diff --cached --quiet; then
+            echo "No S2 scene delta."
+            exit 0
+          fi
+          git commit -m "OSM City: regenerate S2 consumer scenes [osm-city-s2]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin HEAD:"$GITHUB_REF_NAME"

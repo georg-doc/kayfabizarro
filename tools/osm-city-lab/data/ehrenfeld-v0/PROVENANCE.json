@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.osm-city.provenance.v0",
+  "id": "ehrenfeld-v0",
+  "status": "CACHED_SOURCE",
+  "bbox": {
+    "south": 50.94675,
+    "west": 6.9128,
+    "north": 50.9521,
+    "east": 6.9222
+  },
+  "origin": {
+    "lat": 50.949425,
+    "lon": 6.9175,
+    "altM": 0
+  },
+  "queryFile": "query.overpassql",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "retrievedAt": "2026-09-18T15:20:43.318Z",
+  "osmBaseTimestamp": "2026-09-18T15:18:35Z",
+  "overpassGenerator": "Overpass API 0.7.62.11 87bfad18",
+  "sourceSha256": "7b017ec065be5e068b179a93e6f339afaec0b3cf3af6b92898ddd968cb02b285",
+  "elementCount": 11874,
+  "attribution": {
+    "data": "© OpenStreetMap contributors",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright"
+  },
+  "runtimePolicy": "consumer/viewer reads cached GitHub data; no repeated public Overpass calls"
+}

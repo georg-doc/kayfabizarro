@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eumel 2.5D World-Space Proof</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header><div><div class="eyebrow">KFB · 2D Animation Studio · WSA Phase 1</div><h1>Eumel 2.5D World-Space Proof</h1><p>Source-exact Eumel layers as a real Three.js actor root. Neutral stage only: no Project Island or Resident promotion yet.</p></div><span id="status">BOOTING</span></header>
+<main>
+<aside class="panel">
+<label>Facing mode<select id="facing"><option value="upright-yaw-billboard">upright-yaw-billboard</option><option value="world-facing-upright">world-facing-upright</option></select></label>
+<label>Local state<select id="state"><option>idle</option><option>look</option><option>walk</option><option>hop</option><option>neutral</option></select></label>
+<label><input id="orbit" type="checkbox" checked> Orbit camera</label>
+<button id="blink">Blink now</button>
+<button id="neutral">Reset neutral</button>
+<pre id="debug">loading…</pre>
+<div class="note"><b>Boundary</b><br>World movement, collision and camera remain consumer-owned. This proof tests only the world-space actor presentation seam.</div>
+</aside>
+<section id="stage"></section>
+</main>
+<script src="../../shared/eye-rig/eye-rig-2d-adapter.v1.js"></script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

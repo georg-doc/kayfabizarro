@@ -1,0 +1,100 @@
+/* ============================================================================
+   kfb-shell.css — die Bühne, EINMAL
+   ----------------------------------------------------------------------------
+   Diese Regeln standen inline in ZWEI Dateien (index.html und
+   KFB Travel v16.dc.html) und waren eine Runde nach dem Anlegen der Kopie
+   bereits uneinig: die Meta-Unterzeile nannte im DC noch L2d als letzten Slice,
+   in index.html schon L3. Gefunden hat es der Verifier.
+
+   Das ist die Fehlerklasse, gegen die dieses Projekt geschrieben ist —
+   Naht 121: „die beste Synchronisation ist die, die es nicht gibt", und
+   Naht 118: eine Beschreibung, die einen Umbau nicht mitbekommt.
+
+   Deshalb: die Regeln hier, beide Fassungen binden sie per <link> ein, und der
+   TEXT der Meta-Zeile kommt aus dem Runner (travel-poc.js, SHELL_META) — nicht
+   aus dem Markup. Damit gibt es nichts mehr zu synchronisieren.
+
+   Wer eine Fassung bewusst anders aussehen lassen will, überschreibt hier
+   NICHTS, sondern setzt eine eigene Regel in seiner Datei UND schreibt dazu,
+   warum — sonst liest der nächste Leser es als Versehen.
+   ============================================================================ */
+
+html, body { margin: 0; padding: 0; width: 100%; height: 100%;
+  background: #9fc7e8; overflow: hidden; overscroll-behavior: none; }
+a { color: #e0a83c; }
+a:hover { color: #fff2c8; }
+
+#tv-hud { position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  font-family: 'Baloo 2', system-ui, sans-serif; color: #fff; }
+
+/* S11 · Rahmen: Wortmarke links, Meta klein rechts. Die Wortmarke ist die Klasse aus
+   themes/kfb-med.css — kein Nachbau. Weil sie über einer bewegten Welt sitzt, bekommt
+   „Kayfa" einen harten Cream-Schatten als Kontrastkante. */
+#tv-frame { position: absolute; inset: 0; z-index: 5; pointer-events: none;
+  display: flex; align-items: flex-start; justify-content: space-between; padding: 16px 18px; }
+/* ── Wortmarke (nur Travel Globe) ───────────────────────────────────────────
+   Vorher: `text-shadow: 2px 2px 0 cream` auf dem GANZEN Element — auf dunklem Grund liest ein
+   harter Versatz von 2 px wie eine zweite, verrutschte Schrift („Kayfa" doppelt), und der rote
+   Kasten saß tiefer als die Schrift, weil `align-items: center` zwei verschiedene
+   Schriftmetriken mittig setzt statt sie auf EINE Grundlinie zu stellen.
+   Jetzt: Grundlinie statt Mitte, eine allseitige dünne Cremekontur (vier kleine Schatten statt
+   eines Versatzes), der Kasten optisch auf die Versalhöhe gerückt, kein Kippen im HUD. */
+#tv-frame .kfb-wordmark { font-size: 27px; transform: none;
+  align-items: baseline; gap: 0;
+  /* v24 · 4.9. · Die Cremeplatte ist WEG. Georg: „paper-plakette unter wortmarke ist off-brand" —
+     stimmt, die Marke ist ein Aufdruck, keine Etikette; ein Kasten um sie herum macht aus dem
+     Logo ein Schild. Die Lesbarkeit trägt jetzt ein DEZENTER, HARTER Papierschatten nach
+     unten/rechts: 2 px, keine Weichzeichnung, Papierfarbe — dieselbe Sprache wie der versetzte
+     Offset-Druck der Karten. (Der erste Versuch dieser Art lag auf dem GANZEN Element und las
+     sich als verrutschte Zweitschrift; der Unterschied ist, dass „Bizarro" seinen Versatz jetzt
+     als `box-shadow` am Kasten trägt und nicht als Textschatten im Kasten.) */
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: 2px 2px 0 var(--kfb-cream, #f1e7cf); }
+#tv-frame .kfb-wordmark b { text-shadow: none; margin-left: 0.16em;
+  padding: 0.06em 0.26em 0.12em; position: relative; top: 0;
+  box-shadow: 2px 2px 0 var(--kfb-cream, #f1e7cf); }
+
+/* Leichtes Schweben, geschlossene Schleife: zwei Terme mit ungleicher Dauer (7 s / 11 s), damit
+   die Bewegung nicht im Takt zurückkommt. Nur `transform` — das kostet keine Layout-Runde, und
+   die Kontur bleibt scharf (ein animierter Schatten würde bei jedem Bild neu gerastert). */
+@keyframes kfb-wm-float {
+  0%   { transform: translate3d(0, 0, 0) rotate(-0.5deg); }
+  25%  { transform: translate3d(1px, -2.5px, 0) rotate(0.25deg); }
+  50%  { transform: translate3d(0, -3.5px, 0) rotate(0.6deg); }
+  75%  { transform: translate3d(-1px, -1.5px, 0) rotate(0.1deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(-0.5deg); }
+}
+@keyframes kfb-wm-swing {
+  0%   { transform: rotate(-0.9deg) translateY(0); }
+  50%  { transform: rotate(0.9deg) translateY(-1.5px); }
+  100% { transform: rotate(-0.9deg) translateY(0); }
+}
+#tv-frame .kfb-wordmark { animation: kfb-wm-float 11s ease-in-out infinite;
+  will-change: transform; }
+/* Der Akzentkasten schwingt eine Spur stärker und langsamer — dadurch „hängt" er an der Schrift
+   statt mit ihr zu marschieren. */
+#tv-frame .kfb-wordmark b { animation: kfb-wm-swing 7s ease-in-out infinite;
+  transform-origin: 12% 80%; }
+@media (prefers-reduced-motion: reduce) {
+  #tv-frame .kfb-wordmark, #tv-frame .kfb-wordmark b { animation: none; }
+}
+
+/* v24 · 4.9. · Georg: „meta-text überlagert HP bar & Pop → unten links platzieren & nur onHover
+   zeigen". Die Kopfzeile gehört jetzt dem Spielstand (Marke · HP · Pop); eine Bühnen-Beschriftung
+   hat dort nichts mehr zu suchen — sie bleibt aber erreichbar, weil sie sagt, WELCHER Slice läuft.
+   Der Hover-Fang ist der Text SELBST: er behält Größe und Ort, nur seine Deckkraft ist 0.
+   Deshalb hier `pointer-events: auto` als AUSNAHME — `#tv-frame` bleibt sonst durchlässig, sonst
+   fräße die untere linke Ecke Klicks, die dem Kampf gehören. */
+#tv-meta { position: absolute; left: 18px; bottom: 14px; max-width: 46vw;
+  text-align: left; padding-right: 0;
+  font-family: var(--kfb-font-ui); color: var(--kfb-cream);
+  text-shadow: 1px 1px 0 rgba(31,26,20,.75); line-height: 1.5;
+  opacity: 0; transition: opacity .18s ease; pointer-events: auto; }
+#tv-meta:hover { opacity: 1; }
+#tv-meta .t { font-size: 12px; letter-spacing: .16em;  }
+#tv-meta .s { font-size: 10px; letter-spacing: .1em; opacity: .8; }
+
+#tv-stage { position: fixed; inset: 0; background: #9fc7e8; overflow: hidden; }

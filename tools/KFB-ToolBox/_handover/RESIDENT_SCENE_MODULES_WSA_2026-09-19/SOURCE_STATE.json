@@ -1,0 +1,85 @@
+{
+  "schema": "kfb.wsa-handoff.resident-scene-modules/1",
+  "date": "2026-09-19",
+  "repository": "georg-doc/kayfabizarro",
+  "existingIntegrationLead": "WSA",
+  "handoffBaselineMain": "1e9318954c584e8af8498024fd1342e61b604faf",
+  "residentModule": {
+    "mergeCommit": "c867788416c50fa9c6e6ce57abc4bad85dca90d1",
+    "pullRequest": 85,
+    "runtimeSourcePin": "be4843354c5cf420ddecbb25ed5a51aa5f21ca18",
+    "assetPin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+    "animationPin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+    "publicReview": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown"
+  },
+  "platformerDonor": {
+    "status": "CANDIDATE_DONOR_ONLY",
+    "packPin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "githubRecovery": "skills/chat/workflows/FREE_ROAM_PLATFORMER_POC_2026-09-18/CLAUDE_DESIGN_RECOVERY_REBRIEF.md",
+    "dropboxPath": "/CLAUDE/KFB Card Viewer + Crda Zones + Combat Mech + Voxel World + Hex Assets Worldbuilding(5)/KFB_Free_Roam_Platformer_POC_v0/",
+    "note": "Do not integrate against the rejected old Project Island composition; follow current recovery gates."
+  },
+  "dropboxProvenance": [
+    {
+      "path": "/CLAUDE/KFB ToolBox Studio Rig Anim/KayKit Resident Atlas/docs/ATLAS_RETURN.md",
+      "modified": "2026-09-17T21:39:04Z",
+      "relation": "OLDER_EXPORT_PROVENANCE_ONLY"
+    },
+    {
+      "path": "/CLAUDE/KFB Card Viewer + Crda Zones + Combat Mech + Voxel World + Hex Assets Worldbuilding(5)/KFB_Free_Roam_Platformer_POC_v0/README.md",
+      "modified": "2026-09-18T18:04:13Z",
+      "relation": "CANDIDATE_DONOR_PUBLICATION_NOT_PERFORMED"
+    }
+  ],
+  "publicationPolicy": {
+    "humanFacingHost": "https://kayfabizarro.pages.dev/",
+    "hub": "https://kayfabizarro.pages.dev/kfb-hub/",
+    "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/",
+    "forbiddenForActiveHumanReview": [
+      "raw.githack.com",
+      "rawcdn.githack.com"
+    ],
+    "githubUse": "source/pr/commit/recovery links only"
+  },
+  "browserQa": {
+    "workflow": ".github/workflows/resident-scene-modules-cloudflare-qa.yml",
+    "target": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+    "status": "CLOUDFLARE_BROWSER_PASS",
+    "runId": 35421198328,
+    "jobId": 105839115967,
+    "artifactId": 10577298328,
+    "artifactDigest": "sha256:f23f9efd2ca56018658886aed1085676dde050cae8a6aa9b65cd6158d0183ca8",
+    "observed": {
+      "httpStatus": 200,
+      "residentId": "clown",
+      "nodes": 21,
+      "activity": "juggle-cascade-v1",
+      "samples": 31,
+      "maxArmResidual": 0.00013945167765827538,
+      "minClubPivotDistance": 0.024725737341776334,
+      "browserErrors": 0
+    },
+    "acceptanceBoundary": "AUTOMATED_BROWSER_PASS_NOT_GEORG_VISUAL_ACCEPTANCE",
+    "latestRun": {
+      "status": "CLOUDFLARE_BROWSER_PASS",
+      "runId": 35421390825,
+      "jobId": 105839641004,
+      "artifactId": 10577653402,
+      "artifactDigest": "sha256:4aa59b60f86a5b40eb75049f8f4556c5fd808f2b384fd3df0b1b7e0c735fec31",
+      "expiresAt": "2026-12-18T04:28:46Z",
+      "observed": {
+        "httpStatus": 200,
+        "residentId": "clown",
+        "nodes": 21,
+        "activity": "juggle-cascade-v1",
+        "samples": 32,
+        "maxArmResidual": 0.0001464062757976881,
+        "minClubPivotDistance": 0.0007849184817263369,
+        "browserErrors": 0
+      },
+      "visualReviewObservation": "Captured frame shows club geometry entering Clown head/upper-torso silhouette; trajectory/catch tuning remains OPEN."
+    }
+  },
+  "handoffMerge": "ae79765c02953704fefaa44fc0c40e21c23da372",
+  "proofMerge": "33b3785499e37b0a8b39a8465819988bc22a2703"
+}

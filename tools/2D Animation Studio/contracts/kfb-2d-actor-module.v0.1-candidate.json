@@ -1,0 +1,97 @@
+{
+  "schema": "kfb.2d-actor-module/0.1-candidate",
+  "updated": "2026-09-20",
+  "status": "CANDIDATE_CONTRACT",
+  "purpose": "Portable presentation contract for source-exact 2D/2.5D cutout actors used in tools, Resident modules and 3D KFB/DocCheck consumers without taking world/runtime ownership.",
+  "actor": {
+    "required": [
+      "id",
+      "anatomyClass",
+      "source",
+      "rig",
+      "rendererBindings",
+      "lifecycle",
+      "ownership"
+    ],
+    "anatomyClass": [
+      "biped-cutout",
+      "quadruped-cutout",
+      "custom-cutout"
+    ],
+    "source": {
+      "rule": "Accepted source art is referenced/pinned and remains immutable. Consumer adapters transform wrapper groups, never silently redraw identity-bearing paths."
+    }
+  },
+  "lifecycle": {
+    "mount": "mount(def,{parent,anchor,camera,scale,facingPolicy}) -> handle",
+    "handle": [
+      "root",
+      "update(dt,ctx)",
+      "setState(state,payload?)",
+      "eyeFrame()?",
+      "dispose()"
+    ],
+    "rootMotionPolicy": "PRESENTATION_ONLY_CONSUMER_OWNS_WORLD_TRANSLATION_AND_HEADING"
+  },
+  "rendererBindings": {
+    "svg2d": {
+      "role": "tool/authoring/browser-2D",
+      "source": "source-exact SVG groups + cutout bones/deformers"
+    },
+    "three2p5d": {
+      "role": "3D-world resident/game consumer",
+      "presentationModes": [
+        "upright-yaw-billboard",
+        "world-facing-upright",
+        "consumer-facing"
+      ],
+      "architecture": "One THREE.Group actor root containing z-layered visual planes/meshes generated from accepted 2D parts. Ground anchor and world transform are consumer-owned.",
+      "status": "ADAPTER_REQUIRED"
+    }
+  },
+  "rig": {
+    "required": [
+      "neutralBind",
+      "bones",
+      "depthLayers"
+    ],
+    "optional": [
+      "softDeformers",
+      "secondaryMotion",
+      "eyeRig",
+      "accessoryFrames"
+    ],
+    "pivotRule": "All derived bones/pivots are metadata. They must not be baked into accepted source geometry.",
+    "motionRule": "skills/kfb-cartoon-animation_v2.md"
+  },
+  "eyeRig": {
+    "protocol": "kfb.eye-rig.protocol/1",
+    "publicFrame": "eyeFrame()",
+    "note": "2D and 3D share semantic eye commands; renderer geometry remains local."
+  },
+  "ownership": {
+    "actorModuleOwns": [
+      "local presentation hierarchy",
+      "local animation state",
+      "source-asset draw order",
+      "secondary motion",
+      "local eye/face presentation"
+    ],
+    "consumerOwns": [
+      "world position and heading",
+      "terrain/support/collision",
+      "navigation/pathfinding",
+      "camera",
+      "interaction/gameplay state",
+      "quests/progression",
+      "persistence"
+    ]
+  },
+  "evidenceLevels": [
+    "IMPLEMENTATION",
+    "STATIC_TESTED_RESULT",
+    "BROWSER_TESTED_RESULT",
+    "GEORG_VISUAL_ACCEPTANCE",
+    "CONSUMER_ACCEPTANCE"
+  ]
+}

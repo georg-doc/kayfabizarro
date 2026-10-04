@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="pdfs/deck_a_utopia.pdf">
+<meta name="ext-resource-dependency" content="pdfs/deck_b_dystopia.pdf">
+<meta name="ext-resource-dependency" content="pdfs/deck_c_protopia.pdf">
+<meta name="ext-resource-dependency" content="pdfs/medkayfab_cardiology.pdf">
+<meta name="ext-resource-dependency" content="pdfs/medkayfab_emergency.pdf">
+<meta name="ext-resource-dependency" content="pdfs/medkayfab_pharmacology.pdf">
+<meta name="ext-resource-dependency" content="pdfs/epistemic_sabotage.pdf">
+<meta name="ext-resource-dependency" content="pdfs/worlds_fair_conspiracy.pdf">
+<meta name="ext-resource-dependency" content="decks/deck_a_utopia.json">
+<meta name="ext-resource-dependency" content="decks/deck_b_dystopia.json">
+<meta name="ext-resource-dependency" content="decks/deck_c_protopia.json">
+<meta name="ext-resource-dependency" content="decks/medkayfab_cardiology.json">
+<meta name="ext-resource-dependency" content="decks/medkayfab_emergency.json">
+<meta name="ext-resource-dependency" content="decks/medkayfab_pharmacology.json">
+<meta name="ext-resource-dependency" content="decks/epistemic_sabotage.json">
+<meta name="ext-resource-dependency" content="decks/worlds_fair_conspiracy.json">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KayfaBizarro Deck Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="kfb-viewer.js"></script>
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F4EFE6"></rect><rect x="31" y="36" width="38" height="28" rx="3" fill="#FBF8F1" stroke="#A6512E" stroke-width="2.5"></rect><text x="50" y="55" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#26221C">KFB</text></svg>
+  </template>
+  <meta name="ext-resource-dependency" content="pdfs/deck_a_utopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/deck_b_dystopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/deck_c_protopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_cardiology.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_emergency.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_pharmacology.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/epistemic_sabotage.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/worlds_fair_conspiracy.pdf">
+  <meta name="ext-resource-dependency" content="decks/deck_a_utopia.json">
+  <meta name="ext-resource-dependency" content="decks/deck_b_dystopia.json">
+  <meta name="ext-resource-dependency" content="decks/deck_c_protopia.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_cardiology.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_emergency.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_pharmacology.json">
+  <meta name="ext-resource-dependency" content="decks/epistemic_sabotage.json">
+  <meta name="ext-resource-dependency" content="decks/worlds_fair_conspiracy.json">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #F4EFE6; }
+    body { font-family: "Archivo", "Helvetica Neue", Helvetica, system-ui, sans-serif; color: #26221C; -webkit-font-smoothing: antialiased; }
+    a { color: #A6512E; text-decoration: none; }
+    a:hover { color: #7E3C20; text-decoration: underline; }
+    * { box-sizing: border-box; }
+    input[type="file"] { display: none; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; background:radial-gradient(120% 90% at 50% 0%, #F4EFE6 55%, #EDE5D6 100%);">
+
+  <sc-if value="{{ showPicker }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Deck Picker" style="max-width:1080px; margin:0 auto; padding:52px 28px 80px;">
+
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#A6512E;">{{ L.overline }}</div>
+          <h1 style="margin:10px 0 0; font-size:clamp(30px,4.4vw,44px); font-weight:800; letter-spacing:-0.02em; line-height:1.04;">{{ L.title }}</h1>
+          <p style="margin:14px 0 0; max-width:560px; font-size:14.5px; line-height:1.6; color:#7B7368; text-wrap:pretty;">{{ L.sub }}</p>
+        </div>
+        <div style="display:flex; border:1px solid rgba(38,34,28,.18); border-radius:999px; overflow:hidden; margin-top:6px;">
+          <button onClick="{{ setLangEn }}" style="{{ langEnStyle }}">EN</button>
+          <button onClick="{{ setLangDe }}" style="{{ langDeStyle }}">DE</button>
+        </div>
+      </div>
+
+      <div style="margin-top:44px;">
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <h2 style="margin:0; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#26221C;">{{ L.secTest }}</h2>
+          <span style="font-size:12px; color:#7B7368;">{{ L.secTestSub }}</span>
+        </div>
+        <div style="margin-top:14px; display:grid; grid-template-columns:repeat(auto-fill, minmax(252px, 1fr)); gap:12px;">
+          <sc-for list="{{ testDecks }}" as="deck" hint-placeholder-count="8">
+            <button onClick="{{ deck.open }}" style="text-align:left; font:inherit; color:inherit; background:#FBF8F1; border:1px solid rgba(38,34,28,.14); border-radius:12px; padding:16px 16px 14px; cursor:pointer; display:flex; flex-direction:column; gap:8px; transition:transform .15s ease, box-shadow .15s ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 28px -16px rgba(56,44,26,.35);" style-focus="outline:2px solid #A6512E; outline-offset:2px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.14em; color:#A9A196;">{{ deck.num }}</span>
+                <span style="{{ deck.badgeStyle }}">{{ deck.badge }}</span>
+              </div>
+              <div style="font-size:15.5px; font-weight:700; letter-spacing:-0.01em; line-height:1.25;">{{ deck.title }}</div>
+              <div style="font-size:12px; color:#7B7368;">{{ deck.sub }}</div>
+              <div style="margin-top:2px; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:#8B8376; letter-spacing:.02em;">{{ deck.expect }}</div>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="margin-top:44px; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:28px; align-items:start;">
+
+        <div>
+          <div style="display:flex; align-items:baseline; gap:14px;">
+            <h2 style="margin:0; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;">{{ L.secGh }}</h2>
+            <span style="font-size:12px; color:#7B7368;">{{ L.ghSub }}</span>
+          </div>
+          <div style="margin-top:14px; background:#FBF8F1; border:1px solid rgba(38,34,28,.14); border-radius:12px; padding:16px;">
+            <sc-if value="{{ ghIdle }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ loadGh }}" style="font:inherit; font-size:13px; font-weight:600; padding:9px 18px; border-radius:999px; border:1px solid #26221C; background:#26221C; color:#FBF8F1; cursor:pointer;" style-hover="background:#3A342B;">{{ L.ghLoad }}</button>
+              <p style="margin:10px 0 0; font-size:11.5px; color:#7B7368; line-height:1.5;">georg-doc/kayfabizarro · media/kfb</p>
+            </sc-if>
+            <sc-if value="{{ ghLoading }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0; font-size:13px; color:#7B7368;">{{ L.ghLoading }}</p>
+            </sc-if>
+            <sc-if value="{{ ghError }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0 0 10px; font-size:12.5px; color:#A6512E;">{{ L.ghErr }}</p>
+            </sc-if>
+            <sc-if value="{{ ghHasList }}" hint-placeholder-val="{{ false }}">
+              <div style="max-height:340px; overflow:auto; display:flex; flex-direction:column; gap:2px; margin:0 -6px;">
+                <sc-for list="{{ ghDecks }}" as="gd" hint-placeholder-count="4">
+                  <button onClick="{{ gd.open }}" style="display:flex; align-items:center; gap:10px; text-align:left; font:inherit; color:inherit; background:transparent; border:0; border-radius:8px; padding:8px 10px; cursor:pointer;" style-hover="background:rgba(38,34,28,.06);" style-focus="outline:2px solid #A6512E; outline-offset:-2px;">
+                    <span style="flex:none; width:6px; height:6px; border-radius:99px; background:{{ gd.dot }};"></span>
+                    <span style="flex:1; min-width:0; font-size:12.5px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ gd.name }}</span>
+                    <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9.5px; color:#A9A196;">{{ gd.tag }}</span>
+                  </button>
+                </sc-for>
+              </div>
+              <p style="margin:10px 0 0; font-size:10.5px; color:#A9A196;">{{ ghCountNote }}</p>
+            </sc-if>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:baseline; gap:14px;">
+            <h2 style="margin:0; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;">{{ L.secUp }}</h2>
+            <span style="font-size:12px; color:#7B7368;">{{ L.upSub }}</span>
+          </div>
+          <div onDrop="{{ onDrop }}" onDragOver="{{ onDragOver }}" onDragLeave="{{ onDragLeave }}" style="position:relative; margin-top:14px; background:#FBF8F1; border:1.5px dashed rgba(38,34,28,.28); border-radius:12px; padding:24px 18px; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;">
+            <sc-if value="{{ dragOver }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute; inset:0; border-radius:12px; border:2px solid #A6512E; background:rgba(166,81,46,.06); pointer-events:none;"></div>
+            </sc-if>
+            <p style="margin:0; font-size:13px; color:#7B7368; line-height:1.5; max-width:340px;">{{ L.upDrop }}</p>
+            <label for="kv-upload-input" style="font-size:13px; font-weight:600; padding:8px 16px; border-radius:999px; border:1px solid rgba(38,34,28,.3); cursor:pointer; background:#F4EFE6;">{{ L.upBtn }}</label>
+            <input id="kv-upload-input" type="file" accept=".pdf,.json,application/pdf,application/json" multiple onChange="{{ onPickFiles }}">
+            <div style="display:flex; flex-direction:column; gap:3px; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:#8B8376;">
+              <span>PDF · {{ upPdfName }}</span>
+              <span>JSON · {{ upJsonName }}</span>
+            </div>
+            <sc-if value="{{ upReady }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ openUpload }}" style="font:inherit; font-size:13px; font-weight:600; padding:9px 20px; border-radius:999px; border:1px solid #A6512E; background:#A6512E; color:#FBF8F1; cursor:pointer;" style-hover="background:#8C4023;">{{ L.upOpen }}</button>
+            </sc-if>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="margin:56px 0 0; font-size:12px;"><a href="KFB Gameplay Stage.dc.html">Gameplay Sim — Story Table (Prototyp) →</a></p>
+      <p style="margin:12px 0 0; font-size:11px; color:#A9A196; line-height:1.6; max-width:640px;">{{ L.footNote }}</p>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showViewer }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Viewer" style="position:fixed; inset:0; z-index:50; background:#F4EFE6;">
+      <div ref="{{ viewerHostRef }}" style="position:absolute; inset:0;"></div>
+      <button onClick="{{ closeViewer }}" aria-label="{{ L.back }}" style="position:absolute; top:12px; left:14px; z-index:60; display:inline-flex; align-items:center; gap:7px; font:inherit; font-size:11.5px; font-weight:700; letter-spacing:.08em; padding:8px 14px 8px 11px; border-radius:999px; border:1px solid rgba(38,34,28,.2); background:rgba(250,247,240,.85); color:#26221C; cursor:pointer; backdrop-filter:blur(6px);" style-hover="transform:translateY(-1px);">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 3 5 8 10 13"></polyline></svg>
+        <span>{{ L.back }}</span>
+      </button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;startTheme&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;paper&quot;, &quot;dark&quot;, &quot;light&quot;], &quot;default&quot;: &quot;paper&quot;, &quot;section&quot;: &quot;Viewer defaults&quot;, &quot;tsType&quot;: &quot;'paper' | 'dark' | 'light'&quot; },
+  &quot;startMode&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;card&quot;, &quot;page&quot;], &quot;default&quot;: &quot;card&quot;, &quot;section&quot;: &quot;Viewer defaults&quot;, &quot;tsType&quot;: &quot;'card' | 'page'&quot; },
+  &quot;uiLang&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;de&quot;], &quot;default&quot;: &quot;en&quot;, &quot;section&quot;: &quot;Viewer defaults&quot;, &quot;tsType&quot;: &quot;'en' | 'de'&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    lang: (this.props.uiLang === 'de' ? 'de' : 'en'),
+    active: null,          // { title, pdfUrl?, jsonUrl?, file?, json? }
+    gh: { status: 'idle', decks: [], fallback: false },
+    upPdf: null, upJson: null, dragOver: false
+  };
+
+  strings(lang) {
+    const en = {
+      overline: 'KayfaBizarro · Cut & Play Comic Card Decks',
+      title: 'Deck Viewer',
+      sub: 'Turns a landscape deck PDF (2×2 card grid per page) into an immersive card presentation. The layout is derived arithmetically from the deck JSON — decks that don\u2019t reconcile fall back honestly to full pages.',
+      secTest: 'Test matrix', secTestSub: 'Local sample decks covering the core cases',
+      secGh: 'GitHub decks', ghSub: 'public repo, no registry',
+      ghLoad: 'Load deck list', ghLoading: 'Loading list…',
+      ghErr: 'GitHub API unreachable — showing static fallback list.',
+      secUp: 'Upload', upSub: 'e.g. private Dropbox decks',
+      upDrop: 'Drop a deck PDF here — plus its content JSON for card names, powers & lore (optional).',
+      upBtn: 'Choose files', upOpen: 'Open deck',
+      back: 'Decks',
+      none: '—',
+      badgeStd: 'standard', badgeRev: 'needs review',
+      footNote: 'Viewer module: kfb-viewer.js — single file, vanilla JS, Shadow-DOM scoped, mountable via KayfabizarroViewer.mount(el, { source, deckData }). Keyboard: ←/→ navigate · M mode · T theme · I card info · F fullscreen · +/− zoom · trackpad swipe & pinch. Data API for agents: viewer.getDeckMeta(), getCardData(i), getCurrentSlide(), KayfabizarroViewer.loadDeck().'
+    };
+    const de = {
+      overline: 'KayfaBizarro · Cut & Play Comic Card Decks',
+      title: 'Deck Viewer',
+      sub: 'Verwandelt ein Querformat-Deck-PDF (2×2-Kartenraster pro Seite) in eine immersive Kartenpräsentation. Das Layout wird arithmetisch aus der Deck-JSON abgeleitet — Decks, die nicht aufgehen, fallen ehrlich auf ganze Seiten zurück.',
+      secTest: 'Testmatrix', secTestSub: 'Lokale Beispiel-Decks für die Kernfälle',
+      secGh: 'GitHub-Decks', ghSub: 'public Repo, keine Registry',
+      ghLoad: 'Deck-Liste laden', ghLoading: 'Liste wird geladen…',
+      ghErr: 'GitHub-API nicht erreichbar — statische Fallback-Liste.',
+      secUp: 'Upload', upSub: 'z. B. private Dropbox-Decks',
+      upDrop: 'Deck-PDF hier ablegen — plus Content-JSON für Kartennamen, Powers & Lore (optional).',
+      upBtn: 'Dateien wählen', upOpen: 'Deck öffnen',
+      back: 'Decks',
+      none: '—',
+      badgeStd: 'Standard', badgeRev: 'needs review',
+      footNote: 'Viewer-Modul: kfb-viewer.js — single file, vanilla JS, Shadow-DOM-gescoped, einbettbar via KayfabizarroViewer.mount(el, { source, deckData }). Tastatur: ←/→ blättern · M Modus · T Theme · I Karten-Info · F Vollbild · +/− Zoom · Trackpad-Swipe & Pinch. Daten-API für Agents: viewer.getDeckMeta(), getCardData(i), getCurrentSlide(), KayfabizarroViewer.loadDeck().'
+    };
+    return lang === 'de' ? de : en;
+  }
+
+  testDeckDefs() {
+    // Standalone single-file builds embed a subset of decks and announce them
+    // via window.__KFB_EMBEDDED — filter the test matrix accordingly.
+    const emb = window.__KFB_EMBEDDED;
+    const all = this.allTestDeckDefs();
+    return emb ? all.filter((d) => emb.indexOf(d.pdf) >= 0) : all;
+  }
+
+  allTestDeckDefs() {
+    return [
+      { num: '01', title: 'Forget Utopia', sub: 'Deck A — UTOPIA', expect: '56c + cover → 14+1 = 15p ✓', kind: 'std',
+        pdf: 'pdfs/deck_a_utopia.pdf', json: 'decks/deck_a_utopia.json' },
+      { num: '02', title: 'Anatomy of a Trap', sub: 'Deck B — DYSTOPIA · verified', expect: '56c + cover → 14+1 = 15p ✓', kind: 'std',
+        pdf: 'pdfs/deck_b_dystopia.pdf', json: 'decks/deck_b_dystopia.json' },
+      { num: '03', title: 'Protopia Sketchbook', sub: 'Deck C — PROTOPIA · verified', expect: '56c + cover → 14+1 = 15p ✓', kind: 'std',
+        pdf: 'pdfs/deck_c_protopia.pdf', json: 'decks/deck_c_protopia.json' },
+      { num: '04', title: 'Cardiology Expansion', sub: 'MedKayfab', expect: '56c + cover = 15p ✓ · JSON: ADD-web ed.', kind: 'std',
+        pdf: 'pdfs/medkayfab_cardiology.pdf', json: 'decks/medkayfab_cardiology.json' },
+      { num: '05', title: 'The Golden Hour Gauntlet', sub: 'MedKayfab — Emergency Medicine', expect: '56c + cover = 15p ✓ · JSON: ADD-web ed.', kind: 'std',
+        pdf: 'pdfs/medkayfab_emergency.pdf', json: 'decks/medkayfab_emergency.json' },
+      { num: '06', title: 'The Synaptic Arsenal', sub: 'MedKayfab — Essential Pharmacology', expect: '56c + cover = 15p ✓ · JSON: ADD-web ed.', kind: 'std',
+        pdf: 'pdfs/medkayfab_pharmacology.pdf', json: 'decks/medkayfab_pharmacology.json' },
+      { num: '07', title: 'Let AI Read Your Comic', sub: 'Epistemic Sabotage', expect: '60c + cover → 16 ≠ 15p → review', kind: 'rev',
+        pdf: 'pdfs/epistemic_sabotage.pdf', json: 'decks/epistemic_sabotage.json' },
+      { num: '08', title: 'World\u2019s Fair Conspiracy', sub: 'TVTropes Kompendium · irregular pages', expect: '60c + cover → 16 ≠ 15p → review', kind: 'rev',
+        pdf: 'pdfs/worlds_fair_conspiracy.pdf', json: 'decks/worlds_fair_conspiracy.json' }
+    ];
+  }
+
+  openDeck(d) {
+    this.setState({ active: d });
+  }
+
+  closeViewer = () => {
+    if (this.viewerInstance) { try { this.viewerInstance.destroy(); } catch (e) {} }
+    this.viewerInstance = null;
+    this.setState({ active: null });
+  };
+
+  viewerHostRef = (el) => {
+    if (!el) {
+      if (this.viewerInstance) { try { this.viewerInstance.destroy(); } catch (e) {} }
+      this.viewerInstance = null;
+      return;
+    }
+    if (this.viewerInstance || !this.state.active) return;
+    const d = this.state.active;
+    this.viewerInstance = window.KayfabizarroViewer.mount(el, {
+      source: d.file ? d.file : { url: encodeURI(d.pdfUrl) },
+      deckData: d.json ? (typeof d.json === 'string' ? { url: encodeURI(d.json) } : d.json) : null,
+      mode: this.props.startMode === 'page' ? 'page' : 'card',
+      theme: this.props.startTheme || undefined,
+      lang: this.state.lang,
+      title: d.title
+    });
+  };
+
+  loadGh = async () => {
+    this.setState({ gh: { status: 'loading', decks: [], fallback: false } });
+    const norm = (s) => s.toLowerCase().replace(/\.(pdf|json)$/i, '').replace(/[^a-z0-9]+/g, '');
+    try {
+      const r = await fetch('https://api.github.com/repos/georg-doc/kayfabizarro/contents/media/kfb');
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const items = await r.json();
+      const pdfs = items.filter((f) => /\.pdf$/i.test(f.name));
+      const jsons = items.filter((f) => /\.json$/i.test(f.name));
+      const decks = pdfs.map((p) => {
+        const base = norm(p.name);
+        const j = jsons.find((jf) => {
+          const jb = norm(jf.name);
+          return jb === base || jb === base + 'pdf' || jb.indexOf(base) === 0 || base.indexOf(jb) === 0;
+        });
+        return { name: p.name.replace(/\.pdf$/i, ''), pdfUrl: p.download_url, jsonUrl: j ? j.download_url : null };
+      });
+      this.setState({ gh: { status: 'done', decks, fallback: false } });
+    } catch (e) {
+      const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/';
+      const decks = [
+        'Deck_A_UTOPIA_-_Forget_Utopia web H.pdf',
+        'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf',
+        'Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1) web H.pdf',
+        'Kayfabizarro_Reality_Redrawn_WEB_v1 ID.pdf'
+      ].map((n) => ({ name: n.replace(/\.pdf$/i, ''), pdfUrl: RAW + encodeURIComponent(n).replace(/%2F/g, '/'), jsonUrl: null }));
+      this.setState({ gh: { status: 'error', decks, fallback: true } });
+    }
+  };
+
+  onPickFiles = (e) => {
+    this.absorbFiles(e.target.files);
+  };
+  onDrop = (e) => {
+    e.preventDefault();
+    this.absorbFiles(e.dataTransfer.files);
+    this.setState({ dragOver: false });
+  };
+  onDragOver = (e) => { e.preventDefault(); if (!this.state.dragOver) this.setState({ dragOver: true }); };
+  onDragLeave = () => { if (this.state.dragOver) this.setState({ dragOver: false }); };
+
+  absorbFiles(list) {
+    let { upPdf, upJson } = this.state;
+    for (const f of Array.from(list || [])) {
+      if (/\.pdf$/i.test(f.name)) upPdf = f;
+      else if (/\.json$/i.test(f.name)) upJson = f;
+    }
+    this.setState({ upPdf, upJson });
+  }
+
+  openUpload = async () => {
+    const { upPdf, upJson } = this.state;
+    if (!upPdf) return;
+    let json = null;
+    if (upJson) { try { json = JSON.parse(await upJson.text()); } catch (e) { json = null; } }
+    this.setState({ active: { title: upPdf.name, file: upPdf, json } });
+  };
+
+  setLangEn = () => this.setState({ lang: 'en' });
+  setLangDe = () => this.setState({ lang: 'de' });
+
+  renderVals() {
+    const { lang, active, gh, upPdf, upJson, dragOver } = this.state;
+    const L = this.strings(lang);
+    const segBase = 'font-family:inherit; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border:0; cursor:pointer;';
+    const badgeBase = 'font-family:ui-monospace,Menlo,monospace; font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; border-radius:4px; padding:2px 6px; border:1px solid currentColor;';
+    const testDecks = this.testDeckDefs().map((d) => ({
+      num: d.num, title: d.title, sub: d.sub, expect: d.expect,
+      badge: d.kind === 'rev' ? L.badgeRev : L.badgeStd,
+      badgeStyle: badgeBase + (d.kind === 'rev' ? 'color:#A6512E;' : 'color:#8B8376;'),
+      open: () => this.openDeck({ title: d.title, pdfUrl: d.pdf, json: d.json })
+    }));
+    const ghDecks = gh.decks.map((d) => ({
+      name: d.name,
+      dot: d.jsonUrl ? '#5E8C61' : '#C9C0B2',
+      tag: d.jsonUrl ? 'PDF+JSON' : 'PDF',
+      open: () => this.openDeck({ title: d.name, pdfUrl: d.pdfUrl, json: d.jsonUrl ? { url: d.jsonUrl } : null, remote: true })
+    }));
+    return {
+      L,
+      showPicker: !active,
+      showViewer: !!active,
+      testDecks,
+      ghIdle: gh.status === 'idle',
+      ghLoading: gh.status === 'loading',
+      ghError: gh.status === 'error',
+      ghHasList: gh.decks.length > 0,
+      ghDecks,
+      ghCountNote: gh.decks.length ? (gh.decks.length + ' PDFs · ' + gh.decks.filter((d) => d.jsonUrl).length + ' + JSON') : '',
+      dragOver,
+      upPdfName: upPdf ? upPdf.name : L.none,
+      upJsonName: upJson ? upJson.name : L.none,
+      upReady: !!upPdf,
+      onPickFiles: this.onPickFiles,
+      onDrop: this.onDrop,
+      onDragOver: this.onDragOver,
+      onDragLeave: this.onDragLeave,
+      openUpload: this.openUpload,
+      loadGh: this.loadGh,
+      closeViewer: this.closeViewer,
+      viewerHostRef: this.viewerHostRef,
+      setLangEn: this.setLangEn,
+      setLangDe: this.setLangDe,
+      langEnStyle: segBase + (lang === 'en' ? 'background:#26221C; color:#FBF8F1;' : 'background:transparent; color:#7B7368;'),
+      langDeStyle: segBase + (lang === 'de' ? 'background:#26221C; color:#FBF8F1;' : 'background:transparent; color:#7B7368;')
+    };
+  }
+}
+</script>
+</body>
+</html>

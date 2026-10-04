@@ -1,0 +1,21 @@
+{
+  "schema": "kfb.session-export/0",
+  "session": "2026-09-25 · WB-D2 · Sprint 1",
+  "entry": "code/KFB WB-D1 · Cologne World Shell.dc.html",
+  "pins": {
+    "kayfabizarro": "c049cae386e1",
+    "editLayer": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+    "elasticClayV2": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+    "three": "0.184.0"
+  },
+  "zones": {
+    "cologne-dom": "fixtures/cologne-dom-crop-v0.json · dom-zentrum-v0 @2ff8b350",
+    "huerth": "fixtures/huerth-crop-v0.json · huerth-v0/normalized.json @c049cae386e1",
+    "alstaedten": "fixtures/huerth-alstaedten-v0.json · OSM API 0.6 map 2026-09-25 · raw sha256 in fixture"
+  },
+  "fonts": [
+    "JetBrains Mono 400/600",
+    "Barlow Condensed 600 (street names)"
+  ],
+  "attribution": "© OpenStreetMap contributors · ODbL 1.0"
+}

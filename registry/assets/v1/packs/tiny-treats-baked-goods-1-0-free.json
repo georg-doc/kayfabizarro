@@ -1,0 +1,1678 @@
+{
+  "assetCount": 36,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20481,
+      "source": {
+        "blobSha": "57b4091af268d6064e667f600c29241d4f183072",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "baguette",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "baguette.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3552,
+      "source": {
+        "blobSha": "cfba79449e860d903fdc09d0ea312d08d3e7270a",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_half.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "baguette_half",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_half.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_half.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "baguette_half.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3567,
+      "source": {
+        "blobSha": "480cf56e1a3b1610c801adbde8545d6a815c26ed",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_half.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_half.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "baguette_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "baguette_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3563,
+      "source": {
+        "blobSha": "f9344b0b1865b283b3c001e196ce162351150d16",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/baguette_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bread",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bread.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3543,
+      "source": {
+        "blobSha": "b7d1ceae37decc0c44ee702aff2196a62f181d5b",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_half.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bread_half",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_half.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_half.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bread_half.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3557,
+      "source": {
+        "blobSha": "e23be14607362a8e0964ca5a0f39a69f34996e5a",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_half.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_half.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_roll.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bread_roll",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_roll.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_roll.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bread_roll.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3558,
+      "source": {
+        "blobSha": "f02e1eae454d3565ab4a5d804b9f415420cac7f4",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_roll.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_roll.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bread_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bread_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3560,
+      "source": {
+        "blobSha": "ef95e9d563d56f204766b9f95dfa6a2311174824",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/bread_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_birthday",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_birthday.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5539,
+      "source": {
+        "blobSha": "2a00148653e396a6dbbeebe5bf56774ddac071cd",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_cut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_birthday_cut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_cut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_cut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_birthday_cut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5559,
+      "source": {
+        "blobSha": "4bf9c79f6250a50efa505d611dec1c8f96e8ebb9",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_cut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_cut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_birthday_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_birthday_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5556,
+      "source": {
+        "blobSha": "7343b304e50092360e9a9292a00f1dbf35f70a0e",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_birthday_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_chocolate",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_chocolate.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3558,
+      "source": {
+        "blobSha": "955ab33b3992e6704183752d4cf98ba39df50e4f",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_cut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_chocolate_cut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_cut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_cut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_chocolate_cut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3570,
+      "source": {
+        "blobSha": "0b284651b45300e3cad75224fe8bea8261139cb6",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_cut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_cut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_chocolate_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_chocolate_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3572,
+      "source": {
+        "blobSha": "1366e5eeaf244fcdde46a3f268098b7608a1eb4c",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_chocolate_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_strawberry",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_strawberry.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3561,
+      "source": {
+        "blobSha": "d07e4bc0997d06e26548aeab546571f1189b8087",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_cut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_strawberry_cut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_cut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_cut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_strawberry_cut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3573,
+      "source": {
+        "blobSha": "e0a1a0c071dca2b1a37dc030c7158ed5354bc8fc",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_cut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_cut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cake_strawberry_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cake_strawberry_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3576,
+      "source": {
+        "blobSha": "b3fa64f1e2edbb7f7640c32347143d0588ec13a0",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cake_strawberry_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cinnamon_roll.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cinnamon_roll",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cinnamon_roll.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cinnamon_roll.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cinnamon_roll.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3570,
+      "source": {
+        "blobSha": "2805d4cc8449a624b04dc9bf0d71be34d3829659",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cinnamon_roll.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cinnamon_roll.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cookie.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cookie",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cookie.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cookie.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cookie.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3549,
+      "source": {
+        "blobSha": "3fbe9d7952bd189a8c308205b0e2ce4ba13b94f3",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cookie.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cookie.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "croissant",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "croissant.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3538,
+      "source": {
+        "blobSha": "356bdf4b25b6eb737e7265a82b423a2f139b837a",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cupcake.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cupcake",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cupcake.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cupcake.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cupcake.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3549,
+      "source": {
+        "blobSha": "3e0473a74c331bf97bd33110cd6e2004a57a1490",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cupcake.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/cupcake.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "donut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "donut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3524,
+      "source": {
+        "blobSha": "bfe242c18545470d2ad14bbb66bb516350b4dc09",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "donut_chocolate",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "donut_chocolate.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3557,
+      "source": {
+        "blobSha": "462f4d81269865a2f429c08373815226a70b85d7",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "donut_pink",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "donut_pink.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3542,
+      "source": {
+        "blobSha": "f7cdfe44dff58c9d1779117f0bdaacf1271fc205",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/muffin.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "muffin",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/muffin.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/muffin.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "muffin.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3549,
+      "source": {
+        "blobSha": "e889b63284e31ac60cd4978ab0c8b4df1cc26de3",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/muffin.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/muffin.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_apple",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_apple.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3534,
+      "source": {
+        "blobSha": "f0d2907b89af4c34c5b1167b312dd2d3d29b4e58",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_cut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_apple_cut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_cut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_cut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_apple_cut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3548,
+      "source": {
+        "blobSha": "607102c2f540cb419898b1ea0ade9b27054e3ce2",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_cut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_cut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_apple_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_apple_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3535,
+      "source": {
+        "blobSha": "ed677c6e1108f9acf38ec75dd473f96f1a273a19",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_apple_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_cherry",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_cherry.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3537,
+      "source": {
+        "blobSha": "a02964bd4a34a4ac5686be47e086cfa66d843f1e",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_cut.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_cherry_cut",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_cut.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_cut.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_cherry_cut.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3571,
+      "source": {
+        "blobSha": "12d0cb775430f72b6825ba53699500e8f98db5fd",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_cut.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_cut.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_slice.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pie_cherry_slice",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_slice.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_slice.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pie_cherry_slice.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3536,
+      "source": {
+        "blobSha": "6f90490fc4a9426f988891d59926b0de64d46f6d",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_slice.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/pie_cherry_slice.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20481,
+      "source": {
+        "blobSha": "57b4091af268d6064e667f600c29241d4f183072",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "waffle",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "waffle.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3549,
+      "source": {
+        "blobSha": "a315751c0c62737d471994fcf05a5a9b4713ede1",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle_stacked.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "waffle_stacked",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle_stacked.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle_stacked.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "waffle_stacked.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3576,
+      "source": {
+        "blobSha": "e3c1f059744b3794b135aaa08a9c0d7236542042",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle_stacked.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/waffle_stacked.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/overview.png",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "overview",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/overview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 502402,
+      "source": {
+        "blobSha": "4c97e79783534936212417b0e7f80d1d2fe0fd8d",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/overview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/overview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/sample.png",
+      "folder": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "sample",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 522736,
+      "source": {
+        "blobSha": "fb8558821220e7c923bc6c2de925a432c070032c",
+        "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 34,
+      "path": "Assets"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 32
+  },
+  "displayName": "Tiny_Treats_Baked_Goods_1.0_FREE",
+  "formats": {
+    "gltf": 32,
+    "png": 4
+  },
+  "kinds": {
+    "image-2d": 4,
+    "model-3d": 32
+  },
+  "packId": "tiny-treats-baked-goods-1-0-free",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/tiny-treats-baked-goods-1-0-free.json"
+}

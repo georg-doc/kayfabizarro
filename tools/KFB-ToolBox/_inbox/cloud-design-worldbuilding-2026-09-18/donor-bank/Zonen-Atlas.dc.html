@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Nunito+Sans:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #161109; font-family: 'Nunito Sans', sans-serif; }
+  a { color: #e0b44e; text-decoration: none; border-bottom: 1px dashed rgba(224,180,78,0.5); }
+  a:hover { color: #f4d17e; border-bottom-color: #f4d17e; }
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; background: radial-gradient(1200px 700px at 50% -8%, #241b0f 0%, #171208 46%, #100c06 100%); overflow: hidden;">
+
+  <sc-if value="{{ grain }}" hint-placeholder-val="{{ true }}"><div style="position: fixed; inset: 0; background-image: url('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/Paper004/Paper004_diffuse.jpg'); background-size: 520px; opacity: 0.05; mix-blend-mode: soft-light; pointer-events: none; z-index: 0;"></div></sc-if>
+
+  <div style="position: relative; z-index: 1; max-width: 1300px; margin: 0 auto; padding: 46px 40px 96px;">
+
+    <!-- ============ MASTHEAD ============ -->
+    <div data-screen-label="Masthead" style="display: flex; gap: 26px; flex-wrap: wrap; align-items: stretch; margin-bottom: 12px;">
+      <div style="position: relative; flex: 1 1 620px; background: linear-gradient(178deg, #e4cf9f, #d3b985); border: 2.5px solid #241c14; border-radius: 3px; padding: 30px 34px 28px; box-shadow: 8px 12px 0 rgba(0,0,0,0.45), inset 0 0 60px rgba(120,86,40,0.25); transform: rotate(-0.5deg);">
+        <div style="position: absolute; top: -13px; left: 40px; width: 92px; height: 26px; background: rgba(226,208,160,0.72); border: 1px solid rgba(90,66,32,0.4); transform: rotate(-4deg); box-shadow: 0 1px 3px rgba(0,0,0,0.25);"></div>
+        <div style="position: absolute; top: -11px; right: 54px; width: 78px; height: 24px; background: rgba(226,208,160,0.72); border: 1px solid rgba(90,66,32,0.4); transform: rotate(5deg); box-shadow: 0 1px 3px rgba(0,0,0,0.25);"></div>
+        <div style="font: 700 12px 'Space Mono', monospace; letter-spacing: 0.28em; color: #7a5a2c; text-transform: uppercase;">Uncle FrizzleBob's Bizarro-Hex &middot; Fable 5</div>
+        <div style="font: 700 60px/0.94 'Shantell Sans', cursive; color: #231a10; margin: 8px 0 4px; letter-spacing: -0.01em;">Zonen-Atlas</div>
+        <div style="font: 600 19px 'Shantell Sans', cursive; color: #5a4320;">Die Hex-Assets fürs Worldbuilding &mdash; Biomes, Register &amp; Ränder.</div>
+        <div style="margin-top: 18px; display: flex; gap: 9px; flex-wrap: wrap;">
+          <span style="font: 700 11px 'Space Mono', monospace; letter-spacing: 0.06em; color: #f3ead8; background: #3a2c18; padding: 4px 11px; border-radius: 3px; border: 1.5px solid #241c14;">PAPERTOY</span>
+          <span style="font: 700 11px 'Space Mono', monospace; letter-spacing: 0.06em; color: #f3ead8; background: #3a2c18; padding: 4px 11px; border-radius: 3px; border: 1.5px solid #241c14;">CLAYMATION</span>
+          <span style="font: 700 11px 'Space Mono', monospace; letter-spacing: 0.06em; color: #f3ead8; background: #3a2c18; padding: 4px 11px; border-radius: 3px; border: 1.5px solid #241c14;">HANDMADE WORLD</span>
+          <span style="font: 700 11px 'Space Mono', monospace; letter-spacing: 0.06em; color: #241c14; background: #e0b44e; padding: 4px 11px; border-radius: 3px; border: 1.5px solid #241c14;">v0.1 &middot; SEED</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 300px; background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 24px 24px 22px; box-shadow: 6px 9px 0 rgba(0,0,0,0.4);">
+        <div style="font: 700 34px/0.98 'Shantell Sans', cursive; color: #e0b44e;">Made by hand.<br>Played by mind.</div>
+        <div style="height: 1px; background: #3a2f22; margin: 18px 0;"></div>
+        <div style="font: 400 13px/1.6 'Nunito Sans', sans-serif; color: #b3a488;">Fundament-Kit: 72 Hex-Tiles aus <b style="color:#d8c398;">GLB_hexagon_kit</b>, cel/clay-reskinnt. Materialien aus der KFB-Library + ambientCG / Poly Haven (CC0), per GitHub-raw geladen.</div>
+        <div style="margin-top: 14px; font: 400 12px/1.55 'Space Mono', monospace; color: #8f8168;">Karton &rarr; Register &rarr; Reise.<br>Kein Casino. Kein Gewinn-Ziel.<br>Nur gute Geschichten.</div>
+      </div>
+    </div>
+
+    <div style="font: 400 13px/1.6 'Nunito Sans', sans-serif; color: #8f8168; max-width: 900px; margin: 4px 4px 34px;">So liest du das Board: jedes <b style="color:#c9b98f;">Biome</b> ist ein Distrikt (später aus Korpus-Tags emergierend). Die drei Kacheln zeigen dasselbe Feld in seinen drei <b style="color:#c9b98f;">vertikalen Registern</b> — <span style="color:#e0b44e;">UP</span> (überhöht), MID (Heimat), <span style="color:#8fb0c4;">DOWN</span> (Untergrund). Ränder docken über <b style="color:#c9b98f;">Anschlusskacheln</b> (Weg / Fluss / Exit). Der Daten-Contract unten (<a href="zone-index.json">zone-index.json</a>) hält das maschinenlesbar fest.</div>
+
+    <!-- ============ SECTION 1 · SYSTEM ============ -->
+    <div data-screen-label="System / Legende" style="margin-bottom: 16px;">
+      <div style="display: inline-block; background: #d8c096; color: #241c14; font: 700 13px 'Space Mono', monospace; letter-spacing: 0.18em; padding: 7px 16px; border: 2px solid #241c14; border-radius: 2px; transform: rotate(-0.8deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.4);">01 &middot; DAS SYSTEM</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 46px;">
+
+      <!-- Hex = D6 -->
+      <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 22px 22px 26px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+        <div style="font: 700 20px 'Shantell Sans', cursive; color: #f3ead8;">Hex = D6</div>
+        <div style="font: 400 13px/1.55 'Nunito Sans'; color: #a99a7e; margin: 6px 0 18px;">Sechs Seiten, sechs Funktionen. Das Cube-Pet rollt über die Kanten — die obenliegende Seite ist der diegetische Story-Roll.</div>
+        <div style="position: relative; width: 220px; height: 196px; margin: 0 auto;">
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #b5895a url('tex/CardboardSet001.png') center/cover; box-shadow: inset 0 -18px 30px rgba(0,0,0,0.34), inset 0 12px 20px rgba(255,255,255,0.12);"></div>
+          <div style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); font: 700 11px 'Space Mono'; color: #241c14; background: #ecdfc2; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">SCENE ×3</div>
+          <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font: 700 11px 'Space Mono'; color: #f3ead8; background: #3a2c18; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">BACK / ADMIN</div>
+          <div style="position: absolute; top: 46%; left: 4px; transform: translateY(-50%); font: 700 11px 'Space Mono'; color: #241c14; background: #d8a94e; padding: 2px 6px; border: 1.4px solid #241c14; border-radius: 2px;">ACTOR</div>
+          <div style="position: absolute; top: 46%; right: 4px; transform: translateY(-50%); font: 700 11px 'Space Mono'; color: #241c14; background: #d8a94e; padding: 2px 6px; border: 1.4px solid #241c14; border-radius: 2px;">QUEST</div>
+        </div>
+      </div>
+
+      <!-- Vertikale Register -->
+      <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 22px 22px 26px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+        <div style="font: 700 20px 'Shantell Sans', cursive; color: #f3ead8;">Vertikale Register</div>
+        <div style="font: 400 13px/1.55 'Nunito Sans'; color: #a99a7e; margin: 6px 0 18px;">Der Aufzug wechselt die Ebene. Material, Farbe und Ton kippen mit — die Geschichte bleibt, der Register-Ton nicht.</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 12px; background: linear-gradient(90deg, #4a5a2e, #6f7a3e); border: 2px solid #241c14; border-radius: 3px; padding: 12px 15px;">
+            <div style="font: 700 22px 'Shantell Sans'; color: #f3ead8; width: 60px;">UP ↑</div>
+            <div style="font: 600 13px 'Nunito Sans'; color: #eef0d8;">utopisch / satirisch überhöht — heller, wärmer</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; background: linear-gradient(90deg, #6a4e2c, #b5895a); border: 2px solid #241c14; border-radius: 3px; padding: 12px 15px;">
+            <div style="font: 700 22px 'Shantell Sans'; color: #241c14; width: 60px;">MID</div>
+            <div style="font: 600 13px 'Nunito Sans'; color: #2a2013;">Heimat-Register des Biomes — neutral</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; background: linear-gradient(90deg, #1c1a20, #3a3540); border: 2px solid #241c14; border-radius: 3px; padding: 12px 15px;">
+            <div style="font: 700 22px 'Shantell Sans'; color: #8fb0c4; width: 60px;">DN ↓</div>
+            <div style="font: 600 13px 'Nunito Sans'; color: #c8d2da;">dunkler / tragisch / Untergrund — kühl, gedämpft</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Material = Funktion -->
+      <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 22px 22px 26px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+        <div style="font: 700 20px 'Shantell Sans', cursive; color: #f3ead8;">Material = Funktion</div>
+        <div style="font: 400 13px/1.55 'Nunito Sans'; color: #a99a7e; margin: 6px 0 16px;">McClouds Masking: das Abstraktions-Level trägt die narrative Rolle.</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="border-left: 4px solid #e0b44e; padding-left: 12px;">
+            <div style="font: 700 14px 'Nunito Sans'; color: #f3ead8;">Vordergrund &middot; Clay-Pets</div>
+            <div style="font: 400 12.5px/1.5 'Nunito Sans'; color: #9f9077;">ikonisch-einfach → „du". Selbst-Projektion.</div>
+          </div>
+          <div style="border-left: 4px solid #8f9e56; padding-left: 12px;">
+            <div style="font: 700 14px 'Nunito Sans'; color: #f3ead8;">Mid + BG &middot; Papertoy / Lozzi</div>
+            <div style="font: 400 12.5px/1.5 'Nunito Sans'; color: #9f9077;">detailreich → die beobachtete Bizarro-Welt.</div>
+          </div>
+          <div style="border-left: 4px solid #8fb0c4; padding-left: 12px;">
+            <div style="font: 700 14px 'Nunito Sans'; color: #f3ead8;">Vereint durch</div>
+            <div style="font: 400 12.5px/1.5 'Nunito Sans'; color: #9f9077;">weicher Contact-Shadow + Rim-Light + Tilt-Shift. <b style="color:#c9b98f;">Keine globale Outline auf 3D</b> — Ink nur auf Karten, UI &amp; Risskanten.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 2 · BIOMES ============ -->
+    <div data-screen-label="Biomes" style="margin-bottom: 18px;">
+      <div style="display: inline-block; background: #d8c096; color: #241c14; font: 700 13px 'Space Mono', monospace; letter-spacing: 0.18em; padding: 7px 16px; border: 2px solid #241c14; border-radius: 2px; transform: rotate(0.7deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.4);">02 &middot; DIE BIOMES</div>
+      <span style="font: 400 13px 'Nunito Sans'; color: #8f8168; margin-left: 14px;">6 Distrikte × 3 Register — echte Material-Fills</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 22px; margin-bottom: 46px;">
+
+      <!-- BIOME 1 · Wellpappe-Wildnis -->
+      <div data-screen-label="Biome Wellpappe-Wildnis" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #b5895a;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Wellpappe-Wildnis</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Abenteuer</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Survival-Bastelei</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Ton-Ebenen · Holzsteg-Werft</b> &middot; Docks: Weg, Fluss</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(-0.6deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #b5895a;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Hört her, Bagage — hier wächst alles aus'm Karton, sogar die Bäume knistern. Nimm 'ne Schere, keinen Kompass.</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="überwuchert" label="Wellpappe-Wildnis" sub="Waldboden · Karton-Dschungel" base="#6f7a3e" slab="#444d24" tint="#6f7a3e" tex="tex/forest_ground_05.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="neugierig" label="Wellpappe-Wildnis" sub="Wellpappe · korrugiert" base="#b5895a" slab="#7d5a34" tint="#b5895a" tex="tex/CardboardSet001.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="gepresst / grau" label="Wellpappe-Wildnis" sub="Presspappe · grau" base="#8a8378" slab="#565049" tint="#8a8378" tex="tex/Chipboard007.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+
+      <!-- BIOME 2 · Zeitungsstadt -->
+      <div data-screen-label="Biome Zeitungsstadt" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #cbb98f;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Zeitungsstadt</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Satire</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Gossip</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Noir-Nachricht</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Stein-Katakomben · Wellpappe-Wildnis</b> &middot; Docks: Weg, Exit</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(0.5deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #cbb98f;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Frisch gedruckt, halb gelogen! Jede Schlagzeile 'ne Tür, jede Ente 'ne Abkürzung. Glaub kein Wort — lies trotzdem weiter.</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="reine Schlagzeile" label="Zeitungsstadt" sub="Papier · blankweiß" base="#e7e0d2" slab="#a89d82" tint="#e7e0d2" tex="tex/Paper002.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="aufgeregt / zynisch" label="Zeitungsstadt" sub="Zeitungspapier · zerknittert" base="#cbb98f" slab="#8f7f58" tint="#cbb98f" tex="tex/Paper006.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="durchgesickert" label="Zeitungsstadt" sub="durchweicht · fleckig" base="#6d6455" slab="#433c32" tint="#6d6455" tex="tex/Leaking018A.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+
+      <!-- BIOME 3 · Filz-Sumpf -->
+      <div data-screen-label="Biome Filz-Sumpf" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #5f7355;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Filz-Sumpf</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Märchen</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Melancholie</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Traum</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Ton-Ebenen · Stein-Katakomben</b> &middot; Docks: Fluss, Exit</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(-0.5deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #5f7355;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Pssst … hier ist alles weich, sogar die Wahrheit. Wer zu lange träumt, den behält der Filz. Kuschlig, ne?</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="traumseidig" label="Filz-Sumpf" sub="Satin · traumseidig" base="#cdb8c6" slab="#94818c" tint="#cdb8c6" tex="tex/crepe_satin.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="verträumt / traurig" label="Filz-Sumpf" sub="Filz · moosgrün" base="#5f7355" slab="#3d4a37" tint="#5f7355" tex="tex/Carpet016.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="vom Filz verschluckt" label="Filz-Sumpf" sub="Stoff · stumpf dunkel" base="#4a4640" slab="#2b2925" tint="#4a4640" tex="tex/Fabric030.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+
+      <!-- BIOME 4 · Ton-Ebenen -->
+      <div data-screen-label="Biome Ton-Ebenen" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #b25a38;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Ton-Ebenen</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Mythos</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Western</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Wüste</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Wellpappe-Wildnis · Filz-Sumpf</b> &middot; Docks: Weg, Fluss</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(0.6deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #b25a38;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Alles handgeknetet, Freunde — inklusive der Helden. Ein Daumendruck und der Held kriegt 'ne neue Nase. Genau so soll's sein.</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="glasiert / heroisch" label="Ton-Ebenen" sub="Terrakotta · glasiert" base="#c96a3e" slab="#8a4423" tint="#c96a3e" tex="tex/GlazedTerracotta001.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="staubig / episch" label="Ton-Ebenen" sub="Ton · fingergeknetet" base="#b25a38" slab="#7a3c24" tint="#b25a38" tex="tex/Clay002.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="rissig / verlassen" label="Ton-Ebenen" sub="Lehmboden · rissig" base="#6e564a" slab="#453630" tint="#6e564a" tex="tex/clay_floor_001.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+
+      <!-- BIOME 5 · Holzsteg-Werft -->
+      <div data-screen-label="Biome Holzsteg-Werft" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #3f6f86;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Holzsteg-Werft</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Seefahrt</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Handwerk</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Piraten</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Wellpappe-Wildnis · Stein-Katakomben</b> &middot; Docks: Weg, Fluss, Exit</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(-0.4deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #3f6f86;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Angenagelt und blau gestrichen! Hier legen die Geschichten an. Vorsicht, der Steg wackelt — das ist Absicht, kein Baufehler.</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="frisch gestrichen" label="Holzsteg-Werft" sub="Lack · türkis frisch" base="#4f7f86" slab="#315257" tint="#4f7f86" tex="tex/PaintedWood009C.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="robust / salzig" label="Holzsteg-Werft" sub="Bootslack · blau" base="#3f6f86" slab="#274a5a" tint="#3f6f86" tex="tex/PaintedWood007B.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="verrostet / industriell" label="Holzsteg-Werft" sub="Blech · verrostet" base="#6b4a38" slab="#422d20" tint="#6b4a38" tex="tex/rusty_metal_04.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+
+      <!-- BIOME 6 · Stein-Katakomben -->
+      <div data-screen-label="Biome Stein-Katakomben" style="background: #201a12; border: 2px solid #3a2f22; border-radius: 4px; padding: 26px 28px; box-shadow: 6px 8px 0 rgba(0,0,0,0.35); border-left: 6px solid #8f8a80;">
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;">
+          <div style="flex: 1 1 260px;">
+            <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8;">Stein-Katakomben</div>
+            <div style="display: flex; gap: 7px; flex-wrap: wrap; margin: 10px 0 8px;">
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Horror</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Mystery</span>
+              <span style="font: 700 11px 'Space Mono'; color: #d8c398; border: 1.4px solid #6a5a3a; padding: 3px 9px; border-radius: 20px;">Untergrund</span>
+            </div>
+            <div style="font: 400 12.5px 'Nunito Sans'; color: #8f8168;">Grenzt an <b style="color:#b3a488;">Zeitungsstadt · Filz-Sumpf · Holzsteg-Werft</b> &middot; Docks: Exit, Weg</div>
+          </div>
+          <sc-if value="{{ showPatter }}" hint-placeholder-val="{{ true }}"><div style="flex: 1 1 300px; max-width: 420px; position: relative; background: #e8dcbe; border: 2px solid #241c14; border-radius: 3px; padding: 14px 16px 14px 44px; transform: rotate(0.5deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.3);"><div style="position: absolute; top: -10px; left: 14px; font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 7px; border: 1.4px solid #241c14; border-radius: 2px;">FB</div><div style="position: absolute; left: 15px; top: 15px; font: 700 22px 'Shantell Sans'; color: #8f8a80;">&ldquo;</div><div style="font: 600 14px/1.45 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">Runter, immer weiter runter. Hier unten flüstert der Marmor Sachen, die er oben nie zugeben würde. Taschenlampe? Gibt's nicht.</div></div></sc-if>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;">
+          <dc-import name="HexTile" level="up" mood="marmorner Tempel" label="Stein-Katakomben" sub="Marmor · hell" base="#cfc9be" slab="#9a9488" tint="#cfc9be" tex="tex/marble_cliff_03.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="mid" mood="unheimlich" label="Stein-Katakomben" sub="Fels · grau" base="#8f8a80" slab="#5c5850" tint="#8f8a80" tex="tex/marble_rock_02.png" hint-size="156px,220px"></dc-import>
+          <dc-import name="HexTile" level="down" mood="flüsternder Fels" label="Stein-Katakomben" sub="Höhlenwand · dunkel" base="#4d4740" slab="#2c2823" tint="#4d4740" tex="tex/rock_wall_16.png" hint-size="156px,220px"></dc-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 3 · ANSCHLUSS-KIT ============ -->
+    <div data-screen-label="Anschluss-Kit" style="margin-bottom: 18px;">
+      <div style="display: inline-block; background: #d8c096; color: #241c14; font: 700 13px 'Space Mono', monospace; letter-spacing: 0.18em; padding: 7px 16px; border: 2px solid #241c14; border-radius: 2px; transform: rotate(-0.6deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.4);">03 &middot; ANSCHLUSS-KIT</div>
+      <span style="font: 400 13px 'Nunito Sans'; color: #8f8168; margin-left: 14px;">Ränder verbinden — der Grid wandert &amp; erweitert sich mit</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; margin-bottom: 46px; align-items: stretch;">
+      <!-- connectors -->
+      <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 26px 24px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+
+          <!-- Weg -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 168px;">
+            <div style="position: relative; width: 156px; height: 138px;">
+              <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+              <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #7d5a34;"></div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #b5895a url('tex/CardboardSet001.png') center/cover; overflow: hidden;">
+                <div style="position: absolute; top: 50%; left: -8%; width: 116%; height: 38px; transform: translateY(-50%); background: #cbb48a url('tex/patterned_paving_02.png') center/cover; border-top: 2px dashed #241c14; border-bottom: 2px dashed #241c14; box-shadow: 0 3px 6px rgba(0,0,0,0.3);"></div>
+              </div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10); pointer-events: none;"></div>
+            </div>
+            <div style="margin-top: 14px; text-align: center;">
+              <div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Weg / Pfad</div>
+              <div style="font: 400 11px/1.4 'Space Mono'; color: #b3a488; margin-top: 3px;">biome ↔ biome<br>muss an Weg-Kante andocken</div>
+            </div>
+          </div>
+
+          <!-- Fluss -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 168px;">
+            <div style="position: relative; width: 156px; height: 138px;">
+              <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+              <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #3d4a37;"></div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #5f7355 url('tex/Carpet016.png') center/cover; overflow: hidden;">
+                <div style="position: absolute; top: 50%; left: -12%; width: 124%; height: 34px; transform: translateY(-50%) rotate(-11deg); background: linear-gradient(180deg, #6ea6bc, #3f7f97); border-top: 2px solid #2a5866; border-bottom: 2px solid #2a5866; box-shadow: 0 3px 7px rgba(0,0,0,0.3);"><div style="position: absolute; top: 50%; left: 0; right: 0; height: 3px; transform: translateY(-50%); border-top: 2px dashed rgba(230,245,250,0.7);"></div></div>
+              </div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10); pointer-events: none;"></div>
+            </div>
+            <div style="margin-top: 14px; text-align: center;">
+              <div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Fluss / Wasser</div>
+              <div style="font: 400 11px/1.4 'Space Mono'; color: #b3a488; margin-top: 3px;">durchziehend, kurvt<br>Ein-/Auslass fluchten</div>
+            </div>
+          </div>
+
+          <!-- Exit -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 168px;">
+            <div style="position: relative; width: 156px; height: 138px;">
+              <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+              <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #5c5850;"></div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #8f8a80 url('tex/marble_rock_02.png') center/cover; overflow: hidden;">
+                <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 60px; height: 60px; background: #211d17; border: 3px solid #6b6255; border-radius: 9px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; box-shadow: inset 0 0 14px rgba(0,0,0,0.7), 0 2px 5px rgba(0,0,0,0.4);"><div style="color: #e0b44e; font: 700 17px 'Space Mono'; line-height: 0.9;">↑</div><div style="color: #8fb0c4; font: 700 17px 'Space Mono'; line-height: 0.9;">↓</div></div>
+              </div>
+              <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10); pointer-events: none;"></div>
+            </div>
+            <div style="margin-top: 14px; text-align: center;">
+              <div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Exit / Aufzug</div>
+              <div style="font: 400 11px/1.4 'Space Mono'; color: #b3a488; margin-top: 3px;">ebene ↕ ebene<br>löst Level-Shift aus</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- honeycomb cluster -->
+      <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 22px 24px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+        <div style="font: 700 18px 'Shantell Sans'; color: #f3ead8;">Player-Centered Infinite Grid</div>
+        <div style="font: 400 12.5px/1.5 'Nunito Sans'; color: #9f9077; margin: 5px 0 8px;">Zentrum + 6 Nachbarn vorgeladen. Der Grid wandert mit dem Spieler &amp; erweitert sich entlang der Anschlusskacheln.</div>
+        <div style="position: relative; width: 300px; height: 300px; margin: 4px auto 0;">
+          <div style="position: absolute; left: 102px; top: 14px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #cbb98f url('tex/Paper006.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+          <div style="position: absolute; left: 30px; top: 56px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #b25a38 url('tex/Clay002.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+          <div style="position: absolute; left: 174px; top: 56px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #3f6f86 url('tex/PaintedWood007B.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+          <div style="position: absolute; left: 102px; top: 98px; width: 96px; height: 84px;">
+            <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #b5895a url('tex/CardboardSet001.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div>
+            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 3px 8px; border: 1.5px solid #241c14; border-radius: 2px; box-shadow: 1px 1px 0 #241c14;">★ DU</div>
+          </div>
+          <div style="position: absolute; left: 30px; top: 140px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #5f7355 url('tex/Carpet016.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+          <div style="position: absolute; left: 174px; top: 140px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #8f8a80 url('tex/marble_rock_02.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+          <div style="position: absolute; left: 102px; top: 182px; width: 96px; height: 84px;"><div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #6f7a3e url('tex/forest_ground_05.png') center/cover; box-shadow: inset 0 -10px 16px rgba(0,0,0,0.3);"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 4 · PAPERTOY-PROPS ============ -->
+    <div data-screen-label="Papertoy-Props" style="margin-bottom: 18px;">
+      <div style="display: inline-block; background: #d8c096; color: #241c14; font: 700 13px 'Space Mono', monospace; letter-spacing: 0.18em; padding: 7px 16px; border: 2px solid #241c14; border-radius: 2px; transform: rotate(0.7deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.4);">04 &middot; PAPERTOY-PROPS</div>
+      <span style="font: 400 13px 'Nunito Sans'; color: #8f8168; margin-left: 14px;">Gefaltete Kanten, sichtbare Papierstärke — aus GLB_hexagon_kit</span>
+    </div>
+
+    <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 30px 24px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35); display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; margin-bottom: 46px;">
+
+      <!-- HAUS -->
+      <div style="display: flex; flex-direction: column; align-items: center; width: 172px;">
+        <div style="position: relative; width: 156px; height: 138px;">
+          <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #444d24;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #6f7a3e url('tex/forest_ground_05.png') center/cover; box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10);"></div>
+          <div style="position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); width: 70px;">
+            <div style="width: 0; height: 0; border-left: 38px solid transparent; border-right: 38px solid transparent; border-bottom: 24px solid #3f6f86; margin: 0 auto; filter: drop-shadow(0 -1px 0 #274a5a);"></div>
+            <div style="width: 60px; height: 40px; margin: -1px auto 0; background: #c9a06a url('tex/Cardboard001.png') center/cover; border: 2px solid #241c14; border-top: 0; position: relative; box-shadow: 2px 3px 0 rgba(0,0,0,0.35);">
+              <div style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 15px; height: 22px; background: #4a3626; border: 1.5px solid #241c14; border-bottom: 0;"></div>
+              <div style="position: absolute; left: 8px; top: 7px; width: 11px; height: 11px; background: #ecdcae; border: 1.5px solid #241c14;"></div>
+              <div style="position: absolute; right: 8px; top: 7px; width: 11px; height: 11px; background: #ecdcae; border: 1.5px solid #241c14;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; text-align: center;"><div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Haus</div><div style="font: 400 10.5px 'Space Mono'; color: #b3a488; margin-top: 3px;">building-house.glb</div></div>
+      </div>
+
+      <!-- WINDMÜHLE -->
+      <div style="display: flex; flex-direction: column; align-items: center; width: 172px;">
+        <div style="position: relative; width: 156px; height: 138px;">
+          <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #444d24;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #6f7a3e url('tex/forest_ground_05.png') center/cover; box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10);"></div>
+          <div style="position: absolute; left: 50%; top: 42%; transform: translate(-50%,-50%); width: 60px; height: 92px;">
+            <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 44px; height: 50px; background: #b98a54 url('tex/CardboardSet001.png') center/cover; border: 2px solid #241c14; clip-path: polygon(18% 0,82% 0,100% 100%,0 100%); box-shadow: 2px 3px 0 rgba(0,0,0,0.35);"></div>
+            <div style="position: absolute; top: 4px; left: 50%; transform: translate(-50%,-50%) rotate(22deg); width: 58px; height: 58px;">
+              <div style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 9px; height: 58px; background: #4f7f86 url('tex/PaintedWood009C.png') center/cover; border: 1.5px solid #241c14;"></div>
+              <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 58px; height: 9px; background: #4f7f86 url('tex/PaintedWood009C.png') center/cover; border: 1.5px solid #241c14;"></div>
+              <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 13px; height: 13px; border-radius: 50%; background: #ecdcae; border: 1.5px solid #241c14;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; text-align: center;"><div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Windmühle</div><div style="font: 400 10.5px 'Space Mono'; color: #b3a488; margin-top: 3px;">building-windmill.glb</div></div>
+      </div>
+
+      <!-- BRÜCKE -->
+      <div style="display: flex; flex-direction: column; align-items: center; width: 172px;">
+        <div style="position: relative; width: 156px; height: 138px;">
+          <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #3d4a37;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #5f7355 url('tex/Carpet016.png') center/cover; box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10);"></div>
+          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 96px; height: 44px;">
+            <div style="position: absolute; left: 0; right: 0; top: 8px; height: 22px; background: #8a6a3e url('tex/Planks039.png') center/cover; border: 2px solid #241c14; border-radius: 46px 46px 6px 6px; box-shadow: 2px 3px 0 rgba(0,0,0,0.3);"></div>
+            <div style="position: absolute; left: 3px; right: 3px; top: 0; height: 16px; border: 2px solid #241c14; border-bottom: 0; border-radius: 44px 44px 0 0;"></div>
+            <div style="position: absolute; left: 7px; bottom: 0; width: 8px; height: 15px; background: #5c4326; border: 1.5px solid #241c14;"></div>
+            <div style="position: absolute; right: 7px; bottom: 0; width: 8px; height: 15px; background: #5c4326; border: 1.5px solid #241c14;"></div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; text-align: center;"><div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Brücke</div><div style="font: 400 10.5px 'Space Mono'; color: #b3a488; margin-top: 3px;">bridge.glb · river-dock</div></div>
+      </div>
+
+      <!-- BURG -->
+      <div style="display: flex; flex-direction: column; align-items: center; width: 172px;">
+        <div style="position: relative; width: 156px; height: 138px;">
+          <div style="position: absolute; left: 14px; right: 14px; bottom: -6px; height: 24px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(16px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #5c5850;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #8f8a80 url('tex/marble_rock_02.png') center/cover; box-shadow: inset 0 -20px 34px rgba(0,0,0,0.34), inset 0 12px 22px rgba(255,255,255,0.10);"></div>
+          <div style="position: absolute; left: 50%; top: 42%; transform: translate(-50%,-50%); width: 82px;">
+            <div style="display: flex; justify-content: center; gap: 6px; margin-bottom: -2px;">
+              <div style="width: 12px; height: 12px; background: #cfc9be url('tex/whitewashed_brick.png') center/cover; border: 1.5px solid #241c14;"></div>
+              <div style="width: 12px; height: 12px; background: #cfc9be url('tex/whitewashed_brick.png') center/cover; border: 1.5px solid #241c14;"></div>
+              <div style="width: 12px; height: 12px; background: #cfc9be url('tex/whitewashed_brick.png') center/cover; border: 1.5px solid #241c14;"></div>
+              <div style="width: 12px; height: 12px; background: #cfc9be url('tex/whitewashed_brick.png') center/cover; border: 1.5px solid #241c14;"></div>
+            </div>
+            <div style="width: 76px; height: 40px; margin: 0 auto; background: #cfc9be url('tex/whitewashed_brick.png') center/cover; border: 2px solid #241c14; position: relative; box-shadow: 2px 3px 0 rgba(0,0,0,0.35);">
+              <div style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 20px; height: 24px; background: #4a3320 url('tex/Wood089.png') center/cover; border: 1.5px solid #241c14; border-bottom: 0; border-radius: 10px 10px 0 0;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; text-align: center;"><div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Burg</div><div style="font: 400 10.5px 'Space Mono'; color: #b3a488; margin-top: 3px;">building-castle.glb</div></div>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 5 · DATEN-CONTRACT ============ -->
+    <sc-if value="{{ showData }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Daten-Contract">
+      <div style="margin-bottom: 18px;">
+        <div style="display: inline-block; background: #d8c096; color: #241c14; font: 700 13px 'Space Mono', monospace; letter-spacing: 0.18em; padding: 7px 16px; border: 2px solid #241c14; border-radius: 2px; transform: rotate(-0.6deg); box-shadow: 3px 4px 0 rgba(0,0,0,0.4);">05 &middot; DATEN-CONTRACT</div>
+        <span style="font: 400 13px 'Nunito Sans'; color: #8f8168; margin-left: 14px;">was Fable / die Engine lädt &mdash; <a href="zone-index.json">zone-index.json</a></span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px;">
+        <div style="background: #14100a; border: 2px solid #3a2f22; border-radius: 3px; padding: 20px 22px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35); overflow: auto;">
+          <pre style="margin: 0; font: 400 12.5px/1.65 'Space Mono', monospace; color: #cbb98f; white-space: pre;"><span style="color:#6a6252;">// biome-Eintrag</span>
+{
+  <span style="color:#e0b44e;">"id"</span>: <span style="color:#8fb0c4;">"wellpappe_wildnis"</span>,
+  <span style="color:#e0b44e;">"genre"</span>: [<span style="color:#8fb0c4;">"Abenteuer"</span>, <span style="color:#8fb0c4;">"Survival-Bastelei"</span>],
+  <span style="color:#e0b44e;">"adjacency"</span>: [<span style="color:#8fb0c4;">"ton_ebenen"</span>, <span style="color:#8fb0c4;">"holzsteg_werft"</span>],
+  <span style="color:#e0b44e;">"docks"</span>: [<span style="color:#8fb0c4;">"path"</span>, <span style="color:#8fb0c4;">"river"</span>],
+  <span style="color:#e0b44e;">"patter"</span>: <span style="color:#8fb0c4;">"Hört her, Bagage …"</span>,
+  <span style="color:#e0b44e;">"levels"</span>: {
+    <span style="color:#e0b44e;">"up"</span>:   { <span style="color:#e0b44e;">"texture"</span>: <span style="color:#8fb0c4;">"forest_ground_05"</span>, <span style="color:#e0b44e;">"mood"</span>: <span style="color:#8fb0c4;">"überwuchert"</span> },
+    <span style="color:#e0b44e;">"mid"</span>:  { <span style="color:#e0b44e;">"texture"</span>: <span style="color:#8fb0c4;">"CardboardSet001"</span>, <span style="color:#e0b44e;">"mood"</span>: <span style="color:#8fb0c4;">"neugierig"</span> },
+    <span style="color:#e0b44e;">"down"</span>: { <span style="color:#e0b44e;">"texture"</span>: <span style="color:#8fb0c4;">"Chipboard007"</span>, <span style="color:#e0b44e;">"mood"</span>: <span style="color:#8fb0c4;">"gepresst"</span> }
+  }
+}
+
+<span style="color:#6a6252;">// connector-Eintrag</span>
+{ <span style="color:#e0b44e;">"type"</span>: <span style="color:#8fb0c4;">"exit"</span>, <span style="color:#e0b44e;">"connects"</span>: <span style="color:#8fb0c4;">"ebene ↔ ebene"</span>, <span style="color:#e0b44e;">"anim"</span>: <span style="color:#8fb0c4;">"elevator"</span> }</pre>
+        </div>
+        <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 3px; padding: 22px 22px; box-shadow: 5px 7px 0 rgba(0,0,0,0.35);">
+          <div style="font: 700 16px 'Shantell Sans'; color: #f3ead8; margin-bottom: 12px;">three.js-Zuordnung</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font: 400 12.5px/1.4 'Nunito Sans'; color: #b3a488;">
+            <div><b style="color:#d8c398; font-family:'Space Mono'; font-size:11px;">diffuse</b> &rarr; <span style="color:#8f8168;">map (sRGB)</span></div>
+            <div><b style="color:#d8c398; font-family:'Space Mono'; font-size:11px;">normal</b> &rarr; <span style="color:#8f8168;">normalMap (OpenGL, linear)</span></div>
+            <div><b style="color:#d8c398; font-family:'Space Mono'; font-size:11px;">roughness</b> &rarr; <span style="color:#8f8168;">roughnessMap (linear)</span></div>
+            <div><b style="color:#d8c398; font-family:'Space Mono'; font-size:11px;">ao</b> &rarr; <span style="color:#8f8168;">aoMap (linear)</span></div>
+          </div>
+          <div style="height: 1px; background: #3a2f22; margin: 16px 0;"></div>
+          <div style="font: 400 12px/1.55 'Nunito Sans'; color: #9f9077;">Wrap <b style="color:#c9b98f;">repeat</b>, Tiling <b style="color:#c9b98f;">2–4×</b>. Look-Toggle <b style="color:#c9b98f;">clay</b> (Default) / <b style="color:#c9b98f;">cel</b>. Separation über weichen Contact-Shadow + Rim-Light — keine globale Outline auf 3D. Alle Maps per GitHub-raw, CORS <b style="color:#c9b98f;">*</b>.</div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- ============ FOOTER ============ -->
+    <div style="margin-top: 40px; padding-top: 22px; border-top: 1px dashed #3a2f22; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+      <div style="font: 700 12px 'Space Mono', monospace; color: #6a6252; letter-spacing: 0.05em;">COLD-READ = SATIRE · ANTI-CASINO · CLOSURE BLEIBT BEIM USER</div>
+      <div style="font: 700 15px 'Shantell Sans'; color: #b5895a; transform: rotate(-1deg);">KAYFABIZARRO™ · Handmade World, Endless Stories</div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;grain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Board&quot;},&quot;showPatter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Board&quot;},&quot;showData&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Board&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    return {
+      grain: p.grain ?? true,
+      showPatter: p.showPatter ?? true,
+      showData: p.showData ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

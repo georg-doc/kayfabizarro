@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.game-asset-package.v0",
+  "packageId": "pilot-01-lorekeeper-sedan",
+  "packageVersion": "0.1.0-candidate",
+  "created": "2026-09-18",
+  "status": "PACKAGE_METADATA_IMPLEMENTED_BINARY_DERIVATIVE_BLOCKED",
+  "pilotLocked": true,
+  "canonicalSourcePolicy": "reference-only-no-source-copy",
+  "components": {
+    "resident": "resident/lorekeeper/RESIDENT_BINDING.json",
+    "vehicle": "vehicle/car-sedan/VEHICLE_BINDING.json",
+    "gameplayEvents": "events/GAMEPLAY_EVENTS.json",
+    "vfx": "events/VFX_EVENT_MAP.json",
+    "sfx": "events/SFX_EVENT_MAP.json"
+  },
+  "manifests": {
+    "source": "manifests/SOURCE_MANIFEST.json",
+    "dependencies": "manifests/DEPENDENCY_MANIFEST.json",
+    "provenance": "manifests/PROVENANCE.json"
+  },
+  "qa": {
+    "static": "qa/STATIC_QA.json",
+    "consumerPlan": "qa/CONSUMER_TEST_PLAN.md"
+  },
+  "owners": {
+    "canonicalAssets": "GitHub Asset Registry / Librarian source identity",
+    "residentRigAnimation": "ToolBox / Animation consumer owners",
+    "worldModesPersistence": "Travel",
+    "vehiclePhysics": "Production Race / selected Slice-04-derived DRIVE receiver",
+    "feelPresentationReference": "BOX1 v0.8 / current Box Stop evidence",
+    "deformer": "KFB Cartoon Vehicle Deformer",
+    "audio": "existing KFB audio owner"
+  },
+  "acceptance": {
+    "sourceReview": "PASS",
+    "packageMetadata": "CREATED",
+    "binaryDerivedAsset": "BLOCKED_TOOL_UNAVAILABLE",
+    "structuralQA": "PARTIAL_PASS",
+    "consumerTest": "NOT_RUN",
+    "humanAcceptance": "PENDING"
+  }
+}

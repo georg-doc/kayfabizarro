@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{color-scheme:light;--bg:#e8e2d5;--panel:#fffaf0;--ink:#1e1b17;--muted:#70695e;--line:#cfc5b4;--accent:#a03b2b;--accent2:#356b58;--warn:#9a6118;--run:#2f5f7a;--chip:#eee6d7;--field:#f6f0e4;--shadow:2px 3px 0 rgba(68,55,39,.12);--rule:rgba(82,65,44,.045)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0f0e0c;--panel:#191714;--ink:#f3eddf;--muted:#aaa093;--line:#38332c;--accent:#e46d52;--accent2:#79b49c;--warn:#d8a24c;--run:#8fb8cf;--chip:#25211c;--field:#12100e;--shadow:2px 3px 0 rgba(0,0,0,.38);--rule:rgba(255,255,255,.025)}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font:13px/1.45 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--accent)}a:hover{color:var(--ink)}
+button,input,textarea{font:inherit}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+</style>
+<script src="hub-recovery/embedded-registry-2026-09-25.js"></script>
+</helmet>
+<div style="min-height:100vh">
+<div ref="{{ rootRef }}" style="max-width:1320px;margin:0 auto;padding:12px 14px 56px;display:flex;flex-direction:column;gap:10px">
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px">
+    <div style="font-size:20px;font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap">KFB Hub</div>
+    <nav style="display:flex;flex-wrap:wrap;gap:2px;padding:2px;background:var(--panel);border:1px solid var(--line);border-radius:3px;overflow-x:auto;max-width:100%">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <a href="{{ t.href }}" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:5px;min-height:30px;padding:0 10px;border-radius:2px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}<sc-if value="{{ t.hasCount }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;padding:1px 6px;border-radius:9px;background:{{ t.countBg }};color:{{ t.countFg }}">{{ t.count }}</span></sc-if></a>
+      </sc-for>
+    </nav>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+      <a href="{{ launch.toolbox }}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);border-radius:3px;font-weight:800;font-size:13px;text-decoration:none;box-shadow:var(--shadow)">ToolBox ↗</a>
+      <a href="{{ launch.world }}" target="_blank" rel="noreferrer" title="{{ launch.worldTitle }}" style="display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border:1px solid var(--ink);background:var(--panel);color:var(--ink);border-radius:3px;font-weight:800;font-size:13px;text-decoration:none;box-shadow:var(--shadow)">WorldBuilder ↗</a>
+      <button onClick="{{ toggleTheme }}" style="min-height:34px;padding:0 10px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:3px;font-size:12px;font-weight:700;cursor:pointer">{{ themeLabel }}</button>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:7px 10px;background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);font-size:12px">
+    <span style="display:flex;align-items:center;gap:6px;font-weight:800"><span style="width:8px;height:8px;border-radius:50%;background:{{ fresh.dot }}"></span>{{ fresh.source }}</span>
+    <span title="{{ fresh.tech }}">{{ fresh.stamp }}<span style="color:var(--muted)"> · {{ fresh.ago }}</span></span>
+    <sc-if value="{{ fresh.stale }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:800;padding:2px 6px;border-radius:2px;background:var(--chip);color:var(--warn)">{{ fresh.staleText }}</span></sc-if>
+    <sc-if value="{{ fresh.manual }}" hint-placeholder-val="{{ false }}"><span title="{{ fresh.manualTitle }}" style="font-size:11px;padding:2px 6px;border-radius:2px;background:var(--chip);color:var(--muted)">manuell eingespielt · kein Auto-Sync</span></sc-if>
+    <div style="flex:1"></div>
+    <sc-if value="{{ changed.has }}" hint-placeholder-val="{{ false }}"><button onClick="{{ changed.onShow }}" style="min-height:28px;padding:0 9px;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:2px;font-size:12px;font-weight:800;cursor:pointer">● {{ changed.text }}</button></sc-if>
+    <sc-if value="{{ local.has }}" hint-placeholder-val="{{ false }}"><a href="#entscheidungen" style="font-size:12px;font-weight:700;color:var(--warn);text-decoration:none">{{ local.text }}</a></sc-if>
+    <span aria-live="polite" title="{{ reload.detail }}" style="font-weight:700;color:{{ reload.color }}">{{ reload.text }}</span>
+    <button onClick="{{ reload.onClick }}" disabled="{{ reload.busy }}" title="Prüft die Registry jetzt. Automatisch alle 75 s; das veröffentlicht nichts." style="min-height:30px;padding:0 12px;border:1px solid var(--ink);background:var(--panel);color:var(--ink);border-radius:2px;font-size:12px;font-weight:800;cursor:pointer">{{ reload.label }}</button>
+  </div>
+
+  <input ref="{{ searchRef }}" type="search" value="{{ q }}" onChange="{{ onQ }}" placeholder="Suchen in Arbeit, Briefings, Werkzeugen, Archiv, Inbox …   ( / )" style="width:100%;height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:3px;background:var(--field);color:var(--ink);font-size:14px;outline:none">
+
+  <div style="display:grid;gap:10px;align-items:start;grid-template-columns:{{ layout.cols }};grid-template-rows:{{ layout.rows }};grid-template-areas:{{ layout.areas }}">
+
+    <div style="grid-area:main;min-width:0;display:flex;flex-direction:column;gap:10px">
+
+      <sc-if value="{{ v.search }}" hint-placeholder-val="{{ false }}">
+        <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px"><h2 style="margin:0;font-size:14px">Treffer</h2><span style="font-size:12px;color:var(--muted)">{{ search.countText }}</span><button onClick="{{ search.onClear }}" style="margin-left:auto;min-height:28px;padding:0 9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:2px;font-size:12px;cursor:pointer">Suche leeren</button></div>
+          <sc-if value="{{ search.empty }}" hint-placeholder-val="{{ false }}"><div style="padding:10px 0;color:var(--muted)">Nichts gefunden. Historie liegt im Archiv; ältere Briefings auf GitHub.</div></sc-if>
+          <sc-for list="{{ search.results }}" as="r" hint-placeholder-count="3">
+            <div style="display:flex;gap:10px;align-items:flex-start;border-top:1px solid var(--line);padding:8px 0;flex-wrap:wrap">
+              <span style="flex:0 0 auto;font:800 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.05em;padding:1px 6px;border-radius:2px;background:var(--chip);color:var(--muted)">{{ r.kind }}</span>
+              <div style="flex:1 1 240px;min-width:0"><div style="font-weight:800">{{ r.title }}</div><div style="font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">{{ r.sub }}</div></div>
+              <sc-if value="{{ r.hasUrl }}" hint-placeholder-val="{{ false }}"><a href="{{ r.url }}" target="_blank" rel="noreferrer" style="font-size:12px;font-weight:800;text-decoration:none">Öffnen ↗</a></sc-if>
+              <sc-if value="{{ r.hasAct }}" hint-placeholder-val="{{ false }}"><button onClick="{{ r.onAct }}" style="min-height:28px;padding:0 9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:2px;font-size:12px;font-weight:700;cursor:pointer">{{ r.actLabel }}</button></sc-if>
+            </div>
+          </sc-for>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ v.heute }}" hint-placeholder-val="{{ true }}">
+        <sc-if value="{{ heute.changedOnly }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:7px 10px;border:1px solid var(--accent);border-radius:3px;background:var(--panel);font-size:12px">
+            <strong style="color:var(--accent)">Nur Geändertes</strong><span style="color:var(--muted)">{{ changed.text }}</span>
+            <div style="flex:1"></div>
+            <button onClick="{{ changed.onSeen }}" style="min-height:28px;padding:0 9px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);border-radius:2px;font-size:12px;font-weight:800;cursor:pointer">Als gesehen markieren</button>
+            <button onClick="{{ changed.onAll }}" style="min-height:28px;padding:0 9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:2px;font-size:12px;cursor:pointer">Alles zeigen</button>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;align-items:baseline;gap:8px;margin:2px 2px 0"><h2 style="margin:0;font-size:15px;letter-spacing:-.01em">Braucht dich</h2><span style="font-size:12px;color:var(--muted)">{{ heute.needsCount }}</span></div>
+        <sc-if value="{{ heute.needsEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding:10px 12px;border:1px dashed var(--line);border-radius:3px;color:var(--muted)">Gerade nichts zu entscheiden.</div></sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:8px">
+          <sc-for list="{{ heute.needs }}" as="it" hint-placeholder-count="3">
+            <article style="background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px;display:flex;flex-direction:column;gap:7px;min-width:0">
+              <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+                <span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.05em;padding:1px 6px;border-radius:2px;background:{{ it.stateBg }};color:{{ it.stateFg }}">{{ it.stateLabel }}</span>
+                <sc-if value="{{ it.changed }}" hint-placeholder-val="{{ false }}"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;color:var(--accent)">● NEU</span></sc-if>
+                <span style="margin-left:auto;font-size:11px;color:{{ it.freshColor }}">{{ it.freshLabel }}</span>
+              </div>
+              <div style="font-size:15px;font-weight:800;line-height:1.25;letter-spacing:-.01em">{{ it.title }}</div>
+              <sc-if value="{{ it.hasAction }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;text-wrap:pretty">{{ it.action }}</div></sc-if>
+              <div style="font-size:11px;color:var(--muted)">{{ it.meta }}</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <sc-for list="{{ it.links }}" as="lk" hint-placeholder-count="1"><a href="{{ lk.url }}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid {{ lk.bd }};background:{{ lk.bg }};color:{{ lk.fg }};font-weight:800;font-size:12px;text-decoration:none">{{ lk.label }}</a></sc-for>
+                <sc-if value="{{ it.canCopy }}" hint-placeholder-val="{{ false }}"><button onClick="{{ it.onCopy }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:800;font-size:12px;cursor:pointer">Startnachricht kopieren</button></sc-if>
+                <sc-if value="{{ it.hasQuestions }}" hint-placeholder-val="{{ false }}"><button onClick="{{ it.toggleQ }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:12px;cursor:pointer">{{ it.qLabel }}</button></sc-if>
+              </div>
+              <sc-if value="{{ it.qOpen }}" hint-placeholder-val="{{ false }}"><ol style="margin:0;padding-left:18px;font-size:12px;display:flex;flex-direction:column;gap:3px"><sc-for list="{{ it.questions }}" as="qq"><li>{{ qq }}</li></sc-for></ol></sc-if>
+              <div style="display:flex;flex-direction:column;gap:6px;border-top:1px dashed var(--line);padding-top:7px">
+                <div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">
+                  <sc-for list="{{ it.dec.buttons }}" as="b" hint-placeholder-count="5"><button onClick="{{ b.onClick }}" style="min-height:{{ ui.decH }};padding:0 9px;border-radius:2px;border:1px solid {{ b.bd }};background:{{ b.bg }};color:{{ b.fg }};font:800 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;cursor:pointer">{{ b.label }}</button></sc-for>
+                  <sc-if value="{{ it.dec.hasCurrent }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;color:var(--muted)"><strong style="color:{{ it.dec.curColor }}">{{ it.dec.curDecision }}</strong> {{ it.dec.curText }}</span></sc-if>
+                </div>
+                <sc-if value="{{ it.dec.editing }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <input value="{{ it.dec.note }}" onChange="{{ it.dec.onNote }}" onKeyDown="{{ it.dec.onKey }}" maxLength="160" placeholder="Eine kurze Notiz (optional)" style="flex:1 1 180px;min-width:0;min-height:{{ ui.btnH }};padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--field);color:var(--ink);font-size:12px;outline:none">
+                    <button onClick="{{ it.dec.onSave }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">{{ it.dec.saveLabel }}</button>
+                    <button onClick="{{ it.dec.onCancel }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;cursor:pointer">Abbrechen</button>
+                  </div>
+                </sc-if>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:8px;align-items:start">
+          <sc-for list="{{ heute.groups }}" as="g" hint-placeholder-count="2">
+            <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:9px 12px 4px;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;padding-bottom:6px"><span style="width:8px;height:8px;border-radius:50%;background:{{ g.dot }}"></span><h2 style="margin:0;font-size:14px">{{ g.title }}</h2><span style="font-size:12px;color:var(--muted)">{{ g.count }}</span></div>
+              <sc-if value="{{ g.empty }}" hint-placeholder-val="{{ false }}"><div style="border-top:1px solid var(--line);padding:8px 0;color:var(--muted)">{{ g.emptyText }}</div></sc-if>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="border-top:1px solid var(--line);padding:8px 0;display:flex;flex-direction:column;gap:6px">
+                  <button onClick="{{ it.toggle }}" style="text-align:left;background:none;border:0;padding:0;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:2px;min-width:0">
+                    <span style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.05em;padding:0 5px;border-radius:2px;background:{{ it.stateBg }};color:{{ it.stateFg }}">{{ it.stateLabel }}</span><sc-if value="{{ it.changed }}" hint-placeholder-val="{{ false }}"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;color:var(--accent)">● NEU</span></sc-if><span style="font-size:11px;color:{{ it.freshColor }}">{{ it.freshLabel }}</span></span>
+                    <span style="font-size:13px;font-weight:800;line-height:1.3">{{ it.title }}</span>
+                    <span style="font-size:12px;color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">{{ it.sub }}</span>
+                  </button>
+                  <div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center">
+                    <sc-if value="{{ it.canCopy }}" hint-placeholder-val="{{ false }}"><button onClick="{{ it.onCopy }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">Startnachricht kopieren</button></sc-if>
+                    <sc-for list="{{ it.links }}" as="lk" hint-placeholder-count="1"><a href="{{ lk.url }}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:700;font-size:12px;text-decoration:none">{{ lk.label }}</a></sc-for>
+                    <button onClick="{{ it.toggleDecide }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px dashed var(--line);background:transparent;color:var(--muted);font-size:12px;font-weight:700;cursor:pointer">{{ it.decideLabel }}</button>
+                    <sc-if value="{{ it.dec.hasCurrent }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;color:var(--muted)"><strong style="color:{{ it.dec.curColor }}">{{ it.dec.curDecision }}</strong> {{ it.dec.curText }}</span></sc-if>
+                  </div>
+                  <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-direction:column;gap:3px;padding:7px 9px;background:var(--field);border-radius:2px;font-size:12px">
+                      <div style="text-wrap:pretty">{{ it.what }}</div>
+                      <sc-for list="{{ it.details }}" as="d"><div style="display:flex;gap:8px"><span style="flex:0 0 72px;color:var(--muted)">{{ d.k }}</span><span style="min-width:0;overflow-wrap:anywhere;font-family:{{ d.font }}">{{ d.v }}</span></div></sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ it.showDecide }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <div style="display:flex;flex-wrap:wrap;gap:4px">
+                        <sc-for list="{{ it.dec.buttons }}" as="b" hint-placeholder-count="5"><button onClick="{{ b.onClick }}" style="min-height:{{ ui.decH }};padding:0 9px;border-radius:2px;border:1px solid {{ b.bd }};background:{{ b.bg }};color:{{ b.fg }};font:800 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;cursor:pointer">{{ b.label }}</button></sc-for>
+                      </div>
+                      <sc-if value="{{ it.dec.editing }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:flex;gap:6px;flex-wrap:wrap">
+                          <input value="{{ it.dec.note }}" onChange="{{ it.dec.onNote }}" onKeyDown="{{ it.dec.onKey }}" maxLength="160" placeholder="Eine kurze Notiz (optional)" style="flex:1 1 180px;min-width:0;min-height:{{ ui.btnH }};padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--field);color:var(--ink);font-size:12px;outline:none">
+                          <button onClick="{{ it.dec.onSave }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">{{ it.dec.saveLabel }}</button>
+                          <button onClick="{{ it.dec.onCancel }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;cursor:pointer">Abbrechen</button>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </section>
+          </sc-for>
+        </div>
+
+        <section style="border:1px solid var(--line);border-radius:3px;background:var(--panel)">
+          <button onClick="{{ heute.toggleWaiting }}" style="width:100%;display:flex;align-items:center;gap:8px;min-height:36px;padding:0 12px;background:none;border:0;color:var(--ink);cursor:pointer;text-align:left"><span style="font:800 12px ui-monospace,Menlo,monospace;width:12px">{{ heute.waitingCaret }}</span><span style="font-weight:800;font-size:13px">Wartet · geparkt</span><span style="font-size:12px;color:var(--muted)">{{ heute.waitingCount }}</span></button>
+          <sc-if value="{{ heute.waitingOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 12px 6px">
+              <sc-for list="{{ heute.waiting }}" as="it" hint-placeholder-count="3">
+                <div style="border-top:1px solid var(--line);padding:7px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start">
+                  <div style="flex:1 1 260px;min-width:0"><div style="font-weight:800">{{ it.title }}</div><div style="font-size:12px;color:var(--muted)">{{ it.sub }}</div></div>
+                  <sc-for list="{{ it.links }}" as="lk"><a href="{{ lk.url }}" target="_blank" rel="noreferrer" style="font-size:12px;font-weight:700;text-decoration:none">{{ lk.label }}</a></sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ v.briefings }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:2px 2px 0"><h2 style="margin:0;font-size:15px">Briefings</h2><span style="font-size:12px;color:var(--muted)">{{ cat.countsText }}</span><span style="font-size:11px;color:var(--muted);font-family:ui-monospace,Menlo,monospace">{{ cat.sourceText }}</span></div>
+        <sc-if value="{{ cat.empty }}" hint-placeholder-val="{{ false }}"><div style="padding:10px 12px;border:1px dashed var(--line);border-radius:3px;color:var(--muted)">Der v3-Katalog ist gerade nicht lesbar. Heute und die Werkzeuge bleiben nutzbar.</div></sc-if>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ cat.strands }}" as="s" hint-placeholder-count="6">
+            <div style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow)">
+              <button onClick="{{ s.toggle }}" style="width:100%;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;min-height:42px;padding:6px 12px;background:none;border:0;color:var(--ink);text-align:left;cursor:pointer">
+                <span style="font:800 12px ui-monospace,Menlo,monospace;width:12px">{{ s.caret }}</span>
+                <span style="flex:1 1 220px;font-weight:800;font-size:14px">{{ s.title }}</span>
+                <span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;padding:1px 6px;border-radius:2px;background:var(--chip);color:var(--accent2)">{{ s.readyText }}</span>
+                <span style="font-size:11px;color:var(--muted)">{{ s.holdText }}</span>
+              </button>
+              <sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:0 12px 8px 34px">
+                  <div style="font-size:12px;color:var(--muted);padding-bottom:6px">{{ s.target }}</div>
+                  <sc-for list="{{ s.ready }}" as="j" hint-placeholder-count="2">
+                    <div style="border-top:1px solid var(--line);padding:8px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start">
+                      <div style="flex:1 1 260px;min-width:0"><div style="font-weight:800">{{ j.title }}</div><div style="font-size:12px;color:var(--muted);text-wrap:pretty">{{ j.what }}</div><div style="font:11px ui-monospace,Menlo,monospace;color:var(--muted);margin-top:2px">{{ j.profile }}</div></div>
+                      <div style="display:flex;gap:5px;flex-wrap:wrap"><button onClick="{{ j.onCopy }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">Start kopieren</button><sc-if value="{{ j.hasSrc }}" hint-placeholder-val="{{ true }}"><a href="{{ j.srcUrl }}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--line);color:var(--ink);font-size:12px;text-decoration:none">Quelle ↗</a></sc-if></div>
+                    </div>
+                  </sc-for>
+                  <sc-if value="{{ s.hasHold }}" hint-placeholder-val="{{ false }}"><button onClick="{{ s.toggleHold }}" style="margin-top:4px;min-height:30px;padding:0 9px;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:2px;font-size:12px;cursor:pointer">{{ s.holdToggle }}</button></sc-if>
+                  <sc-if value="{{ s.holdOpen }}" hint-placeholder-val="{{ false }}">
+                    <sc-for list="{{ s.hold }}" as="j">
+                      <div style="border-top:1px solid var(--line);padding:7px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;opacity:.8">
+                        <div style="flex:1 1 260px;min-width:0"><div style="font-weight:700">{{ j.title }}</div><div style="font-size:12px;color:var(--warn)">Wartet auf: {{ j.waitingFor }}</div></div>
+                        <button onClick="{{ j.onCopy }}" style="min-height:30px;padding:0 9px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12px;cursor:pointer">Start kopieren</button>
+                      </div>
+                    </sc-for>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ v.projekte }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:baseline;gap:10px;margin:2px 2px 0"><h2 style="margin:0;font-size:15px">Projekte</h2><span style="font-size:12px;color:var(--muted)">aktueller Stand je Owner</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:8px">
+          <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+            <article style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px;display:flex;flex-direction:column;gap:7px;min-width:0">
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span style="font-weight:800;font-size:15px;letter-spacing:-.01em">{{ p.name }}</span><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.05em;padding:1px 6px;border-radius:2px;background:{{ p.stateBg }};color:{{ p.stateFg }}">{{ p.stateLabel }}</span><sc-if value="{{ p.needsYou }}" hint-placeholder-val="{{ false }}"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;color:var(--accent)">● braucht dich</span></sc-if></div>
+              <div style="font-weight:700">{{ p.current }}</div>
+              <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 10px;font-size:12px">
+                <span style="color:var(--muted)">Nächstes Gate</span><span style="text-wrap:pretty">{{ p.next }}</span>
+                <span style="color:var(--muted)">Owner</span><span>{{ p.owner }}</span>
+                <span style="color:var(--muted)">Frische</span><span style="color:{{ p.freshColor }}">{{ p.fresh }}</span>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap"><sc-for list="{{ p.links }}" as="lk"><a href="{{ lk.url }}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;min-height:30px;padding:0 9px;border-radius:2px;border:1px solid var(--line);color:var(--ink);font-size:12px;font-weight:700;text-decoration:none">{{ lk.label }}</a></sc-for></div>
+              <sc-if value="{{ p.hasOthers }}" hint-placeholder-val="{{ false }}"><button onClick="{{ p.toggle }}" style="align-self:flex-start;min-height:28px;padding:0 8px;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:2px;font-size:12px;cursor:pointer">{{ p.othersLabel }}</button></sc-if>
+              <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
+                <sc-for list="{{ p.others }}" as="o"><div style="display:flex;gap:6px;align-items:baseline;border-top:1px solid var(--line);padding-top:5px;font-size:12px"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;padding:0 5px;border-radius:2px;background:{{ o.stateBg }};color:{{ o.stateFg }}">{{ o.stateLabel }}</span><span>{{ o.title }}</span></div></sc-for>
+              </sc-if>
+            </article>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ v.entscheidungen }}" hint-placeholder-val="{{ false }}">
+        <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><h2 style="margin:0;font-size:15px">Entscheidungen</h2><span style="font-size:12px;color:var(--muted)">{{ dsum.countText }}</span></div>
+          <div style="font-size:12px;color:var(--ink);max-width:720px;text-wrap:pretty">Gespeichert nur in diesem Browser. Nicht geteilt und nicht in GitHub. In den Produktionsstand kommen sie erst, wenn du das Sync-Paket in den HUB-CTRL-Chat (#202) gibst und es dort übernommen wird.</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button onClick="{{ dsum.onCopy }}" style="min-height:{{ ui.btnH }};padding:0 12px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">Sync-Paket kopieren</button>
+            <button onClick="{{ dsum.onExport }}" style="min-height:{{ ui.btnH }};padding:0 12px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:800;font-size:12px;cursor:pointer">Entscheidungs-JSON exportieren</button>
+            <button onClick="{{ dsum.onClear }}" style="min-height:{{ ui.btnH }};padding:0 12px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;cursor:pointer">Lokal löschen</button>
+          </div>
+        </section>
+        <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:9px 12px 4px">
+          <h2 style="margin:0 0 6px;font-size:14px">Aktuelle Arbeit · Entscheidung erfassen</h2>
+          <sc-for list="{{ dq }}" as="it" hint-placeholder-count="6">
+            <div style="border-top:1px solid var(--line);padding:8px 0;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center">
+              <div style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="display:flex;gap:6px;align-items:center"><span style="font:800 10px/1.6 ui-monospace,Menlo,monospace;padding:0 5px;border-radius:2px;background:{{ it.stateBg }};color:{{ it.stateFg }}">{{ it.stateLabel }}</span><span style="font-size:11px;color:var(--muted)">{{ it.bucketLabel }}</span></span><span style="font-weight:800">{{ it.title }}</span><sc-if value="{{ it.dec.hasCurrent }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;color:var(--muted)"><strong style="color:{{ it.dec.curColor }}">{{ it.dec.curDecision }}</strong> {{ it.dec.curText }}</span></sc-if></div>
+              <div style="display:flex;flex-direction:column;gap:6px;flex:0 1 auto">
+                <div style="display:flex;flex-wrap:wrap;gap:4px"><sc-for list="{{ it.dec.buttons }}" as="b" hint-placeholder-count="5"><button onClick="{{ b.onClick }}" style="min-height:{{ ui.decH }};padding:0 9px;border-radius:2px;border:1px solid {{ b.bd }};background:{{ b.bg }};color:{{ b.fg }};font:800 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;cursor:pointer">{{ b.label }}</button></sc-for></div>
+              </div>
+              <sc-if value="{{ it.dec.editing }}" hint-placeholder-val="{{ false }}">
+                <div style="flex:1 1 100%;display:flex;gap:6px;flex-wrap:wrap">
+                  <input value="{{ it.dec.note }}" onChange="{{ it.dec.onNote }}" onKeyDown="{{ it.dec.onKey }}" maxLength="160" placeholder="Eine kurze Notiz (optional)" style="flex:1 1 180px;min-width:0;min-height:{{ ui.btnH }};padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--field);color:var(--ink);font-size:12px;outline:none">
+                  <button onClick="{{ it.dec.onSave }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">{{ it.dec.saveLabel }}</button>
+                  <button onClick="{{ it.dec.onCancel }}" style="min-height:{{ ui.btnH }};padding:0 10px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;cursor:pointer">Abbrechen</button>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </section>
+        <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 12px 4px">
+          <h2 style="margin:0 0 6px;font-size:14px">Verlauf · lokal</h2>
+          <sc-if value="{{ dsum.empty }}" hint-placeholder-val="{{ true }}"><div style="border-top:1px solid var(--line);padding:8px 0;color:var(--muted)">Noch nichts erfasst.</div></sc-if>
+          <sc-for list="{{ dhist }}" as="r"><div style="border-top:1px solid var(--line);padding:6px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;font-size:12px"><strong style="font-family:ui-monospace,Menlo,monospace;color:{{ r.color }}">{{ r.decision }}</strong><span style="font-weight:700">{{ r.title }}</span><span style="color:var(--muted)">{{ r.note }}</span><span style="margin-left:auto;color:var(--muted);font-family:ui-monospace,Menlo,monospace;font-size:11px">{{ r.at }} · {{ r.sync }}</span></div></sc-for>
+        </section>
+        <details style="background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 12px">
+          <summary style="cursor:pointer;font-weight:800">Sync-Paket ansehen (kfb.hub-decision/1)</summary>
+          <pre style="margin:8px 0 0;max-height:360px;overflow:auto;padding:9px;background:var(--field);border-radius:2px;font:11px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere">{{ packetPreview }}</pre>
+        </details>
+      </sc-if>
+
+      <sc-if value="{{ v.archiv }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:baseline;gap:10px;margin:2px 2px 0"><h2 style="margin:0;font-size:15px">Archiv &amp; Quellen</h2><span style="font-size:12px;color:var(--muted)">Historie, Referenzen, Regeln. Nicht Teil von Heute.</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:8px;align-items:start">
+          <sc-for list="{{ archive }}" as="g" hint-placeholder-count="3">
+            <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 12px 4px">
+              <h3 style="margin:0 0 6px;font-size:13px">{{ g.title }}</h3>
+              <sc-for list="{{ g.items }}" as="x"><div style="border-top:1px solid var(--line);padding:6px 0"><sc-if value="{{ x.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ x.url }}" target="_blank" rel="noreferrer" style="font-weight:700;text-decoration:none">{{ x.label }}</a></sc-if><sc-if value="{{ x.noUrl }}" hint-placeholder-val="{{ false }}"><span style="font-weight:700">{{ x.label }}</span></sc-if><div style="font-size:12px;color:var(--muted)">{{ x.sub }}</div></div></sc-for>
+            </section>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+
+    <section id="inbox" style="grid-area:inbox;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;align-items:center;gap:8px"><h2 style="margin:0;font-size:14px">Pocket Inbox</h2><span style="font-size:11px;font-weight:800;padding:1px 7px;border-radius:9px;background:var(--chip);color:{{ pocket.countColor }}">{{ pocket.countText }}</span><span style="margin-left:auto;font-size:11px;color:var(--muted)">bleibt in diesem Browser</span></div>
+      <div style="display:grid;gap:6px;grid-template-columns:{{ layout.compose }}">
+      <textarea value="{{ pocket.text }}" onChange="{{ pocket.onText }}" placeholder="GitHub-/Dropbox-Link, RETURN- oder HANDOVER-Text einfügen …" style="width:100%;height:{{ ui.pocketH }};resize:vertical;padding:8px 9px;border:1px solid var(--line);border-radius:2px;background:var(--field);color:var(--ink);font-size:12px;outline:none"></textarea>
+      <div role="button" tabIndex="0" onClick="{{ pocket.onPick }}" onKeyDown="{{ pocket.onPickKey }}" onDragOver="{{ pocket.onDragOver }}" onDragLeave="{{ pocket.onDragLeave }}" onDrop="{{ pocket.onDrop }}" style="min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 10px;border:1px dashed {{ pocket.dzBorder }};border-radius:2px;background:{{ pocket.dzBg }};color:{{ pocket.dzFg }};font-size:12px;cursor:pointer">Datei ablegen oder wählen · .md .txt .json .zip</div>
+      </div>
+      <input ref="{{ pocket.fileRef }}" type="file" multiple="{{ true }}" accept=".md,.txt,.json,.zip,text/markdown,text/plain,application/json,application/zip" onChange="{{ pocket.onFiles }}" style="display:none">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <button onClick="{{ pocket.onSave }}" style="min-height:{{ ui.btnH }};padding:0 12px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">Speichern</button>
+        <button onClick="{{ pocket.onExport }}" style="min-height:{{ ui.btnH }};padding:0 12px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:700;font-size:12px;cursor:pointer">Handoff exportieren</button>
+        <span aria-live="polite" style="margin-left:auto;font-size:11px;color:{{ pocket.statusColor }}">{{ pocket.status }}</span>
+      </div>
+      <sc-for list="{{ pocket.items }}" as="p" hint-placeholder-count="0">
+        <div style="border-top:1px solid var(--line);padding-top:6px;display:flex;gap:8px;align-items:flex-start">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ p.name }}</div><div style="font:10px ui-monospace,Menlo,monospace;color:var(--muted)">{{ p.meta }}</div></div>
+          <sc-if value="{{ p.isLink }}" hint-placeholder-val="{{ false }}"><a href="{{ p.content }}" target="_blank" rel="noreferrer" style="font-size:11px;font-weight:700;text-decoration:none;padding-top:2px">Öffnen</a></sc-if>
+          <sc-if value="{{ p.isText }}" hint-placeholder-val="{{ false }}"><button onClick="{{ p.onCopy }}" style="border:0;background:none;color:var(--accent);font-size:11px;font-weight:700;cursor:pointer;padding:2px 0">Kopieren</button></sc-if>
+          <button onClick="{{ p.onDownload }}" style="border:0;background:none;color:var(--muted);font-size:11px;cursor:pointer;padding:2px 0">Laden</button>
+          <button onClick="{{ p.onRemove }}" style="border:0;background:none;color:var(--muted);font-size:11px;cursor:pointer;padding:2px 0">×</button>
+        </div>
+      </sc-for>
+      <sc-if value="{{ pocket.hasMore }}" hint-placeholder-val="{{ false }}"><button onClick="{{ pocket.toggleAll }}" style="align-self:flex-start;border:0;background:none;color:var(--muted);font-size:12px;cursor:pointer;padding:0">{{ pocket.moreLabel }}</button></sc-if>
+    </section>
+
+    <div style="grid-area:rest;min-width:0;display:flex;flex-direction:column;gap:10px">
+      <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:10px 12px;display:flex;flex-direction:column;gap:7px">
+        <div style="display:flex;align-items:center;gap:8px"><h2 style="margin:0;font-size:14px">Entscheidungen</h2><span style="font-size:11px;font-weight:800;padding:1px 7px;border-radius:9px;background:var(--chip);color:{{ dsum.countColor }}">{{ dsum.badge }}</span><a href="#entscheidungen" style="margin-left:auto;font-size:12px;font-weight:700;text-decoration:none">alle</a></div>
+        <sc-if value="{{ dsum.empty }}" hint-placeholder-val="{{ true }}"><div style="font-size:12px;color:var(--muted);text-wrap:pretty">Noch keine erfasst. PASS · TUNE · HOLD · DONE · MISSING sitzt an jeder aktuellen Karte.</div></sc-if>
+        <sc-for list="{{ dsum.recent }}" as="r"><div style="display:flex;gap:7px;align-items:baseline;font-size:12px;border-top:1px solid var(--line);padding-top:5px"><strong style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:{{ r.color }}">{{ r.decision }}</strong><span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.title }}</span><span style="font:10px ui-monospace,Menlo,monospace;color:var(--muted)">{{ r.at }}</span></div></sc-for>
+        <div style="font-size:11px;color:var(--warn)">{{ dsum.honesty }}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button onClick="{{ dsum.onCopy }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--panel);font-weight:800;font-size:12px;cursor:pointer">Sync-Paket kopieren</button>
+          <button onClick="{{ dsum.onExport }}" style="min-height:{{ ui.btnH }};padding:0 11px;border-radius:2px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:700;font-size:12px;cursor:pointer">JSON exportieren</button>
+        </div>
+      </section>
+      <section style="background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 12px 4px">
+        <div style="display:flex;align-items:center;gap:8px;padding-bottom:4px"><h2 style="margin:0;font-size:14px">Werkzeuge</h2><span style="font-size:11px;color:var(--muted)">{{ toolsNote }}</span></div>
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="6"><a href="{{ t.url }}" target="_blank" rel="noreferrer" style="display:flex;gap:8px;align-items:baseline;min-height:30px;padding:5px 0;border-top:1px solid var(--line);text-decoration:none;color:{{ t.fg }}"><span style="flex:1;min-width:0;font-size:12px;font-weight:700">{{ t.title }}</span><span style="font-size:10px;color:var(--muted);white-space:nowrap">{{ t.status }}</span></a></sc-for>
+      </section>
+    </div>
+  </div>
+
+  <div style="font-size:11px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap"><span>GitHub ist SSOT · Hub zeigt, entscheidet lokal, schreibt nicht.</span><span>/ suchen · Esc leeren</span><span>Kandidat · HUB UX Recovery v1 · nicht live</span></div>
+</div>
+
+<sc-if value="{{ toast.show }}" hint-placeholder-val="{{ false }}"><div role="status" style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;max-width:calc(100% - 24px);padding:8px 14px;border-radius:3px;background:var(--ink);color:var(--panel);font-size:13px;font-weight:700;box-shadow:var(--shadow)">{{ toast.text }}</div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const REPO='georg-doc/kayfabizarro';
+const RAW='https://raw.githubusercontent.com/'+REPO+'/';
+const GH='https://github.com/'+REPO+'/';
+const SOURCES=[
+  {id:'live',label:'Live-Registry',ref:'bot/production-desk-update',base:RAW+'bot/production-desk-update/registry/production/v1'},
+  {id:'canon',label:'Hauptstand',ref:'main',base:RAW+'main/registry/production/v1'}
+];
+const FILES=['lanes','briefings','reviews','standards','wsa','tools','problems','self_service'];
+const POLL_MS=75000;
+const DKEY='kfb.hub.decisions.v1', SEENKEY='kfb.hub.seen.v1', THEMEKEY='kfb.hub.theme.v1';
+const DECISIONS=['PASS','TUNE','HOLD','DONE','MISSING'];
+const DCOLOR={PASS:'var(--accent2)',TUNE:'var(--warn)',HOLD:'var(--run)',DONE:'var(--ink)',MISSING:'var(--accent)'};
+const FRESH={CURRENT:['Aktuell geprüft','var(--accent2)'],MOVED:['Neue Arbeit seit Eintrag','var(--warn)'],LAST_KNOWN:['Zuletzt bekannt · anderes Repo','var(--warn)'],UNVERIFIED:['Nicht geprüft','var(--accent)'],RECOVERY:['Notfall-Stand','var(--warn)']};
+const BUCKET={LOOK_AT:'Braucht dich',RUNNING:'Läuft',CAN_START:'Kann starten',WAITING:'Wartet'};
+const TABS=[['heute','Heute'],['briefings','Briefings'],['projekte','Projekte'],['entscheidungen','Entscheidungen'],['archiv','Archiv']];
+const PROJECTS=[
+  ['WorldBuilder',['worldbuilder-wb2','worldbuilder-mobility-mvp','world-god']],
+  ['ToolBox / Animation',['toolbox-source-safe','ear-dangle-01','music-perf-01','warband-blender']],
+  ['Racer',['racer']],
+  ['Residents',['npc-life-01','dance-d1']],
+  ['Travel',['travel']],
+  ['Stage / FX / Billboard',['vfx-sfx','curtain','billboard','billboard-b3-cartoon-body']],
+  ['KFB Hub',['production-desk','hub-status-sync','hub-ux-recovery']]
+];
+const HISTORY=[
+  {label:'Hub UI v2 · akzeptierter Donor',url:GH+'blob/dfaafac070747f9543b5eb5a635e2aaa74e57b83/kfb-hub/index.html',sub:'dfaafac0 · Georg-Abnahme 21.09. · visuelle/UX-Vorlage dieses Kandidaten'},
+  {label:'Donor-Beleg · isoliert in 3 Breiten',url:'Hub Donor Proof v2.dc.html',sub:'Exakte Datei, unverändert gerendert (Desktop, Split, Mobile, Paper/Dark)'},
+  {label:'v3 Desk-Shell · abgelehnt (TUNE)',url:GH+'blob/ef8dbb07032a1d148893f2e0a125e04fe90263fd/tools/production_desk/desk/desk.template.html',sub:'Daten- und Kataloglogik bleiben; nur die Oberfläche wird ersetzt'},
+  {label:'Hub UX Recovery · Brief',url:GH+'blob/ef8dbb07032a1d148893f2e0a125e04fe90263fd/tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md',sub:'HUB-CTRL #202 · ef8dbb07'}
+];
+
+function short(s){return s?String(s).slice(0,7):'–';}
+function dt(iso){const d=new Date(iso);return isNaN(d)?null:d;}
+function fmtFull(iso){const d=dt(iso);return d?d.toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}):'unbekannt';}
+function fmtShort(iso){const d=dt(iso);return d?d.toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'–';}
+function fmtClock(d){return d.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+function ago(iso){const d=dt(iso);if(!d)return 'unbekannt';const m=Math.round((Date.now()-d)/60000);if(m<1)return 'gerade eben';if(m<60)return 'vor '+m+' Min.';const h=Math.round(m/60);if(h<48)return 'vor '+h+' Std.';return 'vor '+Math.round(h/24)+' Tagen';}
+function sig(l){return [l.bucket,l.head||'',l.title,l.yourAction||'',l.waitingFor||''].join('|');}
+function tint(c){return 'color-mix(in srgb,'+c+' 15%,var(--panel))';}
+function stateOf(l){
+  const t=l.title||'', w=l.what||'';
+  if(/PROCEED PASS/i.test(t+' '+w)) return ['PROCEED PASS','var(--accent2)'];
+  if(/CI PASS/i.test(t)) return ['CI PASS · MERGE-GATE','var(--warn)'];
+  if(l.bucket==='RUNNING'&&/abgelehnt|rejected/i.test(w)) return ['TUNE · RECOVERY','var(--warn)'];
+  if(/Kandidat|candidate/i.test(w)) return ['KANDIDAT','var(--run)'];
+  return ({LOOK_AT:['PRÜFEN','var(--accent)'],RUNNING:['LÄUFT','var(--run)'],CAN_START:['STARTKLAR','var(--accent2)'],WAITING:['WARTET','var(--muted)']})[l.bucket]||[l.bucket||'?','var(--muted)'];
+}
+function fetchJSON(url){return fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();});}
+function saveBlob(blob,name){const href=URL.createObjectURL(blob),a=document.createElement('a');a.href=href;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),800);}
+function fmtBytes(v){if(v<1024)return v+' B';if(v<1048576)return (v/1024).toFixed(1)+' KB';return (v/1048576).toFixed(1)+' MB';}
+function legacyCopy(text){return new Promise((res,rej)=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();ok?res():rej(new Error('blocked'));});}
+function writeClipboard(text){if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(text).catch(()=>legacyCopy(text));return legacyCopy(text);}
+
+class Component extends DCLogic {
+  state = {reg:null,source:null,view:'heute',q:'',theme:'paper',w:1200,
+    reload:{phase:'idle',at:null,detail:'',n:0},decisions:[],storageOk:true,draft:{},openDecide:{},expanded:{},qOpen:{},
+    strandOpen:{},holdOpen:{},projOpen:{},waitingOpen:false,changedOnly:false,seen:null,
+    pocket:[],pocketText:'',pocketStatus:'Lokal · kein Upload',pocketErr:false,drag:false,pocketAll:false,toastText:'',toastShow:false};
+
+  componentDidMount(){
+    let theme='paper';
+    try{theme=localStorage.getItem(THEMEKEY)||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'paper');}catch(e){}
+    this.setTheme(theme,false);
+    let decisions=[],seen=null;
+    try{decisions=JSON.parse(localStorage.getItem(DKEY)||'[]');}catch(e){}
+    try{seen=JSON.parse(localStorage.getItem(SEENKEY)||'null');}catch(e){}
+    this.setState({decisions:Array.isArray(decisions)?decisions:[],seen,view:this.viewFromHash()});
+    this._onHash=()=>this.setState({view:this.viewFromHash(),changedOnly:false});
+    window.addEventListener('hashchange',this._onHash);
+    this._onKey=(e)=>{
+      const tag=((document.activeElement||{}).tagName||'');
+      if(e.key==='/'&&!/INPUT|TEXTAREA/.test(tag)){e.preventDefault();this._search&&this._search.focus();}
+      if(e.key==='Escape'&&this.state.q){this.setState({q:''});this._search&&this._search.blur();}
+    };
+    document.addEventListener('keydown',this._onKey);
+    this.bootEmbedded(0);
+    this.loadPocket();
+    this._poll=setInterval(()=>this.reload('poll'),POLL_MS);
+    this._tick=setInterval(()=>this.forceUpdate(),30000);
+  }
+  componentWillUnmount(){
+    window.removeEventListener('hashchange',this._onHash);
+    document.removeEventListener('keydown',this._onKey);
+    clearInterval(this._poll);clearInterval(this._tick);
+    if(this._ro)this._ro.disconnect();
+    if(this._measure)window.removeEventListener('resize',this._measure);
+  }
+
+  rootRef=(el)=>{
+    if(!el)return;
+    this._rootEl=el;
+    if(this._ro)return;
+    const measure=()=>{const w=Math.round((this._rootEl||el).getBoundingClientRect().width/(parseFloat(document.documentElement.style.zoom)||1));if(w&&Math.abs(w-this.state.w)>4)this.setState({w});};
+    this._measure=measure;
+    this._ro=new ResizeObserver(measure);
+    this._ro.observe(el);
+    window.addEventListener('resize',measure);
+    requestAnimationFrame(measure);
+  };
+  searchRef=(el)=>{this._search=el;};
+  fileRef=(el)=>{this._file=el;};
+
+  viewFromHash(){
+    const h=decodeURIComponent(location.hash.slice(1)).toLowerCase();
+    const alias={today:'heute',projects:'projekte',decisions:'entscheidungen',archive:'archiv',history:'archiv'};
+    const v=alias[h]||h;
+    return TABS.some(t=>t[0]===v)?v:'heute';
+  }
+  setTheme(t,persist){
+    const next=t==='dark'?'dark':'paper';
+    document.documentElement.dataset.theme=next;
+    if(persist!==false){try{localStorage.setItem(THEMEKEY,next);}catch(e){}}
+    this.setState({theme:next});
+  }
+  toast(msg){clearTimeout(this._tt);this.setState({toastText:msg,toastShow:true});this._tt=setTimeout(()=>this.setState({toastShow:false}),2400);}
+
+  bootEmbedded(n){
+    const e=window.KFB_HUB_EMBEDDED;
+    if(e&&e.reg){this.setState({reg:e.reg,source:{id:'embedded',label:'Eingebauter Stand',ref:null,capturedAt:e.capturedAt,from:e.capturedFrom}});this.reload('initial');return;}
+    if(n<30){setTimeout(()=>this.bootEmbedded(n+1),100);return;}
+    this.reload('initial');
+  }
+
+  diffCount(a,b){
+    if(!a||!b)return 0;
+    const A={};((a.lanes||{}).lanes||[]).forEach(l=>A[l.id]=sig(l));
+    const B=((b.lanes||{}).lanes||[]);let n=0;
+    B.forEach(l=>{if(A[l.id]!==sig(l))n++;delete A[l.id];});
+    return n+Object.keys(A).length;
+  }
+
+  async reload(mode){
+    if(this._busy)return;this._busy=true;
+    const manual=mode!=='poll';
+    if(manual)this.setState({reload:{phase:'loading',at:new Date(),detail:'',n:0}});
+    const cur=this.state.reg,curSrc=this.state.source;
+    let result=null;const errs=[];
+    for(const src of SOURCES){
+      try{
+        const manifest=await fetchJSON(src.base+'/manifest.json');
+        if(cur&&curSrc&&curSrc.id===src.id&&cur.manifest.contentHash===manifest.contentHash&&cur.manifest.checkedAt===manifest.checkedAt){result={same:true,src};break;}
+        const parts=await Promise.all(FILES.map(f=>fetchJSON(src.base+'/'+f+'.json')));
+        const reg={manifest};FILES.forEach((f,i)=>reg[f]=parts[i]);
+        result={same:false,src,reg};break;
+      }catch(e){errs.push(src.label+': '+(e.message||e));}
+    }
+    this._busy=false;
+    const now=new Date();
+    if(!result){if(manual||this.state.reload.phase!=='error')this.setState({reload:{phase:'error',at:now,detail:errs.join(' · '),n:0}});return;}
+    if(result.same){if(manual)this.setState({reload:{phase:'nochange',at:now,detail:'',n:0}});return;}
+    const n=this.diffCount(cur,result.reg);
+    const sameContent=!!cur&&cur.manifest.contentHash===result.reg.manifest.contentHash&&n===0;
+    this.setState({reg:result.reg,source:{id:result.src.id,label:result.src.label,ref:result.src.ref},
+      reload:{phase:sameContent?'nochange':'updated',at:now,n,detail:sameContent&&curSrc&&curSrc.id!==result.src.id?'von '+result.src.label+' bestätigt':''}});
+    if(mode==='poll'&&!sameContent)this.toast('Neuer Registry-Stand geladen · '+n+' Änderung'+(n===1?'':'en'));
+  }
+
+  lanes(){return (this.state.reg&&this.state.reg.lanes&&this.state.reg.lanes.lanes||[]).filter(l=>l.freshness!=='CLOSED');}
+  changedInfo(){
+    const lanes=this.lanes(),seen=this.state.seen,set=new Set();
+    if(seen&&seen.sigs){lanes.forEach(l=>{if(seen.sigs[l.id]!==sig(l))set.add(l.id);});return {set,text:set.size+' geändert seit '+fmtShort(seen.at)};}
+    lanes.forEach(l=>{const d=dt(l.headDate);if(d&&Date.now()-d<864e5)set.add(l.id);});
+    return {set,text:set.size+' geändert in 24 Std.'};
+  }
+  markSeen(){
+    const sigs={};this.lanes().forEach(l=>sigs[l.id]=sig(l));
+    const seen={at:new Date().toISOString(),sigs};
+    try{localStorage.setItem(SEENKEY,JSON.stringify(seen));}catch(e){}
+    this.setState({seen,changedOnly:false});this.toast('Als gesehen markiert');
+  }
+
+  latest(id){const d=this.state.decisions;for(let i=d.length-1;i>=0;i--)if(d[i].itemId===id)return d[i];return null;}
+  pick(id,k){const cur=this.latest(id),dr=this.state.draft[id];this.setState({draft:{...this.state.draft,[id]:{decision:k,note:dr?dr.note:(cur&&cur.decision===k?cur.note:'')}}});}
+  setNote(id,v){const dr=this.state.draft[id];if(!dr)return;this.setState({draft:{...this.state.draft,[id]:{...dr,note:v}}});}
+  cancel(id){const d={...this.state.draft};delete d[id];const o={...this.state.openDecide};delete o[id];this.setState({draft:d,openDecide:o});}
+  persist(list){try{localStorage.setItem(DKEY,JSON.stringify(list));return true;}catch(e){return false;}}
+  commit(l){
+    const dr=this.state.draft[l.id];if(!dr)return;
+    const m=(this.state.reg||{}).manifest||{},src=this.state.source||{};
+    const rec={schema:'kfb.hub-decision/1',itemId:l.id,decision:dr.decision,note:(dr.note||'').trim(),decidedAt:new Date().toISOString(),
+      sourceRevision:{registry:'registry/production/v1',source:src.id||null,ref:src.ref||null,contentHash:m.contentHash||null,sourceCommit:m.sourceCommit||null,checkedAt:m.checkedAt||m.generatedAt||null},
+      itemTitle:l.title,item:{bucket:l.bucket,repo:l.repo||null,pr:l.pr||null,branch:l.branch||null,head:l.head||null},
+      surface:'kfb-hub ux-recovery candidate v1',sync:{state:'local',exportedAt:null}};
+    const list=[...this.state.decisions,rec];const ok=this.persist(list);
+    const d={...this.state.draft};delete d[l.id];const o={...this.state.openDecide};delete o[l.id];
+    this.setState({decisions:list,draft:d,openDecide:o,storageOk:ok});
+    this.toast(ok?dr.decision+' lokal gespeichert · noch nicht in GitHub':'Browser blockiert Speichern · nur bis zum Neuladen gehalten');
+  }
+  packet(){
+    const recs=this.state.decisions;
+    return {schema:'kfb.hub-decision/1',kind:'sync-packet',exportedAt:new Date().toISOString(),
+      owner:'HUB-CTRL #202 · tools/production_desk',storage:'browser localStorage · not shared · not in GitHub until ingested',
+      count:recs.length,decisions:recs.map(r=>({itemId:r.itemId,decision:r.decision,note:r.note,decidedAt:r.decidedAt,sourceRevision:r.sourceRevision,itemTitle:r.itemTitle,item:r.item}))};
+  }
+  markExported(){
+    const at=new Date().toISOString();
+    const list=this.state.decisions.map(r=>({...r,sync:{state:'exported',exportedAt:at}}));
+    this.persist(list);this.setState({decisions:list});
+  }
+  copyPacket(){
+    if(!this.state.decisions.length){this.toast('Noch keine Entscheidung erfasst');return;}
+    const p=this.packet();
+    const text=['@GitHub','KFB Hub · Decision Sync Packet · kfb.hub-decision/1','',
+      'Diese Entscheidungen wurden lokal im Hub-Browser erfasst und sind noch NICHT in GitHub.',
+      'Bitte in den Production-Desk-Status übernehmen (HUB-CTRL #202 · tools/production_desk). Bei Widerspruch gewinnt der GitHub-Stand.',
+      '','```json',JSON.stringify(p,null,2),'```'].join('\n');
+    writeClipboard(text).then(()=>{this.markExported();this.toast('Sync-Paket kopiert · '+p.count+' Entscheidung'+(p.count===1?'':'en'));}).catch(()=>this.toast('Kopieren blockiert · bitte JSON exportieren'));
+  }
+  exportDecisions(){
+    if(!this.state.decisions.length){this.toast('Noch keine Entscheidung erfasst');return;}
+    const p=this.packet();
+    saveBlob(new Blob([JSON.stringify(p,null,2)],{type:'application/json'}),'kfb-hub-decisions_'+p.exportedAt.slice(0,16).replace(/[:T]/g,'-')+'.json');
+    this.markExported();this.toast('Entscheidungs-JSON exportiert');
+  }
+  clearDecisions(){
+    if(!this.state.decisions.length)return;
+    if(!confirm('Alle lokal erfassten Entscheidungen in diesem Browser löschen? Exportierte Pakete bleiben unberührt.'))return;
+    this.persist([]);this.setState({decisions:[],draft:{}});this.toast('Lokale Entscheidungen gelöscht');
+  }
+
+  copyBrief(l){
+    const b=l.brief||{};const fallback='Bitte lies diese Datei vollständig und arbeite genau danach:\n'+b.url;
+    fetch(b.rawUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text();})
+      .then(t=>({t,full:true})).catch(()=>({t:fallback,full:false}))
+      .then(res=>writeClipboard(res.t).then(()=>this.toast(res.full?'Startnachricht kopiert':'Link zur Startnachricht kopiert')).catch(()=>this.toast('Kopieren blockiert')));
+  }
+  copyJob(j){
+    const text=j.prompt||('Bitte lies das kanonische Briefing: '+((j.promptSource||{}).url||''));
+    writeClipboard(text).then(()=>this.toast(j.prompt?'Startnachricht kopiert':'Briefing-Link kopiert')).catch(()=>this.toast('Kopieren blockiert'));
+  }
+
+  pocketDb(){
+    if(this._db)return this._db;
+    this._db=new Promise((res,rej)=>{const r=indexedDB.open('kfb-hub-pocket-inbox-v1',1);r.onupgradeneeded=()=>{const db=r.result;if(!db.objectStoreNames.contains('items'))db.createObjectStore('items',{keyPath:'id'});};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});
+    return this._db;
+  }
+  async pocketAllItems(){const db=await this.pocketDb();return new Promise((res,rej)=>{const q=db.transaction('items','readonly').objectStore('items').getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>rej(q.error);});}
+  async pocketWrite(mode,val){const db=await this.pocketDb();return new Promise((res,rej)=>{const tx=db.transaction('items','readwrite'),s=tx.objectStore('items');if(mode==='put')s.put(val);if(mode==='delete')s.delete(val);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error);});}
+  async loadPocket(){
+    try{const items=(await this.pocketAllItems()).sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));this.setState({pocket:items});}
+    catch(e){this.setState({pocketStatus:'Lokaler Speicher nicht verfügbar',pocketErr:true});}
+  }
+  pid(){return crypto.randomUUID?crypto.randomUUID():'pocket-'+Date.now()+'-'+Math.random().toString(16).slice(2);}
+  async pocketSave(){
+    const content=this.state.pocketText.trim();
+    if(!content){this.setState({pocketStatus:'Erst Link oder Text einfügen',pocketErr:true});return;}
+    let url=null;try{const u=new URL(content);if(['http:','https:'].includes(u.protocol))url=u.href;}catch(e){}
+    const kind=url?'link':'text',norm=url||content,first=norm.split('\n')[0].slice(0,90);
+    try{
+      await this.pocketWrite('put',{id:this.pid(),kind,name:kind==='link'?(new URL(norm).hostname+' · '+first):(first||'Notiz'),content:norm,mime:kind==='link'?'text/uri-list':'text/markdown;charset=utf-8',size:new Blob([norm]).size,createdAt:new Date().toISOString()});
+      this.setState({pocketText:'',pocketStatus:(kind==='link'?'Link':'Text')+' lokal gespeichert · nicht in GitHub',pocketErr:false});await this.loadPocket();
+    }catch(e){this.setState({pocketStatus:'Speichern fehlgeschlagen',pocketErr:true});}
+  }
+  async pocketAddFiles(list){
+    const allowed=['md','txt','json','zip'];let added=0;const skipped=[];
+    for(const f of [...(list||[])]){
+      const ext=(f.name.split('.').pop()||'').toLowerCase();
+      if(!allowed.includes(ext)){skipped.push(f.name+' (Typ)');continue;}
+      if(f.size>32*1024*1024){skipped.push(f.name+' (>32 MB)');continue;}
+      try{await this.pocketWrite('put',{id:this.pid(),kind:'file',name:f.name,mime:f.type||'application/octet-stream',size:f.size,blob:f,createdAt:new Date().toISOString()});added++;}catch(e){skipped.push(f.name);}
+    }
+    await this.loadPocket();
+    this.setState({pocketStatus:skipped.length?added+' gespeichert · übersprungen: '+skipped.join(', '):added+' Datei'+(added===1?'':'en')+' lokal gespeichert',pocketErr:!!skipped.length&&!added});
+  }
+  async pocketExport(){
+    const items=[...this.state.pocket].sort((a,b)=>String(a.createdAt).localeCompare(String(b.createdAt)));
+    if(!items.length){this.setState({pocketStatus:'Noch nichts zu exportieren',pocketErr:true});return;}
+    const lines=['# KFB Pocket Inbox · Handoff','','Exported: '+new Date().toISOString(),'','Lokaler Export aus dem Hub-Browser. Nichts davon ist in GitHub, bis ein Chat es übernimmt. GitHub/Projekt-SSOT gewinnt.',''];
+    for(const it of items){lines.push('## '+it.name,'','- Kind: '+it.kind,'- Added: '+it.createdAt,'- Size: '+fmtBytes(it.size||0));if(it.kind==='file')lines.push('- Datei liegt lokal; Original separat anhängen.');else lines.push('',it.content);lines.push('');}
+    saveBlob(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}),'KFB_POCKET_INBOX_HANDOFF_'+new Date().toISOString().slice(0,10)+'.md');
+    this.setState({pocketStatus:'Handoff exportiert · Einträge bleiben lokal',pocketErr:false});
+  }
+  async pocketRemove(id){try{await this.pocketWrite('delete',id);await this.loadPocket();this.setState({pocketStatus:'Eintrag entfernt',pocketErr:false});}catch(e){}}
+  pocketDownload(it){const blob=it.blob instanceof Blob?it.blob:new Blob([it.content||''],{type:it.mime||'text/plain;charset=utf-8'});saveBlob(blob,it.name&&it.kind==='file'?it.name:'kfb-pocket-'+it.kind+'.txt');}
+
+  decVM(l){
+    const cur=this.latest(l.id),dr=this.state.draft[l.id];
+    const buttons=DECISIONS.map(k=>{const on=dr?dr.decision===k:(!!cur&&cur.decision===k);return {label:k,bg:on?DCOLOR[k]:'transparent',fg:on?'var(--panel)':'var(--muted)',bd:on?DCOLOR[k]:'var(--line)',onClick:()=>this.pick(l.id,k)};});
+    return {buttons,editing:!!dr,note:dr?dr.note:'',onNote:e=>this.setNote(l.id,e.target.value),
+      onKey:e=>{if(e.key==='Enter'){e.preventDefault();this.commit(l);}if(e.key==='Escape')this.cancel(l.id);},
+      onSave:()=>this.commit(l),onCancel:()=>this.cancel(l.id),saveLabel:dr?dr.decision+' speichern':'Speichern',
+      hasCurrent:!!cur&&!dr,curDecision:cur?cur.decision:'',curColor:cur?DCOLOR[cur.decision]:'var(--muted)',
+      curText:cur?((cur.note?'„'+cur.note+'“ · ':'')+fmtShort(cur.decidedAt)+' · '+(cur.sync&&cur.sync.state==='exported'?'exportiert, nicht in GitHub':'nur lokal')):''};
+  }
+  itemVM(l,changed){
+    const st=stateOf(l),fr=FRESH[l.freshness]||['','var(--muted)'];
+    const links=[];
+    if(l.review&&l.review.available&&l.review.url)links.push({label:(l.review.label||'Öffnen')+' ↗',url:l.review.url});
+    if(l.prUrl)links.push({label:'PR #'+l.pr+' ↗',url:l.prUrl});
+    if(l.brief&&l.brief.exists&&l.brief.url&&!l.brief.pasteReady)links.push({label:(l.brief.label||'Brief')+' ↗',url:l.brief.url});
+    links.forEach((x,i)=>{const p=i===0&&l.bucket==='LOOK_AT';x.bg=p?'var(--ink)':'var(--panel)';x.fg=p?'var(--panel)':'var(--ink)';x.bd=p?'var(--ink)':'var(--line)';});
+    const qs=l.questions||[],sd=!!this.state.openDecide[l.id]||!!this.state.draft[l.id];
+    const run=l.bucket==='RUNNING'||l.bucket==='WAITING';
+    const details=[{k:'Owner',v:l.provider||'–'}];
+    if(l.repo)details.push({k:'Repo',v:l.repo+(l.pr?' · PR #'+l.pr+(l.prState?' ('+l.prState+')':''):'')});
+    if(l.branch)details.push({k:'Branch',v:l.branch,mono:1});
+    if(l.head)details.push({k:'Head',v:l.head+(l.headDate?' · '+fmtFull(l.headDate):''),mono:1});
+    if(l.expectedHead&&l.head&&l.expectedHead!==l.head)details.push({k:'Erwartet',v:l.expectedHead,mono:1});
+    if(l.freshnessNote)details.push({k:'Frische',v:l.freshnessNote});
+    if(l.review&&l.review.sourceRef)details.push({k:'Prüfquelle',v:l.review.sourceRef});
+    if(l.yourAction&&run)details.push({k:'Für dich',v:l.yourAction});
+    details.forEach(d=>d.font=d.mono?'ui-monospace,Menlo,monospace':'inherit');
+    return {id:l.id,title:l.title,bucketLabel:BUCKET[l.bucket]||l.bucket,stateLabel:st[0],stateFg:st[1],stateBg:tint(st[1]),
+      freshLabel:fr[0],freshColor:fr[1],changed:changed.has(l.id),
+      action:l.yourAction||'',hasAction:!!l.yourAction,
+      sub:run?(l.waitingFor?'Wartet auf: '+l.waitingFor:l.what):(l.waitingFor&&!l.yourAction?'Danach: '+l.waitingFor:(l.yourAction||l.what)),
+      meta:[l.provider,l.head?'Head '+short(l.head)+(l.headDate?' · '+fmtShort(l.headDate):''):null].filter(Boolean).join(' · '),
+      what:l.what||'',details,links,
+      canCopy:!!(l.brief&&l.brief.exists&&l.brief.pasteReady),onCopy:()=>this.copyBrief(l),
+      questions:qs,hasQuestions:qs.length>0,qLabel:(this.state.qOpen[l.id]?'Fragen ausblenden':qs.length+(qs.length===1?' Frage':' Fragen')),qOpen:!!this.state.qOpen[l.id],
+      toggleQ:()=>this.setState({qOpen:{...this.state.qOpen,[l.id]:!this.state.qOpen[l.id]}}),
+      open:!!this.state.expanded[l.id],toggle:()=>this.setState({expanded:{...this.state.expanded,[l.id]:!this.state.expanded[l.id]}}),
+      showDecide:sd,decideLabel:sd?'Schließen':'Entscheiden',
+      toggleDecide:()=>{if(sd)this.cancel(l.id);else this.setState({openDecide:{...this.state.openDecide,[l.id]:true}});},
+      dec:this.decVM(l)};
+  }
+
+  searchResults(q){
+    const t=q.toLowerCase(),hit=(...xs)=>xs.filter(Boolean).join(' ').toLowerCase().includes(t);
+    const reg=this.state.reg||{},out=[];
+    this.lanes().forEach(l=>{if(hit(l.id,l.title,l.what,l.provider,l.yourAction,l.waitingFor,l.pr&&('#'+l.pr),l.branch))out.push({kind:(BUCKET[l.bucket]||l.bucket).toUpperCase(),title:l.title,sub:l.yourAction||l.waitingFor||l.what,url:(l.review&&l.review.available&&l.review.url)||l.prUrl||null,actLabel:'In Heute zeigen',onAct:()=>{location.hash='#heute';this.setState({q:'',view:'heute',expanded:{...this.state.expanded,[l.id]:true},waitingOpen:this.state.waitingOpen||l.bucket==='WAITING'});}});});
+    const ss=reg.self_service||{},sn={};(ss.strands||[]).forEach(s=>sn[s.id]=s.title);
+    (ss.jobs||[]).forEach(j=>{if(hit(j.id,j.title,j.what,j.result,j.promptSection,sn[j.strand],j.executor))out.push({kind:j.bucket==='READY'?'BRIEFING':'BRIEFING · SPÄTER',title:j.title,sub:(sn[j.strand]||'')+' · '+(j.what||''),url:(j.promptSource||{}).url||null,actLabel:'Start kopieren',onAct:()=>this.copyJob(j)});});
+    ((reg.tools||{}).tools||[]).forEach(x=>{if(hit(x.title,x.what,x.group))out.push({kind:'WERKZEUG',title:x.title,sub:x.what,url:x.available?x.url:null});});
+    ((reg.tools||{}).archive||[]).forEach(x=>{if(hit(x.label))out.push({kind:'ARCHIV',title:x.label,sub:x.path||x.url,url:x.url});});
+    ((reg.standards||{}).standards||[]).forEach(x=>{if(hit(x.label,x.path))out.push({kind:'REGEL',title:x.label,sub:x.path,url:x.url});});
+    HISTORY.forEach(x=>{if(hit(x.label,x.sub))out.push({kind:'HISTORIE',title:x.label,sub:x.sub,url:x.url});});
+    this.state.pocket.forEach(p=>{if(hit(p.name,p.content))out.push({kind:'INBOX · LOKAL',title:p.name,sub:(p.content||'').slice(0,160),url:p.kind==='link'?p.content:null});});
+    this.state.decisions.forEach(r=>{if(hit(r.itemTitle,r.note,r.decision))out.push({kind:'ENTSCHEIDUNG · LOKAL',title:r.decision+' · '+r.itemTitle,sub:(r.note||'')+' '+fmtShort(r.decidedAt),url:null});});
+    return out.slice(0,60).map(r=>({...r,hasUrl:!!r.url,hasAct:!!r.onAct}));
+  }
+
+  renderVals(){
+    const s=this.state,reg=s.reg,m=(reg&&reg.manifest)||{},src=s.source||{id:'none',label:'Lädt …'};
+    const wide=s.w>=1060,narrow=s.w<600;
+    const ch=this.changedInfo();
+    const lanes=this.lanes();
+    const filt=l=>!s.changedOnly||ch.set.has(l.id);
+    const by=b=>lanes.filter(l=>l.bucket===b&&filt(l)).map(l=>this.itemVM(l,ch.set));
+    const needs=by('LOOK_AT'),running=by('RUNNING'),canStart=by('CAN_START'),waiting=by('WAITING');
+    const decs=s.decisions,nDec=decs.length,nExp=decs.filter(r=>r.sync&&r.sync.state==='exported').length,nPocket=s.pocket.length;
+    const ss=(reg&&reg.self_service)||{};
+    const checked=m.checkedAt||m.generatedAt;
+    const hours=checked?(Date.now()-Date.parse(checked))/36e5:0;
+    const stale=isFinite(hours)&&hours>(m.staleAfterHours||8);
+    const toolsList=((reg&&reg.tools)||{}).tools||[];
+    const findTool=id=>(toolsList.find(t=>t.id===id)||{}).url;
+    const rp=s.reload,rt=rp.at?fmtClock(rp.at):'';
+    const reload={busy:rp.phase==='loading',label:rp.phase==='loading'?'Lädt …':'Neu laden',detail:rp.detail||'',onClick:()=>this.reload('manual'),
+      text:({idle:'',loading:'Prüfe Registry …',updated:'Aktualisiert '+rt+' · '+rp.n+' Änderung'+(rp.n===1?'':'en'),nochange:'Keine Änderung · '+rt+(rp.detail?' · '+rp.detail:''),error:'Nicht erreichbar · '+src.label+' bleibt sichtbar · '+rt})[rp.phase]||'',
+      color:({updated:'var(--accent2)',error:'var(--accent)',loading:'var(--muted)'})[rp.phase]||'var(--muted)'};
+    const fresh={
+      dot:({live:'var(--accent2)',canon:'var(--run)',embedded:'var(--warn)'})[src.id]||'var(--muted)',
+      source:src.id==='live'?'Live-Registry':src.id==='canon'?'Hauptstand (main)':src.id==='embedded'?'Eingebauter Stand · Kopie '+fmtShort(src.capturedAt):'Lädt …',
+      stamp:checked?'Stand '+fmtFull(checked):'Stand unbekannt',ago:ago(checked),
+      tech:[checked?'checkedAt '+checked+' (UTC)':'',m.sourceCommit?'sourceCommit '+m.sourceCommit:'',m.sourceRef?'sourceRef '+m.sourceRef:'',src.ref?'gelesen von '+src.ref:'',m.contentHash?'contentHash '+m.contentHash:''].filter(Boolean).join('\n'),
+      stale,staleText:'älter als '+(m.staleAfterHours||8)+' Std.',
+      manual:/manual/i.test(m.mode||''),manualTitle:'Registry-Modus: '+(m.mode||'?')+'. Der 30-Minuten-Bot-Sync ist erst nach dem Merge-Gate aktiv.',
+      commit:m.sourceCommit?'Quelle '+short(m.sourceCommit)+' · '+(m.sourceRef||'')+(src.ref?' → '+src.ref:''):''
+    };
+    const tabs=TABS.map(([id,label])=>{
+      const on=s.view===id&&!s.q;
+      const count=id==='heute'?needs.length:id==='briefings'?((ss.counts||{}).READY||0):id==='entscheidungen'?nDec:0;
+      return {href:'#'+id,label,onClick:()=>this.setState({q:'',changedOnly:false}),bg:on?'var(--ink)':'transparent',fg:on?'var(--panel)':'var(--muted)',
+        hasCount:count>0,count,countBg:on?'var(--panel)':(id==='heute'?'var(--accent)':'var(--chip)'),countFg:on?'var(--ink)':(id==='heute'?'var(--panel)':'var(--muted)')};
+    });
+    const q=s.q.trim(),isSearch=q.length>0;
+    const v={search:isSearch,heute:!isSearch&&s.view==='heute',briefings:!isSearch&&s.view==='briefings',projekte:!isSearch&&s.view==='projekte',entscheidungen:!isSearch&&s.view==='entscheidungen',archiv:!isSearch&&s.view==='archiv'};
+
+    let search={results:[],countText:'',empty:false,onClear:()=>this.setState({q:''})};
+    if(isSearch){const r=this.searchResults(q);search={...search,results:r,countText:r.length+' für „'+q+'“',empty:!r.length};}
+
+    const heute={needs,needsCount:needs.length?String(needs.length):'',needsEmpty:!needs.length,changedOnly:s.changedOnly,
+      groups:[
+        {title:'Läuft',dot:'var(--run)',count:String(running.length),items:running,empty:!running.length,emptyText:'Gerade läuft nichts.'},
+        {title:'Kann starten',dot:'var(--accent2)',count:String(canStart.length),items:canStart,empty:!canStart.length,emptyText:'Nichts startklar.'}
+      ],
+      waiting,waitingCount:String(waiting.length),waitingOpen:s.waitingOpen||(s.changedOnly&&waiting.length>0),waitingCaret:(s.waitingOpen||(s.changedOnly&&waiting.length>0))?'–':'+',
+      toggleWaiting:()=>this.setState({waitingOpen:!s.waitingOpen})};
+
+    const strands=(ss.strands||[]).map(st=>{
+      const jobs=(ss.jobs||[]).filter(j=>j.strand===st.id);
+      const jv=j=>({title:j.title,what:j.what,profile:[j.executor,j.model,j.reasoning,j.budget].filter(Boolean).join(' · '),onCopy:()=>this.copyJob(j),hasSrc:!!(j.promptSource&&j.promptSource.url),srcUrl:(j.promptSource||{}).url||'',waitingFor:j.waitingFor||'—'});
+      const ready=jobs.filter(j=>j.bucket==='READY').map(jv),hold=jobs.filter(j=>j.bucket!=='READY').map(jv);
+      const open=!!s.strandOpen[st.id],ho=!!s.holdOpen[st.id];
+      return {title:st.title,target:st.target||'',caret:open?'–':'+',open,readyText:ready.length+' startklar',holdText:hold.length?hold.length+' später':'',ready,hold,hasHold:hold.length>0,holdOpen:ho,holdToggle:ho?'Spätere ausblenden':hold.length+' spätere Aufgaben',
+        toggle:()=>this.setState({strandOpen:{...s.strandOpen,[st.id]:!open}}),toggleHold:()=>this.setState({holdOpen:{...s.holdOpen,[st.id]:!ho}})};
+    });
+    const sc=ss.counts||{};
+    const cat={strands,empty:!strands.length,countsText:(sc.strands||0)+' Stränge · '+(sc.READY||0)+' startklar · '+(sc.HOLD||0)+' später',
+      sourceText:ss.source?('v3-Katalog · '+(ss.source.ref||'')+(ss.source.catalog?'':'')):'v3-Katalog'};
+
+    const byId={};lanes.forEach(l=>byId[l.id]=l);const used=new Set();
+    const projDefs=PROJECTS.map(p=>[p[0],p[1].filter(id=>byId[id])]);
+    PROJECTS.forEach(p=>p[1].forEach(id=>used.add(id)));
+    const rest=lanes.filter(l=>!used.has(l.id)).map(l=>l.id);
+    if(rest.length)projDefs.push(['Weitere',rest]);
+    const projects=projDefs.filter(p=>p[1].length).map(([name,ids])=>{
+      const ls=ids.map(id=>byId[id]),pr=ls[0],st=stateOf(pr),fr=FRESH[pr.freshness]||['','var(--muted)'];
+      const newest=ls.map(l=>l.headDate).filter(Boolean).sort().pop();
+      const links=[];
+      if(pr.review&&pr.review.available)links.push({label:(pr.review.label||'Prüfen')+' ↗',url:pr.review.url});
+      if(pr.brief&&pr.brief.exists)links.push({label:(pr.brief.label||'Brief')+' ↗',url:pr.brief.url});
+      if(pr.prUrl)links.push({label:'PR #'+pr.pr+' ↗',url:pr.prUrl});
+      const open=!!s.projOpen[name];
+      return {name,stateLabel:st[0],stateFg:st[1],stateBg:tint(st[1]),current:pr.title,next:pr.yourAction||pr.waitingFor||'—',owner:pr.provider||'–',
+        fresh:(newest?'Neuester Head '+fmtShort(newest)+' · ':'')+fr[0],freshColor:fr[1],links,needsYou:ls.some(l=>l.bucket==='LOOK_AT'),
+        others:ls.slice(1).map(l=>{const x=stateOf(l);return {title:l.title,stateLabel:x[0],stateFg:x[1],stateBg:tint(x[1])};}),hasOthers:ls.length>1,open,
+        othersLabel:open?'weniger':(ls.length-1)+' weitere Lane'+(ls.length===2?'':'s'),toggle:()=>this.setState({projOpen:{...s.projOpen,[name]:!open}})};
+    });
+
+    const latestByItem={};decs.forEach(r=>latestByItem[r.itemId]=r);
+    const recent=Object.values(latestByItem).sort((a,b)=>b.decidedAt.localeCompare(a.decidedAt)).slice(0,4).map(r=>({decision:r.decision,color:DCOLOR[r.decision],title:r.itemTitle,at:fmtShort(r.decidedAt)}));
+    const dsum={recent,empty:!nDec,badge:nDec?nDec+' lokal':'0',countColor:nDec?'var(--warn)':'var(--muted)',
+      countText:nDec?(nDec+' erfasst · '+(nDec-nExp)+' nur lokal · '+nExp+' exportiert · 0 in GitHub'):'Noch nichts erfasst',
+      honesty:s.storageOk?(nDec?'Nicht in GitHub. Übergabe per Sync-Paket.':'Speichert lokal in diesem Browser.'):'Browser blockiert lokales Speichern. Vor dem Neuladen exportieren.',
+      onCopy:()=>this.copyPacket(),onExport:()=>this.exportDecisions(),onClear:()=>this.clearDecisions()};
+    const dq=v.entscheidungen?lanes.filter(l=>l.bucket!=='WAITING').sort((a,b)=>['LOOK_AT','RUNNING','CAN_START'].indexOf(a.bucket)-['LOOK_AT','RUNNING','CAN_START'].indexOf(b.bucket)).map(l=>this.itemVM(l,ch.set)):[];
+    const dhist=v.entscheidungen?[...decs].reverse().map(r=>({decision:r.decision,color:DCOLOR[r.decision],title:r.itemTitle,note:r.note?'„'+r.note+'“':'',at:fmtShort(r.decidedAt),sync:r.sync&&r.sync.state==='exported'?'exportiert':'lokal'})):[];
+    const packetPreview=v.entscheidungen?JSON.stringify(this.packet(),null,2):'';
+
+    const archive=[
+      {title:'Historie & Referenz',items:HISTORY},
+      {title:'Archiv',items:(((reg&&reg.tools)||{}).archive||[]).map(x=>({label:x.label+(x.available===false?' (nicht erreichbar)':''),url:x.available===false?null:x.url,sub:x.path||''}))},
+      {title:'Arbeitsregeln',items:(((reg&&reg.standards)||{}).standards||[]).map(x=>({label:x.label,url:x.url,sub:x.ref||''}))},
+      {title:'Probleme beim letzten Abgleich',items:(((reg&&reg.problems)||{}).problems||[]).map(x=>({label:x.lane+' · '+x.kind,url:null,sub:x.detail}))},
+      {title:'WSA',items:[{label:((reg&&reg.wsa)||{}).state||'–',url:null,sub:((reg&&reg.wsa)||{}).text||''}]}
+    ].map(g=>({...g,items:g.items.map(x=>({...x,hasUrl:!!x.url,noUrl:!x.url}))}));
+
+    const shown=s.pocketAll?s.pocket:s.pocket.slice(0,3);
+    const pocket={text:s.pocketText,onText:e=>this.setState({pocketText:e.target.value}),
+      countText:nPocket?nPocket+' lokal · nicht synchronisiert':'leer',countColor:nPocket?'var(--warn)':'var(--muted)',
+      status:s.pocketStatus,statusColor:s.pocketErr?'var(--accent)':'var(--muted)',
+      dzBorder:s.drag?'var(--accent)':'var(--line)',dzBg:s.drag?tint('var(--accent)'):'transparent',dzFg:s.drag?'var(--accent)':'var(--muted)',
+      onPick:()=>this._file&&this._file.click(),onPickKey:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();this._file&&this._file.click();}},
+      onDragOver:e=>{e.preventDefault();if(!s.drag)this.setState({drag:true});},onDragLeave:e=>{e.preventDefault();this.setState({drag:false});},
+      onDrop:e=>{e.preventDefault();this.setState({drag:false});this.pocketAddFiles(e.dataTransfer&&e.dataTransfer.files);},
+      fileRef:this.fileRef,onFiles:e=>{this.pocketAddFiles(e.target.files);e.target.value='';},
+      onSave:()=>this.pocketSave(),onExport:()=>this.pocketExport(),
+      items:shown.map(p=>({name:p.name,content:p.content||'',meta:[p.kind.toUpperCase(),fmtBytes(p.size||0),fmtShort(p.createdAt)].join(' · '),isLink:p.kind==='link',isText:p.kind!=='file',
+        onCopy:()=>writeClipboard(p.content||'').then(()=>this.toast('Kopiert')),onDownload:()=>this.pocketDownload(p),onRemove:()=>this.pocketRemove(p.id)})),
+      hasMore:nPocket>3,moreLabel:s.pocketAll?'weniger zeigen':'alle '+nPocket+' zeigen',toggleAll:()=>this.setState({pocketAll:!s.pocketAll})};
+
+    const tools=toolsList.map(t=>({title:t.title,status:t.available===false?'nicht erreichbar':t.status,url:t.available===false?'#':t.url,fg:t.available===false?'var(--muted)':'var(--ink)'}));
+
+    return {
+      rootRef:this.rootRef,searchRef:this.searchRef,
+      tabs,themeLabel:s.theme==='dark'?'Paper':'Dark',toggleTheme:()=>this.setTheme(s.theme==='dark'?'paper':'dark'),
+      launch:{toolbox:findTool('toolbox-home')||'https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/',world:findTool('world-builder-p1')||'https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-builder-p1-review/',worldTitle:'WorldBuilder · Umgebung (P1) aus der Werkzeug-Registry'},
+      fresh,reload,
+      changed:{has:ch.set.size>0,text:ch.text,onShow:()=>{location.hash='#heute';this.setState({q:'',view:'heute',changedOnly:true});},onSeen:()=>this.markSeen(),onAll:()=>this.setState({changedOnly:false})},
+      local:{has:nDec+nPocket>0,text:'Lokal, nicht in GitHub: '+nDec+' Entsch. · '+nPocket+' Inbox'},
+      q:s.q,onQ:e=>this.setState({q:e.target.value}),
+      layout:{cols:wide?'minmax(0,1fr) 340px':'minmax(0,1fr)',rows:wide?'auto 1fr':'auto',areas:wide?'"main inbox" "main rest"':'"inbox" "main" "rest"',compose:(wide||narrow)?'minmax(0,1fr)':'minmax(0,1fr) minmax(180px,.4fr)'},
+      ui:{btnH:narrow?'40px':'32px',decH:narrow?'40px':'30px',pocketH:narrow?'64px':'52px'},
+      v,search,heute,cat,projects,dsum,dq,dhist,packetPreview,archive,pocket,tools,
+      toolsNote:toolsList.length?toolsList.length+' aus der Registry':'',
+      toast:{show:s.toastShow,text:s.toastText}
+    };
+  }
+}
+</script>
+</body>
+</html>

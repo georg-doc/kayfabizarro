@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Probe · Wandknoten (Endstück · T · Kreuz)</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js"
+}}
+</script>
+<style>body{margin:0;background:#0f1320;color:#d7e2ff;font:11px/1.3 ui-monospace,monospace;padding:12px;white-space:pre}</style>
+</head>
+<body>
+<div id="out">messe…</div>
+<script type="module">
+/* Warum diese Sonde: Sprint 22 verlangt R07 mit `wall_endcap`. Die PLATZIERUNGSREGEL für
+   Endstück, T und Kreuz ist nirgends gemessen — S13 hat behauptet, es gebe die Teile nicht
+   (Post mortem pm5), S21 hat sie nur als Kantenlängen in die Werkbank gelegt.
+   Gemessen wird deshalb dasselbe wie beim Eckteil: WO liegt das Gelenk (der Punkt, der auf den
+   Gitterpunkt gehört), WELCHE Arme hat das Teil, und WIE WEIT reicht jeder Arm vom Gelenk aus.
+   Aus der Armweite folgt, ob das Nachbarmodul ganz bleibt oder halbiert werden muss. */
+import { loadAsset, measure } from '../lib/kit-lab.js';
+import { collectTris, planScan, wallFrame } from '../lib/dungeon-grid.js';
+
+const out = document.getElementById('out');
+const f = (v) => (v == null ? '  —  ' : v.toFixed(2).padStart(5));
+
+/* Knotenrahmen — Verallgemeinerung von cornerFrame auf beliebige Armzahl (1, 3, 4).
+   Ein Arm existiert, wenn die Draufsicht den Rand der Box in dieser Richtung berührt.
+   Gelenk: quer zum Arm die Mitte der Armplatte; längs zum Arm die Mitte der Gegenarme —
+   und wenn es keine Gegenarme gibt (Endstück), die AUSSENKANTE auf der Armseite, denn dort
+   stösst das nächste Wandmodul an. */
+function nodeFrame(scan, plateRef) {
+  const B = scan.bands;
+  const wx = (i) => scan.min[0] + ((i + 0.5) / B) * scan.size[0];
+  const wz = (j) => scan.min[2] + ((j + 0.5) / B) * scan.size[2];
+  const span = (list, axis) => {
+    if (!list.length) return null;
+    const lo = Math.min(...list), hi = Math.max(...list);
+    const a = axis === 'x' ? wx : wz;
+    return { von: a(lo), bis: a(hi), mid: (a(lo) + a(hi)) / 2, dick: a(hi) - a(lo) + scan.size[axis === 'x' ? 0 : 2] / B };
+  };
+  const rand = { };
+  const js = [], je = [], is = [], ie = [];
+  for (let j = 0; j < B; j++) { if (scan.at(0, j)) js.push(j); if (scan.at(B - 1, j)) je.push(j); }
+  for (let i = 0; i < B; i++) { if (scan.at(i, 0)) is.push(i); if (scan.at(i, B - 1)) ie.push(i); }
+  rand['-1,0'] = span(js, 'z'); rand['1,0'] = span(je, 'z');
+  rand['0,-1'] = span(is, 'x'); rand['0,1'] = span(ie, 'x');
+  /* Ein Arm ist eine PLATTE, die aus der Box herausläuft: die Randspanne muß der gemessenen
+     Wanddicke entsprechen. Ohne Untergrenze zählt beim Endstück die verjüngte Seitenflanke
+     (0,92) als Arm mit, ohne Obergrenze bei der geraden Wand die 4,00 lange Flanke. */
+  const arms = Object.entries(rand)
+    .filter(([, v]) => v && v.dick >= plateRef * 0.95 && v.dick <= plateRef * 1.15)
+    .map(([k]) => k.split(',').map(Number));
+  const xArme = arms.filter((a) => a[0]), zArme = arms.filter((a) => a[1]);
+  /* Quer-Mitte der Arme = Achse des jeweiligen Wandzugs */
+  const mit = (list, key) => (list.length ? list.reduce((s, a) => s + rand[a.join(',')][key], 0) / list.length : null);
+  let jz = mit(xArme, 'mid');
+  let jx = mit(zArme, 'mid');
+  if (jx == null) jx = xArme.length === 1 ? (xArme[0][0] > 0 ? scan.max[0] : scan.min[0]) : (scan.min[0] + scan.max[0]) / 2;
+  if (jz == null) jz = zArme.length === 1 ? (zArme[0][1] > 0 ? scan.max[2] : scan.min[2]) : (scan.min[2] + scan.max[2]) / 2;
+  const reach = {};
+  for (const a of arms) {
+    reach[a.join(',')] = a[0] ? (a[0] > 0 ? scan.max[0] - jx : jx - scan.min[0])
+      : (a[1] > 0 ? scan.max[2] - jz : jz - scan.min[2]);
+  }
+  const dick = arms.length ? Math.min(...arms.map((a) => rand[a.join(',')].dick)) : null;
+  /* Auskragung: wie weit steht das Teil ÜBER das Gelenk hinaus — beim Endstück die eigentliche
+     Antwort auf „wo endet die Wand". */
+  const aus = { x: [scan.min[0] - jx, scan.max[0] - jx], z: [scan.min[2] - jz, scan.max[2] - jz] };
+  return { joint: [jx, jz], arms, rand, reach, dick, aus };
+}
+
+const N = 13, NAMEN = ['wall', 'wall_endcap', 'wall_half_endcap', 'wall_Tsplit',
+  'wall_crossing', 'wall_doorway_Tsplit', 'wall_corner'];
+
+let MOD = 4, PLATTE = 1;
+try { MOD = (await measure('dungeon', 'floor_tile_large')).size[0]; } catch (e) { /* Standard */ }
+try { PLATTE = wallFrame(planScan(collectTris(await loadAsset('dungeon', 'wall')), 72)).plateThick; } catch (e) { /* Standard */ }
+out.textContent = `Modul (floor_tile_large) = ${MOD.toFixed(3)}   ·   Plattendicke (wall) = ${PLATTE.toFixed(3)}\n`
+  + `Regel, die geprüft wird: Armweite > Modul/4 → das anschliessende Wandmodul muss halbiert werden.\n\n`;
+
+for (const name of NAMEN) {
+  let m;
+  try { m = await measure('dungeon', name); }
+  catch (e) { out.textContent += `## ${name}\n   NICHT IM PACK\n\n`; continue; }
+  const scan = planScan(collectTris(await loadAsset('dungeon', name)), 72);
+  const nf = nodeFrame(scan, PLATTE);
+  const wf = wallFrame(scan);
+  /* Draufsicht grob, damit die Zahlen ein Bild haben */
+  const grid = [];
+  for (let j = 0; j < N; j++) {
+    let row = '';
+    for (let i = 0; i < N; i++) {
+      const bi = Math.floor((i + 0.5) / N * scan.bands), bj = Math.floor((j + 0.5) / N * scan.bands);
+      row += scan.at(bi, bj) ? '█' : '·';
+    }
+    grid.push('   ' + row);
+  }
+  const armTxt = nf.arms.map((a) => `${a.join(',')} (Weite ${f(nf.reach[a.join(',')])})`).join('  ');
+  out.textContent += `## ${name}\n`
+    + `   Box     ${m.size.map((v) => v.toFixed(2).padStart(5)).join(' × ')}   x ${f(m.min[0])}…${f(m.max[0])}  z ${f(m.min[2])}…${f(m.max[2])}\n`
+    + `   Gelenk  x ${f(nf.joint[0])}  z ${f(nf.joint[1])}      Plattendicke ${f(nf.dick)}\n`
+    + `   Arme    ${nf.arms.length}: ${armTxt || '—'}\n`
+    + `   Randspannen ${Object.entries(nf.rand).map(([k, v]) => k + ':' + (v ? f(v.dick) : ' — ')).join('  ')}\n`
+    + `   Auskragung  x ${nf.aus.x.map(f).join(' … ')}   z ${nf.aus.z.map(f).join(' … ')}\n`
+    + `   Wandrahmen: Laufachse ${wf.runAxis}  Platte ${f(wf.plateThick)}  Anker ${wf.anchor.map(f).join(' / ')}  Überstand ${wf.protrude.sign} ${f(wf.protrude.amount)}\n`
+    + `   Nachbarmodul: ${Math.max(...Object.values(nf.reach), 0) > MOD / 4 + 0.05 ? 'HALBIEREN' : 'bleibt ganz'}\n`
+    + grid.join('\n') + '\n\n';
+}
+out.textContent += 'fertig.\n';
+</script>
+</body>
+</html>

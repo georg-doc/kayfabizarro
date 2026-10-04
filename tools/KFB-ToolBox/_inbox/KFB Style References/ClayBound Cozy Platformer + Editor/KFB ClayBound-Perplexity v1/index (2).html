@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KFB Clay Lab</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="app"></canvas>
+  <div id="hud" aria-live="polite">
+    <h1>KFB Clay Lab</h1>
+    <p>Ziehe zum Drehen · Scrollen zum Zoomen · Knete die Szene per Palette.</p>
+  </div>
+  <div id="toolbar">
+    <button class="clay-button" id="paletteButton" title="Farbpalette ein-/ausblenden" aria-controls="palette" aria-expanded="true"><span>🎨</span></button>
+    <button class="clay-button" id="infoButton" title="Recherche &amp; Produktionsnotizen ein-/ausblenden" aria-controls="info" aria-expanded="false"><span>🧠</span></button>
+  </div>
+  <aside id="palette" class="panel visible" aria-label="Clay-Palette">
+    <h2>Clay Palette</h2>
+    <p class="small">Aktive Farbe färbt Knete und erzeugt pro Objekt eine andere Oberfläche.</p>
+    <div id="swatches" class="swatches"></div>
+    <label class="range-label">Oberflächenrelief <output id="reliefOut">0.035</output>
+      <input id="relief" type="range" min="0" max="0.09" value="0.035" step="0.001" />
+    </label>
+    <label class="range-label">Mikrostruktur <output id="microOut">0.55</output>
+      <input id="micro" type="range" min="0" max="1" value="0.55" step="0.01" />
+    </label>
+    <button id="randomize" class="wide">Neue Knetmischung</button>
+  </aside>
+  <aside id="info" class="panel info-panel" aria-label="Recherche und Produktionsnotizen">
+    <h2>🧠 Claybound-Style: Produktionsnotizen</h2>
+    <p><strong>Leitidee:</strong> Der Look entsteht primär aus runden, leicht asymmetrischen Formen, matter Lichtreaktion und mehrskaliger, dezenter Oberflächenvariation – nicht aus einem überlagerten Fingerabdruck-Pattern.</p>
+    <h3>Look-Rezept</h3>
+    <ul>
+      <li><strong>Makro:</strong> Bevel, Subdivision und leichte Vertex-Deformation für gedrückte, handgeformte Silhouetten.</li>
+      <li><strong>Meso:</strong> breite Falten und flachgedrückte Zonen, nur punktuell eingesetzt.</li>
+      <li><strong>Mikro:</strong> feines Korn und unregelmäßige Verdichtung; nur bei naher Kamera sichtbar.</li>
+      <li><strong>Material:</strong> metallfrei, sehr rau, mit subtiler Farbvariation statt glänzendem Plastik.</li>
+      <li><strong>Licht:</strong> große weiche Key-Light-Quelle, warme Umgebung, kühle Rim-Light-Kante und weiche Schatten.</li>
+    </ul>
+    <h3>Three.js in dieser Demo</h3>
+    <ul>
+      <li>Das Material bleibt ein <code>MeshStandardMaterial</code>, damit Three.js-PBR, Schatten und Environment Lighting erhalten bleiben.</li>
+      <li><code>onBeforeCompile</code> ergänzt Vertex-Displacement und dreiskalige Farb-/Roughness-Variation direkt vor der Standard-Beleuchtung.</li>
+      <li>Jedes Objekt erhält einen eigenen Seed; dadurch sind Muster nicht synchron und weniger als Tiling wahrnehmbar.</li>
+      <li>Für Production: Shader erst nach einem Blender-Lookdev mit echten Referenz-Renderings finalisieren.</li>
+    </ul>
+    <h3>Blender → Three.js Pipeline</h3>
+    <ol>
+      <li>In Blender zuerst die Silhouette formen: Apply Scale, Bevel, Subdivision; große Dellen als Sculpt/Displace, nicht als Normalmap.</li>
+      <li>UVs nur dort anlegen, wo Decals, Label, Stoff oder spezielle handgemachte Details gebraucht werden; der Demo-Shader arbeitet objekt-/world-space-basiert.</li>
+      <li>Für Hero-Assets eine eigene 2K/4K Normal- und Roughness-Map aus Blender/Substance backen; sie im Three.js-Material zusätzlich überlagern.</li>
+      <li>GLB exportieren, <code>castShadow</code>/<code>receiveShadow</code> für Meshes setzen; Tonemapping und Licht als Teil des Art-Styles versionieren.</li>
+    </ol>
+    <h3>To-dos für Claude / LLMs</h3>
+    <ul>
+      <li>Immer erst ein <strong>Lookdev-Briefing</strong> verlangen: Kamera, Referenz-Screenshot, Objektmaßstab, Palette, Tageszeit und Zielhardware.</li>
+      <li>Keine generischen „Fingerabdrücke überall“ vorschlagen. Frage stattdessen: Wo wurde das Objekt gedrückt, gerollt, geschnitten oder repariert?</li>
+      <li>Shader in Schichten liefern: <strong>Basis</strong> → <strong>Makro-Displacement</strong> → <strong>Mikro-Normal</strong> → <strong>Licht</strong> → <strong>Performance</strong>.</li>
+      <li>Bei Code: vollständige Dateien, keine Pseudocode-Fragmente; Versionsnummer von Three.js nennen und mobile Fallbacks vorsehen.</li>
+      <li>Bei Asset-Prompts: „matte polymer clay, broad soft studio light, rounded compressed silhouette, subtle handmade variation, no repeated fingerprints, no glossy plastic“ als Negativ-/Qualitätsregel ergänzen.</li>
+    </ul>
+    <h3>Abnahmekriterien</h3>
+    <ul>
+      <li>Silhouette ist auch ohne Textur erkennbar weich und handgeformt.</li>
+      <li>Bei Bewegung fällt kein wiederholendes Muster sofort ins Auge.</li>
+      <li>Oberflächenstruktur unterstützt das Licht, konkurriert aber nicht mit Gameplay-Lesbarkeit.</li>
+      <li>Farbe, Schatten und AO erhalten klare Gameplay-Silhouetten.</li>
+    </ul>
+    <h3>Referenzen</h3>
+    <p class="small">Claybound dient hier als visuelle Zielreferenz aus deinem Briefing. Für die technische Einordnung: Three.js ShaderMaterial/Custom-Shader-Dokumentation, Three.js Materials Manual, Unity Clay ShaderGraph als Referenz für mehrskalige Clay-Layer sowie 3DTextures „Clay 001“ als PBR-Textur-Basis.</p>
+    <p class="small"><a href="https://threejs.org/docs/#api/en/materials/ShaderMaterial" target="_blank" rel="noreferrer">Three.js ShaderMaterial</a> · <a href="https://threejs.org/manual/#en/materials" target="_blank" rel="noreferrer">Three.js Materials Manual</a> · <a href="https://github.com/joebinns/clay" target="_blank" rel="noreferrer">Unity Clay ShaderGraph</a> · <a href="https://3dtextures.me/2021/09/01/clay-001/" target="_blank" rel="noreferrer">Clay 001 PBR maps</a></p>
+  </aside>
+  <div id="loading">Knete die Szene …</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{
+  "schema": "kfb.osm-city.fixture-analysis.v0",
+  "id": "huerth-v0",
+  "generatedAt": "2026-09-18T15:32:14.680Z",
+  "bounds": {
+    "min": {
+      "x": -350.025,
+      "z": -349.988
+    },
+    "max": {
+      "x": 350.025,
+      "z": 349.988
+    },
+    "sizeM": {
+      "x": 700.05,
+      "z": 699.976
+    }
+  },
+  "counts": {
+    "roads": 164,
+    "driveableRoads": 116,
+    "buildings": 700,
+    "greenPolygons": 10,
+    "landuse": 22,
+    "intersections": 154,
+    "driveRoadsAtEdge": 42,
+    "greenPolygonsAtEdge": 10
+  },
+  "roadClasses": {
+    "residential": 26,
+    "tertiary": 8,
+    "track": 17,
+    "path": 33,
+    "footway": 7,
+    "living_street": 2,
+    "service": 55,
+    "steps": 3,
+    "primary": 6,
+    "secondary": 7
+  },
+  "topRoadNames": [
+    {
+      "name": "(unnamed)",
+      "count": 107
+    },
+    {
+      "name": "Frentzenhofstraße",
+      "count": 8
+    },
+    {
+      "name": "Hürther Straße",
+      "count": 7
+    },
+    {
+      "name": "Luxemburger Straße",
+      "count": 7
+    },
+    {
+      "name": "Industriestraße",
+      "count": 7
+    },
+    {
+      "name": "Eintrachtstraße",
+      "count": 4
+    },
+    {
+      "name": "Am Sonnenhang",
+      "count": 3
+    },
+    {
+      "name": "Pastor-Krombach-Straße",
+      "count": 3
+    },
+    {
+      "name": "Am Heideberg",
+      "count": 2
+    },
+    {
+      "name": "Am Wolterskreuz",
+      "count": 2
+    },
+    {
+      "name": "Ortshofstraße",
+      "count": 2
+    },
+    {
+      "name": "Buschstraße",
+      "count": 2
+    },
+    {
+      "name": "Kendenicher Straße",
+      "count": 2
+    },
+    {
+      "name": "Adolf-Dasbach-Weg",
+      "count": 2
+    },
+    {
+      "name": "Bolligstraße",
+      "count": 1
+    },
+    {
+      "name": "Birklinstraße",
+      "count": 1
+    },
+    {
+      "name": "Lindgenstraße",
+      "count": 1
+    },
+    {
+      "name": "Am Heidehang",
+      "count": 1
+    },
+    {
+      "name": "Bergstraße",
+      "count": 1
+    },
+    {
+      "name": "Str. 11",
+      "count": 1
+    }
+  ],
+  "buildingKinds": [
+    {
+      "kind": "yes",
+      "count": 422
+    },
+    {
+      "kind": "garage",
+      "count": 272
+    },
+    {
+      "kind": "roof",
+      "count": 3
+    },
+    {
+      "kind": "industrial",
+      "count": 1
+    },
+    {
+      "kind": "kindergarten",
+      "count": 1
+    },
+    {
+      "kind": "construction",
+      "count": 1
+    }
+  ],
+  "longestRoadPart": {
+    "sourceId": "way/27933239",
+    "name": "Am Heideberg",
+    "rClass": "residential",
+    "lengthM": 478.64,
+    "driveable": true
+  },
+  "fixtureSignals": {
+    "residentialContext": true,
+    "intersection": true,
+    "accelerationCorridor": true,
+    "roadTerrainEdge": true
+  }
+}

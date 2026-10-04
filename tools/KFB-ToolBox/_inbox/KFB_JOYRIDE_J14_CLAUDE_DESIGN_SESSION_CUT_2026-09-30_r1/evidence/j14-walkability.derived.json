@@ -1,0 +1,759 @@
+{
+ "schema": "kfb.j14.walkability/0.1-derived",
+ "status": "DERIVED",
+ "stream": "P1_A_J14",
+ "fingerprint": "840a0a2e",
+ "rule": {
+  "byType": {
+   "STRAIGHT": "straight",
+   "CURVE_EASE": "straight",
+   "CONNECT": "straight",
+   "TRANSITION": "straight",
+   "WIDTH_STEP": "straight",
+   "SPLIT_HALF": "straight",
+   "MERGE_HALF": "straight",
+   "KICKER": "ramp",
+   "LANDING": "ramp",
+   "HAIRPIN_180": "plaza",
+   "LOOP": "loop",
+   "AIR": "air",
+   "SPIRAL": "skydrive"
+  },
+  "walkable": {
+   "straight": true,
+   "ramp": true,
+   "plaza": true,
+   "loop": false,
+   "skydrive": false,
+   "air": false,
+   "steep": false
+  },
+  "notes": [
+   "SPIRAL mit Tag parkdeck (Uni-Center-Helix) = ramp (Parkhausrampe); jede andere SPIRAL = skydrive",
+   "Tag skydrive auf jedem Stück = skydrive (nur Auto)",
+   "Tag practice_pad = plaza",
+   "drive.mode locked (Looping-Zu-/Ablauf, Magnet-Catch) = loop (nur Auto)",
+   "Sample surface < 0,5 = air · Fahrbahn-Oben U.y < cos 35° = steep (nur Auto)",
+   "Tunnel = eigene Ebene tunnel:<id> · Deck über anderer Route (Δy > 3 m) = bridge, darunter = under"
+  ],
+  "band": "Fahrbahn + Bankett (Slots 5…8), außerhalb gesperrt"
+ },
+ "tally": {
+  "straight": 3496,
+  "ramp": 1528,
+  "plaza": 501,
+  "loop": 998,
+  "air": 411,
+  "skydrive": 1466
+ },
+ "overlapPairs": 60176,
+ "pieces": [
+  {
+   "piece": "street_in",
+   "type": "STRAIGHT",
+   "s0": 0,
+   "s1": 107,
+   "cls": {
+    "straight": 215
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-",
+    "under"
+   ]
+  },
+  {
+   "piece": "park_in",
+   "type": "WIDTH_STEP",
+   "s0": 107.5,
+   "s1": 137,
+   "cls": {
+    "straight": 60
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-",
+    "under"
+   ]
+  },
+  {
+   "piece": "helix",
+   "type": "SPIRAL",
+   "s0": 137.5,
+   "s1": 605,
+   "cls": {
+    "ramp": 936
+   },
+   "walkableShare": 1,
+   "layers": [
+    "under",
+    "under+bridge",
+    "bridge+under",
+    "bridge"
+   ]
+  },
+  {
+   "piece": "atrium_up",
+   "type": "STRAIGHT",
+   "s0": 605.5,
+   "s1": 623,
+   "cls": {
+    "straight": 36
+   },
+   "walkableShare": 1,
+   "layers": [
+    "bridge"
+   ]
+  },
+  {
+   "piece": "roof_hairpin",
+   "type": "HAIRPIN_180",
+   "s0": 623.5,
+   "s1": 672.5,
+   "cls": {
+    "plaza": 99
+   },
+   "walkableShare": 1,
+   "layers": [
+    "bridge",
+    "-"
+   ]
+  },
+  {
+   "piece": "to_ring",
+   "type": "CONNECT",
+   "s0": 673,
+   "s1": 693.5,
+   "cls": {
+    "straight": 42
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "drift_ring",
+   "type": "CURVE_EASE",
+   "s0": 694,
+   "s1": 900,
+   "cls": {
+    "straight": 413
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-",
+    "bridge"
+   ]
+  },
+  {
+   "piece": "to_orange",
+   "type": "CONNECT",
+   "s0": 900.5,
+   "s1": 967.5,
+   "cls": {
+    "straight": 135
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "mag_in",
+   "type": "STRAIGHT",
+   "s0": 968,
+   "s1": 981.5,
+   "cls": {
+    "straight": 28
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "roof_loop",
+   "type": "LOOP",
+   "s0": 982,
+   "s1": 1104.5,
+   "cls": {
+    "loop": 246
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-",
+    "under",
+    "bridge"
+   ]
+  },
+  {
+   "piece": "loop_out",
+   "type": "STRAIGHT",
+   "s0": 1105,
+   "s1": 1124.5,
+   "cls": {
+    "straight": 40
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "plaza_hairpin",
+   "type": "HAIRPIN_180",
+   "s0": 1125,
+   "s1": 1205.5,
+   "cls": {
+    "plaza": 162
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "east_run",
+   "type": "CONNECT",
+   "s0": 1206,
+   "s1": 1322,
+   "cls": {
+    "straight": 233
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "turn_east",
+   "type": "CURVE_EASE",
+   "s0": 1322.5,
+   "s1": 1387,
+   "cls": {
+    "straight": 130
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "std_jump",
+   "type": "WIDTH_STEP",
+   "s0": 1387.5,
+   "s1": 1407,
+   "cls": {
+    "straight": 40
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "kicker",
+   "type": "KICKER",
+   "s0": 1407.5,
+   "s1": 1437.5,
+   "cls": {
+    "ramp": 61
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "air",
+   "type": "AIR",
+   "s0": 1438,
+   "s1": 1468,
+   "cls": {
+    "air": 61
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "landing",
+   "type": "LANDING",
+   "s0": 1468.5,
+   "s1": 1530.5,
+   "cls": {
+    "ramp": 125
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "street_out",
+   "type": "STRAIGHT",
+   "s0": 1531,
+   "s1": 1570.5,
+   "cls": {
+    "straight": 80
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "p1_to_nature",
+   "type": "TRANSITION",
+   "s0": 1571,
+   "s1": 1650.5,
+   "cls": {
+    "straight": 160
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "tunnel_in",
+   "type": "STRAIGHT",
+   "s0": 1651,
+   "s1": 1710.5,
+   "cls": {
+    "straight": 120
+   },
+   "walkableShare": 1,
+   "layers": [
+    "tunnel:T1_tunnel_in"
+   ]
+  },
+  {
+   "piece": "tunnel_bend",
+   "type": "CURVE_EASE",
+   "s0": 1711,
+   "s1": 1881.5,
+   "cls": {
+    "straight": 342
+   },
+   "walkableShare": 1,
+   "layers": [
+    "tunnel:T1_tunnel_in"
+   ]
+  },
+  {
+   "piece": "tunnel_out",
+   "type": "STRAIGHT",
+   "s0": 1882,
+   "s1": 1921.5,
+   "cls": {
+    "straight": 80
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_wide",
+   "type": "WIDTH_STEP",
+   "s0": 1922,
+   "s1": 2012.5,
+   "cls": {
+    "straight": 182
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_run",
+   "type": "STRAIGHT",
+   "s0": 2013,
+   "s1": 2072.5,
+   "cls": {
+    "straight": 120
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_kick",
+   "type": "KICKER",
+   "s0": 2073,
+   "s1": 2113.5,
+   "cls": {
+    "ramp": 82
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_air",
+   "type": "AIR",
+   "s0": 2114,
+   "s1": 2156.5,
+   "cls": {
+    "air": 86
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_land",
+   "type": "LANDING",
+   "s0": 2157,
+   "s1": 2197,
+   "cls": {
+    "ramp": 81
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "hero_narrow",
+   "type": "WIDTH_STEP",
+   "s0": 2197.5,
+   "s1": 2288,
+   "cls": {
+    "straight": 182
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_bend",
+   "type": "CURVE_EASE",
+   "s0": 2288.5,
+   "s1": 2428,
+   "cls": {
+    "straight": 280
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_pad",
+   "type": "STRAIGHT",
+   "s0": 2428.5,
+   "s1": 2548,
+   "cls": {
+    "plaza": 240
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_pier",
+   "type": "STRAIGHT",
+   "s0": 2548.5,
+   "s1": 2578.5,
+   "cls": {
+    "straight": 61
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy1_kick",
+   "type": "KICKER",
+   "s0": 2579,
+   "s1": 2592.5,
+   "cls": {
+    "ramp": 28
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy1_air",
+   "type": "AIR",
+   "s0": 2593,
+   "s1": 2619,
+   "cls": {
+    "air": 53
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy1_land",
+   "type": "LANDING",
+   "s0": 2619.5,
+   "s1": 2645.5,
+   "cls": {
+    "ramp": 53
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy2_kick",
+   "type": "KICKER",
+   "s0": 2646,
+   "s1": 2659.5,
+   "cls": {
+    "ramp": 28
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy2_air",
+   "type": "AIR",
+   "s0": 2660,
+   "s1": 2686,
+   "cls": {
+    "air": 53
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy2_land",
+   "type": "LANDING",
+   "s0": 2686.5,
+   "s1": 2712.5,
+   "cls": {
+    "ramp": 53
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy3_kick",
+   "type": "KICKER",
+   "s0": 2713,
+   "s1": 2727,
+   "cls": {
+    "ramp": 28,
+    "air": 1
+   },
+   "walkableShare": 0.966,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy3_air",
+   "type": "AIR",
+   "s0": 2727.5,
+   "s1": 2753.5,
+   "cls": {
+    "air": 53
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "buoy3_land",
+   "type": "LANDING",
+   "s0": 2754,
+   "s1": 2780,
+   "cls": {
+    "ramp": 53
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_pier_in",
+   "type": "STRAIGHT",
+   "s0": 2780.5,
+   "s1": 2810,
+   "cls": {
+    "straight": 60
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_loop_in",
+   "type": "STRAIGHT",
+   "s0": 2810.5,
+   "s1": 2826,
+   "cls": {
+    "loop": 32
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_loop",
+   "type": "LOOP",
+   "s0": 2826.5,
+   "s1": 3102,
+   "cls": {
+    "loop": 552
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-",
+    "under",
+    "bridge"
+   ]
+  },
+  {
+   "piece": "fs_loop_out",
+   "type": "STRAIGHT",
+   "s0": 3102.5,
+   "s1": 3122,
+   "cls": {
+    "straight": 40
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "fs_catch",
+   "type": "CURVE_EASE",
+   "s0": 3122.5,
+   "s1": 3206,
+   "cls": {
+    "loop": 168
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "sky_run",
+   "type": "STRAIGHT",
+   "s0": 3206.5,
+   "s1": 3246,
+   "cls": {
+    "skydrive": 80
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-",
+    "under"
+   ]
+  },
+  {
+   "piece": "sky_spiral",
+   "type": "SPIRAL",
+   "s0": 3246.5,
+   "s1": 3770.5,
+   "cls": {
+    "skydrive": 1049
+   },
+   "walkableShare": 0,
+   "layers": [
+    "under",
+    "under+bridge",
+    "bridge+under",
+    "bridge"
+   ]
+  },
+  {
+   "piece": "sky_ridge",
+   "type": "STRAIGHT",
+   "s0": 3771,
+   "s1": 3830.5,
+   "cls": {
+    "skydrive": 120
+   },
+   "walkableShare": 0,
+   "layers": [
+    "bridge",
+    "-"
+   ]
+  },
+  {
+   "piece": "sky_kick",
+   "type": "KICKER",
+   "s0": 3831,
+   "s1": 3860.5,
+   "cls": {
+    "skydrive": 60
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "sky_air",
+   "type": "AIR",
+   "s0": 3861,
+   "s1": 3912.5,
+   "cls": {
+    "air": 104
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "sky_land",
+   "type": "LANDING",
+   "s0": 3913,
+   "s1": 3991,
+   "cls": {
+    "skydrive": 157
+   },
+   "walkableShare": 0,
+   "layers": [
+    "-"
+   ]
+  },
+  {
+   "piece": "home",
+   "type": "CONNECT",
+   "s0": 3991.5,
+   "s1": 4199,
+   "cls": {
+    "straight": 417
+   },
+   "walkableShare": 1,
+   "layers": [
+    "-"
+   ]
+  }
+ ],
+ "walkableShare": 0.658
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "img2threejs-pilot-08-tinyskies-osm-integrated-stage",
+  "exportRevision": "2026-09-20-r1",
+  "status": "ARCHIVED_FAILED_PUBLICATION_GATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourcePr": 110,
+  "testedRuntimeHead": "aa28a743628699271c94c1911af23d0564c6f3cc",
+  "entrypoints": [
+    "tools/img2threejs/landmarks/pilot-08/index.html",
+    "kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/index.html"
+  ],
+  "sourceFiles": [
+    "tools/img2threejs/landmarks/pilot-08/",
+    "tools/img2threejs/styles/world-appearance-state.mjs",
+    "tools/img2threejs/styles/tinyskies-osm-cohesion.v1.json"
+  ],
+  "buildOutputs": [
+    "kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/"
+  ],
+  "dataFiles": [
+    "tools/osm-city-lab/scenes/huerth-v0.json",
+    "tools/osm-city-lab/styles/kfb-city-v0.json"
+  ],
+  "assetRefs": [],
+  "externalDependencies": [
+    "three@0.160.0 via unpkg in viewer",
+    "dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6 as reviewed behaviour donor"
+  ],
+  "evidence": [
+    "workflow 35471351012: 27/27 static + 19/19 browser PASS",
+    "artifact 10591829944",
+    "workflow 35471646709 attempt 1: public fallback HTML failure",
+    "workflow 35471646709 attempt 2: malformed SOURCE.json failure"
+  ],
+  "missing": [
+    "ZIP not duplicated: exact editable source is already preserved in Git/PR and browser screenshots are preserved in GitHub Actions artifact 10591829944",
+    "PUBLIC_VERIFIED evidence"
+  ],
+  "start": {
+    "command": null,
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/",
+    "notes": "Do not use as a human gate until marker-only NEXT_GATE passes."
+  }
+}

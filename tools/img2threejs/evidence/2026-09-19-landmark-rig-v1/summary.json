@@ -1,0 +1,90 @@
+{
+  "schema": "kfb.landmark-rig-v1.qa/0.1",
+  "date": "2026-09-19",
+  "evidenceClass": "STATIC_NUMERICAL_SOURCE_EVAL",
+  "browserRender": "NOT_YET_VERIFIED",
+  "consumerIntegration": "NOT_RUN",
+  "humanAcceptance": "PENDING",
+  "passed": 212,
+  "failed": 0,
+  "scope": [
+    "Spasskaya Tower",
+    "Kremlin wall study",
+    "base",
+    "city-grotesque",
+    "soft-cubist",
+    "grouped semantic clock anchors",
+    "living-toy idle/disco/impact preview math",
+    "viewer source syntax and UI contract"
+  ],
+  "stats": {
+    "spasskaya-base": {
+      "triangles": 3496,
+      "maxRigidClockDistanceErrorM": 0
+    },
+    "spasskaya-city-grotesque": {
+      "triangles": 3496,
+      "maxRigidClockDistanceErrorM": 3.9968028886505635e-15,
+      "legacyClockDistortionM": 0.41808942777357005
+    },
+    "spasskaya-soft-cubist": {
+      "triangles": 3496,
+      "maxRigidClockDistanceErrorM": 4.440892098500626e-15,
+      "legacyClockDistortionM": 0.24259836313130068
+    },
+    "kremlin-wall-base": {
+      "triangles": 5008,
+      "maxRigidClockDistanceErrorM": 0
+    },
+    "kremlin-wall-city-grotesque": {
+      "triangles": 5008,
+      "maxRigidClockDistanceErrorM": 3.9968028886505635e-15,
+      "legacyClockDistortionM": 0.4355876274587551
+    },
+    "kremlin-wall-soft-cubist": {
+      "triangles": 5008,
+      "maxRigidClockDistanceErrorM": 3.9968028886505635e-15,
+      "legacyClockDistortionM": 0.27858058024967747
+    }
+  },
+  "reactorBounds": {
+    "bpmInput": [30, 240],
+    "intensityInput": [0, 1],
+    "impactInput": [0, 1],
+    "previewTiltZAbsMaxRad": 0.08,
+    "impactOffsetXAbsMaxM": 0.6,
+    "note": "Presentation preview only. No Race/Travel contact force or Audio runtime is implemented."
+  },
+  "sourceBlobs": {
+    "SLICE.md": "2f020fa39356bb6fd21cfa8ff7f28f8be2645ef9",
+    "rig.mjs": "0de994885f87a5cfb24ebe06452596d3dc74da14",
+    "rig-three.mjs": "bef23d3f58db2eb738f014590d48d931395523dd",
+    "reactor.mjs": "687ac1e637aa0be0de53579ef80de86dc7859f75",
+    "viewer.mjs": "bbdb791cb6c9e40fd1354ffbb935d7dd2a8a45e3",
+    "index.html": "3d478060e063d71158d697d9ddfbec94e5202dff",
+    "check_landmark_rig_v1.mjs": "188828bcbefae7d5eb08ec8b3295c03cb1392676"
+  },
+  "testMethod": {
+    "runner": "in-memory evaluation of current GitHub main source through Code Mode plus reproducible repo test script",
+    "checks": [
+      "source asset remains unchanged",
+      "triangle count preserved",
+      "ground anchor preserved",
+      "four explicit rigid clock attachments",
+      "attachment anchor independently maps through the same deformation field",
+      "sampled local basis orthogonal",
+      "clock vertex distances to anchor preserved below 1e-8 m",
+      "grouped deformation outperforms legacy point deformation on clock shape preservation",
+      "reactor outputs finite and bounded",
+      "impact direction preserved",
+      "viewer module source parses",
+      "required review controls present"
+    ]
+  },
+  "limits": [
+    "No successful WebGL/browser frame is claimed in this evidence.",
+    "No collision, bounce, movement, camera, persistence or audio owner is created.",
+    "Bumper metadata is proposal-only until the receiving Race/Travel contact owner implements and validates it.",
+    "Semantic group rig is proven only on Spasskaya / Kremlin wall study in v1."
+  ]
+}

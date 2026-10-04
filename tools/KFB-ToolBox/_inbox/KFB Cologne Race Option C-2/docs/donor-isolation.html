@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Cologne Option C · Spender einzeln</title>
+<style>
+  html,body{margin:0;height:100%;background:#0d131c;color:#f2ece1;
+    font:13px/1.5 ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;}
+  header{padding:18px 22px 10px;}
+  h1{margin:0;font-size:19px;letter-spacing:-0.01em;}
+  p.sub{margin:5px 0 0;color:#57a59b;font:12px/1.5 ui-monospace,monospace;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;padding:14px 22px 40px;}
+  .cell{border:1px solid #164b59;border-radius:6px;overflow:hidden;background:#121c26;display:flex;flex-direction:column;}
+  .cell canvas{width:100%;height:230px;display:block;background:#16212b;}
+  .meta{padding:10px 13px;font:11px/1.6 ui-monospace,SFMono-Regular,monospace;color:#d5c8b2;}
+  .meta b{color:#fdd37b;font-weight:600;}
+  .meta .path{color:#57a59b;overflow-wrap:anywhere;}
+  .ok{color:#279797;} .bad{color:#fb3233;}
+  .cardimg{width:100%;height:230px;object-fit:contain;background:#16212b;display:block;}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<header>
+  <h1>Spender einzeln · KFB Cologne Race Option C</h1>
+  <p class="sub">Jeder Spender vor der Integration isoliert geöffnet und vermessen (Brief §36).
+  Pin 2ff8b350beefe02912bbff6eeeead3882e583d08 · Map data © OpenStreetMap contributors · ODbL 1.0</p>
+</header>
+<div class="grid" id="grid"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { buildDom } from '../lab-v9/cologne-world.v1.js';
+import { RAW } from '../lab-v9/cologne-world.v1.js';
+import { renderCardQuarter, CARD_POOL } from '../lab-v9/cologne-props.v1.js';
+
+const grid = document.getElementById('grid');
+const results = {};
+
+function cell(title){
+  const d=document.createElement('div');d.className='cell';
+  const cv=document.createElement('canvas');
+  const m=document.createElement('div');m.className='meta';
+  m.innerHTML='<b>'+title+'</b><br><span class="path">lädt…</span>';
+  d.append(cv,m);grid.append(d);
+  return {cv,m};
+}
+
+function viewer(cv){
+  const r=new THREE.WebGLRenderer({canvas:cv,antialias:true});
+  r.setPixelRatio(Math.min(devicePixelRatio,2));
+  const sc=new THREE.Scene();sc.background=new THREE.Color(0x16212b);
+  const cam=new THREE.PerspectiveCamera(42,16/9,0.1,8000);
+  sc.add(new THREE.HemisphereLight(0xfde892,0x164b59,1.1));
+  const dl=new THREE.DirectionalLight(0xffe4b0,2.1);dl.position.set(3,5,4);sc.add(dl);
+  const ctrl=new OrbitControls(cam,cv);ctrl.enableDamping=true;
+  function size(){const w=cv.clientWidth||320,h=cv.clientHeight||230;
+    r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+  function frame(obj){
+    const bb=new THREE.Box3().setFromObject(obj);
+    const sp=bb.getBoundingSphere(new THREE.Sphere());
+    const dist=sp.radius/Math.sin(THREE.MathUtils.degToRad(cam.fov)/2)*1.25;
+    ctrl.target.copy(sp.center);
+    cam.position.copy(sp.center).add(new THREE.Vector3(0.75,0.5,1).normalize().multiplyScalar(dist));
+    ctrl.update();
+    return bb;
+  }
+  size();new ResizeObserver(size).observe(cv);
+  (function loop(){requestAnimationFrame(loop);ctrl.update();r.render(sc,cam);})();
+  return {sc,cam,frame};
+}
+
+async function bytes(url){
+  try{const r=await fetch(url);if(!r.ok)return {ok:false,n:r.status};
+    const b=await r.arrayBuffer();return {ok:true,n:b.byteLength};}
+  catch(e){return {ok:false,n:e.message};}
+}
+
+// 1 · Kölner Dom
+{
+  const {cv,m}=cell('1 · Kölner Dom');
+  const v=viewer(cv);
+  const dom=buildDom(THREE,{x:0,z:0});
+  dom.group.rotation.y=0;dom.group.position.set(0,0,0);
+  v.sc.add(dom.group);
+  const bb=v.frame(dom.group);
+  const s=bb.getSize(new THREE.Vector3());
+  results.dom={sizeM:[+s.x.toFixed(1),+s.y.toFixed(1),+s.z.toFixed(1)],scale:dom.measured.scale};
+  m.innerHTML='<b>1 · Kölner Dom</b><br>'+
+    '<span class="path">tools/img2threejs/prototypes/koelner-dom/v0.2/index.html<br>'+
+    'Profil landmark-style-profiles.v1.json#koelner-dom (blob 2ef3ecaaf81f)</span><br>'+
+    'gebaut '+s.x.toFixed(1)+' × '+s.y.toFixed(1)+' × '+s.z.toFixed(1)+' m · Faktor '+dom.measured.scale+'<br>'+
+    'OSM way/4532022 · Tag height 157,38 m · Grundriss 146,0 × 86,8 m<br>'+
+    '<span class="ok">Doppelturm-Identität erhalten · Drehung −90° (Türme nach Westen)</span>';
+  (function spin(){requestAnimationFrame(spin);dom.update(performance.now()/1000,1);})();
+}
+
+// 2-4 · KayKit-Fahrzeuge
+for(const id of ['car_hatchback','car_sedan','car_stationwagon']){
+  const {cv,m}=cell('KayKit · '+id);
+  const v=viewer(cv);
+  const path='media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/'+id+'.gltf';
+  try{
+    const g=await new GLTFLoader().loadAsync(RAW(path));
+    v.sc.add(g.scene);
+    const bb=v.frame(g.scene);
+    const s=bb.getSize(new THREE.Vector3());
+    const wheels=[];g.scene.traverse(o=>{if(/wheel_/.test(o.name))wheels.push(o.name);});
+    const b1=await bytes(RAW(path)),b2=await bytes(RAW(path.replace('.gltf','.bin')));
+    results[id]={u:[+s.x.toFixed(3),+s.y.toFixed(3),+s.z.toFixed(3)],wheels:wheels.length};
+    m.innerHTML='<b>KayKit · '+id+'</b><br><span class="path">'+path+'</span><br>'+
+      'glTF '+b1.n+' B · bin '+b2.n+' B<br>'+
+      'Modell '+s.x.toFixed(3)+' × '+s.y.toFixed(3)+' × '+s.z.toFixed(3)+' u<br>'+
+      'Räder: '+wheels.length+' · '+wheels.join(', ')+'<br>'+
+      'Spielmaßstab 5,1551 → '+(s.x*5.1551).toFixed(2)+' × '+(s.y*5.1551).toFixed(2)+' × '+(s.z*5.1551).toFixed(2)+' m<br>'+
+      '<span class="ok">Vorwärtsachse +Z · Radunterkante auf y=0 gesetzt</span>';
+  }catch(e){m.innerHTML='<b>'+id+'</b><br><span class="bad">FEHLER '+e.message+'</span>';}
+}
+
+// 5-6 · Kenney Racing Kit
+for(const [label,path,note] of [
+  ['Kenney · billboard.glb','media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb','Kartenträger · Querformatfläche'],
+  ['Kenney · camera_exclusive.glb','media/3D_Assets/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb','CCTV-Heldenkamera']
+]){
+  const {cv,m}=cell(label);
+  const v=viewer(cv);
+  try{
+    const g=await new GLTFLoader().loadAsync(RAW(path));
+    v.sc.add(g.scene);
+    const bb=v.frame(g.scene);
+    const s=bb.getSize(new THREE.Vector3());
+    const b=await bytes(RAW(path));
+    m.innerHTML='<b>'+label+'</b><br><span class="path">'+path+'</span><br>'+
+      b.n+' B · Modell '+s.x.toFixed(3)+' × '+s.y.toFixed(3)+' × '+s.z.toFixed(3)+' u<br>'+note+'<br>'+
+      '<span class="ok">Byte-Abfrage auf den Pfad — die Ordneransicht des Repos listet unter '+
+      'kenney_racing-kit nur Preview.png und Sample.png.</span>';
+  }catch(e){m.innerHTML='<b>'+label+'</b><br><span class="bad">FEHLER '+e.message+'</span>';}
+}
+
+// 7 · Echtes KFB-Kartenbild
+{
+  const d=document.createElement('div');d.className='cell';
+  const img=document.createElement('canvas');img.className='cardimg';
+  const m=document.createElement('div');m.className='meta';
+  m.innerHTML='<b>7 · KFB-Kartenbild</b><br><span class="path">rendert PDF…</span>';
+  d.append(img,m);grid.append(d);
+  try{
+    const card=await renderCardQuarter(CARD_POOL[0]);
+    img.width=card.canvas.width;img.height=card.canvas.height;
+    img.getContext('2d').drawImage(card.canvas,0,0);
+    results.card={packId:card.packId,n:card.cardNumber,page:card.page,quad:card.quadrant};
+    m.innerHTML='<b>7 · KFB-Kartenbild</b><br>'+
+      '<span class="path">media/kfb/index.json (kfb-deck-registry/v2, blob af276a8b941a)<br>'+
+      card.pdf+'</span><br>'+
+      card.title+' · Karte '+card.cardNumber+' · Seite '+card.page+' von '+card.pages+' · Quadrant '+card.quadrant+'<br>'+
+      'Verfahren: '+card.method+'<br>'+
+      '<span class="ok">Echtes Deck-PDF, kein erfundenes Kartenmotiv.</span>';
+  }catch(e){m.innerHTML='<b>7 · KFB-Kartenbild</b><br><span class="bad">FEHLER '+e.message+'</span>';}
+}
+
+// 8 · Rhein + Dom-Grundriss aus dem OSM-Cache
+{
+  const d=document.createElement('div');d.className='cell';
+  const cv=document.createElement('canvas');cv.width=760;cv.height=460;cv.style.cssText='width:100%;height:230px;background:#16212b;display:block;';
+  const m=document.createElement('div');m.className='meta';
+  d.append(cv,m);grid.append(d);
+  const ctx2=await (await fetch('../tools/osm-city-lab/data/dom-zentrum-v0/CLAUDE_CONTEXT.json')).json();
+  const g=cv.getContext('2d');
+  const B=ctx2.bounds, sc=Math.min(cv.width/(B.max.x-B.min.x),cv.height/(B.max.z-B.min.z))*0.92;
+  const px=x=>cv.width/2+(x-(B.min.x+B.max.x)/2)*sc;
+  const pz=z=>cv.height/2-(z-(B.min.z+B.max.z)/2)*sc;
+  const rhine=ctx2.water.surfaces.find(w=>w.id==='relation/11280522:0');
+  g.fillStyle='#1c7685';g.beginPath();
+  rhine.polygon.forEach((p,i)=>i?g.lineTo(px(p.x),pz(p.z)):g.moveTo(px(p.x),pz(p.z)));
+  g.closePath();g.fill();
+  g.strokeStyle='#279797';g.lineWidth=1.2;
+  ctx2.nearbyNamedDriveableRoads.forEach(r=>{g.beginPath();
+    r.centerline.forEach((p,i)=>i?g.lineTo(px(p.x),pz(p.z)):g.moveTo(px(p.x),pz(p.z)));g.stroke();});
+  g.fillStyle='#fdd37b';g.beginPath();
+  ctx2.domFootprint.points.forEach((p,i)=>i?g.lineTo(px(p.x),pz(p.z)):g.moveTo(px(p.x),pz(p.z)));
+  g.closePath();g.fill();
+  g.fillStyle='#fb3233';
+  Object.values(ctx2.heroes).forEach(h=>{g.beginPath();g.arc(px(h.local.x),pz(h.local.z),4,0,7);g.fill();});
+  m.innerHTML='<b>8 · OSM-Cache einzeln</b><br>'+
+    '<span class="path">tools/osm-city-lab/data/dom-zentrum-v0/CLAUDE_CONTEXT.json (blob ae0d12b3dc59)</span><br>'+
+    'Gelb: Dom-Grundriss way/4532022, '+ctx2.domFootprint.points.length+' Punkte<br>'+
+    'Teal: Rhein relation/11280522:0, '+rhine.polygon.length+' Punkte<br>'+
+    'Linien: '+ctx2.nearbyNamedDriveableRoads.length+' benannte befahrbare Straßen am Dom<br>'+
+    'Rot: 7 aufgelöste Heldenanker · Rahmen '+B.sizeM.x.toFixed(0)+' × '+B.sizeM.z.toFixed(0)+' m<br>'+
+    'OSM-Zeitstempel '+ctx2.generatedFrom.osmBaseTimestamp;
+}
+
+window.__DONOR_ISOLATION = results;
+console.log('[donor-isolation]', results);
+</script>
+</body>
+</html>

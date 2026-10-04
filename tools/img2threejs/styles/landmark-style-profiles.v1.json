@@ -1,0 +1,219 @@
+{
+  "schema": "kfb.landmark.style-profiles/1.0",
+  "status": "AUTHORING_DECISION",
+  "defaultShapeMode": "city-grotesque",
+  "defaultEnvironment": "osm",
+  "sourcePins": {
+    "kayfabizarroHeadAtDecision": "0f46003fa8ffd63c0b190c639a6a6c38bfec592b",
+    "osmCityStyle": {
+      "path": "tools/osm-city-lab/styles/kfb-city-v0.json",
+      "blob": "f129cca3041b55b84de26048dad7aef8fac8b292"
+    },
+    "osmCityMaterials": {
+      "path": "tools/osm-city-lab/src/style/kfb-city-materials.js",
+      "blob": "42cca129c5928f6178d0f7e1e0c06f7cc1a62b03"
+    },
+    "osmCityDeformer": {
+      "path": "tools/osm-city-lab/src/style/cartoon-city.js",
+      "blob": "d08c19fc45d98546b7ef2803f2ddbcb73b7f6782"
+    },
+    "osmCityViewerLighting": {
+      "path": "tools/osm-city-lab/src/viewer/app.js",
+      "blob": "181edccab50c2b127b95370cc67da55e138b7a78"
+    },
+    "travelRepo": "georg-doc/KFB-Travel-Globe",
+    "travelCommit": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+    "legacySkydomeDonor": {
+      "path": "travel/travel-v16/terrain-v16/skydome-shader.js",
+      "blob": "f747574d42835ffec335443dadc481f077e5dc2f",
+      "role": "optional donor; current Travel sky-presets remain authoritative for default look"
+    },
+    "legacyWorldPalettesDonor": {
+      "path": "travel/travel-v16/terrain-v16/world-palettes.js",
+      "blob": "f6121ae41f00804a321592f60cdefb78206e76c6",
+      "role": "optional named-palette donor; current Travel mood/biome rules remain authoritative"
+    }
+  },
+  "worldStyleRules": {
+    "grotesqueIsLandmarkDefault": true,
+    "osmCityDefaultModeUnchanged": true,
+    "landmarkIdentityPaletteRemainsLocal": true,
+    "worldMoodIsHueShiftOnly": true,
+    "preserveLandmarkSaturationAndLightness": true,
+    "environmentLightingOwnedByHost": true,
+    "noPrivateTravelFetchAtRuntime": true,
+    "derivedTravelSnapshot": "travel-visual-snapshot.v1.json",
+    "currentTravelSkyPresetsOwnDefaultLook": true,
+    "legacySkydomeVariantsAreOptional": true,
+    "osmCityIsDefaultReviewEnvironment": true,
+    "travelRemainsAlternateReviewEnvironment": true
+  },
+  "profiles": {
+    "koelner-dom": {
+      "label": "Cologne Cathedral",
+      "geometryClass": "hero-gothic",
+      "identityPalette": {
+        "structure": "#7c7770",
+        "secondary": "#9b958b",
+        "upper": "#57534e",
+        "accent": "#d0aa56",
+        "glazing": "#3f6275",
+        "base": "#aaa092"
+      },
+      "worldCoupling": {
+        "structure": 0.24,
+        "secondary": 0.28,
+        "upper": 0.18,
+        "accent": 0.18,
+        "glazing": 0.32,
+        "base": 0.28
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "semantic-bands-required",
+      "implementation": "DOM_V0_2_ACCEPTED_STYLE_NEEDS_MODULAR_GROTESQUE_MIGRATION"
+    },
+    "eiffel": {
+      "label": "Eiffel Tower",
+      "geometryClass": "lattice-tower",
+      "identityPalette": {
+        "structure": "#95613f",
+        "secondary": "#bd8456",
+        "upper": "#574d46",
+        "accent": "#e2b84e",
+        "glazing": "#465e69",
+        "base": "#b7a78e"
+      },
+      "worldCoupling": {
+        "structure": 0.28,
+        "secondary": 0.32,
+        "upper": 0.18,
+        "accent": 0.16,
+        "glazing": 0.28,
+        "base": 0.26
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "global-grotesque-then-lod-review",
+      "implementation": "PILOT_01_03"
+    },
+    "giza": {
+      "label": "Giza Pyramids",
+      "geometryClass": "monumental-solid",
+      "identityPalette": {
+        "structure": "#d1ad6c",
+        "secondary": "#b78d54",
+        "upper": "#efddb0",
+        "accent": "#a76b4b",
+        "glazing": "#53666c",
+        "base": "#c6b28c"
+      },
+      "worldCoupling": {
+        "structure": 0.24,
+        "secondary": 0.3,
+        "upper": 0.18,
+        "accent": 0.18,
+        "glazing": 0.26,
+        "base": 0.3
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "global-grotesque",
+      "constructionVariants": [
+        "base",
+        "voxel-steps",
+        "boxel"
+      ],
+      "implementation": "PILOT_01_03"
+    },
+    "stonehenge": {
+      "label": "Stonehenge",
+      "geometryClass": "megalith-ring",
+      "identityPalette": {
+        "structure": "#969789",
+        "secondary": "#71796e",
+        "upper": "#b5b39e",
+        "accent": "#c7a65e",
+        "glazing": "#50636b",
+        "base": "#aaa28b"
+      },
+      "worldCoupling": {
+        "structure": 0.36,
+        "secondary": 0.4,
+        "upper": 0.3,
+        "accent": 0.22,
+        "glazing": 0.3,
+        "base": 0.38
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "grouped-monoliths",
+      "implementation": "PILOT_01_03"
+    },
+    "pentagon": {
+      "label": "The Pentagon",
+      "geometryClass": "radial-ring-building",
+      "identityPalette": {
+        "structure": "#d8cfb6",
+        "secondary": "#c4b99f",
+        "upper": "#747b78",
+        "accent": "#d0a24e",
+        "glazing": "#465d67",
+        "base": "#baad92"
+      },
+      "worldCoupling": {
+        "structure": 0.3,
+        "secondary": 0.34,
+        "upper": 0.2,
+        "accent": 0.16,
+        "glazing": 0.3,
+        "base": 0.3
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "ring-bands",
+      "implementation": "PILOT_02_03"
+    },
+    "spasskaya": {
+      "label": "Spasskaya Tower",
+      "geometryClass": "stacked-clock-tower",
+      "identityPalette": {
+        "structure": "#b95e42",
+        "secondary": "#e6d6ad",
+        "upper": "#3b7b67",
+        "accent": "#d6ad48",
+        "glazing": "#263e49",
+        "base": "#b8aa91"
+      },
+      "worldCoupling": {
+        "structure": 0.24,
+        "secondary": 0.24,
+        "upper": 0.26,
+        "accent": 0.14,
+        "glazing": 0.3,
+        "base": 0.28
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "semantic-affine-bands-v2",
+      "implementation": "PILOT_05_ACCEPTED"
+    },
+    "kremlin-wall": {
+      "label": "Kremlin Wall Study",
+      "geometryClass": "wall-tower-ensemble",
+      "identityPalette": {
+        "structure": "#b85c40",
+        "secondary": "#e4d3aa",
+        "upper": "#3c7966",
+        "accent": "#d3aa47",
+        "glazing": "#273e48",
+        "base": "#b5a78f"
+      },
+      "worldCoupling": {
+        "structure": 0.24,
+        "secondary": 0.24,
+        "upper": 0.26,
+        "accent": 0.14,
+        "glazing": 0.3,
+        "base": 0.28
+      },
+      "biomeAccentSlot": "zonen",
+      "rigStrategy": "semantic-affine-bands-v2",
+      "implementation": "PILOT_05_ACCEPTED"
+    }
+  }
+}

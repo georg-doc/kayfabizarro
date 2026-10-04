@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>KFB Cartoon Map Board · Europe P0.2</title>
+<style>
+:root{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#f4efe5;background:#16131c;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+button,input{font:inherit}
+#app{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto;background:
+  radial-gradient(circle at 30% 15%,#342c45 0,#1d1925 45%,#121016 100%)}
+.topbar{
+  z-index:20;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:10px 12px;background:#221d2bcc;border-bottom:1px solid #6c5b7b;
+  backdrop-filter:blur(12px)
+}
+.brand{font-weight:900;letter-spacing:.035em;margin-right:6px}
+.badge{font-size:10px;font-weight:800;letter-spacing:.08em;padding:4px 7px;border:1px solid #7b6b8b;border-radius:999px;color:#d9cedf}
+.controls{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+button{
+  border:1px solid #80708f;background:#eee4d5;color:#251f2d;padding:7px 10px;
+  border-radius:9px;font-weight:800;font-size:12px;cursor:pointer
+}
+button:hover{transform:translateY(-1px)}
+button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
+button:disabled{opacity:.42;cursor:default;transform:none}
+.spacer{flex:1}
+.slider{display:flex;align-items:center;gap:6px;font-size:11px;color:#d7cddd}
+.slider input{width:92px}
+.stage{position:relative;min-height:0}
+#view{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.label-layer{position:absolute;inset:0;pointer-events:none}
+.country-label{
+  font-family:Georgia,"Times New Roman",serif;font-weight:900;font-size:11px;
+  color:#241e28;text-shadow:0 1px 0 #fff9e9,1px 0 0 #fff9e9,-1px 0 0 #fff9e9;
+  transform:translate(-50%,-50%);white-space:nowrap;opacity:.84
+}
+.story-label{
+  background:#1d1824;color:#fff;border:2px solid #f4eee4;
+  box-shadow:4px 5px 0 #100d14;padding:4px 7px;font-size:10px;font-weight:900;
+  letter-spacing:.04em;transform:translate(-50%,-115%);white-space:nowrap
+}
+.story-label.active{background:#f0c94d;color:#241d2d;border-color:#241d2d;box-shadow:5px 6px 0 #100d14}
+.hover-note{
+  position:absolute;z-index:11;pointer-events:none;display:none;padding:4px 7px;
+  background:#f6eddf;color:#211b28;border:1px solid #211b28;border-radius:7px;
+  box-shadow:3px 4px 0 #17121d55;font-size:10px;font-weight:900;letter-spacing:.04em
+}
+.panel{
+  position:absolute;left:14px;bottom:14px;z-index:12;width:min(390px,calc(100% - 28px));
+  padding:12px 13px;border:1px solid #55485e;border-radius:14px;background:#f4eadde8;
+  color:#2a2330;box-shadow:8px 10px 0 #17121d55;backdrop-filter:blur(10px)
+}
+.panel .kicker{font-size:10px;font-weight:900;letter-spacing:.12em;color:#6a516f}
+.panel h2{font-family:Georgia,"Times New Roman",serif;margin:3px 0 5px;font-size:23px}
+.panel p{margin:4px 0;font-size:12px;line-height:1.4}
+.panel .diag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:#655a68;margin-top:7px}
+.legend{
+  position:absolute;right:14px;bottom:14px;z-index:12;max-width:270px;
+  padding:10px 12px;border-radius:12px;background:#211b2bd9;border:1px solid #675a73;
+  font-size:11px;line-height:1.45;color:#ddd3e2;backdrop-filter:blur(10px)
+}
+.legend strong{color:#fff}
+.footer{
+  z-index:20;padding:6px 12px;background:#211b2b;color:#bfb6c7;font-size:10px;
+  border-top:1px solid #4f435a;display:flex;gap:10px;flex-wrap:wrap
+}
+.footer a{color:#f1d36d}
+.loading{
+  position:absolute;inset:0;z-index:30;display:grid;place-items:center;pointer-events:none;
+  background:radial-gradient(circle,#2e2739aa,#16131cdd);transition:opacity .35s
+}
+.loading.hidden{opacity:0}
+.loading-card{
+  width:min(520px,calc(100% - 32px));padding:20px 22px;border:1px solid #756580;
+  background:#211b2bf0;border-radius:16px;box-shadow:10px 12px 0 #0b090e66
+}
+.loading-card strong{display:block;font-size:18px;margin-bottom:5px}
+.loading-card span{font-size:12px;color:#cfc3d6}
+@media(max-width:820px){
+  .badge,.slider{display:none}.brand{width:100%}.legend{display:none}
+  .panel{max-height:34vh;overflow:auto}
+}
+</style>
+<script type="importmap">
+{
+  "imports":{
+    "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">KFB CARTOON MAP BOARD</div>
+    <span class="badge">EUROPE P0.2</span>
+    <span class="badge">OSM-DERIVED</span>
+    <span class="badge">KAYKIT TOKENS</span>
+    <span class="badge">STORY FOCUS</span>
+    <div class="controls">
+      <button data-camera="hero" class="active">HERO</button>
+      <button data-camera="top">TOP</button>
+      <button data-camera="low">LOW</button>
+      <button id="focusBtn" disabled>FOCUS</button>
+      <button id="storyBtn" disabled>NEXT STORY</button>
+      <button id="explodeBtn">EXPLODE</button>
+      <button id="labelsBtn" class="active">LABELS</button>
+      <button id="tokensBtn" class="active">TOKENS</button>
+    </div>
+    <div class="spacer"></div>
+    <label class="slider">INK <input id="inkSlider" type="range" min="0.65" max="1.8" value="1" step="0.05"></label>
+    <label class="slider">HEIGHT <input id="heightSlider" type="range" min="0.4" max="2.2" value="1" step="0.05"></label>
+  </header>
+  <main class="stage" id="stage">
+    <canvas id="view"></canvas>
+    <div class="hover-note" id="hoverNote"></div>
+    <aside class="panel">
+      <div class="kicker" id="selKicker">SELECT A COUNTRY TILE</div>
+      <h2 id="selName">Europe · Board View</h2>
+      <p id="selText">Orbit, zoom and click a country. The map is built as individual 3D puzzle pieces with hand-inked border ribbons and real KayKit board-game markers.</p>
+      <div class="diag" id="diag">Booting…</div>
+    </aside>
+    <aside class="legend">
+      <strong>Visual grammar</strong><br>
+      pastel country tiles · thickened south-east ink edge · upper-left key light · physical drop shadows · deterministic paper + contour wobble · focus choreography · separable / recombinable countries.
+    </aside>
+    <div class="loading" id="loading">
+      <div class="loading-card"><strong id="loadingTitle">Building the board…</strong><span id="loadingText">Resolving OSM-derived country boundaries.</span></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <span>Map data © OpenStreetMap contributors · ODbL 1.0</span>
+    <span>Boundary delivery: OpenPlanetData</span>
+    <span>3D markers: KayKit Board Game Bits from the KFB asset repository</span>
+    <span>KFB Ink Canon capability is imported; map borders use a non-destructive map adapter.</span>
+  </footer>
+</div>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

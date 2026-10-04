@@ -1,0 +1,70 @@
+{
+  "schema": "kfb.collider-proxy-spec.v0",
+  "vehicleId": "car-sedan",
+  "status": "SOURCE_DERIVED_SPEC_BINARY_NOT_CREATED",
+  "derivation": {
+    "sourceMeshNode": "car_sedan",
+    "excludesWheelNodes": [
+      "car_sedan_wheel_front_left",
+      "car_sedan_wheel_front_right",
+      "car_sedan_wheel_rear_left",
+      "car_sedan_wheel_rear_right"
+    ],
+    "sourceAccessor": 14,
+    "sourceAabb": {
+      "min": [
+        -0.20947551727294922,
+        -0.030000001192092896,
+        -0.47233495116233826
+      ],
+      "max": [
+        0.20948536694049835,
+        0.3077213168144226,
+        0.4657380282878876
+      ],
+      "center": [
+        0.00000492483377456665,
+        0.13886065781116486,
+        -0.003298461437225342
+      ],
+      "size": [
+        0.41896088421344757,
+        0.3377213180065155,
+        0.9380729794502258
+      ],
+      "halfExtents": [
+        0.20948044210672379,
+        0.16886065900325775,
+        0.4690364897251129
+      ]
+    },
+    "box1ScaledAabb": {
+      "scale": 4.370536190171623,
+      "center": [
+        0.000021524164242323063,
+        0.6068955303547339,
+        -0.01441604508327886
+      ],
+      "size": [
+        1.8310837067211756,
+        1.4760232425399353,
+        4.099881905709333
+      ],
+      "halfExtents": [
+        0.9155418533605878,
+        0.7380116212699677,
+        2.0499409528546666
+      ]
+    }
+  },
+  "proposedBinary": "derived/car-sedan-chassis-proxy.glb",
+  "proposedShape": "single conservative wheel-free box proxy derived from body mesh AABB",
+  "validationRequired": [
+    "generate binary outside source tree",
+    "inspect produced bytes",
+    "validate source digest/provenance",
+    "mount in selected Slice-04-derived DRIVE receiver",
+    "verify road/curb/impact/landing behavior"
+  ],
+  "blocker": "Game Development Studio game-dev CLI unavailable in current webchat execution environment"
+}

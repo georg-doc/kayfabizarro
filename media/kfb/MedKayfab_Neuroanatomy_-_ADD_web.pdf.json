@@ -1,0 +1,552 @@
+{
+  "sourceFile": "MedKayfab_Neuroanatomy - ADD web.pdf",
+  "deckTitle": "MedKayfab: Neuroanatomy Edition",
+  "deckType": "Medical Education Card Game",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T00:00:00",
+  "savedAt": "2026-06-20T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": ["education", "reference"],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Homy the Homunculus",
+      "grade": 1,
+      "power": "MCA Stroke — Target's contralateral face and arm are paralyzed.",
+      "lore": "The leg representation descends into the interhemispheric fissure. Bilateral ACA territory ischemia mimics spinal cord disease.",
+      "gradeReason": "Gorilla-brain homunculus instantly embodied; contralateral paralysis is a crisp performable.",
+      "artworkPrompt": "Style: anatomical illustration. Subject: giant gorilla straddling a brain cortex, face and arm zones glowing. Mood: authoritative."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Broca & Wernicke",
+      "grade": 2,
+      "power": "Conduction Aphasia — Target speaks fluently but cannot repeat a single word. Broca builds speech (expressive). Wernicke understands it (receptive).",
+      "lore": "The arcuate fasciculus connects both speech hubs. Damage between them causes Conduction Aphasia — fluent speech, intact comprehension, broken repetition.",
+      "gradeReason": "Two-in-one card; fluent-but-can't-repeat is vivid but splitting two characters dilutes instant embodiment.",
+      "artworkPrompt": "Style: cartoon duo. Subject: parrot and megaphone duo connected by a fraying arcuate wire, sound waves collapsing. Mood: chaotic verbose."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Fronty the Frontal Lobe",
+      "grade": 2,
+      "power": "Frontal Release — Re-equips primitive grasp and rooting reflexes.",
+      "lore": "Irritative lesion (seizures) makes eyes look AWAY. Destructive lesion (stroke) makes eyes look TOWARD the lesion.",
+      "gradeReason": "Eye gaze rule is clinically crisp; primitive reflex release is fun but needs framing to perform at table.",
+      "artworkPrompt": "Style: nautical illustration. Subject: octopus in captain's hat triggering a grasping reflex in a confused opponent. Mood: commanding executive."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Parry the Parietal Lobe",
+      "grade": 1,
+      "power": "Hemispatial Neglect — The left half of the opponent's world ceases to exist.",
+      "lore": "Dominant side handles math and fingers (Gerstmann). Non-dominant side integrates the spatial map.",
+      "gradeReason": "Half the world ceasing to exist is immediate, performable, and unforgettable. G1 knockout.",
+      "artworkPrompt": "Style: surrealist illustration. Subject: owl in VR goggles with left half of visual field erased to white. Mood: eerie absent."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Tempo the Temporal Lobe",
+      "grade": 1,
+      "power": "Uncal Herniation — Crush CN III to dilate the pupil, then cause false-localizing hemiplegia.",
+      "lore": "Hippocampus encodes memory. The Uncus herniates through the tentorium to cause the blown pupil.",
+      "gradeReason": "Blown pupil as a power move is instantly dramatic and clinically testable — pure G1.",
+      "artworkPrompt": "Style: retro horror. Subject: elephant reading a book, one eye exploding wide, brain slipping downward through tentorial notch. Mood: ominous urgent."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Occi the Occipital Lobe",
+      "grade": 2,
+      "power": "Macular Sparing — MCA/PCA dual blood supply protects central vision during PCA stroke.",
+      "lore": "Meyer's loop damage is pie in the sky (superior defect). Parietal optic radiation damage is pie on the floor (inferior).",
+      "gradeReason": "Pie in the sky / pie on the floor is brilliant but requires visual field anatomy context to perform.",
+      "artworkPrompt": "Style: color-wheel illustration. Subject: chameleon with half-erased visual field and pie-chart eyes. Mood: kaleidoscopic precise."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Insula Izzy",
+      "grade": 2,
+      "power": "Autonomic Arrhythmia — Manipulate internal body state and cardiac rhythm.",
+      "lore": "Buried deep in the Sylvian fissure. Right insular stroke triggers sympathetic storms and arrhythmias.",
+      "gradeReason": "Hidden lobe identity is atmospheric; cardiac rhythm manipulation needs contextual framing at table.",
+      "artworkPrompt": "Style: hidden chamber. Subject: stopwatch-wielding turtle buried inside folded brain rock, lightning bolts radiating. Mood: secretive electric."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Limby the Limbic System",
+      "grade": 1,
+      "power": "Anterograde Amnesia — Opponent cannot form new declarative memories.",
+      "lore": "Mammillary body atrophy (Wernicke-Korsakoff) permanently breaks the Papez episodic memory circuit.",
+      "gradeReason": "Can't form new memories — one of the most viscerally performable cards in medical education.",
+      "artworkPrompt": "Style: ink and wash. Subject: ferret clutching a broken clock, surrounded by fading footprints and blank notepads. Mood: ethereal haunted."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Basso the Basal Ganglia",
+      "grade": 2,
+      "power": "Direct vs Indirect — Dopamine strengthens the direct (go) and weakens the indirect (stop).",
+      "lore": "Parkinson's loses dopamine (stuck in stop). Huntington's loses the indirect pathway early (stuck in go).",
+      "gradeReason": "Go/stop logic is elegant but the D1/D2 mechanism is mechanical; needs player familiarity.",
+      "artworkPrompt": "Style: steampunk engineering. Subject: praying mantis at a dopamine throttle, two pathway dials labeled GO and STOP. Mood: calibrated mechanical."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Thalamo the Thalamus",
+      "grade": 2,
+      "power": "Dejerine-Roussy — Inflict burning, dysaesthetic pain weeks after a VPL infarct.",
+      "lore": "Every sensory modality except smell must synapse here before reaching the cortex.",
+      "gradeReason": "Burning pain weeks later is vivid but Dejerine-Roussy requires named syndrome recognition.",
+      "artworkPrompt": "Style: tollbooth illustration. Subject: bulldog guard in STOP vest at a sensory relay station, sparking signal lines around him. Mood: bureaucratic painful."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Dorsal the Dorsal Column",
+      "grade": 1,
+      "power": "Romberg Fall — Opponent falls over the moment they close their eyes.",
+      "lore": "Fine touch and proprioception ascend ipsilaterally and do not cross until the medial lemniscus in the medulla.",
+      "gradeReason": "Close your eyes, fall over — clinically immediate, perfectly performable, no explanation needed.",
+      "artworkPrompt": "Style: balancing act illustration. Subject: cat poised on a spine column, eyes shut, tipping sideways. Mood: precarious falling."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Spino the Spinothalamic Tract",
+      "grade": 2,
+      "power": "Cape Distribution — Syringomyelia expands the central canal, cutting the crossing fibers.",
+      "lore": "Pain and temperature cross the midline almost immediately in the anterior commissure of the spinal cord.",
+      "gradeReason": "Cape distribution is spatially vivid; syrinx mechanism needs explanation for non-med players.",
+      "artworkPrompt": "Style: adventure map. Subject: porcupine in a burning cape crossing midline on a spinal cord cross-section map. Mood: scorched dramatic."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Cortico the Corticospinal Tract",
+      "grade": 1,
+      "power": "UMN Spasticity — Inflict hyperreflexia, spasticity, and a positive Babinski sign. No wasting.",
+      "lore": "The internal capsule is the bottleneck. A tiny lacunar infarct here causes massive, dense contralateral hemiplegia.",
+      "gradeReason": "UMN vs LMN is the essential clinical distinction; hyperreflexia + Babinski is instantly testable.",
+      "artworkPrompt": "Style: power-lifter illustration. Subject: gorilla flexing through a narrow internal capsule bottleneck, foot extended upward. Mood: dense overwhelming."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Cere the Cerebellar Pathways",
+      "grade": 1,
+      "power": "Intention Tremor — Opponent's movements worsen as they approach the target.",
+      "lore": "Output crosses to the contralateral thalamus, then the corticospinal tract crosses back. Net result: ipsilateral control.",
+      "gradeReason": "Movements worsening as you approach the target — perfect game mechanic and immediately embodied.",
+      "artworkPrompt": "Style: confused spider chart. Subject: spider reaching for a fly, limbs shaking violently at the last inch. Mood: twitchy frustrated."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Russel the Rubrospinal",
+      "grade": 2,
+      "power": "Decerebrate vs Decorticate — Dictate the opponent's coma posture based on lesion height.",
+      "lore": "Cortical loss = decorticate (arms flexed). Lesion below red nucleus = decerebrate (all limbs extended).",
+      "gradeReason": "Posturing as a power concept is vivid; cortex vs red nucleus distinction needs explaining.",
+      "artworkPrompt": "Style: boxing ring. Subject: kangaroo with a red nucleus glowing in chest, opponent rigid below in decerebrate extension. Mood: knockout hierarchical."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Spino the Spinal Cord Cross-Section",
+      "grade": 2,
+      "power": "ASA Syndrome — Paraplegia and pain loss below lesion, but proprioception survives.",
+      "lore": "The anterior spinal artery feeds motor and pain tracts. The posterior spinal arteries feed the dorsal columns.",
+      "gradeReason": "Proprioception-spared paraplegia is clinically crisp; ASA vascular anatomy needs context.",
+      "artworkPrompt": "Style: cross-section diagram. Subject: angry faces inside spinal cord slice, anterior half scorched and posterior half pristine. Mood: dissociated."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Brown the Brown-Séquard",
+      "grade": 1,
+      "power": "The Cleanest Cut — Ipsilateral motor/proprioception loss, contralateral pain loss.",
+      "lore": "The ultimate test of crossing rules. Pain crosses early, motor and touch cross late.",
+      "gradeReason": "Split hemisection deficits are the testable classic — players immediately know what to perform.",
+      "artworkPrompt": "Style: butcher diagram. Subject: sheep sliced cleanly in half, left side motor-dead, right side flame-insensate. Mood: precise anatomical."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Conus the Conus & Cauda",
+      "grade": 1,
+      "power": "Sphincter Sabotage — Saddle anesthesia and loss of anal tone demands urgent surgery.",
+      "lore": "Conus = UMN signs mixed with LMN bladder. Cauda Equina = Pure LMN flaccid weakness and areflexia.",
+      "gradeReason": "Sphincter Sabotage + saddle anesthesia = unforgettable emergency. Instant G1.",
+      "artworkPrompt": "Style: emergency alert. Subject: aggressive badger in surgical scrubs with a saddle-shaped numb zone glowing red. Mood: urgent alarming."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Middy the Midbrain",
+      "grade": 2,
+      "power": "Weber's Strike — Ipsilateral CN III palsy + contralateral hemiplegia.",
+      "lore": "Houses the cerebral peduncles and oculomotor nerves. Parinaud's syndrome (pineal tumor) blocks upgaze.",
+      "gradeReason": "Weber's syndrome is named and learnable; CN III + hemiplegia combo needs clinical context.",
+      "artworkPrompt": "Style: primate anatomy. Subject: lemur dangling with one eye blown wide and contralateral arm paralyzed. Mood: crossed paradoxical."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Ponty the Pons",
+      "grade": 1,
+      "power": "Locked-In Syndrome — Bilateral ventral destruction leaves only vertical gaze and blinking.",
+      "lore": "The center for horizontal gaze. An MLF lesion causes Internuclear Ophthalmoplegia (INO).",
+      "gradeReason": "Locked-In is viscerally dramatic — only blink and look up. Instant table performance.",
+      "artworkPrompt": "Style: cage illustration. Subject: beaver trapped in glass box, eyes darting upward only, body completely motionless. Mood: terrifying trapped."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Meddy the Medulla",
+      "grade": 1,
+      "power": "Wallenberg's Curse (Lateral Medulla) — Ipsilateral face pain, Horner's, hoarseness, and ataxia.",
+      "lore": "Controls breathing (pre-Bötzinger). Lesions here are life-threatening.",
+      "gradeReason": "Wallenberg's is the classic multi-symptom syndrome — each deficit traceable, immediately performable.",
+      "artworkPrompt": "Style: nautical map. Subject: pelican with droopy eye, ataxic posture, holding a fish that has crossed sides. Mood: doomed elegant."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Cranio I–IV",
+      "grade": 3,
+      "power": "Pupillary Light Reflex — CN II senses the light, bilateral Edinger-Westphal nuclei send CN III to constrict.",
+      "lore": "A painful third nerve palsy with a blown pupil is a posterior communicating artery aneurysm emergency.",
+      "gradeReason": "Bilateral EW nuclei mechanism is explanatory, not performative; four cranial nerves in one card is dense.",
+      "artworkPrompt": "Style: binocular illustration. Subject: monkey inspecting a blown pupil through a naval telescope in emergency light. Mood: diagnostic urgent."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Cranio V–VII",
+      "grade": 1,
+      "power": "Bell's vs Stroke — LMN VII palsy drops the whole face. UMN spares the forehead.",
+      "lore": "CN VII has the longest intracranial course. An isolated CN VI palsy is a false localizing sign for raised ICP.",
+      "gradeReason": "Forehead-sparing vs full drop is instantly testable and performable — perfect bedside rule.",
+      "artworkPrompt": "Style: dog portrait. Subject: bloodhound with full left face drooping, forehead intact on right, wearing a stethoscope. Mood: diagnostic comparative."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Cranio VIII–XII",
+      "grade": 2,
+      "power": "Jugular Foramen Mass — Compress IX, X, and XI to destroy swallowing and shoulder shrug.",
+      "lore": "Uvula deviates AWAY from a CN X lesion. Tongue deviates TOWARD a CN XII LMN lesion.",
+      "gradeReason": "Away/toward deviation rule is a great mnemonic; jugular foramen grouping needs anatomical context.",
+      "artworkPrompt": "Style: swamp illustration. Subject: frog choking at a compressed jugular foramen, tongue veering sideways, uvula fleeing. Mood: dysfunctional absurd."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "The Cerebellum",
+      "grade": 2,
+      "power": "Archicerebellum Spin — Flocculonodular lobe lesions destroy balance and trigger nystagmus.",
+      "lore": "Vermis controls the trunk (paleocerebellum). Lateral hemispheres control distal limbs (neocerebellum).",
+      "gradeReason": "Archicerebellum Spin is evocative; FDGE deep nuclei stat needs table context to perform fully.",
+      "artworkPrompt": "Style: steampunk hummingbird. Subject: mechanical hummingbird navigating a cerebellar folia maze, eyes spinning with nystagmus. Mood: precise whirring."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Vertigo Vera",
+      "grade": 1,
+      "power": "Test of Skew — Differentiate a benign inner ear from a posterior circulation stroke.",
+      "lore": "Pure vertical nystagmus is ALWAYS central. Direction-changing horizontal nystagmus is central.",
+      "gradeReason": "Test of Skew is an immediately performable clinical act — look for the difference, report it.",
+      "artworkPrompt": "Style: cartoon cat in a fez. Subject: dizzy cat spinning in water rings, one eye higher than the other. Mood: swirling differentiated."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Brachy the Brachial Plexus",
+      "grade": 1,
+      "power": "Waiter's Tip (Erb's Palsy) — C5/C6 upper trunk avulsion during shoulder dystocia.",
+      "lore": "Lower trunk (C8/T1) injury causes Klumpke's claw hand PLUS Horner syndrome from T1 sympathetic drag.",
+      "gradeReason": "Waiter's Tip is instantly embodyable — arm hangs, hand pronated, you know exactly what to mime.",
+      "artworkPrompt": "Style: art nouveau. Subject: squid with upper tentacles fused in waiter's-tip posture, lower tentacles clawing. Mood: awkward subservient."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Radi the Radial Nerve",
+      "grade": 2,
+      "power": "Spiral Groove Crush — Target loses wrist and finger extension, but preserves elbow extension.",
+      "lore": "The triceps motor branch is given off BEFORE the nerve wraps around the humeral shaft.",
+      "gradeReason": "Wrist drop is vivid; preserved elbow extension distinction requires anatomical knowledge.",
+      "artworkPrompt": "Style: wildlife illustration. Subject: vulture slumped on a park bench, wrist dropped, elbow still extended. Mood: hungover precise."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Ulna the Ulnar Nerve",
+      "grade": 1,
+      "power": "Ulnar Paradox — A wrist lesion creates a WORSE claw than an elbow lesion.",
+      "lore": "A high lesion paralyzes FDP, meaning the fingers can't flex to form the full claw.",
+      "gradeReason": "The paradox is immediately counterintuitive and testable — players will argue about it, which is the point.",
+      "artworkPrompt": "Style: comic sloth. Subject: sloth holding a newspaper, wrist bent in paradoxical worse claw than elbow position. Mood: paradoxically worse."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Medi the Median Nerve",
+      "grade": 2,
+      "power": "Carpal Tunnel Crush — Nocturnal paraesthesia in the lateral 3.5 digits.",
+      "lore": "Thenar wasting means the nerve is dying. Benediction hand only happens with a high (elbow) lesion.",
+      "gradeReason": "Waking up with numb fingers is universal; lateral 3.5 digit precision and LOAF muscles need context.",
+      "artworkPrompt": "Style: precision illustration. Subject: chimp with the OK sign and thenar eminence fading, moonlit background. Mood: nocturnal precise."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Femmo the Femoral Nerve",
+      "grade": 2,
+      "power": "Psoas Hematoma — Compress the nerve within the psoas to kill hip flexion and knee extension.",
+      "lore": "Absent knee jerk + positive femoral stretch test + anterior thigh numbness.",
+      "gradeReason": "Psoas hematoma mechanism is vivid; L2-L4 myotome pattern needs clinical familiarity.",
+      "artworkPrompt": "Style: flamingo anatomy. Subject: flamingo with one leg collapsed, chair tipped, knee jerk hammer flying away. Mood: buckled elegant."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Sciati the Sciatic/Peroneal",
+      "grade": 1,
+      "power": "Foot Drop — Common peroneal palsy loses dorsiflexion and eversion.",
+      "lore": "How to tell peroneal palsy from L5 root lesion? L5 also loses inversion (tibialis posterior).",
+      "gradeReason": "Foot drop is universally recognized and immediately performable — steppage gait needs no explanation.",
+      "artworkPrompt": "Style: equine anatomy. Subject: horse with bandaged fibular neck, hoof dragging on scorched earth. Mood: hobbled determined."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Derma the Dermatomes",
+      "grade": 2,
+      "power": "Sensory Level — Pinpoint the exact spinal segment of a cord transection.",
+      "lore": "The thumb is C6. The middle finger is C7. The pinky is C8. Always.",
+      "gradeReason": "C6/C7/C8 finger mnemonic is excellent; sensory level clinical test needs patient framing.",
+      "artworkPrompt": "Style: postal map. Subject: zebra with dermatome stripes labelled like postal codes, thumb glowing C6. Mood: indexed precise."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Reflex Rex",
+      "grade": 1,
+      "power": "Jendrassik Manoeuvre — Pull clasped hands apart to amplify gamma motor neuron activity.",
+      "lore": "Hyperreflexia + Clonus + Babinski = UMN lesion. Areflexia + Wasting = LMN lesion.",
+      "gradeReason": "Pull your hands apart — the Jendrassik is physically performable at the table right now.",
+      "artworkPrompt": "Style: action sports. Subject: kangaroo yanking clasped hands apart, reflex hammer orbiting like a satellite. Mood: kinetic amplified."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Autonomo the ANS",
+      "grade": 3,
+      "power": "Adrenal Bypass — The adrenal medulla acts as a modified sympathetic ganglion, releasing directly to blood.",
+      "lore": "Sympathetic preganglionics are short. Parasympathetic preganglionics are long.",
+      "gradeReason": "Adrenal medulla as bypassed ganglion is mechanistic physiology — explains rather than invites performance.",
+      "artworkPrompt": "Style: fire-and-water duality. Subject: two llamas, one breathing fire asleep, one chewing grass awake, adrenal gland between them. Mood: balanced physiologic."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Horner the Horner",
+      "grade": 2,
+      "power": "Hydroxyamphetamine Test — Dilates central and preganglionic lesions, fails in postganglionic.",
+      "lore": "Ptosis, Miosis, Anhidrosis. An acute Horner with neck pain is a carotid dissection until proven otherwise.",
+      "gradeReason": "Ptosis/Miosis/Anhidrosis triad is clinical gold; hydroxyamphetamine test mechanics need pharmacology context.",
+      "artworkPrompt": "Style: ophidian portrait. Subject: cobra with droopy eye, constricted pupil, and a dry face, three neurons visible in chain. Mood: quiet ominous."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Derma Root Pain",
+      "grade": 1,
+      "power": "Spurling's Shock — Axial compression of rotated neck reproduces cervical radicular pain.",
+      "lore": "Posterolateral disc herniations in the lumbar spine compress the exiting nerve root ONE LEVEL BELOW the disc.",
+      "gradeReason": "Spurling's sign is a physical manoeuvre you can perform on another player — pure G1.",
+      "artworkPrompt": "Style: forensic anatomy. Subject: fox grabbing its own neck and pressing down, lightning bolts shooting down one arm. Mood: electric diagnostic."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Peripheral Percy",
+      "grade": 1,
+      "power": "Dying Back (Length-Dependent) — The longest axons fail first, causing stocking-glove sensory loss.",
+      "lore": "Guillain-Barré Syndrome shows high CSF protein with normal cell counts (dissociation) and absent reflexes.",
+      "gradeReason": "Stocking-glove numbness working its way up is spatially immediate and viscerally imaginable.",
+      "artworkPrompt": "Style: textile illustration. Subject: cat pulling on a dissolving stocking from toe upward, reflexes vanishing behind it. Mood: retreating numb."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Ventri the Ventricular System",
+      "grade": 1,
+      "power": "Hakim's Triad — Normal Pressure Hydrocephalus causes wobbly, wacky, and wet (gait, dementia, incontinence).",
+      "lore": "Aqueductal stenosis is obstructive. Post SAH failure of arachnoid granulations is communicating.",
+      "gradeReason": "Wobbly, wacky, and wet is the best mnemonic in the deck — immediately performable and unforgettable.",
+      "artworkPrompt": "Style: deep sea diving. Subject: bloated deep-sea fish in diver helmet waddling and leaking, brain chambers illuminated inside. Mood: pressurized confused."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Meningo the Meninges",
+      "grade": 1,
+      "power": "Lucid Interval — Epidural hematoma patients wake up, talk, and then suddenly herniate.",
+      "lore": "Epidural = Arterial (Middle Meningeal), Biconvex. Subdural = Venous (Bridging Veins), Crescent.",
+      "gradeReason": "Lucid interval is a narrative arc — wake up, chat, herniate. Dramatically performable.",
+      "artworkPrompt": "Style: three-layer cross-section. Subject: armadillo in layered armor with biconvex and crescent bleeds glowing on either side. Mood: protective catastrophic."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Hernia the Herniation",
+      "grade": 2,
+      "power": "False Localization — Contralateral peduncle pushed against tentorial notch causes IPSILATERAL hemiplegia.",
+      "lore": "A fixed dilated pupil is the earliest reliable clinical sign of uncal herniation (parasympathetic fibers on outside of CN III).",
+      "gradeReason": "Kernohan's notch producing ipsilateral signs is a great paradox but needs syndrome name context.",
+      "artworkPrompt": "Style: industrial press. Subject: pig brain being squeezed through a tentorial notch, ipsilateral leg kicking the wrong way. Mood: pressure paradox."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Blood Brain Barry",
+      "grade": 2,
+      "power": "Vasogenic Edema — Bacterial meningitis breaks the tight junctions; water pours in.",
+      "lore": "Tumor vasculature lacks a blood-brain barrier, which is why gadolinium contrast lights up tumors on MRI.",
+      "gradeReason": "REJECTED bouncer visual is strong; tight junction mechanism is educational rather than performative.",
+      "artworkPrompt": "Style: nightclub bouncer. Subject: bulldog in tuxedo at a REJECTED sign, bacteria forcing the door, gadolinium slipping through tumor side. Mood: selective enforcement."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Cerebral Vera Vasculature",
+      "grade": 1,
+      "power": "Subclavian Steal — Arm exercise reverses vertebral artery flow, causing posterior circulation ischemia.",
+      "lore": "Sudden unilateral deafness + facial numbness + contralateral body numbness = AICA stroke.",
+      "gradeReason": "Subclavian Steal is immediately performable — wave your arm and steal your brain's blood supply.",
+      "artworkPrompt": "Style: plumbing diagram. Subject: octopus reversing a vertebral artery pipe while exercising, posterior brain going dark. Mood: siphoning ischemic."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Aneurysm Annie",
+      "grade": 1,
+      "power": "Thunderclap Headache — Saccular aneurysm rupture into subarachnoid space.",
+      "lore": "A painful CN III palsy is a Posterior Communicating Artery (PCoA) aneurysm until proven otherwise.",
+      "gradeReason": "Thunderclap headache — worst headache of your life — is instantly performable and dramatically compelling.",
+      "artworkPrompt": "Style: horror comic. Subject: bat on a branch holding a ticking bomb, one eye blown wide, thunderclap explosion above. Mood: catastrophic inevitable."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Dural Sinus Derek",
+      "grade": 2,
+      "power": "The Great Mimic — Cerebral Venous Thrombosis causes raised ICP, seizures, and focal deficits.",
+      "lore": "Treat with anticoagulation (LMWH) even if the venous infarct has already caused hemorrhagic transformation.",
+      "gradeReason": "Great Mimic framing is compelling; CVT's anticoagulate-despite-hemorrhage rule needs clinical grounding.",
+      "artworkPrompt": "Style: sewer pipe illustration. Subject: walrus plugging a venous drain, brain pressure gauge in red, empty delta sign missing above. Mood: obstructed mimicking."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Spino Cord Syndromes Summary",
+      "grade": 3,
+      "power": "Central Cord Syndrome — Hyperextension in elderly patients destroys the central cervical cord.",
+      "lore": "Arm motor fibers lie centrally, leg fibers lie peripherally. Therefore, arms are much weaker than legs.",
+      "gradeReason": "Summary card — describes anatomy and syndrome without inviting embodiment or performance.",
+      "artworkPrompt": "Style: comparative anatomy. Subject: giraffe with central cord highlighted, arms barely moving while legs stride normally. Mood: differential hierarchical."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Spine Anatomy Sandy",
+      "grade": 1,
+      "power": "Neurogenic Claudication — Spinal stenosis causes bilateral leg pain when walking, relieved by bending forward.",
+      "lore": "In the cervical spine, the root exits ABOVE its numbered vertebra. In the lumbar spine, it exits BELOW.",
+      "gradeReason": "Bending forward to relieve pain is immediately physically demonstrable and memorable.",
+      "artworkPrompt": "Style: dachshund anatomy. Subject: long dachshund with compressed spine bending forward into relief, legs cramping behind. Mood: positional relief."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Sleep Anatomy Sam",
+      "grade": 2,
+      "power": "REM Intrusion — Loss of orexin drops the patient directly from wakefulness to atonic REM sleep (Cataplexy).",
+      "lore": "The VLPO and ARAS mutually inhibit each other. Orexin from the lateral hypothalamus stabilizes the awake state.",
+      "gradeReason": "Collapsing straight into REM is vivid; flip-flop switch mechanism needs neurochemistry context.",
+      "artworkPrompt": "Style: pajama illustration. Subject: bear mid-conversation collapsing into boneless REM sleep, orexin molecules disappearing overhead. Mood: sudden atonic."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Pain Percy",
+      "grade": 2,
+      "power": "Gate Control Theory Activate large A-beta touch fibers to inhibit C fiber pain transmission.",
+      "lore": "Referred pain happens because visceral and somatic afferents converge on the exact same dorsal horn neurons.",
+      "gradeReason": "Rub it to feel better is intuitive; gate control mechanism at dorsal horn level is explanatory.",
+      "artworkPrompt": "Style: gate mechanism. Subject: raccoon rubbing its wounded paw, a gate slamming shut on incoming pain signals. Mood: modulatory relief."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Visual Percy",
+      "grade": 1,
+      "power": "Pie in the Sky — Anterior temporal lobectomy damages Meyer's loop, causing superior quadrantanopia.",
+      "lore": "The macula occupies 50% of the primary visual cortex, explaining central vision sparing in PCA strokes.",
+      "gradeReason": "Pie in the sky / pie on the floor is one of the most spatially vivid mnemonics in neuroanatomy.",
+      "artworkPrompt": "Style: visual field diagram. Subject: mantis with upper visual field replaced by floating pie slice, lower field intact. Mood: superior absent."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Eye Move Eddie",
+      "grade": 2,
+      "power": "One-and-a-Half Syndrome — PPRF + MLF lesion on same side. Only contralateral abduction survives.",
+      "lore": "MLF lesions cause INO (adduction failure). Bilateral INO in a young patient is Multiple Sclerosis until proven otherwise.",
+      "gradeReason": "One-and-a-half syndrome is clinically elegant; PPRF + MLF anatomy requires dedicated neurology context.",
+      "artworkPrompt": "Style: amphibian portrait. Subject: frog with one eye frozen and one half-drifted, only the abducting eye free. Mood: constrained lateral."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Memory Mike",
+      "grade": 2,
+      "power": "Transient Global Amnesia — Sudden anterograde amnesia caused by venous backflow hitting the hippocampus.",
+      "lore": "Hippocampus is essential for encoding. Remote memories survive hippocampal destruction due to systems consolidation.",
+      "gradeReason": "TGA is a vivid narrative; venous backflow mechanism and systems consolidation need clinical framing.",
+      "artworkPrompt": "Style: goldfish memory. Subject: goldfish in detective coat reading the same book over and over, hippocampus sputtering. Mood: looping bewildered."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Hypothala the Hypothalamus",
+      "grade": 3,
+      "power": "Pan-hypopituitarism — Craniopharyngioma crushes the stalk, destroying endocrine and autonomic control.",
+      "lore": "Lateral hypothalamus = hunger (orexin). Ventromedial = satiety. Suprachiasmatic = master clock.",
+      "gradeReason": "Stalk crush mechanism is explanatory anatomy; SLAM DR nuclei stat is opaque without a key.",
+      "artworkPrompt": "Style: homeostasis dashboard. Subject: lizard at a control panel with hunger/satiety/clock dials, stalk being crushed by a tumor shape. Mood: regulatory failing."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Pituitary Pete",
+      "grade": 1,
+      "power": "Apoplexy — Sudden hemorrhage of adenoma causes thunderclap headache and visual loss.",
+      "lore": "Suprasellar extension hits crossing nasal fibers, causing bitemporal hemianopia (tunnel vision).",
+      "gradeReason": "Thunderclap + tunnel vision is a crisp two-punch emergency — immediately dramatic and testable.",
+      "artworkPrompt": "Style: hermit crab portrait. Subject: hermit crab in a sella turcica shell hemorrhaging upward, nasal fibers severed above. Mood: explosive tunnel-visioned."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Neuroanatomy Attending",
+      "grade": 1,
+      "power": "Localize. Name. Explain. — Map the Horner's, the ataxia, and the hoarseness to the exact vessel.",
+      "lore": "You don't know it until you can trace the wiring backward from the deficit to the lesion without looking it up.",
+      "gradeReason": "The Attending's power IS the performance of clinical reasoning — localize is an act, not a description.",
+      "artworkPrompt": "Style: wise owl professor. Subject: owl in white coat with a brain map, pointing at Wallenberg territory with chalk. Mood: authoritative exacting."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Uncle FrizzleBob's Rule of the Street",
+      "grade": 1,
+      "power": "Epistemic Sabotage — Destroy the boring format to directly preserve the factual integrity.",
+      "lore": "You remember stories, not lists, one who knows where a structure lives can predict what happens when it dies.",
+      "gradeReason": "Meta-card closing the deck is pure FrizzleBob — manifesto as card, instantly embodied as a worldview.",
+      "artworkPrompt": "Style: street art graffiti. Subject: FrizzleBob rabbit splashing paint on a boring textbook, kayfabe anatomy glowing beneath. Mood: rebellious revelatory."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {"G1": 28, "G2": 24, "G3": 4},
+  "overallScore": 9,
+  "verdict": "FrizzleBob says: This deck does what most med-ed products are too scared to try — it makes the nervous system into a roster of characters you can fight with. Named syndromes become finishing moves, tracts become combatants, and the Attending closes as a final boss who demands you perform, not recite. Naming is exceptional throughout (Sphincter Sabotage, Wallenberg's Curse, Thunderclap Headache). Weak point: four cards run explanatory rather than performative (Autonomo, Hypothala, Cord Syndromes Summary, Cranio I-IV). Table-ready: YES.",
+  "blurb": "56 cards. Every major neuroanatomy structure weaponized. For med students who want to actually remember where things go and what breaks when they die.",
+  "viralScore": 8,
+  "qa": {"readability": 9, "artworkConsistency": 8, "overall": 9},
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob riding a brain like a surfboard, paint-brush blazing, anatomy diagrams exploding behind him",
+    "coverTitle": "5 — MedKayfab: Neuroanatomy Edition! is exactly right — bold, declarative, series-consistent",
+    "coverVibeMatch": "5 — cover delivers precisely the chaos-with-clinical-substance the deck contains",
+    "coverOriginality": "5 — cartoon rabbit plus exploding brain plus scattered anatomy references is a genuinely novel visual grammar",
+    "coverViral": "5 — medical student communities will share this cover unprompted",
+    "coverScore": 5.0,
+    "coverNote": "Strongest cover in the MedKayfab series so far. The chaos-brain composition reads instantly as the one that teaches you neurology by making it weird. Nothing to fix."
+  },
+  "coverScore": 5.0,
+  "fontArtifactCount": 0,
+  "notes": "15 pages (1 cover + 14 card pages), 4 cards per page, 56 cards total. Page 2 Broca & Wernicke LORE partially obscured by illustration at extraction resolution — text approximated from context. Three distinct Spino cards: card 12 (Spinothalamic Tract), card 16 (Spinal Cord Cross-Section), card 46 (Spino Cord Syndromes Summary) — all distinct, no duplication. Page backgrounds vary per spread (map/notebook/lab/steampunk) without breaking visual unity. No RAF dice boxes present. ADD in filename likely refers to Additional version suffix.",
+  "topCards": ["Uncle FrizzleBob's Rule of the Street", "Aneurysm Annie", "Conus the Conus & Cauda", "Parry the Parietal Lobe", "Ventri the Ventricular System"],
+  "worstCards": ["Hypothala the Hypothalamus", "Autonomo the ANS", "Spino Cord Syndromes Summary"],
+  "todos": {
+    "urgent": ["Rewrite Autonomo the ANS power to invite performance rather than explain mechanism", "Cranio I-IV needs a single performable act, not bilateral EW nuclei mechanics"],
+    "quickWins": ["Spino Cord Syndromes Summary could be renamed 'Central Cord Sandy' for character consistency", "Add RAF boxes if reprinting — deck is long enough to carry the mechanic"],
+    "niceToHave": ["Hypothala LORE is dense — consider splitting into two cards: Lateral vs Ventromedial", "Consider a divider card between Brain / Spinal Cord / Peripheral Nerve sections for orientation"]
+  },
+  "hashtags": ["#MedKayfab", "#Neuroanatomy", "#MedStudentLife", "#USMLE", "#NeurologyCards", "#Kayfabizarro", "#MedicalEducation", "#BrainCards", "#ClinicalNeurology"],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": ["classroom", "online", "conference"],
+  "channels": ["Gumroad", "TikTok", "Instagram", "Substack"]
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-build="KFB-TS-OSM-INTEGRATED-V1-20260919">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB TinySkies × OSM × Grotesque · Integrated Proof v1</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d6dde0;color:#302d33}*{box-sizing:border-box}body{margin:0}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto}.bar{background:#f1ece3;border-bottom:2px solid #38343d;padding:10px 14px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}.brand{font-weight:800;font-size:14px;margin-right:5px}.tag{display:block;font-size:10px;font-weight:400;letter-spacing:.08em;color:#706760}select,button{font:inherit;font-size:12px;background:#fffaf2;border:1px solid #a69b91;border-radius:6px;padding:7px 8px;color:#343039}button{cursor:pointer}button:hover{background:#e9d6aa}label{font-size:11px;display:flex;align-items:center;gap:4px}.stage{min-height:0}canvas{display:block;width:100%;height:100%;touch-action:none}.foot{background:#f1ece3;border-top:1px solid #b8afa6;padding:8px 14px;display:grid;gap:4px}.row{display:flex;gap:13px;align-items:baseline;flex-wrap:wrap}h1{font:500 20px Georgia,serif;margin:0}#note,#status,.small{font-size:11px;line-height:1.42;color:#585258}.small a{color:#355f6a}.error{color:#9b342b!important}.flag{font-weight:700;color:#8b4d2d}@media(max-width:800px){.brand{width:100%}.bar{padding:7px;gap:5px}.foot{padding:7px 9px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body><main class="app">
+<header class="bar">
+  <div class="brand">KFB WORLD COHESION<span class="tag">TINYSKIES × OSM × GROTESQUE · INTEGRATED PROOF v1</span></div>
+  <select id="mode" aria-label="Scene">
+    <option value="integrated" selected>Integrated · Hürth + Dom</option>
+    <option value="lighthouse">Source reference · Lighthouse</option>
+    <option value="observatory">Source reference · Observatory</option>
+  </select>
+  <select id="light" aria-label="World light">
+    <option value="osm" selected>OSM City · default</option>
+    <option value="day">Dynamic · Day</option>
+    <option value="evening">Dynamic · Evening</option>
+    <option value="night">Dynamic · Night</option>
+  </select>
+  <label><input id="rain" type="checkbox"> Rain</label>
+  <label><input id="wire" type="checkbox"> Wire</label>
+  <button id="reset">Reset view</button>
+</header>
+<section id="stage" class="stage"><canvas id="view"></canvas></section>
+<footer class="foot">
+  <div class="row"><h1 id="title">TinySkies × OSM × Grotesque · Integrated Proof</h1><span id="note">Loading…</span></div>
+  <div id="status">Loading current KFB sources…</div>
+  <div class="small"><span class="flag">STYLE_INTEGRATION_ONLY_NOT_GEO:</span> the Cathedral is deliberately placed in the Hürth proof scene to test one world look; it is not a real Cologne OSM override. Rain is world overlay only — no wet facade material pass. Source-reference recreations are shown in isolation before integration.</div>
+</footer>
+</main>
+<script type="module">
+const timer=setTimeout(()=>{document.querySelector('#status').textContent='Still loading. Check Three.js/CDN access.'},12000);
+try{const {boot}=await import('./viewer.mjs');await boot();clearTimeout(timer);}
+catch(error){clearTimeout(timer);const s=document.querySelector('#status');s.textContent='Viewer could not start: '+error.message;s.classList.add('error');window.__KFB_TINYSKIES_OSM_PROOF__={ready:false,error:String(error)};console.error(error);}
+</script>
+</body></html>

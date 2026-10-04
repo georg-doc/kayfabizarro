@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Probe · kenney_racing-kit</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>body{background:#111;color:#ccc;font:12px monospace;padding:10px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="out">probing…</div>
+<script type="module">
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/';
+const loader = new GLTFLoader();
+
+const roots = ['road','track'];
+const roadMods = ['','Straight','StraightLong','StraightShort','StraightArrow','StraightLongBump','StraightBump','StraightSplit',
+ 'Start','StartGrid','StartLine','Crossing','CrossingRound','PitStraight','PitLane','Ramp','RampLong','RampWide','RampSmall',
+ 'CornerSmall','CornerMedium','CornerLarge','CornerLarger','CornerSharp','CurveS','Split','SplitLarge','Chicane','Narrow',
+ 'SpeedBump','Finish','Merge','Fork'];
+const candidates = new Set();
+for (const r of roots) for (const m of roadMods) candidates.add(r+m);
+
+const extra = [
+ 'raceGarage','teamGarage','workshop','depot','unit','module','pitUnit','pitBox','boxUnit',
+ 'garageRow','garageDoor','buildingRow','pitRow','shedRace','pitshed',
+ 'raceCarBlue2','carDetailed','vehicleCar','flagPoleSmall','pylonRound','coneRed'
+];
+for (const e of extra) candidates.add(e);
+
+const camel = (s) => s.replace(/^[a-z]/, (c) => c.toUpperCase());
+const names = [...candidates];
+const hits = [], misses = [];
+let i = 0;
+async function probeOne(name) {
+  try {
+    await loader.loadAsync(RAW + encodeURIComponent(name) + '.glb');
+    hits.push(name);
+  } catch (e) { misses.push(name); }
+}
+const out = document.getElementById('out');
+const BATCH = 8;
+for (let k = 0; k < names.length; k += BATCH) {
+  await Promise.all(names.slice(k, k + BATCH).map(probeOne));
+  out.textContent = `probing ${Math.min(k+BATCH,names.length)}/${names.length} … hits ${hits.length}`;
+}
+hits.sort();
+window.RESULT = { hits, missCount: misses.length, total: names.length };
+out.textContent = `DONE · ${hits.length}/${names.length} hits\n\n` + hits.join('\n');
+</script>
+</body>
+</html>

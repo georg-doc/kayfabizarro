@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,400;0,700;1,700&family=Special+Elite&display=swap">
+<style>
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Bold.otf") format("opentype"); font-weight: 700; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Italic.otf") format("opentype"); font-style: italic; }
+body { margin: 0; background: #ece1c0; }
+a { color: #3a342a; } a:hover { color: #c2412c; }
+@keyframes drift { 0%,100% { transform: translate(0,0) rotate(-4deg); } 50% { transform: translate(2px,-3px) rotate(-2deg); } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #ece1c0; padding: 56px 48px 96px; font-family: Fonteys, Georgia, serif; font-size: 16px; color: #1f1a14; position: relative; overflow: hidden">
+
+  <div style="position: absolute; top: 128px; right: 26px; font-family: 'Shantell Sans', cursive; font-size: 16px; color: #b8361f; transform: rotate(6deg); animation: drift 9s ease-in-out infinite; pointer-events: none">Höhe ist Reifegrad!</div>
+  <div style="position: absolute; top: 660px; left: 10px; font-family: 'Shantell Sans', cursive; font-size: 16px; color: #7d7364; transform: rotate(-8deg); pointer-events: none">☞ ein Kopf = eine Sprosse</div>
+  <div style="position: absolute; bottom: 210px; right: 18px; font-family: 'Shantell Sans', cursive; font-size: 16px; color: #b8361f; transform: rotate(-5deg); animation: drift 11s ease-in-out infinite; pointer-events: none">Stay fluffy!</div>
+
+  <header style="max-width: 1180px; margin: 0 auto 52px; display: flex; flex-direction: column; gap: 14px">
+    <div style="font-family: 'Special Elite', monospace; font-size: 14px; letter-spacing: 0.04em; color: #7d7364">pj-v3 · Fundament · Datei 6</div>
+    <h1 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 60px; line-height: 1.02; margin: 0">Modul-Bibliothek</h1>
+    <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.55; max-width: 74ch; margin: 6px 0 0; color: #3a342a; text-wrap: pretty">Vierzehn Module, jedes aus der vermessenen Kachelplatte und den vermessenen Sprites gerendert — nicht als Schema gezeichnet. Wer ein Modul hier nicht sieht, baut es nicht ein.</p>
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; font-family: 'Special Elite', monospace; font-size: 14px; color: #3a342a; margin-top: 8px; padding-top: 14px; border-top: 2px solid #1f1a14">
+      <span>70 Clips gemessen</span><span>·</span><span>Sprosse = 64 px = 2 Kacheln</span><span>·</span><span>Sprunghöhe 72 px</span><span>·</span><span>10 fps</span>
+    </div>
+  </header>
+
+  <section style="max-width: 1180px; margin: 0 auto 64px; background: #f3ead3; border: 3px solid #1f1a14; box-shadow: 5px 6px 0 rgba(31,26,20,0.28); padding: 34px 36px 40px; transform: rotate(-0.4deg)">
+    <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 6px">
+      <h2 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 32px; margin: 0">Der Turm</h2>
+      <span style="font-family: 'Special Elite', monospace; font-size: 14px; color: #b8361f">sechs Sprossen · fraktal zum Würfel</span>
+    </div>
+    <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.55; max-width: 74ch; margin: 0 0 26px; color: #3a342a; text-wrap: pretty">Der Sprung erreicht 72 px, eine Sprosse ist 64 px. Damit ist genau ein Statuswechsel springbar und zwei sind es nie — die Allegorie steckt in der Sprungkurve, nicht in der Beschriftung.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 34px; align-items: flex-start">
+      <canvas data-panel="tower" width="720" height="620" style="width: 720px; height: 620px; display: block; image-rendering: pixelated; background: #2d2b3a; border: 2px solid #1f1a14; flex: 0 0 auto"></canvas>
+      <div style="display: flex; flex-direction: column; gap: 0; flex: 1 1 300px; min-width: 300px">
+        <sc-for list="{{ rungs }}" as="r" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; padding: 9px 0; border-bottom: 1px dashed #7d7364">
+            <span style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 20px; color: {{ r.tone }}; line-height: 1.2">{{ r.n }}</span>
+            <div style="display: flex; flex-direction: column; gap: 3px">
+              <span style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 16px">{{ r.name }}</span>
+              <span style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.4; color: #7d7364">{{ r.note }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto 64px">
+    <h2 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 36px; margin: 0 0 8px">Die vierzehn Module</h2>
+    <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.55; max-width: 74ch; margin: 0 0 30px; color: #3a342a">Bausteine sind Vokabeln, Module sind Sätze. Jede Karte nennt die Sprossen, die Breite, die ausgelösten Clips — und wann das Modul <em>nicht</em> benutzt wird.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, 390px); gap: 26px; justify-content: start">
+      <sc-for list="{{ modules }}" as="m" hint-placeholder-count="14">
+        <article style="background: #f3ead3; border: 3px solid #1f1a14; box-shadow: 4px 5px 0 rgba(31,26,20,0.25); display: flex; flex-direction: column">
+          <canvas data-mod="{{ m.id }}" width="384" height="224" style="width: 384px; height: 224px; display: block; image-rendering: pixelated; border-bottom: 3px solid #1f1a14"></canvas>
+          <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px">
+              <h3 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 22px; margin: 0">{{ m.id }}</h3>
+              <span style="font-family: 'Special Elite', monospace; font-size: 14px; color: #b8361f; white-space: nowrap">{{ m.geo }}</span>
+            </div>
+            <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.5; margin: 0; color: #1f1a14; text-wrap: pretty">{{ m.means }}</p>
+            <div style="font-family: 'Special Elite', monospace; font-size: 14px; line-height: 1.5; color: #3a342a; padding-top: 9px; border-top: 1px dashed #7d7364">{{ m.clips }}</div>
+            <div style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.45; color: #b8361f"><em>nicht wenn</em> {{ m.never }}</div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto 64px; background: #dfcd9e; border: 3px solid #1f1a14; box-shadow: 5px 6px 0 rgba(31,26,20,0.28); padding: 34px 36px 40px; transform: rotate(0.3deg)">
+    <h2 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 32px; margin: 0 0 8px">Die Figuren</h2>
+    <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.55; max-width: 74ch; margin: 0 0 28px; color: #3a342a; text-wrap: pretty">Vier Rollen, alle gemessen. Die Bedeutung steckt in der Framezahl und in der Effektbreite — nicht in einer Beschriftung, die man auch weglassen könnte.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, 260px); gap: 22px; justify-content: start">
+      <sc-for list="{{ cast }}" as="c" hint-placeholder-count="4">
+        <article style="background: #f3ead3; border: 2px solid #1f1a14; box-shadow: 3px 4px 0 rgba(31,26,20,0.22); display: flex; flex-direction: column">
+          <canvas data-cast="{{ c.id }}" width="256" height="144" style="width: 256px; height: 144px; display: block; image-rendering: pixelated; background: #f3ead3; border-bottom: 2px solid #1f1a14"></canvas>
+          <div style="padding: 15px 17px 18px; display: flex; flex-direction: column; gap: 8px">
+            <h3 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 22px; margin: 0">{{ c.name }}</h3>
+            <div style="font-family: 'Special Elite', monospace; font-size: 14px; color: #b8361f">{{ c.role }}</div>
+            <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.5; margin: 0; color: #3a342a; text-wrap: pretty">{{ c.why }}</p>
+            <div style="font-family: 'Special Elite', monospace; font-size: 14px; line-height: 1.45; color: #7d7364; padding-top: 8px; border-top: 1px dashed #7d7364">{{ c.measured }}</div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; background: #f3ead3; border: 3px solid #1f1a14; box-shadow: 5px 6px 0 rgba(31,26,20,0.28); padding: 32px 36px 36px">
+    <h2 style="font-family: 'Shantell Sans', sans-serif; font-weight: 700; font-size: 30px; margin: 0 0 18px">Befund aus dieser Runde</h2>
+    <div style="display: flex; flex-direction: column; gap: 15px">
+      <sc-for list="{{ findings }}" as="f" hint-placeholder-count="5">
+        <div style="display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start; padding-bottom: 14px; border-bottom: 1px dashed #7d7364">
+          <span style="font-family: 'Special Elite', monospace; font-size: 14px; color: #b8361f; line-height: 1.6">{{ f.n }}</span>
+          <p style="font-family: Fonteys, serif; font-size: 16px; line-height: 1.55; margin: 0; color: #1f1a14; text-wrap: pretty">{{ f.t }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:900}}">
+const T = 32;
+const SHEET = 'pirate-journey/tiles/terrain-32.png';
+
+// Atlas-Koordinaten aus tileMap.measured (asset-manifest.json)
+const E9 = { tl:[0,0], t:[1,0], tr:[2,0], l:[0,1], c:[1,1], r:[2,1], bl:[0,2], b:[1,2], br:[2,2] };
+const PL = { l:[0,4], m:[1,4], r:[2,4], solo:[4,4] };
+const PI = { t:[4,0], m:[4,1], b:[4,2] };
+
+// 4-Nachbarn-Maske: N=1 E=2 S=4 W=8. Die Zuordnung steht in SETS — eine Wahrheit, kein zweiter Tabellensatz.
+
+// Drei Sätze, drei Anwendungen — sie mischen sich NIE.
+// Der Grund für die schwarzen Flächen: earth9 ist der Kammerrand-Satz, seine Mitte IST Fels.
+// Wer ihn für eine massive Plattform nimmt, bekommt ein Loch.
+const SETS = {
+  plank:  { 0: PL.solo, 2: PL.l, 8: PL.r, 10: PL.m },              // '#' Lauffläche, 1 hoch, Maske links/rechts
+  pillar: { 0: PI.m, 1: PI.b, 4: PI.t, 5: PI.m },                  // '|' Kette, 1 breit, Maske oben/unten
+  cave:   { 0: E9.c, 1: E9.b, 2: E9.l, 3: E9.bl, 4: E9.t, 5: E9.c, // 'X' Kammerrand, volle Maske
+            6: E9.tl, 7: E9.l, 8: E9.r, 9: E9.br, 10: E9.c,
+            11: E9.b, 12: E9.tr, 13: E9.r, 14: E9.t, 15: E9.c }
+};
+const TYPE = { '#': 'plank', '|': 'pillar', 'X': 'cave' };
+
+// Himmel: die vermessenen Pack-Bilder, nicht gemalte Bänder. BG Image ist 384×128 = Canvas-Breite.
+// GEMESSEN in BG Image.png (Spalte 3, jede Zeile):
+//   y  0–41  #ddc6a1  Himmelgrundton
+//   y 42–47  #d1aa9d  Horizontbänder, dünne Streifen
+//   y 48–85  #d1aa9d  Dunst über dem Wasser
+//   y 86     #ffffff  WASSERKANTE, genau eine Pixelzeile, hart
+//   y 87–127 #92a9ce  Wasser
+// Das Bild ist eine fertige Komposition, kein streckbarer Grundton. Die Wasserkante gehört
+// auf den Wasserspiegel des Höhenrasters — nach oben wird der Grundton verlängert
+// (Additional Sky), nach unten das Wasser (Additional Water). Wolken NUR über der Kante.
+const SKY = { edge: 86, top: '#ddc6a1', water: '#92a9ce' };
+const BGP = 'media/2D_Assets/TreasureHunters/Palm Tree Island/Background/';
+const BG = { sky: BGP + 'BG Image.png', bank: BGP + 'Big Clouds.png',
+             c1: BGP + 'Small Cloud 1.png', c2: BGP + 'Small Cloud 2.png', c3: BGP + 'Small Cloud 3.png' };
+// HUD: Wood and Paper UI, 9-Slice-Rahmen des Packs — keine nachgemalten Tafeln.
+const UIP = 'media/2D_Assets/TreasureHunters/Wood and Paper UI/Prefabs/';
+const UI = { wood: UIP + '3.png', paper: UIP + '9.png', note: UIP + '8.png' };
+
+const SPR = {
+  capIdle:  ['media/2D_Assets/TreasureHunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png', 38, 32],
+  capJump:  ['media/2D_Assets/TreasureHunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 01.png', 33, 32],
+  capFall:  ['media/2D_Assets/TreasureHunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/12-Fall Sword/Fall Sword 01.png', 38, 31],
+  crab:     ['media/2D_Assets/TreasureHunters/The Crusty Crew/Crabby/01-Idle/Idle 01.png', 38, 29],
+  crabFx:   ['media/2D_Assets/TreasureHunters/The Crusty Crew/Crabby/11-Attack Effect/Attack Effect 02.png', 59, 24],
+  star:     ['media/2D_Assets/TreasureHunters/The Crusty Crew/Pink Star/01-Idle/Idle 01.png', 16, 29],
+  shell:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Seashell/Seashell Idle/1.png', 25, 38],
+  pearl:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Seashell/Pearl Idle/1.png', 8, 11],
+  head1:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 1/Idle 1/1.png', 30, 31],
+  head2:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 2/Idle 1/1.png', 11, 32],
+  head3:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 3/Idle 1/1.png', 18, 32],
+  spike:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Wood Spike/Idle/1.png', 8, 11],
+  dead1:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 1/Destroyed/6.png', 30, 31],
+  dead2:    ['media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 2/Destroyed/6.png', 11, 32],
+  skull:    ['media/2D_Assets/TreasureHunters/Pirate Treasure/Golden Skull/01.png', 13, 26],
+  chest:    ['media/2D_Assets/TreasureHunters/Palm Tree Island/Objects/Chest/Chest Open 01.png', 32, 35],
+  coin:     ['media/2D_Assets/TreasureHunters/Pirate Treasure/Gold Coin/01.png', 8, 14],
+  palm:     ['media/2D_Assets/TreasureHunters/Palm Tree Island/Back Palm Trees/Back Palm Tree Regular 01.png', 32, 64],
+  cannon:   ['media/2D_Assets/TreasureHunters/Shooter Traps/Cannon/Cannon Idle/1.png', 20, 26],
+  reflect:  ['media/2D_Assets/TreasureHunters/Palm Tree Island/Background/Water Reflect Big 01.png', 0, 0]
+};
+
+// Animierte Clips für das Figuren-Panel
+const ANIM = {
+  crab:  { frames: [1,2,3,4].map(i => `media/2D_Assets/TreasureHunters/The Crusty Crew/Crabby/07-Attack/Attack 0${i}.png`), fps: 10, foot: [38,29],
+           fx: { frames: [1,2,3].map(i => `media/2D_Assets/TreasureHunters/The Crusty Crew/Crabby/11-Attack Effect/Attack Effect 0${i}.png`), foot: [59,24], dx: 30 } },
+  star:  { frames: [1,2,3].map(i => `media/2D_Assets/TreasureHunters/The Crusty Crew/Pink Star/06-Anticipation/Anticipation 0${i}.png`), fps: 10, foot: [17,29] },
+  shell: { frames: [1,2,3,4,5].map(i => `media/2D_Assets/TreasureHunters/Shooter Traps/Seashell/Seashell Opening/${i}.png`), fps: 10, foot: [25,38] },
+  totem: { frames: [1,2,3,4,5,6].map(i => `media/2D_Assets/TreasureHunters/Shooter Traps/Totems/Head 1/Attack 1/${i}.png`), fps: 10, foot: [30,32] }
+};
+
+// Module: grid = 12×7 Kacheln, '#' solid, '.' leer. Zeile 0 oben.
+const G = (...rows) => rows;
+const MODULES = [
+  { id: 'terrasse', geo: 'Sprosse n · 5–9 Kacheln',
+    means: 'Hauptstrang. Flacher Boden, Pfosten mit Karten. Ohne Grundlinie ist keine Höhe lesbar — deshalb steht dieses Modul immer zuerst.',
+    clips: 'run · idle · fx.dust-run bei Richtungswechsel', never: 'mehr als zweimal hintereinander',
+    grid: G('............','............','............','............','............','#########...','............'),
+    put: [['capIdle',1.6,5],['card',4,5],['card',7,5],['palmBack',9.4,5]] },
+  { id: 'stolperstelle', geo: 'n → n · 30–38 px Riss',
+    means: 'Kleine Lücke, im Lauf genommen. Der Riss ist schmaler als die Sprungweite von 50 px — Sicherheitsmarge 25 %, keine Anticipation nötig.',
+    clips: 'run → jump → fall → ground · fx.dust-jump · fx.dust-fall', never: 'direkt vor einer Karte, die Ruhe braucht',
+    grid: G('............','............','............','............','............','####.#######','............'),
+    put: [['capJump',3.5,4.4],['card',7,5]] },
+  { id: 'sprosse', geo: 'n → n+1 · 4–6 Kacheln',
+    means: 'Ein Statuswechsel. Genau 64 px hoch, also genau ein Sprung. Von POC auf MVP springbar, von POC auf Beta niemals.',
+    clips: 'anticipate 1,16/0,84 → jump → ground 1,26/0,74', never: 'wenn der Status nicht wirklich wechselt',
+    grid: G('............','............','............','......######','............','######......','............'),
+    put: [['capIdle',4.4,5],['card',9,3]] },
+  { id: 'zwei-schritte', geo: 'n → n+2 · 10–14 Kacheln',
+    means: 'Zwei Sprossen, aber nur mit echtem Zwischenschritt. Die Plattform auf n+1 ist der Zwischenschritt — gibt es ihn nicht, gibt es dieses Modul nicht.',
+    clips: 'jump ×2 · fall · ground ×2 · fx.dust-jump ×2', never: 'wenn kein Zwischenschritt existiert — dann leiter',
+    grid: G('............','..........##','............','.....###....','............','###.........','............'),
+    put: [['capIdle',1.4,5],['card',5.8,3]] },
+  { id: 'leiter', geo: 'n → n+2 · 1–2 Kacheln',
+    means: 'Zwei Sprossen durch Arbeit statt durch Schwung. Der 1-breite Pfostensatz ist die Kette — Masken 1/4/5, nie ein Körperstück mit offenen Flanken.',
+    clips: 'idle → climb (Physik, kein Sprite) → ground', never: 'als Abkürzung ohne Aufwand dahinter',
+    grid: G('............','.....#######','.....|......','.....|......','.....|......','###..|......','............'),
+    put: [['capIdle',1.5,5],['coin',7,1]] },
+  { id: 'absturz', geo: 'n → −1 · 2–3 Kacheln',
+    means: 'Das Projekt stirbt. Der Fall geht nicht auf Sprosse 1 zurück, sondern bis in den Graveyard — aus jeder Höhe, ohne Schaden, ohne Strafe.',
+    clips: 'fall (1 Pose, gehalten) → ground · fx.dust-fall breit', never: 'mehr als einmal pro Parcours',
+    grid: G('####........','............','............','............','............','......######','............'),
+    put: [['capFall',3.2,2.1],['dead2',8.4,5]] },
+  { id: 'graveyard', geo: 'Ebene −1 · 8–14 Kacheln',
+    means: 'Post-Mortems. Jedes Grab ist so hoch wie der Status, den das Projekt erreicht hatte — ein Totem aus vier Köpfen starb in der Beta.',
+    clips: 'totem.*.destroyed · prop.skull · dead-ground bleibt liegen', never: 'wenn es keine echten Post-Mortems gibt',
+    grid: G('............','............','............','............','............','############','............'),
+    put: [['dead1',2.5,5],['dead2',5.5,5],['skull',7.6,5],['spike',9.2,5],['capIdle',10.7,5]],
+    dark: true },
+  { id: 'archiv', geo: 'Sprosse n · 6–8 Kacheln',
+    means: 'Crabby steht auf der Kante und arbeitet. Die 118 px des Angriffseffekts sind keine Waffe, sondern die sichtbare Reichweite der Suche.',
+    clips: 'crab.anticipate 300 ms → crab.attack → fx.crab-slash 118 px', never: 'wenn nichts zu finden ist',
+    grid: G('............','............','............','............','............','############','............'),
+    put: [['crabFx',6.2,5],['crab',3.4,5],['capIdle',10.4,5],['reach',3.4,5]] },
+  { id: 'red-team', geo: 'Sprosse n · 6–8 Kacheln',
+    means: 'Der Seestern prüft. Drei Anticipation-Frames bei 10 fps sind 300 ms Vorwarnung — ein Einwand kündigt an, ein Hinterhalt wäre kein Argument.',
+    clips: 'star.run → star.anticipate → star.attack · fx.star-slash 16 px', never: 'ohne echten Einwand im Inhalt',
+    grid: G('............','............','............','............','............','############','............'),
+    put: [['star',6.6,5],['star',8.6,5],['capIdle',2.2,5]] },
+  { id: 'dropzone', geo: 'Sprosse n · 4–6 Kacheln',
+    means: 'Die einzige Figur, die annimmt und wieder herausgibt. Offener Mund heißt bereit, Zuschnappen heißt angenommen, Spucken heißt Import fertig.',
+    clips: 'shell.opening 5f → shell.bite 6f → shell.fire 6f → prop.pearl', never: 'als Deko ohne echten Import',
+    grid: G('............','............','............','............','............','############','............'),
+    put: [['shell',3.6,5],['pearl',6.2,3.6],['pearl',7.4,4.2],['capIdle',10,5]] },
+  { id: 'leseflaeche', geo: 'Sprosse n · 6–10 Kacheln',
+    means: 'Plakat, aufgeschlagen, Lesemodus — ein Container in CARD_AR, drei Größen. Die Szene stoppt nie: Lesen ist ein Zustand im Raum, kein Modal darüber.',
+    clips: 'idle gehalten · Kamerafahrt · fx.bubble-quest', never: 'für Inhalt, der in eine Karte passt',
+    grid: G('............','............','............','............','............','############','............'),
+    put: [['sheet',6,5],['capIdle',1.5,5]] },
+  { id: 'totem-turm', geo: 'Sprosse n · 2 Kacheln',
+    means: 'Status-Anzeige des Kapitels. Ein Kopf, darunter ein Stamm aus Pfostenkacheln — die Stammhöhe ist der Status. Kein Balken, keine Prozentzahl, und Köpfe werden nie gestapelt.',
+    clips: 'totem.*.idle (Einzelbild!) · totem.*.attack 6f beim Wechsel', never: 'mehr als einer pro Kapitel · zwei Köpfe übereinander',
+    grid: G('............','............','....|.......','....|.......','....|.......','############','............'),
+    put: [['head1',4,2],['capIdle',9.4,5]] },
+  { id: 'kammer', geo: 'n → n · 6–10 Kacheln',
+    means: 'Kapitelende mit Deckel. Enclosed-Modus: Deckenkacheln, außen der Dunkelton #2d2b3a, der auch das HUD trägt. Truhe genau einmal.',
+    clips: 'run → idle → fx.bubble-excl → chest-open 10f → fx.coin-pop', never: 'mitten im Kapitel',
+    grid: G('XXXXXXXXXXXX','X..........X','X..........X','X..........X','X..........X','XXXXXXXXXXXX','............'),
+    put: [['chest',6,5],['capIdle',2.6,5],['coin',8.4,4.2],['coin',9.4,4.5]],
+    enclosed: [1, 1, 10, 4] },
+  { id: 'durchgang', geo: 'n → n · 4–6 Kacheln',
+    means: 'Raumwechsel, Atemzug. Die Wandreihe wird durchgespannt — nie mit zwei runden Eckstücken geschlossen, das wären zwei Außenkanten Rücken an Rücken.',
+    clips: 'run gehalten · Kamera übergibt an den nächsten Raum', never: 'als Deko ohne Raumwechsel dahinter',
+    grid: G('XXXXXXXXXXXX','XXXXX..XXXXX','XXXXX..XXXXX','XXXXX..XXXXX','XXXXX..XXXXX','XXXXXXXXXXXX','............'),
+    put: [['capIdle',5.9,5]],
+    enclosed: [0, 1, 11, 4] }
+];
+
+class Component extends DCLogic {
+  _run = 0;
+  renderVals() {
+    return {
+      rungs: [
+        { n: '6', name: 'live', note: 'oben, kopflastig — breiter Kopf zuletzt', tone: '#7a8d4a' },
+        { n: '5', name: 'release candidate', note: 'letzte Sprosse vor der Kante', tone: '#7a8d4a' },
+        { n: '4', name: 'beta testing', note: 'hier stirbt am meisten', tone: '#d97c3a' },
+        { n: '3', name: 'alpha version', note: 'erste tragende Plattform', tone: '#d97c3a' },
+        { n: '2', name: 'prototyp / MVP', note: 'ein Sprung von Sprosse 1', tone: '#3e6a83' },
+        { n: '1', name: 'demo / idee / POC', note: 'Einstieg, Laufbahn, Grundlinie', tone: '#3e6a83' },
+        { n: '0', name: 'wasserspiegel', note: 'Felslippe 3–6 px unter der Grasnarbe', tone: '#7d7364' },
+        { n: '−1', name: 'graveyard', note: 'Post-Mortems, aus jeder Höhe erreichbar', tone: '#c2412c' }
+      ],
+      modules: MODULES.map(m => ({ id: m.id, geo: m.geo, means: m.means, clips: m.clips, never: m.never })),
+      cast: [
+        { id: 'crab', name: 'Crabby', role: 'Archivar · Suche',
+          why: 'Fährt den Arm aus und greift, was in Reichweite liegt. Kein Gegner — sie steht auf einer Kante und arbeitet.',
+          measured: '7 Clips · 72×32 · fx 118 px breit = Reichweite' },
+        { id: 'star', name: 'Pink Star', role: 'Red-Team-Thinking',
+          why: 'Der Einwand, der dich prüft. Trifft nah und hart statt weit, kündigt 300 ms vorher an, und bleibt widerlegt liegen.',
+          measured: '10 Clips · 34×30 · anticipate 3f = 300 ms · fx nur 16×12' },
+        { id: 'shell', name: 'Seashell', role: 'Drop-Zone',
+          why: 'Nimmt an und gibt heraus. Offener Mund = bereit, Zuschnappen = angenommen, Spucken = Import fertig, Perle = das Ergebnis.',
+          measured: '6 Clips · 48×38 · bite-bbox 30 px hoch, wächst nach oben' },
+        { id: 'totem', name: 'Totem', role: 'Status-Anzeige',
+          why: 'Ein Kopf auf einem Stamm aus Pfostenkacheln — die Stammhöhe ist der Status. Drei Kopftypen im Pack, nie zwei übereinander. Das Pack nennt das Ausspucken Angriff, wir nennen es Statuswechsel.',
+          measured: 'Head 1/2/3 · 60|24|30 × 32 px · attack 6f · destroyed = Grabmal' }
+      ],
+      findings: [
+        { n: '01', t: 'Die Totem-Köpfe sind je genau 32 px hoch — ein Kopf belegt genau eine Kachel. Gestapelt werden sie trotzdem nicht: ein Totem hat einen Kopf, die Höhe macht der Stamm aus Pfostenkacheln. Georgs Korrektur, und sie ist richtig: drei Gesichter übereinander lesen als drei Figuren, nicht als eine Anzeige.' },
+        { n: '02', t: 'trap.shell.idle, prop.pearl, totem.*.idle, trap.cannon.idle und prop.cannonball sind Einzelbilder, keine Loops. Wer sie als Loop lädt, baut ein Flackern ein, das niemand mehr findet.' },
+        { n: '03', t: 'Crabbys Angriffseffekt ist 118 px breit, der des Seesterns 16. Dieselbe Mechanik, zwei völlig verschiedene Rollen — weite Suche gegen nahe Kritik. Die Bedeutung stand in der Messung, nicht in der Absicht.' },
+        { n: '04', t: 'Die Platte ist nicht ein Kachelsatz, sondern drei: plank für Laufflächen (Maske nur links/rechts), pillar für Ketten (nur oben/unten), earth9 für Kammerränder (alle vier). Eine gemeinsame Maskentabelle war die Ursache der schwarzen Löcher — earth9.c IST Fels, kein Blockinneres. TILE-GRAMMAR §3 ist entsprechend neu geschrieben.' },
+        { n: '05', t: 'Crabby hat im Repo 03-Jump, 04-Fall und 05-Ground plus ein Dialogue-Set — im Hauptmanifest fehlen sie. Fierce Tooth und die Kanone sind jetzt gemessen, aber noch ohne Rolle. Kein Einbau ohne Rolle.' },
+        { n: '06', t: 'Der Durchgang war schwarz, weil die Himmel-Tapete ein festes Rechteck füllte statt jeder freien Zelle des Innenraums. Enclosed-Räume rastern jetzt zellenweise — eine Öffnung in der Wand bekommt Himmel, kein Loch.' },
+        { n: '07', t: 'Die Lesefläche war zu klein gedacht. Im Lesemodus füllt der Container den Rahmen — sonst ist er ein Plakat mit mehr Rand, und der Unterschied zwischen den drei Größen verschwindet.' },
+        { n: '08', t: 'Der Himmel war gemalt: drei Farbbänder mit der Hand gezogen, Wolken vergessen. Dabei liegen fünf Himmel-Bilder vermessen im Manifest. Jetzt läuft der Stapel aus BG Image, Big Clouds und den Small Clouds — Grundton, Bank bei 0,45, Einzelwolke bei 0,85. Wer Werte malt, die als Asset vorliegen, rät.' },
+        { n: '09', t: 'Tafeln und Plakate waren nachgezeichnete Rechtecke und damit Fremdkörper im Pixel-Vibe. Sie kommen jetzt als 9-Slice aus Wood and Paper UI: Ecken 1:1, Kanten gezogen, Holzrahmen außen und Papierfläche innen. Dasselbe gilt für die Wasseroberfläche — Water Reflect statt gemalter Striche.' }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    // Lauf-Token: React ruft Effects doppelt (mount → unmount → mount). boot() wartet auf ~30
+    // Bilder, bevor es this._timer setzt — ohne Token löschen sich zwei Läufe gegenseitig.
+    const run = ++this._run;
+    const load = src => new Promise(res => {
+      const i = new Image();
+      i.onload = () => res(i);
+      i.onerror = () => res(null);
+      i.src = encodeURI(src);
+    });
+
+    const root = this.el || document;
+    const boot = async () => {
+      const sheet = await load(SHEET);
+      const spr = {};
+      await Promise.all(Object.entries(SPR).map(async ([k, v]) => { spr[k] = { img: await load(v[0]), fx: v[1], fy: v[2] }; }));
+      const bg = {};
+      await Promise.all(Object.entries(BG).map(async ([k, v]) => { bg[k] = await load(v); }));
+      const ui = {};
+      await Promise.all(Object.entries(UI).map(async ([k, v]) => { ui[k] = await load(v); }));
+
+      const tile = (ctx, gx, gy, coord) => {
+        if (!sheet || !coord) return;
+        ctx.drawImage(sheet, coord[0] * T, coord[1] * T, T, T, Math.round(gx * T), Math.round(gy * T), T, T);
+      };
+      // Maske je Typ: Lauffläche kennt nur links/rechts, Kette nur oben/unten, Kammerrand alle vier
+      const mask = (grid, x, y, ch) => {
+        const at = (cx, cy) => (grid[cy] && grid[cy][cx] === ch) ? 1 : 0;
+        const t = TYPE[ch];
+        if (t === 'plank') return at(x + 1, y) * 2 + at(x - 1, y) * 8;
+        if (t === 'pillar') return at(x, y - 1) * 1 + at(x, y + 1) * 4;
+        return at(x, y - 1) * 1 + at(x + 1, y) * 2 + at(x, y + 1) * 4 + at(x - 1, y) * 8;
+      };
+      const paintTerrain = (ctx, grid) => {
+        for (let y = 0; y < grid.length; y++) for (let x = 0; x < grid[y].length; x++) {
+          const ch = grid[y][x];
+          if (!TYPE[ch]) continue;
+          tile(ctx, x, y, SETS[TYPE[ch]][mask(grid, x, y, ch)]);
+        }
+      };
+      const drawSprite = (ctx, s, gx, gy) => {
+        if (!s || !s.img) return;
+        ctx.drawImage(s.img, Math.round(gx * T - s.fx), Math.round(gy * T - s.fy));
+      };
+      // Himmelstapel: BG Image so gesetzt, dass seine Wasserkante auf waterY liegt.
+      // Nach oben Grundton verlängern, nach unten Wasser — Wolken nur über der Kante.
+      const drawSky = (ctx, w, h, seed, waterY) => {
+        const wy = Math.round(waterY);
+        if (!bg.sky) {
+          ctx.fillStyle = SKY.top; ctx.fillRect(0, 0, w, wy);
+          ctx.fillStyle = SKY.water; ctx.fillRect(0, wy, w, h - wy);
+          return;
+        }
+        const oy = wy - SKY.edge;
+        ctx.fillStyle = SKY.top; ctx.fillRect(0, 0, w, Math.max(0, oy));
+        ctx.fillStyle = SKY.water; ctx.fillRect(0, wy, w, h - wy);
+        for (let x = 0; x < w; x += bg.sky.width) ctx.drawImage(bg.sky, x, oy);
+        ctx.save(); ctx.beginPath(); ctx.rect(0, 0, w, wy); ctx.clip();
+        if (bg.bank) {
+          ctx.globalAlpha = 0.45;
+          for (let x = -((seed * 53) % bg.bank.width); x < w; x += bg.bank.width)
+            ctx.drawImage(bg.bank, x, wy - 66);
+          ctx.globalAlpha = 1;
+        }
+        ctx.globalAlpha = 0.85;
+        const single = [bg.c1, bg.c2, bg.c3][seed % 3];
+        if (single) ctx.drawImage(single, ((seed * 71) % (w + 120)) - 60, Math.max(2, oy + 6 + (seed % 3) * 9));
+        ctx.globalAlpha = 1;
+        ctx.restore();
+      };
+      // 9-Slice über die Pack-Rahmen: Ecken 1:1, Kanten gezogen. Keine nachgemalte Tafel.
+      const nine = (ctx, img, x, y, w, h, c) => {
+        if (!img) return;
+        const s = img.width, d = img.height;
+        x = Math.round(x); y = Math.round(y); w = Math.round(w); h = Math.round(h);
+        ctx.drawImage(img, 0, 0, c, c, x, y, c, c);
+        ctx.drawImage(img, s - c, 0, c, c, x + w - c, y, c, c);
+        ctx.drawImage(img, 0, d - c, c, c, x, y + h - c, c, c);
+        ctx.drawImage(img, s - c, d - c, c, c, x + w - c, y + h - c, c, c);
+        ctx.drawImage(img, c, 0, s - 2 * c, c, x + c, y, w - 2 * c, c);
+        ctx.drawImage(img, c, d - c, s - 2 * c, c, x + c, y + h - c, w - 2 * c, c);
+        ctx.drawImage(img, 0, c, c, d - 2 * c, x, y + c, c, h - 2 * c);
+        ctx.drawImage(img, s - c, c, c, d - 2 * c, x + w - c, y + c, c, h - 2 * c);
+        ctx.drawImage(img, c, c, s - 2 * c, d - 2 * c, x + c, y + c, w - 2 * c, h - 2 * c);
+      };
+      const card = (ctx, gx, gy) => { // Plakat auf der Kante, Papierrahmen des Packs, CARD_AR 1.74
+        const w = 76, h = Math.round(76 / 1.74);
+        nine(ctx, ui.note, gx * T - w / 2, gy * T - h, w, h, 8);
+      };
+      const sheetProp = (ctx, gx, gy) => { // Lesemodus: Holzrahmen außen, Papierfläche innen, füllt den Rahmen
+        const w = 276, h = Math.round(276 / 1.74), x = gx * T - w / 2, y = gy * T - h - 2;
+        nine(ctx, ui.wood, x, y, w, h, 14);
+        nine(ctx, ui.paper, x + 12, y + 12, w - 24, h - 24, 12);
+      };
+      const water = (ctx, gx, gy, cells) => { // Oberfläche aus Water Reflect, nicht gemalte Striche
+        const py = Math.round(gy * T) + 24, px = Math.round(gx * T);
+        if (spr.reflect && spr.reflect.img) {
+          ctx.drawImage(spr.reflect.img, px + 6, py + 3);
+          ctx.globalAlpha = 0.6; ctx.drawImage(spr.reflect.img, px + 30, py + 19); ctx.globalAlpha = 1;
+        }
+      };
+      const reach = (ctx, gx, gy) => { // 118 px Suchreichweite sichtbar machen
+        const px = Math.round(gx * T), py = Math.round(gy * T) - 40;
+        ctx.strokeStyle = '#b8361f'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+        ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px + 118, py); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.beginPath(); ctx.moveTo(px, py - 4); ctx.lineTo(px, py + 4);
+        ctx.moveTo(px + 118, py - 4); ctx.lineTo(px + 118, py + 4); ctx.stroke();
+        ctx.fillStyle = '#b8361f'; ctx.font = '9px monospace'; ctx.fillText('118 px', px + 42, py - 6);
+      };
+
+      // Modul-Karten
+      root.querySelectorAll('canvas[data-mod]').forEach((cv, idx) => {
+        const m = MODULES.find(x => x.id === cv.dataset.mod);
+        if (!m) return;
+        const ctx = cv.getContext('2d');
+        ctx.imageSmoothingEnabled = false;
+        if (m.dark || m.enclosed) {
+          ctx.fillStyle = '#2d2b3a'; ctx.fillRect(0, 0, cv.width, cv.height);
+          if (m.enclosed) { // Himmel ist Tapete im Inneren — nur in den freien Zellen des Innenraums
+            const [x0, y0, x1, y1] = m.enclosed;
+            ctx.save(); ctx.beginPath();
+            for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++)
+              if (!TYPE[m.grid[y][x]]) ctx.rect(x * T, y * T, T, T);
+            ctx.clip();
+            drawSky(ctx, cv.width, cv.height, idx + 3, 5 * T + 24);
+            ctx.restore();
+          }
+        } else {
+          drawSky(ctx, cv.width, cv.height, idx + 1, 5 * T + 24);
+        }
+        if (m.id === 'absturz') water(ctx, 0, 5, 6);
+        paintTerrain(ctx, m.grid);
+        // Requisiten und Figuren
+        (m.put || []).forEach(([k, gx, gy]) => {
+          if (k === 'card') return card(ctx, gx, gy);
+          if (k === 'sheet') return sheetProp(ctx, gx, gy);
+          if (k === 'reach') return reach(ctx, gx, gy);
+          if (k === 'palmBack') return drawSprite(ctx, spr.palm, gx, gy);
+          drawSprite(ctx, spr[k], gx, gy);
+        });
+      });
+
+      // Turm
+      const tw = root.querySelector('canvas[data-panel="tower"]');
+      if (tw) {
+        const ctx = tw.getContext('2d');
+        ctx.imageSmoothingEnabled = false;
+        drawSky(ctx, tw.width, tw.height, 7, 13.5 * T + 24);
+        const rows = [
+          [6, 'live', 1.5, 5], [5, 'release candidate', 3.5, 5], [4, 'beta testing', 5.5, 5],
+          [3, 'alpha version', 7.5, 5], [2, 'prototyp / MVP', 9.5, 5], [1, 'demo / idee / POC', 11.5, 10]
+        ];
+        rows.forEach(([n, label, gy, cells]) => {
+          const gx = n === 1 ? 0 : (6 - n) * 1.4 + 1;
+          const grid = ['#'.repeat(cells)];
+          for (let i = 0; i < cells; i++) tile(ctx, gx + i, gy, SETS.plank[mask(grid, i, 0, '#')]);
+          if (n < 6) { // Sprungbogen zur nächsten Sprosse — keine gerade Bahn
+            const ax = Math.round((gx + cells - 0.6) * T), ay = Math.round(gy * T);
+            ctx.strokeStyle = '#b8361f'; ctx.lineWidth = 2; ctx.beginPath();
+            ctx.moveTo(ax, ay); ctx.quadraticCurveTo(ax + 22, ay - 40, ax + 44, ay - 60); ctx.stroke();
+          }
+        });
+        drawSprite(ctx, spr.capIdle, 1.4, 11.5);
+        // Status-Totem: ein Kopf auf einem Stamm — Köpfe werden nie gestapelt
+        tile(ctx, 8.2, 11.5, PI.t); tile(ctx, 8.2, 10.5, PI.m);
+        drawSprite(ctx, spr.head2, 8.7, 10.5);        // Wasserspiegel, dann Graveyard mit eigener Kante — Requisiten stehen nie im Nichts
+        water(ctx, 0, 13.5, 22);
+        const gvY = 540;
+        ctx.fillStyle = '#241f2e'; ctx.fillRect(0, gvY, tw.width, tw.height - gvY);
+        const gvGrid = ['#'.repeat(23)];
+        for (let i = 0; i < 23; i++) tile(ctx, i, 17.25, SETS.plank[mask(gvGrid, i, 0, '#')]);
+        drawSprite(ctx, spr.dead1, 4, 17.25);
+        drawSprite(ctx, spr.dead2, 7, 17.25);
+        drawSprite(ctx, spr.skull, 9.4, 17.25);
+      }
+
+      // Figuren, animiert mit eigener Uhr je Clip
+      const casts = [];
+      for (const cv of root.querySelectorAll('canvas[data-cast]')) {
+        const def = ANIM[cv.dataset.cast];
+        if (!def) continue;
+        const frames = await Promise.all(def.frames.map(load));
+        const fxFrames = def.fx ? await Promise.all(def.fx.frames.map(load)) : null;
+        casts.push({ cv, ctx: cv.getContext('2d'), def, frames, fxFrames, i: 0, t: 0 });
+      }
+      casts.forEach(c => { c.ctx.imageSmoothingEnabled = false; });
+
+      const paint = c => {
+        const { ctx, cv, def, frames, fxFrames } = c;
+        const groundY = 108;
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        drawSky(ctx, cv.width, cv.height, 4, groundY + 24);
+        // Kante, auf der die Figur steht — Requisiten stehen nie im Nichts
+        if (sheet) {
+          const grid = ['########'];
+          for (let i = 0; i < 8; i++) tile(ctx, i, groundY / T, SETS.plank[mask(grid, i, 0, '#')]);
+        }        const f = frames[c.i % frames.length];
+        if (f) ctx.drawImage(f, Math.round(cv.width / 2 - def.foot[0]), Math.round(groundY - def.foot[1]));
+        if (fxFrames) {
+          const g = fxFrames[c.i % fxFrames.length];
+          if (g) ctx.drawImage(g, Math.round(cv.width / 2 - def.fx.foot[0] + def.fx.dx), Math.round(groundY - def.fx.foot[1]));
+        }
+        ctx.fillStyle = '#7d7364'; ctx.font = '9px monospace';
+        ctx.fillText((c.i % frames.length) + 1 + '/' + frames.length + '  ' + def.fps + ' fps', 6, 12);      };
+      casts.forEach(paint);
+
+      if (this._run !== run) return; // veralteter Lauf — nichts übergeben
+      this._casts = casts;
+      this._paint = paint;
+    };
+    boot().catch(e => console.error('Modul-Bibliothek: Renderer abgebrochen —', e));
+
+    // Uhr synchron zum Mount, NICHT am Ende von boot(): boot() wartet auf ~30 Bilder, und in
+    // dieser Zeit kann ein zweiter Mount denselben Timer-Slot überschreiben. Der Takt kommt aus
+    // absoluter Zeit, deshalb übersteht er die Drosselung in verborgenen Tabs.
+    if (this._timer) clearInterval(this._timer);
+    const start = performance.now();
+    this._timer = setInterval(() => {
+      const casts = this._casts;
+      if (!casts || !casts.length) return;
+      const el = performance.now() - start;
+      casts.forEach(c => {
+        const idx = Math.floor(el / (1000 / c.def.fps)) % c.frames.length;
+        if (idx !== c.i) { c.i = idx; this._paint(c); }
+      });
+    }, 40);
+  }
+
+  componentWillUnmount() { if (this._timer) clearInterval(this._timer); this._casts = null; }
+}
+</script>
+</body>
+</html>

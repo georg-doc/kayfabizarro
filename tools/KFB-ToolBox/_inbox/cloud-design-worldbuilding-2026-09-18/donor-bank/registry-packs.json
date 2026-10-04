@@ -1,0 +1,1798 @@
+{
+ "$schema": "kfb.registry-packs-mirror/1",
+ "version": "1.0.0",
+ "updated": "2026-09-18",
+ "note": "Pack-Ebene des generierten Upstream-Registry (registry/assets/v1). Spiegel, nicht Quelle — Quelle ist der Generator tools/asset_registry/build.py im Repo. Ersetzt asset-repo.json NICHT: dort liegt die KFB-Anreicherung (role, biomes, storyModes, naturalScale) fuer 986 Assets, hier die vollstaendige Bestandswahrheit.",
+ "upstream": {
+  "registry": "registry/assets/v1/",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceCommit": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+  "sourceCommitTime": "2026-09-18T03:11:20+02:00",
+  "schema": "kfb.asset-registry.v1"
+ },
+ "rawBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/",
+ "counts": {
+  "byKind": {
+   "audio": 1689,
+   "image-2d": 6556,
+   "model-3d": 5981
+  },
+  "byRoot": {
+   "media/2D_Assets": 5132,
+   "media/3D_Assets": 9094
+  },
+  "decks": 4,
+  "dependencies": {
+   "complete": 3361,
+   "embedded": 1887,
+   "missing": 339,
+   "unresolved": 394
+  },
+  "packs": 107,
+  "problems": {
+   "DUPLICATE_NAME": 659,
+   "MISSING_REFERENCED_FILE": 339,
+   "UNRESOLVED_FBX_DEPENDENCY": 305,
+   "UNRESOLVED_MODEL_DEPENDENCY": 89
+  },
+  "textureCandidates": 562,
+  "total": 14226
+ },
+ "newPacks": [
+  {
+   "root": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+   "files": 236,
+   "bytes": 8908566,
+   "formats": {
+    ".glb": 226,
+    ".png": 7,
+    ".txt": 1,
+    ".url": 2
+   },
+   "license": true
+  },
+  {
+   "root": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE",
+   "files": 113,
+   "bytes": 2588894,
+   "formats": {
+    ".bin": 53,
+    ".gltf": 53,
+    ".png": 4,
+    ".txt": 1,
+    ".url": 2
+   },
+   "license": true
+  },
+  {
+   "root": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE",
+   "files": 295,
+   "bytes": 5965548,
+   "formats": {
+    ".bin": 144,
+    ".gltf": 144,
+    ".png": 4,
+    ".txt": 1,
+    ".url": 2
+   },
+   "license": true
+  },
+  {
+   "root": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE",
+   "files": 121,
+   "bytes": 4120472,
+   "formats": {
+    ".bin": 57,
+    ".gltf": 57,
+    ".png": 4,
+    ".txt": 1,
+    ".url": 2
+   },
+   "license": true
+  }
+ ],
+ "packs": [
+  {
+   "packId": "kaykit-mystery-series6",
+   "displayName": "KayKit_Mystery_Series6",
+   "root": "media/3D_Assets/KayKit_Mystery_Series6",
+   "assetCount": 916,
+   "kinds": {
+    "image-2d": 268,
+    "model-3d": 648
+   },
+   "formats": {
+    "blend": 61,
+    "fbx": 242,
+    "glb": 82,
+    "gltf": 146,
+    "obj": 117,
+    "png": 268
+   },
+   "dep": {
+    "complete": 263,
+    "embedded": 82,
+    "unresolved": 303
+   }
+  },
+  {
+   "packId": "kaykit-legacy",
+   "displayName": "KayKit Legacy",
+   "root": "media/3D_Assets/KayKit Legacy",
+   "assetCount": 389,
+   "kinds": {
+    "image-2d": 25,
+    "model-3d": 364
+   },
+   "formats": {
+    "dae": 9,
+    "fbx": 40,
+    "glb": 274,
+    "gltf": 23,
+    "obj": 18,
+    "png": 25
+   },
+   "dep": {
+    "complete": 18,
+    "embedded": 297,
+    "unresolved": 49
+   }
+  },
+  {
+   "packId": "kenney-nature-kit",
+   "displayName": "kenney_nature-kit",
+   "root": "media/3D_Assets/kenney_nature-kit",
+   "assetCount": 329,
+   "kinds": {
+    "model-3d": 329
+   },
+   "formats": {
+    "glb": 329
+   },
+   "dep": {
+    "embedded": 329
+   }
+  },
+  {
+   "packId": "kaykit-medieval-builder-pack-1-0",
+   "displayName": "KayKit Medieval Builder Pack 1.0",
+   "root": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+   "assetCount": 233,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 226
+   },
+   "formats": {
+    "glb": 226,
+    "png": 7
+   },
+   "dep": {
+    "embedded": 226
+   },
+   "newIn": "2026-09-18"
+  },
+  {
+   "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+   "displayName": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+   "assetCount": 240,
+   "kinds": {
+    "image-2d": 19,
+    "model-3d": 221
+   },
+   "formats": {
+    "gltf": 221,
+    "jpg": 5,
+    "png": 14
+   },
+   "dep": {
+    "complete": 221
+   }
+  },
+  {
+   "packId": "kaykit-dungeon-pack-1-1-free-2",
+   "displayName": "KayKit_Dungeon_Pack_1.1_FREE 2",
+   "root": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2",
+   "assetCount": 227,
+   "kinds": {
+    "image-2d": 20,
+    "model-3d": 207
+   },
+   "formats": {
+    "gltf": 207,
+    "png": 20
+   },
+   "dep": {
+    "complete": 207
+   }
+  },
+  {
+   "packId": "kenney-fantasy-town-kit-2-0",
+   "displayName": "kenney_fantasy-town-kit_2.0",
+   "root": "media/3D_Assets/kenney_fantasy-town-kit_2.0",
+   "assetCount": 168,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 167
+   },
+   "formats": {
+    "glb": 167,
+    "png": 1
+   },
+   "dep": {
+    "missing": 167
+   }
+  },
+  {
+   "packId": "kaykit-boardgamebits-1-0-free",
+   "displayName": "KayKit_BoardGameBits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE",
+   "assetCount": 189,
+   "kinds": {
+    "image-2d": 27,
+    "model-3d": 162
+   },
+   "formats": {
+    "gltf": 162,
+    "png": 27
+   },
+   "dep": {
+    "complete": 162
+   }
+  },
+  {
+   "packId": "kenney-tower-defense-kit",
+   "displayName": "kenney_tower-defense-kit",
+   "root": "media/3D_Assets/kenney_tower-defense-kit",
+   "assetCount": 165,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 160
+   },
+   "formats": {
+    "glb": 160,
+    "png": 5
+   },
+   "dep": {
+    "complete": 160
+   }
+  },
+  {
+   "packId": "kenney-toy-car-kit",
+   "displayName": "kenney_toy-car-kit",
+   "root": "media/3D_Assets/kenney_toy-car-kit",
+   "assetCount": 169,
+   "kinds": {
+    "image-2d": 12,
+    "model-3d": 157
+   },
+   "formats": {
+    "glb": 157,
+    "png": 12
+   },
+   "dep": {
+    "complete": 157
+   }
+  },
+  {
+   "packId": "kenney-platformer-kit",
+   "displayName": "kenney_platformer-kit",
+   "root": "media/3D_Assets/kenney_platformer-kit",
+   "assetCount": 158,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 153
+   },
+   "formats": {
+    "glb": 153,
+    "png": 5
+   },
+   "dep": {
+    "complete": 153
+   }
+  },
+  {
+   "packId": "kaykit-restaurant-bits-1-0-free",
+   "displayName": "KayKit_Restaurant_Bits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE",
+   "assetCount": 148,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 144
+   },
+   "formats": {
+    "gltf": 144,
+    "png": 4
+   },
+   "dep": {
+    "complete": 144
+   },
+   "newIn": "2026-09-18"
+  },
+  {
+   "packId": "kenney-factory-kit-3-0",
+   "displayName": "kenney_factory-kit_3.0",
+   "root": "media/3D_Assets/kenney_factory-kit_3.0",
+   "assetCount": 148,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 143
+   },
+   "formats": {
+    "glb": 143,
+    "png": 5
+   },
+   "dep": {
+    "complete": 143
+   }
+  },
+  {
+   "packId": "kenney-furniture-kit",
+   "displayName": "kenney_furniture-kit",
+   "root": "media/3D_Assets/kenney_furniture-kit",
+   "assetCount": 142,
+   "kinds": {
+    "image-2d": 2,
+    "model-3d": 140
+   },
+   "formats": {
+    "glb": 140,
+    "png": 2
+   },
+   "dep": {
+    "embedded": 140
+   }
+  },
+  {
+   "packId": "platformer-game-kit-dec-2021",
+   "displayName": "Platformer Game Kit - Dec 2021",
+   "root": "media/3D_Assets/Platformer Game Kit - Dec 2021",
+   "assetCount": 116,
+   "kinds": {
+    "image-2d": 3,
+    "model-3d": 113
+   },
+   "formats": {
+    "gltf": 113,
+    "jpg": 3
+   },
+   "dep": {
+    "complete": 1,
+    "embedded": 112
+   }
+  },
+  {
+   "packId": "kenney-racing-kit",
+   "displayName": "kenney_racing-kit",
+   "root": "media/3D_Assets/kenney_racing-kit",
+   "assetCount": 114,
+   "kinds": {
+    "image-2d": 2,
+    "model-3d": 112
+   },
+   "formats": {
+    "glb": 112,
+    "png": 2
+   },
+   "dep": {
+    "embedded": 112
+   }
+  },
+  {
+   "packId": "kenney-modular-buildings",
+   "displayName": "kenney_modular-buildings",
+   "root": "media/3D_Assets/kenney_modular-buildings",
+   "assetCount": 115,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 108
+   },
+   "formats": {
+    "glb": 108,
+    "png": 7
+   },
+   "dep": {
+    "complete": 108
+   }
+  },
+  {
+   "packId": "kaykit-forest-nature-pack-1-0-free",
+   "displayName": "KayKit_Forest_Nature_Pack_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE",
+   "assetCount": 109,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 105
+   },
+   "formats": {
+    "gltf": 105,
+    "png": 4
+   },
+   "dep": {
+    "complete": 105
+   }
+  },
+  {
+   "packId": "kenney-holiday-kit",
+   "displayName": "kenney_holiday-kit",
+   "root": "media/3D_Assets/kenney_holiday-kit",
+   "assetCount": 106,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 99
+   },
+   "formats": {
+    "glb": 99,
+    "png": 7
+   },
+   "dep": {
+    "complete": 99
+   }
+  },
+  {
+   "packId": "kenney-city-kit-roads",
+   "displayName": "kenney_city-kit-roads",
+   "root": "media/3D_Assets/kenney_city-kit-roads",
+   "assetCount": 100,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 95
+   },
+   "formats": {
+    "glb": 95,
+    "png": 5
+   },
+   "dep": {
+    "complete": 95
+   }
+  },
+  {
+   "packId": "ultimate-monsters-bundle-glb",
+   "displayName": "Ultimate Monsters Bundle-glb",
+   "root": "media/3D_Assets/Ultimate Monsters Bundle-glb",
+   "assetCount": 101,
+   "kinds": {
+    "image-2d": 6,
+    "model-3d": 95
+   },
+   "formats": {
+    "glb": 45,
+    "gltf": 50,
+    "jpg": 1,
+    "png": 5
+   },
+   "dep": {
+    "embedded": 95
+   }
+  },
+  {
+   "packId": "scifi-ultimate-space-kit-quaternius",
+   "displayName": "SciFI_Ultimate Space Kit_Quaternius",
+   "root": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius",
+   "assetCount": 94,
+   "kinds": {
+    "image-2d": 2,
+    "model-3d": 92
+   },
+   "formats": {
+    "gltf": 92,
+    "jpg": 1,
+    "png": 1
+   },
+   "dep": {
+    "embedded": 92
+   }
+  },
+  {
+   "packId": "glb-graveyard",
+   "displayName": "GLB_graveyard",
+   "root": "media/3D_Assets/GLB_graveyard",
+   "assetCount": 92,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 91
+   },
+   "formats": {
+    "glb": 91,
+    "png": 1
+   },
+   "dep": {
+    "complete": 91
+   }
+  },
+  {
+   "packId": "kenney-graveyard-kit-5-0",
+   "displayName": "kenney_graveyard-kit_5.0",
+   "root": "media/3D_Assets/kenney_graveyard-kit_5.0",
+   "assetCount": 91,
+   "kinds": {
+    "model-3d": 91
+   },
+   "formats": {
+    "glb": 91
+   },
+   "dep": {
+    "missing": 91
+   }
+  },
+  {
+   "packId": "glb-format",
+   "displayName": "GLB format",
+   "root": "media/3D_Assets/GLB format",
+   "assetCount": 86,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 85
+   },
+   "formats": {
+    "glb": 85,
+    "png": 1
+   },
+   "dep": {
+    "complete": 72,
+    "embedded": 13
+   }
+  },
+  {
+   "packId": "bubbly-bathroom-tiny-treats-1-1",
+   "displayName": "Bubbly_Bathroom_Tiny_Treats_1-1",
+   "root": "media/3D_Assets/Bubbly_Bathroom_Tiny_Treats_1-1",
+   "assetCount": 89,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 84
+   },
+   "formats": {
+    "gltf": 84,
+    "png": 5
+   },
+   "dep": {
+    "complete": 84
+   }
+  },
+  {
+   "packId": "kfb",
+   "displayName": "KFB",
+   "root": "media/3D_Assets/KFB",
+   "assetCount": 94,
+   "kinds": {
+    "image-2d": 12,
+    "model-3d": 82
+   },
+   "formats": {
+    "glb": 82,
+    "jpg": 9,
+    "png": 3
+   },
+   "dep": {
+    "embedded": 82
+   }
+  },
+  {
+   "packId": "kenney-survival-kit",
+   "displayName": "kenney_survival-kit",
+   "root": "media/3D_Assets/kenney_survival-kit",
+   "assetCount": 81,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 80
+   },
+   "formats": {
+    "glb": 80,
+    "png": 1
+   },
+   "dep": {
+    "missing": 80
+   }
+  },
+  {
+   "packId": "kenney-building-kit",
+   "displayName": "kenney_building-kit",
+   "root": "media/3D_Assets/kenney_building-kit",
+   "assetCount": 84,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 79
+   },
+   "formats": {
+    "glb": 79,
+    "png": 5
+   },
+   "dep": {
+    "complete": 79
+   }
+  },
+  {
+   "packId": "kenney-castle-kit",
+   "displayName": "kenney_castle-kit",
+   "root": "media/3D_Assets/kenney_castle-kit",
+   "assetCount": 86,
+   "kinds": {
+    "image-2d": 10,
+    "model-3d": 76
+   },
+   "formats": {
+    "glb": 76,
+    "png": 10
+   },
+   "dep": {
+    "complete": 76
+   }
+  },
+  {
+   "packId": "glb-hexagon-kit",
+   "displayName": "GLB_hexagon_kit",
+   "root": "media/3D_Assets/GLB_hexagon_kit",
+   "assetCount": 72,
+   "kinds": {
+    "model-3d": 72
+   },
+   "formats": {
+    "glb": 72
+   },
+   "dep": {
+    "embedded": 72
+   }
+  },
+  {
+   "packId": "glb-pirate",
+   "displayName": "GLB_pirate",
+   "root": "media/3D_Assets/GLB_pirate",
+   "assetCount": 73,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 72
+   },
+   "formats": {
+    "glb": 72,
+    "png": 1
+   },
+   "dep": {
+    "complete": 72
+   }
+  },
+  {
+   "packId": "monsterpack-quaternius",
+   "displayName": "MonsterPack_Quaternius",
+   "root": "media/3D_Assets/MonsterPack_Quaternius",
+   "assetCount": 99,
+   "kinds": {
+    "image-2d": 28,
+    "model-3d": 71
+   },
+   "formats": {
+    "gltf": 71,
+    "jpg": 2,
+    "png": 26
+   },
+   "dep": {
+    "embedded": 71
+   }
+  },
+  {
+   "packId": "kenney-prototype-kit",
+   "displayName": "kenney_prototype-kit",
+   "root": "media/3D_Assets/kenney_prototype-kit",
+   "assetCount": 74,
+   "kinds": {
+    "image-2d": 8,
+    "model-3d": 66
+   },
+   "formats": {
+    "glb": 66,
+    "png": 8
+   },
+   "dep": {
+    "complete": 66
+   }
+  },
+  {
+   "packId": "kaykit-space-base-bits-1-0-free",
+   "displayName": "KayKit_Space_Base_Bits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE",
+   "assetCount": 61,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 57
+   },
+   "formats": {
+    "gltf": 57,
+    "png": 4
+   },
+   "dep": {
+    "complete": 57
+   },
+   "newIn": "2026-09-18"
+  },
+  {
+   "packId": "frankensteining",
+   "displayName": "Frankensteining",
+   "root": "media/3D_Assets/Frankensteining",
+   "assetCount": 79,
+   "kinds": {
+    "image-2d": 25,
+    "model-3d": 54
+   },
+   "formats": {
+    "blend": 5,
+    "dae": 9,
+    "fbx": 21,
+    "glb": 15,
+    "obj": 4,
+    "png": 9,
+    "tif": 16
+   },
+   "dep": {
+    "complete": 4,
+    "embedded": 15,
+    "unresolved": 35
+   }
+  },
+  {
+   "packId": "kaykit-furniture-bits-1-0-free",
+   "displayName": "KayKit_Furniture_Bits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE",
+   "assetCount": 57,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 53
+   },
+   "formats": {
+    "gltf": 53,
+    "png": 4
+   },
+   "dep": {
+    "complete": 53
+   },
+   "newIn": "2026-09-18"
+  },
+  {
+   "packId": "kenney-car-kit",
+   "displayName": "kenney_car-kit",
+   "root": "media/3D_Assets/kenney_car-kit",
+   "assetCount": 52,
+   "kinds": {
+    "image-2d": 2,
+    "model-3d": 50
+   },
+   "formats": {
+    "glb": 50,
+    "png": 2
+   },
+   "dep": {
+    "complete": 50
+   }
+  },
+  {
+   "packId": "kaykit-rpgtoolsbits-1-0-free",
+   "displayName": "KayKit_RPGToolsBits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+   "assetCount": 58,
+   "kinds": {
+    "image-2d": 9,
+    "model-3d": 49
+   },
+   "formats": {
+    "gltf": 49,
+    "png": 9
+   },
+   "dep": {
+    "complete": 49
+   }
+  },
+  {
+   "packId": "kaykit-city-builder-bits-1-0-free",
+   "displayName": "KayKit_City_Builder_Bits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE",
+   "assetCount": 45,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 41
+   },
+   "formats": {
+    "gltf": 41,
+    "png": 4
+   },
+   "dep": {
+    "complete": 41
+   }
+  },
+  {
+   "packId": "kaykit-mixed-bag-1-free",
+   "displayName": "KayKit_Mixed_Bag_1_FREE",
+   "root": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE",
+   "assetCount": 47,
+   "kinds": {
+    "image-2d": 6,
+    "model-3d": 41
+   },
+   "formats": {
+    "gltf": 41,
+    "png": 6
+   },
+   "dep": {
+    "complete": 41
+   }
+  },
+  {
+   "packId": "kenney-city-kit-commercial-2-1",
+   "displayName": "kenney_city-kit-commercial_2.1",
+   "root": "media/3D_Assets/kenney_city-kit-commercial_2.1",
+   "assetCount": 48,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 41
+   },
+   "formats": {
+    "glb": 41,
+    "png": 7
+   },
+   "dep": {
+    "complete": 41
+   }
+  },
+  {
+   "packId": "kaykit-blockbits-1-0-free",
+   "displayName": "KayKit_BlockBits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+   "assetCount": 44,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 40
+   },
+   "formats": {
+    "gltf": 40,
+    "png": 4
+   },
+   "dep": {
+    "complete": 40
+   }
+  },
+  {
+   "packId": "kenney-blaster-kit-2-1",
+   "displayName": "kenney_blaster-kit_2.1",
+   "root": "media/3D_Assets/kenney_blaster-kit_2.1",
+   "assetCount": 84,
+   "kinds": {
+    "image-2d": 44,
+    "model-3d": 40
+   },
+   "formats": {
+    "glb": 40,
+    "png": 44
+   },
+   "dep": {
+    "complete": 40
+   }
+  },
+  {
+   "packId": "kenney-city-kit-suburban-20",
+   "displayName": "kenney_city-kit-suburban_20",
+   "root": "media/3D_Assets/kenney_city-kit-suburban_20",
+   "assetCount": 49,
+   "kinds": {
+    "image-2d": 9,
+    "model-3d": 40
+   },
+   "formats": {
+    "glb": 40,
+    "png": 9
+   },
+   "dep": {
+    "complete": 40
+   }
+  },
+  {
+   "packId": "kenney-modular-cave-kit-1-0",
+   "displayName": "kenney_modular-cave-kit_1.0",
+   "root": "media/3D_Assets/kenney_modular-cave-kit_1.0",
+   "assetCount": 47,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 40
+   },
+   "formats": {
+    "glb": 40,
+    "png": 7
+   },
+   "dep": {
+    "complete": 40
+   }
+  },
+  {
+   "packId": "kaykit-adventurers-2-0-free",
+   "displayName": "KayKit_Adventurers_2.0_FREE",
+   "root": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+   "assetCount": 63,
+   "kinds": {
+    "image-2d": 24,
+    "model-3d": 39
+   },
+   "formats": {
+    "glb": 8,
+    "gltf": 31,
+    "png": 24
+   },
+   "dep": {
+    "complete": 31,
+    "embedded": 8
+   }
+  },
+  {
+   "packId": "kenney-modular-dungeon-kit-1-0",
+   "displayName": "kenney_modular-dungeon-kit_1.0",
+   "root": "media/3D_Assets/kenney_modular-dungeon-kit_1.0",
+   "assetCount": 46,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 39
+   },
+   "formats": {
+    "glb": 39,
+    "png": 7
+   },
+   "dep": {
+    "complete": 39
+   }
+  },
+  {
+   "packId": "kaykit-halloweenbits",
+   "displayName": "KayKit_HalloweenBits",
+   "root": "media/3D_Assets/KayKit_HalloweenBits",
+   "assetCount": 40,
+   "kinds": {
+    "image-2d": 4,
+    "model-3d": 36
+   },
+   "formats": {
+    "gltf": 36,
+    "png": 4
+   },
+   "dep": {
+    "complete": 35,
+    "missing": 1
+   }
+  },
+  {
+   "packId": "kaykit-fantasyweaponsbits-1-0-free",
+   "displayName": "KayKit_FantasyWeaponsBits_1.0_FREE",
+   "root": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE",
+   "assetCount": 34,
+   "kinds": {
+    "image-2d": 3,
+    "model-3d": 31
+   },
+   "formats": {
+    "gltf": 31,
+    "png": 3
+   },
+   "dep": {
+    "complete": 31
+   }
+  },
+  {
+   "packId": "3d-assets-loose",
+   "displayName": "3D_Assets",
+   "root": "media/3D_Assets",
+   "assetCount": 30,
+   "kinds": {
+    "image-2d": 2,
+    "model-3d": 28
+   },
+   "formats": {
+    "glb": 28,
+    "webp": 2
+   },
+   "dep": {
+    "embedded": 28
+   }
+  },
+  {
+   "packId": "glb-block-chars",
+   "displayName": "GLB_block_chars",
+   "root": "media/3D_Assets/GLB_block_chars",
+   "assetCount": 26,
+   "kinds": {
+    "model-3d": 26
+   },
+   "formats": {
+    "glb": 26
+   },
+   "dep": {
+    "embedded": 26
+   }
+  },
+  {
+   "packId": "glb-mini-chars",
+   "displayName": "GLB_mini_chars",
+   "root": "media/3D_Assets/GLB_mini_chars",
+   "assetCount": 26,
+   "kinds": {
+    "model-3d": 26
+   },
+   "formats": {
+    "glb": 26
+   },
+   "dep": {
+    "embedded": 26
+   }
+  },
+  {
+   "packId": "kaykit-skeletons",
+   "displayName": "KayKit_Skeletons",
+   "root": "media/3D_Assets/KayKit_Skeletons",
+   "assetCount": 34,
+   "kinds": {
+    "image-2d": 9,
+    "model-3d": 25
+   },
+   "formats": {
+    "glb": 12,
+    "gltf": 13,
+    "png": 9
+   },
+   "dep": {
+    "complete": 13,
+    "embedded": 12
+   }
+  },
+  {
+   "packId": "kenney-city-kit-industrial-1-0",
+   "displayName": "kenney_city-kit-industrial_1.0",
+   "root": "media/3D_Assets/kenney_city-kit-industrial_1.0",
+   "assetCount": 34,
+   "kinds": {
+    "image-2d": 9,
+    "model-3d": 25
+   },
+   "formats": {
+    "glb": 25,
+    "png": 9
+   },
+   "dep": {
+    "complete": 25
+   }
+  },
+  {
+   "packId": "kenney-mini-dungeon",
+   "displayName": "kenney_mini-dungeon",
+   "root": "media/3D_Assets/kenney_mini-dungeon",
+   "assetCount": 30,
+   "kinds": {
+    "image-2d": 5,
+    "model-3d": 25
+   },
+   "formats": {
+    "glb": 25,
+    "png": 5
+   },
+   "dep": {
+    "complete": 25
+   }
+  },
+  {
+   "packId": "glb-cube-pets",
+   "displayName": "GLB_cube-pets",
+   "root": "media/3D_Assets/GLB_cube-pets",
+   "assetCount": 25,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 24
+   },
+   "formats": {
+    "glb": 24,
+    "png": 1
+   },
+   "dep": {
+    "complete": 24
+   }
+  },
+  {
+   "packId": "kenney-mini-arena",
+   "displayName": "kenney_mini-arena",
+   "root": "media/3D_Assets/kenney_mini-arena",
+   "assetCount": 25,
+   "kinds": {
+    "image-2d": 3,
+    "model-3d": 22
+   },
+   "formats": {
+    "glb": 22,
+    "png": 3
+   },
+   "dep": {
+    "complete": 22
+   }
+  },
+  {
+   "packId": "kenney-mini-arcade",
+   "displayName": "kenney_mini-arcade",
+   "root": "media/3D_Assets/kenney_mini-arcade",
+   "assetCount": 27,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 20
+   },
+   "formats": {
+    "glb": 20,
+    "png": 7
+   },
+   "dep": {
+    "complete": 20
+   }
+  },
+  {
+   "packId": "kenney-mini-market",
+   "displayName": "kenney_mini-market",
+   "root": "media/3D_Assets/kenney_mini-market",
+   "assetCount": 27,
+   "kinds": {
+    "image-2d": 7,
+    "model-3d": 20
+   },
+   "formats": {
+    "glb": 20,
+    "png": 7
+   },
+   "dep": {
+    "complete": 20
+   }
+  },
+  {
+   "packId": "glb-blocky-chars",
+   "displayName": "GLB_blocky_chars",
+   "root": "media/3D_Assets/GLB_blocky_chars",
+   "assetCount": 18,
+   "kinds": {
+    "model-3d": 18
+   },
+   "formats": {
+    "glb": 18
+   },
+   "dep": {
+    "embedded": 18
+   }
+  },
+  {
+   "packId": "kaykit-character-animations-1-1",
+   "displayName": "KayKit_Character_Animations_1.1",
+   "root": "media/3D_Assets/KayKit_Character_Animations_1.1",
+   "assetCount": 17,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 16
+   },
+   "formats": {
+    "glb": 16,
+    "png": 1
+   },
+   "dep": {
+    "embedded": 16
+   }
+  },
+  {
+   "packId": "humanbasemeshes",
+   "displayName": "HumanBaseMeshes",
+   "root": "media/3D_Assets/HumanBaseMeshes",
+   "assetCount": 9,
+   "kinds": {
+    "model-3d": 9
+   },
+   "formats": {
+    "blend": 2,
+    "fbx": 1,
+    "glb": 3,
+    "gltf": 2,
+    "obj": 1
+   },
+   "dep": {
+    "complete": 3,
+    "embedded": 3,
+    "unresolved": 3
+   }
+  },
+  {
+   "packId": "dice",
+   "displayName": "Dice",
+   "root": "media/3D_Assets/Dice",
+   "assetCount": 6,
+   "kinds": {
+    "image-2d": 1,
+    "model-3d": 5
+   },
+   "formats": {
+    "3ds": 1,
+    "dae": 1,
+    "fbx": 1,
+    "glb": 1,
+    "obj": 1,
+    "png": 1
+   },
+   "dep": {
+    "complete": 1,
+    "embedded": 1,
+    "unresolved": 3
+   }
+  },
+  {
+   "packId": "glb-platformer",
+   "displayName": "GLB_platformer",
+   "root": "media/3D_Assets/GLB_platformer",
+   "assetCount": 5,
+   "kinds": {
+    "model-3d": 5
+   },
+   "formats": {
+    "glb": 5
+   },
+   "dep": {
+    "embedded": 5
+   }
+  },
+  {
+   "packId": "glb-mini-arcade",
+   "displayName": "GLB_mini_arcade",
+   "root": "media/3D_Assets/GLB_mini_arcade",
+   "assetCount": 2,
+   "kinds": {
+    "model-3d": 2
+   },
+   "formats": {
+    "glb": 2
+   },
+   "dep": {
+    "embedded": 2
+   }
+  },
+  {
+   "packId": "glb-mini-dungeon",
+   "displayName": "GLB_mini_dungeon",
+   "root": "media/3D_Assets/GLB_mini_dungeon",
+   "assetCount": 2,
+   "kinds": {
+    "model-3d": 2
+   },
+   "formats": {
+    "glb": 2
+   },
+   "dep": {
+    "embedded": 2
+   }
+  },
+  {
+   "packId": "glb-mini-arena",
+   "displayName": "GLB_mini_arena",
+   "root": "media/3D_Assets/GLB_mini_arena",
+   "assetCount": 1,
+   "kinds": {
+    "model-3d": 1
+   },
+   "formats": {
+    "glb": 1
+   },
+   "dep": {
+    "embedded": 1
+   }
+  },
+  {
+   "packId": "glb-mini-market",
+   "displayName": "GLB_mini_market",
+   "root": "media/3D_Assets/GLB_mini_market",
+   "assetCount": 1,
+   "kinds": {
+    "model-3d": 1
+   },
+   "formats": {
+    "glb": 1
+   },
+   "dep": {
+    "embedded": 1
+   }
+  },
+  {
+   "packId": "textures",
+   "displayName": "Textures",
+   "root": "media/3D_Assets/Textures",
+   "assetCount": 380,
+   "kinds": {
+    "image-2d": 379,
+    "model-3d": 1
+   },
+   "formats": {
+    "blend": 1,
+    "jpg": 327,
+    "png": 50,
+    "webp": 2
+   },
+   "dep": {
+    "unresolved": 1
+   }
+  },
+  {
+   "packId": "2d-assets-loose",
+   "displayName": "2D_Assets",
+   "root": "media/2D_Assets",
+   "assetCount": 3,
+   "kinds": {
+    "image-2d": 3
+   },
+   "formats": {
+    "png": 3
+   },
+   "dep": {}
+  },
+  {
+   "packId": "audio",
+   "displayName": "Audio",
+   "root": "media/3D_Assets/Audio",
+   "assetCount": 1668,
+   "kinds": {
+    "audio": 1668
+   },
+   "formats": {
+    "mp3": 16,
+    "ogg": 765,
+    "wav": 887
+   },
+   "dep": {}
+  },
+  {
+   "packId": "basic-caves-and-dungeons-32x32-standard-v1-0",
+   "displayName": "basic caves and dungeons 32x32 standard - v1.0",
+   "root": "media/2D_Assets/basic caves and dungeons 32x32 standard - v1.0",
+   "assetCount": 9,
+   "kinds": {
+    "image-2d": 9
+   },
+   "formats": {
+    "png": 9
+   },
+   "dep": {}
+  },
+  {
+   "packId": "flowerpower-png",
+   "displayName": "FlowerPower_PNG",
+   "root": "media/2D_Assets/FlowerPower_PNG",
+   "assetCount": 454,
+   "kinds": {
+    "image-2d": 454
+   },
+   "formats": {
+    "png": 454
+   },
+   "dep": {}
+  },
+  {
+   "packId": "foods-asset-hq",
+   "displayName": "Foods Asset HQ",
+   "root": "media/2D_Assets/Foods Asset HQ",
+   "assetCount": 3,
+   "kinds": {
+    "image-2d": 3
+   },
+   "formats": {
+    "png": 3
+   },
+   "dep": {}
+  },
+  {
+   "packId": "foods-assets-cartoononion",
+   "displayName": "Foods Assets CartoonOnion",
+   "root": "media/2D_Assets/Foods Assets CartoonOnion",
+   "assetCount": 10,
+   "kinds": {
+    "image-2d": 10
+   },
+   "formats": {
+    "png": 10
+   },
+   "dep": {}
+  },
+  {
+   "packId": "foods-assets-small",
+   "displayName": "Foods Assets Small",
+   "root": "media/2D_Assets/Foods Assets Small",
+   "assetCount": 3,
+   "kinds": {
+    "image-2d": 3
+   },
+   "formats": {
+    "png": 3
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-2d-top-down-pixel-dungeon-asset-pack",
+   "displayName": "free-2d-top-down-pixel-dungeon-asset-pack",
+   "root": "media/2D_Assets/free-2d-top-down-pixel-dungeon-asset-pack",
+   "assetCount": 23,
+   "kinds": {
+    "image-2d": 23
+   },
+   "formats": {
+    "png": 23
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-cartoon-smoke-effects-asset-pack",
+   "displayName": "free-cartoon-smoke-effects-asset-pack",
+   "root": "media/2D_Assets/free-cartoon-smoke-effects-asset-pack",
+   "assetCount": 74,
+   "kinds": {
+    "image-2d": 74
+   },
+   "formats": {
+    "png": 74
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-medieval-bandit-4-direction-character-pack",
+   "displayName": "free-medieval-bandit-4-direction-character-pack",
+   "root": "media/2D_Assets/free-medieval-bandit-4-direction-character-pack",
+   "assetCount": 72,
+   "kinds": {
+    "image-2d": 72
+   },
+   "formats": {
+    "png": 72
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-pixel-art-tiny-hero-sprites",
+   "displayName": "free-pixel-art-tiny-hero-sprites",
+   "root": "media/2D_Assets/free-pixel-art-tiny-hero-sprites",
+   "assetCount": 52,
+   "kinds": {
+    "image-2d": 52
+   },
+   "formats": {
+    "png": 52
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-poison-swamp-game-tileset-and-environment-pack",
+   "displayName": "free-poison-swamp-game-tileset-and-environment-pack",
+   "root": "media/2D_Assets/free-poison-swamp-game-tileset-and-environment-pack",
+   "assetCount": 93,
+   "kinds": {
+    "image-2d": 93
+   },
+   "formats": {
+    "png": 93
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-rpg-monster-sprites-pixel-art",
+   "displayName": "free-rpg-monster-sprites-pixel-art",
+   "root": "media/2D_Assets/free-rpg-monster-sprites-pixel-art",
+   "assetCount": 154,
+   "kinds": {
+    "image-2d": 154
+   },
+   "formats": {
+    "png": 154
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-simple-summer-top-down-vector-tileset",
+   "displayName": "free-simple-summer-top-down-vector-tileset",
+   "root": "media/2D_Assets/free-simple-summer-top-down-vector-tileset",
+   "assetCount": 89,
+   "kinds": {
+    "image-2d": 89
+   },
+   "formats": {
+    "png": 89
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-top-down-goblin-character-sprite",
+   "displayName": "free-top-down-goblin-character-sprite",
+   "root": "media/2D_Assets/free-top-down-goblin-character-sprite",
+   "assetCount": 72,
+   "kinds": {
+    "image-2d": 72
+   },
+   "formats": {
+    "png": 72
+   },
+   "dep": {}
+  },
+  {
+   "packId": "free-water-and-fire-magic-sprite-vector-pack",
+   "displayName": "free-water-and-fire-magic-sprite-vector-pack",
+   "root": "media/2D_Assets/free-water-and-fire-magic-sprite-vector-pack",
+   "assetCount": 58,
+   "kinds": {
+    "image-2d": 58
+   },
+   "formats": {
+    "png": 58
+   },
+   "dep": {}
+  },
+  {
+   "packId": "fx-visual",
+   "displayName": "FX_Visual",
+   "root": "media/3D_Assets/FX_Visual",
+   "assetCount": 328,
+   "kinds": {
+    "image-2d": 328
+   },
+   "formats": {
+    "gif": 14,
+    "png": 314
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kenney-cartography-pack",
+   "displayName": "kenney_cartography-pack",
+   "root": "media/2D_Assets/kenney_cartography-pack",
+   "assetCount": 183,
+   "kinds": {
+    "image-2d": 183
+   },
+   "formats": {
+    "png": 182,
+    "svg": 1
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kenney-construct-game-sources",
+   "displayName": "kenney_construct-game-sources",
+   "root": "media/3D_Assets/kenney_construct-game-sources",
+   "assetCount": 1,
+   "kinds": {
+    "image-2d": 1
+   },
+   "formats": {
+    "png": 1
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kenney-googly-eyes-2d",
+   "displayName": "kenney_googly-eyes 2D",
+   "root": "media/2D_Assets/kenney_googly-eyes 2D",
+   "assetCount": 9,
+   "kinds": {
+    "image-2d": 9
+   },
+   "formats": {
+    "png": 9
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kenney-splat-pack",
+   "displayName": "kenney_splat-pack",
+   "root": "media/2D_Assets/kenney_splat-pack",
+   "assetCount": 110,
+   "kinds": {
+    "image-2d": 110
+   },
+   "formats": {
+    "png": 73,
+    "svg": 37
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kenney-ui-pack-adventure",
+   "displayName": "kenney_ui-pack-adventure",
+   "root": "media/2D_Assets/kenney_ui-pack-adventure",
+   "assetCount": 4,
+   "kinds": {
+    "image-2d": 4
+   },
+   "formats": {
+    "png": 4
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kfb-custom",
+   "displayName": "KFB_Custom",
+   "root": "media/2D_Assets/KFB_Custom",
+   "assetCount": 3,
+   "kinds": {
+    "image-2d": 3
+   },
+   "formats": {
+    "png": 3
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kfb-knight",
+   "displayName": "KFB Knight",
+   "root": "media/2D_Assets/KFB Knight",
+   "assetCount": 94,
+   "kinds": {
+    "image-2d": 94
+   },
+   "formats": {
+    "png": 94
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kfb-mage",
+   "displayName": "KFB Mage",
+   "root": "media/2D_Assets/KFB Mage",
+   "assetCount": 116,
+   "kinds": {
+    "image-2d": 116
+   },
+   "formats": {
+    "png": 116
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kfb-rogue",
+   "displayName": "KFB Rogue",
+   "root": "media/2D_Assets/KFB Rogue",
+   "assetCount": 105,
+   "kinds": {
+    "image-2d": 105
+   },
+   "formats": {
+    "png": 105
+   },
+   "dep": {}
+  },
+  {
+   "packId": "kings-and-pigs",
+   "displayName": "Kings_and_Pigs",
+   "root": "media/2D_Assets/Kings_and_Pigs",
+   "assetCount": 89,
+   "kinds": {
+    "image-2d": 89
+   },
+   "formats": {
+    "png": 89
+   },
+   "dep": {}
+  },
+  {
+   "packId": "palm-tree-island",
+   "displayName": "Palm Tree Island",
+   "root": "media/2D_Assets/Palm Tree Island",
+   "assetCount": 78,
+   "kinds": {
+    "image-2d": 78
+   },
+   "formats": {
+    "png": 78
+   },
+   "dep": {}
+  },
+  {
+   "packId": "pirate-bomb",
+   "displayName": "Pirate_Bomb",
+   "root": "media/2D_Assets/Pirate_Bomb",
+   "assetCount": 781,
+   "kinds": {
+    "image-2d": 781
+   },
+   "formats": {
+    "png": 781
+   },
+   "dep": {}
+  },
+  {
+   "packId": "rf-catacombs-v1-0",
+   "displayName": "RF_Catacombs_v1.0",
+   "root": "media/2D_Assets/RF_Catacombs_v1.0",
+   "assetCount": 19,
+   "kinds": {
+    "image-2d": 19
+   },
+   "formats": {
+    "png": 19
+   },
+   "dep": {}
+  },
+  {
+   "packId": "rpg-icons",
+   "displayName": "RPG Icons",
+   "root": "media/2D_Assets/RPG Icons",
+   "assetCount": 401,
+   "kinds": {
+    "image-2d": 401
+   },
+   "formats": {
+    "png": 401
+   },
+   "dep": {}
+  },
+  {
+   "packId": "sounds",
+   "displayName": "Sounds",
+   "root": "media/3D_Assets/Sounds",
+   "assetCount": 21,
+   "kinds": {
+    "audio": 21
+   },
+   "formats": {
+    "mp3": 21
+   },
+   "dep": {}
+  },
+  {
+   "packId": "tiny-swords-enemy-pack",
+   "displayName": "Tiny Swords (Enemy Pack)",
+   "root": "media/2D_Assets/Tiny Swords (Enemy Pack)",
+   "assetCount": 123,
+   "kinds": {
+    "image-2d": 123
+   },
+   "formats": {
+    "png": 123
+   },
+   "dep": {}
+  },
+  {
+   "packId": "tiny-swords-free-pack",
+   "displayName": "Tiny Swords (Free Pack)",
+   "root": "media/2D_Assets/Tiny Swords (Free Pack)",
+   "assetCount": 410,
+   "kinds": {
+    "image-2d": 410
+   },
+   "formats": {
+    "png": 410
+   },
+   "dep": {}
+  },
+  {
+   "packId": "tiny-swords-update-010",
+   "displayName": "Tiny Swords (Update 010)",
+   "root": "media/2D_Assets/Tiny Swords (Update 010)",
+   "assetCount": 197,
+   "kinds": {
+    "image-2d": 197
+   },
+   "formats": {
+    "png": 197
+   },
+   "dep": {}
+  },
+  {
+   "packId": "treasurehunters",
+   "displayName": "TreasureHunters",
+   "root": "media/2D_Assets/TreasureHunters",
+   "assetCount": 1204,
+   "kinds": {
+    "image-2d": 1204
+   },
+   "formats": {
+    "png": 1204
+   },
+   "dep": {}
+  },
+  {
+   "packId": "trees",
+   "displayName": "trees",
+   "root": "media/2D_Assets/trees",
+   "assetCount": 37,
+   "kinds": {
+    "image-2d": 37
+   },
+   "formats": {
+    "png": 37
+   },
+   "dep": {}
+  }
+ ]
+}

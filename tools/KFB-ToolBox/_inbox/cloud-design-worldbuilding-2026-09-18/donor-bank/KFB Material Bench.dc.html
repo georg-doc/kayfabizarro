@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Material Bench — echte Texturen, ohne Wiederholung</title>
+<style>
+  html,body{margin:0;height:100%;background:#0e0d0c;overflow:hidden;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#d9a35a;} a:hover{color:#f0c184;}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:#4a4038;outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#d9a35a;border:2px solid #1b1815;cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:#d9a35a;border:2px solid #1b1815;cursor:pointer;}
+  .mb-scroll::-webkit-scrollbar{width:7px;} .mb-scroll::-webkit-scrollbar-thumb{background:#4a403880;border-radius:4px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__MB = { THREE, OrbitControls, RoomEnvironment };
+  window.dispatchEvent(new Event('mbready'));
+</script>
+</helmet>
+
+<div style="position:absolute;inset:0;background:#0e0d0c">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+
+  <div class="mb-scroll" style="position:absolute;top:0;left:0;bottom:0;width:306px;overflow-y:auto;background:rgba(20,18,15,0.92);backdrop-filter:blur(6px);border-right:1px solid #2b2620;padding:20px 20px 36px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;color:#e8e2d6">
+
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#8c8175">Material-Bank</span>
+      <span style="font-size:19px;font-weight:700;line-height:1.2">Echte Texturen, ohne Wiederholung</span>
+      <span style="font-size:12.5px;line-height:1.5;color:#a89e90">Fünf Blöcke, fünf Materialien aus deinem Ordner. Gleiche <strong style="color:#d9a35a;font-weight:600">weiße Fuge</strong> auf allen. Der Regler <strong style="color:#d9a35a;font-weight:600">Stochastik</strong> auf 0 zeigt die Kachel-Wiederholung, auf 1 ist sie weg — Verfahren nach Quilez / Heitz-Deliot, kein Handbau.</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Wiederholung brechen</span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Stochastik</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vStoch }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ stoch }}" onInput="{{ onStoch }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Kacheln pro Einheit</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vScale }}</span></div>
+        <input type="range" min="0.2" max="5" step="0.1" value="{{ scale }}" onInput="{{ onScale }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Struktur-Stärke</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vPhoto }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ photo }}" onInput="{{ onPhoto }}">
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Weiße Fuge</span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Stärke</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vSeam }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ seam }}" onInput="{{ onSeam }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Breite</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vSeamW }}</span></div>
+        <input type="range" min="0.01" max="0.2" step="0.005" value="{{ seamWidth }}" onInput="{{ onSeamW }}">
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Farbe &amp; Kontur</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <sc-for list="{{ modeButtons }}" as="m" hint-placeholder-count="6">
+          <button type="button" onClick="{{ m.go }}" style="{{ m.style }}">{{ m.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Story-Tint</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vTint }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ tint }}" onInput="{{ onTint }}">
+      </div>
+      <button type="button" onClick="{{ toggleInk }}" style="{{ inkStyle }}">{{ inkLabel }}</button>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #2b2620;padding-top:16px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8c8175">
+      <span style="color:#c2b9ab">{{ hud }}</span>
+      <span style="line-height:1.5;color:#c2b9ab">Reihenfolge links → rechts:</span>
+      <span style="line-height:1.6">① Papier · Paper003<br>② Karton · CardboardSet001<br>③ Filz · Fabric048<br>④ Ton · Clay004<br>⑤ Stein · rock_wall_16</span>
+      <span style="line-height:1.5">alle aus media/3D_Assets/Textures, per RAW-URL.</span>
+    </div>
+
+  </div>
+
+  <div style="position:absolute;right:18px;bottom:18px;display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none">
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8c8175;background:rgba(20,18,15,0.72);padding:6px 10px;border-radius:3px">{{ status }}</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6f665b;background:rgba(20,18,15,0.72);padding:6px 10px;border-radius:3px">Ziehen = drehen · Rad = Zoom</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:800},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tragic&quot;,&quot;comic&quot;,&quot;absurd&quot;,&quot;heroic&quot;,&quot;mystical&quot;,&quot;forbidden&quot;],&quot;default&quot;:&quot;heroic&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;stoch&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:0.85,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Textur&quot;},&quot;seam&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:0.55,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Fuge&quot;}}">
+const MODE_LABELS = ['Tragic', 'Comic', 'Absurd', 'Heroic', 'Mystical', 'Forbidden'];
+const TEX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/';
+const BLOCKS = [
+  { id: 'papier', label: 'Papier',  url: TEX + 'Paper003/Paper003_diffuse.jpg' },
+  { id: 'karton', label: 'Karton',  url: TEX + 'CardboardSet001/CardboardSet001_diffuse.jpg' },
+  { id: 'filz',   label: 'Filz',    url: TEX + 'Fabric048/Fabric048_diffuse.jpg' },
+  { id: 'ton',    label: 'Ton',     url: TEX + 'Clay004/Clay004_diffuse.jpg' },
+  { id: 'stein',  label: 'Stein',   url: TEX + 'rock_wall_16/rock_wall_16_diffuse.jpg' },
+];
+
+class Component extends DCLogic {
+  state = {
+    ready: false, status: 'lädt Texturen …',
+    mode: 3, tint: 0.38, stoch: 0.85, scale: 1.6, photo: 0.9,
+    seam: 0.55, seamWidth: 0.055, ink: true,
+    stats: { inst: 0, fps: 0 },
+  };
+
+  componentDidMount() {
+    if (this.booted && this._loop) { this.stop = false; this._loop(); return; }
+    const boot = () => this.boot();
+    if (window.__MB) boot(); else window.addEventListener('mbready', boot, { once: true });
+  }
+
+  componentWillUnmount() {
+    if (this.canvas && this.canvas.isConnected) return;
+    this.stop = true;
+    if (this.r) this.r.dispose();
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  async boot() {
+    if (!this.canvas || this.booted) return;
+    this.booted = true; this.stop = false;
+    const { THREE, OrbitControls, RoomEnvironment } = window.__MB;
+    this.T = THREE;
+    const [mat, wc, inkMod] = await Promise.all([
+      import('./kfb-box-material.js'),
+      import('./terrain/world-context.js'),
+      import('./kfb-ink-outline.js'),
+    ]);
+    this.M = mat; this.WC = wc;
+
+    const L = new THREE.TextureLoader(); L.crossOrigin = 'anonymous';
+    const load = (url) => new Promise((res) => L.load(url, (t) => {
+      t.wrapS = t.wrapT = THREE.RepeatWrapping;
+      t.colorSpace = THREE.SRGBColorSpace;
+      t.anisotropy = 8;
+      res(t);
+    }, undefined, () => res(null)));
+    this.maps = await Promise.all(BLOCKS.map((b) => load(b.url)));
+    // edge3 = Bevel-Maske: dunkel auslaufende Raender runden die harte Wuerfelkante optisch ab.
+    this.bevel = await load('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/edge3.jpg');
+
+    const r = this.r = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, preserveDrawingBuffer: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    r.outputColorSpace = THREE.SRGBColorSpace;
+    r.toneMapping = THREE.ACESFilmicToneMapping;
+    r.toneMappingExposure = 1.0;
+
+    const scene = this.scene = new THREE.Scene();
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.5, 300);
+    cam.position.set(17.5, 12.5, 26.5);   // Reihe ist 19,6 Einheiten breit — Abstand so, dass Block 1 und 5 samt Label im Bild sind
+    const ctr = this.ctr = new OrbitControls(cam, r.domElement);
+    ctr.target.set(0, 1.6, 0);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08;
+    ctr.maxPolarAngle = Math.PI * 0.49; ctr.minDistance = 5; ctr.maxDistance = 70;
+
+    const pmrem = new THREE.PMREMGenerator(r);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    this.hemi = new THREE.HemisphereLight(0xffffff, 0x3a3530, 0.42); scene.add(this.hemi);
+    this.sun = new THREE.DirectionalLight(0xffffff, 2.1); this.sun.position.set(14, 20, 12); scene.add(this.sun);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.16));
+    scene.fog = new THREE.Fog(0x14120f, 40, 130);
+
+    this.world = new THREE.Group();
+    scene.add(this.world);
+    this.build();
+    this.applyPalette();
+
+    this.ink = await inkMod.createInkOutline(THREE, { renderer: r, scene, camera: cam });
+    this.ink.setParams({ strength: 0.72, thickness: 1.3 });
+    this.ink.setEnabled(this.state.ink);
+
+    // Das Panel verdeckt links PANEL px. Statt die Szene per Hand nach rechts zu schieben,
+    // wird die PROJEKTION korrigiert: die Kamera rendert das linke Teilfenster eines um
+    // PANEL breiteren Bildes — damit sitzt die Bank exakt mittig in der freien Fläche,
+    // unabhängig von der Fenstergröße.
+    const PANEL = 306;
+    this.onResize = () => {
+      const w = this.canvas.clientWidth || 1, h = this.canvas.clientHeight || 1;
+      r.setSize(w, h, false);
+      const full = w + PANEL;
+      cam.aspect = full / h;
+      cam.setViewOffset(full, h, 0, 0, w, h);
+      cam.updateProjectionMatrix();
+      if (this.ink) this.ink.setSize(w, h);
+    };
+    window.addEventListener('resize', this.onResize); this.onResize();
+
+    let last = performance.now(), acc = 0, frames = 0;
+    const loop = this._loop = () => {
+      if (!this.canvas || !this.canvas.isConnected) { this.stop = true; return; }
+      requestAnimationFrame(loop);
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      acc += dt; frames++;
+      this.ctr.update();
+      this.ink.render(dt);
+      if (acc > 0.6) { this.setState({ stats: { inst: this.instCount, fps: Math.round(frames / acc) } }); acc = 0; frames = 0; }
+    };
+    this.setState({ ready: true, status: 'fünf Material-Blöcke · Stochastik aktiv' });
+    loop();
+  }
+
+  build() {
+    const T = this.T, M = this.M, s = this._s || this.state;
+    while (this.world.children.length) {
+      const c = this.world.children.pop();
+      if (c.geometry) c.geometry.dispose();
+      if (c.material && c.material.dispose) c.material.dispose();
+    }
+    this.meshes = [];
+    this.instCount = 0;
+    const W = 4, D = 4, GAP = 4.9;
+    BLOCKS.forEach((b, bi) => {
+      const cells = [];
+      for (let ix = 0; ix < W; ix++) for (let iz = 0; iz < D; iz++) {
+        const h = 1 + Math.round(M.rnd(bi, ix, iz, 'h') * 2.4);
+        cells.push({ x: (bi - (BLOCKS.length - 1) / 2) * GAP + ix - W / 2 + 0.5, z: iz - D / 2 + 0.5, h, f: M.rnd(bi, ix, iz, 'f') });
+      }
+      const geo = M.makeBoxGeometry(T, cells.length, 1);
+      const mat = M.makeVariedBoxMaterial(T, {
+        edgeMap: this.bevel, edgeStrength: 0.85,
+        photoMap: this.maps[bi], photoStrength: s.photo, photoScale: s.scale,
+        stochastic: s.stoch, seam: s.seam, seamWidth: s.seamWidth, seamWhite: 1,
+        stripe: 0, hatch: 0, grain: 0, bands: 4, bandAmount: 0.18, roughness: 0.92,
+      });
+      const mesh = new T.InstancedMesh(geo, mat, cells.length);
+      mesh.frustumCulled = false;
+      const m4 = new T.Matrix4();
+      cells.forEach((c, i) => {
+        m4.makeScale(1, c.h, 1); m4.setPosition(c.x, 0, c.z);
+        mesh.setMatrixAt(i, m4);
+        M.writeVariation(geo, i, 'bench:' + b.id, { variation: 1, brightRange: 0.22, heightCells: c.h, field: c.f, mat: 5 });
+      });
+      mesh.instanceMatrix.needsUpdate = true;
+      mesh.userData = { list: cells, block: b };
+      this.world.add(mesh);
+      // Beschriftung im Bild: ohne sie ist die Bank nur im Chat zuzuordnen.
+      const cv = document.createElement('canvas');
+      cv.width = 512; cv.height = 128;
+      const cx = cv.getContext('2d');
+      cx.fillStyle = 'rgba(20,18,15,0.82)'; cx.fillRect(0, 34, 512, 60);
+      cx.fillStyle = '#e8e2d6';
+      cx.font = '600 40px ui-monospace, Menlo, monospace';
+      cx.textAlign = 'center'; cx.textBaseline = 'middle';
+      cx.fillText((bi + 1) + '  ' + b.label.toUpperCase(), 256, 64);
+      const spTex = new T.CanvasTexture(cv);
+      spTex.colorSpace = T.SRGBColorSpace;
+      const sp = new T.Sprite(new T.SpriteMaterial({ map: spTex, transparent: true, depthTest: false }));
+      sp.scale.set(4.4, 1.1, 1);
+      sp.position.set((bi - (BLOCKS.length - 1) / 2) * GAP, 5.2, 0);
+      sp.renderOrder = 5;
+      this.world.add(sp);
+      this.meshes.push(mesh);
+      this.instCount += cells.length;
+    });
+  }
+
+  applyPalette() {
+    const T = this.T, M = this.M, s = this._s || this.state;
+    const stops = this.WC.STORY_PALETTES[s.mode].c;
+    const ink = this.WC.MODES[s.mode].ink;
+    for (const mesh of this.meshes) {
+      mesh.userData.list.forEach((c, i) => {
+        mesh.setColorAt(i, M.tintFor(T, stops, 0.35 + c.f * 0.4, 'bench', i, { variation: 1, strength: s.tint }));
+      });
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+    }
+    const base = new T.Color(stops[0][0], stops[0][1], stops[0][2]);
+    this.scene.fog.color.copy(base).lerp(new T.Color(0x14120f), 0.5);
+    this.scene.background = base.clone().lerp(new T.Color(0x0e0d0c), 0.68);
+    this.hemi.color.copy(new T.Color(stops[2][0], stops[2][1], stops[2][2])).lerp(new T.Color(0xffffff), 0.55);
+    if (this.ink) this.ink.setParams({ ink: new T.Color(ink).lerp(new T.Color(0x1a1412), 0.6) });
+  }
+
+  applyLive() {
+    const s = this._s || this.state;
+    for (const mesh of this.meshes) {
+      const U = mesh.material.userData.kfb;
+      U.uKfbStoch.value = s.stoch;
+      U.uKfbPhotoScale.value = s.scale;
+      U.uKfbPhotoStr.value = s.photo;
+      U.uKfbSeam.value = s.seam;
+      U.uKfbSeamW.value = s.seamWidth;
+    }
+    if (this.ink) this.ink.setEnabled(s.ink);
+    this.applyPalette();
+  }
+
+  set(patch, rebuild) {
+    this._s = { ...this.state, ...patch };
+    if (this.r) {
+      if (rebuild) { this.build(); this.applyPalette(); } else this.applyLive();
+      this.ink ? this.ink.render(0) : this.r.render(this.scene, this.cam);
+    }
+    this.setState(patch);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const btn = (on) => 'padding:9px 8px;border-radius:3px;border:1px solid ' + (on ? '#d9a35a' : '#3b3128') +
+      ';background:' + (on ? 'rgba(217,163,90,0.16)' : '#241f1a') + ';color:' + (on ? '#f0c184' : '#a89e90') +
+      ';font-family:ui-monospace,Menlo,monospace;font-size:11.5px;cursor:pointer;text-align:center';
+    return {
+      canvasRef: (el) => {
+        if (!el) return;
+        this.canvas = el;
+        if (this.booted && this._loop && this.stop) { this.stop = false; this._loop(); return; }
+        if (window.__MB) this.boot();
+      },
+      status: s.status,
+      modeButtons: MODE_LABELS.map((l, i) => ({ label: l, style: btn(i === s.mode), go: () => this.set({ mode: i }, false) })),
+      stoch: s.stoch, vStoch: s.stoch.toFixed(2), onStoch: (e) => this.set({ stoch: +e.target.value }, false),
+      scale: s.scale, vScale: s.scale.toFixed(2), onScale: (e) => this.set({ scale: +e.target.value }, false),
+      photo: s.photo, vPhoto: s.photo.toFixed(2), onPhoto: (e) => this.set({ photo: +e.target.value }, false),
+      seam: s.seam, vSeam: s.seam.toFixed(2), onSeam: (e) => this.set({ seam: +e.target.value }, false),
+      seamWidth: s.seamWidth, vSeamW: s.seamWidth.toFixed(3), onSeamW: (e) => this.set({ seamWidth: +e.target.value }, false),
+      tint: s.tint, vTint: s.tint.toFixed(2), onTint: (e) => this.set({ tint: +e.target.value }, false),
+      toggleInk: () => this.set({ ink: !s.ink }, false),
+      inkStyle: btn(s.ink), inkLabel: s.ink ? 'Tusche: an' : 'Tusche: aus',
+      hud: s.stats.inst + ' Instanzen · ' + s.stats.fps + ' fps · 5 Materialien',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.public-app-manifest/0.1",
+  "build": "STUNT-WORLD-TINYSKIES-TERRAIN-DONOR-20260919",
+  "implementationSSOT": "georg-doc/KFB-Travel-Globe",
+  "sourceEvidenceHead": "80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4",
+  "packagingDelta": "Only terrain-donor.mjs import paths are rewritten to the existing kayfabizarro Travel mirror; no current Travel runtime file is duplicated.",
+  "publicTravelMirrorBlobs": {
+    "globe.js": "80ebf8cde3649b2e0963d7d517a77f61421c70e1",
+    "terrain-surface.js": "9513347b6e3192dfefbeb3371085b13ac41ebb5d",
+    "simplex-noise.js": "201631f08df081f5695269923e2c744c88b7a5d7",
+    "globe-biome.js": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74",
+    "sky-presets.js": "04dd730ee735f064888e8472eff79583f17bebb0",
+    "welt-id.js": "df3c8cd6709bead9897a361d9dda8a5a72ed45d0",
+    "erde-maske.js": "f570317d4ee1e4a83292481aa56bf0d065c0fe56",
+    "rim-light.js": "d39e23ce598b219dae6331e37fc3148b9b5bde80"
+  },
+  "sourceFiles": {
+    "index.html": {
+      "travelBlob": "6abe6f72218947c598aa648d10bb21032001efbc"
+    },
+    "terrain-donor.mjs": {
+      "travelBlob": "6d6643b26a036c62e666f2c4aea174cff6b8f410",
+      "packagingDelta": "relative imports -> existing public Travel mirror absolute paths"
+    }
+  }
+}

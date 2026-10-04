@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.game-ready-static-qa/0.1",
+  "packageId": "eumel-2p5d-actor",
+  "date": "2026-09-20",
+  "result": "PASS_METADATA_ONLY",
+  "checks": [
+    {
+      "id": "source-component-blob-pinned",
+      "result": "PASS"
+    },
+    {
+      "id": "neutral-bind-pinned",
+      "result": "PASS"
+    },
+    {
+      "id": "actor-binding-json",
+      "result": "PASS"
+    },
+    {
+      "id": "package-json",
+      "result": "PASS"
+    },
+    {
+      "id": "three2p5d-implementation-static-sanity",
+      "result": "PASS",
+      "evidence": "/tools/2D Animation Studio/proofs/eumel-three2p5d-v1/STATIC_SANITY.md"
+    },
+    {
+      "id": "world-runtime-test",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "resident-consumer-test",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "human-acceptance",
+      "result": "PENDING"
+    }
+  ]
+}

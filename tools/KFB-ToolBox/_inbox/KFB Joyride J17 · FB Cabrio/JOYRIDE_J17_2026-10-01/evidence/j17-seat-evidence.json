@@ -1,0 +1,54 @@
+{
+ "schema": "kfb.j17.seat-evidence/0.1",
+ "date": "2026-10-01",
+ "page": "KFB Joyride J17 · FB Cabrio.dc.html",
+ "code": ["lab-travel/cabrio-seat.j17.js?r=7", "lab-travel/travel-modes.j17.js", "lab-travel/travel-core.j17.js", "lab-travel/headless-probe.j17.js", "lab-drive/joyride-drive.j10.js"],
+ "sources": {
+  "cabrio": "media/3D_Assets/Vehicles/KFB_CVP1/KFB_CVP1_cabrio.glb @93abbf22 (georg-doc-patch-3), 147 548 B, per jsDelivr geladen",
+  "figure": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb @93abbf22, 1 790 024 B",
+  "driveClip": "kfb_interaction_driving_a in media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_interaction_i06.glb @93abbf22",
+  "contract": "lab-travel/fb-car-01/VEHICLE_SEAT_CONTRACT.json (Kopie FB_CAR_01) + POSES.json",
+  "face": "face-mount.v1 + clay-lids.v1 (ToolBox P06 r2 @main, gepinnt) + Owner kfb-rigs-embed-v3 @8922d4b1",
+  "ears": "ear-dangle.v1 + ear-base.v1 (ToolBox P06 r2 @main, gepinnt) + fb-default.ear-rig.json @19088b14 · Preset B Floppy"
+ },
+ "geometry": {
+  "scaleA_m_per_rig": 0.616381042,
+  "carUnit_m": 1.10949,
+  "cabrioLength_m": 2.739,
+  "cabrioBodyWidth_m": 2.22,
+  "cabrioWidthInclMirrors_m": 2.78,
+  "fbHeightWithEars_m": 1.813,
+  "groundModelY_vs_contract": [-0.443, -0.4425],
+  "rimCentre_vs_contract_native": 0.014,
+  "standHipsZ_measured_vs_contract": [-0.222, -0.224],
+  "seatCentreY_plus_012_plus_shift_equals_socketY": "−0,1949 + 0,12 + 0,0553 = −0,0196 → Sockel enthält die 0,10-Rig-Verschiebung",
+  "mirror": { "node": "MirrorInterior", "offsetNative_blenderAxes": [0, 0.14, 0.04], "from_glb": [0, 1.358, -0.326], "note": "4 cm hoch, 14 cm vor; Ohrspitzen trafen den Spiegel vorher mit 20 Kanten, danach 0 (stehend)" }
+ },
+ "cruise_26kmh_parcours_s60": {
+  "earTipBack_deg": { "L": { "mean": 22.5, "p10": 10.9, "p90": 35.6, "max": 80.9 }, "R": { "mean": 22.6, "p10": 11.9, "p90": 37.2, "max": 79.7 }, "kmh": { "mean": 26.2, "p10": 25.4, "p90": 27.0 }, "samples": 342 },
+  "windMax_ms": 7.55,
+  "wristToGripMax_rig": { "l": 0.0, "r": 0.032 },
+  "note": "Tempo per Gas/Bremse zwischen 25 und 29 km/h gehalten; die Spitzen um 80° kommen aus den Gas/Brems-Stößen"
+ },
+ "steering": {
+  "keys": "A/D gehalten: k2b steerAngle ±0,42 rad × 8 → Lenkrad ±120° (Anschlag), links = −",
+  "autopilotLap": "Spurhilfe lenkt ohne steerAngle → Lenkradwinkel kinematisch aus der Gierrate, Runde ±105,9°"
+ },
+ "browserLap_k2b_autopilot": {
+  "gameTime_s": 90.85, "wallHits": 0, "takeoffs": 7, "landings": 7, "seated_s": 90.85,
+  "hipsPlacementErr_rig": 0.0, "hipsDevIncludingBounce_rig": 0.049, "bounce_m": [-0.03, 0.03],
+  "wristToGripMax_rig": { "l": 0.197, "r": 0.249 },
+  "lean_rad": [-0.35, 0.35], "reachLeanMax_rad": 0.3,
+  "clipChecks_10_frames_unallowed_edges": [168, 167, 236, 217, 34, 80, 228, 306, 48, 138],
+  "clipCheckMain": "Ohren gegen Sitzlehne / Tür / Innenraum (bis 170 Kanten), Unterarm gegen Kranz (bis 50), Körper gegen Kranz/Nabe (bis 26), Körper gegen Sitz bei voller Lean (bis 70), Unterschenkel gegen Sitzkante (bis 24)",
+  "fps_preview": "6–35 (Vorschau-iframe, nicht Georgs Gerät)",
+  "codeRevision": "r=6 (vor Beinen-im-Hop und Body-Roll-Deckel)"
+ },
+ "parked_clip_after_fixes": { "Torus:hand": 55, "SteeringWheel2:hand": 126, "Torus:arm": 43, "Torus:body": 10, "SteeringWheel2:arm": 10, "Dash": 0, "InstrCLuster": 0, "SeatL:leg": 0, "MirrorInterior:ear": 0 },
+ "hop_r7": {
+  "enter": { "hopIn": { "checks": 8, "bad": 0 }, "landIn": { "checks": 4, "SeatL:leg": 84 } },
+  "exit": { "dipOut": { "checks": 4, "SeatL:leg": 4 }, "hopOut": { "checks": 7, "bad": 105, "hits": { "CarMesh:ear": 69, "Interior:ear": 87, "SeatL:leg": 16, "CarMesh:hand": 10, "CarMesh:body": 10, "Interior:hand": 8, "Interior:body": 10 } }, "landOut": { "checks": 4, "bad": 0 } },
+  "timing_s": { "in": [0.667, 0.4, 0.667, 0.333], "out": [0.333, 0.667, 0.4, 0.667], "logged": "exit 10,388 → dip 10,709 → land 11,412 → stand 11,778 → Walk 12,487 · enter 18,409 → crouch 19,096 → hop 19,479 → land 20,132 → seated 20,471" }
+ },
+ "headlessLap": "lab-track/evidence/j17-round-gate.cabrio.json"
+}

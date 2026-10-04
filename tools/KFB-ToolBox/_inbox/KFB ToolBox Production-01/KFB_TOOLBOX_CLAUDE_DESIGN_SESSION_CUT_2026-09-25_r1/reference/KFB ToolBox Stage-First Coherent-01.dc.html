@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#cfccc4;font-family:'Space Grotesk',system-ui,sans-serif;color:#1f2022;-webkit-font-smoothing:antialiased}
+  a{color:#7a4d0d} a:hover{color:#b8781c}
+  [hidden]{display:none!important}
+  .kfbnum{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .kfb-pop::-webkit-scrollbar{width:8px} .kfb-pop::-webkit-scrollbar-thumb{background:#c9c5bc;border-radius:4px}
+  #kfb-objmenu button{height:28px;min-width:28px;padding:0 6px;border:0;border-radius:5px;background:transparent;font:inherit;font-size:13px;color:#1f2022;cursor:pointer}
+  #kfb-objmenu button:hover{background:#dedbd4}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  window.__KFB3D = { THREE, OrbitControls, GLTFLoader };
+  window.dispatchEvent(new Event('kfb3dready'));
+</script>
+</helmet>
+
+<section data-screen-label="ToolBox Coherent-01" style="height:100vh;width:100%;display:flex;flex-direction:column;background:#dedbd4;overflow:hidden;position:relative">
+
+  <div style="height:44px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px;background:#efece6;border-bottom:1px solid #c9c5bc;font-size:13px;position:relative;z-index:20">
+    <div style="font-weight:600;letter-spacing:.01em;white-space:nowrap">KFB ToolBox</div>
+
+    <div style="position:relative">
+      <button onClick="{{ toggleActorPop }}" style="display:flex;align-items:center;gap:8px;height:30px;padding:0 10px 0 6px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;font:inherit;font-size:13px;color:#1f2022;cursor:pointer;white-space:nowrap">
+        <span style="width:18px;height:18px;border-radius:4px;background:{{ actorSwatch }}"></span>
+        <span style="max-width:132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ actorLabel }}</span>
+        <span style="color:#5c6065">▾</span>
+      </button>
+      <sc-if value="{{ actorPopOpen }}">
+        <div style="position:absolute;top:36px;left:0;width:290px;max-height:440px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 8px 28px rgba(31,32,34,.16);overflow:hidden;display:flex;flex-direction:column;z-index:30">
+          <div style="padding:8px"><input value="{{ actorSearch }}" onChange="{{ onActorSearch }}" placeholder="Search actor…" style="width:100%;box-sizing:border-box;height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 10px;font:inherit;font-size:13px;outline:none"></div>
+          <div class="kfb-pop" style="overflow-y:auto;padding:0 8px 8px;display:flex;flex-direction:column;gap:1px">
+            <sc-for list="{{ rosterRows }}" as="a" hint-placeholder-count="8">
+              <sc-if value="{{ a.isHeader }}">
+                <div style="padding:8px 6px 3px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5c6065">{{ a.label }}</div>
+              </sc-if>
+              <sc-if value="{{ a.isItem }}">
+                <div onClick="{{ a.pick }}" style="display:grid;grid-template-columns:16px 1fr;gap:8px;align-items:center;min-height:30px;padding:0 6px;border-radius:5px;cursor:pointer;background:{{ a.bg }};color:{{ a.fg }}">
+                  <span style="width:14px;height:14px;border-radius:4px;background:{{ a.swatch }}"></span>
+                  <span>{{ a.label }}</span>
+                </div>
+              </sc-if>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display:flex;gap:2px">
+      <span onClick="{{ setTab_body }}" style="height:30px;display:flex;align-items:center;padding:0 8px;border-radius:6px;cursor:pointer;background:{{ bodyTabBg }};color:{{ bodyTabFg }}">Body</span>
+      <span onClick="{{ setTab_face }}" style="height:30px;display:flex;align-items:center;padding:0 8px;border-radius:6px;cursor:pointer;background:{{ faceTabBg }};color:{{ faceTabFg }}">Face</span>
+      <span title="TB-ANIM-01" style="height:30px;display:flex;align-items:center;padding:0 8px;border-radius:6px;color:#8a8f95">Motion</span>
+      <span title="later" style="height:30px;display:flex;align-items:center;padding:0 8px;border-radius:6px;color:#8a8f95">Voice</span>
+      <span onClick="{{ setTab_messen }}" style="height:30px;display:flex;align-items:center;padding:0 8px;border-radius:6px;cursor:pointer;background:{{ messenTabBg }};color:{{ messenTabFg }}">Messen</span>
+    </div>
+
+    <div style="position:relative">
+      <button onClick="{{ toggleStagePop }}" title="Stage ▾ · scene preset" style="display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;background:transparent;font:inherit;font-size:13px;color:#1f2022;cursor:pointer;white-space:nowrap">
+        <span style="max-width:104px;overflow:hidden;text-overflow:ellipsis">{{ stageLabel }}</span><span style="color:#5c6065">▾</span>
+      </button>
+      <sc-if value="{{ stagePopOpen }}">
+        <div style="position:absolute;top:36px;left:0;width:250px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 8px 28px rgba(31,32,34,.16);padding:6px;display:flex;flex-direction:column;gap:1px;z-index:30">
+          <sc-for list="{{ stageRows }}" as="st" hint-placeholder-count="2">
+            <div onClick="{{ st.pick }}" style="padding:7px 8px;border-radius:5px;cursor:pointer;background:{{ st.bg }};color:{{ st.fg }}">
+              <div>{{ st.label }}</div>
+              <div style="font-size:11px;opacity:.72">{{ st.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="flex:1"></div>
+    <div title="{{ statusText }}" style="display:flex;align-items:center;padding:0 4px"><span style="width:8px;height:8px;border-radius:50%;background:{{ dotColor }}"></span></div>
+    <button onClick="{{ toggleDiag }}" title="Sources · diagnostics · self-test" style="height:30px;width:32px;border:1px solid #c9c5bc;border-radius:6px;background:{{ diagBtnBg }};font:inherit;font-size:14px;cursor:pointer;color:#1f2022">…</button>
+    <button onClick="{{ save }}" style="height:30px;padding:0 12px;border:1px solid #1f2022;border-radius:6px;background:#1f2022;color:#efece6;font:inherit;font-size:13px;cursor:pointer;font-weight:500">Save</button>
+    <button onClick="{{ reload }}" style="height:30px;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;background:transparent;font:inherit;font-size:13px;cursor:pointer;color:#1f2022;white-space:nowrap" title="Reload the saved scene">Reload</button>
+  </div>
+
+  <div style="flex:1;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 42% 58%,#ebe8e1 0%,#dedbd4 70%)">
+      <div id="kfb-stage" style="position:absolute;inset:0"></div>
+    </div>
+
+    <div id="kfb-objmenu" style="position:absolute;left:0;top:0;transform:translateX(-50%);display:flex;align-items:center;gap:1px;padding:3px;background:#efece6;border:1px solid #c9c5bc;border-radius:8px;box-shadow:0 4px 16px rgba(31,32,34,.14);z-index:12;white-space:nowrap">
+      <button data-m="translate" title="Move (G)" style="background:{{ mMoveBg }};color:{{ mMoveFg }}">✥</button>
+      <button data-m="rotate" title="Rotate (R)" style="background:{{ mRotBg }};color:{{ mRotFg }}">⟳</button>
+      <button data-m="scale" title="Free scale (S)" style="background:{{ mScaleBg }};color:{{ mScaleFg }}">⤡</button>
+      <button data-m="scale-down" title="Smaller ×0.8">−</button>
+      <button data-m="scale-up" title="Larger ×1.25">+</button>
+      <button data-m="floor" title="Drop onto support below (F)">⬓</button>
+      <button data-m="scope" title="Part ↔ group" style="background:{{ mScopeBg }};color:{{ mScopeFg }}">⊞</button>
+      <button data-m="close" title="Clear selection (Esc)">✕</button>
+    </div>
+
+    <sc-if value="{{ hasFailures }}">
+      <div style="position:absolute;left:14px;top:14px;max-width:420px;background:#a33d3d;color:#fbf5f0;border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.45;z-index:11;box-shadow:0 6px 18px rgba(31,32,34,.2)">
+        <div style="font-weight:600;margin-bottom:4px">SOURCE MISSING · no stand-in rendered</div>
+        <sc-for list="{{ failureRows }}" as="f" hint-placeholder-count="1">
+          <div style="margin-top:4px"><span style="font-weight:600">{{ f.name }}</span> · <span class="kfbnum" style="font-size:11px">{{ f.path }}</span><br><span style="opacity:.88">{{ f.msg }}</span></div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isLoading }}">
+      <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);height:26px;display:flex;align-items:center;padding:0 12px;background:#1f2022;color:#efece6;border-radius:7px;font-size:12px;z-index:11;white-space:nowrap">{{ loadingText }}</div>
+    </sc-if>
+
+    <div style="position:absolute;left:14px;bottom:54px;display:flex;gap:2px;background:#efece6;border:1px solid #c9c5bc;border-radius:7px;padding:3px;font-size:12px">
+      <span onClick="{{ camFull }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Full</span>
+      <span onClick="{{ camFace }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Face</span>
+      <span onClick="{{ camSel }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Selection</span>
+      <span style="width:1px;background:#c9c5bc;margin:3px 4px"></span>
+      <span onClick="{{ zoomOut }}" style="height:26px;display:flex;align-items:center;padding:0 8px;cursor:pointer">−</span>
+      <span onClick="{{ zoomIn }}" style="height:26px;display:flex;align-items:center;padding:0 8px;cursor:pointer">+</span>
+    </div>
+
+    <div style="position:absolute;left:14px;bottom:14px;display:flex;gap:2px;background:#efece6;border:1px solid #c9c5bc;border-radius:7px;padding:3px;font-size:12px;flex-wrap:wrap;max-width:calc(100% - 350px)">
+      <span onClick="{{ setMove }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mMoveBg }};color:{{ mMoveFg }}">✥ Move</span>
+      <span onClick="{{ setRotate }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mRotBg }};color:{{ mRotFg }}">⟳ Rotate</span>
+      <span onClick="{{ setScale }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mScaleBg }};color:{{ mScaleFg }}">⤡ Scale</span>
+      <span style="width:1px;background:#c9c5bc;margin:3px 4px"></span>
+      <span onClick="{{ drop }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">⬓ Drop</span>
+      <span onClick="{{ toggleSnap }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ snapBg }};color:{{ snapFg }}">Snap</span>
+    </div>
+
+    <div style="position:absolute;top:12px;right:12px;bottom:12px;width:300px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 6px 24px rgba(31,32,34,.10);display:flex;flex-direction:column;overflow:hidden;font-size:12.5px;z-index:10">
+
+      <sc-if value="{{ isMessenTab }}">
+        <div style="height:38px;flex:none;display:flex;align-items:center;gap:8px;padding:0 10px 0 14px;border-bottom:1px solid #c9c5bc">
+          <span style="font-weight:600;font-size:13px">Messen</span><span style="color:#5c6065;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">· {{ selTitle }}</span>
+        </div>
+        <div class="kfb-pop" style="padding:12px 14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+          <sc-if value="{{ hasSel }}">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="color:#5c6065">{{ selSub }}</div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+                <span onClick="{{ setMove }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ mMoveBg }};color:{{ mMoveFg }}">Move</span>
+                <span onClick="{{ setRotate }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ mRotBg }};color:{{ mRotFg }}">Rotate</span>
+                <span onClick="{{ setScale }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ mScaleBg }};color:{{ mScaleFg }}">Scale</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                <span onClick="{{ drop }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #1f2022;background:#1f2022;color:#efece6">⬓ Drop on support</span>
+                <span onClick="{{ resetSel }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;color:#7a4d0d">Reset</span>
+              </div>
+              <div class="kfbnum" style="color:#5c6065;font-size:11.5px;line-height:1.65;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:6px 8px">pos {{ posReadout }}<br>rot {{ rotReadout }}°<br>scl {{ sclReadout }}</div>
+              <sc-if value="{{ hasDrop }}">
+                <div style="font-size:11.5px;color:#4d6b55">{{ lastDrop }}</div>
+              </sc-if>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noSel }}">
+            <div style="color:#5c6065">Click an object on stage or pick one below.</div>
+          </sc-if>
+          <div style="border-top:1px solid #c9c5bc;padding-top:10px">
+            <div style="display:flex;justify-content:space-between;color:#5c6065;margin-bottom:6px"><span>Scene objects</span><span class="kfbnum">{{ objCount }}</span></div>
+            <div style="display:flex;flex-direction:column;gap:1px">
+              <sc-for list="{{ objRows }}" as="o" hint-placeholder-count="6">
+                <div onClick="{{ o.pick }}" style="display:grid;grid-template-columns:8px 1fr auto;gap:8px;align-items:center;min-height:28px;padding:0 6px;border-radius:5px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">
+                  <span style="width:7px;height:7px;border-radius:50%;background:{{ o.dot }}"></span>
+                  <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ o.label }}</span>
+                  <span style="font-size:11px;opacity:.7">{{ o.sub }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isFaceTab }}">
+        <div style="height:38px;flex:none;display:flex;align-items:center;gap:8px;padding:0 10px 0 14px;border-bottom:1px solid #c9c5bc">
+          <span style="font-weight:600;font-size:13px">Face</span><span style="color:#5c6065">· {{ actorLabel }}</span>
+        </div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:14px;overflow-y:auto;flex:1">
+          <sc-if value="{{ hasRig }}">
+            <div>
+              <div style="color:#5c6065;margin-bottom:6px">Pupil style</div>
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ setMatte }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ matteBg }};color:{{ matteFg }}">Matte cute</span>
+                <span onClick="{{ setGlossy }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ glossyBg }};color:{{ glossyFg }}">Glossy googly</span>
+              </div>
+            </div>
+            <div>
+              <div style="color:#5c6065;margin-bottom:6px">Eye color</div>
+              <div style="display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center">
+                <input type="color" value="{{ eyeColor }}" onChange="{{ onEyeColor }}" style="width:40px;height:40px;padding:0;border:1px solid rgba(0,0,0,.15);border-radius:6px;background:none;cursor:pointer">
+                <span class="kfbnum" style="display:flex;align-items:center;height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 8px;font-size:12px">{{ eyeColorUpper }}</span>
+                <span onClick="{{ resetEye }}" style="height:30px;display:flex;align-items:center;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;cursor:pointer;color:#7a4d0d">Original</span>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;color:#5c6065;margin-bottom:6px"><span>Eye spacing · anchor.dx</span><span class="kfbnum">{{ eyeDx }}</span></div>
+              <input type="range" min="0.15" max="0.55" step="0.005" value="{{ eyeDx }}" onChange="{{ onEyeDx }}" style="width:100%;accent-color:#1f2022">
+            </div>
+            <div style="color:#5c6065;padding-top:8px;border-top:1px solid #c9c5bc">EyeRig v6 owner · setPupilStyle / setBaseColor / setAnchor. Saved with the scene.</div>
+          </sc-if>
+          <sc-if value="{{ noRig }}">
+            <div style="color:#a33d3d">No EyeRig on the current actor — source did not load.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBodyTab }}">
+        <div style="height:38px;flex:none;display:flex;align-items:center;gap:8px;padding:0 10px 0 14px;border-bottom:1px solid #c9c5bc">
+          <span style="font-weight:600;font-size:13px">Body</span><span style="color:#5c6065">· {{ actorLabel }}</span>
+        </div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+          <sc-for list="{{ bodyFacts }}" as="bf" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:78px 1fr;gap:8px">
+              <span style="color:#5c6065">{{ bf.k }}</span><span class="kfbnum" style="font-size:11.5px;word-break:break-all">{{ bf.v }}</span>
+            </div>
+          </sc-for>
+          <div onClick="{{ selectActor }}" style="height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #c9c5bc;border-radius:6px;cursor:pointer">Select actor on stage</div>
+          <div style="color:#5c6065;padding-top:8px;border-top:1px solid #c9c5bc">Material zones — next round.</div>
+        </div>
+      </sc-if>
+
+      <div style="flex:none;padding:9px 14px;border-top:1px solid #c9c5bc">
+        <span class="kfbnum" style="color:#5c6065;font-size:11px">{{ statusText }} · {{ lastSavedText }}</span>
+      </div>
+    </div>
+
+    <sc-if value="{{ diagOpen }}">
+      <div class="kfb-pop" style="position:absolute;top:10px;right:320px;width:380px;max-height:calc(100% - 24px);overflow-y:auto;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 10px 30px rgba(31,32,34,.18);padding:12px 14px;font-size:12px;z-index:25;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span style="font-weight:600;font-size:13px">Sources · checks</span>
+          <span onClick="{{ toggleDiag }}" style="cursor:pointer;color:#5c6065">✕</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <sc-for list="{{ sourceRows }}" as="s" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:8px 1fr;gap:8px;align-items:start">
+              <span style="width:7px;height:7px;border-radius:50%;margin-top:5px;background:{{ s.dot }}"></span>
+              <div><div>{{ s.label }}</div><div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-all">{{ s.path }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border-top:1px solid #c9c5bc;padding-top:10px;display:flex;align-items:center;gap:8px">
+          <span onClick="{{ runSelfTest }}" style="height:28px;display:flex;align-items:center;padding:0 12px;border-radius:6px;background:#1f2022;color:#efece6;cursor:pointer">{{ testBtnLabel }}</span>
+          <span style="color:#5c6065">{{ testSummary }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <sc-for list="{{ testRows }}" as="t" hint-placeholder-count="0">
+            <div style="display:grid;grid-template-columns:40px 1fr;gap:6px">
+              <span class="kfbnum" style="font-size:11px;color:{{ t.color }}">{{ t.verdict }}</span>
+              <div><span>{{ t.name }}</span><div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-all">{{ t.detail }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div onClick="{{ resetFixture }}" style="color:#7a4d0d;cursor:pointer;border-top:1px solid #c9c5bc;padding-top:8px">Reset to fixture (clears this ToolBox save)</div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;gridStep&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.05,&quot;min&quot;:0.01,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Edit&quot;},&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Stage&quot;}}">
+const PIN = '8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e';
+const REPO = 'georg-doc/kayfabizarro';
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+const jsd = (p, c = PIN) => 'https://cdn.jsdelivr.net/gh/' + REPO + '@' + c + '/' + enc(p);
+const raw = (p, c = PIN) => 'https://raw.githubusercontent.com/' + REPO + '/' + c + '/' + enc(p);
+const SRC = {
+  editLayer: 'tools/KFB-ToolBox/lib/edit-layer.js',
+  graftMount: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js',
+  eyeRig: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js',
+  graftProfile: 'tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/profiles/kfb-pet-graft-driver.georg-2026-09-15.json',
+  sceneDir: 'tools/resident_atlas/scenes/',
+  petLibrary: './kfb-lib/pet-library.v6.js',
+};
+/* WB2 accepted source binds the Caveman texture explicitly (Caveman.glb references it externally). */
+const RESIDENT_TEXTURE = { caveman: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png' };
+const PETS = ['bunny','cat','fox','tiger','lion','penguin','panda','koala','deer','monkey','pig','hog','cow','polar','beaver','giraffe','chick','fish','parrot','bee','crab','caterpillar','elephant','dog'];
+const cap = (s) => s[0].toUpperCase() + s.slice(1);
+const BASE_ROSTER = [{ id: 'frizzlebob-driver', kind: 'graft', label: 'FrizzleBob · Driver Graft', section: 'Graft', swatch: '#f2c93c' }]
+  .concat(PETS.map((id) => ({ id: 'pet-' + id, kind: 'pet', petId: id, label: 'Cube Pet · ' + cap(id), section: 'Cube Pets', swatch: '#c9c5bc' })));
+const STORE_KEY = 'kfb-toolbox-coherent-01';
+const DOC_ID = 'tb-coherent-01';
+const ACTOR_H = 2.2;
+const SPOT = { neutral: [0, 0, 0], resident: [0.55, 0, 2.9] };
+const clone = (v) => JSON.parse(JSON.stringify(v));
+const r4 = (v) => +(+v).toFixed(4);
+const hexOf = (n) => '#' + (n >>> 0).toString(16).padStart(6, '0').slice(-6);
+const SEL = '#1f2022', SELFG = '#efece6';
+
+class Component extends DCLogic {
+  state = { tab: 'messen', actorPop: false, stagePop: false, diagOpen: false, actorSearch: '', dirty: false, lastSaved: null,
+    status: 'booting', selId: null, mode: 'translate', snap: true, scope: 'teil', lastDrop: '', failures: [], loading: 0, loadingText: '',
+    tests: null, testing: false, tick: 0 };
+
+  componentDidMount() {
+    this.roots = new Map(); this.runtime = null; this.mixers = []; this.locks = []; this.scenes = {}; this.sceneOrder = [];
+    this.srcStatus = {}; this._token = 0; this._frameN = 0; this._lastFrame = 0; this._gltfCache = new Map();
+    this._editOpts = { gridStep: this.props.gridStep ?? 0.05, angleStep: 15 };
+    if (window.__KFB3D) this._boot(); else window.addEventListener('kfb3dready', () => this._boot(), { once: true });
+  }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearInterval(this._wd); window.removeEventListener('keydown', this._onKey); }
+  componentDidUpdate() {
+    const g = this.props.gridStep ?? 0.05;
+    if (this.EDIT && this._editOpts.gridStep !== g) { this._editOpts.gridStep = g; this.EDIT.setSnap(this.EDIT.snap); }
+    if (this.grid) this.grid.visible = this.props.showGrid ?? true;
+  }
+
+  _touch() { if (this._pend) return; this._pend = true; setTimeout(() => { this._pend = false; this.setState((s) => ({ tick: s.tick + 1 })); }, 60); }
+  _fail(name, path, msg) { this.setState((s) => ({ failures: s.failures.concat([{ name, path, msg: String(msg && msg.message || msg), boot: !this.doc }]) })); }
+  _src(key, ok, detail) { this.srcStatus[key] = { ok, detail }; }
+  async _json(url) { const r = await fetch(url); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }
+  async _waitEl(id) { for (let i = 0; i < 100; i++) { const el = document.getElementById(id); if (el && el.clientWidth) return el; await new Promise((r) => setTimeout(r, 30)); } return document.getElementById(id); }
+
+  async _boot() {
+    const H = window.__KFB3D, THREE = this.THREE = H.THREE;
+    THREE.Cache.enabled = true; window.__kfbTB = this;
+    const el = this.stageEl = await this._waitEl('kfb-stage');
+    const menu = this.menu = document.getElementById('kfb-objmenu');
+    if (menu) menu.hidden = true;
+
+    const renderer = this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    el.appendChild(renderer.domElement);
+    renderer.domElement.style.display = 'block';
+    const scene = this.scene = new THREE.Scene();
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 200);
+    cam.position.set(7.8, 4.6, 12.8);
+    scene.add(new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25));
+    const sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(6, 11, 7); sun.castShadow = true;
+    sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -10, right: 10, top: 10, bottom: -10, near: 0.5, far: 40 }); sun.shadow.bias = -0.0005;
+    scene.add(sun);
+    const controls = this.controls = new H.OrbitControls(cam, renderer.domElement);
+    controls.enableDamping = true; controls.dampingFactor = 0.08; controls.target.set(0, 1.1, 0); controls.maxPolarAngle = Math.PI * 0.495;
+    this.world = new THREE.Group(); this.world.name = 'stage-world'; scene.add(this.world);
+    const floor = this.floor = new THREE.Mesh(new THREE.CircleGeometry(9, 72).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xd8d4ca, roughness: 1 }));
+    floor.name = 'Stage floor'; floor.receiveShadow = true; this.world.add(floor);
+    this.grid = new THREE.GridHelper(18, 36, 0xbdb7aa, 0xcac5ba); this.grid.position.y = 0.003; this.grid.visible = this.props.showGrid ?? true; scene.add(this.grid);
+    this.loader = new H.GLTFLoader();
+
+    const ro = new ResizeObserver(() => this._resize()); ro.observe(el); this._resize();
+
+    // owner modules — each one fails visibly on its own
+    try { this.EL = await import(jsd(SRC.editLayer)); this._src('editLayer', true); } catch (e) { this._src('editLayer', false, e.message); this._fail('Shared edit-layer.js', SRC.editLayer + '@' + PIN.slice(0, 8), e); }
+    try { this.Eye = await import(jsd(SRC.eyeRig)); this._src('eyeRig', true); } catch (e) { this._src('eyeRig', false, e.message); this._fail('EyeRig v6', SRC.eyeRig, e); }
+    try { this.PetLib = await import(SRC.petLibrary); this._src('petLibrary', true); } catch (e) { this._src('petLibrary', false, e.message); this._fail('pet-library.v6', SRC.petLibrary, e); }
+    await this._prewarm();
+    try { this.Graft = await import(jsd(SRC.graftMount)); this._src('graftMount', true); } catch (e) { this._src('graftMount', false, e.message); this._fail('FrizzleBob Driver Graft · graft-mount.v1', SRC.graftMount, e); }
+    try { this.contract = await this._json(raw(SRC.graftProfile)); this._src('graftProfile', true, 'v' + (this.contract.version || '?')); } catch (e) { this._src('graftProfile', false, e.message); this._fail('FrizzleBob Driver Graft · profile', SRC.graftProfile, e); }
+    try {
+      const idx = await this._json(raw(SRC.sceneDir + 'index.json'));
+      for (const s of idx.scenes || []) {
+        try { this.scenes[s.id] = await this._json(raw(SRC.sceneDir + s.file)); this.sceneOrder.push(s.id); }
+        catch (e) { this._fail('Resident scene · ' + s.title, SRC.sceneDir + s.file, e); }
+      }
+      this._src('sceneIndex', true, this.sceneOrder.length + ' scene(s)');
+    } catch (e) { this._src('sceneIndex', false, e.message); this._fail('Resident scene index', SRC.sceneDir + 'index.json', e); }
+
+    if (this.EL) {
+      this.EDIT = this.EL.makeEditLayer({ camera: cam, scene, controls }, renderer.domElement, {
+        ...this._editOpts, getRoot: () => this.world, recordOf: (n) => this._rec(n), groupOf: (r) => (r && r.group) || null, menu,
+        onPick: (node, rec) => this._onPick(node, rec), onChange: (nodes) => this._onEdit(nodes), onMenu: (m) => { if (m === 'floor') this.drop(); },
+      });
+      // keep a live reference so the gridStep tweak can re-apply through the owner's own setSnap
+      this.EDIT.gizmo.size = 0.85; this.EDIT.setOn(true); this.EDIT.onChange(() => this._syncEdit());
+    }
+
+    this._onKey = (e) => this._key(e); window.addEventListener('keydown', this._onKey);
+    const loop = () => { this._raf = requestAnimationFrame(loop); this._frame(); };
+    loop();
+    this._wd = setInterval(() => { if (performance.now() - this._lastFrame > 250) this._frame(); }, 120);
+
+    let restored = false;
+    try { const s = localStorage.getItem(STORE_KEY); if (s) { const d = JSON.parse(s); if (d.format === 'kfb-worldbuilder-scene' && d.id === DOC_ID) { this.doc = d; restored = true; } } } catch (e) {}
+    if (!this.doc) this.doc = this._freshDoc('neutral', null, 'frizzlebob-driver');
+    await this.rebuild();
+    this.setState({ status: restored ? 'restored' : 'ready', dirty: false, lastSaved: restored ? this.doc.savedAt : null });
+    this.camFull();
+  }
+
+  /* The owner chain imports its optional parts lazily; a cold CDN miss there silently drops a face part.
+     Warm every file of the pinned chain first (with retry) and report anything still missing. */
+  async _prewarm() {
+    const base = 'tools/KFB-ToolBox/kfb-rigs-embed-v3/';
+    const files = ['frizzlegraft-v1/graft-mount.v1.js', 'frizzlegraft-v1/graft-biped.v1.js', 'frizzlegraft-v1/headgraft.v1.js', 'frizzlegraft-v1/ears.v2.js', 'frizzlegraft-v1/facehost.v1.js',
+      'frizzlegraft-v1/matzones.v1.js', 'frizzlegraft-v1/eyeoval.v1.js', 'frizzlegraft-v1/headzones.v1.js', 'frizzlegraft-v1/donoreyes.v1.js', 'frizzlegraft-v1/wordmark.v1.js', 'frizzlegraft-v1/actor-wobble.v1.js',
+      'petstudio-v9/studio-v12/pet-eye-rig.v6.js', 'petstudio-v9/studio-v3/pet-mouth.v1.js', 'petstudio-v9/studio-v12/brow-rig.v2.js', 'petstudio-v9/studio-v12/pet-nose.v2.js', 'petstudio-v9/studio-v12/pet-moustache.v1.js',
+      'petstudio-v9/studio-v13/pose-rig.v1.js', 'petstudio-v9/kfb-ink-canon.js', 'lab-v6/facegraft.v1.js', 'lab-v6/partrig.v1.js', 'lab-v4/carlrig.js', 'lab-v2/audit.js'];
+    const miss = [];
+    await Promise.all(files.map(async (f) => {
+      for (let i = 0; i < 3; i++) { try { const r = await fetch(jsd(base + f)); if (r.ok) { await r.text(); return; } } catch (e) {} await new Promise((r) => setTimeout(r, 400 * (i + 1))); }
+      miss.push(f);
+    }));
+    this._src('graftChain', !miss.length, (files.length - miss.length) + '/' + files.length + ' files');
+    for (const f of miss) this._fail('Driver Graft chain file', base + f + ' @' + PIN.slice(0, 8), 'not reachable after 3 tries');
+  }
+
+  _resize() {
+    const el = this.stageEl; if (!el || !this.renderer) return;
+    const w = el.clientWidth, h = el.clientHeight; if (!w || !h) return;
+    this.renderer.setSize(w, h); this.cam.aspect = w / h; this.cam.updateProjectionMatrix();
+  }
+
+  _frame() {
+    if (!this.renderer) return;
+    const now = performance.now(), dt = Math.min(0.05, (now - (this._lastFrame || now)) / 1000); this._lastFrame = now; this._frameN++;
+    this.controls.update();
+    for (const m of this.mixers) { try { m.update(dt); } catch (e) {} }
+    if (this._frameN % 8 === 0) for (const l of this.locks) this._groundLock(l);
+    const rt = this.runtime;
+    if (rt) {
+      try {
+        if (rt.kind === 'pet') { if (rt.ch.loaded !== false) rt.ch.update(dt); rt.rig.update(dt); }
+        else if (rt.kind === 'graft') rt.handle.update(dt, this.cam);
+      } catch (e) {}
+    }
+    if (this.EDIT) this.EDIT.follow();
+    this.renderer.render(this.scene, this.cam);
+  }
+
+  /* ---------- geometry helpers (WB2 fitObject / groundModelLocal semantics) ---------- */
+  _bounds(o, precise, step = 1) {
+    const THREE = this.THREE; o.updateWorldMatrix(true, true);
+    const b = new THREE.Box3(), v = new THREE.Vector3(), t = new THREE.Box3();
+    o.traverse((n) => {
+      if (!(n.isMesh || n.isSkinnedMesh) || !n.geometry || n.userData.noMeasure) return;
+      for (let p = n; p && p !== o.parent; p = p.parent) if (!p.visible) return;
+      if (precise && n.isSkinnedMesh) {
+        const pos = n.geometry.attributes.position;
+        for (let i = 0; i < pos.count; i += step) { n.getVertexPosition(i, v); v.applyMatrix4(n.matrixWorld); b.expandByPoint(v); }
+      } else {
+        if (!n.geometry.boundingBox) n.geometry.computeBoundingBox();
+        t.copy(n.geometry.boundingBox).applyMatrix4(n.matrixWorld); b.union(t);
+      }
+    });
+    return b;
+  }
+  _fit(o, fit) {
+    if (!fit) return; const s = this._bounds(o, false).getSize(new this.THREE.Vector3());
+    let k = 1; if (fit.height) k = fit.height / Math.max(s.y, 1e-6); if (fit.max) k = fit.max / Math.max(s.x, s.y, s.z, 1e-6);
+    o.scale.multiplyScalar(k); o.updateWorldMatrix(true, true);
+  }
+  _groundFree(c) { const b = this._bounds(c, true); if (Number.isFinite(b.min.y)) { c.position.y -= b.min.y; c.updateWorldMatrix(true, true); } }
+  _groundLock(l) {
+    const { root, container } = l; if (!root.parent) return;
+    const inv = new this.THREE.Matrix4().copy(root.matrixWorld).invert();
+    const b = this._bounds(container, true, 2).applyMatrix4(inv);
+    if (Number.isFinite(b.min.y) && Math.abs(b.min.y) > 1e-4) { container.position.y -= b.min.y; }
+  }
+  async _gltf(url) { if (!this._gltfCache.has(url)) this._gltfCache.set(url, this.loader.loadAsync(url)); return this._gltfCache.get(url); }
+
+  /* ---------- document (kfb-worldbuilder-scene v1 · same object records as WB2/R2) ---------- */
+  _roster() {
+    const res = [];
+    for (const sid of this.sceneOrder || []) {
+      const sc = this.scenes[sid];
+      (sc.assets || []).forEach((a, i) => { if (a.role === 'actor') res.push({ id: 'resident:' + sid + ':' + (a.residentId || i), kind: 'resident', sceneId: sid, recId: this._resId(sc, a, i), label: a.name, section: 'Resident · ' + sc.title, swatch: '#b0a58f' }); });
+    }
+    return BASE_ROSTER.slice(0, 1).concat(res, BASE_ROSTER.slice(1));
+  }
+  _resId(sc, a, i) { return 'res:' + sc.id + ':' + i; }
+  _actorRecord(rosterId, preset) {
+    const r = BASE_ROSTER.find((x) => x.id === rosterId) || BASE_ROSTER[0];
+    const pos = (SPOT[preset] || SPOT.neutral).slice();
+    const rec = { id: 'actor', kind: r.kind, rosterId: r.id, name: r.label, role: 'featured actor', group: 'featured',
+      source: r.kind === 'graft' ? { path: SRC.graftMount, profile: SRC.graftProfile, petId: 'graft-driver', commit: PIN }
+        : { owner: 'kfb-lib/pet-library.v6.js#SETS.animals', petId: r.petId, path: 'media/3D_Assets/GLB_cube-pets/animal-' + r.petId + '.glb', commit: 'main (PET_BASE)' },
+      fit: r.kind === 'graft' ? { height: ACTOR_H } : null,
+      transform: { position: pos, rotation: [0, 0, 0], scale: [1, 1, 1] } };
+    rec.defaultTransform = clone(rec.transform);
+    return rec;
+  }
+  _sceneRecords(sc) {
+    return (sc.assets || []).map((a, i) => {
+      const rec = { id: this._resId(sc, a, i), kind: a.role === 'actor' ? 'resident' : 'prop', name: a.name, role: a.role, group: a.group,
+        source: { path: a.path, commit: sc.assetCommit }, fit: a.fit || null,
+        transform: { position: (a.at || [0, 0, 0]).slice(), rotation: (a.rotationDeg || [0, 0, 0]).map((d) => +(d * Math.PI / 180).toFixed(5)), scale: [1, 1, 1] } };
+      if (a.role === 'actor') rec.resident = { id: a.residentId, rigFamily: a.rigFamily, texture: RESIDENT_TEXTURE[a.residentId] ? { path: RESIDENT_TEXTURE[a.residentId], commit: sc.assetCommit } : null,
+        clip: a.pose ? { name: a.pose.clip, path: a.pose.path, commit: a.pose.commit } : null, ground: a.ground || { y: 0, lock: true } };
+      rec.defaultTransform = clone(rec.transform);
+      return rec;
+    });
+  }
+  _freshDoc(preset, sceneId, rosterId) {
+    const sc = sceneId && this.scenes[sceneId];
+    const objects = (preset === 'resident' && sc ? this._sceneRecords(sc) : []).concat([this._actorRecord(rosterId, preset)]);
+    return { format: 'kfb-worldbuilder-scene', version: 1, id: DOC_ID,
+      stage: { preset, sceneId: sc ? sceneId : null, scene: sc ? { path: SRC.sceneDir + sceneId + '.json', commit: PIN, schema: sc.schema } : null },
+      sources: { sceneEdit: { owner: 'KFB ToolBox', module: SRC.editLayer, commit: PIN }, graft: { module: SRC.graftMount, profile: SRC.graftProfile, commit: PIN }, eyeRig: { module: SRC.eyeRig, commit: PIN, blob: '853bcf5fb090' } },
+      eye: (this.doc && this.doc.eye) || {}, objects };
+  }
+  _rec(n) { const id = n && n.userData && n.userData.sceneObjectId; return id ? (this.doc.objects.find((o) => o.id === id) || null) : null; }
+  _actorRec() { return this.doc && this.doc.objects.find((o) => o.id === 'actor'); }
+  _updateRec(root) {
+    const rec = this._rec(root); if (!rec) return;
+    rec.transform.position = root.position.toArray().map(r4);
+    rec.transform.rotation = [root.rotation.x, root.rotation.y, root.rotation.z].map((v) => +v.toFixed(5));
+    rec.transform.scale = root.scale.toArray().map(r4);
+  }
+  _updateAll() { for (const r of this.roots.values()) this._updateRec(r); }
+
+  /* ---------- build ---------- */
+  async rebuild() {
+    const token = ++this._token;
+    if (this.EDIT) this.EDIT.clear();
+    for (const id of Array.from(this.roots.keys())) this._removeRoot(id);
+    this.mixers = []; this.locks = []; this.runtime = null;
+    this.setState({ failures: this.state.failures.filter((f) => f.boot), selId: null, loading: this.doc.objects.length, loadingText: 'loading ' + this.doc.objects.length + ' source object(s)…' });
+    await Promise.all(this.doc.objects.map((rec) => this._build(rec, token)));
+    if (token !== this._token) return;
+    this._applyEye();
+    this.setState({ loading: 0 });
+    this._touch();
+  }
+  _removeRoot(id) {
+    const root = this.roots.get(id); if (!root) return;
+    if (id === 'actor' && this.runtime) { try { this.runtime.kind === 'graft' ? this.runtime.handle.dispose() : this.runtime.rig.dispose(); } catch (e) {} this.runtime = null; }
+    this.mixers = this.mixers.filter((m) => m.__root !== root); this.locks = this.locks.filter((l) => l.root !== root);
+    this.world.remove(root); this.roots.delete(id);
+  }
+  _makeRoot(rec) {
+    const THREE = this.THREE, root = new THREE.Group();
+    root.name = rec.name; root.userData.sceneObjectId = rec.id; root.userData.kind = rec.kind;
+    const t = rec.transform;
+    root.position.fromArray(t.position.map((v) => Number(v) || 0));
+    root.rotation.set(t.rotation[0] || 0, t.rotation[1] || 0, t.rotation[2] || 0);
+    root.scale.fromArray(t.scale || [1, 1, 1]);
+    this.world.add(root); this.roots.set(rec.id, root);
+    return root;
+  }
+  async _build(rec, token) {
+    const THREE = this.THREE, root = this._makeRoot(rec);
+    const container = new THREE.Group(); container.name = 'model · ' + rec.name;
+    try {
+      if (rec.kind === 'prop') {
+        const g = await this._gltf(raw(rec.source.path, rec.source.commit));
+        const m = g.scene.clone(true); container.add(m); this._fit(m, rec.fit);
+      } else if (rec.kind === 'resident') {
+        const g = await this.loader.loadAsync(raw(rec.source.path, rec.source.commit));
+        const m = g.scene; container.add(m); this._fit(m, rec.fit);
+        if (rec.resident && rec.resident.texture) { try { await this._applyTexture(m, rec.resident.texture); } catch (e) { this._fail(rec.name + ' · texture', rec.resident.texture.path, e); } }
+        if (rec.resident && rec.resident.clip) {
+          const ag = await this._gltf(raw(rec.resident.clip.path, rec.resident.clip.commit));
+          const clip = ag.animations.find((c) => c.name === rec.resident.clip.name);
+          if (!clip) throw new Error('clip not found: ' + rec.resident.clip.name);
+          const mixer = new THREE.AnimationMixer(m); mixer.clipAction(clip).play(); mixer.update(0); mixer.__root = root;
+          this.mixers.push(mixer); rec._clip = clip.name;
+        }
+        if (!rec.resident || !rec.resident.ground || rec.resident.ground.lock) this.locks.push({ root, container });
+      } else if (rec.kind === 'pet') {
+        if (!this.PetLib || !this.Eye) throw new Error('pet-library / EyeRig owner not loaded');
+        const o = { THREE, loadGltf: (url) => this.loader.loadAsync(url),
+          makeMat: (opt) => new THREE.MeshStandardMaterial({ map: opt.map || null, color: opt.color != null ? opt.color : 0xffffff, roughness: opt.roughness != null ? opt.roughness : 0.85 }) };
+        const ch = new this.PetLib.Character(o);
+        await ch.load('animals', rec.source.petId, {});
+        const rig = new this.Eye.EyeRig(ch, { pupilStyle: 'matte-cute', baseColor: 0xf2c93c }); rig.build();
+        container.add(ch.group);
+        if (token === this._token) this.runtime = { kind: 'pet', ch, rig, defColor: '#f2c93c', defStyle: 'matte-cute', defDx: rig.anchor ? rig.anchor.dx : 0.345 };
+      } else if (rec.kind === 'graft') {
+        if (!this.Graft) throw new Error('graft-mount.v1.js not loaded');
+        if (!this.contract) throw new Error('graft profile not loaded');
+        const pet = this.Graft.pickGraftPet(this.contract, 'graft-driver');
+        if (!pet) throw new Error('graft-driver entry missing in profile');
+        const handle = await this.Graft.mountGraft({ THREE, loader: this.loader, parent: container, pet, lib: this.contract, camera: this.cam, animation: 'own', log: (t) => { (window.__kfbGraftLog = window.__kfbGraftLog || []).push(t); } });
+        handle.update(0, this.cam);
+        const hb = this._bounds(handle.figure, true); const h = hb.max.y - hb.min.y;
+        if (h > 1e-3) container.scale.setScalar(ACTOR_H / h);
+        for (const n of (handle.report.notes || [])) if (/fehlt|missing|failed/i.test(n)) this._fail('Driver Graft · part missing', SRC.graftMount + ' @' + PIN.slice(0, 8), n);
+        rec._graft = { host: pet.variant, nativeHeight: +h.toFixed(3), notes: (handle.report.notes || []).length, version: this.contract.version, petVersion: this.contract.meta && this.contract.meta.petVersions ? this.contract.meta.petVersions['graft-driver'] : null };
+        const g = pet.graft && pet.graft.roles && pet.graft.roles.eyes != null ? hexOf(pet.graft.roles.eyes) : (pet.color || '#f2c93c');
+        if (token === this._token) this.runtime = { kind: 'graft', handle, rig: handle.rig, defColor: g, defStyle: (pet.eye && pet.eye.pupilStyle) || 'matte-cute', defDx: (pet.eye && pet.eye.anchor && pet.eye.anchor.dx) || 0.345 };
+        else handle.dispose();
+      }
+      if (token !== this._token) return;
+      container.traverse((n) => { if (n.isMesh) { n.castShadow = true; n.receiveShadow = true; } });
+      this._groundFree(container);
+      root.add(container);
+      rec.status = 'OK'; delete rec.error;
+    } catch (e) {
+      if (token !== this._token) return;
+      rec.status = 'SOURCE_FAILED'; rec.error = String(e && e.message || e);
+      this._removeRoot(rec.id);
+      this._fail(rec.name, (rec.source.path || '') + (rec.source.commit ? ' @' + String(rec.source.commit).slice(0, 8) : ''), e);
+    } finally {
+      if (token === this._token) this.setState((s) => ({ loading: Math.max(0, s.loading - 1), loadingText: 'loading · ' + Math.max(0, s.loading - 1) + ' left' }));
+    }
+  }
+  async _applyTexture(node, ref) {
+    const THREE = this.THREE, url = raw(ref.path, ref.commit);
+    const r = await fetch(url, { mode: 'cors' }); if (!r.ok) throw new Error('HTTP ' + r.status);
+    const tex = new THREE.Texture(await createImageBitmap(await r.blob()));
+    tex.colorSpace = THREE.SRGBColorSpace; tex.flipY = false; tex.magFilter = THREE.NearestFilter; tex.needsUpdate = true;
+    node.traverse((o) => { if (!(o.isMesh || o.isSkinnedMesh) || !o.material) return; const arr = [].concat(o.material).map((m) => { const n = m.clone(); n.map = tex; n.needsUpdate = true; return n; }); o.material = Array.isArray(o.material) ? arr : arr[0]; });
+  }
+
+  /* ---------- eye (EyeRig v6 owner seam) ---------- */
+  _eye() {
+    const rt = this.runtime, a = this._actorRec(); if (!rt || !a) return null;
+    const s = (this.doc.eye || {})[a.rosterId] || {};
+    return { pupilStyle: s.pupilStyle || rt.defStyle, baseColor: s.baseColor || rt.defColor, dx: s.dx != null ? s.dx : rt.defDx };
+  }
+  _applyEye() {
+    const rt = this.runtime, e = this._eye(); if (!rt || !e || !rt.rig) return;
+    try { rt.rig.setPupilStyle(e.pupilStyle); rt.rig.setBaseColor(parseInt(e.baseColor.slice(1), 16)); rt.rig.setAnchor({ dx: e.dx }); } catch (err) {}
+  }
+  _setEye(patch) {
+    const a = this._actorRec(); if (!a || !this.runtime) return;
+    this.doc.eye = this.doc.eye || {}; this.doc.eye[a.rosterId] = { ...(this._eye() || {}), ...patch };
+    this._applyEye(); this.setState({ dirty: true }); this._touch();
+  }
+
+  /* ---------- edit-layer callbacks ---------- */
+  _onPick(node, rec) {
+    this.setState({ selId: rec ? rec.id : null, lastDrop: '' });
+    if (rec && this.state.tab === 'face' && rec.id !== 'actor') this.setState({ tab: 'messen' });
+  }
+  _onEdit(nodes) { for (const n of nodes) this._updateRec(n); this.setState({ dirty: true }); this._touch(); }
+  _syncEdit() {
+    const E = this.EDIT; if (!E) return;
+    const n = E.node || E.selection[0]; const rec = n ? this._rec(n) : null;
+    if (E.mode !== this.state.mode || E.snap !== this.state.snap || E.scope !== this.state.scope || (rec ? rec.id : null) !== this.state.selId)
+      this.setState({ mode: E.mode, snap: E.snap, scope: E.scope, selId: rec ? rec.id : null });
+  }
+  selectId(id) {
+    const root = this.roots.get(id); if (!root || !this.EDIT) return null;
+    this.EDIT.setOn(true); this.EDIT.select(root); this.setState({ selId: id, lastDrop: '' }); return root;
+  }
+  setMode(m) { if (this.EDIT) this.EDIT.setMode(m); }
+  drop() {
+    if (!this.EDIT) return [];
+    const res = this.EDIT.drop();
+    const txt = res.length ? res.map((r) => r.refused ? (r.id + ': ' + r.refused) : ((r.moved >= 0 ? '+' : '') + r.moved.toFixed(3) + ' → ' + r.on + ' · y ' + r.to.toFixed(3))).join(' · ') : 'nothing selected';
+    this._updateAll(); this.setState({ lastDrop: txt, dirty: res.length ? true : this.state.dirty }); this._touch();
+    return res;
+  }
+  resetSel() {
+    if (!this.EDIT) return;
+    for (const n of this.EDIT.selection) { const rec = this._rec(n); if (!rec || !rec.defaultTransform) continue; const t = rec.defaultTransform; n.position.fromArray(t.position); n.rotation.set(...t.rotation); n.scale.fromArray(t.scale); n.updateMatrixWorld(true); this._updateRec(n); }
+    this.setState({ dirty: true }); this._touch();
+  }
+  _key(e) {
+    const tag = (e.target && e.target.tagName) || ''; if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') { e.preventDefault(); this.save(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k === 'g') this.setMode('translate'); else if (k === 'r') this.setMode('rotate'); else if (k === 's') this.setMode('scale');
+    else if (k === 'f') this.drop(); else if (k === 'escape') { this.EDIT && this.EDIT.clear(); this.setState({ selId: null, actorPop: false, stagePop: false }); }
+  }
+
+  /* ---------- actor / stage ---------- */
+  async pickRoster(r) {
+    this.setState({ actorPop: false, actorSearch: '' });
+    if (r.kind === 'resident') {
+      if (this.doc.stage.preset !== 'resident' || this.doc.stage.sceneId !== r.sceneId) await this.setStage('resident', r.sceneId);
+      this.selectId(r.recId); this.setState({ tab: 'messen' }); return;
+    }
+    const cur = this._actorRec(); if (cur && cur.rosterId === r.id) return;
+    const i = this.doc.objects.findIndex((o) => o.id === 'actor');
+    const rec = this._actorRecord(r.id, this.doc.stage.preset);
+    if (i >= 0) this.doc.objects[i] = rec; else this.doc.objects.push(rec);
+    if (this.EDIT) this.EDIT.clear();
+    this._removeRoot('actor');
+    this.setState({ loading: 1, loadingText: 'loading ' + rec.name + '…', dirty: true, failures: this.state.failures.filter((f) => f.name !== rec.name) });
+    await this._build(rec, this._token);
+    this._applyEye(); this.setState({ loading: 0 }); this._touch();
+  }
+  async setStage(preset, sceneId) {
+    this.setState({ stagePop: false });
+    const a = this._actorRec();
+    this._updateAll();
+    this.doc = this._freshDoc(preset, sceneId, a ? a.rosterId : 'frizzlebob-driver');
+    this.setState({ dirty: true });
+    await this.rebuild();
+    this.camFull();
+  }
+
+  /* ---------- persistence ---------- */
+  save() {
+    if (!this.doc) return;
+    this._updateAll(); this.doc.savedAt = new Date().toISOString();
+    const out = clone(this.doc); out.objects.forEach((o) => { delete o._graft; delete o._clip; });
+    localStorage.setItem(STORE_KEY, JSON.stringify(out));
+    this.setState({ dirty: false, lastSaved: this.doc.savedAt, status: 'saved' });
+  }
+  async reload() {
+    let d = null;
+    try { d = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) {}
+    if (!d || d.format !== 'kfb-worldbuilder-scene' || d.id !== DOC_ID) { this.setState({ status: 'no save' }); return false; }
+    this.doc = d; await this.rebuild();
+    this.setState({ dirty: false, lastSaved: d.savedAt, status: 'reloaded' });
+    return true;
+  }
+  async resetFixture() {
+    localStorage.removeItem(STORE_KEY);
+    this.doc = this._freshDoc('neutral', null, 'frizzlebob-driver'); this.doc.eye = {};
+    await this.rebuild(); this.setState({ dirty: false, lastSaved: null, status: 'fixture' }); this.camFull();
+  }
+
+  /* ---------- camera ---------- */
+  _frameBox(b, k = 1.25) {
+    if (b.isEmpty()) return; const THREE = this.THREE;
+    const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3()), r = Math.max(s.x, s.y, s.z, 3) * k;
+    const dir = this.cam.position.clone().sub(this.controls.target).normalize();
+    if (!Number.isFinite(dir.x) || dir.lengthSq() < 0.5) dir.set(0.5, 0.35, 0.8).normalize();
+    this.controls.target.copy(c); this.cam.position.copy(c).addScaledVector(dir, r / Math.tan(this.cam.fov * Math.PI / 360) * 0.62);
+  }
+  camFull() {
+    const b = new this.THREE.Box3(); for (const r of this.roots.values()) b.union(this._bounds(r, false));
+    if (b.isEmpty()) return;
+    this.cam.position.set(b.getCenter(new this.THREE.Vector3()).x + 7.8, 4.6, 12.8); this._frameBox(b, 0.95);
+  }
+  camFace() {
+    const r = this.roots.get('actor'); if (!r) return; const THREE = this.THREE;
+    const b = this._bounds(r, false), h = b.max.y - b.min.y, c = b.getCenter(new THREE.Vector3());
+    const pet = this.runtime && this.runtime.kind === 'pet', d = Math.max(pet ? h * 2.2 : h * 0.95, 1.9);
+    const face = new THREE.Vector3(c.x, b.min.y + h * (pet ? 0.55 : 0.82), c.z), fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(r.quaternion);
+    this.controls.target.copy(face); this.cam.position.copy(face).addScaledVector(fwd, d).add(new THREE.Vector3(d * 0.25, d * 0.06, 0));
+  }
+  camSel() { const s = this.EDIT ? this.EDIT.selection : []; if (!s.length) return; const b = new this.THREE.Box3(); s.forEach((n) => b.union(this._bounds(n, false))); this._frameBox(b, 1.6); }
+  zoom(f) { const v = this.cam.position.clone().sub(this.controls.target); v.multiplyScalar(f); this.cam.position.copy(this.controls.target).add(v); }
+
+  /* ---------- self-test: the 12-step flow, on the real sources ---------- */
+  async selfTest() {
+    if (this.state.testing) return;
+    this.setState({ testing: true, tests: [] });
+    const out = [], T = (name, ok, detail) => { out.push({ name, ok: !!ok, detail: detail || '' }); this.setState({ tests: out.slice() }); };
+    const backupStore = localStorage.getItem(STORE_KEY), backupDoc = clone(this.doc);
+    const near = (a, b, e = 2e-3) => Math.abs(a - b) <= e;
+    try {
+      const roster = this._roster();
+      T('01 roster from real owners', roster.some((r) => r.id === 'frizzlebob-driver' && r.kind === 'graft') && roster.filter((r) => r.kind === 'pet').length === 24 && roster.some((r) => r.kind === 'resident'),
+        roster.length + ' actors · graft 1 · cube pets ' + roster.filter((r) => r.kind === 'pet').length + ' · resident ' + roster.filter((r) => r.kind === 'resident').length);
+      const sid = this.sceneOrder[0];
+      if (!sid) throw new Error('no Resident scene loaded');
+      await this.setStage('resident', sid);
+      if (this._actorRec().rosterId !== 'frizzlebob-driver') await this.pickRoster(BASE_ROSTER[0]);
+      const a = this._actorRec();
+      T('02 FrizzleBob Driver Graft mounted', a.status === 'OK' && this.runtime && this.runtime.kind === 'graft' && !!this.runtime.rig,
+        a.status + (a._graft ? ' · host ' + a._graft.host + ' · profile v' + a._graft.version + ' · pet v' + a._graft.petVersion + ' · native h ' + a._graft.nativeHeight : ' · ' + (a.error || '')));
+      const sc = this.scenes[sid], recs = this.doc.objects.filter((o) => o.id !== 'actor');
+      const bad = recs.filter((r) => r.status !== 'OK');
+      T('03 Resident scene loaded', recs.length === sc.assets.length && !bad.length, sid + ' · ' + (recs.length - bad.length) + '/' + sc.assets.length + ' OK' + (bad.length ? ' · failed: ' + bad.map((b) => b.name).join(', ') : ''));
+      const cav = recs.find((r) => r.kind === 'resident'); let root = this.selectId(cav.id);
+      T('04 select resident actor', this.EDIT.node === root, cav.name + ' · clip ' + (cav._clip || '—'));
+      const p0 = root.position.clone(); root.position.x += 0.5; root.position.z -= 0.25; root.updateMatrixWorld(true); this._onEdit([root]);
+      T('05 move', near(cav.transform.position[0], p0.x + 0.5) && near(cav.transform.position[2], p0.z - 0.25), 'pos ' + cav.transform.position.join(', '));
+      const ry = root.rotation.y + Math.PI / 12; root.rotation.y = ry; root.updateMatrixWorld(true); this._onEdit([root]);
+      T('06 rotate', near(cav.transform.rotation[1], ry, 1e-4), 'rot.y ' + (cav.transform.rotation[1] * 180 / Math.PI).toFixed(1) + '°');
+      this.setMode('scale'); root.scale.set(1.2, 0.9, 1.1); root.updateMatrixWorld(true); this._onEdit([root]);
+      T('07 free scale (non-uniform)', cav.transform.scale.join(',') === '1.2,0.9,1.1' && this.EDIT.mode === 'scale', 'scale ' + cav.transform.scale.join(', ') + ' · gizmo ' + this.EDIT.mode);
+      this.setMode('translate');
+      const axe = recs.find((r) => /axe/i.test(r.name)) || recs.find((r) => r.kind === 'prop');
+      const rock = recs.find((r) => /rock back/i.test(r.name)) || recs.find((r) => r.group === 'habitat');
+      const axeRoot = this.selectId(axe.id), rockRoot = this.roots.get(rock.id);
+      axeRoot.position.set(rockRoot.position.x, 6, rockRoot.position.z); axeRoot.updateMatrixWorld(true);
+      const dr = this.drop()[0] || {}; const axeY = axeRoot.position.y;
+      T('08 drop onto support', dr.on && dr.on !== 'Stage floor' && dr.to > 0.2, axe.name + ' → ' + dr.on + ' · y ' + (dr.to != null ? dr.to.toFixed(3) : '—'));
+      this.selectId(cav.id);
+      this.save();
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+      const sCav = saved.objects.find((o) => o.id === cav.id), sAxe = saved.objects.find((o) => o.id === axe.id);
+      T('09 save (scene doc)', saved.format === 'kfb-worldbuilder-scene' && sCav && sCav.transform.scale.join(',') === '1.2,0.9,1.1' && near(sAxe.transform.position[1], axeY), saved.objects.length + ' objects · ' + JSON.stringify(saved).length + ' B');
+      root.position.x += 3; root.updateMatrixWorld(true); this._onEdit([root]);
+      await this.reload();
+      const cav2 = this.doc.objects.find((o) => o.id === cav.id), root2 = this.roots.get(cav.id), axe2 = this.roots.get(axe.id);
+      T('10 reload restores edits', root2 && near(root2.position.x, sCav.transform.position[0]) && near(root2.scale.y, 0.9) && near(root2.rotation.y, sCav.transform.rotation[1], 1e-4) && axe2 && near(axe2.position.y, sAxe.transform.position[1]) && !this.state.dirty,
+        'pos.x ' + (root2 ? root2.position.x.toFixed(3) : '—') + ' (saved ' + sCav.transform.position[0] + ') · axe.y ' + (axe2 ? axe2.position.y.toFixed(3) : '—'));
+      const ga = this._actorRec();
+      T('11 graft remounted after reload', ga.status === 'OK' && this.runtime && this.runtime.kind === 'graft', ga.status);
+      const r3 = this.selectId(cav.id); const x0 = r3.position.x; r3.position.x += 0.1; r3.updateMatrixWorld(true); this._onEdit([r3]);
+      T('12 continue editing', near(cav2.transform.position[0], x0 + 0.1) && this.state.dirty && this.EDIT.node === r3, 'pos.x ' + cav2.transform.position[0] + ' · dirty');
+    } catch (e) { T('aborted', false, String(e && e.message || e)); }
+    if (backupStore == null) localStorage.removeItem(STORE_KEY); else localStorage.setItem(STORE_KEY, backupStore);
+    this.doc = backupDoc; await this.rebuild(); this.camFull();
+    let prevSaved = null; try { prevSaved = backupStore ? JSON.parse(backupStore).savedAt : null; } catch (e) {}
+    this.setState({ testing: false, dirty: false, status: 'self-test done', lastSaved: prevSaved });
+    window.__kfbSelfTest = out;
+    return out;
+  }
+
+  renderVals() {
+    const s = this.state, doc = this.doc, a = doc ? this._actorRec() : null;
+    const onoff = (on) => ({ bg: on ? SEL : 'transparent', fg: on ? SELFG : '#1f2022' });
+    const q = (s.actorSearch || '').toLowerCase();
+    const roster = this.scenes ? this._roster() : BASE_ROSTER;
+    const rosterRows = []; let last = null;
+    for (const r of roster) {
+      if (q && !r.label.toLowerCase().includes(q)) continue;
+      if (r.section !== last) { rosterRows.push({ isHeader: true, isItem: false, label: r.section }); last = r.section; }
+      const act = (a && r.id === a.rosterId) || (r.kind === 'resident' && s.selId === r.recId);
+      rosterRows.push({ isHeader: false, isItem: true, label: r.label, swatch: r.swatch, ...onoff(act), pick: () => this.pickRoster(r) });
+    }
+    const stage = doc ? doc.stage : { preset: 'neutral' };
+    const stageRows = [{ label: 'Neutral floor', sub: 'presentation only', active: stage.preset === 'neutral', pick: () => this.setStage('neutral', null) }]
+      .concat((this.sceneOrder || []).map((sid) => ({ label: 'Resident · ' + this.scenes[sid].title, sub: sid + '.json @' + PIN.slice(0, 8) + ' · ' + (this.scenes[sid].assets || []).length + ' assets', active: stage.preset === 'resident' && stage.sceneId === sid, pick: () => this.setStage('resident', sid) })))
+      .map((r) => ({ ...r, ...onoff(r.active) }));
+    const stageLabel = stage.preset === 'resident' && this.scenes && this.scenes[stage.sceneId] ? this.scenes[stage.sceneId].title : 'Neutral floor';
+
+    const selRec = doc && s.selId ? doc.objects.find((o) => o.id === s.selId) : null;
+    const selRoot = selRec ? this.roots.get(selRec.id) : null;
+    const f2 = (v) => (+v).toFixed(2);
+    const objRows = (doc ? doc.objects : []).map((o) => ({ label: o.name, sub: o.group || o.kind, ...onoff(o.id === s.selId), dot: o.status === 'SOURCE_FAILED' ? '#a33d3d' : (o.status === 'OK' ? '#7fa58a' : '#c9c5bc'), pick: () => this.selectId(o.id) }));
+
+    const e = this._eye ? this._eye() : null;
+    const tab = s.tab, rt = this.runtime;
+    const bodyFacts = a ? [
+      { k: 'actor', v: a.name }, { k: 'kind', v: a.kind },
+      { k: 'source', v: (a.source.path || '') + ' @' + String(a.source.commit).slice(0, 8) },
+    ].concat(a.kind === 'graft' ? [{ k: 'profile', v: SRC.graftProfile.split('/').pop() + (a._graft ? ' · v' + a._graft.version + ' · pet v' + a._graft.petVersion : '') }, { k: 'host', v: a._graft ? a._graft.host + ' · native h ' + a._graft.nativeHeight + ' → ' + ACTOR_H : '—' }] : [{ k: 'owner', v: a.source.owner }])
+      .concat([{ k: 'status', v: a.status || 'loading' }]) : [];
+
+    const srcDef = [
+      ['editLayer', 'Shared edit-layer.js (one picker, one gizmo)', SRC.editLayer + ' @' + PIN.slice(0, 8)],
+      ['graftMount', 'FrizzleBob Driver Graft · graft-mount.v1', SRC.graftMount + ' @' + PIN.slice(0, 8)],
+      ['graftChain', 'Driver Graft module chain (prewarmed)', 'kfb-rigs-embed-v3/** @' + PIN.slice(0, 8)],
+      ['graftProfile', 'Driver Graft profile · Georg 15.09', SRC.graftProfile],
+      ['eyeRig', 'EyeRig v6 owner (blob 853bcf5f)', SRC.eyeRig + ' @' + PIN.slice(0, 8)],
+      ['petLibrary', 'Cube-pet roster · pet-library.v6 (local mirror)', 'kfb-lib/pet-library.v6.js · blob 8a13b171'],
+      ['sceneIndex', 'Resident scenes · Resident Atlas', SRC.sceneDir + 'index.json @' + PIN.slice(0, 8)],
+    ];
+    const srcStatus = this.srcStatus || {};
+    const sourceRows = srcDef.map(([k, label, path]) => ({ label: label + (srcStatus[k] && srcStatus[k].detail ? ' · ' + srcStatus[k].detail : ''), path, dot: !srcStatus[k] ? '#c9c5bc' : (srcStatus[k].ok ? '#7fa58a' : '#a33d3d') }))
+      .concat((doc ? doc.objects : []).map((o) => ({ label: o.name + ' · ' + (o.status || '…'), path: (o.source.path || '') + ' @' + String(o.source.commit).slice(0, 8), dot: o.status === 'OK' ? '#7fa58a' : (o.status ? '#a33d3d' : '#c9c5bc') })));
+    const tests = s.tests || [];
+    const passN = tests.filter((t) => t.ok).length;
+
+    return {
+      actorLabel: a ? a.name : '…', actorSwatch: e ? e.baseColor : '#c9c5bc',
+      actorPopOpen: s.actorPop, actorSearch: s.actorSearch, rosterRows,
+      toggleActorPop: () => this.setState((x) => ({ actorPop: !x.actorPop, stagePop: false })), onActorSearch: (ev) => this.setState({ actorSearch: ev.target.value }),
+      stagePopOpen: s.stagePop, stageRows, stageLabel, toggleStagePop: () => this.setState((x) => ({ stagePop: !x.stagePop, actorPop: false })),
+      setTab_body: () => this.setState({ tab: 'body' }), setTab_face: () => this.setState({ tab: 'face' }), setTab_messen: () => this.setState({ tab: 'messen' }),
+      bodyTabBg: onoff(tab === 'body').bg, bodyTabFg: onoff(tab === 'body').fg, faceTabBg: onoff(tab === 'face').bg, faceTabFg: onoff(tab === 'face').fg, messenTabBg: onoff(tab === 'messen').bg, messenTabFg: onoff(tab === 'messen').fg,
+      isBodyTab: tab === 'body', isFaceTab: tab === 'face', isMessenTab: tab === 'messen',
+      dotColor: s.failures.length ? '#a33d3d' : (s.dirty ? '#b8781c' : '#7fa58a'), statusText: s.dirty ? 'unsaved' : s.status,
+      save: () => this.save(), reload: () => this.reload(),
+      lastSavedText: s.lastSaved ? ('saved ' + new Date(s.lastSaved).toLocaleString()) : 'not saved yet',
+      toggleDiag: () => this.setState((x) => ({ diagOpen: !x.diagOpen })), diagOpen: s.diagOpen, diagBtnBg: s.diagOpen ? '#dedbd4' : 'transparent',
+      hasFailures: s.failures.length > 0, failureRows: s.failures,
+      isLoading: s.loading > 0 || s.testing, loadingText: s.testing ? 'self-test running…' : s.loadingText,
+      mMoveBg: onoff(s.mode === 'translate').bg, mMoveFg: onoff(s.mode === 'translate').fg, mRotBg: onoff(s.mode === 'rotate').bg, mRotFg: onoff(s.mode === 'rotate').fg,
+      mScaleBg: onoff(s.mode === 'scale').bg, mScaleFg: onoff(s.mode === 'scale').fg, mScopeBg: onoff(s.scope === 'gruppe').bg, mScopeFg: onoff(s.scope === 'gruppe').fg,
+      snapBg: onoff(s.snap).bg, snapFg: onoff(s.snap).fg,
+      setMove: () => this.setMode('translate'), setRotate: () => this.setMode('rotate'), setScale: () => this.setMode('scale'),
+      drop: () => this.drop(), toggleSnap: () => this.EDIT && this.EDIT.setSnap(!this.EDIT.snap), resetSel: () => this.resetSel(),
+      camFull: () => this.camFull(), camFace: () => this.camFace(), camSel: () => this.camSel(), zoomIn: () => this.zoom(0.85), zoomOut: () => this.zoom(1.18),
+      hasSel: !!selRoot, noSel: !selRoot,
+      selTitle: selRec ? selRec.name + (this.EDIT && this.EDIT.selection.length > 1 ? ' +' + (this.EDIT.selection.length - 1) + ' (group)' : '') : 'nothing selected',
+      selSub: selRec ? [selRec.role || selRec.kind, selRec.group, (selRec.source.path || '').split('/').pop()].filter(Boolean).join(' · ') : '',
+      posReadout: selRoot ? selRoot.position.toArray().map(f2).join(', ') : '',
+      rotReadout: selRoot ? [selRoot.rotation.x, selRoot.rotation.y, selRoot.rotation.z].map((v) => Math.round(v * 180 / Math.PI)).join(', ') : '',
+      sclReadout: selRoot ? selRoot.scale.toArray().map(f2).join(', ') : '',
+      hasDrop: !!s.lastDrop, lastDrop: s.lastDrop,
+      objRows, objCount: objRows.length,
+      selectActor: () => { this.selectId('actor'); this.setState({ tab: 'messen' }); }, bodyFacts,
+      hasRig: !!(rt && rt.rig && e), noRig: !(rt && rt.rig && e),
+      matteBg: onoff(e && e.pupilStyle === 'matte-cute').bg, matteFg: onoff(e && e.pupilStyle === 'matte-cute').fg,
+      glossyBg: onoff(e && e.pupilStyle === 'glossy-googly').bg, glossyFg: onoff(e && e.pupilStyle === 'glossy-googly').fg,
+      setMatte: () => this._setEye({ pupilStyle: 'matte-cute' }), setGlossy: () => this._setEye({ pupilStyle: 'glossy-googly' }),
+      eyeColor: e ? e.baseColor : '#f2c93c', eyeColorUpper: e ? e.baseColor.toUpperCase() : '', onEyeColor: (ev) => this._setEye({ baseColor: ev.target.value }),
+      eyeDx: e ? (+e.dx).toFixed(3) : '0.345', onEyeDx: (ev) => this._setEye({ dx: +ev.target.value }),
+      resetEye: () => { const a2 = this._actorRec(); if (a2 && this.doc.eye) delete this.doc.eye[a2.rosterId]; this._applyEye(); this.setState({ dirty: true }); this._touch(); },
+      sourceRows, runSelfTest: () => this.selfTest(), testBtnLabel: s.testing ? 'Running…' : 'Run 12-step self-test',
+      testSummary: tests.length ? (passN + '/' + tests.length + ' PASS') : 'uses real sources · restores your save',
+      testRows: tests.map((t) => ({ verdict: t.ok ? 'PASS' : 'FAIL', color: t.ok ? '#4d6b55' : '#a33d3d', name: t.name, detail: t.detail })),
+      resetFixture: () => this.resetFixture(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

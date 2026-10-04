@@ -1,0 +1,156 @@
+{
+  "$schema": "kfb.zone-index/1",
+  "version": "0.1.0",
+  "title": "Uncle FrizzleBob's Bizarro-Hex \u00b7 Zonen-Atlas (Seed)",
+  "notes": "Handkuratierter Seed + Struktur-Contract. Biomes emergieren sp\u00e4ter aus Tag-Clustering des 200+-Korpus (Cowork-Naht, MASTER \u00a79); die Ebenen/Kanten/Level-Regeln hier bleiben stabil.",
+  "textureBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures",
+  "glbBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_hexagon_kit",
+  "hexGrid": {
+    "coords": "axial",
+    "orientation": "flat-top",
+    "playerCentered": true,
+    "preload": "center + 6 neighbors",
+    "d6": {
+      "1": "scene-card-door",
+      "2": "scene-card-door",
+      "3": "scene-card-door",
+      "4": "actor",
+      "5": "quest",
+      "6": "back-admin",
+      "note": "Cube-Pet rollt \u00fcber die Kanten \u2192 obenliegende Seite = diegetischer Story-Mode-Roll. KISS-Option: immer aus 3 Scene-Cards w\u00e4hlen."
+    }
+  },
+  "levels": {
+    "up": { "index": 1, "register": "utopisch / satirisch \u00fcberh\u00f6ht", "light": "warm, hell", "value": "heller / ges\u00e4ttigter" },
+    "mid": { "index": 0, "register": "Heimat-Register des Biomes", "light": "neutral", "value": "neutral" },
+    "down": { "index": -1, "register": "dunkler / tragisch / Untergrund", "light": "k\u00fchl, ged\u00e4mpft", "value": "dunkler / ents\u00e4ttigt" }
+  },
+  "material": {
+    "colorSpace": "sRGB (diffuse = map)",
+    "normalFormat": "OpenGL",
+    "wrap": "repeat",
+    "tiling": "2\u20134\u00d7",
+    "look": "clay (default) | cel (toggle)",
+    "separation": "weicher Contact-Shadow + mode-get\u00f6ntes Rim-Light \u2014 KEINE globale Tusche-Outline auf 3D-Meshes",
+    "ink": "nur 2D-Comic-Karten, Marginalia, UI, Cut-the-Confetti-Risskanten"
+  },
+  "biomes": [
+    {
+      "id": "wellpappe_wildnis",
+      "name": "Wellpappe-Wildnis",
+      "genre": ["Abenteuer", "Survival-Bastelei"],
+      "adjacency": ["ton_ebenen", "holzsteg_werft"],
+      "docks": ["path", "river"],
+      "patter": "H\u00f6rt her, Bagage \u2014 hier w\u00e4chst alles aus'm Karton, sogar die B\u00e4ume knistern. Nimm 'ne Schere, keinen Kompass.",
+      "levels": {
+        "up":   { "mood": "\u00fcberwuchert", "texture": "forest_ground_05", "tint": "#6f7a3e" },
+        "mid":  { "mood": "neugierig", "texture": "CardboardSet001", "tint": "#b5895a" },
+        "down": { "mood": "gepresst / grau", "texture": "Chipboard007", "tint": "#8a8378" }
+      }
+    },
+    {
+      "id": "zeitungsstadt",
+      "name": "Zeitungsstadt",
+      "genre": ["Satire", "Gossip", "Noir-Nachricht"],
+      "adjacency": ["stein_katakomben", "wellpappe_wildnis"],
+      "docks": ["path", "exit"],
+      "patter": "Frisch gedruckt, halb gelogen! Jede Schlagzeile 'ne T\u00fcr, jede Ente 'ne Abk\u00fcrzung. Glaub kein Wort \u2014 lies trotzdem weiter.",
+      "levels": {
+        "up":   { "mood": "reine Schlagzeile", "texture": "Paper002", "tint": "#e7e0d2" },
+        "mid":  { "mood": "aufgeregt / zynisch", "texture": "Paper006", "tint": "#cbb98f" },
+        "down": { "mood": "durchgesickert", "texture": "Leaking018A", "tint": "#6d6455" }
+      }
+    },
+    {
+      "id": "filz_sumpf",
+      "name": "Filz-Sumpf",
+      "genre": ["M\u00e4rchen", "Melancholie", "Traum"],
+      "adjacency": ["ton_ebenen", "stein_katakomben"],
+      "docks": ["river", "exit"],
+      "patter": "Pssst \u2026 hier ist alles weich, sogar die Wahrheit. Wer zu lange tr\u00e4umt, den beh\u00e4lt der Filz. Kuschlig, ne?",
+      "levels": {
+        "up":   { "mood": "traumseidig", "texture": "crepe_satin", "tint": "#cdb8c6" },
+        "mid":  { "mood": "vertr\u00e4umt / traurig", "texture": "Carpet016", "tint": "#5f7355" },
+        "down": { "mood": "vom Filz verschluckt", "texture": "Fabric030", "tint": "#4a4640" }
+      }
+    },
+    {
+      "id": "ton_ebenen",
+      "name": "Ton-Ebenen",
+      "genre": ["Mythos", "Western", "W\u00fcste"],
+      "adjacency": ["wellpappe_wildnis", "filz_sumpf"],
+      "docks": ["path", "river"],
+      "patter": "Alles handgeknetet, Freunde \u2014 inklusive der Helden. Ein Daumendruck und der Held kriegt 'ne neue Nase. Genau so soll's sein.",
+      "levels": {
+        "up":   { "mood": "glasiert / heroisch", "texture": "GlazedTerracotta001", "tint": "#c96a3e" },
+        "mid":  { "mood": "staubig / episch", "texture": "Clay002", "tint": "#b25a38" },
+        "down": { "mood": "rissig / verlassen", "texture": "clay_floor_001", "tint": "#6e564a" }
+      }
+    },
+    {
+      "id": "holzsteg_werft",
+      "name": "Holzsteg-Werft",
+      "genre": ["Seefahrt", "Handwerk", "Piraten"],
+      "adjacency": ["wellpappe_wildnis", "stein_katakomben"],
+      "docks": ["path", "river", "exit"],
+      "patter": "Angenagelt und blau gestrichen! Hier legen die Geschichten an. Vorsicht, der Steg wackelt \u2014 das ist Absicht, kein Baufehler.",
+      "levels": {
+        "up":   { "mood": "frisch gestrichen", "texture": "PaintedWood009C", "tint": "#4f7f86" },
+        "mid":  { "mood": "robust / salzig", "texture": "PaintedWood007B", "tint": "#3f6f86" },
+        "down": { "mood": "verrostet / industriell", "texture": "rusty_metal_04", "tint": "#6b4a38" }
+      }
+    },
+    {
+      "id": "stein_katakomben",
+      "name": "Stein-Katakomben",
+      "genre": ["Horror", "Mystery", "Untergrund"],
+      "adjacency": ["zeitungsstadt", "filz_sumpf", "holzsteg_werft"],
+      "docks": ["exit", "path"],
+      "patter": "Runter, immer weiter runter. Hier unten fl\u00fcstert der Marmor Sachen, die er oben nie zugeben w\u00fcrde. Taschenlampe? Gibt's nicht.",
+      "levels": {
+        "up":   { "mood": "marmorner Tempel", "texture": "marble_cliff_03", "tint": "#cfc9be" },
+        "mid":  { "mood": "unheimlich", "texture": "marble_rock_02", "tint": "#8f8a80" },
+        "down": { "mood": "fl\u00fcsternder Fels", "texture": "rock_wall_16", "tint": "#4d4740" }
+      }
+    }
+  ],
+  "connectors": [
+    {
+      "id": "path",
+      "type": "path",
+      "label": "Weg / Pfad",
+      "connects": "biome \u2194 biome (gleiche Ebene)",
+      "edgeRule": "muss an eine Weg-Kante des Nachbar-Hex andocken (Anschlusskachel)",
+      "texture": "patterned_paving_02"
+    },
+    {
+      "id": "river",
+      "type": "river",
+      "label": "Fluss / Wasser",
+      "connects": "biome \u2194 biome (durchziehend, kurvt)",
+      "edgeRule": "Ein-/Auslass-Kanten m\u00fcssen fluchten; Grid erweitert sich entlang des Laufs",
+      "texture": "crepe_satin"
+    },
+    {
+      "id": "exit",
+      "type": "exit",
+      "label": "Exit / Aufzug",
+      "connects": "ebene \u2194 ebene (up / down)",
+      "edgeRule": "l\u00f6st Aufzug-Animation aus \u2192 Level-Shift, Register + Material wechseln",
+      "texture": "marble_rock_02",
+      "anim": "elevator"
+    }
+  ],
+  "props": [
+    { "id": "haus",      "kind": "papertoy", "footprint": "1 plot", "glb": "building-house.glb",    "texture": { "body": "Cardboard001", "roof": "PaintedWood007B" } },
+    { "id": "windmuehle","kind": "papertoy", "footprint": "1 plot", "glb": "building-windmill.glb", "texture": { "body": "CardboardSet001", "sails": "PaintedWood009C" } },
+    { "id": "bruecke",   "kind": "papertoy", "footprint": "1 plot (river-dock)", "glb": "bridge.glb", "texture": { "deck": "Planks039" } },
+    { "id": "burg",      "kind": "papertoy", "footprint": "1 plot", "glb": "building-castle.glb",  "texture": { "walls": "whitewashed_brick", "gate": "Wood089" } }
+  ],
+  "guardrails": {
+    "coldRead": "Jahrmarkt-Carny-Satire, NIE echte Beratung/Psychologie/Gesundheit",
+    "casino": "anti-Casino, wonky/handgemacht",
+    "upsideDown": "kippt Pet + Register \u2014 Text/UI/Karten bleiben aufrecht/lesbar (0\u00b0)",
+    "closure": "bleibt beim User (McCloud): zeigen, nicht predigen"
+  }
+}

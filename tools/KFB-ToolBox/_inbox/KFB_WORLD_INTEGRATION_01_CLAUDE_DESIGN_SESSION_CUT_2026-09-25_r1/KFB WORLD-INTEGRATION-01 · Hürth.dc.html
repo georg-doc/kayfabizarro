@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB WORLD-INTEGRATION-01 · WorldBuilder in Hürth</title>
+<style>
+html,body{margin:0;padding:0;height:100%;background:#17150f;overflow:hidden}
+a{color:#e3b466}
+a:hover{color:#ffe2a7}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>window.__wb2dProps = Object.assign(window.__wb2dProps || {}, { world: 'huerth' });</script>
+<script type="module" src="./tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js"></script>
+</helmet>
+<div data-screen-label="WORLD-INTEGRATION-01 Hürth" style="position:fixed;inset:0;background:#17150f;z-index:-1"></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionSet&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;kaykit-a&quot;,&quot;kaykit-b&quot;,&quot;kaykit-c&quot;,&quot;kfb&quot;],&quot;default&quot;:&quot;kaykit-a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Play&quot;},&quot;walkCadence&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.35,&quot;min&quot;:0.8,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Play&quot;,&quot;unit&quot;:&quot;× step rate&quot;},&quot;legend&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Authoring UI&quot;},&quot;selectionRing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Authoring UI&quot;}}">
+class Component extends DCLogic {
+  push() {
+    const p = Object.assign(window.__wb2dProps || {}, { world: 'huerth', walkCadence: this.props.walkCadence ?? 1.35, motionSet: this.props.motionSet ?? 'kaykit-a', legend: this.props.legend ?? true, selectionRing: this.props.selectionRing ?? true });
+    window.__wb2dProps = p;
+    window.dispatchEvent(new CustomEvent('wb2d-props', { detail: p }));
+  }
+  componentDidMount() { this.push(); }
+  componentDidUpdate() { this.push(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

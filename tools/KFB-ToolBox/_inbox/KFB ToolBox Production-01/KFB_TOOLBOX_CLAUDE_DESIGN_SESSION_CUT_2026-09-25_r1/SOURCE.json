@@ -1,0 +1,23 @@
+{
+ "schema": "kfb.session-cut.source/1",
+ "project": "KFB ToolBox",
+ "date": "2026-09-25",
+ "revision": "r1",
+ "entryPoint": "KFB ToolBox Production-01.dc.html",
+ "repo": "georg-doc/kayfabizarro",
+ "integrationOwner": {
+  "pr": 185,
+  "branch": "chatgpt-web/toolbox-source-lock-2026-09-23"
+ },
+ "pins": {
+  "runtime": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+  "motionLibrary": "032c9d50cd5de6764fa37fec65cb203ed35fcb11",
+  "kaykitStock": "b97b5ac55df2724fae623992433685583eece51e",
+  "legacy": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+  "residentAssets": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+  "travelAssemblyRule": "georg-doc/KFB-Travel-Globe@603f2a9e8fb2c8efd1008ed67607cf7a712de0bd"
+ },
+ "three": "0.160.0",
+ "storageKey": "kfb-toolbox-production-01",
+ "pushed": false
+}

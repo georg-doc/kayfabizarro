@@ -1,0 +1,239 @@
+{
+ "schema": "kfb-sourceref-manifest-v1",
+ "session": "R2D 2026-10-03",
+ "repo": "georg-doc/kayfabizarro",
+ "note": "SourceRefs only. Keine Binärdateien im Cut. building_A: Hexagon-Pin, Pfad siehe island.js (prepBuilding). Module: three@0.160.0 (unpkg), Track Core/R2C über importPinned (jsDelivr).",
+ "modules": [
+  {
+   "id": "track-core",
+   "pin": "64d8597c3dad1dc9814c794d4a566d589e1e1a25",
+   "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/BUILDER_2026-09-27/track-core.mjs"
+  },
+  {
+   "id": "stream-to-three",
+   "pin": "64d8597c3dad1dc9814c794d4a566d589e1e1a25",
+   "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/BUILDER_2026-09-27/stream-to-three.mjs"
+  },
+  {
+   "id": "r2c-lab-world",
+   "pin": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+   "path": "tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01/lab-world/"
+  }
+ ],
+ "assets": [
+  {
+   "id": "Tree_1_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf"
+  },
+  {
+   "id": "Tree_1_B_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_B_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_B_Color1.gltf"
+  },
+  {
+   "id": "Tree_1_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_C_Color1.gltf"
+  },
+  {
+   "id": "Tree_2_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf"
+  },
+  {
+   "id": "Tree_2_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_C_Color1.gltf"
+  },
+  {
+   "id": "Tree_3_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf"
+  },
+  {
+   "id": "Tree_3_B_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_B_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_B_Color1.gltf"
+  },
+  {
+   "id": "Tree_4_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_A_Color1.gltf"
+  },
+  {
+   "id": "Tree_4_B_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_B_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_B_Color1.gltf"
+  },
+  {
+   "id": "Tree_Bare_1_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_A_Color1.gltf"
+  },
+  {
+   "id": "Tree_Bare_1_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_C_Color1.gltf"
+  },
+  {
+   "id": "Tree_Bare_2_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_A_Color1.gltf"
+  },
+  {
+   "id": "Bush_1_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_A_Color1.gltf"
+  },
+  {
+   "id": "Bush_1_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_C_Color1.gltf"
+  },
+  {
+   "id": "Bush_2_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_A_Color1.gltf"
+  },
+  {
+   "id": "Bush_2_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_C_Color1.gltf"
+  },
+  {
+   "id": "Bush_3_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.gltf"
+  },
+  {
+   "id": "Bush_3_B_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_B_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_B_Color1.gltf"
+  },
+  {
+   "id": "Bush_4_A_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_A_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_A_Color1.gltf"
+  },
+  {
+   "id": "Bush_4_C_Color1",
+   "pack": "KayKit Forest Nature 1.0",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_C_Color1.gltf",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_C_Color1.gltf"
+  },
+  {
+   "id": "building_castle_red",
+   "pack": "KayKit Medieval Hexagon 1.0",
+   "pin": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf",
+   "role": "Landmarke",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/34cde3f8f752d481a03c9714f1c3b3a8b2c15c46/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf"
+  },
+  {
+   "id": "building_church_blue",
+   "pack": "KayKit Medieval Hexagon 1.0",
+   "pin": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/building_church_blue.gltf",
+   "role": "Landmarke",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/34cde3f8f752d481a03c9714f1c3b3a8b2c15c46/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/building_church_blue.gltf"
+  },
+  {
+   "id": "building_mine_yellow",
+   "pack": "KayKit Medieval Hexagon 1.0",
+   "pin": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/yellow/building_mine_yellow.gltf",
+   "role": "Landmarke",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/34cde3f8f752d481a03c9714f1c3b3a8b2c15c46/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/yellow/building_mine_yellow.gltf"
+  },
+  {
+   "id": "building_windmill_green",
+   "pack": "KayKit Medieval Hexagon 1.0",
+   "pin": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.gltf",
+   "role": "Landmarke",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/34cde3f8f752d481a03c9714f1c3b3a8b2c15c46/media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/building_windmill_green.gltf"
+  },
+  {
+   "id": "castle_snow",
+   "pack": "KayKit Medieval Snow Biome",
+   "pin": "ab65e8c46ca3c07db4294214a63384975fb7d0d9",
+   "path": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/objects/gltf/castle_snow.gltf.glb",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/ab65e8c46ca3c07db4294214a63384975fb7d0d9/media/3D_Assets/Kaykit_Medieval%20Snow%20Biome/Models/objects/gltf/castle_snow.gltf.glb"
+  },
+  {
+   "id": "house_snow",
+   "pack": "KayKit Medieval Snow Biome",
+   "pin": "ab65e8c46ca3c07db4294214a63384975fb7d0d9",
+   "path": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/objects/gltf/house_snow.gltf.glb",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/ab65e8c46ca3c07db4294214a63384975fb7d0d9/media/3D_Assets/Kaykit_Medieval%20Snow%20Biome/Models/objects/gltf/house_snow.gltf.glb"
+  },
+  {
+   "id": "tree_snow_medium",
+   "pack": "KayKit Festive Mini-Pack",
+   "pin": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+   "path": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/gltf/tree_snow_medium.gltf.glb",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/7600fa9e29d396eaa9c5a11532e63cdad7689e75/media/3D_Assets/Kaykit_Festive%20Mini-Pack/assets/gltf/tree_snow_medium.gltf.glb"
+  },
+  {
+   "id": "tree_snow_tall",
+   "pack": "KayKit Festive Mini-Pack",
+   "pin": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+   "path": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/gltf/tree_snow_tall.gltf.glb",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/7600fa9e29d396eaa9c5a11532e63cdad7689e75/media/3D_Assets/Kaykit_Festive%20Mini-Pack/assets/gltf/tree_snow_tall.gltf.glb"
+  },
+  {
+   "id": "tree_snow_low",
+   "pack": "KayKit Festive Mini-Pack",
+   "pin": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+   "path": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/gltf/tree_snow_low.gltf.glb",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/7600fa9e29d396eaa9c5a11532e63cdad7689e75/media/3D_Assets/Kaykit_Festive%20Mini-Pack/assets/gltf/tree_snow_low.gltf.glb"
+  },
+  {
+   "id": "Fingerprints01_3K",
+   "pack": "H0 Hirnwelt (Knet-Detail)",
+   "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "path": "tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/external/Fingerprints01_3K.png",
+   "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/external/Fingerprints01_3K.png"
+  }
+ ]
+}

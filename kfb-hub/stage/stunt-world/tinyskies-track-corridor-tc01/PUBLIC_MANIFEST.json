@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.public-app-manifest/0.1",
+  "build": "STUNT-WORLD-TINYSKIES-TRACK-CORRIDOR-TC01-20260920",
+  "implementationSSOT": "georg-doc/KFB-Travel-Globe",
+  "sourceEvidenceHead": "b454ab9d98a2b0b860991e7ccd8adc72d26d0e2b",
+  "packagingDelta": "TC-01 viewer import paths are rewritten to the existing kayfabizarro Travel mirror. Frozen Travel terrain-surface.js remains unchanged; the Track corridor compiler is additive.",
+  "publicTravelMirrorBlobs": {
+    "globe.js": "80ebf8cde3649b2e0963d7d517a77f61421c70e1",
+    "terrain-surface.js": "9513347b6e3192dfefbeb3371085b13ac41ebb5d",
+    "simplex-noise.js": "201631f08df081f5695269923e2c744c88b7a5d7",
+    "globe-biome.js": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74",
+    "sky-presets.js": "04dd730ee735f064888e8472eff79583f17bebb0",
+    "welt-id.js": "df3c8cd6709bead9897a361d9dda8a5a72ed45d0",
+    "erde-maske.js": "f570317d4ee1e4a83292481aa56bf0d065c0fe56",
+    "rim-light.js": "d39e23ce598b219dae6331e37fc3148b9b5bde80"
+  },
+  "sourceFiles": {
+    "index.html": {
+      "travelBlob": "523a8965c78190058886342d22056c73f1de800a"
+    },
+    "terrain-corridor.mjs": {
+      "travelBlob": "172abc8e09e954c553306eaa1fbd1e5c740d0ead",
+      "packagingDelta": "relative current-Travel imports -> existing public Travel mirror absolute paths"
+    },
+    "track-corridor-zones.mjs": {
+      "travelBlob": "c05f91feedcf10ae1d60de6261c94fd213d7e43c"
+    }
+  }
+}

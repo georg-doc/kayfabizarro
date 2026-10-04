@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "BabyEliot"; src: url("fonts/Baby_Eliot.ttf"); }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Regular.otf"); font-weight: 400; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Bold.otf"); font-weight: 700; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Italic.otf"); font-weight: 400; font-style: italic; }
+html, body { margin: 0; padding: 0; background: #1c1712; }
+* { box-sizing: border-box; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(243,234,211,0.25); border-radius: 6px; }
+@keyframes redact-in { 0% { transform: rotate(6deg) scale(1.4); opacity: 0; } 100% { transform: rotate(-4deg) scale(1); opacity: 1; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #1c1712; padding: 40px 20px 120px; font-family: Fonteys, serif;">
+  <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1c1712"/><rect x="22" y="16" width="56" height="68" rx="3" fill="#f3ead3"/><rect x="30" y="26" width="40" height="4" fill="#c2412c"/><rect x="30" y="36" width="40" height="3" fill="#7d7364"/><rect x="30" y="44" width="34" height="3" fill="#7d7364"/><rect x="30" y="52" width="40" height="3" fill="#7d7364"/><rect x="30" y="62" width="26" height="10" fill="#6b4e7d"/></svg></template>
+
+  <div style="max-width: 860px; margin: 0 auto; background: #f3ead3; background-image: url('assets/paper-grain.svg'); border: 3px solid #1f1a14; border-radius: 4px 14px 6px 16px / 14px 6px 16px 6px; box-shadow: 6px 8px 0 rgba(0,0,0,0.4); padding: 46px 54px 60px; position: relative;">
+
+    <!-- ——— header ——— -->
+    <div style="text-align: center; border-bottom: 2px dashed rgba(31,26,20,0.3); padding-bottom: 22px; margin-bottom: 34px;">
+      <div style="display: inline-block; font-family: Fonteys, serif; font-size: 12px; letter-spacing: 1px; color: #f3ead3; background: #c2412c; padding: 3px 12px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; transform: rotate(-1.5deg);">ENTWURF · zum Gegenlesen</div>
+      <h1 style="font-family: 'Irish Grover', cursive; font-size: 38px; color: #1f1a14; margin: 16px 0 6px; line-height: 1.1;">Schema v2</h1>
+      <div style="font-family: Fonteys, serif; font-style: italic; font-size: 15px; color: #3a342a;">Ein Datensatz, zwei Views — Entry · Bilder · Map · Themes · Packs · View-Contract</div>
+    </div>
+
+    <!-- ——— TOC ——— -->
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; justify-content: center;">
+      <sc-for list="{{ toc }}" as="t" hint-placeholder-count="8">
+        <a href="{{ t.href }}" style="text-decoration: none; font-family: Fonteys, serif; font-size: 13px; color: #3a342a; border: 1.5px solid rgba(31,26,20,0.5); background: #ece1c0; padding: 4px 11px; border-radius: 3px 9px 4px 9px / 8px 4px 9px 4px; transform: rotate({{ t.rot }}deg);" style-hover="color: #c2412c; border-color: #c2412c;">{{ t.n }} · {{ t.label }}</a>
+      </sc-for>
+    </div>
+
+    <!-- ═══ §1 ENTRY ═══ -->
+    <section id="s1" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(-4deg);">1</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Entry v2</h2>
+      </div>
+      <p style="font-size: 15px; line-height: 1.6; color: #3a342a; margin: 0 0 14px;">Alle v1-Felder bleiben gültig. Jedes neue Feld ist <strong>optional</strong> — Bestandsdaten laufen ohne Migration weiter. Neu: <strong>summary</strong>, <strong>related</strong>, <strong>image</strong>, <strong>map</strong>.</p>
+      <ul style="font-size: 14px; line-height: 1.65; color: #3a342a; margin: 0 0 16px; padding-left: 22px;">
+        <li><strong>summary</strong> — 3–4 Sätze, faktentragend: Namen, Daten, Widersprüche. Zwei Leseebenen (Mainstream: Kontext · Kenner: Easter Eggs). Quip bleibt FBs Spin <em>danach</em>.</li>
+        <li><strong>related</strong> — max 3, Mix aus 1–2 existierenden IDs + oft 1 Ghost. Bewusst tier-übergreifend (Warburg: gute Nachbarschaft).</li>
+        <li><strong>map</strong> — <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">{region, x, y}</code>, Koordinaten 0–1. Anwesenheit = Node im Map-View; <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">tier</code> = im Iceberg. Eins, das andere, oder beides.</li>
+      </ul>
+      <div style="border-left: 3px solid #c2412c; background: rgba(194,65,44,0.07); padding: 10px 16px; margin: 0 0 4px; border-radius: 0 8px 8px 0;">
+        <div style="font-family: Fonteys, serif; font-weight: 700; font-size: 13px; color: #c2412c; margin-bottom: 3px;">Abweichung vom Sprint-Sketch ☞</div>
+        <p style="font-size: 14px; line-height: 1.55; color: #3a342a; margin: 0;">Map-Platzierung sitzt <strong>im Entry</strong> (<code style="font-family: monospace; font-size: 12px;">map: {…}</code>) statt in einer separaten Node-Collection mit <code style="font-family: monospace; font-size: 12px;">icebergId</code>-Verlinkung. Ein Entry = eine Identität → Detail-Card, Bookmarks, FactChecks &amp; Touren funktionieren automatisch in beiden Views. Map-only Nodes = Entries ohne <code style="font-family: monospace; font-size: 12px;">tier</code>.</p>
+      </div>
+    </section>
+
+    <!-- ═══ §7 EXAMPLES (rendered as live cards) ═══ -->
+    <section id="s7" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(3deg);">7</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Beispiele — live</h2>
+      </div>
+      <p style="font-size: 14px; line-height: 1.6; color: #7d7364; font-style: italic; margin: 0 0 22px;">So sieht die künftige Detail-Card aus. Ton &amp; Easter-Egg-Dichte gegenlesen. Thumbnail lädt live von Wikimedia Commons; fällt es aus, greift der Redacted-Stempel — Button testet ihn.</p>
+
+      <!-- CARD A — MKUltra, live image -->
+      <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">
+        <div style="width: 360px; background: #f3ead3; border: 3px solid #1f1a14; border-radius: 6px 14px 4px 18px / 12px 6px 18px 8px; box-shadow: 4px 5px 0 rgba(31,26,20,0.35); transform: rotate(0.6deg); padding: 0 0 12px; overflow: hidden;">
+          <!-- image header (non-scroll) -->
+          <div style="position: relative; height: 150px; border-bottom: 2px solid #1f1a14; background: #2a2018;">
+            <sc-if value="{{ showImgA }}" hint-placeholder-val="{{ true }}">
+              <img ref="{{ setImgA }}" src="https://commons.wikimedia.org/wiki/Special:FilePath/DeclassifiedMKULTRA.jpg?width=480" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.15);" alt="Declassified MKUltra memo">
+            </sc-if>
+            <sc-if value="{{ redactA }}" hint-placeholder-val="{{ false }}">
+              <div style="width: 100%; height: 100%; background: #ece1c0; background-image: repeating-linear-gradient(135deg, rgba(31,26,20,0.05) 0 6px, transparent 6px 12px); display: flex; align-items: center; justify-content: center;">
+                <div style="font-family: 'Irish Grover', cursive; font-size: 22px; color: #b8361f; border: 3px solid #b8361f; padding: 4px 16px; transform: rotate(-4deg); border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px; animation: redact-in 240ms cubic-bezier(0.34,1.4,0.64,1) both;">REDACTED</div>
+              </div>
+            </sc-if>
+          </div>
+          <div style="padding: 12px 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-family: Fonteys, serif; font-size: 12px; background: #6b4e7d; color: #f3ead3; padding: 2px 7px; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 3px 8px 3px 8px / 6px 3px 8px 3px; transform: rotate(-2deg);">Psyop</span>
+              <span style="font-family: Fonteys, serif; font-size: 12px; color: #3a342a;">Tier 2</span>
+            </div>
+            <div style="font-family: 'Irish Grover', cursive; font-size: 20px; line-height: 1.1; color: #1f1a14; margin-bottom: 8px;">MKUltra</div>
+            <p style="font-family: Fonteys, serif; font-size: 13px; line-height: 1.5; color: #3a342a; margin: 0 0 10px;">From 1953 to 1973 the CIA ran a human-experimentation program across 80+ universities, hospitals and prisons — LSD on unwitting civilians, hypnosis, sensory deprivation. Director Richard Helms ordered the files destroyed in 1973; a misfiled box of 20,000 financial records surfaced through FOIA in 1977 and blew it open. Subproject 68 ran at McGill under Ewen Cameron — then president of the World Psychiatric Association — who called weeks-long drug comas &lsquo;psychic driving&rsquo;. The Church Committee confirmed the rest under oath.</p>
+            <div style="font-family: Fonteys, serif; font-style: italic; font-size: 13px; line-height: 1.45; color: #3a342a; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">&ldquo;The CIA dosed civilians with LSD. Declassified. This is why nobody trusts the word &lsquo;blödsinn&rsquo;.&rdquo;<span style="font-style: normal; font-size: 12px; color: #7d7364;"> — FrizzleBob</span></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+              <span style="font-family: Fonteys, serif; font-size: 12px; color: #3a342a;">absurdity 3/6</span>
+              <div style="font-family: 'Irish Grover', cursive; font-size: 14px; color: #4f8a85; transform: rotate(-5deg); border: 2.5px solid #4f8a85; padding: 2px 8px; border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px;">Declassified</div>
+            </div>
+            <!-- related -->
+            <div style="margin-top: 12px; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 9px;">
+              <div style="font-family: Fonteys, serif; font-size: 11px; color: #7d7364; letter-spacing: 0.5px; margin-bottom: 6px;">good neighbours ☞</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="font-family: Fonteys, serif; font-size: 12px; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.6); padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; cursor: pointer;" style-hover="border-color: #c2412c; color: #c2412c;">Project Stargate</span>
+                <span style="font-family: Fonteys, serif; font-size: 12px; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.6); padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; cursor: pointer;" style-hover="border-color: #c2412c; color: #c2412c;">Operation Paperclip</span>
+                <span title="Ghost node — click loads it via FrizzleBob (LLM)" style="font-family: Fonteys, serif; font-size: 12px; color: #7d7364; background: transparent; border: 1.5px dashed rgba(31,26,20,0.4); padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; cursor: pointer; opacity: 0.72;" style-hover="opacity: 1; border-color: #6b4e7d; color: #6b4e7d;">+ Operation Midnight Climax</span>
+              </div>
+            </div>
+            <!-- credit -->
+            <div style="margin-top: 10px; font-family: Fonteys, serif; font-size: 10px; color: #7d7364;"><sc-if value="{{ showImgA }}" hint-placeholder-val="{{ true }}"><a href="https://commons.wikimedia.org/wiki/File:DeclassifiedMKULTRA.jpg" target="_blank" rel="noopener" style="color: #7d7364;">CIA — public domain · Wikimedia Commons ↗</a></sc-if><sc-if value="{{ redactA }}" hint-placeholder-val="{{ false }}">no verified image on file</sc-if></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; max-width: 210px;">
+          <button onClick="{{ toggleA }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; color: #1f1a14; background: #f0c948; border: 2px solid #1f1a14; padding: 6px 12px; border-radius: 4px 10px 4px 11px / 9px 4px 11px 5px; transform: rotate(-1deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.3);" style-hover="transform: rotate(0deg);">{{ toggleLabel }}</button>
+          <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; line-height: 1.5; color: #7d7364;">Card A · voll ausgebaut mit verifiziertem PD-Bild. Easter Eggs: Subproject 68, „psychic driving", die fehlgeleitete Aktenkiste, Ghost „Midnight Climax".</div>
+        </div>
+      </div>
+
+      <!-- CARD B — Philadelphia, redacted -->
+      <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 26px; flex-wrap: wrap;">
+        <div style="width: 360px; background: #f3ead3; border: 3px solid #1f1a14; border-radius: 6px 14px 4px 18px / 12px 6px 18px 8px; box-shadow: 4px 5px 0 rgba(31,26,20,0.35); transform: rotate(-0.5deg); padding: 0 0 12px; overflow: hidden;">
+          <div style="position: relative; height: 130px; border-bottom: 2px solid #1f1a14; background: #ece1c0; background-image: repeating-linear-gradient(135deg, rgba(31,26,20,0.05) 0 6px, transparent 6px 12px); display: flex; align-items: center; justify-content: center;">
+            <div style="font-family: 'Irish Grover', cursive; font-size: 22px; color: #b8361f; border: 3px solid #b8361f; padding: 4px 16px; transform: rotate(-4deg); border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px;">REDACTED</div>
+          </div>
+          <div style="padding: 12px 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-family: Fonteys, serif; font-size: 12px; background: #4f8a85; color: #f3ead3; padding: 2px 7px; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 3px 8px 3px 8px / 6px 3px 8px 3px; transform: rotate(-2deg);">Tech</span>
+              <span style="font-family: Fonteys, serif; font-size: 12px; color: #3a342a;">Tier 2</span>
+            </div>
+            <div style="font-family: 'Irish Grover', cursive; font-size: 20px; line-height: 1.1; color: #1f1a14; margin-bottom: 8px;">Philadelphia Experiment</div>
+            <p style="font-family: Fonteys, serif; font-size: 13px; line-height: 1.5; color: #3a342a; margin: 0 0 10px;">In 1943 the destroyer escort USS Eldridge allegedly turned invisible and teleported from Philadelphia to Norfolk, fusing sailors into the hull. The entire mythology traces to one man — Carl &lsquo;Carlos Allende&rsquo; Allen — who mailed annotated copies of a UFO book to the Office of Naval Research in 1955. The ship&rsquo;s deck logs show the Eldridge was never in Philadelphia that day. Allende confessed the hoax in 1969, then retracted the confession.</p>
+            <div style="font-family: Fonteys, serif; font-style: italic; font-size: 13px; line-height: 1.45; color: #3a342a; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">&ldquo;The Navy teleported a ship, and the only witness kept changing his story. Hm.&rdquo;<span style="font-style: normal; font-size: 12px; color: #7d7364;"> — FrizzleBob</span></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+              <span style="font-family: Fonteys, serif; font-size: 12px; color: #3a342a;">absurdity 5/6</span>
+              <div style="font-family: 'Irish Grover', cursive; font-size: 14px; color: #c2412c; transform: rotate(-5deg); border: 2.5px solid #c2412c; padding: 2px 8px; border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px;">Debunked</div>
+            </div>
+            <div style="margin-top: 12px; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 9px;">
+              <div style="font-family: Fonteys, serif; font-size: 11px; color: #7d7364; letter-spacing: 0.5px; margin-bottom: 6px;">good neighbours ☞</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="font-family: Fonteys, serif; font-size: 12px; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.6); padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; cursor: pointer;" style-hover="border-color: #c2412c; color: #c2412c;">Montauk Project</span>
+                <span title="Ghost node — click loads it via FrizzleBob (LLM)" style="font-family: Fonteys, serif; font-size: 12px; color: #7d7364; background: transparent; border: 1.5px dashed rgba(31,26,20,0.4); padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; cursor: pointer; opacity: 0.72;" style-hover="opacity: 1; border-color: #6b4e7d; color: #6b4e7d;">+ The Varo Edition</span>
+              </div>
+            </div>
+            <div style="margin-top: 10px; font-family: Fonteys, serif; font-size: 10px; color: #7d7364;">no verified image on file — honestly redacted</div>
+          </div>
+        </div>
+        <div style="max-width: 210px; font-family: Fonteys, serif; font-style: italic; font-size: 12px; line-height: 1.5; color: #7d7364;">Card B · <code style="font-family: monospace; font-style: normal; font-size: 11px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">image: null</code>. Abstrakte Nodes bleiben ehrlich redacted — falsches Bild &gt; kein Bild? Umgekehrt. Ghost „The Varo Edition" als Köder.</div>
+      </div>
+
+      <!-- CARD C — map-only note -->
+      <div style="display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap;">
+        <div style="width: 300px; background: #f3ead3; border: 2.5px dashed #6b4e7d; border-radius: 6px 14px 4px 18px / 12px 6px 18px 8px; box-shadow: 3px 4px 0 rgba(31,26,20,0.28); transform: rotate(0.4deg); padding: 12px 16px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <span style="font-family: Fonteys, serif; font-size: 12px; background: #3e6a83; color: #f3ead3; padding: 2px 7px; border-radius: 3px 8px 3px 8px / 6px 3px 8px 3px; transform: rotate(-2deg);">Space</span>
+            <span style="font-family: Fonteys, serif; font-size: 11px; color: #6b4e7d; font-style: italic;">map-only · region: ascension</span>
+          </div>
+          <div style="font-family: 'Irish Grover', cursive; font-size: 18px; color: #1f1a14; margin-bottom: 4px;">The Great Solar Flash</div>
+          <div style="font-family: Fonteys, serif; font-size: 12px; color: #7d7364; font-style: italic;">Kein <code style="font-family: monospace; font-style: normal; font-size: 11px;">tier</code> → erscheint nur im Map-View. Gleicher Entry-Typ, gleiche Features.</div>
+        </div>
+        <div style="max-width: 210px; font-family: Fonteys, serif; font-style: italic; font-size: 12px; line-height: 1.5; color: #7d7364;">Card C · Map-only Node. Beweist „eine Collection, zwei Views" — Iceberg-Entries haben <code style="font-family: monospace; font-style: normal; font-size: 11px;">tier</code>, Map-Nodes <code style="font-family: monospace; font-style: normal; font-size: 11px;">map</code>, viele beides.</div>
+      </div>
+    </section>
+
+    <!-- ═══ §2 IMAGES ═══ -->
+    <section id="s2" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(2deg);">2</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Bilder &amp; Redacted-Default</h2>
+      </div>
+      <p style="font-size: 15px; line-height: 1.6; color: #3a342a; margin: 0 0 12px;"><strong>Redacted ist der Normalfall, kein Fehler.</strong> Gleicher Platzhalter für <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">image: null</code>, Ghost, Ladefehler, offline, CSP-Block.</p>
+      <ul style="font-size: 14px; line-height: 1.65; color: #3a342a; margin: 0; padding-left: 22px;">
+        <li>Bild nur bei geprüftem Motiv + Lizenz + Attribution. Abstrakte Nodes bleiben redacted.</li>
+        <li><strong>Referenz, nie Bytes</strong> (1000 × 20 KB = tot). Quelle: Wikimedia Commons <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">Special:FilePath</code> (offenes CORS, <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">?width=480</code>).</li>
+        <li><code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">credit</code> + Quell-Link unter dem Thumb (CC-Pflicht, bei PD guter Stil).</li>
+      </ul>
+    </section>
+
+    <!-- ═══ §3 MAP ═══ -->
+    <section id="s3" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(-3deg);">3</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Map-Modell</h2>
+      </div>
+      <pre style="font-family: monospace; font-size: 12.5px; line-height: 1.55; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.4); border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; padding: 14px 16px; overflow-x: auto; margin: 0 0 12px;">regions: [
+  { id: "secret-space", label: "Secret Space Program",
+    cx: 0.72, cy: 0.28, r: 0.11, wash: "mystic" }
+]
+links: [ ["mkultra", "stargate"], ["mkultra", "paperclip"] ]</pre>
+      <ul style="font-size: 14px; line-height: 1.65; color: #3a342a; margin: 0; padding-left: 22px;">
+        <li><code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">wash</code> referenziert die Palette (mystic/blood/…) statt roher Hexwerte → theme-fähig.</li>
+        <li><code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">links</code> = gezeichnete Verbindungslinien; <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">related</code> = semantische Nachbarschaft. Oft deckungsgleich, nicht zwingend.</li>
+        <li>Regionen werden im Map-View zu Sprungmarken (ersetzt die Tier-Rail).</li>
+      </ul>
+    </section>
+
+    <!-- ═══ §4 THEMES ═══ -->
+    <section id="s4" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(3deg);">4</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Theme-Tokens</h2>
+      </div>
+      <p style="font-size: 15px; line-height: 1.6; color: #3a342a; margin: 0 0 14px;">Eine Stelle, beide Views lesen daraus. <strong>Creme zuerst</strong> (Default), dann <strong>rosa</strong> (Hommage) &amp; <strong>dark</strong>. 3D-Erlebniswelt bleibt in v1-Creme; Themes greifen zuerst auf Map + UI-Papier.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <sc-for list="{{ themePreviews }}" as="th" hint-placeholder-count="3">
+          <div style="flex: 1; min-width: 180px; border: 2px solid #1f1a14; border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; overflow: hidden; box-shadow: 2px 3px 0 rgba(31,26,20,0.28);">
+            <div style="background: {{ th.paper }}; padding: 12px 14px;">
+              <div style="font-family: 'Irish Grover', cursive; font-size: 16px; color: {{ th.ink }};">{{ th.label }}</div>
+              <div style="font-family: Fonteys, serif; font-size: 12px; color: {{ th.ink }}; opacity: 0.7; margin-bottom: 8px;">{{ th.note }}</div>
+              <div style="display: flex; gap: 5px;">
+                <span style="width: 20px; height: 20px; border-radius: 4px; background: {{ th.a }}; border: 1px solid rgba(0,0,0,0.3);"></span>
+                <span style="width: 20px; height: 20px; border-radius: 4px; background: {{ th.b }}; border: 1px solid rgba(0,0,0,0.3);"></span>
+                <span style="width: 20px; height: 20px; border-radius: 4px; background: {{ th.c }}; border: 1px solid rgba(0,0,0,0.3);"></span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ═══ §5 PACKS ═══ -->
+    <section id="s5" style="margin-bottom: 46px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(-2deg);">5</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">Pack-Format v2</h2>
+      </div>
+      <pre style="font-family: monospace; font-size: 12.5px; line-height: 1.55; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.4); border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; padding: 14px 16px; overflow-x: auto; margin: 0 0 12px;">{ "format": "kayfab-pack", "version": 2,
+  "kind": "core | map | tour | deepdive | session",
+  "entries": [ … ], "regions": [ … ], "links": [ … ],
+  "tours": {…}, "bookmarks": [], "factChecks": {}, "view": "…" }</pre>
+      <p style="font-size: 14px; line-height: 1.6; color: #3a342a; margin: 0 0 8px;"><strong>Ladekette:</strong> baked-in Core → <code style="font-family: monospace; font-size: 12px; background: #ece1c0; padding: 1px 5px; border-radius: 3px;">fetch</code> Repo/jsDelivr (wo CSP erlaubt, still scheitern) → File-Import (universell, auch im Artefakt).</p>
+      <p style="font-size: 14px; line-height: 1.6; color: #3a342a; margin: 0;"><strong>Workflow:</strong> LLM generiert in Session → Export → Kuration → Commit ins public Repo → Clients ziehen beim nächsten Fetch/Import. <strong>Merge by id</strong>, v1-Kompatibilität bleibt.</p>
+    </section>
+
+    <!-- ═══ §6 VIEW-CONTRACT ═══ -->
+    <section id="s6" style="margin-bottom: 20px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #f3ead3; background: #1f1a14; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px 10px 4px 11px / 10px 5px 11px 4px; transform: rotate(2deg);">6</span>
+        <h2 style="font-family: 'Irish Grover', cursive; font-size: 24px; color: #1f1a14; margin: 0;">View-Contract</h2>
+      </div>
+      <p style="font-size: 15px; line-height: 1.6; color: #3a342a; margin: 0 0 12px;">Aus der gemessenen Ist-Kopplung (v1.1) abgeleitet. Jede View implementiert dasselbe Interface:</p>
+      <pre style="font-family: monospace; font-size: 12.5px; line-height: 1.55; color: #1f1a14; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.4); border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; padding: 14px 16px; overflow-x: auto; margin: 0 0 12px;">constructor(mountEl, data, { onFrame, onUserMove })
+dispose()  ·  flyToEntry(id)  ·  addEntries(entries)
+goToAnchor(anchorId)   // ersetzt rohe targetDepth-Writes
+get anchors()          // iceberg: tiers+surface · map: regions
+get suppressClick()    // ersetzt _moved/_dragging-Reads
+// onFrame(labels, navInfo)</pre>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.4); border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; padding: 10px 14px;">
+          <div style="font-family: Fonteys, serif; font-weight: 700; font-size: 13px; color: #7a8d4a; margin-bottom: 5px;">geteilt (Feature-Schicht)</div>
+          <div style="font-family: Fonteys, serif; font-size: 12.5px; line-height: 1.5; color: #3a342a;">Auswahl · Touren · Autopilot · Filter · Chat/LLM · FactCheck · rabbit holes · Bookmarks · Import/Export · TTS · Labels-DOM + Picker</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.4); border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; padding: 10px 14px;">
+          <div style="font-family: Fonteys, serif; font-weight: 700; font-size: 13px; color: #c2412c; margin-bottom: 5px;">view-spezifisch</div>
+          <div style="font-family: Fonteys, serif; font-size: 12.5px; line-height: 1.5; color: #3a342a;">Rendering · Projektion · Kamera/Navigation · Anchor-Semantik</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div style="text-align: center; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 20px; margin-top: 40px;">
+      <span style="font-family: 'Irish Grover', cursive; font-size: 16px; color: #c2412c; transform: rotate(-2deg); display: inline-block;">Stay fluffy.</span>
+      <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; color: #7d7364; margin-top: 4px;">Volltext + offene Punkte: docs/SCHEMA-v2.md</div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { aFail: false, aForce: false };
+
+  renderVals() {
+    const s = this.state;
+    const redactA = s.aFail || s.aForce;
+    return {
+      toc: [
+        { n: "1", label: "Entry", href: "#s1", rot: -1 },
+        { n: "7", label: "Beispiele", href: "#s7", rot: 1.5 },
+        { n: "2", label: "Bilder", href: "#s2", rot: -1.5 },
+        { n: "3", label: "Map", href: "#s3", rot: 1 },
+        { n: "4", label: "Themes", href: "#s4", rot: -0.8 },
+        { n: "5", label: "Packs", href: "#s5", rot: 1.2 },
+        { n: "6", label: "View-Contract", href: "#s6", rot: -1.3 }
+      ],
+      showImgA: !redactA,
+      redactA,
+      setImgA: (el) => { if (el && !el._wired) { el._wired = true; el.onerror = () => this.setState({ aFail: true }); } },
+      toggleA: () => this.setState((st) => ({ aForce: !st.aForce, aFail: false })),
+      toggleLabel: redactA ? "↺ Bild zeigen" : "Redacted-Fallback testen",
+      themePreviews: [
+        { label: "Creme", note: "Default · KayfaBizarro", paper: "#f3ead3", ink: "#1f1a14", a: "#c2412c", b: "#6b4e7d", c: "#e9c14a" },
+        { label: "Rosa", note: "Hommage ans Original", paper: "#f6dfe8", ink: "#4a2740", a: "#c24680", b: "#a64670", c: "#e0a0c0" },
+        { label: "Dark", note: "Nacht-Modus", paper: "#26201a", ink: "#f3ead3", a: "#e9c14a", b: "#6b4e7d", c: "#4f8a85" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #16130f; color: #ece6dc; font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #62b6ab; text-decoration: none; border-bottom: 1px solid rgba(98,182,171,.35); }
+  a:hover { color: #8fd3c9; border-bottom-color: #8fd3c9; }
+  p { text-wrap: pretty; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#16130f;padding:0 0 120px">
+
+<div style="position:sticky;top:0;z-index:20;background:rgba(22,19,15,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2e2823">
+  <div style="max-width:1120px;margin:0 auto;padding:12px 28px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center">
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase">KFB World · Setup Pass</span>
+    <span style="flex:1 1 40px"></span>
+    <a href="#sourcemap" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;border-bottom:none;color:#a49a8c">SOURCE_MAP</a>
+    <a href="#masterplan" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;border-bottom:none;color:#a49a8c">MASTERPLAN</a>
+    <a href="#decisions" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;border-bottom:none;color:#a49a8c">OPEN_DECISIONS</a>
+    <a href="#g0" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;border-bottom:none;color:#a49a8c">FABLE_G0</a>
+    <a href="#slots" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;border-bottom:none;color:#a49a8c">HANDOFF_SLOTS</a>
+  </div>
+</div>
+
+<div style="max-width:1120px;margin:0 auto;padding:0 28px">
+
+<div style="padding:72px 0 44px;border-bottom:1px solid #2e2823">
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.16em;color:#a63b3b;text-transform:uppercase;margin-bottom:18px">Opus Setup · Consolidation Pass · 2026-09-16</div>
+  <h1 style="margin:0 0 20px;font-size:clamp(34px,5.2vw,58px);line-height:1.02;font-weight:700;letter-spacing:-.025em;color:#ece6dc;max-width:22ch">KFB World · Travel / TinySkies / Start&nbsp;Zone</h1>
+  <p style="margin:0 0 26px;font-size:17px;line-height:1.55;color:#b4aa9c;max-width:68ch">This Claude Design project is a design/authoring layer over the implementation SSOT <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#cdc4b8">georg-doc/KFB-Travel-Globe</span>. It studies, consolidates, proposes, explores and keeps the living masterplan. It does not own terrain, surface height, coast/water, sky, day/night, lighting, atmosphere, movement, camera/runtime integration or audio — and it never silently replaces an existing owner.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:34px">
+    <div style="border:1px solid #2e2823;background:#1c1814;padding:16px 18px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6d635a;margin-bottom:8px">PASS SCOPE</div>
+      <div style="font-size:14px;line-height:1.5;color:#cdc4b8">Setup and consolidation. No Astra implementation, no editor build, no visual execution beyond the G0 launch brief.</div>
+    </div>
+    <div style="border:1px solid #2e2823;background:#1c1814;padding:16px 18px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6d635a;margin-bottom:8px">PRECEDENCE</div>
+      <div style="font-size:14px;line-height:1.5;color:#cdc4b8">GitHub implementation state overrides chat recollection. Every claim below carries a status token.</div>
+    </div>
+    <div style="border:1px solid #2e2823;background:#1c1814;padding:16px 18px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6d635a;margin-bottom:8px">STOP CONDITION</div>
+      <div style="font-size:14px;line-height:1.5;color:#cdc4b8">This pass ends when the project is ready for Fable — i.e. when <a href="#g0" style="border-bottom:none;color:#62b6ab">FABLE_G0</a> can be executed without rereading history.</div>
+    </div>
+  </div>
+</div>
+
+<sc-if value="{{ showStatusLegend }}" hint-placeholder-val="{{ true }}">
+<div style="padding:28px 0;border-bottom:1px solid #2e2823;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center">
+  <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6d635a;margin-right:6px">STATUS VOCABULARY</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #e0a251;color:#e0a251;border-radius:3px">Tested result</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #b881bd;color:#b881bd;border-radius:3px">Proposal</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+  <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Archived</span>
+</div>
+</sc-if>
+
+<div id="sourcemap" style="padding:64px 0 0;scroll-margin-top:70px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:10px">
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;color:#ece6dc">SOURCE_MAP</h2>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#6d635a">28 ENTRIES · READ 2026-09-15/16</span>
+  </div>
+  <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:#b4aa9c;max-width:76ch"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#62b6ab">GRANT</span> = what this source may constrain. <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#d2685f">GUARD</span> = what it may not override. Sources marked <em style="color:#cdc4b8">not read in this pass</em> are listed so nobody invents observations about them.</p>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">A · Ownership &amp; implementation</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-01</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">georg-doc/KFB-Travel-Globe</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation SSOT</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">The runtime. <span style="color:#cdc4b8">B0 ACCEPTED TESTED BASELINE · MVP1 NEXT</span> per <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">MASTERPLAN.md</span>: public build <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">travel-b0-c22ebda643efbf0e</span>, 147/147 files byte-verified, Georg focus/resume + freeplay PASS. Next production slice is MVP1 FrizzleBob Bath Flight — not the Start Zone.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">OWNER</span><span style="color:#cdc4b8">Astra (branches, PRs, merges). Stunt / kayfabizarro / Combat remain donors; kayfabizarro is public WIP/QA mirror only.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Everything world-runtime: measure, seed, terrain type, ground height, camera, movement, fx entry, audio, light budget.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">This design project may not fork or re-own any of it. Design output is proposal + configuration until Astra integrates.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-02</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">travel/CONTRACT.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">The owner table, read off the re-homed tree 2026-09-13. One quantity, one owner. Relevant for world design: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">globe-poc.js</span> (host, radius/seed/terrainType), <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">boden-lesung.js</span> (<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">bodenRadius(up)</span> — a function, never a number), <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">verteilung.js</span> (surface occupancy via <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">frei(n,r)</span>), <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">weltstimmungen.js / sky-atmosphere.js / sky-presets.js</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">day-night.js</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">pet-lighting.js / light-budget.js</span> (<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">lighting.register(obj)</span> <em>after</em> add), <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">globe-landmarks.js</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">camera-rig.js</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#cdc4b8">fx-bus.js</span>.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Names the seam for every world proposal. A lighthouse, a rainbow, a cloud layer or a curtain must enter through an existing owner or declare a new one explicitly.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No module hangs itself into the scene; no module brings its own clock or movement field. Long form lives in <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">docs/v13/WIRT_v13.md</span> — not read in this pass.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-03</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">kfb-cartoon-deform.js · kfb-deform-instanced.js</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Shared cartoon deformation already exists at the Travel project root (10.7 kB + 10.8 kB) and the R0 dependency closure records it as used by several lines. <span style="color:#e0a251">The Cartoon Deformer is therefore not greenfield.</span></div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">First candidate owner for Bend / Skew / Taper / Squash / Twist in Stage. Read before designing a modifier stack.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Not yet measured against the P0 modifier vocabulary — see <a href="#decisions" style="border-bottom:none;color:#62b6ab">OD-06</a>. Do not claim reuse before reading the files.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-04</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">travel/asset-repo.json</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">986 assets with <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">ghUrl</span>, read by <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">globe-landmarks.js</span> and <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">sky-enemies.js</span>. The prop pool the Start Zone can actually draw from today.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Asset identity for any world composition Fable builds; feeds the seven Resource-Picker categories.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Not a second Registry. Note the open R0 finding: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">@main</span> as asset reference is movable and the baseline lacks a fixed asset revision (<a href="#decisions" style="border-bottom:none;color:#62b6ab">OD-08</a>).</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-05</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">docs/OWNER_BOUNDARIES.md · docs/DONOR_MATRIX.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">The donor discipline: keep/borrow vs never-transplant, per line (Travel v13 base, TinySkies, Stunt, Combat, Animation Lab, Frankenstein Studio, Mech &amp; Vehicle Rig, Rollercoaster). Every future transplant records donor · exact revision · owner in donor · new owner in Travel · unchanged/adapted/rejected · acceptance evidence · way back.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">The template every world-donor proposal in this project must fill out. TinySkies is listed as “rates and ratios, never absolute values (world radius 5)”.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Rollercoaster v11 line explicitly warns against pulling WebGPU / three 0.178 into the WebGL 0.160 baseline — read this before promising compute cloth.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">B · World donors</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-06</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">dannylimanseta/tinyskies @2659a5cc987d</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference · pinned</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Pinned upstream world donor. Concepts of interest: one terrain/surface truth, real land/water topology, coast-aware placement, shallow/deep ocean + foam, sky/environment presets, coherent multi-light rig, atmosphere/fog, animated lighthouse + beam, environmental animation.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Concept vocabulary and ratios for coast, water, sky and lighthouse.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Never a second runtime owner. Travel's current implementation is the integration surface. <span style="color:#e0a251">Observed:</span> a fork <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">georg-doc/tinyskies</span> exists (default branch <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">cursor/globefly-multiplayer-globe-flight-game</span>, “KFB PetFlight”) — a different tree from the pinned donor commit; do not conflate them.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-07</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">three.js · webgl_volume_cloud.html</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference · donor</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Technical inspiration for spatial animated cloud volumes. KFB direction: clouds in world space, slow drift, evolving form, readable cartoon/clay silhouettes — no flat UI clouds, no fog substitute, calm enough for idle/screensaver.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Volumetric raymarching is not automatically inside the light/perf budget of <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">light-budget.js</span>. Cloud ownership is unresolved (<a href="#decisions" style="border-bottom:none;color:#62b6ab">OD-05</a>).</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-08</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">three.js · webgpu_compute_cloth.html</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #e0a251;color:#e0a251;border-radius:3px">Tested result</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Curtain cloth donor: Verlet/spring cloth in compute shaders, fixed attachment points, wind, impact/collision, dynamic deformation. Measured state: WebGPU-first via <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">three.webgpu.js</span>, carries a <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">TODO: Fix example with WebGL backend</span>.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Mechanisms for the reusable Curtain module and its state set <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">closed-rest · closed-wind · impact · opening · open-rest · closing · reset</span>.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">WebGPU may not become a hard dependency. A deterministic fallback must preserve the same visual states and the same consumer seam — and the visual target may not be downgraded to avoid writing it.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-09</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">three.js · webgl_animation_skinning_ik.html</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference · donor</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Handle/interaction donor: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">OrbitControls</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">TransformControls</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">CCDIKSolver/Helper</span>, transform target driving an IK chain, Orbit disabled while a handle is dragged.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Interaction donor only — not a UI model, and not the prop-deformation engine.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-10</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">dannylimanseta/narrative-scene-layer</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #b881bd;color:#b881bd;border-radius:3px">Proposal · future donor</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Recorded as a separate future architecture/presentation donor. High-interest split: Scene = what happens · Presentation = how it plays · Theme = what it looks like; persistent poses as stances, explicit entrances, presentation variants.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Do not mix its 2D theatrical renderer into the Travel-world implementation. Backlog, not Birthday scope.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">C · Visual &amp; composition input</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-11</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">_inbox/KFB Elisa B-Day Reference+Mockups/</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference · not read in this pass</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Roles are fixed by the setup brief even though the files were not opened here: <span style="color:#cdc4b8">Georg-authored mockup = PRIMARY event-staging / composition input</span>; generated mockups = SECONDARY interpretation only; colour sheet = colour/material/mood only; screenshots = deliberate World/TinySkies/KayKit/composition references, not decoration.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Event staging and composition for the Birthday clearing; mood and material accents.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">The colour sheet may not overwrite the Travel world-light contract. Fable must open the folder before G0 and must not invent observations about it — see <a href="#slots" style="border-bottom:none;color:#62b6ab">SLOT-07</a>.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-12</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">Curtain reference · aged red velvet proscenium (.webp)</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · visual direction</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Establishes the reusable 3D KFB Theatre Curtain / Proscenium core asset: aged dark-red velvet, worn/damaged material, visible folds and weight, old theatrical architecture, physical 3D presence.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No flat sheet, blind, paper/cardboard look or physically impossible motion. Opening pulls the supported top attachments and lets fabric gather — it does not translate a rigid rectangle.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-13</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">KayKit Village Exterior editor screenshots</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · interaction reference</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Primary interaction/authoring reference for the KFB Stage editor per <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">SCENE_WORLD_EDITOR_REFERENCE</span>: viewport dominant, edit the world directly, outline on selection, transform handles on the prop, continuous close↔wide scale of work, variants such as <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Scene_Default / Daytime / Nighttime</span>.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Composition/manipulation reference only — not the KFB render target, and not a source of Town geography.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-14</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">KFB-Stunt-Car-Race/_inbox/BG CARTOON ASSETS Midjourney GvW/</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #8a9bb0;color:#8a9bb0;border-radius:3px">Reference · not pixel-inspected</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Two large PNG sheets (Hunky &amp; Dory / Midjourney background studies) carrying the cartoon world language. Source fact: the folder exists; its visual grammar has not been connector-reviewed.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No claim of exact asset reconstruction from these sheets unless visually measured first.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-15</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">kfb-duotone-shader (Dropbox)</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #93b56b;color:#93b56b;border-radius:3px">Implementation · separate owner</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Proven background/presentation owner: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">fluid</span> duo-tone, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">shader</span> watercolour fullscreen fallback, a four-field stage seam.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">A <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">cozy-lit</span> preset is additive material/light/post — never a fork of this owner.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">D · Current briefs &amp; directions</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-16</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">CLAUDE_DESIGN_FABLE_STARTZONE_EXECUTION_CURRENT</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · single current execution brief</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">The governing execution contract for the next Fable slice: G0 visual-direction pre-gate, then G1 authoring proof with evidence <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">E1–E14</span>, a predeclared <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">MAY BE MISSING</span> list, and the Fable→Astra artifact handover contract. Governing rule: every identity-bearing requirement either has acceptance evidence or appears in MAY BE MISSING — there is no third field.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Acceptance, evidence and stop conditions for all Start Zone design work in this project.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">It incorporates and repairs the Coworker <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">ACCEPTANCE_COMPLETENESS_ADDENDUM</span>; that addendum is review evidence, not a competing contract.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-17</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">ELISA_PRIORITY_STAGE_BUILDER/START_HERE.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · product direction</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Elisa's Birthday as the forcing function for one stage-first authoring tool. One navigation layer <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Actor · Face · Pose · Motion · Voice · Stage</span>; gates A–H and G0–G7; bundle classes <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">actor / pose / performance / scene / world</span>; the identity-bearing Birthday inventory; the cold-load→curtain→reveal→living-rest sequence contract; and the explicit list of the two 2026-09-15 failure modes not to repeat.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Inventory completeness, human gates (Wallpaper / Screensaver / Interaction), model &amp; cost strategy.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Automated green checks never imply a human gate passed. No automatic continuation across Georg gates.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-18</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">CARTOON_DEFORMER_AND_RENDER_LOOK_ADDENDUM</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · user direction</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Adds two first-class authoring capabilities: <span style="color:#cdc4b8">Skewed Cartoon Perspective</span> (camera/composition presets: Neutral, Subtle Cartoon, Skewed, Wide Stage) and the <span style="color:#cdc4b8">Cartoon Deformer</span> (Bend, Skew/Shear, Taper, Squash/Stretch, Twist, optional Bulge/Pinch, Lean/Asymmetry macro, per-modifier reset). Non-destructive contract: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">sourceAssetId + transform + modifierStack + optional baked derivative</span>. Adds gate G3.5. Hero acceptance case: the two speaker props.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Static props and world meshes first. Skinned KFB actors do not silently route through the prop deformer; anatomy/pose stays with Actor/Face/Pose/Rig. Never fake all skew by breaking world projection.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-19</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">UI_RESET_MINIMAL_STAGE_FIRST/START_HERE.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · UI direction</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">The governing UI rule: <span style="color:#e0a251">every pixel / word / letter / cell has to pay rent.</span> One persistent bar, stage dominant, one context palette, no meta ballast, labels-values-actions copy, split-screen (~832 px) as a primary design mode, full functionality via progressive disclosure. Carries the acceptance checklist that fails a mockup instantly.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Its domain row <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Body · Face · Motion · Voice · Messen</span> is superseded for this slice by <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Actor · Face · Pose · Motion · Voice · Stage</span>; <em>Messen</em> moves into context, it is not deleted. The rejected cluttered redesign stays rejected — do not beautify it.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-20</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">ASSET_LIBRARIAN_INTEGRATION_2026-09-15.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">One context-aware Resource Picker / Library Drawer is the single in-context asset entry point, scoped by mode (<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">actor · rig-part · motion · prop · stage · performance</span>). Governing principle: <span style="color:#cdc4b8">library when needed, stage when working.</span> Contract <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">kfb.asset-handoff.v1</span>: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">selectionStatus: candidate-only</span>, suitability owned by the receiving consumer.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No second asset database, no permanent Librarian panel on the stage, no hidden actors merely because one performance is unsupported.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-21</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">KayKit Reference Atlas · branch chat/kaykit-reference-atlas-2026-09-15 @89acd27e</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #e0a251;color:#e0a251;border-radius:3px">Tested result · not merged</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">G0 research checkpoint available as an evidence packet: pack/series relations, demonstrated official scene combinations, owned vs reference-only vs paid/unknown, source links. Its own RETURN states visual frame-by-frame annotation remains open and the recovery branch must not be merged to <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">main</span> until Georg's local-commit situation is reconciled.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Pinned planning input for world-dressing clusters and same-pack suggestions.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Not product truth, not merged, not a runtime implementation. See <a href="#slots" style="border-bottom:none;color:#62b6ab">SLOT-06</a>.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-22</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">KAYKIT_COVERAGE_FRANKENSTEINING_CONCEPT</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #b881bd;color:#b881bd;border-radius:3px">Proposal · concept</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Coverage/Part Atlas before Frankensteiner UI; compatibility classes <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">DIRECT · ATTACH · CALIBRATE · GRAFT_ADAPTER · EXTRACT_REQUIRED · UNSUPPORTED</span>. Source fact: the tested Librarian live view reported <span style="color:#cdc4b8">79 KayKit character candidates</span> at its Registry revision — evidence, not a hardcoded product count.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Not world-design scope. It is listed here only so the Start Zone never hardcodes a mini-roster.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">E · Actor / consumer inputs</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-23</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">RETURN_BIRTHDAY_CONSUMER.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #e0a251;color:#e0a251;border-radius:3px">Tested result · casting PASS</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Measured casting on the real rig, both hero figures on the same KayKit <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Rig_Medium</span> set: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Idle_A</span> (1.067 s, loop) · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Waving</span> (2.133 s, once) · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Cheering</span> (1.667 s, once) → crossfade 0.25 s back to Idle_A, <span style="color:#cdc4b8">69/69 tracks bound</span> each. FrizzleBob mounts through <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">mountGraft</span>; GothGirl GLB 323 724 B, 6 skinned meshes, 23 bones, 0 embedded clips, CC0. Dance is OPEN/P1 — there is no dance clip in the donor pack; the single candidate is <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Skeletons_Taunt_Longer</span>. Hihi = inactive slot on the existing Cube-Pet contract. EyeRig speaker prop <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">GothGirl_Speaker.gltf</span> loads but is not mounted (P1).</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Real scale, real prop identity and real idle behaviour for spatial planning. One mixer per figure; shared library loaded by Registry pin, not <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">main</span>.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">A bound casting is not a finished KFB actor presentation. Raw GothGirl/Hihi must not become the accepted visual actor.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-24</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">POST_RETURN_CORRECTIONS_2026-09-15.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #62b6ab;color:#62b6ab;border-radius:3px">Decision · latest correction</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Player-facing names are fixed: <span style="color:#cdc4b8">Uncle FrizzleBob</span> · <span style="color:#cdc4b8">Little Miss Messy</span> (asset/registry name stays <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">GothGirl</span>) · <span style="color:#cdc4b8">Hihi Love-Hope</span> (Coming Soon). No real person framed as a character identity unasked. Look direction for Little Miss Messy: keep the goth baseline (anthracite/black, good silhouette, no global rainbow recolour) plus a restrained accent layer — teal/cyan and violet/magenta, few spectral accents. Signature props: teal 3D cartoon phone (P1), anthracite over-ear headphones (P1), light-blue hair tips (P2). The delivered FrizzleBob profile (<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">kfb.pets/1</span>, v1.2.9) is <span style="color:#e0a251">CANDIDATE, not final</span>.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">Naming, palette accents and per-actor scope boundaries for any world/event dressing.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Known ToolBox defects (Carl brows, brow tapering, colour picker, per-zone textures) belong to the ToolBox/Studio owner. Travel/Astra must not reimplement them locally; the Birthday opener must not hang on phone/headphones/hair details.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-25</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">GothGirl actor input · FrankenStein Studio v18</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved · pending</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Current state per setup brief: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">ACTOR INPUT UPDATE PENDING · FrankenStein Studio v18</span>. A later Georg/Design v18 report replaces this placeholder.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No older/raw GothGirl presentation is final. Final actor rigging must not block world design — see <a href="#slots" style="border-bottom:none;color:#62b6ab">SLOT-01</a>.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">F · Licence &amp; research</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-26</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">ITHAPPY_LICENSE_GUARD_2026-09-15.md</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #a63b3b;color:#d2685f;border-radius:3px">Hard guard</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Source-based licence reading (not legal advice). Paid Standard Licence permits modification/adaptation and incorporation into Products; it prohibits standalone redistribution and <span style="color:#e0a251">using the assets as input to generative-AI programs or datasets</span>. Keep four paths separate: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">source · modified internal · embedded runtime · publicly exportable</span>.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">Never upload ITHappy mesh/texture/derived renders to a generative-AI system. A public ToolBox with GLB/FBX/OBJ export needs licence review first (<a href="#decisions" style="border-bottom:none;color:#62b6ab">OD-07</a>). The free 30-asset pack is stricter still: internal measurement and a contained test Product only.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-27</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">RESEARCH_COZY_LOOK_ITHAPPY_FLYBRAIN</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #b881bd;color:#b881bd;border-radius:3px">Proposal · research</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Directly useful to this project: the <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">cozy-lit</span> presentation preset as five additive layers — material (roughness ~0.85–1.0, metalness 0, palette harmonisation), lighting (one broad warm key + strong cool hemisphere fill, soft VSM/PCF contact shadow, no crushed blacks), shading (wrap-diffuse, broad tonal bands, cavity darkening, selective low-opacity crease outline), atmosphere/post (pastel fog matching sky, mild contrast compression, subtle grain), geometry rules (smooth normals, broad silhouettes, clustered vegetation). Vertical test: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">GothGirl + stool + one tree + one rock + grass plane + water strip</span> in A/B/C. ITHappy and fly-brain tracks are separate lanes.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#62b6ab;padding-top:3px">GRANT</span><span style="color:#cdc4b8">The concrete parameter starting point for the cozy/claymation substrate at G0 — P0 priority, cheap, immediately useful.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#d2685f;padding-top:3px">GUARD</span><span style="color:#cdc4b8">No watercolour→Meshy asset pipeline, no AI-generated geometry. FlySim code is educational/non-commercial; the fly-brain tracks stay private R&amp;D.</span></div>
+    </div>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin:44px 0 4px">G · Present, not read in this pass</div>
+
+  <div style="border-top:1px solid #2e2823;padding:18px 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">S-28</span>
+      <span style="font-size:16px;font-weight:600;color:#ece6dc">Adjacent packages not opened here</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Listed only</span>
+    </div>
+    <div style="font-size:14px;line-height:1.55;color:#b4aa9c;max-width:78ch">Present in the handover tree and deliberately <em>not</em> summarised, so no one cites conclusions this pass did not read: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">PERFORMANCE_SUITE_2026-09-15/START_HERE.md</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">PRESENTER_STANDUP_SLICE_2026-09-15/START_HERE.md</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">TOOLBOX_V1_2026-09-14/*</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">BIRTHDAY.../CHANGELOG.toolbox.md</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">qa/casting-probe.json</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">qa/QA_EVIDENCE.md</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">profiles/kfb-pet-graft-driver.georg-2026-09-15.json</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">docs/v13/WIRT_v13.md</span> · <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/</span> (11 files).</div>
+    <sc-if value="{{ showRejectedHistory }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#968b80;padding-top:3px">ARCHIVED</span><span style="color:#cdc4b8">The Astra Birthday visual result is the explicitly <span style="color:#d2685f">REJECTED visual precedent</span>: flat default three.js look, generic smooth low-poly with no art direction, implausible props, identical blur/blob shadows, rigid square scenery, UI cards replacing the 3D world. Its package contents were not read here. Likewise <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">CLAUDE_DESIGN_FABLE_MEGA_SLICE_STARTZONE</span> is ARCHIVED / REVIEW EVIDENCE — superseded for execution by S-16, kept for its red-team and non-goal lists.</span></div>
+    </div>
+    </sc-if>
+  </div>
+</div>
+
+<div id="masterplan" style="padding:72px 0 0;scroll-margin-top:70px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:10px">
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;color:#ece6dc">LIVING_WORLD_MASTERPLAN</h2>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#6d635a">ADDITIVE · v1 · 2026-09-16</span>
+  </div>
+  <p style="margin:0 0 30px;font-size:15px;line-height:1.6;color:#b4aa9c;max-width:76ch">Additive by rule: later entries are appended, earlier ones are never rewritten to make the current plan look inevitable. One world grows; Birthday is an event layer inside it.</p>
+
+  <div style="border-left:2px solid #a63b3b;padding:0 0 0 22px;margin-bottom:34px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#a63b3b;text-transform:uppercase;margin-bottom:10px">Immediate · Elisa Birthday Start Zone visual direction</div>
+    <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#cdc4b8;max-width:74ch">One coherent Start Zone composition in <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">Birthday Sunset</span>, built from the existing Travel world vocabulary, with the Birthday clearing already spatially reserved inside the terrain. Deliverable is a single still frame (<a href="#g0">FABLE_G0</a>) — not an editor, not a scene graph.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:16px">
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#62b6ab;margin-bottom:8px">WORLD LANGUAGE · KEEP</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#b4aa9c">Rolling Travel terrain · real coast/water intersection · beach transition where useful · foreground/midground/background · lighthouse grown out of the terrain · beam as real light/VFX · spatial rainbow · animated 3D cartoon clouds · paths and navigable negative space · authored prop clusters · KFB asymmetry · selective cartoon deformation · cozy/claymation substrate · readable materials, real grounding · atmospheric depth · coherent world lighting before grading.</div>
+      </div>
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#d2685f;margin-bottom:8px">WORLD LANGUAGE · AVOID</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#b4aa9c">Generic flat game floor · decorative blue water plane unrelated to terrain · lighthouse pasted into a convenient corner · generic sunset lighting replacing Travel's environment system · dashboard/menu staging detached from the world · sterile symmetry · random deformation everywhere.</div>
+      </div>
+    </div>
+    <div style="margin-top:18px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6d635a;margin-bottom:10px">SPATIAL ANCHORS TO RESERVE · EVENT LAYER</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Theatre Curtain / threshold</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Birthday clearing</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Uncle FrizzleBob</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Little Miss Messy position</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Hihi position</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">D6 / Birthday Radio</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">3 asymmetrical disco balls</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Speaker / performance props</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Newton cradle</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">3D letter installation</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Lighthouse</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Rainbow</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Cloud groups</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Bounded fireworks area</span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#cdc4b8;border:1px solid #2e2823;background:#1c1814;padding:5px 9px;border-radius:3px">Camera reveal / hero path</span>
+      </div>
+      <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#b4aa9c;max-width:74ch">The letter installation reads exactly <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#e0a251">Happy Eighteenth Birthday Elisa!</span> Newton-cradle-like physical letter behaviour is later; the installation's <em>space</em> is reserved now.</p>
+    </div>
+  </div>
+
+  <div style="border-left:2px solid #e0a251;padding:0 0 0 22px;margin-bottom:34px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#e0a251;text-transform:uppercase;margin-bottom:10px">Near term · reusable KFB Start Zone / Town</div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#cdc4b8;max-width:74ch">The same terrain becomes the reusable Start Zone: approach paths, a town-capable clearing, landmark hierarchy, negative space for later residents and events. Town geography stays visibly provisional until Georg's setup drawing lands (<a href="#slots">SLOT-02</a>) — provisional means marked, not guessed silently.</p>
+  </div>
+
+  <div style="border-left:2px solid #62b6ab;padding:0 0 0 22px;margin-bottom:34px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#62b6ab;text-transform:uppercase;margin-bottom:10px">World variants · shared geometry, overlay only</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px"><div style="font-size:15px;font-weight:600;color:#ece6dc;margin-bottom:6px">Neutral / Authoring</div><div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Even readable light for composition work. The variant you build in.</div></div>
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px"><div style="font-size:15px;font-weight:600;color:#ece6dc;margin-bottom:6px">Birthday Sunset</div><div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">The G0 hero variant. Warm key, cool fill, coast catching low light, lighthouse beam legible.</div></div>
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px"><div style="font-size:15px;font-weight:600;color:#ece6dc;margin-bottom:6px">Night / Disco</div><div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Emissives, disco balls, fireworks window. Base object identities and transforms stay stable.</div></div>
+      <div style="border:1px solid #2e2823;background:#1c1814;padding:14px 16px"><div style="font-size:15px;font-weight:600;color:#ece6dc;margin-bottom:6px">Later weather / mood</div><div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Backlog. Travel already owns <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">weltstimmungen</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">rain-overlay</span>, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">day-night</span> — extend there, don't restart.</div></div>
+    </div>
+    <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#b4aa9c;max-width:74ch">Rule: a variant may add explicit lights, emissive helpers, sky/environment changes and FX. A variant that silently rebuilds the world as a separate scene fails <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">E9</span>.</p>
+  </div>
+
+  <div style="border-left:2px solid #b881bd;padding:0 0 0 22px;margin-bottom:34px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#b881bd;text-transform:uppercase;margin-bottom:10px">Reusable modules</div>
+    <div style="display:grid;gap:10px">
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Theatre Curtain / Proscenium</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Core game asset, not Birthday decoration. States <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">closed-rest · closed-wind · impact · opening · open-rest · closing · reset</span>; one consumer seam (mount/update/setState/impulse/reset/dispose in spirit); WebGPU cloth when stable, deterministic fallback mandatory. Extensibility seam reserved for later projection content (cards, rendered pages) — no PDF viewer in the Birthday slice.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Animated 3D clouds</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">World-space, chunky clay silhouettes, calm drift, screensaver-safe. Owner unresolved (<a href="#decisions">OD-05</a>).</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Lighthouse</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Terrain-integrated landmark plus beam as real world light/VFX. Enters through the existing landmark and light-budget owners.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Rainbow</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">World-space element with parallax and occlusion — must survive the two-camera proof (<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">E7</span>). A screen overlay is a failure.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Physical KFB typography</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Coloured 3D letters as real objects with weight and later physical behaviour. Reusable beyond the Birthday sentence.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">World-as-toy props</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Disco balls, Newton cradle, D6 radio, speakers — touchable, physical, authored asymmetry via the Cartoon Deformer.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">World / event lighting + cozy-lit preset</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Additive material/light/post preset over Travel's environment system; parameters from S-27. Never a second light owner.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:16px;border-top:1px solid #2e2823;padding-top:10px"><span style="font-size:14.5px;font-weight:600;color:#ece6dc">Scene variants</span><span style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Overlay model above; smallest viable data representation stays PROPOSAL until implementation proves it.</span></div>
+    </div>
+  </div>
+
+  <div style="border-left:2px solid #968b80;padding:0 0 0 22px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#968b80;text-transform:uppercase;margin-bottom:10px">Backlog · explicitly not now</div>
+    <div style="font-size:14.5px;line-height:1.7;color:#b4aa9c;max-width:76ch">KFB Stage / World Editor as a ToolBox authoring consumer (later; not this setup pass) · Curtain consumers: KFB cards, card reveals, Almanac objects, rendered document pages, narrative scenes, stage performances · Narrative Scene Layer as architecture donor (recorded, dormant) · universal KayKit Frankensteining · full Performance Suite · production Travel integration · universal full-body IK · Blender + MCP precision workshop, triggered only after the same concrete browser-authoring task fails twice for the same structural reason.</div>
+  </div>
+</div>
+
+<div id="decisions" style="padding:72px 0 0;scroll-margin-top:70px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:10px">
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;color:#ece6dc">OPEN_DECISIONS</h2>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#6d635a">8 · GENUINELY UNRESOLVED</span>
+  </div>
+  <p style="margin:0 0 30px;font-size:15px;line-height:1.6;color:#b4aa9c;max-width:76ch">Settled owner and contract questions are not reopened here. Each item names what it blocks and the cheapest way to close it. <span style="color:#d2685f">OD-01 and OD-02 block G0.</span></p>
+
+  <div style="border:1px solid #a63b3b;background:#1e1613;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#d2685f;letter-spacing:.08em">OD-01</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Is the Start Zone a sphere or a diorama?</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Blocks G0</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">Travel's world is a globe: <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">globe-poc.js</span> owns radius/seed/terrainType, <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">bodenRadius(up)</span> owns height, TinySkies ratios assume world radius 5. The KayKit editor reference and the Birthday staging both read as a local plateau/diorama. These are different spatial truths and the answer changes terrain silhouette, coast geometry, camera framing and every later placement number.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">DECIDES</span><span style="color:#cdc4b8">Georg + Travel owner (Astra) — not the design layer.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">CHEAPEST</span><span style="color:#cdc4b8">One sentence: “Start Zone is a bounded region on the existing globe surface” <em>or</em> “Start Zone is a local scene with its own ground, visited from Travel.” Everything else follows.</span></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #a63b3b;background:#1e1613;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#d2685f;letter-spacing:.08em">OD-02</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Which renderer produces the G0 frame?</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Blocks G0</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">The execution brief requires the G0 still from “the real renderer and real asset pipeline”, no concept render. Two readable options: (a) the Travel v13 host itself — maximum fidelity, but Travel is mid-MVP1 and the design layer may not fork it; (b) a design-side three.js scene that loads the same assets via <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">asset-repo.json</span> at a pinned revision and mirrors Travel's light/sky parameters — honest about being a LookDev harness, cheap to iterate, and transferable as config. Without this answer, G0 evidence can be rejected on a technicality after the work is done.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">DECIDES</span><span style="color:#cdc4b8">Georg.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">RECOMMEND</span><span style="color:#cdc4b8">(b) a pinned LookDev harness, declared as such in the REAL/PLACEHOLDER list, with every light/material/camera value exported as config so Astra can reproduce the frame inside Travel.</span></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-03</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Start Zone spatial layout</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">Georg's world/setup drawing is the spatial reference and has not arrived. Until then every geography claim — where the coast runs, where Town sits relative to the clearing, where the approach path enters — stays provisional and visibly marked. Fable may still compose; it may not present invented geography as fixed.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">CHEAPEST</span><span style="color:#cdc4b8">The drawing, photographed (<a href="#slots">SLOT-02</a>).</span></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-04</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Curtain: runtime path and module owner</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">Two questions, one item. <strong style="color:#ece6dc;font-weight:600">Path:</strong> is WebGPU compute cloth the primary with a deterministic fallback, or is the authored/skinned/spring version primary with cloth as an upgrade? The Travel baseline is WebGL 0.160 and the donor matrix warns against pulling WebGPU into it. <strong style="color:#ece6dc;font-weight:600">Owner:</strong> does the reusable module live in Travel (a world/stage module beside the existing owners) or in ToolBox (authored asset exported to consumers)? Both answers must exist before G3.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">RECOMMEND</span><span style="color:#cdc4b8">Fallback-primary, cloth-as-upgrade, one owner with the state set as its public contract — so the visual bar is met on the baseline renderer without downgrading the target.</span></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-05</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Who owns clouds, rainbow and the lighthouse beam?</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">Travel already owns sky, atmosphere, presets, day/night and the light budget. The three identity-bearing atmospheric elements are new objects that need a home: new Travel modules registered through <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">lighting.register</span> and the fx bus, or Stage-side authoring overlays that Travel consumes as config. Deciding late means either a second sky owner or a beautiful frame nobody can integrate.</div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-06</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Cartoon Deformer: reuse the existing modules or build a Stage system?</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">kfb-cartoon-deform.js</span> and <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">kfb-deform-instanced.js</span> already exist and are shared across lines (S-03). Nobody has yet measured them against the P0 vocabulary (Bend / Skew / Taper / Squash / Twist, pivot + falloff, non-destructive stack, instanced variation). Until someone reads them, both “reuse it” and “write a new one” are guesses.</div>
+    <div style="display:grid;gap:7px;margin-top:12px;font-size:13.5px;line-height:1.5">
+      <div style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:14px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#6d635a;padding-top:3px">CHEAPEST</span><span style="color:#cdc4b8">Read two files (21 kB) and write a five-line capability verdict against the E11 deformer strip.</span></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px;margin-bottom:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-07</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Licence answer for any public export surface</span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved · external</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">A public ToolBox that exports GLB/FBX/OBJ could turn licensed geometry into standalone redistribution. Needs written clarification before such a surface ships — and separately, the generative-AI input prohibition means asset content never goes into an AI tool. Not a blocker for world design; a blocker for export features and for any AI-assisted asset processing.</div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:18px 20px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">OD-08</span>
+      <span style="font-size:17px;font-weight:600;color:#ece6dc">Fixed asset revision instead of <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px">@main</span></span>
+      <span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Unresolved</span>
+    </div>
+    <div style="font-size:14.5px;line-height:1.6;color:#cdc4b8;max-width:78ch">Open since the R0 re-home: asset references point at a moving branch and the baseline has no pinned asset revision. The casting return already worked around it by loading the shared library through a Registry pin. Any accepted G0/G1 frame is only reproducible if the asset revision is pinned in the returned config.</div>
+  </div>
+</div>
+
+<div id="g0" style="padding:72px 0 0;scroll-margin-top:70px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:10px">
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;color:#ece6dc">FABLE_G0_LAUNCH_BRIEF</h2>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#6d635a">EXECUTABLE · ONE FRAME · THEN STOP</span>
+  </div>
+  <p style="margin:0 0 26px;font-size:16px;line-height:1.6;color:#cdc4b8;max-width:74ch">Everything Fable needs to start visual exploration without rereading the history. One task: <strong style="color:#ece6dc;font-weight:600">one still frame of the Start Zone in Birthday Sunset.</strong> No editor, no UI chrome, no scene graph, no actor rigging.</p>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:20px 22px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#e0a251;margin-bottom:12px">READ ORDER · 5 ITEMS, NOTHING ELSE</div>
+    <div style="display:grid;gap:8px;font-size:14.5px;line-height:1.55;color:#cdc4b8">
+      <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#6d635a">1</span><span>This document — <a href="#sourcemap">SOURCE_MAP</a> and <a href="#decisions">OPEN_DECISIONS</a>.</span></div>
+      <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#6d635a">2</span><span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">CLAUDE_DESIGN_FABLE_STARTZONE_EXECUTION_CURRENT_2026-09-15.md</span> — the governing contract (S-16).</span></div>
+      <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#6d635a">3</span><span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">travel/CONTRACT.md</span> — who owns what you are about to compose (S-02).</span></div>
+      <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#6d635a">4</span><span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">_inbox/KFB Elisa B-Day Reference+Mockups/</span> — open it; Georg's own mockup is the primary staging input (S-11).</span></div>
+      <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#6d635a">5</span><span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">RESEARCH_COZY_LOOK...</span> §1 — the cozy-lit parameter starting point (S-27).</span></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-bottom:14px">
+    <div style="border:1px solid #62b6ab;background:#151d1c;padding:20px 22px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#62b6ab;margin-bottom:12px">MUST BE VISIBLE IN THE FRAME</div>
+      <div style="display:grid;gap:7px;font-size:14px;line-height:1.5;color:#cdc4b8">
+        <div>Rolling terrain / world silhouette — not a flat floor</div>
+        <div>Actual coast/water relationship as a terrain intersection</div>
+        <div>Lighthouse integrated into the terrain composition</div>
+        <div>Readable foreground / midground / background</div>
+        <div>Rainbow as a world-space element in depth</div>
+        <div>Spatial 3D cartoon clouds, chunky and readable</div>
+        <div>Reserved Birthday/event clearing inside the same world</div>
+        <div>Path and negative-space logic for later actors and dressing</div>
+        <div>Look: cozy/claymation substrate + KFB skew, asymmetry, cartoon shaping</div>
+      </div>
+    </div>
+    <div style="border:1px solid #2e2823;background:#1c1814;padding:20px 22px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#968b80;margin-bottom:12px">MAY BE MISSING AT G0 · PREDECLARED</div>
+      <div style="display:grid;gap:7px;font-size:14px;line-height:1.5;color:#b4aa9c">
+        <div>Final Little Miss Messy / Hihi presentation</div>
+        <div>Finished theatre curtain</div>
+        <div>Fireworks</div>
+        <div>Birthday runtime and audio</div>
+        <div>Final Town geography</div>
+        <div>Final prop population</div>
+        <div>Final editor controls</div>
+      </div>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid #2e2823;font-size:13.5px;line-height:1.55;color:#d2685f">Anything identity-bearing that is absent and <em>not</em> on this list is a defect, not a simplification.</div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:20px 22px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#e0a251;margin-bottom:12px">RENDER LOOK · MANDATORY</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;font-size:14px;line-height:1.55">
+      <div><div style="color:#93b56b;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;margin-bottom:6px">REQUIRED</div><div style="color:#cdc4b8">Soft broad key · warm/cool fill relationship · real soft cast and contact shadows · grounded AO feel · matte high-roughness clay/painted response · restrained metalness · subtle material variation · atmospheric depth · asymmetrical staging · selective deformation · restrained grading only after lights and materials work.</div></div>
+      <div><div style="color:#d2685f;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;margin-bottom:6px">REJECTED PRECEDENT</div><div style="color:#cdc4b8">The Astra Birthday result: flat default three.js look · generic smooth low-poly with no art direction · implausible props · identical blur/blob shadows · sterile grid-perfect placement · blanket random distortion · UI cards standing in for the world.</div></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid #2e2823;background:#1c1814;padding:20px 22px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#e0a251;margin-bottom:12px">DELIVER</div>
+    <div style="display:grid;gap:9px;font-size:14.5px;line-height:1.55;color:#cdc4b8">
+      <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:14px;border-top:1px solid #2e2823;padding-top:9px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#62b6ab">FRAME</span><span>One still, real renderer and real asset pipeline, no editor chrome. Optionally a second from a different azimuth.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:14px;border-top:1px solid #2e2823;padding-top:9px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#62b6ab">REAL / PLACEHOLDER</span><span>One compact list. Which assets are real, which stand-ins are spatial references, which parameters are provisional.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:14px;border-top:1px solid #2e2823;padding-top:9px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#62b6ab">CONFIG</span><span>Light, material, camera, sky and variant values as data, plus the pinned asset revision — so the frame is reproducible inside Travel and not just admirable (OD-02, OD-08).</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:14px;border-top:1px solid #2e2823;padding-top:9px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#62b6ab">NOTE</span><span>Which OPEN_DECISIONS the frame had to assume, and what it assumed. One line each.</span></div>
+    </div>
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #2e2823;font-size:13.5px;line-height:1.55;color:#b4aa9c">Silent red-team before building, no approval stop: what could a literal executor omit, fake, simplify or rename here and still claim PASS? Repair the plan, then build.</div>
+  </div>
+
+  <div style="border:1px solid #a63b3b;background:#1e1613;padding:20px 22px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#d2685f;margin-bottom:12px">GEORG DECISION · TWO QUESTIONS ONLY</div>
+    <div style="display:grid;gap:10px;font-size:15px;line-height:1.55;color:#ece6dc;max-width:74ch">
+      <div><strong style="font-weight:600">Wallpaper —</strong> <span style="color:#cdc4b8">would I keep this on screen?</span></div>
+      <div><strong style="font-weight:600">Extendability —</strong> <span style="color:#cdc4b8">can Birthday, Town and Travel grow naturally from this composition?</span></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.1em;color:#93b56b;border:1px solid #93b56b;padding:6px 11px;border-radius:3px">ACCEPT DIRECTION</span>
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.1em;color:#e0a251;border:1px solid #e0a251;padding:6px 11px;border-radius:3px">REPAIR</span>
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.1em;color:#d2685f;border:1px solid #d2685f;padding:6px 11px;border-radius:3px">REJECT DIRECTION</span>
+    </div>
+    <div style="margin-top:14px;font-size:14px;line-height:1.55;color:#cdc4b8;max-width:74ch">No editor build before an explicit <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px">ACCEPT DIRECTION</span>. No automatic continuation into G1. On REPAIR or REJECT the work stays inside this gate — nothing downstream starts.</div>
+  </div>
+
+  <sc-if value="{{ showEvidenceMatrix }}" hint-placeholder-val="{{ true }}">
+  <div style="margin-top:34px;border:1px solid #2e2823;background:#1a1713;padding:20px 22px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#968b80;margin-bottom:6px">AFTER ACCEPT · G1 EVIDENCE E1–E14 · REFERENCE ONLY, DO NOT BUILD YET</div>
+    <p style="margin:0 0 14px;font-size:13.5px;line-height:1.55;color:#b4aa9c;max-width:76ch">Listed here so the G0 frame is composed with the later proofs in mind — several of them are much cheaper if the composition anticipates them.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 22px;font-size:13.5px;line-height:1.5;color:#cdc4b8">
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E1</span> Stage frame, Birthday Sunset</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E2</span> Wide: terrain + lighthouse + Birthday zone</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E3</span> Select → move/rotate/scale → deform</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E4</span> 15–30 s: orbit, manipulate, variant, clouds</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E5</span> Save/reload table, seven categories</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E6</span> REAL / PLACEHOLDER list</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E7</span> Rainbow world-space proof, two cameras</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E8</span> Skew OFF vs ON, same camera + FOV</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E9</span> Night/Disco: overlay only, transforms stable</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E10</span> Coast/depth, annotated FG/MG/BG</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E11</span> Deformer strip by kind, with values</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E12</span> Speaker pair asymmetry, same source</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E13</span> Reload completeness, no blank rows</div>
+      <div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;color:#6d635a">E14</span> Named asset per Resource-Picker category</div>
+    </div>
+  </div>
+  </sc-if>
+</div>
+
+<div id="slots" style="padding:72px 0 0;scroll-margin-top:70px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:10px">
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;color:#ece6dc">HANDOFF_SLOTS</h2>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#6d635a">10 · ALL EMPTY</span>
+  </div>
+  <p style="margin:0 0 30px;font-size:15px;line-height:1.6;color:#b4aa9c;max-width:76ch">Named places for inputs that do not exist yet. Fill rule: additive — a slot gains content, it never overwrites the source it came from, and filling it updates the matching <a href="#decisions">OPEN_DECISIONS</a> line rather than deleting it.</p>
+
+  <div style="display:grid;gap:10px">
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-01</span><span style="font-size:16px;font-weight:600;color:#ece6dc">GothGirl / Little Miss Messy · FrankenStein Studio v18 report</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: the v18 actor report/export replacing <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">ACTOR INPUT UPDATE PENDING</span>. Fills: Georg / Studio owner. Unblocks: final actor look in the event layer — <em>not</em> G0.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-02</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Georg's world / setup drawing</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Empty · blocks OD-03</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: the spatial reference for Start Zone / Town — even a photographed napkin. Fills: Georg. Unblocks: fixed geography instead of provisional placement.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-03</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Accepted Fable G0 visual direction</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: the frame, its config, its REAL/PLACEHOLDER list and Georg's decision token. Fills: Fable + Georg. Unblocks: the G1 editor build. Until this slot is filled, no editor work starts.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-04</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Accepted G1 authoring target + scene/world bundle</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: runnable artifact, scene + world bundle, deformer/camera/variant configs, asset manifest with stable IDs, E1–E14. Fills: Fable. Unblocks: Astra integration — or an explicit <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">REIMPLEMENTATION REQUIRED</span> mark.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-05</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Theatre Curtain module acceptance (G3)</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: curtain alone on stage — idle / open / close / impact plus the fallback proof — and Georg's look-and-physics approval before scene integration. Fills: module owner once OD-04 is decided.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-06</span><span style="font-size:16px;font-weight:600;color:#ece6dc">KayKit Reference Atlas promotion / branch reconciliation</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: resolution of Georg's local-commit situation, then a decision whether the Atlas branch merges. Fills: Georg + Librarian. Unblocks: citing Atlas findings as product truth rather than pinned planning input.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-07</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Elisa B-Day reference folder · read + annotated</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #d2685f;color:#d2685f;border-radius:3px">Empty · G0 prerequisite</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: actual observations from Georg's mockup, the colour sheet and the screenshots — stated as observed, never inferred. Fills: whoever executes G0, before composing.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-08</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Existing deformer capability verdict</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: five lines on what <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">kfb-cartoon-deform.js</span> and <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">kfb-deform-instanced.js</span> already do against the E11 strip. Fills: anyone with 20 minutes. Closes: OD-06.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-09</span><span style="font-size:16px;font-weight:600;color:#ece6dc">Pinned asset revision for world work</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: one revision/pin replacing <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px">@main</span> for every asset the accepted frame loads. Fills: Astra / Registry owner. Closes: OD-08.</div>
+    </div>
+    <div style="border:1px dashed #3a332c;background:#1a1713;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#6d635a;letter-spacing:.08em">SLOT-10</span><span style="font-size:16px;font-weight:600;color:#ece6dc">ToolBox correctness round (brows · tapering · colour picker · zone textures)</span><span style="display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid #968b80;color:#968b80;border-radius:3px">Empty · other owner</span></div>
+      <div style="font-size:13.5px;line-height:1.55;color:#b4aa9c">Expects: the ToolBox/Studio owner's return on Georg's reported defects. Tracked here only so the world design never absorbs them as local fixes.</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:72px 0 0;border-top:1px solid #2e2823;margin-top:72px">
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:#968b80;text-transform:uppercase;margin-bottom:14px">What this pass did NOT do</div>
+  <div style="font-size:15px;line-height:1.7;color:#b4aa9c;max-width:76ch">No Astra implementation. No editor. No runtime change. No visual execution — G0 is briefed, not built. No merge or promotion of the Atlas branch. No new owner, no new contract, no renamed asset. No claim about files this pass did not open (S-11, S-14, S-28). The Birthday reference folder and the Midjourney sheets are still unread by anyone in this project; the next person to compose the world opens them first.</div>
+  <div style="margin-top:26px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;line-height:1.7;color:#6d635a">STOP · design project ready for Fable · next action = <a href="#g0" style="color:#62b6ab;border-bottom:none">FABLE_G0</a> after OD-01 and OD-02</div>
+</div>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStatusLegend&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Document&quot;},&quot;showRejectedHistory&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Document&quot;},&quot;showEvidenceMatrix&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Document&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showStatusLegend: this.props.showStatusLegend ?? true,
+      showRejectedHistory: this.props.showRejectedHistory ?? true,
+      showEvidenceMatrix: this.props.showEvidenceMatrix ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "schema": "kfb.public-mirror-provenance/0.1",
+  "sourceRepository": "georg-doc/KFB-Travel-Globe",
+  "sourceCommit": "d327b1700637e5cba94ac16d27e4a4d66983575b",
+  "sourcePath": "site/world/",
+  "mirrorRepository": "georg-doc/kayfabizarro",
+  "mirrorPath": "travel/wip/travel_globe_wsa/world/",
+  "updated": "2026-09-17",
+  "note": "Public mirror only. Travel remains implementation SSOT. W009 fixes the Prefab Lab null-root crash observed by Georg in Chrome; W010 adds the independent KFB Seed Lab zone-scatter POC. Productive terrain, scatter placement, movement and save ownership remain Travel-owned. Older provenance records remain historical."
+}

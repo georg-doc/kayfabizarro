@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.landmark-rig-v1-standalone-regression/0.1",
+  "date": "2026-09-19",
+  "status": "TESTED_RESULT",
+  "reportedError": "Viewer could not start: mulberry32 is not defined",
+  "rootCause": "Standalone packaging embedded City helpers as cityMulberry32 / cityStableHash / cityDeformPoint, while the injected Rig v1 block still referenced the module-source names mulberry32 / stableHash / deformPoint.",
+  "sourceFix": {
+    "path": "tools/img2threejs/landmarks/pilot-04/rig.mjs",
+    "blob": "9ed2d7b6186c52a0642901125bb441b4de9a3b3b",
+    "change": "Explicit import aliases: deformPoint as cityDeformPoint, stableHash as cityStableHash, mulberry32 as cityMulberry32; all internal calls now use those names."
+  },
+  "fixedStandaloneArtifact": {
+    "filename": "KFB_Landmark_Group_Rig_v1_1.html",
+    "bytes": 51352,
+    "sha256": "e600d3218040e2906863b6c464460d6ef8e8191d71f1aad3be3e6435d1ca6d31"
+  },
+  "checks": {
+    "nodeSyntax": true,
+    "noUnprefixedMulberry32Call": true,
+    "noUnprefixedStableHashCall": true,
+    "noUnprefixedDeformPointCall": true,
+    "embeddedCityMulberry32Defined": true,
+    "embeddedCityStableHashDefined": true,
+    "embeddedCityDeformPointDefined": true,
+    "sourceAliasImportPresent": true,
+    "sourceCoreRigSixModeCasesReevaluated": true
+  },
+  "coreRigReevaluation": [
+    {"model":"spasskaya","mode":"base","triangles":3496,"maxRigidErrorM":0},
+    {"model":"spasskaya","mode":"city-grotesque","triangles":3496,"maxRigidErrorM":3.9968028886505635e-15},
+    {"model":"spasskaya","mode":"soft-cubist","triangles":3496,"maxRigidErrorM":4.440892098500626e-15},
+    {"model":"kremlin-wall","mode":"base","triangles":5008,"maxRigidErrorM":0},
+    {"model":"kremlin-wall","mode":"city-grotesque","triangles":5008,"maxRigidErrorM":3.9968028886505635e-15},
+    {"model":"kremlin-wall","mode":"soft-cubist","triangles":5008,"maxRigidErrorM":3.9968028886505635e-15}
+  ],
+  "boundary": "The corrected standalone artifact was syntax- and packaging-guard checked. A successful WebGL render is still a separate human/browser gate."
+}

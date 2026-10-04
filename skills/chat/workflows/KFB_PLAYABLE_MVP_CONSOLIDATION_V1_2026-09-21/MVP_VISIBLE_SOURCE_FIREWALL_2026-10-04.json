@@ -1,0 +1,88 @@
+{
+  "schema": "kfb.mvp-visible-source-firewall/1",
+  "date": "2026-10-04",
+  "status": "BINDING_CURRENT_OVERRIDE",
+  "appliesTo": [
+    "PR #348",
+    "WB2 MVP",
+    "Golden Journey",
+    "One-Shot integrated candidate"
+  ],
+  "principle": "A donor may enter the product only in the dimensions for which it was accepted.",
+  "donorScopeClasses": [
+    "MECHANISM",
+    "PRESENTATION",
+    "CONTENT",
+    "DATA"
+  ],
+  "currentHumanResult": {
+    "visualEnvironmentFoundation": "FAIL",
+    "reason": "Primary GPT Site freeplay shows the Joyride/T4 visual road/world layer is missing; pale technical Track-Core road/support presentation dominates and world composition/livingness is not accepted."
+  },
+  "bannedVisibleByDefault": [
+    {
+      "pattern": "fixtures/huerth-b1-siblings-v0.json",
+      "reason": "technical Hürth/OSM fixture; not approved KFB Town/world content"
+    },
+    {
+      "pattern": "tools/osm-city-lab/",
+      "reason": "legacy OSM presentation family; may be used only for explicitly selected OSM use cases"
+    },
+    {
+      "pattern": "elastic-grotesque-clay-huerth01",
+      "reason": "Hürth visual donor; mechanism evidence does not authorize current MVP content"
+    }
+  ],
+  "allowedTechnicalReuse": [
+    "building support/contact logic",
+    "facade/window/door mechanism when decoupled from Hürth visible data",
+    "tests/measurement/provenance"
+  ],
+  "requiredVisibleProvenance": [
+    "WORLD_RECIPE explicit source family",
+    "Asset Librarian / Registry source",
+    "accepted KFB/KayKit/Tiny Treats source package",
+    "explicitly approved procedural grammar"
+  ],
+  "requiredStatuses": [
+    "TOPOLOGY_PASS",
+    "OWNER_PASS",
+    "BROWSER_RUNTIME_PASS",
+    "VISUAL_FOUNDATION_UNREVIEWED|HUMAN_VISUAL_PASS|HUMAN_VISUAL_FAIL"
+  ],
+  "recovery": {
+    "preserveCurrentWsaRun": false,
+    "nextMode": "ONE_VISUAL_WORLD_RECOVERY_PASS",
+    "forbidMicroSliceCascade": true,
+    "currentSite": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "republishSameSite": true
+  },
+  "requiredPresentation": [
+    {
+      "id": "joyride-j14-t4-presentation",
+      "pin": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "scope": "PRESENTATION",
+      "required": true,
+      "sources": {
+        "trackLookV5": "7c0d248391c3eaf1887a0afc97ee02b25f6dec85",
+        "roadMarkingsM1": "68a0c21a2c68c0b7db72046146008b474979ec15",
+        "transitionAtlasV1": "cfef150a74060bfc6ff00ab049529d8710845bfc"
+      },
+      "requirements": [
+        "T4 rounded clay strand language",
+        "K2 clay presentation",
+        "M1/M2 road markings",
+        "rounded clay barriers/band heads",
+        "transition-atlas clay patches/drops",
+        "terrain-integrated road silhouette rather than engineering slab dominance"
+      ],
+      "ownerRule": "Track Core keeps route/support/collision; Joyride presentation is adapted over that owner, never a second road runtime."
+    }
+  ],
+  "rejectedVisiblePresentation": [
+    {
+      "id": "track-core-engineering-final-look",
+      "rule": "Track/Core geometry may remain mechanism/support truth but its current pale slab/barrier appearance is not accepted as final KFB World Studio presentation."
+    }
+  ]
+}

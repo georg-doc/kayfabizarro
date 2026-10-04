@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.stage-intake/1",
+  "status": "INTENDED_ONLY_NOT_PUBLISHED_NOT_VERIFIED",
+  "date": "2026-09-20T04:58:00Z",
+  "coordinationRepo": "georg-doc/kayfabizarro",
+  "baseCommit": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+  "intendedBranch": "claude/cologne-race-option-c-2026-09-20",
+  "intendedStageRoute": "/kfb-hub/stage/stunt-world/cologne-option-c/",
+  "intendedStageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c/",
+  "buildMarker": "cologne-option-c · slice-C · 2026-09-20 · route 1997.4 m · 598 samples · 850 OMS buildings",
+  "producerCapabilities": {
+    "githubPush": false,
+    "pullRequest": false,
+    "ci": false,
+    "cloudflare": false,
+    "note": "Claude Design returns files only. Work/ChatGPT performs branch, PR, CI and Cloudflare publication and verification."
+  },
+  "filesToPublish": [
+    "KFB Cologne Race Option C.dc.html",
+    "lab-v9/option-c-style.v1.js",
+    "lab-v9/cologne-route.v1.js",
+    "lab-v9/cologne-track.v1.js",
+    "lab-v9/cologne-world.v1.js",
+    "lab-v9/cologne-play.v1.js",
+    "lab-v9/cologne-props.v1.js",
+    "lab-v9/cologne-stage.v1.js",
+    "lab-v9/probe.html",
+    "KFB_COLOGNE_OPTION_C_EXPORT/donor-isolation.html",
+    "KFB_COLOGNE_OPTION_C_EXPORT/RETURN.md",
+    "KFB_COLOGNE_OPTION_C_EXPORT/SOURCE.json",
+    "KFB_COLOGNE_OPTION_C_EXPORT/TEST_REPORT.md",
+    "KFB_COLOGNE_OPTION_C_EXPORT/CHANGELOG.md",
+    "KFB_COLOGNE_OPTION_C_EXPORT/STAGE_METADATA.json",
+    "KFB_COLOGNE_OPTION_C_EXPORT/screenshots/"
+  ],
+  "runtimeDependencies": {
+    "esm": [
+      "three@0.160.0 (unpkg)",
+      "pdfjs-dist@4.7.76 (jsdelivr)"
+    ],
+    "rawPinned": [
+      "tools/osm-city-lab/data/dom-zentrum-v0/normalized.json",
+      "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_{hatchback,sedan,stationwagon}.{gltf,bin}",
+      "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/citybits_texture.png",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/{billboard,camera_exclusive}.glb",
+      "media/kfb/index.json",
+      "media/kfb/<deck>.pdf",
+      "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/*.mp3"
+    ],
+    "local": [
+      "tools/osm-city-lab/data/dom-zentrum-v0/CLAUDE_CONTEXT.json"
+    ],
+    "note": "When served from the Stage route the RAW pin can be swapped for same-origin paths; the pin constant lives in lab-v9/cologne-world.v1.js."
+  },
+  "nextGate": "Georg human visual/freeplay review of Option C"
+}

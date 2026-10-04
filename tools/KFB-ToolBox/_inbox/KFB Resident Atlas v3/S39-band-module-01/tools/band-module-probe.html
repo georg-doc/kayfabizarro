@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>band-module-probe · RESIDENT-BAND-MODULE-01</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js"
+}}
+</script>
+<style>body{font:12px ui-monospace,monospace;background:#111;color:#ddd;margin:12px}pre{white-space:pre-wrap}</style>
+</head><body><pre id="o">läuft…</pre>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const L = new GLTFLoader();
+const out = {}; const o = document.getElementById('o');
+const H = 'tools/KFB-ToolBox/_handover/KAYFABIZARROS_ORC_BAND_POC_2026-09-23/';
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+const refs = ['refs/pull/195/head', 'pull/195/head'];
+async function tryLoad(path) {
+  for (const r of refs) {
+    const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${r}/${enc(path)}`;
+    try { const g = await L.loadAsync(url); return { g, url }; } catch (e) { out['fail:' + r + ':' + path.split('/').pop()] = String(e.message || e).slice(0, 120); }
+  }
+  return null;
+}
+const r3 = (v) => v.toArray().map((x) => +x.toFixed(4));
+function tree(root, depth = 0, max = 4, acc = []) {
+  if (depth > max) return acc;
+  for (const c of root.children) {
+    if (c.isBone && depth > 1) continue;
+    acc.push('  '.repeat(depth) + `${c.type}:${c.name} p${JSON.stringify(r3(c.position))} q${JSON.stringify(r3(c.quaternion))} s${JSON.stringify(r3(c.scale))}`);
+    tree(c, depth + 1, max, acc);
+  }
+  return acc;
+}
+function clips(g) {
+  return g.animations.map((a) => {
+    const targets = [...new Set(a.tracks.map((t) => t.name.split('.')[0]))];
+    return { name: a.name, dur: +a.duration.toFixed(3), tracks: a.tracks.length, targets: targets.slice(0, 80), nTargets: targets.length };
+  });
+}
+function propParents(scene, re) {
+  const acc = [];
+  scene.traverse((n) => { if (re.test(n.name)) acc.push({ name: n.name, type: n.type, parent: n.parent && n.parent.name, p: r3(n.position), q: r3(n.quaternion), s: r3(n.scale) }); });
+  return acc;
+}
+const band = await tryLoad(H + 'exports/orb_band_module_v5.glb');
+if (band) {
+  out.band = { url: band.url, clips: clips(band.g), tree: tree(band.g.scene, 0, 3),
+    props: propParents(band.g.scene, /(guitar|Guitar|Micro|micro|Wardrum|Stick|stick|Banner|Ground|drum)/) };
+}
+const dr = await tryLoad(H + 'mixamo/v5/drummer_v5_stehend_loop2.glb');
+if (dr) {
+  out.drummer5 = { url: dr.url, clips: clips(dr.g), tree: tree(dr.g.scene, 0, 3),
+    props: propParents(dr.g.scene, /(Wardrum|Stick|stick|drum|Club)/) };
+}
+/* ---- Stufe 2: Quellen einzeln, an ihren Pins ---- */
+const rawAt = (c, p) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${c}/${enc(p)}`;
+const S6 = 'media/3D_Assets/KayKit_Mystery_Series6/';
+const SRC = {
+  orcB: ['10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0', 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf'],
+  raider: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + '1 - July 2023 - Orc Raider/character/OrcRaider.glb'],
+  brute: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + '2 - August 2025 - Orc Brute/OrcBrute.glb'],
+  mic: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + 'GothGirl/assets/gltf/GothGirl_Microphone.gltf'],
+  guitarB: ['main', 'media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/guitar_B.gltf'],
+  drum: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + '1 - July 2023 - Orc Raider/assets/gltf/Orc_Wardrum.gltf.glb'],
+  stick: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + '1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb'],
+  banner: ['891eadf01e218f5fc21387e64cea1fec8332c5b6', S6 + '2 - August 2025 - Orc Brute/gltf/Orc_Banner_Large.gltf']
+};
+out.src = {};
+for (const [k, [c, p]] of Object.entries(SRC)) {
+  try {
+    const g = await L.loadAsync(rawAt(c, p));
+    const bones = []; const mats = new Set(); let maps = 0, meshes = 0;
+    g.scene.traverse((n) => { if (n.isBone) bones.push(n.name); if (n.isMesh) { meshes++; const ms = [].concat(n.material); ms.forEach((m) => { mats.add(m.name); if (m.map) maps++; }); } });
+    const b = new THREE.Box3().setFromObject(g.scene);
+    out.src[k] = { ok: true, bones: bones.length, boneNames: k === 'brute' || k === 'raider' ? bones.join(',') : undefined, meshes, mats: [...mats].join(','), maps,
+      box: [r3(b.min), r3(b.max)], tree: (k === 'orcB') ? tree(g.scene, 0, 3) : undefined, anims: g.animations.length };
+  } catch (e) { out.src[k] = { ok: false, err: String(e.message || e).slice(0, 100) }; }
+}
+try {
+  const pr = await (await fetch('https://api.github.com/repos/georg-doc/kayfabizarro/pulls/195')).json();
+  out.pr = { sha: pr.head && pr.head.sha, ref: pr.head && pr.head.ref, state: pr.state, title: pr.title, merged: pr.merged };
+} catch (e) { out.pr = { err: String(e) }; }
+try {
+  const cm = await (await fetch('https://api.github.com/repos/georg-doc/kayfabizarro/commits/main')).json();
+  out.main = cm.sha;
+} catch (e) { out.main = String(e); }
+try {
+  const ap = 'media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3';
+  const buf = new Uint8Array(await (await fetch(rawAt('main', ap))).arrayBuffer());
+  const head = new TextEncoder().encode(`blob ${buf.length}\0`);
+  const all = new Uint8Array(head.length + buf.length); all.set(head); all.set(buf, head.length);
+  const h = [...new Uint8Array(await crypto.subtle.digest('SHA-1', all))].map((x) => x.toString(16).padStart(2, '0')).join('');
+  out.audio = { bytes: buf.length, gitBlob: h, expected: '368eb5ae8fafcfba1cce3ba3f80488378fe056b0', match: h === '368eb5ae8fafcfba1cce3ba3f80488378fe056b0', first: [...buf.slice(0, 4)] };
+} catch (e) { out.audio = { err: String(e) }; }
+delete out.band.tree; delete out.drummer5.tree;
+o.textContent = JSON.stringify(out, null, 1);
+{ const s = JSON.stringify(out); const n = 480; for (let i = 0; i < s.length; i += n) console.log('P' + (i / n), s.slice(i, i + n)); }
+window.__probe = out;
+</script></body></html>

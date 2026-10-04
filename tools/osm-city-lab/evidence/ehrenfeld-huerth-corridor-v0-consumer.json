@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.osm-city.corridor-consumer-report.v0",
+  "id": "ehrenfeld-huerth-corridor-v0",
+  "generatedAt": "2026-09-19T02:27:19.744Z",
+  "sourceSha256": "a6a6479e540a9c89d73da86a34313708920e5b0e1f551c9ca4c61c59d06928f6",
+  "normalizedSha256": "e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f",
+  "sceneSha256": "258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d",
+  "sourceElements": 117750,
+  "routeNodes": 510,
+  "routePhysicalLengthM": 11384.3,
+  "halfWidthM": 220,
+  "featureCounts": {
+    "before": {
+      "roads": 3958,
+      "buildings": 14492,
+      "landuse": 474,
+      "waterLines": 15
+    },
+    "after": {
+      "roads": 2486,
+      "buildings": 7420,
+      "landuse": 332,
+      "waterLines": 2
+    }
+  },
+  "bounds": {
+    "min": {
+      "x": -2808.167,
+      "z": -4663.116
+    },
+    "max": {
+      "x": 752.049,
+      "z": 5072.438
+    },
+    "sizeM": {
+      "x": 3560.216,
+      "z": 9735.554
+    }
+  },
+  "gates": {
+    "sourceFresh": true,
+    "sourceShaMatches": true,
+    "metreFrame": true,
+    "routePreserved": true,
+    "routeBandPresent": true,
+    "roadsRemain": true,
+    "buildingsRemain": true,
+    "roadSegmentsInsideSelection": true,
+    "osmIdsPreserved": true,
+    "finiteValues": true,
+    "endpointJoins": true,
+    "landmarkSocket": true,
+    "movementOwnerUnchanged": true,
+    "deterministic": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+ "schema": "kfb.claude-design-session-cut/1",
+ "slice": "Lids level/roll + painted-mouth fit (FB-MOUTH-FIT-01) + Blender MCP/WSA handover",
+ "date": "2026-09-30",
+ "entry": "KFB ToolBox Production-06.dc.html",
+ "repo": "georg-doc/kayfabizarro",
+ "pins": {
+  "PIN": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+  "EAR": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+  "MAIN": "b64d7edca3ec0d184d97f1b3a5db0103332e3e54",
+  "ML": "032c9d50cd5de6764fa37fec65cb203ed35fcb11",
+  "ML3": "4fa082714c7200f6926008a1cd0b34db8df4dbad",
+  "STOCK": "b97b5ac55df2724fae623992433685583eece51e",
+  "LEG": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+  "other": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+  "hair": "eabc87255ee3da6283f9d438390454d70e9d2e55"
+ },
+ "sources": [
+  {
+   "role": "build instruction",
+   "path": "skills/chat/workflows/FB_MOUTH_FIT_01_2026-09-30/{START_HERE.md,MEASURE.json,source/build.py,renders/before_after.png}",
+   "ref": "georg-doc-patch-3",
+   "note": "read from the local Blender MCP folder (BLENDER MCP/FB_MOUTH_FIT_01); commit sha not recorded"
+  },
+  {
+   "role": "build instruction",
+   "path": "BLENDER MCP/FB_EYES_LIDS_02, FB_EARS_FLOPPY_01, FB_EYE_LIDS_01",
+   "ref": "local folder, earlier turns"
+  },
+  {
+   "role": "lane handover (read)",
+   "path": "BLENDER MCP/BLENDER_MCP_LANE_2026-09-30/{HANDOVER_WSA_CHAT.md,BACKLOG.md}",
+   "ref": "local folder"
+  },
+  {
+   "role": "model",
+   "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb",
+   "rev": "23615cff"
+  }
+ ]
+}

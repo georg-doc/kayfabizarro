@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · Asset Library v1</title>
+<style>
+:root{--paper:#f3ede1;--card:#faf7f2;--p2:#ede8dc;--p3:#e9e1d2;--ink:#221c14;--ink3:#7a6f5c;--ink4:#a89a80;--rust:#b5502e;--accent:#8b6914;--border:#d8cdb8;--r:8px}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+.head{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:9px 18px;background:var(--card);border-bottom:2px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .m{width:36px;height:36px;background:var(--rust);color:#f5f0e8;border:1.5px solid var(--ink);font-weight:800;font-size:12px;display:grid;place-items:center;border-radius:var(--r);line-height:.95;text-align:center}
+.brand b{font-size:16px;letter-spacing:-.01em}.brand small{display:block;font-size:9.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.search{position:relative;max-width:520px;width:100%;justify-self:center}
+.search input{width:100%;font-size:14px;padding:8px 14px;background:var(--paper);border:1px solid var(--border);border-radius:var(--r);color:var(--ink);outline:none}
+.search .ic{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--ink3)}
+.count{font-size:12px;color:var(--ink3);white-space:nowrap;cursor:pointer}
+.types{display:flex;gap:5px;padding:8px 18px;border-bottom:1px solid var(--border);background:var(--card);flex-wrap:wrap}
+.types button{padding:5px 12px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:600;background:var(--paper);color:var(--ink3);cursor:pointer;display:flex;gap:6px;align-items:center}
+.types button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.types button .n{font-size:10.5px;opacity:.7}
+.crumb{padding:9px 18px;font-size:13px;color:var(--ink3);border-bottom:1px solid var(--border);background:var(--card);min-height:36px}
+.crumb a{color:var(--rust);cursor:pointer;text-decoration:none}.crumb a:hover{text-decoration:underline}
+.crumb span.sep{margin:0 6px;color:var(--ink4)}
+main{padding:16px 18px 60px}
+.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:border-color .12s,transform .12s;position:relative}
+.card:hover{border-color:var(--rust);transform:translateY(-2px)}
+.th{position:relative;aspect-ratio:1/1;background:repeating-conic-gradient(var(--p3) 0 25%,var(--paper) 0 50%) 0/22px 22px;background-repeat:no-repeat;background-position:center;background-size:contain;image-rendering:pixelated;display:grid;place-items:center}
+.card.folder .th{background-size:cover;image-rendering:auto;filter:saturate(.95)}
+.card.model .th,.card.audio .th{background:var(--p2);image-rendering:auto}
+.th .glyph{font-size:34px;opacity:.5}
+.th .play{position:absolute;bottom:8px;right:8px;width:30px;height:30px;border-radius:50%;background:var(--rust);color:#fff;border:0;font-size:13px;cursor:pointer;display:grid;place-items:center;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.cap{padding:6px 8px;font-size:11.5px;color:var(--ink3);border-top:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;justify-content:space-between;gap:6px}
+.cap b{color:var(--ink);font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.badge{position:absolute;top:6px;left:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 5px;border-radius:4px;color:#f5f0e8}
+.b-img{background:#5a7a2e}.b-tex{background:#7a5a2e}.b-3d{background:#2e5a7a}.b-audio{background:#7a2e5a}
+.badge2{background:var(--p3);border-radius:20px;padding:0 7px;font-size:10.5px;color:var(--ink3);flex:none}
+.fi{position:absolute;top:6px;left:6px;background:rgba(34,28,20,.8);color:var(--paper);font-size:10px;padding:1px 6px;border-radius:5px}
+.strip .th::after{content:"▶ anim";position:absolute;bottom:6px;right:6px;background:rgba(34,28,20,.72);color:var(--paper);font-size:9px;padding:1px 5px;border-radius:4px;pointer-events:none}
+.empty{color:var(--ink4);padding:40px;text-align:center}
+.dr{position:fixed;top:0;right:0;height:100%;width:440px;max-width:94vw;background:var(--card);border-left:2px solid var(--ink);transform:translateX(100%);transition:transform .2s;z-index:80;overflow-y:auto;padding:16px}
+.dr.on{transform:translateX(0)}
+.dr .big{aspect-ratio:1/1;background:repeating-conic-gradient(var(--p3) 0 25%,var(--paper) 0 50%) 0/26px 26px;background-repeat:no-repeat;background-position:center;background-size:contain;image-rendering:pixelated;border:1px solid var(--border);border-radius:var(--r);margin-bottom:10px;display:grid;place-items:center}
+.dr .big.plain{background:var(--p2);image-rendering:auto}
+.dr h3{margin:0 0 3px;font-size:15px;word-break:break-all}
+.dr .p{font-size:12px;color:var(--ink3);margin:2px 0;word-break:break-all}
+.dr audio{width:100%;margin:8px 0}
+.dr .url{font-size:10.5px;background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:7px;word-break:break-all;margin:8px 0}
+.dr .row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.dr .btn{background:var(--ink);color:var(--card);border:0;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;display:inline-block}
+.dr .btn.o{background:transparent;color:var(--ink);border:1px solid var(--border)}
+.dr .x{position:absolute;top:12px;right:14px;background:transparent;border:0;font-size:20px;cursor:pointer;color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="brand"><div class="m">KFB</div><div><b>Asset Library</b><small id="sub">live · alle Medien</small></div></div>
+  <div class="search"><input id="q" type="search" placeholder="Suche…" autocomplete="off"></div>
+  <div class="count" id="count" title="klicken: live neu laden">…</div>
+</div>
+<div class="types" id="types"></div>
+<div class="crumb" id="crumb"></div>
+<main><div class="grid" id="grid"></div></main>
+<div class="dr" id="dr"><button class="x" onclick="closeDr()">×</button><div id="drin"></div></div>
+
+<script>
+// ===== KFB Asset Library v1 — reiner Live-Tree, kein gebackener Katalog (Asset-Wahrheit-Kanon) =====
+// Listing: GitHub-Baum (ein Aufruf). Bytes: raw.githubusercontent (CORS *, lokal + gehostet nutzbar).
+const TREE='https://api.github.com/repos/georg-doc/kayfabizarro/git/trees/main?recursive=1';
+const BYTE='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
+const ROOTS=['media/2D_Assets/','media/3D_Assets/'];
+const RX_IMG=/\.(png|jpe?g|gif|webp|svg|bmp)$/i, RX_MODEL=/\.(glb|gltf)$/i, RX_AUDIO=/\.(wav|mp3|ogg|m4a|flac|aac)$/i;
+const CKEY='kfb-lib-tree-v1';
+const $=id=>document.getElementById(id);
+const byteURL=p=>BYTE+p.split('/').map(encodeURIComponent).join('/');
+let items=[], folderPaths=[], path=[], q='', kind='all';
+
+function kindOf(p){ if(RX_AUDIO.test(p))return 'audio'; if(RX_MODEL.test(p))return 'model'; if(RX_IMG.test(p))return 'image'; return null; }
+function ingest(d){
+  if(!d||!d.tree){$('grid').innerHTML='<div class="empty">Unerwartete Tree-Antwort.</div>';return;}
+  const seen={};items=[];folderPaths=[];
+  for(const it of d.tree){
+    if(it.type!=='blob')continue;
+    if(!ROOTS.some(r=>it.path.startsWith(r)))continue;
+    const k=kindOf(it.path); if(!k)continue;
+    const seg=it.path.split('/'),file=seg.pop(),fp=seg.join('/');
+    const tex=/\/Textures\//i.test(it.path);
+    seen[fp]=1;
+    items.push({path:it.path,fp,file,kind:k,tex,url:byteURL(it.path),key:it.path.toLowerCase()});
+  }
+  // alle Zwischenordner registrieren (für die Navigation)
+  const all={}; for(const fp of Object.keys(seen)){ const s=fp.split('/'); for(let i=1;i<=s.length;i++)all[s.slice(0,i).join('/')]=1; }
+  folderPaths=Object.keys(all);
+  if(d.truncated)console.warn('[lib] Tree abgeschnitten — Repo sehr groß');
+  buildTypes(); render();
+}
+function loadTree(force){
+  if(!force){try{const c=JSON.parse(sessionStorage.getItem(CKEY)||'null');if(c&&Date.now()-c.t<600000){ingest(c.d);return;}}catch(e){}}
+  $('grid').innerHTML='<div class="empty">Lade Ordnerbaum (live aus GitHub)…</div>';
+  fetch(TREE,{cache:'no-store'}).then(r=>{if(r.status===403)throw new Error('GitHub-Rate-Limit (60/h) — kurz warten, dann Zähler klicken');return r.json();})
+    .then(d=>{try{sessionStorage.setItem(CKEY,JSON.stringify({t:Date.now(),d}));}catch(e){}ingest(d);})
+    .catch(e=>{$('grid').innerHTML='<div class="empty">Live-Tree nicht ladbar.<br>'+e+'</div>';});
+}
+$('count').addEventListener('click',()=>loadTree(true));
+
+// ---- Typ-Filter ----
+const KINDS=[
+  {id:'all',  lab:'Alle',     test:()=>true},
+  {id:'image',lab:'Bilder',   test:a=>a.kind==='image'&&!a.tex},
+  {id:'model',lab:'3D',       test:a=>a.kind==='model'},
+  {id:'audio',lab:'Audio',    test:a=>a.kind==='audio'},
+  {id:'tex',  lab:'Texturen', test:a=>a.kind==='image'&&a.tex},
+];
+function kTest(id){return KINDS.find(k=>k.id===id).test;}
+function buildTypes(){
+  $('types').innerHTML=KINDS.map(k=>{
+    const n=k.id==='all'?items.length:items.filter(k.test).length;
+    return `<button data-k="${k.id}" class="${k.id===kind?'on':''}">${k.lab}<span class="n">${n}</span></button>`;
+  }).join('');
+  $('types').querySelectorAll('button').forEach(b=>b.onclick=()=>{kind=b.dataset.k;path=[];q='';$('q').value='';render();});
+}
+
+// ---- Navigation ----
+function childNames(cur){const L=cur.length,pre=cur.join('/'),out={};
+  for(const fp of folderPaths){const s=fp.split('/');
+    if(s.length>L && (L===0||s.slice(0,L).join('/')===pre)){out[s[L]]=1;}}
+  return Object.keys(out).sort();}
+function coverOf(prefix){const p=items.find(i=>i.kind==='image'&&(i.fp===prefix||i.fp.startsWith(prefix+'/')));return p?p.url:null;}
+function countUnder(prefix){return items.filter(i=>i.fp===prefix||i.fp.startsWith(prefix+'/')).length;}
+function filesAt(cur){const j=cur.join('/');return items.filter(i=>i.fp===j);}
+
+function render(){
+  $('types').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kind));
+  // gefilterter Modus (Typ ≠ Alle) ODER Suche → flache Liste über alles
+  if(kind!=='all' || q){
+    const t=kTest(kind),s=q.toLowerCase();
+    const list=items.filter(i=>t(i)&&(!q||i.key.includes(s)));
+    $('crumb').innerHTML='<a onclick="reset()">Alle</a><span class="sep">/</span>'+
+      (kind!=='all'?KINDS.find(k=>k.id===kind).lab:'Suche')+(q?' · „'+q+'"':'');
+    $('count').textContent=list.length+' Treffer';
+    grid(list.map(imgCard).join('')||'<div class="empty">nichts gefunden</div>');after(list);
+    return;
+  }
+  // Ordner-Navigation
+  cfgCrumb();
+  const kids=childNames(path),files=filesAt(path);
+  $('count').textContent=(kids.length?kids.length+' Ordner · ':'')+files.length+' Dateien';
+  let h=kids.map(name=>{const pre=path.concat(name).join('/');return folderCard(name,countUnder(pre),coverOf(pre));}).join('');
+  h+=files.map(imgCard).join('');
+  grid(h||'<div class="empty">leer</div>');after(files);
+}
+function grid(h){$('grid').innerHTML=h;}
+function reset(){kind='all';path=[];q='';$('q').value='';render();}
+function cfgCrumb(){let h='<a onclick="go([])">Alle</a>';let acc=[];
+  for(const seg of path){acc=acc.concat(seg);const a=JSON.stringify(acc);h+='<span class="sep">/</span><a onclick=\'go('+a+')\'>'+seg.split('/').pop()+'</a>';}
+  $('crumb').innerHTML=h;}
+function go(p){path=p;q='';$('q').value='';render();}
+function drill(name){path=path.concat(name);render();}
+
+function folderCard(name,n,cover){
+  return '<div class="card folder" onclick=\'drill('+JSON.stringify(name)+')\'>'+
+    '<div class="th" style="'+(cover?'background-image:url(\''+cover+'\')':'')+'"><span class="fi">Ordner</span></div>'+
+    '<div class="cap"><b>'+name+'</b><span class="badge2">'+n+'</span></div></div>';}
+
+function imgCard(i){
+  const bcls={image:i.tex?'b-tex':'b-img',model:'b-3d',audio:'b-audio'}[i.kind];
+  const blab={image:i.tex?'TEX':'2D',model:'3D',audio:'AUD'}[i.kind];
+  let th;
+  if(i.kind==='image'){ th='<div class="th" style="background-image:url(\''+i.url+'\')"></div>'; }
+  else if(i.kind==='model'){ th='<div class="th"><span class="glyph">◧</span></div>'; }
+  else { th='<div class="th"><span class="glyph">♪</span><button class="play" data-play="'+enc(i.url)+'" title="anspielen">▶</button></div>'; }
+  return '<div class="card '+i.kind+'" data-url="'+enc(i.url)+'" data-file="'+enc(i.file)+'" data-fp="'+enc(i.fp)+'" data-kind="'+i.kind+'">'+
+    '<span class="badge '+bcls+'">'+blab+'</span>'+th+
+    '<div class="cap" title="'+i.file+'"><b>'+i.file+'</b></div></div>';}
+function enc(s){return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+
+let curAudio=null;
+function after(list){
+  // Spritesheet-Erkennung + Hover-Animation nur für Bilder
+  for(const card of document.querySelectorAll('.card.image')){
+    const u=card.dataset.url,th=card.querySelector('.th');
+    const im=new Image();im.onload=()=>{const r=im.naturalWidth/im.naturalHeight;
+      if(r>1.8){const frames=Math.max(2,Math.round(r));card.classList.add('strip');
+        th.style.backgroundSize='auto 100%';th.style.backgroundPosition='0 center';
+        let t=null,fi=0;const H=()=>th.clientHeight||150;
+        card.addEventListener('mouseenter',()=>{t=setInterval(()=>{fi=(fi+1)%frames;th.style.backgroundPositionX=(-fi*H())+'px';},110);});
+        card.addEventListener('mouseleave',()=>{clearInterval(t);fi=0;th.style.backgroundPositionX='0px';});
+      }};im.src=u;}
+  // Inline-Play für Audio-Kacheln
+  for(const pb of document.querySelectorAll('.play')){
+    pb.addEventListener('click',e=>{e.stopPropagation();const u=pb.dataset.play;
+      if(curAudio){curAudio.pause();const prev=document.querySelector('.play.pl');if(prev){prev.textContent='▶';prev.classList.remove('pl');}}
+      if(pb.classList.contains('pl')){pb.textContent='▶';pb.classList.remove('pl');curAudio=null;return;}
+      curAudio=new Audio(u);curAudio.play().catch(()=>{});pb.textContent='⏸';pb.classList.add('pl');
+      curAudio.onended=()=>{pb.textContent='▶';pb.classList.remove('pl');};});}
+  // Klick auf Kachel → Drawer
+  for(const card of document.querySelectorAll('.card[data-kind]'))
+    card.addEventListener('click',()=>openDr(card));
+}
+
+// ---- Detail-Drawer ----
+function openDr(card){
+  const u=card.dataset.url,file=card.dataset.file,fp=card.dataset.fp,k=card.dataset.kind;
+  let big;
+  if(k==='image')      big='<div class="big" style="background-image:url(\''+u+'\')"></div>';
+  else if(k==='model') big='<div class="big plain" id="modelbox"><span class="glyph" style="font-size:52px">◧</span></div>';
+  else                 big='<div class="big plain"><span class="glyph" style="font-size:52px">♪</span></div>';
+  let media = k==='audio' ? '<audio controls autoplay src="'+u+'"></audio>' : '';
+  $('drin').innerHTML=big+media+
+    '<h3>'+file+'</h3><div class="p"><b>Ordner:</b> '+fp+'</div>'+
+    '<div class="url" id="u">'+u+'</div>'+
+    '<div class="row"><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById(\'u\').textContent)">RAW-URL kopieren</button>'+
+    '<a class="btn o" href="'+u+'" target="_blank" rel="noopener">↗ Datei öffnen</a></div>';
+  $('dr').classList.add('on');
+  if(k==='model' && window.KFB3D){ try{ window.KFB3D.show($('modelbox'), u); }catch(e){} }
+}
+function closeDr(){$('dr').classList.remove('on');if(curAudio){curAudio.pause();curAudio=null;}}
+$('q').addEventListener('input',e=>{q=e.target.value;render();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDr();});
+
+loadTree(false);
+</script>
+
+<!-- Echte 3D-GLB-Vorschau (three.js) — unverändert aus dem bisherigen 3D-Browser übernommen -->
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+let R, scene, cam, cur=null, raf=null, drag=false, px=0, py=0, idle=0;
+const loader = new GLTFLoader();
+function init(){
+  R = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+  R.setPixelRatio(Math.min(devicePixelRatio,2));
+  R.domElement.style.cssText='width:100%;height:100%;display:block;cursor:grab;border-radius:8px';
+  scene = new THREE.Scene();
+  cam = new THREE.PerspectiveCamera(40,1,0.01,2000);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x8a7f66,1.1));
+  const d = new THREE.DirectionalLight(0xffffff,1.4); d.position.set(3,6,4); scene.add(d);
+  scene.add(new THREE.AmbientLight(0xffffff,0.4));
+  R.domElement.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;idle=0;});
+  addEventListener('pointerup',()=>drag=false);
+  addEventListener('pointermove',e=>{ if(!drag||!cur)return; cur.rotation.y+=(e.clientX-px)*0.01; cur.rotation.x+=(e.clientY-py)*0.01; px=e.clientX;py=e.clientY;idle=0; });
+}
+function frame(obj){
+  const b=new THREE.Box3().setFromObject(obj);
+  const c=b.getCenter(new THREE.Vector3()); obj.position.sub(c);
+  const rad=(b.getBoundingSphere(new THREE.Sphere()).radius)||1;
+  const dist=rad*3.4;
+  cam.position.set(0, dist*0.42, dist); cam.near=Math.max(rad*0.02,0.001); cam.far=dist*6; cam.lookAt(0,0,0); cam.updateProjectionMatrix();
+}
+window.KFB3D = { show(container,url){
+  if(!container) return;
+  if(!R) init();
+  container.innerHTML=''; container.style.position='relative'; container.appendChild(R.domElement);
+  const w=container.clientWidth||300, h=container.clientHeight||w; R.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+  if(cur){ scene.remove(cur); cur=null; }
+  const note=document.createElement('div'); note.textContent='lädt 3D …';
+  note.style.cssText='position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a7d5f;font-size:12px;pointer-events:none';
+  container.appendChild(note);
+  loader.load(url, g=>{ note.remove(); cur=g.scene; frame(cur); scene.add(cur); }, undefined, ()=>{ note.textContent='3D nicht ladbar'; });
+  if(!raf){ const loop=()=>{ raf=requestAnimationFrame(loop); idle+=0.016; if(cur&&idle>1.5)cur.rotation.y+=0.005; if(R)R.render(scene,cam); }; loop(); }
+}};
+</script>
+</body>
+</html>

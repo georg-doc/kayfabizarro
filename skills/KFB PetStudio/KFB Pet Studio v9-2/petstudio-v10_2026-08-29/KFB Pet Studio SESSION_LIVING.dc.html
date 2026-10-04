@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e4d9c0"/><rect x="30" y="30" width="40" height="40" rx="4" fill="#f7f0da" stroke="#1f1a14" stroke-width="3"/><text x="50" y="58" font-family="monospace" font-size="18" text-anchor="middle" fill="#1f1a14">v9</text></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #e4d9c0; }
+  a { color: #4d7488; text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: #1f1a14; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:radial-gradient(120% 100% at 50% 0%,#f7f2e6 0%,#e4d9c0 70%);padding:40px 24px 80px;font-family:'Space Grotesk',system-ui,sans-serif;color:#1f1a14;">
+  <div style="max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:26px;">
+
+    <div style="display:flex;flex-direction:column;gap:10px;border-bottom:2px solid #1f1a14;padding-bottom:18px;">
+      <div style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6f6753;">Living Document · additiv geführt · Stand 29.08.2026 (spät) · Nachtrag: v10 · Rolli geschlossen · Recherchi importiert</div>
+      <h1 style="margin:0;font-family:'Special Elite',monospace;font-size:38px;line-height:1.1;font-weight:400;">KFB Pet Studio v9</h1>
+      <div style="font-size:16.5px;line-height:1.6;color:#3a342a;max-width:74ch;text-wrap:pretty;">Das Pad als Bauteil, und der Zipfel der Sprechblase als eigenes Ding. Gebaut wird an <strong>KFB Pet Studio v9.dc.html</strong>; <strong>v8 ist eingefroren</strong> und bleibt Vergleichsmaßstab. Kein Modul unter <code style="font-family:'Special Elite',monospace;">studio-v7/</code> oder <code style="font-family:'Special Elite',monospace;">studio-v8/</code> wurde angefasst.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;background:#f7f0da;border:2px solid #1f1a14;box-shadow:5px 5px 0 rgba(31,26,20,.18);">
+      <div style="font-family:'Special Elite',monospace;font-size:16px;">Einstieg für den nächsten Chat</div>
+      <div style="font-size:15.5px;line-height:1.7;color:#3a342a;">Dieses Blatt → <strong>docs/CHANGELOG_studio.md</strong> (oben <strong>V9-S2</strong>, der Re-Home-Nachtrag mit R16; darunter <strong>V9-S1</strong> mit allen Bauzahlen) → <strong>docs/studio-v5/POST_MORTEM_v5.md</strong> und <strong>docs/spinballcast-v3/POST_MORTEM_re-home.md</strong> (die Hausregeln, alle bezahlt) → <strong>HOUSEKEEPING.md</strong>. Messgriff im laufenden Studio: <code style="font-family:'Special Elite',monospace;background:#e7dcc4;padding:1px 5px;">window.__STUDIO9</code> (die alten Namen <code style="font-family:'Special Elite',monospace;">__STUDIO5…8</code> zeigen auf dieselbe Instanz, damit alte Abnahmeskripte laufen).</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;padding:22px 24px;background:#f3e6d0;border:2px solid #b8361f;box-shadow:5px 5px 0 rgba(31,26,20,.18);">
+      <div style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8a2d19;">Nachtrag 29.08.2026, spät · neueste Zeile oben</div>
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">v10 · Rolli geschlossen, Recherchi importiert</h2>
+
+      <div style="font-size:15.5px;line-height:1.7;color:#3a342a;text-wrap:pretty;">Georg nach sechs Korrekturrunden: <em>»das wird mir echt zu albern hier«</em>. Er hatte recht. Rolli ist <strong>kein Fehler in einer Zahl</strong>, sondern in der Konstruktion: Gesichtsteile der Cube-Pets auf ein fremdes Achtkant-Rohr geklebt, plus eine Verlet-Tuchsimulation für ein Blatt, das gerade herunterhängen soll. Sechs Befunde, sechs <strong>verschiedene</strong> Ursachen — die Signatur einer zu komplexen Vorrichtung. Vollständig in <strong>docs/petstudio-v10/POST_MORTEM_rolli_v10.md</strong>.</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="padding:14px 16px;background:#faf5e8;border-left:3px solid #5d6b3a;font-size:14.5px;line-height:1.55;"><strong>Das Blatt ist jetzt flach.</strong> <code style="font-family:'Special Elite',monospace;">SPEC.paper.mode = 'flat'</code>: ein weißes Rechteck, Oberkante <strong>0,0094 innen</strong> an der vorderen unteren Rollenfläche, dann senkrecht. Gemessen: Abweichung aus der Senkrechten <strong>0,000000</strong>, Zittern über 300 Bilder <strong>0,00000000</strong>, Länge exakt gleich Soll. Der Tuch-Code bleibt unbenutzt mit seinen Messwerten in der Datei.</div>
+        <div style="padding:14px 16px;background:#faf5e8;border-left:3px solid #b8361f;font-size:14.5px;line-height:1.55;"><strong>Die Regel, die gefehlt hat:</strong> wenn dieselbe Stelle <strong>dreimal</strong> einen Befund bekommt, ist die dritte Antwort keine Zahl mehr — dann wird die Konstruktion gewechselt. Drei war bei Runde drei erreicht; ich habe bis sechs weitergemacht.</div>
+        <div style="padding:14px 16px;background:#faf5e8;border-left:3px solid #4d7488;font-size:14.5px;line-height:1.55;"><strong>Recherchi liegt im Projekt</strong> (<code style="font-family:'Special Elite',monospace;">recherchi-v4/</code>, 8 Dateien, 371 KB, keine über 2 MB) — lauffähig als eigene Einheit, <strong>nicht</strong> in das Studio hineingebaut. Grund, gemessen: er braucht <strong>three 0.185 webgpu</strong> + HTML-Polyfill, das Studio hält seine eigene three-Instanz. Zwei Instanzen wären genau das zweite System, vor dem seine eigene Spec warnt.</div>
+        <div style="padding:14px 16px;background:#faf5e8;border-left:3px solid #7a5a92;font-size:14.5px;line-height:1.55;"><strong>Zwei Voreinstellungen korrigiert:</strong> Sprechblase und Tipp-Punkte starten <strong>aus</strong> (beide lagen im Gesicht-Reiter über den Augen); die Punkte hingen vorher nur daran, dass die Blase zu ist — Sichtbarkeit ist jetzt ein eigener Schalter. Mund-Regler: Größe bis <strong>1,6</strong>, Höhe <strong>±1,8</strong>, Breite bis <strong>3,5</strong> — Georg stand auf allen drei alten Anschlägen, Rollis Vertragswert 0,52 war größer als das alte Maximum 0,15.</div>
+      </div>
+
+      <div style="padding:14px 16px;background:#e9edde;border:1px solid #cfc3a4;font-size:14.5px;line-height:1.6;text-wrap:pretty;"><strong>Für WS1:</strong> Rolli nicht weiter als Montage bauen — eigenes Modell mit Augen und Mund als Teil der Form, oder 2D. Das Ruhebild bleibt flach; ein Fall-Blatt ist ein eigener Schnitt mit eigenem Abnahmekriterium, nicht die Rückkehr des Tuchs. Offene Look-Zahl, unentschieden: das GLB-Papier der <strong>Rolle</strong> trägt Metall 0,400 und liest halbglänzend, das Blatt ist weiß und matt.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Das Vokabular</h2>
+      <div style="font-size:15px;line-height:1.6;color:#6f6753;max-width:74ch;text-wrap:pretty;">Zwei Runden gingen an Begriffen verloren. Georg hat den Ursprung selbst gefunden: »Pads« war ein Audio-Bug für »Pets« — und hat den Begriff danach neu und breiter besetzt. Was jetzt gilt:</div>
+      <div style="display:grid;grid-template-columns:minmax(110px,auto) 1fr;gap:1px;background:#cfc3a4;border:1px solid #cfc3a4;">
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Pad</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Alles mit einer Bodenfläche: Pet, Requisite, Klo-Rolli. Das <em>ganze</em> Bauteil — Modell, Base, Emotes, Mund, Bubble, Klang — als ein Modul, einhängbar in SpinballCast.</div>
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Base</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Die graue Fläche darunter. Sie fängt den Schatten, trägt den Kontaktsaum und ist Empfängerin der Boden-VFX.</div>
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Anker</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Punkte am Pad für Gear: Hüfte, Hand-Entsprechungen, Kopf, Fuß, Mund, Bubble. Cartoon-Anatomie, weil ein Cube-Pet keine Gelenke hat.</div>
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Bubble</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Sammelbegriff für alle vier Arten: <strong>Speech</strong> · <strong>Thought</strong> · <strong>Whisper</strong> · <strong>Scream</strong>.</div>
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Ansatz</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Die zwei Punkte, wo der Pfeil aus der Bubble-Kante wächst. <em>Nicht</em> die Füße des Pets — das war mein Wortfehler, sofort umbenannt.</div>
+        <div style="background:#efe6d3;padding:11px 14px;font-weight:600;font-size:15px;">Spitze</div>
+        <div style="background:#faf5e8;padding:11px 14px;font-size:15px;line-height:1.55;">Das dünne Ende des Pfeils, das man zieht. Speech, Whisper und Scream haben Ansatz und Spitze; <strong>Thought hat eine Spur</strong>.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Georgs Festlegungen (27.08.)</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #5d6b3a;font-size:14.5px;line-height:1.55;"><strong>Ein Pad pro Pet</strong>, genau eines — mit Ankern für Props, weil »pets haben keine hände«.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #5d6b3a;font-size:14.5px;line-height:1.55;">Die Konfiguration wohnt <strong>im Vertrag</strong>. Daraus wurde der Block <code style="font-family:'Special Elite',monospace;">pad</code> — nicht <code style="font-family:'Special Elite',monospace;">pet.pad</code>: die Rolle ist kein Pet.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #4d7488;font-size:14.5px;line-height:1.55;"><strong>Ansatz bleibt stehen</strong>, wo er gesetzt ist. Nur die Spitze wandert.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #4d7488;font-size:14.5px;line-height:1.55;"><strong>Zwei gerade Schenkel</strong>, dünn zulaufend (Vorlage 4 von 4).</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #4d7488;font-size:14.5px;line-height:1.55;"><strong>Kanon-Feder ist Standard</strong>, die glatte Fassung bleibt als Rückfall stehen — falls die Feder im kleinen Maßstab zu laut wird.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #4d7488;font-size:14.5px;line-height:1.55;"><strong>Thought:</strong> Lappen rundum, aber die Grundform bleibt klar lesbar. Rechteck bleibt Rechteck.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #7a5a92;font-size:14.5px;line-height:1.55;"><strong>Klang</strong> aus der vorhandenen Pinball-Bank, eine Zuordnung je Pad. Kein zweites Manifest.</div>
+        <div style="padding:14px 16px;background:#f7f0da;border-left:3px solid #7a5a92;font-size:14.5px;line-height:1.55;">Abnahme <strong>im Studio</strong>, kein eigenes Blatt.</div>
+      </div>
+      <div style="padding:16px 18px;background:#e9edde;border:1px solid #cfc3a4;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>Das Bubble-Verhalten, als eine Regel in vier Erscheinungen:</strong> die Bubble gehört nicht zum Modell, sie <em>hängt</em> daran. <strong>Ruhezone</strong> — sie reagiert erst, wenn der Besitzer einen Radius verlässt, sonst zittert sie bei jedem Atemzug mit. <strong>Trägheit</strong> — Luftballon an unsichtbarer Schnur, mit Überschwingen. <strong>Spitze</strong> — zeigt auf die Modellmitte und endet auf der Silhouette, gemessen statt getippt. <strong>Katapult</strong> — das Modell fliegt, die Bubble bleibt und verpufft: die Schnur ist gerissen.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Gebaut, mit den Zahlen</h2>
+
+      <div style="padding:18px 20px;background:#faf5e8;border:2px solid #1f1a14;display:flex;flex-direction:column;gap:9px;">
+        <div style="font-family:'Special Elite',monospace;font-size:17px;">studio-v9/pad-contract.v1.js <span style="color:#6f6753;font-size:13px;">pad-v1.0</span></div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;">Sieben Anker, alle <strong>gemessen</strong>, keiner getippt. Gemessen wird in <strong>28 Höhenbändern</strong>, nicht an der Hüllkiste: <em>eine Kiste ist keine Form</em>. Hüfte = breiteste Stelle unten, Schulter = breiteste Stelle oben; beim Cube-Pet liegt die Hüfte damit an der Würfel-Unterkante und die Schulter an der Oberkante — das ist die richtige Antwort, kein Messfehler. Hände sitzen <strong>6 % außerhalb</strong> der Silhouette, sonst steckt das Gear im Körper. Einheit: <strong>Grundform-Höhen (cubeH), Ursprung Fußmitte, +z = Blickrichtung</strong> — damit wandert kein Anker, wenn die Bühne skaliert.</div>
+        <div style="font-size:14.5px;line-height:1.6;padding:11px 13px;background:#e9edde;">Erste Fahrt am Hasen: <strong>7 von 7 Ankern geschrieben</strong>, Pad-Felder in der Sitzung angekommen (der Wächter meldet 30 Felder nur im Entwurf, davon 15 aus dem Pad-Block — der Beleg, dass die Persistenz greift).</div>
+        <div style="font-size:14.5px;line-height:1.6;padding:11px 13px;background:#f3e6d0;border-left:3px solid #b8361f;"><strong>Die cubeH-Gegenprobe ist eingebaut, nicht behauptet.</strong> Das Modul liest <code style="font-family:'Special Elite',monospace;">body.cubeH</code> und <em>misst</em> die Bauhöhe. Weichen sie um mehr als 2 % ab, sagt es das im Panel und in der Konsole. Die alte v9-Frage (»<code style="font-family:'Special Elite',monospace;">byCube</code> misst, <code style="font-family:'Special Elite',monospace;">cubeH</code> wird gelesen«) ist damit nicht gelöst — aber <strong>sichtbar statt still</strong>.</div>
+      </div>
+
+      <div style="padding:18px 20px;background:#faf5e8;border:2px solid #1f1a14;display:flex;flex-direction:column;gap:9px;">
+        <div style="font-family:'Special Elite',monospace;font-size:17px;">studio-v9/pad-base.v1.js <span style="color:#6f6753;font-size:13px;">pbase-v1.0</span></div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;">Die Base <strong>schmückt</strong> den Boden, sie ersetzt ihn nicht: kein zweiter Boden, keine zweite Schattenrechnung, keine zweite Kippzahl. Vier Schichten in einer Ordnung — Platte · Boden-FX · Kachelkante und Kontaktsaum · Schattenstempel.</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Der Saum ist kein Schatten.</strong> Der Stempel sagt, welche <em>Form</em> auf dem Boden liegt; der Saum sagt, wo etwas ihn <em>berührt</em>. Zwei Aussagen, zwei Ebenen — deshalb hängt der Saum am gemessenen Fußradius <code style="font-family:'Special Elite',monospace;">pet.ground.foot</code> (in v8 gemessen: <strong>0,2599 · Deckung 41,7 % · 224 Punkte aus 5 Netzen</strong>) und nicht an der Silhouette.</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Die Kachelkante ist Tusche, keine CAD-Linie:</strong> ein Band zwischen zwei Offsetkurven, Licht oben links, also unten und rechts satter. Eckenradius als <em>Anteil</em> der Kante, nie als Pixelzahl. Klick-Ring und Landestaub laufen über <code style="font-family:'Special Elite',monospace;">gnd.addFx</code> — alle Ringe im Haus, eine Bauart.</div>
+      </div>
+
+      <div style="padding:18px 20px;background:#faf5e8;border:2px solid #1f1a14;display:flex;flex-direction:column;gap:9px;">
+        <div style="font-family:'Special Elite',monospace;font-size:17px;">studio-v9/bubble-tail.v1.js <span style="color:#6f6753;font-size:13px;">tail-v1.0</span></div>
+        <div style="font-size:14.5px;line-height:1.6;padding:11px 13px;background:#f3e6d0;border-left:3px solid #b8361f;"><strong>Der Befund, mit Adresse.</strong> In <code style="font-family:'Special Elite',monospace;">bubble-shaper.v3.js</code> ist der Zipfel kein Ding, sondern ein <em>Befund</em>: <code style="font-family:'Special Elite',monospace;">shapeForBox</code> sucht in der Silhouette eine Punktgruppe, die »tief unten und in der Minderheit« liegt, <strong>ernennt</strong> sie zum Zipfel und verschiebt sie — bei jeder Bewegung neu. Zwei Rückfallwerte und drei Sonderregeln im Code sind der Beleg, dass <strong>die Suche selbst der Fehler ist</strong>. Eine Suche kann man nicht stabilisieren, nur ersetzen.</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Die Ersetzung:</strong> drei eigene Punkte, die im Entwurf stehen — Ansatz A, Ansatz B, Spitze, alle drei als <em>Ecke</em>, in die Kontur <strong>eingehängt</strong> statt daneben gemalt. Damit ist das Ziehen der Spitze eine Zuweisung an zwei Zahlen; nichts wird gesucht, nichts kann kippen. Die <strong>dünn zulaufende Feinspitze kostet keine Zeile</strong>: der Kanon-Zeichner erkennt scharfe Knicke und nimmt die Feder dort auf 30 % zurück. Ein zweiter Zeichner wäre eine sichtbare Naht.</div>
+        <div style="font-size:14.5px;line-height:1.6;padding:11px 13px;background:#e9edde;">Gemessen, erste Fahrt (Speech, »Bingo!«, Entwurfsgröße): Ansatz-Spanne <strong>14,4 px</strong> · Länge <strong>92,39 px</strong> · Verhältnis <strong>6,416</strong> · Winkel <strong>90,0°</strong> · Spitze <code style="font-family:'Special Elite',monospace;">[0.5, 2.9247]</code>. Der <strong>Stempel</strong> ändert sich genau dann, wenn sich die Zipfelgeometrie ändert — wer nichts anfasst und den Zähler steigen sieht, hat eine versteckte Neuberechnung gefunden.</div>
+      </div>
+
+      <div style="padding:18px 20px;background:#faf5e8;border:2px solid #1f1a14;display:flex;flex-direction:column;gap:9px;">
+        <div style="font-family:'Special Elite',monospace;font-size:17px;">Verdrahtet in v9</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Neuer Tab »Pad«</strong> mit drei Abschnitten: Anker (messen, schreiben, als Kreuze auf der Bühne) · Base (Saum, Tuschekante, Klick-Ring, Probeschuss) · Audio (vier Ereignisse, je vier echte Ids). Die Kreuze tragen <code style="font-family:'Special Elite',monospace;">noMeasure</code> — ein unmarkiertes Hilfsobjekt wird mitgemessen, und genau das hat in SpinballCast v1 eine Ratsche von +1,018 pro Kartenwechsel erzeugt.</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Klang</strong> aus <code style="font-family:'Special Elite',monospace;">kfb-pinball-sfx.json</code> (37 Ereignisse, gezählt). Standard: Klick <code style="font-family:'Special Elite',monospace;">pop</code> · Landen <code style="font-family:'Special Elite',monospace;">banner.land</code> · Emote <code style="font-family:'Special Elite',monospace;">fluff</code> · Auswahl <code style="font-family:'Special Elite',monospace;">ui.select</code>. Keine erfundenen Ids — ein unbekanntes Ereignis meldet das Modul als Fehler und spielt nichts. Geweckt wird im ersten Klick: ohne Nutzergeste bleibt jeder AudioContext stumm, und stumm sieht wie kaputt aus.</div>
+        <div style="font-size:15px;line-height:1.65;color:#3a342a;text-wrap:pretty;"><strong>Bild und Klang aus derselben Aufrufstelle.</strong> Klick macht Ton und Bodenring, Landen macht Ton und Staub. Zwei Aufrufstellen laufen auseinander. Und der Klick trifft das <em>Modell</em>, nicht die Leinwand — ein Klick daneben ist keine Reaktion.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Drei Hausregeln, bezahlt</h2>
+      <div style="padding:16px 18px;background:#f3e6d0;border:2px solid #b8361f;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>R14 · Eine fremde Uhr hat eine fremde Lebensdauer — und eine notierte Regel ist keine gezogene.</strong> Der Anstoß der Werkbank hing erst an einer eigenen rAF-Schleife (tickte <strong>einmal</strong>, dann Stille), dann an der Bildschleife des Studios — und die läuft in der Vorschau nicht durchgehend: <code style="font-family:'Special Elite',monospace;">_gndTick</code> stand nach einer Sekunde noch auf <strong>0</strong>. Der Ersatz-Takt saß dann <em>hinter einem Riegel</em>, wurde genau einmal bewaffnet und war nach einem Unmount für immer fort; dazu sind Zeitgeber hier gedrosselt (gemessen: 1 Tick in 800 ms statt ~6). Ergebnis: <strong>0 gezeichnete Pixel</strong> bei frischem Laden, während der Zeichner korrekt war.</div>
+      <div style="padding:16px 18px;background:#e9edde;border:1px solid #cfc3a4;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>Die Regel steht jetzt als drei Wege, nicht als einer:</strong> ein <strong>idempotenter</strong> Takt (nie hinter einem Riegel, 120 ms, zeichnet nur bei Änderung) · ein <strong>direkter Anstoß</strong> bei jeder Zustandsänderung · und ein <strong>Termin aus dem Render</strong>, solange noch nichts gezeichnet ist — sichtbar heißt gerendert, und der Render ist das eine, was sicher passiert. Kein Zeichnen im Render, nur ein Termin dafür. Abnahme nach dem Fix, frisches Laden ohne Klick: <strong>Zeichnungen 1 · Geometrie-Änderungen 1</strong> · Spanne 14,4 px · Länge 48,47 px · Verhältnis 3,366 · Winkel 90,0°. Dieselbe Ursache traf die Base: ohne Bildschleife stand die Tuschekante auf Skalierung <strong>1 statt 2,5</strong> und der Fußradius auf dem <strong>Rückfallwert 0,25 statt 0,2599</strong>. <em>Ein Rückfallwert im Bericht ist ein Befund, keine Zahl.</em></div>
+      <div style="padding:16px 18px;background:#f3e6d0;border:2px solid #b8361f;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>R15 · Eine Vorschau, die nicht neu geladen hat, beweist nichts.</strong> Drei Messrunden liefen gegen eine <em>alte</em> Fassung des Codes: <code style="font-family:'Special Elite',monospace;">typeof _tailBeat</code> war <code style="font-family:'Special Elite',monospace;">undefined</code>, obwohl die Methode in der Datei stand. Der Beweis kostet eine Zeile, das Nichtwissen kostete drei Runden. Vor jeder Messung prüfen, ob der gemessene Code der geschriebene ist — die Schwesterregel zu <strong>R1</strong> (»Anwesenheit ist keine Gleichheit«).</div>
+      <div style="padding:16px 18px;background:#f3e6d0;border:2px solid #b8361f;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>R16 · Anwesenheit im Repo ist keine Anwesenheit im Arbeitsplatz.</strong> Nachtrag 29.08., aus dem Re-Home nach WS0. Dort galt <code style="font-family:'Special Elite',monospace;">studio-v3/PET_EDITOR/pet-LIBRARY.json</code> als fehlend — sie lag im Paket <em>und</em> im Repo (20.922 B, namentlich im Manifest); zu flach war die <strong>Verzeichnisabfrage</strong>: Tiefe 1 sieht <code style="font-family:'Special Elite',monospace;">studio-v3/</code> und nicht <code style="font-family:'Special Elite',monospace;">studio-v3/PET_EDITOR/</code>. Ohne die Datei greift ein Material <strong>ohne Bildquelle</strong> (triplanar mit <code style="font-family:'Special Elite',monospace;">jitter</code>) — das war die fleckige Oberfläche; Ohren und Augen liefen auf Rückfallwerten. <strong>Das Paket war 1:1, der Abruf war es nicht.</strong> Schwesterregel zu R1, von der anderen Seite: R1 belehrt den Absender, R16 den Empfänger.</div>
+      <div style="padding:16px 18px;background:#e9edde;border:1px solid #cfc3a4;font-size:15px;line-height:1.65;text-wrap:pretty;"><strong>Gebaut statt notiert:</strong> <code style="font-family:'Special Elite',monospace;">tools/check-loadpath.mjs</code> liegt ab jetzt in jedem Sitzungsschnitt. Es löst <strong>jede relative Adresse aus jeder Quelldatei</strong> gegen das Dateisystem auf — <strong>seitenrelativ</strong>, weil die Seite lädt und nicht das Modul (v9 hält <code style="font-family:'Special Elite',monospace;">LIB_URL = './studio-v3/PET_EDITOR/pet-LIBRARY.json'</code>; wer modulrelativ prüft, meldet »fehlt« für eine Datei, die da ist). Dazu ein Sollstand <code style="font-family:'Special Elite',monospace;">LADEWEG.tsv</code> (Pfad · Bytes · sha256-16) und die Liste der Dateien, die <em>von niemandem</em> adressiert werden. Gemessen im Paket: <strong>48 Referenzen aus 20 Quelldateien, 0 fehlend</strong> — dieselbe Zahl wie von Hand, jetzt in einer Zeile wiederholbar. <em>Eine notierte Regel ist keine gezogene</em> (R14) — deshalb ein Skript und keine Fußnote.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Offen, in dieser Reihenfolge</h2>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#b8361f;">1</div><div style="font-size:15px;line-height:1.6;"><strong>Zacken für Scream.</strong> <code style="font-family:'Special Elite',monospace;">edge-treatment.v1.js</code> baut sie längst — Zacken plus langer schmaler Zipfel, »lang heißt schmal«. Sie hängen nur nicht am Bild. Verkabelung, kein Neubau.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#b8361f;">2</div><div style="font-size:15px;line-height:1.6;"><strong>Thought:</strong> Lappen rundum bei lesbarer Grundform, plus <strong>Spur</strong> aus 2–3 kleiner werdenden Kreisen zum Kopf. Ansatz und Spitze gelten hier nicht.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#b8361f;">3</div><div style="font-size:15px;line-height:1.6;"><strong>Verpuffen ohne Fade.</strong> Die geschnittenen Lücken wachsen auf Bogenlänge, bis die Linie aufgehört hat zu sein; das Papier fällt kippend nach; die Spitze zieht sich <em>vorher</em> ein, weil sie kein Ziel mehr hat. Drei Zahlen, kein neuer Mechanismus — Papier wird nicht durchsichtig.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#6f6753;">4</div><div style="font-size:15px;line-height:1.6;"><strong>Bühnen-Blase auf den Kanon-Zeichner</strong> umhängen, glatte Fassung als Umschalter behalten. Heute malt die Bühne noch ihre eigene Outline mit <code style="font-family:'Special Elite',monospace;">dead: 44</code>.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#6f6753;">5</div><div style="font-size:15px;line-height:1.6;"><strong>Der Zipfel auf der Bühne</strong> — dieselbe Ersetzung wie in der Werkbank. Dort sitzt Georgs Sprung im echten Bild.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#6f6753;">6</div><div style="font-size:15px;line-height:1.6;"><strong>Import/Export einzeln und als Stapel</strong> gegen den neuen Block nachprüfen. Der Wächter meldet die Pad-Felder korrekt; der Weg über Datei ist noch nicht gemessen.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#6f6753;">7</div><div style="font-size:15px;line-height:1.6;"><strong>Blickachse auf die Anker drehen.</strong> <code style="font-family:'Special Elite',monospace;">body.faceDir</code> wird gemessen, aber nicht angewendet. Eine Achse drehen, ohne sie abzunehmen, ist die Falle aus dem Travel-Cut.</div></div>
+        <div style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 15px;background:#faf5e8;border:1px solid #cfc3a4;"><div style="font-family:'Special Elite',monospace;font-size:18px;color:#6f6753;">8</div><div style="font-size:15px;line-height:1.6;"><strong>Rückläufer ins Repo</strong> — unverändert offen aus V8-A, und die drei v9-Module kommen dazu. Dazu die 16 Schriftschnitte, sonst zeigt jedes Standalone Ersatzschriften.</div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="margin:0;font-family:'Special Elite',monospace;font-size:24px;font-weight:400;">Dateikarte</h2>
+      <div style="display:grid;grid-template-columns:minmax(230px,auto) 1fr;gap:1px;background:#cfc3a4;border:1px solid #cfc3a4;font-size:14.5px;">
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">KFB Pet Studio v9.dc.html</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;"><strong>AKTIV</strong> · hier wird gebaut</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">KFB Pet Studio v8.dc.html</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;"><strong>EINGEFROREN</strong> · Vergleichsmaßstab, darf nicht brechen</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">studio-v9/pad-contract.v1.js</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;">NEU · der Pad-Block: Anker, Base-Felder, Klang-Zuordnung</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">studio-v9/pad-base.v1.js</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;">NEU · Kontaktsaum, Tuschekante, Klick-Ring, Landestaub</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">studio-v9/bubble-tail.v1.js</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;">NEU · Ansatz und Spitze als eigenes Bauteil</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">studio-v7/, studio-v8/</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;">UNBERÜHRT · Shaper, Kanon-Feder, Boden, Messschicht, Wächter</div>
+        <div style="background:#efe6d3;padding:10px 13px;font-family:'Special Elite',monospace;">docs/CHANGELOG_studio.md</div>
+        <div style="background:#faf5e8;padding:10px 13px;line-height:1.5;">additiv · oben <strong>V9-S2</strong> (Re-Home, 29.08.), darunter <strong>V9-S1</strong> mit allen Messzahlen</div>
+      </div>
+    </div>
+
+    <div style="padding:18px 20px;background:#1f1a14;color:#f7f0da;display:flex;flex-direction:column;gap:8px;">
+      <div style="font-family:'Special Elite',monospace;font-size:15px;">Was dieses Blatt nicht ist</div>
+      <div style="font-size:14.5px;line-height:1.65;color:#e0d6bd;text-wrap:pretty;">Es ist kein Ersatz für den Changelog. Hier steht, <em>was gilt</em>; dort steht, <em>wie es dazu kam</em>, mit den Fehlanläufen. Ein Blatt, das behauptet, statt zu belegen, war der teuerste Fehler der v5.1-Nacht.</div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

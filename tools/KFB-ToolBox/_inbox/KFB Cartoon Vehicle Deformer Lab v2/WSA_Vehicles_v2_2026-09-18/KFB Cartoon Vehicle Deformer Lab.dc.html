@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/doccheck-group-design-system-a5295f37-5367-4f36-87fe-7234486c8b92/colors_and_type.css">
+  <script src="_ds/doccheck-group-design-system-a5295f37-5367-4f36-87fe-7234486c8b92/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;padding:0;height:100%;background:#fff;}
+    /* Der Hover-Ton steht nicht als Token im Bundle — geprüft, 98 Properties, kein
+       `--dc-red-dark`. #902 ist der Wert aus dem Design-System (rot → dunkelrot), hier
+       absichtlich als Literal statt als erfundener Tokenname. */
+    a{color:var(--dc-red,#c03);} a:hover{color:#902;}
+    @keyframes kfbWord{0%{transform:scale(.55) rotate(-7deg);opacity:0;}22%{transform:scale(1.14) rotate(3deg);opacity:1;}60%{transform:scale(1) rotate(0deg);opacity:1;}100%{transform:scale(1.02) rotate(0deg);opacity:0;}}
+    input[type=range]{accent-color:var(--dc-red,#c03);}
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    window.__KFB3D = window.__KFB3D || { THREE, OrbitControls, GLTFLoader };
+    window.dispatchEvent(new Event('kfb3dready'));
+  </script>
+</helmet>
+<div style="display:flex;flex-direction:column;height:100vh;min-height:540px;background:#fff;font-family:var(--font-sans,Roboto,sans-serif);color:#000;">
+
+  <div style="display:flex;align-items:center;gap:20px;height:52px;flex:0 0 52px;background:var(--dc-red,#c03);padding:0 20px;">
+    <span style="font-family:var(--font-slab,'Roboto Slab',serif);font-weight:700;font-size:20px;line-height:1;color:#fff;flex:0 0 auto;white-space:nowrap;">DocCheck</span>
+    <span style="font-size:13px;line-height:1;color:#fff;opacity:.9;flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Cartoon Vehicle Deformer Lab · presentation only</span>
+    <span style="flex:1 1 auto;min-width:0;"></span>
+    <div style="display:flex;gap:5px;align-items:center;flex:0 0 auto;white-space:nowrap;">
+      <button onClick="{{ onFlip }}" title="Blickrichtung umkehren. Kein Modell gibt sie her — die Korrektur wird je Fahrzeug gemerkt." style="height:28px;padding:0 10px;border:1px solid #fff;border-radius:5px;background:transparent;color:#fff;font-size:12px;font-weight:700;white-space:nowrap;flex:0 0 auto;cursor:pointer;">Flip {{ facingTxt }}</button>
+      <button onClick="{{ onOrient }}" title="Modell um 90° um die Querachse aufrichten. Für Assets, deren Hochachse nicht y ist — die Hüllbox kann das nicht unterscheiden, das Auge schon. Die Korrektur wird je Fixture gemerkt." style="height:28px;padding:0 10px;border:1px solid #fff;border-radius:5px;background:transparent;color:#fff;font-size:12px;font-weight:700;white-space:nowrap;flex:0 0 auto;cursor:pointer;">{{ orientTxt }}</button>
+      <button onClick="{{ onPanel }}" title="Seitenleiste ein- und ausblenden — das Review-Fenster soll groß und UI-arm bleiben" style="height:28px;padding:0 10px;border:1px solid #fff;border-radius:5px;background:transparent;color:#fff;font-size:12px;font-weight:700;white-space:nowrap;flex:0 0 auto;cursor:pointer;">{{ panelTxt }}</button>
+      <button onClick="{{ onReset }}" title="Alle Springs auf exakt null, alle Signale auf null" style="height:28px;padding:0 12px;border:0;border-radius:5px;background:var(--dc-green,#9c3);color:#000;font-size:12px;font-weight:700;white-space:nowrap;flex:0 0 auto;cursor:pointer;">RESET</button>
+    </div>
+  </div>
+
+  <div style="display:flex;flex:1 1 auto;min-height:0;">
+
+    <div style="display:flex;flex-direction:column;flex:1 1 auto;min-width:0;">
+      <div style="position:relative;flex:1 1 auto;min-height:0;background:var(--dc-bg-grey,#eee);">
+        <div ref="{{ stageRef }}" style="position:absolute;inset:0;"></div>
+        <sc-if value="{{ wordTxt }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;pointer-events:none;">
+            <span style="font-family:var(--font-slab,'Roboto Slab',serif);font-weight:700;font-size:72px;line-height:1;color:var(--dc-red,#c03);-webkit-text-stroke:4px #fff;paint-order:stroke fill;animation:kfbWord 640ms ease-out forwards;">{{ wordTxt }}</span>
+          </div>
+        </sc-if>
+        <div style="position:absolute;left:10px;right:10px;bottom:10px;display:flex;pointer-events:none;">
+          <div style="background:rgba(23,24,26,.78);color:#fff;font-family:var(--font-mono,monospace);font-size:11px;line-height:1.5;padding:5px 10px;border-radius:5px;min-width:0;">{{ stampTxt }}</div>
+        </div>
+        <div style="position:absolute;left:10px;right:10px;top:10px;display:flex;gap:10px;align-items:flex-start;pointer-events:none;">
+          <sc-if value="{{ readTxt }}" hint-placeholder-val="{{ false }}">
+            <div style="flex:1 1 auto;min-width:0;background:rgba(204,0,51,.92);color:#fff;font-size:12px;line-height:1.5;padding:7px 12px;border-radius:5px;text-wrap:pretty;">{{ readTxt }}</div>
+          </sc-if>
+          <span style="flex:1 1 auto;min-width:0;"></span>
+          <div style="flex:0 0 auto;width:212px;background:rgba(23,24,26,.78);color:#fff;font-family:var(--font-mono,monospace);font-size:11px;line-height:1.6;padding:6px 10px;border-radius:5px;white-space:pre;">{{ liveTxt }}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:10px 20px;border-top:2px solid #eee;flex:0 0 auto;">
+        <sc-for list="{{ testRows }}" as="t" hint-placeholder-count="12">
+          <button onClick="{{ t.on }}" title="{{ t.title }}" style="height:30px;padding:0 11px;border:1px solid #ccc;border-radius:5px;background:{{ t.bg }};color:{{ t.fg }};font-family:var(--font-mono,monospace);font-size:11px;font-weight:700;cursor:pointer;" style-hover="border-color:var(--dc-red,#c03);">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{ panel }}" hint-placeholder-val="{{ true }}">
+      <div style="width:300px;max-width:46%;min-width:232px;flex:0 0 auto;border-left:2px solid #eee;overflow-y:auto;box-sizing:border-box;background:#fff;">
+
+        <div style="padding:14px 20px 10px;">
+          <div style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Profil</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;">
+            <sc-for list="{{ profileRows }}" as="p" hint-placeholder-count="4">
+              <button onClick="{{ p.on }}" title="{{ p.title }}" style="height:26px;padding:0 9px;border:1px solid {{ p.border }};border-radius:5px;background:{{ p.bg }};color:{{ p.fg }};font-family:var(--font-mono,monospace);font-size:10px;font-weight:700;cursor:pointer;">{{ p.label }}</button>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;line-height:1.5;color:var(--color-fg-subtle,#666);margin-top:8px;text-wrap:pretty;">{{ profileNote }}</div>
+        </div>
+
+        <div style="padding:12px 20px;border-top:2px solid #eee;">
+          <div style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Fahrweise</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;">
+            <sc-for list="{{ modeRows }}" as="mo" hint-placeholder-count="3">
+              <button onClick="{{ mo.on }}" title="{{ mo.title }}" style="height:26px;padding:0 9px;border:1px solid {{ mo.border }};border-radius:5px;background:{{ mo.bg }};color:{{ mo.fg }};font-family:var(--font-mono,monospace);font-size:10px;font-weight:700;cursor:pointer;">{{ mo.label }}</button>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;line-height:1.5;color:var(--color-fg-subtle,#666);margin-top:8px;text-wrap:pretty;">{{ modeNote }}</div>
+        </div>
+
+        <div style="padding:12px 20px;border-top:2px solid #eee;">
+          <div style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Optionale Schicht</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;">
+            <button onClick="{{ onWords }}" title="Lautwörter (WUMM/WUPP). Aus Vorgabe AUS — sie gehören in die VFX-Schicht mit Bangers-Typo und Cartoon-Deformer auf der Schrift, nicht in die Grundbewegung." style="height:26px;padding:0 9px;border:1px solid {{ wordsBorder }};border-radius:5px;background:{{ wordsBg }};color:{{ wordsFg }};font-family:var(--font-mono,monospace);font-size:10px;font-weight:700;white-space:nowrap;cursor:pointer;">{{ wordsTxt }}</button>
+            <button onClick="{{ onSound }}" title="Ton der Fassrolle: aufsteigender Whoosh beim Absprung, Rauschstoß plus tiefer Puls beim Aufsetzen. Beide synthetisiert, kein Asset. Aus Vorgabe stumm — Ton, der ungefragt losgeht, ist ein Fehler." style="height:26px;padding:0 9px;border:1px solid {{ soundBorder }};border-radius:5px;background:{{ soundBg }};color:{{ soundFg }};font-family:var(--font-mono,monospace);font-size:10px;font-weight:700;white-space:nowrap;cursor:pointer;">{{ soundTxt }}</button>
+          </div>
+          <div style="font-size:11px;line-height:1.5;color:var(--color-fg-subtle,#666);margin-top:8px;text-wrap:pretty;">Beides gehört nicht zur Grundbewegung und ist darum aus Vorgabe aus. Das Ereignisbudget der Fassrolle nennt ein Lautwort und zwei Töne als OBERGRENZE, nicht als Vorgabe.</div>
+        </div>
+
+        <div style="padding:12px 20px;border-top:2px solid #eee;">
+          <div style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Manöver &amp; Stunt · vorausgerechnet</div>
+          <div style="font-family:var(--font-mono,monospace);font-size:10px;line-height:1.75;color:#000;margin-top:8px;white-space:pre;overflow-x:auto;">{{ mvTxt }}</div>
+        </div>
+
+        <div style="padding:10px 20px 6px;border-top:2px solid #eee;">
+          <span style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Signale · von Hand</span>
+        </div>
+        <sc-for list="{{ sigRows }}" as="s" hint-placeholder-count="5">
+          <div style="padding:4px 20px 8px;">
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:12px;line-height:1.3;color:#000;flex:1 1 auto;">{{ s.label }}</span>
+              <span style="font-family:var(--font-mono,monospace);font-size:11px;color:var(--color-fg-subtle,#666);">{{ s.txt }}</span>
+            </div>
+            <input type="range" min="{{ s.min }}" max="{{ s.max }}" step="0.01" value="{{ s.val }}" onInput="{{ s.on }}" title="{{ s.hint }}" style="width:100%;height:18px;margin:4px 0 0;display:block;cursor:pointer;">
+          </div>
+        </sc-for>
+
+        <div style="padding:10px 20px 6px;border-top:2px solid #eee;">
+          <span style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Fixtures</span>
+        </div>
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+          <div style="padding:8px 20px 4px;">
+            <div style="font-size:12px;font-weight:700;line-height:1.2;color:#000;">{{ g.label }}</div>
+            <div style="font-size:11px;line-height:1.4;color:var(--color-fg-subtle,#666);margin-top:2px;">{{ g.note }}</div>
+          </div>
+          <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="5">
+            <div style="display:flex;align-items:stretch;border-top:1px solid #eee;min-width:0;">
+              <sc-if value="{{ r.sel }}" hint-placeholder-val="{{ false }}">
+                <div style="width:3px;background:var(--dc-red,#c03);flex:0 0 auto;"></div>
+              </sc-if>
+              <button onClick="{{ r.on }}" title="{{ r.title }}" style="flex:1 1 auto;min-width:0;display:flex;align-items:baseline;gap:8px;padding:7px 20px 7px 10px;border:0;background:transparent;text-align:left;cursor:pointer;font-family:inherit;" style-hover="background:#f6f6f6;">
+                <span style="font-size:13px;line-height:1.3;color:#000;flex:1 1 auto;min-width:0;">{{ r.label }}</span>
+                <span style="font-family:var(--font-mono,monospace);font-size:10px;color:var(--color-fg-subtle,#666);flex:0 0 auto;">{{ r.tag }}</span>
+              </button>
+            </div>
+          </sc-for>
+        </sc-for>
+
+        <div style="padding:14px 20px 20px;border-top:2px solid #eee;">
+          <div style="font-size:12px;font-weight:700;line-height:1.2;color:var(--color-fg-subtle,#666);">Offene AssetRefs</div>
+          <sc-for list="{{ openRows }}" as="o" hint-placeholder-count="2">
+            <div style="margin-top:8px;">
+              <div style="font-size:12px;font-weight:700;line-height:1.3;color:#000;">{{ o.need }}</div>
+              <div style="font-size:11px;line-height:1.5;color:var(--color-fg-subtle,#666);margin-top:2px;text-wrap:pretty;">{{ o.body }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+      </div>
+    </sc-if>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:800},&quot;startFixture&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;car_hatchback&quot;,&quot;car_sedan&quot;,&quot;car_stationwagon&quot;,&quot;car_taxi&quot;,&quot;car_police&quot;,&quot;go-kart-by-poly-by-google-3hkutvs0aav&quot;,&quot;skateboard-by-poly-by-google-7dfn4vttcwy&quot;,&quot;vehicle-monster-truck&quot;],&quot;default&quot;:&quot;car_hatchback&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Start&quot;},&quot;stageBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#eeeeee&quot;,&quot;#f6f6f6&quot;,&quot;#dddddd&quot;],&quot;default&quot;:&quot;#eeeeee&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Bühne&quot;}}">
+class Component extends DCLogic {
+  state = {
+    ready: false, err: null, loading: null, id: null, facing: 1, panel: true,
+    profileId: 'CAR_CHILL_LIGHT', running: null, read: null, report: null, orientX: 0,
+    mode: 'city', mv: null, sound: false, word: null, words: false,
+    sig: { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 },
+    live: null,
+  };
+
+  componentDidMount() {
+    this._dead = false;
+    const go = () => this.boot();
+    if (window.__KFB3D) go();
+    else { this._r = go; window.addEventListener('kfb3dready', go, { once: true }); }
+  }
+  componentWillUnmount() {
+    /* Eine abgemeldete Instanz darf ihr `boot()` nicht zu Ende laufen und `window.__cvd` nicht
+       mehr überschreiben — sonst zeigen die Griffe auf eine Instanz, deren Bildschleife schon
+       abgebrochen ist. Hygiene, kein gemessener Fehler. */
+    this._dead = true;
+    cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
+    if (this._r) window.removeEventListener('kfb3dready', this._r);
+    if (this.renderer) this.renderer.dispose();
+  }
+
+  async boot() {
+    const K = window.__KFB3D, THREE = this.THREE = K.THREE;
+    const host = this.stageEl; if (!host) return;
+    const [AD, CR, VD, PR, TS] = await Promise.all([
+      import('./lab-v7/fixture-adapters.v2.js'),
+      import('./lab-v7/carrig.v2.js'),
+      import('./lab-v7/vehicle-cartoon-deformer.v2.js'),
+      fetch('./lab-v7/deformer-profiles.json').then((r) => r.json()),
+      fetch('./lab-v7/TEST_SEQUENCES.json').then((r) => r.json()),
+    ]);
+    this.AD = AD; this.CR = CR; this.VD = VD; this.PROF = PR.profiles; this.SEQ = TS.sequences;
+    this.FT = await import('./lab-v7/vehicle-fishtail.v1.js');
+    const RV = '?r=13';
+    this.MV = await import('./lab-v7/vehicle-manoeuvre.v1.js' + RV);
+    this.TW = await import('./lab-v7/vehicle-twowheel.v1.js' + RV);
+    this.TB = await import('./lab-v7/vehicle-tumble.v1.js' + RV);
+    /* ABRUFSTEMPEL oben: eine überschriebene Moduldatei bleibt im Zwischenspeicher des Browsers
+       liegen und die Seite läuft still mit der alten — in dieser Sitzung genau so passiert, der
+       Plan meldete nach dem Reload weiter die alte Gassenkonstante 1,45 statt 1,60. */
+    if (this._dead) return;
+
+    const renderer = this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    host.appendChild(renderer.domElement);
+    Object.assign(renderer.domElement.style, { display: 'block', width: '100%', height: '100%' });
+
+    const scene = this.scene = new THREE.Scene();
+    scene.background = new THREE.Color(this.props.stageBg || '#eeeeee');
+    const camera = this.camera = new THREE.PerspectiveCamera(30, 1, 0.01, 200);
+    const controls = this.controls = new K.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8d8a84, 0.95));
+    const key = new THREE.DirectionalLight(0xffffff, 1.5);
+    key.position.set(3, 5, 4); key.castShadow = true; key.shadow.mapSize.set(1024, 1024);
+    Object.assign(key.shadow.camera, { left: -4, right: 4, top: 4, bottom: -4, near: 0.1, far: 30 });
+    scene.add(key);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.45); rim.position.set(-3, 2, -3); scene.add(rim);
+
+    /* Schattenfänger statt eingefärbter Fläche: die Bühne bleibt neutral, damit die Karosserie
+       gegen sie beurteilbar ist. */
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.ShadowMaterial({ opacity: 0.22 }));
+    ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+    this.grid = new THREE.GridHelper(20, 20, 0xc9c9c9, 0xdedede);
+    this.grid.material.transparent = true; scene.add(this.grid);
+    this.arrow = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.2, 14), new THREE.MeshStandardMaterial({ color: 0xcc0033, roughness: 0.5 }));
+    this.arrow.rotation.x = Math.PI / 2; scene.add(this.arrow);
+
+    const fit = () => {
+      const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return;
+      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    };
+    this._ro = new ResizeObserver(fit); this._ro.observe(host); fit();
+
+    const clock = new THREE.Clock();
+    const loop = () => { if (this._dead) return; this._raf = requestAnimationFrame(loop); this.tick(Math.min(0.05, clock.getDelta())); controls.update(); renderer.render(scene, camera); };
+    loop();
+
+    /* Die Naht zum Race-Runtime. Genau diese Namen stehen im Signal-Entwurf. */
+    window.__cvd = {
+      setSignals: (s) => { this._manual = null; if (this.deformer) this.deformer.setSignals(s); },
+      railImpact: (o) => this.deformer && this.deformer.railImpact(o),
+      railRelease: () => this.deformer && this.deformer.railRelease(),
+      landing: (o) => this.deformer && this.deformer.landing(o),
+      run: (id) => this.run(id),
+      load: (id) => this.load(id),
+      reset: () => this.reset(),
+      profile: (id) => this.setProfile(id),
+      readout: () => (this.deformer ? this.deformer.readout : null),
+      nodes: () => (this.deformer ? this.deformer.nodes : null),
+      /* Schlingern · eigene Familie, additiv zum Deformer. dir −1/+1 = zu welcher Seite das
+         Heck zuerst ausbricht. */
+      fishtail: (o) => this.fishtail && this.fishtail.trigger(o || {}),
+      fishtailReadout: () => (this.fishtail ? this.fishtail.readout : null),
+      fishtailConfig: () => (this.fishtail ? this.fishtail.config : null),
+      /* Beweis-Griffe: Pose auf einer exakten Zeit halten, `peakMs(k)` gibt die Umkehrpunkte. */
+      fishtailPoseAt: (ms, o) => (this.fishtail ? this.fishtail.poseAt(ms, o || {}) : null),
+      fishtailPeakMs: (k) => (this.fishtail ? this.fishtail.peakMs(k) : null),
+      fishtailRelease: () => this.fishtail && this.fishtail.release(),
+      /* Manöver · der Weg über den Boden. Erzeugt die Signale, die der Deformer schon frisst. */
+      manoeuvre: (program, o) => this.manoeuvre && this.manoeuvre.start(program, o || {}),
+      manoeuvreStop: () => this.manoeuvre && this.manoeuvre.stop(),
+      manoeuvreReadout: () => (this.manoeuvre ? this.manoeuvre.readout : null),
+      manoeuvrePlan: (program, o) => (this.manoeuvre ? this.manoeuvre.preview(program, o || {}) : null),
+      manoeuvrePoseAt: (ms) => (this.manoeuvre ? this.manoeuvre.poseAt(ms) : null),
+      mode: (id) => this.setMode(id),
+      /* Zwei-Rad · Kippen um die gemessene Aufstandslinie einer Seite. */
+      twoWheel: (o) => this.twowheel && this.twowheel.trigger(o || {}),
+      twoWheelReadout: () => (this.twowheel ? this.twowheel.readout : null),
+      twoWheelConfig: () => (this.twowheel ? this.twowheel.config : null),
+      twoWheelMarks: () => (this.twowheel ? this.twowheel.marks() : null),
+      twoWheelPoseAt: (ms, o) => (this.twowheel ? this.twowheel.poseAt(ms, o || {}) : null),
+      twoWheelRelease: () => this.twowheel && this.twowheel.release(),
+      /* Fassrolle · Überschlag um die Längsachse, Drehachse wandert Kante → Schwerpunkt → Kante. */
+      tumble: (o) => { if (!this.tumble) return null; this.tumble.trigger(o || {}); this.frameForTumble(); return this.tumble.config; },
+      tumbleReadout: () => (this.tumble ? this.tumble.readout : null),
+      tumbleConfig: () => (this.tumble ? this.tumble.config : null),
+      tumblePlan: (o) => (this.tumble ? this.tumble.preview(o || {}) : null),
+      tumbleMarks: () => (this.tumble ? this.tumble.marks() : null),
+      tumblePoseAt: (ms, o) => (this.tumble ? this.tumble.poseAt(ms, o || {}) : null),
+      tumbleRelease: () => this.tumble && this.tumble.release(),
+      measured: () => this.measureManoeuvre(),
+      /* Diagnose: der Zustand des Sequenzlaeufers selbst. */
+      seqState: () => (this._seq ? { id: this._seq.id, driver: this._seq.driver, t: Math.round(this._seq.t), end: this._seq.end, fired: [...this._seq.fired] } : null),
+      ticks: () => this._ticks || 0,
+      /* BILDSTEMPEL. In einem unsichtbaren Rahmen hält der Browser `requestAnimationFrame` an —
+         gemessen: `document.visibilityState` hidden, `ticks()` blieb bei 8, und jede Aufnahme
+         zeigte den letzten gemalten Frame statt der gesetzten Pose. `paint()` zeichnet EINEN Frame
+         unabhängig von der Schleife, `stepMs(ms)` treibt die Uhr um einen genauen Betrag weiter.
+         Damit ist ein Beweisbild reproduzierbar, auch wenn die Seite nicht im Vordergrund liegt. */
+      paint: () => { if (!this.renderer) return null; this.controls.update(); this.renderer.render(this.scene, this.camera); return this._ticks || 0; },
+      stepMs: (ms) => { this.tick(Math.max(0, ms) / 1000); this.controls.update(); this.renderer.render(this.scene, this.camera); return this._ticks; },
+      aimOpen: (side) => { this.aimFrom(-(side || 1)); return null; },
+      aimHome: () => { this.frameHome(); return null; },
+      camState: () => ({ p: this.camera.position.toArray().map((v) => +v.toFixed(3)), t: this.controls.target.toArray().map((v) => +v.toFixed(3)),
+        d: +this.camera.position.distanceTo(this.controls.target).toFixed(3), near: this.camera.near, far: this.camera.far, fov: this.camera.fov,
+        carrier: this.manoeuvre ? this.manoeuvre.carrier.position.toArray().map((v) => +v.toFixed(3)) : null }),
+      fixtures: AD.ALL, open: AD.OPEN_ASSETREFS, sequences: Object.keys(TS.sequences),
+    };
+
+    await this.load(this.props.startFixture || 'car_hatchback');
+  }
+
+  async load(id) {
+    const AD = this.AD, row = AD.byId(id) || AD.ALL.find((r) => r.name === id); if (!row) return;
+    const THREE = this.THREE, K = window.__KFB3D;
+    this.setState({ loading: row.label, err: null, read: null, running: null });
+    this._seq = null;
+    if (this.deformer) { this.deformer.reset(); this.deformer.dispose(); this.deformer = null; }
+    if (this.fishtail) { this.fishtail.dispose(); this.fishtail = null; }
+    if (this.twowheel) { this.twowheel.dispose(); this.twowheel = null; }
+    if (this.tumble) { this.tumble.dispose(); this.tumble = null; }
+    if (this.manoeuvre) { this.manoeuvre.dispose(); this.manoeuvre = null; }
+    if (this.rig) { this.scene.remove(this.rig.group); this.rig = null; }
+    let gltf;
+    try { gltf = await new K.GLTFLoader().loadAsync(row.url); }
+    catch (e) {
+      try { gltf = await new K.GLTFLoader().loadAsync(row.urlLatest); }
+      catch (e2) { this.setState({ err: (e2.message || String(e2)).slice(0, 140), loading: null }); return; }
+    }
+    const orientX = AD.orientOf(row.id);
+    const rig = this.rig = this.CR.analyse({ THREE, root: gltf.scene, label: row.id, upFix: !!row.upFix, orientX });
+    rig.group.traverse((n) => { if (n.isMesh) { n.castShadow = true; n.frustumCulled = false; } });
+    this.scene.add(rig.group);
+
+    const profileId = row.profile && this.PROF[row.profile] ? row.profile : this.state.profileId;
+    this.deformer = this.VD.createDeformer(THREE, rig, { profile: this.PROF[profileId] });
+    this.wheels = new this.CR.WheelRig({ THREE, rig, facing: AD.facingOf(row.id) });
+    /* Die Schlinger-Gruppe haengt UEBER rig.group und dreht um die gemessene Vorderachse.
+       Ab hier gehoert `fishtail.root` in die Szene, nicht mehr rig.group. */
+    this.fishtail = this.FT.attachFishtail({ THREE, rig, profile: this.PROF[profileId], facing: AD.facingOf(row.id) });
+    /* SCHICHTUNG von innen nach außen: Deformer (Pose) → Schlingern (Gier um die Vorderachse)
+       → Zwei-Rad (Kippen um die Aufstandslinie) → Manöver (Weg über den Boden). Jede Schicht
+       fasst nur ihre EIGENE Gruppe an. Deshalb kann das Fahrzeug an der Bande entlangFAHREN und
+       dabei gekippt stehen, ohne dass eine der beiden Bewegungen von der anderen weiss. */
+    const fc = AD.facingOf(row.id);
+    this.twowheel = this.TW.attachTwoWheel({ THREE, rig, profile: this.PROF[profileId], facing: fc, child: this.fishtail.root, worldSign: fc < 0 ? -1 : 1 });
+    this.tumble = this.TB.attachTumble({ THREE, rig, profile: this.PROF[profileId], facing: fc, child: this.twowheel.root });
+    this.manoeuvre = this.MV.attachManoeuvre({ THREE, rig, profile: this.PROF[profileId], facing: fc, child: this.tumble.root, mode: this.state.mode });
+    this.scene.add(this.manoeuvre.root);
+    this.scene.add(this.twowheel.world);
+
+    const f = rig.frame, L = Math.max(f.length, f.width);
+    this.arrow.scale.setScalar(Math.max(0.2, L * 0.3));
+    this.grid.scale.setScalar(Math.max(0.12, L / 2));
+    const facing = AD.facingOf(row.id);
+    this.placeArrow(facing);
+    const d = L * 2.3;
+    /* Die Kamera steht IMMER auf derselben Seite. Vorher war ihre z-Lage mit `facing`
+       multipliziert — dadurch sprang die Bühne mit, und die toy-cars (facing −z) wurden nach
+       rechts gezeigt, während alle anderen nach links zeigten. Die Blickrichtung ist eine
+       Eigenschaft des Modells, kein Grund, den Betrachter umzusetzen. */
+    this.camera.position.set(d * 0.85, f.height * 1.3, d * 0.85);
+    /* Near und Far aus der Modellgröße. Feste 0,01/200 schnitten den Poly-Go-Kart beim
+       Herauszoomen ab — er ist 43 Einheiten groß, ein car_hatchback 0,5. */
+    this.camera.near = Math.max(0.001, L * 0.01);
+    this.camera.far = Math.max(50, L * 200);
+    this.camera.updateProjectionMatrix();
+    this.controls.target.set(0, f.height * 0.45, 0);
+    /* Ausgangsrahmen merken, damit der Blick nach einem Manöver zurückfindet. */
+    this._home = { d: this.camera.position.distanceTo(this.controls.target), y: f.height * 0.45 };
+
+    this.setState({ ready: true, loading: null, id: row.id, facing, profileId, orientX,
+      mv: this.measureManoeuvre(),
+      report: Object.assign({ via: row.via, pin: row.pin, dep: row.dep, format: row.format }, rig.report, { id: row.id }) });
+  }
+
+  /**
+   * Die Zahlen zum Abnehmen: beide Manöver werden VORAUSGERECHNET, ohne zu fahren, und der
+   * Zwei-Rad-Stunt meldet seinen gerechneten Umfallwinkel. Nichts davon ist gesetzt — wer eine
+   * Zahl anzweifelt, kann sie am Modell nachmessen.
+   */
+  measureManoeuvre() {
+    if (!this.manoeuvre || !this.twowheel) return null;
+    const m = this.manoeuvre.measured;
+    const turn = this.manoeuvre.preview('turn'), park = this.manoeuvre.preview('park');
+    const tw = this.twowheel.config, wall = this.twowheel.wallAt;
+    const tbL = this.tumble.preview({ severity: 0.55, speed: 0.6 }), tbH = this.tumble.preview({ severity: 1, speed: 1 });
+    return { L: m.L, T: m.T, steerMax: turn.steerMax, R: turn.R, lane: turn.lane,
+      turnLegs: turn.turnLegs, turnMs: turn.durationMs,
+      parkTheta: park.slot ? park.slot.theta : null, parkSlot: park.sweptLength,
+      parkSoll: park.slot ? park.slot.d : null, parkIst: park.lateralAchieved,
+      tipDeg: tw.tipDeg, holdDeg: tw.holdDeg, cgY: tw.centroidY, wallDist: wall.distance,
+      tbTurnsL: tbL.turns, tbMsL: tbL.durationMs, tbTurnsH: tbH.turns, tbMsH: tbH.durationMs,
+      tbApexH: tbH.apex, tbHzH: tbH.rollHz, tbHzWanted: tbH.rollHzWanted };
+  }
+
+  placeArrow(facing) {
+    if (!this.rig) return;
+    const f = this.rig.frame;
+    this.arrow.position.set(0, f.height * 0.12, (f.length / 2 + f.length * 0.22) * facing);
+    this.arrow.rotation.x = facing >= 0 ? Math.PI / 2 : -Math.PI / 2;
+  }
+
+  /**
+   * Blick auf die überstrichene Fläche legen. Gemessen am gefahrenen Weg, nicht geschaetzt:
+   * der Ausschnitt für ein STEHENDES Fahrzeug schneidet eine Wende ab (gemessen 1,84 × 1,92 u
+   * überstrichen gegen 0,81 u Fahrzeuglänge). Die Blickrichtung bleibt, wie der Bediener sie
+   * gedreht hat — nur der Abstand und der Zielpunkt gehen mit.
+   */
+  frameFor(cfg) {
+    if (!cfg || !this.rig) return;
+    const f = this.rig.frame;
+    /* Abstand aus der UMKUGEL der überstrichenen Fläche, nicht aus einem Faktor. Die erste Fassung
+       nahm Radius × 2,3 — gemessen fiel damit das Ende des ersten Wendezuges aus dem Bild: das
+       Blickfeld ist VERTIKAL 30°, und die 2,05 u Weglaenge einer Wende fallen bei schräger Sicht
+       genau auf diese Achse (sichtbare Höhe bei 3,46 u Abstand: 1,85 u). r / sin(fov/2) passt die
+       Kugel unabhängig von der Blickrichtung ins Bild. */
+    const r = Math.hypot(Math.max(cfg.sweptWidth, f.width), f.height + (cfg.apex || 0), Math.max(cfg.sweptLength, f.length)) / 2;
+    const d = (r / Math.sin(this.camera.fov * Math.PI / 360)) * 1.08;
+    this.aimAt(cfg.centre.x, f.height * 0.45 + (cfg.apex || 0) * 0.4, cfg.centre.z, d);
+  }
+  /** Eine Fassrolle braucht Höhe im Bild, nicht Breite — der Gipfel kommt in den Radius. */
+  frameForTumble() {
+    if (!this.rig || !this.tumble) return;
+    const f = this.rig.frame, cfg = this.tumble.config;
+    this.frameFor({ sweptWidth: f.width * 1.5, sweptLength: f.length * 1.25, apex: cfg.apex, centre: { x: 0, z: 0 } });
+  }
+  frameHome() {
+    if (!this._home) return;
+    this.aimAt(0, this._home.y, 0, this._home.d);
+  }
+  aimAt(x, y, z, d) {
+    const cam = this.camera, t = this.controls.target;
+    const v = cam.position.clone().sub(t);
+    if (v.length() < 1e-9) return;
+    t.set(x, y, z);
+    cam.position.copy(t).add(v.setLength(d));
+  }
+  /**
+   * Blick auf die OFFENE Seite legen. Bei einem Wallride steht die Bande zwischen Kamera und
+   * Fahrzeug, wenn beide auf derselben Seite liegen — gemessen: die Wand verdeckte das Bild
+   * vollständig. Der Stunt ist nur von der freien Seite lesbar.
+   */
+  aimFrom(sx) {
+    if (!this.rig) return;
+    const cam = this.camera, t = this.controls.target;
+    const d = cam.position.distanceTo(t) || 1;
+    const v = new this.THREE.Vector3(sx * 0.62, 0.30, 0.72).setLength(d);
+    cam.position.copy(t).add(v);
+  }
+
+  setProfile(id) {
+    if (!this.PROF[id]) return;
+    this.setState({ profileId: id });
+    if (this.deformer) this.deformer.setProfile(this.PROF[id]);
+    if (this.fishtail) this.fishtail.setProfile(this.PROF[id]);
+    if (this.twowheel) this.twowheel.setProfile(this.PROF[id]);
+    if (this.tumble) this.tumble.setProfile(this.PROF[id]);
+    if (this.manoeuvre) this.manoeuvre.setProfile(this.PROF[id]);
+    this.setState({ mv: this.measureManoeuvre() });
+  }
+
+  /** Fahrweise. Der Wechsel darf mitten im Manöver kommen — er skaliert nur die restliche Zeit. */
+  setMode(id) {
+    if (!this.MV || !this.MV.MODES[id]) return;
+    if (this.manoeuvre) this.manoeuvre.setMode(id);
+    this.setState({ mode: id, mv: this.measureManoeuvre() });
+  }
+
+  /** Testsequenz starten. Deterministisch: dieselbe Folge liefert dasselbe Bild. */
+  run(id) {
+    const s = this.SEQ[id]; if (!s || !this.deformer) return;
+    this.deformer.reset();
+    if (this.fishtail) this.fishtail.reset();
+    if (this.twowheel) this.twowheel.reset();
+    if (this.tumble) this.tumble.reset();
+    if (this.manoeuvre) this.manoeuvre.reset();
+    this._manual = null;
+    this.setState({ word: null });
+    /* Der Blickrichtungspfeil steht fest im Raum. Fährt das Fahrzeug weg, würde er lügen. */
+    this.arrow.visible = !s.driver;
+    this._seq = { id, steps: s.steps, t: 0, fired: new Set(), holds: [], driver: s.driver || null, end: s.steps[s.steps.length - 1][0] };
+    this.setState({ running: id, read: s.read, sig: { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 } });
+  }
+
+  reset() {
+    this._seq = null; this._manual = null;
+    if (this.deformer) this.deformer.reset();
+    if (this.fishtail) this.fishtail.reset();
+    if (this.twowheel) this.twowheel.reset();
+    if (this.tumble) this.tumble.reset();
+    if (this.manoeuvre) this.manoeuvre.reset();
+    if (this.wheels) this.wheels.reset();
+    this.arrow.visible = true;
+    this.frameHome();
+    this.setState({ word: null });
+    this.setState({ running: null, read: null, sig: { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 } });
+  }
+
+  /** Lineare Interpolation zwischen den Stützwerten der Sequenz. */
+  sampleSeq(q, t) {
+    const keys = ['speed', 'longAccel', 'lateral', 'bank', 'drift'];
+    const out = { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 };
+    const pts = q.steps.filter((p) => !p[1].event);
+    if (!pts.length) return out;
+    let a = pts[0], b = pts[pts.length - 1];
+    for (let i = 1; i < pts.length; i++) { if (t <= pts[i][0]) { a = pts[i - 1]; b = pts[i]; break; } }
+    const span = b[0] - a[0], u = span > 0 ? Math.max(0, Math.min(1, (t - a[0]) / span)) : 1;
+    keys.forEach((k) => {
+      const va = a[1][k] != null ? a[1][k] : 0, vb = b[1][k] != null ? b[1][k] : 0;
+      out[k] = va + (vb - va) * u;
+    });
+    return out;
+  }
+
+  tick(dt) {
+    if (!this.deformer || !this.rig) return;
+    this._ticks = (this._ticks || 0) + 1;
+    const q = this._seq;
+    if (q) {
+      q.t += dt * 1000;
+      if (!q.driver) this.deformer.setSignals(this.sampleSeq(q, q.t));
+      q.steps.forEach((p, i) => {
+        if (!p[1].event || q.fired.has(i) || q.t < p[0]) return;
+        q.fired.add(i);
+        const ev = p[1];
+        if (ev.event === 'railImpact') this.deformer.railImpact({ side: ev.side, strength: ev.strength });
+        if (ev.event === 'landing') this.deformer.landing({ strength: ev.strength });
+        if (ev.event === 'fishtail' && this.fishtail) this.fishtail.trigger({ severity: ev.severity, dir: ev.dir });
+        if (ev.event === 'manoeuvre' && this.manoeuvre) { this.manoeuvre.start(ev.program, { distOfLength: ev.distOfLength, laneOfLength: ev.laneOfLength, gapOfWidth: ev.gapOfWidth }); this.frameFor(this.manoeuvre.config); }
+        if (ev.event === 'twowheel' && this.twowheel) { this.twowheel.trigger({ variant: ev.variant, side: ev.side, holdMs: ev.holdMs }); if (ev.variant === 'wallride') this.aimFrom(-(ev.side || 1)); }
+        if (ev.event === 'tumble' && this.tumble) { this.tumble.trigger({ severity: ev.severity, speed: ev.speed, side: ev.side, words: this.state.words }); this.frameForTumble(); this.tone('launch'); }
+        /* `hold` meldet die Wand weiter jeden Frame — der Retrigger-Test. */
+        if (ev.hold) q.holds.push({ until: q.t + ev.hold, ev });
+      });
+      q.holds = q.holds.filter((h) => {
+        if (q.t > h.until) { if (h.ev.event === 'railImpact') this.deformer.railRelease(); return false; }
+        /* `contact: true` — derselbe Kontakt, nicht ein neuer Schlag. Ohne das Flag zählte der
+           Deformer jede Frame-Meldung als eigenes Ereignis: 600 ms Wandkontakt ergaben gemessene
+           fünf Einschläge. */
+        if (h.ev.event === 'railImpact') this.deformer.railImpact({ side: h.ev.side, strength: h.ev.strength, contact: true });
+        return true;
+      });
+      /* Ein Manöver dauert länger als seine Auslöseliste. Die Sequenz endet erst, wenn auch die
+         Bewegung fertig ist — sonst schneidet die Anzeige mitten in die Fahrt. */
+      const busy = (this.manoeuvre && this.manoeuvre.readout.active) || (this.twowheel && this.twowheel.readout.active) || (this.tumble && this.tumble.readout.active);
+      if (q.t > q.end + 400 && !busy) { this._seq = null; this.arrow.visible = true; this.setState({ running: null }); }
+    } else if (this._manual) {
+      this.deformer.setSignals(this._manual);
+    }
+
+    /* REIHENFOLGE: das Manöver ERZEUGT die Signale, der Deformer verbraucht sie. Also erst
+       fahren, dann verformen — umgekehrt läuft die Pose dem Weg einen Frame nach. */
+    const mv = this.manoeuvre ? this.manoeuvre.update(dt) : null;
+    if (mv && mv.active) this.deformer.setSignals(this.manoeuvre.signals);
+    const tw = this.twowheel ? this.twowheel.update(dt) : null;
+    /* Das Aufsetzen nach dem Stunt gehört dem Deformer: EINE Feder für die Stauchung, nicht zwei. */
+    if (tw && tw.event === 'touchdown') this.deformer.landing({ strength: tw.strength });
+    const tb = this.tumble ? this.tumble.update(dt) : null;
+    if (tb && tb.event === 'touchdown') {
+      this.deformer.landing({ strength: tb.strength });
+      if (tb.soundWord) { this.setState({ word: tb.soundWord }); clearTimeout(this._wt); this._wt = setTimeout(() => this.setState({ word: null }), 640); }
+      if (tb.tone) this.tone('land');
+    }
+    /* DIE FASSROLLE LÖST DAS SCHLINGERN AUS, BESITZT ES ABER NICHT. Drei Beats hintereinander:
+       Überschlag (Hauptread) → Aufsetzen (Akzent) → Schlingern (Erholung). Nicht gleichzeitig. */
+    if (tb && tb.event === 'recover' && this.fishtail) this.fishtail.trigger({ severity: 0.7, dir: -1 });
+    const out = this.deformer.update(dt);
+    const ft = this.fishtail ? this.fishtail.update(dt) : null;
+    const sg = this.deformer.signals;
+    if (this.wheels) {
+      const f = this.rig.frame;
+      /* Radlauf folgt dem Tempo-Signal. Der Faktor 4 ist die Übersetzung von normiertem Signal auf
+         Fahrzeuglängen je Sekunde und rein optisch — Race besitzt das echte Tempo. */
+      /* Fährt ein Manöver, kommt der Radlauf aus dem WEG und trägt das Vorzeichen des Gangs —
+         rückwärts drehen die Räder rückwärts. Das ist der billigste sichere Read für den Gang. */
+      this.wheels.spin(dt, mv && mv.active ? mv.wheelSpeed : sg.speed * 4 * f.length);
+      /* Alle Lenkanteile werden ADDIERT, nicht gesetzt — sonst ueberschreibt die eine
+         Bewegung die andere. */
+      this.wheels.setSteer((mv && mv.active ? mv.steerDeg : (sg.lateral * 18 + sg.drift * -10))
+        + (ft ? ft.steerDeg : 0) + (tw && tw.active ? tw.steerDeg : 0));
+    }
+    const step = Math.round(performance.now() / 90);
+    if (step !== this._ls) {
+      this._ls = step;
+      this.setState({ live: { d: out.dominant, w: out.impactWeight, p: out.pose,
+        ft: ft && ft.active ? ft : null, mv: mv && mv.active ? mv : null, tw: tw && tw.active ? tw : null, tb: tb && tb.active ? tb : null }, sig: sg });
+    }
+  }
+
+  /**
+   * Ton. Zwei Griffe, beide synthetisiert — kein Asset, keine Ladezeit: ein aufsteigender Whoosh
+   * beim Absprung, ein Einschlag (Rauschstoß plus tiefer Puls) beim Aufsetzen. Aus Vorgabe stumm.
+   */
+  tone(kind) {
+    if (!this.state.sound) return;
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+    const A = this._ac || (this._ac = new AC());
+    if (A.state === 'suspended') A.resume();
+    const t = A.currentTime;
+    if (kind === 'launch') {
+      const o = A.createOscillator(), g = A.createGain();
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(520, t + 0.24);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.07, t + 0.05);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+      o.connect(g); g.connect(A.destination); o.start(t); o.stop(t + 0.3);
+      return;
+    }
+    const b = A.createBuffer(1, 5300, A.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2.6);
+    const n = A.createBufferSource(), ng = A.createGain();
+    n.buffer = b; ng.gain.value = 0.13; n.connect(ng); ng.connect(A.destination); n.start(t);
+    const o = A.createOscillator(), g = A.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(96, t); o.frequency.exponentialRampToValueAtTime(38, t + 0.2);
+    g.gain.setValueAtTime(0.2, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.24);
+    o.connect(g); g.connect(A.destination); o.start(t); o.stop(t + 0.26);
+  }
+
+  renderVals() {
+    const s = this.state, AD = this.AD, r = s.report || {};
+    /* `+ 0` macht aus -0 eine 0 — ohne das stand im Ruhezustand »squash -0.0 %«. */
+    const n = (v, d = 2) => (v == null ? '—' : (+v + 0).toFixed(d));
+
+    const groups = (AD ? AD.GROUPS : []).map((g) => ({
+      label: g.label, note: g.note,
+      rows: g.rows.map((row) => ({
+        label: row.label, sel: row.id === s.id, tag: row.via === 'handoff' ? 'handoff' : 'registry',
+        title: row.path + ' · ' + row.dep + ' · Profil ' + row.profile + ' · Blickrichtung ' + (row.facing > 0 ? '+z' : '−z') + ' (Annahme)',
+        on: () => this.load(row.id),
+      })),
+    }));
+
+    const testRows = Object.keys(this.SEQ || {}).map((k) => ({
+      label: k, title: (this.SEQ[k].read || ''),
+      bg: s.running === k ? 'var(--dc-red,#c03)' : '#fff',
+      fg: s.running === k ? '#fff' : '#000',
+      on: () => this.run(k),
+    }));
+
+    const profileRows = Object.keys(this.PROF || {}).map((k) => ({
+      label: k, title: this.PROF[k].use + ' · ' + this.PROF[k].tested,
+      bg: s.profileId === k ? 'var(--dc-red,#c03)' : '#fff',
+      fg: s.profileId === k ? '#fff' : '#000',
+      border: s.profileId === k ? 'var(--dc-red,#c03)' : '#ccc',
+      on: () => this.setProfile(k),
+    }));
+
+    const MO = this.MV ? this.MV.MODES : {};
+    const modeRows = Object.keys(MO).map((k) => ({
+      label: MO[k].label,
+      title: 'Tempo ×' + MO[k].pace + ' · Standzeit beim Gangwechsel ' + MO[k].beatMs + ' ms · Lenkausschlag ×' + MO[k].lock + ' · Überschlag ' + MO[k].overshoot,
+      bg: s.mode === k ? 'var(--dc-red,#c03)' : '#fff',
+      fg: s.mode === k ? '#fff' : '#000',
+      border: s.mode === k ? 'var(--dc-red,#c03)' : '#ccc',
+      on: () => this.setMode(k),
+    }));
+
+    const sigRows = (this.VD ? this.VD.SIGNALS : []).map(([k, label, lo, hi, hint]) => ({
+      label, min: lo, max: hi, hint, val: s.sig[k], txt: n(s.sig[k]),
+      on: (e) => {
+        const next = Object.assign({}, this.state.sig, { [k]: +e.target.value });
+        this._seq = null; this._manual = next;
+        this.setState({ sig: next, running: null, read: null });
+      },
+    }));
+
+    const p = this.PROF ? this.PROF[s.profileId] : null;
+    const live = s.live;
+    return {
+      stageRef: (el) => { this.stageEl = el; },
+      groups, testRows, profileRows, sigRows,
+      panel: s.panel, panelTxt: s.panel ? 'Hide UI' : 'Show UI',
+      facingTxt: s.facing >= 0 ? '+z' : '−z',
+      profileNote: p ? p.use + ' · ' + p.tested : '…',
+      modeRows,
+      modeNote: MO[s.mode]
+        ? 'Standzeit beim Gangwechsel ' + MO[s.mode].beatMs + ' ms. Sie unterscheidet die Fahrweisen deutlicher als das Tempo. Ein Wechsel wirkt sofort, auch mitten im Manöver: die Geometrie bleibt stehen, nur die restliche Zeit skaliert.'
+        : '…',
+      mvTxt: s.mv ? [
+        'Radstand   ' + n(s.mv.L, 3) + ' u',
+        'Spur       ' + n(s.mv.T, 3) + ' u',
+        'Einschlag  ' + n(s.mv.steerMax, 1) + '° · R ' + n(s.mv.R, 3) + ' u',
+        'Gasse      ' + n(s.mv.lane, 3) + ' u',
+        'Wenden     ' + s.mv.turnLegs + ' Züge · ' + s.mv.turnMs + ' ms',
+        'Einparken  ' + n(s.mv.parkTheta, 1) + '° · Lücke ' + n(s.mv.parkSlot, 3) + ' u',
+        'Versatz    soll ' + n(s.mv.parkSoll, 3) + ' · ist ' + n(s.mv.parkIst, 3) + ' u',
+        'Schwerp.   ' + n(s.mv.cgY, 3) + ' u · geometrisch',
+        'Umfallen   ' + n(s.mv.tipDeg, 1) + '° · Halten ' + n(s.mv.holdDeg, 1) + '°',
+        'Bande      ' + n(s.mv.wallDist, 3) + ' u von der Kippachse',
+        'Fassrolle  ' + s.mv.tbTurnsL + ' Umdr · ' + s.mv.tbMsL + ' ms  (leicht)',
+        '           ' + s.mv.tbTurnsH + ' Umdr · ' + s.mv.tbMsH + ' ms  (schwer)',
+        'Gipfel     ' + n(s.mv.tbApexH, 3) + ' u · Rate ' + n(s.mv.tbHzH, 2) + ' Hz',
+        '           gewollt ' + n(s.mv.tbHzWanted, 2) + ' Hz, gerundet',
+      ].join('\n') : '…',
+      openRows: (AD ? AD.OPEN_ASSETREFS : []).map((o) => ({ need: o.need, body: o.why + ' — ' + o.found + ' ' + o.consequence })),
+      readTxt: s.read,
+      wordTxt: s.word,
+      soundTxt: s.sound ? 'TON AN' : 'TON AUS',
+      soundBg: s.sound ? 'var(--dc-red,#c03)' : '#fff',
+      soundFg: s.sound ? '#fff' : '#000',
+      soundBorder: s.sound ? 'var(--dc-red,#c03)' : '#ccc',
+      onSound: () => this.setState({ sound: !s.sound }),
+      wordsTxt: s.words ? 'LAUTWORT AN' : 'LAUTWORT AUS',
+      wordsBg: s.words ? 'var(--dc-red,#c03)' : '#fff',
+      wordsFg: s.words ? '#fff' : '#000',
+      wordsBorder: s.words ? 'var(--dc-red,#c03)' : '#ccc',
+      onWords: () => this.setState({ words: !s.words }),
+      stampTxt: s.err ? 'FEHLER · ' + s.err
+        : s.loading ? 'lädt ' + s.loading + ' …'
+        : r.id ? r.id + ' · ' + r.wheels + ' Räder (' + r.wheelSource + ') · r ' + n(r.wheelRadius, 3) + ' · Spur ' + n(r.track, 2) + ' · Radstand ' + n(r.wheelbase, 2) + ' · ' + r.via + ' @ ' + String(r.pin).slice(0, 10)
+        : 'startet …',
+      liveTxt: live ? [
+        'dominant   ' + live.d,
+        'impact     ' + n(live.w, 2),
+        'pitch      ' + n(live.p.pitch, 2) + '°',
+        'roll       ' + n(live.p.roll, 2) + '°',
+        'yaw        ' + n(live.p.yaw, 2) + '°',
+        'squash     ' + n(live.p.squash * 100, 1) + ' %',
+        'stretch    ' + n(live.p.stretch * 100, 1) + ' %',
+      ].concat(live.ft ? [
+        '',
+        /* Kurz gehalten: die Anzeige darf den Wagen nicht überdecken (§2.3 Schutzzonen). */
+        'ft phase   ' + live.ft.phase + ' #' + live.ft.swing,
+        'ft yaw     ' + n(live.ft.yawDeg, 2) + '/' + n(live.ft.amplitudeDeg, 2) + '°',
+        'ft roll    ' + n(live.ft.rollDeg, 2) + '°',
+        'ft steer   ' + n(live.ft.steerDeg, 1) + '°',
+        'ft t       ' + live.ft.tMs + ' ms',
+      ] : []).concat(live.mv ? [
+        '',
+        'mv ' + live.mv.program + ' · ' + live.mv.mode,
+        'mv zug     ' + live.mv.leg + '/' + live.mv.legs + ' gang ' + live.mv.gear,
+        'mv gier    ' + n(live.mv.yawDeg, 1) + '°',
+        'mv lenk    ' + n(live.mv.steerDeg, 1) + '°',
+        'mv t       ' + live.mv.tMs + '/' + live.mv.durationMs + ' ms',
+      ] : []).concat(live.tw ? [
+        '',
+        'tw ' + live.tw.variant + ' · ' + live.tw.phase,
+        'tw roll    ' + n(live.tw.rollDeg, 2) + '/' + n(live.tw.targetDeg, 2) + '°',
+        'tw kipp    ' + n(live.tw.tipDeg, 2) + '°',
+        'tw gier    ' + n(live.tw.yawDeg, 2) + '°',
+        'tw t       ' + live.tw.tMs + ' ms',
+      ] : []).concat(live.tb ? [
+        '',
+        'tb ' + live.tb.phase + ' · Umdr ' + live.tb.turn + '/' + live.tb.turns,
+        'tb roll    ' + n(live.tb.rollDeg, 1) + '°',
+        'tb höhe    ' + n(live.tb.heightY, 3) + '/' + n(live.tb.apex, 3) + ' u',
+        'tb achse   x ' + n(live.tb.axisX, 3) + ' y ' + n(live.tb.axisY, 3),
+        'tb t       ' + live.tb.tMs + '/' + live.tb.durationMs + ' ms',
+      ] : []).join('\n') : 'wartet',
+      orientTxt: 'Orient ' + ((this.CR && this.CR.ORIENTS[s.orientX]) ? this.CR.ORIENTS[s.orientX][0] : '0°'),
+      onOrient: () => { const nx = (s.orientX + 1) % 6; this.AD.rememberOrient(s.id, nx); this.load(s.id); },
+      onPanel: () => this.setState({ panel: !s.panel }),
+      onReset: () => this.reset(),
+      onFlip: () => {
+        const nx = -s.facing;
+        this.AD.rememberFacing(s.id, nx);
+        if (this.wheels) this.wheels.facing = nx;
+        if (this.fishtail) this.fishtail.setFacing(nx);
+        if (this.twowheel) { this.twowheel.setFacing(nx); this.twowheel.setWorldSign(nx < 0 ? -1 : 1); }
+        if (this.manoeuvre) this.manoeuvre.setFacing(nx);
+        this.placeArrow(nx);
+        this.setState({ facing: nx, mv: this.measureManoeuvre() });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

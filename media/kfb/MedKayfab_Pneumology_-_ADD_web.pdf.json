@@ -1,0 +1,560 @@
+{
+  "sourceFile": "MedKayfab_Pneumology - ADD web.pdf",
+  "deckTitle": "Pneumology — MedKayfab Pneumology Wrestling!",
+  "deckType": "Medical education persona cards",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T00:00:00",
+  "savedAt": "2026-06-20T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "workshop"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Alfie the Alveolus",
+      "grade": 2,
+      "power": "Surface Tension Trap",
+      "lore": "Small alveoli have higher pressure than large ones. No DPPC = NRDS.",
+      "gradeReason": "Fragile bubble persona is clear but collapsing mechanic needs medical scaffolding.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: tiny bubble-faced frog mid-exhale panic. Mood: fragile precariousness."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Compliance Connie",
+      "grade": 2,
+      "power": "The Recoil Soap",
+      "lore": "High in Emphysema (floppy), Low in Fibrosis (stiff).",
+      "gradeReason": "Elasticity Queen is clear but Delta V / Delta P needs prior lung mechanics knowledge.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: stretchy octopus queen holding inflating bellows. Mood: regal and springy."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Dead-Space Dan",
+      "grade": 2,
+      "power": "The Empty Breath",
+      "lore": "Anatomical (conducting zone) vs. Physiological (unperfused alveoli).",
+      "gradeReason": "Air that talks but never trades is evocative but the Bohr equation kills casual play.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: gas tank character talking to empty pipework, nothing exchanged. Mood: futile absurdity."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Shunt-Man Shaun",
+      "grade": 1,
+      "power": "Oxygen Sabotage",
+      "lore": "Blood bypasses the gas. Immune to 100% O2 therapy. Perfusion without ventilation.",
+      "gradeReason": "Immune to 100% O2 is a killer hook — players instantly know this card cheats the system.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: blood-red skateboarder bypassing a gas exchange gate. Mood: smug rule-breaking."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Hemoglobin Hank",
+      "grade": 1,
+      "power": "Cooperative Loading",
+      "lore": "Four seats. Once one is taken, the rest are easier to fill.",
+      "gradeReason": "Four seats on a VW Bus — instantly graspable cooperativity metaphor, zero context required.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: red VW Beetle packed with O2 passengers, first getting in reluctantly. Mood: cooperative momentum."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Zonal Zack",
+      "grade": 2,
+      "power": "The VIG Ladder",
+      "lore": "Ventilation and Perfusion both increase at the base, but Perfusion increases more.",
+      "gradeReason": "West Zones diagram makes the gradient visible but Vig Ladder framing needs anatomy orientation.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: tall giraffe standing in gradient rainfall by a lung, more rain at the bottom. Mood: gravity-ruled precision."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Central Sniffer",
+      "grade": 2,
+      "power": "The Vent-Drive Override",
+      "lore": "Medullary chemoreceptors care about CO2 crossing the BBB and lowering CSF pH. NOT about oxygen.",
+      "gradeReason": "NOT about oxygen is a great clinical pearl, but the acid fiend mole needs context to deploy.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: mole with gas detector at the blood-brain barrier, ignoring O2 alarms. Mood: obsessive CO2 vigilance."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "The Pleural Seal",
+      "grade": 2,
+      "power": "Negative Pressure Engine",
+      "lore": "Keeps lungs expanded and chest wall in. Break entity = Pneumothorax.",
+      "gradeReason": "Break entity = Pneumothorax is clean and sharp — good lore but void metaphor is abstract.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: giant water drop seal in a pleural cavity, chest wall held intact. Mood: quiet invisible tension."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Right-Shift Rick",
+      "grade": 1,
+      "power": "The Oxygen Dump",
+      "lore": "Shifts the Sigmoid curve right. Tissues need oxygen during exercise. Rick forces Hemoglobin Hank to let it go.",
+      "gradeReason": "Plays directly against Hank — Rick forces him to let go. Cross-card narrative is instantly playable.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: muscled badger shaking a VW bus mid-race to drop O2 cargo. Mood: forceful liberation."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Left-Shift Larry",
+      "grade": 1,
+      "power": "The Hoarder's Grip",
+      "lore": "Shifts the curve left. Hemoglobin holds tighter to oxygen. O2 cannot reach the starving tissues.",
+      "gradeReason": "Hoarder's Grip vs Rick's Dump — the rivalry framing makes tissue hypoxia instantly embodiable.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: penguin locked in an igloo clutching O2 canisters, tissues starving outside. Mood: selfish cold-locked grip."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Surfactant Sid",
+      "grade": 2,
+      "power": "The Alveolar Savior",
+      "lore": "Synthesized by Type II pneumocytes. Drastically reduces surface tension so the fragile bubbles don't snap shut.",
+      "gradeReason": "Alveolar Savior role is clear but pneumocyte origin is background knowledge a player needs.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: seal superhero diving into a bubble nest spraying DPPC foam. Mood: rescue heroism."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "The NRDS Neonate",
+      "grade": 2,
+      "power": "The Surfactant Void",
+      "lore": "Born without Surfactant Sid. Alveoli collapse, causing Neonatal Respiratory Distress Syndrome.",
+      "gradeReason": "Sid's absence = NRDS is clear but the card needs Sid played first for the drama to land.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: tiny premature infant in collapsed bubble nursery, lungs folded shut. Mood: fragile precarious struggle."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Obstruction Otis",
+      "grade": 1,
+      "power": "Air Trapping",
+      "lore": "Scooped-out Flow-Volume Loop. Otis lives in the small airways.",
+      "gradeReason": "He lets you in but won't let you leave — perfect one-sentence embodiment of obstructive lung disease.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: bear bouncer blocking an airway exit door, air backed up behind him. Mood: stubborn immovable obstruction."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Barry Bronchitis",
+      "grade": 1,
+      "power": "Mucus Hypertrophy",
+      "lore": "Productive cough for 3 months over 2 years. Leads to Cor Pulmonale.",
+      "gradeReason": "CO2 JUNKIE label + blue bloater visual makes this COPD archetype instantly role-playable at any table.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: bloated blue bulldog coughing green slime with CO2 junkie badge. Mood: chronic saturated misery."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Emma Emphysema",
+      "grade": 1,
+      "power": "The Pursed-Lip Panic",
+      "lore": "Centriacinar (Smokers) vs. Panacinar (MAT). Destroyed SEPTA = LOST SURFACE AREA.",
+      "gradeReason": "Pink Puffer + pursed-lip panic is classic — her face tells you how to play her before you read a word.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: pink flamingo exhaling through pursed beak, air sacs deflated and shredded. Mood: breathless elegant panic."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Asthma Ash",
+      "grade": 1,
+      "power": "The Curschmann Spiral",
+      "lore": "Type 1 Hypersensitivity. IgE-mediated mast cell mayhem.",
+      "gradeReason": "KAYFABONGO! + pollen + dust mites + twitchy airway = table eruption guaranteed, zero explanation needed.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: twitchy cat with spiral bronchial casts, pollen bombs incoming. Mood: hyperreactive explosive panic."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "SABA Sam",
+      "grade": 1,
+      "power": "The Instant Relief",
+      "lore": "Fast onset bronchodilation. Albuterol smooth muscle relaxation.",
+      "gradeReason": "Rescue Sprint is the rescue inhaler character — every player will mime puffing the inhaler immediately.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: sprinting canister athlete blasting open bronchi doors with a blue puffer. Mood: urgent fast-acting relief."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "LAMA Llama",
+      "grade": 2,
+      "power": "Drying the Swamp",
+      "lore": "The marathon runner. Blocks parasympathetic bronchoconstriction.",
+      "gradeReason": "Drying the Swamp is vivid anticholinergic imagery but the long-acting vs SABA distinction needs briefing.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: llama in umbrella shield blocking ACh droplets, parasympathetic lightning deflected. Mood: slow steady protection."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "CF-Charlie",
+      "grade": 2,
+      "power": "The Viscous Blockade",
+      "lore": "Delta F508 mutation. Cl- stuck inside, Na+ and H2O follow, leaving dehydrated, thick mucus in airways and pancreas.",
+      "gradeReason": "Viscous Blockade makes the physics clear but Delta F508 gatekeeps the full role for medical students.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: pelican clogged with salt and thick mucus, pancreatic and airway pipes blocked. Mood: sticky suffocating blockade."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Theophylline Tiger",
+      "grade": 1,
+      "power": "cAMP Accumulation",
+      "lore": "Phosphodiesterase inhibitor. Great bronchodilator, but easy to overdose (seizures, arrhythmias).",
+      "gradeReason": "Narrow therapeutic index + Cardiotoxicity! warning = the player immediately wants to handle this card with gloves.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: tiger juggling pill bottles labeled toxic, seizure lightning and arrhythmia sparks flying. Mood: dangerously effective."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Fibrotic Frank",
+      "grade": 1,
+      "power": "The Diffusion Barrier",
+      "lore": "Frank thickens the interstitium. Oxygen has to swim through a brick wall. Restrictive pattern (FVC Down).",
+      "gradeReason": "Oxygen swimming through a brick wall is a perfect tactile metaphor — plays itself without explanation.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: armadillo laying fibrotic bricks in lung interstitium, O2 molecules struggling through. Mood: slow inevitable thickening."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Sarcoid Sarah",
+      "grade": 2,
+      "power": "The Hilar Shadow",
+      "lore": "Immune system overreaction. Hypercalcemia from 1-alpha hydroxylase in macrophages.",
+      "gradeReason": "The Mystery + non-caseating granulomas is evocative but the hypercalcemia mechanism is two steps removed.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: elegant swan with bilateral hilar lymph node wings, calcium crystals sparkling. Mood: mysterious autoimmune elegance."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Dusty Dan",
+      "grade": 2,
+      "power": "The Fibrotic Trigger",
+      "lore": "Macrophages eat inorganic dust, die, and release fibrogenic cytokines.",
+      "gradeReason": "Overloaded Macrophage concept is solid but the character's role is mechanistic more than performative.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: mole inhaling stone dust, macrophages popping and releasing fibrosis sparks. Mood: industrial occupational doom."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Asbestos Abby",
+      "grade": 2,
+      "power": "The Mesothelioma Timebomb",
+      "lore": "From roofing/shipbuilding. Affects lower lobes. Bronchogenic carcinoma > Mesothelioma.",
+      "gradeReason": "Timebomb framing is strong but 20-year latency and two-cancer distinction require clinical context.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: bee plumber with ferruginous body tools, lower lobe timebomb ticking. Mood: slow-burning occupational hazard."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Silica Sid",
+      "grade": 2,
+      "power": "The Macrophage Killer",
+      "lore": "Sand disrupts phagolysosomes. Massive risk of TB susceptibility. Lives in the upper lobes.",
+      "gradeReason": "TB susceptibility + eggshell calcifications is strong but sandblaster vs macrophage mechanism needs scaffolding.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: sandblasting badger in upper lung lobes, eggshell calcified lymph nodes raining down. Mood: gritty upper-lobe grinder."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Coal Carl",
+      "grade": 2,
+      "power": "The Carbon Stiffening",
+      "lore": "Coal worker's pneumoconiosis. Massive progressive fibrosis.",
+      "gradeReason": "Black Lung character is atmospheric but the card describes rather than gives the player something to do.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: coal-black crow with tar-stained lungs, progressive fibrosis chains spreading. Mood: dark industrial suffocation."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Hypersensitivity Harry",
+      "grade": 2,
+      "power": "The Organic Shrink",
+      "lore": "Allergic response to organic dusts (bird fancier's, farmer's lung). Removing the trigger stops the fibrosis.",
+      "gradeReason": "Removing the trigger stops the fibrosis is an excellent clinical decision hook — almost G1 but character is passive.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: farmer goat surrounded by bird feathers and hay, lungs shrinking restrictively. Mood: allergic avoidance imperative."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Obesity Oliver",
+      "grade": 1,
+      "power": "The Upward Crush",
+      "lore": "The lungs are healthy, but the bellows cannot open. A classic cause of extrapulmonary restrictive defect.",
+      "gradeReason": "Heavy Blanket + Upward Crush + DIAPHRAGM label = mechanical restriction embodied instantly — no context needed.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: enormous walrus crushing diaphragm down, healthy lungs trapped underneath. Mood: externally imposed breathless weight."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Rusty the Strep",
+      "grade": 1,
+      "power": "Lobar Consolidation",
+      "lore": "The King of Community Acquired Pneumonia. Rusty sputum is his calling card.",
+      "gradeReason": "King of CAP + rusty sputum = clinical fingerprint every medical student recognises and can perform instantly.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: rusty raccoon in royal crown flooding a lobe with rust-colored sputum. Mood: regal bacterial conquest."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Walking Wally",
+      "grade": 2,
+      "power": "The Mine Attack",
+      "lore": "Atypical pneumonia. Ghost in the machine. Erythema multiforme association.",
+      "gradeReason": "Ghost in the machine is evocative but no cell wall + cold agglutinins requires Gram stain context.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: chameleon walking through hospital X-ray looking ill but upright, cold agglutinin ghost trail. Mood: subtle stealth infection."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "The TB Tank",
+      "grade": 1,
+      "power": "The Apical Squatter",
+      "lore": "Loves Oxygen. Ghon Complexes are his initial bunkers. Reactivation happens at the top.",
+      "gradeReason": "Apical Squatter + Loves Oxygen = geography of TB instantly graspable; Ghon bunker metaphor is perfect.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: caseating military tank dug into upper lobe apex, Ghon complex fortress below. Mood: entrenched latent menace."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Klebsiella Kelly",
+      "grade": 1,
+      "power": "The Alcoholic Aspiration",
+      "lore": "Enteric flora aspirated into the lungs. Necrotizing lobar pneumonia.",
+      "gradeReason": "Currant Jelly sputum + Bulging Fissure Sign = one of the most memorable clinical pictures in pneumonia.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: jelly blob character aspirating currant-red sputum into upper lobe, fissure bulging. Mood: necrotizing alcohol-fuelled invasion."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "PJP Paul",
+      "grade": 2,
+      "power": "The Immunocompromised Strike",
+      "lore": "Pneumocystis jirovecii. Bilateral ground-glass opacities. Treat with TMP-SMX.",
+      "gradeReason": "CD4 < 200 threshold is a concrete trigger but Silver Stain and jirovecii naming are insider knowledge.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: bat opportunist in bilateral ground-glass clouds, TMP-SMX sword drawn. Mood: immunocompromised shadow strike."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Legionnaire Leo",
+      "grade": 1,
+      "power": "The Aerosol Ambush",
+      "lore": "Atypical pneumonia with GI/CNS symptoms and low sodium. Needs a urine antigen test.",
+      "gradeReason": "PUNK LUNGS FOREVER! + water tower origin + hyponatremia = multi-system character with immediate personality.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: soldier leopard emerging from a cooling tower aerosol, GI and CNS lightning bolts. Mood: systemic aerosol ambush."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "The Abscess Axe",
+      "grade": 2,
+      "power": "The Foul Breath",
+      "lore": "Aspiration of oropharyngeal flora. Peptostreptococcus, Fusobacterium. Treat with Clindamycin.",
+      "gradeReason": "Foul Breath + air-fluid level is vivid but the anaerobe species list shifts the card toward textbook.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: woodpecker axeman hacking cavitary abscess with foul green gas and air-fluid cavity. Mood: putrid anaerobic assault."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Viral Vicky",
+      "grade": 2,
+      "power": "The Ground-Glass Glitch",
+      "lore": "Causes atypical pneumonia. Leaves the alveolar space empty but inflames the walls.",
+      "gradeReason": "Interstitial Ghost is a great name but the CXR pattern distinction needs a radiologist to fully deploy.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: translucent ghost virus inside interstitial walls, alveoli eerily empty and inflamed. Mood: invisible inflammatory haunting."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Rifampin Rick",
+      "grade": 1,
+      "power": "The CYP450 Rev-Up",
+      "lore": "Induces liver enzymes. Warn the patient about the orange fluids!",
+      "gradeReason": "Orange painter + orange fluids warning = immediate action prompt — this card plays out of the box.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: monkey spray-painting everything orange including urine and sputum, CYP450 gears revving. Mood: vivid unstoppable orange cascade."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Isoniazid Izzy",
+      "grade": 1,
+      "power": "The Wall Breaker",
+      "lore": "Causes peripheral neuropathy. Always administer with Vitamin B6 (Pyridoxine).",
+      "gradeReason": "B6 BUST! sidekick requirement + Nerve Slicer alias = clinical pairing reflex fires instantly at any table.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: praying mantis slicing mycolic acid wall, B6 vitamin shield required in off-hand. Mood: essential pairing imperative."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Pyrazinamide Pyro",
+      "grade": 1,
+      "power": "The Acidic Ambush",
+      "lore": "Kills TB in the acidic phagolysosome. Hyperuricemia is the infamous side effect.",
+      "gradeReason": "OUCH! gout + KayfaBINGO! + burns TB in acid lair = memorable side effect + mechanism in one vivid package.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: fire lizard incinerating phagolysosome, uric acid crystals forming gout spikes in toes. Mood: acidic fiery collateral damage."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Ethambutol Ed",
+      "grade": 1,
+      "power": "The Wall Blocker",
+      "lore": "Causes optic neuropathy. Red-green color blindness. Eye-thambutol!",
+      "gradeReason": "Eye-thambutol! wordplay + color-blind sniper + EYE SPY! = mnemonic gold, zero additional context required.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: owl sniper looking through red-green scrambled scope, optic nerve fraying. Mood: precise visual hazard."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Benny the Blockage",
+      "grade": 2,
+      "power": "The Sudden Gasp",
+      "lore": "Virchow's triad ambush. Stops the flow, but air keeps coming. Dead-Space Dan's master.",
+      "gradeReason": "Dead-Space Dan's master is a great cross-card hook but S1Q3T3 ECG pattern stays in textbook territory.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: walrus clot blocking a pulmonary vessel, air still flowing uselessly above. Mood: sudden silent vascular ambush."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Tension Pete",
+      "grade": 1,
+      "power": "The Heart Crush",
+      "lore": "One-way valve in the pleura. Every breath makes Pete bigger, dropping venous return to zero.",
+      "gradeReason": "Every breath makes Pete bigger is an escalating horror loop — the most immediately embodiable emergency in the deck.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: puffer fish expanding in pleural cavity, trachea deviating, heart compressed. Mood: escalating breath-by-breath catastrophe."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Small-Cell Sam",
+      "grade": 2,
+      "power": "Paraneoplastic Spells",
+      "lore": "Smoker's cancer. Doesn't just grow, secretes chaos. Inoperable, treat with chemo.",
+      "gradeReason": "Secretes chaos is great framing but ACTH/ADH paraneoplastic syndromes need clinical context to play.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: ninja cancer cell casting ACTH and ADH spells from a central lung location. Mood: covert systemic mischief."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Squamous Sid",
+      "grade": 2,
+      "power": "The Calcium Spike",
+      "lore": "Central, cavitary, cigarette-related. Ectopic parathyroid-hormone-related peptide.",
+      "gradeReason": "Calcium Spike + Keratin Pearls is clinically vivid but PTHrP mechanism stays descriptive rather than performative.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: lizard squat in cavitary central lung, calcium spikes erupting, keratin pearl armor. Mood: squamous territorial calcium eruption."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "The Pulm Attending",
+      "grade": 1,
+      "power": "The Ultimate Pimp",
+      "lore": "Is it Hypoventilation, V/Q Mismatch, Shunt, or Diffusion? Deplore the gradient or get out of my ICU.",
+      "gradeReason": "Deplore the gradient or get out of my ICU — every player becomes the attending immediately.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: FrizzleBob in attending coat pointing at ABG results, ICU team scrambling. Mood: authoritative diagnostic synthesis pressure."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Alpha-1 AI",
+      "grade": 2,
+      "power": "The Elastase Rot",
+      "lore": "Lack of alpha-1 antitrypsin leaves elastase uninhibited. Destroys the lower lobes.",
+      "gradeReason": "Double Threat (lung + liver) is compelling but lower lobe vs upper lobe distinction needs EMMA context.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: jellyfish with no antitrypsin shield, elastase tentacles destroying lower lung lobes and liver. Mood: uninhibited enzymatic devastation."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "The Cor Pulmonale King",
+      "grade": 2,
+      "power": "The Right-Sided Break",
+      "lore": "Chronic hypoxia causes pulmonary vasoconstriction, breaking the right heart.",
+      "gradeReason": "Right-Sided Break from hypoxia is mechanistically solid but the two-step chain needs a table briefing.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: hypertensive lion king crushing right ventricle under pulmonary pressure crown. Mood: chronically overburdened right-sided royalty."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Berty Bronchiectasis",
+      "grade": 2,
+      "power": "The Permanent Stretch",
+      "lore": "Chronic necrotizing infections destroy airway muscle and elastic tissue.",
+      "gradeReason": "Dead Pipes + Permanent Stretch is anatomically clear but the cause-and-effect needs chronic infection framing.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: vulture in permanently dilated bronchial pipes, elastic tissue dissolved and sagging. Mood: irreversibly stretched ruined airways."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Quest: The Blue Flight",
+      "grade": 1,
+      "power": "The D-Dimer Trap",
+      "lore": "70yo smoker, 12-hour flight, sudden SOB, clear X-ray. It's Charlie. The A-a gradient is sky-high due to V/Q mismatch.",
+      "gradeReason": "Classic PE scenario with named Virchow risk factors — clinical puzzle that plays out in 30 seconds.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: elderly seal clutching chest on airplane, clear CXR shown, D-dimer alarm flashing. Mood: airborne diagnostic urgency."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Quest: The Salty Kiss",
+      "grade": 1,
+      "power": "The Pancreatic Block",
+      "lore": "Toddler, recurrent pneumonias, foul stools. Charlie trapped the chloride. Blocked pancreatic duct.",
+      "gradeReason": "Toddler + recurrent pneumonias + foul stools = CF triad that every student knows, instantly diagnosable.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: toddler penguin salty-tearful, lungs recurrently infected, pancreatic duct blocked. Mood: early-life diagnostic revelation."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Quest: The Night Shift Shadow",
+      "grade": 1,
+      "power": "The Cytokine Burn",
+      "lore": "3-week cough, night sweats, weight loss. The Tank is reactivating in the upper lobes. Deploy the RIPE Squad.",
+      "gradeReason": "Deploy the RIPE Squad is a direct action call — links quest scenario to the four TB drug characters perfectly.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: night shift doctor finding apical cavitation on CXR, RIPE squad assembled below. Mood: nighttime reactivation revelation."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Quest: The Silent Choke",
+      "grade": 2,
+      "power": "The Drive Drop",
+      "lore": "Hypoventilation. The lungs work fine (A-a is normal), but the brain forgot to breathe.",
+      "gradeReason": "The brain forgot to breathe is vivid but diagnosing pure hypoventilation from a normal A-a needs clinical reasoning.",
+      "artworkPrompt": "Style: MedKayfab cartoon. Subject: sleeping patient with normal chest X-ray, brain with sleep drive off switch, CO2 rising. Mood: silent brainstem failure."
+    }
+  ],
+  "cardCount": 52,
+  "gradeDistribution": {
+    "G1": 25,
+    "G2": 27,
+    "G3": 0
+  },
+  "overallScore": 9,
+  "verdict": "MedKayfab Pneumology is the RIPE squad's finest hour — 52 cards covering physiology, pharmacology, pathology and clinical reasoning with zero filler. The four classic COPD archetypes, the TB drug quartet (Rifampin Rick through Ethambutol Ed), and Tension Pete are standout G1 cards that play themselves at the table. The Quest pages add a clinical reasoning layer that turns the deck into an active diagnostic game. Weakness: the pneumoconiosis cluster (Cards 23-27) leans descriptive, and a few atypical pneumonia cards need a Gram stain primer to fully deploy. Table-ready: YES.",
+  "blurb": "Your full lung syllabus as a card game — from alveolar physics to TB antibiotics, 52 persona cards that make pulmonology stick. Perfect for medical students and USMLE grinders who learn by doing, not by highlighting.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob wrestling a CO2 lung monster with SHAKE EM OUT! and FIGHT THE CO2 MONSTER! — high-energy and immediately on-brand",
+    "coverTitle": "4 — MedKayfab: Pneumology Wrestling! is clear, catchy and sets expectations correctly",
+    "coverVibeMatch": "5 — wrestling framing + medical subject perfectly merged; tone matches card content exactly",
+    "coverOriginality": "4 — strong execution of established MedKayfab formula; less unexpected than a fresh concept",
+    "coverViral": "5 — FIGHT THE CO2 MONSTER! with FrizzleBob throwing punches at a lung is instantly shareable",
+    "coverScore": 4.6,
+    "coverNote": "One of the stronger MedKayfab covers — FrizzleBob in combat with the CO2 monster immediately communicates the deck's performative energy. The SHAKE EM OUT / FIGHT THE CO2 MONSTER callouts work as rally cries. The secondary text about Komik Kards for Narrative Medical Learning is small but present."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "15 pages: 1 cover + 13 card pages (52 cards in 2x2 grid) + 1 bonus Hypoxemia Diagnostic Flowchart (page 15 — not a card page, but a reference tool summarizing A-a gradient diagnosis tree). All text clearly rendered, no decorative font artifacts. Quest cards (49-52) on page 14 use a distinct quest frame with Stat headers. The RIPE quartet (cards 37-40) form a coherent pharmacology sub-deck. MediKayfab Pneumology Edition v1.0 version mark on page 15.",
+  "topCards": [
+    "Tension Pete",
+    "Rifampin Rick",
+    "Asthma Ash",
+    "Obstruction Otis",
+    "Ethambutol Ed"
+  ],
+  "worstCards": [
+    "Coal Carl",
+    "Dusty Dan",
+    "Walking Wally"
+  ],
+  "todos": {
+    "urgent": [],
+    "quickWins": [
+      "Strengthen Coal Carl with a more performative power — The Carbon Stiffener is flat; give him an action",
+      "Walking Wally could use a Cold Agglutinin mechanic callout that tells the player what to do with it"
+    ],
+    "niceToHave": [
+      "Consider a Surfactant Sid + NRDS Neonate combo mechanic note to link the two cards explicitly",
+      "Page 15 flowchart could become its own mini reference card for table use"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Pneumology",
+    "#MedicalEducation",
+    "#Kayfabizarro",
+    "#USMLE",
+    "#LungWrestling",
+    "#MedStudents"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "workshop"
+  ],
+  "channels": [
+    "Gumroad",
+    "Instagram",
+    "TikTok"
+  ],
+  "marketingText": "MedKayfab: PNEUMOLOGY – Master the Lung From Alveolar Physics to TB Drugs (Medical Mnemonics Cut & Play Comic)\n\n52 illustrated medical mnemonic cards to master gas exchange and hypoxemia, the obstructive airway diseases, and the RIPE anti-TB quartet.\n\nEvery lung problem is a fight over one thin sheet of tissue, the place where air and blood are supposed to meet and trade. Pneumology is the full catalogue of everything that wedges itself into that handshake: fluid, mucus, pus, pressure, scar, or a drug that was meant to help. Learn it the usual way and you end up with four disconnected piles, obstructive on one list, restrictive on another, the gas-exchange physics on a third, the antibiotics on a fourth. Then a real saturation number starts falling on the ward and none of the piles tell you which one you are looking at.\n\nMedKayfab Pneumology stages the whole respiratory tract as a wrestling card. Every obstruction, infection, and drug becomes a fighter with a tell, so a dropping oxygen reading stops being a riddle and turns into a name you already recognize across the room.\n\nYOU'LL GET\n- 52 illustrated MedKayfab cards (13pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Tension Pete, Asthma Ash, and Obstruction Otis\n- A bonus Hypoxemia diagnostic flowchart that lays the A-a gradient tree out on a single page\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nYou will meet Tension Pete, the pressure that keeps climbing inside the chest until the lung folds and the whole heart gets shoved off its mark. Asthma Ash works the reversible angle: airways that clamp shut the instant they meet their trigger and swing open again the moment you name it. Obstruction Otis is the slow grind of chronic disease, air that walks in without complaint and then refuses to leave. The anti-TB pharmacology runs as its own tag team, the RIPE quartet, with Rifampin Rick turning every body fluid orange and Ethambutol Ed forever checking your eyes before the next dose.\n\nHow it works\nEvery card is a cognitive anchor: the Character (the mnemonic), the Visual (the scene), the Stat Block (targets and doses), the Lore (the clinical story), and the Quest (the challenge). The Mechanism Flash mode is the engine of it: explain the pathophysiology or the drug in one sentence without looking, or the patient on the Stage stops breathing and the round ends badly for both of you.\n\nHonest cognitive load\nThis is a core respiratory engine, built for medical students and USMLE grinders who learn by doing rather than highlighting, and for anyone heading into a pulmonology or internal-medicine rotation. It pairs naturally with Cardiology for the full heart-lung axis behind every hypoxemia, with Intensive Care Medicine when the airway problem becomes a ventilator problem, and with Tropical Medicine and Infectious Disease for the longer tuberculosis arc that the RIPE cards open.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is 5 euros. If you are a student on a budget, enter 0, no questions asked. If you want to support more decks, anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

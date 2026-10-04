@@ -1,0 +1,1080 @@
+{
+ "schema": "kfb.locomotion-profile-set/0.1",
+ "rigFamily": "Rig_Medium",
+ "actor": "ActionFigure (KayKit Mystery S6 · Dec 2023) @43d39ef9",
+ "source": {
+  "pack": "KayKit Character Animations 1.1",
+  "repo": "georg-doc/kayfabizarro",
+  "commit": "b97b5ac55df2724fae623992433685583eece51e",
+  "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/",
+  "sets": [
+   "General",
+   "MovementBasic",
+   "MovementAdvanced"
+  ]
+ },
+ "actorScale": 0.7966,
+ "measuredAt": "2026-09-30T02:40Z",
+ "profiles": {
+  "idle": {
+   "role": "idle",
+   "kind": "stand",
+   "clip": "Idle_A",
+   "pack": "General",
+   "ref": {
+    "src": "stock",
+    "id": "Idle_A"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1966,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        65
+       ]
+      ],
+      "lift": 0,
+      "minY": 0.1157
+     },
+     "foot.r": {
+      "planted": [
+       [
+        1,
+        65
+       ]
+      ],
+      "lift": 0,
+      "minY": 0.1157
+     }
+    },
+    "events": {
+     "firstPlant": 1,
+     "hipLow": 33
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 0,
+    "cadenceSpm": 0,
+    "stanceSpeed": 0,
+    "travelDir": null,
+    "strideLength": 0,
+    "hipRange": 0.0066
+   },
+   "cadenceSpm": 0,
+   "worldSpeed": 0,
+   "nativeSpeed": 0,
+   "strideRelation": "n/a",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "walk": {
+   "role": "walk",
+   "kind": "cycle",
+   "clip": "Walking_A",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Walking_A"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1705,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        30
+       ],
+       [
+        63,
+        65
+       ]
+      ],
+      "lift": 0.1465,
+      "minY": 0.1071
+     },
+     "foot.r": {
+      "planted": [
+       [
+        32,
+        60
+       ]
+      ],
+      "lift": 0.1493,
+      "minY": 0.1042
+     }
+    },
+    "events": {
+     "takeoff": 31,
+     "touchdown": 32,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.5235,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 0.5584,
+    "hipRange": 0.0434
+   },
+   "cadenceSpm": 112.5,
+   "worldSpeed": 0.523,
+   "nativeSpeed": 0.6565,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "walk.fast": {
+   "role": "walk.fast",
+   "kind": "cycle",
+   "clip": "Walking_A",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Walking_A"
+   },
+   "sourceBacked": false,
+   "variant": {
+    "type": "playback-rate",
+    "of": "walk",
+    "why": "Walking_B measures 9.8 % vs Walking_A (< +10 %)"
+   },
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1.3,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1705,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        30
+       ],
+       [
+        63,
+        65
+       ]
+      ],
+      "lift": 0.1465,
+      "minY": 0.1071
+     },
+     "foot.r": {
+      "planted": [
+       [
+        32,
+        60
+       ]
+      ],
+      "lift": 0.1493,
+      "minY": 0.1042
+     }
+    },
+    "events": {
+     "takeoff": 31,
+     "touchdown": 32,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.5235,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 0.5584,
+    "hipRange": 0.0434
+   },
+   "cadenceSpm": 146.3,
+   "worldSpeed": 0.681,
+   "nativeSpeed": 0.8549,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "VARIANT · playback-rate"
+  },
+  "run": {
+   "role": "run",
+   "kind": "cycle",
+   "clip": "Running_A",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Running_A"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 0.8,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 49,
+    "fps": 60,
+    "legLen": 0.1711,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        4,
+        14
+       ]
+      ],
+      "lift": 0.2221,
+      "minY": 0.1086
+     },
+     "foot.r": {
+      "planted": [
+       [
+        28,
+        38
+       ]
+      ],
+      "lift": 0.222,
+      "minY": 0.1087
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 4,
+     "firstPlant": 4
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 150,
+    "stanceSpeed": 2.5315,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 2.0252,
+    "hipRange": 0.0818
+   },
+   "cadenceSpm": 150,
+   "worldSpeed": 2.531,
+   "nativeSpeed": 3.1771,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "sprint": {
+   "role": "sprint",
+   "kind": "cycle",
+   "clip": "Running_B",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Running_B"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": "source clip Running_B measures +22.1 % vs Running_A",
+   "duration": 0.8,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 49,
+    "fps": 60,
+    "legLen": 0.16,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        7,
+        13
+       ]
+      ],
+      "lift": 0.1839,
+      "minY": 0.0946
+     },
+     "foot.r": {
+      "planted": [
+       [
+        31,
+        37
+       ]
+      ],
+      "lift": 0.1836,
+      "minY": 0.0946
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 7,
+     "firstPlant": 7
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 150,
+    "stanceSpeed": 3.0913,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 2.473,
+    "hipRange": 0.111
+   },
+   "cadenceSpm": 150,
+   "worldSpeed": 3.091,
+   "nativeSpeed": 3.8801,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "backward": {
+   "role": "backward",
+   "kind": "cycle",
+   "clip": "Walking_Backwards",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Walking_Backwards"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1705,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        4
+       ],
+       [
+        42,
+        65
+       ]
+      ],
+      "lift": 0.1164,
+      "minY": 0.1095
+     },
+     "foot.r": {
+      "planted": [
+       [
+        10,
+        36
+       ]
+      ],
+      "lift": 0.1164,
+      "minY": 0.1095
+     }
+    },
+    "events": {
+     "takeoff": 5,
+     "touchdown": 10,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.5782,
+    "travelDir": {
+     "fwd": -1,
+     "side": 0
+    },
+    "strideLength": 0.6167,
+    "hipRange": 0.0434
+   },
+   "cadenceSpm": 112.5,
+   "worldSpeed": 0.578,
+   "nativeSpeed": 0.7256,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "strafe.left": {
+   "role": "strafe.left",
+   "kind": "cycle",
+   "clip": "Running_Strafe_Left",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Running_Strafe_Left"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 0.8,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 49,
+    "fps": 60,
+    "legLen": 0.1759,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        6,
+        12
+       ]
+      ],
+      "lift": 0.1665,
+      "minY": 0.1087
+     },
+     "foot.r": {
+      "planted": [
+       [
+        31,
+        36
+       ]
+      ],
+      "lift": 0.1636,
+      "minY": 0.1115
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 6,
+     "firstPlant": 6
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 150,
+    "stanceSpeed": 2.634,
+    "travelDir": {
+     "fwd": 0.498,
+     "side": 0.867
+    },
+    "strideLength": 2.1072,
+    "hipRange": 0.0818
+   },
+   "cadenceSpm": 150,
+   "worldSpeed": 2.634,
+   "nativeSpeed": 3.3064,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "strafe.right": {
+   "role": "strafe.right",
+   "kind": "cycle",
+   "clip": "Running_Strafe_Right",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Running_Strafe_Right"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 0.8,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 49,
+    "fps": 60,
+    "legLen": 0.1583,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        7,
+        12
+       ]
+      ],
+      "lift": 0.1615,
+      "minY": 0.1137
+     },
+     "foot.r": {
+      "planted": [
+       [
+        30,
+        36
+       ]
+      ],
+      "lift": 0.1652,
+      "minY": 0.1099
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 7,
+     "firstPlant": 7
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 150,
+    "stanceSpeed": 2.6717,
+    "travelDir": {
+     "fwd": 0.498,
+     "side": -0.867
+    },
+    "strideLength": 2.1374,
+    "hipRange": 0.0818
+   },
+   "cadenceSpm": 150,
+   "worldSpeed": 2.672,
+   "nativeSpeed": 3.3541,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "jump.start": {
+   "role": "jump.start",
+   "kind": "oneshot",
+   "clip": "Jump_Start",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Jump_Start"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 0.6,
+   "loop": false,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 37,
+    "fps": 60,
+    "legLen": 0.1966,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        18
+       ]
+      ],
+      "lift": 0.1395,
+      "minY": 0.1153
+     },
+     "foot.r": {
+      "planted": [
+       [
+        1,
+        19
+       ]
+      ],
+      "lift": 0.2019,
+      "minY": 0.1153
+     }
+    },
+    "events": {
+     "takeoff": 20,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 200,
+    "stanceSpeed": 0.0632,
+    "travelDir": {
+     "fwd": -1,
+     "side": -0.001
+    },
+    "strideLength": 0.0379,
+    "hipRange": 0.1848
+   },
+   "cadenceSpm": 0,
+   "worldSpeed": 0,
+   "nativeSpeed": 0,
+   "strideRelation": "n/a",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "jump.air": {
+   "role": "jump.air",
+   "kind": "hold",
+   "clip": "Jump_Idle",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Jump_Idle"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.148,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        25,
+        41
+       ]
+      ],
+      "lift": 0.0833,
+      "minY": 0.1716
+     },
+     "foot.r": {
+      "planted": [
+       [
+        19,
+        47
+       ]
+      ],
+      "lift": 0.0267,
+      "minY": 0.2905
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 19,
+     "firstPlant": 19
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.0004,
+    "travelDir": null,
+    "strideLength": 0.0004,
+    "hipRange": 0.0518
+   },
+   "cadenceSpm": 0,
+   "worldSpeed": 0,
+   "nativeSpeed": 0,
+   "strideRelation": "n/a",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "jump.land": {
+   "role": "jump.land",
+   "kind": "oneshot",
+   "clip": "Jump_Land",
+   "pack": "MovementBasic",
+   "ref": {
+    "src": "stock",
+    "id": "Jump_Land"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 0.6667,
+   "loop": false,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 41,
+    "fps": 60,
+    "legLen": 0.148,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        14,
+        41
+       ]
+      ],
+      "lift": 0.1404,
+      "minY": 0.1145
+     },
+     "foot.r": {
+      "planted": [
+       [
+        11,
+        41
+       ]
+      ],
+      "lift": 0.2027,
+      "minY": 0.1145
+     }
+    },
+    "events": {
+     "takeoff": 1,
+     "touchdown": 11,
+     "firstPlant": 11
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 180,
+    "stanceSpeed": 0.031,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0.012
+    },
+    "strideLength": 0.0207,
+    "hipRange": 0.2079
+   },
+   "cadenceSpm": 0,
+   "worldSpeed": 0,
+   "nativeSpeed": 0,
+   "strideRelation": "n/a",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "crouch": {
+   "role": "crouch",
+   "kind": "cycle",
+   "clip": "Crouching",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Crouching"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1187,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        13,
+        37
+       ]
+      ],
+      "lift": 0.0975,
+      "minY": 0.1134
+     },
+     "foot.r": {
+      "planted": [
+       [
+        1,
+        5
+       ],
+       [
+        44,
+        65
+       ]
+      ],
+      "lift": 0.1045,
+      "minY": 0.1134
+     }
+    },
+    "events": {
+     "takeoff": 6,
+     "touchdown": 13,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.5174,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 0.5519,
+    "hipRange": 0.0401
+   },
+   "cadenceSpm": 112.5,
+   "worldSpeed": 0.517,
+   "nativeSpeed": 0.649,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "sneak": {
+   "role": "sneak",
+   "kind": "cycle",
+   "clip": "Sneaking",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Sneaking"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 2.1333,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 129,
+    "fps": 60,
+    "legLen": 0.1187,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        23,
+        77
+       ]
+      ],
+      "lift": 0.0963,
+      "minY": 0.1151
+     },
+     "foot.r": {
+      "planted": [
+       [
+        1,
+        13
+       ],
+       [
+        87,
+        129
+       ]
+      ],
+      "lift": 0.1029,
+      "minY": 0.1151
+     }
+    },
+    "events": {
+     "takeoff": 14,
+     "touchdown": 23,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 56.2,
+    "stanceSpeed": 0.5086,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 1.085,
+    "hipRange": 0.0237
+   },
+   "cadenceSpm": 56.2,
+   "worldSpeed": 0.509,
+   "nativeSpeed": 0.6389,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  },
+  "crawl": {
+   "role": "crawl",
+   "kind": "cycle",
+   "clip": "Crawling",
+   "pack": "MovementAdvanced",
+   "ref": {
+    "src": "stock",
+    "id": "Crawling"
+   },
+   "sourceBacked": true,
+   "variant": null,
+   "semanticEvidence": null,
+   "duration": 1.0667,
+   "loop": true,
+   "playbackRate": 1,
+   "measured": {
+    "frames": 65,
+    "fps": 60,
+    "legLen": 0.1067,
+    "contacts": {
+     "foot.l": {
+      "planted": [
+       [
+        1,
+        15
+       ],
+       [
+        61,
+        65
+       ]
+      ],
+      "lift": 0.0942,
+      "minY": 0.1077
+     },
+     "foot.r": {
+      "planted": [
+       [
+        29,
+        47
+       ]
+      ],
+      "lift": 0.0942,
+      "minY": 0.1077
+     }
+    },
+    "events": {
+     "takeoff": 16,
+     "touchdown": 29,
+     "firstPlant": 1
+    },
+    "rootMotion": {
+     "policy": "in-place",
+     "hipDrift": 0
+    },
+    "stepsPerCycle": 2,
+    "cadenceSpm": 112.5,
+    "stanceSpeed": 0.322,
+    "travelDir": {
+     "fwd": 1,
+     "side": 0
+    },
+    "strideLength": 0.3435,
+    "hipRange": 0.0495
+   },
+   "cadenceSpm": 112.5,
+   "worldSpeed": 0.322,
+   "nativeSpeed": 0.4042,
+   "strideRelation": "worldSpeed = stanceSpeed × rate (in-place clip; feet do not skate at this speed)",
+   "rootMotion": "in-place · consumer moves the root at worldSpeed",
+   "status": "SOURCE"
+  }
+ },
+ "transitions": {
+  "idle→walk": {
+   "fade": 0.25
+  },
+  "walk→idle": {
+   "fade": 0.3
+  },
+  "walk→walk.fast": {
+   "fade": 0.2,
+   "syncPhase": true
+  },
+  "walk.fast→run": {
+   "fade": 0.2,
+   "syncPhase": true
+  },
+  "run→sprint": {
+   "fade": 0.15,
+   "syncPhase": true
+  },
+  "sprint→run": {
+   "fade": 0.2,
+   "syncPhase": true
+  },
+  "run→walk": {
+   "fade": 0.25,
+   "syncPhase": true
+  },
+  "any→jump.start": {
+   "fade": 0.08
+  },
+  "jump.start→jump.air": {
+   "at": "clip end",
+   "fade": 0.1
+  },
+  "jump.air→jump.land": {
+   "at": "host ground contact",
+   "fade": 0.05
+  },
+  "jump.land→idle": {
+   "at": "clip end",
+   "fade": 0.15
+  },
+  "jump.land→walk": {
+   "at": "clip end",
+   "fade": 0.15
+  },
+  "idle→crouch": {
+   "fade": 0.25
+  },
+  "crouch→sneak": {
+   "fade": 0.2
+  },
+  "sneak→crawl": {
+   "fade": 0.35
+  }
+ },
+ "unmapped": [],
+ "runningB_raw": {
+  "frames": 49,
+  "fps": 60,
+  "legLen": 0.16,
+  "contacts": {
+   "foot.l": {
+    "planted": [
+     [
+      7,
+      13
+     ]
+    ],
+    "lift": 0.1839,
+    "minY": 0.0946
+   },
+   "foot.r": {
+    "planted": [
+     [
+      31,
+      37
+     ]
+    ],
+    "lift": 0.1836,
+    "minY": 0.0946
+   }
+  },
+  "events": {
+   "takeoff": 1,
+   "touchdown": 7,
+   "firstPlant": 7
+  },
+  "rootMotion": {
+   "policy": "in-place",
+   "hipDrift": 0
+  },
+  "stepsPerCycle": 2,
+  "cadenceSpm": 150,
+  "stanceSpeed": 3.0913,
+  "travelDir": {
+   "fwd": 1,
+   "side": 0
+  },
+  "strideLength": 2.473,
+  "hipRange": 0.111
+ }
+}

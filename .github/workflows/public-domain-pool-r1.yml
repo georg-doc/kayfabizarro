@@ -1,0 +1,270 @@
+name: PD-POOL-R1 four-source smoke and persistence
+
+on:
+  push:
+    branches:
+      - chatgpt-web/public-domain-pool-r1-2026-09-27
+    paths:
+      - ".github/workflows/public-domain-pool-r1.yml"
+      - "tools/public_domain/fetch_pool.py"
+      - "tools/public_domain/pd01-smoke-manifest.jsonl"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pd-pool-r1
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-web/public-domain-pool-r1-2026-09-27
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Static syntax
+        run: python -m py_compile tools/public_domain/fetch_pool.py
+
+      - name: Four-source rights, download, idempotence and partial-file gate
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          rm -rf \
+            media/public_domain/met \
+            media/public_domain/aic \
+            media/public_domain/commons \
+            media/public_domain/ia
+          rm -f \
+            media/public_domain/manifest.jsonl \
+            media/public_domain/CREDITS.md \
+            media/public_domain/PD_R1_TEST_REPORT.json \
+            media/public_domain/PD_R1_RETURN.md
+          find media/public_domain -type f -name "*.part" -delete
+
+          python tools/public_domain/fetch_pool.py \
+            tools/public_domain/pd01-smoke-manifest.jsonl \
+            --report /tmp/pd-r1-first.json \
+            --expect 4
+
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path("media/public_domain")
+          providers = ("met", "aic", "commons", "ia")
+          snap = {}
+          provider_files = []
+
+          for provider in providers:
+              files = sorted(p for p in (root / provider).glob("*") if p.is_file() and not p.name.endswith(".part"))
+              assert len(files) == 2, (provider, [str(p) for p in files])
+              assert sum(p.name.endswith(".license.json") for p in files) == 1, (provider, files)
+              assert sum(not p.name.endswith(".license.json") for p in files) == 1, (provider, files)
+              provider_files.extend(files)
+              for p in files:
+                  snap[str(p)] = hashlib.sha256(p.read_bytes()).hexdigest()
+
+          assert len(provider_files) == 8, provider_files
+          Path("/tmp/pd-r1-before.json").write_text(json.dumps(snap, sort_keys=True, indent=2) + "\n")
+
+          # Basic payload sanity: no HTML/error body masquerading as an asset.
+          payloads = {
+              provider: next(
+                  p for p in (root / provider).glob("*")
+                  if p.is_file() and not p.name.endswith(".license.json")
+              )
+              for provider in providers
+          }
+          for provider in ("met", "aic", "ia"):
+              data = payloads[provider].read_bytes()
+              assert data[:3] == b"\xff\xd8\xff", (provider, payloads[provider], data[:16])
+          svg = payloads["commons"].read_text(encoding="utf-8", errors="ignore").lower()
+          assert "<svg" in svg, payloads["commons"]
+
+          sidecars = {}
+          for provider in providers:
+              p = next((root / provider).glob("*.license.json"))
+              d = json.loads(p.read_text(encoding="utf-8"))
+              for key in (
+                  "sourcePage", "sourceRecordUrl", "sourceFileUrl", "title",
+                  "rights", "retrievedAt", "sha256", "bytes", "localPath", "tier"
+              ):
+                  assert d.get(key) not in (None, ""), (provider, key, d)
+              assert d["tier"] == "free", (provider, d["tier"])
+              asset = root / d["localPath"]
+              assert asset.is_file(), asset
+              assert asset.stat().st_size == d["bytes"], (provider, asset.stat().st_size, d["bytes"])
+              assert hashlib.sha256(asset.read_bytes()).hexdigest() == d["sha256"], provider
+              sidecars[provider] = d
+
+          assert sidecars["met"]["sourceId"] == 86434
+          assert sidecars["aic"]["sourceId"] == 24645
+          assert sidecars["commons"]["sourceId"] == "File:Silent film.svg"
+          assert sidecars["ia"]["sourceId"] == "TheGeneral1926"
+          assert sidecars["aic"]["sourceFacts"]["apiHttpStatus"] == 200
+          assert sidecars["aic"]["sourceFacts"]["downloadHttpStatus"] == 200
+          assert sidecars["aic"]["sourceFileUrl"].endswith("/full/843,/0/default.jpg")
+          assert sidecars["ia"]["sourceFacts"]["selectedFormat"] == "Item Tile"
+          assert "general" in str(sidecars["ia"]["title"]).lower(), sidecars["ia"]["title"]
+          PY
+
+          printf 'INTENTIONAL-PARTIAL-FILE' > media/public_domain/commons/silent-film.svg.part
+
+          python tools/public_domain/fetch_pool.py \
+            tools/public_domain/pd01-smoke-manifest.jsonl \
+            --report /tmp/pd-r1-second.json \
+            --expect 4
+
+          test ! -e media/public_domain/commons/silent-film.svg.part
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path("media/public_domain")
+          providers = ("met", "aic", "commons", "ia")
+          before = json.loads(Path("/tmp/pd-r1-before.json").read_text())
+          after = {}
+          for provider in providers:
+              for p in sorted((root / provider).glob("*")):
+                  if p.is_file() and not p.name.endswith(".part"):
+                      after[str(p)] = hashlib.sha256(p.read_bytes()).hexdigest()
+          assert before == after, {"before": before, "after": after}
+
+          first = json.loads(Path("/tmp/pd-r1-first.json").read_text())
+          second = json.loads(Path("/tmp/pd-r1-second.json").read_text())
+          assert first["counts"] == {"loaded": 4, "rejected": 0, "unchanged": 0}, first
+          assert second["counts"] == {"loaded": 0, "rejected": 0, "unchanged": 4}, second
+          assert {r["provider"] for r in second["results"]} == set(providers), second
+
+          sidecars = {}
+          for provider in providers:
+              p = next((root / provider).glob("*.license.json"))
+              sidecars[provider] = json.loads(p.read_text(encoding="utf-8"))
+
+          manifest_rows = [
+              json.loads(line)
+              for line in (root / "manifest.jsonl").read_text(encoding="utf-8").splitlines()
+              if line.strip()
+          ]
+          assert len(manifest_rows) == 4, manifest_rows
+          assert {row["provider"] for row in manifest_rows} == set(providers), manifest_rows
+
+          credits = (root / "CREDITS.md").read_text(encoding="utf-8").splitlines()
+          assert not any(line.startswith("- ") for line in credits), credits
+
+          report = {
+              "schema": "kfb.pd-pool-r1-test/0.1",
+              "sourceHead": os.environ["SOURCE_HEAD"],
+              "status": "PASS",
+              "assertions": {
+                  "pythonCompile": "PASS",
+                  "firstProviderGate": "4/4 LOADED · 0 rejected",
+                  "sourceEvidence": "4/4 sidecars complete",
+                  "payloadTypeSanity": "4/4 PASS",
+                  "secondRun": "4/4 UNCHANGED · 0 redownloaded",
+                  "stalePartialCleanup": "1/1 PASS",
+                  "providerPayloadFiles": "8/8 hash-identical across second run",
+                  "generatedManifest": "4/4 rows",
+                  "creditsDerivedFromSidecars": "PASS · 0 attribution rows because all four are free tier"
+              },
+              "firstRun": first,
+              "secondRun": second,
+              "assets": {
+                  provider: {
+                      "id": sidecars[provider]["id"],
+                      "sourcePage": sidecars[provider]["sourcePage"],
+                      "sourceRecordUrl": sidecars[provider]["sourceRecordUrl"],
+                      "sourceFileUrl": sidecars[provider]["sourceFileUrl"],
+                      "title": sidecars[provider]["title"],
+                      "creator": sidecars[provider].get("creator"),
+                      "date": sidecars[provider].get("date"),
+                      "rights": sidecars[provider]["rights"],
+                      "tier": sidecars[provider]["tier"],
+                      "retrievedAt": sidecars[provider]["retrievedAt"],
+                      "localPath": sidecars[provider]["localPath"],
+                      "bytes": sidecars[provider]["bytes"],
+                      "sha256": sidecars[provider]["sha256"],
+                      "sourceFacts": sidecars[provider]["sourceFacts"]
+                  }
+                  for provider in providers
+              }
+          }
+          (root / "PD_R1_TEST_REPORT.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+
+          lines = [
+              "# RETURN · PD-POOL-R1 · four-source smoke",
+              "",
+              "Status: **PASS · 4/4 SOURCES · IDEMPOTENT · PERSISTENCE GATE GREEN · NO BULK IMPORT**",
+              f"Tested source head: `{os.environ['SOURCE_HEAD']}`",
+              "",
+              "## Persisted bounded smoke assets",
+              "",
+              "| Provider | Title | Local path | Bytes | SHA-256 | Rights |",
+              "|---|---|---|---:|---|---|",
+          ]
+          for provider in providers:
+              d = sidecars[provider]
+              title = str(d.get("title") or "").replace("|", "\\|")
+              rights = str(d.get("rights") or "").replace("|", "\\|")
+              lines.append(
+                  f"| {provider} | {title} | `{d['localPath']}` | {d['bytes']} | "
+                  f"`{d['sha256']}` | {rights} |"
+              )
+          lines += [
+              "",
+              "## Actual checks",
+              "",
+              "- Python compile: 1/1 PASS",
+              "- First provider gate: 4/4 LOADED; 0 rejected",
+              "- Source/license sidecars: 4/4 complete",
+              "- Payload type sanity: 4/4 PASS",
+              "- Second run: 4/4 UNCHANGED; 0 redownloaded",
+              "- Stale partial-file injection: 1/1 removed; never registered",
+              "- Provider payload + sidecar hash identity: 8/8 files unchanged across second run",
+              "- Generated manifest: 4/4 rows",
+              "- Credits: generated from stored sidecars; 0 attribution rows because all four are free tier",
+              "",
+              "## Protected boundary",
+              "",
+              "- Asset Librarian remains the registry/discovery owner.",
+              "- Billboard runtime unchanged.",
+              "- These four files are a bounded smoke set, not a curated bulk pool.",
+              "- No Stage or Live publication.",
+              "- Original historical selected-hit manifest is still missing.",
+              "",
+              "## Exactly one next gate",
+              "",
+              "**PD-POOL-R2 · register only this proven four-object smoke set in the existing Asset Librarian, then verify discoverability/provenance without starting bulk population.**",
+              ""
+          ]
+          (root / "PD_R1_RETURN.md").write_text("\n".join(lines), encoding="utf-8")
+          PY
+
+      - name: Persist proven four-object smoke set
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/public_domain
+          git diff --cached --check
+          test "$(git diff --cached --name-only | grep -c '^media/public_domain/')" -ge 12
+          git commit -m "PD-POOL-R1: persist proven four-source smoke set"
+          git push origin HEAD:chatgpt-web/public-domain-pool-r1-2026-09-27

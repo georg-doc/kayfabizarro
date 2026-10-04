@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#141a17}
+a{color:#7fb9a6}a:hover{color:#e8d38a}
+::-webkit-scrollbar{width:11px}::-webkit-scrollbar-track{background:#141a17}
+::-webkit-scrollbar-thumb{background:#3a4640;border-radius:6px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#141a17;color:#e8e4d8;font-family:'Courier Prime',ui-monospace,monospace;display:grid;grid-template-columns:264px 1fr;align-items:start">
+
+  <aside style="position:sticky;top:0;height:100vh;overflow-y:auto;background:#101512;border-right:1px solid #2a332e;padding:26px 0 40px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
+    <div style="padding:0 22px;display:flex;flex-direction:column;gap:7px">
+      <div style="font-family:'Special Elite',serif;font-size:19px;color:#e8d38a;line-height:1.15">KFB Overworld</div>
+      <div style="font-size:11px;letter-spacing:2.2px;color:#7f8c84;text-transform:uppercase">Living Masterplan</div>
+      <div style="font-size:11.5px;color:#9aa79c;line-height:1.5">{{ stand }}</div>
+    </div>
+
+    <div style="padding:0 22px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:10.5px;letter-spacing:1.8px;color:#6f7c74;text-transform:uppercase">Status im Blatt</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ zaehler }}" as="z" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:6px;padding:3px 8px;border:1px solid #2a332e;border-radius:3px;font-size:11px;background:#161d19">
+            <i style="width:7px;height:7px;border-radius:50%;background:{{ z.farbe }};display:block"></i>
+            <span style="color:#cfc9b8">{{ z.name }}</span>
+            <b style="color:#e8d38a">{{ z.n }}</b>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <nav style="padding:0 12px;display:flex;flex-direction:column;gap:1px">
+      <sc-for list="{{ toc }}" as="t" hint-placeholder-count="10">
+        <a href="{{ t.href }}" style="display:block;padding:6px 10px;border-radius:3px;font-size:12.5px;color:#b9c2ba;text-decoration:none;border-left:2px solid transparent" style-hover="background:#1b2320;color:#e8d38a;border-left-color:#e8d38a">{{ t.text }}</a>
+      </sc-for>
+    </nav>
+
+    <div style="padding:0 22px;margin-top:auto;display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:10.5px;letter-spacing:1.8px;color:#6f7c74;text-transform:uppercase">Nebenblätter</div>
+      <sc-for list="{{ nebenblaetter }}" as="d" hint-placeholder-count="4">
+        <a href="{{ d.href }}" style="font-size:11.5px;color:#8f9a91;text-decoration:none;line-height:1.5" style-hover="color:#e8d38a">{{ d.name }}</a>
+      </sc-for>
+    </div>
+  </aside>
+
+  <main style="padding:52px 60px 120px;max-width:980px">
+    <sc-if value="{{ fehler }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:18px 20px;border:1px solid #6b3b34;background:#241a18;border-radius:4px;color:#e0a89c;font-size:13px;line-height:1.6">{{ fehler }}</div>
+    </sc-if>
+    <article style="font-size:14.5px;line-height:1.72;color:#d7d3c6">{{ inhalt }}</article>
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+/* Der Leser hat KEINE eigenen Inhalte. Er holt `docs/MASTERPLAN_overworld.md` und zeigt sie an —
+   sonst gäbe es das Dokument zweimal, und das ist genau die Fehlerklasse, gegen die es geschrieben
+   wurde ("eine Zahl, ein Ort" gilt auch für Dokumente).
+   Gerendert wird mit einem kleinen Markdown-Setzer statt einer Bibliothek: das Blatt benutzt sechs
+   Bauteile (Überschrift, Absatz, Liste, Tabelle, Zitat, Code) und nichts sonst. */
+class Component extends DCLogic {
+  state = { md:'', fehler:'', stand:'lädt …' };
+
+  componentDidMount(){
+    fetch('docs/MASTERPLAN_overworld.md',{cache:'no-store'})
+      .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
+      .then(md=>{
+        const m=md.match(/\*\*Stand:\*\*\s*([^\n]+)/);
+        this.setState({md, stand:m?m[1].replace(/\*\*/g,'').trim():''});
+      })
+      .catch(e=>this.setState({fehler:'Der Masterplan ließ sich nicht laden ('+e.message+
+        '). Erwartet wird docs/MASTERPLAN_overworld.md neben dieser Datei.'}));
+  }
+
+  esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  /* Status-Marken bekommen Farbe: der Leser soll auf einen Blick zeigen, was gilt und was nur
+     beschlossen ist — das ist der einzige Grund, warum es ihn überhaupt gibt. */
+  marken(s){
+    const F={'LÄUFT':['#6fc48a','#16261d'],GEBAUT:['#9fd6b3','#16261d'],ENTSCHIEDEN:['#e8d38a','#272013'],
+             OFFEN:['#e2725a','#291815'],GEPARKT:['#8fa6c4','#161d26'],VERWORFEN:['#8a8177','#1c1c1a']};
+    return s.replace(/`(LÄUFT|GEBAUT|ENTSCHIEDEN|OFFEN|GEPARKT|VERWORFEN)`/g,(_,k)=>{
+      const [c,b]=F[k];
+      return '<b style="display:inline-block;padding:1px 7px;border-radius:2px;font-size:11px;'
+        +'letter-spacing:1.1px;background:'+b+';color:'+c+';border:1px solid '+c+'55">'+k+'</b>';
+    });
+  }
+  inline(s){
+    s=this.esc(s);
+    s=this.marken(s);
+    s=s.replace(/`([^`]+)`/g,'<code style="font-size:12.5px;background:#1c2420;color:#9fd1b4;padding:1px 5px;border-radius:2px">$1</code>');
+    s=s.replace(/\*\*([^*]+)\*\*/g,'<b style="color:#f0ece0">$1</b>');
+    s=s.replace(/(^|[^*])\*([^*]+)\*/g,'$1<i style="color:#c3bcac">$2</i>');
+    s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" style="color:#7fb9a6">$1</a>');
+    return s;
+  }
+  zelle(t){ return this.inline(t.trim()); }
+
+  bau(md){
+    const zeilen=md.split('\n');
+    const out=[]; let i=0; const toc=[];
+    /* **Gezählt wird EINMAL, über das ganze Blatt** — nicht beim Setzen.
+       Erster Anlauf zählte je Quellzeile, und zwar an zwei Stellen: oben in der Schleife und noch
+       einmal im jeweiligen Zweig. Ergebnis: die erste Zeile jedes Absatzes zählte doppelt (GILT 28
+       statt 27). Dazu griff die Legenden-Sperre nur auf der ersten von zwei Zeilen, auf die der Satz
+       umbrach — also meldete die Spalte »VERWORFEN 1«, obwohl nichts verworfen ist. Genau die Zahl,
+       gegen die der Kommentar daneben argumentierte.
+       Deshalb jetzt: Blöcke bilden, die Legende als ganzen Block verwerfen, dann zählen. Ein Ort. */
+    const zaehler={};
+    for(const block of md.split(/\n\s*\n/)){
+      /* Die Legende ist seit 9.8. eine TABELLE — sie steht damit in einem eigenen Block und würde
+         mitzählen. Also beide Formen sperren: die Zeile mit dem Wort und die Legenden-Tabelle. */
+      if(/Status-Vokabular/.test(block))continue;
+      if(/^\|\s*Status\s*\|\s*Bedeutung/m.test(block))continue;
+      for(const k of ['LÄUFT','GEBAUT','ENTSCHIEDEN','OFFEN','GEPARKT','VERWORFEN']){
+        const n=(block.match(new RegExp('`'+k+'`','g'))||[]).length;
+        if(n)zaehler[k]=(zaehler[k]||0)+n;
+      }
+    }
+    const zaehle=()=>{};   // die Setz-Schleife zählt nicht mehr mit
+    let id=0;
+    while(i<zeilen.length){
+      const z=zeilen[i];
+      zaehle(z);
+      /* Codeblock. Der Masterplan hatte bis zum 10.8. keinen einzigen Zaun — die erste Zaunlinie
+         fiel deshalb in den Absatz-Zweig, und `inline()` griff über den Zaun hinweg: zwei nackte
+         Backticks und das Wort der Sprachangabe standen im Bild. Der Kommentar der Klasse hatte
+         »Code« immer schon versprochen; jetzt hält er es. */
+      if(/^```/.test(z)){
+        const buf=[]; i++;
+        while(i<zeilen.length&&!/^```/.test(zeilen[i])){ buf.push(zeilen[i]); i++; }
+        i++;
+        out.push('<pre style="margin:18px 0;padding:14px 16px;background:#131a18;border:1px solid #2c3833;'
+          +'border-radius:4px;overflow-x:auto;font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;'
+          +'color:#b9c7bf;white-space:pre">'
+          +buf.join('\n').replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</pre>');
+        continue;
+      }
+      // Tabelle
+      if(/^\|/.test(z)&&/^\|[\s:|-]+\|$/.test(zeilen[i+1]||'')){
+        const kopf=z.split('|').slice(1,-1);
+        i+=2;
+        const reihen=[];
+        while(i<zeilen.length&&/^\|/.test(zeilen[i])){ zaehle(zeilen[i]); reihen.push(zeilen[i].split('|').slice(1,-1)); i++; }
+        out.push('<div style="overflow-x:auto;margin:20px 0"><table style="border-collapse:collapse;width:100%;font-size:13px">'
+          +'<thead><tr>'+kopf.map(c=>'<th style="text-align:left;padding:8px 12px;border-bottom:1px solid #3a4640;color:#e8d38a;font-weight:700;white-space:nowrap">'+this.zelle(c)+'</th>').join('')+'</tr></thead><tbody>'
+          +reihen.map(r=>'<tr>'+r.map(c=>'<td style="padding:8px 12px;border-bottom:1px solid #232b27;vertical-align:top;line-height:1.55">'+this.zelle(c)+'</td>').join('')+'</tr>').join('')
+          +'</tbody></table></div>');
+        continue;
+      }
+      // Überschriften — H2 wird zum Sprungziel im Register
+      const h=z.match(/^(#{1,4})\s+(.*)$/);
+      if(h){
+        const stufe=h[1].length, txt=this.inline(h[2]);
+        if(stufe===1) out.push('<h1 style="font-family:\'Special Elite\',serif;font-size:31px;color:#e8d38a;margin:0 0 8px;line-height:1.2">'+txt+'</h1>');
+        else if(stufe===2){
+          const a='k'+(++id);
+          toc.push({href:'#'+a,text:h[2].replace(/[`*]/g,'')});
+          out.push('<h2 id="'+a+'" style="font-family:\'Special Elite\',serif;font-size:21px;color:#e8d38a;margin:46px 0 12px;padding-top:16px;border-top:1px solid #2a332e;line-height:1.3">'+txt+'</h2>');
+        }
+        else out.push('<h3 style="font-size:15px;color:#cfc9b8;margin:26px 0 8px;letter-spacing:.4px">'+txt+'</h3>');
+        i++; continue;
+      }
+      // Zitatblock — im Masterplan trägt er die Erklärung, was das Dokument ist
+      if(/^>\s?/.test(z)){
+        const buf=[];
+        while(i<zeilen.length&&/^>\s?/.test(zeilen[i])){ buf.push(zeilen[i].replace(/^>\s?/,'')); i++; }
+        /* Absätze, keine Quellzeilen: eine Leerzeile trennt, alles andere fließt. Ein Umbruch je
+           Zeile im Markdown hätte das Zitat wie ein Gedicht gesetzt. */
+        const abs=buf.join('\n').split(/\n\s*\n/).filter(p=>p.trim());
+        out.push('<blockquote style="margin:20px 0;padding:14px 18px;background:#171f1b;border-left:2px solid #e8d38a;color:#bcc4ba;font-size:13.5px;line-height:1.68;display:flex;flex-direction:column;gap:9px">'
+          +abs.map(p=>'<div>'+this.inline(p.replace(/\n/g,' '))+'</div>').join('')+'</blockquote>');
+        continue;
+      }
+      // Listen
+      if(/^\s*([-*]|\d+\.)\s+/.test(z)){
+        const nummer=/^\s*\d+\./.test(z);
+        const buf=[];
+        while(i<zeilen.length&&/^\s*([-*]|\d+\.)\s+/.test(zeilen[i])){ zaehle(zeilen[i]);
+          buf.push(zeilen[i].replace(/^\s*([-*]|\d+\.)\s+/,'')); i++; }
+        const tag=nummer?'ol':'ul';
+        out.push('<'+tag+' style="margin:12px 0;padding-left:22px;display:flex;flex-direction:column;gap:6px">'
+          +buf.map(l=>'<li style="line-height:1.66">'+this.inline(l)+'</li>').join('')+'</'+tag+'>');
+        continue;
+      }
+      if(/^---+$/.test(z)){ i++; continue; }
+      if(!z.trim()){ i++; continue; }
+      const buf=[];
+      while(i<zeilen.length&&zeilen[i].trim()&&!/^(#{1,4}\s|>|\||\s*([-*]|\d+\.)\s|---+$)/.test(zeilen[i])){
+        zaehle(zeilen[i]); buf.push(zeilen[i]); i++;
+      }
+      out.push('<p style="margin:12px 0;line-height:1.72">'+this.inline(buf.join(' '))+'</p>');
+    }
+    return {html:out.join(''),toc,zaehler};
+  }
+
+  renderVals(){
+    const F={'LÄUFT':'#6fc48a',GEBAUT:'#9fd6b3',ENTSCHIEDEN:'#e8d38a',OFFEN:'#e2725a',GEPARKT:'#8fa6c4',VERWORFEN:'#8a8177'};
+    if(!this.state.md)
+      return {inhalt:React.createElement('div',{style:{color:'#7f8c84',fontSize:'13px'}},
+                this.state.fehler?'':'Masterplan wird geladen …'),
+              toc:[],zaehler:[],fehler:this.state.fehler,stand:this.state.stand,
+              nebenblaetter:this.blaetter()};
+    const {html,toc,zaehler}=this.bau(this.state.md);
+    return {
+      inhalt:React.createElement('div',{dangerouslySetInnerHTML:{__html:html}}),
+      toc,
+      zaehler:Object.keys(F).filter(k=>zaehler[k]).map(k=>({name:k,n:zaehler[k],farbe:F[k]})),
+      fehler:this.state.fehler,
+      stand:this.state.stand,
+      nebenblaetter:this.blaetter()
+    };
+  }
+  blaetter(){
+    return [
+      {name:'Session-Cut v10-S2',href:'docs/SESSION_CUT_v10_S2.md'},
+      {name:'Onboarding v10',href:'docs/ONBOARDING_v10_overworld.md'},
+      {name:'Changelog',href:'docs/CHANGELOG_overworld.md'},
+      {name:'Konzept-Archiv (37 §§)',href:'docs/MASTERPLAN_konzepte_archiv.md'},
+      {name:'Living Concept (Zulauf)',href:'docs/LIVING_CONCEPT_overworld.md'},
+      {name:'Glossar (eine Begriffstabelle)',href:'docs/GLOSSAR_KFB.md'},
+      {name:'SSOT Waber-Shader',href:'docs/SSOT_Waber_Shader.md'},
+      {name:'Antwort A1 · Terminologie',href:'docs/ANTWORT_A1_2026-08-10.md'},
+      {name:'Review WS0-HUD',href:'docs/REVIEW_WS0_hud-v9b.md'},
+      {name:'→ Das Spiel',href:'KFB Overworld v9.dc.html'}
+    ];
+  }
+}
+</script>
+</body>
+</html>

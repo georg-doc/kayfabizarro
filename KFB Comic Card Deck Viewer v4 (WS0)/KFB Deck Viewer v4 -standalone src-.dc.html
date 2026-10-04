@@ -1,0 +1,3617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png" data-resource-id="scissorPng" />
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors.gif" data-resource-id="scissorGif" />
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png" data-resource-id="cardBack" />
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/FrizzleBob_Avatar_03.png" data-resource-id="avatar" />
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f3ead3"/>
+  <g transform="rotate(-14 100 100)"><rect x="46" y="70" width="108" height="62" fill="#f7f0da" stroke="#1f1a14" stroke-width="3"/></g>
+  <g transform="rotate(-6 100 100)"><rect x="46" y="70" width="108" height="62" fill="#f7f0da" stroke="#1f1a14" stroke-width="3"/></g>
+  <g transform="rotate(3 100 100)">
+    <rect x="46" y="70" width="108" height="62" fill="#f7f0da" stroke="#1f1a14" stroke-width="3"/>
+    <rect x="46" y="70" width="108" height="18" fill="#b8361f"/>
+    <text x="100" y="84" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#f6efd9" text-anchor="middle">KFB</text>
+    <rect x="56" y="98" width="60" height="4" fill="#1f1a14"/>
+    <rect x="56" y="108" width="44" height="4" fill="#6f6450"/>
+    <rect x="56" y="118" width="52" height="4" fill="#6f6450"/>
+  </g>
+</svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Irish+Grover&amp;display=swap" rel="stylesheet">
+  <style>
+    /* Farben aus kayfabizarro.pages.dev (index.html): KFB-Booklet-Palette hell,
+       `body.dark` dunkel. Der Akzent bleibt in beiden Welten #b8361f. */
+    body {
+      --paper: #f3ead3;
+      --sheet: #f7f0da;
+      --ink: #1f1a14;
+      --muted: #3a342a;
+      --faint: #6f6450;
+      --line: #c2ad79;
+      --head: rgba(243,234,211,.92);
+      --field: rgba(31,26,20,.045);
+      --accent: #b8361f;
+      --rust: #8f2716;
+      --on-accent: #f6efd9;
+      --hard: rgba(31,26,20,.22);
+      --shadow: 3px 3.5px 0 rgba(31,26,20,.22);
+      --grain: .5;
+    }
+    body[data-theme="med"] {
+      --paper: #19150f;
+      --sheet: #211c15;
+      --ink: #ece1c0;
+      --muted: #cdc1a1;
+      --faint: #9a8c70;
+      --line: #5f5339;
+      --head: rgba(22,18,13,.94);
+      --field: rgba(236,225,192,.05);
+      --accent: #b8361f;
+      --rust: #d4552f;
+      --on-accent: #f6efd9;
+      --hard: rgba(0,0,0,.5);
+      --shadow: 3px 3.5px 0 rgba(0,0,0,.5);
+      --grain: .22;
+    }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--paper); }
+    body { -webkit-font-smoothing: antialiased; transition: background .3s ease; font-family: 'Special Elite', 'Courier New', monospace; }
+    /* Papierkorn wie auf der Site — eine Ebene ueber allem, ohne Mauszugriff. */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none;
+      mix-blend-mode: multiply; opacity: var(--grain);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0 0.30 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 340px 340px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--ink); }
+    [data-hscroll]::-webkit-scrollbar { height: 0; }
+    [data-vscroll]::-webkit-scrollbar { width: 0; }
+    input, button { font: inherit; }
+    input::placeholder { color: var(--faint); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @keyframes kfbBreathe { 0%,100% { opacity: .3 } 50% { opacity: .6 } }
+    /* Wasserfarbe fuer noch nicht geladene Cover: drei Fleckenlagen, die langsam
+       gegeneinander wandern — kein Spinner, sondern durchziehende Farbe. */
+    @keyframes kfbWash {
+      0%   { background-position: 18% 22%, 74% 68%, 44% 86%; filter: saturate(.85) }
+      50%  { background-position: 30% 34%, 62% 54%, 56% 72%; filter: saturate(1.15) }
+      100% { background-position: 18% 22%, 74% 68%, 44% 86%; filter: saturate(.85) }
+    }
+    /* Nur Deckkraft. Eine Animation auf `transform` mit `both` haelt am Ende `transform: none`
+       fest und ueberschreibt die Position, die per Hand gesetzt wird — der Kasten klebte
+       dadurch oben links unter der Kopfzeile. */
+    @keyframes kfbTipIn { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+  <script src="./deckviewer/deck-meta.js"></script>
+  <script src="./deckviewer/deck-edit.js"></script>
+  <script src="./deckviewer/deck-draft.js"></script>
+  <script src="./deckviewer/kfb-corpus.js"></script>
+  <script type="module" src="./deckviewer/ink-frame.js"></script>
+</helmet>
+
+<div style="position: fixed; inset: 0; background: var(--paper); color: var(--ink);">
+
+  <main data-vscroll ref="{{ mainRef }}" style="position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; overscroll-behavior: contain;">
+    <div ref="{{ padRef }}" style="height: 150px;"></div>
+
+    <sc-if value="{{ isBooting }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; justify-content: center; height: 40vh; font-size: 12px; letter-spacing: .16em; color: var(--faint); animation: kfbBreathe 2.4s ease-in-out infinite;">{{ bootLine }}</div>
+    </sc-if>
+
+    <div style="{{ deckStyle }}">
+      <sc-for list="{{ items }}" as="p" hint-placeholder-count="4">
+        <article ref="{{ p.ref }}" data-screen-label="{{ p.label }}" style="{{ p.wrapStyle }}">
+          <div data-hscroll ref="{{ p.rowRef }}" style="{{ p.rowStyle }}">
+            <div onClick="{{ p.zoom }}" onKeyDown="{{ p.key }}" role="button" tabindex="0" aria-label="{{ p.aria }}" style="{{ p.boxStyle }}">
+              <div style="{{ p.paperStyle }}"></div>
+              <div style="{{ p.inkStyle }}"></div>
+              <div style="{{ p.imgStyle }}"></div>
+              <sc-if value="{{ p.waiting }}" hint-placeholder-val="{{ true }}">
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: .16em; color: var(--faint); animation: kfbBreathe 2s ease-in-out infinite;">{{ p.label }}</div>
+              </sc-if>
+            </div>
+          </div>
+
+          <sc-if value="{{ p.isCover }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ p.coverStyle }}">
+              <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                <h2 style="{{ p.titleStyle }}">{{ p.title }}</h2>
+                <sc-if value="{{ p.showEdit }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ p.openEdit }}" aria-label="Edit comic texts" title="Edit comic texts" style="{{ p.editBtnStyle }}" style-hover="color: var(--accent);">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 3.8l3.7 3.7L8.4 19.3l-4.6.9.9-4.6z"></path><path d="M14.3 6l3.7 3.7"></path></svg>
+                  </button>
+                </sc-if>
+                <sc-if value="{{ p.hasShop }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ p.getUrl }}" target="_blank" rel="noopener" style="{{ p.ctaStyle }}" style-hover="transform: rotate(.6deg) scale(1.02);" style-active="transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--hard);">
+                    <span>Free Download</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>
+                  </a>
+                </sc-if>
+                <sc-if value="{{ p.noShop }}" hint-placeholder-val="{{ true }}">
+                  <span title="No download link yet" style="{{ p.ctaSoonStyle }}">
+                    <span>Coming soon…</span>
+                  </span>
+                </sc-if>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                <span style="{{ p.sublineStyle }}">{{ p.subline }}</span>
+                <sc-if value="{{ p.showPlus }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ p.toggleBlurb }}" aria-label="Show description" style="{{ p.plusStyle }}" style-hover="background: var(--accent); color: var(--on-accent); border-color: var(--ink);">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16"></path><path style="{{ p.plusBar }}" d="M12 4v16"></path></svg>
+                  </button>
+                </sc-if>
+              </div>
+              <sc-if value="{{ p.blurbOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ p.blurbStyle }}">{{ p.blurbBody }}</div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.isSheet }}" hint-placeholder-val="{{ true }}">
+            <div style="{{ p.capStyle }}">
+              <span style="{{ p.labelStyle }}">{{ p.label }}</span>
+              <sc-for list="{{ p.cards }}" as="c" hint-placeholder-count="4">
+                <span style="{{ c.style }}">{{ c.name }}</span>
+              </sc-for>
+            </div>
+          </sc-if>
+        </article>
+      </sc-for>
+
+      <sc-if value="{{ hasEnd }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 34px 20px 40px;">
+          <div style="font-size: 12px; letter-spacing: .16em; color: var(--faint);">{{ endLine }}</div>
+          <button onClick="{{ goNext }}" style="{{ turnBtnStyle }}" style-hover="transform: rotate(.6deg) scale(1.02);" style-active="transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--hard);">{{ nextLabel }}</button>
+          <div style="{{ pushTrackStyle }}">
+            <div style="{{ pushFillStyle }}"></div>
+          </div>
+          <div style="font-size: 11px; letter-spacing: .1em; color: var(--faint);">{{ pushHint }}</div>
+        </div>
+      </sc-if>
+    </div>
+  </main>
+
+  <sc-if value="{{ pushUp }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ pushUpStyle }}">
+      <div style="font-size: 11px; letter-spacing: .16em; color: var(--faint);">{{ pushUpLine }}</div>
+      <div style="{{ pushTrackStyle }}">
+        <div style="{{ pushFillStyle }}"></div>
+      </div>
+    </div>
+  </sc-if>
+
+  <header ref="{{ headerRef }}" style="position: absolute; top: 0; left: 0; right: 0; z-index: 40; background: var(--head); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); transition: transform .34s cubic-bezier(.22,1,.36,1); will-change: transform;">
+
+    <div style="display: flex; align-items: center; gap: 16px; padding: 0 18px; height: 58px;">
+      <a href="https://kayfabizarro.pages.dev/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 11px; flex-shrink: 0; text-decoration: none;">
+        <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/FrizzleBob_Avatar_03.png" alt="Uncle FrizzleBob" style="{{ avatarStyle }}" />
+        <span style="{{ wordmarkStyle }}">
+          <span style="color: var(--ink);">Kayfa</span><span style="{{ markStyle }}">Bizarro</span>
+        </span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 7px; flex: 0 1 260px; min-width: 130px; height: 32px; border-bottom: 1.5px solid var(--line); transition: border-color .2s;">
+        <span style="font-size: 13px; color: var(--faint);">/</span>
+        <input type="search" placeholder="search…" value="{{ query }}" onInput="{{ onQuery }}" ref="{{ searchRef }}" aria-label="Search comics, pages and cards" style="flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font-size: 13px; letter-spacing: .02em; outline: none;" />
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ clearQuery }}" aria-label="Clear search" style="display: flex; border: 0; background: transparent; color: var(--faint); cursor: pointer; padding: 2px;" style-hover="color: var(--accent);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+          </button>
+        </sc-if>
+      </div>
+
+      <span style="{{ countStyle }}">
+        <button onClick="{{ pickDecks }}" title="Pile of comic covers" style="{{ cDeckStyle }}" style-hover="color: var(--accent);">{{ cDecks }}</button>
+        <span style="{{ cSepStyle }}">·</span>
+        <button onClick="{{ pickPages }}" title="Pile of every page" style="{{ cPageStyle }}" style-hover="color: var(--accent);">{{ cPages }}</button>
+        <span style="{{ cSepStyle }}">·</span>
+        <span style="{{ cCardStyle }}">{{ cCards }}</span>
+      </span>
+
+      <sc-if value="{{ searching }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <sc-if value="{{ showFilter }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ toggleFilter }}" style="{{ filterStyle }}" style-hover="transform: rotate(-1.4deg); box-shadow: 2px 2px 0 var(--hard);">{{ filterLabel }}</button>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <span style="{{ pileCountStyle }}">{{ pileCount }}</span>
+      <div style="margin-left: auto; flex: 0 0 auto; display: flex; align-items: center; gap: 4px;">
+        <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" title="{{ themeAria }}" style="{{ iconBtnStyle }}" style-hover="color: var(--accent);">
+          <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path></svg>
+          </sc-if>
+          <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4 8.6 8.6 0 1020 14.2z"></path></svg>
+          </sc-if>
+        </button>
+
+        <button onClick="{{ toggleFull }}" aria-label="Full pages" title="Full pages — one sheet, endless sideways" style="{{ fullBtnStyle }}" style-hover="color: var(--accent);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="12" height="14"></rect><path d="M3 8.5v7M21 8.5v7"></path></svg>
+        </button>
+
+        <button onClick="{{ toggleCover }}" aria-label="Coverflow" title="Coverflow" style="{{ coverBtnStyle }}" style-hover="color: var(--accent);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="6" width="6" height="12"></rect><path d="M6.6 7.8L4 9.6v4.8l2.6 1.8M17.4 7.8L20 9.6v4.8l-2.6 1.8"></path></svg>
+        </button>
+
+        <button onClick="{{ toggleFlow }}" aria-label="Comic pile" title="Comic pile" style="{{ flowBtnStyle }}" style-hover="color: var(--accent);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="3" width="15" height="8" rx="1" transform="rotate(-4 12 7)"></rect><path d="M3.6 13.4h16.8M4.4 17h15.2M5.6 20.4h12.8"></path></svg>
+        </button>
+
+        <button onClick="{{ toggleGrid }}" aria-label="{{ gridAria }}" title="{{ gridAria }}" style="{{ gridBtnStyle }}" style-hover="color: var(--accent);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5"></rect></svg>
+        </button>
+
+        <button onClick="{{ toggleRail }}" aria-label="Comic rail" title="Comic rail" style="{{ railBtnStyle }}" style-hover="color: var(--accent);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="6" height="11"></rect><rect x="10.5" y="4.5" width="6" height="15"></rect><path d="M18.5 7.5h3v9h-3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div style="{{ metaRowStyle }}">
+      <h1 title="{{ deckTitle }}" style="{{ titleStyle }}">{{ deckTitle }}</h1>
+      <div style="display: flex; align-items: center; gap: 6px 12px; min-width: 0; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 6px; flex: 0 1 auto; min-width: 0; overflow: hidden;">
+          <sc-for list="{{ deckTags }}" as="tag" hint-placeholder-count="3">
+            <button onClick="{{ tag.pick }}" title="{{ tag.hint }}" style="{{ tag.style }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ tag.name }}</button>
+          </sc-for>
+        </div>
+        <span style="flex: 0 0 auto; font-size: 12px; letter-spacing: .04em; color: var(--faint); white-space: nowrap;">{{ deckMeta }}</span>
+          <span style="flex: 0 0 auto; margin-left: auto; font-size: 12px; letter-spacing: .1em; color: var(--muted); white-space: nowrap;">{{ progressLine }}</span>
+      </div>
+    </div>
+
+    <div ref="{{ railRef }}" style="{{ railWrapStyle }}">
+      <div onMouseEnter="{{ railIn }}" onMouseLeave="{{ railOut }}" style="position: relative;">
+        <button onClick="{{ goPrev }}" aria-label="Previous comic" style="{{ prevStyle }}" style-hover="color: var(--accent); background: var(--paper);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5L8 12l6.5 7"></path></svg>
+        </button>
+        <button onClick="{{ goNext }}" aria-label="Next comic" style="{{ nextStyle }}" style-hover="color: var(--accent); background: var(--paper);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5L16 12l-6.5 7"></path></svg>
+        </button>
+      <div data-hscroll ref="{{ railScrollRef }}" style="display: flex; gap: 12px; padding: 2px 18px 16px; overflow-x: auto; scrollbar-width: none;">
+        <sc-for list="{{ rail }}" as="r" hint-placeholder-count="6">
+          <button onClick="{{ r.pick }}" title="{{ r.title }}" style="{{ r.style }}" style-hover="opacity: 1;">
+            <span style="{{ r.thumbStyle }}">
+              <span style="{{ r.inkStyle }}"></span>
+              <span style="{{ r.imgStyle }}"></span>
+            </span>
+            <span style="{{ r.labelStyle }}">{{ r.title }}</span>
+            <sc-if value="{{ r.hasHits }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 5px; right: 5px; min-width: 17px; height: 17px; background: var(--accent); color: var(--on-accent); border: 1.5px solid var(--ink); font-size: 10px; line-height: 14px; text-align: center; padding: 0 4px; transform: rotate(-4deg);">{{ r.hitCount }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ flowOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Flow" onPointerDown="{{ onCoverDown }}" onPointerMove="{{ onCoverMove }}" onPointerUp="{{ onCoverUp }}" onPointerCancel="{{ onCoverUp }}" style="{{ flowStyle }}">
+      <div style="{{ cutRailStyle }}">
+        <span style="{{ cutUncutStyle }}"></span>
+        <span style="{{ cutDoneStyle }}"></span>
+      </div>
+      <div style="{{ cutPctStyle }}">{{ cutNum }}</div>
+      <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png" alt="" aria-hidden="true" style="{{ cutScissorStyle }}" />
+      <span style="{{ cutSnipStyle }}"></span>
+      <sc-for list="{{ flowCards }}" as="c" hint-placeholder-count="10">
+        <div onClick="{{ c.hit }}" onDoubleClick="{{ c.dbl }}" style="{{ c.style }}">
+          <div style="{{ c.paperStyle }}"></div>
+          <div style="{{ c.inkStyle }}"></div>
+          <sc-if value="{{ c.washing }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ c.washStyle }}"></div>
+          </sc-if>
+          <div style="{{ c.imgStyle }}"></div>
+          <div style="{{ c.sharpStyle }}"></div>
+          <sc-if value="{{ c.isCut }}" hint-placeholder-val="{{ false }}">
+            <span style="{{ c.cutStyle }}">
+              <span style="{{ c.cutLineStyle }}"></span>
+              <span style="{{ c.cutTagStyle }}">
+                <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png" alt="" aria-hidden="true" style="{{ c.cutIconStyle }}" />
+                <span style="{{ c.cutTextStyle }}">{{ c.cutLabel }}</span>
+              </span>
+            </span>
+          </sc-if>
+          <sc-if value="{{ c.isBack }}" hint-placeholder-val="{{ true }}">
+            <div style="{{ c.backStyle }}">
+              <span style="{{ c.markStyle }}">{{ c.mark }}</span>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <sc-if value="{{ coverHasTitle }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ coverTitleStyle }}">
+          <div style="{{ coverNameStyle }}">{{ coverTitle }}</div>
+          <div style="{{ coverSubStyle }}">{{ coverSub }}</div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ editOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ backdropClose }}" style="position: absolute; inset: 0; z-index: 80; display: flex; align-items: stretch; justify-content: center; background: rgba(31,26,20,.62); backdrop-filter: blur(3px);">
+      <div onClick="{{ stop }}" style="{{ sheetStyle }}">
+
+        <div style="flex: 0 0 auto; display: flex; align-items: center; gap: 12px; padding: 16px 22px 12px; border-bottom: 1.5px solid var(--line);">
+          <div style="flex: 1 1 auto; min-width: 0;">
+            <div style="font-family: 'Irish Grover', cursive; font-size: 19px; line-height: 1.2;">{{ editTitle }}</div>
+            <div style="{{ editFileStyle }}">{{ editFile }}</div>
+          </div>
+          <button onClick="{{ closeEdit }}" aria-label="Close editor" style="{{ editCloseStyle }}" style-hover="color: var(--accent);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+          </button>
+        </div>
+
+        <div data-vscroll style="flex: 1 1 auto; overflow-y: auto; scrollbar-width: none; padding: 16px 22px 20px; display: flex; flex-direction: column; gap: 15px;">
+          <sc-if value="{{ editLoading }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 30px 0; text-align: center; font-size: 12px; letter-spacing: .14em; color: var(--faint);">{{ editStatus }}</div>
+          </sc-if>
+
+          <sc-for list="{{ editFields }}" as="f" hint-placeholder-count="7">
+            <label style="display: flex; flex-direction: column; gap: 5px;">
+              <span style="display: flex; align-items: baseline; gap: 8px; font-size: 11px; letter-spacing: .06em;">
+                <span style="{{ f.labelStyle }}">{{ f.label }}</span>
+                <span style="{{ f.noteStyle }}">{{ f.note }}</span>
+              </span>
+              <sc-if value="{{ f.isLine }}" hint-placeholder-val="{{ false }}">
+                <input type="text" value="{{ f.value }}" onInput="{{ f.set }}" placeholder="{{ f.hint }}" style="{{ f.inputStyle }}" />
+              </sc-if>
+              <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}">
+                <textarea rows="{{ f.rows }}" value="{{ f.value }}" onInput="{{ f.set }}" onSelect="{{ f.sel }}" onKeyUp="{{ f.sel }}" onMouseUp="{{ f.sel }}" onFocus="{{ f.focus }}" onBlur="{{ f.blur }}" placeholder="{{ f.hint }}" style="{{ f.inputStyle }}"></textarea>
+              </sc-if>
+              <sc-if value="{{ f.canDraft }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 1px;">
+                  <sc-for list="{{ f.asks }}" as="a" hint-placeholder-count="4">
+                    <button onClick="{{ a.hit }}" title="{{ a.hint }}" style="{{ a.style }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ a.label }}</button>
+                  </sc-for>
+                  <input type="text" value="{{ f.ask }}" onInput="{{ f.setAsk }}" onKeyDown="{{ f.askKey }}" placeholder="{{ f.askHint }}" style="{{ f.askStyle }}" />
+                  <span style="{{ f.busyStyle }}">{{ f.busyLine }}</span>
+                </div>
+              </sc-if>
+              <sc-if value="{{ f.showPreview }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ f.previewStyle }}">{{ f.body }}</div>
+              </sc-if>
+            </label>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ popOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ popStyle }}">
+            <sc-for list="{{ marks }}" as="m" hint-placeholder-count="7">
+              <button onMouseDown="{{ m.grab }}" onClick="{{ m.hit }}" title="{{ m.hint }}" style="{{ m.popStyle }}" style-hover="background: var(--accent); color: var(--on-accent);">{{ m.label }}</button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <div style="{{ barStyle }}">
+          <button onClick="{{ togglePreview }}" style="{{ prevBtnStyle }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ prevLabel }}</button>
+          <span style="{{ dirtyStyle }}">{{ dirtyLine }}</span>
+          <div style="display: flex; align-items: center; gap: 6px; margin-left: auto; flex-wrap: wrap;">
+            <button onClick="{{ doImport }}" title="Load a saved session" style="{{ ghostStyle }}" style-hover="border-color: var(--accent); color: var(--accent);">import</button>
+            <button onClick="{{ doSaveSession }}" title="Keep in this browser" style="{{ ghostStyle }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ saveLabel }}</button>
+            <sc-if value="{{ hasBulk }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ doBulk }}" style="{{ ghostStyle }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ bulkLabel }}</button>
+            </sc-if>
+            <button onClick="{{ doExport }}" style="{{ primaryStyle }}" style-hover="transform: rotate(.6deg) scale(1.02);" style-active="transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--hard);">export json</button>
+          </div>
+        </div>
+      </div>
+      <input type="file" accept=".json,.zip,application/json" ref="{{ fileRef }}" onChange="{{ onFile }}" style="display: none;" />
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ gridOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ galleryStyle }}">
+      <div data-vscroll onMouseLeave="{{ tipOut }}" data-screen-label="Gallery" style="position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none;">
+        <div style="{{ gridHeadStyle }}">
+          <h2 style="margin: 0; font-family: 'Irish Grover', cursive; font-size: 26px; font-weight: 400;">{{ gridTitle }}</h2>
+          <span style="font-size: 12px; letter-spacing: .06em; color: var(--faint);">{{ gridCount }}</span>
+          <button onClick="{{ toggleMarksOnly }}" style="{{ marksBtnStyle }}" style-hover="transform: rotate(-1.4deg); box-shadow: 2px 2px 0 var(--hard);">{{ marksLabel }}</button>
+        </div>
+
+        <div style="{{ gridWrapStyle }}">
+          <sc-for list="{{ gridItems }}" as="g" hint-placeholder-count="12">
+            <div style="{{ g.cellStyle }}">
+              <div style="{{ g.tiltStyle }}" style-hover="transform: rotate(0deg) scale(1.045);">
+                <div onClick="{{ g.pick }}" onDoubleClick="{{ g.dbl }}" onKeyDown="{{ g.key }}" role="button" tabindex="0" title="{{ g.hint }}" style="{{ g.btnStyle }}">
+                  <span style="{{ g.thumbStyle }}">
+                    <span style="{{ g.inkStyle }}"></span>
+                    <sc-if value="{{ g.washing }}" hint-placeholder-val="{{ true }}">
+                      <span style="{{ g.washStyle }}"></span>
+                    </sc-if>
+                    <span style="{{ g.imgStyle }}"></span>
+                  </span>
+                  <span style="{{ g.labelStyle }}">{{ g.title }}</span>
+                </div>
+              </div>
+              <button onClick="{{ g.mark }}" aria-label="Bookmark" style="{{ g.markStyle }}" style-hover="color: var(--accent);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="{{ g.markFill }}" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"></path></svg>
+              </button>
+              <sc-if value="{{ g.seen }}" hint-placeholder-val="{{ false }}">
+                <span style="{{ g.seenStyle }}">read</span>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height: 12vh;"></div>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ tipOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Tooltip" onClick="{{ tipStop }}" style="{{ tipStyle }}">
+      <div style="{{ tipInkStyle }}"></div>
+      <div style="{{ tipBodyStyle }}">
+        <div style="font-family: 'Irish Grover', cursive; font-size: 17px; line-height: 1.2;">{{ tipTitle }}</div>
+        <div style="font-size: 11px; letter-spacing: .06em; color: var(--faint);">{{ tipSub }}</div>
+        <sc-if value="{{ tipHasText }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 3px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); text-wrap: pretty;">{{ tipText }}</p>
+        </sc-if>
+      </div>
+      <div style="{{ tipRowStyle }}">
+        <sc-for list="{{ tipTags }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.hit }}" style="{{ t.style }}" style-hover="border-color: var(--accent); color: var(--accent);">{{ t.name }}</button>
+        </sc-for>
+        <sc-if value="{{ tipActions }}" hint-placeholder-val="{{ false }}">
+          <span style="{{ tipActStyle }}">
+            <span style="{{ tipGapStyle }}"></span>
+            <button onClick="{{ tipOpenDeck }}" aria-label="Open comic" title="Open comic" style="{{ tipBtnStyle }}" style-hover="background: var(--accent); color: var(--on-accent);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <a href="{{ tipUrl }}" target="_blank" rel="noopener" aria-label="{{ tipDlTitle }}" title="{{ tipDlTitle }}" style="{{ tipDlStyle }}" style-hover="background: var(--accent); color: var(--on-accent);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>
+            </a>
+          </span>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;paper&quot;,&quot;med&quot;],&quot;default&quot;:&quot;paper&quot;,&quot;tsType&quot;:&quot;'paper'|'med'&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;ink&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;rail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;blurb&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;edit&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Editor&quot;}}">
+const COL_W = 1180;
+const IMG_W = 1200;
+const ZOOM_W = 2400;
+const RAIL_W = 168;
+const RAIL_GAP = 12;
+const RAIL_IMG = 420;
+const FLOW_IMG = 760;    // scharfe Cover fuer den Stapel (mehr kostet mehr, als es zeigt)
+// v4: der Full-View zeigt EIN Blatt im ganzen Fenster — dieselbe Groesse wie der Reader, damit
+// der Vorrat geteilt wird und ein gelesenes Deck hier ohne neuen Rendergang steht.
+const FULL_IMG = IMG_W;
+const AR = 745.091 / 415.636;
+const ZOOMS = [1, 1.8, 2.8];
+const PUSH_NEED = 300;
+const UI = "'Special Elite', 'Courier New', monospace";
+// Im Editor wird gelesen und getippt, nicht gestaltet — Schreibmaschine waere dort Zumutung.
+const READ = "ui-sans-serif, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif";
+// Das Strichgewicht der Kartenkante — EIN Regler fuer Leiste, Galerie, Stapel, Coverflow,
+// Reader und Kasten. Der Kanon (Feder, Bauchung, Familie) bleibt unberuehrt: das hier ist der
+// Gegenfaktor fuers Herunterskalieren, nicht eine zweite Feder.
+const INK_GAIN = 1.5;
+// Der Kartenruecken liegt im Repo, nicht hier: eine Zeichnung, kein Nachbau aus Rahmen und Marke.
+const R = (typeof window !== 'undefined' && window.__resources) || {};
+const SCISSOR_PNG = R.scissorPng || 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png';
+const SCISSOR_GIF = R.scissorGif || 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors.gif';
+const BACK_URL = R.cardBack || 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png';
+
+class Component extends DCLogic {
+  state = {
+    decks: null, error: '', query: '', theme: null, rail: null, filter: true,
+    urls: {}, cardIdx: {}, cw: 1200, ch: 800,
+    pack: '', pages: 0, cur: 1, zoomPage: 0, zi: 0, blurbOpen: false, railHot: false,
+    grid: false, tip: '', tipAt: null, tipH: 190, marks: {}, seen: {}, marksOnly: false,
+    flow: false, cover: false, full: false, flowHeadH: 0, flowP: 0, flowSel: '', railH: 0, railJump: true, flowMode: 'decks', snipping: false,
+    edit: '', editRaw: null, editErr: '', drafts: {}, editTick: 0, headH: 0,
+    busy: '', asks: {}, draftErr: '',
+    phase: '', push: 0, pushDir: 0, compact: false
+  };
+
+  componentDidMount() {
+    this.pageEls = {}; this.rowEls = {}; this.asked = {}; this.hitAt = -1;
+    this.lastY = 0; this.hidden = false; this.pushAmt = 0; this.baseW = 900;
+
+    this._onResize = () => {
+      this.setState({ cw: window.innerWidth, ch: window.innerHeight });
+      this.measureFlowHead();
+    };
+    this._onKey = (e) => this.handleKey(e);
+    this._onInk = () => this.forceUpdate();
+
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('keydown', this._onKey);
+    window.addEventListener('kfb-ink-ready', this._onInk);
+    this._onResize();
+
+    this.gridEls = {};
+    this._onHash = () => this.readHash();
+    window.addEventListener('hashchange', this._onHash);
+    this.loadKept();
+
+    this.applyTheme();
+    const tick = () => { if (window.KFBCorpus) this.boot(); else setTimeout(tick, 40); };
+    tick();
+  }
+
+  // ---------- Galerie: alle Decks als schraeg gestelltes Gitter ----------
+  // Merkzeichen und Gelesen-Haken bleiben ueber Sitzungen (localStorage), die Blickposition
+  // im Gitter nur fuer diese (sessionStorage). Fremde Schluessel werden nicht angefasst.
+  loadKept() {
+    const j = (store, key) => { try { return JSON.parse(store.getItem(key) || '{}') || {}; } catch (e) { return {}; } };
+    this.setState({
+      marks: j(localStorage, 'kfb-dv-marks'),
+      seen: j(localStorage, 'kfb-dv-seen'),
+      drafts: j(localStorage, 'kfb-dv-drafts')
+    });
+  }
+
+  // ---------- Editor fuer die Deck-Texte ----------
+  // Stift steht vorerst immer da. `?edit=1` traegt in der Vorschau nicht durch (die Seite laeuft
+  // in einem Rahmen mit eigener Adresse), also erst zeigen, spaeter verstecken: dann hier auf
+  // den Parameter gaten und den Standard auf `false` drehen.
+  editMode() {
+    return this.props.edit !== false;
+  }
+
+  openEdit = (packId) => {
+    this.setState({ edit: packId, editRaw: null, editErr: '' });
+    // GitHub ist die Wahrheit: der Rohtext kommt frisch aus dem Repo, nicht aus einer Ablage.
+    // Ein Entwurf im Browser ist eine Notiz, die darauf gelegt wird.
+    window.KFBCorpus.rawJson(packId, true).then((r) => {
+      if (this.state.edit !== packId) return;
+      this.setState({ editRaw: r });
+    }).catch((e) => this.setState({ editErr: 'could not load json: ' + e.message }));
+  };
+
+  closeEdit = () => {
+    this._typing = null; this._selOn = false;
+    this.setState({ edit: '', editRaw: null, editErr: '' });
+  };
+
+  backdropClose = (e) => { if (e.target === e.currentTarget) this.closeEdit(); };
+  stop = (e) => e.stopPropagation();
+  togglePreview = () => this.setState({ preview: !this.state.preview });
+
+  // Der Entwurf haelt nur, was von der Datei abweicht — so bleibt sichtbar, was wirklich
+  // geaendert wurde, und ein Repo-Update schlaegt bei allem anderen durch.
+  draftOf(packId) {
+    return (this.state.drafts[packId] && this.state.drafts[packId].fields) || {};
+  }
+
+  fieldValue(f) {
+    // Beim Tippen an einer Liste gilt der Rohtext: sonst frisst das Zerlegen das Komma weg,
+    // das man gerade gesetzt hat, und ein neuer Tag laesst sich nie anfangen.
+    if (f.kind === 'list' && this._typing && this._typing.key === f.key) return this._typing.str;
+    const base = this._editBase || {};
+    const d = this.draftOf(this.state.edit);
+    const v = Object.prototype.hasOwnProperty.call(d, f.key) ? d[f.key] : base[f.key];
+    if (f.kind === 'list') return (Array.isArray(v) ? v : []).join(', ');
+    return v == null ? '' : String(v);
+  }
+
+  setField(f, str) {
+    const base = this._editBase || {};
+    if (f.kind === 'list') this._typing = { key: f.key, str };
+    const val = f.kind === 'list'
+      ? str.split(',').map((s) => s.trim()).filter(Boolean)
+      : str;
+    const same = f.kind === 'list'
+      ? JSON.stringify(val) === JSON.stringify(base[f.key] || [])
+      : val === (base[f.key] || '');
+    const pack = this.state.edit;
+    const cur = Object.assign({}, this.draftOf(pack));
+    if (same) delete cur[f.key]; else cur[f.key] = val;
+    const drafts = Object.assign({}, this.state.drafts);
+    if (Object.keys(cur).length) drafts[pack] = { fields: cur, at: Date.now(), title: this._editName || pack };
+    else delete drafts[pack];
+    this.setState({ drafts });
+  }
+
+  // Auswahl merken — und wo sie steht, damit das Menue dort aufgeht statt unten in der Ecke.
+  // Ein Textfeld gibt keine Rechtecke je Zeichen her; der Zeiger ist die ehrlichste Stelle.
+  noteSel = (f, e) => {
+    const el = e.target;
+    this._sel = { key: f.key, el, from: el.selectionStart, to: el.selectionEnd };
+    if (e.clientX) this._selXY = [e.clientX, e.clientY];
+    else if (!this._selXY) {
+      const r = el.getBoundingClientRect();
+      this._selXY = [r.left + r.width / 2, r.top + 26];
+    }
+    const on = el.selectionEnd > el.selectionStart;
+    if (on !== this._selOn) { this._selOn = on; this.setState({ editTick: this.state.editTick + 1 }); }
+  };
+
+  // Der Klick auf eine Marke darf die Auswahl nicht kosten: `mousedown` abfangen, bevor das
+  // Textfeld den Fokus verliert.
+  grabSel = (e) => { e.preventDefault(); };
+
+  dropSel = () => {
+    clearTimeout(this._blurT);
+    this._blurT = setTimeout(() => {
+      if (!this._selOn) return;
+      this._selOn = false;
+      this.setState({ editTick: this.state.editTick + 1 });
+    }, 180);
+  };
+
+  hitMark(m) {
+    const s = this._sel;
+    if (!s || !s.el || !document.contains(s.el)) return;
+    this._typing = null;
+    const f = window.KFBDeckEdit.FIELDS.find((x) => x.key === s.key);
+    if (!f) return;
+    const r = window.KFBDeckEdit.apply(s.el.value, s.from, s.to, m);
+    this.setField(f, r.text);
+    // Nach dem Zustandswechsel steht der neue Text im Feld — dann erst die Auswahl setzen.
+    setTimeout(() => {
+      if (!document.contains(s.el)) return;
+      s.el.focus();
+      s.el.setSelectionRange(r.from, r.to);
+      this._sel = { key: s.key, el: s.el, from: r.from, to: r.to };
+    }, 20);
+  }
+
+  // Der Ausgabetext: dieselbe Datei, nur die geaenderten Werte ersetzt.
+  outputFor(packId) {
+    const rec = this._rawCache && this._rawCache[packId];
+    if (!rec) return null;
+    const d = this.draftOf(packId);
+    if (!Object.keys(d).length) return { file: rec.file, text: rec.text, changed: 0 };
+    return { file: rec.file, text: window.KFBDeckEdit.patch(rec.text, d), changed: Object.keys(d).length };
+  }
+
+  download(name, text) {
+    const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  doExport = () => {
+    const out = this.outputFor(this.state.edit);
+    if (out) this.download(out.file, out.text);
+  };
+
+  // Sammel-Ausgabe: jede geaenderte Datei einzeln, gleicher Name wie im Repo. Kein Zip —
+  // dann kann Georg sie direkt einzeln ueber die alten legen.
+  doBulk = () => {
+    const packs = Object.keys(this.state.drafts);
+    let i = 0;
+    const next = () => {
+      const p = packs[i++];
+      if (!p) return;
+      const push = () => {
+        const out = this.outputFor(p);
+        if (out) this.download(out.file, out.text);
+        setTimeout(next, 350);
+      };
+      if (this._rawCache && this._rawCache[p]) push();
+      else window.KFBCorpus.rawJson(p, true).then((r) => {
+        this._rawCache = this._rawCache || {};
+        this._rawCache[p] = r;
+        push();
+      }).catch(() => setTimeout(next, 60));
+    };
+    next();
+  };
+
+  doSaveSession = () => {
+    try { localStorage.setItem('kfb-dv-drafts', JSON.stringify(this.state.drafts)); } catch (e) {}
+    this._saved = Date.now();
+    this.setState({ editTick: this.state.editTick + 1 });
+    // Zusaetzlich als Datei, damit ein Sitzungsbruch nichts kostet.
+    const packs = Object.keys(this.state.drafts);
+    if (packs.length) {
+      this.download('kfb-deck-drafts.json', JSON.stringify({
+        kind: 'kfb-deck-drafts', version: 1, saved: new Date().toISOString(), drafts: this.state.drafts
+      }, null, 2));
+    }
+  };
+
+  // ---------- Entwurf vom Modell ----------
+  // Was zurueckkommt, ist ein Entwurf im Formular — rot markiert, umkehrbar, nie direkt in der
+  // Datei. Der Anti-Clone-Blick nimmt drei fremde Haken aus dem geladenen Korpus statt aus
+  // einer Liste, die jemand pflegen muss.
+  askDraft(f, instruction) {
+    if (this.state.busy) return;
+    const pack = this.state.edit;
+    const deck = (this.state.decks || []).find((d) => d.packId === pack);
+    if (!deck || !window.KFBDeckDraft) return;
+    const current = this.fieldValue(f);
+    this.setState({ busy: f.key, draftErr: '' });
+    window.KFBDeckDraft.run({
+      deck, idx: this.state.cardIdx[pack], field: f.key,
+      mode: current ? 'fix' : 'new',
+      current, instruction: instruction || '',
+      samples: window.KFBDeckDraft.samplesFrom(this.state.cardIdx, pack, 3)
+    }).then((text) => {
+      if (this.state.edit !== pack) { this.setState({ busy: '' }); return; }
+      this._typing = null;
+      this.setField(f, text);
+      this.setState({ busy: '' });
+    }).catch((e) => this.setState({ busy: '', draftErr: e.message || 'draft failed' }));
+  }
+
+  setAsk(key, str) {
+    this.setState({ asks: Object.assign({}, this.state.asks, { [key]: str }) });
+  }
+
+  doImport = () => { if (this.fileEl) this.fileEl.click(); };
+
+  onFile = (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => {
+      try {
+        const j = JSON.parse(String(rd.result));
+        // Zwei Formen: eine Sitzungsdatei mit vielen Entwuerfen, oder ein einzelnes Deck-JSON.
+        if (j && j.kind === 'kfb-deck-drafts' && j.drafts) {
+          const drafts = Object.assign({}, this.state.drafts, j.drafts);
+          try { localStorage.setItem('kfb-dv-drafts', JSON.stringify(drafts)); } catch (x) {}
+          this.setState({ drafts, editErr: '' });
+        } else if (j && (j.deckTitle || j.cards)) {
+          const vals = window.KFBDeckEdit.read(String(rd.result));
+          const base = this._editBase || {};
+          const cur = {};
+          window.KFBDeckEdit.FIELDS.forEach((fd) => {
+            const a = vals[fd.key], b = base[fd.key];
+            const same = fd.kind === 'list' ? JSON.stringify(a) === JSON.stringify(b || []) : (a || '') === (b || '');
+            if (!same) cur[fd.key] = a;
+          });
+          const drafts = Object.assign({}, this.state.drafts);
+          if (Object.keys(cur).length) drafts[this.state.edit] = { fields: cur, at: Date.now(), title: this._editName || this.state.edit };
+          this.setState({ drafts, editErr: '' });
+        } else {
+          this.setState({ editErr: 'not a comic json or session file' });
+        }
+      } catch (x) {
+        this.setState({ editErr: 'could not read file: ' + x.message });
+      }
+      e.target.value = '';
+    };
+    rd.readAsText(f);
+  };
+
+  keep(key, val) {
+    try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+  }
+
+  // Das Gitter haengt an der Struktur, nicht an Refs oder eigenen Datenattributen: `ref` in
+  // einem `sc-if`-Zweig wird von dieser Laufzeit nicht zugestellt, und ein `data-*` mit Wert
+  // faellt beim Uebersetzen weg (gemessen: von fuenf Attributen blieben `data-vscroll` und
+  // `data-screen-label` uebrig). Also: Galerie ueber ihr Label, Zellen als deren Kinder,
+  // Zuordnung ueber die Reihenfolge aus `renderVals`.
+  // Der Stapel haengt am Label, nicht an einem Ref (Falle 1), und nicht an einem eigenen
+  // `data-*` mit Wert (Falle 2). Er wird VOR der Galerie gebunden — die steigt frueh aus,
+  // wenn kein Raster offen ist, und nahm den Stapel bisher mit.
+  bindFlow() {
+    const el = document.querySelector('[data-screen-label="Flow"]');
+    if (!el || el.__kfbFlow) return;
+    el.__kfbFlow = 1;
+    el.addEventListener('wheel', this.onFlowWheel, { passive: true });
+    // Ziehen wie am echten Stapel: der Finger hebt die Karten, nicht nur das Rad.
+    // Der Zeiger wird eingefangen. Ohne das geht ein `pointerup` verloren, sobald die Maus das
+    // Fenster verlaesst — der Zug bleibt haengen, und danach schiebt jede Mausbewegung den
+    // Stapel weiter: das Flackern ohne Zutun, bei dem nichts mehr klickbar war.
+    // Eingefangen wird erst, wenn wirklich gezogen wird (ab 6 px). Beim `pointerdown` zu
+    // greifen kostet den Klick: das `click` geht dann an den Behaelter statt an die Karte —
+    // deshalb reagierte im Stapel nichts mehr, obwohl Scrollen ging.
+    let y0 = 0, on = false, id = null, moved = 0;
+    el.addEventListener('pointerdown', (e) => { on = true; y0 = e.clientY; id = e.pointerId; moved = 0; });
+    el.addEventListener('pointermove', (e) => {
+      if (!on) return;
+      // Im Coverflow und im Full-View fuehrt die Querachse — der senkrechte Zug gehoert dem
+      // Stapel, sonst schiebt ein leichtes Auf und Ab die waagerechte Reihe mit.
+      if (this.state.cover || this.state.full) return;
+      if (e.buttons === 0) { on = false; return; }
+      const dy = y0 - e.clientY;
+      moved += Math.abs(dy);
+      if (moved < 6) return;
+      if (id != null && !el.hasPointerCapture(id)) { try { el.setPointerCapture(id); } catch (err) {} }
+      if (Math.abs(dy) < 1) return;
+      y0 = e.clientY;
+      this.flowTo((this._flowTo == null ? this.state.flowP : this._flowTo) + dy * 0.012);
+    });
+    const up = () => {
+      on = false;
+      if (id != null) { try { el.releasePointerCapture(id); } catch (err) {} id = null; }
+    };
+    el.addEventListener('pointerup', up);
+    el.addEventListener('pointercancel', up);
+    el.addEventListener('pointerleave', up);
+    window.addEventListener('blur', up);
+  }
+
+  bindGrid() {
+    this.bindFlow();
+    // Der Kasten wird an seiner Ebene erkannt — 70 hat sonst nichts (auch `data-screen-label`
+    // kommt an diesem Knoten nicht durch).
+    this.tipEl = document.querySelector('[style*="z-index: 70"]');
+    const el = document.querySelector('[data-screen-label="Gallery"]');
+    if (!el) { this.gridEl = null; this.gridCells = []; return; }
+    this.gridEl = el;
+    // Die Marke sitzt am Element, nicht in einem Feld der Klasse: nach einem Hot-Reload
+    // zeigt das Feld noch auf denselben Knoten, waehrend der Horcher weg ist.
+    if (!el.__kfbBound) {
+      el.__kfbBound = 1;
+      el.addEventListener('scroll', this.onGridScroll, { passive: true });
+    }
+    const wrap = el.children[1];
+    this.gridCells = wrap ? Array.prototype.slice.call(wrap.children) : [];
+  }
+
+  // ---------- Der Stapel: Cover liegen mit dem Ruecken nach oben ----------
+  // Kein `perspective`, kein `translateZ`. Falle 4 gilt: in einem scrollenden Behaelter flacht
+  // beides ab, und die Trefferflaeche wandert weg vom Sichtbaren. Tiefe entsteht hier aus
+  // Groesse, Versatz, Drehung und Deckkraft — dieselbe Loesung wie in der Galerie, nur mit
+  // einem Stapel statt einem Raster.
+  // Zwei Ansichten auf derselben Mechanik: der Stapel (Ruecken oben, Faecher nach oben) und
+  // der Coverflow (aufgereiht, zur Mitte gedreht). Gleiche Liste, gleiche Klicks, gleicher
+  // Kasten — nur die Geometrie und die Richtung der Schnittkante unterscheiden sich.
+  toggleFlow = () => this.setFlow(!(this.state.flow && !this.state.cover && !this.state.full), false, false);
+  toggleCover = () => this.setFlow(!(this.state.flow && this.state.cover), true, false);
+  // v4: die dritte waagerechte Lage. Ein Blatt fuellt den Schirm, die Reihe laeuft endlos im
+  // Kreis durch den Korpus. Gleiche Mechanik wie der Coverflow (Klick = Kasten, Doppelklick =
+  // Deck), nur ohne Drehung, ohne Tiefe und ohne Anschlag.
+  toggleFull = () => this.setFlow(!(this.state.flow && this.state.full), false, true);
+
+  // Im Full-View gibt es keine Grenzen, nur Rest-Rechnung: hinter dem letzten Blatt kommt
+  // wieder das erste. EINE Stelle dafuer — Zeichnen, Vorrat und Schnittkante rechnen gleich.
+  wrap(v, n) { return n > 0 ? ((v % n) + n) % n : 0; }
+
+  setFlow(flow, cover, full) {
+    this.setState({ flow, cover: flow ? !!cover : false, full: flow ? !!full : false, flowSel: '', grid: false, tip: '' }, () => {
+      if (flow) {
+        this._flowTo = this.state.flowP;
+        this.flowWarm();
+        // Dieselben drei Zeitpunkte wie beim Verlassen: Meta-Zeile und Leiste fahren ihre
+        // Hoehe, und erst der letzte Wert stimmt.
+        [0, 30, 200, 420].forEach((ms) => setTimeout(() => this.measureFlowHead(), ms));
+        return;
+      }
+      this.setState({ flowHeadH: 0 });
+      clearInterval(this._ft); this._ft = 0;
+      this.setState({ railJump: true });
+      setTimeout(() => this.setState({ railJump: false }), 80);
+      // Beim Verlassen des Stapels laufen drei Kopfhoehen kurz hintereinander an (59 → 133 →
+      // 267): Meta-Zeile und Leiste kommen zurueck, und die Leiste faehrt ihre Hoehe an. Der
+      // letzte Wert kam nicht mehr am Abstandhalter an, und das Cover lag danach unter dem
+      // Glas. Also nach dem Ende der Leisten-Animation nachmessen — erzwungen, nicht geraten.
+      [30, 200, 420].forEach((ms) => setTimeout(() => this.remeasureHead(), ms));
+    });
+  }
+
+  // Der Coverflow laesst sich ziehen — das Rad allein reicht nicht, wenn eine Hand am
+  // Trackpad liegt. Erst ab 6 px gilt es als Zug: darunter bleibt es ein Klick, sonst
+  // verliert man Kasten und Doppelklick.
+  onCoverDown = (e) => {
+    if (e.button) return;
+    this._drag = {
+      x: e.clientX, y: e.clientY, moved: 0, id: e.pointerId, el: e.currentTarget,
+      from: this._flowTo == null ? this.state.flowP : this._flowTo
+    };
+  };
+
+  onCoverMove = (e) => {
+    const d = this._drag;
+    if (!d) return;
+    const dx = e.clientX - d.x;
+    d.moved = Math.max(d.moved, Math.abs(dx) + Math.abs(e.clientY - d.y));
+    if (d.moved < 6) return;
+    if (!d.cap) { d.cap = 1; try { d.el.setPointerCapture(d.id); } catch (x) {} }
+    this.snip();
+    if (this.state.tip) { this._tipCard = null; this.setState({ tip: '', flowSel: '' }); }
+    const n = this.flowItems().length;
+    // Eine Kartenbreite Zug = eine Karte weiter. Der gemessene Schritt kommt aus dem Rendern.
+    const raw = d.from - dx / Math.max(60, this._coverStep || 200);
+    this._flowTo = this.state.full ? raw : Math.max(0, Math.min(n - 1, raw));
+    this.runFlow();
+  };
+
+  onCoverUp = () => {
+    const d = this._drag;
+    this._drag = null;
+    if (!d) return;
+    if (d.cap) { try { d.el.releasePointerCapture(d.id); } catch (x) {} }
+    // Ein Zug, der weiter ging als der Schwellwert, ist kein Klick — sonst oeffnet das
+    // Loslassen den Kasten der Karte, die zufaellig unter dem Finger liegt.
+    if (d.moved > 6) {
+      this._dragged = true;
+      setTimeout(() => { this._dragged = false; }, 80);
+      const n = this.flowItems().length;
+      const r = Math.round(this._flowTo == null ? this.state.flowP : this._flowTo);
+      this._flowTo = this.state.full ? r : Math.max(0, Math.min(n - 1, r));
+      this.runFlow();
+    }
+  };
+
+  // Im Flow faellt die Kopfzeile auf ihre kompakte Hoehe zusammen (59 statt 246 gemessen).
+  // `_headH` haelt aber weiter die Reader-Hoehe — `remeasureHead()` steigt in dieser Lage
+  // ausdruecklich aus, und `measureHeader()` schreibt sie nicht um. Der Coverflow hat deshalb
+  // 258 px Kopf reserviert, wo 71 stehen: die Fokuskarte kam halb so gross heraus, und darunter
+  // stand ein totes Band von 227 px. Also EINE eigene Zahl fuer diese Lage, frisch gemessen.
+  measureFlowHead() {
+    if (!this.headerEl || !this.state.flow) return;
+    const h = this.headerEl.offsetHeight;
+    if (h && h !== this.state.flowHeadH) this.setState({ flowHeadH: h });
+  }
+
+  // Nachmessen ohne den Wachhund-Vorbehalt aus `measureHeader`: hier gilt die gemessene Hoehe.
+  //
+  // `_headH` ist ein Instanzfeld, und ein Instanzfeld loest KEIN Rendern aus. Die Galerie baut
+  // ihr Polster in `renderVals()` aus genau diesem Feld — kommt man aus dem Flow, stand dort
+  // noch die kompakte Kopfhoehe (59 + 26 = 85 px Polster bei 267 px Kopfzeile), und die
+  // Ueberschrift lag 182 px hinter dem Glas. Sichtbar wurde es erst beim naechsten beliebigen
+  // Rendern. Also: wer die Zahl aendert, erzwingt den Neuaufbau.
+  // Der Abstandhalter ist NICHT die Bedingung fuers Messen. In der Galerie ist er gar nicht im
+  // Dokument — deshalb stieg das Nachmessen dort aus, `_headH` blieb auf der kompakten
+  // Flow-Hoehe stehen (59 statt 267), und das Galerie-Polster kam mit 85 px statt 293 heraus:
+  // Ueberschrift und halbe erste Reihe lagen hinter dem Glas.
+  remeasureHead() {
+    if (!this.headerEl || this.state.flow) return;
+    const h = this.headerEl.offsetHeight;
+    if (!h) return;
+    this._headH = h;
+    if (this.padEl && !this.state.compact) {
+      this._padH = h;
+      this.padEl.style.height = (h + 18) + 'px';
+    }
+    this.bumpHead(h);
+  }
+
+  // Die Kopfhoehe gehoert in den ZUSTAND, nicht in ein Instanzfeld. Sie wird an zwei Stellen
+  // geschrieben (`measureHeader` beim Auslegen, `remeasureHead` beim Nachmessen), und beide
+  // schrieben still: `renderVals()` rechnet das Galerie-Polster aus derselben Zahl, sieht die
+  // Aenderung aber nie. Der Weg Coverflow → Galerie kam deshalb mit 85 px Polster bei 267 px
+  // Kopfzeile heraus — Ueberschrift und halbe erste Reihe lagen hinter dem Glas.
+  // Ein Vergleich gegen `_headH` reicht NICHT: `measureHeader()` laeuft aus dem Ref waehrend
+  // des Rendervorgangs und hat das Feld dann schon auf den neuen Wert gesetzt. Verglichen wird
+  // deshalb gegen den Zustand — also gegen die Zahl, mit der zuletzt WIRKLICH gerendert wurde.
+  bumpHead(h) {
+    if (!h || this.state.headH === h) return;
+    clearTimeout(this._headB);
+    this._headB = setTimeout(() => {
+      if (this._headH && this.state.headH !== this._headH) this.setState({ headH: this._headH });
+    }, 0);
+  }
+
+  onFlowWheel = (e) => {
+    const n = this.flowItems().length;
+    if (!n) return;
+    this.snip();
+    // Wer weiterschiebt, will den Faecher sehen, nicht den Kasten.
+    if (this.state.tip) { this._tipCard = null; this.setState({ tip: '', flowSel: '' }); }
+    // Im Coverflow ruhiger: eine Rasterung des Rades soll nicht drei Karten weit springen.
+    // Georgs Befund an der Demo — dort waren es 0,5 Karten je Ereignis, hier 0,26.
+    // Im Full-View fuehrt auch die Querachse: ein Wisch auf dem Trackpad ist dort die
+    // natuerliche Richtung, und das Rad allein liest sich zaeh.
+    const dv = (this.state.full && Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+    const to = (this._flowTo == null ? this.state.flowP : this._flowTo)
+      + dv * ((this.state.cover || this.state.full) ? 0.0026 : 0.0055);
+    this._flowTo = this.state.full ? to : Math.max(0, Math.min(n - 0.001, to));
+    this.runFlow();
+    // Nach dem Auslaufen auf eine ganze Karte einrasten. `flip` haengt an der gebrochenen
+    // Position \u2014 ohne Rasten ruht die vorderste Karte mitten in der Drehung und steht
+    // dauerhaft gestaucht da (gemessen 411\u00d7139 statt 411\u00d7230).
+    clearTimeout(this._snapT);
+    this._snapT = setTimeout(() => {
+      // Der Brennpunkt liegt im Stapel bei `flowP - 1`, im Coverflow bei `flowP` — die
+      // Rastgrenzen sind deshalb andere.
+      const t = this.state.full
+        ? Math.round(this._flowTo)
+        : this.state.cover
+          ? Math.max(0, Math.min(n - 1, Math.round(this._flowTo)))
+          : Math.max(1, Math.min(n, Math.round(this._flowTo)));
+      if (Math.abs(t - this._flowTo) > 0.01) { this._flowTo = t; this.runFlow(); }
+    }, 240);
+  };
+
+  // Was liegt im Stapel? Entweder ein Cover je Deck oder JEDES Blatt des ganzen Korpus.
+  // Dieselbe Mechanik, nur eine laengere Liste — teuer genug, dass sie gemerkt wird.
+  flowItems() {
+    const decks = this.shownDecks();
+    if (this.state.flowMode !== 'pages') {
+      const k0 = 'd|' + decks.length + '|' + this.state.query;
+      if (this._fiKey !== k0) {
+        this._fiKey = k0;
+        this._fi = decks.map((d) => ({ pack: d.packId, page: 1, deck: d, first: true }));
+      }
+      return this._fi;
+    }
+    const key = 'p|' + decks.length + '|' + this.state.query + '|' + Object.keys(this.state.cardIdx).length;
+    if (this._fiKey === key) return this._fi;
+    const out = [];
+    decks.forEach((d) => {
+      const idx = this.state.cardIdx[d.packId];
+      const n = (idx && idx.pages) || d.pages || 1;
+      for (let p = 1; p <= n; p++) out.push({ pack: d.packId, page: p, deck: d, first: p === 1 });
+    });
+    this._fiKey = key; this._fi = out;
+    return out;
+  }
+
+  setFlowMode(mode) {
+    if (this.state.flowMode === mode && this.state.flow) return;
+    this._fiKey = null;
+    this._flowTo = 0;
+    this.setState({ flowMode: mode, flow: true, grid: false, flowP: 0, tip: '', flowSel: '' },
+      () => {
+        this.flowWarm();
+        [0, 30, 200, 420].forEach((ms) => setTimeout(() => this.measureFlowHead(), ms));
+      });
+  }
+
+  // Waehrend gefahren wird, schneidet die Schere (GIF), im Stand steht sie offen — 340 ms
+  // Nachlauf wie auf der Site (index.html L2996–2998).
+  snip() {
+    if (!this.state.snipping) this.setState({ snipping: true });
+    clearTimeout(this._snipT);
+    this._snipT = setTimeout(() => this.setState({ snipping: false }), 340);
+  }
+
+  flowTo(v) {
+    this.snip();
+    const n = this.flowItems().length;
+    clearTimeout(this._snapT);
+    this._flowTo = this.state.full ? v : Math.max(0, Math.min(n, v));
+    this.runFlow();
+  }
+
+  // Zeitgeber statt rAF (Hausregel), und 30 statt 60 Bilder: der Zug bleibt weich, aber jeder
+  // Schritt kostet einen Renderdurchlauf.
+  runFlow() {
+    if (this._ft) return;
+    this._ft = setInterval(() => {
+      const cur = this.state.flowP, dst = this._flowTo || 0;
+      const d = dst - cur;
+      if (Math.abs(d) < 0.004) {
+        clearInterval(this._ft); this._ft = 0;
+        this.setState({ flowP: dst }, () => { this.bindGrid(); this.flowWarm(); });
+        return;
+      }
+      this.setState({ flowP: cur + d * 0.26 });
+    }, 33);
+  }
+
+  // Nur das Fenster um die Oberkante des Stapels holen — bei 103 Decks lohnt nichts anderes.
+  // Zwei Groessen: die Miniatur fuer alles im Fenster (kommt sofort), die grosse Fassung fuer
+  // die Karten, die man gleich aufdeckt.
+  flowWarm() {
+    const list = this.flowItems();
+    const nAll = list.length;
+    if (!nAll) return;
+    const i = Math.round(this.state.flowP);
+    // Im Full-View liegt EIN Blatt im Bild: vier je Seite als Miniatur, und der Brennpunkt mit
+    // seinen beiden Nachbarn in Lesegroesse. Mehr scharfe Blaetter zahlt keiner ein.
+    if (this.state.full) {
+      for (let k = i - 4; k <= i + 4; k++) {
+        const w = list[this.wrap(k, nAll)];
+        this.wantImage(w.pack, w.page, RAIL_IMG);
+      }
+      // NUR der Brennpunkt kommt in Lesegroesse, und erst wenn die Reihe steht: pdf.js
+      // rechnet auf demselben Faden wie die Oberflaeche, und drei Blaetter zu 1200 px
+      // hintereinander legen sie fuer Sekunden still (Georgs Befund am World's-Fair-Cover).
+      clearTimeout(this._sharpT);
+      this._sharpT = setTimeout(() => {
+        const w = list[this.wrap(Math.round(this.state.flowP), nAll)];
+        this.wantImage(w.pack, w.page, FULL_IMG);
+      }, 420);
+      return;
+    }
+    // Der Stapel waechst nach oben, der Coverflow nach beiden Seiten — also links mehr holen.
+    const back = this.state.cover ? 7 : 3;
+    for (let k = i - back; k <= i + 14; k++) if (list[k]) this.wantImage(list[k].pack, list[k].page, RAIL_IMG);
+    // Die grosse Fassung nur fuer die Karten am Brennpunkt, und erst wenn der Zug steht.
+    // Acht Seiten gleichzeitig in 1000 px zu rendern legte die Seite lahm.
+    clearTimeout(this._sharpT);
+    this._sharpT = setTimeout(() => {
+      const j = Math.round(this.state.flowP);
+      const a = this.state.cover ? j - 1 : j;
+      for (let k = a; k <= a + 2; k++) if (list[k]) this.wantImage(list[k].pack, list[k].page, FLOW_IMG);
+    }, 420);
+  }
+
+  // Ein Weg ins Deck, drei Bedienwege darauf: das Auge im Kasten, Enter im Raster,
+  // Doppelklick auf Karte oder Kachel. Wer doppelt klickt, sucht kein Icon.
+  openPack = (packId, page) => {
+    if (!packId) return;
+    // Der Kasten des ersten Klicks ist beim Doppelklick schon unterwegs — ohne diesen Riegel
+    // steht er nach dem Oeffnen im Reader herum und deckt das Blatt zu.
+    clearTimeout(this._hitT);
+    clearTimeout(this._tipT);
+    this._tipLock = Date.now();
+    this._tipCard = null;
+    this._tipPage = null;
+    const seen = Object.assign({}, this.state.seen, { [packId]: 1 });
+    this.keep('kfb-dv-seen', seen);
+    const list = this.state.decks || [];
+    const dir = list.findIndex((d) => d.packId === packId) > list.findIndex((d) => d.packId === this.state.pack) ? 1 : -1;
+    this.setState({ flow: false, grid: false, flowSel: '', tip: '', seen }, () => {
+      if (packId !== this.state.pack) { this.goDeck(dir, packId, page || undefined); return; }
+      if (page && page !== this.state.cur) this.goPage(page);
+      else { this.glide(0); this.writeHash(); }
+    });
+  };
+
+  // Das Auge im Kasten oeffnet das Deck — aus Stapel wie Galerie.
+  flowOpenDeck = () => this.openPack(this.state.flowSel || this.state.tip);
+
+  // Stapel und Raster sind zwei Ansichten desselben Schalters: eine ist an, oder keine.
+  // Beide bleiben jederzeit anklickbar.
+  toggleGrid = () => {
+    const grid = !this.state.grid;
+    if (this.state.flow) [30, 200, 420].forEach((ms) => setTimeout(() => this.remeasureHead(), ms));
+    this.setState({ grid, flow: false, tip: '', flowSel: '' }, () => {
+      if (!grid) return;
+      this.bindGrid();
+      let y = 0;
+      try { y = parseInt(sessionStorage.getItem('kfb-dv-gridY'), 10) || 0; } catch (e) {}
+      setTimeout(() => {
+        if (this.gridEl) this.gridEl.scrollTop = y;
+        this.gridScan();
+        this.gridDrift();
+      }, 30);
+    });
+  };
+
+  onGridScroll = () => {
+    if (this.state.tip) { this._tipCard = null; this.setState({ tip: '' }); }
+    try { sessionStorage.setItem('kfb-dv-gridY', String(this.gridEl.scrollTop)); } catch (e) {}
+    this.gridDrift();
+    clearTimeout(this._gsT);
+    this._gsT = setTimeout(() => this.gridScan(), 90);
+  };
+
+  // Nur was in der Naehe liegt, bekommt sein Cover — bei 76 Decks holt man nicht alles.
+  gridScan() {
+    if (!this.gridEl || !this.gridCells) return;
+    const vh = this.gridEl.clientHeight;
+    const m = this.gridEl.getBoundingClientRect();
+    const order = this._gridOrder || [];
+    this.gridCells.forEach((el, k) => {
+      const pack = order[k];
+      if (!pack) return;
+      const r = el.getBoundingClientRect();
+      const top = r.top - m.top;
+      if (top < vh * 1.6 && r.bottom - m.top > -vh * 0.6) this.wantImage(pack, 1, RAIL_IMG);
+    });
+  }
+
+  // Tiefe aus der Entfernung zur Blickmitte — aber in der Ebene. `perspective` +
+  // `translateZ` in einem scrollenden Behaelter flacht ab: die Kippung blieb sichtbar,
+  // die Trefferflaeche lag daneben, und dann nimmt kein Klick und kein Zeigen mehr an.
+  // Also Groesse und Deckkraft statt echter Z-Achse.
+  gridDrift() {
+    if (!this.gridEl || !this.gridCells) return;
+    const vh = this.gridEl.clientHeight;
+    const mid = this.gridEl.getBoundingClientRect().top + vh * 0.46;
+    this.gridCells.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.max(-1.4, Math.min(1.4, (r.top + r.height / 2 - mid) / vh));
+      el.style.transform = 'scale(' + (1 - Math.abs(d) * 0.07).toFixed(3) + ')';
+      el.style.opacity = (1 - Math.abs(d) * 0.3).toFixed(3);
+    });
+  }
+
+  fromGrid(packId) {
+    const seen = Object.assign({}, this.state.seen, { [packId]: 1 });
+    this.keep('kfb-dv-seen', seen);
+    const list = this.state.decks || [];
+    const dir = list.findIndex((d) => d.packId === packId) > list.findIndex((d) => d.packId === this.state.pack) ? 1 : -1;
+    this.setState({ grid: false, tip: '', seen }, () => {
+      if (packId === this.state.pack) { this.glide(0); this.writeHash(); }
+      else this.goDeck(dir, packId);
+    });
+  }
+
+  toggleMark(packId, e) {
+    if (e) { e.stopPropagation(); e.preventDefault(); }
+    const marks = Object.assign({}, this.state.marks);
+    if (marks[packId]) delete marks[packId]; else marks[packId] = 1;
+    this.keep('kfb-dv-marks', marks);
+    this.setState({ marks });
+  }
+
+  showTip(packId, e) {
+    // Nach einem Doppelklick gehoert das Feld dem Deck, nicht dem Kasten.
+    if (this._tipLock && Date.now() - this._tipLock < 600) return;
+    this.loadCards(packId);
+    if (this.state.flow) {
+      // Im Stapel oeffnet ein Klick, kein Zeigen — also ohne Verzoegerung.
+      clearTimeout(this._tipT);
+      if (e) this._tipXY = [e.clientX, e.clientY];
+      // Zweimal setzen: beim ersten Mal ist der Kasten noch nicht ausgelegt (Hoehe 0), und mit
+      // der geratenen Hoehe rutschte er unten aus dem Fenster.
+      this.setState({ tip: packId }, () => {
+        this.bindGrid(); this.placeTip();
+        setTimeout(() => this.placeTip(), 40);
+      });
+      return;
+    }
+    // Die Zeigerposition wird gemerkt, nicht das Ereignis: das Fach ist beim Rueckruf leer,
+    // und der Kasten steht erst nach dem Zustandswechsel im Dokument.
+    if (e) this._tipXY = [e.clientX, e.clientY];
+    this.moveTip();
+    if (this.state.tip === packId) return;
+    // Verzoegert: wer quer ueber das Gitter faehrt, soll keine Kette von Kaesten aufblitzen
+    // sehen. Erst wenn der Zeiger kurz liegen bleibt, erscheint einer.
+    clearTimeout(this._tipT);
+    this._tipT = setTimeout(() => {
+      this.setState({ tip: packId }, () => { this.bindGrid(); this.moveTip(); });
+    }, 320);
+  }
+
+  moveTip(e) {
+    if (e) this._tipXY = [e.clientX, e.clientY];
+    this.placeTip();
+  }
+
+  // Die Position gehoert in den Zustand, nicht ans Element: React schreibt bei jedem Rendern
+  // das ganze `style`-Attribut neu und wirft eine per Hand gesetzte Verschiebung weg. Genau
+  // deshalb klebte der Kasten oben links, ohne Bezug zur Karte.
+  // Die Hoehe wird NICHT gemessen. Sie stand beim Setzen noch nicht fest (der Text kommt
+  // nachgeladen), und mit der geratenen Hoehe lief der Kasten unten aus dem Fenster. Stattdessen
+  // wird er in der unteren Haelfte an seiner UNTERKANTE aufgehaengt: dann waechst er nach oben,
+  // egal wie lang der Text wird.
+  // Der Kasten hat einen festen Ort: unten im Fenster, mittig. Vorher wurde er relativ zur
+  // angeklickten Karte gesetzt — und bei 540 px Fensterhoehe passen 230 px Karte und 280 px
+  // Kasten nun einmal nicht untereinander. Jede Ausweichregel schob ihn dann doch auf die
+  // Karte, in die Fade-Zone oder aus dem Bild. Jetzt weicht der INHALT dem Kasten aus, nicht
+  // umgekehrt: der Faecher rechnet mit dem Band ueber ihm, das Raster scrollt frei darunter.
+  placeTip() {
+    const el = document.querySelector('[style*="z-index: 70"]');
+    const w = (el && el.offsetWidth) || 250;
+    // Rechte untere Ecke, nicht mittig: mittig unten steht der Kasten auf derselben
+    // senkrechten Achse wie die Karte, und bei 540 px Fensterhoehe passen Kopfzeile, Karte
+    // und Kasten dort nicht uebereinander. Seitlich versetzt konkurrieren sie gar nicht.
+    // Unten mittig: dort deckt er das Motiv am wenigsten zu, und die Reihe darueber macht
+    // ihm ohnehin Platz. Vorher rechts unten — da lag er auf den Nachbarkarten.
+    const at = [Math.round(Math.max(14, (window.innerWidth - w) / 2)), 14, 1];
+    // Die Hoehe wird hier gemessen und gemerkt: der Coverflow rueckt nur dann hoch, wenn der
+    // Kasten wirklich in die Karten laeuft — und dafuer muss er wissen, wie hoch er ist.
+    const h = (el && el.offsetHeight) || 0;
+    const cur = this.state.tipAt || [];
+    const same = cur[0] === at[0] && cur[1] === at[1] && cur[2] === at[2];
+    if (same && (!h || h === this.state.tipH)) return;
+    this.setState(h ? { tipAt: at, tipH: h } : { tipAt: at });
+  }
+
+  placeTipOld() {
+    const p = this._tipXY;
+    if (!p) return;
+    const el = document.querySelector('[style*="z-index: 70"]');
+    const w = (el && el.offsetWidth) || 330;
+    const c = this._tipCard;
+    if (c) {
+      // UNTER die Karte, mittig: das Cover bleibt ganz sichtbar, der Kasten haengt daran.
+      // Passt er unten nicht hin, haengt er an der Fensterunterkante — im Raster sind die
+      // Zellen klein genug, dass er dann daneben statt darauf liegt.
+      const gap = 12;
+      let x = Math.max(10, Math.min(window.innerWidth - w - 10, (c.l + c.r) / 2 - w / 2));
+      // Der Inhalt kann noch wachsen — also mit dem groesseren aus gemessener und gemerkter
+      // Hoehe rechnen, damit die Entscheidung nicht auf der leeren Fassung beruht.
+      const h = Math.max((el && el.offsetHeight) || 0, this.state.tipH || 0, 190);
+      const unten = c.b + gap;
+      const passt = unten + h <= window.innerHeight - 10;
+      // Reicht es unten nicht, weicht er zur Seite aus. Die Abstaende sind knapp gehalten,
+      // damit das auch dann greift, wenn neben der Karte nur wenige Pixel mehr frei sind als
+      // der Kasten breit ist (gemessen: 256 frei gegen 262 gebraucht — sechs Pixel entschieden).
+      let seitlich = false;
+      if (!passt) {
+        if (c.r + 8 + w <= window.innerWidth - 4) { x = c.r + 8; seitlich = true; }
+        else if (c.l - 8 - w >= 4) { x = c.l - 8 - w; seitlich = true; }
+      }
+      // Bleibt nur der Platz unter der Karte, wird der Kasten dort geklemmt und scrollt in
+      // sich — er legt sich nie ueber das, was man gerade angeklickt hat.
+      const at = (passt || !seitlich)
+        ? [Math.round(x), Math.round(unten), 0]
+        : [Math.round(x), Math.max(10, Math.round(c.t)), 0];
+      const cur0 = this.state.tipAt || [];
+      const hh = el ? el.offsetHeight : 0;
+      const neu = {};
+      if (!(cur0[0] === at[0] && cur0[1] === at[1] && cur0[2] === at[2])) neu.tipAt = at;
+      // Die Hoehe aendert sich noch, nachdem der Kasten steht: der Marketing-Text kommt
+      // nachgeladen. Ohne erneutes Rechnen bleibt die Entscheidung „passt unten hin" von der
+      // leeren Fassung stehen — und der gewachsene Kasten laeuft unten aus dem Fenster.
+      if (hh && Math.abs((this.state.tipH || 0) - hh) > 6) neu.tipH = hh;
+      if (Object.keys(neu).length) this.setState(neu, () => setTimeout(() => this.placeTip(), 30));
+      return;
+    }
+    const x = Math.max(12, Math.min(window.innerWidth - w - 12, p[0] - w / 2));
+    const oben = p[1] > window.innerHeight * 0.52;
+    const y = oben ? Math.round(window.innerHeight - p[1] + 16) : Math.round(p[1] + 18);
+    const at = [Math.round(x), y, oben ? 1 : 0];
+    const cur = this.state.tipAt || [];
+    if (cur[0] === at[0] && cur[1] === at[1] && cur[2] === at[2]) return;
+    this.setState({ tipAt: at });
+  }
+
+  tipOut = () => {
+    clearTimeout(this._tipT);
+    if (this.state.tip) this.setState({ tip: '' });
+  };
+
+  // Ein Tag ist ein Suchwort: Klick schreibt es ins Feld, alles andere filtert mit.
+  searchTag = (tag, e) => {
+    if (e) { e.stopPropagation(); e.preventDefault(); }
+    clearTimeout(this._tipT);
+    this.hitAt = -1;
+    this.setState({ query: tag, tip: '' });
+    this.loadAll();
+  };
+
+  loadAll() {
+    if (this.asked.all) return;
+    this.asked.all = true;
+    window.KFBCorpus.allCards((id, c) => {
+      this.setState((s) => ({ cardIdx: Object.assign({}, s.cardIdx, { [id]: c }) }));
+    }).catch(() => {});
+  }
+
+  // ---------- Tiefe Verweise: #packId oder #packId/07 ----------
+  parseHash() {
+    const h = decodeURIComponent((location.hash || '').replace(/^#/, '')).trim();
+    if (!h) return null;
+    const [pack, page] = h.split('/');
+    return { pack: pack, page: Math.max(1, parseInt(page, 10) || 1) };
+  }
+
+  writeHash() {
+    if (!this.state.pack) return;
+    const h = '#' + this.state.pack + (this.state.cur > 1 ? '/' + String(this.state.cur).padStart(2, '0') : '');
+    if (location.hash === h) return;
+    this._ownHash = h;
+    // replaceState statt location.hash: kein Sprung, keine hundert Eintraege im Verlauf.
+    history.replaceState(null, '', location.pathname + location.search + h);
+  }
+
+  readHash() {
+    const t = this.parseHash();
+    if (!t || (this._ownHash && location.hash === this._ownHash)) return;
+    const list = this.state.decks || [];
+    const d = list.find((x) => x.packId === t.pack);
+    if (!d) return;
+    if (d.packId !== this.state.pack) {
+      const dir = list.indexOf(d) > list.findIndex((x) => x.packId === this.state.pack) ? 1 : -1;
+      this.goDeck(dir, d.packId, t.page);
+    } else if (t.page !== this.state.cur) {
+      this.goPage(t.page);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('kfb-ink-ready', this._onInk);
+    window.removeEventListener('hashchange', this._onHash);
+    clearInterval(this._watch);
+  }
+
+  componentDidUpdate() {
+    // Waehrend der Stapel faehrt, wird nichts gebunden und nichts nachgemessen: beides loeste
+    // weitere Durchlaeufe aus und stapelte sich zu einem Flackern.
+    if (this._ft) return;
+    this.bindGrid();
+    this.applyTheme();
+    // Bei laufender Suche wechselt die Leiste ihren Inhalt, ohne dass jemand blaettert — und
+    // der Kartenindex tropft in 103 Schritten nach. Ungedrosselt lief das in eine Schleife:
+    // jedes Nachwaermen loeste den naechsten Durchlauf aus, und `shownDecks` geht dabei durch
+    // alle Decks und alle 5686 Karten. Also einmal je Ruhepause.
+    if (this.state.query.trim().length >= 2) {
+      clearTimeout(this._warmT);
+      this._warmT = setTimeout(() => this.warmRail(), 220);
+    }
+    this.syncRail();
+    this.measureHeader();
+    this.scanSoon();
+  }
+
+  syncRail() {
+    if (!this.railEl) return;
+    const inner = this.railEl.firstElementChild;
+    if (!inner) return;
+    // Im Stapel bleibt die Leiste zu: sie zeigt dort die Nachbarn des im LESER geoeffneten
+    // Decks, sagt also nichts ueber den Faecher — und kostet 134 px, die dem Faecher fehlen.
+    // Die Hoehe gehoert dem Stil, nicht dieser Methode. Hier wird nur nachgemessen, wenn sich
+    // der Zustand der Leiste geaendert hat — der Abstandhalter haengt daran.
+    const open = this.railOpen() && !this.state.compact && !this.state.flow;
+    if (open === this._railWas) return;
+    this._railWas = open;
+    this.remeasureHead();
+    // Die Leiste faehrt jetzt 340 ms lang ihre Hoehe. Waehrenddessen misst `measureHeader`
+    // einen Zwischenwert (133 statt 267), schreibt ihn in den Abstandhalter — und danach kommt
+    // kein Durchlauf mehr, der den Endwert nachtraegt. Also sperren und am Ende nachmessen.
+    this._railAnim = true;
+    clearTimeout(this._railT);
+    this._railT = setTimeout(() => { this._railAnim = false; this.remeasureHead(); }, 380);
+  }
+
+  // Das laufende Deck steht an zweiter Stelle: eins zurueck bleibt sichtbar, der Rest liegt
+  // voraus. Die Leiste wandert also beim Blaettern mit, statt stehen zu bleiben.
+  syncRailPos(animate) {
+    const el = this.railScrollEl;
+    const list = this.shownDecks();
+    if (!el || !list.length) return;
+    const i = list.findIndex((d) => d.packId === this.state.pack);
+    if (i < 0) return;
+    const dest = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, (i - 1) * (RAIL_W + RAIL_GAP)));
+    if (!animate) { el.scrollLeft = dest; return; }
+    const from = el.scrollLeft;
+    if (Math.abs(dest - from) < 2) return;
+    clearInterval(this._rw);
+    const t0 = performance.now();
+    this._rw = setInterval(() => {
+      const k = Math.min(1, (performance.now() - t0) / 380);
+      el.scrollLeft = from + (dest - from) * (1 - Math.pow(1 - k, 3));
+      if (k >= 1) clearInterval(this._rw);
+    }, 16);
+  }
+
+  applyTheme() {
+    const t = this.state.theme || this.props.theme || 'paper';
+    if (document.body.dataset.theme !== t) document.body.dataset.theme = t;
+  }
+
+  boot() {
+    window.KFBCorpus.registry().then((reg) => {
+      const meta = window.KFB_DECK_META || {};
+      const decks = reg.decks.map((d) => Object.assign({}, d, {
+        // deck-meta.js ist nur noch Rueckfallebene — Text und Untertitel stehen im Deck-JSON.
+        tags: (meta[d.packId] && meta[d.packId].tags) || [],
+        blurb: (meta[d.packId] && meta[d.packId].blurb) || '',
+        gumroadUrl: (meta[d.packId] && meta[d.packId].gumroadUrl) || ''
+      }));
+      // Ein Verweis von aussen entscheidet, welches Deck offen ist.
+      const want = this.parseHash();
+      const start = (want && decks.find((d) => d.packId === want.pack)) || decks[0];
+      this.setState({ decks, pack: start.packId, pages: start.pages }, () => {
+        this.scan();
+        this.syncRailPos(false);
+        this.warmRail();
+        this.loadCards(start.packId);
+        this.warmDeck(start.packId);
+        if (want && want.page > 1) setTimeout(() => this.goPage(want.page), 400);
+        else this.writeHash();
+      });
+    }).catch((err) => this.setState({ error: 'registry: ' + err.message }));
+  }
+
+  loadCards(pack) {
+    if (this.state.cardIdx[pack] || this.asked['c' + pack]) return;
+    this.asked['c' + pack] = true;
+    window.KFBCorpus.cards(pack).then((c) => {
+      this.setState((s) => {
+        const next = { cardIdx: Object.assign({}, s.cardIdx, { [pack]: c }) };
+        // Die Registry rechnet `pages = pageCount + 1` und liegt damit nicht immer richtig.
+        // Der Kartenindex bringt die im PDF gemessene Zahl mit — die gilt.
+        if (c.pages && s.pack === pack && c.pages !== s.pages) next.pages = c.pages;
+        return next;
+      });
+    }).catch(() => {});
+  }
+
+  wantImage(pack, page, w) {
+    const key = pack + ':' + page + ':' + w;
+    if (this.state.urls[key] || this.asked[key] > 0) return;
+    this.asked[key] = performance.now();
+    // Was der Leser gerade sieht, geht vor — sonst steht es hinter dem Vorrat des vorigen
+    // Decks in der Schlange.
+    if (pack === this.state.pack && window.KFBCorpus.focus) window.KFBCorpus.focus(pack);
+    window.KFBCorpus.pageImage(pack, page, w).then((url) => {
+      if (!url) { this.asked[key] = 0; return; }
+      // Gebuendelt einspielen. Einzeln kostete jedes Bild einen eigenen Renderdurchlauf —
+      // im Stapel sind das bis zu 17 hintereinander, und weil `sc-for` seine Kinder dabei neu
+      // aufbaut, luden die Cover jedes Mal neu: das Flackern ohne Bewegung.
+      this._pend = this._pend || {};
+      this._pend[key] = url;
+      if (this._pendT) return;
+      this._pendT = setTimeout(() => {
+        const batch = this._pend; this._pend = null; this._pendT = 0;
+        this.setState((s) => ({ urls: Object.assign({}, s.urls, batch) }));
+      }, 160);
+    }).catch(() => { this.asked[key] = 0; });
+  }
+
+  // Die Registry fuehrt inzwischen 76 Decks. Alle Titelbilder und Kartenindizes beim Start
+  // zu holen war bei elf noch harmlos — jetzt ist es der Bremsklotz. Also nur ein Fenster
+  // um das laufende Deck, und der Rest, wenn die Leiste dorthin faehrt.
+  // Welche Decks stehen gerade in der Leiste? Bei laufender Suche nur die Treffer plus das
+  // offene Deck — dieselbe Liste, aus der auch das Blaettern schoepft.
+  // Teuer: geht durch alle Decks und deren Karten. Ergebnis haelt, solange sich Suchwort,
+  // offenes Deck und Kartenindex nicht bewegen — sonst rechnet jeder Renderdurchlauf neu.
+  shownDecks() {
+    const list = this.state.decks || [];
+    const q = this.state.query.trim();
+    if (q.length < 2) return list;
+    const key = q + '|' + this.state.pack + '|' + Object.keys(this.state.cardIdx).length;
+    if (this._shownKey === key) return this._shown;
+    this._shownKey = key;
+    this._shown = list.filter((d) => d.packId === this.state.pack || this.matchesDeck(d) || this.hitsIn(d.packId).length > 0);
+    return this._shown;
+  }
+
+  warmRail() {
+    const list = this.shownDecks();
+    // Bei einer Suche sind es wenige Treffer, die alle sofort ein Bild brauchen — sonst stehen
+    // leere Rahmen da, bis jemand draufklickt. Ohne Suche nur ein Fenster: 103 Titelbilder
+    // auf einmal sind der Bremsklotz.
+    if (list.length <= 24) { list.forEach((d) => this.wantImage(d.packId, 1, RAIL_IMG)); return; }
+    const i = Math.max(0, list.findIndex((d) => d.packId === this.state.pack));
+    for (let k = i - 4; k <= i + 10; k++) {
+      const d = list[k];
+      if (d) this.wantImage(d.packId, 1, RAIL_IMG);
+    }
+  }
+
+  onRailScroll = () => {
+    const el = this.railScrollEl;
+    const list = this.shownDecks();
+    if (!el || !list.length) return;
+    const step = RAIL_W + RAIL_GAP;
+    const from = Math.max(0, Math.floor(el.scrollLeft / step) - 2);
+    const to = Math.min(list.length - 1, Math.ceil((el.scrollLeft + el.clientWidth) / step) + 3);
+    for (let k = from; k <= to; k++) this.wantImage(list[k].packId, 1, RAIL_IMG);
+  };
+
+  warmDeck(pack) {
+    if (this.asked['w' + pack]) return;
+    this.asked['w' + pack] = true;
+    const list = this.state.decks || [];
+    const idx = this.state.cardIdx[pack];
+    const d = list.find((x) => x.packId === pack);
+    if (idx && idx.pages) d && (d.pages = idx.pages);
+    // Nur die ersten acht Blaetter im Voraus — alles andere holt `scan` beim Scrollen.
+    // Ein ganzes Deck vorzuhalten kostet bei 76 Decks mehr, als es bringt.
+    if (d) setTimeout(() => {
+      if (this.state.pack === pack) window.KFBCorpus.prefetchDeck(pack, IMG_W, d.pages, 8);
+    }, 700);
+  }
+
+  // ---------- Kopf ----------
+  measureHeader() {
+    if (!this.headerEl || !this.padEl || !this.mainEl) return;
+    const h = this.headerEl.offsetHeight;
+    // Der Abstandhalter haengt am VOLLEN Kopf und schrumpft nie mit — sonst korrigiert der
+    // Browser die Scrollhoehe, und diese Korrektur holt den Kopf von allein zurueck.
+    if (!this.state.compact && !this._railAnim && this._padH !== h) {
+      this._padH = h;
+      this.padEl.style.height = (h + 18) + 'px';
+    }
+    this._headH = h;
+    this.bumpHead(h);
+  }
+
+  // Leiste und Abstandhalter fahren dieselbe Strecke in derselben Zeit. Vorher wurde der
+  // Abstandhalter erst NACH der Bewegung nachgemessen — die Seite sprang dann um die
+  // Leistenhoehe, und das war das Ruckeln.
+  // EIN Eigentuemer fuer die Leistenhoehe: der Zustand. Vorher schrieben zwei Wege auf dieselbe
+  // Eigenschaft — React aus `railWrapStyle` und diese Methode direkt am Element. Nach dem
+  // Stapel stand am Element `height: 134px` und berechnet trotzdem 0: React hatte zuletzt die
+  // Null gesetzt, und die Leiste liess sich nicht mehr aufklappen.
+  setRail(open, animate) {
+    if (!this.railEl) return;
+    setTimeout(() => this.syncRailPos(false), 20);
+    clearTimeout(this._railT);
+    this._railT = setTimeout(() => {
+      this._railAnim = false;
+      // Ist die Bewegung nicht gelaufen — ein gedrosseltes oder verborgenes Fenster friert
+      // Uebergaenge ein —, wird die Hoehe hart gesetzt. Sonst steht die Leiste auf halbem Weg
+      // und laesst sich nicht mehr bedienen.
+      const el = this.railEl;
+      if (el && Math.abs(el.offsetHeight - (this.state.railH || 0)) > 2) {
+        this.setState({ railJump: true }, () => setTimeout(() => this.setState({ railJump: false }), 60));
+      }
+      this.remeasureHead();
+    }, 380);
+  }
+
+  toggleRail = () => {
+    const open = !this.railOpen();
+    this.setState({ rail: open, compact: open ? false : this.state.compact }, () => this.setRail(open, true));
+  };
+
+  railOpen() {
+    return this.state.rail == null ? (this.props.rail !== false) : this.state.rail;
+  }
+
+  toggleTheme = () => {
+    const t = this.state.theme || this.props.theme || 'paper';
+    this.setState({ theme: t === 'paper' ? 'med' : 'paper' });
+  };
+
+  // ---------- Scrollen ----------
+  onScroll = () => {
+    const y = this.mainEl.scrollTop;
+    const dy = y - this.lastY;
+    if (y < (this._padH || 120)) this.showHeader(true);
+    else if (this.byHand && dy > 8 && performance.now() > (this.settling || 0)) this.showHeader(false);
+    else if (dy < -34 && performance.now() > (this.settling || 0)) this.showHeader(true);
+    this.lastY = y;
+    const compact = y > 200;
+    if (compact !== this.state.compact) {
+      this.settling = performance.now() + 400;
+      this.setState({ compact });
+    }
+    this.scanSoon();
+  };
+
+  markHand = () => {
+    this.byHand = true;
+    clearTimeout(this._handT);
+    this._handT = setTimeout(() => { this.byHand = false; }, 700);
+  };
+
+  // Am Ende des Decks endet nicht die Bewegung, sondern das Deck. Wer weiterschiebt,
+  // blaettert um — aber erst nach einem gemessenen Weg, damit es kein Versehen ist.
+  onWheel = (e) => {
+    this.markHand();
+    if (this.state.phase || this._turning || this._zt) return;
+    const el = this.mainEl;
+    const max = el.scrollHeight - el.clientHeight;
+    const atEnd = el.scrollTop >= max - 3 && e.deltaY > 0;
+    const atTop = el.scrollTop <= 2 && e.deltaY < 0;
+    if (!atEnd && !atTop) { this._edgeAt = 0; if (this.pushAmt) this.relaxPush(); return; }
+    const dir = atEnd ? 1 : -1;
+    if (dir !== this.state.pushDir) this.pushAmt = 0;
+    // Erst zur Ruhe kommen, dann schieben. Ein Trackpad liefert nach dem Anschlag noch
+    // Dutzende Nachlauf-Ereignisse — die fuellten den Balken in Sekundenbruchteilen, und man
+    // fiel ueber das Cover hinaus, ohne es gewollt zu haben.
+    if (!this._edgeAt) { this._edgeAt = performance.now(); return; }
+    if (performance.now() - this._edgeAt < 260) return;
+    this.pushAmt += Math.min(40, Math.abs(e.deltaY));
+    if (this.state.tip) { this._tipCard = null; this.setState({ tip: '', flowSel: '' }); }
+    clearTimeout(this._pushT);
+    this._pushT = setTimeout(() => this.relaxPush(), 260);
+    if (this.pushAmt >= PUSH_NEED) { this.pushAmt = 0; this.goDeck(dir); return; }
+    this.setState({ push: this.pushAmt / PUSH_NEED, pushDir: dir });
+  };
+
+  relaxPush() {
+    this.pushAmt = 0;
+    this._edgeAt = 0;
+    if (this.state.push) this.setState({ push: 0, pushDir: 0 });
+  }
+
+  scanSoon() {
+    if (this._q) return;
+    this._q = setTimeout(() => { this._q = 0; this.scan(); }, 16);
+  }
+
+  scan() {
+    // Waehrend der Zoom laeuft, gehoert die Groesse dem Tween. Ein setState von hier
+    // schriebe `width` aus renderVals zurueck — das war das Flackern.
+    if (!this.mainEl || this._zt) return;
+    const vh = this.mainEl.clientHeight;
+    const m = this.mainEl.getBoundingClientRect();
+    let cur = this.state.cur, best = 1e9;
+    for (let i = 1; i <= this.state.pages; i++) {
+      const el = this.pageEls[i];
+      if (!el) continue;
+      // Ein ausgefiltertes Blatt steht nicht im Fluss (display:none) — es hat keine Hoehe
+      // und darf das laufende Blatt nicht bestimmen.
+      if (!el.offsetHeight) continue;
+      const r = el.getBoundingClientRect();
+      const top = r.top - m.top;
+      if (top < vh * 1.8 && r.bottom - m.top > -vh * 0.9) {
+        this.wantImage(this.state.pack, i, IMG_W);
+        if (!this.state.urls[this.state.pack + ':' + i + ':' + IMG_W]) this.watch();
+      }
+      const d = Math.abs(top + r.height / 2 - vh / 2);
+      if (d < best) { best = d; cur = i; }
+    }
+    if (cur !== this.state.cur) this.setState({ cur }, () => this.hashSoon());
+  }
+
+  // Der Wachhund braucht einen eigenen Zeitgeber. In `scan()` kam er nie zum Zug: `scan`
+  // laeuft nur bei Scroll oder Zustandswechsel — steht die Seite nach einem Deckwechsel
+  // still, passiert beides nicht. Ein Auftrag, der leer zurueckkam (`asked === 0`), zaehlt
+  // dabei genauso als ueberfaellig wie einer, der zu lange braucht.
+  watch() {
+    if (this._watch) return;
+    this._watch = setInterval(() => {
+      if (!this.mainEl) return;
+      const vh = this.mainEl.clientHeight;
+      const m = this.mainEl.getBoundingClientRect();
+      const now = performance.now();
+      let open = 0;
+      for (let i = 1; i <= this.state.pages; i++) {
+        const el = this.pageEls[i];
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        const top = r.top - m.top;
+        if (top > vh * 1.8 || r.bottom - m.top < -vh * 0.9) continue;
+        const k = this.state.pack + ':' + i + ':' + IMG_W;
+        if (this.state.urls[k]) continue;
+        open++;
+        const t = this.asked[k];
+        if (t == null || t === 0 || now - t > 2000) { this.asked[k] = 0; this.wantImage(this.state.pack, i, IMG_W); }
+      }
+      if (!open) { clearInterval(this._watch); this._watch = 0; }
+    }, 1500);
+  }
+
+  hashSoon() {
+    clearTimeout(this._hashT);
+    this._hashT = setTimeout(() => this.writeHash(), 260);
+  }
+
+  // Eigenes Gleiten. `behavior:'smooth'` ist hier wirkungslos (gemessen: scrollTo 558 →
+  // scrollTop 0), `requestAnimationFrame` steht still, wenn nicht gemalt wird — also Zeitgeber.
+  glide(to, ms) {
+    if (!this.mainEl) return;
+    this.stopGlide();
+    const max = this.mainEl.scrollHeight - this.mainEl.clientHeight;
+    const dest = Math.max(0, Math.min(max, to));
+    const from = this.mainEl.scrollTop;
+    if (Math.abs(dest - from) < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.mainEl.scrollTop = dest;
+      return;
+    }
+    const dur = ms || Math.min(760, 260 + Math.abs(dest - from) * 0.26);
+    const t0 = performance.now();
+    this._tw = setInterval(() => {
+      const k = Math.min(1, (performance.now() - t0) / dur);
+      this.mainEl.scrollTop = from + (dest - from) * (1 - Math.pow(1 - k, 3));
+      this.settling = performance.now() + 140;
+      if (k >= 1) this.stopGlide();
+    }, 16);
+  }
+
+  stopGlide() { if (this._tw) { clearInterval(this._tw); this._tw = 0; } }
+
+  goPage(n) {
+    const el = this.pageEls[Math.min(Math.max(1, n), this.state.pages)];
+    if (!el || !this.mainEl) return;
+    const head = this.hidden ? 14 : (this._headH || 0) + 14;
+    this.settling = performance.now() + 700;
+    this.byHand = false;
+    this.glide(el.offsetTop - head);
+  }
+
+  showHeader(show) {
+    if (this.hidden === !show || !this.headerEl) return;
+    this.hidden = !show;
+    this.headerEl.style.transform = show ? 'translateY(0)' : 'translateY(-100%)';
+    if (show) this.settling = performance.now() + 700;
+  }
+
+  // ---------- Deckwechsel ----------
+  // Kein Ausblenden auf Null: das las sich wie ein Neuladen. Das Deck rutscht weg und das
+  // neue rutscht nach, beide bleiben teilweise sichtbar.
+  goDeck(dir, packId, page) {
+    // Der Riegel muss sofort greifen: `phase` kommt erst mit dem naechsten Zustand an, und
+    // in derselben Runde treffen noch mehrere Radereignisse ein — dann sprang es zwei Decks.
+    if (this._turning || this.state.phase) return;
+    this._turning = true;
+    setTimeout(() => { this._turning = false; }, 620);
+    // Geblaettert wird durch das, was sichtbar ist. Sonst landet man beim Weiterscrollen in
+    // einem Deck, das die Suche gerade ausgeblendet hat.
+    const list = this.shownDecks();
+    let target = packId;
+    if (!target) {
+      const i = list.findIndex((d) => d.packId === this.state.pack);
+      target = list[(i + dir + list.length) % list.length].packId;
+    }
+    if (target === this.state.pack) { this.glide(0); return; }
+    const d = list.find((x) => x.packId === target);
+    this.stopGlide();
+    this.relaxPush();
+    this.setState({ phase: dir > 0 ? 'out-up' : 'out-down' });
+    setTimeout(() => {
+      this.pageEls = {}; this.rowEls = {};
+      this.hitAt = -1;
+      // Merkzettel des Zieldecks leeren: Eintraege aus dem Vorwaermen stehen sonst auf
+      // „schon gefragt", waehrend die Ablage die zugehoerige URL laengst verworfen hat.
+      Object.keys(this.asked).forEach((k) => { if (k.indexOf(target + ':') === 0) delete this.asked[k]; });
+      this.setState({
+        pack: target, pages: d.pages, cur: 1, zoomPage: 0, zi: 0, blurbOpen: false,
+        phase: dir > 0 ? 'in-down' : 'in-up'
+      }, () => {
+        if (this.mainEl) this.mainEl.scrollTop = 0;
+        this.showHeader(true);
+        this.warmDeck(target);
+        this.loadCards(target);
+        this.warmRail();
+        if (window.KFBCorpus.focus) window.KFBCorpus.focus(target);
+        this.syncRailPos(true);
+        setTimeout(() => this.setState({ phase: '' }, () => {
+          this.scan();
+          this.watch();
+          if (page && page > 1) this.goPage(page); else this.writeHash();
+        }), 20);
+      });
+    }, 200);
+  }
+
+  goNext = () => this.goDeck(1);
+  goPrev = () => this.goDeck(-1);
+
+  // ---------- Zoom im Stream ----------
+  // Die Groesse wird gefahren, nicht gesetzt: bei jedem Schritt wird das Blatt gemessen und
+  // beide Achsen so nachgezogen, dass der Punkt unter dem Zeiger liegen bleibt. Ein
+  // CSS-Uebergang kaeme dieser Korrektur in die Quere — das war das Springen.
+  cycleZoom(page, ev) {
+    if (this._zt) return;
+    const zi = this.state.zoomPage === page ? (this.state.zi + 1) % ZOOMS.length : 1;
+    const row = this.rowEls[page];
+    const box = row && row.querySelector('[role="button"]');
+    if (!box || !this.mainEl) { this.setState({ zoomPage: zi === 0 ? 0 : page, zi }); return; }
+    if (zi > 0) this.wantImage(this.state.pack, page, ZOOM_W);
+    // Die Tusche der Zielstufe liegt schon in der Ablage, bevor die Bewegung startet.
+    const di = (this.state.decks || []).findIndex((d) => d.packId === this.state.pack);
+    this.warmInk(page * 7 + Math.max(0, di) * 101);
+    this.stopGlide();
+
+    const r = box.getBoundingClientRect();
+    const vx = ev && ev.clientX ? ev.clientX : r.left + r.width / 2;
+    const vy = ev && ev.clientY ? ev.clientY : r.top + r.height / 2;
+    const fx = (vx - r.left) / r.width;
+    const fy = (vy - r.top) / r.height;
+    const fromW = r.width;
+    const toW = this.baseW * ZOOMS[zi];
+    row.style.overflowX = 'auto';
+
+    const t0 = performance.now(), dur = 340;
+    this._zStuck = false;
+    const pad = this.inkPad || 0;
+    const paperEl = box.children[0], inkEl = box.children[1];
+    const holdInk = inkEl ? getComputedStyle(inkEl).backgroundImage : '';
+    this._zt = setInterval(() => {
+      const k = Math.min(1, (performance.now() - t0) / dur);
+      const w = Math.round(fromW + (toW - fromW) * (1 - Math.pow(1 - k, 3)));
+      box.style.width = w + 'px';
+      box.style.height = Math.round(w / AR) + 'px';
+      // Papier und Tusche fahren mit, sonst laeuft der Rand der Bewegung hinterher.
+      const ins = -Math.round(pad * (w / this.baseW)) + 'px';
+      if (paperEl) paperEl.style.inset = ins;
+      if (inkEl) { inkEl.style.inset = ins; inkEl.style.backgroundImage = holdInk; }
+      const nr = box.getBoundingClientRect();
+      if (row.scrollWidth > row.clientWidth + 1) row.scrollLeft += (nr.left + fx * nr.width) - vx;
+      // Am oberen oder unteren Anschlag kann der Punkt nicht liegen bleiben. Wer es trotzdem
+      // jeden Schritt versucht, schiebt gegen die Wand — das war das Ruckeln am Rand.
+      if (!this._zStuck) {
+        const d = (nr.top + fy * nr.height) - vy;
+        // Unter einem halben Pixel nicht nachfassen: `scrollTop` rundet auf ganze Pixel,
+        // also schiebt jede Korrektur darunter nur hin und her.
+        if (Math.abs(d) > 0.5) {
+          const want = this.mainEl.scrollTop + d;
+          const max = this.mainEl.scrollHeight - this.mainEl.clientHeight;
+          if (want < -0.5 || want > max + 0.5) this._zStuck = true;
+          this.mainEl.scrollTop = Math.max(0, Math.min(max, want));
+        }
+      }
+      this.settling = performance.now() + 400;
+      if (k >= 1) {
+        clearInterval(this._zt); this._zt = 0;
+        this.setState({ zoomPage: zi === 0 ? 0 : page, zi }, () => {
+          const b = this.rowEls[page] && this.rowEls[page].querySelector('[role="button"]');
+          // Nicht zuruecksetzen: der letzte Tween-Schritt landet genau auf dem Mass, das
+          // renderVals ohnehin schreibt. Ein Leerraeumen laesst das Blatt auf 0 zusammenfallen,
+          // weil React eine Eigenschaft nicht neu setzt, die es fuer unveraendert haelt.
+          if (!b || this._zStuck) return;
+          const f = b.getBoundingClientRect();
+          const want = this.mainEl.scrollTop + (f.top + fy * f.height) - vy;
+          const max = this.mainEl.scrollHeight - this.mainEl.clientHeight;
+          this.mainEl.scrollTop = Math.max(0, Math.min(max, want));
+        });
+      }
+    }, 16);
+  }
+
+  // ---------- Suche ----------
+  onQuery = (e) => {
+    const query = e.target.value;
+    this.hitAt = -1;
+    this.setState({ query });
+    if (query.trim().length >= 2) this.loadAll();
+  };
+  clearQuery = () => { this.hitAt = -1; this.setState({ query: '' }); if (this.searchEl) this.searchEl.focus(); };
+  toggleFilter = () => { this.hitAt = -1; this.setState({ filter: !this.state.filter }); };
+  toggleBlurb = () => this.setState({ blurbOpen: !this.state.blurbOpen });
+
+  hitsIn(pack) {
+    const q = this.state.query.trim().toLowerCase();
+    if (!q) return [];
+    const idx = this.state.cardIdx[pack];
+    if (!idx) return [];
+    return idx.cards.filter((c) => c.name.toLowerCase().indexOf(q) >= 0);
+  }
+
+  matchesDeck(d) {
+    const q = this.state.query.trim().toLowerCase();
+    if (!q) return true;
+    const idx = this.state.cardIdx[d.packId];
+    return [d.title, (d.tags || []).join(' '), d.role || '', d.gameMode || 'KFB',
+      idx ? idx.deckType : '', idx ? idx.blurb : '', idx ? (idx.deckFunction || []).join(' ') : '',
+      idx ? idx.exhibitionRole : ''].join(' ').toLowerCase().indexOf(q) >= 0;
+  }
+
+  nextHit = () => {
+    const hits = this.hitsIn(this.state.pack);
+    if (!hits.length) {
+      const list = this.state.decks || [];
+      const i = list.findIndex((d) => d.packId === this.state.pack);
+      for (let k = 1; k <= list.length; k++) {
+        const d = list[(i + k) % list.length];
+        if (this.hitsIn(d.packId).length || this.matchesDeck(d)) { this.goDeck(1, d.packId); return; }
+      }
+      return;
+    }
+    this.hitAt = (this.hitAt + 1) % hits.length;
+    this.goPage(hits[this.hitAt].page);
+  };
+
+  handleKey(e) {
+    const tag = (e.target && e.target.tagName) || '';
+    const typing = tag === 'INPUT' || tag === 'TEXTAREA';
+    // Im Editor gehoert die Tastatur dem Formular — kein Blaettern, kein Zoom, kein Themenwechsel.
+    if (this.state.edit) { if (e.key === 'Escape' && !typing) this.closeEdit(); return; }
+    if (e.key === '/' && !typing) { e.preventDefault(); if (this.searchEl) this.searchEl.focus(); return; }
+    if ((e.key === 'g' || e.key === 'G') && !typing) { e.preventDefault(); this.toggleGrid(); return; }
+    if ((e.key === 'f' || e.key === 'F') && !typing) { e.preventDefault(); this.toggleFlow(); return; }
+    if (this.state.flow) {
+      // Im Coverflow laeuft die Reihe waagerecht — dort fuehren die Seitenpfeile.
+      const step = (dir) => {
+        e.preventDefault();
+        const n = this.flowItems().length;
+        const cur = Math.round(this._flowTo == null ? this.state.flowP : this._flowTo);
+        if (this.state.full) { this.flowTo(cur + dir); return; }
+        this.flowTo(Math.max(this.state.cover ? 0 : 1, Math.min(this.state.cover ? n - 1 : n, cur + dir)));
+      };
+      if (e.key === 'Escape') { e.preventDefault(); this.setFlow(false, false, false); }
+      else if ((this.state.cover || this.state.full) && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) step(e.key === 'ArrowRight' ? 1 : -1);
+      else if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); this.flowTo(Math.floor(this.state.flowP) + 1); }
+      else if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.flowTo(Math.ceil(this.state.flowP) - 1); }
+      return;
+    }
+    if (this.state.grid) { if (e.key === 'Escape') { e.preventDefault(); this.toggleGrid(); } return; }
+    if (typing) { if (e.key === 'Enter') { e.preventDefault(); this.nextHit(); } if (e.key === 'Escape') this.clearQuery(); return; }
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); this.goPage(this.state.cur + 1); }
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.goPage(this.state.cur - 1); }
+    else if (e.key === 'Enter') { e.preventDefault(); this.cycleZoom(this.state.cur); }
+    else if (e.key === 'Escape') { if (this.state.zoomPage) this.setState({ zoomPage: 0, zi: 0 }); }
+    else if (e.key === ']' || e.key === 'ArrowRight') this.goDeck(1);
+    else if (e.key === '[' || e.key === 'ArrowLeft') this.goDeck(-1);
+    else if (e.key === 't' || e.key === 'T') this.toggleTheme();
+  }
+
+  // Ein Laden, den es nicht gibt, ist kein Angebot. Solange in `deck-meta.js` (oder spaeter in
+  // der Registry) keine gueltige Shop-Adresse steht, heisst der Knopf „Coming soon" und tut
+  // nichts. Vorher fiel er still auf die PDF zurueck — das ist ein anderes Versprechen.
+  shopUrl(d) {
+    const u = d && d.gumroadUrl;
+    return (typeof u === 'string' && /^https?:\/\/[^\s]+\.[^\s]/.test(u.trim())) ? u.trim() : '';
+  }
+
+  // ---------- Tusche ----------
+  inkFor(seed, ar, w, gain) {
+    if (this.props.ink === false || !window.KFBInk) return null;
+    return window.KFBInk.frame(seed, ar, w, gain);
+  }
+
+  // Das Blatt hat ein festes Mass — es wird NICHT beschnitten und bekommt keinen Rand.
+  // Der Rahmen waechst nach AUSSEN: die Silhouette wird in einem groesseren Feld gebaut,
+  // dessen Einbiss (gemessen 1,37 % quer, 2,45 % hoch) den Ueberstand auffrisst.
+  // Gebaut wird EINMAL je Blatt, bei unvergroesserter Breite. Beim Aufziehen wird dasselbe
+  // Bild mitskaliert — sonst wird bei jeder Zoomstufe neu gezeichnet, und genau das flackerte.
+  // `gain` haelt das Strichgewicht konstant, wenn das Blatt aufgezogen ist (1/Vergroesserung).
+  // Die Kontur selbst bleibt dieselbe — nur die Feder wird gegengerechnet.
+  // Ein Ort fuer das Strichgewicht. `deckviewer/kfb-ink-canon.js` ist zeichengleich mit
+  // `cardbuilder/kfb-ink-canon.js` (geprueft 2026-08-02, 18 888 Zeichen, Δ 0) — die Feder ist
+  // also schon dieselbe. Was fehlte, war EIN Regler darueber: der Strich wird hier auf einem
+  // Raster gezeichnet, das breiter ist als das Blatt, und beim Herunterskalieren duenn.
+  // `INK_GAIN` rechnet das gegen — fuer jede Ansicht gleich, an einer Stelle.
+  inkOutside(seed, w, h, gain) {
+    const probe = this.inkFor(seed, w / h, 512);
+    if (!probe || !probe.safe) return { pad: 0, ink: probe };
+    const s = probe.safe;
+    const pad = Math.round(Math.max(s.l * w, s.r * w, s.t * h, s.b * h) * 0.92);
+    const w2 = w + pad * 2, h2 = h + pad * 2;
+    const g = (gain == null ? 1 : gain) * (this.props.inkWeight != null ? this.props.inkWeight : INK_GAIN);
+    return { pad, ink: this.inkFor(seed, w2 / h2, Math.min(1600, Math.round(w2 * 1.2)), g) };
+  }
+
+  // Alle Zoomstufen einmal bauen, bevor jemand klickt. Der Schluessel ist
+  // seed|ar|w|gain — danach kostet der Wechsel kein Zeichnen mehr.
+  warmInk(seed) {
+    const h = Math.round(this.baseW / AR);
+    ZOOMS.forEach((z) => this.inkOutside(seed, this.baseW, h, 1 / z));
+  }
+
+  // Markdown gesetzt. Zwei Ebenen — Absaetze und darin die ausgezeichneten Stuecke — und ein
+  // `sc-for` in einem `sc-for` iteriert in dieser Laufzeit nicht (das innere blieb bei einem
+  // leeren Platzhalter). Also hier gebaut; es ist Anzeige von Daten, keine Seitenaufteilung,
+  // und der Text wird ohnehin im Formular darueber bearbeitet.
+  mdRender(text, font, color) {
+    if (!window.KFBDeckEdit || !text) return null;
+    const R = React.createElement;
+    const marks = {
+      bold: { fontWeight: 700 },
+      italic: { fontStyle: 'italic' },
+      mark: { background: 'var(--accent)', color: 'var(--on-accent)', padding: '0 .22em', WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' },
+      link: { color: 'var(--accent)', borderBottom: '1px solid var(--accent)' }
+    };
+    const kids = window.KFBDeckEdit.blocks(text).map((b, i) => {
+      if (b.kind === 'hr') return R('div', { key: i, style: { height: '1px', background: 'var(--line)', margin: '12px 0' } });
+      const spans = b.parts.map((p, k) => R('span', { key: k, style: marks[p.kind] || null }, p.text));
+      if (b.kind === 'li') {
+        return R('div', { key: i, style: { display: 'flex', gap: '9px', marginBottom: '4px', font, color } },
+          R('span', { style: { flex: '0 0 auto', color: 'var(--accent)' } }, b.bullet),
+          R('span', null, spans));
+      }
+      return R('p', { key: i, style: { margin: '0 0 10px', font, color, textWrap: 'pretty' } }, spans);
+    });
+    return R('div', null, kids);
+  }
+
+  renderVals() {
+    const st = this.state;
+    const theme = st.theme || this.props.theme || 'paper';
+    const dark = theme === 'med';
+    const q = st.query.trim().toLowerCase();
+    const decks = st.decks || [];
+    const searching = q.length >= 2;
+    const filtering = searching && st.filter;
+    const deck = decks.find((d) => d.packId === st.pack) || decks[0];
+    const di = deck ? decks.findIndex((d) => d.packId === deck.packId) : 0;
+    const idx = st.cardIdx[st.pack];
+
+    const narrow = st.cw < 760;
+    const gut = narrow ? 14 : 34;
+    const baseW = Math.min(COL_W, st.cw - gut * 2);
+    this.baseW = baseW;
+
+    const byPage = {};
+    if (idx) idx.cards.forEach((c) => { (byPage[c.page] = byPage[c.page] || []).push(c); });
+
+    // Tags eines Decks: was `deck-meta.js` vorgibt, sonst `deckFunction` und `deckType` aus
+    // dem Deck-JSON. Nie mehr als drei — der Rest saehe nach Datenhaufen aus.
+    const tagsOf = (d, max) => {
+      const x = st.cardIdx[d.packId];
+      const list = (d.tags && d.tags.length)
+        ? d.tags
+        : (x ? (x.deckFunction || []).concat(x.deckType ? [x.deckType] : []) : []);
+      const out = [];
+      list.forEach((t) => { if (t && out.indexOf(t) < 0) out.push(t); });
+      return out.slice(0, max);
+    };
+    const tagChip = (t, small) => ({
+      name: t,
+      hint: 'search “' + t + '”',
+      pick: (e) => this.searchTag(t, e),
+      style: {
+        // Kein Flex-Behaelter: darin greift `text-overflow` nicht, und der zentrierte Text
+        // wurde beidseitig abgeschnitten ("ry conspiracy satir").
+        display: 'inline-block', textAlign: 'center',
+        flex: '0 1 auto', minWidth: 0, maxWidth: small ? '22ch' : '18ch', overflow: 'hidden',
+        font: (small ? 10 : 11) + 'px/1.35 ' + UI, letterSpacing: '.04em',
+        color: q && t.toLowerCase() === q ? 'var(--accent)' : 'var(--faint)',
+        background: 'transparent', cursor: 'pointer',
+        border: '1.5px solid ' + (q && t.toLowerCase() === q ? 'var(--accent)' : 'var(--line)'),
+        padding: small ? '4px 8px 5px' : '5px 9px 6px',
+        transform: 'rotate(-.6deg)', whiteSpace: 'nowrap', textOverflow: 'ellipsis',
+        transition: 'color .14s ease, border-color .14s ease'
+      }
+    });
+
+    // Der Kaufbutton der Site: Anzeige-Schrift, harte Kante, harter Schatten, leichte Kippung.
+    const cta = {
+      flex: '0 0 auto', marginLeft: 'auto',
+      display: 'inline-flex', alignItems: 'center', gap: '9px',
+      font: '16px/1 "Irish Grover", cursive',
+      background: 'var(--accent)', color: 'var(--on-accent)',
+      border: '2px solid var(--ink)', padding: '10px 18px',
+      boxShadow: '3px 3.5px 0 var(--hard)', cursor: 'pointer',
+      transform: 'rotate(-1deg)',
+      transition: 'transform .16s cubic-bezier(.2,.7,.2,1), box-shadow .16s ease'
+    };
+
+    // Der Marketing-Text steht im Deck-JSON. `marketingText` ist die lange Fassung: erster
+    // Block ist die Verkaufszeile, der zweite der Haken — den zeigen wir. `blurb` ist der
+    // Rueckfall, `deck-meta.js` der letzte.
+    const mt = (idx && idx.marketingText) ? idx.marketingText.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean) : [];
+    const pitch = (mt.length > 1 ? mt[1] : mt[0]) || (idx && idx.blurb) || (deck ? deck.blurb : '') || '';
+
+    const items = [];
+    let hitCount = 0;
+    // Stapel und Galerie decken den Leser zu — dann kosten seine Blaetter nur Rechenzeit,
+    // und der Zug des Stapels laeuft auf 30 Bildern je Sekunde.
+    const covered = st.flow || st.grid;
+
+    for (let i = 1; !covered && i <= st.pages; i++) {
+      const cards = byPage[i] || [];
+      const hit = searching && cards.some((c) => c.name.toLowerCase().indexOf(q) >= 0);
+      if (hit) hitCount++;
+      const zoomed = st.zoomPage === i ? ZOOMS[st.zi] : 1;
+      const w = Math.round(baseW * zoomed);
+      const h = Math.round(w / AR);
+      // Das Cover hat die Leisten-Miniatur schon in der Ablage — die steht sofort da, waehrend
+      // die grosse Fassung gebaut wird. Ohne sie sieht ein frisch gewaehltes Deck aus wie ein
+      // leeres Blatt mit Rahmen.
+      const url = st.urls[st.pack + ':' + i + ':' + (zoomed > 1 ? ZOOM_W : IMG_W)]
+        || st.urls[st.pack + ':' + i + ':' + IMG_W]
+        || (i === 1 ? st.urls[st.pack + ':1:' + RAIL_IMG] : null);
+      // Kontur immer bei unvergroesserter Breite, Feder gegen den Zoom gerechnet. Waehrend
+      // der Bewegung bleibt die alte Tusche stehen — ein Bildwechsel mitten im Tween ist
+      // ein Flackern, und der Strich sitzt erst am Ende auf seinem endgueltigen Mass.
+      const { pad, ink } = this.inkOutside(i * 7 + di * 101, baseW, Math.round(baseW / AR), 1 / zoomed);
+      this.inkPad = pad;
+      const zpad = Math.round(pad * zoomed);
+      const inset = -zpad + 'px';
+      const off = filtering && !hit && i !== 1;
+      const cover = i === 1;
+      const capW = Math.min(baseW, st.cw - gut * 2);
+
+      items.push({
+        ref: (el) => { if (el) this.pageEls[i] = el; },
+        rowRef: (el) => { if (el) this.rowEls[i] = el; },
+        // „Page", nicht „Sheet": die Kopfzeile zaehlt Pages, der Coverflow sagt Page — im selben
+        // Produkt zwei Woerter fuer dieselbe Sache, und der Reader ist die Flaeche, die man am
+        // laengsten ansieht.
+        label: 'Page ' + String(i).padStart(2, '0'),
+        aria: (deck ? deck.title + ', ' : '') + 'page ' + i + ' of ' + st.pages,
+        waiting: !url,
+        isCover: cover,
+        // Manche Decks haben gar kein Deckblatt — dort traegt Seite 1 schon vier Karten.
+        // Dann steht der Titelblock oben UND die Kartenzeile darunter.
+        isSheet: !cover || cards.length > 0,
+
+        // Ausgefiltert heisst weg, nicht blass: sonst scrollt man durch Nebel, um die zwei
+        // Treffer zu finden.
+        wrapStyle: {
+          display: off ? 'none' : 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
+          marginBottom: (cover ? (narrow ? 34 : 42) : (narrow ? 14 : 18)) + 'px'
+        },
+        // Bei Vergroesserung wandert das Blatt aus der Spalte heraus — dann bekommt genau
+        // diese Zeile eine waagerechte Achse, nicht die Seite.
+        rowStyle: {
+          display: 'flex', width: '100%',
+          padding: (zpad + 10) + 'px ' + gut + 'px',
+          margin: '-' + (zpad + 10) + 'px 0',
+          overflowX: zoomed > 1 ? 'auto' : 'visible',
+          scrollbarWidth: 'none'
+        },
+        boxStyle: {
+          position: 'relative', flex: '0 0 auto', margin: '0 auto',
+          width: w + 'px', height: h + 'px',
+          cursor: st.zoomPage === i && st.zi === ZOOMS.length - 1 ? 'zoom-out' : 'zoom-in',
+          filter: 'drop-shadow(var(--shadow))'
+        },
+        paperStyle: ink
+          ? { position: 'absolute', inset: inset, background: 'var(--sheet)', clipPath: ink.clip }
+          : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+        inkStyle: ink
+          ? { position: 'absolute', inset: inset, pointerEvents: 'none', backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%', opacity: dark ? 0.84 : 1 }
+          : { display: 'none' },
+        imgStyle: url
+          ? { position: 'absolute', inset: 0, pointerEvents: 'none', backgroundImage: 'url(' + url + ')', backgroundSize: '100% 100%' }
+          : { display: 'none' },
+
+        // ---- Cover: Titel · Untertitel aus dem Deck-JSON · Marketing-Text hinter dem Plus ----
+        coverStyle: {
+          display: 'flex', flexDirection: 'column', gap: '9px',
+          width: capW + 'px', maxWidth: '100%', marginTop: '12px'
+        },
+        title: deck ? deck.title : '',
+        titleStyle: {
+          margin: 0, flex: '0 1 auto',
+          font: (narrow ? 22 : 27) + 'px/1.1 "Irish Grover", cursive', fontWeight: 400,
+          letterSpacing: '.01em', color: 'var(--ink)'
+        },
+        subline: (idx && idx.deckType) || (deck ? deck.title : ''),
+        sublineStyle: {
+          flex: '0 1 auto', font: '14px/1.4 ' + UI, color: 'var(--faint)', letterSpacing: '.02em'
+        },
+        // Kein Schalter ohne Text: drei Decks haben weder `marketingText` noch `blurb`
+        // (`anti_rules_toolkit`, `medkayfab_gastrology`, `the_carnival_of_unsolved_problems_therapy`).
+        showPlus: !!pitch,
+        toggleBlurb: this.toggleBlurb,
+        plusBar: { transformOrigin: '12px 12px', transform: st.blurbOpen ? 'scaleY(0)' : 'none', transition: 'transform .2s ease' },
+        plusStyle: {
+          flex: '0 0 auto', width: '24px', height: '24px',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+          border: '1.5px solid ' + (st.blurbOpen ? 'var(--ink)' : 'var(--line)'),
+          background: st.blurbOpen ? 'var(--accent)' : 'transparent',
+          color: st.blurbOpen ? 'var(--on-accent)' : 'var(--muted)',
+          boxShadow: st.blurbOpen ? '2px 2px 0 var(--hard)' : 'none',
+          transform: st.blurbOpen ? 'rotate(-1.4deg)' : 'none',
+          transition: 'transform .16s ease, box-shadow .16s ease, background .16s ease, color .16s ease'
+        },
+        blurbOpen: cover && st.blurbOpen && !!pitch && this.props.blurb !== false,
+        blurbBody: cover && st.blurbOpen ? this.mdRender(pitch, '14px/1.65 ' + UI, 'var(--muted)') : null,
+        blurbStyle: { margin: '2px 0 0', maxWidth: '78ch' },
+        showEdit: cover && this.editMode(),
+        openEdit: () => this.openEdit(st.pack),
+        // Wie die Icons oben rechts: nur Farbe, kein Rahmen.
+        editBtnStyle: {
+          flex: '0 0 auto', marginLeft: 'auto',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          width: '30px', height: '30px', cursor: 'pointer',
+          border: 0, background: 'transparent',
+          color: st.drafts[st.pack] ? 'var(--accent)' : 'var(--faint)',
+          transition: 'color .14s ease'
+        },
+        getUrl: deck ? this.shopUrl(deck) : '',
+        hasShop: !!(deck && this.shopUrl(deck)),
+        noShop: !(deck && this.shopUrl(deck)),
+        ctaStyle: Object.assign({}, cta, this.editMode() ? { marginLeft: 0 } : {}),
+        // Derselbe Platz, dieselbe Form — nur ohne Versprechen: gestrichelte Kante, kein
+        // Schatten, kein Zeiger.
+        ctaSoonStyle: Object.assign({}, cta, this.editMode() ? { marginLeft: 0 } : {}, {
+          border: '1.5px dashed var(--line)', background: 'transparent',
+          color: 'var(--faint)', boxShadow: 'none', cursor: 'default'
+        }),
+
+        // ---- Blaetter: Nummer und Kartennamen ----
+        capStyle: {
+          display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '4px 10px',
+          width: capW + 'px', maxWidth: '100%',
+          opacity: hit ? 1 : 0.55, transition: 'opacity .3s'
+        },
+        labelStyle: { font: '12px/1.4 ' + UI, letterSpacing: '.12em', color: 'var(--faint)', flex: '0 0 auto' },
+        cards: cards.map((c) => {
+          const on = q && c.name.toLowerCase().indexOf(q) >= 0;
+          return {
+            name: c.name,
+            style: {
+              font: '12px/1.4 ' + UI,
+              color: on ? 'var(--accent)' : 'var(--faint)',
+              borderBottom: on ? '1.5px solid var(--accent)' : '1.5px solid transparent'
+            }
+          };
+        }),
+
+        zoom: (e) => this.cycleZoom(i, e),
+        key: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.cycleZoom(i); } }
+      });
+    }
+
+    const rail = decks.map((d) => {
+      const rh = Math.round(RAIL_W / AR);
+      const { pad, ink } = this.inkOutside(101 + decks.indexOf(d), RAIL_W, rh);
+      const url = st.urls[d.packId + ':1:' + RAIL_IMG];
+      const on = !!deck && d.packId === deck.packId;
+      const dhits = this.hitsIn(d.packId).length;
+      const named = this.matchesDeck(d);
+      // Kein Treffer heisst raus aus der Leiste — nur das offene Deck bleibt immer stehen.
+      const gone = searching && !named && !dhits && !on;
+      return {
+        title: d.title,
+        // Nur echte Kartentreffer bekommen eine Zahl. Der Punkt fuer „Deckname passt" war ein
+        // roter Klotz auf jeder Miniatur, der nichts sagte — die Leiste zeigt ohnehin nur
+        // noch Treffer.
+        hasHits: dhits > 0,
+        hitCount: String(dhits),
+        style: {
+          position: 'relative', flex: '0 0 auto', display: gone ? 'none' : 'flex', flexDirection: 'column',
+          gap: '6px', width: RAIL_W + 'px', padding: 0, border: 0, background: 'transparent',
+          cursor: 'pointer', textAlign: 'left', color: 'var(--ink)',
+          opacity: on ? 1 : 0.5, transition: 'opacity .22s'
+        },
+        thumbStyle: { position: 'relative', display: 'block', width: RAIL_W + 'px', height: rh + 'px' },
+        inkStyle: ink
+          ? { position: 'absolute', inset: -pad + 'px', background: 'var(--sheet)', clipPath: ink.clip, backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%' }
+          : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+        imgStyle: url
+          ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + url + ')', backgroundSize: '100% 100%' }
+          : { display: 'none' },
+        labelStyle: {
+          font: '12px/1.3 ' + UI, letterSpacing: '.02em',
+          color: on ? 'var(--accent)' : 'var(--faint)', whiteSpace: 'nowrap',
+          overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: RAIL_W + 'px'
+        },
+        // Aus der Leiste heraus schliesst die Wahl auch die Galerie — sonst waehlt man ein
+        // Deck und schaut weiter aufs Gitter.
+        pick: () => {
+          const go = () => this.goDeck(decks.indexOf(d) > di ? 1 : -1, d.packId);
+          if (st.grid) this.setState({ grid: false, tip: '' }, go); else go();
+        }
+      };
+    });
+
+    const chip = (on) => ({
+      font: '12px/1 ' + UI, letterSpacing: '.04em',
+      padding: '7px 10px', cursor: 'pointer', whiteSpace: 'nowrap',
+      border: '1.5px solid var(--ink)',
+      background: on ? 'var(--accent)' : 'transparent',
+      color: on ? 'var(--on-accent)' : 'var(--muted)',
+      boxShadow: on ? '2px 2px 0 var(--hard)' : 'none',
+      transform: on ? 'rotate(-1.4deg)' : 'none',
+      transition: 'transform .16s ease, box-shadow .16s ease, background .16s ease'
+    });
+
+    const rawTags = deck ? tagsOf(deck, narrow ? 2 : 3) : [];
+
+    // Wie viel steht im Haus, und wie viel davon zeigt die Suche gerade? Kartenzahlen aus
+    // der Registry, Treffer aus den geladenen Indizes.
+    const totalCards = decks.reduce((n, d) => n + (d.cardCount || 0), 0);
+    let hitDecks = decks.length, hitCards = totalCards;
+    if (searching) {
+      hitDecks = 0; hitCards = 0;
+      decks.forEach((d) => {
+        const h = this.hitsIn(d.packId).length;
+        if (h || this.matchesDeck(d)) hitDecks++;
+        hitCards += h;
+      });
+    }
+
+    // Die Pfeile liegen genau in der Polsterung der Leiste (18 px): links 0…18, rechts
+    // ebenso. Die erste Karte beginnt bei 18 — kein Pixel Ueberlappung, kein gefressener
+    // Klick, und rechts ragt nichts aus dem Fenster.
+    const railArrow = (side) => ({
+      position: 'absolute', top: '50%', [side]: '0px', zIndex: 3,
+      transform: 'translateY(-64%)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      width: '18px', height: '52px', padding: 0, cursor: 'pointer',
+      border: '1px solid var(--line)', borderRadius: '2px',
+      background: 'var(--head)', color: 'var(--muted)',
+      opacity: st.railHot ? 1 : 0,
+      pointerEvents: st.railHot ? 'auto' : 'none',
+      transition: 'opacity .18s ease, color .16s ease, background .16s ease'
+    });
+
+    // ---- Galerie ----
+    // Eine Zahl je Deck, immer dieselbe: daraus Neigung, Tiefe und Versatz. Ohne das
+    // stehen 76 Karten in Reihe und Kolonne wie eine Tabelle.
+    const jit = (n) => { const x = Math.sin(n * 127.1 + 3.7) * 43758.5453; return x - Math.floor(x); };
+    const wash = (n) => {
+      const a = Math.round(jit(n + 5) * 40) + 12;
+      return {
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        backgroundColor: 'var(--sheet)',
+        backgroundImage: 'radial-gradient(58% 46% at 30% 28%, rgba(184,54,31,.34), rgba(184,54,31,0) 70%),'
+          + 'radial-gradient(52% 44% at 70% 66%, rgba(' + (30 + a) + ',90,140,.3), rgba(30,90,140,0) 72%),'
+          + 'radial-gradient(64% 52% at 46% 84%, rgba(214,178,74,.34), rgba(214,178,74,0) 74%)',
+        backgroundSize: '150% 150%, 140% 140%, 160% 160%',
+        animation: 'kfbWash ' + (7 + jit(n) * 5).toFixed(1) + 's ease-in-out infinite',
+        animationDelay: '-' + (jit(n + 2) * 6).toFixed(1) + 's'
+      };
+    };
+
+    const gridDecks = decks.filter((d) => {
+      if (st.marksOnly && !st.marks[d.packId]) return false;
+      if (!searching) return true;
+      return this.matchesDeck(d) || this.hitsIn(d.packId).length > 0;
+    });
+
+    const GW = narrow ? 150 : 236;
+    this._gridOrder = gridDecks.map((d) => d.packId);
+    const gridItems = (st.grid ? gridDecks : []).map((d) => {
+      const i = decks.indexOf(d);
+      const gh = Math.round(GW / AR);
+      const { pad, ink } = this.inkOutside(101 + i, GW, gh);
+      const url = st.urls[d.packId + ':1:' + RAIL_IMG];
+      const gidx = st.cardIdx[d.packId];
+      const on = d.packId === st.pack;
+      return {
+        title: d.title,
+        id: d.packId,
+        seen: !!st.seen[d.packId],
+        marked: !!st.marks[d.packId],
+        markFill: st.marks[d.packId] ? 'var(--accent)' : 'none',
+        washing: !url,
+        // Zeilen stehen auf einer Linie — der Versatz von vorher riss Stufen ins Gitter.
+        // Die Unruhe kommt allein aus der Kippung, wie bei den Reitern auf der Site:
+        // eine flache Drehung um wenig mehr als ein Grad, dazu etwas Tiefe.
+        cellStyle: {
+          position: 'relative', willChange: 'transform, opacity',
+          transition: 'opacity .2s linear'
+        },
+        tiltStyle: {
+          display: 'flex', flexDirection: 'column', gap: '7px',
+          transform: 'rotate(' + ((jit(i) - 0.5) * 3.2).toFixed(2) + 'deg) scale(' + (0.97 + jit(i + 7) * 0.06).toFixed(3) + ')',
+          transition: 'transform .28s cubic-bezier(.2,.7,.2,1)'
+        },
+        btnStyle: {
+          display: 'flex', flexDirection: 'column', gap: '7px', width: '100%',
+          color: 'var(--ink)', textAlign: 'left', cursor: 'pointer', outline: 'none'
+        },
+        key: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.fromGrid(d.packId); } },
+        thumbStyle: {
+          position: 'relative', display: 'block', width: '100%', paddingTop: (100 / AR) + '%',
+          filter: 'drop-shadow(var(--shadow))'
+        },
+        inkStyle: ink
+          ? { position: 'absolute', inset: -pad + 'px', background: 'var(--sheet)', clipPath: ink.clip, backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%' }
+          : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+        washStyle: wash(i),
+        imgStyle: url
+          ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + url + ')', backgroundSize: '100% 100%' }
+          : { display: 'none' },
+        // Feste zwei Zeilen. Vorher trugen die Zellen ihre Tags, und weil die Tags je Deck
+        // verschieden hoch umbrachen, treppte das ganze Raster. Tags stehen jetzt im
+        // Tooltip — dort sind sie anklickbar und kosten keine Zeilenhoehe.
+        labelStyle: {
+          font: '400 ' + (narrow ? 13 : 15) + 'px/1.25 "Irish Grover", cursive',
+          color: on ? 'var(--accent)' : 'var(--ink)',
+          height: Math.round((narrow ? 13 : 15) * 2.5) + 'px',
+          display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+        },
+        markStyle: {
+          position: 'absolute', top: '7px', right: '7px', zIndex: 2,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          width: '26px', height: '26px', padding: 0, cursor: 'pointer',
+          border: 0, background: 'transparent',
+          color: st.marks[d.packId] ? 'var(--accent)' : 'var(--faint)',
+          filter: 'drop-shadow(0 1px 2px rgba(0,0,0,.4))', transition: 'color .16s ease'
+        },
+        seenStyle: {
+          position: 'absolute', top: '7px', left: '7px', zIndex: 2,
+          font: '9px/1 ' + UI, letterSpacing: '.1em', color: 'var(--on-accent)',
+          background: 'rgba(31,26,20,.72)', padding: '4px 6px', transform: 'rotate(-2deg)'
+        },
+        // Klick statt Zeigen — beim Scrollen ueber ein Raster flackerte sonst bei jeder Zelle
+        // ein Kasten auf. Geoeffnet wird das Deck ueber das Auge im Kasten.
+        // Erst die Zelle in die obere Haelfte holen, dann reden: darunter ist dann Platz fuer
+        // den Kasten, und die Zelle bleibt sichtbar.
+        pick: () => {
+          if (st.tip === d.packId) { this.setState({ tip: '' }); return; }
+          this.setState({ flowSel: d.packId });
+          this.showTip(d.packId);
+        },
+        dbl: (e) => { if (e && e.preventDefault) e.preventDefault(); this.openPack(d.packId); },
+        hint: d.title + '  ·  double-click to open',
+        mark: (e) => this.toggleMark(d.packId, e),
+        tip: (e) => this.showTip(d.packId, e),
+        move: (e) => this.moveTip(e)
+      };
+    });
+
+    const tipDeck = decks.find((d) => d.packId === st.tip);
+    // Die Kante wird auf das gemessene Format des Kastens gebaut (Hoehe kommt aus dem
+    // Zustand, sobald er einmal stand) — sonst zerrt die Silhouette.
+    const tipW = Math.min(620, Math.max(280, st.cw - 28));
+    // Kein Trennstrich, keine Kaesten um die Icons: sie sollen im Kasten liegen, nicht darin
+    // herumstehen. Der Abstand trennt genug.
+    const tipBtn = {
+      flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      width: '30px', height: '30px', cursor: 'pointer',
+      border: 0, background: 'transparent', color: 'var(--muted)',
+      transition: 'color .14s ease'
+    };
+    const tipInk = tipDeck ? this.inkFor(7, tipW / Math.max(120, st.tipH || 190), 520) : null;
+    const tipIdx = st.tip ? st.cardIdx[st.tip] : null;
+    const tipMt = tipIdx && tipIdx.marketingText
+      ? tipIdx.marketingText.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean) : [];
+    let tipText = (tipMt.length > 1 ? tipMt[1] : tipMt[0]) || (tipIdx && tipIdx.blurb) || '';
+    if (tipText.length > 210) tipText = tipText.slice(0, 208).replace(/\s+\S*$/, '') + ' …';
+
+    // ---- Editor ----
+    const canEdit = this.editMode();
+    const eDeck = st.edit ? decks.find((d) => d.packId === st.edit) : null;
+    const raw = st.editRaw;
+    if (raw) {
+      this._rawCache = this._rawCache || {};
+      this._rawCache[st.edit] = raw;
+      this._editBase = window.KFBDeckEdit.read(raw.text);
+      this._editName = eDeck ? eDeck.title : st.edit;
+    }
+    const dirtyPacks = Object.keys(st.drafts);
+    const myDirty = Object.keys(this.draftOf(st.edit));
+
+    const editFields = (st.edit && raw) ? window.KFBDeckEdit.FIELDS.map((f) => {
+      const val = this.fieldValue(f);
+      const touched = myDirty.indexOf(f.key) >= 0;
+      const empty = !val;
+      return {
+        label: f.label,
+        labelStyle: {
+          font: '600 11px/1.3 ' + READ, letterSpacing: '.06em',
+          color: touched ? 'var(--accent)' : 'var(--muted)'
+        },
+        note: touched ? 'changed' : (empty ? 'empty in repo' : ''),
+        noteStyle: {
+          font: '10px/1 ' + READ, letterSpacing: '.06em',
+          color: touched ? 'var(--accent)' : 'var(--faint)',
+          opacity: touched || empty ? 1 : 0
+        },
+        isLine: f.kind !== 'text',
+        isText: f.kind === 'text',
+        rows: f.rows || 3,
+        value: val,
+        hint: f.kind === 'list' ? 'comma separated' : '',
+        inputStyle: {
+          width: '100%', boxSizing: 'border-box', resize: f.kind === 'text' ? 'vertical' : 'none',
+          font: (f.kind === 'text' ? '14px/1.7 ' : '14px/1.5 ') + READ,
+          color: 'var(--ink)', background: 'var(--sheet)',
+          border: '1.5px solid ' + (touched ? 'var(--accent)' : 'var(--line)'),
+          padding: '10px 12px', outline: 'none'
+        },
+        // Formatierte Ansicht direkt unter dem Feld: man sieht, was der Marker tut, ohne
+        // exportieren zu muessen.
+        showPreview: f.kind === 'text' && st.preview !== false && !!val,
+        previewStyle: {
+          marginTop: '2px', padding: '11px 13px',
+          background: 'var(--field)', borderLeft: '2px solid var(--line)'
+        },
+        body: f.kind === 'text' && st.preview !== false ? this.mdRender(val, '14px/1.65 ' + READ, 'var(--muted)') : null,
+        set: (e) => this.setField(f, e.target.value),
+        sel: (e) => this.noteSel(f, e),
+        focus: (e) => this.noteSel(f, e),
+        blur: this.dropSel,
+
+        // Entwerfen lassen: nur fuer die beiden Textfelder, die wirklich Prosa tragen.
+        canDraft: f.kind === 'text' && !!window.KFBDeckDraft,
+        asks: (val
+          ? [['rewrite', '', 'same facts, better copy'],
+             ['shorter', 'Cut it by about a third. Same shape, less throat-clearing.', 'cut by a third'],
+             ['sharper', 'More bite. Sharper sarcasm, no cruelty, no cuteness.', 'more bite'],
+             ['de-slop', 'Strip every trace of AI marketing slop: no scaffolding sentences, no triads for their own sake, no hedging, no words that only exist to sound complete.', 'strip AI slop']]
+          : [['draft with FrizzleBob', '', 'write it from the comic facts']]
+        ).map(([label, instr, hint]) => ({
+          label, hint,
+          style: Object.assign({}, {
+            font: '11px/1 ' + READ, letterSpacing: '.02em', padding: '7px 10px', cursor: 'pointer',
+            border: '1.5px solid var(--line)', background: 'transparent', color: 'var(--muted)',
+            transition: 'color .14s ease, border-color .14s ease'
+          }, st.busy ? { opacity: 0.4, cursor: 'default' } : {}),
+          hit: () => this.askDraft(f, instr)
+        })),
+        ask: st.asks[f.key] || '',
+        askHint: 'or say it yourself, then Enter',
+        askStyle: {
+          flex: '1 1 170px', minWidth: 0, font: '12px/1.4 ' + READ,
+          border: 0, borderBottom: '1.5px solid var(--line)', background: 'transparent',
+          color: 'var(--ink)', padding: '5px 2px', outline: 'none'
+        },
+        setAsk: (e) => this.setAsk(f.key, e.target.value),
+        askKey: (e) => {
+          if (e.key !== 'Enter') return;
+          e.preventDefault();
+          const q = (st.asks[f.key] || '').trim();
+          if (q) { this.askDraft(f, q); this.setAsk(f.key, ''); }
+        },
+        busyStyle: {
+          font: '11px/1 ' + READ, letterSpacing: '.04em',
+          color: st.draftErr ? 'var(--accent)' : 'var(--faint)',
+          opacity: st.busy === f.key || (st.draftErr && st.busy === '') ? 1 : 0,
+          animation: st.busy === f.key ? 'kfbBreathe 1.6s ease-in-out infinite' : 'none'
+        },
+        busyLine: st.busy === f.key ? 'FrizzleBob is writing…' : (st.draftErr || '')
+      };
+    }) : [];
+
+    // Das Menue geht an der Auswahl auf, nicht unten in der Ecke.
+    const toolOn = !!(this._sel && this._selOn && st.edit);
+    const xy = this._selXY || [0, 0];
+    const markBtn = {
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      minWidth: '28px', height: '28px', padding: '0 7px', cursor: 'pointer',
+      border: 0, borderRight: '1px solid var(--line)', background: 'transparent',
+      color: 'var(--ink)', font: '13px/1 ' + READ,
+      transition: 'background .12s ease, color .12s ease'
+    };
+
+    // ---- Der Stapel ----
+    // Jede Karte hat eine Phase: unter 0 liegt sie noch im Stapel (Ruecken oben), zwischen 0
+    // und 1 hebt sie ab und dreht sich um, darueber faechert sie nach oben weg. Alles in 2D —
+    // die Tiefe kommt aus Groesse, Versatz und Deckkraft.
+    const flowList = st.flow ? this.flowItems() : [];
+    // Die Karte wird aus BEIDEN Achsen bemessen. Nur aus der Breite gerechnet war sie so hoch,
+    // dass unter der Kopfzeile kein Platz mehr blieb: der Faecher wurde weggeblendet und es
+    // stand eine einzelne Karte da. Also erst das Band messen, das zwischen Kopfzeile und
+    // Stapel frei ist, und die Karte hineinlegen.
+    // Im Flow gilt die frisch gemessene kompakte Kopfhoehe, sonst die des Readers.
+    const headBottom = ((st.flow && st.flowHeadH) ? st.flowHeadH : (st.headH || this._headH || 120)) + 12;
+    const pileY = Math.round(Math.min(st.ch * 0.34, st.ch / 2 - 112));
+    const band = pileY - (headBottom - st.ch / 2);
+    // Fokuskarte plus rund dreieinhalb Faecherkarten passen in das Band.
+    const fh = Math.round(Math.max(110, Math.min(Math.min(1100, Math.max(260, st.cw * 0.78)) / AR, band / 1.55)));
+    const fw = Math.round(fh * AR);
+    const fstep = Math.round(fh * 0.36);
+    // Der Brennpunkt liegt dicht ueber dem Stapel, damit der Faecher das ganze obere Feld hat.
+    // Steht ein Kasten an, rueckt die Fokuskarte hoch und macht ihm Platz. Suchen, wo er
+    // hinpasst, ging jedes Mal schief — also Platz schaffen statt Platz suchen.
+    const focusY = Math.round(pileY - fh * 0.78);
+
+    // ---- Der Coverflow ----
+    // Hier IST die Tiefe echt: der Behaelter scrollt nicht, also greift Falle 4 nicht und
+    // `perspective` + `translateZ` tun, was sie sollen. Die Zahlen sind Georgs Demo:
+    // Kartenhoehe 2,25 Einheiten, Nachbar bei 1,28, dahinter 0,52 je Schritt, Drehung 52°,
+    // Tiefe 0,62 je Schritt (bis 4), Groesse −5,5 % je Schritt, Ausblenden ab 4,4.
+    // Steht ein Kasten an, rueckt die Reihe hoch und macht ihm Platz — dieselbe Hausregel wie
+    // im Stapel: Platz schaffen, nicht Platz suchen.
+    // Erst rechnen, als gaebe es den Kasten nicht — und nur so weit hochruecken, wie er den
+    // Karten wirklich ins Bild laeuft. Vorher war es eine feste Zahl: bei einem hohen Fenster
+    // sprang die Reihe hoch, obwohl unten reichlich Platz stand.
+    const cvFree = Math.max(160, st.ch - headBottom - 108);
+    const cvH0 = Math.max(120, Math.min(cvFree * 0.92, Math.min(1040, st.cw * 0.56) / AR));
+    // Unterkante der Fokuskarte, absolut von oben — plus ein Finger Abstand.
+    const cvBottom0 = headBottom + cvFree / 2 + cvH0 / 2 + 14;
+    const cvTipTop = st.ch - 14 - Math.max(120, st.tipH || 170);
+    const cvRoom = (st.cover && st.tip)
+      ? Math.round(Math.max(0, Math.min(cvBottom0 - cvTipTop, st.ch * 0.28)))
+      : 0;
+    const cvBand = Math.max(160, st.ch - headBottom - 108 - cvRoom);
+    const cvH = Math.round(Math.max(120, Math.min(cvBand * 0.92, Math.min(1040, st.cw * 0.56) / AR)));
+    const cvW = Math.round(cvH * AR);
+    const cvUnit = cvH / 2.25;
+    const cvY = Math.round(headBottom + cvBand / 2 - st.ch / 2);
+    // Eine Kartenbreite Zug = eine Karte weiter. Der Zug-Handler liest diesen Wert.
+    this._coverStep = Math.round(cvUnit * 1.28);
+
+    const flowCards = [];
+    let coverTitle = '', coverSub = '';
+    // Der leere Platz — beide waagerechten Lagen halten feste Plaetze statt einer wandernden
+    // Liste (siehe Kommentar im Coverflow), und ein unbenutzter Platz muss verschwinden.
+    const hiddenCard = {
+      isBack: false, washing: false, mark: '', isCut: false, cutLabel: '',
+      style: { display: 'none' },
+      paperStyle: { display: 'none' }, inkStyle: { display: 'none' },
+      washStyle: { display: 'none' }, imgStyle: { display: 'none' },
+      sharpStyle: { display: 'none' }, backStyle: { display: 'none' },
+      markStyle: { display: 'none' }, cutStyle: { display: 'none' },
+      cutLineStyle: { display: 'none' }, cutTagStyle: { display: 'none' },
+      cutIconStyle: { display: 'none' }, cutTextStyle: { display: 'none' },
+      hit: () => {}, dbl: () => {}
+    };
+
+    // ---- Der Full-View (v4) ----
+    // Ein Blatt so gross, wie das Fenster es zulaesst — dieselbe Rechnung wie im Reader, nur
+    // dass hier BEIDE Achsen begrenzen: erst das Band zwischen Kopfzeile und Schnittkante
+    // messen, dann die Breite. Was zuerst anschlaegt, gibt das Mass.
+    // Steht ein Kasten an, wird das Band kleiner — Platz schaffen, nicht Platz suchen
+    // (Hausregel aus Stapel und Coverflow).
+    const flTip = st.tip ? Math.max(120, st.tipH || 170) + 18 : 0;
+    const flBand = Math.max(140, st.ch - headBottom - 52 - flTip);
+    const flH = Math.round(Math.min(flBand, (st.cw - 28) / AR));
+    const flW = Math.round(flH * AR);
+    const flGap = Math.round(Math.max(16, flW * 0.045));
+    const flStep = flW + flGap;
+    const flY = Math.round(headBottom + flBand / 2 - st.ch / 2);
+    // Eine Blattbreite Zug = ein Blatt weiter. Der Zug-Handler liest diesen Wert.
+    if (st.full) this._coverStep = flStep;
+
+    if (st.full && flowList.length) {
+      const N = flowList.length;
+      // 15 feste Plaetze reichen fuer jedes Fenster, in dem ein Blatt noch lesbar ist; der
+      // Radius wird darauf begrenzt, damit kein Platz zweimal belegt wird.
+      const SLOTS = 15;
+      const range = Math.min(6, Math.ceil(st.cw / flStep) + 1);
+      for (let s = 0; s < SLOTS; s++) flowCards.push(hiddenCard);
+      const mid = Math.round(st.flowP);
+      for (let k = mid - range; k <= mid + range; k++) {
+        const off = k - st.flowP;
+        const ad = Math.abs(off);
+        const x = off * flStep;
+        // Was ganz aus dem Bild gefahren ist, wird nicht gezeichnet — bei 1914 Blaettern zaehlt
+        // jede Ebene, die nicht steht.
+        if (Math.abs(x) > st.cw / 2 + flW) continue;
+        const wk = this.wrap(k, N);
+        const it = flowList[wk];
+        const d = it.deck;
+        const thumb = st.urls[it.pack + ':' + it.page + ':' + RAIL_IMG];
+        const sharp = st.urls[it.pack + ':' + it.page + ':' + FULL_IMG];
+        const url = sharp || thumb;
+        // Zwei Ebenen wie im Coverflow: die Miniatur bleibt liegen, die Lesefassung legt sich
+        // darueber. Ein einzelnes Feld, das seine Adresse tauscht, zeigt zwischendurch das
+        // leere Blatt — genau das flackert.
+        const { pad, ink } = this.inkOutside(101 + wk, flW, flH);
+        flowCards[((k % SLOTS) + SLOTS) % SLOTS] = {
+          isBack: false,
+          washing: !url,
+          mark: '',
+          style: {
+            position: 'absolute', left: '50%', top: '50%',
+            width: flW + 'px', height: flH + 'px',
+            marginLeft: -flW / 2 + 'px', marginTop: -flH / 2 + 'px',
+            transform: 'translate3d(' + x.toFixed(1) + 'px,' + flY + 'px,0)',
+            // Die Nachbarn stehen zurueck, ohne zu schrumpfen: kein Kippen, kein Verjuengen —
+            // hier wird gelesen.
+            opacity: (ad < 0.5 ? 1 : 0.6).toFixed(2),
+            zIndex: Math.round(300 - ad * 10),
+            cursor: 'pointer',
+            filter: 'drop-shadow(var(--shadow))',
+            transition: 'opacity .18s ease',
+            willChange: 'transform'
+          },
+          paperStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', background: 'var(--sheet)', clipPath: ink.clip }
+            : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+          inkStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', pointerEvents: 'none', backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%', opacity: dark ? 0.84 : 1 }
+            : { display: 'none' },
+          washStyle: wash(wk),
+          imgStyle: thumb
+            ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + thumb + ')', backgroundSize: '100% 100%' }
+            : { display: 'none' },
+          sharpStyle: sharp
+            ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + sharp + ')', backgroundSize: '100% 100%' }
+            : { display: 'none' },
+          backStyle: { display: 'none' },
+          markStyle: { display: 'none' },
+          // Die Deckgrenze liegt hier IM Blatt, oben links: das Blatt fuellt den Schirm, ein
+          // Schild daneben waere ausserhalb des Fensters.
+          isCut: st.flowMode === 'pages' && it.first && ad < 1.2,
+          cutLabel: d.title,
+          cutStyle: {
+            position: 'absolute', left: '12px', top: '12px', maxWidth: '58%',
+            zIndex: 2, pointerEvents: 'none'
+          },
+          cutLineStyle: { display: 'none' },
+          cutTagStyle: {
+            display: 'flex', alignItems: 'center', gap: '6px',
+            font: '11px/1 ' + UI, letterSpacing: '.06em',
+            color: 'var(--on-accent)', background: 'var(--accent)',
+            padding: '4px 8px 5px', transform: 'rotate(-1.2deg)',
+            boxShadow: '2px 2px 0 var(--hard)', whiteSpace: 'nowrap'
+          },
+          cutIconStyle: {
+            flex: '0 0 auto', width: '15px', height: 'auto', display: 'block',
+            transform: 'rotate(100deg)'
+          },
+          cutTextStyle: { minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis' },
+          // Gleiche Klickmechanik wie im Coverflow: das angeklickte Blatt kommt in die Mitte,
+          // dann kommt der Kasten. Steht es schon in der Mitte, schaltet der Klick ihn um.
+          hit: () => {
+            if (this._dragged) return;
+            if (st.tip === d.packId && this._tipPage === it.page) { this.setState({ tip: '', flowSel: '' }); return; }
+            const schonDa = ad < 0.06;
+            this._tipPage = it.page;
+            this.setState({ flowSel: d.packId, tip: '' });
+            this.flowTo(k);
+            clearTimeout(this._hitT);
+            this._hitT = setTimeout(() => {
+              if (this.state.flowSel === d.packId) this.showTip(d.packId);
+            }, schonDa ? 20 : 520);
+          },
+          dbl: (e) => {
+            if (e && e.preventDefault) e.preventDefault();
+            this.openPack(d.packId, st.flowMode === 'pages' ? it.page : 0);
+          }
+        };
+      }
+      // Kein Titelschild von selbst: das Blatt fuellt hier den Schirm, jede Aufschrift laege
+      // auf dem Motiv — und hinter ihm, denn die Karten liegen weiter vorn. Wer wissen will,
+      // was er sieht, klickt: dann kommt der Kasten, und der liegt ueber allem. Die Stelle im
+      // Korpus steht ohnehin in der Kopfzeile und an der Schnittkante.
+    } else if (st.cover) {
+      // ---- Gegen das Flackern: feste Plaetze statt einer wandernden Liste ----
+      // Vorher wurde nur das sichtbare Fenster in ein Feld geschoben. Rutscht das Fenster um
+      // eine Karte, rutschen ALLE Feldplaetze — React haelt die Reihenfolge, nicht die Karte,
+      // und schreibt deshalb in jedem Schritt jedes Hintergrundbild neu. Genau das flackert.
+      // Jetzt bekommt jede Karte einen festen Platz (`k mod 13`): innerhalb des Fensters ist er
+      // eindeutig, und beim Weiterziehen wechselt nur EIN Platz seinen Inhalt.
+      const SLOTS = 13;
+      for (let s = 0; s < SLOTS; s++) flowCards.push(hiddenCard);
+      const mid = Math.round(st.flowP);
+      for (let k = mid - 6; k <= mid + 6; k++) {
+        if (k < 0 || k >= flowList.length) continue;
+        const off = k - st.flowP;
+        const ad = Math.abs(off);
+        const it = flowList[k];
+        const d = it.deck;
+        const sg = off < 0 ? -1 : 1;
+        const x = (ad <= 1 ? off * 1.28 : sg * (1.28 + (ad - 1) * 0.52)) * cvUnit;
+        const rotY = -sg * Math.min(ad, 1) * 52;
+        const z = -Math.min(ad, 4) * 0.62 * cvUnit;
+        const sc = 1 - Math.min(ad, 4) * 0.055;
+        const op = ad > 5.4 ? 0 : (ad > 4.4 ? 1 - (ad - 4.4) : 1);
+        if (op <= 0.02) continue;
+        // Zwei Ebenen statt einer: die Miniatur liegt unten und bleibt liegen, die scharfe
+        // Fassung legt sich darueber. Vorher tauschte EIN Feld seine Adresse, und zwischen
+        // altem und neuem Bild stand kurz das leere Blatt — das Flackern beim Einrasten.
+        const thumb = st.urls[it.pack + ':' + it.page + ':' + RAIL_IMG];
+        const sharp = st.urls[it.pack + ':' + it.page + ':' + FLOW_IMG];
+        const url = sharp || thumb;
+        const { pad, ink } = this.inkOutside(101 + k, cvW, cvH);
+        flowCards[((k % SLOTS) + SLOTS) % SLOTS] = ({
+          // Im Coverflow liegt kein Ruecken oben: die Reihe zeigt Cover, das ist ihr Zweck.
+          isBack: false,
+          washing: !url,
+          mark: '',
+          style: {
+            position: 'absolute', left: '50%', top: '50%',
+            width: cvW + 'px', height: cvH + 'px',
+            marginLeft: -cvW / 2 + 'px', marginTop: -cvH / 2 + 'px',
+            transform: 'translate3d(' + x.toFixed(1) + 'px,' + cvY + 'px,' + z.toFixed(1)
+              + 'px) rotateY(' + rotY.toFixed(2) + 'deg) scale(' + sc.toFixed(3) + ')',
+            opacity: op.toFixed(3),
+            zIndex: Math.round(300 - ad * 10),
+            cursor: 'pointer',
+            filter: 'drop-shadow(var(--shadow))',
+            willChange: 'transform'
+          },
+          paperStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', background: 'var(--sheet)', clipPath: ink.clip }
+            : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+          inkStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', pointerEvents: 'none', backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%', opacity: dark ? 0.84 : 1 }
+            : { display: 'none' },
+          washStyle: wash(k),
+          imgStyle: thumb
+            ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + thumb + ')', backgroundSize: '100% 100%' }
+            : { display: 'none' },
+          sharpStyle: sharp
+            ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + sharp + ')', backgroundSize: '100% 100%' }
+            : { display: 'none' },
+          backStyle: { display: 'none' },
+          markStyle: { display: 'none' },
+          // Deckgrenze steht hier SENKRECHT links neben dem Blatt — die Reihe laeuft waagerecht,
+          // also schneidet man quer dazu.
+          isCut: st.flowMode === 'pages' && it.first && ad < 2.4,
+          cutLabel: d.title,
+          cutStyle: {
+            position: 'absolute', left: '-22px', top: '-34px', bottom: '-8px', width: '22px',
+            pointerEvents: 'none'
+          },
+          cutLineStyle: {
+            position: 'absolute', left: '10px', top: '34px', bottom: 0, width: 0,
+            borderLeft: '2px dashed var(--accent)', opacity: 0.75
+          },
+          cutTagStyle: {
+            position: 'absolute', left: 0, top: 0, maxWidth: '260px',
+            display: 'flex', alignItems: 'center', gap: '6px',
+            font: '11px/1 ' + UI, letterSpacing: '.06em',
+            color: 'var(--on-accent)', background: 'var(--accent)',
+            padding: '4px 8px 5px', transform: 'rotate(-1.2deg)',
+            boxShadow: '2px 2px 0 var(--hard)', whiteSpace: 'nowrap'
+          },
+          cutIconStyle: {
+            flex: '0 0 auto', width: '15px', height: 'auto', display: 'block',
+            transform: 'rotate(100deg)'
+          },
+          cutTextStyle: { minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis' },
+          // Gleiche Klickmechanik wie im Stapel: die angeklickte Karte kommt in die Mitte,
+          // dann kommt der Kasten. Steht sie schon in der Mitte, schaltet der Klick ihn um.
+          hit: () => {
+            if (this._dragged) return;
+            if (st.tip === d.packId && this._tipPage === it.page) { this.setState({ tip: '', flowSel: '' }); return; }
+            const schonDa = ad < 0.06;
+            this._tipPage = it.page;
+            this.setState({ flowSel: d.packId, tip: '' });
+            this.flowTo(k);
+            clearTimeout(this._hitT);
+            this._hitT = setTimeout(() => {
+              if (this.state.flowSel === d.packId) this.showTip(d.packId);
+            }, schonDa ? 20 : 520);
+          },
+          dbl: (e) => {
+            if (e && e.preventDefault) e.preventDefault();
+            this.openPack(d.packId, st.flowMode === 'pages' ? it.page : 0);
+          }
+        });
+      }
+      // Der Titel steht mittig unten, in Irish Grover — wie auf den Karten. Steht ein Kasten
+      // an, schweigt er: dort steht derselbe Name schon.
+      const cvFocus = flowList[Math.max(0, Math.min(flowList.length - 1, Math.round(st.flowP)))];
+      if (cvFocus && !st.tip) {
+        const cIdx = st.cardIdx[cvFocus.pack];
+        coverTitle = cvFocus.deck.title;
+        coverSub = st.flowMode === 'pages'
+          ? 'page ' + cvFocus.page + ' of ' + ((cIdx && cIdx.pages) || cvFocus.deck.pages || 1)
+          : ((cIdx && cIdx.deckType) || (cvFocus.deck.cardCount + ' cards'));
+      }
+    } else if (st.flow) {
+      for (let k = 0; k < flowList.length; k++) {
+        const ph2 = st.flowP - k;
+        if (ph2 < -17 || ph2 > 6.5) continue;
+        const it = flowList[k];
+        const d = it.deck;
+        const j = jit(k), j2 = jit(k + 41), j3 = jit(k + 77);
+        let y, x, sc, rot, op, flip;
+        if (ph2 <= 0) {
+          // Im Stapel: gemischt, also unregelmaessig versetzt und verdreht.
+          const deep = -ph2;
+          y = pileY + deep * 2.1;
+          x = (j - 0.5) * fw * 0.09 + deep * (j2 - 0.5) * 1.4;
+          sc = 0.62 - deep * 0.004;
+          rot = (j2 - 0.5) * 13 + (j3 - 0.5) * deep * 0.5;
+          op = deep > 12 ? Math.max(0, 1 - (deep - 12) * 0.2) : 1;
+          flip = 0;
+        } else {
+          const t = Math.min(ph2, 1);
+          const up = Math.max(0, ph2 - 1);
+          y = pileY + (focusY - pileY) * t - up * fstep;
+          x = ((j - 0.5) * fw * 0.09) * (1 - t) + up * (j2 - 0.5) * fw * 0.13;
+          sc = (0.62 + 0.38 * t) - up * 0.085;
+          rot = ((j2 - 0.5) * 13) * (1 - t) + (j - 0.5) * 5 * Math.min(1, up) - up * 1.2;
+          op = Math.max(0, 1 - up * 0.26);
+          flip = t;
+        }
+        // Wer nach oben wegfaechert, verschwindet VOR der Kopfzeile, nicht dahinter. Sonst
+        // liegt die halbe Karte hinter dem Glas und liest sich als Schnitt.
+        const topPx = st.ch / 2 + y - (fh * Math.max(0.2, sc)) / 2;
+        op *= Math.max(0, Math.min(1, (topPx - headBottom + 34) / 74));
+
+        // Umdrehen um die WAAGERECHTE Achse: die Karte kippt zum Leser hin auf. Ohne
+        // `perspective` ist das genau `scaleY` — `rotateX` waere in diesem Behaelter flach
+        // (Falle 4) und verschoebe nur die Trefferflaeche.
+        const face = flip > 0.5;
+        const sy = Math.abs(Math.cos(Math.min(1, flip) * Math.PI));
+        // Scharf, sobald da: die grosse Fassung loest die Leisten-Miniatur ab, sobald sie
+        // geladen ist. Bis dahin steht die kleine \u2014 kein leeres Blatt, kein Warten.
+        const url = st.urls[it.pack + ':' + it.page + ':' + FLOW_IMG]
+          || st.urls[it.pack + ':' + it.page + ':' + RAIL_IMG];
+        const { pad, ink } = this.inkOutside(101 + k, fw, fh);
+        const med = /^medkayfab/.test(d.packId);
+        flowCards.push({
+          isBack: !face,
+          washing: face && !url,
+          mark: med ? 'MED' : 'KFB',
+          style: {
+            position: 'absolute', left: '50%', top: '50%',
+            width: fw + 'px', height: fh + 'px', marginLeft: -fw / 2 + 'px', marginTop: -fh / 2 + 'px',
+            transform: 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotate(' + rot.toFixed(2) + 'deg) scale(' + Math.max(0.2, sc).toFixed(3) + ') scaleY(' + Math.max(0.02, flip > 0 && flip < 1 ? sy : 1).toFixed(3) + ')',
+            opacity: op.toFixed(3),
+            // Die Karte im Brennpunkt liegt vorn, nicht die oberste im Faecher: sonst greift
+            // der Klick an einer weggekippten Karte vorbei.
+            zIndex: ph2 > 0 ? Math.round(290 - Math.abs(ph2 - 1) * 9) : Math.round(200 + ph2 * 4),
+            cursor: 'pointer',
+            filter: 'drop-shadow(var(--shadow))',
+            willChange: 'transform'
+          },
+          paperStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', background: 'var(--sheet)', clipPath: ink.clip }
+            : { position: 'absolute', inset: 0, background: 'var(--sheet)' },
+          inkStyle: ink
+            ? { position: 'absolute', inset: -pad + 'px', pointerEvents: 'none', backgroundImage: 'url(' + ink.url + ')', backgroundSize: '100% 100%', opacity: dark ? 0.84 : 1 }
+            : { display: 'none' },
+          washStyle: wash(k),
+          imgStyle: (face && url)
+            ? { position: 'absolute', inset: 0, backgroundImage: 'url(' + url + ')', backgroundSize: '100% 100%' }
+            : { display: 'none' },
+          sharpStyle: { display: 'none' },
+          // Der echte Kartenruecken aus dem Repo, randlos aufgelegt — kein Gutter, kein Nachbau.
+          backStyle: {
+            position: 'absolute', inset: 0, pointerEvents: 'none',
+            backgroundImage: 'url(' + BACK_URL + ')', backgroundSize: '100% 100%'
+          },
+          markStyle: { display: 'none' },
+          // Deckgrenze: wo ein neues Deck anfaengt, liegt eine Schnittmarke ueber dem Blatt.
+          // In einem Stapel aus 1527 Blaettern ist das die einzige Orientierung.
+          isCut: st.flowMode === 'pages' && it.first && ph2 > 0.35,
+          cutLabel: d.title,
+          cutStyle: {
+            position: 'absolute', left: 0, right: 0, top: '-26px',
+            display: 'flex', alignItems: 'center', gap: '8px', pointerEvents: 'none'
+          },
+          cutLineStyle: {
+            flex: '1 1 auto', height: 0,
+            borderTop: '2px dashed var(--accent)', opacity: 0.75
+          },
+          cutTagStyle: {
+            flex: '0 0 auto', maxWidth: '62%', minWidth: 0,
+            display: 'flex', alignItems: 'center', gap: '6px',
+            font: '11px/1 ' + UI, letterSpacing: '.06em',
+            color: 'var(--on-accent)', background: 'var(--accent)',
+            padding: '4px 8px 5px', transform: 'rotate(-1.2deg)',
+            boxShadow: '2px 2px 0 var(--hard)'
+          },
+          // Dieselbe Schere wie an der Schiene, kein getipptes Zeichen.
+          cutIconStyle: {
+            flex: '0 0 auto', width: '15px', height: 'auto', display: 'block',
+            transform: 'rotate(100deg)'
+          },
+          cutTextStyle: {
+            minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+          },
+          // Aufgedeckt heisst anklickbar: eine Karte, deren Cover man sieht, oeffnet ihr Feld.
+          // Wer in den Stapel greift, hebt ihn bis dorthin.
+          // Aufgedeckt heisst anklickbar: eine Karte, deren Cover man sieht, oeffnet denselben
+          // Tooltip wie in der Galerie. Wer in den Stapel greift, hebt ihn bis dorthin.
+          // Ein Klick holt die Karte in die Mitte und legt den Kasten darunter. Egal, wo sie
+          // gerade im Faecher steht — erst ruecken, dann reden.
+          // Klick holt die Karte in die Mitte, danach kommt der Kasten unten hoch.
+          hit: () => {
+            if (st.tip === d.packId && this._tipPage === it.page) { this.setState({ tip: '', flowSel: '' }); return; }
+            const schonDa = Math.abs(ph2 - 1) < 0.06;
+            this._tipPage = it.page;
+            this.setState({ flowSel: d.packId, tip: '' });
+            this.flowTo(k + 1);
+            clearTimeout(this._hitT);
+            this._hitT = setTimeout(() => {
+              if (this.state.flowSel === d.packId) this.showTip(d.packId);
+            }, schonDa ? 20 : 520);
+          },
+          // Doppelklick greift durch den Kasten hindurch: Blatt-Stapel oeffnet auf der Seite,
+          // Deck-Stapel am Anfang.
+          dbl: (e) => {
+            if (e && e.preventDefault) e.preventDefault();
+            this.openPack(d.packId, st.flowMode === 'pages' ? it.page : 0);
+          }
+        });
+      }
+    }
+    const fSel = st.flowSel ? decks.find((d) => d.packId === st.flowSel) : null;
+    const fIdx = fSel ? st.cardIdx[fSel.packId] : null;
+
+    const totalPages = decks.reduce((s, d) => s + ((st.cardIdx[d.packId] && st.cardIdx[d.packId].pages) || d.pages || 0), 0);
+    const countBtn = (on) => ({
+      font: 'inherit', letterSpacing: 'inherit', padding: 0, border: 0, background: 'transparent',
+      cursor: 'pointer', color: on ? 'var(--accent)' : 'var(--muted)',
+      borderBottom: '1.5px solid ' + (on ? 'var(--accent)' : 'transparent'),
+      transition: 'color .14s ease, border-color .14s ease'
+    });
+
+    // Die Schnittkante der Site, hier senkrecht durch den Stapel. Geometrie aus index.html
+    // L2989: Startpunkt ist die Kopfzeile plus 30, der Rest des Fensters ist die Strecke.
+    const flowN = flowList.length || 1;
+    // Im Full-View laeuft die Reihe im Kreis — die Schnittkante zeigt die Stelle IM Korpus,
+    // also den Rest, nicht die rohe Zahl.
+    const fp = st.full ? this.wrap(st.flowP, flowN) : st.flowP;
+    const cutTop = ((st.flow && st.flowHeadH) ? st.flowHeadH : (st.headH || this._headH || 56)) + 30;
+    const cutProg = Math.max(0, Math.min(1, fp / Math.max(1, flowN - 1)));
+    const cutY = Math.round(cutTop + cutProg * (st.ch - cutTop));
+    // Im Coverflow laeuft die Reihe waagerecht — also schneidet die Schere unten quer mit,
+    // nicht senkrecht am Rand.
+    const cutLeft = 34;
+    const cutX = Math.round(cutLeft + cutProg * Math.max(1, st.cw - cutLeft - 24));
+
+    const ph = st.phase;
+    const nextD = decks.length ? decks[(di + 1) % decks.length] : null;
+    const prevD = decks.length ? decks[(di - 1 + decks.length) % decks.length] : null;
+
+    return {
+      mainRef: (el) => {
+        if (el && el !== this.mainEl) {
+          this.mainEl = el;
+          el.addEventListener('scroll', this.onScroll, { passive: true });
+          el.addEventListener('wheel', this.onWheel, { passive: true });
+          el.addEventListener('touchmove', this.markHand, { passive: true });
+        }
+      },
+      headerRef: (el) => { if (el) { this.headerEl = el; this.measureHeader(); } },
+      padRef: (el) => { if (el) { this.padEl = el; this.measureHeader(); } },
+      railRef: (el) => { if (el && el !== this.railEl) { this.railEl = el; setTimeout(() => this.setRail(this.railOpen(), false), 20); } },
+      railScrollRef: (el) => {
+        if (el && el !== this.railScrollEl) {
+          this.railScrollEl = el;
+          el.addEventListener('scroll', this.onRailScroll, { passive: true });
+          setTimeout(() => { this.syncRailPos(false); this.onRailScroll(); }, 40);
+        }
+      },
+      searchRef: (el) => { this.searchEl = el; },
+
+      isBooting: !decks.length && !st.error,
+      bootLine: st.error ? st.error : 'reading the registry',
+
+      countStyle: {
+        flex: '0 0 auto', font: '11px/1.3 ' + UI, letterSpacing: '.04em',
+        color: 'var(--faint)', whiteSpace: 'nowrap',
+        // 760 war zu knapp gerechnet: Wortmarke, Suche, drei Zaehler und sechs Knoepfe brauchen
+        // zusammen rund 1120 px — darunter schob die Zeile die Knoepfe aus dem Bild.
+        display: st.cw < 1120 ? 'none' : 'block'
+      },
+      // Zwei davon sind Schalter: sie sagen, wie gross der Korpus ist UND was im Stapel liegt.
+      // „comics", nicht „decks": neben der Suche steht, was Georg druckt und zerschneidet.
+      cDecks: (searching ? hitDecks + '/' + decks.length : decks.length) + ' comics',
+      cPages: totalPages + ' pages',
+      cCards: (searching ? hitCards + '/' + totalCards : totalCards) + ' cards',
+      cDeckStyle: countBtn(st.flow && st.flowMode === 'decks'),
+      cPageStyle: countBtn(st.flow && st.flowMode === 'pages'),
+      cCardStyle: { font: 'inherit', color: 'var(--faint)' },
+      cSepStyle: { color: 'var(--faint)', margin: '0 5px' },
+      pickDecks: () => this.setFlowMode('decks'),
+      pickPages: () => this.setFlowMode('pages'),
+
+      // Kein Ausblenden auf Null — das las sich wie ein Neuladen.
+      deckStyle: {
+        // Ein aufgezogenes Blatt am Ende braucht Weg nach unten, sonst haengt die Korrektur
+        // am Anschlag fest.
+        paddingBottom: st.zoomPage ? '34vh' : 0,
+        transition: ph.indexOf('in-') === 0 ? 'none' : 'opacity .2s ease, transform .24s cubic-bezier(.2,.7,.2,1)',
+        opacity: ph ? 0.3 : 1,
+        transform: ph === 'out-up' ? 'translateY(-22px)' : ph === 'out-down' ? 'translateY(22px)'
+          : ph === 'in-down' ? 'translateY(22px)' : ph === 'in-up' ? 'translateY(-22px)' : 'none'
+      },
+
+      // Wortmarke der Site: Avatar im gekippten Rahmen, „Bizarro" auf rotem Marker.
+      avatarStyle: {
+        width: '38px', height: '38px', flex: '0 0 auto', objectFit: 'cover', display: 'block',
+        border: '2.5px solid var(--ink)', boxShadow: '3px 3.5px 0 var(--hard)',
+        transform: 'rotate(-2deg)', background: '#e9c14a'
+      },
+      // Unter 620 px reicht der Platz nicht fuer Wortmarke, Suche UND Knopfreihe. Zuerst geht
+      // die Schrift: der Avatar bleibt als Marke stehen, die Knoepfe bleiben erreichbar.
+      wordmarkStyle: {
+        fontFamily: "'Irish Grover', cursive", fontSize: '21px', letterSpacing: '.01em',
+        whiteSpace: 'nowrap', display: st.cw < 620 ? 'none' : 'inline'
+      },
+      markStyle: {
+        color: '#f6efd9', background: 'var(--accent)', padding: '0 .16em .04em',
+        marginLeft: '.05em', boxShadow: '2px 2px 0 var(--hard)'
+      },
+
+      theme,
+      isDark: dark,
+      isLight: !dark,
+      themeAria: dark ? 'Light paper' : 'Dark theme',
+      toggleTheme: this.toggleTheme,
+
+      iconBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent', color: 'var(--faint)',
+        transition: 'color .12s ease, border-color .12s ease'
+      },
+      railBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent',
+        color: this.railOpen() ? 'var(--accent)' : 'var(--faint)',
+        transition: 'color .12s ease'
+      },
+      toggleRail: this.toggleRail,
+      rail,
+
+      flowOpen: st.flow,
+      toggleFlow: this.toggleFlow,
+      flowBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent',
+        color: st.flow && !st.cover && !st.full ? 'var(--accent)' : 'var(--faint)',
+        transition: 'color .12s ease'
+      },
+      toggleFull: this.toggleFull,
+      fullBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent',
+        color: st.flow && st.full ? 'var(--accent)' : 'var(--faint)',
+        transition: 'color .12s ease'
+      },
+      toggleCover: this.toggleCover,
+      coverBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent',
+        color: st.flow && st.cover ? 'var(--accent)' : 'var(--faint)',
+        transition: 'color .12s ease'
+      },
+      // Unter der Kopfzeile, nicht darueber: dort steht der Umschalter, und eine zweite Leiste
+      // unten braucht es dann nicht.
+      flowStyle: {
+        position: 'absolute', inset: 0, zIndex: 30, overflow: 'hidden',
+        background: 'var(--paper)', touchAction: 'none',
+        // Nur im Coverflow: hier scrollt nichts, also traegt die Perspektive.
+        perspective: st.cover ? '1400px' : 'none',
+        perspectiveOrigin: '50% 50%'
+      },
+      coverOn: st.cover,
+      coverTitle, coverSub,
+      coverHasTitle: !!coverTitle,
+      coverTitleStyle: {
+        position: 'absolute', left: '4vw', right: '4vw', bottom: '54px', zIndex: 240,
+        textAlign: 'center', pointerEvents: 'none'
+      },
+      coverNameStyle: {
+        fontFamily: "'Irish Grover', cursive", fontSize: 'clamp(17px, 2.1vw, 27px)',
+        lineHeight: 1.15, color: 'var(--ink)', textWrap: 'pretty',
+        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
+      },
+      coverSubStyle: {
+        marginTop: '4px', font: '11px/1.3 ' + UI, letterSpacing: '.12em',
+        color: 'var(--faint)', textTransform: 'uppercase'
+      },
+      onCoverDown: (st.cover || st.full) ? this.onCoverDown : null,
+      onCoverMove: (st.cover || st.full) ? this.onCoverMove : null,
+      onCoverUp: (st.cover || st.full) ? this.onCoverUp : null,
+      flowCards,
+      // Schnittkante wie auf der Site (index.html L943–955): 2 px Schiene bei 30 px, gestrichelt
+      // 7/16, die gefahrene Strecke als 4-px-Verlauf von Akzent nach Rost, die Schere 46 px
+      // breit um 100° gedreht. Beim Fahren laeuft das GIF, im Stand das Standbild (L2986–2998).
+      cutRailStyle: (st.cover || st.full) ? {
+        position: 'absolute', left: cutLeft + 'px', right: '24px', bottom: '30px', height: '2px',
+        zIndex: 250, pointerEvents: 'none'
+      } : {
+        position: 'absolute', top: cutTop + 'px', bottom: 0, left: '30px', width: '2px',
+        zIndex: 250, pointerEvents: 'none'
+      },
+      cutUncutStyle: {
+        position: 'absolute', inset: 0, opacity: 0.4,
+        backgroundImage: 'repeating-linear-gradient(to ' + ((st.cover || st.full) ? 'right' : 'bottom')
+          + ', var(--faint) 0 7px, transparent 7px 16px)'
+      },
+      cutDoneStyle: (st.cover || st.full) ? {
+        position: 'absolute', left: 0, top: '-1px', height: '4px',
+        width: Math.max(0, cutX - cutLeft) + 'px',
+        background: 'linear-gradient(90deg, var(--accent), var(--rust))'
+      } : {
+        position: 'absolute', top: 0, left: '-1px', width: '4px',
+        height: Math.max(0, cutY - cutTop) + 'px',
+        background: 'linear-gradient(var(--accent), var(--rust))'
+      },
+      cutNum: String(Math.min(99, Math.round(cutProg * 100))).padStart(2, '0'),
+      cutPctStyle: (st.cover || st.full) ? {
+        position: 'absolute', left: cutX + 'px', bottom: '44px', transform: 'translateX(-50%)',
+        zIndex: 251, font: '10px/1 ' + UI, letterSpacing: '.08em', color: 'var(--faint)',
+        pointerEvents: 'none'
+      } : {
+        position: 'absolute', left: '6px', top: cutY + 'px', transform: 'translateY(-50%)',
+        zIndex: 251, font: '10px/1 ' + UI, letterSpacing: '.08em', color: 'var(--faint)',
+        pointerEvents: 'none'
+      },
+      // Das laufende Blatt liegt als zweite Ebene ueber dem Standbild und wird ein- und
+      // ausgeblendet. Ein `{{ }}` im `src` waere falsch: der Parser holt das Attribut woertlich,
+      // bevor React es aufloest — ein 404 bei jedem Laden.
+      cutSnipStyle: (st.cover || st.full) ? {
+        position: 'absolute', left: cutX + 'px', bottom: '31px', width: '46px', height: '46px',
+        zIndex: 252, pointerEvents: 'none',
+        transform: 'translate(-50%,50%) rotate(10deg)',
+        backgroundImage: 'url(' + SCISSOR_GIF + ')',
+        // Das laufende Blatt behaelt sein Seitenverhaeltnis. Auf 46x24 gequetscht war es eine
+        // ANDERE Schere als das Standbild daneben — der Wechsel sprang dadurch ins Auge.
+        backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+        filter: 'drop-shadow(1px 1px 0 var(--paper))',
+        opacity: st.snipping ? 1 : 0,
+        display: narrow ? 'none' : 'block'
+      } : {
+        position: 'absolute', left: '31px', top: cutY + 'px', width: '46px', height: '46px',
+        zIndex: 252, pointerEvents: 'none',
+        transform: 'translate(-50%,-50%) rotate(100deg)',
+        backgroundImage: 'url(' + SCISSOR_GIF + ')',
+        backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+        filter: 'drop-shadow(1px 1px 0 var(--paper))',
+        opacity: st.snipping ? 1 : 0,
+        display: narrow ? 'none' : 'block'
+      },
+      cutScissorStyle: (st.cover || st.full) ? {
+        position: 'absolute', left: cutX + 'px', bottom: '31px', width: '46px', height: 'auto',
+        zIndex: 251, pointerEvents: 'none',
+        transform: 'translate(-50%,50%) rotate(10deg)',
+        filter: 'drop-shadow(1px 1px 0 var(--paper))',
+        // Beim Fahren laeuft das GIF, im Stand steht das Standbild — nie beide zugleich. Das
+        // GIF hat durchsichtige Stellen: lag das Standbild darunter, standen zwei Scheren
+        // uebereinander, und die Bewegung las sich als Doppelbild.
+        opacity: st.snipping ? 0 : 1,
+        display: narrow ? 'none' : 'block'
+      } : {
+        position: 'absolute', left: '31px', top: cutY + 'px', width: '46px', height: 'auto',
+        zIndex: 251, pointerEvents: 'none',
+        transform: 'translate(-50%,-50%) rotate(100deg)',
+        filter: 'drop-shadow(1px 1px 0 var(--paper))',
+        opacity: st.snipping ? 0 : 1,
+        display: narrow ? 'none' : 'block'
+      },
+      flowCount: '',
+      flowCountStyle: { font: '12px/1 ' + UI, letterSpacing: '.1em', color: 'var(--muted)' },
+      flowHint: st.flowSel ? ''
+        : (st.cover ? 'drag or scroll  ·  click a cover  ·  double-click opens'
+                    : 'scroll to lift the pile  ·  click a card'),
+      flowHintStyle: { font: '11px/1 ' + UI, letterSpacing: '.06em', color: 'var(--faint)' },
+      flowBarStyle: {
+        position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 300,
+        display: 'flex', alignItems: 'center', gap: '14px',
+        padding: '12px 18px', background: 'var(--head)', borderTop: '1px solid var(--line)'
+      },
+      flowCloseStyle: {
+        marginLeft: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '30px', height: '30px', cursor: 'pointer',
+        border: '1.5px solid var(--line)', background: 'transparent', color: 'var(--faint)',
+        transition: 'color .14s ease'
+      },
+      flowPick: !!fSel,
+      pickTitle: fSel ? fSel.title : '',
+      pickSub: fSel ? ((fIdx && fIdx.deckType) || (fSel.cardCount + ' cards')) : '',
+      pickSubStyle: {
+        font: '11px/1.4 ' + UI, letterSpacing: '.04em', color: 'var(--faint)',
+        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+      },
+      pickStyle: {
+        position: 'absolute', left: '50%', bottom: '22px', zIndex: 320,
+        transform: 'translateX(-50%) rotate(-.8deg)',
+        display: 'flex', alignItems: 'center', gap: '12px',
+        maxWidth: 'min(420px, 88vw)', padding: '10px 12px',
+        background: 'var(--paper)', border: '2px solid var(--ink)',
+        boxShadow: '3px 3.5px 0 var(--hard)'
+      },
+      pickBtnStyle: {
+        flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '34px', height: '34px', cursor: 'pointer',
+        border: '1.5px solid var(--ink)', background: 'transparent', color: 'var(--ink)',
+        transition: 'background .14s ease, color .14s ease'
+      },
+      pickOpen: this.flowOpenDeck,
+      pickUrl: fSel ? (fSel.gumroadUrl || fSel.pdfUrl) : '#',
+
+      // Im Stapel bleibt nur die obere Zeile stehen: Titel, Tags und Zaehler gehoeren zum
+      // Deck im LESER, nicht zum Faecher — und die 77 px fehlen den Karten.
+      metaRowStyle: st.flow
+        ? { display: 'none' }
+        : { display: 'flex', flexDirection: 'column', gap: '5px', padding: '0 18px 13px' },
+      // Die Hoehe kommt aus dem Zustand, nirgends sonst.
+      // Beim Wechsel zurueck aus dem Stapel wird die Hoehe GESETZT, nicht gefahren: eine
+      // Uebergangsanimation, die aus `display:none` heraus startet, laeuft in einem nicht
+      // sichtbaren Fenster gar nicht los — die Leiste blieb dann bei berechnet 0 stehen,
+      // obwohl inline 134 px standen, und liess sich nicht mehr aufklappen.
+      // Keine gemessene Hoehe, kein Uebergang, kein zweiter Schreibweg: offen ist `auto`, zu
+      // ist Null. Alles andere hat sich zweimal verklemmt — einmal, weil React und eine
+      // direkte Zuweisung um dieselbe Eigenschaft stritten, einmal, weil ein eingefrorener
+      // Uebergang auf halbem Weg stehenblieb.
+      railWrapStyle: {
+        display: st.flow ? 'none' : 'block',
+        overflow: 'hidden',
+        height: (this.railOpen() && !st.compact && !st.flow) ? 'auto' : 0
+      },
+      pileCount: st.flow && flowList.length
+        ? Math.min(flowList.length, Math.floor(st.flowP) + 1) + ' / ' + flowList.length
+        : '',
+      pileCountStyle: {
+        font: '12px/1 ' + UI, letterSpacing: '.1em', color: 'var(--muted)',
+        whiteSpace: 'nowrap', flex: '0 0 auto',
+        display: (st.flow && st.cw >= 900) ? 'block' : 'none'
+      },
+
+      gridOpen: st.grid,
+      gridAria: st.grid ? 'Close gallery' : 'All comics',
+      gridBtnStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '32px', height: '32px', flex: '0 0 auto', cursor: 'pointer',
+        border: '1.5px solid transparent', background: 'transparent',
+        color: st.grid ? 'var(--accent)' : 'var(--faint)',
+        transition: 'color .12s ease'
+      },
+      toggleGrid: this.toggleGrid,
+      galleryStyle: { position: 'absolute', inset: 0, zIndex: 35, background: 'var(--paper)' },
+      gridHeadStyle: {
+        display: 'flex', alignItems: 'baseline', gap: '14px', flexWrap: 'wrap',
+        padding: ((st.headH || this._headH || 120) + 26) + 'px ' + gut + 'px 4px'
+      },
+      gridTitle: st.marksOnly ? 'Bookmarked' : 'All Comics',
+      gridCount: gridItems.length + ' of ' + decks.length
+        + (searching ? '  ·  filtered' : '')
+        + '  ·  ' + Object.keys(st.seen).length + ' read',
+      marksBtnStyle: chip(st.marksOnly),
+      marksLabel: st.marksOnly ? 'show all' : 'bookmarked only',
+      toggleMarksOnly: () => this.setState({ marksOnly: !st.marksOnly }),
+      gridWrapStyle: {
+        display: 'grid', gap: narrow ? '18px 14px' : '30px 26px',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(' + GW + 'px, 1fr))',
+        alignItems: 'start', padding: '18px ' + gut + 'px 0'
+      },
+      gridItems,
+
+      tipOpen: !!tipDeck,
+      tipStyle: {
+        position: 'fixed', zIndex: 70, pointerEvents: 'auto',
+        // Im Stapel schmaler: er soll neben die Karte passen, nicht auf sie. Mit `border-box`,
+        // sonst kommen Polster und Rahmen oben drauf (330 gedacht, 359 gemessen).
+        // Schmal genug, dass er neben eine Karte oder Zelle passt — in beiden Ansichten.
+        // Breit statt hoch, und unten: hoch und schmal stand er quer ueber dem Motiv, und
+        // genau das soll er nicht. Die Reihe darunter macht ihm Platz, statt ihn zu verdraengen.
+        width: 'min(620px, calc(100vw - 28px))', maxWidth: 'min(620px, calc(100vw - 28px))',
+        left: ((st.tipAt && st.tipAt[0]) || 12) + 'px',
+        top: (st.tipAt && st.tipAt[2]) ? 'auto' : (((st.tipAt && st.tipAt[1]) || 120) + 'px'),
+        bottom: (st.tipAt && st.tipAt[2]) ? st.tipAt[1] + 'px' : 'auto',
+        // Gegen den tatsaechlichen Anker gerechnet, nicht gegen den Seitenkopf: haengt der
+        // Kasten oben bei 376 px, bleiben ihm nicht 100vh minus Kopf, sondern der Rest darunter.
+        // Nie mehr als die halbe Hoehe: der Inhalt scrollt lieber in sich, als das Fenster
+        // zuzudecken.
+        maxHeight: 'min(34vh, calc(100vh - ' + (((st.headH || this._headH || 90) + 40)) + 'px))',
+        overflow: 'hidden',
+        display: 'flex', flexDirection: 'column', gap: '3px',
+        boxSizing: 'border-box', padding: '15px 17px 16px',
+        background: 'var(--paper)',
+        filter: 'drop-shadow(var(--shadow))', clipPath: tipInk ? tipInk.clip : 'none',
+        animation: 'kfbTipIn .16s ease both'
+      },
+      tipTitle: tipDeck ? tipDeck.title : '',
+      tipSub: tipDeck ? ((tipIdx && tipIdx.deckType) || (tipDeck.pages + ' pages · ' + tipDeck.cardCount + ' cards')) : '',
+      tipHasText: !!tipText,
+      tipText,
+      // Tags leben im Tooltip: dort sind sie anklickbar und treppen kein Raster.
+      // Ein Tooltip fuer beide Ansichten. Im Stapel bekommt er zwei Icons dazu, leicht
+      // abgesetzt in derselben Zeile wie die Tags — und wird dort anklickbar.
+      tipActions: true,
+      tipOpenDeck: this.flowOpenDeck,
+      tipUrl: (tipDeck && this.shopUrl(tipDeck)) || '#',
+      tipDlTitle: (tipDeck && this.shopUrl(tipDeck)) ? 'Free download' : 'Coming soon…',
+      tipDlStyle: (tipDeck && this.shopUrl(tipDeck))
+        ? tipBtn
+        : Object.assign({}, tipBtn, { opacity: 0.38, pointerEvents: 'none', cursor: 'default' }),
+      // Der Kasten schluckt Klicks, die nicht ihm gelten — sonst schliesst ihn der Klick, der
+      // gerade einen Tag treffen sollte.
+      tipStop: (e) => e.stopPropagation(),
+      // Der Text scrollt, die Bedienzeile nicht: sie ist das letzte Kind und fiel sonst als
+      // erstes aus dem geklemmten Kasten — genau die beiden Icons, um die es hier geht.
+      tipBodyStyle: {
+        flex: '1 1 auto', minHeight: 0, overflowY: 'auto',
+        display: 'flex', flexDirection: 'column', gap: '3px'
+      },
+      tipRowStyle: {
+        flex: '0 0 auto',
+        display: (tipDeck && (tagsOf(tipDeck, 4).length || st.flow)) ? 'flex' : 'none',
+        flexWrap: 'wrap', alignItems: 'center', gap: '5px', marginTop: '8px',
+        paddingTop: '9px', borderTop: '1px solid var(--line)',
+        pointerEvents: 'auto'
+      },
+      // Trenner und beide Icons als EINE Gruppe: als lose Geschwister im umbrechenden
+      // Behaelter fiel der Umbruch zwischen sie, und das Download-Icon hing allein darunter.
+      tipActStyle: { flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: '5px', marginLeft: 'auto' },
+      // Kein Trennstrich mehr, keine Kaesten um die Icons: sie sollen im Kasten liegen, nicht
+      // darin herumstehen. Der Abstand trennt genug.
+      tipGapStyle: { display: 'none' },
+      tipBtnStyle: tipBtn,
+      // Auch der Kasten bekommt die Kartenkante — dieselbe Feder, dasselbe Papier.
+      tipInkStyle: tipInk
+        ? { position: 'absolute', inset: 0, pointerEvents: 'none', backgroundImage: 'url(' + tipInk.url + ')', backgroundSize: '100% 100%', opacity: dark ? 0.84 : 1 }
+        : { display: 'none' },
+      tipHasTags: !!(tipDeck && tagsOf(tipDeck, 4).length),
+      tipTags: (tipDeck ? tagsOf(tipDeck, 4) : []).map((t) => {
+        const c = tagChip(t, true);
+        return { name: c.name, style: c.style, hit: c.pick };
+      }),
+      tipOut: this.tipOut,
+
+      editOpen: !!st.edit,
+      editTitle: eDeck ? eDeck.title : st.edit,
+      editFont: READ,
+      editFile: raw ? raw.file : (st.editErr || 'loading from github…'),
+      editFileStyle: {
+        font: '11px/1.4 ' + UI, letterSpacing: '.03em', color: 'var(--faint)',
+        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+      },
+      editLoading: !raw,
+      editStatus: st.editErr || 'reading the json from github…',
+      editFields,
+      sheetStyle: {
+        display: 'flex', flexDirection: 'column',
+        width: '100%', maxWidth: '820px', margin: narrow ? '0' : '26px 0',
+        background: 'var(--paper)', border: '2px solid var(--ink)',
+        boxShadow: '4px 5px 0 var(--hard)'
+      },
+      editCloseStyle: {
+        flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '30px', height: '30px', cursor: 'pointer',
+        border: '1.5px solid var(--line)', background: 'transparent', color: 'var(--faint)',
+        transition: 'color .14s ease'
+      },
+      closeEdit: this.closeEdit,
+
+      // Die Werkzeugleiste schreibt Markdown, kein HTML: das Feld im JSON ist Klartext.
+      marks: (window.KFBDeckEdit ? window.KFBDeckEdit.MARKS : []).map((m) => ({
+        label: m.label, hint: m.hint,
+        popStyle: markBtn,
+        grab: this.grabSel,
+        hit: () => this.hitMark(m)
+      })),
+      popOpen: toolOn,
+      popStyle: {
+        position: 'fixed', zIndex: 90,
+        left: Math.max(10, Math.min(window.innerWidth - 250, xy[0] - 120)) + 'px',
+        top: Math.max(10, xy[1] - 46) + 'px',
+        display: 'flex', alignItems: 'center',
+        background: 'var(--paper)', border: '1.5px solid var(--ink)',
+        boxShadow: '3px 3.5px 0 var(--hard)',
+        animation: 'kfbTipIn .12s ease both'
+      },
+      togglePreview: this.togglePreview,
+      prevLabel: st.preview === false ? 'show formatted' : 'hide formatted',
+      prevBtnStyle: {
+        font: '11px/1 ' + UI, letterSpacing: '.06em', padding: '8px 11px', cursor: 'pointer',
+        border: '1.5px solid var(--line)', background: 'transparent', color: 'var(--muted)',
+        transition: 'color .14s ease, border-color .14s ease'
+      },
+      backdropClose: this.backdropClose,
+      stop: this.stop,
+      barStyle: {
+        flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap',
+        padding: '10px 22px', borderTop: '1.5px solid var(--ink)', background: 'var(--head)'
+      },
+      dirtyStyle: {
+        font: '11px/1.3 ' + READ, letterSpacing: '.04em',
+        color: myDirty.length ? 'var(--accent)' : 'var(--faint)'
+      },
+      dirtyLine: myDirty.length
+        ? myDirty.length + (myDirty.length === 1 ? ' field changed' : ' fields changed')
+        : 'no changes',
+      ghostStyle: {
+        font: '11px/1 ' + UI, letterSpacing: '.06em', padding: '8px 11px', cursor: 'pointer',
+        border: '1.5px solid var(--line)', background: 'transparent', color: 'var(--muted)',
+        transition: 'color .14s ease, border-color .14s ease'
+      },
+      primaryStyle: {
+        font: '14px/1 "Irish Grover", cursive', padding: '9px 15px', cursor: 'pointer',
+        border: '2px solid var(--ink)', background: 'var(--accent)', color: 'var(--on-accent)',
+        boxShadow: '3px 3.5px 0 var(--hard)', transform: 'rotate(-1deg)',
+        transition: 'transform .16s cubic-bezier(.2,.7,.2,1), box-shadow .16s ease'
+      },
+      saveLabel: this._saved && Date.now() - this._saved < 4000 ? 'saved ✓' : 'save session',
+      hasBulk: dirtyPacks.length > 1,
+      bulkLabel: 'export all ' + dirtyPacks.length,
+      doExport: this.doExport,
+      doBulk: this.doBulk,
+      doSaveSession: this.doSaveSession,
+      doImport: this.doImport,
+      onFile: this.onFile,
+      fileRef: (el) => { this.fileEl = el; },
+
+      query: st.query,
+      hasQuery: st.query.length > 0,
+      onQuery: this.onQuery,
+      clearQuery: this.clearQuery,
+      searching,
+      // Der Blattfilter gilt nur im offenen Deck — ohne Kartentreffer dort gibt es nichts zu
+      // filtern, dann steht der Schalter auch nicht da.
+      showFilter: hitCount > 0,
+      filterStyle: chip(st.filter),
+      filterLabel: st.filter ? 'hits only' : 'all sheets',
+      toggleFilter: this.toggleFilter,
+      // Kein Knopf zum Weitersuchen: das X im Suchfeld macht das, und Enter im Feld springt
+      // von Treffer zu Treffer.
+      nextHit: this.nextHit,
+
+      // Die Pfeile sitzen an der Leiste, nicht am Titel: dort haben sie einen festen Platz,
+      // egal wie lang der Titel ist. Sichtbar erst beim Zeigen, und sie liegen NEBEN den
+      // Karten, nicht darauf — sonst frisst der Pfeil den Klick auf das erste Deck.
+      railIn: () => { if (!this.state.railHot) this.setState({ railHot: true }); },
+      railOut: () => { if (this.state.railHot) this.setState({ railHot: false }); },
+      prevStyle: railArrow('left'),
+      nextStyle: railArrow('right'),
+      goPrev: this.goPrev,
+      goNext: this.goNext,
+
+      deckTitle: deck ? deck.title : '',
+      // Feste zwei Zeilen: oben Titel zwischen den Pfeilen, darunter Tags und Zahlen. Vorher
+      // lag alles in einer umbrechenden Reihe — bei langen Titeln rutschte der Pfeil weg und
+      // die Zeile sprang je Deck um bis zu drei Hoehen.
+      // Eine Zeile, sonst springt der Kopf je Deck um eine Titelhoehe.
+      titleStyle: {
+        margin: 0, minWidth: 0,
+        font: '400 ' + (narrow ? 18 : 22) + 'px/1.25 "Irish Grover", cursive',
+        letterSpacing: '.01em',
+        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+      },
+      deckTags: rawTags.map((t) => tagChip(t, false)),
+      deckMeta: deck ? ((di + 1) + '/' + decks.length + '  ·  ' + deck.cardCount + ' cards') : '',
+      progressLine: st.flow
+        ? (flowList.length ? Math.min(flowList.length, Math.floor(st.flowP) + 1) + ' / ' + flowList.length + '  ·  pile' : '')
+        : (st.pages ? String(st.cur).padStart(2, '0') + ' / ' + String(st.pages).padStart(2, '0') : ''),
+
+      items,
+      hasEnd: st.pages > 0,
+      endLine: deck ? 'End of ' + deck.title : '',
+      turnBtnStyle: {
+        border: '2px solid var(--ink)', background: 'var(--accent)', color: 'var(--on-accent)',
+        padding: '11px 20px', cursor: 'pointer', boxShadow: '3px 3.5px 0 var(--hard)',
+        font: '17px/1 "Irish Grover", cursive', transform: 'rotate(-1deg)',
+        transition: 'transform .16s cubic-bezier(.2,.7,.2,1), box-shadow .16s ease'
+      },
+      nextLabel: nextD ? 'next: ' + nextD.title : '',
+      pushTrackStyle: { width: '132px', height: '3px', background: 'var(--line)', overflow: 'hidden' },
+      pushFillStyle: {
+        width: Math.round(Math.min(1, st.push) * 100) + '%', height: '100%',
+        background: 'var(--accent)', transition: st.push ? 'width .1s linear' : 'width .3s ease'
+      },
+      // Nach oben dieselbe Regel wie nach unten: erst schieben, dann blaettern — und derselbe
+      // Balken als Beleg. Vorher fiel man am Cover wortlos ins vorige Deck.
+      // Der Balken liegt UEBER dem Blatt, nicht darin: ein Element im Fluss verschiebt am
+      // oberen Anschlag die Scrollhoehe, und die Korrektur loest den naechsten Durchlauf aus.
+      pushUp: st.pushDir === -1 && st.push > 0 && !st.flow && !st.grid,
+      pushUpStyle: {
+        position: 'absolute', left: 0, right: 0, top: ((st.headH || this._headH || 120) + 14) + 'px',
+        zIndex: 25, pointerEvents: 'none',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '9px'
+      },
+      pushUpLine: prevD ? 'keep pushing for ' + prevD.title : '',
+      pushHint: st.pushDir === -1 && prevD ? 'keep pushing for ' + prevD.title
+        : 'keep scrolling to turn the comic'
+    };
+  }
+}
+</script>
+</body>
+</html>

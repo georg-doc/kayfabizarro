@@ -1,0 +1,11 @@
+# ASSET REFS (all PINNED_REMOTE unless noted)
+- georg-doc/kayfabizarro @8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e — edit-layer, graft-mount chain, EyeRig v6, pet-mouth v1, graft profile, Resident scenes
+- @032c9d50cd5de6764fa37fec65cb203ed35fcb11 — KFB Motion Library 01 (catalog, profiles, reader, Rig_Medium/Large GLBs)
+- @b97b5ac55df2724fae623992433685583eece51e — KayKit Character Animations 1.1 (Rig_Medium General/MovementBasic/MovementAdvanced, Rig_Large MovementBasic)
+- @10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0 — KayKit Legacy (Orc Warband parts/props, Character Animations 1.2)
+- @891eadf01e218f5fc21387e64cea1fec8332c5b6 — Orc Brute + texture
+- @19088b142c6a7e7626f27fba8e80caf6ab2437c1 (PR #214 head) — ear-rig/ear-dangle.v1.js, rigs/fb-default.ear-rig.json, glb/FB_TEMPLATE_LOOK_v5.glb
+- @b64d7edca3ec0d184d97f1b3a5db0103332e3e54 (main) — S39 band module + def; wd-sky.js; band def pins its own assets (891eadf0, 10a7fdce, c19e291e song, PR #195/#209 clips — per band doc some read at branch heads = UNPINNED_REMOTE inside the donor)
+- wd-sky.js imports skydome/tinyskies owners @main only for non-'real' modes (not used) — UNPINNED_REMOTE, unused path
+- three@0.160.0 via unpkg — CDN_EXTERNAL
+- Google Fonts (Space Grotesk, IBM Plex Mono) — CDN_EXTERNAL

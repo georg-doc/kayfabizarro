@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="icon" href="data:,">
+<title>KFB Race · Clean Racer HUD v2</title>
+<link rel="stylesheet" href="./hud-racer.css">
+<script>
+window.OW_SRC={
+  kfb:(p='')=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/8d534f013710d4aa57d1ca2baa7358b2957c35a5/media/kfb/'+p,
+  rel:(p,self,fallback)=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/8d534f013710d4aa57d1ca2baa7358b2957c35a5/'+fallback
+};
+</script>
+<script src="https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@8d534f013710d4aa57d1ca2baa7358b2957c35a5/overworld/overworld/card-art-2d.js"></script>
+</head>
+<body>
+<iframe id="driveHost" title="KFB Race v0.8 host"></iframe>
+
+<div id="hud" aria-label="KFB clean racer HUD">
+  <section id="audioStrip" class="audioStrip" aria-label="Radio">
+    <span class="audioMark" aria-hidden="true"></span>
+    <div class="audioCopy">
+      <span class="audioKicker">KFB / RADIO</span>
+      <strong id="radioTitle">RADIO OFF</strong>
+    </div>
+    <div class="audioControls">
+      <button id="radioPlay" type="button" aria-label="Play or pause">▶</button>
+      <button id="radioNext" type="button" aria-label="Next track">›</button>
+      <div class="volumeGlyph" aria-hidden="true"><i></i><i></i><i></i></div>
+      <input id="radioVolume" aria-label="Volume" type="range" min="0" max="1" step="0.05" value="0.45">
+    </div>
+  </section>
+
+  <section id="speedCluster" class="speedCluster" aria-label="Speed, drive state and boost">
+    <svg class="speedArc" viewBox="0 0 220 140" aria-hidden="true">
+      <defs>
+        <linearGradient id="speedGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4bd2e4"/>
+          <stop offset=".72" stop-color="#4bd2e4"/>
+          <stop offset=".88" stop-color="#f2bc4d"/>
+          <stop offset="1" stop-color="#e66a4f"/>
+        </linearGradient>
+      </defs>
+      <path class="arcGhost" d="M24 118 A86 86 0 0 1 196 118" pathLength="100"/>
+      <path id="speedArcLive" class="arcLive" d="M24 118 A86 86 0 0 1 196 118" pathLength="100"/>
+      <path class="arcTick" d="M24 118 L35 113 M52 58 L59 67 M110 30 L110 42 M168 58 L161 67 M196 118 L185 113"/>
+    </svg>
+    <div class="speedNumerals">
+      <strong id="speedValue">0</strong>
+      <span>KM/H</span>
+    </div>
+    <div class="driveLine">
+      <b id="driveState">GRIP</b>
+      <em id="boostState">BOOST</em>
+    </div>
+    <div class="boostSegments" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </section>
+
+  <section id="almanac" class="almanac" tabindex="0" aria-label="Fractal Almanac">
+    <div id="almanacCards"></div>
+  </section>
+
+  <div id="buildStamp">HUD V2 · CLEAN RACER</div>
+</div>
+
+<div id="failure" hidden></div>
+<script type="module" src="./hud-racer.mjs"></script>
+</body>
+</html>

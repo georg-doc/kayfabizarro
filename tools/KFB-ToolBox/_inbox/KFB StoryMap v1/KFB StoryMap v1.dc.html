@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+/* UI-Idiom 1:1 aus tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator …/
+   KayKit_Sample_Atlas_S20.html @ main — sticky Kopfzeile, 26px-Knöpfe, aria-pressed als
+   Zustand, Mono-Kapitälchen als Gruppenlabel, .card/.tag/.n. Tokens und Maße übernommen. */
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#120e18;color:#e6e0f0;
+  font:13px/1.6 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+a{color:#b79ae0;text-decoration:none}a:hover{color:#cdb8ee}
+#bar{position:absolute;top:0;left:0;right:0;z-index:6;display:flex;align-items:center;gap:6px;
+  flex-wrap:wrap;padding:7px 12px;background:#171122e8;border-bottom:1px solid #2a2135;
+  backdrop-filter:blur(6px)}
+.lbl{font:600 10px/1 ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;
+  color:#8a7d9e;margin:0 2px 0 6px;white-space:nowrap}
+.lbl:first-child{margin-left:0}
+button{font:11px/1 inherit;height:26px;padding:0 9px;background:#1e1729;color:#e6e0f0;
+  border:1px solid #3b2f4d;border-radius:5px;cursor:pointer;appearance:none;white-space:nowrap}
+button:hover{background:#281f36}
+button[aria-pressed="true"]{background:#7a5ea8;border-color:#9b7fd0;color:#140f1d}
+select{font:11px/1 inherit;height:26px;padding:0 6px;background:#1e1729;color:#e6e0f0;
+  border:1px solid #3b2f4d;border-radius:5px;max-width:150px}
+input[type=range]{height:26px;accent-color:#7a5ea8}
+.tag{font:10px/1 ui-monospace,monospace;color:#6d6084;border:1px solid #2f2640;border-radius:4px;
+  padding:4px 6px;white-space:nowrap}
+.tag.ok{color:#a6dcbc;border-color:#2c5240}
+.tag.bad{color:#f0b49a;border-color:#6d3f26}
+.sep{width:1px;align-self:stretch;background:#2a2135;margin:0 4px}
+#stage{position:absolute;inset:0}
+#sma-board{position:absolute;inset:0}
+#sma-board canvas,#sma-piece canvas,#sma-landmark canvas{display:block;width:100%;height:100%;touch-action:none}
+#side{position:absolute;right:10px;z-index:5;width:250px;display:flex;flex-direction:column;gap:10px;
+  overflow:auto;transition:transform .18s}
+#side.hide{transform:translateX(calc(100% + 18px))}
+/* flex-shrink:0 ist Pflicht, nicht Geschmack: #side hat eine gesetzte max-height, und mit
+   dem Default 1 quetscht der Flex-Algorithmus jede Karte unter ihre Inhaltshöhe. overflow:hidden
+   schneidet dann ab, und das overflow:auto der Spalte greift nie, weil die Kinder "passen". */
+.card{flex:0 0 auto;border:1px solid #2a2135;border-radius:10px;background:#161020cc;backdrop-filter:blur(6px);overflow:hidden}
+.card h3{font:600 10px/1 ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;
+  color:#8a7d9e;margin:0;padding:9px 10px 7px}
+.card .in{padding:0 10px 10px}
+.n{font:10px/1.6 ui-monospace,monospace;color:#c8b7e6;background:#0f0c16;border:1px solid #241c31;
+  border-radius:4px;padding:2px 5px;display:inline-block;margin:2px 3px 0 0;overflow-wrap:anywhere}
+@media(max-width:700px){#side{left:10px;width:auto}}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</helmet>
+
+<div data-screen-label="KFB StoryMap v1" id="stage">
+
+  <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#120e18"/><rect x="10" y="26" width="80" height="48" rx="5" fill="#1d5b60" stroke="#17131b" stroke-width="2"/><path d="M26 34h22l6 10-8 14H24l-5-12z" fill="#e8a33c" stroke="#17131b" stroke-width="2"/><path d="M56 38h20l4 12-6 14H54l-4-12z" fill="#c4523a" stroke="#17131b" stroke-width="2"/><path d="M40 20l6 10h-12z" fill="#dcb98a" stroke="#17131b" stroke-width="2"/></svg></template>
+
+  <div id="sma-board"></div>
+
+  <div id="bar">
+    <span class="lbl">StoryMap v1</span>
+    <span class="tag">{{ selLine }}</span>
+    <span id="sma-status" class="tag">lädt …</span>
+
+    <span class="sep"></span>
+    <span class="lbl">Kamera</span>
+    <button data-cam="FLAT" aria-pressed="false" onClick="{{ camFlat }}">Flat</button>
+    <button data-cam="TABLE" aria-pressed="true" onClick="{{ camTable }}">Table</button>
+    <button data-cam="FLYOVER" aria-pressed="false" onClick="{{ camFly }}">Flyover</button>
+    <button data-cam="POPUP" aria-pressed="false" onClick="{{ camPopup }}">Pop-up</button>
+
+    <span class="sep"></span>
+    <span class="lbl">Ansicht</span>
+    <button data-edge="outline" aria-pressed="true" onClick="{{ edgeOutline }}">Tusche</button>
+    <button data-edge="shadow" aria-pressed="false" onClick="{{ edgeShadow }}">Schatten</button>
+    <button data-tog="voxel" aria-pressed="false" onClick="{{ doVoxel }}">Voxel</button>
+    <button data-tog="water" aria-pressed="false" onClick="{{ doWater }}">Wasser</button>
+    <button data-tog="palette" aria-pressed="true" onClick="{{ doPalette }}">Farbe</button>
+    <button data-tog="deform" aria-pressed="false" onClick="{{ doDeform }}">Cartoon</button>
+    <button data-tog="bits" aria-pressed="false" onClick="{{ doBits }}">Figuren</button>
+
+    <span class="sep"></span>
+    <span class="lbl">Aktion</span>
+    <button onClick="{{ aRaise }}">Raise</button>
+    <button onClick="{{ aStand }}">Stand up</button>
+    <button onClick="{{ aSlide }}">Slide</button>
+    <button onClick="{{ aRotate }}">Rotate</button>
+    <button onClick="{{ aFlip }}">Flip</button>
+    <button onClick="{{ aPulse }}">Pulse</button>
+    <button onClick="{{ aSnap }}">Snap</button>
+    <button onClick="{{ doExplode }}">{{ explodeLabel }}</button>
+    <button onClick="{{ doRipple }}">Ripple</button>
+
+    <span class="sep"></span>
+    <sc-if value="{{ hasMissing }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ doRetry }}" style="border-color:#6d3f26;color:#f0b49a">{{ missingLabel }}</button>
+    </sc-if>
+    <button onClick="{{ doExport }}">Snapshot ↓</button>
+    <button onClick="{{ doImport }}">Snapshot ↑</button>
+    <input ref="{{ setFileInput }}" type="file" accept="application/json,.json" onChange="{{ onFile }}" style="display: none;" />
+    <button data-tog="side" aria-pressed="true" onClick="{{ toggleSide }}">Details</button>
+    <button onClick="{{ doReset }}">Reset</button>
+  </div>
+
+  <div id="side" ref="{{ setSide }}">
+    <div class="card">
+      <h3>Stück · {{ isoCode }}</h3>
+      <div id="sma-piece" style="position: relative; height: 150px; background: #0e0b14; border-top: 1px solid #241c31; border-bottom: 1px solid #241c31;"></div>
+    </div>
+
+    <div class="card">
+      <h3>Landmark</h3>
+      <div id="sma-landmark" style="position: relative; height: 150px; background: #0e0b14; border-top: 1px solid #241c31; border-bottom: 1px solid #241c31;">
+        <sc-if value="{{ lmFailed }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: 10px; text-align: center; background: #4a1f16; color: #ffbb9c;">
+            <div>
+              <div style="font: 600 10px/1 ui-monospace, monospace; letter-spacing: 0.08em;">SOURCE ASSET FAILED</div>
+              <div style="margin-top: 5px; font: 9px/1.5 ui-monospace, monospace; overflow-wrap: anywhere;">{{ lmError }}</div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <div class="in" style="padding-top: 8px; display: flex; gap: 5px; flex-wrap: wrap;">
+        <select onChange="{{ pickModel }}" style="flex: 1 1 100px;">
+          <option value="eiffel">Eiffel</option>
+          <option value="giza">Giza</option>
+          <option value="stonehenge">Stonehenge</option>
+          <option value="pentagon">Pentagon</option>
+          <option value="spasskaya">Spasskaya</option>
+          <option value="kremlin-wall">Kremlin wall</option>
+        </select>
+        <button onClick="{{ doAnchor }}">Setzen</button>
+        <button onClick="{{ doUnanchor }}">Ab</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Regler</h3>
+      <div class="in" style="display: flex; flex-direction: column; gap: 7px; padding-top: 4px;">
+        <div style="display: flex; gap: 4px;">
+          <button data-ink="ink" aria-pressed="true" onClick="{{ inkInk }}" style="flex: 1;">Ink</button>
+          <button data-ink="bend" aria-pressed="false" onClick="{{ inkBend }}" style="flex: 1;">Bend</button>
+          <button data-ink="torn" aria-pressed="false" onClick="{{ inkTorn }}" style="flex: 1;">Torn</button>
+        </div>
+        <label style="display: flex; align-items: center; gap: 7px; font: 10px/1 ui-monospace, monospace; color: #8a7d9e;">FEDER
+          <input type="range" min="0.3" max="2.2" step="0.05" value="1" onInput="{{ onInkGain }}" style="flex: 1;" />
+        </label>
+        <label style="display: flex; align-items: center; gap: 7px; font: 10px/1 ui-monospace, monospace; color: #8a7d9e;">BOGEN
+          <input type="range" min="0" max="3" step="0.05" value="1" onInput="{{ onDeform }}" style="flex: 1;" />
+        </label>
+        <label style="display: flex; align-items: center; gap: 7px; font: 10px/1 ui-monospace, monospace; color: #8a7d9e;">HÖHE
+          <input type="range" min="0.2" max="3" step="0.05" value="1" onInput="{{ onEdgeHeight }}" style="flex: 1;" />
+        </label>
+        <label style="display: flex; align-items: center; gap: 7px; font: 10px/1 ui-monospace, monospace; color: #8a7d9e;">ZELLE
+          <input type="range" min="0.9" max="2.6" step="0.1" value="1.4" onChange="{{ onVoxelCell }}" style="flex: 1;" />
+        </label>
+        <select ref="{{ setPaletteSelect }}" onChange="{{ pickPalette }}" style="max-width: none;">
+          <sc-for list="{{ paletteMenu }}" as="p" hint-placeholder-count="9">
+            <option value="{{ p.id }}">{{ p.name }}</option>
+          </sc-for>
+        </select>
+        <select ref="{{ setFluidSelect }}" onChange="{{ pickFluid }}" style="max-width: none;">
+          <sc-for list="{{ fluidMenu }}" as="f" hint-placeholder-count="5">
+            <option value="{{ f.id }}">{{ f.name }}</option>
+          </sc-for>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quellen</h3>
+      <div class="in" style="font: 10px/1.6 ui-monospace, monospace; color: #8a7d9e; overflow-wrap: anywhere;">
+        <div>{{ voxelLine }}</div>
+        <div>{{ waterCellLine }}</div>
+        <div style="margin-top: 5px;">Brett · kfb-cartoon-map-board @ dadf2fa3</div>
+        <div>Tusche · kfb-ink-canon.js · {{ inkStatusLine }}</div>
+        <div>Wasser · Card Zone v2 source-lock (kfb-fluid-v2)</div>
+        <div>Voxel · D6-Raster + edge3.jpg aus kfb-voxel-world-v1</div>
+        <div>Farbe · {{ paletteSource }}</div>
+        <div>{{ colorLine }}</div>
+        <div>UI · KayKit_Sample_Atlas_S20.html</div>
+        <div style="margin-top: 5px; color: #6d6084;">Kartendaten © OpenStreetMap contributors, ODbL 1.0</div>
+        <div><a href="docs/SMA1-GATE.md">docs/SMA1-GATE.md</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div ref="{{ setToast }}" style="position: absolute; z-index: 20; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 7px 11px; border-radius: 6px; background: #0f0c16e6; border: 1px solid #3b2f4d; opacity: 0; pointer-events: none; transition: opacity .18s; font: 11px/1 ui-monospace, monospace; color: #c8b7e6;"></div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 800 }
+}">
+class Component extends DCLogic {
+  state = { st: null };
+
+  componentDidMount() {
+    this.layout();
+    addEventListener('resize', () => this.layout());
+    const url = new URL('sma1-map-animator.js', document.baseURI).href + '?v=' + Date.now();
+    import(url)
+      .then(m => m.mount({
+        onStatus: (s) => this.status(s),
+        onState: (st) => { this.setState({ st }); if (this._ready) { this.status(null); this.syncSelects(); } }
+      }))
+      .then(api => {
+        this.api = api; this._ready = true;
+        this.status(null); this.syncSelects();
+        // Wasser NICHT automatisch: Maske plus ~9k Quads direkt nach den 40 Downloads
+        // blockiert den Hauptthread sichtbar. Der Zustand steht jetzt am Knopf
+        // (aria-pressed), das war ohnehin die Ursache der Verwechslung.
+      })
+      .catch(err => {
+        console.error('[SMA1] mount failed', err && (err.stack || err.message || String(err)));
+        this.status('SOURCE FAILED · ' + (err.message || err), 'bad');
+      });
+  }
+
+  // Die Kopfzeile bricht je nach Breite um; die Seitenspalte hängt darunter.
+  layout() {
+    const bar = document.getElementById('bar'), side = document.getElementById('side');
+    if (!bar || !side) return;
+    const h = Math.ceil(bar.getBoundingClientRect().height);
+    side.style.top = (h + 10) + 'px';
+    side.style.maxHeight = 'calc(100vh - ' + (h + 20) + 'px)';
+  }
+
+  status(text, kind) {
+    const el = document.getElementById('sma-status');
+    if (!el) return;
+    if (text === null) {
+      const s = this.state.st, miss = s ? (s.expected - s.pieces) : 0;
+      const cerr = s && s.color ? (s.color.error || (s.pieces && !s.color.applied ? 'NICHT GEFÄRBT' : null)) : null;
+      el.textContent = (s ? s.pieces + '/' + s.expected + ' Länder' : 'bereit')
+        + (miss ? ' · ' + miss + ' fehlen' : '') + (cerr ? ' · ' + cerr : '');
+      el.className = 'tag ' + ((miss || cerr) ? 'bad' : 'ok');
+      this.layout();
+      return;
+    }
+    el.textContent = text;
+    el.className = 'tag ' + (kind === 'bad' ? 'bad' : '');
+    this.layout();
+  }
+  say(t) {
+    const el = this.toastEl; if (!el) return;
+    el.textContent = t; el.style.opacity = '1';
+    clearTimeout(this._toast);
+    this._toast = setTimeout(() => { el.style.opacity = '0'; }, 1400);
+  }
+  press(sel, on) { const b = document.querySelector(sel); if (b) b.setAttribute('aria-pressed', String(!!on)); }
+  radio(sel, key, value) {
+    document.querySelectorAll(sel).forEach(b => b.setAttribute('aria-pressed', String(b.dataset[key] === value)));
+  }
+
+  syncSelects() {
+    if (!this.api) { clearTimeout(this._sync); this._sync = setTimeout(() => this.syncSelects(), 120); return; }
+    const p = this._palSel, f = this._fluidSel;
+    if (p && p.options.length) { const w = this.api.paletteName(); if (p.value !== w) p.value = w; }
+    if (f && f.options.length) { const w = this.api.fluid(); if (f.value !== w) f.value = w; }
+  }
+
+  cam(n, l) { if (this.api) this.api.camera(n); this.radio('[data-cam]', 'cam', n); this.say(l); }
+  act(n) { if (this.api) this.api.act(n); this.say(n.replace('_', ' ')); }
+  ink(n) { if (this.api) this.api.setInkPreset(n); this.radio('[data-ink]', 'ink', n); this.say('Tusche · ' + n); }
+
+  renderVals() {
+    const s = this.state.st, lm = s && s.landmark;
+    const missing = s ? (s.expected - s.pieces) : 0;
+    return {
+      selLine: s && s.selected ? s.selected.name + ' · ' + s.selected.code : '—',
+      isoCode: s && s.selected ? s.selected.code : '—',
+      lmFailed: !!(lm && lm.status === 'failed'),
+      lmError: (lm && lm.error) || '',
+      inkStatusLine: s && s.ink ? s.ink.status : 'lädt …',
+      explodeLabel: s && s.exploded ? 'Assemble' : 'Explode',
+      // Der Knopf verspricht nur, was retryMissing() wirklich kann: er arbeitet failedFiles ab.
+      // `expected - pieces` zählt auch noch laufende Abrufe mit — daraus wurde „26 nachladen“,
+      // das einen Abruf machte und „vollständig“ meldete, während 25 Länder fehlten.
+      hasMissing: (s ? s.retryable : 0) > 0,
+      missingLabel: (s ? s.retryable : 0) + ' nachladen',
+      paletteSource: String(s && s.paletteName).startsWith('atlas-')
+        ? 'kuratierter Atlas-Satz (Hex für Hex, Meer inklusive)'
+        : 'world-palettes.js (Terrain-Rampe)',
+      colorLine: !(s && s.color) ? 'Graphfärbung · lädt …'
+        : s.color.error ? s.color.error
+        : !s.color.applied ? 'NICHT GEFÄRBT · Stücke tragen Seed-Farben'
+        : 'Graphfärbung · ' + s.color.edges + ' Grenzen · ' + s.color.families + ' Haupttöne · '
+          + (s.color.famConflicts ? s.color.famConflicts + ' Ton-Dubletten' : 'kein Ton doppelt') + ' · ΔE min ' + s.color.minDE,
+      voxelLine: s && s.voxel && s.voxel.error ? s.voxel.error
+        : (s && s.voxel && s.voxel.count ? s.voxel.count.toLocaleString('de') + ' Voxel · Zelle ' + s.voxel.cell.toFixed(1) : 'Voxel aus'),
+      waterCellLine: s && s.water && s.water.error ? s.water.error
+        : (s && s.water && s.water.cells ? s.water.cells.toLocaleString('de') + ' nasse Zellen' : 'Wasser aus'),
+      paletteMenu: (this.api ? this.api.paletteMenu() : []).map(p => ({ id: p.id, name: p.name })),
+      fluidMenu: (this.api ? this.api.fluidKeys() : []),
+
+      camFlat: () => this.cam('FLAT', 'FLAT'),
+      camTable: () => this.cam('TABLE', 'TABLE'),
+      camFly: () => this.cam('FLYOVER', 'FLYOVER'),
+      camPopup: () => this.cam('POPUP', 'POP-UP'),
+      aRaise: () => this.act('RAISE'),
+      aStand: () => this.act('STAND_UP'),
+      aSlide: () => this.act('SLIDE'),
+      aRotate: () => this.act('ROTATE'),
+      aFlip: () => this.act('FLIP'),
+      aPulse: () => this.act('PULSE'),
+      aSnap: () => this.act('SNAP_HOME'),
+      doExplode: () => { if (this.api) this.say(this.api.explode() ? 'EXPLODE' : 'ASSEMBLE'); },
+      doRipple: () => { if (this.api) { this.api.ripple(); this.say('RIPPLE'); } },
+      doReset: () => {
+        if (!this.api) return;
+        this.api.reset();
+        this.radio('[data-cam]', 'cam', 'TABLE');
+        this.api.setPalette(true); this.press('[data-tog="palette"]', true);
+        this.say('KANONISCH');
+      },
+      edgeOutline: () => { if (this.api) this.api.setEdgeMode('outline'); this.radio('[data-edge]', 'edge', 'outline'); this.say('Kante · Tusche'); },
+      edgeShadow: () => { if (this.api) this.api.setEdgeMode('shadow'); this.radio('[data-edge]', 'edge', 'shadow'); this.say('Kante · Schatten'); },
+      inkInk: () => this.ink('ink'),
+      inkBend: () => this.ink('bend'),
+      inkTorn: () => this.ink('torn'),
+      onInkGain: (ev) => { if (this.api) this.api.setInkGain(parseFloat(ev.target.value)); },
+      onEdgeHeight: (ev) => { if (this.api) this.api.setEdgeHeight(parseFloat(ev.target.value)); },
+      onDeform: (ev) => { if (this.api) this.api.setDeformStrength(parseFloat(ev.target.value)); },
+      doBits: (ev) => {
+        if (!this.api) return;
+        const b = ev.currentTarget;
+        this.say('Figuren …');
+        this.api.setBits(!this.api.bits()).then(on => {
+          b.setAttribute('aria-pressed', String(on));
+          this.setState({ st: this.api.state() });
+          const i = this.api.bitsInfo();
+          if (i.error) this.status(i.error, 'bad');
+          this.say(i.error ? i.error : (on ? i.placed + '/' + i.hosts + ' Figuren gesetzt' : 'Figuren weg'));
+        });
+      },
+      doDeform: (ev) => {
+        if (!this.api) return;
+        const on = this.api.setDeform(!this.api.deform());
+        ev.currentTarget.setAttribute('aria-pressed', String(on));
+        const i = this.api.deformInfo();
+        this.say(i.error ? i.error : 'Cartoon ' + (on ? 'an' : 'aus') + ' · ' + i.groups + ' Gruppen');
+      },
+      setFileInput: (el) => { if (el) this._file = el; },
+      doExport: () => {
+        if (!this.api) return;
+        const doc = this.api.exportSnapshot();
+        const blob = new Blob([JSON.stringify(doc)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'kfb-storymap-europe-' + doc.generated.slice(0, 10) + '.json';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        this.say(doc.counts.pieces + ' Stücke exportiert');
+      },
+      doImport: () => { if (this._file) this._file.click(); },
+      onFile: (ev) => {
+        const f = ev.target.files && ev.target.files[0];
+        if (!f || !this.api) return;
+        f.text().then(t => {
+          const r = this.api.importSnapshot(JSON.parse(t));
+          this.setState({ st: this.api.state() });
+          this.say(r.pieces + ' Stücke aus Snapshot');
+        }).catch(e => this.status('Import fehlgeschlagen · ' + (e.message || e), 'bad'));
+        ev.target.value = '';
+      },
+      onVoxelCell: (ev) => {
+        if (!this.api) return;
+        this.say('Raster neu …');
+        this.api.setVoxelCell(parseFloat(ev.target.value)).then(() => this.setState({ st: this.api.state() }));
+      },
+      doVoxel: (ev) => {
+        if (!this.api) return;
+        const b = ev.currentTarget;
+        this.say('Voxel …');
+        this.api.setVoxel(!this.api.voxel()).then(on => {
+          b.setAttribute('aria-pressed', String(on));
+          this.setState({ st: this.api.state() });
+          this.say('Voxel ' + (on ? 'an' : 'aus'));
+        });
+      },
+      doWater: (ev) => {
+        if (!this.api) return;
+        const b = ev.currentTarget;
+        this.api.setWater(!this.api.water()).then(on => {
+          b.setAttribute('aria-pressed', String(on));
+          this.setState({ st: this.api.state() });
+          this.say('Wasser ' + (on ? 'an' : 'aus'));
+        });
+      },
+      doPalette: (ev) => {
+        if (!this.api) return;
+        const on = this.api.setPalette(!this.api.palette());
+        ev.currentTarget.setAttribute('aria-pressed', String(on));
+        this.say('Farbe ' + (on ? 'an' : 'aus'));
+      },
+      toggleSide: (ev) => {
+        const el = document.getElementById('side'); if (!el) return;
+        const hidden = el.classList.toggle('hide');
+        ev.currentTarget.setAttribute('aria-pressed', String(!hidden));
+      },
+      doRetry: () => {
+        if (!this.api) return;
+        this.say('lade nach …');
+        this.api.retryMissing().then(left => this.say(left ? left + ' fehlen weiter' : 'vollständig'));
+      },
+      doAnchor: () => { if (this.api && this.api.anchorLandmark()) this.say('Landmark gesetzt'); },
+      doUnanchor: () => { if (this.api) { this.api.unanchorLandmark(); this.setState({ st: this.api.state() }); this.say('abgenommen'); } },
+      pickModel: (ev) => { if (this.api) this.api.loadLandmark(ev.target.value); },
+      pickPalette: (ev) => { if (this.api) this.say('Farbwelt · ' + this.api.setPaletteName(ev.target.value)); },
+      pickFluid: (ev) => { if (this.api) { this.api.setFluid(ev.target.value); this.say('Füllung · ' + ev.target.value); } },
+      setPaletteSelect: (el) => { if (el) { this._palSel = el; this.syncSelects(); } },
+      setFluidSelect: (el) => { if (el) { this._fluidSel = el; this.syncSelects(); } },
+      setSide: () => this.layout(),
+      setToast: (el) => { if (el) this.toastEl = el; }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.public-mirror/0.2",
+  "build": "STUNT-WORLD-S1-CORRIDOR-20260919",
+  "status": "PUBLIC_STAGE_BROWSER_PASS_HUMAN_FULL_ROUTE_OPEN",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "testedRuntimeCommit": "d2529e634952f25d691d68873801b2651125ac0c",
+  "browserEvidenceCommit": "7208b4167df6fbea62703177301473eb841522d7",
+  "sourcePath": "ChatGPT_web/osm-city-drive",
+  "route": "/kfb-hub/stage/stunt-world/",
+  "launchQuery": "city=ehrenfeld-huerth-corridor-v0&look=grotesque",
+  "corridorSceneCommit": "3db2c786152fd4d77ca33a63effd2a9db9c1d4c1",
+  "corridorSceneSha256": "258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d",
+  "raceEvidence": {
+    "workflowRun": 35414946641,
+    "job": 105821630552,
+    "moduleChecks": "10/10 PASS",
+    "huerthBrowser": "26/26 PASS",
+    "corridorBrowser": "17/17 PASS",
+    "corridorBootMs": 2237
+  },
+  "noClaims": [
+    "no full-route human drive",
+    "no physical mobile QA",
+    "no Live promotion",
+    "no Landmark Group Rig runtime",
+    "no audio integration"
+  ],
+  "packagedAtUtc": "2026-09-19T02:20:30.371135+00:00",
+  "publicEvidence": {
+    "canonicalUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/",
+    "proofCommit": "d78fa862262184aa0ed172ed42e10db6e3705c71",
+    "workflowRun": 35416057009,
+    "job": 105824845921,
+    "checks": "29/29 PASS",
+    "runtimeBytes": "9/9 exact",
+    "publicBootMs": 2852,
+    "shortDriveM": 6.405786,
+    "wheelContacts": "4/4",
+    "noNewRecovery": true,
+    "noConsolePageErrors": true,
+    "noFailedHttpAssets": true,
+    "artifact": 10575592864
+  },
+  "publicBrowserProvedAtUtc": "2026-09-19T02:35:56Z"
+}

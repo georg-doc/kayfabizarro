@@ -1,0 +1,766 @@
+{
+ "version": "kfb.flora/1",
+ "datum": "2026-09-02",
+ "quelle": "gemessene ghUrl + Rohmaße aus messungen/kfb-asset-audit-index-runde1.json (Live-Abruf 2.9.) — nicht zusammengesetzt",
+ "hinweis": "Georg (Formular 2.9.): „KayKit Bäume · Büsche · Gras/Stümpfe · Pilze/Blumen\". Befund: das KayKit-Forest-FREE-Pack hat KEINE Stümpfe, Pilze oder Blumen (105 Modelle: Tree 17 · Bush 22 · Grass 20 · Rock 46). Diese drei Familien kommen aus kenney_nature-kit — kit-treu über kit-massstab.js, also im richtigen Verhältnis zu den KayKit-Bäumen.",
+ "familien": {
+  "baum": {
+   "rolle": "Fokus-Stück · Land, nicht steil · einzeln oder Triade (Baum groß · Baum mittel · Busch klein)",
+   "bauart": "triade",
+   "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+   "namen": [
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_1_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf",
+     "roh": [
+      3.181,
+      4.161,
+      3.251
+     ],
+     "tri": 530,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_1_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_B_Color1.gltf",
+     "roh": [
+      4.007,
+      4.93,
+      3.445
+     ],
+     "tri": 636,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_1_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_C_Color1.gltf",
+     "roh": [
+      6.691,
+      7.814,
+      5.753
+     ],
+     "tri": 1364,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_2_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf",
+     "roh": [
+      2.6,
+      4.675,
+      2
+     ],
+     "tri": 336,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_2_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_B_Color1.gltf",
+     "roh": [
+      3.7,
+      6.042,
+      2.1
+     ],
+     "tri": 492,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_2_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_C_Color1.gltf",
+     "roh": [
+      4.6,
+      6.92,
+      3.4
+     ],
+     "tri": 648,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_2_D_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_D_Color1.gltf",
+     "roh": [
+      4.74,
+      8.088,
+      4.034
+     ],
+     "tri": 1428,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_2_E_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_E_Color1.gltf",
+     "roh": [
+      6.051,
+      8.792,
+      5.677
+     ],
+     "tri": 1560,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_3_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf",
+     "roh": [
+      3.093,
+      3.507,
+      3.093
+     ],
+     "tri": 978,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_3_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_B_Color1.gltf",
+     "roh": [
+      4.129,
+      4.353,
+      4.129
+     ],
+     "tri": 988,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_3_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_C_Color1.gltf",
+     "roh": [
+      5.632,
+      5.792,
+      4.625
+     ],
+     "tri": 2228,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_4_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_A_Color1.gltf",
+     "roh": [
+      2.007,
+      5.274,
+      2.004
+     ],
+     "tri": 404,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_4_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_B_Color1.gltf",
+     "roh": [
+      2.574,
+      6.943,
+      2.27
+     ],
+     "tri": 522,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_4_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_C_Color1.gltf",
+     "roh": [
+      3.735,
+      10.774,
+      2.869
+     ],
+     "tri": 982,
+     "farbweg": "Atlas"
+    }
+   ]
+  },
+  "baum_kahl": {
+   "rolle": "kahle Bäume · Hochland und Küstenwind · einzeln",
+   "bauart": "einzel",
+   "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+   "namen": [
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_1_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_A_Color1.gltf",
+     "roh": [
+      1.129,
+      2.857,
+      1.034
+     ],
+     "tri": 324,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_1_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_B_Color1.gltf",
+     "roh": [
+      1.965,
+      3.251,
+      1.451
+     ],
+     "tri": 332,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_1_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_C_Color1.gltf",
+     "roh": [
+      3.737,
+      5.255,
+      2.074
+     ],
+     "tri": 936,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_2_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_A_Color1.gltf",
+     "roh": [
+      1.196,
+      3.843,
+      0.6
+     ],
+     "tri": 404,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_2_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_B_Color1.gltf",
+     "roh": [
+      1.788,
+      5.542,
+      0.664
+     ],
+     "tri": 448,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Tree_Bare_2_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_C_Color1.gltf",
+     "roh": [
+      1.578,
+      7.614,
+      1.104
+     ],
+     "tri": 634,
+     "farbweg": "Atlas"
+    }
+   ]
+  },
+  "busch": {
+   "rolle": "Übergang · Land · Zweier/Dreier-Haufen",
+   "bauart": "bueschel",
+   "anzahlJe": [
+    1,
+    3
+   ],
+   "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+   "namen": [
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_1_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_A_Color1.gltf",
+     "roh": [
+      0.267,
+      0.227,
+      0.234
+     ],
+     "tri": 72,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_1_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_B_Color1.gltf",
+     "roh": [
+      0.722,
+      0.484,
+      0.722
+     ],
+     "tri": 168,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_1_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_C_Color1.gltf",
+     "roh": [
+      1.204,
+      0.807,
+      1.204
+     ],
+     "tri": 168,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_1_D_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_D_Color1.gltf",
+     "roh": [
+      1.567,
+      0.994,
+      1.567
+     ],
+     "tri": 168,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_3_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.gltf",
+     "roh": [
+      1.033,
+      0.485,
+      1.033
+     ],
+     "tri": 208,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_3_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_B_Color1.gltf",
+     "roh": [
+      1.683,
+      0.804,
+      1.683
+     ],
+     "tri": 240,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Bush_3_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_C_Color1.gltf",
+     "roh": [
+      2.49,
+      1.151,
+      2.49
+     ],
+     "tri": 272,
+     "farbweg": "Atlas"
+    }
+   ],
+   "hinweis": "Georgs Auswahl 2.9. (10 runde) minus Bush_2_A–C — im Prüfstand (docs/evidence/v11-flora-busch*.png) als Würfel neben runden Büschen sichtbar; Formsprache passt nicht."
+  },
+  "gras": {
+   "rolle": "Bodendetail · Land, flach · Büschel 3–5",
+   "bauart": "bueschel",
+   "anzahlJe": [
+    3,
+    5
+   ],
+   "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+   "namen": [
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_1_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_A_Color1.gltf",
+     "roh": [
+      0.339,
+      0.559,
+      0.152
+     ],
+     "tri": 44,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_1_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_B_Color1.gltf",
+     "roh": [
+      0.505,
+      0.537,
+      0.556
+     ],
+     "tri": 132,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_1_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_C_Color1.gltf",
+     "roh": [
+      0.752,
+      0.583,
+      0.717
+     ],
+     "tri": 396,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_1_D_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_D_Color1.gltf",
+     "roh": [
+      1.081,
+      0.589,
+      1.178
+     ],
+     "tri": 528,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_2_A_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Color1.gltf",
+     "roh": [
+      0.155,
+      0.919,
+      0.254
+     ],
+     "tri": 44,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_2_B_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Color1.gltf",
+     "roh": [
+      0.403,
+      0.919,
+      0.397
+     ],
+     "tri": 132,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_2_C_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_C_Color1.gltf",
+     "roh": [
+      0.896,
+      0.935,
+      0.757
+     ],
+     "tri": 528,
+     "farbweg": "Atlas"
+    },
+    {
+     "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+     "name": "Grass_2_D_Color1",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_D_Color1.gltf",
+     "roh": [
+      1.104,
+      0.935,
+      1.366
+     ],
+     "tri": 528,
+     "farbweg": "Atlas"
+    }
+   ],
+   "hinweis": "nur die zweiseitigen Varianten — die Singlesided-Blätter verschwinden von hinten (dieselbe Klasse wie BUG-08)"
+  },
+  "stumpf": {
+   "rolle": "Waldrest · Land · einzeln, Pilze als Detail daneben",
+   "bauart": "einzel+detail",
+   "detail": "pilz",
+   "pack": "kenney_nature-kit",
+   "namen": [
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_old",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_old.glb",
+     "roh": [
+      0.357,
+      0.266,
+      0.371
+     ],
+     "tri": 120,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_round",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_round.glb",
+     "roh": [
+      0.321,
+      0.206,
+      0.371
+     ],
+     "tri": 56,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_roundDetailed",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_roundDetailed.glb",
+     "roh": [
+      0.357,
+      0.206,
+      0.371
+     ],
+     "tri": 96,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_square",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_square.glb",
+     "roh": [
+      0.36,
+      0.3,
+      0.3
+     ],
+     "tri": 44,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_squareDetailed",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_squareDetailed.glb",
+     "roh": [
+      0.44,
+      0.2,
+      0.44
+     ],
+     "tri": 84,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "stump_squareDetailedWide",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/stump_squareDetailedWide.glb",
+     "roh": [
+      0.64,
+      0.2,
+      0.64
+     ],
+     "tri": 84,
+     "farbweg": "Materialfarbe"
+    }
+   ]
+  },
+  "pilz": {
+   "rolle": "Detail · schattig, nahe Bäumen/Stümpfen · Familie 2–4 · KIT-TREU (der Palmenpilz in SURREAL bleibt eine Ausnahme mit Grund)",
+   "bauart": "bueschel",
+   "anzahlJe": [
+    2,
+    4
+   ],
+   "pack": "kenney_nature-kit",
+   "namen": [
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_red",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_red.glb",
+     "roh": [
+      0.174,
+      0.203,
+      0.201
+     ],
+     "tri": 48,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_redGroup",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_redGroup.glb",
+     "roh": [
+      0.27,
+      0.25,
+      0.254
+     ],
+     "tri": 144,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_redTall",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_redTall.glb",
+     "roh": [
+      0.124,
+      0.25,
+      0.143
+     ],
+     "tri": 48,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_tan",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_tan.glb",
+     "roh": [
+      0.191,
+      0.154,
+      0.221
+     ],
+     "tri": 48,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_tanGroup",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_tanGroup.glb",
+     "roh": [
+      0.27,
+      0.25,
+      0.254
+     ],
+     "tri": 144,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "mushroom_tanTall",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/mushroom_tanTall.glb",
+     "roh": [
+      0.124,
+      0.25,
+      0.143
+     ],
+     "tri": 48,
+     "farbweg": "Materialfarbe"
+    }
+   ]
+  },
+  "blume": {
+   "rolle": "Farbdetail · Wiese · Büschel 3–6",
+   "bauart": "bueschel",
+   "anzahlJe": [
+    3,
+    6
+   ],
+   "pack": "kenney_nature-kit",
+   "namen": [
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_purpleA",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_purpleA.glb",
+     "roh": [
+      0.159,
+      0.242,
+      0.181
+     ],
+     "tri": 76,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_purpleB",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_purpleB.glb",
+     "roh": [
+      0.207,
+      0.208,
+      0.239
+     ],
+     "tri": 98,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_purpleC",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_purpleC.glb",
+     "roh": [
+      0.181,
+      0.182,
+      0.181
+     ],
+     "tri": 78,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_redA",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_redA.glb",
+     "roh": [
+      0.159,
+      0.292,
+      0.181
+     ],
+     "tri": 76,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_redB",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_redB.glb",
+     "roh": [
+      0.207,
+      0.258,
+      0.239
+     ],
+     "tri": 98,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_redC",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_redC.glb",
+     "roh": [
+      0.181,
+      0.232,
+      0.181
+     ],
+     "tri": 78,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_yellowA",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_yellowA.glb",
+     "roh": [
+      0.159,
+      0.193,
+      0.181
+     ],
+     "tri": 76,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_yellowB",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_yellowB.glb",
+     "roh": [
+      0.207,
+      0.159,
+      0.239
+     ],
+     "tri": 154,
+     "farbweg": "Materialfarbe"
+    },
+    {
+     "pack": "kenney_nature-kit",
+     "name": "flower_yellowC",
+     "ghUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_nature-kit/Models/GLTF format/flower_yellowC.glb",
+     "roh": [
+      0.181,
+      0.133,
+      0.181
+     ],
+     "tri": 78,
+     "farbweg": "Materialfarbe"
+    }
+   ]
+  }
+ },
+ "abgelehnt": [
+  {
+   "name": "Bush_2_A_Color1",
+   "grund": "Würfel-Formsprache (Prüfstand-Screenshot 2.9.)"
+  },
+  {
+   "name": "Bush_2_B_Color1",
+   "grund": "Würfel-Formsprache (Prüfstand-Screenshot 2.9.)"
+  },
+  {
+   "name": "Bush_2_C_Color1",
+   "grund": "Würfel-Formsprache (Prüfstand-Screenshot 2.9.)"
+  },
+  {
+   "name": "stump_oldTall",
+   "grund": "Ausreißer 0,67 m gegen 0,2–0,3 m der Familie — mit Familien-Boden 1,33 Bäume hoch (Prüfstand 2.9., docs/evidence/v11-flora-stumpf*)"
+  }
+ ]
+}

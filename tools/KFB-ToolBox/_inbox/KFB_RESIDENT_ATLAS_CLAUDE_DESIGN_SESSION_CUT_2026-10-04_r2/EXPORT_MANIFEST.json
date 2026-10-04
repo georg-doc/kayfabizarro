@@ -1,0 +1,568 @@
+{
+ "schema": "kfb.export-manifest.v1",
+ "project": "KFB_Resident_Atlas",
+ "exportRevision": "2026-10-04-r2",
+ "exportedAt": "2026-10-04",
+ "zip": "KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2.zip",
+ "entry": "KFB_Resident_Atlas_S17.html",
+ "entryHash": "#__duel",
+ "sourceRevision": null,
+ "githubPush": "NOT_PERFORMED",
+ "status": "SESSION_CUT_COMPLETE · S17 DESIGN CANDIDATE",
+ "nextGate": "WSA-STAGE-01",
+ "parallel": "BLENDER-DUEL-01 (Auftrag, kein Gate)",
+ "secretScan": {
+  "status": "CLEAN",
+  "hits": []
+ },
+ "closure": {
+  "files": 51,
+  "missingLocal": [],
+  "skippedOver2MB": []
+ },
+ "docsMissing": [],
+ "cdnExternal": [
+  "https://unpkg.com/three@0.184.0",
+  "https://fonts.googleapis.com"
+ ],
+ "cleanRun": {
+  "method": "ZIP-Bytes neu gelesen: CRC je Eintrag, SHA-256 gegen CHECKSUMS, Import-Closure ab Entry aus den entpackten Einträgen (import modul-relativ, fetch seiten-relativ), Größe",
+  "result": "siehe TEST_REPORT.md"
+ },
+ "files": [
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 185903,
+   "sha256": "5607ce8daf2dee76d3584ff432a31ce5b9d306dacdb5a499abe08d95e91448a2",
+   "class": "DOC"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "bytes": 602,
+   "sha256": "d2a446a645f1825a6fc87a68d0d3dbc3469065fbc79576d439b0abc855faffb8",
+   "class": "DOC"
+  },
+  {
+   "path": "data/cast.js",
+   "bytes": 195924,
+   "sha256": "f5a9cb663343be876a928080b661632740bdea95f0fe13261cf84bfb9e4f2124",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/clay-particle-profiles.v1.json",
+   "bytes": 26919,
+   "sha256": "3fe9f6c5c8c6dc86c8d5ca4fe5fd96883734c0fab1c2681917f998dbfe22319c",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/fight-sandbox-02.json",
+   "bytes": 12678,
+   "sha256": "4bbadeb8c854708668dcff2a2cb2c198e1789c1c613469df8f3eaeb1c40634ef",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/graveyard-01.json",
+   "bytes": 5483,
+   "sha256": "85b140cdcd29495cb957273909a4de88b51e8edf85d6330f9fa5abe66dd63ea8",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/gunfight-duel-01.json",
+   "bytes": 8999,
+   "sha256": "698c8971c8e2549cb25e676803b65ab46505c8c36c32eac4e6f0b1d3194bc98a",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/motion-v5-scene-clips-01.json",
+   "bytes": 3628,
+   "sha256": "9e75bb970d202129f4d349ed399ec776bb513679a96ba1c82fa994d217818533",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/resident-band-module-01.json",
+   "bytes": 19866,
+   "sha256": "45da4c8eaaac63ecbf7c3221f9b0fe7c792ba7f369d70c81bc84e3e626f7ff03",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/resident-disco-01.json",
+   "bytes": 21439,
+   "sha256": "15f687a3c9b1b680e04b4d57f7d8bdb9ee06664219058ba167301dd27a1f4393",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/scifi-pack-01.json",
+   "bytes": 4637,
+   "sha256": "2bccdf62c451d3ffce0173d1b71f4000d617e2e85b035ab9a4b764420fb2bf6a",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "data/studio-seeds.js",
+   "bytes": 783,
+   "sha256": "60c7e488a1c20c03fef5ce06552b03dc6840d2cf73735b8c0b5754b60a97f2b0",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "docs/ARCHITECTURE.md",
+   "bytes": 2833,
+   "sha256": "a25244a1b3d36e9683457380a670d8a3f74abaef4de65c5163e25988a63803f3",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/ATLAS_NEXT_SLICES.md",
+   "bytes": 13332,
+   "sha256": "cf71cf0af6fe7005fc609e6186250a26a38dc84af3aba442e9c46056a8e63a3f",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/DECISIONS.md",
+   "bytes": 3635,
+   "sha256": "b79fe20b09f5bbba9a5dd111b99e5e716996523d500b1de3f45eb1feaf05f03a",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/DISCO_BEAT_MEASURE_01.md",
+   "bytes": 9799,
+   "sha256": "e5a54952265d652f6c576d13f11eac16e063581d382d17ca8e6a664d00bfc9b6",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/EDITOR_3D_INLINE_01.md",
+   "bytes": 3517,
+   "sha256": "4e77a3f98e7bb432c264eb6b99e6ae790198a63e896a2735d28cfec42fc3a7ad",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/EYE_RIG_BATCH_REVIEW_S38.md",
+   "bytes": 5472,
+   "sha256": "357df4aded7adee508fb9fe627cb0cf1caa4660786e882b0b87ff434f02052fb",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/HANDOVER_GUNFIGHT_DUEL_01.md",
+   "bytes": 6718,
+   "sha256": "57fee2c6b2da8b5686b065839edea3b21547bf0881a54da2c4854a32a5cbc6ce",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/HANDOVER_WSA_BAND_MODULE_01.md",
+   "bytes": 4530,
+   "sha256": "4e76dd40ac54aed3c42243077b37f5712aefb27e343c92140a6d51d5849d6762",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/HANDOVER_WSA_S16_MVP.md",
+   "bytes": 8940,
+   "sha256": "d686944685c28e437019cf15010719b44cbd6cc1a99c228fee7814ff7c3fcc32",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/HANDOVER_WSA_S40.md",
+   "bytes": 8420,
+   "sha256": "2da5c2c3b5d457d437e27b62f540f68e5d9c4095b0beca36cfe3516e81ec8b38",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/KNOWN_ISSUES.md",
+   "bytes": 2937,
+   "sha256": "b06310c4cf9270e21864d161db17b215a1df7805d5dc5b383c4d3ba620041eae",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/NPC_SETTINGS_01/BLENDER_MCP_EYE_CLEANUP_01.md",
+   "bytes": 4030,
+   "sha256": "dc4bef186f5cb1a793267fe8c67ba06810393642199c16c257718ad6bd97fe6e",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/NPC_SETTINGS_01/BLENDER_MCP_EYE_CLEANUP_02_ALL.md",
+   "bytes": 6223,
+   "sha256": "48e36744598d72cc1f9ba6b20b29d792488c8eba60ef1636b421aea29c1869ee",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/NPC_SETTINGS_01/EYE_RIG_DEFAULT_BRIEF.md",
+   "bytes": 3000,
+   "sha256": "210f94e1416ebd4452bdc0408456f0f34c4faaab05b3fe36caaea2cbafd88d06",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/NPC_SETTINGS_01/MUMMY_01_RETURN.md",
+   "bytes": 6265,
+   "sha256": "715a54fd884a3853ac1b6b6d433fa38530fc764d5bfed9a9ccdb7ca75378f15a",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/NPC_SETTINGS_01/ONBOARDING.md",
+   "bytes": 7267,
+   "sha256": "79416ea860eaae56a128c04e3704f4fb34b8dabe1be0de6ec772525afd975d8a",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/PACK_GAPS.md",
+   "bytes": 6716,
+   "sha256": "f2e8d4c41ae7af894f70643b25068edad44e3c255d5fe1f9b6090042c2235dbc",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RECOVERY.md",
+   "bytes": 4245,
+   "sha256": "4c45dd4c26afb1b3e8d657e6113fff0e2a0de9826806eeff5fb5cfe194a3a1b1",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_BAND_MODULE_01.md",
+   "bytes": 6862,
+   "sha256": "6938a162639358b13ba3c6e000c9b9a815912631fb608a5dc39d106cb6d68476",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_CLAY_AR_01/OPEN_LATER.md",
+   "bytes": 1466,
+   "sha256": "0bfdc85720c03947868a98b844d69715aa1f15b458d2a68aee1e189644101990",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_DISCO_CD_01.md",
+   "bytes": 12990,
+   "sha256": "a9083679af62624c15a4f93227c01ce07d3e1a7c46f3d283054dde279299ef23",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_FIGHT_SANDBOX_02/GEORG_FEEDBACK_2026-09-30.md",
+   "bytes": 4462,
+   "sha256": "e0ad53ed3c229ceb384968eee98db6eece46137de441a15289a38441eb7d1cbe",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_FIGHT_SANDBOX_02/RESUME_LATER.md",
+   "bytes": 3535,
+   "sha256": "0b1f4f19f93d4b2fc7be92e326d1844561206a1d37a0ed0cd8d2c1c2f082ae62",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_GUNFIGHT_DUEL_01.md",
+   "bytes": 2924,
+   "sha256": "c16486d8164db5c4d20953ab810b24959daaa075933a505cdd358dae29584056",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/RESIDENT_GUNFIGHT_DUEL_01/BLENDER_MCP_BRIEF.md",
+   "bytes": 4909,
+   "sha256": "59e07e2fbfeb93ff0c85b98f5a1232c4ece1bb8e2c3cced1071e7cbccae6078e",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/SNAP_EDITOR_CONTRACT_01.md",
+   "bytes": 2996,
+   "sha256": "8e9c0486ffa0477f61a6bd49d2dec6c7356a19373db36b095d0de89b1c385323",
+   "class": "DOC"
+  },
+  {
+   "path": "docs/UI_SPLIT_EINBAU_RESIDENT_ATLAS.md",
+   "bytes": 7270,
+   "sha256": "064382c8206ea4e6117482756a37be73a811fcc7577851afdf2ed2307076fba5",
+   "class": "DOC"
+  },
+  {
+   "path": "evidence/s17_duel_01.jpg",
+   "bytes": 32907,
+   "sha256": "6eb453ab19f3c41e93e17b7075f7c3799714223d90e1e3be45e050fda64949e0",
+   "class": "EVIDENCE"
+  },
+  {
+   "path": "evidence/s17_duel_02.jpg",
+   "bytes": 23556,
+   "sha256": "d79a684c8ada4335bab176f6f536bc9401832f6c2c383d9052591f0cbf53043c",
+   "class": "EVIDENCE"
+  },
+  {
+   "path": "HANDOVER.md",
+   "bytes": 6718,
+   "sha256": "57fee2c6b2da8b5686b065839edea3b21547bf0881a54da2c4854a32a5cbc6ce",
+   "class": "DOC"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "bytes": 11043,
+   "sha256": "43fc882bcaa99cdebd720475487e99540a2622e6f9d5cb2e26e4964b86d19125",
+   "class": "DOC"
+  },
+  {
+   "path": "KFB_Resident_Atlas_S17.html",
+   "bytes": 246215,
+   "sha256": "93333724d3649554338201ac27f4fd09cc267a015ebf0dfc3ca4cfa9d35eecc8",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/atlas.js",
+   "bytes": 103454,
+   "sha256": "61a097db3eaab81313428ce6cb4aba4b9956a3669b6047ea7298f592db8f9cb9",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/band-module.js",
+   "bytes": 35208,
+   "sha256": "a49743b66d0a5f311c0cf5431558764fae3dd66a15ec868f46e191a0fc27ff34",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/band-workshop.js",
+   "bytes": 23114,
+   "sha256": "725f41abaa703e6400b4564986128ed0837c3645915c9896aabc0d903ed24949",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay-k1.js",
+   "bytes": 16302,
+   "sha256": "95aecfa0590c23a9fa7502a6046d18685ee530f4d2178bdc23ca547c608d8c00",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-material.v10.js",
+   "bytes": 35632,
+   "sha256": "4d070ce1f9e0a23acd53573271f40492ea5d69b3e03648086ecc1376c9d482a9",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-profiles.v2.js",
+   "bytes": 3546,
+   "sha256": "2eecc234ef24d9d6655fa14b5645837cc456f43672707a25914ab95b01f9cd79",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-relief.v2.js",
+   "bytes": 9988,
+   "sha256": "82798dc88c0003e451bcfd05160810a498f892b470ec820cc4ced04bff64d792",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-relief.v4.js",
+   "bytes": 10061,
+   "sha256": "584a8b611f7eedd33ac1956c17e8f259d2c0a591524d1ecaaf94f59aba4a96a3",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-soften.v1.js",
+   "bytes": 7607,
+   "sha256": "64370e953195b7ab611358e63007b44b1567acf4fb61b134c7ef17b5be90a1a9",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-toolmix.v1.js",
+   "bytes": 2570,
+   "sha256": "fb32fb3689c57c79abef74d3dc4e3641ff08ad639a44e2fa9c8a6b88cf86952c",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/clay/clay-vfx.v1.js",
+   "bytes": 17177,
+   "sha256": "4995b6f1ac2a0384ee99911f2de8bc93085baa50591d7d27bba7f89c2595c45f",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/diorama.js",
+   "bytes": 29086,
+   "sha256": "d98195a2dd4683d6ed9a683c12f661d54748edda54d4cb9af9bb2e25e895a266",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/disco-ball-core.js",
+   "bytes": 25423,
+   "sha256": "37793b3231cf16ce6dc0871360ca07b6948492bd0b43e772fe3e69ee91f25f32",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/disco-ensemble.js",
+   "bytes": 33162,
+   "sha256": "8bf7697c86e13f21fd60a36055196bccbe81c3b1596a2ebccdebb0175bde34db",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/disco-workshop.js",
+   "bytes": 16617,
+   "sha256": "9367e9f55d4556adbe0f31d49df4964dd72ee54c36830235026a5b666c94f399",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/edit-layer.js",
+   "bytes": 11028,
+   "sha256": "b2a426ca1d8c6cc84bcce42d302b38a819c9b19b98a6e72c21f6ed36e1bfaf7c",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/fight-sandbox-02.js",
+   "bytes": 42070,
+   "sha256": "c360aaa6c73beade4d9ebce9562073d04ebfd54fbfc2184815cfde54e561834f",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/anchored-eyes.v1.js",
+   "bytes": 3718,
+   "sha256": "265f60bb6902f29c558a694b92f867b8d1c37535309b92e996a5255f351a825e",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/batch-eyes.v1.js",
+   "bytes": 7544,
+   "sha256": "346a0953823c8d4c9facb2df04279ba24e536410876825f58da1fac37f8d800d",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/donoreyes.v1.js",
+   "bytes": 6867,
+   "sha256": "d7b74af42fc781af13fa57221356def84a33c538498156c094c87b68f68d734a",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/eyeoval.v1.js",
+   "bytes": 6797,
+   "sha256": "fb798bb5a3c72133c5ad4f0b1b0eb10b7cd093b45a02fe97a75eed70503270e6",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/face-color-sampler.v1.js",
+   "bytes": 4621,
+   "sha256": "553accdd1562a060c3787f8f60e95c5f280bf4add6f66f99f2b722c531b71390",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/facehost.v1.js",
+   "bytes": 6959,
+   "sha256": "54214741e57909211fbd9122b3a4bcc30c688b5269ab035e6f82e616f598fb22",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/frizzlegraft/pet-eye-rig.v6.js",
+   "bytes": 20892,
+   "sha256": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/graveyard.js",
+   "bytes": 33376,
+   "sha256": "839c5595bc640d15d7ea93a0a2c2965a9cd55c773ba3f7ec31be11e81238468e",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/grounding.js",
+   "bytes": 8410,
+   "sha256": "692dc232ebfba55732526cd8b2c2bffcbdf876453d42249d3d758ec0120c3765",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/gunfight-duel-01.js",
+   "bytes": 50101,
+   "sha256": "325b7b7213621d835048e9c52c7d1f68fcc6f97df05f2daef3476f4424c751dd",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/host-env.js",
+   "bytes": 8464,
+   "sha256": "e03befdf6016b0881d04e8a3fc309f2415a7b5f6029d3536d047a97e19cc0a53",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/ik-rig.js",
+   "bytes": 10189,
+   "sha256": "c47bdc08217c9192c289d4af81c69d27aa591654d1b5f0f0c5313f19d769864a",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/modefamily.js",
+   "bytes": 35943,
+   "sha256": "bf6bdac87ff931fa79a66b7b29eab1db227a98cafcc30238b048e422581464ad",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/pose-tool.js",
+   "bytes": 28940,
+   "sha256": "a5423462fc047cf533c0599dca6e6c3715599446e0da424a795a780c4646482b",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/props.js",
+   "bytes": 5757,
+   "sha256": "d59b521c49444126657a3529b76a69e629aaa9996cdcd5bf896bb9f71c78136e",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/resident-collide.js",
+   "bytes": 6922,
+   "sha256": "a1914d82e55222f5c68bbc7a921b0bd50c0e9e525da701d6d0bad50197a76ef7",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/rigwork.js",
+   "bytes": 11100,
+   "sha256": "f41d429c22508f48dab898a7ad69c29166b56af2c3c98b4e535bb151bd013865",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/scifi-pack.js",
+   "bytes": 14998,
+   "sha256": "0c32a49a268e47cd77adb952a7b1fb83d42128de86a638b5f5c4bcba61112718",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/shadow-contract.js",
+   "bytes": 8336,
+   "sha256": "52d86c7e548e4a7dd685343bd0d11ee45ae4fb44c28d5ffcc554746a72914b9a",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/sky/skydome-shader.js",
+   "bytes": 16965,
+   "sha256": "6a80ecb67fef44e8530510b39507df1ee1f22e218eebfd03c01ead648cd0fe5d",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/snap.js",
+   "bytes": 5659,
+   "sha256": "165372d4f13eaf788836ea9815e3c4e9ab24a06ecf2976c092e955aa8b8c3ed9",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/song-transport.js",
+   "bytes": 8956,
+   "sha256": "6b1c60494b091f487bf05af99b3dc1fda75202887bcdfc7a07dd9237d04b2a90",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "lib/studio.js",
+   "bytes": 11554,
+   "sha256": "c410c02c3d97bc06450950609c274c3cd9576799cdd802ac3dac8226b30851b8",
+   "class": "EXPORTED"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "bytes": 1011,
+   "sha256": "fe4d64a65ddc39db391f5549418ca5dbe5b976d28c81cba66f87a2f352e47728",
+   "class": "DOC"
+  },
+  {
+   "path": "RETURN.md",
+   "bytes": 1316,
+   "sha256": "7e25e8ac405566a4b6b77dd338de484d7306ff4ea5979b445abf15992acad8c6",
+   "class": "DOC"
+  },
+  {
+   "path": "SOURCE.json",
+   "bytes": 1631,
+   "sha256": "9affc173a16f3d9b3ab0b2ab397f571b84a783d889992109ae0008007ad73ce4",
+   "class": "DOC"
+  },
+  {
+   "path": "START_HERE.md",
+   "bytes": 867,
+   "sha256": "c611c7eab9809faa4717fa36ace945642b3c3d8bfd852c78078fc07fc7d5ddbb",
+   "class": "DOC"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 1448,
+   "sha256": "1870e808b1f2e51ae9f64ca39569cf00c549d56aa4a87ac8a635c9998866b7b9",
+   "class": "DOC"
+  }
+ ]
+}

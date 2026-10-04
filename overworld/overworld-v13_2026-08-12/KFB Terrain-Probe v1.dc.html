@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7fa64e"/><g font-family="Georgia,serif" text-anchor="middle"><text x="50" y="54" font-size="26" font-weight="700" fill="#f4ecd8">KFB</text><text x="50" y="70" font-size="7" letter-spacing="1.4" fill="#14100c">TERRAIN-PROBE</text></g></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<!-- KFB Terrain-Probe v1 (tp-probe-v1, 2026-08-12) — Messplatz, kein Spiel.
+     Zweck: Pirate Bomb (CC0, 20 fps, Seitenansicht) neben Tiny-Swords-Einheiten und -Requisiten
+     auf EINEM Boden sehen und den Maßstab MESSEN statt zu schätzen (offene Entscheidung 11 aus
+     `uploads/HANDOVER_Cowork_2026-08-12.md`).
+
+     Drei Regeln, die dieses Blatt einhält:
+     (a) Der Kanal ist EINE Stelle: alle Bytes über `OW_SRC` (asset-source.js), nichts hart verdrahtet.
+     (b) Der Maßstab ist die Regel des Spiels: `OW_UNITS.heroDef` + `OW_LOADER.loadUnit(refBody 91)`
+         — dieselbe Kette wie im Runner. Ein eigener Maßstab hier wäre die zweite Wahrheit.
+     (c) Boden ist ABSICHTLICH lean: Grundton aus der BIOMES-Tabelle von `ground-paint.js`,
+         KEINE Texturen, kein Relief, keine Tusche. Wer hier Terrain beurteilt, beurteilt das Spiel.
+
+     Kein Modul dieses Ordners wird verändert; die Probe liest nur. -->
+<style>
+html,body{margin:0;height:100%;background:#241f1a}
+*{box-sizing:border-box}
+a{color:#0e3d3c}a:hover{color:#000}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:#5b5346;border-radius:5px}
+</style>
+<script src="./overworld-v13/asset-source.js"></script>
+<script src="./overworld-v13/units-catalog.js"></script>
+<script src="./overworld-v13/unit-loader.js"></script>
+<!-- ohne `hero-frames.js` zählt `roster()` 27 statt der gemessenen 30: die drei Helden aus
+     Einzelframes hängen an `window.OW_HERO`. Die Zahl 30 gehört dem Katalog, nicht diesem Blatt. -->
+<script src="./overworld-v13/hero-frames.js"></script>
+</helmet>
+
+<div style="height:100vh;display:flex;flex-direction:column;font-family:Georgia,'Times New Roman',serif;color:#efe7d4;background:#241f1a">
+
+  <div style="display:flex;align-items:baseline;gap:18px;padding:10px 16px;background:#14100c;border-bottom:2px solid #000">
+    <div style="font-size:18px;font-weight:700;letter-spacing:.4px">KFB Terrain-Probe <span style="color:#47aba9">v1</span></div>
+    <div style="font-size:12.5px;color:#b8ad95">Pirate Bomb neben Tiny Swords · ein Boden, ein Maßstab, gemessene Zahlen</div>
+    <div style="margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#e8d38a">{{ status }}</div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+
+    <div style="width:266px;flex:none;display:flex;flex-direction:column;background:#1b1712;border-right:2px solid #000">
+      <div style="padding:9px 12px 7px">
+        <input value="{{ query }}" onInput="{{ onQuery }}" placeholder="filtern …" style="width:100%;padding:6px 8px;font:13px Georgia,serif;color:#efe7d4;background:#0f0c09;border:1px solid #3c352c;border-radius:3px;outline:none" />
+      </div>
+      <div style="flex:1;overflow:auto;padding:0 8px 12px">
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+          <div style="margin:10px 0 5px;padding:0 4px;font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:#8a8069">{{ g.title }}</div>
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+              <div onClick="{{ it.pick }}" style="display:flex;align-items:baseline;gap:8px;padding:5px 7px;background:#241f19;border:1px solid #332d25;border-radius:3px;cursor:pointer" style-hover="background:#2f2921;border-color:#5f574a">
+                <div style="font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ it.label }}</div>
+                <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#8a8069;flex:none">{{ it.sub }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:8px 12px;border-top:1px solid #2c2620;font-size:11.5px;line-height:1.45;color:#8a8069">
+        Weitere Pirate-Bomb-Figuren kommen dazu: eine Zeile in <span style="font-family:ui-monospace,Menlo,monospace">PB_CHARS</span> (Ordner, Leinwandmaß, Bilderzahl je Animation).
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:#2b251e">
+      <div ref="{{ stageRef }}" style="flex:1;min-height:0;position:relative">
+        <canvas ref="{{ canvasRef }}" onPointerDown="{{ onDown }}" onPointerMove="{{ onMove }}" onPointerUp="{{ onUp }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair;touch-action:none"></canvas>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 14px;background:#14100c;border-top:2px solid #000;font-size:12px">
+        <div onClick="{{ onRow }}" style="padding:5px 11px;background:#e8d38a;color:#14100c;font-weight:700;border-radius:3px;cursor:pointer" style-hover="background:#f3e2a6">Reihe nach Körperhöhe</div>
+        <div onClick="{{ onSpread }}" style="padding:5px 11px;background:#2f2921;border:1px solid #4b4438;border-radius:3px;cursor:pointer" style-hover="border-color:#8a8069">verteilen</div>
+        <div onClick="{{ onClear }}" style="padding:5px 11px;background:#2f2921;border:1px solid #4b4438;border-radius:3px;cursor:pointer" style-hover="border-color:#8a8069">alle weg</div>
+        <div style="min-width:0;color:#8a8069">Ziehen verschiebt · Klick wählt aus</div>
+        <div style="margin-left:auto;flex:none;white-space:nowrap;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8a8069">{{ modeNote }}</div>
+      </div>
+    </div>
+
+    <div style="width:322px;flex:none;display:flex;flex-direction:column;background:#1b1712;border-left:2px solid #000">
+      <div style="padding:9px 12px 6px;font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:#8a8069">Auf dem Boden · {{ actorCount }}</div>
+      <div style="flex:1;overflow:auto;padding:0 10px 12px;display:flex;flex-direction:column;gap:7px">
+        <sc-for list="{{ actors }}" as="a" hint-placeholder-count="2">
+          <div onClick="{{ a.select }}" style="padding:8px 9px;background:#241f19;border:1px solid #332d25;border-left:3px solid #47aba9;border-radius:3px;cursor:pointer">
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <div style="font-size:13.5px;font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ a.label }}</div>
+              <div onClick="{{ a.remove }}" style="font-size:11px;color:#c98b7a;cursor:pointer">entfernen</div>
+            </div>
+            <div style="margin-top:4px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;line-height:1.5;color:#a89b80">{{ a.measure }}</div>
+            <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+              <select value="{{ a.anim }}" onChange="{{ a.onAnim }}" style="flex:1;min-width:0;padding:3px 4px;font:12px ui-monospace,Menlo,monospace;color:#efe7d4;background:#0f0c09;border:1px solid #3c352c;border-radius:3px">
+                <sc-for list="{{ a.animOptions }}" as="o" hint-placeholder-count="3">
+                  <option value="{{ o.key }}">{{ o.label }}</option>
+                </sc-for>
+              </select>
+              <div onClick="{{ a.onFlip }}" style="padding:3px 8px;font-size:11.5px;background:#2f2921;border:1px solid #4b4438;border-radius:3px;cursor:pointer">spiegeln</div>
+              <div onClick="{{ a.onWalk }}" style="padding:3px 8px;font-size:11.5px;background:#2f2921;border:1px solid #4b4438;border-radius:3px;cursor:pointer">{{ a.walkLabel }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:9px 12px;border-top:1px solid #2c2620;font-size:11.5px;line-height:1.5;color:#8a8069">
+        Maßstab, Zoom, Ufer, Raster und Grundton liegen in den <b style="color:#b8ad95">Tweaks</b> — eine Wahrheit je Regler, keine zweite Reihe Knöpfe.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},
+ &quot;scaleMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ref91&quot;,&quot;src&quot;],&quot;default&quot;:&quot;ref91&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Maßstab&quot;},
+ &quot;zoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.5,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Maßstab&quot;},
+ &quot;biome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;grass&quot;,&quot;wilds&quot;,&quot;swamp&quot;,&quot;ash&quot;,&quot;highland&quot;,&quot;winter&quot;,&quot;waste&quot;,&quot;paper&quot;],&quot;default&quot;:&quot;grass&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Boden&quot;},
+ &quot;water&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Boden&quot;},
+ &quot;grid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Boden&quot;}}">
+/* Terrain-Probe · tp-probe-v1
+   Sie lädt über die Kette des Spiels: OW_SRC → OW_UNITS.heroDef → OW_LOADER.loadUnit(refBody 91).
+   Pirate Bomb hat keinen Katalog, also messe ich hier — mit DEMSELBEN Werkzeug (OW_LOADER.probeBox),
+   damit Fußpunkt und Körperhöhe nach derselben Definition entstehen wie bei Tiny Swords. */
+
+const HERO_REF = 91;            // Bezugskörper der Welt in Quellpixeln (overworld-game-v10.js)
+const PB_FPS   = 20;            // vom Hersteller kanonisch angegeben (Handover §5)
+
+/* Pirate Bomb, CC0 (Pixel Frog). Bilderzahlen aus dem **Franken-Bündel v2** übernommen (Georg,
+   12.8.) — nicht geschätzt: fünf Figuren, 485 Bilder. `*` = umgewidmetes Seitenscroller-Verb,
+   `**` = Eigenheit dieser Figur. Weitere Pakete (Kings and Pigs) sind eine Zeile hier — und laut
+   Bündel §6 später ein **Manifest**, damit ein neues Paket keine Codezeile kostet. */
+const PB_CHARS = [
+  { id:'guy', label:'Bomb Guy', dir:'1-Player-Bomb Guy', w:58, h:58, anims:[
+    {folder:'1-Idle',n:26,map:'idle'},{folder:'2-Run',n:14,map:'walk / chase'},
+    {folder:'7-Hit',n:8,map:'hurt'},{folder:'8-Dead Hit',n:6,map:'death 1'},
+    {folder:'9-Dead Ground',n:4,map:'death 2'},{folder:'10-Door In',n:16,map:'spawn**'},
+    {folder:'11-Door Out',n:16,map:'despawn**'},{folder:'3-Jump Anticipation',n:1,map:'aggro tell*'},
+    {folder:'4-Jump',n:4,map:'lunge*'},{folder:'5-Fall',n:2,map:'knockback*'},
+    {folder:'6-Ground',n:3,map:'recover*'} ]},
+  { id:'bald', label:'Bald Pirate', dir:'2-Enemy-Bald Pirate', w:63, h:67, anims:[
+    {folder:'1-Idle',n:34,map:'idle'},{folder:'2-Run',n:14,map:'walk / chase'},
+    {folder:'7-Attack',n:12,map:'attack'},{folder:'8-Hit',n:8,map:'hurt'},
+    {folder:'9-Dead Hit',n:6,map:'death 1'},{folder:'10-Dead Ground',n:4,map:'death 2'},
+    {folder:'3-Jump Anticipation',n:1,map:'aggro tell*'},{folder:'4-Jump',n:4,map:'lunge*'},
+    {folder:'5-Fall',n:2,map:'knockback*'},{folder:'6-Ground',n:3,map:'recover*'} ]},
+  { id:'cuc', label:'Cucumber', dir:'3-Enemy-Cucumber', w:64, h:68, anims:[
+    {folder:'1-Idle',n:36,map:'idle'},{folder:'2-Run',n:12,map:'walk / chase'},
+    {folder:'7-Attack',n:11,map:'attack'},{folder:'8-Blow the wick',n:11,map:'defuse / deny**'},
+    {folder:'9-Hit',n:8,map:'hurt'},{folder:'10-Dead Hit',n:6,map:'death 1'},
+    {folder:'11-Dead Ground',n:4,map:'death 2'},{folder:'3-Jump Anticipation',n:1,map:'aggro tell*'},
+    {folder:'4-Jump',n:4,map:'lunge*'},{folder:'5-Fall',n:2,map:'knockback*'},
+    {folder:'6-Ground',n:3,map:'recover*'} ]},
+  { id:'cap', label:'Captain', dir:'5-Enemy-Captain', w:80, h:72, anims:[
+    {folder:'1-Idle',n:32,map:'idle'},{folder:'2-Run',n:14,map:'walk / chase'},
+    {folder:'7-Attack',n:7,map:'attack'},{folder:'8-Scare Run',n:12,map:'flee**'},
+    {folder:'9-Hit',n:8,map:'hurt'},{folder:'10-Dead Hit',n:6,map:'death 1'},
+    {folder:'11-Dead Ground',n:4,map:'death 2'},{folder:'3-Jump Anticipation',n:1,map:'aggro tell*'},
+    {folder:'4-Jump',n:4,map:'lunge*'},{folder:'5-Fall',n:2,map:'knockback*'},
+    {folder:'6-Ground',n:3,map:'recover*'} ]},
+  { id:'whale', label:'Whale', dir:'6-Enemy-Whale', w:68, h:46, anims:[
+    {folder:'1-Idle',n:44,map:'idle'},{folder:'2-Run',n:14,map:'walk / chase'},
+    {folder:'7-Attack',n:11,map:'attack'},{folder:'8-Swalow (Bomb)',n:10,map:'swallow / accept**'},
+    {folder:'9-Hit',n:7,map:'hurt'},{folder:'10-Dead Hit',n:6,map:'death 1'},
+    {folder:'11-Dead Ground',n:4,map:'death 2'},{folder:'3-Jump Anticipation',n:1,map:'aggro tell*'},
+    {folder:'4-Jump',n:4,map:'lunge*'},{folder:'5-Fall',n:2,map:'knockback*'},
+    {folder:'6-Ground',n:3,map:'recover*'} ]}
+];
+
+/* Grundton je Biom — abgeschrieben wäre falsch, deshalb steht daneben, woher er kommt:
+   ground-paint.js BIOMES.tint. Hier OHNE Textur und Relief (lean, siehe Kopf des Blattes). */
+const TINT = {grass:'#7fa64e',wilds:'#5e7f3e',swamp:'#4d6b52',ash:'#6b6259',
+  highland:'#8a9a86',winter:'#c6d4dc',waste:'#a8895c',paper:'#d8cdb2'};
+
+class Component extends DCLogic {
+  state = { actors:[], sel:null, groups:[], query:'', status:'lade Katalog …', tick:0 };
+
+  componentDidMount(){
+    this.acts = [];                 // Laufzeit-Objekte (Bilder, Frames) — NICHT in state
+    this.drag = null;
+    this.buildGroups();
+    /* `hero-frames.js` kann nach dem Mount fertig werden — dann sind es 27 statt der gemessenen 30
+       Einheiten. Also einmal nachsehen statt die Zahl hier zu behaupten (Naht: eine Zahl, ein Ort). */
+    let tries = 0;
+    this.poll = setInterval(()=>{
+      if(window.OW_HERO){ this.buildGroups(); clearInterval(this.poll); }
+      else if(++tries > 20) clearInterval(this.poll);
+    }, 250);
+    this.ro = new ResizeObserver(()=>this.fit());
+    if(this.stage) this.ro.observe(this.stage);
+    this.fit();
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(t=>this.loop(t));
+    console.log('[terrain-probe] tp-probe-v1 · Kanal', window.OW_SRC?OW_SRC.mode:'?',
+      '· Maßstab HERO_REF', HERO_REF, '· Pirate Bomb', PB_FPS+' fps');
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this.raf); if(this.ro) this.ro.disconnect();
+    if(this.poll) clearInterval(this.poll); }
+
+  /* ── Panel-Listen ─────────────────────────────────────────────────────────── */
+  buildGroups(){
+    const U = window.OW_UNITS;
+    const pb = PB_CHARS.map(c=>({key:'pb:'+c.id,label:c.label,sub:c.w+'×'+c.h,
+      pick:()=>this.addPirate(c)}));
+    const units = (U&&U.roster?U.roster():[]).map(r=>({key:'ts:'+r.id,label:r.label,sub:r.group,
+      pick:()=>this.addUnit(r)}));
+    const props = [];
+    if(U&&U.props) for(const k in U.props){
+      const p = U.props[k];
+      const url = Array.isArray(p) ? p[0] : (p.url || (p.urls&&p.urls.right));
+      if(!url) continue;
+      props.push({key:'prop:'+k,label:(p.name||k),sub:p.animated?'anim':'still',
+        pick:()=>this.addProp(k,p,url)});
+    }
+    this.setState({groups:[
+      {title:'Pirate Bomb · CC0 · 20 fps', items:pb},
+      {title:'Tiny Swords · Einheiten ('+units.length+')', items:units},
+      {title:'Tiny Swords · Requisiten ('+props.length+')', items:props}
+    ], status:units.length+' Einheiten · '+props.length+' Requisiten · '+PB_CHARS.length+' Piraten'});
+  }
+
+  /* ── Laden ────────────────────────────────────────────────────────────────── */
+  pbUrl(dir,folder,i){
+    const S = window.OW_SRC;
+    const p = 'Pirate_Bomb/'+encodeURIComponent(dir)+'/'+encodeURIComponent(folder)+'/'+i+'.png';
+    return S ? S.a2d(p) : p;
+  }
+  img(url){ return new Promise((res,rej)=>{ const i=new Image(); i.crossOrigin='anonymous';
+    i.onload=()=>res(i); i.onerror=()=>rej(new Error(url)); i.src=url; }); }
+
+  async addPirate(c){
+    this.setState({status:'lade '+c.label+' …'});
+    let n=0, all=c.anims.reduce((s,a)=>s+a.n,0);
+    const anims={};
+    for(const a of c.anims){
+      const imgs = await Promise.all(Array.from({length:a.n},(_,k)=>
+        this.img(this.pbUrl(c.dir,a.folder,k+1)).catch(()=>null)));
+      n += a.n; this.setState({status:'lade '+c.label+' · '+n+'/'+all});
+      anims[a.folder]={label:a.folder.replace(/^\d+-/,'')+' → '+a.map,imgs,frames:a.n,fps:PB_FPS};
+    }
+    const first = anims[c.anims[0].folder].imgs.find(i=>i);
+    const box = first ? OW_LOADER.probeBox(first,0,0,c.w,c.h) : null;
+    const srcBodyH = box?box.h:c.h;
+    this.push({ kind:'pb', label:c.label, anims, order:c.anims.map(a=>a.folder),
+      anim:c.anims[0].folder, srcBodyH, anchorX:box?box.cx:c.w/2, anchorY:box?box.bottom:c.h,
+      fw:c.w, fh:c.h, srcNote:c.w+'×'+c.h });
+    /* Naht 65 in klein: »lade …« stehenzulassen liest sich als »läuft noch«. Der Endzustand ist das
+       gemessene Ergebnis — damit steht die Zahl im Blatt und nicht nur in der Konsole. */
+    this.setState({status:c.label+' · Körper '+Math.round(srcBodyH)+' px → ×'+
+      (HERO_REF/srcBodyH).toFixed(2)+' = '+HERO_REF+' px'});
+    console.log('[terrain-probe] '+c.label+' · Leinwand '+c.w+'×'+c.h+' · Körper '+Math.round(srcBodyH)+
+      'px → ×'+(HERO_REF/srcBodyH).toFixed(2)+' = '+HERO_REF+'px · Fußpunkt '+
+      (box?Math.round(box.cx):'?')+'/'+(box?box.bottom:'?'));
+  }
+
+  async addUnit(r){
+    this.setState({status:'lade '+r.label+' …'});
+    try{
+      const d = await OW_UNITS.heroDef(r.id,'Blue');
+      const u = await OW_LOADER.loadUnit(d.id, d.def, {refBody:HERO_REF});
+      const keys = Object.keys(u.anims);
+      this.push({ kind:'ts', label:r.label+' · '+r.group, unit:u, order:keys,
+        anim:u.anims.idle?'idle':keys[0], srcBodyH:u.srcBodyH, sizeRel:u.scale/(HERO_REF/u.srcBodyH),
+        srcNote:(u.kind==='rowsheet'?'192er-Zelle':'Streifen') });
+      this.setState({status:r.label+' geladen'});
+    }catch(e){ this.setState({status:'FEHLER bei '+r.label+': '+e.message});
+      console.error('[terrain-probe]',r.id,e); }
+  }
+
+  async addProp(key,p,url){
+    this.setState({status:'lade '+(p.name||key)+' …'});
+    try{
+      const im = await this.img(url);
+      const st = p.animated ? OW_LOADER.probeStrip(im) : {fw:im.width,frames:1};
+      const box = OW_LOADER.probeBox(im,0,0,st.fw,im.height);
+      this.push({ kind:'prop', label:(p.name||key), img:im, fw:st.fw, fh:im.height,
+        frames:st.frames, fps:8, anim:'—', order:['—'], srcBodyH:box?box.h:im.height,
+        anchorX:box?box.cx:st.fw/2, anchorY:box?box.bottom:im.height,
+        srcNote:st.fw+'×'+im.height+(st.frames>1?' · '+st.frames+' Bilder':'') });
+      this.setState({status:(p.name||key)+' geladen'});
+    }catch(e){ this.setState({status:'FEHLER bei '+key+': '+e.message}); }
+  }
+
+  push(a){
+    const W = this.cw||1000, H = this.ch||600;
+    a.uid = 'a'+(++this._n||(this._n=1));
+    a.frame = 0; a.t = 0; a.flip = false; a.walk = false; a.vx = 60;
+    a.x = 90 + (this.acts.length%8)*Math.max(80,(W-220)/8);
+    a.y = H*0.60;
+    this.acts.push(a);
+    this.sync(a.uid);
+  }
+  sync(sel){ this.setState({actors:this.acts.map(a=>a.uid), sel:sel!==undefined?sel:this.state.sel, tick:this.state.tick+1}); }
+
+  /* ── Bühne ────────────────────────────────────────────────────────────────── */
+  fit(){
+    const c = this.canvas, s = this.stage;
+    if(!c||!s) return;
+    const dpr = Math.min(2, window.devicePixelRatio||1);
+    const r = s.getBoundingClientRect();
+    c.width = Math.max(2,Math.round(r.width*dpr));
+    c.height = Math.max(2,Math.round(r.height*dpr));
+    this.dpr = dpr; this.cw = r.width/this.zoom(); this.ch = r.height/this.zoom();
+  }
+  zoom(){ return +(this.props.zoom ?? 1) || 1; }
+  refMode(){ return (this.props.scaleMode ?? 'ref91') === 'ref91'; }
+
+  scaleOf(a){
+    if(!this.refMode()) return 1;
+    if(a.kind==='ts') return a.unit.scale;
+    if(a.kind==='pb') return HERO_REF/a.srcBodyH;
+    return 1;                                  // Requisiten: Originalgröße (scale = 1, Naht 8)
+  }
+  frameOf(a){
+    if(a.kind==='ts'){ const an=a.unit.anim(a.anim); return {img:an.img,sx:an.sx||0,sy:an.sy||0,
+      fw:an.fw,fh:an.fh,n:an.frames,fps:an.fps||12,ax:an.anchorX,ay:an.anchorY}; }
+    if(a.kind==='pb'){ const g=a.anims[a.anim]; const im=g.imgs[a.frame%g.frames];
+      return {img:im,sx:0,sy:0,fw:a.fw,fh:a.fh,n:g.frames,fps:g.fps,ax:a.anchorX,ay:a.anchorY}; }
+    return {img:a.img,sx:(a.frame%a.frames)*a.fw,sy:0,fw:a.fw,fh:a.fh,n:a.frames,fps:a.fps,
+      ax:a.anchorX,ay:a.anchorY};
+  }
+
+  loop(t){
+    const dt = Math.min(0.05,(t-this.last)/1000); this.last = t;
+    const c = this.canvas;
+    if(c){
+      const z = this.zoom(), dpr = this.dpr||1;
+      const W = c.width/(dpr*z), H = c.height/(dpr*z);
+      this.cw = W; this.ch = H;
+      const g = c.getContext('2d');
+      g.setTransform(dpr*z,0,0,dpr*z,0,0);
+      g.imageSmoothingEnabled = false;
+      this.ground(g,W,H);
+      for(const a of this.acts){
+        const f = this.frameOf(a);
+        a.t += dt;
+        const step = 1/(f.fps||12);
+        while(a.t >= step){ a.t -= step; a.frame = (a.frame+1)%Math.max(1,f.n); }
+        if(a.walk){
+          a.x += a.vx*dt*(a.flip?-1:1);
+          if(a.x > W-60){ a.flip = true; } if(a.x < 60){ a.flip = false; }
+        }
+        this.paint(g,a,f);
+      }
+    }
+    this.raf = requestAnimationFrame(n=>this.loop(n));
+  }
+
+  ground(g,W,H){
+    const biome = this.props.biome ?? 'grass';
+    g.fillStyle = TINT[biome]||TINT.grass;
+    g.fillRect(0,0,W,H);
+    if(this.props.grid ?? true){
+      g.strokeStyle = 'rgba(0,0,0,.07)'; g.lineWidth = 1;
+      for(let x=0;x<=W;x+=64){ g.beginPath(); g.moveTo(x+.5,0); g.lineTo(x+.5,H); g.stroke(); }
+      for(let y=0;y<=H;y+=64){ g.beginPath(); g.moveTo(0,y+.5); g.lineTo(W,y+.5); g.stroke(); }
+    }
+    if(this.props.water ?? true){
+      const top = Math.round(H*0.80);
+      g.fillStyle = '#3f7d86'; g.fillRect(0,top,W,H-top);
+      g.fillStyle = 'rgba(255,255,255,.10)'; g.fillRect(0,top,W,6);
+      g.strokeStyle = '#14100c'; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(0,top-1.5); g.lineTo(W,top-1.5); g.stroke();
+    }
+  }
+
+  paint(g,a,f){
+    const s = this.scaleOf(a);
+    if(!f.img || !f.img.complete || !f.img.naturalWidth) return;
+    // Kontaktschatten: eine Ellipse, damit der Fußpunkt sichtbar ist — Prüfmittel, kein Look
+    g.save();
+    g.globalAlpha = .22; g.fillStyle = '#000';
+    g.beginPath(); g.ellipse(a.x, a.y, Math.max(6,f.fw*s*0.20), Math.max(3,f.fw*s*0.08), 0, 0, 6.2832);
+    g.fill(); g.restore();
+    g.save();
+    g.translate(a.x, a.y);
+    if(a.flip) g.scale(-1,1);
+    g.drawImage(f.img, f.sx, f.sy, f.fw, f.fh, -f.ax*s, -f.ay*s, f.fw*s, f.fh*s);
+    g.restore();
+    if(this.state.sel === a.uid){
+      g.save(); g.strokeStyle = '#47aba9'; g.lineWidth = 2;
+      g.strokeRect(a.x-f.ax*s, a.y-f.ay*s, f.fw*s, f.fh*s);
+      g.beginPath(); g.moveTo(a.x-10,a.y); g.lineTo(a.x+10,a.y); g.stroke(); g.restore();
+    }
+  }
+
+  hit(x,y){
+    for(let i=this.acts.length-1;i>=0;i--){
+      const a = this.acts[i], f = this.frameOf(a), s = this.scaleOf(a);
+      if(x >= a.x-f.ax*s && x <= a.x-f.ax*s+f.fw*s && y >= a.y-f.ay*s && y <= a.y+8) return a;
+    }
+    return null;
+  }
+  pt(e){ const r = this.canvas.getBoundingClientRect(), z = this.zoom();
+    return {x:(e.clientX-r.left)/z, y:(e.clientY-r.top)/z}; }
+
+  renderVals(){
+    const q = this.state.query.trim().toLowerCase();
+    const groups = this.state.groups.map(g=>({title:g.title,
+      items:q ? g.items.filter(i=>i.label.toLowerCase().includes(q)) : g.items}));
+    const actors = this.acts.map(a=>{
+      const s = this.scaleOf(a);
+      const body = Math.round(a.srcBodyH*s);
+      return {
+        uid:a.uid, label:a.label, anim:a.anim,
+        walkLabel: a.walk?'anhalten':'laufen',
+        measure: a.srcNote+' · Körper '+Math.round(a.srcBodyH)+' px → ×'+s.toFixed(2)+' = '+body+' px'
+          + (a.kind==='ts'?' · sizeRel '+(a.sizeRel||1).toFixed(2):''),
+        animOptions: a.order.map(k=>({key:k,
+          label: a.kind==='pb' ? a.anims[k].label
+               : a.kind==='ts' ? k+' · '+a.unit.anim(k).frames+' Bilder'
+               : '— · '+a.frames+' Bilder'})),
+        select: ()=>this.setState({sel:a.uid}),
+        remove: (e)=>{ if(e&&e.stopPropagation)e.stopPropagation();
+          this.acts = this.acts.filter(x=>x!==a); this.sync(this.state.sel===a.uid?null:this.state.sel); },
+        onAnim: (e)=>{ a.anim = e.target.value; a.frame = 0; a.t = 0; this.sync(a.uid); },
+        onFlip: (e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); a.flip = !a.flip; this.sync(); },
+        onWalk: (e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); a.walk = !a.walk;
+          if(a.walk && a.kind==='ts' && a.unit.has('run')){ a.anim='run'; }
+          if(a.walk && a.kind==='pb' && a.anims['2-Run']){ a.anim='2-Run'; }
+          this.sync(a.uid); }
+      };
+    });
+    return {
+      groups, actors, status:this.state.status, query:this.state.query,
+      actorCount: this.acts.length+(this.acts.length===1?' Figur':' Figuren'),
+      modeNote: (this.refMode()?'Maßstab HERO_REF '+HERO_REF:'Maßstab 1:1 (Quellpixel)')
+        + ' · Zoom '+this.zoom().toFixed(1)+'×',
+      onQuery: e=>this.setState({query:e.target.value}),
+      canvasRef: el=>{ this.canvas = el; },
+      stageRef: el=>{ this.stage = el; if(el&&this.ro) this.ro.observe(el); },
+      onDown: e=>{ const p=this.pt(e); const a=this.hit(p.x,p.y);
+        if(a){ this.drag={a,dx:a.x-p.x,dy:a.y-p.y}; this.setState({sel:a.uid});
+          e.currentTarget.setPointerCapture&&e.currentTarget.setPointerCapture(e.pointerId); }
+        else this.setState({sel:null}); },
+      onMove: e=>{ if(!this.drag) return; const p=this.pt(e);
+        this.drag.a.x = p.x+this.drag.dx; this.drag.a.y = p.y+this.drag.dy; },
+      onUp: ()=>{ this.drag = null; },
+      onRow: ()=>{ const W=this.cw||1000, H=this.ch||600;
+        const list=[...this.acts].sort((a,b)=>a.srcBodyH*this.scaleOf(a)-b.srcBodyH*this.scaleOf(b));
+        const gap=W/(list.length+1);
+        list.forEach((a,i)=>{ a.x=gap*(i+1); a.y=H*0.62; a.walk=false; });
+        this.acts=list; this.sync(); },
+      onSpread: ()=>{ const W=this.cw||1000, H=this.ch||600;
+        this.acts.forEach((a,i)=>{ a.x=90+(i%8)*Math.max(80,(W-200)/8); a.y=H*(0.42+0.12*Math.floor(i/8)); });
+        this.sync(); },
+      onClear: ()=>{ this.acts=[]; this.sync(null); }
+    };
+  }
+}
+</script>
+</body>
+</html>

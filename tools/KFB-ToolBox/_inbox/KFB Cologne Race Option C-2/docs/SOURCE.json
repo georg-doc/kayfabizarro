@@ -1,0 +1,211 @@
+{
+  "schema": "kfb.cologne-race-option-c-return-source/1",
+  "date": "2026-09-20T04:58:00Z",
+  "status": "CLAUDE_DESIGN_HANDOFF_NOT_PUBLISHED",
+  "repoPin": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+  "repo": "georg-doc/kayfabizarro",
+  "visualAuthority": {
+    "status": "BOTH_BOARDS_OPENED_IN_ISOLATION_BEFORE_SAMPLING",
+    "boards": [
+      {
+        "name": "OPTION_C_VISUAL_AUTHORITY_01",
+        "blob": "59fd27fcb5dae48bc159093427a3e688cc83b6a4",
+        "px": [
+          1672,
+          941
+        ],
+        "path": "travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png"
+      },
+      {
+        "name": "OPTION_C_VISUAL_AUTHORITY_02",
+        "blob": "ac0bf0064c8af8235a49b97d3b7e5e8196ed5579",
+        "px": [
+          1448,
+          1086
+        ],
+        "path": "travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png"
+      }
+    ],
+    "method": "canvas 4-bit channel binning per region; every colour in option-c-style.v1.js carries its measured share",
+    "keyValues": {
+      "trackBed": "#279797 (board01 track region 11,70 %)",
+      "shoulder": "#d8956b (board02 road 5,04 %)",
+      "laneGold": "#fdd37b (board01 3,24 %)",
+      "laneYellow": "#fde957 (board02 0,48 %)",
+      "skyDusk": "#88243c (board02 4,43 %)",
+      "sun": "#fed95a (board02 2,42 %)",
+      "deep": "#164b59 (board01 2,99 %)",
+      "hot": "#fb3233 (board01 0,13 %)"
+    },
+    "optionA": "DEFERRED_NOT_OPENED"
+  },
+  "filament": {
+    "repo": "KilledByAPixel/SP13KTRA",
+    "revision": "166ad838",
+    "levelsBlob": "75189173db4f1e15537992c34590f6d8f34ce9b8",
+    "circuitIndex": 1,
+    "humanTrackNumber": 2,
+    "license": "ALL_RIGHTS_RESERVED",
+    "use": "BENCHMARK_ONLY_TEMPO_AND_BEATS",
+    "notTaken": [
+      "source code",
+      "corner table",
+      "coordinates",
+      "circuit geometry",
+      "world scale",
+      "palette",
+      "meshes",
+      "materials",
+      "scenery"
+    ]
+  },
+  "osm": {
+    "dataset": "dom-zentrum-v0",
+    "claudeContextBlob": "ae0d12b3dc59",
+    "normalizedBlob": "14d3f09da6e1",
+    "rawSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+    "osmBaseTimestamp": "2026-09-20T03:20:04Z",
+    "runtimeOverpassQueries": 0,
+    "used": {
+      "buildingsBuilt": 850,
+      "buildingsInCorridor": 1047,
+      "corridorM": 340,
+      "buildingTriangles": 17058,
+      "rhine": "relation/11280522:0 (126 pts)",
+      "domFootprint": "way/4532022 (535 pts)",
+      "heroAnchors": 7
+    },
+    "attribution": {
+      "data": "© OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "url": "https://www.openstreetmap.org/copyright"
+    }
+  },
+  "raceBaseline": {
+    "flow": "kfb-hub/stunt-race/track-lab/RACE_FLOW_RUNTIME_CONFIG.json@27ce5d67b1aa",
+    "feel": "kfb-hub/stunt-race/track-lab/RACE_FEEL_V08_CONFIG.json@38afec4b9eaf",
+    "retuned": false,
+    "secondController": false
+  },
+  "route": {
+    "authoredBy": "KFB / Claude Design from a blank route",
+    "controlPoints": 23,
+    "samples": 598,
+    "lengthM": 1997.4,
+    "baseWidthM": 18,
+    "widthLadder": {
+      "NARROW": 14.4,
+      "STANDARD": 18,
+      "WIDE": 21.6,
+      "HERO": 28.8
+    },
+    "topologyTags": [
+      "SURFACE_BOUND",
+      "STRUCTURE",
+      "TUNNEL"
+    ],
+    "cadence": "opening → compression/tunnel → reveal → tightening technical → rooftop → broad sweeper with Dom reveal → return"
+  },
+  "dom": {
+    "osm": "way/4532022",
+    "donor": "tools/img2threejs/prototypes/koelner-dom/v0.2/index.html",
+    "profile": "tools/img2threejs/styles/landmark-style-profiles.v1.json#koelner-dom@2ef3ecaaf81f",
+    "scale": 1.873,
+    "rotationDeg": -90,
+    "osmHeightM": 157.38,
+    "builtExtentM": [
+      82.4,
+      157.3,
+      119.9
+    ],
+    "osmFootprintM": [
+      146,
+      86.8
+    ],
+    "note": "long axis 18 % short of the OSM footprint"
+  },
+  "vehicles": {
+    "measuredFrom": "glTF accessor min/max",
+    "scale": 5.1551,
+    "sizeM": [
+      2.16,
+      1.901,
+      4.155
+    ],
+    "wheelRadiusM": 0.371,
+    "trackM": 1.815,
+    "wheelbaseM": 2.586,
+    "forwardAxis": "+Z",
+    "files": [
+      {
+        "id": "car_hatchback",
+        "gltfBytes": 10952,
+        "binBytes": 53564
+      },
+      {
+        "id": "car_sedan",
+        "gltfBytes": 10928,
+        "binBytes": 55332
+      },
+      {
+        "id": "car_stationwagon",
+        "gltfBytes": 10970,
+        "binBytes": 56172
+      }
+    ],
+    "deformer": {
+      "pin": "ce82a6265abb501f90ee841f8f7e522bc5862299",
+      "wired": false
+    }
+  },
+  "kenney": {
+    "billboard": {
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+      "bytes": 14520
+    },
+    "camera": {
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb",
+      "bytes": 11560
+    },
+    "note": "repo directory listing under kenney_racing-kit shows only Preview.png and Sample.png; existence confirmed by byte query on the exact path"
+  },
+  "cards": {
+    "registry": "media/kfb/index.json@af276a8b941a",
+    "contract": "overworld/overworld/card-art-2d.js@9485bdee2d87 quarter()",
+    "liveRun": {
+      "packId": "forget_utopia",
+      "title": "Forget Utopia",
+      "cardNumber": 7,
+      "page": 3,
+      "quadrant": 2,
+      "pdf": "Deck_A_UTOPIA_-_Forget_Utopia web H.pdf"
+    },
+    "invented": false
+  },
+  "hud": {
+    "donor": "kfb-hub/stage/stunt-world/hud-game-v3/SOURCE.json@affb1ba1d175",
+    "rules": {
+      "tacho": "RETAINED",
+      "minimap": "ACTUAL_ROUTE_ONLY",
+      "almanac": "LANDSCAPE_FAN_DOWNWARD",
+      "radio": "3 large icon controls + volume, no microtext",
+      "genericDashboard": false
+    }
+  },
+  "deformerFamilies": [
+    "TrackFlow",
+    "BuildingElastic",
+    "LandmarkElastic"
+  ],
+  "notImplemented": [
+    "OMSStackDeformer (Option A)",
+    "VehicleCartoonDeformer wiring",
+    "AI opponents",
+    "window/roof detail from windowCodesForBuilding()",
+    "Fractal Almanac capture pipeline",
+    "Fernsehturm",
+    "Ehrenfeld mosque",
+    "Autobahnkreuz",
+    "HBF rail track mode"
+  ]
+}

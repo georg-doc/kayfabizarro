@@ -1,0 +1,112 @@
+{
+  "schema": "kfb.road-markings/1",
+  "id": "M1",
+  "version": "1.2.0",
+  "createdAt": "2026-09-28",
+  "input": "uploads/visuelle-grammatik-fahrbahnmarkierungen.md (Grammatik-Input 28.09.), abgeglichen in KFB Markierungen M1.dc.html §11",
+  "owner": "Look. Lage aus TD03 (road_L/road_R, offset, marking, skin), Kontaktfläche unverändert.",
+  "core": "Form sagt, wo etwas gilt. Muster sagt, wie verbindlich es ist. Farbe sagt, für wen oder in welchem Modus es gilt.",
+  "principles": [
+    "Form trägt Bedeutung, Farbe verstärkt sie. Jede Markierung ist auch in Graustufen lesbar.",
+    "Längs = Führung (wohin). Quer = Handlung (halten, warten, queren, starten).",
+    "Alles aus b = 25 cm, nur ganze Vielfache. Takt m = 6b = 1,5 m.",
+    "Zwei Fugen, sonst keine: längs immer 1 Takt, quer immer 2b. Getrennte Markierungen berühren und kreuzen sich nie.",
+    "Enden immer rund (Radius = halbe Stärke), Ecken Radius b/2, Verbindungen rund. Nichts angeschnitten, nichts gestreckt.",
+    "Übergänge nie als Kante: Tropfenregel für Striche, Knetfleck-Regel für Flächen, Überdeckung nach der Logik der Welt."
+  ],
+  "unit": { "b": 0.25, "m": 1.5, "corner": 0.5, "note": "b = Knetwurst-Grundstärke. m = Takt = 6b = Handmaß K = 3. corner in b (Eckenradius b/2). Kart 2,3 × 3,7 m, Fahrstreifen 7,2 m." },
+  "joints": {
+    "long": 6, "lat": 2,
+    "rule": "F1 = 6b = 1 Takt längs: jede Lücke in Mustern, jeder Musterwechsel, jeder Abstand vor und nach einem Querelement. F2 = 2b quer: jeder seitliche Abstand und jede Lücke in Streifenfeldern.",
+    "minGap": "Keine Lücke kleiner als die Stärke der Linie, die sie trennt (F2 = W2).",
+    "never": "Keine T-Stöße und Kreuzungen zwischen getrennten Markierungen. Ein Rahmen ist ein Element mit runden Verbindungen, kein Stoß."
+  },
+  "weights": {
+    "W1": { "b": 1, "label": "Lernebene", "use": ["nur didaktische Hilfsebene (Ideallinie, Lernziel), nie auf der Fahrbahn"] },
+    "W2": { "b": 2, "label": "normal", "use": ["Randlinie Stadt", "Leitlinie", "Warnlinie", "Sperrlinie", "Doppellinie", "Zebrabalken", "Rahmen", "Schraffur", "Punktfolge"] },
+    "W3": { "b": 3, "label": "kräftig", "use": ["Randlinie Strecke", "Blocklinie", "Haltelinie", "Wartelinie", "Pfeilschaft"] },
+    "W4": { "b": 4, "label": "Block", "use": ["Start/Ziel-Karo", "Curb"] }
+  },
+  "profile": {
+    "note": "Querschnitt Knetwurst: flach gewölbt, matt, liegt auf der Fahrbahn, Karts fahren darüber.",
+    "x": [-1, -0.7, 0, 0.7, 1],
+    "h": [0.012, 0.042, 0.055, 0.042, 0.012],
+    "lift": 0.008,
+    "wobble": { "lat": 0.1, "width": 0.05, "note": "lat in b, width relativ. Handgemacht, aber nie schief." }
+  },
+  "patterns": {
+    "solid":  { "dash": null, "gap": null, "label": "durchgezogen", "reads": "geschlossen", "meaning": "Grenze · nicht überfahren" },
+    "guide":  { "dash": 2, "gap": 1, "label": "Leitlinie 2 : 1", "reads": "offen", "meaning": "Führung · überfahrbar" },
+    "warn":   { "dash": 4, "gap": 1, "label": "Warnlinie 4 : 1", "reads": "gleich kommt etwas", "meaning": "Ankündigung · Einmündung, Einfahrt, Kehre" },
+    "block":  { "dash": 1, "gap": 1, "label": "Blocklinie 1 : 1", "minWeight": "W3", "reads": "Sonderraum", "meaning": "Sonderstreifen · Magnet, Boxengasse" },
+    "dotted": { "dash": 0, "gap": 1, "label": "Punktfolge", "reads": "Orientierung", "meaning": "Punkte Ø = Stärke, Lücke F1 · Leitpunkte, Lernebene" },
+    "double": { "dash": null, "gap": null, "lat": 2, "label": "doppelt", "reads": "verstärkt", "meaning": "zwei Linien W2, quer F2 · Doppelsperrlinie" },
+    "drops":  { "dash": null, "gap": null, "label": "Tropfen", "reads": "wird gerade anders", "meaning": "nur im Übergang, Größe wechselt, nie dauerhaft" },
+    "unitNote": "dash/gap in Takten. Die Lücke ist in allen Längsmustern dieselbe (F1). Muster unterscheiden sich in Strichlänge, Stärke, Farbe.",
+    "anchor": "Gestrichelte Linien werden vom Ereignis aus angelegt (Querelement, Musterwechsel, Sperrlinie) und laufen von dort weg. Der Rest fällt in eine durchgezogene Linie, eine Tropfenzone oder einen freien Anfang, nie in einen Strich oder eine Lücke."
+  },
+  "families": {
+    "line":         { "reads": "Grenze, Führung, Trennung", "elements": ["edge_track", "edge_city", "edge_mag", "centre_city", "no_pass", "no_pass_double", "pit"] },
+    "cross-line":   { "reads": "Halt, Wartepunkt, Kontrollpunkt", "elements": ["stop", "yield"] },
+    "stripe-field": { "reads": "Fläche mit Funktion", "elements": ["zebra", "hatch", "start"] },
+    "arrow":        { "reads": "Richtung, Aktion", "elements": ["arrow", "boost"] },
+    "dots":         { "reads": "Annäherung, Orientierung", "elements": ["guide_dots"] },
+    "frame":        { "reads": "reservierter Raum", "elements": ["parking", "grid_box", "pit_box"] },
+    "symbol":       { "reads": "explizite Funktion", "elements": ["symbol"] },
+    "zone":         { "reads": "Modus, Priorität", "elements": ["curb", "colour_zone"] }
+  },
+  "colors": {
+    "layers": {
+      "real": "Ebene 1 · Verkehrsbedeutung: hell (DE-Grundfarbe Weiß), signal (Gelb: Sonderfunktion, im US-Regelwerk Trennung der Richtungen), rot (Warnung, Curb), blau (Behindertenplatz), grün (Rad), orange (temporär).",
+      "learn": "Ebene 2 · Lernebene: nur als Halo, Lichtkante oder W1-Overlay. Ersetzt nie eine Markierung, verändert nie ihre Form.",
+      "world": "Ebene 3 · Weltstil: jede Welt tönt alle Rollen um ca. 8 % zu ihrem Biom. Claymation kommt aus Material und Rundung, nicht aus neuen Farben."
+    },
+    "rulebook": { "de": { "centre": "hell" }, "us": { "centre": "signal" } },
+    "worlds": {
+      "canyon": { "hell": "#f7eedd", "signal": "#f2b632", "rot": "#c8322b", "blau": "#3f6fb5", "gruen": "#3f9a55", "roadStreet": "#566680", "roadTrack": "#3d4a60", "strang": "#ef5a22", "sand": "#cbbba8", "walk": "#e7d9c5", "curb": "#f5ecdd" },
+      "bucht":  { "hell": "#fff6e6", "signal": "#f7d23c", "rot": "#d9405e", "blau": "#3d7fb8", "gruen": "#4fae6a", "roadStreet": "#5f7f9a", "roadTrack": "#3e5d7c", "strang": "#f2708a", "sand": "#e6d2a6", "walk": "#f5e7c8", "curb": "#fff5e4" },
+      "otown":  { "hell": "#f6efe0", "signal": "#f5d94a", "rot": "#c9433a", "blau": "#4a67b0", "gruen": "#3e9a7a", "roadStreet": "#6a6e8f", "roadTrack": "#4a4d6e", "strang": "#e9b53b", "sand": "#bfc9c0", "walk": "#e9ddc8", "curb": "#f4ecdc" }
+    }
+  },
+  "lanes": { "lane": 7.2, "parkStrip": 3.6, "note": "Fahrstreifen = halbe TD03-Breite. Parkstreifen = halber Fahrstreifen. Taschen, Boxen, Zebra leiten sich daraus ab." },
+  "arrow": { "shaft": "W3", "headW": 3, "headL": 2, "length": 4, "note": "Kopfbreite 3 × Schaft, Kopflänge 2 × Schaft (= 1 Takt), Gesamtlänge 4 Takte. Alle Pfeile teilen denselben Kopf." },
+  "elements": {
+    "edge_track":     { "family": "line", "pattern": "solid", "weight": "W3", "color": "hell", "role": "boundary", "lat": "flush", "note": "Außenkante bündig mit road_L/road_R, keine Lücke zur Kehle." },
+    "edge_city":      { "family": "line", "pattern": "solid", "weight": "W2", "color": "hell", "role": "boundary", "lat": "flush" },
+    "edge_mag":       { "family": "line", "pattern": "block", "weight": "W3", "color": "signal", "role": "race", "lat": "flush", "note": "Magnetzone inkl. Loop, läuft durch." },
+    "centre_city":    { "family": "line", "pattern": "guide", "weight": "W2", "color": "rulebook.centre", "role": "permission", "lat": "axis", "note": "Von der Sperrlinie aus angelegt, löst sich im Übergang zur Strecke auf." },
+    "no_pass":        { "family": "line", "pattern": "solid", "weight": "W2", "color": "rulebook.centre", "role": "boundary", "lat": "axis", "length": 6, "note": "6 Takte vor Zebra oder Haltelinie, F1 davor." },
+    "no_pass_double": { "family": "line", "pattern": "double", "weight": "W2", "color": "rulebook.centre", "role": "boundary", "lat": "axis", "note": "Verstärkt, z. B. vor Kuppen oder auf Brücken." },
+    "lanes_track":    { "family": "line", "pattern": null, "role": "race", "note": "Rennstrecke: keine Fahrstreifen. Ideallinie nur als Lernebene." },
+    "stop":           { "family": "cross-line", "pattern": "solid", "weight": "W3", "color": "hell", "role": "stop", "note": "Über den eigenen Fahrstreifen, seitlich F2 zu Mittel- und Randlinie. Fußabdruck des stehenden Karts: Vorderkante bleibt dahinter." },
+    "yield":          { "family": "cross-line", "pattern": "block", "weight": "W3", "block": 4, "color": "hell", "role": "warning", "note": "Wartelinie = Haltelinie als Blockfolge: Blöcke 4b, Lücke F2." },
+    "zebra":          { "family": "stripe-field", "bar": "W2", "length": 2, "color": "hell", "role": "permission", "note": "Balken W2 längs, Lücke F2 (= Balken), Länge 2 Takte, symmetrisch zwischen den Randlinien mit F2. Mittellinie setzt F1 davor und danach aus, Randlinien laufen durch." },
+    "hatch":          { "family": "stripe-field", "weight": "W2", "angle": 45, "pitch": 1, "frame": "W2", "color": "hell", "role": "boundary", "note": "Sperrfläche: runder Rahmen W2, Schrägstreifen W2 unter 45°, Teilung 1 Takt, Streifen enden F2 vor dem Rahmen." },
+    "start":          { "family": "stripe-field", "cell": "W4", "rows": 2, "color": ["hell", "roadTrack"], "role": "race", "note": "Karo aus 4b-Quadraten (2 Zebrabalken), zwei Reihen, Ecken b/2, F2 zu den Randlinien. Einziger Kontakt: gerundete Ecken der Zellen." },
+    "arrow":          { "family": "arrow", "types": ["richtung", "entscheidung", "annaeherung"], "weight": "W3", "color": "hell", "role": "direction", "note": "Mitte des Fahrstreifens, 4 Takte lang, F1 zu jedem Querelement." },
+    "boost":          { "family": "arrow", "type": "annaeherung", "color": "signal", "role": "race", "note": "Bestehende Boost-Pfeile (TD03 MAG bars) = Pfeilköpfe in Folge." },
+    "guide_dots":     { "family": "dots", "pattern": "dotted", "weight": "W1", "color": "learn", "role": "race", "note": "Ideallinie / Lernroute. Nur Lernebene." },
+    "parking":        { "family": "frame", "weight": "W2", "color": "hell", "role": "parking",
+      "parallel":      { "strip": 3.6, "bay": 4, "group": 4, "note": "Regelfall: Längsparken am Gehweg, beidseitig. Streifen = halber Fahrstreifen, Tasche 4 Takte. Trennstrich quer W2, F2 zu Randlinie und Bord. Nach 4 Taschen 1 Takt frei (Einfahrt, Baum)." },
+      "perpendicular": { "bay": 2, "depth": 4, "note": "Ausnahme Parkdeck/Parkhaus: Tasche 2 Takte breit, 4 Takte tief, Rahmen W2 hinten geschlossen, F2 zur Fahrgassen-Randlinie." } },
+    "grid_box":       { "family": "frame", "weight": "W2", "color": "hell", "role": "race", "note": "Startaufstellung = Parktaschen-Rahmen senkrecht (2 × 4 Takte), vorn offen, versetzt, F1 hinter dem Karo." },
+    "pit_box":        { "family": "frame", "weight": "W2", "color": "signal", "role": "race", "note": "Boxenplatz = Parktaschen-Rahmen in Signal." },
+    "pit":            { "family": "line", "pattern": "block", "weight": "W3", "color": "signal", "role": "race", "entry": "warn", "note": "Boxengasse (D1 reserviert): Warnlinie, F1, dann Blocklinie Signal." },
+    "curb":           { "family": "zone", "block": 1, "weight": "W4", "color": ["rot", "hell"], "role": "race", "note": "Nur an Kurvenscheiteln, in der Kehle außen an der Randlinie mit F2. Blöcke 1 Takt, Farben im Wechsel, Übergänge rund." },
+    "symbol":         { "family": "symbol", "weight": "W2", "size": 4, "color": "hell", "role": "parking", "note": "Rad, Bus, Rollstuhl, P: Kontur W2 in einem 4-Takte-Feld, Mitte des Rahmens." },
+    "colour_zone":    { "family": "zone", "color": ["blau", "gruen", "rot", "orange"], "role": "mode", "note": "Farbfeld nur im Rahmen und nie ohne Form, z. B. Busspur, Radweg." }
+  },
+  "placement": { "edgeInset": 0, "zebraFromEnd": 6, "deadEnd": "Sackgasse: Sperrlinie, Zebra 6 Takte vor dem Ende, dann läuft die Straße gerade weiter und wird vom Platz überweht." },
+  "transitions": {
+    "drops": { "rule": "Tropfenregel: Ein Strich im Übergang wird im selben Takt kürzer, dann zum Tropfen, dann kleiner und seltener, dann nichts. Der Takt bleibt stehen, Striche schrumpfen zur Mitte ihres Slots.", "full": 0.93, "dashToDrop": 0.25, "dropMin": 0.03, "dropScale": [0.45, 1.0], "keepMin": 0.35 },
+    "weight": { "rule": "Stärkewechsel (Strecke W3 → Stadt W2) gleitend im Fenster mark_city, ohne Absatz." },
+    "blend": { "rule": "Knetfleck-Regel: Anfang kleine runde Tropfen von B in A, Mitte große verschmolzene Flecken, Ende kleine runde Tropfen von A in B. Deckung = Übergangsgewicht w. Nie eine gerade Kante, nie Alpha.", "cell": 1.7, "rim": 0.12 },
+    "cover": { "rule": "Überdeckung: Loses (Sand, Laub, Wiese) weht über Festes (Asphalt, Linien), nie umgekehrt. Das Feste bleibt in seinem Umriss und wird nur zugedeckt: kein Asphalt außerhalb der Fahrbahn. Die Form des Endes entsteht aus der Verwehung.", "cell": 1.1 }
+  },
+  "learn": {
+    "note": "Fahrschule (nicht gebaut): jede Markierung in drei Ebenen.",
+    "levels": ["sichtbare Markierung", "Bedeutungs-Chip (Halt, Warten, Fahren, Nicht fahren, Abbiegen, Fußgänger, Parken)", "Regelaktion der Figur"],
+    "animation": "Lernebene darf pulsieren oder aufploppen, die Markierung selbst bleibt unverändert."
+  },
+  "runout": { "rule": "Straße ohne Anschluss auf einer Fläche: Asphalt und Linien laufen gerade weiter, der Platz weht darüber. Verwehung beginnt an den Rändern und 4 Takte vor dem Ende, deckt nach 12 Takten alles.", "length": 12, "before": 4, "edgePow": 3, "edgeK": 0.6, "ramp": { "h": 0.19, "len": 1.5 }, "lift": 0.075 }
+}

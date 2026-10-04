@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.185.1/build/three.webgpu.js",
+  "three/webgpu": "https://unpkg.com/three@0.185.1/build/three.webgpu.js",
+  "three/tsl": "https://unpkg.com/three@0.185.1/build/three.tsl.js",
+  "three/addons/": "https://unpkg.com/three@0.185.1/examples/jsm/",
+  "three-html-render/polyfill": "https://cdn.jsdelivr.net/npm/three-html-render/dist/polyfill.mjs"
+}}
+</script>
+<script src="./recherchi-data.js"></script>
+<script src="./recherchi-cube.js"></script>
+<script src="./recherchi-eyes.js"></script>
+<script src="./recherchi-motion.js"></script>
+<style>
+  body{margin:0;background:#FAFAFA;color:#222222;font-family:Roboto,-apple-system,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#CC0033;text-decoration:none}
+  a:hover{text-decoration:underline}
+  button{font-family:inherit}
+  input,textarea{font-family:inherit}
+  ::selection{background:#FBE0E7}
+  @keyframes rcPulse{0%{box-shadow:0 0 0 0 rgba(204,0,51,.34)}70%{box-shadow:0 0 0 12px rgba(204,0,51,0)}100%{box-shadow:0 0 0 0 rgba(204,0,51,0)}}
+  @keyframes rcFade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  @keyframes rcRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes rcBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+  @keyframes rcGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+  @keyframes rcOrbit{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  @keyframes rcPulseG{0%{box-shadow:0 0 0 0 rgba(153,204,51,.42)}70%{box-shadow:0 0 0 18px rgba(153,204,51,0)}100%{box-shadow:0 0 0 0 rgba(153,204,51,0)}}
+  @keyframes rcFloat{0%,100%{transform:translateY(0);opacity:.22}50%{transform:translateY(-22px);opacity:.55}}
+  @keyframes rcSpit{0%{opacity:0;transform:translate(0,0) scale(.42) rotate(0)}18%{opacity:1}
+    70%{transform:translate(calc(var(--tx) * 1.07),calc(var(--ty) * 1.07)) scale(1.03) rotate(var(--tr))}
+    100%{opacity:1;transform:translate(var(--tx),var(--ty)) scale(1) rotate(var(--tr))}}
+</style>
+</helmet>
+
+<div lang="de" style="min-height:100vh;background:#EDEEF0;background-image:radial-gradient(120% 100% at 88% 0%, #C7CBD1 0%, #DCDFE3 34%, #EAEBEE 64%, #F3F4F6 100%);transition:padding-right .28s cubic-bezier(.4,0,.2,1);padding-right:{{ shiftPx }}">
+
+  <header style="height:56px;border-bottom:1px solid #E5E7EB;background:#fff;display:flex;align-items:center;gap:14px;padding:0 22px;position:sticky;top:0;z-index:30">
+    <img src="assets/doccheck-doc.png" alt="DocCheck" style="width:34px;height:34px;display:block;object-fit:contain" />
+    <div style="font-size:15px;font-weight:700;letter-spacing:-.1px">Recherchi</div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:18px">
+      <button onClick="{{ goScan }}" style="{{ navScanStyle }}" style-hover="color:#CC0033">Scan <span style="{{ navScanCountStyle }}">{{ scanCount }}</span></button>
+      <button onClick="{{ goBoard }}" style="{{ navBoardStyle }}" style-hover="color:#CC0033">Board <span style="{{ navBoardCountStyle }}">{{ boardCount }}</span></button>
+    </div>
+    <div style="flex:1"></div>
+    <sc-if value="{{ isScan }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ toggleView }}" title="{{ viewTitle }}" style="{{ viewSwitchStyle }}" style-hover="background:#F2F4F6;color:#1A1A1A">
+        <sc-if value="{{ isKacheln }}" hint-placeholder-val="{{ true }}">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </sc-if>
+        <sc-if value="{{ isListe }}" hint-placeholder-val="{{ false }}">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"></rect></svg>
+        </sc-if>
+      </button>
+    </sc-if>
+    <button onClick="{{ toggleDrawer }}" style="{{ drawerBtnStyle }}" title="{{ drawerTitle }}">
+      <span style="width:16px;height:13px;border:1.25px solid currentColor;border-radius:3px;display:block;position:relative;opacity:.9">
+        <span style="position:absolute;top:1.5px;bottom:1.5px;right:1.5px;width:5px;background:currentColor;border-radius:1.5px;opacity:.55"></span>
+      </span>
+    </button>
+  </header>
+
+  <div style="padding:18px 22px 64px;max-width:1720px;margin:0 auto">
+
+    <main style="{{ mainStyle }}">
+
+      <sc-if value="{{ scanning }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid #E5E7EB;background:#fff;border-radius:10px;padding:40px">
+          <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.4px;color:#9CA3AF;margin-bottom:14px">SCAN LÄUFT</div>
+          <div style="font-size:15px;font-weight:500;margin-bottom:10px">{{ scanLine }}</div>
+          <div style="height:2px;background:#F0F0F0;border-radius:2px;overflow:hidden;max-width:420px">
+            <div style="{{ scanBarStyle }}"></div>
+          </div>
+          <div style="font-size:12.5px;color:#9CA3AF;margin-top:14px">Die Dauer hängt davon ab, wie viel neu ist. Du kannst das Fenster offen lassen.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showIdeen }}" hint-placeholder-val="{{ false }}">
+        <section style="border:1px solid #E5E7EB;background:#fff;border-radius:10px;overflow:hidden;margin-bottom:20px">
+          <div style="display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #E5E7EB">
+            <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px">Ideenmodus</div>
+            <div style="font-size:12.5px;color:#6B7280">{{ ideenCount }} Themen · je ein Vorschlag</div>
+            <div style="flex:1"></div>
+            <button onClick="{{ copyIdeen }}" style="border:1px solid #E5E7EB;background:#fff;color:#222;border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:600;cursor:pointer">{{ copyLabel }}</button>
+            <button onClick="{{ closeIdeen }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:500;cursor:pointer">Schließen</button>
+          </div>
+          <div style="display:grid;grid-template-columns:150px minmax(0,1.1fr) minmax(0,1.4fr) 132px;gap:0;font-size:11px;font-weight:700;letter-spacing:.3px;color:#9CA3AF;padding:10px 20px;border-bottom:1px solid #E5E7EB;background:#FAFAFA">
+            <div>THEMA</div><div>HEADLINE-VORSCHLAG</div><div>ANLESER-VORSCHLAG</div><div></div>
+          </div>
+          <sc-for list="{{ ideenRows }}" as="row" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:150px minmax(0,1.1fr) minmax(0,1.4fr) 132px;gap:0;padding:14px 20px;border-bottom:1px solid #F0F0F0;align-items:start">
+              <div><span style="{{ row.pillStyle }}">{{ row.fach }}</span></div>
+              <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:15px;line-height:1.35;padding-right:18px">{{ row.headline }}</div>
+              <div style="font-size:13.5px;line-height:1.6;color:#3C4249;padding-right:18px">{{ row.anleser }}</div>
+              <div style="display:flex;gap:6px;justify-content:flex-end">
+                <button onClick="{{ row.take }}" style="{{ row.takeStyle }}">{{ row.takeLabel }}</button>
+                <button onClick="{{ row.again }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:5px;padding:5px 8px;font-size:12px;cursor:pointer">neu</button>
+              </div>
+            </div>
+          </sc-for>
+          <div style="display:flex;gap:10px;align-items:center;padding:14px 20px;background:#FAFAFA">
+            <button onClick="{{ micIdeen }}" style="{{ micIdeenStyle }}" title="Diktieren">●</button>
+            <input value="{{ steerText }}" onChange="{{ onSteer }}" onKeyDown="{{ onSteerKey }}" placeholder="Nachsteuern: pointierter, mehr Praxisbezug, weniger Boulevard …" style="flex:1;border:1px solid #E5E7EB;border-radius:6px;padding:9px 12px;font-size:13px;background:#fff" />
+            <button onClick="{{ applySteer }}" style="background:#99CC33;color:#21400A;border:1px solid #8CBF2B;border-radius:6px;padding:9px 14px;font-size:12.5px;font-weight:700;cursor:pointer">{{ steerLabel }}</button>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ showBoard }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+            <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px">Board</div>
+            <div style="font-size:12.5px;color:#9CA3AF">{{ boardHint }}</div>
+          </div>
+          <sc-for list="{{ boardRows }}" as="b" hint-placeholder-count="2">
+            <div style="display:flex;gap:14px;align-items:center;background:#fff;border:1px solid #EBECEE;border-radius:12px;padding:16px 18px;margin-bottom:10px">
+              <span style="{{ b.pillStyle }}">{{ b.fach }}</span>
+              <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:15px;flex:1;min-width:0">{{ b.title }}</div>
+              <button onClick="{{ b.remove }}" style="border:0;background:transparent;color:#9CA3AF;font-size:13px;cursor:pointer">entfernen</button>
+            </div>
+          </sc-for>
+          <sc-if value="{{ boardEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#fff;border:1px solid #EBECEE;border-radius:12px;padding:44px 28px;text-align:center;color:#6B7280;font-size:14px">Noch nichts ausgewählt. Auf einer Themenkachel „Aufs Board“ wählen.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showResults }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+            <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px">{{ resultTitle }}</div>
+            <div style="font-size:12.5px;color:#9CA3AF">{{ resultSub }}</div>
+            <div style="flex:1"></div>
+            <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ makeIdeen }}" style="background:#99CC33;color:#21400A;border:1px solid #8CBF2B;border-radius:6px;padding:8px 14px;font-size:12.5px;font-weight:700;cursor:pointer">{{ ideenBtnLabel }}</button>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ partial }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #F5DDA6;background:#FFFBEF;border-radius:8px;padding:11px 14px;font-size:13px;color:#7A5A11;margin-bottom:14px">Zwei Rechercheschwerpunkte haben nicht geantwortet. Die gezeigten Themen sind vollständig, es können welche fehlen. Erneuter Scan hilft meist.</div>
+          </sc-if>
+
+          <sc-if value="{{ isKacheln }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:16px;align-items:start">
+              <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
+                <article style="{{ c.cardStyle }}">
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                    <span style="font-size:12px;color:#9CA3AF">{{ c.angle }}</span>
+                    <span style="flex:1"></span>
+                    <span style="font-size:12px;color:#9CA3AF">{{ c.age }}</span>
+                  </div>
+                  <h3 style="font-family:'Roboto Slab',Georgia,serif;font-weight:700;font-size:17px;line-height:1.32;margin:0 0 12px;text-wrap:pretty">{{ c.title }}</h3>
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <div style="font-size:14px;line-height:1.55;color:#6B7280">{{ c.p }}</div>
+                    <div style="font-size:14px;line-height:1.55;font-weight:600;color:#1A1A1A">{{ c.b }}</div>
+                    <div style="font-size:14px;line-height:1.55;color:#6B7280">{{ c.f }}</div>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px">
+                    <sc-for list="{{ c.chips }}" as="ch" hint-placeholder-count="3">
+                      <span style="{{ ch.style }}">{{ ch.label }}</span>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-top:14px">
+                    <button onClick="{{ c.toggle }}" title="{{ c.detailLabel }}" style="{{ c.caretStyle }}" style-hover="background:#F2F4F6;color:#1A1A1A">{{ c.caret }}</button>
+                    <span style="{{ c.pillStyle }}">{{ c.fach }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ c.board }}" title="{{ c.boardTitle }}" style="{{ c.boardIconStyle }}" style-hover="background:#99CC33;color:#fff">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.8h12v16.4l-6-4.3-6 4.3z"></path></svg>
+                    </button>
+                  </div>
+
+                  <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:16px;border-top:1px solid #E5E7EB;padding-top:16px;animation:rcFade .22s ease-out">
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:5px">WARUM JETZT</div>
+                      <div style="font-size:13.5px;line-height:1.6;margin-bottom:16px">{{ c.warumJetzt }}</div>
+
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:7px">TALKING POINTS</div>
+                      <ol style="margin:0 0 16px;padding-left:19px;font-size:13.5px;line-height:1.6">
+                        <sc-for list="{{ c.talking }}" as="t" hint-placeholder-count="3">
+                          <li style="margin-bottom:4px">{{ t.text }}</li>
+                        </sc-for>
+                      </ol>
+
+                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px">
+                        <div>
+                          <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:7px">QUELLEN</div>
+                          <sc-for list="{{ c.quellen }}" as="q" hint-placeholder-count="3">
+                            <div style="margin-bottom:8px">
+                              <div style="font-size:12.5px;line-height:1.45">{{ q.t }}</div>
+                              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:#9CA3AF">{{ q.meta }}</div>
+                            </div>
+                          </sc-for>
+                        </div>
+                        <div>
+                          <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:7px">DISKUSSION</div>
+                          <sc-for list="{{ c.debatte }}" as="d" hint-placeholder-count="2">
+                            <div style="margin-bottom:8px">
+                              <div style="font-size:12.5px;line-height:1.45">{{ d.t }}</div>
+                              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:#9CA3AF">{{ d.src }}</div>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </div>
+
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:5px">WAS NOCH FEHLT</div>
+                      <div style="font-size:13.5px;line-height:1.6;margin-bottom:16px">{{ c.fehlt }}</div>
+
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:5px">GEGENPOSITION</div>
+                      <div style="font-size:13.5px;line-height:1.6;margin-bottom:16px;padding-left:11px;border-left:2px solid #E5E7EB;color:#3C4249">{{ c.gegen }}</div>
+
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:7px">FACHARZT-HÄRTETEST</div>
+                      <ul style="margin:0;padding-left:19px;font-size:13.5px;line-height:1.6">
+                        <sc-for list="{{ c.haerte }}" as="h" hint-placeholder-count="3">
+                          <li style="margin-bottom:4px">{{ h.text }}</li>
+                        </sc-for>
+                      </ul>
+
+                      <div style="margin:20px -18px 0;padding:18px 18px 4px;background:#FAFAFA;border-top:1px solid #E5E7EB">
+                        <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:13px;letter-spacing:.2px;margin-bottom:14px">Vorschläge zur Weiterarbeit</div>
+
+                        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:8px">HEADLINE-VORSCHLÄGE</div>
+                        <sc-for list="{{ c.headlines }}" as="h" hint-placeholder-count="3">
+                          <div style="margin-bottom:11px">
+                            <div style="font-size:10.5px;font-weight:700;letter-spacing:.3px;color:#B0B6BD;text-transform:uppercase;margin-bottom:2px">{{ h.a }}</div>
+                            <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:15px;line-height:1.35">{{ h.t }}</div>
+                          </div>
+                        </sc-for>
+                        <sc-if value="{{ c.noPun }}" hint-placeholder-val="{{ false }}">
+                          <div style="font-size:12.5px;color:#6B7280;line-height:1.5;margin-bottom:11px">Für dieses Thema trägt kein Wortspiel. Die Vorschläge bleiben sachlich.</div>
+                        </sc-if>
+                        <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+                          <button onClick="{{ c.moreHeadlines }}" style="border:1px solid #E5E7EB;background:#fff;color:#222;border-radius:6px;padding:6px 11px;font-size:12px;font-weight:600;cursor:pointer">{{ c.moreLabel }}</button>
+                        </div>
+
+                        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:6px">ANLESER-VORSCHLAG</div>
+                        <div style="font-size:13.5px;line-height:1.6;max-width:66ch">{{ c.anleser }}</div>
+                        <div style="display:flex;justify-content:flex-end;margin:10px 0 16px">
+                          <button onClick="{{ c.rewrite }}" style="border:1px solid #E5E7EB;background:#fff;color:#222;border-radius:6px;padding:6px 11px;font-size:12px;font-weight:600;cursor:pointer">{{ c.rewriteLabel }}</button>
+                        </div>
+
+                        <div style="display:flex;gap:8px;padding-bottom:14px">
+                          <button onClick="{{ c.board }}" style="{{ c.boardStyle }}">{{ c.boardLabel }}</button>
+                          <button onClick="{{ c.stub }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:500;cursor:pointer">Titelbild</button>
+                          <button onClick="{{ c.stub }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:500;cursor:pointer">Artikelentwurf</button>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </article>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isListe }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #E5E7EB;background:#fff;border-radius:10px;overflow:hidden">
+              <sc-for list="{{ cards }}" as="c" hint-placeholder-count="6">
+                <div style="{{ c.rowStyle }}">
+                  <div style="display:grid;grid-template-columns:26px minmax(0,1fr) auto 20px;gap:14px;align-items:start;padding:12px 16px;cursor:pointer" onClick="{{ c.toggle }}">
+                    <button onClick="{{ c.select }}" style="{{ c.checkStyle }}">{{ c.checkMark }}</button>
+                    <span style="min-width:0;display:flex;flex-direction:column;gap:4px">
+                      <span style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:14px;line-height:1.35;text-wrap:pretty">{{ c.title }}</span>
+                      <span style="font-size:13.5px;line-height:1.45;color:#6B7280;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ c.b }}</span>
+                    </span>
+                    <span style="font-size:12px;color:#9CA3AF;white-space:nowrap;padding-top:2px">{{ c.age }}</span>
+                    <span style="color:#9AA0A8;font-size:13px;text-align:right;line-height:1.5" style-hover="color:#1A1A1A">{{ c.caret }}</span>
+                  </div>
+                  <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding:4px 16px 20px 56px;animation:rcFade .2s ease-out">
+                      <div style="margin-bottom:12px"><span style="{{ c.pillStyle }}">{{ c.fach }}</span></div>
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:5px">WARUM JETZT</div>
+                      <div style="font-size:13.5px;line-height:1.6;margin-bottom:14px;max-width:78ch">{{ c.warumJetzt }}</div>
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:6px">TALKING POINTS</div>
+                      <ol style="margin:0 0 14px;padding-left:19px;font-size:13.5px;line-height:1.6;max-width:78ch">
+                        <sc-for list="{{ c.talking }}" as="t" hint-placeholder-count="3">
+                          <li style="margin-bottom:3px">{{ t.text }}</li>
+                        </sc-for>
+                      </ol>
+                      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:5px">GEGENPOSITION</div>
+                      <div style="font-size:13.5px;line-height:1.6;padding-left:11px;border-left:2px solid #E5E7EB;color:#3C4249;max-width:78ch;margin-bottom:14px">{{ c.gegen }}</div>
+                      <div style="display:flex;gap:8px">
+                        <button onClick="{{ c.board }}" style="{{ c.boardStyle }}">{{ c.boardLabel }}</button>
+                        <button onClick="{{ c.openCard }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:500;cursor:pointer">Als Kachel öffnen</button>
+                      </div>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ nothing }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #E5E7EB;background:#fff;border-radius:10px;padding:48px 40px;text-align:center">
+              <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:18px;margin-bottom:8px">Heute nichts, was sich lohnt.</div>
+              <div style="font-size:13.5px;color:#6B7280;max-width:52ch;margin:0 auto">Kein Thema hat die Schwelle erreicht. Möglicherweise engen die aktiven Filter das Ergebnis ein.</div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </main>
+
+  </div>
+
+  <sc-if value="{{ startOn }}" hint-placeholder-val="{{ true }}">
+    <div style="{{ startBackStyle }}">
+      <div style="{{ startVignetteStyle }}"></div>
+      <div ref="{{ parallaxRef }}" style="{{ startParallaxStyle }}">
+        <div style="{{ startGlowStyle }}"></div>
+        <sc-for list="{{ motes }}" as="m" hint-placeholder-count="0">
+          <div style="{{ m.style }}"></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:fixed;inset:0;z-index:30;overflow:hidden;pointer-events:none">
+      <div style="{{ startColStyle }}">
+        <div style="{{ startTitleStyle }}">Recherchi</div>
+        <div style="{{ startCopyStyle }}">Recherchi sichtet Studien, Leitlinien und Fachdebatten der letzten 14 Tage und apportiert 4-8 Themen.</div>
+        <button onClick="{{ startScan }}" style="{{ startBtnStyle }}" style-hover="background:#8CBF2B;transform:translateY(-1px)">{{ startCta }}</button>
+        <div style="{{ startNoteStyle }}">(dauert 60-90 Sekunden)</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ spitOn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:24;pointer-events:none">
+      <sc-for list="{{ spits }}" as="t" hint-placeholder-count="0">
+        <div style="{{ t.style }}">
+          <div style="{{ t.barStyle }}"></div>
+          <div style="{{ t.titleStyle }}">{{ t.title }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <div style="{{ cubeLayerStyle }}">
+    <div ref="{{ shadowRef }}" style="{{ shadowStyle }}"></div>
+    <div ref="{{ motionRef }}" style="position:absolute;inset:0;will-change:transform">
+      <div ref="{{ cubeHost }}" style="position:absolute;inset:0"></div>
+      <sc-if value="{{ standInOn }}" hint-placeholder-val="{{ true }}">
+        <div style="{{ standInStyle }}">
+          <div ref="{{ standEyesRef }}" style="position:absolute;left:0;right:0;top:27%;transform:translateY(-50%);display:grid;place-items:center"></div>
+          <div style="{{ standNoseStyle }}"></div>
+          <div style="{{ standMouthStyle }}"></div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{ trackOn }}" hint-placeholder-val="{{ false }}">
+    <div onPointerDown="{{ cubeMoveStart }}" style="{{ trackballStyle }}" style-hover="opacity:1;color:#1A1A1A;background:#fff;box-shadow:0 4px 14px rgba(16,24,40,.16)" title="Würfel verschieben">
+      <span style="width:10px;height:10px;border-radius:50%;background:currentColor;opacity:.45"></span>
+    </div>
+  </sc-if>
+
+  <div style="{{ drawerStyle }}">
+    <div style="display:flex;align-items:center;gap:10px;padding:16px 18px 12px">
+      <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:14px">Werkzeug</div>
+      <div style="flex:1"></div>
+      <button onClick="{{ toggleDrawer }}" style="border:1px solid #E5E7EB;background:#fff;color:#6B7280;border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer">schließen</button>
+    </div>
+    <nav style="border-top:1px solid #F0F0F0">
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid #F4F4F5">
+          <button onClick="{{ s.click }}" style="{{ s.style }}">
+            <span>{{ s.l }}</span>
+            <span style="{{ s.badgeStyle }}">{{ s.badge }}</span>
+          </button>
+          <sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 18px 18px;animation:rcFade .2s ease-out">{{ s.panel }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </nav>
+  </div>
+</div>
+
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="18" fill="#99CC33"/><rect x="34" y="34" width="52" height="52" rx="10" fill="#fff"/><rect x="34" y="34" width="52" height="52" rx="10" fill="none" stroke="#7FAF23" stroke-width="2"/><path d="M60 34v52M34 60h52" stroke="#E6F0CC" stroke-width="2"/></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:980},&quot;startState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;leer&quot;,&quot;ergebnisse&quot;],&quot;default&quot;:&quot;leer&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo&quot;,&quot;label&quot;:&quot;Startzustand&quot;},&quot;teilergebnis&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;,&quot;label&quot;:&quot;Teilergebnis-Hinweis zeigen&quot;},&quot;voiceOn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;,&quot;label&quot;:&quot;Spracheingabe aktiv&quot;},&quot;cubeSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:260,&quot;max&quot;:900,&quot;step&quot;:20,&quot;default&quot;:420,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Würfel&quot;,&quot;label&quot;:&quot;Würfelbühne&quot;},&quot;startCube&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.6,&quot;max&quot;:1,&quot;step&quot;:0.04,&quot;default&quot;:0.92,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Startbildschirm&quot;,&quot;label&quot;:&quot;Recherchi füllt die Bühne&quot;},&quot;eyeFollow&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:0.8,&quot;step&quot;:0.04,&quot;default&quot;:0.28,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Gesicht&quot;,&quot;label&quot;:&quot;Auge folgt der Pupille&quot;},&quot;squash&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1.6,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cartoon-Motion&quot;,&quot;label&quot;:&quot;Squash &amp; Stretch&quot;},&quot;tempo&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.6,&quot;max&quot;:1.6,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cartoon-Motion&quot;,&quot;label&quot;:&quot;Tempo&quot;},&quot;settleDamp&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.35,&quot;max&quot;:1.1,&quot;step&quot;:0.03,&quot;default&quot;:0.62,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cartoon-Motion&quot;,&quot;label&quot;:&quot;Einpendel-Dämpfung&quot;},&quot;faceLag&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:0.35,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cartoon-Motion&quot;,&quot;label&quot;:&quot;Augen laufen nach&quot;}}">
+const D = () => window.RECHERCHI || {};
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* EINE Augen-Geometrie fuer alle drei Schichten (v4, 2026-08-28 — an der KANTE gemessen, nicht
+   am Abstand): Ruhegesicht in der Textur, lebendes L2-Overlay und das flache Lade-Recherchi liefen
+   auseinander. Das Overlay war auf 0.26/0.55 nachgezogen, Textur und Platzhalter standen weiter auf
+   dem v2-Wert 0.28/0.9 — und genau die sieht man, sobald das Overlay wegen der Drehung ausblendet.
+   Rechnung in Entwurfspixeln der 470er Flaeche:
+     Fase der RoundedBoxGeometry: 0.13 von 1.4 = 43,6 px Randband pro Seite.
+     Textur bisher: E 132 + Gap 118 -> Spannweite 381 px, Aussenkante 44,5 px vom Rand = AUF der Fase.
+     v4 (hier):     E 122 + Gap  67 -> Spannweite 311 px, Aussenkante 79,5 px (mit Maskenring 69,5).
+     Hoehe 27 % = 127 px Mitte -> Oberkante mit Ring 56 px, also 12 px unter dem Fasenband.
+   Voraussetzung dafuer, dass diese px ueberhaupt gelten: der Texturquellknoten (.rc-rot) hat seit
+   v4 eine FESTE quadratische Entwurfskante von 470 px. Vorher loeste er nach der Uebernahme durch
+   HTMLTexture gegen die Canvas-Box auf (gemessen 348x404) — dieselben px lagen dann auf einer
+   kleineren, verzerrten Flaeche, und die Augen sassen trotz korrekter Rechnung auf der Fase.
+   Aendern heisst: HIER aendern. Drei Zahlen, eine Quelle. */
+const EYE = { size: 0.26, gap: 0.55, topPct: 27 };
+
+class Component extends DCLogic {
+  state = {
+    view: 'kacheln',
+    section: null,
+    scanning: false, scanStep: 0, scanned: false, drawer: false,
+    narrow: typeof innerWidth === 'number' ? innerWidth < 1140 : false,
+    open: {}, board: [], sel: [], tab: 'scan', cubePos: null, cubeSettled: null,
+    ideen: null, steerText: '', steering: false, copied: false,
+    quellen: {}, preset: 'breit', eigene: [], eigeneText: '',
+    chatText: '', files: [], fachQuery: '',
+    fFach: [], fWinkel: [],
+    inputMode: 'voice', listening: null,
+    briefText: '', briefUnderstood: null, briefBusy: false,
+    material: [], materialRead: false,
+    variants: {}, anleser: {}, busy: {},
+    cubeMode: null, cubeFace: 'scan',
+    anchor: 'center', vp: 0,
+    standIn: true,
+    painted: false,
+    spits: [],
+    toast: ''
+  };
+
+  /* ---------- L1 Stage: Größe, Anker und Modus aus dem Fenster ----------
+     v1 rechnete mit einer festen Kante (420 px) — im schmalen Fenster stand der Würfel halb
+     draußen. Hier kommt alles aus min(vw,vh), und die Klemme hält ihn im Bild.
+     Reisen (Mitte → oben rechts) ist eine Ankeränderung der Stage, keine Kamerafahrt. */
+  lay(){
+    const W = typeof innerWidth === 'number' ? innerWidth : 1440;
+    const H = typeof innerHeight === 'number' ? innerHeight : 900;
+    const mode = W < 760 ? 'phone' : (W < 1180 ? 'pad' : 'desk');
+    const frac = mode === 'phone' ? 0.92 : mode === 'pad' ? 0.66 : 0.52;
+    const cap  = mode === 'phone' ? 430 : mode === 'pad' ? 470 : 460;
+    /* Startbildschirm: Recherchi ist der Held der Bühne, aber Titelblock oben und CTA unten
+       behalten ihren Platz — er wächst nur in die freie Höhe, nie darüber hinaus. */
+    const anchor = this.state.anchor === 'topRight' ? 'topRight' : (this.startOn() ? 'start' : 'center');
+    /* Startbildschirm als Splash: Recherchi links auf der Bühne, Textspalte rechts. Auf dem
+       Telefon gestapelt — dann gelten wieder Bänder oben und unten, aus ihrem echten Inhalt
+       gerechnet: Titelzeile, Anlesertext, Knopf, Dauerzeile. Reicht die Höhe nicht, schrumpft
+       Recherchi — nie das, was in den Bändern steht. */
+    const split = anchor === 'start' && (mode !== 'phone' || W >= 640);
+    const colW = split ? Math.round(Math.min(400, Math.max(252, W * 0.29))) : 0;
+    const padX = Math.round(Math.min(72, Math.max(28, W * 0.05)));
+    const colX = split ? W - colW - padX : 0;
+    const blockW = split ? colW : Math.min(660, W * 0.9);
+    const titleFs = Math.round(Math.min(52, Math.max(30, (split ? colW : W) * (split ? 0.125 : 0.044))));
+    const copyLines = Math.ceil(103 / Math.max(18, blockW / 7.2)) + (mode === 'phone' ? 1 : 0);
+    const offTop = mode === 'phone' ? 24 : 26;   // Luft unter dem Header, klebte vorher
+    const gapCube = mode === 'phone' ? 10 : 14;
+    const btnH = 44, noteH = 12 + 20;
+    const textH = Math.round(titleFs * 1.06) + 14 + copyLines * 24 +
+      (split ? 0 : 22 + btnH + noteH);
+    const topH = offTop + textH;
+    const botH = gapCube + (split ? 50 + 12 + 20 + 8 : 12);
+    const avail = Math.max(150, H - 57 - topH - botH);
+    const fitK = Math.max(0.5, Math.min(1, this.props.startCube == null ? 0.92 : this.props.startCube));
+    const stageW = split ? Math.max(220, colX - padX - 40) : W;
+    const S = anchor === 'start'
+      ? (split
+          ? Math.max(220, Math.round(Math.min(stageW * 0.96, ((H - 57 - 44) / 1.16) * fitK, 720)))
+          : Math.max(190, Math.round(Math.min(W * 0.92,
+              (Math.max(avail, (H - 57) * 0.54) / 1.16) * fitK, 560))))
+      : (Math.round(this.props.cubeSize || 0) ||
+         Math.max(210, Math.round(Math.min(Math.min(W, H) * frac, cap))));
+    const HH = Math.round(S * 1.16);
+    let x, y;
+    if (anchor === 'topRight'){
+      x = W - S - (mode === 'phone' ? 6 : 18);
+      y = mode === 'phone' ? 58 : 62;
+    } else if (split){
+      x = padX + Math.max(0, Math.round((stageW - S) / 2));
+      y = 57 + Math.max(0, Math.round((H - 57 - HH) / 2));
+    } else if (anchor === 'start'){
+      x = (W - S) / 2;
+      y = 57 + offTop;                       // Figur oben, nicht unter dem Text
+    } else {
+      x = (W - S) / 2;
+      y = Math.max(56, (H - HH) / 2);
+    }
+    const m = anchor === 'start' ? null : this.state.cubePos;
+    if (m){ x = m.x; y = m.y; }
+    x = Math.min(Math.max(x, -S * 0.06), W - S * 0.94);
+    y = Math.min(Math.max(y, 4), H - HH * 0.94);
+    // Auf desk und pad endet die Spalte links vom Würfel; nur auf phone liegt er über dem Inhalt
+    const gutter = mode === 'phone' ? 1720 : Math.max(380, Math.round(x) - 34);
+    // Gestapelt sitzt die Spalte UNTER der Figur; im Split behaelt sie ihre eigene Mitte.
+    const colTop = Math.round(y + HH + gapCube);
+    return { mode, W, H, S, HH, x: Math.round(x), y: Math.round(y), anchor, gutter, topH, textH, botH,
+             offTop, gapCube, titleFs, blockW, split, colW, colX, padX, colTop };
+  }
+
+  /* Startbildschirm-Bühne: Glorienschein und zwei Orbits sitzen auf der Würfelmitte,
+     Titelblock und CTA auf den in lay() reservierten Bändern. */
+  startVals(){
+    const L = this.lay(), red = this._reduced(), on = L.anchor === 'start';
+    const ready = !!this.state.cubeMode;
+    const F = this._faceBox(L);
+    const cx = Math.round(F.cx), cy = Math.round(F.cy);
+    // Die Discs liegen im Vollbild-Overlay, also in Viewport-Koordinaten.
+    const disc = (px, css) => `position:absolute;left:${cx}px;top:${cy}px;width:${px}px;height:${px}px;` +
+      `margin:${-Math.round(px / 2)}px 0 0 ${-Math.round(px / 2)}px;border-radius:50%;${css}`;
+    return {
+      startOn: on,
+      trackOn: !this.state.drawer && !on,
+      /* Die Deko liegt HINTER dem Würfel (z 24 < Würfel-Layer 25). Vorher lag sie mit dem
+         Textblock in einem Overlay auf z 30 — die Standfläche schnitt dann als harte Kante
+         über den Würfel. Text bleibt in einem zweiten Overlay auf z 30. */
+      startBackStyle: 'position:fixed;inset:0;z-index:24;overflow:hidden;pointer-events:none',
+      /* Radiale Maske auf der Deko-Ebene: die Orbits verlaufen nach außen, statt sich als
+         geschlossene Kreise quer über Titel und Text zu ziehen (Kreis-Artefakt). Die Maske
+         rechnet in Viewport-Koordinaten — die Ebene ist inset:0. */
+      startParallaxStyle: 'position:absolute;inset:0;transform:translate(calc(var(--px,0) * 18px),calc(var(--py,0) * 12px));' +
+        'transition:transform .22s ease-out;' +
+        `-webkit-mask-image:radial-gradient(circle ${Math.round(L.S * 1.34)}px at ${cx}px ${cy}px,#000 0 46%,rgba(0,0,0,.5) 74%,rgba(0,0,0,0) 100%);` +
+        `mask-image:radial-gradient(circle ${Math.round(L.S * 1.34)}px at ${cx}px ${cy}px,#000 0 46%,rgba(0,0,0,.5) 74%,rgba(0,0,0,0) 100%)`,
+      startGlowStyle: disc(Math.round(L.S * 2.7),
+        'background:radial-gradient(circle,rgba(153,204,51,.20) 0%,rgba(153,204,51,.07) 34%,rgba(153,204,51,0) 62%)' +
+        (red ? '' : ';animation:rcGlow 6.4s ease-in-out infinite')),
+      /* Orbits entfernt (2026-08-27): sie lasen sich als Interaktionsringe, waren aber Deko.
+         Ersatz kommt mit der Charakter-Runde als Licht/Schatten, nicht als gezeichnete Kreise.
+         Siehe DOCS/CHARAKTER_Recherchi_Motion-und-Blick.md. */
+      /* Tiefen-Fokus: die Ecken nehmen ab, die Bühne bleibt hell. */
+      startVignetteStyle: 'position:absolute;inset:0;pointer-events:none;' +
+        `background:radial-gradient(120% 95% at ${Math.round(((F.cx) / Math.max(1, L.W)) * 100)}% ${Math.round((F.cy / Math.max(1, L.H)) * 100)}%,` +
+        'rgba(20,26,32,0) 34%,rgba(20,26,32,.05) 62%,rgba(20,26,32,.13) 100%)',
+      /* Standfläche statt Nichts: eine weiche Platte an der Kontaktkante, kein gezeichneter Boden.
+         Die Ellipse ist EXPLIZIT bemessen (50% 46%) und endet bei 100% auf transparent — mit der
+         Default-Größe (farthest-corner) reichte sie über die Box hinaus und wurde an deren Oberkante
+         quer durchs Bild abgeschnitten: die harte Schattenkante über dem Würfel. */
+      startFloorStyle: `position:absolute;left:${Math.round(F.cx - L.S * 1.35)}px;top:${Math.round(F.cy + F.h / 2 - L.S * 0.16)}px;` +
+        `width:${Math.round(L.S * 2.7)}px;height:${Math.round(L.S * 0.62)}px;pointer-events:none;` +
+        'background:radial-gradient(ellipse 50% 46% at 50% 46%,rgba(20,26,32,.11) 0%,rgba(20,26,32,.05) 42%,rgba(20,26,32,0) 100%)',
+      motes: this.motes(L, F, red),
+      parallaxRef: el => { this._plx = el; },
+      startColStyle: L.split
+        ? `position:absolute;left:${L.colX}px;top:50%;transform:translateY(-50%);width:${L.colW}px;` +
+          'display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:0;pointer-events:auto'
+        : `position:absolute;left:50%;transform:translateX(-50%);top:${L.colTop}px;` +
+          `width:${Math.round(L.blockW)}px;display:flex;flex-direction:column;align-items:center;text-align:center;pointer-events:auto`,
+      startTitleStyle: `font-family:'Roboto Slab',Georgia,serif;font-weight:700;font-size:${L.titleFs}px;line-height:1.04;` +
+        'letter-spacing:-1.6px;color:#15181B;animation:rcRise .8s cubic-bezier(.2,.8,.2,1) both',
+      startCopyStyle: 'margin-top:11px;font-size:14.5px;line-height:1.55;color:#4B5158;max-width:38ch;text-wrap:pretty;' +
+        'animation:rcRise .8s .14s cubic-bezier(.2,.8,.2,1) both',
+      startBtnStyle: 'margin-top:22px;border:0;background:#99CC33;color:#FFFFFF;border-radius:4px;padding:13px 26px;' +
+        'font:700 15px/1.35 Roboto,sans-serif;cursor:pointer;transition:background .18s,transform .18s,opacity .3s;' +
+        'animation:rcRise .8s .26s cubic-bezier(.2,.8,.2,1) both' +
+        (ready ? '' : ';opacity:.5;pointer-events:none'),
+      startNoteStyle: 'margin-top:12px;font-size:13px;line-height:1.5;color:#A7ADB5;font-style:italic',
+      startCta: ready ? 'Apportieren!' : this._bootLabel(),
+      ...this.spitVals(L, F),
+      ...this.standVals(L, this.state.painted === true, F)
+    };
+  }
+
+  /* Schwebende Partikel. Feste Tabelle statt Zufall pro Render — sonst springen sie bei jedem
+     setState an eine neue Stelle. Positionen relativ zur Würfelkante. */
+  motes(L, F, red){
+    if (red) return [];
+    const T = [[-1.24,-0.62,5,7.8],[1.06,-0.78,4,9.4],[-0.86,0.52,6,8.2],[1.28,0.34,3,11.0],
+                [-0.32,-1.02,4,10.2],[0.62,0.86,5,9.0],[1.44,-0.18,3,12.4],[-1.42,0.10,4,10.8],[0.18,-1.24,3,8.6]];
+    return T.map((t, i) => ({
+      style: `position:absolute;left:${Math.round(F.cx + t[0] * L.S * 0.62)}px;top:${Math.round(F.cy + t[1] * L.S * 0.52)}px;` +
+        `width:${t[2]}px;height:${t[2]}px;border-radius:50%;background:#99CC33;opacity:.3;pointer-events:none;` +
+        `animation:rcFloat ${t[3]}s ease-in-out ${(i * 0.7).toFixed(1)}s infinite`
+    }));
+  }
+
+  /* Apportierte Kacheln: fliegen aus dem Mund auf einem Bogen unter Recherchi und stapeln sich.
+     Titel kommen aus den echten Themen (recherchi-data.js), nicht erfunden. */
+  spitVals(L, F){
+    const list = this.state.spits || [];
+    const F2 = (D().FACH || {});
+    return {
+      spitOn: list.length > 0,
+      spits: list.map((t, i) => {
+        const col = ((F2[t.fach] || {}).ink) || '#99CC33';
+        const w = Math.max(120, Math.round(L.S * 0.62));
+        const top0 = Math.round(F.cy + F.h * 0.1);
+        // Der Stapel bleibt im Bild: bei großem Würfel würde er sonst unter die Kante rutschen.
+        const pile = Math.min(Math.round(F.cy + F.h * 0.46), L.H - 108);
+        const x0 = Math.round(F.cx - w / 2);
+        const txRaw = ((i % 3) - 1) * (w * 0.82) + ((i % 2) ? 9 : -7);
+        // seitlich in das Fenster klemmen, sonst h\u00e4ngt die dritte Kachel \u00fcber dem Rand
+        const tx = Math.max((12 - x0) / 1.07, Math.min((L.W - 12 - w - x0) / 1.07, txRaw));
+        const ty = Math.max(44, pile - top0 + Math.floor(i / 3) * 26);
+        return {
+          title: t.title,
+          style: `position:absolute;left:${x0}px;top:${top0}px;width:${w}px;` +
+            `--tx:${Math.round(tx)}px;--ty:${ty}px;--tr:${(i % 2 ? 2.4 : -2.1)}deg;` +
+            'background:#fff;border:1px solid #EBECEE;border-radius:8px;padding:9px 11px 10px;box-sizing:border-box;' +
+            'box-shadow:0 12px 26px -12px rgba(20,26,32,.34);transform-origin:50% 0;' +
+            'animation:rcSpit .66s cubic-bezier(.22,.9,.24,1) both',
+          barStyle: `width:26px;height:3px;border-radius:2px;background:${col};margin-bottom:7px`,
+          titleStyle: 'font:500 12.5px/1.35 Roboto,sans-serif;color:#2A2E32;display:-webkit-box;-webkit-line-clamp:2;' +
+            '-webkit-box-orient:vertical;overflow:hidden'
+        };
+      })
+    };
+  }
+
+  /* Ladezustand: Recherchi ist ab dem ersten Frame vollständig da — flach, mit lebenden Augen,
+     auf derselben Motion-Schicht. Der WebGPU-Renderer übernimmt später nur die Darstellung.
+     Vorher erschienen Grau, Würfel und Gesicht in drei Etappen.
+     `ready` heißt hier NICHT mehr `cubeMode` (v4): der Renderer ist dann initialisiert, aber die
+     Flächen tragen noch kein Bild — genau in diesem Fenster stand der weiße Würfel. Die Übergabe
+     hängt jetzt an `state.painted` (siehe cubeready-Handler). */
+  standVals(L, ready, F){
+    const w = Math.round(F.w), h = Math.round(F.h);
+    const nose = Math.round(w * 0.21);
+    const sw = Math.round(w * 0.72);
+    return {
+      standInOn: this.state.standIn !== false,
+      standInStyle: `position:absolute;left:${Math.round(F.cx - L.x - w / 2)}px;top:${Math.round(F.cy - L.y - h / 2)}px;` +
+        `width:${w}px;height:${h}px;` +
+        'background:#FFFFFF;border:1px solid rgba(26,32,38,.10);border-radius:' + Math.round(w * 0.06) + 'px;' +
+        'box-shadow:0 18px 44px -18px rgba(20,26,32,.34),0 2px 0 rgba(255,255,255,.9) inset;' +
+        'transform-origin:50% 100%;transform:scale(var(--rc-sx,1),var(--rc-sy,1));' +
+        `transition:opacity .42s ease;opacity:${ready ? 0 : 1};pointer-events:none`,
+      standNoseStyle: `position:absolute;left:50%;top:38.5%;width:${nose}px;height:${nose}px;margin:${-nose / 2}px 0 0 ${-nose / 2}px;` +
+        'border-radius:50%;background:#99CC33;box-shadow:0 2px 6px rgba(80,110,20,.34)',
+      standMouthStyle: 'position:absolute;left:19%;right:19%;top:72%;height:2.5px;border-radius:2px;background:#C9CED4',
+      standEyeSize: Math.round(w * 0.28),
+      /* Schatten sitzt an der Kontaktkante des sichtbaren Gesichts, nicht in der Layer-Box. */
+      shadowStyle: `position:absolute;left:${Math.round(F.cx - L.x - sw / 2)}px;top:${Math.round(F.cy - L.y + h / 2 - h * 0.02)}px;` +
+        `width:${sw}px;height:${Math.round(h * 0.09)}px;` +
+        'border-radius:50%;background:radial-gradient(ellipse at center,rgba(24,30,36,.55) 0%,rgba(24,30,36,.22) 46%,rgba(24,30,36,0) 72%);' +
+        'opacity:0;transform-origin:50% 50%;pointer-events:none;filter:blur(2px)'
+    };
+  }
+
+  /* Startbildschirm an: nichts gescannt, kein Board, keine Werkzeugleiste. */
+  startOn(){
+    const s = this.state;
+    return s.tab !== 'board' && !s.scanned && !s.scanning && !s.drawer && !s.ideen;
+  }
+
+  _reduced(){ try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(_){ return false; } }
+
+  /* Der Startbildschirm ist eine Bühne, keine Seite: er scrollt nicht. Das nimmt auch die
+     Scrollbar, die ohne Inhalt am rechten Rand stand. */
+  _lockScroll(){
+    const on = this.startOn();
+    if (this._locked === on) return;
+    this._locked = on;
+    try { document.documentElement.style.overflowY = on ? 'hidden' : ''; } catch(_){}
+  }
+
+  cubeLayerStyle(){
+    const L = this.lay(), on = !this.state.drawer;
+    // etwas höher als breit: der Bodenschatten liegt unter dem Würfel und würde sonst
+    // an der Canvas-Unterkante als harte Linie abschneiden. contain/will-change: eigenes Layer.
+    return `position:fixed;left:${L.x}px;top:${L.y}px;width:${L.S}px;height:${L.HH}px;z-index:25;` +
+      `touch-action:none;contain:paint;will-change:transform,left,top;` +
+      `transition:left .8s cubic-bezier(.34,1.28,.5,1),top .8s cubic-bezier(.34,1.28,.5,1),opacity .22s ease;` +
+      `opacity:${on ? 1 : 0};pointer-events:${on ? 'auto' : 'none'}`;
+  }
+
+  cubeMoveStart(e){
+    const L = this.lay();
+    const ox = e.clientX - L.x, oy = e.clientY - L.y;
+    if (e.currentTarget && e.currentTarget.setPointerCapture) { try { e.currentTarget.setPointerCapture(e.pointerId); } catch(_){} }
+    const move = ev => this.setState({ cubePos: { x: ev.clientX - ox, y: ev.clientY - oy } });
+    const up = () => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+      const p = this.lay();
+      this.setState({ cubeSettled: p.x, cubePos: { x: p.x, y: p.y } });
+      try { localStorage.setItem('recherchi:v4:cubePos', JSON.stringify({ x: p.x, y: p.y })); } catch(_){}
+    };
+    addEventListener('pointermove', move); addEventListener('pointerup', up);
+    e.preventDefault(); e.stopPropagation();
+  }
+
+  /* Alte v1-Geometrie (feste 420-px-Kante, frei ziehbar ohne Klemme) ist durch lay() ersetzt. */
+
+  /* Ueber dem Budget wird die Wartezeit benannt, nicht angedeutet. */
+  _bootLabel(){
+    const b = this._boot;
+    const ms = b ? performance.now() - b.t0 : 0;
+    return ms > 2000 ? 'Wacht auf … ' + Math.round(ms / 1000) + ' s' : 'Wacht auf …';
+  }
+
+  _markBoot(n, el){
+    const b = this._boot; if (!b || b.marks[n] != null) return;
+    b.marks[n] = Math.round(performance.now() - b.t0);
+    // Layoutverschiebung am reservierten PLATZ, nicht an der animierten Figur.
+    if (n === 2 || n === 4){
+      try { const L = this.lay(); b.box[n] = [L.x, L.y, L.S, L.HH]; } catch(_){}
+    }
+    if (b.marks[2] != null && b.marks[4] != null){
+      const a = b.box[2] || [], c = b.box[4] || [];
+      b.shift = a.length && c.length ? a.map((v, i) => Math.abs(v - c[i])).reduce((x, y) => x + y, 0) : null;
+    }
+    b.stage = Math.max(b.stage, n);
+    // Urteil im Modul: wer kit-boot nachnutzt, bekommt nicht nur Rohzahlen.
+    b.pass = {};
+    Object.keys(b.budget).forEach(k => {
+      if (b.marks[k] != null) b.pass[k] = b.marks[k] <= b.budget[k];
+    });
+    if (b.shift != null) b.pass.shift = b.shift === 0;
+    b.done = Object.keys(b.budget).every(k => b.marks[k] != null) && b.shift != null;
+    b.ok = b.done && Object.values(b.pass).every(Boolean);
+    window.__boot = b;
+  }
+
+  componentDidMount(){
+    this._boot = { t0: performance.now(), stage: 1, marks: { 1: 0 }, box: {}, shift: null,
+                   budget: { 2: 400, 3: 2000, 4: 4000 } };
+    window.__boot = this._boot;
+    // Stufe 2 ist erreicht, wenn das Skelett tatsaechlich gemalt wurde — nicht wenn wir es
+    // angeordnet haben. Ein Task nach dem Mount ist der frueheste ehrliche Zeitpunkt.
+    setTimeout(() => this._markBoot(2), 0);
+    // Solange die Figur nicht bedienbar ist, tickt eine Uhr fuer die ehrliche Beschriftung.
+    this._bootIv = setInterval(() => {
+      if (this.state.cubeMode){ clearInterval(this._bootIv); this._bootIv = null; return; }
+      this.setState({ bootTick: (this.state.bootTick || 0) + 1 });
+    }, 500);
+    try {
+      const raw = localStorage.getItem('recherchi:v4:cubePos');
+      if (raw){ const p = JSON.parse(raw); if (p && typeof p.x === 'number') this.setState({ cubePos: p, cubeSettled: p.x }); }
+    } catch(_){}
+    const q = {};
+    (D().QUELLEN || []).forEach(g => g.items.forEach(i => { q[i.id] = i.on; }));
+    this.setState({ quellen: q, scanned: this.props.startState === 'ergebnisse',
+      inputMode: this.props.voiceOn === false ? 'text' : 'voice' });
+    this._mountCube();
+    this._onResize = () => {
+      const n = innerWidth < 1140;
+      // Jede Größenänderung neu rechnen (nicht nur der 1140-Umschlag): lay() hängt an min(vw,vh)
+      this.setState({ narrow: n, vp: (this.state.vp || 0) + 1 });
+    };
+    addEventListener('resize', this._onResize);
+    this._keys = e => {
+      if (e.code === 'Space' && e.target === document.body && this.state.inputMode === 'voice'){
+        e.preventDefault(); if (!this.state.listening) this.listen('chatText');
+      }
+      const t = e.target, tag = t && t.tagName;
+      const typing = tag === 'INPUT' || tag === 'TEXTAREA' || (t && t.isContentEditable);
+      // Tabu: während jemand tippt oder diktiert, löst die Tastatur nichts aus.
+      if (e.key === 'Enter' && !typing && this.startOn()){ e.preventDefault(); this.startScan(); }
+      // L wie Lull: eine Nummer für die Redaktionskonferenz.
+      if ((e.key === 'l' || e.key === 'L') && !typing && !e.metaKey && !e.ctrlKey) this.lull();
+      if (e.key === 'Escape') this.stopListen();
+    };
+    addEventListener('keydown', this._keys);
+    this._lockScroll();
+    /* Blickfolge unabhängig von der Würfel-Engine: der Zeiger wird in der CAPTURE-Phase am
+       document mitgelesen. Die Engine meldet 'facepoint' nur, solange ihr pointermove niemand
+       wegfängt (Editor- und Overlay-Schichten tun genau das) — dieser Pfad hält die Augen
+       trotzdem am Cursor. Ein echtes facepoint hat Vorrang: es ist flächengenau und kennt
+       das Cross-Eye auf den eigenen Knopf. */
+    this._onPtr = e => {
+      const eyes = this._eyesAny(); if (!eyes) return;
+      if (performance.now() - (this._fpSeen || 0) < 140) return;
+      // Bezug ist das SICHTBARE Gesicht, nicht die Mitte der Layer-Box — sonst schaut Recherchi
+      // konsequent daneben und es liest sich, als folge er dem Zeiger nicht.
+      const F = this._faceBox(this.lay()), r = Math.max(1, F.w * 0.62);
+      eyes.look((e.clientX - F.cx) / r, (e.clientY - F.cy) / r);
+      /* Derselbe Zeiger, zweiter Leser: der KÖRPER (v4c). Maß ist die Figurbreite, nicht der
+         Bildschirm — damit reagiert er auf Nähe, nicht auf Fensterposition. Die Geschwindigkeit
+         kommt aus dem Zeitabstand zweier Meldungen und entscheidet über das Zurücklehnen:
+         langsames Herankommen ist Zuwendung, ein schnelles Heranfahren ist ein Schreck. */
+      if (this._motion){
+        const dx = (e.clientX - F.cx) / Math.max(1, F.w), dy = (e.clientY - F.cy) / Math.max(1, F.w);
+        const d = Math.hypot(dx, dy), t = performance.now();
+        const dt = Math.max(16, t - (this._ptT || t - 16)) / 1000;
+        const sp = Math.hypot(dx - (this._ptX || dx), dy - (this._ptY || dy)) / dt;
+        this._ptX = dx; this._ptY = dy; this._ptT = t;
+        this._motion.setPointer(dx * 1.5, dy * 1.5, d, sp);
+      }
+      // Parallaxe der Deko-Ebene: als CSS-Variable, damit kein Render pro Mausbewegung läuft.
+      if (this._plx){
+        this._plx.style.setProperty('--px', (-(e.clientX / Math.max(1, innerWidth) - 0.5) * 2).toFixed(3));
+        this._plx.style.setProperty('--py', (-(e.clientY / Math.max(1, innerHeight) - 0.5) * 2).toFixed(3));
+      }
+    };
+    addEventListener('pointermove', this._onPtr, { capture: true, passive: true });
+    this._initMotion();
+    /* EIN Takt für alle Augenpaare — auch für das flache Recherchi im Ladezustand, das lange
+       vor dem WebGPU-Renderer da ist.
+       ZWEI Quellen, eine Pflicht: rAF, wo es läuft, sonst ein Intervall. In eingebetteten
+       Ansichten (Preview, Host-Frame, der nicht zeichnet) feuert requestAnimationFrame GAR
+       NICHT — 2026-08-28 gemessen: 0 Ticks in einer Sekunde. Genau daran standen die Augen
+       still, nicht am fehlenden Rig. Uhr statt Frame als Rückfall, gleiche Naht wie beim
+       Renderer-Pump. */
+    let last = performance.now();
+    const tick = () => {
+      const now = performance.now();
+      const dt = (now - last) / 1000; last = now;
+      if (dt <= 0) return;
+      if (this._eyes) this._eyes.update(dt);
+      if (this._standEyes) this._standEyes.update(dt);
+      this._lifeAt = now;
+    };
+    const loop = () => { this._raf = requestAnimationFrame(loop); tick(); };
+    this._raf = requestAnimationFrame(loop);
+    this._lifeIv = setInterval(() => {
+      // Nur einspringen, wenn rAF nachweislich schweigt (>120 ms ohne Tick).
+      if (performance.now() - (this._lifeAt || 0) > 120) tick();
+    }, 40);
+  }
+  componentWillUnmount(){ clearInterval(this._bootIv); clearInterval(this._texIv); removeEventListener('keydown', this._keys); removeEventListener('resize', this._onResize); this.stopListen(); clearInterval(this._scanIv);
+    removeEventListener('pointermove', this._onPtr, { capture: true });
+    try { document.documentElement.style.overflowY = ''; } catch(_){}
+    if (this._raf) cancelAnimationFrame(this._raf);
+    clearInterval(this._lifeIv);
+    if (this._motion){ this._motion.dispose(); this._motion = null; }
+    clearTimeout(this._mTimer); clearTimeout(this._standOut);
+    if (this._standEyes){ this._standEyes.dispose(); this._standEyes = null; }
+    if (this._eyes) { this._eyes.dispose(); this._eyes = null; } }
+  componentDidUpdate(){ this._paintFaces(); this._lockScroll(); this._syncEyes(); this._syncMotion(); }
+
+  /* Amplitude der Sekundärbewegung (das ganze Auge folgt der Pupille) liegt als Tweak an. */
+  _syncEyes(){
+    const k = this.props.eyeFollow == null ? 0.28 : this.props.eyeFollow;
+    if (this._eyes && this._eyes.setFollow && this._followK !== k){ this._followK = k; this._eyes.setFollow(k); }
+  }
+
+  /* Ground Truth der Gesichtsgeometrie: die Engine richtet ihr Overlay selbst per matrix3d aus,
+     also ist dessen Rechteck das Maß — nicht die Mitte der Layer-Box. Die Defaults sind der
+     gemessene Ruhezustand; nach cubeready wird einmal nachgemessen und gecacht. */
+  _faceBox(L){
+    const b = this._fbox || { cx: 0.357, cy: 0.564, w: 0.55, h: 0.59 };
+    return { cx: L.x + L.S * b.cx, cy: L.y + L.HH * b.cy, w: L.S * b.w, h: L.HH * b.h, r: b };
+  }
+
+  /* Gemessen wird ausschließlich im Ruhezustand und erst, wenn zwei Messungen 120 ms auseinander
+     dasselbe sagen: während eines Hopsers ist der Pivot gesquasht und die projizierte Frontfläche
+     wandert seitlich — ein Bewegungsframe würde sich als dauerhafter Versatz einbrennen.
+     Unplausible Werte werden verworfen; dann gelten die Defaults. */
+  _measureFace(){
+    const c = this._cube; if (!c || !c.shadowRoot) return;
+    if (this._motion && this._motion.busy) return this._remeasure(160);
+    const ov = c.shadowRoot.querySelector('.rc-ov'); if (!ov) return this._remeasure(200);
+    const r = ov.getBoundingClientRect(), p = c.getBoundingClientRect();
+    if (!r.width || !p.width) return this._remeasure(200);
+    const b = {
+      cx: (r.left + r.width / 2 - p.left) / p.width,
+      cy: (r.top + r.height / 2 - p.top) / p.height,
+      w: r.width / p.width, h: r.height / p.height
+    };
+    if (b.cx < 0.30 || b.cx > 0.42 || b.cy < 0.50 || b.cy > 0.62) return this._remeasure(220);
+    const q = this._fprobe;
+    this._fprobe = b;
+    if (!q || Math.abs(q.cx - b.cx) > 0.004 || Math.abs(q.cy - b.cy) > 0.004) return this._remeasure(120);
+    const o = this._fbox;
+    if (o && Math.abs(o.cx - b.cx) < 0.004 && Math.abs(o.cy - b.cy) < 0.004) return;
+    this._fbox = b;
+    this.forceUpdate();
+  }
+
+  _remeasure(ms){
+    if (this._measures == null) this._measures = 0;
+    if (this._measures++ > 24) return;                 // nicht endlos nachmessen
+    clearTimeout(this._mTimer);
+    this._mTimer = setTimeout(() => this._measureFace(), ms || 160);
+  }
+
+  _eyesAny(){ return this._eyes || this._standEyes; }
+
+  /* ---------- Cartoon-Motion (recherchi-motion.js) ----------
+     Die Schicht besitzt den Transform von motionRef; lay() bleibt für left/top zuständig,
+     beides addiert sich. Der Schatten liegt daneben und bleibt am Boden. */
+  _initMotion(){
+    if (this._motion || !window.RecherchiMotion || !this._mstage) return;
+    this._motion = window.RecherchiMotion.create({
+      stage: this._mstage, shadow: this._mshadow,
+      cube: () => this._cube, front: 'scan',
+      onImpulse: im => this._faceFollow(im)
+    });
+    this._syncMotion();
+    this._motion.idle(this.startOn());
+  }
+
+  _syncMotion(){
+    if (!this._motion) return;
+    this._motion.setParams({
+      squash: this.props.squash == null ? 1 : this.props.squash,
+      tempo: this.props.tempo == null ? 1 : this.props.tempo,
+      settleDamp: this.props.settleDamp == null ? 0.62 : this.props.settleDamp
+    });
+    const idle = this.startOn() && !this.state.scanning;
+    if (this._idleOn !== idle){ this._idleOn = idle; this._motion.idle(idle); }
+  }
+
+  /* Sekundärbewegung, Kaskade aus BRIEFING-03 §2: der Würfel bewegt sich primär, die Augen
+     laufen nach und setzen sich zuletzt. Der Versatz zeigt gegen die Fahrtrichtung (Trägheit)
+     und ist hart geclampt — kein Gesichtsteil verlässt den Rahmen. Nase und Mund leben in der
+     Textur und bleiben statisch: jede Bewegung dort würde den Würfel neu rastern. */
+  _faceFollow(im){
+    // Boden bleibt am Boden: die Motion-Schicht hebt das ganze Bühnen-Element, der Canvas fährt
+    // mit — und mit ihm die Bodenebene. Die Flughöhe geht deshalb an die Engine, die ihren Boden
+    // um dieselbe Weltstrecke senkt. Vor dem Augen-Guard: der Schatten hängt nicht am Augenpaar.
+    const c = this._cube;
+    if (c && typeof c.setGroundLift === 'function') c.setGroundLift(im.air || 0);
+    const e = this._eyesAny(); if (!e) return;
+    const k = this.props.faceLag == null ? 0.35 : this.props.faceLag;
+    // Kaskade: die Augen FÜHREN (schauen beim Absprung zuerst zum Ziel) und LAGGEN beim Impact
+    // (settlen zuletzt). Der Split ist die Regel mit der größten Wirkung.
+    if (im.phase === 'air' && this._mphase !== 'air'){
+      e.look(Math.max(-1, Math.min(1, im.vx / 260)), -0.55);
+    }
+    this._mphase = im.phase;
+    if (e.el && k > 0){
+      const m = 8 * k;
+      const dx = Math.max(-m, Math.min(m, -im.vx * 0.011 * k));
+      const dy = Math.max(-m, Math.min(m, -im.vy * 0.013 * k));
+      e.el.style.transform = 'translate(' + dx.toFixed(2) + 'px,' + dy.toFixed(2) + 'px)';
+    }
+    // Impact: `im.land` ist seit v4c die STÄRKE des Aufpralls (1 = normaler Hop), nicht mehr ein
+    // Flag. Die Augen quittieren entsprechend — sie setzen zuletzt, deshalb darf es hier deutlich
+    // sein, ohne dass die Bewegung hektisch wird.
+    if (im.land && k > 0.02) e.pop(1.06 + Math.min(1.3, im.land) * 0.16);
+  }
+
+  /* Lull: eine Nummer aus dem Repertoire. Tabu — nichts, während jemand tippt oder diktiert,
+     nichts auf Ebene 2 (Quellen/Debatte), nichts während der Scan läuft. */
+  lull(){
+    if (!this._motion || this.state.drawer || this.state.listening || this.state.scanning) return null;
+    const n = this._motion.lull();
+    const e = this._eyesAny();
+    if (e) e.react('scan', { x: 0, y: -0.2 });
+    return n;
+  }
+
+  _mountCube(){
+    const host = this._host; if (!host) return;
+    if (this._cube && this._cube.parentNode === host) return;
+    // Vorhandenen Würfel umhängen statt neu bauen: ein zweiter WebGPU-Renderer wäre teuer,
+    // und dispose() des alten würde das GPU-Device der neuen Instanz mitnehmen.
+    if (this._cube){ host.appendChild(this._cube); return; }
+    host.querySelectorAll('recherchi-cube').forEach(n => n.remove());
+    const el = document.createElement('recherchi-cube');
+    host.appendChild(el);
+    this._cube = el;
+    // Erst konfigurieren, wenn die Klasse steht: im Standalone-Bundle liegt das Engine-Skript
+    // hinter dem Modul, faces/setVideoFace würden sonst ins Leere gehen.
+    const cfg = () => {
+      el.faces = (D().FACES || []).map(f => ({ id: f.id, l: f.l }));
+      const vf = (D().FACES || []).find(x => x.video);
+      if (vf && el.setVideoFace) el.setVideoFace(vf.id, vf.video);
+      this._paintFaces();
+      this._mountFace(el);
+      this._syncEyes();
+    };
+    if (customElements.get('recherchi-cube')) cfg();
+    else customElements.whenDefined('recherchi-cube')
+      .then(() => { try { customElements.upgrade(el); } catch(_){} cfg(); })
+      .catch(() => {});
+    el.addEventListener('cubeready', e => {
+      this._markBoot(3, el);                       // ab hier ist der CTA bedienbar
+      // Der DOM-Schatten war die Notlösung für den Ladezustand (flaches Recherchi). Ab dem echten
+      // Boden im Canvas wäre er ein zweiter, widersprüchlicher Schatten — also aus, sobald 3D steht.
+      if (this._motion && (!e.detail || e.detail.mode === '3d')) this._motion.setParams({ shadow: 0 });
+      // Stufe 4 ist erst erreicht, wenn die Flaechen wirklich Bild tragen.
+      clearInterval(this._texIv);
+      this._texIv = setInterval(() => {
+        if (!el._texArmed) return;
+        clearInterval(this._texIv); this._texIv = null;
+        this._markBoot(4, el);
+      }, 120);
+      this.setState({ cubeMode: e.detail.mode });
+      // Kein Frame-Watchdog mehr: ein Zwangsumstieg auf die flache Ansicht schaltete gesunde
+      // Wuerfel ab (der Zaehler steht auch, wenn der Host das Element beim Start kurz aushaengt).
+      // Sichtbar war das als Flackern und danach leere Buehne. Faellt 3D wirklich aus, meldet
+      // der Wuerfel das selbst ueber cubeready({mode:'flat'}).
+      // Übergabe: das flache Recherchi bleibt stehen, bis die Flächen wirklich Bild tragen
+      // ('cubepainted' — drei Rasterungen nach dem letzten Inhalt). Vorher blendete es nach
+      // fester Zeit aus, und wenn der erste Snapshot leer war, sah man den weißen Würfel.
+      // Fallback nach 2,4 s: lieber ein flaches Recherchi zu lange als ein weißer Klotz.
+      const t0 = performance.now();
+      const bye = () => {
+        clearTimeout(this._standOut);
+        if (this._standEyes){ this._standEyes.dispose(); this._standEyes = null; }
+        this.setState({ standIn: false });
+      };
+      // Erst ausblenden (0,42 s Fade), dann abräumen — nie hart schneiden.
+      const handOver = () => {
+        if (this._handed) return;
+        this._handed = true;
+        this.setState({ painted: true });
+        clearTimeout(this._standOut);
+        this._standOut = setTimeout(bye, 480);
+      };
+      clearTimeout(this._standOut);
+      this._standOut = setTimeout(handOver, 3400);     // Notausstieg
+      // Mindeststandzeit 2,2 s: 'cubepainted' zählt Rasterungen, es beweist keine Tinte — die
+      // ersten Snapshots können leer sein. Lieber ein flaches Recherchi zu lange als ein weißer
+      // Klotz; es ist dieselbe Figur, nur ohne Volumen.
+      el.addEventListener('cubepainted', () => {
+        const rest = Math.max(0, 2200 - (performance.now() - t0));
+        clearTimeout(this._standOut);
+        this._standOut = setTimeout(handOver, rest);
+      }, { once: true });
+      // Erst im Ruheframe messen, dann den Hopser — nicht umgekehrt.
+      this._measureFace();
+      if (this._motion) this._motion.play('hopSmall');
+    });
+    el.addEventListener('dblclick', () => { if (!this.state.scanning) this.lull(); });
+    el.addEventListener('facechange', e => this.setState({ cubeFace: e.detail.id, section: e.detail.id }));
+    el.addEventListener('faceaction', e => this.onFace(e.detail));
+    this._paintFaces();
+  }
+
+  _paintFaces(){
+    const c = this._cube; if (!c) return;
+    // Im Standalone-Bundle kann das Element im DOM stehen, bevor seine Klasse definiert ist
+    // (alle Skripte liegen inline, die Reihenfolge ist eine andere als im Chat-Preview).
+    // Dann existiert setFaceHtml noch nicht — einmal auf das Upgrade warten statt zu werfen.
+    if (typeof c.setFaceHtml !== 'function'){
+      if (!this._faceWait){
+        this._faceWait = true;
+        customElements.whenDefined('recherchi-cube')
+          .then(() => { try { customElements.upgrade(c); } catch(_){} this._faceWait = false; this._paintFaces(); })
+          .catch(() => { this._faceWait = false; });
+      }
+      return;
+    }
+    (D().FACES || []).forEach(f => { if (!f.video) c.setFaceHtml(f.id, this.faceHtml(f)); });
+  }
+
+  /* ---------- L2: lebendes Gesicht über der Frontfläche ----------
+     Die Augen laufen NICHT in der Textur (jede Pupillenbewegung würde den Würfel neu rastern),
+     sondern im Overlay, das die Engine mit derselben matrix3d ausrichtet. In der Textur steht
+     nur das Ruhegesicht — die weiße Maske hier deckt es, solange das Overlay sichtbar ist. */
+  _mountFace(cube){
+    if (this._eyes || !window.RecherchiEyes || typeof cube.overlay !== 'function') return;
+    const ov = cube.overlay('scan');
+    const box = document.createElement('div');
+    // Kein weißes Band: die Maske sitzt als weißer Ring PRO AUGE (siehe unten). Ein Rechteck
+    // ragte in der Drehung über die Würfelkante hinaus.
+    box.style.cssText = 'position:absolute;left:0;right:0;top:' + EYE.topPct + '%;transform:translateY(-50%);' +
+      'display:grid;place-items:center';
+    ov.appendChild(box);
+    /* Spannweite kommt aus EYE — dieselbe Quelle wie Textur und Platzhalter (siehe Kopf). */
+    this._eyes = window.RecherchiEyes.createEyes(box, { size: Math.round(470 * EYE.size), gap: EYE.gap });
+    box.querySelectorAll('.re-eye').forEach(el => {
+      el.style.borderRadius = '50%';
+      el.style.boxShadow = '0 0 0 10px #fff';   // deckt das Ruhegesicht in der Textur
+    });
+    cube.addEventListener('facepoint', e => this.onFacePoint(e.detail));
+    cube.addEventListener('flick', e => this.onFlick(e.detail));
+    /* Lebens-Schalter. Die Uhr laeuft schon zentral (eine rAF-Kette fuer _eyes UND _standEyes,
+       siehe oben) — was fehlte, war setLife: ohne den Schalter tickt update(dt) ins Leere,
+       kein Blinzeln, keine Drift. _standEyes bekam ihn, das Gesicht auf dem Wuerfel nicht. */
+    this._eyes.setLife(true);
+  }
+
+  onFacePoint(p){
+    const eyes = this._eyes; if (!eyes || !p) return;
+    this._fpSeen = performance.now();
+    if (p.face === 'scan'){
+      eyes.look(p.x, p.y);
+      // Nase sitzt bei 38,5 % Höhe und ist 21 % breit → Cross-Eye, wenn der Zeiger darauf steht
+      const dx = p.x, dy = p.y - (0.45 * 2 - 1);
+      eyes.cross(Math.hypot(dx, dy) < 0.24);
+    } else {
+      eyes.cross(false);
+      eyes.look(p.sx * 1.2, -p.sy * 1.2);   // folgt dem Zeiger auch neben dem Würfel
+    }
+  }
+
+  /* Flick: die Engine meldet nur. Vorderseite vorn = Scan, sonst zurück in die Default-Position. */
+  onFlick(d){
+    const cube = this._cube; if (!cube || !d) return;
+    if (d.face === 'scan'){
+      const turns = Math.min(3, 1 + (d.speed || 0) / 9);   // Wucht kommt aus der Geste, nicht geraten
+      if (cube.spinFlick) cube.spinFlick(d.vx, d.vy, turns);
+      if (this._eyes) this._eyes.react('scan', { x: 0, y: 0 });
+      this.startScan();
+    } else {
+      cube.active = 'scan';
+    }
+  }
+
+  faceHtml(f){
+    const s = this.state;
+    const MIC_ICON = (ink) => `<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="${ink}" stroke-width="1.9" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"></path><path d="M12 18v3"></path></svg>`;
+    const MIC_BIG = () => `<svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3"></path></svg>`;
+    const PLAY_BIG = '<svg width="44" height="44" viewBox="0 0 24 24" fill="#fff"><path d="M8.2 4.4 19.6 12 8.2 19.6z"></path></svg>';
+    const SEND_ICON = '<svg width="21" height="21" viewBox="0 0 24 24" fill="#fff"><path d="M3.2 20.4 21.4 12 3.2 3.6l.1 6.6 12 1.8-12 1.8z"></path></svg>';
+    const PLUS_WHITE = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>';
+    const PLUS_ICON = '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>';
+    const head = (kicker, title) => `<div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:44px;line-height:1.16;text-wrap:balance">${esc(title)}</div>`;
+    const btn = (act, label, primary) => `<button data-act="${act}" style="border:1px solid ${primary?'#8CBF2B':'#E5E7EB'};background:${primary?'#99CC33':'#fff'};color:${primary?'#fff':'#222'};border-radius:12px;padding:19px 36px;font:700 28px Roboto,sans-serif;letter-spacing:.2px;cursor:pointer">${esc(label)}</button>`;
+    const sub = t => `<div style="font-size:25px;line-height:1.4;color:#6B7280">${esc(t)}</div>`;
+    const chip = (act, label, on, bg, ink) => `<button data-act="${act}" style="border:1px solid ${on?(ink||'#8CBF2B'):'#E5E7EB'};background:${on?(bg||'#F1F8E2'):'#fff'};color:${on?(ink||'#4F7A16'):'#6B7280'};border-radius:999px;padding:11px 20px;font:500 22px Roboto,sans-serif;cursor:pointer">${esc(label)}</button>`;
+
+    if (f.id === 'scan'){
+      /* Vorderseite = Gesicht. Proportionen am Mockup gemessen (Prozent der 470-px-Entwurfskante):
+         Augen aus EYE (26 % breit, Mitte 27 %) · Nase 21 % breit, Mitte 45 % · Mundfeld 81 %, Mitte 72 %.
+         Ohne CTA-Knopf sitzt das Gesicht mittiger als in der ersten Fassung.
+         Die Augen hier sind das RUHEGESICHT in der Textur; die lebenden liegen im L2-Overlay. */
+      const txt = String(s.chatText || '');
+      const rec = s.listening === 'chatText';
+      const send = !!txt.trim();
+      const E = Math.round(470 * EYE.size), GAP = Math.round(E * EYE.gap), PU = Math.round(E * 0.40);
+      const GL = Math.round(PU * 0.30);
+      const eye = `<div style="width:${E}px;height:${E}px;border-radius:50%;background:#fff;box-sizing:border-box;` +
+        `border:${Math.round(E * 0.075)}px solid #141618;position:relative;` +
+        `box-shadow:inset 0 ${Math.round(E * 0.07)}px ${Math.round(E * 0.14)}px rgba(20,24,28,.13)">` +
+        `<div style="position:absolute;left:50%;top:50%;width:${PU}px;height:${PU}px;margin:${-PU/2}px 0 0 ${-PU/2}px;` +
+        `border-radius:50%;background:#17191B">` +
+        `<div style="position:absolute;left:${Math.round(PU * 0.16)}px;top:${Math.round(PU * 0.14)}px;` +
+        `width:${GL}px;height:${GL}px;border-radius:50%;background:rgba(255,255,255,.92)"></div>` +
+        `</div></div>`;
+      const restEyes = `<div style="position:absolute;left:0;right:0;top:${EYE.topPct}%;transform:translateY(-50%);` +
+        `display:flex;justify-content:center;gap:${GAP}px">${eye}${eye}</div>`;
+      // Sobald Text oder Transkript da ist, wird die Nase zum PLAY-Knopf: sie startet die
+      // Recherche, sie schickt keine Nachricht.
+      const nose = `<button data-act="${send ? 'chat:send' : 'mic'}" title="${send ? 'Recherche starten' : 'Diktieren'}" ` +
+        `style="position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:21%;height:21%;` +
+        `border-radius:50%;border:0;background:${rec ? '#CC0033' : '#99CC33'};display:grid;place-items:center;` +
+        `cursor:pointer;box-shadow:0 8px 22px rgba(103,140,30,.34)">` +
+        (send ? PLAY_BIG : MIC_BIG(rec)) + `</button>`;
+      // Die Unterlinie ist eine Border und liegt IN der Border-Box: ohne sie in der Höhe
+      // mitzurechnen, bleibt die Zeile 2,5 px zu hoch und die Scrollbar kommt zurück.
+      const LHm = 36, PADm = 14, BDm = 2.5, MAXm = LHm * 3 + PADm * 2 + BDm;
+      const lines = Math.max(1, txt.split('\n').length, Math.ceil(txt.length / 30));
+      const th = Math.min(MAXm, LHm * lines + PADm * 2 + BDm);
+      const mouth = `<div style="position:absolute;left:50%;top:72%;transform:translate(-50%,-50%);width:81%">` +
+        `<textarea data-act="chat" rows="1" placeholder="Frag Recherchi …" style="display:block;width:100%;` +
+        `box-sizing:border-box;height:${th}px;max-height:${MAXm}px;overflow-y:${th >= MAXm ? 'auto' : 'hidden'};scrollbar-width:thin;resize:none;border:0;` +
+        `border-bottom:2.5px solid ${rec ? '#CC0033' : '#2A2E32'};border-radius:12px 12px 4px 4px;background:#F1F3F4;` +
+        `padding:${PADm}px 18px;font:400 25px Roboto,sans-serif;line-height:${LHm}px;color:#222;outline:none;` +
+        `text-align:${send ? 'left' : 'center'}">${esc(txt)}</textarea></div>`;
+      const foot = s.scanning
+        ? `<div style="position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);width:60%">` +
+          `<div style="height:6px;background:#F0F0F0;border-radius:3px;overflow:hidden"><div style="height:100%;` +
+          `width:${Math.round(((s.scanStep + 1) / Math.max(1, (D().SCANSTEPS || []).length)) * 100)}%;background:#99CC33;` +
+          `transition:width .5s"></div></div>` +
+          `<div style="margin-top:12px;font:400 20px Roboto,sans-serif;color:#8A9099;text-align:center">` +
+          `${esc((D().SCANSTEPS || [])[s.scanStep] || '')}</div></div>`
+        : '';
+      return restEyes + nose + mouth + foot;
+    }
+
+    if (f.id === 'quellen'){
+      const all = (D().QUELLEN || []).flatMap(g => g.items);
+      const chips = all.slice(0, 6).map(i => chip('q:' + i.id, i.s || i.l, !!s.quellen[i.id]))
+        .concat(s.eigene.slice(0, 2).map(t => chip('noop', t.length > 16 ? t.slice(0, 15) + '…' : t, true))).join('');
+      return `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:96%">${chips}</div>
+         <div style="display:flex;gap:10px;align-items:center;width:100%">
+           <input data-act="eigene" value="${esc(s.eigeneText)}" placeholder="Quelle …" style="flex:1;min-width:0;box-sizing:border-box;height:56px;border:1.5px solid #E3E6E9;border-radius:16px;padding:0 20px;font:400 22px Roboto,sans-serif;color:#222;outline:none" />
+           <button data-act="eigene:add" title="Quelle hinzufügen" style="width:56px;height:56px;flex:none;border:0;background:#99CC33;border-radius:16px;display:grid;place-items:center;cursor:pointer">${PLUS_WHITE}</button>
+         </div>`;
+    }
+
+    if (f.id === 'filter'){
+      const q = String(s.fachQuery || '').trim().toLowerCase();
+      const all = Object.entries(D().FACH || {});
+      const list = q ? all.filter(([k, v]) => v.l.toLowerCase().indexOf(q) >= 0).slice(0, 6)
+        : all.filter(([k, v]) => v.top).sort((a, b) => a[1].top - b[1].top);
+      const chips = list.map(([k, v]) => chip('fach:' + k, v.l, s.fFach.indexOf(k) >= 0, v.bg, v.ink)).join('');
+      const extra = s.fFach.filter(k => list.every(([kk]) => kk !== k))
+        .map(k => chip('fach:' + k, (D().FACH[k] || {}).l || k, true, (D().FACH[k] || {}).bg, (D().FACH[k] || {}).ink)).join('');
+      return `<div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center;max-width:96%">${chips}${extra}</div>
+        <input data-act="fachq" value="${esc(s.fachQuery || '')}" placeholder="Fachgebiet suchen …" style="width:100%;box-sizing:border-box;height:56px;border:1.5px solid #E3E6E9;border-radius:16px;padding:0 20px;font:400 22px Roboto,sans-serif;color:#222;outline:none" />
+        ${s.fFach.length ? '<button data-act="scan" style="border:0;background:#99CC33;color:#fff;border-radius:14px;padding:14px 36px;font:700 24px Roboto,sans-serif;cursor:pointer">Recherchi</button>' : ''}`;
+    }
+
+    if (f.id === 'briefing'){
+      const fs = (s.files || []).slice(0, 5);
+      const items = fs.map((n, i) => `<div style="display:flex;gap:10px;align-items:center;justify-content:space-between;width:100%;font-size:21px;color:#3C4249;border-bottom:1px solid #F1F2F4;padding:7px 0">
+          <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(n)}</span>
+          <button data-act="file:del" data-val="${i}" style="border:0;background:transparent;color:#B0B6BD;font-size:22px;line-height:1;cursor:pointer">×</button>
+        </div>`).join('');
+      const on = fs.length > 0;
+      return head('', 'Upload') +
+        (on ? `<div style="display:flex;flex-direction:column;width:88%">${items}</div>`
+            : sub('PDF, Text oder Link. Bis zu fünf.')) +
+        `<div style="display:flex;gap:12px;align-items:center;justify-content:center">
+           <button data-act="file" style="height:58px;padding:0 28px;border:1.5px solid #E3E6E9;background:#fff;color:#3C4249;border-radius:14px;font:500 23px Roboto,sans-serif;cursor:pointer">Dateien wählen</button>
+           <button data-act="scan" style="height:58px;padding:0 34px;border:0;background:${on ? '#99CC33' : '#EDF6DE'};color:${on ? '#fff' : '#B3CD8C'};border-radius:14px;font:700 24px Roboto,sans-serif;cursor:${on ? 'pointer' : 'default'}">Scan</button>
+         </div>`;
+    }
+
+    if (f.id === 'material'){
+      const n = s.board.length;
+      return head('', 'Board') +
+        sub(n ? `${n} ${n === 1 ? 'Thema' : 'Themen'} gemerkt` : 'Noch nichts gemerkt') +
+        `<div style="height:8px"></div>` + btn('board:open', 'Board öffnen', n > 0);
+    }
+
+    return '';
+  }
+
+  onFace(d){
+    const a = d.act || '';
+    // §5a: jede Interaktion auf der Fläche bekommt eine winzige Augen-Reaktion
+    if (this._eyes && a && a !== 'chat'){
+      this._eyes.react(a === 'chat:send' || a === 'chat:submit' || a === 'scan' ? 'send' : 'klick', { x: 0, y: 0.4 });
+    }
+    if (a === 'scan') return this.startScan();
+    if (a.indexOf('q:') === 0) return this.toggleQuelle(a.slice(2));
+    if (a.indexOf('fach:') === 0) return this.toggleFach(a.slice(5));
+    if (a === 'eigene') return this.setState({ eigeneText: d.value });
+    if (a === 'eigene:add' || a === 'eigene:submit') return this.addEigene();
+    if (a === 'chat') return this.setState({ chatText: d.value });
+    if (a === 'chat:send' || a === 'chat:submit') return this.startScan();
+    if (a === 'fachq') return this.setState({ fachQuery: d.value });
+    if (a === 'mic') return this.state.listening ? this.stopListen() : this.listen('chatText');
+    if (a === 'file') return this.pickFiles();
+    if (a === 'file:del') return this.setState(st => ({ files: st.files.filter((_, i) => i !== Number(d.value)) }));
+    if (a === 'board:open') return this.setState({ tab: 'board' });
+  }
+
+  pickFiles(){
+    let el = this._fileInput;
+    if (!el){
+      el = this._fileInput = document.createElement('input');
+      el.type = 'file'; el.multiple = true; el.style.display = 'none';
+      el.addEventListener('change', () => {
+        const names = Array.from(el.files || []).map(x => x.name);
+        this.setState(st => ({ files: (st.files || []).concat(names).slice(0, 5) }));
+        el.value = '';
+      });
+      document.body.appendChild(el);
+    }
+    try { el.click(); } catch(_){}
+  }
+
+  listen(field){
+    const SR = this.props.voiceOn === false ? null : (window.SpeechRecognition || window.webkitSpeechRecognition);
+    if (!SR){ this.setState({ inputMode: 'text', toast: 'Kein Mikrofonzugriff. Tastatur ist aktiv, nichts geht verloren.' }); return; }
+    try {
+      const r = new SR();
+      r.lang = 'de-DE'; r.interimResults = true; r.continuous = false;
+      const base = String(this.state[field] || '');
+      r.onresult = e => {
+        let txt = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) txt += e.results[i][0].transcript;
+        this.setState({ [field]: (base ? base + ' ' : '') + txt });
+      };
+      r.onerror = () => this.setState({ listening: null, inputMode: 'text', toast: 'Kein Mikrofonzugriff. Tastatur ist aktiv.' });
+      r.onend = () => this.setState({ listening: null });
+      r.start();
+      this._rec = r;
+      this.setState({ listening: field, toast: '' });
+    } catch (e){ this.setState({ listening: null, inputMode: 'text' }); }
+  }
+  stopListen(){ if (this._rec){ try { this._rec.stop(); } catch(_){} this._rec = null; } if (this.state.listening) this.setState({ listening: null }); }
+
+  async llm(prompt, fallback){
+    try {
+      if (!window.claude || !window.claude.complete) throw new Error('offline');
+      const out = await window.claude.complete(prompt);
+      return String(out || '').trim() || fallback;
+    } catch (e){ return fallback; }
+  }
+  goldenPrompt(){
+    const g = (D().GOLDEN || []).filter(x => x.on).map(x => `- "${x.h}" — Mechanik: ${x.m}`).join('\n');
+    return `Du schreibst Headline-Vorschläge für die medizinische Fachredaktion DocCheck. Deutsch, Du-Form, keine Ausrufezeichen, keine Emoji.
+Lerne das Verfahren, nicht den Tonfall. Kuratierte Beispiele mit ihrer Mechanik:
+${g}
+Anleser-Bauplan: Prämisse, Bruch, offene Frage. Zwei bis drei Sätze, Du-Form, oft mit Fragezeichen am Ende.`;
+  }
+
+  startScan(){
+    if (this.state.scanning) return;
+    const steps = (D().SCANSTEPS || []).length || 1;
+    this.setState({ scanning: true, scanStep: 0, ideen: null, tab: 'scan', anchor: 'topRight', spits: [] });
+    if (this._cube) this._cube.active = 'scan';
+    // Gesicht macht mit: denkt während des Calls, freut sich beim Ergebnis (Prime Directive:
+    // settlet danach zurück in den wachen Grundzustand).
+    if (this._eyes) this._eyes.emote('denkt', { hold: 999 });
+    // Hüpft über den Bildschirm: zwei Sprünge auf dem Weg in die Ecke, netto null Versatz —
+    // die Reise selbst macht die Ankeränderung. Danach der Wartetakt.
+    if (this._motion){
+      const M = this._motion;
+      M.play('hopSide', { dir: 1 });
+      clearTimeout(this._hopT);
+      this._hopT = setTimeout(() => { if (this.state.scanning) M.play('hopSide', { dir: -1 }); }, 560);
+      setTimeout(() => { if (this._motion && this.state.scanning) this._motion.loadLoop(true); }, 1120);
+    }
+    else if (this._cube && this._cube.setSpin) this._cube.setSpin(0.5);
+    clearInterval(this._scanIv);
+    this._scanIv = setInterval(() => {
+      const n = this.state.scanStep + 1;
+      if (n >= steps){
+        clearInterval(this._scanIv);
+        if (this._motion){ this._motion.loadLoop(false); this._motion.celebrate(); }
+        else if (this._cube && this._cube.setSpin) this._cube.setSpin(0);
+        if (this._eyes) this._eyes.emote('freut', { hold: 2.4 });
+        // Ergebnisansicht erwartet das Gesicht vorn.
+        if (this._cube) this._cube.active = 'scan';
+        clearTimeout(this._spitT);
+        this._spitT = setTimeout(() => this.setState({ spits: [] }), 900);
+        this.setState({ scanning: false, scanned: true, scanStep: 0, section: null });
+      } else {
+        this.setState({ scanStep: n });
+        this.spitTile(n);
+      }
+    }, 900);
+  }
+
+  /* Apportieren: pro Scan-Schritt fliegt eine echte Themenkachel aus dem Mund. Der Rückstoss am
+     Würfel kommt aus der Motion-Schicht (spit), nicht aus einer eigenen Animation. */
+  spitTile(n){
+    const pool = this.themen();
+    const t = pool[(n - 1) % Math.max(1, pool.length)];
+    if (!t) return;
+    if (this._motion) this._motion.spit(n);
+    this.setState(s => ({ spits: (s.spits || []).concat([{ id: t.id + ':' + n, title: t.title, fach: t.fach }]).slice(-6) }));
+  }
+
+  toggleQuelle(id){ this.setState(s => ({ quellen: Object.assign({}, s.quellen, { [id]: !s.quellen[id] }) })); }
+  addEigene(){
+    const t = String(this.state.eigeneText || '').trim(); if (!t) return;
+    this.setState(s => ({ eigene: s.eigene.concat([t]), eigeneText: '' }));
+  }
+  toggleFach(k){ this.setState(s => ({ fFach: s.fFach.indexOf(k) >= 0 ? s.fFach.filter(x => x !== k) : s.fFach.concat([k]) })); }
+  toggleWinkel(l){ this.setState(s => ({ fWinkel: s.fWinkel.indexOf(l) >= 0 ? s.fWinkel.filter(x => x !== l) : s.fWinkel.concat([l]) })); }
+  toggleBoard(id){ this.setState(s => ({ board: s.board.indexOf(id) >= 0 ? s.board.filter(x => x !== id) : s.board.concat([id]) })); }
+  toggleSel(id){ this.setState(s => ({ sel: s.sel.indexOf(id) >= 0 ? s.sel.filter(x => x !== id) : s.sel.concat([id]) })); }
+  toggleOpen(id){ this.setState(s => ({ open: Object.assign({}, s.open, { [id]: !s.open[id] }) })); }
+  addMaterial(){
+    const demo = [
+      { kind: 'PDF', name: 'Leitlinien-Entwurf_Geriatrie.pdf' },
+      { kind: 'LINK', name: 'jama.com/…/fall-prevention' },
+      { kind: 'TXT', name: 'Notizen Redaktionssitzung' }
+    ];
+    this.setState(s => ({ material: s.material.concat([demo[s.material.length % 3]]), materialRead: true, section: 'material' }));
+  }
+
+  themen(){
+    const s = this.state;
+    let list = (D().THEMEN || []).slice();
+    if (s.fFach.length) list = list.filter(t => s.fFach.indexOf(t.fach) >= 0);
+    if (s.fWinkel.length) list = list.filter(t => s.fWinkel.indexOf(t.angle) >= 0);
+    return list.sort((a, b) => b.score - a.score);
+  }
+
+  async moreHeadlines(t){
+    this.setState(s => ({ busy: Object.assign({}, s.busy, { ['h' + t.id]: true }) }));
+    const fb = [
+      { a: 'praxisorientiert', t: t.title.split(':')[0] + ': Was das für die Sprechstunde heißt' },
+      { a: 'konträrer Winkel', t: 'Der Widerspruch, den keiner anspricht' },
+      { a: 'Frage als Aufhänger', t: 'Und jetzt?' }
+    ];
+    const raw = await this.llm(`${this.goldenPrompt()}
+
+Thema: ${t.title}
+Prämisse: ${t.dreisatz.p}
+Bruch: ${t.dreisatz.b}
+Offene Frage: ${t.dreisatz.f}
+
+Liefere drei WEITERE Headline-Vorschläge mit unterschiedlichem redaktionellem Ansatz, nicht drei Tonlagen desselben Zugriffs. Trägt das Thema kein Wortspiel, liefere nur sachliche Titel.
+Antworte ausschließlich als JSON-Array: [{"a":"Ansatz","t":"Headline"}]`, '');
+    let add = fb;
+    try { const m = raw.match(/\[[\s\S]*\]/); if (m){ const p = JSON.parse(m[0]); if (Array.isArray(p) && p.length) add = p.slice(0, 3); } } catch (e){}
+    this.setState(s => ({
+      variants: Object.assign({}, s.variants, { [t.id]: (s.variants[t.id] || []).concat(add) }),
+      busy: Object.assign({}, s.busy, { ['h' + t.id]: false })
+    }));
+  }
+
+  async rewriteAnleser(t){
+    this.setState(s => ({ busy: Object.assign({}, s.busy, { ['a' + t.id]: true }) }));
+    const raw = await this.llm(`${this.goldenPrompt()}
+
+Formuliere EINEN neuen Anleser-Vorschlag nach dem Bauplan Prämisse, Bruch, offene Frage.
+Thema: ${t.title}
+Prämisse: ${t.dreisatz.p}
+Bruch: ${t.dreisatz.b}
+Offene Frage: ${t.dreisatz.f}
+Antworte nur mit dem Anleser, zwei bis drei Sätze, ohne Anführungszeichen.`, t.anleser);
+    this.setState(s => ({
+      anleser: Object.assign({}, s.anleser, { [t.id]: raw.replace(/^["„]|["“]$/g, '') }),
+      busy: Object.assign({}, s.busy, { ['a' + t.id]: false })
+    }));
+  }
+
+  makeIdeen(){
+    const map = {}; this.themen().forEach(t => { map[t.id] = t; });
+    const rows = this.state.sel.map(id => map[id]).filter(Boolean).map(t => ({
+      id: t.id,
+      headline: ((this.state.variants[t.id] || t.headlines)[0] || {}).t || t.title,
+      anleser: this.state.anleser[t.id] || t.anleser,
+      taken: false
+    }));
+    this.setState({ ideen: rows });
+  }
+
+  async applySteer(){
+    const s = this.state;
+    if (!s.ideen || !String(s.steerText).trim()) return;
+    this.setState({ steering: true });
+    const map = {}; this.themen().forEach(t => { map[t.id] = t; });
+    const list = s.ideen.map(r => ({ id: r.id, thema: map[r.id] ? map[r.id].title : r.id, headline: r.headline }));
+    const raw = await this.llm(`${this.goldenPrompt()}
+
+Steuere die folgenden Headline-Vorschläge nach dieser Anweisung nach: "${s.steerText}"
+${JSON.stringify(list)}
+Antworte ausschließlich als JSON-Array: [{"id":"…","headline":"…","anleser":"…"}] — Anleser zwei bis drei Sätze nach dem Bauplan.`, '');
+    let next = s.ideen;
+    try {
+      const m = raw.match(/\[[\s\S]*\]/);
+      if (m){
+        const p = JSON.parse(m[0]);
+        if (Array.isArray(p)) next = s.ideen.map(r => {
+          const hit = p.filter(x => x.id === r.id)[0];
+          return hit ? Object.assign({}, r, { headline: hit.headline || r.headline, anleser: hit.anleser || r.anleser }) : r;
+        });
+      }
+    } catch (e){}
+    this.setState({ ideen: next, steering: false, steerText: '' });
+  }
+
+  copyIdeen(){
+    const map = {}; this.themen().forEach(t => { map[t.id] = t; });
+    const txt = (this.state.ideen || []).map(r => `${map[r.id] ? map[r.id].title : r.id}\n${r.headline}\n${r.anleser}\n`).join('\n');
+    try { navigator.clipboard.writeText(txt); } catch (e){}
+    this.setState({ copied: true });
+    setTimeout(() => this.setState({ copied: false }), 1600);
+  }
+
+  async understand(){
+    const t = String(this.state.briefText || '').trim();
+    if (!t) return;
+    this.stopListen();
+    this.setState({ briefBusy: true, section: 'briefing' });
+    const raw = await this.llm(`Ein Redakteur diktiert ein Rechercheinteresse. Spracherkennung verstümmelt medizinische Fachbegriffe regelmäßig.
+Diktat: "${t}"
+Gib in EINEM Satz wieder, wie du das verstanden hast, und korrigiere offensichtliche Verhörer bei Wirkstoff- und Fachbegriffen. Nur der Satz, Deutsch, Du-Form.`,
+      `Du willst wissen: ${t.replace(/\.$/, '')}.`);
+    this.setState({ briefUnderstood: raw, briefBusy: false });
+  }
+
+  panel(id){
+    const s = this.state;
+    const R = React.createElement;
+    const lbl = t => R('div', { style:{ fontSize:'11px', fontWeight:700, letterSpacing:'.4px', color:'#9CA3AF', margin:'12px 0 6px' } }, t);
+    const chip = (on, text, onClick, col) => R('button', {
+      onClick, key: text,
+      style:{ border:'1px solid ' + (on ? (col ? col.ink : '#CC0033') : '#E5E7EB'), background: on ? (col ? col.bg : '#FBE0E7') : '#fff',
+        color: on ? (col ? col.ink : '#8C2340') : '#6B7280', borderRadius:'999px', padding:'5px 10px',
+        font:'500 12px Roboto,sans-serif', cursor:'pointer' } }, text);
+    const row = children => R('div', { style:{ display:'flex', flexWrap:'wrap', gap:'6px' } }, children);
+    const note = t => R('div', { style:{ fontSize:'12.5px', lineHeight:1.55, color:'#6B7280' } }, t);
+
+    if (id === 'scan'){
+      return R('div', null,
+        R('button', { onClick: () => this.startScan(), disabled: s.scanning,
+          style:{ marginTop:'10px', width:'100%', background: s.scanning ? '#F4F4F4' : '#99CC33', color: s.scanning ? '#9CA3AF' : '#21400A',
+            border:'1px solid ' + (s.scanning ? '#E5E7EB' : '#8CBF2B'), borderRadius:'6px', padding:'10px', font:'700 13px Roboto,sans-serif', cursor: s.scanning ? 'default' : 'pointer' } },
+          s.scanning ? 'läuft …' : (s.scanned ? 'Erneut scannen' : 'Scan starten')));
+    }
+
+    if (id === 'quellen'){
+      return R('div', null,
+        row((D().PRESETS || []).map(p => chip(s.preset === p.id, p.l, () => this.setState({ preset: p.id })))),
+        (D().QUELLEN || []).map(g => R('div', { key: g.grp },
+          lbl(g.grp.toUpperCase()),
+          g.items.map(i => R('label', { key: i.id, style:{ display:'flex', gap:'8px', alignItems:'center', fontSize:'12.5px', padding:'3px 0', cursor:'pointer' } },
+            R('input', { type:'checkbox', checked: !!s.quellen[i.id], onChange: () => this.toggleQuelle(i.id) }), i.l)))),
+        lbl('EIGENE'),
+        R('div', { style:{ display:'flex', gap:'6px' } },
+          R('input', { value: s.eigeneText, onChange: e => this.setState({ eigeneText: e.target.value }),
+            onKeyDown: e => { if (e.key === 'Enter') this.addEigene(); },
+            placeholder:'URL, Journal, Fachforum',
+            style:{ flex:1, minWidth:0, border:'1px solid #E5E7EB', borderRadius:'6px', padding:'7px 9px', fontSize:'12.5px' } }),
+          R('button', { onClick: () => this.addEigene(), style:{ border:'1px solid #E5E7EB', background:'#fff', borderRadius:'6px', padding:'7px 11px', font:'600 12.5px Roboto,sans-serif', cursor:'pointer' } }, '+')),
+        s.eigene.length ? R('div', { style:{ marginTop:'8px' } }, row(s.eigene.map(e => chip(true, e, () => this.setState(st => ({ eigene: st.eigene.filter(x => x !== e) })))))) : null);
+    }
+
+    if (id === 'filter'){
+      return R('div', null,
+        lbl('FACHGEBIET'),
+        row(Object.keys(D().FACH || {}).map(k => chip(s.fFach.indexOf(k) >= 0, D().FACH[k].l, () => this.toggleFach(k), D().FACH[k]))),
+        lbl('WINKELTYP'),
+        note('Gezielt nach Widersprüchen suchen statt nach Neuigkeiten.'),
+        R('div', { style:{ marginTop:'6px' } }, row((D().WINKEL || []).map(w => chip(s.fWinkel.indexOf(w.l) >= 0, w.l, () => this.toggleWinkel(w.l))))),
+        (s.fFach.length || s.fWinkel.length) ? R('button', { onClick: () => this.setState({ fFach: [], fWinkel: [] }),
+          style:{ marginTop:'12px', border:'1px solid #E5E7EB', background:'#fff', color:'#6B7280', borderRadius:'6px', padding:'7px 11px', fontSize:'12.5px', cursor:'pointer' } }, 'Filter zurücksetzen') : null);
+    }
+
+    if (id === 'briefing'){
+      return R('div', null,
+        R('div', { style:{ display:'flex', flexDirection:'column', gap:'6px', margin:'10px 0' } },
+          (D().BEISPIELE || []).map(b => R('button', { key: b, onClick: () => this.setState({ briefText: b }),
+            style:{ textAlign:'left', border:'1px solid #E5E7EB', background:'#fff', color:'#6B7280', borderRadius:'6px', padding:'6px 9px', fontSize:'11.5px', lineHeight:1.4, cursor:'pointer' } }, b))),
+        R('textarea', { value: s.briefText, onChange: e => this.setState({ briefText: e.target.value }), rows: 3,
+          placeholder: s.inputMode === 'voice' ? 'Zum Sprechen Mikrofon klicken oder Leertaste halten' : 'Tippen …',
+          style:{ width:'100%', boxSizing:'border-box', border:'1px solid ' + (s.listening ? '#CC0033' : '#E5E7EB'), borderRadius:'8px', padding:'9px', fontSize:'13px', lineHeight:1.5, resize:'vertical' } }),
+        R('div', { style:{ display:'flex', gap:'6px', marginTop:'8px' } },
+          R('button', { onClick: () => (s.listening ? this.stopListen() : this.listen('briefText')),
+            style:{ width:'38px', height:'38px', borderRadius:'50%', border:'1px solid ' + (s.listening ? '#CC0033' : '#E5E7EB'),
+              background: s.listening ? '#CC0033' : '#fff', color: s.listening ? '#fff' : '#6B7280', cursor:'pointer',
+              animation: s.listening ? 'rcPulse 1.6s infinite' : 'none' } }, '●'),
+          R('button', { onClick: () => this.understand(),
+            style:{ flex:1, background:'#99CC33', color:'#21400A', border:'1px solid #8CBF2B', borderRadius:'7px', padding:'9px', font:'700 13px Roboto,sans-serif', cursor:'pointer' } },
+            s.briefBusy ? 'einen Moment …' : 'So verstanden?')),
+        s.toast ? R('div', { style:{ marginTop:'8px', fontSize:'12px', color:'#7A5A11', background:'#FFFBEF', border:'1px solid #F5DDA6', borderRadius:'6px', padding:'8px 10px' } }, s.toast) : null,
+        s.briefUnderstood ? R('div', { style:{ marginTop:'10px', border:'1px solid #E5E7EB', borderRadius:'8px', padding:'10px' } },
+          R('div', { style:{ fontSize:'11px', fontWeight:700, letterSpacing:'.4px', color:'#9CA3AF', marginBottom:'4px' } }, 'SO HABE ICH DICH VERSTANDEN'),
+          R('div', { style:{ fontSize:'13px', lineHeight:1.55 } }, s.briefUnderstood),
+          R('div', { style:{ display:'flex', gap:'6px', marginTop:'10px' } },
+            R('button', { onClick: () => { this.setState({ briefUnderstood: null }); this.startScan(); },
+              style:{ background:'#99CC33', color:'#21400A', border:'1px solid #8CBF2B', borderRadius:'6px', padding:'7px 11px', font:'700 12.5px Roboto,sans-serif', cursor:'pointer' } }, 'So recherchieren'),
+            R('button', { onClick: () => this.setState({ briefUnderstood: null }),
+              style:{ border:'1px solid #E5E7EB', background:'#fff', color:'#6B7280', borderRadius:'6px', padding:'7px 11px', fontSize:'12.5px', cursor:'pointer' } }, 'korrigieren'))) : null);
+    }
+
+    if (id === 'material'){
+      return R('div', null,
+        R('button', { onClick: () => this.addMaterial(),
+          style:{ marginTop:'10px', width:'100%', border:'1px dashed #D8DBE0', background:'#FAFAFA', color:'#6B7280', borderRadius:'8px', padding:'16px', fontSize:'12.5px', cursor:'pointer' } },
+          'Datei ablegen oder auswählen'),
+        s.material.length ? R('div', { style:{ marginTop:'10px' } },
+          s.material.map((m, i) => R('div', { key: i, style:{ display:'flex', gap:'8px', alignItems:'center', padding:'6px 0', borderBottom:'1px solid #F0F0F0', fontSize:'12.5px' } },
+            R('span', { style:{ font:'500 10px "Roboto Mono",monospace', color:'#B0B6BD' } }, m.kind), m.name))) : null,
+        s.material.length ? R('div', { style:{ marginTop:'12px', border:'1px solid #E5E7EB', borderRadius:'8px', padding:'10px' } },
+          R('div', { style:{ fontSize:'11px', fontWeight:700, letterSpacing:'.4px', color:'#9CA3AF', marginBottom:'6px' } }, 'EXTRAHIERT'),
+          R('div', { style:{ fontSize:'12.5px', lineHeight:1.6 } }, '3 Behauptungen · 2 Primärquellen · 1 offene Frage · möglicher Winkel: Leitlinie hinkt hinterher'),
+          R('button', { onClick: () => this.startScan(),
+            style:{ marginTop:'10px', width:'100%', background:'#99CC33', color:'#21400A', border:'1px solid #8CBF2B', borderRadius:'6px', padding:'8px', font:'700 12.5px Roboto,sans-serif', cursor:'pointer' } }, 'Dagegen recherchieren')) : null);
+    }
+
+    return R('div', null,
+      R('div', { style:{ height:'104px', border:'1px solid #E5E7EB', borderRadius:'8px', background:'#FAFAFA', display:'grid', placeItems:'center', color:'#B0B6BD', font:'500 11.5px "Roboto Mono",monospace' } }, 'VIDEO · 3 MIN'),
+      R('div', { style:{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'14px', marginTop:'12px' } },
+        R('div', null, lbl('MACHT'), note('Sichtet, ordnet ein, schlägt Zugriffe vor.')),
+        R('div', null, lbl('MACHT NICHT'), note('Veröffentlicht nichts, schreibt keine Artikel, erfindet keine Zahlen.'))),
+      lbl('GOLDEN SAMPLES'),
+      (D().GOLDEN || []).map((g, i) => R('div', { key: i, style:{ display:'flex', gap:'8px', alignItems:'flex-start', padding:'6px 0', borderBottom:'1px solid #F0F0F0' } },
+        R('input', { type:'checkbox', defaultChecked: g.on, style:{ marginTop:'3px' } }),
+        R('div', null,
+          R('div', { style:{ fontSize:'12.5px', fontWeight:500, lineHeight:1.4 } }, g.h),
+          R('div', { style:{ fontSize:'11.5px', color:'#9CA3AF' } }, g.m)))));
+  }
+
+  renderVals(){
+    const s = this.state;
+    const F = D().FACH || {};
+    const bars = (n, kind) => new Array(4).fill(0).map((_, i) => ({
+      style: kind === 'ev'
+        ? `width:7px;height:12px;border-radius:1px;background:${i < n ? '#222222' : '#EDEEF0'}`
+        : `width:8px;height:8px;transform:rotate(45deg);border:1px solid ${i < n ? '#4C3A8C' : '#D8DBE0'};background:${i < n ? '#4C3A8C' : 'transparent'}`
+    }));
+    const pill = fk => {
+      const f = F[fk] || { bg:'#F4F4F4', ink:'#6B7280' };
+      return `display:inline-block;background:${f.bg};color:${f.ink};border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase`;
+    };
+    const tab = on => `border:0;border-radius:5px;padding:5px 12px;font-size:12.5px;font-weight:${on ? 600 : 500};cursor:pointer;background:${on ? '#fff' : 'transparent'};color:${on ? '#222' : '#6B7280'};box-shadow:${on ? '0 1px 2px rgba(0,0,0,.08)' : 'none'}`;
+
+    const chip = (label, ink, bg) => ({ label, style: `display:inline-block;background:${bg||'#F4F5F6'};color:${ink||'#6B7280'};border-radius:999px;padding:4px 10px;font-size:12px;line-height:1.35;white-space:nowrap` });
+    const EV = ['', 'dünne Evidenz', 'mittlere Evidenz', 'gute Evidenz', 'starke Evidenz'];
+    const DIS = ['', 'wenig Diskussion', 'einige Stimmen', 'viel Diskussion', 'heftige Debatte'];
+    const chipsFor = t => {
+      const out = [];
+      if (EV[t.evidenz]) out.push(chip(EV[t.evidenz], t.evidenz <= 1 ? '#8A6A1E' : '#6B7280', t.evidenz <= 1 ? '#FBF4E4' : '#F4F5F6'));
+      if (DIS[t.diskussion]) out.push(chip(DIS[t.diskussion]));
+      if (t.social) out.push(chip('Social belegt'));
+      out.push(chip('Score ' + t.score, '#6B7280'));
+      return out;
+    };
+
+    const navBtn = on => `border:0;background:transparent;padding:0;font-size:14px;font-weight:${on ? 700 : 500};color:${on ? '#CC0033' : '#9CA3AF'};cursor:pointer;display:flex;align-items:center;gap:5px`;
+    const navCount = on => `font-size:12.5px;font-weight:400;color:${on ? '#CC0033' : '#C0C4CA'}`;
+
+    const list = this.themen();
+    const cards = list.map(t => {
+      const heads = (t.headlines || []).concat(s.variants[t.id] || []);
+      return {
+        id: t.id,
+        fach: (F[t.fach] || {}).l || t.fach,
+        pillStyle: pill(t.fach),
+        pillStyleRow: pill(t.fach) + ';min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap',
+        angle: t.angle,
+        score: t.score + '/' + t.max,
+        scoreLabel: t.score + '/' + t.max,
+        title: t.title,
+        p: t.dreisatz.p, b: t.dreisatz.b, f: t.dreisatz.f,
+        thin: !!t.thin,
+        age: String(t.aktuell || '').replace(/^vor\s+/, '').replace(/\bTagen\b/, 'Tage').replace(/\bWochen\b/, 'Wo.').replace(/\bMonaten\b/, 'Mon.').replace(/\bStunden\b/, 'Std.'),
+        chips: chipsFor(t),
+        open: !!s.open[t.id],
+        detailLabel: s.open[t.id] ? 'Weniger zeigen' : 'Details zeigen',
+        caret: s.open[t.id] ? '▼' : '▶',
+        caretStyle: 'border:0;background:transparent;color:#9AA0A8;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:15px;line-height:1;cursor:pointer;transition:background .15s',
+        boardTitle: s.board.indexOf(t.id) >= 0 ? 'Vom Board nehmen' : 'Thema aufs Board setzen?',
+        boardIconStyle: `border:0;background:${s.board.indexOf(t.id) >= 0 ? '#99CC33' : 'transparent'};color:${s.board.indexOf(t.id) >= 0 ? '#fff' : '#6B7280'};width:32px;height:32px;border-radius:9px;display:grid;place-items:center;cursor:pointer;transition:background .15s,color .15s`,
+        cardStyle: 'background:#fff;border:1px solid ' + (s.open[t.id] ? '#D8DBE0' : '#EBECEE') + ';border-radius:12px;padding:20px',
+        rowStyle: 'border-bottom:1px solid #F4F5F6;background:' + (s.open[t.id] ? '#FCFCFD' : '#fff'),
+        checkStyle: `width:18px;height:18px;border-radius:4px;border:1px solid ${s.sel.indexOf(t.id) >= 0 ? '#CC0033' : '#D8DBE0'};background:${s.sel.indexOf(t.id) >= 0 ? '#CC0033' : '#fff'};color:#fff;font-size:11px;line-height:1;cursor:pointer;padding:0`,
+        checkMark: s.sel.indexOf(t.id) >= 0 ? '✓' : '',
+        boardStyle: `border:1px solid ${s.board.indexOf(t.id) >= 0 ? '#99CC33' : '#E5E7EB'};background:${s.board.indexOf(t.id) >= 0 ? '#F4F9EA' : '#fff'};color:${s.board.indexOf(t.id) >= 0 ? '#4F7A16' : '#222'};border-radius:6px;padding:7px 12px;font-size:12.5px;font-weight:600;cursor:pointer`,
+        boardLabel: s.board.indexOf(t.id) >= 0 ? 'Auf dem Board' : 'Aufs Board',
+        warumJetzt: t.warumJetzt,
+        talking: (t.talking || []).map(x => ({ text: x })),
+        quellen: (t.quellen || []).map(q => ({ t: q.t, meta: q.src + ' · ' + q.id })),
+        debatte: t.debatte || [],
+        fehlt: t.fehlt,
+        gegen: t.gegen,
+        haerte: (t.haerte || []).map(x => ({ text: x })),
+        headlines: heads,
+        noPun: !heads.some(h => /wortspiel|kofferwort|reim/i.test(h.a || '')),
+        anleser: s.anleser[t.id] || t.anleser,
+        moreLabel: s.busy['h' + t.id] ? 'einen Moment …' : 'Weitere Varianten',
+        rewriteLabel: s.busy['a' + t.id] ? 'einen Moment …' : 'Neu formulieren',
+        toggle: () => this.toggleOpen(t.id),
+        openCard: () => { this.setState({ view: 'kacheln' }); if (!s.open[t.id]) this.toggleOpen(t.id); },
+        select: e => { if (e && e.stopPropagation) e.stopPropagation(); this.toggleSel(t.id); },
+        board: () => this.toggleBoard(t.id),
+        moreHeadlines: () => this.moreHeadlines(t),
+        rewrite: () => this.rewriteAnleser(t),
+        stub: () => {}
+      };
+    });
+
+    const byId = {}; list.forEach(t => { byId[t.id] = t; });
+    const ideenRows = (s.ideen || []).map((r, i) => ({
+      fach: (F[(byId[r.id] || {}).fach] || {}).l || '',
+      pillStyle: pill((byId[r.id] || {}).fach),
+      headline: r.headline,
+      anleser: r.anleser,
+      takeLabel: r.taken ? 'übernommen' : 'übernehmen',
+      takeStyle: `border:1px solid ${r.taken ? '#99CC33' : '#E5E7EB'};background:${r.taken ? '#F4F9EA' : '#fff'};color:${r.taken ? '#4F7A16' : '#222'};border-radius:5px;padding:5px 8px;font-size:12px;font-weight:600;cursor:pointer`,
+      take: () => this.setState(st => ({ ideen: st.ideen.map((x, j) => j === i ? Object.assign({}, x, { taken: !x.taken }) : x) })),
+      again: () => {
+        const t = byId[r.id]; if (!t) return;
+        const pool = t.headlines || []; if (!pool.length) return;
+        let cur = -1; pool.forEach((h, k) => { if (h.t === r.headline) cur = k; });
+        const nx = pool[(cur + 1) % pool.length];
+        this.setState(st => ({ ideen: st.ideen.map((x, j) => j === i ? Object.assign({}, x, { headline: nx.t }) : x) }));
+      }
+    }));
+
+    const sections = (D().FACES || []).map(f => ({
+      id: f.id, l: f.l,
+      open: s.section === f.id,
+      style: `display:flex;align-items:center;gap:8px;width:100%;text-align:left;border:0;background:${s.section === f.id ? '#FCFCFD' : 'transparent'};padding:9px 16px;font-size:13.5px;font-weight:${s.section === f.id ? 700 : 400};color:${s.section === f.id ? '#CC0033' : '#222'};cursor:pointer`,
+      badge: f.id === 'quellen' ? String(Object.keys(s.quellen).filter(k => s.quellen[k]).length + s.eigene.length)
+        : f.id === 'filter' ? (s.fFach.length + s.fWinkel.length ? String(s.fFach.length + s.fWinkel.length) : '')
+        : f.id === 'material' ? (s.material.length ? String(s.material.length) : '') : '',
+      badgeStyle: 'margin-left:auto;font-family:"Roboto Mono",monospace;font-size:11px;color:#9CA3AF',
+      panel: this.panel(f.id),
+      click: () => {
+        const next = s.section === f.id ? null : f.id;
+        this.setState({ section: next });
+        if (this._cube && next) this._cube.active = f.id;
+      }
+    }));
+
+    const boardRows = s.board.map(id => byId[id]).filter(Boolean).map(t => ({
+      fach: (F[t.fach] || {}).l, pillStyle: pill(t.fach), title: t.title, score: t.score + '/' + t.max,
+      remove: () => this.toggleBoard(t.id)
+    }));
+
+    return {
+      cards, sections, ideenRows, boardRows,
+      isKacheln: s.view === 'kacheln',
+      isListe: s.view === 'liste',
+      toggleView: () => this.setState({ view: s.view === 'kacheln' ? 'liste' : 'kacheln' }),
+      viewTitle: s.view === 'kacheln' ? 'Als Liste zeigen' : 'Als Kacheln zeigen',
+      viewSwitchStyle: 'border:0;background:transparent;color:#9AA0A8;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;cursor:pointer;transition:background .15s,color .15s',
+      showEmpty: false,
+      ...this.startVals(),
+      startScan: () => this.startScan(),
+      scanning: s.tab !== 'board' && s.scanning,
+      scanLine: (D().SCANSTEPS || [])[s.scanStep] || '',
+      scanBarStyle: `height:100%;width:${Math.round(((s.scanStep + 1) / Math.max(1, (D().SCANSTEPS || []).length)) * 100)}%;background:#99CC33;transition:width .6s ease`,
+      showResults: s.tab !== 'board' && s.scanned && !s.scanning,
+      nothing: s.scanned && !s.scanning && cards.length === 0,
+      partial: s.scanned && this.props.teilergebnis === true,
+      resultTitle: cards.length ? '' : 'Kein Treffer',
+      resultSub: cards.length ? cards.length + ' Themen · sortiert nach Gesamtscore' : '',
+      hasSelection: s.sel.length > 0,
+      ideenBtnLabel: 'Vorschläge für ' + s.sel.length + (s.sel.length === 1 ? ' Thema' : ' Themen'),
+      makeIdeen: () => this.makeIdeen(),
+      showIdeen: !!s.ideen,
+      ideenCount: (s.ideen || []).length,
+      closeIdeen: () => this.setState({ ideen: null }),
+      copyIdeen: () => this.copyIdeen(),
+      copyLabel: s.copied ? 'kopiert' : 'Tabelle kopieren',
+      steerText: s.steerText,
+      onSteer: e => this.setState({ steerText: e.target.value }),
+      onSteerKey: e => { if (e.key === 'Enter') this.applySteer(); },
+      applySteer: () => this.applySteer(),
+      steerLabel: s.steering ? 'einen Moment …' : 'Nachsteuern',
+      micIdeen: () => (s.listening === 'steerText' ? this.stopListen() : this.listen('steerText')),
+      micIdeenStyle: `width:34px;height:34px;border-radius:50%;border:1px solid ${s.listening === 'steerText' ? '#CC0033' : '#E5E7EB'};background:${s.listening === 'steerText' ? '#CC0033' : '#fff'};color:${s.listening === 'steerText' ? '#fff' : '#6B7280'};cursor:pointer;animation:${s.listening === 'steerText' ? 'rcPulse 1.6s infinite' : 'none'}`,
+      isScan: s.tab !== 'board',
+      showBoard: s.tab === 'board',
+      boardEmpty: s.tab === 'board' && s.board.length === 0,
+      goScan: () => this.setState({ tab: 'scan' }),
+      goBoard: () => this.setState({ tab: 'board' }),
+      navScanStyle: navBtn(s.tab !== 'board'),
+      navBoardStyle: navBtn(s.tab === 'board'),
+      navScanCountStyle: navCount(s.tab !== 'board'),
+      navBoardCountStyle: navCount(s.tab === 'board'),
+      scanCount: s.scanned && cards.length ? '(' + cards.length + ')' : '',
+      boardCount: s.board.length ? '(' + s.board.length + ')' : '',
+      boardHint: s.board.length ? 'Ausgewählte Themen für die Sitzung' : '',
+      cubeLayerStyle: this.cubeLayerStyle(),
+      mainStyle: `min-width:0;max-width:min(1100px, ${this.lay().gutter}px);` +
+        (this.lay().mode === 'phone' && this.lay().anchor === 'topRight' ? `padding-top:${Math.round(this.lay().HH * 0.52)}px` : ''),
+      cubeOn: !s.drawer,
+      trackballStyle: `position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#9AA0A8;background:rgba(255,255,255,.7);border:1px solid #E8EAED;cursor:grab;touch-action:none;z-index:26;opacity:.22;transition:opacity .18s ease,box-shadow .18s ease,color .18s ease,background .18s ease`,
+      cubeMoveStart: e => this.cubeMoveStart(e),
+      cubeHost: el => { this._host = el; if (el) this._mountCube(); },
+      motionRef: el => { this._mstage = el; if (el) this._initMotion(); },
+      shadowRef: el => { this._mshadow = el; },
+      standEyesRef: el => {
+        if (!el || this._standEyes || !window.RecherchiEyes) return;
+        const F = this._faceBox(this.lay());
+        this._standEyes = window.RecherchiEyes.createEyes(el, { size: Math.round(F.w * EYE.size), gap: EYE.gap });
+        this._standEyes.setLife(true);
+        this._standEyes.setFollow(this.props.eyeFollow == null ? 0.28 : this.props.eyeFollow);
+      },
+      cubeHint: s.cubeMode === 'flat' ? 'Flache Ansicht, 3D nicht verfügbar' : '',
+      shiftPx: s.drawer && !s.narrow ? 'min(32vw,460px)' : '0px',
+      toggleDrawer: () => this.setState({ drawer: !s.drawer }),
+      drawerTitle: s.drawer ? 'Zurück zum Würfel' : 'Werkzeugleiste statt Würfel',
+      drawerBtnStyle: `display:grid;place-items:center;width:30px;height:30px;border:0;background:transparent;color:${s.drawer ? '#CC0033' : '#B0B6BD'};border-radius:6px;cursor:pointer;padding:0`,
+      drawerStyle: `position:fixed;top:56px;right:0;bottom:0;width:min(32vw,460px);min-width:320px;background:#fff;border-left:1px solid #E5E7EB;box-shadow:-8px 0 28px rgba(20,28,40,.06);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;z-index:25;transform:translateX(${s.drawer ? '0' : '100%'});transition:transform .28s cubic-bezier(.4,0,.2,1)`
+    };
+  }
+}
+
+</script>
+</body>
+</html>

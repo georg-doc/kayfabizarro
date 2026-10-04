@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SimBlood · 3D Morphology Lab · RBC MVP v0.2</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/exporters/OBJExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+    "three/addons/exporters/GLTFExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js": "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js": "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ"
+  }
+}
+</script>
+<style>
+  :root{
+    --dc-red:#c03; --dc-green:#9c3; --dc-green-dark:#690;
+    --g-f6:#f6f6f6; --g-ee:#eee; --g-dd:#ddd; --g-cc:#ccc; --g-aa:#aaa; --g-88:#888; --g-66:#666; --g-22:#222;
+    --sans:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --slab:"Roboto Slab",Rockwell,Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:var(--sans);font-size:14px;color:#000;background:#fff;overflow:hidden;-webkit-text-size-adjust:100%}
+  a{color:var(--dc-red);text-decoration:none}
+  a:hover{color:#902}
+
+  #app{display:flex;flex-direction:column;height:100%}
+
+  header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    padding:0 20px;min-height:56px;background:#fff;border-bottom:2px solid var(--g-ee);flex:0 0 auto}
+  .brand{display:flex;align-items:baseline;gap:10px;margin-right:auto}
+  .brand b{font-family:var(--slab);font-weight:700;font-size:16px;color:var(--dc-red);letter-spacing:0}
+  .brand span{color:var(--g-88);font-size:12px}
+
+  .seg{display:flex;gap:0;border:1px solid var(--g-dd);border-radius:5px;overflow:hidden;background:#fff}
+  .seg button{font:inherit;line-height:1;padding:9px 14px;border:0;background:#fff;color:var(--g-66);cursor:pointer;
+    border-right:1px solid var(--g-dd);transition:background 140ms linear,color 140ms linear}
+  .seg button:last-child{border-right:0}
+  .seg button:hover{background:var(--g-f6);color:#000}
+  .seg button.on{background:var(--g-22);color:#fff}
+  .seg button.on:hover{background:#000}
+  .seg.accent button.on{box-shadow:inset 0 -3px 0 var(--dc-red)}
+
+  #stage{position:relative;flex:1 1 auto;min-height:0}
+  canvas{display:block;width:100%;height:100%;touch-action:none}
+
+  .readout{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);border:1px solid var(--g-dd);
+    border-radius:5px;padding:10px 12px;font-size:12px;color:var(--g-66);line-height:1.5;max-width:46vw}
+  .readout b{display:block;color:#000;font-size:13px;margin-bottom:2px}
+  .readout code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--g-22)}
+
+  .panel{position:absolute;left:12px;bottom:12px;width:298px;max-width:calc(100% - 24px);
+    background:rgba(255,255,255,.96);border:1px solid var(--g-dd);border-radius:5px}
+  .panel > summary{list-style:none;cursor:pointer;padding:10px 12px;font-weight:700;font-size:13px;
+    display:flex;align-items:center;justify-content:space-between;border-radius:5px}
+  .panel > summary::-webkit-details-marker{display:none}
+  .panel > summary::after{content:"+";color:var(--g-88);font-weight:400;font-size:16px}
+  .panel[open] > summary::after{content:"–"}
+  .panel[open] > summary{border-bottom:2px solid var(--g-ee)}
+  .panel .body{padding:10px 12px 12px;max-height:44vh;overflow:auto}
+
+  .row{display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--g-f6)}
+  .row:last-of-type{border-bottom:0}
+  .row label{font-size:12px;color:var(--g-66)}
+  .row output{font-size:12px;color:#000;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .row input[type=range]{grid-column:1/-1;width:100%;margin:2px 0 0;accent-color:var(--g-22);height:18px}
+  .hint{font-size:11px;color:var(--g-88);line-height:1.45;margin:8px 0 0}
+  .sub{font-size:11px;font-weight:700;color:var(--g-22);text-transform:none;margin:12px 0 4px;padding-top:10px;border-top:2px solid var(--g-ee)}
+  .derived{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:11px;color:var(--g-66)}
+  .derived span:nth-child(even){font-family:ui-monospace,Menlo,Consolas,monospace;color:#000}
+  .tline{display:flex;gap:6px;align-items:center;margin:6px 0 0}
+  .tline select{font:inherit;font-size:12px;padding:6px 8px;border:1px solid var(--g-dd);border-radius:0;background:#fff;color:#000;flex:1 1 auto}
+  .tline button{font:inherit;font-size:12px;line-height:1;padding:7px 10px;border:1px solid var(--g-dd);background:#fff;color:var(--g-22);border-radius:0;cursor:pointer}
+  .tline button:hover{background:var(--g-f6)}
+
+  .actions{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  button.btn{font:inherit;line-height:1;padding:11px 16px;border:0;border-radius:5px;cursor:pointer;
+    transition:background 140ms linear,color 140ms linear}
+  button.primary{background:var(--dc-green);color:#fff;font-weight:700}
+  button.primary:hover{background:var(--dc-green-dark)}
+  button.primary:active{transform:translateY(1px)}
+  button.light{background:#fff;color:var(--g-22);border:1px solid var(--g-dd);border-radius:0}
+  button.light:hover{background:var(--g-f6)}
+  button.light:active{transform:translateY(1px)}
+  .toast{background:var(--g-22);color:#fff;font-size:12px;padding:8px 12px;border-radius:5px;opacity:0;
+    transition:opacity 160ms linear;pointer-events:none;max-width:44vw}
+  .toast.on{opacity:1}
+
+  .check{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--g-66);padding:8px 0 0}
+  .check input{accent-color:var(--dc-red);width:15px;height:15px}
+
+  .disclaimer{flex:0 0 auto;padding:7px 20px;background:var(--g-f6);border-top:1px solid var(--g-dd);
+    font-size:11px;color:var(--g-66)}
+
+  @media (max-width:720px){
+    header{padding:8px 12px;gap:10px}
+    .brand{width:100%;margin-right:0}
+    .seg button{padding:10px 12px}
+    .panel{width:calc(100% - 24px)}
+    .panel .body{max-height:34vh}
+    .actions{bottom:auto;top:12px;left:12px;right:auto;align-items:flex-start}
+    .readout{top:auto;bottom:calc(100% - 100%);right:12px;top:12px;max-width:58vw;display:none}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand"><b>SimBlood · 3D Morphology Lab</b><span>RBC MVP v0.2 · R&amp;D, keine medizinische Freigabe</span></div>
+    <div class="seg accent" id="morphSeg" role="group" aria-label="Morphologie"></div>
+    <div class="seg" id="modeSeg" role="group" aria-label="Darstellung">
+      <button data-mode="explorer" class="on" aria-pressed="true">A · 3D Explorer</button>
+      <button data-mode="microscope" aria-pressed="false">B · Mikroskop-Projektion</button>
+    </div>
+    <div class="seg" id="lodSeg" role="group" aria-label="Auflösungsstufe"></div>
+  </header>
+
+  <div id="stage">
+    <div class="readout" id="readout"></div>
+
+    <details class="panel" id="panel">
+      <summary>Parameter</summary>
+      <div class="body">
+        <div id="sliders"></div>
+        <div class="sub">Abgeleitete Form</div>
+        <div class="derived" id="derived"></div>
+        <div class="sub">Übergang (Prototyp)</div>
+        <div class="row">
+          <label for="scrub">Fortschritt</label><output id="scrubOut">0 %</output>
+          <input type="range" id="scrub" min="0" max="1" step="0.005" value="0">
+        </div>
+        <div class="tline">
+          <select id="tTarget" aria-label="Übergangsziel">
+            <option value="echinocyte">Normal → Echinozyt</option>
+            <option value="spherocyte">Normal → Sphärozyt</option>
+          </select>
+          <button id="playBtn">▶ Abspielen</button>
+        </div>
+        <label class="check"><input type="checkbox" id="transp"> halbtransparent (nur Explorer)</label>
+        <p class="hint" id="paramHint"></p>
+      </div>
+    </details>
+
+    <div class="actions">
+      <div class="toast" id="toast"></div>
+      <button class="btn light" id="resetBtn">Preset zurücksetzen</button>
+      <button class="btn light" id="viewBtn">Ansicht zurücksetzen</button>
+      <button class="btn light" id="jsonBtn">Manifest kopieren</button>
+      <button class="btn light" id="allBtn">Alle 6 GLB exportieren</button>
+      <button class="btn primary" id="glbBtn">GLB exportieren</button>
+    </div>
+  </div>
+
+  <div class="disclaimer">Parametrischer R&amp;D-Proof. Formkorridore sind didaktische Annäherungen und keine morphologische Ground Truth. Kein Backend, keine Datenübertragung.</div>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { PRESETS, PARAM_DEFS, DERIVED_DEFS, LODS, triangleCount, deriveValues,
+         buildRBCGeometry, resolveParams, manifestEntry, BASE_MESH_ID } from './rbc-geometry.js';
+
+const stage = document.getElementById('stage');
+const PHYS_KEYS = PARAM_DEFS.map(d => d.key);
+function physOf(presetKey) {
+  const p = PRESETS[presetKey].values;
+  const o = {};
+  for (const k of PHYS_KEYS) o[k] = p[k];
+  return o;
+}
+const state = {
+  preset: 'normal',
+  mode: 'explorer',
+  transparent: false,
+  lod: LODS.authoring,
+  phys: physOf('normal'),
+  params: resolveParams('normal'),
+  seed: PRESETS.normal.seed,
+  playing: false,
+  scrubT: 0,
+  scrubTarget: null
+};
+/* A shape whose parameters no longer match its preset must not carry the preset identity. */
+function modInfo() {
+  const ref = physOf(state.preset);
+  const changed = PHYS_KEYS.some(k => Math.abs(state.phys[k] - ref[k]) > 1e-6);
+  if (!changed) return null;
+  return state.scrubTarget && state.scrubT > 0 ? { t: state.scrubT, target: state.scrubTarget } : { t: null };
+}
+function assetId() { return modInfo() ? 'rbc3d-custom' : PRESETS[state.preset].id; }
+
+/* ---------- renderer ---------- */
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+stage.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+
+/* ---------- lights ---------- */
+const explorerLights = new THREE.Group();
+explorerLights.add(new THREE.HemisphereLight(0xffffff, 0x333338, 0.55));
+const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(6, 9, 7); explorerLights.add(key);
+const fill = new THREE.DirectionalLight(0xbfd2e6, 0.45); fill.position.set(-7, -3, -5); explorerLights.add(fill);
+const rim = new THREE.DirectionalLight(0xffffff, 0.5); rim.position.set(-3, 4, -8); explorerLights.add(rim);
+
+const scopeLights = new THREE.Group();
+scopeLights.add(new THREE.AmbientLight(0xffffff, 0.92));
+const scopeKey = new THREE.DirectionalLight(0xffffff, 0.3); scopeKey.position.set(0.5, 10, 0.4); scopeLights.add(scopeKey);
+scene.add(explorerLights, scopeLights);
+
+/* ---------- materials ---------- */
+const matExplorer = new THREE.MeshPhysicalMaterial({
+  name: 'rbc_membrane_explorer',
+  color: 0xcc6d60, roughness: 0.38, metalness: 0,
+  clearcoat: 0.6, clearcoatRoughness: 0.35, sheen: 0.35, sheenColor: 0xffd9cf,
+  ior: 1.36, side: THREE.DoubleSide
+});
+const matScope = new THREE.MeshLambertMaterial({
+  name: 'rbc_stain_projection', color: 0xffffff, vertexColors: true, side: THREE.DoubleSide
+});
+
+/* ---------- cell ---------- */
+let mesh = new THREE.Mesh(buildRBCGeometry(state.params, state.seed, state.lod), matExplorer);
+mesh.name = 'rbc_' + state.preset;
+const cell = new THREE.Group(); cell.name = 'SimBlood_RBC'; cell.add(mesh);
+scene.add(cell);
+
+/* ---------- cameras + controls ---------- */
+const persp = new THREE.PerspectiveCamera(32, 1, 0.1, 500);
+const ortho = new THREE.OrthographicCamera(-6, 6, 6, -6, -200, 400);
+let controls = null;
+
+function activeCamera() { return state.mode === 'explorer' ? persp : ortho; }
+
+function resetView() {
+  if (state.mode === 'explorer') {
+    persp.position.set(9.5, 7.5, 12);
+    persp.up.set(0, 1, 0);
+    persp.lookAt(0, 0, 0);
+  } else {
+    ortho.position.set(0, 40, 0);
+    ortho.up.set(0, 0, -1);
+    ortho.lookAt(0, 0, 0);
+  }
+  if (controls) { controls.target.set(0, 0, 0); controls.update(); }
+  draw();
+}
+
+function makeControls() {
+  if (controls) controls.dispose();
+  controls = new OrbitControls(activeCamera(), renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.09;
+  controls.rotateSpeed = 0.85;
+  controls.minDistance = 4;
+  controls.maxDistance = 60;
+  controls.zoomSpeed = 0.8;
+  controls.enablePan = false;
+  controls.target.set(0, 0, 0);
+  controls.update();
+  controls.addEventListener('change', () => draw(false));
+}
+
+function applyMode() {
+  const exp = state.mode === 'explorer';
+  explorerLights.visible = exp;
+  scopeLights.visible = !exp;
+  scene.background = new THREE.Color(exp ? 0x222222 : 0xece3ea);
+  mesh.material = exp ? matExplorer : matScope;
+  matExplorer.transparent = state.transparent;
+  matExplorer.opacity = state.transparent ? 0.5 : 1;
+  matExplorer.depthWrite = !state.transparent;
+  matExplorer.needsUpdate = true;
+  makeControls();
+  resetView();
+  resize();
+  draw();
+}
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (!w || !h) return false;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  renderer.setSize(w, h, false);
+  renderer.setPixelRatio(dpr);
+  persp.aspect = w / h; persp.updateProjectionMatrix();
+  const span = 6.2, a = w / h;
+  ortho.left = -span * Math.max(1, a); ortho.right = span * Math.max(1, a);
+  ortho.top = span * Math.max(1, 1 / a); ortho.bottom = -span * Math.max(1, 1 / a);
+  ortho.updateProjectionMatrix();
+  draw();
+  return true;
+}
+/* Sizing must not depend on a single entry point: ResizeObserver callbacks are not
+   delivered in throttled/offscreen frames, and the init call can run before layout.
+   The wiring itself is attached at the end of the module, after draw()/controls exist. */
+function sizedCorrectly() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  return stage.clientWidth > 0 &&
+    renderer.domElement.width === Math.round(stage.clientWidth * dpr) &&
+    renderer.domElement.height === Math.round(stage.clientHeight * dpr);
+}
+
+/* ---------- rebuild ---------- */
+var pendingT = null, drawing = false; // var: draw() may be reached before this line runs
+function draw(step = true) {
+  if (drawing || !renderer) return; // controls.update() re-enters via its change event
+  drawing = true;
+  if (step && controls) controls.update();
+  renderer.render(scene, activeCamera());
+  drawing = false;
+}
+function rebuildNow() {
+  const old = mesh.geometry;
+  mesh.geometry = buildRBCGeometry(state.params, state.seed, state.lod);
+  mesh.name = 'rbc_' + state.preset;
+  old.dispose();
+  updateReadout();
+  updateDerived();
+  draw();
+}
+function rebuild() {
+  clearTimeout(pendingT);
+  pendingT = setTimeout(rebuildNow, 16);
+}
+
+/* ---------- UI ---------- */
+const morphSeg = document.getElementById('morphSeg');
+Object.keys(PRESETS).forEach(k => {
+  const b = document.createElement('button');
+  b.textContent = PRESETS[k].short;
+  b.dataset.preset = k;
+  b.setAttribute('aria-pressed', String(k === state.preset));
+  b.classList.toggle('on', k === state.preset);
+  b.onclick = () => selectPreset(k);
+  morphSeg.appendChild(b);
+});
+
+document.querySelectorAll('#modeSeg button').forEach(b => {
+  b.onclick = () => {
+    state.mode = b.dataset.mode;
+    document.querySelectorAll('#modeSeg button').forEach(x => {
+      x.setAttribute('aria-pressed', String(x === b));
+      x.classList.toggle('on', x === b);
+    });
+    applyMode();
+    updateReadout();
+  };
+});
+
+/* ---------- LOD (Q3) ---------- */
+const lodSeg = document.getElementById('lodSeg');
+Object.values(LODS).forEach(l => {
+  const b = document.createElement('button');
+  b.textContent = l.label + ' · ' + (triangleCount(l) / 1000).toFixed(1) + 'k';
+  b.dataset.lod = l.id;
+  b.classList.toggle('on', l.id === state.lod.id);
+  b.setAttribute('aria-pressed', String(l.id === state.lod.id));
+  b.onclick = () => setLOD(l.id);
+  lodSeg.appendChild(b);
+});
+function setLOD(id) {
+  state.lod = LODS[id];
+  document.querySelectorAll('#lodSeg button').forEach(b => {
+    b.classList.toggle('on', b.dataset.lod === id);
+    b.setAttribute('aria-pressed', String(b.dataset.lod === id));
+  });
+  rebuildNow();
+}
+
+/* ---------- sliders: physical controls (Q1) ---------- */
+const slidersEl = document.getElementById('sliders');
+const derivedEl = document.getElementById('derived');
+let sliderRefs = [];
+function buildSliders() {
+  slidersEl.textContent = '';
+  sliderRefs = [];
+  PARAM_DEFS.forEach(d => {
+    const row = document.createElement('div'); row.className = 'row';
+    const lab = document.createElement('label'); lab.textContent = d.label; lab.htmlFor = 'p_' + d.key;
+    const out = document.createElement('output');
+    const inp = document.createElement('input');
+    inp.type = 'range'; inp.id = 'p_' + d.key;
+    inp.min = d.min; inp.max = d.max; inp.step = d.step;
+    inp.value = state.phys[d.key];
+    const fmt = v => (d.step >= 1 ? String(v) : Number(v).toFixed(d.step < 0.01 ? 3 : 2)) + (d.unit ? ' ' + d.unit : '');
+    out.textContent = fmt(state.phys[d.key]);
+    inp.oninput = () => {
+      state.phys[d.key] = parseFloat(inp.value);
+      state.params = deriveValues(state.phys);
+      state.scrubTarget = null;
+      out.textContent = fmt(state.phys[d.key]);
+      rebuild();
+    };
+    row.append(lab, out, inp);
+    slidersEl.appendChild(row);
+    sliderRefs.push({ d, inp, out, fmt });
+  });
+  updateDerived();
+}
+function syncSliders() {
+  sliderRefs.forEach(({ d, inp, out, fmt }) => {
+    inp.value = state.phys[d.key];
+    out.textContent = fmt(state.phys[d.key]);
+  });
+}
+function updateDerived() {
+  derivedEl.textContent = '';
+  DERIVED_DEFS.forEach(d => {
+    const a = document.createElement('span'); a.textContent = d.label;
+    const b = document.createElement('span');
+    b.textContent = Number(state.params[d.key]).toFixed(d.digits) + (d.unit ? ' ' + d.unit : '');
+    derivedEl.append(a, b);
+  });
+}
+
+/* ---------- transition prototype (Q6) ---------- */
+const scrubEl = document.getElementById('scrub');
+const scrubOut = document.getElementById('scrubOut');
+const tTarget = document.getElementById('tTarget');
+const playBtn = document.getElementById('playBtn');
+let playRAF = 0, playT0 = 0, lodBeforePlay = null;
+const PLAY_MS = 6000;
+
+function applyScrub(t) {
+  const from = physOf('normal'), to = physOf(tTarget.value);
+  const p = {};
+  for (const k of PHYS_KEYS) p[k] = from[k] + (to[k] - from[k]) * t;
+  state.phys = p;
+  state.params = deriveValues(p);
+  state.scrubT = t;
+  state.scrubTarget = tTarget.value;
+  scrubEl.value = t;
+  scrubOut.textContent = Math.round(t * 100) + ' %';
+  syncSliders();
+  rebuildNow();
+}
+scrubEl.oninput = () => { stopPlay(); applyScrub(parseFloat(scrubEl.value)); };
+tTarget.onchange = () => { stopPlay(); applyScrub(parseFloat(scrubEl.value)); };
+function stopPlay() {
+  if (!state.playing) return;
+  state.playing = false;
+  cancelAnimationFrame(playRAF);
+  playBtn.textContent = '▶ Abspielen';
+  if (lodBeforePlay && lodBeforePlay !== state.lod.id) { setLOD(lodBeforePlay); }
+  lodBeforePlay = null;
+}
+playBtn.onclick = () => {
+  if (state.playing) { stopPlay(); return; }
+  state.playing = true;
+  playBtn.textContent = '■ Stop';
+  lodBeforePlay = state.lod.id;
+  if (state.lod.id === 'authoring') { setLOD('runtime'); toast('Übergang läuft auf Runtime-LOD'); }
+  playT0 = performance.now() - parseFloat(scrubEl.value) * PLAY_MS;
+  const step = () => {
+    if (!state.playing) return;
+    const t = Math.min(1, (performance.now() - playT0) / PLAY_MS);
+    applyScrub(t);
+    if (t >= 1) { stopPlay(); return; }
+    playRAF = requestAnimationFrame(step);
+  };
+  playRAF = requestAnimationFrame(step);
+};
+
+function selectPreset(k) {
+  stopPlay();
+  state.preset = k;
+  state.phys = physOf(k);
+  state.params = resolveParams(k);
+  state.seed = PRESETS[k].seed;
+  state.scrubT = 0;
+  state.scrubTarget = null;
+  if (scrubEl) { scrubEl.value = 0; scrubOut.textContent = '0 %'; }
+  document.querySelectorAll('#morphSeg button').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.preset === k));
+    b.classList.toggle('on', b.dataset.preset === k);
+  });
+  document.getElementById('paramHint').textContent = PRESETS[k].note;
+  buildSliders();
+  rebuild();
+}
+
+document.getElementById('transp').onchange = e => { state.transparent = e.target.checked; applyMode(); };
+document.getElementById('resetBtn').onclick = () => selectPreset(state.preset);
+document.getElementById('viewBtn').onclick = resetView;
+
+const toastEl = document.getElementById('toast');
+let toastT = null;
+function toast(msg) {
+  toastEl.textContent = msg; toastEl.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('on'), 2600);
+}
+
+function currentManifest() { return manifestEntry(state.preset, state.params, state.seed, state.lod, modInfo()); }
+
+document.getElementById('jsonBtn').onclick = async () => {
+  const txt = JSON.stringify(currentManifest(), null, 2);
+  try { await navigator.clipboard.writeText(txt); toast('Manifest-Eintrag kopiert'); }
+  catch (e) { console.log(txt); toast('Clipboard blockiert — Manifest in der Konsole'); }
+};
+
+function exportGeometryGLB(geo, assetId, morphologyId) {
+  return new Promise((resolve, reject) => {
+    const exportMesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      name: 'rbc_membrane', color: 0xcc6d60, roughness: 0.42, metalness: 0
+    }));
+    exportMesh.name = assetId;
+    const root = new THREE.Group();
+    root.name = BASE_MESH_ID + '__' + morphologyId;
+    root.add(exportMesh);
+    new GLTFExporter().parse(root, buf => resolve(buf), err => reject(err), { binary: true });
+  });
+}
+function exportGLB() {
+  return exportGeometryGLB(mesh.geometry.clone(), assetId(), modInfo() ? 'RBC-CUSTOM' : PRESETS[state.preset].morphologyId);
+}
+/** Off-screen export for any preset/LOD — used to commit deterministic GLB bytes. */
+async function exportGLBFor(presetKey, lodId) {
+  const lod = LODS[lodId] || LODS.authoring;
+  const p = PRESETS[presetKey];
+  const geo = buildRBCGeometry(resolveParams(presetKey), p.seed, lod);
+  const buf = await exportGeometryGLB(geo, p.id + '-' + lod.id, p.morphologyId);
+  geo.dispose();
+  return buf;
+}
+
+document.getElementById('glbBtn').onclick = async () => {
+  try {
+    const buf = await exportGLB();
+    const blob = new Blob([buf], { type: 'model/gltf-binary' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = assetId() + '-' + state.lod.id + '.glb';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    toast('GLB exportiert · ' + Math.round(blob.size / 1024) + ' kB');
+  } catch (e) { toast('GLB-Export fehlgeschlagen: ' + e.message); }
+};
+
+/* Export all preset x LOD combinations at once, so the deterministic bytes can be
+   committed locally (runtime/glb/) without clicking through the presets. */
+document.getElementById('allBtn').onclick = async () => {
+  const combos = [];
+  for (const k of Object.keys(PRESETS)) for (const l of ['authoring', 'runtime']) combos.push([k, l]);
+  let kB = 0;
+  for (const [k, l] of combos) {
+    const buf = await exportGLBFor(k, l);
+    const blob = new Blob([buf], { type: 'model/gltf-binary' });
+    kB += blob.size / 1024;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = PRESETS[k].id + '-' + l + '.glb';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 8000);
+    await new Promise(r => setTimeout(r, 350)); // browsers throttle bursts of downloads
+  }
+  toast(combos.length + ' GLB exportiert · ' + Math.round(kB) + ' kB');
+};
+
+const readoutEl = document.getElementById('readout');
+function updateReadout() {
+  const p = PRESETS[state.preset];
+  const mod = modInfo();
+  const tris = mesh.geometry.index ? mesh.geometry.index.count / 3 : 0;
+  const title = mod
+    ? (mod.t != null
+        ? 'Übergang → ' + PRESETS[mod.target].short + ' · t = ' + Math.round(mod.t * 100) + ' %'
+        : p.label + ' · angepasst')
+    : p.label;
+  readoutEl.innerHTML =
+    '<b>' + title + '</b>' +
+    '<code>' + (mod ? 'RBC-CUSTOM · aus ' + p.id : p.morphologyId) + ' · seed ' + state.seed + '</code><br>' +
+    'ν ' + state.params.reducedVolume.toFixed(3) + ' · Δa₀ ' + state.params.areaDifference.toFixed(3) +
+    ' · A ' + state.params.membraneArea.toFixed(1) + ' µm²<br>' +
+    'Ø ' + state.params.diameter.toFixed(2) + ' µm · Dicke ×' + state.params.thickness.toFixed(2) + '<br>' +
+    tris.toLocaleString('de-DE') + ' Dreiecke · ' + state.lod.label + ' · ' +
+    (state.mode === 'explorer' ? 'Explorer' : 'Projektion');
+}
+
+/* ---------- loop ---------- */
+let fpsN = 0, fpsT = performance.now(), fps = 0;
+function tick() {
+  requestAnimationFrame(tick);
+  if (!sizedCorrectly()) resize();
+  draw();
+  fpsN++;
+  const now = performance.now();
+  if (now - fpsT > 1000) { fps = fpsN; fpsN = 0; fpsT = now; }
+}
+
+/* deep link: index.html?m=echinocyte&v=microscope — reproducible review/evidence links */
+const q = new URLSearchParams(location.search);
+const qm = q.get('m'), qv = q.get('v');
+selectPreset(PRESETS[qm] ? qm : 'normal');
+if (qv === 'microscope' || qv === 'explorer') state.mode = qv;
+document.querySelectorAll('#modeSeg button').forEach(b => {
+  b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode));
+  b.classList.toggle('on', b.dataset.mode === state.mode);
+});
+if (q.get('transparent') === '1') { document.getElementById('transp').checked = true; state.transparent = true; }
+applyMode();
+tick();
+
+new ResizeObserver(resize).observe(stage);
+window.addEventListener('resize', resize);
+window.addEventListener('load', resize);
+window.addEventListener('orientationchange', resize);
+document.addEventListener('visibilitychange', resize);
+(function ensureSize(tries) {
+  if (sizedCorrectly() || tries <= 0) return;
+  resize();
+  setTimeout(() => ensureSize(tries - 1), 120);
+})(25);
+
+/* evidence / test hooks — no backend, purely local */
+window.__rbc = {
+  setPreset: selectPreset,
+  setLOD,
+  setPhys: (k, v) => { state.phys[k] = v; state.params = deriveValues(state.phys); syncSliders(); rebuildNow(); },
+  scrub: applyScrub,
+  exportGLBFor,
+  exportGLBBase64For: async (presetKey, lodId) => {
+    const buf = await exportGLBFor(presetKey, lodId);
+    let s = '', b = new Uint8Array(buf);
+    for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+    return btoa(s);
+  },
+  setMode: m => document.querySelector('#modeSeg button[data-mode="' + m + '"]').click(),
+  setTransparent: v => { document.getElementById('transp').checked = v; document.getElementById('transp').onchange({ target: { checked: v } }); },
+  manifest: currentManifest,
+  triCount: () => mesh.geometry.index.count / 3,
+  fps: () => fps,
+  /** self-test: mean geometry rebuild time and mean frame time (ms) */
+  bench: (n = 20) => {
+    const t0 = performance.now();
+    for (let i = 0; i < n; i++) buildRBCGeometry(state.params, state.seed + i, state.lod).dispose();
+    const t1 = performance.now();
+    for (let i = 0; i < n; i++) draw(false);
+    const t2 = performance.now();
+    return { rebuildMs: +((t1 - t0) / n).toFixed(1), frameMs: +((t2 - t1) / n).toFixed(2),
+             tris: mesh.geometry.index.count / 3, px: [renderer.domElement.width, renderer.domElement.height] };
+  },
+  exportGLBBase64: async () => {
+    const buf = await exportGLB();
+    let s = '', b = new Uint8Array(buf);
+    for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+    return btoa(s);
+  },
+  state
+};
+</script>
+</body>
+</html>

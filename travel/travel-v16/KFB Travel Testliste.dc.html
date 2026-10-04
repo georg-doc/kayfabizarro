@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>KFB Travel — Testliste v16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #1a1512; }
+  a { color: #d8a24a; } a:hover { color: #f0c274; }
+  input[type="text"], textarea { font-family: 'IBM Plex Mono', monospace; }
+  ::placeholder { color: #6b6157; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #1a1512; color: #e8ded0; font-family: 'Barlow Condensed', sans-serif; padding: 22px 26px 60px; box-sizing: border-box">
+
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 1px solid #3a322a; padding-bottom: 12px; margin-bottom: 18px">
+    <div>
+      <div style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #f0e4d0">Travel — Testliste</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9b9084; margin-top: 3px">v16 · L1 Stufung · L2 Farbwelten · L2d Ringwellen · L3 Props — ein Ergebnis ohne seinen Parametersatz ist eine Anekdote</div>
+    </div>
+    <div style="text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9b9084; white-space: nowrap">
+      <div style="font-size: 22px; color: #d8a24a; line-height: 1.1">{{ doneCount }}<span style="color: #6b6157; font-size: 14px">/{{ totalCount }}</span></div>
+      <div>{{ failCount }} defekt · {{ openCount }} offen</div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; align-items: start">
+
+    <div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+        <div style="border: 1px solid #3a322a; border-radius: 4px; overflow: hidden">
+          <div style="display: flex; align-items: baseline; gap: 10px; background: #221c17; padding: 8px 12px; border-bottom: 1px solid #3a322a">
+            <div style="font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e4d0">{{ g.title }}</div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084">{{ g.hint }}</div>
+          </div>
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: 26px minmax(0, 1fr) 210px; gap: 10px; padding: 9px 12px; border-bottom: 1px solid #2a231d; align-items: start">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6b6157; padding-top: 3px">{{ it.n }}</div>
+              <div style="min-width: 0">
+                <div style="font-size: 14px; line-height: 1.35; color: {{ it.color }}">{{ it.label }}</div>
+                <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9b9084; line-height: 1.45; margin-top: 2px">{{ it.how }}</div>
+                <sc-if value="{{ it.expect }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7d9b6e; line-height: 1.45; margin-top: 1px">erwartet: {{ it.expect }}</div>
+                </sc-if>
+                <input type="text" value="{{ it.note }}" onChange="{{ it.setNote }}" placeholder="Notiz / Messwert" style="width: 100%; margin-top: 5px; background: #14100d; border: 1px solid #3a322a; color: #e8ded0; font-size: 11px; padding: 4px 6px; border-radius: 2px; box-sizing: border-box">
+              </div>
+              <div style="display: flex; gap: 4px; flex-wrap: wrap; padding-top: 2px">
+                <button onClick="{{ it.setOk }}" style="{{ it.okStyle }}">OK</button>
+                <button onClick="{{ it.setBad }}" style="{{ it.badStyle }}">DEFEKT</button>
+                <button onClick="{{ it.setSkip }}" style="{{ it.skipStyle }}">N/A</button>
+                <button onClick="{{ it.setOpen }}" style="{{ it.openStyle }}">offen</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; position: sticky; top: 22px">
+
+      <div style="border: 1px solid #3a322a; border-radius: 4px; padding: 12px">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f0e4d0; margin-bottom: 8px">Sitzung</div>
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <label style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084">TESTER</span>
+            <input type="text" value="{{ tester }}" onChange="{{ setTester }}" placeholder="Georg" style="background: #14100d; border: 1px solid #3a322a; color: #e8ded0; font-size: 12px; padding: 4px 6px; border-radius: 2px">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084">BUILD / URL</span>
+            <input type="text" value="{{ build }}" onChange="{{ setBuild }}" placeholder="index.html @ GitHub Pages" style="background: #14100d; border: 1px solid #3a322a; color: #e8ded0; font-size: 12px; padding: 4px 6px; border-radius: 2px">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084">WELT-SEED</span>
+            <input type="text" value="{{ seed }}" onChange="{{ setSeed }}" placeholder="aus dem Panel: Sitzungs-Seed" style="background: #14100d; border: 1px solid #3a322a; color: #e8ded0; font-size: 12px; padding: 4px 6px; border-radius: 2px">
+          </label>
+        </div>
+      </div>
+
+      <div style="border: 1px solid #3a322a; border-radius: 4px; padding: 12px">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f0e4d0; margin-bottom: 4px">Parametersatz</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084; line-height: 1.5; margin-bottom: 8px">Ohne ihn ist jedes Ergebnis unreproduzierbar (die Lehre aus Naht 115). Im Spiel liegt er unter <span style="color: #d8a24a">kfb-travel-params</span> im Speicher des Browsers — von derselben Adresse aus liest der Knopf ihn direkt.</div>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 7px">
+          <button onClick="{{ pullParams }}" style="{{ goldBtn }}">Aus dem Spiel holen</button>
+          <button onClick="{{ clearParams }}" style="{{ plainBtn }}">leeren</button>
+        </div>
+        <textarea value="{{ params }}" onChange="{{ setParams }}" placeholder="{ … } — oder hier einkleben" style="width: 100%; height: 92px; background: #14100d; border: 1px solid #3a322a; color: #b9ad9c; font-size: 10px; line-height: 1.4; padding: 5px 6px; border-radius: 2px; box-sizing: border-box; resize: vertical"></textarea>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: {{ paramColor }}; margin-top: 4px">{{ paramState }}</div>
+      </div>
+
+      <div style="border: 1px solid #3a322a; border-radius: 4px; padding: 12px">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f0e4d0; margin-bottom: 8px">Ergebnis</div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <button onClick="{{ doExport }}" style="{{ goldBtn }}">JSON herunterladen</button>
+          <button onClick="{{ copyJson }}" style="{{ plainBtn }}">{{ copyLabel }}</button>
+          <label style="{{ plainBtn }}; text-align: center; cursor: pointer">
+            JSON laden
+            <input type="file" accept=".json" onChange="{{ doImport }}" style="display: none">
+          </label>
+          <button onClick="{{ resetAll }}" style="{{ plainBtn }}">alles auf »offen«</button>
+        </div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9b9084; margin-top: 8px; line-height: 1.5">{{ status }}</div>
+      </div>
+
+      <div style="border: 1px solid #3a322a; border-radius: 4px; padding: 12px">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f0e4d0; margin-bottom: 6px">Offene Regler-Fragen</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #b9ad9c; line-height: 1.6">
+          <sc-for list="{{ decisions }}" as="d" hint-placeholder-count="6">
+            <div style="padding: 3px 0; border-bottom: 1px solid #2a231d">· {{ d }}</div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+// ============================================================================
+// KFB Travel Testliste — strukturiertes Testen mit reproduzierbaren Ergebnissen
+// ----------------------------------------------------------------------------
+// **Die eine Entscheidung, die diese Datei tragt:** ein Testergebnis wird zusammen
+// mit dem PARAMETERSATZ und dem SEED gespeichert, die es erzeugt haben. Ohne das
+// ist ein Befund eine Anekdote — genau der Fehler, der in v16 eine ganze Abnahme
+// still ungueltig gemacht hat (Naht 115: L1 wurde auf einem festen Weltseed
+// gemessen, L2a hat ihn gewuerfelt, und niemand hat nachgemessen).
+//
+// Der Parametersatz kommt aus `localStorage['kfb-travel-params']`, das das Spiel
+// schreibt. Das funktioniert, WEIL beide Dateien von derselben Adresse laufen
+// (GitHub Pages). Faellt das weg, bleibt das Einkleben von Hand — deshalb ist das
+// Textfeld nicht nur Anzeige, sondern Eingabe.
+//
+// Der Zustand liegt zusaetzlich in `localStorage['kfb-travel-tests']`, damit ein
+// versehentliches Neuladen keine halbe Stunde Testen kostet.
+// ============================================================================
+
+const STORE = 'kfb-travel-tests';
+const PARAM_KEY = 'kfb-travel-params';
+
+// Die Liste. Jeder Eintrag nennt den HANDGRIFF und, wo es eine gibt, die ZAHL, die
+// stimmen muss — eine Checkliste ohne Erwartungswert ist eine Meinungsumfrage.
+const GROUPS = [
+  { id: 'start', title: 'Start & Abnahme', hint: 'zwei Minuten, vor allem anderen', items: [
+    { id: 'boot', label: 'Ladeschirm verschwindet, Bild steht', how: 'index.html oeffnen', expect: 'bereit in unter ~8 s, kein Dauer-Ladeschirm' },
+    { id: 'log', label: 'Abnahmezeilen in der Konsole', how: 'Konsole oeffnen', expect: '[travel-v16] fc-v2.0 … · [stufung] Seed … · [farbwelten] … · [props] …' },
+    { id: 'err', label: 'Keine Fehlerzeilen', how: '__loopErr und __bootErrors pruefen', expect: '__loopErr null · __bootErrors 0 in index.html (2 nur im Design-Werkzeug)' },
+    { id: 'fps', label: 'Bildrate im Reiseflug', how: 'W halten, 20 s geradeaus, Bildrate ablesen', expect: 'stabil, kein Sekundentakt-Ruckler' },
+    { id: 'hitch', label: 'Chunk-Wechsel-Haenger', how: 'Reisetempo halten und auf gleichmaessige Bewegung achten', expect: 'Aufbau 20–24 ms je Wechsel — spuerbar? DAS ist L3e' },
+    { id: 'full', label: 'Vollbild', how: 'Knopf unten rechts', expect: 'HUD, Panel und Wuerfel bleiben vollstaendig sichtbar' },
+  ] },
+  { id: 'flug', title: 'Flug & Steuerung', hint: 'v15 · fc-v2.0', items: [
+    { id: 'drift', label: 'Haftung reisst in der Kurve', how: 'W halten bis ~20 u/s, dann A halten', expect: 'Pad rutscht und lehnt sich hinein, flight.state.drift true' },
+    { id: 'brake', label: 'X holt die Haftung sofort zurueck', how: 'im Drift X druecken', expect: 'Rutschwinkel faellt in ~0,5 s von 40° auf ~13°' },
+    { id: 'turncost', label: 'Kurve senkt das Hoechsttempo', how: 'Vollgas geradeaus gegen Vollgas in voller Kurve', expect: '42,0 gegen 36,96 u/s (−12 %); im Boost wieder 42,0' },
+    { id: 'ground', label: 'Bodenkontakt landet NICHT', how: 'tief fliegen bis der Boden beruehrt wird', expect: 'bleibt im Flug; nur F landet' },
+    { id: 'kufe', label: 'Kufe hebt ueber den Hang', how: 'tief ueber steigendes Gelaende', expect: 'hebt sich VOR dem Hang, faellt hinter der Kuppe weich' },
+    { id: 'bank', label: 'Lehnen liest sich als Kurve', how: 'lange Kurve fliegen', expect: 'Deckel 34° — im Vorbild 45°; zu wenig? (offener Punkt F3)' },
+  ] },
+  { id: 'stufung', title: 'Stufung (L1)', hint: 'Schwellen sind Flaechenanteile', items: [
+    { id: 'tiers', label: 'Alle vier Reliefarten kommen vor', how: 'Panel Stufung, Zeile »Gemessen«, an mehreren Orten', expect: 'global 42–47 / 31–34 / 15–16 / 7–8 % — lokal streut es stark, das ist gewollt' },
+    { id: 'walls', label: 'Waende liegen in den Klippengebieten', how: 'Panel, Zeile »Waende — wo liegen sie?«', expect: 'in Klippen 8–12 % gegen sonst 0,9–2,8 %' },
+    { id: 'walk', label: 'Haenge sind ohne Sprung begehbar', how: 'F landen, ueber Hang-Gelaende laufen', expect: 'kein Haengenbleiben an 0,5-u-Stufen' },
+    { id: 'cliff', label: 'Klippen sind eine echte Grenze', how: 'an eine 6-u-Klippe laufen', expect: 'nicht kletterbar (autoJumpMax 4,2) — gewollt?' },
+  ] },
+  { id: 'farbe', title: 'Farbwelten & Wellen (L2)', hint: 'Ort, nicht Zustand', items: [
+    { id: 'roll', label: 'Weltwuerfel gibt eine andere Welt', how: 'Panel, Knopf Weltwuerfel, mehrmals', expect: 'Story-Modus UND Palette wechseln; derselbe Seed gibt dieselbe Welt' },
+    { id: 'region', label: 'Grenzuebertritt schickt eine Front', how: '~1800 u in eine Richtung fliegen', expect: 'Meldung »Neue Farbwelt«, Front laeuft ueber Terrain UND Himmel' },
+    { id: 'atem', label: 'Atem driftet und kehrt um', how: '3–4 Minuten stehen bleiben', expect: 'Farbton 0 → 12,6 → 25,2 → 12,6 → 0° — driftet nicht weg' },
+    { id: 'guard', label: 'Karten bleiben lesbar', how: 'hellste Palette, Karte anfliegen', expect: 'Papier hebt sich vom Boden ab (Riegel bei 80 %)' },
+    { id: 'ripple', label: 'Ringwelle laeuft und verlaeuft', how: 'Panel Ringwellen, Probeknopf', expect: 'farbiger Ring nach ausssen, Farbe verschieden von der Flaeche' },
+    { id: 'rippleland', label: 'Aufsetzen loest eine Welle aus', how: 'landen, aus verschiedenen Hoehen', expect: 'Groesse aus der Wucht — Kiste anders als Klippensturz' },
+  ] },
+  { id: 'props', title: 'Props (L3)', hint: 'Kenney statt grauer Bloecke', items: [
+    { id: 'load', label: 'Alle Modelle laden', how: 'Panel Props, Zeile »Geladen«', expect: '9/9 in 300–500 ms · 17 Draw-Calls' },
+    { id: 'sink', label: 'Props versinken NICHT im Voxel', how: 'tief ueber Props fliegen, Bodenbewegung hoch stellen', expect: 'Props bleiben auf der Wuerfeloberseite, auch an den Umkehrpunkten' },
+    { id: 'squash', label: 'Squash & Stretch am Wuerfel-Bob', how: 'Panel: Atmen hoch, Nachlauf variieren', expect: 'Wuerfel unten = gestaucht, oben = gestreckt; Nachlauf sichtbar' },
+    { id: 'round', label: 'Runde Kanten wirken', how: 'Regler »Kanten weich« 0 gegen 1', expect: 'Beleuchtung wird weicher; Aufblasen rundet die Silhouette' },
+    { id: 'tint', label: 'Props nehmen die Bodenfarbe', how: 'Regler »Boden faerbt ein« 0 gegen 1, dann Farbwelt wechseln', expect: 'Props faerben MIT der Front um, ohne Verzoegerung' },
+    { id: 'biome', label: 'Biom-Logik greift', how: 'Weltwuerfel bis scorched/fractured, Biom-Logik an/aus', expect: '_fall bzw. _dark Fassungen der Baeume' },
+    { id: 'fallback', label: 'Fallback ohne Netz', how: 'offline neu laden', expect: 'graue Bloecke streuen weiter, Landschaft nicht leer' },
+  ] },
+  { id: 'wuerfel', title: 'Wuerfel & Karten', hint: 'S60d · 120°', items: [
+    { id: 'dice120', label: 'Drei Wuerfel 120° verteilt', how: 'einmal ganz um sich drehen', expect: 'nach hoechstens einer Dritteldrehung ein Wuerfel im Bild; nie alle drei zugleich' },
+    { id: 'diceclear', label: 'Wuerfel sind nicht verdeckt', how: 'im Reiseflug auf die Skyline achten', expect: 'ueber der Skyline, unter der Bildkante' },
+    { id: 'cards', label: 'Karten sind anfliegbar', how: 'Doppelklick auf eine Karte', expect: 'Anflug ohne Schlangenlinie, Pad haelt sichtbar vor der Karte' },
+    { id: 'pass', label: 'Durchflug zaehlt', how: 'durch eine Karte fliegen', expect: 'Meldung »Durchflogen«, Welle vom Ort der Karte' },
+  ] },
+];
+
+const DECISIONS = [
+  'Klippenanteil 7–8 % — genug Drama?',
+  'Kiste (15 %) behalten oder den Terrassen geben? (Hebel fuer begehbar)',
+  'Klippenhoehe 6,0 u — echte Grenze oder ueberwindbar (4,0)?',
+  'Feiner Teiler 6 → 12 (0,25 u, unter der Tuschekante)?',
+  'Farbwelt-Kachel 1800 u (43 s) — laenger oder kuerzer?',
+  'Atemzug alle 44 s mit 12,6° — spuerbar oder zu viel?',
+  'Wellentempo 46 u/s, Ringbreite 24 u, Deckkraft 100 %',
+  'Props: Kanten weich 55 %, Aufblasen 0,012, Boden faerbt 25 %',
+  'Nachlauf 0,09 s ± 0,06 s — cartoonig genug?',
+  'Banking 34° gegen 45° im Vorbild (F3)',
+  'Boost: Dauertaste oder Belohnung? (F2, Spieldesign)',
+];
+
+class Component extends DCLogic {
+  state = { marks: {}, notes: {}, tester: '', build: '', seed: '', params: '', status: 'bereit', copied: false };
+
+  componentDidMount() {
+    // Wiederherstellen, damit ein Neuladen keine Testrunde kostet. Nur unsere eigenen Schluessel.
+    try {
+      const raw = localStorage.getItem(STORE);
+      if (raw) {
+        const j = JSON.parse(raw);
+        this.setState({
+          marks: j.marks || {}, notes: j.notes || {},
+          tester: j.tester || '', build: j.build || '', seed: j.seed || '',
+          params: j.params || '', status: 'letzte Sitzung wiederhergestellt',
+        });
+      }
+    } catch (e) { /* eine kaputte Ablage darf die Liste nicht blockieren */ }
+  }
+
+  save(patch, cb) {
+    this.setState(patch, () => {
+      const s = this.state;
+      try {
+        localStorage.setItem(STORE, JSON.stringify({
+          marks: s.marks, notes: s.notes, tester: s.tester, build: s.build, seed: s.seed, params: s.params,
+        }));
+      } catch (e) { /* voller Speicher darf das Testen nicht anhalten */ }
+      if (cb) cb();
+    });
+  }
+
+  mark(id, v) {
+    const m = Object.assign({}, this.state.marks);
+    // Nochmal derselbe Knopf = zurueck auf offen. Ein Zustand, den man nicht ruecknehmen kann,
+    // verleitet zum Ueberschreiben mit einem falschen.
+    if (m[id] === v) delete m[id]; else m[id] = v;
+    this.save({ marks: m });
+  }
+
+  setNote(id, v) {
+    const n = Object.assign({}, this.state.notes);
+    if (v) n[id] = v; else delete n[id];
+    this.save({ notes: n });
+  }
+
+  allItems() { return GROUPS.reduce((a, g) => a.concat(g.items), []); }
+
+  /** Der Parametersatz aus dem laufenden Spiel — funktioniert nur von derselben Adresse. */
+  pullParams() {
+    try {
+      const raw = localStorage.getItem(PARAM_KEY);
+      if (!raw) {
+        this.setState({ status: 'Kein Parametersatz im Speicher. Im Spiel: Panel → Varianten → »Parametersatz sichern«. Oder von Hand einkleben.' });
+        return;
+      }
+      const j = JSON.parse(raw);
+      this.save({ params: JSON.stringify(j, null, 1), seed: this.state.seed || String(j.seed || ''),
+                  status: 'Parametersatz geholt (' + Object.keys(j).length + ' Eintraege)' });
+    } catch (e) {
+      this.setState({ status: 'Speicher nicht lesbar: ' + e.message });
+    }
+  }
+
+  buildResult() {
+    const s = this.state;
+    let params = null;
+    try { params = s.params ? JSON.parse(s.params) : null; } catch (e) { params = { __unparsed: s.params }; }
+    return {
+      $schema: 'kfb-travel-testrun/1',
+      version: 'v16',
+      date: new Date().toISOString(),
+      tester: s.tester || null,
+      build: s.build || null,
+      seed: s.seed || null,
+      userAgent: (typeof navigator !== 'undefined' ? navigator.userAgent : null),
+      viewport: (typeof window !== 'undefined' ? window.innerWidth + 'x' + window.innerHeight : null),
+      // Der Parametersatz gehoert IN das Ergebnis, nicht daneben.
+      params,
+      summary: this.counts(),
+      groups: GROUPS.map((g) => ({
+        id: g.id, title: g.title,
+        items: g.items.map((it) => ({
+          id: it.id, label: it.label,
+          expect: it.expect || null,
+          state: s.marks[it.id] || 'open',
+          note: s.notes[it.id] || null,
+        })),
+      })),
+      openDecisions: DECISIONS,
+    };
+  }
+
+  counts() {
+    const items = this.allItems(), m = this.state.marks;
+    let ok = 0, bad = 0, skip = 0;
+    items.forEach((it) => { const v = m[it.id]; if (v === 'ok') ok++; else if (v === 'bad') bad++; else if (v === 'skip') skip++; });
+    return { total: items.length, ok, bad, skip, open: items.length - ok - bad - skip };
+  }
+
+  chip(active, tone) {
+    const col = tone === 'ok' ? '#7d9b6e' : tone === 'bad' ? '#c2593f' : tone === 'skip' ? '#6b6157' : '#9b9084';
+    return 'font-family:\'IBM Plex Mono\',monospace;font-size:9.5px;letter-spacing:0.08em;'
+      + 'padding:3px 7px;border-radius:2px;cursor:pointer;white-space:nowrap;'
+      + (active
+        ? 'border:1px solid ' + col + ';background:' + col + ';color:#14100d;font-weight:500;'
+        : 'border:1px solid #3a322a;background:#14100d;color:' + col + ';');
+  }
+
+  renderVals() {
+    const s = this.state, c = this.counts();
+    let paramState = 'kein Parametersatz — Ergebnis waere nicht reproduzierbar';
+    let paramColor = '#c2593f';
+    if (s.params) {
+      try { const j = JSON.parse(s.params); paramState = Object.keys(j).length + ' Eintraege · gueltig'; paramColor = '#7d9b6e'; }
+      catch (e) { paramState = 'kein gueltiges JSON — wird als Text mitgespeichert'; paramColor = '#d8a24a'; }
+    }
+    let n = 0;
+    return {
+      doneCount: c.ok + c.bad + c.skip, totalCount: c.total, failCount: c.bad, openCount: c.open,
+      tester: s.tester, setTester: (e) => this.save({ tester: e.target.value }),
+      build: s.build, setBuild: (e) => this.save({ build: e.target.value }),
+      seed: s.seed, setSeed: (e) => this.save({ seed: e.target.value }),
+      params: s.params, setParams: (e) => this.save({ params: e.target.value }),
+      paramState, paramColor,
+      pullParams: () => this.pullParams(),
+      clearParams: () => this.save({ params: '', status: 'Parametersatz geleert' }),
+      status: s.status,
+      decisions: DECISIONS,
+      goldBtn: 'border:1px solid #d8a24a;background:#2a2013;color:#f0c274;font-family:\'Barlow Condensed\',sans-serif;'
+        + 'font-size:11.5px;font-weight:600;letter-spacing:0.08em;padding:5px 11px;border-radius:2px;cursor:pointer;text-transform:uppercase',
+      plainBtn: 'border:1px solid #3a322a;background:#14100d;color:#b9ad9c;font-family:\'Barlow Condensed\',sans-serif;'
+        + 'font-size:11.5px;font-weight:600;letter-spacing:0.08em;padding:5px 11px;border-radius:2px;cursor:pointer;text-transform:uppercase',
+      copyLabel: s.copied ? 'kopiert' : 'in die Zwischenablage',
+      groups: GROUPS.map((g) => ({
+        title: g.title, hint: g.hint,
+        items: g.items.map((it) => {
+          const v = s.marks[it.id];
+          n += 1;
+          return {
+            n: String(n).padStart(2, '0'),
+            label: it.label, how: it.how, expect: it.expect || '',
+            color: v === 'bad' ? '#e39a86' : v === 'ok' ? '#cfe0c4' : v === 'skip' ? '#8b8177' : '#e8ded0',
+            note: s.notes[it.id] || '',
+            setNote: (e) => this.setNote(it.id, e.target.value),
+            setOk: () => this.mark(it.id, 'ok'),
+            setBad: () => this.mark(it.id, 'bad'),
+            setSkip: () => this.mark(it.id, 'skip'),
+            setOpen: () => this.mark(it.id, v || 'x'),
+            okStyle: this.chip(v === 'ok', 'ok'),
+            badStyle: this.chip(v === 'bad', 'bad'),
+            skipStyle: this.chip(v === 'skip', 'skip'),
+            openStyle: this.chip(!v, 'open'),
+          };
+        }),
+      })),
+      doExport: () => {
+        const j = this.buildResult();
+        const name = 'kfb-travel-test_' + j.date.slice(0, 16).replace(/[:T]/g, '-') + '.json';
+        const blob = new Blob([JSON.stringify(j, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob); a.download = name; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        this.setState({ status: 'geschrieben: ' + name });
+      },
+      copyJson: () => {
+        navigator.clipboard.writeText(JSON.stringify(this.buildResult(), null, 2))
+          .then(() => { this.setState({ copied: true, status: 'in der Zwischenablage' });
+                        setTimeout(() => this.setState({ copied: false }), 1800); })
+          .catch((e) => this.setState({ status: 'Zwischenablage verweigert: ' + e.message }));
+      },
+      doImport: (e) => {
+        const f = e.target.files && e.target.files[0];
+        if (!f) return;
+        const fr = new FileReader();
+        fr.onload = () => {
+          try {
+            const j = JSON.parse(fr.result);
+            const marks = {}, notes = {};
+            (j.groups || []).forEach((g) => (g.items || []).forEach((it) => {
+              if (it.state && it.state !== 'open') marks[it.id] = it.state;
+              if (it.note) notes[it.id] = it.note;
+            }));
+            this.save({
+              marks, notes,
+              tester: j.tester || '', build: j.build || '', seed: j.seed || '',
+              params: j.params ? JSON.stringify(j.params, null, 1) : '',
+              status: 'geladen: ' + (j.date || 'ohne Datum') + ' · ' + Object.keys(marks).length + ' Marken',
+            });
+          } catch (err) { this.setState({ status: 'Datei nicht lesbar: ' + err.message }); }
+        };
+        fr.readAsText(f);
+      },
+      resetAll: () => this.save({ marks: {}, notes: {}, status: 'alles auf offen' }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

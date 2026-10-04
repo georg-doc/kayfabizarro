@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KCL-M1 · Locomotion Sync Bench</title>
+<link rel="icon" href="data:,">
+<style>
+:root{font-family:Inter,system-ui,sans-serif;background:#11161b;color:#eee7da;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{display:grid;grid-template-rows:auto minmax(0,1fr)}
+header{padding:10px 12px;border-bottom:1px solid #ffffff24;background:#181f25}
+h1{font-size:15px;margin:0 0 4px}.sub{font:11px/1.35 ui-monospace,monospace;color:#b8c2c5}
+main{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:0}
+#stage{position:relative;min-width:0;min-height:0;background:#182126}
+canvas{display:block;width:100%;height:100%}
+.badge{position:absolute;top:10px;padding:5px 7px;border-radius:5px;background:#10171dcc;border:1px solid #ffffff25;font:700 10px ui-monospace,monospace;pointer-events:none}
+#leftBadge{left:10px}#rightBadge{left:calc(50% + 10px)}
+aside{overflow:auto;border-left:1px solid #ffffff24;background:#171d22;padding:10px}
+section{border:1px solid #ffffff1e;border-radius:7px;padding:9px;margin:0 0 9px;background:#1d252b}
+section h2{font-size:11px;letter-spacing:.08em;margin:0 0 8px;color:#e2bd69}
+label{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;font-size:11px;margin:6px 0}
+select,input,button{font:11px system-ui;background:#263139;color:#eee7da;border:1px solid #ffffff2b;border-radius:5px;padding:5px}
+input[type=range]{width:145px;padding:0}button{cursor:pointer}button.primary{background:#a75f3e;border-color:#d88c69;font-weight:800}
+.row{display:flex;gap:6px;flex-wrap:wrap}.row>*{flex:1}
+#metrics{font:10px/1.4 ui-monospace,monospace;white-space:pre-wrap}
+table{width:100%;border-collapse:collapse;font:9px/1.25 ui-monospace,monospace}
+th,td{text-align:left;padding:4px;border-bottom:1px solid #ffffff12;vertical-align:top}
+th{color:#9fb9c4}.ok{color:#8bc9a8}.open{color:#e0bd6e}.err{color:#ee8d7f}
+@media(max-width:900px){main{grid-template-columns:1fr}aside{position:absolute;right:8px;top:72px;bottom:8px;width:min(360px,calc(100vw - 16px));z-index:5;border:1px solid #ffffff24;border-radius:8px;max-height:62vh}}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<header>
+  <h1>KCL-M1 · Locomotion Sync Bench</h1>
+  <div class="sub">ActionFigure · Rig_Medium · Walking_A/B/C + Running_A/B · measurement/QA only · no movement-owner writes</div>
+</header>
+<main>
+  <div id="stage">
+    <div id="leftBadge" class="badge">A · NAIVE · target starts at 0</div>
+    <div id="rightBadge" class="badge">B · PHASE SYNC · matching foot contact</div>
+  </div>
+  <aside>
+    <section>
+      <h2>TRANSITION A/B</h2>
+      <label>Source <select id="sourceClip"></select></label>
+      <label>Target <select id="targetClip"></select></label>
+      <label>Sync foot <select id="syncFoot"><option value="left">LEFT</option><option value="right">RIGHT</option></select></label>
+      <label>Crossfade <span><input id="fade" type="range" min="0" max=".35" step=".01" value=".12"> <b id="fadeOut">.12</b>s</span></label>
+      <label>Desired speed <span><input id="speed" type="range" min=".1" max="4" step=".05" value="1.5"> <b id="speedOut">1.50</b></span></label>
+      <label><span>speed → timeScale</span><input id="speedMatch" type="checkbox" checked></label>
+      <label><span>warp during fade</span><input id="warp" type="checkbox" checked></label>
+      <div class="row"><button id="playSource">Play source</button><button id="transition" class="primary">Run A/B transition</button></div>
+    </section>
+    <section>
+      <h2>CLIP PREVIEW</h2>
+      <label>Clip <select id="previewClip"></select></label>
+      <label>Manual rate <span><input id="manualRate" type="range" min=".4" max="1.8" step=".05" value="1"> <b id="manualRateOut">1.00</b></span></label>
+      <div class="row"><button id="preview">Preview both</button><button id="export">Export profiles</button></div>
+    </section>
+    <section>
+      <h2>RUNTIME MEASUREMENT</h2>
+      <div id="metrics">Loading pinned actor + MovementBasic…</div>
+    </section>
+    <section>
+      <h2>CLIP TABLE</h2>
+      <div style="overflow:auto"><table><thead><tr><th>clip</th><th>dur</th><th>axis</th><th>L contact</th><th>R contact</th><th>ref speed</th><th>slip</th></tr></thead><tbody id="clipRows"></tbody></table></div>
+    </section>
+  </aside>
+</main>
+<script type="module" src="./bench.mjs"></script>
+</body>
+</html>

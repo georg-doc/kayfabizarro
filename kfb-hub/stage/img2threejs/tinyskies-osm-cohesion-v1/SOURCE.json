@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.stage-source/1.0",
+  "stageBuild": "KFB-TS-OSM-INTEGRATED-V1-20260919",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/",
+  "status": "STAGE_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "img2threejs/tinyskies-osm-integrated-proof-v1-2026-09-19",
+  "sourcePR": 110,
+  "testedRuntimeHead": "aa28a743628699271c94c1911af23d0564c6f3cc",
+  "sourceWorkflowRun": 35471351012,
+  "sourceArtifactId": 10591829944,
+  "sourceArtifactDigest": "sha256:14aed09ddd226a584a7c7979f70e75502a84d7a97a7833275d972ec49856a821",
+  "tests": {
+    "static": "27/27 PASS",
+    "browser": "19/19 PASS",
+    "browserErrors": 0
+  },
+  "sourceBlobs": {
+    "index": "3ac03356a921d80a080570631ef8f1154edd9d6e",
+    "viewer": "303eca488386c2c46315f9f7a6b1096341856532",
+    "domGeometry": "8a70e132134fa56094707b97828ae70b6748f403",
+    "domRig": "d7c81468113f42a56cd3db66d3ac5490d0081bd0",
+    "worldMaterial": "fd19341f5039108a529f554fe77f21dd9036fa87",
+    "terrain": "c70d11725e3a3ced444a3d95ff06f05e19f4b5bb",
+    "refs": "2774c29ea67375a650b5f57e03a280d7549b8ab8"
+  },
+  "stagePackaging": {
+    "exact": [
+      "index",
+      "viewer",
+      "worldMaterial",
+      "terrain",
+      "refs"
+    ],
+    "importPathAdapters": [
+      "domGeometry",
+      "domRig"
+    ],
+    "note": "Only relative source imports were rewritten to canonical /tools/... URLs for the Cloudflare Stage location; public browser proof is required."
+  },
+  "donors": {
+    "osmScene": "/tools/osm-city-lab/scenes/huerth-v0.json",
+    "osmStageStyle": "/kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs",
+    "osmStageGeometry": "/kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs",
+    "tinySkiesCommit": "2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6",
+    "cathedral": "tools/img2threejs/prototypes/koelner-dom/v0.2/index.html"
+  },
+  "boundaries": {
+    "cathedralPlacement": "STYLE_INTEGRATION_ONLY_NOT_GEO",
+    "realCologneOsmOverride": false,
+    "materialWetness": false,
+    "materialAlbedoShift": false,
+    "physicsOwnerChanged": false,
+    "audioOwnerChanged": false
+  }
+}\n

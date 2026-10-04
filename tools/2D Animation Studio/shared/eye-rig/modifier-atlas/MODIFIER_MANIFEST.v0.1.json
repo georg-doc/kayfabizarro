@@ -1,0 +1,128 @@
+{
+  "schema": "kfb.face-modifier-atlas/0.1",
+  "updated": "2026-09-18",
+  "status": "PREPARED_SOURCE_INVENTORY_INCOMPLETE",
+  "proofGate": "tools/2D Animation Studio/proofs/cross-render-eye-v1/",
+  "attachmentContracts": {
+    "eyeFrame": "kfb.eye-rig.protocol/1#eyeFrame",
+    "head": "host-specific head/root attachment; not normalized yet",
+    "sourceLocal": "keep the Illustrator source transform/draw order"
+  },
+  "resolvedFromCurrentDocCheckSource": [
+    {
+      "id": "doccheck-eye-A",
+      "category": "eye-base",
+      "source": "EUMEL_SOURCE_COMPONENTS.svg#rig-eye-A",
+      "anchor": "sourceLocal",
+      "status": "SOURCE_EXACT"
+    },
+    {
+      "id": "doccheck-eye-B",
+      "category": "eye-base",
+      "source": "EUMEL_SOURCE_COMPONENTS.svg#rig-eye-B",
+      "anchor": "sourceLocal",
+      "status": "SOURCE_EXACT"
+    },
+    {
+      "id": "doccheck-pupil-A",
+      "category": "pupil",
+      "source": "EUMEL_SOURCE_COMPONENTS.svg#rig-pupil-A",
+      "anchor": "eyeFrame",
+      "status": "SOURCE_EXACT"
+    },
+    {
+      "id": "doccheck-pupil-B",
+      "category": "pupil",
+      "source": "EUMEL_SOURCE_COMPONENTS.svg#rig-pupil-B",
+      "anchor": "eyeFrame",
+      "status": "SOURCE_EXACT"
+    },
+    {
+      "id": "doccheck-hat",
+      "category": "headwear",
+      "source": [
+        "EUMEL_SOURCE_COMPONENTS.svg#rig-foreground-black",
+        "EUMEL_SOURCE_COMPONENTS.svg#rig-foreground-white"
+      ],
+      "anchor": "head",
+      "status": "SOURCE_EXACT_SEMANTIC_CONFIRMED_BY_BROWSER_SCREENSHOT"
+    },
+    {
+      "id": "doccheck-forehead-mirror",
+      "category": "head-accessory",
+      "source": [
+        "EUMEL_SOURCE_COMPONENTS.svg#rig-mirror-outer",
+        "EUMEL_SOURCE_COMPONENTS.svg#rig-mirror-inner"
+      ],
+      "anchor": "head",
+      "status": "SOURCE_EXACT"
+    }
+  ],
+  "controlLogicDonors": [
+    {
+      "id": "kfb-eyerig-v6",
+      "kind": "logic",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "role": "gaze/blink/emote/life/kinetics/eyeFrame"
+    },
+    {
+      "id": "kfb-brow-rig-v2",
+      "kind": "logic",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "role": "eyeFrame-relative face overlay precedent"
+    },
+    {
+      "id": "aid-sunglasses-mini",
+      "kind": "3d-asset-donor",
+      "path": "media/3D_Assets/GLB_mini_chars/aid-sunglasses.glb",
+      "role": "3D eyewear donor only; not DocCheck 2D artwork"
+    },
+    {
+      "id": "aid-sunglasses-block",
+      "kind": "3d-asset-donor",
+      "path": "media/3D_Assets/GLB_block_chars/aid-sunglasses.glb",
+      "role": "3D eyewear donor only; not DocCheck 2D artwork"
+    }
+  ],
+  "expectedDocCheckInventory": [
+    {
+      "category": "upper-lid/lower-lid",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "curved-eye-rings",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "brow-variants",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "sunglasses",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "protective-goggles",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "welder-goggles",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    },
+    {
+      "category": "other-eye-modifiers",
+      "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
+    }
+  ],
+  "promotionRule": "A modifier becomes reusable only after exact source identity, layer/group geometry, pair/occlusion behavior, attachment class, browser evidence and Georg/AD acceptance are recorded.",
+  "sourceDiscovery": {
+    "githubCurrentSource": "tools/2D Animation Studio/_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "dropboxSearch20260918": {
+      "scope": "/CLAUDE",
+      "filters": "Adobe Illustrator extension + filename/content terms Eumel, Brille, Augen, DocCheck, Vorlage, Dr, Logo",
+      "result": "NO_ADDITIONAL_AI_CANDIDATE_FOUND_BY_SEARCH",
+      "caveat": "Search non-result is not proof that no richer source exists; binary/source files may be stored under unrelated names or outside indexed search."
+    },
+    "nextAction": "Ask/source-authoritative richer DocCheck Illustrator package or identify its exact Dropbox/GitHub path; do not synthesize missing modifiers."
+  }
+}

@@ -1,0 +1,34 @@
+name: Free Roam public delivery proof
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'kfb-hub/free-roam/releases.json'
+      - 'kfb-hub/free-roam/versions/**'
+      - 'kfb-hub/free-roam/qa/**'
+      - '.github/workflows/free-roam-public.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: kfb-hub/free-roam
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify real KFB URL, source identity and browser controls
+        run: node kfb-hub/free-roam/qa/public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: free-roam-public-proof
+          path: free-roam-public-evidence
+          retention-days: 30

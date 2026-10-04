@@ -1,0 +1,54 @@
+{
+  "schema": "kfb.landmark-pilot.reference-notes/0.1",
+  "date": "2026-09-18",
+  "status": "EXPERIMENTAL_DONOR",
+  "authorship": "Hand-authored procedural geometry; no img2threejs forge run; no downloaded third-party model.",
+  "units": "metre",
+  "osmBinding": null,
+  "collision": "NOT_PROVIDED",
+  "cityIntegration": "NOT_IMPLEMENTED",
+  "citySourcePins": {
+    "projection.js": "6353871bea1c4ae7ad5768a46721f418b92c611d",
+    "kfb-city-materials.js": "42cca129c5928f6178d0f7e1e0c06f7cc1a62b03",
+    "kfb-city-v0.json": "f129cca3041b55b84de26048dad7aef8fac8b292",
+    "LANDMARK_OVERRIDES.md": "f9aea1cffb447aa6ede45d47452de4b467be76a2",
+    "manifest.json": "3b213528533ad326e5a042d3fde2671e26e3b89c"
+  },
+  "models": {
+    "eiffel": {
+      "source": "https://www.toureiffel.paris/fr/le-monument/chiffres-cle",
+      "calibratedM": {"height":330,"baseWidth":125,"footWidth":25,"deckTopHeights":[57,115,276]},
+      "authoredApproximations": ["intermediate taper and leg cross-sections", "lattice density and beam thickness", "arches", "summit geometry", "unsurveyed local yaw"],
+      "notMeasured": ["exact OSM footprint", "geographic binding", "every steel member"]
+    },
+    "giza": {
+      "sources": [
+        "https://egymonuments.gov.eg/monuments/the-great-pyramid/",
+        "https://egymonuments.gov.eg/monuments/pyramid-complex-of-khafre-khefren/",
+        "https://egymonuments.gov.eg/monuments/pyramid-complex-of-menkaure/",
+        "https://sis.gov.eg/en/egypt/tourism/landmarks/giza-pyramids/"
+      ],
+      "heightMode": "original-height study; NOT present-day survey heights",
+      "referenceHeightsM": {"khufu":146.5,"khafre":143.5,"menkaure":65},
+      "nominalBaseWidthsM": {"khufu":230.3,"khafre":215.5,"menkaure":108.5},
+      "authoredApproximations": ["Khufu base width is a nominal modelling assumption in this slice", "relative centres and ground elevations are schematic", "all ground at Y=0", "material bands are styling zones, not archaeological courses", "no measured terrain or satellite-pyramid layout"]
+    },
+    "stonehenge": {
+      "sources": [
+        "https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/history/description/",
+        "https://www.english-heritage.org.uk/visit/places/stonehenge/things-to-do/stone-circle/stones-of-stonehenge"
+      ],
+      "referenceFeatures": ["outer sarsen setting with lintels", "five-trilithon inner horseshoe", "three complete inner trilithons"],
+      "authoredApproximations": ["28 m upright centre-circle diameter and individual stone dimensions are nominal modelling parameters", "missing/fallen stone positions are schematic, not a survey", "local horseshoe opens toward +Z, no surveyed geographic azimuth", "chamfer/lean variation is deterministic", "not a reconstruction of a specific archaeological phase"]
+    }
+  },
+  "appearance": {
+    "city": "Reads existing City Lab JSON + materialPalette/pickStable functions. No copied canonical palette.",
+    "natural": "Landmark-local optional palette, not a City Lab override.",
+    "colour": "Optional KFB colour study, orthogonal to City Lab clean/cartoon/grotesque massing.",
+    "zones": "Diagnostic zone colours.",
+    "massingDeformationSupported": false,
+    "weathering": "DEFERRED",
+    "paperFabricDecals": "DEFERRED"
+  }
+}

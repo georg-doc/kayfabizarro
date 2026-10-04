@@ -1,0 +1,967 @@
+{
+  "schema": "kfb.platformer-poc.asset-manifest/1",
+  "product": "KFB_FREE_ROAM_PLATFORMER_POC_v0",
+  "date": "2026-09-18",
+  "rule": "Alle Modelle bleiben GitHub-SourceRefs. Dieses Paket enthaelt KEINE Modellkopien, keine Animationsbibliothek, keine Texturen, keine Font- oder Audiobinaerdateien.",
+  "identityBoundary": "Der Pack heisst \"Platformer Game Kit - Dec 2021\". Eine Gleichsetzung mit dem heutigen offiziellen KayKit Platformer Pack ist laut Registry-Atlas ungeklaert und wird hier nicht behauptet.",
+  "pins": {
+    "pack": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "assets": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+    "anims": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+    "legacy": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "main": "main"
+  },
+  "counts": {
+    "sourceRefs": 135,
+    "loadedInPreview": 40
+  },
+  "sourceRefs": [
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Arrow.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Arrow_Side.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Arrow_Up.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Enemies/glTF/Bee.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Enemies)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Bomb.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Bouncer.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Bridge_Modular.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Bridge_Modular_Center.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Bridge_Small.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Bush.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Bush_Fruit.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Cannon.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Cannonball.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Character)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Character)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Chest.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Cloud_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Cloud_2.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Cloud_3.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Coin.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Enemies/glTF/Crab.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Enemies)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Bricks.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Crate.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Default.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/2D/glTF/Cube_Dirt_1x1Center.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/2D/glTF/Cube_Dirt_1x1End.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Dirt_Center.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Dirt_Center_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Dirt_Corner.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Dirt_Corner_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Dirt_Side.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Dirt_Side_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Dirt_Single.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Exclamation.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/2D/glTF/Cube_Grass_1x1Center.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/2D/glTF/Cube_Grass_1x1End.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_Bottom_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Grass_Center.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_Center_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Grass_Corner.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_CornerBottom_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_CornerCenter_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_Corner_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/Single Height/glTF/Cube_Grass_Side.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_SideBottom_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_SideCenter_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Modular Platforms/3D/glTF/Cube_Grass_Side_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Modular Platforms)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Grass_Single.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Question.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Cubes/glTF/Cube_Spikes.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Cubes)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Door.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Enemies/glTF/Enemy.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Enemies)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Fence_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Fence_Corner.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Fence_Middle.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Fruit.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Gem_Blue.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Gem_Green.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Gem_Pink.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Goal_Flag.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Grass_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Grass_2.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Grass_3.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Hazard_Cylinder.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Hazard_Saw.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Hazard_SpikeTrap.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Heart.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Heart_Half.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Heart_Outline.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Key.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Lever.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_0.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_2.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_3.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_4.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_5.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_6.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_7.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_8.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Numbers_9.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Pipe_90.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Pipe_End.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Pipe_Straight.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Pipe_T.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Plant_Large.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Plant_Small.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatform_Tall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatforms_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatforms_2.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatforms_3.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatforms_Large.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/RockPlatforms_Medium.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Rock_1.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Rock_2.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Enemies/glTF/Skull.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Enemies)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Spikes.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/SpikyBall.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Stairs.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Stairs_Modular_End.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Stairs_Modular_Middle.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Stairs_Modular_Start.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Stairs_Small.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Star.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Star_Outline.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Thunder.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Powerups and Pickups)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Tower.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Level and Mechanics)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Tree.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Nature/glTF/Tree_Fruit.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "world geometry / props (Nature)",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "actor · Platformer · Platformer Character",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "actor · Platformer · Platformer Character (Gun)",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+      "pin": "main (jsDelivr)",
+      "role": "reader · FrizzleBob · Graft",
+      "loadedInPreview": true,
+      "note": "Module ueber jsDelivr, nicht raw"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "pin": "main (jsDelivr)",
+      "role": "contract · FrizzleBob · Graft",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/lab-v6/carlrig-mount.v1.js",
+      "pin": "main (jsDelivr)",
+      "role": "reader · CapsuleCarl",
+      "loadedInPreview": true,
+      "note": "Module ueber jsDelivr, nicht raw"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-carl-rig-v6.json",
+      "pin": "main (jsDelivr)",
+      "role": "contract · CapsuleCarl",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+      "pin": "main",
+      "role": "actor · Residents · Skeleton Warrior",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Goth Girl",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Clown",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Witch",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - October 2024 - Lorekeeper/Lorekeeper.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Lorekeeper",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Caveman",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · Residents · Avian Swordsman",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb",
+      "pin": "main",
+      "role": "actor · Residents · Skeleton Rogue",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+      "pin": "main",
+      "role": "actor · Residents · Skeleton Mage",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · KayKit · Black Knight",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "pin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "role": "actor · KayKit · Demon Lord",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf",
+      "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "role": "actor · Legacy · Knight · Dungeon 1.0",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · MovementBasic",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementAdvanced.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · MovementAdvanced",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · General",
+      "loadedInPreview": true
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Simulation.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · Simulation",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Tools.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · Tools",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · CombatMelee",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · CombatRanged",
+      "loadedInPreview": false
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Special.glb",
+      "pin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "role": "shared animation library · Rig_Medium · Special",
+      "loadedInPreview": false
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+ "schema": "kfb.resident-gunfight-duel/1",
+ "id": "resident-gunfight-duel-01",
+ "title": "Gunfight Duell 01 · Fernkampf · zwei KayKit-Figuren · Testgelände",
+ "status": "candidate-only · RESIDENT-GUNFIGHT-DUEL-01 · abgespielte Choreografie, Steuerung folgt",
+ "verdictSchema": "kfb.gunfight-duel-verdicts/1",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "motionBranch": "georg-doc-patch-3",
+  "arena": "georg-doc/KFB-Combat-Arena@main · modules/kfb-combat-def.js (WEAPONS, AMMO, ENERGY, SURFACES · Werte unverändert kopiert)",
+  "arenaGunfight": "georg-doc/kayfabizarro@main · KFB Combat Arena/combat-arena-v2/gunfight.v2.js (Schusskette, Schutzzone, Würfelwurf)",
+  "fightSandbox": "lib/fight-sandbox-02.js (Knet-Puff, Squash, Zeit gesetzt statt fortgeschrieben)"
+ },
+ "motionLibrary": {
+  "root": "media/3D_Assets/Animations/KFB_Motion_Library/",
+  "ref": "georg-doc-patch-3",
+  "catalogVersion": "2026-09-29b"
+ },
+ "clips": {
+  "kfb_action_shooting_gun_a": { "label_de": "Pistole schießen", "frames": 158, "loop": true, "rootMotion": "in-place", "props": { "hands": "right", "prop": "pistol" }, "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action_i04.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_action_i04.glb" } },
+  "kfb_reaction_standing_react_small_from_right_a": { "label_de": "kleine Trefferreaktion", "frames": 31, "loop": true, "rootMotion": "in-place", "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_reaction.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_reaction.glb" } },
+  "kfb_reaction_death_from_the_front_a": { "label_de": "Tod von vorn", "frames": 104, "loop": false, "rootMotion": "travel", "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_reaction.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_reaction.glb" } },
+  "kfb_action_dodging_a": { "label_de": "Ausweichen", "frames": 66, "loop": true, "rootMotion": "travel", "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action_i06.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_action_i06.glb" } },
+  "kfb_action_dodging_back_a": { "label_de": "Ausweichen zurück", "frames": 81, "loop": true, "rootMotion": "travel", "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action_i06.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_action_i06.glb" } },
+  "kfb_action_baseball_pitching_a": { "label_de": "Baseball-Wurf", "frames": 142, "loop": false, "rootMotion": "travel", "library": { "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_action.glb" } }
+ },
+ "roles": {
+  "gun": { "label": "Schuss (Pistole)", "prefer": "lib", "lib": "kfb_action_shooting_gun_a" },
+  "idle": { "label": "Stand", "prefer": "kaykit", "kaykit": "^Idle_A$" },
+  "rifle": { "label": "Gewehrhaltung (Oberkörper)", "prefer": "kaykit", "kaykit": "^Running_HoldingRifle$", "at": 0.3 },
+  "hit": { "label": "Treffer", "prefer": "kaykit", "kaykit": "^Hit_A$", "lib": "kfb_reaction_standing_react_small_from_right_a" },
+  "death": { "label": "Tod", "prefer": "kaykit", "kaykit": "^Death_A$", "lib": "kfb_reaction_death_from_the_front_a" },
+  "dodgeL": { "label": "Ausweichen links", "prefer": "kaykit", "kaykit": "^Dodge_Left$", "lib": "kfb_action_dodging_a" },
+  "dodgeR": { "label": "Ausweichen rechts", "prefer": "kaykit", "kaykit": "^Dodge_Right$", "lib": "kfb_action_dodging_back_a" },
+  "throw": { "label": "Wurf", "prefer": "kaykit", "kaykit": "^Throw$", "lib": "kfb_action_baseball_pitching_a" }
+ },
+ "fighters": {
+  "hero_red": { "label": "Hero Man · rot", "rig": "Rig_Medium", "surface": "flesh", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb" } },
+  "hero_blue": { "label": "Hero Man · blau", "rig": "Rig_Medium", "surface": "flesh", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb" }, "skin": { "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_B.png" } },
+  "soldier": { "label": "Toy Soldier", "rig": "Rig_Medium", "surface": "wood", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb" } },
+  "mech": { "label": "Combat Mech · weiß", "rig": "Rig_Medium", "surface": "metal", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d" } },
+  "mech_alt": { "label": "Combat Mech · oliv", "rig": "Rig_Medium", "surface": "metal", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d" }, "skin": { "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture_alt.png", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d" } }
+ },
+ "weapons": {
+  "blaster": { "label": "Blaster · Pistolenhaltung", "handling": "pistol", "canon": "beam", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/gltf/UltraTurboHeroMan_Blaster.gltf" }, "note": "Ein KayKit-Pistolenmodell habe ich nicht gefunden (Suche begrenzt). Der Blaster trägt die Pistolenhaltung aus shooting_gun_a." },
+  "rifle": { "label": "Gewehr · beidhändig", "handling": "rifle", "canon": "railgun", "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/ToySoldier_Rifle.gltf" }, "note": "Kein Schuss-Clip für Gewehre. Haltung = Idle_A-Beine + Running_HoldingRifle-Oberkörper bei 0,3 s (die gemessene Mech-Pose). Rückstoß prozedural. Linke Hand ohne IK." },
+  "minigun": { "label": "Minigun · Feuerstoß", "handling": "rifle", "canon": "stinger", "burst": 8, "asset": { "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/CombatMech_Minigun.gltf", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d" }, "skinBy": { "mech_alt": { "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture_alt.png", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d" } }, "spin": { "node": "CombatMech_Minigun_Barrel", "rps": 2.4 }, "note": "Feuerstoß im Kanon-Takt (Stinger 0,11 s). Nur die letzte Kugel trägt das Ergebnis, die ersten laufen ein." },
+  "dice": { "label": "Würfelwurf · Arena-Kanon", "handling": "throw", "canon": "dice", "dieH": 0.14, "note": "Würfel prozedural (weißer Körper, dunkle Augen). Das Augen-GLB der Arena (kfb-weapon-dice.js) ist nicht eingebunden." }
+ },
+ "canon": {
+  "unitFigureU": 2.6,
+  "unitNote": "Die Werkbank misst auf einer Mech-Bühne mit Figur ~2,6 u (gunfight.v2.js SPEC.ammoSkala). Tempo und Munitionsmaße werden mit gemessener Figurhöhe / 2,6 umgerechnet.",
+  "weapons": {
+   "beam": { "name": "Kayfabeam", "speed": 130, "rate": 0.16, "kick": 0.018, "color": 10479359, "flash": 16777215, "energy": "hot", "muz": "charge", "muzMs": 50, "muzSize": 0.8, "ammo": "bolt", "ant": 0 },
+   "railgun": { "name": "Bamboo Rail", "speed": 165, "rate": 1.15, "kick": 0.075, "color": 9430783, "flash": 16777215, "energy": "electric", "muz": "rail", "muzMs": 50, "muzSize": 1.0, "ammo": "slug", "ant": 0.09 },
+   "stinger": { "name": "Stinger", "speed": 78, "rate": 0.11, "kick": 0.028, "color": 16771226, "flash": 16774095, "energy": "kinetic", "muz": "star", "muzMs": 50, "muzSize": 0.8, "ammo": "streak", "ant": 0.2 },
+   "dice": { "name": "Würfelwurf", "speed": 22, "rate": 1.6, "kick": 0, "color": 15985363, "flash": 15985363, "energy": "kinetic", "muz": "blast", "muzMs": 70, "muzSize": 1.1, "ammo": "dice", "arc": 1, "gravity": 14 }
+  },
+  "ammo": {
+   "bolt": { "len": 1.2, "wid": 0.3 },
+   "slug": { "len": 1.3, "wid": 0.22 },
+   "streak": { "len": 1.6, "wid": 0.34 }
+  },
+  "energy": {
+   "kinetic": { "stop": 0.02, "knock": 0.26 },
+   "hot": { "stop": 0.04, "knock": 0.30 },
+   "electric": { "stop": 0.05, "knock": 0.34 }
+  },
+  "surfaces": {
+   "flesh": { "tint": 14256762, "hard": 0.15 },
+   "metal": { "tint": 16774095, "hard": 1.0 },
+   "wood": { "tint": 11044442, "hard": 0.6 }
+  },
+  "faceZoneH": 0.18
+ },
+ "timing": { "standoff": 0.9, "pistolLead": 8, "pistolFollow": 14, "gap": 0.35 },
+ "defaults": { "A": { "fighter": "hero_red", "weapon": "blaster" }, "B": { "fighter": "hero_blue", "weapon": "blaster" }, "script": "duel5" },
+ "scripts": {
+  "duel5": { "label": "Duell · fünf Schüsse", "beats": [ { "s": "A", "o": "miss" }, { "s": "B", "o": "hit" }, { "s": "A", "o": "dodge" }, { "s": "B", "o": "dodge" }, { "s": "A", "o": "kill" } ] },
+  "quickdraw": { "label": "Schnellziehen · ein Schuss", "beats": [ { "s": "A", "o": "kill" } ] },
+  "nohits": { "label": "Schusswechsel ohne Treffer", "beats": [ { "s": "A", "o": "miss" }, { "s": "B", "o": "miss" }, { "s": "A", "o": "dodge" }, { "s": "B", "o": "dodge" } ] },
+  "trade": { "label": "Treffer gegen Treffer", "beats": [ { "s": "A", "o": "hit" }, { "s": "B", "o": "hit" }, { "s": "A", "o": "hit" }, { "s": "B", "o": "kill" } ] }
+ }
+}

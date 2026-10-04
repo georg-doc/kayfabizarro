@@ -1,0 +1,326 @@
+{
+  "schema": "kfb.landmark.travel-visual-snapshot/1.0",
+  "status": "DERIVED_NONCANONICAL_SNAPSHOT",
+  "owner": "georg-doc/KFB-Travel-Globe",
+  "sourceCommit": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+  "sources": {
+    "skyPresets": {
+      "path": "travel/globe-v13/sky-presets.js",
+      "blob": "04dd730ee735f064888e8472eff79583f17bebb0"
+    },
+    "moods": {
+      "path": "travel/globe-v13/weltstimmungen.js",
+      "blob": "2747a526e2aa38989c9c4052304da8733662b61c"
+    },
+    "biomes": {
+      "path": "travel/globe-v13/globe-biome.js",
+      "blob": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74"
+    }
+  },
+  "rules": {
+    "moodChangesHueOnly": true,
+    "preserveSourceSaturationAndLightness": true,
+    "moodOwnsAtmosphereNotLights": true,
+    "lightsRemainSourcePreset": true,
+    "seaFoamIsLightNotMaterial": true
+  },
+  "moods": {
+    "verdant": {
+      "land": 99,
+      "berg": 45,
+      "schnee": 53,
+      "zonen": [
+        42,
+        233,
+        148,
+        47
+      ],
+      "wasser": 191,
+      "spur": 45,
+      "himmel": null
+    },
+    "molten": {
+      "land": 18,
+      "berg": 30,
+      "schnee": 38,
+      "zonen": [
+        12,
+        352,
+        28,
+        40
+      ],
+      "wasser": 205,
+      "spur": 26,
+      "himmel": 14
+    },
+    "frost": {
+      "land": 196,
+      "berg": 205,
+      "schnee": 200,
+      "zonen": [
+        188,
+        224,
+        176,
+        208
+      ],
+      "wasser": 186,
+      "spur": 198,
+      "himmel": -20
+    },
+    "bone": {
+      "land": 44,
+      "berg": 40,
+      "schnee": 48,
+      "zonen": [
+        38,
+        26,
+        52,
+        34
+      ],
+      "wasser": 196,
+      "spur": 42,
+      "himmel": 8
+    }
+  },
+  "biomes": [
+    {
+      "id": "plateau",
+      "name": "Plateau",
+      "col": "#695628",
+      "relief": 0.7,
+      "rough": 0.5
+    },
+    {
+      "id": "spires",
+      "name": "Spires",
+      "col": "#484b62",
+      "relief": 1.45,
+      "rough": 1.65
+    },
+    {
+      "id": "shatter",
+      "name": "Shatter",
+      "col": "#375746",
+      "relief": 0.85,
+      "rough": 1.1
+    },
+    {
+      "id": "flatwater",
+      "name": "Flatwater",
+      "col": "#695c2e",
+      "relief": 0.45,
+      "rough": 0.4
+    }
+  ],
+  "skyPresets": {
+    "day": {
+      "skyGradient": [
+        [
+          0,
+          "#1a4a82"
+        ],
+        [
+          0.12,
+          "#1e5c90"
+        ],
+        [
+          0.26,
+          "#2a8cb4"
+        ],
+        [
+          0.4,
+          "#40c8dc"
+        ],
+        [
+          0.52,
+          "#60d8e8"
+        ],
+        [
+          0.62,
+          "#80e8f4"
+        ],
+        [
+          0.72,
+          "#b8f4f0"
+        ],
+        [
+          0.78,
+          "#e0f0d0"
+        ],
+        [
+          0.84,
+          "#f2eca8"
+        ],
+        [
+          0.91,
+          "#fff078"
+        ],
+        [
+          1,
+          "#fff050"
+        ]
+      ],
+      "fogColor": "#60ccde",
+      "fogNear": 15,
+      "fogFar": 40,
+      "hemiSky": "#80ccdd",
+      "hemiGround": "#66aa44",
+      "hemiIntensity": 1.75,
+      "ambient": "#ffffff",
+      "ambientIntensity": 1.25,
+      "sun": "#fff0d0",
+      "sunIntensity": 5,
+      "sun2": "#fff0d0",
+      "sun2Intensity": 3.25,
+      "fill": "#90bbcc",
+      "fillIntensity": 1.75,
+      "fill2": "#90bbcc",
+      "fill2Intensity": 1.5,
+      "back": "#aaddee",
+      "backIntensity": 1.5,
+      "petFill": "#bcd4ff",
+      "petFillIntensity": 0.55,
+      "oceanShallow": "#2a8ca0",
+      "oceanDeep": "#1560a0",
+      "oceanFoam": "#b3ffff",
+      "rim": "#ffeebb",
+      "atmosphereGlow": "#bbddcc",
+      "stars": false,
+      "aurora": false
+    },
+    "evening": {
+      "skyGradient": [
+        [
+          0,
+          "#0e0a2a"
+        ],
+        [
+          0.15,
+          "#1a1050"
+        ],
+        [
+          0.3,
+          "#4a2078"
+        ],
+        [
+          0.45,
+          "#a03060"
+        ],
+        [
+          0.55,
+          "#cc4840"
+        ],
+        [
+          0.65,
+          "#e07828"
+        ],
+        [
+          0.75,
+          "#f0a030"
+        ],
+        [
+          0.85,
+          "#f8c858"
+        ],
+        [
+          1,
+          "#fce0a0"
+        ]
+      ],
+      "fogColor": "#c07848",
+      "fogNear": 12,
+      "fogFar": 35,
+      "hemiSky": "#ff9944",
+      "hemiGround": "#554422",
+      "hemiIntensity": 0.94,
+      "ambient": "#ffd8a0",
+      "ambientIntensity": 0.44,
+      "sun": "#ffaa40",
+      "sunIntensity": 3.5,
+      "sun2": "#aa6640",
+      "sun2Intensity": 1,
+      "fill": "#cc8855",
+      "fillIntensity": 0.875,
+      "fill2": "#886644",
+      "fill2Intensity": 0.5,
+      "back": "#aa7766",
+      "backIntensity": 0.625,
+      "petFill": "#a8b8e8",
+      "petFillIntensity": 0.3,
+      "oceanShallow": "#5a4a98",
+      "oceanDeep": "#302868",
+      "oceanFoam": "#ffd144",
+      "rim": "#ffaa30",
+      "atmosphereGlow": "#ffcc44",
+      "stars": false,
+      "aurora": false
+    },
+    "night": {
+      "skyGradient": [
+        [
+          0,
+          "#020818"
+        ],
+        [
+          0.12,
+          "#050f22"
+        ],
+        [
+          0.25,
+          "#08142a"
+        ],
+        [
+          0.38,
+          "#0c1834"
+        ],
+        [
+          0.5,
+          "#121a3c"
+        ],
+        [
+          0.62,
+          "#241858"
+        ],
+        [
+          0.74,
+          "#321c70"
+        ],
+        [
+          0.86,
+          "#4428a0"
+        ],
+        [
+          1,
+          "#5a34c8"
+        ]
+      ],
+      "fogColor": "#08142c",
+      "fogNear": 10,
+      "fogFar": 30,
+      "hemiSky": "#283c80",
+      "hemiGround": "#10202c",
+      "hemiIntensity": 0.625,
+      "ambient": "#7088bb",
+      "ambientIntensity": 0.375,
+      "sun": "#102060",
+      "sunIntensity": 1.25,
+      "sun2": "#0c1848",
+      "sun2Intensity": 0.625,
+      "fill": "#304880",
+      "fillIntensity": 0.625,
+      "fill2": "#283868",
+      "fill2Intensity": 0.44,
+      "back": "#303860",
+      "backIntensity": 0.5,
+      "petFill": "#7088cc",
+      "petFillIntensity": 0.18,
+      "oceanShallow": "#081838",
+      "oceanDeep": "#040c20",
+      "oceanFoam": "#2030aa",
+      "rim": "#9a7af0",
+      "atmosphereGlow": "#2850aa",
+      "stars": true,
+      "aurora": true
+    }
+  }
+}

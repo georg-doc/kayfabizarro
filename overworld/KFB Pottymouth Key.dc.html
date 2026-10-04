@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"PottyMouth BB";src:url("./overworld/fonts/pottymouthbb_reg.otf") format("opentype");font-display:block}
+html,body{margin:0;background:#f2ede1}
+a{color:#8a4b2a}a:hover{color:#1f1a14}
+</style>
+</helmet>
+<div style="font-family:'Courier New',monospace;color:#1f1a14;padding:28px 32px 40px;max-width:1180px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;border-bottom:2px solid #1f1a14;padding-bottom:10px">
+    <h1 style="margin:0;font-size:20px;letter-spacing:1px">POTTYMOUTH BB — ZEICHENSCHLÜSSEL</h1>
+    <span style="font-size:12px;opacity:.7">jede Taste, was sie zeichnet · intern, Lizenz offen</span>
+  </div>
+  <p style="font-size:13px;line-height:1.6;max-width:70ch;color:#3a332a">Die Schrift bildet Tasten auf Fluchzeichen ab. Wer ein bestimmtes Zeichen will, tippt den Buchstaben darunter — das ist der ganze Trick. Ein Fluch in der Sprechblase ist damit eine kurze Zeichenkette, kein Bild.</p>
+  <div id="key" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:10px;margin-top:18px"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const chars=[];
+    for(let c=65;c<=90;c++)chars.push(String.fromCharCode(c));
+    for(let c=97;c<=122;c++)chars.push(String.fromCharCode(c));
+    /* Ziffern und Satzzeichen sind raus (Georg 9.8.): die Schrift belegt sie nicht, dort fällt der
+       Browser auf seine Serifen zurück — ein Blatt voller Fremdzeichen sieht aus wie ein Fehler.
+       Der Schlüssel zeigt nur, was die Schrift wirklich zeichnet: A–Z und a–z. */
+    const box=this.el?this.el.querySelector('#key'):document.querySelector('#key');
+    if(!box)return;
+    const setzen=()=>{
+      box.innerHTML='';
+      for(const ch of chars){
+        const d=document.createElement('div');
+        d.style.cssText='border:1.5px solid #1f1a14;background:#fbf8ef;display:flex;flex-direction:column;align-items:center;justify-content:center;height:92px;gap:4px';
+        const g=document.createElement('div');
+        g.style.cssText='font-family:"PottyMouth BB";font-size:38px;line-height:1;height:46px;display:flex;align-items:center';
+        g.textContent=ch;
+        const l=document.createElement('div');
+        l.style.cssText='font-family:"Courier New",monospace;font-size:12px;opacity:.65';
+        l.textContent=ch;
+        d.appendChild(g);d.appendChild(l);box.appendChild(d);
+      }
+    };
+    setzen();
+    if(document.fonts&&document.fonts.load)document.fonts.load('38px "PottyMouth BB"').then(setzen).catch(()=>{});
+  }
+  renderVals(){return {};}
+}
+</script>
+</body>
+</html>

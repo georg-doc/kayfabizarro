@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S6 · KayKit Forest Nature Pack</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0f1410;color:#e9efe4;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#8fd08a}a:hover{color:#b2e3ad}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 344px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #22301f;background:#141c14;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #33452f;border-radius:4px;color:#8fd08a}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button,select{font:12px/1 inherit;padding:7px 10px;background:#1b2519;color:#e9efe4;border:1px solid #33452f;border-radius:5px;cursor:pointer}
+  button:hover{background:#243120}
+  button[aria-pressed="true"]{background:#4f8a45;border-color:#7ec073;color:#0f1410}
+  label.sl{display:flex;align-items:center;gap:6px;font:11px/1 ui-monospace,monospace;color:#a4b69c}
+  input[type=range]{width:96px;accent-color:#7ec073}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #refimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#cfdcc8;background:#0f1410cc;border:1px solid #33452f80;padding:8px 10px;border-radius:6px;max-width:64%}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#e6f2e2;background:#0f1410e6;border:1px solid #33452f;padding:8px 10px;border-radius:6px;display:none}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside{border-left:1px solid #22301f;background:#121812;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8b9c84;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #1f281d;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#e2ecdd;text-align:right}
+  .note{font-size:12px;color:#94a48d}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #1f281d}
+  th{color:#8b9c84;font-weight:500}
+  th:first-child,td:first-child{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th:not(:first-child),td:not(:first-child){width:46px;text-align:right;color:#e2ecdd}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 6</h1>
+    <span class="tag">KayKit Forest Nature Pack 1.0 FREE · 105 Teile · CC0</span>
+    <span class="tag" id="count">…</span>
+    <div class="bar">
+      <button id="mScene" aria-pressed="true">Lichtung</button>
+      <button id="mPal" aria-pressed="false">Palette</button>
+      <button id="mScale" aria-pressed="false">Maßstab</button>
+      <select id="fam"></select>
+      <button id="vTop">Draufsicht</button>
+      <label class="sl">Referenz <input id="opa" type="range" min="0" max="100" value="0"></label>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <img id="refimg" src="media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Samples/Forest_Nature_Pack_sample1.png" alt="Pack-Sample">
+    <div id="pick"></div>
+    <div id="hud">lade…</div>
+    <button id="side">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2>Pack · gemessen</h2>
+    <div id="facts"></div>
+    <h2>Familien</h2>
+    <table><thead><tr><th>Familie</th><th>Var.</th><th>H max</th></tr></thead><tbody id="fams"></tbody></table>
+    <p class="note">Varianten heißen <code>A…R</code> innerhalb einer Familie und sind austauschbar — dieselbe Silhouette, andere Ausformung. Genau das macht ein Scatter ohne Wiederholungsmuster möglich.</p>
+    <h2>Streu-Bänder</h2>
+    <div id="bands"></div>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+    <div class="kv"><span>format</span><span>gltf</span></div>
+    <div class="kv"><span>lizenz</span><span>CC0 · Kay Lousberg</span></div>
+    <p class="note" id="gapnote"></p>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measured, measure } from './lib/kit-lab.js';
+import { paletteGrid, scaleRow, scatter } from './lib/props-lab.js';
+import { FAMILIES, PALETTE, SPECS, scene as recipe } from './scenes/forest-clearing.js';
+
+const hud = document.getElementById('hud');
+const V = makeViewer(document.getElementById('c'), { background: 0x8fb4c4, fov: 30, mood: 'day' });
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+document.getElementById('gapnote').textContent = recipe.note;
+
+/* stage ground — the pack has no ground tiles; this is scenery, not an asset */
+const ground = new THREE.Mesh(new THREE.CircleGeometry(40, 72), new THREE.MeshLambertMaterial({ color: 0x6f9c4e }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true;
+V.scene.add(ground);
+
+const placements = scatter(SPECS, 7);
+const sceneRoot = await buildScene(placements, (d, n) => { hud.textContent = `lade Lichtung ${d}/${n}`; }, {});
+
+let current = null;
+function swap(node) { if (current) V.scene.remove(current); current = node; V.scene.add(node); window.__lab = { V, current, measured }; }
+swap(sceneRoot);
+V.frame(sceneRoot, [1, 0.52, 1], 1.02);
+
+const cache = {};
+async function palette() {
+  if (cache.pal) return cache.pal;
+  cache.pal = await paletteGrid('forest', PALETTE, { columns: 11, spacing: 1.15, onProgress: (i, n) => { hud.textContent = `Palette ${i}/${n}`; } });
+  return cache.pal;
+}
+async function scaleView(family) {
+  const key = 'scale:' + family;
+  if (cache[key]) return cache[key];
+  const names = family === 'alle' ? PALETTE : FAMILIES[family];
+  cache[key] = await scaleRow('forest', names, { gap: 0.4, ladderColor: 0x2f4a22 });
+  return cache[key];
+}
+
+function facts(label, n) {
+  const recs = [...measured.values()].filter((r) => r.pack === 'forest');
+  const tallest = recs.reduce((m, r) => (r.size[1] > (m?.size[1] ?? 0) ? r : m), null);
+  document.getElementById('facts').innerHTML = [
+    ['Ansicht', label],
+    ['Teile in der Ansicht', String(n)],
+    ['geladen / gemessen', `${recs.length} / 105`],
+    ['höchstes Teil', tallest ? `${tallest.name.replace('_Color1', '')} · ${f2(tallest.size[1])}` : '–'],
+    ['Baumhöhen', (() => {
+      const t = recs.filter((r) => r.name.startsWith('Tree_') && !r.name.startsWith('Tree_Bare'));
+      return t.length ? `${f2(Math.min(...t.map((r) => r.size[1])))} – ${f2(Math.max(...t.map((r) => r.size[1])))}` : '–';
+    })()],
+    ['Felsgrößen', (() => {
+      const t = recs.filter((r) => r.name.startsWith('Rock_'));
+      return t.length ? `${f2(Math.min(...t.map((r) => r.size[1])))} – ${f2(Math.max(...t.map((r) => r.size[1])))}` : '–';
+    })()]
+  ].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+
+  document.getElementById('fams').innerHTML = Object.entries(FAMILIES).map(([fam, names]) => {
+    const hs = names.map((n2) => measured.get('forest/' + n2)).filter(Boolean).map((r) => r.size[1]);
+    return `<tr><td title="${fam}">${fam}</td><td>${names.length}</td><td>${hs.length ? f2(Math.max(...hs)) : '–'}</td></tr>`;
+  }).join('');
+}
+document.getElementById('bands').innerHTML = SPECS.map((s) => {
+  const got = placements.filter((p) => p.band === s.band).length;
+  return `<div class="kv"><span>${s.band}</span><span>${got} / ${s.count} · r ${s.inner}–${s.radius}</span></div>`;
+}).join('');
+document.getElementById('count').textContent = `${placements.length} Platzierungen`;
+facts('Lichtung', placements.length);
+hud.textContent = `Lichtung · ${placements.length} Pflanzungen, Seed 7 · Teil anklicken für Name + Maße`;
+
+const famSel = document.getElementById('fam');
+famSel.replaceChildren(...['alle', ...Object.keys(FAMILIES)].map((k) => { const o = document.createElement('option'); o.value = k; o.textContent = 'Maßstab: ' + k; return o; }));
+
+const bS = document.getElementById('mScene'), bP = document.getElementById('mPal'), bM = document.getElementById('mScale');
+const press = (on) => [bS, bP, bM].forEach((b) => b.setAttribute('aria-pressed', String(b === on)));
+bS.onclick = () => { press(bS); swap(sceneRoot); ground.visible = true; V.frame(sceneRoot, [1, 0.52, 1], 1.02); facts('Lichtung', placements.length); hud.textContent = `Lichtung · ${placements.length} Pflanzungen, Seed 7`; };
+bP.onclick = async () => { press(bP); ground.visible = false; swap(await palette()); V.frame(current, [0, 1, 0.0001], 1.02); facts('Palette', PALETTE.length); hud.textContent = `Palette · alle ${PALETTE.length} Teile · Teil anklicken für Maße`; };
+bM.onclick = async () => { press(bM); ground.visible = false; const fam = famSel.value; swap(await scaleView(fam)); V.frame(current, [0, 0.22, 1], 1.02); facts('Maßstab ' + fam, (fam === 'alle' ? PALETTE : FAMILIES[fam]).length); hud.textContent = `Maßstab ${fam} · nach Höhe sortiert · Linien im Abstand 1 Einheit`; };
+famSel.onchange = () => bM.onclick();
+document.getElementById('vTop').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.frame(current, on ? [0, 1, 0.0001] : [1, 0.52, 1], 1.02);
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+};
+document.getElementById('opa').oninput = (e) => { document.getElementById('refimg').style.opacity = e.target.value / 100; };
+document.getElementById('side').onclick = (e) => {
+  const off = document.getElementById('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = { ...recipe, seed: 7, bands: SPECS.map(({ band, count, inner, radius, scale }) => ({ band, count, inner, radius, scale })), placements, measured: [...measured.values()].filter((r) => r.pack === 'forest') };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = recipe.id + '.scene-recipe.json'; a.click();
+};
+
+const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2();
+document.getElementById('c').addEventListener('pointerdown', (e) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, V.camera);
+  const hit = ray.intersectObject(current, true)[0];
+  const pick = document.getElementById('pick');
+  if (!hit) { pick.style.display = 'none'; return; }
+  let o = hit.object, info = null;
+  while (o && !info) {
+    info = o.userData.part || (o.userData.recipe ? { name: o.userData.recipe.a.split(':')[1], size: measured.get(o.userData.recipe.a.replace(':', '/'))?.size, s: o.userData.recipe.s } : null);
+    o = o.parent;
+  }
+  if (!info) { pick.style.display = 'none'; return; }
+  pick.style.display = 'block';
+  pick.textContent = info.name.replace('_Color1', '') + (info.size ? ` · ${info.size.map(f2).join(' × ')}` : '') + (info.s && info.s !== 1 ? ` · skaliert ${info.s}` : '');
+});
+</script>
+</body>
+</html>

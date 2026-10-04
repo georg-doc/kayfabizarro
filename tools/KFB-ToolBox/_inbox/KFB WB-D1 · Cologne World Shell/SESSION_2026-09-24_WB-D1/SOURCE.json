@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.worldbuilder.source/1",
+  "slice": "WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell",
+  "date": "2026-09-24",
+  "status": "CANDIDATE · visual review pending",
+  "parallelTo": "WORLD-ZONE-BAKE-01 (not awaited, not consumed)",
+  "architectureDoc": "KFB Production Architecture v3 — NOT FOUND on kayfabizarro@c049cae386e1 or KFB-Travel-Globe@main; brief text used",
+  "entry": "KFB WB-D1 · Cologne World Shell.dc.html",
+  "files": ["wd1-boot.js", "wd1-seam.js", "wd1-city.js", "wd1-landmark.js", "fixtures/cologne-dom-crop-v0.json", "w0-region.js (unchanged)", "w0-ink.js (unchanged)"],
+  "donors": [
+    { "what": "OSM fixture (frozen crop, no new fetch)", "paths": ["tools/osm-city-lab/data/dom-zentrum-v0/normalized.json", "tools/osm-city-lab/data/dom-zentrum-v0/CLAUDE_CONTEXT.json"], "commit": "2ff8b350beefe02912bbff6eeeead3882e583d08", "rawSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c", "crop": { "minX": -620, "maxX": 180, "minZ": -300, "maxZ": 300 }, "license": "ODbL 1.0 · © OpenStreetMap contributors" },
+    { "what": "region/ground + ink", "path": "WB-W0 w0-region.js · w0-ink.js (project)", "use": "crossSection, routeFromRacer, buildTerrain, rectZone, createInk" },
+    { "what": "route", "path": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-route.v1.js", "commit": "c049cae386e1", "use": "CONTROL_POINTS[0..2], TRACK_WIDTH.STANDARD" },
+    { "what": "landmark + water", "path": "…/lab-v9/cologne-world.v1.js", "commit": "c049cae386e1", "use": "buildDom (IMPORTED_AND_CALLED) + tower tessellation/bend/torsion delta · buildRhine" },
+    { "what": "building grammar", "paths": ["tools/osm-city-lab/src/style/cartoon-city.js", "tools/osm-city-lab/styles/kfb-city-v0.json"], "commit": "c049cae386e1", "use": "applyCartoonMassing, windowCodesForBuilding, deformPoint, presets cartoon/grotesque, layers, palette" },
+    { "what": "palette", "path": "…/lab-v9/option-c-style.v1.js", "commit": "c049cae386e1", "use": "C, BUILDING_TONES, ROOF_TONES" },
+    { "what": "editor", "path": "tools/KFB-ToolBox/lib/edit-layer.js", "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e", "use": "makeEditLayer · translate/rotate/scale/scale±/drop(host)/close" },
+    { "what": "landmark contract", "path": "tools/osm-city-lab/docs/LANDMARK_OVERRIDES.md", "use": "entry shape, osm-footprint-centroid, hide-only-after-asset-loaded-and-validated" },
+    { "what": "sky/light", "path": "travel/wip/travel_globe_wsa/globe-v13/sky-presets.js", "commit": "c049cae386e1", "use": "DAY preset, buildLightRig (×0.6 host factor), paintRadialSky" },
+    { "what": "three.js", "external": "three@0.184.0" }
+  ],
+  "landmarkPlacement": { "id": "cologne-cathedral-v0", "osm": "way/4532022", "originPolicy": "osm-footprint-centroid", "yawDeg": 6.23, "yawSource": "PCA principal axis of the OSM footprint", "scale": 1, "validation": "centroid Δ 0 m · axis Δ 0° · long axis 0.83 (donor-owned open item)" },
+  "trackSocket": { "id": "socket:cologne-dom-loop:cp0-cp2", "moduleRef": null, "lengthM": 241.5, "halfWidthM": 13.14, "surfaceWidthM": 18, "conflicts": 8 },
+  "nextGate": "WB-ZONE-SEAM-01 · world-zone-bake adapter in wd1-seam.js, presenter untouched"
+}

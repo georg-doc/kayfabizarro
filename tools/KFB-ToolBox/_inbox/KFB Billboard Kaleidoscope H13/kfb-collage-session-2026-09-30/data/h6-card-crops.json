@@ -1,0 +1,16 @@
+{
+  "schema": "kfb.h6-card-crops/0.1",
+  "note": "Slice A (Claude Design, 30.09.2026). cardGrid wortgleich aus skills/SSOT_KFB_CardBuilder_PDF.md §4 (gemessen 26.07.2026), weil media/kfb/index.json auf main sie nicht traegt. motifBox relativ zur Zelle (0..1), je Deck von Hand am Pruefbogen gesetzt (Seite 3), ein Wert je Layout-Familie. Status: geschaetzt. Nach Abnahme gehoeren beide Werte nach index.json (Bake-Briefing).",
+  "decks": [
+    { "packId": "forget_utopia", "layout": "art-vollflaechig, Titel oben links, Textband unten", "tags": ["commercial", "political"],
+      "cardGrid": { "x": 0.050, "y": 0.037, "w": 0.899, "h": 0.947, "gapX": 0.135, "gapY": 0.010 },
+      "motifBox": { "x": 0.14, "y": 0.20, "w": 0.80, "h": 0.64 } },
+    { "packId": "ignore_dystopia", "layout": "Textblock links, Motiv rechts", "tags": ["political", "historical"],
+      "cardGrid": { "x": 0.060, "y": 0.117, "w": 0.879, "h": 0.823, "gapX": 0.090, "gapY": 0.010 },
+      "motifBox": { "x": 0.46, "y": 0.04, "w": 0.52, "h": 0.92 } },
+    { "packId": "embrace_protopia", "layout": "Textblock links, Motiv rechts, Figur ragt in die Mitte", "tags": ["artistic", "scientific"],
+      "cardGrid": { "x": 0.048, "y": 0.093, "w": 0.903, "h": 0.822, "gapX": 0.022, "gapY": 0.020 },
+      "motifBox": { "x": 0.38, "y": 0.06, "w": 0.60, "h": 0.90 } }
+  ],
+  "pages": [2, 5, 8, 11, 14]
+}

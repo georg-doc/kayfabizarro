@@ -1,0 +1,64 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "name": "kfb-hex-worldbuilder-corpus",
+ "date": "2026-09-22",
+ "purpose": "Gesammelte Vorarbeiten zu einem Hex-Worldbuilder auf Basis der KayKit-Hexagon-Packs",
+ "sourceRepo": {
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "main"
+ },
+ "codeVerbatim": true,
+ "assetsIncluded": false,
+ "assetPolicy": "Modelle bleiben GitHub-SourceRefs (raw-URL). Projektregel 1.",
+ "totals": {
+  "codeFiles": 32,
+  "lines": 11487,
+  "bytes": 689003,
+  "indexedMethods": 389,
+  "evidenceImages": 19
+ },
+ "modules": [
+  {
+   "path": "modules/KFB_Hex_Baukasten_S0",
+   "role": "Bestand, Rollen, Felsklassen, sieben Bauschritte"
+  },
+  {
+   "path": "modules/KFB_Hex_Edge_Atlas_S1",
+   "role": "Kantenkunde beider Packs, Eichung, Bauvorgaben, Lehren"
+  },
+  {
+   "path": "modules/KFB_Babel_Hex_Generator_v1",
+   "role": "Hex-Turm, Editor + Chill & Fun + Play"
+  },
+  {
+   "path": "modules/hexrealm",
+   "role": "hex-grid.js (TILE_EDGES), atlas.js, kit-lab.js, Hub-Insel"
+  },
+  {
+   "path": "studies",
+   "role": "GLB_hexagon_kit und 2D-Hexflaechen, eigene Linie"
+  }
+ ],
+ "externalAtRuntime": [
+  "three@0.184.0 (unpkg)",
+  "three@0.160.0 (jsdelivr/unpkg)",
+  "kfb-rigs-embed-v3 (jsdelivr)",
+  "raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets",
+  "api.github.com contents"
+ ],
+ "missingByDesign": [
+  "lighting.js (KFB_Free_Roam_Platformer_v1)",
+  "movement-config.json (KFB_Free_Roam_Platformer_POC_v0)",
+  "edge-atlas.json (Messergebnis, entsteht aus der Seite)"
+ ],
+ "docs": [
+  "README.md",
+  "PACK_TRUTH.md",
+  "CODE_MAP.md",
+  "DEPENDENCIES.md",
+  "NEXT_FIVE.md",
+  "HANDOVER_WSA.md"
+ ],
+ "georgAcceptance": "offen",
+ "publicDeployment": "NOT_TESTED"
+}

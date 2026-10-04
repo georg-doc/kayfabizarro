@@ -1,0 +1,39 @@
+name: ToolBox KayKit Motion Lab public Stage proof
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'kfb-hub/stage/toolbox/kaykit-motion-lab-v1/**'
+      - '.github/workflows/toolbox-kaykit-motion-lab-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/toolbox/kaykit-motion-lab-v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Exact public Stage proof
+        env:
+          KML_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/
+          KML_PUBLIC: '1'
+          KML_SOURCE_HEAD: 3ab2a439b013b816e843ea303e7015a26ee2aff8
+          KML_PROOF_DIR: toolbox-motion-lab-stage-evidence
+        run: node kfb-hub/stage/toolbox/kaykit-motion-lab-v1/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-kaykit-motion-lab-stage-evidence
+          path: toolbox-motion-lab-stage-evidence
+          retention-days: 14

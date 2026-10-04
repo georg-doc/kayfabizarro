@@ -1,0 +1,599 @@
+{
+  "sourceFile": "MedKayfab_Biochemistry - ADD web.pdf",
+  "deckTitle": "Biochemistry & Cell Biology Wrestling",
+  "deckType": "Medical Education Card Deck",
+  "bundleSuggestion": "EDUCATION",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-07-28T00:37:22",
+  "savedAt": "2026-07-28T00:37:22",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "flashcard"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Membrana the Bilayer",
+      "grade": 2,
+      "power": "Flippase Swap — Burn ATP to move Phosphatidylserine (PS) to the inner leaflet.",
+      "lore": "Externalized PS is a macrophage eat me signal. Statins reduce cholesterol synthesis, altering membrane lipid composition and signaling.",
+      "gradeReason": "Good cell identity but Flippase Swap needs lipid bilayer context to perform.",
+      "artworkPrompt": "Style: watercolor comic. Subject: tentacled bilayer jellyfish with kinked phospholipid tails. Mood: fluid, scientific."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Channel Charlie",
+      "grade": 1,
+      "power": "Primary Active Transport — Maintain the resting potential gradient to drive secondary co-transport.",
+      "lore": "Digitalis inhibits Na⁺/K⁺-ATPase → intracellular Na⁺ rises → Ca²⁺ extrusion via NCX drops → cardiac contractility increases.",
+      "gradeReason": "3 Na⁺ out / 2 K⁺ in is instantly chantable; walrus bouncer role is locked.",
+      "artworkPrompt": "Style: watercolor comic. Subject: walrus bouncer pumping ions through membrane door. Mood: authoritative, busy."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "GPCR Georgie",
+      "grade": 1,
+      "power": "Second Messenger Swarm — Exchange GDP for GTP on Gα to activate adenylyl cyclase or PLC-β.",
+      "lore": "Cholera toxin ADP-ribosylates Gsα, locking it in the GTP-bound active state → massive cAMP → CFTR activation → fatal secretory diarrhoea.",
+      "gradeReason": "Spider web 7TM = instant persona; GDP→GTP swap is immediately performable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: spider with 7 transmembrane legs in membrane, activating G-protein web. Mood: scheming."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "RTK Rex",
+      "grade": 1,
+      "power": "Dimerize & Destroy — Bind extracellular growth factor to trans-autophosphorylate intracellular tyrosine residues.",
+      "lore": "Constitutive activation of the RAS/MAPK cascade via KRAS mutations renders colorectal tumors completely resistant to anti-EGFR therapies like cetuximab.",
+      "gradeReason": "T-Rex dimerizing and firing lightning growth signals = perfect KRAS kayfab.",
+      "artworkPrompt": "Style: watercolor comic. Subject: T-Rex with phosphorylation lightning bolts triggering MAPK/PI3K cascade. Mood: explosive."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "NF-κB Nadia",
+      "grade": 2,
+      "power": "IκB Degradation — Trigger the proteasome to destroy the IκB inhibitor, freeing NF-κB to enter the nucleus.",
+      "lore": "Corticosteroids block this by upregulating IκBα transcription and directly transrepressing p65. Bortezomib kills myeloma cells by blocking IκB proteasomal degradation.",
+      "gradeReason": "Octopus breaking IκB cage works, but IKK activation context is needed.",
+      "artworkPrompt": "Style: watercolor comic. Subject: angry red octopus breaking IκB cage bars with corrosive acid. Mood: furious."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "mTOR the Master Switch",
+      "grade": 2,
+      "power": "Anabolic Trigger — If amino acids and ATP are high, phosphorylate S6K1 to drive ribosome biogenesis.",
+      "lore": "Amino acids (especially leucine) recruit mTORC1 to the lysosomal surface. Rapamycin targets this complex to induce profound immunosuppression.",
+      "gradeReason": "Bear with leucine/ATP jars is charming but anabolic trigger needs nutrient-sensing context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: fat bear on glowing purple lysosome holding ATP and leucine jars. Mood: powerful, satisfied."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Wnt Wendy",
+      "grade": 2,
+      "power": "β-catenin Accumulation — Inhibit the GSK-3β destruction complex to allow β-catenin to transcribe c-Myc and cyclin D1.",
+      "lore": "APC is the gatekeeper of colorectal cancer. Truncated APC fails to degrade β-catenin, driving the relentless adenoma-carcinoma sequence.",
+      "gradeReason": "Beaver + β-catenin saw is great but GSK-3β destruction complex needs Wnt pathway context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: construction-hat beaver feeding β-catenin logs into APC destruction complex saw. Mood: industrious."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Hedgehog Harry",
+      "grade": 1,
+      "power": "Smoothened Derepression — Bind Hedgehog ligand to internalize PTCH1 and free SMO to activate GLI transcription factors.",
+      "lore": "PTCH1 loss-of-function drives Basal Cell Carcinoma (BCC). Vismodegib shrinks these tumors dramatically by directly inhibiting the downstream SMO.",
+      "gradeReason": "Hedgehog with SMO padlock: PTCH1 cage released = instantly embodied; Vismodegib seals the lore.",
+      "artworkPrompt": "Style: watercolor comic. Subject: spiky hedgehog with broken PTCH1 padlock freeing SMO, GLI transcription sparks. Mood: unleashed."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Notch Nina",
+      "grade": 2,
+      "power": "Lateral Inhibition — Upon adjacent ligand binding, release NICD to repress alternative cell fate genes.",
+      "lore": "NOTCH1 activating mutations drive >60% of T-ALL. γ-secretase inhibitors failed as Alzheimer's drugs due to extreme GI toxicity from goblet cell metaplasia.",
+      "gradeReason": "Snake + scissors cleaving NICD through door is vivid but lateral inhibition is abstract without context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: snake with γ-secretase scissors cutting NICD free from membrane receptor. Mood: precise, surgical."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Hypoxia HIF",
+      "grade": 1,
+      "power": "VEGF Summon — Evade VHL-mediated ubiquitination to transcribe angiogenesis and glycolysis genes.",
+      "lore": "VHL mutation stabilizes HIF-1α regardless of oxygen, creating a highly vascular pseudo-hypoxic state in clear cell Renal Cell Carcinoma.",
+      "gradeReason": "Panicking frog evading VHL rust machine = VEGF Summon is immediately performable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: blue panicking frog dodging rusty VHL E3-ligase claw, summoning blood vessels. Mood: desperate."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Glyco the Engine",
+      "grade": 1,
+      "power": "Warburg Shift — Override mitochondrial limits to preferentially run aerobic glycolysis for rapid ATP and biosynthesis.",
+      "lore": "PFK-1 is the rate-limiting step. ¹⁸F-FDG PET imaging exploits the Warburg effect by trapping phosphorylated glucose analogue (FDG-6-P) inside voracious tumors.",
+      "gradeReason": "Armored caterpillar-tank burning glucose at full throttle = Warburg Shift is crystalline.",
+      "artworkPrompt": "Style: watercolor comic. Subject: spiked engine-creature speeding past mitochondria on glycolysis rails, pyruvate exhaust. Mood: reckless."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Krebs the Cycle",
+      "grade": 2,
+      "power": "NADH Generation — Oxidize Acetyl-CoA to CO₂ to capture high-energy electrons.",
+      "lore": "Thiamine (B1) deficiency halts α-KG dehydrogenase. Giving IV glucose without thiamine to an alcoholic precipitates fatal Wernicke's encephalopathy.",
+      "gradeReason": "Hamster in electric wheel is iconic but NADH Generation describes the output, not a performance.",
+      "artworkPrompt": "Style: watercolor comic. Subject: frantic hamster in lightning-wheel running TCA cycle, electrons sparking off spokes. Mood: relentless."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "ETC Power Plant",
+      "grade": 1,
+      "power": "Proton Gradient — Pump H⁺ to the intermembrane space to create the electrochemical gradient for ATP synthase.",
+      "lore": "Cyanide halts Complex IV (cytochrome oxidase) by binding Fe³⁺. Treat with hydroxocobalamin and amyl nitrite to induce methaemoglobin as a cyanide decoy.",
+      "gradeReason": "Electric eel pumping protons across membrane = instant power plant persona.",
+      "artworkPrompt": "Style: watercolor comic. Subject: industrial eel-machine with smokestacks pumping H⁺ across mitochondrial membrane. Mood: industrial, powerful."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "PDH Gatekeeper",
+      "grade": 1,
+      "power": "Irreversible Commitment — Convert pyruvate to Acetyl-CoA. Once crossed, carbons cannot return to glucose.",
+      "lore": "PDH deficiency causes severe lactic acidosis. A ketogenic diet bypasses PDH by supplying brain energy via β-hydroxybutyrate.",
+      "gradeReason": "Guard dog at irreversible gate = commitment threshold is physically clear and performable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: fierce dog gatekeeper at mitochondrial door, pyruvate converting to Acetyl-CoA flame. Mood: decisive."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Beta-Ox Betty",
+      "grade": 2,
+      "power": "Carnitine Shuttle — Exchange acylcarnitine for free carnitine to breach the inner mitochondrial membrane.",
+      "lore": "MCAD deficiency prevents medium-chain fat oxidation. Fasting triggers lethal hypoketotic hypoglycaemia because alternative fuels cannot be synthesized.",
+      "gradeReason": "Dragon on carnitine shuttle train is vivid but MCAD/LCAD distinction needs biochemistry context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: fire-breathing dragon pulling fatty acid chain on carnitine shuttle train into mitochondria. Mood: fierce."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Ketone Kenny",
+      "grade": 2,
+      "power": "Brain Emergency Fuel — Convert excess Acetyl-CoA into soluble ketone bodies to bypass the blood-brain barrier.",
+      "lore": "The liver produces ketones but lacks SCOT to use them. In DKA, high NADH from alcohol oxidation increases BHB, masking ketones on a standard urine dipstick.",
+      "gradeReason": "Camel feeding ketones to brain is charming but DKA NADH masking detail is complex.",
+      "artworkPrompt": "Style: watercolor comic. Subject: camel liver dripping BHB/acetoacetate drops to hungry brain at brain-barrier fence. Mood: resourceful."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Glycogen Greta",
+      "grade": 2,
+      "power": "Phosphorylase Cleave — Remove terminal glucose as G-1-P in response to glucagon or epinephrine.",
+      "lore": "Von Gierke disease (G6Pase deficiency) traps glucose in the liver, causing fasting hypoglycaemia, lactic acidosis, and a doll-like facies.",
+      "gradeReason": "Sloth releasing glucose from glycogen branches is charming but phosphorylase activation needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: sloth plucking glucose orange balls off branched glycogen tree, releasing into bloodstream. Mood: deliberate."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Gluconeogenesis Gloria",
+      "grade": 2,
+      "power": "Bypass Irreversibility — Use Pyruvate Carboxylase, PEPCK, FBPase-1, and G6Pase to force metabolism backward.",
+      "lore": "Metformin inhibits ETC Complex I, impairing the mitochondrial malate-aspartate shuttle and starving PEPCK of oxaloacetate, thus lowering fasting glucose.",
+      "gradeReason": "Donkey running treadmill backwards is a great metaphor but the 4-enzyme bypass is mechanistically dense.",
+      "artworkPrompt": "Style: watercolor comic. Subject: stubborn donkey running treadmill in reverse, PFK-1 and PK blocked with X signs. Mood: determined."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "FA Synth Fiona",
+      "grade": 2,
+      "power": "Malonyl-CoA Addition — Dephosphorylate ACC via insulin to activate the rate-limiting step of lipogenesis.",
+      "lore": "Fatty acid synthesis strictly requires NADPH, linking it dependently to the pentose phosphate pathway and malic enzyme.",
+      "gradeReason": "Caterpillar adding carbon rings is vivid but Malonyl-CoA rate-limiting step needs lipogenesis context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: green caterpillar building herself from Malonyl-CoA segments, carbon-chain body growing. Mood: constructive."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Cholesterol Carl",
+      "grade": 1,
+      "power": "SREBP Feedback — If cholesterol falls, cleave SREBP to enter the nucleus and upregulate LDL receptors.",
+      "lore": "Statins competitively inhibit HMG-CoA reductase. This paradoxically lowers blood cholesterol primarily by triggering SREBP to upregulate hepatic LDL receptor clearance.",
+      "gradeReason": "Pangolin with statin biting tail + SREBP feedback = instant paradox story; statin mechanism is brilliant.",
+      "artworkPrompt": "Style: watercolor comic. Subject: armored pangolin with HMG-CoA reductase tail bitten by statin, SREBP portal activating. Mood: regulatory."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Urea Cycle Ulrich",
+      "grade": 2,
+      "power": "Nitrogen Excretion — Utilize CPS-I and NAG to commit toxic NH₃ to the urea cycle.",
+      "lore": "Hyperammonaemia drives glutamine accumulation in astrocytes, causing massive osmotic cerebral oedema. Treat CPS-I deficiency with arginine.",
+      "gradeReason": "Vulture disposing toxic nitrogen is a great character but CPS-I/NAG commitment details need context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: vulture processing toxic green ammonia through urea funnel, excreting clean urea. Mood: grim, efficient."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Phenylalanine Phil",
+      "grade": 2,
+      "power": "Tyrosine Conversion — Use PAH and BH4 to convert essential phenylalanine to melanin, thyroid hormone, and dopamine.",
+      "lore": "PKU (PAH deficiency) causes phenylalanine to cross the BBB, competitively inhibiting dopamine and serotonin synthesis, causing intellectual disability and hypopigmentation.",
+      "gradeReason": "Colorful chameleon converting substrates is vivid but PAH/BH4 cofactor dependency needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: colorful chameleon on biochemistry branch converting PHE to TYR and melanin. Mood: transformative."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Porphyria Pete",
+      "grade": 1,
+      "power": "Heme Synthesis — Assemble protoporphyrin IX and load it with iron via ferrochelatase.",
+      "lore": "In Acute Intermittent Porphyria, CYP inducers (barbiturates, phenytoin) accelerate ALAS1, causing neurotoxic PBG buildup. Never give phenytoin for AIP seizures.",
+      "gradeReason": "Bat assembling heme + clinical rule 'Never give phenytoin for AIP' = instant actionable knowledge.",
+      "artworkPrompt": "Style: watercolor comic. Subject: gothic bat assembling glowing heme ring with ferrochelatase, purple porphyrin crystals. Mood: ominous."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Purines & Pyrimidines Pablo",
+      "grade": 2,
+      "power": "De Novo Salvage — Recycle hypoxanthine/guanine via HGPRT to save massive energy costs.",
+      "lore": "Lesch-Nyhan syndrome (absent HGPRT) forces purine degradation to uric acid, causing gout, and simultaneously destroys basal ganglia dopaminergic neurons causing self-mutilation.",
+      "gradeReason": "Pelican recycling purines is good but dual-topic name and HGPRT specificity needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: pelican with bloody beak recycling purine crystals, uric acid shards in background. Mood: efficient, painful."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "One-Carbon Ollie",
+      "grade": 1,
+      "power": "Methyl Trap — Trap THF as N5-methyl-THF if Vitamin B12 is absent.",
+      "lore": "B12 deficiency causes a functional folate deficiency (megaloblastic anaemia) PLUS methylmalonate accumulation that demyelinates the dorsal columns and corticospinal tracts.",
+      "gradeReason": "Monkey tossing methyl groups + Methyl Trap = physically clear; B12 trap mechanism is visually embodied.",
+      "artworkPrompt": "Style: watercolor comic. Subject: monkey juggling methyl groups on DNA helix, B12 cobalamin catching folate. Mood: playful."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Tryptophan Tyrone",
+      "grade": 2,
+      "power": "Serotonin/NAD⁺ Shift — Divert 95% of substrate via the kynurenine pathway to generate immune tolerance and NAD⁺.",
+      "lore": "Midgut carcinoid tumors rarely cause systemic carcinoid syndrome until they metastasize to the liver, bypassing hepatic MAO clearance.",
+      "gradeReason": "Day/night owl is charming but 95% kynurenine diversion needs metabolic pathway context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: owl split day/night, serotonin moon vs kynurenine sun pathway diverging. Mood: dual-natured."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "G6PD Godfrey",
+      "grade": 1,
+      "power": "NADPH Regeneration — Run the oxidative pentose phosphate pathway to keep glutathione in a reduced, protective state.",
+      "lore": "G6PD deficiency depletes NADPH. Oxidative stress (primaquine, fava beans) oxidizes hemoglobin into Heinz bodies, which splenic macrophages bite out, causing haemolytic anaemia.",
+      "gradeReason": "Tortoise with glutathione shield blocking H₂O₂ = NADPH role is clear and immediately embodyable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: green tortoise with glutathione shell absorbing H₂O₂ oxidative blasts. Mood: defensive, stoic."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Lysosome Lenny",
+      "grade": 2,
+      "power": "Substrate Accumulation — Fail to hydrolyze lipids, causing intralysosomal inclusions that progressively kill the cell.",
+      "lore": "Tay-Sachs (HEXA deficiency) causes GM2 ganglioside accumulation in CNS neurons, presenting as a cherry-red spot at the macula and fatal neurodegeneration.",
+      "gradeReason": "Goat with glucocerebroside buildup is vivid but Substrate Accumulation as a power is reactive, not invitational.",
+      "artworkPrompt": "Style: watercolor comic. Subject: sick goat bursting with lysosomal storage inclusions, cherry-red spot in eye. Mood: bloated, tragic."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "DNA Rep Dina",
+      "grade": 2,
+      "power": "Semi-Conservative Replication — Use DNA Pol δ and ε to ensure high-fidelity genome duplication.",
+      "lore": "Fluoroquinolones (ciprofloxacin) are bactericidal because they inhibit bacterial topoisomerase II (DNA gyrase), preventing the relaxation of supercoiling ahead of the replication fork.",
+      "gradeReason": "Parrot copying leading/lagging strands is engaging but semi-conservative replication is abstract.",
+      "artworkPrompt": "Style: watercolor comic. Subject: colorful parrot duplicating DNA double helix with Okazaki fragment pieces. Mood: meticulous."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "DNA Repair Rex",
+      "grade": 1,
+      "power": "Synthetic Lethality — Trap PARP onto DNA to force a double-strand break that BRCA-mutant cells cannot repair.",
+      "lore": "Lynch syndrome is caused by germline mismatch repair (MMR) gene mutations, causing microsatellite instability (MSI) and massive colorectal/endometrial cancer risk.",
+      "gradeReason": "Raccoon with PARP wrench trapping BRCA-mutant cells = Synthetic Lethality is perfectly dramatized.",
+      "artworkPrompt": "Style: watercolor comic. Subject: raccoon mechanic trapping PARP wrench on broken DNA strand, BRCA mutation sparking. Mood: clever."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Transcription Tina",
+      "grade": 2,
+      "power": "Promoter Binding — Recruit RNAPII to CpG islands to transcribe DNA into pre-mRNA.",
+      "lore": "Alpha-amanitin from the death cap mushroom specifically blocks the elongating Ser2-P form of RNAPII, causing irreversible, delayed hepatocyte death.",
+      "gradeReason": "Spider weaving on TATA Box is vivid but RNAPII CTD phosphorylation details need context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: toxic mushroom spider weaving mRNA strands from TATA Box on DNA helix. Mood: precise, dangerous."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Translation Tommy",
+      "grade": 2,
+      "power": "Peptide Bond Formation — Use the peptidyltransferase ribozyme center to link amino acids.",
+      "lore": "Aminoglycosides bind the 30S subunit causing misreading and bactericidal death, whereas macrolides bind the 50S exit tunnel causing bacteriostatic arrest. Diphtheria toxin halts eukaryotic eEF2.",
+      "gradeReason": "Oyster ribosome with SPLOOOSH is vivid but peptidyltransferase mechanism needs structural context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: clam shell ribosome (30S/60S) spitting colorful amino acid chain. Mood: productive, biological."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Cell Cycle Celia",
+      "grade": 2,
+      "power": "Rb Phosphorylation — Hyperphosphorylate pRb via CDK4/6-cyclin D to release E2F and irreversibly commit to S phase.",
+      "lore": "CDK4/6 inhibitors (palbociclib) force a G1 arrest in ER+ breast cancer by preventing pRb phosphorylation, restoring the gatekeeper function.",
+      "gradeReason": "Checkpoint kangaroo is charming but pRb phosphorylation to commit to S phase needs cell cycle context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: kangaroo at restriction point booth blocking car from S phase, CDK4/6 stamp visible. Mood: vigilant."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "p53 Guardian",
+      "grade": 1,
+      "power": "Apoptotic Arrest — If DNA damage is unrepairable, transcribe BAX/PUMA for intrinsic apoptosis.",
+      "lore": "MDM2 is an E3 ligase that constantly degrades p53. Hotspot mutations in the p53 DNA-binding domain exert dominant-negative oncogenic effects.",
+      "gradeReason": "Gorilla with dual STOP signs + BAX = instantly embodied tumor suppressor; MDM2 monkey degrading him is perfect.",
+      "artworkPrompt": "Style: watercolor comic. Subject: massive gorilla holding BAX and p21 STOP signs, MDM2 monkey gnawing at ankles. Mood: heroic."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Mitosis Mia",
+      "grade": 2,
+      "power": "Chromosome Segregation — Satisfy the Spindle Assembly Checkpoint to cleave cohesin and trigger anaphase.",
+      "lore": "Taxanes (paclitaxel) stabilize microtubules preventing depolymerization, while vinca alkaloids prevent polymerization. Both abnormally alter tension, permanently arresting the cell in M-phase.",
+      "gradeReason": "Starfish with chromosomes is vivid but checkpoint satisfaction is passive; performance invitation is weak.",
+      "artworkPrompt": "Style: watercolor comic. Subject: electric starfish pulling chromosome pairs apart via spindle microtubules. Mood: tense, dramatic."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Autophagy Ada",
+      "grade": 2,
+      "power": "Phagophore Nucleation — Inhibit mTORC1 to activate ULK1 and lipidation of LC3-II to autophagosome membranes.",
+      "lore": "PINK1 and Parkin mediate mitophagy of depolarized mitochondria. Mutations in these fail to clear toxic mitochondria, causing autosomal recessive Parkinson's disease.",
+      "gradeReason": "Snake eating mitochondria is vivid but phagophore nucleation via ULK1 is abstract without mTOR context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: double-membrane snake forming phagophore around toxic mitochondrion, LC3 dots. Mood: cleanly ruthless."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Ubiquitin Uri",
+      "grade": 1,
+      "power": "Proteasomal Targeting — Attach K48-linked polyubiquitin chains to mark substrates for the 26S proteasome barrel.",
+      "lore": "PROTAC drugs are bifunctional molecules that artificially drag undruggable target proteins to an E3 ligase, hijacking Uri to destroy them.",
+      "gradeReason": "Bees (E1/E2/E3 ligases) tagging proteins for the 26S barrel = K48 chain drama is vivid; PROTAC lore is killing.",
+      "artworkPrompt": "Style: watercolor comic. Subject: swarm of bees attaching ubiquitin tags to ugly protein, feeding into 26S barrel. Mood: relentless."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Epigenetics Eddie",
+      "grade": 2,
+      "power": "Chromatin Remodeling — Acetylate histones to open chromatin; methylate CpG islands to permanently silence tumor suppressors.",
+      "lore": "IDH1/2 neomorphic mutations produce 2-hydroxyglutarate (an oncometabolite) that competitively inhibits TET2, causing DNA hypermethylation and a leukaemic differentiation block.",
+      "gradeReason": "Chameleon changing chromatin color is elegant but histone acetylation/methylation duality needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: chameleon shifting between open (acetyl bright) and closed (methyl dark) chromatin spools. Mood: transformative."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "MicroRNA Mira",
+      "grade": 2,
+      "power": "Translational Repression — Load the RISC complex to imperfectly bind target mRNAs, halting translation or triggering decay.",
+      "lore": "The ceRNA hypothesis states that long non-coding RNAs act as sponges, soaking up miRNAs to derepress target oncogenes. miR-21 is a ubiquitous oncomiR.",
+      "gradeReason": "Moth with Argonaute stinger is unusual but RISC loading and imperfect binding is mechanistically dense.",
+      "artworkPrompt": "Style: watercolor comic. Subject: death-moth with Argonaute complex stinging mRNA target at 3' end. Mood: stealthy, molecular."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Telomere Talia",
+      "grade": 2,
+      "power": "TERT Reactivation — Express reverse transcriptase to extend the 3' overhang, evading permanent replicative senescence.",
+      "lore": "TERT promoter mutations (creating de novo ETS binding sites) are the most common non-coding mutations in cancer (melanoma, GBM), granting replicative immortality.",
+      "gradeReason": "Lizard with telomerase jar evading the Hayflick limit is good but TERT reactivation needs cancer context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: gecko refilling telomere jar with reverse transcriptase, senescence clock stopped. Mood: immortal."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "ER Stress Ernie",
+      "grade": 2,
+      "power": "Unfolded Protein Response — Halt global translation via PERK/eIF2α while expanding ER chaperone capacity to restore proteostasis.",
+      "lore": "Multiple Myeloma cells survive at the brink of ER stress due to massive IgG secretion. Bortezomib pushes them over the edge into terminal UPR apoptosis.",
+      "gradeReason": "Three alarm bells (IRE1/PERK/ATF6) is a strong image but UPR branching into eIF2α needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: origami paper-crane protein unfolding, three ER alarm bells (IRE1/PERK/ATF6) ringing. Mood: crisis."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Golgi Gloria",
+      "grade": 1,
+      "power": "M6P Tagging — Add mannose-6-phosphate in the cis-Golgi to route acid hydrolases exclusively to lysosomes.",
+      "lore": "In I-cell disease (GlcNAc-1-phosphotransferase deficiency), the M6P tag is never added. Hydrolases are secreted into blood instead, causing multi-system lysosomal storage failure.",
+      "gradeReason": "Pelican sorting M6P packages to lysosomal address = instant logistics character; I-cell disease lore is flawless.",
+      "artworkPrompt": "Style: watercolor comic. Subject: pelican postmaster stamping M6P packages at cis-Golgi, routing to lysosome mailbox. Mood: efficient."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Mitochondria Max",
+      "grade": 2,
+      "power": "Heteroplasmic Shift — Segregate mutant mtDNA randomly during division; clinical severity depends entirely on the mutant-to-wild-type ratio threshold.",
+      "lore": "MELAS (m.3243A>G) impairs mitochondrial tRNAs, starving the brain of ATP and causing stroke-like episodes in non-vascular distributions, strictly via maternal inheritance.",
+      "gradeReason": "Lightning wolf with mtDNA circle is vivid but heteroplasmic threshold concept needs mitochondrial genetics context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: glowing wolf with circular mtDNA, mutant vs wild-type strands segregating during division. Mood: powerful."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Cytoskeleton Clio",
+      "grade": 2,
+      "power": "Dynamic Instability — Rapidly alternate between GTP-driven polymerization and GDP-driven catastrophe to search intracellular space.",
+      "lore": "Mutations in tissue-specific intermediate filaments cause distinct diseases: Keratin (epidermolysis bullosa), Desmin (cardiomyopathy), and Lamin A (Progeria/rapid aging).",
+      "gradeReason": "Centipede with GTP segments is interesting but dynamic instability's catastrophe/rescue cycle needs context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: centipede rapidly growing/collapsing microtubule segments, GTP cap glowing at tip. Mood: chaotic."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Peroxisome Perry",
+      "grade": 2,
+      "power": "Alpha/Beta Oxidation — Import and break down very-long-chain and branched fatty acids that mitochondria cannot process.",
+      "lore": "X-linked Adrenoleukodystrophy (ABCD1 mutation) traps VLCFAs outside the peroxisome, causing toxic accumulation that destroys the adrenal cortex and cerebral myelin.",
+      "gradeReason": "Platypus importing VLCFAs is interesting but ABCD1 import transporter deficit is mechanistically dense.",
+      "artworkPrompt": "Style: watercolor comic. Subject: platypus importing very-long fatty acid chains into peroxisome, adrenal/myelin fire in background. Mood: specialized."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Cilia Felix",
+      "grade": 2,
+      "power": "Mechanosensory Sweep — Move extracellular fluid or sense tubular flow via Polycystin 1/2 complexes to prevent aberrant proliferation.",
+      "lore": "Primary Ciliary Dyskinesia (dynein arm mutation) halts embryonic leftward nodal flow, meaning situs inversus occurs randomly in exactly 50% of patients.",
+      "gradeReason": "Seahorse with sweeping cilia is elegant but Mechanosensory Sweep is somewhat abstract without ciliary biology context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: seahorse with flowing cilia sweeping fluid, dynein arm motors visible, nodal flow arrows. Mood: graceful."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Storage Sammy",
+      "grade": 2,
+      "power": "Substrate Toxicity — Trap phosphorylated sugars intracellularly, depleting ATP and causing severe hepatotoxicity.",
+      "lore": "Classic galactosaemia (GALT deficiency) causes neonatal liver failure, cataracts, and a highly specific vulnerability to fatal E. coli sepsis due to impaired neutrophil killing.",
+      "gradeReason": "Mole inside toxic liver is visceral but Substrate Toxicity as a power is reactive/passive, not invitational.",
+      "artworkPrompt": "Style: watercolor comic. Subject: mole trapped inside green toxic liver, phosphorylated sugar crystals piling up. Mood: overwhelmed."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Wilson's Wally",
+      "grade": 1,
+      "power": "Biliary Failure — Mutate ATP7B so copper cannot load into ceruloplasmin or excrete into bile, forcing toxic systemic spillover.",
+      "lore": "Serum ceruloplasmin is LOW in Wilson's disease because without ATP7B to load copper, unstable apoceruloplasmin is secreted and rapidly degraded in blood.",
+      "gradeReason": "Magpies hoarding gold coins as copper = instant Biliary Failure story; low ceruloplasmin paradox is brilliant.",
+      "artworkPrompt": "Style: watercolor comic. Subject: magpies hoarding copper coins in liver, bile duct blocked, Kayser-Fleischer rings visible. Mood: obsessive."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Acidaemias Otto",
+      "grade": 3,
+      "power": "Keto-Acid Accumulation — Block BCKDH to force neurotoxic branched-chain keto acids into the blood and brain.",
+      "lore": "Propionic and Methylmalonic acidaemias cause profound hyperammonaemia because toxic propionyl-CoA directly inhibits CPS-I in the urea cycle.",
+      "gradeReason": "Ram with toxic clouds is fine but BCKDH blocking and propionyl-CoA inhibiting CPS-I is double dense.",
+      "artworkPrompt": "Style: watercolor comic. Subject: angry ram exhaling BCAA toxic gas clouds into brain, urea cycle blocked. Mood: toxic."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "CDG",
+      "grade": 3,
+      "power": "Glycan Misfire — Fail to assemble N-linked oligosaccharides in the ER, devastating protein folding, secretion, and receptor function system-wide.",
+      "lore": "PMM2-CDG (Type Ia) presents with ataxia, coagulopathy, and inverted nipples. Underglycosylation of transferrin (type I peak on IEF) is the definitive screening diagnostic.",
+      "gradeReason": "Only card without a character name; N-linked glycosylation assembly and IEF transferrin testing is very technical.",
+      "artworkPrompt": "Style: watercolor comic. Subject: peacock with missing glycan tail feathers, N-linked sugar chains incomplete in ER. Mood: structural failure."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Cancer Metabolism Marcus",
+      "grade": 1,
+      "power": "Anaplerotic Theft — Siphon TCA intermediates for rapid biosynthesis, strictly requiring glutaminolysis to replenish the cycle.",
+      "lore": "Cancer cells are not just anaerobic; MYC and HIF-1α rewire metabolism to actively use aerobic glycolysis and glutamine for massive biomass generation.",
+      "gradeReason": "Shark stealing TCA cycle intermediates = Anaplerotic Theft is perfectly kayfabbed and immediately performable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: red-eyed shark siphoning TCA cycle with glutamine tanker fuel, MYC/HIF logos. Mood: voracious."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "ROS Rosa",
+      "grade": 1,
+      "power": "Lipid Peroxidation — Deplete glutathione (GSH) to disable GPx4, unleashing iron-dependent ROS to destroy the plasma membrane.",
+      "lore": "Ferroptosis is a distinct, non-apoptotic cell death driven by lipid peroxides. It is triggered when GSH is depleted and GPx4 fails, requiring Fenton-reaction iron.",
+      "gradeReason": "Porcupine deploying ferroptosis via GPx4 failure = distinct non-apoptotic death mode is vivid and clear.",
+      "artworkPrompt": "Style: watercolor comic. Subject: porcupine with ROS lightning quills destroying lipid membrane via GPx4 failure. Mood: oxidative."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Proteostasis Patricia",
+      "grade": 2,
+      "power": "Prion-like Spread — Escape chaperone surveillance to form toxic aggregates (Lewy bodies, plaques) that spread across post-mitotic networks.",
+      "lore": "Parkinson's disease spreads via the prion-like misfolding of α-synuclein into Lewy bodies. CHIP normally links chaperones to the proteasome to prevent this.",
+      "gradeReason": "Dog barking at protein tangles is vivid but prion-like spreading mechanism needs protein misfolding context.",
+      "artworkPrompt": "Style: watercolor comic. Subject: sheepdog barking at spreading toxic protein aggregate plaque in neuron network. Mood: frustrated."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "The Biochem Attending",
+      "grade": 1,
+      "power": "Integrated Clinical Reasoning — Connect the molecular defect directly to the patient's presentation.",
+      "lore": "No shortcut to pattern recognition is permitted — explain the mechanism. Case 1: Fasting hypoglycaemia = MCAD. Case 2: OCP + Rifampicin = AIP. Case 3: Myeloma + Bortezomib = Terminal UPR ER Stress.",
+      "gradeReason": "Owl in labcoat: Integrated Clinical Reasoning = crystal clear role; 3 clinical case examples make it instantly testable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: wise owl in white labcoat connecting molecular pathway to patient bedside. Mood: authoritative."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Metabolic Syndrome Marco",
+      "grade": 1,
+      "power": "Ectopic Lipid Deposition — Overload visceral fat capacity to force toxic free fatty acids into liver and muscle, disabling insulin receptors.",
+      "lore": "Visceral adiposity triggers FFA release and ceramide accumulation, causing IRS-1 serine phosphorylation that fundamentally breaks the PI3K/Akt insulin signaling pathway.",
+      "gradeReason": "Electric obese pig = Ectopic Lipid Deposition is vivid; insulin receptor disabling is immediately embodiable.",
+      "artworkPrompt": "Style: watercolor comic. Subject: fat electric pig overflowing visceral fat into liver and muscle, insulin receptors sparking. Mood: excess."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "FrizzleBob's Golden Ticket",
+      "grade": 1,
+      "power": "Narrative Memory — You remember stories, not lists.",
+      "lore": "The facts are real. The biology is flawless. The delivery is anarchy. Now go sabotage the boards. HUMBUG!",
+      "gradeReason": "Meta joker closing the deck: Narrative Memory is the kayfab thesis in two words. HUMBUG!",
+      "artworkPrompt": "Style: graffiti stencil. Subject: shadowy FrizzleBob rabbit holding test tube, golden ticket background. Mood: anarchic, meta."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 22,
+    "G2": 32,
+    "G3": 2
+  },
+  "overallScore": 8,
+  "verdict": "A showcase deck. FrizzleBob has gone full med school and the result is 56 consistently named characters covering every corner of biochemistry and cell biology. The STAT/POWER/LORE structure is flawlessly executed — clinical pearls are first-rate, counterintuitive, and board-relevant. Minor gripes: CDG is the lone card without a character name, and a handful of powers describe mechanism rather than invite performance. But p53 Guardian holding STOP signs, Porphyria Pete's never-give-phenytoin rule, and Golgi Gloria's I-cell disease lore? These are knockouts. Table-ready Y.",
+  "blurb": "56 biochemistry heavyweights, all with names, all with stories, all with lore that actually shows up on boards. For med students who are done memorizing lists.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 8,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob in lab coat with DNA helix, ATP, paintbrush, 'Stay fluffy!' = character + universe instantly established",
+    "coverTitle": "5 — 'MedKayfab: Biochemistry & Cell Biology Wrestling' = crystal clear subtitle + series framing",
+    "coverVibeMatch": "5 — chaotic academic energy with watercolor + punk aesthetic = perfect for med education kayfab",
+    "coverOriginality": "4 — very strong but follows established MedKayfab cover template",
+    "coverViral": "4 — high for med student niche; FrizzleBob lab coat + HUMBUG energy is shareable",
+    "coverScore": 4.6,
+    "coverNote": "One of the stronger MedKayfab covers — the ATP molecules and DNA helix integrated into the chaos communicate subject matter at a glance. 'Stay fluffy!' is a good closing gag. The GW logo placement at bottom right is clean."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "15 pages total: 1 cover + 14 card pages × 4 cards = 56 cards. Landscape format (745×416 pts, ~2:1 ratio). Filename suffix 'ADD' may indicate an additional/expanded module relative to a base Biochemistry deck. Typos spotted: card 36 LORE has 'caueing' (causing) and 'receseive' (recessive). Card 51 LORE has 'Cancer calls' (likely 'Cancer cells'). Page 11 features heavy SABOTAGED/REDACTED/IGNORED watermark design overlay — appears intentional. Name collision: both card 18 (Gluconeogenesis) and card 42 (Golgi) are named 'Gloria' — worth disambiguating.",
+  "topCards": [
+    "RTK Rex",
+    "p53 Guardian",
+    "Golgi Gloria"
+  ],
+  "worstCards": [
+    "CDG",
+    "Acidaemias Otto"
+  ],
+  "todos": {
+    "urgent": [
+      "Give CDG a proper character name like all other cards (e.g. 'Glycan Gus' or 'CDG Carlos')",
+      "Fix typos in card 36 LORE (caueing→causing, receseive→recessive) and card 51 LORE (Cancer calls→Cancer cells)"
+    ],
+    "quickWins": [
+      "Disambiguate the two 'Gloria' cards (Gluconeogenesis Gloria vs Golgi Gloria)",
+      "Add character name to card 50 CDG",
+      "Some G2 powers could be made more performative (e.g. Krebs, Autophagy Ada, Mitosis Mia)"
+    ],
+    "niceToHave": [
+      "Verify that page 11 SABOTAGED/REDACTED/IGNORED overlay is fully intentional design choice",
+      "Consider splitting Purines & Pyrimidines Pablo into two cards for the next version"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#BiochemWrestling",
+    "#CellBiology",
+    "#MedStudent",
+    "#BoardPrep",
+    "#Kayfabizarro",
+    "#MedicalEducation",
+    "#USMLE",
+    "#FrizzleBob"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "workshop",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram",
+    "YouTube"
+  ]
+}

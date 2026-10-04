@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S12 · Mentales Modell der Hex-Kacheln</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#101510;color:#e9efe6;font:13px/1.55 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#8fd0a8}a:hover{color:#a9dfbd}
+  header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 20px;border-bottom:1px solid #22301f;background:#141b13;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #33452f;border-radius:4px;color:#8fd0a8}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button{font:12px/1 inherit;padding:7px 10px;background:#1b241a;color:#e9efe6;border:1px solid #33452f;border-radius:5px;cursor:pointer}
+  button:hover{background:#243020}
+  button[aria-pressed="true"]{background:#4e8a4f;border-color:#6fb470;color:#0d130c}
+  main{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
+  h2{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#7f9578;margin:34px 0 4px}
+  h2:first-of-type{margin-top:8px}
+  .lead{font-size:13px;color:#a9b8a3;margin:0 0 14px;max-width:78ch;text-wrap:pretty}
+  .rule{font-size:12.5px;color:#cfe0c8;background:#141d13;border:1px solid #2a3a27;border-left:3px solid #4e8a4f;border-radius:5px;padding:10px 12px;margin:0 0 16px;max-width:92ch;text-wrap:pretty}
+  .gap{font-size:12px;color:#c7a274;background:#231d14;border:1px solid #3b2f1f;border-radius:5px;padding:10px 12px;margin:12px 0;max-width:92ch;text-wrap:pretty}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+  .card{background:#141b13;border:1px solid #26331f;border-radius:7px;padding:10px;display:flex;flex-direction:column;gap:8px}
+  .card h3{margin:0;font:11px/1.3 ui-monospace,monospace;color:#dceace}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:center}
+  .pair canvas{width:100%;aspect-ratio:1;display:block;background:#0c110b;border-radius:5px}
+  .pair svg{width:100%;aspect-ratio:1;display:block}
+  .sig{font:11px/1.5 ui-monospace,monospace;color:#9fb298}
+  .sig b{color:#dceace;font-weight:600}
+  .role{font-size:11.5px;color:#8b9a85;text-wrap:pretty}
+  table{border-collapse:collapse;font:11.5px/1.5 ui-monospace,monospace;margin:4px 0 8px}
+  th,td{text-align:left;padding:4px 12px 4px 0;border-bottom:1px solid #1e2a1c;vertical-align:top}
+  th{color:#7f9578;font-weight:600}
+  td b{color:#dceace}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font:11.5px/1 ui-monospace,monospace;margin:0 0 16px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+  code{color:#8fd0a8;font-size:12px}
+  #status{font:11px/1 ui-monospace,monospace;color:#7f9578}
+</style>
+</head>
+<body>
+<header>
+  <h1>KFB Kit Lab · Sprint 12</h1>
+  <span class="tag">Mentales Modell der Kacheln · KayKit Medieval Hexagon Pack · CC0</span>
+  <div class="bar">
+    <span id="status">lade…</span>
+    <a href="KayKit_Hex_Realm_S11.html"><button>→ Insel S11</button></a>
+  </div>
+</header>
+<main>
+  <p class="lead">Eine Kachel ist vollständig beschrieben durch die <b>Klasse ihrer sechs Kanten</b>.
+  Alles andere folgt daraus: die Anschlussmaske ist die Bitmenge einer Klasse, eine Drehung ist
+  eine Rotation des Strings, und „passt A an B“ heißt gleiche Klasse auf beiden Seiten der Fuge.
+  Links das Kachel-Rendering von oben, rechts das gelesene Modell — dieselbe Quelle
+  (<code>lib/hex-grid.js · TILE_EDGES</code>), damit Bild und Modell nicht auseinanderlaufen können.</p>
+
+  <div class="legend">
+    <span><i style="background:#ddd845"></i>g · Wiese — geschlossen</span>
+    <span><i style="background:#ffd29a"></i>s · Sand — Weg oder Strand, läuft über die Fuge</span>
+    <span><i style="background:#3797d8"></i>w · Wasser — Flussrinne oder offene See</span>
+    <span style="color:#7f9578">Kantenreihenfolge 0 O · 1 SO · 2 SW · 3 W · 4 NW · 5 NO</span>
+  </div>
+
+  <h2>Wie die Tabelle zustande kam — dritter Versuch, die ersten zwei waren falsch</h2>
+  <table>
+    <tr><th>Versuch</th><th>Methode</th><th>Ergebnis</th></tr>
+    <tr><td>1</td><td>Farbe über UVs aus dem geteilten Atlas</td><td><b>unbrauchbar</b> — <code>hex_grass</code> kam mit sechs Wasserkanten zurück</td></tr>
+    <tr><td>2</td><td>Draufsicht-Rendering, Pixel an der Kantenmitte</td><td><b>in z gespiegelt</b> — <code>readRenderTargetPixels</code> liefert Zeilen von unten, Bildschirm-oben ist −z</td></tr>
+    <tr><td>3</td><td>Vertex-Schwerpunkt der Wasserfläche (y ≈ −0,20), ohne Kamera</td><td><b>Bodenwahrheit</b> — <code>tools/truth-hex-axes.html</code></td></tr>
+  </table>
+  <p class="lead">Versuch 2 überlebten nur die spiegelsymmetrischen Kacheln — Masken, die unter
+  <code>d ↔ (6−d)</code> invariant sind: A, D, G, H, I, K, L, M. Genau deshalb sahen gerade
+  Straßen richtig aus, während <b>jeder Knick spiegelverkehrt</b> lag und jeder Strand
+  landeinwärts zeigte. Versuch 3 misst <code>hex_coast_B</code> auf <b>88,7°</b> (Kanten 1,2) statt
+  270°, und <code>hex_coast_C</code> auf <b>59,6°</b> statt 300° — beides exakt die Spiegelung.
+  Dasselbe Werkzeug prüft den Drehsinn getrennt: um <code>rotDeg(1)</code> = 300° gedreht wandert
+  der Schwerpunkt von 88,7° auf 148,7°, also +60° = Kante <i>i</i> → <i>i+1</i>. Nach der Korrektur
+  liefert der Pixelscan dieselben achtzehn Strings wie die Geometrie — zwei unabhängige Methoden,
+  ein Ergebnis.</p>
+
+  <div id="sections"></div>
+
+  <h2>Fügeregel</h2>
+  <div class="rule">Zwei Kacheln passen an einer Fuge, wenn beide dort <b>dieselbe Klasse</b>
+  tragen: Sand an Sand, Wasser an Wasser, Wiese an Wiese. Das ist die einzige Regel, und sie ist
+  prüfbar — <code>auditTileFit</code> vergleicht die <b>gedrehte Maske der gesetzten Kachel</b>
+  Kante für Kante mit der Gegenkante des Nachbarn. Eine Zahl wie „22/22 gelöst“ prüft dagegen nur,
+  ob eine Wunschmaske erfüllbar war, und blieb grün, während jede Kurve spiegelverkehrt lag.</div>
+
+  <h2>Was das Set nicht kann</h2>
+  <div class="gap" id="limits">…</div>
+</main>
+<script type="module">
+import * as THREE from 'three';
+import { loadAsset, measure } from './lib/kit-lab.js';
+import { hexMetrics, TILE_EDGES, EDGE_MASKS, kindsMask, popcount, isRun, COAST_CORE } from './lib/hex-grid.js';
+
+const COL = { g: '#ddd845', s: '#ffd29a', w: '#3797d8' };
+const LABEL = { g: 'Wiese', s: 'Sand', w: 'Wasser' };
+const DIRNAME = ['O', 'SO', 'SW', 'W', 'NW', 'NO'];
+const status = document.getElementById('status');
+
+/* Rolle je Kachel — der Satz, der erklärt, WOFÜR sie da ist. Nicht generiert: gelesen. */
+const ROLE = {
+  hex_grass: 'Grundschicht. Deckfläche y = 0, Körper hängt bis −1 darunter.',
+  hex_water: 'Offene Wasserfläche, Oberkante −0,20 (gemessen, nicht getippt).',
+  hex_road_A: 'gerade durch', hex_road_B: 'sanfter Knick (eine Kante Abstand)',
+  hex_road_C: 'scharfer Knick (Nachbarkanten)', hex_road_D: 'Y, alternierend',
+  hex_road_E: 'T mit weitem Schenkel', hex_road_F: 'T mit engem Schenkel',
+  hex_road_G: 'Fächer aus drei Nachbarkanten', hex_road_H: 'vier Kanten, eine Lücke von zwei',
+  hex_road_I: 'X, alternierend', hex_road_J: 'vier Nachbarkanten', hex_road_K: 'fünf Kanten',
+  hex_road_L: 'alle sechs — Platz', hex_road_M: 'Sackgasse: der Stummel zeigt auf eine Kante',
+  hex_coast_A: 'Binnenstrand über drei Kanten, kein Wasser auf der Kachel',
+  hex_coast_B: 'gerade Küste: Seelauf 2, Sand auf beiden Flanken. Die Kachel für jede gerade Randzelle.',
+  hex_coast_C: 'Außenecke: Seelauf 3, drei Landkanten. Die Kachel für jede Ecke.',
+  hex_coast_D: 'Landzunge: Seelauf 4, nur zwei Landkanten. Nur für Spitzen — reihenweise zerfällt der Rand.',
+  hex_coast_E: 'Strand über zwei Kanten, kein Wasser. Übergang von Strand zu Wiese.'
+};
+for (const l of 'ABCDEFGHIJKL') ROLE['hex_river_' + l] = (ROLE['hex_road_' + l] || '') + ' — als Wasserrinne';
+
+const FAMILIES = [
+  { id: 'base', h: 'Basis · 2 Kacheln', names: ['hex_grass', 'hex_water'], pack: 'hex_base',
+    rule: 'Volle Sechsecke, alle sechs Kanten gleich. Sie tragen keine Anschlüsse und brauchen keine Drehung. Die Deckfläche liegt bei y = 0, der Körper hängt darunter — was auf einer Kachel steht, kommt auf 0, ohne Einrasten.' },
+  { id: 'road', h: 'Straßen · 13 Kacheln', names: 'ABCDEFGHIJKLM'.split('').map((l) => 'hex_road_' + l), pack: 'hex_roads',
+    rule: 'Sand-Arme von der Mitte zu einer Kantenmenge. Die 13 Kacheln sind <b>genau die 13 nichtleeren Kantenmengen eines Sechsecks bis auf Drehung</b> (1 Einzel + 3 Paare + 4 Tripel + 3 Quadrupel + 1 Quintupel + 1 alle). Das Set ist damit <b>vollständig</b>: für jede Nachbarschaft existiert eine Kachel, jedes Straßennetz ist baubar. Deshalb wird nie ausgewählt, sondern gelöst.' },
+  { id: 'river', h: 'Flüsse · 12 Kacheln', names: 'ABCDEFGHIJKL'.split('').map((l) => 'hex_river_' + l), pack: 'hex_river',
+    rule: 'Dieselben Muster als Wasserrinne — aber nur <b>zwölf</b>: es fehlt die Einzelkante, also die Quellkachel. Ein Fluss kann deshalb nicht im Feld beginnen. Er beginnt und endet am Wasser oder am Kartenrand, und Quelle wie Mündung brauchen genau <b>eine</b> Seekante als zweite Öffnung (<code>endSeaEdge</code>) — nimmt man alle, franst die Quelle dreifach in die Klippe.' },
+  { id: 'coast', h: 'Ufer · 5 Kacheln', names: 'ABCDE'.split('').map((l) => 'hex_coast_' + l), pack: 'hex_coast',
+    rule: 'Die einzige Familie, die die Landzelle <b>ersetzt</b> statt sie zu bemalen: sie bringt ihre eigene Wasserfläche mit. Und ihr Bauprinzip ist die eigentliche Entdeckung — <b>Sand liegt auf genau den zwei Kanten, die den Wasserlauf flankieren</b>. Endet der Seelauf einer Kachel an Kante d, beginnt der Lauf des Nachbarn an der Gegenkante d+3, und beide setzen dort Sand: die Strandkette ist von selbst durchgehend. Es muss also nur die <b>Wassermaske</b> exakt stimmen, die Landkanten ergeben sich.' }
+];
+
+/* Draufsicht-Rendering je Kachel, mit der bewiesenen Achse (Bildschirm-oben = −z). */
+const SIZE = 168;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: true });
+renderer.setSize(SIZE, SIZE, false);
+renderer.setPixelRatio(2);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xffffff, 0x70806a, 2.2));
+const dir = new THREE.DirectionalLight(0xffffff, 1.1); dir.position.set(-3, 6, -2); scene.add(dir);
+
+async function thumb(pack, name, canvas) {
+  const meas = await measure(pack, name);
+  const M = hexMetrics(meas.size);
+  const node = (await loadAsset(pack, name)).clone(true);
+  scene.add(node);
+  const cx = (meas.min[0] + meas.max[0]) / 2, cz = (meas.min[2] + meas.max[2]) / 2;
+  const half = M.H / 2 * 1.04;
+  const cam = new THREE.OrthographicCamera(-half, half, half, -half, 0.1, 50);
+  cam.position.set(cx, 10, cz);
+  cam.up.set(0, 0, -1);                 // explizit: Bildschirm-oben = −z, kein degenerierter lookAt
+  cam.lookAt(cx, 0, cz);
+  renderer.render(scene, cam);
+  scene.remove(node);
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.height = SIZE * 2;
+  ctx.drawImage(renderer.domElement, 0, 0);
+}
+
+/* Modell-Diagramm: Sechseck mit sechs gefärbten Kanten. Bildschirm-oben = −z, damit das
+   Diagramm dieselbe Orientierung hat wie das Rendering links daneben. */
+function diagram(kinds) {
+  const R = 46, cxy = 60;
+  /* PLUS, nicht minus. SVG-y wächst nach unten, und die Weltrichtung +z (Kante 1 SO, Winkel
+     +90°) liegt im Thumbnail UNTEN, weil `cam.up.set(0,0,-1)` Bildschirm-oben auf −z legt.
+     Mit `cxy − sin(a)·R` stand das Diagramm senkrecht gespiegelt zum Rendering daneben —
+     derselbe Achsenfehler, den diese Seite erklärt, in der Seite selbst. */
+  const pt = (a) => [cxy + Math.cos((a * Math.PI) / 180) * R, cxy + Math.sin((a * Math.PI) / 180) * R];
+  const corners = [30, 90, 150, 210, 270, 330].map(pt);
+  let s = `<svg viewBox="0 0 120 120" role="img"><polygon points="${corners.map((p) => p.map((v) => v.toFixed(1)).join(',')).join(' ')}" fill="#0c110b" stroke="#26331f"/>`;
+  for (let d = 0; d < 6; d++) {
+    /* Kante d liegt zwischen den Ecken bei (d*60 − 30) und (d*60 + 30) */
+    const a = pt(d * 60 - 30), b = pt(d * 60 + 30);
+    s += `<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" stroke="${COL[kinds[d]]}" stroke-width="7" stroke-linecap="round"/>`;
+    const m = pt(d * 60);
+    const inner = [cxy + (m[0] - cxy) * 0.58, cxy + (m[1] - cxy) * 0.58];
+    s += `<text x="${inner[0].toFixed(1)}" y="${inner[1].toFixed(1)}" fill="${COL[kinds[d]]}" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle" dominant-baseline="central">${d}</text>`;
+  }
+  return s + '</svg>';
+}
+
+const packOf = (name) => FAMILIES.find((f) => f.names.includes(name)).pack;
+const out = document.getElementById('sections');
+let done = 0, total = FAMILIES.reduce((n, f) => n + f.names.length, 0);
+
+for (const fam of FAMILIES) {
+  const sec = document.createElement('section');
+  sec.innerHTML = `<h2>${fam.h}</h2><div class="rule">${fam.rule}</div><div class="grid"></div>`;
+  out.appendChild(sec);
+  const grid = sec.querySelector('.grid');
+  for (const name of fam.names) {
+    const kinds = TILE_EDGES[name];
+    const sand = kindsMask(kinds, 's'), water = kindsMask(kinds, 'w');
+    const open = fam.id === 'river' || fam.id === 'base' ? water : sand;
+    const card = document.createElement('div');
+    card.className = 'card';
+    const edges = [...kinds].map((k, d) => `${DIRNAME[d]}\u2009${k}`).join(' · ');
+    const runNote = fam.id === 'coast' && water
+      ? `<br>Seelauf <b>${popcount(water)}</b> ${isRun(water) ? 'zusammenhängend' : 'geteilt'} · Kern <b>${COAST_CORE[name] === 'g' ? 'Land' : 'Wasser'}</b>`
+      : open ? `<br>Maske <b>${open}</b> · ${popcount(open)} Anschl.` : '';
+    card.innerHTML = `<h3>${name}</h3>
+      <div class="pair"><canvas></canvas>${diagram(kinds)}</div>
+      <div class="sig"><b>${kinds}</b><br>${edges}${runNote}</div>
+      <div class="role">${ROLE[name] || ''}</div>`;
+    grid.appendChild(card);
+    await thumb(fam.pack, name, card.querySelector('canvas'));
+    status.textContent = `${++done}/${total} Kacheln gelesen`;
+  }
+}
+status.textContent = `${total} Kacheln · Modell und Rendering aus einer Quelle`;
+
+/* Grenzen des Sets — abgeleitet, nicht behauptet: welche Seeläufe hat keine Uferkachel? */
+{
+  const have = new Set();
+  for (const l of 'ABCDE') {
+    const w = kindsMask(TILE_EDGES['hex_coast_' + l], 'w');
+    if (!w) continue;
+    for (let n = 0; n < 6; n++) {
+      let r = 0;
+      for (let i = 0; i < 6; i++) if (w & (1 << i)) r |= 1 << ((i + n) % 6);
+      have.add(r);
+    }
+  }
+  const missing = { run: [], split: [] };
+  for (let m = 1; m < 64; m++) {
+    if (have.has(m)) continue;
+    (isRun(m) ? missing.run : missing.split).push(popcount(m));
+  }
+  const runLens = [...new Set(missing.run)].sort();
+  document.getElementById('limits').innerHTML =
+    `<b>Ufer:</b> baubar sind nur zusammenhängende Seeläufe von <b>2, 3 und 4</b> Kanten (B, C, D → ${have.size} Masken mit Drehung).
+     Es fehlen Läufe der Länge <b>${runLens.join(', ')}</b> und <b>alle ${missing.split.length} geteilten</b> Masken.
+     Eine Karte, die das verlangt, ist nicht baubar — nicht „fast baubar“: deshalb ist die Insel ein
+     <b>Hex-Kreis</b> (sechs gerade Seiten aus B, sechs Ecken aus C) und nicht ein frei gezeichneter Umriss.
+     <br><br><b>Fluss:</b> keine Einzelkante, also keine Quellkachel — ein Fluss beginnt nie im Feld.
+     <br><b>Straße:</b> keine Lücke — alle 13 Kantenmengen existieren.
+     <br><br><b>Ganz fehlend im FREE-Tier</b> (per Ladeversuch gegen ~1600 Kandidatennamen bestätigt):
+     Felder/Acker, Stadtmauern, Zäune, <b>Brücke</b>, Marktstände, Belagerungsgerät. Ohne Brücke kann
+     keine Straße einen Fluss kreuzen — und weil ein Fluss von Rand zu Rand eine Insel zwangsläufig
+     teilt, hat die Insel in S11 zwei getrennte Straßennetze statt einer erfundenen Brücke.`;
+}
+window.__model = { TILE_EDGES, EDGE_MASKS };
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S1 · KayKit Dungeon</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#120c20;color:#e8e3f5;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#b9a6ff}a:hover{color:#d8ccff}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid #2c2246;background:#170f28}
+  h1{font-size:14px;margin:0;font-weight:650;letter-spacing:.01em}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #453770;border-radius:4px;color:#b9a6ff}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button{font:12px/1 inherit;padding:7px 10px;background:#241a3d;color:#e8e3f5;border:1px solid #453770;border-radius:5px;cursor:pointer}
+  button:hover{background:#2f2350}
+  button[aria-pressed="true"]{background:#5b46a8;border-color:#7a63cf}
+  label.sl{display:flex;align-items:center;gap:6px;font:11px/1 ui-monospace,monospace;color:#a79bc9}
+  input[type=range]{width:110px;accent-color:#8a72e0}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #refimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#c9bfe8;background:#160f26cc;border:1px solid #33285480;padding:8px 10px;border-radius:6px}
+  aside{border-left:1px solid #2c2246;background:#150e24;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8f81b8;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #251c3f}
+  th:first-child,td:first-child{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th:not(:first-child),td:not(:first-child){width:46px}
+  th{color:#8f81b8;font-weight:500}
+  td.num{text-align:right;color:#ded5ff}
+  .note{font-size:12px;color:#a79bc9}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #251c3f;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#ded5ff}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 1</h1>
+    <span class="tag">KayKit Dungeon Pack 1.1 · gltf · CC0</span>
+    <span class="tag" id="count">0 Teile</span>
+    <div class="bar">
+      <button id="vRef" aria-pressed="true">Key-Art-Blick</button>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid" aria-pressed="false">Raster</button>
+      <label class="sl">Referenz <input id="opa" type="range" min="0" max="100" value="0"></label>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <img id="refimg" src="uploads/Nz_zk7.png" alt="KayKit Dungeon key art reference">
+    <div id="hud">lade Assets…</div>
+  </div>
+  <aside>
+    <h2>Raster · gemessen</h2>
+    <div id="gridfacts"></div>
+    <p class="note">Gemessen zur Laufzeit aus den echten glTF-Bounding-Boxes, nicht geschätzt. Modul = Kantenlänge <code>floor_tile_large</code>.</p>
+    <h2>Bauteile im Bild</h2>
+    <table><thead><tr><th>Teil</th><th>x</th><th>y</th><th>z</th></tr></thead><tbody id="sizes"></tbody></table>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+    <div class="kv"><span>pack</span><span>Dungeon 1.1 FREE</span></div>
+    <div class="kv"><span>quelle</span><span>raw @ main</span></div>
+    <div class="kv"><span>referenz</span><span>Nz_zk7.png</span></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measured } from './lib/kit-lab.js';
+import { scene as recipe } from './scenes/dungeon-promo.js';
+
+const hud = document.getElementById('hud');
+const V = makeViewer(document.getElementById('c'), { background: 0x1a1030, fov: 24 });
+
+const root = await buildScene(recipe.placements, (d, n) => { hud.textContent = `lade ${d}/${n}`; });
+V.scene.add(root);
+document.getElementById('count').textContent = `${recipe.placements.length} Teile`;
+
+// ground shadow catcher
+const gb = new THREE.Box3().setFromObject(root);
+const plane = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.ShadowMaterial({ opacity: 0.32 }));
+plane.rotation.x = -Math.PI / 2; plane.position.y = -0.055; plane.receiveShadow = true;
+V.scene.add(plane);
+
+const views = {
+  ref: [1, 0.72, 1],
+  top: [0, 1, 0.0001]
+};
+function setView(k) {
+  V.frame(root, views[k], 1.06);
+  document.getElementById('vRef').setAttribute('aria-pressed', String(k === 'ref'));
+  document.getElementById('vTop').setAttribute('aria-pressed', String(k === 'top'));
+}
+setView('ref');
+document.getElementById('vRef').onclick = () => setView('ref');
+document.getElementById('vTop').onclick = () => setView('top');
+document.getElementById('vGrid').onclick = (e) => {
+  V.grid.visible = !V.grid.visible;
+  e.currentTarget.setAttribute('aria-pressed', String(V.grid.visible));
+};
+document.getElementById('opa').oninput = (e) => {
+  document.getElementById('refimg').style.opacity = e.target.value / 100;
+};
+document.getElementById('exp').onclick = () => {
+  const blob = new Blob([JSON.stringify({ ...recipe, measured: [...measured.values()] }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = recipe.id + '.scene-recipe.json'; a.click();
+};
+
+// facts panel
+const m = (n) => measured.get('dungeon/' + n);
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.001 ? String(Math.round(v)) : v.toFixed(2));
+const factRows = [
+  ['Modul (Bodenplatte groß)', m('floor_tile_large') && `${f2(m('floor_tile_large').size[0])} × ${f2(m('floor_tile_large').size[2])}`],
+  ['Bodenplatte Dicke', m('floor_tile_large') && f2(m('floor_tile_large').size[1])],
+  ['Wand (B × H × T)', m('wall') && m('wall').size.map(f2).join(' × ')],
+  ['Wand-Pivot', 'zentriert, Unterkante y = 0'],
+  ['Räume', '4 · je 2 × 2 Module'],
+  ['Weltmaß Szene', `${f2(gb.getSize(new THREE.Vector3()).x)} × ${f2(gb.getSize(new THREE.Vector3()).z)}`]
+];
+document.getElementById('gridfacts').innerHTML = factRows
+  .filter(([, v]) => v)
+  .map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+
+const rows = [...measured.values()].sort((a, b) => a.name.localeCompare(b.name));
+document.getElementById('sizes').innerHTML = rows.map((r) =>
+  `<tr><td title="${r.name}">${r.name}</td><td class="num">${f2(r.size[0])}</td><td class="num">${f2(r.size[1])}</td><td class="num">${f2(r.size[2])}</td></tr>`).join('');
+
+hud.textContent = `${recipe.placements.length} Platzierungen · ${rows.length} verschiedene Bauteile · Raster 4`;
+</script>
+</body>
+</html>

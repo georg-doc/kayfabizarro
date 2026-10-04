@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB WhackMan v1 — Gates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#15101f;overflow:hidden}
+a{color:#ffd9a0}
+a:hover{color:#ffe9c6}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="./wm-boot.js"></script>
+</helmet>
+
+<div style="position:fixed;inset:0;background:#15101f;z-index:-1"></div>
+
+<div data-wm-title="1" style="position:fixed;left:14px;top:14px;z-index:30;pointer-events:none">
+  <div style="font:600 11px/1.4 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#ffd9a0;background:rgba(21,16,31,.88);border:1px solid rgba(255,217,160,.28);padding:6px 10px">KFB WhackMan v1</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;gate&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Gate&quot;,&quot;label&quot;:&quot;A = Akteure · B = Labyrinth · C = Spiel&quot;},&quot;innenDecken&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;aus&quot;,&quot;standard&quot;,&quot;an&quot;],&quot;default&quot;:&quot;standard&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Darstellung&quot;,&quot;label&quot;:&quot;Innen-Decken · standard = Blockdächer wie im Original · an = zusätzlich Pferchdach&quot;}}">
+class Component extends DCLogic {
+  push() {
+    window.__wmProps = { gate: this.props.gate ?? 'C', innenDecken: this.props.innenDecken ?? 'standard' };
+  }
+  componentDidMount() { this.push(); }
+  componentDidUpdate() { this.push(); }
+  renderVals() { this.push(); return {}; }
+}
+</script>
+</body>
+</html>

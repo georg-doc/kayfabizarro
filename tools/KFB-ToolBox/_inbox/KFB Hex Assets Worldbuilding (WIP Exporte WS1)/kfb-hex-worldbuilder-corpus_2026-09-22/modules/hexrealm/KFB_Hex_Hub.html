@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Hex Hub · Projektinsel</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:#0f1417;color:#eef3ee;font:14px/1.55 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif;overflow:hidden}
+  a{color:#8fd0a8}a:hover{color:#b6e6c6}
+  canvas{display:block;width:100%;height:100%}
+  #stage{position:fixed;inset:0}
+
+  /* Die Welt bleibt frei. Oben nur ein Streifen, unten nur ein Hinweis. */
+  /* Der Text bekommt einen eigenen Träger statt eines auslaufenden Verlaufs. Ein Verlauf ist
+     an der Textzeile nur noch bei Alpha 0,38 — über dem Inselgrün ergibt das 1,13:1. */
+  #top{position:fixed;top:0;left:0;right:0;display:flex;gap:12px;align-items:center;
+       padding:12px 18px;pointer-events:none}
+  .crumb{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+         background:#0f1417e0;border:1px solid #2b3a2e;border-radius:8px;
+         padding:8px 12px;backdrop-filter:blur(6px)}
+  .crumb b{font-size:14px;font-weight:650;letter-spacing:.01em;color:#f2f7f2}
+  .crumb span{font:11px/1.4 ui-monospace,monospace;color:#b9cbbc}
+  #tools{margin-left:auto;display:flex;gap:8px;pointer-events:auto}
+  button{font:12px/1 inherit;padding:9px 13px;background:#1a2420cc;color:#eef3ee;
+         border:1px solid #33452f;border-radius:7px;cursor:pointer;backdrop-filter:blur(6px)}
+  button:hover{background:#26332a}
+  button[aria-pressed="true"]{background:#54925a;border-color:#7ec084;color:#0c120c}
+
+  #hint{position:fixed;left:18px;bottom:76px;font:11px/1.4 ui-monospace,monospace;color:#c3d4c6;
+        pointer-events:none;background:#0f1417b3;border:1px solid #2b3a2e;border-radius:7px;
+        padding:7px 10px;backdrop-filter:blur(6px)}
+
+  /* Laufleiste: nur sichtbar, wenn eine Figur auf der Insel steht. */
+  #walkbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;display:none;gap:8px;
+           align-items:center;padding:8px 10px;background:#12191ae6;border:1px solid #2d3d31;
+           border-radius:11px;backdrop-filter:blur(8px);max-width:min(940px,calc(100% - 36px))}
+  #walkbar.on{display:flex}
+  #walkbar select{font:12px/1 inherit;padding:8px 9px;background:#1a2420;color:#eef3ee;
+                  border:1px solid #33452f;border-radius:7px;max-width:230px}
+  #walkbar .who{font:11px/1.4 ui-monospace,monospace;color:#9db0a2;white-space:nowrap}
+
+  /* Eigener Bildschirm statt Palette über der Welt. */
+  #screen{position:fixed;inset:0;display:none;background:#0d1214f2;backdrop-filter:blur(3px);
+          overflow:auto;padding:48px 24px 64px}
+  #screen.on{display:block}
+  .sheet{width:min(1040px,100%);margin:0 auto}
+  .sheet header{display:flex;align-items:flex-start;gap:18px;margin-bottom:6px}
+  .sheet h1{font-size:clamp(24px,3.4vw,40px);margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
+  .sheet .kicker{font:11px/1.4 ui-monospace,monospace;color:#7fb694;text-transform:uppercase;letter-spacing:.1em}
+  .sheet .lede{color:#a9bcae;max-width:70ch;margin:8px 0 26px}
+  .close{margin-left:auto}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:12px}
+  .card{display:block;text-decoration:none;color:inherit;border:1px solid #27352a;border-radius:11px;
+        padding:14px 15px;background:#141c1a}
+  .card:hover{border-color:#54925a;background:#182420}
+  .card .badge{font:10px/1 ui-monospace,monospace;color:#7fb694;letter-spacing:.08em}
+  .card h3{margin:7px 0 5px;font-size:14px;font-weight:600}
+  .card p{margin:0;font-size:12.5px;color:#93a697}
+  h2.sec{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c9083;
+         margin:30px 0 12px;font-weight:600}
+  .facts{font:11px/1.7 ui-monospace,monospace;color:#8fa392}
+  .facts b{color:#cfe0c8;font-weight:500}
+  .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  .pick{text-align:left;padding:12px 13px;border-radius:10px;background:#141c1a;border:1px solid #27352a}
+  .pick:hover{border-color:#54925a}
+  .pick b{display:block;font-size:13px;margin-bottom:3px}
+  .pick span{font:10.5px/1.4 ui-monospace,monospace;color:#8fa392}
+  .kv{display:flex;justify-content:space-between;gap:16px;padding:5px 0;border-bottom:1px solid #1e2a22;
+      font:11.5px/1.5 ui-monospace,monospace;color:#8fa392}
+  .kv span:first-child{color:#dceace;white-space:nowrap}
+  .kv span:last-child{text-align:right}
+
+  #boot{position:fixed;inset:0;display:grid;place-content:center;gap:10px;text-align:center;
+        background:#0f1417;z-index:20}
+  #boot p{margin:0;font:12px/1.6 ui-monospace,monospace;color:#8fa392}
+  #boot .bar{width:260px;height:3px;background:#1e2a22;border-radius:2px;overflow:hidden}
+  #boot .bar i{display:block;height:100%;width:0;background:#54925a;transition:width .2s}
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="c"></canvas></div>
+
+<div id="top">
+  <div class="crumb"><b>KFB · Projektinsel</b><span id="count"></span></div>
+  <div id="tools">
+    <button id="bOver">Übersicht</button>
+    <button id="bList">Stationen</button>
+    <button id="bModel">Modell</button>
+    <button id="bChar">Figur wählen</button>
+  </div>
+</div>
+
+<div id="hint">Gebäude anklicken öffnet die Station · rot pulsierende Wegweiser sind offene Punkte</div>
+
+<div id="walkbar">
+  <span class="who" id="walkWho"></span>
+  <select id="clipSel"></select>
+  <button id="bFollow" aria-pressed="true">Kamera folgt</button>
+  <button id="bLeave">Figur absetzen</button>
+</div>
+
+<div id="screen"><div class="sheet" id="sheet"></div></div>
+
+<div id="boot"><p id="bootMsg">starte…</p><div class="bar"><i id="bootBar"></i></div></div>
+
+<script type="module">
+import { start } from './hub/world.js';
+import { BUILDING_MODEL, RESIDENT_MODEL, PROP_CLASS, BENCH } from './hub/model.js';
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const screenEl = $('screen'), sheet = $('sheet');
+const showScreen = (html) => { sheet.innerHTML = html; screenEl.classList.add('on'); };
+const hideScreen = () => screenEl.classList.remove('on');
+screenEl.addEventListener('click', (e) => { if (e.target === screenEl) hideScreen(); });
+addEventListener('keydown', (e) => { if (e.key === 'Escape') hideScreen(); });
+
+const hub = await start({
+  canvas: $('c'),
+  onProgress: (phase, d, t) => {
+    $('bootMsg').textContent = t > 1 ? `${phase} ${d}/${t}` : phase;
+    $('bootBar').style.width = t > 1 ? (d / t * 100) + '%' : '8%';
+  },
+  onReady: ({ stations, todos }) => {
+    $('boot').remove();
+    $('count').textContent = `${stations.length} Stationen · ${stations.reduce((n, s) => n + s.tiles.length, 0)} Ziele · ${todos.length} offene Punkte`;
+  },
+  onPick: (p) => p.type === 'todo' ? openTodo(p.todo) : openStation(p.station),
+  onClip: (name) => { const s = $('clipSel'); if (s.value !== name) s.value = name; },
+  onWalkState: ({ entry, clips, bind, current }) => {
+    $('walkbar').classList.add('on');
+    $('hint').textContent = 'WASD läuft · Shift rennt · Maus dreht die Ansicht';
+    $('walkWho').textContent = `${entry.name} · ${entry.rig}${bind ? ` · ${bind.bound}/${bind.total} Tracks` : ''}`;
+    const sel = $('clipSel');
+    sel.innerHTML = clips.map((c) => `<option value="${esc(c.name)}"${c.name === current ? ' selected' : ''}>${esc(c.set || '')} · ${esc(c.name)}</option>`).join('');
+  }
+});
+
+function openStation(st) {
+  const bind = st.bind ? ` · Pose <b>${esc(st.poseName)}</b>, ${st.bind.bound}/${st.bind.total} Tracks gebunden` : '';
+  showScreen(`
+    <header>
+      <div>
+        <div class="kicker">${esc(st.section)}</div>
+        <h1>${esc(st.label)}</h1>
+      </div>
+      <button class="close" onclick="document.getElementById('screen').classList.remove('on')">Zurück zur Insel</button>
+    </header>
+    <p class="lede">${esc(st.sub)} — ${st.tiles.length} Ziele.</p>
+    <div class="cards">${st.tiles.map((t) => `
+      <a class="card" href="${esc(t.url)}" target="_blank" rel="noopener">
+        <div class="badge">${esc(t.badge || t.kind || '')}</div>
+        <h3>${esc(t.title)}</h3>
+        <p>${esc(t.desc || '')}</p>
+      </a>`).join('')}</div>
+    <h2 class="sec">Bewohner</h2>
+    <p class="facts"><b>${esc(st.recipe?.display || st.resident)}</b> · ${esc(st.recipe?.townRole || '')}${bind}<br>
+      ${esc(st.recipe?.activity || '')}<br>
+      Requisiten: ${st.props?.length ? st.props.map(esc).join(' · ') : '—'}<br>
+      Maßstab ${st.scale ?? '?'} — auf die gemessene Gebäudehöhe der Insel gebracht.</p>
+    <h2 class="sec">Warum hier</h2>
+    <p class="facts">${esc(st.why || '')}</p>
+  `);
+}
+
+function openTodo(t) {
+  showScreen(`
+    <header>
+      <div><div class="kicker">Offener Punkt · ${esc(t.owner || '')}</div><h1>${esc(t.title)}</h1></div>
+      <button class="close" onclick="document.getElementById('screen').classList.remove('on')">Zurück zur Insel</button>
+    </header>
+    <p class="lede">${esc(t.note || '')}</p>
+    <div class="cards"><a class="card" href="${esc(t.url)}" target="_blank" rel="noopener">
+      <div class="badge">ÖFFNEN</div><h3>${esc(t.title)}</h3><p>${esc(t.url)}</p></a></div>
+  `);
+}
+
+$('bOver').onclick = () => { hideScreen(); hub.overview(); };
+$('bList').onclick = () => showScreen(`
+  <header><div><div class="kicker">Insel</div><h1>Stationen</h1></div>
+  <button class="close" onclick="document.getElementById('screen').classList.remove('on')">Zurück zur Insel</button></header>
+  <p class="lede">Jede Station ist ein Gebäude. Anklicken fliegt hin und öffnet sie.</p>
+  <div class="cards">${hub.stations.map((s, i) => `
+    <button class="card" data-st="${i}"><div class="badge">${esc(s.section)}</div>
+      <h3>${esc(s.label)}</h3><p>${s.tiles.length} Ziele · ${esc(s.sub)}</p></button>`).join('')}</div>
+`);
+
+$('bModel').onclick = () => {
+  const m = hub.measuredModel();
+  const row = (k, v) => `<div class="kv"><span>${esc(k)}</span><span>${v}</span></div>`;
+  showScreen(`
+    <header><div><div class="kicker">Mentales Modell</div><h1>Gebäude, Bewohner, Requisiten</h1></div>
+    <button class="close" onclick="document.getElementById('screen').classList.remove('on')">Zurück zur Insel</button></header>
+    <p class="lede">Jedes Gebäude des Packs ist eine Funktion, kein Dekor. Jedes Atlas-Rezept ist eine
+      Tätigkeit, keine Figur. Die Zuordnung Sektion → Gebäude → Bewohner fällt aus beidem heraus —
+      sie ist abgeleitet, nicht gewählt. Die Maße darunter sind gemessen, nicht gesetzt.</p>
+
+    <h2 class="sec">Die Zuordnung</h2>
+    <div class="cards">${hub.stations.map((s) => `
+      <div class="card"><div class="badge">${esc(s.section)}</div>
+        <h3>${esc(s.label)} · ${esc(s.recipe?.name || s.resident)}</h3>
+        <p>${esc(s.why)}</p></div>`).join('')}</div>
+
+    <h2 class="sec">Gebäude · Funktion und gemessene Höhe</h2>
+    ${m.buildings.map((b) => row(b.kind.replace('building_', '') + '  ' + b.h + ' hoch',
+        esc(BUILDING_MODEL[b.kind]?.reads || '—'))).join('')}
+
+    <h2 class="sec">Bewohner · Tätigkeit und mitgebrachte Kulisse</h2>
+    ${Object.entries(RESIDENT_MODEL).map(([id, r]) => row(id, esc(r.does) + ' — ' + esc(r.brings))).join('')}
+
+    <h2 class="sec">Requisitenklassen</h2>
+    ${Object.entries(PROP_CLASS).map(([k, v]) => row(k, esc(v))).join('')}
+
+    <h2 class="sec">Maßstab</h2>
+    ${row('mediane Gebäudehöhe', m.medianBuilding)}
+    ${row('Figurenhöhe', m.figureRatio + ' davon = ' + (m.medianBuilding * m.figureRatio).toFixed(2) + ', Rig_Large ×1,25')}
+
+    <h2 class="sec">Auf der Bank</h2>
+    <p class="facts">${BENCH.map(esc).join(' · ')} — Bewohner mit Modell, aber ohne Sektion im Hub.
+      Keine Lücke: sie stehen bereit, sobald es eine gibt.</p>
+  `);
+};
+
+$('bChar').onclick = () => {
+  const groups = {};
+  for (const e of hub.roster) (groups[e.group] ||= []).push(e);
+  showScreen(`
+    <header><div><div class="kicker">Besetzung</div><h1>Figur wählen</h1></div>
+    <button class="close" onclick="document.getElementById('screen').classList.remove('on')">Zurück zur Insel</button></header>
+    <p class="lede">Die Figur läuft mit WASD über die Insel, Shift rennt. Alle Clips der geteilten
+      KayKit-Bibliothek stehen in der Leiste unten zur Auswahl.</p>
+    ${Object.entries(groups).map(([g, list]) => `
+      <h2 class="sec">${esc(g)}</h2>
+      <div class="roster">${list.map((e) => `
+        <button class="pick" data-spawn="${esc(e.id)}"><b>${esc(e.name)}</b><span>${esc(e.rig)}${e.note ? ' · ' + esc(e.note) : ''}</span></button>`).join('')}</div>`).join('')}
+  `);
+};
+
+sheet.addEventListener('click', async (e) => {
+  const st = e.target.closest('[data-st]');
+  if (st) { const s = hub.stations[+st.dataset.st]; hub.focusStation(s); openStation(s); return; }
+  const sp = e.target.closest('[data-spawn]');
+  if (sp) {
+    const entry = hub.roster.find((r) => r.id === sp.dataset.spawn);
+    sp.textContent = 'lädt…';
+    hideScreen();
+    try { await hub.spawn(entry); } catch (err) { alert('Figur konnte nicht geladen werden: ' + err.message); }
+  }
+});
+
+$('clipSel').onchange = (e) => hub.playClip(e.target.value);
+$('bFollow').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  hub.setFollow(on);
+};
+$('bLeave').onclick = () => {
+  hub.despawn();
+  $('walkbar').classList.remove('on');
+  $('hint').textContent = 'Gebäude anklicken öffnet die Station · rot pulsierende Wegweiser sind offene Punkte';
+  hub.overview();
+};
+
+window.__hub = hub;
+</script>
+</body>
+</html>
