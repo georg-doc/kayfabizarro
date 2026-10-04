@@ -1,6 +1,6 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.7.0 · 2026-09-29** · 57 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.8.0 · 2026-09-29** · 57 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
 
 ## Was das ist
 
@@ -55,6 +55,14 @@ Aus diesem Tag folgt: Der Coworker darf künftig Statusdaten aktualisieren, aber
 - Reißleine: **„Kann ein frischer Chat die abgenommene Regel von START_HERE aus finden?“**
 - Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`.
 - Recovery/Canon-Routing: Draft PR #290.
+
+## Neu am 04.10.2026 — One-Shot / Legacy-OSM-Donor-Fail
+
+- *Der technische Donor, der zur Welt wurde* (Monument · Process/WSA Lead): Der Hürth/OSM-B1-Strang war für Gebäude-/Fassadenmechanik bewiesen, wurde aber ohne visuelle Abnahme als sichtbare aktuelle WB2-Weltgrundlage promoted. Der One-Shot schützte diese falsche Grundlage mit “World PASS / do not rebuild”, sodass WSA den Player korrekt in die falsche Welt integrierte.
+- Reißleine: **„Welche sichtbaren Quellen sind wirklich im Frame?“**
+- Neue Bindung: Donor-Scope getrennt nach MECHANISM / PRESENTATION / CONTENT / DATA; sichtbare Quellen brauchen Allow-/Denylist.
+- Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_ONE_SHOT_LEGACY_OSM_CONTAMINATION_2026-10-04.md`.
+- Current recovery: `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURRENT_ONE_SHOT_VISUAL_RECOVERY_2026-10-04.md`.
 
 ## Pflegeregel
 
