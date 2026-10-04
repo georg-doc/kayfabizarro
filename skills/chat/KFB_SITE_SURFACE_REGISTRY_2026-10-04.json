@@ -57,32 +57,35 @@
     },
     {
       "id": "kfb-frankenstein-composer",
-      "owner": "KFB ToolBox",
-      "url": null,
-      "status": "SITE_PREPARED_NOT_PUBLISHED",
+      "owner": "KFB ToolBox / FrankenStein Composer",
+      "url": "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
+      "status": "SITE_DEPLOYED_PRIVATE_SOURCE_FIRST",
       "source": "PR #355",
-      "humanStatus": "NOT_REVIEWED"
-    },
-    {
-      "id": "kfb-billboard-hypernorm-curator",
-      "owner": "KFB ToolBox / Billboard Media Residency",
-      "url": null,
-      "status": "SITE_PREPARED_NOT_PUBLISHED",
-      "source": "PR #354",
-      "humanStatus": "NOT_REVIEWED"
+      "humanStatus": "COMPOSITE_MOTION_INTEGRATION_OPEN",
+      "notes": "Private Site implemented and QA checked desktop/mobile. Verified GothGirl, Black Knight, FrizzleBob v5 and Pencil donors load in isolation. Eraser remains SOURCE_REQUIRED. Composite/face animation/rig motion remain gated until existing owner adapters are connected."
     },
     {
       "id": "kfb-world-studio-mvp",
       "owner": "KFB WorldBuilder / WB2",
       "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
-      "status": "SITE_DEPLOYED_HUMAN_VISUAL_FAIL",
-      "source": "PR #348 runtime 38ff52138078472a8cc2f34fe19fc240ba91eb29",
-      "humanStatus": "HUMAN_FAIL_JOYRIDE_PRESENTATION_MISSING",
-      "notes": "Native Sites deployment succeeded and full WB2 app/source identity is preserved. Georg freeplay screenshot is HUMAN VISUAL FAIL: pale technical Track-Core road/support presentation dominates; Joyride/T4 clay-strand presentation is missing; composition/livingness not accepted. Repair existing WB2 presentation and update same Site; Cloudflare remains secondary.",
-      "siteSourceCommit": "45b28d444960cc0acab4a0a72359e5289e197506",
+      "status": "SITE_DEPLOYED_FOUR_ISLAND_CANDIDATE_HUMAN_FREEPLAY",
+      "source": "PR #348 runtime 3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+      "humanStatus": "GEORG_FREEPLAY_PENDING",
+      "notes": "Existing Site updated in place with exact frozen 92-file four-island candidate. Sites deployment succeeded; publication is not acceptance. Georg freeplay is the current gate. Automated browser policy service remains unavailable and is nonblocking.",
+      "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
       "siteProject": "appgprj_6ac27631f74c8191b52e4819c1973668",
-      "siteVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
-      "siteDeployment": "appgdep_6ac276cdd08481919ed7a436f9308775"
+      "siteVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+      "siteDeployment": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
+    },
+    {
+      "id": "kfb-hypernormalisation-curator",
+      "owner": "KFB ToolBox / Billboard Media Residency",
+      "url": "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site",
+      "status": "SITE_DEPLOYED_PRIVATE_CURATOR",
+      "source": "PR #354",
+      "humanStatus": "EDITORIAL_DATA_POPULATION_ACTIVE",
+      "notes": "Private curator/admin Site deployed. Canonical 130-deck browsing and quote-draft validation work; H13 runtime/3D/audio integration deliberately not started. Quote Pool research runs in normal Web Chat."
     }
-  ]
+  ],
+  "updatedAt": "2026-10-04T19:05:00+02:00"
 }
