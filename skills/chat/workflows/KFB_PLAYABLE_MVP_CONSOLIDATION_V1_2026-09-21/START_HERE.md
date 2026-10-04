@@ -7,6 +7,12 @@ Current receiving world is **KFB WorldBuilder / WB2** on Draft PR #332, not the 
 Current Resident MVP intake:
 `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
 
+Current global product/context reference:
+`../../KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`
+
+Digital-adaptation rule:
+**PULL, DON'T GATE.** Analog KFB/Cut&Play is the origin/reference layer; digital gameplay remains outcome-open for chill/fun, exploration and player-created meaning. Gate rewards/handoffs rather than world access wherever practical.
+
 Current Site/God Mode/Lean Memory architecture:
 `SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
 
