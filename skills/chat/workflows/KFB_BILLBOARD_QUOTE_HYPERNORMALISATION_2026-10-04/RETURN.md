@@ -1,113 +1,148 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
-Date: 2026-10-04
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVE 01 COMPLETE · GEORG CURATOR REVIEW PENDING
+Date: 2026-10-05
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–02 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: dc7c1498ef6313ef7e9ecfccb261783ac56ec0d6
+Last verified branch head before this Return write: dec02972692bf6c2a35bde96c9ec77016140fff7
 
-## Batch 01 · mapped canonical-deck pool
+## Georg continuation decision
 
-The first 10 canonical records from `media/kfb/index.json` were curated from their canonical Card JSONs:
+Georg explicitly asked on 2026-10-05 to keep filling the quote pool so longer stays on an island do not collapse into the same repeated quotations.
 
-1. `1001_kayfabe_nights` — Uncle FrizzleBob's 1001 Kayfabe Nights — 3 candidates
-2. `ai_kayfabe` — Roko's Basilisk & The AI Kayfabe Takeover — 3 candidates
-3. `academic_anarchy_intellectual` — Unseal the Academic Anarchy — Academic Alphas vs Brain Benders — 3 candidates
-4. `anti_rules_toolkit` — The Anti-Rules Manifesto — 3 candidates
-5. `big_bad_brain_wrestling` — Big Bad Brain Wrestling — 3 candidates
-6. `brain_flipper_image_spots` — The Brain-Flipper Pack — 3 candidates
-7. `cinematic_kayfabizarro_2` — Cinematic Legacy & Motion Picture Kayfabe — 3 candidates
-8. `cosmic_grift_dark_journalism` — Cosmic Grift – Dark Journalism — 3 candidates
-9. `forget_utopia` — Forget Utopia — 3 candidates
-10. `ignore_dystopia` — IGNORE DYSTOPIA — Anatomy of a Trap (Deck B) — 3 candidates
+Classification:
+**PROCEED PASS · RESEARCH EXPANSION**
 
-Mapped Batch 01 total: **30 quote candidates**.
+This closes the previous research-expansion pause. It does **not** approve any individual quote for public runtime and does not authorize runtime/3D work.
 
-Provenance:
-- VERIFIED (`PRIMARY_OR_EDITION_VERIFIED` or `DOUBLE_CHECKED`): **27**
-- `SECONDARY_ONLY`: **3**
-- `UNVERIFIED`: **0**
+## Current research inventory
 
-Rights:
-- `PUBLIC_DOMAIN_CONFIRMED`: **21**
-- `RESEARCHED_RESTRICTED`: **6**
-- `RESEARCHED_QUOTE_LIMIT_ONLY`: **2**
-- `DRAFT_RIGHTS_UNKNOWN`: **1**
+### Mapped Batch 01
 
-Validation: **13/13 PASS**.
+First 10 canonical decks from `media/kfb/index.json`:
+- 10 deck profiles researched;
+- 3 candidates per deck;
+- **30 mapped quote candidates** total;
+- provenance: **27 VERIFIED · 3 SECONDARY_ONLY · 0 UNVERIFIED**;
+- rights: **21 PUBLIC_DOMAIN_CONFIRMED · 6 RESEARCHED_RESTRICTED · 2 RESEARCHED_QUOTE_LIMIT_ONLY · 1 DRAFT_RIGHTS_UNKNOWN**;
+- validation: **13/13 PASS**.
 
-## Research Reserve 01 · deliberately unmapped
+File:
+`QUOTE_POOL_BATCH_01.json`
 
-Added **25 further quote + FrizzleQuestion candidates** selected for semantic strength independent of any one current deck.
+### Research Reserve 01
+
+- **25 deliberately unmapped quote + FrizzleQuestion candidates**;
+- provenance: **24 VERIFIED · 1 SECONDARY_ONLY · 0 UNVERIFIED**;
+- rights: **22 PUBLIC_DOMAIN_CONFIRMED · 2 RESEARCHED_RESTRICTED · 1 RESEARCHED_QUOTE_LIMIT_ONLY**;
+- validation: **14/14 PASS**.
 
 File:
 `QUOTE_RESEARCH_RESERVE_01.json`
 
-Reserve policy:
-- status = `RESEARCH_RESERVE`;
-- mapping status = `UNMAPPED_BY_DESIGN`;
-- **no deck/Card/island/biome/Billboard mapping is assigned yet**;
-- later curation may map a candidate many-to-many across canonical decks, island/biome contexts and concrete Billboard placements;
-- no candidate is made runtime-eligible merely by being in the reserve.
+### Research Reserve 02
 
-The reserve intentionally does **not** pretend to conform to `QUOTE_POOL_SCHEMA.json`, because that mapped runtime/pool schema requires `deckRefs`. A reserve candidate enters the mapped quote pool only after an explicit later curator mapping decision.
+Added on 2026-10-05 specifically to deepen future island/Billboard rotation:
 
-Reserve themes span:
-- uncertainty, doubt and scientific method;
-- attention, information and models;
-- automation, invention and cognitive offloading;
-- agency, obedience, contracts and power;
-- cooperation, competition and social systems;
-- status, consumption and performance;
-- appearance, reputation and hypocrisy;
-- misinformation, media speed and public narratives;
-- mortality, freedom and existential orientation;
-- medicine, observation and evidence.
+- **30 deliberately unmapped quote + FrizzleQuestion candidates**;
+- provenance: **30 VERIFIED · 0 SECONDARY_ONLY · 0 UNVERIFIED**;
+- rights: **29 PUBLIC_DOMAIN_CONFIRMED · 1 DRAFT_RIGHTS_UNKNOWN**;
+- validation: **16/16 PASS**;
+- zero quote-text or ID collisions against the prior 55-candidate inventory.
 
-Representative authors include Francis Bacon, Charles Darwin, T. H. Huxley, Henri Poincaré, Alfred North Whitehead, Mary Shelley, Adam Smith, Peter Kropotkin, Thorstein Veblen, Étienne de La Boétie, Mary Wollstonecraft, John Stuart Mill, Machiavelli, Hobbes, Bastiat, Pascal, Chesterton, Swift, George Bernard Shaw, H. G. Wells, Spinoza, La Rochefoucauld, Charles S. Peirce, Florence Nightingale and Claude Bernard.
+File:
+`QUOTE_RESEARCH_RESERVE_02.json`
 
-Reserve provenance:
-- VERIFIED: **24**
-- `SECONDARY_ONLY`: **1**
-- `UNVERIFIED`: **0**
+Reserve 02 expands semantic range across:
+- evidence vs theory;
+- language vs power;
+- crowd contagion and social imitation;
+- custom vs legitimacy;
+- resistance, law and counter-power;
+- institutional checks;
+- passion vs reasoning;
+- economics, work and abundance;
+- emergence vs deliberate design;
+- sentience and moral status;
+- selfhood and perceptual flux;
+- rationalization and preference;
+- interests vs principles;
+- historical selection;
+- abstraction vs particularity;
+- perspective limits;
+- empathy and other minds.
 
-Reserve rights:
-- `PUBLIC_DOMAIN_CONFIRMED`: **22**
-- `RESEARCHED_RESTRICTED`: **2**
-- `RESEARCHED_QUOTE_LIMIT_ONLY`: **1**
+Representative new authors include Arthur Conan Doyle, Lewis Carroll, Charles Mackay, Gustave Le Bon, Thomas Paine, Frederick Douglass, John Locke, James Madison, Montesquieu, Mark Twain, George Santayana, William Graham Sumner, David Hume, John Ruskin, Oscar Wilde, Charles Babbage, Adam Ferguson, Jeremy Bentham, Edmund Burke, John Maynard Keynes, Karl Marx & Friedrich Engels, Jane Austen, Ambrose Bierce, William Blake, Arthur Schopenhauer and George Eliot.
 
-Open reserve rights/provenance cases:
-- La Boétie's quoted Harry Kurz English translation remains `RESEARCHED_RESTRICTED`.
-- Bastiat's exact modern English rendering remains `RESEARCHED_RESTRICTED`.
-- Claude Bernard remains `SECONDARY_ONLY` + `RESEARCHED_QUOTE_LIMIT_ONLY` until the cited English edition/translator-term status is directly resolved.
+The one Reserve-02 open rights case is Gustave Le Bon's early English `The Crowd` edition: wording is edition-verified, but this batch did not establish the translator identity/term for EU public-runtime clearance. It stays `DRAFT_RIGHTS_UNKNOWN`.
 
-Reserve validation: **14/14 PASS**:
-- 25 candidates;
-- unique IDs;
-- every record `UNMAPPED_BY_DESIGN`;
+## Combined depth
+
+Current researched inventory:
+
+- mapped Batch 01: **30**
+- unmapped Reserve 01: **25**
+- unmapped Reserve 02: **30**
+- **combined: 85 researched quote/question candidates**
+
+Important:
+**85 researched candidates ≠ 85 approved quotes per island.**
+
+The two reserves remain:
+`UNMAPPED_BY_DESIGN`
+
+No deck/Card/island/biome/Billboard assignment is invented during research.
+
+## Rotation intent
+
+Reserve 02 records a research-only rotation intent so later mapping can create deeper island pools.
+
+Later selection should consider:
+- semantic/theme fit;
+- author diversity;
+- historical-era diversity;
+- tone diversity;
+- rights eligibility;
+- recent-repeat suppression.
+
+This supports Georg's product goal that a player can remain on an island for a while without seeing the same small quote set repeatedly.
+
+No runtime selector was modified in this slice.
+
+A future island should only be called meaningfully covered after its actually approved/mapped subset has enough depth for the intended play duration. No numeric island threshold is declared here without the later mapping/runtime context.
+
+## Validation / evidence
+
+Reserve 02 repository validation: **16/16 PASS**.
+
+Checked:
+- reserve schema id;
+- exactly 30 candidates;
+- unique local IDs;
+- unique local quote texts;
+- no ID collision with the prior 55 records;
+- no quote-text collision with the prior 55 records;
+- every candidate `UNMAPPED_BY_DESIGN`;
 - no premature deck/Card/island/Billboard/biome mapping fields;
-- exactly one FrizzleQuestion each;
-- provenance URLs present;
-- Brain Food present;
-- semantic themes/axes present;
-- billboard-reasonable quote lengths;
-- provenance and rights counts reconciled.
+- reserve status;
+- exactly one FrizzleQuestion per candidate;
+- question length bounds;
+- HTTPS provenance URLs;
+- Brain Food presence;
+- billboard-reasonable quote length;
+- verification / rights totals;
+- combined inventory = 85.
 
-## Combined research inventory
-
-- Mapped Batch 01: **30**
-- Unmapped Research Reserve 01: **25**
-- Combined researched candidates: **55**
-- No runtime/public approval is implied by the combined count.
+Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
+Screenshots/browser proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 ## Files
 
-Added:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_POOL_BATCH_01.json`
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_01.json`
+Added during Reserve 02:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_02.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -120,17 +155,15 @@ Not changed:
 - Billboard runtime/context;
 - Audio;
 - 3D;
-- Stage/runtime implementation;
-- Cloudflare/Live surfaces;
-- main router or KFB Hub runtime.
-
-Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
-Screenshots/browser proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
+- curator Site runtime/UI;
+- Cloudflare Stage/Live;
+- main router;
+- KFB Hub runtime.
 
 No merge. No Live promotion.
 
-## One next gate
+## One next productive step
 
-**Georg Curator Review Batch 01.**
+**Quote Research Reserve 03 — continue quality-first expansion with another non-duplicative research batch before island/deck/Billboard mapping.**
 
-The 25-item Research Reserve stays available for a later dedicated mapping pass to decks / islands-biomes / Billboards after the editorial review.
+Georg action required now: **nothing**.
