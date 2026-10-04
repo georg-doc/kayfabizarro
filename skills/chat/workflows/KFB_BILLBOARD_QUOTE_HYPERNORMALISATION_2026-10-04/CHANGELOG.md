@@ -52,3 +52,13 @@
 - Conservative open-source cases retained instead of promoted: Wittgenstein English translation, Woolf edition-level locator, Vertov English translation, Debord English-translation rights, plus territorial limits for Lippmann and Mencken.
 - No runtime, H13, Billboard, Audio, 3D, Stage, merge or Live changes.
 
+## 2026-10-04 · Quote Research Reserve 01
+
+- Added `QUOTE_RESEARCH_RESERVE_01.json` with **25 additional quality-first quote + FrizzleQuestion candidates** for later cross-context curation.
+- This reserve is intentionally `UNMAPPED_BY_DESIGN`: no deck, Card, island/biome or Billboard refs are assigned yet. Later curation may map one candidate many-to-many across those contexts.
+- Provenance: **24 VERIFIED**, **1 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **22 PUBLIC_DOMAIN_CONFIRMED**, **2 RESEARCHED_RESTRICTED**, **1 RESEARCHED_QUOTE_LIMIT_ONLY**.
+- Reserve validation: **14/14 PASS** including unique IDs, unmapped-only policy, absence of premature mapping fields, exactly one FrizzleQuestion per candidate, HTTPS provenance and reconciled rights/provenance counts.
+- The reserve intentionally does not pretend to satisfy `QUOTE_POOL_SCHEMA.json`, because that runtime/pool schema requires a deck mapping. Candidates enter the mapped quote pool only after a later curator decision.
+- No H13, Billboard, Audio, 3D, Stage/runtime, main-router, Hub-runtime, merge or Live changes.
+
