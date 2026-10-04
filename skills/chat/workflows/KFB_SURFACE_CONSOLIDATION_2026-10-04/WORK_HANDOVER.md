@@ -208,6 +208,84 @@ The Return must explicitly document:
 - exact command/action/tool used for a routine update;
 - proof by changing one test TODO/status after publication and showing it in the Current UI **without another Work implementation pass**.
 
+## Binding operating rule after this consolidation · NO WORK FOR ROUTINE UI / CSS / LAYOUT
+
+The same no-Work principle applies to ordinary presentation work.
+
+After this consolidation, Georg must be able to change and optimise the Production Hub, Production Control and ToolBox presentation without starting another Work engineering run.
+
+Routine presentation changes include:
+- theme and colour tokens;
+- typography scale;
+- spacing and density;
+- card sizing;
+- grid/flex layout;
+- section ordering;
+- labels/headings;
+- button styling;
+- borders/shadows/radius;
+- responsive breakpoints and mobile stacking;
+- navigation emphasis;
+- visibility of already-existing sections/fields;
+- minor CSS transitions/animation tuning.
+
+These are **presentation configuration**, not Work-level engineering.
+
+### Required presentation ownership
+
+Create or preserve one small separable presentation layer for each surface, preferably shared where appropriate.
+
+Preferred forms:
+1. runtime-consumed theme/layout config;
+2. small canonical CSS/design-token/config source with deterministic lightweight publish;
+3. existing Site-native editable styling mechanism when available.
+
+Do not bury routine styling in large application/runtime files when a smaller presentation layer can own it.
+
+Do not create a second UI/runtime stack merely to make styling editable.
+
+### Normal Web Chat path
+
+Normal Web Chat must be able to:
+1. inspect the canonical presentation config/CSS;
+2. apply a bounded styling/layout change;
+3. run the narrow relevant check;
+4. use a deterministic low-cost Site refresh only if host publication is required;
+5. verify the exact Site.
+
+No Work reasoning is required for ordinary CSS/theme/layout/responsive optimisation.
+
+### Mandatory proof
+
+After the consolidated Sites are published:
+1. change one harmless visible presentation property, such as card spacing, heading size or grid density;
+2. do not start another Work implementation pass;
+3. do not edit business/runtime logic;
+4. apply the change through the documented normal Web Chat / low-cost presentation path;
+5. visibly verify it on the exact Site;
+6. restore it if it was only a test.
+
+The Return must document:
+- canonical presentation owner/file/config;
+- normal Web Chat edit path;
+- whether changes are runtime-live, config-live, or require deterministic lightweight Site publish;
+- exact action/tool used;
+- proof of one presentation change without Work.
+
+### Work boundary
+
+Work remains appropriate for actual engineering such as:
+- a new component type;
+- a new data schema;
+- a new data-source integration;
+- authentication/permissions changes;
+- routing/runtime architecture changes;
+- complex new interaction behaviour;
+- breaking component refactors;
+- genuine Site/platform defects.
+
+Work is **not** required merely for visual hierarchy, CSS, spacing, typography, responsive tuning, theme changes, or rearranging existing sections/components.
+
 ## Required Work sequence
 
 ### Phase A · Resolve ToolBox first
