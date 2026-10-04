@@ -157,20 +157,20 @@
     },
     "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
     "integratedBrowserLatestCompleted": {
-      "receivingHead": "44d905b882a77bfc09086835fb5a16947db3debc",
-      "testedPRMergeHead": "bbb2b23178c35024393a21026d1781225fe55a97",
-      "run": 37192276887,
-      "artifact": 11299454780,
-      "sha256": "f1e96923dd6be0114e850769024951e09a20cd18d15142fe2372cdcd2959df70",
+      "receivingHead": "e724374cdd92ec4e68c1ed23463d33dba9462275",
+      "testedPRMergeHead": "d93e374112dace993eb5e66caaf57e1a485112fe",
+      "run": 37193102424,
+      "artifact": 11299569133,
+      "sha256": "664e6837a8fd6ae27e867fc6c05f4c3b1dfdccc0200da704273decbbd2f17de9",
       "passedGates": [
         "native required loader and one scene owner",
-        "verified world master and shared physical ambience"
+        "verified world master and shared physical ambience",
+        "Clown real card handoff"
       ],
-      "failedGate": "Clown BINGO visibility wait10s",
+      "failedGate": "Driver walking route deadline300s",
       "actualProgress": [
-        "selectedTarget=town.clown",
-        "native met receipt persisted",
-        "native BINGO/BONGO/BOGGLE bubble visible in failure capture"
+        "Clown native card and quest receipt",
+        "Native Ground player moved from [-19,1] to [-12.244896,-12.842395]"
       ],
       "pageConsoleErrors": 0,
       "wholeGamePass": false
@@ -191,6 +191,10 @@
         "Restore established input .25/capture .5 settings"
       ],
       "productBehaviorChanged": false
+    },
+    "continuousHeldInputCandidate": {
+      "status": "NOT_BROWSER_PROVEN",
+      "change": "Hold actual native key to measured waypoint progress / target heading, instead of tiny sequential key pulses. Native simulation and collisions unchanged. Include actual frame metrics in checkpoint. Fix capped telemetry ring cadence to every30frames."
     }
   },
   "lastProven": {
