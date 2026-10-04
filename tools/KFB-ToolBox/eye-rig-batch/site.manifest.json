@@ -1,0 +1,86 @@
+{
+  "schema": "kfb.site-publish/0.1-candidate",
+  "id": "kfb-eyerig-unified",
+  "title": "KFB EyeRig Workbench",
+  "owner": "KFB ToolBox / Rigging",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "toolbox/eye-rig-batch-2026-09-18",
+  "sourceHead": "9247d6b3832bdb73fac20d55bf76a766bc2d4453",
+  "sourceRoot": "tools/KFB-ToolBox/eye-rig-batch/",
+  "entrypoint": "index.html",
+  "publicationTarget": "ChatGPT Site",
+  "publicationStatus": "SITE_PUBLISH_PENDING_WORK",
+  "acceptanceSurfacePolicy": "The productive human review surface is the Site. Cloudflare Stage is retained only as recovery/regression infrastructure and is not the intended daily authoring surface.",
+  "runtimeOwner": {
+    "pullRequest": 104,
+    "ui": "single Batch EyeRig Atlas",
+    "classes": [
+      "Rig_Medium",
+      "Rig_Large",
+      "Rig_Legacy"
+    ],
+    "classSwitch": [
+      "Medium",
+      "Large",
+      "Legacy"
+    ],
+    "storageKey": "kfb.toolbox.eye-rig-batch.v0"
+  },
+  "classData": {
+    "Rig_Medium": {
+      "catalog": "data/rig-medium-actors.v0.json",
+      "count": 55,
+      "seed": "data/rig-medium-default.v0.json"
+    },
+    "Rig_Large": {
+      "catalog": "data/rig-large-actors.v0.json",
+      "count": 8,
+      "seed": "data/rig-large-default.v0.json",
+      "reviewed": "data/rig-large-reviewed.v1.json"
+    },
+    "Rig_Legacy": {
+      "catalog": "data/rig-legacy-heads.v0.json",
+      "count": 17,
+      "seed": "data/rig-legacy-default.v0.json",
+      "profiles": "data/rig-legacy-auto.v1.json",
+      "sourcePR": 162
+    }
+  },
+  "legacyDonors": {
+    "rigAdapter": {
+      "path": "lib/legacy/legacy-rig-adapter.v1.js",
+      "blob": "41ba111d264cb73f2b3fbd70370dbb0ba042c91d",
+      "sourceRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89"
+    },
+    "faceHost": {
+      "path": "lib/legacy/legacy-facehost.v1.js",
+      "blob": "186323777ff78a9e4f4a246ad10232dd8ef82bc9",
+      "sourceRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89"
+    },
+    "eyeAdapter": "lib/legacy-eye-adapter.v1.js"
+  },
+  "preservedFeatures": [
+    "Control R2",
+    "inline numeric editing",
+    "25 source-palette families / 56 appearances",
+    "bounded wheel zoom v2",
+    "Neutral / Clay K1 view",
+    "Medium/Large saved profile persistence",
+    "Legacy 17/17 persisted profile preload",
+    "common review states and JSON import/export"
+  ],
+  "externalRuntimeDependencies": [
+    "three@0.160.0 via jsDelivr import map",
+    "source-pinned KayKit GLB/GLTF/textures via jsDelivr GitHub revisions",
+    "pinned EyeRig v6 / EyeOval modules where already owned by current adapters"
+  ],
+  "checks": {
+    "focusedUnified": "33/33 PASS",
+    "staticContract": "160 assertions persisted · NOT_RUN on this head because no GitHub Actions run exists",
+    "legacyHistorical": "24/24 static + 247/247 browser/WebGL; 30/30 profile + 215/215 persisted remount",
+    "mediumLargeHumanBaseline": "HUMAN_ACCEPTED before unified integration"
+  },
+  "publishGate": "EYE_RIG_UNIFIED_SITE_PUBLISH_01",
+  "firstSiteHumanGate": "GEORG_EYERIG_UNIFIED_SITE_01",
+  "mergePolicy": "No auto-merge. No Live promotion."
+}
