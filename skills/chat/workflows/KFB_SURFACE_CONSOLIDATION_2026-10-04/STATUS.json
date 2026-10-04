@@ -5,23 +5,24 @@
   "owner": "KFB production surfaces",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/surface-consolidation-2026-10-04",
-  "state": "WORK_HANDOVER_READY",
+  "state": "IMPLEMENTATION_COMPLETE_PUBLICATION_PENDING",
   "humanRule": "ONE_BOOKMARK_PRODUCTION_HUB",
   "canonical": {
     "productionHub": {
       "role": "HUMAN_FRONT_DOOR",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "STALE_UNTIL_CONSOLIDATION_REPUBLISH"
+      "status": "DATA_DRIVEN_SOURCE_READY_PUBLICATION_PENDING"
     },
     "productionControl": {
       "role": "CONTROL_LEDGER",
       "url": "https://kfb-production-control.frizzlebob.chatgpt.site/",
-      "status": "DATA_CURRENT_UI_STALE_UNTIL_CURRENT_HISTORY_SPLIT"
+      "status": "CURRENT_HISTORY_SPLIT_BUILT_PUBLICATION_PENDING"
     },
     "toolbox": {
       "role": "TOOLBOX_ROUTER",
-      "url": null,
-      "status": "RESOLVE_EXISTING_OR_CREATE_EXACTLY_ONE"
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+      "projectId": "appgprj_6ac2ba44282881919d1a49287a32054e",
+      "status": "EXACTLY_ONE_SITE_CREATED_PUBLICATION_PENDING"
     }
   },
   "specialistSites": [
@@ -31,7 +32,7 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "WORK_RESOLVE_TOOLBOX_THEN_CONTROL_THEN_HUB_AND_PROVE_DATA_AND_PRESENTATION_EDITS_WITHOUT_WORK",
+  "next": "PUBLISH_CONTROL_TOOLBOX_HUB_THEN_PROVE_DATA_AND_PRESENTATION_EDITS_WITHOUT_WORK",
   "forbidden": [
     "duplicate dashboards",
     "multiple current ToolBox front doors",

@@ -122,12 +122,13 @@
     {
       "id": "kfb-toolbox",
       "owner": "KFB ToolBox",
-      "url": null,
-      "status": "CANONICAL_FRONT_DOOR_REQUIRED",
-      "source": "tools/KFB-ToolBox/START_HERE.md + TOOLBOX_MANIFEST.json",
-      "humanStatus": "CONSOLIDATION_REQUIRED",
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+      "status": "SITE_CREATED_PUBLICATION_PENDING",
+      "source": "tools/KFB-ToolBox/site + TOOLBOX_MANIFEST.json",
+      "humanStatus": "PUBLICATION_PENDING",
       "surfaceRole": "TOOLBOX_ROUTER",
-      "notes": "Exactly one canonical GPT Site front door must route to current specialist tools. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors. Work must first resolve whether an existing ToolBox GPT Site project already exists; update it if found, otherwise create exactly one."
+      "siteProject": "appgprj_6ac2ba44282881919d1a49287a32054e",
+      "notes": "No existing ToolBox Site was found. Exactly one canonical GPT Site project was created. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors."
     }
   ],
   "updatedAt": "2026-10-04T21:55:00+02:00",

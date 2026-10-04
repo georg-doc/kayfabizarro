@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.toolbox-router/1",
+  "revision": "2026-10-04.1",
+  "updatedAt": "2026-10-04T22:30:00+02:00",
+  "home": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+  "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+  "groups": [
+    {
+      "id": "current",
+      "title": "Aktuelle Spezialwerkzeuge",
+      "note": "Produktive Werkzeuge mit genau einem eigenen Owner.",
+      "items": [
+        {"title":"EyeRig Workbench","summary":"Medium, Large und Legacy EyeRig Profile prüfen und weiterführen.","status":"CURRENT","url":"https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"},
+        {"title":"Asset Librarian","summary":"Assets prüfen, Sets vorbereiten und den WorldBuilder-Handoff steuern.","status":"CURRENT · REVIEW","url":"https://kfb-asset-librarian.frizzlebob.chatgpt.site/"},
+        {"title":"KFB Audio","summary":"Audio- und Soundscape-Baseline; Erweiterung bleibt consumer-driven.","status":"CURRENT","url":"https://kfb-audio.frizzlebob.chatgpt.site"},
+        {"title":"FrankenStein Composer","summary":"Echte Donors isolieren und zu reversiblen Actor Recipes zusammensetzen.","status":"CURRENT · INTEGRATION","url":"https://kfb-frankenstein-composer.frizzlebob.chatgpt.site"},
+        {"title":"Hypernormalisation Curator","summary":"Deck- und Quote-Entwürfe kuratieren; Recherche läuft im normalen Web Chat.","status":"CURRENT","url":"https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"}
+      ]
+    },
+    {
+      "id": "prepared",
+      "title": "Vorbereitet",
+      "note": "Noch kein produktiver Site-Einstieg.",
+      "items": [
+        {"title":"Environment Atlas","summary":"Corpus Recovery ist aktiv; Site entsteht erst aus den echten Quellen.","status":"PREPARED · NOT PUBLISHED"},
+        {"title":"ChatterBox + Comic VFX","summary":"Design-Lane ist geplant; noch kein Runtime-Owner und keine Site.","status":"PLANNED"}
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Legacy / Donor History",
+      "note": "Quellen bleiben erhalten, sind aber keine aktuellen Front Doors.",
+      "items": [
+        {"title":"ToolBox Home + Cloudflare Stage","summary":"Historischer Router und QA-Donor. Nicht als aktueller Einstieg verwenden.","status":"HISTORY DONOR","url":"https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/"},
+        {"title":"Studio / Rigging / Animation standalones","summary":"Authoring-Donors im Repository. Aktuelle Produktarbeit läuft über die Specialist Sites.","status":"SOURCE DONOR","url":"https://github.com/georg-doc/kayfabizarro/tree/chatgpt-web/surface-consolidation-2026-10-04/tools/KFB-ToolBox"},
+        {"title":"Birthday / Recovery surfaces","summary":"Abgeschlossene oder verworfene Produktionsgeschichte; nur für Provenienz.","status":"ARCHIVE"}
+      ]
+    }
+  ]
+}

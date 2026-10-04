@@ -2,7 +2,7 @@
   "schema": "kfb.toolbox-onboarding/1",
   "version": "2.0.0",
   "updated": "2026-10-04",
-  "status": "CANONICAL_FRONT_DOOR_CONSOLIDATION_REQUIRED",
+  "status": "CANONICAL_FRONT_DOOR_CREATED_PUBLICATION_PENDING",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
   "router": "skills/chat/START_HERE.md",
@@ -192,8 +192,9 @@
   "frontDoor": {
     "role": "TOOLBOX_ROUTER",
     "rule": "EXACTLY_ONE_CANONICAL_GPT_SITE",
-    "url": null,
-    "status": "RESOLVE_EXISTING_PROJECT_OR_CREATE_ONE",
+    "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "projectId": "appgprj_6ac2ba44282881919d1a49287a32054e",
+    "status": "SITE_CREATED_PUBLICATION_PENDING",
     "legacyStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
     "legacyStageRole": "HISTORY_DONOR_NOT_CURRENT_FRONT_DOOR"
   },

@@ -98,12 +98,14 @@ Owner:
 KFB Production Control
 
 State:
-**PRODUCTIVE · CURRENT PORTFOLIO RECORDS REFRESHED**
+**PRODUCTIVE DATA OWNER · CURRENT/HISTORY SPLIT BUILT · PUBLICATION PENDING**
 
 Current workflow:
 `KFB-PORTFOLIO-ROUTER-01`
 
 Current data now includes the portfolio board, two P0 human gates, P1 next briefings, cheap parallel lanes, provider-comparison HOLD and Production-Hub PUBLISH_ONLY status.
+
+The Site source now reads CURRENT records directly from its D1 store. CURRENT is the default view; additive history is a secondary tab. It is deliberately not another daily dashboard.
 
 
 ### KFB World Studio MVP1
@@ -223,14 +225,29 @@ Owner:
 HUB-CTRL / Production Hub
 
 State:
-**DEPLOYED PRIVATE MIRROR · CURRENT BOARD SOURCE REFRESHED · PUBLISH_ONLY PENDING**
+**DATA-DRIVEN CURRENT BOARD BUILT · CONSOLIDATION PUBLICATION PENDING**
 
-The GitHub source now has the reconciled Today list, Briefings, current quick links and Production Control link. Exact publish packet:
-`skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md`
+The GitHub source now has a small data-driven CURRENT board, links to exactly one ToolBox and to Production Control/history, and no competing tool/runtime ownership.
 
 Role:
 one human entry point to the current production surfaces.
 Do not turn it into another runtime or spend High Reasoning on the host refresh.
+
+### KFB ToolBox
+URL:
+https://kfb-toolbox.frizzlebob.chatgpt.site
+
+Owner:
+KFB ToolBox
+
+State:
+**EXACTLY ONE SITE PROJECT CREATED · PUBLICATION PENDING**
+
+Site project:
+`appgprj_6ac2ba44282881919d1a49287a32054e`
+
+Role:
+one router to current specialist tools. Old ToolBox Home/Stage and standalone Studio/Rigging/Animation surfaces are visibly classified as history/donors and may not compete as current front doors.
 
 ## Prepared but not yet published
 
