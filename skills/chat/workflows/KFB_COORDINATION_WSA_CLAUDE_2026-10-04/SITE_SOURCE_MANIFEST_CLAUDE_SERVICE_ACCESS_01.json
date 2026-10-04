@@ -36,6 +36,24 @@
     "configuredInThisRun": false,
     "secretValuesPersisted": false
   },
+  "claudeConnector": {
+    "url": "https://kfb-production-control.frizzlebob.chatgpt.site/mcp",
+    "authentication": "No sign in",
+    "headers": [
+      {
+        "name": "OAI-Sites-Authorization",
+        "valueFormat": "Bearer <Sites SIWC bypass token>",
+        "destination": "Claude connector only"
+      },
+      {
+        "name": "x-kfb-agent-key",
+        "valueFormat": "<raw KFB_CLAUDE_COWORK_AGENT_KEY>",
+        "destination": "Claude connector"
+      }
+    ],
+    "smokeExecutor": "Claude Coworker",
+    "configuredInThisRun": false
+  },
   "publication": {
     "siteSourcePushed": true,
     "savedVersionCreated": false,

@@ -11,15 +11,17 @@ Die bestehende private KFB Production Control bleibt dieselbe Site. Der normale 
 
 Claude erhält keine erfundene OpenAI-Nutzerkennung. Service-Aktionen können nur die bestehenden 11 Werkzeuge nutzen. Andere Nutzer/Scopes sowie Delete-, Priority-, Layout- und Order-Mutationen werden abgewiesen. Jede Service-Schreibaktion speichert Scope, Principal, Zeit und Quelle; diese Angaben erscheinen in der bestehenden Historie.
 
-Es wurden keine Secrets erzeugt, abgefragt, gespeichert oder ausgegeben. Die beiden benötigten Site-Umgebungswerte sind noch nicht gesetzt. Deshalb wurde weder eine neue Site-Version gespeichert noch deployed.
+Es wurden keine Secrets erzeugt, abgefragt, gespeichert oder ausgegeben. Die beiden benötigten Site-Umgebungswerte sind noch nicht gesetzt; zusätzlich braucht der Claude-Konnektor den separaten Sites-Service-Token. Deshalb wurde weder eine neue Site-Version gespeichert noch deployed.
+
+Claude Coworker's Review ist akzeptiert. Die vollständige Claude-Seite steht in `RESPONSE_WSA_CLAUDE_SERVICE_ACCESS_01_CLAUDE_SIDE.md`: exakte Header, Token-Lebenszyklus, Owner-ID-Lookup und korrigierte Zuständigkeit für den Smoke.
 
 ## Wer macht jetzt was?
 
-Georg setzt die beiden Werte sicher in der bestehenden Site. Danach führt ein günstiger Sites-fähiger Executor ausschließlich den vorbereiteten PUBLISH_ONLY-Handover aus und Claude macht den kleinen MCP-Smoke.
+Georg autorisiert und konfiguriert die drei Werte an ihren zwei Zielorten. Danach führt ein günstiger Sites-fähiger Executor ausschließlich den vorbereiteten PUBLISH_ONLY-Handover und die neun Server-/Hosttests aus. Claude Coworker macht anschließend den Claude-Smoke.
 
 ## Was musst du tun?
 
-Zwei Werte in der bestehenden KFB Production Control anlegen: den separaten Claude-Agent-Key und die feste Georg-Owner-Bindung. Werte nicht in den Chat kopieren.
+Den Agent-Key im Passwortmanager erzeugen und den secret-sicheren Setup-Lauf autorisieren. Werte nicht in den Chat kopieren. Der Sites-Service-Token gehört nur in den Claude-Header; Agent-Key und Owner-ID gehören in die Site-Umgebung.
 
 ## Was passiert danach?
 
@@ -42,6 +44,8 @@ Die bestehende private Production Control wird einmal aus dem getesteten Candida
 - Publication: **NOT DEPLOYED**; latest Site version remains 78
 - Access: unchanged `custom` / owner-private
 - Secrets: no values in GitHub, logs or Return; environment currently unconfigured
-- Exact supporting files: `SITE_SOURCE_MANIFEST_CLAUDE_SERVICE_ACCESS_01.json`, `TEST_REPORT_CLAUDE_SERVICE_ACCESS_01.md`, `PUBLISH_ONLY_HANDOVER_CLAUDE_SERVICE_ACCESS_01.md`
+- Claude connector: `No sign in`; `OAI-Sites-Authorization: Bearer <token>` plus `x-kfb-agent-key: <raw agent key>`
+- Smoke owner: Claude Coworker, not the PUBLISH_ONLY executor
+- Exact supporting files: `SITE_SOURCE_MANIFEST_CLAUDE_SERVICE_ACCESS_01.json`, `TEST_REPORT_CLAUDE_SERVICE_ACCESS_01.md`, `PUBLISH_ONLY_HANDOVER_CLAUDE_SERVICE_ACCESS_01.md`, `RESPONSE_WSA_CLAUDE_SERVICE_ACCESS_01_CLAUDE_SIDE.md`
 
-Exactly one next gate: **secure env entry → PUBLISH_ONLY deploy of candidate `cfe4c791…` → Claude smoke.**
+Exactly one next gate: **secret-safe connector + env setup → PUBLISH_ONLY deploy of candidate `cfe4c791…` → Claude Coworker smoke.**
