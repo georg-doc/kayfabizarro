@@ -80,7 +80,7 @@ Product behavior:
 - FrizzleBob is desired/preselected;
 - player may switch to a source-proven alternative;
 - selection is optional, never a forced creator gate;
-- first QA roster is FrizzleBob v5b candidate, ActionFigure / Rig_Medium and Black Knight / Rig_Large; GothGirl / Rig_Medium is optional Stage QA;
+- first QA roster is FrizzleBob v5b candidate, Mannequin_Medium / Rig_Medium and Black Knight / Rig_Large; GothGirl is optional Stage QA and ActionFigure is compatibility-smoke only;
 - Enter appears only when the currently selected Actor and its minimum required motion set are ready;
 - world loading and Actor loading remain explicit, real loader facts.
 
