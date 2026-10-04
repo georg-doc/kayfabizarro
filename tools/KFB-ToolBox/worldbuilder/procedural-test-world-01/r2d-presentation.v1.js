@@ -53,13 +53,14 @@ export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
       if(i===NR)edgeY[a]=y;put(x,y,z,cw);
     }
   }
+  const meanEdgeY=edgeY.reduce((a,b)=>a+b,0)/NA;
   for(let j=1;j<=NU;j++){
     const s=j/NU;
     for(let a=0;a<NA;a++){
       const th=a/NA*Math.PI*2;
-      let rf=(1+.05*Math.sin(Math.min(1,s/.1)*Math.PI))*Math.pow(1-s,1.15);
+      let rf=(1+.05*Math.sin(Math.min(1,s/.1)*Math.PI))*Math.pow(1-s,.7);
       rf*=1+.1*fbm(th*2.2,s*5,seed+31)*sstep(.05,.3,s);
-      const rr=edgeR[a]*rf,y=edgeY[a]-.9*sstep(0,.1,s)-depth*Math.pow(s,.8)*(1+.16*Math.sin(th*3+seed)+.11*Math.sin(th*5-seed))+.8*fbm(th*3,s*3,seed+41)*sstep(.1,.4,s);
+      const rr=edgeR[a]*rf,y=(edgeY[a]*(1-s)+meanEdgeY*s)-.9*sstep(0,.1,s)-depth*Math.sin(s*Math.PI/2)*(1+(.16*Math.sin(th*3+seed)+.11*Math.sin(th*5-seed))*(1-s))+.8*fbm(th*3,s*3,seed+41)*sstep(.1,.4,s)*(1-s);
       const band=fbm(y*.35+th*.6,th,seed+51)>.05?.78:1,cw=rock.map(v=>v*band*(1-.25*s));
       put(c0[0]+Math.cos(th)*rr+((lifeTreeRecipe?.position[0]??c0[0])-c0[0])*s*s,y,c0[1]+Math.sin(th)*rr+((lifeTreeRecipe?.position[2]??c0[1])-c0[1])*s*s,cw);
     }

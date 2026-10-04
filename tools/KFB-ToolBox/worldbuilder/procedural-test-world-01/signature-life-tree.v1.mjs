@@ -76,6 +76,12 @@ export function createLifeTree(THREE,recipe,plan,field,{corridors=[],anchors=[],
   tube([...points,[end[0]-ca*2,end[1]-4,end[2]-sa*2],mid,tip],B*.62,.025,'continuous surface and hanging root '+k);
   for(let b=0;b<2;b++)tube([mid,[mid[0]+ca*(3+b*3),mid[1]-3,mid[2]+sa*(3+b*3)], [mid[0]+ca*(4+b*4)+sa*2,mid[1]-7-b*2,mid[2]+sa*(4+b*4)-ca*2]],.65,.02,'root fork '+k+'/'+b);
  }
+ // Central structural roots knit the buried trunk through the captured earth.
+ for(let k=0;k<3;k++){const a=k*Math.PI*2/3+hash(S)*1.4,ca=Math.cos(a),sa=Math.sin(a),d=18+k*2;
+  const mid=[x+ca*5,y-d*.65,z+sa*5],tip=[x+ca*(8+k*2),y-d,z+sa*(8+k*2)];
+  tube([[x,y-3,z],[x+ca*2,y-9,z+sa*2],mid,tip],B*.95,.15,'central structural root '+k);
+  for(let j=0;j<2;j++)tube([mid,[mid[0]+sa*(j?3:-3),mid[1]-4,mid[2]-ca*(j?3:-3)],[tip[0]+sa*(j?5:-5),tip[1]-3,tip[2]-ca*(j?5:-5)]],1,.025,'central root fork '+k+'/'+j);
+ }
  // Authored biography is geometry, not merely recipe tags.
  if(recipe.paletteKey==='burg')for(let k=0;k<5;k++){
   const a=k*2.3,yy=y+3+k*2.5,rad=B*(1-(yy-y)/H*.5);
@@ -89,6 +95,6 @@ export function createLifeTree(THREE,recipe,plan,field,{corridors=[],anchors=[],
  if(recipe.paletteKey==='protopia'||recipe.paletteKey==='utopia')for(let k=0;k<3;k++){
   const yy=y+H*(.27+k*.12),g=new THREE.TorusGeometry(B*(.85-k*.09),.14,6,20);g.rotateX(Math.PI/2);g.translate(x+L[0]*(yy-y)/H,yy,z+L[1]*(yy-y)/H);const m=new THREE.Mesh(g,accent);m.name=recipe.paletteKey==='protopia'?'graft repair':'maintenance seam';root.add(m);
  }
- root.userData.signatureLifeTree=recipe;root.userData.sourceRecord={assetId:recipe.id,packId:'KFB Signature Life Tree / H0',source:{commit:'425d07d25cde5a66703561be616bb23fb866f4d7',path:'signature-life-tree.v1.mjs',blobSha:null}};
+ root.userData.signatureLifeTree=recipe;root.userData.sourceRecord={assetId:recipe.id,packId:'KFB Signature Life Tree / H0',source:{commit:'9d397e6f9e520e22a9b30ec6e5b78ae1eab09339',path:'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/signature-life-tree.v1.mjs',blobSha:null}};
  return {root,obstacles,recipe,tick(time){crown.position.x=Math.sin(time*.55+S%19)*.045;crown.position.z=Math.cos(time*.43+S%23)*.04},dispose(){root.traverse(o=>{o.geometry?.dispose();if(o.isMesh)o.material.dispose()})}};
 }

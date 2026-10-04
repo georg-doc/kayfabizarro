@@ -1,0 +1,83 @@
+{
+  "status": "GEOMETRY_ONLY_NOT_VISUAL_PASS",
+  "streams": [
+    {
+      "id": "world.kfb-town",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 161,
+      "centreErr": 0,
+      "markings": 5,
+      "triangles": 21890,
+      "connected": true,
+      "corridorSegments": 160
+    },
+    {
+      "id": "world.dystopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 159,
+      "centreErr": 0,
+      "markings": 5,
+      "triangles": 21606,
+      "connected": true,
+      "corridorSegments": 158
+    },
+    {
+      "id": "world.utopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 179,
+      "centreErr": 0,
+      "markings": 5,
+      "triangles": 24286,
+      "connected": true,
+      "corridorSegments": 178
+    },
+    {
+      "id": "world.protopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 167,
+      "centreErr": 0,
+      "markings": 5,
+      "triangles": 22694,
+      "connected": true,
+      "corridorSegments": 166
+    },
+    {
+      "id": "route.town-dystopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 380,
+      "centreErr": 0,
+      "markings": 4,
+      "triangles": 51128,
+      "connected": true,
+      "corridorSegments": 379
+    },
+    {
+      "id": "route.town-utopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 460,
+      "centreErr": 0,
+      "markings": 3,
+      "triangles": 61740,
+      "connected": true,
+      "corridorSegments": 459
+    },
+    {
+      "id": "route.town-protopia",
+      "donor": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+      "samples": 502,
+      "centreErr": 0,
+      "markings": 3,
+      "triangles": 67368,
+      "connected": true,
+      "corridorSegments": 501
+    }
+  ],
+  "regressions": [
+    "immutable input streams",
+    "finite vertices",
+    "valid indices",
+    "edge crossing",
+    "containment",
+    "setback"
+  ]
+}

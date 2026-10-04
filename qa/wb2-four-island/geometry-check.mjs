@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import * as THREE from 'three';
+import * as TC from './donor-track-core.mjs';
+import {makeArchipelago} from '../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js';
+import {buildClayStrand} from '../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-strand.v1.js';
+import {createPresentationAtlas} from '../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-source/transition-presentation.js';
+import {prepareJoyride} from '../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-world-context.v1.js';
+import {trackCorridor,polygonDistance,checkFootprint} from '../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/world-clearance.v1.mjs';
+import {makeClayUniforms} from '../../tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-material.v10.js';
+const base='tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/';
+const read=p=>JSON.parse(fs.readFileSync(base+p));
+const arch=makeArchipelago(read('WORLD_RECIPES.json'),TC),MR=read('joyride-source/road-markings.m1.json'),M2=read('joyride-source/road-markings.m2.json'),T=read('joyride-source/transition-profiles.v1.json');
+const palette={grass:'#7cba48',lip:'#5f9a38',sand:'#e3c98f',rock:'#9b6b4a',paved:'#e8dcc6'};
+const U=makeClayUniforms(THREE,new THREE.DataTexture(new Uint8Array([128,128,128,255]),1,1));
+const streams=[...arch.nodes.map(n=>({id:n.id,stream:n.plan.stream})),...arch.connections];
+const nativeFetch=globalThis.fetch;globalThis.fetch=async url=>String(url).startsWith('file:')?{ok:true,json:async()=>JSON.parse(fs.readFileSync(new URL(url)))}:nativeFetch(url);
+const context=await prepareJoyride(arch);
+const report=[];let all=[];
+for(const {id,stream} of streams){
+ const before=JSON.stringify(stream),L=stream.samples.at(-1).s;
+ const {atlas,...config}=context.contexts.get(id);
+ const root=buildClayStrand(THREE,stream,{U,palette,atlas,...config});
+ assert.equal(JSON.stringify(stream),before,'presentation mutated Track Core');
+ root.traverse(o=>{if(o.isMesh){for(const v of o.geometry.attributes.position.array)assert(Number.isFinite(v));for(const v of o.geometry.index?.array||[])assert(v<o.geometry.attributes.position.count)}});
+ const corridor=trackCorridor(stream,atlas,id,id.startsWith('route')?'bridgehead':'track');all.push(...corridor);
+ report.push({id,...root.userData.joyride,corridorSegments:corridor.length});
+}
+assert.equal(polygonDistance([[-4,-1],[4,-1],[4,1],[-4,1]],[[-1,-4],[1,-4],[1,4],[-1,4]]),0,'crossing edges');
+assert.equal(polygonDistance([[0,0],[10,0],[10,10],[0,10]],[[3,3],[4,3],[4,4],[3,4]]),0,'contained polygon');
+assert.equal(polygonDistance([[0,0],[1,0],[1,1],[0,1]],[[3,0],[4,0],[4,1],[3,1]]),2,'setback');
+fs.mkdirSync('evidence',{recursive:true});fs.writeFileSync('evidence/joyride-geometry.json',JSON.stringify({status:'GEOMETRY_ONLY_NOT_VISUAL_PASS',streams:report,regressions:['immutable input streams','finite vertices','valid indices','edge crossing','containment','setback']},null,2));
+console.log(JSON.stringify(report));
+export {arch,all as corridors};

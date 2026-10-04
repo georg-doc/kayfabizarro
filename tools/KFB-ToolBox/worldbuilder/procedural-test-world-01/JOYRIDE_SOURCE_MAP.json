@@ -52,9 +52,19 @@
   "notProven": [
     "Browser boot",
     "K2 shader compilation in current scene",
-    "Full visible surface-root/building mesh clearance",
     "First-frame/freeplay composition",
     "Player/resident/card/drive/editor/save regressions",
     "Existing Site update and exact version browser proof"
-  ]
+  ],
+  "measured": {
+    "streamCount": 7,
+    "roadCentreDeviationM": 0,
+    "authoredScaleBuildings": 25,
+    "treeRecipes": 4,
+    "buildingTrackBridgeAnchorTrunkIntersections": 0,
+    "rootBuildingTriangleIntersections": 0,
+    "savedDocumentAssertions": 8,
+    "browser": "BLOCKED_ADMIN_POLICY_SERVICE_UNAVAILABLE",
+    "productAcceptance": "NOT_GRANTED"
+  }
 }
