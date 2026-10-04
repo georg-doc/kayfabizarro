@@ -1,3 +1,32 @@
+## 2026-10-04 · Golden Journey MVP fixture locked
+
+### PRODUCT DIRECTION
+- Adopted Georg's 14-beat proposal as the MVP Golden Journey / integrated acceptance path without turning the open world into a forced linear campaign.
+- Curtain entry: clay BLÖDSINN! loading plaque → real load progress → clay Enter → curtain reveal.
+- First FOV Resident: juggling Clown with Bubble/TTS/ChatterBox and canonical social-call choices.
+- First Card chain is now exact and source-backed:
+  - `ignore_dystopia:1 · The Doomsday Clock`
+  - `forget_utopia:1 · The Glossy Horizon`
+  - `embrace_protopia:1 · The Open Notebook`
+  - `anti_rules_toolkit:1 · The Rules Lawyer`.
+- Driver/taxi loop uses the exact KayKit taxi pinned at commit `64cbf103...`, while walking remains valid on all required Track routes.
+- Dystopia Golden performance = Orc Band + Resident Disco + Demon Lord; Golden song = `Demon Lord Afro-Strut 01`; collected move candidate = `kfb_dance_hip_hop_a`.
+- Utopia Golden beat: Monstrosity CEO / Terms & Conditions; Protopia Golden beat: Farmer Duo → Anti-Rules → Lorekeeper.
+- Four signature billboards use Town KFB backside or the three deck covers, then seeded HyperNormalisation loops.
+- Every dialogue reuses the same Deck/Card-biased ChatterBox semantic Triplet seam.
+
+### SCOPE CONTROL
+- Bag is a shallow 20-slot MVP surface; only Taxi Key must be functional.
+- Cards remain Almanac/provenance objects, not bag duplicates.
+- Combat Mech patrol, extra Robot variants, elaborate foot boosts, dance UI and non-essential party FX are quarantinable.
+- King's Quest / Kayfabulation / OPO/reputation/level remain deferred.
+
+### DURABLE FIXTURES
+- `GOLDEN_JOURNEY_MVP_2026-10-04.md`
+- `GOLDEN_JOURNEY_MVP_2026-10-04.json`
+
+No Runtime, Stage or Live promotion.
+
 ## 2026-10-04 · One-Shot preparation fixtures expanded
 
 ### CURRENT PREP
