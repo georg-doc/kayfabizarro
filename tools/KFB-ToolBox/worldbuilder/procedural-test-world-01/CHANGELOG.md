@@ -372,3 +372,13 @@ Vertrag: [Independent External Critic Loop](https://github.com/georg-doc/kayfabi
 - Current source families remain Town RED Medieval Hex, Dystopia Kenney Industrial, Utopia KayKit Space Base Bits, Protopia GREEN Medieval Hex.
 - Player/Residents/Cards/God Mode/terrain/save/import/current GPT Site remain protected KEEP.
 - Same GPT Site will be updated in place after the integrated four-island repair.
+
+
+## 2026-10-04 · Publication gate correction · browser automation nonblocking
+
+- Four-island candidate runtime is frozen at `3d9aaf5f6623f9009d6e68dd3c042009a160b044` with a complete 92-file runtime closure.
+- The existing GPT Site still serves the older pre-recovery build.
+- Regular browser automation is blocked before page load by an external/admin policy-verification service; this is a TOOL BLOCKER, not product evidence.
+- Corrected next gate: update the existing World Studio GPT Site in place with the exact candidate, persist new Site version/deployment/source identity, then Georg freeplays all four islands.
+- Automated browser QA may be retried later and must not block private human-review publication.
+- No new Site, no Cloudflare-first fallback, no merge, no Live promotion.
