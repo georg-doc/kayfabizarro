@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.triplet-curator-site-packet/1",
+  "date": "2026-10-04",
+  "status": "SITE_IMPLEMENTATION_READY",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/chatterbox-triplet-curator-site-2026-10-04",
+  "pr": 357,
+  "owners": {
+    "toolboxFrontDoor": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "toolboxSlot": "chatterbox-comic-vfx",
+    "dialogueContent": "ChatterBox",
+    "semanticSelection": "Resident Chatter adapter PR #305",
+    "residentTruth": "Resident Atlas + Lean Cards",
+    "memory": "Journey / Resident Social Memory",
+    "quotes": "Hypernormalisation Quote Pool PR #354",
+    "bubblePresentation": "current accepted bubble owner / pending Claude Design return"
+  },
+  "donors": {
+    "reviewStage": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html",
+      "blob": "2d4fa60931ae0f1f1815788bb801a5f1e156c1d6",
+      "bytes": 26833,
+      "dropboxSameNameAndByteSizeVerified": true
+    },
+    "webChatBrief": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md",
+      "blob": "796a1236ab634ebf9385fdc8a070165d2b8a043f"
+    },
+    "seed20": {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/TRIPLET_POOL_SEED_20.json",
+      "blob": "e1462d78a0e8c35045cefec1728c7b5a72128122"
+    },
+    "leanCardSchema": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/resident-lean-card.v0.2.schema.json",
+      "blob": "e78fd8be8a7360b1ddd4ebeae4e10cbf7fa407cc"
+    },
+    "kernel": {
+      "pr": 305,
+      "head": "5b595a075b789f683ef0871f8c24d95e96416449",
+      "tests": "29/29 PASS"
+    },
+    "quotePool": {
+      "pr": 354,
+      "head": "05d61058eaaa8f465b4e2add08cffbf70752fe8f",
+      "batch01Blob": "c1d1e5b454e8b14088d84359a5829a6b4e5dfc15"
+    }
+  },
+  "contracts": {
+    "reviewExport": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_EXPORT_SCHEMA.json",
+    "authoring": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/TRIPLET_CURATOR_SCHEMA.json",
+    "quoteFixture": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/QUOTE_BRIDGE_FIXTURE.json",
+    "reviewMigration": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_MIGRATION.md"
+  },
+  "siteTabs": [
+    "Bühne / Pair Lab",
+    "Review / Pool",
+    "Bewohner / Lean Card Lens",
+    "Quotes",
+    "Bubble Preview",
+    "Import / Export / Diff"
+  ],
+  "initialFixtures": {
+    "A": "Goth Girl × Clown × forget_utopia#11",
+    "B": "Witch × Clown × ignore_dystopia#30",
+    "C": "Goth Girl × Witch × ignore_dystopia#1"
+  },
+  "knownContentGaps": [
+    "Clown signature SYNERGY missing",
+    "Clown signature COLLISION missing",
+    "Witch signature COLLISION missing",
+    "Goth Girl signature CATEGORY_SHIFT missing",
+    "some BONGO/BOGGLE paths have no shared semantic material and correctly return SILENCE",
+    "original 20 Triplets have no Card anchors"
+  ],
+  "publication": {
+    "primary": "GPT_SITE",
+    "siteUrl": "NOT_YET_ASSIGNED",
+    "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/",
+    "stageStatus": "NOT_DEPLOYED",
+    "live": "UNCHANGED"
+  },
+  "doneWhen": [
+    "existing review stage workflow retained, not replaced",
+    "20 seed records load",
+    "review export imports without loss",
+    "KEEP/TUNE/CUT works and roundtrips",
+    "Web Chat candidate import works",
+    "real quote IDs can be linked without copying quote canon",
+    "Resident pair deterministic preview works including SILENCE",
+    "current accepted bubble source is shown in isolation before adapter integration",
+    "desktop + narrow browser zero page errors",
+    "exact Site identity persisted and ToolBox slot updated"
+  ]
+}
