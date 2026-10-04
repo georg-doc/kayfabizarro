@@ -263,3 +263,27 @@ Evidence at implementation head `28ef0d5ad0e45f2ba32d17030542f94caa8cfd71`:
 This is data/index QA only. No SFX Library UI is claimed published.
 
 Exactly one next gate remains the existing **KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE**, expanded to add the searchable/auditionable SFX Library + Event Map to the same `kfb-audio` Site update. No second Site, no Cloudflare, no merge.
+
+
+## Musical World Mixer · implementation checkpoint · 2026-10-04
+
+The existing KFB Audio Site now treats **World** as the primary surface.
+
+Minimal interaction:
+- choose Journey or Moshpit;
+- click a scene;
+- hear master-to-master transitions;
+- choose 4 / 8 / 16 second crossfade timing;
+- toggle physical World / Vehicle layers;
+- simulate Voice ducking;
+- cycle a scene alternate with one compact control.
+
+The primary Journey recipe is:
+Town → Move → Drive → Dystopia → Party → Utopia → Protopia → Reflect.
+
+No second Site, AudioContext, catalog or gameplay owner was created. This is an authoring/audition surface over the canonical Jukebox and existing physical source registry.
+
+UI rule from Georg:
+clean/minimal; no redundant button labels or metadata clutter. Technical metadata remains in source/context, not the Mixer face.
+
+Status: implementation written; browser QA pending.

@@ -6,6 +6,7 @@ const sound=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/soun
 const intake=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/source-intake.v1.json'),'utf8'));
 const lock=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/source-lock.json'),'utf8'));
 const sfxlib=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/sfx-library.snapshot.json'),'utf8'));
+const mixer=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/world-mixer-recipes.json'),'utf8'));
 const checks=[];const check=(n,o,d=null)=>{checks.push({name:n,ok:!!o,detail:d});if(!o)throw new Error(n+': '+JSON.stringify(d))};
 try{
  check('catalog snapshot matches',JSON.stringify(catalog)===JSON.stringify(snapshot));
@@ -31,5 +32,13 @@ try{
  check('SFX interface aliases 100/100',sfxlib.lineageChecks?.interfaceRootVsKenneyNested?.exactBlobAliases===100,sfxlib.lineageChecks?.interfaceRootVsKenneyNested);
  check('SFX classic aliases 80/80',sfxlib.lineageChecks?.classicArcadeSmallVsComplete?.exactBlobAliases===80,sfxlib.lineageChecks?.classicArcadeSmallVsComplete);
  check('SFX gaps preserved',["tyre-friction","rain-thunder","crowd-venue","city-traffic","workshop-machinery"].every(id=>sfxlib.knownGaps?.some(x=>x.id===id)),sfxlib.knownGaps);
+ check('world mixer schema',mixer.schema==='kfb.audio-site.world-mixer/0.1',mixer.schema);
+ check('world mixer default recipe',mixer.recipes.some(r=>r.id===mixer.defaultRecipe),mixer.defaultRecipe);
+ const trackIds=new Set(catalog.tracks.map(t=>t.id)),sourceIds=new Set(sound.available.map(s=>s.id));
+ const scenes=mixer.recipes.flatMap(r=>r.scenes.map(s=>({...s,recipe:r.id})));
+ check('world mixer scene ids unique per recipe',mixer.recipes.every(r=>new Set(r.scenes.map(s=>s.id)).size===r.scenes.length));
+ check('world mixer tracks resolve',scenes.every(s=>s.tracks.length&&s.tracks.every(id=>trackIds.has(id))),scenes.filter(s=>!s.tracks.every(id=>trackIds.has(id))));
+ check('world mixer physical sources resolve',scenes.every(s=>[s.world,s.vehicle,s.accent].filter(Boolean).every(id=>sourceIds.has(id))),scenes.filter(s=>![s.world,s.vehicle,s.accent].filter(Boolean).every(id=>sourceIds.has(id))));
+ check('journey recipe 8 scenes',mixer.recipes.find(r=>r.id==='journey')?.scenes.length===8,mixer.recipes.find(r=>r.id==='journey')?.scenes.length);
  console.log(JSON.stringify({status:'PASS',checks:checks.length,tracks:catalog.tracks.length,roadTrip:road.length,stemFamilies:road.filter(t=>t.stems).length,elevenTests:intake.elevenLabs.length},null,2));
 }catch(e){console.error(JSON.stringify({status:'FAIL',checks,failure:String(e.stack||e)},null,2));process.exit(1)}

@@ -21,7 +21,7 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "QA_GREEN_CUSTOM_MODEL_EVAL_READY",
+  "status": "WORLD_MIXER_IMPLEMENTED_QA_PENDING",
   "testedHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
   "qa": {
     "run": 37183974727,
@@ -153,5 +153,17 @@
   ],
   "promptConvention": "ONE_COPY_BLOCK_BPM_DIRECTION_STYLE",
   "customModelStatus": "READY_FOR_EVALUATION",
-  "customModelEval": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/CUSTOM_MODEL_EVAL_01.md"
+  "customModelEval": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/CUSTOM_MODEL_EVAL_01.md",
+  "worldMixer": {
+    "schema": "kfb.audio-site.world-mixer/0.1",
+    "path": "tools/KFB-Audio-Site/world-mixer-recipes.json",
+    "primarySurface": "World",
+    "recipes": [
+      "journey",
+      "moshpit"
+    ],
+    "journeyScenes": 8,
+    "ui": "CLEAN_MINIMAL",
+    "status": "IMPLEMENTED_QA_PENDING"
+  }
 }

@@ -52,3 +52,16 @@
 - validator **45/45 PASS** + browser **14/14 PASS** on run `37185843367`, artifact `11296249195`;
 - no Site UI/runtime/Cloudflare/merge change;
 - next gate remains one existing Site update, expanded with SFX Library + Event Map.
+
+
+## 2026-10-04 · Musical World Mixer
+
+- made `World` the primary KFB Audio Site surface;
+- added compact Journey and Moshpit recipes;
+- Journey = Town → Move → Drive → Dystopia → Party → Utopia → Protopia → Reflect;
+- master-to-master equal-power crossfade with 4/8/16 second timing;
+- added physical World/Vehicle layer audition and Voice duck simulation;
+- kept Library / Sources / Prompt secondary and simplified their labels/chrome;
+- removed the separate Deck A/B mixer from the main UX;
+- no new Site, AudioContext, catalog or game owner;
+- browser QA pending at implementation checkpoint.
