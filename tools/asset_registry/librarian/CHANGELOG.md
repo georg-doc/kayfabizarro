@@ -1,5 +1,37 @@
 # Changelog · KFB Asset Librarian
 
+## GPT Site + shared Asset Picker preparation · 2026-10-04
+
+Status: **READY FOR WSA WORKSHOP · NO RUNTIME / DEPLOYMENT CHANGE**
+
+### Decision
+- Re-home the human-facing Librarian as a GPT Site after WSA implementation/review; keep the existing Cloudflare Librarian unchanged as migration compatibility.
+- Use one shared discovery/query/item model for the full Librarian and the compact God Mode / WorldBuilder picker.
+- Promote Family → Pack → Collection to primary browse facets using existing Registry facts.
+- Replace JSON-first human collection work with Saved Sets while preserving `kfb.asset-handoff.v1` as the machine handoff seam.
+- Keep upload/import material visibly `INTAKE / UNREGISTERED` until existing Registry ingestion accepts it.
+- Dropbox is an optional intake source, not Registry truth.
+
+### Reused donors
+- current main Librarian v1.7 search/filter/preview/selection/resource surfaces;
+- frozen PR #304 implementation `545853924c4c177b6e26af588020b7a59307bb71`: green Family/Pack/Collection browse + KayKit family facet + Motion-on-real-actor preview only.
+
+### Explicitly not reused
+- PR #304 motion scrub / new transport bar after its two-repair stop;
+- any parallel Registry, taxonomy, WorldBuilder scene owner or animation compatibility owner.
+
+### Prepared artifacts
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/START_HERE.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/UI_PICKER_CONTRACT.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/SOURCE_EVIDENCE.md`
+- KFB Production Control workflow `WSA-ASSET-LIBRARIAN-GPT-SITE-01`
+
+### Evidence
+No runtime source changed; no new browser/WebGL/deployment PASS is claimed. Source reconciliation and all preparation-file write-backs were verified on the exact branch.
+
+### Next
+Exactly one gate: **WSA-ASSET-LIBRARIAN-GPT-SITE-01** → build Phase A GPT Site and return one direct Site review link.
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision
