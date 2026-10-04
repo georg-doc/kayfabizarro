@@ -30,7 +30,7 @@ export async function loadRegistered(record){
 export async function adaptRegistered(root,seed=31){
   const U=await clayContext(),QUIET={print:.3,dent:0,gouge:0,crack:0,stroke:1,facet:.9,crease:.5};
   const profile={...PROFILES.house,...QUIET,legacy:0,tools:TOOLMIX.house};
-  root.traverse(o=>{if(o.isMesh){o.geometry=seedGeometry(THREE,o.geometry.clone(),seed++);o.material=(Array.isArray(o.material)?o.material:[o.material]).map(src=>makeClayMaterial(THREE,U,{src,profile,palMap:false}));if(o.material.length===1)o.material=o.material[0];o.castShadow=o.receiveShadow=true}});
+  root.traverse(o=>{if(o.isMesh){o.geometry=seedGeometry(THREE,o.geometry.clone(),seed++);o.material=(Array.isArray(o.material)?o.material:[o.material]).map(src=>makeClayMaterial(THREE,U,{src,profile,palMap:false,reliefK:.15}));if(o.material.length===1)o.material=o.material[0];o.castShadow=o.receiveShadow=true}});
   return root;
 }
 export function createCandidateEvidence(A){
@@ -41,7 +41,7 @@ export function createCandidateEvidence(A){
     A.scene.traverseVisible(o=>{if(!o.isMesh)return;let q=o;while(q&&!q.userData?.sourceRecord)q=q.parent;const source=q?.userData?.sourceRecord;if(!source)return;const box=new THREE.Box3().setFromObject(o);if(frustum.intersectsBox(box)){const key=source.source.commit+'/'+source.assetId;const rec=rendered.get(key)||{assetId:source.assetId,packId:source.packId,commit:source.source.commit,blob:source.source.blobSha,meshCount:0};rec.meshCount++;rendered.set(key,rec)}});
     const loaded=performance.getEntriesByType('resource').map(r=>r.name),banned=manifest.bannedVisible.filter(p=>loaded.some(url=>decodeURIComponent(url).includes(p)));
     const sorted=[...frameTimes].sort((a,b)=>a-b),median=sorted[Math.floor(sorted.length/2)]||0;
-    return{schema:'kfb.actual-runtime-evidence/1',build:document.body.dataset.candidateRevision||'LOCAL_UNSEALED',ready:document.body.dataset.candidateReady,seed:3,camera:A.camera.position.toArray(),target:A.controls.target.toArray(),loaded,rendered:[...rendered.values()],banned,firewall:banned.length?'FAIL':'PASS',performance:{frames:frameTimes.length,medianMs:median,p95Ms:sorted[Math.floor(sorted.length*.95)]||0,drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles},owners:{renderer:'WB2',ground:A.play?.constructor?.name,animationMixers:A.play?.evidence().mixerCount},player:A.play?.evidence()};
+    return{schema:'kfb.actual-runtime-evidence/1',build:window.__kfbBuild||document.body.dataset.candidateRevision||'LOCAL_UNSEALED',ready:document.body.dataset.candidateReady,seed:3,camera:A.camera.position.toArray(),target:A.controls.target.toArray(),loaded,rendered:[...rendered.values()],banned,firewall:banned.length?'FAIL':'PASS',performance:{frames:frameTimes.length,medianMs:median,p95Ms:sorted[Math.floor(sorted.length*.95)]||0,drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles},owners:{renderer:'WB2',ground:A.play?.constructor?.name,animationMixers:A.play?.evidence().mixerCount},player:A.play?.evidence()};
   };
   async function inspect(worldId,variant='original',index=0){
     if(!restore){const hidden=A.scene.children.filter(o=>!o.isLight);restore={hidden:hidden.map(o=>[o,o.visible]),camera:A.camera.position.clone(),target:A.controls.target.clone(),play:A.play.on};A.setPlay(false);hidden.forEach(o=>o.visible=false)}
@@ -51,7 +51,7 @@ export function createCandidateEvidence(A){
     root.userData.sourceRecord=record;root.name='Registered source isolate · '+record.assetId;
     isolate=root;A.scene.add(root);root.updateMatrixWorld(true);
     const box=new THREE.Box3().setFromObject(root),centre=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),r=Math.max(size.x,size.y,size.z);
-    A.camera.position.copy(centre).add(new THREE.Vector3(r*.9,r*.55,r*1.05));A.controls.target.copy(centre);A.controls.update();
+    A.camera.position.copy(centre).add(new THREE.Vector3(r*1.05,r*.65,r*1.55));A.controls.target.copy(centre);A.controls.update();
     if(variant==='detail'){A.camera.position.copy(centre).add(new THREE.Vector3(r*.25,r*.12,r*.45));A.controls.target.copy(centre);A.controls.update()}
     document.body.dataset.candidateReady='SOURCE_ISOLATE_READY';return{record,variant,bounds:{min:box.min.toArray(),max:box.max.toArray()},sourceMeshes:root.children.length};
   }

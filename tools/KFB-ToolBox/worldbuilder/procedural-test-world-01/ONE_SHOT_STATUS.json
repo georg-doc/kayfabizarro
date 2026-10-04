@@ -69,10 +69,11 @@
   "verification": {
     "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
     "criticContractMainHead": "b0696f7491450f03e0c6a1dce2a57ecfe21c0e74",
-    "deterministicScreenshotHarness": "IMPLEMENTING_SOURCE_INSPECTION",
+    "deterministicScreenshotHarness": "FIRST_RUN_READINESS_RACE_FOUND_FIXED_PENDING_RERUN",
     "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
     "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE",
-    "externalCritic": "independent_critic \u00b7 no production edits"
+    "externalCritic": "independent_critic · no production edits",
+    "sourceInspection": "RED_CASTLE_IDENTITY_PASS_MATERIAL_FAIL_REPAIR_1"
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -83,7 +84,9 @@
     "consoleErrors": 0
   },
   "weakestRequiredDimension": "VISIBLE_FOUNDATION_SOURCE_FIDELITY",
-  "repairAttempts": {},
+  "repairAttempts": {
+    "sourceMaterial": 1
+  },
   "openCoreBlockers": [
     "visible legacy Huerth/OSM foundation must be removed/quarantined without regressing topology/player",
     "integrated Golden Journey systems are incomplete",

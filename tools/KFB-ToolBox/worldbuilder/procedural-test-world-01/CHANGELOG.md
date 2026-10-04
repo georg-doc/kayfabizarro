@@ -116,3 +116,8 @@ Tested runtime/test head: `531fcc3f912d226254bab0e5e43a0a78750f001b`. Existing D
 ## 2026-10-04 · Continuous One-Shot resumed / source firewall checkpoint
 
 Verified receiving base `3989ae8a6aa12f6c00004fcc39b884285ff51077`. Valid WB2 topology, Ground/native Motion and Track work are KEEP. Legacy visible city CONTENT/PRESENTATION/DATA are REJECT; its mechanism is HOLD until cleanly decoupled. `VISIBLE_SOURCE_MANIFEST.json` resolves the intended RED / Industrial / Space Base / GREEN roster directly from the existing Registry, including exact source commits, blobs and dependencies. Independent no-code Critic established; no visual PASS or deployment claimed. Next internal action: actual original/adapted/detail source captures in the existing renderer, then replace rejected visible presentation and continue the full One-Shot.
+
+
+## 2026-10-04 · Source inspection / first repair
+
+Harness head `77a9e3a263201cb5a48f7b61d6feabd75bdcc616`: browser run `37180597250` failed before captures because Player readiness preceded async evidence adapter readiness; page/console errors were zero. Explicit evidence-ready wait added. Native RED castle was actually viewed in WB2 isolation: identity KEEP, material FAIL (overstrong rocky folds). Independent Critic confirms both. First repair reduces K2/v10 relief amplitude to 0.15, preserves source colours/shape and widens isolate framing; re-evidence pending. No visual acceptance, no Stage. Continue source-clean full MVP integration.

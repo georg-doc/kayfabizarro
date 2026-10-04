@@ -12,10 +12,12 @@ const requireTrue=(value,message)=>{if(!value)throw Error(message);};
 const readPlayer=()=>page.evaluate(()=>window.__wb2d.play.evidence());
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
 page.on('pageerror',e=>pageErrors.push(String(e)));
+await page.addInitScript(head=>window.__kfbBuild=head,process.env.GITHUB_SHA||'LOCAL_UNSEALED');
 let state=null;const sourceInspection=[];
 try{
   await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.waitForFunction(()=>{const A=window.__wb2d,W=A?.world;return !!(A&&W&&W.id==='r2d4'&&A.terrain&&W.worldGraph?.nodes?.length===4&&A.play?.on);},null,{timeout:240000});
+  await page.waitForFunction(()=>window.__wb2d?.candidateEvidence&&document.body.dataset.candidateReady==='WB2_READY',null,{timeout:120000});
   state=await page.evaluate(()=>{
     const A=window.__wb2d,W=A.world,resources=performance.getEntriesByType('resource').map(r=>r.name);
     const nodeIds=W.worldGraph.nodes.map(n=>n.id),connectionIds=W.worldGraph.connections.map(c=>c.id);
