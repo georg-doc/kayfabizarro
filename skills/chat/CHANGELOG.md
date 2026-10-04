@@ -1,3 +1,24 @@
+## 2026-10-04 · Motion #344 stale-status recovery → WB2 Player next
+
+### CORRECTION
+- Re-read Motion PR #344 branch truth after Blender reported the router drift.
+- Confirmed the revised native baseline has been complete since 2026-10-03.
+- Primary review actor was **Mannequin_Medium**, FrizzleBob v5 second; ActionFigure was explicitly not the baseline actor.
+- Confirmed native baseline result: **KEEP 21 · HOLD 3 · REJECT 0**.
+- Confirmed Georg's decided Medium set:
+  - Walk = `Walking_B`
+  - Run = `Running_A`
+  - Sprint = `Running_B`
+  - Jog = speed/phase blend.
+- Confirmed corrected visual refs `KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4` and `KAYKIT_LOCO_WEAPONS_03.mp4`.
+- Turns/pivots/start-stop/strafe-walk remain documented gaps, not an unfinished baseline task.
+- Corrected PR #344 top-level START_HERE/RETURN and added the missing PR conversation handoff.
+- Materialized the already-decided runtime data as `KFB_KAYKIT_LOCO_SET_01.v1.json`; no new motion decision was introduced.
+- Corrected main animation SSOT/router, One-Shot precheck, Character Select and Golden Journey fallback.
+- Added `KFB_LOCO_WB2_PLAYER_01_BRIEF.md` to World PR #348.
+- Exactly one current executor/gate: **WSA / Codex → KFB-LOCO-WB2-PLAYER-01 on PR #348**.
+- No Player runtime, merge, Stage or Live promotion occurred in this correction.
+
 ## 2026-10-04 · Flight CARD_SURF Gate 2 rebrief
 
 - Blender Gate 1 SELF_FLIGHT / Combat Mech return is preserved on `georg-doc-patch-3`.
