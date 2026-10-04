@@ -1,21 +1,19 @@
-# KFB ChatterBox / Triplet Curator · START HERE
+# KFB ChatterBox · START HERE
 
 Status: **PLANNING READY · SITE NOT BUILT**
 Date: 2026-10-04
-Owner: **KFB ToolBox / ChatterBox content curation**
+Owner: **KFB ChatterBox / KFB ToolBox**
 Repo: `georg-doc/kayfabizarro`
 Branch: `planning/chatterbox-triplet-curator-site-2026-10-04`
 Base synced: `coworker/coordination-plan-2026-10-04@b2ddd72346e3d804b53625f50addbba87be3c9a0`
 
 ## Outcome
 
-Create one ToolBox specialist Site for curating the shared KFB Semantic Triplet pool.
+Create one ToolBox specialist Site under the umbrella product name:
 
-Working title:
+**KFB ChatterBox**
 
-**KFB ChatterBox / Triplet Curator**
-
-This is an **editor/review/control surface**, not a second dialogue runtime.
+Triplet Curator is one module inside ChatterBox, not a separate product. ChatterBox combines deterministic Triplet curation with a bounded live Dialogue Lab, Critic/Repair, reaction choreography, real-3D bubble preview and Audio/TTS testing. It remains an **authoring/evaluation surface**, not a second dialogue runtime.
 
 It must let Georg and normal Web Chat:
 - inspect, add, edit, KEEP/TUNE/CUT and approve Triplets;
@@ -154,22 +152,27 @@ Routine Triplet population must not require Work.
 ## First Site scope
 
 1. Pool browser/search/filter.
-2. Triplet editor.
+2. Triplet editor / curator.
 3. Resident Lens using Lean Cards read-only.
 4. Quote Bridge using stable Hypernormalisation quote IDs.
 5. Pair / Scene Lab using the existing deterministic adapter.
-6. Bubble Preview using an adapter to the accepted bubble presentation owner.
-7. Import / export / diff / validation.
-8. Review queue: KEEP / TUNE / CUT / APPROVE.
+6. **Two-Resident Dialogue Lab** with live LLM generation and session logging.
+7. **Critic / Repair Lab** as a second non-speaking evaluation agent.
+8. Reaction / choreography testing for KayfaBINGO/BONGO/BOGGLE/BLÖDSINN, What the FLUFF?!, Stay fluffy! and compatible facial/body responses.
+9. Bubble Preview on exact Resident Atlas 3D actors with EyeRig v6, responsive camera/orbit tests and streaming text.
+10. Browser TTS + current Audio-owner ducking seam.
+11. Import / export / diff / validation.
+12. Review queue: KEEP / TUNE / CUT / APPROVE / PROMOTE_TO_POOL.
 
-No live LLM is required for v1.
+Binding extension brief:
+`CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md`
+
+First live comparison starts with two Residents and tests L0 shared-agent vs L1 isolated same-model Resident agents before any L2 multi-model-per-character complexity.
 
 ## Deferred
 
 - runtime autonomous scene scheduling;
 - persistent social-memory writes;
-- TTS implementation;
-- generative dialogue at runtime;
 - direct World Studio integration;
 - rewriting Bubble geometry;
 - copying the Hypernormalisation quote database;
