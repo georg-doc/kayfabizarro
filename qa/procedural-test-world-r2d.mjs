@@ -70,22 +70,22 @@ try{
   await check('Town spawn and ground contact',async()=>{const p=await readPlayer();requireTrue(Math.hypot(p.position[0]-state.world.spawn.x,p.position[2]-state.world.spawn.z)<.01,'Town anchor');requireTrue(Math.abs(p.position[1]-p.groundY)<1e-6,'support');return p.position;});
   await check('W moves through Walk to Run',async()=>{
     const before=await readPlayer();await page.keyboard.down('w');await page.waitForTimeout(700);const walk=await readPlayer();
-    await page.waitForTimeout(2800);const run=await readPlayer();await page.keyboard.up('w');
+    await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-3.303)<.001,null,{timeout:60000});const run=await readPlayer();await page.keyboard.up('w');
     requireTrue(Math.hypot(run.position[0]-before.position[0],run.position[2]-before.position[2])>1,'movement');
     requireTrue(walk.rows.some(r=>r.role==='walk'),'Walking_B active');requireTrue(Math.abs(run.speed-3.303)<.001,'Running_A anchor');
     requireTrue(run.rows.length===1&&run.rows[0].clip==='Running_A','run');return {before,walk,run};
   });
   await page.waitForTimeout(400);
   await check('A turns left and D turns right',async()=>{const b=await readPlayer();await page.keyboard.down('a');await page.waitForTimeout(350);await page.keyboard.up('a');const l=await readPlayer();await page.keyboard.down('d');await page.waitForTimeout(350);await page.keyboard.up('d');const r=await readPlayer();requireTrue(l.heading<b.heading&&r.heading>l.heading,'turn semantics');return [b.heading,l.heading,r.heading];});
-  await check('S moves backward and returns to idle',async()=>{const b=await readPlayer();await page.keyboard.down('s');await page.waitForTimeout(900);const back=await readPlayer();await page.keyboard.up('s');await page.waitForTimeout(400);const idle=await readPlayer();requireTrue(back.speed<0&&Math.hypot(back.position[0]-b.position[0],back.position[2]-b.position[2])>.1,'backward');requireTrue(idle.speed===0&&idle.rows[0].clip==='Idle_A','idle');return {back,idle};});
-  await check('Shift reaches Running_B sprint',async()=>{await page.keyboard.down('w');await page.keyboard.down('Shift');await page.waitForTimeout(1200);const p=await readPlayer();await page.screenshot({path:outDir+'/player-town-sprint.png'});await page.keyboard.up('Shift');await page.keyboard.up('w');requireTrue(Math.abs(p.speed-5.255)<.001&&p.rows.length===1&&p.rows[0].clip==='Running_B','sprint anchor');return p;});
+  await check('S moves backward and returns to idle',async()=>{const b=await readPlayer();await page.keyboard.down('s');await page.waitForTimeout(900);const back=await readPlayer();await page.keyboard.up('s');await page.waitForFunction(()=>window.__wb2d.play.speed===0,null,{timeout:30000});const idle=await readPlayer();requireTrue(back.speed<0&&Math.hypot(back.position[0]-b.position[0],back.position[2]-b.position[2])>.1,'backward');requireTrue(idle.speed===0&&idle.rows[0].clip==='Idle_A','idle');return {back,idle};});
+  await check('Shift reaches Running_B sprint',async()=>{await page.keyboard.down('w');await page.keyboard.down('Shift');await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed-5.255)<.001,null,{timeout:60000});const p=await readPlayer();await page.screenshot({path:outDir+'/player-town-sprint.png'});await page.keyboard.up('Shift');await page.keyboard.up('w');requireTrue(Math.abs(p.speed-5.255)<.001&&p.rows.length===1&&p.rows[0].clip==='Running_B','sprint anchor');return p;});
   await page.waitForTimeout(500);
   await check('save and reload resumes safely at idle',async()=>{await page.locator('#save').click();const before=await readPlayer();await page.reload();await page.waitForFunction(()=>window.__wb2d?.play?.on,null,{timeout:240000});const p=await readPlayer();requireTrue(p.position.every((v,i)=>Math.abs(v-before.position[i])<.001),'saved position');requireTrue(Math.abs(p.heading-before.heading)<.001&&p.speed===0,'safe idle resume');return p;});
   await check('three Track Core bridge walks use WB2 support',async()=>{
     const probes=await page.evaluate(()=>window.__wb2d.world.bridgeSupportSamples),results=[];
     for(const q of probes){
       await page.evaluate(q=>{const A=window.__wb2d,P=A.play;A.setPlay(false);const d=structuredClone(A.doc);d.world.player={actorProfileId:'Mannequin_Medium',worldId:d.id,position:q.point,heading:Math.atan2(q.next[0]-q.point[0],q.next[2]-q.point[2])};P.readDoc(d);A.setPlay(true);},q);
-      const before=await readPlayer();await page.keyboard.down('w');await page.waitForTimeout(900);const after=await readPlayer();await page.keyboard.up('w');
+      const before=await readPlayer();await page.keyboard.down('w');await page.waitForFunction(p=>{const a=window.__wb2d.play.position;return Math.hypot(a.x-p[0],a.z-p[2])>.3},before.position,{timeout:30000});const after=await readPlayer();await page.keyboard.up('w');
       requireTrue(Math.abs(before.position[1]-q.point[1])<.01,'bridge spawn '+q.id);
       requireTrue(Math.hypot(after.position[0]-before.position[0],after.position[2]-before.position[2])>.3,'bridge movement '+q.id);
       requireTrue(Math.abs(after.position[1]-after.groundY)<1e-6,'bridge support '+q.id);results.push({id:q.id,before,after});
