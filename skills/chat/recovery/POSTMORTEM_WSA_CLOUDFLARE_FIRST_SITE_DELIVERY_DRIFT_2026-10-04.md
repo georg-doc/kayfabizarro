@@ -262,9 +262,29 @@ A host/tool capability gap does not authorize a product-host substitution.
 
 8. **KFB WorldBuilder / World Studio MVP**
    - WB2 PR #348 remains runtime owner
-   - GPT Site is now the primary product/daily-use target
-   - exact Site URL must be returned by Sites publication; do not invent one
-   - Cloudflare, if used, is a downstream mirror/formal acceptance surface rather than the product-build loop
+   - primary Site: `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site`
+   - Sites deployment SUCCEEDED; 80 runtime files match the recorded PR #348 runtime source
+   - Georg freeplay/browser product verification remains open
+   - Cloudflare is the downstream mirror/formal acceptance surface rather than the product-build loop
+
+
+## Outcome after Georg's intervention
+
+The intervention immediately produced the missing primary product surface:
+
+- GPT Site: `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site`
+- Sites deployment: **SUCCEEDED**
+- full existing WB2 application, not an iframe shell;
+- all **80 runtime files** match the PR #348 runtime source recorded by the publishing return;
+- no second game/save owner;
+- Site project/version/deployment/source identity persisted;
+- Cloudflare retained only as secondary Stage mirror.
+
+This materially confirms the postmortem diagnosis:
+
+**the missing product surface was not blocked by the WorldBuilder architecture. The active workflow was spending effort on the wrong delivery surface.**
+
+Current remaining gate is human freeplay / browser product verification, not “make Cloudflare work first”.
 
 ## Fresh-executor firewall
 
