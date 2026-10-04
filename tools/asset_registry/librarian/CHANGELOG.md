@@ -1,5 +1,40 @@
 # Changelog · KFB Asset Librarian
 
+## GPT Site Phase A built · 2026-10-04
+
+Status: **BUILT · WSA BROWSER-QA 8/8 PASS · PRIVATELY PUBLISHED · GEORG REVIEW OPEN**
+
+### Result
+- Private GPT Site: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`.
+- Exact Site source head: `d098d37a10b869a2a6d24c3c78e721991a4dc38f`.
+- Deployment `appgdep_6ac1b3f370b081919bbb3fe2d1b8ec71` reports `succeeded`.
+- Live Registry observed by WSA: 15,272 assets at `64cbf1031392029f25110dd613247b32148aae42`.
+- Tiny Treats = 8 packs; Bubbly Bathroom → Assets = 86 matches.
+- Browser QA = **8/8 PASS**, JavaScript syntax PASS, 0 browser console errors.
+
+### Implemented
+- debounced live search;
+- Family → Pack → Collection facets;
+- type/quick filters;
+- Gallery/List;
+- image/audio/3D inspector;
+- browser-local named Saved Set + notes + add/remove;
+- `kfb.asset-saved-set.v1` wrapping `kfb.asset-handoff.v1`;
+- shared `window.KFBAssetPicker` seam;
+- Phase C Intake shown as deferred, not silently implemented.
+
+### Boundary
+- Site-owned source remains separate from KFB GitHub runtime;
+- PR #349 remains the durable KFB source contract/routing packet;
+- Cloudflare Librarian is unchanged compatibility/source surface;
+- no second Registry, WorldBuilder scene owner, animation compatibility promotion or scrub transport.
+
+### Verification note
+This chat could not anonymously fetch the private `chatgpt.site` review URL, so WSA deployment/browser evidence is recorded without claiming independent public-browser verification.
+
+### Next
+Exactly one gate: **GEORG-REVIEW-GPT-SITE-PHASE-A**.
+
 ## GPT Site + shared Asset Picker preparation · 2026-10-04
 
 Status: **READY FOR WSA WORKSHOP · NO RUNTIME / DEPLOYMENT CHANGE**
