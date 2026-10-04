@@ -8,9 +8,9 @@ try{
  check('site marker',await page.evaluate(()=>document.documentElement.dataset.kfbAudioSite==='0.1'));
  check('catalog renders >=54',await page.locator('.track').count()>=54,await page.locator('.track').count());
  check('stats says 44 RoadTrip',await page.locator('#stats').innerText().then(x=>x.includes('44 RoadTrip v2')));
- await page.selectOption('#stemFilter','stems');check('stem filter shows 12',await page.locator('.track').count()===12,await page.locator('.track').count());
+ await page.selectOption('#stemFilter','stems');check('stem filter shows 14',await page.locator('.track').count()===14,await page.locator('.track').count());
  await page.click('[data-view="mix"]');check('mix visible',await page.locator('#mix').evaluate(e=>e.classList.contains('active')));
- await page.fill('#pMood','rainy midnight melancholy');await page.click('[data-view="prompt"]');await page.selectOption('#pRefs',{index:0});await page.click('#buildPrompt');check('prompt request built',await page.locator('#promptOut').inputValue().then(x=>x.includes('rainy midnight melancholy')&&x.includes('Master')));
+ await page.click('[data-view="prompt"]');await page.fill('#pMood','rainy midnight melancholy');await page.selectOption('#pRefs',{index:0});await page.click('#buildPrompt');check('prompt request built',await page.locator('#promptOut').inputValue().then(x=>x.includes('rainy midnight melancholy')&&x.includes('Master')));
  await page.click('[data-view="soundscape"]');check('rain missing visible',await page.locator('#missingSources').innerText().then(x=>x.includes('Rain bank')&&x.includes('SOURCE_REQUIRED')));
  check('no page errors',result.errors.length===0,result.errors);check('no local HTTP errors',result.httpErrors.length===0,result.httpErrors);
  await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});result.status='PASS';
