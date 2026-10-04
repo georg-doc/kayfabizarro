@@ -69,6 +69,24 @@ In front of the curtain:
 5. click/tap Enter opens the curtain;
 6. the actual KFB Town start scene is revealed behind it.
 
+### Optional Character Select
+
+Before the Enter plaque becomes actionable, the start screen may expose the current Player Actor as a real 3D object in front of the Curtain.
+
+Current contract:
+`CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`.
+
+Product behavior:
+- FrizzleBob is desired/preselected;
+- player may switch to a source-proven alternative;
+- selection is optional, never a forced creator gate;
+- first QA roster is FrizzleBob v5b candidate, ActionFigure / Rig_Medium and Black Knight / Rig_Large; GothGirl / Rig_Medium is optional Stage QA;
+- Enter appears only when the currently selected Actor and its minimum required motion set are ready;
+- world loading and Actor loading remain explicit, real loader facts.
+
+Motion intent is semantic and rig-specific.
+Rig_Large must not inherit the full Medium locomotion ladder blindly.
+
 ### Rules
 - BLÖDSINN! spelling is canonical.
 - The plaque is a new authored Playmation/clay presentation asset, not a generic progress bar.
