@@ -12,7 +12,7 @@ export const OFFERS=Object.freeze({
 });
 export function memoryOf(doc){
   const m=doc.memory||(doc.memory={schema:JOURNEY_SCHEMA,seed:3,sessionId:globalThis.crypto?.randomUUID?.()||'session-'+Date.now(),receipts:[],quests:[],completed:[]});
-  if(m.schema!==JOURNEY_SCHEMA||!Array.isArray(m.receipts)||!Array.isArray(m.quests)||!Array.isArray(m.completed))throw Error('Invalid Lean Memory');return m;
+  if(m.schema!==JOURNEY_SCHEMA||!Array.isArray(m.receipts)||!Array.isArray(m.quests)||!Array.isArray(m.completed))throw Error('Invalid Lean Memory');for(const r of m.receipts){if(['town','dystopia','utopia','protopia'].includes(r.worldId))r.worldId=({town:'world.kfb-town',dystopia:'world.dystopia',utopia:'world.utopia',protopia:'world.protopia'})[r.worldId];if(r.kind==='card'&&!r.assetSource&&CARD_BLOBS[r.ref])r.assetSource={commit:PDF_PIN,blob:CARD_BLOBS[r.ref],canonicalRef:r.ref};}return m;
 }
 export function createJourney(getDoc,{now=()=>new Date().toISOString()}={}){
   const owns=ref=>memoryOf(getDoc()).receipts.some(r=>r.ref===ref);

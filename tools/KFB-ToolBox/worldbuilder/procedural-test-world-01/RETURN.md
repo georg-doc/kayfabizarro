@@ -172,3 +172,15 @@ Full Golden Journey, learned-dance browser proof, workspace/fresh-session import
 Integrated run 37187632763 @ 8614726082b820fed1795c105b2581265985c9fd timed out before its first gate: LOADING 2/10 during native scene construction. Artifact 11298326105 (checks/failure screenshot) is preserved. This is not Golden-Journey PASS. Native baseline run 37187632658 and source/Registry checks remain PASS; local source contracts 17/17 PASS. Repair uses exact existing S6 runtime/Atlas/cast/juggle blobs verified identical to be484 source, early declared half-resolution SwiftShader and per-object boot readback.
 
 Independent partial Town review: source fidelity provisional 8/10, no Whole-Game PASS. Existing toolbar actions grouped by Play/Almanac/Library; native I prompt uses gameplay HUD; subject subdialog keeps SHOW/SPIN/SELL within native six-action limit. Actual rendered-source coverage now includes native island/water/P1/P2/Track/Player and reports unknown meshes. Native sculpt finish refreshes the visible R2D surface from the same saved height owner. Required full journey, fresh resume, Studio roundtrip and Whole-Game Critic remain pending. Continue the same One-Shot; no Stage/merge/Live change.
+
+
+### Actual native authoring seam · 2026-10-04
+
+Local browser: existing green well selected through native Library search, actual original source isolated, returned to same world, placed (canonical kfb.asset-handoff.v1 + explicit source path/commit/blob), then scaled by the existing ToolBox Edit button. Initial missing source.path in the handoff was corrected; screenshots source-review/studio-well-original.jpg and studio-well-placed-edited.jpg preserve actual UI evidence. This is not fresh-workspace or Whole-Game PASS. Learned dance uses the same accepted missing-hand-slot filtering as locomotion; all other missing bones remain a hard error. Audio focus now distinguishes dialogue from actually available/active native speech, so absent browser voices cannot leave music permanently ducked.
+
+
+## 2026-10-04 · Native cold-load repair 2 candidate
+
+The integrated Chromium run at c4fbc6a6c456730818f7f574b53de12db245ee61 failed before its first gate (run 37188477994, artifact 11297662613, SHA256 012f7d03489c26821032a91a4e84c66b64a15ce229f3619350eb74ff2c530ece). It improved over the previous attempt: native Clown and Driver completed, then loading waited at dystopia.demon (27/39). No Golden Journey PASS. Fresh population is 39 canonical records: 25 deduplicated buildings and 14 required gameplay/source objects.
+
+Candidate repair retains the native Atlas and its default intake behavior, selecting only original animation sets needed by each MVP recipe. Pending network requests and native resident-item progress are captured for diagnosis. Native Library original well isolate, placement and Edit scaling were visibly verified locally; persistence and the complete journey still require browser evidence. Stage remains reserved and undeployed.

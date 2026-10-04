@@ -28,7 +28,7 @@ function pinnedRecipe(recipe,original){
     // Every cleaned-eye branch ref must be frozen before intake. Originals keep native eyes.
     if(copy.eyes&&!/^[a-f0-9]{40}$/.test(copy.eyes.commit))delete copy.eyes;
     if(original)delete copy.eyes;return copy;};
-  return{...recipe,actor:item(recipe.actor),habitat:(recipe.habitat||[]).map(item),signatureProps:(recipe.signatureProps||[]).filter(it=>!it.optional).map(item)};
+  return{...recipe,runtimeAnimSets:recipe.residentId==='farmers'?['General','Simulation','Tools']:recipe.residentId==='monstrosity'?['General','CombatMelee']:['General'],actor:item(recipe.actor),habitat:(recipe.habitat||[]).map(item),signatureProps:(recipe.signatureProps||[]).filter(it=>!it.optional).map(item)};
 }
 export async function createResidentSet(id,{original=false,onProgress}={}){
   const def=RESIDENT_SETS.find(d=>d.id===id);if(!def)throw Error('Unknown resident set '+id);

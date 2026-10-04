@@ -20,6 +20,10 @@ on:
       - '.github/workflows/wb2-mvp-golden.yml'
   workflow_dispatch:
 
+concurrency:
+  group: wb2-golden-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 

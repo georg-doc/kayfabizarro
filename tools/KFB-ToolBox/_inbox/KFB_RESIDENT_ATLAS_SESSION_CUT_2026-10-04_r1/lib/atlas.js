@@ -940,7 +940,7 @@ export async function buildVignette(recipe, onProgress) {
 
       /* actor pose from the shared animation library, before any grounding */
       if (it.pose) {
-        const clips = await loadClips(it.rig || 'Rig_Medium', ANIM_SETS,
+        const clips = await loadClips(it.rig || 'Rig_Medium', recipe.runtimeAnimSets || ANIM_SETS,
           it.animLib ? [ANIM_LIB, { root: it.animLib, sets: it.animSets || ['General', 'MovementBasic'] }] : [ANIM_LIB]);
         const hit = clips.find((c) => it.pose.test(c.name));
         if (hit) {
