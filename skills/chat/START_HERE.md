@@ -55,7 +55,7 @@ Playable-MVP architecture now also has durable GitHub contracts for the Site-nat
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`
 
-The precheck is preparation guidance; the current execution authority is `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`. Do not turn its internal Player/Resident/Site/Memory checkpoints into separate Georg-facing slices. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. **World preflight is now PASS on Draft PR #348**: the current-main WB2/R2D convergence and the four-island Town/Dystopia/Utopia/Protopia corridor with three Track-Core connections, Golden-Journey anchors and canonical deck/Card seeds are browser-proven. PR #332 is donor/history only. The next hard gate is Motion PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`. Site-only planning is no longer the only copy of the architecture.
+The precheck is preparation guidance; the current execution authority is `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`. Do not turn its internal Player/Resident/Site/Memory checkpoints into separate Georg-facing slices. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. **World preflight is PASS on Draft PR #348 and Motion PR #344 is complete.** PR #332 is donor/history only. The current next action is one continuous **WSA / Codex One-Shot on PR #348** through Player, Residents, Golden Journey, persistence and Site Stage, with internal crash-safe checkpoints but no user-facing micro-gates.
 
 ## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
 
@@ -98,8 +98,8 @@ Current persistence correction: source-backed movement/vehicle knowledge must ex
 - decided Medium set: Walk `Walking_B` · Run `Running_A` · Sprint `Running_B` · Jog = speed/phase blend;
 - machine-readable source: `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json` on PR #344;
 - documented gaps: turn-in-place, start/stop/pivot, strafe walk; do not rerun baseline for them;
-- next gate: **KFB-LOCO-WB2-PLAYER-01**;
-- next executor: **WSA / Codex** on current World Draft PR **#348**;
+- `KFB-LOCO-WB2-PLAYER-01` is the first **internal** One-Shot checkpoint, not a separate Georg-facing gate;
+- current executor: **WSA / Codex** runs `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md` on current World Draft PR **#348**;
 - exact primary animation source remains KayKit Character Animations 1.1 @ `b97b5ac55df2724fae623992433685583eece51e`;
 - original KayKit clips remain primary; Mixamo / KFB Motion Library only after a proven gap;
 - PR #333 remains closed recovery/history;
@@ -132,7 +132,7 @@ Binding correction:
 - Combat-derived black slab-side target prevents bright/light card sides;
 - old rigid flight-acceptance/measurement card is not the donor.
 
-This parallel Blender work does **not** supersede the MVP hard dependency `KAYKIT-NATIVE-BLENDER-BASELINE-01`.
+This parallel Blender work does **not** block or replace the current MVP One-Shot. The native Ground baseline on PR #344 is already complete.
 
 
 Clay/facade/shadow routing is intentionally separate and owned by the other design chat; do not fold that work into these mobility slices.
