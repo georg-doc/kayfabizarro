@@ -98,11 +98,31 @@
     },
     "journeyPureContracts": "4/4 PASS",
     "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING",
-    "localMvp": "Actual 10/10 loader; ENTER; 41 objects; canonical master blob PASS; one borrowed Travel Audio graph with wind/engine/water; native Clown Card; native Frizzle actor swap. Full Golden/browser persistence pending."
+    "localMvp": "Actual 10/10 loader; ENTER; 41 objects; canonical master blob PASS; one borrowed Travel Audio graph with wind/engine/water; native Clown Card; native Frizzle actor swap. Full Golden/browser persistence pending.",
+    "latestIntegratedBrowserRun": {
+      "id": 37187632763,
+      "head": "8614726082b820fed1795c105b2581265985c9fd",
+      "result": "FAIL_COLD_LOAD_TIMEOUT_BEFORE_FIRST_GATE",
+      "pageErrors": 0,
+      "consoleErrors": 1,
+      "artifact": 11298326105,
+      "runtime": "LOADING 2/10, native scene record construction pending; no journey PASS claimed"
+    },
+    "coldLoadRepair": "Exact S6 runtime/Atlas/cast/juggle blobs verified equal on source and receiving refs; replace cold CDN module import with same existing repository module; halve software capture before ready; record current object load. Initial failure is not a non-improving two-pass CORE stop.",
+    "criticRound2": {
+      "dimension": "partial Town source fidelity",
+      "score": 8,
+      "status": "PROVISIONAL_NO_WHOLE_GAME_PASS",
+      "repairs": [
+        "native Play/Edit controls retained; Journey file actions in Almanac; authoring files in Library",
+        "Native gameplay HUD reused for I prompt",
+        "Card subject subdialog respects native six-action limit"
+      ]
+    }
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
-    "sourceTests": "13/13 PASS",
+    "sourceTests": "17/17 local PASS (9 world + 4 Player + 4 Journey)",
     "browserPlayer": "10/10 PASS",
     "resourceRegistry": "PASS",
     "pageErrors": 0,

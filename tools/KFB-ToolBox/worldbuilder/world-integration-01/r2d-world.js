@@ -123,12 +123,12 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
       for(const n of arch.nodes){
         const ng=new THREE.Group();ng.name='R2D island · '+n.id;nodeGroups.set(n.id,ng);group.add(ng);
         const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
-        const road=ST.buildTrack(THREE,n.plan.stream,mat);road.name='R2D Track Core road · '+n.id;road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});ng.add(road);
+        const road=ST.buildTrack(THREE,n.plan.stream,mat);road.name='R2D Track Core road · '+n.id;road.userData.sourceRecord={assetId:road.name,packId:'Track Core',source:{commit:TRACK_PIN,path:TRACK_DIR+'stream-to-three.mjs'}};road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});ng.add(road);
         const b=await mountR2DBuildings({group:ng,plan:n.plan,field:n.field,renderer});buildingSets.set(n.id,b);
       }
       for(const c of arch.connections){
         const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
-        const road=ST.buildTrack(THREE,c.stream,mat);road.name='R2D ROAD_BRIDGE · '+c.id;road.userData.worldConnectionId=c.id;road.userData.kind='ROAD_BRIDGE';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);
+        const road=ST.buildTrack(THREE,c.stream,mat);road.name='R2D ROAD_BRIDGE · '+c.id;road.userData.sourceRecord={assetId:road.name,packId:'Track Core',source:{commit:TRACK_PIN,path:TRACK_DIR+'stream-to-three.mjs'}};road.userData.worldConnectionId=c.id;road.userData.kind='ROAD_BRIDGE';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);
       }
       scene.add(group);
       W.log.push('R2D archipelago · '+arch.nodes.length+' islands · '+arch.connections.length+' Track Core bridges');
@@ -150,7 +150,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
         if(heightReader)presentations.get(n.id).refreshSurface(heightReader);
       }
     },
-    onTerrain(){return aggregateSupport()},
+    onTerrain(){if(heightReader)for(const p of presentations.values())p.refreshSurface(heightReader);return aggregateSupport()},
     frameEdit(camera,controls){const {cx,cz,size}=arch.bounds;controls.target.set(cx,0,cz);camera.position.set(cx+size*.52,Math.max(150,size*.36),cz+size*.58);controls.update()},
     tick(){},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},async setSky(v){W.skyMode=v;return v}
   };

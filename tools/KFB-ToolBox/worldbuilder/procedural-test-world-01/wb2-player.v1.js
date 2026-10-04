@@ -18,7 +18,7 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
     loader.loadAsync(raw(BASE+'Mannequin Character/characters/Mannequin_Medium.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_General.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb'))]);
-  let figure=model.scene,profile='Mannequin_Medium';const holder=new THREE.Group();holder.name='WB2 Player · Mannequin_Medium';holder.add(figure);holder.visible=false;
+  let figure=model.scene,profile='Mannequin_Medium';const holder=new THREE.Group();holder.name='WB2 Player · Mannequin_Medium';holder.add(figure);figure.userData.sourceRecord={assetId:profile,packId:'KayKit Rig_Medium',source:PLAYER_SOURCES[profile]};holder.visible=false;
   const names=new Set();figure.traverse(o=>{names.add(o.name);if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
   const clips=[...general.animations,...movement.animations],actions=new Map();let mixer=new THREE.AnimationMixer(figure),bindings={};
   for(const a of anchors){

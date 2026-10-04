@@ -458,7 +458,7 @@ const sculptCursor=new THREE.Mesh(
 sculptCursor.rotation.x=-Math.PI/2;
 sculptCursor.visible=false;
 sculptCursor.renderOrder=50;
-scene.add(sculptCursor);
+sculptCursor.userData.sourceRecord={assetId:'WB2 sculpt cursor',packId:'WB2 native editor',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'}};scene.add(sculptCursor);
 
 /* restrained selection/support feedback: a ground ring under the selection, accent when the
    object's base sits on the terrain, muted red when it floats or is buried (> 8 cm). */
@@ -466,7 +466,7 @@ const selRing=new THREE.Mesh(
   new THREE.RingGeometry(.9,1,56),
   new THREE.MeshBasicMaterial({color:0xe3b466,transparent:true,opacity:.5,side:THREE.DoubleSide,depthWrite:false,depthTest:false,fog:false})
 );
-selRing.rotation.x=-Math.PI/2;selRing.visible=false;selRing.renderOrder=40;scene.add(selRing);
+EDIT.helper.userData.sourceRecord={assetId:'ToolBox Edit Layer',packId:'WB2 native editor',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/lib/edit-layer.js'}};selRing.userData.sourceRecord={assetId:'WB2 selection ring',packId:'WB2 native editor',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'}};selRing.rotation.x=-Math.PI/2;selRing.visible=false;selRing.renderOrder=40;scene.add(selRing);
 const RING_OK=new THREE.Color(0xe3b466),RING_BAD=new THREE.Color(0xe48d7e);
 function updateSelRing(){
   const node=EDIT.node;
@@ -506,7 +506,7 @@ function updateSculptUi(){
   E('sculptUndo').disabled=!n;E('sculptClear').disabled=!n;
   const sculpting=sculptMode!=='off';
   E('brushGrp').hidden=!sculpting;E('objGrp').hidden=sculpting;
-  if(!HOST_PROPS.worldStudioMvp||!window.__wb2d?.mvp?.entered||(!PLAY?.on&&!window.__wb2d?.mvp?.drive?.active))E('legend').hidden=!(sculpting&&UI.legend&&mode==='scene');
+  E('legend').hidden=!(sculpting&&UI.legend&&mode==='scene');
   E('radiusOut').value=brushRadius().toFixed(2);E('strengthOut').value=brushStrength().toFixed(2);
 }
 function setTemporaryOrbit(on){
@@ -784,7 +784,7 @@ async function buildSceneObjects(token){
   sceneObjects.clear();selected=null;EDIT.clear();PRES.onObjectsReset();
   for(const rec of sceneDoc.objects){
     if(token!==sceneLoadToken)return;
-    const root=makeRoot(rec);
+    document.body.dataset.sceneLoad=JSON.stringify({id:rec.id,completed:sceneObjects.size,total:sceneDoc.objects.length});const root=makeRoot(rec);
     let model;
     if(rec.billboardWorldId){const api=await import('../procedural-test-world-01/wb2-billboards.v1.js');const module=await api.createWorldBillboard(rec.billboardWorldId,{renderer,cards:window.__wb2d.mvp.cards});root.userData.lifecycle=module;root.userData.billboardWorldId=rec.billboardWorldId;model=module.root;}
     else if(rec.performanceSetId){const api=await import('../procedural-test-world-01/wb2-party.v1.js');const module=await api.createPartySet(rec.performanceSetId,{renderer});root.userData.lifecycle=module;root.userData.performanceSetId=rec.performanceSetId;model=module.root;}

@@ -165,6 +165,10 @@ export function mountR2DPresentation({group,supportTerrain,plan,field,palette}){
   group.add(top,under);
   const water=buildWaterGroup(plan,field,palette);group.add(water.group);
   const nature=buildNatureGroup(plan,field,palette);group.add(nature.group);
+  const presentationSource={commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js'};
+  for(const mesh of [top,under])mesh.userData.sourceRecord={assetId:mesh.name,packId:'R2D source-derived island',source:presentationSource,lineage:SOURCE.r2dDonorBlob};
+  water.group.userData.sourceRecord={assetId:'R2D native water',packId:'R2D source-derived water',source:presentationSource,lineage:SOURCE.r2dDonorBlob};
+  nature.group.traverse(o=>{if(o.isMesh){const p2=o.name.startsWith('P2');o.userData.sourceRecord={assetId:o.name,packId:p2?'KFB Environment P2':'KFB Environment P1',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/world-corridor-01/'+(p2?'procedural-environment-p2/environment-family-p2.mjs':'procedural-props-local-proof/environment-family-p1.mjs'),blobSha:p2?SOURCE.p2Blob:SOURCE.p1Blob}}}});
   const natureBases=[];nature.group.traverse(o=>{if(o.isInstancedMesh){const matrices=[];for(let i=0;i<o.count;i++){const m=new THREE.Matrix4();o.getMatrixAt(i,m);matrices.push(m)}natureBases.push({mesh:o,matrices})}});
   return{
     report:{schema:SCHEMA,depth:body.depth,bodyVertices:body.vertices,underside:true,...water.report,nature:nature.report},
