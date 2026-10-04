@@ -1,5 +1,18 @@
 ## 2026-10-04 · Curtain Character Select / cross-rig QA contract
 
+## 2026-10-04 · Asset Librarian GPT Site / shared picker WSA intake
+
+- Prepared fresh branch `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04` from current main without modifying Librarian runtime code.
+- WSA workflow: `WSA-ASSET-LIBRARIAN-GPT-SITE-01`.
+- GPT Site is the intended primary human working surface after WSA build + Georg review; existing Cloudflare Librarian remains migration compatibility/source surface.
+- Full Librarian and compact God Mode / WorldBuilder picker share one Registry-backed search/query/item identity model.
+- Daily UX: Find → Inspect → Collect → Use; Family → Pack → Collection becomes primary browse; Saved Sets replace JSON-first human collection work while preserving `kfb.asset-handoff.v1`.
+- Dropbox/file sources are Intake only and remain visibly UNREGISTERED until the existing Registry ingestion accepts them.
+- Reuse only the green PR #304 donor subset at frozen implementation `545853924c4c177b6e26af588020b7a59307bb71`; its failed scrub/transport work stays quarantined.
+- No GPT Site, Cloudflare publication, Runtime PASS or merge is claimed by this preparation.
+- Exactly one next gate: **WSA-ASSET-LIBRARIAN-GPT-SITE-01**.
+
+
 ### MVP DECISION
 - Added optional 3D Character Select to the Curtain start sequence.
 - Flow: BLÖDSINN! real-load plaque → optional Actor Select → selected Actor ready → clay Enter → Curtain opens → Town.
