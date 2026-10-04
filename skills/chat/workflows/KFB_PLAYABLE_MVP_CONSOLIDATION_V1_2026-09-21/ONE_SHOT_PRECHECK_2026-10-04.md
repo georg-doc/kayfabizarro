@@ -400,6 +400,25 @@ Before the world geometry integration, prepare a small reviewed semantic fixture
 This is a derived cache/test fixture only.
 Canonical deck JSON + PDF remain provenance.
 
+### P1-16 · CURTAIN-CHARACTER-SELECT-01
+
+Current contract:
+`CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`.
+
+Prepare the start-screen selector as a **consumer of Motion**, not a blocker that invents Motion:
+- desired default: FrizzleBob v5b after exact source-pin reconciliation + Ground proof;
+- safe baseline: ActionFigure / Rig_Medium;
+- cross-rig probe: Black Knight / Rig_Large;
+- optional second Medium anatomy probe: GothGirl;
+- selection optional; FrizzleBob/default already selected;
+- lazy-load non-selected actors;
+- semantic movement intents resolve through per-rig capability profiles;
+- Rig_Large gaps remain explicit HOLD/UNSUPPORTED rather than borrowing Medium clips;
+- reversible Player-only presentation overrides may hide rigid capes/accessories without mutating source assets.
+
+After Motion #344:
+prove the accepted Medium intent ladder, then probe the same semantic intents on Large in the real WB2 world.
+
 ## C3 · Do not over-prepare before the One-Shot
 
 Do not spend the preflight budget on:
