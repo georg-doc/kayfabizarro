@@ -22,7 +22,7 @@
     "cloudflareRole": "SECONDARY_MIRROR"
   },
   "productOutcome": "FOUR_COMPLETE_SSOT_ISLANDS_WITH_JOYRIDE_TRACK_SIGNATURE_LIFETREES_AND_ZERO_BUILDING_TRACK_INTERSECTIONS",
-  "state": "FOUR_ISLAND_JOYRIDE_LIFETREE_SSOT_RECOVERY_READY",
+  "state": "FOUR_ISLAND_CANDIDATE_BROWSER_POLICY_BLOCKED",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -339,7 +339,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "EXECUTE_WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_THEN_UPDATE_SAME_GPT_SITE",
+  "nextInternalAction": "RESTORE_REGULAR_BROWSER_VERIFY_FOUR_ISLAND_CANDIDATE_THEN_UPDATE_EXISTING_GPT_SITE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -602,6 +602,18 @@
       "protectedAnchorCollisionsRequired": 0
     },
     "paletteSource": "R2C PAL @ current main",
-    "siteUpdate": "SAME_GPT_SITE_IN_PLACE"
+    "siteUpdate": "SAME_GPT_SITE_IN_PLACE",
+    "implementationHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "status": "CANDIDATE_NOT_HUMAN_REVIEW_READY",
+    "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/FOUR_ISLAND_RECOVERY_2026-10-04/RESULT.json",
+    "siteUpdated": false,
+    "browserBlock": "ADMIN_POLICY_SERVICE_UNAVAILABLE",
+    "scope": [
+      "Town",
+      "Dystopia",
+      "Utopia",
+      "Protopia"
+    ],
+    "nextGate": "Regular browser full integration/visual/gameplay check; then same-Site update"
   }
 }

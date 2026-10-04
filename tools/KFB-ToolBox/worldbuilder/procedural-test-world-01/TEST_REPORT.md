@@ -1,3 +1,27 @@
+## 2026-10-04 · Vier-Insel-Recovery: Kandidat gesichert, Browserprüfung blockiert
+
+Die bestehende WB2-Welt enthält jetzt als Implementierungskandidat vier unterschiedliche, deterministische Lebensbäume, zusammenhängende Wurzel-/Erdkörper, die extrahierte Joyride-J14/T4-Präsentation und eine Gebäudeplatzierung mit vollständiger Grundrissprüfung. Noch keine Produktfreigabe und kein neuer Site-Stand.
+
+- Repo/Branch: `georg-doc/kayfabizarro` · `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04` · Draft PR #348.
+- Geprüfter Code-/Evidenzstand: `3d9aaf5f6623f9009d6e68dd3c042009a160b044` (vor diesem Metadaten-Checkpoint).
+- 7 unveränderte Track-Core-Streams; Mittellinienabweichung 0 m.
+- 25 native Gebäudemodelle in unverändertem Maßstab: vollständige transformierte konvexe Grundrisse gegen Track/Joyride-Rand, Brückenanschlüsse, geschützte Anker, Baumstämme und andere Gebäude geprüft; 0 Treffer.
+- Produktionsadapter zusätzlich mit allen 25 Quellgeometrien ausgeführt; Platzierung/Maßstab stimmen mit der unabhängigen Geometrieprüfung überein. GPU-Materialprüfung steht aus.
+- Wurzel-Dreiecke gegen Gebäude auf 4/4 Inseln: 0 Treffer.
+- 4 deterministische Baumrezepte; 8/8 Prüfungen für die Spielstandmigration. Selbst bearbeitete Objekte, Spielerstand und Sculpt-Striche bleiben erhalten. Erhaltene, selbst verschobene Gebäude brauchen erneut eine Clearance-Prüfung.
+- Unabhängiger no-code Critic: zuvor beanstandete Formmängel im letzten Offline-Vergleich behoben; gezieltes OFFLINE GEOMETRY PASS für Baum/Wurzel/Erde. Keine Spiel-/Material-/Gesamtfreigabe.
+
+**Konkreter externer Blocker:** Der reguläre Browserzugriff auf die bestehende GPT Site wurde erneut vor Seitenzugriff verweigert: Die administrative Sicherheitsrichtlinie konnte nicht geprüft werden. Kein Transportwechsel und keine Umgehung. Dadurch fehlen aktueller Browserboot, K2-Shaderprüfung, sieben sichtbare Korridore, Spielkamera, vollständiger Player-/Residents-/Cards-/Drive-/Editor-/Save-Regressionstest und vollständige unabhängige Produktkritik.
+
+**Site unverändert:** https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/  
+Letzte veröffentlichte Version: `appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495`. Die neuen Bilder sind ausdrücklich Blender-Geometriebelege, keine Screenshots des Spiels. Die helle Fahrbahn im Offline-Export zeigt nicht den K2/GLSL-Straßenlook.
+
+Evidenz: `evidence/FOUR_ISLAND_RECOVERY_2026-10-04/` mit Messwerten, vier Bildern, Critic und exakter Runtime-Dateiliste. Reproduzierbare Prüfungen: `qa/wb2-four-island/`. Quellen/Adaptionsstellen: `JOYRIDE_SOURCE_MAP.json`.
+
+**Ein nächstes internes Gate:** regulären Browserzugriff wiederherstellen, exakt diesen Vier-Insel-Kandidaten vollständig prüfen und verbleibende sichtbare Probleme beheben; danach dieselbe GPT Site in-place aktualisieren und die neue Revision öffnen. Erst anschließend bleibt genau ein menschliches Gate: Georg spielt alle vier Inseln frei. Kein Merge, keine Game-Live-Promotion.
+
+Ältere PASS-Abschnitte darunter sind historische Evidenz und gelten nicht für diesen Kandidaten.
+
 # TEST REPORT · WORLD-MULTI-ISLAND-CORRIDOR-01
 
 Status: **PASS**

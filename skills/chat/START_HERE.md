@@ -1,3 +1,7 @@
+## Aktueller WB2-Produktstand · 2026-10-04
+
+Die Vier-Insel-Recovery ist als Code-/Geometriekandidat in Draft PR #348 gesichert (`3d9aaf5f6623f9009d6e68dd3c042009a160b044`). **Browserprüfung blockiert, keine Produktfreigabe, GPT Site unverändert.** Vollständiger aktueller Stand: [WB2 Return](../../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/RETURN.md). Der Vier-Insel-SSOT-Brief bleibt bindend; keine neue Welt und kein weiterer Blender-Locomotion-Auftrag. Nächstes Gate: regulärer Browserzugriff, integrierte Vier-Insel-Prüfung, dann Update derselben GPT Site.
+
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.4
