@@ -1,3 +1,15 @@
+## 2026-10-04 · Surface consolidation · one Hub / one Control / one ToolBox
+
+- Georg reported that Production Hub, Production Control and ToolBox routing were still not coherently current as a human production system despite technically successful individual deployments.
+- Added binding `KFB_SURFACE_CONSOLIDATION_2026-10-04.md`.
+- New human hierarchy: Production Hub = one front door; Production Control = admin ledger/history; ToolBox = exactly one current tool router; specialist Sites remain tools; games remain products.
+- Site registry upgraded to surface-role schema and marks Hub/Control as stale until the consolidation UI/navigation pass.
+- ToolBox START_HERE and TOOLBOX_MANIFEST now require exactly one canonical GPT Site front door and classify old ToolBox Home/Stage/standalone surfaces as history/donors.
+- Created Work branch `chatgpt-web/surface-consolidation-2026-10-04` with one integrated Work handover and machine status.
+- Production Control decision persisted: `one Hub + one Control + one ToolBox`.
+- Active Work Map now includes the surface-consolidation recovery as current control-plane work.
+- No World Studio, Combat or specialist-tool runtime was modified.
+
 ## 2026-10-04 · Production Site + Production Control portfolio refresh
 
 - Replaced the stale Production Hub Today list with the current portfolio board: World Studio + Card-Hex as P0 human gates; Environment Atlas / Asset Librarian / FrankenStein / Fluff as P1; Quote Pool + Audio as cheap/consumer-driven parallel lanes.
