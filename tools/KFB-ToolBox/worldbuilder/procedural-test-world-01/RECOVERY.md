@@ -99,3 +99,41 @@ Tested runtime/test head: `531fcc3f912d226254bab0e5e43a0a78750f001b`. Existing D
 **Limits:** no new WB2 centimetre foot-creep certification was made. The accepted Blender RAMP_02 remains the visual/measurement reference; original timing, phase, speeds and metre rig are preserved. Known start/stop/turn/strafe gaps remain as in that contract. No public Stage/deployment or human freeplay acceptance is claimed. Local In-App Browser visibly verified the integrated player; Chromium evidence is the repeatable runtime proof.
 
 **Next internal action:** continue the Resident/activity seam under the existing `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`, inside this same world/PR. This is an internal checkpoint, not a new Georg-facing approval gate. The explicitly requested Player checkpoint ends here; no Resident, Drive or Flight implementation was added in this turn.
+
+
+## 2026-10-04 · CURRENT RECOVERY OVERRIDE · VISUAL FAIL + CONTINUOUS ONE-SHOT
+
+The earlier corridor/browser PASS remains valid only for:
+- WB2 owner;
+- four-island topology;
+- three Track-Core connections;
+- Golden anchors/Card seeds;
+- returned native Player/Motion checkpoint.
+
+It is **not** visual-world acceptance.
+
+Current human result:
+- visible Hürth/OSM-derived environment foundation = **HUMAN VISUAL FAIL**;
+- valid integrated work must be preserved;
+- rejected visible-source paths must be removed/quarantined in the same recovery/completion run.
+
+The returned WSA job ended after the Player checkpoint. This is an execution-control failure relative to the current ONE_SHOT lock, not a new external gate.
+
+Read next:
+1. `ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`
+2. `ONE_SHOT_STATUS.json`
+3. main `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+Current recovery mode:
+**PRESERVE VALID WORK → SOURCE-CLEAN VISUAL RECOVERY → CONTINUE THROUGH FULL GOLDEN JOURNEY / SITE / PERSISTENCE / WHOLE-GAME CRITIC → ONE HUMAN STAGE.**
+
+Do not route this recovery into:
+OSM cleanup → Resident slice → Drive slice → Site slice.
+
+Reserved final review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/`
+NOT DEPLOYED.
+
+### Exactly one next action
+
+**Resume the same PR #348 under the branch-local completion brief and continue automatically until the integrated Stage candidate is ready or a real stop condition is hit.**
