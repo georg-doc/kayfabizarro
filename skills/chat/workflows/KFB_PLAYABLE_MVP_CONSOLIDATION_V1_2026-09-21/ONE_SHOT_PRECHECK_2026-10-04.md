@@ -89,26 +89,52 @@ Current PR handoff head `08f8561ccfdb9ee0f7fd0d26a60eb54ee6865532` was independe
 No Player, Drive, Motion or Residents are mounted in this world gate.
 The world is now ready for the current native Motion attachment sequence.
 
-### P0-3 · KAYKIT-NATIVE-BLENDER-BASELINE-01 / Motion #344
+### P0-3 · KAYKIT-NATIVE-BLENDER-BASELINE-01 / Motion #344 · PASS
 
-Current Motion PR #344 is open.
-Current branch Return still says:
-**PREPARED FOR BLENDER · NOT RUN**.
+Motion PR #344 native review is complete.
 
-Good news:
-the exact native source is now pinned:
-- real ActionFigure;
-- KayKit Character Animations 1.1;
-- Rig_Medium General / MovementBasic / MovementAdvanced;
-- native-first policy.
+Correct source truth:
+- primary review actor: **Mannequin_Medium**;
+- FrizzleBob v5 second;
+- ActionFigure was not the baseline review actor;
+- KayKit Character Animations 1.1 only for the basic set;
+- native baseline: **KEEP 21 · HOLD 3 · REJECT 0**.
 
-Still unresolved:
-- which native Idle/Walk/Run/Sprint/Jump/turn candidates are KEEP / HOLD / REJECT;
-- final integrated player baseline.
+Georg's binding Medium locomotion:
+- Walk = `Walking_B`;
+- Run = `Running_A`;
+- Sprint = `Running_B`;
+- Jog = speed/phase blend between Walking_B and Running_A.
 
-Required before One-Shot:
-run the native Blender review and persist the selected source set.
-Do not revive the failed mixed browser candidate.
+Machine-readable owner contract:
+PR #344 @ `dfb6b8a15b3f04c52f49825252fcaf60f45df51c`
+→ `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`.
+
+Known source gaps:
+turn in place, start/stop/pivot, strafe walk.
+They are documented gaps, not an unfinished Blender gate.
+
+### P0-3B · KFB-LOCO-WB2-PLAYER-01 · CURRENT NEXT GATE
+
+Next executor: **WSA / Codex**.
+
+Receiving owner:
+current four-island WB2 Draft PR #348.
+
+Read:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
+
+First checkpoint:
+one Mannequin_Medium Player consumes the decided KayKit speed/phase blend in the real browser-proven four-island WB2 world.
+
+Do not:
+- rerun Blender baseline;
+- use ActionFigure as a replacement baseline;
+- re-pick/re-time clips;
+- restore the failed Mixamo-first ladder;
+- add Residents/Drive/Flight in the first Player checkpoint.
+
+Only after this PASS advance to Resident placement.
 
 ### P0-4 · WSA-RES-SET-01
 
