@@ -7,7 +7,7 @@
   "branch": "planning/chatterbox-triplet-curator-site-2026-10-04",
   "base": {
     "branch": "coworker/coordination-plan-2026-10-04",
-    "head": "422c48e2a82b13c8ae380da70f6c66619639d8aa"
+    "head": "b2ddd72346e3d804b53625f50addbba87be3c9a0"
   },
   "residentPrep": {
     "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/",
@@ -64,5 +64,14 @@
     "ownershipRule": "PRESENTATION_ONLY_NO_DIALOGUE_OR_MEMORY_OWNERSHIP"
   },
   "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/",
-  "livePromotion": false
+  "livePromotion": false,
+  "reviewStageDonor": {
+    "branch": "coworker/coordination-plan-2026-10-04",
+    "head": "b2ddd72346e3d804b53625f50addbba87be3c9a0",
+    "stagePath": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html",
+    "stageBlob": "2d4fa60931ae0f1f1815788bb801a5f1e156c1d6",
+    "webChatBriefPath": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md",
+    "webChatBriefBlob": "796a1236ab634ebf9385fdc8a070165d2b8a043f",
+    "rule": "REUSE_AS_SITE_UI_WORKFLOW_DONOR_NOT_SECOND_OWNER"
+  }
 }
