@@ -33,7 +33,9 @@
       "suggested BPM/tonal center when justified",
       "stem priority",
       "2-4-master audition rule"
-    ]
+    ],
+    "copyPasteBlock": "Single block only: BPM or BPM range + short direction phrase + Style prompt. Do not put explanatory meta outside the block when the user asks for a generator-ready prompt.",
+    "externalPromptFormatExample": "BPM: 60–72. Spacious, strange, contemplative. [style text follows]"
   },
   "intakePolicy": {
     "siteInbox": "KFB Production Control / KFB-AUDIO-SITE",
@@ -69,7 +71,9 @@
     "transitionModel": "Treat ambient beds and road/action songs as DJ-like layers with phrase-aware crossfades; ordinary weather SFX need not be beat-synced.",
     "customModelStrategy": "Reserve one Suno Custom Model slot for a coherent KFB World / musical-world model; keep the other two slots free. Curate a small coherent training set, and hold out several tracks for evaluation instead of feeding the entire catalog.",
     "musicalToy": "Treat the world as a musical instrument: biome, weather, movement, social activity, Residents and events influence layered music states while physical SFX remain a supporting reality layer.",
-    "liveDjGameMix": "Use phrase-aware transitions, energy/tension/motion parameters, key/tempo compatibility, ambience bridges and stingers so exploration, driving, disco and action feel continuously mixed rather than playlist-switched."
+    "liveDjGameMix": "Use phrase-aware transitions, energy/tension/motion parameters, key/tempo compatibility, ambience bridges and stingers so exploration, driving, disco and action feel continuously mixed rather than playlist-switched.",
+    "paletteStatus": "Six broad palette-expansion masters are human-positive: Soul/R&B, Piano/Chamber, Cinematic, Cartoon Chase, Folk/Storybook, Metaphysical/Cosmic. Do not add more genres by default until the trained model is evaluated.",
+    "modelTrainingStatus": "Georg has already submitted the broad current pool to Suno for Custom Model training. Next step is evaluation of output breadth and family resemblance, not more training inputs unless a concrete gap appears."
   },
   "deckAmbientSources": [
     "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",

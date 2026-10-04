@@ -1,7 +1,7 @@
 {
   "schema": "kfb.audio-source-lock/0.1",
   "generated": "2026-10-04",
-  "sourceRef": "main@b6afb431c25e48767bf875c8b2eb74866f6946e5",
+  "sourceRef": "main@2c31790078ff4b33ef8062b1d6a84e8fc33752e6",
   "roadTripV2": {
     "masters": [
       {
@@ -321,6 +321,42 @@
         "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Protopia Ambient Bed.mp3",
         "sha": "6a7420d2e1e66b2171ee364c57c3043942f24818",
         "size": 4853825
+      },
+      {
+        "title": "Soul / R&B Ambient Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Soul - R&B Ambient Bed.mp3",
+        "sha": "eceb55f0d022f512c938c8ff77f715bcc65e3e39",
+        "size": 4595136
+      },
+      {
+        "title": "Piano / Chamber Minimal Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Piano _ Chamber Minimal Bed.mp3",
+        "sha": "aa10df1c7dd639fd1d2f8982ff766f33f8f9510e",
+        "size": 4746631
+      },
+      {
+        "title": "Cinematic / Epic-but-Playable Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cinematic _ Epic-but-Playable Bed.mp3",
+        "sha": "ddedc475732769c4163d9002d68cdb28df2ef0f0",
+        "size": 4961573
+      },
+      {
+        "title": "Cartoon Chase / Capers Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cartoon Chase _ Capers Bed 3 min.mp3",
+        "sha": "e3e1076e435d185ae500f4d2d911fcc4a3514223",
+        "size": 4310027
+      },
+      {
+        "title": "Folk / Acoustic / Storybook Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Folk _ Acoustic _ Storybook Bed 3 min.mp3",
+        "sha": "9a0ed83ab82020824d1d935605a336216042d9e6",
+        "size": 4298738
+      },
+      {
+        "title": "Metaphysical / Cosmic Ambient Bed",
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Metaphysical _ Cosmic Ambient Bed 3 min.mp3",
+        "sha": "0d902031f4a9e9b1a3eb6d7de3ebcf97fb3cf63c",
+        "size": 4023162
       }
     ],
     "stemFamilies": [
@@ -593,6 +629,44 @@
       "sha": "2563f9968dfc25fdd9d2c1730d7bbd152ed022cf",
       "size": 49581,
       "status": "HUMAN_TUNE"
+    }
+  ],
+  "pendingStemAcquisition": [
+    {
+      "title": "Soul / R&B Ambient Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Soul - R&B Ambient Bed.mp3",
+      "bpmHint": "76–82"
+    },
+    {
+      "title": "Piano / Chamber Minimal Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Piano _ Chamber Minimal Bed.mp3",
+      "bpmHint": "62–72"
+    },
+    {
+      "title": "Cinematic / Epic-but-Playable Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cinematic _ Epic-but-Playable Bed.mp3",
+      "bpmHint": "78–88"
+    },
+    {
+      "title": "Cartoon Chase / Capers Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cartoon Chase _ Capers Bed 3 min.mp3",
+      "bpmHint": "112–124"
+    },
+    {
+      "title": "Folk / Acoustic / Storybook Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Folk _ Acoustic _ Storybook Bed 3 min.mp3",
+      "bpmHint": "78–90"
+    },
+    {
+      "title": "Metaphysical / Cosmic Ambient Bed",
+      "status": "PENDING",
+      "masterPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Metaphysical _ Cosmic Ambient Bed 3 min.mp3",
+      "bpmHint": "60–72"
     }
   ]
 }

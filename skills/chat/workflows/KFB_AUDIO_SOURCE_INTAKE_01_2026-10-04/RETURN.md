@@ -129,3 +129,25 @@ Executor split:
 - **Then ChatGPT / Audio Site:** catalog winners, annotate transition metadata, and curate the eventual single KFB World Custom Model training set.
 
 Do not train the Custom Model before this palette expansion.
+
+
+## Musical Palette Expansion · six masters arrived · 2026-10-04
+
+Georg generated and accepted all six palette-expansion masters:
+
+- Soul / R&B Ambient Bed · BPM hint 76–82 · warm, human, relaxed
+- Piano / Chamber Minimal Bed · BPM hint 62–72 · reflective, intelligent, intimate
+- Cinematic / Epic-but-Playable Bed · BPM hint 78–88 · wonder, scale, adventure without trailer bombast
+- Cartoon Chase / Capers Bed · BPM hint 112–124 · playful movement, not slapstick
+- Folk / Acoustic / Storybook Bed · BPM hint 78–90 · warm, timeless, accessible
+- Metaphysical / Cosmic Ambient Bed · BPM hint 60–72 · spacious, strange, contemplative
+
+All six are cataloged as human-positive master Ground Truth. Stems are not yet present and are marked `PENDING`, not missing/failed.
+
+The BPM values above are authoring hints from the Suno Style prompts, not measured final BPM. Do not convert them into exact runtime BPM until a stem package or other source proves the exact tempo.
+
+New prompt convention accepted:
+**one copy/paste block = BPM/range + short direction phrase + full Style prompt.**
+
+Custom Model status:
+Georg has already submitted the broad current pool to Suno for training. Do not feed more styles into it by default. Evaluate the trained model first.

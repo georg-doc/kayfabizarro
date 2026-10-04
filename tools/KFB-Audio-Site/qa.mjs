@@ -6,8 +6,9 @@ try{
  const c=await browser.newContext({viewport:{width:1440,height:1050}});page=await c.newPage();page.on('pageerror',e=>result.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')result.errors.push(m.text())});page.on('response',r=>{if(r.status()>=400&&!r.url().includes('raw.githubusercontent.com'))result.httpErrors.push({url:r.url(),status:r.status()})});
  await page.goto(base,{waitUntil:'networkidle',timeout:90000});
  check('site marker 0.2',await page.evaluate(()=>document.documentElement.dataset.kfbAudioSite==='0.2'));
- check('63 catalog tracks',await page.locator('#catalogGrid .track').count()===63,await page.locator('#catalogGrid .track').count());
- check('stats 45 / 15',await page.locator('#stats').innerText().then(x=>x.includes('53 RoadTrip v2')&&x.includes('23 stem families')));
+ check('69 catalog tracks',await page.locator('#catalogGrid .track').count()===69,await page.locator('#catalogGrid .track').count());
+ check('stats 45 / 15',await page.locator('#stats').innerText().then(x=>x.includes('59 RoadTrip v2')&&x.includes('23 stem families')));
+ check('six palette masters',await page.locator('#catalogGrid .track').filter({hasText:'Bed'}).count()>=9,await page.locator('#catalogGrid .track').filter({hasText:'Bed'}).count());
  check('three ambient winners',await page.locator('#catalogGrid .track').filter({hasText:'Ambient Bed'}).count()>=3,await page.locator('#catalogGrid .track').filter({hasText:'Ambient Bed'}).count());
  check('rain texture card',await page.locator('.track').filter({hasText:'Rain percussion · Beetle / Ring'}).count()===1);
  await page.selectOption('#stemFilter','stems');check('15 stem filter',await page.locator('#catalogGrid .track').count()===23,await page.locator('#catalogGrid .track').count());

@@ -189,3 +189,34 @@ Keep these more stable than genre:
 9. **Minimal Electronic / Systems** — restrained synth pulses and texture for AI, science, technology, data and abstract decks.
 
 The training set should cover several zones but remain coherent through the shared grammar. If one genre appears in more than roughly a quarter of the initial training set, check for bias.
+
+
+## Palette expansion complete · model training already submitted
+
+Georg accepted the six deliberately broad palette masters: Soul/R&B, Piano/Chamber, Cinematic, Cartoon Chase, Folk/Storybook and Metaphysical/Cosmic.
+
+This means the obvious style-zone gap is currently **not** another genre. The useful next question is whether the trained model preserves differentiation across these zones.
+
+One possible future gap remains **Minimal Electronic / Systems**, but do not generate it yet unless model evaluation shows that AI/science/technology/data themes lack a convincing neutral electronic language. Existing synth/road/system-oriented tracks may already cover it.
+
+### Prompt format convention
+
+Future Suno Style prompts should be delivered as one paste-ready block:
+
+`BPM: <value/range>. <short direction>. <style prompt>`
+
+No separate metadata lines that the user has to manually recombine.
+
+### Custom Model evaluation before further palette growth
+
+When the trained model becomes available, test the same model with short prompts for:
+1. Soul / humane warmth
+2. Piano / reflective chamber
+3. Cinematic wonder
+4. Cartoon chase
+5. Folk / storybook
+6. Cosmic / metaphysical
+7. Road / higher motion
+8. Quiet ambient biome
+
+If outputs retain clear differentiation while sharing production family resemblance, stop expanding the training pool. If one or more zones collapse toward the dominant funk/surf/groove language, correct that specific gap rather than adding random genres.
