@@ -59,16 +59,26 @@ Read exact Motion owner at PR #344 head `dfb6b8a15b3f04c52f49825252fcaf60f45df51
 - `KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
 - `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`
 
-## Exactly one next gate
+## One-Shot execution correction · 2026-10-04
 
-**KFB-LOCO-WB2-PLAYER-01**
+The former Player → Resident sequence remains valid **internally**, but is no longer a series of external gates.
 
-Executor: **WSA / Codex**.
-Receiving owner: this PR #348.
-Read: `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
+Current execution authority:
+`skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`.
 
-After that PASS:
-**WSA-RES-SET-01** for Resident placement/Save/Reload.
+Internal order begins with:
+1. `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`;
+2. Resident-set integration;
+3. Golden Journey interactions/Drive/performance;
+4. Curtain/Character Select;
+5. Almanac/Lean Memory;
+6. Site Stage and end-to-end acceptance.
+
+WSA/Codex checkpoints and continues automatically unless a real blocker or Georg-only product decision appears.
+
+## Exactly one next action
+
+**WSA / Codex runs the One-Shot on PR #348.**
 
 
 ## KFB-LOCO-WB2-PLAYER-01 · implementation checkpoint · 2026-10-04
