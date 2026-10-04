@@ -101,3 +101,61 @@ Prompt Studio grounding now uses the one-block convention:
 8. Persist new Site version/deployment + source head to this Return and KFB Production Control.
 
 No Cloudflare. No merge.
+
+
+## CURRENT OVERRIDE · SFX Library Index 01 · 2026-10-04
+
+This override supersedes older pending-stem counts above.
+
+Current catalog truth:
+- **69 total tracks**
+- **59 RoadTrip-v2 masters**
+- **29 stem families present**
+- **17 ElevenLabs Source Lab candidates**
+
+Current shared canonical audio inventory:
+- `media/3D_Assets/CATALOG/audio-catalog.json`
+- source lock: `main@ca4f953d0d5ca001b46f1d89b8908b80592a09c9`
+- **2,084 audio files** = Audio 1,704 + Sounds 380
+
+New Site data source:
+- `tools/KFB-Audio-Site/sfx-library.snapshot.json`
+- derived/non-canonical view of all **1,704 Audio files**
+- gameplay use-cases, semantic roles, verbs, temporal/spatial class, status/confidence and exact-duplicate metadata
+
+The same existing Site update must now also add:
+
+### SFX Library
+- searchable/filterable inventory;
+- existing preview player for audition;
+- duplicate aliases hidden by default with an explicit reveal option;
+- filters for use-case, source family, temporal/spatial class, confidence and curation status.
+
+### Event Map
+Candidate mapping for common game events:
+`click · select · confirm · error · open · close · pickup · inspect · discover · step · jump · land · hit · attack · engine · machine · success · failure`.
+
+Do not silently promote candidates to accepted game cues. Keep `KEEP / TUNE / REJECT` as the human curation step.
+
+Preserve these visible gaps:
+- tyre/skid/friction;
+- physical rain/storm/thunder;
+- sustained crowd/venue;
+- city/traffic;
+- additional loopable workshop machinery.
+
+Data/index QA:
+- run `37185843367`
+- job `111387438944`
+- validator **45/45 PASS**
+- existing Site browser **14/14 PASS**
+- artifact `11296249195`
+- digest `sha256:0beeb50c4701a48ebd9921fcb2e5438d27f1001b7962ed1e6146cc00a8cd3199`
+
+This is not a claim that the SFX Library UI is already published.
+
+### Single acceptance gate
+
+Continue to use **KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE**.
+
+Update the existing Site project `appgprj_6ac1c73dc28881919123106bd6d3e90e`; do not create a second Site. Verify the exact live `https://kfb-audio.frizzlebob.chatgpt.site/` revision after publication. No Cloudflare and no merge.
