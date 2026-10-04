@@ -30,7 +30,21 @@ async function walkTo(target,radius=3,expected=null){
   if(Math.abs(err)>.16){const key=err>0?'d':'a';await page.keyboard.down(key);try{await page.waitForFunction(({old,amount})=>{const h=window.__wb2d.play.heading;return Math.abs(h-old)>=amount},{old:p.heading,amount:Math.min(Math.abs(err)-.08,Math.PI-.05)},{timeout:60000,polling:'raf'});}finally{await page.keyboard.up(key);}}
   else{await page.keyboard.down('w');try{await page.waitForFunction(({start,point,amount})=>{const p=window.__wb2d.play.position;return Math.hypot(p.x-start[0],p.z-start[2])>=amount||Math.hypot(p.x-point[0],p.z-point[1])<1.35},{start:p.position,point,amount:Math.max(.15,d-1.3)},{timeout:120000,polling:'raf'});}catch(e){const after=await playerState();throw Error('Native held-W segment deadline: '+JSON.stringify({target,point,before:p,after,cause:String(e)}));}finally{await page.keyboard.up('w');}const after=await playerState(),moved=after.position,dx=point[0]-p.position[0],dz=point[1]-p.position[2],len=Math.hypot(dx,dz),along=((moved[0]-p.position[0])*dx+(moved[2]-p.position[2])*dz)/len,lateral=Math.abs((moved[0]-p.position[0])*dz-(moved[2]-p.position[2])*dx)/len;travelled+=Math.hypot(moved[0]-p.position[0],moved[2]-p.position[2]);const crossed=along>=len&&lateral<1.35;traversal.push({target,point,before:p,after,along,lateral,crossed,time:Date.now()});if(Math.hypot(moved[0]-point[0],moved[2]-point[1])<1.35||crossed)break;}
  }}
- await page.keyboard.up('Shift');await sleep(350);return {target,waypoints:route.length,position:(await playerState()).position,travelled};
+ await page.keyboard.up('Shift');
+ await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed)<.05,null,{timeout:5000,polling:'raf'}).catch(()=>{});
+ if(expected){
+  let nearest=(await read()).mvp.nearestInteraction?.id;
+  for(let nudge=0;nearest!==expected&&nudge<16;nudge++){
+   p=await playerState();
+   const wanted=Math.atan2(target[0]-p.position[0],target[1]-p.position[2]),err=Math.atan2(Math.sin(wanted-p.heading),Math.cos(wanted-p.heading));
+   if(Math.abs(err)>.12){const key=err>0?'d':'a';await page.keyboard.down(key);try{await page.waitForFunction(({old,amount})=>Math.abs(window.__wb2d.play.heading-old)>=amount,{old:p.heading,amount:Math.min(Math.abs(err)-.06,Math.PI-.05)},{timeout:15000,polling:'raf'});}finally{await page.keyboard.up(key);}}
+   p=await playerState();await page.keyboard.down('w');try{await page.waitForFunction(({start,expected})=>window.__wb2d.mvp.evidence().nearestInteraction?.id===expected||Math.hypot(window.__wb2d.play.position.x-start[0],window.__wb2d.play.position.z-start[2])>=.22,{start:p.position,expected},{timeout:15000,polling:'raf'});}finally{await page.keyboard.up('w');}
+   await page.waitForFunction(()=>Math.abs(window.__wb2d.play.speed)<.05,null,{timeout:5000,polling:'raf'});
+   nearest=(await read()).mvp.nearestInteraction?.id;
+  }
+  assert(nearest===expected,'Stable native nearest target mismatch '+JSON.stringify({expected,nearest,target,position:(await playerState()).position}));
+ }
+ return {target,waypoints:route.length,position:(await playerState()).position,travelled};
 }
 async function target(id){return page.evaluate(id=>{const r=window.__wb2d.sceneObjects.get(id);return[r.position.x,r.position.z]},id)}
 async function encounter(id,choice){const expected=id==='dystopia.band'?'dystopia.orc':id;await walkTo(await target(id),id==='protopia.farmers'?4:3,expected);assert((await read()).mvp.nearestInteraction?.id===expected,'Wrong nearby Resident for '+expected);await page.keyboard.press('i');assert((await read()).mvp.selectedTarget===expected,'Actual interaction target mismatch');await page.getByText(choice,{exact:true}).waitFor({timeout:30000});await page.getByText(choice,{exact:true}).click();await page.waitForFunction(id=>window.__wb2d.mvp.journey.offer(id)?.completed,expected,{timeout:30000});await page.keyboard.press('Escape');await page.waitForFunction(()=>!window.__wb2d.mvp.encounter&&window.__wb2d.play.on,null,{timeout:30000});}
