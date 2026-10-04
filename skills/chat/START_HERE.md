@@ -86,21 +86,23 @@ Additional hard rule: **no low-fidelity proxy human gates**. If a review artifac
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
-**Ground routing override, 2026-10-03:** the browser locomotion candidate produced from the mixed Motion-Library/Mixamo ladder failed Georg's motion review and is archived. It is not a playable MVP and not an integration base. Current Ground work first reviews the original KayKit Character Animations 1.1 clips on the real ActionFigure in Blender. See `skills/kfb-cartoon-animation/references/kfb-integration-current-ssot.md` for the plain-language current phase. Cars and Flight remain waiting; do not start another World/Travel integration before the native Ground family is accepted.
+**Ground routing override, 2026-10-04:** the mixed Motion-Library/Mixamo browser candidate remains archived. The corrected KayKit-native Blender review on PR #344 is now **complete**: Mannequin_Medium was the primary review actor, FrizzleBob v5 second, ActionFigure was not the baseline actor. Georg's decided Medium set is Walking_B → Running_A → Running_B, with jog as a speed/phase blend. The exact machine-readable contract is on PR #344 at `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`. **Next executor is WSA / Codex**: integrate that set into the already-proven four-island WB2 PR #348 via `KFB-LOCO-WB2-PLAYER-01`.
 
 Current persistence correction: source-backed movement/vehicle knowledge must exist under a stable owner path and be consumed by the runtime; a measured donor or loaded asset is not enough if the active consumer still carries local parallel mappings.
 
-### Ground · current gate · 2026-10-04 correction
-- current Motion owner: Draft PR **#344** · `[CURRENT MOTION SSOT] KayKit-native locomotion Blender baseline`;
-- branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`;
-- current observed PR head: `779c68b2c71609e86710a8bd9fe05ffc6913014f`;
-- current branch Return still says **PREPARED FOR BLENDER · NOT RUN**;
-- next gate: **KAYKIT-NATIVE-BLENDER-BASELINE-01**;
-- exact actor: ActionFigure / Rig_Medium;
-- exact primary animation source: KayKit Character Animations 1.1 @ `b97b5ac55df2724fae623992433685583eece51e`;
-- original KayKit clips remain primary; Mixamo / KFB Motion Library only after a native-source gap is proven;
-- PR #333 is closed recovery/history and its failed mixed browser candidate must not be revived;
-- protected runtime rule remains: one central Ground movement owner; no World/Travel consumer-local locomotion state machine.
+### Ground · current gate · 2026-10-04 final correction
+- Motion owner: Draft PR **#344** · native Blender baseline **COMPLETE**;
+- corrected Motion head: `dfb6b8a15b3f04c52f49825252fcaf60f45df51c`;
+- primary review actor: **Mannequin_Medium**; FrizzleBob v5 second; ActionFigure optional compatibility smoke only;
+- decided Medium set: Walk `Walking_B` · Run `Running_A` · Sprint `Running_B` · Jog = speed/phase blend;
+- machine-readable source: `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json` on PR #344;
+- documented gaps: turn-in-place, start/stop/pivot, strafe walk; do not rerun baseline for them;
+- next gate: **KFB-LOCO-WB2-PLAYER-01**;
+- next executor: **WSA / Codex** on current World Draft PR **#348**;
+- exact primary animation source remains KayKit Character Animations 1.1 @ `b97b5ac55df2724fae623992433685583eece51e`;
+- original KayKit clips remain primary; Mixamo / KFB Motion Library only after a proven gap;
+- PR #333 remains closed recovery/history;
+- protected runtime rule: one central Ground movement owner; no consumer-local locomotion state machine.
 
 ### Cars · queued after Ground pattern proves
 - owner repo: `georg-doc/KFB-Stunt-Car-Race`;
