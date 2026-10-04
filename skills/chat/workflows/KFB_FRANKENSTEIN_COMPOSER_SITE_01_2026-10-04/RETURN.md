@@ -167,3 +167,25 @@ First visible delivery must show:
 - Pencil alone, then Pencil with EyeRig + clay lids + animated brows.
 
 No merge or Live promotion without Georg's review.
+
+
+## 2026-10-04 · WSA / Work implementation handover
+
+Georg authorized continuation to build the product. The implementation handover is now:
+`WSA_WORK_ONE_SHOT.md`.
+
+Executor: **ChatGPT Work / WSA**.
+Same owner/branch/PR: KFB ToolBox · `planning/frankenstein-composer-gpt-site-2026-10-04` · Draft PR #355.
+
+The handover fixes the first runtime fixtures as:
+- GothGirl · Rig_Medium;
+- Black Knight · Rig_Large;
+- pinned FrizzleBob EarRig-v5 head donor;
+- Pencil A long · PropActor;
+- Eraser disabled as SOURCE_REQUIRED.
+
+Work is instructed to continue through implementation, tests, actual GPT Site creation when available, exact Cloudflare Stage publication/verification, and final Return without stopping at intermediate green checkpoints.
+
+Current planning/runtime status before Work starts remains: source audit **12/12 PASS**; runtime/browser/GPT Site/Stage **NOT YET BUILT**.
+
+Exactly one next gate: **WSA/WORK BUILDS AND PUBLICLY VERIFIES THE COMPLETE COMPOSER.**
