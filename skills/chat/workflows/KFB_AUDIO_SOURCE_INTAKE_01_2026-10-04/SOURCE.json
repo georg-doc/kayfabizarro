@@ -21,18 +21,18 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "IMPLEMENTATION_UPDATED_QA_PENDING",
-  "testedHead": "c98d1fe0826a5ec69b1a65c1a6cf0b4b54e985e6",
+  "status": "QA_GREEN_CUSTOM_MODEL_EVAL_READY",
+  "testedHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
   "qa": {
-    "run": 37183221284,
-    "job": 111377855125,
+    "run": 37183974727,
+    "job": 111379594367,
     "validator": "PASS",
     "syntax": "PASS",
     "browser": {
       "pass": 14,
       "total": 14,
-      "artifact": 11296116173,
-      "digest": "sha256:ce04449f53692c7dfc4eec7576437422f0656a01802a679d79e1aa78dd937f2c"
+      "artifact": 11296048368,
+      "digest": "sha256:c60193657c499ce4fd17a8d06c982debb6e0e4a7efdef9dd2aff3f68f57e4bc2"
     }
   },
   "newSunoFamilies": [
@@ -152,5 +152,6 @@
     }
   ],
   "promptConvention": "ONE_COPY_BLOCK_BPM_DIRECTION_STYLE",
-  "customModelStatus": "READY_FOR_EVALUATION"
+  "customModelStatus": "READY_FOR_EVALUATION",
+  "customModelEval": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/CUSTOM_MODEL_EVAL_01.md"
 }
