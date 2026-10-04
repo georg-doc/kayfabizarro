@@ -116,6 +116,22 @@ Current persistence correction: source-backed movement/vehicle knowledge must ex
 - ToolBox/vehicle profiles may provide carrier geometry, fit, orientation, animation/presentation and capability facts;
 - they must not introduce a second flight-physics owner or per-vehicle parallel movement loop.
 
+#### Parallel Blender authoring · CARD_SURF Gate 2 rebrief · 2026-10-04
+Blender Gate 1 SELF_FLIGHT / Combat Mech is returned on `georg-doc-patch-3`.
+Before CARD_SURF authoring, use the branch-local rebrief:
+`skills/chat/workflows/KFB_FLIGHT_ANIMATION_FAMILY_01_2026-10-04/CARD_SURF_GATE2_REBRIEF_2026-10-04.md`
+at branch head `efe572875b23bbc838a2b47772d269207affd051`.
+
+Binding correction:
+- production flight-card donor = current Travel `card-carrier.js`;
+- Blender card = review/fit rig only, not a new runtime owner;
+- current KFB Ink Canon owns face outline;
+- Combat-derived black slab-side target prevents bright/light card sides;
+- old rigid flight-acceptance/measurement card is not the donor.
+
+This parallel Blender work does **not** supersede the MVP hard dependency `KAYKIT-NATIVE-BLENDER-BASELINE-01`.
+
+
 Clay/facade/shadow routing is intentionally separate and owned by the other design chat; do not fold that work into these mobility slices.
 
 
