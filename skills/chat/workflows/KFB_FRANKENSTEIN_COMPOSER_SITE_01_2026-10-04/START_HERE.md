@@ -79,7 +79,7 @@ Motion panel is rig-aware:
 - Rig_Legacy → only proven Legacy clips;
 - Prop actors → no fake humanoid animation binding.
 
-Use the current 179-clip Motion Library catalogue and current locomotion/profile owners where compatible. One skeleton = one mixer. Authoring preview never becomes a second game movement controller.
+Use the verified rig-family Motion Library catalogue resolved for the implementation pin; do not hardcode a historical clip count. Current-main `KFB_Motion_Library.catalog.json` resolves at blob `694d797702d126e71a724eab137197bf2a8e6914` with 33 clip records, while later ToolBox session history references Motion Library v3 with 204 clips at pin `4fa082714c7200f6926008a1cd0b34db8df4dbad`. The implementation must pick and pin one verified catalogue rather than silently mixing generations. One skeleton = one mixer. Authoring preview never becomes a second game movement controller.
 
 ### 6. Pencil / Prop Actor
 Verified initial source:
