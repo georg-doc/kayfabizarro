@@ -7,6 +7,19 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+
+## 2026-10-04 · CURRENT WB2 ONE-SHOT: FROZEN FAILED CANDIDATE
+
+PR#348 remains the existing WB2 owner; no new executor or runtime. Two non-improving native traversal/endpoint-arrival repair passes reached the binding stop condition; independent Critic confirmed freeze.
+
+Verified freeze head: `282e05e8f66a117a12165d9169cbc16de0e8fb7e` on `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`.
+Read the immutable [failure recovery](https://github.com/georg-doc/kayfabizarro/blob/282e05e8f66a117a12165d9169cbc16de0e8fb7e/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/FAILURE_RECOVERY_2026-10-04.md) and accompanying JSON/Status/Return.
+
+Latest runtime4334151 / tested merge2ffd704:3Golden gatesPASS, Driver/Taxi arrivalFAIL,0browsererrors. Earlier1876 run proves Ground→Drive6.0777m→Ground; retain it as earlier evidence. Native Studio separate-origin export/import/re-export5/5PASS;19/19local source tests. Full Journey, fresh Journey import,61source captures and whole nine-dimension quality remain unproven. All whole scores withheld.
+
+Reserved `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` remains NOT_DEPLOYED. No merge/Live promotion. Hub update is recovery metadata only, not a playable Stage.
+Exactly one next recovery gate: **RECOVERY_NATIVE_INPUT_ENDPOINT_REPRO_01**, measuring actual key release/settled endpoint distance/native nearest identity in the same owner. No automatic third repair or micro-slice handoff. The successful native-road bridgehead support correction is KEEP, not declared failed by a run that never reached Dystopia.
+
 ## Start order
 
 1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.
