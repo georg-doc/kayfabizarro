@@ -16,7 +16,8 @@
     "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
     "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries.",
     "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track.",
-    "When reviewing SFX tests, separate HUMAN_TUNE / UNREVIEWED candidates from VERIFIED_SOURCE; propose KEEP/TUNE/REJECT decisions instead of silently promoting them."
+    "When reviewing SFX tests, separate HUMAN_TUNE / UNREVIEWED candidates from VERIFIED_SOURCE; propose KEEP/TUNE/REJECT decisions instead of silently promoting them.",
+    "When drafting prompts for an external model, never pass internal KFB/meta identifiers unless the prompt also translates them into explicit audible qualities; prefer no internal identifiers at all."
   ],
   "promptRecipe": {
     "masterFirst": true,
@@ -60,5 +61,16 @@
     "sfxPromptBank": "HUMAN_TUNE — previous SFX prompts were reported as not very good; do not imitate their wording by default.",
     "elevenLabsTests": "Treat all current ElevenLabs files as audition candidates only, not accepted soundscape truth.",
     "preferredSyncedTexture": "Rain percussion · Beetle / Ring · 107 BPM — human-positive style/texture reference, source-only stems."
-  }
+  },
+  "currentDirection": {
+    "ambientBedStrategy": "Prefer musical/instrumental ambient beds for biome/weather mood; literal nature SFX are secondary physical-world layers, not the main emotional carrier.",
+    "externalPromptAntiPattern": "Prompts sent to external generators must be self-contained and literal. Never include unexplained internal terms such as KFB, deck IDs, owner names, or project-specific shorthand. Translate all internal context into audible musical/acoustic properties.",
+    "ambiguityRule": "Avoid ambiguous sound words that can be interpreted as vocal/animal noises; describe acoustic source, envelope, space, and function explicitly.",
+    "transitionModel": "Treat ambient beds and road/action songs as DJ-like layers with phrase-aware crossfades; ordinary weather SFX need not be beat-synced."
+  },
+  "deckAmbientSources": [
+    "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+    "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+    "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ]
 }

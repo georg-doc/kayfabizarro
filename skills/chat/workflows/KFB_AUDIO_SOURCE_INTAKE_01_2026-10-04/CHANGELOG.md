@@ -21,3 +21,11 @@
 - Source Lab exposes 17 ElevenLabs tests with no silent promotion;
 - Rain percussion · Beetle / Ring present as human-positive 107 BPM texture/style reference;
 - next gate: `KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE`.
+
+## 2026-10-04 · five new Suno families accepted for intake
+
+- added five complete master+stem families from current main: Rainy Graveyard (89), Stormfront Ring (120), Wet Neon Road (104), Wet road rhythmic texture (105), Workshop machine pulse (119);
+- all marked human-positive by Georg; stems remain source-only;
+- catalog target is now 60 total / 50 RoadTrip-v2 / 20 stem families;
+- recorded ambient-bed strategy and strict external-prompt anti-pattern: no unexplained KFB/internal meta tokens; translate context into audible properties;
+- canonical Utopia/Dystopia/Protopia semantic JSON sources are available for next ambient-bed derivation.

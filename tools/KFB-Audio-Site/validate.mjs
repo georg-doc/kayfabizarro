@@ -8,10 +8,10 @@ const lock=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/sourc
 const checks=[];const check=(n,o,d=null)=>{checks.push({name:n,ok:!!o,detail:d});if(!o)throw new Error(n+': '+JSON.stringify(d))};
 try{
  check('catalog snapshot matches',JSON.stringify(catalog)===JSON.stringify(snapshot));
- check('55 tracks',catalog.tracks.length===55,catalog.tracks.length);
- const road=catalog.tracks.filter(t=>t.collection==='roadtrip-v2');check('45 RoadTrip',road.length===45,road.length);check('15 stem families',road.filter(t=>t.stems).length===15,road.filter(t=>t.stems).length);
+ check('60 tracks',catalog.tracks.length===60,catalog.tracks.length);
+ const road=catalog.tracks.filter(t=>t.collection==='roadtrip-v2');check('50 RoadTrip',road.length===50,road.length);check('20 stem families',road.filter(t=>t.stems).length===20,road.filter(t=>t.stems).length);
  const rain=catalog.tracks.find(t=>t.id==='roadtrip-v2-rain-percussion-beetle-ring');check('rain texture exists',!!rain);check('rain texture 107 BPM',rain?.bpm===107,rain?.bpm);check('rain texture source-only stems',rain?.stems?.policy==='source-only',rain?.stems);check('rain texture not auto-radio',rain?.autoRadio?.eligible===false,rain?.autoRadio);
- check('lock 45 masters',lock.roadTripV2.masters.length===45,lock.roadTripV2.masters.length);check('lock 15 stems',lock.roadTripV2.stemFamilies.length===15,lock.roadTripV2.stemFamilies.length);
+ check('lock 50 masters',lock.roadTripV2.masters.length===50,lock.roadTripV2.masters.length);check('lock 20 stems',lock.roadTripV2.stemFamilies.length===20,lock.roadTripV2.stemFamilies.length);
  check('17 Eleven tests',intake.elevenLabs.length===17,intake.elevenLabs.length);check('17 locked tests',(lock.intakeCandidates||[]).length===17,(lock.intakeCandidates||[]).length);
  const locked=new Map((lock.intakeCandidates||[]).map(x=>[x.path,x]));for(const x of intake.elevenLabs){check('candidate locked '+x.id,locked.get(x.file)?.sha===x.sha,{file:x.file,sha:x.sha,locked:locked.get(x.file)?.sha})}
  check('no Eleven accepted',intake.elevenLabs.every(x=>x.accepted===false));

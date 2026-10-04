@@ -5,11 +5,11 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
   "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
-  "mainSourceRef": "main@e4d67469d6b18dfaf4eafdddf6618ecf7c4d8904",
+  "mainSourceRef": "main@41d1db9f36015556cd5e4dc3931e94756079099d",
   "counts": {
-    "catalogTracks": 55,
-    "roadTripV2Masters": 45,
-    "stemFamilies": 15,
+    "catalogTracks": 60,
+    "roadTripV2Masters": 50,
+    "stemFamilies": 20,
     "elevenLabsTests": 17
   },
   "rainTexture": {
@@ -34,5 +34,42 @@
     },
     "validator": "PASS",
     "syntax": "PASS"
-  }
+  },
+  "newSunoFamilies": [
+    {
+      "title": "Rainy Graveyard · small-room jazz experiment",
+      "bpm": 89,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Stormfront Ring · rockabilly electro-funk experiment",
+      "bpm": 120,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet Neon Road · cosmic surf experiment",
+      "bpm": 104,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet road rhythmic texture · Road radio",
+      "bpm": 105,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Workshop machine pulse · Beetle _ Maker Space",
+      "bpm": 119,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    }
+  ],
+  "deckAmbientSources": [
+    "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+    "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+    "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ]
 }

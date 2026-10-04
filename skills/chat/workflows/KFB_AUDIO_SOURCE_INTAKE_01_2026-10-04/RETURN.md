@@ -4,7 +4,7 @@
 
 ## Candidate
 
-- catalog becomes 55 total / 45 RoadTrip-v2 / 15 stem families;
+- catalog becomes 60 total / 50 RoadTrip-v2 / 20 stem families;
 - new human-positive synced texture: Rain percussion · Beetle / Ring · 107 BPM;
 - new Source Lab: 17 ElevenLabs audition candidates;
 - old SFX Prompt Bank feedback recorded as HUMAN_TUNE;
