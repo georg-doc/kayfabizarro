@@ -1,16 +1,16 @@
-# RETURN · KFB ChatterBox / Triplet Curator · planning slice
+# RETURN · KFB ChatterBox · planning slice
 
-Date: 2026-10-04
+Date: 2026-10-05
 Status: **PLANNING READY · SITE NOT BUILT**
-Owner: **KFB ToolBox / ChatterBox content curation**
+Owner: **KFB ChatterBox / KFB ToolBox**
 
 ## What is now prepared
 
-A bounded Site packet now exists for a single ToolBox specialist editor:
+A bounded Site packet now exists for one ToolBox specialist product:
 
-**KFB ChatterBox / Triplet Curator**
+**KFB ChatterBox**
 
-It is deliberately not a second dialogue engine.
+Triplet Curator is one module inside it. KFB ChatterBox now also includes a bounded live Dialogue Lab, Critic/Repair, reaction/choreography testing, real-3D bubble staging and Audio/TTS preview. It is deliberately not a second gameplay dialogue engine.
 
 The design makes:
 - ChatterBox the speech/content route;
@@ -20,6 +20,38 @@ The design makes:
 - current/Claude speech-bubble work the presentation owner;
 - GitHub the authoritative Triplet persistence layer;
 - the Site the editorial review/control surface.
+
+## 2026-10-05 extension · live Resident dialogue laboratory
+
+Binding extension:
+`CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md`
+
+First implementation is deliberately limited to **two Residents** so voice collapse can be measured cleanly.
+
+Comparison ladder:
+- deterministic Triplet adapter baseline;
+- **L0:** same model, one shared conversation context;
+- **L1:** same model, separate Resident contexts/agents;
+- **L2:** different model/profile per Resident only if L0/L1 evidence shows a material need.
+
+First acceptance pair:
+**Goth Girl ↔ Clown**, same scene seed, 8–12 turns.
+
+The lab also includes:
+- free player Triplet replies;
+- KayfaBINGO / KayfaBONGO / KayfaBOGGLE / BLÖDSINN interventions;
+- second non-speaking LLM Critic;
+- non-destructive repair revisions;
+- promotion of strong generated Triplets/clusters into the candidate pool;
+- durable negative semantic patterns / prompt guardrails;
+- What the FLUFF?! / Stay fluffy! and four-call reaction/choreography testing;
+- real Resident Atlas 3D actors with EyeRig v6;
+- free Orbit camera and responsive bubble-readability/occlusion checks;
+- browser TTS;
+- reuse of current KFB Audio mixer-owned ducking;
+- exportable session logs with prompt/model/mode provenance.
+
+The purpose is to learn whether Resident distinctness requires different base models, or whether separate Resident contexts with the same model already solve the monotony problem.
 
 ## Editorial workflow
 
@@ -124,7 +156,7 @@ Do not add a second specialist lane.
 The current ToolBox already has:
 `chatterbox-comic-vfx · DESIGN_SITE_PLANNED`.
 
-This is the receiving slot for the ChatterBox / Triplet Curator.
+This is the receiving slot for **KFB ChatterBox**.
 
 Canonical ToolBox front door stays:
 https://kfb-toolbox.frizzlebob.chatgpt.site
@@ -172,7 +204,7 @@ GPT Site: **NOT BUILT**.
 Final Site URL: **not invented**.
 
 Reserved formal Stage, only if later required:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/`
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
 
 Stage: **NOT DEPLOYED**.
 
@@ -180,6 +212,6 @@ No merge. No Live promotion.
 
 ## Exactly one next gate
 
-**SITES IMPLEMENTATION · ChatterBox / Triplet Curator v1**
+**SITES IMPLEMENTATION · KFB ChatterBox v1**
 
-A Sites-capable executor builds exactly one private specialist Site, imports the 20-item seed, proves one real quote-ID bridge and one Resident-pair semantic/bubble preview, then returns the editor to Georg for PASS / TUNE / FAIL.
+A Sites-capable executor builds exactly one private specialist Site, imports the 20-item seed, proves one real quote-ID bridge, deterministic pair/SILENCE, L0-vs-L1 two-Resident live dialogue, Critic/Repair, player four-call interaction, real-3D bubble/orbit behavior and browser-TTS/Audio-ducking reuse, then returns KFB ChatterBox to Georg for PASS / TUNE / FAIL.
