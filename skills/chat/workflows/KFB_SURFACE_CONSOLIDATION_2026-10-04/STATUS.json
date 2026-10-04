@@ -5,24 +5,35 @@
   "owner": "KFB production surfaces",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/surface-consolidation-2026-10-04",
-  "state": "IMPLEMENTATION_COMPLETE_PUBLICATION_PENDING",
+  "state": "COMPLETE_HUMAN_GATE_OPEN",
   "humanRule": "ONE_BOOKMARK_PRODUCTION_HUB",
   "canonical": {
     "productionHub": {
       "role": "HUMAN_FRONT_DOOR",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "DATA_DRIVEN_SOURCE_READY_PUBLICATION_PENDING"
+      "projectId": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
+      "versionId": "appgprj_6ab7358322a8819183d2fa036b7b12f9~appgver_61d8fd9c75d08191872e1acf9bdfd3ef",
+      "deploymentId": "appgdep_6ac2be0ca3c88191b7224b910a98b786",
+      "siteSourceCommit": "0de021b625166e7ec74defba56e4a00836b9d890",
+      "status": "SITE_VERIFIED_12_OF_12"
     },
     "productionControl": {
       "role": "CONTROL_LEDGER",
       "url": "https://kfb-production-control.frizzlebob.chatgpt.site/",
-      "status": "CURRENT_HISTORY_SPLIT_BUILT_PUBLICATION_PENDING"
+      "projectId": "appgprj_6ab82e3950b88191a8ead3c495e21454",
+      "versionId": "appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_855c03b14a448191b13ab7b4c2040aba",
+      "deploymentId": "appgdep_6ac2bc9f55e0819183bac00466aa3e5a",
+      "siteSourceCommit": "67a680820949568001553f15d83675d7f5d6a2eb",
+      "status": "SITE_VERIFIED_LIVE_READ"
     },
     "toolbox": {
       "role": "TOOLBOX_ROUTER",
       "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
       "projectId": "appgprj_6ac2ba44282881919d1a49287a32054e",
-      "status": "EXACTLY_ONE_SITE_CREATED_PUBLICATION_PENDING"
+      "versionId": "appgprj_6ac2ba44282881919d1a49287a32054e~appgver_bffb1a7eb0b081919f94ef702f44a79c",
+      "deploymentId": "appgdep_6ac2bc4091d48191a3e127372122d34d",
+      "siteSourceCommit": "a7c327c9ea96fce9cc9cc7c8fe6b8398b890b7dd",
+      "status": "SITE_VERIFIED_HTTP_200"
     }
   },
   "specialistSites": [
@@ -32,7 +43,8 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "PUBLISH_CONTROL_TOOLBOX_HUB_THEN_PROVE_DATA_AND_PRESENTATION_EDITS_WITHOUT_WORK",
+  "next": "GEORG_OPENS_PRODUCTION_HUB_AND_RETURNS_PASS_TUNE_FAIL",
+  "openCoreBlockers": [],
   "forbidden": [
     "duplicate dashboards",
     "multiple current ToolBox front doors",
@@ -40,6 +52,22 @@
     "specialist runtime duplication",
     "automatic merge"
   ],
+  "proof": {
+    "controlMcpChecks": "35/35",
+    "hubBrowserChecks": "12/12",
+    "toolboxHttpChecks": "3/3 + HTTP 200",
+    "statusSync": "CONTROL_VISIBLE_AND_HUB_VISIBLE_PASS",
+    "presentationSync": "TOKEN_ONLY_VISIBLE_AND_RESTORED_PASS",
+    "uiSourceFilesChangedDuringProof": 0,
+    "businessLogicFilesChangedDuringProof": 0
+  },
+  "architecture": {
+    "statusOwner": "KFB Production Control D1 records",
+    "hubMode": "DETERMINISTIC_SYNC",
+    "boardConfig": "skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/surface-config/CURRENT_BOARD.json",
+    "presentationConfig": "skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/surface-config/PRESENTATION.json",
+    "runbook": "skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/SURFACE_UPDATE_RUNBOOK.md"
+  },
   "operatingRules": {
     "routineCurrentStateWithoutWork": true,
     "routineUiCssLayoutWithoutWork": true,

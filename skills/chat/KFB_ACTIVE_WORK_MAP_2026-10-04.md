@@ -98,7 +98,7 @@ Owner:
 KFB Production Control
 
 State:
-**PRODUCTIVE DATA OWNER · CURRENT/HISTORY SPLIT BUILT · PUBLICATION PENDING**
+**PRODUCTIVE DATA OWNER · CURRENT/HISTORY SPLIT SITE_VERIFIED**
 
 Current workflow:
 `KFB-PORTFOLIO-ROUTER-01`
@@ -106,6 +106,9 @@ Current workflow:
 Current data now includes the portfolio board, two P0 human gates, P1 next briefings, cheap parallel lanes, provider-comparison HOLD and Production-Hub PUBLISH_ONLY status.
 
 The Site source now reads CURRENT records directly from its D1 store. CURRENT is the default view; additive history is a secondary tab. It is deliberately not another daily dashboard.
+
+Site publication:
+`appgprj_6ab82e3950b88191a8ead3c495e21454` · version `appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_855c03b14a448191b13ab7b4c2040aba` · deployment `appgdep_6ac2bc9f55e0819183bac00466aa3e5a`
 
 
 ### KFB World Studio MVP1
@@ -225,13 +228,16 @@ Owner:
 HUB-CTRL / Production Hub
 
 State:
-**DATA-DRIVEN CURRENT BOARD BUILT · CONSOLIDATION PUBLICATION PENDING**
+**SITE_VERIFIED · ONLY HUMAN FRONT DOOR · GEORG GATE OPEN**
 
 The GitHub source now has a small data-driven CURRENT board, links to exactly one ToolBox and to Production Control/history, and no competing tool/runtime ownership.
 
 Role:
 one human entry point to the current production surfaces.
 Do not turn it into another runtime or spend High Reasoning on the host refresh.
+
+Final publication:
+`appgprj_6ab7358322a8819183d2fa036b7b12f9` · version `appgprj_6ab7358322a8819183d2fa036b7b12f9~appgver_61d8fd9c75d08191872e1acf9bdfd3ef` · deployment `appgdep_6ac2be0ca3c88191b7224b910a98b786` · browser checks 12/12.
 
 ### KFB ToolBox
 URL:
@@ -241,10 +247,13 @@ Owner:
 KFB ToolBox
 
 State:
-**EXACTLY ONE SITE PROJECT CREATED · PUBLICATION PENDING**
+**EXACTLY ONE CANONICAL SITE · SITE_VERIFIED**
 
 Site project:
 `appgprj_6ac2ba44282881919d1a49287a32054e`
+
+Version/deployment:
+`appgprj_6ac2ba44282881919d1a49287a32054e~appgver_bffb1a7eb0b081919f94ef702f44a79c` · `appgdep_6ac2bc4091d48191a3e127372122d34d`
 
 Role:
 one router to current specialist tools. Old ToolBox Home/Stage and standalone Studio/Rigging/Animation surfaces are visibly classified as history/donors and may not compete as current front doors.

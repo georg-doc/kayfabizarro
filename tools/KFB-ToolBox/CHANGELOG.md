@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-10-04 · Exactly one canonical ToolBox Site
+
+### IMPLEMENTATION
+No existing ToolBox GPT Site project was found in the owner inventory. Created exactly one project, `appgprj_6ac2ba44282881919d1a49287a32054e`, and published `https://kfb-toolbox.frizzlebob.chatgpt.site` as the canonical router.
+
+### ROUTING
+The Site routes EyeRig, Asset Librarian, Audio, FrankenStein Composer and Hypernormalisation Curator as current specialist tools. Environment Atlas and ChatterBox/Comic VFX are explicitly prepared/planned. Old ToolBox Home/Cloudflare Stage and standalone Studio/Rigging/Animation surfaces are explicitly history/source donors.
+
+### EVIDENCE
+Version `appgprj_6ac2ba44282881919d1a49287a32054e~appgver_bffb1a7eb0b081919f94ef702f44a79c`; deployment `appgdep_6ac2bc4091d48191a3e127372122d34d`; Site source `a7c327c9ea96fce9cc9cc7c8fe6b8398b890b7dd`; deployment succeeded; authenticated HTTP 200; 3/3 content checks.
+
+### BOUNDARY
+The router owns no specialist runtime, product state or duplicate dashboard. Production Hub remains the only human front door.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED

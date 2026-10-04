@@ -1,10 +1,10 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-04.1",
-  "updatedAt": "2026-10-04T22:30:00+02:00",
+  "revision": "2026-10-04.2",
+  "updatedAt": "2026-10-04T23:00:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
-  "status": {"label":"CURRENT · zwei offene P0-Gates","note":"Der Produktstand kommt aus Production Control; diese Veröffentlichung ist der lesbare Snapshot."},
+  "status": {"label":"CURRENT · zwei offene P0-Gates","note":"Control-Owner und deterministischer Hub-Sync sind verifiziert; der Teststand wurde vollständig zurückgesetzt."},
   "surfaces": {"hub":"https://kfb-production-hub.frizzlebob.chatgpt.site","control":"https://kfb-production-control.frizzlebob.chatgpt.site/","toolbox":"https://kfb-toolbox.frizzlebob.chatgpt.site"},
   "p0": [
     {"id":"world-studio-freeplay","title":"World Studio · four-island freeplay","summary":"Town, Dystopia, Utopia und Protopia frei spielen. Life Trees, Joyride, Bauabstände, Paletten sowie Build/Edit/Save prüfen.","badge":"P0 · Freeplay","action":"World Studio öffnen","url":"https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/"},

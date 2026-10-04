@@ -1,3 +1,13 @@
+## 2026-10-04 · KFB production surfaces consolidated
+
+- Published the existing Production Hub as the only human front door with a small data-driven CURRENT board and exact routes to products, one ToolBox and Control/history.
+- Rebuilt the existing Production Control Site as the canonical live-read ledger: CURRENT is the default view; additive history is secondary.
+- Confirmed no existing ToolBox Site project, then created and published exactly one canonical `kfb-toolbox` router. Specialist Sites keep their own owners; old ToolBox Home/Stage/standalones are classified as history/donors.
+- Added deterministic status sync and presentation-token paths under `skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/` so routine updates can run in normal Web Chat plus low-cost PUBLISH_ONLY, without Work or UI/business-logic edits.
+- Proved the path after publication: temporary Control checkpoint visible in Control, same status visible in Hub, token-only accent change visible, then both fully restored. Proof changed 0 UI-source files and 0 business-logic files.
+- Verification: Control MCP 35/35; final Hub browser 12/12 with zero fresh console errors; ToolBox authenticated HTTP 200 with 3/3 content checks.
+- No merge, no Live promotion and no Cloudflare substitution.
+
 ## 2026-10-04 · Production Site + Production Control portfolio refresh
 
 - Replaced the stale Production Hub Today list with the current portfolio board: World Studio + Card-Hex as P0 human gates; Environment Atlas / Asset Librarian / FrankenStein / Fluff as P1; Quote Pool + Audio as cheap/consumer-driven parallel lanes.

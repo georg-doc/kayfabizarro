@@ -182,16 +182,22 @@ If a Sites-capable product has QA-green source but the current executor lacks Si
 
 Current productive/published Site lines:
 
-- Production Hub · `https://kfb-production-hub.frizzlebob.chatgpt.site`
+- Production Hub · `https://kfb-production-hub.frizzlebob.chatgpt.site` · **only human front door** · consolidation browser 12/12 PASS
+- Production Control · `https://kfb-production-control.frizzlebob.chatgpt.site/` · canonical CURRENT/Returns/history ledger; not a second dashboard
+- KFB ToolBox · `https://kfb-toolbox.frizzlebob.chatgpt.site` · exactly one canonical specialist-tool router
 - EyeRig Workbench · `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/` · Georg human-accepted for continuation
 - Asset Librarian · `https://kfb-asset-librarian.frizzlebob.chatgpt.site/` · WSA QA 8/8 PASS
 - Audio · `https://kfb-audio.frizzlebob.chatgpt.site` · exact production Site visibly verified
+- FrankenStein Composer · `https://kfb-frankenstein-composer.frizzlebob.chatgpt.site` · composite integration open
+- Billboard Hypernormalisation Curator · `https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site` · editorial data population active
+- WorldBuilder / World Studio MVP · `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` · four-island candidate · Georg freeplay pending
 
 Current Site-native/prepared next lines:
 - Environment Atlas · PR #353
-- FrankenStein Composer · PR #355
-- Billboard Hypernormalisation Curator · PR #354
-- WorldBuilder / World Studio MVP · PR #348 · `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` · Sites deployment SUCCEEDED · current human status **FAIL: Joyride/T4 presentation missing; composition/livingness rejected**
+
+Surface consolidation contract and Return:
+- `skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md`
+- `skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RETURN.md`
 
 Do not create a second productive Site for an owner that already has one.
 
