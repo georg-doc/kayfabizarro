@@ -16,6 +16,20 @@ Read with:
 - current WorldBuilder PR #332 Recovery/Return
 - current Motion PR #344 Return
 
+## 2026-10-04 · HOSTING CLARIFICATION · SITE FIRST
+
+The `Stage / Live` terms in this architecture are **logical release-manifest states**, not a mandate that Cloudflare is the primary host.
+
+Current hosting policy:
+`skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+
+For World Studio:
+- GPT Site = primary product/authoring/daily-use surface;
+- Stage/Live manifests remain the internal release-state model;
+- Cloudflare = downstream KFB-Hub compatibility/formal-acceptance mirror when required.
+
+Do not interpret `apply_candidate_to_stage`, `stage/current` or `SITE-STAGE-01` as "publish Cloudflare before the GPT Site exists".
+
 ## 1 · Product model
 
 KFB should become one continuously usable/playable world surface rather than a sequence of disposable Web-chat demos.
