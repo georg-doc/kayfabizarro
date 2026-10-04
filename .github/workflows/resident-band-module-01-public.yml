@@ -1,0 +1,195 @@
+# RESIDENT-BAND-MODULE-01 · exact Pages proof · donor: existing KFB Cloudflare QA pattern
+name: Resident Band Module 01 Public QA
+
+on:
+  push:
+    branches:
+      - chatgpt-web/resident-band-module-01-2026-09-28
+    paths:
+      - .github/workflows/resident-band-module-01-public.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Open exact Resident Band Stage and Hub route
+        run: |
+          mkdir -p resident-band-public-proof
+          cat > resident-band-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const stage='https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band';
+          const markerUrl='https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/SOURCE.json';
+          const hub='https://kayfabizarro.pages.dev/kfb-hub/';
+          const expectedBuild='RESIDENT_BAND_MODULE_01_S39_STAGE_2026_09_28';
+          const expectedStageHref='https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band';
+          const report={stage,markerUrl,hub,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+
+          const browser=await chromium.launch({
+            headless:true,
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']
+          });
+          const context=await browser.newContext({viewport:{width:1440,height:900}});
+          const page=await context.newPage();
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))report.errors.push('console: '+m.text())});
+          page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))report.httpErrors.push({status:r.status(),url:r.url()})});
+
+          try{
+            const markerResponse=await page.request.get(markerUrl,{timeout:60000});
+            check('SOURCE.json HTTP',markerResponse.ok(),markerResponse.status());
+            const marker=await markerResponse.json();
+            report.marker=marker;
+            check('marker build',marker.build===expectedBuild,marker.build);
+            check('marker source PR',marker.sourcePr===277,marker.sourcePr);
+            check('marker baseplate false',marker.baseplate===false,marker.baseplate);
+            check('marker human pose pending',marker.status==='HUMAN_DRUMMER_POSE_PENDING',marker.status);
+
+            const response=await page.goto(stage,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Stage HTTP response',!!response&&response.ok(),response?.status());
+            await page.waitForFunction(
+              ()=>window.__atlas?.band?.() && document.querySelector('#who')?.value==='__band',
+              {},
+              {timeout:180000}
+            );
+            await page.waitForFunction(
+              ()=>{
+                const s=window.__atlas?.band?.()?.snapshot?.();
+                return s?.song?.state==='bereit' && s?.song?.blobOk===true;
+              },
+              {},
+              {timeout:120000}
+            );
+
+            const boot=await page.evaluate(()=>{
+              const band=window.__atlas.band();
+              const snap=band.snapshot();
+              return {
+                selected:document.querySelector('#who')?.value,
+                rootName:band.M?.root?.name||null,
+                rootParent:band.M?.root?.parent?.name||null,
+                performers:band.performers(),
+                baseplate:band.def?.baseplate,
+                song:snap.song,
+                drumAction:snap.drumAction,
+                strike:snap.strike,
+                support:snap.support,
+                timelineVisible:document.querySelector('#timeline')?.classList.contains('on'),
+                bandPanelVisible:!document.querySelector('#bandBox')?.hidden
+              };
+            });
+            report.boot=boot;
+            check('band deep-link selected',boot.selected==='__band',boot.selected);
+            check('three core performers',JSON.stringify(boot.performers)===JSON.stringify(['leader','guitarist','drummer']),boot.performers);
+            check('runtime baseplate false',boot.baseplate===false,boot.baseplate);
+            check('single module root',boot.rootName==='resident-band-module-01',boot.rootName);
+            check('module root has one review-world parent',!!boot.rootParent,boot.rootParent);
+            check('signature song blob verified',boot.song?.blobOk===true,boot.song);
+            check('BPM 100',boot.song?.bpm===100,boot.song?.bpm);
+            check('phase 0.465',boot.song?.phase===0.465,boot.song?.phase);
+            check('drummer v5c action',boot.drumAction==='orb.drum.v5c',boot.drumAction);
+            check('measured R strike frame 0',boot.strike?.R?.f===0,boot.strike?.R);
+            check('timeline visible',boot.timelineVisible===true,boot.timelineVisible);
+            check('band controls visible',boot.bandPanelVisible===true,boot.bandPanelVisible);
+
+            await page.screenshot({path:'resident-band-public-proof/01-band-loaded.png',fullPage:true});
+
+            await page.locator('#tPlay').click();
+            await page.waitForFunction(()=>window.__atlas.band().playing===true,{}, {timeout:10000});
+            await page.waitForTimeout(900);
+            const play=await page.evaluate(()=>window.__atlas.band().snapshot().song);
+            report.play=play;
+            check('Play starts shared song clock',play.playing===true,play);
+            check('Play advances song time',play.time>0.2,play.time);
+
+            await page.locator('#tPlay').click();
+            await page.waitForFunction(()=>window.__atlas.band().playing===false,{}, {timeout:10000});
+            const paused=await page.evaluate(()=>window.__atlas.band().snapshot().song);
+            report.paused=paused;
+            check('Pause stops shared song clock',paused.playing===false,paused);
+
+            const strike=await page.evaluate(()=>{
+              const band=window.__atlas.band();
+              const held=band.holdStrike('R');
+              return {held,snap:band.snapshot()};
+            });
+            report.strike=strike;
+            check('hold useful R strike',strike.held?.f===0,strike.held);
+            check('strike hold pauses transport',strike.snap?.song?.playing===false,strike.snap?.song?.playing);
+            await page.waitForTimeout(300);
+            await page.screenshot({path:'resident-band-public-proof/02-drummer-strike-r.png',fullPage:true});
+
+            const hubPage=await context.newPage();
+            const hubErrors=[];
+            const hubHttp=[];
+            hubPage.on('pageerror',e=>hubErrors.push('pageerror: '+String(e)));
+            hubPage.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))hubErrors.push('console: '+m.text())});
+            hubPage.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))hubHttp.push({status:r.status(),url:r.url()})});
+            const hubResponse=await hubPage.goto(hub,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Hub HTTP response',!!hubResponse&&hubResponse.ok(),hubResponse?.status());
+            await hubPage.waitForFunction(
+              href=>[...document.querySelectorAll('a')].some(a=>a.href===href),
+              expectedStageHref,
+              {timeout:30000}
+            );
+            const hubState=await hubPage.evaluate(href=>({
+              hrefFound:[...document.querySelectorAll('a')].some(a=>a.href===href),
+              titleFound:document.body.innerText.includes('Resident Band · Drummer-Pose setzen'),
+              finalUrl:location.href
+            }),expectedStageHref);
+            report.hubState=hubState;
+            check('Hub links exact Resident Band Stage',hubState.hrefFound===true,hubState);
+            check('Hub shows current Resident Band card',hubState.titleFound===true,hubState);
+            check('Hub has no page/script errors',hubErrors.length===0,hubErrors);
+            check('Hub has no failed HTTP assets',hubHttp.length===0,hubHttp);
+            await hubPage.screenshot({path:'resident-band-public-proof/03-hub-card.png',fullPage:true});
+            await hubPage.close();
+
+            check('Stage has no page/script errors',report.errors.length===0,report.errors);
+            check('Stage has no failed HTTP assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('resident-band-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.checks.filter(x=>x.pass).length+'/'+report.checks.length,
+              failed:report.checks.filter(x=>!x.pass).map(x=>x.name),
+              stageErrors:report.errors.length,
+              stageHttpErrors:report.httpErrors.length,
+              rootName:report.boot?.rootName??null,
+              songBlobOk:report.boot?.song?.blobOk??null,
+              hubCard:report.hubState?.titleFound??null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node resident-band-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resident-band-module-01-public-proof
+          path: resident-band-public-proof
+          retention-days: 90
