@@ -1,3 +1,25 @@
+## 2026-10-04 · CURRENT CHARACTER PRESENTATION DEFAULT · EYERIG
+
+Georg decision:
+
+**Integrated KFB characters use the existing EyeRig owner by default.**
+
+For every character shown/used in a KFB product, Site, game scene, resident scene, preview or acceptance screenshot:
+
+1. prove the original 3D source object in isolation first when source identity matters;
+2. then hide/replace the character's visible source/stock eyes through the existing EyeRig cleanup/FaceHost path;
+3. mount the current shared **EyeRig v6** presentation;
+4. use the approved/recovered per-actor EyeRig profile when available;
+5. when no approved profile exists, use the existing source-derived EyeRig fitting path and mark the result `PROFILE_TUNE` — **do not fall back to stock eyes as the integrated default**.
+
+EyeRig owns eyes/pupils/gaze/blink/lids. Do not invent a second eye system.
+
+Exceptions are only:
+- genuinely eyeless/incompatible source geometry;
+- a deliberately labeled source-comparison/isolation view that must show the untouched donor.
+
+An exception must be explicit. It is not permission to present ordinary integrated characters with stock eyes.
+
 ## 2026-10-04 · PORTFOLIO MAP
 
 Cross-project current work map:
