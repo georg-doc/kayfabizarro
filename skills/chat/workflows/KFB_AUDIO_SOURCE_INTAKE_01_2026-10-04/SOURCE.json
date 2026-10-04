@@ -20,5 +20,19 @@
     "status": "HUMAN_POSITIVE_STYLE_REFERENCE"
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
-  "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_REVIEW"
+  "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
+  "status": "QA_GREEN_SITE_UPDATE_PENDING",
+  "testedHead": "378d7af459d37627a4d5b2285115ecc92ccfc041",
+  "qa": {
+    "run": 37175035753,
+    "job": 111355208659,
+    "browser": {
+      "pass": 12,
+      "total": 12,
+      "artifact": 11293330007,
+      "digest": "sha256:6a6c5c8cbe209915e8df7c5264fb9d89d0b88de6c721b3c3ce28fb4bbe632524"
+    },
+    "validator": "PASS",
+    "syntax": "PASS"
+  }
 }
