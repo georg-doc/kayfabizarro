@@ -5,11 +5,43 @@ Date: 2026-09-19
 Owner: Georg / KFB  
 Applies to: ChatGPT Web, Codex/Work, Claude Design and other external LLM production slices
 
+
+## 2026-10-04 · CURRENT DELIVERY OVERRIDE · SITES FIRST
+
+Binding policy:
+`skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+
+For Site-capable KFB tools, workbenches, authoring surfaces and MVP products:
+
+**GPT Site is the primary product surface.**
+
+Current default flow:
+
+`GitHub owner/source → product QA → GPT Site publish/update → exact Site verification → persist Site identity → bounded Cloudflare KFB-Hub mirror only when required`
+
+The historical Cloudflare-first language later in this file is superseded for Site-capable products.
+
+Rules:
+
+- If an owner already has a productive GPT Site, update it; do not create a second Site.
+- If the current executor lacks Sites publishing capability, preserve the exact Site-ready source and hand off to a Sites-capable executor. **Do not substitute Cloudflare.**
+- A publish-only Site gate must not redesign a QA-green product.
+- Cloudflare is secondary compatibility/public-regression/formal KFB-Hub acceptance infrastructure when required.
+- Cloudflare mirror failure does not erase or block a verified GPT Site product.
+- Do not spend repeated WSA repair loops on Cloudflare propagation/routing unless Cloudflare itself is the named product or explicit acceptance target.
+- When a formal KFB-Hub/pages.dev acceptance mirror is required, create/verify it **after** the Site product is working, as a bounded downstream publication step.
+
+Current Site inventory:
+`skills/chat/KFB_SITE_SURFACE_REGISTRY_2026-10-04.json`
+
+Incident reference:
+`skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md`
+
 ## The short version
 
 A chat is not the archive, GitHub is not the test surface, and a successful commit is not a live result.
 
-`Chat slice → named GitHub branch/PR → verified commit → integrate in the real owner surface → [human review only when a real decision is needed] → Stage for meaningful milestones → deliberate Live promotion`
+`Chat slice → named GitHub branch/PR → verified commit → integrate in the real owner surface → GPT Site publish/update for Site-capable products → [human review only when a real decision is needed] → bounded Cloudflare KFB-Hub mirror when required → deliberate Live promotion`
 
 ## 1. Recover exact truth
 
@@ -86,9 +118,11 @@ The objective is that a timeout may lose chat prose, but not the latest proven p
 
 At each checkpoint GitHub must be sufficient for a fresh chat to recover: **owner · branch/PR · exact verified head · last proven result · unresolved/deferred items · exactly one current next action/gate**. A fresh chat must never require Georg to reconstruct the previous conversation before continuing.
 
-## 4. Publish only to KFB Stage
+## 4. Cloudflare KFB Stage · secondary mirror / formal acceptance when required
 
-Human test links use:
+**Site-capable products publish to their GPT Site first.** The rules below govern the downstream Cloudflare/KFB-Hub mirror when that mirror is required.
+
+Formal KFB-Hub acceptance links use:
 
 - `https://kayfabizarro.pages.dev/kfb-hub/stage/…`
 - or another named `kayfabizarro.pages.dev` product route owned by the project.
