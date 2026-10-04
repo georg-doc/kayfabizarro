@@ -10,17 +10,19 @@
   "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
-    "status": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
+    "status": "SITE_DEPLOYED_HUMAN_VISUAL_FAIL",
     "deploymentHead": "6ec3e9dfb27d7db2b93ff52f58393e270e721513",
     "runtimeSourceHead": "38ff52138078472a8cc2f34fe19fc240ba91eb29",
     "cloudflare": "SUCCESS",
     "publicBrowserVerified": false,
     "live": "UNCHANGED",
     "role": "SECONDARY_CLOUDFLARE_MIRROR",
-    "hubHead": "5bc24120a0e7ee98abfb924a40aff33e059792dc"
+    "hubHead": "5bc24120a0e7ee98abfb924a40aff33e059792dc",
+    "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "cloudflareRole": "SECONDARY_MIRROR"
   },
-  "productOutcome": "PLAYABLE_SOURCE_CLEAN_WB2_WORLD_BUILDER_MVP1_ON_VERIFIED_CLOUDFLARE_STAGE",
-  "state": "MVP1_GPT_SITE_PUBLISHED_BROWSER_PLAY_VERIFICATION_OPEN",
+  "productOutcome": "SOURCE_CLEAN_JOYRIDE_KFB_WORLD_STUDIO_MVP1",
+  "state": "HUMAN_VISUAL_FAIL_JOYRIDE_RECOVERY_REQUIRED",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -311,7 +313,7 @@
     "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
     "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
   },
-  "weakestRequiredDimension": "PUBLIC_BROWSER_VERIFICATION_TOOL_BLOCKED",
+  "weakestRequiredDimension": "JOYRIDE_PRESENTATION_AND_WORLD_COMPOSITION",
   "repairAttempts": {
     "sourceMaterial": 1,
     "DriverBrowserTraversalNonImproving": 0,
@@ -319,7 +321,10 @@
     "DystopiaBrowserTraversalNonImproving": 1,
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
-  "openCoreBlockers": [],
+  "openCoreBlockers": [
+    "Joyride/T4 visible road presentation is missing from the published World Studio",
+    "Town/world composition and livingness are HUMAN FAIL at current first-frame quality"
+  ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
     "full Rig_Large parity",
@@ -330,7 +335,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "Georg freeplays primary GPT Site; regular browser game verification remains open until policy service works. Preserve same WB2 owner; no bot repair.",
+  "nextInternalAction": "VISUAL_WORLD_RECOVERY_JOYRIDE_PRESENTATION_AND_COMPOSITION_THEN_UPDATE_EXISTING_GPT_SITE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -517,5 +522,37 @@
     "iframe": false,
     "newRuntimeOwner": false,
     "browserPlayVerification": "NOT_RUN_TOOL_POLICY_SERVICE_UNAVAILABLE"
+  },
+  "humanAcceptance": {
+    "status": "FAIL",
+    "date": "2026-10-04",
+    "evidence": "Georg freeplay screenshot from primary GPT Site",
+    "findings": [
+      "pale Track-Core road/bridge/support geometry dominates frame",
+      "Joyride/T4 clay-strand presentation missing",
+      "flat grey background/void dominates",
+      "source-clean objects read as sparse integration placement rather than living authored place"
+    ],
+    "record": "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md"
+  },
+  "joyridePresentation": {
+    "status": "REQUIRED_MISSING",
+    "pin": "927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f",
+    "source": {
+      "trackLookV5Blob": "7c0d248391c3eaf1887a0afc97ee02b25f6dec85",
+      "roadMarkingsM1Blob": "68a0c21a2c68c0b7db72046146008b474979ec15",
+      "transitionAtlasV1Blob": "cfef150a74060bfc6ff00ab049529d8710845bfc"
+    },
+    "required": [
+      "T4 clay strand visual language",
+      "K2 clay material/presentation",
+      "M1/M2 road marking language",
+      "rounded clay barriers and band heads",
+      "transition atlas / clay patches instead of hard cuts",
+      "road visually integrated with rolling clay terrain",
+      "KFB clay VFX where relevant"
+    ],
+    "knownMissingModule": "buildClayStrand(THREE, stream, …)",
+    "rule": "Track Core remains route/support/collision owner; Joyride supplies PRESENTATION, not a second road runtime."
   }
 }
