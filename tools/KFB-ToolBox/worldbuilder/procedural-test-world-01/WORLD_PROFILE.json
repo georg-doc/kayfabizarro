@@ -1,9 +1,9 @@
 {
   "schema": "kfb.procedural-test-world/2",
   "date": "2026-10-04",
-  "status": "WORLD_AND_KAYKIT_PLAYER_BROWSER_PASS",
+  "status": "TOPOLOGY_OWNER_PLAYER_PASS_VISIBLE_FOUNDATION_HUMAN_FAIL",
   "owner": "KFB WorldBuilder / WB2",
-  "checkpoint": "KFB-LOCO-WB2-PLAYER-01",
+  "checkpoint": "POST_WSA_RECONCILE_READY",
   "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "sourceDonor": {
@@ -32,8 +32,8 @@
     "pullDontGate": true
   },
   "proceduralDesign": {
-    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
-    "buildingMountStatus": "SOURCE_PROVEN_B1_FAMILY_ON_GENERATED_R2D_PADS_BROWSER_VERIFIED",
+    "buildings": "typed donor scope required; source-clean visible families only",
+    "buildingMountStatus": "HUMAN_VISUAL_FAIL_LEGACY_OSM_CONTAMINATION_REPLACE_VISIBLE_CONTENT",
     "buildingEvidence": {
       "placed": 1,
       "windows": 14,
@@ -102,7 +102,7 @@
       }
     }
   },
-  "next": "Resident/activity seam within ONE_SHOT_INTEGRATION_LOCK_2026-10-04; internal checkpoint, no new Georg gate.",
+  "next": "POST_WSA_RECONCILE then continue automatically through source-clean world, Residents, Drive, Golden Journey, Curtain, persistence, World Studio/Site, whole-game critic and one final Stage candidate.",
   "current": {
     "testedImplementationHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
     "source": {
@@ -283,7 +283,7 @@
       }
     ],
     "stage": "NOT_PUBLISHED",
-    "nextInternalAction": "Resident/activity seam within existing One-Shot integration"
+    "nextInternalAction": "POST_WSA_RECONCILE then continue automatically through source-clean world, Residents, Drive, Golden Journey, Curtain, persistence, World Studio/Site, whole-game critic and one final Stage candidate."
   },
   "worldBaselineEvidence": {
     "testedImplementationHead": "0841b89ae8274118687e946318458201b402c5b5",
@@ -304,6 +304,26 @@
       "job": 111329943425,
       "result": "PASS"
     }
+  },
+  "visualFoundation": {
+    "status": "HUMAN_VISUAL_FAIL",
+    "reason": "Legacy Huerth/OSM-derived visible building/presentation content remains active in the returned WB2 candidate.",
+    "rejectVisible": [
+      "fixtures/huerth-b1-siblings-v0.json",
+      "tools/osm-city-lab/",
+      "elastic-grotesque-clay-huerth01"
+    ],
+    "rule": "Mechanism reuse does not grant PRESENTATION/CONTENT/DATA authority."
+  },
+  "oneShot": {
+    "mode": "ONE_SHOT",
+    "completionBrief": "ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md",
+    "statusLedger": "ONE_SHOT_STATUS.json",
+    "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+    "returnedWsaHead": "6ae41e370c930637d57a65d7da79b4131b08f9df",
+    "invalidStopAfterInternalCheckpoint": true,
+    "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/",
+    "stageStatus": "RESERVED_NOT_DEPLOYED",
+    "live": "UNCHANGED"
   }
 }
-
