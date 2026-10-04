@@ -170,3 +170,27 @@ Everything else is repair, quarantine, defer, or continue.
 Return one coherent Stage candidate. Georg judges living-toy look/feel, movement/interaction, world identity/coherence, Residents/Cards/music, Golden Journey readability and save/resume.
 
 No automatic merge or Live promotion.
+
+## Musical World / Platformer audio showcase · 2026-10-04
+
+The One-Shot now has a prepared required presentation seam:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE_2026-10-04.md`
+
+Machine-readable fixture:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE.json`
+
+Intent:
+**Explore → Platformer/movement lift → Drive → Event/Disco → Explore** should audibly prove the “world as musical toy” concept inside the real Golden Journey.
+
+Integration rules:
+- consume the canonical Audio/Jukebox owner from PR #352;
+- no second AudioContext/player;
+- physical SFX remain game-truth layers;
+- whole-master phrase-aware transitions first;
+- no arbitrary cross-song pitched stem mixing;
+- Jump/Assist donors are mechanism-only; WB2 Ground remains movement owner;
+- Slice 1 is the current One-Shot proof;
+- Slice 2 extends the same contract to the Hex/Babel Platformer after the first proof;
+- this is an internal One-Shot seam, not a new Georg-facing gate.
+
+Do not stop the continuous One-Shot merely after preparing or implementing this seam.

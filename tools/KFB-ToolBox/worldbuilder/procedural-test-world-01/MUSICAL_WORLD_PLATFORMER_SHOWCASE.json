@@ -1,0 +1,165 @@
+{
+  "schema": "kfb.musical-world-platformer-showcase/0.1",
+  "date": "2026-10-04",
+  "mode": "ONE_SHOT_INTERNAL_SHOWCASE",
+  "worldOwner": "KFB WorldBuilder / WB2",
+  "audioOwner": "KFB Audio & Soundscape Baseline v1",
+  "receiving": {
+    "pr": 348,
+    "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04"
+  },
+  "audioSource": {
+    "pr": 352,
+    "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+    "currentHead": "137735599a4747a373c3f978799880ef2b1c45d5",
+    "testedProductHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
+    "counts": {
+      "masters": 69,
+      "roadTripWorld": 59,
+      "stemFamilies": 29
+    }
+  },
+  "layers": [
+    {
+      "id": "physical",
+      "owner": "existing SFX/environment/consumer runtime",
+      "quantized": false
+    },
+    {
+      "id": "ambientMusic",
+      "owner": "canonical Jukebox",
+      "role": "biome/world"
+    },
+    {
+      "id": "activityMusic",
+      "owner": "canonical Jukebox",
+      "role": "drive/event/performance"
+    },
+    {
+      "id": "signatureAccent",
+      "owner": "existing audio transport",
+      "role": "stinger/one-shot"
+    }
+  ],
+  "stateVector": [
+    "biome",
+    "deckFamily",
+    "motion",
+    "verticality",
+    "airborne",
+    "drive",
+    "danger",
+    "social",
+    "weatherIntensity",
+    "timeOfDay",
+    "event",
+    "residentSignature",
+    "voiceFocus",
+    "activeCardRef"
+  ],
+  "masterPolicies": {
+    "masterGroundTruth": true,
+    "crossSongPitchedStemMix": false,
+    "stemsRequireListeningCertification": true,
+    "physicalSfxFollowGameTruth": true,
+    "voiceDucksWithoutStoppingTimeline": true
+  },
+  "slice1": {
+    "id": "one-shot-musical-world-proof",
+    "sequence": [
+      {
+        "state": "town-explore",
+        "music": [
+          "Folk / Acoustic / Storybook Bed",
+          "Soul / R&B Ambient Bed"
+        ],
+        "energy": "low"
+      },
+      {
+        "state": "platformer-movement-lift",
+        "music": [
+          "current-world ambient",
+          "Cartoon Chase / Capers Bed"
+        ],
+        "condition": "semantic traversal zone only"
+      },
+      {
+        "state": "drive",
+        "music": [
+          "Wet Neon Road · cosmic surf experiment",
+          "Wet road rhythmic texture · Road radio"
+        ],
+        "energy": "mid-high"
+      },
+      {
+        "state": "dystopia-arrival",
+        "music": [
+          "Dystopia Ambient Bed"
+        ],
+        "energy": "low-mid"
+      },
+      {
+        "state": "dystopia-party",
+        "music": [
+          "Demon Lord Afro-Strut 01"
+        ],
+        "energy": "event-high"
+      },
+      {
+        "state": "dystopia-exit",
+        "music": [
+          "Dystopia Ambient Bed"
+        ],
+        "energy": "low-mid"
+      },
+      {
+        "state": "utopia",
+        "music": [
+          "Utopia Ambient Bed"
+        ],
+        "energy": "low"
+      },
+      {
+        "state": "protopia",
+        "music": [
+          "Protopia Ambient Bed"
+        ],
+        "energy": "low"
+      },
+      {
+        "state": "lorekeeper-reflection",
+        "music": [
+          "Metaphysical / Cosmic Ambient Bed",
+          "Piano / Chamber Minimal Bed"
+        ],
+        "energy": "low"
+      }
+    ]
+  },
+  "slice2": {
+    "id": "hex-babel-musical-platformer",
+    "bandFields": [
+      "musicZoneId",
+      "energyBand",
+      "deckFamily",
+      "transitionClass",
+      "signatureAccent"
+    ],
+    "routeSteps": "8-14",
+    "rule": "level generator owns geometry; audio consumes semantic bands",
+    "moshpit": "phrase-aware sequential crossover; no arbitrary pitched cross-song stem layering"
+  },
+  "acceptance": [
+    "town ambient identity audible",
+    "motion lift without per-jump song restart",
+    "drive music + readable engine/tyre layer",
+    "dystopia coherent handoff",
+    "party takes over and returns to ambient",
+    "utopia/protopia distinct beds",
+    "voice duck restores",
+    "save/reload reconstructs valid music state",
+    "single audio owner / no duplicate AudioContext",
+    "no audio-related page/console errors"
+  ],
+  "status": "PREPARED_NOT_IMPLEMENTED"
+}

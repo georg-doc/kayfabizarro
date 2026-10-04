@@ -32,7 +32,8 @@
     "siteWorldStudio": "NOT_COMPLETE",
     "goldenJourneyE2E": "NOT_COMPLETE",
     "publicStage": "NOT_DEPLOYED",
-    "humanAcceptance": "NOT_REVIEWED"
+    "humanAcceptance": "NOT_REVIEWED",
+    "audioMusicalWorldShowcase": "PREPARED_NOT_IMPLEMENTED"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -153,5 +154,24 @@
       "runtime source audit and deterministic screenshot evidence"
     ]
   },
-  "lastImplementationCheckpoint": "1df8edaeb11b695821f73c695b328b00fd85e42f"
+  "lastImplementationCheckpoint": "1df8edaeb11b695821f73c695b328b00fd85e42f",
+  "audioMusicalWorldShowcase": {
+    "status": "PREPARED_REQUIRED_PRESENTATION_NOT_IMPLEMENTED",
+    "brief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE_2026-10-04.md",
+    "fixture": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/MUSICAL_WORLD_PLATFORMER_SHOWCASE.json",
+    "audioSource": {
+      "pr": 352,
+      "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+      "head": "137735599a4747a373c3f978799880ef2b1c45d5",
+      "testedProductHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
+      "counts": {
+        "masters": 69,
+        "roadTripWorld": 59,
+        "stemFamilies": 29
+      }
+    },
+    "slice1": "Explore → movement/platformer lift → Drive → Dystopia party → Explore/world handoffs",
+    "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
+    "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
+  }
 }
