@@ -60,7 +60,7 @@ Current Site-native/prepared next lines:
 - Environment Atlas · PR #353
 - FrankenStein Composer · PR #355
 - Billboard Hypernormalisation Curator · PR #354
-- WorldBuilder / World Studio MVP · PR #348 · GPT Site is primary target; exact URL must come from Sites publishing
+- WorldBuilder / World Studio MVP · PR #348 · `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` · Sites deployment SUCCEEDED · 80 runtime files exact to PR #348 runtime source · Georg freeplay gate OPEN
 
 Do not create a second productive Site for an owner that already has one.
 
