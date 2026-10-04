@@ -28,6 +28,45 @@ Stop only for:
 
 Optional defects are quarantined rather than turned into new MVP gates.
 
+## 2026-10-04 · CURRENT HUMAN VISUAL FAIL OVERRIDE
+
+Georg's current WSA screenshot proves that legacy Hürth/OSM-derived visible content is active in PR #348.
+
+Therefore the earlier line **World · PASS** must be read narrowly:
+
+- topology = PASS;
+- owner graph = PASS;
+- Track graph = PASS;
+- Golden anchors/deck seeds = PASS;
+- visible environment foundation = **HUMAN FAIL**.
+
+Read:
+- `skills/chat/recovery/POSTMORTEM_WSA_ONE_SHOT_LEGACY_OSM_CONTAMINATION_2026-10-04.md`
+- `CURRENT_ONE_SHOT_VISUAL_RECOVERY_2026-10-04.md`
+- `MVP_VISIBLE_SOURCE_FIREWALL_2026-10-04.json`
+
+Current rejected visible paths include:
+- `fixtures/huerth-b1-siblings-v0.json`;
+- `tools/osm-city-lab/`;
+- `elastic-grotesque-clay-huerth01`.
+
+The mechanism behind support/facade generation may still be reusable after decoupling it from Hürth visible data.
+
+### Important process rule
+
+Do **not** interrupt or destructively rewrite an already-running WSA/Work job from another chat.
+Let it return, preserve valid integrated work, then perform **one integrated recovery/completion pass**.
+
+Do not convert this visual failure back into a queue of micro-slices.
+
+### Mandatory final-source audit
+
+Before the final Golden Journey human candidate:
+- enumerate visible loaded source families;
+- pass the visible-source firewall;
+- confirm KFB Town / Dystopia / Utopia / Protopia use intended current KFB source families;
+- only then claim the visual world as reviewable.
+
 ## Single product outcome
 
 Deliver one coherent, playable KFB MVP candidate in which Georg can:
