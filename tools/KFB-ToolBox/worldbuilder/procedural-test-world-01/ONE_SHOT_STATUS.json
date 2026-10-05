@@ -26,7 +26,16 @@
     "moduleWave3": "NOT_STARTED",
     "moduleCritics": "NOT_YET_RUN",
     "wholeProductCritic": "NOT_YET_RUN",
-    "humanAcceptance": "NOT_ELIGIBLE_UNTIL_INTERNAL_WHOLE_PRODUCT_PASS"
+    "humanAcceptance": "NOT_ELIGIBLE_UNTIL_INTERNAL_WHOLE_PRODUCT_PASS",
+    "integrationMatrix": "BOUND_REQUIRED",
+    "joyrideTrack": "REQUIRED_TRACK_CORE_MECHANISM_JOYRIDE_PRESENTATION",
+    "skyEnvironment": "REQUIRED_EXISTING_OWNER",
+    "motion": "REQUIRED_CURRENT_SSOT_RECONCILIATION",
+    "billboard": "REQUIRED_REPRESENTATIVE_MEDIA_SEAM",
+    "residentChatterbox": "REQUIRED_REPRESENTATIVE_SEAM",
+    "cardAlmanac": "REQUIRED_REPRESENTATIVE_SEAM",
+    "audio": "REQUIRED_ONE_OWNER_CONTINUITY",
+    "vehicleDrive": "REQUIRED_REPRESENTATIVE_SEAM"
   },
   "verification": {
     "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
@@ -41,7 +50,20 @@
     "harness": "NOT_YET_BUILT_OR_REVALIDATED_UNDER_RESET",
     "moduleCritics": "NOT_RUN",
     "wholeProductCritic": "NOT_RUN",
-    "humanReady": false
+    "humanReady": false,
+    "wholeProductRequiredSystems": [
+      "open world",
+      "native locomotion animation",
+      "Sky/Skydome",
+      "Joyride-designed modular Track",
+      "authoring place/edit/sculpt",
+      "save/reload",
+      "vehicle drive",
+      "Clay Billboard",
+      "Resident/ChatterBox",
+      "Card/Almanac",
+      "audio continuity"
+    ]
   },
   "lastProven": {
     "status": "HISTORICAL_EVIDENCE_ONLY",
@@ -62,7 +84,7 @@
     "Golden Journey",
     "quests/social expansion"
   ],
-  "nextInternalAction": "WORK_WSA_EXECUTE_FULL_OPEN_WORLD_ONE_SHOT_ARCHITECTURE_HARNESS_MODULES_CRITICS_WHOLE_PRODUCT",
+  "nextInternalAction": "WORK_WSA_EXECUTE_FULL_OPEN_WORLD_INTEGRATION_CLOSURE_ONE_SHOT",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -123,12 +145,27 @@
       "PLAY_AUTHORED_WORLD"
     ],
     "nonBlockers": [
-      "four-island completion",
-      "Combat",
-      "Residents",
-      "Cards",
-      "quests",
-      "social simulation"
+      "full Combat product",
+      "old four-island Golden Journey",
+      "every Resident",
+      "every Card/deck",
+      "full quest/economy system",
+      "multiplayer/network backend",
+      "every minigame"
+    ],
+    "integrationMatrix": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md",
+    "requiredIntegratedSystems": [
+      "Motion/Animation current SSOT",
+      "Track Core modular authoring with Joyride J14/T4/K2 visible design",
+      "Sky/Skydome/Environment existing owner",
+      "Asset Librarian + direct authoring/editor/sculpt",
+      "Clay Billboard + one HyperNormalisation media seam",
+      "Resident + ChatterBox",
+      "Card + Almanac provenance",
+      "Audio/Jukebox continuity",
+      "Vehicle/Drive on Joyride-presented route",
+      "Signature/Landmark module support",
+      "Theatre Curtain compatibility"
     ]
   },
   "historicalPreviousCandidate": {
