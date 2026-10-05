@@ -1,7 +1,7 @@
 {
   "schema": "kfb.one-shot-status/1",
   "date": "2026-10-05",
-  "mode": "RECOVERY_OPEN_WORLD_AUTHORING_PRIMARY",
+  "mode": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
   "owner": "KFB WorldBuilder / WB2",
   "repo": "georg-doc/kayfabizarro",
   "pr": 348,
@@ -21,8 +21,8 @@
     "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "cloudflareRole": "SECONDARY_MIRROR"
   },
-  "productOutcome": "RECOVER_BUILDABLE_PERSISTENT_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
-  "state": "OPEN_WORLD_AUTHORING_RECOVERY_ACTIVE",
+  "productOutcome": "COHERENT_BUILDABLE_PERSISTENT_KFB_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
+  "state": "ONE_SHOT_RESET_READY_FOR_WORK_WSA_EXECUTION",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -40,13 +40,18 @@
     "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
     "goldenJourneyE2E": "HARNESS_ENDPOINT_FAILURE_QUARANTINED_NOT_PRODUCT_FAILURE",
     "publicStage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
-    "humanAcceptance": "HUMAN_TOTAL_FAIL_CURRENT_FOUR_ISLAND_CANDIDATE",
+    "humanAcceptance": "NOT_ELIGIBLE_UNTIL_INTERNAL_WHOLE_PRODUCT_PASS",
     "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "primaryGptSite": "PUBLISHED_FROZEN_CANDIDATE_BROWSER_UNVERIFIED",
-    "primaryProduct": "OPEN_WORLD_AUTHORING_FOR_COMICS_STORIES",
+    "primaryProduct": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
     "authoringLoop": "RECOVERY_REQUIRED_R0_R5",
     "fourIslandContent": "DEFERRED_CONTENT_FIXTURE_NOT_PRIMARY_ACCEPTANCE",
-    "combat": "HOLD_SIDE_CONSUMER_NOT_BLOCKER"
+    "combat": "HOLD_SIDE_CONSUMER_NOT_BLOCKER",
+    "currentPublishedWorld": "HUMAN_TOTAL_FAIL_FAILURE_EVIDENCE_ONLY",
+    "architecture": "NOT_YET_RUN_UNDER_RESET",
+    "verificationHarness": "NOT_YET_RUN_UNDER_RESET",
+    "moduleCritics": "NOT_YET_RUN",
+    "wholeProductCritic": "NOT_YET_RUN"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -326,8 +331,9 @@
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
   "openCoreBlockers": [
-    "Current published four-island candidate is HUMAN TOTAL FAIL for product use: rejected visible composition and unreliable/slow boot observed.",
-    "Open-world authoring loop must be re-proven end-to-end before Georg is asked to review again: boot -> source-proven place -> edit -> sculpt -> save/reload -> play."
+    "Current published four-island candidate is HUMAN TOTAL FAIL and is not a baseline to polish forward.",
+    "Independent critic process must be fresh-context and must capture its own screenshots/video through normal product controls.",
+    "Whole-product Open World + authoring candidate has not yet been built under the reset contract."
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -339,7 +345,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "WORK_WSA_EXECUTE_R0_R5_OPEN_WORLD_AUTHORING_RECOVERY",
+  "nextInternalAction": "WORK_WSA_EXECUTE_FULL_OPEN_WORLD_ONE_SHOT_ARCHITECTURE_HARNESS_MODULES_CRITICS_WHOLE_PRODUCT",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -399,9 +405,9 @@
     ]
   },
   "currentRecoveryAuthority": [
-    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WSA_FOUR_ISLAND_JOYRIDE_SSOT_REBRIEF_2026-10-04.md",
-    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md",
-    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/JOYRIDE_VISUAL_WORLD_RECOVERY_BRIEF_2026-10-04.md"
+    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
+    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+    "skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md"
   ],
   "qaHarness": {
     "status": "QUARANTINED_SUPPLEMENTARY_QA",
@@ -530,17 +536,9 @@
     "browserPlayVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE"
   },
   "humanAcceptance": {
-    "status": "FAIL_CURRENT_CANDIDATE",
-    "date": "2026-10-05",
-    "evidence": "Georg direct browser review / screenshots",
-    "findings": [
-      "current four-island composition visually rejected",
-      "pack/environment direction rejected",
-      "props read as arbitrary scattering",
-      "boot observed stalling/slow at Loading 3D engine",
-      "candidate is not a usable open-world authoring product"
-    ],
-    "nextHumanGate": "ONLY_AFTER_INTERNAL_R0_R5_OPEN_WORLD_AUTHORING_PASS"
+    "status": "NOT_ELIGIBLE",
+    "reason": "Internal fresh-context critic and whole-product gates have not passed under the reset contract.",
+    "nextHumanGate": "ONLY_AFTER_WHOLE_PRODUCT_INTERNAL_PASS"
   },
   "joyridePresentation": {
     "status": "REQUIRED_MISSING",
@@ -639,8 +637,8 @@
     "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
     "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
     "runtimeClosureFiles": 92,
-    "status": "CURRENT_PUBLISHED_CANDIDATE_HUMAN_TOTAL_FAIL",
-    "next": "REPLACE_ONLY_AFTER_INTERNAL_OPEN_WORLD_AUTHORING_RECOVERY_PASS",
+    "status": "FAILED_CANDIDATE_PRESERVED_NOT_HUMAN_READY",
+    "next": "DO_NOT_ROUTE_TO_GEORG_UNTIL_RESET_ONE_SHOT_INTERNAL_PASS",
     "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
     "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
   },
@@ -677,28 +675,42 @@
   },
   "currentProductCorrection": {
     "date": "2026-10-05",
-    "primaryProduct": "Buildable persistent KFB open world used as reusable comic/story context",
-    "acceptanceLoop": [
-      "BOOT",
-      "PLACE_SOURCE_PROVEN_ASSETS",
-      "EDIT",
-      "SCULPT",
-      "SAVE_RELOAD",
-      "PLAY_AUTHORED_SPACE"
-    ],
-    "bindingBrief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md",
-    "verifiedDonors": [
-      "georg-doc/KFB-Travel-Globe/site/world-builder/ WB0 live authoring mechanism",
-      "wb2-studio.v1.js current Asset Librarian/search/place/save seam",
-      "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
-      "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md"
+    "primaryProduct": "Coherent buildable persistent KFB Open World used as reusable comic/story context",
+    "bindingBrief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
+    "executionMode": "ONE_SHOT",
+    "architectureFirst": true,
+    "verificationHarnessFirst": true,
+    "moduleFanout": true,
+    "oneIntegrator": true,
+    "independentCritic": {
+      "required": true,
+      "freshContext": true,
+      "ownScreenshots": true,
+      "ownContinuousVideo": true,
+      "normalInputPath": true,
+      "builderTranscriptForbidden": true,
+      "productionWriteForbidden": true,
+      "hardThreshold": 8.5,
+      "advisoryScores": false
+    },
+    "wholeProductCriticRequired": true,
+    "georgRole": "FINAL_PRODUCT_DECISION_ONLY_NO_DEBUGGING",
+    "productTargets": [
+      "EXTENSIBLE_BUILT_NOT_SCATTERED_WORLD",
+      "KAYKIT_KFB_VILLAGE_START",
+      "TERRAIN_WATER_ROADS_SETTLEMENTS_RIVERS_BRIDGES_NATURE_SEMANTIC_PROPS",
+      "REAL_PLAYER_COLLISION_MOVEMENT_CAMERA",
+      "DIRECT_AUTHORING_PLACE_EDIT_SCULPT",
+      "SAVE_RELOAD_PERSISTENCE",
+      "PLAY_AUTHORED_WORLD"
     ],
     "nonBlockers": [
-      "four-island visual completion",
+      "four-island completion",
       "Combat",
-      "minigames",
-      "quest/economy/social expansion"
-    ],
-    "rule": "Four islands are world recipes/content after authoring core recovery; do not polish failed showcase forward."
+      "Residents",
+      "Cards",
+      "quests",
+      "social simulation"
+    ]
   }
 }
