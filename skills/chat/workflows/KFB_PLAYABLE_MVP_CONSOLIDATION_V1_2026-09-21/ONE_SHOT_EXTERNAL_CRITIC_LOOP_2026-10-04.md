@@ -52,7 +52,35 @@ When supported, bounded subagents may work on existing subsystem folders. They m
 
 ### Independent External Critic
 
-The Critic writes **no production code**. It receives the exact candidate head, source manifest/firewall, accepted KFB reference stack, Golden Journey fixture and screenshots/evidence from the actual runtime.
+The Critic writes **no production code**.
+
+For WB2 this is a **true fresh-context critic process/agent**, not the Builder changing hats.
+
+It receives only:
+- candidate URL/build/head identity;
+- fixed rubric;
+- accepted KFB/KayKit reference stack;
+- source manifest/firewall sufficient to detect substitution.
+
+It does **not** receive:
+- Builder transcript/reasoning;
+- Builder self-score;
+- Builder screenshots as its sole visual basis;
+- ranked repair list before its own review.
+
+The Critic opens the actual candidate itself, waits for ready, drives the normal product input path, and captures its **own screenshots and continuous video**. Builder-provided evidence may be cross-checked afterwards, but never substitutes for critic-owned visual/runtime evidence.
+
+Persist:
+- critic session/agent identity;
+- exact critic prompt;
+- candidate head inspected;
+- screenshots/video/log filenames;
+- raw scores/verdict.
+
+If fresh-context separation or real product access is unavailable:
+`CRITIC_NOT_RUN`.
+
+That state is **not equivalent to PASS** and cannot be converted into Georg-facing QA by asking Georg to debug the candidate.
 
 It returns numeric scores, PASS/FAIL per dimension, ranked issues by product impact, exact evidence, source-contamination findings and one repair order. It must never inflate a score because CI is green.
 
@@ -144,6 +172,20 @@ Only after the integrated product loop exists:
 14. run blind A/B comparisons where useful.
 
 Only a whole-game PASS proceeds to the integrated human Stage candidate.
+
+### Publication / human-handoff firewall
+
+A successful deploy, Site update, archive hash match, CI PASS or offline screenshot set does **not** make the candidate human-ready.
+
+Before routing the candidate to Georg:
+- module critic(s) must have run in fresh context where required;
+- Whole-Game Critic must have opened and driven the real product itself;
+- critic-owned screenshots/video must exist;
+- no required score may be below threshold;
+- no browser/tool-policy blocker may be silently replaced by Georg as the tester.
+
+If critic/browser access is blocked:
+`INTERNAL_QA_BLOCKED` → preserve candidate → do not promote to Georg-facing acceptance.
 
 ## KFB reference stack
 
