@@ -43,6 +43,22 @@ A chat is not the archive, GitHub is not the test surface, and a successful comm
 
 `Chat slice → named GitHub branch/PR → verified commit → integrate in the real owner surface → GPT Site publish/update for Site-capable products → [human review only when a real decision is needed] → bounded Cloudflare KFB-Hub mirror when required → deliberate Live promotion`
 
+## 0. Independent execution separation
+
+For substantial Integration / Work / WSA / One-Shot / productive recovery jobs, the execution brief must reference:
+
+`skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
+
+Required role split:
+- Builder / Integrator = only production writer;
+- Integration Tester = factual evidence;
+- Independent Critic = independent evaluation, no production writes;
+- Production Guard = only authority for CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+
+No agent may materially modify a candidate and then issue the final acceptance/classification for that same modification.
+
+A local test failure never becomes a global stop merely because it repeated. STOP requires the Guard to demonstrate blockage of the named product outcome. Otherwise freeze/quarantine the smallest failing seam and continue.
+
 ## 1. Recover exact truth
 
 1. Read `skills/chat/START_HERE.md`, this workflow and the named project brief.
