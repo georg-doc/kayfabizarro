@@ -32,16 +32,13 @@ For substantial Work/WSA/One-Shot jobs, also include the compact `INDEPENDENT EX
 
 Reference global contracts instead of restating them. Do **not** copy large policy/checklist text into each brief. Site-only or chat-only context is invalid.
 
-## Every user update
+## User-facing updates
 
-Begins with:
+Follow `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`.
 
-1. Was ist der Stand?
-2. Wer macht jetzt was?
-3. Was musst du tun?
-4. Was passiert danach?
+Use the four-part status/executor/user-action/next-result format for substantial handoffs, phase changes and closures.
 
-Repository metadata comes last in an optional technical appendix.
+Ordinary progress updates should be direct and brief; do not add formatting ceremony merely to satisfy process. Repository metadata remains evidence, not the lead.
 
 ## Every active owner
 
