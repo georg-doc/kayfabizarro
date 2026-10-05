@@ -1,3 +1,21 @@
+# CURRENT HOLD · 2026-10-05
+
+**DO NOT EXECUTE THIS SITE BUILD NOW.**
+
+Current coordination uses GitHub Issues as the job list:
+- #360 World Studio freeplay = P0 / waiting-human;
+- #361 Combat freeplay = P0 / waiting-human;
+- #362 Triplet Stage = current parallel Claude Design + Georg review/content pass.
+
+This ChatterBox Site packet is preserved as **FUTURE PRODUCTIZATION**. Resume only after:
+1. W1/C1 have produced their current human result, and
+2. #362 has returned its accepted real-3D/EyeRig bubble-stage donor + reviewed Triplet export,
+or Georg explicitly reactivates the Site build earlier.
+
+Do not create a second review surface while #362 is active.
+
+---
+
 # WORK MIN · KFB ChatterBox v1
 
 Use **Sites-capable Work**. Do not redesign the architecture.
