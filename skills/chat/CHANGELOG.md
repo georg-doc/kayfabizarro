@@ -2563,3 +2563,17 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - GitHub Issues remain the active job list: #360 and #361 P0 waiting-human; #362 parallel TUNE.
 - Cost firewall: normal Web Chat for data/state; lowest-cost Sites-capable `PUBLISH_ONLY` only if host refresh is required; no premium Work/WSA design pass.
 - Recovery handover and START_HERE updated with the same priority override.
+
+
+## 2026-10-05 · Production recovery incident · Hub source restored
+
+- Georg's direct review superseded the prior "Surface Recovery stopped" state.
+- #360 World Studio is now **TOTAL FAIL / blocked**: load/runtime failure plus rejected world/pack design and arbitrary prop composition.
+- #361 Platformer/Card-Hex Combat is now **HUMAN FAIL / blocked**: design regression, broken controls/playability and additional audio bugs.
+- #362 Triplet Stage is HOLD to stop optional spend during core recovery.
+- #364 reopened Production Hub recovery as P0.
+- The generic dark-dashboard Hub fork on `chatgpt-web/surface-consolidation-2026-10-04` was replaced by the accepted Paper/Dark donor shell from `dfaafac070747f9543b5eb5a635e2aaa74e57b83`.
+- Current-board adapter added; stale 2026-09-25 embedded registry removed from CURRENT.
+- Hub board is revision `2026-10-05.8`.
+- Hub source/evidence checks: **16/16 PASS**; no GPT Site publication claimed from Web Chat.
+- Next gate: deterministic **PUBLISH_ONLY** to the existing Production Hub Site, no redesign or source changes.
