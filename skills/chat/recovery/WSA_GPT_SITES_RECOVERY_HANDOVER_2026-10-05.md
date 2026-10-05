@@ -266,3 +266,77 @@ Die Recovery ist erst abgeschlossen, wenn:
 - der Composer das exakte freigegebene UI-System und den verständlichen Produktionsablauf verwendet;
 - Theme und Dropzone dort funktionieren, wo sie zum bestätigten Vertrag gehören;
 - alle geänderten Oberflächen vor der Live-Veröffentlichung sichtbar von Georg akzeptiert wurden.
+
+
+## 14. GEORG PRIORITY OVERRIDE · 2026-10-05 · INTEGRATION FIRST
+
+This section supersedes the broad four-Site recovery sequence above where the two conflict.
+
+### Immediate outcome
+
+Do **not** spend another Work / WSA design pass restoring visual consistency across all affected Sites now.
+
+The immediate production requirement is only:
+
+1. **Production Hub shows current work/status instead of the 2026-09-25 fallback snapshot.**
+2. **Production Control contains and exposes the current durable records/decisions.**
+3. Once those two are current enough to navigate production, **stop Surface Recovery and return to product integration.**
+
+### Explicitly deferred
+
+Until a later separately authorized design slice:
+
+- no ToolBox redesign/recovery;
+- no FrankenStein redesign/recovery;
+- no cross-Site visual unification project;
+- no rollback merely to obtain an older inconsistent design;
+- no new dashboard, shell, theme system or replacement runtime.
+
+ToolBox and FrankenStein remain frozen as known imperfect surfaces; their product/source owners are preserved.
+
+### Cost firewall
+
+Current-state repair is **DATA / PUBLISH_ONLY**, not a premium reasoning task.
+
+Normal Web Chat may:
+- update Production Control CURRENT records;
+- update the canonical Hub board/status artifact;
+- correct deterministic copies/sync inputs;
+- prepare an exact Site-ready packet.
+
+If the existing Hub host requires a version refresh to consume that already-prepared current data, use only the **lowest-cost Sites-capable PUBLISH_ONLY executor**. Do not spend Work/WSA credits on design reasoning, reconstruction or multi-Site recovery.
+
+### Hub acceptance for this containment pass
+
+PASS requires only:
+- no visible 2026-09-25 stale fallback presented as current;
+- current GitHub Issues/job state is represented;
+- Hub links to the current products/issues/Control;
+- freshness is truthful;
+- existing useful Hub functions are not intentionally removed.
+
+Visual consistency is **not** an acceptance target for this pass.
+
+### Production Control acceptance for this containment pass
+
+PASS requires only:
+- current durable records are present;
+- the latest Georg decision is visible/retrievable;
+- Returns/history remain intact;
+- no data loss or second datastore is introduced.
+
+Visual consistency is **not** an acceptance target for this pass.
+
+### Current job source
+
+GitHub Issues remain the active job list:
+- #360 World Studio · P0 · waiting-human;
+- #361 Card-Hex Combat · P0 · waiting-human;
+- #362 Triplet Stage · parallel · current TUNE pass.
+
+### Stop condition
+
+As soon as Hub + Production Control are current and usable, **stop this recovery lane**.
+
+Next productive gate:
+**RETURN_TO_PRODUCT_INTEGRATION**.
