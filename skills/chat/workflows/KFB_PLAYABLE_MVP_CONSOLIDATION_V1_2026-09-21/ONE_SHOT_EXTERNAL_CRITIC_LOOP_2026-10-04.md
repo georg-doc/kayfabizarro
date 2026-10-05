@@ -6,6 +6,29 @@ Applies to: **WB2 Draft PR #348 and its integrated recovery/completion run ONLY*
 Execution mode: **ONE_SHOT**
 Human gate: **only after the integrated whole-game candidate is ready**
 
+
+## CURRENT PR #348 OVERRIDE · 2026-10-05 · OPEN WORLD PRODUCTION RESET
+
+For the current PR #348 recovery, the binding product contract is:
+
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
+
+The older Golden Journey / four-island / Resident / Card / Taxi dimensions later in this file are historical for this run and **must not expand the current acceptance scope**.
+
+Current critic target:
+- coherent extensible KFB open world;
+- built-not-scattered world composition;
+- roads / settlements / rivers / bridges / vegetation / semantic props;
+- player movement / camera / collision with real inputs;
+- direct authoring in the same world;
+- save / reload persistence;
+- technical health and streaming/performance;
+- exact source fidelity.
+
+Combat, Residents, Cards, Golden Journey and four-island completion are **not blockers** for the current Open World One-Shot.
+
+The hard threshold and critic-independence rules remain binding.
+
 ## Scope firewall
 
 This is a **specialized heavy whole-game critic** for the WB2 Golden Journey. It is **not** the generic Independent Critic contract.
