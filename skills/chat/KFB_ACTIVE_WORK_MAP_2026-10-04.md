@@ -115,7 +115,7 @@ State:
 Current workflow:
 `KFB-PORTFOLIO-ROUTER-01`
 
-Current data now includes the portfolio board, two P0 human gates, P1 next briefings, cheap parallel lanes, provider-comparison HOLD and Production-Hub PUBLISH_ONLY status.
+Current durable routing must follow the 2026-10-05 Open World Production Reset override: #360 is the primary One-Shot; Hub #364 is PUBLISH_ONLY; Combat #361 and Triplet #362 are HOLD.
 
 
 ### KFB World Studio MVP1
@@ -126,16 +126,16 @@ Owner:
 WB2 / PR #348
 
 State:
-**FOUR-ISLAND CANDIDATE DEPLOYED · GEORG FREEPLAY PENDING**
+**CURRENT PUBLISHED CANDIDATE = HUMAN TOTAL FAIL / FAILURE EVIDENCE ONLY**
 
-Current Site project:
-`appgprj_6ac27631f74c8191b52e4819c1973668`
+Do not ask Georg to freeplay this version again.
+Do not patch its four-island composition forward.
 
-Current recovery Site version:
-`appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74`
+Current work is the full Open World Production Reset One-Shot on PR #348:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
 
-Deployment:
-`appgdep_6ac2a03072788191a4d542b2ea7b7301`
+The existing Site may be reused later only after the new candidate passes fresh-context module critics and the whole-product critic.
+
 
 ### KFB Asset Librarian
 URL:
