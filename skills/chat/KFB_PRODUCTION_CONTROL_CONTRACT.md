@@ -21,7 +21,7 @@ Conflicts stop the brief. The Lead asks; it does not invent a synthesis.
 ## Every brief
 
 Keep the brief compact. It must name:
-- one executor;
+- one **exact executor surface**; never bare `ChatGPT`. Use e.g. `ChatGPT Web Chat`, `ChatGPT Work/WSA`, `Claude Design`, `Blender MCP`, or `PUBLISH_ONLY / Sites-capable executor`;
 - one product outcome;
 - one owner;
 - one direct read-first GitHub source;
