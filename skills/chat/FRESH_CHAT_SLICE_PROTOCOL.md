@@ -37,6 +37,28 @@ Current KFB MVP example:
 = ONE_SHOT.
 
 
+## 0C. Mandatory independent execution roles for substantial jobs
+
+For substantial Integration / Work / WSA / One-Shot / productive recovery work, apply:
+
+`skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
+
+The brief must name:
+- Outcome;
+- Builder / Integrator;
+- Integration Tester;
+- Independent Critic;
+- Production Guard;
+- only production writer;
+- STOP authority;
+- human gate.
+
+The Builder may run local smoke tests but may not accept or globally classify its own change.
+
+The Production Guard alone may escalate a local failure to `STOP`. A failed test is evidence, not proof that the product outcome is blocked.
+
+After two non-improving repair passes, freeze the **smallest failing seam**. Quarantine/defer it and continue unless the Guard proves that seam is outcome-critical.
+
 ## 0A. Resolve the primary delivery surface
 
 Before applying generic Stage/publication rules, read:
