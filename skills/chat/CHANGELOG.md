@@ -2565,3 +2565,21 @@ No runtime/product code changed.
 - New binding PR #348 brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md`.
 - Reuse is mandatory: original WB0 live-authoring mechanism, current `wb2-studio.v1.js`, current WB2 terrain sculpt, and shared in-scene editor.
 - Production Hub board revision `2026-10-05.9` reflects this routing.
+
+
+## 2026-10-05 · Open World Production Reset · critic independence hardened
+
+- The narrower Open-World Authoring R0–R5 recovery is superseded by a **full ONE_SHOT** on WB2 PR #348.
+- New binding contract: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`.
+- Product outcome combines:
+  - coherent extensible built-not-scattered KFB Open World;
+  - direct place/edit/sculpt/save/reload/play authoring for comic/story context.
+- Production sequence is architecture → verification harness → module fan-out → integrated world → fresh-context module critics → separate whole-product critic → Georg.
+- Critic scores are binding at >=8.5 for every required dimension; no advisory pass.
+- `KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md` v1.2 now makes Georg-requested external/unwitting critique require a separate fresh context/process, no Builder transcript, critic-owned evidence and no production writes.
+- WB2-specific `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md` now requires the critic to open/drive the real app itself and capture its own screenshots/video; blocked critic/browser access yields `INTERNAL_QA_BLOCKED`, never a Georg debug handoff.
+- Current PR #348 critic scope is Open World + authoring. Golden Journey/four-island/Combat/Resident/Card completion is not a blocker for this run.
+- Issue #360 renamed to **Open World Production Reset One-Shot** and no longer marked blocked.
+- Combat #361 remains HOLD side lane.
+- World Studio current Site candidate remains HUMAN TOTAL FAIL / failure evidence only.
+- Hub CURRENT board revision is `2026-10-05.10`.
