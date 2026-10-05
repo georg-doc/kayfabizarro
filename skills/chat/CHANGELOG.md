@@ -2551,3 +2551,17 @@ Additional alignment:
 - Web project-folder instructions updated to the same lean checkpoint / Sites-first / milestone-routing model.
 
 No runtime/product code changed.
+
+
+## 2026-10-05 · Primary product correction · Open World Authoring
+
+- Georg clarified that Combat is a side lane; the primary KFB product is a **buildable persistent Open World used as reusable context for comics/stories**.
+- World Studio / WB2 issue #360 is the primary product recovery.
+- Acceptance is now the same-world authoring loop: **BOOT → source-proven PLACE → EDIT → SCULPT → SAVE/RELOAD → PLAY**.
+- The current four-island candidate remains HUMAN TOTAL FAIL and is preserved as failure evidence only.
+- KFB Town / Dystopia / Utopia / Protopia are deferred world recipes/content, not the current acceptance target.
+- Combat #361 moved out of P0 to HOLD side lane.
+- Triplet #362 remains HOLD during core recovery.
+- New binding PR #348 brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md`.
+- Reuse is mandatory: original WB0 live-authoring mechanism, current `wb2-studio.v1.js`, current WB2 terrain sculpt, and shared in-scene editor.
+- Production Hub board revision `2026-10-05.9` reflects this routing.
