@@ -83,6 +83,22 @@ Requires the requested loop on the intended product surface, understandable with
 
 No role silently reorders Georg's priorities or replaces another owner's accepted work.
 
+### Production Control provenance labels
+
+For every Production Control record, `sourceAgent` must begin with the **exact execution surface**, never bare `ChatGPT`.
+
+Allowed examples:
+- `ChatGPT Web Chat · GPT-5.6 Sol`
+- `ChatGPT Work/WSA`
+- `Claude Design`
+- `Claude Coworker`
+- `Blender MCP`
+- `PUBLISH_ONLY / Sites-capable executor`
+
+Model name is optional provenance **after** the surface. It never replaces the surface label.
+
+Historical records containing `ChatGPT · <model>` are legacy provenance and must not be interpreted as the executor surface.
+
 
 ## 2026-10-04 · Visible-source / donor-scope firewall
 
