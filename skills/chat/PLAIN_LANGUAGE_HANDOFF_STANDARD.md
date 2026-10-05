@@ -8,16 +8,18 @@ This standard applies to every KFB chat, agent, briefing, Return, Recovery, Hub 
 
 Georg is the product owner and visual/gameplay decision-maker. He is not expected to decode repository administration, reconstruct chat history or translate technical identifiers into the next production action.
 
-## 1. Every user-facing update starts with the actual phase
+## 1. Use the four-part format only for substantial handoffs/closures
 
-Use these four headings in this order:
+For a substantial handoff, recovery return, phase change or final closure, use:
 
-1. **Was ist der Stand?** — What works, what failed and what is not built yet, in ordinary language.
-2. **Wer macht jetzt was?** — Name exactly one next executor and the concrete task.
-3. **Was musst du tun?** — Give Georg one direct action or explicitly say `Nichts`.
-4. **Was passiert danach?** — Name the next visible product result, not another administrative checkpoint.
+1. **Was ist der Stand?**
+2. **Wer macht jetzt was?**
+3. **Was musst du tun?**
+4. **Was passiert danach?**
 
-End every turn with at most five compact next steps.
+For ordinary progress updates, answer directly and briefly. Do not add the four headings merely to satisfy format.
+
+End substantial handoffs with at most five compact next steps.
 
 ## 2. Technical identifiers are evidence, not instructions
 
@@ -34,21 +36,23 @@ When an identifier must appear earlier, translate it immediately:
 
 Never ask Georg to choose between hashes, branch names or unexplained internal labels.
 
-## 3. Every handoff names the executor and gives a complete start message
+## 3. Handoffs stay self-contained but compact
 
-Every handoff to Claude Design, Blender MCP, Web Chat, Codex/WSA or another tool must contain:
+A handoff to another executor must contain only the delta needed to start safely:
 
-- **Executor:** the named environment/chat;
-- **Model and reasoning:** when the environment exposes that choice;
-- **Goal in one sentence:** the visible or audible result;
-- **GitHub source:** direct clickable URL plus the exact read-first file;
-- **Inputs included:** all source paths and decisions needed to begin;
-- **Protected work:** what must not be rebuilt or replaced;
-- **Expected return:** the concrete files, images, playable page or decision table;
-- **Stop condition:** when to return instead of expanding scope;
-- **Copy-ready start message:** Georg can paste it without finding files or adding context.
+- **Executor**
+- **Outcome**
+- **Owner**
+- **Read first / exact GitHub source**
+- **Protected boundary**
+- **Done when**
+- **INDEPENDENT EXECUTION** role block when the job is substantial
 
-A Site link may be added as convenience, but never as the only source. Claude Design and external tools must receive GitHub-accessible sources and a self-contained briefing.
+Reference existing SSOTs/contracts for unchanged context instead of copying their contents.
+
+Include a copy-ready start message only when Georg actually has to start/paste into another environment. Do not generate duplicate start messages for work that continues automatically in the same run.
+
+A Site link may be convenience, never the only source.
 
 ## 4. Do not hand unfinished repository work back to Georg
 
@@ -74,9 +78,9 @@ Use these plain-language meanings:
 
 Automated tests, uploaded files or a successful commit do not by themselves mean `Fertig und nutzbar`.
 
-## 6. Required compact closing format
+## 6. Compact closing format for handoffs
 
-Every KFB production turn ends with:
+Use this only when a real phase/executor handoff occurs:
 
 ```text
 Jetzt:
@@ -89,4 +93,4 @@ Danach:
 - [nächstes sichtbares/spielbares Ergebnis].
 ```
 
-Only after that may a short technical evidence block follow.
+Ordinary progress updates do not require this ceremony.
