@@ -164,7 +164,7 @@ Animation must not silently own:
 
 ## Recovery rule
 
-After two failed repair passes on the same explicit gate, stop. Preserve the candidate and evidence, classify what is known versus hypothesized, and hand off one smaller next gate.
+After two non-improving repair passes on the same explicit gate, stop repairing the **smallest failing animation seam**. Preserve that seam's candidate/evidence and classify known vs hypothesized. Quarantine/defer it and continue the parent animation/product outcome unless the Production Guard proves the seam is outcome-critical.
 
 ## Output contract
 
