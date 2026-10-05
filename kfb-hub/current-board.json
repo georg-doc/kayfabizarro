@@ -1,29 +1,62 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-04.2",
-  "updatedAt": "2026-10-04T23:00:00+02:00",
+  "revision": "2026-10-05.2",
+  "updatedAt": "2026-10-05T17:44:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
-  "status": {"label":"CURRENT · zwei offene P0-Gates","note":"Control-Owner und deterministischer Hub-Sync sind verifiziert; der Teststand wurde vollständig zurückgesetzt."},
-  "surfaces": {"hub":"https://kfb-production-hub.frizzlebob.chatgpt.site","control":"https://kfb-production-control.frizzlebob.chatgpt.site/","toolbox":"https://kfb-toolbox.frizzlebob.chatgpt.site"},
+  "status": {
+    "label": "CURRENT · Integration first",
+    "note": "GitHub Issues sind die aktive Jobliste. Hub + Control werden nur auf aktuellen Stand gebracht; ToolBox/FrankenStein-Design-Recovery ist eingefroren. Keine weiteren Work-Credits für Surface-Redesign."
+  },
+  "surfaces": {
+    "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+    "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+    "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+  },
   "p0": [
-    {"id":"world-studio-freeplay","title":"World Studio · four-island freeplay","summary":"Town, Dystopia, Utopia und Protopia frei spielen. Life Trees, Joyride, Bauabstände, Paletten sowie Build/Edit/Save prüfen.","badge":"P0 · Freeplay","action":"World Studio öffnen","url":"https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/"},
-    {"id":"combat-s3-freeplay","title":"Card-Hex Combat · S3 freeplay","summary":"Von Card 0 bis Result spielen, R drücken und einen zweiten Run starten. Combat-Feel, Rifle-Lane und Boss-Skalierung prüfen.","badge":"P0 · Freeplay","action":"Combat S3 öffnen","url":"https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/"}
+    {
+      "id": "issue-360-world-studio",
+      "title": "#360 · World Studio · vier Inseln frei spielen",
+      "summary": "P0 · waiting-human. Alle vier Inseln frei spielen und direkt im Issue notieren, was funktioniert und was stört. Repariert wird danach nur beobachteter Produktbedarf.",
+      "badge": "P0 · waiting-human",
+      "action": "Issue #360 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360"
+    },
+    {
+      "id": "issue-361-combat",
+      "title": "#361 · Card-Hex Combat · einen Durchlauf spielen",
+      "summary": "P0 · waiting-human. Einen vollständigen Run plus Restart spielen und direkt im Issue kommentieren. Provider-Vergleich bleibt HOLD.",
+      "badge": "P0 · waiting-human",
+      "action": "Issue #361 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/361"
+    }
   ],
-  "p1": [
-    {"id":"environment-atlas","title":"Environment Atlas","summary":"Echte fehlende Projektquellen wiederherstellen; danach als eigene Site veröffentlichen.","badge":"P1 · Source recovery"},
-    {"id":"asset-librarian","title":"Asset Librarian → placement seam","summary":"Phase A prüfen; danach genau einen Saved-Set- und WorldBuilder-Placement-Seam bauen.","badge":"P1 · Review","action":"Librarian öffnen","url":"https://kfb-asset-librarian.frizzlebob.chatgpt.site/"},
-    {"id":"frankenstein","title":"FrankenStein composite roundtrip","summary":"Rig_Medium, Rig_Large und Pencil mit bestehenden Ownern durch Save/Export/Import/Reload führen.","badge":"P1 · Integration","action":"Composer öffnen","url":"https://kfb-frankenstein-composer.frizzlebob.chatgpt.site"},
-    {"id":"fluff","title":"Fluff Worker source audition","summary":"Bestehende Blender-Clips gegen Robot One/Two und Skeleton Minion prüfen; echte Lücken erst danach benennen.","badge":"P1 · Audition"}
-  ],
+  "p1": [],
   "parallel": [
-    {"id":"quote-pool","title":"Quote Pool","summary":"Recherche und Datenarbeit bleiben im normalen Web Chat.","badge":"Web Chat"},
-    {"id":"audio","title":"Audio","summary":"Nur consumer-driven erweitern; kein eigenständiger Ausbau ohne Abnehmer.","badge":"Consumer-driven","action":"Audio öffnen","url":"https://kfb-audio.frizzlebob.chatgpt.site"},
-    {"id":"resident-eyerig","title":"Resident / EyeRig","summary":"Varianten und Cleanup nur bei echtem Consumer-Bedarf.","badge":"Consumer-driven","action":"EyeRig öffnen","url":"https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"}
+    {
+      "id": "issue-362-triplet-stage",
+      "title": "#362 · Triplet Stage · TUNE",
+      "summary": "Parallel · aktueller TUNE-Pass. Real Resident-Atlas 3D + EyeRig v6; keine 2D-Fallbacks; danach zurück an Georg. Keine zusätzliche Site-Productization in diesem Gate.",
+      "badge": "parallel · TUNE",
+      "action": "Issue #362 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/362"
+    }
   ],
   "quickLinks": [
-    {"title":"ToolBox","summary":"Ein Router für alle aktuellen Spezialwerkzeuge.","url":"https://kfb-toolbox.frizzlebob.chatgpt.site"},
-    {"title":"Production Control","summary":"CURRENT Records, Returns und additive Historie.","url":"https://kfb-production-control.frizzlebob.chatgpt.site/"},
-    {"title":"Active Work Map","summary":"Verbindlicher GitHub-Stand für Routing und Übergaben.","url":"https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md"}
+    {
+      "title": "GitHub Issues · aktuelle Jobliste",
+      "summary": "Aktive P0/parallel/waiting-human/TUNE Jobs. Das ist die operative Arbeitsliste.",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues"
+    },
+    {
+      "title": "Production Control",
+      "summary": "Aktuelle Entscheidungen, Returns und Recovery-Historie. Kein Pflicht-Umweg zwischen Integrationsjobs.",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/"
+    },
+    {
+      "title": "ToolBox",
+      "summary": "Spezialwerkzeug-Router. Design-Recovery ist aktuell eingefroren.",
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+    }
   ]
 }
