@@ -7,6 +7,24 @@ Owner: Georg / KFB
 This file is intentionally short. It is a router, not project history.
 Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`, project Returns/Recovery files and Git history.
 
+
+## CURRENT PRODUCTION OVERRIDE · 2026-10-05 23:20 CEST
+
+A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
+
+Current routing:
+- **#360 World Studio / WB2 = PRIMARY PRODUCT RECOVERY.** Outcome: buildable persistent Open World for comic/story context. Acceptance is BOOT → source-proven PLACE → EDIT → SCULPT → SAVE/RELOAD → PLAY.
+- **#364 Production Hub = SOURCE GREEN / PUBLISH_ONLY.** Accepted Paper/Dark v2 donor restored in source; existing Hub Site still needs host-only publication and visual verification.
+- **#361 Combat = HOLD side lane.** Current Platformer/Combat candidate remains HUMAN FAIL but is not the primary product.
+- **#362 Triplet Stage = HOLD** during core recovery.
+- No new feature/design expansion until the Open World authoring core is usable again.
+
+Primary World recovery brief:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md`
+on Draft PR #348.
+
+GitHub Issues remain the active job list.
+
 ## 1 · Authority order
 
 Use this precedence:
@@ -47,12 +65,10 @@ Executor label = actual execution surface, not model family.
 Current portfolio reference:
 `skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md`
 
-Latest Surface Recovery closed with Hub CURRENT `2026-10-05.2` on:
-`chatgpt-web/surface-consolidation-2026-10-04`
-Return:
-`skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RETURN.md`
-
-Do not reopen Surface Recovery without a concrete new Hub/Control defect.
+Surface Recovery was reopened by concrete Georg-visible defects on 2026-10-05.
+Current Hub recovery owner: Issue #364.
+Current product recovery owner: Issue #360 / WB2 PR #348.
+Do not treat the previously published Hub/World/Combat candidates as accepted.
 
 ## 3 · Resolve execution mode first
 
