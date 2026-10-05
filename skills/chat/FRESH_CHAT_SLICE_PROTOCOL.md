@@ -173,21 +173,22 @@ Do not spend a separate user turn producing paste-ready GitHub text when this ch
 
 If the persistence step is still `UNKNOWN`, say only that and inspect the ref; do not create a long handoff that may become the only surviving copy.
 
-## 3B. Continuous crash-safe continuation
+## 3B. Crash-safe continuation without checkpoint spam
 
-Do not wait for slice closure to persist useful state. For an authorized Web/GitHub production slice, every **meaningful durable checkpoint** is GitHub-first:
+Use GitHub-first persistence at **phase boundaries**, not after every internal test or small repair.
 
-1. persist a completed implementation step before starting the next substantial step;
-2. persist test/evidence results as soon as they change what is known about the candidate;
-3. persist Georg decisions, changed next gates and recovery findings immediately;
-4. after each write, read back the exact branch head and intended file before continuing;
-5. only then send non-trivial chat prose about that checkpoint.
+Default durable checkpoints:
+1. coherent implementation milestone;
+2. material evidence/test milestone;
+3. final Return/handoff milestone.
 
-Use the owner's existing `Return`, `Recovery`, `WIP_STATUS`, changelog or PR body. Do not create a second status owner merely for chat continuity.
+Also persist immediately when a Georg decision or recovery finding changes routing.
 
-**Fresh-chat invariant:** after any completed checkpoint, a replacement chat must be able to continue from GitHub alone without reconstructing the preceding conversation. The durable state must identify at least the existing owner, branch/PR, exact verified head, last proven result, unresolved blocker/deferred items and exactly one current next action/gate.
+Within a phase, iterate locally. Do not repeatedly rewrite Return/WIP/Hub metadata for every small test.
 
-If the chat disappears before the final handoff, the last verified GitHub checkpoint is authoritative and the fresh chat resumes there.
+After each actual GitHub write, read back the exact branch head and intended file.
+
+**Fresh-chat invariant:** the latest durable checkpoint must identify owner, branch/PR, verified head, last proven result, unresolved/deferred items and one current next action/gate.
 
 ## 4. Test the thing that changed
 
