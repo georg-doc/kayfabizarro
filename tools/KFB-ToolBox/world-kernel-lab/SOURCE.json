@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.world-kernel-lab.source/1",
+  "date": "2026-10-05",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-kernel-lab-worldspring-research-2026-10-05",
+  "draftPr": 363,
+  "owner": "KFB ToolBox / World Kernel Lab research lane",
+  "receivingOwnerLater": "WB2 / World Studio only after explicit integration gate",
+  "externalReference": {
+    "repo": "Dun-John/worldspring",
+    "commit": "55684aa2700b9f4076fddea338d596bfb9bbf14a",
+    "classification": "READ_ONLY_ARCHITECTURE_REFERENCE_NO_CODE_DONOR",
+    "rights": "README all rights reserved; Cargo workspace UNLICENSED"
+  },
+  "runtimeFiles": [
+    "index.html",
+    "style.css",
+    "app.js",
+    "world-worker.js",
+    "world-kernel.js"
+  ],
+  "contracts": {
+    "worldIdentity": "rootSeed + generatorVersion",
+    "hierarchicalSeed": "rootSeed + generatorVersion + path",
+    "lodIdentityStable": true,
+    "authoredEditsSeparate": true,
+    "wb2Mutated": false,
+    "trackCoreMutated": false,
+    "wasmRequired": false
+  },
+  "tests": {
+    "core": "6/6 PASS",
+    "jsSyntax": "3/3 PASS",
+    "httpEntrypoint": "PASS",
+    "localChromium": "BLOCKED_ENVIRONMENT_AFTER_TWO_ATTEMPTS",
+    "siteBrowser": "NOT_RUN"
+  },
+  "nextGate": "PUBLISH_ONLY_PRIVATE_GPT_SITE"
+}
