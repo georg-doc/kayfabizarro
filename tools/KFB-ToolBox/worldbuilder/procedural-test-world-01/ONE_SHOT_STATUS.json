@@ -6,8 +6,6 @@
   "repo": "georg-doc/kayfabizarro",
   "pr": 348,
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
-  "observedReturnedHead": "6ae41e370c930637d57a65d7da79b4131b08f9df",
-  "currentHeadAfterPlanningCheckpoint": "d0aa5b80e7db5e5406774164bb43f04128e7c7ca",
   "stage": {
     "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
     "status": "HISTORICAL_FAILED_CANDIDATE_ONLY",
@@ -144,5 +142,9 @@
       "evidence/FOUR_ISLAND_RECOVERY_2026-10-04/"
     ],
     "rule": "History only; do not infer current product quality or current gate."
+  },
+  "currentCheckpoint": {
+    "status": "RESET_CONTRACT_FROZEN_READY_FOR_EXECUTION",
+    "note": "Use current branch head + binding contract; do not resume from historical pre-reset heads."
   }
 }
