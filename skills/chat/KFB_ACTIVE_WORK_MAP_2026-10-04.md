@@ -59,69 +59,42 @@ This control-plane recovery may run without mutating World Studio or Combat runt
 
 # 1 · Current executive picture
 
-There are currently four genuinely active product lanes:
-
-### A · World Studio / Playable MVP · P0
-Owner: WB2 / PR #348
+### A · KFB Open World Production Reset · PRIMARY P0
+Owner: World Studio / WB2 · Draft PR #348
 
 Current state:
-- four-island Joyride/LifeTree recovery implemented;
-- exact 92-file frozen candidate published in place to the existing GPT Site;
-- Site deployment succeeded;
-- **Georg freeplay is the current acceptance gate**.
+- previous four-island Site candidate = **HUMAN TOTAL FAIL / failure evidence only**;
+- no Georg freeplay requested on that candidate;
+- current execution mode = **ONE_SHOT**;
+- current product = coherent extensible KFB Open World + direct authoring for comic/story context;
+- architecture → verification harness → module waves → fresh-context independent critics → whole-product critic → Georg.
 
-Primary Site:
-https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/
+Binding contract:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
 
-Current runtime source:
-`3d9aaf5f6623f9009d6e68dd3c042009a160b044`
+Current issue:
+#360 · PRIMARY · Open World Production Reset One-Shot
 
-Current PR handoff head:
-`2460dfda5213e0b67e7125f20357cad577309cd8`
+Human gate:
+**NONE until internal whole-product PASS.**
 
-Do not build more before Georg freeplay unless publication itself is broken.
+### B · Production Hub · P0 PUBLISH_ONLY
+Owner: KFB Production Hub · issue #364
 
-### B · Card-Hex Combat Ascent · P0 human gate
-Owner: KFB Combat Arena / PR #19
+Source recovery is green on the surface-recovery branch.
+Accepted Paper/Dark v2 donor is restored in source.
+Existing Hub Site still requires host-only publication and visible verification.
+No redesign is authorized.
 
-Current state:
-- full S3 public product;
-- two complete runs and restart verified;
-- GitHub Actions validates the source/build successfully;
-- CORE Duel/Rifle issues repaired;
-- current gate = Georg plays it and returns PASS / TUNE / FAIL.
+### C · Combat · HOLD side lane
+Issue #361
 
-Public review:
-https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/
+Current Platformer/Card-Hex candidate remains HUMAN FAIL.
+Combat is not the primary KFB outcome and receives no recovery spend while #360 is active.
 
-Product source:
-`16928236485d3535670599694f836d042029d004`
+### D · Triplet / optional tool-content lanes · HOLD
+Issue #362 and other optional expansion remain parked during the core Open World reset.
 
-Current PR metadata head:
-`b6ed820ce1ba2d3295b7c620ad079097c34814d3`
-
-Do not start Sol/Astra comparison. Comparison remains HOLD.
-
-### C · Tool/Content Sites · active but not P0
-The tool surfaces are now usable enough to support production:
-- Asset Librarian;
-- Audio;
-- EyeRig;
-- FrankenStein;
-- Hypernormalisation Curator;
-- Production Hub.
-
-Their next work should be driven by concrete World/Resident/Media consumer needs, not by generic feature expansion.
-
-### D · Production-source preparation · bounded active lanes
-- Environment Atlas PR #353;
-- Fluff Work Motion Pack PR #356;
-- Resident appearance/variant lane PR #330 / EyeRig cleanup PR #315;
-- Motion SSOT PR #344;
-- Audio source/update branch PR #352;
-- Quote research/data on PR #354.
-
-These are source/data/tool lanes. None may displace World Studio or Combat human gates.
 
 ---
 
