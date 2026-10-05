@@ -7,7 +7,7 @@ Owner: **KFB ChatterBox / KFB ToolBox**
 Repo: `georg-doc/kayfabizarro`
 Planning branch: `planning/chatterbox-triplet-curator-site-2026-10-04`
 Primary product: **one private GPT Site**
-Reserved formal Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
+Review/acceptance surface: **that GPT Site only**
 Live promotion: **NOT AUTHORIZED**
 
 ## Mission
@@ -336,11 +336,7 @@ Persist exact:
 
 Update the **existing** ToolBox specialist entry `chatterbox-comic-vfx`; do not add a competing entry.
 
-Only if a formal public/browser milestone is required after the private Site works, publish the bounded mirror to:
-
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
-
-and link it from the KFB Hub in the same publication batch.
+Do not reserve, publish or use a Cloudflare/pages.dev route for KFB ChatterBox. It is outside this product/review flow and must not become a fallback or acceptance gate.
 
 ## Return
 

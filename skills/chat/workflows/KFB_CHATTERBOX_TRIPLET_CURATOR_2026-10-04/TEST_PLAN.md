@@ -216,4 +216,4 @@ Automated checks prove mechanics/data integrity only.
 Critic scores are diagnostic evidence only.
 Georg's PASS/TUNE/FAIL is the editorial usability gate.
 
-No public Stage is required merely to test schema or internal data.
+The GPT Site is the only product, review and acceptance surface for this slice. No Cloudflare/pages.dev route participates in tests or gates.

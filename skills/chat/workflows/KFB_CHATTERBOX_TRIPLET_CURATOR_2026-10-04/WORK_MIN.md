@@ -39,6 +39,6 @@ Mandatory:
 
 Do not create a second ChatterBox, memory owner, Quote Pool, Card registry, Bubble owner or ToolBox front door.
 
-Publish GPT Site first. Do not invent its URL. Cloudflare mirror only if actually required.
+Publish exactly one GPT Site. Do not invent its URL. Do not reserve or publish a Cloudflare/pages.dev route for ChatterBox.
 
 Return: exact Site URL/project/version/deployment, PR/head, actual tests, screenshots, review-import roundtrip, quote-ID proof, pair/SILENCE proof, L0-vs-L1 8–12-turn comparison, critic report, player-call intervention proof, TTS/ducking proof, real-3D Bubble/orbit proof, Bubble donor proof, unresolved items, one next gate. No merge / no Live promotion.

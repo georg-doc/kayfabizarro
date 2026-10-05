@@ -180,15 +180,13 @@ First live comparison starts with two Residents and tests L0 shared-agent vs L1 
 
 ## Publication
 
-Primary product when built: one private GPT Site under the existing ToolBox specialist inventory.
+The only product/review surface for this slice is one private GPT Site under the existing ToolBox specialist inventory.
 
 Do not invent its final `.frizzlebob.chatgpt.site` URL before Sites returns it.
 
-Reserved formal Cloudflare review route, only when a public/browser acceptance mirror is actually required:
+Cloudflare/pages.dev is not used by KFB ChatterBox and is not a route, mirror, fallback or acceptance gate for this slice.
 
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
-
-No Stage exists yet. No Live promotion.
+No Site exists yet. No Live promotion.
 
 ## Exactly one next gate
 
