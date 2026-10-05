@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.9",
-  "updatedAt": "2026-10-05T23:20:00+02:00",
+  "revision": "2026-10-05.10",
+  "updatedAt": "2026-10-05T23:34:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · PRIMARY PRODUCT = OPEN WORLD AUTHORING",
-    "note": "World Studio/WB2 #360 is the primary product recovery: buildable persistent open world for comic/story context. Hub #364 is source-green awaiting PUBLISH_ONLY. Combat #361 is HOLD side lane. No new feature expansion."
+    "label": "CURRENT · PRIMARY = OPEN WORLD PRODUCTION RESET ONE-SHOT",
+    "note": "World Studio/WB2 #360 is the only primary product build: coherent extensible Open World + direct authoring + verification harness + fresh-context critics + whole-product gate. Hub #364 is PUBLISH_ONLY. Combat #361 and Triplet #362 are HOLD."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,20 +26,20 @@
     },
     {
       "id": "issue-360-world-studio",
-      "title": "#360 · PRIMARY · Open World Authoring Recovery",
-      "summary": "P0 · World Studio/WB2. Recover the same-world authoring loop for comic/story context: boot → source-proven place → edit → sculpt → save/reload → play. Four islands are later content recipes, not the acceptance target.",
-      "badge": "P0 · PRIMARY PRODUCT · recovery",
+      "title": "#360 · PRIMARY · Open World Production Reset One-Shot",
+      "summary": "P0 · ONE_SHOT. Architecture → verification harness → module waves → fresh-context critic gauntlet → whole-product critic. Product = extensible built-not-scattered KFB world + direct place/edit/sculpt/save/reload/play authoring for comic/story context. No Georg gate before internal whole-product PASS.",
+      "badge": "P0 · PRIMARY · ONE_SHOT",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "ChatGPT Work/WSA · Open-World Authoring Recovery",
-      "nextExecutor": "Georg · only after internal R0–R5 authoring PASS"
+      "executor": "ChatGPT Work/WSA · Open World One-Shot Integrator",
+      "nextExecutor": "Georg · only after internal whole-product PASS"
     }
   ],
   "p1": [
     {
       "id": "issue-361-combat",
       "title": "#361 · HOLD · Combat side lane",
-      "summary": "Current Platformer/Combat candidate remains HUMAN FAIL, but Combat is not the primary product. Preserve evidence and resume only after the Open World authoring core is usable.",
+      "summary": "Current Platformer/Combat candidate remains HUMAN FAIL. No recovery spend while Open World #360 is active.",
       "badge": "HOLD · side lane",
       "action": "Issue #361 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
