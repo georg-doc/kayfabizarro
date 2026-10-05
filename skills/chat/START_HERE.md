@@ -1,3 +1,21 @@
+## 2026-10-05 · MANDATORY INDEPENDENT EXECUTION ROLES
+
+For substantial Integration / Work / WSA / One-Shot / productive recovery jobs, read and apply:
+
+`skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
+
+Mandatory separation:
+- **Builder / Integrator** = only production writer;
+- **Integration Tester** = factual runtime evidence;
+- **Independent Critic** = independent evaluation, no production writes;
+- **Production Guard** = only authority for CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+
+No agent may materially change a candidate and then certify that same change as accepted.
+
+**STOP requires demonstrated blockage of the named product outcome. A failed test is not proof of product blockage.**
+
+Every substantial brief must include the compact `INDEPENDENT EXECUTION` role block from the contract. For One-Shots, default is CONTINUE; after two non-improving repairs, freeze the smallest failing seam unless the Guard proves it blocks the product outcome.
+
 ## 2026-10-04 · CURRENT SURFACE CONSOLIDATION
 
 Georg reports that Production Hub, Production Control and ToolBox routing are still not coherently current as a human system. Treat this as a **navigation/surface HUMAN FAIL** even when individual deployments are technically green.
