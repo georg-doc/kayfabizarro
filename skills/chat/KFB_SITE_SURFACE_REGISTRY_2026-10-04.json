@@ -50,8 +50,18 @@
       "status": "SITE_DEPLOYED_PRIVATE",
       "source": "PR #349",
       "humanStatus": "GEORG_REVIEW_OPEN",
-      "notes": "WSA browser QA 8/8 PASS; zero console errors; Phase A real review surface.",
-      "surfaceRole": "SPECIALIST_TOOL"
+      "notes": "WSA browser QA 8/8 PASS for Phase A. Style Reference Library R1 is now prepared as an additional mode of this same Site; it is not implemented/published yet and does not create a second Site.",
+      "surfaceRole": "SPECIALIST_TOOL",
+      "preparedViews": [
+        {
+          "id": "style-reference-library",
+          "status": "R1_SITE_PACKET_READY_NOT_IMPLEMENTED",
+          "route": "UNASSIGNED_UNTIL_IMPLEMENTED",
+          "source": "tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md",
+          "seed": "13 official Etherington URLs",
+          "secondSite": false
+        }
+      ]
     },
     {
       "id": "kfb-audio",
@@ -136,7 +146,7 @@
       "notes": "No existing ToolBox Site was found. Exactly one canonical GPT Site project was created and published. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors."
     }
   ],
-  "updatedAt": "2026-10-04T23:05:00+02:00",
+  "updatedAt": "2026-10-05T01:35:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",
