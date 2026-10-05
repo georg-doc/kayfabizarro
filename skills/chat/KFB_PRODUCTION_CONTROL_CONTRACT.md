@@ -20,7 +20,17 @@ Conflicts stop the brief. The Lead asks; it does not invent a synthesis.
 
 ## Every brief
 
-Must name one executor, one outcome and one owner. It includes a direct GitHub read-first link, complete sources, protected work, forbidden substitutions, acceptance evidence, return contents and stop conditions. Site-only or chat-only context is invalid.
+Keep the brief compact. It must name:
+- one executor;
+- one product outcome;
+- one owner;
+- one direct read-first GitHub source;
+- protected boundary;
+- done/acceptance condition.
+
+For substantial Work/WSA/One-Shot jobs, also include the compact `INDEPENDENT EXECUTION` role block.
+
+Reference global contracts instead of restating them. Do **not** copy large policy/checklist text into each brief. Site-only or chat-only context is invalid.
 
 ## Every user update
 
@@ -47,11 +57,15 @@ Is classified as one of:
 - failed/archive;
 - blocked.
 
-Only one active integration candidate exists per owner. New descendants wait until their required parent is accepted or rejected.
+Only one **production writer/integration candidate** exists per owner at a time. Parallel read-only research, testing, critic/guard review and donor/source preparation are allowed when they do not mutate the same owner.
 
 ## Every timeout
 
-Means UNKNOWN. Read the actual state once; retry only when absent. After two failures, preserve and stop. Never start a new branch merely because a write or deployment response timed out.
+Means UNKNOWN. Read the actual state once; retry only when the intended write/deployment is demonstrably absent.
+
+After two failures of the **same operation**, stop retrying that operation and preserve its evidence. Do not automatically stop the parent slice/One-Shot. The Production Guard escalates only if the failed operation demonstrably blocks the named outcome.
+
+Never start a new branch merely because a write or deployment response timed out.
 
 ## Every publication
 
@@ -153,7 +167,7 @@ The explicit current execution mode outranks generic fresh-chat defaults.
 - continue automatically across successful internal checkpoints;
 - no new Georg-facing executor prompt after each checkpoint;
 - optional defects quarantine/defer;
-- stop only on a real owner/source contradiction, missing required source, genuine Georg-only decision or the two-repair stop rule.
+- stop the parent One-Shot only for a real owner/source contradiction, genuinely missing outcome-critical source, a Georg-only decision, or a Production Guard finding that the named outcome itself is blocked; repeated local repair failure alone is not enough.
 
 ### BOUNDED_SLICE
 
