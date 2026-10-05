@@ -1,0 +1,216 @@
+{
+  "schema": "kfb.chatterbox-site-packet/2",
+  "date": "2026-10-05",
+  "status": "SITE_IMPLEMENTATION_READY",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/chatterbox-triplet-curator-site-2026-10-04",
+  "pr": 357,
+  "owners": {
+    "toolboxFrontDoor": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "toolboxSlot": "chatterbox-comic-vfx",
+    "dialogueContent": "ChatterBox",
+    "semanticSelection": "Resident Chatter adapter PR #305",
+    "residentTruth": "Resident Atlas + Lean Cards",
+    "memory": "Journey / Resident Social Memory",
+    "quotes": "Hypernormalisation Quote Pool PR #354",
+    "bubblePresentation": "existing accepted bubble owner; Claude cutout-character scene HUMAN_REJECTED"
+  },
+  "donors": {
+    "reviewStage": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html",
+      "blob": "2d4fa60931ae0f1f1815788bb801a5f1e156c1d6",
+      "bytes": 26833,
+      "dropboxSameNameAndByteSizeVerified": true
+    },
+    "webChatBrief": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md",
+      "blob": "796a1236ab634ebf9385fdc8a070165d2b8a043f"
+    },
+    "seed20": {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/TRIPLET_POOL_SEED_20.json",
+      "blob": "e1462d78a0e8c35045cefec1728c7b5a72128122"
+    },
+    "leanCardSchema": {
+      "path": "skills/chat/workflows/S1_RESIDENT_PREP_2026-10-04/resident-lean-card.v0.2.schema.json",
+      "blob": "e78fd8be8a7360b1ddd4ebeae4e10cbf7fa407cc"
+    },
+    "kernel": {
+      "pr": 305,
+      "head": "5b595a075b789f683ef0871f8c24d95e96416449",
+      "tests": "29/29 PASS"
+    },
+    "quotePool": {
+      "pr": 354,
+      "head": "05d61058eaaa8f465b4e2add08cffbf70752fe8f",
+      "batch01Blob": "c1d1e5b454e8b14088d84359a5829a6b4e5dfc15"
+    }
+  },
+  "contracts": {
+    "reviewExport": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_EXPORT_SCHEMA.json",
+    "authoring": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/TRIPLET_CURATOR_SCHEMA.json",
+    "quoteFixture": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/QUOTE_BRIDGE_FIXTURE.json",
+    "reviewMigration": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_MIGRATION.md",
+    "dialogLabExtension": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md"
+  },
+  "siteTabs": [
+    "Bühne / Dialogue Lab",
+    "Review / Triplet Pool",
+    "Bewohner / Lean Card Lens",
+    "Critic / Repair",
+    "Reactions",
+    "Quotes",
+    "Bubble / 3D Stage",
+    "Audio / TTS",
+    "Import / Export / Diff / Sessions"
+  ],
+  "initialFixtures": {
+    "A": "Goth Girl × Clown × forget_utopia#11",
+    "B": "Witch × Clown × ignore_dystopia#30",
+    "C": "Goth Girl × Witch × ignore_dystopia#1"
+  },
+  "knownContentGaps": [
+    "Clown signature SYNERGY missing",
+    "Clown signature COLLISION missing",
+    "Witch signature COLLISION missing",
+    "Goth Girl signature CATEGORY_SHIFT missing",
+    "some BONGO/BOGGLE paths have no shared semantic material and correctly return SILENCE",
+    "original 20 Triplets have no Card anchors"
+  ],
+  "publication": {
+    "primary": "GPT_SITE",
+    "reviewSurface": "GPT_SITE_ONLY",
+    "siteUrl": "NOT_YET_ASSIGNED",
+    "cloudflare": "OUT_OF_SCOPE_NOT_USED",
+    "live": "UNCHANGED"
+  },
+  "doneWhen": [
+    "all integrated shown characters use EyeRig instead of stock/source eyes",
+    "Pair/Scene/Bubble lab visibly uses real Resident Atlas 3D models, not cutouts",
+    "existing review stage workflow retained, not replaced",
+    "20 seed records load",
+    "review export imports without loss",
+    "KEEP/TUNE/CUT works and roundtrips",
+    "Web Chat candidate import works",
+    "real quote IDs can be linked without copying quote canon",
+    "Resident pair deterministic preview works including SILENCE",
+    "current accepted bubble source is shown in isolation before adapter integration",
+    "desktop + narrow browser zero page errors",
+    "exact Site identity persisted and ToolBox slot updated",
+    "Goth Girl × Clown deterministic baseline + L0 + L1 can be run and compared on the same scene",
+    "one 8-12 turn L0 session and one same-scene L1 session are logged",
+    "player can intervene with a free Triplet and at least one four-call action",
+    "critic produces voice-distinctness/repetition/Triplet/formatting findings without joining the dialogue",
+    "repair creates a new revision and preserves the original transcript",
+    "real 3D Resident stage supports orbit/responsive bubble-readability checks",
+    "browser TTS drives voice activity and current Audio mixer ducking without a second AudioContext",
+    "strong generated Triplets can be promoted to candidate pool without automatic runtime approval"
+  ],
+  "claudeDesignCorrection": {
+    "status": "HUMAN_REJECTED_CHARACTER_PRESENTATION",
+    "finding": "Claude Design used cut-out figures instead of real 3D Resident models.",
+    "prohibited": [
+      "cut-out character figures",
+      "sprite/image-plane stand-ins",
+      "2D screenshots as Resident scene actors"
+    ],
+    "requiredCharacterSource": "Resident Atlas exact 3D actors/sets/rigs proven in PR #310",
+    "salvageRule": "Bubble geometry/VFX/layout/timing may be reused only after independent source isolation from the rejected cutout scene."
+  },
+  "characterPresentationDefault": {
+    "eyes": "EYERIG_V6",
+    "sourceIsolation": "ORIGINAL_SOURCE_EYES_ALLOWED_FOR_DONOR_PROOF_ONLY",
+    "integrated": "HIDE_REPLACE_SOURCE_EYES_AND_MOUNT_EYERIG",
+    "profilePriority": [
+      "APPROVED_OR_RECOVERED_PROFILE",
+      "SOURCE_DERIVED_PROFILE_TUNE"
+    ],
+    "stockEyeFallback": false,
+    "owner": "KFB ToolBox EyeRig PR #104 / shared EyeRig v6"
+  },
+  "productName": "KFB ChatterBox",
+  "productModules": [
+    "Triplet Curator",
+    "Dialogue Lab",
+    "Critic / Repair Lab",
+    "Reaction / Choreography Lab",
+    "3D Bubble Stage",
+    "Audio / TTS Preview",
+    "Import / Export / Session Logs"
+  ],
+  "dialogueLab": {
+    "firstTopology": "TWO_RESIDENTS",
+    "firstPair": "Goth Girl × Clown",
+    "comparison": [
+      {
+        "id": "L0",
+        "label": "shared-agent baseline",
+        "modelPolicy": "same model, one shared context"
+      },
+      {
+        "id": "L1",
+        "label": "isolated Resident agents",
+        "modelPolicy": "same model, separate Resident contexts"
+      },
+      {
+        "id": "L2",
+        "label": "model-diverse Residents",
+        "modelPolicy": "optional; different model/profile only after L0/L1 evidence"
+      }
+    ],
+    "firstRunTurns": "8-12",
+    "playerInputs": [
+      "free Triplet",
+      "KayfaBINGO!",
+      "KayfaBONGO!",
+      "KayfaBOGGLE?",
+      "BLÖDSINN!"
+    ],
+    "critic": "second non-speaking LLM agent",
+    "outputs": [
+      "session log",
+      "turn provenance",
+      "critic report",
+      "repair revision",
+      "candidate Triplet/cluster promotion",
+      "negative semantic/guardrail candidates"
+    ]
+  },
+  "reactionLab": {
+    "phrases": [
+      "What the FLUFF?!",
+      "Stay fluffy!",
+      "KayfaBINGO!",
+      "KayfaBONGO!",
+      "KayfaBOGGLE?",
+      "BLÖDSINN!"
+    ],
+    "reuseOwners": [
+      "body animation",
+      "EyeRig v6",
+      "facial expression",
+      "brows/pupils/gaze",
+      "bubble presentation",
+      "SFX/VFX"
+    ]
+  },
+  "audioTts": {
+    "tts": "browser speechSynthesis first pass",
+    "audioOwner": "KFB Audio",
+    "duckingOwner": "mixer",
+    "secondAudioContext": false,
+    "musicTimelineContinuesWhileDucked": true
+  },
+  "stage3d": {
+    "residentSource": "Resident Atlas exact 3D actors/sets/rigs",
+    "orbitCamera": true,
+    "responsiveViewports": true,
+    "bubbleChecks": [
+      "face/body visibility",
+      "camera-facing readability",
+      "edge clamping",
+      "bubble collision",
+      "streaming growth",
+      "speaker/listener anchors"
+    ]
+  }
+}

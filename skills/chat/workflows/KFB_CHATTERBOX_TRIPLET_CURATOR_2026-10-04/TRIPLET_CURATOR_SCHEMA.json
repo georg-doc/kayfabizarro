@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.pages.dev/schemas/kfb.triplet-curator-pool/1",
+  "title": "KFB Triplet Curator Pool v1",
+  "description": "Authoring/review wrapper around the existing shared ChatterBox Semantic Triplet contract. Runtime owners remain external.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "source",
+    "triplets"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.triplet-curator-pool/1"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kernelOwner",
+        "seedRef"
+      ],
+      "properties": {
+        "kernelOwner": {
+          "const": "Resident Chatter deterministic adapter"
+        },
+        "seedRef": {
+          "type": "string"
+        },
+        "quoteOwner": {
+          "const": "KFB Hypernormalisation Quote Pool"
+        },
+        "bubbleOwner": {
+          "type": "string"
+        }
+      }
+    },
+    "triplets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/triplet"
+      }
+    }
+  },
+  "$defs": {
+    "quoteRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quoteId",
+        "role"
+      ],
+      "properties": {
+        "quoteId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "role": {
+          "enum": [
+            "SEED",
+            "COUNTERPOINT",
+            "REFRAME",
+            "PROVENANCE_ANCHOR",
+            "FRIZZLEQUESTION_PROMPT"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "cardRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packId",
+        "cardNumber"
+      ],
+      "properties": {
+        "packId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cardNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "fluffOlect": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "replaceTarget": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "connector",
+        "reframe",
+        "relation",
+        "tags",
+        "signatureOf"
+      ],
+      "properties": {
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reframe": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "enum": [
+            "CATEGORY_SHIFT",
+            "ESCALATION",
+            "COLLISION",
+            "MISFIT",
+            "SYNERGY"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "signatureOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fluffOlect": {
+          "$ref": "#/$defs/fluffOlect"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "DONOR_UNREVIEWED",
+            "WEB_CHAT_CANDIDATE",
+            "GEORG_KEEP",
+            "GEORG_TUNE",
+            "GEORG_CUT",
+            "APPROVED_RUNTIME",
+            "ARCHIVED"
+          ]
+        },
+        "reviewedBy": {
+          "type": "string"
+        },
+        "reviewedAt": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceRef",
+        "sourceStatus"
+      ],
+      "properties": {
+        "sourceRef": {
+          "type": "string"
+        },
+        "sourceStatus": {
+          "enum": [
+            "SOURCE",
+            "DESIGN",
+            "PREFILL",
+            "WEB_CHAT",
+            "GEORG_AUTHORED"
+          ]
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "triplet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tripletId",
+        "runtime",
+        "review",
+        "provenance",
+        "quoteRefs",
+        "cardRefs"
+      ],
+      "properties": {
+        "tripletId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "runtime": {
+          "$ref": "#/$defs/runtime"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "quoteRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quoteRef"
+          }
+        },
+        "cardRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cardRef"
+          }
+        },
+        "curatorTags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "residentNotes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "bubblePreviewHints": {
+          "type": "object",
+          "description": "Non-authoritative presentation hints only; bubble owner may ignore them.",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
