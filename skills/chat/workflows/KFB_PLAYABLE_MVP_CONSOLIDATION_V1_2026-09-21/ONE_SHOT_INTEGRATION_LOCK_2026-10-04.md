@@ -28,6 +28,24 @@ Stop only for:
 
 Optional defects are quarantined rather than turned into new MVP gates.
 
+## Mandatory independent execution roles
+
+This One-Shot additionally obeys:
+`skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
+
+INDEPENDENT EXECUTION
+- Outcome: integrated Golden Journey candidate.
+- Builder / Integrator: WSA / Codex integration executor.
+- Integration Tester: deterministic/browser evidence producer; no product-impact classification.
+- Independent Critic: existing External Critic / Whole-Game Critic; no production writes.
+- Production Guard: separate read-only classifier for CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+- Only production writer: Builder / Integrator.
+- STOP authority: Production Guard only.
+- Two-repair scope: smallest failing seam.
+- Human gate: Georg reviews the integrated candidate, not internal diagnostics.
+
+A local failure, including a failing Taxi route/arrival harness, cannot stop this One-Shot unless the Production Guard proves that the integrated product outcome itself is blocked. The Builder may not self-certify that conclusion.
+
 ## 2026-10-04 · CURRENT HUMAN VISUAL FAIL OVERRIDE
 
 Georg's current WSA screenshot proves that legacy Hürth/OSM-derived visible content is active in PR #348.
