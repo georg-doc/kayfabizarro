@@ -40,7 +40,7 @@ Never ask Georg to choose between hashes, branch names or unexplained internal l
 
 A handoff to another executor must contain only the delta needed to start safely:
 
-- **Executor**
+- **Executor** — exact surface; never bare `ChatGPT` (`ChatGPT Web Chat` vs `ChatGPT Work/WSA` must be explicit)
 - **Outcome**
 - **Owner**
 - **Read first / exact GitHub source**
