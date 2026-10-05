@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.10",
-  "updatedAt": "2026-10-05T23:34:00+02:00",
+  "revision": "2026-10-05.11",
+  "updatedAt": "2026-10-05T23:50:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · PRIMARY = OPEN WORLD PRODUCTION RESET ONE-SHOT",
-    "note": "World Studio/WB2 #360 is the only primary product build: coherent extensible Open World + direct authoring + verification harness + fresh-context critics + whole-product gate. Hub #364 is PUBLISH_ONLY. Combat #361 and Triplet #362 are HOLD."
+    "label": "CURRENT · PRIMARY = OPEN WORLD INTEGRATION CLOSURE ONE-SHOT",
+    "note": "World Studio/WB2 #360 must deliver coherent Open World + direct authoring + existing KFB stack: native Motion, Joyride-designed modular Track Core, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Hub #364 remains PUBLISH_ONLY. Combat/Triplet HOLD."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,12 +26,12 @@
     },
     {
       "id": "issue-360-world-studio",
-      "title": "#360 · PRIMARY · Open World Production Reset One-Shot",
-      "summary": "P0 · ONE_SHOT. Architecture → verification harness → module waves → fresh-context critic gauntlet → whole-product critic. Product = extensible built-not-scattered KFB world + direct place/edit/sculpt/save/reload/play authoring for comic/story context. No Georg gate before internal whole-product PASS.",
-      "badge": "P0 · PRIMARY · ONE_SHOT",
+      "title": "#360 · PRIMARY · Open World Integration Closure One-Shot",
+      "summary": "P0 · ONE_SHOT. Build coherent extensible KFB Open World + direct authoring and integrate the existing stack: native Motion, modular Track Core in Joyride J14/T4/K2 design, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Fresh-context critics + whole-product PASS before Georg.",
+      "badge": "P0 · PRIMARY · INTEGRATION ONE_SHOT",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "ChatGPT Work/WSA · Open World One-Shot Integrator",
+      "executor": "ChatGPT Work/WSA · Open World Integrator",
       "nextExecutor": "Georg · only after internal whole-product PASS"
     }
   ],
