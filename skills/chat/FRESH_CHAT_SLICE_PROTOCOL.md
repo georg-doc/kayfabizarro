@@ -238,18 +238,19 @@ Stop at the current owner boundary when:
 
 Return the concrete blocker and the smallest decision needed. Do not fill the gap with a new architecture.
 
-## 7. Recover a failed or repeating slice
+## 7. Recover a failed or repeating seam
 
-If two consecutive repair passes do not improve the same explicit gate, stop implementation before consuming the remaining session on another variation.
+After two non-improving repair passes, do **not** automatically stop the slice or One-Shot.
 
-- Freeze the current candidate; do not delete or cosmetically rewrite the failed code.
-- Apply `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` for Claude Design or an equivalent visual authoring environment.
-- Export the full editable codebase, data, state, dependency/asset manifest and actual evidence.
-- Separate observed failure, proven cause and hypothesis.
-- Record a salvage map and exactly one smaller next gate.
-- Classify the frozen result as `ARCHIVED_FAILED_CANDIDATE`; it remains an intake/reference, not an owner or SSOT.
+1. Identify the **smallest failing seam**.
+2. Preserve that seam's candidate and evidence.
+3. Let the Production Guard classify its product impact.
+4. If the seam is not outcome-critical: quarantine/defer that seam and **continue the parent outcome**.
+5. If the seam is genuinely outcome-critical: stop only that outcome path and produce the failure-recovery export.
 
-A successful export is a recovery result, not proof that the failed visual/game result works.
+For Claude Design or equivalent visual authoring, use `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` only for the failing seam/candidate that actually exhausted its repair budget.
+
+A successful export is recovery evidence, not proof that the parent product must stop.
 
 ## Paste-ready cold-start request
 
