@@ -165,7 +165,7 @@ Mobile + desktop browser proof, failure-safe boot, Hub card, Return/changelog an
 - Never use source metadata as proof that the real visual donor is used.
 - Never substitute a placeholder card, actor, vehicle, terrain or HUD.
 - Never revive TC-01 or another visually rejected foundation because it is technically green.
-- After two failed repair passes on one gate, preserve/export and stop.
+- After two non-improving repairs, preserve/export the **smallest failing seam**; quarantine/defer and continue the One-Shot unless the Production Guard proves the named Golden-Journey outcome is blocked.
 - No mass merge or Live promotion.
 
 ## Required Astra return
