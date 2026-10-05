@@ -1,5 +1,13 @@
 # CHANGELOG · KFB ChatterBox
 
+## 2026-10-05 · GPT Site-only surface correction
+
+### PRODUCT / REVIEW SURFACE
+- The single KFB ChatterBox product, review and acceptance surface is its GPT Site.
+- Removed the newly introduced Cloudflare/pages.dev Stage route from the slice plan, implementation packet, Return and test gate.
+- Cloudflare/pages.dev is explicitly out of scope and unused for ChatterBox; it is not a route, mirror, fallback or acceptance surface.
+- No merge and no Live promotion.
+
 ## 2026-10-04 · planning packet
 
 ### DECISION
@@ -31,7 +39,7 @@
 - Cumulative planning/data/donor/site-readiness checks: 34/34 PASS.
 
 ### IMPLEMENTATION
-Not started. No Site URL invented. No Stage/Live change.
+Not started. No Site URL invented. No Live change.
 
 ### NEXT
 One Sites-capable implementation run builds the private ChatterBox / Triplet Curator v1.
@@ -78,7 +86,7 @@ One Sites-capable implementation run builds the private ChatterBox / Triplet Cur
 - Updated START_HERE, Work One-Shot, Work MIN and Site implementation packet.
 
 ### IMPLEMENTATION
-Still not started. No Site URL invented. No public Stage/Live claim.
+Still not started. No Site URL invented. No Live claim.
 
 ### NEXT
 One Sites-capable Work run implements **KFB ChatterBox v1** from the expanded packet and returns the private Site for Georg's editorial/dialogue-lab freeplay.

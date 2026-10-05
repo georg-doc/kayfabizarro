@@ -41,7 +41,7 @@ Validated after the initial 14 checks:
 - Dropbox same-name/same-byte-size donor check recorded;
 - PR #305 semantic owner remains external;
 - ToolBox `chatterbox-comic-vfx` slot reused;
-- Site URL remains unassigned and Stage remains NOT_DEPLOYED;
+- Site URL remains unassigned and the GPT Site remains the only product/review surface;
 - review migration maps keep/cut/change without loss;
 - cross-origin/sidebar migration requires explicit JSON export/import;
 - minimal Work prompt requires donor isolation first, stable quote IDs, no duplicate owners, no merge/Live.
@@ -52,8 +52,28 @@ Validated after the initial 14 checks:
 - no Site project/version/deployment;
 - no browser QA;
 - no Bubble Claude return integration;
-- no Cloudflare Stage;
+- no Cloudflare/pages.dev route; that infrastructure is out of scope and unused for ChatterBox;
 - no runtime/World Studio integration;
 - no Live promotion.
 
 Exactly one next gate: **Sites-capable implementation of ChatterBox / Triplet Curator v1.**
+
+## 2026-10-05 surface correction
+
+**12/12 PASS**
+
+- Site packet JSON parses.
+- Source map JSON parses.
+- Site packet primary surface is `GPT_SITE`.
+- Site packet review surface is `GPT_SITE_ONLY`.
+- Site packet marks Cloudflare `OUT_OF_SCOPE_NOT_USED`.
+- Source map review surface is `GPT_SITE_ONLY`.
+- Source map marks Cloudflare `OUT_OF_SCOPE_NOT_USED`.
+- No `reservedStage` field remains in the ChatterBox slice.
+- No `stageStatus` field remains in the ChatterBox slice.
+- No ChatterBox pages.dev Stage route remains.
+- No legacy Triplet-Curator pages.dev Stage route remains.
+- The test gate explicitly names the GPT Site as the only product/review/acceptance surface.
+
+Verified implementation checkpoint:
+`b115ca1c3c2c4b684b0af2aa8c5a8004c6c912e4`

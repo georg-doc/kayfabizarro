@@ -4,6 +4,16 @@ Date: 2026-10-05
 Status: **PLANNING READY · SITE NOT BUILT**
 Owner: **KFB ChatterBox / KFB ToolBox**
 
+## 2026-10-05 correction · GPT Site is the only surface
+
+Georg's correction is binding: the KFB ChatterBox product, review and acceptance surface is its single GPT Site.
+
+- Removed the Cloudflare/pages.dev Stage route from the planning brief, implementation packet, source map, Return and test gate.
+- Cloudflare/pages.dev is out of scope and unused for ChatterBox; it is not a route, mirror, fallback or acceptance surface.
+- The first GitHub correction checkpoint was written and read back at `b115ca1c3c2c4b684b0af2aa8c5a8004c6c912e4` with exactly six changed planning/packet files.
+- Repository-native correction checks: **12/12 PASS**.
+- No merge. No Live promotion.
+
 ## What is now prepared
 
 A bounded Site packet now exists for one ToolBox specialist product:
@@ -203,10 +213,9 @@ GPT Site: **NOT BUILT**.
 
 Final Site URL: **not invented**.
 
-Reserved formal Stage, only if later required:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
+Product/review/acceptance surface: **the GPT Site only**.
 
-Stage: **NOT DEPLOYED**.
+Cloudflare/pages.dev: **OUT OF SCOPE · NOT USED · NO ROUTE RESERVED**.
 
 No merge. No Live promotion.
 
