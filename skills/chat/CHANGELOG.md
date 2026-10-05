@@ -2583,3 +2583,30 @@ No runtime/product code changed.
 - Combat #361 remains HOLD side lane.
 - World Studio current Site candidate remains HUMAN TOTAL FAIL / failure evidence only.
 - Hub CURRENT board revision is `2026-10-05.10`.
+
+
+## 2026-10-05 · Open World integration closure · existing KFB stack is part of the product
+
+- Georg clarified that the Open World One-Shot must not become a stripped terrain/village/editor prototype.
+- Added binding PR #348 matrix:
+  `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md`.
+- Required integrated stack now includes:
+  - current native Motion/Animation SSOT;
+  - Track Core modular road/track/stunt mechanism **with Joyride J14/T4/K2 visible presentation**;
+  - Sky/Skydome/Environment;
+  - Asset Librarian + direct authoring/editor/sculpt;
+  - Clay Billboard + representative HyperNormalisation media seam;
+  - Resident + ChatterBox;
+  - Card + Almanac provenance;
+  - Audio/Jukebox continuity;
+  - Vehicle/Drive on the Joyride-presented route;
+  - signature/landmark module support;
+  - existing transition compatibility.
+- Track Core PR #219 remains mechanics/profile/socket/contact owner; WorldBuilder consumes modules through world authoring.
+- Pinned Joyride visual donor: `927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f`:
+  - `track-look.v5.js` blob `7c0d248391c3eaf1887a0afc97ee02b25f6dec85`;
+  - `road-markings.m1.js` blob `68a0c21a2c68c0b7db72046146008b474979ec15`;
+  - `transition-atlas.v1.js` blob `cfef150a74060bfc6ff00ab049529d8710845bfc`.
+- Skydome baseline remains the existing Travel environment donor `skydome-shader.js`, main blob `919ed27bb4ab5a6bb9b823421804d73cb5ae64bd`; no second sky owner.
+- Motion PR #344 remains current Motion SSOT; WB2 reconciles its existing locomotion consumer rather than re-picking clips.
+- Whole-product critic now must see these representative systems together in one continuous product run before Georg receives a candidate.
