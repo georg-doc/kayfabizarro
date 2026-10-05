@@ -2552,3 +2552,14 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - no newer EyeRig JSON export found in Dropbox or the current owner branch;
 - current gate: `EYE_RIG_PROFILE_RECOVERY_01` — export the remembered later state from the old Cloudflare Stage origin, compare, persist and import;
 - per-class import preserves Large/Legacy; no runtime change, merge or Live promotion.
+
+
+## 2026-10-05 · Hub/Control freshness override
+
+- Georg rejected rollback as useful Surface recovery because the previous Sites were already visually inconsistent.
+- Current Surface scope is reduced to **Production Hub current + Production Control current**, then return to product integration.
+- ToolBox and FrankenStein visual recovery are frozen/deferred.
+- Hub canonical board and publishable copy synchronized to revision `2026-10-05.2`.
+- GitHub Issues remain the active job list: #360 and #361 P0 waiting-human; #362 parallel TUNE.
+- Cost firewall: normal Web Chat for data/state; lowest-cost Sites-capable `PUBLISH_ONLY` only if host refresh is required; no premium Work/WSA design pass.
+- Recovery handover and START_HERE updated with the same priority override.
