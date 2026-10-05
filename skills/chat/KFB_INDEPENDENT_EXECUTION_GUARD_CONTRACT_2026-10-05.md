@@ -150,3 +150,34 @@ The Guard prevents unnecessary interruption; it does not override an explicit Ge
 **Builder builds. Tester measures. Critic judges. Guard routes. Georg accepts.**
 
 **Product outcome > local gate. Freeze the smallest failing thing. Continue unless the outcome itself is blocked.**
+
+
+## Cost / execution shape · critic and guard are not extra Work jobs
+
+The role split is a **separation of authority**, not a requirement to spawn separate expensive Work sessions.
+
+Default implementation inside one substantial Work/WSA run:
+- Builder works normally.
+- Tester runs deterministic/browser/native evidence as part of the same run.
+- Critic is a short independent read-only review pass over the exact candidate/evidence.
+- Guard is a short independent read-only routing decision over the Critic/Test result.
+- Then the Builder continues or publishes as routed.
+
+Do **not** create a separate user-facing job, briefing, Site, PR, or human gate merely to run the Critic or Guard.
+
+Do **not** delay publication of an already-correct candidate for a large standalone critique cycle.
+
+For low-risk or tightly bounded publish/recovery tasks, the Critic/Guard check should be proportional:
+- source identity check;
+- required feature/freshness check;
+- obvious regression check;
+- route `CONTINUE/PUBLISH` or one bounded repair.
+
+If the exact donor is already pinned and the required change is only to apply that donor plus current data, the Critic does **not** redesign, rescore the whole product, or reopen settled architecture.
+
+Use a separate external/model session only when:
+- the current environment cannot provide an independent context;
+- a high-risk promotion/destructive action requires stronger separation;
+- Georg explicitly requests it.
+
+The goal is to **reduce** Work cost and self-review risk, not multiply agents or ceremonies.
