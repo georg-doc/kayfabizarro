@@ -258,6 +258,23 @@ Do not turn it into another runtime or spend High Reasoning on the host refresh.
 
 ## Prepared but not yet published
 
+### KFB World Kernel Lab
+Owner:
+KFB ToolBox / World Kernel Lab research lane · Draft PR #363
+
+State:
+**SITE PREPARED · PUBLISH_ONLY · RESEARCH POC**
+
+Purpose:
+test deterministic hierarchical seeds, generator-version identity, LOD-stable world fingerprint, browser Worker generation, transferable typed arrays, coarse fallback and separate authored-edit migration without touching WB2.
+
+Rights boundary:
+Worldspring is pinned read-only architecture reference only; no source transplant.
+
+Next gate:
+lowest-cost Sites-capable publisher publishes the exact frozen Site source, verifies the six-step experiment, then Georg returns `USEFUL / TUNE / DROP`.
+
+
 ### KFB Environment Atlas
 Owner:
 `tools/world_atlas` · PR #353
