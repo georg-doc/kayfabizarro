@@ -1,183 +1,125 @@
 # KFB Independent Execution Guard Contract · 2026-10-05
 
-Status: **CURRENT BINDING CROSS-PROJECT ORCHESTRATION RULE v1.0**
+Status: **CURRENT BINDING ORCHESTRATION RULE v1.1**
 Owner: Georg / KFB
-Applies to: substantial integration, Work/WSA, One-Shot, cross-repo runtime, productive recovery and promotion candidates.
+Applies to: substantial Integration / Work / WSA / One-Shot / productive recovery / promotion candidates.
 
-## Purpose
+## 1 · First principle
 
-Do not let one LLM both create a change and certify, classify or globally stop its own work.
+This is a **separation of authority**, not a requirement to create extra Work jobs.
 
-The production loop separates four responsibilities:
+Default inside one substantial run:
+`Builder → Tester evidence → short independent Critic check → short Guard route → Builder continues`
 
-1. **Builder / Integrator** — the only production writer.
-2. **Integration Tester** — produces factual runtime evidence.
-3. **Independent Critic** — evaluates the candidate independently and writes no production code.
-4. **Production Guard** — classifies failures and alone authorizes CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+Do not create a separate PR, Site, user-facing job or long critique cycle merely because Critic/Guard roles exist.
 
-A single agent may run local smoke tests while building. It may not accept its own modification or promote its own local failure into a global stop.
+Use a separate external/model session only when the current environment cannot provide independent context, a high-risk destructive/promotion action needs stronger separation, or Georg explicitly asks.
 
-## Prime rule
+## 2 · Prime rule
 
 **STOP requires demonstrated blockage of the named product outcome. A failed test is not proof of product blockage.**
 
-Default for a One-Shot is:
+For a One-Shot the default is:
 
 **CONTINUE.**
 
-## Role boundaries
+## 3 · Roles
 
 ### Builder / Integrator
+Only production writer.
 
-May:
-- modify the receiving branch;
-- run local/static smoke tests;
-- repair issues authorized by the Guard;
-- persist checkpoints and evidence.
+May build, repair, run local smoke tests and persist checkpoints.
 
 May not:
-- certify its own change as accepted;
-- classify its own failed test as a CORE_BLOCKER;
+- accept its own material change;
+- classify its own failed test as a global blocker;
 - promote its own candidate to human-ready/live;
-- decide the whole One-Shot must stop because one local test failed.
+- stop the parent One-Shot because one local gate failed.
 
 ### Integration Tester
+Prefer deterministic/browser/native checks.
 
-Prefer deterministic/browser-native tests where possible.
-
-Produces facts such as:
-- boot/load result;
-- console/network errors;
-- end-to-end state transitions;
+Produces facts:
+- boot/runtime result;
+- errors;
+- state transitions;
 - save/reload/import;
-- exact source/runtime owners;
-- screenshots/video/metrics;
-- named fixture results.
+- source/runtime identity;
+- screenshots/metrics/fixture results.
 
-The Tester does not decide product impact.
+Tester does not decide product impact.
 
 ### Independent Critic
+Short read-only evaluation proportional to the outcome.
 
-Receives:
-- exact candidate head;
-- named product outcome;
-- accepted source/reference stack;
-- Tester evidence and actual runtime captures.
+Receives exact candidate + evidence + accepted source/reference.
+Returns observed mismatch, product impact and one repair recommendation.
 
-Returns:
-- observed failures;
-- severity evidence;
-- product-impact ranking;
-- likely shared cause;
-- repair recommendation.
-
-The Critic writes no production code and may not accept a repair it authored.
+Critic writes no production code.
 
 ### Production Guard
+Short read-only routing decision.
 
-Receives the product outcome + Tester evidence + Critic result.
+Only Guard may classify:
+- `CONTINUE`
+- `REPAIR`
+- `QUARANTINE`
+- `HUMAN_DECISION`
+- `STOP`
 
-The Guard alone classifies each failure as:
-- **CONTINUE**
-- **REPAIR**
-- **QUARANTINE**
-- **HUMAN_DECISION**
-- **STOP**
+Guard must act on the **smallest failing seam**.
 
-The Guard must freeze the **smallest failing seam**.
+## 4 · Two-repair scope
 
-A local failure becomes STOP only when the Guard can show that the named outcome cannot meaningfully proceed or be evaluated without that seam.
+After two non-improving repairs on the same seam:
 
-## Two-repair rule · scoped correctly
+- non-outcome-critical → preserve evidence, `QUARANTINE/DEFER`, **CONTINUE** parent outcome;
+- genuinely outcome-critical → stop only that blocked outcome path and create recovery evidence.
 
-After two non-improving repair passes:
+Two failures alone never authorize global Product/One-Shot STOP.
 
-- if the smallest failing seam is not outcome-critical → **QUARANTINE it and CONTINUE**;
-- if it is genuinely outcome-critical → **STOP that outcome path and produce recovery evidence**.
-
-Never interpret “two failures” by itself as permission to stop the whole One-Shot.
-
-## Self-review prohibition
+## 5 · Self-review prohibition
 
 No agent may both:
 1. materially change production code/design; and
-2. issue the final acceptance/classification for that same change.
+2. issue final acceptance/classification for that same change.
 
-If a Critic or Guard is ever forced to write production code, its previous review authority for that change expires and a fresh independent reviewer is required.
+If Critic or Guard writes production code, a fresh independent reviewer is required for that change.
 
-## Mandatory briefing block
+## 6 · Heavy critic firewall
 
-Every substantial Integration / Work / WSA / One-Shot brief must include this compact block:
+The specialized WB2 whole-game critic is **not** the generic Critic:
+`skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+Its scoring/gauntlet applies only to WB2 PR #348 unless another current brief explicitly opts in.
+
+For ordinary Site/tool/integration work, use only the short proportional Critic/Guard check above.
+
+## 7 · Mandatory briefing block
+
+Substantial briefs include only:
 
 ```
 INDEPENDENT EXECUTION
 Outcome:
 Builder:
-Integration Tester:
-Independent Critic:
-Production Guard:
-Only production writer:
-STOP authority: Production Guard only
-Two-repair scope: smallest failing seam
+Tester:
+Critic:
+Guard:
+Only writer: Builder
+STOP authority: Guard only
 Human gate:
 ```
 
-Do not duplicate the full contract inside each brief. Reference this file.
+Reference this contract. Do not paste the full policy into the brief.
 
-## When this is mandatory
+## 8 · Human authority
 
-Mandatory for:
-- Work/WSA substantial implementation;
-- One-Shot integration;
-- cross-repo integration;
-- World/Combat/runtime convergence;
-- productive Site recovery that can overwrite an existing Site;
-- merge/promotion candidate preparation.
+Georg remains final product/visual/play/audio authority.
+Guard does not override an explicit Georg PASS / TUNE / FAIL or destructive-action decision.
 
-Optional for:
-- read-only research;
-- trivial documentation edits;
-- tiny isolated low-risk Web slices.
+## Shorthand
 
-## Human authority
+**Builder builds. Tester measures. Critic checks. Guard routes. Georg decides product questions.**
 
-Georg remains final product/visual authority.
-
-The Guard prevents unnecessary interruption; it does not override an explicit Georg PASS / TUNE / FAIL or destructive-action decision.
-
-## Core shorthand
-
-**Builder builds. Tester measures. Critic judges. Guard routes. Georg accepts.**
-
-**Product outcome > local gate. Freeze the smallest failing thing. Continue unless the outcome itself is blocked.**
-
-
-## Cost / execution shape · critic and guard are not extra Work jobs
-
-The role split is a **separation of authority**, not a requirement to spawn separate expensive Work sessions.
-
-Default implementation inside one substantial Work/WSA run:
-- Builder works normally.
-- Tester runs deterministic/browser/native evidence as part of the same run.
-- Critic is a short independent read-only review pass over the exact candidate/evidence.
-- Guard is a short independent read-only routing decision over the Critic/Test result.
-- Then the Builder continues or publishes as routed.
-
-Do **not** create a separate user-facing job, briefing, Site, PR, or human gate merely to run the Critic or Guard.
-
-Do **not** delay publication of an already-correct candidate for a large standalone critique cycle.
-
-For low-risk or tightly bounded publish/recovery tasks, the Critic/Guard check should be proportional:
-- source identity check;
-- required feature/freshness check;
-- obvious regression check;
-- route `CONTINUE/PUBLISH` or one bounded repair.
-
-If the exact donor is already pinned and the required change is only to apply that donor plus current data, the Critic does **not** redesign, rescore the whole product, or reopen settled architecture.
-
-Use a separate external/model session only when:
-- the current environment cannot provide an independent context;
-- a high-risk promotion/destructive action requires stronger separation;
-- Georg explicitly requests it.
-
-The goal is to **reduce** Work cost and self-review risk, not multiply agents or ceremonies.
+**Freeze the smallest failing thing, not the whole project.**
