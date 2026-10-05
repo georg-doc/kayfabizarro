@@ -1,10 +1,28 @@
 # KFB Playable MVP · Independent External Critic Loop · 2026-10-04
 
-Status: **BINDING ONE-SHOT EXECUTION CONTRACT**
+Status: **BINDING WB2-SPECIFIC ONE-SHOT CONTRACT**
 Owner: **KFB Playable MVP Integration**
-Applies to: **WB2 Draft PR #348 and its integrated recovery/completion run**
+Applies to: **WB2 Draft PR #348 and its integrated recovery/completion run ONLY**
 Execution mode: **ONE_SHOT**
 Human gate: **only after the integrated whole-game candidate is ready**
+
+## Scope firewall
+
+This is a **specialized heavy whole-game critic** for the WB2 Golden Journey. It is **not** the generic Independent Critic contract.
+
+Do not load or apply its:
+- 9-dimension scoring;
+- 8.0/8.5 thresholds;
+- whole-game gauntlet;
+- blind-comparison loop;
+- screenshot harness requirements
+
+to ordinary Site publishing, ToolBox work, bounded repairs, simple integration slices or other products unless their own current brief explicitly opts in.
+
+Generic substantial jobs use the lightweight roles in:
+`skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
+
+A generic Critic is a short read-only check proportional to the named outcome, not this WB2 scoring system.
 
 ## Purpose
 
