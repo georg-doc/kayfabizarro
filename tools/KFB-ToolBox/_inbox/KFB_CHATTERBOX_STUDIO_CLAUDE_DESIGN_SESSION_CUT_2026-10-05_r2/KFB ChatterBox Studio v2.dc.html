@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&family=Bangers&family=Irish+Grover&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="lib/chatterbox/chatterbox-core.js"></script>
+<style>
+html,body{margin:0;background:#1b1815}
+*{box-sizing:border-box}
+a{color:#e2b33c}
+a:hover{color:#f3d27a}
+button{font-family:inherit}
+textarea,input{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#1b1815;color:#efe6d6;font-family:'Space Grotesk',system-ui,sans-serif">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="kfbClayEdge" filterUnits="userSpaceOnUse" x="-200" y="-200" width="3000" height="3000">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" seed="4" result="n"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.8" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <filter id="kfbClayBevel" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="3.4" result="b"></feGaussianBlur>
+        <feDiffuseLighting in="b" surfaceScale="4" diffuseConstant="1.18" lighting-color="#ffffff" result="df"><feDistantLight azimuth="225" elevation="52"></feDistantLight></feDiffuseLighting>
+        <feComposite in="df" in2="SourceAlpha" operator="in" result="dfc"></feComposite>
+        <feBlend in="SourceGraphic" in2="dfc" mode="multiply" result="lit"></feBlend>
+        <feSpecularLighting in="b" surfaceScale="4" specularConstant=".5" specularExponent="22" lighting-color="#fff6e6" result="sp"><feDistantLight azimuth="225" elevation="40"></feDistantLight></feSpecularLighting>
+        <feComposite in="sp" in2="SourceAlpha" operator="in" result="spc"></feComposite>
+        <feComposite in="spc" in2="lit" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"></feComposite>
+      </filter>
+      <linearGradient id="kfbFaceShade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".34"></stop><stop offset=".48" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#2a1a0c" stop-opacity=".14"></stop></linearGradient>
+      <linearGradient id="kfbWallShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000000" stop-opacity="0"></stop><stop offset="1" stop-color="#1a0f05" stop-opacity=".32"></stop></linearGradient>
+      <filter id="kfbSoftShadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"></feGaussianBlur></filter>
+      <pattern id="kfbDotsWarm" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.3" fill="#b38a55"></circle></pattern>
+      <pattern id="kfbDotsDeep" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.8" fill="#8f2416"></circle></pattern>
+      <pattern id="kfbDotsPink" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="#e86bb7"></circle></pattern>
+      <pattern id="kfbDotsViolet" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.8" fill="#43247f"></circle></pattern>
+      <radialGradient id="kfbFade" cx="0.8" cy="0.86" r="0.8"><stop offset="0" stop-color="#ffffff"></stop><stop offset="1" stop-color="#000000"></stop></radialGradient>
+      <mask id="kfbCornerMask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#kfbFade)"></rect></mask>
+    </defs>
+  </svg>
+
+  <header style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:12px 18px;border-bottom:1px solid #332d27;background:#201c18">
+    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <div style="font-family:'Irish Grover',cursive;font-size:24px;line-height:1;color:#f3e6c8;letter-spacing:.01em">KFB ChatterBox Studio</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88;border:1px solid #3a342d;border-radius:6px;padding:3px 7px">v2 · TUNE · + Triplet Stage 01 · Design-/Review-Surface · kein Runtime-Owner</div>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Rand</span>
+      <div style="display:flex;gap:4px">
+        <sc-for list="{{ rimSeg }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for>
+      </div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88;margin-left:6px">Bühne</span>
+      <div style="display:flex;gap:4px"><sc-for list="{{ dimSeg }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+      <button onClick="{{ toggleDots }}" style="{{ dotsStyle }}">Raster</button>
+      <button onClick="{{ toggleSound }}" style="{{ soundStyle }}">Ton</button>
+    </div>
+  </header>
+
+  <nav style="display:flex;gap:4px;padding:8px 18px;border-bottom:1px solid #332d27;background:#1e1a17;overflow-x:auto">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6"><button onClick="{{ t.on }}" style="{{ t.style }}">{{ t.label }}</button></sc-for>
+  </nav>
+
+  <main style="display:grid;grid-template-columns:{{ gridCols }};gap:18px;padding:{{ pagePad }}px;max-width:1560px;margin:0 auto;align-items:start">
+    <section style="min-width:0;display:flex;flex-direction:column;gap:14px">
+
+      <sc-if value="{{ stageVisible }}" hint-placeholder-val="{{ true }}">
+        <div style="width:100%;max-width:{{ stageMax }};margin:0 auto;display:flex;flex-direction:column;gap:10px">
+          <div ref="{{ stageRef }}" style="position:relative;width:100%;height:{{ S.H }}px;border-radius:14px;overflow:hidden;box-shadow:0 0 0 3px #0e0c0a, 0 14px 34px rgba(0,0,0,.45);background:#efc796">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,#f6e0b3 0%,#f0c996 46%,#e8b588 61%)"></div>
+            <div style="position:absolute;left:-10%;top:43%;width:52%;height:42%;border-radius:50%;background:#a9b47c;box-shadow:inset -22px -16px 0 rgba(40,30,10,.10), inset 14px 12px 0 rgba(255,255,255,.14)"></div>
+            <div style="position:absolute;left:30%;top:38%;width:58%;height:48%;border-radius:50%;background:#94a56b;box-shadow:inset -26px -18px 0 rgba(40,30,10,.10), inset 16px 12px 0 rgba(255,255,255,.12)"></div>
+            <div style="position:absolute;left:70%;top:45%;width:46%;height:38%;border-radius:50%;background:#b5ba86;box-shadow:inset -20px -14px 0 rgba(40,30,10,.10), inset 12px 10px 0 rgba(255,255,255,.14)"></div>
+            <div style="position:absolute;left:0;right:0;top:61%;bottom:0;background:#d6b98c"></div>
+            <div style="position:absolute;left:0;right:0;top:61%;height:3%;background:#b99b6c;box-shadow:0 3px 0 rgba(31,26,20,.16)"></div>
+            <div style="position:absolute;left:0;right:0;top:64%;bottom:0;background-image:radial-gradient(#ad8d5b 1.3px,transparent 1.7px);background-size:12px 12px;opacity:.55;-webkit-mask-image:linear-gradient(transparent,#000 75%);mask-image:linear-gradient(transparent,#000 75%)"></div>
+            <div style="position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(70,40,15,.22);pointer-events:none"></div>
+            <div ref="{{ s3Ref }}" style="position:absolute;inset:0;display:{{ s3disp }}"></div>
+            <div style="position:absolute;right:10px;top:10px;display:{{ camDisp }};gap:6px;align-items:center;z-index:9">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3a2a1a;background:rgba(255,246,228,.82);border-radius:6px;padding:4px 8px;display:{{ hintDisp }}">Ziehen dreht · Rad zoomt zum Cursor · Rechts schiebt</span>
+              <button onClick="{{ resetCam }}" style="font-size:12px;font-weight:600;padding:6px 10px;min-height:32px;border-radius:7px;cursor:pointer;background:rgba(255,246,228,.92);color:#2b2016;border:1px solid rgba(43,32,22,.25)" style-hover="background:#fff">Kamera zurück</button>
+            </div>
+            <sc-if value="{{ s3busy }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:12px;bottom:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3a2a1a;background:rgba(255,246,228,.85);border-radius:6px;padding:4px 8px;z-index:9">{{ s3status }}</div></sc-if>
+
+            <sc-for list="{{ S.castR }}" as="c" hint-placeholder-count="0">
+              <div style="position:absolute;left:{{ c.left }}px;top:{{ c.top }}px;width:{{ c.w }}px;height:{{ c.h }}px;pointer-events:none">
+                <div style="position:absolute;left:{{ c.shL }}px;bottom:-8px;width:{{ c.shW }}px;height:18px;border-radius:50%;background:radial-gradient(closest-side,rgba(40,25,10,.38),rgba(40,25,10,0))"></div>
+                <div ref="{{ c.bobRef }}" style="position:absolute;inset:0">
+                  <div ref="{{ c.sqRef }}" style="position:absolute;inset:0;transform-origin:50% 100%">
+                    <div role="img" aria-label="{{ c.label }}" style="{{ c.imgStyle }}"></div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+
+            <sc-for list="{{ S.bubbles }}" as="b" hint-placeholder-count="0">
+              <div ref="{{ b.ref }}" style="position:absolute;left:{{ b.left }}px;top:{{ b.top }}px;width:{{ b.sw }}px;height:{{ b.sh }}px;display:{{ b.disp }};opacity:{{ b.op }};transition:opacity .18s;transform-origin:{{ b.ox }}px {{ b.oy }}px;filter:{{ b.filter }};z-index:{{ b.z }};pointer-events:{{ b.pe }}">
+                <svg width="{{ b.sw }}" height="{{ b.sh }}" style="position:absolute;left:0;top:0;overflow:visible">
+                  <defs><clipPath id="{{ b.cid }}"><path d="{{ b.clipD }}"></path></clipPath></defs>
+                  <sc-for list="{{ b.layers }}" as="L"><path d="{{ L.d }}" fill="{{ L.fill }}" stroke="{{ L.stroke }}" stroke-width="{{ L.sw }}" stroke-dasharray="{{ L.dash }}" stroke-linejoin="{{ L.lj }}" stroke-miterlimit="6" stroke-linecap="round" transform="{{ L.tf }}" opacity="{{ L.op }}" filter="{{ L.filter }}" mask="{{ L.mask }}" clip-path="{{ L.clip }}"></path></sc-for>
+                </svg>
+                <div style="position:absolute;left:{{ b.tx }}px;top:{{ b.ty }}px;width:{{ b.w }}px;height:{{ b.h }}px;padding:{{ b.padY }}px {{ b.padX }}px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:{{ b.font }};font-size:{{ b.fs }}px;line-height:{{ b.lh }};color:{{ b.ink }};letter-spacing:{{ b.ls }}">
+                  <sc-if value="{{ b.label }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:12px;top:-15px;font-family:'Irish Grover',cursive;font-size:13px;line-height:1;letter-spacing:.06em;color:#f6efd9;background:#b3311f;border:2px solid #1f1a14;border-radius:3px;padding:4px 9px 3px;transform:rotate(-3deg);box-shadow:2px 2px 0 #1f1a14">KAYFABULATE</div></sc-if>
+                  <sc-for list="{{ b.lines }}" as="ln"><div ref="{{ ln.ref }}" style="white-space:pre;text-align:center;margin-top:{{ ln.mt }}px;transform-origin:50% 0"><sc-for list="{{ ln.t }}" as="t"><span style="font-weight:{{ t.fw }}"><span style="background:{{ t.bg }};border-radius:3px;box-shadow:0 0 0 1px {{ t.bg }}">{{ t.v }}</span><span style="opacity:0">{{ t.h }}</span></span></sc-for></div></sc-for>
+                  <sc-for list="{{ b.opts }}" as="o"><button onClick="{{ o.on }}" title="{{ o.tone }}" style="{{ o.style }}" style-hover="transform:translateY(-2px);box-shadow:3px 5px 0 #1f1a14;background:#fff3d6" style-focus="outline:3px solid #e2b33c;outline-offset:2px"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:{{ o.kc }};border:2px solid #1f1a14;display:flex;align-items:center;justify-content:center;font-family:Bangers,cursive;font-size:16px;line-height:1;color:#1f1a14">{{ o.key }}</span><span style="display:flex;flex-direction:column"><sc-for list="{{ o.lines }}" as="ol"><span style="white-space:pre">{{ ol.t }}</span></sc-for></span></button></sc-for>
+                </div>
+              </div>
+            </sc-for>
+
+            <sc-for list="{{ S.words }}" as="w" hint-placeholder-count="0">
+              <div style="position:absolute;left:{{ w.x }}px;top:{{ w.y }}px;width:0;height:0;pointer-events:none;display:{{ w.disp }};z-index:8">
+                <div style="position:absolute;left:{{ w.ox }}px;top:{{ w.oy }}px;width:{{ w.bw }}px;height:{{ w.bh }}px">
+                  <div ref="{{ w.ref }}" style="position:absolute;inset:0;transform-origin:50% 50%;opacity:{{ w.op0 }}">
+                    <svg width="{{ w.bw }}" height="{{ w.bh }}" style="position:absolute;left:0;top:0;overflow:visible">
+                      <defs><clipPath id="{{ w.cid }}"><path d="{{ w.clipD }}"></path></clipPath></defs>
+                      <sc-for list="{{ w.layers }}" as="L"><path d="{{ L.d }}" fill="{{ L.fill }}" stroke="{{ L.stroke }}" stroke-width="{{ L.sw }}" stroke-linejoin="{{ L.lj }}" stroke-miterlimit="6" transform="{{ L.tf }}" opacity="{{ L.op }}" filter="{{ L.filter }}" mask="{{ L.mask }}" clip-path="{{ L.clip }}"></path></sc-for>
+                    </svg>
+                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:{{ w.rowShift }}px;transform:{{ w.rowTf }}">
+                      <sc-for list="{{ w.letters }}" as="l"><span style="display:inline-block;font-family:Bangers,'Irish Grover',cursive;font-size:{{ w.fs }}px;line-height:1;color:{{ w.fill }};-webkit-text-stroke:{{ w.stroke }}px #1f1a14;paint-order:stroke fill;text-shadow:{{ w.shadow }};transform:{{ l.tf }}">{{ l.ch }}</span></sc-for>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#b9ad99">
+            <span style="color:#efe6d6">{{ statusTitle }}</span>
+            <span>{{ statusLine }}</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStage }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ scenList }}" as="sc" hint-placeholder-count="7"><button onClick="{{ sc.on }}" style="{{ sc.style }}"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.7">{{ sc.n }}</span><span>{{ sc.title }}</span></button></sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBubbles }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Text</span><sc-for list="{{ lenSeg }}" as="o"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Viewport</span><sc-for list="{{ vpSeg }}" as="o"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <button onClick="{{ toggleEdge }}" style="{{ edgeStyle }}">Randnähe</button>
+        </div>
+        <div ref="{{ labWrapRef }}" style="width:100%">
+          <div style="position:relative;height:{{ lab.outerH }}px;overflow:hidden">
+            <div ref="{{ labFrameRef }}" style="position:absolute;left:{{ lab.offX }}px;top:0;width:{{ lab.simW }}px;transform:scale({{ lab.scale }});transform-origin:0 0;background:#26211c;border:1px solid #3d362e;border-radius:18px;padding:16px">
+              <div style="display:flex;justify-content:space-between;gap:10px;margin-bottom:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#b9ad99"><span style="color:#efe6d6">{{ lab.title }}</span><span>{{ lab.meta }}</span></div>
+              <div style="display:grid;grid-template-columns:{{ lab.cols }};gap:12px;align-items:start">
+                <sc-for list="{{ lab.specimens }}" as="s" hint-placeholder-count="8">
+                  <div style="background:#2f2923;border:1px solid #3d362e;border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:9px 12px;border-bottom:1px solid #3d362e">
+                      <div style="font-weight:600;font-size:14px">{{ s.name }}</div>
+                      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#b3a690;text-align:right">{{ s.meta }}</div>
+                    </div>
+                    <div style="position:relative;height:{{ s.stH }}px;background:#ecdcb9;background-image:radial-gradient(#d6c096 1px,transparent 1.5px);background-size:10px 10px;overflow:hidden">
+                      <sc-if value="{{ s.hasAnchor }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:{{ s.ax }}px;top:{{ s.ay }}px;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:{{ s.nub }};border:2px solid #1f1a14;box-shadow:inset -4px -4px 0 rgba(0,0,0,.16), inset 3px 3px 0 rgba(255,255,255,.3), 2px 3px 0 rgba(31,26,20,.25)"></div></sc-if>
+                      <sc-for list="{{ s.bl }}" as="b">
+                        <div style="position:absolute;left:{{ b.left }}px;top:{{ b.top }}px;width:{{ b.sw }}px;height:{{ b.sh }}px;display:{{ b.disp }};filter:{{ b.filter }};pointer-events:{{ b.pe }}">
+                          <svg width="{{ b.sw }}" height="{{ b.sh }}" style="position:absolute;left:0;top:0;overflow:visible">
+                            <defs><clipPath id="{{ b.cid }}"><path d="{{ b.clipD }}"></path></clipPath></defs>
+                  <sc-for list="{{ b.layers }}" as="L"><path d="{{ L.d }}" fill="{{ L.fill }}" stroke="{{ L.stroke }}" stroke-width="{{ L.sw }}" stroke-dasharray="{{ L.dash }}" stroke-linejoin="{{ L.lj }}" stroke-miterlimit="6" stroke-linecap="round" transform="{{ L.tf }}" opacity="{{ L.op }}" filter="{{ L.filter }}" mask="{{ L.mask }}" clip-path="{{ L.clip }}"></path></sc-for>
+                          </svg>
+                          <div style="position:absolute;left:{{ b.tx }}px;top:{{ b.ty }}px;width:{{ b.w }}px;height:{{ b.h }}px;padding:{{ b.padY }}px {{ b.padX }}px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:{{ b.font }};font-size:{{ b.fs }}px;line-height:{{ b.lh }};color:{{ b.ink }};letter-spacing:{{ b.ls }}">
+                            <sc-if value="{{ b.label }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:12px;top:-15px;font-family:'Irish Grover',cursive;font-size:13px;line-height:1;letter-spacing:.06em;color:#f6efd9;background:#b3311f;border:2px solid #1f1a14;border-radius:3px;padding:4px 9px 3px;transform:rotate(-3deg);box-shadow:2px 2px 0 #1f1a14">KAYFABULATE</div></sc-if>
+                            <sc-for list="{{ b.lines }}" as="ln"><div style="white-space:pre;text-align:center"><sc-for list="{{ ln.t }}" as="t"><span style="font-weight:{{ t.fw }}">{{ t.v }}</span></sc-for></div></sc-for>
+                            <sc-for list="{{ b.opts }}" as="o"><button title="{{ o.tone }}" style="{{ o.style }}" style-hover="transform:translateY(-2px);box-shadow:3px 5px 0 #1f1a14;background:#fff3d6"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:{{ o.kc }};border:2px solid #1f1a14;display:flex;align-items:center;justify-content:center;font-family:Bangers,cursive;font-size:16px;line-height:1;color:#1f1a14">{{ o.key }}</span><span style="display:flex;flex-direction:column"><sc-for list="{{ o.lines }}" as="ol"><span style="white-space:pre">{{ ol.t }}</span></sc-for></span></button></sc-for>
+                          </div>
+                        </div>
+                      </sc-for>
+                      <sc-if value="{{ s.badge }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;right:8px;bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f6efd9;background:#1f1a14;border-radius:5px;padding:3px 7px">{{ s.badge }}</div></sc-if>
+                    </div>
+                    <div style="padding:8px 12px 10px;font-size:12px;line-height:1.45;color:#cfc3ae;text-wrap:pretty">{{ s.note }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isWords }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ tiles }}" as="g" hint-placeholder-count="4">
+            <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:12px 14px">
+              <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:6px"><span style="font-weight:600;font-size:15px">{{ g.title }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">{{ g.sub }}</span></div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px">
+                <sc-for list="{{ g.words }}" as="t">
+                  <button onClick="{{ t.on }}" aria-label="{{ t.word }}" style="{{ t.style }}" style-hover="background:rgba(226,179,60,.08)">
+                    <div style="position:absolute;left:{{ t.x }}px;top:{{ t.y }}px;width:0;height:0;pointer-events:none">
+                      <div ref="{{ t.ref }}" style="position:absolute;left:{{ t.ox }}px;top:{{ t.oy }}px;width:{{ t.bw }}px;height:{{ t.bh }}px;transform-origin:50% 50%">
+                        <svg width="{{ t.bw }}" height="{{ t.bh }}" style="position:absolute;left:0;top:0;overflow:visible">
+                          <defs><clipPath id="{{ t.cid }}"><path d="{{ t.clipD }}"></path></clipPath></defs>
+                          <sc-for list="{{ t.layers }}" as="L"><path d="{{ L.d }}" fill="{{ L.fill }}" stroke="{{ L.stroke }}" stroke-width="{{ L.sw }}" stroke-linejoin="{{ L.lj }}" stroke-miterlimit="6" transform="{{ L.tf }}" opacity="{{ L.op }}" filter="{{ L.filter }}" mask="{{ L.mask }}" clip-path="{{ L.clip }}"></path></sc-for>
+                        </svg>
+                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:{{ t.rowShift }}px;transform:{{ t.rowTf }}">
+                          <sc-for list="{{ t.letters }}" as="l"><span style="display:inline-block;font-family:Bangers,'Irish Grover',cursive;font-size:{{ t.fs }}px;line-height:1;color:{{ t.fill }};-webkit-text-stroke:{{ t.stroke }}px #1f1a14;paint-order:stroke fill;text-shadow:{{ t.shadow }};transform:{{ l.tf }}">{{ l.ch }}</span></sc-for>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStream }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88"><span>Zeitachse · Chunks = Sprech-Abschnitte · Lücken = Pausen aus Satzzeichen</span><span>{{ tl.totalLabel }}</span></div>
+          <div style="position:relative;height:58px;background:#1b1815;border-radius:9px;overflow:hidden;border:1px solid #3a342d">
+            <sc-for list="{{ tl.divs }}" as="dv"><div style="position:absolute;left:{{ dv.l }}%;top:0;bottom:0;width:0;border-left:2px dashed #6b6052"></div></sc-for>
+            <sc-for list="{{ tl.pills }}" as="p"><div title="{{ p.label }}" style="position:absolute;left:{{ p.l }}%;width:{{ p.w }}%;top:11px;height:36px;background:{{ p.bg }};border:1.5px solid #1f1a14;border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.25;color:#1f1a14;overflow:hidden;white-space:nowrap;padding:3px 5px">{{ p.label }}</div></sc-for>
+            <div style="position:absolute;left:{{ tl.ph }}%;top:0;bottom:0;width:2px;background:#e2b33c;box-shadow:0 0 0 1px #1b1815"></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:#cfc3ae"><span>{{ tl.legend }}</span></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isReview }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><sc-for list="{{ filtSeg }}" as="o" hint-placeholder-count="8"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#b9ad99">{{ countLine }}</div>
+          <div style="display:grid;grid-template-columns:{{ listCols }};gap:10px">
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+              <div style="{{ r.style }}">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px">
+                  <span style="width:10px;height:10px;border-radius:50%;background:{{ r.color }};flex:none;border:1.5px solid #1f1a14"></span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#cfc3ae">{{ r.id }}</span>
+                  <span style="font-size:12px;color:#a99c88">{{ r.owner }}</span>
+                  <span style="flex:1"></span>
+                  <sc-for list="{{ r.badges }}" as="bd"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1;padding:3px 6px;border-radius:4px;background:{{ bd.bg }};color:{{ bd.fg }}">{{ bd.t }}</span></sc-for>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;font-family:'Shantell Sans',cursive;font-size:14px;line-height:1.3;color:#1f1a14">
+                  <div style="background:#f8ecd0;border-radius:6px;padding:7px 8px;text-wrap:pretty">{{ r.s }}</div>
+                  <div style="background:#f8ecd0;border-radius:6px;padding:7px 8px;text-wrap:pretty">{{ r.c }}</div>
+                  <div style="background:#f8ecd0;border-radius:6px;padding:7px 8px;text-wrap:pretty">{{ r.f }}</div>
+                </div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8f8473;line-height:1.4">{{ r.tags }}</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                  <button onClick="{{ r.keep }}" style="{{ r.kS }}">Behalten</button>
+                  <button onClick="{{ r.cut }}" style="{{ r.xS }}">Streichen</button>
+                  <button onClick="{{ r.chg }}" style="{{ r.cS }}">Ändern</button>
+                  <span style="flex:1"></span>
+                  <button onClick="{{ r.play }}" title="{{ r.playTitle }}" style="{{ r.pS }}">{{ r.playLabel }}</button>
+                </div>
+                <textarea value="{{ r.note }}" onChange="{{ r.onNote }}" placeholder="Notiz · gewünschte Änderung" rows="1" style="width:100%;resize:vertical;background:#1b1815;color:#efe6d6;border:1px solid #3a342d;border-radius:7px;padding:7px 9px;font-size:12.5px;line-height:1.4"></textarea>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isExport }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ exports }}" as="x" hint-placeholder-count="3">
+            <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #3a342d;flex-wrap:wrap">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#f3d27a">{{ x.schema }}</span>
+                <span style="font-size:12px;color:#a99c88">{{ x.sub }}</span>
+                <span style="flex:1"></span>
+                <button onClick="{{ x.copy }}" style="font-size:13px;font-weight:500;padding:7px 12px;min-height:36px;border-radius:7px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">{{ x.copyLabel }}</button>
+              </div>
+              <pre style="margin:0;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.5;color:#e6dccb;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto">{{ x.json }}</pre>
+            </div>
+          </sc-for>
+          <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-weight:600;font-size:14px">Triplet-Review · Download · Import</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button onClick="{{ dlReview }}" style="font-size:13px;font-weight:600;padding:7px 12px;min-height:36px;border-radius:7px;border:1px solid #e2b33c;background:#e2b33c;color:#1b1815;cursor:pointer">Review-JSON laden</button>
+              <button onClick="{{ dlKept }}" style="font-size:13px;font-weight:500;padding:7px 12px;min-height:36px;border-radius:7px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Behaltener Pool laden</button>
+            </div>
+            <textarea value="{{ imp }}" onChange="{{ onImp }}" rows="4" placeholder="kfb.triplet-pool-review/1 oder [ { tripletId, subject, connector, reframe, … } ]" style="width:100%;resize:vertical;background:#1b1815;color:#efe6d6;border:1px solid #4a4239;border-radius:8px;padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.45"></textarea>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <button onClick="{{ doImp }}" style="font-size:13px;font-weight:600;padding:7px 12px;min-height:36px;border-radius:7px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Import übernehmen</button>
+              <button onClick="{{ fromRef }}" style="font-size:13px;font-weight:500;padding:7px 12px;min-height:36px;border-radius:7px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Entscheidungen aus Referenz-Stage v1</button>
+              <span style="font-size:12px;color:#a99c88">{{ impMsg }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </section>
+
+    <aside style="min-width:0;display:flex;flex-direction:column;gap:14px">
+      <sc-if value="{{ isStage }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:600;font-size:15px">Szene</div>
+          <div style="font-size:13px;line-height:1.5;color:#cfc3ae;text-wrap:pretty">{{ scenDesc }}</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onClick="{{ replay }}" style="font-size:14px;font-weight:600;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #e2b33c;background:#e2b33c;color:#1b1815;cursor:pointer">Abspielen</button>
+            <button onClick="{{ stopAll }}" style="font-size:14px;font-weight:500;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Stop</button>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Stream-Modus</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap"><sc-for list="{{ streamSeg }}" as="o"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <div style="font-size:12px;line-height:1.5;color:#a99c88;text-wrap:pretty">Die Bühne zeigt nur Präsentation: Anker, Blasen, Wörter. Messwerte stehen im Blasen-Lab und unter Spec · Export.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isTri }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:600;font-size:15px">Paar · Karte</div>
+          <div style="display:flex;flex-direction:column;gap:6px"><sc-for list="{{ pairList }}" as="e" hint-placeholder-count="3"><button onClick="{{ e.on }}" style="{{ e.style }}">{{ e.label }}</button></sc-for></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">{{ card.ref }} · {{ card.deck }}</div>
+          <div style="font-family:'Irish Grover',cursive;font-size:20px;line-height:1.1;color:#f3e6c8">{{ card.name }}</div>
+          <div style="font-family:'Shantell Sans',cursive;font-size:13.5px;line-height:1.4;color:#efe6d6;text-wrap:pretty">{{ card.power }}</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <button onClick="{{ tRestart }}" style="font-size:14px;font-weight:600;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #e2b33c;background:#e2b33c;color:#1b1815;cursor:pointer">Neu starten</button>
+            <button onClick="{{ reroll }}" style="font-size:13px;font-weight:500;padding:9px 12px;min-height:42px;border-radius:8px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Seed {{ seed }} · neu</button>
+          </div>
+          <div style="font-size:12px;line-height:1.5;color:#a99c88;text-wrap:pretty">Zeilen nur aus dem #305-Kernel mit dem #310-Pool, Seed fest, kein LLM. Zurufe = bedienbare Blase, Tasten 1–4. Gestrichene Zeilen sind sofort raus.</div>
+        </div>
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:2px">
+          <div style="font-weight:600;font-size:15px;margin-bottom:6px">Verlauf</div>
+          <sc-for list="{{ tLog }}" as="l" hint-placeholder-count="0">
+            <div style="display:flex;flex-direction:column;gap:3px;padding:8px 0;border-top:1px solid #332d27">
+              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="width:10px;height:10px;border-radius:50%;background:{{ l.color }};border:1.5px solid #1f1a14"></span><span style="font-size:13px;font-weight:600">{{ l.name }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#a99c88;border:1px solid #3a342d;border-radius:4px;padding:2px 5px">{{ l.op }}</span></div>
+              <div style="font-family:'Shantell Sans',cursive;font-size:13.5px;line-height:1.35;color:#efe6d6;text-wrap:pretty">{{ l.text }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8f8473">{{ l.meta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isReview }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:600;font-size:15px">Gate · je Zuruf eine behaltene Zeile</div>
+          <div style="font-size:12px;line-height:1.45;color:#a99c88;text-wrap:pretty">Geprüft mit dem echten Kernel: große Zahl = behalten, klein = möglich (nicht gestrichen). Gegenzeile = jede Zeile des Partners.</div>
+          <div style="display:grid;grid-template-columns:86px repeat(4,minmax(0,1fr));gap:4px;align-items:stretch">
+            <span></span>
+            <sc-for list="{{ gateHead }}" as="g"><span style="font-family:'Irish Grover',cursive;font-size:12px;line-height:1.1;color:#cfc3ae;text-align:center;padding:2px 0">{{ g.t }}</span></sc-for>
+            <sc-for list="{{ gate }}" as="gr">
+              <span style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600"><span style="width:10px;height:10px;border-radius:50%;background:{{ gr.color }};border:1.5px solid #1f1a14"></span>{{ gr.name }}</span>
+              <sc-for list="{{ gr.cells }}" as="ce"><span style="{{ ce.style }}"><span style="font-size:17px;font-weight:700;line-height:1">{{ ce.kept }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.75">{{ ce.poss }}</span></span></sc-for>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:#cfc3ae"><sc-for list="{{ gateCard }}" as="gc"><span>{{ gc.t }}</span></sc-for></div>
+          <div style="{{ gateVerdictStyle }}">{{ gateVerdict }}</div>
+        </div>
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-weight:600;font-size:15px">Regeln (Brief §3)</div>
+          <sc-for list="{{ triRules }}" as="ru"><div style="font-size:12px;line-height:1.45;color:#cfc3ae;padding:5px 0;border-top:1px solid #332d27;text-wrap:pretty">{{ ru.t }}</div></sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDialogue }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:600;font-size:15px">Exchange</div>
+          <div style="display:flex;flex-direction:column;gap:6px"><sc-for list="{{ exchList }}" as="e"><button onClick="{{ e.on }}" style="{{ e.style }}">{{ e.label }}</button></sc-for></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onClick="{{ replay }}" style="font-size:14px;font-weight:600;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #e2b33c;background:#e2b33c;color:#1b1815;cursor:pointer">Nochmal</button>
+            <button onClick="{{ togglePhone }}" style="{{ phoneStyle }}">Mobile-Vorschau</button>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Ablauf</div>
+          <div style="display:flex;flex-direction:column;gap:4px"><sc-for list="{{ dSteps }}" as="d"><div style="{{ d.style }}">{{ d.label }}</div></sc-for></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">Ton der Antwort · Farbe der Taste</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 12px"><sc-for list="{{ toneLegend }}" as="tn"><span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#cfc3ae"><span style="width:12px;height:12px;border-radius:50%;background:{{ tn.c }};border:1.5px solid #1f1a14"></span>{{ tn.l }}</span></sc-for></div>
+          <div style="font-size:12px;line-height:1.5;color:#a99c88;text-wrap:pretty">Tasten 1–4 wählen. Unter 560 px Bühnenbreite werden die Antworten zum Bottom-Sheet mit 44-px-Zeilen; der Zipfel zeigt weiter auf den Sprecher.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBubbles }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:600;font-size:15px">Regeln der Familie</div>
+          <sc-for list="{{ rules }}" as="r"><div style="display:flex;flex-direction:column;gap:2px;padding:7px 0;border-top:1px solid #332d27"><span style="font-size:13px;font-weight:600">{{ r.k }}</span><span style="font-size:12px;line-height:1.45;color:#cfc3ae;text-wrap:pretty">{{ r.v }}</span></div></sc-for>
+        </div>
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-weight:600;font-size:15px">Responsiv</div>
+          <sc-for list="{{ respRows }}" as="r"><div style="display:grid;grid-template-columns:84px minmax(0,1fr);gap:8px;font-size:12px;line-height:1.45;padding:5px 0;border-top:1px solid #332d27"><span style="font-family:'IBM Plex Mono',monospace;color:#f3d27a">{{ r.k }}</span><span style="color:#cfc3ae">{{ r.v }}</span></div></sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isWords }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:600;font-size:15px">Wort-Grammatik</div>
+          <sc-for list="{{ wordRules }}" as="r"><div style="display:flex;flex-direction:column;gap:3px;padding:8px 0;border-top:1px solid #332d27"><span style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span style="width:12px;height:12px;border-radius:50%;background:{{ r.c1 }};border:1.5px solid #1f1a14"></span><span style="width:12px;height:12px;border-radius:50%;background:{{ r.c2 }};border:1.5px solid #1f1a14"></span>{{ r.k }}</span><span style="font-size:12px;line-height:1.45;color:#cfc3ae;text-wrap:pretty">{{ r.v }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a99c88">{{ r.t }}</span></div></sc-for>
+          <div style="font-size:12px;line-height:1.5;color:#a99c88;text-wrap:pretty">Ein lesbares Wort zur Zeit: ein neues Wort schneidet das alte ab. Findet sich kein freier Platz (Gesicht, Blase, Bühnenrand), wird das Wort weggelassen.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStream }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:600;font-size:15px">Stream-Preset</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap"><sc-for list="{{ tPresetSeg }}" as="o"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap"><sc-for list="{{ tKindSeg }}" as="o"><button onClick="{{ o.on }}" style="{{ o.style }}">{{ o.label }}</button></sc-for></div>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#cfc3ae"><span>Sprechtempo · {{ tWpm }} WPM</span><input type="range" min="100" max="210" step="5" value="{{ tWpm }}" onInput="{{ onWpm }}" style="width:100%;accent-color:#e2b33c"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#cfc3ae"><span>Text · *Betonung* · … Pause · -- Abbruch</span><textarea value="{{ tText }}" onChange="{{ onText }}" rows="4" style="width:100%;resize:vertical;background:#1b1815;color:#efe6d6;border:1px solid #4a4239;border-radius:8px;padding:9px 10px;font-size:13px;line-height:1.45"></textarea></label>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button onClick="{{ toggleVoice }}" style="{{ voiceStyle }}">Browser-Stimme</button>
+            <button onClick="{{ toggleHl }}" style="{{ hlStyle }}">Chunk markieren</button>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onClick="{{ tPlay }}" style="font-size:14px;font-weight:600;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #e2b33c;background:#e2b33c;color:#1b1815;cursor:pointer">Abspielen</button>
+            <button onClick="{{ tStop }}" style="font-size:14px;font-weight:500;padding:9px 16px;min-height:42px;border-radius:8px;border:1px solid #4a4239;background:#2c2722;color:#efe6d6;cursor:pointer">Stop</button>
+          </div>
+          <sc-for list="{{ tNotes }}" as="r"><div style="display:flex;flex-direction:column;gap:2px;padding:6px 0;border-top:1px solid #332d27"><span style="font-size:13px;font-weight:600">{{ r.k }}</span><span style="font-size:12px;line-height:1.45;color:#cfc3ae;text-wrap:pretty">{{ r.v }}</span></div></sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isExport }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-weight:600;font-size:15px">Owner-Grenzen</div>
+          <sc-for list="{{ owners }}" as="r"><div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;font-size:12px;line-height:1.45;padding:5px 0;border-top:1px solid #332d27"><span style="font-family:'IBM Plex Mono',monospace;color:{{ r.c }}">{{ r.m }}</span><span style="color:#cfc3ae">{{ r.v }}</span></div></sc-for>
+        </div>
+        <div style="background:#24201c;border:1px solid #3a342d;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-weight:600;font-size:15px">Doku</div>
+          <a href="docs/chatterbox-studio/RETURN.md" style="font-size:13px">RETURN.md</a>
+          <a href="docs/chatterbox-studio/SPEC_COMPONENTS.md" style="font-size:13px">SPEC_COMPONENTS.md · Responsiv · Timing · Donors</a>
+          <a href="docs/chatterbox-studio/PUBLISH_PACKET.md" style="font-size:13px">PUBLISH_PACKET.md · Sites</a>
+        </div>
+      </sc-if>
+    </aside>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;rimStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;clay&quot;,&quot;clayonly&quot;,&quot;ink&quot;,&quot;slab&quot;],&quot;default&quot;:&quot;clay&quot;,&quot;tsType&quot;:&quot;'clay'|'clayonly'|'ink'|'slab'&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;halftone&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;motionSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.5,&quot;max&quot;:1.5,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;leafStagger&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:300,&quot;max&quot;:900,&quot;step&quot;:20,&quot;unit&quot;:&quot;ms&quot;,&quot;default&quot;:520,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Triplet&quot;}}">
+const CHARS={
+  host:{img:'assets/chatterbox/host_clown.png',ar:503/705,hs:1.16,ax:.47,ay:.05,face:[.3,.12,.34,.22],color:'#3cc0dc',label:'Host · Clown'},
+  witch:{img:'assets/chatterbox/town_witch.png',ar:378/564,hs:1.0,ax:.56,ay:.03,face:[.3,.27,.48,.26],color:'#e6b53a',label:'Town NPC · Witch'},
+  caveman:{img:'assets/chatterbox/rough_caveman.png',ar:533/594,hs:1.0,ax:.6,ay:.07,face:[.36,.09,.52,.36],color:'#c0643a',label:'Rough · Caveman'},
+  bear:{img:'assets/chatterbox/band_bear.png',ar:360/498,hs:.95,ax:.42,ay:.03,face:[.12,.05,.6,.4],color:'#4fb3a4',label:'Animatronic · Bear'},
+  gothgirl:{img:'',ar:.62,hs:1.0,ax:.5,ay:.04,face:[.25,.1,.5,.3],color:'#9a7cc4',label:'Resident · Goth Girl'}
+};
+const TONES={curious:{c:'#59c3e6',l:'neugierig'},polite:{c:'#7fc46a',l:'höflich'},cheeky:{c:'#f29a3a',l:'frech'},absurd:{c:'#b48ae6',l:'absurd'},philosophical:{c:'#8796ec',l:'philosophisch'},aggressive:{c:'#e5563d',l:'aggressiv'},leave:{c:'#c2b6a2',l:'schweigen / gehen'},
+  bingo:{c:'#e2b33c',l:'KayfaBINGO! · landet, gibt den Abschluss zurück'},boggle:{c:'#59c3e6',l:'KayfaBOGGLE? · rahmt dasselbe Material um'},bongo:{c:'#7fc46a',l:'KayfaBONGO! · hält Material der letzten Zeile'},bloedsinn:{c:'#e5563d',l:'BLÖDSINN! · widerspricht dem Rahmen'}};
+const EXCH={
+  rock:{npc:'caveman',label:'Rough · der Stein',line:'This rock is mine. All rocks are *mine*.',options:[
+    {tone:'curious',text:'How many rocks are we talking?',react:[{say:['caveman','speech','Eleven. Twelve if you count *you*.']}]},
+    {tone:'cheeky',text:'I licked that one. Sorry.',react:[{wait:250,word:['WHAT?','reaction','head:caveman']},{wait:700,say:['caveman','shout','You WHAT?']}]},
+    {tone:'philosophical',text:'Can anyone really own a rock?',react:[{say:['caveman','thought','…can they?']},{say:['caveman','speech','Yes. *Me*.']}]},
+    {tone:'leave',text:"…I'll be going.",react:[{say:['caveman','whisper','…coward.']}]}]},
+  mush:{npc:'witch',label:'Town NPC · die Pilze',line:'Careful. Those mushrooms *talk back*.',options:[
+    {tone:'polite',text:"Thank you for the warning, ma'am.",react:[{say:['witch','speech','Finally. Some *manners*.']},{wait:500,word:['COOL!','reward','stage-top']}]},
+    {tone:'absurd',text:'Good. I need someone to argue with.',react:[{say:['witch','thought',"He'll fit right in…"]},{say:['witch','speech','Take the spotted one. It *wins*.']}]},
+    {tone:'aggressive',text:"Mushrooms don't scare me.",react:[{say:['witch','shout','They should!']},{wait:300,word:['OOPS!','reaction','head:host']}]},
+    {tone:'leave',text:'(Say nothing.)',react:[{say:['witch','speech','Strong silent type. *Noted*.']}]}]},
+  bear:{npc:'bear',label:'Animatronic · Funhouse',line:"Welcome to Barry's Funhouse! Are you having *fun*?",options:[
+    {tone:'polite',text:'So much fun, Barry.',react:[{say:['bear','speech','Fun detected. Smiling *harder*.']},{wait:400,word:['WOW!','reaction','head:bear']}]},
+    {tone:'curious',text:'Who wound you up last?',react:[{say:['bear','thought','Nobody. Not since the flood…']},{say:['bear','speech','You did! Just now!']}]},
+    {tone:'cheeky',text:'Your guitar is out of tune.',react:[{say:['bear','shout','IT IS TUNED TO FUN!']}]},
+    {tone:'leave',text:'…Is that a fire exit?',react:[{say:['bear','whisper','There are no exits. Only *encores*.']}]}]}
+};
+const SCEN=[
+  {id:'greeting',n:'01',title:'Greeting',desc:'NPC begrüßt, Player antwortet, Follow-up. Zwei Figuren nebeneinander: die zweite Blase weicht nach oben aus, der Zipfel bleibt am Kopf.',steps:[
+    {wait:300,say:['witch','speech','Oh! A new face. Welcome to the *plaza*.']},{say:['host','speech','Thanks! Where do they keep the good stuff?']},{say:['witch','speech','Mushrooms. It is *always* the mushrooms.']}]},
+  {id:'thought',n:'02',title:'Thought Peek',desc:'Gedanke ist Wolke mit drei Punkten statt Pfeil und wird nicht gesprochen. Rede bleibt das Rechteck.',steps:[
+    {wait:300,say:['bear','thought','Smile, Barry. Smile through the *rust*…']},{say:['caveman','speech','You okay, metal bear?']},{say:['bear','speech','Never better!']},{say:['bear','thought','…never.']}]},
+  {id:'exchange',n:'03',title:'Monkey-Island Exchange',desc:'NPC-Zeile, dann drei Antworten plus Gehen. Auswahl stempelt, die Wahl wird zur Player-Blase, der NPC reagiert.',steps:[
+    {wait:300,say:['caveman','speech',EXCH.rock.line]},{choices:'rock'}]},
+  {id:'combat',n:'04',title:'Combat Burst',desc:'Shout als Kranz, ein Impact-Wort am Kontakt, kurzer Stoß der Bühne, danach die Reaktion.',steps:[
+    {wait:300,say:['caveman','shout','COME HERE, CLOWN!']},{wait:1100,word:['BONK!','impact','contact']},{wait:900,say:['host','speech','Ow. *Rude*.']}]},
+  {id:'ambient',n:'05',title:'Ambient Chatter',desc:'Kleine Weltblasen ohne Knöpfe. Höchstens zwei gleichzeitig, Ende nach Uhr (Lesezeit + Standzeit).',steps:[{wait:300,chatter:true}]},
+  {id:'narration',n:'06',title:'Narration · Kayfabulate',desc:'Caption-Box hängt am Bild, nicht an einer Figur. Kayfabulate ist die Erzählerkarte mit rotem Reiter.',steps:[
+    {wait:300,say:['narrator','caption','Meanwhile, on the plaza…']},{say:['narrator2','kayfabulate',"The rock was never his. The rock was never *anyone's*. That's the whole deck, kids."]}]},
+  {id:'tts',n:'07',title:'TTS Preview',desc:'Langer Satz im tts-follow-Preset: Text läuft der Stimme 140 ms voraus, der gesprochene Chunk ist markiert. Zu lang für drei Zeilen → Teilung an der Satzgrenze.',steps:[
+    {wait:300,say:['host','speech',"Ladies, gentlemen, and assorted cryptids… tonight the plaza *remembers*. Even the parts you'd rather it forgot.",'tts-follow']}]}
+];
+const CHAT={witch:['The trees count us.','I liked the quiet.','Somebody moved the fence again.'],bear:['Drip. Drip. Same drip.','Fun detected.','Still smiling.'],caveman:['Rocks first. Talk later.','Third watch. Nobody told me.','Says you.'],host:['Hm.','And?','Not what I heard.']};
+const WORDS={impact:['POW!','BAM!','BONK!','CRASH!','SLAP!'],movement:['WHOOSH!','FWIP!','ZZIP!','SWOOP!'],reaction:['WOW!','OOPS!','WHAT?','HMM','OH YEAH!'],reward:['COOL!','SPECIAL!','AMAZING!','BOSS!']};
+const WINFO={
+  impact:{k:'Impact',sub:'Kontakt · Kranz-Burst',v:'Kranz mit tiefen Tälern, zwei längere Zacken, eine nach innen gekippt; gelber Innenstern. Sitzt kompakt am Kontakt, nie über dem Gesicht. Bühne stößt einmal kurz.'},
+  movement:{k:'Movement',sub:'Bahn · Speed-Streaks',v:'Kein Burst, nichts ist aufgeschlagen. Kursiv geschert, gestreckt, entlang der Bahn; Streaks hinter dem Wort. Abgang läuft in Bewegungsrichtung weiter.'},
+  reaction:{k:'Reaction',sub:'Kopf · Wolke',v:'Papierwolke mit Nachpuff, Buchstaben hüpfen. Neben dem reagierenden Kopf, Squash beim Eintritt, leichtes Wackeln in der Haltephase.'},
+  reward:{k:'Reward · Meta',sub:'Bildfläche · Abzeichen',v:'Gewelltes Abzeichen mit Strahlen, Buchstaben im Bogen. Hängt am Bild (oben Mitte), nicht an einer Figur. Längste Haltephase.'}
+};
+const DEFAULT_TTS="Ladies, gentlemen, and assorted cryptids… tonight the plaza *remembers*. Even the parts you'd rather it forgot.";
+const SPEC_TEXT={
+  speech:['Hey.','Somebody moved the fence *again*.','Third watch tonight and nobody told me. That is not how you hold it.','Third watch tonight and nobody told me. Somebody moved the fence again, and the lantern is out, and the goat ate the map.'],
+  thought:['Hmm…','Smile, Barry. Smile through the *rust*…','If I stand very still, maybe the plaza forgets I am a bear.','If I stand very still, maybe the plaza forgets I am a bear. Then I could finally put the guitar down for a minute.'],
+  whisper:['psst.','The mushrooms are *listening*.',"Don't look now, but the mushrooms on the left have been listening since breakfast.","Don't look now. The mushrooms on the left have been listening since breakfast, and they took notes, and they have opinions."],
+  shout:['HEY!','COME HERE, CLOWN!','BLÖDSINN! THAT ROCK WAS NEVER YOURS!','BLÖDSINN! THAT ROCK WAS NEVER YOURS! GIVE IT BACK BEFORE THE GOAT FINDS OUT!'],
+  caption:['Later.','Meanwhile, on the plaza…','Meanwhile, on the plaza, a rock changed hands for the eleventh time today.','Meanwhile, on the plaza, a rock changed hands for the eleventh time today. Nobody kept the receipt. Nobody ever does.'],
+  kayfabulate:['Kayfabe!',"The rock was never his. That's the *whole deck*, kids.","The rock was never his. The rock was never anyone's. Ownership is a story we tell the rocks -- and they never listen.","The rock was never his. The rock was never anyone's. Ownership is a story we tell the rocks, and they never listen. They just sit there. Judging. Being rocks."],
+  ambient:['Drip.','Snow keeps the tally.','Bones do not gossip. They confirm.','Bones do not gossip. They confirm. Ask the skull by the gate.']
+};
+const CHOICE_SETS=[
+  [{tone:'curious',text:'Why?'},{tone:'leave',text:'Bye.'}],
+  [{tone:'curious',text:'How many rocks?'},{tone:'cheeky',text:'I licked that one.'},{tone:'leave',text:"…I'll be going."}],
+  [{tone:'curious',text:'How many rocks are we talking, exactly?'},{tone:'cheeky',text:'I licked that one. Sorry.'},{tone:'philosophical',text:'Can anyone really own a rock?'},{tone:'leave',text:"…I'll be going."}],
+  [{tone:'curious',text:'How many rocks are we talking about here, exactly, roughly?'},{tone:'cheeky',text:'I licked that one. And that one. Sorry.'},{tone:'philosophical',text:'Can anyone really own a rock, or does the rock own us?'},{tone:'leave',text:"…I'll be going now."}]
+];
+const KIND_META={
+  speech:{name:'speech · Rede',tail:'Pfeil',who:'witch'},thought:{name:'thought · Gedanke',tail:'3 Punkte',who:'bear'},whisper:{name:'whisper · Flüstern',tail:'Pfeil · gestrichelt',who:'witch'},
+  shout:{name:'shout · Ruf',tail:'Zacke',who:'caveman'},caption:{name:'caption',tail:'kein',who:null},kayfabulate:{name:'kayfabulate',tail:'kein · Reiter',who:null},
+  choice:{name:'interactive choice',tail:'Pfeil',who:'host'},ambient:{name:'ambient chatter',tail:'kurzer Pfeil',who:'caveman'}
+};
+const SPEC_NOTES={
+  speech:'Jittriges Rechteck, keine runden Ecken. Zipfel ist Teil der Fläche, Fuß im mittleren Band 32–68 %.',
+  thought:'Scallop-Wolke, drei Punkte aus der Wolkengröße, seitlich versetzt. Kein Pfeil.',
+  whisper:'Gestrichelte Feder, kleinere Schrift (0,85), geringerer Kontrast der Schrift.',
+  shout:'Kranz statt Sheriffstern: viele Zacken, ruhige Winkel, zwei längere, eine nach innen. Bangers nur hier.',
+  caption:'Erzähler-Box ohne Zipfel, hängt am Bildrand oben links.',
+  kayfabulate:'Erzählerkarte, 34 Zeichen × 4 Zeilen, roter Irish-Grover-Reiter.',
+  choice:'Eine bedienbare Blase: Antworten als Zeilen ≥ 44 px, Taste in Tonfarbe. Steht bis zur Auswahl.',
+  ambient:'Klein, dünne Linie, kein Lehmrand. Ende nach Uhr, höchstens zwei zugleich.'
+};
+const INK='#1f1a14',PAPER='#f8ecd0';
+function mix(a,b,t){const p=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));const A=p(a),B=p(b);return '#'+A.map((v,i)=>Math.round(v*(1-t)+B[i]*t).toString(16).padStart(2,'0')).join('');}
+const HB={cid:'cbnone',clipD:'',disp:'none',left:0,top:0,sw:0,sh:0,layers:[],tx:0,ty:0,w:0,h:0,padX:0,padY:0,font:'inherit',fs:12,lh:1,ink:INK,ls:'0',lines:[],opts:[],label:false,op:0,ref:null,ox:0,oy:0,filter:'none',z:1,pe:'none'};
+/* ── Triplet Stage 01 (v2) · Kernel #305 + Pool #310 + Kandidaten. Bühne, Blasen, Choices = v1-Owner. ── */
+const KEY={'goth-girl':'gothgirl',clown:'host',witch:'witch'};
+const RES={'goth-girl':{name:'Goth Girl',color:'#9a7cc4'},clown:{name:'Clown',color:'#3cc0dc'},witch:{name:'Witch',color:'#e6b53a'},lorekeeper:{name:'Lorekeeper',color:'#8f8473'}};
+const CARDS={
+ A:{ref:'forget_utopia#11',deck:'Forget Utopia',n:11,name:'The Standing Ovation',power:'Reward applause faster than questions. Make doubt feel rude.',lore:'In a charged crowd, social proof makes visible enthusiasm self-reinforcing until the clapping becomes the evidence.',art:'rows of seals mid-applause, single owl sitting still and skeptical among them',tags:['applause','audience','consensus','performance','status']},
+ B:{ref:'ignore_dystopia#30',deck:'Anatomy of a Trap',n:30,name:'The Cortisol Economy',power:'Sell the cortisol spike, then sell the relief, to the exact same customer.',lore:'Chronic activation of the stress response degrades health and judgment over time.',art:'cortisol spike and relief both sold to same exhausted customer at vending machine',tags:['cause','dose','condition','change','stake']},
+ C:{ref:'ignore_dystopia#1',deck:'Anatomy of a Trap',n:1,name:'The Doomsday Clock',power:'Set a public timer near midnight and move the hands by announcement, never by event.',lore:'A symbol of danger adjusted by judgment reads as objective measurement to the public.',art:'robed figure moving clock hands by decree',tags:['frame','witness','belief','rumor','authority']}};
+const PAIRS={A:['goth-girl','clown'],B:['witch','clown'],C:['goth-girl','witch']};
+const CALLS=[{op:'BINGO',tone:'bingo',label:'KayfaBINGO!'},{op:'BOGGLE',tone:'boggle',label:'KayfaBOGGLE?'},{op:'BONGO',tone:'bongo',label:'KayfaBONGO!'},{op:'BLOEDSINN',tone:'bloedsinn',label:'BLÖDSINN!'}];
+const OV='forget_utopia#11',AU='claude-design',LSK='kfb.chatterbox.v2.tripletReview';
+const NEW=[
+ {tripletId:'gothgirl.card-ovation.01',signatureOf:['goth-girl'],subject:'One owl not clapping',connector:'in a room of seals',reframe:'best seat in the house',relation:'CATEGORY_SHIFT',tags:['audience','applause','attention','card'],cardRef:OV,anchor:{subject:'card:visible',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.card-ovation.02',signatureOf:['goth-girl'],subject:'Doubt stood up',connector:'to leave quietly',reframe:'they counted it as applause',relation:'COLLISION',tags:['doubt','applause','audience','performance'],cardRef:OV,anchor:{subject:'card:power',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.card-ovation.03',signatureOf:['goth-girl'],subject:'Louder clapping',connector:'same song',reframe:'different room',relation:'CATEGORY_SHIFT',tags:['applause','performance','evidence','audience'],cardRef:OV,anchor:{subject:'card:lore',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.landed.01',signatureOf:['goth-girl'],subject:'That landed',connector:'nobody had to say so',reframe:'leave it there',relation:'SYNERGY',tags:['performance','attention','silence','landed'],anchor:{subject:'prior',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.costume.01',signatureOf:['goth-girl'],subject:'Your stake',connector:'seen from the back row',reframe:'looks like a costume',relation:'CATEGORY_SHIFT',tags:['stake','performance','audience','status'],anchor:{subject:'prior',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.volunteer.01',signatureOf:['goth-girl'],subject:"Don't pick a volunteer",connector:'the room is already holding its breath',reframe:'wait',relation:'COLLISION',tags:['action','audience','attention','consensus'],anchor:{subject:'prior',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'gothgirl.backing.01',signatureOf:['goth-girl'],subject:'Everybody agrees',connector:'at the same volume',reframe:'sounds like a backing track',relation:'CATEGORY_SHIFT',tags:['consensus','applause','performance','audience'],anchor:{subject:'prior',reframe:'lens:PERFORMANCE_TRUTH'}},
+ {tripletId:'clown.card-ovation.01',signatureOf:['clown'],subject:'Doubt is rude',connector:'so stand up',reframe:'and ask it standing',relation:'COLLISION',tags:['doubt','action','applause','stake'],cardRef:OV,anchor:{subject:'card:power',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.card-ovation.02',signatureOf:['clown'],subject:'One owl stays seated',connector:'every seal checks the owl',reframe:"who's on stage now",relation:'ESCALATION',tags:['audience','status','performance','attention'],cardRef:OV,anchor:{subject:'card:visible',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.card-ovation.03',signatureOf:['clown'],subject:'Applause as proof',connector:'one condition',reframe:'clap for the part you doubted',relation:'SYNERGY',tags:['applause','evidence','stake','doubt'],cardRef:OV,anchor:{subject:'card:lore',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.counts.01',signatureOf:['clown'],subject:'You said it',connector:'out loud, on your feet',reframe:'that counts',relation:'SYNERGY',tags:['claim','stake','action','performance'],anchor:{subject:'prior',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.hands.01',signatureOf:['clown'],subject:'Grand idea',connector:'no hands on it yet',reframe:"I'll wait right here",relation:'COLLISION',tags:['claim','action','stake','theory'],anchor:{subject:'prior',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.cough.01',signatureOf:['clown'],subject:'Silence is lovely',connector:"until it's a rule",reframe:'somebody cough',relation:'COLLISION',tags:['silence','rule','audience','action'],anchor:{subject:'prior',reframe:'lens:EMBODIED_STRESS_TEST'}},
+ {tripletId:'clown.twice.01',signatureOf:['clown'],subject:'The mistake stayed in',connector:"now it's the act",reframe:'do it twice',relation:'SYNERGY',tags:['mistake','performance','demonstration','stake'],anchor:{subject:'prior',reframe:'lens:EMBODIED_STRESS_TEST'}}
+].map(e=>Object.assign(e,{status:'CANDIDATE',author:AU}));
+function rngOf(seed){let a=seed>>>0;return ()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const BTN='font-size:13px;font-weight:500;padding:6px 11px;border-radius:7px;cursor:pointer;white-space:nowrap;';
+const HW={cid:'cwnone',clipD:'',disp:'none',x:0,y:0,ox:0,oy:0,bw:0,bh:0,layers:[],letters:[],fs:10,fill:'#000',stroke:'0',shadow:'none',rowTf:'none',rowShift:0,op0:0,ref:null};
+
+class Component extends DCLogic {
+  state={tab:'triplet',bp:'desktop',rim:'clay',dots:true,sound:false,ready:false,stageW:820,scen:'greeting',stream:'tts-follow',items:[],now:0,status:'bereit',
+    exch:'rock',phone:false,dstep:0,len:1,vp:'desktop',edge:false,labW:900,labH:900,wordSel:'impact:POW!',
+    dim:'3d',a3:{},s3status:'lädt 3D-Bühne …',tText:DEFAULT_TTS,tPreset:'tts-follow',tWpm:150,tVoice:false,tKind:'speech',tHl:true,tT0:null,tRun:0,copied:'',pair:'A',seed:1105,rev:{},extra:[],filt:'pair',imp:'',impMsg:'',tLog:[],kOk:false,kErr:''};
+  prior=null;recent=[];last=null;turnN=0;
+  uid=0;timers=[];charEls={};wpos={};wanim={};runId=0;
+
+  componentDidMount(){
+    this.setState({rim:this.props.rimStyle||'clay',dots:this.props.halftone!==false});
+    try{const st=JSON.parse(localStorage.getItem(LSK)||'null');if(st)this.setState({rev:st.rev||{},extra:st.extra||[]});}catch(e){}
+    Promise.all([import('./lib/triplet-stage/donor/resident-chatter-adapter.v0.1.mjs'),import('./lib/triplet-stage/donor/resident-chat-ensemble-data.mjs')])
+      .then(([K,D])=>{this.K=K;this.D=D;this.setState({kOk:true},()=>{if(this._castReady&&this.isTriTab())this.tRestart();});}).catch(e=>this.setState({kErr:e.message}));
+    const onR=()=>{const w=window.innerWidth;const bp=w<640?'mobile':w<1024?'tablet':'desktop';if(bp!==this.state.bp)this.setState({bp});};
+    this._onR=onR;window.addEventListener('resize',onR);onR();
+    this._onK=e=>{if(e.target&&/TEXTAREA|INPUT/.test(e.target.tagName))return;const n=parseInt(e.key,10);if(!(n>=1&&n<=4))return;const ch=this.state.items.find(it=>it.kind==='choice'&&it.state==='on'&&it.picked<0);if(ch&&ch.opts[n-1])this.pick(ch.id,n-1);};
+    window.addEventListener('keydown',this._onK);
+    const wait=()=>{if(!window.KFB_CB){setTimeout(wait,40);return;}
+      const F=document.fonts;const go=()=>{window.KFB_CB.clearCache();this.setState({ready:true},()=>this.run());};
+      if(F&&F.load)Promise.all(['16px "Shantell Sans"','700 16px "Shantell Sans"','30px Bangers','16px "Irish Grover"'].map(f=>F.load(f))).then(go,go);else go();};
+    wait();
+    this.clockI=setInterval(()=>{const n=performance.now();if(this.needsClock(n))this.setState({now:n});},33);
+  }
+  componentDidUpdate(pp){
+    if(this.state.tab==='bubbles'&&this._lfEl){const fh=this._lfEl.offsetHeight;if(fh&&Math.abs(fh-this.state.labH)>1)this.setState({labH:fh});}if(pp.rimStyle!==this.props.rimStyle&&this.props.rimStyle)this.setState({rim:this.props.rimStyle});if(pp.halftone!==this.props.halftone)this.setState({dots:this.props.halftone!==false});}
+  componentWillUnmount(){if(this.s3)this.s3.dispose();window.removeEventListener('resize',this._onR);window.removeEventListener('keydown',this._onK);clearInterval(this.clockI);this.stop();if(this.ro)this.ro.disconnect();if(this.ro2)this.ro2.disconnect();}
+
+  needsClock(n){const s=this.state;
+    if(s.tab==='stream')return s.tT0!=null&&this._tp&&n-s.tT0<this._tp.total+600;
+    return s.items.some(it=>it.type==='bubble'&&it.state==='on'&&it.sched&&n-it.t0<it.sched.total+300);}
+  speed(){return this.props.motionSpeed||1;}
+  refFor(key,onMount,onEvery){const R=this._refs||(this._refs={});if(!R[key])R[key]=el=>{if(!el)return;if(onEvery)onEvery(el);if(onMount&&!el['__m'+key]){el['__m'+key]=1;onMount(el);}};return R[key];}
+  later(fn,ms){const t=setTimeout(fn,ms);this.timers.push(t);return t;}
+  stop(){this.runId++;this.timers.forEach(clearTimeout);this.timers=[];if(this.chatI){clearInterval(this.chatI);this.chatI=null;}if(window.speechSynthesis)try{speechSynthesis.cancel();}catch(e){}}
+
+  /* ── runner ── */
+  castFor(tab){const s=this.state;if(tab==='triplet'||tab==='review'){const [a,b]=PAIRS[s.pair];return [{who:KEY[a],x:.24,props:true},{who:KEY[b],x:.76,props:true}];}
+    if(tab==='dialogue')return [{who:EXCH[s.exch].npc,x:.2},{who:'host',x:.8}];
+    if(tab==='words')return [{who:'caveman',x:.3},{who:'host',x:.66}];
+    if(tab==='stream')return [{who:'host',x:.17}];
+    return [{who:'witch',x:.14},{who:'host',x:.38},{who:'caveman',x:.63},{who:'bear',x:.87}];}
+  stepsFor(){const s=this.state;
+    if(s.tab==='dialogue'){const ex=EXCH[s.exch];return [{wait:300,say:[ex.npc,'speech',ex.line],dstep:1},{choices:s.exch}];}
+    if(s.tab==='stage')return (SCEN.find(x=>x.id===s.scen)||SCEN[0]).steps;
+    return [];}
+  run(){if(!window.KFB_CB)return;if(this.isTriTab()){this.tSetup();return;}this.stop();this.wpos={};const id=this.runId;if(this.s3){this.s3.setCard(null);this.s3.setCast(this.castFor(this.state.tab));}
+    this.setState({items:[],status:'läuft',dstep:0},()=>{const steps=this.stepsFor();if(steps.length)this.later(()=>this.exec(steps,0,id,0),60);});}
+  exec(steps,i,id,last){if(id!==this.runId)return;if(i>=steps.length){this.setState({status:'fertig'});if(this.state.tab==='dialogue')this.setState({dstep:5});return;}
+    const st=steps[i],d=st.wait!=null?st.wait:last;
+    this.later(()=>{if(id!==this.runId)return;if(st.dstep)this.setState({dstep:st.dstep});const r=this.act(st,id);if(r==='pause')return;this.exec(steps,i+1,id,r);},d);}
+  act(st,id){
+    if(st.say){const [who,kind,text,mode]=st.say;return this.say(who,kind,text,mode,id);}
+    if(st.word){this.addWord(st.word[0],st.word[1],st.word[2]);return 900;}
+    if(st.choices){this.openChoices(st.choices);return 'pause';}
+    if(st.chatter){this.startChatter(id);return 'pause';}
+    return 0;}
+  readHold(n){return Math.min(2600,700+n*28);}
+  say(who,kind,text,mode,id){const C=window.KFB_CB,L0=C.layout(text,kind,{basePx:16});
+    if(L0.overflow&&L0.split){const d1=this.addBubble(who,kind,L0.split[0],mode);this.later(()=>{if(id===this.runId)this.addBubble(who,kind,L0.split[1],mode);},d1);
+      const L2=C.layout(L0.split[1],kind,{basePx:16}),S2=C.schedule(L2,mode||this.state.stream,{wpm:150});return d1+S2.total+this.readHold(L2.plain.length);}
+    return this.addBubble(who,kind,text,mode);}
+  addBubble(who,kind,text,mode){const C=window.KFB_CB,L0=C.layout(text,kind,{basePx:16}),m=kind==='ambient'?'instant':(mode||this.state.stream);
+    const sched=C.schedule(L0,m,{wpm:150}),now=performance.now(),it={type:'bubble',id:++this.uid,who,kind,text,sched,t0:now,state:'on',picked:-1};
+    this.setState(s=>({now,items:s.items.map(x=>x.type==='bubble'&&x.who===who&&x.state==='on'?Object.assign({},x,{state:'leaving'}):x).concat(it)}));
+    this.later(()=>this.setState(s=>({items:s.items.map(x=>x.state==='leaving'?Object.assign({},x,{state:'hidden'}):x)})),220);
+    this.sfx(kind==='shout'?'shout':'pop');this.squash(who);
+    return sched.total+this.readHold(L0.plain.length);}
+  hideItem(id){this.setState(s=>({items:s.items.map(x=>x.id===id?Object.assign({},x,{state:'hidden'}):x)}));}
+  openChoices(key){const ex=EXCH[key];const it={type:'bubble',kind:'choice',id:++this.uid,who:'host',key,opts:ex.options,picked:-1,state:'on',t0:performance.now()};
+    this.setState(s=>({items:s.items.concat(it),status:'wartet auf Auswahl · Tasten 1–4',dstep:2}));this.sfx('pop');}
+  pick(cid,i){const s=this.state,ch=s.items.find(x=>x.id===cid);if(!ch||ch.picked>=0)return;if(ch.triChoice){this.tPick(cid,i);return;}const id=this.runId,opt=ch.opts[i];
+    this.setState({items:s.items.map(x=>x.id===cid?Object.assign({},x,{picked:i}):x),status:'Auswahl: '+TONES[opt.tone].l,dstep:3});this.sfx('pick');
+    this.later(()=>{if(id!==this.runId)return;this.setState(st=>({items:st.items.map(x=>x.id===cid?Object.assign({},x,{state:'leaving'}):x)}));
+      const d=this.say('host','speech',opt.text,null,id);
+      this.later(()=>{if(id!==this.runId)return;this.setState({dstep:4,status:'NPC reagiert'});this.exec(opt.react,0,id,d);},40);},320);}
+  startChatter(id){const add=()=>{if(id!==this.runId)return;const s=this.state;if(s.items.length>40){this.run();return;}
+      const on=s.items.filter(x=>x.kind==='ambient'&&x.state==='on');if(on.length>=2)return;
+      const cast=this.castFor('stage').map(c=>c.who).filter(w=>!on.some(o=>o.who===w));const who=cast[Math.floor(Math.random()*cast.length)];
+      const pool=CHAT[who],text=pool[Math.floor(Math.random()*pool.length)];this.addBubble(who,'ambient',text,'instant');
+      const T=window.KFB_CB.times(text.length).total*0.85;const myId=this.uid;
+      this.later(()=>this.setState(st=>({items:st.items.map(x=>x.id===myId&&x.state==='on'?Object.assign({},x,{state:'leaving'}):x)})),T);
+      this.later(()=>this.setState(st=>({items:st.items.map(x=>x.id===myId&&x.state==='leaving'?Object.assign({},x,{state:'hidden'}):x)})),T+220);};
+    add();this.chatI=setInterval(add,1300);this.setState({status:'läuft · Schleife'});}
+  addWord(word,cls,place){const now=performance.now();
+    Object.keys(this.wanim).forEach(k=>{const w=this.wanim[k];if(w&&w.a&&w.a.playState==='running'){w.a.pause();w.el.animate([{opacity:getComputedStyle(w.el).opacity},{opacity:0}],{duration:120,fill:'forwards'});}});
+    const it={type:'word',id:++this.uid,word,cls,place,t0:now,state:'on'};this.setState(s=>({items:s.items.concat(it)}));}
+  animWord(el,it){if(el.__kid===it.id)return;el.__kid=it.id;const C=window.KFB_CB,K=C.wordKeyframes(it.cls,this.speed());
+    const a=el.animate(K.frames,{duration:K.duration,fill:'both',easing:'cubic-bezier(.25,.9,.35,1)'});this.wanim[it.id]={a,el};a.onfinish=()=>{delete this.wanim[it.id];this.hideItem(it.id);};
+    this.sfx(it.cls);if(it.cls==='impact'){this.shake();this.recoil('host');}}
+
+  /* ── Triplet Stage 01 ── */
+  isTriTab(){return this.state.tab==='triplet'||this.state.tab==='review';}
+  tStagger(){return (this.props.leafStagger??520)/this.speed();}
+  other(r){const [a,b]=PAIRS[this.state.pair];return r===a?b:a;}
+  tGaze(t){if(this.s3)PAIRS[this.state.pair].forEach(r=>this.s3.setGaze(KEY[r],t));}
+  tSetup(){this.stop();const p=this.state.pair;this._castReady=false;this.setState({items:[],tLog:[],status:'lädt Paar …'});if(!this.s3)return;
+    this.s3.setCard(CARDS[p]);this.s3.setCast(this.castFor('triplet')).then(()=>{if(this.state.pair!==p||!this.isTriTab())return;this._castReady=true;this.tRestart();});}
+  tRestart(){if(!this.K||!this._castReady){this.setState({status:this.K?'lädt Paar …':'Kernel lädt …'});return;}this.stop();this.prior=null;this.recent=[];this.last=null;this.turnN=0;
+    this.setState({items:[],tLog:[],status:'Eröffnung'});this.tGaze('card');const id=this.runId,a=PAIRS[this.state.pair][0];
+    this.later(()=>{if(id!==this.runId)return;this.tPresent(a,this.kernel(a,null,this.pool(),null,[],this.rng()),null,'open');},700);}
+  normNew(e){const n=this.D.normalizeTriplet(e);n.status='CANDIDATE';n.author=e.author||AU;
+    n.origin={sourceRef:'KFB ChatterBox Studio v2 · 2026-10-05',authoredBy:n.author===AU?'Claude Design (Session mit Georg)':n.author};
+    if(e.cardRef)n.eligibility=Object.assign({},n.eligibility,{requiresCardRef:e.cardRef});n._new=true;n._raw=e;return n;}
+  entriesAll(){if(!this.D)return [];const ex=this.state.extra,key=JSON.stringify(ex.map(x=>x.tripletId));if(this._ea&&this._ea.key===key)return this._ea.list;
+    const base=this.D.RUNTIME_POOL.entries.map(e=>Object.assign({},e,{_new:false,_raw:this.D.TRIPLET_POOL_SOURCE.entries.find(q=>q.tripletId===e.tripletId)}));
+    const ids=new Set(base.map(b=>b.tripletId).concat(NEW.map(n=>n.tripletId)));
+    const list=base.concat(NEW.concat(ex.filter(x=>!ids.has(x.tripletId))).map(e=>this.normNew(e)));this._ea={key,list};return list;}
+  pool(){const rev=this.state.rev;return this.entriesAll().filter(e=>(rev[e.tripletId]||{}).s!=='x');}
+  event(){const p=this.state.pair,[a,b]=PAIRS[p],C=CARDS[p];return {cardRef:C.ref,witnessIds:[a,b],tags:C.tags.slice(),knowledgeTags:C.tags.slice(),cardTags:C.tags.slice()};}
+  kernel(who,op,pool,prior,recent,rng){return this.K.prepareResidentTurn({speakerId:who,residentProfile:this.D.RESIDENT_PROFILES[who],socialOperator:op,priorSemantic:prior,pool,event:this.event(),recentTripletIds:recent||[],rng,addresseeId:this.other(who)});}
+  semOf(e){return {subject:e.subject,connector:e.connector,reframe:e.reframe,latentConcepts:(e.semantic&&e.semantic.latentConcepts)||e.tags||[]};}
+  rng(){return rngOf((this.state.seed*7919+this.turnN*104729)>>>0);}
+  /* Drei Stapel wie ein Daumenkino: jeder Teil = eigener Block im v1-Layout, Blasenform aus dem vollen Triplet (Geometrie vor Streaming). */
+  triL(it,base,maxPx){const C=window.KFB_CB,Ls=it.tri.map(p=>C.layout(p,'speech',{basePx:base,maxPx})),L0=Ls[0],fs=L0.fontPx,lh=L0.lh,gap=Math.round(fs*.5);
+    const inner=Math.max(...Ls.map(l=>l.w-2*l.padX));let lines=[],meta=[],n=0;
+    Ls.forEach((l,pi)=>{l.lines.forEach((toks,li)=>{lines.push(toks);const ln=n;meta.push({mt:(pi>0&&li===0)?gap:0,ref:this.refFor('tl-'+it.id+'-'+ln,el=>this.flip(el,pi))});n++;});});
+    return {w:Math.round(inner+2*L0.padX),h:Math.round(n*fs*lh+gap*(Ls.length-1)+2*L0.padY),padX:L0.padX,padY:L0.padY,fontPx:fs,lh,face:'body',lines,lineMeta:meta,plain:it.tri.join(' / ')};}
+  flip(el,pi){el.animate([{opacity:0,transform:'perspective(520px) rotateX(-86deg)'},{opacity:1,transform:'perspective(520px) rotateX(0deg)'}],{duration:300/this.speed(),delay:pi*this.tStagger(),fill:'backwards',easing:'cubic-bezier(.2,.9,.3,1.12)'});}
+  addTri(who,tri,kind){const now=performance.now(),it={type:'bubble',id:++this.uid,who,kind,text:tri.join(' / '),tri:kind==='speech'?tri:null,sched:null,t0:now,state:'on',picked:-1};
+    this.setState(s=>({now,items:s.items.filter(x=>x.state!=='hidden').map(x=>x.type==='bubble'&&x.who===who&&x.state==='on'?Object.assign({},x,{state:'leaving'}):x).concat(it)}));
+    this.later(()=>this.setState(s=>({items:s.items.map(x=>x.state==='leaving'?Object.assign({},x,{state:'hidden'}):x)})),220);
+    this.sfx('pop');if(kind==='speech'&&this.s3&&this.state.dim==='3d')this.s3.talk(who,this.tStagger()*2+900);}
+  tPresent(rid,out,op,src){const k=KEY[rid],o=this.other(rid),ko=KEY[o],id=this.runId,turn=out.kind==='turn';this.turnN++;let e={};
+    if(turn){e=this.entriesAll().find(x=>x.tripletId===out.tripletId)||{};this.prior=out.semantic;this.recent=this.recent.concat(out.tripletId).slice(-4);
+      this.addTri(k,[out.semantic.subject,out.semantic.connector,out.semantic.reframe],'speech');}else this.addTri(k,['…'],'thought');
+    this.last=rid;const opL=op?CALLS.find(c=>c.op===op).label:(src==='preview'?'Vorschau':'Eröffnung');
+    this.setState(S=>({tLog:[{who:rid,op:opL,text:turn?[out.semantic.subject,out.semantic.connector,out.semantic.reframe].join(' / '):'… schweigt',
+      meta:turn?(out.tripletId+' · '+(e.relation||'')+(e._new?' · NEU · CANDIDATE':'')+(src==='preview'?' · ohne Kernel':'')):((out.reason||'silence')+' · Schweigen ist gültig')}].concat(S.tLog).slice(0,40),status:RES[rid].name+(turn?' spricht':' schweigt')}));
+    if(this.s3){this.s3.setGaze(k,src==='open'?'card':'camera');this.s3.setGaze(ko,k);}
+    this.later(()=>{if(id!==this.runId)return;if(this.s3)this.s3.setGaze(k,turn?ko:'card');this.openTChoices();},turn?this.tStagger()*2+700:900);}
+  openTChoices(){if(this.state.items.some(x=>x.kind==='choice'&&x.state==='on'&&x.picked<0))return;
+    const it={type:'bubble',kind:'choice',id:++this.uid,who:'player',key:'tri',triChoice:true,cols:2,opts:CALLS.map(c=>({tone:c.tone,text:c.label})),picked:-1,state:'on',t0:performance.now()};
+    this.setState(S=>({items:S.items.concat(it),status:'Zuruf wählen · Tasten 1–4'}));this.sfx('pop');}
+  tPick(cid,i){const s=this.state,id=this.runId,c=CALLS[i],resp=this.last?this.other(this.last):PAIRS[s.pair][0];
+    this.setState({items:s.items.map(x=>x.id===cid?Object.assign({},x,{picked:i}):x),status:'Zuruf: '+c.label});this.sfx('pick');this.tGaze('camera');
+    this.later(()=>{if(id!==this.runId)return;this.setState(S=>({items:S.items.map(x=>x.id===cid?Object.assign({},x,{state:'leaving'}):x)}));
+      this.later(()=>this.setState(S=>({items:S.items.map(x=>x.id===cid&&x.state==='leaving'?Object.assign({},x,{state:'hidden'}):x)})),220);
+      this.later(()=>{if(id!==this.runId)return;this.tPresent(resp,this.kernel(resp,c.op,this.pool(),this.prior,this.recent,this.rng()),c.op,'call');},260);},420);}
+  triPlay(e){if(!this.K||!this._castReady)return;const pair=PAIRS[this.state.pair],own=(e.signatureOf||[])[0];if(own&&pair.indexOf(own)<0)return;
+    this.stop();this.setState(S=>({items:S.items.filter(x=>x.kind!=='choice')}));const who=own||(this.last?this.other(this.last):pair[0]);
+    this.tPresent(who,{kind:'turn',tripletId:e.tripletId,semantic:this.semOf(e)},null,'preview');}
+  setPair(p){if(p===this.state.pair)return;this.setState({pair:p},()=>this.tSetup());}
+  saveRev(rev,extra){try{localStorage.setItem(LSK,JSON.stringify({rev,extra}));}catch(e){}}
+  setRev(id,patch){const rev=Object.assign({},this.state.rev);rev[id]=Object.assign({},rev[id]||{},patch);this.setState({rev});this.saveRev(rev,this.state.extra);}
+  coverage(){const s=this.state;if(!this.K||!this.D)return null;const key=s.pair+JSON.stringify(s.rev)+s.extra.length;if(this._cov&&this._cov.key===key)return this._cov.v;
+    const [a,b]=PAIRS[s.pair],pool=this.pool(),card=CARDS[s.pair].ref,zero=()=>0,owned=(e,r)=>{const g=e.signatureOf||[];return !g.length||g.indexOf(r)>=0;};
+    const v=[a,b].map(r=>{const p=r===a?b:a,mine=pool.filter(e=>owned(e,r)),priors=pool.filter(e=>owned(e,p));
+      const ok=(e,op,pr)=>this.kernel(r,op,[e],pr?this.semOf(pr):null,[],zero).kind==='turn';
+      const cells=CALLS.map(c=>{let kept=0,poss=0;mine.forEach(e=>{const good=(c.op==='BINGO'||c.op==='BLOEDSINN')?ok(e,c.op,null):priors.some(pr=>pr!==e&&ok(e,c.op,pr));if(!good)return;poss++;if((s.rev[e.tripletId]||{}).s==='k')kept++;});return {kept,poss};});
+      const cardL=mine.filter(e=>e.cardRef===card&&(e.signatureOf||[]).indexOf(r)>=0);
+      return {who:r,cells,cardK:cardL.filter(e=>(s.rev[e.tripletId]||{}).s==='k').length,cardP:cardL.length};});
+    this._cov={key,v};return v;}
+  srcEntry(e){const r=e._raw||e,o={tripletId:e.tripletId,signatureOf:e.signatureOf||[],subject:e.subject,connector:e.connector,reframe:e.reframe,relation:e.relation,tags:e.tags||[]};
+    if(r.cardRef)o.cardRef=r.cardRef;if(r.anchor)o.anchor=r.anchor;o.fluffOlect=r.fluffOlect||{allowed:false};return o;}
+  reviewObj(){const s=this.state;return {schema:'kfb.triplet-pool-review/1',date:new Date().toISOString(),source:'PR #310 resident-chat-ensemble-data.mjs@7c6522fb + claude-design candidates (KFB ChatterBox Studio v2)',reviewer:'Georg',
+    pair:PAIRS[s.pair],card:CARDS[s.pair].ref,seed:s.seed,
+    entries:this.entriesAll().map(e=>{const r=s.rev[e.tripletId]||{},src=this.srcEntry(e);return Object.assign({tripletId:e.tripletId,imported:!!e._new,decision:({k:'keep',x:'cut',c:'change'})[r.s]||'open',note:r.n||'',
+      subject:src.subject,connector:src.connector,reframe:src.reframe,relation:src.relation,signatureOf:src.signatureOf,tags:src.tags},src.cardRef?{cardRef:src.cardRef}:{},src.anchor?{anchor:src.anchor}:{},
+      {status:e._new?'CANDIDATE':'AUTHORING_CANDIDATE',author:e._new?(e.author||AU):'RESIDENT-CHAT-POC-01 Site authoring'});})};}
+  keptObj(){const s=this.state,T=this.D?this.D.TRIPLET_POOL_SOURCE:{};return {schema:'kfb.semantic-triplet-pool/0.1-candidate',status:'REVIEWED_POOL_CANDIDATE',owner:'ChatterBox content',reviewedBy:'Georg',reviewedAt:new Date().toISOString(),
+    rules:T.rules||{},socialOperators:T.socialOperators||{},
+    entries:this.entriesAll().filter(e=>(s.rev[e.tripletId]||{}).s==='k').map(e=>Object.assign(this.srcEntry(e),{status:'KEPT',author:e._new?(e.author||AU):'RESIDENT-CHAT-POC-01 Site authoring'}))};}
+  doImport(txt){try{const o=JSON.parse(txt);let arr=Array.isArray(o)?o:(o.entries||[]);arr=arr.filter(e=>e&&e.tripletId);const known=new Set(this.entriesAll().map(e=>e.tripletId));
+      const rev=Object.assign({},this.state.rev),dec={keep:'k',cut:'x',change:'c'};let nd=0,ne=0;arr.forEach(e=>{if(dec[e.decision]){rev[e.tripletId]={s:dec[e.decision],n:e.note||''};nd++;}});
+      const extra=this.state.extra.filter(x=>!arr.some(e=>e.tripletId===x.tripletId)).concat(arr.filter(e=>!known.has(e.tripletId)&&e.subject&&e.connector&&e.reframe).map(e=>{ne++;
+        return {tripletId:e.tripletId,signatureOf:e.signatureOf||[],subject:e.subject,connector:e.connector,reframe:e.reframe,relation:e.relation||'SYNERGY',tags:e.tags||[],cardRef:e.cardRef,anchor:e.anchor,status:'CANDIDATE',author:e.author||'webchat'};}));
+      this.setState({rev,extra,impMsg:nd+' Entscheidungen · '+ne+' neue Einträge'});this.saveRev(rev,extra);}catch(err){this.setState({impMsg:'JSON fehlerhaft: '+err.message});}}
+  fromRef(){try{const st=JSON.parse(localStorage.getItem('kfb.tripletReview.v1')||'null');if(!st||!st.rev){this.setState({impMsg:'keine Referenz-Daten in diesem Browser'});return;}
+      const rev=Object.assign({},this.state.rev);let n=0;Object.keys(st.rev).forEach(k=>{const r=st.rev[k];if(r&&(r.s||r.n)){rev[k]={s:r.s||null,n:r.n||''};n++;}});this.setState({rev,impMsg:n+' Entscheidungen übernommen'});this.saveRev(rev,this.state.extra);}catch(e){this.setState({impMsg:'Lesen fehlgeschlagen'});}}
+  dl(name,obj){const b=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();}
+  triVals(){const s=this.state,bp=s.bp,[a,b]=PAIRS[s.pair],card=CARDS[s.pair],all=this.entriesAll(),rev=s.rev,dec=e=>(rev[e.tripletId]||{}).s||null,day=new Date().toISOString().slice(0,10);
+    const V={camDisp:s.dim==='3d'?'flex':'none',hintDisp:bp==='mobile'?'none':'block',resetCam:()=>{if(this.s3)this.s3.resetCamera();},isTri:s.tab==='triplet',isReview:s.tab==='review',
+      card,seed:String(s.seed),tRestart:()=>this.tRestart(),reroll:()=>this.setState({seed:1+Math.floor(Math.random()*9998)},()=>this.tRestart()),
+      pairList:[['A','A · Goth Girl × Clown · The Standing Ovation'],['B','B · Witch × Clown · The Cortisol Economy'],['C','C · Goth Girl × Witch · The Doomsday Clock']].map(([k,l])=>({label:l,on:()=>this.setPair(k),
+        style:'text-align:left;font-size:13px;font-weight:500;padding:9px 12px;min-height:42px;border-radius:8px;cursor:pointer;'+(k===s.pair?'background:#e2b33c;color:#1b1815;border:1px solid #e2b33c':'background:#25211d;color:#d9cfbf;border:1px solid #3a342d')})),
+      tLog:s.tLog.map(l=>({name:RES[l.who].name,color:RES[l.who].color,op:l.op,text:l.text,meta:l.meta})),
+      filtSeg:[],countLine:'',rows:[],listCols:bp==='mobile'?'minmax(0,1fr)':'repeat(auto-fill,minmax(340px,1fr))',gateHead:CALLS.map(c=>({t:c.label})),gate:[],gateCard:[],
+      gateVerdict:this.K?'':'Kernel lädt …',gateVerdictStyle:'font-size:13px;color:#a99c88',
+      triRules:[{t:'subject / connector / reframe · jeder Teil trägt Bedeutung · ≤ 15 Wörter (der Kernel zählt die Schrägstriche mit).'},{t:'Keine ausgesprochene Schlussfolgerung: die Lücke gehört dem Spieler.'},
+        {t:'Koans und Haikus ja · Kalendersprüche, Motivationssätze, X-mit-Y, erklärte Witze nein.'},{t:'speechAvoid je Profil: Goth Girl keine Goth-Karikatur, kein Dauer-Dunkel · Clown keine Zirkus-Wortspiele, kein Meme-Ton · Witch keine Prophezeiung.'},
+        {t:'Ein gemeinsamer Pool, Englisch, kein Fluffolekt. Neue Zeilen bleiben CANDIDATE, bis Georg sie behält.'}],
+      dlReview:()=>this.D&&this.dl('KFB_TRIPLET_POOL_REVIEW_'+day+'.json',this.reviewObj()),dlKept:()=>this.D&&this.dl('KFB_TRIPLET_POOL_KEPT_'+day+'.json',this.keptObj()),
+      imp:s.imp,onImp:e=>this.setState({imp:e.target.value}),doImp:()=>this.doImport(this.state.imp),fromRef:()=>this.fromRef(),impMsg:s.impMsg};
+    if(s.tab!=='review'||!all.length)return V;
+    const inPair=e=>{const g=e.signatureOf||[];return !g.length||g.indexOf(a)>=0||g.indexOf(b)>=0;},has=r=>e=>(e.signatureOf||[]).indexOf(r)>=0;
+    const FL={pair:inPair,all:()=>true,'goth-girl':has('goth-girl'),clown:has('clown'),witch:has('witch'),lorekeeper:has('lorekeeper'),core:e=>!(e.signatureOf||[]).length,new:e=>e._new,open:e=>!dec(e)};
+    V.filtSeg=this.seg([['pair','dieses Paar'],['all','alle'],['goth-girl','Goth Girl'],['clown','Clown'],['witch','Witch'],['core','allgemein'],['lorekeeper','Lorekeeper'],['new','neu'],['open','offen']],s.filt,v=>this.setState({filt:v}));
+    const n=k=>all.filter(e=>dec(e)===k).length;V.countLine=all.filter(e=>dec(e)).length+' von '+all.length+' bewertet · behalten '+n('k')+' · streichen '+n('x')+' · ändern '+n('c')+' · neu '+all.filter(e=>e._new).length+' (CANDIDATE)';
+    const mh=bp==='mobile'?44:34,bs=(on,c)=>BTN+'min-height:'+mh+'px;font-size:12.5px;'+(on?'background:'+c+';color:#fff;border:1px solid '+c:'background:#25211d;color:#d9cfbf;border:1px solid #3a342d');
+    V.rows=all.filter(FL[s.filt]||inPair).map(e=>{const d=dec(e),own=(e.signatureOf||[])[0],ok=!own||own===a||own===b,r=rev[e.tripletId]||{},raw=e._raw||{};
+      const badges=[{t:e.relation,bg:'#3a342d',fg:'#e6dccb'}];if(e._new)badges.push({t:'NEU · '+(e.author||AU),bg:'#3b3226',fg:'#f3d27a'});if(raw.cardRef)badges.push({t:raw.cardRef,bg:'#2d3a4a',fg:'#cfe3f7'});
+      const edge=d==='k'?'#2f7d4f':d==='x'?'#b33a2a':d==='c'?'#c7861c':'#3a342d';
+      return {id:e.tripletId,owner:own?(RES[own]?RES[own].name:own):'allgemein',color:own&&RES[own]?RES[own].color:'#8f8473',badges,s:e.subject,c:e.connector,f:e.reframe,
+        tags:(e.tags||[]).join(' · ')+(raw.anchor?'  ·  anchor '+raw.anchor.subject+' → '+raw.anchor.reframe:''),note:r.n||'',
+        style:'background:#24201c;border:1px solid '+edge+';border-radius:12px;padding:11px 12px;display:flex;flex-direction:column;gap:8px;opacity:'+(d==='x'?.62:1),
+        keep:()=>this.setRev(e.tripletId,{s:d==='k'?null:'k'}),cut:()=>this.setRev(e.tripletId,{s:d==='x'?null:'x'}),chg:()=>this.setRev(e.tripletId,{s:d==='c'?null:'c'}),
+        onNote:ev=>this.setRev(e.tripletId,{n:ev.target.value}),kS:bs(d==='k','#2f7d4f'),xS:bs(d==='x','#b33a2a'),cS:bs(d==='c','#c7861c'),
+        play:ok&&d!=='x'?()=>this.triPlay(e):null,playLabel:ok?'Abspielen':'nicht auf der Bühne',playTitle:ok?'spielt die Zeile beim Besitzer (ohne Kernel)':'Besitzer steht in diesem Paar nicht auf der Bühne',
+        pS:BTN+'min-height:'+mh+'px;font-size:12.5px;'+(ok&&d!=='x'?'background:#2c2722;color:#f3d27a;border:1px solid #e2b33c':'background:transparent;color:#6e6457;border:1px dashed #3a342d;cursor:default')};});
+    const cov=this.coverage();if(cov){let pass=true,cardPass=true;
+      V.gate=cov.map(r=>({name:RES[r.who].name,color:RES[r.who].color,cells:r.cells.map(c=>{if(c.kept<1)pass=false;
+        return {kept:String(c.kept),poss:c.poss+' mögl.',style:'display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:8px;'+(c.kept>0?'background:#23402e;color:#d6f2df;border:1px solid #2f7d4f':c.poss>0?'background:#3a3020;color:#f3d27a;border:1px solid #6b5426':'background:#3e2220;color:#f3c4bb;border:1px solid #8a3328')};})}));
+      cov.forEach(r=>{if(r.cardK<2)cardPass=false;});V.gateCard=cov.map(r=>({t:RES[r.who].name+' · Kartenbezug '+card.ref+': '+r.cardK+' behalten / '+r.cardP+' vorhanden (Ziel ≥ 2)'}));
+      V.gateVerdict=pass?'Gate erfüllt: jede Rolle hat je Zuruf mindestens eine behaltene Zeile.'+(cardPass?' Kartenbezug ebenfalls erfüllt.':' Kartenbezug noch offen.'):'Gate offen: gelbe/rote Felder brauchen noch eine behaltene Zeile.';
+      V.gateVerdictStyle='font-size:13px;line-height:1.45;padding:9px 10px;border-radius:8px;'+(pass?'background:#23402e;color:#d6f2df':'background:#2c2722;color:#f3d27a');}
+    return V;}
+
+  /* ── acting ── */
+  bob(el,i){el.animate([{transform:'translateY(0px)'},{transform:'translateY(-3px)'},{transform:'translateY(0px)'}],{duration:2300+i*370,iterations:Infinity,easing:'ease-in-out'});}
+  mount3d(el){if(this._s3host===el)return;this._s3host=el;if(this.s3){this.s3.dispose();this.s3=null;}const tab=this.state.tab;
+    import('./lib/chatterbox/stage3d.js').then(m=>m.createStage3D(el,{onAnchors:a=>this.setState({a3:a}),onStatus:t=>this.setState({s3status:t})})).then(S=>{
+      if(this._s3host!==el){S.dispose();return;}this.s3=S;if(this.isTriTab())this.tSetup();else S.setCast(this.castFor(this.state.tab));}).catch(e=>this.setState({s3status:'3D nicht verfügbar: '+e.message}));}
+  squash(who){if(this.s3&&this.state.dim==='3d')this.s3.talk(who);const el=this.charEls[who];if(!el)return;el.animate([{transform:'scale(1,1)'},{transform:'scale(1.04,.95)'},{transform:'scale(.98,1.03)'},{transform:'scale(1,1)'}],{duration:280/this.speed(),easing:'ease-out'});}
+  recoil(who){if(this.s3&&this.state.dim==='3d')this.s3.recoil(who);const el=this.charEls[who];if(!el)return;el.animate([{transform:'translateX(0) rotate(0deg)'},{transform:'translateX(14px) rotate(5deg) scale(1.03,.96)'},{transform:'translateX(-3px) rotate(-1deg)'},{transform:'translateX(0) rotate(0deg)'}],{duration:320/this.speed(),easing:'ease-out'});}
+  shake(){const el=this.stageEl;if(!el)return;el.animate([{transform:'translate(0,0)'},{transform:'translate(-5px,3px)'},{transform:'translate(4px,-2px)'},{transform:'translate(-2px,1px)'},{transform:'translate(0,0)'}],{duration:170});}
+  sfx(type){if(!this.state.sound)return;try{const A=this.ac||(this.ac=new (window.AudioContext||window.webkitAudioContext)());const t=A.currentTime,g=A.createGain();g.connect(A.destination);
+    const tone=(f0,f1,dur,vol,typ)=>{const o=A.createOscillator(),gg=A.createGain();o.type=typ||'sine';o.frequency.setValueAtTime(f0,t);o.frequency.exponentialRampToValueAtTime(f1,t+dur);gg.gain.setValueAtTime(vol,t);gg.gain.exponentialRampToValueAtTime(.001,t+dur);o.connect(gg);gg.connect(A.destination);o.start(t);o.stop(t+dur+.02);};
+    const noise=(dur,vol,f0,f1,typ)=>{const b=A.createBuffer(1,A.sampleRate*dur,A.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;const src=A.createBufferSource();src.buffer=b;const fl=A.createBiquadFilter();fl.type=typ||'lowpass';fl.frequency.setValueAtTime(f0,t);fl.frequency.exponentialRampToValueAtTime(f1,t+dur);const gg=A.createGain();gg.gain.setValueAtTime(vol,t);gg.gain.exponentialRampToValueAtTime(.001,t+dur);src.connect(fl);fl.connect(gg);gg.connect(A.destination);src.start(t);};
+    if(type==='impact'){noise(.14,.5,1400,200);tone(110,45,.18,.6);}else if(type==='movement'){noise(.32,.25,500,3200,'bandpass');}
+    else if(type==='reaction'){tone(280,620,.12,.25,'triangle');setTimeout(()=>tone(620,420,.14,.2,'triangle'),110);}else if(type==='reward'){tone(880,880,.18,.18);setTimeout(()=>tone(1320,1320,.26,.16),120);}
+    else if(type==='shout'){tone(220,140,.12,.2,'square');}else if(type==='pick'){tone(520,780,.07,.18,'triangle');}else tone(700,560,.05,.08);}catch(e){}}
+
+  /* ── geometry ── */
+  /* Tail rules: R1 the bubble never covers its anchor (clearance ≥ gap, so the tail is ≥ 18 px and visible);
+     R2 no room above → beside the head, tail from the side edge; R3 never clamp a bubble onto the head;
+     R4 stack above an occupied bubble before going sideways; R5 everything stays inside the stage. */
+  place(w,h,hx,hy,W,H,placed,pad,gap){const cx=x=>Math.max(pad,Math.min(W-pad-w,x)),cy=y=>Math.max(pad,Math.min(H-pad-h,y));
+    const ov=r=>placed.some(b=>r.x<b.x+b.w+8&&r.x+w+8>b.x&&r.y<b.y+b.h+8&&r.y+h+8>b.y);
+    const clear=r=>{const ix=hx>r.x-10&&hx<r.x+w+10,iy=hy>r.y-10&&hy<r.y+h+gap*.7;return !(ix&&iy);};
+    // order: above own head (5 shifts) → beside own head → beside, dodging occupied bubbles → stacked above (far, last resort)
+    const C=[],up=hy-gap-h,side=gap+4;
+    if(up>=pad)[.5,.25,.75,.08,.92].forEach(f=>C.push({x:cx(hx-w*f),y:up}));
+    [cy(hy-h*.6),cy(hy-h/2)].forEach(y=>{if(hx+side+w<=W-pad)C.push({x:hx+side,y});if(hx-side-w>=pad)C.push({x:hx-side-w,y});});
+    placed.forEach(b=>{[cy(b.y+b.h+12),cy(b.y-h-12)].forEach(y=>{if(hx+side+w<=W-pad)C.push({x:hx+side,y});if(hx-side-w>=pad)C.push({x:hx-side-w,y});});});
+    placed.forEach(b=>{const y=b.y-h-10;if(y>=pad&&y<=up)C.push({x:cx(hx-w/2),y,far:true});});
+    const F=this._faces||[],fh=r=>F.some(f=>r.x<f.x+f.w&&r.x+w>f.x&&r.y<f.y+f.h&&r.y+h>f.y);
+    for(const r of C)if(clear(r)&&!ov(r)&&!fh(r))return r;
+    for(const r of C)if(clear(r)&&!ov(r))return r;
+    for(const r of C)if(clear(r))return Object.assign({fb:true},r);
+    return {x:cx(hx-w/2),y:cy(hy+gap),fb:true};}
+  /* Attribution model (v0.4): a bubble lives in its speaker's column, centred over the head, tail = short drop.
+     No room above → beside the head. Newest line wins its spot; an older line that collides (incl. its tail zone)
+     retires (fades) instead of being pushed somewhere it would read as someone else's. */
+  placeOwn(L,c,W,H,pad,gap){const w=L.w,h=L.h,cx=x=>Math.max(pad,Math.min(W-pad-w,x)),cy=y=>Math.max(pad,Math.min(H-pad-h,y)),y=c.hy-gap-h;
+    if(y>=pad)return {L,bx:cx(c.hx-w/2),by:y,hx:c.hx,hy:c.hy};
+    const side=gap+6,ys=cy(c.hy-h*.55);
+    if(c.hx+side+w<=W-pad)return {L,bx:c.hx+side,by:ys,hx:c.hx,hy:c.hy};
+    if(c.hx-side-w>=pad)return {L,bx:c.hx-side-w,by:ys,hx:c.hx,hy:c.hy};
+    return {L,bx:cx(c.hx-w/2),by:pad,hx:c.hx,hy:c.hy};}
+  zoneOf(g){const r={x0:g.bx,y0:g.by,x1:g.bx+g.L.w,y1:g.by+g.L.h};if(g.hx!=null){r.x0=Math.min(r.x0,g.hx-10);r.x1=Math.max(r.x1,g.hx+10);r.y0=Math.min(r.y0,g.hy-6);r.y1=Math.max(r.y1,g.hy-6);}
+    return {x:r.x0,y:r.y0,w:r.x1-r.x0,h:r.y1-r.y0};}
+  bubbleR(it,geo,now,o){const C=window.KFB_CB,s=this.state,M=34,L=geo.L,w=L.w,h=L.h,kind=it.kind;
+    const hlx=geo.hx==null?null:geo.hx-(geo.bx-M),hly=geo.hy==null?null:geo.hy-(geo.by-M),seed=C.hash(String(it.text||it.key)+kind)%9999;
+    let d,dots='';const co=s.rim==='clayonly',rr=Math.min(14,Math.round(h*.3));
+    if(kind==='shout')d=C.shoutPath(M,w,h,seed,hlx,hly,co?18:26,co?12:18);
+    else if(kind==='thought'){d=C.thoughtPath(M,w,h,seed);dots=C.thinkDots(M,w,h,hlx,hly,seed);}
+    else if(kind==='caption'||kind==='kayfabulate')d=co?C.roundRectPath(M,w,h,rr,seed,null,null,0,0,true):C.rectPath(M,w,h,seed,null,null,0,true,kind==='kayfabulate'?1.8:1.1);
+    else d=co?C.roundRectPath(M,w,h,rr,seed,hlx,hly,kind==='ambient'?12:16,12):C.rectPath(M,w,h,seed,hlx,hly,kind==='ambient'?18:24);
+    const full=dots?d+' '+dots:d,sp=CHARS[it.who],col=sp?sp.color:'#c9a46a';
+    const paper=kind==='caption'?'#f2d58a':kind==='kayfabulate'?'#f6efd9':kind==='whisper'?mix('#f5eedf',col,.07):mix(PAPER,col,kind==='ambient'?.1:.15);
+    const inkW={speech:2.4,thought:2.2,whisper:2,shout:3.6,caption:2.2,kayfabulate:2.8,ambient:1.6,choice:2.4}[kind]||2.4;
+    const rim=(kind==='ambient'&&s.rim==='slab')?'none':s.rim,clayish=rim==='clay'||co;let layers;
+    if(clayish){const ext=kind==='ambient'||kind==='whisper'?2.5:(kind==='shout'?6:5),face=co?mix(kind==='whisper'?'#fbf7ee':'#fbf2df',col,kind==='whisper'?.1:.2):paper;
+      layers=C.rimLayers(full,rim,{ext,side:mix(face,'#6a4526',co?.4:.32)});
+      layers.push({d:full,fill:face});
+      if(co)layers.push(...C.clayFront(full));
+      else{if(s.dots&&kind!=='ambient'&&kind!=='whisper')layers.push({d:full,fill:'url(#kfbDotsWarm)',op:.22,mask:'url(#kfbCornerMask)'});
+        layers.push({d:full,fill:'none',stroke:INK,sw:inkW,dash:kind==='whisper'?'7 5':'',lj:'round'});}}
+    else{layers=C.rimLayers(full,rim,{});layers.push({d:full,fill:paper});
+      if(s.dots&&kind!=='ambient'&&kind!=='whisper')layers.push({d:full,fill:'url(#kfbDotsWarm)',op:kind==='kayfabulate'||kind==='caption'?.5:.32,mask:'url(#kfbCornerMask)'});
+      layers.push({d:full,fill:'none',stroke:INK,sw:inkW,dash:kind==='whisper'?'7 5':'',lj:'round'});}
+    const S=it.sched,el=now-(it.t0||0),rc=C.revealedCount(S,el),hl=(o&&o.hl!=null)?o.hl:true;
+    let curW=-1,chunk=null;if(S&&hl&&(S.preset==='tts-follow'||S.preset==='chunked')&&el<S.total+200){S.voice.forEach((v,i)=>{if(el>=v[0]&&el<v[1])curW=i;});chunk=S.chunks.find(c=>el>=c.t0&&el<c.t1+120)||null;}
+    const tc=mix('#ffffff',col,.55);
+    const LM=L.lineMeta||[],lines=(L.lines||[]).map((toks,li)=>({mt:LM[li]?LM[li].mt:0,ref:LM[li]?LM[li].ref:null,t:toks.map(t=>{const vis=Math.max(0,Math.min(t.text.length,rc-t.start));const inC=chunk&&chunk.w.indexOf(t.wi)>=0;
+      return {v:t.text.slice(0,vis),h:t.text.slice(vis),fw:t.bold?700:400,bg:(inC&&vis>0)?(t.wi===curW?tc:mix('#ffffff',col,.3)):'transparent'};})}));
+    const face=L.face==='shout'?"Bangers,'Irish Grover',cursive":"'Shantell Sans','Comic Sans MS',cursive";
+    return {disp:'block',left:Math.round(geo.bx-M),top:Math.round(geo.by-M),sw:w+2*M,sh:h+2*M,layers,tx:M,ty:M,w,h,padX:L.padX||0,padY:L.padY||0,font:face,fs:L.fontPx,lh:L.lh,
+      ink:kind==='whisper'?'#5a4f44':INK,ls:L.face==='shout'?'.02em':'0',cid:'cb'+String(it.id).replace(/[^a-z0-9]/gi,''),clipD:full,lines,opts:geo.opts||[],label:kind==='kayfabulate',op:(it.state==='leaving'||(o&&o.retired))?0:1,
+      ref:o&&o.noRef?null:this.refFor('bub-'+it.id,null,elx=>this.pop(elx,it)),ox:hlx==null?M+20:Math.round(hlx),oy:hly==null?M:Math.round(hly),
+      filter:s.rim==='ink'&&kind!=='ambient'?'drop-shadow(2px 3px 0 rgba(31,26,20,.24))':'none',z:kind==='choice'?7:(kind==='caption'||kind==='kayfabulate'?6:5),pe:kind==='choice'?'auto':'none'};}
+  pop(el,it){if(el.__bid===it.id)return;el.__bid=it.id;const k=this.speed();
+    if(it.kind==='shout')el.animate([{transform:'scale(.6) rotate(-6deg)',opacity:0},{transform:'scale(1.12) rotate(3deg)',opacity:1,offset:.5},{transform:'scale(.97) rotate(-1deg)',offset:.75},{transform:'scale(1) rotate(0deg)'}],{duration:230/k,easing:'ease-out'});
+    else el.animate([{transform:'scale(.82)',opacity:0},{transform:'scale(1.04)',opacity:1,offset:.65},{transform:'scale(1)',opacity:1}],{duration:170/k,easing:'cubic-bezier(.3,1.3,.5,1)'});}
+  choiceGeo(it,W,H,base,share,pad,c,placed,mobile,interactive){const C=window.KFB_CB,fs=Math.max(13,Math.round(base*.95)),padO=10,keyW=26,gap=8;
+    const maxW=mobile?W-2*pad:Math.min(Math.max(W*Math.max(share,.42),260),440),textMax=maxW-2*padO-keyW-34;
+    const rows=it.opts.map(o=>{const ls=C.wrapBalanced(o.text.replace(/\s+/g,' '),40,textMax,x=>C.measure(x,fs,'body'));return {ls,tw:Math.max(...ls.map(l=>C.measure(l,fs,'body'))),h:Math.max(44,Math.round(ls.length*fs*1.22+16))};});
+    const two=it.cols===2,cw=Math.max(...rows.map(r=>r.tw))+keyW+40,rh=Math.max(...rows.map(r=>r.h));
+    const w=two?Math.round(mobile?W-2*pad:Math.min(W-2*pad,2*cw+gap+2*padO)):Math.round(mobile?maxW:Math.min(maxW,Math.max(...rows.map(r=>r.tw))+2*padO+keyW+40)),h=two?2*rh+gap+2*padO:rows.reduce((a,r)=>a+r.h,0)+gap*(rows.length-1)+2*padO;
+    let bx,by;if(mobile){bx=pad;by=H-h-pad;}else{const r=this.place(w,h,c.hx,c.hy,W,H,placed,pad,22);bx=r.x;by=r.y;
+      const hit=placed.some(b=>bx<b.x+b.w+8&&bx+w+8>b.x&&by<b.y+b.h+8&&by+h+8>b.y);
+      const F=this._faces||[],onFace=F.some(f=>bx<f.x+f.w&&bx+w>f.x&&by<f.y+f.h&&by+h>f.y);
+      if(hit||onFace){by=H-h-pad;bx=c.hx>W/2?Math.max(pad,c.hx-36-w):Math.min(W-pad-w,c.hx+36);
+        const cov=c.hx>bx-10&&c.hx<bx+w+10&&c.hy>by-10;if(cov){bx=c.hx>W/2?Math.max(pad,c.hx-36-w):Math.min(W-pad-w,c.hx+36);}}}
+    let y=padO;const opts=rows.map((r,i)=>{const o=it.opts[i],T=TONES[o.tone],ow=two?(w-2*padO-gap)/2:w-2*padO,oh=two?rh:r.h,lx=two?padO+(i%2)*(ow+gap):padO,yy=two?padO+Math.floor(i/2)*(rh+gap):y;y+=r.h+gap;const pk=it.picked;
+      let st='position:absolute;left:'+lx+'px;top:'+yy+'px;width:'+ow+'px;height:'+oh+'px;display:flex;align-items:center;gap:10px;padding:0 10px;background:#fffaf0;border:2px solid #1f1a14;border-radius:4px;cursor:pointer;text-align:left;font-family:"Shantell Sans",cursive;font-size:'+fs+'px;line-height:1.22;color:#1f1a14;box-shadow:2px 3px 0 rgba(31,26,20,.35);transition:transform .16s, opacity .2s, background .14s';
+      const Wl='#b8956a',wall='1px 1.3px 0 '+Wl+', 2px 2.6px 0 '+Wl+', 3px 4px 0 '+Wl+', 3.75px 5px 0 #8a6a45, 6px 8px 8px rgba(50,30,12,.26)';
+      if(this.state.rim==='clayonly')st+=';border:none;border-radius:10px;box-shadow:inset 1.5px 2px 0 rgba(255,255,255,.8), inset -2px -3px 6px rgba(90,55,25,.2), '+wall;
+      else if(this.state.rim==='clay')st+=';box-shadow:'+wall;
+      if(pk===i)st+=';background:'+mix('#fffaf0',T.c,.4)+';transform:scale(1.03);box-shadow:3px 4px 0 #1f1a14';else if(pk>=0)st+=';opacity:.15;transform:translateY(6px)';
+      return {lines:r.ls.map(t=>({t})),key:String(i+1),kc:T.c,tone:T.l,style:st,on:interactive?()=>this.pick(it.id,i):null};});
+    return {L:{w,h,padX:0,padY:0,fontPx:fs,lh:1.22,face:'body',lines:[]},bx,by,hx:c.hx,hy:c.hy,opts};}
+  placeWord(it,g,W,H,castR,placed){const by={};castR.forEach(c=>by[c.who]=c);let cands=[];const bw=g.bw,bh=g.bh;
+    if(it.place==='contact'){const a=by.caveman||castR[0],t=by.host||castR[castR.length-1];if(a&&t){const x=(a.hx+t.hx)/2,y=(a.hy+t.hy)/2+(t.h*.2);cands=[[x,y],[x,y-bh*.35],[x+bw*.2,y],[x-bw*.2,y]];}}
+    else if(it.place&&it.place.indexOf('head:')===0){const c=by[it.place.slice(5)];if(c)cands=[[c.hx+bw*.5,c.hy-bh*.05],[c.hx-bw*.5,c.hy-bh*.05],[c.hx,c.hy-bh*.5]];}
+    else if(it.place==='trajectory')cands=[[W*.5,H*.3],[W*.5,H*.42]];
+    else cands=[[W*.5,H*.2],[W*.5,H*.3],[W*.5,H*.42]];
+    const top=Math.min(...castR.map(c=>c.hy));cands.push([W*.5,Math.max(bh*.4,top-bh*.35)],[W*.5,H*.22]);
+    // collision core = the readable lettering (+ small margin), not the whole burst — bursts may overlap bodies, letters may not cover faces
+    const cw=(g.tw||bw*.5)+g.fs*.4,chh=(g.th||bh*.4)+g.fs*.3,core=(x,y)=>({x:x-cw/2,y:y-chh/2,w:cw,h:chh}),hit=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
+    for(const [x0,y0] of cands){const x=Math.max(bw*.38+4,Math.min(W-bw*.38-4,x0)),y=Math.max(bh*.36+4,Math.min(H-bh*.36-4,y0)),r=core(x,y);
+      if(castR.some(c=>hit(r,c.face)))continue;if(placed.some(p=>hit(r,p)))continue;return {x:Math.round(x),y:Math.round(y)};}
+    return {omit:true};}
+  wordR(it,W,H,castR,placed){if(it.state==='hidden')return HW;const C=window.KFB_CB,fs=Math.round(Math.max(28,Math.min(58,W*.058))),g=C.comicWord(it.word,it.cls,fs,C.hash(it.word),this.state.rim,'cws'+it.id);
+    let p=this.wpos[it.id];if(!p||p.W!==W){p=this.placeWord(it,g,W,H,castR,placed);p.W=W;this.wpos[it.id]=p;}
+    if(p.omit)return HW;
+    return {disp:'block',cid:g.cid,clipD:g.clipD,x:p.x,y:p.y,ox:-Math.round(g.bw/2),oy:-Math.round(g.bh/2),bw:g.bw,bh:g.bh,layers:g.layers,letters:g.letters,fs:g.fs,fill:g.fill,stroke:g.stroke,shadow:g.shadow,rowTf:g.rowTf,rowShift:g.rowShift,op0:0,ref:this.refFor('w-'+it.id,null,el=>this.animWord(el,it))};}
+
+  tParts(){const s=this.state,C=window.KFB_CB,key=[s.tText,s.tKind,s.tPreset,s.tWpm].join('|');if(this._tp&&this._tp.key===key)return this._tp.parts;
+    const L0=C.layout(s.tText,s.tKind,{basePx:16});const texts=(L0.overflow&&L0.split)?L0.split:[s.tText];let start=0;
+    const parts=texts.map(t=>{const L=C.layout(t,s.tKind,{basePx:16}),sc=C.schedule(L,s.tPreset,{wpm:s.tWpm}),p={text:t,sched:sc,start,L};start+=sc.total+(s.tPreset==='instant'?2400:480);return p;});
+    this._tp={key,parts,total:start};return parts;}
+  streamItems(now){const s=this.state,parts=this.tParts(),el=s.tT0==null?null:now-s.tT0;let act=0;if(el!=null)parts.forEach((p,i)=>{if(el>=p.start)act=i;});
+    return parts.map((p,i)=>({type:'bubble',id:'t'+s.tRun+'-'+i,who:s.tKind==='kayfabulate'?'narrator':'host',kind:s.tKind,text:p.text,sched:s.tT0==null?null:p.sched,t0:s.tT0==null?0:s.tT0+p.start,state:i===act?'on':'hidden'}));}
+  tPlay(){const s=this.state;this.stop();this.tParts();const t0=performance.now()+150;this.setState({tT0:t0,tRun:s.tRun+1,now:performance.now()});
+    if(s.tVoice&&window.speechSynthesis&&window.SpeechSynthesisUtterance){const parts=this._tp.parts;let off=0;const map=[];
+      const txt=parts.map((p,pi)=>{map.push({off,pi});off+=p.L.plain.length+1;return p.L.plain;}).join(' ');
+      const u=new SpeechSynthesisUtterance(txt);u.rate=Math.max(.6,Math.min(1.6,s.tWpm/165));
+      u.onboundary=e=>{if(e.name&&e.name!=='word')return;let m=map[0];map.forEach(x=>{if(e.charIndex>=x.off)m=x;});const p=parts[m.pi],ci=e.charIndex-m.off;
+        const wi=p.L.words.findIndex(w=>ci>=w.start&&ci<=w.end);if(wi<0)return;const target=p.start+p.sched.voice[wi][0];this.setState({tT0:performance.now()-target});};
+      try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}}
+
+  /* ── lab ── */
+  labVals(){const C=window.KFB_CB,s=this.state;const VP={mobile:{w:360,base:14,share:.72,cols:1},tablet:{w:768,base:15,share:.5,cols:2},desktop:{w:1200,base:16,share:.38,cols:3}}[s.vp];
+    const inner=VP.w-34,cardW=Math.floor((inner-12*(VP.cols-1))/VP.cols);const kinds=['speech','thought','whisper','shout','caption','kayfabulate','choice','ambient'];
+    const specimens=kinds.map((kind,ki)=>{const KM=KIND_META[kind],K=C.KINDS[kind],maxPx=Math.min(VP.w*VP.share,cardW-28);let badge='',bl=[],stH=160,ax=0,ay=0,hasAnchor=!!KM.who;
+      const who=KM.who,col=who?CHARS[who].color:'#c9a46a';
+      if(kind==='choice'){const it={kind:'choice',id:'lab-c',who:'host',opts:CHOICE_SETS[s.len],picked:-1,state:'on'};
+        const probe=this.choiceGeo(it,cardW,600,VP.base,VP.share,10,{hx:cardW/2,hy:600},[],cardW<330,false);const w=probe.L.w,h=probe.L.h;
+        ax=s.edge?20:Math.round(cardW*.62);const top=14;ay=top+h+42;stH=ay+26;
+        const geo=this.choiceGeo(it,cardW,stH,VP.base,VP.share,10,{hx:ax,hy:ay},[],false,false);geo.bx=Math.max(8,Math.min(cardW-8-w,ax-w/2));geo.by=top;geo.hx=ax;geo.hy=ay;
+        bl=[this.bubbleR(it,geo,0,{noRef:true})];}
+      else{let text=SPEC_TEXT[kind][s.len];const L0=C.layout(text,kind,{basePx:VP.base,maxPx});
+        if(L0.overflow){if(L0.split){text=L0.split[0];badge='Überlauf → 2 Blasen · 1/2';}else badge='zu lang · kürzen';}
+        const L=C.layout(text,kind,{basePx:VP.base,maxPx});const it={kind,id:'lab-'+kind,who,text,sched:null,state:'on'};
+        if(kind==='caption'||kind==='kayfabulate'){const top=kind==='kayfabulate'?24:14;stH=top+L.h+26;bl=[this.bubbleR(it,{L,bx:12,by:top,hx:null,hy:null},0,{noRef:true})];}
+        else{const gap=kind==='thought'?Math.round(C.thinkTrailLen(L.w,L.h)+L.h*.15+14):(kind==='shout'?36:30),top=14;ax=s.edge?20:Math.round(cardW/2+(kind==='ambient'?-20:24));ay=top+L.h+gap;stH=ay+26;
+          const bx=Math.max(8,Math.min(cardW-8-L.w,ax-L.w/2));bl=[this.bubbleR(it,{L,bx,by:top,hx:ax,hy:ay},0,{noRef:true})];}}
+      const meta=(K.chars)+' Z · '+K.lines+' Zl · '+KM.tail+' · '+Math.max(11,Math.round(VP.base*K.fs))+' px';
+      return {name:KM.name,meta,stH:Math.round(stH),hasAnchor,ax,ay,nub:mix('#e9d6b0',col,.55),bl,badge,note:SPEC_NOTES[kind]};});
+    const scale=Math.min(1,(s.labW||VP.w)/VP.w),outerH=Math.ceil((s.labH||800)*scale)+2,offX=Math.max(0,Math.round(((s.labW||VP.w)-VP.w*scale)/2));
+    return {simW:VP.w,scale,outerH,offX,cols:'repeat('+VP.cols+',minmax(0,1fr))',specimens,title:{mobile:'Mobile · 360 px',tablet:'Tablet · 768 px',desktop:'Desktop · 1200 px'}[s.vp],
+      meta:'Grundschrift '+VP.base+' px · Blase ≤ '+Math.round(VP.share*100)+' % Breite · Boden 11 px'};}
+
+  seg(list,cur,on){const mh=this.state.bp==='mobile'?44:36;return list.map(([v,l])=>({label:l,on:()=>on(v),style:'font-size:13px;font-weight:500;padding:6px 11px;min-height:'+mh+'px;border-radius:7px;cursor:pointer;white-space:nowrap;'+(v===cur?'background:#e2b33c;color:#1b1815;border:1px solid #e2b33c':'background:#25211d;color:#d9cfbf;border:1px solid #3a342d')}));}
+  tog(on){const mh=this.state.bp==='mobile'?44:36;return 'font-size:13px;font-weight:500;padding:6px 11px;min-height:'+mh+'px;border-radius:7px;cursor:pointer;'+(on?'background:#3b3226;color:#f3d27a;border:1px solid #e2b33c':'background:#25211d;color:#a99c88;border:1px solid #3a342d');}
+  setTab(t){const tri=x=>x==='triplet'||x==='review',was=tri(this.state.tab);if(was&&tri(t)){this.setState({tab:t});return;}if(was&&t==='export'){this.setState({tab:t});return;}
+    this.stop();this.wpos={};this.setState({tab:t,items:[],status:'bereit',tT0:null,a3:{}},()=>{if(tri(t)){this.tSetup();return;}if(this.s3){this.s3.setCard(null);this.s3.setCast(this.castFor(t));}if(t==='stage'||t==='dialogue')this.run();});}
+
+  renderVals(){
+    const s=this.state,C=window.KFB_CB,ready=!!(C&&s.ready),bp=s.bp,now=s.now||performance.now();
+    const stageVisible=['triplet','review','stage','dialogue','words','stream'].indexOf(s.tab)>=0;
+    let S={H:420,castR:[],bubbles:[],words:[]},omitted=false;
+    if(ready&&stageVisible){const W=s.stageW,H=Math.round(W*(W<560?1.12:W<900?.64:.5625)),base=W<520?14:W<900?15:16,share=W<560?.72:W<900?.5:.38,pad=W<560?10:W<900?14:18;
+      const charH=Math.min(H*.46,W*.36),gy=H*.9;
+      const castR=this.castFor(s.tab).map((c,i)=>{const D=CHARS[c.who],h=charH*D.hs,w=h*D.ar,left=c.x*W-w/2,top=gy-h;
+        return {who:c.who,imgStyle:'width:100%;height:100%;background:url("'+D.img+'") center bottom/contain no-repeat',label:D.label,left:Math.round(left),top:Math.round(top),w:Math.round(w),h:Math.round(h),shL:Math.round(w*.12),shW:Math.round(w*.76),
+          bobRef:this.refFor('bob-'+s.tab+'-'+c.who,el=>this.bob(el,i)),sqRef:this.refFor('sq-'+s.tab+'-'+c.who,null,el=>{this.charEls[c.who]=el;}),
+          hx:left+D.ax*w,hy:top+D.ay*h,face:{x:left+D.face[0]*w,y:top+D.face[1]*h,w:D.face[2]*w,h:D.face[3]*h}};}).map(c=>{
+          const a=s.dim==='3d'&&s.a3[c.who];return a?Object.assign({},c,{hx:a.hx,hy:a.hy,face:a.face}):c;});
+      const by={};castR.forEach(c=>by[c.who]=c);const placed=[];let colY=pad;this._faces=castR.map(c=>c.face);
+      const items=s.tab==='stream'?this.streamItems(now):s.items;
+      const bub=items.filter(it=>it.type==='bubble'),geos=new Array(bub.length),retired=new Array(bub.length).fill(false);
+      const hit=(a,b)=>a.x<b.x+b.w+6&&a.x+a.w+6>b.x&&a.y<b.y+b.h+6&&a.y+a.h+6>b.y,scr=k=>k==='caption'||k==='kayfabulate';
+      const colMax=who=>{const c=by[who];if(!c)return W*share;let nd=1e9;castR.forEach(q=>{if(q.who!==who)nd=Math.min(nd,Math.abs(q.hx-c.hx));});return Math.min(W*share,Math.max(170,nd*1.8));};
+      const gapOf=(k,L)=>k==='thought'?Math.round(C.thinkTrailLen(L.w,L.h)+L.h*.15+10):(k==='ambient'?18:(k==='shout'?26:22));
+      bub.forEach((it,i)=>{if(it.state==='hidden'||!scr(it.kind))return;const L=C.layout(it.text,it.kind,{basePx:base,maxPx:W*Math.max(share,.5)}),byy=colY+(it.kind==='kayfabulate'?12:0);
+        if(it.state==='on')colY=byy+L.h+14;geos[i]={L,bx:pad,by:byy,hx:null,hy:null};if(it.state==='on')placed.push(this.zoneOf(geos[i]));});
+      for(let i=bub.length-1;i>=0;i--){const it=bub[i];if(it.state==='hidden'||scr(it.kind)||it.kind==='choice')continue;
+        const c=by[it.who]||{hx:W/2,hy:H*.5},L=it.tri?this.triL(it,base,colMax(it.who)):C.layout(it.text,it.kind,{basePx:base,maxPx:colMax(it.who)});geos[i]=this.placeOwn(L,c,W,H,pad,gapOf(it.kind,L));
+        if(it.state!=='on')continue;const z=this.zoneOf(geos[i]);if(placed.some(p=>hit(z,p)))retired[i]=true;else placed.push(z);}
+      bub.forEach((it,i)=>{if(it.state==='hidden'||it.kind!=='choice')return;geos[i]=this.choiceGeo(it,W,H,base,share,pad,by[it.who]||(it.who==='player'?{hx:W/2,hy:H-6}:{hx:W*.7,hy:H*.45}),placed,W<560,true);if(it.state==='on')placed.push(this.zoneOf(geos[i]));});
+      const bubbles=bub.map((it,i)=>(it.state==='hidden'||!geos[i])?HB:this.bubbleR(it,geos[i],now,{hl:s.tab==='stream'?s.tHl:true,retired:retired[i]}));
+      const words=items.filter(it=>it.type==='word').map(it=>{const r=this.wordR(it,W,H,castR,placed);if(it.state==='on'&&this.wpos[it.id]&&this.wpos[it.id].omit)omitted=true;return r;});
+      S={H,castR:s.dim==='3d'?[]:castR,bubbles,words};}
+
+    const scen=SCEN.find(x=>x.id===s.scen)||SCEN[0];
+    const rimSeg=this.seg([['clay','Clay'],['clayonly','Clay pur'],['ink','Ink'],['slab','Slab']],s.rim,v=>this.setState({rim:v}));
+    const tabs=[['triplet','Triplet-Bühne'],['review','Triplet-Review'],['stage','Bühne'],['dialogue','Dialog'],['bubbles','Blasen-Familie'],['words','Comic-Wörter'],['stream','Stream · TTS'],['export','Spec · Export']].map(([v,l])=>({label:l,on:()=>this.setTab(v),
+      style:'font-size:14px;font-weight:'+(v===s.tab?600:500)+';padding:8px 14px;min-height:'+(bp==='mobile'?44:38)+'px;border-radius:8px;cursor:pointer;white-space:nowrap;border:1px solid '+(v===s.tab?'#e2b33c':'transparent')+';background:'+(v===s.tab?'#2e271f':'transparent')+';color:'+(v===s.tab?'#f3d27a':'#cfc3ae')}));
+    const scenList=SCEN.map(x=>({n:x.n,title:x.title,on:()=>this.setState({scen:x.id},()=>this.run()),
+      style:'display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:8px 12px;min-height:'+(bp==='mobile'?44:38)+'px;border-radius:8px;cursor:pointer;'+(x.id===s.scen?'background:#e2b33c;color:#1b1815;border:1px solid #e2b33c':'background:#25211d;color:#d9cfbf;border:1px solid #3a342d')}));
+    const exchList=Object.keys(EXCH).map(k=>({label:EXCH[k].label,on:()=>this.setState({exch:k},()=>this.run()),
+      style:'text-align:left;font-size:13px;font-weight:500;padding:9px 12px;min-height:42px;border-radius:8px;cursor:pointer;'+(k===s.exch?'background:#e2b33c;color:#1b1815;border:1px solid #e2b33c':'background:#25211d;color:#d9cfbf;border:1px solid #3a342d')}));
+    const dSteps=['NPC-Zeile streamt','Antworten öffnen (bedienbare Blase)','Auswahl stempelt, Rest fällt weg','Wahl wird Player-Blase · NPC reagiert','fertig'].map((l,i)=>({label:(i+1)+' · '+l,
+      style:'font-size:12px;padding:6px 9px;border-radius:6px;'+((s.dstep===i+1||(i===3&&s.dstep===4))?'background:#3b3226;color:#f3d27a':'color:#a99c88')}));
+
+    let lab={simW:360,scale:1,outerH:200,offX:0,cols:'1fr',specimens:[],title:'',meta:''};if(ready&&s.tab==='bubbles')lab=this.labVals();
+
+    let tiles=[];if(ready&&s.tab==='words'){const fsT=bp==='mobile'?24:28;tiles=Object.keys(WORDS).map(cls=>({title:WINFO[cls].k,sub:WINFO[cls].sub,words:WORDS[cls].map(w=>{const g=C.comicWord(w,cls,fsT,C.hash(w),s.rim,'cwt'+C.hash(cls+w)),sel=s.wordSel===cls+':'+w;
+      return {word:w,cid:g.cid,clipD:g.clipD,x:Math.round(g.bw/2),y:Math.round(g.bh/2),ox:-Math.round(g.bw/2),oy:-Math.round(g.bh/2),bw:g.bw,bh:g.bh,layers:g.layers,letters:g.letters,fs:g.fs,fill:g.fill,stroke:g.stroke,shadow:g.shadow,rowTf:g.rowTf,rowShift:g.rowShift,
+        style:'position:relative;width:'+g.bw+'px;height:'+g.bh+'px;padding:0;background:transparent;cursor:pointer;border-radius:12px;border:2px '+(sel?'dashed #e2b33c':'solid transparent'),
+        ref:this.refFor('tile-'+cls+w,null,el=>{(this.tileEls||(this.tileEls={}))[cls+':'+w]=el;}),
+        on:()=>{const el=this.tileEls&&this.tileEls[cls+':'+w];if(el){el.getAnimations().forEach(a=>a.cancel());const K=C.wordKeyframes(cls,this.speed());el.animate(K.frames,{duration:K.duration,easing:'cubic-bezier(.25,.9,.35,1)'});}
+          this.setState({wordSel:cls+':'+w});this.addWord(w,cls,{impact:'contact',movement:'trajectory',reaction:'head:host',reward:'stage-top'}[cls]);}};})}));}
+    const wordRules=ready?Object.keys(WINFO).map(cls=>{const M=C.WORD[cls].motion;return {k:WINFO[cls].k,v:WINFO[cls].v,c1:C.WORD[cls].fill,c2:C.WORD[cls].deep,t:'Ein '+M.enter+' · Halten '+M.hold+' · Ab '+M.exit+' ms · SFX '+C.WORD[cls].sfx};}):[];
+
+    let tl={pills:[],divs:[],ph:0,totalLabel:'',legend:''};
+    if(ready&&s.tab==='stream'){const parts=this.tParts(),total=Math.max(1,this._tp.total),el=s.tT0==null?null:now-s.tT0;
+      parts.forEach((p,pi)=>{if(pi>0)tl.divs.push({l:(p.start/total*100).toFixed(2)});p.sched.chunks.forEach(c=>{const a=p.start+c.t0,b=p.start+c.t1,act=el!=null&&el>=a&&el<b+120,emph=c.w.some(i=>p.L.words[i].bold);
+        tl.pills.push({l:(a/total*100).toFixed(2),w:Math.max(.8,(b-a)/total*100).toFixed(2),label:c.w.map(i=>p.L.plain.slice(p.L.words[i].start,p.L.words[i].end)).join(' '),bg:act?'#e2b33c':(emph?'#f0c2a0':'#d8c7a3')});});});
+      tl.ph=el==null?0:Math.min(100,el/total*100).toFixed(2);tl.totalLabel=(total/1000).toFixed(1)+' s · '+parts.length+(parts.length>1?' Blasen (Satzgrenze)':' Blase');
+      tl.legend={instant:'instant: alles bei t = 0, Standzeit nach Lesezeit.',typewriter:'typewriter: 34 Zeichen/s, +120 ms Komma, +280 ms Satzende, +360 ms Ellipse.',chunked:'chunked: Phrasen erscheinen ganz, Dauer aus Silben × Tempo, Pause aus Satzzeichen.','tts-follow':'tts-follow: Wörter erscheinen 140 ms vor der Stimme, Betonung +25 %, gesprochener Chunk markiert.'}[s.tPreset];}
+
+    let exports=[];if(ready&&s.tab==='export'){const ex=EXCH[s.exch],spk=w=>w==='host'?'player.host':'resident.'+w,[wc,ww]=s.wordSel.split(':'),Wd=C.WORD[wc];
+      const pres={schema:'kfb.dialogue-presentation.v1',presentationOnly:true,owner:'consumer runtime (World Studio / ChatterBox). Dieses JSON beschreibt nur die Darstellung.',
+        speaker:spk(ex.npc),bubbleKind:'speech',text:ex.line,emphasis:C.emphasisOf(ex.line),
+        choices:ex.options.map((o,i)=>({id:'c'+(i+1),key:String(i+1),tone:o.tone,text:o.text})),
+        reactionBeat:ex.options.map((o,i)=>({onChoice:'c'+(i+1),playerBubble:{speaker:'player.host',bubbleKind:'speech',text:o.text},beats:o.react.map(r=>r.say?{speaker:spk(r.say[0]),bubbleKind:r.say[1],text:r.say[2]}:{comicWord:r.word[0],class:r.word[1],placementPreset:r.word[2]})})),
+        timingProfile:{revealCps:34,holdBaseMs:800,holdPerCharMs:42,holdCapMs:5000,exitMs:220,minTotalMs:1200,interactiveBubble:'steht bis zur Spielerauswahl'},
+        streamMode:s.stream,anchorMode:{target:'head-top',deadZonePx:44,lazy:0.10,tailPx:[14,34],tailFootBand:[0.32,0.68]},
+        layout:{maxCharsPerLine:28,maxLines:3,wrap:'balanced',overflow:'split-at-sentence (…/…)'}};
+      const cw={schema:'kfb.comic-word.v1',event:{impact:'combat.hit',movement:'move.dash',reaction:'social.react',reward:'reward.grant'}[wc],word:ww,class:wc,
+        inkPreset:'kfb-ink/'+wc+' · rim '+s.rim,placementPreset:Wd.place,motionPreset:wc+'.enter-hold-exit',duration:{enterMs:Wd.motion.enter,holdMs:Wd.motion.hold,exitMs:Wd.motion.exit,totalMs:Wd.motion.enter+Wd.motion.hold+Wd.motion.exit},
+        priority:{impact:3,reward:2,reaction:1,movement:1}[wc],rules:{maxReadableWords:1,newWordCutsOld:true,omitIfNoSafePlacement:true,protect:['face','eyes','bubble','ui','contact']},sfxCue:Wd.sfx};
+      const em={schema:'kfb.emote-overlay.v1',symbol:'blitz',glyph:'O',class:'wut',anchor:'head-side',motion:'pop-wobble',durationMs:900,
+        font:'PottyMouth BB (Live-Lizenz offen → Fallback: getippte Grawlix)',source:'overworld/overworld/chatter-2d.js · KEY / EMOTE_BY_MOOD',rule:'ein Emote je Blase'};
+      const cp=(k,j)=>()=>{try{navigator.clipboard.writeText(j);}catch(e){}this.setState({copied:k});setTimeout(()=>this.setState({copied:''}),1400);};
+      exports=[['kfb.dialogue-presentation.v1','aus Exchange »'+ex.label+'« · Stream-Modus der Bühne',pres],['kfb.comic-word.v1','aus dem gewählten Wort »'+ww+'«',cw],['kfb.emote-overlay.v1','optional · Pottymouth-Schlüssel',em]]
+        .map(([sc,sub,o])=>{const j=JSON.stringify(o,null,2);return {schema:sc,sub,json:j,copy:cp(sc,j),copyLabel:s.copied===sc?'kopiert':'Kopieren'};});}
+
+    const stageMax=(s.tab==='dialogue'&&s.phone)?'390px':'100%';
+    const grid=bp==='desktop'?'minmax(0,1fr) 340px':'minmax(0,1fr)';
+    let statusTitle='',statusLine='';
+    if(this.isTriTab()){const [pa,pb]=PAIRS[s.pair];statusTitle=RES[pa].name+' × '+RES[pb].name+' · '+CARDS[s.pair].name;statusLine=(s.kErr?'Kernel-Fehler: '+s.kErr:s.status)+' · Seed '+s.seed;}
+    else if(s.tab==='stage'){statusTitle=scen.n+' · '+scen.title;statusLine=s.status+(omitted?' · Wort ausgelassen (kein sicherer Platz)':'');}
+    else if(s.tab==='dialogue'){statusTitle='Exchange · '+EXCH[s.exch].label;statusLine=s.status;}
+    else if(s.tab==='words'){statusTitle='VFX-Bank';statusLine=omitted?'Wort ausgelassen: kein sicherer Platz':'Wort antippen: es spielt am Platz seiner Klasse';}
+    else if(s.tab==='stream'){statusTitle='TTS-Vorschau · '+s.tPreset;statusLine=s.tT0==null?'Abspielen startet den Stream; ohne Abspielen zeigt die Blase den fertigen Text':(s.tVoice?'Browser-Stimme synchronisiert über Wortgrenzen':'simulierte Stimme · Silben × Tempo');}
+
+    return {
+      ...this.triVals(),
+      dimSeg:this.seg([['3d','3D'],['2d','2D']],s.dim,v=>this.setState({dim:v})),s3Ref:this.refFor('s3host',null,el=>this.mount3d(el)),
+      s3disp:s.dim==='3d'?'block':'none',s3busy:s.dim==='3d'&&s.s3status!=='bereit',s3status:s.s3status,
+      rimSeg,toggleDots:()=>this.setState({dots:!s.dots}),dotsStyle:this.tog(s.dots),toggleSound:()=>this.setState({sound:!s.sound}),soundStyle:this.tog(s.sound),
+      tabs,gridCols:grid,pagePad:bp==='mobile'?10:bp==='tablet'?14:18,
+      stageVisible,isStage:s.tab==='stage',isDialogue:s.tab==='dialogue',isBubbles:s.tab==='bubbles',isWords:s.tab==='words',isStream:s.tab==='stream',isExport:s.tab==='export',
+      stageMax,stageRef:this.refFor('stage',null,el=>{this.stageEl=el;if(this._sEl!==el){this._sEl=el;if(this.ro)this.ro.disconnect();this.ro=new ResizeObserver(en=>{const w=Math.round(en[0].contentRect.width);if(w&&Math.abs(w-this.state.stageW)>=1){this.wpos={};this.setState({stageW:w});}});this.ro.observe(el);}}),
+      S,statusTitle,statusLine,scenList,scenDesc:scen.desc,replay:()=>this.run(),stopAll:()=>{this.stop();this.setState({status:'gestoppt'});},
+      streamSeg:this.seg([['instant','instant'],['typewriter','typewriter'],['chunked','chunked'],['tts-follow','tts-follow']],s.stream,v=>this.setState({stream:v},()=>this.run())),
+      exchList,dSteps,toneLegend:Object.keys(TONES).slice(0,7).map(k=>TONES[k]),togglePhone:()=>this.setState({phone:!s.phone}),phoneStyle:this.tog(s.phone),
+      lenSeg:this.seg([[0,'Kurz'],[1,'Mittel'],[2,'Lang'],[3,'Überlauf']],s.len,v=>this.setState({len:v})),
+      vpSeg:this.seg([['mobile','Mobile'],['tablet','Tablet'],['desktop','Desktop']],s.vp,v=>this.setState({vp:v})),
+      toggleEdge:()=>this.setState({edge:!s.edge}),edgeStyle:this.tog(s.edge),lab,
+      labWrapRef:this.refFor('labwrap',null,el=>{if(this._lwEl!==el){this._lwEl=el;if(this.ro2)this.ro2.disconnect();this.ro2=new ResizeObserver(()=>{const w=Math.round(this._lwEl.getBoundingClientRect().width);const fh=this._lfEl?this._lfEl.offsetHeight:0;const p={};if(w&&w!==this.state.labW)p.labW=w;if(fh&&fh!==this.state.labH)p.labH=fh;if(Object.keys(p).length)this.setState(p);});this.ro2.observe(el);if(this._lfEl)this.ro2.observe(this._lfEl);}}),
+      labFrameRef:this.refFor('labframe',null,el=>{if(this._lfEl!==el){this._lfEl=el;if(this.ro2)this.ro2.observe(el);}}),
+      rules:[{k:'Eine Grammatik, acht Register',v:'Form trägt Modus und Lautstärke, Schrift trägt nur Betonung (*fett*), Pause (…) und Abbruch (--). Keine Kursiv- oder Großbuchstaben-Regeln.'},
+        {k:'Außen Clay, innen Ink',v:'Lehmrand mit stabilem Rauschen (kein Flackern), darunter Papier mit Halbton-Ecke, darauf die schwarze Feder #1f1a14. Variante Ink = Kanon ohne Lehm, Slab = dunkle Unterseite wie die Combat-Karten.'},
+        {k:'Geometrie vor Streaming',v:'Die Kontur wird einmal aus dem vollen Text gemessen; der Text läuft in die fertige Blase. Streaming ändert den Inhalt, nie die Form.'},
+        {k:'Ausgeglichener Umbruch',v:'Kleinste Zeilenzahl, gleich lange Zeilen (DP über Quadratsummen, in Pixeln gemessen). Überlauf teilt an der Satzgrenze in zwei Blasen, sonst Ablehnung.'},
+        {k:'Farbcode statt Namensschild',v:'Papier trägt 15 % der Sprecherfarbe, der Lehmrand 40 %. Wer spricht, steht unter der Blase.'},
+        {k:'Zipfel',v:'Kurze Schnur 14–34 px, Fuß im mittleren Band 32–68 %, zielt auf den Kopfanker. Am Bildrand wird die Blase geklemmt, der Zipfel nicht.'}],
+      respRows:[{k:'< 640',v:'Mobile: Bühne 1 : 1,12, Grundschrift 14 px, Blase ≤ 72 % Breite, Ränder 10 px, Antworten als Bottom-Sheet, Ziele ≥ 44 px.'},
+        {k:'640–1023',v:'Tablet: Bühne 16 : 10, 15 px, Blase ≤ 50 %, Ränder 14 px, Panel unter der Bühne.'},
+        {k:'≥ 1024',v:'Desktop: Bühne 16 : 9, 16 px, Blase ≤ 38 % (Kanon), Ränder 18 px, Panel rechts 340 px.'},
+        {k:'Kollision',v:'Kandidaten mittig / links / rechts über dem Kopf; sonst über die belegte Blase stapeln, sonst seitlich ausweichen. Immer in der Bühne geklemmt.'},
+        {k:'Boden',v:'Schrift nie unter 11 px. Ruf 1,35 ×, Flüstern 0,85 ×, Ambient 0,82 ×.'}],
+      tiles,wordRules,
+      tPresetSeg:this.seg([['instant','instant'],['typewriter','typewriter'],['chunked','chunked'],['tts-follow','tts-follow']],s.tPreset,v=>this.setState({tPreset:v,tT0:null})),
+      tKindSeg:this.seg([['speech','Rede'],['kayfabulate','Kayfabulate']],s.tKind,v=>this.setState({tKind:v,tT0:null})),
+      tWpm:s.tWpm,onWpm:e=>this.setState({tWpm:+e.target.value,tT0:null}),tText:s.tText,onText:e=>this.setState({tText:e.target.value,tT0:null}),
+      toggleVoice:()=>this.setState({tVoice:!s.tVoice}),voiceStyle:this.tog(s.tVoice),toggleHl:()=>this.setState({tHl:!s.tHl}),hlStyle:this.tog(s.tHl),
+      tPlay:()=>this.tPlay(),tStop:()=>{this.stop();this.setState({tT0:null});},tl,
+      tNotes:[{k:'Lesetempo ≠ Stream-Tempo',v:'Reveal 34 Zeichen/s (v13). Standzeit danach: 800 ms + 42 ms je Zeichen, Deckel 5 s, Abgang 220 ms, mindestens 1,2 s.'},
+        {k:'Pausen aus Satzzeichen',v:'Komma 170 · Doppelpunkt 240 · Satzende 380 · Ellipse 520 · Abbruch 160 ms. Keine neue Markierung, die drei Kanon-Zeichen reichen.'},
+        {k:'Kein Layout-Springen',v:'Ungezeigte Zeichen stehen unsichtbar im Satz. Zeilen, Breite und Zipfel bleiben vom ersten Frame an stehen.'},
+        {k:'Browser-Stimme',v:'Optional. Jede Wortgrenze der Stimme setzt die Uhr neu; ohne Stimme rechnet die Simulation.'}],
+      exports,
+      owners:[{m:'JA',c:'#7fc46a',v:'Darstellung: Blasenform, Lettering, Zipfel, Anker, Streaming-Optik, Comic-Wörter, Exportbeschreibungen.'},
+        {m:'NEIN',c:'#e5563d',v:'Dialog-Backend, Questzustand, Combat-Treffer, World-Owner, NPC-KI, TTS-Engine. Die Fixtures hier sind Testtexte, keine Inhalte.'},
+        {m:'↗',c:'#e2b33c',v:'Inhalt kommt aus chatter-2d.js / chatter-phrases.js, Verhalten aus mob-ai.js, Anlass vom jeweiligen Spielhost.'}]
+    };
+  }
+}
+</script>
+</body>
+</html>
