@@ -18,13 +18,15 @@ It does **not** mean:
 - no crash-safe checkpoints;
 - no internal sequencing.
 
-The WSA/Codex executor may and should checkpoint implementation/evidence/Return state after meaningful internal steps, but it must continue through the integration plan without handing Georg a new "next gate" after each successful checkpoint.
+The WSA/Codex executor checkpoints at coherent phase boundaries (implementation milestone, material evidence milestone, final Return), but continues through the integration plan without handing Georg a new "next gate" after each successful internal step.
 
-Stop only for:
+Parent One-Shot STOP is allowed only for:
 - a real source/owner contradiction;
-- a genuinely missing required source;
+- a genuinely missing **outcome-critical** source;
 - a concrete Georg product decision that cannot be inferred or quarantined;
-- two failed repair passes on the same blocking seam.
+- a Production Guard finding that the named integrated outcome itself is blocked.
+
+Two non-improving repairs freeze the **smallest failing seam**, not the whole One-Shot.
 
 Optional defects are quarantined rather than turned into new MVP gates.
 
@@ -38,7 +40,7 @@ INDEPENDENT EXECUTION
 - Builder / Integrator: WSA / Codex integration executor.
 - Integration Tester: deterministic/browser evidence producer; no product-impact classification.
 - Independent Critic: existing External Critic / Whole-Game Critic; no production writes.
-- Production Guard: separate read-only classifier for CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+- Production Guard: short independent read-only routing role inside the same run by default; CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
 - Only production writer: Builder / Integrator.
 - STOP authority: Production Guard only.
 - Two-repair scope: smallest failing seam.
@@ -287,12 +289,15 @@ Then publish one direct KFB Stage/Site review route and give Georg the integrate
 
 ## Internal checkpoint rule
 
-After A/B/C/... checkpoints:
-- commit;
-- test;
-- update Return/Recovery;
-- verify exact head;
+A/B/C/... are implementation phases, not mandatory write ceremonies.
+
+At a coherent phase boundary:
+- persist the implementation milestone when useful;
+- persist material evidence when it changes what is known;
+- verify the exact head after actual GitHub writes;
 - continue automatically.
+
+Do not rewrite Return/Recovery after every small test. Finalize Return at the handoff milestone.
 
 Do **not** stop and ask Georg to start another tool merely because a checkpoint is green.
 
