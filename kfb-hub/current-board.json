@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.4",
-  "updatedAt": "2026-10-05T22:54:00+02:00",
+  "revision": "2026-10-05.5",
+  "updatedAt": "2026-10-05T22:56:30+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · Hub recovery reopened",
-    "note": "Production Hub recovery is P0 and active. GitHub Issues remain the job list. #361 is HUMAN FAIL / blocked: design + controls/playability + audio regressions; do not ask Georg to replay the failed candidate."
+    "label": "CURRENT · RECOVERY MODE",
+    "note": "Production incident: Hub recovery is P0; World Studio and Platformer/Combat are HUMAN FAIL / blocked. No further Georg replay of failed candidates. Recover proven baselines before feature expansion."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,18 +26,18 @@
     },
     {
       "id": "issue-360-world-studio",
-      "title": "#360 · World Studio · vier Inseln frei spielen",
-      "summary": "P0 · waiting-human. Alle vier Inseln frei spielen und direkt im Issue notieren, was funktioniert und was stört. Repariert wird danach nur beobachteter Produktbedarf.",
-      "badge": "P0 · waiting-human",
+      "title": "#360 · HUMAN FAIL · World Studio",
+      "summary": "P0 · blocked. Site bleibt bei „Loading 3D engine“ hängen; nicht spielbar. Sichtbare Richtung ebenfalls nicht akzeptiert. Erst Boot + playable core intern beweisen, dann wieder Georg.",
+      "badge": "P0 · HUMAN FAIL · blocked",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "Georg · human freeplay/review",
-      "nextExecutor": "ChatGPT Work/WSA · only after TUNE/FAIL"
+      "executor": "ChatGPT Work/WSA · runtime/product recovery",
+      "nextExecutor": "Georg · only after visible world load + playable core"
     },
     {
       "id": "issue-361-combat",
       "title": "#361 · HUMAN FAIL · Platformer / Card-Hex Combat",
-      "summary": "P0 · blocked. Nicht spielbar: Design-Regress, Controls/Spielbarkeit FAIL und zusätzliche Audio-Bugs. Gegen die frühere Combat-Arena-Baseline recovern; kein weiterer Georg-Test des failed candidate.",
+      "summary": "P0 · blocked. Nicht spielbar: Design-Regress, Controls/Spielbarkeit FAIL und zusätzliche Audio-Bugs. Gegen die frühere Combat-Arena-Baseline recovern; failed candidate nicht weiter testen.",
       "badge": "P0 · HUMAN FAIL · blocked",
       "action": "Issue #361 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
