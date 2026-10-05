@@ -106,3 +106,18 @@ EyeRig durable TODO:
 
 Static Hub board publication still follows the existing low-cost `PUBLISH_ONLY` runbook. This chat changed only the deterministic data source and Control CURRENT record; it does not claim a new Site deployment.
 
+
+## 2026-10-05 · SUPERSESSION · GitHub Issues are now the job list
+
+New coordination decision supersedes the earlier assumption that Production Hub / Production Control must be refreshed between every job.
+
+Current operating model:
+- GitHub Issues = active job list;
+- #360 World Studio + #361 Combat = P0 / waiting-human;
+- #362 Triplet Stage = parallel / waiting-human;
+- Production Hub = optional orientation;
+- Production Control = private archive/history;
+- ToolBox = specialist-tool router.
+
+Hub board source is reconciled at revision `2026-10-05.1`. No new Site deployment is claimed from this chat. Future jobs do **not** require another Hub/Control round unless the issue workflow itself proves insufficient.
+
