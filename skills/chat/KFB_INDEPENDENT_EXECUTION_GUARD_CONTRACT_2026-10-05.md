@@ -1,6 +1,6 @@
 # KFB Independent Execution Guard Contract · 2026-10-05
 
-Status: **CURRENT BINDING ORCHESTRATION RULE v1.1**
+Status: **CURRENT BINDING ORCHESTRATION RULE v1.2**
 Owner: Georg / KFB
 Applies to: substantial Integration / Work / WSA / One-Shot / productive recovery / promotion candidates.
 
@@ -14,6 +14,22 @@ Default inside one substantial run:
 Do not create a separate PR, Site, user-facing job or long critique cycle merely because Critic/Guard roles exist.
 
 Use a separate external/model session only when the current environment cannot provide independent context, a high-risk destructive/promotion action needs stronger separation, or Georg explicitly asks.
+
+
+### Explicit Georg independence mode · binding
+
+When Georg explicitly asks for an **independent / unwitting / external critic**, the lightweight same-run role split is **not sufficient**.
+
+Required:
+- separate fresh context/process/agent invocation;
+- no Builder transcript, hidden reasoning, self-score or repair list;
+- no production-write permission;
+- critic prompt + agent/session identity persisted;
+- critic opens the candidate itself where the environment supports product access;
+- critic captures its own visual/runtime evidence rather than merely accepting Builder screenshots;
+- if real product access or fresh-context separation is unavailable, report `CRITIC_NOT_RUN`; do not substitute Builder self-review and do not route the candidate to Georg as QA-complete.
+
+A common orchestrator may spawn the critic, but the critic's working context must be isolated from the Builder context.
 
 ## 2 · Prime rule
 
