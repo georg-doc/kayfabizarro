@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.8",
-  "updatedAt": "2026-10-05T23:06:00+02:00",
+  "revision": "2026-10-05.9",
+  "updatedAt": "2026-10-05T23:20:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · PRODUCTION RECOVERY · HUB SOURCE GREEN",
-    "note": "Hub #364 source recovery is green and frozen for PUBLISH_ONLY. World Studio #360 and Platformer/Combat #361 remain HUMAN FAIL / blocked. New feature/design expansion stays frozen."
+    "label": "CURRENT · PRIMARY PRODUCT = OPEN WORLD AUTHORING",
+    "note": "World Studio/WB2 #360 is the primary product recovery: buildable persistent open world for comic/story context. Hub #364 is source-green awaiting PUBLISH_ONLY. Combat #361 is HOLD side lane. No new feature expansion."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,26 +26,27 @@
     },
     {
       "id": "issue-360-world-studio",
-      "title": "#360 · TOTAL FAIL · World Studio",
-      "summary": "P0 · blocked. Runtime hangs at „Loading 3D engine“; current world is not playable. Visual/world design also FAIL: wrong pack/environment direction and arbitrary prop scattering. Preserve only as failure evidence; recover proven runtime + exact visual donors.",
-      "badge": "P0 · TOTAL FAIL · blocked",
+      "title": "#360 · PRIMARY · Open World Authoring Recovery",
+      "summary": "P0 · World Studio/WB2. Recover the same-world authoring loop for comic/story context: boot → source-proven place → edit → sculpt → save/reload → play. Four islands are later content recipes, not the acceptance target.",
+      "badge": "P0 · PRIMARY PRODUCT · recovery",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "ChatGPT Work/WSA · source/runtime/product recovery",
-      "nextExecutor": "Georg · only after internal playable + visual proof"
-    },
-    {
-      "id": "issue-361-combat",
-      "title": "#361 · HUMAN FAIL · Platformer / Card-Hex Combat",
-      "summary": "P0 · blocked. Nicht spielbar: Design-Regress, Controls/Spielbarkeit FAIL und zusätzliche Audio-Bugs. Gegen die frühere Combat-Arena-Baseline recovern; failed candidate nicht weiter testen.",
-      "badge": "P0 · HUMAN FAIL · blocked",
-      "action": "Issue #361 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
-      "executor": "ChatGPT Work/WSA · regression recovery",
-      "nextExecutor": "Georg · only after playable repaired candidate"
+      "executor": "ChatGPT Work/WSA · Open-World Authoring Recovery",
+      "nextExecutor": "Georg · only after internal R0–R5 authoring PASS"
     }
   ],
-  "p1": [],
+  "p1": [
+    {
+      "id": "issue-361-combat",
+      "title": "#361 · HOLD · Combat side lane",
+      "summary": "Current Platformer/Combat candidate remains HUMAN FAIL, but Combat is not the primary product. Preserve evidence and resume only after the Open World authoring core is usable.",
+      "badge": "HOLD · side lane",
+      "action": "Issue #361 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
+      "executor": "none · HOLD",
+      "nextExecutor": "later consumer recovery"
+    }
+  ],
   "parallel": [],
   "quickLinks": [
     {
