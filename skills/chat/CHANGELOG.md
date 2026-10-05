@@ -1,3 +1,19 @@
+## 2026-10-05 · GitHub Issues become the active job list
+
+### DECISION
+- Current coordination no longer requires Production Control / Hub / router updates between product jobs.
+- GitHub Issues are the practical JIRA-equivalent.
+- Active jobs are #360 World Studio freeplay, #361 Combat freeplay and #362 Triplet Stage.
+- Production Control remains private archive/history.
+- Production Hub becomes optional orientation, not the authoritative live job list.
+- ToolBox remains a specialist-tool router, not a job tracker.
+
+### ROUTING CORRECTION
+- Hub board source advanced to `2026-10-05.1` with exactly #360/#361 as P0 and #362 as parallel.
+- ChatterBox PR #357 is HOLD / future productization while #362 is active.
+- Claude service access candidate remains HOLD; GitHub is the shared Claude/WSA coordination channel.
+- Blender handover now waits only for explicit Blender-named issues.
+
 ## 2026-10-04 · EyeRig global presentation default + recovery-aware Hub TODO
 
 ### DECISION
