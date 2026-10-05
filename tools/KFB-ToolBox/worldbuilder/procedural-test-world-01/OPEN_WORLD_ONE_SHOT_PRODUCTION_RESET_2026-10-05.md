@@ -13,10 +13,16 @@ This contract **supersedes** the narrower `OPEN_WORLD_AUTHORING_RECOVERY_2026-10
 
 Build one coherent **KFB Open World authoring product** that Georg can use as reusable visual/contextual space for comics and stories.
 
-It must combine two things in one product:
+It must combine three things in one product:
 
 1. **a world worth moving through** — coherent, built-looking, extensible open world;
-2. **a world Georg can directly author** — place/edit/sculpt/save/reload in that same world.
+2. **a world Georg can directly author** — place/edit/sculpt/save/reload in that same world;
+3. **the existing KFB system stack** — current Animation/Motion, Joyride-designed modular Track Core, Sky/Skydome, Billboard/media, Residents/ChatterBox, Cards/Almanac, Audio, Vehicle/Drive and placeable signature modules integrated through their existing owners.
+
+Binding system roster:
+`OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md`
+
+A stripped terrain/village/editor demo is **not** the product outcome.
 
 Do not stop after proving an editor seam.
 Do not stop after proving a procedural landscape.
@@ -43,7 +49,16 @@ First complete world fixture:
 - real player collision;
 - locomotion clips run only in their credible speed bands; visible foot sliding is measured and repaired;
 - stable third-person camera;
-- no Combat, Residents, Cards, quests, server or social simulation required for acceptance.
+- current native KayKit/KFB locomotion animation reconciled with Motion PR #344;
+- at least one modular Track/Road/Stunt construction using Track Core mechanism **with Joyride J14/T4/K2 visible design**;
+- current Sky/Skydome environment owner active and configurable;
+- at least one real Clay Billboard/media surface;
+- at least one real Resident using current animation/dialogue ownership;
+- one canonical Card → Almanac provenance seam;
+- one audio graph with world/module continuity;
+- one source-proven vehicle driven on the Joyride-presented route.
+
+Combat, the full old Golden Journey, every Resident, every Card and server/multiplayer are not required for acceptance.
 
 The four existing islands are **deferred world recipes/content**, not the proof target.
 
@@ -98,7 +113,15 @@ Required subsystem boundaries:
 - `authoring/`
 - `persistence/`
 - `visual-lighting/`
-- `audio/` only if already safely reusable
+- `sky-environment/`
+- `track-modules/` — Track Core mechanism + Joyride presentation adapter
+- `media-billboard/`
+- `residents-dialogue/`
+- `cards-almanac/`
+- `audio/`
+- `vehicles/`
+- `signature-modules/`
+- `transitions/`
 - `qa/`
 
 Architecture must name:
@@ -142,6 +165,28 @@ KEEP candidates:
 - `wb2-terrain-sculpt-01/terrain-sculpt.js`;
 - source manifests / Registry/Librarian identity;
 - any current player/motion mechanism that survives real-input verification.
+
+### Existing-system integration matrix
+
+Read and execute:
+`OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md`
+
+It is binding for:
+- Animation/Motion;
+- Joyride-designed modular Racetrack/Track/Road/Stunt system;
+- Sky/Skydome/Environment;
+- Asset Librarian + authoring;
+- Clay Billboard + HyperNormalisation media seam;
+- Residents + ChatterBox;
+- Cards + Almanac;
+- Audio;
+- Vehicle/Drive;
+- Signature/Landmark modules;
+- Theatre Curtain compatibility.
+
+**Joyride rule:** Track Core owns route/profile/socket/contact mechanics. The visible track/road language is the pinned Joyride J14/T4/K2 clay-strand design. Never expose Track Core engineering/debug presentation as finished world design.
+
+**Sky rule:** Skydome/Environment stays its existing owner and is consumed as a world/environment module. Never create a second sky owner.
 
 ### Existing source/reference packs
 Use exact KayKit/KFB/Tiny Treats pack/demo/sample references where available.
@@ -190,8 +235,17 @@ Suggested dependency waves:
 - semantic props
 - authoring/editor integration
 - persistence
+- Joyride-presented Track module authoring
+- Sky/Environment integration
 
 ### Wave 3
+- native Motion reconciliation
+- Billboard/media
+- Resident/ChatterBox
+- Card/Almanac
+- Audio continuity
+- Vehicle/Drive
+- signature/transition modules
 - integrated demo/open world
 - performance/stream tuning
 - whole-product repair
@@ -256,6 +310,7 @@ Module/world critic dimensions:
 10. PERSISTENCE
 11. TECHNICAL_HEALTH
 12. PERFORMANCE / STREAMING
+13. EXISTING_SYSTEM_INTEGRATION — Motion, Joyride Track, Sky, Billboard, Resident/ChatterBox, Card/Almanac, Audio and Drive read as one product rather than bolted-on demos
 
 Score:
 - 10 = target-defining;
@@ -307,14 +362,22 @@ It must:
 6. visit water edge;
 7. enter forest/nature cluster;
 8. inspect another settlement/chunk if generated;
-9. enter BUILD;
-10. search/show source/place/edit a real asset;
-11. sculpt terrain;
-12. save;
-13. fresh reload/import;
-14. verify authored result;
-15. return to PLAY;
-16. continue walking.
+9. verify current Sky/Skydome environment and one persisted environment change;
+10. encounter/traverse a modular Track/Road/Stunt element with **Joyride J14/T4/K2 presentation**;
+11. enter BUILD;
+12. search/show source/place/edit a real asset;
+13. place/configure one Track or world module through the authoring model;
+14. sculpt terrain;
+15. verify one Clay Billboard/media surface;
+16. meet one real Resident and exercise current ChatterBox/dialogue;
+17. inspect/acquire one canonical Card and confirm Almanac provenance;
+18. confirm audio continuity;
+19. enter/drive/exit one source-proven vehicle on the Joyride-presented route;
+20. save;
+21. fresh reload/import;
+22. verify authored + module state;
+23. return to PLAY;
+24. continue walking.
 
 It captures canonical screenshots + continuous video.
 
