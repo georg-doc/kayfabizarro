@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.7",
-  "updatedAt": "2026-10-05T22:59:30+02:00",
+  "revision": "2026-10-05.8",
+  "updatedAt": "2026-10-05T23:06:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · PRODUCTION RECOVERY",
-    "note": "New feature/design work is frozen. Hub recovery is P0. World Studio and Platformer/Combat are HUMAN FAIL / blocked. Triplet Stage is HOLD. Recover exact proven baselines before resuming expansion."
+    "label": "CURRENT · PRODUCTION RECOVERY · HUB SOURCE GREEN",
+    "note": "Hub #364 source recovery is green and frozen for PUBLISH_ONLY. World Studio #360 and Platformer/Combat #361 remain HUMAN FAIL / blocked. New feature/design expansion stays frozen."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -16,13 +16,13 @@
   "p0": [
     {
       "id": "issue-364-production-hub-recovery",
-      "title": "#364 · Production Hub · Recovery",
-      "summary": "P0 · accepted Hub v2 design + current production state. Generic dark dashboard replacement is rejected; restore donor-faithful Paper/Dark Hub and publish in place only after source is frozen.",
-      "badge": "P0 · recovery",
+      "title": "#364 · Production Hub · SOURCE GREEN",
+      "summary": "P0 · accepted Paper/Dark Hub v2 restored in source, current board bound, generic dashboard fork removed. Next step is host-only PUBLISH_ONLY to the existing Hub Site; no redesign.",
+      "badge": "P0 · SOURCE GREEN · PUBLISH_ONLY",
       "action": "Issue #364 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/364",
-      "executor": "ChatGPT Web Chat · source/data recovery",
-      "nextExecutor": "PUBLISH_ONLY / Sites-capable executor"
+      "executor": "PUBLISH_ONLY / Sites-capable executor",
+      "nextExecutor": "Georg · verify exact Hub only after publish"
     },
     {
       "id": "issue-360-world-studio",
