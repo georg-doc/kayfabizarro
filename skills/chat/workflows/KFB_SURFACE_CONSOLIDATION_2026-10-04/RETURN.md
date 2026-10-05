@@ -188,3 +188,39 @@ No more Hub/Control/ToolBox/FrankenStein design recovery work is authorized from
 
 Exactly one next gate:
 **RETURN_TO_PRODUCT_INTEGRATION**.
+
+
+## 2026-10-05 · RECOVERY REOPENED · HUB SOURCE GREEN
+
+Georg's direct product review supersedes the earlier "Surface Recovery stopped" conclusion.
+
+Current production reality:
+- Production Hub visible result is not accepted as the operating front door;
+- World Studio #360 is **TOTAL FAIL / blocked**;
+- Platformer/Card-Hex Combat #361 is **HUMAN FAIL / blocked**;
+- Triplet Stage #362 is HOLD to stop optional spend;
+- new feature/design expansion is frozen during recovery.
+
+Hub recovery owner:
+- Issue #364;
+- branch `chatgpt-web/surface-consolidation-2026-10-04`;
+- accepted donor pin: `dfaafac070747f9543b5eb5a635e2aaa74e57b83 · kfb-hub/index.html`;
+- recovered `kfb-hub/index.html` blob: `f2e18b7ce3ea23e34fa57251cef6211155b3ce2d`;
+- CURRENT board revision: `2026-10-05.8`;
+- CURRENT board blob: `e0d882d854e2cc21f0a3f63bf78e86329d68f804`;
+- test evidence: `HUB_RECOVERY_364_TEST_REPORT_2026-10-05.md`;
+- static/source checks: **16/16 PASS**.
+
+Recovered Hub source:
+- accepted Paper/Dark donor CSS preserved byte-identically;
+- Pocket Inbox preserved;
+- search/filter preserved;
+- current-board no-store adapter added;
+- stale September embedded registry removed from CURRENT;
+- generic dark-dashboard recovery fork removed;
+- current ToolBox / Control / GitHub routing used.
+
+No claim of Site publication or browser verification is made from this chat.
+
+Exactly one next gate:
+**PUBLISH_ONLY / Sites-capable executor updates the existing Production Hub Site in place from the frozen branch source, makes no design/source changes, and visibly verifies board 2026-10-05.8 at the exact Hub URL.**
