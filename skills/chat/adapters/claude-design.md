@@ -1,5 +1,20 @@
 # Adapter · Claude Design
 
+## Mandatory KFB bootstrap
+
+Before any KFB Claude Design production slice, read the current GitHub versions of:
+
+1. `skills/chat/START_HERE.md`
+2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
+3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
+4. the named project SSOT, current Return/Recovery and the exact slice briefing
+
+GitHub state overrides any copied prompt, prior Claude chat or stale session context.
+
+Do **not** maintain a second full KFB rule copy inside Claude. The files above are the shared current rule source for ChatGPT, Claude Design and other executors.
+
+A Claude Design briefing only needs to name the outcome, owner, read-first project source, protected boundary and done condition, then reference these shared rules.
+
 Apply after `skills/chat/PRODUCTION_SOP.md`.
 
 - Claude Design is an authoring, exploration and measurement environment unless a project explicitly grants implementation ownership.
