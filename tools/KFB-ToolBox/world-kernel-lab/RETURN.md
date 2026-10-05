@@ -57,3 +57,27 @@ No Worldspring source has been copied into the KFB implementation.
 ## Exactly one next gate
 
 **PUBLISH_ONLY with a Sites-capable low-cost executor:** publish this exact source as the private `KFB World Kernel Lab` specialist Site, verify the six-step experiment, persist exact Site identity, then return the Site URL to Georg for `USEFUL / TUNE / DROP`.
+
+
+## Technical handoff
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/world-kernel-lab-worldspring-research-2026-10-05`
+- Draft PR: **#363**
+- Verified candidate/source+router head before this Return metadata write: `fede03bed02a4e6c024b91e16021c9ac44a3b466`
+- Changed files: **20**
+- Runtime source files: **5**
+- Core tests: **6/6 PASS**
+- JS syntax checks: **3/3 PASS**
+- HTTP entrypoint fetch: **PASS**
+- Local Chromium visual attempts: **2 blocked by EGL/ANGLE environment; stopped per recovery rule**
+- Private GPT Site URL: **NOT PUBLISHED**
+- Cloudflare mirror: **NOT CREATED**
+- WB2 PR #348 mutations: **0**
+- Worldspring source copied: **0**
+
+Failure recovery:
+`BROWSER_FAILURE_RECOVERY_2026-10-05.md`
+
+Current publish contract:
+`SITE_PUBLISH_PACKET.md`
