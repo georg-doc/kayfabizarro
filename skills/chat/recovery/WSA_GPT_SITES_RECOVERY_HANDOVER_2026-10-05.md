@@ -431,3 +431,31 @@ Human gate:
 - Georg sees the recovered real design with current data.
 
 This correction supersedes any reading of §15 that would stop or defer the active recovery.
+
+
+## 17. COST CORRECTION · NO STANDALONE CRITIC JOB
+
+The Critic / Production Guard separation is **not** permission to create another large Work sub-job.
+
+For this Hub recovery the exact donor is already pinned in §16. Therefore the independent check is strictly bounded and internal to the same recovery run:
+
+1. Builder applies the exact approved donor + current data.
+2. Tester performs a narrow boot/freshness/function smoke.
+3. Independent Critic performs only a short donor-fidelity comparison against the pinned donor proof.
+4. Production Guard returns either:
+   - `PUBLISH`, or
+   - `REPAIR` with one concrete blocking mismatch.
+5. Builder immediately publishes/continues in the same run.
+
+Forbidden:
+- no standalone Critic project/session;
+- no new PR solely for critique;
+- no broad 9-dimension rescoring;
+- no reopening Site architecture;
+- no additional human gate before publication merely because a Critic exists;
+- no delay after donor fidelity + current data + smoke are green.
+
+The purpose of Critic/Guard here is to prevent another wrong-design publish, **not to turn publication into a new large task**.
+
+Current desired outcome remains:
+**correct approved Hub design + current data → publish → verify → stop Surface Recovery.**
