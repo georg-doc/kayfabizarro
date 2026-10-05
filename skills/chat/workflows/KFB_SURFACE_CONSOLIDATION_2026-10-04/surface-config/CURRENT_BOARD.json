@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.6",
-  "updatedAt": "2026-10-05T22:58:00+02:00",
+  "revision": "2026-10-05.7",
+  "updatedAt": "2026-10-05T22:59:30+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
     "label": "CURRENT · PRODUCTION RECOVERY",
-    "note": "Stop new feature/design expansion. Hub recovery is P0. World Studio and Platformer/Combat are HUMAN FAIL / blocked. Recover exact proven baselines and donors before any new MVP work."
+    "note": "New feature/design work is frozen. Hub recovery is P0. World Studio and Platformer/Combat are HUMAN FAIL / blocked. Triplet Stage is HOLD. Recover exact proven baselines before resuming expansion."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -46,18 +46,7 @@
     }
   ],
   "p1": [],
-  "parallel": [
-    {
-      "id": "issue-362-triplet-stage",
-      "title": "#362 · Triplet Stage · TUNE",
-      "summary": "Parallel · aktueller TUNE-Pass. Real Resident-Atlas 3D + EyeRig v6; keine 2D-Fallbacks; danach zurück an Georg. Keine zusätzliche Site-Productization in diesem Gate.",
-      "badge": "parallel · TUNE",
-      "action": "Issue #362 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/362",
-      "executor": "Claude Design",
-      "nextExecutor": "Claude Coworker · hand-back/review"
-    }
-  ],
+  "parallel": [],
   "quickLinks": [
     {
       "title": "GitHub Issues · aktuelle Jobliste",
