@@ -2520,3 +2520,13 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - no newer EyeRig JSON export found in Dropbox or the current owner branch;
 - current gate: `EYE_RIG_PROFILE_RECOVERY_01` — export the remembered later state from the old Cloudflare Stage origin, compare, persist and import;
 - per-class import preserves Large/Legacy; no runtime change, merge or Live promotion.
+
+
+## 2026-10-05 · Independent execution roles become mandatory
+
+- Added `KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md` as the cross-project orchestration rule for substantial Integration / Work / WSA / One-Shot / productive recovery jobs.
+- Mandatory role separation: Builder/Integrator (only writer), Integration Tester (facts), Independent Critic (evaluation), Production Guard (CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP).
+- No agent may materially change a candidate and then certify/classify that same change as accepted.
+- STOP now requires demonstrated blockage of the named product outcome; repeated local test failure alone is insufficient.
+- Two non-improving repairs freeze the smallest failing seam; non-critical seams are quarantined and the One-Shot continues.
+- Fresh Chat protocol, Stage workflow, START_HERE and the current WB2 One-Shot lock now require the compact `INDEPENDENT EXECUTION` briefing block.
