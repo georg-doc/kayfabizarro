@@ -371,3 +371,63 @@ If the exact approved donor cannot be established, STOP **this Site-recovery sea
 
 This HUMAN FAIL does not alter Georg's prior priority:
 **Hub + Production Control current enough for use, then return to product integration.**
+
+
+## 16. CORRECTION · REPAIR NOW, DO NOT FREEZE THE RECOVERY
+
+The word "freeze/quarantine" in §15 applies only to the **wrong candidate bytes**. It does **not** pause the recovery assignment.
+
+Current Guard route is:
+
+**REPAIR NOW.**
+
+Required behavior:
+- discard the wrong visual candidate as an implementation source;
+- continue the active WSA recovery immediately;
+- do not wait for another Georg authorization merely to resume;
+- do not iterate the wrong design toward similarity;
+- rebuild from the exact approved Hub donor already present in GitHub.
+
+### Exact Hub design source
+
+Approved Hub UX recovery package:
+`tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/`
+
+Primary candidate entry:
+`code/KFB Hub UX Recovery v2.dc.html`
+SHA-256:
+`cf43f9847615711af1fa28dcb41054664c5c8422df51679e80ff6bc2c6dad7d1`
+
+Frozen donor proof:
+`code/Hub Donor Proof v2.dc.html`
+SHA-256:
+`04bf574d1144ac449ff0863d5abf8bfa57d542068578d4e4bbd196fa2898a49b`
+
+Byte-copy visual donor:
+`code/hub-recovery/donor/kfb-hub-v2-dfaafac.html`
+source pin:
+`dfaafac070747f9543b5eb5a635e2aaa74e57b83`
+SHA-256:
+`ac89e153d396b94e6c00aae6aabc2652f732dd48c1c896e387207fe29c0e1078`
+
+Current-data requirement:
+- preserve the approved Hub UI/UX language from that package;
+- **do not use** `embedded-registry-2026-09-25.js` as CURRENT;
+- wire/consume the current Production Control / current-board state instead.
+
+### Immediate acceptance route
+
+Builder:
+- implements exact donor design + current data only.
+
+Independent Critic:
+- compares donor proof / approved v2 candidate against the recovered Hub at matching viewports.
+
+Production Guard:
+- routes REPAIR until source/design fidelity is proven;
+- may not classify the recovery as complete merely because it builds/deploys.
+
+Human gate:
+- Georg sees the recovered real design with current data.
+
+This correction supersedes any reading of §15 that would stop or defer the active recovery.
