@@ -122,17 +122,20 @@ Reason: a long explanatory/paste-ready response before persistence creates an av
 
 If a write itself times out, keep the user-facing response minimal while status is `UNKNOWN`; inspect the exact ref/file first. Never spend a separate conversational turn merely drafting text that the same chat is already authorized to persist.
 
-### Continuous checkpoint rule
+### Crash-safe checkpoint rule
 
-For authorized production work, **GitHub-first applies throughout the slice, not only at closure**. After every meaningful completed implementation step, evidence/test result, Georg decision, next-gate change or recovery finding:
+GitHub checkpoints are required at **phase boundaries**, not after every internal test or small edit.
 
-- write it into the existing owner branch/PR and existing Return/Recovery/WIP/changelog surface;
-- fetch the exact branch head and intended file back;
-- then continue substantial work or send non-trivial user-visible prose.
+Use three default checkpoints:
+1. **implementation milestone** — a coherent change exists;
+2. **evidence milestone** — tests/runtime evidence materially change what is known;
+3. **Return/handoff milestone** — outcome, unresolved items and next gate are finalized.
 
-The objective is that a timeout may lose chat prose, but not the latest proven production state. Do not create a new status document when the owner already has an appropriate Return/Recovery/WIP location.
+Also checkpoint immediately for a Georg decision or a real recovery finding that changes routing.
 
-At each checkpoint GitHub must be sufficient for a fresh chat to recover: **owner · branch/PR · exact verified head · last proven result · unresolved/deferred items · exactly one current next action/gate**. A fresh chat must never require Georg to reconstruct the previous conversation before continuing.
+Do not turn internal test iterations into repeated GitHub/Return/Hub churn. Within a phase, the Builder may iterate locally and persist once the phase has a coherent result.
+
+After each actual GitHub write, fetch the exact branch head and intended file back. A checkpoint must be sufficient for fresh-chat recovery: **owner · branch/PR · verified head · last proven result · unresolved/deferred items · one next action/gate**.
 
 ## 4. Cloudflare KFB Stage · secondary mirror / formal acceptance when required
 
@@ -174,16 +177,21 @@ Only move to KFB Stage when the candidate is a meaningful integrated milestone w
 
 Local preview does not replace the final public Stage gate when a slice requires `PUBLIC_VERIFIED`.
 
-## 5. Keep Hub and main current
+## 5. Sync routing surfaces only at meaningful milestones
 
-Every new current brief, Stage candidate, human gate or Georg to-do updates:
+The owning project SSOT/Return remains the durable project truth.
 
-- the owning project SSOT/Return;
-- `georg-doc/kayfabizarro` main routing/briefing state;
-- the KFB Hub source;
-- the lean Cloudflare publication mirror.
+**GitHub Issues are the default active job list.** Routine TODO/status changes do not require a Hub, Site or Cloudflare refresh.
 
-If the public mirror is behind, say so explicitly. Never show an old Hub as current.
+Update central routing surfaces only when a change materially affects what Georg should open or do next, such as:
+- a new/closed P0 or human gate;
+- a new canonical product/tool route;
+- a milestone publication;
+- a superseded owner or recovery route.
+
+Cloudflare mirrors are updated only when Cloudflare/public verification is itself required. Do not publish/sync Cloudflare merely because a slice or TODO changed.
+
+If a human-facing surface is known stale, label it stale; do not block productive integration merely to refresh orientation UI.
 
 ## 6. Return packet
 
@@ -205,9 +213,15 @@ Repository-native checks and GitHub Actions are the normal baseline. Optional he
 
 If `game-dev` is unavailable, do not repeatedly complain and do not block ordinary Web/GitHub/Hub work. Use the repository's own validators and record `GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`. Block only a task that truly requires sealed Game Development Studio asset, visual-debug or performance evidence.
 
-## 8. Stop/recovery rule
+## 8. Repair-budget rule
 
-After two repair attempts without progress on the same gate, freeze the candidate and use the failure-recovery export. Preserve source and evidence; do not spend the remaining quota polishing the wrong fork.
+After two non-improving repair attempts, freeze **only the smallest failing seam** and preserve its evidence.
+
+The Production Guard then decides:
+- non-outcome-critical seam → `QUARANTINE/DEFER` and continue the parent slice/One-Shot;
+- genuinely outcome-critical seam → stop that outcome path and create failure-recovery evidence.
+
+Two failed repairs alone never authorize a global product/One-Shot stop.
 
 
 ## 9. Gate proportionality / budget rule
