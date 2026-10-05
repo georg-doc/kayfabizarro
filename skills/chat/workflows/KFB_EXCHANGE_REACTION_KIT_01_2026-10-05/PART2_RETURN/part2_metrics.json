@@ -1,0 +1,872 @@
+{
+ "verify": {
+  "kfb_react_delighted_a": {
+   "Rig_Medium": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 21.3,
+    "maxStepInnerDeg": 24.2,
+    "footMinY": 0.023
+   },
+   "Rig_Large": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 23.0,
+    "maxStepInnerDeg": 24.2,
+    "footMinY": 0.034
+   }
+  },
+  "kfb_react_contradict_a": {
+   "Rig_Medium": {
+    "frames": 59,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 6.8,
+    "maxStepInnerDeg": 1.9,
+    "footMinY": 0.026
+   },
+   "Rig_Large": {
+    "frames": 51,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 7.7,
+    "maxStepInnerDeg": 1.2,
+    "footMinY": 0.045
+   }
+  },
+  "kfb_react_boggle_a": {
+   "Rig_Medium": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 10.5,
+    "maxStepInnerDeg": 3.8,
+    "footMinY": 0.019
+   },
+   "Rig_Large": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 7.9,
+    "maxStepInnerDeg": 3.8,
+    "footMinY": 0.037
+   }
+  },
+  "kfb_react_dismiss_a": {
+   "Rig_Medium": {
+    "frames": 41,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 9.3,
+    "maxStepInnerDeg": 21.6,
+    "footMinY": 0.026
+   },
+   "Rig_Large": {
+    "frames": 40,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 10.7,
+    "maxStepInnerDeg": 21.6,
+    "footMinY": 0.044
+   }
+  },
+  "kfb_react_fluffy_a": {
+   "Rig_Medium": {
+    "frames": 43,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 16.0,
+    "maxStepInnerDeg": 35.6,
+    "footMinY": 0.02
+   },
+   "Rig_Large": {
+    "frames": 43,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 15.8,
+    "maxStepInnerDeg": 35.6,
+    "footMinY": 0.036
+   }
+  },
+  "kfb_react_kayfabe_a": {
+   "Rig_Medium": {
+    "frames": 61,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 11.6,
+    "maxStepInnerDeg": 19.8,
+    "footMinY": 0.026
+   },
+   "Rig_Large": {
+    "frames": 61,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 12.6,
+    "maxStepInnerDeg": 19.8,
+    "footMinY": 0.048
+   }
+  },
+  "kfb_react_pop_a": {
+   "Rig_Medium": {
+    "frames": 49,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 23.0,
+    "maxStepInnerDeg": 31.4,
+    "footMinY": 0.014
+   },
+   "Rig_Large": {
+    "frames": 49,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 23.1,
+    "maxStepInnerDeg": 31.4,
+    "footMinY": 0.027
+   }
+  },
+  "kfb_react_outraged_a": {
+   "Rig_Medium": {
+    "frames": 51,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 8.7,
+    "maxStepInnerDeg": 10.7,
+    "footMinY": 0.025
+   },
+   "Rig_Large": {
+    "frames": 51,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 8.7,
+    "maxStepInnerDeg": 10.7,
+    "footMinY": 0.045
+   }
+  },
+  "kfb_react_amused_a": {
+   "Rig_Medium": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 6.8,
+    "maxStepInnerDeg": 12.9,
+    "footMinY": 0.02
+   },
+   "Rig_Large": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 8.2,
+    "maxStepInnerDeg": 12.9,
+    "footMinY": 0.02
+   }
+  },
+  "kfb_react_disappointed_a": {
+   "Rig_Medium": {
+    "frames": 66,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 9.7,
+    "maxStepInnerDeg": 16.8,
+    "footMinY": 0.023
+   },
+   "Rig_Large": {
+    "frames": 68,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 8.8,
+    "maxStepInnerDeg": 16.8,
+    "footMinY": 0.029
+   }
+  },
+  "kfb_react_scared_a": {
+   "Rig_Medium": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 10.8,
+    "maxStepInnerDeg": 3.8,
+    "footMinY": 0.002
+   },
+   "Rig_Large": {
+    "frames": 76,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 6.3,
+    "maxStepInnerDeg": 4.8,
+    "footMinY": 0.031
+   }
+  },
+  "kfb_react_taunt_a": {
+   "Rig_Medium": {
+    "frames": 49,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 32.8,
+    "maxStepInnerDeg": 24.6,
+    "footMinY": 0.015
+   },
+   "Rig_Large": {
+    "frames": 48,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 32.8,
+    "maxStepInnerDeg": 24.6,
+    "footMinY": 0.036
+   }
+  },
+  "kfb_react_dizzy_a": {
+   "Rig_Medium": {
+    "frames": 134,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 1.4,
+    "maxStepInnerDeg": 2.0,
+    "footMinY": 0.026
+   },
+   "Rig_Large": {
+    "frames": 134,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 1.4,
+    "maxStepInnerDeg": 2.0,
+    "footMinY": 0.042
+   }
+  },
+  "kfb_react_faint_a": {
+   "Rig_Medium": {
+    "frames": 25,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 50.5,
+    "maxStepInnerDeg": 0,
+    "footMinY": 0.016
+   },
+   "Rig_Large": {
+    "frames": 51,
+    "roundTrip": 0.0,
+    "maxStepBlendDeg": 8.5,
+    "maxStepInnerDeg": 21.9,
+    "footMinY": 0.037
+   }
+  }
+ },
+ "fit": {
+  "give": {
+   "maxIK": 0.0491,
+   "maxPalmDeg": 12.0,
+   "sepTrace": [
+    [
+     0,
+     2.11,
+     0.0
+    ],
+    [
+     6,
+     2.11,
+     0.0
+    ],
+    [
+     12,
+     1.995,
+     0.16
+    ],
+    [
+     18,
+     1.043,
+     1.0
+    ],
+    [
+     24,
+     1.046,
+     1.0
+    ],
+    [
+     30,
+     1.052,
+     1.0
+    ],
+    [
+     36,
+     1.051,
+     1.0
+    ],
+    [
+     42,
+     1.053,
+     1.0
+    ],
+    [
+     48,
+     1.057,
+     1.0
+    ],
+    [
+     54,
+     1.603,
+     0.5
+    ],
+    [
+     60,
+     2.338,
+     0.0
+    ],
+    [
+     66,
+     2.286,
+     0.0
+    ],
+    [
+     72,
+     2.232,
+     0.0
+    ],
+    [
+     78,
+     2.293,
+     0.0
+    ],
+    [
+     84,
+     2.354,
+     0.0
+    ]
+   ],
+   "boxWidth": 0.876
+  },
+  "receive": {
+   "maxIK": 0.0542,
+   "maxPalmDeg": 12.2,
+   "sepTrace": [
+    [
+     0,
+     2.309,
+     0.0
+    ],
+    [
+     6,
+     2.288,
+     0.0
+    ],
+    [
+     12,
+     2.257,
+     0.0
+    ],
+    [
+     18,
+     2.251,
+     0.0
+    ],
+    [
+     24,
+     2.216,
+     0.0
+    ],
+    [
+     30,
+     2.099,
+     0.0
+    ],
+    [
+     36,
+     1.555,
+     0.5
+    ],
+    [
+     42,
+     1.059,
+     1.0
+    ],
+    [
+     48,
+     1.052,
+     1.0
+    ],
+    [
+     54,
+     1.043,
+     1.0
+    ],
+    [
+     60,
+     1.043,
+     1.0
+    ],
+    [
+     66,
+     1.043,
+     1.0
+    ],
+    [
+     72,
+     1.043,
+     1.0
+    ],
+    [
+     78,
+     1.043,
+     1.0
+    ],
+    [
+     84,
+     1.043,
+     1.0
+    ]
+   ],
+   "boxWidth": 0.876
+  },
+  "lid": {
+   "maxIK": 0.0013,
+   "maxPalmDeg": 4.4,
+   "sepTrace": [
+    [
+     0,
+     1.85,
+     0.0
+    ],
+    [
+     6,
+     1.851,
+     0.0
+    ],
+    [
+     12,
+     1.85,
+     0.0
+    ],
+    [
+     18,
+     1.848,
+     0.0
+    ],
+    [
+     24,
+     1.872,
+     0.0
+    ],
+    [
+     30,
+     1.928,
+     0.0
+    ],
+    [
+     36,
+     1.48,
+     0.5
+    ],
+    [
+     42,
+     0.992,
+     1.0
+    ],
+    [
+     48,
+     0.992,
+     1.0
+    ],
+    [
+     54,
+     0.992,
+     1.0
+    ],
+    [
+     60,
+     0.992,
+     1.0
+    ],
+    [
+     66,
+     0.992,
+     1.0
+    ],
+    [
+     72,
+     0.992,
+     1.0
+    ],
+    [
+     78,
+     0.992,
+     1.0
+    ],
+    [
+     84,
+     0.992,
+     1.0
+    ],
+    [
+     90,
+     0.992,
+     1.0
+    ],
+    [
+     96,
+     0.992,
+     1.0
+    ],
+    [
+     102,
+     0.992,
+     1.0
+    ],
+    [
+     108,
+     0.992,
+     1.0
+    ],
+    [
+     114,
+     0.992,
+     1.0
+    ],
+    [
+     120,
+     0.992,
+     1.0
+    ],
+    [
+     126,
+     0.992,
+     1.0
+    ],
+    [
+     132,
+     0.992,
+     1.0
+    ],
+    [
+     138,
+     0.992,
+     1.0
+    ],
+    [
+     144,
+     0.992,
+     1.0
+    ],
+    [
+     150,
+     0.992,
+     1.0
+    ],
+    [
+     156,
+     0.992,
+     1.0
+    ],
+    [
+     162,
+     0.992,
+     1.0
+    ],
+    [
+     168,
+     0.992,
+     1.0
+    ],
+    [
+     174,
+     1.431,
+     0.5
+    ],
+    [
+     180,
+     1.983,
+     0.0
+    ],
+    [
+     186,
+     2.036,
+     0.0
+    ],
+    [
+     192,
+     2.057,
+     0.0
+    ],
+    [
+     198,
+     2.017,
+     0.0
+    ],
+    [
+     204,
+     1.938,
+     0.0
+    ],
+    [
+     210,
+     1.899,
+     0.0
+    ],
+    [
+     216,
+     1.866,
+     0.0
+    ]
+   ],
+   "lidWidth": 0.926
+  }
+ },
+ "lidM": {
+  "grabFrame": 52,
+  "handSep": 0.444,
+  "lidWidth": 0.411,
+  "boxHeight": 0.308,
+  "kenneyScale": 1.027,
+  "releaseFrame": 162,
+  "liftHeight": 0.549
+ },
+ "lidL": {
+  "grabFrame": 53,
+  "handSep": 0.992,
+  "lidWidth": 0.926,
+  "boxHeight": 0.695,
+  "kenneyScale": 2.315,
+  "releaseFrame": 163,
+  "liftHeight": 1.37
+ },
+ "reactMeta": {
+  "kfb_react_delighted_a": {
+   "call": "BINGO!",
+   "source": "kfb_gesture_cheering_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     75
+    ],
+    "frames": 76
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     75
+    ],
+    "frames": 76
+   }
+  },
+  "kfb_react_contradict_a": {
+   "call": "BONGO.",
+   "source": "kfb_gesture_thoughtful_head_shake_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     6,
+     64
+    ],
+    "frames": 59
+   },
+   "Rig_Large": {
+    "trim": [
+     6,
+     56
+    ],
+    "frames": 51
+   }
+  },
+  "kfb_react_boggle_a": {
+   "call": "BOGGLE?",
+   "source": "kfb_reaction_surprised_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     14,
+     89
+    ],
+    "frames": 76
+   },
+   "Rig_Large": {
+    "trim": [
+     14,
+     89
+    ],
+    "frames": 76
+   }
+  },
+  "kfb_react_dismiss_a": {
+   "call": "Bloedsinn...",
+   "source": "kfb_gesture_dismissing_gesture_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     4,
+     44
+    ],
+    "frames": 41
+   },
+   "Rig_Large": {
+    "trim": [
+     5,
+     44
+    ],
+    "frames": 40
+   }
+  },
+  "kfb_react_fluffy_a": {
+   "call": "FLUFFY!",
+   "source": "kfb_locomotion_joyful_jump_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     4,
+     46
+    ],
+    "frames": 43
+   },
+   "Rig_Large": {
+    "trim": [
+     4,
+     46
+    ],
+    "frames": 43
+   }
+  },
+  "kfb_react_kayfabe_a": {
+   "call": "Kayfabe!",
+   "source": "kfb_gesture_pointing_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     60
+    ],
+    "frames": 61
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     60
+    ],
+    "frames": 61
+   }
+  },
+  "kfb_react_pop_a": {
+   "call": "Pop!",
+   "source": "kfb_gesture_strong_gesture_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     48
+    ],
+    "frames": 49
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     48
+    ],
+    "frames": 49
+   }
+  },
+  "kfb_react_outraged_a": {
+   "call": null,
+   "source": "kfb_gesture_angry_gesture_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     6,
+     56
+    ],
+    "frames": 51
+   },
+   "Rig_Large": {
+    "trim": [
+     6,
+     56
+    ],
+    "frames": 51
+   }
+  },
+  "kfb_react_amused_a": {
+   "call": null,
+   "source": "kfb_idle_laughing_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     78,
+     153
+    ],
+    "frames": 76
+   },
+   "Rig_Large": {
+    "trim": [
+     78,
+     153
+    ],
+    "frames": 76
+   }
+  },
+  "kfb_react_disappointed_a": {
+   "call": null,
+   "source": "kfb_idle_sad_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     3,
+     68
+    ],
+    "frames": 66
+   },
+   "Rig_Large": {
+    "trim": [
+     2,
+     69
+    ],
+    "frames": 68
+   }
+  },
+  "kfb_react_scared_a": {
+   "call": null,
+   "source": "kfb_reaction_scared_a",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     192,
+     267
+    ],
+    "frames": 76
+   },
+   "Rig_Large": {
+    "trim": [
+     60,
+     135
+    ],
+    "frames": 76
+   }
+  },
+  "kfb_react_taunt_a": {
+   "call": null,
+   "source": "kfb_gesture_taunt_b",
+   "mode": "io",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     48
+    ],
+    "frames": 49
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     47
+    ],
+    "frames": 48
+   }
+  },
+  "kfb_react_dizzy_a": {
+   "call": "Bizarro...?! (2)",
+   "source": "kfb_reaction_dizzy_idle_a",
+   "mode": "loop",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     133
+    ],
+    "frames": 134
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     133
+    ],
+    "frames": 134
+   }
+  },
+  "kfb_react_faint_a": {
+   "call": "Bizarro...?! (3)",
+   "source": "Death_A",
+   "mode": "i",
+   "Rig_Medium": {
+    "trim": [
+     0,
+     24
+    ],
+    "frames": 25
+   },
+   "Rig_Large": {
+    "trim": [
+     0,
+     50
+    ],
+    "frames": 51
+   }
+  }
+ }
+}
