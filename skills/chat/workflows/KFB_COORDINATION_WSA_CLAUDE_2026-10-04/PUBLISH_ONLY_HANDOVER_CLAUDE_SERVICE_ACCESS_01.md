@@ -1,5 +1,7 @@
 # PUBLISH_ONLY handover · CLAUDE_SERVICE_ACCESS_01
 
+> **HOLD · Georg decision 2026-10-05. Do not execute this handover unless Georg explicitly reactivates it.** Current coordination uses GitHub instead; see `DECISION_CLAUDE_SERVICE_ACCESS_DEFERRED_2026-10-05.md`.
+
 Use this only after Georg has created the agent key and authorized the secret-safe setup. There are **three values in two destinations**.
 
 Site runtime environment:

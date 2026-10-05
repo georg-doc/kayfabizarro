@@ -1,5 +1,7 @@
 # Return · CLAUDE_SERVICE_ACCESS_01
 
+> **Georg decision 2026-10-05:** HOLD · too complex for current product work. Do not configure, publish or smoke this candidate. GitHub remains the shared coordination channel. See `DECISION_CLAUDE_SERVICE_ACCESS_DEFERRED_2026-10-05.md`.
+
 ## Was ist der Stand?
 
 Der begrenzte Service-Zugang ist **gebaut und 9/9 getestet**, aber bewusst **noch nicht veröffentlicht**.
