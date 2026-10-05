@@ -1,3 +1,27 @@
+## 2026-10-05 · CURRENT OVERRIDE · HUB + CONTROL CURRENT, THEN INTEGRATION
+
+Georg priority after the failed multi-Site recovery:
+
+- **Do not rollback merely to restore older inconsistent Site designs.**
+- **Do not spend more Work/WSA credits on broad Surface redesign now.**
+- Immediate Surface scope is only:
+  1. Production Hub shows current production/job state and no 2026-09-25 fallback as current;
+  2. Production Control contains/exposes the current durable decisions/Returns;
+  3. then **stop Surface Recovery and return to product integration**.
+- ToolBox + FrankenStein visual recovery are frozen/deferred.
+- GitHub Issues remain the active job list: #360 + #361 P0 waiting-human; #362 parallel TUNE.
+- Current Hub board source: revision `2026-10-05.2`.
+- Data/status correction = normal Web Chat.
+- Host refresh, only if needed = lowest-cost Sites-capable `PUBLISH_ONLY`.
+- No premium reasoning merely for Site publication/current-state refresh.
+
+Current recovery authority:
+`skills/chat/recovery/WSA_GPT_SITES_RECOVERY_HANDOVER_2026-10-05.md`
+section **GEORG PRIORITY OVERRIDE · INTEGRATION FIRST**.
+
+Exactly one next gate:
+**HUB_CONTROL_CURRENT_ONLY → RETURN_TO_PRODUCT_INTEGRATION**.
+
 ## 2026-10-04 · CURRENT CHARACTER PRESENTATION DEFAULT · EYERIG
 
 Georg decision:
