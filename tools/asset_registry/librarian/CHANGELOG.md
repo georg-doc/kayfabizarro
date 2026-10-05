@@ -1,5 +1,29 @@
 # Changelog · KFB Asset Librarian
 
+## Style Reference Library R1 preparation · 2026-10-05
+
+Status: **R1 SITE PACKET READY · EXISTING SITE OWNER RETAINED**
+
+### Decision
+- Add `Style References` as a mode of the existing Asset Librarian Site, not a new Registry/Site.
+- Reuse Browse, Inspector, Saved Sets, Intake and provenance.
+- Add URL-first reference intake plus schema-compatible private PDF/photo intake later.
+- Add curated bidirectional `referenceIds` / `relatedAssetIds` links for production and procedural assets without changing canonical asset facts.
+- Require exact source isolation before a consumer may claim a reference informed a design.
+
+### Seed
+- 13 official Etherington tutorial URLs are prepared as `URL_VERIFIED` candidates.
+- Official creator source wins over Pinterest/reposts.
+- Remote source images are not mirrored into GitHub/public exports.
+
+### Prepared packet
+- `_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md`
+- `_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/SITE_IMPLEMENTATION_PACKET.json`
+- `_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/ETHERINGTON_OFFICIAL_SEED_01.json`
+
+### Next
+Build R1 in the existing Asset Librarian Site; then update that same Site in place and browser-verify the Etherington URL roundtrip.
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision

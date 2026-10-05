@@ -1,0 +1,139 @@
+{
+  "schema": "kfb.style-reference-site-packet/1",
+  "status": "R1_SITE_PACKET_READY",
+  "date": "2026-10-05",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/style-reference-library-r1-surface-2026-10-05",
+  "base": {
+    "branch": "chatgpt-web/surface-consolidation-2026-10-04",
+    "head": "74ac0eea2b65872ccab3fb454d89e5d1ac5cc97a"
+  },
+  "existingSite": {
+    "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+    "ownerId": "kfb-asset-librarian",
+    "rule": "UPDATE_EXISTING_SITE_ONLY"
+  },
+  "toolbox": {
+    "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "entryId": "style-reference-library",
+    "label": "Style Reference Library",
+    "subtitle": "Visual construction + style reference pool",
+    "hostOwner": "asset-librarian",
+    "deepLink": "UNASSIGNED_UNTIL_IMPLEMENTED",
+    "createSecondSite": false
+  },
+  "reuse": [
+    "Asset Librarian live search",
+    "Inspector pattern",
+    "Saved Sets pattern",
+    "Intake boundary",
+    "provenance/rights display",
+    "candidate handoff semantics",
+    "shared picker semantics"
+  ],
+  "modes": [
+    "Assets",
+    "Motions",
+    "Style References",
+    "Saved Sets",
+    "Intake"
+  ],
+  "sourceClasses": [
+    "OFFICIAL_CREATOR_SOURCE",
+    "OWNED_PRIVATE_SOURCE",
+    "VERIFIED_THIRD_PARTY_SOURCE",
+    "DISCOVERY_ONLY"
+  ],
+  "schemas": {
+    "reference": "kfb.style-reference/1",
+    "pack": "kfb.style-reference-pack/1"
+  },
+  "urlIntake": {
+    "steps": [
+      "paste URL",
+      "canonicalize page URL",
+      "resolve creator/source metadata",
+      "show available page images/graphics where technically allowed",
+      "select page/image",
+      "create Reference Card",
+      "suggest non-canonical tags",
+      "add to Reference Set"
+    ],
+    "remoteImageStorage": "NO_GITHUB_MIRROR",
+    "publicExportEmbedsImages": false,
+    "pinterestBulkScraping": false
+  },
+  "referenceFields": [
+    "referenceId",
+    "sourceId",
+    "title",
+    "creator",
+    "collection",
+    "canonicalPageUrl",
+    "directImageUrl?",
+    "privateLocator?",
+    "subject[]",
+    "technique[]",
+    "useCases[]",
+    "media[]",
+    "rightsVisibility",
+    "verificationStatus",
+    "notes",
+    "principles[]",
+    "sourceInspectedInIsolation",
+    "relatedAssetIds[]",
+    "relatedReferenceIds[]"
+  ],
+  "bridge": {
+    "relationshipValues": [
+      "STYLE_REFERENCE",
+      "CONSTRUCTION_REFERENCE",
+      "MATERIAL_REFERENCE",
+      "PRESENTATION_REFERENCE"
+    ],
+    "canonicalMechanicalAssetFactsUnchanged": true,
+    "consumerTargets": [
+      "claude-design",
+      "claude-cowork",
+      "chatgpt-web",
+      "blender-3d",
+      "procedural-assets",
+      "worldbuilder",
+      "comic-vfx-chatterbox"
+    ]
+  },
+  "acceptance": [
+    "Style References opens inside existing Asset Librarian Site",
+    "official Etherington URL roundtrip",
+    "real source preview",
+    "Reference Card create/edit/search",
+    "Reference Set add/remove/persist",
+    "reference-to-asset relation",
+    "valid style-reference-pack export",
+    "reload persistence",
+    "source isolation proof",
+    "no private source in GitHub/public Stage",
+    "existing Asset/Motion/Saved Set regression passes",
+    "no second Site"
+  ],
+  "initialSeed": "ETHERINGTON_OFFICIAL_SEED_01.json",
+  "rightsPolicy": {
+    "reportedPermissionContext": "USER_REPORTED_DIRECT_PERMISSION",
+    "inferredBlanketRedistributionLicense": false,
+    "preferOfficialCreatorSource": true,
+    "pinterestRole": "DISCOVERY_ONLY"
+  },
+  "execution": {
+    "mode": "SITE_ENGINEERING_R1",
+    "publishAfterEngineering": "PUBLISH_ONLY",
+    "sitesCapableExecutorRequired": true,
+    "premiumReasoningNotRequiredForPublishOnly": true
+  },
+  "reservedCloudflareMirror": {
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/style-reference-library/",
+    "status": "NOT_DEPLOYED",
+    "privateImagesAllowed": false
+  },
+  "nextGate": "BUILD_STYLE_REFERENCES_R1_IN_EXISTING_ASSET_LIBRARIAN_SITE"
+}

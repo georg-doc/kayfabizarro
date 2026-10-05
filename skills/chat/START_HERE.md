@@ -1,3 +1,25 @@
+## 2026-10-05 · CURRENT STYLE REFERENCE LIBRARY R1
+
+Georg approved preparing the visual/style reference pool as a ToolBox capability semantically aligned with Asset Librarian.
+
+Current bounded owner:
+- **KFB Asset Registry / Asset Librarian**
+- branch: `planning/style-reference-library-r1-surface-2026-10-05`
+- brief: `tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md`
+
+Binding product shape:
+- ToolBox gets a **Style Reference Library** entry;
+- implementation lives as a new mode/view inside the **existing Asset Librarian Site**;
+- no second Registry and no second productive Site;
+- URL-first official-source intake + Reference Cards/Sets + curated Asset↔Reference seam;
+- initial seed: 13 official Etherington Brothers tutorial URLs;
+- private PDF/photo sources remain private and schema-compatible;
+- exact source isolation is required before an agent may claim a donor/reference informed a design.
+
+Current status: **R1 SITE PACKET READY · NOT IMPLEMENTED / NOT PUBLISHED**.
+
+Exactly one next gate: build R1 in the existing Asset Librarian Site, then update that same Site in place and browser-verify the Etherington URL roundtrip.
+
 ## 2026-10-04 · CURRENT CHARACTER PRESENTATION DEFAULT · EYERIG
 
 Georg decision:

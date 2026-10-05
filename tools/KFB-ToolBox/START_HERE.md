@@ -20,6 +20,9 @@ Current specialist Site targets:
 - FrankenStein Composer · `https://kfb-frankenstein-composer.frizzlebob.chatgpt.site`
 - Hypernormalisation Curator · `https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site`
 
+Prepared specialist view:
+- **Style Reference Library · R1 SITE PACKET READY** — hosted inside the existing Asset Librarian Site; reuses Browse / Inspector / Saved Sets / Intake / provenance rather than creating a second Site or Registry. Brief: `../asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md`.
+
 Prepared/current next ToolBox modules:
 - Environment Atlas;
 - ChatterBox + Comic VFX Studio;

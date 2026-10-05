@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-onboarding/1",
-  "version": "2.0.0",
-  "updated": "2026-10-04",
+  "version": "2.1.0",
+  "updated": "2026-10-05",
   "status": "CANONICAL_FRONT_DOOR_SITE_VERIFIED",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
@@ -167,7 +167,9 @@
     "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
     "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
     "eumelRigLab": "tools/2D Animation Studio/labs/eumel-rig-lab/",
-    "faceModifierAtlas": "tools/2D Animation Studio/shared/eye-rig/modifier-atlas/"
+    "faceModifierAtlas": "tools/2D Animation Studio/shared/eye-rig/modifier-atlas/",
+    "assetLibrarianPrimary": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+    "styleReferenceR1": "tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md"
   },
   "crossRenderer": {
     "status": "PHASE_A_PROOF_IMPLEMENTED_STATIC_PASS_BROWSER_PENDING",
@@ -244,5 +246,20 @@
     "oldStandaloneStudioRiggingAnimation": true,
     "role": "HISTORY_DONOR_ONLY",
     "mayNotCompeteAsCurrentFrontDoor": true
-  }
+  },
+  "specialistViews": [
+    {
+      "id": "style-reference-library",
+      "label": "Style Reference Library",
+      "subtitle": "Visual construction + style reference pool",
+      "owner": "KFB Asset Registry / Asset Librarian",
+      "hostSiteId": "asset-librarian",
+      "hostUrl": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+      "routeIntent": "STYLE_REFERENCES_VIEW",
+      "deepLink": null,
+      "status": "R1_SITE_PACKET_READY_NOT_PUBLISHED",
+      "source": "tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md",
+      "createSecondSite": false
+    }
+  ]
 }

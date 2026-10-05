@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-04.3",
-  "updatedAt": "2026-10-04",
+  "revision": "2026-10-05.1",
+  "updatedAt": "2026-10-05",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · zwei offene P0-Gates · EyeRig Recovery/TODO ergänzt",
-    "note": "Control/Hub bleiben ein System. EyeRig ist ab jetzt integrierter Character-Default; der neuere Medium-Approval-Stand muss zuerst aus dem alten Stage-Origin recovered werden."
+    "label": "CURRENT · zwei offene P0-Gates · Style Reference R1 vorbereitet",
+    "note": "Control/Hub bleiben ein System. Style Reference Library ist als neuer Asset-Librarian-Modus build-ready vorbereitet; keine zweite Site und noch keine veröffentlichte Route."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -85,6 +85,12 @@
       "badge": "P1 · Large/Legacy",
       "action": "EyeRig Workbench öffnen",
       "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"
+    },
+    {
+      "id": "style-reference-library",
+      "title": "Style Reference Library · Asset Librarian view",
+      "summary": "R1 Site-Paket vorbereitet: URL-first Referenzpool, Reference Cards/Sets, Asset↔Reference-Seam und 13 offizielle Etherington-Seed-URLs. Nächster Schritt: in die bestehende Asset-Librarian-Site bauen; keine zweite Site.",
+      "badge": "P1 · BUILD R1"
     }
   ],
   "parallel": [
