@@ -13,7 +13,7 @@ Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`,
 A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
 
 Current routing:
-- **#360 World Studio / WB2 = PRIMARY PRODUCT RECOVERY.** Outcome: one coherent buildable persistent KFB Open World for comic/story context. Execution is a full ONE_SHOT: architecture → verification harness → module fan-out → fresh-context critics → whole-product gate.
+- **#360 World Studio / WB2 = PRIMARY PRODUCT RECOVERY.** Outcome: one coherent buildable persistent KFB Open World for comic/story context **plus closure of the existing KFB stack**: native Motion, Joyride-designed modular Track Core, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Execution is a full ONE_SHOT: architecture → verification harness → module fan-out → fresh-context critics → whole-product gate.
 - **#364 Production Hub = SOURCE GREEN / PUBLISH_ONLY.** Accepted Paper/Dark v2 donor restored in source; existing Hub Site still needs host-only publication and visual verification.
 - **#361 Combat = HOLD side lane.** Current Platformer/Combat candidate remains HUMAN FAIL but is not the primary product.
 - **#362 Triplet Stage = HOLD** during core recovery.
@@ -21,6 +21,8 @@ Current routing:
 
 Primary World recovery brief:
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
+with binding integration roster:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md`
 on Draft PR #348.
 
 GitHub Issues remain the active job list.
