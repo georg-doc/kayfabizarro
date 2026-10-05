@@ -9,8 +9,8 @@ Branch: `chatgpt-web/surface-consolidation-2026-10-04`
 - Accepted donor pin: `dfaafac070747f9543b5eb5a635e2aaa74e57b83 · kfb-hub/index.html`
 - Recovered candidate commit: `d8246b1b610ef7c7c6d55e1cb9a21b45341e58c0`
 - Recovered candidate blob: `f2e18b7ce3ea23e34fa57251cef6211155b3ce2d`
-- Current board revision: `2026-10-05.10`
-- Current board blob: `13443a43f3d2b98176e1604e0d1a5a54c4ecf2a0`
+- Current board revision: `2026-10-05.11`
+- Current board blob: `1cf21775eab16de4a88d3a20f30a5e031b5c814a`
 
 ## Implementation
 
@@ -34,7 +34,7 @@ No ToolBox, Production Control, World Studio, Combat or FrankenStein runtime was
 1. accepted donor CSS byte-identical — PASS
 2. JavaScript syntax parse — PASS
 3. current-board schema — PASS
-4. board revision = 2026-10-05.10 — PASS
+4. board revision = 2026-10-05.11 — PASS
 5. #364 Hub Recovery present — PASS
 6. #360 Open World Authoring PRIMARY present — PASS
 7. #361 Combat HOLD side lane present — PASS
@@ -65,4 +65,4 @@ Publish the frozen `kfb-hub/` source from commit `d8246b1...` to the existing Pr
 
 `https://kfb-production-hub.frizzlebob.chatgpt.site/`
 
-PASS only if the accepted Paper/Dark Hub v2 presentation is visible and CURRENT shows board `2026-10-05.10`.
+PASS only if the accepted Paper/Dark Hub v2 presentation is visible and CURRENT shows board `2026-10-05.11`.
