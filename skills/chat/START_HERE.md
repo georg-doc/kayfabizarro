@@ -1,3 +1,20 @@
+## 2026-10-05 · WORLD KERNEL LAB · RESEARCH SITE PREPARED
+
+Draft PR **#363** adds an isolated ToolBox research POC for deterministic large-world architecture: hierarchical seed derivation, generator-version identity, LOD-stable world fingerprint, browser Worker generation, transferable typed arrays, coarse fallback and authored-edit migration warning.
+
+Worldspring is pinned at `Dun-John/worldspring@55684aa2700b9f4076fddea338d596bfb9bbf14a` as **READ-ONLY ARCHITECTURE REFERENCE** only; its current all-rights-reserved / UNLICENSED source is not a donor and no source code is copied.
+
+Current state:
+- `tools/KFB-ToolBox/world-kernel-lab/`;
+- source tests **6/6 PASS**;
+- JS syntax **3/3 PASS**;
+- Site source frozen;
+- status **PUBLISH_ONLY · SITES_PUBLISHER_REQUIRED**;
+- no WB2 PR #348 runtime files changed;
+- no Site URL may be claimed until the exact GPT Site is published and opened.
+
+This is a cheap parallel research lane. It does not alter the two P0 human gates for World Studio and Combat.
+
 ## 2026-10-04 · CURRENT SURFACE CONSOLIDATION
 
 Georg reports that Production Hub, Production Control and ToolBox routing are still not coherently current as a human system. Treat this as a **navigation/surface HUMAN FAIL** even when individual deployments are technically green.
