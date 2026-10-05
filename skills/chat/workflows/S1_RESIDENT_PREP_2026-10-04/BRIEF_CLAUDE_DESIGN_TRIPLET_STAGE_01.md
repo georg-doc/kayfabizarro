@@ -20,13 +20,13 @@
 | Triplet work rules + tested pool gaps | this folder: `BRIEF_WEBCHAT_TRIPLET_POOL_01.md` §3, §4, §6, §7 | binding for part B |
 | Card text | `media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json`, `media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json`; Card renderer `kfb-viewer.js` as used by NPC-CARD-SPEC-01 | source |
 
-**Donor rule:** show each donor object in isolation before combining it. A loading URL is not proof that the donor was used.
+**Donor rule:** show each donor object in isolation before combining it. A loading URL is not proof that the donor was used. A 2D crop/screenshot of a Resident is never proof of the 3D donor and is not an allowed replacement.
 
 ## A · Speech-bubble stage
 
 **Outcome:** one stage where two real Residents stand next to one real Card; a Resident's Triplet appears in a speech bubble; the player answers with four buttons; the other Resident replies.
 
-1. **Residents:** the chosen pair from the existing Resident Atlas source (Goth Girl, Clown, Witch; Lorekeeper is a special role and not used). Use the existing actors, props, EyeRig and PetMouth owners where they are source-supported. No new rig, no substitute models.
+1. **Residents:** the chosen pair from the existing Resident Atlas source (Goth Girl, Clown, Witch; Lorekeeper is a special role and not used). Use the existing **real 3D actors**, props, EyeRig and PetMouth owners. **No cut-out figures, sprites, screenshots, image planes, cardboard stand-ins or substitute models.** If source identity must be proven, show the untouched 3D donor once in isolation; in the integrated stage hide/replace stock/source eyes and mount the existing **EyeRig v6** owner. Use an approved/recovered actor profile when available; otherwise use the existing source-derived EyeRig candidate and mark `PROFILE_TUNE`. **No stock-eye fallback in the integrated stage.** No new rig or second eye owner.
 2. **Card:** one real Card, visible on the stage through the existing Card owner. Default option A: `forget_utopia#11` *The Standing Ovation*. Options B and C are in `S1_RESIDENT_PREP_2026-10-04.md` §3.
 3. **Speech bubble** (Base-24 §9): clean rectangular box, lightly rounded corners, high readability over 3D, **not** Claymation, **not** the Cavey/KFB ink-outline treatment. Reuse the speaker-tail/anchor semantics of the existing bubble owner under a new skin. One active speech bubble normally, two as soft maximum.
 4. **Triplet reveal:** the three parts (subject / connector / reframe) appear one after another inside the bubble, like the three stacks of a flip book. Readable, short, not a slot machine.
@@ -52,7 +52,7 @@ Follow `BRIEF_WEBCHAT_TRIPLET_POOL_01.md` §3 (rules), §5 (tasks), §6 (entry f
 
 ## Not in this job
 
-No World Studio integration (that is the later S1 build run), no new dialogue/memory/animation/camera owner, no LLM, no Fluffolekt, no other Residents, no dark secrets or backstories, no Production Control writes, no merge, no Stage/Live promotion.
+No World Studio integration (that is the later S1 build run), no new dialogue/memory/animation/camera/eye owner, no LLM, no Fluffolekt, no other Residents, no dark secrets or backstories, no Production Control writes, no merge, no Stage/Live promotion. Do not build or publish the separate Triplet Curator GPT Site in this issue; PR #357 remains a prepared future productization donor until the current W1/C1 + #362 gates have produced accepted material.
 
 ## Exactly one next gate
 
