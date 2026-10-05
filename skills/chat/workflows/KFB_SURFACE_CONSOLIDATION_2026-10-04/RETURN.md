@@ -154,3 +154,37 @@ Exactly one next gate:
 **HUB_CONTROL_CURRENT_ONLY → RETURN_TO_PRODUCT_INTEGRATION**.
 
 No claim is made here that the GPT Site host has already consumed revision `2026-10-05.2`; that remains a host-level verification/publish-only step.
+
+
+## 2026-10-05 · FINAL WSA RETURN · SURFACE RECOVERY STOPPED
+
+WSA returned the Hub recovery as completed and published.
+
+Reported result:
+- Production Hub: `https://kfb-production-hub.frizzlebob.chatgpt.site/?version=8&revision=2026-10-05.2`
+- Site version: **8**
+- Site/source commit reported by WSA: `46455295f12c1be89e46e4e4b8f4899831d5f559`
+- approved donor design used;
+- Paper/Dark present;
+- Pocket Inbox present;
+- Dropzone present;
+- Decisions present;
+- compact Today workflow present;
+- CURRENT = `2026-10-05.2`;
+- #360 / #361 / #362 present;
+- embedded 2026-09-25 fallback removed from the deployment;
+- ToolBox unchanged;
+- FrankenStein unchanged.
+
+Important verification boundary:
+- the GitHub board source is independently verified at revision `2026-10-05.2`;
+- this chat's generic web fetch cannot open the private GPT Site host, so the visible Site result is recorded as **WSA_REPORTED_PUBLISHED**, not independently re-labeled as browser-verified by this chat;
+- the reported Site/source commit `46455295...` is not a commit in `georg-doc/kayfabizarro`; treat it as Site-system source identity unless/until mapped otherwise.
+
+Decision:
+**STOP SURFACE RECOVERY.**
+
+No more Hub/Control/ToolBox/FrankenStein design recovery work is authorized from this incident.
+
+Exactly one next gate:
+**RETURN_TO_PRODUCT_INTEGRATION**.
