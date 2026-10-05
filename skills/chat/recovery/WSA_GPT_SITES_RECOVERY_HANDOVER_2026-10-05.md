@@ -340,3 +340,34 @@ As soon as Hub + Production Control are current and usable, **stop this recovery
 
 Next productive gate:
 **RETURN_TO_PRODUCT_INTEGRATION**.
+
+
+## 15. HUMAN FAIL · WRONG DESIGN · 2026-10-05
+
+Georg visually rejected the current WSA recovery candidate immediately:
+
+**HUMAN FAIL: WRONG DESIGN.**
+
+Production Guard classification:
+- failure type: `SOURCE_FIDELITY / DESIGN_IDENTITY`;
+- impact: acceptance-blocking for the affected Site candidate;
+- scope: freeze/quarantine **this candidate/design-repair seam only**;
+- do **not** promote this into a stop of unrelated KFB product integration;
+- do **not** spend another pass making the current candidate merely "closer";
+- do **not** publish/overwrite a productive Site from this candidate.
+
+Required next action before any further Site styling:
+1. identify the exact approved design donor/source object;
+2. show that donor in isolation;
+3. record its exact source/commit/blob;
+4. compare candidate structure/components against that donor;
+5. only then may Builder perform one bounded implementation pass.
+
+Builder may not self-classify the repaired result as accepted.
+Independent Critic must compare exact donor vs candidate.
+Production Guard alone may authorize CONTINUE / REPAIR / QUARANTINE / HUMAN_DECISION / STOP.
+
+If the exact approved donor cannot be established, STOP **this Site-recovery seam** and preserve the current product data/state. Do not invent another design.
+
+This HUMAN FAIL does not alter Georg's prior priority:
+**Hub + Production Control current enough for use, then return to product integration.**
