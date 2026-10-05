@@ -121,3 +121,36 @@ Current operating model:
 
 Hub board source is reconciled at revision `2026-10-05.1`. No new Site deployment is claimed from this chat. Future jobs do **not** require another Hub/Control round unless the issue workflow itself proves insufficient.
 
+
+
+## 2026-10-05 · GEORG PRIORITY OVERRIDE · HUB/CONTROL CURRENT, THEN INTEGRATION
+
+Georg explicitly rejected rollback as the recovery strategy because the earlier Sites were already visually inconsistent and a rollback would only restore another imperfect state.
+
+Current priority is now:
+
+1. Production Hub must show current production state and must not present the 2026-09-25 embedded fallback as current.
+2. Production Control must contain the latest durable decisions/Returns/current-state records.
+3. No further Work/WSA credits are to be spent on broad Site design recovery now.
+4. ToolBox and FrankenStein visual recovery are deferred/frozen.
+5. As soon as Hub + Control are current enough for navigation/history, Surface Recovery stops and product integration resumes.
+
+Cost classification:
+- current-state/data correction = normal Web Chat;
+- host refresh, only if technically required = lowest-cost Sites-capable `PUBLISH_ONLY`;
+- no premium Work/WSA reasoning for CSS/design reconstruction.
+
+Current board source and publishable Hub copy are both synchronized at:
+- revision `2026-10-05.2`;
+- `skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/surface-config/CURRENT_BOARD.json`;
+- `kfb-hub/current-board.json`.
+
+Current operating jobs:
+- #360 World Studio · P0 · waiting-human;
+- #361 Card-Hex Combat · P0 · waiting-human;
+- #362 Triplet Stage · parallel · TUNE.
+
+Exactly one next gate:
+**HUB_CONTROL_CURRENT_ONLY → RETURN_TO_PRODUCT_INTEGRATION**.
+
+No claim is made here that the GPT Site host has already consumed revision `2026-10-05.2`; that remains a host-level verification/publish-only step.
