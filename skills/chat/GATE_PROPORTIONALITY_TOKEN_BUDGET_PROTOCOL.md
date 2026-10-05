@@ -200,8 +200,10 @@ After one failed placement/composition pass:
 - verify axis/pivot/support;
 - ask Georg if intent is ambiguous.
 
-After two failed repair passes:
-- stop and export failure recovery.
+After two non-improving repair passes:
+- stop repairing the **smallest failing seam**;
+- preserve/export that seam's recovery evidence;
+- quarantine/defer and continue the parent outcome unless the Production Guard proves the seam is outcome-critical.
 
 ## Gate wording requirement
 
