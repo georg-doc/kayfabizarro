@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KFB World Kernel Lab</title><link rel="stylesheet" href="./style.css"></head><body><main class="shell">
+<header class="top"><div><div class="eyebrow">KFB ToolBox · Research POC</div><h1>World Kernel Lab</h1></div><p>Seeded world identity, hierarchical detail, worker generation, coarse fallback and authored edits. Research-only: it does not replace WB2, Track Core or the current four-island runtime.</p></header>
+<section class="grid"><aside class="panel">
+<div class="control"><label for="seed">Root seed</label><input id="seed" type="number" value="23" min="1" step="1"></div>
+<div class="control"><label for="version">Generator version</label><input id="version" type="number" value="1" min="1" step="1"></div>
+<div class="control"><label for="level">Detail level · <span id="levelOut">0</span></label><input id="level" type="range" value="0" min="0" max="5" step="1"></div>
+<div class="buttons"><button id="regen">Regenerate</button><button class="secondary" id="clearEdits">Clear edits</button><button class="secondary" id="adoptVersion">Accept edit migration</button></div>
+<div class="metrics"><div class="metric"><b>World identity</b><span id="identity">—</span></div><div class="metric"><b>Fingerprint</b><span id="fingerprint">—</span></div><div class="metric"><b>Worker</b><span id="genMs">—</span></div><div class="metric"><b>Queue</b><span id="queue">0</span></div><div class="metric"><b>Edits</b><span id="edits">0 authored</span></div></div>
+<div class="notice" id="migration">edit/base versions aligned</div>
+<div class="notice">Try it: keep seed 23, change detail 0→5. The macro field stays recognisable while smaller bands appear. Click the map to add authored anchors. Then bump generator version: the procedural base changes and the edit migration warning appears.</div>
+</aside><section class="stage"><div class="stagebar"><span id="status">generating…</span><span>Main thread: render only</span></div><div class="canvaswrap"><canvas id="world" width="900" height="560"></canvas></div><div class="legend"><span><i class="dot"></i> deterministic KFB landmark</span><span><i class="sq"></i> authored edit</span></div></section></section>
+<footer class="foot"><span>POC contract: same seed + same generator version = same world fingerprint.</span><span>Worldspring is architecture reference only; no Worldspring source is copied.</span></footer>
+</main><script type="module" src="./app.js"></script></body></html>

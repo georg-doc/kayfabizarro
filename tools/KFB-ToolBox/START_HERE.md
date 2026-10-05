@@ -21,6 +21,7 @@ Current specialist Site targets:
 - Hypernormalisation Curator · `https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site`
 
 Prepared/current next ToolBox modules:
+- World Kernel Lab · Draft PR #363 · deterministic world architecture research POC · Site prepared / PUBLISH_ONLY;
 - Environment Atlas;
 - ChatterBox + Comic VFX Studio;
 - 2D Animation / motion/rig surfaces only after exact owner/source reconciliation.

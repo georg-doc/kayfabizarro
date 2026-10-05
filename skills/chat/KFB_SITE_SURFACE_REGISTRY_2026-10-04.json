@@ -67,6 +67,17 @@
       "surfaceRole": "SPECIALIST_TOOL"
     },
     {
+      "id": "kfb-world-kernel-lab",
+      "owner": "KFB ToolBox / World Kernel Lab research lane",
+      "url": null,
+      "status": "SITE_PREPARED_NOT_PUBLISHED",
+      "source": "Draft PR #363",
+      "humanStatus": "PUBLISH_ONLY_THEN_GEORG_USEFUL_TUNE_DROP",
+      "notes": "Research-only deterministic world architecture POC: hierarchical seed, generator version, LOD-stable identity, Worker generation, transferable Float32Array, coarse fallback and authored-edit migration warning. Worldspring is read-only architecture reference; no source copied. Does not mutate WB2 PR #348.",
+      "publishPacket": "tools/KFB-ToolBox/world-kernel-lab/SITE_PUBLISH_PACKET.md",
+      "surfaceRole": "SPECIALIST_TOOL"
+    },
+    {
       "id": "kfb-environment-atlas",
       "owner": "tools/world_atlas",
       "url": null,
@@ -130,7 +141,7 @@
       "notes": "Exactly one canonical GPT Site front door must route to current specialist tools. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors. Work must first resolve whether an existing ToolBox GPT Site project already exists; update it if found, otherwise create exactly one."
     }
   ],
-  "updatedAt": "2026-10-04T21:55:00+02:00",
+  "updatedAt": "2026-10-05T10:35:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",

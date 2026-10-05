@@ -1,0 +1,2 @@
+import { generateHeightTile, stableLandmarks, worldFingerprint } from './world-kernel.js';
+self.onmessage=(event)=>{const{id,seed,generatorVersion,level,size}=event.data;const started=performance.now();const tile=generateHeightTile({seed,generatorVersion,level,size});const landmarks=stableLandmarks(seed,generatorVersion);const fingerprint=worldFingerprint({seed,generatorVersion,level});self.postMessage({id,seed,generatorVersion,level,size,min:tile.min,max:tile.max,heights:tile.data,landmarks,fingerprint,generationMs:performance.now()-started},[tile.data.buffer])};
