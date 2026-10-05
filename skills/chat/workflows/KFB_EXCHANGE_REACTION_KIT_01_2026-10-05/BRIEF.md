@@ -37,6 +37,35 @@ Every culture mechanic ends here: gift, trade, debate, hit, dance invite. Reacti
 
 **Social calls** KayfaBINGO / KayfaBOGGLE / KayfaBONGO / BLÖDSINN get one reaction each. The mapping is a proposal only; Georg's naming and meaning are not fixed.
 
+## Call set (Georg, 2026-10-05) · replaces the social-call proposal
+
+These are short calls in capitals with fixed punctuation. Each call has three parts: a gesture, a clay call-out object, and a runtime meaning. The punctuation sets the tone, the gesture energy and how the call-out animates.
+
+| Call | Meaning | Gesture (existing clip, trim) | Call-out motion |
+|---|---|---|---|
+| **BINGO!** | yes / agree | gesture_cheering 0–75 | slams in, squash |
+| **BONGO.** | no / contradict | gesture_thoughtful_head_shake 6–64 (angry_gesture 6–56 for the strong version) | short, flat drop |
+| **BOGGLE?** | unclear / confused, asks back ("…?") | reaction_surprised 14–89 (Part 2 also auditions a puzzled shrug/tilt if one exists) | wobble, tilt |
+| **Blödsinn…** | reject + leave (exit) | gesture_dismissing 4–44 → turn away, walk off (sad_walk) | sags, melts |
+| **FLUFFY!** | delighted surprise | joyful_jump (pickup hop) or reaction_surprised | puffs up |
+| **Kayfabe!** | interjection | gesture_pointing / strong_gesture | stamp |
+| **Pop!** | interjection | short strong_gesture + clay POP sound | merge-POP timing |
+| **Bizarro…?!** | cognitive dissonance / disbelief | escalation, see below | glitch / crack |
+
+**Bizarro escalation (the "Ontological Schick-Schock").** The runtime keeps a counter per NPC and per session.
+
+| Trigger | Response |
+|---|---|
+| 1st | head shake |
+| 2nd | dizzy_idle |
+| 3rd | faint and fall |
+
+The shock is written to that NPC's Lean Memory in the session. For the faint, Part 2 auditions in-place falls (`standing_death_left`, `death_from_the_front`), because `fall_flat` travels 1.95 m.
+
+**Call-out objects.** Thick kneaded clay letters as a 3D billboard: they face the camera, use the Fluff clay material and POP timing, and carry a collider. They are objects, not 2D sprites, so later mechanics (censoring a thought bubble, stealing a speech bubble, hopping on one's own thought bubble, platformer logic) can use them without a rebuild. Part 2 delivers look samples for 2–3 calls. Georg decides the look.
+
+**Language.** "Blödsinn" is kept as a fixed KFB proper term, like "Kayfabe" (exception to the English-only in-world rule) unless Georg says otherwise.
+
 ## Props
 
 - **KayKit Holiday Bits** (the gifts in the KayKit Santa/Holiday pack): only Patreon reference images exist on disk. No model files were found in Dropbox or the repo (clone 09-29).
