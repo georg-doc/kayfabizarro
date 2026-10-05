@@ -31,6 +31,19 @@ GitHub state overrides chat memory.
 - World Studio, Combat and specialist Sites are products/tools, not dashboards.
 - Routine TODO/status changes do **not** require Hub/Cloudflare republishing.
 
+### Executor names are explicit
+
+Never use bare **"ChatGPT"** as the executor in a KFB job, Issue, Hub card, Return or briefing.
+
+Use one of:
+- **ChatGPT Web Chat** — cheap/default research, intake, GitHub/admin, data curation, bounded non-Work production;
+- **ChatGPT Work/WSA** — substantial implementation, multi-system integration, hard runtime/debugging, Work cloud-computer/Sites operations when actually required;
+- **Claude Design** — visual/interaction authoring from pinned sources;
+- **Blender MCP** — 3D/rig/animation authoring;
+- **PUBLISH_ONLY / Sites-capable executor** — deterministic host publication without reopening engineering.
+
+Executor label = actual execution surface, not model family.
+
 Current portfolio reference:
 `skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md`
 
