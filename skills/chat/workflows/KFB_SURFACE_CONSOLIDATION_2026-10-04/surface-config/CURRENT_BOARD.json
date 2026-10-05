@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.3",
-  "updatedAt": "2026-10-05T22:40:00+02:00",
+  "revision": "2026-10-05.4",
+  "updatedAt": "2026-10-05T22:54:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · Executor-explicit",
-    "note": "GitHub Issues sind die aktive Jobliste. Jede operative Karte nennt die tatsächliche Ausführungsoberfläche; kein nacktes 'ChatGPT'. Surface Recovery bleibt geschlossen."
+    "label": "CURRENT · Hub recovery reopened",
+    "note": "Production Hub recovery is P0 and active. GitHub Issues remain the job list. #361 is HUMAN FAIL / blocked: design + controls/playability + audio regressions; do not ask Georg to replay the failed candidate."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -14,6 +14,16 @@
     "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site"
   },
   "p0": [
+    {
+      "id": "issue-364-production-hub-recovery",
+      "title": "#364 · Production Hub · Recovery",
+      "summary": "P0 · accepted Hub v2 design + current production state. Generic dark dashboard replacement is rejected; restore donor-faithful Paper/Dark Hub and publish in place only after source is frozen.",
+      "badge": "P0 · recovery",
+      "action": "Issue #364 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/364",
+      "executor": "ChatGPT Web Chat · source/data recovery",
+      "nextExecutor": "PUBLISH_ONLY / Sites-capable executor"
+    },
     {
       "id": "issue-360-world-studio",
       "title": "#360 · World Studio · vier Inseln frei spielen",
@@ -26,13 +36,13 @@
     },
     {
       "id": "issue-361-combat",
-      "title": "#361 · Card-Hex Combat · einen Durchlauf spielen",
-      "summary": "P0 · waiting-human. Einen vollständigen Run plus Restart spielen und direkt im Issue kommentieren. Provider-Vergleich bleibt HOLD.",
-      "badge": "P0 · waiting-human",
+      "title": "#361 · HUMAN FAIL · Platformer / Card-Hex Combat",
+      "summary": "P0 · blocked. Nicht spielbar: Design-Regress, Controls/Spielbarkeit FAIL und zusätzliche Audio-Bugs. Gegen die frühere Combat-Arena-Baseline recovern; kein weiterer Georg-Test des failed candidate.",
+      "badge": "P0 · HUMAN FAIL · blocked",
       "action": "Issue #361 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
-      "executor": "Georg · human freeplay/review",
-      "nextExecutor": "ChatGPT Work/WSA · only after TUNE/FAIL"
+      "executor": "ChatGPT Work/WSA · regression recovery",
+      "nextExecutor": "Georg · only after playable repaired candidate"
     }
   ],
   "p1": [],
@@ -51,7 +61,7 @@
   "quickLinks": [
     {
       "title": "GitHub Issues · aktuelle Jobliste",
-      "summary": "Aktive P0/parallel/waiting-human/TUNE Jobs. Das ist die operative Arbeitsliste.",
+      "summary": "Aktive P0/parallel/recovery/blocked Jobs. Das ist die operative Arbeitsliste.",
       "url": "https://github.com/georg-doc/kayfabizarro/issues"
     },
     {
