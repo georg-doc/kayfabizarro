@@ -6,6 +6,21 @@ Purpose: one cross-project view of current Web Chats, Sites, implementation slic
 
 GitHub current state wins. This file is a portfolio map, not a replacement for project SSOTs.
 
+## CURRENT OVERRIDE · 2026-10-05 · OPEN WORLD AUTHORING PRIMARY
+
+Georg's direct product review supersedes the earlier executive picture below.
+
+- **PRIMARY PRODUCT / P0:** World Studio / WB2 #360 · recover a buildable persistent Open World for comic/story context. Acceptance loop: BOOT → source-proven PLACE → EDIT → SCULPT → SAVE/RELOAD → PLAY.
+- **Hub #364:** source green; accepted Paper/Dark v2 restored in GitHub; host-only PUBLISH_ONLY remains.
+- **Combat #361:** HOLD side lane; current Platformer candidate HUMAN FAIL, but not the primary product.
+- **Triplet #362:** HOLD during core recovery.
+- Four islands remain later world recipes/content; they are not the current acceptance target.
+- No new feature/design expansion until the Open World authoring loop is usable again.
+
+Binding brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md` on PR #348.
+
+---
+
 ## 0A · Surface consolidation · CURRENT CONTROL-PLANE RECOVERY
 
 Georg reports that the Production Hub, Production Control and ToolBox surfaces are not coherently current from the human point of view.
