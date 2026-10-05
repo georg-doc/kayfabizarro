@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.1",
-  "updatedAt": "2026-10-05T02:45:00+02:00",
+  "revision": "2026-10-05.2",
+  "updatedAt": "2026-10-05T17:44:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · GitHub Issues sind die Jobliste",
-    "note": "#360 World Studio und #361 Combat sind die zwei P0-Human-Gates. #362 Triplet Stage läuft parallel. Production Hub ist nur noch Orientierung; Production Control ist Archiv, kein Pflichtkanal zwischen Jobs."
+    "label": "CURRENT · Integration first",
+    "note": "GitHub Issues sind die aktive Jobliste. Hub + Control werden nur auf aktuellen Stand gebracht; ToolBox/FrankenStein-Design-Recovery ist eingefroren. Keine weiteren Work-Credits für Surface-Redesign."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -17,7 +17,7 @@
     {
       "id": "issue-360-world-studio",
       "title": "#360 · World Studio · vier Inseln frei spielen",
-      "summary": "Georg spielt alle vier Inseln und kommentiert direkt im Issue, was funktioniert und was stört. Erst daraus entsteht höchstens ein bounded Repair-Job.",
+      "summary": "P0 · waiting-human. Alle vier Inseln frei spielen und direkt im Issue notieren, was funktioniert und was stört. Repariert wird danach nur beobachteter Produktbedarf.",
       "badge": "P0 · waiting-human",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360"
@@ -25,7 +25,7 @@
     {
       "id": "issue-361-combat",
       "title": "#361 · Card-Hex Combat · einen Durchlauf spielen",
-      "summary": "Georg spielt einen vollständigen Run plus Restart und kommentiert direkt im Issue. Combat-Repo bleibt privat; WSA/Codex bleibt Runtime-Owner.",
+      "summary": "P0 · waiting-human. Einen vollständigen Run plus Restart spielen und direkt im Issue kommentieren. Provider-Vergleich bleibt HOLD.",
       "badge": "P0 · waiting-human",
       "action": "Issue #361 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/361"
@@ -35,9 +35,9 @@
   "parallel": [
     {
       "id": "issue-362-triplet-stage",
-      "title": "#362 · Triplet-Bühne + Review · Claude Design",
-      "summary": "Parallel-Session mit realen Resident-Atlas-3D-Modellen, EyeRig v6 nach Source-Isolation und dem bestehenden Triplet-Kernel. Keine Cutouts; keine separate ChatterBox-Site während dieses Gates.",
-      "badge": "parallel · waiting-human",
+      "title": "#362 · Triplet Stage · TUNE",
+      "summary": "Parallel · aktueller TUNE-Pass. Real Resident-Atlas 3D + EyeRig v6; keine 2D-Fallbacks; danach zurück an Georg. Keine zusätzliche Site-Productization in diesem Gate.",
+      "badge": "parallel · TUNE",
       "action": "Issue #362 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/362"
     }
@@ -45,18 +45,18 @@
   "quickLinks": [
     {
       "title": "GitHub Issues · aktuelle Jobliste",
-      "summary": "P0/P1/parallel/waiting-human/blocked/done. Issues ersetzen Pflicht-Router-/Control-Runden zwischen Jobs.",
+      "summary": "Aktive P0/parallel/waiting-human/TUNE Jobs. Das ist die operative Arbeitsliste.",
       "url": "https://github.com/georg-doc/kayfabizarro/issues"
     },
     {
-      "title": "ToolBox",
-      "summary": "Ein Router für Spezialwerkzeuge; kein Job-Tracker.",
-      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+      "title": "Production Control",
+      "summary": "Aktuelle Entscheidungen, Returns und Recovery-Historie. Kein Pflicht-Umweg zwischen Integrationsjobs.",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/"
     },
     {
-      "title": "Production Control",
-      "summary": "Privates Archiv / Returns / History; kein Pflichtkanal für laufende Jobs.",
-      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/"
+      "title": "ToolBox",
+      "summary": "Spezialwerkzeug-Router. Design-Recovery ist aktuell eingefroren.",
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
     }
   ]
 }
