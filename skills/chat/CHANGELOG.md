@@ -2530,3 +2530,24 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - STOP now requires demonstrated blockage of the named product outcome; repeated local test failure alone is insufficient.
 - Two non-improving repairs freeze the smallest failing seam; non-critical seams are quarantined and the One-Shot continues.
 - Fresh Chat protocol, Stage workflow, START_HERE and the current WB2 One-Shot lock now require the compact `INDEPENDENT EXECUTION` briefing block.
+
+
+## 2026-10-05 · Rule architecture cleanup 1–6
+
+Georg ordered a simplification pass after repeated Work/WSA process failures and token burn.
+
+1. **Two-repair scope fixed globally:** two non-improving repairs freeze the smallest failing seam; parent Product/One-Shot stops only when Production Guard proves outcome blockage.
+2. **START_HERE reduced from 108,140 to 6,298 characters:** it is now a router, not a historical CURRENT-stack. History stays in changelog/Returns/Git history.
+3. **Heavy Critic firewalled to WB2 PR #348:** 9-dimension scoring / 8.5 thresholds / Whole-Game gauntlet are not generic Critic requirements.
+4. **Checkpoint spam removed:** default durable writes are implementation milestone, material evidence milestone and final Return/handoff; not every internal test.
+5. **Hub/Cloudflare sync narrowed:** GitHub Issues are the active job list; routine TODO/status changes do not trigger Hub/Site/Cloudflare work. GPT Site is primary for Site-capable products; Cloudflare only when explicitly required.
+6. **Briefs/handoffs shortened:** state executor, outcome, owner, read-first source, protected boundary, done condition and compact independent-execution roles. Reference existing contracts instead of copying them.
+
+Additional alignment:
+- Independent Execution Guard reduced and leads with “roles, not extra Work jobs”.
+- Production Control timeout rule now stops only the failing operation unless Guard proves outcome blockage.
+- World Studio current One-Shot and workflow START_HERE explicitly protect against Taxi/harness/local-failure global STOP.
+- Plain-language four-part format now applies only to substantial handoffs/closures, not every progress update.
+- Web project-folder instructions updated to the same lean checkpoint / Sites-first / milestone-routing model.
+
+No runtime/product code changed.
