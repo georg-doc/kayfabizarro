@@ -1,7 +1,7 @@
 {
   "schema": "kfb.one-shot-status/1",
-  "date": "2026-10-04",
-  "mode": "ONE_SHOT",
+  "date": "2026-10-05",
+  "mode": "RECOVERY_OPEN_WORLD_AUTHORING_PRIMARY",
   "owner": "KFB WorldBuilder / WB2",
   "repo": "georg-doc/kayfabizarro",
   "pr": 348,
@@ -21,8 +21,8 @@
     "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "cloudflareRole": "SECONDARY_MIRROR"
   },
-  "productOutcome": "PUBLISH_EXACT_FOUR_ISLAND_CANDIDATE_TO_EXISTING_GPT_SITE_FOR_HUMAN_FREEPLAY",
-  "state": "FOUR_ISLAND_CANDIDATE_SITE_PUBLISHED_GEORG_FREEPLAY_PENDING",
+  "productOutcome": "RECOVER_BUILDABLE_PERSISTENT_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
+  "state": "OPEN_WORLD_AUTHORING_RECOVERY_ACTIVE",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -40,9 +40,13 @@
     "siteWorldStudio": "NATIVE_GUI_FRESH_IMPORT_REEXPORT_5_OF_5_PASS_FULL_CLI_JOURNEY_GAUNTLET_NOT_RUN",
     "goldenJourneyE2E": "HARNESS_ENDPOINT_FAILURE_QUARANTINED_NOT_PRODUCT_FAILURE",
     "publicStage": "DEPLOYED_PUBLIC_BROWSER_VERIFICATION_BLOCKED",
-    "humanAcceptance": "PENDING_GEORG_FREEPLAY",
+    "humanAcceptance": "HUMAN_TOTAL_FAIL_CURRENT_FOUR_ISLAND_CANDIDATE",
     "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "primaryGptSite": "PUBLISHED_FROZEN_CANDIDATE_BROWSER_UNVERIFIED"
+    "primaryGptSite": "PUBLISHED_FROZEN_CANDIDATE_BROWSER_UNVERIFIED",
+    "primaryProduct": "OPEN_WORLD_AUTHORING_FOR_COMICS_STORIES",
+    "authoringLoop": "RECOVERY_REQUIRED_R0_R5",
+    "fourIslandContent": "DEFERRED_CONTENT_FIXTURE_NOT_PRIMARY_ACCEPTANCE",
+    "combat": "HOLD_SIDE_CONSUMER_NOT_BLOCKER"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -322,8 +326,8 @@
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
   "openCoreBlockers": [
-    "Actual runtime visual/playability of candidate is unreviewed because candidate is not yet published to the primary Site.",
-    "Automated browser QA remains blocked by external admin policy service; this is not a product blocker."
+    "Current published four-island candidate is HUMAN TOTAL FAIL for product use: rejected visible composition and unreliable/slow boot observed.",
+    "Open-world authoring loop must be re-proven end-to-end before Georg is asked to review again: boot -> source-proven place -> edit -> sculpt -> save/reload -> play."
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -335,7 +339,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "GEORG_FREEPLAY_ALL_FOUR_ISLANDS_ON_SAME_GPT_SITE",
+  "nextInternalAction": "WORK_WSA_EXECUTE_R0_R5_OPEN_WORLD_AUTHORING_RECOVERY",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -526,9 +530,17 @@
     "browserPlayVerification": "NOT_RUN_POLICY_SERVICE_UNAVAILABLE"
   },
   "humanAcceptance": {
-    "status": "PENDING",
-    "versionId": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
-    "gate": "Georg freeplay"
+    "status": "FAIL_CURRENT_CANDIDATE",
+    "date": "2026-10-05",
+    "evidence": "Georg direct browser review / screenshots",
+    "findings": [
+      "current four-island composition visually rejected",
+      "pack/environment direction rejected",
+      "props read as arbitrary scattering",
+      "boot observed stalling/slow at Loading 3D engine",
+      "candidate is not a usable open-world authoring product"
+    ],
+    "nextHumanGate": "ONLY_AFTER_INTERNAL_R0_R5_OPEN_WORLD_AUTHORING_PASS"
   },
   "joyridePresentation": {
     "status": "REQUIRED_MISSING",
@@ -551,7 +563,7 @@
     "rule": "Track Core remains route/support/collision owner; Joyride supplies PRESENTATION, not a second road runtime."
   },
   "fourIslandRecovery": {
-    "required": true,
+    "required": false,
     "topology": "KEEP_CURRENT_WORLD_RECIPES",
     "islands": {
       "world.kfb-town": {
@@ -594,7 +606,7 @@
     "paletteSource": "R2C PAL @ current main",
     "siteUpdate": "SAME_GPT_SITE_IN_PLACE",
     "implementationHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-    "status": "PUBLISHED_CANDIDATE_HUMAN_ACCEPTANCE_PENDING",
+    "status": "FAILED_CANDIDATE_PRESERVED_AS_EVIDENCE",
     "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/FOUR_ISLAND_RECOVERY_2026-10-04/RESULT.json",
     "siteUpdated": true,
     "browserBlock": "ADMIN_POLICY_SERVICE_UNAVAILABLE",
@@ -604,7 +616,8 @@
       "Utopia",
       "Protopia"
     ],
-    "nextGate": "Georg freeplays all four islands; deployment is not acceptance"
+    "nextGate": "NONE_UNTIL_OPEN_WORLD_AUTHORING_R0_R5_PASSES",
+    "role": "DEFERRED_CONTENT_RECIPES_AFTER_AUTHORING_CORE"
   },
   "publicationGateCorrection": {
     "date": "2026-10-04",
@@ -626,8 +639,8 @@
     "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
     "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
     "runtimeClosureFiles": 92,
-    "status": "FROZEN_92_FILE_CANDIDATE_PUBLISHED_GEORG_FREEPLAY_PENDING",
-    "next": "GEORG_FREEPLAY",
+    "status": "CURRENT_PUBLISHED_CANDIDATE_HUMAN_TOTAL_FAIL",
+    "next": "REPLACE_ONLY_AFTER_INTERNAL_OPEN_WORLD_AUTHORING_RECOVERY_PASS",
     "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
     "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
   },
@@ -661,5 +674,31 @@
     "humanAcceptance": "PENDING_GEORG_FREEPLAY",
     "cloudflare": "UNTOUCHED",
     "merge": "NONE"
+  },
+  "currentProductCorrection": {
+    "date": "2026-10-05",
+    "primaryProduct": "Buildable persistent KFB open world used as reusable comic/story context",
+    "acceptanceLoop": [
+      "BOOT",
+      "PLACE_SOURCE_PROVEN_ASSETS",
+      "EDIT",
+      "SCULPT",
+      "SAVE_RELOAD",
+      "PLAY_AUTHORED_SPACE"
+    ],
+    "bindingBrief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md",
+    "verifiedDonors": [
+      "georg-doc/KFB-Travel-Globe/site/world-builder/ WB0 live authoring mechanism",
+      "wb2-studio.v1.js current Asset Librarian/search/place/save seam",
+      "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+      "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md"
+    ],
+    "nonBlockers": [
+      "four-island visual completion",
+      "Combat",
+      "minigames",
+      "quest/economy/social expansion"
+    ],
+    "rule": "Four islands are world recipes/content after authoring core recovery; do not polish failed showcase forward."
   }
 }
