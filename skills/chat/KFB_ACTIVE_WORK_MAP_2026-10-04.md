@@ -10,14 +10,14 @@ GitHub current state wins. This file is a portfolio map, not a replacement for p
 
 Georg's direct product review supersedes the earlier executive picture below.
 
-- **PRIMARY PRODUCT / P0:** World Studio / WB2 #360 · recover a buildable persistent Open World for comic/story context. Acceptance loop: BOOT → source-proven PLACE → EDIT → SCULPT → SAVE/RELOAD → PLAY.
+- **PRIMARY PRODUCT / P0:** World Studio / WB2 #360 · execute the full Open World Production Reset One-Shot: coherent extensible world + direct authoring + verification harness + fresh-context critic gauntlet + whole-product pass.
 - **Hub #364:** source green; accepted Paper/Dark v2 restored in GitHub; host-only PUBLISH_ONLY remains.
 - **Combat #361:** HOLD side lane; current Platformer candidate HUMAN FAIL, but not the primary product.
 - **Triplet #362:** HOLD during core recovery.
 - Four islands remain later world recipes/content; they are not the current acceptance target.
 - No new feature/design expansion until the Open World authoring loop is usable again.
 
-Binding brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_AUTHORING_RECOVERY_2026-10-05.md` on PR #348.
+Binding brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md` on PR #348.
 
 ---
 
