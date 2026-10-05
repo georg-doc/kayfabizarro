@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-10-05 · Style Reference Library R1 site packet
+
+### ROUTING
+Prepared a dedicated ToolBox entry for **Style Reference Library**, but kept the existing Asset Librarian as the only specialist Site owner. The ToolBox card will open the Asset Librarian's future Style References mode; no second Site/deep-link is claimed yet.
+
+### SEMANTICS
+Style References reuse Browse, Inspector, Saved Sets, Intake, provenance and candidate handoff semantics. Bidirectional curated links connect references to production/procedural assets without changing canonical mechanical asset facts.
+
+### SOURCE
+Initial R1 seed contains 13 official Etherington Brothers tutorial URLs. Official creator pages are preferred; Pinterest/reposts remain discovery-only. URL verification is not source-isolation proof.
+
+### BOUNDARY
+No Site/runtime/deployment changed. No private source image is added to GitHub or public Stage. Next gate is R1 engineering in the existing Asset Librarian Site.
+
 ## 2026-10-04 · Exactly one canonical ToolBox Site
 
 ### IMPLEMENTATION
