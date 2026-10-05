@@ -1,60 +1,376 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="paper">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>KFB Production Hub</title>
+  <link rel="canonical" href="https://kfb-production-hub.frizzlebob.chatgpt.site/">
   <style>
-    :root{--bg:#171512;--panel:#211e19;--raised:#29251f;--ink:#f6efe0;--muted:#b5aa98;--line:#443c32;--accent:#f3b43f;--accent-ink:#1d1608;--ok:#74c69d;--radius:18px;--gap:14px;--shadow:0 20px 50px rgba(0,0,0,.24)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 0,rgba(243,180,63,.10),transparent 30rem),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px}
-    a{color:inherit}.shell{position:relative;width:min(1180px,calc(100% - 32px));margin:auto;padding:24px 0 64px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:38px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:-.02em}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:1000}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nav a,.button{padding:9px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:800;font-size:12px;background:rgba(33,30,25,.72)}.nav a:hover,.button:hover{border-color:var(--accent)}.nav .primary,.button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:var(--gap);margin-bottom:var(--gap)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.hero-main{padding:clamp(26px,5vw,58px)}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:950}.hero h1{font-size:clamp(42px,7vw,78px);line-height:.94;letter-spacing:-.065em;margin:12px 0 18px}.lede{max-width:690px;font-size:clamp(16px,2.4vw,21px);color:var(--muted);margin:0}.hero-side{padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}.status{display:flex;align-items:center;gap:9px;font-weight:850}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 5px rgba(116,198,157,.12)}.hero-side p{margin:8px 0 0;color:var(--muted);font-size:13px}.hero-actions{display:grid;gap:8px}.hero-actions a{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:12px;background:var(--raised);border:1px solid var(--line);text-decoration:none;font-weight:850}.hero-actions a:hover{border-color:var(--accent)}
-    .section{margin-top:var(--gap);padding:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}.section h2{margin:0;font-size:20px;letter-spacing:-.03em}.section-head p{margin:0;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{display:flex;flex-direction:column;min-height:190px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--raised)}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.badge{flex:none;border:1px solid var(--line);border-radius:999px;padding:4px 7px;font-size:9px;font-weight:950;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}.card h3{font-size:18px;line-height:1.15;margin:0;letter-spacing:-.025em}.card p{color:var(--muted);font-size:13px;margin:12px 0 16px;flex:1}.card a{align-self:flex-start}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.three .card{min-height:170px}.priority-p0{border-top:3px solid var(--accent)}.priority-p1{border-top:3px solid #7da8ff}.priority-parallel{border-top:3px solid var(--ok)}
-    .quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:var(--gap)}.quick a{padding:20px;text-decoration:none}.quick strong{display:block;font-size:16px}.quick span{display:block;color:var(--muted);font-size:12px;margin-top:5px}.quick a:hover{border-color:var(--accent)}
-    footer{display:flex;justify-content:space-between;gap:18px;margin-top:18px;color:var(--muted);font-size:11px;padding:0 4px}.error{padding:20px;color:#ffb4a9}.skeleton{opacity:.55}
-    @media(max-width:880px){.hero{grid-template-columns:1fr}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.quick{grid-template-columns:1fr}}
-    @media(max-width:620px){.shell{width:min(100% - 18px,1180px);padding-top:12px}header{align-items:flex-start;margin-bottom:22px}.nav a:not(.primary){display:none}.hero-main,.hero-side,.section{padding:18px}.grid,.grid.three{grid-template-columns:1fr}.hero h1{font-size:46px}.section-head{align-items:start;flex-direction:column}}
+    :root{--bg:#f4f5f7;--panel:#fff;--ink:#17191d;--muted:#6d737d;--line:#dfe3e8;--accent:#5d4cff;--accent2:#0e8f73;--warn:#b87300;--chip:#eef0f4;--shadow:0 12px 34px rgba(19,25,35,.08)}
+    @media(prefers-color-scheme:dark){:root{--bg:#111318;--panel:#191c23;--ink:#f5f6f8;--muted:#9ca3af;--line:#2b3039;--accent:#9b90ff;--accent2:#69d7bd;--warn:#f0b34f;--chip:#242933;--shadow:0 12px 34px rgba(0,0,0,.25)}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+    a{color:inherit}.shell{width:min(1220px,calc(100% - 32px));margin:0 auto;padding:28px 0 64px}
+    .hero{display:grid;grid-template-columns:1.45fr .55fr;gap:20px;align-items:stretch;margin-bottom:22px}.hero-main,.hero-side,.search-shell,.section,.todo-section,.briefing-section,.pocket-section{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .hero-main{padding:28px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:var(--accent2)}h1{font-size:clamp(30px,5vw,54px);letter-spacing:-.04em;line-height:1;margin:8px 0 12px}.lede{font-size:16px;color:var(--muted);max-width:760px;margin:0}.hero-side{padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}.hero-side strong{font-size:13px}.rule{font-size:13px;color:var(--muted);margin-top:6px}.bookmark{display:flex;gap:8px;flex-wrap:wrap}
+    button,.button{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:9px 12px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;text-decoration:none}.button.primary,button.primary{background:var(--accent);border-color:var(--accent);color:#fff}.button:hover,button:hover{transform:translateY(-1px)}
+    .focus-tabs{display:flex;gap:8px;margin:0 0 14px;padding:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.focus-tab{flex:1;padding:11px 14px}.focus-tab.active{background:var(--accent);border-color:var(--accent);color:#fff}.focus-context{margin:-4px 2px 16px;color:var(--muted);font-size:13px}
+    .search-shell{position:sticky;top:10px;z-index:10;padding:14px;margin-bottom:22px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.search{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:13px 15px;font:inherit;font-size:15px;outline:none}.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{padding:8px 10px}.filter.active{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+    .quick[hidden]{display:none}.quick{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:22px}.quick a{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px;text-decoration:none;box-shadow:var(--shadow);min-height:94px}.quick a:hover{border-color:var(--accent)}.quick b{display:block;font-size:14px}.quick span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+    .todo-section{padding:20px;margin-bottom:22px}.todo-head,.section-head{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:14px}.todo-head h2,.section h2{font-size:20px;margin:0;letter-spacing:-.02em}.todo-head p,.section-head p{margin:0;color:var(--muted);font-size:13px}.todo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.todo{border:1px solid var(--line);border-radius:14px;padding:14px;background:color-mix(in srgb,var(--panel) 94%,var(--bg));display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start}.todo.done{opacity:.58}.todo.done .todo-title{text-decoration:line-through}.todo-check{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent)}.todo-title{font-weight:800;font-size:14px}.todo-meta{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 7px}.todo p{margin:0;color:var(--muted);font-size:12px}.mini-badge{font-size:9px;text-transform:uppercase;font-weight:900;letter-spacing:.08em;border-radius:999px;padding:3px 6px;background:var(--chip);color:var(--muted)}.mini-badge.p0{color:var(--warn)}.todo a{font-size:11px;font-weight:800;color:var(--accent);text-decoration:none}.todo-note{margin-top:10px;font-size:11px;color:var(--muted)}
+    .briefing-section{padding:20px;margin-bottom:22px}.briefing-head{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:14px}.briefing-head h2{font-size:20px;margin:0;letter-spacing:-.02em}.briefing-head p{margin:0;color:var(--muted);font-size:13px;max-width:560px}.brief-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.brief{border:1px solid var(--line);border-radius:14px;padding:15px;background:color-mix(in srgb,var(--panel) 94%,var(--bg));display:flex;flex-direction:column;min-height:200px}.brief.ready{border-color:color-mix(in srgb,var(--accent2) 55%,var(--line))}.brief-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.brief h3{font-size:15px;line-height:1.2;margin:0}.brief p{color:var(--muted);font-size:12px;margin:9px 0 12px;flex:1}.brief-actions{display:flex;gap:7px;flex-wrap:wrap}.brief-actions .button,.brief-actions button{font-size:11px;padding:7px 9px}.brief .provider{font-size:10px;color:var(--muted);margin-top:8px}.briefing-empty{color:var(--muted);font-size:13px;padding:12px 0;display:none}
+    .pocket-section{margin-bottom:22px;overflow:hidden}.pocket-section>summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:900}.pocket-section>summary::-webkit-details-marker{display:none}.pocket-summary-copy{display:flex;align-items:center;gap:10px}.pocket-summary-copy small{font-weight:500;color:var(--muted)}.pocket-count{font-size:10px;background:var(--chip);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px;white-space:nowrap}.pocket-body{border-top:1px solid var(--line);padding:18px 20px}.pocket-note{font-size:12px;color:var(--muted);margin:0 0 13px}.pocket-compose{display:grid;grid-template-columns:1fr minmax(210px,.52fr);gap:10px}.pocket-text{min-height:116px;resize:vertical;width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:12px;font:inherit;font-size:13px}.pocket-text:focus,.dropzone:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}.dropzone{min-height:116px;border:2px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--muted);font-size:12px;cursor:pointer;background:color-mix(in srgb,var(--panel) 92%,var(--bg))}.dropzone.drag{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--panel))}.pocket-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}.pocket-status{font-size:11px;color:var(--muted);margin-left:auto}.pocket-list{display:grid;gap:8px}.pocket-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:9px}.pocket-item-title{font-size:13px;font-weight:800;overflow-wrap:anywhere}.pocket-item-meta{font-size:10px;color:var(--muted);margin-top:2px}.pocket-item-preview{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:760px}.pocket-actions{display:flex;gap:6px}.pocket-actions button,.pocket-actions .button{padding:6px 8px;font-size:10px}.pocket-empty{font-size:12px;color:var(--muted);padding:8px 0}
+    .section{padding:20px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.card{border:1px solid var(--line);border-radius:14px;padding:15px;background:color-mix(in srgb,var(--panel) 94%,var(--bg));display:flex;flex-direction:column;min-height:150px}.card:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}.card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.card h3{font-size:15px;margin:0;letter-spacing:-.01em}.badge{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 7px;white-space:nowrap}.badge.live{background:color-mix(in srgb,var(--accent2) 15%,var(--panel));color:var(--accent2)}.badge.recovery{background:color-mix(in srgb,var(--accent) 14%,var(--panel));color:var(--accent)}.card p{color:var(--muted);font-size:13px;margin:9px 0 14px;flex:1}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:11px}.tag{font-size:10px;background:var(--chip);border-radius:999px;padding:4px 7px;color:var(--muted)}.actions{display:flex;gap:7px;align-items:center}.actions a{font-size:12px;font-weight:800;text-decoration:none;color:var(--accent)}.copy{margin-left:auto;padding:5px 8px;font-size:11px}.empty{display:none;text-align:center;color:var(--muted);padding:34px}.footer{color:var(--muted);font-size:12px;padding:8px 4px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,minmax(0,1fr))}.grid,.brief-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.todo-grid{grid-template-columns:1fr}.search-shell{position:static;grid-template-columns:1fr}.pocket-compose{grid-template-columns:1fr}}
+    @media(max-width:640px){.shell{width:min(100% - 18px,1220px);padding-top:10px}.hero-main{padding:20px}.quick{grid-template-columns:1fr}.grid,.brief-grid{grid-template-columns:1fr}.section,.todo-section,.briefing-section{padding:14px}.section-head,.todo-head,.briefing-head{align-items:start;flex-direction:column}.filters{overflow:auto;flex-wrap:nowrap;padding-bottom:2px}.filter{white-space:nowrap}.pocket-section>summary{align-items:flex-start;padding:15px}.pocket-summary-copy{align-items:flex-start;flex-direction:column;gap:2px}.pocket-body{padding:14px}.pocket-item{grid-template-columns:1fr}.pocket-status{width:100%;margin-left:0}.pocket-actions{flex-wrap:wrap}}
+
+    /* v2: every letter and pixel pays rent */
+    body{background:var(--panel)}
+    .shell{width:min(1080px,calc(100% - 24px));padding:12px 0 40px;display:flex;flex-direction:column;gap:10px}
+    .hero{order:1;display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;padding:0 2px;border:0;box-shadow:none;background:transparent}
+    .hero-main,.hero-side{padding:0;border:0;box-shadow:none;background:transparent}
+    .hero-main .eyebrow,.hero-main .lede,.hero-side>div:first-child,#copyHub,.focus-context,.todo-head p,.briefing-head p,.pocket-note,.todo-note,.quick{display:none!important}
+    h1{font-size:20px;letter-spacing:-.03em;line-height:1;margin:0;white-space:nowrap}
+    .hero-side{display:block}.bookmark{gap:12px;align-items:center}.bookmark .button{border:0;background:transparent;padding:4px 0;border-radius:0;color:var(--muted);font-size:12px}.bookmark .button:hover{color:var(--ink);transform:none}
+    .focus-tabs{order:2;align-self:flex-start;display:inline-flex;gap:2px;margin:0;padding:2px;border-radius:7px;box-shadow:none;background:var(--bg)}
+    .focus-tab{flex:0 0 auto;border:0;border-radius:5px;padding:5px 9px;font-size:11px;background:transparent}.focus-tab.active{background:var(--ink);color:var(--panel)}
+    .search-shell{order:3;position:static;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;grid-template-columns:minmax(190px,1fr) auto;gap:8px}
+    .search{height:34px;border-radius:7px;padding:7px 10px;font-size:12px;background:var(--bg)}.filters{gap:3px;flex-wrap:nowrap;overflow:auto}.filter{border:0;border-radius:5px;padding:6px 8px;font-size:10px;color:var(--muted);background:transparent;white-space:nowrap}.filter.active{background:var(--ink);color:var(--panel)}
+    .pocket-section{order:4;margin:0;border-radius:9px;box-shadow:none;background:var(--bg);overflow:visible}.pocket-section>summary{padding:8px 10px;font-size:12px}.pocket-summary-copy{gap:8px}.pocket-summary-copy small{font-size:10px}.pocket-count{border:0;padding:2px 6px}.pocket-body{border-top:1px solid var(--line);padding:8px 10px}.pocket-compose{grid-template-columns:minmax(0,1fr) minmax(190px,.38fr);gap:6px}.pocket-text,.dropzone{min-height:48px;height:48px;border-radius:7px;padding:8px;font-size:11px}.pocket-text{resize:none}.dropzone{border-width:1px}.pocket-bar{margin:6px 0 0;gap:5px}.pocket-bar button{padding:5px 8px;border-radius:6px;font-size:10px}.pocket-status{font-size:9px}.pocket-list{margin-top:6px}
+    .todo-section{order:5;margin:0;padding:12px;border-radius:9px;box-shadow:none}.briefing-section{order:6;margin:0;padding:12px;border-radius:9px;box-shadow:none}.todo-head,.briefing-head{margin-bottom:8px;align-items:center}.todo-head h2,.briefing-head h2{font-size:14px;letter-spacing:0}.todo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.todo{padding:9px;border-radius:7px;gap:8px;min-height:0}.todo-check{width:16px;height:16px}.todo-title{font-size:12px}.todo-meta{margin:2px 0 3px}.todo p{font-size:10px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.todo a{font-size:9px}.mini-badge{font-size:8px;padding:2px 4px}
+    .brief-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.brief{min-height:0;padding:9px;border-radius:7px}.brief h3{font-size:12px}.brief p{font-size:10px;line-height:1.3;margin:5px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.brief .tags{display:none}.brief-actions{gap:4px}.brief-actions .button,.brief-actions button{font-size:9px;padding:5px 7px;border-radius:5px}.brief .provider{font-size:8px;margin-top:4px}.badge{font-size:8px;padding:2px 4px;border:0}
+    #sections{order:8}.section{margin:0 0 8px;padding:12px;border-radius:9px;box-shadow:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.card{min-height:0;padding:9px;border-radius:7px}.card p{font-size:10px;margin:5px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.card .tags{display:none}.card h3{font-size:12px}.actions a,.copy{font-size:9px}.empty{order:9}.footer{order:10;font-size:9px;padding:4px 2px}.quick{order:7}
+    @media(max-width:700px){.shell{width:min(100% - 12px,1080px);padding-top:7px;gap:7px}.hero{align-items:flex-start}.bookmark{gap:8px}.bookmark .button{font-size:10px}.search-shell{grid-template-columns:1fr}.todo-grid,.brief-grid,.grid{grid-template-columns:1fr}.pocket-compose{grid-template-columns:1fr}.pocket-text,.dropzone{height:42px;min-height:42px}.filters{padding-bottom:1px}.todo-section,.briefing-section,.section{padding:9px}.pocket-summary-copy small{display:none}.brief p{-webkit-line-clamp:1}}
+
+    /* 2026-09-20 · Paper / Dark + visual Stage/Live tiles */
+    :root[data-theme="paper"]{
+      color-scheme:light;
+      --bg:#e8e2d5;--panel:#fffaf0;--ink:#1e1b17;--muted:#70695e;--line:#cfc5b4;
+      --accent:#a03b2b;--accent2:#356b58;--warn:#9a6118;--chip:#eee6d7;
+      --shadow:2px 3px 0 rgba(68,55,39,.12);
+      --paper-rule:rgba(82,65,44,.045);--paper-fiber:rgba(255,255,255,.5)
+    }
+    :root[data-theme="dark"]{
+      color-scheme:dark;
+      --bg:#0f0e0c;--panel:#191714;--ink:#f3eddf;--muted:#aaa093;--line:#38332c;
+      --accent:#e46d52;--accent2:#79b49c;--warn:#d8a24c;--chip:#25211c;
+      --shadow:2px 3px 0 rgba(0,0,0,.38);
+      --paper-rule:rgba(255,255,255,.025);--paper-fiber:rgba(255,255,255,.02)
+    }
+    body{
+      background-color:var(--bg);
+      background-image:
+        linear-gradient(var(--paper-rule) 1px,transparent 1px),
+        linear-gradient(90deg,var(--paper-rule) 1px,transparent 1px),
+        radial-gradient(circle at 18% 12%,var(--paper-fiber),transparent 24rem);
+      background-size:28px 28px,28px 28px,100% 100%;
+    }
+    .hero-main,.hero-side,.search-shell,.section,.todo-section,.briefing-section,.pocket-section,.preview-section{box-shadow:var(--shadow)}
+    .hero,.focus-tabs,.search-shell{background:transparent}
+    .focus-tabs{border-color:var(--line)}
+    .focus-tab,.filter,.button,button,.card,.todo,.brief,.preview-card,.pocket-section,.section,.todo-section,.briefing-section,.preview-section{border-radius:3px}
+    .filter{display:inline-flex;align-items:center;text-decoration:none}
+    .filter.active{background:var(--ink);color:var(--panel)}
+    .bookmark .button,#themeToggle{border-bottom:1px solid transparent}
+    .bookmark .button:hover,#themeToggle:hover{border-bottom-color:var(--ink)}
+    .preview-section{order:7;margin:0;padding:12px;background:var(--panel);border:1px solid var(--line)}
+    .preview-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:9px}
+    .preview-head h2{font-size:14px;letter-spacing:0;margin:0}
+    .preview-count{font-size:10px;color:var(--muted)}
+    .preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .preview-card{display:block;overflow:hidden;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 96%,var(--bg));text-decoration:none;min-width:0}
+    .preview-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--chip);border-bottom:1px solid var(--line)}
+    .preview-media img,.preview-media iframe{width:100%;height:100%;display:block;border:0;object-fit:cover;background:var(--chip)}
+    .preview-media iframe{pointer-events:none}
+    .preview-type{position:absolute;left:6px;top:6px;padding:3px 5px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent);background:color-mix(in srgb,var(--panel) 88%,transparent);font-size:8px;font-weight:900;letter-spacing:.08em}
+    .preview-copy{padding:8px 9px 9px}
+    .preview-copy strong{display:block;font-size:11px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .preview-copy small{display:block;margin-top:3px;color:var(--muted);font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    @media(max-width:900px){.preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.preview-grid{grid-template-columns:1fr}.preview-section{padding:9px}}
+
   </style>
 </head>
 <body>
   <main class="shell">
-    <header>
-      <a class="brand" href="/"><span class="mark">K</span><span>KFB Production Hub</span></a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#current">Current</a><a id="toolboxTop" href="https://kfb-toolbox.frizzlebob.chatgpt.site">ToolBox</a><a id="controlTop" href="https://kfb-production-control.frizzlebob.chatgpt.site/">Control</a><a class="primary" href="#p0">Jetzt öffnen</a>
-      </nav>
-    </header>
-    <section class="hero" id="current">
-      <div class="hero-main panel"><div class="eyebrow">Ein Einstieg · aktuelle Produktionslage</div><h1>Was zählt jetzt?</h1><p class="lede">Hier beginnt die tägliche KFB-Arbeit. Spiele die zwei aktuellen Kandidaten, öffne Werkzeuge über genau eine ToolBox und nutze Control nur für Records und Historie.</p></div>
-      <aside class="hero-side panel"><div><div class="status"><span class="dot"></span><span id="statusText">CURRENT wird geladen</span></div><p id="statusNote">Die Oberfläche liest eine kleine, deterministisch veröffentlichte Statusdatei.</p></div><div class="hero-actions"><a id="toolboxHero" href="https://kfb-toolbox.frizzlebob.chatgpt.site"><span>ToolBox öffnen</span><span>→</span></a><a id="controlHero" href="https://kfb-production-control.frizzlebob.chatgpt.site/"><span>Control / Historie</span><span>→</span></a></div></aside>
+    <section class="hero">
+      <div class="hero-main">
+        <h1>KFB Hub</h1>
+      </div>
+      <aside class="hero-side">
+        <div class="bookmark"><button class="primary" id="copyHub">URL</button><button class="button" id="themeToggle" type="button" aria-pressed="false">Dark</button><a class="button" href="#stage">Stage</a><a class="button" href="https://kfb-toolbox.frizzlebob.chatgpt.site">ToolBox</a><a class="button" href="https://github.com/georg-doc/kayfabizarro" target="_blank" rel="noreferrer">GitHub</a></div>
+      </aside>
     </section>
-    <section class="section panel" id="p0"><div class="section-head"><div><div class="eyebrow">P0 · Human gate</div><h2>Jetzt ausprobieren</h2></div><p>Danach reicht PASS / TUNE / FAIL.</p></div><div class="grid" id="p0Grid"><article class="card skeleton">Aktueller Stand wird geladen …</article></div></section>
-    <section class="section panel"><div class="section-head"><div><div class="eyebrow">P1 · Next</div><h2>Danach in dieser Reihenfolge</h2></div><p>Keine neue Priorisierung in dieser Oberfläche.</p></div><div class="grid three" id="p1Grid"></div></section>
-    <section class="section panel"><div class="section-head"><div><div class="eyebrow">Parallel</div><h2>Günstige Nebenbahnen</h2></div><p>Web Chat oder consumer-driven.</p></div><div class="grid three" id="parallelGrid"></div></section>
-    <section class="quick" id="quickLinks"></section>
-    <footer><span>Production Hub ist der einzige menschliche Front Door.</span><span id="revision">Revision wird geladen</span></footer>
+
+    <nav class="focus-tabs" aria-label="Project focus"><button class="focus-tab active" data-focus="kfb">KFB</button><button class="focus-tab" data-focus="doccheck">DocCheck</button></nav>
+    <p class="focus-context" id="focusContext">Games, worlds, tools, assets and current playable slices.</p>
+
+    <section class="search-shell">
+      <input id="q" class="search" type="search" autocomplete="off" placeholder="Suchen …  (/) ">
+      <div class="filters" id="filters"></div>
+    </section>
+
+
+    <section id="bootFallback" aria-live="polite" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:3px;background:var(--panel);box-shadow:var(--shadow);font-size:14px;line-height:1.45">
+      <strong>Direktwege</strong><span style="color:var(--muted)"> · falls CURRENT gerade nicht geladen wird</span><br>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer">Hub Recovery</a> ·
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer">World FAIL</a> ·
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/361" target="_blank" rel="noreferrer">Combat FAIL</a> ·
+      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer">ToolBox</a> ·
+      <a href="https://kfb-production-control.frizzlebob.chatgpt.site/" target="_blank" rel="noreferrer">Control</a>
+    </section>
+
+    <section class="todo-section" id="todoSection">
+      <div class="todo-head"><h2>Heute</h2></div>
+      <div class="todo-grid" id="todoGrid"></div>
+      <div class="todo-note" id="todoNote"></div>
+    </section>
+
+    <section class="briefing-section" id="briefingSection" data-focus-panel="kfb">
+      <div class="briefing-head"><h2>Briefings</h2></div>
+      <div class="brief-grid" id="briefingGrid"></div>
+      <div class="briefing-empty" id="briefingEmpty">No briefing matches the current search or filter.</div>
+    </section>
+
+    <details class="pocket-section" id="pocketSection" data-focus-panel="kfb" open>
+      <summary><span class="pocket-summary-copy"><span>Inbox</span><small>Text, Link oder Datei · bleibt lokal</small></span><span class="pocket-count" id="pocketCount">0</span></summary>
+      <div class="pocket-body">
+        <p class="pocket-note"><strong>Private scratchpad:</strong> entries stay in this browser on this device. Nothing is uploaded or written to GitHub until you export it and deliberately hand it over.</p>
+        <div class="pocket-compose">
+          <textarea class="pocket-text" id="pocketText" placeholder="Link oder Notiz einfügen …"></textarea>
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Datei auswählen oder ablegen">Datei ablegen · .md .txt .json .zip<input id="pocketFiles" type="file" hidden multiple accept=".md,.txt,.json,.zip,text/markdown,text/plain,application/json,application/zip"></div>
+        </div>
+        <div class="pocket-bar"><button class="primary" id="savePocketText">Speichern</button><button id="exportPocket">Exportieren</button><button id="clearPocket">Leeren</button><span class="pocket-status" id="pocketStatus">Lokal · kein Upload</span></div>
+        <div class="pocket-list" id="pocketList"></div>
+      </div>
+    </details>
+
+    <nav class="quick" aria-label="KFB quick launch" data-focus-panel="kfb">
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer"><b>Hub Recovery</b><span>P0 · accepted v2 + current state.</span></a>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer"><b>World Studio</b><span>TOTAL FAIL · recovery only.</span></a>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/361" target="_blank" rel="noreferrer"><b>Combat</b><span>HUMAN FAIL · recovery only.</span></a>
+      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer"><b>ToolBox</b><span>Canonical specialist-tool router.</span></a>
+      <a href="https://kfb-production-control.frizzlebob.chatgpt.site/" target="_blank" rel="noreferrer"><b>Control / Historie</b><span>Decisions, Returns, Recovery.</span></a>
+    </nav>
+    <nav class="quick" aria-label="DocCheck quick launch" data-focus-panel="doccheck" hidden>
+      <a href="https://kayfabizarro.pages.dev/kfb-hub/sim-blood-hub/" target="_blank" rel="noreferrer"><b>SimBlood Hub</b><span>Visual project overview and current review lanes.</span></a>
+      <a href="https://kayfabizarro.pages.dev/kfb-hub/sim-blood-medical-review/" target="_blank" rel="noreferrer"><b>Medical Review</b><span>Physician review of the current morphology shortlist.</span></a>
+      <a href="https://github.com/georg-doc/doccheck/tree/main/sim-blood" target="_blank" rel="noreferrer"><b>SimBlood SSOT</b><span>Current implementation, recovery and WIP status.</span></a>
+      <a href="https://kayfabizarro.pages.dev/kfb-hub/doc-animation.html" target="_blank" rel="noreferrer"><b>Doc Animation</b><span>Eumel rig, measured assets and QA boundaries.</span></a>
+      <a href="https://github.com/georg-doc/doccheck/tree/main/doc-animation" target="_blank" rel="noreferrer"><b>Doc Animation SSOT</b><span>Current source and additive changelog.</span></a>
+    </nav>
+
+    <section class="preview-section" id="previewSection" hidden>
+      <div class="preview-head"><h2>Stage / Live</h2><span class="preview-count" id="previewCount"></span></div>
+      <div class="preview-grid" id="previewGrid"></div>
+    </section>
+
+    <div id="sections"></div>
+    <div id="empty" class="empty">No matching links or tasks.</div>
+    <footer class="footer">GitHub ist SSOT · <span class="kbd">/</span> suchen · <span class="kbd">Esc</span> leeren</footer>
   </main>
-  <script>
-    const $ = (id) => document.getElementById(id);
-    const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-    const card = (item, priority) => `<article class="card priority-${priority}"><div class="card-top"><h3>${escapeHtml(item.title)}</h3><span class="badge">${escapeHtml(item.badge || priority)}</span></div><p>${escapeHtml(item.summary)}</p>${item.url ? `<a class="button ${priority === 'p0' ? 'primary' : ''}" href="${escapeHtml(item.url)}">${escapeHtml(item.action || 'Öffnen')} →</a>` : ''}</article>`;
-    async function load() {
-      try {
-        const [boardResponse, presentationResponse] = await Promise.all([fetch('./current-board.json',{cache:'no-store'}),fetch('./presentation.json',{cache:'no-store'})]);
-        if (!boardResponse.ok) throw new Error(`Board ${boardResponse.status}`);
-        const board = await boardResponse.json();
-        if (presentationResponse.ok) { const presentation = await presentationResponse.json(); for (const [name,value] of Object.entries(presentation.cssVariables || {})) document.documentElement.style.setProperty(`--${name}`, value); }
-        $('statusText').textContent = board.status.label; $('statusNote').textContent = board.status.note;
-        $('p0Grid').innerHTML = board.p0.map(x => card(x,'p0')).join(''); $('p1Grid').innerHTML = board.p1.map(x => card(x,'p1')).join(''); $('parallelGrid').innerHTML = board.parallel.map(x => card(x,'parallel')).join('');
-        $('quickLinks').innerHTML = board.quickLinks.map(x => `<a class="panel" href="${escapeHtml(x.url)}"><strong>${escapeHtml(x.title)} →</strong><span>${escapeHtml(x.summary)}</span></a>`).join('');
-        $('revision').textContent = `Board ${board.revision} · ${board.updatedAt}`;
-        for (const id of ['toolboxTop','toolboxHero']) $(id).href = board.surfaces.toolbox; for (const id of ['controlTop','controlHero']) $(id).href = board.surfaces.control;
-      } catch (error) { $('p0Grid').innerHTML = `<div class="error">CURRENT konnte nicht geladen werden. Control bleibt die Datenquelle: ${escapeHtml(error.message)}</div>`; $('statusText').textContent = 'CURRENT nicht geladen'; }
+
+<script>
+const G='https://github.com/georg-doc/kayfabizarro/blob/main/';
+const D='https://github.com/georg-doc/kayfabizarro/tree/main/';
+const BOARD_URL='./current-board.json';
+function boardTodo(item,priority='P0'){
+  return {
+    id:item.id||('board-'+Math.random().toString(16).slice(2)),
+    focus:'kfb',
+    title:item.title||'Current KFB job',
+    lane:item.executor||'Current production',
+    priority,
+    desc:item.summary||'',
+    url:item.url||'#',
+    tags:['current','recovery',String(item.badge||'').toLowerCase()]
+  };
+}
+let todos=[
+  {id:'issue-364-production-hub-recovery',focus:'kfb',title:'#364 · Production Hub · Recovery',lane:'ChatGPT Web Chat · source/data recovery',priority:'P0',desc:'Accepted Hub v2 design + current production state. Restore the donor-faithful Paper/Dark Hub; no redesign.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['current','p0','hub','recovery']},
+  {id:'issue-360-world-studio',focus:'kfb',title:'#360 · TOTAL FAIL · World Studio',lane:'ChatGPT Work/WSA · source/runtime/product recovery',priority:'P0',desc:'Blocked. Runtime/load failure plus rejected world/pack design and arbitrary prop composition. Recover proven runtime + exact donors before another human test.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['current','p0','blocked','world studio','human fail']},
+  {id:'issue-361-combat',focus:'kfb',title:'#361 · HUMAN FAIL · Platformer / Card-Hex Combat',lane:'ChatGPT Work/WSA · regression recovery',priority:'P0',desc:'Blocked. Design regression, controls/playability fail and additional audio bugs. Recover against the prior proven Combat Arena baseline.',url:'https://github.com/georg-doc/kayfabizarro/issues/361',tags:['current','p0','blocked','combat','human fail']}
+];
+async function refreshCurrentBoard(){
+  try{
+    const response=await fetch(BOARD_URL,{cache:'no-store'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const board=await response.json();
+    const next=[
+      ...(board.p0||[]).map(x=>boardTodo(x,'P0')),
+      ...(board.p1||[]).map(x=>boardTodo(x,'P1')),
+      ...(board.parallel||[]).map(x=>boardTodo(x,'P1'))
+    ];
+    if(next.length)todos=next;
+    if(window.__kfbFocusCopy){
+      window.__kfbFocusCopy.kfb.context=(board.status&&board.status.label?board.status.label:'CURRENT')+' · Board '+(board.revision||'');
+      window.__kfbFocusCopy.kfb.note=(board.status&&board.status.note)||'';
     }
-    load();
-  </script>
+    render();
+  }catch(error){
+    const note=document.getElementById('todoNote');
+    if(note)note.textContent='CURRENT board fetch failed; showing embedded recovery snapshot. '+error.message;
+  }
+}
+
+const briefings=[
+{id:'hub-recovery-current',title:'Production Hub Recovery · #364',badge:'P0 RECOVERY',status:'ready',provider:'ChatGPT Web Chat → PUBLISH_ONLY',desc:'Restore the accepted Paper/Dark Hub v2 donor and bind the current production board. No new dashboard, no Work redesign.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['hub','recovery','p0','paper','dark'],prompt:['Read issue #364 and the accepted Hub v2 donor package.','Preserve the exact accepted design and current-board data only.','Do not redesign or create a second Hub.'].join('\n')},
+{id:'world-recovery-current',title:'World Studio · TOTAL FAIL · #360',badge:'P0 BLOCKED',status:'hold',provider:'ChatGPT Work/WSA · recovery',desc:'Current Site is not accepted: load/runtime failure, rejected world/pack direction and arbitrary prop composition. Recover proven runtime and exact donors before Georg sees it again.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['world studio','blocked','human fail','recovery'],prompt:['Recover from the last proven World Studio/WB2 runtime and exact accepted visual donors.','First prove boot + player/editor/save internally.','Do not tune the failed candidate or invent replacement world design.'].join('\n')},
+{id:'combat-recovery-current',title:'Platformer / Combat · HUMAN FAIL · #361',badge:'P0 BLOCKED',status:'hold',provider:'ChatGPT Work/WSA · recovery',desc:'Current candidate is not playable: design regression, broken controls/playability and additional audio bugs. Recover against the prior proven Combat Arena baseline.',url:'https://github.com/georg-doc/kayfabizarro/issues/361',tags:['combat','platformer','blocked','human fail','audio'],prompt:['Use the prior proven Combat Arena as the recovery baseline.','Identify and remove later visual/control/audio regressions.','Return only a genuinely playable candidate for Georg.'].join('\n')},
+{id:'triplet-hold-current',title:'Triplet Stage · HOLD · #362',badge:'HOLD',status:'hold',provider:'Claude Design · paused',desc:'Useful r2 source is preserved, but optional tuning is paused during production recovery. Resume from the existing TUNE brief only after core recovery.',url:'https://github.com/georg-doc/kayfabizarro/issues/362',tags:['triplet','hold','claude design'],prompt:['Do not resume while production recovery is active.','Preserve the current r2 source and existing TUNE brief unchanged.'].join('\n')}
+
+const links=[
+{section:'Recovery & coordination',intro:'Current production recovery only. Failed candidates are evidence, not acceptance.',title:'Production Hub Recovery · #364',badge:'P0 RECOVERY',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/364',desc:'Accepted Hub v2 + current board. One human front door; no redesign.',tags:['hub','recovery','current']},
+{section:'Recovery & coordination',title:'World Studio · #360',badge:'TOTAL FAIL',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/360',desc:'Runtime/load + world/pack/design failure. Recovery only.',tags:['world studio','blocked','human fail']},
+{section:'Recovery & coordination',title:'Platformer / Combat · #361',badge:'HUMAN FAIL',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/361',desc:'Design, controls/playability and audio regression. Recover prior Combat Arena baseline.',tags:['combat','blocked','human fail']},
+{section:'Live tools & workbenches',intro:'Canonical current surfaces. Product links may point to failed evidence while recovery is active.',title:'KFB ToolBox',badge:'CURRENT TOOL ROUTER',kind:'tools',focus:'kfb',url:'https://kfb-toolbox.frizzlebob.chatgpt.site',desc:'Canonical specialist-tool router.',tags:['toolbox','site','current']},
+{section:'Live tools & workbenches',title:'Production Control',badge:'HISTORY / LEDGER',kind:'tools',focus:'kfb',url:'https://kfb-production-control.frizzlebob.chatgpt.site/',desc:'Durable decisions, Returns and recovery history.',tags:['control','history','ledger']},
+{section:'Live tools & workbenches',title:'World Studio · failed evidence surface',badge:'FAILED CANDIDATE',kind:'live',focus:'kfb',url:'https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/',desc:'Current failed candidate. Do not interpret Site availability as acceptance.',tags:['world studio','failed candidate']},
+{section:'Live tools & workbenches',title:'Card-Hex Combat · failed evidence surface',badge:'FAILED CANDIDATE',kind:'live',focus:'kfb',url:'https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/',desc:'Current failed candidate. Not playable; recovery issue #361 owns next work.',tags:['combat','failed candidate']},
+{section:'Project SSOTs & previews',intro:'Durable current routing.',title:'GitHub Issues · current job list',badge:'CURRENT',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues',desc:'Active P0 / blocked / recovery state.',tags:['github','issues','current jobs']},
+{section:'Project SSOTs & previews',title:'KFB Production Router',badge:'CURRENT ROUTER',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/START_HERE.md',desc:'Current authority order and production rules.',tags:['router','ssot']},
+{section:'Archived / rejected history',intro:'Rejected/currently failed artifacts remain evidence only.',title:'Accepted Hub v2 donor pin',badge:'ACCEPTED DONOR',kind:'history',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/dfaafac070747f9543b5eb5a635e2aaa74e57b83/kfb-hub/index.html',desc:'Exact accepted Paper/Dark Hub donor used by this recovery.',tags:['hub','donor','paper','dark']}
+
+const order=];
+const order=['Recovery & coordination','Live tools & workbenches','KFB Town & meta','Project SSOTs & previews','Core production skills','Archived / rejected history'];
+const intros=Object.fromEntries(links.filter(x=>x.intro).map(x=>[x.section,x.intro]));
+let active='today';
+let focus='kfb';
+const focusCopy={
+  kfb:{context:'',note:''},
+  doccheck:{context:'Medical visualization, SimBlood and Doc Animation — separated from KFB game production.',note:'Current DocCheck gates: SimBlood physician morphology review and the project-owned WBC → RBC → platelet sequence.'}
+};
+window.__kfbFocusCopy=focusCopy;
+function itemFocus(item){
+  if(item.focus)return item.focus;
+  return String(item.lane||'').startsWith('DocCheck')||(item.tags||[]).includes('doccheck')?'doccheck':'kfb';
+}
+const kinds=[['today','Heute'],['briefings','Briefings'],['todo','To-dos'],['live','Stage / Live'],['tools','Tools'],['projects','Projekte'],['recovery','Recovery'],['town','Town'],['skills','Regeln'],['history','Historie'],['all','Alles']];
+const kindIds=new Set(kinds.map(([id])=>id));
+function routeSlug(id){return id==='live'?'stage':id;}
+function routeHash(nextFocus=focus,nextActive=active){return '#'+(nextFocus==='doccheck'?'doccheck-':'')+routeSlug(nextActive);}
+function parseRoute(){
+  const raw=decodeURIComponent(location.hash.slice(1)).trim().toLowerCase();
+  if(!raw)return {focus:'kfb',active:'today'};
+  const nextFocus=raw.startsWith('doccheck-')?'doccheck':'kfb';
+  const token=nextFocus==='doccheck'?raw.slice(9):raw;
+  const normalized=token==='stage'||token==='live'?'live':token;
+  return {focus:nextFocus,active:kindIds.has(normalized)?normalized:'today'};
+}
+const filters=document.getElementById('filters');
+kinds.forEach(([id,label])=>{const a=document.createElement('a');a.className='filter';a.dataset.kind=id;a.textContent=label;filters.append(a);});
+function syncRouteNav(){
+  document.querySelectorAll('.focus-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.focus===focus));
+  [...filters.children].forEach(a=>{a.classList.toggle('active',a.dataset.kind===active);a.href=routeHash(focus,a.dataset.kind);});
+}
+function applyRoute(){
+  const next=parseRoute(),focusChanged=focus!==next.focus;
+  focus=next.focus;active=next.active;
+  if(focusChanged)q.value='';
+  syncRouteNav();
+  render();
+}
+function navigate(nextFocus,nextActive){
+  const next=routeHash(nextFocus,nextActive);
+  if(location.hash===next)applyRoute();else location.hash=next;
+}
+document.querySelectorAll('.focus-tab').forEach(button=>button.onclick=()=>navigate(button.dataset.focus,active));
+const q=document.getElementById('q');q.addEventListener('input',render);
+({focus,active}=parseRoute());
+syncRouteNav();
+window.addEventListener('hashchange',applyRoute);
+
+const themeKey='kfb.hub.theme.v1';
+const themeToggle=document.getElementById('themeToggle');
+function setTheme(theme){
+  const next=theme==='dark'?'dark':'paper';
+  document.documentElement.dataset.theme=next;
+  themeToggle.textContent=next==='dark'?'Paper':'Dark';
+  themeToggle.setAttribute('aria-pressed',String(next==='dark'));
+  try{localStorage.setItem(themeKey,next);}catch{}
+}
+let initialTheme='paper';
+try{initialTheme=localStorage.getItem(themeKey)||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'paper');}catch{}
+setTheme(initialTheme);
+themeToggle.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'paper':'dark');
+const doneKey='kfb.hub.todo.done.v1';
+function doneSet(){try{return new Set(JSON.parse(localStorage.getItem(doneKey)||'[]'));}catch{return new Set();}}
+function saveDone(set){try{localStorage.setItem(doneKey,JSON.stringify([...set]));}catch{}}
+function todoSearch(t){return [t.title,t.lane,t.priority,t.desc,...t.tags].join(' ').toLowerCase();}
+function linkSearch(x){return [x.title,x.desc,x.badge,x.section,...x.tags].join(' ').toLowerCase();}
+function briefingSearch(x){return [x.title,x.desc,x.badge,x.provider,...x.tags].join(' ').toLowerCase();}
+function termMatch(text){const term=q.value.trim().toLowerCase();return !term||text.includes(term);}
+function renderTodos(){const host=document.getElementById('todoGrid'),section=document.getElementById('todoSection'),done=doneSet();host.replaceChildren();let rows=todos.filter(t=>itemFocus(t)===focus&&['today','all','todo'].includes(active)&&termMatch(todoSearch(t)));if(active==='today'&&!q.value.trim())rows=rows.filter(t=>t.priority==='P0').slice(0,4);section.style.display=rows.length?'block':'none';for(const t of rows){const row=document.createElement('article');row.className='todo'+(done.has(t.id)?' done':'');const check=document.createElement('input');check.type='checkbox';check.className='todo-check';check.checked=done.has(t.id);check.setAttribute('aria-label','Aufgabe erledigt');check.onchange=()=>{const set=doneSet();check.checked?set.add(t.id):set.delete(t.id);saveDone(set);render();};const body=document.createElement('div');body.innerHTML=`<div class="todo-title">${t.title}</div><div class="todo-meta"><span class="mini-badge ${t.priority.toLowerCase()}">${t.priority}</span><span class="mini-badge">${t.lane}</span></div><p>${t.desc}</p>${t.url?`<a href="${t.url}" target="_blank" rel="noreferrer">Öffnen ↗</a>`:''}`;row.append(check,body);host.append(row);}return rows.length;}
+function matchesLink(x){return itemFocus(x)===focus&&!['today','todo'].includes(active)&&(active==='all'||x.kind===active)&&termMatch(linkSearch(x));}
+async function copyText(value,button){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);}else{const area=document.createElement('textarea');area.value=value;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();document.execCommand('copy');area.remove();}if(button){const old=button.textContent;button.textContent='Copied';setTimeout(()=>button.textContent=old,900);}}catch{if(button)button.textContent='Copy failed';}}
+function copy(url,button){copyText(url,button);}
+function card(x){const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="card-top"><h3>${x.title}</h3><span class="badge ${x.kind==='live'?'live':x.kind==='recovery'?'recovery':''}">${x.badge}</span></div><p>${x.desc}</p><div class="tags">${x.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div class="actions"><a href="${x.url}" target="_blank" rel="noreferrer">Open ↗</a><button class="copy">Copy link</button></div>`;el.querySelector('.copy').onclick=e=>copy(x.url,e.currentTarget);return el;}
+function publicTargets(){
+  const seen=new Map();
+  for(const x of [...links,...todos,...briefings]){
+    if(!x||!x.url||!String(x.url).startsWith('https://kayfabizarro.pages.dev/'))continue;
+    if(itemFocus(x)!==focus)continue;
+    const url=String(x.url).split('#')[0];
+    if(url==='https://kayfabizarro.pages.dev/kfb-hub/'||seen.has(url))continue;
+    seen.set(url,{title:x.title||url,url,type:url.includes('/stage/')?'STAGE':'LIVE'});
+  }
+  return [...seen.values()].sort((a,b)=>a.type.localeCompare(b.type)||a.title.localeCompare(b.title));
+}
+function snapshotUrl(url){return 'https://image.thum.io/get/width/960/crop/540/maxAge/1/allowJPG/noanimate/'+url;}
+function renderPreviews(){
+  const section=document.getElementById('previewSection'),host=document.getElementById('previewGrid'),counter=document.getElementById('previewCount');
+  host.replaceChildren();
+  if(active!=='live'){section.hidden=true;counter.textContent='';return 0;}
+  const rows=publicTargets();
+  section.hidden=false;counter.textContent=rows.length+' aktuelle Ziele';
+  for(const x of rows){
+    const a=document.createElement('a');a.className='preview-card';a.href=x.url;a.target='_blank';a.rel='noreferrer';
+    const media=document.createElement('div');media.className='preview-media';
+    const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.alt='';img.referrerPolicy='no-referrer';img.src=snapshotUrl(x.url);
+    const frame=document.createElement('iframe');frame.hidden=true;frame.loading='lazy';frame.tabIndex=-1;frame.setAttribute('aria-hidden','true');frame.title='Live preview '+x.title;
+    const badge=document.createElement('span');badge.className='preview-type';badge.textContent=x.type;
+    img.addEventListener('error',()=>{img.hidden=true;frame.hidden=false;frame.src=x.url;});
+    media.append(img,frame,badge);
+    const copy=document.createElement('div');copy.className='preview-copy';
+    const title=document.createElement('strong');title.textContent=x.title;
+    const path=document.createElement('small');try{path.textContent=new URL(x.url).pathname;}catch{path.textContent=x.url;}
+    copy.append(title,path);a.append(media,copy);host.append(a);
+  }
+  return rows.length;
+}
+
+function renderBriefings(){const section=document.getElementById('briefingSection'),host=document.getElementById('briefingGrid'),empty=document.getElementById('briefingEmpty');host.replaceChildren();if(focus!=='kfb'||active==='todo'||!['today','briefings','all','recovery','tools','projects'].includes(active)){section.style.display='none';return 0;}let rows=briefings.filter(x=>(active==='today'||active==='briefings'||active==='all'||(active==='recovery'&&['claude-recovery','minigame-c0'].includes(x.id))||(active==='tools'&&['hub-ui-v2','eye-rig-batch','vehicle-v4','asset-librarian-recon','ink-cartoon-mechanics'].includes(x.id))||(active==='projects'&&['race-world-look','babel-hex-generator','race-radio-restart','track-publish','resident-clown','minigame-d01','minigame-h01','minigame-c01','combat-raid-gate','dungeon-raid-v2','tiny-treats-venues','world-onboarding-chatterbox'].includes(x.id)))&&termMatch(briefingSearch(x)));if(active==='today'&&!q.value.trim()){rows=rows.slice(0,4);}section.style.display='block';empty.style.display=rows.length?'none':'block';for(const x of rows){const el=document.createElement('article');el.className='brief '+(x.status==='ready'?'ready':'');el.innerHTML=`<div class="brief-top"><h3>${x.title}</h3><span class="badge ${x.status==='ready'?'live':''}">${x.badge}</span></div><p>${x.desc}</p><div class="tags">${x.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div class="brief-actions"><a class="button" href="${x.url}" target="_blank" rel="noreferrer">Brief ↗</a><button class="primary">Starttext kopieren</button></div><div class="provider">${x.provider}</div>`;el.querySelector('button').onclick=e=>copyText(x.prompt,e.currentTarget);host.append(el);}return rows.length;}
+function render(){document.getElementById('focusContext').textContent=focusCopy[focus].context;document.getElementById('todoNote').textContent=focusCopy[focus].note;document.querySelectorAll('[data-focus-panel]').forEach(panel=>{panel.hidden=panel.dataset.focusPanel!==focus;});const todoCount=renderTodos(),briefCount=renderBriefings(),previewCount=renderPreviews(),root=document.getElementById('sections');root.replaceChildren();let count=todoCount+briefCount+previewCount;if(active!=='live')order.forEach(section=>{const rows=links.filter(x=>x.section===section&&matchesLink(x));if(!rows.length)return;count+=rows.length;const s=document.createElement('section');s.className='section';s.innerHTML=`<div class="section-head"><div><div class="eyebrow">${rows.length} link${rows.length===1?'':'s'}</div><h2>${section}</h2></div><p>${intros[section]||''}</p></div><div class="grid"></div>`;const g=s.querySelector('.grid');rows.forEach(x=>g.append(card(x)));root.append(s);});const fallback=document.getElementById('bootFallback');if(fallback)fallback.hidden=count>0;document.getElementById('empty').style.display=count?'none':'block';}
+
+const pocketDbName='kfb-hub-pocket-inbox-v1';
+const pocketStore='items';
+const pocketMaxBytes=32*1024*1024;
+let pocketDbPromise;
+function openPocketDb(){if(pocketDbPromise)return pocketDbPromise;pocketDbPromise=new Promise((resolve,reject)=>{const request=indexedDB.open(pocketDbName,1);request.onupgradeneeded=()=>{const db=request.result;if(!db.objectStoreNames.contains(pocketStore))db.createObjectStore(pocketStore,{keyPath:'id'});};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});return pocketDbPromise;}
+async function pocketAll(){const db=await openPocketDb();return new Promise((resolve,reject)=>{const request=db.transaction(pocketStore,'readonly').objectStore(pocketStore).getAll();request.onsuccess=()=>resolve(request.result||[]);request.onerror=()=>reject(request.error);});}
+async function pocketWrite(mode,value){const db=await openPocketDb();return new Promise((resolve,reject)=>{const tx=db.transaction(pocketStore,'readwrite'),store=tx.objectStore(pocketStore);if(mode==='put')store.put(value);if(mode==='delete')store.delete(value);if(mode==='clear')store.clear();tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);});}
+function pocketId(){return crypto.randomUUID?crypto.randomUUID():'pocket-'+Date.now()+'-'+Math.random().toString(16).slice(2);}
+function formatBytes(value){if(value<1024)return value+' B';if(value<1024*1024)return (value/1024).toFixed(1)+' KB';return (value/1024/1024).toFixed(1)+' MB';}
+function pocketStatus(message,isError=false){const el=document.getElementById('pocketStatus');el.textContent=message;el.style.color=isError?'#c44':'var(--muted)';}
+function validPocketUrl(value){try{const url=new URL(value);return ['http:','https:'].includes(url.protocol)?url.href:null;}catch{return null;}}
+function saveBlob(blob,name){const href=URL.createObjectURL(blob),a=document.createElement('a');a.href=href;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),500);}
+async function downloadPocket(item){const blob=item.blob instanceof Blob?item.blob:new Blob([item.content||''],{type:item.mime||'text/plain;charset=utf-8'});saveBlob(blob,item.name||('kfb-pocket-'+item.kind+'.txt'));}
+async function removePocket(id){await pocketWrite('delete',id);await renderPocket();pocketStatus('Item removed · local only');}
+async function renderPocket(){const host=document.getElementById('pocketList');try{const items=(await pocketAll()).sort((a,b)=>b.createdAt.localeCompare(a.createdAt));document.getElementById('pocketCount').textContent=String(items.length);host.replaceChildren();if(!items.length)return;for(const item of items){const row=document.createElement('article');row.className='pocket-item';const body=document.createElement('div');const title=document.createElement('div');title.className='pocket-item-title';title.textContent=item.name;const meta=document.createElement('div');meta.className='pocket-item-meta';meta.textContent=[item.kind.toUpperCase(),formatBytes(item.size||0),new Date(item.createdAt).toLocaleString()].join(' · ');body.append(title,meta);if(item.kind!=='file'){const preview=document.createElement('div');preview.className='pocket-item-preview';preview.textContent=item.content;body.append(preview);}const actions=document.createElement('div');actions.className='pocket-actions';if(item.kind==='link'){const open=document.createElement('a');open.className='button';open.href=item.content;open.target='_blank';open.rel='noreferrer';open.textContent='Öffnen';actions.append(open);}if(item.kind!=='file'){const copyButton=document.createElement('button');copyButton.textContent='Kopieren';copyButton.onclick=()=>copyText(item.content,copyButton);actions.append(copyButton);}const download=document.createElement('button');download.textContent='Download';download.onclick=()=>downloadPocket(item);const remove=document.createElement('button');remove.textContent='Löschen';remove.onclick=()=>removePocket(item.id);actions.append(download,remove);row.append(body,actions);host.append(row);}}catch{host.textContent='Inbox nicht verfügbar.';pocketStatus('Lokaler Speicher nicht verfügbar',true);}}
+async function addPocketText(){const field=document.getElementById('pocketText'),content=field.value.trim();if(!content){pocketStatus('Paste a link or some text first',true);return;}const url=validPocketUrl(content),kind=url?'link':'text',normalized=url||content,firstLine=normalized.split('\n')[0].slice(0,90);await pocketWrite('put',{id:pocketId(),kind,name:kind==='link'?(new URL(normalized).hostname+' · '+firstLine):firstLine||'Untitled note',content:normalized,mime:kind==='link'?'text/uri-list':'text/markdown;charset=utf-8',size:new Blob([normalized]).size,createdAt:new Date().toISOString()});field.value='';await renderPocket();pocketStatus(kind==='link'?'Link saved locally':'Text saved locally');}
+async function addPocketFiles(fileList){const allowed=['md','txt','json','zip'];let added=0,skipped=[];for(const file of [...fileList]){const ext=(file.name.split('.').pop()||'').toLowerCase();if(!allowed.includes(ext)){skipped.push(file.name+' (type)');continue;}if(file.size>pocketMaxBytes){skipped.push(file.name+' (>32 MB)');continue;}await pocketWrite('put',{id:pocketId(),kind:'file',name:file.name,mime:file.type||'application/octet-stream',size:file.size,blob:file,createdAt:new Date().toISOString()});added++;}await renderPocket();pocketStatus(skipped.length?added+' added · skipped: '+skipped.join(', '):added+' file'+(added===1?'':'s')+' saved locally',Boolean(skipped.length&&!added));}
+async function exportPocket(){const items=(await pocketAll()).sort((a,b)=>a.createdAt.localeCompare(b.createdAt));if(!items.length){pocketStatus('Nothing to export yet',true);return;}const lines=['# KFB Pocket Inbox · Handoff','',`Exported: ${new Date().toISOString()}`,'','Local scratchpad export. GitHub/project SSOT still wins.',''];for(const item of items){lines.push('## '+item.name,'',`- Kind: ${item.kind}`,'- Added: '+item.createdAt,'- Size: '+formatBytes(item.size||0));if(item.kind==='file'){lines.push('- File bytes are stored locally; download/attach the original separately.');}else{lines.push('',item.content);}lines.push('');}saveBlob(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}),'KFB_POCKET_INBOX_HANDOFF_'+new Date().toISOString().slice(0,10)+'.md');pocketStatus('Handoff Markdown exported');}
+const pocketFiles=document.getElementById('pocketFiles'),dropzone=document.getElementById('dropzone');
+dropzone.onclick=()=>pocketFiles.click();dropzone.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pocketFiles.click();}};pocketFiles.onchange=()=>{addPocketFiles(pocketFiles.files);pocketFiles.value='';};
+['dragenter','dragover'].forEach(name=>dropzone.addEventListener(name,e=>{e.preventDefault();dropzone.classList.add('drag');}));['dragleave','drop'].forEach(name=>dropzone.addEventListener(name,e=>{e.preventDefault();dropzone.classList.remove('drag');}));dropzone.addEventListener('drop',e=>addPocketFiles(e.dataTransfer.files));
+document.getElementById('savePocketText').onclick=addPocketText;document.getElementById('exportPocket').onclick=exportPocket;document.getElementById('clearPocket').onclick=async()=>{if(!confirm('Clear every local Pocket Inbox item in this browser?'))return;await pocketWrite('clear');await renderPocket();pocketStatus('Pocket Inbox cleared');};
+document.getElementById('copyHub').onclick=e=>copy('https://kfb-production-hub.frizzlebob.chatgpt.site/',e.currentTarget);
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}if(e.key==='Escape'){q.value='';q.blur();render();}});
+render();
+renderPocket();
+refreshCurrentBoard();
+</script>
+<!-- deploy-refresh: 2026-09-19T14:16:00+02:00 -->
+<!-- KFB Hub recovery source: accepted donor dfaafac070747f9543b5eb5a635e2aaa74e57b83 + current-board adapter · issue #364 -->
 </body>
 </html>
