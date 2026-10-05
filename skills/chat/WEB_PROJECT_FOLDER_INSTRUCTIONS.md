@@ -17,4 +17,4 @@ All human test links must be direct `https://kayfabizarro.pages.dev/…` routes 
 
 Keep the project Return, additive changelog, kayfabizarro main router and KFB Hub current in the same handoff. Return the exact repo/branch/PR/head, changed files, actual test counts, screenshots or browser proof, direct Stage URL, unresolved items and one next gate. Do not auto-merge or promote Live without the named human gate.
 
-If an optional helper CLI such as `game-dev` is unavailable, record it once and continue with repository-native checks unless the brief specifically requires sealed Game Development Studio evidence. After two failed repair passes on the same gate, stop, preserve the candidate and create the full failure-recovery export.
+If an optional helper CLI such as `game-dev` is unavailable, record it once and continue with repository-native checks unless the brief specifically requires sealed Game Development Studio evidence. After two non-improving repair passes on the same gate, stop repairing the **smallest failing seam**, preserve/export that seam, and continue the parent outcome unless the Production Guard proves the seam is outcome-critical.
