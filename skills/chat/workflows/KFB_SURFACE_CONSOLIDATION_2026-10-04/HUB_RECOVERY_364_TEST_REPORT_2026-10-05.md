@@ -8,9 +8,9 @@ Branch: `chatgpt-web/surface-consolidation-2026-10-04`
 
 - Accepted donor pin: `dfaafac070747f9543b5eb5a635e2aaa74e57b83 · kfb-hub/index.html`
 - Recovered candidate commit: `d8246b1b610ef7c7c6d55e1cb9a21b45341e58c0`
-- Recovered candidate blob: `f2e18b7ce3ea23e34fa57251cef6211155b3ce2d`
-- Current board revision: `2026-10-05.11`
-- Current board blob: `1cf21775eab16de4a88d3a20f30a5e031b5c814a`
+- Recovered candidate blob: `5172207a1181ce85e2966cc695042ad765525b9c`
+- Current board revision: `2026-10-06.1`
+- Current board blob: `4977a32858b5b191ccab7480a787dbdac26a91e6`
 
 ## Implementation
 
@@ -29,23 +29,24 @@ No ToolBox, Production Control, World Studio, Combat or FrankenStein runtime was
 
 ## Checks
 
-**15 / 15 PASS**
+**16 / 16 PASS**
 
 1. accepted donor CSS byte-identical — PASS
 2. JavaScript syntax parse — PASS
 3. current-board schema — PASS
-4. board revision = 2026-10-05.11 — PASS
-5. #364 Hub Recovery present — PASS
-6. #360 Open World Authoring PRIMARY present — PASS
-7. #361 Combat HOLD side lane present — PASS
-8. optional parallel spend frozen — PASS
-9. required Hub DOM IDs present — PASS
-10. Pocket Inbox preserved — PASS
-11. Paper/Dark theme persistence preserved — PASS
-12. current-board no-store fetch present — PASS
-13. stale embedded September registry removed — PASS
-14. generic dark-dashboard fork signature absent — PASS
-15. canonical Hub Site URL present — PASS
+4. board revision = 2026-10-06.1 — PASS
+5. #360 Coworker Open World RUNNING present — PASS
+6. #364 Hub PUBLISH_ONLY present — PASS
+7. Work/Astra conditional NEXT present — PASS
+8. Audio PR #365 PARALLEL listening gate present — PASS
+9. old World/Combat FAIL current cards removed — PASS
+10. required Hub DOM IDs present — PASS
+11. Pocket Inbox preserved — PASS
+12. Paper/Dark theme persistence preserved — PASS
+13. current-board no-store fetch present — PASS
+14. stale embedded September registry removed — PASS
+15. generic dark-dashboard fork signature absent — PASS
+16. canonical Hub Site URL present — PASS
 
 ## Verification boundary
 
@@ -65,4 +66,16 @@ Publish the frozen `kfb-hub/` source from commit `d8246b1...` to the existing Pr
 
 `https://kfb-production-hub.frizzlebob.chatgpt.site/`
 
-PASS only if the accepted Paper/Dark Hub v2 presentation is visible and CURRENT shows board `2026-10-05.11`.
+PASS only if the accepted Paper/Dark Hub v2 presentation is visible and CURRENT shows board `2026-10-06.1`.
+
+
+## 2026-10-06 · Coworker routing update
+
+The Hub current snapshot now reflects Georg's current execution choice:
+- Coworker Open World integration = RUNNING;
+- Work/Astra = conditional Anschluss-Integrator after Coworker return;
+- old World/Combat FAIL cards = history only;
+- Audio PR #365 = separate listening gate;
+- Style Reference Library #359 / World Kernel #363 = parked, not Today.
+
+Embedded fallback, Briefings and Quicklinks were updated as well, so a board-fetch failure no longer resurrects obsolete FAIL cards.
