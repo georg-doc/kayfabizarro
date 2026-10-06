@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.14",
-  "updatedAt": "2026-10-06T22:45:00+02:00",
+  "revision": "2026-10-06.15",
+  "updatedAt": "2026-10-06T23:10:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "P0 · HUB UI REGRESSION CONFIRMED · RESTORE ACCEPTED SHELL",
-    "note": "Live GitHub board is proven, but Georg confirmed the wrong Hub shell was published: accepted v2 controls (ToolBox, WorldBuilder, Theme toggle, top tabs and related functionality) regressed. Binding next step is one surgical Work shell repair using the exact accepted KFB Hub UX Recovery v2 donor, while preserving live data. Hub architecture is now hard-separated into deployed shell/behavior, GitHub live data, GitHub live CSS, and browser-local state."
+    "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
+    "note": "Production Hub v10 restores the accepted v2 shell and keeps GitHub main live board/live CSS plus browser-local state separated. #364 validation passed; normal board and simple style updates require refresh only, not another Site publish."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -18,16 +18,6 @@
     "worldbuilder": "https://github.com/georg-doc/kayfabizarro/issues/360"
   },
   "p0": [
-    {
-      "id": "issue-364-hub-shell-regression",
-      "title": "#364 · P0 Hub UI regression · restore accepted v2 shell",
-      "summary": "Restore accepted Hub v2 controls while preserving live board and adding live CSS separation.",
-      "badge": "P0 · UI REGRESSION REPAIR",
-      "action": "Binding Work rebrief öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_ACCEPTED_SHELL_RESTORE_LIVE_STYLE_2026-10-06.md",
-      "executor": "ChatGPT Work/WSA · surgical shell repair",
-      "nextExecutor": "Georg · visual confirmation only"
-    },
     {
       "id": "issue-360-coworker-intake",
       "title": "#360 · Coworker core complete locally · exact GitHub intake next",
@@ -220,7 +210,7 @@
     "productionHub": {
       "role": "ONLY_HUMAN_OVERVIEW",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site/",
-      "status": "LIVE_BOARD_FUNCTIONAL · VISIBLE_CHECK_PENDING"
+      "status": "PASS · ACCEPTED V2 SHELL · LIVE DATA + LIVE CSS"
     },
     "github": {
       "role": "SSOT",
