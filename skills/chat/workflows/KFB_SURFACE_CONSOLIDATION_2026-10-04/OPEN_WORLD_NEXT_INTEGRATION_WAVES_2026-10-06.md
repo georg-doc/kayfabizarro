@@ -780,6 +780,176 @@ Start small:
 Architecture-freeze must define:
 `ResidentProfile`, `AffectState`, `ActivityDefinition`, `POI`, `EncounterRecord`, relationship/memory record, update frequencies and World↔Resident↔Audio APIs.
 
+## 9 · Clay Construction / Sculpting Grammar
+
+Current status:
+**motion and visual donors are ready; runtime assembly logic is not yet proven.**
+
+Existing Blender/Resident donors:
+- PR #356 Fluff Motion Pack:
+  - `knead_press`;
+  - `collect_debris`;
+  - `place_small`;
+  - `pack_flatten`;
+  - `patch_press`;
+  - push/steer/growing-ball/team-push;
+  - 6 Small → 1 Medium merge reference;
+  - irregular kneaded Fluff lumps;
+  - give/receive choreography.
+- Toy Soldier gift reveal:
+  - declarative multi-stage reveal;
+  - anticipation → squash/wobble → hidden state swap → overshoot/settle;
+  - real source states, no invented missing asset.
+- Resident prop fitting:
+  - props remain source-proven;
+  - attachment/pose is separate from asset creation;
+  - trumpet/guitar work is fit/choreography evidence, not clay-generation evidence.
+
+### Recommended construction model
+
+Do not procedurally recreate the final source asset from scratch.
+
+Use a staged visual construction grammar:
+
+```
+Fluff units
+→ merge / knead
+→ rough clay masses
+→ place / stack
+→ pack / flatten / press
+→ carve / subtract / expose
+→ source-proven final prop or building
+```
+
+The cartoon logic is sculptural:
+workers first create **more clay than needed**, then visibly remove/press/shape the excess until the final object is revealed.
+
+### AssemblyRecipe
+
+Each buildable source asset should expose a lightweight construction recipe:
+- source asset id;
+- final transform / support surface;
+- coarse assembly envelope;
+- 1–N rough masses / slabs;
+- ordered build stages;
+- Fluff cost;
+- worker roles / contact points;
+- reveal masks or section ids;
+- optional surface finish pass.
+
+The final stage remains the real source asset.
+Construction geometry is presentation/state, not a replacement source.
+
+### Small prop example
+
+Bed / desk / trumpet-like prop:
+1. workers deliver Small/Medium Fluff;
+2. merge/knead into 1–3 rough masses;
+3. flatten/stack into broad silhouette;
+4. press/carve away excess;
+5. source prop cross-reveals or section-reveals through the remaining clay;
+6. optional polish/celebrate/reaction beat.
+
+Use the Toy Soldier reveal lesson:
+state changes may be hidden by squash/pop/overshoot rather than requiring physically exact continuous topology morphing.
+
+### Large building / castle example
+
+Use hierarchical sections:
+```
+foundation
+→ wall blocks / cells
+→ towers
+→ openings / trim
+→ roof
+→ props / banners
+→ finish
+```
+
+Workers and Fluff can operate per section.
+The building becomes usable as soon as required structural sections are complete.
+
+Do not require one monolithic morph from blob to castle.
+
+### Destruction / construction duality
+
+Align build sections with the destruction system where practical.
+
+Desired lifecycle:
+```
+SOURCE RECIPE
+  ↕
+ASSEMBLY SECTIONS / CELLS
+  ↕
+FINAL SOURCE ASSET
+  ↕
+DAMAGE CELLS
+  ↕
+RUBBLE / RECOVERABLE FLUFF
+  ↕
+REBUILD SECTIONS
+```
+
+A destroyed cell or section can therefore map to:
+- rubble;
+- recoverable Fluff;
+- repair requirement;
+- rebuild progress.
+
+This does **not** mean the destruction mesh and construction presentation must be identical.
+They share stable semantic section ids and persistence.
+
+### Runtime ownership
+
+World / Construction Economy owns:
+- recipe;
+- Fluff/resource accounting;
+- build/rebuild progress;
+- worker assignments;
+- durable section state.
+
+Motion owner supplies:
+- carry / roll / give / receive;
+- knead / place / flatten / patch;
+- push / team-push;
+- celebrate / idle.
+
+Presentation layer supplies:
+- clay masses;
+- squash/merge/pop;
+- sculpt-away/reveal;
+- clay chips/smoke/dust;
+- final source-object reveal.
+
+Destruction/Combat owns:
+- damage events;
+- cell loss;
+- destructive impulses/weapon consequences.
+
+### First consumer proof
+
+Do not start with a castle.
+
+Prove:
+1. one small source prop, e.g. bed/desk;
+2. Fluff arrives through a real worker activity;
+3. rough mass appears;
+4. existing work motions contact the mass;
+5. 3–5 build stages visibly progress;
+6. final real source prop is revealed;
+7. damage one section;
+8. repair worker brings Fluff and restores it;
+9. save/reload preserves build/damage/rebuild state.
+
+Only after this passes scale the same grammar to a small house, then castle/landmark modules.
+
+### Blender role
+
+Do not reopen broad animation authoring now.
+PR #356 says NEW CLIP REQUIRED: none for the current work vocabulary.
+
+Blender MCP re-enters only if the runtime consumer proves a missing motion or if a specific source family needs a special sculpting/contact pose.
+
 ## 8 · Exactly one next gate
 
 **Wait for the exact Coworker Open World RETURN, then run one Work/WSA reconciliation against this wave plan and the binding PR #348 matrix.**
