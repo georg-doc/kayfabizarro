@@ -167,3 +167,38 @@ and
 then updates the existing Asset Librarian Site in place.
 
 No merge. No Live promotion. No second Site.
+
+
+---
+
+## Implementation checkpoint · 2026-10-06 · pre-deployment
+
+Status: **R1 ENGINEERING QA GREEN · PUBLISH PENDING**
+
+The R1 implementation is now pushed to the existing Asset Librarian Sites source:
+
+- Site project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- source commit: `492e01d02f5d93d49d9dd7caecbbf7dedff26ea9`
+- target deep-link: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- separate Site created: **NO**
+
+Implemented:
+- Style References mode beside Assets, Motions, Saved Sets and Intake;
+- 13 official Etherington seed sources with creator-hosted previews;
+- URL-first intake with honest `DISCOVERY_ONLY` fallback for unverified URLs;
+- Reference Cards/Sets, search, filters, notes and construction principles;
+- source-isolation gate;
+- curated Reference ↔ Asset candidate relationships;
+- `kfb.style-reference-pack/1` export and reload persistence;
+- restored visible 3D gallery previews;
+- whole-card Inspector opening, image-overlay add button and removed Inspect row;
+- redesigned five-icon mobile navigation.
+
+Independent engineering gate:
+- Tester: **PASS**
+- Critic findings: **resolved and retested**
+- Guard: **GO**
+
+See the appended implementation section in `TEST_REPORT.md`.
+
+The next gate is exact in-place Site deployment followed by ToolBox deep-link update and visible verification. No merge and no Live branch promotion are authorized.
