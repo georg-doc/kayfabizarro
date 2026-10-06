@@ -210,6 +210,21 @@ Default:
 - Dialogue: optional thanks;
 - Next: resume performance/activity.
 
+## 5A · UFO / Hunky & Dory World Events
+
+These events are part of the prepared UFO world-event family:
+`skills/chat/UFO_HUNKY_DORY_WORLD_EVENT_PREP_2026-10-06.md`
+
+- `UFO_APPROACHING` → curiosity/suspicion/worry; orient upward; optional question Emanatum.
+- `TRACTOR_BEAM_TARGET_LOCKED` → surprise/worry; recoil/step-out; point/protective pose.
+- `ABDUCTION_STARTED` → high-priority surprise/worry; clear beam, point/help/seek help.
+- `ABDUCTION_COMPLETED` → worry/suspicion; inspect empty site / look up; replan.
+- `ALIEN_GIFT_DROPPED` → curiosity/delight/suspicion; inspect; optional group encounter.
+- `ABDUCTED_OBJECT_RETURNED` → surprise → curiosity/relief; inspect returned target.
+
+The UFO/beam presentation does not decide persistence or target availability.
+Those consequences are frozen only after the Coworker return.
+
 ## 5 · ChatterBox social-call reactions · LAB ONLY
 
 PR #357 already treats the four calls as ChatterBox experiments.

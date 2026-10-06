@@ -731,6 +731,276 @@
         "RESUME_ACTIVITY"
       ],
       "durable": false
+    },
+    {
+      "eventId": "UFO_APPROACHING",
+      "priority": 80,
+      "category": "world-event",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.65,
+        "alternate": [
+          "suspicious",
+          "worried"
+        ]
+      },
+      "pose": {
+        "base": "attentive-or-guarded",
+        "proximity": "hold",
+        "orientation": "look-up-ufo"
+      },
+      "gesture": "point-or-shade-look",
+      "microMotion": [
+        "head-up",
+        "small-step-adjust-if-safe"
+      ],
+      "face": {
+        "gaze": "ufo",
+        "mouth": "neutral-or-worried"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "ufo.arrive",
+      "outcomes": [
+        "INSPECT_TARGET",
+        "RESUME_ACTIVITY",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "TRACTOR_BEAM_TARGET_LOCKED",
+      "priority": 90,
+      "category": "world-event",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.85,
+        "followup": "worried"
+      },
+      "pose": {
+        "base": "recoil-open",
+        "proximity": "step-out-if-safe",
+        "orientation": "beam-target"
+      },
+      "gesture": "point-or-protective",
+      "microMotion": [
+        "recoil",
+        "head-up"
+      ],
+      "face": {
+        "gaze": "beam-or-target",
+        "mouth": "surprised"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "beam.lock",
+      "outcomes": [
+        "LEAVE_AREA",
+        "INSPECT_TARGET",
+        "SEEK_HELP"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "ABDUCTION_STARTED",
+      "priority": 100,
+      "category": "world-consequence",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.95,
+        "followup": "worried"
+      },
+      "pose": {
+        "base": "recoil-or-help-ready",
+        "proximity": "clear-beam-if-safe",
+        "orientation": "target"
+      },
+      "gesture": "point-help-or-reach",
+      "microMotion": [
+        "recoil",
+        "lean-forward-after-safe"
+      ],
+      "face": {
+        "gaze": "target",
+        "mouth": "surprised"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "followup": "sweat-drop",
+        "policy": "one-at-a-time"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "beam.transfer.start",
+      "outcomes": [
+        "LEAVE_AREA",
+        "SEEK_HELP",
+        "INSPECT_TARGET"
+      ],
+      "durable": "target transfer owner decides"
+    },
+    {
+      "eventId": "ABDUCTION_COMPLETED",
+      "priority": 90,
+      "category": "world-consequence",
+      "affect": {
+        "primary": "worried",
+        "intensity": 0.65,
+        "alternate": [
+          "suspicious",
+          "sad"
+        ]
+      },
+      "pose": {
+        "base": "guarded",
+        "proximity": "approach-empty-site-if-safe",
+        "orientation": "former-target"
+      },
+      "gesture": "inspect-or-look-up",
+      "microMotion": [
+        "head-tilt",
+        "slow-settle"
+      ],
+      "face": {
+        "gaze": "empty-site-or-ufo",
+        "mouth": "worried"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "beam.transfer.complete",
+      "outcomes": [
+        "INSPECT_TARGET",
+        "SEEK_HELP",
+        "REPLAN_ACTIVITY"
+      ],
+      "durable": "if world target becomes unavailable/transferred"
+    },
+    {
+      "eventId": "ALIEN_GIFT_DROPPED",
+      "priority": 70,
+      "category": "world-event",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.7,
+        "alternate": [
+          "joyful",
+          "suspicious",
+          "surprised"
+        ]
+      },
+      "pose": {
+        "base": "attentive-open-or-guarded",
+        "proximity": "approach-if-safe",
+        "orientation": "dropped-object"
+      },
+      "gesture": "inspect-or-point",
+      "microMotion": [
+        "lean-forward",
+        "head-tilt"
+      ],
+      "face": {
+        "gaze": "gift",
+        "mouth": "thinking-neutral"
+      },
+      "emanata": {
+        "primary": "question",
+        "alternate": "sparkle",
+        "policy": "profile-dependent"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line",
+          "triplet"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "ufo.drop",
+      "outcomes": [
+        "INSPECT_TARGET",
+        "ENTER_ENCOUNTER",
+        "RESUME_ACTIVITY"
+      ],
+      "durable": "spawned object/world owner decides"
+    },
+    {
+      "eventId": "ABDUCTED_OBJECT_RETURNED",
+      "priority": 80,
+      "category": "world-event",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.75,
+        "followup": "curious",
+        "alternate": [
+          "joyful",
+          "suspicious"
+        ]
+      },
+      "pose": {
+        "base": "recoil-then-attentive",
+        "proximity": "approach-if-safe",
+        "orientation": "returned-target"
+      },
+      "gesture": "inspect-or-acknowledge",
+      "microMotion": [
+        "recoil",
+        "lean-forward"
+      ],
+      "face": {
+        "gaze": "returned-target",
+        "mouth": "surprised-then-neutral"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "followup": "question",
+        "policy": "one-at-a-time"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "beam.transfer.complete",
+      "outcomes": [
+        "INSPECT_TARGET",
+        "RESUME_ACTIVITY",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": "return/restoration owner decides"
     }
   ],
   "chatterboxLabCalls": [
