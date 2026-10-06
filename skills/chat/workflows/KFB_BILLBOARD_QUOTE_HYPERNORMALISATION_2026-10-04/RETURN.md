@@ -1,13 +1,13 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
 Date: 2026-10-06
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–05 COMPLETE · RESEARCH EXPANSION ACTIVE
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–06 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: 3ecff5b547e7968411cbade88499c9845ca6c683
+Last verified branch head before this Return write: 6444d8627f859f45c1b811462944fa3f16cd2d23
 
 ## Georg continuation decision
 
@@ -46,62 +46,77 @@ File:
 - validation: **18/18 PASS**
 
 ### Research Reserve 05
+- **30 deliberately unmapped**
+- five balanced tonal clusters
+- validation: **20/20 PASS**
 
-Added 2026-10-06 to deepen tonal rotation rather than simply adding more quotes of the same intellectual register.
+### Research Reserve 06
 
+Added 2026-10-06 with five balanced research clusters:
+
+- myth/religion: **6**
+- law/crime: **6**
+- psychology: **6**
+- music/performance: **6**
+- science/history oddities: **6**
+
+Counts:
 - **30 deliberately unmapped quote + FrizzleQuestion candidates**
-- five balanced clusters:
-  - humor/satire: **6**
-  - nature/ecology: **6**
-  - technology/infrastructure: **6**
-  - relationships: **6**
-  - historical oddities: **6**
 - provenance:
-  - **29 VERIFIED**
-  - **1 SECONDARY_ONLY**
+  - **28 VERIFIED**
+  - **2 SECONDARY_ONLY**
   - **0 UNVERIFIED**
 - rights:
   - **29 PUBLIC_DOMAIN_CONFIRMED**
   - **1 DRAFT_RIGHTS_UNKNOWN**
 - validation: **20/20 PASS**
-- zero ID/text collisions against the prior 145-candidate inventory
+- zero ID/text collisions against the prior 175-candidate inventory
 
 File:
-`QUOTE_RESEARCH_RESERVE_05.json`
+`QUOTE_RESEARCH_RESERVE_06.json`
 
-Reserve 05 expands the pool with:
-- work/procrastination satire;
-- laughter as a political/social mechanism;
-- satire as failed self-recognition;
-- moral panics and public virtue displays;
-- ego and attention competition;
-- ecological interdependence;
-- wildness/resilience;
-- human environmental disturbance;
-- ordinary-vs-cosmic scale;
-- ecological dependency;
-- infrastructure dependence;
-- communication speed vs content;
-- first telegraph/telephone moments;
-- tools as augmentation and dependency;
-- technological/social disruption;
-- friendship, tenderness and ambivalence;
-- public/private relationship burdens;
-- plague-era urban perception;
-- history as revision, implausibility, disaster-selection and biography compression.
-
-Representative authors include Jerome K. Jerome, Mark Twain, Jonathan Swift, Oscar Wilde, Macaulay, Ambrose Bierce, John Muir, Thoreau, George Perkins Marsh, Walt Whitman, Darwin, Samuel Morse, Alexander Graham Bell, Carlyle, Marx & Engels, Francis Bacon, George Eliot, Jane Austen, Shakespeare, Emerson, La Rochefoucauld, Samuel Pepys, Daniel Defoe and Edward Gibbon.
+Reserve 06 expands the pool across:
+- private conscience vs religious institution;
+- fear and superstition;
+- ritual / false causal models;
+- ordinary vs altered consciousness;
+- anxiety and belief;
+- religion judged by conduct;
+- prevention vs punishment;
+- false acquittal vs false conviction;
+- litigation vs settlement;
+- law vs justice;
+- investigation and obviousness;
+- punishment vs vengeance;
+- habit and expectation;
+- emotion vs reason;
+- blushing / social self-consciousness;
+- laughter and tears;
+- memory as thinking;
+- conformity and self-suppression;
+- art aspiring toward music;
+- music as non-propositional expression;
+- rhythm/evolution;
+- performance as embodiment;
+- feeling vs technique in acting;
+- grandeur vs pomp / nature vs triviality;
+- Ada Lovelace on machine origination;
+- Michelson on supposedly completed physics;
+- Wilbur Wright's belief in flight;
+- Newcomb's failed impossibility forecast;
+- Tesla's planetary-network metaphor;
+- the 1903 New York Times million-year flight forecast.
 
 ## Combined depth
 
 Current researched inventory:
 
 - mapped Batch 01: **30**
-- unmapped Reserves 01–05: **145**
-- **combined: 175 researched quote/question candidates**
+- unmapped Reserves 01–06: **175**
+- **combined: 205 researched quote/question candidates**
 
 Important:
-**175 researched candidates ≠ 175 approved quotes per island.**
+**205 researched candidates ≠ 205 approved quotes per island.**
 
 Reserve candidates remain:
 `UNMAPPED_BY_DESIGN`
@@ -119,22 +134,22 @@ Future mapped context pools should diversify:
 - rights eligibility;
 - recent-repeat history.
 
-Reserve 05 adds explicit tonal contrast so a long island stay can move among dry satire, ecological wonder, technological unease, intimacy and historical texture rather than sounding like one continuous lecture.
+The goal is not merely avoiding exact repeats. A long island session should also avoid sounding like the same author, century, discipline or emotional register repeatedly.
 
 No runtime selector was modified.
 
-## Reserve 05 validation evidence
+## Reserve 06 validation evidence
 
 **20/20 PASS**
 
 Checked:
 - reserve schema id;
 - exactly 30 candidates;
-- five balanced 6-item research clusters;
+- five balanced 6-item clusters;
 - unique IDs;
 - unique quote texts;
-- no ID collision with prior 145;
-- no text collision with prior 145;
+- no ID collision with prior 175;
+- no text collision with prior 175;
 - all `UNMAPPED_BY_DESIGN`;
 - no premature deck/Card/island/Billboard/biome mappings;
 - reserve status;
@@ -146,7 +161,7 @@ Checked:
 - billboard-reasonable quote length;
 - verification totals;
 - rights totals;
-- combined inventory = 175.
+- combined inventory = 205.
 
 Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
 Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
@@ -155,14 +170,15 @@ Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 No uncertain case is silently promoted.
 
-Reserve 05 open cases:
-- **Alexander Graham Bell — Experimental Notebook, 1876**: exact wording is primary-source verified through the Library of Congress, but the pre-1978 manuscript/publication-term status was not resolved in this batch; remains `DRAFT_RIGHTS_UNKNOWN`.
-- **La Rochefoucauld — Maxims**: exact English wording is strongly attested in public-domain nineteenth-century sources, but the direct English Maxims edition was not pinned; remains `SECONDARY_ONLY`. Rights of the old wording itself are public-domain.
+Reserve 06 open cases:
+- **Wilbur Wright — letter to Octave Chanute, 13 May 1900**: wording is primary-source verified through the Library of Congress, but the historical manuscript/publication-term status was not resolved; remains `DRAFT_RIGHTS_UNKNOWN`.
+- **Diderot — Paradox of Acting**: exact English formulation is supported by John Morley's public-domain study but the direct English edition was not pinned; remains `SECONDARY_ONLY`.
+- **Talma — acting maxim**: exact English formulation is verified in Henry Irving's public-domain address quoting Talma, but the direct Talma edition was not pinned; remains `SECONDARY_ONLY`.
 
 ## Files
 
-Added in Reserve 05:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_05.json`
+Added in Reserve 06:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_06.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -184,6 +200,6 @@ No merge. No Live promotion.
 
 ## One next productive step
 
-**Quote Research Reserve 06 — continue quality-first expansion with myth/religion, law/crime, psychology, music/performance and science/historical oddities before mapping.**
+**Quote Research Reserve 07 — continue quality-first expansion with architecture/urbanism, education/learning, war/conflict, food/material culture and language/translation before mapping.**
 
 Georg action required now: **nothing**.
