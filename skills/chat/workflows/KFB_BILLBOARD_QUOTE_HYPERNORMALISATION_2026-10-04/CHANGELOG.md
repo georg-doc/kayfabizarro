@@ -75,3 +75,16 @@
 - This increases future rotation depth but does **not** claim that any specific island already has an approved 85-item pool; island/deck/Billboard mapping remains a later curator step.
 - No H13, Billboard runtime, Audio, 3D, Stage, main-router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 03 · author/era diversity
+
+- Continued Georg's active quote-pool expansion for long island/Billboard sessions.
+- Added `QUOTE_RESEARCH_RESERVE_03.json` with **30 further quote + FrizzleQuestion candidates**.
+- Deliberately used **30 distinct authors** in this batch to reduce future author repetition as well as quote repetition.
+- Reserve 03 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard placement is invented during research.
+- Provenance: **21 VERIFIED**, **9 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **18 PUBLIC_DOMAIN_CONFIRMED**, **5 RESEARCHED_RESTRICTED**, **3 RESEARCHED_QUOTE_LIMIT_ONLY**, **4 DRAFT_RIGHTS_UNKNOWN**.
+- Rights/provenance uncertainty is kept explicit for Peirce publication status, Pasteur/Poincaré translation status, Ida B. Wells exact original locator, active-copyright modern authors, and jurisdiction-sensitive Huxley/Du Bois/Korzybski records.
+- Validation: **18/18 PASS**, including zero ID/text collisions against the prior 85-item inventory, 30 unique authors, quote/question length bounds and no premature mapping fields.
+- Combined researched inventory is now **115 candidates**: 30 mapped Batch-01 candidates + 85 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
