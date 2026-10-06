@@ -747,3 +747,71 @@ Exactly one next gate:
 **WORK_DIRECT_REPAIR_STYLE_REFERENCE_BROWSER_VIEWER_R2**.
 
 No merge. No Live promotion. No second Site.
+
+
+---
+
+## Style Reference Browser / Viewer R2 · pre-deployment checkpoint · 2026-10-07
+
+Status: **DIRECT WORK/WSA REPAIR QA GREEN · EXISTING SITE UPDATE PENDING**
+
+Owner / boundary:
+- repo: `georg-doc/kayfabizarro`
+- branch: `planning/style-reference-library-r1-surface-2026-10-05`
+- Draft PR: **#359**
+- GitHub base head read before implementation: `5699f1372768dc6401afdae30b15c8b252a7755b`
+- existing Site project only: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- current published base source: `e0a3faa63d7024dbd7bb01cb7815db69f876a230`
+- no second Site; no merge; no Live promotion
+
+Implemented locally in the existing Site source:
+- dedicated three-zone Style Reference Gallery / Viewer / compact details workspace;
+- actual tutorial board is the dominant object;
+- presentation-only remote visual index for all **53 Etherington official sources**;
+- **106 creator-hosted tutorial boards** linked without mirroring image binaries;
+- multi-board navigation retains one canonical source identity;
+- Fit width / Fit page / 100% / zoom in/out;
+- previous/next reference and previous/next board;
+- keyboard reference navigation and practical full-screen control;
+- compact sticky search + Curated / Saved / Inspected quick filters;
+- detailed filters collapsed by default;
+- URL intake moved behind `+ Add reference` dialog;
+- Add to Set and inspected state remain primary actions;
+- notes, principles, relations and provenance remain available but visually secondary;
+- mobile two-column gallery + full-screen board viewer;
+- Paper/Dark/KFB language retained;
+- Compare 2–4 deferred as non-blocking per brief.
+
+Data / persistence:
+- **58 unique built-ins retained**;
+- 53 Etherington + 5 supplementary sources retained;
+- existing local Cards, Sets, Notes, Principles, tags, relations, inspected state and discovery candidates keep the same storage keys and merge behavior;
+- presentation visuals are not written into browser-local records and are not embedded in `kfb.style-reference-pack/1` exports;
+- source isolation remains required before export.
+
+Local browser verification:
+- 58 unique built-ins: **PASS**
+- 53 official sources with boards / 106 boards total: **PASS**
+- one tall Clouds board shown completely: **PASS**
+- Clouds Board 1 / Board 2 navigation: **PASS**
+- Fit width / Fit page / 100% / zoom: **PASS**
+- previous / next reference: **PASS**
+- URL intake behind secondary action: **PASS**
+- Cards / Sets / Notes / Principles after reload: **PASS**
+- source-isolation export: **PASS**
+- Assets / Motions / Saved Sets / Intake: **PASS**
+- 3D gallery preview and whole-card inspector: **PASS**
+- mobile gallery + full-screen viewer: **PASS**
+- page errors: **0**
+
+Evidence files in the Work output packet:
+- `asset-librarian-style-viewer-r2-desktop.png`
+- `asset-librarian-style-viewer-r2-mobile-gallery.png`
+- `asset-librarian-style-viewer-r2-mobile-board.png`
+
+Unresolved / deferred:
+- lightweight Compare 2–4 References is deferred; it is explicitly non-blocking for the core Viewer repair.
+- final published Site source/version/deployment identity is pending the next checkpoint.
+
+Exactly one next gate:
+**PUBLISH_AND_VERIFY_EXISTING_ASSET_LIBRARIAN_R2_IN_PLACE**
