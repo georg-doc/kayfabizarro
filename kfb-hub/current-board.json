@@ -1,0 +1,220 @@
+{
+  "schema": "kfb.surface-board/2",
+  "revision": "2026-10-06.7",
+  "updatedAt": "2026-10-06T21:20:00+02:00",
+  "owner": "KFB Production Control",
+  "syncMode": "LIVE_GITHUB_MAIN",
+  "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
+  "status": {
+    "label": "CURRENT · COWORKER CORE COMPLETE LOCAL · GITHUB INTAKE PENDING",
+    "note": "Coworker reports a stable local Open World receiving core at local HEAD 1d4f8c8; final critic fails only Camera (6.5). Exact code/RETURN/evidence still must be pushed to GitHub before Work changes it. Final One-Shot scope still requires Authoring/Persistence plus representative Joyride/Sky/Billboard/Resident/Card/Audio/Drive seams. Claude Design UFO Event Lab is safe parallel prep. Hub live-board migration is a one-time publish; after it, routine board/briefing updates come directly from GitHub main with no Sites/Work republish."
+  },
+  "surfaces": {
+    "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+    "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+    "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "audio": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "assetLibrarian": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references"
+  },
+  "p0": [
+    {
+      "id": "issue-360-coworker-intake",
+      "title": "#360 · Coworker core complete locally · exact GitHub intake next",
+      "summary": "Coworker local core is closed with stable build evidence, but Camera remains 6.5 and local HEAD 1d4f8c8 has never been pushed. Do not reconstruct it from chat. First preserve the exact local code/RETURN/ARCHITECTURE/STATUS/evidence on a GitHub handoff branch.",
+      "badge": "INTAKE PENDING · PRIMARY",
+      "action": "Issue #360 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
+      "executor": "Claude Coworker · finish RETURN + direct GitHub handoff",
+      "nextExecutor": "ChatGPT Work/Astra · camera repair then Architecture Freeze"
+    },
+    {
+      "id": "issue-364-hub-live-board-migration",
+      "title": "#364 · Production Hub · one-time Live Board migration",
+      "summary": "One final Site shell update changes the Paper/Dark Hub from deployment-bound board/briefings to remote GitHub-main data. After this migration, Web Chat can update Hub jobs and briefing cards by writing one JSON; no Work/Sites publish per routine change.",
+      "badge": "ONE-TIME PUBLISH",
+      "action": "Issue #364 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/364",
+      "executor": "PUBLISH_ONLY / Sites-capable executor",
+      "nextExecutor": "None for routine Hub content updates"
+    }
+  ],
+  "p1": [
+    {
+      "id": "next-work-open-world-freeze",
+      "title": "NEXT · Work/Astra · camera → Architecture Freeze → Authoring/Persistence",
+      "summary": "Only after exact Coworker GitHub intake: fix the narrow camera occlusion/boom seam without disturbing cliff behavior; then freeze real as-built ownership/APIs; then close direct authoring + save/fresh-reload before broad module fan-out.",
+      "badge": "NEXT AFTER GITHUB INTAKE",
+      "action": "PR #348 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
+      "executor": "ChatGPT Work/Astra · Anschluss-Integrator",
+      "nextExecutor": "Required KFB integration waves"
+    },
+    {
+      "id": "resident-life-prep-ready",
+      "title": "PREP READY · Resident Life / Affect / Pose / Encounters",
+      "summary": "Semantic model, Affect/Emanata map, Pose/Proximity/Gesture/Micro-motion contract, reaction matrix and 3-Resident fixture are now on main. Blender choreography remains queued until local resource pressure is gone; no runtime integration before Architecture Freeze.",
+      "badge": "PREP COMPLETE · MAIN",
+      "action": "Resident model öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_LIFE_SEMANTIC_MODEL_PREP_2026-10-06.md",
+      "executor": "ChatGPT Web Chat · prep complete",
+      "nextExecutor": "Work/Astra freeze; Blender MCP later for real 3D choreography"
+    }
+  ],
+  "parallel": [
+    {
+      "id": "claude-design-ufo-event-lab",
+      "title": "READY · Claude Design · UFO Tractor Beam Event Lab",
+      "summary": "Isolated visual/audio proof only: compare source-proven Kenney UFO A/B/C/D, use existing beam/burst donors, prove arrival/hover/beam/dematerialize/rematerialize on prop, Resident-sized and castle-sized targets, audition pinned Audio-library candidates. No Open World writes or persistence.",
+      "badge": "READY · SAFE PARALLEL",
+      "action": "Claude Design Brief öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
+      "executor": "Claude Design · isolated Event Lab",
+      "nextExecutor": "Work/Astra runtime adapter only after Architecture Freeze"
+    },
+    {
+      "id": "pr-365-audio-integration-ready",
+      "title": "READY INPUT · Audio integration handover",
+      "summary": "No further Audio prep needed now. G/D are runtime-verified; M/N/O are source-present and QA-pending. Later adapter should inject the existing shared AudioContext/destination, shadow-parity first, then cut over SCORE ownership without duplicating the Travel Audio graph.",
+      "badge": "READY INPUT · WAIT FOR FREEZE",
+      "action": "Audio PR #365 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/365",
+      "executor": "KFB Audio owner · no new prep",
+      "nextExecutor": "Work/Astra after Architecture Freeze"
+    },
+    {
+      "id": "pr-359-style-reference-library",
+      "title": "TOOL · Style Reference Library R1 · published",
+      "summary": "Published inside existing Asset Librarian; source/reference packs can be reused by Claude Design for visual grammar without creating another Site.",
+      "badge": "PUBLISHED TOOL",
+      "action": "Style Reference Library öffnen",
+      "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
+      "executor": "KFB Asset Librarian",
+      "nextExecutor": "None"
+    },
+    {
+      "id": "pr-357-chatterbox-packet",
+      "title": "TOOL PACKET · ChatterBox planning ready · Site hold",
+      "summary": "Existing ChatterBox packet remains reusable; 34/34 planning/Site-readiness + 12/12 Site-only correction. Do not re-plan or create a second dialogue tool.",
+      "badge": "PACKET READY · SITE HOLD",
+      "action": "PR #357 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/357",
+      "executor": "Existing ChatterBox owner",
+      "nextExecutor": "Reactivate only when Resident integration seam is frozen"
+    }
+  ],
+  "briefings": [
+    {
+      "id": "brief-claude-ufo-event-lab",
+      "title": "Claude Design · UFO Tractor Beam Event Lab",
+      "badge": "STARTABLE NOW",
+      "status": "ready",
+      "provider": "Claude Design · isolated visual/audio lab",
+      "desc": "Source-first UFO/beam/Clay-dematerialization proof with existing SFX. Completely separate from the running/local Open World core.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
+      "tags": [
+        "ufo",
+        "hunky dory",
+        "tractor beam",
+        "claude design",
+        "vfx",
+        "audio",
+        "world event"
+      ],
+      "prompt": "Work from georg-doc/kayfabizarro main.\nRead skills/chat/START_HERE.md, then skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md and its UFO/audio prep sources.\nBuild only the isolated Event Lab. Show the actual Kenney UFO donors A/B/C/D in isolation before choosing one. Prove arrival/hover/beam/dematerialize/rematerialize for small, Resident-sized and castle-sized targets and audition only existing repo SFX first.\nDo not edit Open World #360/PR #348, do not invent persistence, do not invoke Blender, do not build Hunky/Dory characters yet. Return exact sources, visual/audio evidence, changed files, unresolved items and one next gate."
+    },
+    {
+      "id": "brief-work-coworker-intake-camera-freeze",
+      "title": "Work/Astra · Coworker intake → Camera → Architecture Freeze",
+      "badge": "WAIT FOR EXACT GITHUB INTAKE",
+      "status": "hold",
+      "provider": "ChatGPT Work/Astra · Anschluss-Integrator",
+      "desc": "Do not start from chat prose. First require Coworker's exact pushed code/RETURN/evidence, then repair only the camera seam and freeze the as-built architecture before integration.",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
+      "tags": [
+        "open world",
+        "work",
+        "camera",
+        "architecture freeze",
+        "intake"
+      ],
+      "prompt": "Do not start until Coworker's exact local result has been pushed to a GitHub handoff branch and RETURN.md, docs/ARCHITECTURE_AS_BUILT.md, docs/STATUS.json and evidence are readable there.\nThen read issue #360 and PR #348. Repair only the camera occlusion/boom seam first, preserving cliff behavior. Next perform the Architecture Freeze against the actual Coworker code.\nAfter freeze, close Authoring + Persistence before broad Joyride/Sky/Audio/Resident/Billboard/Card/Drive fan-out. Do not rebuild the receiving core."
+    },
+    {
+      "id": "brief-resident-prep",
+      "title": "Resident Life · semantic/performance prep",
+      "badge": "PREP COMPLETE",
+      "status": "hold",
+      "provider": "ChatGPT Web Chat + later Blender MCP",
+      "desc": "Profile/Affect/Activities/POIs/Encounters/Pose/Emanata/Reaction data are prepared on main. Runtime work waits for Architecture Freeze; Blender waits until local resource contention is gone.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md",
+      "tags": [
+        "resident",
+        "affect",
+        "pose",
+        "emanata",
+        "encounters",
+        "prep"
+      ],
+      "prompt": "Read the current Resident prep files on main. Do not implement into Open World before the post-Coworker Architecture Freeze."
+    },
+    {
+      "id": "brief-hub-live-board-contract",
+      "title": "Production Hub · Live Board operating model",
+      "badge": "ONE-TIME MIGRATION",
+      "status": "ready",
+      "provider": "KFB Production Hub",
+      "desc": "After one shell publish, routine Hub jobs and briefing cards come live from main/kfb-hub/current-board.json. Web Chat updates JSON directly; Sites/Work is not used for ordinary status changes.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md",
+      "tags": [
+        "hub",
+        "workflow",
+        "live board",
+        "github main",
+        "no republish"
+      ],
+      "prompt": "For routine Hub content changes, update only main/kfb-hub/current-board.json and verify the file. Do not request a Site publish unless the Hub shell/code itself changes."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "ufo-final-donor",
+      "title": "UFO donor",
+      "question": "Georg may choose a preferred UFO manually; otherwise Claude Design compares Kenney A/B/C/D source-isolated and recommends one.",
+      "blocking": false
+    },
+    {
+      "id": "resident-social-density",
+      "title": "Resident social density",
+      "question": "Sparse meaningful encounters vs busier constant micro-contact remains a product tuning decision for later living-world freeplay.",
+      "blocking": false
+    },
+    {
+      "id": "resident-memory-depth",
+      "title": "Resident memory depth",
+      "question": "Current recommendation: light familiarity/recent-event memory for all; deeper episodic memory only for selected recurring Residents.",
+      "blocking": false
+    }
+  ],
+  "quickLinks": [
+    {
+      "title": "Open World · #360",
+      "summary": "Current product routing and Coworker intake status.",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360"
+    },
+    {
+      "title": "Open World · PR #348",
+      "summary": "Binding final One-Shot contract/integration matrix.",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/348"
+    },
+    {
+      "title": "UFO Event Prep",
+      "summary": "Architecture/source/event family for Hunky & Dory UFO world events.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/UFO_HUNKY_DORY_WORLD_EVENT_PREP_2026-10-06.md"
+    },
+    {
+      "title": "Resident Reaction Matrix",
+      "summary": "World/social event → Affect → Pose/Gesture/Face/Emanata → recovery.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.md"
+    }
+  ]
+}

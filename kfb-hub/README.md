@@ -133,3 +133,20 @@ Purpose: same semantic EyeRig sequence on source-exact Eumel 2D and the existing
 
 Modifier Atlas:
 `tools/2D Animation Studio/shared/eye-rig/modifier-atlas/`
+
+## Live Board model · 2026-10-06
+
+Canonical frequently-changing Hub coordination data now lives at:
+
+`kfb-hub/current-board.json` on `main`.
+
+The Production Hub shell is being migrated to fetch that file remotely on open/refresh and use its deployed local copy only as fallback.
+
+After that one-time Site shell migration:
+- Web Chat may update current jobs, briefing cards, open questions and quick links by writing the JSON on `main`;
+- read back the exact file/head after each write;
+- do **not** request Work/WSA or a Site publish for ordinary Hub content updates;
+- publish the Site only when Hub shell/UI/loader code itself changes.
+
+See:
+`skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md`
