@@ -1,13 +1,13 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
-Date: 2026-10-06
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–12 COMPLETE · RESEARCH EXPANSION ACTIVE
+Date: 2026-10-07
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–13 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: 811a365931568ed1d0c9adcbcfde7c5373a3b8fa
+Last verified branch head before this Return write: 79c6debf065ba6bb5e73ce8fd71f030e6395e47d
 
 ## Georg continuation decision
 
@@ -28,86 +28,97 @@ No quote is thereby approved for public runtime, and no H13/Billboard/3D runtime
 - provenance: **27 VERIFIED · 3 SECONDARY_ONLY · 0 UNVERIFIED**
 - validation: **13/13 PASS**
 
-### Research Reserves 01–11
+### Research Reserves 01–12
 - deliberately unmapped research reserve;
-- prior combined inventory before Reserve 12: **355 candidates**
-- prior unmapped count: **325**
+- prior combined inventory before Reserve 13: **385 candidates**
+- prior unmapped count: **355**
 
-### Research Reserve 12
+### Research Reserve 13 · Finance / Money Systems
 
 Added 2026-10-07 with five balanced research clusters:
 
-- cryptids/anomalous zoology: **6**
-- UFO/contact/close-encounter narratives: **6**
-- remote viewing/ESP/psychical research: **6**
-- secret/forbidden technology: **6**
-- time/parallel-worlds/reality manipulation: **6**
+- bank credit / fiat / stable money: **6**
+- stock markets / HFT / market microstructure: **6**
+- money laundering / shadow finance: **6**
+- crypto / blockchain / prediction / Ponzi: **6**
+- alternative currencies / mutual credit / barter: **6**
 
 Counts:
 - **30 deliberately unmapped quote + FrizzleQuestion candidates**
 - provenance:
-  - **28 VERIFIED**
-  - **2 SECONDARY_ONLY**
+  - **29 VERIFIED**
+  - **1 SECONDARY_ONLY**
   - **0 UNVERIFIED**
 - rights:
-  - **25 PUBLIC_DOMAIN_CONFIRMED**
-  - **2 RESEARCHED_QUOTE_LIMIT_ONLY**
-  - **3 RESEARCHED_RESTRICTED**
-- validation: **25/25 PASS**
-- zero ID/text collisions against the prior 355-candidate inventory
-- **29 distinct authors/traditions**
+  - **16 PUBLIC_DOMAIN_CONFIRMED**
+  - **10 RESEARCHED_QUOTE_LIMIT_ONLY**
+  - **4 RESEARCHED_RESTRICTED**
+- validation: **26/26 PASS**
+- zero ID/text collisions against the prior 385-candidate inventory
+- **30 unique source URLs**
+- maximum direct source excerpt: **23 words**
 
 File:
-`QUOTE_RESEARCH_RESERVE_12.json`
+`QUOTE_RESEARCH_RESERVE_13.json`
 
-Reserve 12 adds several useful transition cases rather than only extraordinary claims:
-- unicorn label → rhinoceros;
-- implausible platypus → genuine specimen;
-- sea-serpent eyewitness report → competing zoological explanations;
-- giant-squid monster lore → measured specimen;
-- unknown gorilla/okapi → accepted zoology;
-- Roswell, Socorro, Rendlesham, Tehran, Mantell and Washington radar case records;
-- remote-viewing operational failure versus statistical/telepathy claims;
-- Bacon/Smyth secrecy as actual knowledge-governance problems;
-- fiction and prediction around atomic weapons and information technology;
-- time/fourth-dimension/precognition/recurrence material from Wells, Abbott, Dunne, Ouspensky, Carroll and Nietzsche.
+Reserve 13 closes the modern-mechanism gaps identified in the finance audit:
+- commercial-bank lending creating matching deposits;
+- book-money creation by accounting entry;
+- central-bank money versus commercial-bank money;
+- fiat money, trust and lack of intrinsic value;
+- stablecoin reference-value and reserve mechanics;
+- HFT order/cancellation intensity and subsecond market time;
+- dark pools and off-public-market execution;
+- spoofing and manufactured supply/demand signals;
+- Flash Crash cross-market propagation;
+- money laundering as source-obfuscation;
+- placement / layering / integration;
+- shell companies and beneficial ownership;
+- crypto mixers and transaction traceability;
+- NFT illicit-finance risk;
+- Bitcoin peer-to-peer cash;
+- Ethereum programmable blockchain / smart-contract architecture;
+- meme-coin demand/speculation;
+- Polymarket/event-contract price formation;
+- Ponzi new-money-to-old-investor mechanics;
+- blockchain decentralisation/security/scalability trade-offs;
+- Gesell Free-Money / circulation;
+- Warren's cost-of-price principle;
+- TimeBanking;
+- mutual-credit accounting systems;
+- LETS local units;
+- Swiss WIR as multilateral credit exchange.
 
-### Finance / money-system coverage audit
+### Finance mapping anchors — registry-confirmed, not assignments
 
-After Georg asked whether the pool already covers money creation, fiat money, financial and crypto markets, laundering, speed trading, Polymarket, NFT/meme-coin schemes, alternative currencies, decentralized blockchains and barter/mutual-credit networks, the existing 385-candidate pool was audited.
+Registry inspection found obvious later receivers including:
+- `shadow_monopoly_blackrock_vanguard_co` — Shadow Monopoly: The Great Octopus Wrestling Match — BlackRock, Vanguard & Co;
+- `the_kayfabe_money_trail_9_11` — The Kayfabe Money Trail: 9/11.
 
-Existing coverage is **partial and mostly classical**:
-- Adam Smith: collusion, consumption, property/inequality;
-- Veblen: conspicuous consumption;
-- Jevons: value/utility;
-- Ruskin: money as a claim/right;
-- Henry George: poverty/progress, land;
-- Dickens: household income/expenditure;
-- Carnegie, Proudhon, Rousseau: wealth/property/enclosure.
+These are **mapping anchors only**. Reserve 13 does not assign individual records to any deck, Card, island, Billboard, world or multiverse node.
 
-Material gaps remain for:
-- commercial-bank deposit / credit creation;
-- central-bank money, fiat, monetary sovereignty and inflation mechanics;
-- market microstructure, dark pools and high-frequency trading;
-- money laundering and beneficial-ownership/shadow-finance mechanisms;
-- prediction markets / Polymarket;
-- Bitcoin/crypto/blockchain consensus and decentralization;
-- NFTs, wash trading, meme coins and Ponzi/reflexive speculation;
-- stablecoins and tokenized claims;
-- local/alternative currencies, mutual credit and barter networks.
+### Finance mechanism clamp
 
-Therefore this is not a small mapping patch: **Reserve 13 should be a dedicated Finance / Money Systems reserve.**
+Reserve 13 explicitly prevents several common category collapses:
+- bank-deposit creation ≠ free wealth;
+- fiat value ≠ merely 'government says so';
+- high speed ≠ manipulation by itself;
+- privacy technology ≠ money laundering by itself;
+- speculative dependence on new buyers ≠ automatically a Ponzi scheme;
+- 'decentralized' ≠ absence of trust, governance, concentration or intermediaries.
+
+The reserve keeps legal mechanism, market mechanism, fraud mechanism and ideological claim separable.
 
 ## Combined depth
 
 Current researched inventory:
 
 - mapped Batch 01: **30**
-- unmapped Reserves 01–12: **355**
-- **combined: 385 researched quote/question candidates**
+- unmapped Reserves 01–13: **385**
+- **combined: 415 researched quote/question candidates**
 
 Important:
-**385 researched candidates ≠ 385 approved quotes per island.**
+**415 researched candidates ≠ 415 approved quotes per island.**
 
 Reserve candidates remain:
 `UNMAPPED_BY_DESIGN`
@@ -129,9 +140,9 @@ The goal is not merely avoiding exact quote repetition. A long island session sh
 
 No runtime selector was modified.
 
-## Reserve 12 validation evidence
+## Reserve 13 validation evidence
 
-**25/25 PASS**
+**26/26 PASS**
 
 Checked:
 - committed JSON parses cleanly;
@@ -139,17 +150,20 @@ Checked:
 - exactly 30 candidates;
 - five balanced 6-item clusters;
 - unique IDs and normalized quote texts;
-- no collisions with prior 355;
+- no collisions with prior 385;
 - all `UNMAPPED_BY_DESIGN`;
 - no premature deck/Card/island/Billboard/biome/world/multiverse fields;
 - one interrogative FrizzleQuestion per quote;
 - billboard/question length bounds;
+- direct source excerpts capped at 23 words in this batch;
 - HTTPS provenance / rights / Brain Food;
 - semantic axes present;
 - provenance and rights totals;
-- prior inventory = 355;
-- combined inventory = 385;
-- epistemic transition policy present.
+- 30 unique source URLs;
+- prior inventory = 385;
+- combined inventory = 415;
+- finance coverage audit present;
+- mechanism-separation policy present.
 
 Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
 Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
@@ -158,17 +172,20 @@ Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 No uncertain case is silently promoted.
 
-Reserve 12 open/sensitive cases:
-- **George Shaw / platypus** — exact wording is verified through a historical British Museum synopsis reproducing Shaw, but the original Shaw page was not separately pinned; `SECONDARY_ONLY`.
-- **Nietzsche / Eternal Recurrence** — exact historical English wording is verified through a public-domain contemporary quotation source rather than a directly pinned historical English `Gay Science` edition; `SECONDARY_ONLY`.
-- **AIR remote-viewing evaluation**, **Jessica Utts** and **Vannevar Bush** remain `RESEARCHED_RESTRICTED`.
-- **Upton Sinclair** is U.S.-public-domain but EU-term-sensitive; **Einstein-Szilard** manuscript/publication rights are treated conservatively; both remain `RESEARCHED_QUOTE_LIMIT_ONLY`.
-- UFO and cryptid materials retain the transition from report to explanation/specimen where the source supports it; inclusion does not promote an unresolved case into an extraordinary conclusion.
+Reserve 13 open/sensitive cases:
+- **Bank of England, Deutsche Bundesbank and BIS** — exact modern institutional wording is verified but retained as short `RESEARCHED_QUOTE_LIMIT_ONLY` material rather than assumed public-domain text.
+- **Bitcoin whitepaper** — exact wording verified in the canonical PDF; copyright/licensing chain is kept conservative as `RESEARCHED_QUOTE_LIMIT_ONLY`.
+- **Ethereum whitepaper** — exact wording verified on Ethereum.org; modern copyrighted material remains `RESEARCHED_RESTRICTED`.
+- **FATF** and the **IJCCR mutual-credit paper** remain quote-limited under their respective publication/licensing context.
+- **TimeBanks.Org**, **Williams on LETS**, and **Stodder on WIR** remain `RESEARCHED_RESTRICTED`.
+- **Josiah Warren** is the single `SECONDARY_ONLY` provenance record because the exact public-domain wording was pinned through a curated transcription rather than an original-edition scan.
+- The Polymarket record is explicitly historical: it describes the CFTC's **January 3, 2022** order and does not claim that Polymarket's regulatory status in 2026 is unchanged.
+- The current SEC meme-coin source is the February 27, 2025 staff statement; its staff-view status remains visible rather than being represented as a statute or final Commission rule.
 
 ## Files
 
-Added in Reserve 12:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_12.json`
+Added in Reserve 13:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_13.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -190,6 +207,6 @@ No merge. No Live promotion.
 
 ## One next productive step
 
-**Quote Research Reserve 13 — dedicated Finance / Money Systems reserve: bank credit creation & fiat money; stocks/market microstructure/HFT; money laundering/shadow finance; crypto/blockchain/NFT/meme coins/prediction markets; alternative currencies/mutual credit/barter networks.**
+**Quote Research Reserve 14 — Finance II: derivatives/leverage/options/shorting; sovereign debt/tax/QE/inflation; consumer credit/BNPL/credit scoring; insurance/risk transfer; bubbles, bank runs and crash dynamics.**
 
 Georg action required now: **nothing**.
