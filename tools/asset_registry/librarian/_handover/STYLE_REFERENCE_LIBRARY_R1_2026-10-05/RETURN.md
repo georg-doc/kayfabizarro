@@ -365,3 +365,66 @@ No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
 
 Exactly one next gate:
 **CLAUDE_DESIGN_JOB_01_DESTRUCTION_IMPACT**.
+
+
+## Claude Design pixel-transport recovery · 2026-10-06
+
+Status: **JOB 1 TRANSPORT REPAIRED · CLAUDE SOURCE INSPECTION NEXT**
+
+Claude Design correctly reported that it could:
+- read the GitHub brief/pack;
+- open all six canonical Etherington blog pages;
+- resolve their remote image links;
+
+but could **not inspect the actual pixels** through its cross-domain image tool. It therefore correctly left all six `sourceInspectedInIsolation=false`.
+
+The Job-1 packet is now repaired without exposing the private Asset Librarian or mirroring copyrighted images into GitHub.
+
+### New visual transport per reference
+
+Every one of the six Job-1 references now contains:
+
+- canonical `canonicalPageUrl` on the Etherington blog;
+- `visualTransport.officialCreatorMirrorPage` on the official **EtheringtonBrothers DeviantArt account**;
+- `visualTransport.directVisualUrl` for direct pixel inspection;
+- explicit fallback order;
+- warning that direct image URLs may be tokenized/ephemeral;
+- `inspectionRequiredByClaudeDesign=true`.
+
+Transport alone does **not** promote inspection state.
+
+### Functional donor correction
+
+Claude Design also correctly reported that the destruction donor path did not exist at the Style-Reference commit.
+
+The packet now pins the actual immutable donor Return at:
+
+`97c891c006a65a2d8ebba17bfbe7baaa4384edf0`
+
+The donor remains functional-mechanics evidence only; no runtime write is authorized.
+
+### Validation
+
+**10/10 PASS**
+
+All six:
+- retain canonical official blog identity;
+- have official creator mirror pages;
+- have direct visual URLs;
+- remain `sourceInspectedInIsolation=false`.
+
+### Next execution rule
+
+Claude Design should now:
+
+1. use the official creator mirror page;
+2. if necessary open its direct visual URL;
+3. only after genuinely seeing pixels create OBSERVED facts;
+4. if that still fails, ask Georg for **one exact official combined visual per reference (maximum six files)**.
+
+Do not do another broad web/image search and do not use Google/Pinterest substitutes.
+
+No Site, ToolBox, Hub, Open World or Combat runtime changed.
+
+Exactly one next gate:
+**CLAUDE_DESIGN_JOB_01_SOURCE_ISOLATION_USING_OFFICIAL_CREATOR_MIRRORS**.
