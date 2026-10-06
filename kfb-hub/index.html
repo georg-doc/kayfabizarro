@@ -113,11 +113,11 @@
 
     <section id="bootFallback" aria-live="polite" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:3px;background:var(--panel);box-shadow:var(--shadow);font-size:14px;line-height:1.45">
       <strong>Direktwege</strong><span style="color:var(--muted)"> · falls CURRENT gerade nicht geladen wird</span><br>
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer">Hub Recovery</a> ·
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer">World FAIL</a> ·
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/361" target="_blank" rel="noreferrer">Combat FAIL</a> ·
-      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer">ToolBox</a> ·
-      <a href="https://kfb-production-control.frizzlebob.chatgpt.site/" target="_blank" rel="noreferrer">Control</a>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer">Open World · Coworker RUNNING</a> ·
+      <a href="https://github.com/georg-doc/kayfabizarro/pull/348" target="_blank" rel="noreferrer">NEXT · Work/Astra closure</a> ·
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer">Hub PUBLISH_ONLY</a> ·
+      <a href="https://kfb-audio.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer">Audio</a> ·
+      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer">ToolBox</a>
     </section>
 
     <section class="todo-section" id="todoSection">
@@ -146,11 +146,11 @@
     </details>
 
     <nav class="quick" aria-label="KFB quick launch" data-focus-panel="kfb">
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer"><b>Hub Recovery</b><span>P0 · accepted v2 + current state.</span></a>
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer"><b>World Studio</b><span>TOTAL FAIL · recovery only.</span></a>
-      <a href="https://github.com/georg-doc/kayfabizarro/issues/361" target="_blank" rel="noreferrer"><b>Combat</b><span>HUMAN FAIL · recovery only.</span></a>
-      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer"><b>ToolBox</b><span>Canonical specialist-tool router.</span></a>
-      <a href="https://kfb-production-control.frizzlebob.chatgpt.site/" target="_blank" rel="noreferrer"><b>Control / Historie</b><span>Decisions, Returns, Recovery.</span></a>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/360" target="_blank" rel="noreferrer"><b>Open World</b><span>Coworker integration · RUNNING.</span></a>
+      <a href="https://github.com/georg-doc/kayfabizarro/pull/348" target="_blank" rel="noreferrer"><b>Next Closure</b><span>Work/Astra only after Coworker return.</span></a>
+      <a href="https://github.com/georg-doc/kayfabizarro/issues/364" target="_blank" rel="noreferrer"><b>Hub Publish</b><span>PUBLISH_ONLY · no redesign.</span></a>
+      <a href="https://kfb-audio.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer"><b>Audio</b><span>PR #365 · separate listening gate.</span></a>
+      <a href="https://kfb-toolbox.frizzlebob.chatgpt.site" target="_blank" rel="noreferrer"><b>ToolBox</b><span>Specialist tools · not today's primary lane.</span></a>
     </nav>
     <nav class="quick" aria-label="DocCheck quick launch" data-focus-panel="doccheck" hidden>
       <a href="https://kayfabizarro.pages.dev/kfb-hub/sim-blood-hub/" target="_blank" rel="noreferrer"><b>SimBlood Hub</b><span>Visual project overview and current review lanes.</span></a>
@@ -187,10 +187,11 @@ function boardTodo(item,priority='P0'){
   };
 }
 let todos=[
-  {id:'issue-364-production-hub-recovery',focus:'kfb',title:'#364 · Production Hub · Recovery',lane:'ChatGPT Web Chat · source/data recovery',priority:'P0',desc:'Accepted Hub v2 design + current production state. Restore the donor-faithful Paper/Dark Hub; no redesign.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['current','p0','hub','recovery']},
-  {id:'issue-360-world-studio',focus:'kfb',title:'#360 · TOTAL FAIL · World Studio',lane:'ChatGPT Work/WSA · source/runtime/product recovery',priority:'P0',desc:'Blocked. Runtime/load failure plus rejected world/pack design and arbitrary prop composition. Recover proven runtime + exact donors before another human test.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['current','p0','blocked','world studio','human fail']},
-  {id:'issue-361-combat',focus:'kfb',title:'#361 · HUMAN FAIL · Platformer / Card-Hex Combat',lane:'ChatGPT Work/WSA · regression recovery',priority:'P0',desc:'Blocked. Design regression, controls/playability fail and additional audio bugs. Recover against the prior proven Combat Arena baseline.',url:'https://github.com/georg-doc/kayfabizarro/issues/361',tags:['current','p0','blocked','combat','human fail']}
-];
+  {id:'issue-360-world-coworker-running',focus:'kfb',title:'#360 · RUNNING · Coworker Open World integration',lane:'Claude Coworker · integration run',priority:'P0',desc:'Primary product. Coworker is running the long integration job. Do not start a parallel Work/Astra rebuild.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['current','running','open world','coworker']},
+  {id:'issue-364-production-hub-publish',focus:'kfb',title:'#364 · Production Hub · publish current source',lane:'PUBLISH_ONLY / Sites-capable executor',priority:'P0',desc:'Accepted Paper/Dark v2 source is repaired. Publish this exact source in place so the Hub itself becomes current.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['current','hub','publish only']},
+  {id:'next-work-astra-open-world-closure',focus:'kfb',title:'NEXT · Work/Astra integration closure after Coworker',lane:'ChatGPT Work/Astra · Anschluss-Integrator',priority:'NEXT',desc:'Only after Coworker returns: ingest its exact output, keep what works, close missing KFB integration/critic seams. No rebuild.',url:'https://github.com/georg-doc/kayfabizarro/pull/348',tags:['next','open world','work','astra','integration']},
+  {id:'pr-365-audio-adaptive-stems',focus:'kfb',title:'PARALLEL · Audio adaptive stems · listening gate',lane:'Georg · listening only',priority:'PARALLEL',desc:'Separate from Open World. PR #365 is implemented/published; later listen to G ROAD/WIDE/EPIC and D open/TTS/open.',url:'https://kfb-audio.frizzlebob.chatgpt.site',tags:['parallel','audio','listening']}
+]
 async function refreshCurrentBoard(){
   try{
     const response=await fetch(BOARD_URL,{cache:'no-store'});
@@ -198,8 +199,8 @@ async function refreshCurrentBoard(){
     const board=await response.json();
     const next=[
       ...(board.p0||[]).map(x=>boardTodo(x,'P0')),
-      ...(board.p1||[]).map(x=>boardTodo(x,'P1')),
-      ...(board.parallel||[]).map(x=>boardTodo(x,'P1'))
+      ...(board.p1||[]).map(x=>boardTodo(x,'NEXT')),
+      ...(board.parallel||[]).map(x=>boardTodo(x,'PARALLEL'))
     ];
     if(next.length)todos=next;
     if(window.__kfbFocusCopy){
@@ -214,29 +215,32 @@ async function refreshCurrentBoard(){
 }
 
 const briefings=[
-{id:'hub-recovery-current',title:'Production Hub Recovery · #364',badge:'P0 RECOVERY',status:'ready',provider:'ChatGPT Web Chat → PUBLISH_ONLY',desc:'Restore the accepted Paper/Dark Hub v2 donor and bind the current production board. No new dashboard, no Work redesign.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['hub','recovery','p0','paper','dark'],prompt:['Read issue #364 and the accepted Hub v2 donor package.','Preserve the exact accepted design and current-board data only.','Do not redesign or create a second Hub.'].join('\n')},
-{id:'world-recovery-current',title:'World Studio · TOTAL FAIL · #360',badge:'P0 BLOCKED',status:'hold',provider:'ChatGPT Work/WSA · recovery',desc:'Current Site is not accepted: load/runtime failure, rejected world/pack direction and arbitrary prop composition. Recover proven runtime and exact donors before Georg sees it again.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['world studio','blocked','human fail','recovery'],prompt:['Recover from the last proven World Studio/WB2 runtime and exact accepted visual donors.','First prove boot + player/editor/save internally.','Do not tune the failed candidate or invent replacement world design.'].join('\n')},
-{id:'combat-recovery-current',title:'Platformer / Combat · HUMAN FAIL · #361',badge:'P0 BLOCKED',status:'hold',provider:'ChatGPT Work/WSA · recovery',desc:'Current candidate is not playable: design regression, broken controls/playability and additional audio bugs. Recover against the prior proven Combat Arena baseline.',url:'https://github.com/georg-doc/kayfabizarro/issues/361',tags:['combat','platformer','blocked','human fail','audio'],prompt:['Use the prior proven Combat Arena as the recovery baseline.','Identify and remove later visual/control/audio regressions.','Return only a genuinely playable candidate for Georg.'].join('\n')},
-{id:'triplet-hold-current',title:'Triplet Stage · HOLD · #362',badge:'HOLD',status:'hold',provider:'Claude Design · paused',desc:'Useful r2 source is preserved, but optional tuning is paused during production recovery. Resume from the existing TUNE brief only after core recovery.',url:'https://github.com/georg-doc/kayfabizarro/issues/362',tags:['triplet','hold','claude design'],prompt:['Do not resume while production recovery is active.','Preserve the current r2 source and existing TUNE brief unchanged.'].join('\n')}
-];
+{id:'coworker-running-current',title:'Open World · Coworker integration RUNNING',badge:'RUNNING',status:'hold',provider:'Claude Coworker',desc:'No parallel build now. Let the long Coworker integration run finish; its exact return becomes the input for the next integration pass.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['open world','coworker','running'],prompt:['Do not start another Open World build while Coworker is running.','On return, capture exact files/branch/evidence and reconcile them into the existing WB2 owner.'].join('\n')},
+{id:'work-astra-next-current',title:'NEXT · Work/Astra Open World closure',badge:'NEXT AFTER RETURN',status:'ready',provider:'ChatGPT Work/Astra',desc:'Prepared follow-up only: consume Coworker output, preserve successful integration, close missing KFB seams, run fresh-context critics and whole-product gate.',url:'https://github.com/georg-doc/kayfabizarro/pull/348',tags:['open world','work','astra','next'],prompt:['Read issue #360, PR #348, the Open World One-Shot contract and integration matrix.','First ingest the exact Coworker return.','Do not rebuild working Coworker integration; close only missing owner seams and run the independent critic/whole-product gates.'].join('\n')},
+{id:'hub-publish-current',title:'Production Hub · PUBLISH_ONLY',badge:'PUBLISH_ONLY',status:'ready',provider:'Sites-capable executor',desc:'Publish the frozen accepted Paper/Dark v2 Hub source in place. No redesign and no source mutation during publication.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['hub','publish','paper','dark'],prompt:['Read issue #364.','Publish the exact frozen kfb-hub source to the existing Production Hub Site in place.','Do not redesign or edit product/source; open the exact Site and verify CURRENT after publication.'].join('\n')},
+{id:'audio-365-current',title:'Audio · adaptive stems listening',badge:'SEPARATE HUMAN GATE',status:'hold',provider:'KFB Audio · PR #365',desc:'Already implemented and published. Independent of Open World: listen to G ROAD/WIDE/EPIC and D open/TTS/open when useful.',url:'https://kfb-audio.frizzlebob.chatgpt.site',tags:['audio','stems','listening'],prompt:['Open the existing KFB Audio Site.','Listen only to the PR #365 adaptive stem proof: G ROAD/WIDE/EPIC and D open/TTS/open.','Return PASS / TUNE / FAIL for the listening result; do not change World.'].join('\n')}
+]
 const links=[
-{section:'Recovery & coordination',intro:'Current production recovery only. Failed candidates are evidence, not acceptance.',title:'Production Hub Recovery · #364',badge:'P0 RECOVERY',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/364',desc:'Accepted Hub v2 + current board. One human front door; no redesign.',tags:['hub','recovery','current']},
-{section:'Recovery & coordination',title:'World Studio · #360',badge:'TOTAL FAIL',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/360',desc:'Runtime/load + world/pack/design failure. Recovery only.',tags:['world studio','blocked','human fail']},
-{section:'Recovery & coordination',title:'Platformer / Combat · #361',badge:'HUMAN FAIL',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/361',desc:'Design, controls/playability and audio regression. Recover prior Combat Arena baseline.',tags:['combat','blocked','human fail']},
-{section:'Live tools & workbenches',intro:'Canonical current surfaces. Product links may point to failed evidence while recovery is active.',title:'KFB ToolBox',badge:'CURRENT TOOL ROUTER',kind:'tools',focus:'kfb',url:'https://kfb-toolbox.frizzlebob.chatgpt.site',desc:'Canonical specialist-tool router.',tags:['toolbox','site','current']},
-{section:'Live tools & workbenches',title:'Production Control',badge:'HISTORY / LEDGER',kind:'tools',focus:'kfb',url:'https://kfb-production-control.frizzlebob.chatgpt.site/',desc:'Durable decisions, Returns and recovery history.',tags:['control','history','ledger']},
-{section:'Live tools & workbenches',title:'World Studio · failed evidence surface',badge:'FAILED CANDIDATE',kind:'live',focus:'kfb',url:'https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/',desc:'Current failed candidate. Do not interpret Site availability as acceptance.',tags:['world studio','failed candidate']},
-{section:'Live tools & workbenches',title:'Card-Hex Combat · failed evidence surface',badge:'FAILED CANDIDATE',kind:'live',focus:'kfb',url:'https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/',desc:'Current failed candidate. Not playable; recovery issue #361 owns next work.',tags:['combat','failed candidate']},
-{section:'Project SSOTs & previews',intro:'Durable current routing.',title:'GitHub Issues · current job list',badge:'CURRENT',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues',desc:'Active P0 / blocked / recovery state.',tags:['github','issues','current jobs']},
-{section:'Project SSOTs & previews',title:'KFB Production Router',badge:'CURRENT ROUTER',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/START_HERE.md',desc:'Current authority order and production rules.',tags:['router','ssot']},
-{section:'Archived / rejected history',intro:'Rejected/currently failed artifacts remain evidence only.',title:'Accepted Hub v2 donor pin',badge:'ACCEPTED DONOR',kind:'history',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/dfaafac070747f9543b5eb5a635e2aaa74e57b83/kfb-hub/index.html',desc:'Exact accepted Paper/Dark Hub donor used by this recovery.',tags:['hub','donor','paper','dark']}
-];
-const order=['Recovery & coordination','Live tools & workbenches','KFB Town & meta','Project SSOTs & previews','Core production skills','Archived / rejected history'];
+{section:'Current coordination',intro:'Only what matters now or immediately after the running Coworker integration.',title:'Open World · Coworker RUNNING',badge:'PRIMARY',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/360',desc:'Current executor is Coworker. Work/Astra is the Anschluss-Integrator after the exact Coworker return, not a parallel rebuild.',tags:['open world','coworker','running','primary']},
+{section:'Current coordination',title:'Open World · receiving contract / PR #348',badge:'NEXT CLOSURE',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/pull/348',desc:'Integration-closure contract and existing-system matrix. Consume Coworker output here after return.',tags:['open world','pr348','work','astra','integration']},
+{section:'Current coordination',title:'Production Hub · #364',badge:'PUBLISH_ONLY',kind:'recovery',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/364',desc:'Source is repaired; publication of the existing Hub Site is the remaining control-plane step.',tags:['hub','publish only','current']},
+{section:'Live tools & workbenches',intro:'Useful current specialist surfaces; they are not all current production priorities.',title:'KFB Audio',badge:'PR #365 LISTEN',kind:'tools',focus:'kfb',url:'https://kfb-audio.frizzlebob.chatgpt.site',desc:'Adaptive stem proof is published; separate listening gate.',tags:['audio','adaptive','stems']},
+{section:'Live tools & workbenches',title:'KFB ToolBox',badge:'CURRENT TOOL ROUTER',kind:'tools',focus:'kfb',url:'https://kfb-toolbox.frizzlebob.chatgpt.site',desc:'Canonical specialist-tool router.',tags:['toolbox','site','current']},
+{section:'Live tools & workbenches',title:'Production Control',badge:'HISTORY / LEDGER',kind:'tools',focus:'kfb',url:'https://kfb-production-control.frizzlebob.chatgpt.site/',desc:'Durable decisions and Returns. Not the everyday overview.',tags:['control','history','ledger']},
+{section:'Project SSOTs & previews',intro:'Durable current routing and prepared follow-ups.',title:'GitHub Issues · current job list',badge:'CURRENT',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues',desc:'Current owners and holds.',tags:['github','issues','current jobs']},
+{section:'Project SSOTs & previews',title:'KFB Production Router',badge:'CURRENT ROUTER',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/START_HERE.md',desc:'Authority order and production rules.',tags:['router','ssot']},
+{section:'Project SSOTs & previews',title:'Style Reference Library R1 · PR #359',badge:'READY / NOT NOW',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/pull/359',desc:'Packet is ready and was updated today. Not the primary next action while Open World integration is running.',tags:['style reference','asset librarian','ready','parked']},
+{section:'Project SSOTs & previews',title:'World Kernel Lab · PR #363',badge:'PUBLISH_ONLY / DONOR',kind:'projects',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/pull/363',desc:'Deterministic large-world architecture POC. Useful donor/research lane; not the primary World runtime.',tags:['world kernel','determinism','research','donor']},
+{section:'Archived / rejected history',intro:'Failed or superseded candidates remain evidence, not current production cards.',title:'Previous four-island World Studio candidate',badge:'HISTORY · HUMAN FAIL',kind:'history',focus:'kfb',url:'https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/',desc:'Preserved only as failure evidence; superseded by the running Coworker integration.',tags:['world studio','history','failed candidate']},
+{section:'Archived / rejected history',title:'Platformer / Card-Hex Combat failed candidate',badge:'HISTORY · HUMAN FAIL',kind:'history',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/issues/361',desc:'Side-lane failure evidence. Not a current next production lane.',tags:['combat','history','hold']},
+{section:'Archived / rejected history',title:'Accepted Hub v2 donor pin',badge:'ACCEPTED DONOR',kind:'history',focus:'kfb',url:'https://github.com/georg-doc/kayfabizarro/blob/dfaafac070747f9543b5eb5a635e2aaa74e57b83/kfb-hub/index.html',desc:'Exact Paper/Dark Hub donor used by recovery.',tags:['hub','donor','paper','dark']}
+]
+const order=['Current coordination','Live tools & workbenches','Project SSOTs & previews','KFB Town & meta','Core production skills','Archived / rejected history'];
 const intros=Object.fromEntries(links.filter(x=>x.intro).map(x=>[x.section,x.intro]));
 let active='today';
 let focus='kfb';
 const focusCopy={
-  kfb:{context:'',note:''},
+  kfb:{context:'CURRENT · Coworker Open World integration RUNNING',note:'Do not start a parallel Work/Astra rebuild. Next is reconciliation/closure after Coworker return; old MVP FAILs are history.'},
   doccheck:{context:'Medical visualization, SimBlood and Doc Animation — separated from KFB game production.',note:'Current DocCheck gates: SimBlood physician morphology review and the project-owned WBC → RBC → platelet sequence.'}
 };
 window.__kfbFocusCopy=focusCopy;
