@@ -227,3 +227,38 @@ ToolBox now contains one visible **Style Reference Library** card owned by **Ass
 Exactly one next gate: **Georg review of the published R1 surface.**
 
 No merge. No Live branch promotion. No second Site.
+
+
+## Claude Design bridge · 2026-10-06
+
+Status: **PORTABLE REFERENCE-PACK BRIDGE READY**
+
+Claude Design does not need access to the private Asset Librarian Site.
+
+Canonical transport:
+`Private Asset Librarian → curated Reference Set → portable Design Job Packet → public GitHub → Claude Design`
+
+Prepared bridge contract:
+`CLAUDE_DESIGN_REFERENCE_BRIDGE_2026-10-06.md`
+
+Prepared working example:
+`tools/asset_registry/librarian/reference-packs/claude-design/kfb-clouds-01/`
+
+The Clouds job contains:
+- `PACK.json` using `kfb.style-reference-pack/1`;
+- `START_HERE.md` for Claude Design;
+- 3 official Etherington references: Clouds, Smoke Effects and Spacing in Composition;
+- exact source-isolation requirement;
+- KFB clay/cartoon translation target;
+- no embedded remote image binaries.
+
+Bridge validation: **8/8 PASS**.
+
+Private references remain metadata/opaque locator only and require the actual private crop/page to be attached directly to the Claude Design job. They are not published to GitHub.
+
+Recommended next product improvement:
+**add an “Export for Claude Design” action to Reference Sets that emits synchronized PACK.json + START_HERE.md.**
+
+The Site itself should not receive GitHub write credentials. An authenticated ChatGPT Web/Work workflow may persist selected portable packs to GitHub when desired.
+
+No Site deployment changed in this bridge checkpoint. No merge. No Live promotion.
