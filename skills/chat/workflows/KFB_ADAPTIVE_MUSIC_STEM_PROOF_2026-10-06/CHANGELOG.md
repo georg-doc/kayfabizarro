@@ -72,3 +72,15 @@
 - no automatic World mapping added before decode/alignment/listening QA;
 - added durable Coworker/WSA World Audio Integration handover;
 - no write to Open World runtime, Production Hub, Cloudflare or other product runtime.
+
+
+### M/N/O intake handoff closed
+
+- intake implementation head `d9972d925ca3d849efbb233f99a188542560129a`;
+- evidence head `f1cde56d33bed94e0e4456a86654940da41a544c`;
+- exact asset source `main@276728f3f82f729cd1656b61e81d278856d736bb`;
+- source files 33/33 PASS;
+- registry/ownership invariants 22/22 PASS;
+- Coworker/WSA handover persisted and ready for the current Open World integration sequence;
+- M/N/O remain runtime-unverified until real host decode/alignment/listening QA;
+- no Open World runtime, Hub, Cloudflare or other product runtime write.
