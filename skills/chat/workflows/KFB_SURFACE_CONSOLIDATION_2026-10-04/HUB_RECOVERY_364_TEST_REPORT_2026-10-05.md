@@ -7,7 +7,7 @@ Branch: `chatgpt-web/surface-consolidation-2026-10-04`
 ## Exact source identity
 
 - Accepted donor pin: `dfaafac070747f9543b5eb5a635e2aaa74e57b83 · kfb-hub/index.html`
-- Recovered candidate commit: `d8246b1b610ef7c7c6d55e1cb9a21b45341e58c0`
+- Recovered candidate commit: `523b70d790d619adbe75a68dfe123bc6919d84d7`
 - Recovered candidate blob: `5172207a1181ce85e2966cc695042ad765525b9c`
 - Current board revision: `2026-10-06.1`
 - Current board blob: `4977a32858b5b191ccab7480a787dbdac26a91e6`
@@ -62,7 +62,7 @@ No GPT Site publishing tool is available in this chat. Therefore:
 
 **PUBLISH_ONLY / Sites-capable executor**
 
-Publish the frozen `kfb-hub/` source from commit `d8246b1...` to the existing Production Hub Site **without redesign or code changes**, then open:
+Publish the current frozen `kfb-hub/` source containing index commit `523b70d790d619adbe75a68dfe123bc6919d84d7` to the existing Production Hub Site **without redesign or code changes**, then open:
 
 `https://kfb-production-hub.frizzlebob.chatgpt.site/`
 
