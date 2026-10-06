@@ -262,3 +262,64 @@ Recommended next product improvement:
 The Site itself should not receive GitHub write credentials. An authenticated ChatGPT Web/Work workflow may persist selected portable packs to GitHub when desired.
 
 No Site deployment changed in this bridge checkpoint. No merge. No Live promotion.
+
+
+## Etherington design-first source expansion · 2026-10-06
+
+Status: **ENVIRONMENT + COMIC/VFX DATA READY · SITE UNCHANGED**
+
+Verified data/evidence head before this Return update:
+`fd1b9ac6889800e4718a2766caaecbe0abd30a5f`
+
+Added:
+- `ETHERINGTON_OFFICIAL_SEED_02_ENVIRONMENT.json` · **17** new official sources;
+- `ETHERINGTON_OFFICIAL_SEED_03_COMIC_VFX.json` · **13** new official sources;
+- `ETHERINGTON_DESIGN_FIRST_ENVIRONMENT_COMIC_VFX_2026-10-06.md` · design-first routing and recommended small subsets.
+
+Combined curated Etherington inventory:
+**43 unique official creator-hosted URLs** across Seeds 01–03.
+
+Environment focus:
+- water / reflections;
+- mountains / caves / sand / lava;
+- forests / overgrown vegetation / fields of grass / mushrooms;
+- game buildings / junk houses / pod houses / brickwork / cityscapes;
+- foreground / midground / background;
+- pavements / urban surface language.
+
+Comic/VFX focus:
+- lightning/electricity;
+- breaking glass;
+- motion lines;
+- pouring liquid;
+- silhouette thumbnails;
+- comic covers / contrast / establishing shots;
+- car chases;
+- shatter technique;
+- battle damage;
+- small/medium/large shape hierarchy;
+- small flames.
+
+Validation:
+**12/12 PASS**
+- 43/43 unique IDs;
+- 43/43 unique URLs;
+- all URLs use the official Etherington blog domain;
+- all new records remain `sourceInspectedInIsolation=false`;
+- all new visual-analysis states remain `PENDING`;
+- all new design mappings remain `UNMAPPED_BY_DESIGN`.
+
+Design-use rule:
+Do not send the whole corpus into one Claude Design pass. Select **3–6 references per concrete design problem**, open the exact original sources in isolation, then derive KFB-specific construction rules.
+
+Recommended next design subsets are documented for:
+- KFB Environment mass / living world;
+- KFB destruction / impact grammar;
+- KFB procedural/world clouds (existing prepared pack).
+
+No Site source, deployment, ToolBox route, Hub or runtime changed in this data slice.
+No remote image binaries were mirrored into GitHub.
+No merge. No Live promotion.
+
+Exactly one next gate:
+**FIRST_CLAUDE_DESIGN_JOB_FROM_CURATED_3_TO_6_REFERENCE_SUBSET**.
