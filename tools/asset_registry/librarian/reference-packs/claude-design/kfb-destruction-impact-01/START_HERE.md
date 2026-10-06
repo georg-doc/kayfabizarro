@@ -67,3 +67,46 @@ No style imitation.
 No merge / Live promotion.
 
 If GitHub write access is unavailable, export the complete editable Claude Design project/session plus final design artifacts for Georg to hand back to an integration chat.
+
+
+## Visual transport recovery · 2026-10-06
+
+The canonical Etherington blog pages remain the source identity, but Claude Design reported that its image tool could not inspect the cross-domain tutorial pixels from those pages.
+
+`PACK.json` now contains a `visualTransport` object for **every one of the 6 references**:
+
+1. `officialCreatorMirrorPage` — stable page on the official **EtheringtonBrothers DeviantArt account**;
+2. `directVisualUrl` — direct combined tutorial image for immediate pixel inspection;
+3. `fallbackOrder` — official mirror → direct image → ask Georg for an upload.
+
+### Use this order
+
+For each reference:
+
+1. keep `canonicalPageUrl` as the canonical source identity;
+2. open `visualTransport.officialCreatorMirrorPage`;
+3. inspect the actual tutorial image there;
+4. if your visual tool still exposes only a link, open `visualTransport.directVisualUrl` directly;
+5. only after you can genuinely see the pixels, record OBSERVED facts and mark that reference inspected in your own Return.
+
+**Do not** set `sourceInspectedInIsolation=true` merely because either URL loaded.
+
+The direct visual URLs may be tokenized/ephemeral. If one expires, use the stable official creator mirror page to resolve its current image.
+
+### If pixel inspection still fails
+
+Stop that **smallest transport seam** and ask Georg to upload the exact official visual.
+
+Because the official creator mirrors combine the tutorial boards into a single visual for these jobs, request **one visual per reference (maximum 6 files)** rather than asking Georg to manually save twelve separate blog images.
+
+Do not spend another broad web-search pass and do not use Google/Pinterest substitutes.
+
+### Correct functional donor pin
+
+The destruction mechanics donor is not expected at the Style-Reference commit.
+
+Use the exact immutable donor Return:
+
+`https://github.com/georg-doc/kayfabizarro/blob/97c891c006a65a2d8ebba17bfbe7baaa4384edf0/tools/KFB-ToolBox/_inbox/KFB%20Seed%20World%20Mech%20Destruction%20POC%2001/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/RETURN.md`
+
+Treat it as **functional mechanics donor only**. Do not edit it.
