@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB · UFO Tractor Beam Event Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#131119;overflow:hidden;font-family:'JetBrains Mono',ui-monospace,monospace;color:#ece6f5}
+a{color:#ffd9a0}
+a:hover{color:#ffe9c6}
+button,select{font-family:inherit}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+</helmet>
+
+<div data-screen-label="UFO Event Lab" style="position:fixed;inset:0;background:#131119;font-size:11px;overflow:hidden">
+  <div ref="{{ hostRef }}" style="position:absolute;inset:0"></div>
+
+  <div style="position:absolute;left:10px;top:10px;right:10px;display:flex;align-items:flex-start;gap:8px;pointer-events:none">
+    <div style="width:min(244px, 44vw);box-sizing:border-box;padding:10px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.86);backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:10px;pointer-events:auto;max-height:calc(100vh - 120px);overflow:auto">
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <div style="font-size:12px;font-weight:700;color:#ffd9a0">UFO Tractor Beam · Event Lab</div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:#8d84a0;line-height:1.5">ISOLIERT · KEINE OPEN-WORLD-WRITES · KEINE PERSISTENZ</div>
+      </div>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="color:#6f6880;font-size:9.5px;font-weight:700;letter-spacing:0.08em">{{ g.label }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3">
+              <button onClick="{{ o.onClick }}" disabled="{{ o.disabled }}" style="padding:5px 8px;border-radius:5px;border:1px solid {{ o.line }};background:{{ o.bg }};color:{{ o.fg }};font-size:10.5px;font-weight:600;cursor:pointer">{{ o.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="display:flex;flex-direction:column;gap:3px;padding-top:8px;border-top:1px solid #2c2836;color:#9a92aa;font-size:10px;line-height:1.5">
+        <div>{{ infoA }}</div>
+        <div>{{ infoB }}</div>
+      </div>
+    </div>
+
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0">
+      <div style="padding:7px 12px;border-radius:6px;background:rgba(19,17,25,0.86);display:flex;align-items:baseline;gap:10px;max-width:100%;overflow:hidden;white-space:nowrap">
+        <div style="font-size:14px;font-weight:700;color:#ffd9a0">{{ phaseId }}</div>
+        <div style="color:#ece6f5">{{ phaseHook }}</div>
+        <div style="color:#8d84a0">{{ phaseEv }}</div>
+      </div>
+      <sc-if value="{{ hasStatus }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:5px 10px;border-radius:5px;background:rgba(19,17,25,0.78);color:#cfc6dd;font-size:10.5px;max-width:100%;text-align:center;text-wrap:pretty">{{ statusText }}</div>
+      </sc-if>
+    </div>
+
+    <div style="width:min(232px, 40vw);display:flex;flex-direction:column;gap:6px;pointer-events:auto">
+      <button onClick="{{ toggleAudioPanel }}" style="padding:7px 10px;border-radius:6px;border:1px solid {{ audioLine }};background:rgba(19,17,25,0.86);color:#ece6f5;font-size:11px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <div>Audio-Vorhören</div>
+        <div style="color:{{ audioFg }}">{{ audioState }}</div>
+      </button>
+      <div style="padding:8px 10px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.86);display:flex;flex-direction:column;gap:3px;font-size:10px">
+        <div style="color:#6f6880;font-size:9.5px;font-weight:700;letter-spacing:0.08em;margin-bottom:2px">SEMANTISCHE HOOKS</div>
+        <sc-for list="{{ hooks }}" as="h" hint-placeholder-count="4">
+          <div style="display:flex;gap:8px;white-space:nowrap;overflow:hidden">
+            <div style="color:#6f6880;width:38px;flex:none">{{ h.t }}</div>
+            <div style="color:{{ h.fg }};overflow:hidden;text-overflow:ellipsis">{{ h.hook }}</div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noHooks }}" hint-placeholder-val="{{ false }}">
+          <div style="color:#6f6880">noch keine · Play drücken</div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ audioOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;right:10px;top:56px;bottom:96px;width:min(440px, calc(100vw - 20px));box-sizing:border-box;padding:10px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.94);backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:8px;overflow:auto">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <div style="font-weight:700;color:#ffd9a0">Event-Map · Vorschlag</div>
+        <button onClick="{{ closeAudio }}" style="padding:3px 8px;border-radius:4px;border:1px solid #3a3446;background:transparent;color:#cfc6dd;font-size:10px;cursor:pointer">schließen</button>
+      </div>
+      <div style="color:#9a92aa;font-size:10px;line-height:1.5;text-wrap:pretty">Nur aus der Shortlist. Messwerte sind objektiv, ersetzen das Hören aber nicht: „gehört“ erst setzen, wenn der Ton passt. Vorschau-Wiedergabe, kein Runtime-Mixer.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button onClick="{{ toggleSound }}" style="padding:5px 9px;border-radius:5px;border:0;background:{{ soundBg }};color:#131119;font-size:10.5px;font-weight:700;cursor:pointer">{{ soundLabel }}</button>
+        <button onClick="{{ copyMap }}" style="padding:5px 9px;border-radius:5px;border:1px solid #3a3446;background:transparent;color:#ece6f5;font-size:10.5px;cursor:pointer">{{ copyLabel }}</button>
+        <button onClick="{{ resetMap }}" style="padding:5px 9px;border-radius:5px;border:1px solid #3a3446;background:transparent;color:#9a92aa;font-size:10.5px;cursor:pointer">Vorschlag zurücksetzen</button>
+      </div>
+      <sc-for list="{{ audioRows }}" as="r" hint-placeholder-count="9">
+        <div style="display:flex;flex-direction:column;gap:5px;padding:8px;border-radius:6px;background:#1b1823;border:1px solid #2c2836">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+            <div style="font-weight:700;color:#ece6f5">{{ r.hook }}</div>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button onClick="{{ r.onPlay }}" style="padding:3px 8px;border-radius:4px;border:0;background:#ffd9a0;color:#131119;font-size:10px;font-weight:700;cursor:pointer">▶</button>
+              <button onClick="{{ r.onHeard }}" style="padding:3px 8px;border-radius:4px;border:1px solid {{ r.heardLine }};background:{{ r.heardBg }};color:{{ r.heardFg }};font-size:10px;cursor:pointer">{{ r.heardLabel }}</button>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5px">
+            <select value="{{ r.file }}" onChange="{{ r.onFile }}" style="min-width:0;padding:4px;border-radius:4px;border:1px solid #3a3446;background:#131119;color:#ece6f5;font-size:10px">
+              <sc-for list="{{ pool }}" as="o" hint-placeholder-count="1"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+            </select>
+            <select value="{{ r.layer }}" onChange="{{ r.onLayer }}" style="min-width:0;padding:4px;border-radius:4px;border:1px solid #3a3446;background:#131119;color:#ece6f5;font-size:10px">
+              <option value="">kein Layer</option>
+              <sc-for list="{{ pool }}" as="o" hint-placeholder-count="1"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+            </select>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg width="96" height="18" viewBox="0 0 96 18" style="flex:none"><path d="{{ r.wave }}" stroke="#c8f59a" stroke-width="1.2" fill="none"></path></svg>
+            <div style="color:#9a92aa;font-size:9.5px;min-width:0">{{ r.meta }}</div>
+          </div>
+          <div style="color:#6f6880;font-size:9.5px;text-wrap:pretty">{{ r.why }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSources }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:10px;right:10px;bottom:96px;display:flex;justify-content:center;pointer-events:none">
+      <div style="max-width:100%;overflow:auto;padding:8px 10px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.9);pointer-events:auto;display:grid;grid-template-columns:auto auto auto auto auto auto auto;gap:3px 14px;font-size:10px;white-space:nowrap">
+        <div style="color:#6f6880;font-weight:700">QUELLE</div><div style="color:#6f6880;font-weight:700">ROLLE</div><div style="color:#6f6880;font-weight:700">PIN</div><div style="color:#6f6880;font-weight:700">TRIS</div><div style="color:#6f6880;font-weight:700">MESH / MAT / CLIP</div><div style="color:#6f6880;font-weight:700">BBOX (Quelle)</div><div style="color:#6f6880;font-weight:700">KB</div>
+        <sc-for list="{{ srcRows }}" as="s" hint-placeholder-count="7">
+          <div style="color:{{ s.fg }};font-weight:700">{{ s.label }}</div><div style="color:#cfc6dd">{{ s.role }}</div><div style="color:#9a92aa">{{ s.pin }}</div><div style="color:#ece6f5">{{ s.tris }}</div><div style="color:#ece6f5">{{ s.parts }}</div><div style="color:#cfc6dd">{{ s.size }}</div><div style="color:#9a92aa">{{ s.kb }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-direction:column;gap:6px;padding:8px 10px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.86);backdrop-filter:blur(6px)">
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+      <button onClick="{{ togglePlay }}" style="width:72px;padding:5px 0;border-radius:5px;border:0;background:#ffd9a0;color:#131119;font-size:11px;font-weight:700;cursor:pointer">{{ playLabel }}</button>
+      <button onClick="{{ restart }}" style="padding:5px 9px;border-radius:5px;border:1px solid #3a3446;background:transparent;color:#ece6f5;font-size:10.5px;cursor:pointer">Neustart · R</button>
+      <sc-for list="{{ speeds }}" as="sp" hint-placeholder-count="3">
+        <button onClick="{{ sp.onClick }}" style="padding:5px 8px;border-radius:5px;border:1px solid {{ sp.line }};background:transparent;color:{{ sp.fg }};font-size:10.5px;cursor:pointer">{{ sp.label }}</button>
+      </sc-for>
+      <div ref="{{ timeRef }}" style="margin-left:auto;color:#cfc6dd;font-size:10.5px">0.00 s</div>
+    </div>
+    <div ref="{{ barRef }}" onPointerDown="{{ scrubDown }}" onPointerMove="{{ scrubMove }}" onPointerUp="{{ scrubUp }}" style="position:relative;height:28px;display:flex;gap:2px;cursor:ew-resize;touch-action:none;user-select:none">
+      <sc-for list="{{ phases }}" as="p" hint-placeholder-count="9">
+        <div title="{{ p.title }}" style="flex:{{ p.grow }} 1 0;min-width:0;border-radius:4px;background:{{ p.bg }};color:{{ p.fg }};display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:9.5px;font-weight:700;letter-spacing:0.04em;white-space:nowrap">{{ p.id }}</div>
+      </sc-for>
+      <div ref="{{ headRef }}" style="position:absolute;top:-4px;bottom:-4px;left:0;width:2px;margin-left:-1px;background:#fff6e0;box-shadow:0 0 0 1px #131119;pointer-events:none"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;beamTint&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c8f59a&quot;,&quot;options&quot;:[&quot;#c8f59a&quot;,&quot;#ffe39a&quot;,&quot;#a8e6ff&quot;,&quot;#f7b6d9&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Beam&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.4,&quot;max&quot;:1.6,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partikel&quot;},&quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partikel&quot;},&quot;startTarget&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;pet&quot;,&quot;options&quot;:[&quot;prop&quot;,&quot;pet&quot;,&quot;castle&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Start&quot;}}">
+class Component extends DCLogic {
+  hostRef = React.createRef(); headRef = React.createRef(); timeRef = React.createRef(); barRef = React.createRef();
+  state = { s: null, err: null, audioOpen: false, copied: false };
+
+  async componentDidMount() {
+    this.onKey = (e) => {
+      if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+      if (e.code === 'Space') { e.preventDefault(); this.app && this.app.toggle(); }
+      if (e.key === 'r' || e.key === 'R') this.app && this.app.restart();
+    };
+    addEventListener('keydown', this.onKey);
+    try {
+      const mod = await import(new URL('ufo-event-lab/ufo-lab.js', document.baseURI).href);
+      this.last = { tint: this.props.beamTint, density: this.props.density, seed: this.props.seed };
+      this.app = await mod.mount(this.hostRef.current, {
+        seed: this.props.seed ?? 7, density: this.props.density ?? 1, beamTint: this.props.beamTint ?? '#c8f59a', target: this.props.startTarget ?? 'pet',
+        onState: (s) => this.setState({ s }),
+        onTick: (t, d) => { const h = this.headRef.current; if (h) h.style.left = (100 * t / d).toFixed(3) + '%'; const tt = this.timeRef.current; if (tt) tt.textContent = t.toFixed(2) + ' / ' + d.toFixed(1) + ' s'; }
+      });
+      window.__ufoLab = this.app;
+    } catch (e) { this.setState({ err: String((e && e.message) || e) }); }
+  }
+  componentDidUpdate() {
+    if (!this.app || !this.last) return;
+    const p = this.props;
+    if (p.beamTint !== this.last.tint && p.beamTint) { this.last.tint = p.beamTint; this.app.setTint(p.beamTint); }
+    if (p.density !== this.last.density && p.density) { this.last.density = p.density; this.app.setDensity(p.density); }
+    if (p.seed !== this.last.seed && p.seed != null) { this.last.seed = p.seed; this.app.setSeed(p.seed); }
+  }
+  componentWillUnmount() { removeEventListener('keydown', this.onKey); this.app && this.app.dispose(); }
+
+  frac(e) { const r = this.barRef.current.getBoundingClientRect(); return Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)); }
+
+  renderVals() {
+    const s = this.state.s, a = this.app;
+    const opt = (label, on, onClick, disabled) => ({ label, onClick, disabled: !!disabled, bg: on ? '#ffd9a0' : 'transparent', fg: on ? '#131119' : disabled ? '#5a5468' : '#ece6f5', line: on ? '#ffd9a0' : '#3a3446' });
+    const srcs = s ? s.sources : [];
+    const ufoOpts = srcs.filter((x) => x.role !== 'Beam-Donor').map((x) => opt(x.label.replace('Kenney UFO ', 'Kenney '), x.active, () => a.setUfo(x.key), x.status !== 'ok'));
+    const groups = s ? [
+      { label: 'ANSICHT', opts: [opt('Event', s.view === 'event', () => a.setView('event')), opt('Quellen isoliert', s.view === 'sources', () => a.setView('sources')), opt('Kamera zurücksetzen', false, () => a.reframe())] },
+      { label: 'UFO-QUELLE', opts: ufoOpts },
+      { label: 'ZIEL', opts: [opt('Prop', s.target === 'prop', () => a.setTarget('prop')), opt('Resident / Pet', s.target === 'pet', () => a.setTarget('pet')), opt('Burg', s.target === 'castle', () => a.setTarget('castle'))] },
+      { label: 'ENDE', opts: [opt('Zurückgeben', s.ending === 'return', () => a.setEnding('return')), opt('Mitnehmen', s.ending === 'keep', () => a.setEnding('keep'))] },
+      { label: 'BEAM', opts: [opt('Shader', s.beam === 'shader', () => a.setBeam('shader')), opt('Kenney-Mesh', s.beam === 'kenney', () => a.setBeam('kenney'), !s.donorBeam)] }
+    ] : [];
+    const loadingList = srcs.filter((x) => x.status === 'loading').map((x) => x.label);
+    const errList = srcs.filter((x) => x.status === 'error').map((x) => x.label);
+    let statusText = '';
+    if (this.state.err) statusText = 'Fehler: ' + this.state.err;
+    else if (!s) statusText = 'Lade three.js …';
+    else if (loadingList.length) statusText = 'Lade ' + loadingList.join(', ') + ' …';
+    else if (errList.length) statusText = 'Nicht geladen: ' + errList.join(', ');
+    const fmt = (t) => t.toFixed(1);
+    const phases = s ? s.phases.map((p) => ({ id: p.id, title: p.hook + ' · ' + p.ev + ' · ' + fmt(p.t0) + '–' + fmt(p.t1) + ' s', grow: (p.t1 - p.t0).toFixed(3), bg: p.on ? '#ffd9a0' : p.id === 'DEMAT' || p.id === 'TRANSFER' || p.id === 'RETURN' ? '#2d3a26' : '#24202d', fg: p.on ? '#131119' : '#cfc6dd' })) : [];
+    const hooks = s ? s.hooks.map((h, i) => ({ t: h.t.toFixed(1) + 's', hook: h.hook, fg: i === 0 ? '#c8f59a' : '#cfc6dd' })) : [];
+    const pool = s ? s.pool.map((p) => ({ id: p.id, label: p.label })) : [];
+    const wave = (info) => { if (!info) return 'M0 9 H96'; return info.wave.map((w, i) => `M${(i * 2 + 1).toFixed(0)} ${(9 - w * 8).toFixed(1)} V${(9 + w * 8).toFixed(1)}`).join(' '); };
+    const audioRows = s ? s.audio.map((r) => ({
+      hook: r.hook, file: r.file, layer: r.layer || '', why: r.why,
+      wave: wave(r.info),
+      meta: r.err ? 'Fehler: ' + r.err : r.info ? `${r.info.dur} s · peak ${r.info.peakDb} dB · ${r.info.trend}${r.loop ? ' · loop ' + r.loop : ''} · gain ${r.gain}` : (s.audioOn ? 'lädt …' : 'Ton einschalten zum Messen'),
+      heardLabel: r.heard ? 'gehört ✓' : 'gehört?', heardBg: r.heard ? '#c8f59a' : 'transparent', heardFg: r.heard ? '#131119' : '#9a92aa', heardLine: r.heard ? '#c8f59a' : '#3a3446',
+      onPlay: () => a.audio.audition(r.hook), onHeard: () => a.audio.assign(r.hook, 'heard', !r.heard),
+      onFile: (e) => a.audio.assign(r.hook, 'file', e.target.value), onLayer: (e) => a.audio.assign(r.hook, 'layer', e.target.value)
+    })) : [];
+    const srcRows = srcs.map((x) => ({ label: x.label, role: x.role, pin: x.commit.slice(0, 8), fg: x.active ? '#ffd9a0' : '#ece6f5',
+      tris: x.stats && x.stats.tris != null ? x.stats.tris.toLocaleString('de-DE') : x.status === 'error' ? 'Fehler' : '…',
+      parts: x.stats && x.stats.meshes != null ? `${x.stats.meshes} / ${x.stats.mats} / ${x.stats.clips}` : '—',
+      size: x.stats && x.stats.size ? x.stats.size.join(' × ') : '—', kb: x.stats && x.stats.bytes ? Math.round(x.stats.bytes / 1024) : '—' }));
+    const speeds = s ? [0.5, 1, 2].map((v) => ({ label: v + '×', onClick: () => a.setSpeed(v), fg: s.speed === v ? '#ffd9a0' : '#9a92aa', line: s.speed === v ? '#ffd9a0' : '#3a3446' })) : [];
+    return {
+      hostRef: this.hostRef, headRef: this.headRef, timeRef: this.timeRef, barRef: this.barRef,
+      groups, phases, hooks, noHooks: !hooks.length, speeds, pool, audioRows, srcRows,
+      isSources: !!s && s.view === 'sources',
+      phaseId: s ? s.phase : '—', phaseHook: s ? s.hook : '', phaseEv: s ? s.ev : '',
+      hasStatus: !!statusText, statusText,
+      infoA: s ? `Ziel: ${s.target} · Beam-Fuß ${s.rWide} m` : '',
+      infoB: s ? `Partikel ${s.particles} / ${s.sampled} · Seed ${this.props.seed ?? 7}` : '',
+      playLabel: s && s.playing ? 'Pause' : 'Play',
+      togglePlay: () => a && a.toggle(), restart: () => a && a.restart(),
+      scrubDown: (e) => { if (!a) return; this.drag = true; e.currentTarget.setPointerCapture(e.pointerId); a.pause(); a.seekFrac(this.frac(e)); },
+      scrubMove: (e) => { if (this.drag && a) a.seekFrac(this.frac(e)); },
+      scrubUp: () => { this.drag = false; },
+      audioOpen: this.state.audioOpen,
+      toggleAudioPanel: () => this.setState((st) => ({ audioOpen: !st.audioOpen })), closeAudio: () => this.setState({ audioOpen: false }),
+      audioState: s && s.audioOn ? 'Ton an' : 'Ton aus', audioFg: s && s.audioOn ? '#c8f59a' : '#8d84a0', audioLine: this.state.audioOpen ? '#ffd9a0' : '#2c2836',
+      soundLabel: s && s.audioOn ? 'Ton aus' : 'Ton an · laden & messen', soundBg: s && s.audioOn ? '#9a92aa' : '#c8f59a',
+      toggleSound: () => a && a.setAudio(!(s && s.audioOn)),
+      copyLabel: this.state.copied ? 'kopiert ✓' : 'Event-Map als JSON kopieren',
+      copyMap: () => { if (!a) return; const txt = JSON.stringify(a.audio.exportMap(), null, 2); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).catch(() => console.log(txt)); this.setState({ copied: true }); setTimeout(() => this.setState({ copied: false }), 1600); },
+      resetMap: () => a && a.audio.reset()
+    };
+  }
+}
+</script>
+</body>
+</html>
