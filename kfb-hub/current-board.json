@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.11",
-  "updatedAt": "2026-10-06T22:17:00+02:00",
+  "revision": "2026-10-06.12",
+  "updatedAt": "2026-10-06T22:25:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "CURRENT · SURFACE CLEANUP READY · ONE WORK GATE",
-    "note": "Daily model is frozen: Production Hub = overview; ToolBox = tools; GitHub = SSOT; Production Control = ledger only; Cloudflare old Hub/Librarian = legacy; Project Tracker = optional. Exactly one Work/Sites gate remains: publish the Hub live-board loader with zero visible UI regression and verify the existing ToolBox Site identity read-only."
+    "label": "LIVE BOARD CHECK · REFRESH DIRECT HUB",
+    "note": "This visible Hub status was changed in GitHub only after Site version 9. No Site redeploy was used for this update. If this text appears after refresh, the live-board workflow is visibly proven. ToolBox identity remains unresolved but does not block Hub use."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -29,13 +29,13 @@
     },
     {
       "id": "issue-364-hub-live-board-migration",
-      "title": "#364 · Hub Live Board · one-time no-regression migration",
-      "summary": "One final Site shell update only. Preserve the current direct Paper/Dark Production Hub visual baseline exactly; change only the board/briefing data source to GitHub main and prove later board changes appear after refresh without a new deployment. In the same Work job, verify the existing ToolBox Site project identity read-only; do not publish or redesign ToolBox.",
-      "badge": "ONE WORK GATE · NO UI REGRESS",
+      "title": "#364 · Hub Live Board · LIVE CHECK",
+      "summary": "This card was changed in GitHub only after Site version 9. If this exact LIVE CHECK card appears after refreshing the direct Production Hub, the no-republish workflow is visibly proven.",
+      "badge": "REFRESH ONLY · NO WORK",
       "action": "Work brief öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md",
-      "executor": "ChatGPT Work/WSA · Sites-capable · bounded",
-      "nextExecutor": "None for routine Hub updates"
+      "executor": "ChatGPT Web Chat · GitHub JSON only",
+      "nextExecutor": "None after visible confirmation"
     }
   ],
   "p1": [
@@ -231,7 +231,7 @@
     "productionHub": {
       "role": "ONLY_HUMAN_OVERVIEW",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site/",
-      "status": "CANONICAL_DESIGN · LIVE_BOARD_MIGRATION_PENDING"
+      "status": "LIVE_BOARD_FUNCTIONAL · VISIBLE_CHECK_PENDING"
     },
     "github": {
       "role": "SSOT",
@@ -239,7 +239,7 @@
     },
     "toolbox": {
       "role": "ONLY_TOOL_ROUTER",
-      "status": "VERIFY_EXACT_CURRENT_GPT_SITE_IDENTITY"
+      "status": "IDENTITY_UNRESOLVED · NONBLOCKING"
     },
     "productionControl": {
       "role": "LEDGER_HISTORY_ONLY",
