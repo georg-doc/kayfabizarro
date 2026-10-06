@@ -103,7 +103,7 @@ State:
 Current workflow:
 `KFB-PORTFOLIO-ROUTER-01`
 
-Current durable routing must follow the 2026-10-05 Open World Production Reset override: #360 is the primary One-Shot; Hub #364 is PUBLISH_ONLY; Combat #361 and Triplet #362 are HOLD.
+Current durable routing follows the 2026-10-06 override above: Coworker runs #360 now; PR #348 is the Work/Astra closure contract after return; Hub #364 is PUBLISH_ONLY; Combat #361 is HISTORY/HOLD; Triplet #362 is HOLD.
 
 
 ### KFB World Studio MVP1
@@ -111,18 +111,22 @@ URL:
 https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/
 
 Owner:
-WB2 / PR #348
+WB2 / issue #360 / receiving PR #348
 
-State:
-**CURRENT PUBLISHED CANDIDATE = HUMAN TOTAL FAIL / FAILURE EVIDENCE ONLY**
+Published Site state:
+**HISTORICAL FAILED CANDIDATE ONLY**
 
-Do not ask Georg to freeplay this version again.
-Do not patch its four-island composition forward.
+Current execution:
+**Claude Coworker long Open World integration RUNNING outside the old published Site.**
 
-Current work is the full Open World Production Reset One-Shot on PR #348:
-`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
+Do not ask Georg to test the old Site again.
+Do not start a parallel Work/Astra rebuild.
 
-The existing Site may be reused later only after the new candidate passes fresh-context module critics and the whole-product critic.
+After Coworker returns:
+- capture its exact handoff/evidence;
+- reconcile it into the WB2 owner;
+- use PR #348 contracts/matrix as the Work/Astra closure specification;
+- publish a new candidate only after the internal critic/whole-product gates.
 
 
 ### KFB Asset Librarian
