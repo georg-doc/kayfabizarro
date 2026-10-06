@@ -120,3 +120,22 @@
 - Combined researched inventory is now **175 candidates**: 30 mapped Batch-01 candidates + 145 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 06 · myth / law / psychology / performance / science oddities
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_06.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - myth/religion: 6
+  - law/crime: 6
+  - psychology: 6
+  - music/performance: 6
+  - science/history oddities: 6
+- Reserve 06 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **28 VERIFIED**, **2 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **29 PUBLIC_DOMAIN_CONFIRMED**, **1 DRAFT_RIGHTS_UNKNOWN**.
+- The open rights case is Wilbur Wright's 1900 letter to Octave Chanute: exact wording is primary-source verified via the Library of Congress, but the historical manuscript/publication-term status was not resolved and is not assumed public-runtime-safe.
+- The two `SECONDARY_ONLY` source-chain cases are Diderot's `Paradox of Acting` English formulation and Talma's acting maxim; both are supported by old public-domain English sources but await direct original/edition-level pinning.
+- Validation: **20/20 PASS**, including five balanced clusters and zero ID/text collisions against the prior 175-candidate inventory.
+- Combined researched inventory is now **205 candidates**: 30 mapped Batch-01 candidates + 175 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
