@@ -1,5 +1,29 @@
 # Changelog · KFB Asset Librarian
 
+## Etherington design-first Environment + Comic/VFX expansion · 2026-10-06
+
+Status: **RESEARCH/DATA READY · 30 NEW OFFICIAL SOURCES · SITE UNCHANGED**
+
+### Data
+- Added `ETHERINGTON_OFFICIAL_SEED_02_ENVIRONMENT.json` with **17** official creator-hosted sources.
+- Added `ETHERINGTON_OFFICIAL_SEED_03_COMIC_VFX.json` with **13** official creator-hosted sources.
+- Combined with Seed 01, the curated Etherington inventory is now **43 unique official URLs**.
+
+### Design routing
+- Environment prioritizes terrain/world mass, vegetation, buildings, depth, water and surfaces.
+- Comic/VFX prioritizes destruction, motion, elemental effects, action readability and graphic/framing references.
+- Added `ETHERINGTON_DESIGN_FIRST_ENVIRONMENT_COMIC_VFX_2026-10-06.md` with small recommended 3–6-reference subsets for Claude Design rather than sending the whole corpus into one visual-analysis pass.
+
+### Evidence
+- **12/12 PASS** data validation.
+- 0 duplicate IDs across all three seeds.
+- 0 duplicate URLs across all three seeds.
+- all new sources remain `sourceInspectedInIsolation=false`, `visualAnalysisStatus=PENDING`, `relationStatus=UNMAPPED_BY_DESIGN`.
+
+### Boundary
+No Asset Librarian Site source, ToolBox Site, deployment, Hub or runtime changed. No remote source images were mirrored into GitHub. This is additive research/data curation only.
+
+
 ## Style Reference Library R1 preparation · 2026-10-05
 
 Status: **R1 SITE PACKET READY · EXISTING SITE OWNER RETAINED**
