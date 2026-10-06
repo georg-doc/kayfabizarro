@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.8",
-  "updatedAt": "2026-10-06T21:35:00+02:00",
+  "revision": "2026-10-06.9",
+  "updatedAt": "2026-10-06T21:50:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "CURRENT · COWORKER CORE COMPLETE LOCAL · GITHUB INTAKE PENDING",
-    "note": "Coworker reports a stable local Open World receiving core at local HEAD 1d4f8c8; final critic fails only Camera (6.5). Exact code/RETURN/evidence still must be pushed to GitHub before Work changes it. Final One-Shot scope still requires Authoring/Persistence plus representative Joyride/Sky/Billboard/Resident/Card/Audio/Drive seams. Claude Design UFO Event Lab is safe parallel prep. Hub live-board migration is a one-time publish; after it, routine board/briefing updates come directly from GitHub main with no Sites/Work republish."
+    "label": "CURRENT · SURFACE HIERARCHY CLEANUP · COWORKER INTAKE PENDING",
+    "note": "Production Hub = only human overview/front door; GitHub = truth; ToolBox = one specialist-tool router; Production Control = ledger/history only; specialist GPT Sites = tools/products; old Cloudflare Hub/Librarian routes = legacy mirrors; Project Tracker = optional scratchpad only. Coworker exact GitHub intake remains the Open World gate."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -197,6 +197,11 @@
   ],
   "quickLinks": [
     {
+      "title": "Surface Hierarchy · what to use",
+      "summary": "Production Hub = overview; ToolBox = tools; GitHub = truth; Production Control = ledger/history; Cloudflare legacy routes and Project Tracker are non-canonical.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_SURFACE_HIERARCHY_CURRENT_2026-10-06.md"
+    },
+    {
       "title": "Open World · #360",
       "summary": "Current product routing and Coworker intake status.",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360"
@@ -216,5 +221,39 @@
       "summary": "World/social event → Affect → Pose/Gesture/Face/Emanata → recovery.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.md"
     }
-  ]
+  ],
+  "surfaceRoles": {
+    "productionHub": {
+      "role": "ONLY_HUMAN_OVERVIEW",
+      "url": "https://kfb-production-hub.frizzlebob.chatgpt.site/",
+      "status": "CANONICAL_DESIGN · LIVE_BOARD_MIGRATION_PENDING"
+    },
+    "github": {
+      "role": "SSOT",
+      "status": "AUTHORITATIVE"
+    },
+    "toolbox": {
+      "role": "ONLY_TOOL_ROUTER",
+      "status": "VERIFY_EXACT_CURRENT_GPT_SITE_IDENTITY"
+    },
+    "productionControl": {
+      "role": "LEDGER_HISTORY_ONLY",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+      "status": "NOT_DAILY_NAV"
+    },
+    "cloudflareHubV2": {
+      "role": "LEGACY_STAGE_DONOR",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+      "status": "DO_NOT_USE_AS_CURRENT"
+    },
+    "cloudflareLibrarian": {
+      "role": "LEGACY_STALE_MIRROR",
+      "url": "https://kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "status": "DO_NOT_USE_AS_CURRENT"
+    },
+    "projectTracker": {
+      "role": "OPTIONAL_PERSONAL_SCRATCHPAD",
+      "status": "NON_CANONICAL"
+    }
+  }
 }

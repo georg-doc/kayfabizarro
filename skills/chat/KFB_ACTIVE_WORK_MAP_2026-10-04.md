@@ -6,18 +6,25 @@ Purpose: one cross-project view of current Web Chats, Sites, implementation slic
 
 GitHub current state wins. This file is a portfolio map, not a replacement for project SSOTs.
 
-## CURRENT OVERRIDE · 2026-10-06 · COWORKER INTEGRATION RUNNING
+## CURRENT OVERRIDE · 2026-10-06 · SURFACE HIERARCHY + COWORKER INTAKE
 
-- **PRIMARY / RUNNING:** #360 · Claude Coworker is executing the long Open World integration job. Georg reports the current result looks materially better than previous attempts.
-- **NEXT AFTER RETURN:** PR #348 · ChatGPT Work/Astra reconciles Coworker's exact output into WB2, preserves successful integration and closes only remaining KFB seams + critic/whole-product gates.
-- **CONTROL PLANE:** #364 · Production Hub source is current; existing Site still needs deterministic PUBLISH_ONLY.
-- **SEPARATE CURRENT HUMAN GATE:** Audio PR #365 adaptive stems listening.
-- **HISTORY / HOLD:** Combat #361.
-- **HOLD / NOT TODAY:** Triplet/ChatterBox #362.
-- **READY / PARKED:** Style Reference Library PR #359; World Kernel Lab PR #363 donor/publish lane.
-- Old World/Combat FAIL builds are evidence only and must not appear as current Today/Next work.
+Human navigation is now bindingly simplified:
+- **Production Hub = only human overview/front door.**
+- **GitHub = SSOT.**
+- **ToolBox = exactly one specialist-tool router.**
+- **Production Control = ledger/history only, not daily navigation.**
+- **Specialist GPT Sites = tools/products, not portals.**
+- **Cloudflare hub-ui-v2 and old Asset Librarian route = legacy/stale mirrors.**
+- **Project Tracker Page = optional personal scratchpad only.**
 
-Binding Open World contracts remain PR #348's One-Shot + integration matrix, but they are now **receiving/closure contracts after Coworker**, not a parallel rebuild instruction.
+Binding hierarchy:
+`skills/chat/KFB_SURFACE_HIERARCHY_CURRENT_2026-10-06.md`
+
+Open World:
+- **PRIMARY:** Coworker reports local core complete at local HEAD `1d4f8c8`; exact GitHub handoff still pending.
+- **NEXT:** Work/Astra camera repair → Architecture Freeze → Authoring/Persistence → required integration waves.
+- **CONTROL PLANE:** one-time Production Hub live-board migration only; after PASS, routine Hub updates are GitHub-only.
+
 
 ---
 

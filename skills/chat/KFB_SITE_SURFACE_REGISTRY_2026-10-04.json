@@ -1,6 +1,6 @@
 {
   "schema": "kfb.site-surfaces/2",
-  "date": "2026-10-04",
+  "date": "2026-10-06",
   "defaultPrimary": "GPT_SITE",
   "defaultSecondary": "CLOUDFLARE_KFB_HUB_MIRROR_WHEN_REQUIRED",
   "rules": {
@@ -21,11 +21,11 @@
       "id": "kfb-production-hub",
       "owner": "KFB Production Hub / HUB-CTRL",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "SITE_VERIFIED_CURRENT_BOARD",
+      "status": "SITE_SHELL_MIGRATION_PENDING",
       "source": "PR #217",
-      "humanStatus": "STALE_UNTIL_SURFACE_CONSOLIDATION_PUBLISHED",
-      "notes": "Technically verified current-board deployment exists, but Georg reports the overall production surface is still not current/usable because Hub, Control and ToolBox roles are fragmented. Treat as STALE until the consolidation Work pass publishes the unified navigation model.",
-      "publishPacket": "skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md",
+      "humanStatus": "CANONICAL_HUMAN_FRONT_DOOR",
+      "notes": "Accepted Paper/Dark design is canonical. One-time live-board migration pending. Direct Site is authoritative over stale Work preview/cached embeds.",
+      "publishPacket": "skills/chat/publish/WORK_PRODUCTION_HUB_LIVE_BOARD_MIGRATION_2026-10-06.md",
       "publishSourceHead": "910864dd4cf5a112f5d6528d71436ecaa03e422f",
       "hubSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38",
       "siteProject": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
@@ -50,10 +50,10 @@
       "id": "kfb-asset-librarian",
       "owner": "KFB Asset Registry / Librarian",
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
-      "status": "SITE_DEPLOYED_PRIVATE",
+      "status": "SITE_PRODUCTIVE_CANONICAL_TOOL",
       "source": "PR #349",
-      "humanStatus": "GEORG_REVIEW_OPEN",
-      "notes": "WSA browser QA 8/8 PASS; zero console errors; Phase A real review surface.",
+      "humanStatus": "CURRENT_SPECIALIST_TOOL",
+      "notes": "Canonical Asset Librarian is the GPT Site. Style Reference Library R1 is available at ?view=style-references. Old Cloudflare Librarian routes are stale/legacy mirrors.",
       "surfaceRole": "SPECIALIST_TOOL"
     },
     {
@@ -115,24 +115,48 @@
       "url": "https://kfb-production-control.frizzlebob.chatgpt.site/",
       "status": "SITE_PRODUCTIVE_DATA_DRIVEN",
       "source": "KFB Production Control connector + current portfolio records",
-      "humanStatus": "STALE_UI_UNTIL_CURRENT_HISTORY_SPLIT",
-      "notes": "Durable records are current, but the human Site must be updated so Current board/open records are separated from historical workflow records. It is not a second front door.",
+      "humanStatus": "LEDGER_ONLY_NOT_DAILY_NAV",
+      "notes": "Durable decisions/Returns/recovery history only. Not a second front door; Georg should not need this for daily orientation.",
       "surfaceRole": "CONTROL_LEDGER"
     },
     {
       "id": "kfb-toolbox",
       "owner": "KFB ToolBox",
       "url": null,
-      "status": "CANONICAL_FRONT_DOOR_REQUIRED",
+      "status": "CANONICAL_FRONT_DOOR_IDENTITY_VERIFY",
       "source": "tools/KFB-ToolBox/START_HERE.md + TOOLBOX_MANIFEST.json",
-      "humanStatus": "CONSOLIDATION_REQUIRED",
+      "humanStatus": "ONE_TOOLBOX_REQUIRED",
       "surfaceRole": "TOOLBOX_ROUTER",
-      "notes": "Exactly one canonical GPT Site front door must route to current specialist tools. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors. Work must first resolve whether an existing ToolBox GPT Site project already exists; update it if found, otherwise create exactly one."
+      "notes": "Exactly one ToolBox GPT Site must route specialist tools. Legacy Cloudflare ToolBox Stage/Home/standalones are history/donors. Verify exact current GPT Site project/URL once; do not create another."
     }
   ],
-  "updatedAt": "2026-10-04T21:55:00+02:00",
+  "updatedAt": "2026-10-06T21:50:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",
-  "toolboxFrontDoor": "kfb-toolbox"
+  "toolboxFrontDoor": "kfb-toolbox",
+  "surfaceHierarchy": "skills/chat/KFB_SURFACE_HIERARCHY_CURRENT_2026-10-06.md",
+  "legacyOrNonCanonicalSurfaces": [
+    {
+      "id": "cloudflare-hub-ui-v2",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+      "role": "LEGACY_DESIGN_DONOR_STAGE",
+      "current": false,
+      "rule": "Do not use as current Hub/front door."
+    },
+    {
+      "id": "cloudflare-asset-librarian",
+      "url": "https://kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "role": "LEGACY_STALE_MIRROR",
+      "current": false,
+      "rule": "Use canonical GPT Asset Librarian instead."
+    },
+    {
+      "id": "chatgpt-project-tracker-page",
+      "url": "page://page_cca6f5760b7481918de8436d44f68e97",
+      "role": "OPTIONAL_PERSONAL_WORKSPACE",
+      "current": false,
+      "rule": "Not SSOT, not required recovery, no mandatory sync."
+    }
+  ]
 }
