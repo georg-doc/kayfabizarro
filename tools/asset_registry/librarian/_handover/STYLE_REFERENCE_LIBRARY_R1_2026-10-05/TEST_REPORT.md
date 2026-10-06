@@ -114,3 +114,24 @@ No merge. No Live branch promotion. No second Site.
   - URL: `https://kfb-toolbox.frizzlebob.chatgpt.site`
 
 Both projects retained their existing owner-only custom audience. No second Site was created.
+
+
+## Claude Design bridge validation · 2026-10-06
+
+Status: **PORTABLE PACK BRIDGE PREPARED**
+
+Validation: **8/8 PASS**
+
+1. PASS · GitHub repository is public and can act as transport for non-private reference packets.
+2. PASS · bridge keeps Asset Librarian private; no Site access is required by the consumer.
+3. PASS · Clouds example uses `kfb.style-reference-pack/1`.
+4. PASS · example contains 3 official Etherington source URLs.
+5. PASS · all 3 references start with `sourceInspectedInIsolation=false`.
+6. PASS · no remote image binaries are embedded in the GitHub packet.
+7. PASS · companion `START_HERE.md` requires exact source isolation before design claims.
+8. PASS · private-source policy remains metadata/opaque locator + explicit attachment, not GitHub publication.
+
+Prepared transport example:
+`tools/asset_registry/librarian/reference-packs/claude-design/kfb-clouds-01/`
+
+This is a reference-packet bridge only. No Asset Librarian or ToolBox Site code/deployment changed in this checkpoint.
