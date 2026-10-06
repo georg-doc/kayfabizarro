@@ -346,6 +346,223 @@ Do not promote as Open World truth:
 - its independent player controller;
 - its independent weapons ownership.
 
+## 8 · Resident Performance Layer · REQUIRED LIVING-WORLD ARCHITECTURE
+
+Current assessment:
+**base facial/character donors are substantially more mature than the current World integration.**
+The missing piece is a shared orchestration layer.
+
+Existing owner/donor facts:
+- EyeRig v6 is current reusable eye owner and already supports:
+  - public `eyeFrame()` anchor for brows/nose;
+  - asymmetric lids;
+  - gaze / point-to;
+  - blink;
+  - continuous life/wander/tremor;
+  - kinetics input for acceleration/curve/drop;
+  - explicit emotes.
+- PetMouth already provides:
+  - male / female / red mouth sets;
+  - rest-expression mapping;
+  - five named viseme states;
+  - surface-fit/wrap behavior;
+  - talk/rest/expression channels.
+- ChatterBox PR #357 remains a TUNE donor:
+  - real 3D Resident requirement;
+  - EyeRig v6 + PetMouth required;
+  - Triplet semantic kernel/pool/review/export are reusable;
+  - no PNG/cutout substitute.
+
+### Required architectural split
+
+Do not let ChatterBox, TTS or dialogue code directly own bones/eyes/mouth.
+
+Use:
+
+```
+Resident / Actor
+  |
+  +--> Body Motion Owner
+  |      locomotion
+  |      gesture / upper-body
+  |      action / prop interaction
+  |
+  +--> Resident Performance Composer
+         |
+         +--> Look / Head Target
+         +--> EyeRig v6
+         +--> Brow Adapter via eyeFrame()
+         +--> PetMouth / Viseme Adapter
+         +--> Reaction / Emote State
+         +--> Gesture / Body Cue
+         +--> Speech / TTS timing
+         +--> Bubble Presentation
+```
+
+### Performance Cue contract
+
+Create one semantic cue layer instead of feature-specific animation calls.
+
+Example conceptual record:
+
+```
+{
+  speaker,
+  listener,
+  intent,
+  emotion,
+  intensity,
+  gazeTarget,
+  speechState,
+  visemeStream,
+  browState,
+  eyeState,
+  headCue,
+  gestureCue,
+  reactionCue,
+  bubbleMode,
+  timing
+}
+```
+
+The exact schema is frozen only after the post-Coworker architecture review.
+
+### Priority / arbitration
+
+Performance channels must compose rather than fight.
+
+Recommended authority order:
+1. physical safety / locomotion;
+2. explicit action / gameplay animation;
+3. dialogue gesture;
+4. reaction/emote;
+5. idle life.
+
+Face channels may layer independently where safe:
+- gaze;
+- blink/lids;
+- brows;
+- mouth/viseme;
+- head orientation.
+
+### Reaction vocabulary
+
+Do not hard-code one bespoke animation per dialogue line.
+
+Start with a small reusable semantic vocabulary:
+- neutral/listening;
+- attentive;
+- thinking;
+- agreement;
+- doubt;
+- surprise;
+- joy/amusement;
+- worry;
+- annoyance/anger;
+- sadness;
+- embarrassment;
+- suspicion;
+- interruption / turn-taking.
+
+Each reaction maps to:
+- EyeRig parameters;
+- brow pose;
+- mouth rest/viseme behavior;
+- head/torso cue;
+- optional gesture clip;
+- bubble timing.
+
+### Dialogue / choreography
+
+ChatterBox owns semantic dialogue/triplets.
+Resident Performance Composer owns presentation/choreography.
+
+Required world behaviors:
+- turn toward current speaker;
+- speaker gaze → listener / object / Card;
+- listener remains alive with subtle reactions;
+- turn-taking and interruption cues;
+- short pre-speech anticipation;
+- gesture accents during clauses;
+- reaction hold after line;
+- return to idle without pose pop;
+- multi-Resident blocking remains spatially readable.
+
+### Mouth / TTS integration
+
+Do not create a second mouth system.
+
+PetMouth is the baseline mouth owner.
+For V1:
+- use its named viseme layer when timing information is available;
+- otherwise use its existing speaking behavior as fallback;
+- keep expression/rest state underneath speech;
+- Speech Focus/ducking remains KFB Audio-owned.
+
+Future phoneme-quality improvement can refine the adapter without changing ChatterBox or the Resident owner.
+
+### Brows / face attachments
+
+Use EyeRig v6 `eyeFrame()` as the public face anchor.
+Eyebrows, nose or later face overlays must not read private EyeRig internals.
+
+If an existing brow donor exists, adapt it to `eyeFrame()`; do not create per-character brow hardcodes.
+
+### Blender MCP role
+
+Blender MCP should fill only real motion gaps:
+- dialogue gesture set;
+- listening/reaction poses;
+- point / shrug / nod / recoil / laugh / think etc.;
+- transition-safe upper-body variants where necessary;
+- special character-specific performance only after generic reusable gaps are proven.
+
+Do not bake eye/mouth/brow logic into Blender clips when the runtime face owners already control those channels.
+
+### Claude Design role
+
+Claude Design owns visible presentation decisions:
+- expression family / brow language;
+- clay speech/thought bubble behavior;
+- bubble tail / thought pellets;
+- Resident spacing / staging;
+- reaction readability;
+- visual relationship between face, gesture and dialogue UI.
+
+### ChatGPT Web Chat role
+
+Cheap/default:
+- reaction ontology;
+- choreography grammar;
+- character-specific mapping;
+- dialogue/performance metadata;
+- source audits and brief preparation.
+
+### ChatGPT Work/WSA role
+
+Integrate:
+- Resident Performance Composer;
+- adapters to Motion / EyeRig / brows / PetMouth / ChatterBox / Audio / bubble layer;
+- persistence where Resident performance state actually needs it;
+- runtime arbitration and whole-product QA.
+
+### Acceptance target
+
+One real 3D Resident conversation in the actual Open World must demonstrate:
+1. locomotion → conversation transition;
+2. turn/look to speaker/listener;
+3. live eyes + blink + gaze;
+4. brows;
+5. speaking mouth / viseme behavior;
+6. at least two readable reactions;
+7. one reusable gesture;
+8. clay speech/thought bubble;
+9. dialogue audio Speech Focus;
+10. clean return to world idle;
+11. no competing face/body writers.
+
+This becomes part of **Wave D · Living World** and should be reviewed during the architecture-freeze pass before implementation.
+
 ## 8 · Exactly one next gate
 
 **Wait for the exact Coworker Open World RETURN, then run one Work/WSA reconciliation against this wave plan and the binding PR #348 matrix.**
