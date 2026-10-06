@@ -1,0 +1,1692 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T14:25:00Z",
+  "purpose": "Third unmapped, quality-first quote reserve. Expands long-session rotation depth with deliberate author, era, tone and semantic diversity before any island/deck/Billboard mapping.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Increase the number of intellectually distinct candidates available to later context pools so repeated island play can suppress recent repeats without collapsing into a tiny author/theme set.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "candidates": [
+    {
+      "id": "qr-r03-nietzsche-convictions-truth",
+      "text": "Convictions are more dangerous enemies of truth than lies.",
+      "author": "Friedrich Nietzsche",
+      "work": "Human, All Too Human",
+      "publicationYear": 1878,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://digicoll.lib.berkeley.edu/record/285586/files/991003712289706532_B000773557.pdf",
+        "edition": "Helen Zimmern English translation, early public-domain edition",
+        "pageOrLocator": "Part I, Section IX, aphorism 483",
+        "publicationYear": 1878,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the Berkeley digitized edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://digicoll.lib.berkeley.edu/record/285586/files/991003712289706532_B000773557.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "conviction",
+        "truth",
+        "self-deception",
+        "belief"
+      ],
+      "semanticAxes": [
+        "conviction↔inquiry",
+        "identity↔revision"
+      ],
+      "frizzleQuestion": "Which conviction would be hardest to revise because abandoning it would cost identity rather than just an argument?",
+      "brainFood": [
+        {
+          "label": "Human, All Too Human — Berkeley digitized edition",
+          "url": "https://digicoll.lib.berkeley.edu/record/285586/files/991003712289706532_B000773557.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Digitized early English edition; aphorism 483."
+        }
+      ],
+      "curatorNotes": "Useful against rigid certainty without implying that all conviction is irrational.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-clifford-insufficient-evidence",
+      "text": "It is wrong always, everywhere, and for anyone, to believe anything upon insufficient evidence.",
+      "author": "William Kingdon Clifford",
+      "work": "The Ethics of Belief",
+      "publicationYear": 1877,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.ditext.com/clifford/belief.html",
+        "edition": "Contemporary Review 1877 text, reprinted in Lectures and Essays",
+        "pageOrLocator": "Part I, The Duty of Inquiry",
+        "publicationYear": 1877,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact dictum verified in the complete text and cross-checked against Project Gutenberg's Clifford essay collection."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Clifford died in 1879; the 1877 essay and later nineteenth-century collected editions are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/ebooks/50189",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "evidence",
+        "belief",
+        "responsibility",
+        "epistemic-ethics"
+      ],
+      "semanticAxes": [
+        "belief↔evidence",
+        "private-belief↔public-consequence"
+      ],
+      "frizzleQuestion": "When does believing without enough evidence become not merely an intellectual error but a moral action with consequences for others?",
+      "brainFood": [
+        {
+          "label": "The Ethics of Belief — full text",
+          "url": "https://www.ditext.com/clifford/belief.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Complete essay text."
+        },
+        {
+          "label": "Clifford essays — Project Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/50189",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collection containing The Ethics of Belief."
+        }
+      ],
+      "curatorNotes": "Intentionally paired with a question about external consequences, not as a blanket ban on acting under uncertainty.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-peirce-block-inquiry",
+      "text": "Do not block the way of inquiry.",
+      "author": "Charles S. Peirce",
+      "work": "F.R.L. manuscript / later Collected Papers",
+      "publicationYear": 1899,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2612013",
+        "edition": "Susan Haack, Transactions of the Charles S. Peirce Society 50(3)",
+        "pageOrLocator": "Cited as CP 1.135–136; manuscript F.R.L., c. 1899",
+        "publicationYear": 1899,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact motto and manuscript locator are consistently reported by Peirce scholarship; original manuscript image was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Peirce died in 1914, but the research source points to a c.1899 manuscript later published in twentieth-century Collected Papers. US publication-status rights were not resolved.",
+        "evidenceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2612013",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "inquiry",
+        "method",
+        "dogma",
+        "epistemic-barriers"
+      ],
+      "semanticAxes": [
+        "inquiry↔closure",
+        "learning↔certainty"
+      ],
+      "frizzleQuestion": "Which rule, taboo, or certainty in a system prevents the very inquiry that could reveal whether the system still works?",
+      "brainFood": [
+        {
+          "label": "Haack — Do Not Block the Way of Inquiry",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2612013",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly source giving CP and manuscript locator."
+        }
+      ],
+      "curatorNotes": "Keep SECONDARY_ONLY and rights-unknown until the underlying manuscript/publication history is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-milton-truth-open-encounter",
+      "text": "Who ever knew Truth put to the worse, in a free and open encounter?",
+      "author": "John Milton",
+      "work": "Areopagitica",
+      "publicationYear": 1644,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/608/pg608-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Areopagitica; truth/falsehood passage",
+        "publicationYear": 1644,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Gutenberg and a digitized edition/Smithsonian citation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/608/pg608-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "free-speech",
+        "truth",
+        "debate",
+        "censorship"
+      ],
+      "semanticAxes": [
+        "truth↔falsehood",
+        "open-debate↔control"
+      ],
+      "frizzleQuestion": "What conditions must exist for an open encounter to favor truth rather than whoever has more reach, money, or stamina?",
+      "brainFood": [
+        {
+          "label": "Areopagitica — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/608/pg608-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        },
+        {
+          "label": "Milton quotation — Smithsonian American Art Museum",
+          "url": "https://americanart.si.edu/artwork/though-all-winds-doctrine-were-let-loose-play-upon-15500",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Museum record reproducing and sourcing the passage."
+        }
+      ],
+      "curatorNotes": "Question prevents naïve marketplace-of-ideas reading by foregrounding unequal conditions of encounter.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-jefferson-error-reason",
+      "text": "error of opinion may be tolerated, where reason is left free to combat it.",
+      "author": "Thomas Jefferson",
+      "work": "First Inaugural Address",
+      "publicationYear": 1801,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://tjrs.monticello.org/letter/1328",
+        "edition": "Jefferson manuscript / contemporary newspaper transcription",
+        "pageOrLocator": "4 March 1801; PTJ 33:134–52",
+        "publicationYear": 1801,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact extract verified by Monticello and Yale Avalon."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://tjrs.monticello.org/letter/1328",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "tolerance",
+        "reason",
+        "speech",
+        "error"
+      ],
+      "semanticAxes": [
+        "tolerance↔correction",
+        "error↔reason"
+      ],
+      "frizzleQuestion": "Can a society tolerate dangerous error without accidentally building institutions that amplify it faster than reason can answer?",
+      "brainFood": [
+        {
+          "label": "Jefferson First Inaugural — Monticello",
+          "url": "https://tjrs.monticello.org/letter/1328",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Manuscript-based transcription."
+        },
+        {
+          "label": "Jefferson First Inaugural — Yale Avalon",
+          "url": "https://avalon.law.yale.edu/19th_century/jefinau1.asp",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-address transcription."
+        }
+      ],
+      "curatorNotes": "Useful as a tension between tolerance and amplification rather than as simple free-speech decoration.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-whitman-resist-obey",
+      "text": "Resist much, obey little",
+      "author": "Walt Whitman",
+      "work": "Walt Whitman's Caution, Leaves of Grass",
+      "publicationYear": 1860,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://whitmanarchive.org/item/ppp.01500",
+        "edition": "Walt Whitman Archive, 1860–61 Leaves of Grass",
+        "pageOrLocator": "Walt Whitman's Caution",
+        "publicationYear": 1860,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the Whitman Archive and validated Wikisource scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://whitmanarchive.org/item/ppp.01500",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "obedience",
+        "liberty",
+        "resistance",
+        "citizenship"
+      ],
+      "semanticAxes": [
+        "cooperation↔submission",
+        "authority↔resistance"
+      ],
+      "frizzleQuestion": "How much obedience does cooperation require before cooperation becomes training for submission?",
+      "brainFood": [
+        {
+          "label": "Leaves of Grass 1860–61 — Whitman Archive",
+          "url": "https://whitmanarchive.org/item/ppp.01500",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly Whitman Archive edition."
+        },
+        {
+          "label": "Leaves of Grass 1860 — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ALeaves_of_Grass_%281860%29.djvu/409",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan page."
+        }
+      ],
+      "curatorNotes": "Extremely compact roadside line; question distinguishes resistance from antisocial reflex.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-shaw-liberty-responsibility",
+      "text": "Liberty means responsibility. That is why most men dread it.",
+      "author": "George Bernard Shaw",
+      "work": "Maxims for Revolutionists",
+      "publicationYear": 1903,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/26107/pg26107.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Maxims for Revolutionists; Liberty and Equality",
+        "publicationYear": 1903,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the full text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/26107/pg26107.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "liberty",
+        "responsibility",
+        "agency",
+        "consequence"
+      ],
+      "semanticAxes": [
+        "freedom↔responsibility",
+        "choice↔consequence"
+      ],
+      "frizzleQuestion": "Which freedom sounds attractive only until responsibility for its consequences can no longer be delegated?",
+      "brainFood": [
+        {
+          "label": "Maxims for Revolutionists — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/26107/pg26107.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Distinct from Reserve 01's Shaw progress line; this one fits agency and accountability.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-huxley-facts-ignored",
+      "text": "Facts do not cease to exist because they are ignored.",
+      "author": "Aldous Huxley",
+      "work": "Proper Studies — A Note on Dogma",
+      "publicationYear": 1927,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://openlibrary.org/books/OL6710261M/Proper_studies",
+        "edition": "Chatto & Windus 1927 edition record / Internet Archive scan access",
+        "pageOrLocator": "A Note on Dogma",
+        "publicationYear": 1927,
+        "retrievedAt": "2026-10-06",
+        "notes": "The quote is sourced to A Note on Dogma; Open Library exposes the 1927 edition and Huxley Archive/Open Books records corroborate the work."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain by publication date",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1927 work is public domain in the US. Huxley died in 1963, so EU author-term protection runs through 2033.",
+        "evidenceUrl": "https://openlibrary.org/books/OL6710261M/Proper_studies",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "facts",
+        "denial",
+        "reality",
+        "dogma"
+      ],
+      "semanticAxes": [
+        "fact↔attention",
+        "reality↔denial"
+      ],
+      "frizzleQuestion": "Which ignored fact keeps exerting effects while the surrounding story becomes increasingly elaborate?",
+      "brainFood": [
+        {
+          "label": "Proper Studies — Open Library 1927 edition",
+          "url": "https://openlibrary.org/books/OL6710261M/Proper_studies",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Edition record with Internet Archive access."
+        },
+        {
+          "label": "Proper Studies — Huxley Archive",
+          "url": "https://huxleyarchive.org/Non-fiction/BOOKS/Proper%20Studies.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Work-level archive corroboration."
+        }
+      ],
+      "curatorNotes": "Public-use eligibility is jurisdiction-sensitive despite strong work-level provenance.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-addams-common-life",
+      "text": "the good we secure for ourselves is precarious and uncertain until it is secured for all of us",
+      "author": "Jane Addams",
+      "work": "How Would You Uplift the Masses?",
+      "publicationYear": 1892,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://digital.janeaddams.ramapo.edu/items/show/34839",
+        "edition": "Jane Addams Digital Edition",
+        "pageOrLocator": "Speech, 4 February 1892, p. 4 transcription",
+        "publicationYear": 1892,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the scholarly digital edition of the speech."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Addams died in 1935; the 1892 speech is public domain.",
+        "evidenceUrl": "https://digital.janeaddams.ramapo.edu/items/show/34839",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "common-good",
+        "security",
+        "inequality",
+        "interdependence"
+      ],
+      "semanticAxes": [
+        "private-good↔common-good",
+        "security↔inequality"
+      ],
+      "frizzleQuestion": "How secure can private flourishing be inside a common life designed to leave large groups structurally precarious?",
+      "brainFood": [
+        {
+          "label": "Jane Addams Digital Edition — 1892 speech",
+          "url": "https://digital.janeaddams.ramapo.edu/items/show/34839",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly transcription with document context."
+        }
+      ],
+      "curatorNotes": "Adds social interdependence without relying on abstract solidarity language.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-follett-unity-variety",
+      "text": "Unity, not uniformity, must be our aim.",
+      "author": "Mary Parker Follett",
+      "work": "The New State",
+      "publicationYear": 1918,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://bcfamily.ca/research-corner-the-legacy-of-mary-parker-follett/",
+        "edition": "Secondary article citing Follett 1918, p. 39",
+        "pageOrLocator": "The New State, p. 39",
+        "publicationYear": 1918,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence is consistently cited with 1918/p.39 locator and is used by the Mary Parker Follett Foundation; original page image not retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Follett died in 1933 and The New State was published in 1918; underlying text is public domain.",
+        "evidenceUrl": "https://follettfdn.org/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "unity",
+        "diversity",
+        "integration",
+        "democracy"
+      ],
+      "semanticAxes": [
+        "unity↔uniformity",
+        "integration↔erasure"
+      ],
+      "frizzleQuestion": "What would integration look like if differences had to survive the solution instead of being averaged away?",
+      "brainFood": [
+        {
+          "label": "Legacy of Mary Parker Follett — quote with p.39 locator",
+          "url": "https://bcfamily.ca/research-corner-the-legacy-of-mary-parker-follett/",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Secondary source gives work/year/page."
+        },
+        {
+          "label": "Mary Parker Follett Foundation",
+          "url": "https://follettfdn.org/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Foundation foregrounds the same line as part of Follett's legacy."
+        }
+      ],
+      "curatorNotes": "Keep SECONDARY_ONLY until a scan of The New State p.39 is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-dubois-color-line",
+      "text": "The problem of the twentieth century is the problem of the color-line.",
+      "author": "W. E. B. Du Bois",
+      "work": "The Souls of Black Folk",
+      "publicationYear": 1903,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://avalon.law.yale.edu/20th_century/dubois_01.asp",
+        "edition": "Yale Avalon transcription of the 1903 work",
+        "pageOrLocator": "The Forethought / repeated in Chapter II",
+        "publicationYear": 1903,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the 1903 text transcription."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain by publication date",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1903 work is public domain in the US. Du Bois died in 1963, so EU author-term protection runs through 2033.",
+        "evidenceUrl": "https://avalon.law.yale.edu/20th_century/dubois_01.asp",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "race",
+        "social-division",
+        "history",
+        "power"
+      ],
+      "semanticAxes": [
+        "race↔citizenship",
+        "division↔era"
+      ],
+      "frizzleQuestion": "Which social division defines an era precisely because people insist on treating it as somebody else’s problem?",
+      "brainFood": [
+        {
+          "label": "The Souls of Black Folk — Yale Avalon",
+          "url": "https://avalon.law.yale.edu/20th_century/dubois_01.asp",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full 1903 text transcription."
+        }
+      ],
+      "curatorNotes": "Retains the historical specificity of the color line while the question asks how epoch-defining divisions are normalized.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-chesterton-against-stream",
+      "text": "A dead thing can go with the stream, but only a living thing can go against it.",
+      "author": "G. K. Chesterton",
+      "work": "The Everlasting Man",
+      "publicationYear": 1925,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://ccel.org/ccel/chesterton/everlasting/everlasting.v.v.html",
+        "edition": "Christian Classics Ethereal Library full text",
+        "pageOrLocator": "The Five Deaths of the Faith",
+        "publicationYear": 1925,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the work text and Chesterton Society source list."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1925 publication is public domain in the US; Chesterton died in 1936, so EU term has expired.",
+        "evidenceUrl": "https://ccel.org/ccel/chesterton/everlasting/everlasting.v.v.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "conformity",
+        "resistance",
+        "life",
+        "change"
+      ],
+      "semanticAxes": [
+        "current↔agency",
+        "conformity↔vitality"
+      ],
+      "frizzleQuestion": "When does going against the current signal life and judgment, and when is it merely reflexive contrarianism?",
+      "brainFood": [
+        {
+          "label": "The Everlasting Man — CCEL",
+          "url": "https://ccel.org/ccel/chesterton/everlasting/everlasting.v.v.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full work text."
+        },
+        {
+          "label": "Chesterton Society — sourced quotations",
+          "url": "https://www.chesterton.org/quotations/timeless-truths/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Author-society source list corroborating work section."
+        }
+      ],
+      "curatorNotes": "Question prevents the line from becoming automatic praise of contrarianism.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-faraday-wonder-experiment",
+      "text": "Nothing is too wonderful to be true, if it be consistent with the laws of nature.",
+      "author": "Michael Faraday",
+      "work": "Laboratory Journal / The Life and Letters of Faraday",
+      "publicationYear": 1849,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://calteches.library.caltech.edu/3718/",
+        "edition": "Caltech historical article quoting Faraday's diary",
+        "pageOrLocator": "Laboratory journal entry 10,040, 19 March 1849; later Life and Letters, Vol. II",
+        "publicationYear": 1849,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence and diary date are supplied by Caltech and independent source lists; original journal/1870 page image was not retrieved here."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Faraday died in 1867; the journal and 1870 publication are public domain.",
+        "evidenceUrl": "https://calteches.library.caltech.edu/3718/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "wonder",
+        "experiment",
+        "nature",
+        "testability"
+      ],
+      "semanticAxes": [
+        "wonder↔testability",
+        "possibility↔law"
+      ],
+      "frizzleQuestion": "What extraordinary claim deserves investigation because it risks a clean experimental failure rather than escaping every possible test?",
+      "brainFood": [
+        {
+          "label": "The Genius of Michael Faraday — Caltech",
+          "url": "https://calteches.library.caltech.edu/3718/",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical article gives exact diary quote and date."
+        },
+        {
+          "label": "Faraday source locator",
+          "url": "https://www.motleybytes.com/w/Michael_Faraday_quotes",
+          "kind": "OTHER",
+          "verifiedAt": "2026-10-06",
+          "notes": "Secondary source records journal entry 10,040 and Life and Letters locator."
+        }
+      ],
+      "curatorNotes": "High-value science/wonder line; provenance remains SECONDARY_ONLY until the original page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-feynman-fool-yourself",
+      "text": "The first principle is that you must not fool yourself—and you are the easiest person to fool.",
+      "author": "Richard P. Feynman",
+      "work": "Cargo Cult Science — Caltech Commencement Address",
+      "publicationYear": 1974,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+        "edition": "Caltech archival transcription",
+        "pageOrLocator": "Commencement Address, 14 June 1974",
+        "publicationYear": 1974,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Caltech's archival transcript and Caltech Magazine."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1974 speech is still copyrighted; research reserve only unless publication rights are cleared.",
+        "evidenceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "self-deception",
+        "science",
+        "integrity",
+        "bias"
+      ],
+      "semanticAxes": [
+        "self-critique↔confidence",
+        "integrity↔persuasion"
+      ],
+      "frizzleQuestion": "Which safeguard would you design if the person most capable of deceiving your reasoning is also the person running it?",
+      "brainFood": [
+        {
+          "label": "Cargo Cult Science — Caltech Archive",
+          "url": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Caltech archival transcription of the 1974 address."
+        },
+        {
+          "label": "Feynman at 100 — Caltech Magazine",
+          "url": "https://magazine.caltech.edu/post/feynman-at-100",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Caltech reproduces and contextualizes the passage."
+        }
+      ],
+      "curatorNotes": "Exceptionally strong for epistemic hygiene, but explicitly not public-cleared.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-korzybski-map-territory",
+      "text": "A map is not the territory.",
+      "author": "Alfred Korzybski",
+      "work": "A Non-Aristotelian System and Its Necessity for Rigour in Mathematics and Physics",
+      "publicationYear": 1931,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/12266308/",
+        "edition": "Scholarly article citing Korzybski's formulation",
+        "pageOrLocator": "1931 paper; later reprinted in Science and Sanity",
+        "publicationYear": 1931,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact aphorism and work lineage are widely documented; original 1931 paper scan was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "EU: author term expired",
+          "US: 1931 publication not yet public domain in 2026"
+        ],
+        "basis": "Korzybski died in 1950, so EU author term has expired. A 1931 US publication remains protected through 2026.",
+        "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/12266308/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "models",
+        "representation",
+        "reality",
+        "abstraction"
+      ],
+      "semanticAxes": [
+        "map↔territory",
+        "model↔reality"
+      ],
+      "frizzleQuestion": "Which map in your life became dangerous when its usefulness tempted you to forget what it leaves out?",
+      "brainFood": [
+        {
+          "label": "Big data paradox — map/territory discussion",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/12266308/",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly context and citation to Korzybski."
+        },
+        {
+          "label": "Korzybski map/territory excerpt",
+          "url": "https://www.theintuitiveself.org/legacy/website/author/memoir/supplements/map_territory.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Excerpt from Science and Sanity illustrating the principle."
+        }
+      ],
+      "curatorNotes": "Keep SECONDARY_ONLY; US copyright expires soon but was not yet public domain on the retrieval date.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-mcluhan-medium-message",
+      "text": "The medium is the message.",
+      "author": "Marshall McLuhan",
+      "work": "Radio in the Future of Canada / later Understanding Media",
+      "publicationYear": 1958,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://mcluhansnewsciences.com/mcluhan/2019/04/the-medium-is-the-message/",
+        "edition": "Historical transcript and newspaper locator",
+        "pageOrLocator": "UBC conference talk; Victoria Daily Times, 6 May 1958, p. 21",
+        "publicationYear": 1958,
+        "retrievedAt": "2026-10-06",
+        "notes": "Source reproduces McLuhan's 1958 wording and newspaper locator, predating Understanding Media."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "McLuhan died in 1980 and the 1958 text remains copyrighted; research reserve only.",
+        "evidenceUrl": "https://mcluhansnewsciences.com/mcluhan/2019/04/the-medium-is-the-message/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "media",
+        "form",
+        "environment",
+        "communication"
+      ],
+      "semanticAxes": [
+        "medium↔content",
+        "environment↔message"
+      ],
+      "frizzleQuestion": "What does a medium make normal before anyone has argued about the content traveling through it?",
+      "brainFood": [
+        {
+          "label": "The medium is the message in 1958",
+          "url": "https://mcluhansnewsciences.com/mcluhan/2019/04/the-medium-is-the-message/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical source reconstruction with newspaper locator."
+        },
+        {
+          "label": "McLuhan Estate — common questions",
+          "url": "https://marshallmcluhan.org/common-questions/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Estate context on McLuhan's media terminology."
+        }
+      ],
+      "curatorNotes": "Ideal Billboard/meta-media quote, but rights are explicitly restricted.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-vonnegut-pretend",
+      "text": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+      "author": "Kurt Vonnegut",
+      "work": "Mother Night — 1966 Introduction",
+      "publicationYear": 1966,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.penguinrandomhouse.com/books/468048/kurt-vonnegut-novels-and-stories-1950-1962-loa-226-by-sidney-offit/hardcover/",
+        "edition": "Library of America authoritative edition listing via Penguin Random House",
+        "pageOrLocator": "Mother Night moral; introduction added in 1966",
+        "publicationYear": 1966,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the Library of America description and independent publication records."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Vonnegut died in 2007 and Mother Night remains copyrighted.",
+        "evidenceUrl": "https://www.penguinrandomhouse.com/books/468048/kurt-vonnegut-novels-and-stories-1950-1962-loa-226-by-sidney-offit/hardcover/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "identity",
+        "performance",
+        "role",
+        "self-formation"
+      ],
+      "semanticAxes": [
+        "performance↔identity",
+        "role↔self"
+      ],
+      "frizzleQuestion": "Which role, repeated long enough for practical reasons, would start rewriting the person who thought they were only performing it?",
+      "brainFood": [
+        {
+          "label": "Library of America Vonnegut volume — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/468048/kurt-vonnegut-novels-and-stories-1950-1962-loa-226-by-sidney-offit/hardcover/",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Authoritative edition description reproduces the moral."
+        },
+        {
+          "label": "Mother Night introduction provenance",
+          "url": "https://www.supersummary.com/mother-night/introduction-editors-note-summary/",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Confirms the line is from the introduction written in 1966."
+        }
+      ],
+      "curatorNotes": "Very KFB-compatible identity/kayfabe line; research only because copyright is active.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-tutu-person-through-persons",
+      "text": "A person is a person through other persons.",
+      "author": "Desmond Tutu",
+      "work": "God Has a Dream / Ubuntu formulation",
+      "publicationYear": 2004,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8526463/",
+        "edition": "Peer-reviewed article quoting Tutu 2004:25",
+        "pageOrLocator": "Tutu 2004, p. 25",
+        "publicationYear": 2004,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording and page citation verified in peer-reviewed literature and independent Ubuntu scholarship."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Tutu's 2004 text remains copyrighted.",
+        "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8526463/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ubuntu",
+        "personhood",
+        "community",
+        "interdependence"
+      ],
+      "semanticAxes": [
+        "self↔others",
+        "identity↔relation"
+      ],
+      "frizzleQuestion": "Which parts of a self exist only because other people repeatedly recognize, teach, challenge, or forgive them?",
+      "brainFood": [
+        {
+          "label": "Umunthu / Ubuntu study — PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8526463/",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Peer-reviewed source quotes Tutu with page locator."
+        },
+        {
+          "label": "Participation, Ubuntu and community — MDPI",
+          "url": "https://www.mdpi.com/2077-1444/10/1/57",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scholarly cross-check of Tutu's formulation."
+        }
+      ],
+      "curatorNotes": "Relational-personhood axis adds needed counterweight to individualist autonomy material.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-freud-ego-house",
+      "text": "The ego is not master in its own house.",
+      "author": "Sigmund Freud",
+      "work": "A Difficulty in the Path of Psycho-Analysis",
+      "publicationYear": 1917,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.freud.org.uk/2024/06/04/the-relevance-of-psychoanalysis-for-the-present-day/",
+        "edition": "Freud Museum London scholarly institutional source",
+        "pageOrLocator": "1917 essay; standard English rendering",
+        "publicationYear": 1917,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English phrase is used and attributed by the Freud Museum; a direct edition of the English translation was not retrieved."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Freud's underlying German text is public domain in the EU, but the exact English translation/publication used for this wording was not rights-cleared.",
+        "evidenceUrl": "https://www.freud.org.uk/2024/06/04/the-relevance-of-psychoanalysis-for-the-present-day/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "unconscious",
+        "agency",
+        "self-knowledge",
+        "desire"
+      ],
+      "semanticAxes": [
+        "conscious-self↔unconscious",
+        "intention↔drive"
+      ],
+      "frizzleQuestion": "If conscious intention is not master of the house, which hidden tenant has the strongest veto over your decisions?",
+      "brainFood": [
+        {
+          "label": "Freud Museum — relevance of psychoanalysis",
+          "url": "https://www.freud.org.uk/2024/06/04/the-relevance-of-psychoanalysis-for-the-present-day/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Institutional Freud source attributing and explaining the line."
+        },
+        {
+          "label": "Freud Museum — What is Psychoanalysis?",
+          "url": "https://www.freud.org.uk/schools/resources/what-is-psychoanalysis-part-1-is-it-weird/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent Freud Museum use of the same phrase."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY for exact translation provenance; keep research-restricted.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-dewey-audacity-imagination",
+      "text": "Every great advance in science has issued from a new audacity of imagination.",
+      "author": "John Dewey",
+      "work": "The Quest for Certainty",
+      "publicationYear": 1929,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.bonmots.com/source/the-quest-for-certainty",
+        "edition": "Source-authentication record with work/chapter citation",
+        "pageOrLocator": "The Copernican Revolution; p. 294 in 1929 edition",
+        "publicationYear": 1929,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording and page/work attribution are corroborated by multiple scholarly/science-history sources; direct 1929 page image was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1929 work is public domain in the US as of 2025; Dewey died in 1952, so EU term expired in 2022.",
+        "evidenceUrl": "https://www.bonmots.com/source/the-quest-for-certainty",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "science",
+        "imagination",
+        "hypothesis",
+        "discovery"
+      ],
+      "semanticAxes": [
+        "imagination↔rigor",
+        "speculation↔test"
+      ],
+      "frizzleQuestion": "Which problem remains unsolved because imagination has been treated as the enemy of rigor rather than a source of testable possibilities?",
+      "brainFood": [
+        {
+          "label": "The Quest for Certainty — authenticated quote record",
+          "url": "https://www.bonmots.com/source/the-quest-for-certainty",
+          "kind": "OTHER",
+          "verifiedAt": "2026-10-06",
+          "notes": "Work/chapter/page attribution."
+        },
+        {
+          "label": "Science-history citation to Dewey",
+          "url": "https://todayinsci.com/QuotationsCategories/A_Cat/Audacity-Quotations.htm",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent source gives 1929 p.294 locator."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY pending direct page scan, despite strong locator agreement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-holmes-law-experience",
+      "text": "The life of the law has not been logic: it has been experience.",
+      "author": "Oliver Wendell Holmes Jr.",
+      "work": "The Common Law",
+      "publicationYear": 1881,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2449/pg2449-images.html",
+        "edition": "Project Gutenberg public-domain edition",
+        "pageOrLocator": "Lecture I, opening page",
+        "publicationYear": 1881,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Gutenberg and independent early-edition records."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2449/pg2449-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "law",
+        "experience",
+        "history",
+        "institutions"
+      ],
+      "semanticAxes": [
+        "logic↔experience",
+        "rule↔history"
+      ],
+      "frizzleQuestion": "Which rule survives because of accumulated experience, and which survives merely because history gave it institutional inertia?",
+      "brainFood": [
+        {
+          "label": "The Common Law — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2449/pg2449-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        },
+        {
+          "label": "The Common Law — Google Books",
+          "url": "https://books.google.com/books/about/The_Common_Law.html?hl=en&id=xXouAAAAIAAJ&output=html_text",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Digitized early edition cross-check."
+        }
+      ],
+      "curatorNotes": "Useful for law, rules, bureaucracy, game design and institutional evolution.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-darwin-false-facts",
+      "text": "False facts are highly injurious to the progress of science, for they often endure long.",
+      "author": "Charles Darwin",
+      "work": "The Descent of Man",
+      "publicationYear": 1871,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Descent_of_Man_%28Darwin%29/Chapter_XXI",
+        "edition": "Public-domain edition transcription",
+        "pageOrLocator": "Chapter XXI, General Summary and Conclusion",
+        "publicationYear": 1871,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence opening verified in the chapter text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Descent_of_Man_%28Darwin%29/Chapter_XXI",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "facts",
+        "error",
+        "science",
+        "correction"
+      ],
+      "semanticAxes": [
+        "false-fact↔false-theory",
+        "authority↔falsification"
+      ],
+      "frizzleQuestion": "Why can a false fact be more dangerous than a false theory if theories invite argument but facts are treated as settled?",
+      "brainFood": [
+        {
+          "label": "The Descent of Man, Chapter XXI — Wikisource",
+          "url": "https://en.wikisource.org/wiki/The_Descent_of_Man_%28Darwin%29/Chapter_XXI",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain chapter text."
+        }
+      ],
+      "curatorNotes": "Pairs productively with Huxley: ignored facts vs false facts that enter the record.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-pasteur-prepared-mind",
+      "text": "In the fields of observation chance favors only the prepared mind.",
+      "author": "Louis Pasteur",
+      "work": "Speech at Douai",
+      "publicationYear": 1854,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALouis_Pasteur_Universit%C3%A9_de_Lille_1854-1857_dans_les_champs_de_l%27observation_le_hasard_ne_favorise_que_les_esprits_pr%C3%A9par%C3%A9s.pdf?uselang=fr",
+        "edition": "Scan of Pasteur's 1854 Douai speech",
+        "pageOrLocator": "7 December 1854",
+        "publicationYear": 1854,
+        "retrievedAt": "2026-10-06",
+        "notes": "Underlying French line is verified in the scanned historical source; English wording here is a literal research translation recorded by the archive description."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Pasteur's French original is public domain. The exact English research rendering has no identified historical translator in this batch.",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File%3ALouis_Pasteur_Universit%C3%A9_de_Lille_1854-1857_dans_les_champs_de_l%27observation_le_hasard_ne_favorise_que_les_esprits_pr%C3%A9par%C3%A9s.pdf?uselang=fr",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "observation",
+        "chance",
+        "preparation",
+        "discovery"
+      ],
+      "semanticAxes": [
+        "chance↔preparation",
+        "observation↔knowledge"
+      ],
+      "frizzleQuestion": "What preparation makes a lucky observation scientifically valuable instead of merely surprising?",
+      "brainFood": [
+        {
+          "label": "Pasteur 1854 speech — Wikimedia Commons scan",
+          "url": "https://commons.wikimedia.org/wiki/File%3ALouis_Pasteur_Universit%C3%A9_de_Lille_1854-1857_dans_les_champs_de_l%27observation_le_hasard_ne_favorise_que_les_esprits_pr%C3%A9par%C3%A9s.pdf?uselang=fr",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical scan of the French speech."
+        }
+      ],
+      "curatorNotes": "Exact English translation rights remain unresolved; underlying French provenance is strong.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-poincare-logic-intuition",
+      "text": "It is by logic that we prove, but by intuition that we discover.",
+      "author": "Henri Poincaré",
+      "work": "Science and Method",
+      "publicationYear": 1908,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://todayinsci.com/P/Poincare_Jules/PoincareJules-Quotations.htm",
+        "edition": "Source record citing Francis Maitland translation",
+        "pageOrLocator": "Science and Method, Maitland translation, p. 129",
+        "publicationYear": 1914,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English line and page locator are consistently cited; direct 1914 page image was not retrieved."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Poincaré's French original is public domain and the 1914 US edition is old, but this batch did not establish the translator's EU term.",
+        "evidenceUrl": "https://todayinsci.com/P/Poincare_Jules/PoincareJules-Quotations.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "logic",
+        "intuition",
+        "discovery",
+        "proof"
+      ],
+      "semanticAxes": [
+        "discovery↔proof",
+        "intuition↔logic"
+      ],
+      "frizzleQuestion": "What can intuition discover that logic cannot generate—and what must logic do before that discovery deserves trust?",
+      "brainFood": [
+        {
+          "label": "Poincaré quotation with edition/page locator",
+          "url": "https://todayinsci.com/P/Poincare_Jules/PoincareJules-Quotations.htm",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Secondary source gives Maitland 1914, p.129 locator."
+        }
+      ],
+      "curatorNotes": "Keep SECONDARY_ONLY / rights-unknown until the exact 1914 translation page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-wells-light-truth",
+      "text": "The way to right wrongs is to turn the light of truth upon them.",
+      "author": "Ida B. Wells",
+      "work": "Attributed public statement / investigative journalism maxim",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.usmint.gov/news/inside-the-mint/ida-b-wells-light-of-truth",
+        "edition": "United States Mint historical profile",
+        "pageOrLocator": "Exact primary work/date not supplied",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording is attributed by the U.S. Mint; this batch did not locate the original speech/article."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Wells died in 1931, but without the original work/date this batch does not make a publication-status claim for the exact sentence.",
+        "evidenceUrl": "https://www.usmint.gov/news/inside-the-mint/ida-b-wells-light-of-truth",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "truth",
+        "investigation",
+        "wrongdoing",
+        "exposure"
+      ],
+      "semanticAxes": [
+        "truth↔concealment",
+        "exposure↔accountability"
+      ],
+      "frizzleQuestion": "Which wrong persists mainly because keeping it dim is easier than defending it in full light?",
+      "brainFood": [
+        {
+          "label": "U.S. Mint — Ida B. Wells and the Light of Truth",
+          "url": "https://www.usmint.gov/news/inside-the-mint/ida-b-wells-light-of-truth",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Official U.S. Mint profile attributes the exact line."
+        }
+      ],
+      "curatorNotes": "High thematic value but intentionally SECONDARY_ONLY and rights-unknown until original locator is found.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-mill-custom-choice",
+      "text": "He who does anything because it is the custom, makes no choice.",
+      "author": "John Stuart Mill",
+      "work": "On Liberty",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=3",
+        "edition": "Econlib public-domain text",
+        "pageOrLocator": "Chapter III",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in full text and a digitized early edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=3",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "custom",
+        "choice",
+        "individuality",
+        "habit"
+      ],
+      "semanticAxes": [
+        "custom↔choice",
+        "conformity↔faculty"
+      ],
+      "frizzleQuestion": "What capacity weakens when a person repeatedly makes correct choices for no reason other than that everyone else already made them?",
+      "brainFood": [
+        {
+          "label": "On Liberty, Chapter III — Econlib",
+          "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=3",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        },
+        {
+          "label": "On Liberty — Google Books",
+          "url": "https://books.google.de/books?id=3fIQAAAAYAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Digitized early edition cross-check."
+        }
+      ],
+      "curatorNotes": "Distinct from prior Mill adversarial-inquiry quote; this one targets unused agency.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-emerson-unsettled-hope",
+      "text": "People wish to be settled; only as far as they are unsettled is there any hope for them.",
+      "author": "Ralph Waldo Emerson",
+      "work": "Essays: First Series — Circles",
+      "publicationYear": 1841,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/1832/Emerson_1236_02_EBk_v6.0.pdf",
+        "edition": "Online Library of Liberty edition of Emerson's Works",
+        "pageOrLocator": "Essays: First Series, Circles; OLL p. 113",
+        "publicationYear": 1841,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the edition text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/1832/Emerson_1236_02_EBk_v6.0.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "change",
+        "uncertainty",
+        "growth",
+        "stability"
+      ],
+      "semanticAxes": [
+        "settlement↔growth",
+        "stability↔hope"
+      ],
+      "frizzleQuestion": "Which form of stability has become valuable enough that you no longer notice what learning it prevents?",
+      "brainFood": [
+        {
+          "label": "Emerson Works, Vol. 2 — Online Library of Liberty",
+          "url": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/1832/Emerson_1236_02_EBk_v6.0.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain edition; Circles passage."
+        }
+      ],
+      "curatorNotes": "Good for changing worlds, institutions and character arcs without simple novelty worship.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-thoreau-look-see",
+      "text": "The question is not what you look at, but what you see.",
+      "author": "Henry David Thoreau",
+      "work": "Journal",
+      "publicationYear": 1851,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.walden.org/what-we-do/library/thoreau/mis-quotations/",
+        "edition": "Walden Woods Project quotation verification",
+        "pageOrLocator": "Journal, 5 August 1851",
+        "publicationYear": 1851,
+        "retrievedAt": "2026-10-06",
+        "notes": "Walden Woods Project identifies this as Thoreau's authentic wording and distinguishes it from the later popular paraphrase."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Thoreau died in 1862; the journal text is public domain.",
+        "evidenceUrl": "https://www.walden.org/what-we-do/library/thoreau/mis-quotations/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "perception",
+        "attention",
+        "interpretation",
+        "observation"
+      ],
+      "semanticAxes": [
+        "looking↔seeing",
+        "stimulus↔interpretation"
+      ],
+      "frizzleQuestion": "What changes when two people face the same scene but one has learned how to see a pattern the other cannot yet detect?",
+      "brainFood": [
+        {
+          "label": "Walden Woods Project — Thoreau misquotation page",
+          "url": "https://www.walden.org/what-we-do/library/thoreau/mis-quotations/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Authoritative verification of the authentic Journal wording and date."
+        },
+        {
+          "label": "Walden Woods Project — quotation page",
+          "url": "https://www.walden.org/?quotation=observation-quote-4",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent site entry for the authentic sentence."
+        }
+      ],
+      "curatorNotes": "Specifically preserves Thoreau's interrogative original, not Richardson's later declarative paraphrase.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-maxwell-conscious-ignorance",
+      "text": "Thoroughly conscious ignorance is the prelude to every real advance in science.",
+      "author": "James Clerk Maxwell",
+      "work": "Letter to R. B. Litchfield",
+      "publicationYear": 1858,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.aaojournal.org/article/S0161-6420%2813%2900219-4/fulltext",
+        "edition": "Scholarly discussion citing Maxwell",
+        "pageOrLocator": "Letter to R. B. Litchfield, 5 February 1858; Campbell & Garnett Life, pp. 305–306",
+        "publicationYear": 1858,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording and letter locator are consistently cited; original Life and Letters page image was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Maxwell died in 1879 and the nineteenth-century letter/biography publication are public domain.",
+        "evidenceUrl": "https://www.aaojournal.org/article/S0161-6420%2813%2900219-4/fulltext",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ignorance",
+        "science",
+        "questions",
+        "discovery"
+      ],
+      "semanticAxes": [
+        "ignorance↔knowledge",
+        "unknown↔advance"
+      ],
+      "frizzleQuestion": "Which unknown becomes scientifically useful only after you can state precisely what you do not know about it?",
+      "brainFood": [
+        {
+          "label": "Ophthalmology — In Praise of Ignorance",
+          "url": "https://www.aaojournal.org/article/S0161-6420%2813%2900219-4/fulltext",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly source citing Maxwell's line."
+        },
+        {
+          "label": "Maxwell locator reproduction",
+          "url": "https://www.stgregoriosudaipur.ac.in/pdf/computers-science-math/beyond-einstein-newton-manjunath-obooko.pdf",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Reproduces the letter context and Campbell/Garnett locator."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY until original nineteenth-century book scan is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r03-george-reckless-change",
+      "text": "There is danger in reckless change; but greater danger in blind conservatism.",
+      "author": "Henry George",
+      "work": "Social Problems",
+      "publicationYear": 1883,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/The_writings_of_Henry_George_.._%28IA_writingsofhenryg03geor%29.pdf",
+        "edition": "Digitized collected writings / Social Problems",
+        "pageOrLocator": "Chapter I, The Increasing Importance of Social Questions, p. 7",
+        "publicationYear": 1883,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in a digitized edition and full-text chapter transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/The_writings_of_Henry_George_.._%28IA_writingsofhenryg03geor%29.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "change",
+        "conservatism",
+        "institutions",
+        "adaptation"
+      ],
+      "semanticAxes": [
+        "reckless-change↔blind-stasis",
+        "adaptation↔inertia"
+      ],
+      "frizzleQuestion": "How can a system distinguish prudent continuity from the kind of conservatism that merely postpones an unavoidable adaptation?",
+      "brainFood": [
+        {
+          "label": "Henry George collected writings — digitized PDF",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/The_writings_of_Henry_George_.._%28IA_writingsofhenryg03geor%29.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Digitized source with passage on p. 7."
+        },
+        {
+          "label": "Social Problems, Chapter I — full text",
+          "url": "https://wealthandwant.com/HG/SP/SP01_Increasing_Importance_of_Social_Questions.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-text transcription."
+        }
+      ],
+      "curatorNotes": "Useful for world/institution evolution; question preserves the tension between destabilizing novelty and pathological stasis.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
