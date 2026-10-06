@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.15",
-  "updatedAt": "2026-10-06T23:10:00+02:00",
+  "revision": "2026-10-07.1",
+  "updatedAt": "2026-10-07T01:18:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Production Hub v10 restores the accepted v2 shell and keeps GitHub main live board/live CSS plus browser-local state separated. #364 validation passed; normal board and simple style updates require refresh only, not another Site publish."
+    "note": "Production Hub live data remains GitHub-driven. UFO Tractor Beam Event Lab is now PASS/TUNE as an isolated donor: Rick's UFO is V1-primary, r2 custom tractor-beam grammar accepted, Kenney variants remain optional donors/backup, audio still needs human audition, and runtime integration waits for Architecture Freeze."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -54,13 +54,13 @@
   "parallel": [
     {
       "id": "claude-design-ufo-event-lab",
-      "title": "READY · Claude Design · UFO Tractor Beam Event Lab",
-      "summary": "Isolated visual/audio proof only: compare source-proven Kenney UFO A/B/C/D, use existing beam/burst donors, prove arrival/hover/beam/dematerialize/rematerialize on prop, Resident-sized and castle-sized targets, audition pinned Audio-library candidates. Architect beam targeting/particles modularly so later Destruction Beam and Terraform/Create Beam can reuse the presentation grammar; do not implement those future modes now.",
-      "badge": "READY · SAFE PARALLEL",
-      "action": "Claude Design Brief öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
-      "executor": "Claude Design · isolated Event Lab",
-      "nextExecutor": "Work/Astra runtime adapter only after Architecture Freeze"
+      "title": "PASS/TUNE · UFO Tractor Beam Event Lab · donor ready",
+      "summary": "Isolated r2 Event Lab completed. Rick's UFO is V1-primary; deterministic tractor-beam phases, clay breakup/transfer/return, prop/pet/castle scaling and semantic hooks are ready as donor input. Kenney A–D remain swappable alternatives; Kenney beam mesh is backup/not preferred for V1. Audio map is still unauditioned by ear. Runtime integration waits for Architecture Freeze.",
+      "badge": "PASS/TUNE · DONOR READY",
+      "action": "UFO Handover öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20UFO%20Tractor%20Beam%20Event%20Lab/KFB_UFO_TRACTOR_BEAM_EVENT_LAB_2026-10-07/ufo-event-lab/HANDOVER_WSA_2026-10-07.md",
+      "executor": "Claude Design · completed isolated donor",
+      "nextExecutor": "ChatGPT Work/Astra · Architecture Freeze then explicit UFO integration"
     },
     {
       "id": "pr-365-audio-integration-ready",
@@ -96,22 +96,21 @@
   "briefings": [
     {
       "id": "brief-claude-ufo-event-lab",
-      "title": "Claude Design · UFO Tractor Beam Event Lab",
-      "badge": "STARTABLE NOW",
-      "status": "ready",
-      "provider": "Claude Design · isolated visual/audio lab",
-      "desc": "Source-first UFO/beam/Clay-dematerialization proof with existing SFX. V1 is Transfer only, but its beam/target/particle grammar must remain reusable for later Destruction and Terraform/Create Beam modes.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
+      "title": "UFO Tractor Beam Event Lab · PASS/TUNE donor",
+      "badge": "DONE · DONOR READY",
+      "status": "hold",
+      "provider": "Claude Design · completed isolated Event Lab",
+      "desc": "r2 is accepted as a PASS/TUNE donor. Rick's UFO + custom cone beam grammar are the V1 direction; Kenney UFOs/beam remain optional alternatives. Audio selection still needs ear review before runtime lock.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20UFO%20Tractor%20Beam%20Event%20Lab/KFB_UFO_TRACTOR_BEAM_EVENT_LAB_2026-10-07/ufo-event-lab/RETURN.md",
       "tags": [
         "ufo",
-        "hunky dory",
         "tractor beam",
-        "claude design",
-        "vfx",
-        "audio",
-        "world event"
+        "pass tune",
+        "donor ready",
+        "rick ufo",
+        "architecture freeze"
       ],
-      "prompt": "Work from georg-doc/kayfabizarro main.\nRead skills/chat/START_HERE.md, then skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md and its UFO/audio prep sources.\nBuild only the isolated Transfer/Tractor Event Lab. Show the actual Kenney UFO donors A/B/C/D in isolation before choosing one. Prove arrival/hover/beam/dematerialize/rematerialize for small, Resident-sized and castle-sized targets and audition only existing repo SFX first.\nKeep beam targeting/bounds, particle/chunk breakup and timing modular because later the same presentation family may support a Destruction Beam using KFB Seed World Mech Destruction POC 01 patterns and a Terraform/Create Beam using the clay build/rebuild grammar.\nDo NOT implement Destruction Beam, Terraform/Create Beam, persistence, Open World #360/PR #348 changes, Blender, or Hunky/Dory characters in V1. Return exact sources, visual/audio evidence, changed files, unresolved items and one next gate."
+      "prompt": "Do not restart the UFO design lab. Read the returned UFO HANDOVER_WSA_2026-10-07.md and EVENT_CONTRACT.json only when the post-Coworker Architecture Freeze reaches the UFO integration seam."
     },
     {
       "id": "brief-work-coworker-intake-camera-freeze",
@@ -204,6 +203,11 @@
       "title": "Resident Reaction Matrix",
       "summary": "World/social event → Affect → Pose/Gesture/Face/Emanata → recovery.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.md"
+    },
+    {
+      "title": "UFO Tractor Beam · returned donor",
+      "summary": "PASS/TUNE isolated donor: Rick's UFO, deterministic r2 beam grammar, event contract, WSA handover and open integration TUNEs.",
+      "url": "https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20UFO%20Tractor%20Beam%20Event%20Lab/KFB_UFO_TRACTOR_BEAM_EVENT_LAB_2026-10-07"
     }
   ],
   "surfaceRoles": {
