@@ -261,3 +261,34 @@ New files:
 - `SUPPLEMENTARY_COMIC_LANGUAGE_SOURCES_01.json`
 
 No Site/runtime/deployment change.
+
+
+## Expanded Librarian import + Browser/Viewer R2 prep · 2026-10-06
+
+Status: **DATA IMPORT BRIEF READY · R2 UX FINDINGS READY · SITE UNCHANGED**
+
+Validation: **10/10 PASS**
+
+1. PASS · Etherington total is 53
+2. PASS · Supplementary source count is 5
+3. PASS · Expected built-in total is 58
+4. PASS · KFB Emanata target slots = 8
+5. PASS · Taxonomy says presentation-only
+6. PASS · Import brief pins existing Site only
+7. PASS · Import brief preserves browser-local cards
+8. PASS · Import brief requires 58 built-ins
+9. PASS · R2 brief separates Work→Claude Design→Work
+10. PASS · R2 brief records current screenshot hierarchy problems
+
+Prepared:
+- `GRAPHIC_FX_EMANATA_TARGET_TAXONOMY_2026-10-06.json`
+- `BRIEF_WORK_IMPORT_EXPANDED_STYLE_REFERENCE_DATA_2026-10-06.md`
+- `STYLE_REFERENCE_BROWSER_VIEWER_R2_UX_FINDINGS_2026-10-06.md`
+
+Expected built-in corpus after Work import:
+- 53 Etherington references
+- 5 supplementary professional/academic sources
+- **58 built-in reference/source records**
+- plus Georg's existing browser-local cards/sets, preserved rather than replaced.
+
+R2 redesign remains a separate later lane.
