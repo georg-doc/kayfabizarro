@@ -173,3 +173,32 @@ Research policy:
 
 Design-first routing is documented in:
 `ETHERINGTON_DESIGN_FIRST_ENVIRONMENT_COMIC_VFX_2026-10-06.md`
+
+
+## Claude Design GitHub job packets · Environment + Comic/VFX · 2026-10-06
+
+Status: **READY FOR CLAUDE DESIGN · PRIVATE SITE ACCESS NOT REQUIRED**
+
+Validation: **12/12 PASS**
+
+1. PASS · Destruction/Impact PACK parses as `kfb.style-reference-pack/1`.
+2. PASS · Environment PACK parses as `kfb.style-reference-pack/1`.
+3. PASS · Destruction/Impact pack contains exactly 6 curated references.
+4. PASS · Environment pack contains exactly 6 curated references.
+5. PASS · all 12 source URLs use the official Etherington blog domain.
+6. PASS · all 12 references start with `sourceInspectedInIsolation=false`.
+7. PASS · neither packet requires access to the private Asset Librarian Site.
+8. PASS · Destruction/Impact packet pins the existing Mech/Minigun/Rocket destruction POC as functional donor only.
+9. PASS · both job briefs require a mandatory source-isolation pass.
+10. PASS · umbrella brief routes both job folders.
+11. PASS · no reference ID overlaps between the two jobs.
+12. PASS · both packets explicitly forbid runtime mutation.
+
+Prepared jobs:
+- `tools/asset_registry/librarian/reference-packs/claude-design/kfb-destruction-impact-01/`
+- `tools/asset_registry/librarian/reference-packs/claude-design/kfb-environment-mass-01/`
+
+Umbrella brief:
+`BRIEF_CLAUDE_DESIGN_ENVIRONMENT_COMIC_VFX_01_2026-10-06.md`
+
+No Site, ToolBox, Hub, runtime or deployment change is part of this checkpoint.
