@@ -1,0 +1,1657 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T18:18:00Z",
+  "purpose": "Eighth unmapped quality-first reserve, adding mathematics/chance, bureaucracy/administration, media/propaganda, childhood/play and exploration/discovery for deeper long-session Billboard rotation.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Expand semantic and tonal diversity while preserving a large non-repeating reserve for later deck/island/Billboard context mapping.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "clusters": {
+    "mathematics-chance": 6,
+    "bureaucracy-administration": 6,
+    "media-propaganda": 6,
+    "childhood-play": 6,
+    "exploration-discovery": 6
+  },
+  "candidates": [
+    {
+      "id": "qr-r08-laplace-common-sense-calculus",
+      "text": "the theory of probabilities is at bottom only common sense reduced to calculus",
+      "author": "Pierre-Simon Laplace",
+      "work": "A Philosophical Essay on Probabilities",
+      "publicationYear": 1814,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+        "edition": "F. W. Truscott and F. L. Emory translation, 1902",
+        "pageOrLocator": "Concluding paragraph; printed p. 196",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain English translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Laplace's text and the 1902 Truscott/Emory translation are public domain; the translators died in 1937 and 1919.",
+        "evidenceUrl": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "probability",
+        "common-sense",
+        "calculation",
+        "uncertainty"
+      ],
+      "semanticAxes": [
+        "intuition↔calculation",
+        "uncertainty↔quantification"
+      ],
+      "frizzleQuestion": "Which intuition becomes more trustworthy after calculation—and which calculation merely gives false precision to a bad intuition?",
+      "brainFood": [
+        {
+          "label": "Laplace, Philosophical Essay on Probabilities — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "1902 public-domain translation; concluding paragraph."
+        }
+      ],
+      "curatorNotes": "Probability as disciplined common sense, not as an oracle that removes uncertainty.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-laplace-life-probability",
+      "text": "the most important questions of life, which are indeed for the most part only problems of probability.",
+      "author": "Pierre-Simon Laplace",
+      "work": "A Philosophical Essay on Probabilities",
+      "publicationYear": 1814,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+        "edition": "F. W. Truscott and F. L. Emory translation, 1902",
+        "pageOrLocator": "Chapter I, Introduction; printed p. 1",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain English translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Laplace's text and the 1902 Truscott/Emory translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "probability",
+        "decision-making",
+        "life",
+        "uncertainty"
+      ],
+      "semanticAxes": [
+        "certainty↔decision",
+        "life↔probability"
+      ],
+      "frizzleQuestion": "Which important decision are you pretending is a certainty because admitting a probability would make responsibility harder?",
+      "brainFood": [
+        {
+          "label": "Laplace, Philosophical Essay — Introduction",
+          "url": "https://www.gutenberg.org/files/58881/58881-h/58881-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "1902 public-domain translation; Chapter I."
+        }
+      ],
+      "curatorNotes": "A broad decision-making quote; distinct from the calculus/common-sense formulation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-poincare-same-name",
+      "text": "mathematics is the art of giving the same name to different things.",
+      "author": "Henri Poincaré",
+      "work": "Science and Method — The Future of Mathematics",
+      "publicationYear": 1908,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://old.maa.org/press/periodicals/convergence/quotations-in-context-poincare",
+        "edition": "Authorized George Bruce Halsted English translation cited by MAA",
+        "pageOrLocator": "The Future of Mathematics; Halsted 1913, p. 375",
+        "publicationYear": 1913,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording and translation lineage verified by the Mathematical Association of America and MacTutor."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Poincaré's text and Halsted's 1913 English translation are public domain.",
+        "evidenceUrl": "https://old.maa.org/press/periodicals/convergence/quotations-in-context-poincare",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "mathematics",
+        "abstraction",
+        "structure",
+        "language"
+      ],
+      "semanticAxes": [
+        "difference↔structure",
+        "naming↔abstraction"
+      ],
+      "frizzleQuestion": "When does giving different things the same name reveal a deep structure rather than erase a difference that matters?",
+      "brainFood": [
+        {
+          "label": "MAA — Poincaré quotation in context",
+          "url": "https://old.maa.org/press/periodicals/convergence/quotations-in-context-poincare",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Source history plus authorized English wording."
+        },
+        {
+          "label": "Poincaré — Future of Mathematics",
+          "url": "https://mathshistory.st-andrews.ac.uk/Extras/Poincare_Future/",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-context cross-check."
+        }
+      ],
+      "curatorNotes": "Excellent abstraction mechanic; avoids the misleading reading that mathematics merely confuses labels.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-galton-count",
+      "text": "Whenever you can, count.",
+      "author": "Francis Galton",
+      "work": "Personal motto recorded in The Life, Letters and Labours of Francis Galton",
+      "publicationYear": 1914,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://galton.org/cgi-bin/searchImages/galton/search/pearson/vol2/pages/vol2_0400.htm",
+        "edition": "Karl Pearson biography, Vol. II",
+        "pageOrLocator": "Biographical discussion of Galton's registrators and counting habits",
+        "publicationYear": 1914,
+        "retrievedAt": "2026-10-06",
+        "notes": "Pearson explicitly records this as Galton's motto; no first-person Galton document was retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Galton died in 1911 and Pearson's 1914 biography is public domain.",
+        "evidenceUrl": "https://galton.org/cgi-bin/searchImages/galton/search/pearson/vol2/pages/vol2_0400.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "measurement",
+        "counting",
+        "statistics",
+        "observation"
+      ],
+      "semanticAxes": [
+        "impression↔count",
+        "anecdote↔measurement"
+      ],
+      "frizzleQuestion": "What changes when something you have only described qualitatively is counted—and what important quality disappears in the count?",
+      "brainFood": [
+        {
+          "label": "Pearson, Life of Francis Galton Vol. II",
+          "url": "https://galton.org/cgi-bin/searchImages/galton/search/pearson/vol2/pages/vol2_0400.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan/transcription recording Galton's motto."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY for direct Galton provenance; useful precisely because the question pushes back against quantification fetishism.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-jevons-quantity-knowledge",
+      "text": "the theory of probability deals with quantity of knowledge",
+      "author": "William Stanley Jevons",
+      "work": "The Principles of Science",
+      "publicationYear": 1874,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/74864/pg74864-images.html",
+        "edition": "1883 stereotyped edition",
+        "pageOrLocator": "Chapter X, The Theory of Probability; printed p. 199",
+        "publicationYear": 1883,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Jevons's text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/74864/pg74864-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "probability",
+        "knowledge",
+        "ignorance",
+        "belief"
+      ],
+      "semanticAxes": [
+        "knowledge↔ignorance",
+        "belief↔evidence"
+      ],
+      "frizzleQuestion": "How should confidence change when probability is treated as a measure of partial knowledge rather than strength of belief?",
+      "brainFood": [
+        {
+          "label": "Jevons, Principles of Science — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/74864/pg74864-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Chapter X."
+        }
+      ],
+      "curatorNotes": "Good bridge between probability and epistemic humility.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-russell-math-beauty",
+      "text": "Mathematics, rightly viewed, possesses not only truth, but supreme beauty",
+      "author": "Bertrand Russell",
+      "work": "The Study of Mathematics",
+      "publicationYear": 1907,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/25447/pg25447-images.html",
+        "edition": "Mysticism and Logic and Other Essays, 1917",
+        "pageOrLocator": "The Study of Mathematics; printed p. 60",
+        "publicationYear": 1907,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact opening clause verified in Project Gutenberg and the Bertrand Russell Research Centre."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain by publication date",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1907/1917 publication is public domain in the US. Russell died in 1970, so EU author-term protection remains through 2040.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/25447/pg25447-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "mathematics",
+        "beauty",
+        "truth",
+        "aesthetics"
+      ],
+      "semanticAxes": [
+        "truth↔beauty",
+        "proof↔aesthetic-judgment"
+      ],
+      "frizzleQuestion": "Why can mathematical beauty feel like evidence before it has become proof—and when does that feeling mislead?",
+      "brainFood": [
+        {
+          "label": "Russell, Mysticism and Logic — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/25447/pg25447-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "The Study of Mathematics, p. 60."
+        },
+        {
+          "label": "Bertrand Russell Research Centre — Quotable Russell",
+          "url": "https://russell.humanities.mcmaster.ca/about-russell/the-quotable-russell/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent authoritative wording cross-check."
+        }
+      ],
+      "curatorNotes": "Jurisdiction-sensitive; research candidate, not globally public-cleared.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-paine-government-necessary-evil",
+      "text": "Society in every state is a blessing, but government even in its best state is but a necessary evil",
+      "author": "Thomas Paine",
+      "work": "Common Sense",
+      "publicationYear": 1776,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://gutenberg.org/files/147/147-h/147-h.htm",
+        "edition": "1776 text transcription",
+        "pageOrLocator": "Of the Origin and Design of Government in General",
+        "publicationYear": 1776,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Project Gutenberg and Cambridge's edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://gutenberg.org/files/147/147-h/147-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "government",
+        "society",
+        "administration",
+        "necessity"
+      ],
+      "semanticAxes": [
+        "society↔government",
+        "coordination↔coercion"
+      ],
+      "frizzleQuestion": "Which collective problem truly requires government, and which is being handed to government because nobody else wants responsibility for it?",
+      "brainFood": [
+        {
+          "label": "Common Sense — Project Gutenberg",
+          "url": "https://gutenberg.org/files/147/147-h/147-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain 1776 text."
+        }
+      ],
+      "curatorNotes": "Institutional necessity presented as a cost/benefit problem, not as an anti-state endpoint.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-thoreau-government-not-at-all",
+      "text": "That government is best which governs not at all",
+      "author": "Henry David Thoreau",
+      "work": "Civil Disobedience",
+      "publicationYear": 1849,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://sourcebooks.web.fordham.edu/mod/1846thoreau-civdis00.asp",
+        "edition": "Fordham Modern History Sourcebook transcription",
+        "pageOrLocator": "Opening paragraph",
+        "publicationYear": 1849,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://sourcebooks.web.fordham.edu/mod/1846thoreau-civdis00.asp",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "government",
+        "self-government",
+        "authority",
+        "administration"
+      ],
+      "semanticAxes": [
+        "government↔self-rule",
+        "authority↔readiness"
+      ],
+      "frizzleQuestion": "What capacities would citizens need before less government produced more self-government rather than merely more private power?",
+      "brainFood": [
+        {
+          "label": "Thoreau, Civil Disobedience — Fordham",
+          "url": "https://sourcebooks.web.fordham.edu/mod/1846thoreau-civdis00.asp",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay transcription."
+        }
+      ],
+      "curatorNotes": "Question restores Thoreau's own conditional context: 'when men are prepared for it.'",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-mill-worth-state",
+      "text": "The worth of a State, in the long run, is the worth of the individuals composing it",
+      "author": "John Stuart Mill",
+      "work": "On Liberty",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=5",
+        "edition": "Econlib public-domain text",
+        "pageOrLocator": "Chapter V, Applications",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Econlib and a validated fourth-edition scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=5",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "government",
+        "administration",
+        "individuals",
+        "capacity"
+      ],
+      "semanticAxes": [
+        "state-capacity↔human-capacity",
+        "administration↔development"
+      ],
+      "frizzleQuestion": "When does improving administrative machinery begin shrinking the capacities of the people the machinery was built to serve?",
+      "brainFood": [
+        {
+          "label": "On Liberty, Chapter V — Econlib",
+          "url": "https://www.econlib.org/library/Mill/mlLbty.html?chapter_num=5",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full public-domain text."
+        },
+        {
+          "label": "On Liberty 4th ed. p. 207 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Page%3AOn_Liberty_%284th_Edition%29.djvu/207",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan cross-check."
+        }
+      ],
+      "curatorNotes": "Direct administration-versus-human-capacity tension.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-tocqueville-small-rules",
+      "text": "It covers the surface of society with a network of small complicated rules, minute and uniform",
+      "author": "Alexis de Tocqueville",
+      "work": "Democracy in America",
+      "publicationYear": 1840,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+        "edition": "Henry Reeve public-domain translation",
+        "pageOrLocator": "Volume II, Book IV, Chapter VI",
+        "publicationYear": 1840,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Wikisource and the 1840 Reeve edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Tocqueville's text and Henry Reeve's 1840 translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "bureaucracy",
+        "rules",
+        "soft-control",
+        "administration"
+      ],
+      "semanticAxes": [
+        "rule-density↔agency",
+        "uniformity↔initiative"
+      ],
+      "frizzleQuestion": "How many individually reasonable rules can accumulate before nobody can move without asking a system for permission?",
+      "brainFood": [
+        {
+          "label": "Democracy in America II.4.6 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Reeve translation."
+        }
+      ],
+      "curatorNotes": "Separate from the previously stored Tocqueville restraint quote; this candidate focuses on rule accumulation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-burke-bad-laws",
+      "text": "Bad laws are the worst sort of tyranny.",
+      "author": "Edmund Burke",
+      "work": "Speech on the Acts of Uniformity / collected political writings",
+      "publicationYear": 1772,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.originalsources.com/Document.aspx?DocID=T1VSFXCI9ERJKF2",
+        "edition": "Public-domain collected Burke source",
+        "pageOrLocator": "Section titled Bad Laws Produce Base Subserviency",
+        "publicationYear": 1772,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the collected source text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.originalsources.com/Document.aspx?DocID=T1VSFXCI9ERJKF2",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "law",
+        "bureaucracy",
+        "tyranny",
+        "rules"
+      ],
+      "semanticAxes": [
+        "law↔tyranny",
+        "formal-rule↔justice"
+      ],
+      "frizzleQuestion": "What makes a bad law more dangerous than an arbitrary bad decision precisely because the law can operate routinely?",
+      "brainFood": [
+        {
+          "label": "Burke — Bad Laws Produce Base Subserviency",
+          "url": "https://www.originalsources.com/Document.aspx?DocID=T1VSFXCI9ERJKF2",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collected text containing the sentence."
+        }
+      ],
+      "curatorNotes": "Short institutional rule-of-law tension; provenance tied to a collected Burke section rather than a quote aggregator.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-bagehot-institutions-deadly",
+      "text": "The whole history of civilisation is strewn with creeds and institutions which were invaluable at first, and deadly afterwards.",
+      "author": "Walter Bagehot",
+      "work": "Physics and Politics",
+      "publicationYear": 1872,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/2166/Bagehot_1451-08_EBk_v6.0.pdf",
+        "edition": "Online Library of Liberty collected works",
+        "pageOrLocator": "Physics and Politics; OLL PDF p. 35",
+        "publicationYear": 1872,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the collected works and independent historical quotations."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/2166/Bagehot_1451-08_EBk_v6.0.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "institutions",
+        "bureaucracy",
+        "path-dependence",
+        "obsolescence"
+      ],
+      "semanticAxes": [
+        "adaptation↔inertia",
+        "solution↔legacy-cost"
+      ],
+      "frizzleQuestion": "Which institution is defended most fiercely because people remember what it once solved rather than what it now does?",
+      "brainFood": [
+        {
+          "label": "Bagehot, Works Vol. VIII — OLL",
+          "url": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/2166/Bagehot_1451-08_EBk_v6.0.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collected text of Physics and Politics."
+        }
+      ],
+      "curatorNotes": "Institutional half-life: successful solutions can become inherited hazards.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-lippmann-define-see",
+      "text": "For the most part we do not first see, and then define, we define first and then see.",
+      "author": "Walter Lippmann",
+      "work": "Public Opinion",
+      "publicationYear": 1922,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Public_Opinion/Chapter_6",
+        "edition": "1922 scan-backed transcription",
+        "pageOrLocator": "Chapter VI, Stereotypes; printed p. 81",
+        "publicationYear": 1922,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Wikisource and the scanned page."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain by publication date",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1922 US work is public domain in the US. Lippmann died in 1974, so EU author-term protection remains through 2044.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Public_Opinion/Chapter_6",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "media",
+        "stereotypes",
+        "perception",
+        "framing"
+      ],
+      "semanticAxes": [
+        "seeing↔defining",
+        "world↔stereotype"
+      ],
+      "frizzleQuestion": "Which category is deciding what you see before the evidence has a chance to surprise you?",
+      "brainFood": [
+        {
+          "label": "Public Opinion, Chapter VI — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Public_Opinion/Chapter_6",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan-backed text."
+        },
+        {
+          "label": "Public Opinion p. 81 — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3APublic_Opinion_%28Lippmann%29.djvu/95",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scanned page containing the sentence."
+        }
+      ],
+      "curatorNotes": "Perception precedes media argument: frames become filters.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-bernays-manipulation",
+      "text": "The conscious and intelligent manipulation of the organized habits and opinions of the masses is an important element in democratic society.",
+      "author": "Edward L. Bernays",
+      "work": "Propaganda",
+      "publicationYear": 1928,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/78634/pg78634-images.html",
+        "edition": "1928 US edition transcription",
+        "pageOrLocator": "Chapter I, Organizing Chaos; p. 9",
+        "publicationYear": 1928,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact opening sentence verified in Project Gutenberg and the validated Wikisource scan."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain by publication date",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1928 US publication is public domain in the US. Bernays died in 1995, so EU author-term protection remains through 2065.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/78634/pg78634-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "propaganda",
+        "public-opinion",
+        "manipulation",
+        "democracy"
+      ],
+      "semanticAxes": [
+        "consent↔manipulation",
+        "coordination↔control"
+      ],
+      "frizzleQuestion": "When does coordinating a mass society become manipulation, and who gets to decide where that boundary lies?",
+      "brainFood": [
+        {
+          "label": "Bernays, Propaganda — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/78634/pg78634-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "1928 text; Chapter I."
+        },
+        {
+          "label": "Propaganda Archive — Organizing Chaos",
+          "url": "https://propagandaarchive.org/library/bernays-propaganda/01-organizing-chaos/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Rights-aware independent text."
+        }
+      ],
+      "curatorNotes": "Rights split is explicit; wording is primary-source verified.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-jefferson-newspapers-government",
+      "text": "whether we should have a government without newspapers, or newspapers without a government, I should not hesitate a moment to prefer the latter.",
+      "author": "Thomas Jefferson",
+      "work": "Letter to Edward Carrington",
+      "publicationYear": 1787,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://tjrs.monticello.org/letter/1289",
+        "edition": "Monticello manuscript-based transcription",
+        "pageOrLocator": "16 January 1787; PTJ 11:48–50",
+        "publicationYear": 1787,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified by Monticello and the University of Chicago Founders' Constitution."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://tjrs.monticello.org/letter/1289",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "press",
+        "government",
+        "public-opinion",
+        "information"
+      ],
+      "semanticAxes": [
+        "press↔government",
+        "information↔accountability"
+      ],
+      "frizzleQuestion": "What does a free press protect if citizens can receive endless information without gaining the capacity to judge it?",
+      "brainFood": [
+        {
+          "label": "Jefferson to Carrington — Monticello",
+          "url": "https://tjrs.monticello.org/letter/1289",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Manuscript-based transcription."
+        },
+        {
+          "label": "Founders' Constitution — Jefferson letter",
+          "url": "https://press-pubs.uchicago.edu/founders/documents/amendI_speechs8.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scholarly transcription."
+        }
+      ],
+      "curatorNotes": "The FrizzleQuestion adds media literacy to the classic free-press formulation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-carlyle-fourth-estate",
+      "text": "in the Reporters' Gallery yonder, there sat a Fourth Estate more important far than they all.",
+      "author": "Thomas Carlyle",
+      "work": "On Heroes, Hero-Worship, and the Heroic in History",
+      "publicationYear": 1841,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/1091/pg1091-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Lecture V",
+        "publicationYear": 1841,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Carlyle's full text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/1091/pg1091-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "press",
+        "power",
+        "journalism",
+        "institutions"
+      ],
+      "semanticAxes": [
+        "media↔government",
+        "observer↔power"
+      ],
+      "frizzleQuestion": "What happens when the institution that watches power becomes a power center whose own incentives are harder to watch?",
+      "brainFood": [
+        {
+          "label": "Carlyle, Heroes and Hero-Worship — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/1091/pg1091-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Lecture V."
+        }
+      ],
+      "curatorNotes": "Carlyle attributes the underlying observation to Burke; this record attributes only Carlyle's documented published formulation to Carlyle.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-wilde-public-curiosity",
+      "text": "the public have an insatiable curiosity to know everything, except what is worth knowing.",
+      "author": "Oscar Wilde",
+      "work": "The Soul of Man under Socialism",
+      "publicationYear": 1891,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+        "edition": "Public-domain Wilde text",
+        "pageOrLocator": "The Soul of Man under Socialism",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Project Gutenberg and an independent full-text edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "media",
+        "curiosity",
+        "attention",
+        "privacy"
+      ],
+      "semanticAxes": [
+        "curiosity↔importance",
+        "attention↔worth"
+      ],
+      "frizzleQuestion": "What information becomes irresistible precisely because it is intimate, immediate, and almost useless?",
+      "brainFood": [
+        {
+          "label": "Wilde, Soul of Man — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Soul of Man — Panarchy",
+          "url": "https://www.panarchy.org/wilde/soul.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-text cross-check."
+        }
+      ],
+      "curatorNotes": "Attention economy before the phrase existed.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-chesterton-lord-jones",
+      "text": "journalism largely consists in saying “Lord Jones Dead” to people who never knew that Lord Jones was alive.",
+      "author": "G. K. Chesterton",
+      "work": "The Wisdom of Father Brown — The Purple Wig",
+      "publicationYear": 1914,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://ccel.org/ccel/chesterton/wisdom/wisdom.vii.html",
+        "edition": "Public-domain full text",
+        "pageOrLocator": "The Purple Wig",
+        "publicationYear": 1914,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact headline-style wording verified in CCEL and a scan reproduction."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1914 publication is public domain in the US; Chesterton died in 1936, so EU term expired.",
+        "evidenceUrl": "https://ccel.org/ccel/chesterton/wisdom/wisdom.vii.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "journalism",
+        "news",
+        "salience",
+        "attention"
+      ],
+      "semanticAxes": [
+        "newsworthiness↔importance",
+        "headline↔context"
+      ],
+      "frizzleQuestion": "How much news exists mainly because an event is easy to headline rather than important to understand?",
+      "brainFood": [
+        {
+          "label": "The Wisdom of Father Brown — CCEL",
+          "url": "https://ccel.org/ccel/chesterton/wisdom/wisdom.vii.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "The Purple Wig full text."
+        },
+        {
+          "label": "Wisdom of Father Brown — scan excerpt",
+          "url": "https://www.ccel.org/ccel/c/chesterton/wisdom/cache/wisdom.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "PDF cross-check."
+        }
+      ],
+      "curatorNotes": "Short comic media critique with real source context.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-chesterton-life-play",
+      "text": "the true object of all human life is play.",
+      "author": "G. K. Chesterton",
+      "work": "All Things Considered — Oxford from Without",
+      "publicationYear": 1908,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/11505/11505-h/11505-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Oxford from Without",
+        "publicationYear": 1908,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Gutenberg and the Chesterton Society source."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/11505/11505-h/11505-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "play",
+        "life",
+        "leisure",
+        "seriousness"
+      ],
+      "semanticAxes": [
+        "play↔work",
+        "seriousness↔freedom"
+      ],
+      "frizzleQuestion": "What activity would you still choose if usefulness, status, money, and measurable progress were all removed from the score?",
+      "brainFood": [
+        {
+          "label": "All Things Considered — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/11505/11505-h/11505-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Chesterton Society — Heaven is a Playground",
+          "url": "https://www.chesterton.org/store/heaven-is-a-playground/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Work/essay attribution cross-check."
+        }
+      ],
+      "curatorNotes": "Play framed as an end rather than recovery time for more work.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-froebel-highest-play",
+      "text": "Play is the highest stage of child-development, of human development at this stage",
+      "author": "Friedrich Fröbel",
+      "work": "The Education of Man",
+      "publicationYear": 1826,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/files/54277/54277-h/54277-h.htm",
+        "edition": "E. R. Murray, Froebel as a Pioneer in Modern Psychology",
+        "pageOrLocator": "Quotes Education of Man, p. 34",
+        "publicationYear": 1914,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English wording and Froebel source locator are supplied by Murray; a direct edition page was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Fröbel died in 1852; Murray's 1914 English source is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/54277/54277-h/54277-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "play",
+        "childhood",
+        "development",
+        "self-expression"
+      ],
+      "semanticAxes": [
+        "play↔development",
+        "inner-life↔expression"
+      ],
+      "frizzleQuestion": "What does a child practice in play that an adult mistake for 'nothing happening' because no product is left behind?",
+      "brainFood": [
+        {
+          "label": "Froebel as a Pioneer in Modern Psychology — Gutenberg",
+          "url": "https://www.gutenberg.org/files/54277/54277-h/54277-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain source quoting Education of Man p. 34."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY until the direct English Education of Man page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-nietzsche-child-play",
+      "text": "In the true man there is a child hidden: it wanteth to play.",
+      "author": "Friedrich Nietzsche",
+      "work": "Thus Spake Zarathustra",
+      "publicationYear": 1883,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AThus_Spake_Zarathustra_-_Thomas_Common_-_1917.djvu/97",
+        "edition": "Thomas Common public-domain translation",
+        "pageOrLocator": "Of Old and Young Women; printed p. 69",
+        "publicationYear": 1917,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the validated scan and Project Gutenberg."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Nietzsche's text and Thomas Common's early English translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AThus_Spake_Zarathustra_-_Thomas_Common_-_1917.djvu/97",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "play",
+        "adulthood",
+        "childhood",
+        "self"
+      ],
+      "semanticAxes": [
+        "adult↔child",
+        "discipline↔play"
+      ],
+      "frizzleQuestion": "Which part of adult competence depends on keeping alive a mode of play that adulthood publicly treats as childish?",
+      "brainFood": [
+        {
+          "label": "Thus Spake Zarathustra — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AThus_Spake_Zarathustra_-_Thomas_Common_-_1917.djvu/97",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan of Thomas Common translation."
+        },
+        {
+          "label": "Thus Spake Zarathustra — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1998/1998-h/1998-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain text."
+        }
+      ],
+      "curatorNotes": "Detached from the surrounding gender claims; candidate is the exact child/play sentence only.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-carroll-great-puzzle",
+      "text": "Who in the world am I? Ah, that's the great puzzle!",
+      "author": "Lewis Carroll",
+      "work": "Alice's Adventures in Wonderland",
+      "publicationYear": 1865,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Alice%27s_Adventures_in_Wonderland_%281866%29/Chapter_2",
+        "edition": "1866 public-domain edition",
+        "pageOrLocator": "Chapter II, The Pool of Tears",
+        "publicationYear": 1866,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the chapter and a validated scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Alice%27s_Adventures_in_Wonderland_%281866%29/Chapter_2",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "childhood",
+        "identity",
+        "change",
+        "play"
+      ],
+      "semanticAxes": [
+        "identity↔change",
+        "puzzle↔self"
+      ],
+      "frizzleQuestion": "What makes a changing child feel like the same person when memory, body, knowledge, and social role are all moving at once?",
+      "brainFood": [
+        {
+          "label": "Alice's Adventures, Chapter II — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Alice%27s_Adventures_in_Wonderland_%281866%29/Chapter_2",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain chapter text."
+        },
+        {
+          "label": "Alice — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ALewis_Carroll_-_Alice%27s_Adventures_in_Wonderland.djvu/39",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan containing the sentence."
+        }
+      ],
+      "curatorNotes": "Childhood identity through a literal puzzle rather than sentimental innocence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-huizinga-play-older-culture",
+      "text": "Play is older than culture",
+      "author": "Johan Huizinga",
+      "work": "Homo Ludens",
+      "publicationYear": 1938,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.museumofplay.org/about/play-quotes/",
+        "edition": "The Strong National Museum of Play / standard English Homo Ludens tradition",
+        "pageOrLocator": "Opening thesis, English editions p. 1",
+        "publicationYear": 1938,
+        "retrievedAt": "2026-10-06",
+        "notes": "The formulation is repeatedly tied to Homo Ludens; a rights-cleared historical English first-edition page was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1938 Dutch work and later English translation history are not treated as globally public-domain in 2026; research-only candidate.",
+        "evidenceUrl": "https://www.museumofplay.org/about/play-quotes/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "play",
+        "culture",
+        "animals",
+        "civilization"
+      ],
+      "semanticAxes": [
+        "play↔culture",
+        "nature↔institution"
+      ],
+      "frizzleQuestion": "What follows if play is not a luxury invented by culture but an older behavior that culture learns to organize?",
+      "brainFood": [
+        {
+          "label": "Strong National Museum of Play — Play Quotes",
+          "url": "https://www.museumofplay.org/about/play-quotes/",
+          "kind": "MUSEUM",
+          "verifiedAt": "2026-10-06",
+          "notes": "Museum source situating Huizinga's play thesis."
+        },
+        {
+          "label": "Homo Ludens discussion — ScienceDirect",
+          "url": "https://www.sciencedirect.com/topics/social-sciences/social-play",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scholarly contextualization of the opening thesis."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY + restricted; retained because it anchors the whole play/culture axis.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-montessori-hands-play-work",
+      "text": "He does it with his hands, by experience, first in play and then through work.",
+      "author": "Maria Montessori",
+      "work": "The Absorbent Mind",
+      "publicationYear": 1949,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://montessori-ami.org/resource-library/quotes/montessori-0-3",
+        "edition": "Association Montessori Internationale quotation record",
+        "pageOrLocator": "The Absorbent Mind, p. 25",
+        "publicationYear": 1949,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in AMI's official quotation library with page locator."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The exact English edition/translation remains copyrighted or rights-sensitive in at least some jurisdictions; research-only candidate.",
+        "evidenceUrl": "https://montessori-ami.org/resource-library/quotes/montessori-0-3",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "childhood",
+        "play",
+        "hands",
+        "learning"
+      ],
+      "semanticAxes": [
+        "play↔work",
+        "hands↔intelligence"
+      ],
+      "frizzleQuestion": "When does play become work without the child noticing a boundary—and why are adults so invested in drawing one?",
+      "brainFood": [
+        {
+          "label": "Association Montessori Internationale — quotes 0–3",
+          "url": "https://montessori-ami.org/resource-library/quotes/montessori-0-3",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Official Montessori organization source with page locator."
+        }
+      ],
+      "curatorNotes": "Verified wording, but deliberately not public-cleared.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-twain-travel-prejudice",
+      "text": "Travel is fatal to prejudice, bigotry and narrow-mindedness",
+      "author": "Mark Twain",
+      "work": "The Innocents Abroad",
+      "publicationYear": 1869,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/3176/3176-h/3176-h.htm",
+        "edition": "Project Gutenberg text from the 1869 first edition",
+        "pageOrLocator": "Conclusion",
+        "publicationYear": 1869,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact opening clause verified in the complete text and a source-audited quotation record."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/3176/3176-h/3176-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "travel",
+        "prejudice",
+        "perspective",
+        "encounter"
+      ],
+      "semanticAxes": [
+        "familiarity↔prejudice",
+        "travel↔perspective"
+      ],
+      "frizzleQuestion": "Which prejudice survives travel because the traveler keeps carrying the same social bubble from place to place?",
+      "brainFood": [
+        {
+          "label": "The Innocents Abroad — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/3176/3176-h/3176-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain first-edition text; Conclusion."
+        }
+      ],
+      "curatorNotes": "Travel as exposure, with a question that refuses to assume tourism automatically produces openness.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-stevenson-travel-move",
+      "text": "I travel not to go anywhere, but to go. I travel for travel's sake. The great affair is to move.",
+      "author": "Robert Louis Stevenson",
+      "work": "Travels with a Donkey in the Cévennes",
+      "publicationYear": 1879,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2537/pg2537-images.html",
+        "edition": "The Pocket R. L. S., public-domain excerpt",
+        "pageOrLocator": "Travels with a Donkey passage",
+        "publicationYear": 1879,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain Stevenson text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2537/pg2537-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "travel",
+        "movement",
+        "process",
+        "exploration"
+      ],
+      "semanticAxes": [
+        "journey↔destination",
+        "movement↔purpose"
+      ],
+      "frizzleQuestion": "When is movement itself a form of discovery, and when is constant movement a strategy for avoiding arrival?",
+      "brainFood": [
+        {
+          "label": "The Pocket R. L. S. — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2537/pg2537-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Stevenson excerpt containing the passage."
+        }
+      ],
+      "curatorNotes": "Exploration as process with an explicit avoidance counter-question.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-tennyson-seek-find",
+      "text": "To strive, to seek, to find, and not to yield.",
+      "author": "Alfred Tennyson",
+      "work": "Ulysses",
+      "publicationYear": 1842,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.victorianweb.org/authors/tennyson/ulyssestext.html",
+        "edition": "Text checked against published editions",
+        "pageOrLocator": "Final line",
+        "publicationYear": 1842,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact final line and publication history verified in Victorian Web's edition note."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.victorianweb.org/authors/tennyson/ulyssestext.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "exploration",
+        "persistence",
+        "age",
+        "seeking"
+      ],
+      "semanticAxes": [
+        "search↔settlement",
+        "persistence↔yielding"
+      ],
+      "frizzleQuestion": "When does refusing to yield preserve a meaningful search, and when does it become refusal to learn that the search should end?",
+      "brainFood": [
+        {
+          "label": "Tennyson, Ulysses — Victorian Web",
+          "url": "https://www.victorianweb.org/authors/tennyson/ulyssestext.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Text plus publication history."
+        }
+      ],
+      "curatorNotes": "Famous line retained because the question attacks persistence bias rather than merely celebrating grit.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-cook-ambition-farther",
+      "text": "I whose ambition leads me not only farther than any other man has been before me",
+      "author": "James Cook",
+      "work": "Journal of the Second Voyage",
+      "publicationYear": 1774,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/early-discoverers-xii-some-notes-on-sea-ice-observed-by-captain-james-cook-rn-during-his-circumnavigation-of-antarctica-177275/3786C2A8D39C1174F08CB956B7344AA5",
+        "edition": "Scholarly reproduction of Cook's journal",
+        "pageOrLocator": "30 January 1774",
+        "publicationYear": 1774,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact journal clause verified in Cambridge's historical article and Captain Cook Society transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Cook's eighteenth-century journal text is public domain.",
+        "evidenceUrl": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/early-discoverers-xii-some-notes-on-sea-ice-observed-by-captain-james-cook-rn-during-his-circumnavigation-of-antarctica-177275/3786C2A8D39C1174F08CB956B7344AA5",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "exploration",
+        "ambition",
+        "limits",
+        "risk"
+      ],
+      "semanticAxes": [
+        "ambition↔prudence",
+        "farther↔possible"
+      ],
+      "frizzleQuestion": "What makes an explorer admirable for pushing farther but responsible for turning back one mile before the limit?",
+      "brainFood": [
+        {
+          "label": "Cook Antarctic journal passage — Cambridge",
+          "url": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/early-discoverers-xii-some-notes-on-sea-ice-observed-by-captain-james-cook-rn-during-his-circumnavigation-of-antarctica-177275/3786C2A8D39C1174F08CB956B7344AA5",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly reproduction of the 30 Jan 1774 journal."
+        },
+        {
+          "label": "Captain Cook Society — January 1774",
+          "url": "https://ccs.bxl.holoncom.net/cooks-voyages/second-pacific-voyage/january-march-1774",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent journal transcription."
+        }
+      ],
+      "curatorNotes": "The surrounding passage includes Cook deciding not to push into lethal ice; that tension drives the question.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-muir-mountains-calling",
+      "text": "The mountains are calling and I must go",
+      "author": "John Muir",
+      "work": "Letter to Sarah Muir Galloway",
+      "publicationYear": 1873,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.yosemite.ca.us/john_muir_writings/the_life_and_letters_of_john_muir/chapter_10.html",
+        "edition": "Life and Letters of John Muir publication of the letter",
+        "pageOrLocator": "3 September 1873",
+        "publicationYear": 1873,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the published letter and National Park Service attribution."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Muir died in 1914 and the letter was published in a public-domain Life and Letters edition.",
+        "evidenceUrl": "https://www.yosemite.ca.us/john_muir_writings/the_life_and_letters_of_john_muir/chapter_10.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "exploration",
+        "nature",
+        "calling",
+        "attention"
+      ],
+      "semanticAxes": [
+        "duty↔calling",
+        "home↔departure"
+      ],
+      "frizzleQuestion": "What kind of call deserves interrupting the work you were supposed to keep doing?",
+      "brainFood": [
+        {
+          "label": "Life and Letters of John Muir — Chapter X",
+          "url": "https://www.yosemite.ca.us/john_muir_writings/the_life_and_letters_of_john_muir/chapter_10.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Published text of the 3 Sep 1873 letter."
+        },
+        {
+          "label": "John Muir National Historic Site — quotations",
+          "url": "https://home.nps.gov/jomu/learn/historyculture/john-muir-quotes.htm",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "NPS attribution to the same letter/date."
+        }
+      ],
+      "curatorNotes": "Uses the authentic short clause, not a motivational graphic as source.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r08-livingstone-forward",
+      "text": "I am prepared to go anywhere, provided it be forward.",
+      "author": "David Livingstone",
+      "work": "Attributed statement in Livingstone biographical tradition",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.david-livingstone-birthplace.org/files/global-citizenship-booklet-2023-01-10.pdf",
+        "edition": "David Livingstone Birthplace educational resource",
+        "pageOrLocator": "Exact primary letter/speech locator not supplied",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording is institutionally attributed by David Livingstone Birthplace; original document was not located in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Livingstone died in 1873; any nineteenth-century authored wording is now public domain, though the exact source locator remains unresolved.",
+        "evidenceUrl": "https://www.david-livingstone-birthplace.org/files/global-citizenship-booklet-2023-01-10.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "exploration",
+        "direction",
+        "progress",
+        "movement"
+      ],
+      "semanticAxes": [
+        "forward↔elsewhere",
+        "direction↔value"
+      ],
+      "frizzleQuestion": "Who decides that a direction counts as forward rather than merely farther away from where you started?",
+      "brainFood": [
+        {
+          "label": "David Livingstone Birthplace — Global Citizenship booklet",
+          "url": "https://www.david-livingstone-birthplace.org/files/global-citizenship-booklet-2023-01-10.pdf",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Institutional attribution of the exact sentence."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY because the original letter/speech has not been pinned; question deliberately interrogates the rhetoric of 'forward'.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
