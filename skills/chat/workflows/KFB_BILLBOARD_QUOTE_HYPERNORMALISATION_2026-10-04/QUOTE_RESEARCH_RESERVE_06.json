@@ -1,0 +1,1573 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T17:58:00Z",
+  "purpose": "Sixth unmapped quality-first reserve, adding myth/religion, law/crime, psychology, music/performance and science/history oddities for deeper long-session Billboard rotation.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Expand both semantic and tonal diversity while preserving a large non-repeating reserve for later context mapping.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "clusters": {
+    "myth-religion": 6,
+    "law-crime": 6,
+    "psychology": 6,
+    "music-performance": 6,
+    "science-history-oddities": 6
+  },
+  "candidates": [
+    {
+      "id": "qr-r06-paine-mind-church",
+      "text": "My own mind is my own church.",
+      "author": "Thomas Paine",
+      "work": "The Age of Reason",
+      "publicationYear": 1794,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/3743/pg3743-images.html",
+        "edition": "The Writings of Thomas Paine, Vol. IV",
+        "pageOrLocator": "The Age of Reason, Part I",
+        "publicationYear": 1794,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/3743/pg3743-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "religion",
+        "conscience",
+        "institution",
+        "belief"
+      ],
+      "semanticAxes": [
+        "conscience↔institution",
+        "belief↔authority"
+      ],
+      "frizzleQuestion": "What changes when belief answers first to private conscience rather than an institution that certifies the belief?",
+      "brainFood": [
+        {
+          "label": "Paine, The Age of Reason — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/3743/pg3743-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collected text."
+        }
+      ],
+      "curatorNotes": "Compact religion/conscience line; no deck or ideology mapping is implied.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-spinoza-superstition-fear",
+      "text": "Superstition, then, is engendered, preserved, and fostered by fear.",
+      "author": "Baruch Spinoza",
+      "work": "Theologico-Political Treatise",
+      "publicationYear": 1670,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/989/989-h/989-h.htm",
+        "edition": "R. H. M. Elwes public-domain translation",
+        "pageOrLocator": "Preface, §9",
+        "publicationYear": 1670,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the translation text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Spinoza's text and the nineteenth-century Elwes translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/989/989-h/989-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "superstition",
+        "fear",
+        "religion",
+        "uncertainty"
+      ],
+      "semanticAxes": [
+        "fear↔belief",
+        "uncertainty↔superstition"
+      ],
+      "frizzleQuestion": "Which belief becomes most persuasive only when fear has made uncertainty emotionally intolerable?",
+      "brainFood": [
+        {
+          "label": "Spinoza, Theologico-Political Treatise — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/989/989-h/989-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Elwes translation; Preface."
+        }
+      ],
+      "curatorNotes": "Strong mechanism quote: fear as substrate for superstition.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-frazer-magic-false-law",
+      "text": "magic is a spurious system of natural law as well as a fallacious guide of conduct",
+      "author": "James George Frazer",
+      "work": "The Golden Bough",
+      "publicationYear": 1890,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/3623/3623-h/3623-h.htm",
+        "edition": "Abridged Golden Bough public-domain edition",
+        "pageOrLocator": "Chapter III, Sympathetic Magic",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/3623/3623-h/3623-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "magic",
+        "causality",
+        "ritual",
+        "false-models"
+      ],
+      "semanticAxes": [
+        "magic↔science",
+        "association↔causation"
+      ],
+      "frizzleQuestion": "Which modern ritual would look like magic if its assumed causal link had to survive a controlled test?",
+      "brainFood": [
+        {
+          "label": "Frazer, The Golden Bough — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/3623/3623-h/3623-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Sympathetic Magic."
+        }
+      ],
+      "curatorNotes": "Useful as a causality question rather than an invitation to mock historical belief.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-james-waking-consciousness",
+      "text": "our normal waking consciousness, rational consciousness as we call it, is but one special type of consciousness",
+      "author": "William James",
+      "work": "The Varieties of Religious Experience",
+      "publicationYear": 1902,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/621/pg621-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Lectures XVI–XVII, Mysticism; printed p. 388",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the full text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/621/pg621-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "consciousness",
+        "mysticism",
+        "psychology",
+        "reality"
+      ],
+      "semanticAxes": [
+        "ordinary-consciousness↔altered-consciousness",
+        "map↔experience"
+      ],
+      "frizzleQuestion": "What confidence should ordinary consciousness lose once it admits that it may be only one mode among several?",
+      "brainFood": [
+        {
+          "label": "James, Varieties of Religious Experience — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/621/pg621-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; mysticism lectures."
+        }
+      ],
+      "curatorNotes": "Bridges religion and psychology without endorsing any metaphysical conclusion.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-hobbes-religion-anxiety",
+      "text": "The natural cause of religion, the anxiety of the time to come.",
+      "author": "Thomas Hobbes",
+      "work": "Leviathan",
+      "publicationYear": 1651,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/3207/3207-h/3207-h.htm",
+        "edition": "Leviathan public-domain text",
+        "pageOrLocator": "Chapter XII heading and argument",
+        "publicationYear": 1651,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact heading verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/3207/3207-h/3207-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "religion",
+        "future",
+        "anxiety",
+        "uncertainty"
+      ],
+      "semanticAxes": [
+        "future↔fear",
+        "uncertainty↔religion"
+      ],
+      "frizzleQuestion": "How much belief is an answer to the unknown, and how much is an attempt to stop feeling the unknown?",
+      "brainFood": [
+        {
+          "label": "Hobbes, Leviathan — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/3207/3207-h/3207-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Chapter XII."
+        }
+      ],
+      "curatorNotes": "A compact seventeenth-century psychology of religion.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-hume-religion-heart",
+      "text": "The proper office of religion is to regulate the heart of men, humanise their conduct",
+      "author": "David Hume",
+      "work": "Dialogues Concerning Natural Religion",
+      "publicationYear": 1779,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/4583/4583-h/4583-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Part X; Cleanthes speaking",
+        "publicationYear": 1779,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the dialogue."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/4583/4583-h/4583-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "religion",
+        "conduct",
+        "morality",
+        "institution"
+      ],
+      "semanticAxes": [
+        "belief↔conduct",
+        "doctrine↔humanisation"
+      ],
+      "frizzleQuestion": "What should count as failure for a religion whose doctrines are elaborate but whose followers become less humane?",
+      "brainFood": [
+        {
+          "label": "Hume, Dialogues Concerning Natural Religion — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/4583/4583-h/4583-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Part X."
+        }
+      ],
+      "curatorNotes": "Maps religion to observable conduct rather than doctrine.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-beccaria-prevent-crime",
+      "text": "It is incomparably better to prevent crimes than to punish them.",
+      "author": "Cesare Beccaria",
+      "work": "On Crimes and Punishments",
+      "publicationYear": 1764,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/58700/58700-h/58700-h.htm",
+        "edition": "James Anson Farrer English translation, 1880",
+        "pageOrLocator": "Beccaria translation; prevention chapter",
+        "publicationYear": 1764,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Farrer's public-domain translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying Italian and the 1880 English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/58700/58700-h/58700-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "crime",
+        "prevention",
+        "punishment",
+        "law"
+      ],
+      "semanticAxes": [
+        "prevention↔punishment",
+        "cause↔response"
+      ],
+      "frizzleQuestion": "Which crime policy exists mainly because punishment is more visible than prevention?",
+      "brainFood": [
+        {
+          "label": "Beccaria, Crimes and Punishments — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/58700/58700-h/58700-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "1880 public-domain English translation."
+        }
+      ],
+      "curatorNotes": "Prevention as a less theatrical but potentially more effective legal strategy.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-blackstone-innocent-suffer",
+      "text": "it is better that ten guilty persons escape than that one innocent suffer.",
+      "author": "William Blackstone",
+      "work": "Commentaries on the Laws of England, Book IV",
+      "publicationYear": 1769,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://books.google.com/books/about/The_Student_s_Blackstone.html?id=C5ADAAAAQAAJ",
+        "edition": "The Student's Blackstone, 1869 full-view edition",
+        "pageOrLocator": "Book IV principle; p. 542 in cited edition",
+        "publicationYear": 1769,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in historical editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://books.google.com/books/about/The_Student_s_Blackstone.html?id=C5ADAAAAQAAJ",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "justice",
+        "evidence",
+        "innocence",
+        "criminal-law"
+      ],
+      "semanticAxes": [
+        "false-acquittal↔false-conviction",
+        "certainty↔punishment"
+      ],
+      "frizzleQuestion": "What error should a justice system fear more when certainty is impossible: letting guilt escape or punishing innocence?",
+      "brainFood": [
+        {
+          "label": "The Student's Blackstone — Google Books",
+          "url": "https://books.google.com/books/about/The_Student_s_Blackstone.html?id=C5ADAAAAQAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-view historical edition; passage p. 542."
+        }
+      ],
+      "curatorNotes": "Classic asymmetry framed as a live design choice, not a slogan.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-lincoln-discourage-litigation",
+      "text": "Discourage litigation. Persuade your neighbors to compromise whenever you can.",
+      "author": "Abraham Lincoln",
+      "work": "Draft of a Lecture on Practicing Law",
+      "publicationYear": 1860,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.loc.gov/resource/mal.0045500/?st=text",
+        "edition": "Abraham Lincoln Papers, Library of Congress",
+        "pageOrLocator": "Draft lecture on practicing law, c. 1850–1860",
+        "publicationYear": 1860,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the manuscript transcription and exhibition transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Library of Congress states its digital scans of the Abraham Lincoln Papers are public domain.",
+        "evidenceUrl": "https://www.loc.gov/item/mal0045500/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "law",
+        "litigation",
+        "compromise",
+        "profession"
+      ],
+      "semanticAxes": [
+        "conflict↔settlement",
+        "winning↔cost"
+      ],
+      "frizzleQuestion": "Which dispute survives because winning has become more important than solving the original problem?",
+      "brainFood": [
+        {
+          "label": "Lincoln Draft Lecture on Law — Library of Congress",
+          "url": "https://www.loc.gov/resource/mal.0045500/?st=text",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Manuscript transcription."
+        },
+        {
+          "label": "Lincoln's Draft on Practicing Law — LOC exhibition",
+          "url": "https://wwws.loc.gov/exhibits/lincoln/ext/transcription19.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent LOC transcription."
+        }
+      ],
+      "curatorNotes": "Useful for legal systems and ordinary conflicts; not generic harmony rhetoric.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-thoreau-just-man-prison",
+      "text": "Under a government which imprisons any unjustly, the true place for a just man is also a prison.",
+      "author": "Henry David Thoreau",
+      "work": "On the Duty of Civil Disobedience",
+      "publicationYear": 1849,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/71/pg71-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Civil Disobedience",
+        "publicationYear": 1849,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/71/pg71-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "law",
+        "civil-disobedience",
+        "justice",
+        "conscience"
+      ],
+      "semanticAxes": [
+        "law↔justice",
+        "obedience↔conscience"
+      ],
+      "frizzleQuestion": "At what point does obeying the law transfer responsibility for an injustice from the institution to the obedient person?",
+      "brainFood": [
+        {
+          "label": "Civil Disobedience — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/71/pg71-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay text."
+        }
+      ],
+      "curatorNotes": "Keeps the law/justice distinction concrete and costly.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-poe-simplicity-fault",
+      "text": "Perhaps it is the very simplicity of the thing which puts you at fault.",
+      "author": "Edgar Allan Poe",
+      "work": "The Purloined Letter",
+      "publicationYear": 1844,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/8893/pg8893-images.html",
+        "edition": "Selections from Poe, public-domain edition",
+        "pageOrLocator": "The Purloined Letter",
+        "publicationYear": 1844,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the story text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/8893/pg8893-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "crime",
+        "investigation",
+        "simplicity",
+        "blind-spots"
+      ],
+      "semanticAxes": [
+        "complexity↔obviousness",
+        "search↔assumption"
+      ],
+      "frizzleQuestion": "What becomes invisible when an investigator assumes the solution must be as complicated as the search?",
+      "brainFood": [
+        {
+          "label": "The Purloined Letter — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/8893/pg8893-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Poe selection containing the complete story."
+        }
+      ],
+      "curatorNotes": "Crime/detection quote about search priors rather than cleverness alone.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-darrow-punishment-vengeance",
+      "text": "Punishment as something inflicted for the purpose of giving pain is cruelty and vengeance and nothing else.",
+      "author": "Clarence Darrow",
+      "work": "Crime: Its Cause and Treatment",
+      "publicationYear": 1922,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/12027/12027-h/12027-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter II / later summary discussion",
+        "publicationYear": 1922,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Darrow's text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1922 US publication is public domain; Darrow died in 1938, so EU author term has expired.",
+        "evidenceUrl": "https://www.gutenberg.org/files/12027/12027-h/12027-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "crime",
+        "punishment",
+        "vengeance",
+        "justice"
+      ],
+      "semanticAxes": [
+        "restraint↔revenge",
+        "safety↔suffering"
+      ],
+      "frizzleQuestion": "What would criminal justice look like if every deliberate addition of suffering had to prove a purpose beyond revenge?",
+      "brainFood": [
+        {
+          "label": "Darrow, Crime: Its Cause and Treatment — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/12027/12027-h/12027-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Useful as a sharp penal-philosophy question, not a runtime policy statement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-hume-custom-guide",
+      "text": "Custom, then, is the great guide of human life.",
+      "author": "David Hume",
+      "work": "An Enquiry Concerning Human Understanding",
+      "publicationYear": 1748,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Section V",
+        "publicationYear": 1748,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "habit",
+        "inference",
+        "psychology",
+        "expectation"
+      ],
+      "semanticAxes": [
+        "custom↔reason",
+        "past↔expectation"
+      ],
+      "frizzleQuestion": "Which prediction feels rational mainly because repetition has made the expectation automatic?",
+      "brainFood": [
+        {
+          "label": "Hume, Enquiry — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Psychology of expectation before modern cognitive vocabulary.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-pascal-heart-reasons",
+      "text": "The heart has its reasons, which reason does not know.",
+      "author": "Blaise Pascal",
+      "work": "Pensées",
+      "publicationYear": 1670,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/18269/pg18269-images.html",
+        "edition": "W. F. Trotter translation, public-domain edition",
+        "pageOrLocator": "Fragment 277",
+        "publicationYear": 1670,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the translation text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Pascal's text and the cited early English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/18269/pg18269-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "emotion",
+        "reason",
+        "intuition",
+        "motivation"
+      ],
+      "semanticAxes": [
+        "heart↔reason",
+        "felt-value↔argument"
+      ],
+      "frizzleQuestion": "What kind of reason becomes visible only after you admit that the conclusion was emotionally chosen first?",
+      "brainFood": [
+        {
+          "label": "Pascal's Pensées — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/18269/pg18269-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain translation; fragment 277."
+        }
+      ],
+      "curatorNotes": "Not treated as anti-reason; question turns it toward post-hoc rationalization.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-darwin-blushing-human",
+      "text": "Blushing is the most peculiar and the most human of all expressions.",
+      "author": "Charles Darwin",
+      "work": "The Expression of the Emotions in Man and Animals",
+      "publicationYear": 1872,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/1227/1227-h/1227-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter XIII",
+        "publicationYear": 1872,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the chapter."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/1227/1227-h/1227-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "emotion",
+        "shame",
+        "self-consciousness",
+        "social-psychology"
+      ],
+      "semanticAxes": [
+        "body↔social-gaze",
+        "self-attention↔emotion"
+      ],
+      "frizzleQuestion": "Why can merely imagining another person's judgment change blood flow in a body that knows no physical threat is present?",
+      "brainFood": [
+        {
+          "label": "Darwin, Expression of Emotions — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1227/1227-h/1227-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Chapter XIII."
+        }
+      ],
+      "curatorNotes": "A physiological doorway into social self-consciousness.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-hazlitt-laughs-weeps",
+      "text": "Man is the only animal that laughs and weeps",
+      "author": "William Hazlitt",
+      "work": "Lectures on the English Comic Writers",
+      "publicationYear": 1819,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/59506/pg59506-images.html",
+        "edition": "Collected Works of William Hazlitt, Vol. VIII",
+        "pageOrLocator": "Lecture I, On Wit and Humour",
+        "publicationYear": 1819,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact opening clause verified in the lecture text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/59506/pg59506-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "humor",
+        "emotion",
+        "expectation",
+        "humanity"
+      ],
+      "semanticAxes": [
+        "laughter↔tears",
+        "reality↔expectation"
+      ],
+      "frizzleQuestion": "What do laughter and tears reveal about the gap between the world we encounter and the world we expected?",
+      "brainFood": [
+        {
+          "label": "Hazlitt, On Wit and Humour — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/59506/pg59506-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain lecture text."
+        }
+      ],
+      "curatorNotes": "Short fragment, but exact and semantically rich.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-james-remembering-thinking",
+      "text": "the art of remembering is the art of thinking",
+      "author": "William James",
+      "work": "Talks to Teachers on Psychology",
+      "publicationYear": 1899,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Lecture XII, Memory",
+        "publicationYear": 1899,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in James's practical summary."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "memory",
+        "thinking",
+        "association",
+        "learning"
+      ],
+      "semanticAxes": [
+        "memory↔connection",
+        "storage↔meaning"
+      ],
+      "frizzleQuestion": "What becomes memorable because it was repeated, and what becomes memorable because it was connected to something that mattered?",
+      "brainFood": [
+        {
+          "label": "James, Talks to Teachers — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Memory lecture."
+        }
+      ],
+      "curatorNotes": "Memory as active connection rather than storage.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-schopenhauer-forfeit-self",
+      "text": "we have to forfeit three-fourths of ourselves in order to become like other people.",
+      "author": "Arthur Schopenhauer",
+      "work": "Counsels and Maxims",
+      "publicationYear": 1851,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/10715/pg10715.html",
+        "edition": "T. Bailey Saunders public-domain translation",
+        "pageOrLocator": "Section on society and solitude",
+        "publicationYear": 1851,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Schopenhauer's text and the cited early Saunders translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/10715/pg10715.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "conformity",
+        "identity",
+        "society",
+        "self-suppression"
+      ],
+      "semanticAxes": [
+        "belonging↔self",
+        "conformity↔individuality"
+      ],
+      "frizzleQuestion": "Which part of yourself is easiest to surrender when belonging depends on becoming less distinctive?",
+      "brainFood": [
+        {
+          "label": "Schopenhauer, Counsels and Maxims — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/10715/pg10715.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Saunders translation."
+        }
+      ],
+      "curatorNotes": "Strong social-psychology counterpoint to group-belonging material.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-pater-art-music",
+      "text": "All art constantly aspires towards the condition of music.",
+      "author": "Walter Pater",
+      "work": "The Renaissance — The School of Giorgione",
+      "publicationYear": 1877,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2398/pg2398-images.html",
+        "edition": "The Renaissance, Project Gutenberg edition",
+        "pageOrLocator": "The School of Giorgione",
+        "publicationYear": 1877,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in multiple Gutenberg editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2398/pg2398-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "music",
+        "art",
+        "form",
+        "aesthetics"
+      ],
+      "semanticAxes": [
+        "form↔content",
+        "art↔music"
+      ],
+      "frizzleQuestion": "What can music do with form and feeling that other arts keep trying to borrow without becoming music?",
+      "brainFood": [
+        {
+          "label": "Pater, The Renaissance — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2398/pg2398-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; School of Giorgione."
+        }
+      ],
+      "curatorNotes": "A medium-specificity anchor for music/performance rotation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-carlyle-speech-angels",
+      "text": "Music is well said to be the speech of angels",
+      "author": "Thomas Carlyle",
+      "work": "The Opera",
+      "publicationYear": 1852,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/38952/pg38952-images.html",
+        "edition": "Harper's New Monthly Magazine reproduction of Carlyle's essay",
+        "pageOrLocator": "The Opera",
+        "publicationYear": 1852,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the historical periodical reproduction."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/38952/pg38952-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "music",
+        "transcendence",
+        "expression",
+        "performance"
+      ],
+      "semanticAxes": [
+        "speech↔music",
+        "language↔transcendence"
+      ],
+      "frizzleQuestion": "What does music communicate when listeners agree that something happened but cannot agree on what was said?",
+      "brainFood": [
+        {
+          "label": "Carlyle, The Opera — Project Gutenberg Harper's reproduction",
+          "url": "https://www.gutenberg.org/cache/epub/38952/pg38952-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain historical periodical text."
+        }
+      ],
+      "curatorNotes": "Uses the angel metaphor as a question about non-propositional meaning.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-darwin-music-animals",
+      "text": "The perception, if not the enjoyment, of musical cadences and of rhythm is probably common to all animals",
+      "author": "Charles Darwin",
+      "work": "The Descent of Man",
+      "publicationYear": 1871,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/36520/pg36520-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Discussion of music and sexual selection; printed p. 333",
+        "publicationYear": 1871,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the work."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/36520/pg36520-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "music",
+        "evolution",
+        "animals",
+        "rhythm"
+      ],
+      "semanticAxes": [
+        "music↔biology",
+        "culture↔evolution"
+      ],
+      "frizzleQuestion": "What changes in our idea of music if rhythm begins as a biological sensitivity before it becomes culture?",
+      "brainFood": [
+        {
+          "label": "Darwin, Descent of Man — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/36520/pg36520-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; music discussion."
+        }
+      ],
+      "curatorNotes": "Music as evolved perception rather than uniquely human ornament.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-irving-embody-poet",
+      "text": "It is the art of embodying the poet's creations, of giving them flesh and blood",
+      "author": "Henry Irving",
+      "work": "The Art of Acting",
+      "publicationYear": 1885,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+        "edition": "The Drama: Addresses by Henry Irving",
+        "pageOrLocator": "The Art of Acting, Harvard address",
+        "publicationYear": 1885,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Irving's address."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "acting",
+        "performance",
+        "embodiment",
+        "text"
+      ],
+      "semanticAxes": [
+        "text↔body",
+        "character↔performance"
+      ],
+      "frizzleQuestion": "At what point does interpretation stop illustrating a written character and begin creating a new embodied one?",
+      "brainFood": [
+        {
+          "label": "Henry Irving, The Drama — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; The Art of Acting."
+        }
+      ],
+      "curatorNotes": "A literal text-to-body transformation line, useful for character/performance worlds.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-diderot-sublime-actor",
+      "text": "it is the absolute want of sensibility that prepares actors who shall be sublime.",
+      "author": "Denis Diderot",
+      "work": "Paradox of Acting",
+      "publicationYear": 1830,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/15098/pg15098-images.html",
+        "edition": "John Morley, Diderot, summarizing/quoting the Paradox",
+        "pageOrLocator": "Discussion of Paradox of Acting",
+        "publicationYear": 1830,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English sentence verified in Morley's public-domain study; direct English Paradox edition was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Diderot's text and Morley's nineteenth-century/early twentieth-century English rendering are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/15098/pg15098-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "acting",
+        "emotion",
+        "control",
+        "performance"
+      ],
+      "semanticAxes": [
+        "feeling↔technique",
+        "sensibility↔control"
+      ],
+      "frizzleQuestion": "Can an actor produce deeper feeling in an audience by feeling less personally in the moment of performance?",
+      "brainFood": [
+        {
+          "label": "John Morley, Diderot — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/15098/pg15098-images.html",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain study reproducing the English formulation."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY until a direct English Paradox edition/page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-talma-grandeur-nature",
+      "text": "the union of grandeur without pomp and nature without triviality.",
+      "author": "François-Joseph Talma",
+      "work": "Memoir on Acting, quoted by Henry Irving",
+      "publicationYear": 1825,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+        "edition": "Henry Irving, The Art of Acting",
+        "pageOrLocator": "Irving's Harvard address quoting Talma",
+        "publicationYear": 1825,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English formulation verified in Irving's public-domain address; direct Talma edition was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Talma died in 1826 and the cited Irving English formulation is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "acting",
+        "style",
+        "naturalism",
+        "grandeur"
+      ],
+      "semanticAxes": [
+        "grandeur↔pomp",
+        "nature↔triviality"
+      ],
+      "frizzleQuestion": "What makes a performance feel elevated without becoming pompous, and natural without becoming merely ordinary?",
+      "brainFood": [
+        {
+          "label": "Henry Irving, The Art of Acting — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/13483/13483-h/13483-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain address quoting Talma."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY for direct Talma provenance, but exact Irving wording is stable.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-lovelace-no-origination",
+      "text": "The Analytical Engine has no pretensions whatever to originate any thing.",
+      "author": "Ada Lovelace",
+      "work": "Notes on the Analytical Engine",
+      "publicationYear": 1843,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/75107/pg75107-images.html",
+        "edition": "Scientific Memoirs, Vol. III, 1843",
+        "pageOrLocator": "Note G",
+        "publicationYear": 1843,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Lovelace's published notes."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/75107/pg75107-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "computing",
+        "AI-history",
+        "origination",
+        "automation"
+      ],
+      "semanticAxes": [
+        "execution↔origination",
+        "machine↔instruction"
+      ],
+      "frizzleQuestion": "What counts as originating an idea once a machine can transform instructions into results its operator never explicitly pictured?",
+      "brainFood": [
+        {
+          "label": "Lovelace Notes on the Analytical Engine — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/75107/pg75107-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain 1843 text; Note G."
+        }
+      ],
+      "curatorNotes": "Historically useful precisely because later machine capabilities complicate the boundary she drew.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-michelson-laws-discovered",
+      "text": "The more important fundamental laws and facts of physical science have all been discovered.",
+      "author": "Albert A. Michelson",
+      "work": "Light Waves and Their Uses",
+      "publicationYear": 1903,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://books.google.com/books/about/Light_Waves_and_Their_Uses.html?id=UK0RAAAAYAAJ",
+        "edition": "University of Chicago Press historical edition",
+        "pageOrLocator": "Lecture text; p. 23 in cited 1903 edition",
+        "publicationYear": 1903,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in a full-view historical edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1903 publication is public domain in the US; Michelson died in 1931, so EU author term expired in 2002.",
+        "evidenceUrl": "https://books.google.com/books/about/Light_Waves_and_Their_Uses.html?id=UK0RAAAAYAAJ",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "physics",
+        "history-of-science",
+        "certainty",
+        "unknowns"
+      ],
+      "semanticAxes": [
+        "settled-science↔discovery",
+        "confidence↔surprise"
+      ],
+      "frizzleQuestion": "What field today sounds most like physics did when experts believed its fundamental discoveries were nearly finished?",
+      "brainFood": [
+        {
+          "label": "Michelson, Light Waves and Their Uses — Google Books",
+          "url": "https://books.google.com/books/about/Light_Waves_and_Their_Uses.html?id=UK0RAAAAYAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-view historical edition; passage p. 23."
+        }
+      ],
+      "curatorNotes": "A historical humility device; not evidence against expertise, but against terminal confidence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-wright-afflicted-flight",
+      "text": "For some years I have been afflicted with the belief that flight is possible to man.",
+      "author": "Wilbur Wright",
+      "work": "Letter to Octave Chanute",
+      "publicationYear": 1900,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-belief-that-flight-is-possible-to-man/",
+        "edition": "Library of Congress Wright Papers",
+        "pageOrLocator": "Letter dated 13 May 1900",
+        "publicationYear": 1900,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact first sentence verified in the LOC essay and underlying manuscript record."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The manuscript is from 1900, but this batch did not resolve the precise US publication-status term for the historically unpublished letter. Keep out of public runtime until cleared.",
+        "evidenceUrl": "https://www.loc.gov/item/mcc.006/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "flight",
+        "invention",
+        "belief",
+        "engineering"
+      ],
+      "semanticAxes": [
+        "impossibility↔persistence",
+        "belief↔experiment"
+      ],
+      "frizzleQuestion": "What obsession deserves years of failure before persistence stops looking irrational and starts looking visionary?",
+      "brainFood": [
+        {
+          "label": "The Belief that Flight is Possible to Man — Library of Congress",
+          "url": "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-belief-that-flight-is-possible-to-man/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "LOC essay reproducing the opening sentence."
+        },
+        {
+          "label": "Wilbur Wright to Octave Chanute, 13 May 1900 — LOC",
+          "url": "https://www.loc.gov/item/mcc.006/",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Underlying manuscript record."
+        }
+      ],
+      "curatorNotes": "Primary wording verified; rights remain conservative because manuscript publication history matters.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-newcomb-flight-never-cope",
+      "text": "aerial flight is one of that great class of problems with which man can never cope",
+      "author": "Simon Newcomb",
+      "work": "Side-Lights on Astronomy — Is the Airship Coming?",
+      "publicationYear": 1906,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://readingroo.ms/4/0/6/4065/4065-h/4065-h.htm",
+        "edition": "Project Gutenberg mirror of 1906 book",
+        "pageOrLocator": "Essay on aerial flight",
+        "publicationYear": 1906,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the public-domain essay."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1906 publication is public domain; Newcomb died in 1909.",
+        "evidenceUrl": "https://readingroo.ms/4/0/6/4065/4065-h/4065-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "flight",
+        "prediction",
+        "engineering",
+        "failure"
+      ],
+      "semanticAxes": [
+        "prediction↔invention",
+        "impossibility↔breakthrough"
+      ],
+      "frizzleQuestion": "Which impossible problem is actually impossible, and which only exceeds the assumptions built into today's materials and methods?",
+      "brainFood": [
+        {
+          "label": "Newcomb, Side-Lights on Astronomy — Project Gutenberg mirror",
+          "url": "https://readingroo.ms/4/0/6/4065/4065-h/4065-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay text."
+        }
+      ],
+      "curatorNotes": "Placed next to Wright/Lovelace later to create productive historical contrast, not ridicule.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-tesla-earth-brain",
+      "text": "the entire earth will be converted into a huge brain, as it were, capable of response in every one of its parts.",
+      "author": "Nikola Tesla",
+      "work": "The Transmission of Electrical Energy Without Wires",
+      "publicationYear": 1904,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://teslauniverse.com/nikola-tesla/articles/transmission-electrical-energy-without-wires",
+        "edition": "Tesla article transcription",
+        "pageOrLocator": "Electrical World and Engineer, 5 March 1904",
+        "publicationYear": 1904,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the historical article transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1904 publication is public domain in the US; Tesla died in 1943, so EU term expired in 2014.",
+        "evidenceUrl": "https://teslauniverse.com/nikola-tesla/articles/transmission-electrical-energy-without-wires",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "networks",
+        "wireless",
+        "infrastructure",
+        "prediction"
+      ],
+      "semanticAxes": [
+        "earth↔network",
+        "communication↔nervous-system"
+      ],
+      "frizzleQuestion": "What happens to politics, memory, and attention when a communication network starts behaving like a planetary nervous system?",
+      "brainFood": [
+        {
+          "label": "Tesla — Transmission of Electrical Energy Without Wires",
+          "url": "https://teslauniverse.com/nikola-tesla/articles/transmission-electrical-energy-without-wires",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical article transcription."
+        }
+      ],
+      "curatorNotes": "Striking network forecast without relying on the later vest-pocket-phone quote.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r06-nyt-million-years-flight",
+      "text": "the flying machine which will really fly might be evolved ... in from one million to ten million years",
+      "author": "The New York Times editorial (anonymous)",
+      "work": "Flying Machines Which Do Not Fly",
+      "publicationYear": 1903,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_New_York_Times/1903/10/9/Flying_Machines_Which_Do_Not_Fly",
+        "edition": "New York Times editorial transcription",
+        "pageOrLocator": "9 October 1903",
+        "publicationYear": 1903,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified; ellipsis removes the intervening phrase about combined continuous efforts of mathematicians and mechanicians."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1903 US newspaper text is public domain; anonymous historical authorship also presents no current EU term issue.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_New_York_Times/1903/10/9/Flying_Machines_Which_Do_Not_Fly",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "flight",
+        "prediction",
+        "history",
+        "engineering"
+      ],
+      "semanticAxes": [
+        "forecast↔breakthrough",
+        "expertise↔timing"
+      ],
+      "frizzleQuestion": "Why are technological timelines especially fragile when the forecast assumes tomorrow must use today's materials, methods, and failures?",
+      "brainFood": [
+        {
+          "label": "New York Times, Flying Machines Which Do Not Fly — Wikisource",
+          "url": "https://en.wikisource.org/wiki/The_New_York_Times/1903/10/9/Flying_Machines_Which_Do_Not_Fly",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical editorial transcription dated 9 Oct 1903."
+        }
+      ],
+      "curatorNotes": "Historical oddity with unusually sharp timing: published weeks before the Wrights' successful flight.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
