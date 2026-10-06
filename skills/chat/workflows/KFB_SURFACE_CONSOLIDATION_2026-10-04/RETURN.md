@@ -275,3 +275,56 @@ The visible GPT Site is still stale until a Sites-capable executor publishes thi
 
 Exactly one next gate:
 **PUBLISH_ONLY the existing Production Hub Site, with no redesign/source edits, then verify the visible Hub shows Coworker RUNNING, Work/Astra NEXT, and Audio M/N/O as QA-pending additive input.**
+
+
+## 2026-10-06 · BOARD 2026-10-06.3 · STYLE REFERENCE LIBRARY PUBLISHED TOOL
+
+Asset Librarian / Style Reference Library is no longer READY/PARKED.
+
+Current owner/source:
+- Draft PR #359;
+- branch `planning/style-reference-library-r1-surface-2026-10-05`;
+- current head `76211dec6b89aff969a8622f82c415f90b8b56a9`;
+- PR remains unmerged.
+
+Current project Return records:
+- R1 published in place inside the existing Asset Librarian Site;
+- no second Site / no second Registry;
+- 13 official Etherington references;
+- search + filters + URL intake;
+- Reference Cards/Sets;
+- notes + Construction Principles;
+- curated Reference ↔ Asset relations;
+- export/reload;
+- restored real 3D previews;
+- whole-card Inspector;
+- image-overlay Plus button;
+- five-icon mobile navigation;
+- ToolBox route to the real Style References deep-link;
+- Tester PASS;
+- Critic findings resolved/retested;
+- Guard GO.
+
+Current URLs:
+- `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- `https://kfb-toolbox.frizzlebob.chatgpt.site/`
+
+Verification boundary:
+- GitHub Return/source identity: **VERIFIED**;
+- Georg/producing executor reports the GPT Sites published and clean;
+- this Web Chat cannot directly fetch the private GPT Site host, so it does not relabel that publication as an independent fresh-browser verification.
+
+Hub board:
+- revision `2026-10-06.3`;
+- board implementation checkpoint `f06ae3c05e0e665aeff4d621f62d8390a4bdef0e`;
+- board blob `47600bffbeb743d07e4c9add9efc39071d4a484a`;
+- Hub HTML blob `5172207a1181ce85e2966cc695042ad765525b9c` unchanged.
+
+Primary routing remains unchanged:
+1. #360 Coworker Open World integration RUNNING;
+2. Work/Astra Anschluss-Integrator after exact Coworker return;
+3. Audio #365 additive input / M-N-O QA;
+4. Style Reference Library is **available tooling**, not a blocker.
+
+Exactly one Hub gate remains:
+**PUBLISH_ONLY the existing Production Hub Site from frozen source and verify visible board 2026-10-06.3.**

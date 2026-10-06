@@ -43,9 +43,9 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "PUBLISH_EXISTING_PRODUCTION_HUB_SITE_IN_PLACE_AND_VERIFY_BOARD_2026-10-06.2",
+  "next": "PUBLISH_EXISTING_PRODUCTION_HUB_SITE_IN_PLACE_AND_VERIFY_BOARD_2026-10-06.3",
   "openCoreBlockers": [
-    "Production Hub GPT Site has not yet consumed board 2026-10-06.2"
+    "Production Hub GPT Site has not yet consumed board 2026-10-06.3"
   ],
   "forbidden": [
     "duplicate dashboards",
@@ -62,9 +62,12 @@
     "presentationSync": "TOKEN_ONLY_VISIBLE_AND_RESTORED_PASS",
     "uiSourceFilesChangedDuringProof": 0,
     "businessLogicFilesChangedDuringProof": 0,
-    "currentBoardReadback": "8/8 PASS",
+    "currentBoardReadback": "9/9 PASS",
     "currentBoardFilesChanged": 2,
-    "hubHtmlFilesChanged": 0
+    "hubHtmlFilesChanged": 0,
+    "styleReferenceLibrarySourceHead": "76211dec6b89aff969a8622f82c415f90b8b56a9",
+    "styleReferenceLibraryPublication": "PROJECT_RETURN_PUBLISHED_IN_PLACE",
+    "styleReferenceLibraryFreshBrowser": "UNAVAILABLE_IN_THIS_CHAT"
   },
   "architecture": {
     "statusOwner": "KFB Production Control D1 records",
@@ -88,7 +91,11 @@
       "#361 Combat · HISTORY/HOLD",
       "#362 Triplet/ChatterBox · HOLD/NOT TODAY"
     ],
-    "hubBoardRevision": "2026-10-06.2",
-    "hubBoardImplementationHead": "15a3b425c66138b08fdabe8c5a9d18559bd76e62"
+    "hubBoardRevision": "2026-10-06.3",
+    "hubBoardImplementationHead": "f06ae3c05e0e665aeff4d621f62d8390a4bdef0e",
+    "availableTools": [
+      "Style Reference Library R1 · published in existing Asset Librarian · PR #359 draft/unmerged",
+      "KFB ToolBox · existing router with Style Reference Library deep-link"
+    ]
   }
 }
