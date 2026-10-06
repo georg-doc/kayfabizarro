@@ -1,0 +1,1671 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T17:55:00Z",
+  "purpose": "Seventh unmapped quality-first reserve, adding architecture/urbanism, education/learning, war/conflict, food/material culture and language/translation for deeper long-session Billboard rotation.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Expand semantic, disciplinary and tonal diversity while preserving a large non-repeating reserve for later context mapping.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "clusters": {
+    "architecture-urbanism": 6,
+    "education-learning": 6,
+    "war-conflict": 6,
+    "food-material-culture": 6,
+    "language-translation": 6
+  },
+  "candidates": [
+    {
+      "id": "qr-r07-vitruvius-durability-convenience-beauty",
+      "text": "All these must be built with due reference to durability, convenience, and beauty.",
+      "author": "Vitruvius",
+      "work": "The Ten Books on Architecture",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AVitruvius_the_Ten_Books_on_Architecture.djvu/37",
+        "edition": "Morris Hicky Morgan translation, validated scan",
+        "pageOrLocator": "Book I, Chapter III, §2; printed p. 17",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the validated scan and a parallel-edition transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient source and Morgan's early twentieth-century translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AVitruvius_the_Ten_Books_on_Architecture.djvu/37",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "architecture",
+        "durability",
+        "utility",
+        "beauty"
+      ],
+      "semanticAxes": [
+        "durability↔immediacy",
+        "utility↔beauty"
+      ],
+      "frizzleQuestion": "Which of durability, convenience, and beauty is easiest to postpone—and what happens when the postponed one becomes the dominant failure?",
+      "brainFood": [
+        {
+          "label": "Vitruvius, Book I.3.2 — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AVitruvius_the_Ten_Books_on_Architecture.djvu/37",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan of the Morgan translation."
+        },
+        {
+          "label": "Vitruvius parallel editions",
+          "url": "https://lexundria.com/vitr/1.3.2/cf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Parallel Gwilt/Morgan renderings for context."
+        }
+      ],
+      "curatorNotes": "A compact three-axis design test that works for buildings, interfaces, infrastructure and world objects.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-ruskin-build-for-ever",
+      "text": "Therefore, when we build, let us think that we build for ever.",
+      "author": "John Ruskin",
+      "work": "The Seven Lamps of Architecture",
+      "publicationYear": 1849,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3ARuskin_-_The_Seven_Lamps_of_Architecture.djvu/247",
+        "edition": "Scan-backed public-domain edition",
+        "pageOrLocator": "The Lamp of Memory, §X; printed p. 195",
+        "publicationYear": 1849,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the scan and Lancaster's Ruskin electronic edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3ARuskin_-_The_Seven_Lamps_of_Architecture.djvu/247",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "architecture",
+        "memory",
+        "future-generations",
+        "durability"
+      ],
+      "semanticAxes": [
+        "present-use↔future-memory",
+        "temporary↔enduring"
+      ],
+      "frizzleQuestion": "What would you build differently if future strangers rather than current clients were the people whose judgment mattered?",
+      "brainFood": [
+        {
+          "label": "Seven Lamps — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ARuskin_-_The_Seven_Lamps_of_Architecture.djvu/247",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan-backed Lamp of Memory passage."
+        },
+        {
+          "label": "Ruskin Library Edition — Lancaster",
+          "url": "https://www.lancaster.ac.uk/fass/ruskin/eSoV/texts/vol08/vol08p233.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scholarly electronic edition."
+        }
+      ],
+      "curatorNotes": "Future-time architecture without generic sustainability language.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-sullivan-form-follows-function",
+      "text": "form ever follows function, and this is the law.",
+      "author": "Louis H. Sullivan",
+      "work": "The Tall Office Building Artistically Considered",
+      "publicationYear": 1896,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://onlinelibrary.wiley.com/doi/full/10.1002/ca.22637",
+        "edition": "Quoted from Sullivan's 1896 Lippincott's Magazine essay",
+        "pageOrLocator": "Original essay p. 408 in cited reprint",
+        "publicationYear": 1896,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact original wording is reproduced with source citation; independent source histories confirm the 1896 essay."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Sullivan's 1896 essay is public domain.",
+        "evidenceUrl": "https://onlinelibrary.wiley.com/doi/full/10.1002/ca.22637",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "architecture",
+        "function",
+        "form",
+        "design"
+      ],
+      "semanticAxes": [
+        "form↔function",
+        "appearance↔use"
+      ],
+      "frizzleQuestion": "When does a form reveal what a system actually does better than what its designers say it is for?",
+      "brainFood": [
+        {
+          "label": "Form follows function — Clinical Anatomy",
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/ca.22637",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly article reproducing Sullivan's exact original passage and source."
+        },
+        {
+          "label": "Form follows function history",
+          "url": "https://en.wikipedia.org/wiki/Form_follows_function",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Context on the original 1896 formulation."
+        }
+      ],
+      "curatorNotes": "Kept in Sullivan's actual 'ever' wording rather than the later shortened slogan.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-howard-town-country-married",
+      "text": "Town and country must be married",
+      "author": "Ebenezer Howard",
+      "work": "Garden Cities of To-Morrow",
+      "publicationYear": 1902,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/46134/46134-h/46134-h",
+        "edition": "Project Gutenberg text of the 1902 edition",
+        "pageOrLocator": "Three Magnets discussion; printed p. 18",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the complete work."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/46134/46134-h/46134-h",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "urbanism",
+        "nature",
+        "garden-city",
+        "planning"
+      ],
+      "semanticAxes": [
+        "town↔country",
+        "density↔nature"
+      ],
+      "frizzleQuestion": "What gets lost when city and nature are treated as mutually exclusive products instead of parts of one habitat?",
+      "brainFood": [
+        {
+          "label": "Garden Cities of To-Morrow — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/46134/46134-h/46134-h",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain 1902 text."
+        }
+      ],
+      "curatorNotes": "Direct urban/nature integration axis for later island and settlement contexts.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-morris-architecture-all-arts",
+      "text": "Architecture would lead us to all the arts",
+      "author": "William Morris",
+      "work": "Hopes and Fears for Art — The Prospects of Architecture in Civilisation",
+      "publicationYear": 1881,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.marxists.org/archive/morris/works/1882/hopes/chapters/chapter3.htm",
+        "edition": "Full public-domain lecture text",
+        "pageOrLocator": "The Prospects of Architecture in Civilisation",
+        "publicationYear": 1881,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in two full-text editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.marxists.org/archive/morris/works/1882/hopes/chapters/chapter3.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "architecture",
+        "art",
+        "housing",
+        "material-culture"
+      ],
+      "semanticAxes": [
+        "shelter↔art",
+        "everyday-space↔culture"
+      ],
+      "frizzleQuestion": "What changes when housing is treated not as background infrastructure but as the first artwork people inhabit every day?",
+      "brainFood": [
+        {
+          "label": "Morris, Hopes and Fears for Art",
+          "url": "https://www.marxists.org/archive/morris/works/1882/hopes/chapters/chapter3.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full lecture text."
+        },
+        {
+          "label": "Hopes and Fears for Art — alternate edition",
+          "url": "https://openstax.marxists.info/archive/morris/works/1882/hopes/hopes.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-text cross-check."
+        }
+      ],
+      "curatorNotes": "Links architecture to the whole material-art environment rather than prestige buildings.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-alberti-house-small-city",
+      "text": "the city is like some large house, and the house is in turn like some small city",
+      "author": "Leon Battista Alberti",
+      "work": "On the Art of Building in Ten Books",
+      "publicationYear": 1485,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://books.google.ca/books?id=hOs2zXz7M7wC",
+        "edition": "Rykwert, Leach & Tavernor modern English translation quoted in architecture scholarship",
+        "pageOrLocator": "Book I, Chapter 9; modern edition p. 190",
+        "publicationYear": 1485,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English wording is consistently reproduced from the modern MIT Press translation; the translation itself was not directly retrieved as a readable edition."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying Latin is public domain, but the exact Rykwert/Leach/Tavernor English translation is modern and copyrighted.",
+        "evidenceUrl": "https://books.google.ca/books?id=hOs2zXz7M7wC",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "architecture",
+        "urbanism",
+        "scale",
+        "part-whole"
+      ],
+      "semanticAxes": [
+        "house↔city",
+        "part↔whole"
+      ],
+      "frizzleQuestion": "If a house is a small city, which domestic spaces are functioning as its streets, squares, borders, and private territories?",
+      "brainFood": [
+        {
+          "label": "On Alberti and the Art of Building — Google Books",
+          "url": "https://books.google.ca/books?id=hOs2zXz7M7wC",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Architecture scholarship reproducing the exact modern translation."
+        },
+        {
+          "label": "ETH Architecture archive — Alberti quote",
+          "url": "https://arsenal.arch.ethz.ch/projects/o8dpco1c2czw87lriju2/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent architecture-school reproduction and work locator."
+        }
+      ],
+      "curatorNotes": "Strong part/whole mapping candidate, retained as research-restricted because the exact English translation is modern.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-locke-reading-thinking",
+      "text": "Reading furnishes the mind only with materials of knowledge; it is thinking makes what we read ours.",
+      "author": "John Locke",
+      "work": "Of the Conduct of the Understanding",
+      "publicationYear": 1706,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.johnlocke.net/p/of-conduct-of-understanding.html",
+        "edition": "Full text transcription",
+        "pageOrLocator": "§20 Reading",
+        "publicationYear": 1706,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the text and an 1853 scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.johnlocke.net/p/of-conduct-of-understanding.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "learning",
+        "reading",
+        "thinking",
+        "knowledge"
+      ],
+      "semanticAxes": [
+        "information↔understanding",
+        "reading↔thinking"
+      ],
+      "frizzleQuestion": "What information have you consumed often enough to recognize but never worked on hard enough to make your own?",
+      "brainFood": [
+        {
+          "label": "Locke, Conduct of the Understanding",
+          "url": "https://www.johnlocke.net/p/of-conduct-of-understanding.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full text; §20 Reading."
+        },
+        {
+          "label": "Locke 1853 scan — §20",
+          "url": "https://en.wikisource.org/wiki/Page%3AAn_Essay_Concerning_Human_Understanding_-_Locke_-_1853.djvu/509",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan-backed cross-check."
+        }
+      ],
+      "curatorNotes": "Distinguishes information exposure from active understanding.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-montaigne-well-made-head",
+      "text": "a tutor, who has rather a well-made than a well-filled head",
+      "author": "Michel de Montaigne",
+      "work": "Essays — Of the Education of Children",
+      "publicationYear": 1580,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/3600/3600-h/3600-h.htm",
+        "edition": "Charles Cotton public-domain translation",
+        "pageOrLocator": "Book I, Chapter XXVI",
+        "publicationYear": 1580,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact phrase verified in Cotton's translation and scholarly quotations identifying the chapter."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Montaigne's text and Cotton's seventeenth-century English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/3600/3600-h/3600-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "education",
+        "judgment",
+        "knowledge",
+        "teaching"
+      ],
+      "semanticAxes": [
+        "judgment↔information",
+        "formation↔filling"
+      ],
+      "frizzleQuestion": "What kind of intelligence disappears when education optimizes for how much a head contains rather than how it judges?",
+      "brainFood": [
+        {
+          "label": "Montaigne Essays — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/3600/3600-h/3600-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Charles Cotton translation; Book I.26."
+        }
+      ],
+      "curatorNotes": "Excellent anti-cramming line without anti-knowledge framing.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-mill-demand-capacity",
+      "text": "A pupil from whom nothing is ever demanded which he cannot do, never does all he can.",
+      "author": "John Stuart Mill",
+      "work": "Autobiography",
+      "publicationYear": 1873,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/10378/10378-h/10378-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter I",
+        "publicationYear": 1873,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Mill's autobiography."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/10378/10378-h/10378-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "education",
+        "difficulty",
+        "capacity",
+        "challenge"
+      ],
+      "semanticAxes": [
+        "challenge↔capacity",
+        "safety↔growth"
+      ],
+      "frizzleQuestion": "How do you set a demand high enough to reveal capacity without turning difficulty into proof of worth?",
+      "brainFood": [
+        {
+          "label": "Mill, Autobiography — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/10378/10378-h/10378-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Chapter I."
+        }
+      ],
+      "curatorNotes": "A useful challenge/safety tension rather than simple rigor worship.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-adams-teacher-eternity",
+      "text": "A teacher affects eternity; he can never tell where his influence stops.",
+      "author": "Henry Adams",
+      "work": "The Education of Henry Adams",
+      "publicationYear": 1907,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2044/pg2044-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter XX, Failure",
+        "publicationYear": 1907,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the full text and source-specific verification records."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2044/pg2044-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "education",
+        "influence",
+        "teachers",
+        "time"
+      ],
+      "semanticAxes": [
+        "lesson↔legacy",
+        "moment↔long-tail"
+      ],
+      "frizzleQuestion": "Which lesson keeps acting through a person long after both teacher and student have forgotten the original moment?",
+      "brainFood": [
+        {
+          "label": "The Education of Henry Adams — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2044/pg2044-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Chapter XX."
+        }
+      ],
+      "curatorNotes": "Long-tail influence maps well to residents, mentors and memory systems later.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-whitehead-past-present",
+      "text": "The only use of a knowledge of the past is to equip us for the present.",
+      "author": "Alfred North Whitehead",
+      "work": "The Aims of Education",
+      "publicationYear": 1929,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.educationevolving.org/files/Whitehead-AimsOfEducation.pdf",
+        "edition": "The Aims of Education full-text PDF",
+        "pageOrLocator": "The Aims of Education essay",
+        "publicationYear": 1929,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the PDF and independent full-text transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1929 publication is public domain in the US; Whitehead died in 1947, so EU author term has expired.",
+        "evidenceUrl": "https://www.educationevolving.org/files/Whitehead-AimsOfEducation.pdf",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "education",
+        "history",
+        "present",
+        "use"
+      ],
+      "semanticAxes": [
+        "past↔present",
+        "knowledge↔use"
+      ],
+      "frizzleQuestion": "When does historical knowledge clarify the present, and when does reverence for the past become a way of depreciating it?",
+      "brainFood": [
+        {
+          "label": "Whitehead, Aims of Education — PDF",
+          "url": "https://www.educationevolving.org/files/Whitehead-AimsOfEducation.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-text edition."
+        },
+        {
+          "label": "Aims of Education — DiText",
+          "url": "https://ditext.com/whitehead/aims.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-text cross-check."
+        }
+      ],
+      "curatorNotes": "Historical study justified through present understanding rather than antiquarian accumulation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-emerson-respecting-pupil",
+      "text": "the secret of education lies in respecting the pupil.",
+      "author": "Ralph Waldo Emerson",
+      "work": "Education",
+      "publicationYear": 1860,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/71747/pg71747-images.html",
+        "edition": "1921 public-domain educational text quoting Emerson",
+        "pageOrLocator": "Quote attributed to Emerson's Education",
+        "publicationYear": 1860,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence is historically quoted and attributed, but a direct Emerson edition/page was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Emerson died in 1882; underlying essay and historical quotation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/71747/pg71747-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "education",
+        "respect",
+        "pupil",
+        "autonomy"
+      ],
+      "semanticAxes": [
+        "teaching↔respect",
+        "guidance↔autonomy"
+      ],
+      "frizzleQuestion": "What does respect for a pupil require when the teacher can see a safer path but cannot know the life the pupil is actually becoming?",
+      "brainFood": [
+        {
+          "label": "The Film: Its Use in Popular Education",
+          "url": "https://www.gutenberg.org/cache/epub/71747/pg71747-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain historical source quoting Emerson's formulation."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY until a direct Emerson edition/page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-sherman-war-cruelty",
+      "text": "War is cruelty, and you cannot refine it",
+      "author": "William Tecumseh Sherman",
+      "work": "Letter to James M. Calhoun, E. E. Rawson, and S. C. Wells",
+      "publicationYear": 1864,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://cwnc.omeka.chass.ncsu.edu/items/show/23",
+        "edition": "Historical letter transcription",
+        "pageOrLocator": "12 September 1864",
+        "publicationYear": 1864,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the letter transcription and Teaching American History edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Nineteenth-century letter text is public domain.",
+        "evidenceUrl": "https://cwnc.omeka.chass.ncsu.edu/items/show/23",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "cruelty",
+        "ethics",
+        "conflict"
+      ],
+      "semanticAxes": [
+        "war↔cruelty",
+        "refinement↔violence"
+      ],
+      "frizzleQuestion": "What moral distinctions still matter in war if cruelty is inherent rather than an accidental deviation?",
+      "brainFood": [
+        {
+          "label": "Sherman letter — Civil War Era NC",
+          "url": "https://cwnc.omeka.chass.ncsu.edu/items/show/23",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Historical letter transcription."
+        },
+        {
+          "label": "Sherman letter — Teaching American History",
+          "url": "https://teachingamericanhistory.org/document/letter-to-james-m-calhoun-et-al/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent transcription cross-check."
+        }
+      ],
+      "curatorNotes": "The question resists using the line as an excuse to erase distinctions inside war.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-clausewitz-policy-means",
+      "text": "War is a mere continuation of policy by other means.",
+      "author": "Carl von Clausewitz",
+      "work": "On War",
+      "publicationYear": 1832,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/1946/1946-h/1946-h.htm",
+        "edition": "J. J. Graham public-domain English translation",
+        "pageOrLocator": "Book I, Chapter I, §24",
+        "publicationYear": 1832,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the full translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Clausewitz's text and Graham's nineteenth-century translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/1946/1946-h/1946-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "policy",
+        "strategy",
+        "politics"
+      ],
+      "semanticAxes": [
+        "war↔policy",
+        "means↔ends"
+      ],
+      "frizzleQuestion": "If war continues policy rather than replacing it, which political failure is already present before the first shot?",
+      "brainFood": [
+        {
+          "label": "Clausewitz, On War — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1946/1946-h/1946-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Graham translation; Book I.1.24."
+        }
+      ],
+      "curatorNotes": "War as instrument, not autonomous weather.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-sunzi-without-fighting",
+      "text": "supreme excellence consists in breaking the enemy's resistance without fighting.",
+      "author": "Sun Tzu",
+      "work": "The Art of War",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://ctext.org/art-of-war/attack-by-stratagem/zhs",
+        "edition": "Lionel Giles public-domain translation",
+        "pageOrLocator": "Chapter III, Attack by Stratagem",
+        "publicationYear": 1910,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the bilingual Chinese Text Project text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient Chinese source and Lionel Giles's 1910 translation are public domain.",
+        "evidenceUrl": "https://ctext.org/art-of-war/attack-by-stratagem/zhs",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "strategy",
+        "resistance",
+        "force"
+      ],
+      "semanticAxes": [
+        "victory↔violence",
+        "coercion↔behavior-change"
+      ],
+      "frizzleQuestion": "What kind of victory becomes possible only when the opponent’s behavior changes before force has to be used?",
+      "brainFood": [
+        {
+          "label": "Art of War — Chinese Text Project",
+          "url": "https://ctext.org/art-of-war/attack-by-stratagem/zhs",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Bilingual text using Lionel Giles's translation."
+        }
+      ],
+      "curatorNotes": "A conflict mechanism distinct from tactical victory.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-franklin-good-war-bad-peace",
+      "text": "There never was a good war or a bad peace.",
+      "author": "Benjamin Franklin",
+      "work": "Letter to Sir Joseph Banks",
+      "publicationYear": 1783,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://fi.edu/en/science-and-education/benjamin-franklin/famous-quotes",
+        "edition": "Franklin Institute source record",
+        "pageOrLocator": "Letter to Sir Joseph Banks, July 1783",
+        "publicationYear": 1783,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording and letter attribution verified by the Franklin Institute and historical collections."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://fi.edu/en/science-and-education/benjamin-franklin/famous-quotes",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "peace",
+        "conflict",
+        "tradeoffs"
+      ],
+      "semanticAxes": [
+        "war↔peace",
+        "victory↔cost"
+      ],
+      "frizzleQuestion": "Which peace is genuinely bad enough that renewed killing improves it rather than merely changes who suffers?",
+      "brainFood": [
+        {
+          "label": "Franklin Institute — famous quotes",
+          "url": "https://fi.edu/en/science-and-education/benjamin-franklin/famous-quotes",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Institutional source with exact letter attribution."
+        }
+      ],
+      "curatorNotes": "Deliberately interrogated rather than treated as self-evident pacifist slogan.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-owen-old-lie",
+      "text": "The old Lie: Dulce et decorum est / Pro patria mori.",
+      "author": "Wilfred Owen",
+      "work": "Dulce et Decorum est",
+      "publicationYear": 1920,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/1034/1034-h/1034-h.htm",
+        "edition": "Poems, public-domain edition",
+        "pageOrLocator": "Dulce et Decorum est, final two lines",
+        "publicationYear": 1920,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact final wording verified in Project Gutenberg and the University of Virginia first-edition transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1920 publication is public domain in the US; Owen died in 1918, so EU author term has expired.",
+        "evidenceUrl": "https://www.gutenberg.org/files/1034/1034-h/1034-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "propaganda",
+        "glory",
+        "language"
+      ],
+      "semanticAxes": [
+        "glory↔death",
+        "phrase↔experience"
+      ],
+      "frizzleQuestion": "What has to happen to language before a glorious phrase can make industrial death feel honorable?",
+      "brainFood": [
+        {
+          "label": "Owen, Poems — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1034/1034-h/1034-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collection containing the poem."
+        },
+        {
+          "label": "Dulce et Decorum est — UVA first-edition transcription",
+          "url": "https://anthology.lib.virginia.edu/work/Owen/owen-dulce",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Transcription checked against the 1920 first edition."
+        }
+      ],
+      "curatorNotes": "Short terminal quote; slash represents line break in source.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-thucydides-strong-weak",
+      "text": "the strong do what they can and the weak suffer what they must.",
+      "author": "Thucydides",
+      "work": "History of the Peloponnesian War",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0200%3Abook%3D5%3Achapter%3D89%3Asection%3D1",
+        "edition": "Richard Crawley public-domain translation",
+        "pageOrLocator": "Book V, Chapter 89, Melian Dialogue",
+        "publicationYear": 1874,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact Crawley wording verified in Perseus and an independent Crawley text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient source and Crawley's nineteenth-century translation are public domain.",
+        "evidenceUrl": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0200%3Abook%3D5%3Achapter%3D89%3Asection%3D1",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "war",
+        "power",
+        "justice",
+        "realism"
+      ],
+      "semanticAxes": [
+        "power↔justice",
+        "strong↔weak"
+      ],
+      "frizzleQuestion": "What happens to appeals to justice when the parties know that only one side can enforce its answer?",
+      "brainFood": [
+        {
+          "label": "Thucydides 5.89 — Perseus",
+          "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0200%3Abook%3D5%3Achapter%3D89%3Asection%3D1",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Crawley translation at the Melian Dialogue."
+        },
+        {
+          "label": "Thucydides Book V — complete Crawley text",
+          "url": "https://www.ellopos.net/elpenor/greek-texts/ancient-greece/thucydides/history-5.asp?pg=53",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain translation cross-check."
+        }
+      ],
+      "curatorNotes": "Kept in its imperial coercion context, not floated as a universal endorsement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-brillat-food-identity",
+      "text": "Tell me what kind of food you eat, and I will tell you what kind of man you are.",
+      "author": "Jean Anthelme Brillat-Savarin",
+      "work": "The Physiology of Taste",
+      "publicationYear": 1825,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+        "edition": "Public-domain English translation",
+        "pageOrLocator": "Aphorism IV",
+        "publicationYear": 1825,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English aphorism verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying French and the early English translation used by Gutenberg are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "food",
+        "identity",
+        "culture",
+        "class"
+      ],
+      "semanticAxes": [
+        "taste↔identity",
+        "necessity↔choice"
+      ],
+      "frizzleQuestion": "What part of identity is really visible in food once taste, class, geography, habit, and necessity are tangled together?",
+      "brainFood": [
+        {
+          "label": "Physiology of Taste — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain English edition; Aphorism IV."
+        }
+      ],
+      "curatorNotes": "A material-culture identity line with enough ambiguity for later contextual mapping.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-brillat-new-dish-star",
+      "text": "The discovery of a new dish confers more happiness on humanity, than the discovery of a new star.",
+      "author": "Jean Anthelme Brillat-Savarin",
+      "work": "The Physiology of Taste",
+      "publicationYear": 1825,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+        "edition": "Public-domain English translation",
+        "pageOrLocator": "Aphorism IX",
+        "publicationYear": 1825,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English aphorism verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "food",
+        "pleasure",
+        "science",
+        "daily-life"
+      ],
+      "semanticAxes": [
+        "ordinary-pleasure↔grand-discovery",
+        "daily-life↔prestige"
+      ],
+      "frizzleQuestion": "Why can a small improvement in ordinary pleasure matter more to daily life than a magnificent discovery most people never touch?",
+      "brainFood": [
+        {
+          "label": "Physiology of Taste — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/5434/pg5434.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain English edition; Aphorism IX."
+        }
+      ],
+      "curatorNotes": "Deliberate lightness for rotation; compares lived utility with prestige discovery.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-woolf-dined-well",
+      "text": "One cannot think well, love well, sleep well, if one has not dined well.",
+      "author": "Virginia Woolf",
+      "work": "A Room of One's Own",
+      "publicationYear": 1929,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://anthologydev.lib.virginia.edu/work/Woolf/woolf-room-of-ones-own?section=frontMatter",
+        "edition": "University of Virginia text",
+        "pageOrLocator": "Chapter I",
+        "publicationYear": 1929,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the UVA text and by the Virginia Woolf Society's misquotation audit."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1929 work is public domain in the US; Woolf died in 1941, so EU author term has expired.",
+        "evidenceUrl": "https://anthologydev.lib.virginia.edu/work/Woolf/woolf-room-of-ones-own?section=frontMatter",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "food",
+        "body",
+        "thought",
+        "material-conditions"
+      ],
+      "semanticAxes": [
+        "body↔mind",
+        "material-condition↔intellectual-life"
+      ],
+      "frizzleQuestion": "How much supposedly abstract thought is quietly limited by the body’s material conditions?",
+      "brainFood": [
+        {
+          "label": "A Room of One's Own — UVA",
+          "url": "https://anthologydev.lib.virginia.edu/work/Woolf/woolf-room-of-ones-own?section=frontMatter",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "University-hosted text with the exact sentence."
+        },
+        {
+          "label": "Virginia Woolf Society — misquotations",
+          "url": "https://virginiawoolfsociety.org.uk/resources/misquotations/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Society verifies the exact word 'think' and Chapter 1 source."
+        }
+      ],
+      "curatorNotes": "Material conditions before intellectual abstraction.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-emerson-things-saddle",
+      "text": "Things are in the saddle, / And ride mankind.",
+      "author": "Ralph Waldo Emerson",
+      "work": "Ode, Inscribed to W. H. Channing",
+      "publicationYear": 1847,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/12843/12843-h/12843-h.htm",
+        "edition": "Emerson Poems, public-domain edition",
+        "pageOrLocator": "Ode, Inscribed to W. H. Channing",
+        "publicationYear": 1847,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact two-line phrase verified in Emerson's poem and independent historical quotation context."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/12843/12843-h/12843-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "material-culture",
+        "possessions",
+        "technology",
+        "dependency"
+      ],
+      "semanticAxes": [
+        "owner↔owned",
+        "means↔ends"
+      ],
+      "frizzleQuestion": "Which possession, subscription, or convenience has quietly reorganized your life around maintaining it?",
+      "brainFood": [
+        {
+          "label": "Emerson Poems — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/12843/12843-h/12843-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain poetry collection containing the Ode."
+        }
+      ],
+      "curatorNotes": "Slash preserves line break; material objects as system owners.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-dickens-income-margin",
+      "text": "Annual income twenty pounds, annual expenditure nineteen nineteen and six, result happiness.",
+      "author": "Charles Dickens",
+      "work": "David Copperfield",
+      "publicationYear": 1850,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/766/pg766-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Mr. Micawber's advice",
+        "publicationYear": 1850,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact first half of Micawber's income/expenditure contrast verified in the novel."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/766/pg766-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "money",
+        "margin",
+        "household",
+        "psychology"
+      ],
+      "semanticAxes": [
+        "income↔expenditure",
+        "margin↔security"
+      ],
+      "frizzleQuestion": "When does a tiny financial margin change the psychological meaning of exactly the same standard of living?",
+      "brainFood": [
+        {
+          "label": "David Copperfield — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/766/pg766-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain novel text."
+        }
+      ],
+      "curatorNotes": "Tiny margin as lived psychological infrastructure.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-smith-consumption-end",
+      "text": "Consumption is the sole end and purpose of all production",
+      "author": "Adam Smith",
+      "work": "The Wealth of Nations",
+      "publicationYear": 1776,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.adamsmithworks.org/documents/book-iv-chapter-8",
+        "edition": "Adam Smith Works text",
+        "pageOrLocator": "Book IV, Chapter VIII",
+        "publicationYear": 1776,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the full chapter and institutional quotation records."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.adamsmithworks.org/documents/book-iv-chapter-8",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "economics",
+        "consumption",
+        "production",
+        "purpose"
+      ],
+      "semanticAxes": [
+        "production↔use",
+        "producer↔consumer"
+      ],
+      "frizzleQuestion": "What would production look like if the consumer’s actual use mattered more than the producer’s ability to keep producing?",
+      "brainFood": [
+        {
+          "label": "Wealth of Nations IV.8 — Adam Smith Works",
+          "url": "https://www.adamsmithworks.org/documents/book-iv-chapter-8",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full chapter text."
+        },
+        {
+          "label": "Adam Smith Institute — source quotations",
+          "url": "https://www.adamsmith.org/adam-smith-quotes",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent source with book/chapter/page locator."
+        }
+      ],
+      "curatorNotes": "Purpose-of-production axis without assuming consumer preference is infallible.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-cervantes-tapestry-translation",
+      "text": "translation from one language into another ... is like looking at Flemish tapestries on the wrong side",
+      "author": "Miguel de Cervantes",
+      "work": "Don Quixote, Part II",
+      "publicationYear": 1615,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/5941/pg5941-images.html",
+        "edition": "John Ormsby public-domain translation",
+        "pageOrLocator": "Part II, Chapter LXII; ellipsis omits the Greek/Latin qualification",
+        "publicationYear": 1615,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact beginning and ending of the sentence verified in Ormsby's translation; the stored quote uses an explicit ellipsis for the intervening qualification."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Cervantes's text and Ormsby's nineteenth-century English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/5941/pg5941-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "translation",
+        "language",
+        "loss",
+        "representation"
+      ],
+      "semanticAxes": [
+        "original↔translation",
+        "surface↔structure"
+      ],
+      "frizzleQuestion": "What survives translation clearly enough to recognize the pattern while losing the texture that made the original itself?",
+      "brainFood": [
+        {
+          "label": "Don Quixote, Part II, Chapter LXII — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/5941/pg5941-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Ormsby translation."
+        },
+        {
+          "label": "Don Quixote — Biblioteca Virtual Miguel de Cervantes",
+          "url": "https://cervantesvirtual.com/portales/pardo_bazan/obra-visor/don-quixote-1605-1615--0/html/ff78deca-82b1-11df-acc7-002185ce6064_6.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent Ormsby wording cross-check."
+        }
+      ],
+      "curatorNotes": "Ellipsis is explicit; not presented as a contiguous sentence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-goethe-foreign-language",
+      "text": "He who knows no foreign languages knows nothing of his own.",
+      "author": "Johann Wolfgang von Goethe",
+      "work": "Maxims and Reflections / Über Kunst und Altertum",
+      "publicationYear": 1821,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.goethe.de/ins/fr/de/sta/lyo/ueb/jub/jwg.html",
+        "edition": "Goethe-Institut source for the German original; English rendering cross-checked in multilingual scholarship",
+        "pageOrLocator": "Maximen und Reflexionen 91; original: Wer fremde Sprachen nicht kennt, weiß nichts von seiner eigenen.",
+        "publicationYear": 1821,
+        "retrievedAt": "2026-10-06",
+        "notes": "German original is institutionally verified; this exact English rendering is widely attested but not tied to a directly retrieved historical English edition."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Goethe's German original is public domain. The exact English rendering used here was not tied to a historical translator/edition, so public-runtime rights are not assumed.",
+        "evidenceUrl": "https://www.goethe.de/ins/fr/de/sta/lyo/ueb/jub/jwg.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "language",
+        "multilingualism",
+        "self-knowledge",
+        "translation"
+      ],
+      "semanticAxes": [
+        "foreign-language↔native-language",
+        "other↔self"
+      ],
+      "frizzleQuestion": "What can another language reveal about assumptions hidden inside the one that normally feels transparent?",
+      "brainFood": [
+        {
+          "label": "Goethe-Institut — Maximen und Reflexionen 91",
+          "url": "https://www.goethe.de/ins/fr/de/sta/lyo/ueb/jub/jwg.html",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Institutional source verifies the German original and work locator."
+        },
+        {
+          "label": "Multilingualism and Goethe's aphorism",
+          "url": "https://www.intechopen.com/chapters/1186477",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly context reproducing the English rendering."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY / rights-unknown for the exact English rendering; German original is securely public domain.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-emerson-fossil-poetry",
+      "text": "Language is fossil poetry.",
+      "author": "Ralph Waldo Emerson",
+      "work": "The Poet",
+      "publicationYear": 1844,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2945/pg2945-images.html",
+        "edition": "Essays, Second Series, public-domain edition",
+        "pageOrLocator": "The Poet",
+        "publicationYear": 1844,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Project Gutenberg and UCLA's essay transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2945/pg2945-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "language",
+        "metaphor",
+        "history",
+        "poetry"
+      ],
+      "semanticAxes": [
+        "word↔image",
+        "living-metaphor↔dead-metaphor"
+      ],
+      "frizzleQuestion": "Which dead metaphor are you using every day without noticing the image that once made the word intelligible?",
+      "brainFood": [
+        {
+          "label": "Emerson, Essays Second Series — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2945/pg2945-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; The Poet."
+        },
+        {
+          "label": "The Poet — UCLA",
+          "url": "https://english.ucla.edu/doc/fac/Wortham/Ralph%20Waldo%20Emerson%20The%20Poet.htm",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "University transcription cross-check."
+        }
+      ],
+      "curatorNotes": "Language as sedimented imagery; excellent for typography and H13 glyph contexts later.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-wittgenstein-language-world",
+      "text": "The limits of my language mean the limits of my world.",
+      "author": "Ludwig Wittgenstein",
+      "work": "Tractatus Logico-Philosophicus",
+      "publicationYear": 1922,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://people.umass.edu/~klement/tlp/tlp.html",
+        "edition": "C. K. Ogden 1922 English translation in side-by-side scholarly edition",
+        "pageOrLocator": "Proposition 5.6",
+        "publicationYear": 1922,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the side-by-side Tractatus text and independent provenance audit."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain (1922 publication)",
+          "EU: C. K. Ogden translator term ongoing through 2027"
+        ],
+        "basis": "The 1922 Ogden translation is public domain in the US. Ogden died in 1957; EU life+70 translation term runs through 31 Dec 2027.",
+        "evidenceUrl": "https://people.umass.edu/~klement/tlp/tlp.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "language",
+        "world",
+        "limits",
+        "representation"
+      ],
+      "semanticAxes": [
+        "language↔world",
+        "expression↔conceivability"
+      ],
+      "frizzleQuestion": "Which part of reality becomes harder to perceive when your language has no convenient distinction for it?",
+      "brainFood": [
+        {
+          "label": "Tractatus side-by-side edition",
+          "url": "https://people.umass.edu/~klement/tlp/tlp.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Ogden 1922 translation beside German; proposition 5.6."
+        }
+      ],
+      "curatorNotes": "Rights split is explicit; candidate must not be globally public-cleared in 2026.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-orwell-language-thought",
+      "text": "if thought corrupts language, language can also corrupt thought.",
+      "author": "George Orwell",
+      "work": "Politics and the English Language",
+      "publicationYear": 1946,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-%20works/politics-and-the-english-language/",
+        "edition": "Orwell Foundation full essay",
+        "pageOrLocator": "Politics and the English Language",
+        "publicationYear": 1946,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the Orwell Foundation text and Orwell Society provenance discussion."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "EU: author term expired",
+          "US: 1946 publication remains copyrighted"
+        ],
+        "basis": "Orwell died in 1950, so EU author term has expired. The 1946 US publication remains protected in 2026; keep as quote-limit/research candidate.",
+        "evidenceUrl": "https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-%20works/politics-and-the-english-language/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "language",
+        "thought",
+        "politics",
+        "cliche"
+      ],
+      "semanticAxes": [
+        "thought↔language",
+        "expression↔cognition"
+      ],
+      "frizzleQuestion": "Which bad phrase makes a bad idea easier to repeat by removing the effort of thinking it again?",
+      "brainFood": [
+        {
+          "label": "Politics and the English Language — Orwell Foundation",
+          "url": "https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-%20works/politics-and-the-english-language/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full essay text."
+        },
+        {
+          "label": "Orwell Society — attribution audit",
+          "url": "https://orwellsociety.com/did-george-orwell-say-iii/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Confirms this exact genuine Orwell line while rejecting a common fake quote."
+        }
+      ],
+      "curatorNotes": "Rights-sensitive in the US; strong language/cognition mechanism.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r07-bacon-words-images-matter",
+      "text": "words are but the images of matter",
+      "author": "Francis Bacon",
+      "work": "The Advancement of Learning",
+      "publicationYear": 1605,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Book I, discussion of studying words instead of matter",
+        "publicationYear": 1605,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the full text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "language",
+        "representation",
+        "matter",
+        "rhetoric"
+      ],
+      "semanticAxes": [
+        "word↔matter",
+        "image↔referent"
+      ],
+      "frizzleQuestion": "What happens when language becomes so satisfying as an image that nobody checks whether the matter behind it still exists?",
+      "brainFood": [
+        {
+          "label": "Bacon, Advancement of Learning — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "A concise representation/referent warning that complements Wittgenstein and Orwell.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
