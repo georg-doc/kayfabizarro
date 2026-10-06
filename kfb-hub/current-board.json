@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.9",
-  "updatedAt": "2026-10-06T21:50:00+02:00",
+  "revision": "2026-10-06.10",
+  "updatedAt": "2026-10-06T22:00:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "CURRENT · SURFACE HIERARCHY CLEANUP · COWORKER INTAKE PENDING",
-    "note": "Production Hub = only human overview/front door; GitHub = truth; ToolBox = one specialist-tool router; Production Control = ledger/history only; specialist GPT Sites = tools/products; old Cloudflare Hub/Librarian routes = legacy mirrors; Project Tracker = optional scratchpad only. Coworker exact GitHub intake remains the Open World gate."
+    "label": "CURRENT · SURFACE CLEANUP READY · ONE WORK GATE",
+    "note": "Daily model is frozen: Production Hub = overview; ToolBox = tools; GitHub = SSOT; Production Control = ledger only; Cloudflare old Hub/Librarian = legacy; Project Tracker = optional. Exactly one Work/Sites gate remains: publish the Hub live-board loader with zero visible UI regression and verify the existing ToolBox Site identity read-only."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -29,13 +29,13 @@
     },
     {
       "id": "issue-364-hub-live-board-migration",
-      "title": "#364 · Production Hub · one-time Live Board migration",
-      "summary": "One final Site shell update changes the Paper/Dark Hub from deployment-bound board/briefings to remote GitHub-main data. After this migration, Web Chat can update Hub jobs and briefing cards by writing one JSON; no Work/Sites publish per routine change.",
-      "badge": "ONE-TIME PUBLISH",
-      "action": "Issue #364 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/364",
-      "executor": "PUBLISH_ONLY / Sites-capable executor",
-      "nextExecutor": "None for routine Hub content updates"
+      "title": "#364 · Hub Live Board · one-time no-regression migration",
+      "summary": "One final Site shell update only. Preserve the current direct Paper/Dark Production Hub visual baseline exactly; change only the board/briefing data source to GitHub main and prove later board changes appear after refresh without a new deployment. In the same Work job, verify the existing ToolBox Site project identity read-only; do not publish or redesign ToolBox.",
+      "badge": "ONE WORK GATE · NO UI REGRESS",
+      "action": "Work brief öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md",
+      "executor": "ChatGPT Work/WSA · Sites-capable · bounded",
+      "nextExecutor": "None for routine Hub updates"
     }
   ],
   "p1": [
@@ -159,20 +159,20 @@
     },
     {
       "id": "brief-hub-live-board-contract",
-      "title": "Production Hub · Live Board operating model",
-      "badge": "ONE-TIME MIGRATION",
+      "title": "Production Hub · one-time Live Board migration",
+      "badge": "RUN ONCE · NO UI REGRESS",
       "status": "ready",
-      "provider": "KFB Production Hub",
-      "desc": "After one shell publish, routine Hub jobs and briefing cards come live from main/kfb-hub/current-board.json. Web Chat updates JSON directly; Sites/Work is not used for ordinary status changes.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md",
+      "provider": "ChatGPT Work/WSA · PUBLISH_ONLY + read-only identity check",
+      "desc": "One bounded Work job: preserve the current direct Paper/Dark Hub design exactly, switch only jobs/briefings to GitHub-main live data, prove no-republish updates, and verify the existing ToolBox Site identity without publishing it.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md",
       "tags": [
         "hub",
-        "workflow",
         "live board",
-        "github main",
-        "no republish"
+        "one-time",
+        "no ui regression",
+        "toolbox identity"
       ],
-      "prompt": "For routine Hub content changes, update only main/kfb-hub/current-board.json and verify the file. Do not request a Site publish unless the Hub shell/code itself changes."
+      "prompt": "Read the current no-regression Hub Work brief on main. Do exactly the one-time existing-Site live-board migration and read-only ToolBox identity verification. Do not redesign any surface."
     }
   ],
   "openQuestions": [
@@ -196,6 +196,11 @@
     }
   ],
   "quickLinks": [
+    {
+      "title": "Surface Cleanup · execution plan",
+      "summary": "One Work gate only: Hub live-board migration without visual regression + read-only ToolBox identity verification. Everything else stays GitHub routing.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_SURFACE_CLEANUP_EXECUTION_PLAN_2026-10-06.md"
+    },
     {
       "title": "Surface Hierarchy · what to use",
       "summary": "Production Hub = overview; ToolBox = tools; GitHub = truth; Production Control = ledger/history; Cloudflare legacy routes and Project Tracker are non-canonical.",
