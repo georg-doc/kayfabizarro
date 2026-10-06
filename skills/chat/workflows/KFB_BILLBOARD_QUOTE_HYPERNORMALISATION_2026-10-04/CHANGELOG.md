@@ -88,3 +88,16 @@
 - Combined researched inventory is now **115 candidates**: 30 mapped Batch-01 candidates + 85 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 04 · medicine / art / economics / everyday behaviour
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_04.json` with **30 further quote + FrizzleQuestion candidates**.
+- Deliberately broadened the pool into medicine/biology, care systems, observation, habit, identity, art/literature, design, economics, delayed consequences, interdependence and ordinary human behaviour.
+- Reserve 04 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **25 VERIFIED**, **5 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **30 PUBLIC_DOMAIN_CONFIRMED**.
+- Validation: **18/18 PASS**, including zero ID/text collisions against the prior 115-candidate inventory.
+- Combined researched inventory is now **145 candidates**: 30 mapped Batch-01 candidates + 115 deliberately unmapped reserve candidates.
+- Reserve 04 intentionally increases tonal range as well as quantity so future island rotation can avoid topic/mood repetition, not merely exact-quote repetition.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
