@@ -28,7 +28,7 @@ Canonical live data after migration:
 Board source commit containing the current live-board payload:
 `1a87cddf90dd0904c7b3bf68b4c4aabf37d7e6a2`
 
-Current verified main head:
+Surface hierarchy + board commit:
 `c358de6045bb1e2d65c09a99647569a4422a8dcb`
 
 Current board blob:
