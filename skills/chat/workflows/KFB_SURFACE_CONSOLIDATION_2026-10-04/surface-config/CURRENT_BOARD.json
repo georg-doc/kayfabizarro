@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-06.4",
-  "updatedAt": "2026-10-06T17:04:00+02:00",
+  "revision": "2026-10-06.5",
+  "updatedAt": "2026-10-06T19:00:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · COWORKER OPEN WORLD INTEGRATION RUNNING",
-    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. Audio PR #365 is registered as additive input: G/D remain verified, while M/N/O are source-present and must pass runtime QA before activation. Style Reference Library R1 is published in place inside the existing Asset Librarian and routed from the existing ToolBox; its portable Claude Design reference-pack bridge is also ready. It is available tooling, not a current product blocker. After Coworker returns, Work/Astra first ingests the exact Coworker result, then reconciles missing KFB seams including the audio handover. Old World/Combat FAIL builds are history, not current work cards."
+    "label": "CURRENT · COWORKER RUNNING · RESIDENT ARCHITECTURE PREP READY",
+    "note": "Coworker remains the only active Open World runtime writer and must finish its current scope. In parallel, Resident Life architecture prep is now ready as a no-runtime-write lane: Web Chat may prepare schemas/mappings, Claude Design may prepare visual emotion/choreography references, and Blender MCP may inventory motion gaps only. Work/Astra still waits for the exact Coworker return, then performs Architecture Freeze before any new integration. Audio #365 and Style Reference Library remain additive inputs/tools."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -47,6 +47,16 @@
       "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
       "executor": "ChatGPT Work/Astra · Anschluss-Integrator",
       "nextExecutor": "Georg · only after internal whole-product PASS"
+    },
+    {
+      "id": "resident-life-architecture-prep",
+      "title": "PREP · Resident Life / Affect / Encounters architecture",
+      "summary": "No Open World runtime writes. Prepare ResidentProfile, Affect, Activities/POIs, social encounters, lightweight memory, Fluff routines and Performance Composer mappings from existing Resident Atlas, EyeRig, PetMouth, ChatterBox, Town and Fluff-motion donors. After Coworker returns, Work/Astra freezes architecture before integration.",
+      "badge": "PREP · NO RUNTIME WRITES",
+      "action": "Resident Prep öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RESIDENT_LIFE_ARCHITECTURE_PREP_2026-10-06.md",
+      "executor": "ChatGPT Web Chat + Claude Design · planning; Blender MCP · gap inventory only",
+      "nextExecutor": "ChatGPT Work/Astra · Architecture Freeze after Coworker"
     }
   ],
   "parallel": [
@@ -101,6 +111,11 @@
       "title": "Style Reference Library",
       "summary": "Published R1 inside the existing Asset Librarian: 13 Etherington references plus reference cards/sets, source isolation, asset links, export, and a portable Claude Design reference-pack bridge.",
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references"
+    },
+    {
+      "title": "Resident Life · Architecture Prep",
+      "summary": "Executor briefs + Georg open questions for emotion, routines, encounters, Fluff, memory and the post-Coworker Architecture Freeze.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RESIDENT_LIFE_ARCHITECTURE_PREP_2026-10-06.md"
     }
   ]
 }
