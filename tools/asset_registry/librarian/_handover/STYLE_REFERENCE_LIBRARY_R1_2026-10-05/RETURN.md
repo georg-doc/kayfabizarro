@@ -477,3 +477,46 @@ No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
 
 Exactly one next gate:
 **WEB_CHAT_CONTINUE_SOURCE_HARVEST_OR_SELECT_FIRST_GRAPHIC_FX_DESIGN_JOB**.
+
+
+## Expanded Librarian import + Browser/Viewer R2 prep · 2026-10-06
+
+Status: **WORK IMPORT READY · VIEWER R2 DEFERRED AS SEPARATE DESIGN SLICE**
+
+Georg requested that the newly curated Environment, Comic/VFX, Graphic FX, Bubble, Reaction and Emanata-related sources also become available in the existing Asset Librarian.
+
+Prepared Work brief:
+`BRIEF_WORK_IMPORT_EXPANDED_STYLE_REFERENCE_DATA_2026-10-06.md`
+
+Inputs:
+- Etherington Seeds 01–04 = **53** unique official sources;
+- supplementary comic-language pool = **5** sources;
+- expected built-in corpus = **58** records;
+- existing browser-local user cards/sets must survive unchanged.
+
+Added KFB semantic target map:
+`GRAPHIC_FX_EMANATA_TARGET_TAXONOMY_2026-10-06.json`
+
+It reuses the existing Resident Affect/Emanata proposal rather than inventing a second vocabulary. Current proposal slots:
+`question · exclamation · sweat-drop · tear · anger-tick · heart · sparkle · gloom-cloud`.
+
+### Current UI finding
+Georg's screenshot confirms the Style Reference view works but is not yet an efficient daily browser/viewer: filters and intake dominate the first viewport, a raw Blogger image URL degrades into a large discovery-only card, the right Inspector shows a generic URL placeholder, the hero heading pushes actual browsing below the fold, and visual inspection is secondary to metadata/chrome.
+
+This is recorded separately in:
+`STYLE_REFERENCE_BROWSER_VIEWER_R2_UX_FINDINGS_2026-10-06.md`
+
+### Future R2 owner sequence
+1. **ChatGPT Work/WSA** · export the exact current private Site UI/source/screenshot packet;
+2. **Claude Design** · redesign Browser/Viewer from the portable GitHub packet;
+3. **ChatGPT Work/WSA** · integrate accepted R2 into the same existing Asset Librarian Site.
+
+Do not ask Claude Design to access the private Site directly.
+
+Validation:
+**10/10 PASS**.
+
+No Site/runtime/deployment change in this preparation checkpoint. No second Site. No merge / Live promotion.
+
+Exactly one next gate:
+**WORK_IMPORT_EXPANDED_STYLE_REFERENCE_DATA_IN_EXISTING_LIBRARIAN**.
