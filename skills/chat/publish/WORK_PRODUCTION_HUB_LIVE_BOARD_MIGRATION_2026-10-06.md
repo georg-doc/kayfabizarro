@@ -25,7 +25,7 @@ Read:
 Canonical live data after migration:
 `main/kfb-hub/current-board.json`
 
-Current verified main head:
+Board source commit containing the current live-board payload:
 `1a87cddf90dd0904c7b3bf68b4c4aabf37d7e6a2`
 
 Current board blob:
