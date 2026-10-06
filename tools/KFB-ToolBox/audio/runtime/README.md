@@ -1,6 +1,6 @@
 # KFB Audio Runtime · DOM-free integration package
 
-Status: SOURCE-GREEN CANDIDATE
+Status: RUNTIME-VERIFIED PRE-INTEGRATION MODULE
 Date: 2026-10-06
 Owner: KFB Audio / Jukebox / Mixer
 
@@ -33,9 +33,30 @@ Public API:
 Current runtime-verified families:
 - G Cosmic Roadtrip Orchestral
 - D Conversation Base
+- C Cozy Base
+- M Island Life
+- N Dusk/Night
+- O Discovery/POI
 
-C Cozy Base is recorded as source-present but not promoted to runtime capability until the same decode/listening gate is run.
+C/M/N/O use real stems from the pinned asset commit. Their family-internal stem lengths are identical after browser decode, and each uses one shared bar-aligned loop end. A failed stem load falls back to that family's real master without stopping the current deck first.
 
-M/N/O are prompt/content candidates only and are not runtime capabilities until real files exist.
+Source-labelled Vocal/Other layers remain `AMBIGUOUS_RETAIN_MUTED`. Runtime verification is technical and is not `HUMAN_ACCEPTED`.
+
+Synthetic integration fixtures:
+- `DAY_ROAM`
+- `DAY_STAY`
+- `DUSK_TO_NIGHT`
+- `POI_DISCOVERY`
+- `RESIDENT_DIALOGUE`
+- `BILLBOARD_DIALOGUE`
+- `DRIVE_TO_STAY`
+- `MISSING_FAMILY_FALLBACK`
+
+Fixtures call only `setContext()` and `emit()`. They contain no track IDs, BPM tables, stem identities or gain values.
+
+QA surfaces:
+- `qa.mjs` — registry, ownership and resolver invariants;
+- `qa-fixtures.mjs` — public-contract synthetic fixture harness;
+- `qa-browser.html` — real browser decode/alignment/BPM/loop/master-fallback harness.
 
 The World should consume the versioned context/event contract in the Audio workflow and must not import the Audio Site DOM.
