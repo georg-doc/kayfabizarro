@@ -1,6 +1,6 @@
 {
   "schema": "kfb.one-shot-status/1",
-  "date": "2026-10-05",
+  "date": "2026-10-06",
   "mode": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
   "owner": "KFB WorldBuilder / WB2",
   "repo": "georg-doc/kayfabizarro",
@@ -15,7 +15,7 @@
     "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
   },
   "productOutcome": "COHERENT_BUILDABLE_PERSISTENT_KFB_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
-  "state": "ONE_SHOT_RESET_READY_FOR_WORK_WSA_EXECUTION",
+  "state": "COWORKER_LONG_INTEGRATION_RUNNING_EXTERNAL_HANDOFF_PENDING",
   "checkpointStatus": {
     "primaryProduct": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
     "failedPredecessor": "PRESERVED_AS_EVIDENCE",
@@ -86,7 +86,7 @@
     "multiplayer/network backend",
     "additional minigames"
   ],
-  "nextInternalAction": "WORK_WSA_EXECUTE_FULL_OPEN_WORLD_INTEGRATION_CLOSURE_ONE_SHOT",
+  "nextInternalAction": "WAIT_FOR_COWORKER_RETURN_THEN_WORK_ASTRA_RECONCILE_AND_CLOSE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -101,8 +101,8 @@
   ],
   "humanAcceptance": {
     "status": "NOT_ELIGIBLE",
-    "reason": "Internal fresh-context critic and whole-product gates have not passed under the reset contract.",
-    "nextHumanGate": "ONLY_AFTER_WHOLE_PRODUCT_INTERNAL_PASS"
+    "reason": "Coworker integration is still running; Work/Astra closure and internal fresh-context critic/whole-product gates come after its return.",
+    "nextHumanGate": "ONLY_AFTER_COWORKER_RETURN_PLUS_WORK_ASTRA_INTERNAL_WHOLE_PRODUCT_PASS"
   },
   "site": {
     "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
@@ -190,7 +190,20 @@
     "rule": "History only; do not infer current product quality or current gate."
   },
   "currentCheckpoint": {
-    "status": "RESET_CONTRACT_FROZEN_READY_FOR_EXECUTION",
-    "note": "Use current branch head + binding contract; do not resume from historical pre-reset heads."
+    "status": "COWORKER_RUNNING_PR348_IS_RECEIVING_CONTRACT",
+    "note": "PR #348 contracts/matrix remain binding receiving criteria. They are not authorization for a parallel Work/Astra build."
+  },
+  "currentExecution": {
+    "executor": "Claude Coworker",
+    "status": "RUNNING",
+    "userAssessment": "Current Coworker result looks materially better than prior attempts.",
+    "githubHandoffObserved": false,
+    "rule": "Do not start a parallel Work/Astra rebuild while Coworker is running."
+  },
+  "nextExecutor": {
+    "executor": "ChatGPT Work/Astra",
+    "mode": "ANschluss integration / reconciliation only",
+    "startsWhen": "Coworker returns exact files/branch/evidence",
+    "mustNot": "Rebuild working Coworker integration from scratch"
   }
 }
