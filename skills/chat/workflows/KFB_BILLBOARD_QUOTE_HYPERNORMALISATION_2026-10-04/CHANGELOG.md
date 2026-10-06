@@ -235,3 +235,15 @@
 - Validation: **25/25 PASS**, including zero ID/text collisions against the prior 325-candidate inventory and 30 distinct authors/traditions.
 - Combined researched inventory is now **355 candidates**: 30 mapped Batch-01 candidates + 325 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
+## 2026-10-07 · Quote Research Reserve 12 · cryptids / UFO cases / psi / secret tech / time
+
+- Added `QUOTE_RESEARCH_RESERVE_12.json` with **30 further quote + FrizzleQuestion candidates** in five balanced clusters: cryptids/anomalous zoology, UFO/contact/close-encounter narratives, remote viewing/ESP/psychical research, secret/forbidden technology, and time/parallel-worlds/reality manipulation.
+- Reserve remains `UNMAPPED_BY_DESIGN`; no deck/Card/island/Billboard/world/multiverse mapping was invented.
+- Provenance: **28 VERIFIED · 2 SECONDARY_ONLY · 0 UNVERIFIED**. Rights: **25 PUBLIC_DOMAIN_CONFIRMED · 2 RESEARCHED_QUOTE_LIMIT_ONLY · 3 RESEARCHED_RESTRICTED**.
+- Cryptid/anomalous-zoology coverage now includes unicorn→rhinoceros misclassification, early platypus fraud suspicion, the Dædalus sea-serpent report, Verrill giant-squid specimen work, Du Chaillu gorilla field language and the okapi's transition from report to new genus.
+- UFO coverage includes Roswell records, Socorro, Rendlesham, Tehran, Mantell and Washington radar materials; psi coverage deliberately pairs positive historical claims with AIR operational critique and Maxwell methodological caution.
+- Secret-tech coverage spans Bacon's publication secrecy, Wells's fictional atomic bomb, the Smyth Report, Einstein-Szilard, Tesla wireless prediction and Bush's memex; time/reality coverage spans Wells, Flatland, Dunne, Ouspensky, Carroll and Nietzsche.
+- Validation: **25/25 PASS**, zero ID/text collisions against prior 355; combined researched inventory **385 = 30 mapped + 355 unmapped**.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
