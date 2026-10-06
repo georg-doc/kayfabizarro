@@ -520,3 +520,74 @@ No Site/runtime/deployment change in this preparation checkpoint. No second Site
 
 Exactly one next gate:
 **WORK_IMPORT_EXPANDED_STYLE_REFERENCE_DATA_IN_EXISTING_LIBRARIAN**.
+
+
+---
+
+## Expanded Style Reference corpus import · 2026-10-06 · pre-deployment checkpoint
+
+Status: **58-BUILT-IN IMPORT QA GREEN · SITE VERSION 3 PENDING**
+
+Existing Site only:
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- currently published base version: **2**
+- exact base source: `492e01d02f5d93d49d9dd7caecbbf7dedff26ea9`
+- deep-link retained: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- separate Site created: **NO**
+
+Imported built-in corpus:
+- Etherington Seed 01: **13**
+- Environment Seed 02: **17**
+- Comic/VFX Seed 03: **13**
+- Graphic FX / Comic Language Seed 04: **10**
+- Supplementary Comic Language Pool: **5**
+- total built-ins: **58**
+- unique stable IDs: **58**
+
+Provenance counts:
+- `OFFICIAL_CREATOR_SOURCE`: **53**
+- `AUTHORITATIVE_PROFESSIONAL_LETTERING_SOURCE`: **1**
+- `AUTHORITATIVE_ACADEMIC_VISUAL_LANGUAGE_SOURCE`: **1**
+- `ACADEMIC_TERMINOLOGY_SOURCE`: **1**
+- `PROFESSIONAL_COMMERCIAL_LETTERING_REFERENCE`: **2**
+
+Data behavior:
+- built-ins refresh separately from browser-local records;
+- local Notes, Principles, added tags, asset relations, inspection state, Cards and Sets are preserved;
+- saved built-ins merge by stable ID;
+- local discovery candidates remain separate and are never silently deleted;
+- a deterministic discovery→curated match is offered without replacing the discovery card;
+- all built-ins remain `sourceInspectedInIsolation=false` unless a local user state already records real inspection.
+
+Search/metadata:
+- Graphic FX / Sound Words
+- Dialogue Carriers
+- Reaction / Performance
+- Emanata
+- Lettering Integration
+- Emanata targets: `question · exclamation · sweat-drop · tear · anger-tick · heart · sparkle · gloom-cloud`
+
+Local verification:
+- PASS · 58 unique built-ins
+- PASS · 59 total when one existing discovery card is present
+- PASS · two existing local cards and two-item Reference Set survive reload
+- PASS · local Notes, Principles and custom tags survive curated refresh
+- PASS · all five source-class counts
+- PASS · five Comic Language lanes and eight Emanata targets searchable
+- PASS · known expanded URL resolves as curated, not `DISCOVERY_ONLY`
+- PASS · `kfb.style-reference-pack/1`, source-isolation gate, relation and reload persistence
+- PASS · Assets, Motions, Saved Sets and Intake regressions
+- PASS · real 3D gallery previews, full-card Inspector and overlay add control
+- PASS · JavaScript syntax and diff validation
+- browser page errors: **0**
+
+Protected boundary:
+- no Viewer/Browser redesign;
+- no new Registry;
+- no remote image mirroring;
+- no localStorage clearing or destructive migration;
+- no Open World/Resident/ChatterBox runtime write;
+- no merge or Live promotion.
+
+Exactly one next gate remains:
+**publish this exact QA-green import to the existing private Asset Librarian and verify version/deployment.**
