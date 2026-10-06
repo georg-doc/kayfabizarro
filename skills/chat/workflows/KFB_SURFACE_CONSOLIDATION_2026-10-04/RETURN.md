@@ -400,3 +400,27 @@ Issue #364 is updated to publish board `2026-10-06.5` in the existing Site proje
 
 Exactly one next production gate remains:
 **Coworker finishes and returns its exact Open World candidate; then Work/WSA performs Architecture Freeze before any new runtime integration.**
+
+
+## 2026-10-06 · RESIDENT EXECUTOR CORRECTION · BLENDER MCP PRIMARY
+
+Georg corrected the Resident prep routing:
+
+- **Blender MCP is primary** for real-3D emotion/reaction look, body language, conversation staging, trade/gift/Fluff choreography and work/rebuild choreography.
+- ChatGPT Web Chat remains primary for semantic schemas, Affect/Activity/POI/Encounter data and mappings.
+- Claude Design is secondary for clay bubble/presentation language and UI/readability, not the primary 3D choreography owner.
+- Blender must audit/reuse existing KayKit/Atlas/PR #356 motion and additive-layer solutions before authoring any new clip.
+
+New briefing:
+`skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md`
+
+ChatterBox clarification:
+- PR #357 already contains a planning-ready private GPT-Site packet;
+- planning/Site-readiness evidence = **34/34 PASS**;
+- GPT-Site-only surface correction = **12/12 PASS**;
+- `fc6ad9c76adc22fed8d2876e1ad5a4e8ec742e63` is the correction commit;
+- current branch/PR head is later `886b8e58135553633dda13d0643dc5844078cb35`, which places Site implementation on HOLD behind current issue gates;
+- reuse the existing packet; do not re-plan or create a second dialogue product.
+
+Hub board advanced to `2026-10-06.6`.
+No Open World runtime writes.

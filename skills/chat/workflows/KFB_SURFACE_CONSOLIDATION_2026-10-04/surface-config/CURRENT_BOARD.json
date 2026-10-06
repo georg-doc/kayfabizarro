@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-06.5",
-  "updatedAt": "2026-10-06T19:00:00+02:00",
+  "revision": "2026-10-06.6",
+  "updatedAt": "2026-10-06T20:00:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · COWORKER RUNNING · RESIDENT ARCHITECTURE PREP READY",
-    "note": "Coworker remains the only active Open World runtime writer and must finish its current scope. In parallel, Resident Life architecture prep is now ready as a no-runtime-write lane: Web Chat may prepare schemas/mappings, Claude Design may prepare visual emotion/choreography references, and Blender MCP may inventory motion gaps only. Work/Astra still waits for the exact Coworker return, then performs Architecture Freeze before any new integration. Audio #365 and Style Reference Library remain additive inputs/tools."
+    "label": "CURRENT · COWORKER RUNNING · RESIDENT 3D PERFORMANCE PREP READY",
+    "note": "Coworker remains the only active Open World runtime writer. Resident prep is now split correctly: ChatGPT Web Chat owns semantic schemas/data; Blender MCP is primary for real-3D emotion/reaction body language and encounter/Fluff choreography using existing rigs/motions; Claude Design supports bubble/presentation only. ChatterBox PR #357 already has a planning-ready private GPT-Site packet with 34/34 planning checks and 12/12 surface-correction checks, but current branch head 886b8e… still holds Site implementation behind current issue gates. Work/Astra waits for exact Coworker return, then Architecture Freeze."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -50,12 +50,12 @@
     },
     {
       "id": "resident-life-architecture-prep",
-      "title": "PREP · Resident Life / Affect / Encounters architecture",
-      "summary": "No Open World runtime writes. Prepare ResidentProfile, Affect, Activities/POIs, social encounters, lightweight memory, Fluff routines and Performance Composer mappings from existing Resident Atlas, EyeRig, PetMouth, ChatterBox, Town and Fluff-motion donors. After Coworker returns, Work/Astra freezes architecture before integration.",
-      "badge": "PREP · NO RUNTIME WRITES",
+      "title": "PREP · Resident Life + 3D Performance architecture",
+      "summary": "No Open World runtime writes. Web Chat prepares Resident/Affect/Activity/POI/Encounter schemas. Blender MCP is primary for real-3D emotion/reaction body language, conversation staging, trade/gift/Fluff and work/rebuild choreography from existing rigs/motions. Claude Design supports bubble/presentation only. ChatterBox packet already exists; do not duplicate it.",
+      "badge": "PREP · BLENDER 3D + WEB DATA",
       "action": "Resident Prep öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RESIDENT_LIFE_ARCHITECTURE_PREP_2026-10-06.md",
-      "executor": "ChatGPT Web Chat + Claude Design · planning; Blender MCP · gap inventory only",
+      "executor": "ChatGPT Web Chat · semantics/data + Blender MCP · 3D performance/choreography",
       "nextExecutor": "ChatGPT Work/Astra · Architecture Freeze after Coworker"
     }
   ],
@@ -79,6 +79,16 @@
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
       "executor": "KFB Asset Librarian · existing Site owner",
       "nextExecutor": "None · available for use; optional future Export for Claude Design action"
+    },
+    {
+      "id": "pr-357-chatterbox-planning-packet",
+      "title": "TOOL PACKET · ChatterBox private GPT Site · planning ready",
+      "summary": "PR #357 already contains the ChatterBox/Triplet Curator planning packet: 34/34 planning/Site-readiness PASS plus 12/12 GPT-Site-only surface correction PASS. Correction commit fc6ad9… is present, but the current branch head 886b8e… subsequently put Site implementation back on HOLD behind current issue gates. Reuse this packet; do not create a second dialogue tool or Cloudflare route.",
+      "badge": "PACKET READY · SITE HOLD",
+      "action": "PR #357 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/357",
+      "executor": "Existing ChatterBox owner · no duplicate planning",
+      "nextExecutor": "Sites-capable executor only after explicit reactivation/current gate"
     }
   ],
   "quickLinks": [
@@ -116,6 +126,11 @@
       "title": "Resident Life · Architecture Prep",
       "summary": "Executor briefs + Georg open questions for emotion, routines, encounters, Fluff, memory and the post-Coworker Architecture Freeze.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RESIDENT_LIFE_ARCHITECTURE_PREP_2026-10-06.md"
+    },
+    {
+      "title": "Resident 3D Performance · Blender MCP Prep",
+      "summary": "Source-first motion audit and choreography brief for emotions, reactions, conversation staging, gifts/trade/Fluff and repair/rebuild.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md"
     }
   ]
 }

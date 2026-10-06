@@ -16,7 +16,7 @@ Do not rebuild these from zero:
 - shared KayKit animation library: current Atlas evidence covers layered poses, hand slots, prop fitting and additive motion work.
 - EyeRig v6: gaze, blink, asymmetric lids, emotes, life/wander/tremor, kinetics and public `eyeFrame()`.
 - PetMouth: mouth sets, expressions, named visemes, talk/rest channels.
-- ChatterBox PR #357: Triplet semantic grammar / pools / review/export donor; still TUNE, not product truth.
+- ChatterBox PR #357: planning packet is **PLANNING READY · SITE NOT BUILT**. Current branch head is `886b8e58135553633dda13d0643dc5844078cb35`; its parent `fc6ad9c76adc22fed8d2876e1ad5a4e8ec742e63` contains Georg's GPT-Site-only surface correction. Evidence: planning/readiness `34/34 PASS` + surface correction `12/12 PASS`. Current GitHub routing still holds the Site build behind current issue gates; consume the packet as a donor now, do not duplicate it.
 - Living KFB Town: encounter-beat separation, short passing speech, recognition/memory idea, gifts/props.
 - Fluff Work Motion Pack PR #356 @ `9124366b88e5e317cbba8480412a8b90f84c9d5d`: work/build motion donor.
 - current Open World integration plan:
@@ -101,46 +101,63 @@ Produce, without runtime writes:
 Token rule:
 reuse current Returns/contracts; do not recursively crawl old history unless a field is genuinely unresolved.
 
-### B · Claude Design · VISUAL / CHOREOGRAPHY PREP
+### B · Blender MCP · PRIMARY 3D PERFORMANCE / CHOREOGRAPHY PREP
 
 Outcome:
-visual behavior reference, not runtime implementation.
+prepare the actual **3D Resident emotion/reaction/body-language and encounter choreography grammar** from real pinned Residents and rigs, without touching the Open World runtime.
 
-Design from pinned real Resident sources:
-- expression family for the initial Affect vocabulary;
-- brows + eyes + mouth coordination;
+Blender MCP is the primary owner for:
+- emotional body language;
+- conversation staging/blocking;
 - listening vs speaking poses;
-- short reaction holds;
+- head/torso/hand reaction cues;
 - Resident↔Resident encounter staging;
 - trade / gift / Fluff exchange choreography;
 - Farmer Fluff routine;
-- repair/rebuild worker vignette;
-- clay speech/thought bubble relation to body staging;
-- near-camera readability rules.
+- repair/rebuild worker choreography;
+- prop handoff / carry / roll / push / knead / place / patch motion;
+- source-proven facial/rig attachment staging where Blender inspection is needed.
 
-Deliver:
-- small contact sheet / storyboard set;
-- mappings by semantic beat/emotion;
-- source object shown in isolation before adaptation;
-- no placeholder characters;
-- no second dialogue/UI owner.
-
-### C · Blender MCP · INVENTORY FIRST, NO BLIND CLIP PRODUCTION
-
-Outcome:
-identify only genuine reusable-motion gaps.
-
-Audit:
-- existing KayKit 139-ish shared motions / actual current inventory;
-- Atlas layered-clip solutions;
-- PR #356 Fluff work motions;
-- existing instrument/prop attachment and additive-motion methods.
+Required method:
+1. isolate the real Resident/rig/prop donor first;
+2. audit existing KayKit/Atlas/PR #356 motions;
+3. prefer clip layering, additive motion and runtime EyeRig/PetMouth channels;
+4. identify only genuine gaps;
+5. create a new Blender clip only when a reusable semantic cue cannot be built safely from existing motion.
 
 Return:
-- `COVERED` / `LAYERABLE` / `NEW_CLIP_REQUIRED` matrix for:
-  listening, nod, shake, shrug, point, give, receive, trade, carry, roll/push, knead, place, patch, inspect, celebrate, worry, surprise, laugh, disagreement.
+- `COVERED` / `LAYERABLE` / `NEW_CLIP_REQUIRED` matrix;
+- small 3D choreography/contact-sheet or short preview set for the initial Affect vocabulary;
+- semantic mappings for:
+  listening, speaking, nod, shake, shrug, point, give, receive, trade, carry, roll/push, knead, place, patch, inspect, celebrate, worry, surprise, laugh/amusement, disagreement, gratitude, suspicion;
+- encounter mini-scenes:
+  greeting;
+  gift;
+  trade;
+  Fluff handoff;
+  Farmer harvest/transport;
+  repair/rebuild;
+- no hardcoded dialogue text;
+- no new dialogue engine;
+- no duplicated EyeRig/PetMouth owner;
+- no large blind animation batch.
 
-Do not author new clips unless the matrix proves a gap and the receiving runtime needs it.
+Binding detailed brief:
+`BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md`
+
+### C · Claude Design · PRESENTATION SUPPORT ONLY
+
+Claude Design is secondary here.
+
+Use it for:
+- clay speech/thought bubble visual language;
+- bubble tail / thought pellets / text-safe-zone behavior;
+- 2D/3D bubble consistency;
+- reaction readability as a presentation reference;
+- UI/preview presentation for ChatterBox / Dialogue Lab.
+
+Do **not** use Claude Design as the primary 3D body-language/choreography owner.
+Do not substitute cutouts/PNGs for real 3D Residents.
 
 ### D · ChatGPT Work/WSA · AFTER COWORKER ONLY
 
