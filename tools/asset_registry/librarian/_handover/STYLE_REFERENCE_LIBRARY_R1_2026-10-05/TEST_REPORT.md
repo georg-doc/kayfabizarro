@@ -231,3 +231,33 @@ Recovery detail:
 - the functional Mech/Minigun/Rocket donor Return is now pinned to immutable commit `97c891c006a65a2d8ebba17bfbe7baaa4384edf0`.
 
 No Site, ToolBox, Hub or runtime change.
+
+
+## Graphic FX / Comic Language source expansion · 2026-10-06
+
+Status: **RESEARCH/DATA PASS · CLAUDE DESIGN NOT STARTED**
+
+Validation: **15/15 PASS**
+
+1. PASS · all four Etherington seed JSON files + supplementary source pool parse.
+2. PASS · Seed 04 contains exactly 10 Graphic FX / Comic Language references.
+3. PASS · combined Etherington inventory is now 53 references.
+4. PASS · 53/53 Etherington IDs are unique.
+5. PASS · 53/53 Etherington URLs are unique.
+6. PASS · Sound Effects is routed to `GRAPHIC_FX`.
+7. PASS · Speech Bubbles is routed to `DIALOGUE_CARRIERS`.
+8. PASS · Caption Boxes is routed to `DIALOGUE_CARRIERS`.
+9. PASS · all Seed-04 references remain `sourceInspectedInIsolation=false`.
+10. PASS · Etherington-specific gaps are recorded explicitly instead of filled by inference.
+11. PASS · supplementary authoritative source pool contains 5 entries.
+12. PASS · Thought Bubbles has supplementary professional sources.
+13. PASS · Emanata has supplementary academic/visual-language sources.
+14. PASS · Reaction Symbols has supplementary visual-language coverage.
+15. PASS · Claude Design remains later visual-analysis consumer, not current source researcher.
+
+New files:
+- `ETHERINGTON_OFFICIAL_SEED_04_GRAPHIC_FX_COMIC_LANGUAGE.json`
+- `GRAPHIC_FX_COMIC_LANGUAGE_SOURCE_ROUTING_2026-10-06.md`
+- `SUPPLEMENTARY_COMIC_LANGUAGE_SOURCES_01.json`
+
+No Site/runtime/deployment change.
