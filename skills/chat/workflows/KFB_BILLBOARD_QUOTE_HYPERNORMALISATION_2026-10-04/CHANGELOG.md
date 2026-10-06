@@ -195,3 +195,23 @@
 - Validation: **24/24 PASS**, including five balanced clusters, zero ID/text collisions against the prior 265-candidate inventory, 30 distinct authors/author pairs, mapping guards, source/Brain Food HTTPS checks and quote/question length bounds.
 - Combined researched inventory is now **295 candidates**: 30 mapped Batch-01 candidates + 265 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
+## 2026-10-06 · Quote Research Reserve 10 · conspiracy / ancient mysteries / hidden history / dark journalism / metaphysics
+
+- Continued Georg's active long-session quote-pool expansion with the explicitly requested conspiracy / ancient-alien / hidden-history / dark-journalism / occult-metaphysical field.
+- Added `QUOTE_RESEARCH_RESERVE_10.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - conspiracy/hidden networks: 6
+  - ancient-alien/ancient mysteries: 6
+  - hidden history: 6
+  - dark journalism: 6
+  - occult/metaphysics: 6
+- Canonical deck registry was checked first; these fields have clear later relevance to existing KFB decks including `cosmic_grift_dark_journalism`, `shadow_politics`, `geopolitical_thrillers_conspiracy_theories`, `the_pharaoh_script_psychology_of_evil`, `secret_spy_suplexes` and cosmic/metaphysical families, but Reserve 10 remains deliberately `UNMAPPED_BY_DESIGN`.
+- The reserve adds an explicit **source / claim / interpretation** policy: preserve what a source literally claims, distinguish later inference, and do not treat research inclusion as truth endorsement or runtime classification.
+- Provenance: **28 VERIFIED**, **2 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **25 PUBLIC_DOMAIN_CONFIRMED**, **2 RESEARCHED_QUOTE_LIMIT_ONLY**, **3 RESEARCHED_RESTRICTED**.
+- Rights/provenance-sensitive modern cases remain explicit: Kennedy and Orwell are quote-limit only; Du Bois, Upton Sinclair and A. J. Liebling are research-restricted. Du Bois and Sinclair remain SECONDARY_ONLY pending a directly pinned edition page.
+- The pre-persistence collision guard rejected two exact repeats already present in earlier reserves: Edward Gibbon's history/register line and Ida B. Wells's light-of-truth line. Replacements (Tolstoy and Jefferson) were rechecked against all prior 295 records before commit.
+- Validation: **25/25 PASS**, including five balanced clusters, zero ID/text collisions against the prior 295-candidate inventory, 30 distinct authors/traditions, mapping guards, HTTPS source/Brain Food checks, source/claim/interpretation policy and quote/question length bounds.
+- Combined researched inventory is now **325 candidates**: 30 mapped Batch-01 candidates + 295 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
