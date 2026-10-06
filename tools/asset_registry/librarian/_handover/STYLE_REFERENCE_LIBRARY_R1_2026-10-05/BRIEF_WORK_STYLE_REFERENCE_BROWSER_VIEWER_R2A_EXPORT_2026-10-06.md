@@ -1,3 +1,14 @@
+# SUPERSEDED · DO NOT RUN
+
+Georg decision 2026-10-06: do not spend Claude Design tokens on this UI repair.
+
+Current brief:
+`BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2_DIRECT_REPAIR_2026-10-06.md`
+
+This historical R2A export-only route remains provenance only.
+
+---
+
 # BRIEF · Work/WSA · Style Reference Browser/Viewer R2A handoff export
 
 Status: **READY FOR WORK/WSA · RECOVERY PREP**
