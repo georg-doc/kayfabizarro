@@ -323,3 +323,45 @@ No merge. No Live promotion.
 
 Exactly one next gate:
 **FIRST_CLAUDE_DESIGN_JOB_FROM_CURATED_3_TO_6_REFERENCE_SUBSET**.
+
+
+## Claude Design Environment + Comic/VFX jobs · 2026-10-06
+
+Status: **GITHUB JOB PACKETS READY**
+
+Claude Design can now work without private Asset Librarian Site access.
+
+Umbrella brief:
+`BRIEF_CLAUDE_DESIGN_ENVIRONMENT_COMIC_VFX_01_2026-10-06.md`
+
+Prepared Job 1:
+`tools/asset_registry/librarian/reference-packs/claude-design/kfb-destruction-impact-01/`
+
+Contents:
+- `PACK.json` · 6 official Etherington references;
+- `START_HERE.md` · source-isolation + KFB design brief;
+- existing Seed World Mech Destruction POC is pinned as functional mechanics donor only;
+- target output = KFB Minigun/Rocket/breach/collapse/debris/smoke visual grammar.
+
+Prepared Job 2:
+`tools/asset_registry/librarian/reference-packs/claude-design/kfb-environment-mass-01/`
+
+Contents:
+- `PACK.json` · 6 official Etherington references;
+- `START_HERE.md` · source-isolation + KFB design brief;
+- current Open World integration remains protected/read-only;
+- target output = terrain/forest/overgrowth/depth/rocks/roots grammar + Life-Tree/island-root rule.
+
+Validation:
+**12/12 PASS**
+
+Run order:
+1. Destruction / Impact VFX first;
+2. Environment Mass / Living World second or separate session.
+
+Claude Design may return an editable project/export instead of writing GitHub. A KFB integration chat can persist the returned output afterwards.
+
+No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
+
+Exactly one next gate:
+**CLAUDE_DESIGN_JOB_01_DESTRUCTION_IMPACT**.
