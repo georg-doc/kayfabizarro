@@ -148,7 +148,7 @@
         "chatterbox",
         "triplet-authoring"
       ],
-      "verification": "MASTER_INDEX_LINK_VERIFIED",
+      "verification": "OFFICIAL_URL_VERIFIED",
       "sourceInspectedInIsolation": false
     },
     {
@@ -169,7 +169,7 @@
         "chatterbox",
         "npc-dialogue"
       ],
-      "verification": "MASTER_INDEX_TOPIC_VERIFIED_URL_RECHECK_REQUIRED",
+      "verification": "OFFICIAL_URL_VERIFIED",
       "sourceInspectedInIsolation": false
     },
     {
@@ -397,7 +397,122 @@
       ],
       "verification": "OFFICIAL_URL_VERIFIED",
       "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-write-failure-2018-11",
+      "title": "Failure",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/11/",
+      "subject": [
+        "failure",
+        "character",
+        "consequence"
+      ],
+      "technique": [
+        "reaction-to-failure",
+        "character-reveal",
+        "recovery-choice"
+      ],
+      "useCases": [
+        "death-revival",
+        "npc-reaction",
+        "hero-commentary",
+        "resident-memory"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_PAGE_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-write-excuses-2018-11",
+      "title": "Excuses",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/11/",
+      "subject": [
+        "excuses",
+        "self-justification",
+        "character"
+      ],
+      "technique": [
+        "rationalization",
+        "character-reveal",
+        "subtext"
+      ],
+      "useCases": [
+        "npc-dialogue",
+        "resident-voice",
+        "post-failure-banter",
+        "chatterbox"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_PAGE_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-write-tic-and-tell-2018-index",
+      "title": "The Tic and the Tell",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/12/the-full-set-of-robins-first-75-seventy.html",
+      "subject": [
+        "character-tell",
+        "behavior",
+        "subtext"
+      ],
+      "technique": [
+        "recurring-signal",
+        "behavioral-specificity",
+        "nonverbal-characterization"
+      ],
+      "useCases": [
+        "resident-profile",
+        "emotion-reaction",
+        "chatterbox",
+        "blender-performance"
+      ],
+      "verification": "MASTER_INDEX_TOPIC_VERIFIED_URL_RECHECK_REQUIRED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-write-local-colour-2018-index",
+      "title": "Local Colour",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/12/the-full-set-of-robins-first-75-seventy.html",
+      "subject": [
+        "local-colour",
+        "setting",
+        "voice"
+      ],
+      "technique": [
+        "place-specific-detail",
+        "lexicon",
+        "social-context"
+      ],
+      "useCases": [
+        "island-residents",
+        "faction-voice",
+        "ambient-dialogue",
+        "historian"
+      ],
+      "verification": "MASTER_INDEX_TOPIC_VERIFIED_URL_RECHECK_REQUIRED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-write-rivals-2020-01",
+      "title": "Rivals",
+      "url": "https://theetheringtonbrothers.blogspot.com/2020/01/",
+      "subject": [
+        "rivals",
+        "relationship",
+        "conflict"
+      ],
+      "technique": [
+        "social-pressure",
+        "contrast",
+        "recurring-friction"
+      ],
+      "useCases": [
+        "resident-relationships",
+        "chatterbox",
+        "encounters",
+        "callback-banter"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_PAGE_VERIFIED",
+      "sourceInspectedInIsolation": false
     }
   ],
-  "seedCount": 17
+  "seedCount": 22
 }
