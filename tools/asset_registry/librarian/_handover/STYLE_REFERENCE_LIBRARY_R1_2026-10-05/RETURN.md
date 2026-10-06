@@ -707,3 +707,43 @@ Exactly one next gate:
 **R2A_EXPORT_CURRENT_SITE_SOURCE_AND_VISUALS_FOR_DESIGN**.
 
 No merge. No Live promotion.
+
+
+## Georg routing correction · R2 is Work-only · 2026-10-06
+
+Status: **DIRECT WORK/WSA REPAIR READY**
+
+Georg explicitly decided not to spend Claude Design tokens on the Style Reference Browser/Viewer UI repair.
+
+The earlier route:
+
+`Work export → Claude Design → Work integration`
+
+is superseded.
+
+Current route:
+
+`ChatGPT Work/WSA → direct Browser/Viewer R2 repair → browser QA → update existing Site in place → Georg review`
+
+Binding brief:
+`BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2_DIRECT_REPAIR_2026-10-06.md`
+
+Superseded / do not run:
+- `BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2A_EXPORT_2026-10-06.md`
+- `BRIEF_CLAUDE_DESIGN_STYLE_REFERENCE_BROWSER_VIEWER_R2_2026-10-06.md`
+
+The target remains:
+- same Asset Librarian Site;
+- same 58 built-ins;
+- same persistence/data contracts;
+- same Paper/Dark/KFB family;
+- visual-first complete-board inspection;
+- multi-board navigation;
+- fit/zoom;
+- compact controls/metadata;
+- optional Compare only if non-blocking.
+
+Exactly one next gate:
+**WORK_DIRECT_REPAIR_STYLE_REFERENCE_BROWSER_VIEWER_R2**.
+
+No merge. No Live promotion. No second Site.
