@@ -247,3 +247,19 @@
 - Validation: **25/25 PASS**, zero ID/text collisions against prior 355; combined researched inventory **385 = 30 mapped + 355 unmapped**.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-07 · Quote Research Reserve 13 · finance / money systems
+
+- Finance audit confirmed that prior coverage was mostly classical economics/property/value and did **not** materially cover the requested modern monetary/market mechanisms.
+- Added `QUOTE_RESEARCH_RESERVE_13.json` with **30 further quote + FrizzleQuestion candidates** in five balanced clusters:
+  - bank credit / fiat / stable money: 6
+  - stock markets / HFT / market microstructure: 6
+  - money laundering / shadow finance: 6
+  - crypto / blockchain / prediction / Ponzi: 6
+  - alternative currencies / mutual credit / barter: 6
+- Mechanism coverage now includes commercial-bank deposit creation, central-bank money, fiat/trust, stablecoins, dark pools, subsecond cancellations, spoofing, Flash Crash reconstruction, placement/layering/integration, beneficial ownership/shell companies, crypto mixers, NFT illicit-finance risk, Bitcoin, Ethereum, meme coins, Polymarket/event contracts, Ponzi mechanics, blockchain decentralisation tradeoffs, Gesell Free-Money, Warren's cost principle, TimeBanking, mutual credit, LETS and WIR.
+- Reserve 13 remains `UNMAPPED_BY_DESIGN`; registry inspection only identified later Finance mapping anchors, most clearly `shadow_monopoly_blackrock_vanguard_co` and `the_kayfabe_money_trail_9_11`.
+- Provenance: **29 VERIFIED · 1 SECONDARY_ONLY · 0 UNVERIFIED**. Rights: **16 PUBLIC_DOMAIN_CONFIRMED · 10 RESEARCHED_QUOTE_LIMIT_ONLY · 4 RESEARCHED_RESTRICTED**.
+- Validation: **26/26 PASS**, including zero ID/text collisions against prior 385, 30 unique source URLs, and a 23-word maximum direct source excerpt.
+- Combined researched inventory is now **415 candidates**: 30 mapped Batch-01 candidates + 385 deliberately unmapped reserve candidates.
+- Scope remains research/data only. No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
