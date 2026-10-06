@@ -1,0 +1,25 @@
+{
+  "poc": "KFB_SEED_WORLD_MECH_DESTRUCTION_POC_01_2026-10-05",
+  "label": "RESEARCH PLAYGROUND · NOT WORLD STUDIO · NOT COMBAT ARENA",
+  "repo_read": { "repo": "georg-doc/kayfabizarro", "main": "30558ae3b990352adb4d010278c7a43e6965b0b1" },
+  "suggested_branch": "claude-design/seed-world-mech-destruction-poc-01-2026-10-05",
+  "suggested_root": "tools/KFB-ToolBox/_inbox/KFB_SEED_WORLD_MECH_DESTRUCTION_POC_01_2026-10-05/",
+  "donors": [
+    { "role": "procedural building grammar (concept + default values)", "repo": "p-schulz/osm_building_grammar", "commit": "81f1b50eae048645b2e620056a7cb2c84709bcfa", "license": "Apache-2.0",
+      "used": "footprint + tags + config → BuildingSpec → MeshSpec idea; default_config.json values: floor 3.1 m, window 1.25×1.55, sill 0.85, spacing 2.7, margin 0.8, door 1.25×2.25 placement first_facade, ledge every floor, roof overhang 0.25, ridge_alignment closest_street, mesh instancing/batching of repeated roles",
+      "not_used": "Blender adapter, OSM ingestion, exporter, presets" },
+    { "role": "seed path convention", "repo": "georg-doc/kayfabizarro", "path": "tools/KFB-ToolBox/world-kernel-lab/world-kernel.js (PR #363, via this project's World Kernel Lab copy)", "used": "FNV-1a hash32 over `${seed}|g${generatorVersion}|${path}`" },
+    { "role": "Combat Mech A · flight presentation + clips", "repo": "georg-doc/kayfabizarro", "branch": "georg-doc-patch-3", "commit": "b7f6013bf00d0661ae943e69e7c3dfde38abcebd",
+      "path": "skills/chat/workflows/KFB_FLIGHT_ANIMATION_FAMILY_01_2026-10-04/RETURN_GATE1/KFB_FLIGHT_SELF_01_CombatMech_RigMedium.glb", "status": "gate-1 candidate, not promoted" },
+    { "role": "Combat Mech B · real CombatMech.glb (Rig_Medium, 23 joints, WingLeft/WingRight)", "repo": "georg-doc/kayfabizarro", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb",
+      "presentation": "Resident Atlas cast.js S16b: legs Jump_Idle + torso Running_HoldingRifle (chest subtree), poseFreeze 0.25 s, wings ±38°" },
+    { "role": "clip library for B", "repo": "georg-doc/kayfabizarro", "commit": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "paths": ["media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb", "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementAdvanced.glb", "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb (fallback only)"] },
+    { "role": "weapon", "repo": "georg-doc/kayfabizarro", "commit": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/assets/gltf/CombatMech_Minigun.gltf", "node": "CombatMech_Minigun_Barrel (spins about local z)", "mount": "mountr (A) / handslotr (B), identity" },
+    { "role": "clay microtexture", "repo": "georg-doc/kayfabizarro", "commit": "30558ae3b990352adb4d010278c7a43e6965b0b1", "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg", "used": "green channel as triplanar albedo + bump microstructure, world space" },
+    { "role": "flight feel / weapon presentation (read, re-implemented)", "repo": "georg-doc/kayfabizarro", "paths": ["reality-lab/rr-flight.js (this project, r2/r3)", "travel/KFB Travel Combat v25/terrain-v25/mech-avatar.js (read)"] }
+  ],
+  "not_touched": ["WB2 / PR #348", "Combat Arena / PR #19", "Asset Registry", "K2 clay material owner", "Site", "Cloudflare"]
+}

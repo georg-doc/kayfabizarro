@@ -1,0 +1,16 @@
+{
+  "poc": "KFB_SEED_WORLD_MECH_DESTRUCTION_POC_01",
+  "date": "2026-10-05",
+  "seed": 2,
+  "type": "toytown",
+  "mode": "pumped (background tab: fixed 1/60 s steps, wall time = CPU + GPU submit, no vsync)",
+  "note": "draw calls and triangles include the shadow pass; vsync FPS in a visible tab not measured",
+  "bench": [
+    { "id": "A", "name": "world baseline · above the intact settlement", "frames": 805, "fps": 201, "avgMs": 4.97, "p95Ms": 8.5, "maxMs": 62.2, "drawCallsAvg": 228, "drawCallsMax": 228, "trianglesMax": 1114256, "visibleBuildings": 360, "chunks": 132, "debrisPeak": 0, "projectilesPeak": 0, "vfxPeak": 0, "promotedPeak": 0 },
+    { "id": "B", "name": "Minigun · sustained on one façade", "frames": 711, "fps": 88, "avgMs": 11.34, "p95Ms": 19, "maxMs": 70.7, "drawCallsAvg": 237, "drawCallsMax": 266, "trianglesMax": 1335342, "visibleBuildings": 225, "chunks": 132, "debrisPeak": 6, "projectilesPeak": 4, "vfxPeak": 80, "promotedPeak": 4, "shots": 162 },
+    { "id": "C", "name": "Rockets · 2–3 neighbouring buildings", "frames": 730, "fps": 110, "avgMs": 9.07, "p95Ms": 15.3, "maxMs": 353.4, "drawCallsAvg": 225, "drawCallsMax": 243, "trianglesMax": 1470774, "visibleBuildings": 230, "chunks": 143, "debrisPeak": 150, "projectilesPeak": 5, "vfxPeak": 584, "promotedPeak": 4, "cascades": 14, "cellsLost": 127, "maxMsNote": "first-use shader compile; warm-up added afterwards, not re-measured" },
+    { "id": "D", "name": "streaming during destruction · fly away across chunk boundaries", "frames": 89, "fps": 264, "avgMs": 3.78, "p95Ms": 8.9, "maxMs": 13.3, "drawCallsAvg": 62, "drawCallsMax": 195, "trianglesMax": 1043650, "visibleBuildings": 182, "chunks": 143, "debrisPeak": 0, "projectilesPeak": 0, "vfxPeak": 0, "promotedPeak": 4, "released": true, "promotedAfter": 0, "storedBuildings": 9 },
+    { "id": "E", "name": "return · destroyed buildings reconstructed", "frames": 452, "fps": 165, "avgMs": 6.05, "p95Ms": 9, "maxMs": 60.9, "drawCallsAvg": 167, "drawCallsMax": 206, "trianglesMax": 1163390, "visibleBuildings": 212, "chunks": 121, "debrisPeak": 0, "projectilesPeak": 0, "vfxPeak": 0, "promotedPeak": 0, "reconstructed": 4 }
+  ],
+  "caps": { "promoted": 4, "debris": 256, "rubble": 1000, "chips": 320, "dust": 200, "fire": 64, "rounds": 96, "rockets": 24, "chunkSlots": 121, "integratePerFrame": 3, "budgetMs": 4 }
+}

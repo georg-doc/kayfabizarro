@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB Seed World · Mech Destruction · POC 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#131119;overflow:hidden;font-family:'JetBrains Mono',ui-monospace,monospace;color:#ece6f5}
+a{color:#ffd9a0}
+a:hover{color:#ffe9c6}
+button{font-family:inherit}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+</helmet>
+
+<div data-screen-label="Seed World POC 01" style="position:fixed;inset:0;background:#131119;font-size:11px;overflow:hidden">
+  <div ref="{{ hostRef }}" onMouseDown="{{ closeMenu }}" style="position:absolute;inset:0"></div>
+
+  <sc-if value="{{ showCross }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;pointer-events:none;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,240,215,0.8);border-radius:50%">
+      <div style="width:3px;height:3px;border-radius:50%;background:{{ crossColor }}"></div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:10px;top:10px;right:10px;display:flex;align-items:flex-start;gap:8px;pointer-events:none">
+    <div style="display:flex;flex-direction:column;gap:6px;pointer-events:auto;min-width:0">
+      <div style="display:flex;gap:6px;align-items:center">
+        <button onClick="{{ toggleMenu }}" title="Menu" style="height:30px;padding:0 10px;border-radius:6px;border:1px solid {{ menuLine }};background:rgba(19,17,25,0.82);backdrop-filter:blur(6px);color:#ece6f5;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap">
+          <div style="display:flex;flex-direction:column;gap:2.5px"><div style="width:11px;height:1.5px;background:#ffd9a0"></div><div style="width:11px;height:1.5px;background:#ffd9a0"></div><div style="width:11px;height:1.5px;background:#ffd9a0"></div></div>
+          <div>Seed World · POC 01</div>
+        </button>
+        <button onClick="{{ toggleHelp }}" title="Controls · H" style="width:30px;height:30px;border-radius:6px;border:1px solid #2c2836;background:rgba(19,17,25,0.82);backdrop-filter:blur(6px);color:#cfc6dd;font-size:12px;font-weight:700;cursor:pointer">?</button>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="width:min(290px, calc(100vw - 20px));box-sizing:border-box;padding:6px;border-radius:8px;border:1px solid #2c2836;background:rgba(19,17,25,0.92);backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:1px;max-height:calc(100vh - 70px);overflow:auto">
+          <sc-for list="{{ menuRows }}" as="m" hint-placeholder-count="10">
+            <sc-if value="{{ m.head }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:8px 8px 3px;color:#6f6880;font-size:9.5px;font-weight:700;letter-spacing:0.08em">{{ m.label }}</div>
+            </sc-if>
+            <sc-if value="{{ m.item }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ m.onClick }}" style="display:flex;align-items:center;gap:8px;padding:7px 8px;border:0;border-radius:5px;background:transparent;color:#ece6f5;font-size:11px;cursor:pointer;text-align:left" style-hover="background:#221e2b">
+                <div style="flex:1;min-width:0">{{ m.label }}</div>
+                <div style="color:{{ m.vfg }};font-weight:600;white-space:nowrap">{{ m.value }}</div>
+                <sc-if value="{{ m.key }}" hint-placeholder-val="{{ true }}">
+                  <div style="min-width:20px;padding:1px 4px;border-radius:3px;border:1px solid #3a3446;color:#9a92aa;font-size:9px;text-align:center">{{ m.key }}</div>
+                </sc-if>
+              </button>
+            </sc-if>
+          </sc-for>
+          <div style="margin-top:6px;padding:8px;border-top:1px solid #2c2836;color:#ffd9a0;font-size:9px;font-weight:700;letter-spacing:0.05em;line-height:1.5">RESEARCH PLAYGROUND · NOT WORLD STUDIO · NOT COMBAT ARENA</div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="flex:1;display:flex;justify-content:center;min-width:0">
+      <sc-if value="{{ hasStatus }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:7px 11px;border-radius:6px;background:rgba(19,17,25,0.86);color:#ffd9a0;font-size:10.5px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ statusText }}</div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showPerf }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(250px, 44vw);box-sizing:border-box;padding:8px 10px;border-radius:8px;background:rgba(19,17,25,0.86);backdrop-filter:blur(6px);border:1px solid #2c2836;display:flex;flex-direction:column;gap:2px;pointer-events:none;font-size:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+          <div style="font-size:18px;font-weight:700;color:{{ fpsColor }}">{{ fpsText }}</div>
+          <div style="color:#9a92aa">{{ perfTag }}</div>
+        </div>
+        <sc-for list="{{ perfRows }}" as="r" hint-placeholder-count="12">
+          <div style="display:flex;justify-content:space-between;gap:8px;border-top:{{ r.sep }};padding-top:{{ r.pad }}">
+            <div style="color:#9a92aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.k }}</div>
+            <div style="color:{{ r.fg }};font-weight:600;white-space:nowrap">{{ r.v }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showStart }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:50%;bottom:max(24px, 6vh);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;width:calc(100vw - 24px)">
+      <button onClick="{{ fly }}" style="pointer-events:auto;padding:12px 26px;border-radius:8px;border:0;background:#ffd9a0;color:#131119;font-size:13px;font-weight:700;cursor:pointer">Start · Enter</button>
+      <div style="padding:5px 10px;border-radius:5px;background:rgba(19,17,25,0.78);color:#cfc6dd;font-size:10.5px;text-align:center;text-wrap:pretty">WASD move · drag to look · Space jump / climb · hold 1 / 2 fire · H controls</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showHud }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none;max-width:calc(100vw - 20px)">
+      <sc-if value="{{ focusLost }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:5px 10px;border-radius:5px;background:#ff9a7f;color:#131119;font-size:10.5px;font-weight:700">Click into the view to take control</div>
+      </sc-if>
+      <div style="display:flex;align-items:center;gap:10px;padding:4px 10px;border-radius:5px;background:rgba(19,17,25,0.78);font-size:10.5px;white-space:nowrap">
+        <div style="font-weight:700;color:{{ modeColor }}">{{ modeText }}</div>
+        <div style="color:#cfc6dd">{{ speedText }}</div>
+        <sc-if value="{{ combatOn }}" hint-placeholder-val="{{ false }}">
+          <div style="color:#ff9a7f;font-weight:700">COMBAT CAM</div>
+        </sc-if>
+      </div>
+      <div style="display:flex;gap:5px">
+        <sc-for list="{{ slots }}" as="s" hint-placeholder-count="2">
+          <div style="width:clamp(58px, 15vw, 76px);height:44px;box-sizing:border-box;padding:5px 7px;border-radius:6px;background:{{ s.bg }};border:1px solid {{ s.line }};display:flex;flex-direction:column;justify-content:space-between">
+            <div style="display:flex;justify-content:space-between;gap:4px;font-size:9px;color:{{ s.kfg }}"><div style="font-weight:700">{{ s.k }}</div><div>{{ s.sub }}</div></div>
+            <div style="font-size:9.5px;font-weight:700;color:{{ s.fg }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ helpOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleHelp }}" style="position:absolute;inset:0;background:rgba(19,17,25,0.55);display:flex;align-items:center;justify-content:center;padding:12px;box-sizing:border-box">
+      <div style="width:min(760px, 100%);max-height:100%;overflow:auto;box-sizing:border-box;padding:16px 18px;border-radius:10px;background:rgba(23,20,29,0.97);border:1px solid #2c2836;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:13px;font-weight:700">Controls</div><div style="color:#9a92aa;font-size:10px">H or click to close</div></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));gap:14px 20px">
+          <sc-for list="{{ helpGroups }}" as="g" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="color:#ffd9a0;font-size:9.5px;font-weight:700;letter-spacing:0.08em">{{ g.title }}</div>
+              <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;font-size:10.5px;line-height:1.4"><div style="width:84px;flex:none;color:#ece6f5;font-weight:600">{{ r.k }}</div><div style="color:#b9b0c8">{{ r.v }}</div></div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showGates }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));pointer-events:none">
+      <sc-for list="{{ gateLabels }}" as="g" hint-placeholder-count="6">
+        <div style="border:1px solid #2c2836;padding:9px;display:flex;flex-direction:column;gap:3px;align-items:flex-start;min-width:0">
+          <div style="padding:3px 7px;border-radius:3px;background:#ffd9a0;color:#131119;font-weight:700;font-size:11px">{{ g.label }}</div>
+          <div style="padding:2px 6px;border-radius:3px;background:rgba(19,17,25,0.8);color:#cfc6dd;font-size:10px;word-break:break-all">{{ g.src }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:0;right:0;bottom:0;width:min(380px, 100vw);box-sizing:border-box;border-left:1px solid #2c2836;background:rgba(23,20,29,0.97);display:flex;flex-direction:column;min-height:0">
+      <div style="display:flex;align-items:stretch;border-bottom:1px solid #2c2836">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.onClick }}" style="flex:1;padding:11px 0;background:transparent;color:{{ t.fg }};border:0;border-bottom:2px solid {{ t.line }};font-size:10.5px;font-weight:700;letter-spacing:0.05em;cursor:pointer">{{ t.label }}</button>
+        </sc-for>
+        <button onClick="{{ closePanel }}" title="Close" style="width:42px;background:transparent;border:0;color:#9a92aa;font-size:15px;cursor:pointer">×</button>
+      </div>
+      <div style="flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px">
+        <sc-if value="{{ tabChecks }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ runChecks }}" style="padding:9px;border-radius:6px;border:1px solid #ffd9a0;background:transparent;color:#ffd9a0;font-size:11px;font-weight:700;cursor:pointer">{{ checksLabel }}</button>
+          <div style="color:#9a92aa;line-height:1.45;text-wrap:pretty">§29 in this tab: determinism, 2 min Minigun in 7200 fixed steps, rocket barrage, fly-away 900 m and return, locomotion ladder.</div>
+          <sc-for list="{{ checks }}" as="c" hint-placeholder-count="0">
+            <div style="border:1px solid #2c2836;border-radius:6px;padding:8px 9px;display:flex;flex-direction:column;gap:4px;background:#1b1822">
+              <div style="display:flex;gap:8px;align-items:center">
+                <div style="padding:2px 6px;border-radius:3px;font-size:9.5px;font-weight:700;background:{{ c.bg }};color:#131119">{{ c.badge }}</div>
+                <div style="font-weight:700;color:#ffd9a0">{{ c.id }}</div>
+                <div style="flex:1;line-height:1.35;min-width:0">{{ c.name }}</div>
+              </div>
+              <div style="color:#b9b0c8;line-height:1.4;font-size:10px;word-break:break-word">{{ c.detail }}</div>
+            </div>
+          </sc-for>
+        </sc-if>
+        <sc-if value="{{ tabBench }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ runBench }}" style="padding:9px;border-radius:6px;border:1px solid #ffd9a0;background:transparent;color:#ffd9a0;font-size:11px;font-weight:700;cursor:pointer">{{ benchLabel }}</button>
+          <div style="color:#9a92aa;line-height:1.45;text-wrap:pretty">§25 stress tests A–E in real time. About 40 s; keep this tab in front.</div>
+          <sc-for list="{{ bench }}" as="b" hint-placeholder-count="0">
+            <div style="border:1px solid #2c2836;border-radius:6px;padding:8px 9px;display:flex;flex-direction:column;gap:5px;background:#1b1822">
+              <div style="display:flex;gap:8px"><div style="font-weight:700;color:#ffd9a0">{{ b.id }}</div><div style="flex:1;line-height:1.35">{{ b.name }}</div></div>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px">
+                <sc-for list="{{ b.cells }}" as="m" hint-placeholder-count="9">
+                  <div style="display:flex;flex-direction:column;gap:1px;min-width:0"><div style="color:#9a92aa;font-size:9px">{{ m.k }}</div><div style="font-weight:600">{{ m.v }}</div></div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </sc-if>
+        <sc-if value="{{ tabSources }}" hint-placeholder-val="{{ false }}">
+          <sc-for list="{{ sourceRows }}" as="s" hint-placeholder-count="6">
+            <div style="border:1px solid #2c2836;border-radius:6px;padding:8px 9px;display:flex;flex-direction:column;gap:3px;background:#1b1822">
+              <div style="font-weight:700">{{ s.title }}</div>
+              <div style="color:#9a92aa;font-size:10px;word-break:break-all;line-height:1.35">{{ s.path }}</div>
+              <div style="color:#cfc6dd;font-size:10px;line-height:1.35">{{ s.note }}</div>
+            </div>
+          </sc-for>
+        </sc-if>
+        <button onClick="{{ download }}" style="margin-top:4px;padding:8px;border-radius:6px;border:1px solid #3a3446;background:transparent;color:#cfc6dd;font-size:10.5px;cursor:pointer">Download benchmark + checks JSON</button>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mechHeight&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2.6,&quot;min&quot;:1.8,&quot;max&quot;:4.5,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;m&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Mech&quot;},&quot;source&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;flight&quot;,&quot;options&quot;:[&quot;flight&quot;,&quot;atlas&quot;],&quot;tsType&quot;:&quot;'flight' | 'atlas'&quot;,&quot;section&quot;:&quot;Mech&quot;},&quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;budgetMs&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4,&quot;min&quot;:1,&quot;max&quot;:10,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Streaming&quot;}}">
+class Component extends DCLogic {
+  state = { status: 'loading three.js …', flight: {}, perf: null, perfOn: false, gates: null, panel: null, menu: false, help: false, checks: [], bench: [], running: null, sources: null };
+  hostRef = React.createRef();
+
+  async componentDidMount() {
+    this.onKey = (e) => {
+      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+      if (e.code === 'KeyH') this.setState({ help: !this.state.help });
+      else if (e.code === 'Escape' && (this.state.help || this.state.menu)) this.setState({ help: false, menu: false });
+    };
+    window.addEventListener('keydown', this.onKey);
+    try {
+      // standalone build: modules come from seedworld/sw-bundle.js as blob URLs (meta sw-bundle marks it)
+      const bundled = document.querySelector('meta[name="sw-bundle"]') ? await new Promise((r) => { const t0 = Date.now(); (function w() { if (window.__SW_BUNDLE) r(window.__SW_BUNDLE()); else if (Date.now() - t0 > 8000) r(null); else setTimeout(w, 30); })(); }) : null;
+      const mod = await import(bundled || new URL('seedworld/sw-app.js', document.baseURI).href);
+      this.app = await mod.mount(this.hostRef.current, {
+        seed: this.props.seed ?? 2, mechHeight: this.props.mechHeight ?? 2.6, source: this.props.source ?? 'flight', budgetMs: this.props.budgetMs ?? 4, capture: true, perfOn: false,
+        onStatus: (s) => this.setState({ status: s }), onFlight: (f) => this.setState({ flight: f }), onPerf: (p) => this.setState({ perf: p }),
+        onPerfToggle: () => this.setState({ perfOn: !this.state.perfOn }), onGates: (g) => this.setState({ gates: g })
+      });
+      window.__sw = this.app;
+      this.setState({ sources: this.app.sources() });
+    } catch (e) { console.error(e); this.setState({ status: 'error: ' + e.message }); }
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); this.app && this.app.dispose(); }
+
+  async runChecks() {
+    if (!this.app || this.state.running) return;
+    this.setState({ running: 'checks', checks: [], panel: 'checks', menu: false });
+    try { const r = await this.app.runChecks((rows) => this.setState({ checks: rows })); this.setState({ checks: r }); } catch (e) { console.error(e); this.setState({ status: 'checks failed: ' + e.message }); }
+    this.setState({ running: null });
+  }
+  async runBench() {
+    if (!this.app || this.state.running) return;
+    this.setState({ running: 'bench', bench: [], panel: 'bench', menu: false });
+    try { const rows = []; await this.app.runBench((r) => { rows.push(r); this.setState({ bench: rows.slice() }); }); } catch (e) { console.error(e); this.setState({ status: 'bench failed: ' + e.message }); }
+    this.setState({ running: null });
+  }
+  download() {
+    const data = { poc: 'KFB_SEED_WORLD_MECH_DESTRUCTION_POC_01', date: new Date().toISOString(), seed: this.app ? this.app.seed : null, perf: this.state.perf, bench: this.state.bench, checks: this.state.checks, sources: this.state.sources, ua: navigator.userAgent };
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })); a.download = 'seedworld-poc01-benchmark.json'; a.click();
+  }
+
+  renderVals() {
+    const f = this.state.flight || {}, p = this.state.perf, app = this.app, running = this.state.running, gates = !!this.state.gates;
+    const source = p ? p.source : this.props.source ?? 'flight', rm = p ? p.rocketMode : 'straight';
+    const head = (label) => ({ head: true, item: false, label });
+    const item = (label, value, key, onClick, on) => ({ head: false, item: true, label, value, key, onClick, vfg: on ? '#ffd9a0' : '#9a92aa' });
+    const menuRows = [
+      head('MECH'),
+      item(f.active ? 'Leave mech' : 'Start', '', f.active ? 'Esc' : '↵', () => { if (!app) return; f.active ? app.mech.stop() : app.fly(); this.setState({ menu: false }); }),
+      item('Source', source === 'atlas' ? 'B · Atlas' : 'A · Flight', 'M', () => app && app.setSource(source === 'atlas' ? 'flight' : 'atlas'), true),
+      item('Rockets', rm === 'homing' ? 'homing' : 'straight', 'T', () => app && app.toggleRockets(), true),
+      head('WORLD'),
+      item('New seed', p ? String(p.seed) : '', 'N', () => app && app.regenerate((Math.random() * 1e9) >>> 0)),
+      item('Regenerate', 'same seed', 'R', () => app && app.regenerate()),
+      head('DIAGNOSTICS'),
+      item('Metrics', this.state.perfOn ? 'on' : 'off', 'F1', () => this.setState({ perfOn: !this.state.perfOn }), this.state.perfOn),
+      item('Source gates', gates ? 'on' : 'off', 'G', () => app && app.toggleGates(), gates),
+      item('Checks · bench · sources', '', '', () => this.setState({ panel: this.state.panel ? null : 'checks', menu: false }))
+    ];
+    const fmt = (v, d = 1) => (v === undefined || v === null ? '–' : typeof v === 'number' ? v.toFixed(d) : v);
+    const row = (k, v, warn, sep) => ({ k, v, fg: warn ? '#ff9a7f' : '#ece6f5', sep: sep ? '1px solid #2c2836' : '0', pad: sep ? '3px' : '0' });
+    const perfRows = p ? [
+      row('frame ms', fmt(p.ms, 1), p.ms > 25), row('draw calls', String(p.calls)), row('triangles', (p.tris / 1000).toFixed(0) + ' k'),
+      row('chunks · queue', p.chunks + ' · ' + p.queued, false, true), row('buildings', p.visible + ' · near ' + p.near),
+      row('destructible', p.promoted + ' / ' + p.promotedMax, false, true), row('debris', p.debris + ' / ' + p.debrisMax, p.debris >= p.debrisMax), row('rubble', p.rubble + ' / ' + p.rubbleMax),
+      row('projectiles', p.proj + ' / ' + p.projMax), row('VFX', p.vfx + ' / ' + p.vfxMax),
+      row('chunk gen · integ', fmt(p.genMs, 1) + ' · ' + fmt(p.integMs, 2) + ' ms' + (p.worker ? ' W' : ''), false, true), row('worst integ frame', fmt(p.integFrame, 2) + ' ms'),
+      row('stored damaged', String(p.stored), false, true), row('cascades · cells', p.peaks.cascades + ' · ' + p.peaks.cellsLost)
+    ] : [];
+    const slot = (k, name, sub, hot, col) => ({ k, name, sub, bg: hot ? col : 'rgba(19,17,25,0.82)', line: col, fg: hot ? '#131119' : col, kfg: hot ? '#131119' : '#cfc6dd' });
+    const slots = f.active ? [
+      slot('1', 'MINIGUN', f.firing ? '●' : f.spin > 0.05 ? Math.round(f.spin * 100) + '%' : '', f.firing, '#ffd9a0'),
+      slot('2', 'ROCKETS', (f.rocketMode === 'homing' ? 'HOM' : 'STR') + (f.rocketReady ? '' : ' …'), !f.rocketReady, '#ff9a7f')
+    ] : [];
+    const modeText = ({ flight: 'FLIGHT', walk: 'WALK', air: 'JUMP' }[f.mode] || 'FLIGHT') + (f.mode === 'walk' && f.role ? ' · ' + f.role + (f.walkOn ? ' (walk)' : '') : '');
+    const speedText = Math.round(f.speed || 0) + ' m/s' + (f.mode === 'flight' ? ' · ' + Math.round(f.alt || 0) + ' m' : '');
+    const helpGroups = [
+      { title: 'MOVE', rows: [{ k: 'W / S', v: 'forward / back' }, { k: 'A / D', v: 'turn (strafe while RMB held)' }, { k: 'Q / E', v: 'strafe' }, { k: 'Shift', v: 'boost / sprint' }] },
+      { title: 'AIR', rows: [{ k: 'Space / ↑', v: 'climb' }, { k: '↓', v: 'descend · touching ground = walk' }] },
+      { title: 'GROUND', rows: [{ k: 'Space', v: 'jump' }, { k: 'Space ×2 / ↑', v: 'take off' }, { k: 'C', v: 'walk / run' }] },
+      { title: 'WEAPONS', rows: [{ k: 'hold 1', v: 'Minigun' }, { k: 'hold 2', v: 'Rockets' }, { k: 'T', v: 'rocket mode' }, { k: 'F', v: 'continuous fire' }] },
+      { title: 'CAMERA', rows: [{ k: 'LMB drag', v: 'look 360°' }, { k: 'RMB drag', v: 'steer' }, { k: 'LMB + RMB', v: 'run forward' }, { k: 'wheel', v: 'zoom' }, { k: 'Tab', v: 'combat cam · LMB / RMB fire' }] },
+      { title: 'WORLD', rows: [{ k: 'M', v: 'switch mech' }, { k: 'R / N', v: 'regenerate / new seed' }, { k: 'F1 · G', v: 'metrics · gates' }, { k: 'Esc', v: 'leave mech' }] }
+    ];
+    const tab = (id, label) => ({ label, onClick: () => this.setState({ panel: id }), fg: this.state.panel === id ? '#ffd9a0' : '#9a92aa', line: this.state.panel === id ? '#ffd9a0' : 'transparent' });
+    const checks = this.state.checks.map((c) => ({ ...c, badge: c.pass ? 'PASS' : 'FAIL', bg: c.pass ? '#a8d8b0' : '#ff9a7f' }));
+    const bench = this.state.bench.map((b) => ({ id: b.id, name: b.name, cells: [
+      { k: 'FPS avg', v: String(b.fps) }, { k: 'frame avg / p95', v: b.avgMs + ' / ' + b.p95Ms }, { k: 'frame max ms', v: String(b.maxMs) },
+      { k: 'draw calls avg/max', v: b.drawCallsAvg + ' / ' + b.drawCallsMax }, { k: 'triangles max', v: Math.round(b.trianglesMax / 1000) + ' k' }, { k: 'visible buildings', v: String(b.visibleBuildings) },
+      { k: 'debris peak', v: String(b.debrisPeak) }, { k: 'projectiles peak', v: String(b.projectilesPeak) }, { k: 'VFX peak', v: String(b.vfxPeak) }
+    ] }));
+    const s = this.state.sources;
+    const sourceRows = s ? [
+      { title: 'Generator · seed → world', path: s.generator.donor, note: 'generator v' + s.generator.gen + ' · chunk ' + s.generator.chunk + ' m · rings near ' + s.generator.rings.near + ' / street ' + s.generator.rings.street + ' / district ' + s.generator.rings.district + ' / far ' + s.generator.rings.far },
+      { title: 'Shared clay microtexture', path: s.clay.path + ' @ ' + s.clay.commit.slice(0, 8), note: 'triplanar, world space, one material for terrain, roads, buildings, vegetation, cells, debris, rubble' },
+      ...s.actors.map((a) => ({ title: 'Actor ' + (a.kind === 'atlas' ? 'B · Atlas' : 'A · Flight Family'), path: (a.kind === 'atlas' ? s.mech[1] : s.mech[0]).path + ' @ ' + (a.kind === 'atlas' ? s.mech[1] : s.mech[0]).commit.slice(0, 8), note: 'mount ' + a.mount + ' · barrel ' + (a.barrel ? 'found' : 'MISSING') + ' · raw height ' + a.rawHeight + ' · scale ' + a.scale + ' · clips ' + a.clips.join(', ') + (a.chest ? ' · torso mask from ' + a.chest : '') })),
+      { title: 'Minigun', path: s.gun.path + ' @ ' + s.gun.commit.slice(0, 8), note: 'on the hand slot · flight: identity · ground: re-aimed at the crosshair along the barrel axis · CombatMech_Minigun_Barrel spins about z' },
+      ...(s.loco ? [{ title: 'Locomotion ladder · KayKit Rig_Medium, 10 roles', path: s.loco.dir + ' @ ' + s.loco.commit.slice(0, 8), note: 'profile ' + s.loco.profile.split('/').pop() + ' · bones matched (Running_A) ' + s.loco.cover + ' · chest subtree from Running_HoldingRifle (armed) · Jump_Idle identical to aa16a777: ' + s.loco.samePin + (s.loco.missing.length ? ' · missing ' + s.loco.missing.join(', ') : '') }] : []),
+      ...s.mech.slice(2).map((c) => ({ title: 'Clip library · ' + (c.clip || 'fallback'), path: c.path + ' @ ' + c.commit.slice(0, 8), note: c.fallback ? 'loaded only when a clip is missing' : 'Atlas S16b flight presentation' })),
+      ...(s.errors.length ? [{ title: 'Load errors', path: '', note: s.errors.join(' · ') }] : [])
+    ] : [];
+    return {
+      hostRef: this.hostRef, closeMenu: () => this.state.menu && this.setState({ menu: false }),
+      toggleMenu: () => this.setState({ menu: !this.state.menu }), menuOpen: this.state.menu, menuLine: this.state.menu ? '#ffd9a0' : '#2c2836', menuRows,
+      toggleHelp: () => this.setState({ help: !this.state.help }), helpOpen: this.state.help, helpGroups,
+      showCross: !!f.active && !gates, crossColor: f.firing ? '#ff9a7f' : '#ffd9a0',
+      showStart: !f.active && !gates && !running && !!app && !this.state.help, fly: () => app && app.fly(),
+      showHud: !!f.active && !gates, focusLost: f.focus === false, combatOn: !!f.combat, slots, modeText, speedText, modeColor: f.mode === 'flight' ? '#ffd9a0' : '#a8d8b0',
+      showPerf: this.state.perfOn && !!p && !gates, perfRows, perfTag: p ? (p.active ? 'ACTIVE' : 'OVERVIEW') : '', fpsText: p ? p.fps + ' fps' : '', fpsColor: p && p.fps < 40 ? '#ff9a7f' : '#a8d8b0',
+      showGates: gates, gateLabels: this.state.gates || [],
+      hasStatus: !!this.state.status, statusText: this.state.status || '',
+      panelOpen: !!this.state.panel, closePanel: () => this.setState({ panel: null }), tabs: [tab('checks', 'CHECKS'), tab('bench', 'BENCH'), tab('sources', 'SOURCES')],
+      tabChecks: this.state.panel === 'checks', tabBench: this.state.panel === 'bench', tabSources: this.state.panel === 'sources',
+      runChecks: () => this.runChecks(), runBench: () => this.runBench(), download: () => this.download(),
+      checksLabel: running === 'checks' ? 'Running checks …' : 'Run automated checks (§29)', benchLabel: running === 'bench' ? 'Running bench …' : 'Run stress bench A–E (§25)',
+      checks, bench, sourceRows
+    };
+  }
+}
+</script>
+</body>
+</html>

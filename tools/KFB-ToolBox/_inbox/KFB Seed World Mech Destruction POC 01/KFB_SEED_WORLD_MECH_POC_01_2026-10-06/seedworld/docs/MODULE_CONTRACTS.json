@@ -1,0 +1,114 @@
+{
+  "schema": "kfb.seed-world.module-contracts/0",
+  "date": "2026-10-06",
+  "status": "PROPOSAL · prepared for the KFB Open World integration slice · not accepted by any Open World owner",
+  "units": { "length": "metres", "up": "+Y", "chunk": 64, "time": "seconds", "angles": "radians, yaw 0 = -Z" },
+  "determinism": "derive(seed, path) = FNV-1a(`${seed}|g${GEN_VERSION}|${path}`) · GEN_VERSION 1 · same seed + version → same IDs (checks T1–T4)",
+  "modules": {
+    "seedSettlementProvider": {
+      "files": ["seedworld/sw-gen.js", "seedworld/sw-mesh.js"],
+      "pure": true, "threejs": false, "workerSafe": true,
+      "class": "ADOPT",
+      "openWorldOwner": "settlements/ + buildings/ (WB2 world model)",
+      "currentApi": {
+        "createGen(seed)": "→ { seed, type, P, settlement, near, toLocal, toWorld, townR, owner, road, height, ground, block, recipe, chunkRecipe, streetIds, vegDensity }",
+        "compileChunk(gen, cx, cz, lod, damage, hidden)": "→ { pos, nrm, col, idx (typed arrays), inst{win,door,chim,trunk,crown}, meta, recipes }",
+        "cellsFor(rec)": "→ destruction cells with stable ids",
+        "rubbleFor(rec, cell, heightAt)": "→ deterministic rubble"
+      },
+      "proposedApi": {
+        "createGen(seed, { heightAt?, overrides? })": "heightAt(x,z) injected by the Open World terrain owner; own bands remain the fallback",
+        "overrides": { "suppressParcels": "string[] parcel ids not to build", "replaceBuilding": "{ buildingId: worldRecipeInstanceId }" },
+        "zoneRecord(gen)": "→ world-recipe zone (see worldRecipeZone)",
+        "streetSplines(gen)": "→ [{ id, kind: 'primary'|'secondary'|'path', pts: [[x,z],…], width }] as RouteRecipe input for Track Core",
+        "streetAnchor(streetId, t, side, offset)": "→ { pos:[x,y,z], yaw } for Billboard/prop anchoring"
+      },
+      "stableIds": {
+        "street": "world:<seed>/street:<s>.P0|P1|u<k>|v<k>",
+        "parcel": "world:<seed>/parcel:<s>.<i>.<j>.<edge>.<k>",
+        "building": "world:<seed>/building:<s>.<i>.<j>.<edge>.<k>",
+        "chunk": "world:<seed>/chunk:<cx>,<cz>"
+      }
+    },
+    "chunkStreamer": {
+      "files": ["seedworld/sw-world.js", "seedworld/sw-worker.js"],
+      "class": "DONATE",
+      "openWorldOwner": "world-streaming/ (WB2 renderer/world owner)",
+      "pattern": {
+        "rings": "Chebyshev rings on 64 m chunks: ≤1 LOD0 · 2 LOD1 · 3 LOD2 · 4–5 LOD3 · release at 7 · 121 slots",
+        "pipeline": "request → worker compile (≤3 in flight) → result queue sorted by ring → integrate ≤3 per frame while frame integration time < budgetMs (default 4)",
+        "fallback": "module worker → blob module worker → one main-thread compile per frame",
+        "staleResults": "dropped when seed or job generation changed",
+        "slots": "Group + Mesh recycled, never re-allocated"
+      },
+      "proposedApi": "createChunkStreamer({ compile(job) → transferable result, integrate(result, slot), release(slot), ringOf(cx,cz), budgetMs, maxPerFrame }) → { update(x,z), pending(), stats }",
+      "evidence": ["T9", "T12", "bench D"]
+    },
+    "damageState": {
+      "files": ["seedworld/sw-destruct.js (pack2/unpack2, store, demote)", "seedworld/sw-mesh.js (damaged)"],
+      "class": "DONATE",
+      "openWorldOwner": "persistence/ (world recipe)",
+      "record": { "buildingId": "string (stable recipe id)", "bits": "base64 of 2-bit cell states: 0 intact · 1 damaged · 2 gone", "cells": "int", "collapsed": "bool", "rubble": "int", "top": "number (m)" },
+      "rule": "reconstruct = recipe + bits; no mesh stored",
+      "evidence": ["T9", "T10", "bench E"]
+    },
+    "destructibleBuildings": {
+      "files": ["seedworld/sw-destruct.js"],
+      "class": "HOLD",
+      "owner": "Combat Arena (weapons/damage owner)",
+      "inputEvents": {
+        "bullet": "{ origin:[x,y,z], dir:[x,y,z], range, damage }",
+        "rocket": "{ at:[x,y,z], radius: 5.5, damage: 16, falloff: 0.7 }"
+      },
+      "outputEvents": { "cellLost": "{ buildingId, cell, kind }", "cascade": "{ buildingId, cells:int, delayS }", "settled": "{ buildingId }" },
+      "caps": { "promoted": 4, "debris": 256, "rubble": 1000, "cells": 2200 }
+    },
+    "combatMechProfile": {
+      "files": ["seedworld/sw-mech.js (buildActor, SOURCES, GUN_SRC)"],
+      "class": "ADOPT as actor profile",
+      "openWorldOwner": "player-motion-camera/ (WB2 player + Motion SSOT #344)",
+      "precedent": "travel/wip/travel_globe_wsa/world-builder/mech-bee-profile.js, raw-mech-profile.js",
+      "profile": {
+        "id": "kfb.combat-mech.a | kfb.combat-mech.b",
+        "rig": "Rig_Medium (23 joints, WingLeft/WingRight)",
+        "bodyHeightM": 2.6,
+        "sources": { "a": "Flight Family 01 gate 1 @ b7f6013", "b": "CombatMech.glb @ 2c92dd13" },
+        "mount": { "a": "mountr", "b": "handslotr", "weapon": "CombatMech_Minigun.gltf @ 2c92dd13, barrel node CombatMech_Minigun_Barrel" },
+        "locomotion": "must consume KFB_KAYKIT_LOCO_SET_01 (see INTEGRATION_OPEN_WORLD.md §4)",
+        "modes": ["walk", "air", "flight"],
+        "carryLayer": "upper body from Running_HoldingRifle (chest subtree), gun aligned along its barrel axis to the aim point, blended on land/take-off"
+      }
+    },
+    "locomotionModes": {
+      "class": "DONATE",
+      "rule": "exactly one locomotion writer per mode (matches WB0 runtime-mode.js)",
+      "states": {
+        "flight": "Space/↑ climb · ↓ descend · ground contact → walk",
+        "walk": "Space jump → air · Space×2 ≤ 0.3 s or ↑ → flight",
+        "air": "landing → walk · Space×2 → flight"
+      },
+      "transitionNote": "Open World accepted Travel TMB-2 ground↔flight at 400 ms; align fades to it"
+    },
+    "cameraRule": {
+      "class": "DONATE",
+      "rule": "chase camera rigid in the actor frame; on occlusion the boom shortens, never lifts; minimum 70 % of boom length so the actor stays fully in frame; only boom length is smoothed"
+    },
+    "inputGuards": {
+      "class": "DONATE",
+      "rules": ["clear keys while !document.hasFocus()", "Meta held → clear all keys (macOS drops keyup)", "re-read mouse buttons from e.buttons on every move", "ignore mouse jumps > 250 px", "pointer lock only while a button is held"]
+    },
+    "worldRecipeZone": {
+      "targetSchema": "kfb.world-recipe.v0 › zones[]",
+      "shape": { "kind": "seeded-settlement", "id": "zone-<uuid>", "provider": "kfb.seed-world.gen/1", "seed": "uint32", "genVersion": 1, "type": "giebelstadt|machiya|adobe|toytown|werkhafen", "origin": "[x,y,z]", "yaw": "rad", "radius": "m", "overrides": "see seedSettlementProvider.proposedApi.overrides", "damage": "{ buildingId: damageState.record }" }
+    },
+    "supportSurfaceRegistration": {
+      "targetApi": "createSupportSurfaceResolver().registerObject(id, object, { kind, roles, recipeId, maxRise, minUpDot })",
+      "proposal": "flat roofs (roof.type 'flat') and intact slab cells register as kind 'roof', roles ['support','walkable'], recipeId = building id"
+    },
+    "raidPortal": {
+      "targetSeam": "Combat Raid + Open World sprint 5 (portal/entry record)",
+      "entry": { "actorId": "kfb.combat-mech.a", "safeReturn": "{ pos, yaw }", "challengeSeed": "uint32 → createGen(seed)" },
+      "result": { "outcome": "complete|abort", "buildingsDestroyed": "int", "cellsLost": "int", "durationS": "number" }
+    }
+  }
+}
