@@ -28,8 +28,11 @@ Canonical live data after migration:
 Board source commit containing the current live-board payload:
 `1a87cddf90dd0904c7b3bf68b4c4aabf37d7e6a2`
 
+Current verified main head:
+`c358de6045bb1e2d65c09a99647569a4422a8dcb`
+
 Current board blob:
-`7703147f694b5cd8b8b636c35cb27295543da8a8`
+`88103afa44bc4c3094faf1d3b10792dc661e0b93`
 
 Operating contract:
 `main/skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md`
