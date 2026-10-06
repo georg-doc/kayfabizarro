@@ -1,0 +1,177 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "packId": "style-pack:kfb-environment-mass:001",
+  "status": "CLAUDE_DESIGN_JOB_READY_SOURCE_INSPECTION_PENDING",
+  "title": "KFB Environment Mass / Living World Grammar 01",
+  "date": "2026-10-06",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "consumer": "claude-design",
+  "sourceTransport": "PUBLIC_GITHUB_PLUS_OFFICIAL_SOURCE_URLS",
+  "privateSiteAccessRequired": false,
+  "designIntent": "Derive reusable KFB environment composition grammar for large terrain masses, forest clustering, overgrowth, depth staging, rock groupings and exposed/rooted landforms. Translate source construction principles into KFB clay/cartoon world language without copying finished source drawings.",
+  "receivingContext": {
+    "name": "KFB Open World / WorldBuilder",
+    "role": "DESIGN_REFERENCE_ONLY_WHILE_CURRENT_INTEGRATION_RUNS",
+    "currentIntegrationRule": "Do not write to the running Open World integration. Return design grammar/recipes only for later consumption.",
+    "doNotModifyRuntime": true
+  },
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-mountains-2020-11",
+      "seedId": "etherington-mountains-2020-11",
+      "title": "Mountains",
+      "role": "TERRAIN_MASS_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/11/how-to-think-when-you-draw-mountains.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "large mountain mass grouping",
+        "primary versus secondary silhouettes",
+        "depth layering",
+        "readability at distance"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-forests-2022-03",
+      "seedId": "etherington-forests-2022-03",
+      "title": "Forests · Parts C/D",
+      "role": "FOREST_CLUSTER_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2022/03/how-to-think-when-you-draw-forests.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "tree clustering",
+        "density variation",
+        "canopy rhythm",
+        "clearings and negative space"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-overgrown-vegetation-2018-07",
+      "seedId": "etherington-overgrown-vegetation-2018-07",
+      "title": "Overgrown Vegetation",
+      "role": "OVERGROWTH_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/07/how-to-think-when-you-draw-overgrown.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "vegetation breaking architecture/terrain edges",
+        "irregularity without noise",
+        "foreground dressing density",
+        "organic overlap"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-fg-mg-bg-2021-09",
+      "seedId": "etherington-fg-mg-bg-2021-09",
+      "title": "Foreground / Midground / Background",
+      "role": "DEPTH_STAGING_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2021/09/how-to-think-when-you-draw-foreground.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "foreground/midground/background separation",
+        "scale progression",
+        "overlap hierarchy",
+        "scene readability"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-rock-formations-2018-01",
+      "seedId": "etherington-rock-formations-2018-01",
+      "title": "Rock Formations",
+      "role": "ROCK_MASS_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/01/how-to-think-when-you-draw-rock.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "rock grouping and silhouette",
+        "large/medium/small mass ratios",
+        "ground contact",
+        "avoiding repeated identical boulders"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-tree-roots-2023-10",
+      "seedId": "etherington-tree-roots-2023-10",
+      "title": "Tree Roots",
+      "role": "ROOTED_LANDFORM_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2023/10/how-to-think-when-you-draw-tree-roots.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "root structure and branching",
+        "ground contact",
+        "visible support logic",
+        "organic silhouette around exposed earth"
+      ]
+    }
+  ],
+  "kfbTarget": {
+    "consumers": [
+      "open-world",
+      "worldbuilder",
+      "procedural-environment",
+      "life-tree-islands"
+    ],
+    "visualLanguage": [
+      "KFB clay/cartoon",
+      "large readable masses before detail",
+      "handmade asymmetry",
+      "clustered rather than evenly scattered dressing",
+      "visible rooted/grounded forms",
+      "clear silhouette at gameplay camera distance"
+    ],
+    "requiredGrammars": [
+      "terrain / mountain mass hierarchy",
+      "forest cluster / clearing rhythm",
+      "overgrowth dressing rule",
+      "foreground-midground-background depth rule",
+      "rock cluster rule",
+      "root / exposed-earth support rule"
+    ],
+    "avoid": [
+      "uniform scatter",
+      "procedural noise without hierarchy",
+      "photoreal terrain",
+      "tiny decorative clutter as substitute for composition",
+      "rewriting current Open World runtime",
+      "creating a second world/terrain owner"
+    ]
+  },
+  "expectedOutputs": [
+    "one source-isolation sheet showing all 6 references actually opened",
+    "6 concise KFB environment grammar cards",
+    "3 combined scene recipes: sparse, medium, dense/living",
+    "one Life-Tree/island-root composition rule using rock/root/vegetation principles",
+    "one distance-readability rule set for third-person gameplay camera",
+    "parameter ranges suitable for later procedural implementation",
+    "reference IDs attached to every derived rule"
+  ],
+  "returnRequirements": [
+    "list exact source URLs opened",
+    "mark each reference inspected or uninspected",
+    "separate OBSERVED SOURCE FACT / CONSTRUCTION PRINCIPLE / KFB DESIGN DECISION",
+    "do not claim runtime integration",
+    "do not modify the running Open World integration",
+    "return a complete editable design export if Claude Design cannot write GitHub"
+  ]
+}
