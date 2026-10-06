@@ -244,3 +244,18 @@ Do not ask Georg to reconstruct an old chat when GitHub can recover the state.
 **Outcome first. One writer. Tester measures. Critic checks. Guard routes. Georg decides product questions.**
 
 **Freeze the smallest failing thing, not the whole project.**
+
+
+## 2026-10-06 · DocCheck SVG Creator / Flexikon Basic
+
+Current DocCheck project/tool node:
+`georg-doc/doccheck/SVG_Creator/`
+
+Status:
+- seven working animated Flexikon Basic donor graphics/process forms;
+- Musterblatt reviewed by Georg as **PASS WITH TUNE**;
+- current upstream lane is a Flexikon Process Curator that discovers, scores and prepackages biochemical/molecular/cellular/physiological articles;
+- preferred source is authorized Flexikon MCP/internal structured access, not an uncontrolled bulk HTML mirror;
+- active Coworker setup job: `georg-doc/doccheck#12`.
+
+This node is separate from SimBlood. It owns Flexikon Basic process-SVG production and its curator queue, not microscopy morphology.

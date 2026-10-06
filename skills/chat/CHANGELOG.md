@@ -2629,3 +2629,14 @@ No runtime/product code changed.
 - Triplet/ChatterBox #362 is **HOLD / NOT TODAY**.
 - Old World Studio and Combat failed builds remain history/evidence only and were removed from the Hub embedded current fallback, briefings and quick links.
 - Style Reference Library PR #359 and World Kernel Lab PR #363 remain READY/PARKED side lanes, not today's primary work.
+
+
+## 2026-10-06 · DOCCHECK SVG CREATOR CURATOR
+
+- registered `georg-doc/doccheck/SVG_Creator/` as a current DocCheck project/tool node;
+- current source package contains seven working Flexikon Basic process forms and donor engines;
+- Georg decision: Musterblatt = **PASS WITH TUNE**;
+- presentation details remain centrally tunable (legend/detail, text bar, colors, typography, controls/UI);
+- active setup job is DocCheck Issue #12 for a schedulable Flexikon Process Curator;
+- Curator is MCP/internal-source first, produces ranked/derived article cards and stops before automatic SVG production by default;
+- no Production Hub republish triggered because this is routing metadata, not a new human-facing KFB product surface.
