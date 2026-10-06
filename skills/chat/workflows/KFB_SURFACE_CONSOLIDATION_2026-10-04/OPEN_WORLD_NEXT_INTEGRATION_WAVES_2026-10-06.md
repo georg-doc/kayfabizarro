@@ -950,6 +950,109 @@ PR #356 says NEW CLIP REQUIRED: none for the current work vocabulary.
 
 Blender MCP re-enters only if the runtime consumer proves a missing motion or if a specific source family needs a special sculpting/contact pose.
 
+## 8 · LLM Cost Architecture / External Player Access
+
+Design goal:
+**the living world remains convincing with zero mandatory runtime LLM calls.**
+LLM use is an optional escalation layer for novel language, free-text understanding, reflection and high-level planning.
+
+### LLM-free by default
+
+Run deterministically / locally from authored data and world state:
+- daily schedules and role routines;
+- POI choice and route variation;
+- curiosity triggers;
+- emotion/AffectState transitions;
+- reaction loops;
+- encounter eligibility and beat selection;
+- greetings, nods, passing remarks and silence;
+- trade / gift / Fluff exchange;
+- help / join / leave decisions;
+- relationship/familiarity counters and recent-event memory;
+- player recognition from durable event records;
+- ChatterBox Triplet selection from curated pools;
+- parameterized short utterances using names, items, Cards, POIs and resources;
+- gesture / face / bubble / Audio mapping;
+- resource/economy and construction/rebuild activities.
+
+Emergence comes from **state combination and timing**, not necessarily text generation.
+
+Suggested deterministic dialogue record tags:
+`intent, beat, emotion, intensity, relationshipBand, role, location/POI, carriedItem/resource, topic/Card, cooldown, variants[]`.
+
+Selection:
+filter eligible utterances → utility/weight score → novelty/cooldown check → choose variant → Performance Composer renders it.
+
+### LLM escalation points
+
+Use an LLM only for capabilities that genuinely benefit from generation:
+- arbitrary player free-text understanding;
+- genuinely novel dialogue beyond curated pools;
+- personalized response to unusual player behavior;
+- long-memory summarization/reflection;
+- multi-step social planning;
+- dynamic rumor/story synthesis;
+- rare quest/microstory generation;
+- semantic interpretation of Cards/quotes not already mapped.
+
+A resident may therefore run for hours without an LLM call and escalate only when an interaction crosses a named threshold.
+
+### Suggested runtime tiers
+
+**Tier 0 · Anonymous / deterministic**
+- public Site;
+- no login required;
+- no model calls;
+- local/session or anonymous world state only;
+- full routines, encounters, emotions, ChatterBox pool dialogue, trade/gifts/Fluff and reactions work.
+
+**Tier 1 · Signed-in identity**
+- use Site access controls or supported Sign in with ChatGPT;
+- per-player identity/save/profile becomes possible through supported auth/storage;
+- sign-in itself does not imply AI generation.
+
+**Tier 2 · Player-authorized ChatGPT AI**
+- where supported, a signed-in eligible user may authorize a participating app/Site to use their ChatGPT plan for eligible AI requests;
+- use only for named escalation moments;
+- keep deterministic fallback for users who do not authorize AI or lack an eligible plan.
+
+**Tier 3 · Developer/API-backed AI**
+- optional owner-paid or separately monetized AI service;
+- API billing is separate from ChatGPT subscription billing;
+- meter/rate-limit by user and feature;
+- use an external payment provider if paid end-user access is ever offered.
+
+### External-player rule
+
+Public Site access and KFB player identity are separate concerns.
+
+A public Site can be view/use accessible without a workspace login.
+For durable per-player inventory, relationship memory, gifts/trades, Almanac state or AI quotas, introduce explicit identity/auth rather than inferring identity from the browser.
+
+Do not make login mandatory for the basic living-world demo.
+
+Recommended product sequence:
+1. public deterministic world first;
+2. optional sign-in for durable player state;
+3. optional AI authorization for enhanced dialogue;
+4. only later decide whether any paid premium AI layer is worth operating.
+
+### Cost firewall
+
+Never call an LLM for:
+- pathfinding;
+- facial reactions;
+- emotion decay;
+- routine scheduling;
+- ordinary greetings;
+- simple resource exchanges;
+- known Card/POI reactions;
+- animation selection;
+- bubble layout;
+- Audio family selection.
+
+These are data/rule/runtime problems.
+
 ## 8 · Exactly one next gate
 
 **Wait for the exact Coworker Open World RETURN, then run one Work/WSA reconciliation against this wave plan and the binding PR #348 matrix.**
