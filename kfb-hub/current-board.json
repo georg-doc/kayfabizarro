@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-06.1",
-  "updatedAt": "2026-10-06T15:41:00+02:00",
+  "revision": "2026-10-06.2",
+  "updatedAt": "2026-10-06T16:44:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
     "label": "CURRENT · COWORKER OPEN WORLD INTEGRATION RUNNING",
-    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. After Coworker returns, Work/Astra reconciles and closes remaining integration/critic gates. Old World/Combat FAIL builds are history, not current work cards. Hub source is ready for in-place publication."
+    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. Audio PR #365 is registered as additive input: G/D remain verified, while M/N/O are source-present and must pass runtime QA before activation. After Coworker returns, Work/Astra first ingests the exact Coworker result, then reconciles missing KFB seams including the audio handover. Old World/Combat FAIL builds are history, not current work cards. Hub source is ready for in-place publication."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -18,12 +18,12 @@
     {
       "id": "issue-360-world-coworker-running",
       "title": "#360 · RUNNING · Coworker Open World integration",
-      "summary": "Primary product. Long Coworker integration run is active and currently looks stronger than prior attempts. PR #348 contracts/matrix are the receiving spec. No parallel Work/Astra rebuild while this run is in flight.",
+      "summary": "Primary product. Long Coworker integration run is active. PR #348 contracts/matrix are the receiving spec. Audio PR #365/M-N-O handover is registered as additive input, but must not interrupt the run unless a safe hook already exists. No parallel Work/Astra rebuild.",
       "badge": "RUNNING · PRIMARY",
       "action": "Issue #360 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
       "executor": "Claude Coworker · integration run",
-      "nextExecutor": "ChatGPT Work/Astra · reconcile/close after Coworker return"
+      "nextExecutor": "ChatGPT Work/Astra · ingest exact Coworker return, then reconcile/close"
     },
     {
       "id": "issue-364-production-hub-publish",
@@ -40,7 +40,7 @@
     {
       "id": "next-work-astra-open-world-closure",
       "title": "NEXT · Work/Astra integration closure after Coworker",
-      "summary": "Conditional next step, not running now: ingest Coworker's exact return, keep what works, reconcile into WB2/PR #348, close only missing KFB seams, then run fresh-context critic and whole-product gates. No rebuild from scratch.",
+      "summary": "Conditional next step, not running now: ingest Coworker's exact return first, keep what works, reconcile into WB2/PR #348, then consume the Audio #365 handover and validate M/N/O independently before activation. Close only missing KFB seams, then run fresh-context critic and whole-product gates. No rebuild from scratch.",
       "badge": "NEXT AFTER COWORKER",
       "action": "PR #348 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
@@ -51,13 +51,13 @@
   "parallel": [
     {
       "id": "pr-365-audio-adaptive-stems",
-      "title": "PARALLEL · Audio adaptive stems · listening gate",
-      "summary": "PR #365 is already implemented and published in the existing KFB Audio Site. Separate from Open World: Georg can later listen to G ROAD/WIDE/EPIC and D open/TTS/open; no World mutation required.",
-      "badge": "SEPARATE HUMAN GATE",
-      "action": "KFB Audio öffnen",
-      "url": "https://kfb-audio.frizzlebob.chatgpt.site",
-      "executor": "Georg · listening only",
-      "nextExecutor": "Audio owner · only from listening result"
+      "title": "PARALLEL · Audio · G/D verified, M/N/O prepared",
+      "summary": "PR #365 remains a separate Audio owner. G/D are runtime-verified. M Island Life 112 BPM (master + 10 stems), N Dusk/Night 70 BPM (master + 11 stems) and O Discovery/POI 82 BPM (master + 9 stems) are 33/33 source-present but SOURCE_PRESENT_RUNTIME_UNVERIFIED. Their Coworker/WSA handover is ready; decode/alignment/loop/listening QA is still required before any family is activated.",
+      "badge": "READY INPUT · QA PENDING",
+      "action": "Audio PR #365 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/365",
+      "executor": "Coworker safe additive hook OR Work/Astra after Coworker return",
+      "nextExecutor": "Georg · only for a real audible product choice"
     }
   ],
   "quickLinks": [
@@ -80,6 +80,11 @@
       "title": "ToolBox",
       "summary": "Specialist-tool router. Optional ToolBox lanes are not today's primary job.",
       "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+    },
+    {
+      "title": "Audio · World integration handover",
+      "summary": "Exact M/N/O integration contract for Coworker/Work: one AudioContext, World sends facts, Audio owns music choice/timing/mix; runtime QA required before activation.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/web/kfb-adaptive-music-stem-proof-2026-10-06/skills/chat/workflows/KFB_ADAPTIVE_MUSIC_STEM_PROOF_2026-10-06/COWORKER_WSA_WORLD_AUDIO_INTEGRATION_HANDOVER_2026-10-06.md"
     }
   ]
 }
