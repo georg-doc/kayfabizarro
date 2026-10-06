@@ -1,0 +1,128 @@
+{
+  "schema": "kfb.graphic-fx-target-taxonomy/0-proposal",
+  "date": "2026-10-06",
+  "status": "PROPOSAL_DATA_ROUTING_NOT_RUNTIME_TRUTH",
+  "owner": "KFB Asset Registry / Asset Librarian reference layer",
+  "semanticSource": {
+    "path": "skills/chat/RESIDENT_AFFECT_EMANATA_MAP_PREP_2026-10-06.json",
+    "status": "PROPOSAL_ARCHITECTURE_PREP",
+    "rule": "Emanata read state; they do not write state."
+  },
+  "lanes": {
+    "graphicFx": {
+      "soundWords": [
+        "impact",
+        "breakage",
+        "speed",
+        "rocket",
+        "crash",
+        "ambient/action lettering"
+      ],
+      "role": "visual comic FX / onomatopoeia"
+    },
+    "dialogueCarriers": {
+      "slots": [
+        "speech",
+        "thought",
+        "whisper",
+        "shout-or-call",
+        "narration-or-caption"
+      ],
+      "role": "communication containers / reading flow"
+    },
+    "reactionPerformance": {
+      "slots": [
+        "angry-expression",
+        "happy-expression",
+        "eye-direction",
+        "eyebrows"
+      ],
+      "role": "face/gaze/brow performance support; not Emanata"
+    },
+    "emanata": {
+      "canonicalSemanticSlots": [
+        {
+          "id": "question",
+          "presentationHint": "question-mark / clay bead curve"
+        },
+        {
+          "id": "exclamation",
+          "presentationHint": "exclamation / pop"
+        },
+        {
+          "id": "sweat-drop",
+          "presentationHint": "single clay droplet"
+        },
+        {
+          "id": "tear",
+          "presentationHint": "single tear/drop near face"
+        },
+        {
+          "id": "anger-tick",
+          "presentationHint": "comic anger crease / clay stroke"
+        },
+        {
+          "id": "heart",
+          "presentationHint": "small clay heart"
+        },
+        {
+          "id": "sparkle",
+          "presentationHint": "one small star/spark"
+        },
+        {
+          "id": "gloom-cloud",
+          "presentationHint": "small dark clay cloud"
+        }
+      ],
+      "rule": "Presentation-only. Max one primary Emanatum per Resident in the current proposal."
+    }
+  },
+  "researchCandidates": [
+    {
+      "id": "blush",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "dread-lines",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "cry-streaks",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "tear-bubbles",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "grawlix",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "smell-or-waft",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "heat",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "music",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    },
+    {
+      "id": "motion-emphasis",
+      "status": "SUPPLEMENTARY_SOURCE_CANDIDATE"
+    }
+  ],
+  "sourcePools": {
+    "etherington": "ETHERINGTON_OFFICIAL_SEED_04_GRAPHIC_FX_COMIC_LANGUAGE.json",
+    "supplementary": "SUPPLEMENTARY_COMIC_LANGUAGE_SOURCES_01.json"
+  },
+  "executorRouting": {
+    "researchAndCuration": "ChatGPT Web Chat",
+    "laterVisualDesign": "Claude Design",
+    "siteImportAndImplementation": "ChatGPT Work/WSA",
+    "later3DConsumer": "Blender MCP"
+  }
+}
