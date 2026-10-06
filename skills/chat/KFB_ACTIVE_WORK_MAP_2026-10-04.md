@@ -6,18 +6,18 @@ Purpose: one cross-project view of current Web Chats, Sites, implementation slic
 
 GitHub current state wins. This file is a portfolio map, not a replacement for project SSOTs.
 
-## CURRENT OVERRIDE · 2026-10-05 · OPEN WORLD AUTHORING PRIMARY
+## CURRENT OVERRIDE · 2026-10-06 · COWORKER INTEGRATION RUNNING
 
-Georg's direct product review supersedes the earlier executive picture below.
+- **PRIMARY / RUNNING:** #360 · Claude Coworker is executing the long Open World integration job. Georg reports the current result looks materially better than previous attempts.
+- **NEXT AFTER RETURN:** PR #348 · ChatGPT Work/Astra reconciles Coworker's exact output into WB2, preserves successful integration and closes only remaining KFB seams + critic/whole-product gates.
+- **CONTROL PLANE:** #364 · Production Hub source is current; existing Site still needs deterministic PUBLISH_ONLY.
+- **SEPARATE CURRENT HUMAN GATE:** Audio PR #365 adaptive stems listening.
+- **HISTORY / HOLD:** Combat #361.
+- **HOLD / NOT TODAY:** Triplet/ChatterBox #362.
+- **READY / PARKED:** Style Reference Library PR #359; World Kernel Lab PR #363 donor/publish lane.
+- Old World/Combat FAIL builds are evidence only and must not appear as current Today/Next work.
 
-- **PRIMARY PRODUCT / P0:** World Studio / WB2 #360 · execute the full Open World Integration Closure One-Shot: coherent extensible world + direct authoring + existing KFB stack (Motion, **Joyride-designed modular Track Core**, Sky/Skydome, Billboard, Resident/ChatterBox, Card/Almanac, Audio, Drive) + verification harness + fresh-context critic gauntlet + whole-product pass.
-- **Hub #364:** source green; accepted Paper/Dark v2 restored in GitHub; host-only PUBLISH_ONLY remains.
-- **Combat #361:** HOLD side lane; current Platformer candidate HUMAN FAIL, but not the primary product.
-- **Triplet #362:** HOLD during core recovery.
-- Four islands remain later world recipes/content; they are not the current acceptance target.
-- No new feature/design expansion until the Open World authoring loop is usable again.
-
-Binding brief: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md` plus `OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md` on PR #348.
+Binding Open World contracts remain PR #348's One-Shot + integration matrix, but they are now **receiving/closure contracts after Coworker**, not a parallel rebuild instruction.
 
 ---
 
@@ -59,41 +59,29 @@ This control-plane recovery may run without mutating World Studio or Combat runt
 
 # 1 · Current executive picture
 
-### A · KFB Open World Production Reset · PRIMARY P0
-Owner: World Studio / WB2 · Draft PR #348
+### A · Open World integration · RUNNING
+Owner: World Studio / WB2 · issue #360
 
-Current state:
-- previous four-island Site candidate = **HUMAN TOTAL FAIL / failure evidence only**;
-- no Georg freeplay requested on that candidate;
-- current execution mode = **ONE_SHOT**;
-- current product = coherent extensible KFB Open World + direct authoring for comic/story context;
-- architecture → verification harness → module waves → fresh-context independent critics → whole-product critic → Georg.
+Current executor: **Claude Coworker**.
 
-Binding contract:
-`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
+No parallel Work/Astra Open World build now.
+When Coworker returns, capture the exact handoff and feed it into PR #348 for reconciliation/closure.
 
-Current issue:
-#360 · PRIMARY · Open World Production Reset One-Shot
+### B · Production Hub · PUBLISH_ONLY
+Owner: issue #364
 
-Human gate:
-**NONE until internal whole-product PASS.**
+GitHub source is current and donor-faithful. The existing GPT Site is stale until this source is published in place.
 
-### B · Production Hub · P0 PUBLISH_ONLY
-Owner: KFB Production Hub · issue #364
+### C · Audio adaptive stems · separate current human gate
+Owner: PR #365 / KFB Audio
 
-Source recovery is green on the surface-recovery branch.
-Accepted Paper/Dark v2 donor is restored in source.
-Existing Hub Site still requires host-only publication and visible verification.
-No redesign is authorized.
+Existing Audio Site is published. Georg may later listen to G ROAD/WIDE/EPIC and D open/TTS/open independently of the World run.
 
-### C · Combat · HOLD side lane
-Issue #361
-
-Current Platformer/Card-Hex candidate remains HUMAN FAIL.
-Combat is not the primary KFB outcome and receives no recovery spend while #360 is active.
-
-### D · Triplet / optional tool-content lanes · HOLD
-Issue #362 and other optional expansion remain parked during the core Open World reset.
+### D · Not current Today/Next
+- Combat #361 = HISTORY / HOLD;
+- Triplet/ChatterBox #362 = HOLD;
+- Style Reference Library #359 = READY / PARKED;
+- World Kernel Lab #363 = donor / publish-only side lane.
 
 
 ---
