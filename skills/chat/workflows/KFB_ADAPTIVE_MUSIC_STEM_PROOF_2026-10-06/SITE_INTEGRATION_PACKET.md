@@ -1,77 +1,85 @@
 # SITE INTEGRATION PACKET · existing KFB Audio Site
 
 Target: `https://kfb-audio.frizzlebob.chatgpt.site`
-Mode: **PUBLISH/INTEGRATE INTO EXISTING SITE ONLY**
-No new Site. No Cloudflare substitution.
+Mode: **INTEGRATED AND PUBLISHED IN THE EXISTING SITE ONLY**
+Site source: `0.3` / runtime query `0.3.1`
+
+No new Site, Hub write, Cloudflare substitution, second mixer or second player was created.
+
+## Product placement
+
+The existing Mix remains owner. One compact `Adaptive stem proof` panel now sits between the existing B/C/D state controls and Transition desk using the Site's existing panels, buttons, metrics, typography and sticky player.
+
+Catalog / Mix / Soundscape / Intake / Prompt Studio / Brief remain intact.
 
 ## Host contract
 
-The production Site must inject its already-owned WebAudio context:
+The production module is stricter than the standalone harness:
+
+- it requires the existing Site AudioContext;
+- it requires the existing `SCORE` bus as destination;
+- it creates zero AudioContexts;
+- it reports `INJECTED_EXISTING_CONTEXT`;
+- it uses `AudioContext.currentTime` through one MusicClock;
+- it contains no fallback runtime owner.
+
+Public interfaces:
 
 ```js
-window.__KFB_ADAPTIVE_MUSIC_PROOF__.configureHost({
-  audioContext: existingAudioContext,
-  destination: existingMusicDestination
+window.KFBAudioSite.musicContext.setState('D', {
+  source: 'world-context-adapter',
+  context: { billboardId, residentId }
 });
+
+await window.KFBAudioSite.adaptiveMusic.startDeck('D');
+window.KFBAudioSite.adaptiveMusic.setBoundary('NEXT_BAR');
+window.KFBAudioSite.adaptiveMusic.getSnapshot();
 ```
 
-Expected diagnostic:
-- `hostMode = INJECTED_EXISTING_CONTEXT`
-- `contextCount = 0` from this module
+Events:
+- inbound state: `kfb:music-context`;
+- outbound state: `kfb:music-context-change`;
+- existing voice focus: `kfb:voice-focus`;
+- proof diagnostics: `kfb:adaptive-music-change`.
 
-The standalone fallback exists only for the isolated proof page.
+The next World MVP, including POI/Resident/Billboard work, emits context only. It must not instantiate WebAudio, choose a second clock or write mixer truth.
 
 ## G proof
 
-Use the real:
-`KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01 Stems (120BPM)`
+Real source: `KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01 Stems (120BPM)`.
 
-Expose:
-- ROAD
-- WIDE
-- EPIC
-- boundary: immediate / beat / bar / phrase
-
-All stem sources start once on the same scheduled timeline.
-Preset changes modify gains on that same timeline; they do not restart the track.
-
-Do not run master + stem reconstruction simultaneously.
+Available:
+- ROAD / WIDE / EPIC;
+- Immediate / Beat / Bar / Phrase;
+- one scheduled stem start;
+- gain-only preset changes;
+- same epoch through transitions;
+- shared shortest-duration loop end;
+- master and stem reconstruction are mutually exclusive.
 
 ## D proof
 
-Use:
-`KFB CONVERSATION STYLE D · BASE Stems (94BPM)`
+Real source: `KFB CONVERSATION STYLE D · BASE Stems (94BPM)`.
 
-Existing Site TTS/voice-focus lifecycle remains owner.
-On voice start:
-- existing ducking remains active;
-- call D Speech Focus;
-- gentle music gain reduction;
-- speech-band peaking EQ cut;
-- role-specific reduction of drums/percussion/brass/guitar.
+The existing TTS lifecycle remains owner. D adds:
+- moderate local music reduction;
+- 2.2 kHz speech-band EQ space;
+- role restraint for Drums / Percussion / Brass / Guitar and lighter restraint elsewhere;
+- safe-boundary restoration;
+- no pause or source restart.
 
-On voice end:
-- restore the open D mix on the next configured safe boundary.
+## B/C/D distinction
 
-Music timeline must continue throughout.
+Generic B/C/D future stem slots remain metadata-only and contain no placeholder audio. PR #365 separately admits only the real G and D proof families. Starting the D proof also selects context state D; G is not silently re-labelled as state B.
 
-## Runtime measurements required before acceptance
+## Publication receipt
 
-For both G and D:
-1. decode every real stem;
-2. report every decoded duration;
-3. report max-min duration delta;
-4. run at least one long playback/loop check for drift;
-5. verify beat/bar/phrase scheduling against actual audible material;
-6. confirm that the source-labelled Vocal/Other stems are classified by listening before enabling them.
+- project id: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- source commit: `fd9d8cd7f85289d8d3a1fc7bd11dd7298bbc63bc`
+- version number: `5`
+- version id: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_2f797958900c8191b0683a08c761c531`
+- deployment id: `appgdep_6ac4624c87a4819182bea35b9dd08301`
+- deployment: `succeeded`
+- archive hash: `sha256:4da189215cf45a5f61cba457a1619eeadf10621a08e015bf558b2a1d513b7c85`
 
-If stem timelines are not actually compatible:
-- do not force a false vertical-layer PASS;
-- keep the source candidate;
-- use master playback while re-export / stem remediation is decided.
-
-## Site UI placement
-
-Integrate into the existing **Mix / adaptive music** workflow.
-Do not create a second mixer.
-The current Catalog / Mix / Soundscape / Intake / Prompt Studio / Brief surfaces remain KEEP.
+The only remaining gate is Georg's subjective listening pass for G Road/Wide/Epic and D open/TTS/open, including whether any currently muted Suno-labelled layer should ever be admitted.
