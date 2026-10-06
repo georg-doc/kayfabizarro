@@ -1,0 +1,1657 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T15:25:00Z",
+  "purpose": "Fifth unmapped quality-first reserve, widening long-session rotation with humor/satire, nature/ecology, technology/infrastructure, relationships and historical oddities.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Increase tonal diversity as well as semantic depth so later island pools can rotate among wit, wonder, intimacy, infrastructure and historical texture before repeating.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "clusters": {
+    "humor-satire": 6,
+    "nature-ecology": 6,
+    "technology-infrastructure": 6,
+    "relationships": 6,
+    "historical-oddities": 6
+  },
+  "candidates": [
+    {
+      "id": "qr-r05-jerome-work-fascinates",
+      "text": "I like work: it fascinates me. I can sit and look at it for hours.",
+      "author": "Jerome K. Jerome",
+      "work": "Three Men in a Boat",
+      "publicationYear": 1889,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Three_Men_in_a_Boat_%281889%29/Chapter_15",
+        "edition": "1889 text transcription",
+        "pageOrLocator": "Chapter XV",
+        "publicationYear": 1889,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain chapter text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Three_Men_in_a_Boat_%281889%29/Chapter_15",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "humor",
+        "work",
+        "procrastination",
+        "self-deception"
+      ],
+      "semanticAxes": [
+        "work↔avoidance",
+        "possession↔completion"
+      ],
+      "frizzleQuestion": "What work are you preserving because maintaining its appearance has become easier than finishing it?",
+      "brainFood": [
+        {
+          "label": "Three Men in a Boat, Chapter XV — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Three_Men_in_a_Boat_%281889%29/Chapter_15",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain chapter text."
+        }
+      ],
+      "curatorNotes": "Light, instantly readable satire that opens into procrastination rather than generic anti-work humor.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-twain-laughter-assault",
+      "text": "Against the assault of laughter nothing can stand.",
+      "author": "Mark Twain",
+      "work": "The Mysterious Stranger",
+      "publicationYear": 1916,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/50109/pg50109-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Late dialogue on laughter as a weapon",
+        "publicationYear": 1916,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the work text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1916 US publication is public domain; Twain died in 1910, so EU author term has expired.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/50109/pg50109-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "humor",
+        "ridicule",
+        "power",
+        "satire"
+      ],
+      "semanticAxes": [
+        "laughter↔authority",
+        "ridicule↔coercion"
+      ],
+      "frizzleQuestion": "Which institution can survive criticism but not being made ridiculous in a way everyone instantly recognizes?",
+      "brainFood": [
+        {
+          "label": "The Mysterious Stranger — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/50109/pg50109-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Useful for satire Billboards because laughter is framed as a distinct mechanism, not decorative comic relief.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-swift-satire-glass",
+      "text": "Satire is a sort of glass wherein beholders do generally discover everybody's face but their own.",
+      "author": "Jonathan Swift",
+      "work": "The Battle of the Books",
+      "publicationYear": 1704,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Battle_of_the_Books%3B_with_selections_from_the_literature_of_the_Phalaris_controversy/Battle_of_the_Books",
+        "edition": "1908 scholarly edition of the 1704 text",
+        "pageOrLocator": "Preface of the Author",
+        "publicationYear": 1704,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Wikisource and the CELT text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Battle_of_the_Books%3B_with_selections_from_the_literature_of_the_Phalaris_controversy/Battle_of_the_Books",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "satire",
+        "self-recognition",
+        "hypocrisy",
+        "humor"
+      ],
+      "semanticAxes": [
+        "criticism↔self-criticism",
+        "mirror↔blind-spot"
+      ],
+      "frizzleQuestion": "Why is satire easiest to enjoy when the mirror points at someone else, and hardest when it catches our own posture?",
+      "brainFood": [
+        {
+          "label": "The Battle of the Books — Wikisource",
+          "url": "https://en.wikisource.org/wiki/The_Battle_of_the_Books%3B_with_selections_from_the_literature_of_the_Phalaris_controversy/Battle_of_the_Books",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain scholarly edition."
+        },
+        {
+          "label": "The Battle of the Books — CELT",
+          "url": "https://celt.ucc.ie/published/E700001-012/text001.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent transcription cross-check."
+        }
+      ],
+      "curatorNotes": "A natural meta-rule for KFB satire itself.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-wilde-life-imitates-art",
+      "text": "Life imitates art far more than Art imitates life.",
+      "author": "Oscar Wilde",
+      "work": "The Decay of Lying / Intentions",
+      "publicationYear": 1891,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/887/pg887-images.html",
+        "edition": "Intentions, Project Gutenberg edition",
+        "pageOrLocator": "The Decay of Lying",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact formulation verified in Intentions and an independent Wilde edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/887/pg887-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "art",
+        "imitation",
+        "culture",
+        "perception"
+      ],
+      "semanticAxes": [
+        "art↔life",
+        "representation↔behavior"
+      ],
+      "frizzleQuestion": "Which fictional pattern have you begun to notice in real life only because art taught you what to look for?",
+      "brainFood": [
+        {
+          "label": "Intentions — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/887/pg887-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text of The Decay of Lying."
+        },
+        {
+          "label": "Wilde aphorisms — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain wording cross-check."
+        }
+      ],
+      "curatorNotes": "Useful beyond art decks: representations can alter perception and eventually behavior.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-macaulay-periodical-morality",
+      "text": "We know no spectacle so ridiculous as the British public in one of its periodical fits of morality.",
+      "author": "Thomas Babington Macaulay",
+      "work": "Lord Byron",
+      "publicationYear": 1831,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://books.google.com/books/about/Lord_Byron.html?hl=en&id=R5s0AAAAMAAJ",
+        "edition": "Full-view historical edition",
+        "pageOrLocator": "Essay on Lord Byron; p. 8 in 1856 standalone edition",
+        "publicationYear": 1831,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in multiple full-view editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://books.google.com/books/about/Lord_Byron.html?hl=en&id=R5s0AAAAMAAJ",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "satire",
+        "moral-panic",
+        "public-opinion",
+        "hypocrisy"
+      ],
+      "semanticAxes": [
+        "morality↔spectacle",
+        "principle↔periodic-outrage"
+      ],
+      "frizzleQuestion": "When does public morality become less about conduct and more about the pleasure of being seen condemning somebody?",
+      "brainFood": [
+        {
+          "label": "Macaulay, Lord Byron — Google Books",
+          "url": "https://books.google.com/books/about/Lord_Byron.html?hl=en&id=R5s0AAAAMAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-view historical edition with the sentence on p. 8."
+        }
+      ],
+      "curatorNotes": "Strong moral-panic satire with a concrete source rather than internet-attribution drift.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-bierce-egotist",
+      "text": "EGOTIST, n. A person of low taste, more interested in himself than in me.",
+      "author": "Ambrose Bierce",
+      "work": "The Cynic's Word Book",
+      "publicationYear": 1906,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://dev.gutenberg.org/cache/epub/43951/pg43951-images.html",
+        "edition": "Project Gutenberg text of The Cynic's Word Book",
+        "pageOrLocator": "Entry: EGOTIST",
+        "publicationYear": 1906,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact dictionary entry verified in the public-domain text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://dev.gutenberg.org/cache/epub/43951/pg43951-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "humor",
+        "ego",
+        "attention",
+        "social-psychology"
+      ],
+      "semanticAxes": [
+        "self-interest↔irritation",
+        "attention↔competition"
+      ],
+      "frizzleQuestion": "How much of irritation with another person's self-absorption is really competition for the same center of attention?",
+      "brainFood": [
+        {
+          "label": "The Cynic's Word Book — Project Gutenberg",
+          "url": "https://dev.gutenberg.org/cache/epub/43951/pg43951-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; EGOTIST entry."
+        }
+      ],
+      "curatorNotes": "Very short comic beat with an immediate social-psychology turn.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-muir-hitched-everything",
+      "text": "When we try to pick out anything by itself, we find it hitched to everything else in the universe.",
+      "author": "John Muir",
+      "work": "My First Summer in the Sierra",
+      "publicationYear": 1911,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/32540/pg32540-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Late journal section; printed p. 158 in cited edition",
+        "publicationYear": 1911,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the full work."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/32540/pg32540-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ecology",
+        "interdependence",
+        "systems",
+        "nature"
+      ],
+      "semanticAxes": [
+        "part↔whole",
+        "isolation↔connection"
+      ],
+      "frizzleQuestion": "Which environmental problem becomes harder to solve when the object we isolate is actually held in place by relationships we ignored?",
+      "brainFood": [
+        {
+          "label": "My First Summer in the Sierra — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/32540/pg32540-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "One of the cleanest historical formulations of ecological/systemic interdependence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-thoreau-wildness-preservation",
+      "text": "in Wildness is the preservation of the World.",
+      "author": "Henry David Thoreau",
+      "work": "Walking",
+      "publicationYear": 1862,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/1022/1022-h/1022-h.htm",
+        "edition": "Project Gutenberg text of Walking",
+        "pageOrLocator": "Published in Atlantic Monthly, June 1862",
+        "publicationYear": 1862,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Gutenberg and checked against first-edition scholarship."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/1022/1022-h/1022-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "wildness",
+        "ecology",
+        "control",
+        "resilience"
+      ],
+      "semanticAxes": [
+        "wildness↔control",
+        "resilience↔domestication"
+      ],
+      "frizzleQuestion": "What kind of human system becomes brittle when it removes every element it cannot fully control?",
+      "brainFood": [
+        {
+          "label": "Walking — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1022/1022-h/1022-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay text."
+        }
+      ],
+      "curatorNotes": "Familiar line, retained because the question moves it from romantic wilderness into system resilience.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-marsh-disturbing-agent",
+      "text": "man is everywhere a disturbing agent. Wherever he plants his foot, the harmonies of nature are turned to discords.",
+      "author": "George Perkins Marsh",
+      "work": "Man and Nature",
+      "publicationYear": 1864,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/37957/pg37957-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter I, introductory ecological argument",
+        "publicationYear": 1864,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the work."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/37957/pg37957-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ecology",
+        "human-impact",
+        "environment",
+        "unintended-consequences"
+      ],
+      "semanticAxes": [
+        "improvement↔disturbance",
+        "human-action↔ecological-effect"
+      ],
+      "frizzleQuestion": "Which human improvement looks successful only because the ecological discord appears somewhere else or much later?",
+      "brainFood": [
+        {
+          "label": "Man and Nature — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/37957/pg37957-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "An unusually early systems-ecology warning, useful for infrastructure and world-design contexts too.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-whitman-leaf-stars",
+      "text": "I believe a leaf of grass is no less than the journey-work of the stars.",
+      "author": "Walt Whitman",
+      "work": "Leaves of Grass — Song of Myself",
+      "publicationYear": 1855,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://whitmanarchive.org/item/ppp.00707",
+        "edition": "Walt Whitman Archive, 1891–92 Leaves of Grass",
+        "pageOrLocator": "Song of Myself, section 31",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the Whitman Archive and Project Gutenberg."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://whitmanarchive.org/item/ppp.00707",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "nature",
+        "value",
+        "scale",
+        "wonder"
+      ],
+      "semanticAxes": [
+        "ordinary↔cosmic",
+        "small↔vast"
+      ],
+      "frizzleQuestion": "What hierarchy of value collapses if the ordinary leaf is treated as an achievement on the scale of a star?",
+      "brainFood": [
+        {
+          "label": "Leaves of Grass — Whitman Archive",
+          "url": "https://whitmanarchive.org/item/ppp.00707",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scholarly archive edition; Song of Myself 31."
+        },
+        {
+          "label": "Leaves of Grass — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1322/1322-h/1322-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain text."
+        }
+      ],
+      "curatorNotes": "A nature/wonder beat that shifts scale without generic 'nature is beautiful' language.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-darwin-dependent-bank",
+      "text": "these elaborately constructed forms, so different from each other, and dependent upon each other in so complex a manner",
+      "author": "Charles Darwin",
+      "work": "On the Origin of Species",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AOrigin_of_Species_1872.djvu/451",
+        "edition": "1872 edition scan",
+        "pageOrLocator": "Final tangled-bank paragraph",
+        "publicationYear": 1872,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the scan-backed final paragraph."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AOrigin_of_Species_1872.djvu/451",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ecology",
+        "evolution",
+        "interdependence",
+        "complexity"
+      ],
+      "semanticAxes": [
+        "organism↔relationship",
+        "diversity↔dependency"
+      ],
+      "frizzleQuestion": "When does understanding a living thing require studying its relationships rather than the thing itself?",
+      "brainFood": [
+        {
+          "label": "Origin of Species 1872 — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AOrigin_of_Species_1872.djvu/451",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan-backed tangled-bank passage."
+        }
+      ],
+      "curatorNotes": "Uses the interdependence clause, not the already-used 'endless forms' ending.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-thoreau-tolerable-planet",
+      "text": "What is the use of a house if you haven't got a tolerable planet to put it on?",
+      "author": "Henry David Thoreau",
+      "work": "Letter to Harrison G. O. Blake",
+      "publicationYear": 1860,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/43523/43523-h/43523-h.htm",
+        "edition": "Familiar Letters, posthumous public-domain edition",
+        "pageOrLocator": "Letter dated 20 May 1860; printed p. 361 in cited edition",
+        "publicationYear": 1860,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Familiar Letters and the Walden Woods correspondence edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/43523/43523-h/43523-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "ecology",
+        "housing",
+        "planet",
+        "infrastructure"
+      ],
+      "semanticAxes": [
+        "dwelling↔planet",
+        "local-optimization↔global-condition"
+      ],
+      "frizzleQuestion": "What does optimizing the house accomplish if the planet carrying it is becoming less tolerable?",
+      "brainFood": [
+        {
+          "label": "Familiar Letters — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/43523/43523-h/43523-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain letter collection."
+        },
+        {
+          "label": "Thoreau Correspondence 1860 — Walden Woods",
+          "url": "https://www.walden.org/wp-content/uploads/2016/08/Correspondence.pdf",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Correspondence edition cross-check."
+        }
+      ],
+      "curatorNotes": "Ecology plus infrastructure in one sentence; likely useful for urban/world contexts later.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-thoreau-railroad-rides-us",
+      "text": "We do not ride on the railroad; it rides upon us.",
+      "author": "Henry David Thoreau",
+      "work": "Walden",
+      "publicationYear": 1854,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Economy; railroad passage",
+        "publicationYear": 1854,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Walden."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "infrastructure",
+        "railroads",
+        "technology",
+        "labor"
+      ],
+      "semanticAxes": [
+        "tool↔system",
+        "mobility↔dependency"
+      ],
+      "frizzleQuestion": "At what point does infrastructure stop serving human movement and begin reorganizing human life around its own demands?",
+      "brainFood": [
+        {
+          "label": "Walden — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text containing the railroad passage."
+        }
+      ],
+      "curatorNotes": "Strong literal infrastructure quote with a systemic inversion.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-thoreau-telegraph-nothing-to-say",
+      "text": "Maine and Texas, it may be, have nothing important to communicate.",
+      "author": "Henry David Thoreau",
+      "work": "Walden",
+      "publicationYear": 1854,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Economy; magnetic telegraph passage",
+        "publicationYear": 1854,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause cross-checked against Walden Woods and a dedicated Walden transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "communication",
+        "infrastructure",
+        "speed",
+        "meaning"
+      ],
+      "semanticAxes": [
+        "speed↔content",
+        "connection↔meaning"
+      ],
+      "frizzleQuestion": "What does faster communication improve when the real bottleneck is having something worth communicating?",
+      "brainFood": [
+        {
+          "label": "Walden — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Thoreau quotations — Walden Woods Project",
+          "url": "https://www.walden.org/quotation-category/writing-reading-writers/news-newspapers-and-the-press/",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Author-focused verification of the magnetic-telegraph passage."
+        }
+      ],
+      "curatorNotes": "A nineteenth-century communication-infrastructure joke that reads cleanly against modern networks.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-morse-god-wrought",
+      "text": "What hath God wrought?",
+      "author": "Samuel F. B. Morse (message suggested by Annie Ellsworth)",
+      "work": "First telegraphic message",
+      "publicationYear": 1844,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.loc.gov/item/mmorse000107/",
+        "edition": "Library of Congress original telegraph tape record",
+        "pageOrLocator": "24 May 1844",
+        "publicationYear": 1844,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact decoded message and transmission details verified by the Library of Congress."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1844 message artifact and biblical source phrase are public domain.",
+        "evidenceUrl": "https://www.loc.gov/item/mmorse000107/",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "telegraph",
+        "communication",
+        "technology",
+        "awe"
+      ],
+      "semanticAxes": [
+        "invention↔awe",
+        "communication↔consequence"
+      ],
+      "frizzleQuestion": "Why do new communication systems so often announce themselves with awe before anyone knows what they will actually do to society?",
+      "brainFood": [
+        {
+          "label": "First telegraphic message — Library of Congress",
+          "url": "https://www.loc.gov/item/mmorse000107/",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Original 1844 telegraph artifact record."
+        },
+        {
+          "label": "Invention of the Telegraph — Library of Congress",
+          "url": "https://www.loc.gov/static/collections/samuel-morse-papers/articles-and-essays/collection-highlights/invention-of-the-telegraph.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "LOC collection context and decoded wording."
+        }
+      ],
+      "curatorNotes": "Historical-object quote rather than authorial aphorism; attribution explicitly preserves Annie Ellsworth's role in choosing the text.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-bell-watson-come-here",
+      "text": "Mr. Watson — come here — I want to see you.",
+      "author": "Alexander Graham Bell",
+      "work": "Experimental Notebook",
+      "publicationYear": 1876,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.loc.gov/item/today-in-history/march-10/?loclr=fbloc",
+        "edition": "Library of Congress Bell Family Papers transcription",
+        "pageOrLocator": "Notebook entry, 10 March 1876",
+        "publicationYear": 1876,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the Library of Congress Today in History and Bell collection highlights."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The underlying 1876 manuscript is old, but its historical unpublished/publication status and the US special term for pre-1978 unpublished works were not resolved in this batch. Do not assume public-runtime clearance.",
+        "evidenceUrl": "https://www.loc.gov/collections/alexander-graham-bell-papers/about-this-collection/?loclr=blogadm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "telephone",
+        "communication",
+        "distance",
+        "infrastructure"
+      ],
+      "semanticAxes": [
+        "distance↔presence",
+        "private-request↔network"
+      ],
+      "frizzleQuestion": "What does a technology become once a private request can cross distance without the bodies crossing it?",
+      "brainFood": [
+        {
+          "label": "Alexander Graham Bell — Today in History",
+          "url": "https://www.loc.gov/item/today-in-history/march-10/?loclr=fbloc",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Library of Congress transcript from Bell's notebook."
+        },
+        {
+          "label": "Bell Collection Highlights",
+          "url": "https://www.loc.gov/collections/alexander-graham-bell-papers/articles-and-essays/collection-highlights/",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "LOC collection context for the March 10 notebook."
+        }
+      ],
+      "curatorNotes": "Primary wording is strong; rights remain deliberately conservative because manuscript publication history matters.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-carlyle-tools-all",
+      "text": "without Tools he is nothing, with Tools he is all.",
+      "author": "Thomas Carlyle",
+      "work": "Sartor Resartus",
+      "publicationYear": 1834,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/20585/pg20585-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Book I, Chapter V",
+        "publicationYear": 1834,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Gutenberg and a scan-backed Wikisource edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/20585/pg20585-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "tools",
+        "technology",
+        "human-capability",
+        "dependency"
+      ],
+      "semanticAxes": [
+        "tool↔human",
+        "augmentation↔dependency"
+      ],
+      "frizzleQuestion": "Which human ability grows through tools, and which disappears because the tool makes practicing it unnecessary?",
+      "brainFood": [
+        {
+          "label": "Sartor Resartus — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/20585/pg20585-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        },
+        {
+          "label": "Sartor Resartus — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ASartor_resartus%3B_and%2C_On_heroes%2C_hero-worship_and_the_heroic_in_history.djvu/60",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Scan-backed wording cross-check."
+        }
+      ],
+      "curatorNotes": "A concise augmentation/dependency axis for tools from hammers to AI.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-marx-solid-melts",
+      "text": "All that is solid melts into air, all that is holy is profaned",
+      "author": "Karl Marx and Friedrich Engels",
+      "work": "Manifesto of the Communist Party",
+      "publicationYear": 1848,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+        "edition": "Samuel Moore English translation based on the 1888 edition",
+        "pageOrLocator": "Chapter I",
+        "publicationYear": 1888,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English clause verified in the public-domain translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The cited nineteenth-century Samuel Moore translation is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "technology",
+        "modernity",
+        "disruption",
+        "institutions"
+      ],
+      "semanticAxes": [
+        "permanence↔disruption",
+        "institution↔innovation"
+      ],
+      "frizzleQuestion": "Which institution looks permanent only because the technology capable of dissolving it has not arrived yet?",
+      "brainFood": [
+        {
+          "label": "Communist Manifesto — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/61/61-h/61-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Samuel Moore translation."
+        }
+      ],
+      "curatorNotes": "Mapped here as technological/social churn rather than ideological endorsement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-bacon-friendship-joy-grief",
+      "text": "it redoubleth joys, and cutteth griefs in halves",
+      "author": "Francis Bacon",
+      "work": "Essays — Of Friendship",
+      "publicationYear": 1625,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/56463/56463-h/56463-h.htm",
+        "edition": "Bacon's Essays, public-domain edition",
+        "pageOrLocator": "Of Friendship",
+        "publicationYear": 1625,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Gutenberg and a digitized scholarly edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/56463/56463-h/56463-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "friendship",
+        "emotion",
+        "sharing",
+        "relationships"
+      ],
+      "semanticAxes": [
+        "joy↔sharing",
+        "grief↔sharing"
+      ],
+      "frizzleQuestion": "Why can sharing joy multiply it while sharing grief divides it—and what kind of relationship makes that arithmetic fail?",
+      "brainFood": [
+        {
+          "label": "Bacon's Essays — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/56463/56463-h/56463-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Of Friendship."
+        },
+        {
+          "label": "Essays of Francis Bacon — digitized PDF",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/The_essays_of_Francis_Bacon%3B_%28IA_essaysoffrancisb00bac%29.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scan cross-check."
+        }
+      ],
+      "curatorNotes": "A relationship mechanic compact enough for a short Billboard cycle.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-eliot-less-difficult",
+      "text": "What do we live for, if it is not to make life less difficult to each other?",
+      "author": "George Eliot",
+      "work": "Middlemarch",
+      "publicationYear": 1872,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Middlemarch_%281874%29/Chapter_72",
+        "edition": "1874 public-domain edition",
+        "pageOrLocator": "Chapter 72",
+        "publicationYear": 1874,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the chapter text and a validated second-edition scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Middlemarch_%281874%29/Chapter_72",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "care",
+        "relationships",
+        "solidarity",
+        "purpose"
+      ],
+      "semanticAxes": [
+        "self↔other",
+        "difficulty↔care"
+      ],
+      "frizzleQuestion": "What would change if making life less difficult for others were treated as a practical measure of success rather than private kindness?",
+      "brainFood": [
+        {
+          "label": "Middlemarch, Chapter 72 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Middlemarch_%281874%29/Chapter_72",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain chapter text."
+        },
+        {
+          "label": "Middlemarch second edition — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AMiddlemarch_%28Second_Edition%29.djvu/557",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan containing the sentence."
+        }
+      ],
+      "curatorNotes": "A constructive relationship counterweight to the reserve's cynicism/satire.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-austen-tenderness-heart",
+      "text": "There is no charm equal to tenderness of heart.",
+      "author": "Jane Austen",
+      "work": "Emma",
+      "publicationYear": 1815,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://gutenberg-test.ibiblio.org/cache/epub/158/pg158-images.html",
+        "edition": "Project Gutenberg public-domain edition",
+        "pageOrLocator": "Emma's reflection on Harriet",
+        "publicationYear": 1815,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the novel text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://gutenberg-test.ibiblio.org/cache/epub/158/pg158-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "tenderness",
+        "attraction",
+        "relationships",
+        "character"
+      ],
+      "semanticAxes": [
+        "tenderness↔intelligence",
+        "warmth↔status"
+      ],
+      "frizzleQuestion": "Why can tenderness attract more strongly than intelligence even when intelligence is easier to display and reward?",
+      "brainFood": [
+        {
+          "label": "Emma — Project Gutenberg",
+          "url": "https://gutenberg-test.ibiblio.org/cache/epub/158/pg158-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain novel text."
+        }
+      ],
+      "curatorNotes": "A softer social beat that still opens a genuine tension between warmth and cognitive status.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-shakespeare-love-alters",
+      "text": "love is not love Which alters when it alteration finds",
+      "author": "William Shakespeare",
+      "work": "Sonnet 116",
+      "publicationYear": 1609,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/100/100-h/100-h.htm",
+        "edition": "Complete Works, Project Gutenberg",
+        "pageOrLocator": "Sonnet 116",
+        "publicationYear": 1609,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the sonnet text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/100/100-h/100-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "love",
+        "constancy",
+        "change",
+        "relationships"
+      ],
+      "semanticAxes": [
+        "constancy↔change",
+        "love↔adaptation"
+      ],
+      "frizzleQuestion": "If love never alters, how do you distinguish constancy from refusing to see that the relationship itself has changed?",
+      "brainFood": [
+        {
+          "label": "Complete Works of Shakespeare — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/100/100-h/100-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Sonnet 116."
+        }
+      ],
+      "curatorNotes": "Familiar line, but the FrizzleQuestion deliberately destabilizes its absolutism.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-emerson-friend-be-one",
+      "text": "the only way to have a friend is to be one.",
+      "author": "Ralph Waldo Emerson",
+      "work": "Essays — Friendship",
+      "publicationYear": 1841,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/16643/pg16643-images.html",
+        "edition": "Essays, public-domain edition",
+        "pageOrLocator": "Friendship",
+        "publicationYear": 1841,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in the essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/16643/pg16643-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "friendship",
+        "reciprocity",
+        "character",
+        "relationships"
+      ],
+      "semanticAxes": [
+        "receiving↔being",
+        "desire↔practice"
+      ],
+      "frizzleQuestion": "What kind of friendship becomes possible only after you stop treating friendship as something another person is supposed to provide?",
+      "brainFood": [
+        {
+          "label": "Emerson Essays — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/16643/pg16643-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay text."
+        }
+      ],
+      "curatorNotes": "Turns friendship from acquisition into practice.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-rochefoucauld-friends-misfortune",
+      "text": "we often find something in the misfortunes of our best friends that is not displeasing to us.",
+      "author": "François de La Rochefoucauld",
+      "work": "Maxims",
+      "publicationYear": 1665,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/65317/pg65317-images.html",
+        "edition": "Mary Shelley, Lives of the Most Eminent Literary and Scientific Men of France",
+        "pageOrLocator": "Discussion of La Rochefoucauld's celebrated maxim",
+        "publicationYear": 1838,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English wording verified in a public-domain literary history; direct English Maxims edition was not retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying French is public domain and the cited nineteenth-century English wording is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/65317/pg65317-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "friendship",
+        "envy",
+        "ambivalence",
+        "social-psychology"
+      ],
+      "semanticAxes": [
+        "affection↔envy",
+        "friendship↔comparison"
+      ],
+      "frizzleQuestion": "What does the tiny satisfaction inside a friend's misfortune reveal that our official story about friendship prefers not to admit?",
+      "brainFood": [
+        {
+          "label": "Mary Shelley on La Rochefoucauld — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/65317/pg65317-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain literary history reproducing the maxim."
+        },
+        {
+          "label": "French Classics — La Rochefoucauld maxim",
+          "url": "https://www.gutenberg.org/cache/epub/36174/pg36174-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain rendering cross-check."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY for the exact English edition chain; semantically valuable because it admits relationship ambivalence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-pepys-empty-streets",
+      "text": "But, Lord! how empty the streets are and melancholy, so many poor sick people in the streets full of sores;",
+      "author": "Samuel Pepys",
+      "work": "Diary",
+      "publicationYear": 1665,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/4162/pg4162-images.html",
+        "edition": "1893 unabridged public-domain diary transcription",
+        "pageOrLocator": "16 October 1665",
+        "publicationYear": 1665,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact diary sentence verified in the 1665 volume."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Pepys's diary and the nineteenth-century transcription/edition are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/4162/pg4162-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "plague",
+        "city",
+        "public-space",
+        "history"
+      ],
+      "semanticAxes": [
+        "familiar-city↔contamination",
+        "crowd↔absence"
+      ],
+      "frizzleQuestion": "What changes in a city when public space stops feeling shared and begins to feel contaminated by other people's bodies?",
+      "brainFood": [
+        {
+          "label": "Pepys Diary 1665 — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/4162/pg4162-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Unabridged public-domain transcription; October 1665."
+        }
+      ],
+      "curatorNotes": "A vivid historical texture quote, not a retrospective summary.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-defoe-london-altered",
+      "text": "The face of London was—now indeed strangely altered",
+      "author": "Daniel Defoe",
+      "work": "A Journal of the Plague Year",
+      "publicationYear": 1722,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/376/pg376-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "July/August plague narrative",
+        "publicationYear": 1722,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Gutenberg and a digitized historical edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/376/pg376-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "plague",
+        "city",
+        "history",
+        "perception"
+      ],
+      "semanticAxes": [
+        "place↔experience",
+        "familiar↔strange"
+      ],
+      "frizzleQuestion": "How quickly can a familiar city become psychologically foreign before its buildings have physically changed at all?",
+      "brainFood": [
+        {
+          "label": "A Journal of the Plague Year — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/376/pg376-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Defoe plague-year digitized edition",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/The_novels_and_miscellaneous_works_of_Daniel_De_Foe_-_%28IA_novelsmiscellane05defo%29.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scan cross-check."
+        }
+      ],
+      "curatorNotes": "Pairs with Pepys while remaining a different mode: reconstructed literary history versus contemporaneous diary.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-wilde-rewrite-history",
+      "text": "The one duty we owe to history is to rewrite it.",
+      "author": "Oscar Wilde",
+      "work": "The Critic as Artist",
+      "publicationYear": 1891,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://celt.ucc.ie/published/E800003-007/text001.html",
+        "edition": "CELT transcription of The Critic as Artist",
+        "pageOrLocator": "Part I; p. 129 in cited edition",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the full text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://celt.ucc.ie/published/E800003-007/text001.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "history",
+        "criticism",
+        "revision",
+        "interpretation"
+      ],
+      "semanticAxes": [
+        "history↔rewriting",
+        "record↔interpretation"
+      ],
+      "frizzleQuestion": "When does rewriting history correct an inherited distortion, and when does it simply install the present's preferred myth?",
+      "brainFood": [
+        {
+          "label": "The Critic as Artist — CELT",
+          "url": "https://celt.ucc.ie/published/E800003-007/text001.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full public-domain text with p.129 context."
+        }
+      ],
+      "curatorNotes": "Historically useful precisely because the question refuses to equate revision with improvement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-twain-truth-possibilities",
+      "text": "Truth is stranger than fiction, but it is because Fiction is obliged to stick to possibilities; Truth isn't.",
+      "author": "Mark Twain",
+      "work": "Following the Equator",
+      "publicationYear": 1897,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AFollowing_the_Equator_%28Mark_Twain%29.djvu/164",
+        "edition": "Validated scan",
+        "pageOrLocator": "Chapter XV; printed p. 156",
+        "publicationYear": 1897,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in a validated scan and independent full-text edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AFollowing_the_Equator_%28Mark_Twain%29.djvu/164",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "history",
+        "fiction",
+        "probability",
+        "oddity"
+      ],
+      "semanticAxes": [
+        "reality↔plausibility",
+        "history↔narrative"
+      ],
+      "frizzleQuestion": "Why can reality sustain coincidences that fiction would be punished for inventing?",
+      "brainFood": [
+        {
+          "label": "Following the Equator — validated Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AFollowing_the_Equator_%28Mark_Twain%29.djvu/164",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan containing the aphorism."
+        },
+        {
+          "label": "Following the Equator — full text",
+          "url": "https://twainmark.org/equator/FOLLOWING%20THE%20EQUATOR%20-%20Mark%20Twain_files/OEBPS/Text/ch_15.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent full-text cross-check."
+        }
+      ],
+      "curatorNotes": "An ideal historical-oddity line: fiction has plausibility constraints that reality lacks.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-gibbon-history-register",
+      "text": "history; which is, indeed, little more than the register of the crimes, follies, and misfortunes of mankind.",
+      "author": "Edward Gibbon",
+      "work": "The History of the Decline and Fall of the Roman Empire",
+      "publicationYear": 1776,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://books.google.com/books/about/The_History_of_the_Decline_and_Fall_of_t.html?id=KHMOAAAAYAAJ",
+        "edition": "Full-view historical edition",
+        "pageOrLocator": "Chapter III; p. 16 in cited edition",
+        "publicationYear": 1776,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in multiple full-view editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://books.google.com/books/about/The_History_of_the_Decline_and_Fall_of_t.html?id=KHMOAAAAYAAJ",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "history",
+        "disaster",
+        "selection",
+        "memory"
+      ],
+      "semanticAxes": [
+        "history↔eventfulness",
+        "memory↔misfortune"
+      ],
+      "frizzleQuestion": "What kind of society produces the least history because nothing disastrous enough happens to become memorable?",
+      "brainFood": [
+        {
+          "label": "Decline and Fall, Vol. I — Google Books",
+          "url": "https://books.google.com/books/about/The_History_of_the_Decline_and_Fall_of_t.html?id=KHMOAAAAYAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-view historical edition with the clause on p. 16."
+        }
+      ],
+      "curatorNotes": "The question reverses Gibbon: a boring historical record might signal success.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r05-carlyle-history-biographies",
+      "text": "History is the essence of innumerable Biographies.",
+      "author": "Thomas Carlyle",
+      "work": "On History",
+      "publicationYear": 1830,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://books.google.com/books/about/The_Works_of_Thomas_Carlyle_Critical_and.html?id=LaQOAAAAIAAJ",
+        "edition": "Collected Critical and Miscellaneous Essays",
+        "pageOrLocator": "On History; p. 76 in cited collected edition",
+        "publicationYear": 1830,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the full-view collected works and independent historical scholarship."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://books.google.com/books/about/The_Works_of_Thomas_Carlyle_Critical_and.html?id=LaQOAAAAIAAJ",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "history",
+        "biography",
+        "aggregation",
+        "narrative"
+      ],
+      "semanticAxes": [
+        "individual↔history",
+        "life↔abstraction"
+      ],
+      "frizzleQuestion": "What disappears from history when millions of biographies are distilled into one coherent story?",
+      "brainFood": [
+        {
+          "label": "Carlyle Critical and Miscellaneous Essays — Google Books",
+          "url": "https://books.google.com/books/about/The_Works_of_Thomas_Carlyle_Critical_and.html?id=LaQOAAAAIAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full-view collected works containing On History."
+        },
+        {
+          "label": "Carlyle on history — AHA historical address",
+          "url": "https://www.historians.org/presidential-address/albert-bushnell-hart/",
+          "kind": "CONTEXT",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent scholarly reproduction and discussion."
+        }
+      ],
+      "curatorNotes": "Closes the historical cluster by turning history back into a compression problem.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
