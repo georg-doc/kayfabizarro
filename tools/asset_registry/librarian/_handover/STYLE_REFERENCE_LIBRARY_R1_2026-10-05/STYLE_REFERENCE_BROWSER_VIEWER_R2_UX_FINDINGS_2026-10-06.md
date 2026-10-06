@@ -209,3 +209,35 @@ It passes only when Georg can open the Style Reference view and immediately insp
 
 Exactly one active gate:
 **R2A_EXPORT_CURRENT_SITE_SOURCE_AND_VISUALS_FOR_DESIGN**.
+
+
+## 2026-10-06 · ROUTING CORRECTION · WORK-ONLY R2
+
+Georg explicitly rejected spending Claude Design tokens on this UI problem.
+
+This supersedes the earlier R2A → Claude Design → R2C route.
+
+Current execution route:
+
+**ChatGPT Work/WSA directly implements Browser/Viewer R2 in the existing Asset Librarian Site.**
+
+Reason:
+- product failure is already clearly diagnosed;
+- desired information hierarchy and interaction model are explicit;
+- no open-ended visual exploration is required;
+- current KFB Paper/Dark visual language remains unchanged;
+- the work is primarily layout, viewer mechanics, state preservation and browser QA.
+
+Claude Design is **not an executor for this R2 UI repair**.
+
+Binding implementation brief:
+`BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2_DIRECT_REPAIR_2026-10-06.md`
+
+The earlier files
+- `BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2A_EXPORT_2026-10-06.md`
+- `BRIEF_CLAUDE_DESIGN_STYLE_REFERENCE_BROWSER_VIEWER_R2_2026-10-06.md`
+
+are **SUPERSEDED / DO NOT RUN** for the current R2 route.
+
+Exactly one active gate:
+**WORK_DIRECT_REPAIR_STYLE_REFERENCE_BROWSER_VIEWER_R2**.
