@@ -1,67 +1,84 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-05.11",
-  "updatedAt": "2026-10-05T23:50:00+02:00",
+  "revision": "2026-10-06.1",
+  "updatedAt": "2026-10-06T15:41:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
-    "label": "CURRENT · PRIMARY = OPEN WORLD INTEGRATION CLOSURE ONE-SHOT",
-    "note": "World Studio/WB2 #360 must deliver coherent Open World + direct authoring + existing KFB stack: native Motion, Joyride-designed modular Track Core, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Hub #364 remains PUBLISH_ONLY. Combat/Triplet HOLD."
+    "label": "CURRENT · COWORKER OPEN WORLD INTEGRATION RUNNING",
+    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. After Coworker returns, Work/Astra reconciles and closes remaining integration/critic gates. Old World/Combat FAIL builds are history, not current work cards. Hub source is ready for in-place publication."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
     "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
-    "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+    "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+    "audio": "https://kfb-audio.frizzlebob.chatgpt.site"
   },
   "p0": [
     {
-      "id": "issue-364-production-hub-recovery",
-      "title": "#364 · Production Hub · SOURCE GREEN",
-      "summary": "P0 · accepted Paper/Dark Hub v2 restored in source, current board bound, generic dashboard fork removed. Next step is host-only PUBLISH_ONLY to the existing Hub Site; no redesign.",
-      "badge": "P0 · SOURCE GREEN · PUBLISH_ONLY",
+      "id": "issue-360-world-coworker-running",
+      "title": "#360 · RUNNING · Coworker Open World integration",
+      "summary": "Primary product. Long Coworker integration run is active and currently looks stronger than prior attempts. PR #348 contracts/matrix are the receiving spec. No parallel Work/Astra rebuild while this run is in flight.",
+      "badge": "RUNNING · PRIMARY",
+      "action": "Issue #360 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
+      "executor": "Claude Coworker · integration run",
+      "nextExecutor": "ChatGPT Work/Astra · reconcile/close after Coworker return"
+    },
+    {
+      "id": "issue-364-production-hub-publish",
+      "title": "#364 · Production Hub · publish current source",
+      "summary": "Hub GitHub source is repaired to the accepted Paper/Dark v2 donor. Publish this exact current source in place so the Hub again reflects today's routing.",
+      "badge": "PUBLISH_ONLY",
       "action": "Issue #364 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/364",
       "executor": "PUBLISH_ONLY / Sites-capable executor",
-      "nextExecutor": "Georg · verify exact Hub only after publish"
-    },
-    {
-      "id": "issue-360-world-studio",
-      "title": "#360 · PRIMARY · Open World Integration Closure One-Shot",
-      "summary": "P0 · ONE_SHOT. Build coherent extensible KFB Open World + direct authoring and integrate the existing stack: native Motion, modular Track Core in Joyride J14/T4/K2 design, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Fresh-context critics + whole-product PASS before Georg.",
-      "badge": "P0 · PRIMARY · INTEGRATION ONE_SHOT",
-      "action": "Issue #360 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "ChatGPT Work/WSA · Open World Integrator",
-      "nextExecutor": "Georg · only after internal whole-product PASS"
+      "nextExecutor": "Georg · visual sanity check only"
     }
   ],
   "p1": [
     {
-      "id": "issue-361-combat",
-      "title": "#361 · HOLD · Combat side lane",
-      "summary": "Current Platformer/Combat candidate remains HUMAN FAIL. No recovery spend while Open World #360 is active.",
-      "badge": "HOLD · side lane",
-      "action": "Issue #361 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/361",
-      "executor": "none · HOLD",
-      "nextExecutor": "later consumer recovery"
+      "id": "next-work-astra-open-world-closure",
+      "title": "NEXT · Work/Astra integration closure after Coworker",
+      "summary": "Conditional next step, not running now: ingest Coworker's exact return, keep what works, reconcile into WB2/PR #348, close only missing KFB seams, then run fresh-context critic and whole-product gates. No rebuild from scratch.",
+      "badge": "NEXT AFTER COWORKER",
+      "action": "PR #348 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
+      "executor": "ChatGPT Work/Astra · Anschluss-Integrator",
+      "nextExecutor": "Georg · only after internal whole-product PASS"
     }
   ],
-  "parallel": [],
+  "parallel": [
+    {
+      "id": "pr-365-audio-adaptive-stems",
+      "title": "PARALLEL · Audio adaptive stems · listening gate",
+      "summary": "PR #365 is already implemented and published in the existing KFB Audio Site. Separate from Open World: Georg can later listen to G ROAD/WIDE/EPIC and D open/TTS/open; no World mutation required.",
+      "badge": "SEPARATE HUMAN GATE",
+      "action": "KFB Audio öffnen",
+      "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+      "executor": "Georg · listening only",
+      "nextExecutor": "Audio owner · only from listening result"
+    }
+  ],
   "quickLinks": [
     {
-      "title": "GitHub Issues · aktuelle Jobliste",
-      "summary": "Aktive P0/parallel/recovery/blocked Jobs. Das ist die operative Arbeitsliste.",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues"
+      "title": "Open World · current owner",
+      "summary": "Issue #360 tracks the running Coworker integration and the conditional Work/Astra handoff.",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/360"
+    },
+    {
+      "title": "Open World · receiving PR",
+      "summary": "PR #348 remains the integration-closure contract/matrix owner; it is not a parallel rebuild job while Coworker runs.",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/348"
     },
     {
       "title": "Production Control",
-      "summary": "Aktuelle Entscheidungen, Returns und Recovery-Historie. Kein Pflicht-Umweg zwischen Integrationsjobs.",
+      "summary": "Durable decisions/Returns/history. Use for recovery records, not as the everyday overview.",
       "url": "https://kfb-production-control.frizzlebob.chatgpt.site/"
     },
     {
       "title": "ToolBox",
-      "summary": "Spezialwerkzeug-Router. Design-Recovery ist aktuell eingefroren.",
+      "summary": "Specialist-tool router. Optional ToolBox lanes are not today's primary job.",
       "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
     }
   ]
