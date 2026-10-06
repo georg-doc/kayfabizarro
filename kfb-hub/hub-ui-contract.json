@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.hub-ui-contract/1",
+  "date": "2026-10-06",
+  "acceptedDonor": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/code/KFB Hub UX Recovery v2.dc.html",
+    "blob": "1fb367c70412d18ef9b0802c3feb2019357be525",
+    "handover": "tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/HANDOVER.md"
+  },
+  "layers": {
+    "shell": "deployed semantic DOM + behavior",
+    "data": "main/kfb-hub/current-board.json",
+    "style": "main/kfb-hub/hub-live.css",
+    "localState": "browser localStorage/IndexedDB"
+  },
+  "requiredAffordances": [
+    {
+      "id": "hubNav",
+      "label": "Heute / Briefings / Projekte / Entscheidungen / Archiv"
+    },
+    {
+      "id": "toolboxLink",
+      "label": "ToolBox"
+    },
+    {
+      "id": "worldbuilderLink",
+      "label": "WorldBuilder"
+    },
+    {
+      "id": "residentToggle",
+      "label": "Resident/Actor"
+    },
+    {
+      "id": "themeToggle",
+      "label": "Paper/Dark"
+    },
+    {
+      "id": "freshnessBar",
+      "label": "Freshness / Reload"
+    },
+    {
+      "id": "hubSearch",
+      "label": "Search"
+    },
+    {
+      "id": "pocketInbox",
+      "label": "Pocket Inbox"
+    },
+    {
+      "id": "todayView",
+      "label": "Heute"
+    },
+    {
+      "id": "briefingsView",
+      "label": "Briefings"
+    },
+    {
+      "id": "projectsView",
+      "label": "Projekte"
+    },
+    {
+      "id": "decisionsView",
+      "label": "Entscheidungen"
+    },
+    {
+      "id": "archiveView",
+      "label": "Archiv"
+    }
+  ],
+  "localStateKeys": {
+    "theme": "kfb.hub.theme.v1",
+    "inboxDb": "kfb-hub-pocket-inbox-v1",
+    "decisions": "kfb.hub.decisions.v1",
+    "seen": "kfb.hub.seen.v1"
+  },
+  "liveStyle": {
+    "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/hub-live.css",
+    "policy": "fetch text with cache:no-store; inject after local fallback CSS; failure must not break UI"
+  },
+  "regressionRules": {
+    "dataOnly": "no selector/control/style/local-state regression",
+    "styleOnly": "no DOM/data/behavior regression",
+    "shell": "full affordance + desktop/mobile + fallback verification"
+  }
+}

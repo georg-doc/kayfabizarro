@@ -1,0 +1,59 @@
+/*
+KFB Production Hub · LIVE STYLE LAYER
+Canonical mutable presentation file.
+Routine style changes may edit this file on main and require browser refresh only.
+Do not put application logic or content here.
+*/
+
+:root{
+  --kfb-bg:#ede7db;
+  --kfb-panel:#fffaf0;
+  --kfb-ink:#1e1b17;
+  --kfb-muted:#5f584d;
+  --kfb-line:#d9cfbe;
+  --kfb-accent:#a03b2b;
+  --kfb-accent-2:#2f6450;
+  --kfb-warn:#8a5714;
+  --kfb-run:#2f5f7a;
+  --kfb-chip:#f1eadc;
+  --kfb-field:#fbf6ec;
+  --kfb-shadow:2px 3px 0 rgba(68,55,39,.07);
+  --kfb-radius:8px;
+  --kfb-gap:14px;
+}
+
+:root[data-theme="dark"]{
+  --kfb-bg:#12110f;
+  --kfb-panel:#1b1916;
+  --kfb-ink:#f3eddf;
+  --kfb-muted:#b8ae9f;
+  --kfb-line:#3a352d;
+  --kfb-accent:#ec7a60;
+  --kfb-accent-2:#86c2a8;
+  --kfb-warn:#e0ad5c;
+  --kfb-run:#9cc4da;
+  --kfb-chip:#26221d;
+  --kfb-field:#15130f;
+  --kfb-shadow:2px 3px 0 rgba(0,0,0,.35);
+}
+
+/* Shell should alias its base variables to these live variables. */
+:root{
+  --bg:var(--kfb-bg);
+  --panel:var(--kfb-panel);
+  --ink:var(--kfb-ink);
+  --muted:var(--kfb-muted);
+  --line:var(--kfb-line);
+  --accent:var(--kfb-accent);
+  --accent2:var(--kfb-accent-2);
+  --warn:var(--kfb-warn);
+  --run:var(--kfb-run);
+  --chip:var(--kfb-chip);
+  --field:var(--kfb-field);
+  --shadow:var(--kfb-shadow);
+}
+
+/*
+Future simple design tuning belongs below, using only stable semantic selectors
+listed in kfb-hub/hub-ui-contract.json.
+*/

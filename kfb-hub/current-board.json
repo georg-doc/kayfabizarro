@@ -1,22 +1,33 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.13",
-  "updatedAt": "2026-10-06T22:36:00+02:00",
+  "revision": "2026-10-06.14",
+  "updatedAt": "2026-10-06T22:45:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "CURRENT · HUB LIVE BOARD PROVEN",
-    "note": "Production Hub is the human overview; GitHub main/kfb-hub/current-board.json is the live coordination source. Routine Hub status, briefing, link and open-question updates now require only a GitHub JSON write plus direct Hub refresh — no Work, no Site publish and no Cloudflare."
+    "label": "P0 · HUB UI REGRESSION CONFIRMED · RESTORE ACCEPTED SHELL",
+    "note": "Live GitHub board is proven, but Georg confirmed the wrong Hub shell was published: accepted v2 controls (ToolBox, WorldBuilder, Theme toggle, top tabs and related functionality) regressed. Binding next step is one surgical Work shell repair using the exact accepted KFB Hub UX Recovery v2 donor, while preserving live data. Hub architecture is now hard-separated into deployed shell/behavior, GitHub live data, GitHub live CSS, and browser-local state."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
     "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
     "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site",
     "audio": "https://kfb-audio.frizzlebob.chatgpt.site",
-    "assetLibrarian": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references"
+    "assetLibrarian": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
+    "worldbuilder": "https://github.com/georg-doc/kayfabizarro/issues/360"
   },
   "p0": [
+    {
+      "id": "issue-364-hub-shell-regression",
+      "title": "#364 · P0 Hub UI regression · restore accepted v2 shell",
+      "summary": "Restore accepted Hub v2 controls while preserving live board and adding live CSS separation.",
+      "badge": "P0 · UI REGRESSION REPAIR",
+      "action": "Binding Work rebrief öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_ACCEPTED_SHELL_RESTORE_LIVE_STYLE_2026-10-06.md",
+      "executor": "ChatGPT Work/WSA · surgical shell repair",
+      "nextExecutor": "Georg · visual confirmation only"
+    },
     {
       "id": "issue-360-coworker-intake",
       "title": "#360 · Coworker core complete locally · exact GitHub intake next",
@@ -169,6 +180,11 @@
     }
   ],
   "quickLinks": [
+    {
+      "title": "Hub Shell / Data / Style Contract",
+      "summary": "Hard separation: deployed behavior shell, GitHub live data, GitHub live CSS, browser-local state. Data updates cannot remove UI; CSS updates cannot change behavior.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/HUB_SHELL_DATA_STYLE_CONTRACT_2026-10-06.md"
+    },
     {
       "title": "Surface Cleanup · execution plan",
       "summary": "One Work gate only: Hub live-board migration without visual regression + read-only ToolBox identity verification. Everything else stays GitHub routing.",
