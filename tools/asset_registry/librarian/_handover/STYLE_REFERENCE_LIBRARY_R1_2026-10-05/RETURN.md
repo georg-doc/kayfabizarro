@@ -638,3 +638,72 @@ Protected boundary remains intact:
 
 Exactly one next gate:
 **STYLE_REFERENCE_BROWSER_VIEWER_R2_DESIGN_HANDOFF_PREP**
+
+
+## Georg review · R1 Style Reference UX HUMAN FAIL · 2026-10-06
+
+Status: **HUMAN FAIL · R2 BROWSER/VIEWER RECOVERY ACTIVE**
+
+Georg reviewed the published 58-record Style Reference view and rejected the current UX as a usable reference browser/viewer.
+
+Observed product failures:
+- tutorial drawings are cropped and not inspectable at useful size;
+- selected references still do not expose complete boards/images in the Inspector;
+- Asset-style search/filter/card patterns were reused too literally for a visual-reference workflow;
+- search/filter/intake chrome dominates the viewport;
+- the actual reference image is not the primary object;
+- the user cannot reliably judge what is inside the source without opening the original website.
+
+This supersedes the previous passive “Viewer R2 later” status.
+
+### R2 product direction
+
+Retain:
+- existing Asset Librarian Site;
+- existing data model;
+- 58 built-in curated/supplementary records;
+- local Cards/Sets/Notes;
+- source/provenance/isolation logic;
+- Asset/Motion/Saved Set behavior.
+
+Replace the Style References presentation with a dedicated visual-first browser/viewer:
+
+**Browse collections → inspect complete boards → zoom → collect → compare/use**
+
+Required R2 capabilities:
+- large useful display of portrait/tall tutorial boards;
+- full board/image visibility, not thumbnail crop;
+- multi-board source navigation;
+- fit width / fit page / 100% / zoom;
+- next/previous reference;
+- compact metadata/actions;
+- Gallery / Viewer / optional Compare modes;
+- intake moved behind a compact `+ Add reference` action;
+- filters collapsed/chips/sidebar rather than occupying the first viewport.
+
+### Execution route
+
+R2A · **ChatGPT Work/WSA**
+- export exact current private Site source relevant to Style References;
+- export current desktop/mobile screenshots and state fixture;
+- build a portable GitHub design handoff;
+- no redesign.
+
+R2B · **Claude Design**
+- redesign Browser/Viewer from that portable GitHub packet;
+- no private Site access required;
+- no Site write.
+
+R2C · **ChatGPT Work/WSA**
+- integrate the accepted design into the same Site;
+- run full regressions;
+- no second Site.
+
+Prepared briefs:
+- `BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2A_EXPORT_2026-10-06.md`
+- `BRIEF_CLAUDE_DESIGN_STYLE_REFERENCE_BROWSER_VIEWER_R2_2026-10-06.md`
+
+Exactly one next gate:
+**R2A_EXPORT_CURRENT_SITE_SOURCE_AND_VISUALS_FOR_DESIGN**.
+
+No merge. No Live promotion.
