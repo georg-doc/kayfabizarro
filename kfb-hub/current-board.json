@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.12",
-  "updatedAt": "2026-10-06T22:25:00+02:00",
+  "revision": "2026-10-06.13",
+  "updatedAt": "2026-10-06T22:36:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
-    "label": "LIVE BOARD CHECK · REFRESH DIRECT HUB",
-    "note": "This visible Hub status was changed in GitHub only after Site version 9. No Site redeploy was used for this update. If this text appears after refresh, the live-board workflow is visibly proven. ToolBox identity remains unresolved but does not block Hub use."
+    "label": "CURRENT · HUB LIVE BOARD PROVEN",
+    "note": "Production Hub is the human overview; GitHub main/kfb-hub/current-board.json is the live coordination source. Routine Hub status, briefing, link and open-question updates now require only a GitHub JSON write plus direct Hub refresh — no Work, no Site publish and no Cloudflare."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,16 +26,6 @@
       "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
       "executor": "Claude Coworker · finish RETURN + direct GitHub handoff",
       "nextExecutor": "ChatGPT Work/Astra · camera repair then Architecture Freeze"
-    },
-    {
-      "id": "issue-364-hub-live-board-migration",
-      "title": "#364 · Hub Live Board · LIVE CHECK",
-      "summary": "This card was changed in GitHub only after Site version 9. If this exact LIVE CHECK card appears after refreshing the direct Production Hub, the no-republish workflow is visibly proven.",
-      "badge": "REFRESH ONLY · NO WORK",
-      "action": "Work brief öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md",
-      "executor": "ChatGPT Web Chat · GitHub JSON only",
-      "nextExecutor": "None after visible confirmation"
     }
   ],
   "p1": [
@@ -156,23 +146,6 @@
         "prep"
       ],
       "prompt": "Read the current Resident prep files on main. Do not implement into Open World before the post-Coworker Architecture Freeze."
-    },
-    {
-      "id": "brief-hub-live-board-contract",
-      "title": "Production Hub · one-time Live Board migration",
-      "badge": "RUN ONCE · NO UI REGRESS",
-      "status": "ready",
-      "provider": "ChatGPT Work/WSA · PUBLISH_ONLY + read-only identity check",
-      "desc": "One bounded Work job: preserve the current direct Paper/Dark Hub design exactly, switch only jobs/briefings to GitHub-main live data, prove no-republish updates, and verify the existing ToolBox Site identity without publishing it.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md",
-      "tags": [
-        "hub",
-        "live board",
-        "one-time",
-        "no ui regression",
-        "toolbox identity"
-      ],
-      "prompt": "Read the current no-regression Hub Work brief on main. Do exactly the one-time existing-Site live-board migration and read-only ToolBox identity verification. Do not redesign any surface."
     }
   ],
   "openQuestions": [
