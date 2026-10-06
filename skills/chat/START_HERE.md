@@ -13,7 +13,8 @@ Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`,
 A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
 
 Current routing:
-- **#360 Open World = RUNNING NOW in Claude Coworker.** Georg started a long integration run and reports it currently looks stronger than the previous attempts. Do not start a parallel Work/Astra rebuild.
+- **#360 Open World = COWORKER LOCAL CORE COMPLETE · GITHUB INTAKE PENDING.** Coworker reports local HEAD `1d4f8c8`, final build stable, but critic FAIL remains on Camera (6.5). This local result is a **receiving core**, not the final One-Shot product, until its exact Return/evidence is imported to GitHub.
+- **SCOPE CORRECTION · BINDING.** The current One-Shot contract still requires Authoring + Persistence and one representative Joyride Track, Sky, Billboard, Resident/ChatterBox, Card/Almanac, Audio and Drive seam. Only full Combat, full Golden Journey, every Resident/Card and multiplayer are non-blockers. Earlier “do not add new feature waves during Coworker’s final critic rounds” wording was an execution freeze for that local endgame, **not** a reduction of the final product contract.
 - **PR #348 = receiving integration contract, not current executor.** After Coworker returns, ChatGPT Work/Astra becomes the Anschluss-Integrator: ingest the exact Coworker result, preserve what works, close missing KFB seams and run fresh-context critic/whole-product gates.
 - **#364 Production Hub = PUBLISH_ONLY.** Source is repaired to the accepted Paper/Dark v2 donor and now carries the 2026-10-06 current board; existing Hub Site is still stale until republished.
 - **#361 Combat = HISTORY / HOLD.** Failed candidate is evidence only, not a current Today/Next lane.
