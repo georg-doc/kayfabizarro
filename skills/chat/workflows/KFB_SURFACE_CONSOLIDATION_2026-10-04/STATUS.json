@@ -43,9 +43,9 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "PUBLISH_EXISTING_PRODUCTION_HUB_SITE_IN_PLACE_AND_VERIFY_BOARD_2026-10-06.3",
+  "next": "PUBLISH_EXISTING_PRODUCTION_HUB_SITE_IN_PLACE_AND_VERIFY_BOARD_2026-10-06.4",
   "openCoreBlockers": [
-    "Production Hub GPT Site has not yet consumed board 2026-10-06.3"
+    "Production Hub GPT Site has not yet consumed board 2026-10-06.4"
   ],
   "forbidden": [
     "duplicate dashboards",
@@ -62,12 +62,13 @@
     "presentationSync": "TOKEN_ONLY_VISIBLE_AND_RESTORED_PASS",
     "uiSourceFilesChangedDuringProof": 0,
     "businessLogicFilesChangedDuringProof": 0,
-    "currentBoardReadback": "9/9 PASS",
+    "currentBoardReadback": "6/6 PASS",
     "currentBoardFilesChanged": 2,
     "hubHtmlFilesChanged": 0,
-    "styleReferenceLibrarySourceHead": "76211dec6b89aff969a8622f82c415f90b8b56a9",
+    "styleReferenceLibrarySourceHead": "c9a8ec13af8513507b13eda2efeab6664f27ce86",
     "styleReferenceLibraryPublication": "PROJECT_RETURN_PUBLISHED_IN_PLACE",
-    "styleReferenceLibraryFreshBrowser": "UNAVAILABLE_IN_THIS_CHAT"
+    "styleReferenceLibraryFreshBrowser": "UNAVAILABLE_IN_THIS_CHAT",
+    "styleReferenceClaudeDesignBridge": "8/8 PASS"
   },
   "architecture": {
     "statusOwner": "KFB Production Control D1 records",
@@ -91,10 +92,11 @@
       "#361 Combat · HISTORY/HOLD",
       "#362 Triplet/ChatterBox · HOLD/NOT TODAY"
     ],
-    "hubBoardRevision": "2026-10-06.3",
-    "hubBoardImplementationHead": "f06ae3c05e0e665aeff4d621f62d8390a4bdef0e",
+    "hubBoardRevision": "2026-10-06.4",
+    "hubBoardImplementationHead": "582a57ee44613bc91e3d1716f039c05561e7555a",
     "availableTools": [
       "Style Reference Library R1 · published in existing Asset Librarian · PR #359 draft/unmerged",
+      "Style Reference Claude Design portable bridge · READY · 8/8",
       "KFB ToolBox · existing router with Style Reference Library deep-link"
     ]
   }

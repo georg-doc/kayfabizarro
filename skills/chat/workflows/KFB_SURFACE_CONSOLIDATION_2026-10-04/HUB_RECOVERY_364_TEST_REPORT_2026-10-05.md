@@ -134,3 +134,28 @@ Source evidence:
 
 Private GPT Site direct fetch from this chat: unavailable.
 No independent new browser acceptance claim is made here.
+
+
+## 2026-10-06 · Board 2026-10-06.4 current-head check
+
+Latest Asset Librarian branch head observed:
+`c9a8ec13af8513507b13eda2efeab6664f27ce86`
+
+Current branch Return confirms:
+- R1 published in place;
+- ToolBox route live;
+- portable Claude Design Reference-Pack bridge ready;
+- bridge validation **8/8 PASS**.
+
+Hub board checkpoint:
+`582a57ee44613bc91e3d1716f039c05561e7555a`
+
+Readback: **6/6 PASS**
+1. exact Hub branch head — PASS
+2. board copies identical — PASS
+3. revision `2026-10-06.4` — PASS
+4. Style Reference published status present — PASS
+5. Claude Design bridge present — PASS
+6. Coworker primary / Work next / old FAIL cards 0 — PASS
+
+No new Hub HTML/CSS mutation.

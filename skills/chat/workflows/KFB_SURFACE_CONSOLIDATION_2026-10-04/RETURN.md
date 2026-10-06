@@ -328,3 +328,37 @@ Primary routing remains unchanged:
 
 Exactly one Hub gate remains:
 **PUBLISH_ONLY the existing Production Hub Site from frozen source and verify visible board 2026-10-06.3.**
+
+
+## 2026-10-06 · BOARD 2026-10-06.4 · CURRENT STYLE REFERENCE HEAD + CLAUDE DESIGN BRIDGE
+
+Latest observed Asset Librarian source:
+- Draft PR #359;
+- branch `planning/style-reference-library-r1-surface-2026-10-05`;
+- current head `c9a8ec13af8513507b13eda2efeab6664f27ce86`;
+- commit purpose: Claude Design bridge return;
+- PR remains draft/unmerged.
+
+Published Site state remains unchanged from the final publication return:
+- Asset Librarian R1 published in the existing owner-only Site;
+- ToolBox route live;
+- no second Site / no second Registry.
+
+Additional current capability:
+- portable Reference-Pack bridge for Claude Design;
+- canonical transport: `Private Asset Librarian → curated Reference Set → portable Design Job Packet → public GitHub → Claude Design`;
+- Clouds working example under `tools/asset_registry/librarian/reference-packs/claude-design/kfb-clouds-01/`;
+- bridge validation: **8/8 PASS**;
+- no remote reference image binaries embedded;
+- exact source-isolation rule retained.
+
+Hub board:
+- revision `2026-10-06.4`;
+- board checkpoint `582a57ee44613bc91e3d1716f039c05561e7555a`;
+- board blob `4485a2a7da104cbffc016410d01643e7edbfbe7b`;
+- Coworker primary preserved;
+- Work/Astra next preserved;
+- old FAIL cards = 0.
+
+Exactly one Hub gate remains:
+**PUBLISH_ONLY the existing Production Hub Site and verify visible board 2026-10-06.4.**
