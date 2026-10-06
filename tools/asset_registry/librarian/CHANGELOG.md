@@ -160,3 +160,24 @@ Dedicated browser evidence artifact: `10921660721` (`pd-pool-r2-asset-librarian`
 ### Boundary
 The permanent Cloudflare Librarian has **not** been updated by this candidate. Merge/publication remains a separate Georg-gated step. Bulk pool population remains blocked by the missing historical selected-hit manifest.
 
+
+
+## Claude Design GitHub briefs · Environment + Comic/VFX · 2026-10-06
+
+Status: **READY FOR CLAUDE DESIGN · GITHUB TRANSPORT ONLY**
+
+### Jobs
+- `reference-packs/claude-design/kfb-destruction-impact-01/` · 6 curated official Etherington references + functional Mech/Minigun/Rocket destruction donor context.
+- `reference-packs/claude-design/kfb-environment-mass-01/` · 6 curated official Etherington references for terrain mass, forest clustering, overgrowth, depth, rocks and roots.
+
+### Briefing
+- `_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/BRIEF_CLAUDE_DESIGN_ENVIRONMENT_COMIC_VFX_01_2026-10-06.md`
+- private Asset Librarian Site access is explicitly not required;
+- both jobs require source isolation against the official URLs before design claims;
+- both return design grammar/recipes only, not runtime integration.
+
+### Evidence
+- **12/12 PASS** packet/route validation.
+
+### Boundary
+No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
