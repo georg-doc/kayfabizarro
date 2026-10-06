@@ -591,3 +591,50 @@ Protected boundary:
 
 Exactly one next gate remains:
 **publish this exact QA-green import to the existing private Asset Librarian and verify version/deployment.**
+
+
+## Expanded corpus publication return · 2026-10-06
+
+Status: **58 BUILT-INS PUBLISHED IN PLACE · VERSION 3 SUCCEEDED**
+
+Asset Librarian:
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- source: `e0a3faa63d7024dbd7bb01cb7815db69f876a230`
+- version: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_bfa3d670e48c81919a20f2a34b19759c`
+- deployment: `appgdep_6ac5495ef32081919292089df6996954`
+- deployment status: **SUCCEEDED**
+- live URL: `https://kfb-asset-librarian.frizzlebob.chatgpt.site`
+- exact Style References deep-link: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- audience: existing owner-only custom access preserved
+- Site project count added: **0**
+
+Published result:
+- **58** unique built-in curated/supplementary records;
+- **53** Etherington official creator sources;
+- **5** supplementary professional/academic sources with distinct source classes;
+- browser-local Cards, Sets, Notes, Principles, tags, relations and discovery candidates preserved;
+- deterministic discovery→curated suggestion without deletion;
+- five Graphic FX / Comic Language lanes searchable;
+- eight KFB Emanata proposal targets searchable as metadata only;
+- curated sources without a stored preview show a human-title/source fallback, not a raw encoded filename;
+- no Viewer/Browser redesign included.
+
+Verification:
+- local browser import/persistence/provenance test: **PASS**
+- full R1 + Assets/Motions/Saved Sets/Intake regression: **PASS**
+- 3D gallery regression: **PASS**
+- page errors: **0**
+- exact published deep-link opened in the Codex Site browser for Georg review
+- Sites source/version/deployment identity re-read and matched after publication
+
+Protected boundary remains intact:
+- no second Site;
+- no new Registry;
+- no remote image mirroring;
+- no localStorage clearing;
+- no runtime write;
+- Draft PR remains unmerged;
+- no Live promotion.
+
+Exactly one next gate:
+**STYLE_REFERENCE_BROWSER_VIEWER_R2_DESIGN_HANDOFF_PREP**
