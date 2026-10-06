@@ -97,3 +97,20 @@ Known bounded risks:
 - deployment and ToolBox route verification remain the next gate.
 
 No merge. No Live branch promotion. No second Site.
+
+
+## Deployment verification · 2026-10-06
+
+- PASS · Asset Librarian version saved and private deployment succeeded
+  - source: `492e01d02f5d93d49d9dd7caecbbf7dedff26ea9`
+  - version: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_e031f40ea0e48191992aa6217df5afaf`
+  - deployment: `appgdep_6ac508ef180081919d081ccea5fcab65`
+  - URL: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- PASS · ToolBox route card rendered once with exact deep-link and owner label
+- PASS · ToolBox version saved and private deployment succeeded
+  - source: `f3f7c0d31c4c3afec9badc0526041e689935b7ec`
+  - version: `appgprj_6ac2ba44282881919d1a49287a32054e~appgver_271ece50c5d48191b7e7bffcfe9ff16a`
+  - deployment: `appgdep_6ac50a874c888191902109ddbbf8899a`
+  - URL: `https://kfb-toolbox.frizzlebob.chatgpt.site`
+
+Both projects retained their existing owner-only custom audience. No second Site was created.
