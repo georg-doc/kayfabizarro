@@ -116,3 +116,96 @@ No second Site.
 ## Exactly one future gate
 
 **R2A_EXPORT_CURRENT_STYLE_REFERENCE_UI_FOR_CLAUDE_DESIGN**
+
+
+## 2026-10-06 · GEORG HUMAN FAIL · R1 REFERENCE UX
+
+Status: **HUMAN FAIL · R2 IS NOW ACTIVE RECOVERY**
+
+Georg's direct review of the published 58-record Style Reference view supersedes the earlier "later design slice" posture.
+
+The failure is product-level, not cosmetic:
+
+- the reference drawings are not actually inspectable at useful size;
+- card crops hide most of the tutorial content;
+- the right Inspector still shows only a cropped/partial visual instead of the full source boards;
+- the Asset-style grid/filter pattern was reused too literally for a fundamentally different object type;
+- search/filter chrome still dominates the viewport;
+- the user cannot visually judge what is inside the tutorial drawings without opening sources externally;
+- therefore the current view fails the core product promise: **Find → Inspect → Collect → Use**.
+
+### R2 correction
+
+Keep the same Asset Librarian Site and the same Style Reference data model, but replace the current Style References presentation with a **visual-first reference browser/viewer**.
+
+The R2 design must not be a reskinned Asset grid.
+
+Required product model:
+
+**Browse collections → see complete reference boards → zoom/inspect → collect → compare/use**
+
+### Desktop target
+
+Prefer a dedicated three-zone reference workspace:
+
+1. **Compact browse rail**
+   - source / collection / category;
+   - compact search;
+   - filter chips or collapsible filters;
+   - Saved/Inspected/Curated quick filters;
+   - no permanent URL-intake block.
+
+2. **Visual reference browser/viewer**
+   - large portrait/vertical tutorial boards visible at useful scale;
+   - full image, not thumbnail crop;
+   - fit width / fit page / 100% / zoom;
+   - next/previous board;
+   - multi-board source navigation;
+   - card/grid view only as a chooser, not the primary inspection surface;
+   - full-screen/lightbox mode appropriate for tall tutorial sheets.
+
+3. **Compact metadata/actions rail**
+   - title / creator / source / verification;
+   - Add to Reference Set;
+   - inspected state;
+   - notes / construction principles;
+   - related assets/references;
+   - source URL secondary, never dominant.
+
+### Browse modes
+
+R2 should support at least:
+- **Gallery** · visual thumbnails with meaningful uncropped previews;
+- **Viewer** · one selected reference at large scale;
+- **Compare** · 2–4 selected references side by side where useful.
+
+### Intake
+
+Move URL/file intake behind one compact **+ Add reference** action or drawer/modal.
+It must not occupy the primary browse viewport.
+
+### Tutorial-board rule
+
+For sources such as Etherington tutorials:
+- retain each actual tutorial board/image as a separately navigable visual;
+- if one source has two boards, user must be able to see board 1 and board 2 fully;
+- do not collapse the source to one cropped hero image;
+- the reference object may remain one card/source identity, but its viewer must expose all linked visuals.
+
+### Information hierarchy
+
+1. actual visual reference
+2. title / creator / source identity
+3. Add to Set / inspected / compare actions
+4. construction notes / tags
+5. technical metadata
+
+Raw URLs, rights strings and source-class enums must never visually dominate the reference itself.
+
+### Human acceptance condition
+
+R2 does not pass because filters/search work.
+It passes only when Georg can open the Style Reference view and immediately inspect the **complete drawings/tutorial boards themselves** without leaving the Librarian.
+
+Exactly one active gate:
+**R2A_EXPORT_CURRENT_SITE_SOURCE_AND_VISUALS_FOR_DESIGN**.
