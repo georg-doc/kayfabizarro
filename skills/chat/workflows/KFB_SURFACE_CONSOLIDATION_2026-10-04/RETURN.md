@@ -224,3 +224,25 @@ No claim of Site publication or browser verification is made from this chat.
 
 Exactly one next gate:
 **PUBLISH_ONLY / Sites-capable executor updates the existing Production Hub Site in place from the frozen branch source, makes no design/source changes, and visibly verifies board 2026-10-05.8 at the exact Hub URL.**
+
+
+## 2026-10-06 · Coworker running / Hub publish-only
+
+Current:
+- #360 Open World: Claude Coworker long integration run is RUNNING.
+- PR #348: receiving contract; Work/Astra follows only after Coworker return.
+- #364 Hub: source current, Site stale, PUBLISH_ONLY.
+- Audio PR #365: separate listening gate.
+- Combat #361: HISTORY/HOLD.
+- Triplet #362: HOLD/NOT TODAY.
+
+Hub source:
+- index commit `523b70d790d619adbe75a68dfe123bc6919d84d7`;
+- index blob `5172207a1181ce85e2966cc695042ad765525b9c`;
+- board `2026-10-06.1`;
+- board blob `4977a32858b5b191ccab7480a787dbdac26a91e6`;
+- checks: 16/16 PASS.
+
+Old World/Combat FAIL cards are history only and no longer appear in current fallback/briefings/quick links.
+
+Next gate: PUBLISH_ONLY the existing Production Hub Site and verify the visible Hub shows Coworker RUNNING + Work/Astra NEXT.
