@@ -282,3 +282,26 @@ Binding brief:
 Earlier R2A export-only + Claude Design R2 briefs are **SUPERSEDED / DO NOT RUN**.
 
 No Site change in this routing checkpoint.
+
+
+## Style Reference Browser/Viewer R2 · Georg acceptance · 2026-10-07
+
+Status: **HUMAN ACCEPTED FOR CONTINUATION · USABLE, NOT OPTIMAL**
+
+Georg accepted the published R2 viewer for continued use.
+
+Accepted:
+- complete tutorial boards can now be inspected inside the Librarian;
+- multi-board navigation, fit/zoom and compact browse controls are sufficient for current production use;
+- the Style Reference workflow no longer blocks curation or consumer-pack work.
+
+Still deferred / non-blocking:
+- Compare 2–4;
+- further Browser/Viewer polish.
+
+Published accepted Site:
+- source `3ea2eab909f266889c8eaa4e5624ddf5970b7d89`
+- version **4**
+- deployment `appgdep_6ac5769bdae0819195ca516e9625d6ec`
+
+No second Site. No merge. No Live promotion.
