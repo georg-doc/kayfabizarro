@@ -428,3 +428,52 @@ No Site, ToolBox, Hub, Open World or Combat runtime changed.
 
 Exactly one next gate:
 **CLAUDE_DESIGN_JOB_01_SOURCE_ISOLATION_USING_OFFICIAL_CREATOR_MIRRORS**.
+
+
+## Graphic FX / Comic Language source expansion · 2026-10-06
+
+Status: **SOURCE CURATION READY · CLAUDE DESIGN DEFERRED**
+
+Current executor:
+**ChatGPT Web Chat**
+
+This pass continues source collection; it is not a Claude Design task yet.
+
+Added:
+- `ETHERINGTON_OFFICIAL_SEED_04_GRAPHIC_FX_COMIC_LANGUAGE.json` · **10** new official Etherington sources;
+- `GRAPHIC_FX_COMIC_LANGUAGE_SOURCE_ROUTING_2026-10-06.md` · semantic + executor routing;
+- `SUPPLEMENTARY_COMIC_LANGUAGE_SOURCES_01.json` · **5** professional/academic supplementary sources.
+
+Combined Etherington inventory:
+**53 unique official URLs**.
+
+Semantic placement:
+- **Sound Effects / Sound Words** → Comic/VFX → Graphic FX;
+- **Speech Bubbles / Caption Boxes** → Dialogue Carriers;
+- **Angry / Happy / Eye Direction / Eyebrows** → Reaction / Performance support;
+- **Comic Sense / Script-to-Page / In-World Typography** → Lettering Integration.
+
+Etherington-specific source gaps remain explicit:
+- Emanata · no dedicated Etherington source located;
+- Thought Bubbles · no dedicated Etherington source located;
+- Reaction Symbols / Emphasis Marks · no dedicated Etherington symbolic-effects source located.
+
+Supplementary coverage now exists:
+- Thought Bubbles → Blambot + Comicraft;
+- Emanata → Visual Language Lab + Comics Forum terminology;
+- Reaction Symbols → Visual Language Lab.
+
+These supplementary references remain clearly distinguished from Etherington sources.
+
+Validation:
+**15/15 PASS**.
+
+Next work owner:
+**ChatGPT Web Chat** continues source harvesting / taxonomy until one concrete visual-design problem is ready.
+
+Claude Design starts only after selecting a bounded **3–6 reference** packet.
+
+No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
+
+Exactly one next gate:
+**WEB_CHAT_CONTINUE_SOURCE_HARVEST_OR_SELECT_FIRST_GRAPHIC_FX_DESIGN_JOB**.
