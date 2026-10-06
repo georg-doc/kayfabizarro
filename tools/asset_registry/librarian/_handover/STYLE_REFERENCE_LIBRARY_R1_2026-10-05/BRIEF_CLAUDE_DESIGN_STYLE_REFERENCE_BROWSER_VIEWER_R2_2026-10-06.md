@@ -1,3 +1,14 @@
+# SUPERSEDED · DO NOT RUN
+
+Georg decision 2026-10-06: this UI problem is sufficiently specified for direct ChatGPT Work/WSA repair. Do not spend Claude Design tokens here.
+
+Current brief:
+`BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2_DIRECT_REPAIR_2026-10-06.md`
+
+This Claude Design brief remains provenance only.
+
+---
+
 # BRIEF · Claude Design · Style Reference Browser/Viewer R2
 
 Status: **WAITING FOR R2A EXPORT PACKET**
