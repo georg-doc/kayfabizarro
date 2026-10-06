@@ -25,6 +25,12 @@ Read:
 Canonical live data after migration:
 `main/kfb-hub/current-board.json`
 
+Current verified main head:
+`1a87cddf90dd0904c7b3bf68b4c4aabf37d7e6a2`
+
+Current board blob:
+`7703147f694b5cd8b8b636c35cb27295543da8a8`
+
 Operating contract:
 `main/skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md`
 
