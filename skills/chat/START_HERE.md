@@ -22,6 +22,7 @@ Current routing:
 - **Resident 3D Performance prep = Blender MCP · PREP ONLY.** Main briefing: `skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md`. It may audit/reuse rigs/motions and prepare emotion/reaction + encounter/Fluff choreography, but it must not write the Open World runtime.
 - **Resident Performance Event Contract = Web Chat architecture prep.** Main contract: `skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md`. It adds Pose/Proximity/Micro-motion and Emanata as read-only presentation channels; optional Work review brief exists but no runtime writes are allowed before Coworker return.
 - **Resident Life semantic data prep = READY ON MAIN.** Candidate model: `skills/chat/RESIDENT_LIFE_SEMANTIC_MODEL_PREP_2026-10-06.md`; Affect/Emanata map: `skills/chat/RESIDENT_AFFECT_EMANATA_MAP_PREP_2026-10-06.json`; 3-Resident fixture: `skills/chat/RESIDENT_LIFE_VERTICAL_SLICE_FIXTURE_01_2026-10-06.json`. These are proposal data for Architecture Freeze, not runtime truth.
+- **Resident Reaction / Encounter Matrix = READY ON MAIN.** Human-readable: `skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.md`; machine-readable: `skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.json`. It maps world/social events to Affect → Pose/Proximity → Gesture/Micro-motion → Face/Emanata → Bubble/Audio → recovery, with no LLM requirement.
 
 Primary World recovery brief:
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`

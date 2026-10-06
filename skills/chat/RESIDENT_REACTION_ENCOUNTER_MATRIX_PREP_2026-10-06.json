@@ -1,0 +1,801 @@
+{
+  "schema": "kfb.resident-reaction-encounter-matrix/0-proposal",
+  "date": "2026-10-06",
+  "status": "PROPOSAL_ARCHITECTURE_PREP",
+  "owner": "KFB Resident Life / Performance",
+  "rules": {
+    "llmRequired": false,
+    "affectOwner": "Resident Life",
+    "emanataWritesState": false,
+    "maxPrimaryEmanataPerResident": 1,
+    "silenceValid": true,
+    "recoveryRequired": true,
+    "physicalSafetyPriority": true,
+    "durableMemoryStoresEventsNotAnimation": true
+  },
+  "priorityBands": {
+    "safety": 100,
+    "worldConsequence": 90,
+    "playerOrSocialInterrupt": 80,
+    "exchangeOrImportantReaction": 70,
+    "discovery": 60,
+    "ordinarySocial": 50,
+    "ambient": 30
+  },
+  "recoveryOutcomes": [
+    "RESUME_ACTIVITY",
+    "REPLAN_ACTIVITY",
+    "ENTER_ENCOUNTER",
+    "JOIN_ACTIVITY",
+    "LEAVE_AREA",
+    "SEEK_HELP",
+    "START_REPAIR",
+    "INSPECT_TARGET"
+  ],
+  "events": [
+    {
+      "eventId": "PLAYER_APPROACHED",
+      "priority": 80,
+      "category": "social",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.45,
+        "alternate": [
+          "attentive",
+          "suspicious"
+        ]
+      },
+      "pose": {
+        "base": "attentive-open",
+        "proximity": "hold-or-small-step-in-if-safe",
+        "orientation": "face-source"
+      },
+      "gesture": "acknowledge-or-wave",
+      "microMotion": [
+        "small-forward-lean",
+        "head-tilt-optional"
+      ],
+      "face": {
+        "gaze": "source",
+        "mouth": "neutral-or-thinking"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line",
+          "triplet"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "speech-focus-only-if-speaking",
+      "outcomes": [
+        "ENTER_ENCOUNTER",
+        "RESUME_ACTIVITY"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "FRIEND_ENCOUNTERED",
+      "priority": 50,
+      "category": "social",
+      "affect": {
+        "primary": "joyful",
+        "intensity": 0.35,
+        "alternate": [
+          "grateful",
+          "calm"
+        ]
+      },
+      "pose": {
+        "base": "open-soft",
+        "proximity": "small-step-in-if-safe",
+        "orientation": "face-target"
+      },
+      "gesture": "nod-or-wave",
+      "microMotion": [
+        "soft-lean-in"
+      ],
+      "face": {
+        "gaze": "target-warm",
+        "mouth": "happy-soft"
+      },
+      "emanata": {
+        "primary": "heart",
+        "policy": "rare-strong-warmth-only"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "JOIN_ACTIVITY",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "GIFT_OFFERED",
+      "priority": 70,
+      "category": "exchange",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.55,
+        "followup": "surprised"
+      },
+      "pose": {
+        "base": "attentive-open",
+        "proximity": "orient-to-giver",
+        "orientation": "gift-and-giver"
+      },
+      "gesture": "receive-ready",
+      "microMotion": [
+        "lean-forward-small"
+      ],
+      "face": {
+        "gaze": "gift",
+        "mouth": "neutral"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "policy": "optional-on-surprise"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "GIFT_RECEIVED",
+      "priority": 70,
+      "category": "exchange",
+      "affect": {
+        "primary": "grateful",
+        "intensity": 0.7,
+        "alternate": [
+          "joyful",
+          "embarrassed"
+        ]
+      },
+      "pose": {
+        "base": "open-soft",
+        "proximity": "hold-or-small-step-in-if-safe",
+        "orientation": "giver"
+      },
+      "gesture": "receive-and-thank",
+      "microMotion": [
+        "soft-nod"
+      ],
+      "face": {
+        "gaze": "giver",
+        "mouth": "happy-soft"
+      },
+      "emanata": {
+        "primary": "heart",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-positive",
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "JOIN_ACTIVITY"
+      ],
+      "durable": true,
+      "durableRecord": "SocialExchangeEvent + relationship memory"
+    },
+    {
+      "eventId": "TRADE_ACCEPTED",
+      "priority": 70,
+      "category": "exchange",
+      "affect": {
+        "primary": "joyful",
+        "intensity": 0.45,
+        "alternate": [
+          "calm"
+        ]
+      },
+      "pose": {
+        "base": "open-neutral",
+        "proximity": "exchange-distance",
+        "orientation": "target"
+      },
+      "gesture": "exchange-and-inspect",
+      "microMotion": [
+        "small-nod"
+      ],
+      "face": {
+        "gaze": "item-then-target",
+        "mouth": "happy-soft"
+      },
+      "emanata": {
+        "primary": "sparkle",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": true,
+      "durableRecord": "inventory/resource transfer + SocialExchangeEvent"
+    },
+    {
+      "eventId": "TRADE_DECLINED",
+      "priority": 65,
+      "category": "exchange",
+      "affect": {
+        "primary": "sad",
+        "intensity": 0.25,
+        "alternate": [
+          "calm",
+          "annoyed"
+        ]
+      },
+      "pose": {
+        "base": "closed-small",
+        "proximity": "hold-or-small-step-out",
+        "orientation": "target"
+      },
+      "gesture": "retract-offer-or-small-shake",
+      "microMotion": [
+        "lean-back-small"
+      ],
+      "face": {
+        "gaze": "target-or-away",
+        "mouth": "neutral-low"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "rare"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "LEAVE_AREA"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "FLUFF_SHARED",
+      "priority": 70,
+      "category": "resource",
+      "affect": {
+        "primary": "grateful",
+        "intensity": 0.6,
+        "alternate": [
+          "joyful"
+        ]
+      },
+      "pose": {
+        "base": "open-soft",
+        "proximity": "handoff-distance",
+        "orientation": "source"
+      },
+      "gesture": "receive-carry",
+      "microMotion": [
+        "soft-nod"
+      ],
+      "face": {
+        "gaze": "source",
+        "mouth": "happy-soft"
+      },
+      "emanata": {
+        "primary": "heart",
+        "policy": "meaningful-share-only"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-positive-optional",
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "JOIN_ACTIVITY"
+      ],
+      "durable": true,
+      "durableRecord": "Fluff transfer + SocialExchangeEvent"
+    },
+    {
+      "eventId": "FLUFF_SPILLED",
+      "priority": 90,
+      "category": "resource",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.8,
+        "followup": "worried"
+      },
+      "pose": {
+        "base": "recoil-open",
+        "proximity": "step-out-if-safe",
+        "orientation": "spill"
+      },
+      "gesture": "inspect-or-collect",
+      "microMotion": [
+        "recoil",
+        "lean-forward-after-recoil"
+      ],
+      "face": {
+        "gaze": "spill",
+        "mouth": "surprised-then-worried"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "followup": "sweat-drop",
+        "policy": "one-at-a-time"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-surprise",
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "INSPECT_TARGET"
+      ],
+      "durable": "depends-on-resource-loss"
+    },
+    {
+      "eventId": "CARD_DISCOVERED",
+      "priority": 60,
+      "category": "discovery",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.65,
+        "alternate": [
+          "surprised",
+          "suspicious"
+        ]
+      },
+      "pose": {
+        "base": "attentive-open",
+        "proximity": "approach-if-allowed",
+        "orientation": "card"
+      },
+      "gesture": "inspect-or-point",
+      "microMotion": [
+        "lean-forward",
+        "head-tilt"
+      ],
+      "face": {
+        "gaze": "card",
+        "mouth": "thinking-neutral"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter",
+        "constraint": "Card-anchored if spoken"
+      },
+      "audioHook": "discovery-accent",
+      "outcomes": [
+        "INSPECT_TARGET",
+        "RESUME_ACTIVITY"
+      ],
+      "durable": "card/world discovery owner decides"
+    },
+    {
+      "eventId": "BILLBOARD_CHANGED",
+      "priority": 60,
+      "category": "discovery",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.5,
+        "alternate": [
+          "amused",
+          "suspicious"
+        ]
+      },
+      "pose": {
+        "base": "attentive",
+        "proximity": "hold-or-approach",
+        "orientation": "billboard"
+      },
+      "gesture": "inspect",
+      "microMotion": [
+        "head-tilt"
+      ],
+      "face": {
+        "gaze": "billboard",
+        "mouth": "thinking-neutral"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "INSPECT_TARGET",
+        "RESUME_ACTIVITY"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "BUILDING_COLLAPSE_OBSERVED",
+      "priority": 100,
+      "category": "world-danger",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.95,
+        "followup": "worried"
+      },
+      "pose": {
+        "base": "recoil-open",
+        "proximity": "step-out-if-safe",
+        "orientation": "collapse"
+      },
+      "gesture": "point-or-help-ready",
+      "microMotion": [
+        "recoil",
+        "guarded-settle"
+      ],
+      "face": {
+        "gaze": "collapse",
+        "mouth": "surprised"
+      },
+      "emanata": {
+        "primary": "exclamation",
+        "followup": "sweat-drop",
+        "policy": "one-at-a-time"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-surprise; world impact remains world/audio owner",
+      "outcomes": [
+        "LEAVE_AREA",
+        "SEEK_HELP",
+        "START_REPAIR",
+        "INSPECT_TARGET"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "REPAIR_COMPLETED",
+      "priority": 70,
+      "category": "work",
+      "affect": {
+        "primary": "proud",
+        "intensity": 0.65,
+        "alternate": [
+          "joyful",
+          "grateful"
+        ]
+      },
+      "pose": {
+        "base": "upright-open",
+        "proximity": "hold",
+        "orientation": "repair-target"
+      },
+      "gesture": "inspect-then-celebrate-or-nod",
+      "microMotion": [
+        "chest-open",
+        "settle"
+      ],
+      "face": {
+        "gaze": "repair-target-or-team",
+        "mouth": "happy"
+      },
+      "emanata": {
+        "primary": "sparkle",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-positive-optional",
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "JOIN_ACTIVITY"
+      ],
+      "durable": "repair/world-state owner persists completed repair"
+    },
+    {
+      "eventId": "ACTIVITY_INTERRUPTED",
+      "priority": 80,
+      "category": "activity",
+      "affect": {
+        "primary": "attentive",
+        "intensity": 0.4,
+        "alternate": [
+          "annoyed",
+          "worried"
+        ]
+      },
+      "pose": {
+        "base": "attentive-or-guarded",
+        "proximity": "hold",
+        "orientation": "interruptor"
+      },
+      "gesture": "acknowledge-or-decline",
+      "microMotion": [
+        "turn-upper-body",
+        "head-tilt-optional"
+      ],
+      "face": {
+        "gaze": "interruptor",
+        "mouth": "neutral"
+      },
+      "emanata": {
+        "primary": "question",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": false
+    },
+    {
+      "eventId": "HELP_RECEIVED",
+      "priority": 70,
+      "category": "social",
+      "affect": {
+        "primary": "grateful",
+        "intensity": 0.6,
+        "alternate": [
+          "joyful",
+          "relieved"
+        ]
+      },
+      "pose": {
+        "base": "open-soft",
+        "proximity": "team-distance",
+        "orientation": "helper"
+      },
+      "gesture": "nod-or-thank",
+      "microMotion": [
+        "soft-lean-in"
+      ],
+      "face": {
+        "gaze": "helper",
+        "mouth": "happy-soft"
+      },
+      "emanata": {
+        "primary": "heart",
+        "policy": "optional"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-positive-optional",
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "JOIN_ACTIVITY"
+      ],
+      "durable": true,
+      "durableRecord": "help relationship memory"
+    },
+    {
+      "eventId": "DISAGREEMENT",
+      "priority": 75,
+      "category": "social",
+      "affect": {
+        "primary": "annoyed",
+        "intensity": 0.55,
+        "alternate": [
+          "suspicious",
+          "calm"
+        ]
+      },
+      "pose": {
+        "base": "guarded-asymmetric",
+        "proximity": "hold-or-small-step-out",
+        "orientation": "target"
+      },
+      "gesture": "shake-shrug-or-dismissive-accent",
+      "microMotion": [
+        "lean-away",
+        "head-side"
+      ],
+      "face": {
+        "gaze": "target",
+        "mouth": "annoyed"
+      },
+      "emanata": {
+        "primary": "anger-tick",
+        "policy": "only-if-intensity-warrants"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line",
+          "triplet"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": null,
+      "outcomes": [
+        "RESUME_ACTIVITY",
+        "LEAVE_AREA",
+        "ENTER_ENCOUNTER"
+      ],
+      "durable": "only-if-important"
+    },
+    {
+      "eventId": "PRAISE_OR_APPLAUSE_RECEIVED",
+      "priority": 65,
+      "category": "social",
+      "affect": {
+        "primary": "proud",
+        "intensity": 0.55,
+        "alternate": [
+          "joyful",
+          "embarrassed"
+        ]
+      },
+      "pose": {
+        "base": "upright-open-or-shy-closed",
+        "proximity": "hold",
+        "orientation": "audience-or-source"
+      },
+      "gesture": "acknowledge-bow-or-wave",
+      "microMotion": [
+        "soft-nod"
+      ],
+      "face": {
+        "gaze": "audience-or-source",
+        "mouth": "happy"
+      },
+      "emanata": {
+        "primary": "sparkle",
+        "alternate": "sweat-drop",
+        "policy": "profile-dependent"
+      },
+      "dialogue": {
+        "mode": [
+          "silent",
+          "short-line"
+        ],
+        "owner": "ChatterBox/Resident Chatter"
+      },
+      "audioHook": "reaction-positive-optional",
+      "outcomes": [
+        "RESUME_ACTIVITY"
+      ],
+      "durable": false
+    }
+  ],
+  "chatterboxLabCalls": [
+    {
+      "eventId": "CHATTERBOX_CALL_BINGO",
+      "labOnly": true,
+      "currentLabMeaning": "landed / continue or deepen",
+      "affect": {
+        "primary": "joyful",
+        "intensity": 0.35
+      },
+      "pose": "positive-settle/open",
+      "gesture": "nod",
+      "emanata": "sparkle-optional",
+      "outcomes": [
+        "ENTER_ENCOUNTER",
+        "RESUME_ACTIVITY"
+      ]
+    },
+    {
+      "eventId": "CHATTERBOX_CALL_BOGGLE",
+      "labOnly": true,
+      "currentLabMeaning": "reframe / clarification",
+      "affect": {
+        "primary": "curious",
+        "intensity": 0.55
+      },
+      "pose": "attentive/head-tilt",
+      "gesture": "small-open-hand",
+      "emanata": "question-optional",
+      "outcomes": [
+        "ENTER_ENCOUNTER"
+      ]
+    },
+    {
+      "eventId": "CHATTERBOX_CALL_BONGO",
+      "labOnly": true,
+      "currentLabMeaning": "hold/challenge/reformulate",
+      "affect": {
+        "primary": "attentive",
+        "intensity": 0.55
+      },
+      "pose": "guarded-or-lean-in",
+      "gesture": "challenge-open-hand",
+      "emanata": "question-optional",
+      "outcomes": [
+        "ENTER_ENCOUNTER"
+      ]
+    },
+    {
+      "eventId": "CHATTERBOX_CALL_BLOEDSINN",
+      "labOnly": true,
+      "currentLabMeaning": "contradiction / semantic or rule break",
+      "affect": {
+        "primary": "surprised",
+        "intensity": 0.65,
+        "followup": "annoyed"
+      },
+      "pose": "recoil-then-guarded",
+      "gesture": "dismissive-accent",
+      "emanata": "exclamation-or-anger-tick",
+      "outcomes": [
+        "ENTER_ENCOUNTER",
+        "LEAVE_AREA"
+      ]
+    }
+  ]
+}
