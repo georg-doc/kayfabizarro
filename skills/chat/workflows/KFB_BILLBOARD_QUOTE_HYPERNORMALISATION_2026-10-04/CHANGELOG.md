@@ -158,3 +158,22 @@
 - Combined researched inventory is now **235 candidates**: 30 mapped Batch-01 candidates + 205 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 08 · mathematics / administration / media / play / exploration
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_08.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - mathematics/chance: 6
+  - bureaucracy/administration: 6
+  - media/propaganda: 6
+  - childhood/play: 6
+  - exploration/discovery: 6
+- Reserve 08 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **26 VERIFIED**, **4 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **25 PUBLIC_DOMAIN_CONFIRMED**, **3 RESEARCHED_QUOTE_LIMIT_ONLY**, **2 RESEARCHED_RESTRICTED**.
+- `SECONDARY_ONLY` source-chain cases are Galton's “Whenever you can, count”, Fröbel's play/development formulation, Huizinga's “Play is older than culture”, and Livingstone's “provided it be forward”; each retains its unresolved direct-edition/original-document note.
+- Rights-sensitive cases remain explicit: Russell, Lippmann and Bernays are jurisdiction-limited; Huizinga and Montessori remain research-restricted.
+- Validation: **20/20 PASS**, including five balanced clusters and zero ID/text collisions against the prior 235-candidate inventory.
+- Combined researched inventory is now **265 candidates**: 30 mapped Batch-01 candidates + 235 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
