@@ -34,3 +34,13 @@
 - exact authorized Site GET returned HTTP 200 with the expected revision;
 - no Production Hub, central router, Cloudflare, World, Race, Combat or other product mutation;
 - PR #365 remains draft and unmerged.
+
+
+### World integration contract preparation
+
+- compared Site-green adaptive Audio Source 0.3 / PR #365 with current WB2 audio consumer `wb2-musical-world.v1.js` blob `4142a1d0...` and Open World integration matrix;
+- froze a one-way World -> Audio context/event contract so World owns facts and KFB Audio owns music selection, stems, timing, ducking and mix;
+- added `KFB_AUDIO_WORLD_INTEGRATION_CONTRACT_01.md`, `KFB_AUDIO_CONTEXT_V1.schema.json` and `KFB_AUDIO_EVENT_V1.schema.json`;
+- migration is additive: current WB2 audio continuity stays alive while a small World-side context adapter is introduced;
+- no write to PR #348 runtime, Hub, Cloudflare or other products;
+- identified the next reusable artifact as a DOM-free repository-resident KFB Audio runtime package derived from the Site-green Source 0.3 implementation.
