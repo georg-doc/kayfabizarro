@@ -135,3 +135,41 @@ Prepared transport example:
 `tools/asset_registry/librarian/reference-packs/claude-design/kfb-clouds-01/`
 
 This is a reference-packet bridge only. No Asset Librarian or ToolBox Site code/deployment changed in this checkpoint.
+
+
+## Etherington design-first expansion · Environment + Comic/VFX · 2026-10-06
+
+Status: **RESEARCH/DATA PASS · SITE UNCHANGED**
+
+Validation: **12/12 PASS**
+
+1. PASS · three seed JSON files parse
+2. PASS · seed01 count = 13
+3. PASS · environment count = 17
+4. PASS · comic/vfx count = 13
+5. PASS · combined count = 43
+6. PASS · 43 unique IDs
+7. PASS · 43 unique URLs
+8. PASS · all URLs official Etherington HTTPS
+9. PASS · all new entries sourceInspectedInIsolation=false
+10. PASS · all new entries visualAnalysisStatus=PENDING
+11. PASS · all new entries relationStatus=UNMAPPED_BY_DESIGN
+12. PASS · both new batches designFirst=true
+
+Inventory after this batch:
+- foundational Seed 01: **13**
+- Environment Seed 02: **17**
+- Comic/VFX Seed 03: **13**
+- total unique official sources: **43**
+
+Research policy:
+- only official Etherington creator-hosted URLs;
+- no duplicate IDs or URLs across the three seeds;
+- all new entries remain `sourceInspectedInIsolation=false`;
+- visual analysis remains `PENDING`;
+- mapping remains `UNMAPPED_BY_DESIGN`;
+- no remote images mirrored into GitHub;
+- no Site/runtime/deployment change in this data slice.
+
+Design-first routing is documented in:
+`ETHERINGTON_DESIGN_FIRST_ENVIRONMENT_COMIC_VFX_2026-10-06.md`
