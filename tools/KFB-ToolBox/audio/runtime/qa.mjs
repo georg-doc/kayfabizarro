@@ -50,6 +50,11 @@ check('event validation', () => assert.equal(validateEvent(event), event));
 check('staying function', () => assert.equal(resolveFunction(base), 'STAYING'));
 check('movement maps G', () => assert.equal(resolveFamily({ context: { ...base, movement: { ...base.movement, speed01: 0.5 } }, registry }).familyId, 'G'));
 check('day staying maps M', () => assert.equal(resolveFamily({ context: base, registry }).familyId, 'M'));
+check('day staying falls back to C when M unavailable', () => {
+  const fallbackRegistry = structuredClone(registry);
+  fallbackRegistry.families.M.status = 'SOURCE_PRESENT_RUNTIME_UNVERIFIED';
+  assert.equal(resolveFamily({ context: base, registry: fallbackRegistry }).familyId, 'C');
+});
 check('night maps N', () => assert.equal(resolveFamily({ context: { ...base, environment: { timeOfDay01: 0.84, dayPhase: 'night' } }, registry }).familyId, 'N'));
 check('talking maps D', () => assert.equal(resolveFamily({ context: { ...base, social: { ...base.social, dialogueActive: true } }, registry }).familyId, 'D'));
 check('POI event maps O', () => assert.equal(resolveEventFamily({ type: 'POI_DISCOVERED', context: base, registry }).familyId, 'O'));

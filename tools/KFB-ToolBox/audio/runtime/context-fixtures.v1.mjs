@@ -79,7 +79,10 @@ export const CONTEXT_FIXTURES = Object.freeze([
   },
   {
     name: 'MISSING_FAMILY_FALLBACK',
-    steps: [{ method: 'setContext', value: context({ seq: 1, worldId: 'fixture.missing-family' }) }]
+    steps: [
+      { method: 'setContext', value: context({ seq: 1, mode: 'RUN', speed01: 0.58 }) },
+      { method: 'setContext', value: context({ seq: 2, worldId: 'fixture.missing-family' }) }
+    ]
   }
 ]);
 

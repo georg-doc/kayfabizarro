@@ -50,7 +50,7 @@ const expectations = {
   RESIDENT_DIALOGUE: { familyId: 'D', function: 'TALKING', speechFocus: true },
   BILLBOARD_DIALOGUE: { familyId: 'D', function: 'TALKING', speechFocus: true },
   DRIVE_TO_STAY: { familyId: 'M', function: 'STAYING', speechFocus: false },
-  MISSING_FAMILY_FALLBACK: { familyId: null, function: 'STAYING', speechFocus: false }
+  MISSING_FAMILY_FALLBACK: { familyId: 'G', function: 'STAYING', speechFocus: false }
 };
 
 const forbiddenFixtureKeys = new Set(['trackId', 'trackIds', 'bpm', 'stem', 'stems', 'gain', 'gains']);
@@ -81,6 +81,15 @@ for (const fixture of CONTEXT_FIXTURES) {
   assert.equal(evidence.speechFocus, expected.speechFocus, `${fixture.name} speech focus`);
   assert.equal(evidence.moduleCreatedAudioContexts, 0, `${fixture.name} AudioContext ownership`);
   assert.equal(evidence.errors.length, 0, `${fixture.name} errors`);
+  const transitions = evidence.log.filter(item => item.type === 'FAMILY_START').map(item => item.id);
+  const scheduledRetirements = audioContext.createdSources.filter(source => source.stopTime != null);
+  if (transitions.length > 1) {
+    assert(scheduledRetirements.length > 0, `${fixture.name} schedules old deck retirement`);
+    assert(scheduledRetirements.every(source => source.stopTime > audioContext.currentTime), `${fixture.name} avoids hard stop`);
+  }
+  if (expected.speechFocus) {
+    assert(evidence.log.some(item => item.type === 'SPEECH_FOCUS' && item.cooperatesWithHostDucking), `${fixture.name} preserves host ducking ownership`);
+  }
   results.push({
     name: fixture.name,
     familyId: evidence.familyId,
@@ -88,7 +97,8 @@ for (const fixture of CONTEXT_FIXTURES) {
     speechFocus: evidence.speechFocus,
     moduleCreatedAudioContexts: evidence.moduleCreatedAudioContexts,
     playbackMode: evidence.playbackMode,
-    transitions: evidence.log.filter(item => item.type === 'FAMILY_START').map(item => item.id)
+    transitions,
+    scheduledRetirements: scheduledRetirements.length
   });
   await runtime.dispose();
 }
