@@ -225,6 +225,44 @@ For each state record:
 
 The body layer must remain compatible with runtime facial channels.
 
+
+## 6A · Pose / proximity / micro-motion · REQUIRED
+
+Treat **Pose** as a first-class channel separate from Gesture.
+
+Pose provides distance-readable emotion and social intent before the viewer can read facial detail.
+
+Audit/prepare reusable:
+- open vs closed stance;
+- attentive stance;
+- proud stance;
+- tired stance;
+- worried/guarded stance;
+- suspicious stance;
+- lean forward/back;
+- side lean;
+- head tilt/cock;
+- small recoil;
+- step-in / step-out;
+- orientation toward/away from partner;
+- settle/recovery.
+
+Prefer:
+- existing stance/idle clips;
+- additive torso/head/shoulder offsets;
+- foot-safe layering;
+- relational spacing changes through a future encounter/navigation seam.
+
+Do not solve each emotion with a bespoke clip.
+
+Required distinction:
+- **Pose** = sustained readable whole-body attitude;
+- **Gesture** = short semantic accent;
+- **Micro-motion** = small additive lean/tilt/recoil/settle;
+- **Proximity** = spatial relationship to partner/object.
+
+Distance-readability is an explicit acceptance criterion.
+
 ## 7 · Encounter choreography studies
 
 Build small reusable beat studies, not bespoke scripted scenes.

@@ -20,6 +20,7 @@ Current routing:
 - **#362 Triplet / ChatterBox = HOLD / NOT TODAY.** Resume only after the Open World integration result shows what dialogue seam remains.
 - **Audio PR #365 = separate current listening gate.** It does not mutate the Open World.
 - **Resident 3D Performance prep = Blender MCP · PREP ONLY.** Main briefing: `skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md`. It may audit/reuse rigs/motions and prepare emotion/reaction + encounter/Fluff choreography, but it must not write the Open World runtime.
+- **Resident Performance Event Contract = Web Chat architecture prep.** Main contract: `skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md`. It adds Pose/Proximity/Micro-motion and Emanata as read-only presentation channels; optional Work review brief exists but no runtime writes are allowed before Coworker return.
 
 Primary World recovery brief:
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
