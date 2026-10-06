@@ -84,3 +84,25 @@
 - Coworker/WSA handover persisted and ready for the current Open World integration sequence;
 - M/N/O remain runtime-unverified until real host decode/alignment/listening QA;
 - no Open World runtime, Hub, Cloudflare or other product runtime write.
+
+
+### Audio module pre-integration · no World writes
+
+- read the binding Work/WSA pre-integration brief at PR #365 head `baab7a31...`;
+- kept Claude Coworker as the active World writer and made no write to PR #348, WB2 or any World runtime;
+- completed real C/M/N/O manifests in the DOM-free Audio runtime;
+- browser-decoded 40/40 real stems and 4/4 real masters at 44.1 kHz stereo;
+- measured 0.00 ms family-internal stem duration delta for C, M, N and O;
+- promoted C/M/N/O independently to `RUNTIME_VERIFIED`, never `HUMAN_ACCEPTED`;
+- kept C Backing Vocals, M Lead Vocals/Other and N Lead/Backing Vocals `AMBIGUOUS_RETAIN_MUTED`;
+- added shared full-bar loop endpoints with deterministic 0.00 ms inter-stem drift over 100 simulated loops;
+- added smooth crossfade/old-deck retirement so family transitions do not hard-stop decoded playback;
+- added real-master fallback for C/M/N/O and verified 4/4 forced fallback paths;
+- serialized public context/event application and hardened Speech Focus restore while retaining host TTS-ducking ownership;
+- added eight Audio-owned context/event fixtures with no track IDs, family IDs, BPMs, stems or gains in fixture input;
+- verified G/D baseline 18/18, runtime invariants 46/46 and fixtures 8/8;
+- browser warnings/errors 0; no unintentional network/decode error;
+- published implementation checkpoint `0e9c57cdd35d79d8eb4943cd3c0529bb616c2a9b`;
+- published evidence checkpoint `8c32d2bf8afecac063c2b1e11362710a1051504e`;
+- left one next gate: after exact Claude Coworker Return, Work/WSA implements only the tiny World-side context/event adapter;
+- no Production Hub, router, Cloudflare, Audio Site, second Site, merge or Live promotion.
