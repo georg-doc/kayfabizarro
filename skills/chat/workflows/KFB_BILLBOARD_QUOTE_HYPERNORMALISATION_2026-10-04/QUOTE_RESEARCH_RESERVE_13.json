@@ -1,0 +1,1600 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-07T01:22:00+02:00",
+  "purpose": "Thirteenth unmapped quality-first reserve dedicated to finance and money systems: bank credit creation and fiat money; stock-market microstructure, dark pools and high-frequency trading; money laundering and shadow finance; crypto/blockchain/meme coins/prediction markets/Ponzi dynamics; and alternative currencies, mutual credit and exchange networks.",
+  "sourcePolicy": "Research reserve only. Separate monetary mechanism from rhetoric: bank-deposit creation is not free wealth; fiat value is not the same question as legal tender; market speed is not itself manipulation; privacy technology is not itself laundering; speculative price dependence is not automatically a Ponzi scheme; decentralized systems still have concrete trust and governance surfaces.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard/world/multiverse assignments during collection.",
+  "rotationIntent": {
+    "goal": "Add mechanism-level financial literacy and market-structure material so later KFB finance, shadow-power, casino-market, crypto, consumer and alternative-economy worlds can contrast how money is issued, prices are formed, ownership is hidden, speculation propagates, and exchange networks are designed.",
+    "laterSelectionDimensions": [
+      "mechanism fit",
+      "institution type",
+      "mainstream vs alternative system",
+      "fraud vs legal speculation",
+      "centralised vs decentralised trust",
+      "era diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No financial advice, runtime selector, truth classifier, mapping or public approval is changed in this research slice."
+  },
+  "coverageAudit": {
+    "priorInventory": 385,
+    "finding": "PARTIAL_CLASSICAL_COVERAGE_MODERN_MECHANISM_GAPS",
+    "existingExamples": [
+      "Adam Smith",
+      "Thorstein Veblen",
+      "William Stanley Jevons",
+      "John Ruskin",
+      "Henry George",
+      "Charles Dickens",
+      "Andrew Carnegie",
+      "Pierre-Joseph Proudhon",
+      "Jean-Jacques Rousseau"
+    ],
+    "newMechanismGapsAddressed": [
+      "commercial-bank deposit creation",
+      "central-bank money",
+      "fiat trust",
+      "stablecoins",
+      "HFT and subsecond market structure",
+      "dark pools",
+      "spoofing",
+      "money laundering stages",
+      "beneficial ownership and shell companies",
+      "crypto mixers",
+      "NFT illicit-finance risk",
+      "Bitcoin",
+      "Ethereum smart-contract architecture",
+      "meme-coin speculation",
+      "Polymarket/event contracts",
+      "Ponzi mechanics",
+      "blockchain decentralisation tradeoffs",
+      "Free-Money",
+      "labor/cost exchange",
+      "timebanking",
+      "mutual credit",
+      "LETS",
+      "WIR"
+    ]
+  },
+  "clusters": {
+    "bank-credit-fiat-stable-money": 6,
+    "stock-markets-hft-market-microstructure": 6,
+    "money-laundering-shadow-finance": 6,
+    "crypto-blockchain-prediction-ponzi": 6,
+    "alternative-currencies-mutual-credit-barter": 6
+  },
+  "candidates": [
+    {
+      "id": "qr-r13-boe-loan-creates-deposit",
+      "text": "Whenever a bank makes a loan, it simultaneously creates a matching deposit in the borrower’s bank account, thereby creating new money.",
+      "author": "Bank of England",
+      "work": "New forms of digital money — Box A: Money creation",
+      "publicationYear": 2021,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bankofengland.co.uk/paper/2021/new-forms-of-digital-money",
+        "edition": "Bank of England discussion paper",
+        "pageOrLocator": "Box A — Money creation",
+        "publicationYear": 2021,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on the Bank of England site."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Current Bank of England web publication; retained as a short research quotation, not treated as public-domain text.",
+        "evidenceUrl": "https://www.bankofengland.co.uk/paper/2021/new-forms-of-digital-money",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "money-creation",
+        "commercial-banks",
+        "loans",
+        "deposits"
+      ],
+      "semanticAxes": [
+        "loan↔deposit",
+        "credit↔money-creation"
+      ],
+      "frizzleQuestion": "When a bank creates a deposit while making a loan, what exactly has been created—and what matching obligation prevents that from being free wealth?",
+      "brainFood": [
+        {
+          "label": "Bank of England — New forms of digital money",
+          "url": "https://www.bankofengland.co.uk/paper/2021/new-forms-of-digital-money",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-bundesbank-accounting-entry",
+      "text": "banks can create book money just by making an accounting entry",
+      "author": "Deutsche Bundesbank",
+      "work": "How money is created",
+      "publicationYear": 2017,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bundesbank.de/en/tasks/topics/how-money-is-created-667392",
+        "edition": "Bundesbank explanatory article",
+        "pageOrLocator": "Book money created only by transactions between banks and non-banks",
+        "publicationYear": 2017,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact English wording verified on the Bundesbank site."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Current Bundesbank explanatory publication; short research quotation retained conservatively.",
+        "evidenceUrl": "https://www.bundesbank.de/en/tasks/topics/how-money-is-created-667392",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "book-money",
+        "accounting",
+        "bank-credit",
+        "deposits"
+      ],
+      "semanticAxes": [
+        "accounting-entry↔money",
+        "intermediation↔creation"
+      ],
+      "frizzleQuestion": "Why does an accounting entry count as money creation while an ordinary private IOU usually does not circulate as money?",
+      "brainFood": [
+        {
+          "label": "Deutsche Bundesbank — How money is created",
+          "url": "https://www.bundesbank.de/en/tasks/topics/how-money-is-created-667392",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-bundesbank-central-bank-only",
+      "text": "only the central bank can create this money.",
+      "author": "Deutsche Bundesbank",
+      "work": "The Origin of Money — Part III: Central Bank Money",
+      "publicationYear": 2021,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bundesbank.de/en/service/school-service/animation-videos/the-origin-of-money-part-iii-central-bank-money-860058",
+        "edition": "Bundesbank educational explainer",
+        "pageOrLocator": "definition of central bank money",
+        "publicationYear": 2021,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the official explainer."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Current Bundesbank publication; short research quotation retained conservatively.",
+        "evidenceUrl": "https://www.bundesbank.de/en/service/school-service/animation-videos/the-origin-of-money-part-iii-central-bank-money-860058",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "central-bank-money",
+        "reserves",
+        "cash",
+        "monetary-base"
+      ],
+      "semanticAxes": [
+        "commercial-bank-money↔central-bank-money",
+        "private-issuer↔public-issuer"
+      ],
+      "frizzleQuestion": "What power belongs uniquely to central-bank money if commercial banks can still create most of the deposits people actually spend?",
+      "brainFood": [
+        {
+          "label": "Deutsche Bundesbank — Central Bank Money",
+          "url": "https://www.bundesbank.de/en/service/school-service/animation-videos/the-origin-of-money-part-iii-central-bank-money-860058",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-bis-fiat-no-intrinsic",
+      "text": "Fiat money is an asset with no intrinsic value.",
+      "author": "Agustín Carstens / Bank for International Settlements",
+      "work": "Trust and public policies",
+      "publicationYear": 2023,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bis.org/speeches/20230518-trust-and-public-policies",
+        "edition": "BIS speech",
+        "pageOrLocator": "section on the nature of money",
+        "publicationYear": 2023,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact sentence verified on the BIS site."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "BIS publication; retained only as a short research quotation.",
+        "evidenceUrl": "https://www.bis.org/speeches/20230518-trust-and-public-policies",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "fiat-money",
+        "trust",
+        "intrinsic-value",
+        "central-banking"
+      ],
+      "semanticAxes": [
+        "intrinsic-value↔social-trust",
+        "asset↔institution"
+      ],
+      "frizzleQuestion": "If fiat money lacks intrinsic value, which institutions and expectations convert that absence into everyday purchasing power?",
+      "brainFood": [
+        {
+          "label": "BIS — Trust and public policies",
+          "url": "https://www.bis.org/speeches/20230518-trust-and-public-policies",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-boe-money-io-u",
+      "text": "Money today is a type of IOU",
+      "author": "Bank of England",
+      "work": "Money in the modern economy: an introduction",
+      "publicationYear": 2014,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-in-the-modern-economy-an-introduction",
+        "edition": "Bank of England Quarterly Bulletin",
+        "pageOrLocator": "opening summary",
+        "publicationYear": 2014,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the Bank's article."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Bank of England publication; retained as a short research quotation.",
+        "evidenceUrl": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-in-the-modern-economy-an-introduction",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "money",
+        "iou",
+        "claims",
+        "trust"
+      ],
+      "semanticAxes": [
+        "money↔debt",
+        "claim↔acceptability"
+      ],
+      "frizzleQuestion": "What distinguishes an IOU that becomes money from an IOU that remains merely a private promise between two people?",
+      "brainFood": [
+        {
+          "label": "Bank of England — Money in the modern economy",
+          "url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-in-the-modern-economy-an-introduction",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-stablecoin-reference",
+      "text": "A stablecoin is a type of crypto asset designed to maintain a stable value relative to a reference asset",
+      "author": "U.S. Securities and Exchange Commission, Division of Corporation Finance",
+      "work": "Statement on Stablecoins",
+      "publicationYear": 2025,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/newsroom/speeches-statements/statement-stablecoins-040425",
+        "edition": "SEC staff statement",
+        "pageOrLocator": "Stablecoins Generally",
+        "publicationYear": 2025,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the official SEC statement."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/newsroom/speeches-statements/statement-stablecoins-040425",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "stablecoin",
+        "reference-asset",
+        "token",
+        "redemption"
+      ],
+      "semanticAxes": [
+        "token↔reference-asset",
+        "stability↔mechanism"
+      ],
+      "frizzleQuestion": "What does 'stable' actually require: a target price, credible redemption, sufficient reserves, or confidence that everyone else will redeem later?",
+      "brainFood": [
+        {
+          "label": "SEC — Statement on Stablecoins",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/statement-stablecoins-040425",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-hft-orders-cancels",
+      "text": "it generally involves a trading strategy where there are a large number of orders and also a large number of cancellations",
+      "author": "U.S. Securities and Exchange Commission",
+      "work": "Testimony Concerning Dark Pools, Flash Orders, High Frequency Trading, and Other Market Structure Issues",
+      "publicationYear": 2009,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/newsroom/speeches-statements/ts102809jab-testimony-concerning-dark-pools-flash-orders-high-frequency-trading-other-market-structure-issues",
+        "edition": "SEC testimony",
+        "pageOrLocator": "High Frequency Trading section",
+        "publicationYear": 2009,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in official SEC testimony."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/newsroom/speeches-statements/ts102809jab-testimony-concerning-dark-pools-flash-orders-high-frequency-trading-other-market-structure-issues",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "high-frequency-trading",
+        "orders",
+        "cancellations",
+        "market-microstructure"
+      ],
+      "semanticAxes": [
+        "speed↔liquidity",
+        "orders↔cancellations"
+      ],
+      "frizzleQuestion": "When orders exist for milliseconds and vanish before execution, which part of the displayed market represents genuine willingness to trade?",
+      "brainFood": [
+        {
+          "label": "SEC — High Frequency Trading testimony",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/ts102809jab-testimony-concerning-dark-pools-flash-orders-high-frequency-trading-other-market-structure-issues",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-doj-spoofing-definition",
+      "text": "Spoofing is the manipulative trading tactic of placing a non-bona fide order, with the intent to cancel the order before it is executed",
+      "author": "U.S. Department of Justice",
+      "work": "Northern California Man Pleads Guilty to Years-Long Securities Fraud Spoofing Scheme",
+      "publicationYear": 2026,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.justice.gov/opa/pr/northern-california-man-pleads-guilty-years-long-securities-fraud-spoofing-scheme",
+        "edition": "DOJ press release, 25 June 2026",
+        "pageOrLocator": "scheme description",
+        "publicationYear": 2026,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the DOJ release."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.justice.gov/opa/pr/northern-california-man-pleads-guilty-years-long-securities-fraud-spoofing-scheme",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "spoofing",
+        "algorithmic-trading",
+        "market-manipulation",
+        "orders"
+      ],
+      "semanticAxes": [
+        "displayed-demand↔fake-demand",
+        "order↔intention"
+      ],
+      "frizzleQuestion": "What should a market price mean when some visible orders were placed precisely because their owner never intended them to trade?",
+      "brainFood": [
+        {
+          "label": "DOJ — 2026 spoofing case",
+          "url": "https://www.justice.gov/opa/pr/northern-california-man-pleads-guilty-years-long-securities-fraud-spoofing-scheme",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-dark-pools-private",
+      "text": "Dark pools are essentially private trading systems in which participants can transact their trades outside of the public markets.",
+      "author": "U.S. Securities and Exchange Commission",
+      "work": "Statement at SEC Open Meeting",
+      "publicationYear": 2009,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/newsroom/speeches-statements/spch102109mls-statement-sec-open-meeting",
+        "edition": "SEC Chair Mary L. Schapiro statement",
+        "pageOrLocator": "Dark pools discussion",
+        "publicationYear": 2009,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the SEC statement."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/newsroom/speeches-statements/spch102109mls-statement-sec-open-meeting",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "dark-pools",
+        "private-markets",
+        "transparency",
+        "liquidity"
+      ],
+      "semanticAxes": [
+        "private-liquidity↔public-price",
+        "execution↔transparency"
+      ],
+      "frizzleQuestion": "How can public prices remain informative when a meaningful fraction of buying and selling interest is intentionally kept away from public quotes?",
+      "brainFood": [
+        {
+          "label": "SEC — Dark Pools statement",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/spch102109mls-statement-sec-open-meeting",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-flash-crash-futures",
+      "text": "the problem actually originated in the futures market for S&P 500 “E-Mini” contracts",
+      "author": "U.S. Securities and Exchange Commission",
+      "work": "Transformational Technologies, Market Structure, and the SEC",
+      "publicationYear": 2013,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/newsroom/speeches-statements/2013-spch061813gebhtm",
+        "edition": "SEC speech recounting Flash Crash analysis",
+        "pageOrLocator": "Flash Crash reconstruction",
+        "publicationYear": 2013,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the SEC speech."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/newsroom/speeches-statements/2013-spch061813gebhtm",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "flash-crash",
+        "futures",
+        "market-contagion",
+        "market-structure"
+      ],
+      "semanticAxes": [
+        "local-trigger↔systemic-cascade",
+        "perception↔reconstruction"
+      ],
+      "frizzleQuestion": "Why can a market event look as if it began in one venue when order-book reconstruction later places the trigger somewhere else?",
+      "brainFood": [
+        {
+          "label": "SEC — Transformational Technologies and Market Structure",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/2013-spch061813gebhtm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-microseconds-cancels",
+      "text": "less than 8% of all cancelations are faster than 500 microseconds.",
+      "author": "U.S. Securities and Exchange Commission",
+      "work": "The Speed of the Equity Markets",
+      "publicationYear": 2013,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/about/speed-equity-markets",
+        "edition": "SEC market-data explainer",
+        "pageOrLocator": "What the Chart Reveals",
+        "publicationYear": 2013,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on the SEC data page."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/about/speed-equity-markets",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "speed",
+        "microseconds",
+        "cancellations",
+        "market-data"
+      ],
+      "semanticAxes": [
+        "human-time↔machine-time",
+        "speed↔market-behavior"
+      ],
+      "frizzleQuestion": "What happens to equal access to a market when economically meaningful decisions occur on timescales no human trader can perceive or answer?",
+      "brainFood": [
+        {
+          "label": "SEC — The Speed of the Equity Markets",
+          "url": "https://www.sec.gov/about/speed-equity-markets",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-doj-false-supply-demand",
+      "text": "These deceptive orders were intended to inject false and misleading information about the genuine supply and demand",
+      "author": "U.S. Department of Justice",
+      "work": "Former J.P. Morgan Traders Convicted of Fraud, Attempted Price Manipulation, and Spoofing",
+      "publicationYear": 2022,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.justice.gov/archives/opa/pr/former-jp-morgan-traders-convicted-fraud-attempted-price-manipulation-and-spoofing-multi-year",
+        "edition": "DOJ press release",
+        "pageOrLocator": "description of spoofing scheme",
+        "publicationYear": 2022,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the DOJ release."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.justice.gov/archives/opa/pr/former-jp-morgan-traders-convicted-fraud-attempted-price-manipulation-and-spoofing-multi-year",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "wall-street",
+        "spoofing",
+        "supply-demand",
+        "price-manipulation"
+      ],
+      "semanticAxes": [
+        "market-signal↔deception",
+        "supply-demand↔manufactured-appearance"
+      ],
+      "frizzleQuestion": "If supply and demand are inferred from orders, how vulnerable is price discovery to traders who manufacture the appearance of both?",
+      "brainFood": [
+        {
+          "label": "DOJ — J.P. Morgan spoofing convictions",
+          "url": "https://www.justice.gov/archives/opa/pr/former-jp-morgan-traders-convicted-fraud-attempted-price-manipulation-and-spoofing-multi-year",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-fincen-laundering-disguise",
+      "text": "Money laundering involves disguising financial assets so they can be used without detection of the illegal activity that produced them.",
+      "author": "Financial Crimes Enforcement Network",
+      "work": "What is money laundering?",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.fincen.gov/what-money-laundering",
+        "edition": "FinCEN official explainer",
+        "pageOrLocator": "definition of money laundering",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on FinCEN's official page."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.fincen.gov/what-money-laundering",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "money-laundering",
+        "criminal-proceeds",
+        "disguise",
+        "financial-system"
+      ],
+      "semanticAxes": [
+        "source↔appearance",
+        "illegal-proceeds↔legal-use"
+      ],
+      "frizzleQuestion": "At what point does moving money stop being ordinary financial complexity and become an attempt to sever assets from the history that gives them legal meaning?",
+      "brainFood": [
+        {
+          "label": "FinCEN — What is money laundering?",
+          "url": "https://www.fincen.gov/what-money-laundering",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-fincen-three-stages",
+      "text": "Typically, it involves three steps: placement, layering and integration.",
+      "author": "Financial Crimes Enforcement Network",
+      "work": "History of Anti-Money Laundering Laws",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.fincen.gov/resources/history-anti-money-laundering-laws",
+        "edition": "FinCEN official explainer",
+        "pageOrLocator": "three-stage description",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on FinCEN's official page."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.fincen.gov/resources/history-anti-money-laundering-laws",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "placement",
+        "layering",
+        "integration",
+        "money-laundering"
+      ],
+      "semanticAxes": [
+        "entry↔obfuscation↔integration",
+        "transaction-chain↔source-trace"
+      ],
+      "frizzleQuestion": "Which stage of laundering changes the money itself least while changing most how difficult its origin becomes to reconstruct?",
+      "brainFood": [
+        {
+          "label": "FinCEN — History of AML Laws",
+          "url": "https://www.fincen.gov/resources/history-anti-money-laundering-laws",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-fatf-anonymous-shells",
+      "text": "Anonymous shell companies are one of the most widely used methods for laundering the proceeds of crime and corruption.",
+      "author": "Financial Action Task Force",
+      "work": "Best Practices on Beneficial Ownership for Legal Persons",
+      "publicationYear": 2019,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Best-practices-beneficial-ownership-legal-persons.html",
+        "edition": "FATF best-practices page",
+        "pageOrLocator": "opening summary",
+        "publicationYear": 2019,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on the FATF site."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "FATF publication; retained as a short research quotation.",
+        "evidenceUrl": "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Best-practices-beneficial-ownership-legal-persons.html",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "shell-companies",
+        "beneficial-ownership",
+        "corruption",
+        "money-laundering"
+      ],
+      "semanticAxes": [
+        "legal-owner↔beneficial-owner",
+        "corporate-form↔opacity"
+      ],
+      "frizzleQuestion": "Why can a perfectly legal corporate structure become powerful laundering infrastructure without any single transaction looking unusual on its own?",
+      "brainFood": [
+        {
+          "label": "FATF — Beneficial Ownership best practices",
+          "url": "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Best-practices-beneficial-ownership-legal-persons.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-fincen-anonymity-mask",
+      "text": "Criminals abuse this anonymity to mask their identities, involvement in transactions, and origins of their wealth",
+      "author": "Financial Crimes Enforcement Network",
+      "work": "FinCEN Advisory FIN-2017-A003",
+      "publicationYear": 2017,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.fincen.gov/resources/advisories/fincen-advisory-fin-2017-a003",
+        "edition": "FinCEN real-estate advisory",
+        "pageOrLocator": "Use of Shell Companies Decreases Transparency",
+        "publicationYear": 2017,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the official advisory."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.fincen.gov/resources/advisories/fincen-advisory-fin-2017-a003",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "shell-companies",
+        "real-estate",
+        "anonymity",
+        "beneficial-ownership"
+      ],
+      "semanticAxes": [
+        "anonymity↔accountability",
+        "legal-vehicle↔hidden-controller"
+      ],
+      "frizzleQuestion": "When ownership can be separated across nominees, companies, trusts, and jurisdictions, which record should count as the real answer to 'whose money is this'?",
+      "brainFood": [
+        {
+          "label": "FinCEN — Real Estate AML Advisory",
+          "url": "https://www.fincen.gov/resources/advisories/fincen-advisory-fin-2017-a003",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-doj-tornado-untraceable",
+      "text": "a cryptocurrency mixer that allowed its customers to engage in untraceable transfers of cryptocurrency.",
+      "author": "U.S. Department of Justice",
+      "work": "Tornado Cash Founders Charged With Money Laundering and Sanctions Violations",
+      "publicationYear": 2023,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.justice.gov/usao-sdny/pr/tornado-cash-founders-charged-money-laundering-and-sanctions-violations",
+        "edition": "SDNY/DOJ press release",
+        "pageOrLocator": "allegations describing Tornado Cash",
+        "publicationYear": 2023,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the DOJ release; the case description is an allegation at the charging stage, not a final adjudication of every claim."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.justice.gov/usao-sdny/pr/tornado-cash-founders-charged-money-laundering-and-sanctions-violations",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "crypto-mixer",
+        "money-laundering",
+        "privacy",
+        "traceability"
+      ],
+      "semanticAxes": [
+        "privacy↔traceability",
+        "protocol↔illicit-use"
+      ],
+      "frizzleQuestion": "How should a system distinguish privacy that protects ordinary users from architecture deliberately marketed for hiding criminal transaction trails?",
+      "brainFood": [
+        {
+          "label": "DOJ — Tornado Cash charging release",
+          "url": "https://www.justice.gov/usao-sdny/pr/tornado-cash-founders-charged-money-laundering-and-sanctions-violations",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "Charging-stage allegations are kept source-typed and not silently rewritten as final findings.",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-treasury-nft-launder",
+      "text": "illicit actors can use NFTs to launder proceeds from predicate crimes",
+      "author": "U.S. Department of the Treasury",
+      "work": "2024 Non-fungible Token Illicit Finance Risk Assessment",
+      "publicationYear": 2024,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://home.treasury.gov/news/press-releases/jy2382",
+        "edition": "Treasury press release summarizing risk assessment",
+        "pageOrLocator": "assessment findings",
+        "publicationYear": 2024,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in Treasury's release."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://home.treasury.gov/news/press-releases/jy2382",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "nft",
+        "money-laundering",
+        "fraud",
+        "digital-art-market"
+      ],
+      "semanticAxes": [
+        "collectible↔financial-rail",
+        "market-trade↔source-obfuscation"
+      ],
+      "frizzleQuestion": "Which features of a thinly traded collectible market make it especially easy to manufacture prices, counterparties, or transaction histories that look economically meaningful?",
+      "brainFood": [
+        {
+          "label": "U.S. Treasury — NFT Illicit Finance Risk Assessment",
+          "url": "https://home.treasury.gov/news/press-releases/jy2382",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-bitcoin-peer-to-peer-cash",
+      "text": "A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another",
+      "author": "Satoshi Nakamoto",
+      "work": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "publicationYear": 2008,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://bitcoin.org/bitcoin.pdf",
+        "edition": "Bitcoin whitepaper",
+        "pageOrLocator": "Abstract, p. 1",
+        "publicationYear": 2008,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the canonical whitepaper PDF."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The whitepaper's copyright/licensing history is not treated as globally public-domain; retained as a short research quotation.",
+        "evidenceUrl": "https://bitcoin.org/bitcoin.pdf",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "bitcoin",
+        "peer-to-peer",
+        "electronic-cash",
+        "intermediaries"
+      ],
+      "semanticAxes": [
+        "peer-to-peer↔financial-intermediary",
+        "cryptographic-proof↔institutional-trust"
+      ],
+      "frizzleQuestion": "Which functions of a financial intermediary disappear in a peer-to-peer payment design—and which functions merely reappear as software, consensus, custody, or governance?",
+      "brainFood": [
+        {
+          "label": "Bitcoin whitepaper",
+          "url": "https://bitcoin.org/bitcoin.pdf",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-ethereum-built-in-language",
+      "text": "a blockchain with a built-in Turing-complete programming language",
+      "author": "Vitalik Buterin",
+      "work": "Ethereum Whitepaper",
+      "publicationYear": 2014,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://ethereum.org/whitepaper/",
+        "edition": "Ethereum.org preserved original whitepaper",
+        "pageOrLocator": "Ethereum section",
+        "publicationYear": 2014,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on Ethereum.org; the site notes that the original whitepaper no longer describes every aspect of today's Ethereum."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Modern copyrighted whitepaper/site text; research-only short quotation.",
+        "evidenceUrl": "https://ethereum.org/whitepaper/",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "ethereum",
+        "smart-contracts",
+        "blockchain",
+        "programmability"
+      ],
+      "semanticAxes": [
+        "ledger↔computer",
+        "transaction↔programmable-rule"
+      ],
+      "frizzleQuestion": "What new risks appear when a ledger stops merely recording ownership and starts executing arbitrary rules about ownership itself?",
+      "brainFood": [
+        {
+          "label": "Ethereum Whitepaper",
+          "url": "https://ethereum.org/whitepaper/",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-sec-meme-demand-speculation",
+      "text": "their value is driven primarily by market demand and speculation.",
+      "author": "U.S. Securities and Exchange Commission, Division of Corporation Finance",
+      "work": "Staff Statement on Meme Coins",
+      "publicationYear": 2025,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sec.gov/newsroom/speeches-statements/staff-statement-meme-coins",
+        "edition": "SEC staff statement",
+        "pageOrLocator": "description of meme coin characteristics",
+        "publicationYear": 2025,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the February 2025 SEC staff statement; the statement is staff guidance, not a rule or Commission adjudication."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.sec.gov/newsroom/speeches-statements/staff-statement-meme-coins",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "meme-coins",
+        "speculation",
+        "demand",
+        "utility"
+      ],
+      "semanticAxes": [
+        "price↔utility",
+        "community↔speculation"
+      ],
+      "frizzleQuestion": "What sustains a token whose price depends mainly on the expectation that another buyer will later value the same collective joke or narrative?",
+      "brainFood": [
+        {
+          "label": "SEC — Staff Statement on Meme Coins",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/staff-statement-meme-coins",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-polymarket-bet-beliefs",
+      "text": "offered the public the opportunity to “bet on your beliefs” by buying and selling binary options contracts related to an event",
+      "author": "Commodity Futures Trading Commission",
+      "work": "CFTC Order concerning Polymarket",
+      "publicationYear": 2022,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.cftc.gov/PressRoom/PressReleases/8478-22",
+        "edition": "CFTC enforcement release, 3 January 2022",
+        "pageOrLocator": "Case Background",
+        "publicationYear": 2022,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the CFTC release describing Polymarket's event markets at that time; no claim is made here about Polymarket's current 2026 regulatory status."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.cftc.gov/PressRoom/PressReleases/8478-22",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "polymarket",
+        "prediction-markets",
+        "event-contracts",
+        "binary-options"
+      ],
+      "semanticAxes": [
+        "belief↔price",
+        "prediction↔wager"
+      ],
+      "frizzleQuestion": "When a market price aggregates bets about an event, how do you tell whether it measures information, incentives, liquidity, tribal conviction, or all four?",
+      "brainFood": [
+        {
+          "label": "CFTC — Polymarket 2022 order",
+          "url": "https://www.cftc.gov/PressRoom/PressReleases/8478-22",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-ponzi-new-investors",
+      "text": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors.",
+      "author": "U.S. Securities and Exchange Commission / Investor.gov",
+      "work": "Ponzi Schemes glossary",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+        "edition": "Investor.gov glossary",
+        "pageOrLocator": "definition",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on the SEC's investor education site."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Official U.S. federal government text.",
+        "evidenceUrl": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "ponzi",
+        "new-investors",
+        "returns",
+        "fraud"
+      ],
+      "semanticAxes": [
+        "investment-return↔new-inflow",
+        "growth↔collapse"
+      ],
+      "frizzleQuestion": "Which speculative markets merely require new buyers for prices to rise, and which cross the line into fraud because new money is directly paying old investors?",
+      "brainFood": [
+        {
+          "label": "Investor.gov — Ponzi Schemes",
+          "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-bis-blockchain-tradeoffs",
+      "text": "trade-offs between decentralisation, security and scalability.",
+      "author": "Bank for International Settlements",
+      "work": "Blockchain consensus mechanisms and fragmentation",
+      "publicationYear": 2026,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.bis.org/publications/bulletin-126-blockchain-consensus-mechanisms-and-fragmentation",
+        "edition": "BIS Bulletin 126",
+        "pageOrLocator": "Key takeaways",
+        "publicationYear": 2026,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the July 2026 BIS bulletin."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "BIS publication; retained as a short research quotation.",
+        "evidenceUrl": "https://www.bis.org/publications/bulletin-126-blockchain-consensus-mechanisms-and-fragmentation",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "blockchain",
+        "decentralization",
+        "security",
+        "scalability"
+      ],
+      "semanticAxes": [
+        "decentralization↔scalability",
+        "security↔coordination"
+      ],
+      "frizzleQuestion": "Which 'decentralized' design choices actually move trust elsewhere—to validators, bridges, token holders, developers, exchanges, or governance processes?",
+      "brainFood": [
+        {
+          "label": "BIS — Blockchain consensus mechanisms and fragmentation",
+          "url": "https://www.bis.org/publications/bulletin-126-blockchain-consensus-mechanisms-and-fragmentation",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-gesell-instrument-exchange",
+      "text": "Money is an instrument of exchange and nothing else.",
+      "author": "Silvio Gesell",
+      "work": "The Natural Economic Order — Free-Money",
+      "publicationYear": 1916,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.community-exchange.org/docs/Gesell/en/neo/part4/1.htm",
+        "edition": "Historical English translation hosted by Community Exchange",
+        "pageOrLocator": "Part IV, Chapter 1 — Free-Money",
+        "publicationYear": 1916,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the complete English text hosted by Community Exchange."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Gesell's underlying work is public domain, but this batch does not independently resolve the exact English translation's rights chain.",
+        "evidenceUrl": "https://www.community-exchange.org/docs/Gesell/en/neo/part4/1.htm",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "free-money",
+        "exchange",
+        "demurrage",
+        "alternative-currency"
+      ],
+      "semanticAxes": [
+        "money↔exchange",
+        "hoarding↔circulation"
+      ],
+      "frizzleQuestion": "What would change if a currency were designed primarily to circulate rather than also to reward holding it?",
+      "brainFood": [
+        {
+          "label": "Gesell — The Natural Economic Order",
+          "url": "https://www.community-exchange.org/docs/Gesell/en/neo/part4/1.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-warren-cost-limit",
+      "text": "in neither do we go beyond cost as the limit of price.",
+      "author": "Josiah Warren",
+      "work": "Equitable Commerce",
+      "publicationYear": 1846,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://panarchy.org/warren/commerce.html",
+        "edition": "Excerpt from Equitable Commerce",
+        "pageOrLocator": "discussion of land and equitable price",
+        "publicationYear": 1846,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in a curated transcription of Warren's public-domain English work; a scan of the original edition was not pinned in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Warren died in 1874 and the 1846 English work is public domain.",
+        "evidenceUrl": "https://panarchy.org/warren/commerce.html",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "labor-notes",
+        "cost-principle",
+        "alternative-exchange",
+        "price"
+      ],
+      "semanticAxes": [
+        "cost↔price",
+        "labor↔exchange-value"
+      ],
+      "frizzleQuestion": "What would a market look like if price were constrained by the seller's cost rather than by scarcity, bargaining power, or willingness to pay?",
+      "brainFood": [
+        {
+          "label": "Josiah Warren — Equitable Commerce excerpt",
+          "url": "https://panarchy.org/warren/commerce.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-timebank-hour-credit",
+      "text": "One hour of service given earns one-time credit.",
+      "author": "TimeBanks.Org",
+      "work": "Terms of Service / TimeBanking principles",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.timebanks.org/terms-and-conditions",
+        "edition": "Current TimeBanks.Org terms and core-value description",
+        "pageOrLocator": "TimeBanking golden rule",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified on TimeBanks.Org."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Current organizational website text; research-only quotation.",
+        "evidenceUrl": "https://www.timebanks.org/terms-and-conditions",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "timebank",
+        "time-credit",
+        "reciprocity",
+        "labor"
+      ],
+      "semanticAxes": [
+        "hour↔unit-of-account",
+        "different-work↔equal-time"
+      ],
+      "frizzleQuestion": "What becomes fairer—and what becomes distorted—when one hour is valued equally regardless of whether it is surgery, childcare, tutoring, or repair work?",
+      "brainFood": [
+        {
+          "label": "TimeBanks.Org — TimeBanking golden rule",
+          "url": "https://www.timebanks.org/terms-and-conditions",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-mutual-credit-accounting",
+      "text": "The MCS is defined as a pure accounting system of exchange",
+      "author": "Jorim Schraven",
+      "work": "Mutual Credit Systems and the Commons Problem",
+      "publicationYear": 2001,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.ijccr.net/article/view/9061",
+        "edition": "International Journal of Community Currency Research, Vol. 5",
+        "pageOrLocator": "Abstract",
+        "publicationYear": 2001,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the journal abstract; article is published under CC BY-NC-SA 4.0 on the journal page."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "CC BY-NC-SA licensed scholarly work; retained as a short quotation pending any public/commercial-runtime rights review.",
+        "evidenceUrl": "https://www.ijccr.net/article/view/9061",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "mutual-credit",
+        "accounting",
+        "community-currency",
+        "endogenous-money"
+      ],
+      "semanticAxes": [
+        "currency-token↔ledger-balance",
+        "central-supply↔mutual-credit"
+      ],
+      "frizzleQuestion": "If exchange units arise as balanced credits and debits among members, where does 'the money supply' actually reside in the system?",
+      "brainFood": [
+        {
+          "label": "IJCCR — Mutual Credit Systems and the Commons Problem",
+          "url": "https://www.ijccr.net/article/view/9061",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-lets-local-unit",
+      "text": "exchange them priced in a local unit of currency.",
+      "author": "Colin C. Williams",
+      "work": "Local Exchange and Trading Systems: A New Source of Work and Credit for the Poor and Unemployed?",
+      "publicationYear": 1996,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://journals.sagepub.com/doi/10.1068/a281395",
+        "edition": "Environment and Planning A, Vol. 28",
+        "pageOrLocator": "Abstract",
+        "publicationYear": 1996,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the publisher abstract."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Modern copyrighted scholarly article; research-only quotation.",
+        "evidenceUrl": "https://journals.sagepub.com/doi/10.1068/a281395",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "lets",
+        "local-currency",
+        "work",
+        "credit"
+      ],
+      "semanticAxes": [
+        "national-money↔local-unit",
+        "unused-capacity↔exchange"
+      ],
+      "frizzleQuestion": "What kinds of work become exchangeable when a community can issue its own accounting unit even when national-currency cash is scarce?",
+      "brainFood": [
+        {
+          "label": "Williams — Local Exchange and Trading Systems",
+          "url": "https://journals.sagepub.com/doi/10.1068/a281395",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r13-wir-centralized-credit",
+      "text": "It is really a centralized credit system for multilateral exchange, however, with no physical currency.",
+      "author": "James Stodder",
+      "work": "Complementary credit networks and macroeconomic stability: Switzerland's Wirtschaftsring",
+      "publicationYear": 2009,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.sciencedirect.com/science/article/abs/pii/S0167268109001772",
+        "edition": "Journal of Economic Behavior & Organization, Vol. 72",
+        "pageOrLocator": "Introduction",
+        "publicationYear": 2009,
+        "retrievedAt": "2026-10-07",
+        "notes": "Exact wording verified in the publisher text."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Modern copyrighted scholarly article; research-only quotation.",
+        "evidenceUrl": "https://www.sciencedirect.com/science/article/abs/pii/S0167268109001772",
+        "checkedAt": "2026-10-07"
+      },
+      "themes": [
+        "wir",
+        "complementary-currency",
+        "multilateral-exchange",
+        "credit-network"
+      ],
+      "semanticAxes": [
+        "currency↔credit-network",
+        "bilateral-barter↔multilateral-clearing"
+      ],
+      "frizzleQuestion": "How does multilateral credit solve the barter problem if no physical alternative currency needs to circulate between participants?",
+      "brainFood": [
+        {
+          "label": "Stodder — Switzerland's WIR credit network",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167268109001772",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-07",
+          "notes": "Source used for wording, mechanism, or source-context verification."
+        }
+      ],
+      "curatorNotes": "",
+      "mappingNotes": "No deck/card/island/billboard/world/multiverse mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
