@@ -1,83 +1,101 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
-Date: 2026-10-05
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–02 COMPLETE · RESEARCH EXPANSION ACTIVE
+Date: 2026-10-06
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–03 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: dec02972692bf6c2a35bde96c9ec77016140fff7
+Last verified branch head before this Return write: f998cabf5ed99dda5e07c985e334d8730aa1830f
 
 ## Georg continuation decision
 
-Georg explicitly asked on 2026-10-05 to keep filling the quote pool so longer stays on an island do not collapse into the same repeated quotations.
+Georg explicitly asked to continue filling the pool so longer stays on an island do not collapse into repeated quotations.
 
 Classification:
 **PROCEED PASS · RESEARCH EXPANSION**
 
-This closes the previous research-expansion pause. It does **not** approve any individual quote for public runtime and does not authorize runtime/3D work.
+This does not approve individual quotes for public runtime and does not authorize H13/Billboard/3D runtime work.
 
 ## Current research inventory
 
 ### Mapped Batch 01
-
-First 10 canonical decks from `media/kfb/index.json`:
-- 10 deck profiles researched;
-- 3 candidates per deck;
-- **30 mapped quote candidates** total;
+- first 10 canonical decks;
+- **30 mapped quote candidates**;
 - provenance: **27 VERIFIED · 3 SECONDARY_ONLY · 0 UNVERIFIED**;
-- rights: **21 PUBLIC_DOMAIN_CONFIRMED · 6 RESEARCHED_RESTRICTED · 2 RESEARCHED_QUOTE_LIMIT_ONLY · 1 DRAFT_RIGHTS_UNKNOWN**;
 - validation: **13/13 PASS**.
 
 File:
 `QUOTE_POOL_BATCH_01.json`
 
 ### Research Reserve 01
-
-- **25 deliberately unmapped quote + FrizzleQuestion candidates**;
+- **25 deliberately unmapped candidates**;
 - provenance: **24 VERIFIED · 1 SECONDARY_ONLY · 0 UNVERIFIED**;
-- rights: **22 PUBLIC_DOMAIN_CONFIRMED · 2 RESEARCHED_RESTRICTED · 1 RESEARCHED_QUOTE_LIMIT_ONLY**;
 - validation: **14/14 PASS**.
 
 File:
 `QUOTE_RESEARCH_RESERVE_01.json`
 
 ### Research Reserve 02
-
-Added on 2026-10-05 specifically to deepen future island/Billboard rotation:
-
-- **30 deliberately unmapped quote + FrizzleQuestion candidates**;
+- **30 deliberately unmapped candidates**;
 - provenance: **30 VERIFIED · 0 SECONDARY_ONLY · 0 UNVERIFIED**;
-- rights: **29 PUBLIC_DOMAIN_CONFIRMED · 1 DRAFT_RIGHTS_UNKNOWN**;
 - validation: **16/16 PASS**;
-- zero quote-text or ID collisions against the prior 55-candidate inventory.
+- zero text/ID collisions against prior inventory.
 
 File:
 `QUOTE_RESEARCH_RESERVE_02.json`
 
-Reserve 02 expands semantic range across:
-- evidence vs theory;
-- language vs power;
-- crowd contagion and social imitation;
-- custom vs legitimacy;
-- resistance, law and counter-power;
-- institutional checks;
-- passion vs reasoning;
-- economics, work and abundance;
-- emergence vs deliberate design;
-- sentience and moral status;
-- selfhood and perceptual flux;
-- rationalization and preference;
-- interests vs principles;
-- historical selection;
-- abstraction vs particularity;
-- perspective limits;
-- empathy and other minds.
+### Research Reserve 03
 
-Representative new authors include Arthur Conan Doyle, Lewis Carroll, Charles Mackay, Gustave Le Bon, Thomas Paine, Frederick Douglass, John Locke, James Madison, Montesquieu, Mark Twain, George Santayana, William Graham Sumner, David Hume, John Ruskin, Oscar Wilde, Charles Babbage, Adam Ferguson, Jeremy Bentham, Edmund Burke, John Maynard Keynes, Karl Marx & Friedrich Engels, Jane Austen, Ambrose Bierce, William Blake, Arthur Schopenhauer and George Eliot.
+Added 2026-10-06 as another rotation-depth batch.
 
-The one Reserve-02 open rights case is Gustave Le Bon's early English `The Crowd` edition: wording is edition-verified, but this batch did not establish the translator identity/term for EU public-runtime clearance. It stays `DRAFT_RIGHTS_UNKNOWN`.
+- **30 deliberately unmapped quote + FrizzleQuestion candidates**;
+- **30 distinct authors** in this batch;
+- provenance: **21 VERIFIED · 9 SECONDARY_ONLY · 0 UNVERIFIED**;
+- rights:
+  - **18 PUBLIC_DOMAIN_CONFIRMED**
+  - **5 RESEARCHED_RESTRICTED**
+  - **3 RESEARCHED_QUOTE_LIMIT_ONLY**
+  - **4 DRAFT_RIGHTS_UNKNOWN**
+- validation: **18/18 PASS**;
+- zero ID/text collisions against the prior 85-item inventory.
+
+File:
+`QUOTE_RESEARCH_RESERVE_03.json`
+
+Reserve 03 deliberately broadens rotation across:
+- conviction vs inquiry;
+- evidence ethics;
+- free speech and conditions for truth;
+- tolerance of error;
+- liberty, obedience and responsibility;
+- denial of facts;
+- common good and interdependence;
+- unity vs uniformity;
+- race and historical social division;
+- conformity and contrarianism;
+- wonder vs testability;
+- self-deception and scientific integrity;
+- maps/models vs territory;
+- medium vs content;
+- performed identity;
+- Ubuntu / relational personhood;
+- conscious intention vs unconscious drives;
+- imagination vs rigor;
+- law as accumulated experience;
+- false facts vs false theories;
+- preparation and chance;
+- intuition vs proof;
+- truth vs concealment;
+- custom vs choice;
+- stability vs growth;
+- looking vs seeing;
+- conscious ignorance;
+- adaptation vs blind conservatism.
+
+Representative authors:
+Friedrich Nietzsche, William K. Clifford, C. S. Peirce, John Milton, Thomas Jefferson, Walt Whitman, George Bernard Shaw, Aldous Huxley, Jane Addams, Mary Parker Follett, W. E. B. Du Bois, G. K. Chesterton, Michael Faraday, Richard Feynman, Alfred Korzybski, Marshall McLuhan, Kurt Vonnegut, Desmond Tutu, Sigmund Freud, John Dewey, Oliver Wendell Holmes Jr., Charles Darwin, Louis Pasteur, Henri Poincaré, Ida B. Wells, John Stuart Mill, Ralph Waldo Emerson, Henry David Thoreau, James Clerk Maxwell and Henry George.
 
 ## Combined depth
 
@@ -86,63 +104,80 @@ Current researched inventory:
 - mapped Batch 01: **30**
 - unmapped Reserve 01: **25**
 - unmapped Reserve 02: **30**
-- **combined: 85 researched quote/question candidates**
+- unmapped Reserve 03: **30**
+- **combined: 115 researched quote/question candidates**
 
 Important:
-**85 researched candidates ≠ 85 approved quotes per island.**
+**115 researched candidates ≠ 115 approved quotes per island.**
 
-The two reserves remain:
+The reserve candidates remain:
 `UNMAPPED_BY_DESIGN`
 
 No deck/Card/island/biome/Billboard assignment is invented during research.
 
 ## Rotation intent
 
-Reserve 02 records a research-only rotation intent so later mapping can create deeper island pools.
-
-Later selection should consider:
-- semantic/theme fit;
-- author diversity;
-- historical-era diversity;
-- tone diversity;
+Future context pools should diversify:
+- theme;
+- author;
+- historical era;
+- discipline;
+- tone;
 - rights eligibility;
-- recent-repeat suppression.
+- recent-repeat history.
 
-This supports Georg's product goal that a player can remain on an island for a while without seeing the same small quote set repeatedly.
+The goal is a substantial approved subset per island/context so longer play does not immediately repeat the same quotations or the same handful of thinkers.
+
+No numeric per-island threshold is declared before actual island mapping and expected quote-cycle timing are known.
 
 No runtime selector was modified in this slice.
 
-A future island should only be called meaningfully covered after its actually approved/mapped subset has enough depth for the intended play duration. No numeric island threshold is declared here without the later mapping/runtime context.
+## Reserve 03 validation evidence
 
-## Validation / evidence
-
-Reserve 02 repository validation: **16/16 PASS**.
+**18/18 PASS**
 
 Checked:
 - reserve schema id;
 - exactly 30 candidates;
-- unique local IDs;
-- unique local quote texts;
-- no ID collision with the prior 55 records;
-- no quote-text collision with the prior 55 records;
-- every candidate `UNMAPPED_BY_DESIGN`;
-- no premature deck/Card/island/Billboard/biome mapping fields;
+- unique IDs;
+- unique quote texts;
+- 30 unique authors;
+- no ID collision with prior 85;
+- no text collision with prior 85;
+- all `UNMAPPED_BY_DESIGN`;
+- no premature deck/Card/island/Billboard/biome mappings;
 - reserve status;
-- exactly one FrizzleQuestion per candidate;
+- exactly one FrizzleQuestion per quote;
 - question length bounds;
-- HTTPS provenance URLs;
-- Brain Food presence;
-- billboard-reasonable quote length;
-- verification / rights totals;
-- combined inventory = 85.
+- HTTPS provenance;
+- Brain Food present;
+- semantic themes/axes present;
+- billboard-reasonable quote lengths;
+- verification/rights reconciliation;
+- combined inventory = 115.
 
 Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
-Screenshots/browser proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
+Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
+
+## Rights / provenance discipline
+
+No uncertain case is silently promoted.
+
+Reserve 03 deliberately keeps uncertainty visible for:
+- Peirce's manuscript / later-publication status;
+- Huxley and Du Bois jurisdiction split;
+- Korzybski US publication term in 2026;
+- Pasteur and Poincaré exact English translation rights;
+- Ida B. Wells exact original locator;
+- Freud exact English translation;
+- active-copyright Feynman, McLuhan, Vonnegut and Tutu material.
+
+Research presence does not imply public-runtime clearance.
 
 ## Files
 
-Added during Reserve 02:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_02.json`
+Added in Reserve 03:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_03.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -164,6 +199,6 @@ No merge. No Live promotion.
 
 ## One next productive step
 
-**Quote Research Reserve 03 — continue quality-first expansion with another non-duplicative research batch before island/deck/Billboard mapping.**
+**Quote Research Reserve 04 — continue non-duplicative quality-first expansion, with emphasis on medicine/biology, art/literature, economics, systems and everyday human behaviour before mapping.**
 
 Georg action required now: **nothing**.
