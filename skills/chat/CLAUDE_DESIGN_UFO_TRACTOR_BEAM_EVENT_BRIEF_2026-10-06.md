@@ -125,6 +125,21 @@ Return a small event map:
 Do not create a second AudioContext/mixer architecture.
 For this isolated proof, simple preview playback is allowed; runtime integration must later hand semantic hooks to the KFB Audio owner.
 
+## Future module context · do not implement in V1
+
+The tractor-beam proof is intended to become the first member of a broader reusable Beam family:
+
+- **Transfer / Tractor Beam** — abduct, dematerialize, return/drop;
+- **Destruction Beam** — later consumes the canonical destruction mechanics/VFX, especially useful donor patterns from `KFB Seed World Mech Destruction POC 01`, for props/buildings/blocks with explosion + clay debris/dust;
+- **Terraform / Creation Beam** — later uses the clay build/rebuild grammar to assemble absurd props, buildings or structures.
+
+For this V1:
+- implement only Transfer/Tractor behavior;
+- keep beam width/target-bounds, particle/chunk presentation and event timing modular;
+- do not hard-code assumptions that every beam result is "hidden";
+- do not add destruction state, rebuilding state or terraforming now;
+- no standalone destruction engine.
+
 ## Protected boundaries
 
 - no Open World runtime edits;

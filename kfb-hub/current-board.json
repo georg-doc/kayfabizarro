@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-06.7",
-  "updatedAt": "2026-10-06T21:20:00+02:00",
+  "revision": "2026-10-06.8",
+  "updatedAt": "2026-10-06T21:35:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -64,7 +64,7 @@
     {
       "id": "claude-design-ufo-event-lab",
       "title": "READY · Claude Design · UFO Tractor Beam Event Lab",
-      "summary": "Isolated visual/audio proof only: compare source-proven Kenney UFO A/B/C/D, use existing beam/burst donors, prove arrival/hover/beam/dematerialize/rematerialize on prop, Resident-sized and castle-sized targets, audition pinned Audio-library candidates. No Open World writes or persistence.",
+      "summary": "Isolated visual/audio proof only: compare source-proven Kenney UFO A/B/C/D, use existing beam/burst donors, prove arrival/hover/beam/dematerialize/rematerialize on prop, Resident-sized and castle-sized targets, audition pinned Audio-library candidates. Architect beam targeting/particles modularly so later Destruction Beam and Terraform/Create Beam can reuse the presentation grammar; do not implement those future modes now.",
       "badge": "READY · SAFE PARALLEL",
       "action": "Claude Design Brief öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
@@ -109,7 +109,7 @@
       "badge": "STARTABLE NOW",
       "status": "ready",
       "provider": "Claude Design · isolated visual/audio lab",
-      "desc": "Source-first UFO/beam/Clay-dematerialization proof with existing SFX. Completely separate from the running/local Open World core.",
+      "desc": "Source-first UFO/beam/Clay-dematerialization proof with existing SFX. V1 is Transfer only, but its beam/target/particle grammar must remain reusable for later Destruction and Terraform/Create Beam modes.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md",
       "tags": [
         "ufo",
@@ -120,7 +120,7 @@
         "audio",
         "world event"
       ],
-      "prompt": "Work from georg-doc/kayfabizarro main.\nRead skills/chat/START_HERE.md, then skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md and its UFO/audio prep sources.\nBuild only the isolated Event Lab. Show the actual Kenney UFO donors A/B/C/D in isolation before choosing one. Prove arrival/hover/beam/dematerialize/rematerialize for small, Resident-sized and castle-sized targets and audition only existing repo SFX first.\nDo not edit Open World #360/PR #348, do not invent persistence, do not invoke Blender, do not build Hunky/Dory characters yet. Return exact sources, visual/audio evidence, changed files, unresolved items and one next gate."
+      "prompt": "Work from georg-doc/kayfabizarro main.\nRead skills/chat/START_HERE.md, then skills/chat/CLAUDE_DESIGN_UFO_TRACTOR_BEAM_EVENT_BRIEF_2026-10-06.md and its UFO/audio prep sources.\nBuild only the isolated Transfer/Tractor Event Lab. Show the actual Kenney UFO donors A/B/C/D in isolation before choosing one. Prove arrival/hover/beam/dematerialize/rematerialize for small, Resident-sized and castle-sized targets and audition only existing repo SFX first.\nKeep beam targeting/bounds, particle/chunk breakup and timing modular because later the same presentation family may support a Destruction Beam using KFB Seed World Mech Destruction POC 01 patterns and a Terraform/Create Beam using the clay build/rebuild grammar.\nDo NOT implement Destruction Beam, Terraform/Create Beam, persistence, Open World #360/PR #348 changes, Blender, or Hunky/Dory characters in V1. Return exact sources, visual/audio evidence, changed files, unresolved items and one next gate."
     },
     {
       "id": "brief-work-coworker-intake-camera-freeze",

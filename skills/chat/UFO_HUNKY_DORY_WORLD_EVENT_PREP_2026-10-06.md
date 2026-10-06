@@ -294,6 +294,71 @@ Pose + Proximity + Gesture + Face + Emanata + optional Bubble + Audio hook.
 - optional ChatterBox commentary;
 - special narrative events.
 
+## 9A · Future Beam family · CONTEXT ONLY, NOT V1 SCOPE
+
+The tractor beam should not become a one-off effect stack.
+
+Longer-term, treat it as one presentation/transfer family with multiple semantic modes:
+
+### A · Tractor / Transfer Beam
+Purpose:
+- abduct / transfer;
+- dematerialize;
+- rematerialize / return;
+- absurd cargo drop.
+
+Consequence:
+- target remains conceptually recoverable;
+- transfer state is distinct from destruction.
+
+### B · Destruction Beam
+Future purpose:
+- destroy props;
+- destroy buildings;
+- destroy whole blocks/sections;
+- produce spectacular explosions, clay debris, dust and chunk breakup.
+
+Mechanic/VFX donor:
+`tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/`
+
+Use the same underlying destruction principles where useful:
+- semantic damage/section ownership;
+- cell/chunk breakup;
+- persistent damage state where applicable;
+- debris / particles / collapse presentation;
+- do not promote the standalone Seed World runtime.
+
+The UFO Destruction Beam should later be a new **event/presentation consumer** of the canonical destruction owner, not a second destruction engine.
+
+### C · Terraform / Creation Beam
+Future purpose:
+- construct / rebuild terrain-facing structures;
+- create absurd props;
+- assemble buildings or landmarks;
+- restore/build sections using the same clay construction grammar.
+
+Visual relationship:
+
+```
+Transfer:
+source object → clay breakup → beam funnel → absent/transferred
+
+Destroy:
+source object → damage/cell breakup → explosion + clay debris/dust → damaged/absent
+
+Create/Terraform:
+particles / clay masses → beam delivery → assemble / sculpt / reveal → source-proven final object
+```
+
+Architecture rule:
+share **event grammar, bounds/beam targeting, particle/chunk presentation, audio hooks and semantic section IDs** where sensible, but keep world consequences separate:
+- transfer state;
+- damage state;
+- construction/rebuild state.
+
+Do not implement Destruction Beam or Terraform Beam in the first Claude Design UFO Event Lab.
+The V1 lab should merely avoid choices that would prevent these later modes.
+
 ## 10 · Current Coworker architecture input · PENDING RETURN
 
 The active Coworker run currently reports:
