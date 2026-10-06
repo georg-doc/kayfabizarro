@@ -1,0 +1,82 @@
+{
+  "schema": "kfb.audio.runtime-registry.v1",
+  "date": "2026-10-06",
+  "owner": "KFB Audio / Jukebox / Mixer",
+  "families": {
+    "G": {
+      "id": "KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01",
+      "status": "SITE_RUNTIME_VERIFIED",
+      "functionHints": ["MOVEMENT"],
+      "bpm": 120,
+      "beatsPerBar": 4,
+      "phraseBars": 8,
+      "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01 Stems (120BPM)",
+      "stems": [
+        {"file":"0 Lead Vocals.mp3","role":"UNCLASSIFIED_VOX_LABEL","default":0},
+        {"file":"1 Drums.mp3","role":"DRUMS","default":0.72},
+        {"file":"2 Bass.mp3","role":"BASS","default":0.78},
+        {"file":"3 Guitar.mp3","role":"GUITARS","default":0.62},
+        {"file":"4 Keyboard.mp3","role":"KEYS","default":0.54},
+        {"file":"5 Percussion.mp3","role":"PERCUSSION","default":0.48},
+        {"file":"6 Strings.mp3","role":"ORCHESTRA_STRINGS","default":0.56},
+        {"file":"7 Synth.mp3","role":"TEXTURE","default":0.42},
+        {"file":"8 Other.mp3","role":"UNCLASSIFIED_OTHER","default":0},
+        {"file":"9 Brass.mp3","role":"ORCHESTRA_BRASS","default":0.34}
+      ],
+      "presets": {
+        "ROAD":{"DRUMS":0.64,"BASS":0.78,"GUITARS":0.64,"KEYS":0.48,"PERCUSSION":0.42,"ORCHESTRA_STRINGS":0.30,"TEXTURE":0.38,"UNCLASSIFIED_OTHER":0,"ORCHESTRA_BRASS":0.14,"UNCLASSIFIED_VOX_LABEL":0},
+        "WIDE":{"DRUMS":0.56,"BASS":0.72,"GUITARS":0.54,"KEYS":0.54,"PERCUSSION":0.40,"ORCHESTRA_STRINGS":0.68,"TEXTURE":0.52,"UNCLASSIFIED_OTHER":0,"ORCHESTRA_BRASS":0.46,"UNCLASSIFIED_VOX_LABEL":0},
+        "EPIC":{"DRUMS":0.78,"BASS":0.82,"GUITARS":0.62,"KEYS":0.46,"PERCUSSION":0.60,"ORCHESTRA_STRINGS":0.82,"TEXTURE":0.48,"UNCLASSIFIED_OTHER":0,"ORCHESTRA_BRASS":0.72,"UNCLASSIFIED_VOX_LABEL":0}
+      }
+    },
+    "D": {
+      "id": "KFB_D_BASE_CONVERSATION_01",
+      "status": "SITE_RUNTIME_VERIFIED",
+      "functionHints": ["TALKING"],
+      "bpm": 94,
+      "beatsPerBar": 4,
+      "phraseBars": 8,
+      "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB CONVERSATION STYLE D · BASE Stems (94BPM)",
+      "stems": [
+        {"file":"0 Lead Vocals.mp3","role":"UNCLASSIFIED_VOX_LABEL","default":0},
+        {"file":"1 Backing Vocals.mp3","role":"UNCLASSIFIED_BACKING_VOX_LABEL","default":0},
+        {"file":"2 Drums.mp3","role":"DRUMS","default":0.34},
+        {"file":"3 Bass.mp3","role":"BASS","default":0.56},
+        {"file":"4 Guitar.mp3","role":"GUITARS","default":0.34},
+        {"file":"5 Keyboard.mp3","role":"KEYS","default":0.52},
+        {"file":"6 Percussion.mp3","role":"PERCUSSION","default":0.24},
+        {"file":"7 Strings.mp3","role":"ORCHESTRA_STRINGS","default":0.26},
+        {"file":"8 Synth.mp3","role":"TEXTURE","default":0.38},
+        {"file":"9 Brass.mp3","role":"ORCHESTRA_BRASS","default":0.16}
+      ],
+      "speechFocus": {
+        "musicGain": 0.72,
+        "eqHz": 2200,
+        "eqQ": 0.85,
+        "eqGainDb": -4.5,
+        "roleMultipliers":{"DRUMS":0.62,"PERCUSSION":0.5,"GUITARS":0.72,"ORCHESTRA_BRASS":0.45,"ORCHESTRA_STRINGS":0.78,"KEYS":0.88,"BASS":0.9,"TEXTURE":0.82}
+      }
+    },
+    "C": {
+      "id": "KFB_C_BASE_COZY_01",
+      "status": "SOURCE_PRESENT_RUNTIME_UNVERIFIED",
+      "functionHints": ["STAYING"],
+      "bpm": 81,
+      "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB COZY STYLE C · BASE Stems (81BPM)"
+    }
+  },
+  "profiles": {
+    "GLOBAL_BASE": {
+      "functionMappings": {
+        "MOVEMENT": "G",
+        "TALKING": "D"
+      },
+      "unavailablePolicy": "KEEP_CURRENT_OR_SILENCE"
+    }
+  },
+  "plannedContent": {
+    "M":"KFB_M_ISLAND_LIFE_ORCHESTRAL_COZY_01",
+    "N":"KFB_N_DUSK_NIGHT_ORCHESTRAL_COZY_01",
+    "O":"KFB_O_DISCOVERY_POI_ORCHESTRAL_01"
+  }
+}
