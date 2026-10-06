@@ -231,3 +231,30 @@ Thought Bubbles, Emanata and Reaction Symbols now have supplementary source cove
 
 ### Boundary
 No Site, ToolBox, Hub, runtime or deployment change. No Claude Design job started. No merge / Live promotion.
+
+
+## Expanded Librarian import + Browser/Viewer R2 prep · 2026-10-06
+
+Status: **IMPORT BRIEF READY · VIEWER R2 LATER**
+
+### Data import
+Prepared a Work/WSA import brief for the existing private Asset Librarian Site. Target built-in corpus after import:
+- 53 Etherington references;
+- 5 supplementary professional/academic comic-language sources;
+- **58 built-in reference/source records total**;
+- Georg's existing browser-local discovery cards/sets remain preserved.
+
+### KFB Emanata alignment
+Added `GRAPHIC_FX_EMANATA_TARGET_TAXONOMY_2026-10-06.json`, aligned to the current Resident Affect/Emanata proposal on main. Current semantic slots: question, exclamation, sweat-drop, tear, anger-tick, heart, sparkle, gloom-cloud. Presentation-only; not runtime truth.
+
+### Viewer R2
+Recorded Georg's current Style Reference screenshot findings and a later three-step route:
+1. Work/WSA exports current private Site UI/source/screenshot packet;
+2. Claude Design redesigns the Browser/Viewer from that portable packet;
+3. Work/WSA integrates accepted R2 back into the same Site.
+
+### Evidence
+**10/10 PASS** preparation validation.
+
+### Boundary
+No Site deployment changed in this prep. No redesign was mixed into the data-import brief. No second Site. No merge / Live promotion.
