@@ -258,3 +258,27 @@ Recorded Georg's current Style Reference screenshot findings and a later three-s
 
 ### Boundary
 No Site deployment changed in this prep. No redesign was mixed into the data-import brief. No second Site. No merge / Live promotion.
+
+
+## Style Reference Browser/Viewer R2 · Work-only routing correction · 2026-10-06
+
+### Georg decision
+Do **not** spend Claude Design tokens on the current Style Reference UI repair.
+
+The failure is sufficiently specified for direct **ChatGPT Work/WSA** implementation.
+
+### Current route
+- Work/WSA directly repairs the existing Asset Librarian Style References view.
+- Preserve current Paper/Dark language, data model, 58 built-ins, local Cards/Sets/Notes and all non-Style-Reference modes.
+- Main product outcome: complete tutorial/reference boards must be comfortably inspectable inside the Librarian.
+- Gallery becomes chooser; Viewer becomes the primary inspection surface.
+- Intake/filter chrome is demoted.
+- Multi-board navigation + fit/zoom are required.
+- Compare is optional/deferable if it threatens the core viewer.
+
+Binding brief:
+`_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/BRIEF_WORK_STYLE_REFERENCE_BROWSER_VIEWER_R2_DIRECT_REPAIR_2026-10-06.md`
+
+Earlier R2A export-only + Claude Design R2 briefs are **SUPERSEDED / DO NOT RUN**.
+
+No Site change in this routing checkpoint.
