@@ -1,13 +1,13 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
 Date: 2026-10-06
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–11 COMPLETE · RESEARCH EXPANSION ACTIVE
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–12 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: 468609b89cedbe4029fc0eb0626f719a1bb4dbbf
+Last verified branch head before this Return write: 811a365931568ed1d0c9adcbcfde7c5373a3b8fa
 
 ## Georg continuation decision
 
@@ -28,99 +28,86 @@ No quote is thereby approved for public runtime, and no H13/Billboard/3D runtime
 - provenance: **27 VERIFIED · 3 SECONDARY_ONLY · 0 UNVERIFIED**
 - validation: **13/13 PASS**
 
-### Research Reserves 01–10
+### Research Reserves 01–11
 - deliberately unmapped research reserve;
-- prior combined inventory before Reserve 11: **325 candidates**
-- prior unmapped count: **295**
+- prior combined inventory before Reserve 12: **355 candidates**
+- prior unmapped count: **325**
 
-### Research Reserve 11
+### Research Reserve 12
 
 Added 2026-10-07 with five balanced research clusters:
 
-- UFO/contact/abduction: **6**
-- cryptids/Forteana/paranormal: **6**
-- secret societies/intelligence/psyops: **6**
-- alchemy/Hermetic/esoteric science: **6**
-- prophecy/dream/simulation/multiverse: **6**
+- cryptids/anomalous zoology: **6**
+- UFO/contact/close-encounter narratives: **6**
+- remote viewing/ESP/psychical research: **6**
+- secret/forbidden technology: **6**
+- time/parallel-worlds/reality manipulation: **6**
 
 Counts:
 - **30 deliberately unmapped quote + FrizzleQuestion candidates**
 - provenance:
-  - **29 VERIFIED**
-  - **1 SECONDARY_ONLY**
+  - **28 VERIFIED**
+  - **2 SECONDARY_ONLY**
   - **0 UNVERIFIED**
 - rights:
   - **25 PUBLIC_DOMAIN_CONFIRMED**
-  - **3 RESEARCHED_QUOTE_LIMIT_ONLY**
-  - **2 RESEARCHED_RESTRICTED**
+  - **2 RESEARCHED_QUOTE_LIMIT_ONLY**
+  - **3 RESEARCHED_RESTRICTED**
 - validation: **25/25 PASS**
-- zero ID/text collisions against the prior 325-candidate inventory
-- **30 distinct authors/traditions**
+- zero ID/text collisions against the prior 355-candidate inventory
+- **29 distinct authors/traditions**
 
 File:
-`QUOTE_RESEARCH_RESERVE_11.json`
+`QUOTE_RESEARCH_RESERVE_12.json`
 
-Reserve 11 expands the pool across:
-- official Project Blue Book conclusions versus unresolved classification;
-- the Robertson Panel's documented information-policy recommendation;
-- Kenneth Arnold's original saucer-as-motion wording versus the later shape label;
-- the Hill abduction account with hypnosis/recovered-memory uncertainty preserved;
-- extraterrestrial observation as science fiction in H. G. Wells;
-- Ezekiel's wheel vision versus later technological reinterpretation;
-- Charles Fort's extraterrestrial-property speculation;
-- Conan Doyle's Cottingley-fairy belief;
-- Houdini's distinction between seeing and interpreting;
-- William Crookes's claimed experimental luminous phenomena;
-- Margaret Fox Kane's fraud confession plus later recantation history;
-- Alfred Russel Wallace's attempt to frame Spiritualism as experimental science;
-- deception as an explicit intelligence/warfare tool;
-- OSS rumor/sabotage tactics;
-- documented MKULTRA behavioral-control research;
-- Eisenhower's military-industrial-complex warning;
-- Lippmann's manufacture-of-consent framework;
-- Masonic secrecy/symbolism in Pike;
-- Newton's Emerald Tablet translation and above/below correspondence;
-- Corpus Hermeticum human/divine continuity;
-- Sendivogius on invisible nature acting visibly;
-- Agrippa and the grimoire tradition framing magic as natural philosophy;
-- Paracelsian hidden spirit in matter;
-- Zhuangzi's butterfly dream;
-- Shakespeare's dream/pageant ontology;
-- Descartes's dream argument;
-- William James's philosophical multiverse;
-- Everett's relative-state formulation;
-- Joel's prophecy/dream/vision linkage.
+Reserve 12 adds several useful transition cases rather than only extraordinary claims:
+- unicorn label → rhinoceros;
+- implausible platypus → genuine specimen;
+- sea-serpent eyewitness report → competing zoological explanations;
+- giant-squid monster lore → measured specimen;
+- unknown gorilla/okapi → accepted zoology;
+- Roswell, Socorro, Rendlesham, Tehran, Mantell and Washington radar case records;
+- remote-viewing operational failure versus statistical/telepathy claims;
+- Bacon/Smyth secrecy as actual knowledge-governance problems;
+- fiction and prediction around atomic weapons and information technology;
+- time/fourth-dimension/precognition/recurrence material from Wells, Abbott, Dunne, Ouspensky, Carroll and Nietzsche.
 
-### Epistemic-role clamp
+### Finance / money-system coverage audit
 
-Reserve 11 strengthens the policy introduced in Reserve 10.
+After Georg asked whether the pool already covers money creation, fiat money, financial and crypto markets, laundering, speed trading, Polymarket, NFT/meme-coin schemes, alternative currencies, decentralized blockchains and barter/mutual-credit networks, the existing 385-candidate pool was audited.
 
-The following must remain distinguishable in later curation:
-- official finding;
-- declassified policy/operation;
-- witness report;
-- recovered-memory account;
-- fiction;
-- scripture/vision text;
-- occult/esoteric source claim;
-- skeptical critique;
-- confession/recantation history;
-- philosophical argument;
-- scientific formalism;
-- later interpretive overlay.
+Existing coverage is **partial and mostly classical**:
+- Adam Smith: collusion, consumption, property/inequality;
+- Veblen: conspicuous consumption;
+- Jevons: value/utility;
+- Ruskin: money as a claim/right;
+- Henry George: poverty/progress, land;
+- Dickens: household income/expenditure;
+- Carnegie, Proudhon, Rousseau: wealth/property/enclosure.
 
-Research inclusion does **not** imply endorsement or evidentiary equivalence.
+Material gaps remain for:
+- commercial-bank deposit / credit creation;
+- central-bank money, fiat, monetary sovereignty and inflation mechanics;
+- market microstructure, dark pools and high-frequency trading;
+- money laundering and beneficial-ownership/shadow-finance mechanisms;
+- prediction markets / Polymarket;
+- Bitcoin/crypto/blockchain consensus and decentralization;
+- NFTs, wash trading, meme coins and Ponzi/reflexive speculation;
+- stablecoins and tokenized claims;
+- local/alternative currencies, mutual credit and barter networks.
+
+Therefore this is not a small mapping patch: **Reserve 13 should be a dedicated Finance / Money Systems reserve.**
 
 ## Combined depth
 
 Current researched inventory:
 
 - mapped Batch 01: **30**
-- unmapped Reserves 01–11: **325**
-- **combined: 355 researched quote/question candidates**
+- unmapped Reserves 01–12: **355**
+- **combined: 385 researched quote/question candidates**
 
 Important:
-**355 researched candidates ≠ 355 approved quotes per island.**
+**385 researched candidates ≠ 385 approved quotes per island.**
 
 Reserve candidates remain:
 `UNMAPPED_BY_DESIGN`
@@ -142,7 +129,7 @@ The goal is not merely avoiding exact quote repetition. A long island session sh
 
 No runtime selector was modified.
 
-## Reserve 11 validation evidence
+## Reserve 12 validation evidence
 
 **25/25 PASS**
 
@@ -151,27 +138,18 @@ Checked:
 - reserve schema id;
 - exactly 30 candidates;
 - five balanced 6-item clusters;
-- unique IDs;
-- unique normalized quote texts;
-- no ID collision with prior 325;
-- no text collision with prior 325;
+- unique IDs and normalized quote texts;
+- no collisions with prior 355;
 - all `UNMAPPED_BY_DESIGN`;
-- no premature deck/Card/island/Billboard/biome/world/multiverse mapping fields;
-- reserve status;
-- exactly one FrizzleQuestion per quote;
-- each FrizzleQuestion is interrogative;
-- question length bounds;
-- billboard-reasonable quote length;
-- HTTPS provenance and rights evidence;
-- Brain Food presence;
-- Brain Food HTTPS links;
-- semantic axis presence;
-- verification totals;
-- rights totals;
-- 30 distinct authors/traditions;
-- prior inventory = 325;
-- combined inventory = 355;
-- epistemic-role source policy present.
+- no premature deck/Card/island/Billboard/biome/world/multiverse fields;
+- one interrogative FrizzleQuestion per quote;
+- billboard/question length bounds;
+- HTTPS provenance / rights / Brain Food;
+- semantic axes present;
+- provenance and rights totals;
+- prior inventory = 355;
+- combined inventory = 385;
+- epistemic transition policy present.
 
 Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
 Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
@@ -180,19 +158,17 @@ Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 No uncertain case is silently promoted.
 
-Reserve 11 open/sensitive cases:
-- **Kenneth Arnold** — original 1947 motion comparison is strongly institutionally sourced, but the historical publication/broadcast rights chain is not treated as globally cleared; `RESEARCHED_QUOTE_LIMIT_ONLY`.
-- **Hill abduction account** — exact wording is visible in the CIA-hosted source copy, but the underlying published work remains copyrighted; `RESEARCHED_RESTRICTED`. Dr. Benjamin Simon's contrary interpretation remains in the provenance note.
-- **Walter Lippmann** — `Public Opinion` is U.S.-public-domain while Lippmann's EU author term remains active; `RESEARCHED_QUOTE_LIMIT_ONLY`.
-- **Isaac Newton / Emerald Tablet** — Newton's historical wording is public domain, but this batch pinned a modern scholarly transcription rather than the manuscript image; the only `SECONDARY_ONLY` record and conservatively `RESEARCHED_QUOTE_LIMIT_ONLY`.
-- **Hugh Everett III** — exact relative-state quotation and original page locators are reproduced by the Stanford Encyclopedia of Philosophy; underlying 1957 paper remains copyright-sensitive; `RESEARCHED_RESTRICTED`.
-- **Margaret Fox Kane** — the 1888 confession and public demonstration are documented in public-domain contemporary material, while the later recantation is retained as part of the evidentiary history rather than suppressed.
-- UFO, paranormal, esoteric and simulation material remains source-typed: official conclusions are not treated as equivalent to witness claims; fiction is not treated as testimony; scripture is not silently converted to technology; occult source definitions are not silently converted to scientific findings.
+Reserve 12 open/sensitive cases:
+- **George Shaw / platypus** — exact wording is verified through a historical British Museum synopsis reproducing Shaw, but the original Shaw page was not separately pinned; `SECONDARY_ONLY`.
+- **Nietzsche / Eternal Recurrence** — exact historical English wording is verified through a public-domain contemporary quotation source rather than a directly pinned historical English `Gay Science` edition; `SECONDARY_ONLY`.
+- **AIR remote-viewing evaluation**, **Jessica Utts** and **Vannevar Bush** remain `RESEARCHED_RESTRICTED`.
+- **Upton Sinclair** is U.S.-public-domain but EU-term-sensitive; **Einstein-Szilard** manuscript/publication rights are treated conservatively; both remain `RESEARCHED_QUOTE_LIMIT_ONLY`.
+- UFO and cryptid materials retain the transition from report to explanation/specimen where the source supports it; inclusion does not promote an unresolved case into an extraordinary conclusion.
 
 ## Files
 
-Added in Reserve 11:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_11.json`
+Added in Reserve 12:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_12.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -214,6 +190,6 @@ No merge. No Live promotion.
 
 ## One next productive step
 
-**Quote Research Reserve 12 — deepen actual cryptids/anomalous zoology, UFO contactee/CE narratives, remote viewing/ESP/psychical research, secret/forbidden technology, and time/parallel-world/reality-manipulation material before thematic mapping.**
+**Quote Research Reserve 13 — dedicated Finance / Money Systems reserve: bank credit creation & fiat money; stocks/market microstructure/HFT; money laundering/shadow finance; crypto/blockchain/NFT/meme coins/prediction markets; alternative currencies/mutual credit/barter networks.**
 
 Georg action required now: **nothing**.
