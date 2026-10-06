@@ -1,0 +1,279 @@
+{
+  "schema": "kfb.resident-affect-emanata-map/0-proposal",
+  "date": "2026-10-06",
+  "status": "PROPOSAL_ARCHITECTURE_PREP",
+  "rules": {
+    "affectOwner": "Resident Life",
+    "presentationOnly": [
+      "pose",
+      "gesture",
+      "microMotion",
+      "eyes",
+      "brows",
+      "mouth",
+      "emanata",
+      "bubble",
+      "audioHook"
+    ],
+    "emanataWriteState": false,
+    "maxPrimaryEmanataPerResident": 1,
+    "stableEventSeed": true,
+    "notes": [
+      "Historical v13 planned 14 signs, one per unit, mapped to state.",
+      "Old raster sheet is not accepted as a directly sliceable source.",
+      "Claymation Emanata art roster remains a future source/design task."
+    ]
+  },
+  "emotions": {
+    "calm": {
+      "valence": 0.2,
+      "arousal": 0.15,
+      "pose": "open-neutral",
+      "proximity": "hold",
+      "micro": [
+        "slow-settle"
+      ],
+      "gaze": "ambient-or-target",
+      "mouth": "neutral",
+      "emanata": null,
+      "audioHook": null
+    },
+    "curious": {
+      "valence": 0.25,
+      "arousal": 0.55,
+      "pose": "attentive-open",
+      "proximity": "small-step-in-if-safe",
+      "micro": [
+        "lean-forward",
+        "head-tilt"
+      ],
+      "gaze": "target-focus",
+      "mouth": "thinking-neutral",
+      "emanata": "question",
+      "audioHook": null
+    },
+    "attentive": {
+      "valence": 0.15,
+      "arousal": 0.4,
+      "pose": "attentive",
+      "proximity": "hold",
+      "micro": [
+        "small-forward-lean"
+      ],
+      "gaze": "speaker-focus",
+      "mouth": "neutral",
+      "emanata": null,
+      "audioHook": null
+    },
+    "joyful": {
+      "valence": 0.9,
+      "arousal": 0.7,
+      "pose": "open-up",
+      "proximity": "small-step-in-if-socially-valid",
+      "micro": [
+        "bounce-small"
+      ],
+      "gaze": "target-warm",
+      "mouth": "happy",
+      "emanata": "sparkle",
+      "audioHook": "reaction-positive"
+    },
+    "amused": {
+      "valence": 0.75,
+      "arousal": 0.65,
+      "pose": "relaxed-open",
+      "proximity": "hold",
+      "micro": [
+        "lean-side",
+        "small-head-back"
+      ],
+      "gaze": "target",
+      "mouth": "happy",
+      "emanata": "sparkle",
+      "audioHook": "reaction-amused"
+    },
+    "grateful": {
+      "valence": 0.85,
+      "arousal": 0.5,
+      "pose": "open-soft",
+      "proximity": "small-step-in-if-safe",
+      "micro": [
+        "soft-nod",
+        "hand-to-chest-if-available"
+      ],
+      "gaze": "giver",
+      "mouth": "happy-soft",
+      "emanata": "heart",
+      "audioHook": "reaction-positive"
+    },
+    "proud": {
+      "valence": 0.65,
+      "arousal": 0.5,
+      "pose": "upright-open",
+      "proximity": "hold",
+      "micro": [
+        "chin-up",
+        "chest-open"
+      ],
+      "gaze": "forward-or-target",
+      "mouth": "smile-small",
+      "emanata": "sparkle",
+      "audioHook": null
+    },
+    "surprised": {
+      "valence": 0,
+      "arousal": 0.95,
+      "pose": "recoil-open",
+      "proximity": "small-step-out-if-safe",
+      "micro": [
+        "recoil",
+        "head-back"
+      ],
+      "gaze": "cause",
+      "mouth": "surprised",
+      "emanata": "exclamation",
+      "audioHook": "reaction-surprise"
+    },
+    "worried": {
+      "valence": -0.45,
+      "arousal": 0.65,
+      "pose": "guarded",
+      "proximity": "hold-or-step-out",
+      "micro": [
+        "lean-back",
+        "shoulders-in",
+        "head-down-side"
+      ],
+      "gaze": "cause-or-check",
+      "mouth": "worried",
+      "emanata": "sweat-drop",
+      "audioHook": "reaction-worry"
+    },
+    "sad": {
+      "valence": -0.75,
+      "arousal": 0.25,
+      "pose": "closed-low",
+      "proximity": "hold",
+      "micro": [
+        "head-down",
+        "torso-sink"
+      ],
+      "gaze": "down-or-away",
+      "mouth": "sad",
+      "emanata": "tear",
+      "audioHook": null
+    },
+    "annoyed": {
+      "valence": -0.5,
+      "arousal": 0.65,
+      "pose": "closed-asymmetric",
+      "proximity": "hold",
+      "micro": [
+        "lean-away",
+        "head-side"
+      ],
+      "gaze": "target",
+      "mouth": "annoyed",
+      "emanata": "anger-tick",
+      "audioHook": null
+    },
+    "angry": {
+      "valence": -0.9,
+      "arousal": 0.9,
+      "pose": "forward-closed",
+      "proximity": "do-not-auto-step-in",
+      "micro": [
+        "forward-lean",
+        "sharp-settle"
+      ],
+      "gaze": "target-hard",
+      "mouth": "angry",
+      "emanata": "anger-tick",
+      "audioHook": "reaction-negative"
+    },
+    "embarrassed": {
+      "valence": -0.25,
+      "arousal": 0.6,
+      "pose": "closed-small",
+      "proximity": "small-step-out-if-safe",
+      "micro": [
+        "head-down-side",
+        "shoulder-hunch"
+      ],
+      "gaze": "away",
+      "mouth": "awkward",
+      "emanata": "sweat-drop",
+      "audioHook": null
+    },
+    "suspicious": {
+      "valence": -0.2,
+      "arousal": 0.45,
+      "pose": "guarded-asymmetric",
+      "proximity": "hold-distance",
+      "micro": [
+        "side-lean",
+        "head-tilt"
+      ],
+      "gaze": "target-narrow",
+      "mouth": "thinking",
+      "emanata": "question",
+      "audioHook": null
+    },
+    "tired": {
+      "valence": -0.15,
+      "arousal": 0.1,
+      "pose": "low-relaxed",
+      "proximity": "hold",
+      "micro": [
+        "slow-sway",
+        "head-drop-small"
+      ],
+      "gaze": "low",
+      "mouth": "neutral-low",
+      "emanata": "gloom-cloud",
+      "audioHook": null
+    }
+  },
+  "emanata": {
+    "question": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "question-mark / clay bead curve",
+      "priority": 40
+    },
+    "exclamation": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "exclamation / pop",
+      "priority": 80
+    },
+    "sweat-drop": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "single clay droplet",
+      "priority": 60
+    },
+    "tear": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "single tear/drop near face",
+      "priority": 55
+    },
+    "anger-tick": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "comic anger crease / clay stroke",
+      "priority": 70
+    },
+    "heart": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "small clay heart",
+      "priority": 45
+    },
+    "sparkle": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "one small star/spark",
+      "priority": 35
+    },
+    "gloom-cloud": {
+      "status": "SEMANTIC_SLOT",
+      "clayPresentation": "small dark clay cloud",
+      "priority": 30
+    }
+  }
+}

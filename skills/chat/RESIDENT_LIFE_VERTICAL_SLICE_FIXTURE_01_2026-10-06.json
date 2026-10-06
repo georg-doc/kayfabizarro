@@ -1,0 +1,444 @@
+{
+  "schema": "kfb.resident-life-fixture/0-proposal",
+  "id": "resident-life-fixture-01",
+  "date": "2026-10-06",
+  "status": "PROPOSAL_ARCHITECTURE_PREP",
+  "purpose": "Post-Coworker Architecture Freeze fixture; no runtime claim.",
+  "source": {
+    "residentAtlas": "tools/resident_atlas_s6/data/cast.js",
+    "residentAtlasHead": "ee4856e0cdad4b880bf95f20703b07e00ec9e6b4",
+    "performanceContract": "skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md",
+    "affectMap": "skills/chat/RESIDENT_AFFECT_EMANATA_MAP_PREP_2026-10-06.json"
+  },
+  "residents": [
+    {
+      "residentId": "farmer-b",
+      "sourceResidentId": "farmers",
+      "actorId": "farmer_b",
+      "sourceFacts": {
+        "role": "Versorgungs-Resident / Feldarbeit",
+        "rigFamily": "Rig_Medium",
+        "knownPose": "Digging",
+        "knownProp": "pitchfork",
+        "sourceActivity": "works in field"
+      },
+      "candidateProfile": {
+        "roleTags": [
+          "farmer",
+          "worker",
+          "fluff-handler"
+        ],
+        "homePoi": "poi.farm-home",
+        "workPoi": "poi.fluff-field",
+        "socialPoi": [
+          "poi.market",
+          "poi.crossroads"
+        ],
+        "preferences": {
+          "sociality": 0.55,
+          "helpfulness": 0.8,
+          "routineRigidity": 0.65
+        },
+        "capabilities": [
+          "walk",
+          "dig",
+          "harvest",
+          "carry",
+          "roll-push",
+          "give-receive"
+        ],
+        "durableMemoryPolicy": "light"
+      }
+    },
+    {
+      "residentId": "lorekeeper",
+      "sourceResidentId": "lorekeeper",
+      "actorId": "lorekeeper",
+      "sourceFacts": {
+        "role": "Archiv-Resident / Wissen und Aufzeichnung",
+        "rigFamily": "Rig_Medium",
+        "knownPose": "Idle_A",
+        "knownProps": [
+          "staff",
+          "tome"
+        ]
+      },
+      "candidateProfile": {
+        "roleTags": [
+          "lorekeeper",
+          "archive",
+          "knowledge"
+        ],
+        "homePoi": "poi.archive",
+        "workPoi": "poi.archive-tome",
+        "socialPoi": [
+          "poi.crossroads",
+          "poi.billboard"
+        ],
+        "preferences": {
+          "sociality": 0.45,
+          "helpfulness": 0.7,
+          "routineRigidity": 0.7
+        },
+        "capabilities": [
+          "walk",
+          "inspect",
+          "read",
+          "converse-short",
+          "receive-gift"
+        ],
+        "durableMemoryPolicy": "selected-episodic"
+      }
+    },
+    {
+      "residentId": "goth-girl",
+      "sourceResidentId": "goth-girl",
+      "actorId": "gothgirl",
+      "sourceFacts": {
+        "role": "Bühnen-Resident / Auftritt / Musik",
+        "rigFamily": "Rig_Medium",
+        "knownPose": "Sit_Chair_Idle",
+        "knownLayer": "Waving torso",
+        "knownProps": [
+          "stool",
+          "speaker",
+          "micstand",
+          "microphone"
+        ]
+      },
+      "candidateProfile": {
+        "roleTags": [
+          "performer",
+          "music",
+          "social"
+        ],
+        "homePoi": "poi.backstage",
+        "workPoi": "poi.stage",
+        "socialPoi": [
+          "poi.stage-front",
+          "poi.crossroads"
+        ],
+        "preferences": {
+          "sociality": 0.75,
+          "helpfulness": 0.5,
+          "routineRigidity": 0.35
+        },
+        "capabilities": [
+          "walk",
+          "sit",
+          "wave",
+          "perform",
+          "converse-triplet",
+          "give-receive"
+        ],
+        "durableMemoryPolicy": "selected-episodic"
+      }
+    }
+  ],
+  "pois": [
+    {
+      "poiId": "poi.fluff-field",
+      "kind": "resource-source",
+      "worldAnchorRef": "PROPOSAL:world.fluff-field.01",
+      "affordances": [
+        "harvest-fluff",
+        "inspect"
+      ],
+      "roleTags": [
+        "farmer"
+      ],
+      "resourceKinds": [
+        "fluff"
+      ],
+      "capacity": 3,
+      "curiosityValue": 0.2,
+      "socialValue": 0.1
+    },
+    {
+      "poiId": "poi.market",
+      "kind": "market",
+      "worldAnchorRef": "PROPOSAL:world.market.01",
+      "affordances": [
+        "deposit-fluff",
+        "trade",
+        "gift",
+        "socialize"
+      ],
+      "capacity": 6,
+      "curiosityValue": 0.5,
+      "socialValue": 0.9
+    },
+    {
+      "poiId": "poi.crossroads",
+      "kind": "social",
+      "worldAnchorRef": "PROPOSAL:world.crossroads.01",
+      "affordances": [
+        "greet",
+        "short-line",
+        "trade",
+        "gift",
+        "share-fluff"
+      ],
+      "capacity": 8,
+      "curiosityValue": 0.4,
+      "socialValue": 0.8
+    },
+    {
+      "poiId": "poi.archive",
+      "kind": "archive",
+      "worldAnchorRef": "PROPOSAL:world.archive.01",
+      "affordances": [
+        "idle",
+        "inspect-card",
+        "read",
+        "socialize"
+      ],
+      "roleTags": [
+        "lorekeeper"
+      ],
+      "capacity": 4,
+      "curiosityValue": 0.8,
+      "socialValue": 0.4
+    },
+    {
+      "poiId": "poi.archive-tome",
+      "kind": "card",
+      "worldAnchorRef": "SOURCE_PROP:lorekeeper.tome",
+      "affordances": [
+        "inspect",
+        "read"
+      ],
+      "capacity": 1,
+      "curiosityValue": 0.9,
+      "socialValue": 0.1
+    },
+    {
+      "poiId": "poi.billboard",
+      "kind": "billboard",
+      "worldAnchorRef": "PROPOSAL:world.billboard.01",
+      "affordances": [
+        "inspect",
+        "react",
+        "short-line"
+      ],
+      "capacity": 4,
+      "curiosityValue": 0.9,
+      "socialValue": 0.5
+    },
+    {
+      "poiId": "poi.stage",
+      "kind": "stage",
+      "worldAnchorRef": "SOURCE_SCENE:goth-girl.stage",
+      "affordances": [
+        "perform",
+        "rehearse",
+        "sit"
+      ],
+      "roleTags": [
+        "performer"
+      ],
+      "capacity": 3,
+      "curiosityValue": 0.7,
+      "socialValue": 0.7
+    },
+    {
+      "poiId": "poi.stage-front",
+      "kind": "social",
+      "worldAnchorRef": "PROPOSAL:world.stage-front.01",
+      "affordances": [
+        "listen",
+        "greet",
+        "short-line",
+        "gift"
+      ],
+      "capacity": 8,
+      "curiosityValue": 0.6,
+      "socialValue": 0.9
+    }
+  ],
+  "activities": [
+    {
+      "id": "fluff.harvest-and-deliver",
+      "residentId": "farmer-b",
+      "routeFamilies": [
+        "route.farm-field-market.a",
+        "route.farm-field-market.b"
+      ],
+      "beats": [
+        "walk-to-source",
+        "harvest",
+        "gather",
+        "carry-or-roll",
+        "walk-to-market",
+        "deposit",
+        "react",
+        "resume"
+      ],
+      "interruptibility": "soft",
+      "encounterPolicy": "brief-only",
+      "defaultAffect": "calm",
+      "possibleReactions": [
+        "curious",
+        "pleased",
+        "worried",
+        "annoyed"
+      ]
+    },
+    {
+      "id": "archive.inspect-and-wander",
+      "residentId": "lorekeeper",
+      "routeFamilies": [
+        "route.archive-crossroads.a",
+        "route.archive-billboard.a"
+      ],
+      "beats": [
+        "inspect-tome",
+        "idle-think",
+        "walk",
+        "curiosity-stop",
+        "inspect-card-or-billboard",
+        "return-or-socialize"
+      ],
+      "interruptibility": "soft",
+      "encounterPolicy": "allow",
+      "defaultAffect": "attentive",
+      "possibleReactions": [
+        "curious",
+        "surprised",
+        "suspicious",
+        "pleased"
+      ]
+    },
+    {
+      "id": "stage.perform-and-socialize",
+      "residentId": "goth-girl",
+      "routeFamilies": [
+        "route.stage-crossroads.a"
+      ],
+      "beats": [
+        "sit-or-rehearse",
+        "perform",
+        "listen",
+        "social-opportunity",
+        "short-dialogue-or-silence",
+        "resume"
+      ],
+      "interruptibility": "free",
+      "encounterPolicy": "allow",
+      "defaultAffect": "calm",
+      "possibleReactions": [
+        "amused",
+        "grateful",
+        "annoyed",
+        "curious"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter.fixture.fluff-share",
+      "participants": [
+        "farmer-b",
+        "lorekeeper"
+      ],
+      "contextPoiId": "poi.crossroads",
+      "reason": "resource-opportunity",
+      "preconditions": [
+        "farmer-b carries fluff",
+        "both interruption policies permit brief encounter",
+        "cooldown clear"
+      ],
+      "beats": [
+        "notice",
+        "orient",
+        "greet",
+        "offer",
+        "receive",
+        "react",
+        "thank",
+        "resolve",
+        "resume"
+      ],
+      "exchange": {
+        "kind": "share-fluff",
+        "resourceKind": "fluff",
+        "quantity": "SMALL_PROPOSAL"
+      },
+      "affectFlow": [
+        {
+          "actor": "lorekeeper",
+          "event": "offer-seen",
+          "reaction": "surprised"
+        },
+        {
+          "actor": "lorekeeper",
+          "event": "gift-accepted",
+          "reaction": "grateful"
+        },
+        {
+          "actor": "farmer-b",
+          "event": "gift-accepted",
+          "reaction": "pleased"
+        }
+      ],
+      "dialogueMode": "short-line-or-silence",
+      "emanata": [
+        "exclamation",
+        "heart"
+      ],
+      "note": "At most one primary Emanatum per actor at a time."
+    },
+    {
+      "id": "encounter.fixture.player-stage",
+      "participants": [
+        "goth-girl",
+        "player"
+      ],
+      "contextPoiId": "poi.stage-front",
+      "reason": "player-approach",
+      "preconditions": [
+        "Goth Girl activity interruptible",
+        "player attention threshold met"
+      ],
+      "beats": [
+        "notice",
+        "orient",
+        "acknowledge",
+        "greet",
+        "optional-triplet",
+        "react",
+        "resolve",
+        "resume"
+      ],
+      "dialogueMode": "triplet-when-warranted",
+      "affectFlow": [
+        {
+          "actor": "goth-girl",
+          "event": "player-approach",
+          "reaction": "curious"
+        },
+        {
+          "actor": "goth-girl",
+          "event": "positive-player-response",
+          "reaction": "amused"
+        }
+      ],
+      "emanata": [
+        "question",
+        "sparkle"
+      ]
+    }
+  ],
+  "acceptance": [
+    "3 real Resident source identities preserved",
+    "each Resident has purposeful activity + semantic POI",
+    "Farmer has alternate route family",
+    "one eligible Resident-to-Resident encounter can occur without LLM",
+    "gift/Fluff exchange emits durable SocialExchangeEvent",
+    "emotion drives Pose/Face/Emanata recipe rather than animation hardcode",
+    "player may interrupt Goth Girl through same Encounter system",
+    "silence remains valid",
+    "activity resumes or replans after encounter",
+    "no transient pose/emanata state required in save data"
+  ]
+}
