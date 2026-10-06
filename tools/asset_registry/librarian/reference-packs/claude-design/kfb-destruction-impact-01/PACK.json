@@ -1,0 +1,182 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "packId": "style-pack:kfb-destruction-impact:001",
+  "status": "CLAUDE_DESIGN_JOB_READY_SOURCE_INSPECTION_PENDING",
+  "title": "KFB Destruction / Impact VFX Grammar 01",
+  "date": "2026-10-06",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "consumer": "claude-design",
+  "sourceTransport": "PUBLIC_GITHUB_PLUS_OFFICIAL_SOURCE_URLS",
+  "privateSiteAccessRequired": false,
+  "designIntent": "Derive a reusable KFB-specific visual grammar for projectile impact, Minigun damage, rocket impact, breakage, collapse anticipation, debris, smoke and settled rubble. Extract construction principles from official references, then translate them into KFB clay/cartoon language. Do not imitate the Etherington Brothers' finished style.",
+  "receivingContext": {
+    "name": "KFB Seed World Mech Destruction POC 01",
+    "role": "FUNCTIONAL_MECHANICS_DONOR_ONLY",
+    "sourceReturn": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/RETURN.md",
+    "knownMechanics": [
+      "Minigun damages façade cells",
+      "rockets blow out walls",
+      "unsupported upper clusters wait briefly before collapse",
+      "fixed debris/rubble/VFX pools already exist",
+      "damage persists through compact cell state"
+    ],
+    "doNotModifyRuntime": true
+  },
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-impact-debris-2017-04",
+      "seedId": "etherington-impact-debris-2017-04",
+      "title": "Impact Debris / Explosion / Destruction",
+      "role": "PRIMARY_DESTRUCTION_STRUCTURE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2017/04/how-to-think-when-you-draw-stranski_26.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "directionality of impact debris",
+        "relationship between impact point and outgoing fragments",
+        "large/medium/small breakup hierarchy",
+        "how damage reads before total collapse"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-small-explosions-2023-10",
+      "seedId": "etherington-small-explosions-2023-10",
+      "title": "Small Explosions",
+      "role": "PRIMARY_IMPACT_SILHOUETTE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2023/10/how-to-think-when-you-draw-small.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "compact explosion silhouette",
+        "shape timing / expansion hierarchy",
+        "debris versus smoke separation",
+        "readability at small screen size"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-smoke-2024-07",
+      "seedId": "etherington-smoke-2024-07",
+      "title": "Smoke Effects",
+      "role": "VOLUME_AND_AFTEREFFECT",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2024/07/how-to-think-when-you-draw-smoke.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "smoke volume clustering",
+        "layering and depth",
+        "transition from impact burst to lingering volume",
+        "non-uniform contour rhythm"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-breaking-glass-2021-11",
+      "seedId": "etherington-breaking-glass-2021-11",
+      "title": "Breaking Glass",
+      "role": "BREAKAGE_MATERIAL_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2021/11/how-to-think-when-you-draw-breaking.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "fragment size hierarchy",
+        "crack/break direction",
+        "how shards leave a coherent hole/silhouette",
+        "avoidance of uniform confetti"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-shatter-technique-2018-06",
+      "seedId": "etherington-shatter-technique-2018-06",
+      "title": "Shatter Technique",
+      "role": "FRAGMENTATION_COMPOSITION",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/06/how-to-think-when-you-draw-using.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "fragmentation as a compositional device",
+        "directional breakup",
+        "negative-space opening",
+        "large versus small fragment rhythm"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington-small-medium-large-2020-11",
+      "seedId": "etherington-small-medium-large-2020-11",
+      "title": "Small / Medium / Large",
+      "role": "SHAPE_HIERARCHY_RULE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/11/how-to-think-when-you-draw-small-medium.html",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "small/medium/large ratio",
+        "visual rhythm",
+        "hierarchy without repetitive noise",
+        "how variation preserves readability"
+      ]
+    }
+  ],
+  "kfbTarget": {
+    "consumers": [
+      "open-world",
+      "combat-vfx",
+      "comic-vfx",
+      "building-destruction"
+    ],
+    "visualLanguage": [
+      "KFB clay/cartoon",
+      "tactile chunky debris",
+      "clear readable silhouettes",
+      "elastic anticipation before larger collapse",
+      "limited but expressive fragment families",
+      "soft clay smoke/dust volumes rather than photoreal particles"
+    ],
+    "requiredFamilies": [
+      "Minigun chip / micro-impact",
+      "Rocket wall breach / medium impact",
+      "Delayed structural collapse / large impact",
+      "Settled rubble + residual smoke"
+    ],
+    "avoid": [
+      "photorealistic explosion compositing",
+      "generic game-engine sparks",
+      "uniform confetti debris",
+      "noise-heavy particle fog",
+      "replacing existing destruction mechanics",
+      "rewriting runtime ownership"
+    ]
+  },
+  "expectedOutputs": [
+    "one source-isolation sheet showing all 6 references actually opened",
+    "4 KFB VFX grammar families matching the required families",
+    "shape hierarchy rules for debris, smoke and breach silhouettes",
+    "timing/choreography notes compatible with the existing anticipation -> fall -> rubble sequence",
+    "a compact parameter table usable later by runtime/procedural implementers",
+    "reference IDs attached to every derived rule",
+    "one recommended first visual integration proof using the existing POC mechanics"
+  ],
+  "returnRequirements": [
+    "list exact source URLs opened",
+    "mark each reference inspected or uninspected",
+    "separate OBSERVED SOURCE FACT / CONSTRUCTION PRINCIPLE / KFB DESIGN DECISION",
+    "do not claim runtime compatibility or implementation",
+    "do not alter PR #348/#360/Open World runtime",
+    "return a complete editable design export if Claude Design cannot write GitHub"
+  ]
+}
