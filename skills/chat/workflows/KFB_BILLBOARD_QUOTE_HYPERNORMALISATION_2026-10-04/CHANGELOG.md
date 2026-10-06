@@ -177,3 +177,21 @@
 - Combined researched inventory is now **265 candidates**: 30 mapped Batch-01 candidates + 235 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 09 · body / mortality / class / craft / failure
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_09.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - body/senses: 6
+  - death/mortality: 6
+  - inequality/class: 6
+  - invention/craft: 6
+  - failure/error: 6
+- Reserve 09 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **30 VERIFIED**, **0 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **29 PUBLIC_DOMAIN_CONFIRMED**, **1 RESEARCHED_QUOTE_LIMIT_ONLY**.
+- The rights-sensitive case is Rousseau's 1913 G. D. H. Cole English translation: Rousseau's underlying text is public domain and the edition is US-public-domain, while Cole's translator term remains EU-sensitive through 2029.
+- The pre-persistence collision guard rejected three tempting repeats already present in earlier reserves (Morris, Wilde and Huxley); their replacements were rechecked against all prior 265 records before commit.
+- Validation: **24/24 PASS**, including five balanced clusters, zero ID/text collisions against the prior 265-candidate inventory, 30 distinct authors/author pairs, mapping guards, source/Brain Food HTTPS checks and quote/question length bounds.
+- Combined researched inventory is now **295 candidates**: 30 mapped Batch-01 candidates + 265 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
