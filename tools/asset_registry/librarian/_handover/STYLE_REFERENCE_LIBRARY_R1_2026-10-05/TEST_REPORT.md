@@ -202,3 +202,32 @@ Umbrella brief:
 `BRIEF_CLAUDE_DESIGN_ENVIRONMENT_COMIC_VFX_01_2026-10-06.md`
 
 No Site, ToolBox, Hub, runtime or deployment change is part of this checkpoint.
+
+
+## Claude Design pixel-transport recovery · 2026-10-06
+
+Status: **JOB 1 TRANSPORT PATCH READY · CLAUDE PIXEL INSPECTION STILL REQUIRED**
+
+Validation: **10/10 PASS**
+
+1. PASS · PACK still parses as kfb.style-reference-pack/1
+2. PASS · exactly 6 references retained
+3. PASS · all 6 canonical identities remain Etherington blog URLs
+4. PASS · all 6 official creator mirrors are EtheringtonBrothers DeviantArt pages
+5. PASS · all 6 direct visuals use the resolved DeviantArt image host
+6. PASS · all 6 remain sourceInspectedInIsolation=false
+7. PASS · transport explicitly does not set inspected state
+8. PASS · Google/Pinterest substitutes remain forbidden
+9. PASS · functional donor is pinned to verified immutable commit
+10. PASS · START_HERE contains transport fallback and corrected donor pin
+
+Recovery detail:
+- canonical blog URLs remain source identity;
+- each of the 6 Job-1 references now has a stable official EtheringtonBrothers DeviantArt mirror page;
+- each also has a resolved direct tutorial-image URL as a pixel-transport convenience;
+- direct visual URLs are explicitly treated as potentially ephemeral;
+- transport alone does not change `sourceInspectedInIsolation=false`;
+- if Claude Design still cannot see pixels, the next fallback is a direct user upload of **one combined official visual per reference**, not another broad search;
+- the functional Mech/Minigun/Rocket donor Return is now pinned to immutable commit `97c891c006a65a2d8ebba17bfbe7baaa4384edf0`.
+
+No Site, ToolBox, Hub or runtime change.
