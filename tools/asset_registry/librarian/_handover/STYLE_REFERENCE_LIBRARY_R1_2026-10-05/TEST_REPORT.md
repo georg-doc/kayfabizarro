@@ -54,3 +54,46 @@ After R1 implementation in the existing Asset Librarian Site:
 - export/import/reload;
 - existing Asset/Motion regression;
 - exact Site update verification.
+
+
+---
+
+## Implementation checkpoint · 2026-10-06 · pre-deployment
+
+**ENGINEERING QA GREEN · PUBLISH PENDING**
+
+Existing Site project:
+`appgprj_6ac1afef08148191b62b95f184bf845e`
+
+Pushed Sites source commit:
+`492e01d02f5d93d49d9dd7caecbbf7dedff26ea9`
+
+### Browser and contract tests
+
+1. PASS · existing Assets, Motions, Saved Sets and Intake still activate
+2. PASS · Style References deep-link loads via `?view=style-references`
+3. PASS · 13 Etherington seed cards with official canonical URLs and creator-hosted preview images
+4. PASS · URL intake resolves known seed URLs and creates editable `kfb.style-reference/1` cards
+5. PASS · unrecognized URLs remain explicitly `DISCOVERY_ONLY`; no verification, rights or image is inferred
+6. PASS · notes and construction principles save, reload and participate in search
+7. PASS · Reference Set add/remove and reload persistence
+8. PASS · source-isolation gate blocks export until the exact source is opened and marked inspected
+9. PASS · `kfb.style-reference-pack/1` export keeps remote images as links and marks relationships candidate-only
+10. PASS · Reference → Asset relationship and Asset → referenceIds reverse lookup
+11. PASS · real GLTF/GLB gallery previews load in `model-viewer`
+12. PASS · full card opens Inspector; add control overlays bottom-right; legacy Inspect row removed
+13. PASS · five mobile SVG navigation icons, bottom anchored, no horizontal overflow
+14. PASS · JavaScript syntax and whitespace validation
+15. PASS · full Playwright flow with zero page errors
+
+Independent roles:
+- Tester: **PASS**
+- Critic: provenance/unknown-URL, fallback, notes-search and keyboard findings fixed and retested
+- Guard: **GO**
+
+Known bounded risks:
+- browser/device-local persistence is intentional for this private static Site revision;
+- creator images, Registry payloads, model files and model-viewer remain remote-host dependent;
+- deployment and ToolBox route verification remain the next gate.
+
+No merge. No Live branch promotion. No second Site.
