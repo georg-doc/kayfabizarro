@@ -1,65 +1,113 @@
 # TEST EVIDENCE · KFB Adaptive Music Stem Proof 01
 
 Date: 2026-10-06
-Tested branch head before evidence write: `6353eeaa1062d5269f2e2755a6178dbc9a9662a7`
+Status: **SITE_GREEN_TECHNICAL · HUMAN_LISTENING_GATE**
+GitHub integration checkpoint read back: `1e78f218639347316c4b5716927c33b1e3a13a1e`
 
-## Source / contract tests
+## Preserved prior evidence
 
-Exact branch blobs used locally:
-- `music-clock.mjs` blob `0f77fe9a21e8b455ef79a122fbc4edeff2168616`
-- `SOURCE.json` blob `0145fab56746177147a70e8deb38b830dc8ef896`
-- `qa.mjs` blob `f3e4890dbc35f7a8efac6de9624bffe0a874744b`
+- manifest / MusicClock / host contract: **18 / 18 PASS**
+- exact real GitHub source assets: **22 / 22 PASS**
+  - G master 1/1 + G stems 10/10
+  - D Base master 1/1 + D stems 10/10
 
-Result: **18 / 18 PASS**.
+## Current Site source validation
+
+Command: bundled Node runtime against the managed Site source.
+
+Result: **75 / 75 PASS**.
 
 Covered:
-- schema + D/G proof deck identity;
-- host AudioContext injection contract;
-- injected mode creates zero new AudioContexts;
-- G 120 BPM / D 94 BPM;
-- 10 G stems + 10 D stems;
-- unclassified Vocal labels muted by default;
-- additive D Speech Focus;
-- 120 BPM beat / bar / 8-bar phrase timing;
-- NEXT_BEAT / NEXT_BAR / NEXT_PHRASE boundary math;
-- transition policy vocabulary.
+- 54 catalog tracks / 44 RoadTrip v2 / 14 catalog stem families;
+- B/C/D state contract and six transition pairs;
+- generic B/C/D stem slots remain `FUTURE_NOT_AVAILABLE` with no placeholder audio;
+- 12 B/C/D Prompt Studio entries;
+- exactly two admitted proof families, G and D, with 10 real stems each;
+- G 120 BPM + ROAD/WIDE/EPIC;
+- D 94 BPM + additive Speech Focus;
+- all unclassified Vocal/Other defaults are zero;
+- adaptive module contains no AudioContext constructor;
+- existing Site injects the existing AudioContext and `SCORE` destination;
+- shared shortest decoded duration is used as one loop end;
+- no interval-based second music clock.
 
-## GitHub source assets
+## Browser checks
 
-Current `main` source verified through GitHub contents API:
+Result: **30 / 30 PASS**, **0 console errors**.
 
-G:
-- master: **1 / 1 exists**
-- stems: **10 / 10 exist**
-- all 10 are non-empty MP3 files
+Existing screens:
+- Catalog: 54 tracks retained;
+- navigation retained: Catalog / Mix / Soundscape / Intake / Prompt Studio / Brief;
+- Prompt Studio D donor resolves to `KFB Conversation Style D`;
+- Soundscape still exposes Rain as `SOURCE_REQUIRED`;
+- B → C → D demo ends in D with TTS released;
+- Catalog, Mix and Soundscape BEFORE/AFTER captures retained.
 
-D Base:
-- master: **1 / 1 exists**
-- stems: **10 / 10 exist**
-- all 10 are non-empty MP3 files
+Host/runtime:
+- `hostMode = INJECTED_EXISTING_CONTEXT`;
+- Site-created AudioContexts: **1**;
+- adaptive-module-created AudioContexts: **0**;
+- starting stems pauses master players; starting a master stops the stem deck;
+- G ↔ D uses a short gain crossfade;
+- no page/network error caused by the integration.
 
-Total exact source presence: **22 / 22 PASS**.
+## Real decoded measurements
 
-## Branch/source readback
+| Family | Stems | BPM | Decoded format | Min duration | Max duration | Delta | Shared loop end |
+|---|---:|---:|---|---:|---:|---:|---:|
+| G · Cosmic Roadtrip | 10 | 120 | 44,100 Hz · stereo | 179.879977 s | 179.879977 s | 0.00 ms | 179.879977 s |
+| D · Conversation Base | 10 | 94 | 44,100 Hz · stereo | 179.519977 s | 179.519977 s | 0.00 ms | 179.519977 s |
 
-Implementation branch read back after writes:
-- `SOURCE.json` contains `INJECT_EXISTING_WHEN_AVAILABLE`;
-- runtime source contains `configureHost`;
-- branch head after host-injection repair: `6353eeaa1062d5269f2e2755a6178dbc9a9662a7`.
+The four separately downloaded unclassified source-label MP3s report 48,000 Hz stereo via `afinfo`; WebAudio decodes/resamples active buffers to the existing 44,100 Hz host context.
 
-## Runtime evidence boundary
+## Transition / continuity evidence
 
-NOT RUN in this ChatGPT Web Chat executor:
-- real browser WebAudio decode/playback;
-- decoded stem duration delta;
-- phase / long-loop drift;
-- audible G Road/Wide/Epic transitions;
-- audible D TTS Speech Focus;
-- exact existing GPT Site update/verification.
+G sequence tested in the existing Mix:
+- ROAD → WIDE → EPIC;
+- MusicClock epoch remained exactly `124.74344671201814` through all three presets;
+- source nodes were not restarted;
+- gains reached the declared presets at the configured next-bar boundary;
+- muted `Lead Vocals` and `Other` remained at zero-equivalent gain throughout.
 
-Therefore:
-- **sample-aligned = UNPROVEN**
-- **audible adaptive mix = UNPROVEN**
-- **Site updated = NO**
+D Speech Focus tested with the existing TTS control:
+- D state selected automatically when the D proof deck starts;
+- existing SCORE-bus ducking remained owner;
+- D added the declared 2.2 kHz EQ pocket and per-role restraint;
+- Drums 0.34 → 0.2108, Percussion 0.24 → 0.12, Brass 0.16 → 0.072, Guitar 0.34 → 0.2448;
+- clock elapsed increased while TTS was active;
+- open D gains restored at the next safe bar boundary without restart.
 
-This is deliberate evidence hygiene, not a product-failure claim.
+Long-play check:
+- observed D for **403.452472 seconds**;
+- crossed **2 complete loop boundaries**;
+- no runtime error;
+- one shared `loopEnd` plus 0 ms decoded family delta prevents accumulated inter-stem loop drift.
+
+## Source-label classification
+
+These Suno labels remain deliberately disabled:
+
+- G `Lead Vocals` → `MUTED_PENDING_HUMAN_LISTEN`;
+- G `Other` → `MUTED_PENDING_HUMAN_LISTEN`;
+- D `Lead Vocals` → `MUTED_PENDING_HUMAN_LISTEN`;
+- D `Backing Vocals` → `MUTED_PENDING_HUMAN_LISTEN`.
+
+No semantic truth was inferred from the splitter names. They are not enabled by any default or G preset. Audible content classification remains the named human listening gate.
+
+## Published Site evidence
+
+- project: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- final source commit: `fd9d8cd7f85289d8d3a1fc7bd11dd7298bbc63bc`
+- version: **5**
+- version id: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_2f797958900c8191b0683a08c761c531`
+- deployment: `appgdep_6ac4624c87a4819182bea35b9dd08301`
+- deployment status: **succeeded**
+- exact URL: `https://kfb-audio.frizzlebob.chatgpt.site`
+- exact authorized GET: **HTTP 200**
+- exact deployed index: `SITE SOURCE 0.3`, runtime query `audio-site.js?v=0.3.1`
+- exact index SHA-256: `43b193d141203fef55c1793d3302acee20bf12add8055bae6826b66f75491c84`
+- Sites-generated version-5 screenshot visibly shows `SITE SOURCE 0.3`, preserved Catalog design and unchanged counts.
+
+The normal in-app-browser route stops at the intentional owner login boundary. No authentication barrier was bypassed. Exact deployed bytes were verified with the Site's existing authorized bearer; interactive behavior was exercised against the identical final managed source commit.
+
+No sample-level phase-coherence or subjective audible-quality claim is made beyond the measured duration/timeline evidence.
