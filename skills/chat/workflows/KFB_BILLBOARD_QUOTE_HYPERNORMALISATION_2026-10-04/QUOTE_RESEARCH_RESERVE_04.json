@@ -1,0 +1,1594 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-06T14:48:00Z",
+  "purpose": "Fourth unmapped quality-first reserve, broadening long-session rotation into medicine/biology, art/literature, economics, systems thinking and everyday human behaviour.",
+  "sourcePolicy": "Research reserve only. Provenance and rights status are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "rotationIntent": {
+    "goal": "Increase semantic and tonal range so later island pools can avoid both quote repetition and mood/topic monotony.",
+    "laterSelectionDimensions": [
+      "theme fit",
+      "author diversity",
+      "era diversity",
+      "discipline diversity",
+      "tone diversity",
+      "rights eligibility",
+      "recent-repeat suppression"
+    ],
+    "note": "No runtime selector, island assignment or public approval is changed in this research slice."
+  },
+  "candidates": [
+    {
+      "id": "qr-r04-nightingale-do-no-harm",
+      "text": "the very first requirement in a hospital [is] that it should do the sick no harm.",
+      "author": "Florence Nightingale",
+      "work": "Notes on Hospitals",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/files/72732/72732-h/72732-h.htm",
+        "edition": "The Life of Florence Nightingale, quoting Notes on Hospitals",
+        "pageOrLocator": "Notes on Hospitals passage; biography reproduces the sentence",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in a public-domain biography quoting Nightingale; original Notes on Hospitals page was not directly retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/72732/72732-h/72732-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "medicine",
+        "hospital-design",
+        "iatrogenic-harm",
+        "care"
+      ],
+      "semanticAxes": [
+        "care↔harm",
+        "treatment↔environment"
+      ],
+      "frizzleQuestion": "What system meant to help people is currently causing harm simply because its environment was treated as neutral?",
+      "brainFood": [
+        {
+          "label": "Life of Florence Nightingale — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/72732/72732-h/72732-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain biography reproducing the Notes on Hospitals sentence."
+        }
+      ],
+      "curatorNotes": "Foundational systems-of-care question; keep SECONDARY_ONLY until the original Notes on Hospitals page is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-harvey-anatomy-dissections",
+      "text": "I profess both to learn and to teach anatomy, not from books but from dissections",
+      "author": "William Harvey",
+      "work": "An Anatomical Disquisition on the Motion of the Heart and Blood in Animals",
+      "publicationYear": 1628,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Works_of_William_Harvey_%28part_1_of_2%29.djvu/107",
+        "edition": "Robert Willis translation, validated scan",
+        "pageOrLocator": "Dedication, printed p. 7",
+        "publicationYear": 1847,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in a validated scan and the Fordham historical transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Works_of_William_Harvey_%28part_1_of_2%29.djvu/107",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "anatomy",
+        "observation",
+        "medicine",
+        "empiricism"
+      ],
+      "semanticAxes": [
+        "book↔body",
+        "authority↔observation"
+      ],
+      "frizzleQuestion": "When should direct observation be allowed to overrule a perfectly respectable explanation inherited from books?",
+      "brainFood": [
+        {
+          "label": "Harvey Works — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AThe_Works_of_William_Harvey_%28part_1_of_2%29.djvu/107",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Validated scan of the public-domain English translation."
+        },
+        {
+          "label": "Harvey on circulation — Fordham Sourcebook",
+          "url": "https://sourcebooks.web.fordham.edu/mod/1628harvey-blood.asp",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent historical transcription cross-check."
+        }
+      ],
+      "curatorNotes": "Concrete medical-method quote: the body as evidence rather than illustration of authority.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-huxley-ugly-fact",
+      "text": "The great tragedy of Science—the slaying of a beautiful hypothesis by an ugly fact.",
+      "author": "Thomas Henry Huxley",
+      "work": "Biogenesis and Abiogenesis",
+      "publicationYear": 1870,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/38097/pg38097-images.html",
+        "edition": "Aphorisms and Reflections from the Works of T. H. Huxley",
+        "pageOrLocator": "Aphorism CCXIX; sourced to Biogenesis and Abiogenesis",
+        "publicationYear": 1870,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Huxley's collected aphorisms and Life and Letters."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/38097/pg38097-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "science",
+        "hypothesis",
+        "falsification",
+        "evidence"
+      ],
+      "semanticAxes": [
+        "beauty↔truth",
+        "hypothesis↔fact"
+      ],
+      "frizzleQuestion": "Which elegant explanation are you most likely to protect precisely because it is more satisfying than the evidence?",
+      "brainFood": [
+        {
+          "label": "Huxley Aphorisms — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/38097/pg38097-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collection; aphorism CCXIX."
+        },
+        {
+          "label": "Life and Letters of Huxley, Vol. II",
+          "url": "https://www.gutenberg.org/cache/epub/5226/pg5226-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent contextual cross-check."
+        }
+      ],
+      "curatorNotes": "Strong visual beat for science islands: beauty can be a cognitive liability.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-holmes-topography-ignorance",
+      "text": "Science is the topography of ignorance.",
+      "author": "Oliver Wendell Holmes Sr.",
+      "work": "Medical Essays — Scholastic and Bedside Teaching",
+      "publicationYear": 1867,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2700/pg2700-images.html",
+        "edition": "Medical Essays, public-domain edition",
+        "pageOrLocator": "Scholastic and Bedside Teaching",
+        "publicationYear": 1867,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2700/pg2700-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "science",
+        "ignorance",
+        "medicine",
+        "knowledge-boundaries"
+      ],
+      "semanticAxes": [
+        "knowledge↔unknown",
+        "map↔ignorance"
+      ],
+      "frizzleQuestion": "Would science become more trustworthy if every map of knowledge also displayed the size and shape of what remains unknown?",
+      "brainFood": [
+        {
+          "label": "Holmes, Medical Essays — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2700/pg2700-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "A good science/medicine Billboard because it makes ignorance visible as structured terrain.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-darwin-endless-forms",
+      "text": "from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.",
+      "author": "Charles Darwin",
+      "work": "On the Origin of Species",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/1228/1228-h/1228-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Final paragraph",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact closing clause verified in the full Origin of Species text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/1228/1228-h/1228-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "evolution",
+        "complexity",
+        "biology",
+        "emergence"
+      ],
+      "semanticAxes": [
+        "simplicity↔complexity",
+        "origin↔diversity"
+      ],
+      "frizzleQuestion": "How much complexity requires a designer, and how much can accumulate from simple rules interacting for long enough?",
+      "brainFood": [
+        {
+          "label": "Origin of Species — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/1228/1228-h/1228-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Useful beyond biology: emergence from simple generative constraints.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-osler-desire-medicine",
+      "text": "The desire to take medicine is perhaps the greatest feature which distinguishes man from animals.",
+      "author": "William Osler",
+      "work": "Recorded in The Life of Sir William Osler",
+      "publicationYear": 1925,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.mcgill.ca/oss/article/controversial-science-health-history-news/would-osler-stand-his-famous-quote-today",
+        "edition": "McGill Office for Science and Society; sourced tradition from Osler",
+        "pageOrLocator": "Quote also cited to Cushing, Life of Sir William Osler, Vol. II p. 342",
+        "publicationYear": 1925,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording is strongly attested by McGill and medical literature, but the underlying Osler document was not directly retrieved."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Osler died in 1919; the cited 1925 biographical record is public domain in the US and the attributed words are not translation-dependent.",
+        "evidenceUrl": "https://www.mcgill.ca/oss/article/controversial-science-health-history-news/would-osler-stand-his-famous-quote-today",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "medicine",
+        "treatment",
+        "human-behavior",
+        "intervention-bias"
+      ],
+      "semanticAxes": [
+        "treatment↔restraint",
+        "action↔watchful-waiting"
+      ],
+      "frizzleQuestion": "Why does doing something often feel more responsible than waiting, even when intervention itself carries risk?",
+      "brainFood": [
+        {
+          "label": "McGill — Would Osler stand by his famous quote today?",
+          "url": "https://www.mcgill.ca/oss/article/controversial-science-health-history-news/would-osler-stand-his-famous-quote-today",
+          "kind": "AUTHOR",
+          "verifiedAt": "2026-10-06",
+          "notes": "Institutional McGill discussion of the quotation and its medical meaning."
+        }
+      ],
+      "curatorNotes": "Good medical-behavior counterpoint to intervention bias; provenance remains SECONDARY_ONLY.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-james-habit-flywheel",
+      "text": "Habit is thus the enormous fly-wheel of society, its most precious conservative agent.",
+      "author": "William James",
+      "work": "The Principles of Psychology",
+      "publicationYear": 1890,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/57628/pg57628-images.html",
+        "edition": "Project Gutenberg public-domain edition",
+        "pageOrLocator": "Chapter IV, Habit",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the chapter text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/57628/pg57628-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "habit",
+        "society",
+        "behavior",
+        "conservatism"
+      ],
+      "semanticAxes": [
+        "habit↔change",
+        "automation↔choice"
+      ],
+      "frizzleQuestion": "Which social structure persists because people actively defend it, and which persists because nobody has to decide it anymore?",
+      "brainFood": [
+        {
+          "label": "James, Principles of Psychology — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/57628/pg57628-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text; Habit chapter."
+        }
+      ],
+      "curatorNotes": "Bridges individual habit and institutional inertia without treating habit as simply bad.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-epictetus-opinions-disturb",
+      "text": "Men are disturbed not by the things which happen, but by the opinions about the things.",
+      "author": "Epictetus",
+      "work": "Encheiridion",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/10661/10661-h/10661-h.htm",
+        "edition": "George Long translation, public-domain edition",
+        "pageOrLocator": "Encheiridion V",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain George Long translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient source text and George Long's nineteenth-century English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/10661/10661-h/10661-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "perception",
+        "emotion",
+        "interpretation",
+        "stoicism"
+      ],
+      "semanticAxes": [
+        "event↔interpretation",
+        "stimulus↔judgment"
+      ],
+      "frizzleQuestion": "When does changing your interpretation increase freedom, and when does it become a way of refusing to change a harmful situation?",
+      "brainFood": [
+        {
+          "label": "Epictetus — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/10661/10661-h/10661-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "George Long public-domain translation; Encheiridion V."
+        }
+      ],
+      "curatorNotes": "The question resists the easy self-help reading and preserves the difference between interpretation and circumstance.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-confucius-habits-apart",
+      "text": "Men's natures are alike; it is their habits that carry them far apart.",
+      "author": "Confucius",
+      "work": "The Sayings of Confucius",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://dev.gutenberg.org/cache/epub/46389/pg46389-images.html",
+        "edition": "Lionel Giles translation, 1910",
+        "pageOrLocator": "Book XVII sayings, printed p. 107",
+        "publicationYear": 1910,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain Lionel Giles translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient source and the 1910 Lionel Giles translation are public domain.",
+        "evidenceUrl": "https://dev.gutenberg.org/cache/epub/46389/pg46389-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "habit",
+        "character",
+        "development",
+        "behavior"
+      ],
+      "semanticAxes": [
+        "nature↔habit",
+        "similarity↔divergence"
+      ],
+      "frizzleQuestion": "How much of a personality is a stable trait, and how much is simply yesterday's behavior becoming easier to repeat?",
+      "brainFood": [
+        {
+          "label": "The Sayings of Confucius — Project Gutenberg",
+          "url": "https://dev.gutenberg.org/cache/epub/46389/pg46389-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Lionel Giles translation."
+        }
+      ],
+      "curatorNotes": "Pairs cleanly with James while shifting focus from social inertia to personal divergence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-hawthorne-two-faces",
+      "text": "No man, for any considerable period, can wear one face to himself, and another to the multitude, without finally getting bewildered.",
+      "author": "Nathaniel Hawthorne",
+      "work": "The Scarlet Letter",
+      "publicationYear": 1850,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/33/33-h/33-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter XX, The Minister in a Maze",
+        "publicationYear": 1850,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the novel text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/33/33-h/33-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "identity",
+        "mask",
+        "public-self",
+        "self-deception"
+      ],
+      "semanticAxes": [
+        "private-self↔public-role",
+        "performance↔identity"
+      ],
+      "frizzleQuestion": "At what point does maintaining two identities stop being deception and start making it impossible to know which one is performing?",
+      "brainFood": [
+        {
+          "label": "The Scarlet Letter — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/33/33-h/33-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "A strong mask/kayfabe identity line distinct from Wilde's mask-as-truth quote.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-morris-useful-beautiful",
+      "text": "Have nothing in your houses that you do not know to be useful or believe to be beautiful.",
+      "author": "William Morris",
+      "work": "The Beauty of Life",
+      "publicationYear": 1880,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/3773/pg3773-images.html",
+        "edition": "Hopes and Fears for Art, public-domain edition",
+        "pageOrLocator": "The Beauty of Life",
+        "publicationYear": 1880,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact golden-rule sentence verified in the lecture text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/3773/pg3773-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "design",
+        "utility",
+        "beauty",
+        "material-culture"
+      ],
+      "semanticAxes": [
+        "utility↔beauty",
+        "possession↔purpose"
+      ],
+      "frizzleQuestion": "Which objects in your environment still serve a real use or delight—and which survive only because removing them requires a decision?",
+      "brainFood": [
+        {
+          "label": "Morris, Hopes and Fears for Art — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/3773/pg3773-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain lecture text."
+        }
+      ],
+      "curatorNotes": "Excellent for clay world design, homes, objects, consumption and visual culture.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-shelley-poets-legislators",
+      "text": "Poets are the unacknowledged legislators of the world.",
+      "author": "Percy Bysshe Shelley",
+      "work": "A Defence of Poetry",
+      "publicationYear": 1840,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/5428/pg5428-images.html",
+        "edition": "A Defence of Poetry and Other Essays",
+        "pageOrLocator": "Final sentence",
+        "publicationYear": 1840,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in two Project Gutenberg editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/5428/pg5428-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "art",
+        "culture",
+        "politics",
+        "imagination"
+      ],
+      "semanticAxes": [
+        "art↔law",
+        "imagination↔institution"
+      ],
+      "frizzleQuestion": "Which stories govern behavior more effectively than laws because nobody experiences them as rules?",
+      "brainFood": [
+        {
+          "label": "A Defence of Poetry — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/5428/pg5428-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain essay text."
+        },
+        {
+          "label": "Shelley Prose Works, Vol. II",
+          "url": "https://www.gutenberg.org/files/67926/67926-h/67926-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain cross-check."
+        }
+      ],
+      "curatorNotes": "Useful for narrative governance rather than merely praising poets.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-james-art-discussion",
+      "text": "Art lives upon discussion, upon experiment, upon curiosity, upon variety of attempt.",
+      "author": "Henry James",
+      "work": "The Art of Fiction",
+      "publicationYear": 1884,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/58471/58471-h/58471-h.htm",
+        "edition": "Partial Portraits, public-domain edition",
+        "pageOrLocator": "The Art of Fiction",
+        "publicationYear": 1884,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact clause verified in Project Gutenberg and Boston University transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/58471/58471-h/58471-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "art",
+        "experiment",
+        "criticism",
+        "curiosity"
+      ],
+      "semanticAxes": [
+        "art↔experiment",
+        "practice↔discussion"
+      ],
+      "frizzleQuestion": "What happens to an art form when protecting its identity becomes more important than allowing experiments that might change it?",
+      "brainFood": [
+        {
+          "label": "Partial Portraits — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/58471/58471-h/58471-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain edition containing The Art of Fiction."
+        },
+        {
+          "label": "The Art of Fiction — Boston University",
+          "url": "https://people.bu.edu/rcarney/newsevents/hj1.shtml",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent transcription cross-check."
+        }
+      ],
+      "curatorNotes": "Very suitable for KFB's remix/design ethos without generic creativity rhetoric.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-wilde-spectator-mirror",
+      "text": "It is the spectator and not life that art really mirrors.",
+      "author": "Oscar Wilde",
+      "work": "Letter on The Picture of Dorian Gray / Miscellanies",
+      "publicationYear": 1890,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/files/14062/14062-h/14062-h.htm",
+        "edition": "Miscellanies, public-domain edition",
+        "pageOrLocator": "Letter, 16 Tite Street, July 1890",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Wilde's Miscellanies and Art and Morality."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/14062/14062-h/14062-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "art",
+        "spectator",
+        "projection",
+        "interpretation"
+      ],
+      "semanticAxes": [
+        "art↔spectator",
+        "work↔projection"
+      ],
+      "frizzleQuestion": "What does your interpretation of an artwork reveal about the work, and what does it reveal about the interpreter?",
+      "brainFood": [
+        {
+          "label": "Wilde Miscellanies — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/14062/14062-h/14062-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collected letter."
+        },
+        {
+          "label": "Oscar Wilde: Art and Morality",
+          "url": "https://www.gutenberg.org/cache/epub/33689/pg33689-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent public-domain cross-check."
+        }
+      ],
+      "curatorNotes": "Good for H13 itself: a Billboard can become an instrument that reads the viewer back.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-pater-experience-itself",
+      "text": "Not the fruit of experience, but experience itself, is the end.",
+      "author": "Walter Pater",
+      "work": "The Renaissance",
+      "publicationYear": 1873,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/2398/2398-h/2398-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Conclusion",
+        "publicationYear": 1873,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the Conclusion."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/2398/2398-h/2398-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "experience",
+        "attention",
+        "aesthetics",
+        "life"
+      ],
+      "semanticAxes": [
+        "experience↔result",
+        "presence↔achievement"
+      ],
+      "frizzleQuestion": "Which experience loses most of its value when it is treated mainly as evidence of an achievement?",
+      "brainFood": [
+        {
+          "label": "Pater, The Renaissance — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/2398/2398-h/2398-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Conclusion."
+        }
+      ],
+      "curatorNotes": "Useful for chill/exploration contexts where not every activity needs an external reward.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-stevenson-travel-hopefully",
+      "text": "to travel hopefully is a better thing than to arrive, and the true success is to labour.",
+      "author": "Robert Louis Stevenson",
+      "work": "Virginibus Puerisque",
+      "publicationYear": 1881,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/386/pg386-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "El Dorado",
+        "publicationYear": 1881,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/386/pg386-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "journey",
+        "process",
+        "work",
+        "arrival"
+      ],
+      "semanticAxes": [
+        "process↔goal",
+        "journey↔arrival"
+      ],
+      "frizzleQuestion": "Which goal becomes less valuable once reached because most of its meaning was produced by the pursuit?",
+      "brainFood": [
+        {
+          "label": "Virginibus Puerisque — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/386/pg386-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "A natural Travel/island candidate later, but remains unmapped now.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-austen-not-too-agreeable",
+      "text": "I do not want people to be very agreeable, as it saves me the trouble of liking them a great deal.",
+      "author": "Jane Austen",
+      "work": "Letter to Cassandra Austen",
+      "publicationYear": 1798,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/42078/42078-h/42078-h.htm",
+        "edition": "The Letters of Jane Austen, public-domain edition",
+        "pageOrLocator": "Letter from Steventon; January 1798 section in edition",
+        "publicationYear": 1798,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the collected letters."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/42078/42078-h/42078-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "liking",
+        "social-effort",
+        "humor",
+        "relationships"
+      ],
+      "semanticAxes": [
+        "agreeableness↔attachment",
+        "charm↔effort"
+      ],
+      "frizzleQuestion": "Why can someone being merely pleasant create more social obligation than someone being openly difficult?",
+      "brainFood": [
+        {
+          "label": "Letters of Jane Austen — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/42078/42078-h/42078-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collection containing the exact sentence."
+        }
+      ],
+      "curatorNotes": "Adds a lighter social-humanity beat to prevent the pool from becoming relentlessly solemn.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-smith-same-trade",
+      "text": "People of the same trade seldom meet together... but the conversation ends in a conspiracy against the public",
+      "author": "Adam Smith",
+      "work": "The Wealth of Nations",
+      "publicationYear": 1776,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Book I, Chapter X",
+        "publicationYear": 1776,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified; ellipsis only removes the phrase 'even for merriment and diversion'."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "markets",
+        "collusion",
+        "incentives",
+        "competition"
+      ],
+      "semanticAxes": [
+        "cooperation↔collusion",
+        "private-interest↔public-interest"
+      ],
+      "frizzleQuestion": "When does cooperation among peers create mutual benefit, and when does it quietly convert outsiders into the resource being shared?",
+      "brainFood": [
+        {
+          "label": "Wealth of Nations — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; Book I, Chapter X."
+        }
+      ],
+      "curatorNotes": "Specific incentive structure rather than a generic pro- or anti-market statement.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-marshall-ordinary-business",
+      "text": "Economics is a study of mankind in the ordinary business of life.",
+      "author": "Alfred Marshall",
+      "work": "Principles of Economics",
+      "publicationYear": 1890,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/files/35844/35844-h/35844-h.htm",
+        "edition": "New Gresham Encyclopedia summarizing Marshall's Principles",
+        "pageOrLocator": "Economics entry quoting Marshall's definition",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in a public-domain encyclopedia quotation; the Principles edition itself was not directly retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Marshall's 1890 text is public domain; Marshall died in 1924, so EU author term has expired.",
+        "evidenceUrl": "https://www.gutenberg.org/files/35844/35844-h/35844-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "economics",
+        "daily-life",
+        "behavior",
+        "material-life"
+      ],
+      "semanticAxes": [
+        "economics↔everyday-life",
+        "market↔human-action"
+      ],
+      "frizzleQuestion": "Which ordinary daily choice becomes economically important only when millions of people make it without coordinating?",
+      "brainFood": [
+        {
+          "label": "New Gresham Encyclopedia — Economics",
+          "url": "https://www.gutenberg.org/files/35844/35844-h/35844-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain encyclopedia quoting Marshall's definition."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY pending direct Principles page; useful to keep economics grounded in actual human routines.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-jevons-value-utility",
+      "text": "value depends entirely upon utility.",
+      "author": "William Stanley Jevons",
+      "work": "The Theory of Political Economy",
+      "publicationYear": 1871,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.econlib.org/library/YPDBooks/Jevons/jvnPE.html?chapter_num=5",
+        "edition": "Econlib transcription of The Theory of Political Economy",
+        "pageOrLocator": "Introduction / theory statement",
+        "publicationYear": 1871,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in Econlib and the Mises Institute edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.econlib.org/library/YPDBooks/Jevons/jvnPE.html?chapter_num=5",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "value",
+        "utility",
+        "economics",
+        "preference"
+      ],
+      "semanticAxes": [
+        "value↔use",
+        "price↔desire"
+      ],
+      "frizzleQuestion": "What does a market reveal about value if usefulness itself changes with scarcity, context, habit, and who is doing the valuing?",
+      "brainFood": [
+        {
+          "label": "Jevons, Theory of Political Economy — Econlib",
+          "url": "https://www.econlib.org/library/YPDBooks/Jevons/jvnPE.html?chapter_num=5",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Full public-domain text."
+        },
+        {
+          "label": "Theory of Political Economy — Mises Institute",
+          "url": "https://mises.org/library/book/theory-political-economy?d7_alias_migrate=1",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Independent edition cross-check."
+        }
+      ],
+      "curatorNotes": "Technical enough to be interesting, short enough for Billboard use; question complicates the apparent simplicity.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-george-poverty-progress",
+      "text": "This association of poverty with progress is the great enigma of our times.",
+      "author": "Henry George",
+      "work": "Progress and Poverty",
+      "publicationYear": 1879,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/55308/pg55308-images.html",
+        "edition": "Memorial Edition of the Writings of Henry George",
+        "pageOrLocator": "Progress and Poverty, introductory statement of the problem",
+        "publicationYear": 1879,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the public-domain edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/55308/pg55308-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "poverty",
+        "progress",
+        "wealth",
+        "distribution"
+      ],
+      "semanticAxes": [
+        "progress↔poverty",
+        "productivity↔distribution"
+      ],
+      "frizzleQuestion": "What kind of progress deserves the name if greater productive power can coexist with greater insecurity for the people producing it?",
+      "brainFood": [
+        {
+          "label": "Progress and Poverty — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/55308/pg55308-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain memorial edition."
+        }
+      ],
+      "curatorNotes": "Good economic systems question: progress is evaluated by distributional outcome, not spectacle.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-bastiat-seen-unseen",
+      "text": "the one takes account of the visible effect; the other takes account both of the effects which are seen and... necessary to foresee.",
+      "author": "Frédéric Bastiat",
+      "work": "That Which Is Seen, and That Which Is Not Seen",
+      "publicationYear": 1850,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/15962/pg15962-images.html",
+        "edition": "Essays on Political Economy, public-domain English edition",
+        "pageOrLocator": "Opening methodological passage",
+        "publicationYear": 1850,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified; ellipsis removes only repeated connective wording."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Bastiat's work and the cited nineteenth-century English edition are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/15962/pg15962-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "unintended-consequences",
+        "economics",
+        "systems",
+        "time-horizon"
+      ],
+      "semanticAxes": [
+        "visible↔hidden",
+        "immediate↔downstream"
+      ],
+      "frizzleQuestion": "Which policy, purchase, or habit looks beneficial only because its delayed costs happen somewhere you are not looking?",
+      "brainFood": [
+        {
+          "label": "Bastiat, Essays on Political Economy — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/15962/pg15962-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain English edition; opening Seen/Unseen passage."
+        }
+      ],
+      "curatorNotes": "Directly useful for systems thinking and delayed consequences.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-ruskin-money-right",
+      "text": "Money is, on the contrary, an expression of right.",
+      "author": "John Ruskin",
+      "work": "Unto This Last",
+      "publicationYear": 1862,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/36541/pg36541-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Essay IV, Section II — Money",
+        "publicationYear": 1862,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/36541/pg36541-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "money",
+        "rights",
+        "economics",
+        "claims"
+      ],
+      "semanticAxes": [
+        "money↔wealth",
+        "token↔claim"
+      ],
+      "frizzleQuestion": "What changes when money is understood not as wealth itself but as a socially recognized claim on other people's goods, time, and labor?",
+      "brainFood": [
+        {
+          "label": "Ruskin, Unto This Last — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/36541/pg36541-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain text; section on Money."
+        }
+      ],
+      "curatorNotes": "Distinct from the prior Ruskin 'wealth is life' quote; focuses on money as relational infrastructure.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-dewey-habit-mainspring",
+      "text": "Habit is the mainspring of human action.",
+      "author": "John Dewey",
+      "work": "The Public and Its Problems",
+      "publicationYear": 1927,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://dev.gutenberg.org/cache/epub/71000/pg71000-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Discussion of habits, customs and institutions",
+        "publicationYear": 1927,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in the work text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The 1927 publication is public domain in the US; Dewey died in 1952, so EU term expired in 2022.",
+        "evidenceUrl": "https://dev.gutenberg.org/cache/epub/71000/pg71000-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "habit",
+        "institutions",
+        "behavior",
+        "public-life"
+      ],
+      "semanticAxes": [
+        "habit↔deliberation",
+        "custom↔institution"
+      ],
+      "frizzleQuestion": "Which decision in public life is still being described as a choice even though habit has made the alternative almost psychologically unavailable?",
+      "brainFood": [
+        {
+          "label": "Dewey, The Public and Its Problems — Project Gutenberg",
+          "url": "https://dev.gutenberg.org/cache/epub/71000/pg71000-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Complements James: Dewey makes the habit-to-institution bridge explicit.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-rochefoucauld-ills-others",
+      "text": "We have strength enough to bear the ills of others.",
+      "author": "François de La Rochefoucauld",
+      "work": "Maxims",
+      "publicationYear": 1665,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/36174/pg36174-images.html",
+        "edition": "French Classics, public-domain literary history",
+        "pageOrLocator": "Maxim 19 in cited translation",
+        "publicationYear": 1665,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact English maxim verified in a public-domain literary history; direct Maxims edition was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying French and the cited early English rendering are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/36174/pg36174-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "empathy",
+        "suffering",
+        "self-interest",
+        "social-psychology"
+      ],
+      "semanticAxes": [
+        "own-suffering↔others-suffering",
+        "empathy↔distance"
+      ],
+      "frizzleQuestion": "Why is another person's suffering often easiest to interpret calmly precisely when we are least responsible for living through it?",
+      "brainFood": [
+        {
+          "label": "French Classics — La Rochefoucauld section",
+          "url": "https://www.gutenberg.org/cache/epub/36174/pg36174-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain source reproducing the maxim."
+        }
+      ],
+      "curatorNotes": "A dry social-psychology beat; SECONDARY_ONLY pending direct Maxims edition.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-swift-religion-hate-love",
+      "text": "we have just religion enough to make us hate, but not enough to make us love one another.",
+      "author": "Jonathan Swift",
+      "work": "Thoughts on Various Subjects",
+      "publicationYear": 1711,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/29440/pg29440-images.html",
+        "edition": "Hugh Miller, Leading Articles on Various Subjects, quoting Swift",
+        "pageOrLocator": "Swift maxim reproduced in historical discussion",
+        "publicationYear": 1711,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording is historically attested here; direct Swift edition was not retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/29440/pg29440-images.html",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "religion",
+        "identity",
+        "tribalism",
+        "love"
+      ],
+      "semanticAxes": [
+        "belief↔behavior",
+        "identity↔care"
+      ],
+      "frizzleQuestion": "What is the value of a belief system if it strengthens group identity more reliably than it strengthens care for people outside the group?",
+      "brainFood": [
+        {
+          "label": "Leading Articles — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/29440/pg29440-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain historical source reproducing Swift's maxim."
+        }
+      ],
+      "curatorNotes": "Keep centered on behavior rather than theology; SECONDARY_ONLY until direct Swift text is pinned.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-franklin-liberty-safety",
+      "text": "Those who would give up essential liberty, to purchase a little temporary safety, deserve neither liberty nor safety.",
+      "author": "Benjamin Franklin",
+      "work": "Historical Review of the Constitution and Government of Pennsylvania",
+      "publicationYear": 1759,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/48138/48138-h/48138-h.htm",
+        "edition": "Complete Works of Benjamin Franklin, Vol. III",
+        "pageOrLocator": "Dedication to the Historical Review",
+        "publicationYear": 1759,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain collected works."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/48138/48138-h/48138-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "liberty",
+        "safety",
+        "tradeoffs",
+        "politics"
+      ],
+      "semanticAxes": [
+        "liberty↔security",
+        "temporary-risk↔permanent-power"
+      ],
+      "frizzleQuestion": "Which temporary safety measure becomes most dangerous when the institution receiving new power gets to decide when the emergency is over?",
+      "brainFood": [
+        {
+          "label": "Franklin Complete Works, Vol. III — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/48138/48138-h/48138-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain collected works with the 1759 dedication."
+        }
+      ],
+      "curatorNotes": "Exact historical wording rather than modern paraphrase; question focuses on emergency-power persistence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-donne-no-man-island",
+      "text": "No man is an island, entire of itself; every man is a piece of the continent, a part of the main.",
+      "author": "John Donne",
+      "work": "Devotions upon Emergent Occasions",
+      "publicationYear": 1624,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://self.gutenberg.org/wplbn0002950152-devotions-upon-emergent-occasions-by-donne-john.aspx?trail=collection&words=",
+        "edition": "Public-domain reproduction of Devotions upon Emergent Occasions",
+        "pageOrLocator": "Meditation XVII",
+        "publicationYear": 1624,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the Meditation XVII excerpt."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://self.gutenberg.org/wplbn0002950152-devotions-upon-emergent-occasions-by-donne-john.aspx?trail=collection&words=",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "interdependence",
+        "mortality",
+        "community",
+        "connection"
+      ],
+      "semanticAxes": [
+        "individual↔community",
+        "separation↔interdependence"
+      ],
+      "frizzleQuestion": "Which part of your apparent independence depends on people and systems that become visible only when they fail?",
+      "brainFood": [
+        {
+          "label": "Donne, Devotions upon Emergent Occasions",
+          "url": "https://self.gutenberg.org/wplbn0002950152-devotions-upon-emergent-occasions-by-donne-john.aspx?trail=collection&words=",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain reproduction; Meditation XVII."
+        }
+      ],
+      "curatorNotes": "Familiar phrase, but the question converts it into infrastructure/interdependence rather than sentiment.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-thoreau-quiet-desperation",
+      "text": "The mass of men lead lives of quiet desperation.",
+      "author": "Henry David Thoreau",
+      "work": "Walden",
+      "publicationYear": 1854,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/205/205-h/205-h.htm",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Economy",
+        "publicationYear": 1854,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact sentence verified in Walden."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text and cited edition are public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/205/205-h/205-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "work",
+        "conformity",
+        "despair",
+        "ordinary-life"
+      ],
+      "semanticAxes": [
+        "resignation↔choice",
+        "routine↔desperation"
+      ],
+      "frizzleQuestion": "Which ordinary routine is easiest to mistake for consent simply because the person enduring it has stopped protesting?",
+      "brainFood": [
+        {
+          "label": "Walden — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/205/205-h/205-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Potentially overfamiliar, but earns reserve status through strong everyday-work fit and a non-romantic question.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r04-seneca-past-present-future",
+      "text": "Those men lead the shortest and unhappiest lives who forget the past, neglect the present, and dread the future.",
+      "author": "Seneca",
+      "work": "On the Shortness of Life",
+      "publicationYear": null,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/64576/64576-h/64576-h.htm",
+        "edition": "Aubrey Stewart translation, public-domain edition",
+        "pageOrLocator": "On the Shortness of Life, XVI",
+        "publicationYear": null,
+        "retrievedAt": "2026-10-06",
+        "notes": "Exact wording verified in the public-domain translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Ancient source and Aubrey Stewart's nineteenth-century English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/files/64576/64576-h/64576-h.htm",
+        "checkedAt": "2026-10-06"
+      },
+      "themes": [
+        "time",
+        "attention",
+        "memory",
+        "anxiety"
+      ],
+      "semanticAxes": [
+        "past↔present",
+        "future-fear↔lived-time"
+      ],
+      "frizzleQuestion": "Which part of your life is being spent rehearsing a future problem that may never arrive?",
+      "brainFood": [
+        {
+          "label": "Seneca, Minor Dialogues — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/64576/64576-h/64576-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-06",
+          "notes": "Public-domain Aubrey Stewart translation; On the Shortness of Life XVI."
+        }
+      ],
+      "curatorNotes": "Everyday human-behavior closer: temporal attention rather than abstract philosophy.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
