@@ -47,21 +47,27 @@
       "id": "kfb-asset-librarian",
       "owner": "KFB Asset Registry / Librarian",
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
-      "status": "SITE_DEPLOYED_PRIVATE",
+      "status": "SITE_VERIFIED_STYLE_REFERENCE_R2_ACCEPTED",
       "source": "PR #349",
-      "humanStatus": "GEORG_REVIEW_OPEN",
-      "notes": "WSA browser QA 8/8 PASS for Phase A. Style Reference Library R1 is now prepared as an additional mode of this same Site; it is not implemented/published yet and does not create a second Site.",
+      "humanStatus": "HUMAN_ACCEPTED_FOR_CONTINUATION_USABLE_NOT_OPTIMAL",
+      "notes": "Asset Librarian Style Reference Browser/Viewer R2 is published in the existing Site and Georg answered YES to the binding usability gate. Accepted for continuation, with non-blocking polish still open; Compare 2–4 remains deferred.",
       "surfaceRole": "SPECIALIST_TOOL",
       "preparedViews": [
         {
           "id": "style-reference-library",
-          "status": "R1_SITE_PACKET_READY_NOT_IMPLEMENTED",
-          "route": "UNASSIGNED_UNTIL_IMPLEMENTED",
-          "source": "tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/START_HERE.md",
-          "seed": "13 official Etherington URLs",
-          "secondSite": false
+          "status": "R2_PUBLISHED_HUMAN_ACCEPTED_FOR_CONTINUATION",
+          "route": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
+          "source": "PR #359",
+          "seed": "58 built-ins · 53 Etherington · 5 supplementary · 106 boards",
+          "secondSite": false,
+          "note": "Usable, not optimal; Compare and further polish are non-blocking."
         }
-      ]
+      ],
+      "siteProject": "appgprj_6ac1afef08148191b62b95f184bf845e",
+      "siteVersion": "appgprj_6ac1afef08148191b62b95f184bf845e~appgver_c47336c1293c819180272d3b7c6971a9",
+      "siteDeployment": "appgdep_6ac5769bdae0819195ca516e9625d6ec",
+      "siteSourceCommit": "3ea2eab909f266889c8eaa4e5624ddf5970b7d89",
+      "deepLink": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references"
     },
     {
       "id": "kfb-audio",
@@ -146,7 +152,7 @@
       "notes": "No existing ToolBox Site was found. Exactly one canonical GPT Site project was created and published. Existing historical ToolBox Stage/Home/standalone surfaces are donors/history, not competing current front doors."
     }
   ],
-  "updatedAt": "2026-10-05T01:35:00+02:00",
+  "updatedAt": "2026-10-07T00:00:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",
