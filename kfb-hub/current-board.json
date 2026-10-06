@@ -1,12 +1,12 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-06.3",
-  "updatedAt": "2026-10-06T16:58:00+02:00",
+  "revision": "2026-10-06.4",
+  "updatedAt": "2026-10-06T17:04:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
   "status": {
     "label": "CURRENT · COWORKER OPEN WORLD INTEGRATION RUNNING",
-    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. Audio PR #365 is registered as additive input: G/D remain verified, while M/N/O are source-present and must pass runtime QA before activation. Style Reference Library R1 is published in place inside the existing Asset Librarian and routed from the existing ToolBox; it is available tooling, not a current product blocker. After Coworker returns, Work/Astra first ingests the exact Coworker result, then reconciles missing KFB seams including the audio handover. Old World/Combat FAIL builds are history, not current work cards."
+    "note": "Coworker is the active Open World integrator. Do not start a parallel Work/Astra rebuild. Audio PR #365 is registered as additive input: G/D remain verified, while M/N/O are source-present and must pass runtime QA before activation. Style Reference Library R1 is published in place inside the existing Asset Librarian and routed from the existing ToolBox; its portable Claude Design reference-pack bridge is also ready. It is available tooling, not a current product blocker. After Coworker returns, Work/Astra first ingests the exact Coworker result, then reconciles missing KFB seams including the audio handover. Old World/Combat FAIL builds are history, not current work cards."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -63,12 +63,12 @@
     {
       "id": "pr-359-style-reference-library",
       "title": "TOOL · Style Reference Library R1 · published",
-      "summary": "PR #359 remains draft/unmerged, but R1 is published in place inside the existing Asset Librarian. 13 official Etherington references, search/filters/URL intake, Reference Cards/Sets, notes, Construction Principles, Reference↔Asset links, export/reload, restored 3D previews and five-icon mobile navigation are in the existing owner-only Site. ToolBox routes to the real deep-link; no second Site.",
+      "summary": "PR #359 remains draft/unmerged, but R1 is published in place inside the existing Asset Librarian. 13 official Etherington references, search/filters/URL intake, Reference Cards/Sets, notes, Construction Principles, Reference↔Asset links, export/reload, restored 3D previews and five-icon mobile navigation are live in the existing owner-only Site. ToolBox routes to the real deep-link; no second Site. A portable Claude Design Reference-Pack bridge is ready with an 8/8 validated Clouds example.",
       "badge": "PUBLISHED TOOL",
       "action": "Style Reference Library öffnen",
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
       "executor": "KFB Asset Librarian · existing Site owner",
-      "nextExecutor": "None · available for use; PR #359 remains unmerged"
+      "nextExecutor": "None · available for use; optional future Export for Claude Design action"
     }
   ],
   "quickLinks": [
@@ -99,7 +99,7 @@
     },
     {
       "title": "Style Reference Library",
-      "summary": "Published R1 inside the existing Asset Librarian: 13 Etherington references plus reference cards/sets, source isolation, asset links and export.",
+      "summary": "Published R1 inside the existing Asset Librarian: 13 Etherington references plus reference cards/sets, source isolation, asset links, export, and a portable Claude Design reference-pack bridge.",
       "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references"
     }
   ]
