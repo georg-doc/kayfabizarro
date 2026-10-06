@@ -815,3 +815,87 @@ Unresolved / deferred:
 
 Exactly one next gate:
 **PUBLISH_AND_VERIFY_EXISTING_ASSET_LIBRARIAN_R2_IN_PLACE**
+
+
+---
+
+## Style Reference Browser / Viewer R2 · publication return · 2026-10-07
+
+Status: **R2 PUBLISHED IN PLACE · VERSION 4 SUCCEEDED · GEORG REVIEW READY**
+
+Owner / GitHub:
+- repo: `georg-doc/kayfabizarro`
+- branch: `planning/style-reference-library-r1-surface-2026-10-05`
+- Draft PR: **#359**
+- pre-publication checkpoint head: `12338237b67f8c7d644c2cb9c84efa4d95f6689e`
+- Draft PR remains open and unmerged
+
+Exact existing Site identity:
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- source: `3ea2eab909f266889c8eaa4e5624ddf5970b7d89`
+- version number: **4**
+- version: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_c47336c1293c819180272d3b7c6971a9`
+- deployment: `appgdep_6ac5769bdae0819195ca516e9625d6ec`
+- deployment status: **SUCCEEDED**
+- live URL: `https://kfb-asset-librarian.frizzlebob.chatgpt.site`
+- exact deep-link: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- audience: existing owner-only custom access preserved
+- new Site created: **NO**
+
+Changed Site files:
+- `dist/app.js` · dedicated reference-mode shell and R2 API version;
+- `dist/index.html` · compact browse controls, Gallery / Viewer / details zones, secondary intake dialog;
+- `dist/styles.css` · desktop three-zone viewer and mobile full-screen viewer;
+- `dist/style-references.js` · existing 58-record seed exported without changing its IDs;
+- `dist/style-reference-browser.js` · R2 browse/view/zoom/board/persistence controller;
+- `dist/style-reference-visuals.js` · presentation-only official remote visual index: 53 sources / 106 boards.
+
+Published behavior:
+- tutorial boards are visible completely in Fit page and inspectable at useful scale;
+- multi-board sources expose each board separately;
+- Fit width / Fit page / 100% / zoom and previous/next reference work;
+- Gallery is the chooser; Viewer is the dominant inspection surface;
+- compact search/quick filters; detailed filters collapsed;
+- URL intake is behind `+ Add reference`;
+- Add to Set and inspected state remain obvious;
+- metadata, notes, principles, relations and provenance remain available but secondary;
+- mobile uses a two-column gallery and full-screen reference viewer;
+- Paper/Dark/KFB language retained.
+
+Final verification against the exact source packaged for Version 4:
+- 58 unique built-ins / 53 Etherington + 5 supplementary: **PASS**
+- 53 official sources / 106 creator-hosted boards: **PASS**
+- tall Clouds board shown completely: **PASS**
+- board 1 / board 2 navigation: **PASS**
+- fit / 100% / zoom / reference navigation: **PASS**
+- Cards / Sets / Notes / Principles reload persistence: **PASS**
+- source isolation and `kfb.style-reference-pack/1` export: **PASS**
+- Assets / Motions / Saved Sets / Intake: **PASS**
+- 3D previews and whole-card Inspector: **PASS**
+- desktop + mobile browser QA: **PASS**
+- page errors: **0**
+- exact source/version/deployment re-read from Sites: **MATCH**
+
+Evidence:
+- before: Georg's R1 screenshots attached to the Work request;
+- after desktop: `asset-librarian-style-viewer-r2-desktop.png`;
+- after mobile gallery: `asset-librarian-style-viewer-r2-mobile-gallery.png`;
+- after mobile complete board: `asset-librarian-style-viewer-r2-mobile-board.png`.
+
+Deferred:
+- Compare 2–4 References remains deferred; the binding brief marks it non-blocking and the core Viewer is complete.
+
+Protected boundary:
+- no second Site;
+- no image binaries mirrored into GitHub;
+- no localStorage clearing or destructive migration;
+- no unrelated mode redesign;
+- no merge;
+- no Live promotion;
+- no Claude Design round.
+
+Exactly one next gate:
+**GEORG_REVIEW_STYLE_REFERENCE_BROWSER_VIEWER_R2**
+
+Human question:
+> Can Georg now inspect the actual drawings comfortably inside the Librarian?
