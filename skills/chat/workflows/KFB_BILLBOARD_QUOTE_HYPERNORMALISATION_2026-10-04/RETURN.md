@@ -1,13 +1,13 @@
 # RETURN · KFB Billboard Quote Hypernormalisation
 
 Date: 2026-10-06
-Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–06 COMPLETE · RESEARCH EXPANSION ACTIVE
+Status: QUOTE POOL BATCH 01 + RESEARCH RESERVES 01–07 COMPLETE · RESEARCH EXPANSION ACTIVE
 Owner: KFB Quote Curator · normal Web Chat
 Slice: research/data only · no Work/WSA runtime work
 Repo: georg-doc/kayfabizarro
 Branch: planning/billboard-quote-hypernorm-curator-2026-10-04
 Draft PR: #354
-Last verified branch head before this Return write: 6444d8627f859f45c1b811462944fa3f16cd2d23
+Last verified branch head before this Return write: 3f51ef18793007db57f59a9104074d56953f661f
 
 ## Georg continuation decision
 
@@ -26,97 +26,80 @@ No quote is thereby approved for public runtime, and no H13/Billboard/3D runtime
 - provenance: **27 VERIFIED · 3 SECONDARY_ONLY · 0 UNVERIFIED**
 - validation: **13/13 PASS**
 
-File:
-`QUOTE_POOL_BATCH_01.json`
+### Research Reserves 01–06
+- deliberately unmapped research reserve;
+- prior combined inventory before Reserve 07: **205 candidates**
+- prior unmapped count: **175**
 
-### Research Reserve 01
-- **25 deliberately unmapped**
-- validation: **14/14 PASS**
-
-### Research Reserve 02
-- **30 deliberately unmapped**
-- validation: **16/16 PASS**
-
-### Research Reserve 03
-- **30 deliberately unmapped**
-- validation: **18/18 PASS**
-
-### Research Reserve 04
-- **30 deliberately unmapped**
-- validation: **18/18 PASS**
-
-### Research Reserve 05
-- **30 deliberately unmapped**
-- five balanced tonal clusters
-- validation: **20/20 PASS**
-
-### Research Reserve 06
+### Research Reserve 07
 
 Added 2026-10-06 with five balanced research clusters:
 
-- myth/religion: **6**
-- law/crime: **6**
-- psychology: **6**
-- music/performance: **6**
-- science/history oddities: **6**
+- architecture/urbanism: **6**
+- education/learning: **6**
+- war/conflict: **6**
+- food/material culture: **6**
+- language/translation: **6**
 
 Counts:
 - **30 deliberately unmapped quote + FrizzleQuestion candidates**
 - provenance:
-  - **28 VERIFIED**
-  - **2 SECONDARY_ONLY**
+  - **27 VERIFIED**
+  - **3 SECONDARY_ONLY**
   - **0 UNVERIFIED**
 - rights:
-  - **29 PUBLIC_DOMAIN_CONFIRMED**
+  - **26 PUBLIC_DOMAIN_CONFIRMED**
+  - **2 RESEARCHED_QUOTE_LIMIT_ONLY**
+  - **1 RESEARCHED_RESTRICTED**
   - **1 DRAFT_RIGHTS_UNKNOWN**
 - validation: **20/20 PASS**
-- zero ID/text collisions against the prior 175-candidate inventory
+- zero ID/text collisions against the prior 205-candidate inventory
 
 File:
-`QUOTE_RESEARCH_RESERVE_06.json`
+`QUOTE_RESEARCH_RESERVE_07.json`
 
-Reserve 06 expands the pool across:
-- private conscience vs religious institution;
-- fear and superstition;
-- ritual / false causal models;
-- ordinary vs altered consciousness;
-- anxiety and belief;
-- religion judged by conduct;
-- prevention vs punishment;
-- false acquittal vs false conviction;
-- litigation vs settlement;
-- law vs justice;
-- investigation and obviousness;
-- punishment vs vengeance;
-- habit and expectation;
-- emotion vs reason;
-- blushing / social self-consciousness;
-- laughter and tears;
-- memory as thinking;
-- conformity and self-suppression;
-- art aspiring toward music;
-- music as non-propositional expression;
-- rhythm/evolution;
-- performance as embodiment;
-- feeling vs technique in acting;
-- grandeur vs pomp / nature vs triviality;
-- Ada Lovelace on machine origination;
-- Michelson on supposedly completed physics;
-- Wilbur Wright's belief in flight;
-- Newcomb's failed impossibility forecast;
-- Tesla's planetary-network metaphor;
-- the 1903 New York Times million-year flight forecast.
+Reserve 07 expands the pool across:
+- durability / convenience / beauty;
+- architecture as memory across generations;
+- form vs function;
+- town vs country;
+- architecture as everyday material art;
+- house vs city / part vs whole;
+- reading vs thinking;
+- well-made vs well-filled minds;
+- challenge vs capacity;
+- teacher influence over time;
+- past knowledge serving the present;
+- respect for pupil autonomy;
+- war as cruelty;
+- war as policy;
+- victory without fighting;
+- peace vs renewed violence;
+- glorious language vs bodily war;
+- power vs justice in the Melian Dialogue;
+- food and identity;
+- ordinary pleasure vs prestige discovery;
+- material conditions of thought;
+- possessions riding their owners;
+- household financial margin;
+- production vs actual use;
+- translation as seeing the reverse of a tapestry;
+- foreign language as a mirror on one's own;
+- language as fossil poetry;
+- language boundaries vs world boundaries;
+- language corrupting thought;
+- words vs the matter they represent.
 
 ## Combined depth
 
 Current researched inventory:
 
 - mapped Batch 01: **30**
-- unmapped Reserves 01–06: **175**
-- **combined: 205 researched quote/question candidates**
+- unmapped Reserves 01–07: **205**
+- **combined: 235 researched quote/question candidates**
 
 Important:
-**205 researched candidates ≠ 205 approved quotes per island.**
+**235 researched candidates ≠ 235 approved quotes per island.**
 
 Reserve candidates remain:
 `UNMAPPED_BY_DESIGN`
@@ -134,11 +117,11 @@ Future mapped context pools should diversify:
 - rights eligibility;
 - recent-repeat history.
 
-The goal is not merely avoiding exact repeats. A long island session should also avoid sounding like the same author, century, discipline or emotional register repeatedly.
+The goal is not merely avoiding exact repeats. A long island session should also avoid repeating the same thinker, century, discipline and emotional register.
 
 No runtime selector was modified.
 
-## Reserve 06 validation evidence
+## Reserve 07 validation evidence
 
 **20/20 PASS**
 
@@ -148,8 +131,8 @@ Checked:
 - five balanced 6-item clusters;
 - unique IDs;
 - unique quote texts;
-- no ID collision with prior 175;
-- no text collision with prior 175;
+- no ID collision with prior 205;
+- no text collision with prior 205;
 - all `UNMAPPED_BY_DESIGN`;
 - no premature deck/Card/island/Billboard/biome mappings;
 - reserve status;
@@ -161,7 +144,7 @@ Checked:
 - billboard-reasonable quote length;
 - verification totals;
 - rights totals;
-- combined inventory = 205.
+- combined inventory = 235.
 
 Runtime/browser/audio/3D tests: **NOT RUN BY SCOPE**.
 Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
@@ -170,15 +153,17 @@ Visual proof: **NOT APPLICABLE TO THIS RESEARCH/DATA SLICE**.
 
 No uncertain case is silently promoted.
 
-Reserve 06 open cases:
-- **Wilbur Wright — letter to Octave Chanute, 13 May 1900**: wording is primary-source verified through the Library of Congress, but the historical manuscript/publication-term status was not resolved; remains `DRAFT_RIGHTS_UNKNOWN`.
-- **Diderot — Paradox of Acting**: exact English formulation is supported by John Morley's public-domain study but the direct English edition was not pinned; remains `SECONDARY_ONLY`.
-- **Talma — acting maxim**: exact English formulation is verified in Henry Irving's public-domain address quoting Talma, but the direct Talma edition was not pinned; remains `SECONDARY_ONLY`.
+Reserve 07 open/sensitive cases:
+- **Leon Battista Alberti** — underlying text public domain; exact Rykwert/Leach/Tavernor English rendering is modern and `RESEARCHED_RESTRICTED`; provenance remains `SECONDARY_ONLY`.
+- **Ralph Waldo Emerson, education maxim** — old public-domain attribution is strong but a direct Emerson page was not pinned; `SECONDARY_ONLY`.
+- **Johann Wolfgang von Goethe** — German original is institutionally verified and public domain; exact English rendering has no pinned historical translator/edition, so `SECONDARY_ONLY + DRAFT_RIGHTS_UNKNOWN`.
+- **Ludwig Wittgenstein, Ogden 1922 translation** — public domain in the US, but EU translator term remains active through 2027; `RESEARCHED_QUOTE_LIMIT_ONLY`.
+- **George Orwell, Politics and the English Language** — author term expired in the EU; the 1946 US publication remains protected in 2026; `RESEARCHED_QUOTE_LIMIT_ONLY`.
 
 ## Files
 
-Added in Reserve 06:
-- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_06.json`
+Added in Reserve 07:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_RESEARCH_RESERVE_07.json`
 
 Updated:
 - `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/CHANGELOG.md`
@@ -200,6 +185,6 @@ No merge. No Live promotion.
 
 ## One next productive step
 
-**Quote Research Reserve 07 — continue quality-first expansion with architecture/urbanism, education/learning, war/conflict, food/material culture and language/translation before mapping.**
+**Quote Research Reserve 08 — continue quality-first expansion with mathematics/chance, bureaucracy/administration, media/propaganda, childhood/play and exploration/discovery before mapping.**
 
 Georg action required now: **nothing**.
