@@ -1,0 +1,98 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "packId": "style-pack:kfb-clouds:001",
+  "status": "DESIGN_JOB_READY_SOURCE_INSPECTION_PENDING",
+  "title": "KFB Cartoon / Clay Clouds · Construction Reference Pack 01",
+  "createdAt": "2026-10-06",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "consumer": "claude-design",
+  "designIntent": "Develop KFB-specific cloud forms for world/environment and comic/VFX use by extracting construction principles from official references and translating them into KFB clay/cartoon language. Do not imitate an artist-specific finished style.",
+  "sourceInspectionRequired": true,
+  "referencePolicy": {
+    "publicSourceTransport": "URL_ONLY",
+    "embedRemoteImageBinaries": false,
+    "preserveReferenceIds": true,
+    "sourceIsolationBeforeUse": true
+  },
+  "references": [
+    {
+      "referenceId": "style-ref:etherington:clouds:2022-03",
+      "seedId": "etherington-clouds-2022-03",
+      "role": "PRIMARY_FORM_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2022/03/how-to-think-when-you-draw-clouds.html",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "major cloud-mass grouping",
+        "silhouette breakup",
+        "overlap hierarchy",
+        "edge rhythm",
+        "large-to-small shape progression"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington:smoke:2024-07",
+      "seedId": "etherington-smoke-2024-07",
+      "role": "SECONDARY_VOLUME_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2024/07/how-to-think-when-you-draw-smoke.html",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "volumetric clustering",
+        "layering and depth",
+        "soft-vs-hard contour transitions",
+        "readability of overlapping rounded masses"
+      ]
+    },
+    {
+      "referenceId": "style-ref:etherington:spacing-composition:2022-07",
+      "seedId": "etherington-spacing-composition-2022-07",
+      "role": "COMPOSITION_REFERENCE",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Draw",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2022/07/how-to-think-when-you-draw-spacing-in.html",
+      "sourceInspectedInIsolation": false,
+      "inspectFor": [
+        "negative-space rhythm",
+        "spacing between major forms",
+        "avoiding uniform repetition",
+        "visual hierarchy across a group"
+      ]
+    }
+  ],
+  "kfbTarget": {
+    "language": [
+      "KFB clay/cartoon form language",
+      "simple readable silhouettes",
+      "tactile rounded volume",
+      "non-uniform handmade clustering",
+      "usable in 3D/procedural world generation and 2D comic/VFX presentation"
+    ],
+    "avoid": [
+      "literal copying of source drawings",
+      "artist-signature mimicry",
+      "generic stock-cloud icon shapes",
+      "uniform repeated puffs",
+      "over-detailed noise"
+    ]
+  },
+  "expectedOutputs": [
+    "3 distinct KFB cloud construction families",
+    "one concise reusable cloud grammar per family",
+    "front/three-quarter silhouette sketches or equivalent design views",
+    "procedural parameters that could later drive a cloud generator",
+    "reference IDs retained beside each derived rule"
+  ],
+  "returnRequirements": [
+    "list exact source URLs actually opened",
+    "state which reference IDs were inspected",
+    "separate OBSERVED source facts from KFB design decisions",
+    "identify any uninspected references",
+    "do not claim compatibility/runtime proof"
+  ]
+}
