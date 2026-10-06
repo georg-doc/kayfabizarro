@@ -1,3 +1,14 @@
+# SUPERSEDED · use WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md
+
+This earlier migration brief is retained for history only.
+
+Current binding brief:
+`skills/chat/publish/WORK_HUB_LIVE_BOARD_NO_REGRESSION_2026-10-06.md`
+
+Reason: the current brief adds the direct-Site visual baseline, hard UI-regression firewall, no-republish proof, and read-only ToolBox identity verification.
+
+---
+
 # Work / Sites · Production Hub Live Board Migration · 2026-10-06
 
 Status: **ONE-TIME PUBLISH_ONLY INFRASTRUCTURE FIX**
