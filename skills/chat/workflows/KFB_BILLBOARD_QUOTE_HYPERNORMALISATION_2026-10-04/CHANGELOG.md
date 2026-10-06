@@ -139,3 +139,22 @@
 - Combined researched inventory is now **205 candidates**: 30 mapped Batch-01 candidates + 175 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 07 · architecture / education / conflict / material culture / language
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_07.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - architecture/urbanism: 6
+  - education/learning: 6
+  - war/conflict: 6
+  - food/material culture: 6
+  - language/translation: 6
+- Reserve 07 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **27 VERIFIED**, **3 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **26 PUBLIC_DOMAIN_CONFIRMED**, **2 RESEARCHED_QUOTE_LIMIT_ONLY**, **1 RESEARCHED_RESTRICTED**, **1 DRAFT_RIGHTS_UNKNOWN**.
+- Rights-sensitive cases remain explicit: Alberti's modern English translation is research-restricted; Wittgenstein's Ogden translation is US-public-domain but still EU-term-sensitive in 2026; Orwell is EU-public-domain but US-protected; Goethe's exact English rendering remains rights-unknown pending a historical translation edition.
+- `SECONDARY_ONLY` source-chain cases: Alberti's exact modern English wording, Emerson's education maxim, and Goethe's exact English rendering.
+- Validation: **20/20 PASS**, including five balanced clusters and zero ID/text collisions against the prior 205-candidate inventory.
+- Combined researched inventory is now **235 candidates**: 30 mapped Batch-01 candidates + 205 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
