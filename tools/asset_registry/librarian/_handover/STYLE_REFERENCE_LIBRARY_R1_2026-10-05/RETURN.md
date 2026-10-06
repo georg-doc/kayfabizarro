@@ -202,3 +202,28 @@ Independent engineering gate:
 See the appended implementation section in `TEST_REPORT.md`.
 
 The next gate is exact in-place Site deployment followed by ToolBox deep-link update and visible verification. No merge and no Live branch promotion are authorized.
+
+
+## Final publication return · 2026-10-06
+
+Status: **R1 PUBLISHED IN PLACE · TOOLBOX ROUTE LIVE**
+
+Asset Librarian:
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- source: `492e01d02f5d93d49d9dd7caecbbf7dedff26ea9`
+- version: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_e031f40ea0e48191992aa6217df5afaf`
+- deployment: `appgdep_6ac508ef180081919d081ccea5fcab65`
+- deep-link: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+
+KFB ToolBox:
+- project: `appgprj_6ac2ba44282881919d1a49287a32054e`
+- source: `f3f7c0d31c4c3afec9badc0526041e689935b7ec`
+- version: `appgprj_6ac2ba44282881919d1a49287a32054e~appgver_271ece50c5d48191b7e7bffcfe9ff16a`
+- deployment: `appgdep_6ac50a874c888191902109ddbbf8899a`
+- URL: `https://kfb-toolbox.frizzlebob.chatgpt.site`
+
+ToolBox now contains one visible **Style Reference Library** card owned by **Asset Librarian** and routes to the exact Asset Librarian deep-link. Both existing owner-only audiences were preserved.
+
+Exactly one next gate: **Georg review of the published R1 surface.**
+
+No merge. No Live branch promotion. No second Site.
