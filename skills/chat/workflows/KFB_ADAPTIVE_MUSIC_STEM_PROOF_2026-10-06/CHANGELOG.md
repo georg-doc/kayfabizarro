@@ -57,3 +57,18 @@
 - implementation head `127f6260...` existing Resource Registry CI run `37474723115` completed SUCCESS;
 - no WB2 runtime, Hub, Cloudflare or Site mutation;
 - next receiving seam is one World-owned `audio-context-adapter.v1.js` on the running Open World One-Shot.
+
+
+### M/N/O source intake + Coworker/WSA handover
+
+- corrected executor wording: current long Open World integration is **Claude Coworker**; ChatGPT Work/WSA is the Anschluss-Integrator per current router;
+- ingested new main@276728f3 assets without claiming runtime acceptance;
+- M `KFB_M_ISLAND_LIFE_ORCHESTRAL_COZY_01`: actual 112 BPM, master + 10 stems;
+- N `KFB_N_DUSK_NIGHT_ORCHESTRAL_COZY_01`: actual 70 BPM, master + 11 stems;
+- O `KFB_O_DISCOVERY_POI_ORCHESTRAL_01`: 82 BPM, master + 9 stems;
+- exact source presence: 3/3 masters + 30/30 stems = 33/33 non-empty MP3 files;
+- M/N/O registered as `SOURCE_PRESENT_RUNTIME_UNVERIFIED`;
+- ambiguous M Lead Vocals/Other and N Lead/Backing Vocals remain muted by default;
+- no automatic World mapping added before decode/alignment/listening QA;
+- added durable Coworker/WSA World Audio Integration handover;
+- no write to Open World runtime, Production Hub, Cloudflare or other product runtime.
