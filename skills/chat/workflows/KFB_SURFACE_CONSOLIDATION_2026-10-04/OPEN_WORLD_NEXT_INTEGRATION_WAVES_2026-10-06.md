@@ -563,6 +563,223 @@ One real 3D Resident conversation in the actual Open World must demonstrate:
 
 This becomes part of **Wave D · Living World** and should be reviewed during the architecture-freeze pass before implementation.
 
+## 8 · Resident Life / Affect / Encounter Simulation
+
+This layer sits above the Resident Performance Composer.
+
+### Four-axis model
+Keep these separate and composable:
+
+1. **Affect / Emotion**
+   - baseline mood;
+   - current emotion + intensity;
+   - short reaction impulses;
+   - cause / target / decay.
+
+2. **Activity / Intent**
+   - role-based routine;
+   - destination / POI;
+   - resource / prop;
+   - duration / completion;
+   - interruption policy.
+
+3. **Encounter / Social Interaction**
+   - opportunistic meeting with Resident, player, object or event;
+   - greet / ignore / trade / gift / help / share Fluff / ask / tease / argue / join / leave;
+   - emits a short beat sequence, not a bespoke animation script.
+
+4. **Relationship / Memory**
+   - familiarity;
+   - recent gifts, trades, help, conflict;
+   - important Cards/events;
+   - role/faction affinity;
+   - no generic heart-meter UI required.
+
+### Daily routines and POIs
+
+Residents get:
+- home base;
+- work/role base;
+- social/leisure/resource POIs;
+- route families rather than one repeated waypoint loop;
+- day-part preferences;
+- curiosity targets;
+- fallback idle activities.
+
+World owns paths, POIs, resource truth, time/weather and positions.
+Resident Life chooses where/why to go.
+
+Example Farmer loop:
+`home → Life Tree / Fluff source → harvest → carry/roll Fluff → storage/market/build target → social stop → home`.
+
+### Anti-repetition
+
+Do not use one fixed route forever.
+Use:
+- weighted alternate POIs;
+- 2–3 route variants between important anchors;
+- deterministic day/seed variation;
+- pauses/look/curiosity detours;
+- social detours;
+- resource-driven rerouting.
+
+Random wandering must not replace semantic routines.
+
+### Fluff resource loop
+
+```
+Fluff source
+→ harvest
+→ visible Fluff units
+→ carry / roll / push / cart
+→ storage / trade / gift / construction
+→ consume / rebuild
+```
+
+The same Fluff flow can feed:
+- farming;
+- gifts;
+- trade;
+- healing/repair;
+- construction;
+- post-destruction rebuilding.
+
+### Random encounter resolver
+
+Proximity alone does not force conversation.
+
+When paths cross, evaluate:
+- current activity urgency;
+- interruption policy;
+- relationship/familiarity;
+- encounter cooldown;
+- role/faction;
+- current affect;
+- relevant carried resource/item;
+- POI context;
+- player attention/proximity.
+
+Possible outcomes:
+- pass silently;
+- glance / nod;
+- greet;
+- short remark;
+- offer / trade;
+- gift;
+- share Fluff;
+- ask/help;
+- react to Card/object;
+- join activity;
+- brief disagreement;
+- ChatterBox Triplet only when warranted.
+
+Silence remains a valid outcome.
+
+### Encounter beat grammar
+
+Reuse the Town rule: encounters send semantic beats; animation/text layers choose independently.
+
+```
+approach → notice → orient → greet/acknowledge
+→ offer/request/share → respond/react
+→ optional exchange → resolve → depart/join/resume
+```
+
+Performance Composer maps beat + emotion to:
+EyeRig, brows, PetMouth, gaze/head, gesture/body, bubble and Audio speech-focus hooks.
+
+### Emotion mapping
+
+Emotion is shared state, not owned by face or Audio.
+
+Initial vocabulary:
+- calm/neutral;
+- curious;
+- attentive;
+- pleased/joyful;
+- amused;
+- grateful/affectionate;
+- proud;
+- surprised;
+- worried/anxious;
+- sad/disappointed;
+- annoyed;
+- angry;
+- embarrassed;
+- suspicious;
+- tired/bored.
+
+Each emotion maps to a **performance recipe**, not one animation:
+- eyes/lids/gaze;
+- brow state;
+- mouth rest/viseme behavior;
+- head/torso cue;
+- optional gesture;
+- dialogue tone bias;
+- bubble timing;
+- Audio mood/context modifier.
+
+### Reaction loops
+
+Events create short reactions over the slower activity/mood state.
+
+Examples:
+- player arrives → curiosity;
+- gift received → surprise → gratitude;
+- trade succeeds → pleased;
+- Fluff spills → surprise → annoyance/worry;
+- friend passes → greet/affection;
+- rival passes → suspicion/annoyance;
+- building collapses → surprise/fear → inspect/help;
+- repair completes → relief/pride;
+- Billboard/Card changes → curiosity/thinking.
+
+After reaction:
+- resume;
+- replan;
+- start encounter;
+- join activity;
+- return home/rest.
+
+### Social exchange record
+
+Trade/gift/Fluff/help interactions emit a small durable event:
+`actor, target, kind, resource/item, quantity, location, result, affectDelta, memoryImportance`.
+
+This can feed lightweight relationship memory, later dialogue callbacks, player recognition and replanning.
+
+### Player uses the same encounter system
+
+Player may greet, interrupt, gift, trade, give/request Fluff, help, join, observe, trigger ChatterBox or walk away.
+Do not build a second player-only social system.
+
+### Simulation LOD
+
+- Near camera: full pathfinding + animation + face + reactions.
+- Far: low-frequency routine/activity simulation, no expensive face updates.
+- Off-screen: coarse state transitions only.
+- On stream-in: reconstruct current activity/affect deterministically.
+
+### First proof
+
+Start small:
+- 3 Residents;
+- one home/base each;
+- 3–5 semantic POIs;
+- Farmer/Fluff routine;
+- one curiosity/leisure routine;
+- alternate routes;
+- one chance Resident encounter;
+- greeting + gift/trade/Fluff exchange;
+- player interruption;
+- visible emotion/reaction;
+- clean resume/replan;
+- Audio reacts without owning emotion;
+- save/reload only durable state.
+
+Architecture-freeze must define:
+`ResidentProfile`, `AffectState`, `ActivityDefinition`, `POI`, `EncounterRecord`, relationship/memory record, update frequencies and World↔Resident↔Audio APIs.
+
 ## 8 · Exactly one next gate
 
 **Wait for the exact Coworker Open World RETURN, then run one Work/WSA reconciliation against this wave plan and the binding PR #348 matrix.**
