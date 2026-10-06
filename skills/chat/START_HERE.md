@@ -13,11 +13,12 @@ Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`,
 A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
 
 Current routing:
-- **#360 World Studio / WB2 = PRIMARY PRODUCT RECOVERY.** Outcome: one coherent buildable persistent KFB Open World for comic/story context **plus closure of the existing KFB stack**: native Motion, Joyride-designed modular Track Core, Sky/Skydome, Billboard/media, Resident/ChatterBox, Card/Almanac, Audio and Drive. Execution is a full ONE_SHOT: architecture → verification harness → module fan-out → fresh-context critics → whole-product gate.
-- **#364 Production Hub = SOURCE GREEN / PUBLISH_ONLY.** Accepted Paper/Dark v2 donor restored in source; existing Hub Site still needs host-only publication and visual verification.
-- **#361 Combat = HOLD side lane.** Current Platformer/Combat candidate remains HUMAN FAIL but is not the primary product.
-- **#362 Triplet Stage = HOLD** during core recovery.
-- No new feature/design expansion until the Open World authoring core is usable again.
+- **#360 Open World = RUNNING NOW in Claude Coworker.** Georg started a long integration run and reports it currently looks stronger than the previous attempts. Do not start a parallel Work/Astra rebuild.
+- **PR #348 = receiving integration contract, not current executor.** After Coworker returns, ChatGPT Work/Astra becomes the Anschluss-Integrator: ingest the exact Coworker result, preserve what works, close missing KFB seams and run fresh-context critic/whole-product gates.
+- **#364 Production Hub = PUBLISH_ONLY.** Source is repaired to the accepted Paper/Dark v2 donor and now carries the 2026-10-06 current board; existing Hub Site is still stale until republished.
+- **#361 Combat = HISTORY / HOLD.** Failed candidate is evidence only, not a current Today/Next lane.
+- **#362 Triplet / ChatterBox = HOLD / NOT TODAY.** Resume only after the Open World integration result shows what dialogue seam remains.
+- **Audio PR #365 = separate current listening gate.** It does not mutate the Open World.
 
 Primary World recovery brief:
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
