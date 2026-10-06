@@ -181,3 +181,53 @@ Status: **READY FOR CLAUDE DESIGN · GITHUB TRANSPORT ONLY**
 
 ### Boundary
 No Site/ToolBox/Hub/runtime/deployment change. No merge. No Live promotion.
+
+
+## Graphic FX / Comic Language source expansion · 2026-10-06
+
+Status: **RESEARCH/DATA READY · CLAUDE DESIGN NOT STARTED**
+
+### Executor routing
+- **ChatGPT Web Chat** owns current source research, deduplication, taxonomy and GitHub persistence.
+- **Claude Design** is deferred until a concrete 3–6-reference visual job is selected.
+- **Work/WSA** is not needed unless a later Site batch-import/UI change is requested.
+- **Blender MCP** is a later consumer only for approved 3D reaction/Emanata presentation.
+
+### Etherington Seed 04
+Added **10** official sources covering:
+- Sound Effects / Sound Words;
+- Speech Bubbles;
+- Caption Boxes;
+- Angry Expressions;
+- Happy Expressions;
+- Eye Direction;
+- Eyebrows;
+- Comic Sense;
+- Script → Page lettering integration;
+- In-World Typography.
+
+Combined Etherington inventory: **53 unique official URLs** across Seeds 01–04.
+
+### Explicit Etherington gaps
+No dedicated official Etherington source was located in this pass for:
+- Emanata;
+- Thought Bubbles;
+- dedicated Reaction Symbols / Emphasis Marks.
+
+These gaps are not silently filled by facial-expression proxies.
+
+### Supplementary authoritative pool
+Added **5** external professional/academic sources:
+- Blambot · Comic Book Grammar & Tradition;
+- Visual Language Lab · Manga Morphology;
+- Comics Forum · Emanata terminology;
+- Comicraft · Word and Thought Balloons;
+- Comicraft · Comic Book Lettering The Comicraft Way.
+
+Thought Bubbles, Emanata and Reaction Symbols now have supplementary source coverage while remaining explicitly non-Etherington.
+
+### Evidence
+**15/15 PASS** validation.
+
+### Boundary
+No Site, ToolBox, Hub, runtime or deployment change. No Claude Design job started. No merge / Live promotion.
