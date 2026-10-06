@@ -362,3 +362,41 @@ Hub board:
 
 Exactly one Hub gate remains:
 **PUBLISH_ONLY the existing Production Hub Site and verify visible board 2026-10-06.4.**
+
+
+## 2026-10-06 · RESIDENT ARCHITECTURE PREP + BOARD 2026-10-06.5
+
+Current routing milestone:
+- Coworker #360 remains the only Open World runtime writer and continues its existing scope.
+- No Resident runtime work starts before the exact Coworker Return and post-return Architecture Freeze.
+- Resident Life planning is now a separate **PREP · NO RUNTIME WRITES** lane.
+- ChatGPT Web Chat may prepare schemas/mappings/data.
+- Claude Design may prepare visual emotion/choreography references from pinned sources.
+- Blender MCP may inventory reusable motions/gaps only; no blind animation batch.
+- ChatGPT Work/WSA becomes the Architecture Freeze / Anschluss-Integrator only after Coworker returns.
+
+Resident prep:
+`skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/RESIDENT_LIFE_ARCHITECTURE_PREP_2026-10-06.md`
+
+Prepared topics:
+- ResidentProfile;
+- AffectState + emotion/performance mapping;
+- Daily Activities / POIs / route variation;
+- Resident↔Resident and Resident↔Player encounters;
+- lightweight relationship/memory;
+- Fluff harvest / trade / gifts / build / rebuild loops;
+- Resident Performance Composer;
+- simulation LOD;
+- LLM-free default + optional AI escalation.
+
+Hub board:
+- revision `2026-10-06.5`;
+- two canonical board copies verified identical;
+- Resident prep appears as a P1 planning lane;
+- no Hub HTML/CSS redesign;
+- existing Hub remains PUBLISH_ONLY.
+
+Issue #364 is updated to publish board `2026-10-06.5` in the existing Site project with a strict token firewall.
+
+Exactly one next production gate remains:
+**Coworker finishes and returns its exact Open World candidate; then Work/WSA performs Architecture Freeze before any new runtime integration.**
