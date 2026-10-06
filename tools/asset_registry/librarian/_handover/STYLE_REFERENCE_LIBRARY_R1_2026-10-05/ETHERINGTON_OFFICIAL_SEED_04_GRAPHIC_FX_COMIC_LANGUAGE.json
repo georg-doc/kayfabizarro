@@ -1,0 +1,291 @@
+{
+  "schema": "kfb.style-reference-seed/1",
+  "status": "URL_VERIFIED_SOURCE_SEED_VISUAL_INSPECTION_PENDING",
+  "date": "2026-10-06",
+  "creator": "The Etherington Brothers",
+  "collection": "How to Think When You Draw / Write",
+  "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+  "permissionContext": "USER_REPORTED_DIRECT_PERMISSION",
+  "batchId": "ETHERINGTON_OFFICIAL_SEED_04_GRAPHIC_FX_COMIC_LANGUAGE",
+  "designPriority": "CURATE_FIRST_DESIGN_LATER",
+  "scope": "GRAPHIC_FX_COMIC_LANGUAGE",
+  "semanticPlacement": {
+    "parent": "COMIC_VFX",
+    "lanes": [
+      "GRAPHIC_FX",
+      "DIALOGUE_CARRIERS",
+      "REACTION_EXPRESSION",
+      "LETTERING_INTEGRATION"
+    ]
+  },
+  "policy": {
+    "preferOfficialCreatorSource": true,
+    "pinterestRole": "DISCOVERY_ONLY",
+    "sourceInspectedInIsolationDefault": false,
+    "remoteImagesMirroredToGitHub": false,
+    "designFirst": false,
+    "currentExecutor": "ChatGPT Web Chat",
+    "claudeDesignRole": "LATER_VISUAL_ANALYSIS_ONLY"
+  },
+  "entries": [
+    {
+      "id": "etherington-sound-effects-2019-01",
+      "title": "Sound Effects",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-sound.html",
+      "lane": "GRAPHIC_FX",
+      "subject": [
+        "sound-effects",
+        "sound-words",
+        "onomatopoeia",
+        "lettering",
+        "graphic-fx"
+      ],
+      "useCases": [
+        "comic-vfx",
+        "impact-presentation",
+        "action-emphasis",
+        "lettering-system"
+      ],
+      "sourceRole": "PRIMARY_SOUND_WORD_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-speech-bubbles-2019-01",
+      "title": "Speech Bubbles",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-speech.html",
+      "lane": "DIALOGUE_CARRIERS",
+      "subject": [
+        "speech-bubbles",
+        "dialogue",
+        "lettering",
+        "reading-flow"
+      ],
+      "useCases": [
+        "chatterbox",
+        "comic-dialogue",
+        "bubble-layout",
+        "readability"
+      ],
+      "sourceRole": "PRIMARY_SPEECH_BUBBLE_REFERENCE",
+      "verification": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-caption-boxes-2019-01",
+      "title": "Caption Boxes",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-caption.html",
+      "lane": "DIALOGUE_CARRIERS",
+      "subject": [
+        "caption-boxes",
+        "captions",
+        "narration",
+        "lettering"
+      ],
+      "useCases": [
+        "comic-layout",
+        "narration",
+        "editorial-overlay",
+        "reading-flow"
+      ],
+      "sourceRole": "PRIMARY_CAPTION_REFERENCE",
+      "verification": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-angry-expressions-2017-01",
+      "title": "Angry / Moody Facial Expressions",
+      "url": "https://theetheringtonbrothers.blogspot.com/2017/01/how-to-think-when-you-draw-angry-moody.html",
+      "lane": "REACTION_EXPRESSION",
+      "subject": [
+        "angry-expression",
+        "facial-expression",
+        "reaction"
+      ],
+      "useCases": [
+        "resident-reactions",
+        "chatterbox",
+        "comic-reactions",
+        "character-performance"
+      ],
+      "sourceRole": "REACTION_EXPRESSION_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-happy-expressions-2017-11",
+      "title": "Happy Expressions",
+      "url": "https://theetheringtonbrothers.blogspot.com/2017/11/how-to-think-when-you-draw-happy.html",
+      "lane": "REACTION_EXPRESSION",
+      "subject": [
+        "happy-expression",
+        "facial-expression",
+        "reaction"
+      ],
+      "useCases": [
+        "resident-reactions",
+        "chatterbox",
+        "comic-reactions",
+        "character-performance"
+      ],
+      "sourceRole": "REACTION_EXPRESSION_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-eye-direction-2020-01",
+      "title": "Eye Direction",
+      "url": "https://theetheringtonbrothers.blogspot.com/2020/01/how-to-think-when-you-draw-eye.html",
+      "lane": "REACTION_EXPRESSION",
+      "subject": [
+        "eye-direction",
+        "gaze",
+        "reaction",
+        "attention"
+      ],
+      "useCases": [
+        "resident-reactions",
+        "chatterbox",
+        "eyerig-presentation",
+        "comic-reactions"
+      ],
+      "sourceRole": "REACTION_GAZE_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-eyebrows-2024-04",
+      "title": "Eyebrows",
+      "url": "https://theetheringtonbrothers.blogspot.com/2024/04/how-to-think-when-you-draw-eyebrows.html",
+      "lane": "REACTION_EXPRESSION",
+      "subject": [
+        "eyebrows",
+        "facial-expression",
+        "reaction"
+      ],
+      "useCases": [
+        "resident-reactions",
+        "chatterbox",
+        "eyerig-presentation",
+        "comic-reactions"
+      ],
+      "sourceRole": "REACTION_BROW_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-comic-sense-2021-06",
+      "title": "Comic Sense",
+      "url": "https://theetheringtonbrothers.blogspot.com/2021/06/how-to-think-when-you-write-comic-sense.html",
+      "lane": "LETTERING_INTEGRATION",
+      "subject": [
+        "comic-language",
+        "text-on-page",
+        "lettering",
+        "visual-writing"
+      ],
+      "useCases": [
+        "comic-layout",
+        "lettering-system",
+        "graphic-fx",
+        "chatterbox-presentation"
+      ],
+      "sourceRole": "WORD_IMAGE_INTEGRATION_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-script-to-page-2013-03",
+      "title": "Long Gone Don · Script to Page",
+      "url": "https://theetheringtonbrothers.blogspot.com/2013/03/long-gone-don-from-script-to-page.html",
+      "lane": "LETTERING_INTEGRATION",
+      "subject": [
+        "lettering",
+        "speech-bubbles",
+        "page-composition",
+        "script-to-page"
+      ],
+      "useCases": [
+        "comic-layout",
+        "bubble-layout",
+        "lettering-system",
+        "production-process"
+      ],
+      "sourceRole": "LETTERING_PAGE_INTEGRATION_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    },
+    {
+      "id": "etherington-in-world-typography-2017-08",
+      "title": "In-World Typography",
+      "url": "https://theetheringtonbrothers.blogspot.com/2017/08/how-to-think-when-you-draw-in-world.html",
+      "lane": "LETTERING_INTEGRATION",
+      "subject": [
+        "typography",
+        "in-world-text",
+        "lettering",
+        "environment-graphics"
+      ],
+      "useCases": [
+        "billboard",
+        "environment-text",
+        "signage",
+        "graphic-fx"
+      ],
+      "sourceRole": "TYPOGRAPHY_IN_WORLD_REFERENCE",
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "batch": "GRAPHIC_FX_COMIC_LANGUAGE_01",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING",
+      "relationStatus": "UNMAPPED_BY_DESIGN"
+    }
+  ],
+  "seedCount": 10,
+  "sourceGaps": [
+    {
+      "id": "gap-emanata",
+      "target": "Emanata",
+      "status": "SOURCE_REQUIRED",
+      "note": "No dedicated Etherington tutorial located in the current official-blog search. Do not substitute reaction-expression tutorials as if they were Emanata."
+    },
+    {
+      "id": "gap-thought-bubbles",
+      "target": "Thought Bubbles",
+      "status": "SOURCE_REQUIRED",
+      "note": "No dedicated Etherington thought-bubble tutorial located in the current official-blog search."
+    },
+    {
+      "id": "gap-reaction-symbols",
+      "target": "Reaction Symbols / Emphasis Marks",
+      "status": "PARTIAL_SOURCE_ONLY",
+      "note": "Angry/Happy expressions, Eye Direction and Eyebrows cover reaction performance, but not a dedicated symbol/emanata grammar."
+    }
+  ]
+}
