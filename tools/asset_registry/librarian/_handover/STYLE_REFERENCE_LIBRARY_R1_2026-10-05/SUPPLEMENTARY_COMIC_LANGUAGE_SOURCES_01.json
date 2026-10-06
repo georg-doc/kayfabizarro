@@ -1,0 +1,149 @@
+{
+  "schema": "kfb.style-reference-source-pool/1",
+  "status": "SUPPLEMENTARY_AUTHORITATIVE_SOURCES_CURATED_VISUAL_INSPECTION_PENDING",
+  "date": "2026-10-06",
+  "owner": "KFB Asset Registry / Asset Librarian reference layer",
+  "purpose": "Fill comic-language source gaps not covered by a dedicated Etherington tutorial while keeping provenance explicit.",
+  "executor": "ChatGPT Web Chat",
+  "sourcePolicy": {
+    "etheringtonRemainsPrimaryWhereAvailable": true,
+    "supplementarySourcesAreNotEtherington": true,
+    "sourceInspectedInIsolationDefault": false,
+    "noImageMirroringToGitHub": true,
+    "claudeDesignRole": "LATER_3_TO_6_SOURCE_VISUAL_ANALYSIS"
+  },
+  "entries": [
+    {
+      "id": "blambot-comic-book-grammar-tradition",
+      "title": "Comic Book Grammar & Tradition",
+      "creator": "Nate Piekos / Blambot",
+      "url": "https://blambot.com/pages/comic-book-grammar-tradition",
+      "sourceClass": "AUTHORITATIVE_PROFESSIONAL_LETTERING_SOURCE",
+      "covers": [
+        "thought-balloons",
+        "telepathic-balloons",
+        "rough-balloons",
+        "wavy-balloons",
+        "whispering",
+        "captions",
+        "sound-effects",
+        "balloon-tails",
+        "balloon-joining"
+      ],
+      "useCases": [
+        "bubble-grammar",
+        "thought-bubbles",
+        "caption-grammar",
+        "sound-words",
+        "chatterbox"
+      ],
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING"
+    },
+    {
+      "id": "visual-language-lab-manga-morphology",
+      "title": "Manga Morphology",
+      "creator": "Neil Cohn / Visual Language Lab",
+      "url": "https://www.visuallanguagelab.com/jvl",
+      "sourceClass": "AUTHORITATIVE_ACADEMIC_VISUAL_LANGUAGE_SOURCE",
+      "covers": [
+        "emotion-symbols",
+        "visual-morphology",
+        "anger-symbol",
+        "dread-lines",
+        "cry-streaks",
+        "tear-bubbles",
+        "blush",
+        "reaction-affixes"
+      ],
+      "useCases": [
+        "emanata",
+        "reaction-symbols",
+        "character-state-vfx",
+        "chatterbox",
+        "resident-reactions"
+      ],
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING"
+    },
+    {
+      "id": "comicsforum-emanata-terms",
+      "title": "List of Terms for Comics Studies · Emanata",
+      "creator": "Andrei Molotiu / Comics Forum",
+      "url": "https://comicsforum.org/2013/07/26/list-of-terms-for-comics-studies-by-andrei-molotiu/",
+      "sourceClass": "ACADEMIC_TERMINOLOGY_SOURCE",
+      "covers": [
+        "emanata-definition",
+        "motion-lines",
+        "symbolic-signs",
+        "psychological-state-symbols",
+        "impact-symbols"
+      ],
+      "useCases": [
+        "emanata-taxonomy",
+        "reference-vocabulary",
+        "reaction-symbols"
+      ],
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING"
+    },
+    {
+      "id": "comicraft-word-thought-balloons",
+      "title": "Word and Thought Balloons",
+      "creator": "Comicraft",
+      "url": "https://www.comicbookfonts.com/Word-and-Thought-Balloons-font-p/bf1.htm",
+      "sourceClass": "PROFESSIONAL_COMMERCIAL_LETTERING_REFERENCE",
+      "covers": [
+        "word-balloons",
+        "thought-balloons",
+        "balloon-shapes"
+      ],
+      "useCases": [
+        "bubble-grammar",
+        "thought-bubbles",
+        "shape-reference"
+      ],
+      "rightsNote": "Reference page only. Do not copy or redistribute commercial assets.",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING"
+    },
+    {
+      "id": "comicraft-lettering-guide",
+      "title": "Comic Book Lettering The Comicraft Way",
+      "creator": "Richard Starkings / John Roshell / Comicraft",
+      "url": "https://www.comicbookfonts.com/Comic-Book-Lettering-The-Comicraft-Way-p/cbl1.htm",
+      "sourceClass": "PROFESSIONAL_COMMERCIAL_LETTERING_REFERENCE",
+      "covers": [
+        "font-design",
+        "balloon-placement",
+        "sound-effects",
+        "signage",
+        "publication-design"
+      ],
+      "useCases": [
+        "lettering-hierarchy",
+        "bubble-layout",
+        "sound-words",
+        "comic-language"
+      ],
+      "rightsNote": "Product/guide reference only unless Georg separately owns/provides the guide. Do not reproduce paid pages.",
+      "sourceInspectedInIsolation": false,
+      "visualAnalysisStatus": "PENDING"
+    }
+  ],
+  "sourceCount": 5,
+  "gapStatus": {
+    "thoughtBubbles": {
+      "etheringtonDedicatedSource": "NOT_LOCATED",
+      "supplementarySource": "FOUND"
+    },
+    "emanata": {
+      "etheringtonDedicatedSource": "NOT_LOCATED",
+      "supplementarySource": "FOUND"
+    },
+    "reactionSymbols": {
+      "etheringtonDedicatedSource": "NOT_LOCATED",
+      "supplementarySource": "FOUND"
+    }
+  }
+}
