@@ -2610,3 +2610,22 @@ No runtime/product code changed.
 - Skydome baseline remains the existing Travel environment donor `skydome-shader.js`, main blob `919ed27bb4ab5a6bb9b823421804d73cb5ae64bd`; no second sky owner.
 - Motion PR #344 remains current Motion SSOT; WB2 reconciles its existing locomotion consumer rather than re-picking clips.
 - Whole-product critic now must see these representative systems together in one continuous product run before Georg receives a candidate.
+
+
+## 2026-10-06 · Current routing reset · Coworker running, Hub fail cards retired
+
+- Georg started a long Claude Coworker Open World integration run and reports it currently looks better than previous attempts.
+- Issue #360 current executor is now **Claude Coworker**.
+- PR #348 remains the receiving integration-closure contract/matrix, but **ChatGPT Work/Astra is now Anschluss-Integrator after Coworker return**, not a parallel rebuild executor.
+- Production Hub CURRENT board advanced to `2026-10-06.1`.
+- Hub Today now contains only:
+  - Coworker Open World integration RUNNING;
+  - Production Hub PUBLISH_ONLY.
+- Conditional NEXT:
+  - Work/Astra integration closure after Coworker.
+- Separate current human gate:
+  - Audio PR #365 adaptive stems listening.
+- Combat #361 moved to **HISTORY / HOLD** and lost the stale blocked label.
+- Triplet/ChatterBox #362 is **HOLD / NOT TODAY**.
+- Old World Studio and Combat failed builds remain history/evidence only and were removed from the Hub embedded current fallback, briefings and quick links.
+- Style Reference Library PR #359 and World Kernel Lab PR #363 remain READY/PARKED side lanes, not today's primary work.
