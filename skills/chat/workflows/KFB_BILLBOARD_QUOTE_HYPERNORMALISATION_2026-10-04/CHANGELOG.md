@@ -101,3 +101,22 @@
 - Reserve 04 intentionally increases tonal range as well as quantity so future island rotation can avoid topic/mood repetition, not merely exact-quote repetition.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-06 · Quote Research Reserve 05 · tonal rotation clusters
+
+- Continued Georg's active long-session quote-pool expansion.
+- Added `QUOTE_RESEARCH_RESERVE_05.json` with **30 further quote + FrizzleQuestion candidates**.
+- Structured the batch into five balanced research clusters:
+  - humor/satire: 6
+  - nature/ecology: 6
+  - technology/infrastructure: 6
+  - relationships: 6
+  - historical oddities: 6
+- Reserve 05 remains `UNMAPPED_BY_DESIGN`; no deck, Card, island/biome or Billboard mapping was invented.
+- Provenance: **29 VERIFIED**, **1 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **29 PUBLIC_DOMAIN_CONFIRMED**, **1 DRAFT_RIGHTS_UNKNOWN**.
+- The open rights case is Alexander Graham Bell's 1876 notebook line: wording is primary-source verified at the Library of Congress, but the pre-1978 manuscript/publication-term status was not resolved and is not assumed public-runtime-safe.
+- The one `SECONDARY_ONLY` source-chain case is La Rochefoucauld's English rendering; the underlying text/old English rendering is public domain, but the exact direct Maxims edition remains to be pinned.
+- Validation: **20/20 PASS**, including five balanced clusters and zero ID/text collisions against the prior 145-candidate inventory.
+- Combined researched inventory is now **175 candidates**: 30 mapped Batch-01 candidates + 145 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
