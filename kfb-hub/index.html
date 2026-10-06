@@ -173,7 +173,8 @@
 <script>
 const G='https://github.com/georg-doc/kayfabizarro/blob/main/';
 const D='https://github.com/georg-doc/kayfabizarro/tree/main/';
-const BOARD_URL='./current-board.json';
+const BOARD_REMOTE_URL='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json';
+const BOARD_FALLBACK_URL='./current-board.json';
 function boardTodo(item,priority='P0'){
   return {
     id:item.id||('board-'+Math.random().toString(16).slice(2)),
@@ -192,29 +193,57 @@ let todos=[
   {id:'next-work-astra-open-world-closure',focus:'kfb',title:'NEXT · Work/Astra integration closure after Coworker',lane:'ChatGPT Work/Astra · Anschluss-Integrator',priority:'NEXT',desc:'Only after Coworker returns: ingest its exact output, keep what works, close missing KFB integration/critic seams. No rebuild.',url:'https://github.com/georg-doc/kayfabizarro/pull/348',tags:['next','open world','work','astra','integration']},
   {id:'pr-365-audio-adaptive-stems',focus:'kfb',title:'PARALLEL · Audio adaptive stems · listening gate',lane:'Georg · listening only',priority:'PARALLEL',desc:'Separate from Open World. PR #365 is implemented/published; later listen to G ROAD/WIDE/EPIC and D open/TTS/open.',url:'https://kfb-audio.frizzlebob.chatgpt.site',tags:['parallel','audio','listening']}
 ]
+async function fetchBoardJson(url){
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  return response.json();
+}
 async function refreshCurrentBoard(){
+  let board=null;
+  let source='remote';
   try{
-    const response=await fetch(BOARD_URL,{cache:'no-store'});
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    const board=await response.json();
-    const next=[
-      ...(board.p0||[]).map(x=>boardTodo(x,'P0')),
-      ...(board.p1||[]).map(x=>boardTodo(x,'NEXT')),
-      ...(board.parallel||[]).map(x=>boardTodo(x,'PARALLEL'))
-    ];
-    if(next.length)todos=next;
-    if(window.__kfbFocusCopy){
-      window.__kfbFocusCopy.kfb.context=(board.status&&board.status.label?board.status.label:'CURRENT')+' · Board '+(board.revision||'');
-      window.__kfbFocusCopy.kfb.note=(board.status&&board.status.note)||'';
+    board=await fetchBoardJson(BOARD_REMOTE_URL+'?ts='+Date.now());
+  }catch(remoteError){
+    source='fallback';
+    try{
+      board=await fetchBoardJson(BOARD_FALLBACK_URL);
+    }catch(fallbackError){
+      const note=document.getElementById('todoNote');
+      if(note)note.textContent='CURRENT live board and local fallback failed; showing embedded recovery snapshot. '+remoteError.message+' / '+fallbackError.message;
+      return;
     }
-    render();
-  }catch(error){
-    const note=document.getElementById('todoNote');
-    if(note)note.textContent='CURRENT board fetch failed; showing embedded recovery snapshot. '+error.message;
   }
+  const next=[
+    ...(board.p0||[]).map(x=>boardTodo(x,'P0')),
+    ...(board.p1||[]).map(x=>boardTodo(x,'NEXT')),
+    ...(board.parallel||[]).map(x=>boardTodo(x,'PARALLEL'))
+  ];
+  if(next.length)todos=next;
+  if(Array.isArray(board.briefings)&&board.briefings.length){
+    briefings=board.briefings.slice();
+  }
+  if(Array.isArray(board.openQuestions)&&board.openQuestions.length){
+    briefings.push({
+      id:'board-open-questions',
+      title:'Georg · offene Produktfragen',
+      badge:'OPEN QUESTIONS',
+      status:'hold',
+      provider:'KFB Production Hub · live board',
+      desc:board.openQuestions.map(x=>(x.blocking?'BLOCKING · ':'')+x.title+': '+x.question).join(' · '),
+      url:'https://github.com/georg-doc/kayfabizarro/blob/main/kfb-hub/current-board.json',
+      tags:['open questions','georg','product decisions'],
+      prompt:'Read main/kfb-hub/current-board.json openQuestions. Resolve only a question Georg explicitly chooses; do not manufacture a human gate.'
+    });
+  }
+  if(window.__kfbFocusCopy){
+    window.__kfbFocusCopy.kfb.context=(board.status&&board.status.label?board.status.label:'CURRENT')+' · Board '+(board.revision||'');
+    const fallbackNote=source==='fallback'?' · LIVE GITHUB BOARD unavailable; displaying deployed fallback snapshot.':' · LIVE from GitHub main.';
+    window.__kfbFocusCopy.kfb.note=((board.status&&board.status.note)||'')+fallbackNote;
+  }
+  render();
 }
 
-const briefings=[
+let briefings=[
 {id:'coworker-running-current',title:'Open World · Coworker integration RUNNING',badge:'RUNNING',status:'hold',provider:'Claude Coworker',desc:'No parallel build now. Let the long Coworker integration run finish; its exact return becomes the input for the next integration pass.',url:'https://github.com/georg-doc/kayfabizarro/issues/360',tags:['open world','coworker','running'],prompt:['Do not start another Open World build while Coworker is running.','On return, capture exact files/branch/evidence and reconcile them into the existing WB2 owner.'].join('\n')},
 {id:'work-astra-next-current',title:'NEXT · Work/Astra Open World closure',badge:'NEXT AFTER RETURN',status:'ready',provider:'ChatGPT Work/Astra',desc:'Prepared follow-up only: consume Coworker output, preserve successful integration, close missing KFB seams, run fresh-context critics and whole-product gate.',url:'https://github.com/georg-doc/kayfabizarro/pull/348',tags:['open world','work','astra','next'],prompt:['Read issue #360, PR #348, the Open World One-Shot contract and integration matrix.','First ingest the exact Coworker return.','Do not rebuild working Coworker integration; close only missing owner seams and run the independent critic/whole-product gates.'].join('\n')},
 {id:'hub-publish-current',title:'Production Hub · PUBLISH_ONLY',badge:'PUBLISH_ONLY',status:'ready',provider:'Sites-capable executor',desc:'Publish the frozen accepted Paper/Dark v2 Hub source in place. No redesign and no source mutation during publication.',url:'https://github.com/georg-doc/kayfabizarro/issues/364',tags:['hub','publish','paper','dark'],prompt:['Read issue #364.','Publish the exact frozen kfb-hub source to the existing Production Hub Site in place.','Do not redesign or edit product/source; open the exact Site and verify CURRENT after publication.'].join('\n')},
