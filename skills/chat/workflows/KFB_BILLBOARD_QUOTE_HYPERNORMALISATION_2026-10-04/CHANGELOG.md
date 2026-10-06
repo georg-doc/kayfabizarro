@@ -215,3 +215,23 @@
 - Validation: **25/25 PASS**, including five balanced clusters, zero ID/text collisions against the prior 295-candidate inventory, 30 distinct authors/traditions, mapping guards, HTTPS source/Brain Food checks, source/claim/interpretation policy and quote/question length bounds.
 - Combined researched inventory is now **325 candidates**: 30 mapped Batch-01 candidates + 295 deliberately unmapped reserve candidates.
 - No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
+
+## 2026-10-07 · Quote Research Reserve 11 · UFO / Forteana / psyops / alchemy / multiverse
+
+- Continued Georg's requested extended conspiracy / weird-history / metaphysical reserve.
+- Added `QUOTE_RESEARCH_RESERVE_11.json` with **30 further quote + FrizzleQuestion candidates** in five balanced 6-item clusters:
+  - UFO/contact/abduction: 6
+  - cryptids/Forteana/paranormal: 6
+  - secret societies/intelligence/psyops: 6
+  - alchemy/Hermetic/esoteric science: 6
+  - prophecy/dream/simulation/multiverse: 6
+- Reserve 11 remains deliberately `UNMAPPED_BY_DESIGN`; no deck, Card, island, Billboard, world or multiverse assignment was invented.
+- Added an explicit epistemic-role clamp: official finding, witness report, recovered-memory account, fiction, scripture, occult claim, skeptical critique, documented covert program, philosophical argument and scientific formalism remain distinguishable.
+- Provenance: **29 VERIFIED**, **1 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **25 PUBLIC_DOMAIN_CONFIRMED**, **3 RESEARCHED_QUOTE_LIMIT_ONLY**, **2 RESEARCHED_RESTRICTED**.
+- Sensitive records remain explicit: Kenneth Arnold and Newton/Emerald-Tablet wording are quote-limit; Walter Lippmann remains EU-term-sensitive; the Hill abduction source and Hugh Everett quotation remain research-restricted. Newton's c. 1680 wording is the one SECONDARY_ONLY record because a modern scholarly transcription, not the manuscript image, was pinned.
+- The UFO cluster deliberately contains both extraordinary-source material and institutional counterweights: Project Blue Book, Robertson Panel, Arnold's original motion comparison, Hill hypnosis context, H. G. Wells fiction and Ezekiel's ancient visionary text.
+- The paranormal cluster similarly balances Fort/Doyle/Crookes/Wallace with Houdini and the Margaret Fox fraud confession/recantation history.
+- Validation: **25/25 PASS**, including zero ID/text collisions against the prior 325-candidate inventory and 30 distinct authors/traditions.
+- Combined researched inventory is now **355 candidates**: 30 mapped Batch-01 candidates + 325 deliberately unmapped reserve candidates.
+- No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
