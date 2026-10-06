@@ -1,11 +1,11 @@
 {
   "schema": "kfb.surface-consolidation/1",
-  "date": "2026-10-04",
-  "mode": "RECOVERY_CONSOLIDATION",
+  "date": "2026-10-06",
+  "mode": "PUBLISH_ONLY",
   "owner": "KFB production surfaces",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/surface-consolidation-2026-10-04",
-  "state": "COMPLETE_HUMAN_GATE_OPEN",
+  "state": "SOURCE_GREEN_SITE_STALE",
   "humanRule": "ONE_BOOKMARK_PRODUCTION_HUB",
   "canonical": {
     "productionHub": {
@@ -43,8 +43,10 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "GEORG_OPENS_PRODUCTION_HUB_AND_RETURNS_PASS_TUNE_FAIL",
-  "openCoreBlockers": [],
+  "next": "PUBLISH_EXISTING_PRODUCTION_HUB_SITE_IN_PLACE_AND_VERIFY_BOARD_2026-10-06.2",
+  "openCoreBlockers": [
+    "Production Hub GPT Site has not yet consumed board 2026-10-06.2"
+  ],
   "forbidden": [
     "duplicate dashboards",
     "multiple current ToolBox front doors",
@@ -59,7 +61,10 @@
     "statusSync": "CONTROL_VISIBLE_AND_HUB_VISIBLE_PASS",
     "presentationSync": "TOKEN_ONLY_VISIBLE_AND_RESTORED_PASS",
     "uiSourceFilesChangedDuringProof": 0,
-    "businessLogicFilesChangedDuringProof": 0
+    "businessLogicFilesChangedDuringProof": 0,
+    "currentBoardReadback": "8/8 PASS",
+    "currentBoardFilesChanged": 2,
+    "hubHtmlFilesChanged": 0
   },
   "architecture": {
     "statusOwner": "KFB Production Control D1 records",
@@ -74,5 +79,16 @@
     "normalWebChatPresentationEdits": true,
     "lowCostPublishIfHostRequires": true,
     "workReservedForEngineering": true
+  },
+  "currentRouting": {
+    "primary": "#360 · Claude Coworker Open World integration · RUNNING",
+    "next": "ChatGPT Work/Astra · Anschluss-Integrator after exact Coworker return",
+    "parallel": "Audio PR #365 · G/D verified; M/N/O source-present, runtime QA pending",
+    "hold": [
+      "#361 Combat · HISTORY/HOLD",
+      "#362 Triplet/ChatterBox · HOLD/NOT TODAY"
+    ],
+    "hubBoardRevision": "2026-10-06.2",
+    "hubBoardImplementationHead": "15a3b425c66138b08fdabe8c5a9d18559bd76e62"
   }
 }

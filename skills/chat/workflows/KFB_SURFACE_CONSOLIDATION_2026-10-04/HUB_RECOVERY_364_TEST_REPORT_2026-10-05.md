@@ -79,3 +79,33 @@ The Hub current snapshot now reflects Georg's current execution choice:
 - Style Reference Library #359 / World Kernel #363 = parked, not Today.
 
 Embedded fallback, Briefings and Quicklinks were updated as well, so a board-fetch failure no longer resurrects obsolete FAIL cards.
+
+
+## 2026-10-06 · Board 2026-10-06.2 additive routing check
+
+Implementation checkpoint:
+`15a3b425c66138b08fdabe8c5a9d18559bd76e62`
+
+Changed files at this checkpoint:
+- `kfb-hub/current-board.json`
+- `skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/surface-config/CURRENT_BOARD.json`
+
+Compare against prior head `552a205fb0082189e59ee51657c03fd3d5693fc3`:
+- commits ahead: **1**
+- files changed: **2**
+- Hub HTML/CSS files changed: **0**
+
+Readback checks: **8 / 8 PASS**
+1. branch head = implementation checkpoint — PASS
+2. both board copies identical — PASS
+3. revision = `2026-10-06.2` — PASS
+4. #360 Coworker RUNNING present — PASS
+5. Work/Astra conditional NEXT present — PASS
+6. Audio M/N/O summary records 112 / 70 / 82 BPM + 33/33 source presence + runtime-unverified status — PASS
+7. direct Coworker/WSA audio handover link present — PASS
+8. old FAIL cards in CURRENT = 0 — PASS
+
+Verification boundary remains:
+- GitHub source/current routing: **VERIFIED**
+- Production Hub GPT Site republished from this exact source: **NOT YET**
+- exact visible Site revision `2026-10-06.2`: **NOT YET VERIFIED**

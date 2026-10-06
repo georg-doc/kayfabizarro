@@ -246,3 +246,32 @@ Hub source:
 Old World/Combat FAIL cards are history only and no longer appear in current fallback/briefings/quick links.
 
 Next gate: PUBLISH_ONLY the existing Production Hub Site and verify the visible Hub shows Coworker RUNNING + Work/Astra NEXT.
+
+
+## 2026-10-06 · BOARD 2026-10-06.2 · COWORKER + M/N/O AUDIO ROUTING
+
+Current operating truth:
+- #360 Open World remains **RUNNING in Claude Coworker**;
+- do not start a parallel Work/Astra rebuild;
+- after Coworker returns, ChatGPT Work/Astra first ingests the exact Coworker result and then acts only as Anschluss-Integrator;
+- Audio PR #365 is registered as additive input, not as a second World lane;
+- G/D remain runtime-verified;
+- M Island Life = 112 BPM, master + 10 stems;
+- N Dusk/Night = 70 BPM, master + 11 stems;
+- O Discovery/POI = 82 BPM, master + 9 stems;
+- M/N/O source presence = **33/33 non-empty MP3 files**, but all three remain `SOURCE_PRESENT_RUNTIME_UNVERIFIED` until decode/alignment/loop/listening QA;
+- family-local failures must not block unrelated families or ordinary World boot;
+- Combat #361 remains HISTORY/HOLD;
+- Triplet/ChatterBox #362 remains HOLD/NOT TODAY.
+
+Hub board:
+- revision `2026-10-06.2`;
+- implementation checkpoint `15a3b425c66138b08fdabe8c5a9d18559bd76e62`;
+- both canonical board copies read back identical;
+- old FAIL cards in CURRENT = **0**;
+- `kfb-hub/index.html` was not modified.
+
+The visible GPT Site is still stale until a Sites-capable executor publishes this frozen source in place.
+
+Exactly one next gate:
+**PUBLISH_ONLY the existing Production Hub Site, with no redesign/source edits, then verify the visible Hub shows Coworker RUNNING, Work/Astra NEXT, and Audio M/N/O as QA-pending additive input.**
