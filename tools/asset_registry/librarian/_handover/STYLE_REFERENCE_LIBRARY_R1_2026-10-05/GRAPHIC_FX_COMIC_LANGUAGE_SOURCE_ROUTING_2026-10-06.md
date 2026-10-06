@@ -148,3 +148,59 @@ No merge / Live promotion.
 ## Next gate
 
 **WEB_CHAT_CONTINUE_SOURCE_HARVEST_FOR_EMANATA_THOUGHT_BUBBLES_REACTION_SYMBOLS**
+
+
+## Supplementary source recovery
+
+The Etherington-specific gaps remain explicit, but complementary authoritative sources are now available.
+
+### Thought Bubbles
+Etherington dedicated tutorial:
+**NOT LOCATED**
+
+Supplementary sources:
+- Nate Piekos / Blambot · `Comic Book Grammar & Tradition`
+- Comicraft · `Word and Thought Balloons`
+
+Status:
+**SUPPLEMENTARY_SOURCE_FOUND · VISUAL_INSPECTION_PENDING**
+
+### Emanata
+Etherington dedicated tutorial:
+**NOT LOCATED**
+
+Supplementary sources:
+- Neil Cohn / Visual Language Lab · `Manga Morphology`
+- Andrei Molotiu / Comics Forum · `List of Terms for Comics Studies`
+
+Status:
+**SUPPLEMENTARY_SOURCE_FOUND · VISUAL_INSPECTION_PENDING**
+
+Important:
+Do not silently relabel facial-expression tutorials as Emanata. Expressions and emanata are separate visual channels.
+
+### Reaction Symbols / Emphasis Marks
+Etherington dedicated symbolic-effects tutorial:
+**NOT LOCATED**
+
+Supplementary source:
+- Visual Language Lab · `Manga Morphology`
+
+The Etherington reaction-performance set remains useful support:
+- Angry Expressions
+- Happy Expressions
+- Eye Direction
+- Eyebrows
+
+Status:
+**SUPPLEMENTARY_SOURCE_FOUND · EXPRESSION_SUPPORT_AVAILABLE**
+
+Machine-readable pool:
+`SUPPLEMENTARY_COMIC_LANGUAGE_SOURCES_01.json`
+
+## Updated work order
+
+1. **ChatGPT Web Chat** continues source collection and taxonomy.
+2. When the source pool is coherent enough, **Claude Design** gets a bounded 3–6 source job.
+3. **Work/WSA** is only needed if Georg later wants these batches imported/published into the existing Asset Librarian Site.
+4. **Blender MCP** may later consume approved reaction/Emanata grammar for 3D presentation, but does not own this research.
