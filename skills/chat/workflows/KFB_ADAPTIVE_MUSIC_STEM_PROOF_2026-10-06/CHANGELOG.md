@@ -44,3 +44,16 @@
 - migration is additive: current WB2 audio continuity stays alive while a small World-side context adapter is introduced;
 - no write to PR #348 runtime, Hub, Cloudflare or other products;
 - identified the next reusable artifact as a DOM-free repository-resident KFB Audio runtime package derived from the Site-green Source 0.3 implementation.
+
+
+### DOM-free Audio Runtime package
+
+- extracted a repository-resident, Site-UI-free runtime seam under `tools/KFB-ToolBox/audio/runtime/`;
+- runtime requires injected AudioContext and destination; it creates none;
+- added context resolver, capability registry and evidence API;
+- runtime capabilities expose only Site-runtime-verified G and D;
+- C remains source-present/runtime-unverified; M/N/O remain planned content only;
+- local invariant harness 17/17 PASS;
+- implementation head `127f6260...` existing Resource Registry CI run `37474723115` completed SUCCESS;
+- no WB2 runtime, Hub, Cloudflare or Site mutation;
+- next receiving seam is one World-owned `audio-context-adapter.v1.js` on the running Open World One-Shot.
