@@ -3,53 +3,77 @@
   "date": "2026-10-07",
   "product": "KFB Island MVP R4",
   "mode": "ONE_SHOT",
-  "state": "RUNNING_FOUNDATION",
+  "state": "RUNNING_PLAYER_GOLDEN",
   "productVerdict": "NO MVP",
   "operationalVersion": 5,
   "owner": "WB2",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "e82c4c7e164b6258fb535df72e5c28143f2ce4cf",
-  "milestone": "named-documents-explicit-surface-1",
+  "baseHead": "e6ac9abf47ac0109d9d516bc129e6df8539fbc66",
+  "milestone": "foundation-contact-replay-2",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
     {
       "id": "F-R01",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Bind bounded island identity to the existing WB2 document/session lifecycle and reuse current recipe/editor/store contracts."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R02",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Introduce one island-local origin/frame shared by terrain, Track, objects, colliders, player and queries; replace seed-keyed mutable singleton behavior with document identity."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R03",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Finish one authoritative render/support/collision surface with river/village/Track/sculpt contributions reconciled."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R04",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Make authored matrices/state keyed by stable semantic IDs drive regenerated visible geometry and relevant colliders, including updates."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R05",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Pin complete generator/source revision + finalized recipe/RouteRecipe; add explicit replacement load/disposal boundary for bounded island sessions."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R06",
       "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Expose typed/versioned seams for Surface, Track, WorldObject, persistence and specialist consumers; retain exception isolation."
+      "evidence": [
+        "evidence/r4-foundation/object-fresh-and-import-rollback.json",
+        "evidence/r4-foundation/surface-witness-sculpt.json",
+        "evidence/r4-foundation/normal-input-barrier-contact.json"
+      ],
+      "unresolved": "Foundation implementation/probes complete for progression; final required subsystem/whole-product critic and actual complete island acceptance still pending."
     },
     {
       "id": "F-R07",
@@ -291,7 +315,10 @@
     }
   },
   "tests": {
-    "nodeTests": 8,
+    "nodeTests": {
+      "pass": 11,
+      "quarantinedKnownFailure": 1
+    },
     "browserSameSeedIsolation": "A\u2192B\u2192fresh A canonical document identical; B empty",
     "browserSculpt": "overlapping Raise/Lower visible and fresh document exact",
     "surfaceWitness": {
@@ -299,9 +326,12 @@
       "samples": 363,
       "maxRapierDeltaM": 0.0001555109011884756,
       "maxVisibleDeltaM": 2.7067237340361316e-13
-    }
+    },
+    "typecheck": "PASS",
+    "objectReplay": "Normal editor Move/Rotate/Scale/Snap; exact document, transformed geometry hash/matrix and collider-ray evidence after fresh load.",
+    "invalidImport": "Invalid schema keeps current state; unsupported source rebuild failure rolls back exact geometry/collider evidence."
   },
-  "nextInternalAction": "Continue Foundation: swept player contact, authored collider replay, disposal proof, then Player Golden.",
+  "nextInternalAction": "Phase 2 Player Golden; preserve tested Foundation. No broad feature fan-out before F-R39.",
   "previousHandoff": {
     "schema": "kfb.one-shot-status/1",
     "date": "2026-10-07",
@@ -524,5 +554,20 @@
       "complete pinned recipe persistence",
       "shared island-local physics frame"
     ]
-  }
+  },
+  "foundationGate": {
+    "guard": "foundation_guard",
+    "decision": "CONTINUE_AFTER_BFCACHE_REPAIR",
+    "repair": "pageshow persisted reconstructs fresh after pagehide disposal",
+    "limits": "Read-only code review, no visual/product score."
+  },
+  "quarantined": [
+    {
+      "seam": "Automatic 0.30m step climb",
+      "status": "KNOWN_FAILURE",
+      "evidence": "../wb2-design-01/tests/ground-persistence.test.mjs",
+      "guard": "MINOR / QUARANTINABLE until required route proves unavoidable curb",
+      "repairPassesWithoutImprovement": 2
+    }
+  ]
 }

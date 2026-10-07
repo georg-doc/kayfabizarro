@@ -240,6 +240,7 @@ const HTML = `
           <button id="importDoc" class="quiet">Import JSON</button>
           <button id="resetScene" class="quiet">Reset fixture</button>
         </div>
+        <div id="importForm" hidden><label for="sceneImport">Scene JSON</label><textarea id="sceneImport" rows="8" style="box-sizing:border-box;width:100%;background:#13110d;color:var(--text)"></textarea><div class="row"><button id="applyImport">Import scene</button><button id="cancelImport" class="quiet">Cancel</button></div></div>
         <div id="saveState" class="src" style="margin-top:8px">No local save yet.</div>
         <div id="doc"></div>
       </div>
@@ -263,7 +264,7 @@ document.head.appendChild(styleEl);
 const APP = document.createElement('div');
 APP.id = 'wb2d';
 APP.innerHTML = HTML;
-document.body.appendChild(APP);
+document.body.appendChild(APP);APP.inert=true;document.body.dataset.worldReady="loading";
 
 /* ---------------- WORLD-INTEGRATION-01 seam ----------------
    One flag decides what this WorldBuilder authors. Unset = the accepted WB2 sandbox, unchanged.
@@ -449,6 +450,7 @@ function onEditorMenu(action){
 }
 const EDIT=makeEditLayer(viewer,renderer.domElement,{
   getRoot:()=>worldRoot,
+  surfaceAt:WORLD?.islandRecipe?(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)):undefined,
   recordOf:recordForNode,
   menu:E('objmenu'),
   gridStep:.05,
@@ -836,6 +838,7 @@ function updateRecordFromRoot(root){
   rec.transform.position=root.position.toArray().map(v=>+v.toFixed(4));
   rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
   rec.transform.scale=root.scale.toArray().map(v=>+v.toFixed(4));
+  root.position.fromArray(rec.transform.position);root.rotation.set(...rec.transform.rotation);root.scale.fromArray(rec.transform.scale);root.updateMatrixWorld(true);
 }
 function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root);WORLD?.syncObjects?.(sceneObjects.values())}
 function refreshDoc(){
@@ -1064,8 +1067,7 @@ async function exportDoc(){
   try{await navigator.clipboard.writeText(text);status('scene JSON copied','ok')}catch{window.prompt('Copy scene JSON:',text)}
 }
 async function importDoc(){
-  const text=window.prompt('Paste kfb-worldbuilder-scene JSON:');if(!text)return;
-  await replaceSceneDocument(JSON.parse(text));status('scene JSON imported','ok');
+  E('importForm').hidden=false;E('sceneImport').focus();
 }
 
 /* ---------------- drawer (docked: opening it shrinks the view, never covers it) ---------------- */
@@ -1140,6 +1142,8 @@ E('reload').onclick=()=>reloadDoc().catch(fail);
 E('resetScene').onclick=()=>resetFixture().catch(fail);
 E('exportDoc').onclick=()=>exportDoc().catch(fail);
 E('importDoc').onclick=()=>importDoc().catch(fail);
+E('cancelImport').onclick=()=>{E('importForm').hidden=true};
+E('applyImport').onclick=async()=>{try{await replaceSceneDocument(JSON.parse(E('sceneImport').value));E('importForm').hidden=true;status('scene JSON imported','ok')}catch(error){fail(error)}};
 if(WORLD){
   APP.querySelector('.brand span').textContent='WB2 · '+WORLD.zone.id.replace(/-crop-v0$/,'');
   E('review').hidden=true;   // world mode works in the scene only; source review stays in the WB2 sandbox
@@ -1191,7 +1195,14 @@ function resize(){
 addEventListener('resize',resize);
 new ResizeObserver(resize).observe(E('stage'));
 resize();
-addEventListener('pagehide',()=>{renderer.setAnimationLoop(null);WORLD?.dispose?.();renderer.dispose();});
+addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
+addEventListener('pagehide',()=>{
+  renderer.setAnimationLoop(null);PLAY?.dispose?.();WORLD?.dispose?.();
+  const geometries=new Set(),materials=new Set(),textures=new Set();
+  scene.traverse(node=>{if(node.geometry)geometries.add(node.geometry);for(const m of (Array.isArray(node.material)?node.material:[node.material]))if(m){materials.add(m);for(const value of Object.values(m))if(value?.isTexture)textures.add(value);}});
+  for(const g of geometries)g.dispose();for(const t of textures)t.dispose();for(const m of materials)m.dispose();
+  renderer.dispose();renderer.forceContextLoss();
+});
 renderer.setAnimationLoop(()=>{
   const dt=Math.min(clock.getDelta(),.05);
   const behindCurtain=['LOADING','READY_BEHIND_CURTAIN'].includes(document.body.dataset.mvpPhase);
@@ -1333,4 +1344,5 @@ try{
     if(new URLSearchParams(location.search).get('selftest')==='wi1')await runWorldSelfTest();
   }else await showActor();
   if(!WORLD&&new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();
-}catch(err){document.body.dataset.selftest='FAIL';fail(err)}
+  document.body.dataset.worldReady='true';
+}catch(err){document.body.dataset.worldReady='failed';document.body.dataset.selftest='FAIL';fail(err)}finally{APP.inert=false}

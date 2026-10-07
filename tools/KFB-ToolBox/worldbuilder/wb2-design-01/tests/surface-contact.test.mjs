@@ -14,3 +14,13 @@ test('explicit visible triangles drive SurfaceTruth and Rapier identically acros
  assert.equal(s.groundHeightAt(5,5),-Infinity);
  }finally{s.dispose();p.dispose()}
 });
+test('existing Physics character sweep blocks a solid wall and retains floor support',async()=>{
+ const p=await Physics.create();try{
+  p.world.createCollider(p.R.ColliderDesc.cuboid(10,.5,10).setTranslation(0,-.5,0));
+  p.world.createCollider(p.R.ColliderDesc.cuboid(.2,2,3).setTranslation(2,2,0));
+  const character=p.createCharacter(1.8);let position={x:0,y:0,z:0};character.reset(position);p.step(1/60);
+  for(let i=0;i<120;i++){position=character.move(position,{x:.1,y:-.1,z:0}).position;p.step(1/60);}
+  assert.ok(position.x<1.55);assert.ok(position.x>1.3);assert.ok(Math.abs(position.y)<.05);
+  character.dispose();
+ }finally{p.dispose()}
+});

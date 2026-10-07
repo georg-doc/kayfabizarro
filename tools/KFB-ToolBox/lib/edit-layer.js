@@ -190,12 +190,13 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
         if (x.userData.attachedTo) { out.push({ id: recordOf(x)?.id, refused: `hängt an ${x.userData.attachedTo}` }); continue; }
         _b.setFromObject(x);
         const c = _b.getCenter(new THREE.Vector3());
-        let y = 0, onWhat = 'Boden y=0';
+        const support=opts.surfaceAt?.(c.x,c.z);
+        let y = Number.isFinite(support)?support:0, onWhat = Number.isFinite(support)?'WB2 Surface Truth':'Boden y=0';
         if (root) {
           const targets = collectVisible(root, []).filter((m) => { let p = m; while (p) { if (p === x) return false; p = p.parent; } return true; });
           const r = new THREE.Raycaster(new THREE.Vector3(c.x, _b.min.y - 0.001, c.z), new THREE.Vector3(0, -1, 0), 0, 400);
           const hit = r.intersectObjects(targets, false)[0];
-          if (hit) { y = hit.point.y; onWhat = hit.object.name || 'unbenannte Fläche'; }
+          if (hit && (!Number.isFinite(support)||hit.point.y>y)) { y = hit.point.y; onWhat = hit.object.name || 'unbenannte Fläche'; }
         }
         const moved = y - _b.min.y;
         x.position.y += moved;

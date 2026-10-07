@@ -63,7 +63,11 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
     get surfaceAdapter(){return surfaceAdapter},
     get terrainMesh(){return presentation?.top||null},
     supportAt(x,z){return surfaceAdapter?.heightAt(x,z)},
-    syncObjects(roots){surfaceAdapter?.objects(roots)},
+    syncObjects(roots){
+      if(!surfaceAdapter)return;
+      const native=buildings?.root?.children||[];native.forEach((root,i)=>{root.userData.sceneObjectId='village/'+i;root.userData.kind='prop'});
+      surfaceAdapter.objects([...native,...roots]);
+    },
     surfaceWitness(){
       if(!surfaceAdapter||!presentation)throw Error('Named island surface not ready');
       const points=[];for(let z=-30;z<=30;z+=2.731)for(let x=-30;x<=30;x+=3.137)if(P.sdf(x,z)<-1)points.push([x,z]);

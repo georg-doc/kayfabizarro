@@ -1,4 +1,3 @@
-//#region ../open-world-integrator-2026-10-07/candidate-original/node_modules/.pnpm/@dimforge+rapier3d-compat@0.21.0/node_modules/@dimforge/rapier3d-compat/dist/rapier.mjs
 var e = class e {
 	static __wrap(t) {
 		let n = Object.create(e.prototype);
@@ -8082,6 +8081,52 @@ var Sr = Object.freeze({
 		}
 		t === wr && this.acc >= Cr && (this.acc %= Cr), this.alpha = this.acc / Cr;
 	}
+	createCharacter(e, t = .28) {
+		let n = e / 2, r = this.world.createRigidBody(Sr.RigidBodyDesc.kinematicPositionBased()), i = this.world.createCollider(Sr.ColliderDesc.capsule(Math.max(.05, e / 2 - t), t), r), a = this.world.createCharacterController(.015);
+		a.enableAutostep(.4, .2, !1), a.enableSnapToGround(.22), a.setMaxSlopeClimbAngle(Math.PI / 3), a.setMinSlopeSlideAngle(Math.PI / 3);
+		let o = (e) => {
+			r.setTranslation({
+				x: e.x,
+				y: e.y + n,
+				z: e.z
+			}, !0), r.setNextKinematicTranslation({
+				x: e.x,
+				y: e.y + n,
+				z: e.z
+			}), this.world.propagateModifiedBodyPositionsToColliders();
+		};
+		return {
+			body: r,
+			collider: i,
+			reset: o,
+			validPose: (e) => !this.world.intersectionWithShape({
+				x: e.x,
+				y: e.y + n,
+				z: e.z
+			}, {
+				x: 0,
+				y: 0,
+				z: 0,
+				w: 1
+			}, i.shape, void 0, void 0, i, r),
+			move: (e, t) => {
+				o(e), a.computeColliderMovement(i, t);
+				let n = a.computedMovement(), r = {
+					x: e.x + n.x,
+					y: e.y + n.y,
+					z: e.z + n.z
+				};
+				return o(r), {
+					position: r,
+					grounded: a.computedGrounded(),
+					collisions: a.numComputedCollisions()
+				};
+			},
+			dispose: () => {
+				this.world.removeCharacterController(a), this.world.removeRigidBody(r);
+			}
+		};
+	}
 	dispose() {
 		this.stepHooks = [], this.acc = 0, this.world.free();
 	}
@@ -8089,8 +8134,6 @@ var Sr = Object.freeze({
 		return Cr;
 	}
 };
-//#endregion
-//#region tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/src/core/wb2-noise.js
 function Er(e) {
 	return e - Math.floor(e);
 }
@@ -8122,14 +8165,10 @@ function jr(e) {
 	let r = n >>> 0;
 	return r = Math.imul(r ^ r >>> 16, 2146121005), r = Math.imul(r ^ r >>> 15, 2221713035), r = (r ^ r >>> 16) >>> 0, Math.fround(r / 4294967296 * 2048 - 1024);
 }
-//#endregion
-//#region tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/src/core/units.ts
 var Mr = 7.5;
 .6 * Mr, 2 * Mr;
 var Nr = 15 / Math.sqrt(3);
 .5 * Mr, 1 * Mr, .2 * Mr;
-//#endregion
-//#region tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/src/core/hex.ts
 var Pr = Math.sqrt(3);
 function Fr(e, t) {
 	return {
@@ -8143,8 +8182,6 @@ function Ir(e, t) {
 		r: 2 / 3 * t / Nr
 	};
 }
-//#endregion
-//#region tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/src/owners/wb2-sculpt/terrain-sculpt.js
 var Lr = (e, t = 0) => Number.isFinite(Number(e)) ? Number(e) : t, Rr = (e, t, n) => Math.max(t, Math.min(n, e));
 function zr(e, t) {
 	let n = Math.max(1e-6, Lr(t, 1)), r = Math.max(0, Lr(e, 0));
@@ -8156,8 +8193,6 @@ function Br(e, t, n, r, i, a, o) {
 	let s = zr(Math.hypot(Lr(e) - Lr(r), Lr(t) - Lr(i)), a);
 	return s ? (n === "lower" ? -1 : 1) * Math.max(0, Lr(o, 0)) * s : 0;
 }
-//#endregion
-//#region tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/src/core/triangle-contact.ts
 var Vr = class {
 	id;
 	triangles = [];
@@ -8336,5 +8371,4 @@ var Vr = class {
 		};
 	}
 };
-//#endregion
 export { Tr as Physics, Hr as SurfaceTruth, Vr as TriangleContact };

@@ -1,3 +1,19 @@
+# R4 · Foundation contact/replay milestone 2 · continue Player Golden
+
+WB2 PR #348 / receiving branch unchanged. Parent `e6ac9abf47ac0109d9d516bc129e6df8539fbc66`; this milestone belongs to its containing commit. Frozen Matrix v5 remains 44/13/7. **NO MVP**, no whole-product or visual acceptance claimed.
+
+Existing Physics now supplies a swept capsule to existing Ground, driven by its fixed-step hook. Native buildings and authored static props use their transformed triangles for colliders. Valid supported saved player Y is preserved; actor changes resize the capsule. Ground listeners abort on disposal; page unload frees Physics and WebGL, while back/forward-cache restoration forces fresh reconstruction.
+
+Actual normal-input browser evidence: sprint into Track barrier remains blocked; source-pinned Boulder was moved, rotated, scaled and surface-snapped using existing editor, saved, fully navigated away and freshly loaded. The scene document and transformed object geometry hash/matrix/collider-ray proof match exactly. Boulder visible/physical vertical ray delta: 0.000000451 m. Invalid schema leaves current document intact; unsupported source triggers reconstruction rollback and restores identical object/collider proof. Import now uses a Scene textarea because native prompt() is unsupported by the in-app browser.
+
+Evidence: `evidence/r4-foundation/object-fresh-and-import-rollback.json`, `normal-input-barrier-contact.json/.jpg`, `edited-object-fresh-runtime.jpg`, `source-isolated-boulder.jpg`. The earlier `island-a-b-a.json` is historical isolation evidence and retains its old secondary Track metadata; do not present it as a fresh capture of this revision.
+
+11 Node tests pass; one automatic 0.30m autostep test is a preserved known failure/TODO, not a PASS. Guard classified it noncritical unless an actual required route has an unavoidable curb. Two non-improving repairs stopped; no further parameter repair. TypeScript and whitespace checks pass. Physics-independent saved-platform-pose reconstruction and 30/60fps descent tests pass.
+
+Independent Foundation Guard: continue Phase 2 after the bounded bfcache repair (implemented). This was read-only code review, not a module or product score. All REQUIRED rows retain NOT_GREEN pending complete receiving-product evidence/critics. Next: Player Golden, then Roads/Track and Phase 3; F-R39 remains NOT_READY, F-R07 UNKNOWN. No Site/Hub publication, merge or Live promotion.
+
+---
+
 # KFB Island MVP R4 · Foundation implementation milestone 1
 
 Current authority: `skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`, Frozen Matrix operationalVersion 5: **44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL PROOF**. Prior 37-row references below are historical and superseded. ONE_SHOT continues. **NO MVP; no REQUIRED row is claimed GREEN.**
