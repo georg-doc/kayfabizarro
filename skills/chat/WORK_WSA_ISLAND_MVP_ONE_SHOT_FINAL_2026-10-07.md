@@ -1,7 +1,9 @@
-# WORK / WSA · KFB Island MVP · FINAL ONE_SHOT · 2026-10-07
+# WORK / WSA · KFB Island MVP R4 · ONE_SHOT · 2026-10-07
 
-Status: **READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
+Status: **MVP R4 · READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
 Authority: **Georg / KFB**
+Product iteration: **KFB Island MVP R4**
+Contract version: **Frozen Matrix operationalVersion 5**
 Executor: **ChatGPT Work/WSA · GPT-6 Astra Medium baseline recommended**
 Reasoning escalation: **Phase 2B (Roads / junction integration) and Phase 3 (Early Visual/Physical Golden) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
 Receiving owner: **KFB WorldBuilder / WB2**
