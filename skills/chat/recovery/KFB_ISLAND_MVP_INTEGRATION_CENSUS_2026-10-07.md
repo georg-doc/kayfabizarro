@@ -401,3 +401,129 @@ Before the Island One-Shot brief is issued, the Integrator input ledger must con
 - Prototype Graveyard negative Goldens.
 
 A generic label such as "media", "style", "animation" or "environment" may not silently absorb/delete these distinct inputs.
+
+
+## P · Flight / multimodal travel / vehicle-physics correction
+
+Georg promoted Flight back into the Island product direction. This must reuse the existing Travel/Mech lineage rather than start a new movement system.
+
+### P1 · Existing Flight donors are real and complementary
+
+**Travel Flight owner**
+- existing Travel Globe `carpet.js` + `flight-controls.js` + `camera-rig.js`;
+- owns Flight world position, heading, speed, bank, pitch, altitude relative to terrain, drift, hover and Flight-camera relationship;
+- accepted Ground→Flight bridge pattern keeps one active movement writer;
+- accepted product timing: first Space remains immediate Ground jump; second fresh Space within **400 ms** requests Flight.
+
+**Seed World / Combat Mech donor**
+- `sw-mech.js` already proves walk / air / flight modes and Double-Space take-off as a POC;
+- current POC also has Minigun/Rockets, weapon FX, combat camera option and bounded destruction;
+- Open-World integration doc already classifies its flight mode as **DONATE** to the existing WB2 player owner, not a second controller;
+- mech actor becomes an actor profile, not a new movement owner.
+
+**Travel presentation / kinetics donors**
+- Travel flight-state seam already exposes speed, acceleration, turn rate, bank, pitch, yaw rate, climb, boosting, gust/impact/touchdown facts;
+- existing Speed Lines / Contrails donors exist in Travel;
+- Vehicle/Flight Deformer work explicitly treats these as presentation consumers of Travel state, not physics owners.
+
+### P2 · Island MVP Flight contract
+
+**MVP REQUIRED representative Flight seam:**
+- same avatar can move Ground → Flight → Ground in the same bounded island runtime;
+- first Space = Cartoon Jump;
+- second fresh Space within the accepted 400-ms window = Flight request;
+- exactly one movement/camera writer per mode;
+- Flight supports at least take-off, forward flight, climb, descend, hover, boost, bank and safe intentional landing;
+- Surface Truth remains height/support authority;
+- Flight must work for world inspection from above and must not create a second terrain/world coordinate system.
+
+**Current Georg equipment direction:**
+`Actor → Equipment/Backpack → Flight Capability → actor-specific Presentation`.
+
+The backpack/flight gear should allow ordinary compatible characters to gain Flight independently of a Surf Card, bathtub or other special vehicle. It is a capability/equipment layer, not a new Flight physics owner.
+
+**MVP STRONGLY INCLUDE presentation:**
+- readable backpack/propulsion device;
+- propulsion/thrust VFX;
+- coherent propulsion/boost SFX through the existing Audio owner;
+- speed lines / contrails at speed;
+- body pose reacts to bank/pitch/boost.
+
+**TUNE / MAY FOLLOW AFTER BASE FLIGHT:**
+- richer Blender-authored cruise/climb/dive poses;
+- stronger bank reaction;
+- barrel-roll choreography;
+- character-specific secondary motion;
+- special flight carriers such as Surf Card / bathtub.
+
+A barrel roll or perfect character-flight acting must not block the first valid Ground↔Flight consumer if the core flight feels coherent and safe.
+
+### P3 · Vehicle physics status correction
+
+Joyride/Drive remains **MVP REQUIRED**, but its current physics is **KEEP + TUNE**, not accepted-final.
+
+Known product note from Georg:
+- basic vehicle feel is already useful;
+- steering, collision and recovery/continue-driving behavior are not fully clean.
+
+First Island MVP minimum:
+- enter/exit;
+- accelerate/brake/reverse/steer reliably;
+- collision must not trap, tunnel or corrupt mode ownership;
+- recovery from ordinary contact must allow continued driving;
+- one representative road/bridge/race loop works with normal input.
+
+Handling polish may remain TUNE if it does not break traversal, collision integrity, camera or the product critic. A severe collision/recovery defect remains an acceptance blocker.
+
+### P4 · Seeded procedural buildings / street-map grammar
+
+Seed World donor contains:
+- deterministic warped street grid;
+- blocks/parcels;
+- stable BuildingRecipe IDs;
+- buildings oriented to streets with entrance side facing access;
+- street graph exportable as Track-Core RouteRecipe intent;
+- LOD0–3 shell/deformation/façade semantics;
+- compact 2-bit destruction state donor.
+
+Integration rule:
+- **ADOPT/DONATE the data/grammar, not its second world/terrain/road renderer**;
+- Surface Truth supplies height;
+- Track Core builds roads;
+- Joyride presents roads;
+- near-field source-proven/Claybound-compatible buildings remain preferred;
+- procedural shells are useful for far LOD, destructible stand-ins, sparse surreal structures or a bounded settlement provider only after the Claybound Compatibility Gate.
+
+For the first Island MVP, long city blocks remain unnecessary. A small number of procedural structures may be used if they improve the scene and pass the visual Golden; they are not required merely because the generator exists.
+
+### P5 · Inter-island travel contract
+
+Preserve three eventual travel choices:
+1. **Portal** — neutral materialize/enter/return seam;
+2. **Track / Joyride Highway** — authored Track-Core connection;
+3. **Free Flight** — player-controlled Flight between island-local spaces.
+
+Architecture now should not hard-bind an island to only one travel method.
+
+First single-Island MVP:
+- prove Flight locally;
+- preserve a port/portal/connection contract;
+- do **not** require a second island just to prove the first Island MVP.
+
+First multi-island expansion:
+- prove at least two of the three travel methods against the same island/document identity and local-frame handoff;
+- the third remains additive, not a parallel universe runtime.
+
+### P6 · Combat / destruction relationship
+
+Existing Mech weapons/destruction are valuable donors but full Combat remains outside first Island MVP acceptance.
+
+**MVP OPTIONAL PROOF / STRONGLY PRESERVE SEAM:**
+- one harmless target/prop transfer or bounded destructible object may prove shared event/state integration if low risk.
+
+**LATER:**
+- full Minigun/Rocket combat loop;
+- enemies/health/rewards;
+- full destructible settlement sandbox.
+
+Do not let Combat ownership leak into the World player, persistence, terrain or Flight owners.
