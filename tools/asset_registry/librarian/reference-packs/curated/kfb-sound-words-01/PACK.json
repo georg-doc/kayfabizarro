@@ -1,0 +1,130 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "status": "CURATED_CONSUMER_PACK_VISUAL_ANALYSIS_PENDING",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "currentExecutor": "ChatGPT Web Chat",
+  "claudeDesignJobStarted": false,
+  "sourceInspectionRequired": true,
+  "privateSiteAccessRequired": false,
+  "transport": "GitHub metadata + original source URLs",
+  "rules": [
+    "A curated pack is not proof of visual inspection.",
+    "Do not mark sourceInspectedInIsolation=true until the actual source visual is seen.",
+    "Separate OBSERVED SOURCE FACT / CONSTRUCTION PRINCIPLE / KFB DESIGN DECISION in later design work.",
+    "Do not imitate a named creator's finished style."
+  ],
+  "packId": "style-pack:kfb-sound-words:001",
+  "title": "KFB Sound Words / Graphic SFX 01",
+  "lane": "GRAPHIC_FX",
+  "intendedConsumers": [
+    "comic-vfx",
+    "combat-vfx",
+    "chatterbox",
+    "billboards"
+  ],
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-sound-effects-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Sound Effects",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-sound.html",
+      "role": "PRIMARY_SOUND_WORD_REFERENCE",
+      "inspectFor": [
+        "letterform as sound",
+        "scale/weight emphasis",
+        "word-shape/action relationship"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-comic-sense-2021-06",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Comic Sense",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2021/06/how-to-think-when-you-write-comic-sense.html",
+      "role": "WORD_IMAGE_INTEGRATION",
+      "inspectFor": [
+        "text as image",
+        "word placement",
+        "interaction between lettering and composition"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-motion-lines-2021-07",
+      "sourcePool": "ETHERINGTON_SEED_03",
+      "title": "Motion Lines",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2021/07/how-to-think-when-you-draw-motion-lines.html",
+      "role": "MOTION_SUPPORT",
+      "inspectFor": [
+        "directionality",
+        "speed emphasis",
+        "visual flow"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-small-medium-large-2020-11",
+      "sourcePool": "ETHERINGTON_SEED_03",
+      "title": "Small / Medium / Large",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/11/how-to-think-when-you-draw-small-medium.html",
+      "role": "SHAPE_HIERARCHY",
+      "inspectFor": [
+        "small/medium/large rhythm",
+        "hierarchy",
+        "non-uniform emphasis"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-impact-debris-2017-04",
+      "sourcePool": "ETHERINGTON_SEED_01",
+      "title": "Impact Debris / Explosion / Destruction",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2017/04/how-to-think-when-you-draw-stranski_26.html",
+      "role": "IMPACT_CONTEXT",
+      "inspectFor": [
+        "impact direction",
+        "burst/debris relationship",
+        "visual accent"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:blambot-comic-book-grammar-tradition",
+      "sourcePool": "SUPPLEMENTARY_01",
+      "title": "Comic Book Grammar & Tradition",
+      "creator": "Nate Piekos / Blambot",
+      "sourceClass": "AUTHORITATIVE_PROFESSIONAL_LETTERING_SOURCE",
+      "canonicalPageUrl": "https://blambot.com/pages/comic-book-grammar-tradition",
+      "role": "LETTERING_CONVENTION",
+      "inspectFor": [
+        "sound-effect treatment",
+        "emphasis",
+        "lettering grammar"
+      ],
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "targetQuestions": [
+    "How should sound words scale with impact intensity?",
+    "How do letterform weight, direction and shape reinforce motion?",
+    "When should the word sit inside, beside or replace a visual effect?",
+    "How can KFB keep sound words tactile/clay-like without losing readability?"
+  ],
+  "expectedLaterOutput": [
+    "sound-word hierarchy",
+    "impact/speed/breakage families",
+    "placement grammar",
+    "KFB-specific lettering constraints"
+  ]
+}
