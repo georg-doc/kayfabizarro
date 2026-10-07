@@ -1,0 +1,130 @@
+{
+  "schema": "kfb.style-reference-seed/1",
+  "status": "OFFICIAL_SOURCE_CURATED_VISUAL_INSPECTION_PENDING",
+  "date": "2026-10-07",
+  "creator": "The Etherington Brothers",
+  "collection": "How to Think When You Write",
+  "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+  "permissionContext": "USER_REPORTED_DIRECT_PERMISSION",
+  "batchId": "ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION",
+  "designPriority": "CURATE_FIRST_CONSUME_LATER",
+  "scope": "DIALOGUE_INTERACTION_WRITING",
+  "semanticPlacement": {
+    "parent": "COMIC_LANGUAGE",
+    "lanes": [
+      "DIALOGUE_RHYTHM",
+      "CHARACTER_VOICE",
+      "NONVERBAL_BEHAVIOR",
+      "CONVERSATION_FLOW"
+    ]
+  },
+  "policy": {
+    "currentExecutor": "ChatGPT Web Chat",
+    "sourceInspectedInIsolationDefault": false,
+    "remoteImagesMirroredToGitHub": false,
+    "claudeDesignRole": "NOT_REQUIRED_BY_DEFAULT",
+    "likelyConsumers": [
+      "chatterbox",
+      "resident-dialogue",
+      "comic-writing"
+    ]
+  },
+  "entries": [
+    {
+      "id": "etherington-small-talk-2019-01",
+      "title": "Small Talk",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-small-talk.html",
+      "lane": "DIALOGUE_RHYTHM",
+      "subject": [
+        "small-talk",
+        "conversation",
+        "dialogue",
+        "social-rhythm"
+      ],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "ambient-conversation"
+      ],
+      "verification": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-speech-patterns-2018-12",
+      "title": "Speech Patterns",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/12/how-to-think-when-you-write-speech.html",
+      "lane": "CHARACTER_VOICE",
+      "subject": [
+        "speech-patterns",
+        "character-voice",
+        "dialogue"
+      ],
+      "useCases": [
+        "chatterbox",
+        "resident-voice",
+        "character-writing"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-tics-and-tells-2019-11",
+      "title": "Tics and Tells",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/11/how-to-think-when-you-write-tics-and.html",
+      "lane": "NONVERBAL_BEHAVIOR",
+      "subject": [
+        "tics",
+        "tells",
+        "nonverbal-language",
+        "character-detail"
+      ],
+      "useCases": [
+        "resident-performance",
+        "chatterbox",
+        "characterization"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-interrupt-scene-2020-02",
+      "title": "Interrupt a Scene",
+      "url": "https://theetheringtonbrothers.blogspot.com/2020/02/bonus-learnuary-day-52-how-to-think.html",
+      "lane": "CONVERSATION_FLOW",
+      "subject": [
+        "interruptions",
+        "conversation",
+        "scene-rhythm",
+        "dialogue"
+      ],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "scene-writing"
+      ],
+      "verification": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-silence-is-golden-2018-01",
+      "title": "Silence Is Golden",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/01/how-to-think-when-you-write-using.html",
+      "lane": "DIALOGUE_RHYTHM",
+      "subject": [
+        "silence",
+        "pause",
+        "negative-space",
+        "dialogue-rhythm"
+      ],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "comic-writing"
+      ],
+      "verification": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "seedCount": 5,
+  "note": "These are dialogue/interaction references, not visual-style or VFX references. Keep them separate from Bubble Grammar and Emanata presentation."
+}
