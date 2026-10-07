@@ -327,6 +327,153 @@ Reason:
 - StoryMap D6 donor maps naturally;
 - Destruction can remain finer local cells.
 
+
+## Resource payload / mining layer
+
+A cell may also carry an optional **resource payload**.
+
+Candidate fields:
+- resourceType;
+- grade / richness;
+- amount / depletion state;
+- reveal rule;
+- regeneration rule if any;
+- source/provenance or biome-generation seed.
+
+Examples:
+- earth/clay/stone/wood/ore/fluff-like material;
+- buried prop/relic;
+- build material;
+- biome-specific collectible.
+
+Important:
+- resource state is data, not a permanently spawned inventory object;
+- mining/removal mutates the cell/resource state and may expose a lower layer or empty/support state;
+- ordinary cells should remain cheap until interacted with;
+- rarity/resources may be generated deterministically from world seed + position + biome.
+
+This gives one diegetic loop:
+`WORLD CELL → inspect/mine/destroy → resource yield → build/repair/terraform`.
+
+Do not make a full economy or crafting system part of the first Cell Metric proof.
+
+## Hexagonal projection / Hex-prism cells
+
+A hexagonal version is technically best understood as a **hexagonal prism cell** rather than a cube.
+
+Existing KFB Hex truth is already measured and should be reused rather than replaced:
+- pointy-top hex;
+- 2.0 flat-to-flat × 2.309 point-to-point in the current KayKit Medieval Hex pack;
+- six horizontal neighbours;
+- measured edge classes/connectivity;
+- existing solver / Hex World direction.
+
+A stacked Hex-prism world gives:
+- six horizontal neighbours;
+- plus vertical up/down relationships when stacked;
+- natural radial/organic terrain flow;
+- reduced square-grid directional bias;
+- very readable biome/territory/strategy topology.
+
+### Strengths of HEX_PRISM
+Best suited to:
+- terrain/biome cells;
+- islands;
+- tactical/world maps;
+- territory and route planning;
+- natural-looking neighbourhood propagation;
+- elevation terraces;
+- resource fields;
+- Babel / climbing / boardgame-like worlds.
+
+### Strengths of CUBE/SQUARE
+Best suited to:
+- buildings;
+- façades;
+- rooms;
+- Dungeon alignment;
+- destructible architecture;
+- Tetris / Connect Four / Match-3;
+- orthogonal roads/interiors;
+- Pixel-art/raster projection.
+
+Therefore do not force one geometry to win globally.
+
+## Candidate common cell abstraction
+
+Conceptually:
+
+```
+Cell {
+  id
+  shape: SQUARE | HEX
+  coord
+  elevation / layer
+  material / biome
+  resource?
+  supportProfile
+  semanticTags[]
+  objectRefs[]
+}
+```
+
+Adjacency is delegated to the shape/grid owner:
+- SQUARE: 4-way / optional diagonals / vertical;
+- HEX: 6-way / vertical.
+
+Presentation is delegated to the Surface Adapter:
+- hard voxel/block;
+- rounded block;
+- hex prism;
+- KayKit Hex source tile;
+- smooth terrain;
+- Story/Tactical relief.
+
+This preserves one semantic idea without inventing one universal geometry runtime.
+
+## Scale relationship
+
+Do **not** resize the existing measured KayKit Hex pack to the 4-unit MacroCell by assumption.
+
+Current measured Hex source width is 2.0 flat-to-flat. The 4-unit square MacroCell candidate and the existing KayKit Hex metric are therefore not numerically identical today.
+
+Possible future options:
+1. keep native Hex metric and use an adapter between grids;
+2. group multiple native Hex cells into one semantic Macro region;
+3. derive a separate 4-unit procedural hex-prism profile;
+4. scale only after source-isolated visual/contact proof.
+
+No option is canonical yet.
+
+## Resource + Hex combination
+
+Hex terrain is especially attractive for resource generation because neighbourhood fields are simple and isotropic-looking:
+
+`seed + biome + hex coord → resource field`
+
+This can create:
+- ore/stone/clay veins;
+- Fluff/resource clusters;
+- fertile/forest cells;
+- corruption/alien fields;
+- archaeological/resource zones.
+
+Extraction still uses the same semantic resource contract as square/cubic cells.
+
+## Updated architecture preference
+
+Prefer **one Cell Grammar with multiple grid/surface adapters**, not one world forced into one tessellation.
+
+Candidate relationship:
+
+`World semantic state`
+→ Square/Cube adapter for Dungeon/Building/Destruction/Puzzle
+→ Hex adapter for Terrain/Biome/Tactical/Resource fields
+→ Continuous adapter where Joyride/OSM needs smooth macro terrain
+
+Cross-grid portals/anchors map stable semantic IDs, not raw mesh coordinates.
+
+
 ## One next gate
 
-**KFB CELL METRIC LAB · 4-UNIT MACROCELL + D6 TERRAIN + DUNGEON PORTAL + DESTRUCTION SETTLE/REBUILD**
+**KFB CELL METRIC LAB · SQUARE/CUBE + HEX_PRISM ADAPTERS · RESOURCE PAYLOAD · DUNGEON/DESTRUCTION/RESOURCE PROOF**
