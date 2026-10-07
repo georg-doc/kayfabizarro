@@ -97,7 +97,8 @@ These are implementation acceptance gates, not prep claims.
 2. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/TEST_REPORT.md`
 3. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/WORK_WSA_IMPLEMENTATION_BRIEF.md`
 4. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/SHORT_HANDOVER_WSA_MVP_PLANNING.md`
-5. this `RETURN.md`
+5. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/ULTRATEX_TEXTURE_ADAPTATION_DONOR_NOTE.md`
+6. this `RETURN.md`
 
 ## Cross-project planning decision
 
@@ -111,6 +112,23 @@ For the current Island MVP it remains optional input behind the Frozen Matrix, e
 
 Short WSA/MVP handover:
 `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/SHORT_HANDOVER_WSA_MVP_PLANNING.md`
+
+## Additive donor extension · UltraTex
+
+UltraTex is recorded as a **TEXTURE_ADAPTATION_DONOR · LAB CANDIDATE** for the stage after geometry selection/generation and before final KFB/Claybound material acceptance.
+
+Target chain:
+`GEOMETRY SOURCE POOL → SOURCE ISOLATION/PREP → ULTRATEX TEST → KFB/CLAYBOUND MATERIAL ADAPTATION → KEEP / ADAPT / REJECT`
+
+Verified upstream head:
+`yiboz2001/UltraTex@a726678f3f3631fe2c5e3d1fb4597114784c7a8b`
+
+Important boundary: the published 22.3×–74.6× inference speedups are relative to a dense baseline and the published efficiency analysis uses one NVIDIA H200; desktop-GPU performance remains unproven. Current repo inference consumes prepared six-view/G-buffer structures and does not yet prove a one-command raw-mesh → textured-GLB round trip for KFB.
+
+Donor note:
+`tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/ULTRATEX_TEXTURE_ADAPTATION_DONOR_NOTE.md`
+
+It is not a new Registry/material owner, MVP requirement or replacement for the KFB Clay/Surface SSOT.
 
 ## Preserved / unchanged
 
