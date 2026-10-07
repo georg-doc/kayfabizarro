@@ -545,6 +545,193 @@ Useful reference families:
 Use as design grammar, not literal reproduction of protected works.
 
 
+
+## Dynamic Edge Completion during Build / Attach
+
+Georg steering:
+
+The Edge Completion Grammar should be **stateful and reversible**, not a permanent decorative cap.
+
+A free modular boundary is a temporary presentation state.
+
+When a new room/module attaches to that boundary:
+1. detect the formerly exposed edge;
+2. dissolve/retract its temporary rounded/ruin/stage completion;
+3. preserve the canonical source geometry/semantic seam;
+4. bring the new module into place;
+5. resolve the shared seam into the normal connected state;
+6. recompute free outer boundaries;
+7. generate the same completion grammar only on the newly exposed outer edges.
+
+Target principle:
+
+`EXPOSED_EDGE → COMPLETED_EDGE → ATTACH_PREP → CONNECTED_SEAM → NEW_EXPOSED_EDGE → COMPLETED_EDGE`
+
+The player should read one continuous act of building, not:
+`cap disappears → naked module seam → new asset pops in → new cap pops in`.
+
+## Reuse shared KFB materialize / rebuild grammar
+
+Do not invent a second construction VFX owner.
+
+Reuse the existing shared presentation direction prepared for:
+- UFO transfer / rematerialize;
+- Build / Repair / Rebuild;
+- Clay particles/chunks;
+- source-object restoration.
+
+Useful common vocabulary:
+- readable wobble / squash;
+- edge softening;
+- clay crumbs/chunks;
+- material breakup;
+- assembly / settle;
+- reveal of the source-proven final mesh;
+- seeded, stable irregularity;
+- no random per-frame flicker.
+
+The **world/build owner decides the structural state**.
+The shared transition grammar only presents the change.
+
+## Canonical seam vs presentation seam
+
+Keep three layers separate:
+
+### Canonical seam
+Structural truth:
+- module A face;
+- module B face;
+- connection/opening state;
+- support/contact;
+- save/reload identity.
+
+### Completion shell
+Temporary presentation while the seam is exposed:
+- rounded cap;
+- wubble / soft clay roll;
+- trim continuation;
+- masonry continuation;
+- baseboard ending;
+- ruin crumbs / clay pellets;
+- terrain blend.
+
+### Build transition
+Short-lived presentation between exposed and connected states.
+
+The Completion shell must never be baked into structural truth in a way that blocks later attachment.
+
+## Build choreography
+
+Preferred transition, adaptable by profile:
+
+### A · Prepare
+- NPC/God Mode selects or brings the new module;
+- target edge receives subtle anticipation wobble;
+- existing completion shell loosens/compresses rather than vanishing instantly.
+
+### B · Open seam
+- rounded cap retracts, melts, crumbles or folds toward the boundary;
+- clay crumbs/particles are pooled and bounded;
+- underlying canonical connection face becomes available.
+
+### C · Attach
+- new module translates/snaps/settles to its canonical transform;
+- optionally use a tiny squash/overshoot;
+- structural state changes only at the authoritative attachment event.
+
+### D · Heal
+- shared internal seam visually closes;
+- material/trim/baseboard/masonry continuity resolves across both modules;
+- redundant cap debris fades/recycles.
+
+### E · Re-finish
+- boundary scan runs again;
+- new external wall/floor/corner edges receive the same Edge Completion Grammar;
+- local ruin/clay crumbs are seeded only where appropriate.
+
+This gives one visually continuous construction gesture.
+
+## Example · 1×2 room becomes 1×3
+
+Initial:
+`[A][B]`
+
+Exposed edge on B:
+`[A][B)~`
+
+where `)~` is the temporary soft completion.
+
+Build C:
+`[A][B)~  +  [C]`
+→ cap opens
+→ C snaps/settles
+→ B-C seam heals
+
+Final:
+`[A][B][C)~`
+
+Only the new outer edge of C is completed.
+
+The same rule applies to:
+- Tiny Treats Bakery/Restaurant-style scene modules;
+- Dungeon modules;
+- workshop/home/Resident scenelets;
+- BlockBits;
+- future procedural buildings.
+
+## Different build actors, same structural result
+
+### Resident / NPC construction
+Presentation may include:
+- carry / push / hammer / repair choreography;
+- Fluff/work motions;
+- staged pauses;
+- collaborative building.
+
+### God Mode
+Presentation may be:
+- faster;
+- direct placement;
+- short clay materialize/settle;
+- optional beam/hand/tool affordance.
+
+### Rebuild / repair
+Uses the same completion and heal logic in reverse/partial form.
+
+The final canonical module graph must be identical regardless of who performed the build.
+
+## Performance rules
+
+Do not simulate every cap as soft-body clay.
+
+Prefer:
+- reusable generated cap geometry;
+- small vertex-deform/wobble parameters;
+- pooled clay crumbs/chunks;
+- shared materials;
+- deterministic seeds;
+- transform/scale animation for most assembly;
+- local recomputation only around changed edges.
+
+When a module is added, recompute only:
+- the changed seam;
+- its adjacent corners;
+- newly exposed boundary edges.
+
+Do not rebuild the whole settlement.
+
+## Acceptance
+
+A build transition passes when:
+- there is never an obviously raw connector face in the normal visible sequence;
+- the old completion naturally yields to the new module;
+- the internal seam reads connected, not double-capped;
+- the new outer edge ends in the same finished visual language;
+- source asset identity remains intact;
+- save/reload reconstructs the same structural result without relying on transition state;
+- transition remains performant when repeated.
+
+
 ## Resource payload / mining layer
 
 A cell may also carry an optional **resource payload**.
