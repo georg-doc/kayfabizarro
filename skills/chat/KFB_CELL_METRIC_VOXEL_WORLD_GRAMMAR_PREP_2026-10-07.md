@@ -328,6 +328,82 @@ Reason:
 - Destruction can remain finer local cells.
 
 
+
+## Georg steering · Cube/MacroCell becomes the preferred default grammar
+
+Current preference:
+
+**SQUARE / CUBE / MACROCELL = DEFAULT KFB WORLD GRAMMAR CANDIDATE**
+
+Reason:
+- simpler and more scalable;
+- aligns naturally with Pixel-Art/raster → world translation;
+- aligns with Building façades / doors / windows / rooms;
+- aligns with the measured 4-unit Dungeon module;
+- aligns with local Destruction/SubCells;
+- supports Terraforming, Resource mining, Tetris/Connect-Four/Match-3-style diegetic rules;
+- has a strong familiar cultural grammar: blocks, rooms, construction, puzzle spaces, modular architecture and "Cube"-like combinatorial spatial logic;
+- can still render as rounded, Claybound, softened or smooth rather than visibly Minecraft-like.
+
+The visible cube is **not mandatory**.
+The square/cubic **logical grid** is the preferred common grammar.
+
+### Hex role is downgraded
+
+HEX is now:
+- OPTIONAL terrain/tactical representation;
+- OPTIONAL Babel/climbing/boardgame donor;
+- source of useful roads/coast/nature/connector assets where they visually fit;
+- not the preferred general immersive-building vocabulary.
+
+Do not make the KayKit Medieval Hex building family the default KFB architecture.
+
+Current product observation:
+- the existing Hex buildings read comparatively small/blocky/tabletop-like against Rig_Medium character scale;
+- they are useful in fantasy/tactical contexts but weaker as the primary immersive cartoon-world building family;
+- prior Hex-heavy visual candidates reinforce this concern.
+
+The existing Hex solver/measurements remain valuable and must not be deleted or rebuilt.
+
+### Dungeon stays high-value
+
+The measured KayKit Dungeon family remains a strong architecture donor because:
+- 4×4 module;
+- 4-unit walls;
+- 4.05 level spacing;
+- character-compatible room/corridor grammar;
+- stronger architectural modelling/style than the Hex building subset;
+- direct compatibility with the 4-unit MacroCell candidate.
+
+Dungeon is not reduced merely because Hex is downgraded.
+
+### Cultural / narrative advantage of Cube grammar
+
+Cube/MacroCell provides a broad, familiar symbolic language that can support:
+- construction / decomposition;
+- hidden contents/resources;
+- rooms behind cells;
+- portals;
+- nested worlds;
+- shifting architecture;
+- destruct/rebuild;
+- puzzle logic;
+- Tetris/Match/Connect mechanics;
+- "what is inside the next cell?" suspense;
+- procedural rearrangement.
+
+This is useful for storytelling because the audience already understands the block/cell metaphor without tutorial-heavy explanation.
+
+### Preferred hierarchy
+
+`World semantic state`
+→ **Square/Cube MacroCell grammar by default**
+→ local finer SubCells for destruction/resources
+→ Dungeon adapter on the same 4-unit module where proven
+→ Continuous/Smooth Surface presentation where needed
+→ optional Hex/Tactical adapter only for specific worlds/modes/assets
+
+
 ## Resource payload / mining layer
 
 A cell may also carry an optional **resource payload**.
@@ -462,18 +538,22 @@ Extraction still uses the same semantic resource contract as square/cubic cells.
 
 ## Updated architecture preference
 
-Prefer **one Cell Grammar with multiple grid/surface adapters**, not one world forced into one tessellation.
+Prefer **Cube/MacroCell first**.
 
 Candidate relationship:
 
 `World semantic state`
-→ Square/Cube adapter for Dungeon/Building/Destruction/Puzzle
-→ Hex adapter for Terrain/Biome/Tactical/Resource fields
-→ Continuous adapter where Joyride/OSM needs smooth macro terrain
+→ **Square/Cube MacroCell grammar as default**
+→ SubCells for Destruction/Resource detail
+→ Dungeon adapter where the measured 4-unit module fits
+→ Continuous/Smooth presentation where Joyride/OSM needs it
+→ optional Hex adapter for Tactical/Babel/specific terrain or asset families
 
-Cross-grid portals/anchors map stable semantic IDs, not raw mesh coordinates.
+Hex is no longer a peer default in this proposal.
+
+Cross-grid or cross-mode portals/anchors map stable semantic IDs, not raw mesh coordinates.
 
 
 ## One next gate
 
-**KFB CELL METRIC LAB · SQUARE/CUBE + HEX_PRISM ADAPTERS · RESOURCE PAYLOAD · DUNGEON/DESTRUCTION/RESOURCE PROOF**
+**KFB CELL METRIC LAB · CUBE/MACROCELL DEFAULT · RESOURCE + DUNGEON + DESTRUCTION · HEX OPTIONAL DONOR ONLY**
