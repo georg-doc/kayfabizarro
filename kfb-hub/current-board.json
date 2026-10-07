@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.15",
-  "updatedAt": "2026-10-07T16:12:00Z",
+  "revision": "2026-10-07.16",
+  "updatedAt": "2026-10-07T16:19:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Island MVP Frozen Matrix is now persisted. Product remains NO MVP. Fresh-chat recovery path is Hub → Integration Census → Frozen Matrix → Prototype Graveyard/owner returns. Next execution is not another planning micro-slice: exactly one Work/WSA One-Shot against the frozen contract after final briefing."
+    "note": "Island MVP Frozen Matrix operational v2 is persisted: 44 REQUIRED rows plus Strong/Optional now have explicit owners, readiness, deltas, acceptance proofs and forbidden shortcuts/quarantine guards. Product remains NO MVP. Fresh chats route directly to this matrix; next is one final Work/WSA ONE_SHOT brief."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -29,13 +29,13 @@
   "p0": [
     {
       "id": "island-mvp-freeze-planning",
-      "title": "Island MVP · FROZEN MATRIX · NO MVP",
-      "summary": "Frozen product contract is persisted: 44 REQUIRED rows plus STRONGLY INCLUDE / OPTIONAL / LATER. It retains the old 37-row contract and adds explicit Flight, P0 locomotion/cartoon jump, Claybound/grounding, real Quote Pool, Early Golden, negative-Golden and no-placeholder gates. Next: one final Work/WSA execution brief, then one continuous One-Shot.",
-      "badge": "FROZEN CONTRACT · NO MVP",
+      "title": "Island MVP · OPERATIONAL MATRIX v2 · NO MVP",
+      "summary": "44 REQUIRED + 12 STRONGLY INCLUDE + 7 OPTIONAL rows are now execution-ready with owner/readiness/delta/proof/shortcut guards. Fresh chats resume from START_HERE → Frozen Matrix. Next: final WSA One-Shot brief only.",
+      "badge": "OPERATIONAL CONTRACT v2 · NO MVP",
       "action": "Frozen Matrix öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
       "executor": "ChatGPT Web Chat · architecture planning",
-      "nextExecutor": "Exactly one ChatGPT Work/WSA Integrator after final execution brief"
+      "nextExecutor": "Exactly one ChatGPT Work/WSA Integrator after final ONE_SHOT brief"
     },
     {
       "id": "issue-360-open-world-recovery-audit",
