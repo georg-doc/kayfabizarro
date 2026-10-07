@@ -349,3 +349,31 @@ First-Island policy:
 - full day/evening/night/auto, weather, rain overlay, Aurora, God Rays, Lens Flare, Spindle shell and every movement FX are **preserved additive capabilities**, not new mandatory MVP rows;
 - any selected effect consumes real environment/movement facts and never becomes a second physics/sky owner;
 - exact "ground-flyover particle" reuse must be source-audited before semantic claims are made.
+
+
+## 14 · ToolBox `_inbox` donor audit
+
+The current ToolBox inbox contains **115 top-level entries**. It is now routed through:
+
+`skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
+
+Machine-readable:
+`skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.json`
+
+This adds **zero new REQUIRED rows**.
+
+High-value additional donors preserved by that audit include:
+- WhackMan generic additive Contact/Bounce + free-look→chase-return patterns;
+- VFX-01 source-isolated effect bank;
+- Vehicle Animation Lab v4 real Travel-state→cartoon-flight kinetics;
+- Plant Prop deterministic source-first living props;
+- Billboard B0 accepted source anatomy + Billboard Clay01 road anchoring/LOD;
+- Resident Card Speculation thin Scenelet/Card/EyeRig/Bubble staging;
+- ToolBox P08 edit/snap/grounding lineage;
+- World Core R0A composition/grounding visual mechanisms;
+- provenance-tracked Public Domain Pool.
+
+Hard rule:
+**never bulk-import `_inbox`.**
+For each donor:
+`exact source → source isolation → KEEP/ADAPT/REJECT → existing owner integration → critic proof`.
