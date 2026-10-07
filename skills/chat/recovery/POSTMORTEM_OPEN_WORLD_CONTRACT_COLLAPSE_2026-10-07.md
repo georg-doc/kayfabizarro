@@ -328,3 +328,22 @@ Until the Recovery Audit returns and is independently challenged:
 Exact next gate:
 
 **FRESH WORK/WSA RECOVERY AUDITOR · READ-ONLY PRODUCT CONTRACT + DONOR AUDIT**
+
+
+## 13 · Binding MVP acceptance correction · Georg 2026-10-07
+
+The historical formulation `Receiving Core` is no longer allowed as a product-progress substitute for KFB Open World.
+
+Binding policy:
+`skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md`
+
+Product status is determined by the **complete frozen Acceptance Matrix**, not by aggregate impressions of subsystem progress.
+
+A product may be called an MVP only when every required matrix row is green at its required proof level.
+
+If one required row is partial, missing, conflicted, unproven or below its required proof:
+**the Open World is not an accepted MVP.**
+
+Subsystems may still be valuable KEEP/PASS donors. That status remains local evidence and must not be promoted into product-level completion language.
+
+The matrix may only be reduced by an explicit Georg product decision.
