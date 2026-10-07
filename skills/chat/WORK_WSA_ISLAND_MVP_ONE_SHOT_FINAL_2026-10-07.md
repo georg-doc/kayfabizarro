@@ -74,7 +74,7 @@ Only then open specialist Returns for rows that are actually being integrated.
 The following are binding:
 
 - **44 REQUIRED** rows in the Frozen Matrix.
-- **12 STRONGLY INCLUDE** rows.
+- **13 STRONGLY INCLUDE** rows.
 - **7 OPTIONAL PROOF** rows.
 - all per-row:
   - phase;
@@ -161,6 +161,7 @@ The representative island must contain at least:
 - one Card → Almanac interaction;
 - one real Audio environmental/POI transition;
 - real Sky/Environment;
+- preferably one F-S13 state-dependent freestanding/Paper-Facade Threshold Door proof without adding a second progression/world/portal owner;
 - Ground + Drive + Flight;
 - PLAY / BUILD / GOD;
 - source isolate / place / move / rotate / scale / snap;
@@ -568,6 +569,7 @@ Target these in the same One-Shot where they remain low-risk:
 - Living-Toy authoring rules;
 - minimal real Joyride HUD/Radio/Jukebox controls;
 - shared Clay materialize/dematerialize presentation;
+- one bounded state-dependent Threshold Door / Paper-Facade proof where low-risk: base state ordinary local pass-through, unlocked/revealed state routed through the existing portal/instance owner; walking around the facade stays local;
 - bounded procedural structure provider if it improves the island;
 - selected Etherington/Style references for concrete problems;
 - Fluff Work activity if the chosen Resident loop benefits.
