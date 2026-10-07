@@ -650,3 +650,16 @@ The following are **preserved for additive integration / later tuning**, not new
 - all Travel movement FX simultaneously.
 
 The One-Shot may include any of these when low-risk and source-ready, but their absence alone does not create a new RED row beyond the existing F-R24/F-R07/F-S03 contracts.
+
+
+## R · ToolBox inbox audit router
+
+A dedicated audit now covers the **115 top-level entries** under `tools/KFB-ToolBox/_inbox/`:
+
+`skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
+
+Use that audit before rediscovering inbox packages manually.
+
+No new MVP-required capability was created by the inbox pass. The audit strengthens the existing donor roster behind Drive/Flight/VFX, world grounding, direct authoring, Residents/Card staging, Billboard and living-prop composition.
+
+WhackMan is explicitly preserved as a **generic cartoon contact/bounce/camera donor**, not as a minigame/runtime to integrate.
