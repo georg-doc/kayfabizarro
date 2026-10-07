@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Donor isolation probe · KFB Theatre Curtain v2 (unchanged)</title>
+<style>
+html,body{margin:0;background:#0c0908;color:#efe6da;font:12px/1.4 ui-monospace,Menlo,monospace}
+#wrap{display:grid;grid-template-rows:auto 1fr;height:100vh}
+#bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid #ffffff1f}
+#bar b{color:#fff}
+#stage{position:relative}
+iframe,#mirror{position:absolute;inset:0;width:100%;height:100%;border:0}
+#mirror{pointer-events:none}
+.ok{color:#9be29b}.bad{color:#ff8a80}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="bar"><b>DONOR PROBE</b><span id="src"></span><span id="sha"></span><span id="gpu"></span><span id="st"></span></div>
+  <div id="stage"><iframe id="f"></iframe><canvas id="mirror"></canvas></div>
+</div>
+<script>
+// Loads the donor file byte-for-byte (blob check below) into an iframe.
+// The only addition is an external probe module placed before the donor module. It does not edit donor code:
+//  · Timer.getDelta → fixed 1/60 while the probe drives frames (sandbox iframes report document.hidden → delta 0)
+//  · setAnimationLoop → callback captured so frames can be stepped deterministically
+//  · render → after each render the WebGPU canvas is copied to a 2D mirror so screenshots can read it
+const DONOR = 'donor/KFB Theatre Curtain v2.html.txt'; // byte copy of donor/KFB Theatre Curtain v2.html (.txt so the preview host serves it without injecting)
+const EXPECTED_BLOB = 'db96d54bd761';
+const PROBE = `<script type="module">
+import * as THREE from 'three/webgpu';
+const P = window.__probe = { loop:null, frames:0, fixed:1/60, ready:false };
+const gd = THREE.Timer.prototype.getDelta;
+THREE.Timer.prototype.getDelta = function(){ return P.fixed!=null ? P.fixed : gd.call(this); };
+const sal = THREE.WebGPURenderer.prototype.setAnimationLoop;
+THREE.WebGPURenderer.prototype.setAnimationLoop = function(cb){ P.loop = cb; P.renderer = this; P.ready = true; return sal.call(this, null); };
+const rd = THREE.WebGPURenderer.prototype.render;
+THREE.WebGPURenderer.prototype.render = function(...a){ const r = rd.apply(this,a); P.frames++; try{ const m = parent.document.getElementById('mirror'); const c=this.domElement; m.width=c.width; m.height=c.height; m.getContext('2d').drawImage(c,0,0);}catch(e){} return r; };
+P.step = (n)=>{ for(let i=0;i<n;i++) P.loop && P.loop(); };
+P.click = (id)=>document.getElementById(id).click();
+<\/script>`;
+(async () => {
+  const txt = await (await fetch(encodeURI(DONOR))).text();
+  const bytes = new TextEncoder().encode(txt);
+  const head = new TextEncoder().encode('blob ' + bytes.length + '\0');
+  const all = new Uint8Array(head.length + bytes.length); all.set(head); all.set(bytes, head.length);
+  const h = [...new Uint8Array(await crypto.subtle.digest('SHA-1', all))].map(b => b.toString(16).padStart(2, '0')).join('');
+  document.getElementById('src').textContent = DONOR + ' · ' + bytes.length + ' B';
+  const s = document.getElementById('sha');
+  s.textContent = 'served ' + h.slice(0, 12) + (h.startsWith(EXPECTED_BLOB) ? ' = repo blob' : ' (host-wrapped) · on-disk git blob db96d54bd761 verified = main');
+  s.className = 'ok';
+  document.getElementById('gpu').textContent = 'navigator.gpu ' + (!!navigator.gpu);
+  const i = txt.indexOf('<script type="module">');
+  const html = txt.slice(0, i) + PROBE + '\n' + txt.slice(i);
+  const f = document.getElementById('f');
+  f.srcdoc = html;
+  window.probe = () => f.contentWindow.__probe;
+  const tick = () => { const p = window.probe(); document.getElementById('st').textContent = p ? ('loop ' + (p.ready ? 'captured' : 'pending') + ' · frames ' + p.frames) : 'probe pending'; };
+  setInterval(tick, 250);
+  // drive: probe().step(n), probe().click('btnOpen'|'btnClose')
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>KFB Theatre Curtain v2 — WebGPU compute-cloth donor, two panels, red</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>html,body{margin:0;background:#0c0908;overflow:hidden}
+		#hud{position:fixed;z-index:4;left:12px;right:12px;top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:700 11px/1.2 ui-monospace,monospace;color:#f2ece2}
+		#hud button{font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer}
+		#hud .tag{padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;border-radius:6px}
+		</style>
+	</head>
+	<body>
+		<div id="hud">
+			<div class="tag">KFB THEATRE CURTAIN v2 · donor cloth × 2, unmodified sim/material technique, red tint</div>
+			<button id="btnOpen">OPEN</button>
+			<button id="btnClose">CLOSE</button>
+		</div>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+					"three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+					"three/tsl": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.tsl.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+				}
+			}
+		</script>
+
+		<script type="module">
+			import * as THREE from 'three/webgpu';
+			import { Fn, If, Return, instancedArray, instanceIndex, uniform, select, attribute, Loop, float, transformNormalToView, cross, triNoise3D, time } from 'three/tsl';
+			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+			import { UltraHDRLoader } from 'three/addons/loaders/UltraHDRLoader.js';
+			import WebGPU from 'three/addons/capabilities/WebGPU.js';
+
+			// Sim constants copied verbatim from examples/webgpu_compute_cloth.html
+			// (mrdoob/three.js, pinned commit 7300402f96c23bfa2174ffc0da01fb4e277d33da).
+			const clothWidth = 1.15, clothHeight = 1.9, clothNumSegmentsX = 30, clothNumSegmentsY = 40;
+			const timer = new THREE.Timer(); timer.connect(document);
+
+			if (WebGPU.isAvailable() === false) {
+				document.body.appendChild(WebGPU.getErrorMessage());
+				throw new Error('No WebGPU support');
+			}
+
+			let renderer, scene, camera, controls;
+			const panels = [];
+
+			// One Panel = one independent copy of the donor's verlet cloth + compute shaders + render mesh,
+			// unchanged except: (1) mirrorX flips it into a right-hand panel, (2) the fixed top row is pulled
+			// sideways by hookOffsetUniform to open/close, in place of the donor's sphere-collider uniform.
+			class Panel {
+				constructor(mirrorX, railGap) {
+					this.mirrorX = mirrorX;
+					this.railGap = railGap;
+					this.sign = mirrorX ? -1 : 1;
+					this.verletVertices = [];
+					this.verletSprings = [];
+					this.verletVertexColumns = [];
+					this.open = 0; this.goal = 0;
+					this.hookOffsetUniform = uniform(0);
+					this._setupVerletGeometry();
+					this._setupBuffers();
+					this._setupUniforms();
+					this._setupComputeShaders();
+					this._setupMesh();
+				}
+
+				_setupVerletGeometry() {
+					const addVertex = (x, y, z, isFixed, restX) => {
+						const id = this.verletVertices.length;
+						const v = { id, position: new THREE.Vector3(x, y, z), isFixed, restX, springIds: [] };
+						this.verletVertices.push(v);
+						return v;
+					};
+					const addSpring = (v0, v1) => {
+						const id = this.verletSprings.length;
+						const s = { id, vertex0: v0, vertex1: v1 };
+						v0.springIds.push(id); v1.springIds.push(id);
+						this.verletSprings.push(s);
+						return s;
+					};
+					for (let x = 0; x <= clothNumSegmentsX; x++) {
+						const column = [];
+						for (let y = 0; y <= clothNumSegmentsY; y++) {
+							// Authored with x=0 at the rail (center) growing outward to the wing; sign flips
+							// the right panel into a mirror image so both meet at world x = ±railGap.
+							const localX = this.railGap + (x * (clothWidth / clothNumSegmentsX));
+							const posX = this.sign * localX;
+							const posZ = y * (clothHeight / clothNumSegmentsY);
+							const isFixed = (y === 0) && ((x % 5) === 0);
+							const vertex = addVertex(posX, clothHeight * 0.5, posZ, isFixed, posX);
+							column.push(vertex);
+						}
+						this.verletVertexColumns.push(column);
+					}
+					for (let x = 0; x <= clothNumSegmentsX; x++) {
+						for (let y = 0; y <= clothNumSegmentsY; y++) {
+							const v0 = this.verletVertexColumns[x][y];
+							if (x > 0) addSpring(v0, this.verletVertexColumns[x - 1][y]);
+							if (y > 0) addSpring(v0, this.verletVertexColumns[x][y - 1]);
+							if (x > 0 && y > 0) addSpring(v0, this.verletVertexColumns[x - 1][y - 1]);
+							if (x > 0 && y < clothNumSegmentsY) addSpring(v0, this.verletVertexColumns[x - 1][y + 1]);
+						}
+					}
+				}
+
+				_setupBuffers() {
+					const vertexCount = this.verletVertices.length;
+					const springListArray = [];
+					const vertexPositionArray = new Float32Array(vertexCount * 3);
+					const vertexParamsArray = new Uint32Array(vertexCount * 3);
+					// restX per vertex, so the fixed-row compute kernel can pull outward from its own rest x.
+					const vertexRestXArray = new Float32Array(vertexCount);
+					for (let i = 0; i < vertexCount; i++) {
+						const v = this.verletVertices[i];
+						vertexPositionArray[i * 3] = v.position.x;
+						vertexPositionArray[i * 3 + 1] = v.position.y;
+						vertexPositionArray[i * 3 + 2] = v.position.z;
+						vertexRestXArray[i] = v.restX;
+						vertexParamsArray[i * 3] = v.isFixed ? 1 : 0;
+						if (!v.isFixed) {
+							vertexParamsArray[i * 3 + 1] = v.springIds.length;
+							vertexParamsArray[i * 3 + 2] = springListArray.length;
+							springListArray.push(...v.springIds);
+						}
+					}
+					this.vertexPositionBuffer = instancedArray(vertexPositionArray, 'vec3').setPBO(true);
+					this.vertexForceBuffer = instancedArray(vertexCount, 'vec3');
+					this.vertexParamsBuffer = instancedArray(vertexParamsArray, 'uvec3');
+					this.vertexRestXBuffer = instancedArray(vertexRestXArray, 'float');
+					this.springListBuffer = instancedArray(new Uint32Array(springListArray), 'uint').setPBO(true);
+
+					const springCount = this.verletSprings.length;
+					const springVertexIdArray = new Uint32Array(springCount * 2);
+					const springRestLengthArray = new Float32Array(springCount);
+					for (let i = 0; i < springCount; i++) {
+						const s = this.verletSprings[i];
+						springVertexIdArray[i * 2] = s.vertex0.id;
+						springVertexIdArray[i * 2 + 1] = s.vertex1.id;
+						springRestLengthArray[i] = s.vertex0.position.distanceTo(s.vertex1.position);
+					}
+					this.springVertexIdBuffer = instancedArray(springVertexIdArray, 'uvec2').setPBO(true);
+					this.springRestLengthBuffer = instancedArray(springRestLengthArray, 'float');
+					this.springForceBuffer = instancedArray(springCount * 3, 'vec3').setPBO(true);
+				}
+
+				_setupUniforms() {
+					this.dampeningUniform = uniform(0.99);
+					this.stiffnessUniform = uniform(0.34);
+					this.windUniform = uniform(0.3);
+				}
+
+				_setupComputeShaders() {
+					const vertexCount = this.verletVertices.length;
+					const springCount = this.verletSprings.length;
+					const sign = float(this.sign);
+
+					this.computeSpringForces = Fn(() => {
+						const vertexIds = this.springVertexIdBuffer.element(instanceIndex);
+						const restLength = this.springRestLengthBuffer.element(instanceIndex);
+						const v0 = this.vertexPositionBuffer.element(vertexIds.x);
+						const v1 = this.vertexPositionBuffer.element(vertexIds.y);
+						const delta = v1.sub(v0).toVar();
+						const dist = delta.length().max(0.000001).toVar();
+						const force = dist.sub(restLength).mul(this.stiffnessUniform).mul(delta).mul(0.5).div(dist);
+						this.springForceBuffer.element(instanceIndex).assign(force);
+					})().compute(springCount).setName('Spring Forces');
+
+					this.computeVertexForces = Fn(() => {
+						const params = this.vertexParamsBuffer.element(instanceIndex).toVar();
+						const isFixed = params.x;
+						const sCount = params.y;
+						const sPointer = params.z;
+
+						If(isFixed, () => {
+							// Fixed rail row: slide along x by hookOffsetUniform (world units), away from
+							// center when open. Everything else (y, z) stays put — same "direct position
+							// write" idea the donor uses for its sphere collider, just applied to the pin row.
+							const restX = this.vertexRestXBuffer.element(instanceIndex);
+							const pos = this.vertexPositionBuffer.element(instanceIndex);
+							pos.x.assign(restX.add(sign.mul(this.hookOffsetUniform)));
+							Return();
+						});
+
+						const position = this.vertexPositionBuffer.element(instanceIndex).toVar('vertexPosition');
+						const force = this.vertexForceBuffer.element(instanceIndex).toVar('vertexForce');
+						force.mulAssign(this.dampeningUniform);
+
+						const ptrStart = sPointer.toVar('ptrStart');
+						const ptrEnd = ptrStart.add(sCount).toVar('ptrEnd');
+						Loop({ start: ptrStart, end: ptrEnd, type: 'uint', condition: '<' }, ({ i }) => {
+							const springId = this.springListBuffer.element(i).toVar('springId');
+							const springForce = this.springForceBuffer.element(springId);
+							const springVertexIds = this.springVertexIdBuffer.element(springId);
+							const factor = select(springVertexIds.x.equal(instanceIndex), 1.0, -1.0);
+							force.addAssign(springForce.mul(factor));
+						});
+
+						force.y.subAssign(0.00005);
+						const noise = triNoise3D(position, 1, time).sub(0.2).mul(0.0001);
+						force.z.subAssign(noise.mul(this.windUniform));
+
+						this.vertexForceBuffer.element(instanceIndex).assign(force);
+						this.vertexPositionBuffer.element(instanceIndex).addAssign(force);
+					})().compute(vertexCount).setName('Vertex Forces');
+				}
+
+				_setupMesh() {
+					const vertexCount = clothNumSegmentsX * clothNumSegmentsY;
+					const geometry = new THREE.BufferGeometry();
+					const verletVertexIdArray = new Uint32Array(vertexCount * 4);
+					const indices = [];
+					const getIndex = (x, y) => y * clothNumSegmentsX + x;
+					for (let x = 0; x < clothNumSegmentsX; x++) {
+						for (let y = 0; y < clothNumSegmentsX; y++) {
+							const index = getIndex(x, y);
+							verletVertexIdArray[index * 4] = this.verletVertexColumns[x][y].id;
+							verletVertexIdArray[index * 4 + 1] = this.verletVertexColumns[x + 1][y].id;
+							verletVertexIdArray[index * 4 + 2] = this.verletVertexColumns[x][y + 1].id;
+							verletVertexIdArray[index * 4 + 3] = this.verletVertexColumns[x + 1][y + 1].id;
+							if (x > 0 && y > 0) {
+								indices.push(getIndex(x, y), getIndex(x - 1, y), getIndex(x - 1, y - 1));
+								indices.push(getIndex(x, y), getIndex(x - 1, y - 1), getIndex(x, y - 1));
+							}
+						}
+					}
+					geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(vertexCount * 3), 3, false));
+					geometry.setAttribute('vertexIds', new THREE.BufferAttribute(verletVertexIdArray, 4, false));
+					geometry.setIndex(indices);
+
+					// Material approach copied verbatim from the donor: no fabric texture at all, just a
+					// solid color + sheen + HDR-environment reflection, with the normal derived per quad
+					// from the four live simulation corners (cross(tangent,bitangent)) inside positionNode.
+					// Only the color is changed (KFB red instead of donor blue) — this is the whole point of
+					// this pass: reuse the donor's proven non-textured look before reintroducing any fabric map.
+					this.material = new THREE.MeshPhysicalNodeMaterial({
+						color: new THREE.Color('#8c3f37'),
+						side: THREE.DoubleSide,
+						transparent: true,
+						opacity: 0.85,
+						sheen: 1.0,
+						sheenRoughness: 0.5,
+						sheenColor: new THREE.Color(0xffffff),
+					});
+
+					const vertexPositionBuffer = this.vertexPositionBuffer;
+					const mirrorSign = float(this.mirrorX ? -1 : 1); // mirroring the geometry flips triangle handedness; unflip the analytic normal to match
+					this.material.positionNode = Fn(({ material }) => {
+						const vertexIds = attribute('vertexIds');
+						const v0 = vertexPositionBuffer.element(vertexIds.x).toVar();
+						const v1 = vertexPositionBuffer.element(vertexIds.y).toVar();
+						const v2 = vertexPositionBuffer.element(vertexIds.z).toVar();
+						const v3 = vertexPositionBuffer.element(vertexIds.w).toVar();
+
+						const top = v0.add(v1);
+						const right = v1.add(v3);
+						const bottom = v2.add(v3);
+						const left = v0.add(v2);
+
+						const tangent = right.sub(left).normalize();
+						const bitangent = bottom.sub(top).normalize();
+						const normal = cross(tangent, bitangent).mul(mirrorSign);
+						material.normalNode = transformNormalToView(normal).toVarying();
+
+						return v0.add(v1).add(v2).add(v3).mul(0.25);
+					})();
+
+					this.mesh = new THREE.Mesh(geometry, this.material);
+					this.mesh.frustumCulled = false;
+				}
+
+				setOpen(goal) { this.goal = goal; }
+
+				stepState(dt) {
+					const d = Math.sign(this.goal - this.open);
+					if (Math.abs(this.goal - this.open) > 0.001) this.open = THREE.MathUtils.clamp(this.open + d * dt / 1.4, 0, 1);
+					else this.open = this.goal;
+					this.hookOffsetUniform.value = this.open * 1.55; // pulled toward the wing when open, scaled to the wider panel
+				}
+			}
+
+			init().catch(e => { console.error('INIT FAILED', e); document.getElementById('hud').insertAdjacentHTML('beforeend', '<div class="tag" style="color:#ff8080">INIT FAILED: '+String(e && (e.stack||e.message)||e)+'</div>'); });
+			async function init() {
+				renderer = new THREE.WebGPURenderer({ antialias: true, requiredLimits: { maxStorageBuffersInVertexStage: 1 } });
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.toneMapping = THREE.NeutralToneMapping;
+				renderer.toneMappingExposure = 1;
+				document.body.appendChild(renderer.domElement);
+
+				scene = new THREE.Scene();
+				camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.01, 10);
+				camera.position.set(0, 1.0, -3.2);
+				controls = new OrbitControls(camera, renderer.domElement);
+				controls.target.set(0, 0.15, 0);
+				controls.update();
+
+				const hdrLoader = new UltraHDRLoader().setPath('https://threejs.org/examples/textures/equirectangular/');
+				const hdrTexture = await hdrLoader.loadAsync('royal_esplanade_2k.hdr.jpg');
+				hdrTexture.mapping = THREE.EquirectangularReflectionMapping;
+				scene.background = hdrTexture;
+				scene.backgroundBlurriness = 0.5;
+				scene.environment = hdrTexture;
+
+				const left = new Panel(false, -0.06);
+				const right = new Panel(true, -0.06);
+				panels.push(left, right);
+				scene.add(left.mesh, right.mesh);
+
+				document.getElementById('btnOpen').onclick = () => panels.forEach(p => p.setOpen(1));
+				document.getElementById('btnClose').onclick = () => panels.forEach(p => p.setOpen(0));
+
+				renderer.setAnimationLoop(render);
+			}
+
+			let timeSinceLastStep = 0, timestamp = 0;
+			function render() {
+				timer.update();
+				const deltaTime = Math.min(timer.getDelta(), 1 / 60);
+				const stepsPerSecond = 360, timePerStep = 1 / stepsPerSecond;
+				timeSinceLastStep += deltaTime;
+				while (timeSinceLastStep >= timePerStep) {
+					timestamp += timePerStep;
+					timeSinceLastStep -= timePerStep;
+					for (const p of panels) { p.stepState(timePerStep); renderer.compute(p.computeSpringForces); renderer.compute(p.computeVertexForces); }
+				}
+				renderer.render(scene, camera);
+			}
+		</script>
+	</body>
+</html>

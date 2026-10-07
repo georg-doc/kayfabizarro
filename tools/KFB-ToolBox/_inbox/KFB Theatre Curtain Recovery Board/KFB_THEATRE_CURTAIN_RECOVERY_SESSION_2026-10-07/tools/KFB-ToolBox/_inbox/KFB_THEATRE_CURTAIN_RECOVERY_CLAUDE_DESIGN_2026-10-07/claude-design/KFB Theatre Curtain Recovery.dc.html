@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>KFB Theatre Curtain · Recovery candidate r1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#060404;overflow:hidden}
+a{color:#e9cfa4}a:hover{color:#fff}
+button{font-family:inherit}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+  "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+  "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.tsl.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+}}
+</script>
+</helmet>
+
+<div data-screen-label="Curtain candidate" style="position:fixed;inset:0;background:#060404;font-family:Archivo,system-ui,sans-serif;color:#efe2cc">
+  <div ref="{{ hostRef }}" style="position:absolute;inset:0"></div>
+  <canvas ref="{{ mirrorRef }}" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:{{ mirrorDisplay }}"></canvas>
+
+  <sc-if value="{{ showLoadingHint }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:0;right:0;bottom:5.5%;display:flex;justify-content:center;pointer-events:none">
+      <div style="padding:12px 18px;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#e9d9c0">Bühne wird eingerichtet</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showEnter }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;bottom:5.5%;display:flex;justify-content:center">
+      <button onClick="{{ enter }}" style="display:flex;align-items:center;gap:10px;background:transparent;border:0;color:#f3e6cf;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;padding:12px 18px" style-hover="color:#fff">
+        <span style="white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0;padding:3px 7px;border:1px solid #f3e6cf66;border-radius:4px">Enter ↵</span>
+        <span>Vorhang auf</span>
+      </button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showSelect }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;bottom:2%;display:flex;justify-content:center;align-items:center;gap:18px">
+      <button onClick="{{ prev }}" aria-label="Vorherige Figur" style="width:44px;height:44px;border-radius:50%;border:1px solid #f3e6cf55;background:#0b0706aa;color:#f3e6cf;font-size:18px;cursor:pointer" style-hover="border-color:#f3e6cf">‹</button>
+      <div style="display:flex;align-items:baseline;gap:10px;min-width:170px;justify-content:center">
+        <div style="font-size:17px;font-weight:600;letter-spacing:.03em;color:#f6ead6;white-space:nowrap">{{ actorName }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#d8c6a8;letter-spacing:.04em;white-space:nowrap">{{ actorBadge }}</div>
+      </div>
+      <button onClick="{{ next }}" aria-label="Nächste Figur" style="width:44px;height:44px;border-radius:50%;border:1px solid #f3e6cf55;background:#0b0706aa;color:#f3e6cf;font-size:18px;cursor:pointer" style-hover="border-color:#f3e6cf">›</button>
+      <sc-if value="{{ showSelectEnter }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ enter }}" style="margin-left:22px;display:flex;align-items:center;gap:10px;background:transparent;border:0;color:#f3e6cf;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;padding:12px 6px" style-hover="color:#fff">
+          <span style="white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0;padding:3px 7px;border:1px solid #f3e6cf66;border-radius:4px">Enter ↵</span>
+          <span style="white-space:nowrap">Vorhang auf</span>
+        </button>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showFallback }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#d8c6a8">fallback_reveal · WebGPU unavailable · host shows its world directly</div>
+  </sc-if>
+
+  <sc-if value="{{ showViewer }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#e9dcc6">
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+        <span style="padding:5px 7px;background:#140d0bdd;border:1px solid #ffffff22;border-radius:5px">VIEWER · #372 r1 · H hides</span>
+        <sc-for list="{{ modes }}" as="m" hint-placeholder-count="3">
+          <button onClick="{{ m.pick }}" style="padding:5px 8px;border-radius:5px;border:1px solid {{ m.border }};background:{{ m.bg }};color:#f3e6cf;font-size:10px;cursor:pointer">{{ m.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+        <sc-for list="{{ mats }}" as="m" hint-placeholder-count="5">
+          <button onClick="{{ m.pick }}" title="{{ m.title }}" style="padding:5px 8px;border-radius:5px;border:1px solid {{ m.border }};background:{{ m.bg }};color:#f3e6cf;font-size:10px;cursor:pointer">{{ m.label }}</button>
+        </sc-for>
+        <sc-for list="{{ hws }}" as="m" hint-placeholder-count="2">
+          <button onClick="{{ m.pick }}" style="padding:5px 8px;border-radius:5px;border:1px solid {{ m.border }};background:{{ m.bg }};color:#f3e6cf;font-size:10px;cursor:pointer">{{ m.label }}</button>
+        </sc-for>
+        <button onClick="{{ toggleTie }}" style="padding:5px 8px;border-radius:5px;border:1px solid #ffffff22;background:#140d0bdd;color:#f3e6cf;font-size:10px;cursor:pointer">{{ tieLabel }}</button>
+      </div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+        <button onClick="{{ cover }}" style="padding:5px 8px;border-radius:5px;border:1px solid #ffffff22;background:#140d0bdd;color:#f3e6cf;font-size:10px;cursor:pointer">cover</button>
+        <button onClick="{{ reveal }}" style="padding:5px 8px;border-radius:5px;border:1px solid #ffffff22;background:#140d0bdd;color:#f3e6cf;font-size:10px;cursor:pointer">reveal</button>
+        <button onClick="{{ impact }}" style="padding:5px 8px;border-radius:5px;border:1px solid #ffffff22;background:#140d0bdd;color:#f3e6cf;font-size:10px;cursor:pointer">impact</button>
+        <span style="padding:5px 7px;background:#140d0bdd;border:1px solid #ffffff22;border-radius:5px">{{ stateLine }}</span>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;loading&quot;,&quot;select&quot;,&quot;reveal&quot;],&quot;default&quot;:&quot;loading&quot;,&quot;tsType&quot;:&quot;'loading'|'select'|'reveal'&quot;},&quot;material&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;P&quot;,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;donor&quot;],&quot;default&quot;:&quot;P&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;hardware&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pelmet&quot;,&quot;rings&quot;],&quot;default&quot;:&quot;pelmet&quot;,&quot;tsType&quot;:&quot;'pelmet'|'rings'&quot;},&quot;tieback&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { s: null, err: null, viewer: true, tie: false, mirror: false };
+  hostRef = React.createRef();
+  mirrorRef = React.createRef();
+  BASE = 'tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/candidate/';
+
+  async componentDidMount() {
+    this.onKey = (e) => {
+      const a = this.app; if (!a) return;
+      if (e.key === 'Enter') a.enter();
+      else if (e.key === 'ArrowLeft') a.prev();
+      else if (e.key === 'ArrowRight') a.next();
+      else if (e.key === 'h' || e.key === 'H') this.setState((s) => ({ viewer: !s.viewer }));
+    };
+    addEventListener('keydown', this.onKey);
+    try {
+      const mod = await import(new URL(this.BASE + 'kfb-curtain-host-demo.js', document.baseURI).href);
+      this.app = await mod.mount(this.hostRef.current, {
+        mode: this.props.mode ?? 'loading', material: this.props.material ?? 'P', hardware: this.props.hardware ?? 'pelmet', tieback: this.props.tieback ?? false,
+        onChange: (s) => this.setState({ s }),
+      });
+      this.setState({ tie: this.props.tieback ?? false });
+      window.__curtainDemo = this.app;
+      this.poll = setInterval(() => this.state.viewer && this.forceUpdate(), 300);
+      window.__curtainViewer = (v) => this.setState({ viewer: !!v });
+      window.__curtainEvidence = (n) => { this.setState({ mirror: true }); this.app.advance(n, this.mirrorRef.current); };
+    } catch (e) { console.error(e); this.setState({ err: String(e && e.message || e) }); }
+  }
+  componentDidUpdate(prev) {
+    const a = this.app; if (!a) return;
+    if (prev.material !== this.props.material && this.props.material) a.setMaterial(this.props.material);
+    if (prev.hardware !== this.props.hardware && this.props.hardware) a.setHardware(this.props.hardware);
+    if (prev.mode !== this.props.mode && this.props.mode) a.setMode(this.props.mode);
+    if (prev.tieback !== this.props.tieback && this.props.tieback != null) { a.setTieback(this.props.tieback); this.setState({ tie: this.props.tieback }); }
+  }
+  componentWillUnmount() { clearInterval(this.poll); removeEventListener('keydown', this.onKey); this.app && this.app.dispose && this.app.dispose(); }
+
+  renderVals() {
+    const s = this.state.s || {}, a = this.app;
+    const mode = s.mode || 'loading', cs = s.curtainState || 'closed_rest';
+    const closed = cs === 'closed_rest' || cs === 'covered_wait';
+    const pill = (on) => ({ border: on ? '#e9c98f' : '#ffffff22', bg: on ? '#3a2318ee' : '#140d0bdd' });
+    const modes = [['loading', 'Loading'], ['select', 'Character Select'], ['reveal', 'In-game reveal']].map(([k, label]) => ({ label, ...pill(mode === k), pick: () => a && a.setMode(k) }));
+    const mats = [['donor', 'donor'], ['A', 'A'], ['B', 'B'], ['C', 'C'], ['P', 'P · preferred']].map(([k, label]) => ({ label, title: k, ...pill(s.material === k), pick: () => a && a.setMaterial(k) }));
+    const hw = s.hardware || null;
+    const hws = [['pelmet', 'pelmet'], ['rings', 'ring rail']].map(([k, label]) => ({ label, ...pill((this._hw || this.props.hardware || 'pelmet') === k), pick: () => { this._hw = k; a && a.setHardware(k); this.forceUpdate(); } }));
+    return {
+      hostRef: this.hostRef, mirrorRef: this.mirrorRef,
+      mirrorDisplay: this.state.mirror ? 'block' : 'none',
+      showLoadingHint: mode === 'loading' && closed && !s.loadingReady && !this.state.err && cs !== 'fallback_reveal',
+      showEnter: mode === 'loading' && closed && !!s.loadingReady && !!s.actorReady,
+      showSelectEnter: mode === 'select' && closed && !!s.loadingReady && !!s.actorReady,
+      showSelect: mode === 'select' && closed,
+      showFallback: cs === 'fallback_reveal' || !!this.state.err,
+      showViewer: this.state.viewer,
+      actorName: s.actorName || '…', actorBadge: (s.actorRig || '') + (s.actorLoading ? ' · lädt' : ''),
+      modes, mats, hws,
+      tieLabel: 'tieback ' + (this.state.tie ? 'on' : 'off'),
+      toggleTie: () => { const t = !this.state.tie; this.setState({ tie: t }); a && a.setTieback(t); },
+      enter: () => a && a.enter(), prev: () => a && a.prev(), next: () => a && a.next(),
+      cover: () => a && a.cover(), reveal: () => a && a.reveal(), impact: () => a && a.impact(),
+      stateLine: (this.state.err ? 'ERR ' + this.state.err : (a ? a.curtain.state : cs)) + ' · open ' + (a ? a.curtain.openness.toFixed(2) : '–') + ' · load ' + (s.done || 0) + '/' + (s.items || 0) + (s.actorNote ? ' · ' + s.actorName + ': ' + s.actorNote : ''),
+    };
+  }
+}
+</script>
+</body>
+</html>

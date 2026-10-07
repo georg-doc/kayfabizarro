@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>KFB Theatre Curtain · candidate r1 · standalone</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>html,body{margin:0;height:100%;background:#060404;overflow:hidden;color:#efe2cc;font:12px system-ui}#s{position:fixed;inset:0}#b{position:fixed;left:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap}#b button{font:11px ui-monospace,monospace;padding:6px 9px;border-radius:5px;border:1px solid #ffffff2a;background:#140d0bdd;color:#f3e6cf;cursor:pointer}#st{font:11px ui-monospace,monospace;padding:6px 9px}</style>
+<script type="importmap">{ "imports": {
+ "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+ "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+ "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.tsl.js",
+ "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/" }}</script>
+</head><body><div id="s"></div>
+<div id="b"><button data-m="loading">loading</button><button data-m="select">select</button><button data-m="reveal">reveal</button><button data-a="enter">enter</button><button data-a="cover">cover</button><button data-a="impact">impact</button><button data-a="prev">‹</button><button data-a="next">›</button><span id="st"></span></div>
+<script type="module">
+import { mount } from './kfb-curtain-host-demo.js';
+const st = document.getElementById('st');
+const app = await mount(document.getElementById('s'), { onChange: (s) => { st.textContent = s.curtainState + ' · ' + (s.actorName || '') + ' · load ' + s.done + '/' + s.items; } });
+document.getElementById('b').onclick = (e) => { const m = e.target.dataset.m, a = e.target.dataset.a; if (m) app.setMode(m); if (a) app[a](); };
+addEventListener('keydown', (e) => { if (e.key === 'Enter') app.enter(); if (e.key === 'ArrowLeft') app.prev(); if (e.key === 'ArrowRight') app.next(); });
+</script></body></html>
