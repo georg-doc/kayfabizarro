@@ -1,6 +1,6 @@
 # KFB Hybrid Baked Clay / Texture Architecture · PREP · 2026-10-07
 
-> **CURRENT GEORG STEERING:** Read `skills/chat/KFB_SURFACE_MATERIAL_LANGUAGE_STEERING_2026-10-07.md` first. Clay is no longer the exclusive technical target; it is one visual profile inside a broader KFB Surface / Material Language. The lab must compare Clay, Hybrid, Toon/Cel and Procedural candidates and may select any coherent, performant winner.
+> **CURRENT GEORG STEERING:** Read `skills/chat/KFB_SURFACE_MATERIAL_LANGUAGE_STEERING_2026-10-07.md` first. **Claybound remains the visual Gold Standard and primary acceptance reference.** The implementation technology may vary, but alternative Toon/Cel, Procedural, Matcap or Hybrid approaches are challengers and may replace the Claybound-equivalent path only if same-scene screenshot/clip evidence reaches an equally strong or better whole-world visual metaphor. Performance alone is not an escape hatch.
 
 Status: **ARCHITECTURE PREP · LAB REQUIRED · NO RUNTIME CHANGE**  
 Owner: **KFB Clay presentation / receiving World**  
@@ -25,7 +25,7 @@ The current Visual Terrain Recovery Lab further found:
 - current terrain-scale Clay LOD was not triggering usefully;
 - near/mid/far material paths and simplification are the right direction.
 
-Therefore a baked/hybrid material architecture is a source-consistent optimization direction, not a new style owner.
+Therefore a baked/hybrid material architecture is a source-consistent optimization direction, not a new style owner. Its purpose is to reach **Claybound-level visual quality more efficiently**, not to lower the visual bar.
 
 ## Core proposal
 
@@ -178,7 +178,7 @@ Measure:
 - load time;
 - city-scale scalability.
 
-The winning path may be Clay-like, Hybrid, Toon/Cel, Procedural or Matcap/Painted-Toy. It wins only if the **whole scene** reads as one deliberate KFB world and materially improves or preserves actual runtime cost.
+Claybound-equivalent quality is the default target and benchmark. A Hybrid, Toon/Cel, Procedural or Matcap/Painted-Toy challenger wins only if the **whole scene** reads at least as convincingly as the Claybound reference in the binding Georg screenshot/clip gate while materially improving or preserving actual runtime cost.
 
 ## Important boundaries
 
@@ -203,4 +203,4 @@ rather than:
 
 ## One next gate
 
-**BOUNDED KFB SURFACE-LANGUAGE LAB · CLAY vs HYBRID vs TOON/CEL vs PROCEDURAL**
+**BOUNDED KFB SURFACE-LANGUAGE LAB · CLAYBOUND GOLD STANDARD vs CHALLENGERS · GEORG SCREENSHOT GATE**
