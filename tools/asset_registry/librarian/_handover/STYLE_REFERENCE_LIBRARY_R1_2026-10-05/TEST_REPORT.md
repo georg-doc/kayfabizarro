@@ -342,3 +342,26 @@ Prepared:
 - `reference-packs/curated/kfb-emanata-reaction-symbols-01/`
 
 No Site/runtime/deployment change.
+
+
+## Seed 05 · Dialogue / Interaction + consumer pack · 2026-10-07
+
+Status: **CURATION PASS · 10/10 PASS**
+
+1. PASS · Seed 05 contains exactly 5 official Etherington sources.
+2. PASS · Etherington corpus total is now 58.
+3. PASS · all 58 Etherington IDs are unique.
+4. PASS · all 58 Etherington URLs are unique.
+5. PASS · supplementary professional/academic pool remains 5.
+6. PASS · combined curated built-in target is now 63.
+7. PASS · Dialogue / Interaction pack contains 6 references.
+8. PASS · Dialogue / Interaction pack is not a Claude Design job.
+9. PASS · all Dialogue / Interaction references remain uninspected.
+10. PASS · Dialogue / Interaction scope remains separate from visual VFX.
+
+Prepared:
+- `ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION.json`
+- `reference-packs/curated/kfb-dialogue-interaction-01/`
+- `BRIEF_WORK_IMPORT_SEED05_DIALOGUE_INTERACTION_2026-10-07.md`
+
+Current published Site remains Version 4 with 58 built-ins until the optional incremental Work import runs.
