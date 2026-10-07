@@ -95,7 +95,7 @@ These are implementation acceptance gates, not prep claims.
 
 1. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/START_HERE.md`
 2. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/TEST_REPORT.md`
-3. this `RETURN.md`
+3. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/WORK_WSA_IMPLEMENTATION_BRIEF.md`\n4. this `RETURN.md`
 
 ## Preserved / unchanged
 
