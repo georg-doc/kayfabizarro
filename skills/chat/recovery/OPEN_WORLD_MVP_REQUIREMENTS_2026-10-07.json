@@ -1,0 +1,965 @@
+{
+  "schema": "kfb.open-world.mvp-requirements/1",
+  "date": "2026-10-07",
+  "humanOwner": "Georg",
+  "product": "KFB Open World",
+  "outcome": "One coherent, buildable, persistent, directly authorable KFB Open World used as reusable comic/story context.",
+  "recoveryBranch": "recovery/open-world-master-acceptance-audit-2026-10-07",
+  "contractState": "BINDING INPUT LEDGER · no row may disappear; ChefWSA must independently verify completeness and then freeze stable Requirement IDs before donor selection",
+  "productStatusRule": "MVP PASS only when every required row is GREEN at its required proof level; otherwise NO MVP.",
+  "currentProductStatus": "NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN",
+  "noProgressRollup": true,
+  "authority": {
+    "product": "Explicit Georg decisions + binding GitHub product contracts",
+    "candidateTruth": "Dropbox /CLAUDE/KFB Open World",
+    "rule": "Candidate docs may prove candidate state but may not remove or downgrade product requirements."
+  },
+  "acceptanceStates": [
+    "GREEN",
+    "PARTIAL",
+    "MISSING",
+    "CONFLICT",
+    "UNPROVEN"
+  ],
+  "donorRoles": [
+    "MECHANISM",
+    "PRESENTATION",
+    "CONTENT_DATA",
+    "OWNER"
+  ],
+  "requirements": [
+    {
+      "id": "MVP-001",
+      "category": "World Surface",
+      "title": "Continuous Terrain / Surface Truth",
+      "required": true,
+      "acceptance": "CONFLICT",
+      "current": "Continuous macro terrain is binding; Coworker calls itself a Hex world. Actual support/mesh ownership still needs code audit.",
+      "donor": "Earlier continuous-terrain WorldBuilder + surface-agnostic Coworker mechanisms",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Continuous Terrain / Surface Truth owner",
+      "proof": "Prove continuous visible macro ground/support height and Hex semantic/spatial role, or define smallest correction seam.",
+      "effort": "REBUILD-RISK",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-002",
+      "category": "World Core",
+      "title": "Deterministic seeded world + streaming",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker has deterministic layered world, chunks, budgets and failure isolation; final product proof is absent.",
+      "donor": "Coworker Open World",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "World runtime / streaming",
+      "proof": "Repeatable seed + multi-area traversal + chunk lifecycle/performance proof in integrated product.",
+      "effort": "SMALL",
+      "deps": [
+        "MVP-001"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-003",
+      "category": "Player",
+      "title": "Player movement + real collision",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker Rapier KCC/capsule and natural-rate gait are present; final integrated proof pending.",
+      "donor": "Coworker character module",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "Ground movement owner",
+      "proof": "Real-input traversal with collision and no synthetic movement bypass.",
+      "effort": "SMALL",
+      "deps": [
+        "MVP-001"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-004",
+      "category": "Player",
+      "title": "Binding Ground Controls canon",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker reports W/S, A/D, Q/E, Shift, Space, RMB drag, wheel zoom; final fresh verification pending.",
+      "donor": "Coworker controls implementation",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "Ground control owner",
+      "proof": "Normal-input verification with one movement writer and one active camera owner.",
+      "effort": "SMALL",
+      "deps": [
+        "MVP-003",
+        "MVP-005"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-005",
+      "category": "Player",
+      "title": "Camera",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker camera remains below gate; cliff/building/occlusion rule-stack defects remain structural.",
+      "donor": "Coworker regression evidence + camera owner",
+      "donorRole": "OWNER",
+      "decision": "ADAPT",
+      "owner": "Single camera owner",
+      "proof": "Fresh critic >=8.5; no head collapse, teleport, stuck orbit or destructive occlusion.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-004",
+        "MVP-021"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-006",
+      "category": "World Content",
+      "title": "Road network",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker roads exist but height ownership is conflicted.",
+      "donor": "Coworker roads",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "Overland roads owner",
+      "proof": "Road continuity/support/collision on continuous terrain; no Track ownership leakage.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-001",
+        "MVP-018"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-007",
+      "category": "World Content",
+      "title": "Rivers + bridges",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker rivers/bridges exist; river corridor crosses module internals.",
+      "donor": "Coworker roads/rivers",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "River/bridge owner",
+      "proof": "Continuous water/bridge traversal and collision without ownership conflict.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-001",
+        "MVP-018"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-008",
+      "category": "World Content",
+      "title": "Villages, farms, nature + semantic props",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker has villages/farms/rural sites/nature/props; merged objects lack stable identity.",
+      "donor": "Coworker villages/nature/props",
+      "donorRole": "CONTENT_DATA",
+      "decision": "KEEP",
+      "owner": "World content modules",
+      "proof": "Built/authored placement, road alignment, semantic tags and addressable identity where required.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-001",
+        "MVP-017"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-009",
+      "category": "Visual Canon",
+      "title": "KFB Clay / K2 visual surface canon",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker clay_floor_001 is explicitly a stand-in; K2/Golden parity is not integrated.",
+      "donor": "K2/v10 + K1/H0 Golden",
+      "donorRole": "PRESENTATION",
+      "decision": "UNPROVEN",
+      "owner": "Single K2 material/relief/deformation owner",
+      "proof": "Source-isolated Golden parity, relief/deformation/LOD/contact/shadow rules; no generic KayKit material substitute.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-017",
+        "MVP-018"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-010",
+      "category": "Player",
+      "title": "Current KFB Motion / Animation SSOT reconciliation",
+      "required": true,
+      "acceptance": "UNPROVEN",
+      "current": "Coworker motion works but must reconcile to current Motion SSOT.",
+      "donor": "Current Motion SSOT + Coworker locomotion",
+      "donorRole": "OWNER",
+      "decision": "ADAPT",
+      "owner": "Canonical Motion owner",
+      "proof": "Source-proven animation set, layer arbitration and no second motion writer.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-003"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-011",
+      "category": "Authoring",
+      "title": "PLAY / BUILD / GOD mode",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker has no editor. WB2/World Studio donors require audit.",
+      "donor": "WB2 / World Studio God Mode",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Shared authoring/editor owner",
+      "proof": "Enter authoring in same world and return to PLAY without replacing runtime ownership.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-015",
+        "MVP-017"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-012",
+      "category": "Authoring",
+      "title": "Object place/edit: move, rotate, scale, ground/surface snap",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Absent in Coworker; WB2 prior evidence exists.",
+      "donor": "WB2 edit-layer/shared editor",
+      "donorRole": "MECHANISM",
+      "decision": "UNPROVEN",
+      "owner": "Authoring editor owner",
+      "proof": "Place real source-isolated asset; M/R/S + snap; identity survives fresh reload.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-011",
+        "MVP-014",
+        "MVP-017"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-013",
+      "category": "Authoring",
+      "title": "Terrain Raise / Lower sculpt",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Absent in Coworker; WB2 terrain-sculpt donor exists.",
+      "donor": "WB2 terrain-sculpt / Studio donor",
+      "donorRole": "MECHANISM",
+      "decision": "UNPROVEN",
+      "owner": "Terrain authoring owner",
+      "proof": "Real sculpt changes authoritative terrain and survives save/fresh reload.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-001",
+        "MVP-011",
+        "MVP-015"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-014",
+      "category": "Authoring",
+      "title": "Asset Librarian + source isolation",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker manifest is not the required Librarian/source-review authoring flow.",
+      "donor": "Asset Librarian + WB2 source evidence",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Asset Librarian / provenance owner",
+      "proof": "Search/browse, isolate actual source, place same source-proven asset with provenance.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-011"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-015",
+      "category": "Persistence",
+      "title": "Base Recipe -> Authoring Override -> Dynamic State",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker has no store; Freeze proposes boundary only.",
+      "donor": "WB2/Lean Memory persistence + Coworker Base Recipe",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Single persistence owner",
+      "proof": "Authored overrides survive procedural regeneration; dynamic state separate; host adapter owns storage.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-017",
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-016",
+      "category": "Persistence",
+      "title": "Save / export / import / fresh reload exact state",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Absent in Coworker; historical WB2 fresh-import evidence exists.",
+      "donor": "WB2 Studio save/export/import",
+      "donorRole": "MECHANISM",
+      "decision": "UNPROVEN",
+      "owner": "Persistence owner",
+      "proof": "Save object+transform+sculpt; fresh session/import restores exact state; return PLAY.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-012",
+        "MVP-013",
+        "MVP-015"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-017",
+      "category": "Architecture",
+      "title": "Stable WorldObject identity",
+      "required": true,
+      "acceptance": "CONFLICT",
+      "current": "Coworker merges buildings/props/trees per chunk; stable individual identity is absent.",
+      "donor": "Freeze requirement + WB2 provenance patterns",
+      "donorRole": "OWNER",
+      "decision": "MISSING",
+      "owner": "Canonical WorldObjectId model",
+      "proof": "Stable instance IDs survive render batching and address procedural/authored state refs.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-002"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-018",
+      "category": "Architecture",
+      "title": "Single Height / Ramp / Slope owner",
+      "required": true,
+      "acceptance": "CONFLICT",
+      "current": "Coworker has 3 level writers and duplicate ramp/embankment/road-height logic.",
+      "donor": "Coworker mechanisms after boundary correction",
+      "donorRole": "OWNER",
+      "decision": "ADAPT",
+      "owner": "Terrain / Surface Truth owner",
+      "proof": "One height owner + declared contributions; roads/villages consume public API only.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-001"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-019",
+      "category": "Architecture",
+      "title": "Public module APIs + typed service ownership",
+      "required": true,
+      "acceptance": "CONFLICT",
+      "current": "Services/events exist but direct internal imports and untyped registry remain.",
+      "donor": "Coworker services/events plumbing",
+      "donorRole": "MECHANISM",
+      "decision": "ADAPT",
+      "owner": "Core integration API",
+      "proof": "No cross-module internal imports; explicit versioned APIs/services.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-002"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-020",
+      "category": "Architecture",
+      "title": "Semantic world event layer",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker event bus exists but is mostly technical.",
+      "donor": "Coworker event bus + prepared event contracts",
+      "donorRole": "MECHANISM",
+      "decision": "ADAPT",
+      "owner": "Semantic event contract",
+      "proof": "Versioned domain facts independent of animation/audio names.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-021",
+      "category": "Architecture",
+      "title": "Ground / Drive / Dialogue / Activity control-camera arbitration",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Ground character/camera are coupled; no control-owner token for other modes.",
+      "donor": "Freeze architecture + existing control seams",
+      "donorRole": "OWNER",
+      "decision": "MISSING",
+      "owner": "Single arbitration owner",
+      "proof": "Exactly one active input/camera owner and deterministic handoff.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-004",
+        "MVP-005",
+        "MVP-025"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-022",
+      "category": "Architecture",
+      "title": "Simulation LOD + central update budget",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Chunk budgets exist; actor/presentation LOD scheduler does not.",
+      "donor": "Coworker streaming budget",
+      "donorRole": "MECHANISM",
+      "decision": "ADAPT",
+      "owner": "Simulation scheduler",
+      "proof": "Near/mid/far/offscreen actor/presentation LOD integrated with chunk budgets.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-002",
+        "MVP-026"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-023",
+      "category": "KFB Systems",
+      "title": "Sky / Skydome / Environment: one owner",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker Environment exists; must reconcile with existing KFB Skydome owner.",
+      "donor": "Coworker Environment + KFB Skydome",
+      "donorRole": "OWNER",
+      "decision": "ADAPT",
+      "owner": "One Environment owner",
+      "proof": "One stack; no duplicate sky runtime; world supplies semantic environment facts.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-024",
+      "category": "KFB Systems",
+      "title": "Joyride Track Core + J14/T4/K2 visible design",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker roads are not Track Core and have no required Joyride presentation.",
+      "donor": "Existing Track Core + Joyride donors",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Track Core mechanics + Joyride presentation",
+      "proof": "Source-isolated representative authored track; Track Core owns mechanics, Joyride visible language.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-001",
+        "MVP-009",
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-025",
+      "category": "KFB Systems",
+      "title": "Vehicle / Drive seam on Joyride route",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Vehicles are absent in Coworker.",
+      "donor": "Existing Drive/Vehicle donor",
+      "donorRole": "MECHANISM",
+      "decision": "UNPROVEN",
+      "owner": "Vehicle/Drive owner",
+      "proof": "Enter/drive/exit with correct control-camera handoff.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-021",
+        "MVP-024"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-026",
+      "category": "KFB Systems",
+      "title": "One real Resident + current ChatterBox seam",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Residents/dialogue absent; POI facts exist; Resident/ChatterBox donors require audit.",
+      "donor": "Resident Atlas + ChatterBox",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Resident state + channel owners",
+      "proof": "One source-proven resident with semantic encounter/dialogue/performance and no second world/motion owner.",
+      "effort": "LARGE",
+      "deps": [
+        "MVP-017",
+        "MVP-020",
+        "MVP-022"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-027",
+      "category": "KFB Systems",
+      "title": "Canonical Card + Almanac provenance seam",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Absent in Coworker; WB2 donors exist.",
+      "donor": "WB2 Card + Almanac donors",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Card / Almanac owner",
+      "proof": "Representative canonical Card with provenance; world references by ID.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-028",
+      "category": "KFB Systems",
+      "title": "Clay Billboard / media + HyperNormalisation loop",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Billboard/media absent in Coworker; WB2 donor exists.",
+      "donor": "WB2 Billboard/media",
+      "donorRole": "PRESENTATION",
+      "decision": "UNPROVEN",
+      "owner": "Billboard/media owner",
+      "proof": "Source-proven Clay Billboard + one HyperNormalisation loop without world ownership.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-009",
+        "MVP-014",
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-029",
+      "category": "KFB Systems",
+      "title": "Audio / Jukebox continuity with one Audio owner",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Audio absent in Coworker; PR #365 is additive donor input with some runtime-unverified families.",
+      "donor": "Current Audio/Jukebox + PR #365",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Single AudioContext/mixer/music-clock owner",
+      "proof": "One AudioContext; semantic-event consumption; representative listening/continuity proof.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-020",
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-030",
+      "category": "KFB Systems",
+      "title": "Signature / landmark + Theatre Curtain transition compatibility",
+      "required": true,
+      "acceptance": "UNPROVEN",
+      "current": "Coworker landmarks are demo-only; accepted Curtain r3 is not integrated.",
+      "donor": "Signature modules + Theatre Curtain r3",
+      "donorRole": "PRESENTATION",
+      "decision": "UNPROVEN",
+      "owner": "Placeable landmark/transition adapters",
+      "proof": "Source-isolated placeable signature + Curtain transition hook without world ownership.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-012",
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-031",
+      "category": "Source Fidelity",
+      "title": "Source-proven donor isolation for visible design",
+      "required": true,
+      "acceptance": "UNPROVEN",
+      "current": "Must be audited per visual donor; path/URL/load is insufficient.",
+      "donor": "Asset Librarian + exact source pins",
+      "donorRole": "OWNER",
+      "decision": "UNPROVEN",
+      "owner": "Source provenance gate",
+      "proof": "Actual source object/design shown in isolation before presentation KEEP/ADAPT.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-014"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-032",
+      "category": "Product Quality",
+      "title": "World reads built/authored, not random scatter",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker improves villages/road-facing/farms/clusters but full product acceptance is absent.",
+      "donor": "Coworker world generation/content placement",
+      "donorRole": "CONTENT_DATA",
+      "decision": "KEEP",
+      "owner": "World recipe/content placement",
+      "proof": "Independent authored-world/place quality >=8.5 across representative generated areas.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-006",
+        "MVP-008",
+        "MVP-009"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-033",
+      "category": "Product Quality",
+      "title": "Streaming/performance evidence within budgets",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker reports 61 fps/draw-call bounds; forest triangles and cold road hitches remain concerns.",
+      "donor": "Coworker streaming/perf",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "Runtime performance owners",
+      "proof": "Integrated traversal/authoring evidence with documented budgets and no unexplained long hitches.",
+      "effort": "MEDIUM",
+      "deps": [
+        "MVP-002",
+        "MVP-022"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-034",
+      "category": "Product Quality",
+      "title": "Failure isolation + zero unexplained runtime errors",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker has failure isolation and zero console errors, but full KFB stack is absent.",
+      "donor": "Coworker engine isolation",
+      "donorRole": "MECHANISM",
+      "decision": "KEEP",
+      "owner": "Core runtime",
+      "proof": "Whole-product critic: zero unexplained console/page errors; optional consumer failure stays local.",
+      "effort": "SMALL",
+      "deps": [
+        "MVP-019"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-035",
+      "category": "Acceptance",
+      "title": "Fresh-context critics: every required dimension >=8.5",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "Coworker final whole-game still fails camera; integrated MVP not critiqued.",
+      "donor": "Independent critic process",
+      "donorRole": "OWNER",
+      "decision": "MISSING",
+      "owner": "Independent QA",
+      "proof": "Fresh critic with own screenshots/video, normal input and all required scores >=8.5.",
+      "effort": "N/A",
+      "deps": [
+        "MVP-001",
+        "MVP-011",
+        "MVP-024",
+        "MVP-026"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-036",
+      "category": "Acceptance",
+      "title": "Whole-product 5-minute build/explore/save/reload/play gauntlet",
+      "required": true,
+      "acceptance": "MISSING",
+      "current": "No candidate currently satisfies the integrated route.",
+      "donor": "Whole-product critic + future TestBot adapter",
+      "donorRole": "OWNER",
+      "decision": "MISSING",
+      "owner": "Independent QA",
+      "proof": "Traverse world -> author real asset -> edit -> sculpt -> save -> fresh reload -> verify -> return PLAY.",
+      "effort": "N/A",
+      "deps": [
+        "MVP-011",
+        "MVP-012",
+        "MVP-013",
+        "MVP-016",
+        "MVP-025",
+        "MVP-026",
+        "MVP-027",
+        "MVP-028",
+        "MVP-029"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "MVP-037",
+      "category": "Architecture",
+      "title": "LLM-free deterministic default; optional AI behind adapter",
+      "required": true,
+      "acceptance": "PARTIAL",
+      "current": "Coworker is deterministic/LLM-free; future Resident/ChatterBox integration must preserve optional adapter boundary.",
+      "donor": "Coworker deterministic core + ChatterBox contracts",
+      "donorRole": "OWNER",
+      "decision": "KEEP",
+      "owner": "Runtime + optional AI adapter",
+      "proof": "Core world/resident simulation works without mandatory LLM; optional AI failure cannot block boot.",
+      "effort": "SMALL",
+      "deps": [
+        "MVP-020",
+        "MVP-026"
+      ],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-001",
+      "category": "Explicit Non-blockers",
+      "title": "Full Combat Arena / Platformer",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "Explicitly not required for MVP.",
+      "donor": "Existing Combat owner",
+      "donorRole": "OWNER",
+      "decision": "DEFER",
+      "owner": "Combat owner",
+      "proof": "Not counted for MVP.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-002",
+      "category": "Explicit Non-blockers",
+      "title": "Full four-island Golden Journey",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "Historical failed candidate/evidence only; not required for MVP.",
+      "donor": "Historical WB2 lineage",
+      "donorRole": "CONTENT_DATA",
+      "decision": "DEFER",
+      "owner": "Later world recipes",
+      "proof": "Not counted for MVP.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-003",
+      "category": "Explicit Non-blockers",
+      "title": "Every Resident / every Card / every Billboard",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "MVP requires representative seams only.",
+      "donor": "Current system owners",
+      "donorRole": "CONTENT_DATA",
+      "decision": "DEFER",
+      "owner": "System owners",
+      "proof": "Not counted beyond representative required seams.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-004",
+      "category": "Explicit Non-blockers",
+      "title": "Full quest / economy system",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "Explicitly not required for MVP.",
+      "donor": "Future owner",
+      "donorRole": "OWNER",
+      "decision": "DEFER",
+      "owner": "Future quest/economy owner",
+      "proof": "Not counted for MVP.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-005",
+      "category": "Explicit Non-blockers",
+      "title": "Multiplayer / network backend",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "Explicitly not required for MVP.",
+      "donor": "Future owner",
+      "donorRole": "OWNER",
+      "decision": "DEFER",
+      "owner": "Future network owner",
+      "proof": "Not counted for MVP.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    },
+    {
+      "id": "NB-006",
+      "category": "Explicit Non-blockers",
+      "title": "Additional minigames / activities",
+      "required": false,
+      "acceptance": "NON_BLOCKER",
+      "current": "Deferred unless later promoted by product decision.",
+      "donor": "Activity owners",
+      "donorRole": "OWNER",
+      "decision": "DEFER",
+      "owner": "Future activity owners",
+      "proof": "Not counted for MVP.",
+      "effort": "N/A",
+      "deps": [],
+      "sources": [
+        "Issue #360",
+        "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+      ]
+    }
+  ],
+  "livingDocRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/",
+  "hubSurface": "KFB Production Hub live board → Open World MVP Living Doc",
+  "dataSourceMode": "Recovery-branch JSON is canonical audit ledger; published HTML is a read-only projection with embedded fallback."
+}
