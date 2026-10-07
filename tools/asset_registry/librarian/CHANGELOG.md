@@ -439,3 +439,18 @@ No Site/runtime/deployment change in this curation checkpoint.
 - Consolidated Work/WSA Site import to Seeds 05 + 06: last proven Site 58 built-ins → expected 69 when applied from Version 4.
 - Seed-05-only import brief marked superseded for new runs.
 - No Site deployment, Open World/ChatterBox runtime write, Hub change, merge or Live promotion.
+
+
+## 2026-10-07 · Historian / Chronicler + Living-Toy expansion
+
+- Georg selected **Historian / Chronicler** as the preferred narrator direction.
+- Added `KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`.
+- Added Living-Toy event grammar in Markdown + JSON with 13 scenario families and no claimed current runtime event IDs.
+- Added `KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json` with 30 candidate activities, including graveyard witness behavior.
+- Added `STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json` with 11 idempotent Site upserts and KFB research-derived Notes/Principles.
+- Updated the combined Work/WSA import brief to consume the Site delta payload.
+- Updated WSA consolidation and historical donor audit with the Historian/Chronicler decision and Living-Toy prep.
+- Updated Site implementation packet: repo corpus 69, pending Site delta 11.
+- Validation: **17/17 PASS**.
+- No Site deployment in this Web Chat; Sites-capable Work/WSA required.
+- No Open World/ChatterBox runtime write, Cloudflare substitute, merge or Live promotion.
