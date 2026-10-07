@@ -1202,3 +1202,71 @@ No merge / Live promotion.
 ### Exactly one next gate
 
 **Optional Work/WSA source sync of canonical Seeds 05 + 06 into the existing Asset Librarian R2 Site. Runtime Historian/ChatterBox consumption stays HOLD until exact Coworker intake + Architecture Freeze.**
+
+
+---
+
+## Dialogue / Narration authoring + Historian donor research · 2026-10-07
+
+Status: **RESEARCH PREP COMPLETE · WSA PLAN CONSOLIDATED · SITE SYNC OPTIONAL**
+
+Current verified research outputs:
+- `ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION.json` · 5 official Etherington sources;
+- `ETHERINGTON_OFFICIAL_SEED_06_NARRATION_REACTION.json` · 6 additional deduplicated official sources;
+- `KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md`;
+- `KFB_CHATTERBOX_AUTHORING_RULES_01.json`;
+- `KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`;
+- curated packs:
+  - `reference-packs/curated/kfb-dialogue-interaction-01/`;
+  - `reference-packs/curated/kfb-narration-reaction-01/`.
+
+Research donors inspected:
+- Etherington Dialogue/Interaction and Narration/Reaction tutorial pages/indexes;
+- Narrative Intelligence Engine Writer's Room / South Park logic / dialogue grammar / character-development / style-compression sources in Dropbox;
+- historical `KFB_ChatGPT_VoiceEngine_NIE+FrizzleBob.md`;
+- historical Overworld `narrator-2d.js`, `zone-story.js`, `mob-ai.js`, Masterplan World-as-Toy / narrator-as-character concepts;
+- Georg's current FrizzleBob KayfabeTips as compact authoring heuristics.
+
+Key recovered Overworld findings:
+- deterministic Afterglow narrator already existed historically;
+- `zone-story.js` already supported a narrator speaker role with runtime/content separation and NIE as semantic upstream;
+- Masterplan already contains an OPEN narrator-as-character concept: unanchored narrator box, graveyard/fog opening, voice → device → companion, dry/deadpan machine delivery, Meta-Closure rather than control explanation;
+- "Die Welt als Spielzeug" is an explicit North Star: world speaks, breathes and reacts; immersion/POIs over combat depth;
+- historical Mob Eigenleben and critter rules support purposeful activity and social consequence outside quest/combat progress.
+
+Canonical authoring synthesis:
+- Therefore/But;
+- Yes-And during generation;
+- people/wants before props;
+- straight-face Kayfabe;
+- concrete image before abstraction;
+- SAID / MEANT / WANTED;
+- adjacency pairs;
+- interruption as characterization;
+- silence as valid output;
+- worldview/sociolect over catchphrases;
+- context budget: a bubble gets only as much world as its beat can pay for.
+
+Current repo curated corpus after Seeds 05 + 06:
+**69 records total = 64 Etherington official + 5 supplementary professional/academic.**
+
+Last proven published Asset Librarian R2 remains:
+**Version 4 · 58 built-ins.**
+
+For any new Site sync, use:
+`BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`
+
+The earlier Seed-05-only import brief is superseded for new runs.
+
+Runtime integration remains HOLD:
+**exact Coworker/Open-World intake → Architecture Freeze → map current event/state seams → only then consume Historian/ChatterBox/Resident authoring contracts.**
+
+No Open World runtime write.
+No ChatterBox runtime write.
+No second narrator/dialogue owner.
+No Site deployment in this research checkpoint.
+No Hub change.
+No merge / Live promotion.
+
+Exactly one next gate:
+**OPTIONAL Work/WSA Asset Librarian 58→69 source sync; otherwise continue source/authoring curation while runtime consumption waits for Architecture Freeze.**
