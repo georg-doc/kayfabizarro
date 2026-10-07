@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.12",
+  "revision": "2026-10-07.13",
   "updatedAt": "2026-10-07T15:00:32.856Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Island MVP Frozen Matrix is persisted and now governs the next One-Shot. The previous 37 REQUIRED rows are preserved; explicit additions/refinements include Flight, P0 locomotion + Cartoon Jump, Claybound/grounding, real Quote Pool, Early Visual/Physical Golden, Negative-Golden and No-Placeholder gates. Product remains NO MVP.",
+  "recoverySummary": "Island MVP Frozen Matrix is now operationalized v2: all 44 REQUIRED rows have owner, readiness, smallest missing delta, acceptance proof and forbidden shortcut; 12 STRONGLY INCLUDE and 7 OPTIONAL PROOF rows also have explicit integration/acceptance/quarantine guards. Product remains NO MVP.",
   "overview": "Frozen bounded-Island product contract ready. 44 REQUIRED rows + STRONGLY INCLUDE / OPTIONAL / LATER are persisted. Next step is one final execution brief and exactly one Work/WSA Integrator; no new planning micro-slices.",
   "architecture": [
     {
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Prepare the final Work/WSA One-Shot execution brief directly from the Frozen Matrix and current owner Returns, then run one continuous product integration. No required row may disappear.",
+  "nextGate": "Generate the final ChatGPT Work/WSA Island MVP ONE_SHOT execution brief directly from operational matrix v2 and current owner Returns. Do not reopen broad architecture planning or shorten the matrix.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,14 +2247,17 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "FROZEN_MATRIX_READY",
+    "status": "FROZEN_MATRIX_OPERATIONAL_V2",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
-    "currentTask": "Final execution brief → exactly one Work/WSA One-Shot",
+    "currentTask": "Final Work/WSA ONE_SHOT execution brief from operational matrix v2",
     "noRuntimeWrite": true,
     "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
-    "requiredRows": 44
+    "requiredRows": 44,
+    "operationalVersion": 2,
+    "stronglyIncludeRows": 12,
+    "optionalRows": 7
   }
 }
