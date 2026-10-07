@@ -373,7 +373,7 @@ Current operational state:
 - **44 REQUIRED**
 - **13 STRONGLY INCLUDE**
 - **7 OPTIONAL**
-- operationalVersion **4**
+- operationalVersion **5**
 
 F-S13:
 **State-dependent Threshold Door / Paper-Facade portal proof**
