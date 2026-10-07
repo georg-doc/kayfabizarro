@@ -47,7 +47,7 @@ Allowed writes: recovery/audit docs on `recovery/open-world-master-acceptance-au
 
 Forbidden: Open World runtime, PR #348 runtime, Coworker source, camera/Hex/terrain repair, God Mode/Persistence implementation, KFB module integration, **Open World product Site/Stage publication**, merge or Live promotion.
 
-Explicit documentation-surface exception requested by Georg: the read-only MVP Living Doc may be published/updated at `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/` and linked from the KFB Production Hub. This route is an audit projection only; it is never product runtime, MVP acceptance, or a substitute for the final playable Site.
+Explicit control-surface exception requested by Georg: the read-only MVP Living Doc must be integrated into the **existing KFB Production Hub GPT Site** at `https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp`. No Cloudflare route is part of this workflow. This Hub view is an audit projection only; it is never product runtime, MVP acceptance, or a substitute for the final playable Site.
 
 ## Execution order
 
@@ -60,8 +60,23 @@ Keep synchronized:
 
 The HTML is a projection, not a second contract.
 
-Hub/public projection route: `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/`.
-The published shell loads the recovery-branch JSON ledger live when available and uses published/embedded fallback only if that fetch fails. Routine audit-state changes therefore update the JSON ledger; do not rebuild the HTML for every row change.
+Hub/Site projection route: `https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp`.
+
+Stable live feed: `main/kfb-hub/live/open-world-mvp.json`.
+
+The existing Production Hub Site is the only human surface. In this same Work/WSA run, perform exactly one bounded in-place Site shell update on the existing project `appgprj_6ab7358322a8819183d2fa036b7b12f9` to add the internal `?view=open-world-mvp` view. Load the **exact current published Site source first**; do not reconstruct it from stale `kfb-hub/index.html` or an older donor. Preserve all accepted Hub v10 controls, Resident overlay, local state, live-board loader and live-CSS loader.
+
+The new view must fetch `https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json` using `cache: no-store` and render the same matrix/architecture/detail behavior as the prepared Living Doc HTML. Bundle a local fallback copy so the view remains usable if GitHub fetch fails.
+
+After the one Site publish, prove the **no-more-Work path**:
+1. record the exact Site version/deployment;
+2. make one harmless JSON-only revision/updatedAt change in `main/kfb-hub/live/open-world-mvp.json`;
+3. refresh the exact Production Hub `?view=open-world-mvp` URL;
+4. visibly confirm the new revision/data appears;
+5. confirm the Site version/deployment did not change;
+6. restore/advance the JSON to the truthful current audit state using GitHub only.
+
+PASS only if future routine matrix/status changes are `Web Chat → GitHub main JSON → Hub refresh` with **no Work/Sites republish**.
 
 ### Phase 1 · Donor census
 For every required row record:
