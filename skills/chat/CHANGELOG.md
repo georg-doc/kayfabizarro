@@ -1,3 +1,15 @@
+## 2026-10-07 · Open World Recovery Audit hardening + MVP Living Doc
+
+- Open World #360 remains **RECOVERY AUDIT ONLY**; runtime implementation stays paused.
+- Created dedicated recovery owner branch `recovery/open-world-master-acceptance-audit-2026-10-07` and Draft PR #373; PR #348/WB2 runtime and Dropbox Coworker source are read-only donor/evidence lineages for this audit.
+- Hardened the audit contract with explicit authority split, dedicated write boundary, Phase-0 Contract Freeze before donor selection, Acceptance-state + Donor-role separation, visual/design source-isolation proof, and fresh independent Critic / Production Guard roles.
+- Added token-sparing Work/WSA Recovery Lead brief: `skills/chat/WORK_WSA_OPEN_WORLD_RECOVERY_LEAD_BRIEF_2026-10-07.md`.
+- Added machine-readable seed ledger `skills/chat/recovery/OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json`: 37 required MVP rows + 6 explicit non-blockers. ChefWSA must verify/freeze completeness before donor selection.
+- Added interactive internal Living Doc `skills/chat/recovery/OPEN_WORLD_MVP_LIVING_DOC_2026-10-07.html` with binary product status, search/filter, architecture + authoring-flow visualization, system lanes, row detail, local notes and JSON import/export.
+- Product status remains binary: complete required matrix GREEN = MVP PASS; otherwise **NO MVP**. No percentage-complete / near-MVP / Receiving-Core roll-up.
+- HTML + JSON were also persisted to KFB Production Control workflow `KFB_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07`.
+- No Open World runtime, Site/Stage, Hub/Cloudflare, merge or Live promotion.
+
 ## 2026-10-04 · Surface consolidation · one Hub / one Control / one ToolBox
 
 - Georg reported that Production Hub, Production Control and ToolBox routing were still not coherently current as a human production system despite technically successful individual deployments.
