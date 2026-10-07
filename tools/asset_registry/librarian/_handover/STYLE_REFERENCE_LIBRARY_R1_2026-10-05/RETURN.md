@@ -931,3 +931,63 @@ Protected boundary remains:
 
 Exactly one next gate:
 **RESUME_STYLE_REFERENCE_SOURCE_CURATION_AND_CONSUMER_PACKS**.
+
+
+## Curated consumer packs · Sound Words / Bubble Grammar / Emanata · 2026-10-07
+
+Status: **CURATION CONTINUES · THREE REUSABLE PACKS READY**
+
+Current executor:
+**ChatGPT Web Chat**
+
+Added source mapping:
+`EMANATA_SOURCE_MAPPING_01_2026-10-07.json`
+
+The mapping ties authoritative visual-language morphology to the current KFB presentation-only semantic slots without changing Resident state ownership.
+
+Prepared curated packets:
+
+### KFB Sound Words / Graphic SFX 01
+`tools/asset_registry/librarian/reference-packs/curated/kfb-sound-words-01/`
+
+6 references spanning:
+- Etherington Sound Effects;
+- Comic Sense;
+- Motion Lines;
+- Small / Medium / Large;
+- Impact Debris;
+- Blambot lettering grammar.
+
+### KFB Bubble / Caption Grammar 01
+`tools/asset_registry/librarian/reference-packs/curated/kfb-bubble-grammar-01/`
+
+5 references spanning:
+- Etherington Speech Bubbles;
+- Caption Boxes;
+- Script → Page;
+- Blambot professional balloon grammar;
+- Comicraft Word and Thought Balloons.
+
+### KFB Emanata / Reaction Symbols 01
+`tools/asset_registry/librarian/reference-packs/curated/kfb-emanata-reaction-symbols-01/`
+
+6 references spanning:
+- Visual Language Lab Manga Morphology;
+- Comics Forum Emanata terminology;
+- Etherington Angry / Happy expressions;
+- Eye Direction;
+- Eyebrows.
+
+All three packs:
+- remain `sourceInspectedInIsolation=false`;
+- require actual source isolation before visual claims;
+- do not automatically start Claude Design;
+- can later be routed to the correct consumer only when a concrete product problem exists.
+
+Validation:
+**10/10 PASS**.
+
+No Site/runtime/deployment change.
+
+Exactly one next gate:
+**CONTINUE_REFERENCE_CURATION_OR_SELECT_ONE_CURATED_PACK_FOR_A_CONCRETE_CONSUMER**.
