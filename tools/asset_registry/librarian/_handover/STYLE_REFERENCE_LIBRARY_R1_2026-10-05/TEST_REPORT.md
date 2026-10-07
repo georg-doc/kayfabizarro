@@ -318,3 +318,27 @@ Prepared:
 - `reference-packs/curated/kfb-emanata-reaction-symbols-01/`
 
 No Site/runtime/deployment change.
+
+
+## Emanata morphology + curated pack expansion · 2026-10-07
+
+Status: **CURATION PASS · 10/10 PASS**
+
+1. PASS · Emanata visual morphology pool parses.
+2. PASS · morphology pool contains 28 source-backed visual concepts.
+3. PASS · current eight KFB semantic Emanata slots are preserved.
+4. PASS · strongest future candidates recorded: blush / breath / steam.
+5. PASS · eye/graphic/body channels remain separate from primary Emanata where appropriate.
+6. PASS · Sound Words pack contains 6 references.
+7. PASS · Bubble Grammar pack contains 5 references.
+8. PASS · Emanata / Reaction Symbols pack contains 6 references.
+9. PASS · all pack references remain uninspected until actual visual source review.
+10. PASS · no pack automatically starts Claude Design.
+
+Prepared:
+- `EMANATA_VISUAL_MORPHOLOGY_POOL_01_2026-10-07.json`
+- `reference-packs/curated/kfb-sound-words-01/`
+- `reference-packs/curated/kfb-bubble-grammar-01/`
+- `reference-packs/curated/kfb-emanata-reaction-symbols-01/`
+
+No Site/runtime/deployment change.
