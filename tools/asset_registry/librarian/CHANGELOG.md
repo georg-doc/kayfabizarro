@@ -1,5 +1,35 @@
 # Changelog · KFB Asset Librarian
 
+## Dialogue / Narration + NIE / Overworld curation · 2026-10-07
+
+Status: **RESEARCH / AUTHORING PREP READY · SITE UNCHANGED**
+
+### Sources
+- Added canonical `ETHERINGTON_OFFICIAL_SEED_06_NARRATION_REACTION.json` with **6** new official sources: Fourth Wall, Failure, Excuses, Group Dynamic, Local Colour, Memories.
+- Canonical Etherington corpus is now **64 unique IDs / 64 unique URLs**.
+- With 5 supplementary sources, GitHub holds **69 total curated records**.
+- Caption Boxes/Speech Bubbles remain owned by Seed 04; Seed 05 remains the canonical Dialogue/Interaction seed.
+
+### Authoring
+- Added `KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md`.
+- Added machine-readable `KFB_CHATTERBOX_AUTHORING_RULES_01.json`.
+- Integrated inspected Narrative Intelligence Engine Writer's Room/dialogue donors and FrizzleBob KayfabeTips as authoring rules, not runtime dependencies.
+- Added curated `kfb-narration-reaction-01` consumer pack.
+
+### Overworld donor recovery
+- Added `KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`.
+- Recovered historical implemented Afterglow/narrator + zone-story donors separately from the historical OPEN narrator-as-character concept.
+- Recovered “Welt als Spielzeug” / mob Eigenleben / purposeful activity donors without promoting historical runtime state.
+
+### Work/WSA
+- Added combined `BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`.
+- If the accepted Site remains Version 4 / 58 built-ins, Work imports 11 new records and reaches **69** without redesign.
+- Updated the Dialogue/Historian consolidation brief to route runtime adoption only after exact Coworker intake + Architecture Freeze.
+
+### Evidence
+- `DIALOGUE_NARRATION_CURATION_TEST_REPORT_2026-10-07.md`: **15/15 PASS**.
+- No Site, Open World runtime, ChatterBox runtime, Hub, merge or Live promotion change.
+
 ## Etherington design-first Environment + Comic/VFX expansion · 2026-10-06
 
 Status: **RESEARCH/DATA READY · 30 NEW OFFICIAL SOURCES · SITE UNCHANGED**
