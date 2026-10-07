@@ -76,8 +76,8 @@ function flyStep(d, F, inp, dt, assist, halfW, hover) {
   if (f.t > ASSIST.flyMax || h < -25) { d.fly = null; d.s = f.sL + 4; d.lat = 0; d.psi = 0; d.speed *= 0.5; d.onGround = true; d.events.push({ type: 'rescue', s: d.s }); return F.at(d.s); }
   d.air = true; return q; }
 
-export function stepDriver(d, F, inp, dt, o = {}) {
-  const assist = o.assist ?? ASSIST.follow, mk = o.motorK ?? 1, halfW = o.halfWidth ?? FLOW.proxyHalfWidth, hover = FEEL.hoverBase;
+function integrateDriver(d, F, inp, dt, o = {}) {
+  const assist = o.assist ?? ASSIST.follow, mk = o.motorK ?? 1, halfW = o.halfWidth ?? FLOW.proxyHalfWidth, hover = o.hover ?? FEEL.hoverBase;
   d.events.length = 0;
   if (d.fly) { let q; const n = Math.max(1, Math.ceil(dt * 120)); for (let i = 0; i < n && d.fly; i++) q = flyStep(d, F, inp, dt / n, assist, halfW, hover); /* Flug in 1/120-s-Schritten: Landung unabhängig von der Bildrate */ d.squashV += (-d.squash * 180 - d.squashV * 9) * dt; d.squash += d.squashV * dt; return q; }
   d.boosting = inp.boost && d.speed > 4;
@@ -106,6 +106,7 @@ export function stepDriver(d, F, inp, dt, o = {}) {
   d.psi -= d.psi * Math.min(1, aK * dt); d.psi = clamp(d.psi, -ASSIST.psiMax, ASSIST.psiMax);
   d.s += ds;   // K2B-Δ2: geschlossener Stream läuft über die Naht weiter (wörtlich K3, ohne K3-Kantenhalt)
   if (F.closed) { if (d.s >= F.L) { d.s -= F.L; d.lap++; } else if (d.s < 0) d.s += F.L; }
+  else if(o.endpoint==='stop'){if(d.s>F.L-2){d.s=F.L-2;d.speed=Math.min(0,d.speed)}if(d.s<2){d.s=2;d.speed=Math.max(0,d.speed)}}
   else { if (d.s > F.L - 2) { d.s = 2; d.lap++; } if (d.s < 2) d.s = 2; }
   if (d.speed > 8 && d.onGround && (F.at(d.s + Math.max(1, d.speed * dt * 2)).surface < 0.5 || F.at(d.s).surface < 0.5)) {   /* K2b: auch wenn ein großer Schritt schon ins Luftstück sprang */ if (takeoff(d, F, F.at(d.s), assist, hover)) { d.air = true; return F.at(d.s); } }
 
@@ -151,4 +152,13 @@ export function pose(d, q, hover = FEEL.hoverBase) {
   const P = [q.p[0] + q.R[0] * lat + q.U[0] * h, q.p[1] + q.R[1] * lat + q.U[1] * h, q.p[2] + q.R[2] * lat + q.U[2] * h];
   const X = [q.U[1] * Fw[2] - q.U[2] * Fw[1], q.U[2] * Fw[0] - q.U[0] * Fw[2], q.U[0] * Fw[1] - q.U[1] * Fw[0]];
   return { P, F: Fw, U: q.U, X, lat };
+}
+
+// Optional receiving Physics query. K2B keeps speed/steering/contact response ownership.
+export function stepDriver(d,F,inp,dt,o={}){
+ const previous=o.acceptPose?structuredClone(d):null,q=integrateDriver(d,F,inp,dt,o);
+ if(previous&&!o.acceptPose(pose(d,q,o.hover??FEEL.hoverBase),d)){
+  const energy=Math.abs(d.speed),steer=d.steerAngle;Object.assign(d,previous);d.speed=0;d.latV=0;d.steerAngle=steer;d.hits++;d.atWall=true;d.squashV+=Math.min(1,energy/20);d.events=[{type:'world-hit',energy,s:d.s}];return F.at(d.s);
+ }
+ return q;
 }

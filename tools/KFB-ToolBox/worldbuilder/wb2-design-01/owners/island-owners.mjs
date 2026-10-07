@@ -8130,6 +8130,25 @@ var Sr = Object.freeze({
 			}
 		};
 	}
+	createVehicle(e) {
+		let t = this.world.createRigidBody(Sr.RigidBodyDesc.kinematicPositionBased()), n = this.world.createCollider(Sr.ColliderDesc.cuboid(e.x, e.y, e.z), t);
+		return {
+			body: t,
+			collider: n,
+			setPose: (e, n) => {
+				t.setTranslation(e, !0), t.setNextKinematicTranslation(e), t.setRotation(n, !0), t.setNextKinematicRotation(n), this.world.propagateModifiedBodyPositionsToColliders();
+			},
+			accepts: (e, r, i, a) => {
+				let o = {
+					x: i.x - e.x,
+					y: i.y - e.y,
+					z: i.z - e.z
+				};
+				return !this.world.castShape(e, r, o, n.shape, .01, 1, !1, void 0, void 0, n, t) && !this.world.intersectionWithShape(i, a, n.shape, void 0, void 0, n, t);
+			},
+			dispose: () => this.world.removeRigidBody(t)
+		};
+	}
 	dispose() {
 		this.stepHooks = [], this.acc = 0, this.world.free();
 	}

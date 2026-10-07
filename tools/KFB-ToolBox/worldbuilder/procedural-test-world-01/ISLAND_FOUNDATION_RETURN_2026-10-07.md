@@ -1,3 +1,15 @@
+# R4 · Drive technical milestone · continue Roads / Early Golden
+
+Parent `ea50b450748f3c0edc2f8aa12059b7e34c0cb9ce`; exact milestone is its containing commit. Same WB2 owner, branch and PR #348. **NO MVP**, all 44 REQUIRED retained and NOT_GREEN. This is an implementation/evidence boundary inside the continuous ONE_SHOT.
+
+Existing Joyride K2B (also used by J17) drives the source-isolated native Taxi using the existing J06 4.3m vehicle profile. Shared WB2 Rapier owns the vehicle proxy; no second world or drive integrator. Ground / Drive / Flight have exclusive movement/camera handoffs. Normal input proves acceleration, steering, braking/reverse, safe Ground exit and fresh double-Space Flight. Current R2D road is an OPEN crossing: endstop replaces the legacy wrap; no loop/junction acceptance is claimed.
+
+Independent read-only Guard found stale collision dimensions after scale edits and rejected first-step pose snapping. Both repaired: scale-sensitive proxy reconstruction (also on entry), authored heading initialization, rejected candidate leaves root unchanged. Shape cast sweeps translation at the starting orientation plus final rotated overlap check; continuous rotational sweep is not claimed. Actual obstacle stop/reverse/recovery, open-route endstop/reverse and stationary corner rejection pass. Full suite: 20 PASS, 1 existing quarantined autostep TODO; TypeScript PASS. Browser development evidence is in `evidence/r4-player/drive-*`. `drive-ground-flight.json` preserves an earlier pre-endstop run and is historical only; final handoff capture has actual route ID and closed=false.
+
+Next internal gate: Phase2B Track-supported loop/junction and coherent road/water/street presentation, then Phase3 independent visual/physical critic and Georg F-R39. Jump/gait/camera visual acceptance still open. F-R39 NOT_READY, F-R07 UNKNOWN. No Site publication, Hub routing change, merge or Live promotion.
+
+---
+
 # R4 · Player Ground/Flight implementation + evidence milestone · continue Drive
 
 Parent `472ecc06915923a0c81d8252435d0128e8c0910c`; this milestone belongs to its containing commit. Same WB2 owner/PR/branch, Frozen Matrix v5 44/13/7. **NO MVP**. This is continued Phase 2, not a phase or product PASS.

@@ -69,6 +69,20 @@ export class Physics {
     };
   }
 
+  createVehicle(half:{x:number;y:number;z:number}) {
+    const body=this.world.createRigidBody(RAPIER.RigidBodyDesc.kinematicPositionBased());
+    const collider=this.world.createCollider(RAPIER.ColliderDesc.cuboid(half.x,half.y,half.z),body);
+    return {body,collider,
+      setPose:(p:{x:number;y:number;z:number},q:{x:number;y:number;z:number;w:number})=>{body.setTranslation(p,true);body.setNextKinematicTranslation(p);body.setRotation(q,true);body.setNextKinematicRotation(q);this.world.propagateModifiedBodyPositionsToColliders();},
+      accepts:(p:{x:number;y:number;z:number},q:{x:number;y:number;z:number;w:number},next:{x:number;y:number;z:number},nextQ:{x:number;y:number;z:number;w:number})=>{
+        const delta={x:next.x-p.x,y:next.y-p.y,z:next.z-p.z};
+        const hit=this.world.castShape(p,q,delta,collider.shape,.01,1,false,undefined,undefined,collider,body);
+        return !hit&&!this.world.intersectionWithShape(next,nextQ,collider.shape,undefined,undefined,collider,body);
+      },
+      dispose:()=>this.world.removeRigidBody(body)
+    };
+  }
+
   dispose():void {this.stepHooks=[];this.acc=0;this.world.free();}
 
   get fixedDt(): number {

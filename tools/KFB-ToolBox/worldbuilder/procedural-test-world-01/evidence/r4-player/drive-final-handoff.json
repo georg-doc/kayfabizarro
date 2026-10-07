@@ -1,0 +1,275 @@
+{
+  "status": "TECHNICAL_WITNESS_NOT_PRODUCT_PASS",
+  "drive": {
+    "owner": "WB2 shared planar Ground",
+    "animationOwner": "KayKit native speed/phase mixer",
+    "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+    "actorProfileId": "Mannequin_Medium",
+    "position": [
+      -0.1781,
+      0.6215,
+      -9.1978
+    ],
+    "heading": 0.23888392223683771,
+    "speed": 0,
+    "motion": {
+      "phase": "ground",
+      "time": 15.600000000000355,
+      "verticalSpeed": 0,
+      "grounded": true,
+      "lateralSpeed": 0
+    },
+    "phase": 0,
+    "rows": [
+      {
+        "role": "idle",
+        "clip": "Idle_A",
+        "speed": 0,
+        "cycleT": 1.067,
+        "leftFootDownPhase": null,
+        "weight": 1,
+        "time": 0.6542999999523196
+      }
+    ],
+    "bindings": {
+      "Idle_A": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Walking_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Running_A": {
+        "sourceTracks": 68,
+        "boundTracks": 62,
+        "duration": 0.800000011920929
+      },
+      "Running_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.800000011920929
+      },
+      "Walking_Backwards": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Start": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6000000238418579
+      },
+      "Jump_Idle": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Land": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6666666865348816
+      }
+    },
+    "bodyHeight": 2.192545909798636,
+    "dance": {
+      "active": false,
+      "source": null,
+      "time": 0
+    },
+    "groundY": 0.6000000238418579,
+    "mixerCount": 1,
+    "mobility": {
+      "mode": "DRIVE",
+      "movementOwner": "Joyride K2B",
+      "cameraOwner": "Joyride Drive camera",
+      "drive": {
+        "owner": "Joyride K2B / J17 lineage",
+        "active": true,
+        "vehicleId": "island.vehicle.taxi.01",
+        "routeId": "R2D_V0_ISLAND_3",
+        "closed": false,
+        "distanceM": 1.996330162030981,
+        "speed": 3.981512080375029,
+        "contacts": 0,
+        "railHits": 0,
+        "lap": 1,
+        "source": {
+          "commit": "64cbf1031392029f25110dd613247b32148aae42",
+          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf",
+          "blobSha": "266c1113a22f85ee6851b5dab6a89fc51726f4f8"
+        },
+        "physicsOwner": "WB2 Rapier"
+      },
+      "physicsOwner": "WB2 Rapier",
+      "sourceUnitsToMetres": 10,
+      "flight": {
+        "tempo": 0.28,
+        "hoehe": 0.09,
+        "drift": 0,
+        "ueberWasser": false,
+        "kurs": -14,
+        "parameter": 34,
+        "abweichungen": 0,
+        "abweichend": [],
+        "boost": false,
+        "hover": false,
+        "pitch": 0,
+        "bank": 0
+      },
+      "aglM": 0.3
+    },
+    "intent": {
+      "schema": "kfb.mobility-mode-intent/1",
+      "windowMs": 400,
+      "armed": false,
+      "ageMs": null,
+      "firstTapAt": null,
+      "lastTapAt": null,
+      "firstTapCount": 0,
+      "requestCount": 0,
+      "resetCount": 2,
+      "lastResetReason": "play-edit",
+      "lastResult": null
+    }
+  },
+  "flight": {
+    "owner": "WB2 shared planar Ground",
+    "animationOwner": "KayKit native speed/phase mixer",
+    "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+    "actorProfileId": "Mannequin_Medium",
+    "position": [
+      1.4757980663720371,
+      1.9989849920198322,
+      -9.80032057084534
+    ],
+    "heading": 0.34936000000000006,
+    "speed": 0,
+    "motion": {
+      "phase": "ground",
+      "time": 0.016666666666666666,
+      "verticalSpeed": 0,
+      "grounded": true,
+      "lateralSpeed": 0
+    },
+    "phase": 0,
+    "rows": [
+      {
+        "clip": "Jump_Idle",
+        "time": 0.5833333333333335,
+        "weight": 1
+      }
+    ],
+    "bindings": {
+      "Idle_A": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Walking_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Running_A": {
+        "sourceTracks": 68,
+        "boundTracks": 62,
+        "duration": 0.800000011920929
+      },
+      "Running_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.800000011920929
+      },
+      "Walking_Backwards": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Start": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6000000238418579
+      },
+      "Jump_Idle": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Land": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6666666865348816
+      }
+    },
+    "bodyHeight": 2.192545909798636,
+    "dance": {
+      "active": false,
+      "source": null,
+      "time": 0
+    },
+    "groundY": 0.6000000238418579,
+    "mixerCount": 1,
+    "mobility": {
+      "mode": "FLIGHT",
+      "movementOwner": "Travel Carpet",
+      "cameraOwner": "Travel camera-rig",
+      "drive": {
+        "owner": "Joyride K2B / J17 lineage",
+        "active": false,
+        "vehicleId": "island.vehicle.taxi.01",
+        "routeId": "R2D_V0_ISLAND_3",
+        "closed": false,
+        "distanceM": 1.996330162030981,
+        "speed": 0,
+        "contacts": 0,
+        "railHits": 0,
+        "lap": 1,
+        "source": {
+          "commit": "64cbf1031392029f25110dd613247b32148aae42",
+          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf",
+          "blobSha": "266c1113a22f85ee6851b5dab6a89fc51726f4f8"
+        },
+        "physicsOwner": "WB2 Rapier"
+      },
+      "physicsOwner": "WB2 Rapier",
+      "sourceUnitsToMetres": 10,
+      "flight": {
+        "tempo": 0,
+        "hoehe": 0.2,
+        "drift": 0,
+        "ueberWasser": false,
+        "kurs": 340,
+        "parameter": 34,
+        "abweichungen": 0,
+        "abweichend": [],
+        "boost": false,
+        "hover": false,
+        "pitch": -0.1511265127042798,
+        "bank": 0
+      },
+      "aglM": 1.3989849681779742
+    },
+    "intent": {
+      "schema": "kfb.mobility-mode-intent/1",
+      "windowMs": 400,
+      "armed": false,
+      "ageMs": null,
+      "firstTapAt": null,
+      "lastTapAt": 19799.5,
+      "firstTapCount": 1,
+      "requestCount": 1,
+      "resetCount": 2,
+      "lastResetReason": "play-edit",
+      "lastResult": {
+        "kind": "REQUEST_FLIGHT",
+        "requestFlight": true,
+        "accepted": true,
+        "deltaMs": 20.799999952316284,
+        "windowMs": 400
+      }
+    }
+  }
+}

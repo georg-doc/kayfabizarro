@@ -21,7 +21,7 @@ export async function createIslandSurface(seed){
     ground(mesh){const data=arrays(mesh);replace('terrain',data);surface.bindIndexedGround(data.positions,data.indices);groundMesh=mesh;},
     road(mesh,id='route'){const data=arrays(mesh),contact=new TriangleContact(id);contact.addArrays(data.positions,data.indices);replace('track/'+id,data);surface.contact({id,owner:'track-core',heightAt:(x,z)=>contact.heightAt(x,z)});},
     objects(roots){
-      const keep=new Set();for(const root of roots){if(root.userData.kind==='resident')continue;let part=0;root.traverse(mesh=>{if(!mesh.isMesh||mesh.isSkinnedMesh||mesh.isInstancedMesh)return;const id='object/'+root.userData.sceneObjectId+'/'+part++;keep.add(id);objectMeshes.set(id,mesh);mesh.updateWorldMatrix(true,false);const key=mesh.geometry.uuid+'/'+mesh.matrixWorld.elements.join(',');if(fingerprints.get(id)!==key){replace(id,arrays(mesh));fingerprints.set(id,key);}});}
+      const keep=new Set();for(const root of roots){if(root.userData.kind==='resident'||root.userData.physicsOwner==='Joyride Drive')continue;let part=0;root.traverse(mesh=>{if(!mesh.isMesh||mesh.isSkinnedMesh||mesh.isInstancedMesh)return;const id='object/'+root.userData.sceneObjectId+'/'+part++;keep.add(id);objectMeshes.set(id,mesh);mesh.updateWorldMatrix(true,false);const key=mesh.geometry.uuid+'/'+mesh.matrixWorld.elements.join(',');if(fingerprints.get(id)!==key){replace(id,arrays(mesh));fingerprints.set(id,key);}});}
       for(const [id,c] of colliders)if(id.startsWith('object/')&&!keep.has(id)){physics.world.removeCollider(c,true);colliders.delete(id);fingerprints.delete(id);objectMeshes.delete(id);geometryHashes.delete(id)}
     },
     heightAt:(x,z)=>surface.heightAt(x,z),

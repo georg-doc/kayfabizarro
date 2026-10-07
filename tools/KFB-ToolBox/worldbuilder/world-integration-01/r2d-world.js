@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {TAXI_SOURCE} from '../procedural-test-world-01/wb2-taxi.v1.js';
 import {islandIdentity,islandRecipe,validateIslandRecipe} from '../wb2-design-01/island-document.v1.mjs';
 import { makeIslandCore } from '../procedural-test-world-01/r2d-island-core.v1.js';
 import { makeArchipelago } from '../procedural-test-world-01/r2d-archipelago.v1.js';
@@ -60,6 +61,7 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
   const W={
     id,zone,spawn,tile,log:[],docId:island?.docId||'r2d-world-'+Z.seed,storageKey:island?.storageKey||'kfb-r2d-world.'+Z.seed,
     islandRecipe:island,
+    get routePlan(){return P},
     get surfaceAdapter(){return surfaceAdapter},
     get terrainMesh(){return presentation?.top||null},
     supportAt(x,z){return surfaceAdapter?.heightAt(x,z)},
@@ -90,7 +92,7 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
     patchDoc(doc){
       doc.id=W.docId;doc.terrain={seed:Z.seed,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};doc.objects=[];
       doc.world={format:'kfb.r2d.world-ref/1',provider:PROVIDER,seed:Z.seed,biome:Z.biome,shape:Z.shape,source:zone.provenance,player:{position:[+spawn.x.toFixed(3),0,+spawn.z.toFixed(3)],heading:+spawn.heading.toFixed(5)}};
-      if(island)doc.world.island=structuredClone(island);
+      if(island){doc.world.island=structuredClone(island);const samples=P.stream.samples,start=samples.reduce((best,q,i)=>Math.hypot(q.p[0]-spawn.x,q.p[2]-spawn.z)<best.d?{i,d:Math.hypot(q.p[0]-spawn.x,q.p[2]-spawn.z)}:best,{i:0,d:Infinity}).i,q=(()=>{let n=start,d=0;while(d<5.5){const next=(n+1)%(samples.length-1);d+=Math.hypot(...samples[next].p.map((v,k)=>v-samples[n].p[k]));n=next;if(n===start)break;}return samples[n]})();doc.objects.push({id:'island.vehicle.taxi.01',name:'Taxi',kind:'prop',taxi:true,taxiProfile:'joyride-j06',source:TAXI_SOURCE,transform:{position:[q.p[0],null,q.p[2]],rotation:[0,Math.atan2(q.T[0],q.T[2]),0],scale:[1,1,1]}});}
       doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+(island?.generator.trackCommit||TRACK_PIN).slice(0,7),buildings:'Registry native building families → K2/v10'};return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},

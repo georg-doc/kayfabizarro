@@ -79,9 +79,10 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
   const [{createCarpet},{createCameraRig},{createFlightControls},{createPlanarFlightFrame},{createWorldBuilderModeBridge},{createGroundFlightIntent}]=await Promise.all([
     import(travel+'globe-v13/carpet.js'),import(travel+'globe-v13/camera-rig.js'),import(travel+'globe-v13/flight-controls.js'),import(travel+'globe-v13/planar-frame.js'),import(travel+'world-builder/runtime-mode.js'),import(travel+'world-builder/mode-intent.js')]);
   const frame=createPlanarFlightFrame({THREE,surface:world.surfaceAdapter,character:()=>ground.character,spawn:world.spawn}),carpet=createCarpet({THREE,globeRadius:1,seed:world.zone.seed,geometry:frame}),rig=createCameraRig(THREE,camera.aspect,{camera,geometry:frame}),flightControls=createFlightControls(dom);
-  const mobility=createWorldBuilderModeBridge({ground,carpet,rig,controls:flightControls,frame,physics:world.surfaceAdapter.physics,holder,present,worldId:world.docId,actorProfileId:()=>profile,onMode:mode=>{document.body.dataset.movementOwner=mode==='FLIGHT'?'Travel Flight':'WB2 Ground'}});
+  const mobility=createWorldBuilderModeBridge({ground,carpet,rig,controls:flightControls,frame,physics:world.surfaceAdapter.physics,holder,present,worldId:world.docId,actorProfileId:()=>profile,onMode:mode=>{document.body.dataset.movementOwner=mode==='DRIVE'?'Joyride Drive':mode==='FLIGHT'?'Travel Flight':'WB2 Ground'}});
   const intent=createGroundFlightIntent({onRequestFlight:()=>mobility.enterFlight()});ground.setSpaceIntent(e=>intent.noteGroundSpace(e));
   const wrapper=Object.create(api);Object.defineProperty(wrapper,'on',{get:()=>mobility.active});
+  wrapper.attachDrive=next=>mobility.attachDrive(next);wrapper.requestDrive=()=>mobility.requestDrive();wrapper.exitDrive=()=>mobility.exitDrive();
   wrapper.update=dt=>mobility.update(dt);wrapper.setOn=on=>{intent.reset('play-edit');mobility.setOn(on)};
   wrapper.readDoc=doc=>{intent.reset('document');mobility.reset();api.readDoc(doc)};
   wrapper.evidence=()=>({...api.evidence(),mobility:mobility.evidence(),intent:intent.report()});

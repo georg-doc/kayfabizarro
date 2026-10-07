@@ -806,7 +806,7 @@ async function buildSceneObjects(token){
     let model;
     if(rec.billboardWorldId){const api=await import('../procedural-test-world-01/wb2-billboards.v1.js');const module=await api.createWorldBillboard(rec.billboardWorldId,{renderer,cards:window.__wb2d.mvp.cards});root.userData.lifecycle=module;root.userData.billboardWorldId=rec.billboardWorldId;model=module.root;}
     else if(rec.performanceSetId){const api=await import('../procedural-test-world-01/wb2-party.v1.js');const module=await api.createPartySet(rec.performanceSetId,{renderer});root.userData.lifecycle=module;root.userData.performanceSetId=rec.performanceSetId;model=module.root;}
-    else if(rec.taxi){const api=await import('../procedural-test-world-01/wb2-taxi.v1.js');model=await api.createTaxiModel();}
+    else if(rec.taxi){const api=await import('../procedural-test-world-01/wb2-taxi.v1.js');model=await api.createTaxiModel(rec.taxiProfile);}
     else if(rec.residentSetId){const api=await import('../procedural-test-world-01/wb2-residents.v1.js');const module=await api.createResidentSet(rec.residentSetId,{onProgress:(done,total,item)=>{document.body.dataset.residentLoad=JSON.stringify({id:rec.id,done,total,item})}});root.userData.lifecycle=module;model=module.root;}
     else if(rec.registeredAssetId){const api=await import('../procedural-test-world-01/wb2-source-evidence.v1.js?r4-player-01');const record=Object.values(api.manifest.families).flat().find(r=>r.assetId===rec.registeredAssetId);if(!record)throw Error('Unknown registered source '+rec.registeredAssetId);model=await api.loadRegistered(record);await api.adaptRegistered(model);model.userData.sourceRecord=record;}
     else {
@@ -822,7 +822,7 @@ async function buildSceneObjects(token){
     if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
     PRES.onObject(root);
   }
-  WORLD?.syncObjects?.(sceneObjects.values());refreshAddButtons();refreshDoc();
+  WORLD?.syncObjects?.(sceneObjects.values());refreshAddButtons();refreshDoc();if(PLAY?.attachDrive)await initIslandDrive();
 }
 function dropRoot(root){
   if(!root)return;
@@ -934,13 +934,14 @@ async function showScene(){
 }
 /* WORLD-INTEGRATION-01 · Play reads the WorldBuilder's own state: terrainHeightAt (base + sculpt),
    the zone's footprints and the edited scene objects. Edit and Play never hold two copies. */
+async function initIslandDrive(){if(!PLAY?.attachDrive||!WORLD?.islandRecipe)return;PLAY.attachDrive(null);const root=sceneObjects.get('island.vehicle.taxi.01');if(root){const T=await import('../procedural-test-world-01/wb2-taxi.v1.js');PLAY.attachDrive(T.createTaxiDrive(window.__wb2d,{root}));}}
 async function initPlay(){
   if(HOST_PROPS.kaykitPlayer){
     status('loading KayKit Mannequin player…');
     const WP=await import('../procedural-test-world-01/wb2-player.v1.js');
     PLAY=await WP.makePlayer({scene,camera,dom:renderer.domElement,world:WORLD,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),hud:E('wiState')});
     PLAY.readDoc(sceneDoc);E('wiMotion').innerHTML='<option>KayKit · freigegebener Satz</option>';E('wiMotion').disabled=true;
-    WORLD.setScanRoots([PLAY.actor.holder,worldRoot]);refreshWorldFacts();return;
+    WORLD.setScanRoots([PLAY.actor.holder,worldRoot]);refreshWorldFacts();await initIslandDrive();return;
   }
   status('loading player · FrizzleBob graft + KFB Motion Library…');
   const WP=await import('../world-integration-01/wi1-play.js');

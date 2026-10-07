@@ -3,15 +3,15 @@
   "date": "2026-10-08",
   "product": "KFB Island MVP R4",
   "mode": "ONE_SHOT",
-  "state": "RUNNING_PLAYER_GOLDEN",
+  "state": "RUNNING_ROADS_EARLY_GOLDEN",
   "productVerdict": "NO MVP",
   "operationalVersion": 5,
   "owner": "WB2",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "472ecc06915923a0c81d8252435d0128e8c0910c",
-  "milestone": "player-ground-flight-1",
+  "baseHead": "ea50b450748f3c0edc2f8aa12059b7e34c0cb9ce",
+  "milestone": "player-drive-technical-1",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
@@ -573,7 +573,7 @@
   "playerGolden": {
     "status": "RUNNING",
     "groundFlight": "Technical normal-input witnesses and owner tests; not product acceptance",
-    "drive": "NEXT: existing Joyride K2B on named island, source taxi isolated",
+    "drive": "Existing K2B on current open Track crossing; shared Rapier proxy, normal enter/steer/reverse/exit and Ground-to-Flight evidence. Loop/junction is Phase2B, not yet proven.",
     "unresolved": [
       "Jump presentation/foot skating and camera whole-route visual critic",
       "Drive and Phase2B route before EarlyGolden",
@@ -582,13 +582,15 @@
     "evidence": [
       "evidence/r4-player/normal-input-ground.json",
       "evidence/r4-player/ground-flight-ground.json",
-      "evidence/r4-player/floor-conditioning-guard.json"
+      "evidence/r4-player/floor-conditioning-guard.json",
+      "evidence/r4-player/drive-normal-input.json",
+      "evidence/r4-player/drive-final-handoff.json"
     ],
     "tests": {
-      "pass": 17,
+      "pass": 20,
       "quarantinedTodo": 1,
       "typeScript": "PASS"
     },
-    "guard": "Read-only Foundation Guard: bounded handoff repairs; collision-cliff seam now has passing blocked-vs-flat terrain regression test. No product score."
+    "guard": "CONTINUE; scaled proxy/rejected root pose repaired; source route OPEN metadata and endstop corrected. Continuous rotational sweep remains a limitation; stationary rotation endpoint rejection tested."
   }
 }

@@ -3,14 +3,15 @@ import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {makeFrame,createDriver,stepDriver,pose} from '../../_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/kfb-drive.k2b.js';
 export const TAXI_SOURCE={commit:'64cbf1031392029f25110dd613247b32148aae42',path:'media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf',blobSha:'266c1113a22f85ee6851b5dab6a89fc51726f4f8'};
-export async function createTaxiModel(){const g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+TAXI_SOURCE.commit+'/'+TAXI_SOURCE.path.split('/').map(encodeURIComponent).join('/'));const root=g.scene;root.name='KayKit Taxi';const box=new THREE.Box3().setFromObject(root);root.position.y=-box.min.y;root.traverse(o=>{if(o.isMesh)o.castShadow=o.receiveShadow=true});root.userData.sourceRecord={assetId:'car_taxi.gltf',packId:'KayKit City Builder Bits',source:TAXI_SOURCE};return root;}
-function uniformFrame(samples){
+export async function createTaxiModel(profile=null){const g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+TAXI_SOURCE.commit+'/'+TAXI_SOURCE.path.split('/').map(encodeURIComponent).join('/'));const root=g.scene;root.name='KayKit Taxi';if(profile==='joyride-j06'){const config=await fetch(new URL('../../_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/joyride.j06.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Joyride vehicle profile missing');return r.json()});const native=new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3());root.scale.multiplyScalar(config.vehicles.len/native.z);root.userData.vehicleProfile={owner:'Joyride J06',lengthM:config.vehicles.len};}const box=new THREE.Box3().setFromObject(root);root.position.y=-box.min.y;root.traverse(o=>{if(o.isMesh)o.castShadow=o.receiveShadow=true});root.userData.sourceRecord={assetId:'car_taxi.gltf',packId:'KayKit City Builder Bits',source:TAXI_SOURCE};return root;}
+function uniformFrame(samples,closed=false){
   const list=[];let total=0;for(const q of samples){if(list.length){const d=Math.hypot(...q.p.map((v,i)=>v-list.at(-1).p[i]));if(d<.001)continue;total+=d}list.push({...q,s:total})}
   if(list.length<2)throw Error('Track route has no samples');const n=Math.ceil(total/.5),ds=total/n,out=[];let j=0;
   for(let i=0;i<=n;i++){const s=i*ds;while(j<list.length-2&&list[j+1].s<s)j++;const a=list[j],b=list[j+1],t=(s-a.s)/(b.s-a.s);const lerp=(u,v)=>u.map((x,k)=>x+(v[k]-x)*t);const p=lerp(a.p,b.p),T=new THREE.Vector3().fromArray(b.p).sub(new THREE.Vector3().fromArray(a.p)).normalize(),U=new THREE.Vector3().fromArray(a.U).normalize(),R=new THREE.Vector3().crossVectors(U,T).normalize();out.push({...a,s,p,T:T.toArray(),U:U.toArray(),R:R.toArray(),slots:a.slots,prm:{...a.prm,surface:1}})}
-  return makeFrame(out,ds,false);
+  return makeFrame(out,ds,closed);
 }
 export function createTaxiDrive(A,{root,remember}={}){
+  if(A.world.islandRecipe)return createIslandTaxiDrive(A,{root});
   const keys=new Set();let active=false,driver=null,frame=null,distance=0,lastS=0,routeId=null;
   function key(e,on){if(!active||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName))return;if(['KeyW','KeyS','KeyA','KeyD','ShiftLeft','ShiftRight'].includes(e.code)){e.preventDefault();on?keys.add(e.code):keys.delete(e.code)}}
   addEventListener('keydown',e=>key(e,true));addEventListener('keyup',e=>key(e,false));addEventListener('blur',()=>keys.clear());
@@ -26,4 +27,30 @@ export function createTaxiDrive(A,{root,remember}={}){
     // J14's open endpoint would loop to s=2. Stop before that seam and return to Ground.
     if(driver.s>=frame.L-5-Math.max(0,driver.speed)*dt||driver.s<=2&&driver.speed<0)exit();
   },evidence:()=>({active,owner:active?'J14 Drive':'WB2 Ground',routeId,distanceM:distance,speed:driver?.speed||0,s:driver?.s,trackOwner:'Track Core',source:TAXI_SOURCE})};
+}
+
+function createIslandTaxiDrive(A,{root}){
+ const physics=A.world.surfaceAdapter.physics,events=new AbortController(),keys=new Set(),frame=uniformFrame(A.world.routePlan.stream.samples,A.world.routePlan.recipe.closed===true),id=root.userData.sceneObjectId;
+ let active=false,driver=null,distance=0,contacts=0,lastFramePose=null;
+ root.updateMatrixWorld(true);const inverse=root.matrixWorld.clone().invert(),box=new THREE.Box3(),v=new THREE.Vector3();root.traverse(m=>{if(!m.isMesh)return;const matrix=inverse.clone().multiply(m.matrixWorld),p=m.geometry.attributes.position;for(let i=0;i<p.count;i++)box.expandByPoint(v.fromBufferAttribute(p,i).applyMatrix4(matrix))});
+ const nativeHalf=box.getSize(new THREE.Vector3()).multiplyScalar(.5),nativeCentre=box.getCenter(new THREE.Vector3()),half=new THREE.Vector3(),centre=new THREE.Vector3(),lastScale=new THREE.Vector3();let proxy=null;
+ function resizeProxy(){if(proxy&&lastScale.equals(root.scale))return;proxy?.dispose();lastScale.copy(root.scale);half.copy(nativeHalf).multiply(root.scale);centre.copy(nativeCentre).multiply(root.scale);proxy=physics.createVehicle(half);}
+ root.userData.physicsOwner='Joyride Drive';A.world.syncObjects(A.sceneObjects.values());
+ const rotation=P=>new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3().fromArray(P.X),new THREE.Vector3().fromArray(P.U),new THREE.Vector3().fromArray(P.F)));
+ const proxyPos=(position,q)=>centre.clone().applyQuaternion(q).add(position);
+ function syncProxy(){resizeProxy();proxy.setPose(proxyPos(root.position,root.quaternion),root.quaternion)}syncProxy();
+ function exitPose(){syncProxy();const heading=Math.atan2(new THREE.Vector3(0,0,1).applyQuaternion(root.quaternion).x,new THREE.Vector3(0,0,1).applyQuaternion(root.quaternion).z);for(const radius of [half.x+.8,half.x+1.5,half.z+1.5,5])for(const angle of [Math.PI/2,-Math.PI/2,0,Math.PI]){const x=root.position.x+Math.sin(heading+angle)*radius,z=root.position.z+Math.cos(heading+angle)*radius,y=A.world.surfaceAdapter.heightAt(x,z);if(Number.isFinite(y)){const position=new THREE.Vector3(x,y+.02,z);if(A.play.character.validPose(position))return {position,heading}}}return null;}
+ const key=(e,down)=>{if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName)||e.target?.isContentEditable)return;if(e.code==='KeyI'&&down&&!e.repeat){if(active){e.preventDefault();A.play.exitDrive()}else if(A.play.on&&root.position.distanceTo(A.play.position)<6){e.preventDefault();A.play.requestDrive()}return}if(!active)return;if(['KeyW','KeyS','KeyA','KeyD','ShiftLeft','ShiftRight','KeyQ','KeyE'].includes(e.code)){e.preventDefault();down?keys.add(e.code):keys.delete(e.code)}};
+ addEventListener('keydown',e=>key(e,true),{signal:events.signal});addEventListener('keyup',e=>key(e,false),{signal:events.signal});addEventListener('blur',()=>keys.clear(),{signal:events.signal});
+ const off=physics.onFixedStep(dt=>{if(!active){syncProxy();return}const old=root.position.clone(),oldQ=root.quaternion.clone();let accepted=true;
+  const q=stepDriver(driver,frame,{gas:keys.has('KeyW'),brake:keys.has('KeyS'),left:keys.has('KeyA'),right:keys.has('KeyD'),boost:keys.has('ShiftLeft')||keys.has('ShiftRight'),driftL:keys.has('KeyQ'),driftR:keys.has('KeyE'),jump:false},dt,{assist:.8,motorK:.45,endpoint:'stop',halfWidth:half.x,hover:-.025,acceptPose:P=>{const next=new THREE.Vector3().fromArray(P.P),nextQ=rotation(P),ok=proxy.accepts(proxyPos(old,oldQ),oldQ,proxyPos(next,nextQ),nextQ);if(!ok)contacts++;accepted=ok;return ok}});
+  if(!accepted)return;const P=pose(driver,q,-.025);root.position.fromArray(P.P);root.quaternion.copy(rotation(P));A.updateRecordFromRoot(root);syncProxy();distance+=root.position.distanceTo(old);A.play.position.copy(root.position);lastFramePose=P;
+ });
+ return {get active(){return active},root,exitPose,
+  activate(){syncProxy();let nearest={s:0,d:Infinity};for(let s=0;s<frame.L;s+=.5){const p=frame.at(s).p,d=Math.hypot(p[0]-root.position.x,p[1]-root.position.y,p[2]-root.position.z);if(d<nearest.d)nearest={s,d}}if(nearest.d>8)throw Error('Taxi must be placed on its Track route');driver=createDriver(nearest.s);const q=frame.at(nearest.s),rel=root.position.clone().sub(new THREE.Vector3().fromArray(q.p));driver.lat=rel.dot(new THREE.Vector3().fromArray(q.R))-q.c;const forward=new THREE.Vector3(0,0,1).applyQuaternion(root.quaternion);driver.psi=Math.atan2(-forward.dot(new THREE.Vector3().fromArray(q.R)),forward.dot(new THREE.Vector3().fromArray(q.T)));active=true;keys.clear();lastFramePose=pose(driver,q,-.025);},
+  deactivate(){active=false;keys.clear();A.updateRecordFromRoot(root);return true},
+  update(dt){if(!active||!lastFramePose)return;const P=lastFramePose,forward=new THREE.Vector3().fromArray(P.F),up=new THREE.Vector3().fromArray(P.U),look=root.position.clone().addScaledVector(up,1),want=root.position.clone().addScaledVector(forward,-8).addScaledVector(up,3.2),delta=want.clone().sub(look),length=delta.length();delta.divideScalar(length);const hit=physics.world.castRay(new physics.R.Ray(look,delta),length,true,undefined,undefined,proxy.collider,proxy.body);if(hit)want.copy(look).addScaledVector(delta,Math.max(.4,hit.timeOfImpact-.3));A.camera.position.lerp(want,1-Math.exp(-10*dt));A.camera.up.copy(up);A.camera.lookAt(look.addScaledVector(forward,2));},
+  evidence:()=>({owner:'Joyride K2B / J17 lineage',active,vehicleId:id,routeId:A.world.routePlan.recipe.id,closed:frame.closed,distanceM:distance,speed:active?(driver?.speed||0):0,contacts,railHits:driver?.hits||0,lap:driver?.lap||0,source:TAXI_SOURCE,physicsOwner:'WB2 Rapier'}),
+  dispose(){active=false;events.abort();off();proxy.dispose();delete root.userData.physicsOwner},
+ };
 }
