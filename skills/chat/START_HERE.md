@@ -14,7 +14,7 @@ Current counts:
 
 Final pre-WSA alignments:
 - Roads/Track = **Phase 2B**, before Phase-3 Early Golden;
-- Phase-3 Georg Visual Product Gate is mandatory, crash-safe and exact-head-bound;
+- Phase-3 Georg Visual Product Gate is mandatory and crash-safe; the accepted head becomes the Golden baseline. Later changes trigger re-gating only for a demonstrated or unresolved regression risk to Phase-3 Golden criteria, not for every visible addition;
 - F-R07 uses `GEORG_PRIMARY_ACCEPTANCE_MACHINE`; WSA instruments, Georg performs one visible/focused target-device run, evidence is persisted against exact head;
 - terrain evaluation order vs Track-fit/sculpt must be frozen before F-R29/F-R31 can turn GREEN;
 - High reasoning explicitly allowed for Phase 2B and Phase 3;
@@ -34,7 +34,7 @@ This is a routing/recovery index only. Named project owners/branches remain auth
 
 ---
 
-## CURRENT ADDITIVE OVERRIDE · 2026-10-07 · ISLAND MVP MATRIX v4 · STATEFUL THRESHOLD DOOR
+## SUPERSEDED ADDITIVE OVERRIDE · 2026-10-07 · ISLAND MVP MATRIX v4 · STATEFUL THRESHOLD DOOR · INCORPORATED INTO v5
 
 Georg added one bounded Strong-Include proof without changing REQUIRED acceptance scope.
 
@@ -163,7 +163,7 @@ Binding canon:
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED
+## SUPERSEDED OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED · SUPERSEDED BY FINAL v5 BRIEF
 
 Georg has explicitly authorized exactly one **ChatGPT Work/WSA WorldBuilder Integrator** to start now.
 
@@ -186,7 +186,7 @@ Product remains **NO MVP** until every required row is GREEN. No Receiving-Core 
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · Recovery audit completed
+## HISTORICAL OVERRIDE · 2026-10-07 · Recovery audit completed · EXECUTION ROUTING SUPERSEDED BY FINAL v5
 
 #360 Recovery audit and the one-time existing-Hub migration are complete. Current route: **RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR**. Product remains **NO MVP** and runtime work remains paused until Georg separately authorizes exactly one Integrator. The older ready-to-run audit instructions below are history; do not rerun them. Read the current [owning Recovery Return](https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md) and frozen ledger on PR #373.
 
