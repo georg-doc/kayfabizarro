@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.10",
-  "updatedAt": "2026-10-07T11:58:00+02:00",
+  "revision": "2026-10-07.11",
+  "updatedAt": "2026-10-07T12:22:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World runtime remains paused. The complete MVP requirements now have a read-only interactive Living Doc linked from this Hub. Product status remains binary: NO MVP until every required Acceptance-Matrix row is GREEN. ChefWSA Recovery Audit on PR #373 is the only authorized Open World execution lane."
+    "note": "Open World runtime remains paused. The complete MVP requirements are exposed as a read-only internal view of the existing KFB Production Hub GPT Site. Product status remains binary: NO MVP until every required Acceptance-Matrix row is GREEN. The Hub view is designed for GitHub-live JSON refresh after one Site-shell publish, so routine matrix/status updates require no further Work/Sites run."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -20,16 +20,17 @@
     "publicHubTarget": "https://kayfabizarro.pages.dev/",
     "worldStudioInterim": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-    "openWorldMvpLivingDoc": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/"
+    "openWorldMvpLivingDoc": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
+    "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json"
   },
   "p0": [
     {
       "id": "issue-360-open-world-recovery-audit",
-      "title": "#360 · P0 · Open World MVP Living Doc + Recovery Audit",
-      "summary": "Open World runtime remains paused. The Living Doc exposes the complete anti-feature-loss requirement ledger, current acceptance states, donors/owners and proof targets. It is a read-only audit surface, not an MVP candidate. Fresh ChefWSA must freeze/verify the full matrix and independently challenge it before one later Integrator is authorized.",
-      "badge": "NO MVP · LIVING MATRIX",
-      "action": "MVP Living Doc öffnen",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/",
+      "title": "#360 · P0 · Open World MVP Living Doc · Production Hub",
+      "summary": "Open World runtime remains paused. The MVP Living Doc belongs inside the existing Production Hub GPT Site and reads its matrix/status from GitHub-main live JSON after one bounded Site-shell update. It is an audit/control view, not an MVP candidate. Fresh ChefWSA must freeze/verify the full matrix and independently challenge it before one later Integrator is authorized.",
+      "badge": "NO MVP · HUB LIVING MATRIX",
+      "action": "MVP Living Doc im Hub öffnen",
+      "url": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
       "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · PR #373 · audit only",
       "nextExecutor": "Fresh independent critic of the frozen matrix; one Integrator only after RECOVERY PLAN READY"
     }
@@ -143,7 +144,7 @@
       "badge": "READY · PR #373 · AUDIT ONLY",
       "status": "ready",
       "provider": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA",
-      "desc": "Run the canonical Recovery Lead brief. First freeze/verify the complete requirement ledger, then map verified donors/owners/proofs, classify Hex and authoring/persistence paths, and obtain a fresh independent critic challenge. Living Doc is linked from the P0 Hub card.",
+      "desc": "Run the canonical Recovery Lead brief. In the same Work/WSA run, add the Open World MVP Living Doc as an internal view of the existing Production Hub Site, backed by main/kfb-hub/live/open-world-mvp.json with cache:no-store + local fallback. Prove a GitHub-JSON-only revision appears after refresh with no second Site publish.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/WORK_WSA_OPEN_WORLD_RECOVERY_LEAD_BRIEF_2026-10-07.md",
       "tags": [
         "open world",
@@ -157,7 +158,7 @@
         "hex",
         "donor census"
       ],
-      "prompt": "Run the Recovery Lead brief on Draft PR #373 / branch recovery/open-world-master-acceptance-audit-2026-10-07 exactly. No Open World runtime writes. Use the 43-row MVP input ledger as anti-feature-loss baseline, independently verify/freeze it before donor selection, update the JSON Living Doc at material audit milestones, and return only RECOVERY PLAN READY or RECOVERY PLAN BLOCKED."
+      "prompt": "Run Draft PR #373 Recovery Lead brief exactly. No Open World runtime writes. Use the 43-row input ledger as anti-feature-loss baseline, independently verify/freeze it, and in the same run publish exactly one bounded in-place Production Hub Site update adding ?view=open-world-mvp. The view must live-load main/kfb-hub/live/open-world-mvp.json with cache:no-store and fallback, preserve all accepted Hub v10 controls/state, and prove a later JSON-only revision becomes visible after refresh without another Work/Site publish."
     },
     {
       "id": "brief-resident-performance-blender",
