@@ -26,11 +26,15 @@ All lower v2/v3/v4 routing text is historical where conflicting. The current JSO
 
 ## CURRENT RECOVERY INDEX · 2026-10-07 · WEB-CHAT IDEATION
 
-For recovery of the 2026-10-07 design work spanning Asset Librarian/external 3D MCP, textures/materials, World Pulse, Cube/MacroCell, Build/Destroy/Repair, Paper/Facade and Threshold grammar, read:
+For recovery of the 2026-10-07 design work spanning Asset Librarian/external 3D MCP, textures/materials, World Pulse, Cube/MacroCell, Build/Destroy/Repair, Paper/Facade, Threshold grammar and Oxijolt-derived Physics Acceptance/Test Architecture, read:
 
 `skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md`
 
 This is a routing/recovery index only. Named project owners/branches remain authoritative for implementation.
+
+Oxijolt donor note:
+`skills/chat/recovery/KFB_OXIJOLT_PHYSICS_ACCEPTANCE_DONOR_2026-10-07.md`
+Classification: **acceptance/test-architecture donor only · no current runtime adoption**.
 
 ---
 
