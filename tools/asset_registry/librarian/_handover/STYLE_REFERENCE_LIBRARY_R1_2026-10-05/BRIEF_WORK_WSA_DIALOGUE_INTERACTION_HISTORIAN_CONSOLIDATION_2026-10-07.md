@@ -44,8 +44,10 @@ The older Claude Design brief is a donor brief only. Current Seed 05 policy is:
 
 ## Phase A · Optional Site sync now
 
-Binding import brief:
-`BRIEF_WORK_IMPORT_SEED05_DIALOGUE_INTERACTION_2026-10-07.md`
+Current combined import brief:
+`BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`
+
+The older `BRIEF_WORK_IMPORT_SEED05_DIALOGUE_INTERACTION_2026-10-07.md` is superseded when the Site is still at accepted Version 4 / 58 built-ins. If Seed 05 was already imported later, reconcile actual state rather than replaying it.
 
 Current accepted Site:
 `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
@@ -53,11 +55,14 @@ Current accepted Site:
 Current accepted version:
 4
 
-Current published built-ins:
+Last proven published built-ins:
 58
 
-Expected after Seed 05 import:
-63 built-ins total.
+Current GitHub curated corpus after Seeds 05 + 06:
+69 records total = 64 Etherington official + 5 supplementary.
+
+Expected after combined Seed 05 + 06 import, if starting from the last proven 58:
+69 built-ins total.
 
 Done when:
 - 63 unique built-ins are present;
@@ -72,7 +77,15 @@ This Site sync is independent of Open World runtime work.
 
 ## Phase B · Consumer rule extraction
 
-Do this from the curated pack, not from memory.
+Research outputs now prepared:
+- `KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md`
+- `KFB_CHATTERBOX_AUTHORING_RULES_01.json`
+- `reference-packs/curated/kfb-dialogue-interaction-01/`
+- `reference-packs/curated/kfb-narration-reaction-01/`
+
+These combine current Etherington seeds with inspected NIE Writer's Room / dialogue donors and public KFB KayfabeTips. Use them as authoring contracts, not runtime ownership.
+
+Do this from the curated packs and source rules, not from memory.
 
 Required output candidates:
 - dialogue rhythm rules;
@@ -90,6 +103,11 @@ Preserve:
 - no hardcoded catchphrase system.
 
 ## Phase C · Historian / narrator proposal
+
+Donor audit now prepared:
+`KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`
+
+It records the historical implemented Afterglow/narrator donor, zone-story narrator slot, OPEN narrator-as-character concept, World-as-Toy North Star, mob/activity donors, NIE bridge and current safe reuse boundaries.
 
 The Historian remains a PROPOSAL, not a runtime owner.
 
@@ -151,4 +169,4 @@ No Production Hub change unless this work materially changes a canonical route o
 
 ## One next gate
 
-**OPTIONAL PHASE A: Work/WSA imports Seed 05 into the accepted Asset Librarian R2 Site. Runtime consumer integration remains HOLD until exact Coworker intake + Architecture Freeze.**
+**OPTIONAL PHASE A: Work/WSA imports canonical Seeds 05 + 06 into the accepted Asset Librarian R2 Site using the combined import brief. Runtime consumer integration remains HOLD until exact Coworker intake + Architecture Freeze.**
