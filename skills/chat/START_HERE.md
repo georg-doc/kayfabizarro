@@ -15,7 +15,7 @@ Current state:
 - prior 37-row Open-World contract is preserved and explicitly mapped; no required row was deleted.
 - explicit additions/refinements include P0 locomotion + Cartoon Jump, Flight, Drive KEEP+TUNE, Claybound compatibility, grounded/no-pasted-on world placement, real Quote Pool → real Billboard/HyperNormalisation, Early Visual/Physical Golden, Negative Goldens and No-Placeholder firewall.
 - Full Combat remains later; Combat Arena retains full Combat ownership. Seed World/Combat Mech POC is a strong shooting/VFX/destruction donor candidate but must win source-isolated donor arbitration before integration.
-- Fresh-chat recovery path: **START_HERE → Frozen Matrix → Integration Census → current WB2 Island Foundation/PR #348 → Prototype Graveyard only for negative Goldens/salvage**.
+- Fresh-chat recovery path: **START_HERE → Frozen Matrix → ToolBox Inbox Donor Audit → Integration Census → current WB2 Island Foundation/PR #348 → Prototype Graveyard only for negative Goldens/salvage**.
 - current next action: prepare exactly one final **ChatGPT Work/WSA Island MVP ONE_SHOT** brief directly from the frozen matrix. Do not reopen broad architecture planning or shorten the required matrix to match an implementation.
 
 No second runtime owner. No auto-merge. No Live promotion. Routine Hub status remains GitHub-live JSON; no Site republish is needed for these planning updates.
