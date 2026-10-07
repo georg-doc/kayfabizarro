@@ -813,5 +813,59 @@
     "pr": 348,
     "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
     "observedHead": "e82c4c7e164b6258fb535df72e5c28143f2ce4cf"
+  },
+  "preservedCapabilityStacks": {
+    "skyEnvironmentTravelFx": {
+      "classification": "PRESERVED_DONOR_STACK_NO_NEW_REQUIRED_ROW",
+      "requiredAnchor": "F-R24",
+      "performanceAnchor": "F-R07",
+      "flightPresentationAnchor": "F-S03",
+      "owners": [
+        "Existing Sky/Skydome/Environment owner",
+        "Travel Flight/presentation owners"
+      ],
+      "travelEnvironmentModules": [
+        "sky-presets",
+        "day-night",
+        "sky-atmosphere",
+        "lens-flare",
+        "rain-overlay",
+        "starfield",
+        "weltstimmungen"
+      ],
+      "knownButNotTestedInSkyReturn": [
+        "sun-shadow",
+        "light-budget"
+      ],
+      "shells": [
+        "TinySkies/Travel baseline",
+        "Travel procedural/static shader skydome",
+        "Combat/Card Spindle",
+        "existing shader/watercolor/realistic sky options"
+      ],
+      "clouds": {
+        "donor": "Jarlan Perez KFB Cloud GLB",
+        "candidate": "kfb.sky.cloud-family/3-archetypes",
+        "variants": 13,
+        "archetypes": 6,
+        "status": "TUNE_NOT_GOLDEN",
+        "limits": [
+          "no cloud Golden",
+          "no K1/v8 parity proof",
+          "night readability weak",
+          "fill-rate/performance sensitive",
+          "target-device/mobile unproven"
+        ]
+      },
+      "movementFxDonors": [
+        "contrails",
+        "carpet-wake",
+        "drift-smoke",
+        "impact-dust",
+        "speed-lines",
+        "boost/post-radial presentation"
+      ],
+      "mvpPolicy": "F-R24 requires one coherent real Environment owner. Full time/weather/aurora/rain/spindle/all-FX breadth is preserved but not newly mandatory."
+    }
   }
 }
