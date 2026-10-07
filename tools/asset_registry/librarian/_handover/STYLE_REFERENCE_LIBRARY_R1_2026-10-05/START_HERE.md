@@ -8,6 +8,34 @@ Repo: `georg-doc/kayfabizarro`
 Branch: `planning/style-reference-library-r1-surface-2026-10-05`  
 Base: `chatgpt-web/surface-consolidation-2026-10-04@74ac0eea2b65872ccab3fb454d89e5d1ac5cc97a`
 
+
+## CURRENT OVERRIDE · 2026-10-07 · Dialogue/Narration + Historian/Chronicler
+
+
+The original R1 implementation below is historical setup context. Current product state is later:
+
+- accepted existing Asset Librarian R2 Site: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`;
+- last proven published Site: **Version 4 · 58 built-ins**;
+- current GitHub curated corpus: **69 records = 64 Etherington official + 5 supplementary**;
+- pending Site delta: **11 records** from Seeds 05 + 06;
+- preferred Site input: `STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json`;
+- combined Work/WSA import brief: `BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`;
+- narrator decision: **role Historian · persona Chronicler · working identity Historian / Chronicler**;
+- binding authoring contract: `KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`;
+- Living-Toy prep: 13 scenario families + 30 candidate activities;
+- no Open World/ChatterBox runtime integration before exact Coworker intake + Architecture Freeze;
+- no Claude Design job required for writing-rule extraction;
+- this Web Chat has no Sites publisher, so publication must be done by a Sites-capable Work/WSA executor in the **same existing Site**, never via a second Site or Cloudflare substitute.
+
+Current validation:
+**17/17 PASS**
+
+Current next gate:
+**Sites-capable Work/WSA imports the 11-record Site delta if the existing Site is still below 69 built-ins; otherwise reconcile/no-op. Runtime consumption remains HOLD.**
+
+---
+
+
 ## Goal
 
 Add a daily-use **Style References** mode to the existing private KFB Asset Librarian Site.
