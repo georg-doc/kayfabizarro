@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.19",
+  "revision": "2026-10-07.20",
   "updatedAt": "2026-10-07T21:26:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Final Island MVP Work/WSA contract aligned to operational Frozen Matrix v5. Counts unchanged: 44 REQUIRED / 13 Strong / 7 Optional. Roads/Track now run in Phase 2B before Early Golden. F-R39 and F-R07 are the only explicit human acceptance pauses and are exact-head/persistence governed.",
+  "recoverySummary": "Final Island MVP ONE_SHOT v5 ready. F-R39 PASS is persisted as a Golden baseline and re-gated only when later work can materially affect a Phase-3 Golden criterion and critic/evidence shows regression or unresolved change; unrelated visible additions do not trigger another Georg gate.",
   "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
@@ -2298,6 +2298,7 @@
       "F-R39_GEORG_VISUAL_PRODUCT_GATE",
       "F-R07_TARGET_DEVICE_PERFORMANCE_RUN"
     ],
-    "targetDeviceId": "GEORG_PRIMARY_ACCEPTANCE_MACHINE"
+    "targetDeviceId": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
+    "fR39ReGatePolicy": "REGRESSION_BASED_ONLY"
   }
 }
