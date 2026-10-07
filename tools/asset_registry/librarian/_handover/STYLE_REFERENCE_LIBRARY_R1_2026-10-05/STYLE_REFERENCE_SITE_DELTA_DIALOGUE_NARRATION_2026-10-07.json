@@ -1,0 +1,482 @@
+{
+  "schema": "kfb.style-reference-site-delta/1",
+  "status": "SITE_READY_NOT_PUBLISHED",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "target": {
+    "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
+    "projectId": "appgprj_6ac1afef08148191b62b95f184bf845e",
+    "lastProvenVersion": 4,
+    "lastProvenBuiltIns": 58,
+    "expectedBuiltInsAfterFullDelta": 69
+  },
+  "sourceSeeds": [
+    "ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION.json",
+    "ETHERINGTON_OFFICIAL_SEED_06_NARRATION_REACTION.json"
+  ],
+  "importPolicy": {
+    "mode": "UPSERT",
+    "dedupeKeys": [
+      "referenceId",
+      "canonicalPageUrl"
+    ],
+    "preserveExisting": true,
+    "preserveBrowserLocalCardsSetsNotesPrinciples": true,
+    "noViewerRedesign": true,
+    "noPrivateImagePublishing": true,
+    "sourceInspectedInIsolationMustRemainFalse": true
+  },
+  "recordCount": 11,
+  "records": [
+    {
+      "referenceId": "style-ref:etherington-small-talk-2019-01",
+      "sourceId": "etherington-small-talk-2019-01",
+      "title": "Small Talk",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-small-talk.html",
+      "subject": [
+        "small-talk",
+        "conversation",
+        "dialogue",
+        "social-rhythm"
+      ],
+      "technique": [],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "ambient-conversation"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "notes": [
+        "Lane: DIALOGUE_RHYTHM",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Use low-stakes dialogue as social telemetry rather than filler."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Anchor ambient lines to relationship, activity, place, mood or local observation."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-speech-patterns-2018-12",
+      "sourceId": "etherington-speech-patterns-2018-12",
+      "title": "Speech Patterns",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/12/how-to-think-when-you-write-speech.html",
+      "subject": [
+        "speech-patterns",
+        "character-voice",
+        "dialogue"
+      ],
+      "technique": [],
+      "useCases": [
+        "chatterbox",
+        "resident-voice",
+        "character-writing"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "notes": [
+        "Lane: CHARACTER_VOICE",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Differentiate voice through worldview, sociolect, cadence and response habits."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Avoid solving character voice with catchphrase repetition."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-tics-and-tells-2019-11",
+      "sourceId": "etherington-tics-and-tells-2019-11",
+      "title": "Tics and Tells",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/11/how-to-think-when-you-write-tics-and.html",
+      "subject": [
+        "tics",
+        "tells",
+        "nonverbal-language",
+        "character-detail"
+      ],
+      "technique": [],
+      "useCases": [
+        "resident-performance",
+        "chatterbox",
+        "characterization"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "notes": [
+        "Lane: NONVERBAL_BEHAVIOR",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Treat recurring nonverbal behavior as meaning-bearing and selectively triggered."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Route performance cues to gesture/gaze/micro-motion without making them state owners."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-interrupt-scene-2020-02",
+      "sourceId": "etherington-interrupt-scene-2020-02",
+      "title": "Interrupt a Scene",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/02/bonus-learnuary-day-52-how-to-think.html",
+      "subject": [
+        "interruptions",
+        "conversation",
+        "scene-rhythm",
+        "dialogue"
+      ],
+      "technique": [],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "scene-writing"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_ARCHIVE_LINK_VERIFIED",
+      "notes": [
+        "Lane: CONVERSATION_FLOW",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Use interruption to reveal power, urgency, intimacy, fear or avoidance."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "The interrupted speaker's response is part of the beat."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-silence-is-golden-2018-01",
+      "sourceId": "etherington-silence-is-golden-2018-01",
+      "title": "Silence Is Golden",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/01/how-to-think-when-you-write-using.html",
+      "subject": [
+        "silence",
+        "pause",
+        "negative-space",
+        "dialogue-rhythm"
+      ],
+      "technique": [],
+      "useCases": [
+        "chatterbox",
+        "resident-dialogue",
+        "comic-writing"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_INDEX_LINK_VERIFIED",
+      "notes": [
+        "Lane: DIALOGUE_RHYTHM",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Silence, gaze, gesture and pause are valid authored outputs."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Do not manufacture dialogue because a Resident is present."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-fourth-wall-2018-06",
+      "sourceId": "etherington-fourth-wall-2018-06",
+      "title": "The 4th Wall",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/06/how-to-think-when-you-write-fourth-wall.html",
+      "subject": [
+        "fourth-wall",
+        "audience-address",
+        "meta-narration"
+      ],
+      "technique": [],
+      "useCases": [
+        "historian-meta-narrator",
+        "player-commentary",
+        "comic-narration"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: META_NARRATION",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Use meta-address rarely and only when the relationship to audience/player is earned."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Meta narration should add framing, not dissolve Kayfabe into generic self-awareness."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-failure-2018-11",
+      "sourceId": "etherington-failure-2018-11",
+      "title": "Failure",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-faliure.html",
+      "subject": [
+        "failure",
+        "character-reveal",
+        "response-to-setback"
+      ],
+      "technique": [],
+      "useCases": [
+        "death-revival-commentary",
+        "resident-reaction",
+        "heroic-self-image-contrast"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: FAILURE_REACTION",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Use failure to reveal character, changed expectations and social consequence."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Repeated failure should increase specificity and memory, not merely joke intensity."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-excuses-2018-11",
+      "sourceId": "etherington-excuses-2018-11",
+      "title": "Excuses",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-excuses.html",
+      "subject": [
+        "excuses",
+        "rationalization",
+        "character-reveal",
+        "subtext"
+      ],
+      "technique": [],
+      "useCases": [
+        "post-failure-dialogue",
+        "resident-voice",
+        "self-justification",
+        "rival-banter"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: FAILURE_REACTION",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Treat self-justification as subtext and character revelation."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Distinguish what is said from what is meant and wanted."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-group-dynamic-2019-01",
+      "sourceId": "etherington-group-dynamic-2019-01",
+      "title": "The Group Dynamic",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-group.html",
+      "subject": [
+        "group-dynamic",
+        "ensemble",
+        "social-pressure",
+        "multiple-characters"
+      ],
+      "technique": [],
+      "useCases": [
+        "witness-reactions",
+        "resident-groups",
+        "crowd-commentary",
+        "conversation-staging"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: GROUP_REACTION",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Select a primary respondent in group events instead of making everyone speak."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Use status, relationship, proximity and stake to decide who reacts verbally."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-local-colour-2018-05",
+      "sourceId": "etherington-local-colour-2018-05",
+      "title": "Local Colour",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/05/how-to-think-when-you-write-local.html",
+      "subject": [
+        "local-colour",
+        "setting",
+        "voice",
+        "place-specific-detail"
+      ],
+      "technique": [],
+      "useCases": [
+        "island-residents",
+        "faction-voice",
+        "historian",
+        "ambient-dialogue"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: LOCAL_VOICE",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Let place/faction change vocabulary, examples, norms and social register."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Avoid decorative dialect or jargon pasted onto generic lines."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    },
+    {
+      "referenceId": "style-ref:etherington-memories-2019-01",
+      "sourceId": "etherington-memories-2019-01",
+      "title": "Memories",
+      "creator": "The Etherington Brothers",
+      "collection": "How to Think When You Write",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-memories.html",
+      "subject": [
+        "memory",
+        "callback",
+        "history",
+        "character"
+      ],
+      "technique": [],
+      "useCases": [
+        "repeat-visit-dialogue",
+        "relationship-memory",
+        "death-revival-callbacks",
+        "historian-afterglow"
+      ],
+      "rightsVisibility": "OFFICIAL_CREATOR_SOURCE",
+      "verificationStatus": "OFFICIAL_URL_VERIFIED",
+      "notes": [
+        "Lane: MEMORY_CALLBACK",
+        "KFB research notes are derived authoring guidance, not a claim that the tutorial visual has been inspected in isolation."
+      ],
+      "principles": [
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Callbacks are strongest when an old beat gains new meaning."
+        },
+        {
+          "kind": "KFB_RESEARCH_DERIVED_NOT_SOURCE_OBSERVATION",
+          "text": "Memory should affect relationship or interpretation rather than merely prove recall."
+        }
+      ],
+      "sourceInspectedInIsolation": false,
+      "relatedAssetIds": [],
+      "relatedReferenceIds": [],
+      "siteImportAction": "UPSERT_BY_REFERENCE_ID_AND_CANONICAL_URL"
+    }
+  ],
+  "linkedResearch": [
+    "KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md",
+    "KFB_CHATTERBOX_AUTHORING_RULES_01.json",
+    "KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md",
+    "KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md",
+    "KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json",
+    "KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json"
+  ],
+  "publishState": "SITES_CAPABLE_EXECUTOR_REQUIRED"
+}
