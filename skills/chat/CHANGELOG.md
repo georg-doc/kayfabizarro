@@ -2660,3 +2660,16 @@ No runtime/product code changed.
 - Material rule: do not blindly restore tiled fabric normal/roughness maps; explore old-theatre/velvet richness through motion-safe sheen/roughness/environment response, non-repeating macro patina and/or separate aged hardware/proscenium detail.
 - Target module stays reusable across loading/boot, Character Select and optional in-game reveal; no Open World/PR #348 runtime writes in this design slice.
 - Production Hub board advanced to **2026-10-07.5** with a READY Claude Design card and copy prompt.
+
+## 2026-10-07 · Theatre Curtain r3 PASS checked in
+
+- Claude Design Issue **#372** completed with **Georg PASS on r3**.
+- Actual checked-in source commit: `7ca4a36bfeae16dfbc0e0ba99427a4da1b1c2d3e` on `main`.
+- Actual packet root: `tools/KFB-ToolBox/_inbox/KFB Theatre Curtain Recovery Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/`.
+- Accepted candidate preserves the physical v2 donor cloth kernel and fixes the main visual/mechanical defects: gathering rather than rigid slide, all render rows, opaque cover, rounded pleats, weighted hem, momentum/rebound, aged proscenium/pelmet/rail/floor and motion-safe oxblood macro patina.
+- r3 specifically closes Georg's final TUNE findings: gilt/plinth double step, folding-screen pleats, pointed hem ends and the visible footlight bulb row.
+- One seven-state Curtain module now covers Loading, Character Select and in-game reveal; fake plaque/sign/wordmark/SVG-overlay presentation remains REJECTED.
+- Evidence packet includes 39 screenshots/frames, donor 6-frame isolation, candidate 7-frame cycle, 12-frame use sequence and 10-frame material study; sampled moving frames showed no observed stripe/crawl/flicker. A float-accumulation state-machine bug was found and fixed during the run.
+- Selected material: **P = B cloth (motion-safe macro patina) + C hardware (aged gilt/plaster/floor)**.
+- Deferred/nonblocking seams: tieback, ring-rail readability, impact edge sliver, idle clip binding, WebGL fallback decision, FrizzleBob source-pin reconcile, low-end/mobile performance and normal visible-tab confirmation.
+- Issue #372 closed/completed. Hub board advanced to **2026-10-07.6**. Runtime integration waits for the receiving Architecture Freeze / explicit consumer seam; no merge or Live promotion is implied.
