@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.7",
-  "updatedAt": "2026-10-07T11:08:00+02:00",
+  "revision": "2026-10-07.8",
+  "updatedAt": "2026-10-07T11:22:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Surface plan updated: final playable game target is planned as play-kayfabizarro.frizzlebob.chatgpt.site; current kfb-world-studio-mvp1 remains interim review/authoring during Freeze/integration. kayfabizarro.pages.dev is the planned public KFB Hub for rules, full public tabs/navigation, Gumroad/download links and thumbnail gallery/viewer. Private Production Hub remains internal orientation. None of the new target feature sets are claimed live yet."
+    "note": "Open World runtime work is paused after a contract-collapse review. The next and only Open World production action is a fresh Work/WSA read-only Recovery Audit: reconstruct the full Master Acceptance Matrix, audit Coworker + WB2/PR #348 donors, classify Hex terrain ownership, recover God Mode/Terrain Sculpt/Persistence donor paths, and independently challenge the plan before any new integration. Play/public-surface targets remain planned, not published."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -23,26 +23,26 @@
   },
   "p0": [
     {
-      "id": "issue-360-coworker-intake",
-      "title": "#360 · Coworker core complete locally · exact GitHub intake next",
-      "summary": "Coworker local core is closed with stable build evidence, but Camera remains 6.5 and local HEAD 1d4f8c8 has never been pushed. Do not reconstruct it from chat. First preserve the exact local code/RETURN/ARCHITECTURE/STATUS/evidence on a GitHub handoff branch.",
-      "badge": "INTAKE PENDING · PRIMARY",
-      "action": "Issue #360 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
-      "executor": "Claude Coworker · finish RETURN + direct GitHub handoff",
-      "nextExecutor": "ChatGPT Work/Astra · camera repair then Architecture Freeze"
+      "id": "issue-360-open-world-recovery-audit",
+      "title": "#360 · P0 · Open World Recovery Audit only",
+      "summary": "Runtime implementation is paused. A fresh ChefWSA/Work recovery lead must reconstruct the complete product contract and donor map before another integration attempt. Required checks include Continuous Terrain vs Hex ownership, God Mode/Object Edit, Terrain Sculpt, Save/Fresh Reload/Persistence and the full representative KFB integration roster. No product/runtime writes in this audit.",
+      "badge": "RECOVERY AUDIT ONLY · PRIMARY",
+      "action": "Recovery Audit öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
+      "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · read-only product audit",
+      "nextExecutor": "Fresh independent critic of the Master Acceptance Matrix; integrator only after audit PASS"
     }
   ],
   "p1": [
     {
-      "id": "next-work-open-world-freeze",
-      "title": "NEXT · Work/Astra · camera → Architecture Freeze → Authoring/Persistence",
-      "summary": "Only after exact Coworker GitHub intake: fix the narrow camera occlusion/boom seam without disturbing cliff behavior; then freeze real as-built ownership/APIs; then close direct authoring + save/fresh-reload before broad module fan-out.",
-      "badge": "NEXT AFTER GITHUB INTAKE",
-      "action": "PR #348 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
-      "executor": "ChatGPT Work/Astra · Anschluss-Integrator",
-      "nextExecutor": "Required KFB integration waves"
+      "id": "open-world-runtime-hold",
+      "title": "HOLD · Open World runtime integration until Recovery Audit",
+      "summary": "Do not continue camera repair, Architecture Freeze acceptance, God Mode integration or module fan-out yet. First recover the immutable feature list and best donor for every required capability. Current Coworker Freeze is evidence only until audited.",
+      "badge": "HOLD · NO RUNTIME WRITES",
+      "action": "Postmortem öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md",
+      "executor": "None · runtime paused",
+      "nextExecutor": "Recovery Lead / ChefWSA"
     },
     {
       "id": "resident-performance-blender-now",
@@ -137,21 +137,26 @@
       "prompt": "Do not restart the UFO design lab. Read the returned UFO HANDOVER_WSA_2026-10-07.md and EVENT_CONTRACT.json only when the post-Coworker Architecture Freeze reaches the UFO integration seam."
     },
     {
-      "id": "brief-work-coworker-intake-camera-freeze",
-      "title": "Work/Astra · Coworker intake → Camera → Architecture Freeze",
-      "badge": "WAIT FOR EXACT GITHUB INTAKE",
-      "status": "hold",
-      "provider": "ChatGPT Work/Astra · Anschluss-Integrator",
-      "desc": "Do not start from chat prose. First require Coworker's exact pushed code/RETURN/evidence, then repair only the camera seam and freeze the as-built architecture before integration.",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/360",
+      "id": "brief-work-open-world-recovery-audit",
+      "title": "ChefWSA · Open World contract + donor recovery audit",
+      "badge": "READY · READ-ONLY PRODUCT AUDIT",
+      "status": "ready",
+      "provider": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA",
+      "desc": "Do not build. Reconstruct the complete One-Shot acceptance matrix from binding sources, audit Coworker Dropbox source and WB2/PR #348 donors, classify Hex terrain ownership and God Mode/Persistence paths, review Freeze decisions, then get an independent fresh-context challenge. Georg-facing return must be plain German without hashes/branch/run-ID clutter.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
       "tags": [
         "open world",
-        "work",
-        "camera",
-        "architecture freeze",
-        "intake"
+        "recovery",
+        "audit",
+        "contract collapse",
+        "chef wsa",
+        "god mode",
+        "terrain",
+        "persistence",
+        "hex",
+        "donor census"
       ],
-      "prompt": "Do not start until Coworker's exact local result has been pushed to a GitHub handoff branch and RETURN.md, docs/ARCHITECTURE_AS_BUILT.md, docs/STATUS.json and evidence are readable there.\nThen read issue #360 and PR #348. Repair only the camera occlusion/boom seam first, preserving cliff behavior. Next perform the Architecture Freeze against the actual Coworker code.\nAfter freeze, close Authoring + Persistence before broad Joyride/Sky/Audio/Resident/Billboard/Card/Drive fan-out. Do not rebuild the receiving core."
+      "prompt": "Run skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md exactly. This is a fresh-context read-only product audit: no Open World runtime writes. Produce the Master Acceptance Matrix, donor census, Freeze audit and recovery Return; then obtain a fresh independent critic challenge. Communicate to Georg in plain German and keep technical hashes/branches/run IDs in an executor-only appendix."
     },
     {
       "id": "brief-resident-performance-blender",
@@ -316,6 +321,16 @@
       "title": "Surface plan · Play + Public Hub",
       "summary": "Planned final game GPT Site: play-kayfabizarro. Public web Hub: kayfabizarro.pages.dev with rules, tabs, Gumroad/downloads and thumbnail gallery/viewer. Current World Studio remains interim.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_SITE_SURFACE_REGISTRY_2026-10-04.json"
+    },
+    {
+      "title": "Open World · Contract Collapse Postmortem",
+      "summary": "Why the One-Shot lost required features across successive candidates and the binding recovery gates.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md"
+    },
+    {
+      "title": "Open World · Recovery Audit brief",
+      "summary": "Fresh ChefWSA read-only audit before any new runtime integration.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
