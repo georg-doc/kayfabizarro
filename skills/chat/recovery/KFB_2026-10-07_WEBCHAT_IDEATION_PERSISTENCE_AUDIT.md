@@ -453,3 +453,40 @@ No new implementation gate is created by this audit.
 Current product route remains the Island MVP One-Shot / Frozen Matrix owner.
 
 When one of these research lines becomes product-critical, open **one bounded receiving-owner implementation** from the linked persisted source rather than starting a parallel runtime.
+
+
+## 18 · Oxijolt physics acceptance / test-architecture donor
+
+Persistent donor note:
+`skills/chat/recovery/KFB_OXIJOLT_PHYSICS_ACCEPTANCE_DONOR_2026-10-07.md`
+
+Verified external source:
+`pockerhead/oxijolt@1bb4c1ac08a8ace47f0e826dc14e090f0fc784c1`
+release **1.0.1**.
+
+Classification:
+**HIGH-VALUE PHYSICS ACCEPTANCE / TEST-ARCHITECTURE DONOR · NO CURRENT RUNTIME ADOPTION**
+
+Useful KFB translations:
+- named physics laws/invariants instead of tuning-number acceptance;
+- focused Terrain/Road/Bridge/Track/Sculpt/contact witness scenes;
+- visible + automated regression paths;
+- Physics X-Ray from existing WB2/Rapier/Track facts;
+- deterministic input scripts + semantic digests;
+- save/detour/restore as test philosophy only;
+- island-local-frame/rebase acceptance ideas;
+- scenario-specific p50/p99-style telemetry;
+- later Asset Librarian Physics Readiness lane.
+
+Hard boundary:
+- no Oxijolt/Jolt integration into the first Island MVP;
+- no new Physics owner;
+- no Rust/C++ native build layer in the current Web runtime;
+- no replacement of Rapier;
+- no replacement of WB2 persistence;
+- no new MVP row.
+
+For the current Work/WSA One-Shot, these methods may be used only as **low-risk acceptance/diagnostic techniques behind existing F-R02/03/05/07/10/11/16/17/18/31 rows**. Do not pause the One-Shot to build a generic Physics Lab.
+
+A later bounded tool slice may implement:
+**KFB PHYSICS LAWS + COLLIDER QA LAB R1**.
