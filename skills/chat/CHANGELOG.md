@@ -2694,3 +2694,13 @@ No runtime/product code changed.
 - Open World runtime implementation is paused. Current authorized action is a fresh Work/WSA **read-only Recovery Lead / ChefWSA** audit: reconstruct the immutable Master Acceptance Matrix, audit Coworker + WB2/PR #348 donors, classify Freeze decisions and obtain a fresh independent critic challenge before authorizing one later Integrator.
 - Georg-facing communication is now a binding acceptance criterion: plain German, product-level status and next action only; hashes/branches/run IDs/technical traceability belong in an executor-only appendix.
 - Issue #360 and Production Hub board were rerouted to **RECOVERY AUDIT ONLY**. No runtime implementation, camera/Hex polish, module fan-out, Site publication, merge or Live promotion until the audit returns.
+
+## 2026-10-07 · Open World MVP acceptance made binary
+
+- Georg explicitly retired `Receiving Core` as a product-progress substitute for KFB Open World.
+- Binding rule added at `skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md`.
+- Product-level acceptance now has one criterion: the **complete frozen Acceptance Matrix is green at the required proof level**.
+- Any required row that is partial, missing, conflicted or unproven means the product is **not an accepted MVP**.
+- Subsystems may still be KEEP/PASS donors or useful evidence, but their local status must not be rolled up into “near MVP”, “mostly complete MVP”, “receiving-core MVP” or equivalent aggregate-progress language.
+- The Acceptance Matrix may shrink only after an explicit Georg product decision, never because the newest candidate omitted a feature.
+- ChefWSA Recovery Audit, Issue #360, Production Hub and the Open World contract-collapse postmortem now carry this rule.
