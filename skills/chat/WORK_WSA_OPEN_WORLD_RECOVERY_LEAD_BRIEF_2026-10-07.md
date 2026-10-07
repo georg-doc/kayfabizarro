@@ -45,7 +45,9 @@ Candidate docs may prove candidate state but may never delete, downgrade or post
 
 Allowed writes: recovery/audit docs on `recovery/open-world-master-acceptance-audit-2026-10-07`, Master Matrix, Donor Census, Freeze Audit, Recovery Return, machine-readable MVP ledger, interactive Living Doc, factual Issue #360 result after audit completion.
 
-Forbidden: Open World runtime, PR #348 runtime, Coworker source, camera/Hex/terrain repair, God Mode/Persistence implementation, KFB module integration, Site/Stage publication, merge or Live promotion.
+Forbidden: Open World runtime, PR #348 runtime, Coworker source, camera/Hex/terrain repair, God Mode/Persistence implementation, KFB module integration, **Open World product Site/Stage publication**, merge or Live promotion.
+
+Explicit documentation-surface exception requested by Georg: the read-only MVP Living Doc may be published/updated at `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/` and linked from the KFB Production Hub. This route is an audit projection only; it is never product runtime, MVP acceptance, or a substitute for the final playable Site.
 
 ## Execution order
 
@@ -57,6 +59,9 @@ Keep synchronized:
 - `skills/chat/recovery/OPEN_WORLD_MVP_LIVING_DOC_2026-10-07.html`
 
 The HTML is a projection, not a second contract.
+
+Hub/public projection route: `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/`.
+The published shell loads the recovery-branch JSON ledger live when available and uses published/embedded fallback only if that fetch fails. Routine audit-state changes therefore update the JSON ledger; do not rebuild the HTML for every row change.
 
 ### Phase 1 · Donor census
 For every required row record:
