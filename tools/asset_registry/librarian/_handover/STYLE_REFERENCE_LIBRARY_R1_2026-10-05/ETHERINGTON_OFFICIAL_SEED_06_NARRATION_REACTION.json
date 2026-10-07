@@ -1,0 +1,166 @@
+{
+  "schema": "kfb.style-reference-seed/1",
+  "status": "OFFICIAL_SOURCE_CURATED_TEXTUAL_RESEARCHED_VISUAL_INSPECTION_PENDING",
+  "date": "2026-10-07",
+  "creator": "The Etherington Brothers",
+  "collection": "How to Think When You Write",
+  "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+  "permissionContext": "USER_REPORTED_DIRECT_PERMISSION",
+  "batchId": "ETHERINGTON_OFFICIAL_SEED_06_NARRATION_REACTION",
+  "designPriority": "CURATE_FIRST_CONSUME_LATER",
+  "scope": "NARRATION_REACTION_CHARACTER_FAILURE",
+  "semanticPlacement": {
+    "parent": "COMIC_LANGUAGE",
+    "lanes": [
+      "META_NARRATION",
+      "FAILURE_REACTION",
+      "GROUP_REACTION",
+      "MEMORY_CALLBACK",
+      "LOCAL_VOICE"
+    ]
+  },
+  "policy": {
+    "currentExecutor": "ChatGPT Web Chat",
+    "sourceInspectedInIsolationDefault": false,
+    "remoteImagesMirroredToGitHub": false,
+    "noDuplicateSeedUrls": true,
+    "claudeDesignRole": "ONLY_FOR_LATER_VISUAL_CARRIER_DESIGN",
+    "likelyConsumers": [
+      "historian-meta-narrator",
+      "chatterbox",
+      "resident-dialogue",
+      "resident-performance"
+    ]
+  },
+  "entries": [
+    {
+      "id": "etherington-fourth-wall-2018-06",
+      "title": "The 4th Wall",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/06/how-to-think-when-you-write-fourth-wall.html",
+      "lane": "META_NARRATION",
+      "subject": [
+        "fourth-wall",
+        "audience-address",
+        "meta-narration"
+      ],
+      "useCases": [
+        "historian-meta-narrator",
+        "player-commentary",
+        "comic-narration"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-failure-2018-11",
+      "title": "Failure",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-faliure.html",
+      "lane": "FAILURE_REACTION",
+      "subject": [
+        "failure",
+        "character-reveal",
+        "response-to-setback"
+      ],
+      "useCases": [
+        "death-revival-commentary",
+        "resident-reaction",
+        "heroic-self-image-contrast"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-excuses-2018-11",
+      "title": "Excuses",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-excuses.html",
+      "lane": "FAILURE_REACTION",
+      "subject": [
+        "excuses",
+        "rationalization",
+        "character-reveal",
+        "subtext"
+      ],
+      "useCases": [
+        "post-failure-dialogue",
+        "resident-voice",
+        "self-justification",
+        "rival-banter"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-group-dynamic-2019-01",
+      "title": "The Group Dynamic",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-group.html",
+      "lane": "GROUP_REACTION",
+      "subject": [
+        "group-dynamic",
+        "ensemble",
+        "social-pressure",
+        "multiple-characters"
+      ],
+      "useCases": [
+        "witness-reactions",
+        "resident-groups",
+        "crowd-commentary",
+        "conversation-staging"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-local-colour-2018-05",
+      "title": "Local Colour",
+      "url": "https://theetheringtonbrothers.blogspot.com/2018/05/how-to-think-when-you-write-local.html",
+      "lane": "LOCAL_VOICE",
+      "subject": [
+        "local-colour",
+        "setting",
+        "voice",
+        "place-specific-detail"
+      ],
+      "useCases": [
+        "island-residents",
+        "faction-voice",
+        "historian",
+        "ambient-dialogue"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "id": "etherington-memories-2019-01",
+      "title": "Memories",
+      "url": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-memories.html",
+      "lane": "MEMORY_CALLBACK",
+      "subject": [
+        "memory",
+        "callback",
+        "history",
+        "character"
+      ],
+      "useCases": [
+        "repeat-visit-dialogue",
+        "relationship-memory",
+        "death-revival-callbacks",
+        "historian-afterglow"
+      ],
+      "verification": "OFFICIAL_URL_VERIFIED",
+      "textualResearchStatus": "RESEARCHED",
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "seedCount": 6,
+  "sourceNotes": [
+    "Caption Boxes is already canonical in Seed 04 Graphic FX / Comic Language and is not duplicated here.",
+    "Speech Bubbles is already canonical in Seed 04 and is not duplicated here.",
+    "Small Talk, Speech Patterns, Tics and Tells, Interrupt a Scene and Silence Is Golden remain canonical in Seed 05.",
+    "Show Don't Tell is useful research context but is withheld from this seed until a stable exact tutorial-page locator is pinned."
+  ]
+}
