@@ -1,3 +1,28 @@
+## CURRENT ADDITIVE OVERRIDE · 2026-10-07 · ISLAND MVP MATRIX v4 · STATEFUL THRESHOLD DOOR
+
+Georg added one bounded Strong-Include proof without changing REQUIRED acceptance scope.
+
+Current operational matrix:
+- **44 REQUIRED** — unchanged;
+- **13 STRONGLY INCLUDE** — adds **F-S13 State-dependent Threshold Door / Paper-Facade portal proof**;
+- **7 OPTIONAL PROOF** — unchanged;
+- **operationalVersion = 4**.
+
+F-S13 intent:
+- one source-backed freestanding or Paper/Facade threshold;
+- base/locked state = ordinary local pass-through, no realm change;
+- unlocked/revealed state = existing portal/instance/realm routing or deliberate controlled portal target;
+- walking around the facade remains in the current world and may expose the cardboard/stage construction;
+- threshold consumes authoritative progression/world state and never becomes a second progression/world/portal owner;
+- save/fresh reload preserves the authoritative threshold state.
+
+This is **STRONGLY INCLUDE**, not a 45th REQUIRED row. Full key/quest/realm progression remains outside first-Island MVP scope.
+
+Binding matrix files remain:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.{md,json}`
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY
 
 The binding Work/WSA brief and Frozen Matrix were hardened after an independent Coworker sanity read.
