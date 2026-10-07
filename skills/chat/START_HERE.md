@@ -1,3 +1,27 @@
+## CURRENT OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX OPERATIONALIZED
+
+Georg authorized continued Web-Chat refinement of the bounded-Island MVP contract and persistent crash-safe recovery.
+
+Binding frozen contract:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md`
+
+Machine-readable contract:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
+
+Current state:
+- **44 REQUIRED** rows; product remains **NO MVP** until every REQUIRED row is GREEN.
+- **12 STRONGLY INCLUDE** rows and **7 OPTIONAL PROOF** rows are separately classified.
+- operational matrix v2 adds per-row owner, readiness, smallest missing delta, acceptance proof and forbidden shortcut/quarantine guard.
+- prior 37-row Open-World contract is preserved and explicitly mapped; no required row was deleted.
+- explicit additions/refinements include P0 locomotion + Cartoon Jump, Flight, Drive KEEP+TUNE, Claybound compatibility, grounded/no-pasted-on world placement, real Quote Pool → real Billboard/HyperNormalisation, Early Visual/Physical Golden, Negative Goldens and No-Placeholder firewall.
+- Full Combat remains later; Combat Arena retains full Combat ownership. Seed World/Combat Mech POC is a strong shooting/VFX/destruction donor candidate but must win source-isolated donor arbitration before integration.
+- Fresh-chat recovery path: **START_HERE → Frozen Matrix → Integration Census → current WB2 Island Foundation/PR #348 → Prototype Graveyard only for negative Goldens/salvage**.
+- current next action: prepare exactly one final **ChatGPT Work/WSA Island MVP ONE_SHOT** brief directly from the frozen matrix. Do not reopen broad architecture planning or shorten the required matrix to match an implementation.
+
+No second runtime owner. No auto-merge. No Live promotion. Routine Hub status remains GitHub-live JSON; no Site republish is needed for these planning updates.
+
+---
+
 ## 2026-10-07 · Current Georg steering: bounded islands in WB2
 
 Georg accepted bounded island documents inside the existing WB2 owner and the narrower foundation handoff. Existing-owner recipes, editor, scene store and Track Core remain the receiving contracts. Current [topology decision](https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_TOPOLOGY_DECISION_2026-10-07.md) and [source-backed handoff](https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md) override older execution routing below where conflicting. The old full37 product matrix remains NO MVP. Next gate: one edited bounded island through existing WB2 store, exact fresh load and independent same-seed document isolation; visible geometry/contact/collision must replay. No endless-world optimization, custom street owner, merge or Live. Proposal story, sizes and new schemas remain unapproved. Routine Hub updates use JSON only; existing Site deployment remains unchanged.
