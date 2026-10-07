@@ -90,10 +90,10 @@
       "id": "kfb-world-studio-mvp",
       "owner": "KFB WorldBuilder / WB2",
       "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
-      "status": "SITE_DEPLOYED_FOUR_ISLAND_CANDIDATE_HUMAN_FREEPLAY",
+      "status": "SITE_DEPLOYED_INTERIM_REVIEW_SURFACE",
       "source": "PR #348 runtime 3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-      "humanStatus": "GEORG_FREEPLAY_PENDING",
-      "notes": "Existing Site updated in place with exact frozen 92-file four-island candidate. Sites deployment succeeded; publication is not acceptance. Georg freeplay is the current gate. Automated browser policy service remains unavailable and is nonblocking.",
+      "humanStatus": "INTERIM_WORLD_REVIEW_NOT_FINAL_PUBLIC_GAME_URL",
+      "notes": "Existing World Studio GPT Site remains the current review/authoring surface during Architecture Freeze and integration. It is not the intended final public game URL. Final game target is planned as play-kayfabizarro.frizzlebob.chatgpt.site; do not create a second productive runtime owner before the freeze/integration source is ready.",
       "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
       "siteProject": "appgprj_6ac27631f74c8191b52e4819c1973668",
       "siteVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
@@ -129,9 +129,29 @@
       "humanStatus": "ONE_TOOLBOX_REQUIRED",
       "surfaceRole": "TOOLBOX_ROUTER",
       "notes": "Intended single specialist-tool router URL exists, but exact GPT Site project identity was not resolved in the Hub migration run. Nonblocking for Hub operation; do not create another ToolBox."
+    },
+    {
+      "id": "kfb-play-kayfabizarro",
+      "owner": "KFB Open World / playable game",
+      "url": "https://play-kayfabizarro.frizzlebob.chatgpt.site",
+      "status": "PLANNED_CANONICAL_GAME_SITE_NOT_PUBLISHED",
+      "source": "KFB_OpenWorld/ after Architecture Freeze + integration",
+      "humanStatus": "TARGET_URL_RESERVED_BY_PRODUCT_DECISION",
+      "notes": "Planned final GPT Site for the playable KFB Open World/game. Do not claim deployed or verified until a Sites-capable executor publishes this exact project/URL and the expected integrated revision is visibly verified. Existing kfb-world-studio-mvp1 remains an interim review/authoring surface.",
+      "surfaceRole": "PRODUCT_GAME_PUBLIC"
+    },
+    {
+      "id": "kfb-public-hub",
+      "owner": "KFB public web / kayfabizarro.pages.dev",
+      "url": "https://kayfabizarro.pages.dev/",
+      "status": "EXISTING_PUBLIC_ROUTE_TARGET_REDESIGN_NOT_YET_VERIFIED",
+      "source": "future public-hub integration from canonical GitHub data/assets",
+      "humanStatus": "PLANNED_CANONICAL_PUBLIC_KFB_HUB",
+      "notes": "Target public KFB Hub: rules, full public tab/navigation set, Gumroad/download links, thumbnail gallery/viewer and public-facing KFB entry points. This is distinct from the private Production Hub and from the playable GPT Site. Do not claim the target feature set is live until the exact pages.dev root is verified after implementation.",
+      "surfaceRole": "PUBLIC_HUB"
     }
   ],
-  "updatedAt": "2026-10-06T22:26:00+02:00",
+  "updatedAt": "2026-10-07T11:05:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",
@@ -159,5 +179,11 @@
       "current": false,
       "rule": "Not SSOT, not required recovery, no mandatory sync."
     }
-  ]
+  ],
+  "publicSurfacePlan": {
+    "game": "https://play-kayfabizarro.frizzlebob.chatgpt.site",
+    "publicHub": "https://kayfabizarro.pages.dev/",
+    "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+    "rule": "Game, public hub and private production hub are three distinct surfaces with one source truth in GitHub. No surface may become a second runtime owner."
+  }
 }
