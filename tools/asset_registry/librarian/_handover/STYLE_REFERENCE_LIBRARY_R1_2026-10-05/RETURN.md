@@ -1304,3 +1304,63 @@ Unresolved by design:
 
 One next gate:
 **OPTIONAL Work/WSA source sync of Seeds 05 + 06 into the accepted Asset Librarian R2 Site; Open World consumption remains HOLD until Architecture Freeze.**
+
+
+---
+
+## Historian / Chronicler + Living-Toy expansion · 2026-10-07
+
+Status: **RESEARCH / AUTHORING PREP COMPLETE · SITE-READY DELTA PREPARED · NO RUNTIME WRITE**
+
+Georg decision:
+- narrator role = **Historian**
+- persona register = **Chronicler**
+- working identity = **Historian / Chronicler**
+
+New authoring contract:
+`KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`
+
+New Living-Toy prep:
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md`
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json`
+- `KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json`
+
+Living-Toy event grammar:
+- 13 scenario families;
+- world behavior → Resident reaction → optional ChatterBox → rare Historian framing;
+- one foreground text carrier by default;
+- group witness selection instead of everyone speaking;
+- silence remains valid;
+- no historical event names promoted as current runtime API.
+
+Activity pool:
+- 30 candidate activities;
+- includes work/repair, Fluff/resource flow, archive/card inspection, market/trade, social beats, performance, patrol/search, critter care, daily life, help/cleanup and graveyard witness behavior;
+- `graveyard.keep-watch` is a specific donor for repeat death/revival witness logic;
+- all activities remain proposal data until Architecture Freeze.
+
+Site-ready persistence:
+- `STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json`
+- 11 idempotent upserts from Seeds 05 + 06;
+- KFB research-derived Notes/Principles included;
+- all source-inspection flags remain false;
+- last proven Site = Version 4 / 58 built-ins;
+- expected full post-import corpus = **69 built-ins**;
+- existing accepted Asset Librarian Site/project must be updated in place.
+
+Work/WSA routing updated:
+- combined import brief consumes the Site delta payload;
+- WSA consolidation brief includes Historian / Chronicler decision, 13 scenario families and 30-activity pool;
+- Seed-05-only import remains superseded for new runs.
+
+Validation:
+**17/17 PASS**
+
+No Site deployment occurred in this Web Chat because no Sites publisher is exposed here.
+No Cloudflare substitute was created.
+No Open World runtime write.
+No ChatterBox runtime write.
+No merge / Live promotion.
+
+Exactly one next gate:
+**Sites-capable Work/WSA may import the 11-record Site delta into the existing Asset Librarian; runtime consumption remains HOLD until exact Coworker intake + Architecture Freeze.**
