@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.8",
-  "updatedAt": "2026-10-07T12:52:03Z",
+  "revision": "2026-10-07.9",
+  "updatedAt": "2026-10-07T14:56:06.094Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -34,7 +34,7 @@
       "title": "Continuous Terrain / Surface Truth",
       "required": true,
       "acceptance": "PARTIAL",
-      "current": "WB2 SurfaceTruth erzeugt kontinuierliche Makro-Meshes und dieselben Rapier-Dreiecke. Support-Interpolation und Abschnittsgrenzen unabhängig berechnet. Große-Distanz-Präzisionskorrektur geschrieben; integrierte Track-Kontakt- und normale Sculpt-/Streaming-Abnahme ausstehend.",
+      "current": "Kontinuierliche WB2-Surface- und Track-Kontakt-Grundlagen gesichert. CPU chunk-local mesh verbessert Interpolation; Rapier-Weltkoordinaten bleiben offen. Begrenzter Insel-Frame, Sculpt-/Track-Replay und echte integrierte Abnahme fehlen.",
       "donor": "WB2 continuous height/sculpt mechanism + pinned ProceduralTerrains lineage; preserve Coworker seed/streaming behind corrected Surface Truth",
       "donorRole": "OWNER",
       "decision": "ADAPT",
@@ -755,6 +755,10 @@
         {
           "label": "Factual donor census · exact source pins and evidence limits",
           "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_DONOR_CENSUS_2026-10-07.md"
+        },
+        {
+          "label": "Bounded island source audit and exported seams · not acceptance",
+          "url": "https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md"
         }
       ],
       "acceptanceBasis": "Source-backed capability assessment, not final integrated product acceptance. No required row is GREEN.",
@@ -803,6 +807,10 @@
         {
           "label": "Factual donor census · exact source pins and evidence limits",
           "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_DONOR_CENSUS_2026-10-07.md"
+        },
+        {
+          "label": "Bounded island source audit and exported seams · not acceptance",
+          "url": "https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md"
         }
       ],
       "acceptanceBasis": "Source-backed capability assessment, not final integrated product acceptance. No required row is GREEN.",
@@ -853,6 +861,10 @@
         {
           "label": "Integrator foundation checkpoint · no product acceptance",
           "url": "https://github.com/georg-doc/kayfabizarro/blob/98b82377abf60b1404ff06cfff21ed1acc863f1a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_INTEGRATOR_CHECKPOINT_2026-10-07.md"
+        },
+        {
+          "label": "Bounded island source audit and exported seams · not acceptance",
+          "url": "https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md"
         }
       ],
       "acceptanceBasis": "Implementation and factual partial evidence only. Complete integrated acceptance has not been granted.",
@@ -2092,7 +2104,7 @@
   },
   "recoveryStrategy": "Preserve Coworker seed/streaming/ground mechanisms within existing WorldBuilder owner; correct continuous Surface Truth mesh/collision/contributions and stable IDs first; reuse shared WB2 authoring/sculpt/store/import, then existing-owner KFB seams; independent whole-product gauntlet before human review.",
   "recoverySummary": "Der freigegebene Integrator arbeitet im bestehenden WB2-Owner. Exakter Coworker-Quellstand und Assets sind gesichert. Continuous Surface Truth und stabile Objektaufzeichnungen sind implementiert; unabhängige Teilprüfungen liegen vor. Track Core baut die ersten Straßen. Vollständige Kontakt-, Authoring-, System- und Produktabnahme steht aus; weiterhin NO MVP.",
-  "overview": "Ein WorldBuilder-Owner mit kontinuierlichem Makro-Boden. Hex bleibt Adresse/Planung. Der interne Kandidat startet im Dorf; alle37 Anforderungen bleiben erhalten und keine ist als GREEN abgenommen.",
+  "overview": "Georg hat begrenzte Insel-Dokumente innerhalb WB2 bestätigt. Bestehende Insel-Rezepte, Editor und Speicher werden wiederverwendet. Stand und offene Integrationsnähte sind gesichert; voller MVP bleibt NO MVP.",
   "architecture": [
     {
       "title": "Gemeinsame Weltbasis",
@@ -2197,16 +2209,37 @@
   "siteSource": "6d9b51689c67a29b896e925fd4806e144f961ae2",
   "evidenceCheckpoint": "98b82377abf60b1404ff06cfff21ed1acc863f1a",
   "noRepublishProof": "https://github.com/georg-doc/kayfabizarro/blob/53c1e48399e7ff561b5058338dfa0deb10cce7cf/skills/chat/recovery/evidence/OPEN_WORLD_RECOVERY_2026-10-07/NO_REPUBLISH_PROOF.json",
-  "executionStatus": "INTEGRATOR_RUNNING",
-  "currentExecutor": "ChatGPT Work/WSA · WorldBuilder Integrator",
-  "currentOwner": "KFB WorldBuilder / WB2 · PR #348",
-  "nextGate": "Continue Phase1 contact/identity/stream/edit proof and Phase2 Track junction/bridge/race + source-isolated Joyride, then complete all37 required rows within the authorized One-Shot.",
+  "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
+  "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
+  "currentOwner": "KFB WorldBuilder / WB2",
+  "nextGate": "Eine bearbeitbare begrenzte Insel über den bestehenden WB2-Speicher: getrennte Dokumente mit gleichem Seed und exakter frischer Reload einschließlich sichtbarer Objekt-, Kollisions- und Surface-/Track-Zustände.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
     "summary": "Coworker road graph/planning may be reused as route intent; Track Core owns reusable road/track construction geometry/contact/profile/junction/socket/RouteRecipe, with Joyride presentation and Continuous Terrain Surface Truth integration. Ordinary road and race/stunt road are one modular family, not two renderers."
   },
-  "receivingHead": "98b82377abf60b1404ff06cfff21ed1acc863f1a",
+  "receivingHead": "e82c4c7e164b6258fb535df72e5c28143f2ce4cf",
   "candidateSourceHead": "5f0cdfa2eb4c6927c50ca399f8dbd62fa79dc3a4",
-  "implementationCheckpoint": "https://github.com/georg-doc/kayfabizarro/blob/98b82377abf60b1404ff06cfff21ed1acc863f1a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_INTEGRATOR_CHECKPOINT_2026-10-07.md"
+  "implementationCheckpoint": "https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md",
+  "topologyDecision": {
+    "status": "ACCEPTED_BY_GEORG",
+    "topology": "BOUNDED_ISLAND_DOCUMENTS_WITHIN_WB2",
+    "authority": "Georg explicitly accepted the narrower closure and island direction in the current chat on 2026-10-07.",
+    "owner": "WB2",
+    "decisionUrl": "https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_TOPOLOGY_DECISION_2026-10-07.md",
+    "stillProposals": [
+      "final island sizes",
+      "new candidate schema versions",
+      "Lebensbaum and Genesis story",
+      "Fluff mechanics",
+      "130+ deck expansion"
+    ],
+    "exportedSeams": [
+      "document/session isolation",
+      "authored render/collider replay",
+      "ordered native sculpt replay and Track-fit policy",
+      "complete pinned recipe persistence",
+      "shared island-local physics frame"
+    ]
+  }
 }

@@ -1,3 +1,7 @@
+## 2026-10-07 · Current Georg steering: bounded islands in WB2
+
+Georg accepted bounded island documents inside the existing WB2 owner and the narrower foundation handoff. Existing-owner recipes, editor, scene store and Track Core remain the receiving contracts. Current [topology decision](https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_TOPOLOGY_DECISION_2026-10-07.md) and [source-backed handoff](https://github.com/georg-doc/kayfabizarro/blob/e82c4c7e164b6258fb535df72e5c28143f2ce4cf/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ISLAND_FOUNDATION_RETURN_2026-10-07.md) override older execution routing below where conflicting. The old full37 product matrix remains NO MVP. Next gate: one edited bounded island through existing WB2 store, exact fresh load and independent same-seed document isolation; visible geometry/contact/collision must replay. No endless-world optimization, custom street owner, merge or Live. Proposal story, sizes and new schemas remain unapproved. Routine Hub updates use JSON only; existing Site deployment remains unchanged.
+
 ## CURRENT ADDITIVE OVERRIDE · 2026-10-07 · ROAD / TRACK CORE OWNERSHIP
 
 Georg clarified the existing Road + Joyride/Track requirement while the single Integrator is running.
