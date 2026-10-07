@@ -1270,3 +1270,37 @@ No merge / Live promotion.
 
 Exactly one next gate:
 **OPTIONAL Work/WSA Asset Librarian 58→69 source sync; otherwise continue source/authoring curation while runtime consumption waits for Architecture Freeze.**
+
+
+### Final research/evidence handoff · 2026-10-07
+
+Verified evidence head before this Return write:
+`766e9067e4c08687aea17e4701090d961c25c25a`
+
+Validation:
+**12/12 PASS**
+- Seeds 01–06: 64/64 unique IDs;
+- Seeds 01–06: 64/64 unique canonical URLs;
+- Seed 06 overlap with Seeds 01–05: 0;
+- Seed 05 count: 5;
+- Seed 06 count: 6;
+- authoring JSON schema valid;
+- combined WSA import route: last proven Site 58 → expected 69;
+- Seed-05-only brief superseded;
+- canonical Historian donor audit present;
+- duplicate audit removed.
+
+Prepared Work/WSA route:
+`BRIEF_WORK_WSA_DIALOGUE_INTERACTION_HISTORIAN_CONSOLIDATION_2026-10-07.md`
+
+Prepared Site-sync route:
+`BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`
+
+Unresolved by design:
+- actual Asset Librarian Site still last proven at Version 4 / 58 built-ins;
+- source visuals remain `sourceInspectedInIsolation=false` until actual board inspection;
+- Historian persona/identity remains proposal;
+- exact current Open World event/state seam waits for Coworker intake + Architecture Freeze.
+
+One next gate:
+**OPTIONAL Work/WSA source sync of Seeds 05 + 06 into the accepted Asset Librarian R2 Site; Open World consumption remains HOLD until Architecture Freeze.**
