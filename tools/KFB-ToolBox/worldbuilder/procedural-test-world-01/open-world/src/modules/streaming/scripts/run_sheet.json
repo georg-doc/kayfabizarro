@@ -1,0 +1,14 @@
+[
+  {"camera": "follow"},
+  {"wait": 600},
+  {"down": "KeyW"},
+  {"wait": 8000},
+  {"drag": {"dx": 160, "dy": 0, "ms": 300}},
+  {"wait": 8000},
+  {"drag": {"dx": -160, "dy": 0, "ms": 300}},
+  {"wait": 8000},
+  {"drag": {"dx": 375, "dy": 0, "ms": 400}},
+  {"wait": 8000},
+  {"up": "KeyW"},
+  {"shot": "run_end"}
+]

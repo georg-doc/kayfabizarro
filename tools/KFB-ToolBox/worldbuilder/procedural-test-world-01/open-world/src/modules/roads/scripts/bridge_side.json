@@ -1,0 +1,9 @@
+[
+  {"camera":"follow"},
+  {"wait":1500},
+  {"hold":"KeyW","ms":3300},
+  {"hold":["KeyA","ShiftLeft"],"ms":1800},
+  {"shot":"strafeL"},
+  {"hold":["KeyD","ShiftLeft"],"ms":3000},
+  {"shot":"strafeR"}
+]

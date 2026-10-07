@@ -1,0 +1,17 @@
+[
+  {"camera":"follow"},
+  {"wait":800},
+  {"shot":"s00_step_behind_camera"},
+  {"hold":"KeyS","ms":900},
+  {"shot":"s01_backing_to_step"},
+  {"wait":800},
+  {"shot":"s02_at_step"},
+  {"hold":"KeyW","ms":1800},
+  {"shot":"s03_run_away"},
+  {"wait":800},
+  {"shot":"s04_settled"},
+  {"hold":"KeyS","ms":1400},
+  {"shot":"s05_back_again"},
+  {"hold":"KeyW","ms":2500},
+  {"shot":"s06_run_away_long"}
+]

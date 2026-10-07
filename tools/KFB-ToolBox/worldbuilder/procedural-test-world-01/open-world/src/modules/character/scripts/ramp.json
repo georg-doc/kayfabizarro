@@ -1,0 +1,20 @@
+[
+  {"camera":"character.side"},
+  {"wait":600},
+  {"hold":"KeyS","ms":5750},
+  {"camera":"character.side"},
+  {"hold":"KeyA","ms":2750},
+  {"camera":"character.side"},
+  {"hold":["KeyW","KeyA"],"ms":1500},
+  {"camera":"character.front"},{"wait":150},
+  {"shot":"r1_on_ramp"},
+  {"camera":"character.side"},
+  {"hold":["KeyW","KeyA"],"ms":2000},
+  {"camera":"character.front"},{"wait":150},
+  {"shot":"r2_top"},
+  {"camera":"character.side"},
+  {"hold":["KeyS","KeyD"],"ms":3500},
+  {"wait":300},
+  {"camera":"character.front"},{"wait":150},
+  {"shot":"r3_down_again"}
+]

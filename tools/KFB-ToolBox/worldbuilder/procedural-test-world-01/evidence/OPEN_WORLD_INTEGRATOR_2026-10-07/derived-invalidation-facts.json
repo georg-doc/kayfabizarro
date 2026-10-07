@@ -1,0 +1,144 @@
+{
+  "scope": "Independent Phase1 technical mechanism test and read-only integration source observations; no live product acceptance",
+  "sourceHashes": {
+    "core/world.ts": "5e542b98b50fe4821f7eaa149c2c530964f0a0dc0c204ac783000ce7be657dc7",
+    "core/surface.ts": "a3de7185d6d42fef7523886cc7e11362b55d7d50aeee7a882d175bb28a4ef058",
+    "core/hex.ts": "3dd0549c200fcdfaccd8e4472a43af9d3dbfc62c385b0ba9db8ae1b10ad34b66",
+    "core/units.ts": "96c3a6bc52d7fe70bb3645c0a3e27116904141774bf0df0c1be6d69f7d5ed942",
+    "core/wb2-noise.js": "b5235d8a1bac44176772c9242dc07cda4be94ec38e6d8de7e7885d971ce34aca",
+    "modules/terrain/index.ts": "66ee21da9c6f207166578980b59e06bd644e77f769a0fa7031081e0381a19785",
+    "modules/nature/index.ts": "fa8818d0df0b51f6412847c779cc5184802e13348189201314ca5e21a146aef5",
+    "modules/props/index.ts": "165fbfe0d4b62b0ef4a393ba6b7f9003706c05b677706ac71a889f6abf9aaa40",
+    "modules/streaming/streamer.ts": "a7b50a01aee01fe5b88754504966344498d6b75b40d2a936a134bb4489e1abb5",
+    "modules/villages/api.ts": "1dd354a6ff4f8490db0c13e7593db0bc816fc1bb5adb70ae7be4b67d2115c98f",
+    "core/chunks.ts": "b2b5f6aa79d510ab35fefaaffc5dcf2e374a1774f87c339481808fb34253fbe2"
+  },
+  "facts": {
+    "countsBefore": {
+      "applyCount": 1,
+      "cacheBuildCount": 1
+    },
+    "countsAfter": {
+      "applyCount": 2,
+      "cacheBuildCount": 2
+    },
+    "events": 1,
+    "before": "height:-2.2453463077545166",
+    "after": "height:-0.24534624814987183",
+    "bothMemoAndLayerCacheRecomputed": true
+  },
+  "integrationSourceLines": {
+    "modules/terrain/index.ts": [
+      {
+        "line": 262,
+        "text": "    surface.onChange(()=>{ctx.world.invalidateDerived();ctx.chunks.clear();ctx.events.emit('surface:changed',{revision:surface.revision});});"
+      },
+      {
+        "line": 263,
+        "text": "    ctx.services.set('terrain',{heightAt:(x:number,z:number)=>surface.heightAt(x,z),gen:g,surface,waterMaterial:water.material,stats:()=>({owner:'WB2.SurfaceTruth',revision:surface.revision})});"
+      }
+    ],
+    "modules/nature/index.ts": [
+      {
+        "line": 142,
+        "text": "    job = new PlanJob({ seed: ctx.world.seed, cell: (q, r) => ctx.world.cell(q, r), heightAt: (x, z) => ctx.world.heightAt(x, z), meadow: ctx.params.get('natmeadow') !== '0' }, protos, cx, cz, [...chunkCells(cx, cz)]);"
+      },
+      {
+        "line": 199,
+        "text": "  return ctx.world.heightAt(p.x, p.z);"
+      },
+      {
+        "line": 225,
+        "text": "      if (ctx.world.heightAt(x, z) > y - 0.6) ok = false;"
+      },
+      {
+        "line": 268,
+        "text": "    return orbitToView({ target: [x + v.x * 2, ctx.world.heightAt(x, z) + 2.2, z + v.z * 2], yaw: yawOf(-v.x, -v.z) + 35, pitch: 10, dist: 13 });"
+      },
+      {
+        "line": 301,
+        "text": "    const y = ctx.world.heightAt(t.x, t.z);"
+      },
+      {
+        "line": 383,
+        "text": "    return orbitToView({ target: [p.x, ctx.world.heightAt(p.x, p.z), p.z], yaw: 30, pitch: 40, dist: 170 });"
+      },
+      {
+        "line": 433,
+        "text": "    out.push([x, ctx.world.heightAt(x, z), z, Math.atan2(-v.x, -v.z)]);"
+      },
+      {
+        "line": 443,
+        "text": "      out.push([x, ctx.world.heightAt(x, z), z, 0.4]);"
+      },
+      {
+        "line": 455,
+        "text": "    ctx.events.on('surface:changed',()=>{planCache.clear();jobs.clear();details.clear();});"
+      },
+      {
+        "line": 461,
+        "text": "    ctx.events.on('chunk:unloaded', ({ cx, cz }) => {"
+      }
+    ],
+    "modules/props/index.ts": [
+      {
+        "line": 409,
+        "text": "const fallback = (ctx: CoreContext): CameraView => orbitToView({ target: [0, ctx.world.heightAt(0, 0), 0], yaw: 30, pitch: 40, dist: 120 });"
+      },
+      {
+        "line": 430,
+        "text": "    if (ctx.world.heightAt(x, z) > y - 0.4) return false;"
+      },
+      {
+        "line": 493,
+        "text": "    ctx.events.on('surface:changed',()=>{plans.clear();pending.clear();crossings.clear();rests.clear();foundV.clear();});"
+      }
+    ],
+    "modules/streaming/streamer.ts": [
+      {
+        "line": 121,
+        "text": "    ctx.events.on('surface:changed',()=>{"
+      },
+      {
+        "line": 125,
+        "text": "    ctx.events.on('chunk:unloaded', ({ cx, cz }) => {"
+      },
+      {
+        "line": 203,
+        "text": "    const h = cam.y - this.ctx.world.heightAt(f.x, f.z);"
+      }
+    ],
+    "modules/villages/api.ts": [
+      {
+        "line": 79,
+        "text": "  const fit=(w:{x:number;y:number;z:number})=>({...w,y:surfaceFor(seed).heightAt(w.x,w.z)});"
+      },
+      {
+        "line": 82,
+        "text": "    id: p.id, kind: p.kind, feature: p.feature, centre: { ...p.centre }, world: { x: w.x, y: surfaceFor(seed).heightAt(w.x,w.z), z: w.z }, level: p.level,"
+      },
+      {
+        "line": 86,
+        "text": "      const y = surfaceFor(seed).heightAt(w.x,w.z); // all village cells sit at their own flat level; see items[].world.y"
+      },
+      {
+        "line": 92,
+        "text": "          world: { x: w.x + it.x, y: surfaceFor(seed).heightAt(w.x+it.x,w.z+it.z), z: w.z + it.z },"
+      },
+      {
+        "line": 144,
+        "text": "    world: { x: w.x + it.x, y: surfaceFor(seed).heightAt(w.x+it.x,w.z+it.z), z: w.z + it.z },"
+      }
+    ],
+    "core/chunks.ts": [
+      {
+        "line": 365,
+        "text": "    this.ctx.events.emit('chunk:unloaded', { cx: c.cx, cz: c.cz });"
+      }
+    ]
+  },
+  "limits": [
+    "WorldModel recomputation uses an explicit tester fixture layer, not actual full world runtime",
+    "Nature/props/streamer cache handlers are source-observed, not normal-input runtime verified"
+  ]
+}

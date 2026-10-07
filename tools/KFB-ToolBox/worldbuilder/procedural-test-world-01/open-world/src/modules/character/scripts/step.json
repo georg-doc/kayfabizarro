@@ -1,0 +1,51 @@
+[
+ {
+  "camera": "character.step"
+ },
+ {
+  "wait": 600
+ },
+ {
+  "hold": "KeyD",
+  "ms": 3000
+ },
+ {
+  "wait": 500
+ },
+ {
+  "shot": "s1_up_on_04_step"
+ },
+ {
+  "hold": "KeyA",
+  "ms": 1300
+ },
+ {
+  "wait": 500
+ },
+ {
+  "shot": "s2_stepped_down"
+ },
+ {
+  "hold": "KeyD",
+  "ms": 1200
+ },
+ {
+  "wait": 500
+ },
+ {
+  "shot": "s3_stepped_up_again"
+ },
+ {
+  "hold": [
+   "ShiftLeft",
+   "KeyA"
+  ],
+  "ms": 2500
+ },
+ {
+  "wait": 600
+ },
+ {
+  "shot": "s4_walked_down"
+ }
+]

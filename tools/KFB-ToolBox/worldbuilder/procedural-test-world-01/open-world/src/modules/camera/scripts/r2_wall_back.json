@@ -1,0 +1,23 @@
+[
+  {"camera":"follow"},
+  {"wait":800},
+  {"shot":"w00_start_facing_away"},
+  {"hold":"KeyS","ms":1800},
+  {"shot":"w01_backed_into_wall"},
+  {"wait":1000},
+  {"shot":"w02_pinned_1s"},
+  {"wait":2000},
+  {"shot":"w03_pinned_3s"},
+  {"drag":{"dx":250,"dy":0,"ms":600}},
+  {"wait":500},
+  {"shot":"w04_orbit_right"},
+  {"drag":{"dx":-500,"dy":0,"ms":900}},
+  {"wait":500},
+  {"shot":"w05_orbit_left"},
+  {"hold":"KeyS","ms":800},
+  {"shot":"w06_back_again"},
+  {"hold":"KeyW","ms":1500},
+  {"shot":"w07_run_away"},
+  {"wait":1200},
+  {"shot":"w08_settled"}
+]

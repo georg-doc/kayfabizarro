@@ -1,0 +1,11 @@
+[
+  {"camera":"follow"},
+  {"wait":800},
+  {"down":"KeyW"},
+  {"hold":"KeyA","ms":700},{"wait":900},{"hold":"KeyD","ms":900},{"wait":700},
+  {"hold":"KeyA","ms":1200},{"wait":1000},{"hold":"KeyD","ms":600},{"wait":1500},
+  {"hold":"KeyD","ms":1500},{"wait":1000},{"hold":"KeyA","ms":800},{"wait":2000},
+  {"up":"KeyW"},
+  {"wait":800},
+  {"shot":"f1_end"}
+]

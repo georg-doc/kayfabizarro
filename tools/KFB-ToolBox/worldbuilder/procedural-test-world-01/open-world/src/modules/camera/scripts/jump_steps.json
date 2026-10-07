@@ -1,0 +1,23 @@
+[
+  {"camera":"follow"},
+  {"wait":600},
+  {"shot":"js_start"},
+  {"press":"Space"},
+  {"wait":1300},
+  {"down":"KeyW"},
+  {"wait":1200},
+  {"press":"Space"},
+  {"wait":1200},
+  {"press":"Space"},
+  {"wait":1200},
+  {"up":"KeyW"},
+  {"shot":"js_mid"},
+  {"drag":{"dx":-260,"dy":0,"ms":900}},
+  {"down":"KeyW"},
+  {"wait":800},
+  {"press":"Space"},
+  {"wait":1500},
+  {"up":"KeyW"},
+  {"wait":800},
+  {"shot":"js_end"}
+]

@@ -1,0 +1,391 @@
+{
+ "url": "http://127.0.0.1:5180/?seed=1337&stream=0",
+ "mode": "run",
+ "secs": 60,
+ "consoleErrors": [],
+ "pageErrors": [],
+ "warnings": [],
+ "otherRunsAtStart": 4,
+ "bootMs": 11516,
+ "steers": 2,
+ "over33Split": {
+  "externalOrGpu": 16,
+  "ownCpu": 13
+ },
+ "frames": 3548,
+ "fpsAvg": 59,
+ "p50": 16.7,
+ "p95": 18.9,
+ "p99": 32.5,
+ "max": 73.7,
+ "over33": 29,
+ "over50": 5,
+ "hist": {
+  "0-8": 22,
+  "8-12": 22,
+  "12-17": 2270,
+  "17-20": 1121,
+  "20-25": 43,
+  "25-33": 38,
+  "33-50": 27,
+  "50-100": 5,
+  "100-200": 0,
+  "200-500": 0,
+  "500-∞": 0
+ },
+ "drawCalls": {
+  "p50": 143,
+  "max": 158
+ },
+ "triangles": {
+  "p50": 623421,
+  "max": 737304
+ },
+ "chunksBuilt": 14,
+ "distanceM": 228,
+ "worst": [
+  {
+   "t": 53196.9,
+   "ms": 73.7,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 6,
+   "attr": {
+    "chunks.update": 63.4,
+    "b:terrain": 25.9,
+    "b:nature": 25.6,
+    "world": 22.2,
+    "physics": 4.2,
+    "render": 1.8
+   }
+  },
+  {
+   "t": 5463.3,
+   "ms": 67,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 29,
+   "newPrograms": 2,
+   "newTextures": 0,
+   "newGeometries": 7,
+   "attr": {
+    "render": 50.4,
+    "physics": 2.1
+   }
+  },
+  {
+   "t": 53050.7,
+   "ms": 55.7,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 38.4,
+    "render": 16.1
+   }
+  },
+  {
+   "t": 55253.9,
+   "ms": 53.4,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 9.3,
+    "render": 1.7
+   }
+  },
+  {
+   "t": 55486.4,
+   "ms": 51.5,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 9.2,
+    "render": 1.8
+   }
+  },
+  {
+   "t": 55915.4,
+   "ms": 50,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 6.6,
+    "render": 1.2
+   }
+  },
+  {
+   "t": 45808.7,
+   "ms": 47.2,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 6,
+   "attr": {
+    "chunks.update": 27.2,
+    "b:nature": 12.4,
+    "b:terrain": 3.6,
+    "physics": 2.9,
+    "render": 1.8,
+    "world": 0.9,
+    "b:roads": 0.5
+   }
+  },
+  {
+   "t": 55434.9,
+   "ms": 43.7,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 8.3,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 52995,
+   "ms": 42.5,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 24.1,
+    "render": 9.2
+   }
+  },
+  {
+   "t": 55391.2,
+   "ms": 42.5,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 6.3,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 4038.7,
+   "ms": 41.6,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 29,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 5,
+   "attr": {
+    "chunks.update": 24.5,
+    "b:nature": 14.9,
+    "b:terrain": 4,
+    "physics": 2.9,
+    "render": 1.7,
+    "world": 1.5
+   }
+  },
+  {
+   "t": 55056.7,
+   "ms": 40.4,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 5.8,
+    "render": 2.2
+   }
+  }
+ ],
+ "newPrograms": [
+  {
+   "t": 5463,
+   "names": [
+    "terrain-water physical,STANDARD,,highp,srgb-linear,false,,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,fa",
+    "terrain-shore physical,STANDARD,,highp,srgb-linear,false,,uv,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false"
+   ]
+  }
+ ],
+ "attrPerFrameAvg": {
+  "physics": 2.2,
+  "render": 1.33,
+  "l:character": 0.14,
+  "chunks.update": 0.13,
+  "l:camera": 0.09,
+  "b:nature": 0.03,
+  "u:character": 0.02,
+  "b:terrain": 0.02,
+  "u:nature": 0.01,
+  "u:environment": 0.01,
+  "world": 0.01,
+  "u:streaming": 0.01,
+  "u:roads": 0,
+  "chunks.unload": 0,
+  "u:terrain": 0,
+  "b:props": 0,
+  "u:assets": 0,
+  "l:assets": 0,
+  "u:camera": 0,
+  "b:roads": 0,
+  "b:villages": 0
+ },
+ "path": [
+  [
+   1,
+   0,
+   2.8
+  ],
+  [
+   6,
+   -2.1,
+   17
+  ],
+  [
+   11,
+   -22,
+   21
+  ],
+  [
+   16,
+   -39,
+   34.3
+  ],
+  [
+   21,
+   -60.4,
+   35.2
+  ],
+  [
+   26,
+   -80.5,
+   39.8
+  ],
+  [
+   31,
+   -97.3,
+   53.1
+  ],
+  [
+   36,
+   -117.6,
+   56.9
+  ],
+  [
+   41,
+   -138.6,
+   58.5
+  ],
+  [
+   46,
+   -152.9,
+   73
+  ],
+  [
+   51,
+   -172,
+   80.5
+  ],
+  [
+   56,
+   -186.7,
+   80.4
+  ]
+ ],
+ "stats": {
+  "fps": 61,
+  "drawCalls": 143,
+  "triangles": 604878,
+  "chunks": 34,
+  "chunksPending": 0,
+  "chunkBuildMs": 0,
+  "geometries": 221,
+  "textures": 21,
+  "frame": 3709,
+  "failedLayers": [],
+  "missingAssets": [],
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)"
+ },
+ "modules": [],
+ "extra": {
+  "terrain": {
+   "chunks": 42,
+   "ms": 7250.600000023842,
+   "maxMs": 7069.900000035763,
+   "tiles": 491,
+   "colliders": 3003,
+   "avgMs": 172.63
+  },
+  "nature": {
+   "planMs": 249.70000022649765,
+   "mergeMs": 125.49999994039536,
+   "chunks": 42,
+   "ms": 383.70000010728836,
+   "maxMs": 42.200000047683716,
+   "trees": 3552,
+   "bushes": 2168,
+   "rocks": 837,
+   "grass": 4209,
+   "tris": 947572,
+   "colliders": 4160,
+   "avgMs": 9.14
+  },
+  "roads": {
+   "render": {
+    "chunks": 42,
+    "ms": 21.30000013113022,
+    "maxMs": 10.199999988079071,
+    "roadTiles": 264,
+    "riverTiles": 58,
+    "bridges": 3,
+    "missing": 0
+   },
+   "road": {
+    "paths": 957,
+    "failed": 79,
+    "relaxed": 254,
+    "ms": 8144.699999570847,
+    "expansions": 1510638,
+    "fb": 639,
+    "fbOk": 514
+   },
+   "river": {
+    "links": 138,
+    "failed": 0,
+    "relaxed": 3,
+    "ms": 2993.499999821186
+   },
+   "prefetch": null
+  }
+ },
+ "inPageErrors": [],
+ "otherRunsAtEnd": 5
+}

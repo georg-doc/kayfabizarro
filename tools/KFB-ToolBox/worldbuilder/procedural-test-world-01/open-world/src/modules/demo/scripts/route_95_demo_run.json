@@ -1,0 +1,121 @@
+[
+ {
+  "camera": "follow"
+ },
+ {
+  "wait": 1500
+ },
+ {
+  "shot": "start"
+ },
+ {
+  "drag": {
+   "dx": 125,
+   "dy": 0,
+   "ms": 100
+  }
+ },
+ {
+  "wait": 400
+ },
+ {
+  "until": "true",
+  "mark": "go:demo:run"
+ },
+ {
+  "down": "KeyW"
+ },
+ {
+  "until": "(()=>{const p=__kfb.player().pos;return (p[0]-(180))*(0.5000)+(p[2]-(25.98))*(0.8660)>-0.90})()",
+  "timeout": 16538,
+  "mark": "run1.0"
+ },
+ {
+  "up": "KeyW"
+ },
+ {
+  "until": "(()=>{const s=__kfb.player();return s.speed<0.25})()",
+  "timeout": 4000
+ },
+ {
+  "drag": {
+   "dx": -249,
+   "dy": 0,
+   "ms": 100
+  }
+ },
+ {
+  "wait": 400
+ },
+ {
+  "down": "KeyW"
+ },
+ {
+  "until": "(()=>{const p=__kfb.player().pos;return (p[0]-(195))*(1.0000)+(p[2]-(25.98))*(0.0000)>-0.90})()",
+  "timeout": 16538,
+  "mark": "run1.1"
+ },
+ {
+  "up": "KeyW"
+ },
+ {
+  "until": "(()=>{const s=__kfb.player();return s.speed<0.25})()",
+  "timeout": 4000
+ },
+ {
+  "drag": {
+   "dx": -249,
+   "dy": 0,
+   "ms": 100
+  }
+ },
+ {
+  "wait": 400
+ },
+ {
+  "down": "KeyW"
+ },
+ {
+  "until": "(()=>{const p=__kfb.player().pos;return (p[0]-(240))*(0.5000)+(p[2]-(-51.96))*(-0.8660)>-0.90})()",
+  "timeout": 59228,
+  "mark": "run1.2"
+ },
+ {
+  "up": "KeyW"
+ },
+ {
+  "until": "(()=>{const s=__kfb.player();return s.speed<0.25})()",
+  "timeout": 4000
+ },
+ {
+  "drag": {
+   "dx": 499,
+   "dy": 0,
+   "ms": 100
+  }
+ },
+ {
+  "wait": 400
+ },
+ {
+  "down": "KeyW"
+ },
+ {
+  "until": "(()=>{const p=__kfb.player().pos;return (p[0]-(257.13))*(0.5001)+(p[2]-(-22.3))*(0.8660)>-0.30&&Math.abs((p[0]-(257.13))*(0.8660)-(p[2]-(-22.3))*(0.5001))<3})()",
+  "timeout": 27496,
+  "mark": "arrive:demo:run"
+ },
+ {
+  "up": "KeyW"
+ },
+ {
+  "until": "(()=>{const s=__kfb.player();return s.speed<0.25})()",
+  "timeout": 4000
+ },
+ {
+  "wait": 1200
+ },
+ {
+  "shot": "end"
+ }
+]

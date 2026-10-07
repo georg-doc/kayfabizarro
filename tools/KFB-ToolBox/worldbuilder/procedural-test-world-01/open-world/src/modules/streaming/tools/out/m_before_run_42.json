@@ -1,0 +1,422 @@
+{
+ "url": "http://127.0.0.1:5180/?seed=42&stream=0",
+ "mode": "run",
+ "secs": 60,
+ "consoleErrors": [
+  "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+ ],
+ "pageErrors": [],
+ "warnings": [
+  "[module:demo] failed to import; skipped TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5180/src/modules/demo/index.ts"
+ ],
+ "otherRunsAtStart": 2,
+ "bootMs": 14537,
+ "steers": 2,
+ "over33Split": {
+  "externalOrGpu": 1,
+  "ownCpu": 12
+ },
+ "frames": 3704,
+ "fpsAvg": 59.8,
+ "p50": 16.6,
+ "p95": 19.2,
+ "p99": 22,
+ "max": 62.7,
+ "over33": 13,
+ "over50": 3,
+ "hist": {
+  "0-8": 20,
+  "8-12": 30,
+  "12-17": 2358,
+  "17-20": 1195,
+  "20-25": 77,
+  "25-33": 11,
+  "33-50": 10,
+  "50-100": 3,
+  "100-200": 0,
+  "200-500": 0,
+  "500-∞": 0
+ },
+ "drawCalls": {
+  "p50": 148,
+  "max": 177
+ },
+ "triangles": {
+  "p50": 500494,
+  "max": 647209
+ },
+ "chunksBuilt": 12,
+ "distanceM": 229,
+ "worst": [
+  {
+   "t": 16036.4,
+   "ms": 62.7,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 33,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 5,
+   "attr": {
+    "chunks.update": 43.2,
+    "b:nature": 27.1,
+    "b:terrain": 12.4,
+    "world": 8.3,
+    "physics": 3,
+    "render": 1.3
+   }
+  },
+  {
+   "t": 41036.1,
+   "ms": 61.5,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 5,
+   "attr": {
+    "chunks.update": 44.6,
+    "b:nature": 29.8,
+    "b:terrain": 10.6,
+    "world": 7.4,
+    "physics": 3.3,
+    "render": 1.4
+   }
+  },
+  {
+   "t": 12146.4,
+   "ms": 54.9,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 31,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 36.1,
+    "b:nature": 18.8,
+    "physics": 3.4,
+    "b:terrain": 2.5,
+    "render": 1,
+    "world": 0.6
+   }
+  },
+  {
+   "t": 53386.1,
+   "ms": 45.3,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 27.1,
+    "b:nature": 17.7,
+    "physics": 5.3,
+    "b:terrain": 4.1,
+    "world": 1.5,
+    "render": 1.4
+   }
+  },
+  {
+   "t": 4187.2,
+   "ms": 44.5,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 29,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 7,
+   "attr": {
+    "chunks.update": 26.5,
+    "b:nature": 17.5,
+    "physics": 3.8,
+    "b:terrain": 2.8,
+    "render": 1.8
+   }
+  },
+  {
+   "t": 50198.8,
+   "ms": 41.4,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 7,
+   "attr": {
+    "chunks.update": 26.2,
+    "b:nature": 18.1,
+    "b:terrain": 4.6,
+    "physics": 2.9,
+    "render": 1.6
+   }
+  },
+  {
+   "t": 44796.8,
+   "ms": 40.3,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 33,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 7,
+   "attr": {
+    "chunks.update": 22.1,
+    "b:nature": 9.7,
+    "b:terrain": 3.9,
+    "physics": 3,
+    "world": 1.9,
+    "b:props": 1.7,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 23963.7,
+   "ms": 38.1,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 5,
+   "attr": {
+    "chunks.update": 22.2,
+    "b:nature": 15.5,
+    "b:terrain": 3.8,
+    "physics": 3.1,
+    "world": 1.6,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 48879,
+   "ms": 38,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 33,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 8,
+   "attr": {
+    "chunks.update": 21.7,
+    "b:nature": 5.2,
+    "physics": 3.6,
+    "b:terrain": 3,
+    "render": 1.5,
+    "world": 1.2
+   }
+  },
+  {
+   "t": 21411.8,
+   "ms": 37.1,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 19.4,
+    "b:nature": 12.8,
+    "physics": 4.1,
+    "b:terrain": 3.4,
+    "render": 1.4,
+    "world": 1.3
+   }
+  },
+  {
+   "t": 13811.5,
+   "ms": 37,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 4,
+   "attr": {
+    "chunks.update": 19.9,
+    "b:nature": 10.6,
+    "b:terrain": 5.1,
+    "physics": 2.9,
+    "world": 2.5,
+    "render": 1.2
+   }
+  },
+  {
+   "t": 54577.7,
+   "ms": 36.2,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 8.2,
+    "render": 5.2
+   }
+  }
+ ],
+ "newPrograms": [],
+ "attrPerFrameAvg": {
+  "physics": 2.64,
+  "render": 1.31,
+  "l:camera": 0.17,
+  "chunks.update": 0.16,
+  "l:character": 0.15,
+  "b:nature": 0.05,
+  "u:character": 0.02,
+  "b:terrain": 0.02,
+  "u:nature": 0.01,
+  "u:environment": 0.01,
+  "world": 0.01,
+  "u:streaming": 0.01,
+  "u:roads": 0,
+  "chunks.unload": 0,
+  "u:terrain": 0,
+  "u:camera": 0,
+  "l:assets": 0,
+  "u:assets": 0,
+  "b:props": 0,
+  "b:roads": 0,
+  "b:villages": 0
+ },
+ "path": [
+  [
+   1,
+   0,
+   2.1
+  ],
+  [
+   6,
+   0,
+   23.8
+  ],
+  [
+   11,
+   -0.7,
+   43.4
+  ],
+  [
+   16,
+   -11.8,
+   57.9
+  ],
+  [
+   21,
+   -23.4,
+   72.2
+  ],
+  [
+   26,
+   -38.3,
+   77.6
+  ],
+  [
+   31,
+   -43.7,
+   95.7
+  ],
+  [
+   36,
+   -33.6,
+   102.5
+  ],
+  [
+   41,
+   -22.6,
+   119.8
+  ],
+  [
+   46,
+   -17.9,
+   138.7
+  ],
+  [
+   51,
+   -5.2,
+   154.7
+  ],
+  [
+   56,
+   7.2,
+   154.5
+  ],
+  [
+   61,
+   10.8,
+   149.3
+  ]
+ ],
+ "stats": {
+  "fps": 61,
+  "drawCalls": 158,
+  "triangles": 591277,
+  "chunks": 35,
+  "chunksPending": 0,
+  "chunkBuildMs": 0,
+  "geometries": 223,
+  "textures": 21,
+  "frame": 3874,
+  "failedLayers": [],
+  "missingAssets": [],
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)"
+ },
+ "modules": [],
+ "extra": {
+  "terrain": {
+   "chunks": 40,
+   "ms": 7801.80000013113,
+   "maxMs": 7641.100000023842,
+   "tiles": 576,
+   "colliders": 2940,
+   "avgMs": 195.05
+  },
+  "nature": {
+   "planMs": 297.29999989271164,
+   "mergeMs": 118.99999994039536,
+   "chunks": 40,
+   "ms": 425.6999997496605,
+   "maxMs": 31.899999976158142,
+   "trees": 3474,
+   "bushes": 1964,
+   "rocks": 772,
+   "grass": 3983,
+   "tris": 833505,
+   "colliders": 4039,
+   "avgMs": 10.64
+  },
+  "roads": {
+   "render": {
+    "chunks": 40,
+    "ms": 17.600000023841858,
+    "maxMs": 7.699999988079071,
+    "roadTiles": 272,
+    "riverTiles": 86,
+    "bridges": 4,
+    "missing": 0
+   },
+   "road": {
+    "paths": 884,
+    "failed": 77,
+    "relaxed": 264,
+    "ms": 8937.299999833107,
+    "expansions": 1447031,
+    "fb": 652,
+    "fbOk": 538
+   },
+   "river": {
+    "links": 133,
+    "failed": 0,
+    "relaxed": 1,
+    "ms": 3184.7999997735023
+   },
+   "prefetch": null
+  }
+ },
+ "inPageErrors": [],
+ "otherRunsAtEnd": 7
+}

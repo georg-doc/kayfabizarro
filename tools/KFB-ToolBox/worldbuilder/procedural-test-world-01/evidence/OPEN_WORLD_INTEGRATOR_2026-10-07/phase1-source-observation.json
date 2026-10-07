@@ -1,0 +1,61 @@
+{
+  "scope": "Independent source-view observation only; not visual acceptance or final product proof",
+  "observedAt": "2026-10-07T12:39:56.695951+00:00",
+  "url": "http://localhost:5198/?showcase=assets&view=scale&sourceView=assets.door",
+  "browser": "Chrome CUA browser 2",
+  "tab": "867476124",
+  "screenshot": "phase1-source-door.jpg",
+  "visible": [
+    "house with door and roof",
+    "3D Knight with Idle_A source clip selected by showcase code",
+    "metre ruler and Knight 1.89 m label",
+    "original showcase ground field"
+  ],
+  "warningErrorLogObservation": [],
+  "readyObservation": "Loading overlay disappeared; debug.ts declares overlay removal in markReady after __kfb.ready=true. DOM contains no separate visible ready marker.",
+  "sourceRecords": [
+    {
+      "id": "hex/buildings/blue/building_home_A_blue",
+      "manifest": {
+        "url": "assets/hex/buildings/blue/building_home_A_blue.gltf",
+        "pack": "hex",
+        "scale": "HEX_SCALE"
+      },
+      "file": "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/work/open-world-integrator-2026-10-07/receiving/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/public/assets/hex/buildings/blue/building_home_A_blue.gltf",
+      "sha256": "60b3568e086d586b491eed8168c46acb61bb9670fb2c296faa64929b18dfcbea"
+    },
+    {
+      "id": "char/Knight",
+      "manifest": {
+        "url": "assets/char/Knight.glb",
+        "pack": "char",
+        "scale": "CHAR_SCALE"
+      },
+      "file": "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/work/open-world-integrator-2026-10-07/receiving/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/public/assets/char/Knight.glb",
+      "sha256": "e484370733824a0740683e7f6040aae0d20e5efd4107dde1175d6a2ad7e2f199"
+    },
+    {
+      "id": "anim/Rig_Medium_General",
+      "manifest": {
+        "url": "assets/anim/Rig_Medium_General.glb",
+        "pack": "anim",
+        "scale": "CHAR_SCALE"
+      },
+      "file": "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/work/open-world-integrator-2026-10-07/receiving/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/open-world/public/assets/anim/Rig_Medium_General.glb",
+      "sha256": "5f725c0f745f36078c7238968cd5c04843cbc6260689eb6e7f5e2bbd7ffdd7ad"
+    }
+  ],
+  "implementationHashes": {
+    "src/core/main.ts": "21e16de05f83168fb30a8dc46dc7d04982156e99ee8c6cb4515a4e942069c9bc",
+    "src/core/debug.ts": "049a76340f1cbdf866cde46afbad6fd703e525032b938725c7942a966ab4a58a",
+    "src/modules/assets/showcase-scale.ts": "95b39a549f6f90bf950c40b8db75b307c298e23ede20652499129e39de6b3d94",
+    "public/assets/manifest.json": "dc53fcc783eb580df69b28f9f00d5e881b0276f9ee25e4c69afb55b933519fd9"
+  },
+  "limitations": [
+    "No Golden/clay/source-fidelity score",
+    "No normal-input gameplay or Ground controls tested",
+    "No original/adapted integrated comparison",
+    "No network-failure adapter proof",
+    "Uncommitted implementation identified by exact file hashes rather than a deployed revision"
+  ]
+}

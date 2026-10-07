@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KFB Open World</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #9fd3f0; overflow: hidden; }
+    canvas { display: block; }
+    #hud { position: fixed; left: 12px; bottom: 10px; font: 12px/1.4 ui-rounded, system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px #0008; pointer-events: none; user-select: none; }
+    #loading { position: fixed; inset: 0; display: grid; place-items: center; font: 600 18px ui-rounded, system-ui, sans-serif; color: #fff; text-shadow: 0 1px 3px #0006; background: #9fd3f0; transition: opacity .4s; }
+  </style>
+</head>
+<body>
+  <div id="loading">Loading world…</div>
+  <div id="hud"></div>
+  <script type="module" src="/src/core/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "scope": "implementation checks only; no visual/product acceptance",
+  "results": [
+    {
+      "name": "support agrees with rendered/collision triangle interior",
+      "pass": true,
+      "worstErrorMetres": 2.2086588380432204e-7
+    },
+    {
+      "name": "cross chunk q shared vertices exact",
+      "pass": true,
+      "worstErrorMetres": 0
+    },
+    {
+      "name": "cross chunk r shared vertices exact",
+      "pass": true,
+      "worstErrorMetres": 0
+    },
+    {
+      "name": "sculpt invalidates and changes same triangles",
+      "pass": true
+    },
+    {
+      "name": "reversible sculpt restore",
+      "pass": true
+    },
+    {
+      "name": "semantic identity survives stream lifecycle",
+      "pass": true
+    }
+  ]
+}

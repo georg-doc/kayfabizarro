@@ -1,0 +1,423 @@
+{
+ "url": "http://127.0.0.1:5180/?flythrough=1&seed=42&stream=0",
+ "mode": "fly",
+ "secs": 60,
+ "consoleErrors": [],
+ "pageErrors": [],
+ "warnings": [
+  "[events] handler for ready threw TypeError: Cannot read properties of undefined (reading 'q')\n    at fix (http://127.0.0.1:5180/src/modules/demo/index.ts:78:31)\n    at refineForest (http://127.0.0.1:5180/src/modules/demo/index.ts:100:12)\n    at http://127.0.0.1:5180/src/modules/demo/index.ts:308:32\n    at Events.emit (http://127.0.0.1:5180/src/core/events.ts:14:5)\n    at main (http://127.0.0.1:5180/src/core/main.ts:67:16)",
+  "[module:demo] error: TypeError: Cannot read properties of undefined (reading 'q')\n    at fix (http://127.0.0.1:5180/src/modules/demo/index.ts:78:31)\n    at refineForest (http://127.0.0.1:5180/src/modules/demo/index.ts:100:12)\n    at Object.update (http://127.0.0.1:5180/src/modules/demo/index.ts:314:33)\n    at Engine.runUpdate (http://127.0.0.1:5180/src/core/engine.ts:184:6)\n    at Engine.tick (http://127.0.0.1:5180/src/core/engine.ts:152:38)\n    at http://127.0.0.1:5180/src/core/engine.ts:135:45\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:51957:34)\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:42009:3)",
+  "[module:demo] error: TypeError: Cannot read properties of undefined (reading 'q')\n    at fix (http://127.0.0.1:5180/src/modules/demo/index.ts:78:31)\n    at refineForest (http://127.0.0.1:5180/src/modules/demo/index.ts:100:12)\n    at Object.update (http://127.0.0.1:5180/src/modules/demo/index.ts:314:33)\n    at Engine.runUpdate (http://127.0.0.1:5180/src/core/engine.ts:184:6)\n    at Engine.tick (http://127.0.0.1:5180/src/core/engine.ts:152:38)\n    at http://127.0.0.1:5180/src/core/engine.ts:135:45\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:51957:34)\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:42009:3)",
+  "[module:demo] disabled: TypeError: Cannot read properties of undefined (reading 'q')\n    at fix (http://127.0.0.1:5180/src/modules/demo/index.ts:78:31)\n    at refineForest (http://127.0.0.1:5180/src/modules/demo/index.ts:100:12)\n    at Object.update (http://127.0.0.1:5180/src/modules/demo/index.ts:314:33)\n    at Engine.runUpdate (http://127.0.0.1:5180/src/core/engine.ts:184:6)\n    at Engine.tick (http://127.0.0.1:5180/src/core/engine.ts:152:38)\n    at http://127.0.0.1:5180/src/core/engine.ts:135:45\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:51957:34)\n    at onAnimationFrame (http://127.0.0.1:5180/node_modules/.vite/deps/three.module-D6Z8HiYx.js?v=a3fadf32:42009:3)"
+ ],
+ "otherRunsAtStart": 6,
+ "bootMs": 23880,
+ "over33Split": {
+  "externalOrGpu": 31,
+  "ownCpu": 38
+ },
+ "frames": 3458,
+ "fpsAvg": 57.7,
+ "p50": 16.7,
+ "p95": 23.2,
+ "p99": 39,
+ "max": 64.7,
+ "over33": 67,
+ "over50": 6,
+ "hist": {
+  "0-8": 47,
+  "8-12": 40,
+  "12-17": 1965,
+  "17-20": 1143,
+  "20-25": 111,
+  "25-33": 83,
+  "33-50": 63,
+  "50-100": 6,
+  "100-200": 0,
+  "200-500": 0,
+  "500-∞": 0
+ },
+ "drawCalls": {
+  "p50": 145,
+  "max": 163
+ },
+ "triangles": {
+  "p50": 622668,
+  "max": 732229
+ },
+ "chunksBuilt": 36,
+ "distanceM": 674,
+ "worst": [
+  {
+   "t": 7795.6,
+   "ms": 64.7,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 8,
+   "attr": {
+    "chunks.update": 45.9,
+    "b:nature": 17.4,
+    "b:terrain": 14.5,
+    "b:props": 8.8,
+    "physics": 3.8,
+    "world": 2.7,
+    "render": 2.1
+   }
+  },
+  {
+   "t": 5050.4,
+   "ms": 60.1,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 4,
+   "attr": {
+    "chunks.update": 23.9,
+    "b:nature": 14.6,
+    "physics": 6.8,
+    "b:terrain": 6.6,
+    "world": 3.6,
+    "render": 1.8
+   }
+  },
+  {
+   "t": 48733.7,
+   "ms": 55.4,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 34,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 6,
+   "attr": {
+    "chunks.update": 35.4,
+    "b:nature": 18.9,
+    "b:props": 8.3,
+    "b:terrain": 4.4,
+    "physics": 3,
+    "world": 2.9,
+    "render": 1.7
+   }
+  },
+  {
+   "t": 21752.1,
+   "ms": 54.7,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 6,
+   "attr": {
+    "chunks.update": 37.7,
+    "b:nature": 27.8,
+    "b:terrain": 5.8,
+    "physics": 3.8,
+    "world": 2.8,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 36901.3,
+   "ms": 54.2,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 51.9,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 51432.2,
+   "ms": 54.2,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 35,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 30.9,
+    "b:nature": 17.8,
+    "physics": 7.4,
+    "b:terrain": 4.2,
+    "world": 2.6,
+    "render": 1.7
+   }
+  },
+  {
+   "t": 31479.6,
+   "ms": 49.1,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 6,
+   "attr": {
+    "chunks.update": 32.3,
+    "b:nature": 22.6,
+    "b:terrain": 6.5,
+    "world": 4.8,
+    "physics": 3.2,
+    "render": 1.5
+   }
+  },
+  {
+   "t": 616.7,
+   "ms": 48.6,
+   "built": 0,
+   "unloaded": 0,
+   "loaded": 33,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "physics": 7.9,
+    "render": 1.7
+   }
+  },
+  {
+   "t": 33928.5,
+   "ms": 48.4,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 5,
+   "attr": {
+    "chunks.update": 30.1,
+    "b:nature": 19.8,
+    "b:terrain": 6.8,
+    "world": 4.6,
+    "physics": 3.4,
+    "render": 1.6
+   }
+  },
+  {
+   "t": 20394.4,
+   "ms": 47.2,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 31,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 29.2,
+    "b:nature": 15.8,
+    "b:terrain": 7,
+    "physics": 3.4,
+    "world": 2.1,
+    "render": 1.3
+   }
+  },
+  {
+   "t": 3449.3,
+   "ms": 46.3,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 32,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 7,
+   "attr": {
+    "chunks.update": 23.2,
+    "b:nature": 11.5,
+    "b:terrain": 6.1,
+    "physics": 3.3,
+    "world": 2.6,
+    "render": 1.8
+   }
+  },
+  {
+   "t": 16043.9,
+   "ms": 46.1,
+   "built": 1,
+   "unloaded": 0,
+   "loaded": 33,
+   "newPrograms": 0,
+   "newTextures": 0,
+   "newGeometries": 0,
+   "attr": {
+    "chunks.update": 28.5,
+    "b:nature": 18.8,
+    "b:terrain": 6.1,
+    "world": 4.4,
+    "physics": 3.4,
+    "render": 1.5
+   }
+  }
+ ],
+ "newPrograms": [],
+ "attrPerFrameAvg": {
+  "physics": 2.99,
+  "render": 1.54,
+  "chunks.update": 0.33,
+  "l:character": 0.16,
+  "b:nature": 0.14,
+  "l:camera": 0.13,
+  "u:streaming": 0.1,
+  "b:terrain": 0.06,
+  "world": 0.03,
+  "u:character": 0.02,
+  "chunks.unload": 0.02,
+  "u:nature": 0.02,
+  "b:props": 0.01,
+  "u:environment": 0.01,
+  "u:roads": 0.01,
+  "u:terrain": 0,
+  "u:assets": 0,
+  "l:assets": 0,
+  "u:camera": 0,
+  "b:roads": 0,
+  "b:villages": 0
+ },
+ "path": [
+  [
+   1,
+   116.2,
+   -136.7
+  ],
+  [
+   6,
+   164.9,
+   -102
+  ],
+  [
+   11,
+   208.3,
+   -60.5
+  ],
+  [
+   16,
+   249.3,
+   -16.8
+  ],
+  [
+   21,
+   291.6,
+   25.7
+  ],
+  [
+   26,
+   337.1,
+   64.9
+  ],
+  [
+   31,
+   385.4,
+   100.5
+  ],
+  [
+   36,
+   434.9,
+   134.4
+  ],
+  [
+   41,
+   483.6,
+   169.5
+  ],
+  [
+   46,
+   529.9,
+   207.6
+  ],
+  [
+   51,
+   573.5,
+   248.7
+  ],
+  [
+   56,
+   616.4,
+   290.7
+  ]
+ ],
+ "stats": {
+  "fps": 61,
+  "drawCalls": 142,
+  "triangles": 623187,
+  "chunks": 33,
+  "chunksPending": 0,
+  "chunkBuildMs": 0,
+  "geometries": 212,
+  "textures": 21,
+  "frame": 3601,
+  "failedLayers": [],
+  "missingAssets": [],
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)"
+ },
+ "modules": [
+  {
+   "id": "demo",
+   "status": "disabled",
+   "errors": 3,
+   "lastError": "Cannot read properties of undefined (reading 'q')"
+  }
+ ],
+ "extra": {
+  "terrain": {
+   "chunks": 69,
+   "ms": 387.9000000357628,
+   "maxMs": 20.599999964237213,
+   "tiles": 860,
+   "colliders": 4955,
+   "avgMs": 5.62
+  },
+  "nature": {
+   "planMs": 578.4999999403954,
+   "mergeMs": 280.3999999165535,
+   "chunks": 69,
+   "ms": 878.2000000476837,
+   "maxMs": 27.80000001192093,
+   "trees": 7647,
+   "bushes": 3546,
+   "rocks": 1500,
+   "grass": 7451,
+   "tris": 1755030,
+   "colliders": 8730,
+   "avgMs": 12.73
+  },
+  "roads": {
+   "render": {
+    "chunks": 69,
+    "ms": 38.30000001192093,
+    "maxMs": 30.900000035762787,
+    "roadTiles": 385,
+    "riverTiles": 102,
+    "bridges": 5,
+    "missing": 0
+   },
+   "road": {
+    "paths": 1064,
+    "failed": 89,
+    "relaxed": 302,
+    "ms": 15702.199999809265,
+    "expansions": 1712632,
+    "fb": 751,
+    "fbOk": 620
+   },
+   "river": {
+    "links": 133,
+    "failed": 0,
+    "relaxed": 1,
+    "ms": 5121.400000214577
+   },
+   "prefetch": null
+  }
+ },
+ "inPageErrors": [],
+ "otherRunsAtEnd": 5
+}

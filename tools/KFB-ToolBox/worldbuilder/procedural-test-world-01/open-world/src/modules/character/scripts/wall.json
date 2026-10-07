@@ -1,0 +1,13 @@
+[
+  {"camera":"character.cliff"},
+  {"wait":600},
+  {"down":"KeyA"},{"wait":900},{"press":"Space"},{"wait":4200},
+  {"shot":"w1_held_at_cliff_4s"},
+  {"wait":1000},
+  {"shot":"w2_held_at_cliff_5s"},
+  {"up":"KeyA"},
+  {"wait":400},
+  {"down":"KeyA"},{"down":"KeyW"},{"wait":1000},
+  {"shot":"w3_turned_away_slides"},
+  {"up":"KeyA"},{"up":"KeyW"},{"wait":300}
+]

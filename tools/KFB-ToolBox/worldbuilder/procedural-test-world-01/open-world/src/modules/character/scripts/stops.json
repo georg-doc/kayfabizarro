@@ -1,0 +1,18 @@
+[
+  {"camera":"character.side"},
+  {"wait":600},
+  {"hold":"KeyD","ms":900},
+  {"wait":700},
+  {"camera":"character.side"},
+  {"hold":["ShiftLeft","KeyD"],"ms":1200},
+  {"wait":700},
+  {"camera":"character.side"},
+  {"hold":"KeyA","ms":150},
+  {"wait":800},
+  {"hold":"KeyD","ms":150},
+  {"wait":800},
+  {"camera":"character.side"},
+  {"hold":"KeyD","ms":700},
+  {"hold":"KeyA","ms":900},
+  {"wait":800}
+]

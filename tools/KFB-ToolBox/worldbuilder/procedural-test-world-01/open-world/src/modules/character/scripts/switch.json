@@ -1,0 +1,14 @@
+[
+  {"camera":"character.front"},
+  {"wait":600},
+  {"shot":"k1_knight"},
+  {"press":"Digit2"},{"wait":400},{"shot":"k2_barbarian"},
+  {"press":"Digit3"},{"wait":400},{"shot":"k3_mage"},
+  {"press":"Digit4"},{"wait":400},{"shot":"k4_ranger"},
+  {"press":"Digit5"},{"wait":400},{"shot":"k5_rogue"},
+  {"press":"Digit6"},{"wait":400},{"shot":"k6_rogue_hooded"},
+  {"camera":"character.side"},
+  {"down":"KeyD"},{"wait":500},{"press":"Digit1"},{"wait":300},{"press":"Digit3"},{"wait":300},{"up":"KeyD"},
+  {"wait":500},
+  {"shot":"k7_after_switch_while_running"}
+]

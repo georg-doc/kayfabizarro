@@ -1,0 +1,507 @@
+{
+  "scope": "Phase 1 independent technical facts only; not product acceptance",
+  "seed": 97,
+  "sourceHashes": {
+    "surface.ts": "a3de7185d6d42fef7523886cc7e11362b55d7d50aeee7a882d175bb28a4ef058",
+    "objects.ts": "d941de5d99f5dbb451b010bccd144a3e90d6961a488e04b61e924a42f5890624",
+    "hex.ts": "3dd0549c200fcdfaccd8e4472a43af9d3dbfc62c385b0ba9db8ae1b10ad34b66",
+    "units.ts": "96c3a6bc52d7fe70bb3645c0a3e27116904141774bf0df0c1be6d69f7d5ed942",
+    "wb2-noise.js": "b5235d8a1bac44176772c9242dc07cda4be94ec38e6d8de7e7885d971ce34aca"
+  },
+  "meshSupport": [
+    {
+      "chunk": [
+        0,
+        0
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 1.2123418913212447e-7,
+      "worstSample": {
+        "triangle": 1606,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          46.95,
+          -1.4473686730861663,
+          74.75964630126953
+        ],
+        "support": -1.4473685518519772,
+        "vertices": [
+          [
+            46.875,
+            -1.453461766242981,
+            74.69469451904297
+          ],
+          [
+            48.75,
+            -1.2418317794799805,
+            77.9422836303711
+          ],
+          [
+            50.625,
+            -1.2674124240875244,
+            74.69469451904297
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        -1,
+        0
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 2.855660222456091e-7,
+      "worstSample": {
+        "triangle": 1547,
+        "weights": [
+          0.01,
+          0.495,
+          0.495
+        ],
+        "position": [
+          -63.75,
+          0.24491312503814697,
+          74.66221855163573
+        ],
+        "support": 0.24491283947212472,
+        "vertices": [
+          [
+            -63.75,
+            0.5127555131912231,
+            71.44709777832031
+          ],
+          [
+            -65.625,
+            0.2932741940021515,
+            74.69469451904297
+          ],
+          [
+            -61.875,
+            0.19114109873771667,
+            74.69469451904297
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        0,
+        -1
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 2.202786966165604e-7,
+      "worstSample": {
+        "triangle": 8,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          -56.175,
+          -1.0055404794216156,
+          -110.35328399658204
+        ],
+        "support": -1.005540259142919,
+        "vertices": [
+          [
+            -56.25,
+            -1.0073858499526978,
+            -110.4182357788086
+          ],
+          [
+            -54.375,
+            -0.8451436161994934,
+            -107.17064666748047
+          ],
+          [
+            -52.5,
+            -1.1473332643508911,
+            -110.4182357788086
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        -17,
+        29
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 0.000008130591266475307,
+      "worstSample": {
+        "triangle": 244,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          -208.04999999999998,
+          -2.4384283447265624,
+          3017.0810644531252
+        ],
+        "support": -2.438436475317829,
+        "vertices": [
+          [
+            -208.125,
+            -2.4342217445373535,
+            3017.01611328125
+          ],
+          [
+            -206.25,
+            -2.6571459770202637,
+            3020.263671875
+          ],
+          [
+            -204.375,
+            -2.4090332984924316,
+            3017.01611328125
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        100,
+        100
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 0.00005535614171492398,
+      "worstSample": {
+        "triangle": 776,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          18026.324999999997,
+          32.072579536437985,
+          10424.846191406248
+        ],
+        "support": 32.0726348925797,
+        "vertices": [
+          [
+            18026.25,
+            32.069766998291016,
+            10424.78125
+          ],
+          [
+            18028.125,
+            32.34370040893555,
+            10428.0283203125
+          ],
+          [
+            18030,
+            31.80315399169922,
+            10424.78125
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        -1000,
+        1000
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 0.00021091454426169776,
+      "worstSample": {
+        "triangle": 126,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          -59893.049999999996,
+          5.140417823791504,
+          103919.86953124999
+        ],
+        "support": 5.140628738335765,
+        "vertices": [
+          [
+            -59893.125,
+            5.135444641113281,
+            103919.8046875
+          ],
+          [
+            -59891.25,
+            5.351827621459961,
+            103923.046875
+          ],
+          [
+            -59889.375,
+            5.1999969482421875,
+            103919.8046875
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        10000,
+        -10000
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 0.004660077274427188,
+      "worstSample": {
+        "triangle": 63,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          600108.7312499998,
+          6.760162076950073,
+          -1039236.9025000001
+        ],
+        "support": 6.7648221542245,
+        "vertices": [
+          [
+            600108.75,
+            6.7824482917785645,
+            -1039237
+          ],
+          [
+            600106.875,
+            6.052543640136719,
+            -1039233.75
+          ],
+          [
+            600110.625,
+            6.013636112213135,
+            -1039233.75
+          ]
+        ]
+      }
+    },
+    {
+      "chunk": [
+        100000,
+        -100000
+      ],
+      "queries": 6144,
+      "worstErrorMetres": 0.04057277739142684,
+      "worstSample": {
+        "triangle": 1307,
+        "weights": [
+          0.97,
+          0.02,
+          0.01
+        ],
+        "position": [
+          6000078.975,
+          8.799554862976075,
+          -10392245.909999998
+        ],
+        "support": 8.840127640367502,
+        "vertices": [
+          [
+            6000079,
+            8.795730590820312,
+            -10392246
+          ],
+          [
+            6000077,
+            8.822272300720215,
+            -10392243
+          ],
+          [
+            6000080.5,
+            9.12507438659668,
+            -10392243
+          ]
+        ]
+      }
+    }
+  ],
+  "sharedEdges": [
+    {
+      "chunk": [
+        0,
+        0
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        0,
+        0
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -1,
+        0
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -1,
+        0
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        0,
+        -1
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        0,
+        -1
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -17,
+        29
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -17,
+        29
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        100,
+        100
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        100,
+        100
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -1000,
+        1000
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        -1000,
+        1000
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        10000,
+        -10000
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        10000,
+        -10000
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        100000,
+        -100000
+      ],
+      "edge": "q",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    },
+    {
+      "chunk": [
+        100000,
+        -100000
+      ],
+      "edge": "r",
+      "worstErrorMetres": 0,
+      "bitwiseNumericEquality": true
+    }
+  ],
+  "invalidation": {
+    "base": -0.5762291550636292,
+    "expected": 12.355942726135254,
+    "contributed": 12.355942726135254,
+    "sculpted": 14.355942726135254,
+    "restoredContributor": 12.355942726135254,
+    "restoredBase": -0.5762291550636292,
+    "events": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "deterministicContributorOrder": true,
+    "contributionEqualsExpected": true,
+    "sculptVertexDelta": 2,
+    "sculptMeshRevision": 3,
+    "sculptRevision": 3,
+    "meshChangedAfterSculpt": true,
+    "meshExactAfterRemovingStrokesAndContributions": true,
+    "cacheInvalidatedAfterEachMutation": true
+  },
+  "objectFacts": {
+    "streamOutRetainsRecords": true,
+    "streamInRestoresResidency": true,
+    "authoredOverrideSurvivesRegeneration": true,
+    "idIndependentOfFittedHeight": true
+  },
+  "limits": [
+    "No normal-control runtime test",
+    "No visual source fidelity decision",
+    "No whole-product score",
+    "Rapier runtime contact not tested by this file"
+  ]
+}

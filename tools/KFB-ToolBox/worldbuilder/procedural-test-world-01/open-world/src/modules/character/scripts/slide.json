@@ -1,0 +1,12 @@
+[
+  {"camera":"character.side"},
+  {"wait":600},
+  {"hold":["KeyW","KeyD"],"ms":1300},
+  {"camera":"character.front"},{"wait":150},
+  {"shot":"s1_sliding_along_fence"},
+  {"camera":"character.side"},
+  {"hold":["KeyW","KeyD"],"ms":800},
+  {"hold":"KeyW","ms":1200},
+  {"camera":"character.front"},{"wait":150},
+  {"shot":"s2_pushing_into_fence"}
+]

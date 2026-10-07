@@ -1,0 +1,15 @@
+[
+  {"camera":"character.side"},
+  {"wait":1500},
+  {"hold":"KeyQ","ms":1300},
+  {"wait":600},
+  {"hold":"KeyE","ms":1300},
+  {"wait":600},
+  {"hold":"KeyS","ms":1800},
+  {"wait":600},
+  {"hold":"KeyD","ms":1050},
+  {"wait":600},
+  {"camera":"character.side"},
+  {"down":"KeyW"},{"wait":900},{"hold":"KeyA","ms":500},{"wait":500},{"up":"KeyW"},
+  {"wait":900}
+]

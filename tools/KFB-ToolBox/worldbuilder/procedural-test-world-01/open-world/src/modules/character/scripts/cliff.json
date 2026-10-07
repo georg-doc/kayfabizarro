@@ -1,0 +1,14 @@
+[
+  {"camera":"character.course"},
+  {"wait":600},
+  {"down":"KeyA"},{"wait":900},{"press":"Space"},{"wait":3600},
+  {"press":"Space"},{"wait":800},
+  {"up":"KeyA"},
+  {"wait":300},
+  {"camera":"character.front"},{"wait":200},
+  {"shot":"c1_cliff_jump_refused"},
+  {"camera":"character.course"},
+  {"hold":["KeyA","KeyW"],"ms":1200},
+  {"camera":"character.front"},{"wait":200},
+  {"shot":"c2_slid_along_cliff"}
+]

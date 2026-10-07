@@ -1,0 +1,19 @@
+[
+  {"camera":"follow"},
+  {"wait":800},
+  {"shot":"t00_start_se_of_tavern"},
+  {"hold":"KeyW","ms":1200},
+  {"shot":"t01_along_stairs"},
+  {"hold":"KeyW","ms":1200},
+  {"shot":"t02_past_tavern"},
+  {"hold":["KeyS"],"ms":1500},
+  {"shot":"t03_back_along_stairs"},
+  {"hold":["KeyA"],"ms":600},
+  {"shot":"t04_onto_stairs_side"},
+  {"wait":1500},
+  {"shot":"t05_stand_at_stairs"},
+  {"hold":"KeyD","ms":1500},
+  {"shot":"t06_away"},
+  {"wait":1200},
+  {"shot":"t07_settled"}
+]

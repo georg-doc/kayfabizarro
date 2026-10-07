@@ -1,0 +1,13 @@
+[
+  {"camera":"character.crates"},
+  {"wait":600},
+  {"down":"KeyA"},{"wait":900},{"press":"Space"},{"wait":2000},
+  {"up":"KeyA"},
+  {"wait":500},
+  {"shot":"h1_after_hop_and_ledge"},
+  {"camera":"character.crates"},
+  {"hold":["ShiftLeft","KeyD"],"ms":800},
+  {"down":"ShiftLeft"},{"down":"KeyD"},{"press":"Space"},{"wait":1400},{"up":"KeyD"},{"up":"ShiftLeft"},
+  {"wait":500},
+  {"shot":"h2_walk_jump_and_walk_off"}
+]

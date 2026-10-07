@@ -1,0 +1,1550 @@
+{
+ "hex/tiles/base/hex_grass": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 0,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/base/hex_grass_bottom": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 0,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "138,142,15"
+  }
+ },
+ "hex/tiles/base/hex_grass_sloped_high": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 0,
+  "waterAny": 0,
+  "edgeY": [
+   1,
+   1,
+   0.535,
+   0.07,
+   0.535,
+   1
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 1,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/base/hex_grass_sloped_low": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 0,
+  "waterAny": 0,
+  "edgeY": [
+   0.5,
+   0.5,
+   0.268,
+   0.035,
+   0.268,
+   0.5
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 0.5,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/base/hex_water": {
+  "dirt": 0,
+  "water": 63,
+  "dirtAny": 0,
+  "waterAny": 63,
+  "edgeY": [
+   -0.2,
+   -0.2,
+   -0.2,
+   -0.2,
+   -0.2,
+   -0.2
+  ],
+  "classes": [
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.2,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/roads/hex_road_A": {
+  "dirt": 9,
+  "water": 0,
+  "dirtAny": 9,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   0,
+   0,
+   -0.034,
+   0,
+   0
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_A_sloped_high": {
+  "dirt": 9,
+  "water": 0,
+  "dirtAny": 9,
+  "waterAny": 0,
+  "edgeY": [
+   0.963,
+   1,
+   0.535,
+   0.035,
+   0.535,
+   1
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 0.683,
+   "cls": "dirt",
+   "rgb": "222,181,133"
+  }
+ },
+ "hex/tiles/roads/hex_road_A_sloped_low": {
+  "dirt": 9,
+  "water": 0,
+  "dirtAny": 9,
+  "waterAny": 0,
+  "edgeY": [
+   0.466,
+   0.5,
+   0.268,
+   0.001,
+   0.268,
+   0.5
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": 0.337,
+   "cls": "dirt",
+   "rgb": "223,182,134"
+  }
+ },
+ "hex/tiles/roads/hex_road_B": {
+  "dirt": 10,
+  "water": 0,
+  "dirtAny": 10,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   -0.034,
+   0,
+   -0.034,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.006,
+   "cls": "grass",
+   "rgb": "185,190,50"
+  }
+ },
+ "hex/tiles/roads/hex_road_C": {
+  "dirt": 12,
+  "water": 0,
+  "dirtAny": 12,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   -0.034,
+   -0.034,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.019,
+   "cls": "grass",
+   "rgb": "184,189,50"
+  }
+ },
+ "hex/tiles/roads/hex_road_D": {
+  "dirt": 42,
+  "water": 0,
+  "dirtAny": 42,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   -0.034,
+   0,
+   -0.034,
+   0,
+   -0.034
+  ],
+  "classes": [
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_E": {
+  "dirt": 11,
+  "water": 0,
+  "dirtAny": 11,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   -0.034,
+   0,
+   -0.034,
+   0,
+   0
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_F": {
+  "dirt": 41,
+  "water": 0,
+  "dirtAny": 41,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   0,
+   0,
+   -0.034,
+   0,
+   -0.034
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_G": {
+  "dirt": 28,
+  "water": 0,
+  "dirtAny": 28,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   -0.034,
+   -0.034,
+   -0.034,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.007,
+   "cls": "grass",
+   "rgb": "185,190,50"
+  }
+ },
+ "hex/tiles/roads/hex_road_H": {
+  "dirt": 29,
+  "water": 0,
+  "dirtAny": 29,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   0,
+   -0.034,
+   -0.034,
+   -0.034,
+   0
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_I": {
+  "dirt": 54,
+  "water": 0,
+  "dirtAny": 54,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   -0.034,
+   -0.034,
+   0,
+   -0.034,
+   -0.034
+  ],
+  "classes": [
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_J": {
+  "dirt": 57,
+  "water": 0,
+  "dirtAny": 57,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   0,
+   0,
+   -0.034,
+   -0.034,
+   -0.034
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_K": {
+  "dirt": 62,
+  "water": 0,
+  "dirtAny": 62,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   -0.034,
+   -0.034,
+   -0.034,
+   -0.034,
+   -0.034
+  ],
+  "classes": [
+   "ggggggg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_L": {
+  "dirt": 63,
+  "water": 0,
+  "dirtAny": 63,
+  "waterAny": 0,
+  "edgeY": [
+   -0.034,
+   -0.034,
+   -0.034,
+   -0.034,
+   -0.034,
+   -0.034
+  ],
+  "classes": [
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "dirt",
+   "rgb": "223,183,135"
+  }
+ },
+ "hex/tiles/roads/hex_road_M": {
+  "dirt": 8,
+  "water": 0,
+  "dirtAny": 8,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   0,
+   -0.034,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggdddgg",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.05,
+   "cls": "grass",
+   "rgb": "183,188,49"
+  }
+ },
+ "hex/tiles/rivers/hex_river_A": {
+  "dirt": 0,
+  "water": 9,
+  "dirtAny": 0,
+  "waterAny": 9,
+  "edgeY": [
+   -0.1,
+   0,
+   0,
+   -0.1,
+   0,
+   0
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_A_curvy": {
+  "dirt": 0,
+  "water": 9,
+  "dirtAny": 0,
+  "waterAny": 9,
+  "edgeY": [
+   -0.1,
+   0,
+   0,
+   -0.1,
+   0,
+   0
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_B": {
+  "dirt": 0,
+  "water": 10,
+  "dirtAny": 0,
+  "waterAny": 10,
+  "edgeY": [
+   0,
+   -0.1,
+   0,
+   -0.1,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "39,145,204"
+  }
+ },
+ "hex/tiles/rivers/hex_river_C": {
+  "dirt": 0,
+  "water": 12,
+  "dirtAny": 0,
+  "waterAny": 12,
+  "edgeY": [
+   0,
+   0,
+   -0.1,
+   -0.1,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "40,160,217"
+  }
+ },
+ "hex/tiles/rivers/hex_river_D": {
+  "dirt": 0,
+  "water": 42,
+  "dirtAny": 0,
+  "waterAny": 42,
+  "edgeY": [
+   0,
+   -0.1,
+   0,
+   -0.1,
+   0,
+   -0.1
+  ],
+  "classes": [
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_E": {
+  "dirt": 0,
+  "water": 11,
+  "dirtAny": 0,
+  "waterAny": 11,
+  "edgeY": [
+   -0.1,
+   -0.1,
+   0,
+   -0.1,
+   0,
+   0
+  ],
+  "classes": [
+   "wwwwwww",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_F": {
+  "dirt": 0,
+  "water": 41,
+  "dirtAny": 0,
+  "waterAny": 41,
+  "edgeY": [
+   -0.1,
+   0,
+   0,
+   -0.1,
+   0,
+   -0.1
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_G": {
+  "dirt": 0,
+  "water": 28,
+  "dirtAny": 0,
+  "waterAny": 28,
+  "edgeY": [
+   0,
+   0,
+   -0.1,
+   -0.1,
+   -0.1,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "38,144,203"
+  }
+ },
+ "hex/tiles/rivers/hex_river_H": {
+  "dirt": 0,
+  "water": 29,
+  "dirtAny": 0,
+  "waterAny": 29,
+  "edgeY": [
+   -0.1,
+   0,
+   -0.1,
+   -0.1,
+   -0.1,
+   0
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_I": {
+  "dirt": 0,
+  "water": 54,
+  "dirtAny": 0,
+  "waterAny": 54,
+  "edgeY": [
+   0,
+   -0.1,
+   -0.1,
+   0,
+   -0.1,
+   -0.1
+  ],
+  "classes": [
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_J": {
+  "dirt": 0,
+  "water": 57,
+  "dirtAny": 0,
+  "waterAny": 57,
+  "edgeY": [
+   -0.1,
+   0,
+   0,
+   -0.1,
+   -0.1,
+   -0.1
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_K": {
+  "dirt": 0,
+  "water": 62,
+  "dirtAny": 0,
+  "waterAny": 62,
+  "edgeY": [
+   0,
+   -0.1,
+   -0.1,
+   -0.1,
+   -0.1,
+   -0.1
+  ],
+  "classes": [
+   "ggggggg",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_L": {
+  "dirt": 0,
+  "water": 63,
+  "dirtAny": 0,
+  "waterAny": 63,
+  "edgeY": [
+   -0.1,
+   -0.1,
+   -0.1,
+   -0.1,
+   -0.1,
+   -0.1
+  ],
+  "classes": [
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_crossing_A": {
+  "dirt": 36,
+  "water": 9,
+  "dirtAny": 36,
+  "waterAny": 9,
+  "edgeY": [
+   -0.1,
+   0,
+   -0.034,
+   -0.1,
+   0,
+   -0.034
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggggg",
+   "ggdddgg",
+   "wwwwwww",
+   "ggggggg",
+   "ggdddgg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/hex_river_crossing_B": {
+  "dirt": 18,
+  "water": 9,
+  "dirtAny": 18,
+  "waterAny": 9,
+  "edgeY": [
+   -0.1,
+   -0.034,
+   0,
+   -0.1,
+   -0.034,
+   0
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggdddgg",
+   "ggggggg",
+   "wwwwwww",
+   "ggdddgg",
+   "ggggggg"
+  ],
+  "centre": {
+   "y": -0.1,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/rivers/waterless/hex_river_A_curvy_waterless": {
+  "dirt": 0,
+  "water": 9,
+  "dirtAny": 0,
+  "waterAny": 9,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_A_waterless": {
+  "dirt": 0,
+  "water": 9,
+  "dirtAny": 0,
+  "waterAny": 9,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_B_waterless": {
+  "dirt": 0,
+  "water": 10,
+  "dirtAny": 0,
+  "waterAny": 10,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_C_waterless": {
+  "dirt": 0,
+  "water": 12,
+  "dirtAny": 0,
+  "waterAny": 12,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_D_waterless": {
+  "dirt": 0,
+  "water": 42,
+  "dirtAny": 0,
+  "waterAny": 42,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_E_waterless": {
+  "dirt": 0,
+  "water": 11,
+  "dirtAny": 0,
+  "waterAny": 11,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_F_waterless": {
+  "dirt": 0,
+  "water": 41,
+  "dirtAny": 0,
+  "waterAny": 41,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_G_waterless": {
+  "dirt": 0,
+  "water": 28,
+  "dirtAny": 0,
+  "waterAny": 28,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_H_waterless": {
+  "dirt": 0,
+  "water": 29,
+  "dirtAny": 0,
+  "waterAny": 29,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_I_waterless": {
+  "dirt": 0,
+  "water": 54,
+  "dirtAny": 0,
+  "waterAny": 54,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_J_waterless": {
+  "dirt": 0,
+  "water": 57,
+  "dirtAny": 0,
+  "waterAny": 57,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_K_waterless": {
+  "dirt": 0,
+  "water": 62,
+  "dirtAny": 0,
+  "waterAny": 62,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "ggggggg",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_L_waterless": {
+  "dirt": 0,
+  "water": 63,
+  "dirtAny": 0,
+  "waterAny": 63,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_crossing_A_waterless": {
+  "dirt": 36,
+  "water": 9,
+  "dirtAny": 36,
+  "waterAny": 9,
+  "edgeY": [
+   0,
+   0,
+   -0.034,
+   0,
+   0,
+   -0.034
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggggg",
+   "ggdddgg",
+   "hhhhhhh",
+   "ggggggg",
+   "ggdddgg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/rivers/waterless/hex_river_crossing_B_waterless": {
+  "dirt": 18,
+  "water": 9,
+  "dirtAny": 18,
+  "waterAny": 9,
+  "edgeY": [
+   0,
+   -0.034,
+   0,
+   0,
+   -0.034,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggdddgg",
+   "ggggggg",
+   "hhhhhhh",
+   "ggdddgg",
+   "ggggggg"
+  ],
+  "centre": null
+ },
+ "hex/tiles/coast/hex_coast_A": {
+  "dirt": 0,
+  "water": 32,
+  "dirtAny": 17,
+  "waterAny": 32,
+  "edgeY": [
+   -0.048,
+   0,
+   0,
+   0,
+   -0.051,
+   -0.2
+  ],
+  "classes": [
+   "ggggddd",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "dddgggg",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/coast/hex_coast_B": {
+  "dirt": 0,
+  "water": 48,
+  "dirtAny": 9,
+  "waterAny": 48,
+  "edgeY": [
+   -0.063,
+   0,
+   0,
+   -0.06,
+   -0.2,
+   -0.2
+  ],
+  "classes": [
+   "gggdddd",
+   "ggggggg",
+   "ggggggg",
+   "ddddggg",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.2,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/coast/hex_coast_C": {
+  "dirt": 0,
+  "water": 49,
+  "dirtAny": 10,
+  "waterAny": 49,
+  "edgeY": [
+   -0.2,
+   -0.053,
+   0,
+   -0.06,
+   -0.2,
+   -0.2
+  ],
+  "classes": [
+   "wwwwwww",
+   "ggggddd",
+   "ggggggg",
+   "ddddggg",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.2,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/coast/hex_coast_D": {
+  "dirt": 0,
+  "water": 51,
+  "dirtAny": 12,
+  "waterAny": 51,
+  "edgeY": [
+   -0.2,
+   -0.2,
+   -0.064,
+   -0.067,
+   -0.2,
+   -0.2
+  ],
+  "classes": [
+   "wwwwwww",
+   "wwwwwww",
+   "gggdddd",
+   "ddddggg",
+   "wwwwwww",
+   "wwwwwww"
+  ],
+  "centre": {
+   "y": -0.2,
+   "cls": "water",
+   "rgb": "37,131,193"
+  }
+ },
+ "hex/tiles/coast/hex_coast_E": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 48,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   -0.043,
+   -0.046
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "dddgggg",
+   "ggggddd"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/coast/waterless/hex_coast_A_waterless": {
+  "dirt": 0,
+  "water": 32,
+  "dirtAny": 17,
+  "waterAny": 32,
+  "edgeY": [
+   -0.048,
+   0,
+   0,
+   0,
+   -0.051,
+   0
+  ],
+  "classes": [
+   "ggggddd",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "dddgggg",
+   "hhhhhhh"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ },
+ "hex/tiles/coast/waterless/hex_coast_B_waterless": {
+  "dirt": 0,
+  "water": 48,
+  "dirtAny": 9,
+  "waterAny": 48,
+  "edgeY": [
+   -0.063,
+   0,
+   0,
+   -0.06,
+   0,
+   0
+  ],
+  "classes": [
+   "gggdddd",
+   "ggggggg",
+   "ggggggg",
+   "ddddggg",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/coast/waterless/hex_coast_C_waterless": {
+  "dirt": 0,
+  "water": 49,
+  "dirtAny": 10,
+  "waterAny": 49,
+  "edgeY": [
+   0,
+   -0.053,
+   0,
+   -0.06,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "ggggddd",
+   "ggggggg",
+   "ddddggg",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/coast/waterless/hex_coast_D_waterless": {
+  "dirt": 0,
+  "water": 51,
+  "dirtAny": 12,
+  "waterAny": 51,
+  "edgeY": [
+   0,
+   0,
+   -0.064,
+   -0.067,
+   0,
+   0
+  ],
+  "classes": [
+   "hhhhhhh",
+   "hhhhhhh",
+   "gggdddd",
+   "ddddggg",
+   "hhhhhhh",
+   "hhhhhhh"
+  ],
+  "centre": null
+ },
+ "hex/tiles/coast/waterless/hex_coast_E_waterless": {
+  "dirt": 0,
+  "water": 0,
+  "dirtAny": 48,
+  "waterAny": 0,
+  "edgeY": [
+   0,
+   0,
+   0,
+   0,
+   -0.043,
+   -0.046
+  ],
+  "classes": [
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "ggggggg",
+   "dddgggg",
+   "ggggddd"
+  ],
+  "centre": {
+   "y": 0,
+   "cls": "grass",
+   "rgb": "192,197,55"
+  }
+ }
+}

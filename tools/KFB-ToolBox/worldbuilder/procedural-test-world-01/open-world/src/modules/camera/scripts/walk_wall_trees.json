@@ -1,0 +1,15 @@
+[
+  {"camera":"follow"},
+  {"wait":600},
+  {"shot":"ww_start"},
+  {"hold":["KeyW","ShiftLeft"],"ms":7000},
+  {"shot":"ww_north"},
+  {"hold":["KeyA","ShiftLeft"],"ms":8500},
+  {"shot":"ww_behind_wall"},
+  {"hold":["KeyD","ShiftLeft"],"ms":4000},
+  {"hold":["KeyD","KeyS","ShiftLeft"],"ms":2500},
+  {"hold":["KeyD","ShiftLeft"],"ms":6000},
+  {"shot":"ww_trees"},
+  {"wait":1500},
+  {"shot":"ww_end"}
+]

@@ -1,0 +1,21 @@
+[
+ {"camera":"follow"},{"wait":1000},
+ {"drag":{"dx":-582,"dy":0,"ms":900}},{"wait":500},{"shot":"f0_turned"},
+ {"hold":"KeyW","ms":5000},{"shot":"f1_forest_edge"},
+ {"hold":"KeyW","ms":2500},{"shot":"f2_in_forest"},
+ {"wait":1200},{"shot":"f3_stop"},
+ {"wait":5000},{"shot":"f4_idle5s"},
+ {"drag":{"dx":0,"dy":300,"ms":600}},{"wait":800},{"shot":"f5_pitch_up"},
+ {"drag":{"dx":0,"dy":-500,"ms":700}},{"wait":800},{"shot":"f6_pitch_down"},
+ {"wheel":3000},{"wait":1500},{"shot":"f7_zoom_out"},
+ {"wheel":-3000},{"wait":1500},{"shot":"f8_zoom_in"},
+ {"wheel":1200},{"drag":{"dx":0,"dy":200,"ms":400}},{"wait":800},
+ {"drag":{"dx":700,"dy":0,"ms":1200}},{"wait":600},{"shot":"f9_orbit"},
+ {"hold":"KeyD","ms":2500},{"shot":"f10_strafe_D"},
+ {"hold":"KeyA","ms":2500},{"shot":"f11_strafe_A"},
+ {"down":"KeyW"},{"press":"Space"},{"wait":1000},{"up":"KeyW"},{"shot":"f12_jump"},
+ {"hold":"KeyS","ms":2500},{"shot":"f13_back"},
+ {"hold":"KeyW","ms":5000},{"shot":"f14_run"},
+ {"wait":1500},{"shot":"f15_end"},
+ {"until":"(console.warn('CAMTRACE '+JSON.stringify(window.__camTrace.splice(0))), true)","timeout":3000}
+]
