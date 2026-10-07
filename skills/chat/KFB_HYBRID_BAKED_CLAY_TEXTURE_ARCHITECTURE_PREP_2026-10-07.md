@@ -1,5 +1,7 @@
 # KFB Hybrid Baked Clay / Texture Architecture · PREP · 2026-10-07
 
+> **CURRENT GEORG STEERING:** Read `skills/chat/KFB_SURFACE_MATERIAL_LANGUAGE_STEERING_2026-10-07.md` first. Clay is no longer the exclusive technical target; it is one visual profile inside a broader KFB Surface / Material Language. The lab must compare Clay, Hybrid, Toon/Cel and Procedural candidates and may select any coherent, performant winner.
+
 Status: **ARCHITECTURE PREP · LAB REQUIRED · NO RUNTIME CHANGE**  
 Owner: **KFB Clay presentation / receiving World**  
 Repo: `georg-doc/kayfabizarro`  
@@ -150,11 +152,13 @@ This prevents one shader from owning every visual frequency.
 
 ## Lab proof before architecture adoption
 
-A bounded lab should compare the same scene across three material strategies:
+A bounded lab should compare the same scene across at least four material strategies:
 
 1. current K2/v10-style runtime Clay path;
 2. baked-heavy hybrid path;
-3. very cheap baseline/stand-in.
+3. pure/mostly Toon/Cel path;
+4. procedural mathematical/material-family path;
+5. optional cheap matcap/painted-toy variant when useful.
 
 Test objects:
 - one procedural KayKit/KFB building family;
@@ -174,7 +178,7 @@ Measure:
 - load time;
 - city-scale scalability.
 
-A hybrid path wins only if it preserves acceptable KFB/Claybound appearance **and** materially lowers actual runtime cost.
+The winning path may be Clay-like, Hybrid, Toon/Cel, Procedural or Matcap/Painted-Toy. It wins only if the **whole scene** reads as one deliberate KFB world and materially improves or preserves actual runtime cost.
 
 ## Important boundaries
 
@@ -191,12 +195,12 @@ This does not:
 
 The preferred research direction is:
 
-`KFB VISUAL SSOT → OFFLINE/BAKED MATERIAL AUTHORING → SHARED FAMILY TEXTURES → CHEAP RUNTIME CLAY SHELL → DISTANCE LOD`
+`KFB SURFACE / MATERIAL LANGUAGE → optional offline/baked authoring → shared family parameters/textures → cheap runtime stylized shell → distance LOD`
 
 rather than:
 
-`EVERY SURFACE → HEAVY PROCEDURAL CLAY FRAGMENT SHADER`.
+`EVERY SURFACE → ONE HEAVY HISTORICAL CLAY FRAGMENT SHADER`.
 
 ## One next gate
 
-**BOUNDED HYBRID-BAKED-CLAY LAB · BUILDING + OSM + HERO LANDMARK COMPARISON**
+**BOUNDED KFB SURFACE-LANGUAGE LAB · CLAY vs HYBRID vs TOON/CEL vs PROCEDURAL**
