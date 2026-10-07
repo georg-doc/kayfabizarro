@@ -1,3 +1,28 @@
+## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY
+
+The binding Work/WSA brief and Frozen Matrix were hardened after an independent Coworker sanity read.
+
+Binding final brief:
+`skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`
+
+Operational Frozen Matrix:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
+**operationalVersion = 3**
+
+Additional required donor-read:
+`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+
+New binding refinements:
+- mandatory **Georg Visual Product Gate after Phase 3**: 4–6 screenshots + one ≤30 s clip, decision PASS/FAIL only; no Phase 4 until PASS;
+- known Track Core donor facts are persisted: 60° STANDARD-arm roundabout refusals, missing T-junction in v0.12, defective plate fallback forbidden;
+- performance PASS requires visible focused window on target GPU with no parallel meaningful GPU load; otherwise UNKNOWN;
+- Astra Medium remains baseline; **High reasoning explicitly allowed in Phase 3 and Phase 4**;
+- PASS and NO MVP Returns must include the complete 44-row REQUIRED status/evidence table.
+
+No REQUIRED row was added or removed. Product remains NO MVP until all 44 are GREEN.
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY
 
 Georg authorized the next productive step: execute exactly one **ChatGPT Work/WSA Island MVP ONE_SHOT** against the operational Frozen Matrix v2.
