@@ -49,7 +49,7 @@ Before any implementation write, read the current GitHub versions of:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md`
-5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json` — current operationalVersion = **4**
+5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json` — current operationalVersion = **5**
 6. `skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md` — routing only; preserves Asset Librarian/external 3D, texture/material, Cell/Build/Repair/Threshold and World Pulse design lines without adding MVP scope
 7. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
 8. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
