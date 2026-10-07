@@ -454,3 +454,26 @@ No Site/runtime/deployment change in this curation checkpoint.
 - Validation: **17/17 PASS**.
 - No Site deployment in this Web Chat; Sites-capable Work/WSA required.
 - No Open World/ChatterBox runtime write, Cloudflare substitute, merge or Live promotion.
+
+
+## GitHub-live Style Reference data migration prep · 2026-10-07
+
+Status: **ONE-TIME WORK MIGRATION READY**
+
+Prepared a Hub-style live-data architecture so future public curated Style Reference updates do not require Work/Sites publication.
+
+Canonical target:
+`main/tools/asset_registry/librarian/live/style-reference-live.json`
+
+One-time Work migration will:
+- sync current corpus to 69 built-ins;
+- deploy remote JSON loader + local fallback;
+- preserve browser-local state;
+- prove data-only refresh without Site republish.
+
+After that:
+**Web Chat → GitHub JSON → refresh**.
+
+Private source material remains outside the public live manifest.
+
+Preparation validation: **8/8 PASS**.
