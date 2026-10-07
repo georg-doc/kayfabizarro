@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.21",
-  "updatedAt": "2026-10-07T20:46:00Z",
+  "revision": "2026-10-07.22",
+  "updatedAt": "2026-10-07T22:58:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Final Island MVP ONE_SHOT v5 remains ready. Last consistency patch: §8 now names both planned human acceptance steps; F-R39 PASS establishes a Golden baseline and is re-gated only for a demonstrated/unresolved regression risk to Phase-3 Golden criteria, not every later visible addition. No scope/count change."
+    "note": "KFB Island MVP R4 is the current Work/WSA product iteration. Frozen Matrix operationalVersion 5 remains the binding contract: 44 REQUIRED / 13 Strong / 7 Optional. Older Recovery/paused/runtime-routing text is historical where conflicting."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -32,10 +32,10 @@
   "p0": [
     {
       "id": "island-mvp-one-shot-ready",
-      "title": "Island MVP · ONE_SHOT v5 READY · NO MVP",
-      "summary": "Final v5 contract aligned. Human steps: F-R39 visual PASS/FAIL, then F-R07 target-device perf run. F-R39 PASS is a Golden baseline and only re-gates for material regression risk to Phase-3 Golden criteria.",
-      "badge": "READY FOR WORK/WSA · v5",
-      "action": "Final ONE_SHOT Brief öffnen",
+      "title": "Island MVP R4 · ONE_SHOT READY · NO MVP",
+      "summary": "Current product iteration = MVP R4. Binding contract = Frozen Matrix v5. Phase 2B roads before Early Golden; F-R39 visual gate + F-R07 target-device performance run; all 44 required or NO MVP.",
+      "badge": "READY FOR WORK/WSA · MVP R4",
+      "action": "MVP R4 ONE_SHOT Brief öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
       "executor": "ChatGPT Work/WSA · single Integrator",
       "nextExecutor": "ChatGPT Work/WSA on PR #348; no Coworker build in parallel"
