@@ -1,3 +1,15 @@
+## 2026-10-07 · Open World Recovery ledger + MVP Living Doc routed
+
+- Open World product status remains binary: complete required Acceptance Matrix GREEN or **NO MVP**; `Receiving Core` is not product progress.
+- Dedicated read-only recovery owner is Draft PR #373 / `recovery/open-world-master-acceptance-audit-2026-10-07`.
+- Added/strengthened the ChefWSA Recovery Audit with authority split, Phase-0 contract freeze, donor-role separation and visual source-isolation gate.
+- Machine-readable input ledger contains 37 required MVP rows plus 6 explicit non-blockers; it is the anti-feature-loss baseline for the independent audit.
+- Added interactive MVP Living Doc HTML with search/filter/detail/architecture views and no percentage-complete roll-up.
+- Read-only Hub route: `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/`; exact shell + fallback ledger mirrored to `cloudflare-live` at `93002804a858fb4ae01f913f58e295bf9f0851a3`.
+- Production Hub live board revision `2026-10-07.10` now opens the Living Doc from the P0 Open World card and keeps the executor briefing separate.
+- Exact public browser verification of the new pages.dev route is still pending; no claim of PUBLIC_VERIFIED/LIVE yet.
+- No Open World runtime, PR #348 runtime, Coworker source, merge or product Live promotion was modified.
+
 ## 2026-10-04 · Surface consolidation · one Hub / one Control / one ToolBox
 
 - Georg reported that Production Hub, Production Control and ToolBox routing were still not coherently current as a human production system despite technically successful individual deployments.
