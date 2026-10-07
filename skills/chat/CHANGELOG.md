@@ -1,3 +1,15 @@
+## 2026-10-07 · CORRECTION · Open World MVP Living Doc belongs in Production Hub GPT Site
+
+- Georg explicitly rejected the temporary Cloudflare/pages.dev Living-Doc route. It has been removed again from `cloudflare-live`.
+- Canonical human surface is the existing Production Hub GPT Site only: `https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp`.
+- Stable live-data feed added on main: `kfb-hub/live/open-world-mvp.json`.
+- Binding live-data contract: `skills/chat/OPEN_WORLD_MVP_HUB_LIVE_DATA_CONTRACT_2026-10-07.md`.
+- One-time same-run Work/WSA publish packet: `skills/chat/publish/WORK_HUB_OPEN_WORLD_MVP_LIVE_VIEW_ONE_TIME_2026-10-07.md`.
+- WSA must load the exact current accepted Production Hub Site/project, add the internal view in place, preserve Hub v10 features/state, and fetch the main JSON with `cache:no-store` plus a deployed fallback.
+- Hard acceptance includes a JSON-only no-republish proof: change only the main live feed, refresh the exact Hub view, visibly observe the new revision, and prove the Site version/deployment did not change.
+- After that proof, routine MVP matrix/status updates are `Web Chat/ChefWSA → GitHub main JSON → Hub refresh`; **no further Work/Sites run**.
+- Open World product runtime remains untouched and status remains **NO MVP** until the complete Acceptance Matrix is GREEN.
+
 ## 2026-10-07 · Open World Recovery ledger + MVP Living Doc routed
 
 - Open World product status remains binary: complete required Acceptance Matrix GREEN or **NO MVP**; `Receiving Core` is not product progress.
