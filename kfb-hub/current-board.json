@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.13",
-  "updatedAt": "2026-10-07T14:51:00Z",
+  "revision": "2026-10-07.14",
+  "updatedAt": "2026-10-07T16:08:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World Recovery Audit independently completed. Product remains NO MVP. One safe integration strategy is documented; runtime work remains paused pending separate authorization of exactly one Integrator. The existing Hub MVP view is live and JSON-only refresh is proven; routine updates no longer require Work/Sites publication."
+    "note": "Bounded-Island architecture planning is now persisted. Full Integration Census, Prototype Graveyard and recovery checkpoints exist; current next planning gate is to freeze the complete MVP matrix before issuing the next One-Shot. Product remains NO MVP; routine Hub updates remain GitHub-live JSON only."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -22,9 +22,20 @@
     "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
     "openWorldMvpLivingDoc": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
     "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json",
-    "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md"
+    "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
+    "islandMvpIntegrationCensus": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md"
   },
   "p0": [
+    {
+      "id": "island-mvp-freeze-planning",
+      "title": "Island MVP · Freeze Planning · NO MVP",
+      "summary": "Bounded-Island direction is accepted. Current Web-Chat census now preserves World/Persistence, Locomotion, Joyride/Drive, Flight, Residents/ChatterBox, Billboard+Quote Pool, Card/Almanac, Audio, Curtain, Clay/Claybound, Style-reference grounding rules, event/transform donors and QA. Next: freeze REQUIRED / STRONGLY INCLUDE / OPTIONAL / LATER before one new WSA One-Shot.",
+      "badge": "PLANNING FREEZE · NO MVP",
+      "action": "Integration Census öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
+      "executor": "ChatGPT Web Chat · architecture planning",
+      "nextExecutor": "ChatGPT Web Chat freezes MVP matrix; then exactly one Work/WSA Integrator"
+    },
     {
       "id": "issue-360-open-world-recovery-audit",
       "title": "#360 · Recovery-Plan bereit · NO MVP",
@@ -344,6 +355,11 @@
       "title": "Prototype Graveyard · FAILs ansehen + Salvage",
       "summary": "Historische World-/Island-/Platformer-Kandidaten an einem Ort: World Studio Vier-Insel HUMAN FAIL, R2D Insel, R2C Archipel-Donor, Card-Hex/Platformer Combat FAIL und frühere Project-Island-Platformer. Jeweils mit historischem Surface/Source, Failure Evidence, sicherem Salvage und klaren Do-not-reuse-Grenzen. Kein Today/Next-Job.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md"
+    },
+    {
+      "title": "Island MVP · Integration Census",
+      "summary": "Crash-safe anti-feature-loss census before the next One-Shot: owners/donors, Flight/Drive, Billboard Quote Pool, Audio, Residents, Curtain, Claybound gate, Style-reference grounding, placeholders firewall and deferred scope.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
