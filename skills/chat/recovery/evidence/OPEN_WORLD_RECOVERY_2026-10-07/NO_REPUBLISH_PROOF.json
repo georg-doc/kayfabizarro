@@ -1,0 +1,52 @@
+{
+  "siteProject": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
+  "versionBefore": 11,
+  "versionAfter": 11,
+  "versionId": "appgprj_6ab7358322a8819183d2fa036b7b12f9~appgver_9701af82d558819183b84458b100e981",
+  "deploymentBefore": "appgdep_6ac62ac353f881919a27f0867e90903e",
+  "deploymentAfter": "appgdep_6ac62ac353f881919a27f0867e90903e",
+  "siteSource": "6d9b51689c67a29b896e925fd4806e144f961ae2",
+  "singlePublish": true,
+  "jsonOnlyCommit": "3b345b04b2964ba8aff02de9dcd1711872a40ef2",
+  "jsonChangedFiles": [
+    "kfb-hub/live/open-world-mvp.json"
+  ],
+  "jsonChangedFields": [
+    "revision",
+    "updatedAt"
+  ],
+  "revisionBefore": "2026-10-07.3",
+  "revisionAfter": "2026-10-07.4",
+  "visibleSource": "GitHub LIVE",
+  "exactUrl": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
+  "browserRefresh": true,
+  "explicitRefresh": true,
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390
+  },
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "screenshots": [
+    "hub-mvp-live-before-json-update.jpg",
+    "hub-mvp-live-after-json-update.jpg",
+    "hub-mvp-live-desktop.jpg",
+    "hub-mvp-live-mobile.jpg"
+  ],
+  "productStatus": "NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN",
+  "requirementCounts": {
+    "GREEN": 0,
+    "PARTIAL": 14,
+    "MISSING": 16,
+    "CONFLICT": 4,
+    "UNPROVEN": 3
+  },
+  "runtimeWrites": false,
+  "cloudflareUsed": false,
+  "verifiedAt": "2026-10-07T11:23:35.685Z"
+}

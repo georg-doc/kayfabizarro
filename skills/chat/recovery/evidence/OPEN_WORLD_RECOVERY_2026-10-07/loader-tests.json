@@ -1,0 +1,14 @@
+{
+  "passed": 8,
+  "tests": [
+    "valid live feed uses no fallback",
+    "network failure uses deployed fallback",
+    "required row cannot be downgraded",
+    "truncated ledger cannot claim pass",
+    "duplicate IDs rejected",
+    "unavailable live and fallback reported",
+    "binary result derived from complete required rows",
+    "declared PASS cannot override missing required row"
+  ],
+  "environment": "Node VM loader tests; no product-runtime gameplay claim"
+}
