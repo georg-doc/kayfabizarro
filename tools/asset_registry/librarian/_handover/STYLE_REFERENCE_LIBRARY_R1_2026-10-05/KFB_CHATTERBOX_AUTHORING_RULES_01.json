@@ -1,0 +1,202 @@
+{
+  "schema": "kfb.chatterbox-authoring-rules/1",
+  "status": "RESEARCH_DERIVED_CANDIDATE_NO_RUNTIME_OWNERSHIP",
+  "date": "2026-10-07",
+  "owner": "KFB dialogue authoring / source curation",
+  "consumers": [
+    "chatterbox",
+    "resident-dialogue",
+    "historian-proposal"
+  ],
+  "sourceSets": {
+    "etherington": [
+      "SEED_05_DIALOGUE_INTERACTION",
+      "SEED_06_NARRATION_REACTION",
+      "SEED_04_DIALOGUE_CARRIERS"
+    ],
+    "nie": [
+      "writers_room_os",
+      "southpark_logic",
+      "dialogue_debate_grammar",
+      "character_development_system",
+      "KFB_ChatGPT_VoiceEngine_NIE+FrizzleBob"
+    ],
+    "kfb": [
+      "KayfabeTips",
+      "historical Overworld ChatterBox/zone-story donors"
+    ]
+  },
+  "invariants": {
+    "runtimeOwner": false,
+    "chatterboxOwnsDialogueSemantics": true,
+    "worldOwnersSupplyFacts": true,
+    "performanceLayersReadOnly": true,
+    "silenceIsValid": true,
+    "noCatchphraseSystem": true,
+    "noGenericAIMeta": true,
+    "noRuntimeNIEDependencyRequired": true
+  },
+  "lineAudit": [
+    {
+      "id": "moves_state",
+      "question": "What changes because of this turn?",
+      "accepted": [
+        "knowledge",
+        "power",
+        "relationship",
+        "intention",
+        "possibility",
+        "tension",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "said_meant_wanted",
+      "question": "What is SAID, MEANT and WANTED?",
+      "requireWantedOrMeantInferable": true
+    },
+    {
+      "id": "therefore_but",
+      "question": "Does this turn follow by consequence or meaningful resistance rather than AND THEN?",
+      "required": true
+    },
+    {
+      "id": "speaker_reason",
+      "question": "Why this speaker, and why now?",
+      "required": true
+    },
+    {
+      "id": "silence_test",
+      "question": "Would gaze, gesture, pause or silence carry the beat better?",
+      "required": true
+    },
+    {
+      "id": "voice_swap_test",
+      "question": "Could another Resident say this unchanged?",
+      "failIfYesByDefault": true
+    },
+    {
+      "id": "concrete_anchor",
+      "question": "Is there a concrete action/place/object/social behavior before abstraction?",
+      "requiredWhenApplicable": true
+    },
+    {
+      "id": "straight_face",
+      "question": "Is the premise played straight without wink/system/glitch humor?",
+      "required": true
+    },
+    {
+      "id": "context_budget",
+      "question": "Does the line use only context the beat can pay for?",
+      "required": true
+    },
+    {
+      "id": "carrier_fit",
+      "question": "Does the text fit the actual bubble/caption carrier?",
+      "required": true
+    }
+  ],
+  "voiceDimensions": [
+    "worldview",
+    "sociolect",
+    "vocabulary",
+    "sentence_length",
+    "directness",
+    "answer_evasion_style",
+    "certainty_pattern",
+    "local_or_faction_lexicon",
+    "interruption_tendency",
+    "repair_style",
+    "taboo_or_unsaid_content",
+    "silence_behavior"
+  ],
+  "dialogueMoves": {
+    "question": [
+      "answer",
+      "evasion",
+      "refusal",
+      "redirect"
+    ],
+    "accusation": [
+      "denial",
+      "admission",
+      "counter_accusation",
+      "silence"
+    ],
+    "request": [
+      "accept",
+      "reject",
+      "negotiate",
+      "delay"
+    ],
+    "offer": [
+      "accept",
+      "suspect",
+      "counter_offer",
+      "refuse"
+    ],
+    "compliment": [
+      "acknowledge",
+      "deflect",
+      "distrust",
+      "weaponize"
+    ]
+  },
+  "writerRoomPass": [
+    "yes_and_generation",
+    "conflict_want_obstacle_stake",
+    "relationship_power_history",
+    "therefore_but",
+    "voice_worldview",
+    "silence_interruption",
+    "concrete_image",
+    "editor_selection",
+    "anti_slop"
+  ],
+  "contextPriority": [
+    "current_card_or_semantic_seed",
+    "immediate_situation",
+    "speaker_worldview_or_faction",
+    "relationship",
+    "local_history_or_memory",
+    "broader_context"
+  ],
+  "failureReaction": {
+    "principle": "Repeated failure increases specificity and relationship memory, not merely joke intensity.",
+    "escalation": [
+      "notice",
+      "recognize_pattern",
+      "social_interpretation",
+      "relationship_specific_callback",
+      "group_role_selection",
+      "optional_historian_closure"
+    ]
+  },
+  "groupReaction": {
+    "defaultRoles": [
+      "primary_respondent",
+      "optional_supporter_or_opponent",
+      "silent_observer",
+      "optional_interrupter"
+    ],
+    "avoid": "everyone_speaks"
+  },
+  "historian": {
+    "status": "PROPOSAL_ONLY",
+    "mayFrame": [
+      "unseen_context",
+      "temporal_or_historical_context",
+      "aftermath",
+      "meaningful_contradiction",
+      "earned_callback"
+    ],
+    "avoid": [
+      "visible_state_restating",
+      "controls",
+      "constant_jokes",
+      "generic_praise",
+      "unrelated_lore"
+    ],
+    "truthSource": "existing_world_and_resident_owners"
+  }
+}
