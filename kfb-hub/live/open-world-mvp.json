@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.5",
-  "updatedAt": "2026-10-07T11:30:36.762558+00:00",
+  "revision": "2026-10-07.6",
+  "updatedAt": "2026-10-07T13:15:00+02:00",
   "owner": "KFB Open World / Recovery Audit",
   "source": "Draft PR #373 · recovery/open-world-master-acceptance-audit-2026-10-07",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -2168,5 +2168,9 @@
   "siteDeployment": "appgdep_6ac62ac353f881919a27f0867e90903e",
   "siteSource": "6d9b51689c67a29b896e925fd4806e144f961ae2",
   "evidenceCheckpoint": "53c1e48399e7ff561b5058338dfa0deb10cce7cf",
-  "noRepublishProof": "https://github.com/georg-doc/kayfabizarro/blob/53c1e48399e7ff561b5058338dfa0deb10cce7cf/skills/chat/recovery/evidence/OPEN_WORLD_RECOVERY_2026-10-07/NO_REPUBLISH_PROOF.json"
+  "noRepublishProof": "https://github.com/georg-doc/kayfabizarro/blob/53c1e48399e7ff561b5058338dfa0deb10cce7cf/skills/chat/recovery/evidence/OPEN_WORLD_RECOVERY_2026-10-07/NO_REPUBLISH_PROOF.json",
+  "executionStatus": "INTEGRATOR_AUTHORIZED",
+  "currentExecutor": "ChatGPT Work/WSA · WorldBuilder Integrator",
+  "currentOwner": "KFB WorldBuilder / WB2 · PR #348",
+  "nextGate": "Complete all required Acceptance Matrix rows through one continuous Integrator run; no intermediate MVP."
 }
