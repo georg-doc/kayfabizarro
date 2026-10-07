@@ -1404,3 +1404,85 @@ Validation:
 
 Exactly one next gate:
 **ONE_TIME_WORK_STYLE_REFERENCE_LIVE_DATA_MIGRATION**.
+
+## 2026-10-07 · One-time GitHub-live data migration · COMPLETE
+
+Status: **PUBLISHED IN PLACE · DATA-ONLY REFRESH PROVEN**
+
+Executor: **ChatGPT Work/WSA**
+
+### Existing Site retained
+
+- URL: `https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references`
+- project: `appgprj_6ac1afef08148191b62b95f184bf845e`
+- source: `2003c9c3f06e8a3183bca84243904c7638455b2c`
+- version: **6**
+- version ID: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_9fe593b599e48191bdd09ef42596920d`
+- deployment: `appgdep_6ac5cd25d34c8191aea4c5685168fc57`
+- deployment status: **SUCCEEDED**
+- access: existing owner-private/custom policy preserved
+
+No second Site was created. No Viewer R2 redesign was made.
+
+### Live manifest
+
+- path on `main`: `tools/asset_registry/librarian/live/style-reference-live.json`
+- schema: `kfb.style-reference-live/1`
+- final revision: `2026-10-07.3`
+- final `main` manifest commit: `c681608bcaa27bdc8e1d9ef0073fb5e13a0267e9`
+- initial manifest commit: `f83e7217c9e84e8049c6d093fe949994f3b3bb24`
+- corpus: **64 Etherington official + 5 supplementary = 69 built-ins**
+- pre/post Site count: **58 → 69**
+- visual coverage carried forward: **53 references / 106 boards**
+- public boundary: no private PDFs/photos/scans, private storage locators, Dropbox paths or credentials
+
+The Site resolves the current public `main` commit, loads the immutable raw manifest for that commit with `cache: no-store`, validates schema/identity/URLs, and keeps the exact raw-`main` URL as fallback. The deployed local revision `2026-10-07.2` remains the 69-record fail-closed fallback.
+
+### Mandatory data-only proof
+
+After Site Version 6 was deployed:
+
+1. the published private Site loaded live revision `2026-10-07.2`;
+2. only `main/tools/asset_registry/librarian/live/style-reference-live.json` changed;
+3. no Site source, version or deployment was created between the two checks;
+4. the same browser refreshed the same published Site and loaded revision `2026-10-07.3`;
+5. the comparison from the initial manifest commit to the final proof commit reports exactly one changed file: the live manifest.
+
+Result: **PASS · future public reference-data updates no longer require Work/Sites publication.**
+
+### Browser-local state proof
+
+The published-Site proof kept byte-identical localStorage payloads across the live-data refresh and verified the merged result for:
+
+- a local user Card;
+- Reference Set name, notes and two memberships;
+- built-in reference Notes and Principles;
+- custom tag;
+- asset/reference relation;
+- inspected state.
+
+Result: **PASS · local Cards/Sets/Notes/Principles/Tags/Relations/Inspection State preserved.**
+
+### Regressions
+
+- Viewer R2 tall-board rendering: PASS
+- multi-board navigation: PASS
+- Fit width / Fit page / 100% / zoom: PASS
+- Previous/Next Reference: PASS
+- source-isolation export: PASS
+- URL intake: PASS
+- Assets: PASS
+- Motions: PASS
+- Saved Sets: PASS
+- 3D previews: PASS
+- mobile gallery/viewer: PASS
+- GitHub unavailable → deployed 69-record fallback: PASS
+- page errors: **0**
+
+### Unresolved / non-blocking
+
+- 16 of the 69 records are currently source-link-only and do not yet have curated board URLs. They remain usable through the exact source link and can receive board metadata through the new data-only path.
+
+### Exactly one next gate
+
+**WEB_CHAT_DATA_ONLY_STYLE_REFERENCE_UPDATES**
