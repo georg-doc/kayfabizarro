@@ -49,19 +49,20 @@ Before any implementation write, read the current GitHub versions of:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md`
-5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
-6. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
-7. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
-8. `skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
-9. current PR #348:
+5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json` — current operationalVersion = **4**
+6. `skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md` — routing only; preserves Asset Librarian/external 3D, texture/material, Cell/Build/Repair/Threshold and World Pulse design lines without adding MVP scope
+7. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
+8. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
+9. `skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+10. current PR #348:
    - `ISLAND_TOPOLOGY_DECISION_2026-10-07.md`
    - `ISLAND_FOUNDATION_RETURN_2026-10-07.md`
-10. current binding canons:
+11. current binding canons:
    - `skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`
    - `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
-11. exact current PR #348 head and current Issue #360 state.
+12. exact current PR #348 head and current Issue #360 state.
 
 Only then open specialist Returns for rows that are actually being integrated.
 
@@ -691,6 +692,30 @@ Run one continuous normal-input gauntlet:
 25. return to PLAY and continue exploring.
 
 No teleport/autoplay/reward injection acceptance substitute.
+
+---
+
+## 5A · Preserved ideation layers · do not lose, do not inflate MVP
+
+Read:
+`skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md`
+
+These are **preserved design/research layers**, not additional REQUIRED scope.
+
+Keep routed for source selection and future-compatible seams:
+
+- **Asset Librarian external 3D federation** — branch `planning/asset-librarian-external-3d-search-r1-2026-10-07`; existing Asset Librarian/Registry remains provenance owner; external search candidates never become canonical assets before controlled intake/source isolation.
+- **Surface/Texture research** — branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07`; Claybound remains the visual Gold Standard; hybrid/baked/toon/cel/directional color/tri-/biplanar/matcap are challengers, not automatic replacements.
+- **UltraTex** — texture-adaptation donor/lab candidate only; not Registry/material owner and not production-ready.
+- **Cell / MacroCell / Build–Destroy–Repair grammar** — branch `planning/kfb-cell-metric-voxel-world-grammar-2026-10-07`; use only where a current MVP seam needs it; do not create a second world/destruction runtime.
+- **Fluff construction choreography** — PREVIEW→HARVEST/GATHER→AGGREGATE→ROUGH_MASS→SCULPT→RESOLVE→CONNECT/FINISH; transition/presentation only, final truth returns to source-proven objects/modules.
+- **Material identity / Paper-Cardboard / Open Stage / Threshold grammar** — preserved design vocabulary; F-S13 is the only current bounded MVP routing addition and remains STRONGLY INCLUDE, not REQUIRED.
+- **World Pulse** — branch `planning/world-pulse-audio-reactive-living-toy-2026-10-07`; presentation-only layer consuming Audio/world facts; never a second AudioContext or simulation owner.
+- **Blender MCP choreography** — current Resident Performance / Issue #369 path; author reusable missing choreography only after source/motion audit.
+
+If one of these layers becomes necessary to satisfy an existing Frozen row, open its exact named owner/branch and consume the smallest proven seam.
+
+Do not bulk-implement the ideation audit.
 
 ---
 
