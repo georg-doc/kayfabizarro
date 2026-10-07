@@ -73,7 +73,7 @@ Allowed writes:
 - recovery matrix;
 - factual Return;
 - routing/status documentation needed to preserve the audit;
-- the read-only MVP Living Doc / Hub audit projection explicitly requested by Georg at `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/`.
+- the read-only MVP Living Doc / Hub audit projection explicitly requested by Georg at `https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp`.
 
 Not allowed:
 - terrain rewrite;
@@ -388,9 +388,14 @@ Write documentation only:
 3. `skills/chat/recovery/OPEN_WORLD_ARCHITECTURE_FREEZE_AUDIT_2026-10-07.md`
 4. `skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md`
 5. `skills/chat/recovery/OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json` — frozen machine-readable requirement ledger
-6. `skills/chat/recovery/OPEN_WORLD_MVP_LIVING_DOC_2026-10-07.html` — interactive visual projection of the same ledger
+6. `skills/chat/recovery/OPEN_WORLD_MVP_LIVING_DOC_2026-10-07.html` — interactive visual projection/reference implementation
+7. `main/kfb-hub/live/open-world-mvp.json` — stable Production-Hub live-data projection
 
-The JSON ledger and HTML Living Doc must remain synchronized with the Markdown Master Acceptance Matrix. The HTML is a **projection**, never a second product contract.
+The Recovery JSON ledger, Markdown Master Acceptance Matrix and `main/kfb-hub/live/open-world-mvp.json` must remain synchronized at every material audit checkpoint. The HTML/Hub view is a **projection**, never a second product contract.
+
+After the one-time Production Hub Site shell update, routine changes use only:
+`Recovery/Chat audit → GitHub main kfb-hub/live/open-world-mvp.json → Production Hub refresh`.
+No further Work/Sites publish is allowed merely to update requirement states, donors, evidence, counts or product status.
 
 The Living Doc must always display the product-level result binarily:
 - `MVP PASS · COMPLETE ACCEPTANCE MATRIX GREEN`; or
@@ -402,7 +407,7 @@ Update Issue #360 only with the factual recovery result.
 
 Do not modify runtime/product files.
 
-The Living Doc Stage is documentation only. Publishing/updating that read-only route does not authorize product runtime publication and must never be reported as an Open World MVP candidate.
+The Living Doc is an internal read-only view of the existing KFB Production Hub GPT Site. Publishing/updating that Hub view does not authorize product runtime publication and must never be reported as an Open World MVP candidate. **No Cloudflare route belongs to this Living Doc workflow.**
 
 ## 12 · ChefWSA communication contract — binding
 
