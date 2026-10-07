@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.18",
+  "revision": "2026-10-07.19",
   "updatedAt": "2026-10-07T21:26:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Final Work/WSA Island MVP ONE_SHOT is hardened to operational Frozen Matrix v3. 44 REQUIRED unchanged. Mandatory Georg visual PASS/FAIL after Phase 3, Lab road/performance findings persisted, target-GPU measurement rules fixed, High reasoning allowed in Phases 3/4, and full 44-row final evidence table required.",
+  "recoverySummary": "Final Island MVP Work/WSA contract aligned to operational Frozen Matrix v5. Counts unchanged: 44 REQUIRED / 13 Strong / 7 Optional. Roads/Track now run in Phase 2B before Early Golden. F-R39 and F-R07 are the only explicit human acceptance pauses and are exact-head/persistence governed.",
   "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Run the final Work/WSA ONE_SHOT v4 on PR #348. Keep all 44 REQUIRED rows unchanged; target F-S13 state-dependent Threshold Door / Paper-Facade proof only if bounded/low-risk. Pause only at the mandatory Georg Phase-3 visual product gate; otherwise continue until all 44 REQUIRED rows are GREEN or one proven outcome blocker remains.",
+  "nextGate": "Run the v5 final Work/WSA ONE_SHOT on PR #348. First human stop: persisted F-R39 visual gate. Second human step: instrumented target-device performance run on GEORG_PRIMARY_ACCEPTANCE_MACHINE. Otherwise continue automatically.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,7 +2247,7 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "ONE_SHOT_V4_READY_FOR_WORK_WSA",
+    "status": "ONE_SHOT_V5_READY_FOR_WORK_WSA",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
@@ -2256,7 +2256,7 @@
     "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
     "requiredRows": 44,
-    "operationalVersion": 4,
+    "operationalVersion": 5,
     "stronglyIncludeRows": 13,
     "optionalRows": 7,
     "inboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
@@ -2280,6 +2280,24 @@
     "assetLibrarianExternal3dBranch": "planning/asset-librarian-external-3d-search-r1-2026-10-07",
     "surfaceMaterialBranch": "planning/hybrid-baked-clay-texture-architecture-2026-10-07",
     "worldPulseBranch": "planning/world-pulse-audio-reactive-living-toy-2026-10-07",
-    "cellMetricBranch": "planning/kfb-cell-metric-voxel-world-grammar-2026-10-07"
+    "cellMetricBranch": "planning/kfb-cell-metric-voxel-world-grammar-2026-10-07",
+    "phaseOrder": [
+      "1_FOUNDATION",
+      "2_PLAYER_GOLDEN",
+      "2B_ROADS_WORLD_TRAVERSAL",
+      "3_EARLY_GOLDEN",
+      "4_AUTHORING_PERSISTENCE",
+      "5_REQUIRED_SYSTEMS",
+      "6_STRONG_INTEGRATIONS",
+      "7_PERFORMANCE",
+      "8_MODULE_CRITICS",
+      "9_WHOLE_PRODUCT_CRITIC",
+      "10_PRODUCT_GATE"
+    ],
+    "humanAcceptanceSteps": [
+      "F-R39_GEORG_VISUAL_PRODUCT_GATE",
+      "F-R07_TARGET_DEVICE_PERFORMANCE_RUN"
+    ],
+    "targetDeviceId": "GEORG_PRIMARY_ACCEPTANCE_MACHINE"
   }
 }
