@@ -1,6 +1,10 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.10.0 · 2026-10-04** · 60 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.11.0 · 2026-10-07** · 61 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+
+## Neu · 2026-10-07
+
+**Grab 61 · Open World Contract Collapse** — Der bindende One-Shot schrumpfte über successive Kandidaten: Continuous Terrain, God Mode, Terrain Sculpt/Persistence und die vollständige KFB-Featureliste wurden nicht durchgehend als unveränderliche Acceptance-Matrix geschützt. Vollständiges Postmortem: `skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md`.
 
 ## Was das ist
 
