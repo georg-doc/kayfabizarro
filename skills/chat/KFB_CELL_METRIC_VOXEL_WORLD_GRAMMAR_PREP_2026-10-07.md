@@ -404,6 +404,147 @@ This is useful for storytelling because the audience already understands the blo
 → optional Hex/Tactical adapter only for specific worlds/modes/assets
 
 
+
+## Open Stage / Living Diorama room grammar
+
+Georg steering:
+
+KFB does **not** need conventional closed interiors for every dwelling or activity space.
+
+A MacroCell cluster may represent a room, home, workshop, shrine, shop, camp or private-life scene through:
+- floor/boundary marks;
+- one or two walls;
+- partial façade fragments;
+- furniture/props;
+- lighting/material zone;
+- Resident choreography/routines;
+- semantic room role.
+
+The missing walls are not automatically missing content.
+
+This creates a deliberate **open-stage / living-diorama** grammar:
+- the player/camera can see private Resident life without cutting roofs/walls away;
+- scale remains compatible with Rig_Medium;
+- camera collision/occlusion pressure is reduced;
+- scenes can transition fluidly between "interior", "garden", "street", "biome" and "stage";
+- surreal ambiguity is allowed: potted plants may read as trees, a bed may sit in an open landscape, a domestic room may bleed into a biome.
+
+### Narrative boundary vs physical boundary
+
+Keep these separate:
+
+`SemanticRoomBoundary`
+- tells Residents and story systems what this space means;
+- may define routines, privacy, activity, ownership, interaction and staging.
+
+`PhysicalBoundary`
+- collision/support;
+- may be absent, partial or explicit.
+
+`VisualBoundary`
+- chalk/paint/material seam;
+- raised trim;
+- floor tile change;
+- two walls;
+- props;
+- light/fog/color shift;
+- furniture arrangement.
+
+A Resident may respect a "room" even when the player can visually walk around its open side.
+
+### Resident choreography becomes essential
+
+Open sets only work if actors make the space believable.
+
+Resident Performance should be able to consume:
+- room/scene role;
+- activity anchors;
+- relational positions;
+- prop anchors;
+- entry/exit points;
+- private/public state.
+
+Examples:
+- cooking at a stove anchor;
+- reading at a desk;
+- sleeping/resting;
+- arguing across a table;
+- tending plants;
+- rehearsing/music;
+- repairing/building;
+- greeting a player at the implied threshold.
+
+The choreography, not four walls, proves the room.
+
+### SceneCell / SetCell concept
+
+A MacroCell cluster may expose a lightweight presentation record:
+
+```
+SceneCell {
+  sceneRole
+  boundaryProfile: OPEN | FLOOR_MARK | TWO_WALL | PARTIAL | ENCLOSED
+  floorProfile
+  propAnchors[]
+  residentAnchors[]
+  entryAnchors[]
+  lightProfile?
+  audioProfile?
+  privacyProfile?
+}
+```
+
+This is presentation/semantic metadata, not a second World truth.
+
+### Visual storytelling advantages
+
+The grammar supports:
+- immediate readable tableaux;
+- private life visible from the world;
+- comic-strip-like staged compositions;
+- theatrical alienation / deliberate artificiality;
+- rapid changes of role without rebuilding architecture;
+- Kayfabe ambiguity between "real place", "set", "toy", "map", and "performance".
+
+The world may intentionally leave unresolved whether a scene is:
+- a literal house;
+- a theatrical representation of a house;
+- a toy diorama;
+- a biome that has adopted domestic props;
+- a Resident's subjective/story space.
+
+That ambiguity is a feature when the acting, prop logic and scene composition remain coherent.
+
+### Camera rule
+
+Prefer open/partial sets for Resident-heavy scenelets when a closed room would create:
+- camera clipping;
+- roof hiding;
+- wall occlusion;
+- cramped Rig_Medium scale;
+- repeated interior-camera exceptions.
+
+Do not solve those problems by shrinking Characters or rebuilding the camera around tiny rooms.
+
+### Claybound / toy-world relation
+
+Tier-A Characters, key props and signature scene elements still target the Claybound Gold Standard.
+
+The open-stage grammar concerns **spatial representation**, not permission to lower material quality.
+
+### Cultural reference direction
+
+Useful reference families:
+- minimalist/theatrical stage space;
+- chalk/floor-plan architecture;
+- dollhouse / open-back toy house;
+- comic-strip scene resets;
+- Krazy Kat-like unstable landscape/room identity;
+- surreal theatre and absurdist staging.
+
+Use as design grammar, not literal reproduction of protected works.
+
+
 ## Resource payload / mining layer
 
 A cell may also carry an optional **resource payload**.
