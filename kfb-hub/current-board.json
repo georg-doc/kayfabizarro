@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.18",
-  "updatedAt": "2026-10-07T16:49:00Z",
+  "revision": "2026-10-07.19",
+  "updatedAt": "2026-10-07T17:08:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Final Island MVP Work/WSA ONE_SHOT brief is persisted and binding. Frozen Matrix operational v2 + Inbox Donor Audit remain unchanged. Product starts NO MVP; next executor is exactly one ChatGPT Work/WSA Integrator on PR #348."
+    "note": "Final Island MVP ONE_SHOT hardened to operational matrix v3 after Coworker sanity review. No scope expansion: 44 REQUIRED unchanged. New guards: mandatory Georg Phase-3 visual PASS/FAIL gate, persisted Lab road/performance donor findings, strict target-GPU measurement conditions, High reasoning allowed for Phases 3/4, and full 44-row table required even on NO MVP."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,14 +26,15 @@
     "islandMvpIntegrationCensus": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "islandMvpInboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
-    "islandMvpFinalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md"
+    "islandMvpFinalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
+    "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md"
   },
   "p0": [
     {
       "id": "island-mvp-one-shot-ready",
-      "title": "Island MVP · ONE_SHOT READY · NO MVP",
-      "summary": "Final Work/WSA execution brief is frozen and persisted. It wraps all 44 REQUIRED rows, 12 Strongly Include, 7 Optional, Inbox donor routing, Early Golden and independent critic gates into one continuous product job on WB2 PR #348.",
-      "badge": "READY FOR WORK/WSA ONE_SHOT",
+      "title": "Island MVP · ONE_SHOT v3 READY · NO MVP",
+      "summary": "Final Work/WSA brief hardened after sanity review: mandatory Georg Early-Golden visual gate, Lab junction/performance facts, strict target-GPU rules, High reasoning permitted for visual/road phases, and complete 44-row final table. Scope remains 44 REQUIRED.",
+      "badge": "READY FOR WORK/WSA · v3",
       "action": "Final ONE_SHOT Brief öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
       "executor": "ChatGPT Work/WSA · single Integrator",
