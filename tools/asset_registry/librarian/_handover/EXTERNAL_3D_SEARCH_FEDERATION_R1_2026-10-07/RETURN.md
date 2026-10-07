@@ -96,7 +96,21 @@ These are implementation acceptance gates, not prep claims.
 1. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/START_HERE.md`
 2. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/TEST_REPORT.md`
 3. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/WORK_WSA_IMPLEMENTATION_BRIEF.md`
-4. this `RETURN.md`
+4. `tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/SHORT_HANDOVER_WSA_MVP_PLANNING.md`
+5. this `RETURN.md`
+
+## Cross-project planning decision
+
+The external federation is also approved as an **optional cross-project agent donor/search pool** for future KFB One-Shots, MVPs, surreal diegetic worldbuilding, “KFB world as 3D toy” construction and Frankensteining/kitbashing.
+
+This does not create a new owner or MVP requirement. Planning rule:
+
+`DONOR GAP CHECK → INTERNAL KFB SOURCES → EXTERNAL 3D SEARCH POOL → SOURCE ISOLATION → KEEP / ADAPT / REJECT`
+
+For the current Island MVP it remains optional input behind the Frozen Matrix, existing owners, source-isolation rule, Claybound/KFB compatibility and Georg visual product gate.
+
+Short WSA/MVP handover:
+`tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/SHORT_HANDOVER_WSA_MVP_PLANNING.md`
 
 ## Preserved / unchanged
 
