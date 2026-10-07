@@ -396,3 +396,42 @@ Not claimed:
 - no Open World runtime test;
 - no ChatterBox runtime test;
 - no HUMAN_ACCEPTED state for the authoring rules.
+
+
+---
+
+## Historian / Chronicler + Living-Toy expansion validation · 2026-10-07
+
+Result: **17/17 PASS**
+
+Validated:
+1. Historian role persisted.
+2. Chronicler persona persisted.
+3. Living-Toy event grammar contains 13 scenario families.
+4. No scenario claims a current runtime event ID.
+5. Machine-readable event grammar uses Historian / Chronicler.
+6. Living-Toy Activity Pool contains 30 candidate activities.
+7. Graveyard witness activity `graveyard.keep-watch` exists.
+8. Site delta contains 11 records.
+9. Site-delta reference IDs are unique.
+10. Site-delta canonical URLs are unique.
+11. All 11 new source records retain `sourceInspectedInIsolation=false`.
+12. Full Site-delta target is 69 built-ins from the last proven 58.
+13. Combined Work import brief consumes the Site delta payload.
+14. WSA consolidation brief includes the 13 Living-Toy scenario families.
+15. Historical donor audit records the Historian / Chronicler decision.
+16. Site implementation packet records current repo corpus = 69.
+17. Site implementation packet records pending Site delta = 11.
+
+Artifacts:
+- `KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md`
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json`
+- `KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json`
+- `STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json`
+
+Not claimed:
+- no Site deployment occurred in this Web Chat;
+- no visual-board source inspection was promoted;
+- no Open World / ChatterBox runtime integration occurred;
+- no current runtime event API was inferred from historical donors.
