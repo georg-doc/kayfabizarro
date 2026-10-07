@@ -104,6 +104,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
       let cross = null; for (const p of pts) if (roadDist(p[0], p[1]) < 1.6) { cross = p; break; }
       let lip = null; for (let i = 1; i < pts.length; i++) if (sdf(pts[i][0], pts[i][1]) >= -0.3) { const ddx = pts[i][0] - pts[i - 1][0], ddz = pts[i][1] - pts[i - 1][1], l = Math.hypot(ddx, ddz) || 1; lip = { p: pts[i], i, dir: [ddx / l, ddz / l] }; break; }
       creek = { pts, w: 1.3, cross, lip, dist: (x, z) => { let b = 1e9; for (let i = 0; i < pts.length - 1; i++) { const d = distSeg(x, z, pts[i], pts[i + 1]); if (d < b) b = d; } return b; } }; } }
+  if(creek&&recipe.islandLayout?.waterProfile==='graded-v1'){const pts=creek.pts,lengths=[0];for(let i=1;i<pts.length;i++)lengths.push(lengths[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));const total=lengths[creek.lip?.i??pts.length-1];creek.waterAt=(x,z)=>{let best=Infinity,station=0;for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),d=Math.hypot(x-a[0]-t*dx,z-a[1]-t*dz);if(d<best){best=d;station=lengths[i-1]+t*(lengths[i]-lengths[i-1]);}}return lerp(pond.h-.32,Math.min(-1.8,pond.h-.8),clamp(station/total,0,1));};}
   return { seed, shape, cells: C, c0, sdf, NA, edgeR, rAt, recipe, stream, graph, width, hw, roadY: roadSurf, roadDist, natural, pads, plazas, paths, poly, pond, creek };
 }
 
@@ -116,7 +117,7 @@ export function fields(P) {
   const heightAt = (x, z) => { const e = -sdf(x, z); let h = natural(x, z) * sstep(1.5, 11, e) - 1.4 * Math.pow(1 - sstep(0, 3.2, e), 2);
     for (const p of [...pads, ...plazas]) { const w = 1 - sstep(p.r, p.r + 4, Math.hypot(x - p.x, z - p.z)); h = lerp(h, p.h, w); }
     if (pond) { const dp = Math.hypot(x - pond.x, z - pond.z); h = lerp(h, pond.h, 1 - sstep(pond.r + 1, pond.r + 5, dp)); h -= 0.9 * Math.pow(1 - sstep(0, pond.r + 0.6, dp), 0.7); }
-    const d = roadDist(x, z), w = 1 - sstep(hw, hw + 7, d); h = lerp(h, roadY - 0.35, w); return h - carveAt(x, z)[0]; };
+    const d = roadDist(x, z), w = 1 - sstep(hw, hw + 7, d); h = lerp(h, roadY - 0.35, w); if(creek?.waterAt){const dc=creek.dist(x,z),channel=1-sstep(creek.w,creek.w+2.6,dc),bed=creek.waterAt(x,z)-.75;return lerp(h,Math.min(h,bed),channel);}return h - carveAt(x, z)[0]; };
   // Übergangsgewichte für das Joyride-Patch-Muster (kfbBlend): Sand an Bankett und Ufer, Pflaster an Plätzen und Wegen, Fels am Rand
   const weightsAt = (x, z) => { const e = -sdf(x, z), d = roadDist(x, z);
     let sand = 1 - sstep(hw + 0.6, hw + 3.4, d), pav = 0;

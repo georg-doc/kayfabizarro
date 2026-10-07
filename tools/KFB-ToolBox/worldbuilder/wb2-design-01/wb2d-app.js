@@ -40,7 +40,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { makeEditLayer } from '../../lib/edit-layer.js';
 import { ensureSculpt, brushWeight, makeStroke, pointSpacing, addStrokePoint, sculptDeltaAt, dabDeltaAt, applyDabToGeometry, strokeCount } from '../wb2-terrain-sculpt-01/terrain-sculpt.js';
-import { makePresentation, PROFILES, TERRAIN_LOOKS, OBJECT_LOOKS, LIGHT_PARAMS, TORCH_KEYS } from './wb2d-presentation.js';
+import { makePresentation, PROFILES, TERRAIN_LOOKS, OBJECT_LOOKS, LIGHT_PARAMS, TORCH_KEYS } from './wb2d-presentation.js?r4-golden-01';
 
 /* ---------------- chrome ---------------- */
 const CSS = `
@@ -403,6 +403,8 @@ const viewer={camera,scene,controls};
 
 /* presentation seam — terrainHeightAt is hoisted (function declaration) */
 const PRES=makePresentation({scene,renderer,wb2Lights:[hemiWB2,sun],wb2Background:WB2_BG,wb2Fog:WB2_FOG,heightAt:(x,z)=>terrain?terrainHeightAt(x,z):0});
+if(WORLD?.islandRecipe?.route?.schema==='kfb.route-graph/0.1-draft')await PRES.useIslandEnvironment(camera);
+document.body.dataset.environmentState=JSON.stringify({route:WORLD?.islandRecipe?.route?.schema,environment:PRES.environmentProbe()});
 
 function recordForNode(node){
   const id=node&&node.userData&&node.userData.sceneObjectId;
@@ -1198,7 +1200,7 @@ new ResizeObserver(resize).observe(E('stage'));
 resize();
 addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
 addEventListener('pagehide',()=>{
-  renderer.setAnimationLoop(null);PLAY?.dispose?.();WORLD?.dispose?.();
+  renderer.setAnimationLoop(null);PLAY?.dispose?.();WORLD?.dispose?.();PRES.dispose();
   const geometries=new Set(),materials=new Set(),textures=new Set();
   scene.traverse(node=>{if(node.geometry)geometries.add(node.geometry);for(const m of (Array.isArray(node.material)?node.material:[node.material]))if(m){materials.add(m);for(const value of Object.values(m))if(value?.isTexture)textures.add(value);}});
   for(const g of geometries)g.dispose();for(const t of textures)t.dispose();for(const m of materials)m.dispose();
@@ -1217,7 +1219,7 @@ renderer.setAnimationLoop(()=>{
   }
   for(const root of sceneObjects.values()){const life=root.userData.lifecycle;if(!behindCurtain&&life&&root.visible&&!root.userData.performanceSetId&&!root.userData.billboardWorldId){const near=!PLAY?.on||root.position.distanceTo(PLAY.position)<45;if(near)life.update(dt,(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)));}}
   window.__wb2d?.mvp?.update(dt);
-  PRES.tick(clock.elapsedTime);
+  PRES.tick(clock.elapsedTime,camera,PLAY?.on?PLAY.position:controls.target);
   if(PLAY&&mode==='scene')PLAY.update(dt);
   WORLD?.stepPhysics?.(dt);
   if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
@@ -1228,6 +1230,7 @@ renderer.setAnimationLoop(()=>{
     for(const o of hidden)o.visible=false;
     try{renderer.render(scene,camera)}finally{for(const o of hidden)o.visible=true}
   }else if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
+  if(!behindCurtain)PRES.after();
   window.__wb2d?.candidateEvidence?.sample();
 });
 

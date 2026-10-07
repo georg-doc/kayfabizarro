@@ -20,7 +20,7 @@ export async function mountR2DBuildings({group,plan,field,corridors=[],anchors=[
     const pads=['world.utopia','world.protopia'].includes(worldId)?plan.pads.slice(1):plan.pads;
     const pad=pads[i]||null;
     const radius=Math.hypot(nativeSize.x,nativeSize.z)/2;
-    const scale=Math.min(4,pad?pad.r*.75/Math.max(radius,.01):4/Math.max(radius,.01));
+    const scale=Math.min(4,plan.graph&&i===0?18/nativeSize.y:Infinity,pad?pad.r*.75/Math.max(radius,.01):4/Math.max(radius,.01));
     model.scale.setScalar(scale);model.updateMatrixWorld(true);
     const points=[],v=new THREE.Vector3();model.traverse(o=>{if(o.isMesh){const p=o.geometry.attributes.position;for(let k=0;k<p.count;k++){v.fromBufferAttribute(p,k).applyMatrix4(o.matrixWorld);points.push([v.x,v.z])}}});
     const angle=(i-records.length*.15)*Math.PI*2/Math.max(4,records.length),oldX=pad?pad.x:centre.x+Math.cos(angle)*16,oldZ=pad?pad.z:centre.z+Math.sin(angle)*16;

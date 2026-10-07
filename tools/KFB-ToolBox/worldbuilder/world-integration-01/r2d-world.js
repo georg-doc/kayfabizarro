@@ -12,8 +12,8 @@ import {reconcileRecoveryDocument} from '../procedural-test-world-01/recovery-do
 import {buildClayStrand} from '../procedural-test-world-01/joyride-strand.v1.js';
 import {prepareJoyride} from '../procedural-test-world-01/joyride-world-context.v1.js';
 import {signatureRecipe,createLifeTree,PALETTES} from '../procedural-test-world-01/signature-life-tree.v1.mjs';
-import {protectedAnchors} from '../procedural-test-world-01/world-clearance.v1.mjs';
-import {clayContext,adaptRegistered} from '../procedural-test-world-01/wb2-source-evidence.v1.js';
+import {protectedAnchors,hull} from '../procedural-test-world-01/world-clearance.v1.mjs';
+import {clayContext,adaptRegistered,clayFamilyMaterial,seedClayGeometry} from '../procedural-test-world-01/wb2-source-evidence.v1.js';
 
 const TRACK_PIN='64d8597c3dad1dc9814c794d4a566d589e1e1a25';
 const R2C_PIN='927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f';
@@ -43,7 +43,8 @@ export const PROVIDER='kfb.r2d-worldbuilder-adapter/2';
 
 function chooseSpawn(P){
   const s=P.stream?.samples||[];
-  const q=s[Math.max(0,Math.min(s.length-1,Math.floor(s.length*.32)))]||null;
+  const hint=P.recipe.islandLayout?.spawn||[-32.3,-36];
+  const q=P.graph?s.reduce((a,b)=>Math.hypot(b.p[0]-hint[0],b.p[2]-hint[1])<Math.hypot(a.p[0]-hint[0],a.p[2]-hint[1])?b:a,s[0]):s[Math.max(0,Math.min(s.length-1,Math.floor(s.length*.32)))]||null;
   if(q?.p&&q?.T)return{x:q.p[0],z:q.p[2],heading:Math.atan2(q.T[0],q.T[2]),road:'R2D Track Core'};
   return{x:P.c0[0],z:P.c0[1],heading:0,road:'island centre'};
 }
@@ -54,7 +55,7 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
   const maxR=Math.max(...P.edgeR),spawn=chooseSpawn(P);
   const tile={cx:+P.c0[0].toFixed(3),cz:+P.c0[1].toFixed(3),size:Math.ceil(maxR*2+28),seg:256};
   const group=new THREE.Group();group.name='R2D WorldBuilder presentation';
-  let presentation=null,buildings=null,heightReader=null,surfaceAdapter=null,roadMesh=null,roadMeshes=[];
+  let presentation=null,buildings=null,heightReader=null,surfaceAdapter=null,roadMesh=null,roadMeshes=[],roadCorridors=[],clayU=null,authoredRoots=[];
   const zone={id:'r2d-island-'+Z.seed,status:'SOURCE_DERIVED_R2D_V0',
     counts:{buildings:P.pads.length,roadParts:1,landuse:1},
     provenance:{source:'R2D v0 Claude Design donor',commit:'74f7a690fbec88cf98ce0936f31b72ad3f1148f5',blob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'}};
@@ -70,13 +71,14 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
     syncObjects(roots){
       if(!surfaceAdapter)return;
       const native=buildings?.root?.children||[];native.forEach((root,i)=>{root.userData.sceneObjectId='village/'+i;root.userData.kind='prop'});
-      surfaceAdapter.objects([...native,...roots]);
+      authoredRoots=[...roots];const nature=presentation?.natureRoot?.children||[];nature.forEach((root,i)=>{root.userData.sceneObjectId='nature/'+i;root.userData.kind='prop'});surfaceAdapter.objects([...native,...nature,...authoredRoots]);
     },
     surfaceWitness(){
       if(!surfaceAdapter||!presentation)throw Error('Named island surface not ready');
       const points=[];for(let z=-30;z<=30;z+=2.731)for(let x=-30;x<=30;x+=3.137)if(P.sdf(x,z)<-1)points.push([x,z]);
+      for(const [i,q]of P.stream.samples.entries())if(i%24===0)points.push([q.p[0],q.p[2]]);for(const p of P.creek?.pts||[])if(P.sdf(...p)<-1)points.push(p);
       const report=surfaceAdapter.evidence(points),ray=new THREE.Raycaster();
-      for(const row of report.samples){ray.set(new THREE.Vector3(row.x,1000,row.z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects([presentation.top,...roadMeshes],false)[0];row.visible=hit?.point.y??null;row.visibleDelta=hit?Math.abs(row.support-hit.point.y):null;}
+      for(const row of report.samples){ray.set(new THREE.Vector3(row.x,1000,row.z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects([presentation.top,...roadMeshes],false)[0];row.visible=hit?.point.y??null;row.visibleDelta=hit?Math.abs(row.support-hit.point.y):null;if(hit&&(row.visibleDelta>.0001||row.delta>.002)){const i=roadMeshes.indexOf(hit.object);row.visibleMesh={index:i,name:hit.object.name,position:hit.object.position.toArray(),matrix:hit.object.matrixWorld.toArray(),contact:i>=0?surfaceAdapter.surface.contacts.get('route/'+i)?.heightAt(row.x,row.z):null,face:hit.face,...(row.delta>.002?{geometry:{positions:Array.from(hit.object.geometry.attributes.position.array),indices:hit.object.geometry.index?Array.from(hit.object.geometry.index.array):null}}:{})};}}
       report.maxPhysicsDelta=Math.max(...report.samples.map(s=>s.delta??Infinity));report.maxVisibleDelta=Math.max(...report.samples.map(s=>s.visibleDelta??Infinity));
       report.pass=report.maxPhysicsDelta<.002&&report.maxVisibleDelta<.0001;return report;
     },
@@ -99,11 +101,11 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
     async mount({scene,renderer,heightAt}){heightReader=heightAt;if(island){const M=await import('./island-surface-adapter.v1.mjs');surfaceAdapter=await M.createIslandSurface(Z.seed);}const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});let road;
-      if(P.graph){const U=await clayContext(),items=Object.entries(P.graph.routes).map(([id,stream])=>({id,plan:{stream,sdf:P.sdf},field:F})),joy=await prepareJoyride({nodes:items,connections:[]});road=new THREE.Group();for(const n of items)road.add(buildClayStrand(THREE,n.plan.stream,{U,palette:PALETTES.burg||PALETTES['burg'],...joy.contexts.get(n.id)}));road.add(buildJoyrideSidewalk(P.graph.routes['village.circle.village'],U));for(const node of P.graph.nodes){const paint=Object.values(P.graph.routes)[0].samples[0].paint;road.add(ST.buildNode(THREE,{...node,anchor:null},paint,mat));}}
+      if(P.graph){const U=await clayContext(),items=Object.entries(P.graph.routes).map(([id,stream])=>({id,plan:{stream,sdf:P.sdf},field:F})),joy=await prepareJoyride({nodes:items,connections:[],routeSkinZones:true});clayU=U;roadCorridors=joy.corridors;road=new THREE.Group();for(const n of items)road.add(buildClayStrand(THREE,n.plan.stream,{U,palette:{...PALETTES.burg,roadStreet:'#566680',roadTrack:'#3d4a60'},...joy.contexts.get(n.id)}));road.add(buildJoyrideSidewalk(P.graph.routes['village.circle.village'],U));for(const node of P.graph.nodes){const paint=Object.values(P.graph.routes)[0].samples[0].paint;const native=ST.buildNode(THREE,{...node,anchor:null},paint,mat);node.deck.zones.forEach((z,i)=>{if(z.kind!=='island'&&z.kind!=='hatch'){native.children[i].material.color.set('#566680');for(let k=1;k<z.rows.length;k++)roadCorridors.push({id:node.id,kind:'junction',polygon:hull([...z.rows[k-1],...z.rows[k]].map(p=>[p[0],p[2]]))});}});native.traverse(o=>{if(o.isMesh&&!o.material?.polygonOffset){seedClayGeometry(o.geometry,37);o.material=clayFamilyMaterial(U,o.material,'road');}});road.add(native);}}
       else road=ST.buildTrack(THREE,P.stream,mat);
-      road.name='R4 Track Core + Joyride';road.traverse(o=>{if(o.isMesh){const paint=o.name.startsWith('M2 ·')||o.material?.polygonOffset;o.castShadow=!paint;o.receiveShadow=true;if(!paint)roadMeshes.push(o)}});group.add(road);if(!P.graph)roadMeshes=[road.children[0]];roadMesh=roadMeshes[0];if(surfaceAdapter)roadMeshes.forEach((mesh,i)=>surfaceAdapter.road(mesh,'route/'+i));buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
-    dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal});mesh.visible=false;if(heightReader)presentation.refreshSurface(heightReader);surfaceAdapter?.ground(presentation.top)},
-    onTerrain(){if(heightReader)presentation?.refreshSurface(heightReader);if(presentation)surfaceAdapter?.ground(presentation.top);return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
+      road.name='R4 Track Core + Joyride';road.traverse(o=>{if(o.isMesh){const paint=o.name.startsWith('M2 ·')||o.material?.polygonOffset;o.castShadow=!paint;o.receiveShadow=true;if(!paint)roadMeshes.push(o)}});group.add(road);if(!P.graph)roadMeshes=[road.children[0]];roadMesh=roadMeshes[0];if(surfaceAdapter)roadMeshes.forEach((mesh,i)=>surfaceAdapter.road(mesh,'route/'+i));const ray=new THREE.Raycaster(),placementField={...F,heightAt(x,z){ray.set(new THREE.Vector3(x,1000,z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects(roadMeshes,false)[0];return Math.max(F.heightAt(x,z),hit?.point.y??-Infinity);}};buildings=await mountR2DBuildings({group,plan:P,field:placementField,renderer,corridors:roadCorridors});scene.add(group)},
+    dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal,clayU});mesh.visible=false;if(heightReader)presentation.refreshSurface(heightReader);surfaceAdapter?.ground(presentation.top)},
+    onTerrain(){if(heightReader)presentation?.refreshSurface(heightReader);if(presentation)surfaceAdapter?.ground(presentation.top);W.syncObjects(authoredRoots);return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
     stepPhysics(dt){surfaceAdapter?.physics.step(dt)},dispose(){surfaceAdapter?.dispose();presentation?.dispose();group.removeFromParent()},
     tick(){},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},async setSky(v){W.skyMode=v;return v}
   };return W;

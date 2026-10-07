@@ -7,9 +7,9 @@ export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groun
   const listenDom=(type,fn,options={})=>dom.addEventListener(type,fn,{...options,signal:events.signal});
   let character=physics?.createCharacter(bodyHeight),verticalSpeed=0,grounded=false;
   let jumpPhase='ground',jumpClock=0,jumpQueued=false,spaceIntent=null,lateralSpeed=0;
-  const jump={anticipation:.08,launch:8.5,gravity:24,recovery:.20};
+  const jump={anticipation:.18,launch:8.5,gravity:24,recovery:.28};
   const keys=new Set(),position=root.position,forward=new THREE.Vector3(),desiredCam=new THREE.Vector3(),lookAt=new THREE.Vector3(),desiredLook=new THREE.Vector3();
-  const params={turnRate:2.35,backMul:1,cameraDistance:bodyHeight*3.4,cameraHeight:bodyHeight*1.65,cameraLookHeight:bodyHeight*.8,cameraLookAhead:bodyHeight*.65,cameraSmooth:14};
+  const params={turnRate:2.35,backMul:1,cameraDistance:bodyHeight*3.4,cameraHeight:bodyHeight*1.65,cameraLookHeight:bodyHeight*1.1,cameraLookAhead:bodyHeight*.65,cameraSmooth:14};
   let on=false,heading=spawn.heading||0,speed=0,hold=0,yaw=0,pitch=0,drag=null,snapped=false;
   position.set(spawn.x,groundAt(spawn.x,spawn.z)+(character?.02:0),spawn.z);character?.reset(position);
   function blocked(x,z){const y=groundAt(x,z);return !Number.isFinite(y)||y<-30||Math.abs(y-position.y)>.75||solidAt(x,z)>0||solidAt(x+.2,z)>0||solidAt(x-.2,z)>0||solidAt(x,z+.2)>0||solidAt(x,z-.2)>0;}
@@ -51,7 +51,7 @@ export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groun
   const detachFixed=physics?.onFixedStep(integrate);
   function update(dt){
     if(!on)return;dt=Math.min(.05,Math.max(0,dt));if(!physics)integrate(dt);
-    present(dt,Math.hypot(speed,lateralSpeed)*(speed<0?-1:1),{phase:jumpPhase,time:jumpClock,verticalSpeed,grounded,lateralSpeed});syncCamera(dt);
+    present(dt,Math.hypot(speed,lateralSpeed)*(speed<0?-1:1),{phase:jumpPhase,time:jumpClock,duration:jumpPhase==='anticipation'?jump.anticipation:jumpPhase==='landing'?jump.recovery:null,verticalSpeed,grounded,lateralSpeed});syncCamera(dt);
     if(hud)hud.textContent='W/S Jog · Shift Sprint · Alt Slow Walk · Q/E seitwärts · Leertaste Sprung · A/D drehen · rechte Maustaste Kamera · Tab bauen · '+Math.abs(speed).toFixed(2)+' m/s';
   }
   function key(e,down){if(!on||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName)||e.target?.isContentEditable)return;if(['KeyW','KeyS','KeyA','KeyD','ShiftLeft','ShiftRight','AltLeft','AltRight','KeyQ','KeyE','Space'].includes(e.code)){e.preventDefault();if(down){if(e.code==='Space'&&!e.repeat&&!keys.has('Space')){jumpQueued=true;spaceIntent?.(e);}keys.add(e.code);}else keys.delete(e.code);}}
@@ -61,7 +61,7 @@ export function createPlanarGround({THREE,camera,dom,root,bodyHeight,spawn,groun
   listenDom('pointermove',e=>{if(!on||drag?.id!==e.pointerId)return;yaw+=(e.clientX-drag.x)*.0028;pitch=THREE.MathUtils.clamp(pitch+(e.clientY-drag.y)*.0022,-.35,.55);drag.x=e.clientX;drag.y=e.clientY;});
   function release(){drag=null;}listenDom('pointerup',release);listenDom('lostpointercapture',release);
   listenDom('wheel',e=>{if(!on)return;e.preventDefault();params.cameraDistance=THREE.MathUtils.clamp(params.cameraDistance*Math.exp(e.deltaY*.00045),bodyHeight*1.5,bodyHeight*8)},{passive:false});
-  return {position,params,update,get character(){return character},get grounded(){return grounded},get motion(){return {phase:jumpPhase,time:jumpClock,verticalSpeed,grounded,lateralSpeed}},setSpaceIntent(fn){spaceIntent=fn},
+  return {position,params,update,get character(){return character},get grounded(){return grounded},get motion(){return {phase:jumpPhase,time:jumpClock,duration:jumpPhase==='anticipation'?jump.anticipation:jumpPhase==='landing'?jump.recovery:null,verticalSpeed,grounded,lateralSpeed}},setSpaceIntent(fn){spaceIntent=fn},
     acceptPose(p,h){if(![p.x,p.y,p.z,h].every(Number.isFinite)||character&&!character.validPose(p))throw Error('Invalid locomotion handoff pose');position.copy(p);heading=h;root.rotation.set(0,heading,0);character?.reset(position);keys.clear();speed=lateralSpeed=verticalSpeed=0;jumpQueued=false;jumpPhase='ground';jumpClock=0;snapped=false;},
     setBodyHeight(height){bodyHeight=height;if(physics){character?.dispose();character=physics.createCharacter(height);character.reset(position);}},
     dispose(){on=false;keys.clear();speed=0;events.abort();detachFixed?.();character?.dispose();},get on(){return on},get speed(){return speed},get heading(){return heading},setOn(v){on=!!v;root.visible=on;keys.clear();speed=0;lateralSpeed=0;jumpQueued=false;hold=0;drag=null;snapped=false;if(on){present(0,0);syncCamera(0)}},handToOrbit(controls){controls.target.copy(lookAt);controls.update()},

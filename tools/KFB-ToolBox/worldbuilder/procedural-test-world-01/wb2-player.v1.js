@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createPlanarGround} from '../../lib/ground-planar.v1.js';
+import {clayContext,clayFamilyMaterial,seedClayGeometry} from './wb2-source-evidence.v1.js';
 import {sampleLoco} from './loco-blend.v1.mjs';
 
 const SOURCE_PIN='4398cd96499cd74c20b7be89e051a99121ea54c2';
@@ -19,6 +20,9 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_General.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb')),
     loader.loadAsync(raw(BASE+'Animations/gltf/Rig_Medium/Rig_Medium_MovementAdvanced.glb'))]);
+  const clayU=await clayContext();
+  function adaptFigure(root){let seed=61;root.traverse(o=>{if(!o.isMesh)return;o.geometry=seedClayGeometry(o.geometry.clone(),seed++);const materials=(Array.isArray(o.material)?o.material:[o.material]).map(src=>clayFamilyMaterial(clayU,src,'figure'));o.material=materials.length===1?materials[0]:materials;});}
+  adaptFigure(model.scene);
   let figure=model.scene,profile='Mannequin_Medium';const holder=new THREE.Group();holder.name='WB2 Player · Mannequin_Medium';holder.add(figure);figure.userData.sourceRecord={assetId:profile,packId:'KayKit Rig_Medium',source:PLAYER_SOURCES[profile]};holder.visible=false;
   const names=new Set();figure.traverse(o=>{names.add(o.name);if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
   const clips=[...general.animations,...movement.animations,...advanced.animations],actions=new Map();
@@ -40,7 +44,7 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
       const name=motion.phase==='anticipation'?'Jump_Start':motion.phase==='landing'?'Jump_Land':'Jump_Idle';
       const action=actions.get(name),duration=action.getClip().duration;
       // Start/compression use the authored clip; air/landing selection follows capsule contact.
-      action.time=motion.phase==='air'?motion.time%duration:Math.min(motion.time,duration);action.setEffectiveWeight(1);
+      action.time=motion.phase==='air'?motion.time%duration:Math.min(motion.time/Math.max(.001,motion.duration||duration),1)*duration;action.setEffectiveWeight(1);
       samples={rows:[{clip:name,time:action.time,weight:1}],phaseRate:0};mixer.update(0);figure.updateMatrixWorld(true);return;
     }
     if(speed<-.05){
@@ -64,7 +68,7 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
     async setDancing(on){if(on)await api.learnDance();dancing=!!on;danceTime=0;ground.setOn(true);},
     async setActor(next){
       if(next===profile)return profile;const replacement=await loadActorSource(next),available=new Set();replacement.traverse(o=>{available.add(o.name);if(o.isMesh)o.castShadow=o.receiveShadow=true});
-      const nextBindings={},prepared=[];
+      adaptFigure(replacement);const nextBindings={},prepared=[];
       for(const name of requiredClips){const src=clips.find(c=>c.name===name);const tracks=src.tracks.filter(t=>{const name=t.name.slice(0,t.name.lastIndexOf('.'));if(available.has(name))return true;if(/^handslot[lr]$/.test(name))return false;throw Error('Required Medium bone missing '+next+': '+name)});prepared.push(new THREE.AnimationClip(src.name,src.duration,tracks.map(t=>t.clone())));nextBindings[src.name]={sourceTracks:src.tracks.length,boundTracks:tracks.length,duration:src.duration};}
       const wasOn=ground.on;dancing=false;danceAction=null;danceSource=null;ground.setOn(false);mixer.stopAllAction();mixer.uncacheRoot(figure);holder.remove(figure);figure=replacement;holder.add(figure);mixer=new THREE.AnimationMixer(figure);actions.clear();bindings=nextBindings;profile=next;
       for(const clip of prepared){const action=mixer.clipAction(clip);action.play();action.paused=true;action.setEffectiveWeight(0);actions.set(clip.name,action)}

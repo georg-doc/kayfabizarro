@@ -4,6 +4,7 @@
  * WB2 remains renderer/world/edit owner; R2D core remains world-data truth.
  */
 import * as THREE from 'three';
+import {clayFamilyMaterial,seedClayGeometry} from './wb2-source-evidence.v1.js';
 import {
   buildP0BTreeGeometry,
   buildK1BoulderGeometry,
@@ -36,10 +37,11 @@ const rng=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.i
 function colorArray(hex){const c=new THREE.Color(hex);return[c.r,c.g,c.b]}
 
 export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
-  const {c0,NA,edgeR,seed}=plan,NR=44,NU=30,rows=NR+1+NU;
+  const {c0,NA,edgeR,seed}=plan,NR=plan.graph?128:44,NU=30,rows=NR+1+NU;
   const pos=new Float32Array(rows*NA*3),col=new Float32Array(rows*NA*3);
   const grass=colorArray(palette.grass),grass2=colorArray(palette.grass2||palette.grass),hill=colorArray(palette.hill||palette.grass),
     paved=colorArray(palette.paved),sand=colorArray(palette.sand),lip=colorArray(palette.lip||palette.rock),rock=colorArray(palette.rock||palette.lip);
+  const zone=plan.recipe.islandLayout?.paletteZone,zoneGrass=zone?colorArray(zone.grass):null;
   const R=rng(seed*31+7),depth=13+R()*4,edgeY=new Float32Array(NA);
   let vi=0;
   const put=(x,y,z,c)=>{pos.set([x,y,z],vi*3);col.set(c,vi*3);vi++};
@@ -48,8 +50,9 @@ export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
     for(let a=0;a<NA;a++){
       const th=a/NA*Math.PI*2,r=edgeR[a]*t,x=c0[0]+Math.cos(th)*r,z=c0[1]+Math.sin(th)*r,y=field.heightAt(x,z),m=field.maskAt(x,z),e=-plan.sdf(x,z);
       const pn=fbm(x*.07,z*.07,seed+21),d=plan.roadDist(x,z);
-      let cw=pn>.14?grass2:pn<-.32?hill:grass;
-      if(m==='building'||m==='interact'||m==='walk')cw=paved;else if(d<plan.hw+1.6&&d>=plan.hw-2.2)cw=sand;else if(e<1.3)cw=lip;
+      let cw=pn>.14?grass2:pn<-.32?hill:grass;if(zone){const w=sstep(zone.fromX,zone.toX,x);cw=cw.map((v,k)=>v*(1-w)+zoneGrass[k]*w);}
+      if(plan.graph){const [sw,pw,rw]=field.weightsAt(x,z);for(const [target,w] of [[sand,sw],[paved,pw],[lip,rw]])cw=cw.map((v,k)=>v*(1-w)+target[k]*w);}
+      else if(m==='building'||m==='interact'||m==='walk')cw=paved;else if(d<plan.hw+1.6&&d>=plan.hw-2.2)cw=sand;else if(e<1.3)cw=lip;
       if(i===NR)edgeY[a]=y;put(x,y,z,cw);
     }
   }
@@ -71,8 +74,8 @@ export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
   g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));g.setIndex(idx);g.computeVertexNormals();
   if(g.attributes.normal.getY(NA*5)<0){const ix=g.index.array;for(let i=0;i<ix.length;i+=3){const t=ix[i+1];ix[i+1]=ix[i+2];ix[i+2]=t}g.index.needsUpdate=true;g.computeVertexNormals()}
   const ix=g.index.array,cut=(NR+3)*NA*6;
-  const slice=(a,b)=>{const s=new THREE.BufferGeometry();for(const k of['position','normal','color'])s.setAttribute(k,g.attributes[k]);s.setIndex(Array.from(ix.slice(a,b)));s.computeBoundingBox();s.computeBoundingSphere();return s};
-  return{top:slice(0,cut),under:slice(cut,ix.length),depth:+depth.toFixed(1),vertices:vi};
+  const slice=(a,b)=>{const s=new THREE.BufferGeometry();for(const k of['position','normal','color'])s.setAttribute(k,k==='normal'?g.attributes[k].clone():g.attributes[k]);s.setIndex(Array.from(ix.slice(a,b)));s.computeBoundingBox();s.computeBoundingSphere();return s};
+  return{top:slice(0,cut),under:slice(cut,ix.length),depth:+depth.toFixed(1),vertices:vi,topVertexCount:(NR+1)*NA};
 }
 
 function waterMaterial(color){return new THREE.MeshStandardMaterial({color,roughness:.3,metalness:0,transparent:true,opacity:.92,side:THREE.DoubleSide})}
@@ -90,16 +93,16 @@ export function buildWaterGroup(plan,field,palette){
   if(plan.creek){
     const C=plan.creek,end=C.lip?C.lip.i:C.pts.length-1,verts=[],idx=[],hw=C.w+1.15;
     for(let i=0;i<=end;i++){
-      const a=C.pts[Math.max(0,i-1)],b=C.pts[Math.min(C.pts.length-1,i+1)],tx=b[0]-a[0],tz=b[1]-a[1],l=Math.hypot(tx,tz)||1,nx=-tz/l,nz=tx/l,y=field.heightAt(C.pts[i][0],C.pts[i][1])+.42;
-      for(const sd of[-1,1])verts.push(C.pts[i][0]+nx*sd*hw,y,C.pts[i][1]+nz*sd*hw);
+      const a=C.pts[Math.max(0,i-1)],b=C.pts[Math.min(C.pts.length-1,i+1)],tx=b[0]-a[0],tz=b[1]-a[1],l=Math.hypot(tx,tz)||1,nx=-tz/l,nz=tx/l,y=C.waterAt?C.waterAt(...C.pts[i]):field.heightAt(C.pts[i][0],C.pts[i][1])+.42;
+      for(const sd of[-1,1]){let w=hw;if(C.waterAt){let lo=0,hi=C.w+3;for(let j=0;j<14;j++){const m=(lo+hi)/2;if(field.heightAt(C.pts[i][0]+nx*sd*m,C.pts[i][1]+nz*sd*m)<y+.015)lo=m;else hi=m;}w=(lo+hi)/2;}verts.push(C.pts[i][0]+nx*sd*w,y,C.pts[i][1]+nz*sd*w);}
       if(i){const v=(i-1)*2;idx.push(v,v+2,v+1,v+1,v+2,v+3)}
     }
     const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setIndex(idx);g.computeVertexNormals();
     const m=new THREE.Mesh(g,mat);m.name='R2D creek';m.receiveShadow=true;group.add(m);report.creek=true;
     if(C.lip){
-      const L=C.lip.p,dv=C.lip.dir,y0=field.heightAt(L[0],L[1])+.42,nx=-dv[1],nz=dv[0],fp=[],fi=[],N=32;
-      const curve=t=>[L[0]+dv[0]*(.6+3.8*t),y0-24*t*t,L[1]+dv[1]*(.6+3.8*t)];
-      for(let k=0;k<=N;k++){const t=k/N,p=curve(t),w=hw*(.85+.45*t);for(const sd of[-1,1])fp.push(p[0]+nx*sd*w,p[1],p[2]+nz*sd*w);if(k){const v=(k-1)*2;fi.push(v,v+2,v+1,v+1,v+2,v+3)}}
+      const L=C.waterAt?C.pts[end]:C.lip.p,dv=C.lip.dir,y0=C.waterAt?C.waterAt(...L):field.heightAt(L[0],L[1])+.42,nx=-dv[1],nz=dv[0],fp=[],fi=[],N=32;
+      const curve=t=>[L[0]+dv[0]*((C.waterAt?0:.6)+3.8*t),y0-24*t*t,L[1]+dv[1]*((C.waterAt?0:.6)+3.8*t)];
+      for(let k=0;k<=N;k++){const t=k/N,p=curve(t),w=hw*(.85+.45*t);for(const [side,sd] of[-1,1].entries()){const off=verts.length-6+side*3;fp.push(p[0]+(C.waterAt?(verts[off]-L[0])*(1+.45*t):nx*sd*w),p[1],p[2]+(C.waterAt?(verts[off+2]-L[1])*(1+.45*t):nz*sd*w));}if(k){const v=(k-1)*2;fi.push(v,v+2,v+1,v+1,v+2,v+3)}}
       const fg=new THREE.BufferGeometry();fg.setAttribute('position',new THREE.Float32BufferAttribute(fp,3));fg.setIndex(fi);fg.computeVertexNormals();
       const fm=new THREE.Mesh(fg,mat);fm.name='R2D waterfall';group.add(fm);report.waterfall=true;
     }
@@ -121,12 +124,12 @@ export function buildNatureGroup(plan,field,palette){
   const R=rng(plan.seed*101+5),all=[];
   const free=(x,z)=>field.maskAt(x,z)==='veg';
   const scatter=(n,cx,cz,r0,r1,minD,test,tries=300)=>{const out=[];for(let k=0;k<tries&&out.length<n;k++){const a=R()*Math.PI*2,rr=r0+(r1-r0)*Math.sqrt(R()),x=cx+Math.cos(a)*rr,z=cz+Math.sin(a)*rr;if(!test(x,z)||[...out,...all].some(o=>Math.hypot(o[0]-x,o[1]-z)<minD))continue;out.push([x,z])}all.push(...out);return out};
-  const centres=scatter(3,plan.c0[0],plan.c0[1],0,40,15,(x,z)=>free(x,z)&&-plan.sdf(x,z)>8,1200);
+  const centres=plan.recipe.islandLayout?.groves||scatter(3,plan.c0[0],plan.c0[1],0,40,15,(x,z)=>free(x,z)&&-plan.sdf(x,z)>8,1200);
   const trees=[],bushes=[],boulders=[];
   const entry=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
   // Preserve native P1 geometry; keep tall vegetation out of the entry/camera corridor.
   const treeFree=(x,z)=>free(x,z)&&Math.hypot(x-entry.x,z-entry.z)>18;
-  centres.forEach(c=>{trees.push(...scatter(2,c[0],c[1],0,5,3.4,treeFree));bushes.push(...scatter(2,c[0],c[1],3.5,7,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
+  centres.forEach(c=>{trees.push(...scatter(plan.graph?5:2,c[0],c[1],0,8,4.2,treeFree));bushes.push(...scatter(2,c[0],c[1],3.5,7,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
   const edge=scatter(5,plan.c0[0],plan.c0[1],0,60,5,(x,z)=>{const e=-plan.sdf(x,z);return field.maskAt(x,z)==='edge'&&e>.8&&e<2.6},1500);
   const detailAnchor=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
   const detail=scatter(4,detailAnchor.x,detailAnchor.z,7,13,2.5,free,600);
@@ -139,12 +142,13 @@ export function buildNatureGroup(plan,field,palette){
     grass:new THREE.MeshStandardMaterial({color:palette.grass2||palette.grass,roughness:1})
   };
   const items=[
-    instanced('P1 soft trees',buildP0BTreeGeometry(),trees,mats.tree,field,plan.seed,1),
-    instanced('P1 cushion bushes',buildT3BushGeometry(plan.seed+1801,1),bushes,mats.bush,field,plan.seed+1,.28),
+    instanced('P1 soft trees',buildP0BTreeGeometry(),trees,mats.tree,field,plan.seed,plan.graph?3:1),
+    instanced('P1 cushion bushes',buildT3BushGeometry(plan.seed+1801,1),bushes,mats.bush,field,plan.seed+1,plan.graph?.65:.28),
     instanced('P1 boulders',buildK1BoulderGeometry(),boulders,mats.rock,field,plan.seed+2,1),
     instanced('P1 accent edge rocks',buildT3AccentRockGeometry(plan.seed+1701,1),edge,mats.rock,field,plan.seed+3,.9)
   ].filter(Boolean);
   items.forEach(x=>group.add(x));
+  const zone=plan.recipe.islandLayout?.paletteZone;if(zone){for(const m of items.filter(m=>/trees|bushes/.test(m.name))){const base=m.material.color.clone(),other=new THREE.Color(zone.grass2),matrix=new THREE.Matrix4();m.material.color.set('#ffffff');for(let i=0;i<m.count;i++){m.getMatrixAt(i,matrix);m.setColorAt(i,base.clone().lerp(other,sstep(zone.fromX,zone.toX,matrix.elements[12])));}}}
   if(detail.length){
     const [a,b,c,d]=detail;
     const addOne=(name,g,pt,mat,scale)=>{const m=instanced(name,g,[pt],mat,field,plan.seed+11,scale);if(m)group.add(m)};
@@ -156,28 +160,30 @@ export function buildNatureGroup(plan,field,palette){
   return{group,report:{centres:centres.length,trees:trees.length,bushes:bushes.length,boulders:boulders.length,edgeRocks:edge.length,p2Details:Math.min(4,detail.length)}};
 }
 
-export function mountR2DPresentation({group,supportTerrain,plan,field,palette,lifeTreeRecipe=null}){
+export function mountR2DPresentation({group,supportTerrain,plan,field,palette,lifeTreeRecipe=null,clayU=null}){
   if(supportTerrain)supportTerrain.visible=false;
   const body=buildIslandBody(plan,field,palette,lifeTreeRecipe);
-  const topMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
-  const underMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
+  let topMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
+  let underMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
+  if(clayU){seedClayGeometry(body.top,plan.seed);seedClayGeometry(body.under,plan.seed);topMat=clayFamilyMaterial(clayU,topMat,'terrainFg');underMat=clayFamilyMaterial(clayU,underMat,'terrainBg');}
   const top=new THREE.Mesh(body.top,topMat);top.name='R2D continuous island top';top.castShadow=top.receiveShadow=true;
   const under=new THREE.Mesh(body.under,underMat);under.name='R2D floating island underside';under.castShadow=under.receiveShadow=true;
   group.add(top,under);
   const water=buildWaterGroup(plan,field,palette);group.add(water.group);
   const nature=buildNatureGroup(plan,field,palette);group.add(nature.group);
+  if(clayU){nature.group.traverse(o=>{if(o.isMesh){seedClayGeometry(o.geometry,plan.seed+71);o.material=clayFamilyMaterial(clayU,o.material,/rock|boulder|log|stump/.test(o.name)?'prop':'nature');}});water.group.traverse(o=>{if(o.isMesh){seedClayGeometry(o.geometry,plan.seed+72);o.material=clayFamilyMaterial(clayU,o.material,'water');}});}
   const presentationSource={commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js'};
   for(const mesh of [top,under])mesh.userData.sourceRecord={assetId:mesh.name,packId:'R2D source-derived island',source:presentationSource,lineage:SOURCE.r2dDonorBlob};
   water.group.userData.sourceRecord={assetId:'R2D native water',packId:'R2D source-derived water',source:presentationSource,lineage:SOURCE.r2dDonorBlob};
   nature.group.traverse(o=>{if(o.isMesh){const p2=o.name.startsWith('P2');o.userData.sourceRecord={assetId:o.name,packId:p2?'KFB Environment P2':'KFB Environment P1',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/world-corridor-01/'+(p2?'procedural-environment-p2/environment-family-p2.mjs':'procedural-props-local-proof/environment-family-p1.mjs'),blobSha:p2?SOURCE.p2Blob:SOURCE.p1Blob}}}});
   const natureBases=[];nature.group.traverse(o=>{if(o.isInstancedMesh){const matrices=[];for(let i=0;i<o.count;i++){const m=new THREE.Matrix4();o.getMatrixAt(i,m);matrices.push(m)}natureBases.push({mesh:o,matrices})}});
   return{
-    top,under,
+    top,under,natureRoot:nature.group,
     report:{schema:SCHEMA,depth:body.depth,bodyVertices:body.vertices,underside:true,...water.report,nature:nature.report},
     refreshSurface(heightAt){
       // This is the existing WB2 sculpt truth projected onto its visible R2D mesh.
       // Underside shape, island topology and Track support remain their existing owners.
-      const pos=body.top.attributes.position;for(let i=0;i<45*plan.NA;i++){const x=pos.getX(i),z=pos.getZ(i);pos.setY(i,heightAt(x,z))}pos.needsUpdate=true;
+      const pos=body.top.attributes.position;for(let i=0;i<body.topVertexCount;i++){const x=pos.getX(i),z=pos.getZ(i);pos.setY(i,heightAt(x,z))}pos.needsUpdate=true;
       body.top.computeVertexNormals();body.top.computeBoundingBox();body.top.computeBoundingSphere();body.under.computeBoundingBox();body.under.computeBoundingSphere();
       for(const {mesh,matrices} of natureBases){matrices.forEach((base,i)=>{const m=base.clone(),x=m.elements[12],z=m.elements[14];m.elements[13]+=heightAt(x,z)-field.heightAt(x,z);mesh.setMatrixAt(i,m)});mesh.instanceMatrix.needsUpdate=true;mesh.computeBoundingSphere()}
     },

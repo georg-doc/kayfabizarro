@@ -1,0 +1,50 @@
+✔ existing Joyride Drive stops at a shared Rapier obstacle, reverses and continues (244.752417ms)
+✔ open receiving route stops at its endpoint without teleporting or claiming a lap (8.38975ms)
+✔ vehicle rotation into a wall is rejected even without centre translation (32.111708ms)
+✔ source intent requires two fresh taps within 400ms; repeats and 401ms do not request (1.062209ms)
+✔ Travel Carpet planar seam retains source dynamics, finite void, existing camera and Rapier wall contact (265.170875ms)
+✔ mode bridge preserves flight heading/FOV through Build and keeps replacement capsule in Flight mode (95.192417ms)
+✔ blocked flight cannot read a cliff behind the wall as reached terrain (40.137167ms)
+⚠ quarantined: automatic 0.30m step climbing before pose replay (290.550833ms) # Guard: optional until required route proves unavoidable curb; frozen after two non-improving repairs
+✔ fixed-step descent is independent of 30 versus 60 render updates (72.848708ms)
+✔ valid authored-platform pose survives a fresh Physics/Ground owner without terrain snapping (39.682792ms)
+✔ default jog, deliberate slow walk, sprint and backward use distinct native speed targets (89.718041ms)
+✔ fresh Space produces anticipation, ballistic air and contact-triggered landing without repeat jumps (13.62225ms)
+✔ individual pavement transforms and changed forest instances share exact visible contacts (231.334334ms)
+✔ same-seed islands have distinct Scene/store identities and detached recipes (58.893ms)
+✔ fresh core consumes exact finalized Track recipe and reconstructs sampled field (104.691125ms)
+✔ unknown generator or local-frame drift is rejected (28.539875ms)
+✔ native roundabout and connected coastal route pass Track Core geometry gates (158.743125ms)
+✔ closed drive traversal preserves native graph seams and an upright orthonormal frame (57.217667ms)
+✔ fresh island replays complete graph, physical path and authored outline with stable segment identities (747.176083ms)
+✔ authored river descends continuously through the crossing and stays above its carved bed (210.906792ms)
+✔ native ordered overlapping sculpt and pinned object roundtrip without mutation (1.431209ms)
+✔ invalid inputs are rejected before touching the live owner (1.644875ms)
+✔ failed reconstruction rolls back complete document and mode before next queued load (0.443208ms)
+✔ queued callers cannot mutate their submitted snapshot (0.16875ms)
+✔ explicit visible triangles drive SurfaceTruth and Rapier identically across replacement (170.084791ms)
+✔ existing Physics character sweep blocks a solid wall and retains floor support (61.548042ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 1254.633334
+
+✖ failing tests:
+
+test at tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/ground-persistence.test.mjs:12:1
+⚠ quarantined: automatic 0.30m step climbing before pose replay (290.550833ms) # Guard: optional until required route proves unavoidable curb; frozen after two non-improving repairs
+  AssertionError [ERR_ASSERTION]: {"actorProfileId":"Mannequin_Medium","worldId":"A","position":[1.7008085954769143,0.014926617429882758,-0.000029038613696245625],"heading":1.5707963267948966,"speed":0,"intention":"idle"}
+      at TestContext.<anonymous> (file:///Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/work/island-mvp-r4/tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/ground-persistence.test.mjs:16:53)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

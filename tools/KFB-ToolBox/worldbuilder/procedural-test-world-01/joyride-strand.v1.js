@@ -32,7 +32,7 @@ export function buildClayStrand(THREE, td, {U,palette,TP,MR,M2,groundY,connected
  const addMesh=(g,mat,{name='' }={})=>{const m=new THREE.Mesh(g,mat);m.name=name;m.castShadow=m.receiveShadow=true;root.add(m);info.tris+=(g.index?g.index.count:g.attributes.position.count)/3;return m};
  const bake=parts=>mergeGeometries(parts.map(g=>{const n=g.index?g.toNonIndexed():g;n.deleteAttribute('uv');return n}),false);
  const clay=(key,color,profile,mix='strang')=>M[key]=makeClayMaterial(THREE,U,{src:new THREE.MeshStandardMaterial({color}),profile:{...profile,tools:TOOLMIX[mix],legacy:0}});
- const RU={uRoadA:{value:new THREE.Color(palette.rock)},uRoadB:{value:new THREE.Color(palette.rock).multiplyScalar(.72)},uRoadC:{value:new THREE.Color(palette.sand)}};
+ const RU={uRoadA:{value:new THREE.Color(palette.roadStreet||palette.rock)},uRoadB:{value:palette.roadTrack?new THREE.Color(palette.roadTrack):new THREE.Color(palette.rock).multiplyScalar(.72)},uRoadC:{value:new THREE.Color(palette.path||palette.sand)}};
   {
     const m = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color: '#ffffff' }), profile: { ...prof('road', 0.5, K), legacy: 1 } });
     const prev = m.onBeforeCompile;

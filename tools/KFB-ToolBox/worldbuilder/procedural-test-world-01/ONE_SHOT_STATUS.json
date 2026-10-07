@@ -3,15 +3,15 @@
   "date": "2026-10-08",
   "product": "KFB Island MVP R4",
   "mode": "ONE_SHOT",
-  "state": "RUNNING_ROADS_EARLY_GOLDEN",
+  "state": "RUNNING_EARLY_GOLDEN",
   "productVerdict": "NO MVP",
   "operationalVersion": 5,
   "owner": "WB2",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "8f3a78c6a074e7cbf3c904a4845c3db6003db671",
-  "milestone": "roads-track-technical-1",
+  "baseHead": "9bc11ba0861ac5b41f8a4df3d76922bac1e23134",
+  "milestone": "early-golden-contact-presentation-1",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
@@ -613,6 +613,32 @@
       "Sidewalk/source Clay, authored composition, sky and first frame Golden",
       "Unused south>south U-turn path radius warning 4.68m; active traversal uses south>north",
       "No continuous rotational collision sweep claimed"
+    ]
+  },
+  "earlyGolden": {
+    "status": "TECHNICAL_MILESTONE_NOT_VISUAL_PASS",
+    "tests": {
+      "pass": 25,
+      "quarantinedTodo": 1
+    },
+    "surface": {
+      "samples": 517,
+      "colliders": 48,
+      "maxPhysicsDeltaM": 1.4132326138227569e-06,
+      "maxVisibleDeltaM": 1.2585754116667403e-07
+    },
+    "evidence": [
+      "evidence/r4-golden/surface-current-technical.json",
+      "evidence/r4-golden/exact-road-ray-seam.json",
+      "evidence/r4-golden/jump-phase-trace.json",
+      "evidence/r4-golden/native-tests.txt"
+    ],
+    "unresolved": [
+      "Full normal-input river/shore/forest/Flight visual-physical review",
+      "Fresh independent Phase3 critic, final 4\u20136 screenshots and continuous clip",
+      "F-R39 human PASS/FAIL not yet requested",
+      "F-R07 remains UNKNOWN until Georg target-device run",
+      "Environment/document persistence and later phases remain pending"
     ]
   }
 }

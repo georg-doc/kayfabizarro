@@ -1,3 +1,17 @@
+# R4 · Early Golden contact/presentation milestone · CONTINUE
+
+Parent `9bc11ba0861ac5b41f8a4df3d76922bac1e23134`; containing commit identifies code/evidence. Same WB2 branch and Draft PR #348. **NO MVP; all 44 REQUIRED retained, no product PASS. F-R39 NOT_READY; F-R07 UNKNOWN.**
+
+Source-isolated SKY3 environment/cloud family and native castle/tree are reused inside the WB2 renderer/frame. Native K2 family materials now cover terrain, roads, buildings, nature, water and player. Authored grove clusters and a purple zone, readable first-frame landmark, a modest existing Track stretch and graded river profile extend the stored island layout. Existing native Joyride transitions follow actual Street/Track stations instead of putting Track barriers on every short arm. River and waterfall share their endpoint. Terrain colours use existing smooth field weights; independent normal buffers prevent refreshed top normals from erasing underside normals.
+
+Visible instanced paving was previously missing its instance transforms in contact conversion. Shared SurfaceTruth/Rapier now receives the actual expanded triangles; forest/rocks use the same existing Physics owner with instance-version invalidation. Current 517-point terrain/road witness: PASS, 48 colliders, maximum physics delta 0.0000014133m and visible delta 0.0000001259m. Nature collider existence is not itself a complete forest freeplay acceptance.
+
+The retained exact Joyride ray seam export reproduced a Rapier long-ray miss at +500/+1000m; independent Guard reproduced correct +2/+10/+100m hits and 60-step stationary/+X/+Z capsule support. Witness origins now derive independently from each collider geometry maxY+2m, preserving tolerance. This does not claim arbitrary-distance ray precision. Jump uses full native Start/Land clips mapped to .18s anticipation/.28s contact recovery; actual Rapier air/contact drives phases. Normal-input trace retained. 25 tests PASS, 1 previously quarantined 0.30m autostep TODO; syntax/diff checks PASS.
+
+Evidence in `evidence/r4-golden/` is development evidence, including retained failed probes and explicitly named debug screenshots. It is **not** the F-R39 submission. Continue normal-input whole-island visual/physical work, then fresh independent Phase3 critic, final screenshots/continuous clip and required Site publication before Georg gate. No Hub projection, merge, or Live promotion at this technical milestone.
+
+---
+
 # R4 · Track/Joyride technical milestone · continue Early Golden
 
 Parent `8f3a78c6a074e7cbf3c904a4845c3db6003db671`; containing commit identifies this milestone. **NO MVP; all 44 REQUIRED remain NOT_GREEN.**

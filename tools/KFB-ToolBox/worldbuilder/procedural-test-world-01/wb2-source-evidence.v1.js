@@ -23,6 +23,12 @@ export async function clayContext(){
     return U;
   })();return clayPromise;
 }
+// Family-specific K2 presentation. Geometry and source colours remain caller-owned.
+export function clayFamilyMaterial(U,src,family){
+ const tools=family.startsWith('terrain')?'terrain':family==='water'?null:family==='prop'?'rock':family;
+ return makeClayMaterial(THREE,U,{src,profile:{...PROFILES[family],legacy:family==='road'?1:0,...(tools?{tools:TOOLMIX[tools]}:{})},palMap:false,reliefK:family==='house'?.15:.45});
+}
+export function seedClayGeometry(g,seed){return seedGeometry(THREE,g,seed);}
 export async function loadRegistered(record){
   const key=record.source.commit+'/'+record.assetId;
   if(!cache.has(key))cache.set(key,loader.loadAsync(record.source.rawPinned));
@@ -37,6 +43,18 @@ export async function adaptRegistered(root,seed=31){
 export function createCandidateEvidence(A){
   let isolate=null,residentIsolate=null,restore=null,frameTimes=[],sampleFrames=0,last=performance.now(),motionTrace=[],motionSampleAt=0;
   const sample=()=>{document.body.dataset.playerMotion=JSON.stringify(A.play?.evidence());const now=performance.now();if(new URLSearchParams(location.search).has('motion-proof')&&now-motionSampleAt>=50){motionSampleAt=now;const p=A.play?.evidence();if(p){motionTrace.push({t:now,position:p.position,speed:p.speed,motion:p.motion,clips:p.rows,camera:A.camera.position.toArray()});if(motionTrace.length>240)motionTrace.shift();document.body.dataset.motionTrace=JSON.stringify(motionTrace)}}residentIsolate?.update(Math.min(.05,(now-last)/1000));frameTimes.push(now-last);last=now;if(frameTimes.length>240)frameTimes.shift();if(frameTimes.length>=120&&++sampleFrames%30===0){const sorted=[...frameTimes].sort((a,b)=>a-b);document.body.dataset.candidateMetrics=JSON.stringify({build:window.__kfbBuild||'LOCAL_UNSEALED',frames:frameTimes.length,medianMs:sorted[Math.floor(sorted.length/2)],p95Ms:sorted[Math.floor(sorted.length*.95)],drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles,pixelRatio:A.renderer.getPixelRatio(),camera:A.camera.position.toArray()})}};
+  // Review-only capture: actual WB2 canvas, continuous frames, no scripted player/camera input.
+  if(new URLSearchParams(location.search).has('motion-proof')){
+    const capture=document.createElement('button');capture.textContent='Record 28 s';capture.setAttribute('aria-label','Record continuous 28 second proof');Object.assign(capture.style,{position:'fixed',left:'14px',bottom:'14px',zIndex:30});document.body.append(capture);
+    capture.onclick=()=>{
+      const type=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
+      const stream=A.renderer.domElement.captureStream(30),recorder=new MediaRecorder(stream,{...(type?{mimeType:type}:{}),videoBitsPerSecond:8000000}),chunks=[],start=performance.now();
+      capture.disabled=true;capture.textContent='Recording…';capture.blur();
+      recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+      recorder.onstop=()=>{stream.getTracks().forEach(t=>t.stop());const blob=new Blob(chunks,{type:type||'video/webm'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kfb-r4-continuous-proof.webm';a.textContent='Download continuous proof';Object.assign(a.style,{position:'fixed',left:'14px',bottom:'42px',zIndex:30,color:'white',background:'#17150f',padding:'8px'});document.body.append(a);capture.disabled=false;capture.textContent='Record 28 s';document.body.dataset.recordingProof=JSON.stringify({durationMs:performance.now()-start,bytes:blob.size,type:blob.type,build:window.__kfbBuild||'LOCAL_UNSEALED',continuous:true});};
+      recorder.start(1000);setTimeout(()=>{if(recorder.state==='recording')recorder.stop()},28000);
+    };
+  }
   const sourceAudit=()=>{
     const rendered=new Map(),unknown=new Map(),frustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(A.camera.projectionMatrix,A.camera.matrixWorldInverse));
     A.scene.traverseVisible(o=>{if(!o.isMesh)return;let q=o;while(q&&!q.userData?.sourceRecord)q=q.parent;const source=q?.userData?.sourceRecord;if(!source){const box=new THREE.Box3().setFromObject(o);if(frustum.intersectsBox(box))unknown.set(o.uuid,{name:o.name||o.type,parent:o.parent?.name||o.parent?.type});return;}const box=new THREE.Box3().setFromObject(o);if(frustum.intersectsBox(box)){const key=source.source.commit+'/'+source.assetId;const rec=rendered.get(key)||{assetId:source.assetId,packId:source.packId,commit:source.source.commit,blob:source.source.blobSha,meshCount:0};rec.meshCount++;rendered.set(key,rec)}});
