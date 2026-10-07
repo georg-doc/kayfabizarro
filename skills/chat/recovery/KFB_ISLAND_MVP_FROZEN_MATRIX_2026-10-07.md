@@ -294,3 +294,37 @@ This section operationalizes the frozen REQUIRED rows without changing scope or 
 - `ADAPT` / `MISSING_*` / `TUNE_*` identify the smallest integration seam currently known.
 - Only evidence from the actual receiving product can flip `status` from `NOT_GREEN` to `GREEN`.
 - A fresh executor must resume by row ID and phase; it must not replace the frozen product contract with a shorter implementation checklist.
+
+
+## 12 · Strong / optional operational contracts
+
+### STRONGLY INCLUDE
+
+| ID | Owner | Readiness | Integration rule | Acceptance | Quarantine rule |
+| --- | --- | --- | --- | --- | --- |
+| F-S01 | Theatre Curtain accepted donor + KFB Clay/Claybound visual owner | **DONOR_PASS_TUNE_LOOK** | Preserve r3 cloth kernel/momentum/states; adapt only material/stage presentation needed to live in the KFB clay world. | Curtain works in real game entry/reveal without fake overlays and reads Claybound-compatible. | May defer final cosmetic tune only if required transition compatibility F-R38 is already green. |
+| F-S02 | Travel Flight owner + actor equipment/attachment owner | **CONCEPT_PLUS_DONORS** | Backpack grants Flight capability to compatible actors; Flight physics stay in Travel owner; attachment/presentation stays actor/equipment-owned. | One representative actor equips visible backpack/gear and enters Flight with stable mount/scale/contact. | Special backpack art polish can defer; universal Flight F-R13 cannot. |
+| F-S03 | Travel flight-state presentation consumers + Motion/VFX/Audio owners | **DONOR_READY_TUNE** | Consume bank/pitch/boost/climb/impact facts for bounded body response, propulsion, speed lines/contrails and SFX. | Flight visibly communicates speed, bank and thrust without changing physics or camera ownership. | Barrel-roll choreography and advanced secondary motion may defer. |
+| F-S04 | Resident Life semantic model + current Resident owner | **READY_DATA_ADAPT** | Use deterministic POI/activity/affect/memory semantics as inputs to current Resident runtime; no second simulation owner. | At least one resident activity changes/recoveries react to world/player event coherently. | Deeper long-term memory may defer. |
+| F-S05 | Resident Performance #369 + Motion/EyeRig/PetMouth/Emanata owners | **SOURCE_READY_PARTIAL** | Reuse source-proven pose/proximity/gesture/micro-motion layers; add no new clips unless current consumer proves gap. | Representative Resident interaction has readable body/face performance and recovery. | Non-critical extra gestures/characters may defer. |
+| F-S06 | Living-Toy Event Grammar authoring layer | **READY_AUTHORING_GRAMMAR** | Use scenario families/text-scarcity/group-witness rules to shape events; map only to real runtime events after owner audit. | Required interactions avoid everyone-speaks/filler behavior and recover to meaningful state. | Historian-specific families can defer. |
+| F-S07 | ChatterBox/Resident authoring QA using Etherington + NIE rules | **READY_AUTHORING_GRAMMAR** | Apply causality, SAID/MEANT/WANTED, adjacency pairs, silence/interruption/worldview voice; no NIE runtime dependency. | Representative dialogue passes line-level audit and is character/context-specific. | Broader writer-room tooling may defer. |
+| F-S08 | Joyride HUD + Audio/Jukebox existing consumers | **DONOR_READY** | Use only minimal controls that expose real Drive/Audio state; preserve diegetic/low-chrome game view. | Necessary drive/audio controls are usable without obscuring world or duplicating owner state. | Nonessential HUD widgets may defer. |
+| F-S09 | UFO/Clay transform presentation adapter + durable state owners | **PASS_TUNE_DONOR** | Share only visual breakup/materialize/assemble grammar; Transfer, Damage and Construction/Rebuild remain separate semantic states. | At least one low-risk object transition uses shared clay presentation and restores/retains canonical source object correctly. | Can defer if it threatens required world/persistence gates. |
+| F-S10 | Seed World generator donor behind WB2 world model | **DONOR_READY_ADAPT** | Use deterministic street/parcel/BuildingRecipe grammar only as provider; Surface Truth height, Track Core roads, Claybound/source gates remain authoritative. | If used, generated structure has stable ID, street relation, source/visual role and passes Grounding/Claybound/performance gates. | Entire provider may defer if authored POI cluster already satisfies required composition. |
+| F-S11 | Style Reference / Etherington curated consumer packs | **SOURCE_PACKS_READY_INSPECTION_AS_NEEDED** | Select only 3–6 exact references for concrete island problems; source-isolate before deriving KFB rules. | Any applied cloud/environment/grounding rule cites inspected reference IDs and improves actual runtime composition. | Unused reference families stay research-only. |
+| F-S12 | Fluff Work Motion PR356 + Resident activity consumer | **BLENDER_READY_RUNTIME_PROOF_MISSING** | Use existing 17 Medium/13 Large clips only if selected activity needs them; EyeRig owner stays authoritative. | One chosen Fluff/work activity consumes real clip(s) with contact/readability in world. | If no MVP activity needs Fluff, defer without creating new clips. |
+
+### OPTIONAL PROOF
+
+| ID | Owner | Readiness | Proof if used | Guard |
+| --- | --- | --- | --- | --- |
+| F-O01 | UFO Event Lab donor + world event adapter | **PASS_TUNE_DONOR** | One bounded tractor-beam event transfers/restores a prop or actor using real event phases and clay presentation. | Must not become new world-state owner or block core MVP. |
+| F-O02 | Construction/Rebuild state owner + Clay transform presentation | **DESIGN_SEAM_READY** | One object assembles/rebuilds visibly while durable construction state remains separate from transfer/damage. | No Minecraft/voxel architecture mandate. |
+| F-O03 | Stable WorldObject/damage state + Seed World destruction donor | **DONOR_READY_OPTIONAL** | One harmless target persists bounded damage/destruction state and reloads correctly. | Does not activate full combat/destruction sandbox. |
+| F-O04 | Landmark/content owner | **OPTIONAL_DESIGN** | If selected, Life Tree passes source/Claybound/grounding/silhouette gates and is not generic or mandatory. | Never encode tree as island schema requirement. |
+| F-O05 | Existing bubble/Emanata/Graphic-FX presentation owners | **CURATED_PACKS_VISUAL_ANALYSIS_PENDING** | Only if concrete consumer needs it: source-inspected pack feeds real presentation owner. | Curated source pack alone is not runtime acceptance. |
+| F-O06 | Historian/Chronicler authoring proposal | **AUTHORING_READY_RUNTIME_OPTIONAL** | If used, sparse narration adds unseen context/afterglow without competing with Resident dialogue or world truth. | No new narrator state owner or constant commentary. |
+| F-O07 | Travel Flight owner + special carrier presentation | **EXISTING_DONORS_LATER_PRESENTATION** | Optional special carrier uses same Flight owner and safe mount/handoff after universal Flight is green. | Cannot replace universal Backpack/Flight capability requirement. |
+
+These rows do not alter REQUIRED acceptance. Strong rows are intended in the same One-Shot, but only Production Guard may quarantine a genuinely non-critical failing seam after the repair-budget rule. Optional rows never substitute for a red REQUIRED row.
