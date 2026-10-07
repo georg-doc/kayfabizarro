@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.9",
-  "updatedAt": "2026-10-07T14:56:06.094Z",
+  "revision": "2026-10-07.10",
+  "updatedAt": "2026-10-07T15:00:32.856Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -2102,8 +2102,8 @@
     "state": "FINAL_CONTRACT_AND_DEPLOYED_HUB_REVIEW_COMPLETE",
     "gameplayAcceptance": false
   },
-  "recoveryStrategy": "Preserve Coworker seed/streaming/ground mechanisms within existing WorldBuilder owner; correct continuous Surface Truth mesh/collision/contributions and stable IDs first; reuse shared WB2 authoring/sculpt/store/import, then existing-owner KFB seams; independent whole-product gauntlet before human review.",
-  "recoverySummary": "Der freigegebene Integrator arbeitet im bestehenden WB2-Owner. Exakter Coworker-Quellstand und Assets sind gesichert. Continuous Surface Truth und stabile Objektaufzeichnungen sind implementiert; unabhängige Teilprüfungen liegen vor. Track Core baut die ersten Straßen. Vollständige Kontakt-, Authoring-, System- und Produktabnahme steht aus; weiterhin NO MVP.",
+  "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
+  "recoverySummary": "Georg hat begrenzte Insel-Dokumente innerhalb WB2 bestätigt. Bestehende Insel-Rezepte, Editor und Speicher werden wiederverwendet. Integrationsstand und unabhängiger Lückenbefund sind auf PR #348 gesichert. Nächster Nachweis: eine bearbeitete Insel nach frischem Laden, mit identischen Objekten, Kollision und Gelände-/Straßenkontakt. Weiterhin NO MVP.",
   "overview": "Georg hat begrenzte Insel-Dokumente innerhalb WB2 bestätigt. Bestehende Insel-Rezepte, Editor und Speicher werden wiederverwendet. Stand und offene Integrationsnähte sind gesichert; voller MVP bleibt NO MVP.",
   "architecture": [
     {
@@ -2202,7 +2202,7 @@
       ]
     }
   ],
-  "recoveryGate": "RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR",
+  "recoveryGate": "ISLAND TOPOLOGY ACCEPTED · BOUNDED HANDOFF SAVED · ONE ISLAND FRESH LOAD NEXT",
   "runtimeAuthorized": true,
   "siteVersion": 11,
   "siteDeployment": "appgdep_6ac62ac353f881919a27f0867e90903e",
