@@ -991,3 +991,41 @@ No Site/runtime/deployment change.
 
 Exactly one next gate:
 **CONTINUE_REFERENCE_CURATION_OR_SELECT_ONE_CURATED_PACK_FOR_A_CONCRETE_CONSUMER**.
+
+
+## Emanata visual morphology pool · 2026-10-07
+
+Status: **CURATION CONTINUES · MORPHOLOGY SOURCE MAP READY**
+
+Added:
+`EMANATA_VISUAL_MORPHOLOGY_POOL_01_2026-10-07.json`
+
+The pool captures **28** source-backed reaction/visual-language concepts and routes each to the appropriate presentation channel:
+
+- primary Emanata;
+- face-affix;
+- EyeRig/eye channel;
+- Graphic FX;
+- background FX;
+- whole-body/suppletion.
+
+This prevents a future KFB implementation from treating every reaction device as the same kind of floating symbol.
+
+Current eight semantic slots remain:
+`question · exclamation · sweat-drop · tear · anger-tick · heart · sparkle · gloom-cloud`
+
+Strongest expansion candidates:
+`blush · breath · steam`
+
+Related curated packs remain ready:
+- `kfb-sound-words-01`
+- `kfb-bubble-grammar-01`
+- `kfb-emanata-reaction-symbols-01`
+
+Validation:
+**10/10 PASS**.
+
+No Site/runtime/deployment change.
+
+Exactly one next gate:
+**CONTINUE_REFERENCE_CURATION_OR_SELECT_ONE_CURATED_PACK_FOR_A_CONCRETE_CONSUMER**.
