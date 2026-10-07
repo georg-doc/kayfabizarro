@@ -1078,3 +1078,127 @@ No Site/runtime/deployment change in this checkpoint.
 
 Exactly one next gate:
 **OPTIONAL_WORK_SYNC_SEED05_TO_ACCEPTED_LIBRARIAN_OR_CONTINUE_WEB_CHAT_CURATION**.
+
+
+---
+
+## Dialogue / Narration + NIE / Overworld curation · 2026-10-07
+
+Status: **RESEARCH / AUTHORING PREP READY · SITE SYNC OPTIONAL · RUNTIME HOLD**
+
+Verified evidence head before this Return checkpoint:
+`99e7f614ab8763c51e37274f31c5520c2bd3e3f2`
+
+### Delivered
+
+Canonical new source seed:
+- `ETHERINGTON_OFFICIAL_SEED_06_NARRATION_REACTION.json` · **6** new, non-duplicative official Etherington sources:
+  - The 4th Wall
+  - Failure
+  - Excuses
+  - The Group Dynamic
+  - Local Colour
+  - Memories
+
+Current canonical source corpus:
+- **64** Etherington official sources;
+- **5** supplementary professional/academic sources;
+- **69 total curated records**.
+
+All 64 Etherington IDs and URLs are unique.
+
+### Dialogue authoring integration
+
+Prepared:
+- `KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md`
+- `KFB_CHATTERBOX_AUTHORING_RULES_01.json`
+
+The rules combine:
+- Etherington Dialogue/Interaction sources;
+- Narrative Intelligence Engine Writer's Room / dialogue grammar / South Park causality / character tools;
+- historical KFB NIE→ChatterBox adapter principles;
+- FrizzleBob KayfabeTips.
+
+Core retained rules include:
+- THEREFORE/BUT instead of AND THEN;
+- SAID / MEANT / WANTED;
+- every turn shifts knowledge/power/relationship/intention/possibility/tension/interpretation;
+- interruption and repair reveal power;
+- silence is a valid performance result;
+- voice comes from worldview/sociolect rather than catchphrases;
+- one concrete picture before abstraction;
+- strange premise played straight;
+- context budget: one bubble receives only the world its beat can pay for.
+
+NIE remains authoring/upstream research, **not a runtime owner or required runtime dependency**.
+
+### Historian / World-as-Toy donor audit
+
+Prepared:
+`KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`
+
+Recovered and classified:
+- historical implemented `narrator-2d.js` Afterglow/caption donor;
+- historical implemented `zone-story.js` narrator slot + NIE-content seam;
+- historical OPEN “Erzähler als Figur” concept;
+- historical explicit “Welt als Spielzeug” North Star;
+- historical mob Eigenleben / purposeful activity / critter donors;
+- historical NIE adapter role split;
+- later Cartoon Studio narrator-as-observer donor.
+
+Important correction:
+historical implemented donors, historical OPEN concepts and current runtime truth remain separate.
+
+### Curated consumer packs
+
+Existing:
+- `reference-packs/curated/kfb-dialogue-interaction-01/`
+
+New:
+- `reference-packs/curated/kfb-narration-reaction-01/`
+
+The Narration/Reaction pack includes Caption Boxes by reference from canonical Seed 04 plus Seed 06 sources. Caption Boxes is **not duplicated** into Seed 06.
+
+### Work/WSA planning
+
+New combined Site-import brief:
+`BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`
+
+If the accepted Asset Librarian Site is still Version 4 with 58 built-ins:
+- import Seed 05 + Seed 06 together;
+- add 11 records;
+- expected final built-ins: **69**;
+- preserve accepted R2 Viewer and all local Cards/Sets/Notes/Principles.
+
+Updated:
+`BRIEF_WORK_WSA_DIALOGUE_INTERACTION_HISTORIAN_CONSOLIDATION_2026-10-07.md`
+
+The earlier Seed05-only import brief is superseded only when the Site is still at the last proven 58-record state. If an intermediate Site import has occurred, Work must inspect actual state and reconcile.
+
+### Evidence
+
+`DIALOGUE_NARRATION_CURATION_TEST_REPORT_2026-10-07.md`
+
+Result:
+**15/15 PASS**
+
+Not claimed:
+- visual inspection of every Etherington tutorial board;
+- Seed05/06 Site import;
+- current Open World event names;
+- current player death/revival seam;
+- current survival of historical Afterglow modules;
+- Historian runtime implementation.
+
+### Runtime boundary
+
+No Open World / PR #348 write.
+No ChatterBox runtime write.
+No PR #357 product reactivation.
+No second Site.
+No Hub/router change.
+No merge / Live promotion.
+
+### Exactly one next gate
+
+**Optional Work/WSA source sync of canonical Seeds 05 + 06 into the existing Asset Librarian R2 Site. Runtime Historian/ChatterBox consumption stays HOLD until exact Coworker intake + Architecture Freeze.**
