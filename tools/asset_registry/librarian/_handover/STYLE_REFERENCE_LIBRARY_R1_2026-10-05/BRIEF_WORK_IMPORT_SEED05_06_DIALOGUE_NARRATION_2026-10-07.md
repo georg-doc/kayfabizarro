@@ -31,6 +31,12 @@ Before implementation, read the actual current Site/project state. If a later Se
 
 ## GitHub source truth
 
+Preferred Site import payload:
+`STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json`
+
+The payload contains all 11 Seed-05/06 records as idempotent upserts plus KFB research-derived Notes/Principles. Those principles are explicitly marked as KFB-derived guidance, not as observed Etherington source facts.
+
+
 ### Seed 05 · Dialogue / Interaction
 `ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION.json`
 
@@ -63,6 +69,23 @@ Expected total:
 - 5 supplementary professional/academic.
 
 All IDs/URLs must remain unique.
+
+## Current narrator decision
+
+Preferred narrator direction:
+- role: **Historian**
+- persona register: **Chronicler**
+- working label: **Historian / Chronicler**
+
+Contract:
+`KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`
+
+Supporting Living-Toy prep:
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md`
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json`
+- `KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json`
+
+These are linked research/consumer artifacts, not extra Site built-ins.
 
 ## New semantic lanes
 
@@ -97,6 +120,14 @@ Seed 06:
 No redesign.
 
 ## Import behavior
+
+Use the Site delta payload as the preferred import roster.
+Upsert by:
+- `referenceId`;
+- canonical page URL.
+
+Do not duplicate an existing record merely because the Site already contains an earlier seed import.
+
 
 Where a new official Etherington source resolves to existing tutorial-board transport:
 - use the existing resolver;
