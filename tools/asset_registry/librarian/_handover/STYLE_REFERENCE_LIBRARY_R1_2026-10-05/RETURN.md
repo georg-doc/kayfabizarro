@@ -1364,3 +1364,43 @@ No merge / Live promotion.
 
 Exactly one next gate:
 **Sites-capable Work/WSA may import the 11-record Site delta into the existing Asset Librarian; runtime consumption remains HOLD until exact Coworker intake + Architecture Freeze.**
+
+
+## GitHub-live Style Reference data migration · 2026-10-07
+
+Status: **ONE-TIME WORK MIGRATION READY**
+
+Georg identified the remaining operational cost: every curated source update currently requires Work/Sites publication.
+
+The Hub's proven live-data pattern is now adopted as the target for Style References.
+
+Prepared:
+- `STYLE_REFERENCE_LIVE_DATA_CONTRACT_2026-10-07.md`
+- `BRIEF_WORK_STYLE_REFERENCE_LIVE_DATA_MIGRATION_2026-10-07.md`
+
+Target architecture:
+`Web Chat → main/tools/asset_registry/librarian/live/style-reference-live.json → refresh existing Site`
+
+Stable Site shell owns behavior/viewer/local-state merging.
+GitHub main JSON owns public/shareable curated Style Reference data.
+A deployed local manifest remains fallback.
+
+Current one-time Work migration must:
+- reconcile current Site state;
+- move current curated corpus to **69 built-ins**;
+- create the live manifest on main;
+- add the remote loader;
+- preserve local Cards/Sets/Notes/Principles;
+- prove one data-only main-JSON revision change appears after Site refresh with **no Site republish**.
+
+Private PDFs/photos/scans and private storage locators remain excluded from the public live manifest.
+
+After successful proof, routine public curated reference updates become **Web Chat GitHub-only**.
+
+The previous Seed05+06 import-only brief is superseded for a new run while the Site remains at last-proven Version 4 / 58 built-ins.
+
+Validation:
+**8/8 PASS** contract/brief preparation.
+
+Exactly one next gate:
+**ONE_TIME_WORK_STYLE_REFERENCE_LIVE_DATA_MIGRATION**.
