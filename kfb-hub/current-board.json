@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.8",
-  "updatedAt": "2026-10-07T11:22:00+02:00",
+  "revision": "2026-10-07.9",
+  "updatedAt": "2026-10-07T11:31:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World runtime work is paused after a contract-collapse review. The next and only Open World production action is a fresh Work/WSA read-only Recovery Audit: reconstruct the full Master Acceptance Matrix, audit Coworker + WB2/PR #348 donors, classify Hex terrain ownership, recover God Mode/Terrain Sculpt/Persistence donor paths, and independently challenge the plan before any new integration. Play/public-surface targets remain planned, not published."
+    "note": "Open World product acceptance is now binary at the complete Acceptance-Matrix level. `Receiving Core` is retired as a product-progress substitute: partial subsystems may be KEEP/PASS donors, but there is no MVP until every required matrix row is green at its required proof level. Recovery Audit remains the only authorized Open World action."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -24,13 +24,13 @@
   "p0": [
     {
       "id": "issue-360-open-world-recovery-audit",
-      "title": "#360 · P0 · Open World Recovery Audit only",
-      "summary": "Runtime implementation is paused. A fresh ChefWSA/Work recovery lead must reconstruct the complete product contract and donor map before another integration attempt. Required checks include Continuous Terrain vs Hex ownership, God Mode/Object Edit, Terrain Sculpt, Save/Fresh Reload/Persistence and the full representative KFB integration roster. No product/runtime writes in this audit.",
-      "badge": "RECOVERY AUDIT ONLY · PRIMARY",
+      "title": "#360 · P0 · No MVP until complete Acceptance Matrix is green",
+      "summary": "Open World runtime remains paused. `Receiving Core` no longer counts as product progress. The fresh ChefWSA Recovery Audit must reconstruct the complete immutable Acceptance Matrix, map every required feature to its best verified donor/owner/test, and leave product status as not accepted until every required row is green.",
+      "badge": "NO MVP · COMPLETE MATRIX REQUIRED",
       "action": "Recovery Audit öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
       "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · read-only product audit",
-      "nextExecutor": "Fresh independent critic of the Master Acceptance Matrix; integrator only after audit PASS"
+      "nextExecutor": "Fresh independent critic of the complete matrix; one Integrator only after the audit is accepted"
     }
   ],
   "p1": [
@@ -139,10 +139,10 @@
     {
       "id": "brief-work-open-world-recovery-audit",
       "title": "ChefWSA · Open World contract + donor recovery audit",
-      "badge": "READY · READ-ONLY PRODUCT AUDIT",
+      "badge": "READY · COMPLETE MATRIX AUDIT",
       "status": "ready",
       "provider": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA",
-      "desc": "Do not build. Reconstruct the complete One-Shot acceptance matrix from binding sources, audit Coworker Dropbox source and WB2/PR #348 donors, classify Hex terrain ownership and God Mode/Persistence paths, review Freeze decisions, then get an independent fresh-context challenge. Georg-facing return must be plain German without hashes/branch/run-ID clutter.",
+      "desc": "Do not build. Reconstruct the complete immutable One-Shot Acceptance Matrix and donor map. `Receiving Core` is not a product-progress status. Product acceptance exists only when every required row is green. Audit Coworker Dropbox source plus WB2/PR #348, classify Hex terrain ownership and God Mode/Persistence paths, then get a fresh independent challenge.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
       "tags": [
         "open world",
@@ -156,7 +156,7 @@
         "hex",
         "donor census"
       ],
-      "prompt": "Run skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md exactly. This is a fresh-context read-only product audit: no Open World runtime writes. Produce the Master Acceptance Matrix, donor census, Freeze audit and recovery Return; then obtain a fresh independent critic challenge. Communicate to Georg in plain German and keep technical hashes/branches/run IDs in an executor-only appendix."
+      "prompt": "Run skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md exactly. Apply skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md: partial subsystem progress is donor/evidence only; no MVP exists until the complete required Acceptance Matrix is green. No Open World runtime writes. Communicate to Georg in plain German and keep technical refs in the executor-only appendix."
     },
     {
       "id": "brief-resident-performance-blender",
@@ -331,6 +331,11 @@
       "title": "Open World · Recovery Audit brief",
       "summary": "Fresh ChefWSA read-only audit before any new runtime integration.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
+    },
+    {
+      "title": "Open World · MVP Acceptance Rule",
+      "summary": "Binding: Receiving Core is not product progress; only a completely green required Acceptance Matrix counts as MVP acceptance.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
