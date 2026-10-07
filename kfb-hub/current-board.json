@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.1",
-  "updatedAt": "2026-10-07T01:18:00+02:00",
+  "revision": "2026-10-07.2",
+  "updatedAt": "2026-10-07T01:35:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Production Hub live data remains GitHub-driven. UFO Tractor Beam Event Lab is now PASS/TUNE as an isolated donor: Rick's UFO is V1-primary, r2 custom tractor-beam grammar accepted, Kenney variants remain optional donors/backup, audio still needs human audition, and runtime integration waits for Architecture Freeze."
+    "note": "Open World closure now has two binding corrections on main: canonical Ground controls and canonical Clay/Surface routing. 'KayKit style' must never be interpreted as default KayKit materials: source identity stays KayKit/Kenney/KFB while KFB Clay SSOT/Golden controls surface/deformation/contact. clay_floor_001 triplanar is only a bounded stand-in/microtexture donor; K2/v10 + Golden parity remains the final new-stage direction."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -208,6 +208,11 @@
       "title": "UFO Tractor Beam · returned donor",
       "summary": "PASS/TUNE isolated donor: Rick's UFO, deterministic r2 beam grammar, event contract, WSA handover and open integration TUNEs.",
       "url": "https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20UFO%20Tractor%20Beam%20Event%20Lab/KFB_UFO_TRACTOR_BEAM_EVENT_LAB_2026-10-07"
+    },
+    {
+      "title": "Open World · Clay / Surface Canon",
+      "summary": "Binding correction: source identity ≠ material style. K1/H0 Golden + K2/v10 baseline, clay_floor_001 limits, triplanar distinction, LOD and shadow/contact rules.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
