@@ -363,3 +363,37 @@ The key design rule is preserved: do not collapse every comic reaction device in
 Validation: **10/10 PASS**.
 
 No Site/runtime/deployment change.
+
+
+## Etherington Seed 05 · Dialogue / Interaction · 2026-10-07
+
+Status: **SOURCE CURATED · SITE SYNC PREPARED**
+
+Added **5** official Etherington writing/reference sources:
+- Small Talk;
+- Speech Patterns;
+- Tics and Tells;
+- Interrupt a Scene;
+- Silence Is Golden.
+
+These are intentionally separated from:
+- Bubble shape/presentation grammar;
+- Emanata;
+- Graphic VFX.
+
+New scope:
+`DIALOGUE_INTERACTION_WRITING`
+
+New curated pack:
+`reference-packs/curated/kfb-dialogue-interaction-01/`
+
+Repo corpus is now:
+- **58** unique Etherington official sources;
+- **5** supplementary professional/academic sources;
+- **63** curated source/reference records total.
+
+The currently published Site remains Version 4 with 58 built-ins until the prepared incremental Work import runs.
+
+Validation: **10/10 PASS**.
+
+No Site/runtime/deployment change in this curation checkpoint.
