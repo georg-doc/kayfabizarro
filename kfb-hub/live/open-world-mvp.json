@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.11",
+  "revision": "2026-10-07.12",
   "updatedAt": "2026-10-07T15:00:32.856Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,8 +2103,8 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Bounded-Island architecture planning is now crash-safe. The full Integration Census preserves World/Persistence, P0 locomotion, Joyride/Drive, Flight, Residents/ChatterBox, Billboard + real Quote Pool, Card/Almanac, Audio, Curtain, KFB Clay/Claybound, Style-reference grounding rules, Clay transform/UFO donors and independent QA. Product remains NO MVP. Next gate: freeze REQUIRED / STRONGLY INCLUDE / OPTIONAL / LATER before one new Work/WSA One-Shot.",
-  "overview": "Bounded-Island direction is accepted and the anti-feature-loss Integration Census is persisted. No new runtime owner. Product remains NO MVP while Web Chat freezes the complete Island MVP matrix.",
+  "recoverySummary": "Island MVP Frozen Matrix is persisted and now governs the next One-Shot. The previous 37 REQUIRED rows are preserved; explicit additions/refinements include Flight, P0 locomotion + Cartoon Jump, Claybound/grounding, real Quote Pool, Early Visual/Physical Golden, Negative-Golden and No-Placeholder gates. Product remains NO MVP.",
+  "overview": "Frozen bounded-Island product contract ready. 44 REQUIRED rows + STRONGLY INCLUDE / OPTIONAL / LATER are persisted. Next step is one final execution brief and exactly one Work/WSA Integrator; no new planning micro-slices.",
   "architecture": [
     {
       "title": "Gemeinsame Weltbasis",
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Freeze the Island MVP matrix from the persisted Integration Census, including Flight/Drive, real Billboard/Quote content, Audio, Residents/ChatterBox, Curtain, Claybound visual rules and QA; then authorize exactly one Work/WSA Integrator.",
+  "nextGate": "Prepare the final Work/WSA One-Shot execution brief directly from the Frozen Matrix and current owner Returns, then run one continuous product integration. No required row may disappear.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,11 +2247,14 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "FREEZE_PLANNING",
+    "status": "FROZEN_MATRIX_READY",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
-    "currentTask": "Freeze REQUIRED / STRONGLY INCLUDE / OPTIONAL / LATER",
-    "noRuntimeWrite": true
+    "currentTask": "Final execution brief → exactly one Work/WSA One-Shot",
+    "noRuntimeWrite": true,
+    "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
+    "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
+    "requiredRows": 44
   }
 }
