@@ -1,0 +1,245 @@
+{
+  "schema": "kfb.island-mvp-inbox-donor-audit/1",
+  "date": "2026-10-07",
+  "status": "AUDITED_NO_NEW_REQUIRED_ROWS",
+  "inboxPath": "tools/KFB-ToolBox/_inbox",
+  "observedTopLevelEntries": 115,
+  "receivingOwner": "KFB WorldBuilder / WB2 · Issue #360 · PR #348",
+  "rule": "Inbox is donor/source intake, never automatic implementation ownership.",
+  "newRequiredRows": 0,
+  "highValueDonors": [
+    {
+      "id": "D-01",
+      "name": "WhackMan v1-1",
+      "classification": "PRESERVE_DONOR",
+      "relations": [
+        "F-R14",
+        "F-S05"
+      ],
+      "keep": [
+        "generic additive Bounce/Collision",
+        "fixed-anchor prop reaction",
+        "camera free-look→chase return"
+      ],
+      "reject": [
+        "WhackMan runtime/maze/minigame ownership"
+      ]
+    },
+    {
+      "id": "D-02",
+      "name": "VFX-01 Review",
+      "classification": "PRESERVE_DONOR_BANK",
+      "relations": [
+        "F-S03",
+        "F-S09",
+        "combat donor arbitration"
+      ],
+      "keep": [
+        "source-isolated VFX families",
+        "Combat Ink Atlas/VFX recipes",
+        "smoke/explosion/dust candidate sources"
+      ]
+    },
+    {
+      "id": "D-03",
+      "name": "Vehicle Animation Lab v4",
+      "classification": "STRONG_DONOR",
+      "relations": [
+        "F-R13",
+        "F-S03"
+      ],
+      "keep": [
+        "real Travel state seam",
+        "measured cartoon flight deformation"
+      ]
+    },
+    {
+      "id": "D-04",
+      "name": "Plant Prop Lab v2",
+      "classification": "STRONG_DONOR",
+      "relations": [
+        "F-R21",
+        "F-R22",
+        "F-R23"
+      ],
+      "keep": [
+        "deterministic source-first recipes",
+        "measured insertion",
+        "STATIC/AMBIENT/AWARE"
+      ]
+    },
+    {
+      "id": "D-05",
+      "name": "Billboard B0 Source Proof",
+      "classification": "GEORG_ACCEPTED_SOURCE_DONOR",
+      "relations": [
+        "F-R21",
+        "F-R35"
+      ],
+      "keep": [
+        "real Kenney billboard",
+        "measured 4.20x2.10 face",
+        "real Card/no replacement art"
+      ]
+    },
+    {
+      "id": "D-06",
+      "name": "World Billboard Clay01",
+      "classification": "STRONG_DONOR",
+      "relations": [
+        "F-R23",
+        "F-R35"
+      ],
+      "keep": [
+        "road anchor",
+        "host scheduler",
+        "LOD/collision geometry"
+      ],
+      "caveat": "kaleido-cuts is not final HyperNormalisation content"
+    },
+    {
+      "id": "D-07",
+      "name": "Billboard H13",
+      "classification": "VISUAL_DONOR",
+      "relations": [
+        "F-R35",
+        "F-R36"
+      ],
+      "keep": [
+        "authored music-driven collage concepts"
+      ],
+      "reject": [
+        "Collage Engine v0 HUMAN FAIL"
+      ]
+    },
+    {
+      "id": "D-08",
+      "name": "Resident Card Speculation",
+      "classification": "STRONG_STAGING_DONOR",
+      "relations": [
+        "F-R32",
+        "F-R33",
+        "F-R34"
+      ],
+      "keep": [
+        "thin scene mount",
+        "EyeRig/PetMouth",
+        "real Card",
+        "deterministic beats"
+      ],
+      "caveat": "visual acceptance open/talk stand-in"
+    },
+    {
+      "id": "D-09",
+      "name": "ToolBox P08 editor lineage",
+      "classification": "MECHANISM_DONOR",
+      "relations": [
+        "F-R23",
+        "F-R28"
+      ],
+      "keep": [
+        "edit-layer v2",
+        "snap.v1",
+        "grounding.v1",
+        "undo/redo"
+      ],
+      "caveat": "resolve current owner; P06/P07 forks obsolete"
+    },
+    {
+      "id": "D-10",
+      "name": "World Core R0A Clay World",
+      "classification": "VISUAL_GROUNDING_DONOR_ONLY",
+      "relations": [
+        "F-R22",
+        "F-R23",
+        "F-R39"
+      ],
+      "keep": [
+        "baseplate-free embedding",
+        "terraces/slope cuts",
+        "clay seam",
+        "sparse clusters"
+      ],
+      "reject": [
+        "runtime/performance baseline"
+      ]
+    },
+    {
+      "id": "D-11",
+      "name": "KlayBound/ClayBound POC",
+      "classification": "BENCHMARK_REFERENCE",
+      "relations": [
+        "F-R20"
+      ],
+      "caveat": "POC sub-optimal vs Claybound benchmark; not owner"
+    },
+    {
+      "id": "D-12",
+      "name": "Public Domain Pool",
+      "classification": "CONTENT_SOURCE",
+      "relations": [
+        "F-R35",
+        "F-R36"
+      ],
+      "keep": [
+        "provenance/rights-tracked media"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "R-01",
+      "name": "Racetrack Blender Kit",
+      "classification": "AUTHORING_REFERENCE_ONLY"
+    },
+    {
+      "id": "R-02",
+      "name": "Card Zone Lab v2",
+      "classification": "REFERENCE_OPTIONAL",
+      "reject": [
+        "failed module extraction"
+      ]
+    },
+    {
+      "id": "R-03",
+      "name": "StoryMap v1",
+      "classification": "REFERENCE_OPEN_BUG"
+    },
+    {
+      "id": "R-04",
+      "name": "ProceduralTerrain Concept",
+      "classification": "LOOK_REFERENCE_ONLY"
+    },
+    {
+      "id": "R-05",
+      "name": "Environment Atlas / Room Study / older World Design",
+      "classification": "SELECTIVE_SOURCE_ONLY"
+    },
+    {
+      "id": "R-06",
+      "name": "Claude outputs",
+      "classification": "EVIDENCE_ONLY"
+    }
+  ],
+  "alreadyCovered": [
+    "Joyride J14-J17",
+    "Seed World Mech Destruction",
+    "SKY3",
+    "UFO Event Lab",
+    "Theatre Curtain",
+    "K1/H0 + K2/v10 Clay",
+    "Resident Atlas",
+    "World Integration/WB2",
+    "Style References",
+    "Environment Atlas",
+    "R2C/R2D",
+    "Combat Arena KayKit"
+  ],
+  "finalBriefReadOrder": [
+    "Frozen Matrix",
+    "Inbox Donor Audit",
+    "Integration Census",
+    "WB2 Island Foundation/Return",
+    "specialist owner Returns only when row opens"
+  ]
+}
