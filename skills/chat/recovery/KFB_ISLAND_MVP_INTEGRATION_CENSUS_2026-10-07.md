@@ -190,3 +190,214 @@ Web Chat should now review this census with Georg and classify each row:
 **KEEP IN MVP / STRONGLY INCLUDE / OPTIONAL / LATER / REMOVE**.
 
 Only after that classification is frozen should Work/WSA receive the next Island One-Shot briefing.
+
+
+## N · Cross-chat loose ends / prepared knowledge layers
+
+These inputs were recovered from other Web Chat lanes and must not disappear behind generic labels like "Style References" or "Billboard".
+
+### N1 · Quote Pool / HyperNormalisation content
+
+Owner / lane:
+- Draft PR #354 · KFB Billboard Quote Hypernormalisation / Quote Curator.
+- Research/data only; runtime implementation has **not** started.
+
+Current inventory:
+- **415 researched quote + FrizzleQuestion candidates** total;
+- **30 mapped** candidates across the first 10 canonical decks;
+- **385 deliberately unmapped** reserve candidates across Research Reserves 01–13;
+- Reserve 13 added finance/money-system coverage;
+- provenance/right-status is explicitly tracked; uncertain material is not silently promoted.
+
+MVP consequence:
+- **MVP REQUIRED CONTENT INPUT** for the real Billboard/HyperNormalisation seam.
+- The Island MVP does **not** need to map all 415.
+- It should consume a small source-proven mapped/context pool through the actual Billboard/HyperNormalisation owner and preserve quote ID, provenance, rights eligibility, FrizzleQuestion and Brain-Food link data.
+- Placeholder/coded billboard graphics remain forbidden.
+- Quote selection/rotation should avoid repeating not only the exact quote but also the same author/era/discipline/tone during longer sessions.
+- Research expansion remains Web-Chat/data work; do not spend One-Shot runtime budget on bulk quote research.
+
+### N2 · Etherington / Style Reference corpus is a production design input, not decoration
+
+Current Style Reference lane:
+- Draft PR #359;
+- current repo corpus reports **69 curated records: 64 official Etherington + 5 supplementary**;
+- accepted R2 Browser/Viewer is usable for continuation;
+- one-time live-data migration is an operational Tooling task, not an Island runtime feature.
+
+The corpus contains explicit reusable consumer packs:
+
+1. **KFB Clouds 01**
+   - Clouds + Smoke + Spacing in Composition;
+   - goal: three KFB cloud construction families;
+   - extract major mass grouping, silhouette breakup, overlap/depth, negative-space rhythm;
+   - status: design job ready, source inspection still required before derived visual claims.
+
+2. **KFB Environment Mass / Living World Grammar 01**
+   - Mountains;
+   - Forest clusters / clearings;
+   - Overgrown Vegetation;
+   - Foreground / Midground / Background;
+   - Rock Formations;
+   - Tree Roots;
+   - target: reusable terrain/forest/overgrowth/depth/rock/root grammar;
+   - status: source pack ready, source-isolation/design derivation still pending.
+
+3. **Graphic/Comic carriers**
+   - Sound Words;
+   - Bubble / Caption Grammar;
+   - Emanata / Reaction Symbols;
+   - Dialogue / Interaction;
+   - Narration / Reaction.
+   - Curated packs exist; several are **VISUAL ANALYSIS NOT STARTED**, so they are design inputs, not finished visual runtime assets.
+
+4. **Dialogue authoring discipline**
+   - Etherington + NIE authoring contract exists;
+   - causality (THEREFORE/BUT), SAID/MEANT/WANTED, adjacency pairs, silence, interruption, worldview voice, group-role selection, concrete-image rule;
+   - consumes existing ChatterBox/Resident systems later; it is not a second dialogue engine.
+
+5. **Living-Toy Event Grammar**
+   - 13 scenario families plus a 30-activity pool exist as authoring/architecture prep;
+   - useful for Resident/world-event choreography and text-scarcity rules;
+   - no current runtime event IDs are claimed.
+
+MVP consequence:
+- **MVP REQUIRED QA/DESIGN INPUT** for world composition.
+- Do not analyze all 69 references inside the One-Shot.
+- Select 3–6 exact references for each concrete visual problem and source-isolate them before deriving rules.
+
+### N3 · Prop/terrain grounding and "not pasted on" rule
+
+Recovered environment/reference rules directly address prior failures:
+
+- large readable masses before detail;
+- handmade asymmetry;
+- clusters and clearings instead of uniform scatter;
+- visible grounding;
+- foreground / midground / background separation;
+- large / medium / small rock grouping;
+- vegetation should break/overlap architecture and terrain edges rather than stop as a clean sticker boundary;
+- roots/exposed earth must visibly explain support;
+- negative space must remain navigable/readable;
+- source/world setup donors also preserve coast-aware placement, beach transitions where useful, authored prop clusters and atmospheric depth.
+
+**MVP visual gate:**
+Every placed/generated prop, rock, tree, landmark or building must prove:
+1. surface snap/contact is physically correct;
+2. silhouette/grouping fits the scene hierarchy;
+3. local terrain/vegetation/material transition makes it look embedded rather than pasted on;
+4. spacing/negative space remains readable from third-person gameplay distance;
+5. the result passes Claybound Compatibility.
+
+This is a design/QA rule, not permission to create a second terrain or decoration system.
+
+### N4 · Environment Atlas · useful but incomplete corpus
+
+PR #353 preserves a broader Environment/Kit lineage:
+- S11 Hex Realm;
+- S12 Hex Tile Model;
+- S13.2 Dungeon;
+- S18/S19 Plant Prop + EyeRig;
+- S20 Sample Atlas;
+- S21 Room Study/editor;
+- S22 wall/editor direction;
+- documented S14–S17 Bits/Space Base/Restaurant/placement grammar.
+
+Important limitation:
+- the actual S14–S17 runtime/project source was **not found** in the lean exports;
+- current instructions explicitly forbid reconstructing it from prose.
+
+MVP consequence:
+- do not make the missing S14–S17 placement grammar a hidden dependency;
+- reuse only source-proven Environment Atlas modules;
+- if the missing full export is recovered before the One-Shot and offers a clearly better proven placement rule, classify it then.
+- Environment Atlas recovery itself is **not an MVP blocker**.
+
+### N5 · ChatterBox is not yet "finished runtime"
+
+PR #357 is **HOLD · TUNE DONOR**, not production-complete.
+
+KEEP:
+- real pinned Resident GLBs;
+- deterministic ChatterBox kernel/pools;
+- Triplet stagger + valid silence;
+- social calls;
+- Review/export concepts.
+
+Still required before claiming the real MVP seam:
+- existing EyeRig v6 + PetMouth on the real 3D Residents;
+- no PNG/cutout fallback in the integrated presentation;
+- canonical real Card front, not coded placeholder artwork;
+- consumer/import/export and occlusion/mobile checks as applicable.
+
+MVP consequence:
+- ChatterBox remains **MVP REQUIRED**;
+- but integration must use the real current owners and must not promote the TUNE donor wholesale.
+
+### N6 · Audio is more integration-ready than the older census wording implied
+
+PR #365 current status:
+**AUDIO_MODULE_TECHNICAL_GREEN · NO_WORLD_WRITES · NOT_HUMAN_ACCEPTED**.
+
+Runtime-verified families now include:
+- C Cozy Base · 81 BPM · 10 stems;
+- M Island Life · 112 BPM · 10 stems;
+- N Dusk/Night · 70 BPM · 11 stems;
+- O Discovery/POI · 82 BPM · 9 stems.
+
+The Audio-owned module:
+- accepts injected existing AudioContext/SCORE destination only;
+- creates zero AudioContexts;
+- exposes serialized world context/events;
+- preserves TTS ducking authority;
+- passed real browser decode/alignment/fallback evidence.
+
+MVP consequence:
+- **MVP REQUIRED and HIGH-CONFIDENCE INTEGRATION INPUT**.
+- Island runtime should implement only the tiny World-owned context/event adapter.
+- No duplicate BPM/stem tables or Audio graph in WB2.
+
+### N7 · Motion and Fluff status must stay distinct
+
+Motion PR #344:
+- source policy/baseline exists;
+- native KayKit locomotion first;
+- but its own brief explicitly excludes browser-controller tuning, runtime jump trajectory and World/Travel integration.
+- Therefore it does **not** prove the Island P0 locomotion experience.
+
+Fluff Work PR #356:
+- 17 Medium + 13 Large clips;
+- no new clip required according to the Blender pass;
+- next gate is runtime consumer proof.
+
+MVP consequence:
+- locomotion remains a hard P0 runtime/product gate despite Motion source readiness;
+- Fluff Work is a valuable optional/strongly-include activity donor, but only if the MVP actually consumes it.
+
+### N8 · Historical/Narrative presentation inputs
+
+Prepared but not automatically required:
+- Historian / Chronicler authoring direction;
+- narration/reaction curated pack;
+- Living-Toy event grammar;
+- Sound Words / Bubble / Emanata visual packs.
+
+Recommended MVP treatment:
+- **do not make Historian narration a new required runtime system**;
+- do use the dialogue/text-scarcity/group-witness rules as authoring QA for Resident/ChatterBox;
+- use Bubble/Emanata/Sound-Word packs only if the current real presentation owner can consume them without opening a new design subsystem during the One-Shot.
+
+## O · New anti-loss freeze rule
+
+Before the Island One-Shot brief is issued, the Integrator input ledger must contain explicit rows for:
+- Quote Pool → Billboard/HyperNormalisation content;
+- Style Reference subset used for the island's actual visual problems;
+- Environment grounding/cluster/transition rule;
+- real ChatterBox tune requirements;
+- current Audio technical-green module;
+- Motion source readiness **separate from** locomotion runtime acceptance;
+- Curtain;
+- Clay Transform/UFO donor;
+- Prototype Graveyard negative Goldens.
+
+A generic label such as "media", "style", "animation" or "environment" may not silently absorb/delete these distinct inputs.
