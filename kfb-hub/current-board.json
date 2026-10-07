@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.9",
-  "updatedAt": "2026-10-07T11:31:00+02:00",
+  "revision": "2026-10-07.10",
+  "updatedAt": "2026-10-07T11:58:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World product acceptance is now binary at the complete Acceptance-Matrix level. `Receiving Core` is retired as a product-progress substitute: partial subsystems may be KEEP/PASS donors, but there is no MVP until every required matrix row is green at its required proof level. Recovery Audit remains the only authorized Open World action."
+    "note": "Open World runtime remains paused. The complete MVP requirements now have a read-only interactive Living Doc linked from this Hub. Product status remains binary: NO MVP until every required Acceptance-Matrix row is GREEN. ChefWSA Recovery Audit on PR #373 is the only authorized Open World execution lane."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -19,18 +19,19 @@
     "playGameTarget": "https://play-kayfabizarro.frizzlebob.chatgpt.site",
     "publicHubTarget": "https://kayfabizarro.pages.dev/",
     "worldStudioInterim": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
-    "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site"
+    "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+    "openWorldMvpLivingDoc": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/"
   },
   "p0": [
     {
       "id": "issue-360-open-world-recovery-audit",
-      "title": "#360 · P0 · No MVP until complete Acceptance Matrix is green",
-      "summary": "Open World runtime remains paused. `Receiving Core` no longer counts as product progress. The fresh ChefWSA Recovery Audit must reconstruct the complete immutable Acceptance Matrix, map every required feature to its best verified donor/owner/test, and leave product status as not accepted until every required row is green.",
-      "badge": "NO MVP · COMPLETE MATRIX REQUIRED",
-      "action": "Recovery Audit öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
-      "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · read-only product audit",
-      "nextExecutor": "Fresh independent critic of the complete matrix; one Integrator only after the audit is accepted"
+      "title": "#360 · P0 · Open World MVP Living Doc + Recovery Audit",
+      "summary": "Open World runtime remains paused. The Living Doc exposes the complete anti-feature-loss requirement ledger, current acceptance states, donors/owners and proof targets. It is a read-only audit surface, not an MVP candidate. Fresh ChefWSA must freeze/verify the full matrix and independently challenge it before one later Integrator is authorized.",
+      "badge": "NO MVP · LIVING MATRIX",
+      "action": "MVP Living Doc öffnen",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/",
+      "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · PR #373 · audit only",
+      "nextExecutor": "Fresh independent critic of the frozen matrix; one Integrator only after RECOVERY PLAN READY"
     }
   ],
   "p1": [
@@ -138,12 +139,12 @@
     },
     {
       "id": "brief-work-open-world-recovery-audit",
-      "title": "ChefWSA · Open World contract + donor recovery audit",
-      "badge": "READY · COMPLETE MATRIX AUDIT",
+      "title": "ChefWSA · Open World Master Acceptance Recovery",
+      "badge": "READY · PR #373 · AUDIT ONLY",
       "status": "ready",
       "provider": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA",
-      "desc": "Do not build. Reconstruct the complete immutable One-Shot Acceptance Matrix and donor map. `Receiving Core` is not a product-progress status. Product acceptance exists only when every required row is green. Audit Coworker Dropbox source plus WB2/PR #348, classify Hex terrain ownership and God Mode/Persistence paths, then get a fresh independent challenge.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md",
+      "desc": "Run the canonical Recovery Lead brief. First freeze/verify the complete requirement ledger, then map verified donors/owners/proofs, classify Hex and authoring/persistence paths, and obtain a fresh independent critic challenge. Living Doc is linked from the P0 Hub card.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/WORK_WSA_OPEN_WORLD_RECOVERY_LEAD_BRIEF_2026-10-07.md",
       "tags": [
         "open world",
         "recovery",
@@ -156,7 +157,7 @@
         "hex",
         "donor census"
       ],
-      "prompt": "Run skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md exactly. Apply skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md: partial subsystem progress is donor/evidence only; no MVP exists until the complete required Acceptance Matrix is green. No Open World runtime writes. Communicate to Georg in plain German and keep technical refs in the executor-only appendix."
+      "prompt": "Run the Recovery Lead brief on Draft PR #373 / branch recovery/open-world-master-acceptance-audit-2026-10-07 exactly. No Open World runtime writes. Use the 43-row MVP input ledger as anti-feature-loss baseline, independently verify/freeze it before donor selection, update the JSON Living Doc at material audit milestones, and return only RECOVERY PLAN READY or RECOVERY PLAN BLOCKED."
     },
     {
       "id": "brief-resident-performance-blender",
