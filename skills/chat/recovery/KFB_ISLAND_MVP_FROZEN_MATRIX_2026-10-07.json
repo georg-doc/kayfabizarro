@@ -87,9 +87,9 @@
       "phase": "7_PERFORMANCE",
       "owner": "Runtime performance owners + central scheduler",
       "readiness": "UNPROVEN",
-      "delta": "Measure actual integrated island on target device; apply bounded LOD/instancing/update budgets and Clay distance strategy only where evidence requires.",
-      "proof": "Persist FPS/frame-time, draw calls, visible tris/material counts and no runaway allocations during Ground/Drive/Flight traversal.",
-      "forbidden": "Claiming performance from headless/preview only; optimizing the wrong endless-world architecture."
+      "delta": "Measure the actual integrated island on the named target device/GPU in a visible focused window with no parallel meaningful GPU workload; apply bounded LOD/instancing/update budgets and terrain Clay distance strategy only where evidence requires.",
+      "proof": "Persist FPS/frame-time, draw calls, visible tris/material counts and allocation/leak evidence during Ground/Drive/Flight traversal. Measurement is valid only in a visible focused window on the target machine/GPU with no parallel screenshot/render/Lab or other meaningful GPU load; otherwise PERFORMANCE=UNKNOWN.",
+      "forbidden": "Claiming performance from headless/preview/contended-GPU runs; treating the Lab 59.9-fps run as acceptance; optimizing geometry while leaving the terrain Clay fragment bottleneck unexamined."
     },
     {
       "id": "F-R08",
@@ -194,10 +194,10 @@
       "status": "NOT_GREEN",
       "phase": "2_PLAYER_GOLDEN",
       "owner": "World route planner → Track Core → Surface Truth",
-      "readiness": "MISSING_INTEGRATED_PROOF",
-      "delta": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment.",
-      "proof": "Walk/Drive normal-input traversal completes loop and crossing without seam, folding, unsupported bridge end or camera-critical geometry.",
-      "forbidden": "720° spiral/Race-Tube spectacle used to prove basic island road viability."
+      "readiness": "MISSING_INTEGRATED_PROOF_WITH_KNOWN_TRACK_CORE_GAPS",
+      "delta": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60° STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner.",
+      "proof": "Walk/Drive normal-input traversal completes loop, real junction/roundabout and crossing without seam, folding, unsupported bridge end, plate-cut fallback or camera-critical geometry. Current Track Core owner/API is inspected before applying lab donor values.",
+      "forbidden": "720° spiral/Race-Tube spectacle as basic proof; accepting the Lab plate fallback; building a T/Y/4-way junction only in Island code; treating donor values as canon without current-owner audit."
     },
     {
       "id": "F-R17",
@@ -469,11 +469,23 @@
       "class": "REQUIRED",
       "status": "NOT_GREEN",
       "phase": "3_EARLY_GOLDEN",
-      "owner": "Integrator + independent visual/physical critic",
+      "owner": "Integrator + independent visual/physical critic + Georg visual product authority",
       "readiness": "PROCESS_GATE_READY",
-      "delta": "Run before feature fan-out on actual runtime once Player/Surface/Joyride/Clay/Sky/landmark/water core exists.",
-      "proof": "Fresh critic-owned screenshots/video certify island silhouette, contact, locomotion, road, water/bridge, landmark, Clay/Sky/light and first-frame composition >= required threshold.",
-      "forbidden": "Continuing broad integration on a visibly wrong foundation."
+      "delta": "Run before feature fan-out on actual runtime once Player/Surface/Joyride/Clay/Sky/landmark/water core exists. After the independent critic, prepare 4–6 representative screenshots and one continuous clip ≤30s for Georg visual PASS/FAIL.",
+      "proof": "Fresh critic-owned screenshots/video certify island silhouette, contact, locomotion, road, water/bridge, landmark, Clay/Sky/light and first-frame composition >= required threshold, then Georg explicitly returns VISUAL PASS. Only then may Phase 4+ fan-out continue.",
+      "forbidden": "Continuing broad integration on a visibly wrong foundation; asking Georg to debug code or implementation details instead of giving a visual PASS/FAIL.",
+      "humanGate": {
+        "required": true,
+        "evidence": [
+          "4–6 screenshots",
+          "one continuous clip <=30s"
+        ],
+        "decision": [
+          "PASS",
+          "FAIL"
+        ],
+        "onFail": "Integrator repairs Phase 3 autonomously; no Phase 4 continuation until PASS."
+      }
     },
     {
       "id": "F-R40",
@@ -531,9 +543,9 @@
       "phase": "10_PRODUCT_GATE",
       "owner": "Production Guard + Georg final product authority",
       "readiness": "RULE_READY_MATRIX_NOT_GREEN",
-      "delta": "Aggregate only actual accepted proofs from F-R01–F-R43; no row may be inferred green.",
-      "proof": "Machine-readable matrix shows every REQUIRED row GREEN at named proof; only then candidate is routed to Georg as MVP candidate.",
-      "forbidden": "Near-MVP, Receiving-Core MVP, mostly-complete MVP or score averaging over a red row."
+      "delta": "Aggregate only actual accepted proofs from F-R01–F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP.",
+      "proof": "Machine-readable matrix plus human-readable final table list every REQUIRED row with ID, status and evidence/proof reference; red rows include blocker/unresolved note. Only all GREEN may route an MVP candidate to Georg.",
+      "forbidden": "Near-MVP, Receiving-Core MVP, mostly-complete MVP, score averaging over a red row, or a NO-MVP summary that omits the full 44-row status/evidence table."
     }
   ],
   "stronglyInclude": [
@@ -806,7 +818,7 @@
     "FREE_FLIGHT"
   ],
   "executionMode": "ONE_SHOT",
-  "operationalVersion": 2,
+  "operationalVersion": 3,
   "lastOperationalizedAt": "2026-10-07",
   "receivingOwnerState": {
     "repo": "georg-doc/kayfabizarro",
@@ -886,5 +898,14 @@
       ],
       "rule": "Never bulk-import _inbox. Reuse exact donor only through current owner after source isolation."
     }
-  }
+  },
+  "reasoningPolicy": {
+    "baseline": "Astra Medium",
+    "allowHighPhases": [
+      "3_EARLY_GOLDEN",
+      "4_ROADS_WORLD_TRAVERSAL"
+    ],
+    "note": "High reasoning is explicitly allowed for visual Golden and junction/road integration; no second Integrator."
+  },
+  "labDonorFindings": "skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md"
 }
