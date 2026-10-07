@@ -1,6 +1,6 @@
 {
   "schema": "kfb.site-surfaces/2",
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "defaultPrimary": "GPT_SITE",
   "defaultSecondary": "CLOUDFLARE_KFB_HUB_MIRROR_WHEN_REQUIRED",
   "rules": {
@@ -21,21 +21,24 @@
       "id": "kfb-production-hub",
       "owner": "KFB Production Hub / HUB-CTRL",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "SITE_LIVE_BOARD_FUNCTIONAL_VISIBLE_CHECK_PENDING",
+      "status": "SITE_PRODUCTIVE_ACCEPTED_V10_LIVE_DATA_STYLE",
       "source": "PR #217",
       "humanStatus": "CANONICAL_HUMAN_FRONT_DOOR",
-      "notes": "Canonical direct Paper/Dark Hub. Functional live-board path is proven. Hidden revision counter is cosmetic; final human-visible proof uses the GitHub-only LIVE CHECK card/status.",
+      "notes": "Accepted Hub v2 shell is Site version 10 with theme, Pocket Inbox, Resident overlay, live board and live CSS proven. Open World MVP Living Doc is planned as an internal ?view=open-world-mvp extension on this same Site/project. One bounded in-place Site publish is required once; afterwards the view must live-load main/kfb-hub/live/open-world-mvp.json so routine matrix/status updates are GitHub JSON + refresh only with no further Work/Sites publish. No Cloudflare route.",
       "publishPacket": "skills/chat/publish/WORK_PRODUCTION_HUB_LIVE_BOARD_MIGRATION_2026-10-06.md",
       "publishSourceHead": "910864dd4cf5a112f5d6528d71436ecaa03e422f",
       "hubSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38",
       "siteProject": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
       "siteVersion": "appgprj_6ab7358322a8819183d2fa036b7b12f9~appgver_581aa28b815c819197ab66bf08c55cba",
-      "siteDeployment": "appgdep_6ac55651822481919449407d6f7cb119",
+      "siteDeployment": "appgdep_6ac56373eee4819190c3f7c2f3e0cbdd",
       "publishedSourceHead": "e31745433c1cdc6f111b05b7e96ada5d8ae53c68",
       "publishedSourceBlob": "988cbbd5c0b7bf767be811ef76886f98749a300f",
       "verification": "Deployment succeeded; direct desktop/mobile UI preserved; remote board HTTP 200; no console/network errors; board .11 loaded after refresh without second deployment. Board .12 provides a visible GitHub-only refresh check.",
       "surfaceRole": "HUMAN_FRONT_DOOR",
-      "siteSourceCommit": "e0f96a9a83d338369793b656e3d0e15cb93fa341"
+      "siteSourceCommit": "1013041360cc9c5cdb1990b4db81fab4e6c28236",
+      "openWorldMvpView": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
+      "openWorldMvpViewStatus": "ONE_TIME_SITE_MIGRATION_REQUIRED_NOT_YET_PUBLISHED",
+      "openWorldMvpLiveData": "main/kfb-hub/live/open-world-mvp.json"
     },
     {
       "id": "kfb-eyerig-workbench",
@@ -151,7 +154,7 @@
       "surfaceRole": "PUBLIC_HUB"
     }
   ],
-  "updatedAt": "2026-10-07T11:05:00+02:00",
+  "updatedAt": "2026-10-07T12:28:00+02:00",
   "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
   "humanFrontDoor": "kfb-production-hub",
   "controlLedger": "kfb-production-control",
