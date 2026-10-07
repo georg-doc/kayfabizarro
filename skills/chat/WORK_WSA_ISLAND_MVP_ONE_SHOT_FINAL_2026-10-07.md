@@ -17,7 +17,7 @@ This brief **supersedes** the earlier
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORK_WSA_OPEN_WORLD_INTEGRATOR_ONE_SHOT_2026-10-07.md`
 where that older file still refers to the former 37-row product contract.
 
-The binding product contract is the current machine-readable Frozen Matrix **operationalVersion 4**. The JSON version is authoritative; older v2/v3 wording is superseded.
+The binding product contract is the current machine-readable Frozen Matrix **operationalVersion 5**. The JSON version is authoritative; older v2/v3/v4 wording is superseded.
 
 ---
 
@@ -745,6 +745,7 @@ Keep routed for source selection and future-compatible seams:
 - **Material identity / Paper-Cardboard / Open Stage / Threshold grammar** — preserved design vocabulary; F-S13 is the only current bounded MVP routing addition and remains STRONGLY INCLUDE, not REQUIRED.
 - **World Pulse** — branch `planning/world-pulse-audio-reactive-living-toy-2026-10-07`; presentation-only layer consuming Audio/world facts; never a second AudioContext or simulation owner.
 - **Blender MCP choreography** — current Resident Performance / Issue #369 path; author reusable missing choreography only after source/motion audit.
+- **Oxijolt physics acceptance/test architecture** — read `skills/chat/recovery/KFB_OXIJOLT_PHYSICS_ACCEPTANCE_DONOR_2026-10-07.md`; source-pinned external donor only. Law-style invariants, focused seam witnesses, Physics X-Ray, deterministic input/digest checks and percentile telemetry may be used behind existing F-R02/03/05/07/10/11/16/17/18/31 acceptance. **No Oxijolt/Jolt runtime adoption, no Rapier replacement, no mandatory pre-MVP Physics Lab.**
 
 If one of these layers becomes necessary to satisfy an existing Frozen row, open its exact named owner/branch and consume the smallest proven seam.
 
