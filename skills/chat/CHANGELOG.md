@@ -2649,3 +2649,14 @@ No runtime/product code changed.
 - Reuse order is binding: Resident Atlas → Motion PR #344 → Fluff Work Motion PR #356 → EyeRig/PetMouth/ChatterBox semantics → only then genuinely reusable new clips.
 - Required output centers on Pose / Proximity / Gesture / Micro-motion, emotional body language, Resident↔Resident/Player staging, shop/trade/gift, Fluff/work and repair/rebuild choreography with `COVERED / LAYERABLE / NEW_CLIP_REQUIRED` classification.
 - Hub board advanced to **2026-10-07.4**; #367 remains technically valid but is explicitly the **second Blender job after #369** unless newly outcome-critical.
+
+## 2026-10-07 · Claude Design Theatre Curtain recovery/productization
+
+- Created Issue **#372** for a bounded **Claude Design** recovery/productization job.
+- Binding brief: `skills/chat/CLAUDE_DESIGN_THEATRE_CURTAIN_RECOVERY_PRODUCTIZATION_2026-10-07.md`.
+- Current visual/physical donor is the recovered `KFB Theatre Curtain v2` package from 2026-09-24; the older CPU-Verlet+tiled-texture path is historical failure evidence only.
+- Repo-backed visual direction is the aged dark-red velvet/proscenium reference `CURATIN-THREE-js - old-stage-red-curtains-wooden-architecture-dilapidated-velvet-set-aged-ornate-stone-architectural-frame-387640660.webp` (blob `068887825acd85d78bf27d7fdbf89066518670ec`), used as BENCHMARK not 1:1 template.
+- Georg's current correction rejects the later failed Birthday/WSA fake clay plaque, replacement wordmark and SVG/UI-over-Curtain presentation as binding design direction.
+- Material rule: do not blindly restore tiled fabric normal/roughness maps; explore old-theatre/velvet richness through motion-safe sheen/roughness/environment response, non-repeating macro patina and/or separate aged hardware/proscenium detail.
+- Target module stays reusable across loading/boot, Character Select and optional in-game reveal; no Open World/PR #348 runtime writes in this design slice.
+- Production Hub board advanced to **2026-10-07.5** with a READY Claude Design card and copy prompt.
