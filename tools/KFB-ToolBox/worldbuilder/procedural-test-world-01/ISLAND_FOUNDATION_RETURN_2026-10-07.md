@@ -1,3 +1,27 @@
+# KFB Island MVP R4 · Foundation implementation milestone 1
+
+Current authority: `skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`, Frozen Matrix operationalVersion 5: **44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL PROOF**. Prior 37-row references below are historical and superseded. ONE_SHOT continues. **NO MVP; no REQUIRED row is claimed GREEN.**
+
+Owner WB2, draft PR #348, branch `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`, baseline `e82c4c7e164b6258fb535df72e5c28143f2ce4cf`. This milestone is identified by its containing commit.
+
+Named Scene v1 island documents now have independent storage identities, finalized Track 0.12 recipes, pinned generator lineage and native ordered sculpt strokes. Validated replacement blocks concurrent editing, captures live player state and reconstructs the last valid document on failure. Invalid saved bytes are preserved while a recoverable fixture boots. No imported Engine is instantiated.
+
+Existing SurfaceTruth now accepts explicit visible Float32 triangles; its lattice path remains. The barycentric index is extracted from existing Track KitContact. Identical triangle arrays feed existing Rapier Physics, compiled in a reproducible pinned browser bundle. WB2 retains renderer/frame ownership. Source/lock/bundle hashes: `../wb2-design-01/owners/island-owners.provenance.json`.
+
+Actual browser evidence: source-isolated pinned Boulder in A → same-seed B (no object/stroke state) → fresh A with identical canonical document. Overlapping Raise/Lower visibly changed native terrain and reloaded exactly. Boulder is a test prop, not Signature Landmark acceptance.
+
+363 runtime samples after sculpt reload: maximum visible/support delta 2.71e-13 m; Rapier/support delta 0.0001556 m. Evidence under `evidence/r4-foundation/`: `surface-witness-sculpt.json`, `island-a-b-a.json`, `sculpt-fresh-runtime.jpg`. Eight Node tests pass. These are Foundation diagnostics, not visual Golden or performance acceptance.
+
+Independent read-only Foundation Guard identified repairs to concurrent mutations, live-player snapshot, actor switching, hidden-vs-visible sculpt, invalid-save recovery and Track provenance. No product score. F-R39 NOT_READY; F-R07 UNKNOWN.
+
+Recorded source evaluation order: base/village/pond → Track fit → bridge/river cut → protected-corridor-masked sculpt. Generation is separate from indexed support. Finalized visible updates replace support index and Rapier collider. Route authoring/invalidation and normal-input contact proof remain open before F-R29/F-R31 GREEN.
+
+Next internal gate: swept player contact, authored collision replay, disposal evidence; automatically continue Player Golden after Foundation. Old slab road/material/composition remains unaccepted. No Site publication, merge or Live promotion.
+
+---
+
+## Historical handoff (superseded where inconsistent)
+
 # WB2 island direction and foundation handoff
 
 Georg selected bounded island documents inside WB2 and accepted the bounded closure. The local pre-pause integration is secured on draft PR #348 at source checkpoint `85ca9ad573097feb66ccbed86b72f5baeb24127e`. This handoff records the approved direction, actual reusable foundations and exported implementation gaps. **NO MVP** remains; no new island runtime or save/reload PASS is claimed.

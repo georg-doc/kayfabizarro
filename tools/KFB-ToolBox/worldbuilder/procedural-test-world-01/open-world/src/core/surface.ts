@@ -4,6 +4,7 @@ import { fbm2, seedDomainOffset } from './wb2-noise.js';
 import { hexToWorld, worldToAxial } from './hex';
 import { dabDeltaAt } from '../owners/wb2-sculpt/terrain-sculpt.js';
 import { CHUNK } from './units';
+import {TriangleContact} from './triangle-contact';
 export const SURFACE_SUBDIV = 4;
 export interface SurfaceContribution {
   id: string; owner: 'river' | 'village' | 'track-core';
@@ -16,6 +17,13 @@ export interface SurfaceContact {
 export interface SculptStroke { id:string;x:number;z:number;radius:number;amount:number }
 export class SurfaceTruth {
   revision=0;
+  private indexedGround:TriangleContact|null=null;
+  /** Explicit Float32 visible-mesh topology; only for bounded non-lattice surfaces. */
+  bindIndexedGround(positions:Float32Array,indices:Uint32Array) {
+    const next=new TriangleContact('ground');next.addArrays(positions,indices);
+    this.indexedGround=next;this.invalidate();
+  }
+  dispose(){this.indexedGround=null;this.samples.clear();this.contributions.clear();this.contacts.clear();this.strokes.clear();this.listeners.clear();}
   readonly contributions = new Map<string,SurfaceContribution>();
   readonly contacts = new Map<string,SurfaceContact>();
   readonly strokes = new Map<string,SculptStroke>();
@@ -60,6 +68,7 @@ export class SurfaceTruth {
     return y;
   }
   groundHeightAt(x:number,z:number) {
+    if(this.indexedGround)return this.indexedGround.heightAt(x,z)??-Infinity;
     const a=worldToAxial(x,z),u=(a.q+.5)*SURFACE_SUBDIV,v=(a.r+.5)*SURFACE_SUBDIV;
     const i=Math.floor(u),j=Math.floor(v),f=u-i,g=v-j;
     const h00=this.vertex(i,j),h10=this.vertex(i+1,j),h01=this.vertex(i,j+1),h11=this.vertex(i+1,j+1);

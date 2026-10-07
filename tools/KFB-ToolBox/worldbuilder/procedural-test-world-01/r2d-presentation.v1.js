@@ -172,6 +172,7 @@ export function mountR2DPresentation({group,supportTerrain,plan,field,palette,li
   nature.group.traverse(o=>{if(o.isMesh){const p2=o.name.startsWith('P2');o.userData.sourceRecord={assetId:o.name,packId:p2?'KFB Environment P2':'KFB Environment P1',source:{commit:'8614726082b820fed1795c105b2581265985c9fd',path:'tools/KFB-ToolBox/worldbuilder/world-corridor-01/'+(p2?'procedural-environment-p2/environment-family-p2.mjs':'procedural-props-local-proof/environment-family-p1.mjs'),blobSha:p2?SOURCE.p2Blob:SOURCE.p1Blob}}}});
   const natureBases=[];nature.group.traverse(o=>{if(o.isInstancedMesh){const matrices=[];for(let i=0;i<o.count;i++){const m=new THREE.Matrix4();o.getMatrixAt(i,m);matrices.push(m)}natureBases.push({mesh:o,matrices})}});
   return{
+    top,under,
     report:{schema:SCHEMA,depth:body.depth,bodyVertices:body.vertices,underside:true,...water.report,nature:nature.report},
     refreshSurface(heightAt){
       // This is the existing WB2 sculpt truth projected onto its visible R2D mesh.

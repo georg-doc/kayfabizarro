@@ -50,6 +50,8 @@ export class Physics {
     this.alpha = this.acc / FIXED_DT;
   }
 
+  dispose():void {this.stepHooks=[];this.acc=0;this.world.free();}
+
   get fixedDt(): number {
     return FIXED_DT;
   }

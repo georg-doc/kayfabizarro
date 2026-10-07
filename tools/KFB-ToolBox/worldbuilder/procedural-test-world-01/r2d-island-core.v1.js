@@ -29,7 +29,7 @@ const smin = (a, b, k) => { const h = Math.max(k - Math.abs(a - b), 0) / k; retu
 const distSeg = (px, pz, a, b) => { const vx = b[0] - a[0], vz = b[1] - a[1], l2 = vx * vx + vz * vz || 1, t = clamp(((px - a[0]) * vx + (pz - a[1]) * vz) / l2, 0, 1); return Math.hypot(px - a[0] - vx * t, pz - a[1] - vz * t); };
 
 /* ---------- Plan: Zellen, Umriss, Straße, Plätze (reine Daten, deterministisch je Seed) ---------- */
-export function planIsland(seed, TC, shape = 'frei') {
+export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
   const R = rng(seed * 7919 + 13); let C, sdf;
   if (shape === 'hex') { const cells = [[0, 0], ...DIRS.map(d => [d[0], d[1]])];
     const d0 = Math.floor(R() * 6), n = DIRS[d0]; cells.push([n[0] * 2, n[1] * 2], [n[0] + DIRS[(d0 + 1) % 6][0], n[1] + DIRS[(d0 + 1) % 6][1]]);
@@ -49,12 +49,14 @@ export function planIsland(seed, TC, shape = 'frei') {
   const roadY = 0.6, turn = 16 + Math.floor(R() * 11), sgn = R() < 0.5 ? 1 : -1;
   const ext = rAt(-Math.PI / 2) + rAt(Math.PI / 2), zIn = c0[1] - rAt(-Math.PI / 2) - 6, arc = 45 * turn * Math.PI / 180, tail = Math.max(4, ext + 12 - 6 - 2 * arc * 0.97);
   const LOW = { barrierH: { to: 0.3 }, barrierOuterTop: { to: 0.25 } }, HIGH = { barrierH: { to: 1.35 }, barrierOuterTop: { to: 1.18 } };
-  const recipe = { schema: 'kfb.route-recipe/0.1-draft', id: 'R2D_V0_ISLAND_' + seed, label: 'R2D v0 · Inselquerung', start: { p: [c0[0] + sgn * 3, roadY, zIn], headingDeg: 0 },
+  let recipe = { schema: 'kfb.route-recipe/0.1-draft', id: 'R2D_V0_ISLAND_' + seed, label: 'R2D v0 · Inselquerung', start: { p: [c0[0] + sgn * 3, roadY, zIn], headingDeg: 0 },
     defaults: { widthClass: 'NARROW', markings: 'STREET' },
     pieces: [{ id: 'kopf_in', type: 'STRAIGHT', length: 6 }, { id: 's1', type: 'CURVE_EASE', turn: turn * sgn, radius: 45, bankDeg: 0, params: LOW }, { id: 's2', type: 'CURVE_EASE', turn: -turn * sgn, radius: 45, bankDeg: 0 }, { id: 'kopf_out', type: 'STRAIGHT', length: +tail.toFixed(1), params: HIGH }] };
   let stream = TC.compileRecipe(recipe);
   { const S0 = stream.samples, L = S0[S0.length - 1].s; let sl = 0; for (const q of S0) if (sdf(q.p[0], q.p[2]) < 0) sl = q.s;   // Brückenkopf: Ende 6 m hinter dem letzten Inselpunkt
     const over = L - sl - 6, pc = recipe.pieces[3]; if (Math.abs(over) > 1) { pc.length = +Math.max(3, pc.length - over).toFixed(1); stream = TC.compileRecipe(recipe); } }
+  // Replay the saved complete recipe, never a mutable current fixture.
+  if(finalizedRecipe){recipe=structuredClone(finalizedRecipe);stream=TC.compileRecipe(recipe);}
   const samp = stream.samples, width = samp[0].prm.width;
   // Fahrbahnmitte aus den Slots (Rolle 'road' liegt zwischen Slot 6 und 7), nicht aus p: der Kern legt die Fahrbahn seitlich versetzt
   const sw = (q, i) => [0, 1, 2].map(k => q.p[k] + q.R[k] * q.slots[i][0] + q.U[k] * q.slots[i][1]);
@@ -130,8 +132,8 @@ export function fields(P) {
 }
 
 
-export function makeIslandCore(seed, trackCore, shape='frei'){
-  const plan=planIsland(seed,trackCore,shape);
+export function makeIslandCore(seed, trackCore, shape='frei', finalizedRecipe=null){
+  const plan=planIsland(seed,trackCore,shape,finalizedRecipe);
   const field=fields(plan);
   return {schema:SCHEMA,source:SOURCE,plan,field};
 }

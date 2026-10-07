@@ -1,0 +1,612 @@
+{
+  "sameSeed": true,
+  "aBefore": {
+    "format": "kfb-worldbuilder-scene",
+    "version": 1,
+    "id": "wb2-island.r4-foundation-a",
+    "terrain": {
+      "seed": 3,
+      "height": 10,
+      "macroScale": 3.2,
+      "detail": 0.55,
+      "tile": {
+        "cx": -0.952,
+        "cz": 1.792,
+        "size": 104,
+        "seg": 256
+      },
+      "sculpt": {
+        "version": 1,
+        "strokes": []
+      }
+    },
+    "sources": {
+      "terrain": {
+        "repo": "ZyFou/ProceduralTerrains",
+        "commit": "f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070",
+        "license": "MIT",
+        "files": [
+          "src/engine/terrain/noise/cpuNoise.js",
+          "src/engine/terrain/noise/seedDomain.js"
+        ]
+      },
+      "terrainSculpt": {
+        "owner": "KFB WorldBuilder",
+        "module": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+        "version": 1,
+        "interaction": [
+          "raise",
+          "lower",
+          "radius",
+          "strength",
+          "undo",
+          "clear",
+          "stroke-save-reload"
+        ]
+      },
+      "sceneEdit": {
+        "owner": "KFB ToolBox",
+        "module": "tools/KFB-ToolBox/lib/edit-layer.js",
+        "baseDonorBlob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+        "moduleBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+        "lineage": [
+          "Dungeon Room Study S21/S22",
+          "Resident Atlas S7",
+          "ToolBox R3 uniform-scale extension"
+        ],
+        "interaction": [
+          "object-menu",
+          "pointerup-select",
+          "translate",
+          "rotate",
+          "scale-gizmo",
+          "uniform-scale-down",
+          "uniform-scale-up",
+          "drop",
+          "world-local",
+          "snap"
+        ]
+      },
+      "resident": {
+        "owner": "KFB Resident Atlas",
+        "residentId": "caveman",
+        "donorPath": "tools/resident_atlas/scenes/caveman-cave-camp.json"
+      },
+      "world": {
+        "owner": "KFB WorldBuilder",
+        "sourceDonor": "R2D v0",
+        "terrain": "r2d-island-core.v1.js",
+        "track": "Track Core @ 64d8597",
+        "buildings": "Registry native building families → K2/v10"
+      }
+    },
+    "objects": [
+      {
+        "id": "landmark-boulder",
+        "kind": "prop",
+        "name": "Boulder · Rock_3_E_Color1",
+        "source": {
+          "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+          "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+        },
+        "transform": {
+          "position": [
+            2.2,
+            0.6,
+            -0.6
+          ],
+          "rotation": [
+            0,
+            -0.45,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    ],
+    "world": {
+      "format": "kfb.r2d.world-ref/1",
+      "provider": "kfb.r2d-worldbuilder-adapter/2",
+      "seed": 3,
+      "biome": "burg",
+      "shape": "frei",
+      "source": {
+        "source": "R2D v0 Claude Design donor",
+        "commit": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+        "blob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d"
+      },
+      "player": {
+        "actorProfileId": "Mannequin_Medium",
+        "worldId": "wb2-island.r4-foundation-a",
+        "position": [
+          -2.3659081105108943,
+          0.6,
+          -16.287534046398722
+        ],
+        "heading": 0.23888392223683771,
+        "speed": 0,
+        "intention": "idle"
+      },
+      "island": {
+        "id": "r4-foundation-a",
+        "docId": "wb2-island.r4-foundation-a",
+        "storageKey": "kfb-wb2-island.r4-foundation-a",
+        "seed": 3,
+        "shape": "frei",
+        "biome": "burg",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "generator": {
+          "id": "wb2.r2d-island-core",
+          "revision": "r4-foundation-1",
+          "donorBlob": "ccb70f25c87d4c98a8ab53c807c7173a35be8b8f",
+          "trackCommit": "3232a1070686896833d6b7942fcd631b9fa8cda6"
+        },
+        "terrainOrder": "base-village-pond/track-fit/bridge-river-cut/sculpt-outside-protected-track-v1",
+        "route": {
+          "schema": "kfb.route-recipe/0.1-draft",
+          "id": "R2D_V0_ISLAND_3",
+          "label": "R2D v0 · Inselquerung",
+          "start": {
+            "p": [
+              -3.9522038678283895,
+              0.6,
+              -41.70390691201702
+            ],
+            "headingDeg": 0
+          },
+          "defaults": {
+            "widthClass": "NARROW",
+            "markings": "STREET"
+          },
+          "pieces": [
+            {
+              "id": "kopf_in",
+              "type": "STRAIGHT",
+              "length": 6
+            },
+            {
+              "id": "s1",
+              "type": "CURVE_EASE",
+              "turn": -22,
+              "radius": 45,
+              "bankDeg": 0,
+              "params": {
+                "barrierH": {
+                  "to": 0.3
+                },
+                "barrierOuterTop": {
+                  "to": 0.25
+                }
+              }
+            },
+            {
+              "id": "s2",
+              "type": "CURVE_EASE",
+              "turn": 22,
+              "radius": 45,
+              "bankDeg": 0
+            },
+            {
+              "id": "kopf_out",
+              "type": "STRAIGHT",
+              "length": 5,
+              "params": {
+                "barrierH": {
+                  "to": 1.35
+                },
+                "barrierOuterTop": {
+                  "to": 1.18
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "savedAt": "2026-10-07T21:24:14.774Z"
+  },
+  "aFresh": {
+    "format": "kfb-worldbuilder-scene",
+    "version": 1,
+    "id": "wb2-island.r4-foundation-a",
+    "terrain": {
+      "seed": 3,
+      "height": 10,
+      "macroScale": 3.2,
+      "detail": 0.55,
+      "tile": {
+        "cx": -0.952,
+        "cz": 1.792,
+        "size": 104,
+        "seg": 256
+      },
+      "sculpt": {
+        "version": 1,
+        "strokes": []
+      }
+    },
+    "sources": {
+      "terrain": {
+        "repo": "ZyFou/ProceduralTerrains",
+        "commit": "f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070",
+        "license": "MIT",
+        "files": [
+          "src/engine/terrain/noise/cpuNoise.js",
+          "src/engine/terrain/noise/seedDomain.js"
+        ]
+      },
+      "terrainSculpt": {
+        "owner": "KFB WorldBuilder",
+        "module": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+        "version": 1,
+        "interaction": [
+          "raise",
+          "lower",
+          "radius",
+          "strength",
+          "undo",
+          "clear",
+          "stroke-save-reload"
+        ]
+      },
+      "sceneEdit": {
+        "owner": "KFB ToolBox",
+        "module": "tools/KFB-ToolBox/lib/edit-layer.js",
+        "baseDonorBlob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+        "moduleBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+        "lineage": [
+          "Dungeon Room Study S21/S22",
+          "Resident Atlas S7",
+          "ToolBox R3 uniform-scale extension"
+        ],
+        "interaction": [
+          "object-menu",
+          "pointerup-select",
+          "translate",
+          "rotate",
+          "scale-gizmo",
+          "uniform-scale-down",
+          "uniform-scale-up",
+          "drop",
+          "world-local",
+          "snap"
+        ]
+      },
+      "resident": {
+        "owner": "KFB Resident Atlas",
+        "residentId": "caveman",
+        "donorPath": "tools/resident_atlas/scenes/caveman-cave-camp.json"
+      },
+      "world": {
+        "owner": "KFB WorldBuilder",
+        "sourceDonor": "R2D v0",
+        "terrain": "r2d-island-core.v1.js",
+        "track": "Track Core @ 64d8597",
+        "buildings": "Registry native building families → K2/v10"
+      }
+    },
+    "objects": [
+      {
+        "id": "landmark-boulder",
+        "kind": "prop",
+        "name": "Boulder · Rock_3_E_Color1",
+        "source": {
+          "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+          "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+        },
+        "transform": {
+          "position": [
+            2.2,
+            0.6,
+            -0.6
+          ],
+          "rotation": [
+            0,
+            -0.45,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    ],
+    "world": {
+      "format": "kfb.r2d.world-ref/1",
+      "provider": "kfb.r2d-worldbuilder-adapter/2",
+      "seed": 3,
+      "biome": "burg",
+      "shape": "frei",
+      "source": {
+        "source": "R2D v0 Claude Design donor",
+        "commit": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+        "blob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d"
+      },
+      "player": {
+        "actorProfileId": "Mannequin_Medium",
+        "worldId": "wb2-island.r4-foundation-a",
+        "position": [
+          -2.3659081105108943,
+          0.6,
+          -16.287534046398722
+        ],
+        "heading": 0.23888392223683771,
+        "speed": 0,
+        "intention": "idle"
+      },
+      "island": {
+        "id": "r4-foundation-a",
+        "docId": "wb2-island.r4-foundation-a",
+        "storageKey": "kfb-wb2-island.r4-foundation-a",
+        "seed": 3,
+        "shape": "frei",
+        "biome": "burg",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "generator": {
+          "id": "wb2.r2d-island-core",
+          "revision": "r4-foundation-1",
+          "donorBlob": "ccb70f25c87d4c98a8ab53c807c7173a35be8b8f",
+          "trackCommit": "3232a1070686896833d6b7942fcd631b9fa8cda6"
+        },
+        "terrainOrder": "base-village-pond/track-fit/bridge-river-cut/sculpt-outside-protected-track-v1",
+        "route": {
+          "schema": "kfb.route-recipe/0.1-draft",
+          "id": "R2D_V0_ISLAND_3",
+          "label": "R2D v0 · Inselquerung",
+          "start": {
+            "p": [
+              -3.9522038678283895,
+              0.6,
+              -41.70390691201702
+            ],
+            "headingDeg": 0
+          },
+          "defaults": {
+            "widthClass": "NARROW",
+            "markings": "STREET"
+          },
+          "pieces": [
+            {
+              "id": "kopf_in",
+              "type": "STRAIGHT",
+              "length": 6
+            },
+            {
+              "id": "s1",
+              "type": "CURVE_EASE",
+              "turn": -22,
+              "radius": 45,
+              "bankDeg": 0,
+              "params": {
+                "barrierH": {
+                  "to": 0.3
+                },
+                "barrierOuterTop": {
+                  "to": 0.25
+                }
+              }
+            },
+            {
+              "id": "s2",
+              "type": "CURVE_EASE",
+              "turn": 22,
+              "radius": 45,
+              "bankDeg": 0
+            },
+            {
+              "id": "kopf_out",
+              "type": "STRAIGHT",
+              "length": 5,
+              "params": {
+                "barrierH": {
+                  "to": 1.35
+                },
+                "barrierOuterTop": {
+                  "to": 1.18
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "savedAt": "2026-10-07T21:24:14.774Z"
+  },
+  "bFresh": {
+    "format": "kfb-worldbuilder-scene",
+    "version": 1,
+    "id": "wb2-island.r4-foundation-b",
+    "terrain": {
+      "seed": 3,
+      "height": 10,
+      "macroScale": 3.2,
+      "detail": 0.55,
+      "tile": {
+        "cx": -0.952,
+        "cz": 1.792,
+        "size": 104,
+        "seg": 256
+      },
+      "sculpt": {
+        "version": 1,
+        "strokes": []
+      }
+    },
+    "sources": {
+      "terrain": {
+        "repo": "ZyFou/ProceduralTerrains",
+        "commit": "f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070",
+        "license": "MIT",
+        "files": [
+          "src/engine/terrain/noise/cpuNoise.js",
+          "src/engine/terrain/noise/seedDomain.js"
+        ]
+      },
+      "terrainSculpt": {
+        "owner": "KFB WorldBuilder",
+        "module": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+        "version": 1,
+        "interaction": [
+          "raise",
+          "lower",
+          "radius",
+          "strength",
+          "undo",
+          "clear",
+          "stroke-save-reload"
+        ]
+      },
+      "sceneEdit": {
+        "owner": "KFB ToolBox",
+        "module": "tools/KFB-ToolBox/lib/edit-layer.js",
+        "baseDonorBlob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+        "moduleBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+        "lineage": [
+          "Dungeon Room Study S21/S22",
+          "Resident Atlas S7",
+          "ToolBox R3 uniform-scale extension"
+        ],
+        "interaction": [
+          "object-menu",
+          "pointerup-select",
+          "translate",
+          "rotate",
+          "scale-gizmo",
+          "uniform-scale-down",
+          "uniform-scale-up",
+          "drop",
+          "world-local",
+          "snap"
+        ]
+      },
+      "resident": {
+        "owner": "KFB Resident Atlas",
+        "residentId": "caveman",
+        "donorPath": "tools/resident_atlas/scenes/caveman-cave-camp.json"
+      },
+      "world": {
+        "owner": "KFB WorldBuilder",
+        "sourceDonor": "R2D v0",
+        "terrain": "r2d-island-core.v1.js",
+        "track": "Track Core @ 3232a10",
+        "buildings": "Registry native building families → K2/v10"
+      }
+    },
+    "objects": [],
+    "world": {
+      "format": "kfb.r2d.world-ref/1",
+      "provider": "kfb.r2d-worldbuilder-adapter/2",
+      "seed": 3,
+      "biome": "burg",
+      "shape": "frei",
+      "source": {
+        "source": "R2D v0 Claude Design donor",
+        "commit": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+        "blob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d"
+      },
+      "player": {
+        "position": [
+          -2.366,
+          0,
+          -16.288
+        ],
+        "heading": 0.23888
+      },
+      "island": {
+        "id": "r4-foundation-b",
+        "docId": "wb2-island.r4-foundation-b",
+        "storageKey": "kfb-wb2-island.r4-foundation-b",
+        "seed": 3,
+        "shape": "frei",
+        "biome": "burg",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "generator": {
+          "id": "wb2.r2d-island-core",
+          "revision": "r4-foundation-1",
+          "donorBlob": "ccb70f25c87d4c98a8ab53c807c7173a35be8b8f",
+          "trackCommit": "3232a1070686896833d6b7942fcd631b9fa8cda6"
+        },
+        "terrainOrder": "base-village-pond/track-fit/bridge-river-cut/sculpt-outside-protected-track-v1",
+        "route": {
+          "schema": "kfb.route-recipe/0.1-draft",
+          "id": "R2D_V0_ISLAND_3",
+          "label": "R2D v0 · Inselquerung",
+          "start": {
+            "p": [
+              -3.9522038678283895,
+              0.6,
+              -41.70390691201702
+            ],
+            "headingDeg": 0
+          },
+          "defaults": {
+            "widthClass": "NARROW",
+            "markings": "STREET"
+          },
+          "pieces": [
+            {
+              "id": "kopf_in",
+              "type": "STRAIGHT",
+              "length": 6
+            },
+            {
+              "id": "s1",
+              "type": "CURVE_EASE",
+              "turn": -22,
+              "radius": 45,
+              "bankDeg": 0,
+              "params": {
+                "barrierH": {
+                  "to": 0.3
+                },
+                "barrierOuterTop": {
+                  "to": 0.25
+                }
+              }
+            },
+            {
+              "id": "s2",
+              "type": "CURVE_EASE",
+              "turn": 22,
+              "radius": 45,
+              "bankDeg": 0
+            },
+            {
+              "id": "kopf_out",
+              "type": "STRAIGHT",
+              "length": 5,
+              "params": {
+                "barrierH": {
+                  "to": 1.35
+                },
+                "barrierOuterTop": {
+                  "to": 1.18
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "exactA": true,
+  "sculptFreshExact": true
+}

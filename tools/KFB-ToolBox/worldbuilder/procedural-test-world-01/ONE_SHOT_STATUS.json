@@ -1,223 +1,528 @@
 {
-  "schema": "kfb.one-shot-status/1",
+  "schema": "kfb.one-shot-status/2",
   "date": "2026-10-07",
-  "mode": "WB2_BOUNDED_ISLAND_FOUNDATION_HANDOFF",
-  "owner": "KFB WorldBuilder / WB2",
+  "product": "KFB Island MVP R4",
+  "mode": "ONE_SHOT",
+  "state": "RUNNING_FOUNDATION",
+  "productVerdict": "NO MVP",
+  "operationalVersion": 5,
+  "owner": "WB2",
   "repo": "georg-doc/kayfabizarro",
-  "pr": 348,
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
-  "stage": {
-    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
-    "status": "HISTORICAL_FAILED_CANDIDATE_ONLY",
-    "humanAcceptance": "FAIL",
-    "rule": "Do not use as current test gate; replace only after new One-Shot internal PASS.",
-    "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
-  },
-  "productOutcome": "COHERENT_BUILDABLE_PERSISTENT_KFB_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
-  "state": "BOUNDED_HANDOFF_WITH_EXPORTED_IMPLEMENTATION_SEAMS",
-  "checkpointStatus": {
-    "primaryProduct": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
-    "failedPredecessor": "PRESERVED_AS_EVIDENCE",
-    "architecture": "NOT_YET_RUN_UNDER_RESET",
-    "verificationHarness": "NOT_YET_RUN_UNDER_RESET",
-    "moduleWave1": "NOT_STARTED",
-    "moduleWave2": "NOT_STARTED",
-    "moduleWave3": "NOT_STARTED",
-    "moduleCritics": "NOT_YET_RUN",
-    "wholeProductCritic": "NOT_YET_RUN",
-    "humanAcceptance": "NOT_ELIGIBLE_UNTIL_INTERNAL_WHOLE_PRODUCT_PASS",
-    "integrationMatrix": "BOUND_REQUIRED",
-    "joyrideTrack": "REQUIRED_TRACK_CORE_MECHANISM_JOYRIDE_PRESENTATION",
-    "skyEnvironment": "REQUIRED_EXISTING_OWNER",
-    "motion": "REQUIRED_CURRENT_SSOT_RECONCILIATION",
-    "billboard": "REQUIRED_REPRESENTATIVE_MEDIA_SEAM",
-    "residentChatterbox": "REQUIRED_REPRESENTATIVE_SEAM",
-    "cardAlmanac": "REQUIRED_REPRESENTATIVE_SEAM",
-    "audio": "REQUIRED_ONE_OWNER_CONTINUITY",
-    "vehicleDrive": "REQUIRED_REPRESENTATIVE_SEAM"
-  },
-  "verification": {
-    "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
-    "independentGuard": "skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md",
-    "criticSeparation": "FRESH_CONTEXT_REQUIRED",
-    "criticOwnScreenshots": true,
-    "criticOwnContinuousVideo": true,
-    "criticNormalInputPath": true,
-    "builderTranscriptToCritic": false,
-    "hardThreshold": 8.5,
-    "advisoryScores": false,
-    "harness": "NOT_YET_BUILT_OR_REVALIDATED_UNDER_RESET",
-    "moduleCritics": "NOT_RUN",
-    "wholeProductCritic": "NOT_RUN",
-    "humanReady": false,
-    "wholeProductRequiredSystems": [
-      "open world",
-      "native locomotion animation",
-      "Sky/Skydome",
-      "Joyride-designed modular Track",
-      "authoring place/edit/sculpt",
-      "save/reload",
-      "vehicle drive",
-      "Clay Billboard",
-      "Resident/ChatterBox",
-      "Card/Almanac",
-      "audio continuity"
-    ]
-  },
-  "lastProven": {
-    "status": "HISTORICAL_EVIDENCE_ONLY",
-    "note": "Previous WB2 technical seams and four-island deployment are not acceptance for the reset One-Shot. See Git history and failure evidence files."
-  },
-  "weakestRequiredDimension": "UNASSESSED_RESET_NOT_STARTED",
-  "repairAttempts": {},
-  "openCoreBlockers": [
-    "Full Open World One-Shot has not started under the reset architecture/harness.",
-    "No fresh-context critic-owned runtime evidence exists yet.",
-    "No whole-product Open World + authoring PASS exists yet."
-  ],
-  "quarantinedDeferred": [
-    "failed four-island composition",
-    "full Combat product",
-    "old four-island Golden Journey",
-    "additional Residents beyond representative integrated seam",
-    "additional Cards/decks beyond representative provenance seam",
-    "full quest/economy system",
-    "multiplayer/network backend",
-    "additional minigames"
-  ],
-  "nextInternalAction": "WAIT_FOR_COWORKER_RETURN_THEN_WORK_ASTRA_RECONCILE_AND_CLOSE",
-  "invalidStopMessages": [
-    "Player checkpoint complete",
-    "next internal step is Residents",
-    "local preview ready",
-    "module ready for integration",
-    "next WSA task is"
-  ],
-  "currentRecoveryAuthority": [
-    "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
-    "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
-    "skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md"
-  ],
-  "humanAcceptance": {
-    "status": "NOT_ELIGIBLE",
-    "reason": "Coworker integration is still running; Work/Astra closure and internal fresh-context critic/whole-product gates come after its return.",
-    "nextHumanGate": "ONLY_AFTER_COWORKER_RETURN_PLUS_WORK_ASTRA_INTERNAL_WHOLE_PRODUCT_PASS"
-  },
-  "site": {
-    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
-    "project": "appgprj_6ac27631f74c8191b52e4819c1973668",
-    "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
-    "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-    "runtimeClosureFiles": 92,
-    "status": "FAILED_CANDIDATE_PRESERVED_NOT_HUMAN_READY",
-    "next": "DO_NOT_ROUTE_TO_GEORG_UNTIL_RESET_ONE_SHOT_INTERNAL_PASS",
-    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
-    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
-  },
-  "currentProductCorrection": {
-    "date": "2026-10-05",
-    "primaryProduct": "Coherent buildable persistent KFB Open World used as reusable comic/story context",
-    "bindingBrief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
-    "executionMode": "ONE_SHOT",
-    "architectureFirst": true,
-    "verificationHarnessFirst": true,
-    "moduleFanout": true,
-    "oneIntegrator": true,
-    "independentCritic": {
-      "required": true,
-      "freshContext": true,
-      "ownScreenshots": true,
-      "ownContinuousVideo": true,
-      "normalInputPath": true,
-      "builderTranscriptForbidden": true,
-      "productionWriteForbidden": true,
-      "hardThreshold": 8.5,
-      "advisoryScores": false
+  "pr": 348,
+  "baseHead": "e82c4c7e164b6258fb535df72e5c28143f2ce4cf",
+  "milestone": "named-documents-explicit-surface-1",
+  "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
+  "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
+  "required": [
+    {
+      "id": "F-R01",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Bind bounded island identity to the existing WB2 document/session lifecycle and reuse current recipe/editor/store contracts."
     },
-    "wholeProductCriticRequired": true,
-    "georgRole": "FINAL_PRODUCT_DECISION_ONLY_NO_DEBUGGING",
-    "productTargets": [
-      "EXTENSIBLE_BUILT_NOT_SCATTERED_WORLD",
-      "KAYKIT_KFB_VILLAGE_START",
-      "TERRAIN_WATER_ROADS_SETTLEMENTS_RIVERS_BRIDGES_NATURE_SEMANTIC_PROPS",
-      "REAL_PLAYER_COLLISION_NATIVE_MOTION_CAMERA",
-      "JOYRIDE_DESIGNED_MODULAR_TRACK_CORE",
-      "SKYDOME_ENVIRONMENT",
-      "DIRECT_AUTHORING_PLACE_EDIT_SCULPT",
-      "SAVE_RELOAD_PERSISTENCE",
-      "CLAY_BILLBOARD_HYPERNORMALISATION_SEAM",
-      "RESIDENT_CHATTERBOX_SEAM",
-      "CARD_ALMANAC_PROVENANCE_SEAM",
-      "AUDIO_CONTINUITY",
-      "VEHICLE_DRIVE_ON_JOYRIDE_ROUTE",
-      "PLAY_AUTHORED_WORLD"
+    {
+      "id": "F-R02",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Introduce one island-local origin/frame shared by terrain, Track, objects, colliders, player and queries; replace seed-keyed mutable singleton behavior with document identity."
+    },
+    {
+      "id": "F-R03",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Finish one authoritative render/support/collision surface with river/village/Track/sculpt contributions reconciled."
+    },
+    {
+      "id": "F-R04",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Make authored matrices/state keyed by stable semantic IDs drive regenerated visible geometry and relevant colliders, including updates."
+    },
+    {
+      "id": "F-R05",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Pin complete generator/source revision + finalized recipe/RouteRecipe; add explicit replacement load/disposal boundary for bounded island sessions."
+    },
+    {
+      "id": "F-R06",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Expose typed/versioned seams for Surface, Track, WorldObject, persistence and specialist consumers; retain exception isolation."
+    },
+    {
+      "id": "F-R07",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "WSA instruments the actual integrated product for the Ground\u2192Drive\u2192Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations."
+    },
+    {
+      "id": "F-R08",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Keep all required boot, movement, Residents' routine/activity and world reactions deterministic without mandatory LLM latency."
+    },
+    {
+      "id": "F-R09",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Reconcile current Ground consumer to binding controls without second listeners/writers."
+    },
+    {
+      "id": "F-R10",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Tune consumer speeds/playback from measured clips so default is Jog, Shift is faster Sprint, slow walk is deliberate, Backward is useful and stride-matched."
+    },
+    {
+      "id": "F-R11",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Bind Jump_Start take-off to actual impulse, ballistic air to real trajectory, Jump_Land to actual support contact; add readable cartoon anticipation/compression."
+    },
+    {
+      "id": "F-R12",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Repair camera against current simple island Ground/Drive/Flight routes before reintroducing extreme spiral geometry."
+    },
+    {
+      "id": "F-R13",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Reuse Travel flight physics/camera and accepted double-Space intent; mount same avatar/equipment presentation without second Flight solver."
+    },
+    {
+      "id": "F-R14",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Unify explicit ownership tokens/handoffs for Ground, Drive, Flight, Dialogue and Activity using existing mode bridges."
+    },
+    {
+      "id": "F-R15",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Route ordinary road and race/fun section through Track Core profiles/sockets/contact, with Joyride visible adapter and Surface reconciliation."
+    },
+    {
+      "id": "F-R16",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60\u00b0 STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner."
+    },
+    {
+      "id": "F-R17",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Integrate current Drive on authored route; repair steering/collision/recovery only to the level needed for stable normal traversal."
+    },
+    {
+      "id": "F-R18",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Preserve avatar/world pose, heading and safe support across Ground\u2194Drive and Ground\u2194Flight handoffs."
+    },
+    {
+      "id": "F-R19",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Apply K1/H0 Golden + K2/v10 routing per asset family with distance-scaled treatment and correct shadow/contact."
+    },
+    {
+      "id": "F-R20",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Apply Claybound compatibility review to every new/adapted custom family before integration."
+    },
+    {
+      "id": "F-R21",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Require original source-family isolation before visual adaptation and integration; retain source IDs/pins."
+    },
+    {
+      "id": "F-R22",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Compose sparse/medium authored clusters and landmarks using hierarchy/negative space instead of uniform procedural scatter."
+    },
+    {
+      "id": "F-R23",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Combine physical snap with local transition treatment: terrain/vegetation/material overlap, root/rock support and authored clusters."
+    },
+    {
+      "id": "F-R24",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Consume one existing Environment owner and align island lighting/atmosphere/cloud presentation with KFB/Claybound look."
+    },
+    {
+      "id": "F-R25",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Choose one strong source-proven landmark family and integrate it through Claybound/source-isolation/grounding gates."
+    },
+    {
+      "id": "F-R26",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Implement one representative coherent water/river/coast/edge seam owned by Surface Truth and current visual presentation."
+    },
+    {
+      "id": "F-R27",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Expose PLAY/BUILD/GOD in same runtime and preserve mode handoff without second editor."
+    },
+    {
+      "id": "F-R28",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Require source-isolated asset selection and real PLACE/MOVE/ROTATE/SCALE/SNAP through existing editor."
+    },
+    {
+      "id": "F-R29",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base\u2192river/village\u2192road-fit\u2192sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay."
+    },
+    {
+      "id": "F-R30",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Persist Base Recipe, Canon/Authoring Override, Dynamic State and Player Overlay as distinct layers keyed by stable identity."
+    },
+    {
+      "id": "F-R31",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Save complete pinned island document/RouteRecipe/sculpt/object/state; include the frozen terrain evaluation order/invalidation policy; fully unload; fresh import/reload and replay."
+    },
+    {
+      "id": "F-R32",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Integrate two real source-proven 3D Residents into one POI/activity/reaction loop using current state/POI semantics."
+    },
+    {
+      "id": "F-R33",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Consume real 3D Residents/Card context and current ChatterBox kernel; close EyeRig/PetMouth/real-Card and presentation fallback gaps."
+    },
+    {
+      "id": "F-R34",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Integrate one canonical Card acquire/inspect/provenance record and Almanac representation into island context/persistence."
+    },
+    {
+      "id": "F-R35",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Wire actual Billboard compositor/scheduler to real read-along/HyperNormalisation content loop in-world."
+    },
+    {
+      "id": "F-R36",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Select a bounded mapped/context-compatible subset from the researched pool and feed quote IDs/provenance/rights/FrizzleQuestion/Brain-Food to consumer."
+    },
+    {
+      "id": "F-R37",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Inject existing AudioContext/SCORE destination and send only serialized world context/events to Audio module."
+    },
+    {
+      "id": "F-R38",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Integrate signature/transition seam and attach accepted Curtain module compatibly; apply Claybound/KFB visual tune without replacing cloth kernel."
+    },
+    {
+      "id": "F-R39",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Run before broad feature fan-out after Player + Phase-2B roads/Track + Surface/Joyride/Clay/Sky/landmark/water core exists. Independent critic first, then persist F-R39=PENDING with exact head/evidence and provide 4\u20136 screenshots + one continuous clip <=30s for Georg PASS/FAIL."
+    },
+    {
+      "id": "F-R40",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Encode known failure classes into rubric and compare candidate against negative Goldens."
+    },
+    {
+      "id": "F-R41",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Enforce real owner/real content at each integration row."
+    },
+    {
+      "id": "F-R42",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Run read-only critics on required subsystems after integrated implementation, using actual app, normal inputs and critic-owned evidence."
+    },
+    {
+      "id": "F-R43",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Drive one continuous product route through movement, Drive, Flight, living/media, authoring, save/unload/fresh reload and return to Play."
+    },
+    {
+      "id": "F-R44",
+      "status": "NOT_GREEN",
+      "evidence": [],
+      "unresolved": "Aggregate only actual accepted proofs from F-R01\u2013F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP."
+    }
+  ],
+  "humanGates": {
+    "F-R39": {
+      "status": "NOT_READY"
+    },
+    "F-R07": {
+      "status": "UNKNOWN",
+      "device": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
+      "run": null
+    }
+  },
+  "tests": {
+    "nodeTests": 8,
+    "browserSameSeedIsolation": "A\u2192B\u2192fresh A canonical document identical; B empty",
+    "browserSculpt": "overlapping Raise/Lower visible and fresh document exact",
+    "surfaceWitness": {
+      "file": "evidence/r4-foundation/surface-witness-sculpt.json",
+      "samples": 363,
+      "maxRapierDeltaM": 0.0001555109011884756,
+      "maxVisibleDeltaM": 2.7067237340361316e-13
+    }
+  },
+  "nextInternalAction": "Continue Foundation: swept player contact, authored collider replay, disposal proof, then Player Golden.",
+  "previousHandoff": {
+    "schema": "kfb.one-shot-status/1",
+    "date": "2026-10-07",
+    "mode": "WB2_BOUNDED_ISLAND_FOUNDATION_HANDOFF",
+    "owner": "KFB WorldBuilder / WB2",
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 348,
+    "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+    "stage": {
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
+      "status": "HISTORICAL_FAILED_CANDIDATE_ONLY",
+      "humanAcceptance": "FAIL",
+      "rule": "Do not use as current test gate; replace only after new One-Shot internal PASS.",
+      "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+      "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
+    },
+    "productOutcome": "COHERENT_BUILDABLE_PERSISTENT_KFB_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
+    "state": "BOUNDED_HANDOFF_WITH_EXPORTED_IMPLEMENTATION_SEAMS",
+    "checkpointStatus": {
+      "primaryProduct": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
+      "failedPredecessor": "PRESERVED_AS_EVIDENCE",
+      "architecture": "NOT_YET_RUN_UNDER_RESET",
+      "verificationHarness": "NOT_YET_RUN_UNDER_RESET",
+      "moduleWave1": "NOT_STARTED",
+      "moduleWave2": "NOT_STARTED",
+      "moduleWave3": "NOT_STARTED",
+      "moduleCritics": "NOT_YET_RUN",
+      "wholeProductCritic": "NOT_YET_RUN",
+      "humanAcceptance": "NOT_ELIGIBLE_UNTIL_INTERNAL_WHOLE_PRODUCT_PASS",
+      "integrationMatrix": "BOUND_REQUIRED",
+      "joyrideTrack": "REQUIRED_TRACK_CORE_MECHANISM_JOYRIDE_PRESENTATION",
+      "skyEnvironment": "REQUIRED_EXISTING_OWNER",
+      "motion": "REQUIRED_CURRENT_SSOT_RECONCILIATION",
+      "billboard": "REQUIRED_REPRESENTATIVE_MEDIA_SEAM",
+      "residentChatterbox": "REQUIRED_REPRESENTATIVE_SEAM",
+      "cardAlmanac": "REQUIRED_REPRESENTATIVE_SEAM",
+      "audio": "REQUIRED_ONE_OWNER_CONTINUITY",
+      "vehicleDrive": "REQUIRED_REPRESENTATIVE_SEAM"
+    },
+    "verification": {
+      "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+      "independentGuard": "skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md",
+      "criticSeparation": "FRESH_CONTEXT_REQUIRED",
+      "criticOwnScreenshots": true,
+      "criticOwnContinuousVideo": true,
+      "criticNormalInputPath": true,
+      "builderTranscriptToCritic": false,
+      "hardThreshold": 8.5,
+      "advisoryScores": false,
+      "harness": "NOT_YET_BUILT_OR_REVALIDATED_UNDER_RESET",
+      "moduleCritics": "NOT_RUN",
+      "wholeProductCritic": "NOT_RUN",
+      "humanReady": false,
+      "wholeProductRequiredSystems": [
+        "open world",
+        "native locomotion animation",
+        "Sky/Skydome",
+        "Joyride-designed modular Track",
+        "authoring place/edit/sculpt",
+        "save/reload",
+        "vehicle drive",
+        "Clay Billboard",
+        "Resident/ChatterBox",
+        "Card/Almanac",
+        "audio continuity"
+      ]
+    },
+    "lastProven": {
+      "status": "HISTORICAL_EVIDENCE_ONLY",
+      "note": "Previous WB2 technical seams and four-island deployment are not acceptance for the reset One-Shot. See Git history and failure evidence files."
+    },
+    "weakestRequiredDimension": "UNASSESSED_RESET_NOT_STARTED",
+    "repairAttempts": {},
+    "openCoreBlockers": [
+      "Full Open World One-Shot has not started under the reset architecture/harness.",
+      "No fresh-context critic-owned runtime evidence exists yet.",
+      "No whole-product Open World + authoring PASS exists yet."
     ],
-    "nonBlockers": [
+    "quarantinedDeferred": [
+      "failed four-island composition",
       "full Combat product",
       "old four-island Golden Journey",
-      "every Resident",
-      "every Card/deck",
+      "additional Residents beyond representative integrated seam",
+      "additional Cards/decks beyond representative provenance seam",
       "full quest/economy system",
       "multiplayer/network backend",
-      "every minigame"
+      "additional minigames"
     ],
-    "integrationMatrix": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md",
-    "requiredIntegratedSystems": [
-      "Motion/Animation current SSOT",
-      "Track Core modular authoring with Joyride J14/T4/K2 visible design",
-      "Sky/Skydome/Environment existing owner",
-      "Asset Librarian + direct authoring/editor/sculpt",
-      "Clay Billboard + one HyperNormalisation media seam",
-      "Resident + ChatterBox",
-      "Card + Almanac provenance",
-      "Audio/Jukebox continuity",
-      "Vehicle/Drive on Joyride-presented route",
-      "Signature/Landmark module support",
-      "Theatre Curtain compatibility"
+    "nextInternalAction": "WAIT_FOR_COWORKER_RETURN_THEN_WORK_ASTRA_RECONCILE_AND_CLOSE",
+    "invalidStopMessages": [
+      "Player checkpoint complete",
+      "next internal step is Residents",
+      "local preview ready",
+      "module ready for integration",
+      "next WSA task is"
+    ],
+    "currentRecoveryAuthority": [
+      "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
+      "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
+      "skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md"
+    ],
+    "humanAcceptance": {
+      "status": "NOT_ELIGIBLE",
+      "reason": "Coworker integration is still running; Work/Astra closure and internal fresh-context critic/whole-product gates come after its return.",
+      "nextHumanGate": "ONLY_AFTER_COWORKER_RETURN_PLUS_WORK_ASTRA_INTERNAL_WHOLE_PRODUCT_PASS"
+    },
+    "site": {
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
+      "project": "appgprj_6ac27631f74c8191b52e4819c1973668",
+      "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_5543685a956081918fb6fcf4c0767b74",
+      "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+      "runtimeClosureFiles": 92,
+      "status": "FAILED_CANDIDATE_PRESERVED_NOT_HUMAN_READY",
+      "next": "DO_NOT_ROUTE_TO_GEORG_UNTIL_RESET_ONE_SHOT_INTERNAL_PASS",
+      "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+      "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5"
+    },
+    "currentProductCorrection": {
+      "date": "2026-10-05",
+      "primaryProduct": "Coherent buildable persistent KFB Open World used as reusable comic/story context",
+      "bindingBrief": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md",
+      "executionMode": "ONE_SHOT",
+      "architectureFirst": true,
+      "verificationHarnessFirst": true,
+      "moduleFanout": true,
+      "oneIntegrator": true,
+      "independentCritic": {
+        "required": true,
+        "freshContext": true,
+        "ownScreenshots": true,
+        "ownContinuousVideo": true,
+        "normalInputPath": true,
+        "builderTranscriptForbidden": true,
+        "productionWriteForbidden": true,
+        "hardThreshold": 8.5,
+        "advisoryScores": false
+      },
+      "wholeProductCriticRequired": true,
+      "georgRole": "FINAL_PRODUCT_DECISION_ONLY_NO_DEBUGGING",
+      "productTargets": [
+        "EXTENSIBLE_BUILT_NOT_SCATTERED_WORLD",
+        "KAYKIT_KFB_VILLAGE_START",
+        "TERRAIN_WATER_ROADS_SETTLEMENTS_RIVERS_BRIDGES_NATURE_SEMANTIC_PROPS",
+        "REAL_PLAYER_COLLISION_NATIVE_MOTION_CAMERA",
+        "JOYRIDE_DESIGNED_MODULAR_TRACK_CORE",
+        "SKYDOME_ENVIRONMENT",
+        "DIRECT_AUTHORING_PLACE_EDIT_SCULPT",
+        "SAVE_RELOAD_PERSISTENCE",
+        "CLAY_BILLBOARD_HYPERNORMALISATION_SEAM",
+        "RESIDENT_CHATTERBOX_SEAM",
+        "CARD_ALMANAC_PROVENANCE_SEAM",
+        "AUDIO_CONTINUITY",
+        "VEHICLE_DRIVE_ON_JOYRIDE_ROUTE",
+        "PLAY_AUTHORED_WORLD"
+      ],
+      "nonBlockers": [
+        "full Combat product",
+        "old four-island Golden Journey",
+        "every Resident",
+        "every Card/deck",
+        "full quest/economy system",
+        "multiplayer/network backend",
+        "every minigame"
+      ],
+      "integrationMatrix": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md",
+      "requiredIntegratedSystems": [
+        "Motion/Animation current SSOT",
+        "Track Core modular authoring with Joyride J14/T4/K2 visible design",
+        "Sky/Skydome/Environment existing owner",
+        "Asset Librarian + direct authoring/editor/sculpt",
+        "Clay Billboard + one HyperNormalisation media seam",
+        "Resident + ChatterBox",
+        "Card + Almanac provenance",
+        "Audio/Jukebox continuity",
+        "Vehicle/Drive on Joyride-presented route",
+        "Signature/Landmark module support",
+        "Theatre Curtain compatibility"
+      ]
+    },
+    "historicalPreviousCandidate": {
+      "status": "HUMAN_TOTAL_FAIL",
+      "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+      "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
+      "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
+      "evidence": [
+        "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md",
+        "FAILURE_RECOVERY_2026-10-04.md",
+        "evidence/FOUR_ISLAND_RECOVERY_2026-10-04/"
+      ],
+      "rule": "History only; do not infer current product quality or current gate."
+    },
+    "currentCheckpoint": {
+      "status": "COWORKER_RUNNING_PR348_IS_RECEIVING_CONTRACT",
+      "note": "PR #348 contracts/matrix remain binding receiving criteria. They are not authorization for a parallel Work/Astra build."
+    },
+    "currentExecution": {
+      "executor": "Claude Coworker",
+      "status": "RUNNING",
+      "userAssessment": "Current Coworker result looks materially better than prior attempts.",
+      "githubHandoffObserved": false,
+      "rule": "Do not start a parallel Work/Astra rebuild while Coworker is running."
+    },
+    "nextExecutor": {
+      "executor": "ChatGPT Work/Astra",
+      "mode": "ANschluss integration / reconciliation only",
+      "startsWhen": "Coworker returns exact files/branch/evidence",
+      "mustNot": "Rebuild working Coworker integration from scratch"
+    },
+    "currentReturn": "ISLAND_FOUNDATION_RETURN_2026-10-07.md",
+    "currentDecision": "ISLAND_TOPOLOGY_DECISION_2026-10-07.md",
+    "sourceCheckpointHead": "85ca9ad573097feb66ccbed86b72f5baeb24127e",
+    "topology": "BOUNDED_ISLAND_DOCUMENTS_WITHIN_WB2",
+    "productVerdict": "NO MVP",
+    "nextGate": "One edited bounded island through existing WB2 store; independent same-seed document isolation and exact fresh-load render/collider/support replay",
+    "authorityOverride": "Georg accepted narrower closure and island direction in this chat; historical one-shot/endless scope is superseded for this execution slice",
+    "exportedSeams": [
+      "document/session isolation",
+      "authored render and collider replay",
+      "native ordered sculpt replay and Track-fit policy",
+      "complete pinned recipe persistence",
+      "shared island-local physics frame"
     ]
-  },
-  "historicalPreviousCandidate": {
-    "status": "HUMAN_TOTAL_FAIL",
-    "runtimeSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
-    "siteSourceCommit": "615df460fbee99561f294439d2963baa7cb2d5b5",
-    "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301",
-    "evidence": [
-      "HUMAN_VISUAL_FAIL_JOYRIDE_2026-10-04.md",
-      "FAILURE_RECOVERY_2026-10-04.md",
-      "evidence/FOUR_ISLAND_RECOVERY_2026-10-04/"
-    ],
-    "rule": "History only; do not infer current product quality or current gate."
-  },
-  "currentCheckpoint": {
-    "status": "COWORKER_RUNNING_PR348_IS_RECEIVING_CONTRACT",
-    "note": "PR #348 contracts/matrix remain binding receiving criteria. They are not authorization for a parallel Work/Astra build."
-  },
-  "currentExecution": {
-    "executor": "Claude Coworker",
-    "status": "RUNNING",
-    "userAssessment": "Current Coworker result looks materially better than prior attempts.",
-    "githubHandoffObserved": false,
-    "rule": "Do not start a parallel Work/Astra rebuild while Coworker is running."
-  },
-  "nextExecutor": {
-    "executor": "ChatGPT Work/Astra",
-    "mode": "ANschluss integration / reconciliation only",
-    "startsWhen": "Coworker returns exact files/branch/evidence",
-    "mustNot": "Rebuild working Coworker integration from scratch"
-  },
-  "currentReturn": "ISLAND_FOUNDATION_RETURN_2026-10-07.md",
-  "currentDecision": "ISLAND_TOPOLOGY_DECISION_2026-10-07.md",
-  "sourceCheckpointHead": "85ca9ad573097feb66ccbed86b72f5baeb24127e",
-  "topology": "BOUNDED_ISLAND_DOCUMENTS_WITHIN_WB2",
-  "productVerdict": "NO MVP",
-  "nextGate": "One edited bounded island through existing WB2 store; independent same-seed document isolation and exact fresh-load render/collider/support replay",
-  "authorityOverride": "Georg accepted narrower closure and island direction in this chat; historical one-shot/endless scope is superseded for this execution slice",
-  "exportedSeams": [
-    "document/session isolation",
-    "authored render and collider replay",
-    "native ordered sculpt replay and Track-fit policy",
-    "complete pinned recipe persistence",
-    "shared island-local physics frame"
-  ]
+  }
 }

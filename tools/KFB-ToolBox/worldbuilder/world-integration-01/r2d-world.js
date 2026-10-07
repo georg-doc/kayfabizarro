@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {islandIdentity,islandRecipe,validateIslandRecipe} from '../wb2-design-01/island-document.v1.mjs';
 import { makeIslandCore } from '../procedural-test-world-01/r2d-island-core.v1.js';
 import { makeArchipelago } from '../procedural-test-world-01/r2d-archipelago.v1.js';
 import { mountR2DPresentation } from '../procedural-test-world-01/r2d-presentation.v1.js';
@@ -45,19 +46,34 @@ function chooseSpawn(P){
 }
 const pip=(x,z,poly)=>{let inside=false;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const a=poly[i],b=poly[j];if(((a[1]>z)!==(b[1]>z))&&(x<(b[0]-a[0])*(z-a[1])/(b[1]-a[1])+a[0]))inside=!inside}return inside};
 
-function singleWorld({id,Z,TC,ST,R2C,core}){
+function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
   const P=core.plan,F=core.field,pal=R2C.PAL[Z.biome]||R2C.PAL.burg;
   const maxR=Math.max(...P.edgeR),spawn=chooseSpawn(P);
   const tile={cx:+P.c0[0].toFixed(3),cz:+P.c0[1].toFixed(3),size:Math.ceil(maxR*2+28),seg:256};
   const group=new THREE.Group();group.name='R2D WorldBuilder presentation';
-  let presentation=null,buildings=null;
+  let presentation=null,buildings=null,heightReader=null,surfaceAdapter=null,roadMesh=null;
   const zone={id:'r2d-island-'+Z.seed,status:'SOURCE_DERIVED_R2D_V0',
     counts:{buildings:P.pads.length,roadParts:1,landuse:1},
     provenance:{source:'R2D v0 Claude Design donor',commit:'74f7a690fbec88cf98ce0936f31b72ad3f1148f5',blob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'}};
   const inside=(x,z)=>P.sdf(x,z)<=0;
   const baseHeightAt=(x,z)=>{const d=P.sdf(x,z);if(d<=0)return F.heightAt(x,z);return F.heightAt(x,z)-4-Math.min(32,d*1.45)};
   const W={
-    id,zone,spawn,tile,log:[],docId:'r2d-world-'+Z.seed,storageKey:'kfb-r2d-world.'+Z.seed,
+    id,zone,spawn,tile,log:[],docId:island?.docId||'r2d-world-'+Z.seed,storageKey:island?.storageKey||'kfb-r2d-world.'+Z.seed,
+    islandRecipe:island,
+    get surfaceAdapter(){return surfaceAdapter},
+    get terrainMesh(){return presentation?.top||null},
+    supportAt(x,z){return surfaceAdapter?.heightAt(x,z)},
+    syncObjects(roots){surfaceAdapter?.objects(roots)},
+    surfaceWitness(){
+      if(!surfaceAdapter||!presentation)throw Error('Named island surface not ready');
+      const points=[];for(let z=-30;z<=30;z+=2.731)for(let x=-30;x<=30;x+=3.137)if(P.sdf(x,z)<-1)points.push([x,z]);
+      const report=surfaceAdapter.evidence(points),ray=new THREE.Raycaster();
+      for(const row of report.samples){ray.set(new THREE.Vector3(row.x,1000,row.z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects([presentation.top,roadMesh],false)[0];row.visible=hit?.point.y??null;row.visibleDelta=hit?Math.abs(row.support-hit.point.y):null;}
+      report.maxPhysicsDelta=Math.max(...report.samples.map(s=>s.delta??Infinity));report.maxVisibleDelta=Math.max(...report.samples.map(s=>s.visibleDelta??Infinity));
+      report.pass=report.maxPhysicsDelta<.002&&report.maxVisibleDelta<.0001;return report;
+    },
+    validateDoc(doc){if(island){const stored=validateIslandRecipe(doc.world?.island);if(JSON.stringify(stored)!==JSON.stringify(island))throw Error('Island recipe change requires a fresh WB2 session');}},
+    sculptWeight(x,z){if(!island)return 1;const t=Math.max(0,Math.min(1,(P.roadDist(x,z)-P.hw-.5)/3));return t*t*(3-2*t);},
     SKY_MODES:[['day','Day']],skyMode:'day',landmarks:[],worldGraph:null,
     get inkOn(){return false},get inkReport(){return null},get namesOn(){return false},
     get presentationReport(){return presentation?.report||null},
@@ -65,17 +81,19 @@ function singleWorld({id,Z,TC,ST,R2C,core}){
     get city(){return buildings?.city||null},
     get supportReport(){return buildings?.report?.support||null},
     baseHeightAt,maskAt:(x,z)=>inside(x,z)?F.maskAt(x,z):'under',
-    groundAt(x,z,terrainHeight){return P.roadDist(x,z)<=P.hw+.2?Math.max(terrainHeight,P.roadY):terrainHeight},
+    groundAt(x,z,terrainHeight){if(surfaceAdapter&&presentation)return surfaceAdapter.heightAt(x,z);return P.roadDist(x,z)<=P.hw+.2?Math.max(terrainHeight,P.roadY):terrainHeight},
     solidAt(x,z){return buildings?.at(x,z)?.height||0},buildingAt(x,z){return buildings?.at(x,z)||null},
     patchDoc(doc){
       doc.id=W.docId;doc.terrain={seed:Z.seed,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};doc.objects=[];
       doc.world={format:'kfb.r2d.world-ref/1',provider:PROVIDER,seed:Z.seed,biome:Z.biome,shape:Z.shape,source:zone.provenance,player:{position:[+spawn.x.toFixed(3),0,+spawn.z.toFixed(3)],heading:+spawn.heading.toFixed(5)}};
-      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'Registry native building families → K2/v10'};return doc;
+      if(island)doc.world.island=structuredClone(island);
+      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+(island?.generator.trackCommit||TRACK_PIN).slice(0,7),buildings:'Registry native building families → K2/v10'};return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
-    async mount({scene,renderer}){const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});const road=ST.buildTrack(THREE,P.stream,mat);road.name='R2D Track Core road';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
-    dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal})},
-    onTerrain(){return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
+    async mount({scene,renderer,heightAt}){heightReader=heightAt;if(island){const M=await import('./island-surface-adapter.v1.mjs');surfaceAdapter=await M.createIslandSurface(Z.seed);}const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});const road=ST.buildTrack(THREE,P.stream,mat);road.name='R2D Track Core road';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);roadMesh=road.children[0];if(surfaceAdapter)surfaceAdapter.road(roadMesh);buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
+    dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal});mesh.visible=false;if(heightReader)presentation.refreshSurface(heightReader);surfaceAdapter?.ground(presentation.top)},
+    onTerrain(){if(heightReader)presentation?.refreshSurface(heightReader);if(presentation)surfaceAdapter?.ground(presentation.top);return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
+    stepPhysics(dt){surfaceAdapter?.physics.step(dt)},dispose(){surfaceAdapter?.dispose();presentation?.dispose();group.removeFromParent()},
     tick(){},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},async setSky(v){W.skyMode=v;return v}
   };return W;
 }
@@ -169,14 +187,18 @@ function archipelagoWorld({id,TC,ST,R2C,arch,joyride}){
   return W;
 }
 
-export async function prepare(id){
-  const Z=ZONES[id];if(!Z)throw new Error('unknown R2D world '+id);
-  const [TC,ST,R2C]=await Promise.all([imp(TRACK_PIN,TRACK_DIR+'track-core.mjs'),imp(TRACK_PIN,TRACK_DIR+'stream-to-three.mjs'),imp(R2C_PIN,R2C_DIR+'lab-world/hex-archipel.r2c.js')]);
+export async function prepare(id,options={}){
+  let Z=ZONES[id];if(!Z)throw new Error('unknown R2D world '+id);
+  let stored=null;
+  if(options.island){islandIdentity(options.island);if(Z.archipelago)throw Error('Named bounded sessions require one island');if(options.document){stored=validateIslandRecipe(options.document.world?.island);if(stored.id!==options.island)throw Error('Wrong island document');Z={...Z,seed:stored.seed,shape:stored.shape,biome:stored.biome};}}
+  const [TC,ST,R2C]=await Promise.all([options.island?import('../procedural-test-world-01/open-world/src/owners/track-core/track-core.mjs'):imp(TRACK_PIN,TRACK_DIR+'track-core.mjs'),options.island?import('../procedural-test-world-01/open-world/src/owners/track-core/stream-to-three.mjs'):imp(TRACK_PIN,TRACK_DIR+'stream-to-three.mjs'),imp(R2C_PIN,R2C_DIR+'lab-world/hex-archipel.r2c.js')]);
   if(Z.archipelago){
     const res=await fetch(RECIPE_URL);if(!res.ok)throw new Error('world recipes '+res.status);
     const recipeSet=await res.json();
     const arch=makeArchipelago(recipeSet,TC),joyride=await prepareJoyride(arch);
     return archipelagoWorld({id,TC,ST,R2C,arch,joyride});
   }
-  return singleWorld({id,Z,TC,ST,R2C,core:makeIslandCore(Z.seed,TC,Z.shape)});
+  const core=makeIslandCore(Z.seed,TC,Z.shape,stored?.route);
+  const island=options.island?(stored||islandRecipe({id:options.island,seed:Z.seed,shape:Z.shape,biome:Z.biome,route:core.plan.recipe})):null;
+  return singleWorld({id,Z,TC,ST,R2C,core,island});
 }

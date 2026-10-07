@@ -34,10 +34,12 @@
  * SOFTWARE.
  */
 import * as THREE from 'three';
+import {validateSceneDocument, sceneReplacementQueue} from './scene-document.v1.mjs';
+import {islandIdentity} from './island-document.v1.mjs';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { makeEditLayer } from '../../lib/edit-layer.js';
-import { ensureSculpt, brushWeight, makeStroke, pointSpacing, addStrokePoint, sculptDeltaAt, applyDabToGeometry, strokeCount } from '../wb2-terrain-sculpt-01/terrain-sculpt.js';
+import { ensureSculpt, brushWeight, makeStroke, pointSpacing, addStrokePoint, sculptDeltaAt, dabDeltaAt, applyDabToGeometry, strokeCount } from '../wb2-terrain-sculpt-01/terrain-sculpt.js';
 import { makePresentation, PROFILES, TERRAIN_LOOKS, OBJECT_LOOKS, LIGHT_PARAMS, TORCH_KEYS } from './wb2d-presentation.js';
 
 /* ---------------- chrome ---------------- */
@@ -89,6 +91,7 @@ const CSS = `
 #facts b{color:var(--text);font-family:system-ui,sans-serif;font-size:11px}
 #facts .lock{color:var(--accent);font-family:system-ui,sans-serif}
 #drawer{width:0;overflow:hidden;background:var(--panel2);border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+#wb2d:not(.open) #drawer{display:none}
 #wb2d.open #drawer{width:292px}
 .dhead{display:flex;align-items:center;justify-content:space-between;padding:10px 10px 8px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
 .dhead h1{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0}
@@ -273,7 +276,13 @@ const PLAY_ENABLED=QUERY.get('play')!=='0'&&HOST_PROPS.play!==false;
 const TEST_CAMERA=(QUERY.get('camera')||HOST_PROPS.camera||'')==='wide';
 const WORLD_PROVIDER=WORLD_ID?(WORLD_ID.startsWith('r2d')?'../world-integration-01/r2d-world.js':'../world-integration-01/wi1-world.js'):null;
 const WI=WORLD_PROVIDER?await import(WORLD_PROVIDER):null;
-const WORLD=WI?await WI.prepare(WORLD_ID):null;
+const ISLAND_ID=QUERY.get('island')||'';
+const ISLAND_KEYS=ISLAND_ID?islandIdentity(ISLAND_ID):null;
+const ISLAND_SAVED=ISLAND_KEYS?localStorage.getItem(ISLAND_KEYS.storageKey):null;
+let ISLAND_DOC=null,ISLAND_LOAD_ERROR=null;
+try{if(ISLAND_SAVED)ISLAND_DOC=validateSceneDocument(JSON.parse(ISLAND_SAVED),ISLAND_KEYS.docId)}catch(error){ISLAND_LOAD_ERROR=error}
+let WORLD=null;
+if(WI){try{WORLD=await WI.prepare(WORLD_ID,{island:ISLAND_ID,document:ISLAND_DOC})}catch(error){if(!ISLAND_DOC)throw error;ISLAND_LOAD_ERROR=error;ISLAND_DOC=null;WORLD=await WI.prepare(WORLD_ID,{island:ISLAND_ID,document:null})}}
 let PLAY=null;
 
 /* ---------------- accepted WB2 constants (unchanged) ---------------- */
@@ -312,8 +321,10 @@ const DEFAULT_DOC={
   ]
 };
 const deepClone=v=>JSON.parse(JSON.stringify(v));
+const SOURCE_FIXTURE_OBJECTS=deepClone(DEFAULT_DOC.objects);
 if(WORLD)WORLD.patchDoc(DEFAULT_DOC);
-let sceneDoc=deepClone(DEFAULT_DOC);
+let sceneDoc=deepClone(DEFAULT_DOC),documentReplacing=false;
+function assertDocumentIdle(){if(documentReplacing)throw Error('Scene replacement in progress');}
 const E=id=>document.getElementById(id);
 const enc=p=>p.split('/').map(encodeURIComponent).join('/');
 const raw=(p,c)=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+c+'/'+enc(p);
@@ -535,7 +546,7 @@ function terrainHitFromEvent(e){
   const r=renderer.domElement.getBoundingClientRect();
   sculptNdc.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
   sculptRay.setFromCamera(sculptNdc,camera);
-  return sculptRay.intersectObject(terrain,false)[0]||null;
+  return sculptRay.intersectObject(WORLD?.terrainMesh||terrain,false)[0]||null;
 }
 function showBrushAt(hit){
   sculptHoverHit=hit||null;
@@ -562,12 +573,16 @@ function applyCurrentSculptPoint(hit){
   if(!sculptStroke||!hit||!terrain)return false;
   const spacing=pointSpacing(sculptStroke.radius,18/80);
   if(!addStrokePoint(sculptStroke,hit.point.x,hit.point.z,spacing))return false;
-  applyDabToGeometry(terrain.geometry,sculptStroke.mode,hit.point.x,hit.point.z,sculptStroke.radius,sculptStroke.strength);
+  if(WORLD?.islandRecipe){
+    const pos=terrain.geometry.attributes.position;
+    for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);pos.setY(i,pos.getY(i)+WORLD.sculptWeight(x,z)*dabDeltaAt(x,z,sculptStroke.mode,hit.point.x,hit.point.z,sculptStroke.radius,sculptStroke.strength));}
+    pos.needsUpdate=true;
+  }else applyDabToGeometry(terrain.geometry,sculptStroke.mode,hit.point.x,hit.point.z,sculptStroke.radius,sculptStroke.strength);
   refreshTerrainAppearance();showBrushAt(hit);
   return true;
 }
 function beginSculpt(e){
-  if(sculptMode==='off'||sculptOrbitHold||mode!=='scene')return;
+  if(documentReplacing||sculptMode==='off'||sculptOrbitHold||mode!=='scene')return;
   const hit=terrainHitFromEvent(e);if(!hit)return;
   e.preventDefault();e.stopImmediatePropagation();
   sculptPointerId=e.pointerId;
@@ -577,7 +592,7 @@ function beginSculpt(e){
   applyCurrentSculptPoint(hit);
 }
 function moveSculpt(e){
-  if(sculptMode==='off'||mode!=='scene')return;
+  if(documentReplacing||sculptMode==='off'||mode!=='scene')return;
   if(sculptOrbitHold){sculptCursor.visible=false;return}
   const hit=terrainHitFromEvent(e);showBrushAt(hit);
   if(sculptPointerId===e.pointerId&&sculptStroke&&hit){
@@ -585,7 +600,7 @@ function moveSculpt(e){
   }
 }
 function finishSculpt(e,cancel=false){
-  if(sculptPointerId!==e.pointerId)return;
+  if(documentReplacing||sculptPointerId!==e.pointerId)return;
   e.preventDefault();e.stopImmediatePropagation();
   try{renderer.domElement.releasePointerCapture(e.pointerId)}catch{}
   controls.enabled=true;
@@ -732,12 +747,13 @@ function applyTerrainUI(t){
   E('seed').value=t.seed;E('height').value=t.height;E('macro').value=t.macroScale;E('detail').value=t.detail;
   updateSculptUi();
 }
-function terrainHeightAt(x,z,t=sceneDoc.terrain){
+function terrainHeightAt(x,z,t=sceneDoc.terrain){return WORLD?.supportAt?.(x,z)??terrainDesignHeightAt(x,z,t)}
+function terrainDesignHeightAt(x,z,t=sceneDoc.terrain){
   const ox=seedDomainOffset(t.seed),oz=seedDomainOffset(t.seed^0x51f15e);
   const macro=fbm2((x+ox)*(.13/t.macroScale),(z+oz)*(.13/t.macroScale),5,.5,2.0);
   const fine=fbm2((x-ox*.37)*(.55*t.detail),(z+oz*.29)*(.55*t.detail),3,.5,2.13);
   const base=WORLD&&typeof WORLD.baseHeightAt==='function'?WORLD.baseHeightAt(x,z):(macro-.5)*t.height+(fine-.5)*t.height*.18;
-  return base+sculptDeltaAt(x,z,t.sculpt);
+  return base+sculptDeltaAt(x,z,t.sculpt)*(WORLD?.sculptWeight?.(x,z)??1);
 }
 function terrainSignature(){
   const pts=[[-4,-4],[-2,3],[0,0],[3,-2],[4,4]];
@@ -752,7 +768,7 @@ function buildTerrain(){
   const colors=[];
   const cLow=new THREE.Color(0x65705b),cMid=new THREE.Color(0x7d7659),cHigh=new THREE.Color(0xa58e67),c=new THREE.Color();
   for(let i=0;i<pos.count;i++){
-    const x=pos.getX(i),z=pos.getZ(i),y=terrainHeightAt(x,z);
+    const x=pos.getX(i),z=pos.getZ(i),y=terrainDesignHeightAt(x,z);
     pos.setY(i,y);
     const q=Math.max(0,Math.min(1,(y/Math.max(sceneDoc.terrain.height,1)+.5)));
     if(q<.5)c.copy(cLow).lerp(cMid,q*2);else c.copy(cMid).lerp(cHigh,(q-.5)*2);
@@ -791,7 +807,11 @@ async function buildSceneObjects(token){
     else if(rec.taxi){const api=await import('../procedural-test-world-01/wb2-taxi.v1.js');model=await api.createTaxiModel();}
     else if(rec.residentSetId){const api=await import('../procedural-test-world-01/wb2-residents.v1.js');const module=await api.createResidentSet(rec.residentSetId,{onProgress:(done,total,item)=>{document.body.dataset.residentLoad=JSON.stringify({id:rec.id,done,total,item})}});root.userData.lifecycle=module;model=module.root;}
     else if(rec.registeredAssetId){const api=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');const record=Object.values(api.manifest.families).flat().find(r=>r.assetId===rec.registeredAssetId);if(!record)throw Error('Unknown registered source '+rec.registeredAssetId);model=await api.loadRegistered(record);await api.adaptRegistered(model);model.userData.sourceRecord=record;}
-    else model=rec.kind==='resident'?await loadActorModel(true):await loadPropModel();
+    else {
+      const source=rec.kind==='resident'?ACTOR:PROP;
+      if(rec.source?.path!==source.path||rec.source?.commit!==source.commit)throw Error('Unregistered source requires Asset Librarian intake: '+rec.id);
+      model=rec.kind==='resident'?await loadActorModel(true):await loadPropModel();
+    }
     if(token!==sceneLoadToken)return;
     root.add(model);
     root.userData.model=model;
@@ -800,7 +820,7 @@ async function buildSceneObjects(token){
     if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
     PRES.onObject(root);
   }
-  refreshAddButtons();refreshDoc();
+  WORLD?.syncObjects?.(sceneObjects.values());refreshAddButtons();refreshDoc();
 }
 function dropRoot(root){
   if(!root)return;
@@ -817,7 +837,7 @@ function updateRecordFromRoot(root){
   rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
   rec.transform.scale=root.scale.toArray().map(v=>+v.toFixed(4));
 }
-function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root)}
+function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root);WORLD?.syncObjects?.(sceneObjects.values())}
 function refreshDoc(){
   updateAllRecords();
   E('doc').textContent=JSON.stringify(sceneDoc,null,2);
@@ -929,6 +949,7 @@ async function initPlay(){
   refreshWorldFacts();
 }
 function setPlay(on){
+  assertDocumentIdle();
   if(!PLAY||mode!=='scene')return;
   on=!!on;
   if(on&&window.__wb2d?.mvp&&(!window.__wb2d.mvp.entered||window.__wb2d.mvp.drive?.active))return;
@@ -964,6 +985,7 @@ function refreshWorldFacts(){
   E('wiInkFacts').textContent=WORLD.inkOn?(ir?'excluded as not drawn · '+ir.excludedInvisible+(ir.names.length?' ('+ir.names.join(', ')+')':''):'scanning…'):'ink off · WB-D1 default';
 }
 async function runWorldSelfTest(){
+  if(WORLD?.islandRecipe){const report=WORLD.surfaceWitness();E('wiTest').textContent=JSON.stringify(report,null,2);status('Surface witness '+(report.pass?'PASS':'FAIL'),report.pass?'ok':'bad');return report;}
   const T=await import('../world-integration-01/wi1-selftest.js');
   E('wiTest').textContent='running…';
   try{const rep=await T.run(window.__wb2d);E('wiTest').textContent=rep.join('\n');status('WORLD SELFTEST '+rep.length+'/'+rep.length+' PASS','ok');return rep}
@@ -973,47 +995,67 @@ async function runWorldSelfTest(){
 function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
 
 function addActor(){
+  assertDocumentIdle();
   if(sceneDoc.objects.some(o=>o.id===ACTOR.id))return;
-  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[0]));return rebuildSceneAfterDocChange();
+  sceneDoc.objects.push(deepClone(SOURCE_FIXTURE_OBJECTS[0]));return rebuildSceneAfterDocChange();
 }
 function addProp(){
+  assertDocumentIdle();
   if(sceneDoc.objects.some(o=>o.id===PROP.id))return;
-  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[1]));return rebuildSceneAfterDocChange();
+  sceneDoc.objects.push(deepClone(SOURCE_FIXTURE_OBJECTS[1]));return rebuildSceneAfterDocChange();
 }
 async function rebuildSceneAfterDocChange(){WORLD?.reconcileDoc?.(sceneDoc);sceneLoadToken++;buildTerrain();await buildSceneObjects(sceneLoadToken)}
 async function removeSelected(){
+  assertDocumentIdle();
   if(!selected)return;
   const id=selected.userData.sceneObjectId;
   sceneDoc.objects=sceneDoc.objects.filter(o=>o.id!==id);selectRoot(null);await rebuildSceneAfterDocChange();
 }
 function regenerate(){
+  assertDocumentIdle();
   sceneDoc.terrain=terrainSettingsFromUI();buildTerrain();snapAllToTerrain();refreshDoc();status('terrain regenerated · seed '+sceneDoc.terrain.seed,'ok');
 }
 function undoSculpt(){
+  assertDocumentIdle();
   const s=sculptState();
   if(!s.strokes.length){status('no sculpt stroke to undo','');return false}
   s.strokes.pop();buildTerrain();refreshDoc();status('last stroke undone','ok');return true;
 }
 function clearSculpt(){
+  assertDocumentIdle();
   const s=sculptState();
   if(!s.strokes.length){status('sculpt layer already clear','');return false}
   s.strokes=[];buildTerrain();refreshDoc();status('sculpt cleared · procedural base restored','ok');return true;
 }
 function saveDoc(){
-  updateAllRecords();if(PLAY)PLAY.writeDoc(sceneDoc);sceneDoc.savedAt=new Date().toISOString();
+  assertDocumentIdle();
+  updateAllRecords();if(PLAY)PLAY.writeDoc(sceneDoc);validateSceneDocument(sceneDoc,DOC_ID);sceneDoc.savedAt=new Date().toISOString();
   localStorage.setItem(STORAGE_KEY,JSON.stringify(sceneDoc));
   E('saveState').textContent='Saved locally · '+sceneDoc.savedAt;refreshDoc();status('scene saved','ok');
   E('save').classList.remove('dirty');
 }
+const replaceSceneDocument=sceneReplacementQueue({
+  read:()=>{if(sculptStroke)throw Error('Finish sculpt stroke before loading');updateAllRecords();if(PLAY)PLAY.writeDoc(sceneDoc);return sceneDoc;},
+  validate:d=>{const valid=validateSceneDocument(d,DOC_ID);WORLD?.validateDoc?.(valid);return valid;},
+  begin(){const state={playing:!!PLAY?.on,editor:EDIT.on,inert:APP.inert};documentReplacing=true;APP.inert=true;if(PLAY)PLAY.setOn(false);EDIT.setOn(false);return state;},
+  end(state){documentReplacing=false;APP.inert=state.inert;if(PLAY)PLAY.setOn(state.playing);EDIT.setOn(state.editor);},
+  async rebuild(d){
+    const actor=d.world?.player?.actorProfileId;
+    if(actor&&PLAY?.setActor&&actor!==PLAY.evidence().actorProfileId)await PLAY.setActor(actor);
+    sceneDoc=deepClone(d);ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);
+    await rebuildSceneAfterDocChange();
+    if(PLAY)PLAY.readDoc(sceneDoc);
+    refreshDoc();
+  }
+});
 async function reloadDoc(){
   const rawDoc=localStorage.getItem(STORAGE_KEY);
   if(!rawDoc){status('no saved scene found','bad');return false}
-  const d=JSON.parse(rawDoc);
-  if(d.format!=='kfb-worldbuilder-scene'||d.id!==DOC_ID)throw Error('Unexpected scene document');
-  sceneDoc=d;ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();if(PLAY)PLAY.readDoc(sceneDoc);
+  await replaceSceneDocument(JSON.parse(rawDoc));
   E('saveState').textContent='Reloaded saved scene · '+(sceneDoc.savedAt||'no timestamp');status('saved scene reloaded','ok');return true;
 }
 async function resetFixture(){
+  assertDocumentIdle();
   sceneDoc=deepClone(DEFAULT_DOC);localStorage.removeItem(STORAGE_KEY);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();if(PLAY)PLAY.readDoc(sceneDoc);
   E('saveState').textContent='Fixture reset · no local save.';status('fixture reset','ok');
 }
@@ -1023,8 +1065,7 @@ async function exportDoc(){
 }
 async function importDoc(){
   const text=window.prompt('Paste kfb-worldbuilder-scene JSON:');if(!text)return;
-  const d=JSON.parse(text);if(d.format!=='kfb-worldbuilder-scene')throw Error('Wrong scene document format');
-  sceneDoc=d;ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();status('scene JSON imported','ok');
+  await replaceSceneDocument(JSON.parse(text));status('scene JSON imported','ok');
 }
 
 /* ---------------- drawer (docked: opening it shrinks the view, never covers it) ---------------- */
@@ -1150,6 +1191,7 @@ function resize(){
 addEventListener('resize',resize);
 new ResizeObserver(resize).observe(E('stage'));
 resize();
+addEventListener('pagehide',()=>{renderer.setAnimationLoop(null);WORLD?.dispose?.();renderer.dispose();});
 renderer.setAnimationLoop(()=>{
   const dt=Math.min(clock.getDelta(),.05);
   const behindCurtain=['LOADING','READY_BEHIND_CURTAIN'].includes(document.body.dataset.mvpPhase);
@@ -1165,6 +1207,7 @@ renderer.setAnimationLoop(()=>{
   window.__wb2d?.mvp?.update(dt);
   PRES.tick(clock.elapsedTime);
   if(PLAY&&mode==='scene')PLAY.update(dt);
+  WORLD?.stepPhysics?.(dt);
   if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
   EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on)&&controls.enabled)controls.update();
   if(behindCurtain){
@@ -1263,8 +1306,9 @@ window.__wb2d={
   /* WORLD-INTEGRATION-01 · same state, exposed for the world self-test */
   get world(){return WORLD},get play(){return PLAY},get terrain(){return terrain},STORAGE_KEY,DOC_ID,
   setPlay,terrainHeightAt,sculptState,buildTerrain,refreshDoc,saveDoc,reloadDoc,resetFixture,updateRecordFromRoot,sceneObjects,
-  async mountSceneRecords(records){for(const rec of records){if(!rec.id||!rec.source?.path||!rec.source?.commit)throw Error('Scene source reference required');if(!sceneDoc.objects.some(r=>r.id===rec.id))sceneDoc.objects.push(deepClone(rec));}await rebuildSceneAfterDocChange();return records.map(r=>sceneObjects.get(r.id));},
-  async applySceneDocument(d){if(d.format!=='kfb-worldbuilder-scene'||d.id!==DOC_ID)throw Error('Unexpected world document');sceneDoc=deepClone(d);ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();if(PLAY)PLAY.readDoc(sceneDoc);refreshDoc();return sceneDoc;},
+  async mountSceneRecords(records){assertDocumentIdle();for(const rec of records){if(!rec.id||!rec.source?.path||!rec.source?.commit)throw Error('Scene source reference required');if(!sceneDoc.objects.some(r=>r.id===rec.id))sceneDoc.objects.push(deepClone(rec));}await rebuildSceneAfterDocChange();return records.map(r=>sceneObjects.get(r.id));},
+  applySceneDocument:replaceSceneDocument,
+  validateSceneDocument:d=>{const valid=validateSceneDocument(d,DOC_ID);WORLD?.validateDoc?.(valid);return valid;},
   selectRoot,
   registerDrawer(tab,title,pane){const b=document.createElement('button');b.id='tab'+tab;b.className='quiet';b.textContent=title;b.onclick=()=>openDrawer(tab);E('top').append(b);pane.id='pane'+tab;pane.hidden=true;E('drawer').append(pane);TABS[tab]=[pane.id,title,b.id];return b;},
   pauseForEncounter(){if(!PLAY)return;PLAY.setOn(false);PLAY.actor.holder.visible=true;EDIT.setOn(false);controls.enabled=false;E('dock').hidden=true;},
@@ -1277,14 +1321,15 @@ try{
   if(WORLD){
     status('building world zone · '+WORLD.zone.id+' …');
     if(HOST_PROPS.worldStudioMvp){const M=await import('../procedural-test-world-01/wb2-mvp.v1.js');window.__wb2d.mvp=await M.createMvp(window.__wb2d);await window.__wb2d.mvp.prepareIntro();}
-    await WORLD.mount({scene,renderer,getTerrain:()=>terrain,heightAt:(x,z)=>terrainHeightAt(x,z)});
-    const saved=localStorage.getItem(STORAGE_KEY);
-    if(saved){try{const d=JSON.parse(saved);if(d.format==='kfb-worldbuilder-scene'&&d.id===DOC_ID){sceneDoc=d;ensureSculpt(sceneDoc.terrain);E('saveState').textContent='Loaded saved world · '+(d.savedAt||'no timestamp')}}catch(err){console.warn('saved world unreadable',err)}}
+    await WORLD.mount({scene,renderer,getTerrain:()=>terrain,heightAt:(x,z)=>terrainDesignHeightAt(x,z)});
+    const saved=ISLAND_LOAD_ERROR?null:localStorage.getItem(STORAGE_KEY);
+    if(saved){try{const d=validateSceneDocument(JSON.parse(saved),DOC_ID);if(d){sceneDoc=d;ensureSculpt(sceneDoc.terrain);E('saveState').textContent='Loaded saved world · '+(d.savedAt||'no timestamp')}}catch(err){console.warn('saved world unreadable',err)}}
     WORLD.reconcileDoc?.(sceneDoc);
     actorSourceReady=propSourceReady=true;updateReviewUnlock();
     await showScene();
     if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED){setPlay(true);const EVID=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');window.__wb2d.candidateEvidence=EVID.createCandidateEvidence(window.__wb2d);if(QUERY.has('source-review'))await window.__wb2d.candidateEvidence.inspect(QUERY.get('source-review'),QUERY.get('variant')||'original');}
     if(HOST_PROPS.worldStudioMvp)await window.__wb2d.mvp.mount();
+    if(ISLAND_LOAD_ERROR){E('saveState').textContent='Saved island could not be loaded; original data preserved. Import a valid scene or explicitly Save to replace it.';status('Saved island recovery: '+ISLAND_LOAD_ERROR.message,'bad');console.warn('saved island preserved',ISLAND_LOAD_ERROR)}
     if(new URLSearchParams(location.search).get('selftest')==='wi1')await runWorldSelfTest();
   }else await showActor();
   if(!WORLD&&new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();

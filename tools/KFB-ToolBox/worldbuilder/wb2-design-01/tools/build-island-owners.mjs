@@ -1,0 +1,11 @@
+import {build} from '../../procedural-test-world-01/open-world/node_modules/vite/dist/node/index.js';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../../procedural-test-world-01/open-world/',import.meta.url));
+const out=fileURLToPath(new URL('../owners/',import.meta.url));
+await build({configFile:false,root,logLevel:'warn',build:{target:'es2022',copyPublicDir:false,outDir:out,emptyOutDir:false,minify:true,lib:{entry:root+'src/core/island-owner-entry.ts',formats:['es'],fileName:()=> 'island-owners.mjs'}}});
+const hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
+const sources=['src/core/physics.ts','src/core/surface.ts','src/core/triangle-contact.ts','src/core/hex.ts','src/core/units.ts','src/core/wb2-noise.js','src/owners/wb2-sculpt/terrain-sculpt.js','src/core/island-owner-entry.ts'];
+const hashes={};for(const path of sources)hashes[path]=await hash(root+path);
+await writeFile(out+'island-owners.provenance.json',JSON.stringify({schema:'kfb.owner-bundle/1',owners:['existing Physics','existing SurfaceTruth'],rapier:'0.21.0',lockSha256:await hash(root+'pnpm-lock.yaml'),sources:hashes,bundleSha256:await hash(out+'island-owners.mjs')},null,2)+'\n');
