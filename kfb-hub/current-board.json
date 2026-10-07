@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.12",
-  "updatedAt": "2026-10-07T11:31:42.721Z",
+  "revision": "2026-10-07.13",
+  "updatedAt": "2026-10-07T14:51:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -21,7 +21,8 @@
     "worldStudioInterim": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
     "openWorldMvpLivingDoc": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
-    "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json"
+    "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json",
+    "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md"
   },
   "p0": [
     {
@@ -338,6 +339,11 @@
       "title": "Open World · MVP Acceptance Rule",
       "summary": "Binding: Receiving Core is not product progress; only a completely green required Acceptance Matrix counts as MVP acceptance.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md"
+    },
+    {
+      "title": "Prototype Graveyard · FAILs ansehen + Salvage",
+      "summary": "Historische World-/Island-/Platformer-Kandidaten an einem Ort: World Studio Vier-Insel HUMAN FAIL, R2D Insel, R2C Archipel-Donor, Card-Hex/Platformer Combat FAIL und frühere Project-Island-Platformer. Jeweils mit historischem Surface/Source, Failure Evidence, sicherem Salvage und klaren Do-not-reuse-Grenzen. Kein Today/Next-Job.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
