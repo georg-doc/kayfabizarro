@@ -399,3 +399,38 @@ Both PASS and NO MVP Returns must attach the **complete 44-row REQUIRED table** 
 
 ### Reasoning policy
 Recommended baseline remains **Astra Medium**. **High reasoning is explicitly authorized for Phase 3 (Early Visual/Physical Golden) and Phase 4 (roads/junction integration)** when available. This does not authorize a second Integrator.
+
+
+## 16 · Final pre-WSA contract alignment · v5
+
+No classification or REQUIRED count changed. This alignment resolves the final sanity-review contradictions before Work/WSA execution.
+
+### Authority/version
+The machine-readable JSON is now **operationalVersion 5**. Older v2/v3/v4 wording in historical routing blocks is superseded by the current JSON.
+
+### Phase order
+Road/Track rows **F-R15/F-R16** are operationally **Phase 2B · Roads / world traversal**, before **Phase 3 · Early Visual/Physical Golden**. The Phase-3 Golden cannot be evaluated without the real Joyride/Track road, contact and bridge/water seam it explicitly scores.
+
+High reasoning is explicitly permitted for:
+- Phase 2B road/junction integration;
+- Phase 3 Early Visual/Physical Golden.
+
+### F-R07 · named target machine
+Target ID: `GEORG_PRIMARY_ACCEPTANCE_MACHINE`.
+
+This is Georg's primary KFB acceptance machine; do **not** invent a hardware model. The product performance recorder must persist browser/OS/viewport/DPR/screen/hardwareConcurrency/deviceMemory where exposed/WebGL vendor+renderer/exact candidate head/timestamp/route id together with the performance JSON. Georg performs one visible/focused Ground→Drive→Flight run with no meaningful parallel GPU workload. Until the exact-head result is persisted, F-R07 remains **UNKNOWN / NOT_GREEN**.
+
+### F-R39 · crash-safe human visual gate
+Before asking Georg, persist `F-R39=PENDING`, exact candidate head and evidence refs in:
+- receiving branch `ONE_SHOT_STATUS.json`;
+- `main/kfb-hub/live/open-world-mvp.json`.
+
+After Georg's PASS/FAIL, persist the decision, timestamp and exact head in both. A fresh chat may continue past the gate only from a persisted **PASS for the same candidate head**. Material visual/physical changes invalidate that PASS when they can affect the Golden.
+
+### F-R29 / F-R31 · terrain evaluation order
+Before exact persistence can pass, reconcile and freeze the relationship between:
+`base field → river/village contributions → Track road-fit contribution → sculpt delta`.
+The Foundation Return records that the receiving sequence currently applies sculpt after road fit while Track design excludes sculpt. The chosen source-backed order and invalidation/recompute policy must be persisted and replayed before F-R29/F-R31 may turn GREEN.
+
+### Final Return
+PASS and NO MVP both require the complete 44-row REQUIRED table with status and evidence references.
