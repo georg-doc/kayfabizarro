@@ -1,0 +1,717 @@
+{
+  "schema": "kfb.living-toy-activity-pool/1",
+  "status": "AUTHORING_ARCHITECTURE_PREP_NO_RUNTIME_OWNERSHIP",
+  "date": "2026-10-07",
+  "owner": "KFB narrative research / Resident Life donor prep",
+  "principles": [
+    "Residents should appear to have purpose before the player arrives.",
+    "Purposeful local activity matters more than raw NPC count.",
+    "Not every actor is a quest giver, combat target, or loot container.",
+    "Player perturbation may produce social/world consequence without XP or quest progress.",
+    "Activities must recover, resume, replan, join, or exit through the real Resident/World owners.",
+    "Historian observes meaningful deltas; it does not schedule activities."
+  ],
+  "activities": [
+    {
+      "activityId": "repair.rebuild-section",
+      "category": "work",
+      "visibleAction": "repair a damaged wall/bridge/prop",
+      "poiKind": "repair-target",
+      "interruptibility": "soft",
+      "storyUse": "world consequence becomes visible",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "repair.inspect-damage",
+      "category": "work",
+      "visibleAction": "inspect cracks/debris/damage before acting",
+      "poiKind": "repair-target",
+      "interruptibility": "free",
+      "storyUse": "Resident notices damage and chooses next action",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "fluff.harvest",
+      "category": "resource",
+      "visibleAction": "collect Fluff from a source",
+      "poiKind": "resource-source",
+      "interruptibility": "soft",
+      "storyUse": "resource activity visible before player arrives",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "fluff.transport",
+      "category": "resource",
+      "visibleAction": "carry Fluff between POIs",
+      "poiKind": "route",
+      "interruptibility": "soft",
+      "storyUse": "player may help, block or spill cargo",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "fluff.deposit",
+      "category": "resource",
+      "visibleAction": "deliver Fluff to storage/work site",
+      "poiKind": "work",
+      "interruptibility": "soft",
+      "storyUse": "shared task can complete or be interrupted",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "archive.inspect-card",
+      "category": "knowledge",
+      "visibleAction": "study a Card/document at archive/POI",
+      "poiKind": "archive",
+      "interruptibility": "free",
+      "storyUse": "Card meaning becomes social/local knowledge",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "archive.sort-records",
+      "category": "knowledge",
+      "visibleAction": "sort or file physical records",
+      "poiKind": "archive",
+      "interruptibility": "soft",
+      "storyUse": "supports Historian/Chronicler world texture without exposition",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "market.trade",
+      "category": "economy",
+      "visibleAction": "offer/inspect/exchange goods",
+      "poiKind": "market",
+      "interruptibility": "free",
+      "storyUse": "trade can become social memory",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "market.browse",
+      "category": "economy",
+      "visibleAction": "look at goods/signage without buying",
+      "poiKind": "market",
+      "interruptibility": "free",
+      "storyUse": "player can interrupt or ask",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "social.greet",
+      "category": "social",
+      "visibleAction": "brief recognition of familiar actor",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "relationship becomes visible",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "social.gossip",
+      "category": "social",
+      "visibleAction": "short local-information exchange",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "local colour and relationship signal",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "social.debate",
+      "category": "social",
+      "visibleAction": "structured disagreement around POI/event",
+      "poiKind": "social",
+      "interruptibility": "soft",
+      "storyUse": "conflict reveals worldview",
+      "historianEligibility": "retrospective",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "social.share-gift",
+      "category": "social",
+      "visibleAction": "offer or receive a gift",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "relationship memory may change",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "social.share-fluff",
+      "category": "social",
+      "visibleAction": "share Fluff as a social act",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "resource + relationship overlap",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "stage.perform",
+      "category": "culture",
+      "visibleAction": "music/comedy/story performance",
+      "poiKind": "stage",
+      "interruptibility": "hard",
+      "storyUse": "audience gathers/reacts",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "stage.watch",
+      "category": "culture",
+      "visibleAction": "watch/ignore/react to performance",
+      "poiKind": "stage",
+      "interruptibility": "free",
+      "storyUse": "audience differentiation creates life",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "poi.observe",
+      "category": "exploration",
+      "visibleAction": "inspect landmark/billboard/card/world object",
+      "poiKind": "landmark",
+      "interruptibility": "free",
+      "storyUse": "curiosity and local knowledge become visible",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "poi.guide",
+      "category": "exploration",
+      "visibleAction": "show another actor/player a place",
+      "poiKind": "landmark",
+      "interruptibility": "soft",
+      "storyUse": "movement + social relationship combine",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "route.patrol",
+      "category": "mob_life",
+      "visibleAction": "move through a territory with purpose",
+      "poiKind": "route",
+      "interruptibility": "soft",
+      "storyUse": "actor exists outside player encounter",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "route.search-resource",
+      "category": "mob_life",
+      "visibleAction": "search area for resource/object",
+      "poiKind": "route",
+      "interruptibility": "soft",
+      "storyUse": "player can follow/help/steal/scare",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "critter.tend",
+      "category": "care",
+      "visibleAction": "feed/check/guide a neutral creature",
+      "poiKind": "wildlife",
+      "interruptibility": "soft",
+      "storyUse": "non-combat relationship to world",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "critter.observe",
+      "category": "care",
+      "visibleAction": "watch a neutral creature behavior",
+      "poiKind": "wildlife",
+      "interruptibility": "free",
+      "storyUse": "world feels alive without objective",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "rest.eat-drink",
+      "category": "daily_life",
+      "visibleAction": "eat/drink/rest at social POI",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "low-stakes social telemetry",
+      "historianEligibility": "off",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "rest.wait-watch",
+      "category": "daily_life",
+      "visibleAction": "wait, watch traffic/weather/event",
+      "poiKind": "vista",
+      "interruptibility": "free",
+      "storyUse": "silence/pose can carry ambient life",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "help.assist-activity",
+      "category": "cooperation",
+      "visibleAction": "join another actor's work/task",
+      "poiKind": "work",
+      "interruptibility": "soft",
+      "storyUse": "shared activity changes relationship",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "cleanup.collect-spill",
+      "category": "work",
+      "visibleAction": "collect spilled Fluff/debris/items",
+      "poiKind": "repair-target",
+      "interruptibility": "soft",
+      "storyUse": "world consequence leads to recovery",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "celebrate.shared-success",
+      "category": "culture",
+      "visibleAction": "small celebration after completion",
+      "poiKind": "social",
+      "interruptibility": "free",
+      "storyUse": "closure without UI reward",
+      "historianEligibility": "conditional",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "mourn.remember-loss",
+      "category": "social",
+      "visibleAction": "quiet remembrance at grave/ruin",
+      "poiKind": "graveyard",
+      "interruptibility": "soft",
+      "storyUse": "memory and place overlap",
+      "historianEligibility": "strong",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "graveyard.keep-watch",
+      "category": "mob_life",
+      "visibleAction": "ghost/skeleton/resident watches graveyard activity",
+      "poiKind": "graveyard",
+      "interruptibility": "soft",
+      "storyUse": "ideal witness layer for repeat death/revival",
+      "historianEligibility": "strong",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    },
+    {
+      "activityId": "town.errand",
+      "category": "daily_life",
+      "visibleAction": "carry an item/message between local POIs",
+      "poiKind": "route",
+      "interruptibility": "soft",
+      "storyUse": "creates purposeful movement and chance encounters",
+      "historianEligibility": "rare",
+      "runtimeStatus": "PROPOSAL_ONLY",
+      "playerPerturbations": [
+        "observe",
+        "approach",
+        "interrupt",
+        "help",
+        "ignore"
+      ],
+      "recovery": [
+        "RESUME_ACTIVITY",
+        "REPLAN_ACTIVITY",
+        "ENTER_ENCOUNTER",
+        "JOIN_ACTIVITY"
+      ]
+    }
+  ],
+  "notes": {
+    "count": 30,
+    "runtimeAdoption": "POST_COWORKER_ARCHITECTURE_FREEZE_ONLY",
+    "sourceDonors": [
+      "overworld/docs/MASTERPLAN_overworld.md · Die Welt als Spielzeug",
+      "overworld/overworld/mob-ai.js · Mob Eigenleben",
+      "historical v14 life-between-zones planning",
+      "skills/chat/RESIDENT_LIFE_SEMANTIC_MODEL_PREP_2026-10-06.md",
+      "skills/chat/RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP_2026-10-06.md"
+    ]
+  }
+}
