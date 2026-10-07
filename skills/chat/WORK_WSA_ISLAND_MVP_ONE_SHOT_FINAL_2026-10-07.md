@@ -423,7 +423,7 @@ Before asking Georg, persist a crash-safe gate record on the exact candidate hea
 After Georg answers:
 - persist `PASS` or `FAIL`, date/time and exact candidate head in both places;
 - a fresh chat may treat the gate as passed **only** when the persisted record says PASS for the same candidate head;
-- if candidate code materially changes after PASS, F-R39 returns to PENDING and must be re-gated if the change can affect the visible/physical Golden.
+- record the accepted Phase-3 head as the **Golden baseline head**. Later code changes do **not** automatically invalidate PASS. Re-gate only when a later change can materially alter one of the actual Phase-3 Golden criteria and the post-change critic/evidence shows a meaningful regression or unresolved change in that criterion. Unrelated visible changes or additions that preserve the Golden do not require another Georg gate.
 
 Do **not** proceed to Phase 4 until this gate is PASS.
 
@@ -830,7 +830,7 @@ After two non-improving repair passes on one seam:
    - STRONGLY INCLUDE but noncritical → quarantine/defer + continue;
    - OPTIONAL → defer + continue.
 
-Do not ask Georg to debug intermediate technical failures. The only planned intermediate human stop is the mandatory Phase-3 **visual PASS/FAIL gate** above.
+Do not ask Georg to debug intermediate technical failures. The only planned human acceptance steps are: **(1) the mandatory Phase-3 F-R39 visual PASS/FAIL gate and (2) the F-R07 target-device performance run on GEORG_PRIMARY_ACCEPTANCE_MACHINE**.
 
 Global stop only for a **proven product-outcome blocker**.
 
