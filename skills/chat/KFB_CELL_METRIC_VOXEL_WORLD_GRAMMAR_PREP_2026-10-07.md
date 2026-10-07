@@ -732,6 +732,107 @@ A build transition passes when:
 - transition remains performant when repeated.
 
 
+
+## Bidirectional Build / Destruction Boundary Grammar
+
+Georg steering:
+
+The same Edge Completion system must work in **both directions**.
+
+### Construction direction
+`EXPOSED_EDGE → COMPLETED_EDGE → ATTACH_PREP → CONNECTED_SEAM → NEW_EXPOSED_EDGE → COMPLETED_EDGE`
+
+### Destruction / removal direction
+`CONNECTED_SEAM → DAMAGE / DETACH → NEW_EXPOSED_EDGE → RUIN_COMPLETION → SETTLE / COLLAPSE / STABLE_RUIN`
+
+The structural owner decides:
+- which cells/modules survive;
+- which seams disconnect;
+- which upper cells lose support;
+- whether they collapse, settle or remain supported;
+- persistent damage/rebuild state.
+
+The presentation layer decides only how the resulting exposed boundary reads.
+
+## Ruin Completion
+
+When destruction creates a new exposed wall/floor/corner boundary, do not leave the raw connector/slice visible.
+
+Generate a **Ruin Completion shell** using the same universal grammar:
+- softened / rounded broken edge;
+- visible wall/material thickness;
+- continued masonry/trim/baseboard logic where appropriate;
+- slight asymmetry / deformation;
+- bounded clay crumbs / rubble;
+- optional dust / debris settle;
+- optional terrain/vegetation blend later.
+
+The ruin should read as a finished cartoon state of the world, not as a missing module.
+
+## Support / settle interaction
+
+Example:
+- lower floor cells are destroyed;
+- upper cells lose support;
+- STRUCTURAL profile may collapse them;
+- SETTLE profile may drop them vertically to the nearest supported level;
+- after final transforms stabilize, boundary completion recomputes only around the changed cells/seams.
+
+Do not continuously regenerate caps during every intermediate physics frame.
+
+Preferred sequence:
+1. damage state changes;
+2. local collapse/settle resolves;
+3. final supported topology is known;
+4. boundary scan runs;
+5. Ruin Completion is generated on the resulting exposed edges.
+
+This avoids expensive visual churn and prevents caps appearing on pieces that are still moving.
+
+## One grammar, multiple actors
+
+The same structural/presentation system may be triggered by:
+- Destruction POC / weapon damage;
+- Resident/NPC work;
+- repair/rebuild activity;
+- God Mode add/remove;
+- scripted world events;
+- later resource/mining actions.
+
+The actor changes choreography, not world truth.
+
+## Rebuild symmetry
+
+A ruined boundary may later be rebuilt:
+
+`STABLE_RUIN → REBUILD_PREP → RUIN_COMPLETION loosens/retracts → missing cells/modules restore → seams reconnect → final external boundaries re-finish`
+
+This makes Build / Destroy / Repair / Rebuild visually related operations instead of separate effect stacks.
+
+## Visual goal
+
+A damaged building may remain as:
+- readable ruin;
+- partial open-stage scene;
+- lowered/settled toy structure;
+- exposed domestic tableau;
+- later rebuild target.
+
+The result should still feel compositionally intentional and Claybound-compatible.
+
+## Performance rule
+
+Reuse:
+- fixed rubble/debris pools;
+- shared rounded-cap geometry families;
+- deterministic edge seeds;
+- local boundary recompute only;
+- one shared material family;
+- no per-cell soft-body simulation.
+
+The existing Seed World destruction donor already demonstrates bounded promoted cells and fixed debris/rubble pools; reuse that architecture direction rather than creating a second destruction runtime.
+
+
 ## Resource payload / mining layer
 
 A cell may also carry an optional **resource payload**.
