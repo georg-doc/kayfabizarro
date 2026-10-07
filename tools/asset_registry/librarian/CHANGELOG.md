@@ -337,3 +337,29 @@ These are reusable source-selection packets, not active Claude Design jobs.
 
 ### Boundary
 No Site update, no runtime write, no automatic source-inspection promotion, no Claude Design tokens spent, no merge / Live promotion.
+
+
+## Emanata visual morphology pool · 2026-10-07
+
+Status: **SOURCE-CURATED · VISUAL DESIGN PENDING**
+
+Added `EMANATA_VISUAL_MORPHOLOGY_POOL_01_2026-10-07.json` with **28** source-backed visual morphology concepts.
+
+Current eight KFB semantic slots remain unchanged:
+`question · exclamation · sweat-drop · tear · anger-tick · heart · sparkle · gloom-cloud`
+
+Strong future candidates:
+- blush;
+- breath;
+- steam.
+
+Explicitly kept out of primary Emanata where appropriate:
+- dizzy / overwhelmed → Eye channel;
+- focus-lines / motion-emphasis → Graphic FX;
+- whole-character deformation → body/suppletion channel.
+
+The key design rule is preserved: do not collapse every comic reaction device into one floating-symbol system.
+
+Validation: **10/10 PASS**.
+
+No Site/runtime/deployment change.
