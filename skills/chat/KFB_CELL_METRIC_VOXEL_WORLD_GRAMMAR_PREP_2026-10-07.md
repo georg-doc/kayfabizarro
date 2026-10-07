@@ -833,6 +833,200 @@ Reuse:
 The existing Seed World destruction donor already demonstrates bounded promoted cells and fixed debris/rubble pools; reuse that architecture direction rather than creating a second destruction runtime.
 
 
+
+## Material Identity / Color Grammar for Build–Destroy–Repair
+
+Every buildable/destructible object has a stable material identity across:
+`ROUGH_MASS → SCULPT → RESOLVED → DAMAGED → RUIN → REBUILD → RESTORED`.
+
+The rough build mass should already hint at the final object through:
+- base/main color;
+- accent family;
+- material family;
+- rough surface character.
+
+Candidate material families:
+- `SOFT_CLAY` — matte, kneaded, rounded, bouncy; pellets/soft chunks;
+- `CARTOON_STONE` — heavy, mineral, brittle; rubble/dust;
+- `LIGHT_WOOD_BALSA` — light, scaffold-friendly; splinters/planks/chips;
+- `TOY_PLASTIC` — smooth, colorful, shell-like; chips/plates;
+- `HARD_RUBBER` — dense, sluggish-elastic; blunt compact fragments;
+- `PAPER_CARDBOARD` — layered, foldable, cut-edge readable; bends/tears/falls rather than stone fracture.
+
+Material identity may later inform:
+- impact/bounce feel;
+- build animation;
+- fracture style;
+- rubble type;
+- repair choreography;
+- Audio/VFX hooks.
+
+Do not use one generic rubble profile for every material.
+
+## Paper / Cardboard Facade Grammar
+
+Paper/Cardboard is a deliberate KFB representation family, not a fallback.
+
+Useful roles:
+- Landmark Cutout;
+- Civilization/Western Facade;
+- Billboard/Prop Cutout;
+- Open-Stage Backdrop;
+- Comedic/Destructible Facade.
+
+Preferred visible language:
+- intentionally readable white/light cut edge;
+- visible cardboard thickness;
+- corrugated side profile where appropriate;
+- front/back asymmetry;
+- balsa/wood/cardboard stand feet, braces, tabs or hinges;
+- optional rough/public-domain image cutout aesthetic;
+- front may make a world claim while the rear exposes its construction.
+
+The rear side is narratively useful and should not always be hidden.
+
+Material behavior:
+- bends;
+- folds;
+- tips over;
+- tears;
+- slips from its stand;
+- can flatten/collapse;
+- does not default to stone-like rubble.
+
+Use selectively. Do not turn the whole world into cardboard by default.
+
+## Threshold / Door Grammar
+
+A Door/Threshold is a semantic world object, not merely an architecture mesh.
+
+Candidate door roles:
+- `LITERAL_DOOR` — ordinary local passage;
+- `FACADE_DOOR` — door embedded in a paper/stage claim;
+- `PORTAL_DOOR` — world/instance/realm transition;
+- `FALSE_OR_PUZZLE_DOOR` — visually plausible but state/angle/key dependent;
+- `TRUTH_SWITCH` — explicit Kayfabe layer change.
+
+Keep three truths separate:
+
+### Scene Truth
+What is physically visible around the threshold:
+- landscape;
+- facade;
+- open stage;
+- room;
+- cardboard support;
+- empty space.
+
+### Threshold Truth
+Whether this crossing currently changes world meaning.
+
+### Destination Truth
+Where the crossing resolves:
+- same local space;
+- adjacent scene;
+- Dungeon instance;
+- Card/Paper world;
+- another realm/map;
+- another simulation/Kayfabe layer.
+
+## State-dependent Threshold resolution
+
+The same visible door may resolve differently from the same approach depending on authoritative Player/World state.
+
+Canonical example:
+
+### Base / low-access state
+Player opens and crosses the door.
+Result:
+- no realm change;
+- player exits on the geometrically ordinary opposite side;
+- equivalent in world-state terms to walking around the freestanding door/facade;
+- optional small presentation flourish, but no false claim of instance travel.
+
+### Unlocked / keyed / revealed state
+The same crossing may instead:
+- activate a portal transition;
+- enter a Dungeon instance;
+- enter another Realm/Card world;
+- load a mismatching world representation;
+- move to a non-local destination;
+- or deliberately resolve only a few metres away as a metanarrative/visual device.
+
+Possible predicates:
+- progression flag;
+- explicit key / dungeon key;
+- quest/world state;
+- Resident relationship/event state;
+- equipped reveal item;
+- perception/reveal mode;
+- God Mode/editor state;
+- scripted Kayfabe layer state.
+
+The threshold object does **not** own progression.
+It consumes a read-only authoritative predicate/result from the relevant progression/world-state owner.
+
+Conceptually:
+
+```
+ThresholdDecision {
+  thresholdId
+  statePredicateId
+  mode: LOCAL_PASS | PORTAL | INSTANCE | REALM | FALSE | SCRIPTED
+  destinationId?
+  transitionProfile?
+}
+```
+
+Do not hard-code quest logic inside the door renderer.
+
+## Frontal claim vs lateral reveal
+
+A facade/door may intentionally support two simultaneous readings:
+- frontal/threshold crossing accepts the claim;
+- walking around the object reveals cardboard/brace/rear construction and remains in the current world.
+
+This is a feature, not a geometry contradiction.
+
+A paper facade can therefore be:
+- literally fake from the side/rear;
+- world-valid as a portal from its door;
+- both states at once.
+
+## Portal rendering rule
+
+Where feasible, an opened active door may preview the destination through the frame.
+
+The preview is presentation only.
+Destination/world ownership remains with the receiving instance/realm.
+
+If live through-portal rendering is too costly, use:
+- staged reveal;
+- portal surface;
+- transition cover;
+- Clay materialize/dematerialize;
+- Curtain or another accepted transition consumer.
+
+Do not create a second world runtime merely to render the doorway.
+
+## MVP representative Threshold proof
+
+For the bounded Island MVP, do **not** add a new REQUIRED row.
+
+Add one bounded **STRONGLY INCLUDE** proof:
+- one source-backed Paper/Facade or freestanding Door/Threshold;
+- same visible threshold supports at least two authoritative states;
+- STATE A: ordinary local pass-through, no realm change;
+- STATE B: unlocked/revealed portal behavior;
+- one real destination may be a bounded Dungeon/instance/scenelet or a controlled local/non-local portal target;
+- walking around the facade remains in the current world and visibly reveals the facade construction where applicable;
+- save/reload preserves the threshold's authoritative unlocked/locked state;
+- no duplicate progression, world, portal, camera or persistence owner.
+
+This proof is representative only.
+Full key systems, multiple realms, all travel methods and a complete dungeon progression remain outside first-Island MVP scope.
+
+
 ## Resource payload / mining layer
 
 A cell may also carry an optional **resource payload**.
