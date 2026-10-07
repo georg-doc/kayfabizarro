@@ -87,9 +87,9 @@
       "phase": "7_PERFORMANCE",
       "owner": "Runtime performance owners + central scheduler",
       "readiness": "UNPROVEN",
-      "delta": "Measure the actual integrated island on the named target device/GPU in a visible focused window with no parallel meaningful GPU workload; apply bounded LOD/instancing/update budgets and terrain Clay distance strategy only where evidence requires.",
-      "proof": "Persist FPS/frame-time, draw calls, visible tris/material counts and allocation/leak evidence during Ground/Drive/Flight traversal. Measurement is valid only in a visible focused window on the target machine/GPU with no parallel screenshot/render/Lab or other meaningful GPU load; otherwise PERFORMANCE=UNKNOWN.",
-      "forbidden": "Claiming performance from headless/preview/contended-GPU runs; treating the Lab 59.9-fps run as acceptance; optimizing geometry while leaving the terrain Clay fragment bottleneck unexamined."
+      "delta": "WSA instruments the actual integrated product for the Ground→Drive→Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations.",
+      "proof": "Target-device JSON records environment identity, exact candidate head/build, route id, frame-time/FPS distribution and available render counters. Only this uncontended visible/focused run may turn F-R07 GREEN; missing/contended/headless/cloud-only evidence leaves F-R07 UNKNOWN / NOT_GREEN.",
+      "forbidden": "Inventing the target hardware model; claiming PASS from Work cloud, headless/preview or contended-GPU runs; treating Lab 59.9 fps as acceptance; optimizing geometry while leaving terrain Clay fragment cost unexamined."
     },
     {
       "id": "F-R08",
@@ -180,7 +180,7 @@
       "title": "Track Core construction + Joyride presentation",
       "class": "REQUIRED",
       "status": "NOT_GREEN",
-      "phase": "2_PLAYER_GOLDEN",
+      "phase": "2B_ROADS_WORLD_TRAVERSAL",
       "owner": "Track Core construction + Joyride presentation + Surface Truth",
       "readiness": "ADAPT",
       "delta": "Route ordinary road and race/fun section through Track Core profiles/sockets/contact, with Joyride visible adapter and Surface reconciliation.",
@@ -192,7 +192,7 @@
       "title": "Representative road-world seam",
       "class": "REQUIRED",
       "status": "NOT_GREEN",
-      "phase": "2_PLAYER_GOLDEN",
+      "phase": "2B_ROADS_WORLD_TRAVERSAL",
       "owner": "World route planner → Track Core → Surface Truth",
       "readiness": "MISSING_INTEGRATED_PROOF_WITH_KNOWN_TRACK_CORE_GAPS",
       "delta": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60° STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner.",
@@ -351,8 +351,8 @@
       "phase": "4_AUTHORING_PERSISTENCE",
       "owner": "WB2 terrain sculpt / Surface Truth",
       "readiness": "ADAPT",
-      "delta": "Serialize native ordered raise/lower strokes with validation and reconcile final evaluation order with Track-fit policy.",
-      "proof": "Overlapping raise/lower strokes replay exactly at stored precision after fresh reload; visible mesh, support and collider agree.",
+      "delta": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base→river/village→road-fit→sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay.",
+      "proof": "Overlapping raise/lower strokes replay exactly at stored precision after fresh reload; the persisted evaluation order/invalidation policy is source-backed and visible mesh, support, collider and Track contact agree.",
       "forbidden": "JSON-only delta claiming Save PASS without geometry/collider replay."
     },
     {
@@ -375,8 +375,8 @@
       "phase": "4_AUTHORING_PERSISTENCE",
       "owner": "WB2 Scene/Store + recipe persistence",
       "readiness": "MISSING_PRODUCT_PROOF",
-      "delta": "Save complete pinned island document/RouteRecipe/sculpt/object/state; fully unload; fresh import/reload and replay.",
-      "proof": "Canonical export identical at named precision and visual/collider/support/authoring state matches; invalid import preserves last-known-good.",
+      "delta": "Save complete pinned island document/RouteRecipe/sculpt/object/state; include the frozen terrain evaluation order/invalidation policy; fully unload; fresh import/reload and replay.",
+      "proof": "Canonical export identical at named precision and visual/collider/support/authoring/Track state matches under the persisted evaluation order; invalid import preserves last-known-good.",
       "forbidden": "Same-session reload, registry-only equality or current-source lookup counted as exact persistence."
     },
     {
@@ -471,9 +471,9 @@
       "phase": "3_EARLY_GOLDEN",
       "owner": "Integrator + independent visual/physical critic + Georg visual product authority",
       "readiness": "PROCESS_GATE_READY",
-      "delta": "Run before feature fan-out on actual runtime once Player/Surface/Joyride/Clay/Sky/landmark/water core exists. After the independent critic, prepare 4–6 representative screenshots and one continuous clip ≤30s for Georg visual PASS/FAIL.",
-      "proof": "Fresh critic-owned screenshots/video certify island silhouette, contact, locomotion, road, water/bridge, landmark, Clay/Sky/light and first-frame composition >= required threshold, then Georg explicitly returns VISUAL PASS. Only then may Phase 4+ fan-out continue.",
-      "forbidden": "Continuing broad integration on a visibly wrong foundation; asking Georg to debug code or implementation details instead of giving a visual PASS/FAIL.",
+      "delta": "Run before broad feature fan-out after Player + Phase-2B roads/Track + Surface/Joyride/Clay/Sky/landmark/water core exists. Independent critic first, then persist F-R39=PENDING with exact head/evidence and provide 4–6 screenshots + one continuous clip <=30s for Georg PASS/FAIL.",
+      "proof": "Critic evidence meets threshold and ONE_SHOT_STATUS.json plus main Hub projection record Georg VISUAL PASS for the same exact candidate head. Materially visibility/physics-affecting changes invalidate the head-bound PASS.",
+      "forbidden": "Proceeding to Phase 4 Authoring before persisted head-bound PASS; asking Georg to debug implementation details; losing gate state across timeout/recovery.",
       "humanGate": {
         "required": true,
         "evidence": [
@@ -484,7 +484,17 @@
           "PASS",
           "FAIL"
         ],
-        "onFail": "Integrator repairs Phase 3 autonomously; no Phase 4 continuation until PASS."
+        "persistedStates": [
+          "PENDING",
+          "PASS",
+          "FAIL"
+        ],
+        "stateFiles": [
+          "ONE_SHOT_STATUS.json",
+          "main/kfb-hub/live/open-world-mvp.json"
+        ],
+        "headBound": true,
+        "onFail": "Integrator repairs Phase 3 autonomously; no Phase 4 Authoring continuation until PASS."
       }
     },
     {
@@ -828,8 +838,8 @@
     "FREE_FLIGHT"
   ],
   "executionMode": "ONE_SHOT",
-  "operationalVersion": 4,
-  "lastOperationalizedAt": "2026-10-07T21:26:00+02:00",
+  "operationalVersion": 5,
+  "lastOperationalizedAt": "2026-10-07",
   "receivingOwnerState": {
     "repo": "georg-doc/kayfabizarro",
     "pr": 348,
@@ -911,11 +921,56 @@
   },
   "reasoningPolicy": {
     "baseline": "Astra Medium",
-    "allowHighPhases": [
-      "3_EARLY_GOLDEN",
-      "4_ROADS_WORLD_TRAVERSAL"
+    "allowHighPhaseIds": [
+      "2B_ROADS_WORLD_TRAVERSAL",
+      "3_EARLY_GOLDEN"
     ],
-    "note": "High reasoning is explicitly allowed for visual Golden and junction/road integration; no second Integrator."
+    "allowHighFor": [
+      "F-R15/F-R16 Roads and junction integration",
+      "F-R39 Early Visual/Physical Golden"
+    ],
+    "note": "High reasoning is explicitly allowed only for roads/junction integration and the Early Visual/Physical Golden; no second Integrator."
   },
-  "labDonorFindings": "skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md"
+  "labDonorFindings": "skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md",
+  "targetDevicePolicy": {
+    "id": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
+    "description": "Georg's primary machine used for KFB visual/game acceptance. Do not invent a hardware model; capture runtime browser/WebGL/device metadata in the performance JSON.",
+    "requiredMetadata": [
+      "userAgent/browser",
+      "OS/platform",
+      "viewport",
+      "devicePixelRatio",
+      "screen size",
+      "hardwareConcurrency if exposed",
+      "deviceMemory if exposed",
+      "WebGL vendor/renderer if exposed",
+      "candidate head/build id",
+      "timestamp",
+      "route id"
+    ],
+    "humanStep": "Georg runs the instrumented Ground→Drive→Flight performance route once in a visible focused browser with no meaningful parallel GPU workload.",
+    "invalidMeasurement": "F-R07 remains UNKNOWN / NOT_GREEN"
+  },
+  "humanAcceptanceSteps": [
+    {
+      "id": "F-R39",
+      "name": "Georg Visual Product Gate",
+      "statePersistence": [
+        "ONE_SHOT_STATUS.json",
+        "main/kfb-hub/live/open-world-mvp.json"
+      ],
+      "pendingRequired": true,
+      "headBound": true
+    },
+    {
+      "id": "F-R07",
+      "name": "Target-device performance run",
+      "targetDevice": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
+      "statePersistence": [
+        "ONE_SHOT_STATUS.json",
+        "main/kfb-hub/live/open-world-mvp.json"
+      ],
+      "headBound": true
+    }
+  ]
 }
