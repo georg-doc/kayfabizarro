@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.3",
-  "updatedAt": "2026-10-07T03:18:00+02:00",
+  "revision": "2026-10-07.4",
+  "updatedAt": "2026-10-07T03:40:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Live Hub update: #367 Blender MCP Shield Fit is prepared but held until Coworker/local resource contention clears. New Style Reference Router separates binding system SSOTs from the curated Open World Styleguide benchmark and the broad non-1:1 Style References pool."
+    "note": "Live Hub routing: #369 Blender MCP Resident Performance + Character Choreography is READY NOW as the first Blender-impact job and may run source-isolated in parallel with Coworker code review / Architecture Freeze work. #367 Shield Fit is explicitly second after #369 unless newly outcome-critical. Style Reference Router remains the visual benchmark layer under binding system SSOTs."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -41,14 +41,14 @@
       "nextExecutor": "Required KFB integration waves"
     },
     {
-      "id": "resident-life-prep-ready",
-      "title": "PREP READY · Resident Life / Affect / Pose / Encounters",
-      "summary": "Semantic model, Affect/Emanata map, Pose/Proximity/Gesture/Micro-motion contract, reaction matrix and 3-Resident fixture are now on main. Blender choreography remains queued until local resource pressure is gone; no runtime integration before Architecture Freeze.",
-      "badge": "PREP COMPLETE · MAIN",
-      "action": "Resident model öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_LIFE_SEMANTIC_MODEL_PREP_2026-10-06.md",
-      "executor": "ChatGPT Web Chat · prep complete",
-      "nextExecutor": "Work/Astra freeze; Blender MCP later for real 3D choreography"
+      "id": "resident-performance-blender-now",
+      "title": "#369 · Blender MCP · Resident Performance + Character Choreography",
+      "summary": "READY NOW and intentionally before Shield Fit. Source-isolated Blender pass for Pose/Proximity/Gesture/Micro-motion, listening/speaking, Resident↔Resident/Player staging, shop/trade/gift, Fluff/work and repair/rebuild. Reuse Resident Atlas, Motion #344 and Fluff Motion #356 first; only proven reusable gaps become new clips. No PR #348/Open World runtime writes.",
+      "badge": "READY NOW · BEFORE #367",
+      "action": "Issue #369 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/369",
+      "executor": "Blender MCP · source-isolated performance/choreography",
+      "nextExecutor": "Blender MCP #367 Shield Fit; runtime integration only after Architecture Freeze"
     }
   ],
   "parallel": [
@@ -94,9 +94,9 @@
     },
     {
       "id": "issue-367-shield-fit",
-      "title": "READY/HOLD · Blender MCP · Shield Fit · Medium + Large",
-      "summary": "Audit-first shield fitting for Rig_Medium and Rig_Large. Existing Atlas already defines source variants and normal-push rules (Cleric 0.16, Black Knight Large 0.55, Monstrosity Large 0.5). If those recipes fit in isolation, classify the integrated defect as RUNTIME_ATTACHMENT_CONSUMER_MISMATCH instead of inventing new Blender assets.",
-      "badge": "READY BRIEF · HOLD COWORKER",
+      "title": "NEXT · Blender MCP · Shield Fit · Medium + Large",
+      "summary": "Second Blender job after #369 unless the shield becomes newly outcome-critical. Audit-first fitting for Rig_Medium and Rig_Large; if existing Atlas recipes fit in isolation, return RUNTIME_ATTACHMENT_CONSUMER_MISMATCH instead of inventing new Blender assets.",
+      "badge": "NEXT AFTER #369",
       "action": "Issue #367 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/issues/367",
       "executor": "Blender MCP · later/local",
@@ -140,30 +140,35 @@
       "prompt": "Do not start until Coworker's exact local result has been pushed to a GitHub handoff branch and RETURN.md, docs/ARCHITECTURE_AS_BUILT.md, docs/STATUS.json and evidence are readable there.\nThen read issue #360 and PR #348. Repair only the camera occlusion/boom seam first, preserving cliff behavior. Next perform the Architecture Freeze against the actual Coworker code.\nAfter freeze, close Authoring + Persistence before broad Joyride/Sky/Audio/Resident/Billboard/Card/Drive fan-out. Do not rebuild the receiving core."
     },
     {
-      "id": "brief-resident-prep",
-      "title": "Resident Life · semantic/performance prep",
-      "badge": "PREP COMPLETE",
-      "status": "hold",
-      "provider": "ChatGPT Web Chat + later Blender MCP",
-      "desc": "Profile/Affect/Activities/POIs/Encounters/Pose/Emanata/Reaction data are prepared on main. Runtime work waits for Architecture Freeze; Blender waits until local resource contention is gone.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md",
+      "id": "brief-resident-performance-blender",
+      "title": "Blender MCP · Resident Performance + Character Choreography",
+      "badge": "READY NOW · FIRST BLENDER JOB",
+      "status": "ready",
+      "provider": "Blender MCP · source-isolated body performance/choreography",
+      "desc": "Run now while Coworker code review / Architecture Freeze proceeds. Build the reusable performance vocabulary first: Pose/Proximity/Gesture/Micro-motion, emotional body language, encounters, shop/trade/gift, Fluff/work and repair/rebuild. Reuse proven Motion/Atlas/Fluff donors before creating any new clips. Open World runtime remains protected.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_EXECUTION_2026-10-07.md",
       "tags": [
+        "blender mcp",
         "resident",
-        "affect",
+        "character choreography",
         "pose",
-        "emanata",
-        "encounters",
-        "prep"
+        "proximity",
+        "gesture",
+        "micro-motion",
+        "trade",
+        "fluff",
+        "repair",
+        "issue 369"
       ],
-      "prompt": "Read the current Resident prep files on main. Do not implement into Open World before the post-Coworker Architecture Freeze."
+      "prompt": "Read skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_EXECUTION_2026-10-07.md on main and follow its read-first chain exactly. This is the first Blender-impact job, before #367 Shield Fit. You may work source-isolated now while Coworker code review / Architecture Freeze runs, but do not write PR #348 / Open World runtime. Reuse Resident Atlas, Motion PR #344, Fluff Work Motion PR #356, EyeRig v6, PetMouth and ChatterBox semantics. Return source isolation, COVERED/LAYERABLE/NEW_CLIP_REQUIRED matrix, affect/body mapping, choreography beats, real Resident previews, any genuinely reusable missing clips, tests and one next gate."
     },
     {
       "id": "brief-blender-shield-fit",
       "title": "Blender MCP · Shield Fit · Rig_Medium + Rig_Large",
-      "badge": "READY · HOLD UNTIL COWORKER DONE",
+      "badge": "NEXT · AFTER #369",
       "status": "hold",
       "provider": "Blender MCP · source/rig/attachment audit",
-      "desc": "Check the real Medium/Large shield sources and existing Atlas attachment rules before editing. Only author Blender changes if the source/Atlas proof itself is wrong; otherwise return a runtime-consumer mismatch with exact attachment data.",
+      "desc": "Second Blender job after Resident Performance #369 unless newly outcome-critical. Audit exact Medium/Large shield sources and existing Atlas attachment rules before editing.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/BLENDER_MCP_SHIELD_FIT_MEDIUM_LARGE_2026-10-07.md",
       "tags": [
         "blender mcp",
@@ -174,7 +179,7 @@
         "attachment",
         "source audit"
       ],
-      "prompt": "Read skills/chat/BLENDER_MCP_SHIELD_FIT_MEDIUM_LARGE_2026-10-07.md on main.\nDo not touch Open World runtime. First prove Cleric Medium and Black Knight Large with exact source shields, handslot.l and existing Atlas push values in isolation.\nIf the existing Atlas recipes already fit, stop as RUNTIME_ATTACHMENT_CONSUMER_MISMATCH and return the runtime-ready attachment table. Only create Blender/pivot/pose corrections if isolated source proof itself fails.\nUse skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md for visual benchmark context; references are not 1:1 templates."
+      "prompt": "Run only after #369 Resident Performance + Character Choreography returns, unless Georg explicitly reprioritizes. Then read skills/chat/BLENDER_MCP_SHIELD_FIT_MEDIUM_LARGE_2026-10-07.md on main. Do not touch Open World runtime. First prove Cleric Medium and Black Knight Large with exact source shields, handslot.l and existing Atlas push values in isolation. If the existing Atlas recipes already fit, stop as RUNTIME_ATTACHMENT_CONSUMER_MISMATCH."
     }
   ],
   "openQuestions": [
@@ -257,6 +262,11 @@
       "title": "KFB Style References · pool",
       "summary": "Broad non-1:1 inspiration/reference pool for visual Q&A and comparison.",
       "url": "https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References"
+    },
+    {
+      "title": "Resident Performance · Blender execution",
+      "summary": "Issue #369 execution brief: source-isolated Character/Resident choreography now, before Shield Fit; runtime integration still waits for Architecture Freeze.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_EXECUTION_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
