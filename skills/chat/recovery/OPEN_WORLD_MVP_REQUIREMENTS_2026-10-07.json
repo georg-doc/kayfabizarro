@@ -2059,8 +2059,11 @@
   "hexRole": "HEX_ROLE = MACRO_TERRAIN_OWNER · ARCHITECTURE DRIFT",
   "critic": {
     "identity": "OPEN_WORLD_RECOVERY_CRITIC_2026-10-07_01",
-    "state": "FINAL_REVIEW_PENDING",
+    "state": "FINAL_CONTRACT_AND_DEPLOYED_HUB_REVIEW_COMPLETE",
     "gameplayAcceptance": false
   },
-  "recoveryStrategy": "Preserve Coworker seed/streaming/ground mechanisms within existing WorldBuilder owner; correct continuous Surface Truth mesh/collision/contributions and stable IDs first; reuse shared WB2 authoring/sculpt/store/import, then existing-owner KFB seams; independent whole-product gauntlet before human review."
+  "recoveryStrategy": "Preserve Coworker seed/streaming/ground mechanisms within existing WorldBuilder owner; correct continuous Surface Truth mesh/collision/contributions and stable IDs first; reuse shared WB2 authoring/sculpt/store/import, then existing-owner KFB seams; independent whole-product gauntlet before human review.",
+  "recoveryGate": "RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR",
+  "evidenceCheckpoint": "53c1e48399e7ff561b5058338dfa0deb10cce7cf",
+  "runtimeAuthorized": false
 }
