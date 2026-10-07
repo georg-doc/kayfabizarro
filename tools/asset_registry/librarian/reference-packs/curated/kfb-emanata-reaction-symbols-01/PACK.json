@@ -1,0 +1,133 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "status": "CURATED_CONSUMER_PACK_VISUAL_ANALYSIS_PENDING",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "currentExecutor": "ChatGPT Web Chat",
+  "claudeDesignJobStarted": false,
+  "sourceInspectionRequired": true,
+  "privateSiteAccessRequired": false,
+  "transport": "GitHub metadata + original source URLs",
+  "rules": [
+    "A curated pack is not proof of visual inspection.",
+    "Do not mark sourceInspectedInIsolation=true until the actual source visual is seen.",
+    "Separate OBSERVED SOURCE FACT / CONSTRUCTION PRINCIPLE / KFB DESIGN DECISION in later design work.",
+    "Do not imitate a named creator's finished style."
+  ],
+  "packId": "style-pack:kfb-emanata-reactions:001",
+  "title": "KFB Emanata / Reaction Symbols 01",
+  "lane": "EMANATA",
+  "intendedConsumers": [
+    "resident-performance",
+    "chatterbox",
+    "comic-vfx",
+    "blender-mcp"
+  ],
+  "semanticMap": "tools/asset_registry/librarian/_handover/STYLE_REFERENCE_LIBRARY_R1_2026-10-05/EMANATA_SOURCE_MAPPING_01_2026-10-07.json",
+  "references": [
+    {
+      "referenceId": "style-ref:visual-language-lab-manga-morphology",
+      "sourcePool": "SUPPLEMENTARY_01",
+      "title": "Manga Morphology",
+      "creator": "Neil Cohn / Visual Language Lab",
+      "sourceClass": "AUTHORITATIVE_ACADEMIC_VISUAL_LANGUAGE_SOURCE",
+      "canonicalPageUrl": "https://www.visuallanguagelab.com/jvl",
+      "role": "PRIMARY_EMANATA_MORPHOLOGY",
+      "inspectFor": [
+        "anger marks",
+        "sweat/plewds",
+        "tears",
+        "hearts",
+        "question/exclamation",
+        "sparkles",
+        "dread lines"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:comicsforum-emanata-terms",
+      "sourcePool": "SUPPLEMENTARY_01",
+      "title": "List of Terms for Comics Studies · Emanata",
+      "creator": "Andrei Molotiu / Comics Forum",
+      "sourceClass": "ACADEMIC_TERMINOLOGY_SOURCE",
+      "canonicalPageUrl": "https://comicsforum.org/2013/07/26/list-of-terms-for-comics-studies-by-andrei-molotiu/",
+      "role": "TERMINOLOGY_AND_SCOPE",
+      "inspectFor": [
+        "emanata definition",
+        "symbolic-state signs",
+        "motion/impact distinction"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-angry-expressions-2017-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Angry / Moody Facial Expressions",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2017/01/how-to-think-when-you-draw-angry-moody.html",
+      "role": "FACE_REACTION_SUPPORT",
+      "inspectFor": [
+        "anger face",
+        "relationship between face and symbolic accent"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-happy-expressions-2017-11",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Happy Expressions",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2017/11/how-to-think-when-you-draw-happy.html",
+      "role": "FACE_REACTION_SUPPORT",
+      "inspectFor": [
+        "positive affect",
+        "relationship between face and symbolic accent"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-eye-direction-2020-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Eye Direction",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/01/how-to-think-when-you-draw-eye.html",
+      "role": "GAZE_SUPPORT",
+      "inspectFor": [
+        "gaze target",
+        "attention",
+        "reaction direction"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-eyebrows-2024-04",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Eyebrows",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2024/04/how-to-think-when-you-draw-eyebrows.html",
+      "role": "BROW_SUPPORT",
+      "inspectFor": [
+        "brow shape",
+        "emotion readability",
+        "interaction with Emanata"
+      ],
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "targetQuestions": [
+    "Which symbolic signs map cleanly to the current eight KFB semantic slots?",
+    "Which cues belong to face/eyes/brows instead of Emanata?",
+    "Which symbols remain readable at gameplay distance?",
+    "How should 2D/2.5D/clay presentation differ while preserving the same semantic slot?"
+  ],
+  "expectedLaterOutput": [
+    "eight-slot visual family",
+    "distance-readability rules",
+    "face-vs-Emanata boundary",
+    "animation/presentation hints"
+  ]
+}
