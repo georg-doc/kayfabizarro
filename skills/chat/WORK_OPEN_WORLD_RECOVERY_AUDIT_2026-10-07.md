@@ -5,6 +5,9 @@ Executor role: **Recovery Lead / ChefWSA**
 Mode: **RECOVERY / RESEARCH — NO PRODUCT RUNTIME WRITES**
 Owner: **KFB Open World / WorldBuilder**
 Human owner: **Georg**
+Recovery documentation owner: **this audit branch only**
+Recovery branch: `recovery/open-world-master-acceptance-audit-2026-10-07`
+Protected read-only donor lineages: **PR #348 / WB2 runtime** and **Dropbox /CLAUDE/KFB Open World**
 
 ## 0 · Your job
 
@@ -34,6 +37,9 @@ From current GitHub state:
    - current `ONE_SHOT_STATUS.json` / Return / Recovery
 10. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md`
 11. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
+12. `skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md`
+13. `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`
+14. `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
 
 Then inspect the exact current Coworker source directly from Dropbox:
 
@@ -47,6 +53,16 @@ Important Coworker files:
 - actual source under `src/`
 
 Do not rely on chat summaries where the source can be inspected directly.
+
+### 1A · Authority split — binding
+
+Do not let a candidate redefine the product.
+
+- **GitHub binding product contracts + explicit Georg decisions define WHAT the MVP must contain.**
+- **Dropbox `/CLAUDE/KFB Open World` defines WHAT THE COWORKER CANDIDATE ACTUALLY IS.**
+- Coworker `SPEC_KFB_OPEN_WORLD_01.md`, `RETURN.md`, Freeze docs and source may prove presence/absence/quality in that candidate, but they may **never remove, downgrade or postpone away** a GitHub product requirement.
+- PR #348 / WB2 and older lineages are donor/evidence sources unless a current binding contract explicitly names them as owner.
+- If authorities conflict, record the conflict. Do not invent a synthesis and do not silently pick the newest candidate.
 
 ## 2 · Hard restriction
 
@@ -70,6 +86,38 @@ Not allowed:
 
 The purpose of this run is to establish reliable truth before more money/time is spent.
 
+### 2A · Write boundary — binding
+
+All Recovery Audit writes belong only on:
+
+`recovery/open-world-master-acceptance-audit-2026-10-07`
+
+PR #348 / WB2 and Dropbox Coworker source are **READ-ONLY evidence/donor lineages** during this audit.
+
+Do not write audit material into PR #348 and do not modify the Coworker local repository.
+Do not merge this audit branch automatically.
+
+After every GitHub write:
+1. fetch the exact branch head;
+2. fetch the intended file back;
+3. record timeout as `UNKNOWN` and inspect before retrying.
+
+### 2B · Phase 0 CONTRACT FREEZE — before donor inspection
+
+Before selecting donors or proposing architecture:
+
+1. reconstruct the complete MVP requirement list from explicit Georg decisions + binding contracts;
+2. assign every required row a stable Requirement ID;
+3. mark explicit non-blockers separately;
+4. freeze that requirement ledger;
+5. only then inspect candidates/donors to populate the rows.
+
+After this freeze, a required row may leave or materially weaken only through:
+- an explicit Georg product decision; or
+- a factual correction accepted from the fresh independent critic because the row duplicated/misread the binding source.
+
+Candidate limitations, implementation cost, missing donor code or a local spec **never remove a requirement**.
+
 ## 3 · Recover the complete product contract
 
 Do not start from the latest candidate.
@@ -80,7 +128,7 @@ Build a **Master Acceptance Matrix**.
 
 Required columns:
 
-| Required capability | Binding source / decision | Product meaning | Best verified donor/candidate | Current state | KEEP / ADAPT / REJECT / MISSING | Receiving owner | Required acceptance proof |
+| Requirement ID | Required capability | Binding source / decision | Product meaning | Acceptance state | Best verified donor/candidate | Donor role | KEEP / ADAPT / REJECT / MISSING | Receiving owner | Required acceptance proof | Evidence | Relative effort |
 
 Rules:
 
@@ -88,7 +136,20 @@ Rules:
 - “later” does not mean “removed from final product”;
 - a mechanism donor does not automatically own presentation/content/data;
 - source bytes existing somewhere is not enough — prove the donor and exact capability;
-- identify conflicting authorities explicitly rather than inventing a synthesis.
+- identify conflicting authorities explicitly rather than inventing a synthesis;
+- use only these **Acceptance states**: `GREEN`, `PARTIAL`, `MISSING`, `CONFLICT`, `UNPROVEN`;
+- use only these **Donor roles** where applicable: `MECHANISM`, `PRESENTATION`, `CONTENT_DATA`, `OWNER`;
+- never infer presentation/content/data ownership from a working mechanism donor;
+- relative effort is only `SMALL`, `MEDIUM`, `LARGE`, `REBUILD-RISK` or `N/A`.
+
+### 3B · Visual/design donor isolation gate
+
+For every visual/design-sensitive donor (including Joyride, K2/Clay, KayKit/Kenney/KFB assets, Residents/Atlas, Billboard/media, signature modules and Theatre Curtain):
+
+- a filename, URL, manifest entry or successful load is **not donor proof**;
+- inspect/show the actual source object/design in isolation before classifying its visual identity as KEEP/ADAPT;
+- record the source pin and isolation evidence in the donor census;
+- if source isolation is unavailable, the donor remains `UNPROVEN` for presentation/source-fidelity acceptance.
 
 ## 3A · Product-level MVP rule
 
@@ -308,6 +369,15 @@ That critic:
 
 Do not self-certify the final recovery plan.
 
+### 10A · Independent execution roles — binding
+
+- **Recovery Lead / ChefWSA:** only writer of audit/recovery documentation on the recovery branch. No product/runtime writes.
+- **Integration Tester / Evidence Auditor:** factual source/evidence checking only; does not certify the plan.
+- **Independent Critic:** fresh context, no Builder transcript, no production writes, challenges completeness, donors, false GREENs and ownership conflicts.
+- **Production Guard:** applies critic corrections and decides only `RECOVERY PLAN READY` vs `RECOVERY PLAN BLOCKED`.
+
+No role may modify the production runtime during this audit.
+
 ## 11 · Required artifacts
 
 Write documentation only:
@@ -316,6 +386,16 @@ Write documentation only:
 2. `skills/chat/recovery/OPEN_WORLD_DONOR_CENSUS_2026-10-07.md`
 3. `skills/chat/recovery/OPEN_WORLD_ARCHITECTURE_FREEZE_AUDIT_2026-10-07.md`
 4. `skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md`
+5. `skills/chat/recovery/OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json` — frozen machine-readable requirement ledger
+6. `skills/chat/recovery/OPEN_WORLD_MVP_LIVING_DOC_2026-10-07.html` — interactive visual projection of the same ledger
+
+The JSON ledger and HTML Living Doc must remain synchronized with the Markdown Master Acceptance Matrix. The HTML is a **projection**, never a second product contract.
+
+The Living Doc must always display the product-level result binarily:
+- `MVP PASS · COMPLETE ACCEPTANCE MATRIX GREEN`; or
+- `NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN`.
+
+It may show distributions/counts below that, but no percentage-complete or “almost MVP” roll-up.
 
 Update Issue #360 only with the factual recovery result.
 
