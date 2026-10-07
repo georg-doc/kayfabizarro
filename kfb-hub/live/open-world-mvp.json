@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.20",
+  "revision": "2026-10-07.21",
   "updatedAt": "2026-10-07T21:26:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Final Island MVP ONE_SHOT v5 ready. F-R39 PASS is persisted as a Golden baseline and re-gated only when later work can materially affect a Phase-3 Golden criterion and critic/evidence shows regression or unresolved change; unrelated visible additions do not trigger another Georg gate.",
+  "recoverySummary": "Current product iteration: KFB Island MVP R4. Binding acceptance contract remains Frozen Matrix operationalVersion 5 with 44 REQUIRED / 13 Strong / 7 Optional. Older Recovery-Lead/runtime-paused routing is historical where conflicting.",
   "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
@@ -2247,7 +2247,7 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "ONE_SHOT_V5_READY_FOR_WORK_WSA",
+    "status": "MVP_R4_ONE_SHOT_READY_FOR_WORK_WSA",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
@@ -2299,6 +2299,7 @@
       "F-R07_TARGET_DEVICE_PERFORMANCE_RUN"
     ],
     "targetDeviceId": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
-    "fR39ReGatePolicy": "REGRESSION_BASED_ONLY"
+    "fR39ReGatePolicy": "REGRESSION_BASED_ONLY",
+    "productIteration": "KFB_ISLAND_MVP_R4"
   }
 }
