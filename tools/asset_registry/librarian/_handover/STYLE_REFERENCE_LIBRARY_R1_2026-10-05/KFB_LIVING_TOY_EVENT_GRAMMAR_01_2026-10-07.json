@@ -1,0 +1,231 @@
+{
+  "schema": "kfb.living-toy-event-grammar/1",
+  "status": "ARCHITECTURE_PREP_NO_RUNTIME_EVENT_IDS",
+  "date": "2026-10-07",
+  "owner": "KFB narrative research / Style Reference",
+  "runtimeWrites": false,
+  "rules": {
+    "truthOwnersRemainExternal": true,
+    "historianRole": "HISTORIAN",
+    "historianPersona": "CHRONICLER",
+    "historianDefault": "SILENT",
+    "oneForegroundTextCarrier": true,
+    "groupPrimarySpeakerDefault": 1,
+    "silenceValid": true,
+    "noInventedRuntimeEventIds": true,
+    "noLLMRequired": true
+  },
+  "arbitrationOrder": [
+    "WORLD_BEHAVIOR",
+    "RESIDENT_REACTION",
+    "CHATTERBOX_LINE_IF_NEEDED",
+    "HISTORIAN_IF_ADDS_UNSEEN_CONTEXT_MEMORY_OR_CLOSURE",
+    "SILENCE"
+  ],
+  "scenarioFamilies": [
+    {
+      "scenarioId": "arrival_poi_discovery",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD/POI_OWNER",
+      "residentPriority": "medium",
+      "historianEligibility": "conditional",
+      "historianUse": [
+        "unseen_place_history",
+        "return_callback",
+        "reputation_vs_present_contrast"
+      ],
+      "historianAvoid": [
+        "visible_landmark_description",
+        "control_instruction"
+      ]
+    },
+    {
+      "scenarioId": "card_billboard_semantic_reveal",
+      "runtimeEventId": null,
+      "truthOwner": "CARD/BILLBOARD/WORLD_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "rare",
+      "historianUse": [
+        "historical_relation",
+        "public_message_vs_observed_consequence",
+        "earned_callback"
+      ],
+      "historianAvoid": [
+        "card_encyclopedia",
+        "raw_feed_quote"
+      ]
+    },
+    {
+      "scenarioId": "gift_trade_fluff_exchange",
+      "runtimeEventId": null,
+      "truthOwner": "RESOURCE/ENCOUNTER_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "rare",
+      "historianUse": [
+        "later_relationship_callback",
+        "broader_historical_item_context"
+      ],
+      "historianAvoid": [
+        "routine_transaction_commentary"
+      ]
+    },
+    {
+      "scenarioId": "activity_interruption",
+      "runtimeEventId": null,
+      "truthOwner": "RESIDENT_LIFE/ENCOUNTER_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "off_by_default",
+      "historianUse": [
+        "only_if_interruption_becomes_larger_pattern"
+      ],
+      "historianAvoid": [
+        "routine_interruption"
+      ]
+    },
+    {
+      "scenarioId": "work_repair_rebuild_completed",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD/REPAIR_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "conditional",
+      "historianUse": [
+        "closes_prior_loss",
+        "place_changed_since_memory",
+        "ironic_resolution"
+      ],
+      "historianAvoid": [
+        "describing_visible_completion"
+      ]
+    },
+    {
+      "scenarioId": "damage_collapse_world_consequence",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD/DAMAGE_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "aftermath_only",
+      "historianUse": [
+        "historical_consequence",
+        "aftermath_context"
+      ],
+      "historianAvoid": [
+        "during_immediate_safety_response",
+        "describing_visible_collapse"
+      ]
+    },
+    {
+      "scenarioId": "resident_disagreement_social_friction",
+      "runtimeEventId": null,
+      "truthOwner": "ENCOUNTER/RELATIONSHIP_OWNER",
+      "residentPriority": "highest",
+      "historianEligibility": "retrospective_only",
+      "historianUse": [
+        "later_ironic_closure"
+      ],
+      "historianAvoid": [
+        "live_exchange_interruption",
+        "declaring_winner"
+      ]
+    },
+    {
+      "scenarioId": "performance_music_celebration",
+      "runtimeEventId": null,
+      "truthOwner": "ACTIVITY/PERFORMANCE_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "rare",
+      "historianUse": [
+        "event_acquires_world_or_memory_meaning"
+      ],
+      "historianAvoid": [
+        "continuous_commentary"
+      ]
+    },
+    {
+      "scenarioId": "mob_critter_autonomous_behavior",
+      "runtimeEventId": null,
+      "truthOwner": "MOB/RESIDENT_LIFE_OWNER",
+      "residentPriority": "contextual",
+      "historianEligibility": "conditional",
+      "historianUse": [
+        "player_behavior_creates_pattern_or_social_consequence"
+      ],
+      "historianAvoid": [
+        "turning_every_critter_into_quest"
+      ]
+    },
+    {
+      "scenarioId": "player_failure_death_revival",
+      "runtimeEventId": null,
+      "truthOwner": "PLAYER/WORLD_STATE_OWNER",
+      "residentPriority": "high_if_witnessed",
+      "historianEligibility": "pattern_only",
+      "historianUse": [
+        "repetition_frame",
+        "heroic_intent_vs_observed_pattern",
+        "place_memory_callback"
+      ],
+      "historianAvoid": [
+        "death_counter",
+        "every_failure_quip",
+        "resurrection_ownership"
+      ]
+    },
+    {
+      "scenarioId": "repeat_visit_memory_callback",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD/RELATIONSHIP_MEMORY_OWNER",
+      "residentPriority": "high_if_local_memory",
+      "historianEligibility": "strong",
+      "historianUse": [
+        "old_beat_new_meaning",
+        "place_chronicle",
+        "long_arc_callback"
+      ],
+      "historianAvoid": [
+        "memory_for_its_own_sake"
+      ]
+    },
+    {
+      "scenarioId": "rare_anomaly_ufo_metaphysical",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD_EVENT_OWNER",
+      "residentPriority": "high",
+      "historianEligibility": "aftermath_or_context",
+      "historianUse": [
+        "historical_parallel",
+        "unseen_context",
+        "rare_meta_closure"
+      ],
+      "historianAvoid": [
+        "over_explaining_anomaly",
+        "domesticating_mystery"
+      ]
+    },
+    {
+      "scenarioId": "transition_afterglow",
+      "runtimeEventId": null,
+      "truthOwner": "WORLD/JOURNEY/RETURN_OWNER",
+      "residentPriority": "optional",
+      "historianEligibility": "primary_habitat",
+      "historianUse": [
+        "retrospective_closure",
+        "player_framed_chronicle",
+        "meaningful_consequence_summary"
+      ],
+      "historianAvoid": [
+        "quest_log_dump",
+        "objective_instruction"
+      ]
+    }
+  ],
+  "mappingFieldsForArchitectureFreeze": [
+    "actualRuntimeSourceEventOrState",
+    "truthOwner",
+    "residentLifeConsumer",
+    "performanceCuePath",
+    "chatterboxEligibility",
+    "historianEligibility",
+    "durableMemoryWritePoint",
+    "cooldownOrArbitrationOwner",
+    "recoveryOutcome"
+  ]
+}
