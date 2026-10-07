@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.6",
-  "updatedAt": "2026-10-07T13:15:00+02:00",
+  "revision": "2026-10-07.7",
+  "updatedAt": "2026-10-07T13:24:00+02:00",
   "owner": "KFB Open World / Recovery Audit",
   "source": "Draft PR #373 · recovery/open-world-master-acceptance-audit-2026-10-07",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -272,13 +272,13 @@
       "title": "Road network",
       "required": true,
       "acceptance": "PARTIAL",
-      "current": "Road graph/routing and road colliders are present, but integer level/ramp eligibility and provider wrapping are coupled to Hex surface.",
-      "donor": "Coworker roads",
-      "donorRole": "MECHANISM",
+      "current": "Coworker road graph/routing may be reused as network intent, but its bespoke road renderer/sweep is not the final geometry owner. Ordinary roads must compile through the existing Track Core modular construction family against Continuous Surface Truth.",
+      "donor": "Coworker network planning + existing Track Core construction owner",
+      "donorRole": "OWNER",
       "decision": "ADAPT",
-      "owner": "Overland roads owner",
-      "proof": "Road continuity/support/collision on continuous terrain; no Track ownership leakage.",
-      "effort": "MEDIUM",
+      "owner": "World route planner → Track Core construction → Joyride presentation → Surface Truth",
+      "proof": "Same Track Core family constructs ordinary road, curved road, real junction, bridge approach and race profile; no duplicate bespoke road renderer/contact owner; terrain/contact continuity and persistence proven.",
+      "effort": "LARGE",
       "deps": [
         "MVP-001",
         "MVP-018"
@@ -295,6 +295,10 @@
         {
           "label": "Existing-System Integration Matrix",
           "url": "https://github.com/georg-doc/kayfabizarro/blob/3ea6fbd1f81cfb4ff665f609b27825cd84e18cde/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md"
+        },
+        {
+          "label": "Road / Track Core Ownership Canon",
+          "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md"
         }
       ],
       "productMeaning": "Required in the same directly authorable persistent world: Road network",
@@ -319,7 +323,7 @@
       "title": "Rivers + bridges",
       "required": true,
       "acceptance": "PARTIAL",
-      "current": "River/bridge generation is present, but rivers lock to an integer terrain level and render tile-based corridors. Surface and contribution adapters are required.",
+      "current": "River generation may retain planning semantics. Bridge approaches/crossings on the road network must use the same Track Core road/bridge construction family and Continuous Surface Truth boundary; no separate road-vs-track geometry owner.",
       "donor": "Coworker roads/rivers",
       "donorRole": "MECHANISM",
       "decision": "ADAPT",
@@ -1129,12 +1133,12 @@
       "title": "Joyride Track Core + J14/T4/K2 visible design",
       "required": true,
       "acceptance": "MISSING",
-      "current": "Track Core mechanics and pinned Joyride source map exist; old adapter has pending browser/critic proof. Coworker roads do not supply Track sockets/RouteRecipe or Joyride presentation.",
+      "current": "Track Core is now binding not only for the representative race/stunt module but as the reusable construction owner for ordinary roads and race/stunt variants. Coworker may feed route/network intent; no parallel Bézier road mesh owner.",
       "donor": "Existing Track Core + Joyride donors",
       "donorRole": "OWNER",
       "decision": "ADAPT",
-      "owner": "Track Core mechanics + Joyride presentation",
-      "proof": "Actual source-isolated J14/T4/K2 clay-strand design on real Track Core contact/profile/socket mechanics; place/configure/connect modular road/track/bridge/tunnel/ramp/supported stunt, persist RouteRecipe, fresh reload, traverse/drive in same world. No visible debug substitute.",
+      "owner": "Track Core construction owner + Joyride presentation adapter",
+      "proof": "Source-isolated Joyride design on actual Track Core graph/RouteRecipe/profile/socket/junction mechanics; ordinary road + junction + bridge approach + race section from one family, persisted and driven/traversed in the same world.",
       "effort": "LARGE",
       "deps": [
         "MVP-001",
@@ -1153,6 +1157,10 @@
         {
           "label": "Existing-System Integration Matrix",
           "url": "https://github.com/georg-doc/kayfabizarro/blob/3ea6fbd1f81cfb4ff665f609b27825cd84e18cde/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md"
+        },
+        {
+          "label": "Road / Track Core Ownership Canon",
+          "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md"
         }
       ],
       "productMeaning": "Required in the same directly authorable persistent world: Joyride Track Core + J14/T4/K2 visible design",
@@ -2172,5 +2180,10 @@
   "executionStatus": "INTEGRATOR_AUTHORIZED",
   "currentExecutor": "ChatGPT Work/WSA · WorldBuilder Integrator",
   "currentOwner": "KFB WorldBuilder / WB2 · PR #348",
-  "nextGate": "Complete all required Acceptance Matrix rows through one continuous Integrator run; no intermediate MVP."
+  "nextGate": "Complete all required Acceptance Matrix rows through one continuous Integrator run; no intermediate MVP.",
+  "roadTrackOwnershipCorrection": {
+    "status": "BINDING",
+    "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
+    "summary": "Coworker road graph/planning may be reused as route intent; Track Core owns reusable road/track construction geometry/contact/profile/junction/socket/RouteRecipe, with Joyride presentation and Continuous Terrain Surface Truth integration. Ordinary road and race/stunt road are one modular family, not two renderers."
+  }
 }
