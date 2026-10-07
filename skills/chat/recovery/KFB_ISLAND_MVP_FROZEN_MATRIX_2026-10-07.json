@@ -668,6 +668,16 @@
       "integrationRule": "Use existing 17 Medium/13 Large clips only if selected activity needs them; EyeRig owner stays authoritative.",
       "acceptance": "One chosen Fluff/work activity consumes real clip(s) with contact/readability in world.",
       "quarantine": "If no MVP activity needs Fluff, defer without creating new clips."
+    },
+    {
+      "id": "F-S13",
+      "title": "State-dependent Threshold Door / Paper-Facade portal proof",
+      "class": "STRONGLY_INCLUDE",
+      "owner": "World/Progression state owner + existing Portal/Instance routing + Paper/Facade/Threshold presentation grammar",
+      "readiness": "ARCHITECTURE_PREP_READY_BOUNDED_PROOF",
+      "integrationRule": "Use one source-backed freestanding or Paper/Facade door. The threshold consumes read-only authoritative state. Locked/base state resolves as ordinary local pass-through; unlocked/revealed state resolves as a real portal/instance/realm transition or deliberate non-local/local metanarrative target. Walking around the facade remains in the current world. No second progression, world, portal, camera or persistence owner.",
+      "acceptance": "On the same exact candidate, one visible threshold proves two state-dependent crossing results, preserves state through save/fresh reload, visibly reveals facade construction from side/rear where applicable, and routes the active state through the existing world/instance owner.",
+      "quarantine": "Do not add a full quest/key/realm progression system. If portal destination integration threatens REQUIRED rows, preserve the threshold grammar and defer the active realm hop; no new REQUIRED row is created."
     }
   ],
   "optionalProof": [
@@ -818,8 +828,8 @@
     "FREE_FLIGHT"
   ],
   "executionMode": "ONE_SHOT",
-  "operationalVersion": 3,
-  "lastOperationalizedAt": "2026-10-07",
+  "operationalVersion": 4,
+  "lastOperationalizedAt": "2026-10-07T21:26:00+02:00",
   "receivingOwnerState": {
     "repo": "georg-doc/kayfabizarro",
     "pr": 348,
