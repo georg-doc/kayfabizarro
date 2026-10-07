@@ -1,3 +1,12 @@
+# LIVE-DATA MIGRATION SUPERSEDES PURE IMPORT
+
+For a new Work run while the Site is still at the last proven Version 4 / 58 built-ins, do **not** spend a run on import-only publication.
+
+Use instead:
+`BRIEF_WORK_STYLE_REFERENCE_LIVE_DATA_MIGRATION_2026-10-07.md`
+
+That run imports the current 69-record corpus **and** establishes GitHub-live data loading so future data-only updates no longer require Work/Sites publication.
+
 # BRIEF · Work/WSA · import Seed 05 + Seed 06 into accepted Asset Librarian R2
 
 Status: **PREPARED · SUPERSEDES SEED05-ONLY IMPORT IF SITE IS STILL VERSION 4 / 58 BUILT-INS**
