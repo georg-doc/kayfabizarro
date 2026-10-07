@@ -427,3 +427,15 @@ The currently published Site remains Version 4 with 58 built-ins until the prepa
 Validation: **10/10 PASS**.
 
 No Site/runtime/deployment change in this curation checkpoint.
+
+
+## 2026-10-07 · Dialogue / Narration authoring + Historian donor curation
+
+- Added canonical Etherington Seed 06 Narration/Reaction with 6 deduplicated official sources.
+- Added `KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md` and machine-readable `KFB_CHATTERBOX_AUTHORING_RULES_01.json`.
+- Added curated `kfb-narration-reaction-01` consumer pack.
+- Audited historical Overworld narrator/Afterglow, zone-story, Mob Eigenleben and "Die Welt als Spielzeug" donors plus NIE Writer's Room / dialogue sources and current KayfabeTips.
+- Canonical donor audit: `KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`.
+- Consolidated Work/WSA Site import to Seeds 05 + 06: last proven Site 58 built-ins → expected 69 when applied from Version 4.
+- Seed-05-only import brief marked superseded for new runs.
+- No Site deployment, Open World/ChatterBox runtime write, Hub change, merge or Live promotion.
