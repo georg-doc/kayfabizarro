@@ -1,0 +1,343 @@
+{
+  "schema": "kfb.emanata-visual-morphology-pool/1",
+  "date": "2026-10-07",
+  "status": "SOURCE_CURATED_VISUAL_DESIGN_PENDING",
+  "owner": "KFB Asset Registry / Asset Librarian reference layer",
+  "currentExecutor": "ChatGPT Web Chat",
+  "source": {
+    "id": "visual-language-lab-manga-morphology",
+    "creator": "Neil Cohn / Visual Language Lab",
+    "url": "https://www.visuallanguagelab.com/jvl",
+    "sourceClass": "AUTHORITATIVE_ACADEMIC_VISUAL_LANGUAGE_SOURCE",
+    "note": "Source presents meaningful graphics as visual morphology; this KFB file only maps concepts to candidate presentation channels."
+  },
+  "channelRules": {
+    "EMANATA": "external symbolic presentation around/near actor",
+    "FACE_AFFIX": "face-attached visual morphology; do not automatically make floating Emanata",
+    "EYE_CHANNEL": "EyeRig/eye presentation first",
+    "GRAPHIC_FX": "scene/action emphasis rather than emotion-state Emanata",
+    "BACKGROUND_FX": "background state cue; use sparingly",
+    "SUPPLETION": "whole-character deformation; not primary Emanata"
+  },
+  "items": [
+    {
+      "sourceName": "Vein",
+      "meaning": [
+        "anger"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "anger-tick",
+      "status": "DIRECT"
+    },
+    {
+      "sourceName": "Dread lines",
+      "meaning": [
+        "fear",
+        "dread"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "gloom-cloud",
+      "status": "FUNCTIONAL_ANALOG"
+    },
+    {
+      "sourceName": "Cry streaks",
+      "meaning": [
+        "sadness"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "FACE_AFFIX",
+      "kfbSlot": "tear",
+      "status": "SUPPORT"
+    },
+    {
+      "sourceName": "Tear Bubble",
+      "meaning": [
+        "sadness"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "tear",
+      "status": "DIRECT_VARIANT"
+    },
+    {
+      "sourceName": "Blush",
+      "meaning": [
+        "embarrassment",
+        "love"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "FACE_AFFIX",
+      "candidateSlot": "blush",
+      "status": "FUTURE_CANDIDATE"
+    },
+    {
+      "sourceName": "Flush",
+      "meaning": [
+        "embarrassment"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "FACE_AFFIX",
+      "candidateSlot": "blush",
+      "status": "FUTURE_CANDIDATE"
+    },
+    {
+      "sourceName": "Giant sweat drop",
+      "meaning": [
+        "anxiety"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "sweat-drop",
+      "status": "DIRECT"
+    },
+    {
+      "sourceName": "Plewds",
+      "meaning": [
+        "flustered",
+        "anxiety"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "sweat-drop",
+      "status": "MULTI_DROP_VARIANT"
+    },
+    {
+      "sourceName": "Sweat drops all over face",
+      "meaning": [
+        "fear",
+        "anxiety"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "FACE_AFFIX",
+      "kfbSlot": "sweat-drop",
+      "status": "SUPPORT"
+    },
+    {
+      "sourceName": "Breath mushroom",
+      "meaning": [
+        "relief"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "candidateSlot": "breath",
+      "status": "FUTURE_CANDIDATE"
+    },
+    {
+      "sourceName": "Breath bubbles",
+      "meaning": [
+        "panting",
+        "exhaustion"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "candidateSlot": "breath",
+      "status": "FUTURE_CANDIDATE"
+    },
+    {
+      "sourceName": "Zoom Lines",
+      "meaning": [
+        "focal attention"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "GRAPHIC_FX",
+      "candidateSlot": "focus-lines",
+      "status": "GRAPHIC_FX"
+    },
+    {
+      "sourceName": "Circumfixing motion lines",
+      "meaning": [
+        "shaking",
+        "strain",
+        "slight movement"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "GRAPHIC_FX",
+      "candidateSlot": "motion-emphasis",
+      "status": "GRAPHIC_FX"
+    },
+    {
+      "sourceName": "Scopic Spark",
+      "meaning": [
+        "surprise",
+        "realization"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "exclamation",
+      "status": "VARIANT"
+    },
+    {
+      "sourceName": "Scopic Star",
+      "meaning": [
+        "surprise",
+        "realization"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "sparkle",
+      "status": "VARIANT"
+    },
+    {
+      "sourceName": "Scopic Lines",
+      "meaning": [
+        "surprise",
+        "realization"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "GRAPHIC_FX",
+      "kfbSlot": "exclamation",
+      "status": "SUPPORT"
+    },
+    {
+      "sourceName": "Upfix – Hearts",
+      "meaning": [
+        "love"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "heart",
+      "status": "DIRECT"
+    },
+    {
+      "sourceName": "Upfix – ?",
+      "meaning": [
+        "curious",
+        "confused"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "question",
+      "status": "DIRECT"
+    },
+    {
+      "sourceName": "Upfix – !",
+      "meaning": [
+        "surprise"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "exclamation",
+      "status": "DIRECT"
+    },
+    {
+      "sourceName": "Upfix – Spikes",
+      "meaning": [
+        "excitement",
+        "surprise"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "kfbSlot": "exclamation",
+      "status": "VARIANT"
+    },
+    {
+      "sourceName": "Steam",
+      "meaning": [
+        "frustration"
+      ],
+      "sourceType": "Affix",
+      "kfbChannel": "EMANATA",
+      "candidateSlot": "steam",
+      "status": "STRONG_FUTURE_CANDIDATE"
+    },
+    {
+      "sourceName": "Spiral Eyes",
+      "meaning": [
+        "nausea",
+        "dizziness"
+      ],
+      "sourceType": "Eye-Umlaut",
+      "kfbChannel": "EYE_CHANNEL",
+      "candidateSlot": "dizzy",
+      "status": "EYE_FIRST"
+    },
+    {
+      "sourceName": "Dot eyes",
+      "meaning": [
+        "hopeless",
+        "overwhelmed"
+      ],
+      "sourceType": "Eye-Umlaut",
+      "kfbChannel": "EYE_CHANNEL",
+      "candidateSlot": "overwhelmed",
+      "status": "EYE_FIRST"
+    },
+    {
+      "sourceName": "Heart eyes",
+      "meaning": [
+        "love"
+      ],
+      "sourceType": "Eye-Umlaut",
+      "kfbChannel": "EYE_CHANNEL",
+      "kfbSlot": "heart",
+      "status": "EYE_VARIANT"
+    },
+    {
+      "sourceName": "Sparkles",
+      "meaning": [
+        "happiness",
+        "elation"
+      ],
+      "sourceType": "Background",
+      "kfbChannel": "BACKGROUND_FX",
+      "kfbSlot": "sparkle",
+      "status": "BACKGROUND_VARIANT"
+    },
+    {
+      "sourceName": "Fire",
+      "meaning": [
+        "rage"
+      ],
+      "sourceType": "Background",
+      "kfbChannel": "BACKGROUND_FX",
+      "kfbSlot": "anger-tick",
+      "status": "BACKGROUND_VARIANT"
+    },
+    {
+      "sourceName": "Shock pose",
+      "meaning": [
+        "surprise"
+      ],
+      "sourceType": "Suppletion",
+      "kfbChannel": "SUPPLETION",
+      "kfbSlot": "exclamation",
+      "status": "BODY_CHANNEL_NOT_EMANATA"
+    },
+    {
+      "sourceName": "Chibi / Superdeformation",
+      "meaning": [
+        "exaggeration",
+        "overwhelming emotion"
+      ],
+      "sourceType": "Suppletion",
+      "kfbChannel": "SUPPLETION",
+      "status": "NOT_PRIMARY_EMANATA"
+    }
+  ],
+  "itemCount": 28,
+  "currentKfbSlots": [
+    "question",
+    "exclamation",
+    "sweat-drop",
+    "tear",
+    "anger-tick",
+    "heart",
+    "sparkle",
+    "gloom-cloud"
+  ],
+  "strongestFutureCandidates": [
+    "blush",
+    "breath",
+    "steam"
+  ],
+  "keepOutOfPrimaryEmanata": [
+    "dizzy",
+    "overwhelmed",
+    "focus-lines",
+    "motion-emphasis",
+    "whole-character-suppletion"
+  ],
+  "designRule": "Do not collapse all visual morphology into floating symbols. Preserve the correct presentation channel."
+}
