@@ -1029,3 +1029,52 @@ No Site/runtime/deployment change.
 
 Exactly one next gate:
 **CONTINUE_REFERENCE_CURATION_OR_SELECT_ONE_CURATED_PACK_FOR_A_CONCRETE_CONSUMER**.
+
+
+## Etherington Seed 05 · Dialogue / Interaction · 2026-10-07
+
+Status: **CURATION CONTINUES · 63-SOURCE REPO CORPUS READY**
+
+Current executor:
+**ChatGPT Web Chat**
+
+Added:
+`ETHERINGTON_OFFICIAL_SEED_05_DIALOGUE_INTERACTION.json`
+
+Five official Etherington sources:
+- Small Talk;
+- Speech Patterns;
+- Tics and Tells;
+- Interrupt a Scene;
+- Silence Is Golden.
+
+These are classified under:
+- Dialogue Rhythm;
+- Character Voice;
+- Nonverbal Behavior;
+- Conversation Flow.
+
+They are not VFX/Emanata references and are not Bubble-shape grammar.
+
+Prepared consumer pack:
+`tools/asset_registry/librarian/reference-packs/curated/kfb-dialogue-interaction-01/`
+
+The pack contains six references, adding Speech Bubbles as presentation support while keeping ChatterBox as dialogue/content owner.
+
+Repo curated corpus after Seed 05:
+- **58** unique Etherington official sources;
+- **5** supplementary professional/academic sources;
+- **63** total curated records.
+
+Current published Asset Librarian Version 4 remains at 58 built-ins. An incremental data-only Site sync is prepared in:
+`BRIEF_WORK_IMPORT_SEED05_DIALOGUE_INTERACTION_2026-10-07.md`
+
+This import must preserve the accepted R2 Viewer unchanged.
+
+Validation:
+**10/10 PASS**.
+
+No Site/runtime/deployment change in this checkpoint.
+
+Exactly one next gate:
+**OPTIONAL_WORK_SYNC_SEED05_TO_ACCEPTED_LIBRARIAN_OR_CONTINUE_WEB_CHAT_CURATION**.
