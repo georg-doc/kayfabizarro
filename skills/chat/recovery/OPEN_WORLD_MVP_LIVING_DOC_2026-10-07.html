@@ -27,5 +27,33 @@ function fact(k,v,w=false){return '<div class="fact '+(w?'wide':'')+'"><label>'+
 function openReq(id){let r=DATA.requirements.find(x=>x.id===id);if(!r)return;$("#did").textContent=r.id+" · "+r.category+(r.required?" · MVP":" · NON-BLOCKER");$("#dtitle").textContent=r.title;let key="kfb-mvp-note:"+r.id;$("#db").innerHTML='<div class="facts">'+fact("Acceptance",'<span class="badge '+esc(r.acceptance)+'">'+esc(r.acceptance)+'</span>')+fact("Decision",esc(r.decision))+fact("Donor role",esc(r.donorRole))+fact("Effort",esc(r.effort))+fact("Current evidence",esc(r.current),true)+fact("Best donor",esc(r.donor),true)+fact("Receiving owner",esc(r.owner),true)+fact("Required proof",esc(r.proof),true)+fact("Dependencies",(r.deps||[]).map(x=>'<button class="chip" data-open="'+esc(x)+'">'+esc(x)+'</button>').join(" ")||"—",true)+'</div><h3>Lokale Arbeitsnotiz</h3><textarea id="note" class="notes" placeholder="Nur lokal im Browser; kein GitHub-Write."></textarea>';$("#note").value=localStorage.getItem(key)||"";$("#note").oninput=e=>localStorage.setItem(key,e.target.value);bind();$("#dlg").showModal()}
 function bind(){document.querySelectorAll("[data-open]").forEach(e=>e.onclick=ev=>{ev.stopPropagation();openReq(e.dataset.open)})}function render(){status();lanes();matrix();bind()}
 ["search","sf","cf","scope"].forEach(id=>$("#"+id).addEventListener(id==="search"?"input":"change",render));$("#x").onclick=()=>$("#dlg").close();$("#export").onclick=()=>{let b=new Blob([JSON.stringify(DATA,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json";a.click()};$("#import").onclick=()=>$("#file").click();$("#file").onchange=async e=>{try{let x=JSON.parse(await e.target.files[0].text());if(!Array.isArray(x.requirements))throw Error("requirements missing");DATA=x;$("#sourceLine").textContent="Datenquelle: importierte JSON-Datei";filters();render()}catch(err){alert("Ungültige Ledger-Datei: "+err.message)}};
-(async()=>{$("#sourceLine").textContent="Datenquelle: eingebetteter Recovery-Seed";try{let r=await fetch("./OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json",{cache:"no-store"});if(r.ok){let x=await r.json();if(Array.isArray(x.requirements)){DATA=x;$("#sourceLine").textContent="Datenquelle: relative Ledger-JSON (live geladen)"}}}catch(_){}filters();render()})();
+const LIVE_API="https://api.github.com/repos/georg-doc/kayfabizarro/contents/skills/chat/recovery/OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json?ref=recovery%2Fopen-world-master-acceptance-audit-2026-10-07";
+async function loadLedger(){
+  $("#sourceLine").textContent="Datenquelle: eingebetteter Recovery-Fallback";
+  try{
+    const r=await fetch(LIVE_API,{cache:"no-store",headers:{Accept:"application/vnd.github+json"}});
+    if(r.ok){
+      const meta=await r.json();
+      const bin=atob(String(meta.content||"").replace(/\s/g,""));
+      const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
+      const x=JSON.parse(new TextDecoder().decode(bytes));
+      if(Array.isArray(x.requirements)){
+        DATA=x;
+        $("#sourceLine").textContent="Datenquelle: Recovery-Branch Ledger · live via GitHub";
+        return;
+      }
+    }
+  }catch(_){}
+  try{
+    const r=await fetch("./OPEN_WORLD_MVP_REQUIREMENTS_2026-10-07.json",{cache:"no-store"});
+    if(r.ok){
+      const x=await r.json();
+      if(Array.isArray(x.requirements)){
+        DATA=x;
+        $("#sourceLine").textContent="Datenquelle: veröffentlichter Ledger-Fallback";
+      }
+    }
+  }catch(_){}
+}
+(async()=>{await loadLedger();filters();render()})();
 </script></body></html>
