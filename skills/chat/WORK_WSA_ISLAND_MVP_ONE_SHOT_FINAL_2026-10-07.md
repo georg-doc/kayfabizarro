@@ -3,7 +3,7 @@
 Status: **READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
 Authority: **Georg / KFB**
 Executor: **ChatGPT Work/WSA · GPT-6 Astra Medium baseline recommended**
-Reasoning escalation: **Phase 3 (Early Visual/Physical Golden) and Phase 4 (Roads / junction integration) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
+Reasoning escalation: **Phase 2B (Roads / junction integration) and Phase 3 (Early Visual/Physical Golden) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
 Receiving owner: **KFB WorldBuilder / WB2**
 Repository: `georg-doc/kayfabizarro`
 Draft PR: **#348**
@@ -17,7 +17,7 @@ This brief **supersedes** the earlier
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORK_WSA_OPEN_WORLD_INTEGRATOR_ONE_SHOT_2026-10-07.md`
 where that older file still refers to the former 37-row product contract.
 
-The binding product contract is now the operational Frozen Matrix v2.
+The binding product contract is the current machine-readable Frozen Matrix **operationalVersion 4**. The JSON version is authoritative; older v2/v3 wording is superseded.
 
 ---
 
@@ -182,7 +182,7 @@ Do **not** require:
 # EXECUTION PHASES
 
 This is one continuous ONE_SHOT.  
-**Continue automatically across green internal phases.**
+**Continue automatically across green internal phases, except the two explicit human acceptance steps: F-R39 Georg Visual Product Gate and F-R07 target-device performance run.**
 
 ---
 
@@ -213,6 +213,8 @@ Prove:
 - colliders/support return;
 - sculpt/Track state return;
 - invalid import preserves last-known-good.
+
+Before F-R29/F-R31 can become GREEN, explicitly reconcile and freeze the terrain evaluation order between **base field → river/village contributions → Track road-fit contribution → sculpt delta**. The current Foundation Return records a conflict because Track design excludes sculpt while the receiving sequence currently applies sculpt after road fit. Do not claim exact reconstruction until the chosen order and invalidation/recompute policy are source-backed, persisted and replayed.
 
 No feature fan-out on a broken foundation.
 
@@ -310,6 +312,49 @@ Dialogue/Activity may temporarily own control only through explicit handoff.
 
 ---
 
+## PHASE 2B · Roads / world traversal · BEFORE EARLY GOLDEN
+
+Before implementation, read:
+`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+
+Known donor facts — **evidence, not new canon**:
+
+- per-cell bespoke Bézier sweep is a rejected dead end;
+- Track Core v0.12 ROUNDABOUT can refuse some 60° configurations with STANDARD arms;
+- lab-working donor values included island radius 6.6, NARROW ring, fillet 6, splitter 0, arm length 18 with 9/12 fallback attempts;
+- T-junction / ordinary intersection is missing in Track Core v0.12;
+- the lab plate fallback is **not accepted** because a passing edge can cut it;
+- K=0.375 worked as a lab scale adapter but belongs in a proper Track profile/family if retained.
+
+Use these findings to avoid rediscovery, but inspect the current Track Core owner before applying any value.
+
+For the first island:
+- choose a route topology that uses a **cleanly compiled Track-Core-supported real junction/roundabout**;
+- **do not accept the plate fallback**;
+- if the required route genuinely needs a missing T/Y/4-way primitive, implement that primitive in the **Track Core owner**, not in Island code.
+
+One construction family:
+
+**Route intent → Track Core → Surface Truth → Joyride presentation**
+
+Prove on the same island:
+
+- ordinary road;
+- curve without seam/fold;
+- real junction/intersection where the route needs one;
+- street/sidewalk;
+- bridge/water crossing;
+- modest race/fun section;
+- Drive contact;
+- persistent RouteRecipe/segment identity.
+
+Do not rebuild the rejected bespoke Bézier road renderer.
+
+Historical tangent/radius fixes may be reused only where useful inside/upstream of Track Core.
+
+---
+
+
 ## PHASE 3 · Early Visual / Physical Golden · HARD GATE
 
 Do **not** continue broad feature fan-out until the actual runtime already looks and feels like a plausible KFB game world.
@@ -370,55 +415,23 @@ This is a **visual/product approval gate, not a debugging session**.
 - If Georg says **FAIL**, the Integrator resumes Phase-3 repair autonomously, using the critic evidence and any concrete feedback Georg volunteers.
 - Do not ask Georg to diagnose code, choose implementation details or debug intermediate seams.
 
+Before asking Georg, persist a crash-safe gate record on the exact candidate head:
+
+- receiving branch `ONE_SHOT_STATUS.json`: `F-R39 = PENDING`, exact head, critic evidence refs, screenshot refs, clip ref;
+- `main/kfb-hub/live/open-world-mvp.json`: projected `F-R39 = PENDING` with the same candidate head/evidence refs.
+
+After Georg answers:
+- persist `PASS` or `FAIL`, date/time and exact candidate head in both places;
+- a fresh chat may treat the gate as passed **only** when the persisted record says PASS for the same candidate head;
+- if candidate code materially changes after PASS, F-R39 returns to PENDING and must be re-gated if the change can affect the visible/physical Golden.
+
 Do **not** proceed to Phase 4 until this gate is PASS.
 
-If this gate is red, repair the foundation before continuing.
+If this gate is red, repair **Phase 3 / the smallest visual-physical seam that failed** before continuing.
 
 ---
 
-## PHASE 4 · Roads / world traversal
-
-Before implementation, read:
-`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
-
-Known donor facts — **evidence, not new canon**:
-
-- per-cell bespoke Bézier sweep is a rejected dead end;
-- Track Core v0.12 ROUNDABOUT can refuse some 60° configurations with STANDARD arms;
-- lab-working donor values included island radius 6.6, NARROW ring, fillet 6, splitter 0, arm length 18 with 9/12 fallback attempts;
-- T-junction / ordinary intersection is missing in Track Core v0.12;
-- the lab plate fallback is **not accepted** because a passing edge can cut it;
-- K=0.375 worked as a lab scale adapter but belongs in a proper Track profile/family if retained.
-
-Use these findings to avoid rediscovery, but inspect the current Track Core owner before applying any value.
-
-For the first island:
-- choose a route topology that uses a **cleanly compiled Track-Core-supported real junction/roundabout**;
-- **do not accept the plate fallback**;
-- if the required route genuinely needs a missing T/Y/4-way primitive, implement that primitive in the **Track Core owner**, not in Island code.
-
-One construction family:
-
-**Route intent → Track Core → Surface Truth → Joyride presentation**
-
-Prove on the same island:
-
-- ordinary road;
-- curve without seam/fold;
-- real junction/intersection where the route needs one;
-- street/sidewalk;
-- bridge/water crossing;
-- modest race/fun section;
-- Drive contact;
-- persistent RouteRecipe/segment identity.
-
-Do not rebuild the rejected bespoke Bézier road renderer.
-
-Historical tangent/radius fixes may be reused only where useful inside/upstream of Track Core.
-
----
-
-## PHASE 5 · Authoring + persistence
+## PHASE 4 · Authoring + persistence
 
 Reuse the existing WB2 editor/store.
 
@@ -456,7 +469,7 @@ Fresh load must restore:
 
 ---
 
-## PHASE 6 · Required KFB systems
+## PHASE 5 · Required KFB systems
 
 Integrate real current owners, not stand-ins.
 
@@ -559,7 +572,7 @@ Do not rebuild or replace it with generic UI.
 
 ---
 
-## PHASE 7 · Strong integrations · continue if bounded
+## PHASE 6 · Strong integrations · continue if bounded
 
 Target these in the same One-Shot where they remain low-risk:
 
@@ -598,11 +611,31 @@ Do not create a new global VFX runtime.
 
 ---
 
-## PHASE 8 · Performance
+## PHASE 7 · Performance
 
 Benchmark the actual integrated island.
 
 ### Binding performance-measurement conditions
+
+Named target device:
+`GEORG_PRIMARY_ACCEPTANCE_MACHINE`
+
+Do not invent a hardware model. The target is Georg's primary machine used for KFB visual/game acceptance. The instrumented run must persist enough environment metadata to identify the actual run, including where available:
+- user agent / browser version;
+- OS/platform;
+- viewport + devicePixelRatio + screen size;
+- hardwareConcurrency / deviceMemory when exposed;
+- WebGL vendor/renderer (including unmasked renderer when available);
+- exact candidate head/build id;
+- date/time and route id.
+
+WSA must prepare an **instrumented performance recorder** in the actual product that records the named Ground → Drive → Flight acceptance route to JSON (frame-time distribution, FPS percentiles/median, long-frame counts and available draw/triangle/material counters).
+
+This is the second planned human acceptance step:
+1. WSA prepares the run-ready candidate/authorized review surface and recorder.
+2. Georg runs the recorder once on `GEORG_PRIMARY_ACCEPTANCE_MACHINE` with the browser visible/focused and no meaningful parallel GPU workload.
+3. Persist the returned JSON/evidence against the exact candidate head in `ONE_SHOT_STATUS.json` and `main/kfb-hub/live/open-world-mvp.json`.
+4. Until that target-device JSON exists and satisfies the current F-R07 gate, **F-R07 = UNKNOWN / NOT GREEN**.
 
 A performance result may be used for F-R07 only when measured:
 
@@ -644,7 +677,7 @@ Do not visually destroy the KFB target merely to hit FPS.
 
 ---
 
-## PHASE 9 · Independent critics
+## PHASE 8 · Independent module critics
 
 ### Module critics
 
@@ -661,7 +694,7 @@ They:
 Required dimension threshold:
 **>= 8.5**
 
-### Different whole-product critic
+## PHASE 9 · Different fresh whole-product critic
 
 Run one continuous normal-input gauntlet:
 
@@ -923,4 +956,4 @@ Then execute this as **one continuous Island MVP product job**.
 
 Do not reopen broad architecture planning.
 Do not shorten the Frozen Matrix.
-Do not stop at an internal checkpoint.
+Do not stop at an internal checkpoint **except the explicit F-R39 Georg visual PASS/FAIL gate and the F-R07 target-device performance run**.
