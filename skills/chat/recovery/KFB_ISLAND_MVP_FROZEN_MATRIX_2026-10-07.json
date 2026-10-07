@@ -1,0 +1,457 @@
+{
+  "schema": "kfb.island-mvp-frozen-matrix/1",
+  "date": "2026-10-07",
+  "status": "FROZEN_NO_MVP",
+  "authority": "Georg / KFB",
+  "owner": "KFB WorldBuilder / WB2 · Issue #360 · PR #348",
+  "sourceCensus": "skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
+  "rule": "MVP exists only when all REQUIRED rows are GREEN. Placeholder substitution is never PASS.",
+  "required": [
+    {
+      "id": "F-R01",
+      "title": "Bounded island document inside WB2",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R02",
+      "title": "Independent island/session identity + local frame",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R03",
+      "title": "Continuous Surface Truth",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R04",
+      "title": "Stable WorldObject identity",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R05",
+      "title": "Deterministic seeded generation + bounded streaming",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R06",
+      "title": "Public owner APIs + failure isolation",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R07",
+      "title": "Simulation/render budget",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R08",
+      "title": "LLM-free deterministic default",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R09",
+      "title": "Binding Ground controls",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R10",
+      "title": "P0 locomotion feel",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R11",
+      "title": "P0 Cartoon Jump",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R12",
+      "title": "Camera",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R13",
+      "title": "Flight",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R14",
+      "title": "Mode arbitration",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R15",
+      "title": "Track Core construction + Joyride presentation",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R16",
+      "title": "Representative road-world seam",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R17",
+      "title": "Vehicle / Drive",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R18",
+      "title": "World traversal continuity",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R19",
+      "title": "KFB Clay visual canon",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R20",
+      "title": "Claybound Compatibility Gate",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R21",
+      "title": "Source fidelity / source isolation",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R22",
+      "title": "Authored composition, not random scatter",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R23",
+      "title": "Grounded placement / no pasted-on props",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R24",
+      "title": "Sky / Environment",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R25",
+      "title": "Signature Landmark",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R26",
+      "title": "Water / river / edge presentation",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R27",
+      "title": "PLAY / BUILD / GOD",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R28",
+      "title": "Asset Librarian + direct authoring",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R29",
+      "title": "Terrain sculpt",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R30",
+      "title": "Layered state",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R31",
+      "title": "Exact Save / fresh reload / import",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R32",
+      "title": "Resident",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R33",
+      "title": "ChatterBox",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R34",
+      "title": "Card + Almanac",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R35",
+      "title": "Billboard / HyperNormalisation",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R36",
+      "title": "Real Quote Pool content",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R37",
+      "title": "Audio / Jukebox",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R38",
+      "title": "Signature / Transition compatibility",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R39",
+      "title": "Early Visual/Physical Golden Gate",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R40",
+      "title": "Negative-Golden regression firewall",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R41",
+      "title": "No-placeholder firewall",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R42",
+      "title": "Fresh module critics",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R43",
+      "title": "Whole-product critic",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    },
+    {
+      "id": "F-R44",
+      "title": "Complete-matrix rule",
+      "class": "REQUIRED",
+      "status": "NOT_GREEN"
+    }
+  ],
+  "stronglyInclude": [
+    {
+      "id": "F-S01",
+      "title": "Theatre Curtain Claybound/KFB visual tune",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S02",
+      "title": "Backpack / universal Flight presentation",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S03",
+      "title": "Flight kinetics presentation",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S04",
+      "title": "Resident Life / Reaction / Encounter",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S05",
+      "title": "Resident performance layers",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S06",
+      "title": "Living-Toy authoring grammar",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S07",
+      "title": "Dialogue authoring rules",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S08",
+      "title": "Minimal Joyride HUD / Radio/Jukebox controls",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S09",
+      "title": "Shared Clay materialize/dematerialize presentation seam",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S10",
+      "title": "Bounded seeded procedural structure provider",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S11",
+      "title": "Environment construction subset",
+      "class": "STRONGLY_INCLUDE"
+    },
+    {
+      "id": "F-S12",
+      "title": "Fluff Work activity donor",
+      "class": "STRONGLY_INCLUDE"
+    }
+  ],
+  "optionalProof": [
+    {
+      "id": "F-O01",
+      "title": "UFO tractor-beam event",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O02",
+      "title": "Build/Repair/Rebuild visual assembly",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O03",
+      "title": "Harmless destructible prop/building section",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O04",
+      "title": "Life Tree",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O05",
+      "title": "Sound Words / Bubble / Emanata packs",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O06",
+      "title": "Historian / Chronicler",
+      "class": "OPTIONAL_PROOF"
+    },
+    {
+      "id": "F-O07",
+      "title": "Surf Card / bathtub Flight carrier",
+      "class": "OPTIONAL_PROOF"
+    }
+  ],
+  "later": [
+    {
+      "id": "F-L01",
+      "title": "Full Combat Arena / Card-Hex Platformer",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L02",
+      "title": "Full combat loop",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L03",
+      "title": "Full destruction sandbox",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L04",
+      "title": "130+ islands / complete Universe",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L05",
+      "title": "Every Deck / Resident / Card / Billboard",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L06",
+      "title": "Full quest/economy",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L07",
+      "title": "Multiplayer/network backend",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L08",
+      "title": "OSM second planner input",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L09",
+      "title": "Mandatory Life Tree / six-sector rule",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L10",
+      "title": "Full Fluff economy",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L11",
+      "title": "Complex Cabrio seat/ear/hand kinetics",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L12",
+      "title": "720° spiral / full Skydrive spectacle",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L13",
+      "title": "All three inter-island travel methods in first slice",
+      "class": "LATER"
+    },
+    {
+      "id": "F-L14",
+      "title": "Environment-Atlas S14–S17 recovery if source missing",
+      "class": "LATER"
+    }
+  ],
+  "combatDonorArbitration": {
+    "owner": "Combat Arena remains full Combat owner",
+    "currentProductPreference": "Seed World / Combat Mech POC appears stronger for shooting/VFX/destruction feel, per Georg",
+    "acceptance": "Source-isolate Combat Arena and Mech POC before selecting donor; winning donor feeds existing owner"
+  },
+  "travelModes": [
+    "PORTAL",
+    "TRACK_JOYRIDE",
+    "FREE_FLIGHT"
+  ],
+  "executionMode": "ONE_SHOT"
+}
