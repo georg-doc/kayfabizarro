@@ -1,3 +1,19 @@
+## CURRENT ADDITIVE OVERRIDE · 2026-10-07 · ROAD / TRACK CORE OWNERSHIP
+
+Georg clarified the existing Road + Joyride/Track requirement while the single Integrator is running.
+
+Binding canon:
+`skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md`
+
+- Coworker road graph/network may be reused for planning/topology intent only.
+- Ordinary roads and race/stunt roads use the same **Track Core** construction family: RouteRecipe/graph/profile/socket/junction/contact/road-bridge-tunnel-ramp pieces.
+- Joyride owns the required visible road/track presentation where applicable.
+- Continuous Terrain / Surface Truth remains macro terrain/support/collision owner and reconciles road contributions/seams.
+- No parallel bespoke Bézier road geometry/contact owner.
+- This clarifies existing MVP rows; it does not add scope or authorize a second runtime.
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED
 
 Georg has explicitly authorized exactly one **ChatGPT Work/WSA WorldBuilder Integrator** to start now.
