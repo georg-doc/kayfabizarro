@@ -121,6 +121,9 @@ A central Hub/ToolBox metadata update is intentionally not required for a prep-o
 
 **ChatGPT Work/WSA · Asset Librarian Integrator**
 
+Binding execution brief:
+`tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/WORK_WSA_IMPLEMENTATION_BRIEF.md`
+
 One bounded productive implementation job, using the existing Asset Librarian Site/project.
 
 For the substantial implementation run, name:
