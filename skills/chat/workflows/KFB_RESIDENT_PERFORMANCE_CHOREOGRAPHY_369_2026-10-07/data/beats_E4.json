@@ -1,0 +1,105 @@
+{
+ "E4": [
+  {
+   "beat": "1 inspect damage",
+   "F": {
+    "toeMinZ": 0.026,
+    "handGap": 1.247
+   },
+   "O": {
+    "toeMinZ": 0.038,
+    "handGap": 2.944
+   },
+   "headGap": 3.077,
+   "headMeshOverlapTris": 0
+  },
+  {
+   "beat": "2 fetch Fluff (carry)",
+   "F": {
+    "toeMinZ": 0.026,
+    "handGap": 0.486
+   },
+   "O": {
+    "toeMinZ": 0.052,
+    "handGap": 1.238
+   },
+   "headGap": 3.7,
+   "headMeshOverlapTris": 0,
+   "prop_kfb_fluff_small_0_palmDist": 0.194
+  },
+  {
+   "beat": "3 knead (Orc) / place (Farmer)",
+   "F": {
+    "toeMinZ": 0.026,
+    "handGap": 1.247
+   },
+   "O": {
+    "toeMinZ": 0.034,
+    "handGap": 1.927
+   },
+   "headGap": 3.658,
+   "headMeshOverlapTris": 0,
+   "prop_kfb_fluff_small_0_palmDist": 0.616,
+   "prop_kfb_fluff_small_1_palmDist": 0.964
+  },
+  {
+   "beat": "4 set upright + patch",
+   "F": {
+    "toeMinZ": 0.017,
+    "handGap": 0.953
+   },
+   "O": {
+    "toeMinZ": 0.049,
+    "handGap": 3.019
+   },
+   "headGap": 3.792,
+   "headMeshOverlapTris": 0,
+   "prop_kfb_fluff_small_0_palmDist": 0.477
+  },
+  {
+   "beat": "5 inspect result",
+   "F": {
+    "toeMinZ": 0.026,
+    "handGap": 1.247
+   },
+   "O": {
+    "toeMinZ": 0.052,
+    "handGap": 3.219
+   },
+   "headGap": 3.68,
+   "headMeshOverlapTris": 0
+  },
+  {
+   "beat": "6 celebrate (native)",
+   "F": {
+    "toeMinZ": 0.026,
+    "handGap": 1.007
+   },
+   "O": {
+    "toeMinZ": 0.052,
+    "handGap": 3.069
+   },
+   "headGap": 3.62,
+   "headMeshOverlapTris": 0
+  },
+  {
+   "beat": "7 resume / next task",
+   "F": {
+    "toeMinZ": 0.014,
+    "handGap": 1.026
+   },
+   "O": {
+    "toeMinZ": 0.058,
+    "handGap": 2.696
+   },
+   "headGap": 4.444,
+   "headMeshOverlapTris": 0
+  }
+ ],
+ "groundHandoverCrossRig": {
+  "orcPlaceHandsZ@12": 1.957,
+  "orcPlaceReachX": 0.608,
+  "farmerPickupHandsZ@12": 0.45,
+  "farmerPickupReach": 0.214
+ }
+}

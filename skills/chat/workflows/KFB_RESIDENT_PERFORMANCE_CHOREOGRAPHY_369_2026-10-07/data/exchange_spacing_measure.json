@@ -1,0 +1,43 @@
+{
+ "note": "Blender 5.2.2 run on Mac Mini, scene 369_ISOLATION, Rig_Medium Farmer_B (giver) / Lorekeeper (receiver); frames are Blender 24-fps scene frames (ML clips imported from 30-fps glTF time).",
+ "sameRigHandover": {
+  "giverClip": "ML:kfb_interaction_gift_give_a (perf_an01)",
+  "receiverClip": "ML:kfb_interaction_gift_receive_a",
+  "giverFrame24": 40,
+  "receiverFrame24": 32,
+  "eventsFrom": "PR #358 catalog patch: give release 50, receive grab 40 @30fps",
+  "searchRangeM": [
+   0.4,
+   1.98
+  ],
+  "stepM": 0.02,
+  "bestSpacingM": 1.14,
+  "handMidResidualM": 0.016,
+  "handoverPoint": [
+   -0.025,
+   0.006,
+   1.016
+  ],
+  "giverHandGapM": 0.54,
+  "receiverHandGapM": 0.549
+ },
+ "headMeshOverlapTris_bySpacing": {
+  "1.14": 0,
+  "1.20": 0,
+  "1.30": 0,
+  "1.40": 0,
+  "1.60": 0,
+  "note": "head/hat/glasses meshes of both actors at the handover frames; same result with a 14-deg head-back layer"
+ },
+ "stagingDistancesUsed": {
+  "socialTalk_MM_m": 1.6,
+  "LM_m": 2.7,
+  "note": "staging choices, not optimisations; per-beat head overlap measured 0 in beats_*.json"
+ },
+ "crossRigNoLayers": {
+  "orcHandsZ": 2.444,
+  "farmerHandsZ": 1.013,
+  "dz": 1.431,
+  "note": "Orc gift_give_fit_a f40 vs Farmer gift_receive_a f32; complements crossrig_handover_measure.json (bow/reach variants)"
+ }
+}
