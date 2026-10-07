@@ -292,3 +292,29 @@ Expected built-in corpus after Work import:
 - plus Georg's existing browser-local cards/sets, preserved rather than replaced.
 
 R2 redesign remains a separate later lane.
+
+
+## Curated consumer packs · Sound Words / Bubble Grammar / Emanata · 2026-10-07
+
+Status: **CURATION PASS · CONSUMER PACKS READY · VISUAL DESIGN NOT STARTED**
+
+Validation: **10/10 PASS**
+
+1. PASS · Emanata source mapping JSON parses.
+2. PASS · current KFB Emanata mapping contains exactly 8 canonical semantic slots.
+3. PASS · Sound Words pack contains exactly 6 curated references.
+4. PASS · Bubble Grammar pack contains exactly 5 curated references.
+5. PASS · Emanata / Reaction Symbols pack contains exactly 6 curated references.
+6. PASS · all pack references remain `sourceInspectedInIsolation=false`.
+7. PASS · none of the packs starts Claude Design automatically.
+8. PASS · all packs require source isolation before visual claims.
+9. PASS · Emanata pack links the semantic source-mapping file.
+10. PASS · presentation-only rule is preserved: Emanata read state; they do not write state.
+
+Prepared:
+- `EMANATA_SOURCE_MAPPING_01_2026-10-07.json`
+- `reference-packs/curated/kfb-sound-words-01/`
+- `reference-packs/curated/kfb-bubble-grammar-01/`
+- `reference-packs/curated/kfb-emanata-reaction-symbols-01/`
+
+No Site/runtime/deployment change.
