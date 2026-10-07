@@ -1,3 +1,4 @@
+import {compileTraversal} from './open-world/src/owners/track-core/traversal.mjs';
 /* KFB R2D island core v1
  * Source-derived from exact Claude Design donor:
  * tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/KFB_R2D_v0/island.js
@@ -40,9 +41,10 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
     for (let i = 1; i < n; i++) { const a = i / (n - 1) * Math.PI * 2 + R() * 0.9, d = 15 + R() * 11; C.push({ q: null, r: null, xz: [Math.cos(a) * d, Math.sin(a) * d], rad: 11 + R() * 7 }); }
     sdf = (x, z) => { let d = 1e9; for (const c of C) d = smin(d, Math.hypot(x - c.xz[0], z - c.xz[1]) - c.rad, 9); return d + 2.2 * fbm(x * 0.04, z * 0.04, seed + 3) - 0.4; };
   }
+  if(finalizedRecipe?.islandLayout){C=finalizedRecipe.islandLayout.lobes.map(c=>({...c}));sdf=(x,z)=>{let d=1e9;for(const c of C)d=smin(d,Math.hypot(x-c.xz[0],z-c.xz[1])-c.rad,9);return d+2.2*fbm(x*.04,z*.04,seed+3)-.4;};}
   const c0 = [C.reduce((a, c) => a + c.xz[0], 0) / C.length, C.reduce((a, c) => a + c.xz[1], 0) / C.length];
   const NA = 192, edgeR = new Float32Array(NA);
-  for (let a = 0; a < NA; a++) { const th = a / NA * Math.PI * 2, cx = Math.cos(th), cz = Math.sin(th); let r = 0; while (r < 95 && sdf(c0[0] + cx * r, c0[1] + cz * r) < 0) r += 0.5;
+  for (let a = 0; a < NA; a++) { const th = a / NA * Math.PI * 2, cx = Math.cos(th), cz = Math.sin(th); let r = 0; while (r < 250 && sdf(c0[0] + cx * r, c0[1] + cz * r) < 0) r += 0.5;
     let lo = Math.max(0, r - 0.5), hi = r; for (let k = 0; k < 7; k++) { const m = (lo + hi) / 2; if (sdf(c0[0] + cx * m, c0[1] + cz * m) < 0) lo = m; else hi = m; } edgeR[a] = lo; }
   const rAt = th => { const f = ((th / (Math.PI * 2)) % 1 + 1) % 1 * NA, i = Math.floor(f), t = f - i; return lerp(edgeR[i % NA], edgeR[(i + 1) % NA], t); };
   // Straße: Track Core, quer durch die Insel, Enden als Brückenköpfe zur Nachbarinsel
@@ -56,18 +58,20 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
   { const S0 = stream.samples, L = S0[S0.length - 1].s; let sl = 0; for (const q of S0) if (sdf(q.p[0], q.p[2]) < 0) sl = q.s;   // Brückenkopf: Ende 6 m hinter dem letzten Inselpunkt
     const over = L - sl - 6, pc = recipe.pieces[3]; if (Math.abs(over) > 1) { pc.length = +Math.max(3, pc.length - over).toFixed(1); stream = TC.compileRecipe(recipe); } }
   // Replay the saved complete recipe, never a mutable current fixture.
-  if(finalizedRecipe){recipe=structuredClone(finalizedRecipe);stream=TC.compileRecipe(recipe);}
+  let graph=null;
+  if(finalizedRecipe){recipe=structuredClone(finalizedRecipe);if(recipe.routes){graph=TC.compileGraph(recipe);const checks=TC.runGraphChecks(graph);if(!checks.pass)throw Error('Track graph failed '+JSON.stringify(checks));stream=compileTraversal(graph,recipe.traversal.parts,recipe.traversal);}else stream=TC.compileRecipe(recipe);}
   const samp = stream.samples, width = samp[0].prm.width;
   // Fahrbahnmitte aus den Slots (Rolle 'road' liegt zwischen Slot 6 und 7), nicht aus p: der Kern legt die Fahrbahn seitlich versetzt
   const sw = (q, i) => [0, 1, 2].map(k => q.p[k] + q.R[k] * q.slots[i][0] + q.U[k] * q.slots[i][1]);
   const poly = samp.map(q => { const a = sw(q, 6), b = sw(q, 7); return [(a[0] + b[0]) / 2, (a[2] + b[2]) / 2]; });
   const q0 = samp[Math.floor(samp.length / 2)], lats = q0.slots.map(s => s[0]), mid = (q0.slots[6][0] + q0.slots[7][0]) / 2;
-  const hw = Math.max(...lats.map(l => Math.abs(l - mid))) + 1.0, roadSurf = (sw(q0, 6)[1] + sw(q0, 7)[1]) / 2;
-  const roadDist = (x, z) => { let best = 1e9; for (let i = 0; i < poly.length - 1; i += 1) { const d = distSeg(x, z, poly[i], poly[i + 1]); if (d < best) best = d; } return best; };
+  const hw = (graph?Math.max(...Object.values(graph.routes).flatMap(r=>r.samples[0].slots.map(q=>Math.abs(q[0])))):Math.max(...lats.map(l => Math.abs(l - mid)))) + 1.0, roadSurf = (sw(q0, 6)[1] + sw(q0, 7)[1]) / 2;
+  const roadDist = (x, z) => { let best = 1e9;if(graph){for(const r of Object.values(graph.routes))for(let i=1;i<r.samples.length;i++){const a=r.samples[i-1].p,b=r.samples[i].p;best=Math.min(best,distSeg(x,z,[a[0],a[2]],[b[0],b[2]]));}for(const n of graph.nodes)best=Math.min(best,Math.abs(Math.hypot(x-n.center[0],z-n.center[2])-n.island-n.ringWidth/2));return best;} for (let i = 0; i < poly.length - 1; i += 1) { const d = distSeg(x, z, poly[i], poly[i + 1]); if (d < best) best = d; } return best; };
   const natural = (x, z) => 1.7 * fbm(x * 0.03, z * 0.03, seed + 5) + 0.55 * fbm(x * 0.09, z * 0.09, seed + 9);
   // Gebäudeplätze: Zellmitten abseits der Straße und des Rands
   const padR = 6.5, cand = C.slice(1).map(c => ({ c, rd: roadDist(c.xz[0], c.xz[1]), e: -sdf(c.xz[0], c.xz[1]) })).filter(o => o.rd > hw + 8 && o.e > 8.5).sort((a, b) => b.rd - a.rd);
   const pads = []; for (const o of cand) { if (pads.length >= 2) break; if (pads.every(p => Math.hypot(p.x - o.c.xz[0], p.z - o.c.xz[1]) > padR * 2 + 6)) pads.push({ x: o.c.xz[0], z: o.c.xz[1], r: padR, h: natural(o.c.xz[0], o.c.xz[1]) * 0.6 + 0.35, cell: [o.c.q, o.c.r] }); }
+  if(recipe.islandLayout?.pads){pads.splice(0,pads.length,...structuredClone(recipe.islandLayout.pads));}
   // großer Platz: offenster Punkt (Abstand zu Rand, Straße, Häusern)
   let big = null, bs = -1e9;
   for (let x = c0[0] - 45; x <= c0[0] + 45; x += 2) for (let z = c0[1] - 45; z <= c0[1] + 45; z += 2) { const e = -sdf(x, z); if (e < 8) continue;
@@ -100,7 +104,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
       let cross = null; for (const p of pts) if (roadDist(p[0], p[1]) < 1.6) { cross = p; break; }
       let lip = null; for (let i = 1; i < pts.length; i++) if (sdf(pts[i][0], pts[i][1]) >= -0.3) { const ddx = pts[i][0] - pts[i - 1][0], ddz = pts[i][1] - pts[i - 1][1], l = Math.hypot(ddx, ddz) || 1; lip = { p: pts[i], i, dir: [ddx / l, ddz / l] }; break; }
       creek = { pts, w: 1.3, cross, lip, dist: (x, z) => { let b = 1e9; for (let i = 0; i < pts.length - 1; i++) { const d = distSeg(x, z, pts[i], pts[i + 1]); if (d < b) b = d; } return b; } }; } }
-  return { seed, shape, cells: C, c0, sdf, NA, edgeR, rAt, recipe, stream, width, hw, roadY: roadSurf, roadDist, natural, pads, plazas, paths, poly, pond, creek };
+  return { seed, shape, cells: C, c0, sdf, NA, edgeR, rAt, recipe, stream, graph, width, hw, roadY: roadSurf, roadDist, natural, pads, plazas, paths, poly, pond, creek };
 }
 
 /* Höhe und Maske an jedem Punkt — analytisch, also für Gelände, Raster, Bäume und Häuser dieselbe Wahrheit */

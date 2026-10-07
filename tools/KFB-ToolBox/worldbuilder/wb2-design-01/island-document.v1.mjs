@@ -12,7 +12,7 @@ export function islandIdentity(value) {
 export function islandRecipe({id,seed,shape,biome,route}) {
   const identity=islandIdentity(id);
   if (!Number.isInteger(seed) || !['frei','hex'].includes(shape) || typeof biome!=='string') throw Error('Invalid island recipe');
-  if (!route || route.schema!=='kfb.route-recipe/0.1-draft' || !Array.isArray(route.pieces)) throw Error('Complete Track RouteRecipe required');
+  if (!route || !(route.schema==='kfb.route-recipe/0.1-draft'&&Array.isArray(route.pieces) || route.schema==='kfb.route-graph/0.1-draft'&&Array.isArray(route.routes)&&route.traversal&&route.islandLayout)) throw Error('Complete Track RouteRecipe required');
   return {id,...identity,seed,shape,biome,origin:[0,0,0],generator:{...ISLAND_GENERATOR},terrainOrder:TERRAIN_ORDER,route:structuredClone(route)};
 }
 export function validateIslandRecipe(value) {

@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import {buildJoyrideSidewalk} from '../procedural-test-world-01/joyride-sidewalk.v1.js';
+import {islandRoadRecipe} from '../procedural-test-world-01/island-road-recipe.v1.mjs';
 import {TAXI_SOURCE} from '../procedural-test-world-01/wb2-taxi.v1.js';
 import {islandIdentity,islandRecipe,validateIslandRecipe} from '../wb2-design-01/island-document.v1.mjs';
 import { makeIslandCore } from '../procedural-test-world-01/r2d-island-core.v1.js';
@@ -52,7 +54,7 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
   const maxR=Math.max(...P.edgeR),spawn=chooseSpawn(P);
   const tile={cx:+P.c0[0].toFixed(3),cz:+P.c0[1].toFixed(3),size:Math.ceil(maxR*2+28),seg:256};
   const group=new THREE.Group();group.name='R2D WorldBuilder presentation';
-  let presentation=null,buildings=null,heightReader=null,surfaceAdapter=null,roadMesh=null;
+  let presentation=null,buildings=null,heightReader=null,surfaceAdapter=null,roadMesh=null,roadMeshes=[];
   const zone={id:'r2d-island-'+Z.seed,status:'SOURCE_DERIVED_R2D_V0',
     counts:{buildings:P.pads.length,roadParts:1,landuse:1},
     provenance:{source:'R2D v0 Claude Design donor',commit:'74f7a690fbec88cf98ce0936f31b72ad3f1148f5',blob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'}};
@@ -74,7 +76,7 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
       if(!surfaceAdapter||!presentation)throw Error('Named island surface not ready');
       const points=[];for(let z=-30;z<=30;z+=2.731)for(let x=-30;x<=30;x+=3.137)if(P.sdf(x,z)<-1)points.push([x,z]);
       const report=surfaceAdapter.evidence(points),ray=new THREE.Raycaster();
-      for(const row of report.samples){ray.set(new THREE.Vector3(row.x,1000,row.z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects([presentation.top,roadMesh],false)[0];row.visible=hit?.point.y??null;row.visibleDelta=hit?Math.abs(row.support-hit.point.y):null;}
+      for(const row of report.samples){ray.set(new THREE.Vector3(row.x,1000,row.z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects([presentation.top,...roadMeshes],false)[0];row.visible=hit?.point.y??null;row.visibleDelta=hit?Math.abs(row.support-hit.point.y):null;}
       report.maxPhysicsDelta=Math.max(...report.samples.map(s=>s.delta??Infinity));report.maxVisibleDelta=Math.max(...report.samples.map(s=>s.visibleDelta??Infinity));
       report.pass=report.maxPhysicsDelta<.002&&report.maxVisibleDelta<.0001;return report;
     },
@@ -96,7 +98,10 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
       doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+(island?.generator.trackCommit||TRACK_PIN).slice(0,7),buildings:'Registry native building families → K2/v10'};return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
-    async mount({scene,renderer,heightAt}){heightReader=heightAt;if(island){const M=await import('./island-surface-adapter.v1.mjs');surfaceAdapter=await M.createIslandSurface(Z.seed);}const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});const road=ST.buildTrack(THREE,P.stream,mat);road.name='R2D Track Core road';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);roadMesh=road.children[0];if(surfaceAdapter)surfaceAdapter.road(roadMesh);buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
+    async mount({scene,renderer,heightAt}){heightReader=heightAt;if(island){const M=await import('./island-surface-adapter.v1.mjs');surfaceAdapter=await M.createIslandSurface(Z.seed);}const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});let road;
+      if(P.graph){const U=await clayContext(),items=Object.entries(P.graph.routes).map(([id,stream])=>({id,plan:{stream,sdf:P.sdf},field:F})),joy=await prepareJoyride({nodes:items,connections:[]});road=new THREE.Group();for(const n of items)road.add(buildClayStrand(THREE,n.plan.stream,{U,palette:PALETTES.burg||PALETTES['burg'],...joy.contexts.get(n.id)}));road.add(buildJoyrideSidewalk(P.graph.routes['village.circle.village'],U));for(const node of P.graph.nodes){const paint=Object.values(P.graph.routes)[0].samples[0].paint;road.add(ST.buildNode(THREE,{...node,anchor:null},paint,mat));}}
+      else road=ST.buildTrack(THREE,P.stream,mat);
+      road.name='R4 Track Core + Joyride';road.traverse(o=>{if(o.isMesh){const paint=o.name.startsWith('M2 ·')||o.material?.polygonOffset;o.castShadow=!paint;o.receiveShadow=true;if(!paint)roadMeshes.push(o)}});group.add(road);if(!P.graph)roadMeshes=[road.children[0]];roadMesh=roadMeshes[0];if(surfaceAdapter)roadMeshes.forEach((mesh,i)=>surfaceAdapter.road(mesh,'route/'+i));buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
     dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal});mesh.visible=false;if(heightReader)presentation.refreshSurface(heightReader);surfaceAdapter?.ground(presentation.top)},
     onTerrain(){if(heightReader)presentation?.refreshSurface(heightReader);if(presentation)surfaceAdapter?.ground(presentation.top);return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
     stepPhysics(dt){surfaceAdapter?.physics.step(dt)},dispose(){surfaceAdapter?.dispose();presentation?.dispose();group.removeFromParent()},
@@ -204,7 +209,8 @@ export async function prepare(id,options={}){
     const arch=makeArchipelago(recipeSet,TC),joyride=await prepareJoyride(arch);
     return archipelagoWorld({id,TC,ST,R2C,arch,joyride});
   }
-  const core=makeIslandCore(Z.seed,TC,Z.shape,stored?.route);
+  const route=stored?.route||(options.island?.startsWith('r4-golden')?islandRoadRecipe(TC):null);
+  const core=makeIslandCore(Z.seed,TC,Z.shape,route);
   const island=options.island?(stored||islandRecipe({id:options.island,seed:Z.seed,shape:Z.shape,biome:Z.biome,route:core.plan.recipe})):null;
   return singleWorld({id,Z,TC,ST,R2C,core,island});
 }

@@ -1,3 +1,15 @@
+# R4 · Track/Joyride technical milestone · continue Early Golden
+
+Parent `8f3a78c6a074e7cbf3c904a4845c3db6003db671`; containing commit identifies this milestone. **NO MVP; all 44 REQUIRED remain NOT_GREEN.**
+
+New `r4-golden…` island documents consume an authored Track graph: native v0.12 three-arm ROUNDABOUT with its real sockets, coastal loop, stable segment IDs and full persisted traversal/layout recipe. No plate fallback or Island road solver. Existing R2D field accepts authored lobes/pads. Track-owner traversal concatenates existing route samples/native node lane paths; it does not generate geometry or integrate movement. 397.42m closed path. Track graph geometry checks pass; unused south>south radius warning 4.68m remains recorded, active path south>north.
+
+Joyride J14 native source shell was rendered in isolation before consuming its visible language (street and curve screenshots). Split source JSON was assembled locally without changing its contents; donor shell/renderer not integrated. Existing J14/T4 strand and source curb/slab geometry are reused on WB2 streams. Actual rendered solid meshes feed shared SurfaceTruth/Rapier; paint stays non-solid. Independent Guard caught legacy ST paint entering support; non-graph documents retain their original body-only binding.
+
+Normal input drove 519.34m including roundabout and closure, zero blocked contacts, then exited to Ground. 23 tests pass, 1 prior autostep TODO. Full graph/traversal/field replay, upright frame and seam checks pass. This is technical evidence only. Sidewalk visibility/support, bridge/water/terrain, authored composition, source Clay, lighting, landmark and first-frame quality remain in Early Golden; F-R39 is NOT_READY. F-R07 UNKNOWN. Continue automatically; no Site/Hub routing change, merge or promotion.
+
+---
+
 # R4 · Drive technical milestone · continue Roads / Early Golden
 
 Parent `ea50b450748f3c0edc2f8aa12059b7e34c0cb9ce`; exact milestone is its containing commit. Same WB2 owner, branch and PR #348. **NO MVP**, all 44 REQUIRED retained and NOT_GREEN. This is an implementation/evidence boundary inside the continuous ONE_SHOT.

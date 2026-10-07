@@ -10,8 +10,8 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "ea50b450748f3c0edc2f8aa12059b7e34c0cb9ce",
-  "milestone": "player-drive-technical-1",
+  "baseHead": "8f3a78c6a074e7cbf3c904a4845c3db6003db671",
+  "milestone": "roads-track-technical-1",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
@@ -592,5 +592,27 @@
       "typeScript": "PASS"
     },
     "guard": "CONTINUE; scaled proxy/rejected root pose repaired; source route OPEN metadata and endstop corrected. Continuous rotational sweep remains a limitation; stationary rotation endpoint rejection tested."
+  },
+  "roads": {
+    "status": "TECHNICAL_IMPLEMENTATION_NOT_VISUAL_PASS",
+    "recipe": "island-road-recipe.v1.mjs",
+    "traversalLengthM": 397.4156377337001,
+    "normalInputDistanceM": 519.3444421218117,
+    "evidence": [
+      "evidence/r4-roads/normal-input-loop.json",
+      "evidence/r4-roads/source-joyride-j14-street.jpg",
+      "evidence/r4-roads/source-joyride-j14-curve.jpg"
+    ],
+    "tests": {
+      "pass": 23,
+      "quarantinedTodo": 1
+    },
+    "guard": "Continue after preserving body-only support for legacy non-graph ST road. Patched.",
+    "unresolved": [
+      "Full visible bridge/water/terrain reconciliation and presentation in Phase3",
+      "Sidewalk/source Clay, authored composition, sky and first frame Golden",
+      "Unused south>south U-turn path radius warning 4.68m; active traversal uses south>north",
+      "No continuous rotational collision sweep claimed"
+    ]
   }
 }

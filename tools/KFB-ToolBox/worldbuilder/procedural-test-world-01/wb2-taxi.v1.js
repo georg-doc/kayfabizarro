@@ -30,7 +30,7 @@ export function createTaxiDrive(A,{root,remember}={}){
 }
 
 function createIslandTaxiDrive(A,{root}){
- const physics=A.world.surfaceAdapter.physics,events=new AbortController(),keys=new Set(),frame=uniformFrame(A.world.routePlan.stream.samples,A.world.routePlan.recipe.closed===true),id=root.userData.sceneObjectId;
+ const physics=A.world.surfaceAdapter.physics,events=new AbortController(),keys=new Set(),frame=uniformFrame(A.world.routePlan.stream.samples,A.world.routePlan.stream.closed===true),id=root.userData.sceneObjectId;
  let active=false,driver=null,distance=0,contacts=0,lastFramePose=null;
  root.updateMatrixWorld(true);const inverse=root.matrixWorld.clone().invert(),box=new THREE.Box3(),v=new THREE.Vector3();root.traverse(m=>{if(!m.isMesh)return;const matrix=inverse.clone().multiply(m.matrixWorld),p=m.geometry.attributes.position;for(let i=0;i<p.count;i++)box.expandByPoint(v.fromBufferAttribute(p,i).applyMatrix4(matrix))});
  const nativeHalf=box.getSize(new THREE.Vector3()).multiplyScalar(.5),nativeCentre=box.getCenter(new THREE.Vector3()),half=new THREE.Vector3(),centre=new THREE.Vector3(),lastScale=new THREE.Vector3();let proxy=null;
