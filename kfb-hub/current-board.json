@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.5",
-  "updatedAt": "2026-10-07T04:48:00+02:00",
+  "revision": "2026-10-07.6",
+  "updatedAt": "2026-10-07T06:52:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Live Hub routing: #369 Blender MCP Resident Performance remains the first Blender-impact job; #367 Shield Fit follows. New parallel #372 Claude Design Theatre Curtain Recovery/Productization is READY from GitHub-only sources: preserve the physical Curtain v2 donor, diagnose the failed Birthday/WSA plaque/wordmark/SVG-overlay integration, and develop a motion-safe aged-velvet/proscenium look without touching Open World runtime."
+    "note": "Curtain update: #372 Claude Design Theatre Curtain Recovery/Productization is PASS on r3 and checked into main at 7ca4a36b. The accepted donor candidate now has real gathering, rounded pleats/hem weight, motion-safe oxblood macro patina and aged stage hardware; fake plaque/sign/wordmark/SVG-overlay direction is rejected. Runtime integration waits for the receiving architecture seam. #369 Resident Performance remains the first current Blender-impact job; #367 Shield Fit follows."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -104,13 +104,13 @@
     },
     {
       "id": "issue-372-curtain-recovery",
-      "title": "READY · Claude Design · Theatre Curtain Recovery + Productization",
-      "summary": "Bounded GitHub-only design job: isolate the recovered physical Curtain v2 donor, compare it against the failed Birthday/WSA integration, reject fake clay plaque/replacement wordmark/SVG-overlay presentation, and develop a believable aged dark-red theatre look with motion-safe material strategy. Covers loading, Character Select and optional in-game reveal as one reusable module.",
-      "badge": "READY · GITHUB-ONLY · NO SITE ACCESS",
-      "action": "Issue #372 öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/issues/372",
-      "executor": "Claude Design · donor-first visual recovery",
-      "nextExecutor": "Later runtime integrator only after accepted design + receiving architecture seam"
+      "title": "PASS · Theatre Curtain r3 · donor ready",
+      "summary": "Claude Design recovery is complete with Georg PASS on r3. Checked into main at 7ca4a36b. Candidate preserves the physical donor cloth kernel and adds proper gathering, rounded folds/weighted hem, momentum, opaque oxblood velvet with motion-safe macro patina, aged proscenium/pelmet/rail/floor, and one seven-state module for loading, Character Select and in-game reveal. Runtime integration remains later.",
+      "badge": "PASS · DONOR READY",
+      "action": "Curtain RETURN öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md",
+      "executor": "Claude Design · completed",
+      "nextExecutor": "Receiving runtime integrator after Architecture Freeze / explicit seam"
     }
   ],
   "briefings": [
@@ -193,24 +193,23 @@
     },
     {
       "id": "brief-claude-curtain-recovery",
-      "title": "Claude Design · Theatre Curtain Recovery + Productization",
-      "badge": "READY · DONOR-FIRST",
-      "status": "ready",
-      "provider": "Claude Design · GitHub-readable visual recovery",
-      "desc": "Use the physical Curtain v2 donor and repo-backed aged-red-velvet/proscenium reference. Audit the failed Birthday/WSA overlay/plaque/wordmark direction as negative evidence. Produce one isolated modular candidate plus KEEP/TUNE/REJECT, material look study and implementation handoff. No Site access or Open World writes.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_THEATRE_CURTAIN_RECOVERY_PRODUCTIZATION_2026-10-07.md",
+      "title": "Theatre Curtain r3 · PASS donor + runtime handoff",
+      "badge": "PASS · CHECKED IN MAIN",
+      "status": "hold",
+      "provider": "Claude Design · completed donor recovery",
+      "desc": "Georg PASS on r3. Do not rerun design recovery. Use the checked-in Return + Implementation Handoff when the receiving runtime seam opens. Open seams are quarantined/later: tieback, ring-rail readability, impact sliver, idle binding, WebGL fallback, source-pin reconcile and low-end/mobile performance.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md",
       "tags": [
-        "claude design",
         "curtain",
-        "theatre",
+        "pass",
+        "donor ready",
+        "r3",
         "loading",
         "character select",
-        "reveal",
-        "velvet",
-        "recovery",
+        "runtime handoff",
         "issue 372"
       ],
-      "prompt": "Read skills/chat/CLAUDE_DESIGN_THEATRE_CURTAIN_RECOVERY_PRODUCTIZATION_2026-10-07.md on main and follow its read-first chain exactly. Do not require Site access. First show the real KFB Theatre Curtain v2 donor in isolation, then compare the failed Birthday/WSA integration against it. Keep the physical two-panel cloth behavior; reject fake clay plaque/replacement wordmark/SVG-overlay presentation. Explore 2–3 motion-safe aged-theatre material/look directions using the pinned GitHub reference, choose one preferred direction, build only an isolated donor-preserving design candidate, and return the required GitHub-readable evidence/handoff. No PR #348/Open World runtime writes, no merge, no Live promotion."
+      "prompt": "Do not restart Curtain design. Read tools/KFB-ToolBox/_inbox/KFB Theatre Curtain Recovery Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md and IMPLEMENTATION_HANDOFF.md from main. Preserve the accepted r3 donor and integrate only when the receiving architecture seam explicitly opens. No fake plaque/sign/wordmark/SVG overlay; no second Curtain simulation owner."
     }
   ],
   "openQuestions": [
@@ -300,9 +299,14 @@
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_EXECUTION_2026-10-07.md"
     },
     {
-      "title": "Theatre Curtain · Claude Design recovery",
-      "summary": "Issue #372 donor-first recovery/productization brief: physical Curtain v2 + old-theatre material direction; failed plaque/wordmark/SVG overlay is negative evidence.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_THEATRE_CURTAIN_RECOVERY_PRODUCTIZATION_2026-10-07.md"
+      "title": "Theatre Curtain r3 · PASS Return",
+      "summary": "Accepted r3 donor package and runtime handoff; checked into main at 7ca4a36b.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md"
+    },
+    {
+      "title": "Theatre Curtain · Runtime handoff",
+      "summary": "Integration contract and open technical seams for the later receiving runtime owner.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/IMPLEMENTATION_HANDOFF.md"
     }
   ],
   "surfaceRoles": {
