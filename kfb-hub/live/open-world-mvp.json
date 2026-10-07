@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.4",
-  "updatedAt": "2026-10-07T11:21:32.278Z",
+  "revision": "2026-10-07.5",
+  "updatedAt": "2026-10-07T11:30:36.762558+00:00",
   "owner": "KFB Open World / Recovery Audit",
   "source": "Draft PR #373 · recovery/open-world-master-acceptance-audit-2026-10-07",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -2051,7 +2051,7 @@
   ],
   "hubView": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
   "recoveryPr": "https://github.com/georg-doc/kayfabizarro/pull/373",
-  "surfaceStatus": "ONE_TIME_SITE_MIGRATION_PREPARED",
+  "surfaceStatus": "LIVE_JSON_ONLY_REFRESH_PROVEN",
   "updateModeAfterMigration": "WEB_CHAT_OR_RECOVERY_AUDIT_TO_GITHUB_MAIN_JSON_TO_HUB_REFRESH",
   "siteRepublishRequiredForRoutineUpdates": false,
   "cloudflareUsed": false,
@@ -2059,11 +2059,11 @@
   "hexRole": "HEX_ROLE = MACRO_TERRAIN_OWNER · ARCHITECTURE DRIFT",
   "critic": {
     "identity": "OPEN_WORLD_RECOVERY_CRITIC_2026-10-07_01",
-    "state": "FINAL_REVIEW_PENDING",
+    "state": "FINAL_CONTRACT_AND_DEPLOYED_HUB_REVIEW_COMPLETE",
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Preserve Coworker seed/streaming/ground mechanisms within existing WorldBuilder owner; correct continuous Surface Truth mesh/collision/contributions and stable IDs first; reuse shared WB2 authoring/sculpt/store/import, then existing-owner KFB seams; independent whole-product gauntlet before human review.",
-  "recoverySummary": "Rettbar sind Welt-Erzeugung, Streaming, Bodenbewegung und vorhandene Editor-/Speichermechanismen. Zuerst müssen Continuous Terrain, gemeinsame Stützhöhe und stabile Objekt-IDs zusammenpassen; danach folgen die verpflichtenden KFB-Systeme.",
+  "recoverySummary": "Rettbar sind Welt-Erzeugung, Streaming, Bodenbewegung und vorhandene Editor-/Speichermechanismen. Zuerst müssen Continuous Terrain, gemeinsame Stützhöhe und stabile Objekt-IDs zusammenpassen; danach folgen die verpflichtenden KFB-Systeme. Der vollständige Recovery-Plan ist unabhängig geprüft. Nächster Gate: Freigabe eines Integrators; Produktarbeit bleibt bis dahin angehalten.",
   "overview": "Die Architektur bleibt bei einem WorldBuilder-Owner. Hex darf Adressen und semantische Regionen liefern; sichtbarer Boden und Kollision gehören Continuous Terrain. Visuelle Donors bleiben ungeprüft, bis ihr tatsächliches Design isoliert gezeigt wurde.",
   "architecture": [
     {
@@ -2161,5 +2161,12 @@
         }
       ]
     }
-  ]
+  ],
+  "recoveryGate": "RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR",
+  "runtimeAuthorized": false,
+  "siteVersion": 11,
+  "siteDeployment": "appgdep_6ac62ac353f881919a27f0867e90903e",
+  "siteSource": "6d9b51689c67a29b896e925fd4806e144f961ae2",
+  "evidenceCheckpoint": "53c1e48399e7ff561b5058338dfa0deb10cce7cf",
+  "noRepublishProof": "https://github.com/georg-doc/kayfabizarro/blob/53c1e48399e7ff561b5058338dfa0deb10cce7cf/skills/chat/recovery/evidence/OPEN_WORLD_RECOVERY_2026-10-07/NO_REPUBLISH_PROOF.json"
 }

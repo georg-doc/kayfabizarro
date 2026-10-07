@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.11",
-  "updatedAt": "2026-10-07T12:22:00+02:00",
+  "revision": "2026-10-07.12",
+  "updatedAt": "2026-10-07T11:31:42.721Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World runtime remains paused. The complete MVP requirements are exposed as a read-only internal view of the existing KFB Production Hub GPT Site. Product status remains binary: NO MVP until every required Acceptance-Matrix row is GREEN. The Hub view is designed for GitHub-live JSON refresh after one Site-shell publish, so routine matrix/status updates require no further Work/Sites run."
+    "note": "Open World Recovery Audit independently completed. Product remains NO MVP. One safe integration strategy is documented; runtime work remains paused pending separate authorization of exactly one Integrator. The existing Hub MVP view is live and JSON-only refresh is proven; routine updates no longer require Work/Sites publication."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -26,13 +26,13 @@
   "p0": [
     {
       "id": "issue-360-open-world-recovery-audit",
-      "title": "#360 · P0 · Open World MVP Living Doc · Production Hub",
-      "summary": "Open World runtime remains paused. The MVP Living Doc belongs inside the existing Production Hub GPT Site and reads its matrix/status from GitHub-main live JSON after one bounded Site-shell update. It is an audit/control view, not an MVP candidate. Fresh ChefWSA must freeze/verify the full matrix and independently challenge it before one later Integrator is authorized.",
-      "badge": "NO MVP · HUB LIVING MATRIX",
+      "title": "#360 · Recovery-Plan bereit · NO MVP",
+      "summary": "Vollständige Matrix und Donors sind unabhängig geprüft. Zuerst Continuous Terrain/Stützhöhe und stabile Objekt-IDs korrigieren; dann vorhandenen Editor/Speichern und die KFB-Systeme verbinden. Produktarbeit bleibt bis zur Freigabe eines Integrators angehalten. Der Hub zeigt Änderungen nach GitHub-JSON + Neuladen.",
+      "badge": "RECOVERY PLAN READY · NO MVP",
       "action": "MVP Living Doc im Hub öffnen",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
-      "executor": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA · PR #373 · audit only",
-      "nextExecutor": "Fresh independent critic of the frozen matrix; one Integrator only after RECOVERY PLAN READY"
+      "executor": "ChatGPT Work/WSA · Recovery Lead completed · PR #373",
+      "nextExecutor": "Exactly one named Integrator after separate Georg authorization; no audit rerun or routine Site republish"
     }
   ],
   "p1": [
@@ -140,12 +140,12 @@
     },
     {
       "id": "brief-work-open-world-recovery-audit",
-      "title": "ChefWSA · Open World Master Acceptance Recovery",
-      "badge": "READY · PR #373 · AUDIT ONLY",
-      "status": "ready",
-      "provider": "ChatGPT Work/WSA · fresh Recovery Lead / ChefWSA",
-      "desc": "Run the canonical Recovery Lead brief. In the same Work/WSA run, add the Open World MVP Living Doc as an internal view of the existing Production Hub Site, backed by main/kfb-hub/live/open-world-mvp.json with cache:no-store + local fallback. Prove a GitHub-JSON-only revision appears after refresh with no second Site publish.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/WORK_WSA_OPEN_WORLD_RECOVERY_LEAD_BRIEF_2026-10-07.md",
+      "title": "Open World Recovery · abgeschlossener Return",
+      "badge": "COMPLETE · PLAN READY · NO MVP",
+      "status": "hold",
+      "provider": "ChatGPT Work/WSA · Recovery Lead completed",
+      "desc": "Audit abgeschlossen. 37 Pflichtanforderungen bleiben erhalten; Terrain-Drift und vorhandene Donors sind geprüft. Genau ein Integrator kann nach gesonderter Freigabe den dokumentierten Plan ausführen. Hub-Ansicht und JSON-only Refresh sind veröffentlicht/geprüft.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md",
       "tags": [
         "open world",
         "recovery",
@@ -158,7 +158,7 @@
         "hex",
         "donor census"
       ],
-      "prompt": "Run Draft PR #373 Recovery Lead brief exactly. No Open World runtime writes. Use the 43-row input ledger as anti-feature-loss baseline, independently verify/freeze it, and in the same run publish exactly one bounded in-place Production Hub Site update adding ?view=open-world-mvp. The view must live-load main/kfb-hub/live/open-world-mvp.json with cache:no-store and fallback, preserve all accepted Hub v10 controls/state, and prove a later JSON-only revision becomes visible after refresh without another Work/Site publish."
+      "prompt": "Do not rerun the completed audit or republish the Hub for data changes. Read https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md. Product remains NO MVP. Runtime work begins only after separate authorization of exactly one WorldBuilder Integrator. Preserve all37 required rows, actual source-isolation gates and existing owners."
     },
     {
       "id": "brief-resident-performance-blender",

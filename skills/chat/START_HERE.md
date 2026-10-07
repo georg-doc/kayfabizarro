@@ -1,3 +1,11 @@
+## CURRENT OVERRIDE · 2026-10-07 · Recovery audit completed
+
+#360 Recovery audit and the one-time existing-Hub migration are complete. Current route: **RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR**. Product remains **NO MVP** and runtime work remains paused until Georg separately authorizes exactly one Integrator. The older ready-to-run audit instructions below are history; do not rerun them. Read the current [owning Recovery Return](https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md) and frozen ledger on PR #373.
+
+Actual source audit classified **HEX_ROLE = MACRO_TERRAIN_OWNER · ARCHITECTURE DRIFT** at exact Dropbox candidate head 5f0cdfa2eb4c6927c50ca399f8dbd62fa79dc3a4. Correct continuous mesh/support/collision/contributions and stable IDs/override invalidation first, then reuse WB2 editor/sculpt/store and existing KFB owners. Actual visual source isolation remains required before presentation KEEP/ADAPT/integration.
+
+The existing Production Hub internal view is verified: https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp. One in-place v11 publication preserved accepted v10 Hub behavior. Subsequent JSON-only revision2026-10-07.4 was visibly loaded while v11/source/deployment stayed unchanged; ordinary matrix/status/donor/proof edits now use main/kfb-hub/live/open-world-mvp.json + refresh. No Cloudflare route, product Site, merge or Live promotion.
+
 # KFB Chat Production Router
 
 Status: **CURRENT ROUTER v1.0**

@@ -1,3 +1,12 @@
+## 2026-10-07 · Open World recovery complete and Hub JSON-only refresh proven
+
+- Complete frozen ledger: 37 required rows + 6 explicit nonblockers; product remains NO MVP (0 GREEN / 14 PARTIAL / 16 MISSING / 4 CONFLICT / 3 UNPROVEN).
+- Actual Dropbox candidate head 5f0cdfa2eb4c6927c50ca399f8dbd62fa79dc3a4; HEX_ROLE = MACRO_TERRAIN_OWNER · ARCHITECTURE DRIFT. Verified donor mechanisms and full 24-item proposed Freeze classification preserved on Draft PR #373.
+- Fresh independent critic corrections incorporated. Production Guard: RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR. Runtime work remains paused pending separate authorization; no automatic merge/promotion.
+- Existing Hub updated exactly once in place: v11/source6d9b51689c67a29b896e925fd4806e144f961ae2/deployment appgdep_6ac62ac353f881919a27f0867e90903e. Exact ?view=open-world-mvp desktop/mobile and independent deployed QA passed.
+- JSON-only main commit3b345b04b2964ba8aff02de9dcd1711872a40ef2 changes only revision/updatedAt; visible .4 after refresh with unchanged Site version/deployment. Routine updates now GitHub JSON + refresh; no more Work/Sites for data/status.
+- Owning Return: https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md. All visual fidelity without actual source isolation remains UNPROVEN. No Open World runtime/product Site/Cloudflare changes.
+
 ## 2026-10-07 · CORRECTION · Open World MVP Living Doc belongs in Production Hub GPT Site
 
 - Georg explicitly rejected the temporary Cloudflare/pages.dev Living-Doc route. It has been removed again from `cloudflare-live`.
