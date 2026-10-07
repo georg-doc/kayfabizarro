@@ -11,7 +11,7 @@ Plan the already-prepared Open World Autopilot/Gauntlet work as a downstream lan
 Source:
 - Draft PR **#366**
 - branch `planning/open-world-autopilot-gauntlet-2026-10-07`
-- current head `bf87006c1543749f4326e05225bce23e41989fb8`
+- source packet head before this planning note: `bf87006c1543749f4326e05225bce23e41989fb8` (use PR #366 for the current branch head)
 - read first: `skills/chat/workflows/KFB_OPEN_WORLD_AUTOPILOT_GAUNTLET_2026-10-07/START_HERE.md`
 
 ## Scheduling decision
