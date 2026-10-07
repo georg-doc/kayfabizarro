@@ -1,0 +1,334 @@
+{
+ "shrugGeorg": {
+  "source": "BLENDER MCP/_inbox/shrug trim - Standing Arguing.fbx (KayKit-compatible Mixamo skeleton, 68 f @30 fps, 2.27 s)",
+  "method": "MOTION_LIB/ml_bake.py retarget() onto real resident armatures (Farmer_B, Orc Brute)",
+  "actions": [
+   "M|MX|perf|kfb_perf_shrug_georg_raw",
+   "M|MX|perf|kfb_perf_shrug_georg_loop",
+   "L|MX|perf|kfb_perf_shrug_georg_raw",
+   "L|MX|perf|kfb_perf_shrug_georg_loop"
+  ],
+  "loopSeam": {
+   "rawLastToFirstStepDeg": 11.46,
+   "rawMedianStepDeg": 3.87,
+   "rawMaxInsideStepDeg": 14.42,
+   "rawMaxInsideNote": "wrist.l f5-11 and f46-48, continuous over several frames, not a spike",
+   "loopFixMethod": "last 16 frames slerped to frame 1 (smoothstep)",
+   "loopFixSeamDeg": 0.0
+  },
+  "rootTravel": {
+   "M": 0.021,
+   "L": 0.053
+  },
+  "handInsideHead_step2": {
+   "farmer_b": 8,
+   "farmer_a": 0,
+   "lorekeeper": 0,
+   "gothgirl": 0,
+   "orcbrute": "4 flagged, but nearest head distance 1.66 m -> inside-test false positive"
+  },
+  "scene": "369_SHRUG_COMPARE (frames 1-136, 30 fps): KFB shrug_a | Georg raw | Georg loop-fix, Farmer_B row + Orc Brute row"
+ },
+ "groundHandover": {
+  "scene": "369_GROUND_HANDOVER (frames 1-470, 24 fps)",
+  "orc": [
+   "gift_give_fit_a f12-40 (show gift)",
+   "kneeling_a crossfade 24 f (bend down), gift released at f41 from 1.12 m, lands f49 1.1 m in front",
+   "KK Walking_A reversed half cycle, root back 1.04 m (staging)",
+   "standing_greeting_a (wave/invite)",
+   "KK Idle_A"
+  ],
+  "farmer_b": [
+   "KK Idle_A",
+   "KK Walking_A 72 f, 2.48 m (0.83 m/s measured)",
+   "opening_a_lid_a (careful unbox), lid follows hands f246-326, then drops beside",
+   "KK Cheering",
+   "KK Idle_A"
+  ],
+  "gift": "clay present a-cube x1.4 (0.56 x 0.56 x 0.42 m), runtime prop motion only",
+  "newClips": 0
+ },
+ "groundHandover_r2": {
+  "feedback": "Georg 2026-10-07: gift between wrists not palms, locked arms far forward, wrists tilted out (also wave), gift too small/hard to see, farmer stands in box lifting lid; wants cartoon lid push",
+  "wristCause": "KFB Motion Library clips put the hand rotation on wrist.* (35-93 deg) and leave hand.* at 0; KayKit native clips keep wrist at 0 and curl hand.* 35-55 deg. Fix used: wrist=identity, hand=KayKit Idle_A hand pose (actions L|MLBWn|...). Applies to every ML clip on both rigs; not yet applied to Medium.",
+  "gift": "clay present a-round (orange/purple) x1.7 = 0.93 m wide, box 0.51 m + lid",
+  "orc": [
+   "KK Idle_A body + 2-bone arm IK, palms on gift sides (max palm error 0.05 m)",
+   "bend down = L opening_a_lid_a f0-51 (wrist fixed), IK lowers gift to ground 1.05 m ahead",
+   "release f68, rise = same clip reversed",
+   "back off 1.56 m with KK Walking_A reversed (staging)",
+   "standing_greeting_a wrist fixed",
+   "KK Idle_A"
+  ],
+  "farmer": [
+   "KK Walking_A",
+   "opening_a_lid_a f56-90 only (no deep bend, no lift over the box)",
+   "feet >= 0.21 m from box, 0 farmer vertices inside box",
+   "lid: pushed back by the hands, tips, hops off in an arc to the side, 2 small bounces",
+   "KK Cheering"
+  ],
+  "residualContacts": "Orc mitts sink a few cm into the gift sides while bending; Orc head 6-10 vertices into the bow at the lowest frames",
+  "newClips": 0
+ },
+ "groundHandover_r3": {
+  "georg": "2026-10-07: gift size per rig class (Medium/Large/Legacy), scale down for Large; cheerful readable colourways from the 3 Joyride palettes, not Christmas red-green; lid push only; gift pops; loot item floats above with glow and turns while the farmer cheers; Orc small friendly gesture without bent wrists",
+  "giftScale": {
+   "Rig_Medium": "round present x0.9 (body 0.45 m, fits gift_give/receive hand gap 0.54 m)",
+   "Rig_Large": "round present x1.7 (body 0.85 m, IK carry palms on sides)",
+   "Rig_Legacy": "open"
+  },
+  "palettes": "scripts/kfb369_gift.py PALETTES: A canyon, B bikini, C otown, 3 body/ribbon pairs each (hex from KFB_OPEN_WORLD_STYLEGUIDE 00_referenzblatt/01-farbpaletten, track-look.v5 WORLDS). Flat colours, not clay yet.",
+  "used": "A_canyon_1 #ef5a22 / #f2b632",
+  "orc": "presenting gesture = right-arm IK sweep toward the gift f150-214 (no clip); during reveal ML idle_happy_a with wrist fix",
+  "reveal": [
+   "lid push/hop (as r2)",
+   "gift squash-stretch f233-252",
+   "loot rises from the box f247-260 with overshoot, floats at 2.0 m beside the box, turns 360 deg / 80 f, bobs 5 cm",
+   "glow ring + 4 orbiting twinkles + point light, 12-sparkle burst f245-270",
+   "farmer KK Cheering x2 from f256"
+  ],
+  "lootPlaceholder": "Lorekeeper_Tome (KayKit, main @34150cd1), scaled to 0.8 m",
+  "newClips": 0
+ },
+ "groundHandover_r4": {
+  "note": "Blender crashed after r3; scenes recovered from Blender autosave (65404_autosave.blend, 06:44) by appending 369_GROUND_HANDOVER / SHRUG_COMPARE / GIFT_LINEUP / ISOLATION into a fresh session",
+  "loot": {
+   "card": "real KFB card 'False Friend' (Uncle FrizzleBob's Kayfabizarro Kards TRUST & BETRAYAL, page 2 bottom-right, generous crop) as front texture; KFB backside with ink band (CARD_SURF gate 2, option B) as back; 1.62 x 0.90 m slab; pops out tall-thin, squashes wide, shows the back, flips to the front at f268-294, then sways +/-16 deg; glowing frame on the card",
+   "radio": "Tiny Treats Pleasant Picnic radio.gltf (main @76f2f021), 1.3 m wide (bigger than the 0.93 m box); spat out tall-thin -> squash -> settle; turns 360 deg / 90 f with glow ring"
+  },
+  "switch": "view layers 'loot_card' and 'loot_radio' in scene 369_GROUND_HANDOVER",
+  "blendCopy": "blend/KFB369_gift_reveal_card_radio_r1.blend (new file, Georg's session left untitled)"
+ },
+ "groundHandover_r5": {
+  "georg": "deformation belongs to the box that spits the item; item keeps proportions, ends small, may bounce; glow from the object's own outline; UFO-lab materialize grammar; RPG light column as a cone matching the box opening and the item size",
+  "box": "gift root squash/stretch f236-266: duck 1.26x0.68, spit 0.78x1.48, wobble; farmer clearance min 0.137 m",
+  "item": "card 1.02 m wide, radio 0.45 m wide (true proportions); pivot fixed at float height, bounce 1.05/0.98 after reveal",
+  "materialize": "per-material reveal: visible where reveal > 0.6*height + 0.32*noise, glowing transition edge (0.07); reveal f260-286 (hull f264-292); 160 particles per item fly from the box mouth on curved paths into surface points, arrival time follows the same height+noise threshold",
+  "glow": "fresnel rim emission in the item materials + inverted hull shell (weld + solidify, outer shell only, emissive, back-face culled); preview bloom via compositor Glare (Bloom, threshold 1.0)",
+  "beam": "open cone from the box opening (r 0.40) to the item (card r 0.62, radio r 0.34), fresnel edge, rising wave bands, grows f245-256, fades f300-318",
+  "stars": "6 clay stars in Joyride colours burst from the box at f249, arc out, land, vanish by f300 (collection GH_FX_stars)",
+  "blendCopy": "blend/KFB369_gift_reveal_materialize_r2.blend"
+ },
+ "groundHandover_r6": {
+  "georg": "box too far / farmer walks too long; motion jerky; Orc back-walk not KayKit; down-pointing gesture looks bent -> short open 'here you go' gesture; light cone/particle glow rejected -> chosen: light only from the box",
+  "changes": [
+   "Orc no longer walks back (no reversed walk); Orc stays at -1.9, gift 1.05 m ahead",
+   "farmer walks 35 f (1.2 m) instead of 72 f",
+   "all loops use the exact clip length (Idle_A M 25.6 / L 47.2, Walking_A 25.6) - the old 25/47 cuts popped every cycle",
+   "Orc gesture f140-176: PR #358 gift_give_fit_a release part (action f30-66), wrist fixed",
+   "particles and cone hidden; item rises straight out of the opening and floats above the box (offset 0.35 m toward camera to clear both bodies)",
+   "card rises portrait (fits the 0.85 m opening), turns landscape at f264-280, flips to the front f290-314",
+   "box: emissive inner disc + warm point light inside (peak 110 W at the spit), bloom in preview only"
+  ],
+  "clearance_min_m": {
+   "farmer/card": 0.092,
+   "farmer/radio": 0.037,
+   "orc/card": 0.056,
+   "orc/radio": 0.084
+  },
+  "blendCopy": "blend/KFB369_gift_reveal_r4_boxlight.blend"
+ },
+ "groundHandover_r7": {
+  "date": "2026-10-07",
+  "feedback": "characters too close, foot flicker, farmer walk slides, lazy item emergence",
+  "footFlicker": {
+   "cause": "quaternion sign mismatch between NLA clips",
+   "fix": "hemisphere alignment to KK Idle_A",
+   "orcFootJumpsOver25deg": 0
+  },
+  "farmerWalk": {
+   "method": "root keyed per frame from planted foot (stance lock) + gaussian sigma 1.5",
+   "travel_m": 0.698,
+   "start_x": 0.765,
+   "end_x": 0.067,
+   "maxSlip_m_per_frame": 0.022,
+   "meanSlip_m_per_frame": 0.005,
+   "before": "root forced 1.2 m over 35 f while clip stride supports 0.7 m"
+  },
+  "stepBack": {
+   "farmer": {
+    "clip": "M|KK|MovementAdvanced|Dodge_Backward",
+    "start": 243,
+    "scale": 1.6,
+    "x": [
+     0.067,
+     0.587
+    ]
+   },
+   "orc": {
+    "clip": "L|KK|MovementAdvanced|Dodge_Backwards",
+    "start": 245,
+    "scale": 2.2,
+    "x": [
+     -1.9,
+     -3.127
+    ]
+   },
+   "recovery": "root locked to both feet during idle blend-in"
+  },
+  "clayProxy": {
+   "script": "scripts/kfb369_proxy.py",
+   "presentation_point": [
+    -1.3,
+    -0.25,
+    1.45
+   ],
+   "timeline": {
+    "spit": 249,
+    "apex": 259,
+    "land": 266,
+    "rest": 275,
+    "dissolve": [
+     282,
+     300
+    ],
+    "cardFlip": [
+     302,
+     322
+    ]
+   },
+   "shapes": {
+    "card": {
+     "kind": "slab",
+     "proxy_dims": [
+      1.16,
+      0.2,
+      0.71
+     ]
+    },
+    "radio": {
+     "kind": "block",
+     "proxy_dims": [
+      0.837,
+      0.554,
+      0.654
+     ]
+    }
+   },
+   "dissolve": "(1-h)*0.6+(1-r)*0.12+noise*0.28, glowing edge <0.06, clay #f2b632",
+   "fragments": {
+    "card": 30,
+    "radio": 34
+   },
+   "radioMaxDim_m": 0.72
+  },
+  "cameras": {
+   "GH_CAM": "front 3/4",
+   "GH_CAM2": "reverse from +Y",
+   "GH_CAM3": "farmer shoulder"
+  },
+  "blendCopy": "blend/KFB369_gift_reveal_r5_clayproxy.blend",
+  "previews": [
+   "previews/R7_CARD_CAM1_sheet.png",
+   "previews/R7_RADIO_CAM1_sheet.png",
+   "previews/R7_CARD_GH_CAM2_sheet.png",
+   "previews/R7_CARD_GH_CAM3_sheet.png",
+   "previews/R7_RADIO_GH_CAM3_sheet.png"
+  ],
+  "openDefects": [
+   "Orc Dodge_Backwards reads as combat lunge",
+   "farmer dodge drags trailing foot (native clip)",
+   "Orc 'here you go' gesture still give_fit",
+   "shrug look undecided"
+  ]
+ },
+ "groundHandover_r8": {
+  "date": "2026-10-07",
+  "feedback": "item must jump straight out of the box and float/rotate above it; clay lump shown too long; radio too small; zero-G float with tilt; dodge cleaner",
+  "script": "scripts/kfb369_reveal_r8.py",
+  "replaces": "r7 clay lump (GH_PX_*) removed",
+  "method": "clay twin = inflated copy of the item's own mesh in clay; blobs shoot up from the box mouth and stick; twin builds bottom-up, then dissolves top-down over the real item",
+  "timeline": {
+   "launch": 249,
+   "build": [
+    250,
+    257
+   ],
+   "dissolve": [
+    259,
+    267
+   ],
+   "glowShell": [
+    262,
+    272
+   ],
+   "settled": 270
+  },
+  "position": {
+   "itemCentreWorld": [
+    -0.82,
+    0.02,
+    1.58
+   ],
+   "boxCentre": [
+    -0.85,
+    0,
+    0.255
+   ],
+   "boxTop_z": 0.51
+  },
+  "zeroG": "spin decays from 0.55 rad/f to 1 turn per 200 f; tilt x 0.28 rad @97 f, y 0.22 rad @131 f; bob 0.055 m @74 f; drift 0.03/0.025 m",
+  "scale": {
+   "radioMaxDim_m": 1.0,
+   "radioRootScale": 0.769,
+   "card_m": [
+    1.08,
+    0.69
+   ],
+   "rule": "uniform scale 0.2->1 during launch, proportions kept"
+  },
+  "dodgeRecovery": "post-dodge idle with eased animated influence (farmer 16 f, orc 18 f), root re-locked to both feet",
+  "reactions": {
+   "farmerCheering": 278,
+   "orcIdleHappy": 284
+  },
+  "clearance_min_m": {
+   "card-farmer": 0.318,
+   "card-orc": 0.954,
+   "radio-farmer": 0.315,
+   "radio-orc": 0.983
+  },
+  "blendCopy": "blend/KFB369_gift_reveal_r6_claytwin_zeroG.blend",
+  "previews": [
+   "previews/R8_CARD_CAM1_sheet.png",
+   "previews/R8_RADIO_CAM1_sheet.png",
+   "previews/R8_CAM3_card_radio_sheet.png",
+   "previews/R8_RADIO_CAM2_sheet.png"
+  ],
+  "openDefects": [
+   "Orc Dodge_Backwards still reads as combat lunge, holds ~20 f",
+   "farmer dodge trailing foot drags (native clip)",
+   "Orc 'here you go' gesture still give_fit",
+   "true mesh fracture/reassembly of the prop not built (clay twin is the substitute)"
+  ],
+  "status": "PASS_WITH_TUNE (Georg 2026-10-07)",
+  "modular": "data/loot_reveal_params.json overrides scripts/kfb369_reveal_r8.py; override test ZP 1.9 / radio 0.8 / spin 120 f applied and reverted"
+ },
+ "tuneBacklog_groundHandover": [
+  {
+   "id": "T1",
+   "what": "step-back reaction looks foot-glued: characters should be pushed/knocked back by the spit, not slide with planted feet",
+   "owner": "later tune pass"
+  },
+  {
+   "id": "T2",
+   "what": "farmer should push the lid sideways, not towards/into the Orc",
+   "owner": "later tune pass"
+  },
+  {
+   "id": "T3",
+   "what": "Orc 'here you go' invite gesture still the give_fit release (reads as punch)",
+   "owner": "later tune pass"
+  },
+  {
+   "id": "T4",
+   "what": "shrug look decision (Georg trim clip vs kfb_perf_shrug_a)",
+   "owner": "Georg"
+  },
+  {
+   "id": "T5",
+   "what": "true mesh fracture/reassembly of the prop in clay (clay twin is the substitute)",
+   "owner": "optional"
+  }
+ ]
+}
