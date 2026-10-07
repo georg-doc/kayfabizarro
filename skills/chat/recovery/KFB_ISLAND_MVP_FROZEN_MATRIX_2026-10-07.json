@@ -540,99 +540,187 @@
     {
       "id": "F-S01",
       "title": "Theatre Curtain Claybound/KFB visual tune",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Theatre Curtain accepted donor + KFB Clay/Claybound visual owner",
+      "readiness": "DONOR_PASS_TUNE_LOOK",
+      "integrationRule": "Preserve r3 cloth kernel/momentum/states; adapt only material/stage presentation needed to live in the KFB clay world.",
+      "acceptance": "Curtain works in real game entry/reveal without fake overlays and reads Claybound-compatible.",
+      "quarantine": "May defer final cosmetic tune only if required transition compatibility F-R38 is already green."
     },
     {
       "id": "F-S02",
       "title": "Backpack / universal Flight presentation",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Travel Flight owner + actor equipment/attachment owner",
+      "readiness": "CONCEPT_PLUS_DONORS",
+      "integrationRule": "Backpack grants Flight capability to compatible actors; Flight physics stay in Travel owner; attachment/presentation stays actor/equipment-owned.",
+      "acceptance": "One representative actor equips visible backpack/gear and enters Flight with stable mount/scale/contact.",
+      "quarantine": "Special backpack art polish can defer; universal Flight F-R13 cannot."
     },
     {
       "id": "F-S03",
       "title": "Flight kinetics presentation",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Travel flight-state presentation consumers + Motion/VFX/Audio owners",
+      "readiness": "DONOR_READY_TUNE",
+      "integrationRule": "Consume bank/pitch/boost/climb/impact facts for bounded body response, propulsion, speed lines/contrails and SFX.",
+      "acceptance": "Flight visibly communicates speed, bank and thrust without changing physics or camera ownership.",
+      "quarantine": "Barrel-roll choreography and advanced secondary motion may defer."
     },
     {
       "id": "F-S04",
       "title": "Resident Life / Reaction / Encounter",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Resident Life semantic model + current Resident owner",
+      "readiness": "READY_DATA_ADAPT",
+      "integrationRule": "Use deterministic POI/activity/affect/memory semantics as inputs to current Resident runtime; no second simulation owner.",
+      "acceptance": "At least one resident activity changes/recoveries react to world/player event coherently.",
+      "quarantine": "Deeper long-term memory may defer."
     },
     {
       "id": "F-S05",
       "title": "Resident performance layers",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Resident Performance #369 + Motion/EyeRig/PetMouth/Emanata owners",
+      "readiness": "SOURCE_READY_PARTIAL",
+      "integrationRule": "Reuse source-proven pose/proximity/gesture/micro-motion layers; add no new clips unless current consumer proves gap.",
+      "acceptance": "Representative Resident interaction has readable body/face performance and recovery.",
+      "quarantine": "Non-critical extra gestures/characters may defer."
     },
     {
       "id": "F-S06",
       "title": "Living-Toy authoring grammar",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Living-Toy Event Grammar authoring layer",
+      "readiness": "READY_AUTHORING_GRAMMAR",
+      "integrationRule": "Use scenario families/text-scarcity/group-witness rules to shape events; map only to real runtime events after owner audit.",
+      "acceptance": "Required interactions avoid everyone-speaks/filler behavior and recover to meaningful state.",
+      "quarantine": "Historian-specific families can defer."
     },
     {
       "id": "F-S07",
       "title": "Dialogue authoring rules",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "ChatterBox/Resident authoring QA using Etherington + NIE rules",
+      "readiness": "READY_AUTHORING_GRAMMAR",
+      "integrationRule": "Apply causality, SAID/MEANT/WANTED, adjacency pairs, silence/interruption/worldview voice; no NIE runtime dependency.",
+      "acceptance": "Representative dialogue passes line-level audit and is character/context-specific.",
+      "quarantine": "Broader writer-room tooling may defer."
     },
     {
       "id": "F-S08",
       "title": "Minimal Joyride HUD / Radio/Jukebox controls",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Joyride HUD + Audio/Jukebox existing consumers",
+      "readiness": "DONOR_READY",
+      "integrationRule": "Use only minimal controls that expose real Drive/Audio state; preserve diegetic/low-chrome game view.",
+      "acceptance": "Necessary drive/audio controls are usable without obscuring world or duplicating owner state.",
+      "quarantine": "Nonessential HUD widgets may defer."
     },
     {
       "id": "F-S09",
       "title": "Shared Clay materialize/dematerialize presentation seam",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "UFO/Clay transform presentation adapter + durable state owners",
+      "readiness": "PASS_TUNE_DONOR",
+      "integrationRule": "Share only visual breakup/materialize/assemble grammar; Transfer, Damage and Construction/Rebuild remain separate semantic states.",
+      "acceptance": "At least one low-risk object transition uses shared clay presentation and restores/retains canonical source object correctly.",
+      "quarantine": "Can defer if it threatens required world/persistence gates."
     },
     {
       "id": "F-S10",
       "title": "Bounded seeded procedural structure provider",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Seed World generator donor behind WB2 world model",
+      "readiness": "DONOR_READY_ADAPT",
+      "integrationRule": "Use deterministic street/parcel/BuildingRecipe grammar only as provider; Surface Truth height, Track Core roads, Claybound/source gates remain authoritative.",
+      "acceptance": "If used, generated structure has stable ID, street relation, source/visual role and passes Grounding/Claybound/performance gates.",
+      "quarantine": "Entire provider may defer if authored POI cluster already satisfies required composition."
     },
     {
       "id": "F-S11",
       "title": "Environment construction subset",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Style Reference / Etherington curated consumer packs",
+      "readiness": "SOURCE_PACKS_READY_INSPECTION_AS_NEEDED",
+      "integrationRule": "Select only 3–6 exact references for concrete island problems; source-isolate before deriving KFB rules.",
+      "acceptance": "Any applied cloud/environment/grounding rule cites inspected reference IDs and improves actual runtime composition.",
+      "quarantine": "Unused reference families stay research-only."
     },
     {
       "id": "F-S12",
       "title": "Fluff Work activity donor",
-      "class": "STRONGLY_INCLUDE"
+      "class": "STRONGLY_INCLUDE",
+      "owner": "Fluff Work Motion PR356 + Resident activity consumer",
+      "readiness": "BLENDER_READY_RUNTIME_PROOF_MISSING",
+      "integrationRule": "Use existing 17 Medium/13 Large clips only if selected activity needs them; EyeRig owner stays authoritative.",
+      "acceptance": "One chosen Fluff/work activity consumes real clip(s) with contact/readability in world.",
+      "quarantine": "If no MVP activity needs Fluff, defer without creating new clips."
     }
   ],
   "optionalProof": [
     {
       "id": "F-O01",
       "title": "UFO tractor-beam event",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "UFO Event Lab donor + world event adapter",
+      "readiness": "PASS_TUNE_DONOR",
+      "proof": "One bounded tractor-beam event transfers/restores a prop or actor using real event phases and clay presentation.",
+      "guard": "Must not become new world-state owner or block core MVP."
     },
     {
       "id": "F-O02",
       "title": "Build/Repair/Rebuild visual assembly",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Construction/Rebuild state owner + Clay transform presentation",
+      "readiness": "DESIGN_SEAM_READY",
+      "proof": "One object assembles/rebuilds visibly while durable construction state remains separate from transfer/damage.",
+      "guard": "No Minecraft/voxel architecture mandate."
     },
     {
       "id": "F-O03",
       "title": "Harmless destructible prop/building section",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Stable WorldObject/damage state + Seed World destruction donor",
+      "readiness": "DONOR_READY_OPTIONAL",
+      "proof": "One harmless target persists bounded damage/destruction state and reloads correctly.",
+      "guard": "Does not activate full combat/destruction sandbox."
     },
     {
       "id": "F-O04",
       "title": "Life Tree",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Landmark/content owner",
+      "readiness": "OPTIONAL_DESIGN",
+      "proof": "If selected, Life Tree passes source/Claybound/grounding/silhouette gates and is not generic or mandatory.",
+      "guard": "Never encode tree as island schema requirement."
     },
     {
       "id": "F-O05",
       "title": "Sound Words / Bubble / Emanata packs",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Existing bubble/Emanata/Graphic-FX presentation owners",
+      "readiness": "CURATED_PACKS_VISUAL_ANALYSIS_PENDING",
+      "proof": "Only if concrete consumer needs it: source-inspected pack feeds real presentation owner.",
+      "guard": "Curated source pack alone is not runtime acceptance."
     },
     {
       "id": "F-O06",
       "title": "Historian / Chronicler",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Historian/Chronicler authoring proposal",
+      "readiness": "AUTHORING_READY_RUNTIME_OPTIONAL",
+      "proof": "If used, sparse narration adds unseen context/afterglow without competing with Resident dialogue or world truth.",
+      "guard": "No new narrator state owner or constant commentary."
     },
     {
       "id": "F-O07",
       "title": "Surf Card / bathtub Flight carrier",
-      "class": "OPTIONAL_PROOF"
+      "class": "OPTIONAL_PROOF",
+      "owner": "Travel Flight owner + special carrier presentation",
+      "readiness": "EXISTING_DONORS_LATER_PRESENTATION",
+      "proof": "Optional special carrier uses same Flight owner and safe mount/handoff after universal Flight is green.",
+      "guard": "Cannot replace universal Backpack/Flight capability requirement."
     }
   ],
   "later": [
@@ -718,7 +806,7 @@
     "FREE_FLIGHT"
   ],
   "executionMode": "ONE_SHOT",
-  "operationalVersion": 1,
+  "operationalVersion": 2,
   "lastOperationalizedAt": "2026-10-07",
   "receivingOwnerState": {
     "repo": "georg-doc/kayfabizarro",
