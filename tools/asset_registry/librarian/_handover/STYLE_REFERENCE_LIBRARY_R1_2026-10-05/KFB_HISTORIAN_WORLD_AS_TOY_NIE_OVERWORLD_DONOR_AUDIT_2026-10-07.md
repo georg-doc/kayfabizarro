@@ -20,6 +20,28 @@ Separately, the Overworld already articulated **“Die Welt als Spielzeug”** a
 
 None of these historical layers is automatically current Open World runtime truth. They are donors to be reconciled after Coworker intake + Architecture Freeze.
 
+## Current identity decision · 2026-10-07
+
+Georg's preferred narrator direction is now:
+
+- **Role:** Historian
+- **Persona register:** Chronicler
+- **Working identity:** Historian / Chronicler
+
+Historical alternatives remain donors only:
+- FrizzleBob / Carny-absurd;
+- robotic date-computer / Ship Computer/device.
+
+Binding authoring contract:
+`KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`
+
+Keep the useful architectural separation:
+`NARRATOR ROLE = HISTORIAN`
+`NARRATOR PERSONA = CHRONICLER`
+
+This lets later visual/embodiment experiments reuse old donor ideas without changing the preferred narrative identity.
+
+
 ---
 
 # 1 · HISTORIAN / NARRATOR DONORS
