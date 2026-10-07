@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "packId": "style-pack:kfb-narration-reaction:001",
+  "status": "CURATED_CONSUMER_PACK_TEXTUAL_RESEARCHED_VISUAL_INSPECTION_PENDING",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "currentExecutor": "ChatGPT Web Chat",
+  "intendedConsumers": [
+    "historian-meta-narrator",
+    "chatterbox",
+    "resident-dialogue",
+    "resident-performance"
+  ],
+  "claudeDesignJobStarted": false,
+  "sourceInspectionRequired": true,
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-caption-boxes-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Caption Boxes",
+      "role": "NARRATION_CARRIER",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-caption.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-fourth-wall-2018-06",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "The 4th Wall",
+      "role": "META_NARRATION",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/06/how-to-think-when-you-write-fourth-wall.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-failure-2018-11",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "Failure",
+      "role": "FAILURE_CHARACTER_REVEAL",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-faliure.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-excuses-2018-11",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "Excuses",
+      "role": "FAILURE_SUBTEXT",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/11/how-to-think-when-you-write-excuses.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-group-dynamic-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "The Group Dynamic",
+      "role": "GROUP_WITNESS_REACTION",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-group.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-local-colour-2018-05",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "Local Colour",
+      "role": "PLACE_SPECIFIC_VOICE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/05/how-to-think-when-you-write-local.html",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-memories-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_06",
+      "title": "Memories",
+      "role": "CALLBACK_RELATIONSHIP_MEMORY",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-memories.html",
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "targetQuestions": [
+    "When does a Historian line add unseen context instead of restating the screen?",
+    "How should repeated failure reveal character and relationship rather than trigger generic quips?",
+    "How should a group select one response, one interruption or silence instead of everyone speaking?",
+    "How can local colour and memory differentiate the same event across Residents and islands?",
+    "How should Caption Boxes carry narration without becoming a second UI/dialogue owner?"
+  ],
+  "expectedLaterOutput": [
+    "Historian authoring contract",
+    "failure/revival reaction patterns",
+    "group witness selection rules",
+    "relationship-memory callback rules",
+    "caption carrier handoff"
+  ],
+  "boundary": [
+    "Seed 06 contains only canonical new source records; Caption Boxes remains owned by Seed 04.",
+    "Historian is presentation/content proposal only.",
+    "World and Resident owners supply facts.",
+    "No current event API is assumed before Architecture Freeze."
+  ]
+}
