@@ -2,16 +2,22 @@
 // Mesh, Rapier triangles and support queries use this exact global triangular lattice.
 import { fbm2, seedDomainOffset } from './wb2-noise.js';
 import { hexToWorld, worldToAxial } from './hex';
+import { dabDeltaAt } from '../owners/wb2-sculpt/terrain-sculpt.js';
 import { CHUNK } from './units';
 export const SURFACE_SUBDIV = 4;
 export interface SurfaceContribution {
   id: string; owner: 'river' | 'village' | 'track-core';
   sample(x:number,z:number,base:number): {height:number;weight:number} | null;
 }
+export interface SurfaceContact {
+  id:string; owner:'track-core';
+  heightAt(x:number,z:number):number|null;
+}
 export interface SculptStroke { id:string;x:number;z:number;radius:number;amount:number }
 export class SurfaceTruth {
   revision=0;
   readonly contributions = new Map<string,SurfaceContribution>();
+  readonly contacts = new Map<string,SurfaceContact>();
   readonly strokes = new Map<string,SculptStroke>();
   private samples = new Map<string,number>();
   private listeners = new Set<()=>void>();
@@ -20,6 +26,8 @@ export class SurfaceTruth {
   invalidate() {this.revision++;this.samples.clear();for(const fn of this.listeners)fn();}
   contribute(c:SurfaceContribution) {this.contributions.set(c.id,c);this.invalidate();}
   removeContribution(id:string) {if(this.contributions.delete(id))this.invalidate();}
+  contact(c:SurfaceContact) {this.contacts.set(c.id,c);this.invalidate();}
+  removeContact(id:string) {if(this.contacts.delete(id))this.invalidate();}
   sculpt(s:SculptStroke) {if(!Number.isFinite(s.amount)||s.radius<=0)throw Error('invalid sculpt');this.strokes.set(s.id,{...s});this.invalidate();}
   restore(strokes:SculptStroke[]) {this.strokes.clear();for(const s of strokes)this.strokes.set(s.id,{...s});this.invalidate();}
   baseHeight(x:number,z:number) {
@@ -44,19 +52,27 @@ export class SurfaceTruth {
       const s=c.sample(w.x,w.z,y);if(s)y+=(s.height-y)*Math.max(0,Math.min(1,s.weight));
     }
     for(const s of this.strokes.values()) {
-      const t=Math.max(0,1-Math.hypot(w.x-s.x,w.z-s.z)/s.radius);y+=s.amount*t*t*(3-2*t);
+      y+=dabDeltaAt(w.x,w.z,s.amount<0?'lower':'raise',s.x,s.z,s.radius,Math.abs(s.amount));
     }
     // Float32 is the shared collision/render precision, including support interpolation.
     y=Math.fround(y);this.samples.set(key,y);
     if(this.samples.size>200000){let n=50000;for(const k of this.samples.keys()){this.samples.delete(k);if(!--n)break;}}
     return y;
   }
-  heightAt(x:number,z:number) {
+  groundHeightAt(x:number,z:number) {
     const a=worldToAxial(x,z),u=(a.q+.5)*SURFACE_SUBDIV,v=(a.r+.5)*SURFACE_SUBDIV;
     const i=Math.floor(u),j=Math.floor(v),f=u-i,g=v-j;
     const h00=this.vertex(i,j),h10=this.vertex(i+1,j),h01=this.vertex(i,j+1),h11=this.vertex(i+1,j+1);
     // Same diagonal, same barycentric interpolation as the rendered/collided triangles.
     return f+g<=1 ? h00+(h10-h00)*f+(h01-h00)*g : h11+(h01-h11)*(1-f)+(h10-h11)*(1-g);
+  }
+  /** Highest solid kit surface above the macro ground. Bridges leave the river ground intact. */
+  heightAt(x:number,z:number) {
+    let y=this.groundHeightAt(x,z);
+    for(const c of [...this.contacts.values()].sort((a,b)=>a.id.localeCompare(b.id))) {
+      const h=c.heightAt(x,z);if(h!==null&&Number.isFinite(h))y=Math.max(y,h);
+    }
+    return y;
   }
   slopeAt(x:number,z:number) {const e=.1;return Math.hypot((this.heightAt(x+e,z)-this.heightAt(x-e,z))/(2*e),(this.heightAt(x,z+e)-this.heightAt(x,z-e))/(2*e));}
   isWalkable(x:number,z:number){return this.slopeAt(x,z)<Math.tan(Math.PI/3);}
