@@ -24,15 +24,16 @@ From current GitHub state:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. `skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md`
-5. `skills/chat/KFB_OPEN_WORLD_POST_FREEZE_TERRAIN_OWNERSHIP_GUARD_2026-10-07.md`
-6. Issue #360
-7. Draft PR #348 and its current source/Return/Recovery/status
-8. On PR #348 branch:
+5. `skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md`
+6. `skills/chat/KFB_OPEN_WORLD_POST_FREEZE_TERRAIN_OWNERSHIP_GUARD_2026-10-07.md`
+7. Issue #360
+8. Draft PR #348 and its current source/Return/Recovery/status
+9. On PR #348 branch:
    - `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_ONE_SHOT_PRODUCTION_RESET_2026-10-05.md`
    - `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/OPEN_WORLD_EXISTING_SYSTEM_INTEGRATION_MATRIX_2026-10-05.md`
    - current `ONE_SHOT_STATUS.json` / Return / Recovery
-9. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md`
-10. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
+10. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md`
+11. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
 
 Then inspect the exact current Coworker source directly from Dropbox:
 
@@ -88,6 +89,23 @@ Rules:
 - a mechanism donor does not automatically own presentation/content/data;
 - source bytes existing somewhere is not enough — prove the donor and exact capability;
 - identify conflicting authorities explicitly rather than inventing a synthesis.
+
+## 3A · Product-level MVP rule
+
+Binding policy:
+`skills/chat/KFB_OPEN_WORLD_MVP_ACCEPTANCE_RULE_2026-10-07.md`
+
+For Open World, subsystem progress is not an MVP.
+
+Use only these product-level statuses:
+- `MVP PASS · COMPLETE ACCEPTANCE MATRIX GREEN`
+- `NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN`
+
+The historical label `Receiving Core` may describe a subsystem snapshot only. It must not be used as a product-progress substitute, near-MVP status or acceptance shorthand.
+
+A single required matrix row that is partial, missing, conflicted, unproven or below its required acceptance proof means **NO MVP**.
+
+Do not summarize a partly green matrix upward into an aggregate “mostly done” product status.
 
 ## 4 · Candidate / donor census
 
