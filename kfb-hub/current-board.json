@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.16",
-  "updatedAt": "2026-10-07T16:19:00Z",
+  "revision": "2026-10-07.17",
+  "updatedAt": "2026-10-07T16:33:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Island MVP Frozen Matrix operational v2 is persisted: 44 REQUIRED rows plus Strong/Optional now have explicit owners, readiness, deltas, acceptance proofs and forbidden shortcuts/quarantine guards. Product remains NO MVP. Fresh chats route directly to this matrix; next is one final Work/WSA ONE_SHOT brief."
+    "note": "Island MVP Operational Matrix v2 remains frozen. ToolBox _inbox donor audit now routes 115 top-level inbox entries into curated donor/reference/history classes; no new REQUIRED rows. Fresh recovery: Frozen Matrix → Inbox Donor Audit → Integration Census → PR #348."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -24,13 +24,14 @@
     "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "islandMvpIntegrationCensus": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
-    "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md"
+    "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
+    "islandMvpInboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md"
   },
   "p0": [
     {
       "id": "island-mvp-freeze-planning",
       "title": "Island MVP · OPERATIONAL MATRIX v2 · NO MVP",
-      "summary": "44 REQUIRED + 12 STRONGLY INCLUDE + 7 OPTIONAL rows are now execution-ready with owner/readiness/delta/proof/shortcut guards. Fresh chats resume from START_HERE → Frozen Matrix. Next: final WSA One-Shot brief only.",
+      "summary": "Operational Matrix v2 remains frozen: 44 REQUIRED + 12 STRONGLY INCLUDE + 7 OPTIONAL. A new inbox audit classifies 115 ToolBox intake entries and preserves useful donors such as WhackMan bounce/contact, VFX-01, Vehicle Lab, Plant Prop and Billboard source/anchor work. Next remains final WSA One-Shot brief.",
       "badge": "OPERATIONAL CONTRACT v2 · NO MVP",
       "action": "Frozen Matrix öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
@@ -366,6 +367,11 @@
       "title": "Island MVP · Frozen Matrix",
       "summary": "Binding anti-feature-loss product contract: 44 REQUIRED rows, Strongly Include, Optional Proof and Later. Full green required; placeholders never pass.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md"
+    },
+    {
+      "title": "Island MVP · ToolBox Inbox Donor Audit",
+      "summary": "Curated routing for 115 ToolBox inbox entries. Preserves WhackMan contact/bounce, VFX-01, Vehicle Lab, Plant Prop, Billboard source/anchor, Resident-Card staging, editor grounding and other useful donors without creating new runtime owners.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
