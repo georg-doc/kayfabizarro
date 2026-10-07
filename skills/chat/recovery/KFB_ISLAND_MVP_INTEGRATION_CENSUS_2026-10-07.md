@@ -527,3 +527,126 @@ Existing Mech weapons/destruction are valuable donors but full Combat remains ou
 - full destructible settlement sandbox.
 
 Do not let Combat ownership leak into the World player, persistence, terrain or Flight owners.
+
+
+## Q · Preserved Sky / Weather / Time / Travel FX donor stack
+
+This is **preserved capability inventory**, not a new REQUIRED row. The existing frozen requirement **F-R24 · Sky / Environment** remains the single MVP acceptance row and keeps one Environment owner.
+
+### Q1 · Travel Globe environment stack
+
+Source-proven Travel modules already exist for:
+- `sky-presets.js`;
+- `day-night.js`;
+- `sky-atmosphere.js` → Aurora + God Rays;
+- `lens-flare.js`;
+- `rain-overlay.js`;
+- `starfield.js`;
+- `weltstimmungen.js` / world moods;
+- `sun-shadow.js` and `light-budget.js` as known donors that were **NOT_TESTED / not integrated** in the SKY1 return.
+
+The SKY EnvironmentHost proof exposes:
+- `setTime(day|evening|night|auto)`;
+- `setWeather(clear|rain)`;
+- `setShell(tiny|travel|spindle)`;
+- `setMood(verdant|molten|frost|bone)`;
+- fog;
+- sun color/intensity/direction facts;
+- Aurora;
+- God Rays;
+- Lens Flare;
+- rain streaks;
+- lifecycle/leak probes.
+
+This is the preferred donor family for later time/weather/atmosphere enrichment. Extend the existing Environment owner; do not restart weather/day-night in WB2.
+
+### Q2 · Skydome families already present
+
+Preserve these as alternative presentation donors under the same Environment owner:
+
+1. **TinySkies / Travel baseline**
+   - radial/day-night sky path;
+   - Travel atmosphere modules;
+   - proven source lineage from the TinySkies port.
+
+2. **Travel shader Skydome**
+   - procedural variants S / A / Space;
+   - static watercolor/night variants;
+   - camera-following shell;
+   - current source path includes `travel/KFB Travel Combat v25/terrain-v25/skydome-shader.js`.
+
+3. **Combat / Card Spindle**
+   - real KFB Card-based sky shell lineage;
+   - SKY3 candidate `spindle-sky.v5.js` / contract 0.3-candidate;
+   - mantled card sky + tapered ends / palette/end-shader treatment;
+   - useful surreal/Deck-specific sky option, not universal default.
+
+4. **Shader/World Integration sky options**
+   - existing world-integration donors include procedural shader, watercolor/static and realistic-three.js options;
+   - they are choices inside one Environment owner, not separate runtimes.
+
+### Q3 · Clay cloud family
+
+Current source donor:
+`media/3D_Assets/KFB/Clouds by Jarlan Perez - b3Kia9N2fS2.glb`.
+
+SKY3 candidate:
+- `kfb.sky.cloud-family/3-archetypes`;
+- **13 variants / 6 archetypes**;
+- donor-derived anatomy, not generic sphere clusters;
+- shared Clay material / field logic and near-mid-far LOD.
+
+Status:
+**TUNE · not Golden**.
+
+Known limits from the returned SKY3 evidence:
+- no Cloud Golden exists yet;
+- no K1/v8 parity proof;
+- nighttime readability remains weak;
+- performance depends strongly on screen coverage/fill rate;
+- target-device/mobile not proven.
+
+Therefore:
+- preserve as strong candidate/donor;
+- do not make this exact cloud family an MVP blocker;
+- if used in first Island MVP, it must pass F-R19/F-R20/F-R24/F-R07 and the current Cloud visual/performance gate.
+
+### Q4 · Travel / movement FX donors
+
+Preserve for later Flight/Drive/environment presentation:
+- `contrails.js`;
+- `carpet-wake.js`;
+- `drift-smoke.js`;
+- `impact-dust.js`;
+- Travel v16 `speed-lines.js`;
+- boost/post-radial presentation donors where the receiving presentation owner accepts them.
+
+These effects should consume real movement/environment state:
+speed · bank · pitch · boost · altitude/AGL · contact/impact · weather.
+
+They must not become physics owners.
+
+Important evidence boundary:
+the repository proves these donor modules exist. Exact reuse of each one for "low ground flyover particles" still needs source-isolated consumer audit; do not claim that semantic mapping merely from filenames.
+
+### Q5 · Frozen-MVP treatment
+
+**F-R24 remains REQUIRED:** one coherent real Sky/Environment owner must be integrated.
+
+For the first Island MVP, the smallest valid proof may use:
+- one strong day/environment state;
+- coherent lighting/fog/sky;
+- clouds if accepted/performance-safe;
+- enough environment state to prove the real owner.
+
+The following are **preserved for additive integration / later tuning**, not newly mandatory:
+- full day/evening/night/auto cycle;
+- rain screen overlay;
+- Aurora;
+- God Rays;
+- Lens Flare;
+- full weather system;
+- Spindle sky as an alternate Deck-specific shell;
+- all Travel movement FX simultaneously.
+
+The One-Shot may include any of these when low-risk and source-ready, but their absence alone does not create a new RED row beyond the existing F-R24/F-R07/F-S03 contracts.
