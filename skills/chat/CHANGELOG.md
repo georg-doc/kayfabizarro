@@ -2640,3 +2640,12 @@ No runtime/product code changed.
 - active setup job is DocCheck Issue #12 for a schedulable Flexikon Process Curator;
 - Curator is MCP/internal-source first, produces ranked/derived article cards and stops before automatic SVG production by default;
 - no Production Hub republish triggered because this is routing metadata, not a new human-facing KFB product surface.
+
+## 2026-10-07 · Resident Performance Blender priority before Shield Fit
+
+- Georg reprioritized Blender work by world impact: **Resident Performance + Character Choreography now runs before Shield Fit #367**.
+- Created Issue **#369** and binding execution brief: `skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_EXECUTION_2026-10-07.md`.
+- #369 is **READY NOW** as a source-isolated Blender job and may run in parallel with Coworker code review / Architecture Freeze work; PR #348 / Open World runtime writes remain forbidden.
+- Reuse order is binding: Resident Atlas → Motion PR #344 → Fluff Work Motion PR #356 → EyeRig/PetMouth/ChatterBox semantics → only then genuinely reusable new clips.
+- Required output centers on Pose / Proximity / Gesture / Micro-motion, emotional body language, Resident↔Resident/Player staging, shop/trade/gift, Fluff/work and repair/rebuild choreography with `COVERED / LAYERABLE / NEW_CLIP_REQUIRED` classification.
+- Hub board advanced to **2026-10-07.4**; #367 remains technically valid but is explicitly the **second Blender job after #369** unless newly outcome-critical.
