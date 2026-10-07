@@ -72,7 +72,8 @@ Allowed writes:
 - audit documents;
 - recovery matrix;
 - factual Return;
-- routing/status documentation needed to preserve the audit.
+- routing/status documentation needed to preserve the audit;
+- the read-only MVP Living Doc / Hub audit projection explicitly requested by Georg at `https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/`.
 
 Not allowed:
 - terrain rewrite;
@@ -81,7 +82,7 @@ Not allowed:
 - God Mode integration;
 - persistence integration;
 - Residents / Audio / Track / Cards / Billboard / Drive integration;
-- Site publication;
+- **Open World product** Site publication;
 - merge / Live promotion.
 
 The purpose of this run is to establish reliable truth before more money/time is spent.
@@ -400,6 +401,8 @@ It may show distributions/counts below that, but no percentage-complete or “al
 Update Issue #360 only with the factual recovery result.
 
 Do not modify runtime/product files.
+
+The Living Doc Stage is documentation only. Publishing/updating that read-only route does not authorize product runtime publication and must never be reported as an Open World MVP candidate.
 
 ## 12 · ChefWSA communication contract — binding
 
