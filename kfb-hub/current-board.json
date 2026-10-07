@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.6",
-  "updatedAt": "2026-10-07T06:52:00+02:00",
+  "revision": "2026-10-07.7",
+  "updatedAt": "2026-10-07T11:08:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Curtain update: #372 Claude Design Theatre Curtain Recovery/Productization is PASS on r3 and checked into main at 7ca4a36b. The accepted donor candidate now has real gathering, rounded pleats/hem weight, motion-safe oxblood macro patina and aged stage hardware; fake plaque/sign/wordmark/SVG-overlay direction is rejected. Runtime integration waits for the receiving architecture seam. #369 Resident Performance remains the first current Blender-impact job; #367 Shield Fit follows."
+    "note": "Surface plan updated: final playable game target is planned as play-kayfabizarro.frizzlebob.chatgpt.site; current kfb-world-studio-mvp1 remains interim review/authoring during Freeze/integration. kayfabizarro.pages.dev is the planned public KFB Hub for rules, full public tabs/navigation, Gumroad/download links and thumbnail gallery/viewer. Private Production Hub remains internal orientation. None of the new target feature sets are claimed live yet."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -15,7 +15,11 @@
     "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site",
     "audio": "https://kfb-audio.frizzlebob.chatgpt.site",
     "assetLibrarian": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=style-references",
-    "worldbuilder": "https://github.com/georg-doc/kayfabizarro/issues/360"
+    "worldbuilder": "https://github.com/georg-doc/kayfabizarro/issues/360",
+    "playGameTarget": "https://play-kayfabizarro.frizzlebob.chatgpt.site",
+    "publicHubTarget": "https://kayfabizarro.pages.dev/",
+    "worldStudioInterim": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "productionHub": "https://kfb-production-hub.frizzlebob.chatgpt.site"
   },
   "p0": [
     {
@@ -307,6 +311,11 @@
       "title": "Theatre Curtain · Runtime handoff",
       "summary": "Integration contract and open technical seams for the later receiving runtime owner.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/IMPLEMENTATION_HANDOFF.md"
+    },
+    {
+      "title": "Surface plan · Play + Public Hub",
+      "summary": "Planned final game GPT Site: play-kayfabizarro. Public web Hub: kayfabizarro.pages.dev with rules, tabs, Gumroad/downloads and thumbnail gallery/viewer. Current World Studio remains interim.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_SITE_SURFACE_REGISTRY_2026-10-04.json"
     }
   ],
   "surfaceRoles": {
