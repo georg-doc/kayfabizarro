@@ -1,3 +1,29 @@
+## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v5 READY
+
+Binding machine-readable product contract:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
+**operationalVersion = 5**
+
+Binding final execution brief:
+`skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`
+
+Current counts:
+- **44 REQUIRED**
+- **13 STRONGLY INCLUDE**
+- **7 OPTIONAL PROOF**
+
+Final pre-WSA alignments:
+- Roads/Track = **Phase 2B**, before Phase-3 Early Golden;
+- Phase-3 Georg Visual Product Gate is mandatory, crash-safe and exact-head-bound;
+- F-R07 uses `GEORG_PRIMARY_ACCEPTANCE_MACHINE`; WSA instruments, Georg performs one visible/focused target-device run, evidence is persisted against exact head;
+- terrain evaluation order vs Track-fit/sculpt must be frozen before F-R29/F-R31 can turn GREEN;
+- High reasoning explicitly allowed for Phase 2B and Phase 3;
+- PASS and NO MVP both return the complete 44-row status/evidence table.
+
+All lower v2/v3/v4 routing text is historical where conflicting. The current JSON v5 wins.
+
+---
+
 ## CURRENT RECOVERY INDEX · 2026-10-07 · WEB-CHAT IDEATION
 
 For recovery of the 2026-10-07 design work spanning Asset Librarian/external 3D MCP, textures/materials, World Pulse, Cube/MacroCell, Build/Destroy/Repair, Paper/Facade and Threshold grammar, read:
@@ -33,7 +59,7 @@ Binding matrix files remain:
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY
+## SUPERSEDED OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY · SUPERSEDED BY v5
 
 The binding Work/WSA brief and Frozen Matrix were hardened after an independent Coworker sanity read.
 
@@ -58,7 +84,7 @@ No REQUIRED row was added or removed. Product remains NO MVP until all 44 are GR
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY
+## SUPERSEDED OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY · SUPERSEDED BY v5
 
 Georg authorized the next productive step: execute exactly one **ChatGPT Work/WSA Island MVP ONE_SHOT** against the operational Frozen Matrix v2.
 
@@ -93,7 +119,7 @@ or
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX OPERATIONALIZED
+## SUPERSEDED OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX v2 OPERATIONALIZED · SUPERSEDED BY v5
 
 Georg authorized continued Web-Chat refinement of the bounded-Island MVP contract and persistent crash-safe recovery.
 
