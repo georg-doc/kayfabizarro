@@ -1,0 +1,93 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "packId": "style-pack:kfb-dialogue-interaction:001",
+  "status": "CURATED_CONSUMER_PACK_SOURCE_INSPECTION_PENDING",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "currentExecutor": "ChatGPT Web Chat",
+  "intendedConsumers": [
+    "chatterbox",
+    "resident-dialogue",
+    "comic-writing"
+  ],
+  "claudeDesignJobStarted": false,
+  "sourceInspectionRequired": true,
+  "title": "KFB Dialogue / Interaction 01",
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-small-talk-2019-01",
+      "title": "Small Talk",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-small-talk.html",
+      "role": "DIALOGUE_RHYTHM",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-speech-patterns-2018-12",
+      "title": "Speech Patterns",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/12/how-to-think-when-you-write-speech.html",
+      "role": "CHARACTER_VOICE",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-tics-and-tells-2019-11",
+      "title": "Tics and Tells",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/11/how-to-think-when-you-write-tics-and.html",
+      "role": "NONVERBAL_BEHAVIOR",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-interrupt-scene-2020-02",
+      "title": "Interrupt a Scene",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2020/02/bonus-learnuary-day-52-how-to-think.html",
+      "role": "CONVERSATION_FLOW",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-silence-is-golden-2018-01",
+      "title": "Silence Is Golden",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2018/01/how-to-think-when-you-write-using.html",
+      "role": "DIALOGUE_RHYTHM",
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-speech-bubbles-2019-01",
+      "title": "Speech Bubbles",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-speech.html",
+      "role": "DIALOGUE_CARRIER_SUPPORT",
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "targetQuestions": [
+    "How should Residents distinguish small talk from purposeful dialogue?",
+    "How can speech patterns reinforce character without hardcoded catchphrases?",
+    "How do tics/tells and silence carry meaning without extra dialogue?",
+    "How should interruptions alter dialogue rhythm and turn-taking?",
+    "How should speech-bubble presentation support rather than own dialogue semantics?"
+  ],
+  "expectedLaterOutput": [
+    "dialogue rhythm rules",
+    "character-voice variation rules",
+    "nonverbal tic/tell hooks",
+    "interruption/turn-taking rules",
+    "silence/pause rules",
+    "bubble presentation handoff notes"
+  ],
+  "boundary": [
+    "ChatterBox remains dialogue/content owner.",
+    "Resident Performance remains pose/reaction presentation owner.",
+    "Bubble/Emanata layers do not write dialogue or affect state.",
+    "No hardcoded character catchphrase system is created by this pack."
+  ]
+}
