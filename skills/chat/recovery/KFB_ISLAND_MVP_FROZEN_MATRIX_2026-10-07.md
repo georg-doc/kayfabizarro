@@ -328,3 +328,24 @@ This section operationalizes the frozen REQUIRED rows without changing scope or 
 | F-O07 | Travel Flight owner + special carrier presentation | **EXISTING_DONORS_LATER_PRESENTATION** | Optional special carrier uses same Flight owner and safe mount/handoff after universal Flight is green. | Cannot replace universal Backpack/Flight capability requirement. |
 
 These rows do not alter REQUIRED acceptance. Strong rows are intended in the same One-Shot, but only Production Guard may quarantine a genuinely non-critical failing seam after the repair-budget rule. Optional rows never substitute for a red REQUIRED row.
+
+
+## 13 · Preserved Sky / Weather / Time / Travel-FX stack
+
+This section adds **no new REQUIRED row**. It is attached to **F-R24 · Sky / Environment**, with performance governed by F-R07 and Flight presentation by F-S03.
+
+Preserve under the existing Environment/Travel owners:
+
+- Travel `sky-presets`, `day-night`, `sky-atmosphere` (Aurora/God Rays), `lens-flare`, `rain-overlay`, `starfield`, `weltstimmungen`;
+- known `sun-shadow` and `light-budget` donors, noting SKY1 marked them NOT_TESTED;
+- TinySkies/Travel sky baseline;
+- Travel procedural S/A/Space + static watercolor/night Skydome;
+- Combat/Card Spindle / SKY3 `spindle-sky.v5` as an alternate surreal/Deck-specific shell;
+- Jarlan-derived SKY3 Clay Cloud family v3: 13 variants / 6 archetypes, status **TUNE · NOT GOLDEN**;
+- Travel presentation donors `contrails`, `carpet-wake`, `drift-smoke`, `impact-dust`, v16 `speed-lines` and compatible boost/post-radial FX.
+
+First-Island policy:
+- one coherent real Environment owner is REQUIRED;
+- full day/evening/night/auto, weather, rain overlay, Aurora, God Rays, Lens Flare, Spindle shell and every movement FX are **preserved additive capabilities**, not new mandatory MVP rows;
+- any selected effect consumes real environment/movement facts and never becomes a second physics/sky owner;
+- exact "ground-flyover particle" reuse must be source-audited before semantic claims are made.
