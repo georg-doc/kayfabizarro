@@ -1,0 +1,114 @@
+{
+  "schema": "kfb.style-reference-pack/1",
+  "status": "CURATED_CONSUMER_PACK_VISUAL_ANALYSIS_PENDING",
+  "date": "2026-10-07",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "currentExecutor": "ChatGPT Web Chat",
+  "claudeDesignJobStarted": false,
+  "sourceInspectionRequired": true,
+  "privateSiteAccessRequired": false,
+  "transport": "GitHub metadata + original source URLs",
+  "rules": [
+    "A curated pack is not proof of visual inspection.",
+    "Do not mark sourceInspectedInIsolation=true until the actual source visual is seen.",
+    "Separate OBSERVED SOURCE FACT / CONSTRUCTION PRINCIPLE / KFB DESIGN DECISION in later design work.",
+    "Do not imitate a named creator's finished style."
+  ],
+  "packId": "style-pack:kfb-bubble-grammar:001",
+  "title": "KFB Bubble / Caption Grammar 01",
+  "lane": "DIALOGUE_CARRIERS",
+  "intendedConsumers": [
+    "chatterbox",
+    "comic-layout",
+    "resident-dialogue"
+  ],
+  "references": [
+    {
+      "referenceId": "style-ref:etherington-speech-bubbles-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Speech Bubbles",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-speech.html",
+      "role": "PRIMARY_SPEECH_BUBBLE_REFERENCE",
+      "inspectFor": [
+        "balloon placement",
+        "proportional positioning",
+        "reading flow"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-caption-boxes-2019-01",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Caption Boxes",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2019/01/how-to-think-when-you-write-caption.html",
+      "role": "PRIMARY_CAPTION_REFERENCE",
+      "inspectFor": [
+        "caption placement",
+        "narration hierarchy",
+        "page balance"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:etherington-script-to-page-2013-03",
+      "sourcePool": "ETHERINGTON_SEED_04",
+      "title": "Long Gone Don · Script to Page",
+      "creator": "The Etherington Brothers",
+      "sourceClass": "OFFICIAL_CREATOR_SOURCE",
+      "canonicalPageUrl": "https://theetheringtonbrothers.blogspot.com/2013/03/long-gone-don-from-script-to-page.html",
+      "role": "PAGE_INTEGRATION_REFERENCE",
+      "inspectFor": [
+        "word/art balance",
+        "bubble placement in composition",
+        "script-to-page workflow"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:blambot-comic-book-grammar-tradition",
+      "sourcePool": "SUPPLEMENTARY_01",
+      "title": "Comic Book Grammar & Tradition",
+      "creator": "Nate Piekos / Blambot",
+      "sourceClass": "AUTHORITATIVE_PROFESSIONAL_LETTERING_SOURCE",
+      "canonicalPageUrl": "https://blambot.com/pages/comic-book-grammar-tradition",
+      "role": "PROFESSIONAL_BALLOON_GRAMMAR",
+      "inspectFor": [
+        "tails",
+        "burst/wavy/radio balloons",
+        "captions",
+        "joining/order"
+      ],
+      "sourceInspectedInIsolation": false
+    },
+    {
+      "referenceId": "style-ref:comicraft-word-thought-balloons",
+      "sourcePool": "SUPPLEMENTARY_01",
+      "title": "Word and Thought Balloons",
+      "creator": "Comicraft",
+      "sourceClass": "PROFESSIONAL_COMMERCIAL_LETTERING_REFERENCE",
+      "canonicalPageUrl": "https://www.comicbookfonts.com/Word-and-Thought-Balloons-font-p/bf1.htm",
+      "role": "THOUGHT_BALLOON_SHAPE_REFERENCE",
+      "inspectFor": [
+        "round/oval/thought-shaped balloon families",
+        "shape variety"
+      ],
+      "sourceInspectedInIsolation": false
+    }
+  ],
+  "targetQuestions": [
+    "How should speech, thought, whisper, shout/call and narration differ?",
+    "How do balloon placement and tails preserve reading order?",
+    "How should bubbles adapt to KFB 3D/2.5D screen space without becoming UI chrome?",
+    "What is the minimum family of carrier shapes needed for coherent dialogue?"
+  ],
+  "expectedLaterOutput": [
+    "speech/thought/caption family",
+    "tail/pointer grammar",
+    "reading-order rules",
+    "screen-space placement constraints"
+  ]
+}
