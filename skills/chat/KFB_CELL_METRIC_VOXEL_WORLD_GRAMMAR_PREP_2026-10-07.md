@@ -834,6 +834,112 @@ The existing Seed World destruction donor already demonstrates bounded promoted 
 
 
 
+
+## Fluff Construction / Raw-Mass State Machine
+
+This explicitly connects the Cell/Build grammar to the existing Resident/Blender-MCP Fluff-work donor on `main`.
+
+Existing source-backed choreography direction already prepared in:
+`skills/chat/BLENDER_MCP_RESIDENT_PERFORMANCE_CHOREOGRAPHY_PREP_2026-10-06.md`
+
+Existing reusable action vocabulary:
+- harvest / collect;
+- gather;
+- carry;
+- roll / push;
+- give / receive;
+- merge;
+- knead / press;
+- place / stack;
+- flatten;
+- patch;
+- inspect;
+- repair / rebuild.
+
+### Canonical construction presentation sequence
+
+Use a simple reusable lifecycle:
+
+`PREVIEW → HARVEST/GATHER → AGGREGATE → ROUGH_MASS → SCULPT → RESOLVE → CONNECT/FINISH`
+
+For larger structures an optional scaffold phase may appear:
+
+`PREVIEW → MATERIAL DELIVERY → SCAFFOLD → COLORED/TYPED ROUGH MASS → SCULPT → RESOLVE → EDGE HEAL/FINISH`
+
+Meaning:
+
+### PREVIEW
+- target footprint/volume is known;
+- no durable construction is claimed yet.
+
+### HARVEST / GATHER
+- Fluff/resource material is acquired or delivered;
+- may use existing Resident work/gift/transport choreography.
+
+### AGGREGATE
+- small Fluff balls/resources merge into a buildable mass;
+- the mass may already occupy the target MacroCell volume approximately.
+
+### ROUGH_MASS
+- universal intermediate block/volume;
+- may be a cube/quader or coarse target envelope;
+- already inherits the target object's material/color identity;
+- large objects may show scaffold/brace structure.
+
+### SCULPT
+- openings, silhouettes, rounded corners, façade/room details and Edge Completion are carved/formed from the rough mass;
+- presentation may be clay-like, magical, sci-fi, tool-driven or hybrid;
+- use bounded particles/chunks and stable seeded irregularity.
+
+### RESOLVE
+- reveal/restore the real source-proven final mesh/module;
+- tiny squash/settle/overshoot allowed;
+- source identity must remain canonical.
+
+### CONNECT / FINISH
+- canonical seams connect;
+- trim/material continuity heals;
+- new exposed boundaries receive Edge Completion;
+- Resident/God-Mode actor returns to ordinary world state.
+
+### Scale rule
+
+The raw mass should derive from the intended object's actual target bounds / MacroCell footprint, not from an arbitrary fixed cube.
+
+Examples:
+- small prop → one small rough block/mass;
+- 1×2 SceneCell → elongated rough mass;
+- 2×2 room/building → room-scale mass;
+- large 4×4×6 structure → staged scaffold + target-envelope mass rather than one fake tiny cube.
+
+### Actor variants
+
+**Resident/NPC Build**
+- slower, readable labor;
+- carry/push/knead/place/patch;
+- optional cooperative construction;
+- uses Resident Performance / Blender-MCP choreography.
+
+**God Mode Build**
+- same canonical structural result;
+- compressed presentation;
+- direct materialize/sculpt/settle;
+- no separate build data model.
+
+### Reverse relation
+
+Destruction / mining / removal may return:
+- rubble/chunks;
+- typed material yield;
+- Fluff/resource payload;
+- stable ruin state.
+
+Rebuild consumes the same construction grammar in the forward direction.
+
+The construction transition is presentation.
+Durable world truth remains module/cell/object state.
+
+
 ## Material Identity / Color Grammar for Build–Destroy–Repair
 
 Every buildable/destructible object has a stable material identity across:
