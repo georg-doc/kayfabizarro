@@ -959,7 +959,8 @@
       ]
     }
   ],
-  "livingDocRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/",
-  "hubSurface": "KFB Production Hub live board → Open World MVP Living Doc",
-  "dataSourceMode": "Recovery-branch JSON is canonical audit ledger; published HTML is a read-only projection with embedded fallback."
+  "livingDocRoute": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
+  "hubSurface": "Existing KFB Production Hub GPT Site · internal ?view=open-world-mvp",
+  "dataSourceMode": "Production Hub view live-loads main/kfb-hub/live/open-world-mvp.json with cache:no-store after one bounded Site-shell publish; embedded/local fallback only on fetch failure. Routine matrix/status updates require GitHub JSON only, no further Work/Sites run.",
+  "liveProjectionFeed": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json"
 }
