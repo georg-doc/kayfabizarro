@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.14",
-  "updatedAt": "2026-10-07T16:08:00Z",
+  "revision": "2026-10-07.15",
+  "updatedAt": "2026-10-07T16:12:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Bounded-Island architecture planning is now persisted. Full Integration Census, Prototype Graveyard and recovery checkpoints exist; current next planning gate is to freeze the complete MVP matrix before issuing the next One-Shot. Product remains NO MVP; routine Hub updates remain GitHub-live JSON only."
+    "note": "Island MVP Frozen Matrix is now persisted. Product remains NO MVP. Fresh-chat recovery path is Hub → Integration Census → Frozen Matrix → Prototype Graveyard/owner returns. Next execution is not another planning micro-slice: exactly one Work/WSA One-Shot against the frozen contract after final briefing."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -23,18 +23,19 @@
     "openWorldMvpLivingDoc": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
     "openWorldMvpLiveData": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/live/open-world-mvp.json",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
-    "islandMvpIntegrationCensus": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md"
+    "islandMvpIntegrationCensus": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
+    "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md"
   },
   "p0": [
     {
       "id": "island-mvp-freeze-planning",
-      "title": "Island MVP · Freeze Planning · NO MVP",
-      "summary": "Bounded-Island direction is accepted. Current Web-Chat census now preserves World/Persistence, Locomotion, Joyride/Drive, Flight, Residents/ChatterBox, Billboard+Quote Pool, Card/Almanac, Audio, Curtain, Clay/Claybound, Style-reference grounding rules, event/transform donors and QA. Next: freeze REQUIRED / STRONGLY INCLUDE / OPTIONAL / LATER before one new WSA One-Shot.",
-      "badge": "PLANNING FREEZE · NO MVP",
-      "action": "Integration Census öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
+      "title": "Island MVP · FROZEN MATRIX · NO MVP",
+      "summary": "Frozen product contract is persisted: 44 REQUIRED rows plus STRONGLY INCLUDE / OPTIONAL / LATER. It retains the old 37-row contract and adds explicit Flight, P0 locomotion/cartoon jump, Claybound/grounding, real Quote Pool, Early Golden, negative-Golden and no-placeholder gates. Next: one final Work/WSA execution brief, then one continuous One-Shot.",
+      "badge": "FROZEN CONTRACT · NO MVP",
+      "action": "Frozen Matrix öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
       "executor": "ChatGPT Web Chat · architecture planning",
-      "nextExecutor": "ChatGPT Web Chat freezes MVP matrix; then exactly one Work/WSA Integrator"
+      "nextExecutor": "Exactly one ChatGPT Work/WSA Integrator after final execution brief"
     },
     {
       "id": "issue-360-open-world-recovery-audit",
@@ -360,6 +361,11 @@
       "title": "Island MVP · Integration Census",
       "summary": "Crash-safe anti-feature-loss census before the next One-Shot: owners/donors, Flight/Drive, Billboard Quote Pool, Audio, Residents, Curtain, Claybound gate, Style-reference grounding, placeholders firewall and deferred scope.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md"
+    },
+    {
+      "title": "Island MVP · Frozen Matrix",
+      "summary": "Binding anti-feature-loss product contract: 44 REQUIRED rows, Strongly Include, Optional Proof and Later. Full green required; placeholders never pass.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md"
     }
   ],
   "surfaceRoles": {
