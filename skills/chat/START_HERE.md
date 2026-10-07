@@ -1,3 +1,38 @@
+## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY
+
+Georg authorized the next productive step: execute exactly one **ChatGPT Work/WSA Island MVP ONE_SHOT** against the operational Frozen Matrix v2.
+
+Binding final execution brief:
+`skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`
+
+This brief supersedes the older World Integrator brief where it still refers to the former 37-row contract.
+
+Receiving owner:
+- repo: `georg-doc/kayfabizarro`
+- Draft PR: **#348**
+- branch: `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`
+- product: **NO MVP** at start
+- execution mode: **ONE_SHOT**
+- only production writer: **ChatGPT Work/WSA Integrator**
+
+Binding contract:
+- 44 REQUIRED rows;
+- 12 STRONGLY INCLUDE;
+- 7 OPTIONAL PROOF;
+- full operational owner/readiness/delta/proof/shortcut fields;
+- ToolBox Inbox Donor Audit is required source routing;
+- no second runtime owner;
+- no placeholder substitution;
+- no Receiving-Core stop;
+- no auto-merge or Live promotion.
+
+Fresh Work/WSA must recover current GitHub state and then continue autonomously through the phases in the final brief until either:
+`MVP PASS · ALL 44 REQUIRED ROWS GREEN · HUMAN PRODUCT GATE READY`
+or
+`NO MVP · PROVEN OUTCOME BLOCKER · <one concrete blocker>`.
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX OPERATIONALIZED
 
 Georg authorized continued Web-Chat refinement of the bounded-Island MVP contract and persistent crash-safe recovery.
@@ -16,7 +51,7 @@ Current state:
 - explicit additions/refinements include P0 locomotion + Cartoon Jump, Flight, Drive KEEP+TUNE, Claybound compatibility, grounded/no-pasted-on world placement, real Quote Pool → real Billboard/HyperNormalisation, Early Visual/Physical Golden, Negative Goldens and No-Placeholder firewall.
 - Full Combat remains later; Combat Arena retains full Combat ownership. Seed World/Combat Mech POC is a strong shooting/VFX/destruction donor candidate but must win source-isolated donor arbitration before integration.
 - Fresh-chat recovery path: **START_HERE → Frozen Matrix → ToolBox Inbox Donor Audit → Integration Census → current WB2 Island Foundation/PR #348 → Prototype Graveyard only for negative Goldens/salvage**.
-- current next action: prepare exactly one final **ChatGPT Work/WSA Island MVP ONE_SHOT** brief directly from the frozen matrix. Do not reopen broad architecture planning or shorten the required matrix to match an implementation.
+- current next action: execute the binding final Work/WSA ONE_SHOT brief. Do not reopen broad architecture planning or shorten the required matrix to match an implementation.
 
 No second runtime owner. No auto-merge. No Live promotion. Routine Hub status remains GitHub-live JSON; no Site republish is needed for these planning updates.
 
