@@ -117,6 +117,7 @@ These are intended in the same One-Shot because they are high-value and largely 
 | F-S10 | Bounded seeded procedural structure provider | Seed-World street/parcel/BuildingRecipe grammar behind Surface Truth + Track Core + Claybound gate; sparse use, not city-block mandate. |
 | F-S11 | Environment construction subset | 3–6 exact Etherington/Style references chosen for actual island problems: Clouds / Environment Mass / grounding as needed. |
 | F-S12 | Fluff Work activity donor | PR #356 clips if one chosen Resident activity benefits; no new clips by default. |
+| F-S13 | **State-dependent Threshold Door / Paper-Facade portal proof** | One source-backed freestanding or Paper/Facade door. Base state = ordinary local pass-through; unlocked/revealed state = real portal/instance/realm or deliberate non-local/local metanarrative target. Walking around the facade stays in the current world. Preserve authoritative state through fresh reload; no second progression/world/portal owner. |
 
 ## 3 · OPTIONAL PROOF · valuable if cheap, never a substitute for required product
 
@@ -166,7 +167,7 @@ Preserve three eventual connection modes without requiring three implementations
 2. **Track / Joyride Highway** — Track-Core authored connection.
 3. **Free Flight** — player-controlled Flight.
 
-First Island MVP proves local Flight and a future connection/port contract. Multi-island expansion later proves actual cross-document handoff.
+First Island MVP proves local Flight, a future connection/port contract and — where bounded/low-risk — the F-S13 state-dependent Threshold Door proof. This may resolve to a bounded Dungeon/scenelet/instance or controlled portal target without requiring a second island. Multi-island expansion later proves actual cross-document handoff.
 
 ## 7 · One representative first-Island content target
 
@@ -186,6 +187,7 @@ The One-Shot should produce one coherent bounded island with:
 - Sky/Environment;
 - KFB Clay + Claybound compatibility + grounding grammar;
 - Curtain entry/transition compatibility and preferably the clay-tuned Curtain;
+- preferably one state-dependent freestanding/Paper-Facade Threshold Door: ordinary pass-through in base state, portal/instance behavior when unlocked/revealed;
 - PLAY / BUILD / GOD;
 - source isolate/place/edit/snap + sculpt;
 - exact Save → unload → fresh reload → PLAY;
@@ -222,7 +224,7 @@ This is one continuous product job, not Baby Slices:
 3. **Early Visual/Physical Golden Gate:** must pass before broad fan-out.
 4. **Authoring/Persistence:** PLAY/BUILD/GOD, place/edit/snap, sculpt, exact fresh reload.
 5. **Required KFB systems:** Residents/ChatterBox, Card/Almanac, Billboard+Quote Pool, Audio, Sky, Landmark/Curtain.
-6. **Strong integrations:** Flight presentation, Resident reactions, Clay transform, bounded procedural structure where valuable.
+6. **Strong integrations:** Flight presentation, Resident reactions, Clay transform, bounded procedural structure where valuable, and F-S13 state-dependent Threshold/Paper-Facade proof if it remains low-risk.
 7. **Performance/LOD.**
 8. **Fresh module critics.**
 9. **Different whole-product critic.**
