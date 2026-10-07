@@ -1,0 +1,322 @@
+{
+ "schema": "kfb.talk.rules.v1",
+ "fps": 24,
+ "note": "Rule engine for resident conversations (debate and Speaker's Corner). Engagement 0 absent, 1 polite, 2 engaged, 3 dogged. Heat = shared escalation 0..3. All numbers are tuning knobs.",
+ "engagementNames": [
+  "absent",
+  "polite",
+  "engaged",
+  "dogged"
+ ],
+ "heat": {
+  "bands": [
+   0.8,
+   1.8,
+   2.6
+  ],
+  "max": 3.0
+ },
+ "moves": {
+  "explain": [
+   6,
+   3,
+   1,
+   0
+  ],
+  "question": [
+   2,
+   2,
+   1,
+   0
+  ],
+  "agree": [
+   2,
+   1,
+   0.3,
+   0
+  ],
+  "insist": [
+   1,
+   3,
+   3,
+   1
+  ],
+  "contradict": [
+   1,
+   3,
+   3,
+   2
+  ],
+  "dismiss": [
+   0.2,
+   1,
+   2,
+   2
+  ],
+  "taunt": [
+   0,
+   0.2,
+   1,
+   2
+  ],
+  "rage": [
+   0,
+   0,
+   1.5,
+   4
+  ],
+  "concede": [
+   0.8,
+   1,
+   1,
+   0.3
+  ]
+ },
+ "moveFunctions": {
+  "explain": [
+   "explain"
+  ],
+  "question": [
+   "question"
+  ],
+  "agree": [
+   "agree"
+  ],
+  "insist": [
+   "insist",
+   "brag",
+   "accuse"
+  ],
+  "contradict": [
+   "contradict"
+  ],
+  "dismiss": [
+   "dismiss"
+  ],
+  "taunt": [
+   "taunt"
+  ],
+  "rage": [
+   "rage"
+  ],
+  "concede": [
+   "concede"
+  ]
+ },
+ "heatEffect": {
+  "explain": -0.08,
+  "question": 0.04,
+  "agree": -0.35,
+  "insist": 0.18,
+  "contradict": 0.3,
+  "dismiss": 0.28,
+  "taunt": 0.35,
+  "rage": 0.45,
+  "concede": -0.45
+ },
+ "heatScale": "rise * (0.5 + fuse_of_listener); fall * (1.2 - stubbornness_of_listener)",
+ "softMoves": [
+  "agree",
+  "concede"
+ ],
+ "stubbornDamp": 1.6,
+ "absentSpeakerBias": {
+  "explain": 1.5,
+  "question": 1.2,
+  "agree": 1.4,
+  "dismiss": 1.4,
+  "rage": 0.3,
+  "insist": 0.5
+ },
+ "turnFrames": [
+  [
+   36,
+   64
+  ],
+  [
+   44,
+   90
+  ],
+  [
+   56,
+   120
+  ],
+  [
+   64,
+   140
+  ]
+ ],
+ "shortMoves": {
+  "rage": 0.75,
+  "taunt": 0.6,
+  "dismiss": 0.6,
+  "agree": 0.7,
+  "concede": 0.7,
+  "question": 0.7
+ },
+ "pauseFrames": [
+  4,
+  16
+ ],
+ "listenerDelay": [
+  6,
+  24
+ ],
+ "signalGap": [
+  [
+   50,
+   120
+  ],
+  [
+   26,
+   80
+  ],
+  [
+   14,
+   44
+  ],
+  [
+   6,
+   26
+  ]
+ ],
+ "listen": {
+  "explain": {
+   "attend": 3,
+   "doubt": 1,
+   "idle": 1.5
+  },
+  "question": {
+   "attend": 2,
+   "doubt": 1,
+   "idle": 1
+  },
+  "agree": {
+   "approve": 2,
+   "attend": 2
+  },
+  "insist": {
+   "doubt": 2,
+   "oppose": 1.5,
+   "attend": 1
+  },
+  "contradict": {
+   "oppose": 3,
+   "doubt": 1,
+   "surprise": 1
+  },
+  "dismiss": {
+   "oppose": 2,
+   "surprise": 1,
+   "sulk": 1.5
+  },
+  "taunt": {
+   "oppose": 2.5,
+   "sulk": 1,
+   "surprise": 1
+  },
+  "rage": {
+   "surprise": 2,
+   "oppose": 2,
+   "sulk": 1
+  },
+  "concede": {
+   "approve": 2,
+   "attend": 1
+  }
+ },
+ "listenAbsent": {
+  "bored": 3,
+  "idle": 2,
+  "attend": 0.5
+ },
+ "listenPoliteMix": {
+  "attend": 2,
+  "idle": 2,
+  "bored": 0.6
+ },
+ "doggedBoost": {
+  "oppose": 2.0,
+  "doubt": 1.5
+ },
+ "interrupt": {
+  "minEngagement": 2,
+  "minHeat": 1.4,
+  "p": 0.22,
+  "atFraction": [
+   0.35,
+   0.7
+  ],
+  "overlap": 10
+ },
+ "patience": [
+  3,
+  6,
+  10,
+  14
+ ],
+ "patienceCost": {
+  "rage": 2,
+  "taunt": 2,
+  "dismiss": 1,
+  "insist": 1,
+  "contradict": 1
+ },
+ "absentPatienceCostPerTurn": 1,
+ "agreeEnd": {
+  "maxHeat": 0.25,
+  "minTurns": 4
+ },
+ "outburstHeat": 2.95,
+ "blend": 8,
+ "speakerIntensity": "target = 1 + round(heat / 1.5), windows nearest to target",
+ "minSpeakerEnergy": 0.03,
+ "recentWindow": 6,
+ "corner": {
+  "stanceListen": {
+   "pro": {
+    "approve": 3,
+    "attend": 2,
+    "celebrate": 0.4
+   },
+   "contra": {
+    "doubt": 2,
+    "oppose": 2,
+    "mock": 1.5
+   },
+   "neutral": {
+    "attend": 2,
+    "idle": 2,
+    "bored": 1
+   }
+  },
+  "heckle": {
+   "minEngagement": 2,
+   "p": 0.35,
+   "moves": {
+    "contradict": 2,
+    "taunt": 1.5,
+    "dismiss": 1
+   },
+   "frames": [
+    40,
+    70
+   ]
+  },
+  "speakerAnswer": {
+   "heckled": {
+    "insist": 3,
+    "rage": 1.5,
+    "dismiss": 1.5
+   },
+   "calm": {
+    "explain": 4,
+    "insist": 2,
+    "question": 0.6
+   }
+  },
+  "heatFromHeckle": 0.45,
+  "heatFromApplause": -0.15,
+  "applauseEnd": "fans celebrate, speaker cheers"
+ }
+}
