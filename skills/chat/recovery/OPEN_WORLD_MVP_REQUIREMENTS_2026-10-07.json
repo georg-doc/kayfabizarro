@@ -5,7 +5,7 @@
   "product": "KFB Open World",
   "outcome": "One coherent, buildable, persistent, directly authorable KFB Open World used as reusable comic/story context.",
   "recoveryBranch": "recovery/open-world-master-acceptance-audit-2026-10-07",
-  "contractState": "PRE_AUDIT_SEED · ChefWSA must verify completeness and freeze stable Requirement IDs before donor selection",
+  "contractState": "BINDING INPUT LEDGER · no row may disappear; ChefWSA must independently verify completeness and then freeze stable Requirement IDs before donor selection",
   "productStatusRule": "MVP PASS only when every required row is GREEN at its required proof level; otherwise NO MVP.",
   "currentProductStatus": "NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN",
   "noProgressRollup": true,
@@ -958,5 +958,8 @@
         "WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md"
       ]
     }
-  ]
+  ],
+  "livingDocRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/open-world-mvp/",
+  "hubSurface": "KFB Production Hub live board → Open World MVP Living Doc",
+  "dataSourceMode": "Recovery-branch JSON is canonical audit ledger; published HTML is a read-only projection with embedded fallback."
 }
