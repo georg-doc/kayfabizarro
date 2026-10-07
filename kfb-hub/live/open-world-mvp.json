@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.16",
-  "updatedAt": "2026-10-07T15:00:32.856Z",
+  "revision": "2026-10-07.17",
+  "updatedAt": "2026-10-07T21:26:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Run the final Work/WSA ONE_SHOT v3 on PR #348. Pause only at the mandatory Georg Phase-3 visual product gate; otherwise continue until all 44 REQUIRED rows are GREEN or one proven outcome blocker remains.",
+  "nextGate": "Run the final Work/WSA ONE_SHOT v4 on PR #348. Keep all 44 REQUIRED rows unchanged; target F-S13 state-dependent Threshold Door / Paper-Facade proof only if bounded/low-risk. Pause only at the mandatory Georg Phase-3 visual product gate; otherwise continue until all 44 REQUIRED rows are GREEN or one proven outcome blocker remains.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,7 +2247,7 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "ONE_SHOT_V3_READY_FOR_WORK_WSA",
+    "status": "ONE_SHOT_V4_READY_FOR_WORK_WSA",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
@@ -2256,14 +2256,24 @@
     "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
     "requiredRows": 44,
-    "operationalVersion": 3,
-    "stronglyIncludeRows": 12,
+    "operationalVersion": 4,
+    "stronglyIncludeRows": 13,
     "optionalRows": 7,
     "inboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
     "inboxObservedTopLevelEntries": 115,
     "inboxNewRequiredRows": 0,
     "finalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
     "labDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md",
-    "phase3HumanVisualGate": true
+    "phase3HumanVisualGate": true,
+    "statefulThreshold": {
+      "id": "F-S13",
+      "class": "STRONGLY_INCLUDE",
+      "title": "State-dependent Threshold Door / Paper-Facade portal proof",
+      "baseState": "ordinary local pass-through",
+      "unlockedState": "existing portal/instance/realm routing or controlled portal target",
+      "lateralReveal": "walking around facade remains in current world and may reveal cardboard/stage construction",
+      "persistence": "authoritative threshold state survives fresh reload",
+      "scopeGuard": "no full quest/key/realm system; no second progression/world/portal owner"
+    }
   }
 }
