@@ -2673,3 +2673,13 @@ No runtime/product code changed.
 - Selected material: **P = B cloth (motion-safe macro patina) + C hardware (aged gilt/plaster/floor)**.
 - Deferred/nonblocking seams: tieback, ring-rail readability, impact edge sliver, idle clip binding, WebGL fallback decision, FrizzleBob source-pin reconcile, low-end/mobile performance and normal visible-tab confirmation.
 - Issue #372 closed/completed. Hub board advanced to **2026-10-07.6**. Runtime integration waits for the receiving Architecture Freeze / explicit consumer seam; no merge or Live promotion is implied.
+
+## 2026-10-07 · Public surface split · Play Site + public KFB Hub
+
+- Georg set the planned final playable game URL to `https://play-kayfabizarro.frizzlebob.chatgpt.site`.
+- The existing `https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site` remains an interim World review/authoring surface during Architecture Freeze and integration; it is not the intended final public game URL.
+- `https://kayfabizarro.pages.dev/` is the planned canonical public KFB Hub, distinct from the private Production Hub. Target public scope includes rules, the full public tab/navigation set, Gumroad/download links, and a thumbnail gallery/viewer.
+- Private Production Hub remains `https://kfb-production-hub.frizzlebob.chatgpt.site` for internal orientation/production routing.
+- Game, public hub and private production hub remain separate surfaces over one GitHub source truth; none may become a second game/runtime owner.
+- These are target surface decisions only. No claim is made that the new Play URL or the expanded pages.dev feature set is currently published/verified.
+- Site Surface Registry and Hub board were updated; Hub board revision is **2026-10-07.7**.
