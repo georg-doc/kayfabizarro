@@ -28,6 +28,8 @@ Do not build, repair, publish or merge the Open World. Freeze the complete contr
 12. Draft PR #348 + current Return / Recovery / ONE_SHOT_STATUS / integration matrix / One-Shot reset contract
 13. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md`
 14. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
+15. `skills/chat/OPEN_WORLD_MVP_HUB_LIVE_DATA_CONTRACT_2026-10-07.md`
+16. `skills/chat/publish/WORK_HUB_OPEN_WORLD_MVP_LIVE_VIEW_ONE_TIME_2026-10-07.md`
 
 Then inspect exact Coworker source in Dropbox: `/CLAUDE/KFB Open World`.
 
@@ -125,6 +127,24 @@ Primary Georg-facing Return, plain German:
 5. Was musst du jetzt tun? Preferably: nichts.
 
 Technical refs only under **Technischer Nachweis — nur für ausführende Chats**.
+
+## Phase 6 · one-time Production Hub Site migration
+
+In the **same Work/WSA run**, after the Living Doc/live feed is coherent enough to render truthfully, execute:
+
+`skills/chat/publish/WORK_HUB_OPEN_WORLD_MVP_LIVE_VIEW_ONE_TIME_2026-10-07.md`
+
+This is the only Site publication authorized by this Recovery run.
+
+It must:
+- update the existing Production Hub project in place;
+- add `?view=open-world-mvp`;
+- preserve the exact accepted current Hub shell and local state;
+- live-load `main/kfb-hub/live/open-world-mvp.json`;
+- prove a later JSON-only change appears after refresh with no second Site version/deployment;
+- leave Cloudflare completely out of this workflow.
+
+Do not end the run before the no-republish proof is either PASS or factually BLOCKED by one concrete Site limitation.
 
 ## MVP status rule
 
