@@ -1,0 +1,237 @@
+{
+  "schema": "kfb.emanata-source-mapping/1",
+  "date": "2026-10-07",
+  "status": "CURATED_SOURCE_MAPPING_VISUAL_DESIGN_PENDING",
+  "owner": "KFB Asset Registry / Asset Librarian reference layer",
+  "currentExecutor": "ChatGPT Web Chat",
+  "semanticOwnerProposal": "skills/chat/RESIDENT_AFFECT_EMANATA_MAP_PREP_2026-10-06.json",
+  "semanticRule": "Emanata read state; they do not write state.",
+  "primaryMorphologySource": {
+    "id": "visual-language-lab-manga-morphology",
+    "creator": "Neil Cohn / Visual Language Lab",
+    "url": "https://www.visuallanguagelab.com/jvl",
+    "sourceClass": "AUTHORITATIVE_ACADEMIC_VISUAL_LANGUAGE_SOURCE"
+  },
+  "terminologySource": {
+    "id": "comicsforum-emanata-terms",
+    "creator": "Andrei Molotiu / Comics Forum",
+    "url": "https://comicsforum.org/2013/07/26/list-of-terms-for-comics-studies-by-andrei-molotiu/",
+    "sourceClass": "ACADEMIC_TERMINOLOGY_SOURCE"
+  },
+  "canonicalKfbSlots": [
+    {
+      "id": "question",
+      "currentPresentationHint": "question-mark / clay bead curve",
+      "sourceConcepts": [
+        "Upfix – ?"
+      ],
+      "meanings": [
+        "curious",
+        "confused"
+      ],
+      "coverage": "DIRECT"
+    },
+    {
+      "id": "exclamation",
+      "currentPresentationHint": "exclamation / pop",
+      "sourceConcepts": [
+        "Upfix – !",
+        "Scopic Spark",
+        "Scopic Star",
+        "Scopic Lines",
+        "Upfix – Spikes"
+      ],
+      "meanings": [
+        "surprise",
+        "realization",
+        "excitement"
+      ],
+      "coverage": "DIRECT_PLUS_VARIANTS"
+    },
+    {
+      "id": "sweat-drop",
+      "currentPresentationHint": "single clay droplet",
+      "sourceConcepts": [
+        "Giant sweat drop",
+        "Plewds",
+        "Sweat drops all over face"
+      ],
+      "meanings": [
+        "anxiety",
+        "flustered",
+        "fear"
+      ],
+      "coverage": "DIRECT_PLUS_VARIANTS"
+    },
+    {
+      "id": "tear",
+      "currentPresentationHint": "single tear/drop near face",
+      "sourceConcepts": [
+        "Tear Bubble",
+        "Cry streaks"
+      ],
+      "meanings": [
+        "sadness"
+      ],
+      "coverage": "DIRECT_PLUS_VARIANTS"
+    },
+    {
+      "id": "anger-tick",
+      "currentPresentationHint": "comic anger crease / clay stroke",
+      "sourceConcepts": [
+        "Vein"
+      ],
+      "meanings": [
+        "anger"
+      ],
+      "coverage": "DIRECT"
+    },
+    {
+      "id": "heart",
+      "currentPresentationHint": "small clay heart",
+      "sourceConcepts": [
+        "Upfix – Hearts",
+        "Heart eyes"
+      ],
+      "meanings": [
+        "love",
+        "affection"
+      ],
+      "coverage": "DIRECT_PLUS_EYE_VARIANT"
+    },
+    {
+      "id": "sparkle",
+      "currentPresentationHint": "one small star/spark",
+      "sourceConcepts": [
+        "Sparkles",
+        "Scopic Star",
+        "Glowing face/body"
+      ],
+      "meanings": [
+        "happiness",
+        "elation",
+        "excitement",
+        "realization"
+      ],
+      "coverage": "DIRECT_PLUS_VARIANTS"
+    },
+    {
+      "id": "gloom-cloud",
+      "currentPresentationHint": "small dark clay cloud",
+      "sourceConcepts": [
+        "Dread lines",
+        "Shadows on face",
+        "Shade covered eyes",
+        "Shadow around eyes"
+      ],
+      "meanings": [
+        "fear",
+        "dread",
+        "intimidation",
+        "anger"
+      ],
+      "coverage": "FUNCTIONAL_ANALOG_NOT_LITERAL_SOURCE_MATCH"
+    }
+  ],
+  "expansionCandidates": [
+    {
+      "id": "blush",
+      "sourceConcepts": [
+        "Blush",
+        "Flush"
+      ],
+      "meanings": [
+        "embarrassment",
+        "love"
+      ],
+      "proposedRole": "face-affix / optional Emanata-adjacent presentation",
+      "recommendation": "KEEP_SEPARATE_FROM_PRIMARY_EMANATA_UNTIL_DESIGN"
+    },
+    {
+      "id": "dizzy",
+      "sourceConcepts": [
+        "Spiral Eyes"
+      ],
+      "meanings": [
+        "nausea",
+        "dizziness"
+      ],
+      "proposedRole": "EyeRig/reaction morphology",
+      "recommendation": "EYE_CHANNEL_FIRST"
+    },
+    {
+      "id": "overwhelmed",
+      "sourceConcepts": [
+        "Dot eyes",
+        "Empty eyes"
+      ],
+      "meanings": [
+        "hopeless",
+        "overwhelmed",
+        "disbelief"
+      ],
+      "proposedRole": "EyeRig/reaction morphology",
+      "recommendation": "EYE_CHANNEL_FIRST"
+    },
+    {
+      "id": "steam",
+      "sourceConcepts": [
+        "Steam"
+      ],
+      "meanings": [
+        "frustration"
+      ],
+      "proposedRole": "3D/2.5D Emanata candidate",
+      "recommendation": "STRONG_FUTURE_CANDIDATE"
+    },
+    {
+      "id": "breath",
+      "sourceConcepts": [
+        "Breath mushroom",
+        "Breath bubbles"
+      ],
+      "meanings": [
+        "relief",
+        "panting",
+        "exhaustion"
+      ],
+      "proposedRole": "graphic FX / performance",
+      "recommendation": "AUDIO_AND_EMANATA_CANDIDATE"
+    },
+    {
+      "id": "motion-emphasis",
+      "sourceConcepts": [
+        "Zoom Lines",
+        "Circumfixing motion lines"
+      ],
+      "meanings": [
+        "focal attention",
+        "shaking",
+        "strain",
+        "slight movement"
+      ],
+      "proposedRole": "Graphic FX rather than primary emotion Emanata",
+      "recommendation": "KEEP_UNDER_GRAPHIC_FX"
+    },
+    {
+      "id": "grawlix",
+      "sourceConcepts": [
+        "symbol strings representing swearwords"
+      ],
+      "meanings": [
+        "censored profanity / verbal outburst"
+      ],
+      "sourceUrl": "https://www.visuallanguagelab.com/P/2017.BL.MMNCMK.pdf",
+      "proposedRole": "Graphic FX / dialogue-symbol layer",
+      "recommendation": "KEEP_SEPARATE_FROM_EMOTION_EMANATA"
+    }
+  ],
+  "terminologyNote": "Comics Forum defines emanata broadly as symbolic graphic signs conveying psychological/emotional states, sounds, smells, physical impact and related non-diegetic information.",
+  "productRule": {
+    "maxPrimaryEmanataPerResident": 1,
+    "stableEventSeed": true,
+    "noPerFrameRandomReshaping": true,
+    "faceBubbleProtectedAreaRequired": true
+  },
+  "visualDesignPending": true
+}
