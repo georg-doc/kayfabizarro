@@ -1,8 +1,8 @@
 {
  "$schema": "kfb-postmortem-graveyard/v1",
- "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.9.0 (2026-10-04): WSA/Process-Fail — trotz etablierter GPT-Sites und Site-first Projektentscheidungen blieb der Root-Workflow Cloudflare-first; WSA begann erneut am Mirror statt an der Produktoberfläche. · 1.10.0 (2026-10-04): Kosten-Fail — teure High-Reasoning-Kapazität wurde als Publishing-Fallback behandelt, obwohl Site-Publish deterministisch separierbar ist.",
- "version": "1.10.0",
- "updated": "2026-10-04",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.9.0 (2026-10-04): WSA/Process-Fail — trotz etablierter GPT-Sites und Site-first Projektentscheidungen blieb der Root-Workflow Cloudflare-first; WSA begann erneut am Mirror statt an der Produktoberfläche. · 1.10.0 (2026-10-04): Kosten-Fail — teure High-Reasoning-Kapazität wurde als Publishing-Fallback behandelt, obwohl Site-Publish deterministisch separierbar ist. · 1.11.0 (2026-10-07): Open-World-Contract-Collapse — bindender One-Shot schrumpfte über Kandidaten; Continuous Terrain, God Mode, Terrain Sculpt/Persistence und Feature-Matrix wurden nicht durchgehend als harte Acceptance-Liste geschützt.",
+ "version": "1.11.0",
+ "updated": "2026-10-07",
  "graves": [
   {
    "id": "webgpu-foundation",
@@ -849,6 +849,30 @@
    ],
    "pattern": "capability-gap-causes-unnecessary-premium-model-escalation",
    "source": "skills/chat/SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md"
+  },
+  {
+   "id": "open-world-contract-collapse",
+   "date": "2026-10-07",
+   "stone": "Hier ruht: die Open World, deren Vertrag unterwegs schrumpfte",
+   "hover": "Der bindende One-Shot verlangte Continuous Terrain, God Mode, Terrain Sculpt, Save/Reload und repräsentative KFB-Systeme. Über mehrere Kandidaten wurde jeweils der aktuelle technische Teil zum faktischen Produkt. Coworkers 32-Stunden-Core endete deshalb als starke Bewegungs-/Streaming-/World-Generation-Basis ohne Editor, Save/Load und mit ungeklärter Hex-Terrain-Drift.",
+   "lesson": "Ein Produktvertrag darf nicht aus dem neuesten Kandidaten rückwärts abgeleitet werden. Vor jedem großen Build/Freeze braucht es eine unveränderliche Master-Acceptance-Matrix: REQUIRED FEATURE → bester geprüfter Donor → Owner → Test. Fehlt etwas im neuesten Kandidaten, bleibt es sichtbar MISSING statt still zu verschwinden.",
+   "trigger": "Wo ist die vollständige Feature-Matrix — und welches Pflichtfeature ist gerade verschwunden?",
+   "who": "process / briefing / routing",
+   "size": "monument",
+   "tags": [
+    "open-world",
+    "contract-collapse",
+    "briefing",
+    "routing",
+    "feature-loss",
+    "hex",
+    "god-mode",
+    "persistence",
+    "cost",
+    "wiederholungstaeter"
+   ],
+   "pattern": "newest-candidate-silently-redefines-product",
+   "source": "skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md"
   }
  ]
 }
