@@ -135,5 +135,31 @@
     "status": "NOT_DEPLOYED",
     "privateImagesAllowed": false
   },
-  "nextGate": "BUILD_STYLE_REFERENCES_R1_IN_EXISTING_ASSET_LIBRARIAN_SITE"
+  "nextGate": "SITES_CAPABLE_WORK_WSA_IMPORT_CURRENT_11_RECORD_DELTA_OR_CONTINUE_CURATION",
+  "currentCuration": {
+    "date": "2026-10-07",
+    "lastProvenPublishedBuiltIns": 58,
+    "currentRepoEtheringtonOfficial": 64,
+    "currentRepoSupplementary": 5,
+    "currentRepoCuratedTotal": 69,
+    "pendingSiteDeltaRecords": 11,
+    "pendingSiteDelta": "STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json",
+    "combinedImportBrief": "BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md"
+  },
+  "currentNarrativeResearch": {
+    "preferredNarrator": {
+      "role": "Historian",
+      "persona": "Chronicler",
+      "workingLabel": "Historian / Chronicler"
+    },
+    "contract": "KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md",
+    "authoringRules": "KFB_DIALOGUE_AUTHORING_RULES_ETHERINGTON_NIE_01_2026-10-07.md",
+    "authoringRulesMachine": "KFB_CHATTERBOX_AUTHORING_RULES_01.json",
+    "livingToyEventGrammar": [
+      "KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md",
+      "KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json"
+    ],
+    "livingToyActivityPool": "KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json",
+    "runtimeIntegration": "HOLD_UNTIL_COWORKER_INTAKE_AND_ARCHITECTURE_FREEZE"
+  }
 }
