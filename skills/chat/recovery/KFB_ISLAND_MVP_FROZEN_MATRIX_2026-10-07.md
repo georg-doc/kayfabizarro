@@ -425,7 +425,7 @@ Before asking Georg, persist `F-R39=PENDING`, exact candidate head and evidence 
 - receiving branch `ONE_SHOT_STATUS.json`;
 - `main/kfb-hub/live/open-world-mvp.json`.
 
-After Georg's PASS/FAIL, persist the decision, timestamp and exact head in both. A fresh chat may continue past the gate only from a persisted **PASS for the same candidate head**. Material visual/physical changes invalidate that PASS when they can affect the Golden.
+After Georg's PASS/FAIL, persist the decision, timestamp and accepted head in both and treat that head as the **Golden baseline head**. A fresh chat may continue past the gate from that persisted PASS. Later changes do **not** automatically invalidate the PASS: re-gate only when a later change can materially affect a Phase-3 Golden criterion and post-change critic/evidence shows a meaningful regression or unresolved change in that criterion. Unrelated additions that preserve the Golden do not require another Georg gate.
 
 ### F-R29 / F-R31 · terrain evaluation order
 Before exact persistence can pass, reconcile and freeze the relationship between:
