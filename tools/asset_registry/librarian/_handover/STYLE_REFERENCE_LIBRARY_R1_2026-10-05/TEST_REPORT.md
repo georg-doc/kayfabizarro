@@ -365,3 +365,34 @@ Prepared:
 - `BRIEF_WORK_IMPORT_SEED05_DIALOGUE_INTERACTION_2026-10-07.md`
 
 Current published Site remains Version 4 with 58 built-ins until the optional incremental Work import runs.
+
+
+---
+
+## Dialogue / Narration + Historian research validation · 2026-10-07
+
+Result: **12/12 PASS**
+
+Checks:
+1. Seed 05 count = 5.
+2. Seed 06 count = 6.
+3. Seeds 01–06 IDs unique = **64/64**.
+4. Seeds 01–06 canonical URLs unique = **64/64**.
+5. Seed 06 overlaps Seeds 01–05 = **0**.
+6. Seed 05 retains honest `sourceInspectedInIsolation=false` for all records.
+7. Seed 06 retains honest `sourceInspectedInIsolation=false` for all records.
+8. `KFB_CHATTERBOX_AUTHORING_RULES_01.json` parses and schema = `kfb.chatterbox-authoring-rules/1`.
+9. Combined Work import brief reconciles last proven 58 built-ins to expected 69 with 11 new records.
+10. Seed-05-only Work import brief is marked superseded for new runs.
+11. Canonical Historian / World-as-Toy / NIE donor audit exists.
+12. Accidental duplicate Historian audit path is absent.
+
+Scope:
+repository/data/brief validation only.
+
+Not claimed:
+- no new Site deployment;
+- no visual source-board inspection completion;
+- no Open World runtime test;
+- no ChatterBox runtime test;
+- no HUMAN_ACCEPTED state for the authoring rules.
