@@ -2,8 +2,8 @@
 
 Status: **READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
 Authority: **Georg / KFB**
-Executor: **ChatGPT Work/WSA · GPT-6 Astra Medium recommended**
-Escalation: increase reasoning only for one named outcome-critical debugging seam after evidence; do not start a second integrator.
+Executor: **ChatGPT Work/WSA · GPT-6 Astra Medium baseline recommended**
+Reasoning escalation: **Phase 3 (Early Visual/Physical Golden) and Phase 4 (Roads / junction integration) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
 Receiving owner: **KFB WorldBuilder / WB2**
 Repository: `georg-doc/kayfabizarro`
 Draft PR: **#348**
@@ -52,15 +52,16 @@ Before any implementation write, read the current GitHub versions of:
 5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
 6. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
 7. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
-8. current PR #348:
+8. `skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+9. current PR #348:
    - `ISLAND_TOPOLOGY_DECISION_2026-10-07.md`
    - `ISLAND_FOUNDATION_RETURN_2026-10-07.md`
-9. current binding canons:
+10. current binding canons:
    - `skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`
    - `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
-10. exact current PR #348 head and current Issue #360 state.
+11. exact current PR #348 head and current Issue #360 state.
 
 Only then open specialist Returns for rows that are actually being integrated.
 
@@ -352,11 +353,47 @@ Custom novelty is not progress by itself.
 
 Run a fresh read-only visual/physical critic here.
 
+### Georg Visual Product Gate · mandatory pause
+
+After the independent Phase-3 critic has produced its own evidence:
+
+- prepare **4–6 representative screenshots**;
+- prepare **one continuous clip ≤ 30 seconds**;
+- show the actual integrated runtime, not diagnostic substitutes;
+- ask Georg only for the product-look decision: **PASS / FAIL**.
+
+This is a **visual/product approval gate, not a debugging session**.
+
+- If Georg says **PASS**, continue automatically to Phase 4.
+- If Georg says **FAIL**, the Integrator resumes Phase-3 repair autonomously, using the critic evidence and any concrete feedback Georg volunteers.
+- Do not ask Georg to diagnose code, choose implementation details or debug intermediate seams.
+
+Do **not** proceed to Phase 4 until this gate is PASS.
+
 If this gate is red, repair the foundation before continuing.
 
 ---
 
 ## PHASE 4 · Roads / world traversal
+
+Before implementation, read:
+`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+
+Known donor facts — **evidence, not new canon**:
+
+- per-cell bespoke Bézier sweep is a rejected dead end;
+- Track Core v0.12 ROUNDABOUT can refuse some 60° configurations with STANDARD arms;
+- lab-working donor values included island radius 6.6, NARROW ring, fillet 6, splitter 0, arm length 18 with 9/12 fallback attempts;
+- T-junction / ordinary intersection is missing in Track Core v0.12;
+- the lab plate fallback is **not accepted** because a passing edge can cut it;
+- K=0.375 worked as a lab scale adapter but belongs in a proper Track profile/family if retained.
+
+Use these findings to avoid rediscovery, but inspect the current Track Core owner before applying any value.
+
+For the first island:
+- choose a route topology that uses a **cleanly compiled Track-Core-supported real junction/roundabout**;
+- **do not accept the plate fallback**;
+- if the required route genuinely needs a missing T/Y/4-way primitive, implement that primitive in the **Track Core owner**, not in Island code.
 
 One construction family:
 
@@ -562,6 +599,24 @@ Do not create a new global VFX runtime.
 
 Benchmark the actual integrated island.
 
+### Binding performance-measurement conditions
+
+A performance result may be used for F-R07 only when measured:
+
+- in a **visible, focused window**;
+- on the named **target machine/GPU**;
+- with no parallel screenshot capture, render, preview, local Lab or other meaningful GPU workload;
+- on the actual integrated product;
+- across the relevant Ground / Drive / Flight traversal.
+
+If any of these conditions is not met:
+**PERFORMANCE = UNKNOWN**, never PASS.
+
+Lab donor warning:
+- the reported 59.9-fps headed run is **not acceptance evidence** because parallel GPU load polluted the measurement;
+- the lab indicates the expensive path is primarily the **terrain Clay fragment shader**, not raw terrain geometry;
+- the existing Clay LOD effectively fails to simplify terrain-scale objects, so near/mid/far material strategy may be required.
+
 Record where available:
 
 - target-device FPS/frame-time;
@@ -715,7 +770,7 @@ After two non-improving repair passes on one seam:
    - STRONGLY INCLUDE but noncritical → quarantine/defer + continue;
    - OPTIONAL → defer + continue.
 
-Do not ask Georg to debug intermediate technical failures.
+Do not ask Georg to debug intermediate technical failures. The only planned intermediate human stop is the mandatory Phase-3 **visual PASS/FAIL gate** above.
 
 Global stop only for a **proven product-outcome blocker**.
 
@@ -775,6 +830,14 @@ Allowed final product states only:
 
 ### FAIL
 `NO MVP · PROVEN OUTCOME BLOCKER · <one concrete blocker>`
+
+For **both PASS and NO MVP**, attach the complete **44-row REQUIRED table** with:
+- row ID;
+- status;
+- evidence/proof reference;
+- blocker or unresolved note where red.
+
+A partial summary is not an acceptable final Return.
 
 Not allowed:
 
