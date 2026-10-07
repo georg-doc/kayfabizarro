@@ -151,3 +151,44 @@ export function createRuntimeModeBridge({ g, ground, onChange = null }) {
     },
   };
 }
+
+
+// WB2 receiving seam of this same mode owner. Each fixed step belongs to Ground OR Carpet.
+export function createWorldBuilderModeBridge({ground,carpet,rig,controls,frame,physics,holder,present,worldId,actorProfileId,onMode}){
+ let mode='GROUND',lastInput=null,disposed=false,flightClock=0;const groundFov=rig.camera.fov;
+ controls.enabled=false;
+ function publish(){onMode?.(mode)}
+ function stopFlight(){controls.enabled=false;ground.acceptPose(carpet.worldPos(),-carpet.state.heading);ground.character.setFlight(false);rig.camera.fov=groundFov;rig.camera.updateProjectionMatrix();mode='GROUND';publish()}
+ function enterFlight(){
+  if(disposed||mode!=='GROUND'||!ground.on)return false;
+  const p=ground.position.clone(),heading=ground.heading;
+  ground.setOn(false);mode='FLIGHT';ground.character.setFlight(true);holder.visible=true;
+  carpet.teleportTo(frame.fromWorld(p),-heading,p.y/frame.metresPerUnit,0);carpet.setSpeedFloor(0);carpet.setSchwebe(false);
+  controls.enabled=true;lastInput=null;flightClock=0;rig.snapTo(carpet.state.qPosition,carpet.state.heading,carpet.state.altitude,1);publish();return true;
+ }
+ function land(){
+  const support=frame.landingSupport(carpet.state.qPosition),p=carpet.worldPos();
+  if(support===null||p.y-support>.36||carpet.state.speed*frame.metresPerUnit>1)return false;
+  const pose={x:p.x,y:support+.02,z:p.z};if(!ground.character.validPose(pose))return false;
+  const heading=-carpet.state.heading;stopFlight();
+  ground.readDoc({id:worldId,world:{player:{worldId,actorProfileId:actorProfileId(),position:[pose.x,pose.y,pose.z],heading}}});ground.setOn(true);return true;
+ }
+ const detach=physics.onFixedStep(dt=>{
+  if(mode!=='FLIGHT')return;flightClock+=dt;
+  lastInput=controls.getState();if(lastInput.schwebeToggle)carpet.setSchwebe(!carpet.schwebt);
+  // Explicit descent starts hover, preserving present height, before consuming the downward command.
+  if(lastInput.descend&&!carpet.schwebt)carpet.setSchwebe(true);
+  carpet.update(dt,lastInput.turnRate,lastInput.forward,lastInput.brake,lastInput.elevate,lastInput.descend,lastInput.boost);
+  const p=carpet.worldPos();ground.position.copy(p);holder.rotation.set(carpet.state.pitch,-carpet.state.heading,-carpet.state.bankAngle,'YXZ');
+  if(lastInput.descend)land();
+ });
+ return {get mode(){return mode},get active(){return mode==='FLIGHT'||ground.on},enterFlight,
+  setOn(on){if(!on&&mode==='FLIGHT')stopFlight();ground.setOn(on)},
+  update(dt){if(mode==='GROUND')return ground.update(dt);present(dt,0,{phase:'air',time:flightClock,grounded:false});rig.update(dt,carpet.state.qPosition,carpet.state.heading,carpet.state.altitude,1,lastInput?.turnRate||0,carpet.speedRatio)},
+  reset(){if(mode==='FLIGHT')stopFlight()},
+  afterActorChange(){if(mode==='FLIGHT'){ground.setOn(false);ground.character.setFlight(true);holder.visible=true;}},
+  writeDoc(doc){ground.writeDoc(doc);if(mode==='FLIGHT')doc.world.player.heading=-carpet.state.heading;},
+  evidence:()=>({mode,movementOwner:mode==='FLIGHT'?'Travel Carpet':'WB2 Ground',cameraOwner:mode==='FLIGHT'?'Travel camera-rig':'WB2 Ground camera',physicsOwner:'WB2 Rapier',sourceUnitsToMetres:frame.metresPerUnit,flight:{...carpet.report(),boost:!!lastInput?.boost,hover:carpet.schwebt,pitch:carpet.state.pitch,bank:carpet.state.bankAngle},aglM:carpet.agl*frame.metresPerUnit}),
+  dispose(){disposed=true;controls.enabled=false;controls.dispose();detach();},
+ };
+}

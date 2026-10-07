@@ -8099,6 +8099,9 @@ var Sr = Object.freeze({
 			body: r,
 			collider: i,
 			reset: o,
+			setFlight: (e) => {
+				e ? (a.disableSnapToGround(), a.disableAutostep()) : (a.enableSnapToGround(.22), a.enableAutostep(.4, .2, !1));
+			},
 			validPose: (e) => !this.world.intersectionWithShape({
 				x: e.x,
 				y: e.y + n,

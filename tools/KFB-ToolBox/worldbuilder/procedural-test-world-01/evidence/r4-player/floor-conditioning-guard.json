@@ -1,0 +1,101 @@
+{
+  "schema": "kfb.guard-probe/1",
+  "scope": "Phase 2 floor conditioning; independent read-only production review",
+  "productionChanges": false,
+  "runtime": "Existing bundled Physics / Rapier 0.21.0",
+  "method": "Ephemeral Node probes; no production writes. Same capsule height1.8 radius.28, controller offset.015. Raw stationary120 steps dt1/60 deltaY-.0066667; movement uses existing Ground60 fixed steps.",
+  "stationary": [
+    {
+      "surface": "cuboid half-extents2,.5,2",
+      "snap": true,
+      "endY": 0.015099993051553611,
+      "minY": 0.014999934409861453
+    },
+    {
+      "surface": "cuboid half-extents20,.5,20",
+      "snap": true,
+      "endY": -0.13683490112860452,
+      "minY": -0.18002988725900648
+    },
+    {
+      "surface": "cuboid half-extents20,.5,20",
+      "snap": false,
+      "endY": 0.015097909668402281,
+      "minY": 0.015097846556745936
+    },
+    {
+      "surface": "two indexed triangles spanning40m",
+      "snap": true,
+      "endY": 0.015046278174413601,
+      "minY": 0.014997952908306616
+    }
+  ],
+  "groundMovement": [
+    {
+      "surface": "THREE.PlaneGeometry40x40 subdiv1",
+      "speeds": [
+        2.4400000000000004,
+        1,
+        5,
+        -1.9999999999999998
+      ],
+      "distancesZ": [
+        1.6031538721945253,
+        0.8666433327671257,
+        3.233156443464395,
+        -1.5438528334691455
+      ]
+    },
+    {
+      "surface": "THREE.PlaneGeometry40x40 subdiv10;4m cells",
+      "speeds": [
+        2.4400000000000004,
+        1,
+        5,
+        -2.4400000000000004
+      ],
+      "distancesZ": [
+        2.2118474757298827,
+        0.9666416672989726,
+        3.999867062084377,
+        -2.211831220658496
+      ],
+      "feetY": [
+        0.015096831578848651,
+        0.015100007759901928,
+        0.015099130723247072,
+        0.015000132279528771
+      ]
+    },
+    {
+      "surface": "THREE.PlaneGeometry40x40 subdiv40;1m cells",
+      "speeds": [
+        2.4400000000000004,
+        1,
+        5,
+        -2.4400000000000004
+      ],
+      "distancesZ": [
+        2.211988946888596,
+        0.9666721024550498,
+        3.99995149159804,
+        -2.211992025608197
+      ],
+      "feetY": [
+        0.014999974194797688,
+        0.01509611365647288,
+        0.015093589153839276,
+        0.014996795532642864
+      ]
+    }
+  ],
+  "speedOrder": [
+    "jog",
+    "Alt slow",
+    "Shift sprint",
+    "back"
+  ],
+  "verdict": "No runtime broadphase change yet. Large convex/triangle query conditioning implicated; primitive type alone does not explain all stalls. Ground speed-zero response amplifies transient contact loss. Use receiving-scale indexed fixture without hiding large-primitive caveat.",
+  "nextGate": "Normal input sprint/back/jump on actual receiving radial terrain and Track triangle scale. No inherited builder acceptance; no product PASS.",
+  "quarantine": "Autostep remains separate frozen known failure; not repaired by this probe."
+}

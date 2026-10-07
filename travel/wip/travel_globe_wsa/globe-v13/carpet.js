@@ -114,7 +114,12 @@ export function createCarpet(o) {
   /** Die Parameter dieses Fluges. Standard = Quelle, also ändert Slice D nichts. */
   const P = Object.assign({}, CARPET_QUELLE, o.params || {});
 
-  const spawn = randomSpawnQuaternionAndHeading(seed + (o.spawnSalt || 0));
+  // Optional receiving-world geometry seam; source dynamics and spherical default stay here.
+  const geometry=o.geometry;
+  const frame=q=>geometry?geometry.frame(q):tangentFrame(q);
+  const surface=(q,up)=>geometry?geometry.surface(q):surfaceAltitudeAt(seed,terrainType,up.x,up.y,up.z);
+  const land=(q,up)=>geometry?geometry.isLand(q):isLand(seed,terrainType,up.x,up.y,up.z);
+  const spawn = geometry?geometry.spawn():randomSpawnQuaternionAndHeading(seed + (o.spawnSalt || 0));
   const S = {
     qPosition: spawn.qPosition.clone(),
     heading: spawn.heading,
@@ -136,8 +141,8 @@ export function createCarpet(o) {
   let prevAltitude = 0, prevSurfaceAltitude = 0;
 
   {
-    const up = tangentFrame(S.qPosition).up;
-    const surfaceAlt = surfaceAltitudeAt(seed, terrainType, up.x, up.y, up.z);
+    const up = frame(S.qPosition).up;
+    const surfaceAlt = surface(S.qPosition,up);
     S.altitude = surfaceAlt + P.hoverHeight;
     prevAltitude = S.altitude;
     prevSurfaceAltitude = surfaceAlt;
@@ -146,7 +151,8 @@ export function createCarpet(o) {
   const wrap2pi = (a) => ((a % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
   const wrapPi = (a) => (((a + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2)) - Math.PI;
 
-  function update(dt, turnRate, forward, brake, elevate, descend) {
+  function update(dt, turnRate, forward, brake, elevate, descend, boost=false) {
+    let previous=geometry?{qPosition:S.qPosition.clone(),altitude:S.altitude}:null;
     // ── Tempo ───────────────────────────────────────────────────────────────
     // ⚠ Im Schweben gilt der Tempo-SOCKEL nicht. Er ist die Zeile, die „Teppich" bedeutet (der
     // fliegt, er parkt nicht) — und genau deshalb muss ein Modus, der HALTEN soll, ihn AUSSETZEN
@@ -179,6 +185,8 @@ export function createCarpet(o) {
     const sockel = frei ? 0 : speedFloor;
     if (schwebe) S.speed = Math.max(0, S.speed - P.schwebeBremse * dt);
     else if (brake) S.speed = Math.max(0, S.speed - P.brakeDecel * dt);
+    else if (geometry && boost) S.speed = Math.min(P.absMaxSpeed,S.speed+P.accel*dt);
+    else if (geometry && S.speed>P.maxSpeed) S.speed = Math.max(P.maxSpeed,S.speed-P.coastDecel*dt);
     else if (forward) S.speed = Math.min(P.maxSpeed, S.speed + P.accel * dt);
     // Der Sockel zieht nur während der Anroll-RAMPE hoch (globe-poc setzt ihn danach auf 0).
     // Ohne diese Zeile würde der Start nicht anrollen; mit ihr UND einem stehenden Sockel hätte
@@ -204,11 +212,14 @@ export function createCarpet(o) {
 
     // ── Bewegung auf dem Großkreis ─────────────────────────────────────────
     const arcAngle = (S.speed * dt) / globeRadius;
-    S.qPosition = moveOnSphere(S.qPosition, S.velocityHeading, arcAngle);
+    S.qPosition = geometry?geometry.move(S.qPosition,S.velocityHeading,S.speed*dt):moveOnSphere(S.qPosition, S.velocityHeading, arcAngle);
+    // Contact clips the horizontal proposal before terrain/cliff dynamics read that destination.
+    // Then the same resolver sweeps the vertical proposal, still in this owner/fixed step.
+    if(geometry?.resolve){const resolved=geometry.resolve(previous,{qPosition:S.qPosition,altitude:previous.altitude});S.qPosition.copy(resolved.qPosition);S.altitude=resolved.altitude;previous={qPosition:S.qPosition.clone(),altitude:S.altitude};}
 
-    const up = tangentFrame(S.qPosition).up;
-    S.isOverWater = !isLand(seed, terrainType, up.x, up.y, up.z);
-    const surfaceAlt = surfaceAltitudeAt(seed, terrainType, up.x, up.y, up.z);
+    const up = frame(S.qPosition).up;
+    S.isOverWater = !land(S.qPosition,up);
+    const surfaceAlt = surface(S.qPosition,up);
 
     // ── Höhe: RELATIV zur Oberfläche, ohne absolute Klemme ─────────────────
     const elevateTarget = (elevate && !schwebe) ? 1 : 0;
@@ -243,6 +254,8 @@ export function createCarpet(o) {
     const hardFloor = surfaceAlt + P.hoverHeight;
     if (S.altitude < hardFloor) S.altitude = hardFloor;
 
+    // Resolve physical displacement inside this owner before committing the final pose.
+    if(geometry?.resolve){const resolved=geometry.resolve(previous,{qPosition:S.qPosition,altitude:S.altitude});S.qPosition.copy(resolved.qPosition);S.altitude=resolved.altitude;prevSurfaceAltitude=surface(S.qPosition,frame(S.qPosition).up);S.isOverWater=!land(S.qPosition,frame(S.qPosition).up);}
     const altDelta = (S.altitude - prevAltitude) / Math.max(dt, 1e-4);
     prevAltitude = S.altitude;
     const climbRate = Math.max(-1, Math.min(1, altDelta * P.climbRateGain));
@@ -272,11 +285,11 @@ export function createCarpet(o) {
     S.drifting = false;
     S.altitude = altitude;
     prevAltitude = altitude;
-    const up = tangentFrame(S.qPosition).up;
-    prevSurfaceAltitude = surfaceAltitudeAt(seed, terrainType, up.x, up.y, up.z);
+    const up = frame(S.qPosition).up;
+    prevSurfaceAltitude = surface(S.qPosition,up);
     cliffGlideBonus = 0;
     S.speed = Math.min(speed != null ? speed : S.speed, P.absMaxSpeed);
-    S.isOverWater = !isLand(seed, terrainType, up.x, up.y, up.z);
+    S.isOverWater = !land(S.qPosition,up);
   }
 
   /** Welche Parameter von der Quelle abweichen — die Abnahme von Slice D in einer Liste. */
@@ -312,8 +325,8 @@ export function createCarpet(o) {
      *  „abbremsen … in der AKTUELLEN Höhe", nicht „abbremsen und absacken". */
     setSchwebe(on) {
       if (on && !schwebe) {
-        const up = tangentFrame(S.qPosition).up;
-        const surfaceAlt = surfaceAltitudeAt(seed, terrainType, up.x, up.y, up.z);
+        const up = frame(S.qPosition).up;
+        const surfaceAlt = surface(S.qPosition,up);
         schwebeVersatz = Math.max(0, Math.min(P.schwebeMax, S.altitude - surfaceAlt - P.hoverHeight));
       }
       schwebe = !!on;
@@ -337,10 +350,10 @@ export function createCarpet(o) {
     teleportTo,
     /** v3 · Reisetempo-Obergrenze — damit niemand die 0,78 als zweite Konstante nachschreibt. */
     get maxSpeed() { return P.maxSpeed; },
-    matrix() { return buildPlaneMatrix(S.qPosition, S.heading, S.pitch, S.bankAngle, S.altitude, globeRadius); },
-    worldPos() { return cartesianFromSpherical(S.qPosition, S.altitude, globeRadius); },
+    matrix() { if(geometry)return geometry.matrix(S);return buildPlaneMatrix(S.qPosition, S.heading, S.pitch, S.bankAngle, S.altitude, globeRadius); },
+    worldPos() { if(geometry)return geometry.worldPos(S.qPosition,S.altitude);return cartesianFromSpherical(S.qPosition, S.altitude, globeRadius); },
     /** Für Schüsse: Ursprung und Richtung aus der Nase, dieselbe Formel wie im Original. */
-    shotRay() { return rayFromState(S.qPosition, S.heading, S.pitch, S.altitude, globeRadius); },
+    shotRay() { if(geometry)return geometry.shotRay(S);return rayFromState(S.qPosition, S.heading, S.pitch, S.altitude, globeRadius); },
     report() {
       const ab = abweichungen();
       return { tempo: +S.speed.toFixed(2), hoehe: +S.altitude.toFixed(3),

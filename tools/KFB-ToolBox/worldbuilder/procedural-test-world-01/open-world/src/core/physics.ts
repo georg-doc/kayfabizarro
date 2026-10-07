@@ -58,6 +58,7 @@ export class Physics {
     controller.setMaxSlopeClimbAngle(Math.PI/3);controller.setMinSlopeSlideAngle(Math.PI/3);
     const reset=(p:{x:number;y:number;z:number})=>{body.setTranslation({x:p.x,y:p.y+offset,z:p.z},true);body.setNextKinematicTranslation({x:p.x,y:p.y+offset,z:p.z});this.world.propagateModifiedBodyPositionsToColliders();};
     return {body,collider,reset,
+      setFlight:(on:boolean)=>{if(on){controller.disableSnapToGround();controller.disableAutostep();}else{controller.enableSnapToGround(.22);controller.enableAutostep(.4,.2,false);}},
       validPose:(p:{x:number;y:number;z:number})=>!this.world.intersectionWithShape({x:p.x,y:p.y+offset,z:p.z},{x:0,y:0,z:0,w:1},collider.shape,undefined,undefined,collider,body),
       move:(p:{x:number;y:number;z:number},delta:{x:number;y:number;z:number})=>{
         reset(p);controller.computeColliderMovement(collider,delta);

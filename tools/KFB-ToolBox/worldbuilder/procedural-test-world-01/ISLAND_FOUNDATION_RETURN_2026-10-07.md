@@ -1,3 +1,19 @@
+# R4 · Player Ground/Flight implementation + evidence milestone · continue Drive
+
+Parent `472ecc06915923a0c81d8252435d0128e8c0910c`; this milestone belongs to its containing commit. Same WB2 owner/PR/branch, Frozen Matrix v5 44/13/7. **NO MVP**. This is continued Phase 2, not a phase or product PASS.
+
+Existing Ground now provides default Jog (2.65256 m/s), Shift Sprint (5.255), Alt Slow Walk (.98), useful backward (-2.65256), Q/E body-relative strafe, short anticipation and Rapier ballistic jump. Native Motion clips include the pinned Basic jump chain and Advanced Walking_Backwards. One mixer remains. Close Ground camera uses the same Rapier world for line-of-sight obstruction. Jump animation quality, no skating and complex camera acceptance remain open to normal-input critics.
+
+Existing Travel `carpet.js`, `camera-rig.js`, `flight-controls.js` and runtime mode bridge have optional island-frame seams. Spherical defaults remain. One Travel unit is explicitly ten metres for position/speed/height/camera. Existing WB2 capsule and Physics resolve Flight displacement; no second world/controller/renderer. Horizontal contact resolves before reading reached terrain, preventing phantom cliff glide. 400ms fresh double-Space donor comes from Travel TMB2 branch, blob `52738fa6f70918ebfa09d0c811eff38b04349e45`. First tap queues Ground jump independently. Shift boost is a declared bounded planar extension using Carpet's existing acceleration/absolute speed cap; source constants are unchanged.
+
+Read-only Guard identified heading/FOV leakage on Flight→Build, capsule mode on Actor replacement, and rejected-destination terrain history. These are repaired with bridge and blocked-wall/cliff regression tests. Browser normal-input witnesses record Jog/Sprint/Slow/back and Ground→double-Space→forward/climb→bank→hover→intentional Down→Ground. Evidence under `evidence/r4-player/`; these captures are development evidence, not Georg F-R39 or F-R07 acceptance. Native Taxi and Jump_Start have source-isolation screenshots/identities. KEEP Taxi as the bounded vehicle donor; material presentation still requires Clay adaptation.
+
+17 tests pass and the pre-existing 0.30m automatic-step failure stays explicitly quarantined/TODO. Full TypeScript passes. Oversized convex/two-triangle floor probes revealed Rapier contact conditioning; receiving-scale indexed 4m/1m surfaces and actual Track normal input succeed. Preserve `floor-conditioning-guard.json`; do not silently claim arbitrary convex-floor robustness. No runtime snap change was made to hide the artificial fixture failure.
+
+Next internal gate: existing Joyride K2B Drive on the named island, then Track-supported route/junction and Early Golden. All44 REQUIRED remain NOT_GREEN pending full product and critics; F-R39 NOT_READY, F-R07 UNKNOWN. No Site/Hub publication, merge or Live promotion.
+
+---
+
 # R4 · Foundation contact/replay milestone 2 · continue Player Golden
 
 WB2 PR #348 / receiving branch unchanged. Parent `e6ac9abf47ac0109d9d516bc129e6df8539fbc66`; this milestone belongs to its containing commit. Frozen Matrix v5 remains 44/13/7. **NO MVP**, no whole-product or visual acceptance claimed.

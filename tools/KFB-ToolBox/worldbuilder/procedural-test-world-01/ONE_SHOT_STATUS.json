@@ -1,6 +1,6 @@
 {
   "schema": "kfb.one-shot-status/2",
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "product": "KFB Island MVP R4",
   "mode": "ONE_SHOT",
   "state": "RUNNING_PLAYER_GOLDEN",
@@ -10,8 +10,8 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "e6ac9abf47ac0109d9d516bc129e6df8539fbc66",
-  "milestone": "foundation-contact-replay-2",
+  "baseHead": "472ecc06915923a0c81d8252435d0128e8c0910c",
+  "milestone": "player-ground-flight-1",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
@@ -569,5 +569,26 @@
       "guard": "MINOR / QUARANTINABLE until required route proves unavoidable curb",
       "repairPassesWithoutImprovement": 2
     }
-  ]
+  ],
+  "playerGolden": {
+    "status": "RUNNING",
+    "groundFlight": "Technical normal-input witnesses and owner tests; not product acceptance",
+    "drive": "NEXT: existing Joyride K2B on named island, source taxi isolated",
+    "unresolved": [
+      "Jump presentation/foot skating and camera whole-route visual critic",
+      "Drive and Phase2B route before EarlyGolden",
+      "Actual composed Claybound world remains unaccepted"
+    ],
+    "evidence": [
+      "evidence/r4-player/normal-input-ground.json",
+      "evidence/r4-player/ground-flight-ground.json",
+      "evidence/r4-player/floor-conditioning-guard.json"
+    ],
+    "tests": {
+      "pass": 17,
+      "quarantinedTodo": 1,
+      "typeScript": "PASS"
+    },
+    "guard": "Read-only Foundation Guard: bounded handoff repairs; collision-cliff seam now has passing blocked-vs-flat terrain regression test. No product score."
+  }
 }

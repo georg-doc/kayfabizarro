@@ -808,7 +808,7 @@ async function buildSceneObjects(token){
     else if(rec.performanceSetId){const api=await import('../procedural-test-world-01/wb2-party.v1.js');const module=await api.createPartySet(rec.performanceSetId,{renderer});root.userData.lifecycle=module;root.userData.performanceSetId=rec.performanceSetId;model=module.root;}
     else if(rec.taxi){const api=await import('../procedural-test-world-01/wb2-taxi.v1.js');model=await api.createTaxiModel();}
     else if(rec.residentSetId){const api=await import('../procedural-test-world-01/wb2-residents.v1.js');const module=await api.createResidentSet(rec.residentSetId,{onProgress:(done,total,item)=>{document.body.dataset.residentLoad=JSON.stringify({id:rec.id,done,total,item})}});root.userData.lifecycle=module;model=module.root;}
-    else if(rec.registeredAssetId){const api=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');const record=Object.values(api.manifest.families).flat().find(r=>r.assetId===rec.registeredAssetId);if(!record)throw Error('Unknown registered source '+rec.registeredAssetId);model=await api.loadRegistered(record);await api.adaptRegistered(model);model.userData.sourceRecord=record;}
+    else if(rec.registeredAssetId){const api=await import('../procedural-test-world-01/wb2-source-evidence.v1.js?r4-player-01');const record=Object.values(api.manifest.families).flat().find(r=>r.assetId===rec.registeredAssetId);if(!record)throw Error('Unknown registered source '+rec.registeredAssetId);model=await api.loadRegistered(record);await api.adaptRegistered(model);model.userData.sourceRecord=record;}
     else {
       const source=rec.kind==='resident'?ACTOR:PROP;
       if(rec.source?.path!==source.path||rec.source?.commit!==source.commit)throw Error('Unregistered source requires Asset Librarian intake: '+rec.id);
@@ -1338,7 +1338,7 @@ try{
     WORLD.reconcileDoc?.(sceneDoc);
     actorSourceReady=propSourceReady=true;updateReviewUnlock();
     await showScene();
-    if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED){setPlay(true);const EVID=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');window.__wb2d.candidateEvidence=EVID.createCandidateEvidence(window.__wb2d);if(QUERY.has('source-review'))await window.__wb2d.candidateEvidence.inspect(QUERY.get('source-review'),QUERY.get('variant')||'original');}
+    if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED){setPlay(true);const EVID=await import('../procedural-test-world-01/wb2-source-evidence.v1.js?r4-player-01');window.__wb2d.candidateEvidence=EVID.createCandidateEvidence(window.__wb2d);if(QUERY.has('source-review'))await window.__wb2d.candidateEvidence.inspect(QUERY.get('source-review'),QUERY.get('variant')||'original');}
     if(HOST_PROPS.worldStudioMvp)await window.__wb2d.mvp.mount();
     if(ISLAND_LOAD_ERROR){E('saveState').textContent='Saved island could not be loaded; original data preserved. Import a valid scene or explicitly Save to replace it.';status('Saved island recovery: '+ISLAND_LOAD_ERROR.message,'bad');console.warn('saved island preserved',ISLAND_LOAD_ERROR)}
     if(new URLSearchParams(location.search).get('selftest')==='wi1')await runWorldSelfTest();

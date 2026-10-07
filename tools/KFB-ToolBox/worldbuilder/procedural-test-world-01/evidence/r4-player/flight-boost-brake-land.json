@@ -1,0 +1,364 @@
+{
+  "status": "TECHNICAL_WITNESS_NOT_PRODUCT_PASS",
+  "boost": {
+    "owner": "WB2 shared planar Ground",
+    "animationOwner": "KayKit native speed/phase mixer",
+    "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+    "actorProfileId": "Mannequin_Medium",
+    "position": [
+      2.5505568135057617,
+      4.084232023654767,
+      3.8980297908024752
+    ],
+    "heading": 0.23888392223683771,
+    "speed": 0,
+    "motion": {
+      "phase": "anticipation",
+      "time": 0.016666666666666666,
+      "verticalSpeed": 0,
+      "grounded": true,
+      "lateralSpeed": 0
+    },
+    "phase": 0,
+    "rows": [
+      {
+        "clip": "Jump_Idle",
+        "time": 0.7833332777023299,
+        "weight": 1
+      }
+    ],
+    "bindings": {
+      "Idle_A": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Walking_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Running_A": {
+        "sourceTracks": 68,
+        "boundTracks": 62,
+        "duration": 0.800000011920929
+      },
+      "Running_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.800000011920929
+      },
+      "Walking_Backwards": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Start": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6000000238418579
+      },
+      "Jump_Idle": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Land": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6666666865348816
+      }
+    },
+    "bodyHeight": 2.192545909798636,
+    "dance": {
+      "active": false,
+      "source": null,
+      "time": 0
+    },
+    "groundY": 0.6000000238418579,
+    "mixerCount": 1,
+    "mobility": {
+      "mode": "FLIGHT",
+      "movementOwner": "Travel Carpet",
+      "cameraOwner": "Travel camera-rig",
+      "physicsOwner": "WB2 Rapier",
+      "sourceUnitsToMetres": 10,
+      "flight": {
+        "tempo": 1.38,
+        "hoehe": 0.408,
+        "drift": 0,
+        "ueberWasser": false,
+        "kurs": 346,
+        "parameter": 34,
+        "abweichungen": 0,
+        "abweichend": [],
+        "boost": false,
+        "hover": false,
+        "pitch": -0.059248759493416944,
+        "bank": 0
+      },
+      "aglM": 3.484231999812909
+    },
+    "intent": {
+      "schema": "kfb.mobility-mode-intent/1",
+      "windowMs": 400,
+      "armed": false,
+      "ageMs": null,
+      "firstTapAt": null,
+      "lastTapAt": 34588.19999998808,
+      "firstTapCount": 1,
+      "requestCount": 1,
+      "resetCount": 2,
+      "lastResetReason": "play-edit",
+      "lastResult": {
+        "kind": "REQUEST_FLIGHT",
+        "requestFlight": true,
+        "accepted": true,
+        "deltaMs": 5.800000011920929,
+        "windowMs": 400
+      }
+    }
+  },
+  "brakeHover": {
+    "owner": "WB2 shared planar Ground",
+    "animationOwner": "KayKit native speed/phase mixer",
+    "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+    "actorProfileId": "Mannequin_Medium",
+    "position": [
+      3.4723826260532293,
+      3.3656478251500808,
+      7.683231840918388
+    ],
+    "heading": 0.23888392223683771,
+    "speed": 0,
+    "motion": {
+      "phase": "anticipation",
+      "time": 0.016666666666666666,
+      "verticalSpeed": 0,
+      "grounded": true,
+      "lateralSpeed": 0
+    },
+    "phase": 0,
+    "rows": [
+      {
+        "clip": "Jump_Idle",
+        "time": 0.7166665554046578,
+        "weight": 1
+      }
+    ],
+    "bindings": {
+      "Idle_A": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Walking_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Running_A": {
+        "sourceTracks": 68,
+        "boundTracks": 62,
+        "duration": 0.800000011920929
+      },
+      "Running_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.800000011920929
+      },
+      "Walking_Backwards": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Start": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6000000238418579
+      },
+      "Jump_Idle": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Land": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6666666865348816
+      }
+    },
+    "bodyHeight": 2.192545909798636,
+    "dance": {
+      "active": false,
+      "source": null,
+      "time": 0
+    },
+    "groundY": 0.6000000238418579,
+    "mixerCount": 1,
+    "mobility": {
+      "mode": "FLIGHT",
+      "movementOwner": "Travel Carpet",
+      "cameraOwner": "Travel camera-rig",
+      "physicsOwner": "WB2 Rapier",
+      "sourceUnitsToMetres": 10,
+      "flight": {
+        "tempo": 0,
+        "hoehe": 0.337,
+        "drift": 0,
+        "ueberWasser": false,
+        "kurs": 346,
+        "parameter": 34,
+        "abweichungen": 0,
+        "abweichend": [],
+        "boost": false,
+        "hover": true,
+        "pitch": -0.0009438127918317192,
+        "bank": 0
+      },
+      "aglM": 2.765647801308223
+    },
+    "intent": {
+      "schema": "kfb.mobility-mode-intent/1",
+      "windowMs": 400,
+      "armed": false,
+      "ageMs": null,
+      "firstTapAt": null,
+      "lastTapAt": 34588.19999998808,
+      "firstTapCount": 1,
+      "requestCount": 1,
+      "resetCount": 2,
+      "lastResetReason": "play-edit",
+      "lastResult": {
+        "kind": "REQUEST_FLIGHT",
+        "requestFlight": true,
+        "accepted": true,
+        "deltaMs": 5.800000011920929,
+        "windowMs": 400
+      }
+    }
+  },
+  "landing": {
+    "owner": "WB2 shared planar Ground",
+    "animationOwner": "KayKit native speed/phase mixer",
+    "sourcePin": "4398cd96499cd74c20b7be89e051a99121ea54c2",
+    "actorProfileId": "Mannequin_Medium",
+    "position": [
+      3.4723818984527015,
+      0.6150074532483996,
+      7.6832224351977665
+    ],
+    "heading": -6.044301384942749,
+    "speed": 0,
+    "motion": {
+      "phase": "ground",
+      "time": 1.0833333333333344,
+      "verticalSpeed": 0,
+      "grounded": true,
+      "lateralSpeed": 0
+    },
+    "phase": 0,
+    "rows": [
+      {
+        "role": "idle",
+        "clip": "Idle_A",
+        "speed": 0,
+        "cycleT": 1.067,
+        "leftFootDownPhase": null,
+        "weight": 1,
+        "time": 0.9408000000125669
+      }
+    ],
+    "bindings": {
+      "Idle_A": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Walking_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Running_A": {
+        "sourceTracks": 68,
+        "boundTracks": 62,
+        "duration": 0.800000011920929
+      },
+      "Running_B": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.800000011920929
+      },
+      "Walking_Backwards": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Start": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6000000238418579
+      },
+      "Jump_Idle": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 1.0666667222976685
+      },
+      "Jump_Land": {
+        "sourceTracks": 69,
+        "boundTracks": 63,
+        "duration": 0.6666666865348816
+      }
+    },
+    "bodyHeight": 2.192545909798636,
+    "dance": {
+      "active": false,
+      "source": null,
+      "time": 0
+    },
+    "groundY": 0.6000000238418579,
+    "mixerCount": 1,
+    "mobility": {
+      "mode": "GROUND",
+      "movementOwner": "WB2 Ground",
+      "cameraOwner": "WB2 Ground camera",
+      "physicsOwner": "WB2 Rapier",
+      "sourceUnitsToMetres": 10,
+      "flight": {
+        "tempo": 0,
+        "hoehe": 0.09,
+        "drift": 0,
+        "ueberWasser": false,
+        "kurs": 346,
+        "parameter": 34,
+        "abweichungen": 0,
+        "abweichend": [],
+        "boost": false,
+        "hover": true,
+        "pitch": -1.4515763446785498e-17,
+        "bank": 0
+      },
+      "aglM": 0.299999999551364
+    },
+    "intent": {
+      "schema": "kfb.mobility-mode-intent/1",
+      "windowMs": 400,
+      "armed": false,
+      "ageMs": null,
+      "firstTapAt": null,
+      "lastTapAt": 34588.19999998808,
+      "firstTapCount": 1,
+      "requestCount": 1,
+      "resetCount": 2,
+      "lastResetReason": "play-edit",
+      "lastResult": {
+        "kind": "REQUEST_FLIGHT",
+        "requestFlight": true,
+        "accepted": true,
+        "deltaMs": 5.800000011920929,
+        "windowMs": 400
+      }
+    }
+  }
+}

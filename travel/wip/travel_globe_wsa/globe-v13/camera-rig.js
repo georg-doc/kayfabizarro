@@ -56,8 +56,9 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 export function createCameraRig(THREE, aspect, opts) {
   /** Standard = Quelle, also ändert Slice D nichts. */
   const P = Object.assign({}, RIG_QUELLE, (opts && opts.params) || {});
-  const camera = new THREE.PerspectiveCamera(P.baseFov, aspect, 0.01, 200);
-  camera.position.set(0, 10, 0);
+  const camera = opts?.camera || new THREE.PerspectiveCamera(P.baseFov, aspect, 0.01, 200);
+  const geometry=opts?.geometry,units=geometry?.metresPerUnit||1;
+  if(!opts?.camera)camera.position.set(0, 10, 0);
 
   const targetPos = new THREE.Vector3(), targetLookAt = new THREE.Vector3();
   const currentPos = new THREE.Vector3(0, 10, 0), currentLookAt = new THREE.Vector3();
@@ -75,8 +76,8 @@ export function createCameraRig(THREE, aspect, opts) {
     speedZoom = speedZoom != null ? speedZoom : 1;
     fovBoost = fovBoost != null ? fovBoost : P.fovBoost;
 
-    const frame = tangentFrame(qPosition);
-    const planeWorldPos = cartesianFromSpherical(qPosition, altitude, globeRadius);
+    const frame = (geometry?geometry.frame(qPosition):tangentFrame(qPosition));
+    const planeWorldPos = (geometry?geometry.worldPos(qPosition,altitude):cartesianFromSpherical(qPosition, altitude, globeRadius));
 
     currentZoom += (speedRatio - currentZoom) * Math.min(1, P.zoomSmooth * dt);
     let dist = followDist + P.distBoost * currentZoom * speedZoom;
@@ -92,8 +93,8 @@ export function createCameraRig(THREE, aspect, opts) {
       .addScaledVector(frame.north, Math.cos(heading))
       .addScaledVector(frame.east, Math.sin(heading)).normalize();
 
-    targetPos.copy(planeWorldPos).addScaledVector(forward, -dist).addScaledVector(frame.up, height);
-    targetLookAt.copy(planeWorldPos).addScaledVector(forward, P.lookAhead);
+    targetPos.copy(planeWorldPos).addScaledVector(forward, -dist*units).addScaledVector(frame.up, height*units);
+    targetLookAt.copy(planeWorldPos).addScaledVector(forward, P.lookAhead*units);
 
     const closeDamp = clamp(dist / P.dampRef, P.dampMin, 1.0);
     const posFactor = 1 - Math.exp(-P.posSmooth * closeDamp * dt);
@@ -138,7 +139,7 @@ export function createCameraRig(THREE, aspect, opts) {
     const fovSoll = targetFov + trFov;
     if (Math.abs(camera.fov - fovSoll) > 0.01) { camera.fov = fovSoll; camera.updateProjectionMatrix(); }
 
-    camera.up.copy(currentPos.clone().normalize());
+    if(geometry){geometry.avoidCamera?.(currentLookAt,camera.position);camera.up.copy(frame.up);}else camera.up.copy(currentPos.clone().normalize());
     camera.lookAt(currentLookAt);
 
     const tiltDamp = clamp(P.tiltFloor + (1 - P.tiltFloor) * closeDamp, 0, 1);
@@ -152,17 +153,17 @@ export function createCameraRig(THREE, aspect, opts) {
   }
 
   function snapTo(qPosition, heading, altitude, globeRadius, followDist, followHeight) {
-    const frame = tangentFrame(qPosition);
-    const planeWorldPos = cartesianFromSpherical(qPosition, altitude, globeRadius);
+    const frame = (geometry?geometry.frame(qPosition):tangentFrame(qPosition));
+    const planeWorldPos = (geometry?geometry.worldPos(qPosition,altitude):cartesianFromSpherical(qPosition, altitude, globeRadius));
     const forward = new THREE.Vector3()
       .addScaledVector(frame.north, Math.cos(heading))
       .addScaledVector(frame.east, Math.sin(heading)).normalize();
     const dist = Math.max(P.minChase, followDist != null ? followDist : P.dist);
-    currentPos.copy(planeWorldPos).addScaledVector(forward, -dist)
-      .addScaledVector(frame.up, followHeight != null ? followHeight : P.height);
-    currentLookAt.copy(planeWorldPos).addScaledVector(forward, P.lookAhead);
+    currentPos.copy(planeWorldPos).addScaledVector(forward, -dist*units)
+      .addScaledVector(frame.up, (followHeight != null ? followHeight : P.height)*units);
+    currentLookAt.copy(planeWorldPos).addScaledVector(forward, P.lookAhead*units);
     camera.position.copy(currentPos);
-    camera.up.copy(currentPos.clone().normalize());
+    if(geometry){geometry.avoidCamera?.(currentLookAt,camera.position);camera.up.copy(frame.up);}else camera.up.copy(currentPos.clone().normalize());
     camera.lookAt(currentLookAt);
   }
 

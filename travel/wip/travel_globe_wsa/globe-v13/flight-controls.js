@@ -23,7 +23,7 @@ export function createFlightControls(element) {
   let schwebeQueued = false;
 
   const onKeyDown = (e) => {
-    if (!enabled) return;
+    if (!enabled || e.defaultPrevented || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName) || e.target?.isContentEditable) return;
     const key = e.key.toLowerCase();
     if (key === ' ' && !e.repeat) { paintballQueued = true; specialActionQueued = true; }
     if (key === 'f' && !e.repeat) { interactQueued = true; }
@@ -32,7 +32,8 @@ export function createFlightControls(element) {
     keys.add(key);
   };
   const onKeyUp = (e) => { keys.delete(e.key.toLowerCase()); };
-  const reset = () => { keys.clear(); };
+  const reset = () => { keys.clear();paintballQueued=specialActionQueued=interactQueued=schwebeQueued=false; };
+  const visibility=()=>{if(document.hidden)reset()};
 
   addEventListener('keydown', onKeyDown);
   addEventListener('keyup', onKeyUp);
@@ -45,16 +46,16 @@ export function createFlightControls(element) {
   // Deshalb zusätzlich am Fenster und an der Sichtbarkeit. Das ist keine neue Mechanik, sondern
   // dieselbe Absicht (`reset`) an den Stellen, an denen sie in dieser Umgebung greift.
   addEventListener('blur', reset);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) reset(); });
+  document.addEventListener('visibilitychange', visibility);
 
   return {
     name: 'flight-controls',
     get enabled() { return enabled; },
-    set enabled(v) { enabled = v; if (!v) keys.clear(); },
+    set enabled(v) { enabled = v; if (!v) reset(); },
     getState() {
       if (!enabled) {
         return { turnRate: 0, forward: false, brake: false, elevate: false,
-                 descend: false, paintball: false, specialAction: false, interact: false,
+                 descend: false, boost:false, paintball: false, specialAction: false, interact: false,
                  schwebeToggle: false };
       }
       let turnRate = 0;
@@ -70,11 +71,11 @@ export function createFlightControls(element) {
       const specialAction = specialActionQueued; specialActionQueued = false;
       const interact = interactQueued; interactQueued = false;
       const schwebeToggle = schwebeQueued; schwebeQueued = false;
-      return { turnRate, forward, brake, elevate, descend, paintball, specialAction, interact, schwebeToggle };
+      return { turnRate, forward, brake, elevate, descend, boost:keys.has('shift'), paintball, specialAction, interact, schwebeToggle };
     },
     dispose() {
       removeEventListener('keydown', onKeyDown);
-      removeEventListener('keyup', onKeyUp);
+      removeEventListener('keyup', onKeyUp);removeEventListener('blur',reset);element?.removeEventListener('blur',reset);document.removeEventListener('visibilitychange',visibility);reset();
     },
   };
 }

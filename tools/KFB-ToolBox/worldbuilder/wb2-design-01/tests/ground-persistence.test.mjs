@@ -28,3 +28,15 @@ test('valid authored-platform pose survives a fresh Physics/Ground owner without
  assert.ok(g.character.validPose(g.position));const doc={id:'A',world:{}};g.writeDoc(doc);g.dispose();p.dispose();
  const q=await Physics.create();colliders(q);const fresh=setup(q).g;fresh.readDoc(doc);assert.deepEqual(fresh.position.toArray(),doc.world.player.position);assert.ok(fresh.character.validPose(fresh.position));fresh.dispose();q.dispose();
 });
+
+function receivingFloor(p){const mesh=new THREE.PlaneGeometry(40,40,10,10);mesh.rotateX(-Math.PI/2);p.world.createCollider(p.R.ColliderDesc.trimesh(mesh.attributes.position.array,new Uint32Array(mesh.index.array)));mesh.dispose();p.step(1/60)}
+
+test('default jog, deliberate slow walk, sprint and backward use distinct native speed targets',async()=>{
+ const ends=[];for(const modifier of [null,'AltLeft','ShiftLeft','back']){const p=await Physics.create();receivingFloor(p);const {g,key}=setup(p,{x:0,z:0,heading:0});g.setOn(true);key(modifier==='back'?'KeyS':'KeyW',true);if(modifier&&modifier!=='back')key(modifier,true);for(let i=0;i<60;i++)p.step(1/60);ends.push(g.speed);g.dispose();p.dispose()}
+ assert.ok(ends[0]>2&&ends[0]<3);assert.equal(ends[1],1);assert.equal(ends[2],5);assert.equal(ends[3],-ends[0],JSON.stringify(ends));
+});
+test('fresh Space produces anticipation, ballistic air and contact-triggered landing without repeat jumps',async()=>{
+ const p=await Physics.create();receivingFloor(p);const {g,key}=setup(p);g.setOn(true);for(let i=0;i<5;i++)p.step(1/60);const baseline=g.position.y;key('Space',true);const states=[],ys=[];for(let i=0;i<90;i++){p.step(1/60);states.push(g.motion.phase);ys.push(g.position.y)}
+ assert.equal(states[0],'anticipation');assert.ok(states.includes('air'));assert.ok(states.includes('landing'));assert.equal(states.at(-1),'ground');assert.ok(Math.max(...ys)-baseline>1.2);assert.ok(Math.abs(ys.at(-1)-baseline)<.01,JSON.stringify({baseline,end:ys.at(-1),ys}));
+ const air=ys.filter((v,i)=>states[i]==='air');assert.ok(air.some((v,i)=>i>0&&v<air[i-1]));assert.equal(states.filter((v,i)=>v==='anticipation'&&(i===0||states[i-1]!==v)).length,1);g.dispose();p.dispose();
+});
