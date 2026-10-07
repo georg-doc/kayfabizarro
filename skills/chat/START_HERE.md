@@ -1,3 +1,26 @@
+## CURRENT OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED
+
+Georg has explicitly authorized exactly one **ChatGPT Work/WSA WorldBuilder Integrator** to start now.
+
+Receiving owner/branch: KFB WorldBuilder / WB2 · Draft PR #348 · `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`.
+
+Binding execution brief:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORK_WSA_OPEN_WORLD_INTEGRATOR_ONE_SHOT_2026-10-07.md`
+
+Recovery Audit PR #373 is complete. Do not rerun it.
+
+Dependency order:
+1. Continuous Surface Truth + stable WorldObject identity;
+2. existing WB2 authoring/sculpt/save/fresh-reload;
+3. Motion/camera/Clay visual foundation;
+4. required existing-owner KFB seams;
+5. fresh independent module critics + different whole-product critic;
+6. complete 37-row Acceptance Matrix gate.
+
+Product remains **NO MVP** until every required row is GREEN. No Receiving-Core stop, no second runtime owner, no auto-merge or Live promotion.
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-07 · Recovery audit completed
 
 #360 Recovery audit and the one-time existing-Hub migration are complete. Current route: **RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR**. Product remains **NO MVP** and runtime work remains paused until Georg separately authorizes exactly one Integrator. The older ready-to-run audit instructions below are history; do not rerun them. Read the current [owning Recovery Return](https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md) and frozen ledger on PR #373.
