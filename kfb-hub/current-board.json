@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.19",
-  "updatedAt": "2026-10-07T17:08:00Z",
+  "revision": "2026-10-07.20",
+  "updatedAt": "2026-10-07T19:55:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Final Island MVP ONE_SHOT hardened to operational matrix v3 after Coworker sanity review. No scope expansion: 44 REQUIRED unchanged. New guards: mandatory Georg Phase-3 visual PASS/FAIL gate, persisted Lab road/performance donor findings, strict target-GPU measurement conditions, High reasoning allowed for Phases 3/4, and full 44-row table required even on NO MVP."
+    "note": "Final Island MVP contract aligned to operational Matrix v5 after final read-only sanity review. 44 REQUIRED / 13 Strong / 7 Optional unchanged. Roads move to Phase 2B before Early Golden; F-R39 visual gate and F-R07 target-machine perf run are explicit crash-safe human steps; terrain sculpt/Track-fit evaluation order must be frozen before exact persistence PASS."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -32,9 +32,9 @@
   "p0": [
     {
       "id": "island-mvp-one-shot-ready",
-      "title": "Island MVP · ONE_SHOT v3 READY · NO MVP",
-      "summary": "Final Work/WSA brief hardened after sanity review: mandatory Georg Early-Golden visual gate, Lab junction/performance facts, strict target-GPU rules, High reasoning permitted for visual/road phases, and complete 44-row final table. Scope remains 44 REQUIRED.",
-      "badge": "READY FOR WORK/WSA · v3",
+      "title": "Island MVP · ONE_SHOT v5 READY · NO MVP",
+      "summary": "Final contract is internally consistent: Phase 2B roads before Early Golden; Georg visual gate persisted/head-bound; target-device perf uses GEORG_PRIMARY_ACCEPTANCE_MACHINE + recorder; sculpt vs Track-fit order must be frozen; complete 44-row table required.",
+      "badge": "READY FOR WORK/WSA · v5",
       "action": "Final ONE_SHOT Brief öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
       "executor": "ChatGPT Work/WSA · single Integrator",
