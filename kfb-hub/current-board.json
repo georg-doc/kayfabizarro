@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.2",
-  "updatedAt": "2026-10-07T01:35:00+02:00",
+  "revision": "2026-10-07.3",
+  "updatedAt": "2026-10-07T03:18:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Open World closure now has two binding corrections on main: canonical Ground controls and canonical Clay/Surface routing. 'KayKit style' must never be interpreted as default KayKit materials: source identity stays KayKit/Kenney/KFB while KFB Clay SSOT/Golden controls surface/deformation/contact. clay_floor_001 triplanar is only a bounded stand-in/microtexture donor; K2/v10 + Golden parity remains the final new-stage direction."
+    "note": "Live Hub update: #367 Blender MCP Shield Fit is prepared but held until Coworker/local resource contention clears. New Style Reference Router separates binding system SSOTs from the curated Open World Styleguide benchmark and the broad non-1:1 Style References pool."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -91,6 +91,16 @@
       "url": "https://github.com/georg-doc/kayfabizarro/pull/357",
       "executor": "Existing ChatterBox owner",
       "nextExecutor": "Reactivate only when Resident integration seam is frozen"
+    },
+    {
+      "id": "issue-367-shield-fit",
+      "title": "READY/HOLD · Blender MCP · Shield Fit · Medium + Large",
+      "summary": "Audit-first shield fitting for Rig_Medium and Rig_Large. Existing Atlas already defines source variants and normal-push rules (Cleric 0.16, Black Knight Large 0.55, Monstrosity Large 0.5). If those recipes fit in isolation, classify the integrated defect as RUNTIME_ATTACHMENT_CONSUMER_MISMATCH instead of inventing new Blender assets.",
+      "badge": "READY BRIEF · HOLD COWORKER",
+      "action": "Issue #367 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/issues/367",
+      "executor": "Blender MCP · later/local",
+      "nextExecutor": "Receiving runtime only if audit proves consumer mismatch"
     }
   ],
   "briefings": [
@@ -146,6 +156,25 @@
         "prep"
       ],
       "prompt": "Read the current Resident prep files on main. Do not implement into Open World before the post-Coworker Architecture Freeze."
+    },
+    {
+      "id": "brief-blender-shield-fit",
+      "title": "Blender MCP · Shield Fit · Rig_Medium + Rig_Large",
+      "badge": "READY · HOLD UNTIL COWORKER DONE",
+      "status": "hold",
+      "provider": "Blender MCP · source/rig/attachment audit",
+      "desc": "Check the real Medium/Large shield sources and existing Atlas attachment rules before editing. Only author Blender changes if the source/Atlas proof itself is wrong; otherwise return a runtime-consumer mismatch with exact attachment data.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/BLENDER_MCP_SHIELD_FIT_MEDIUM_LARGE_2026-10-07.md",
+      "tags": [
+        "blender mcp",
+        "shield",
+        "rig medium",
+        "rig large",
+        "resident",
+        "attachment",
+        "source audit"
+      ],
+      "prompt": "Read skills/chat/BLENDER_MCP_SHIELD_FIT_MEDIUM_LARGE_2026-10-07.md on main.\nDo not touch Open World runtime. First prove Cleric Medium and Black Knight Large with exact source shields, handslot.l and existing Atlas push values in isolation.\nIf the existing Atlas recipes already fit, stop as RUNTIME_ATTACHMENT_CONSUMER_MISMATCH and return the runtime-ready attachment table. Only create Blender/pivot/pose corrections if isolated source proof itself fails.\nUse skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md for visual benchmark context; references are not 1:1 templates."
     }
   ],
   "openQuestions": [
@@ -213,6 +242,21 @@
       "title": "Open World · Clay / Surface Canon",
       "summary": "Binding correction: source identity ≠ material style. K1/H0 Golden + K2/v10 baseline, clay_floor_001 limits, triplanar distinction, LOD and shadow/contact rules.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md"
+    },
+    {
+      "title": "KFB Style · Q&A / Benchmark Router",
+      "summary": "Authority split: system SSOTs are binding; Open World Styleguide is curated visual/numeric benchmark; KFB Style References is broad inspiration/comparison, never a 1:1 template.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md"
+    },
+    {
+      "title": "KFB Open World · Styleguide",
+      "summary": "25 compact reference images + code-derived palettes, track measures, clay profiles, lighting/perf and HUD values.",
+      "url": "https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB_OPEN_WORLD_STYLEGUIDE_2026-10-07"
+    },
+    {
+      "title": "KFB Style References · pool",
+      "summary": "Broad non-1:1 inspiration/reference pool for visual Q&A and comparison.",
+      "url": "https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References"
     }
   ],
   "surfaceRoles": {
