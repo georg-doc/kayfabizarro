@@ -1,7 +1,13 @@
 # BRIEF · Work/WSA · incremental Seed 05 import into accepted Asset Librarian R2
 
-Status: **PREPARED · DO NOT REDESIGN**
+Status: **SUPERSEDED FOR NEW RUNS · USE COMBINED SEED 05 + 06 BRIEF**
 Date: 2026-10-07
+
+## Superseded route
+For any new Work/WSA run, use:
+`BRIEF_WORK_IMPORT_SEED05_06_DIALOGUE_NARRATION_2026-10-07.md`
+
+This file remains historical evidence for the Seed-05-only state. Do not run it unless the combined brief explicitly routes back here after inspecting current Site state.
 
 ## Executor
 **ChatGPT Work/WSA**
