@@ -2683,3 +2683,14 @@ No runtime/product code changed.
 - Game, public hub and private production hub remain separate surfaces over one GitHub source truth; none may become a second game/runtime owner.
 - These are target surface decisions only. No claim is made that the new Play URL or the expanded pages.dev feature set is currently published/verified.
 - Site Surface Registry and Hub board were updated; Hub board revision is **2026-10-07.7**.
+
+## 2026-10-07 · Open World contract collapse · runtime stop + Recovery Audit
+
+- Georg classified the current Open World production path as another major failure after repeated candidate drift and requested a formal postmortem plus independent recovery audit.
+- Added `skills/chat/recovery/POSTMORTEM_OPEN_WORLD_CONTRACT_COLLAPSE_2026-10-07.md`.
+- Added `skills/chat/WORK_OPEN_WORLD_RECOVERY_AUDIT_2026-10-07.md`.
+- Canonical Graveyard advanced to **v1.11.0 / 61 graves** with “die Open World, deren Vertrag unterwegs schrumpfte”.
+- Binding finding: the One-Shot contract required Continuous Terrain, God Mode/Object Edit, Terrain Sculpt, Save/Fresh Reload/Persistence and representative KFB integration seams; the current Coworker core explicitly reports no editor/save/load/storage and requires a Hex-role audit before terrain canon can be accepted.
+- Open World runtime implementation is paused. Current authorized action is a fresh Work/WSA **read-only Recovery Lead / ChefWSA** audit: reconstruct the immutable Master Acceptance Matrix, audit Coworker + WB2/PR #348 donors, classify Freeze decisions and obtain a fresh independent critic challenge before authorizing one later Integrator.
+- Georg-facing communication is now a binding acceptance criterion: plain German, product-level status and next action only; hashes/branches/run IDs/technical traceability belong in an executor-only appendix.
+- Issue #360 and Production Hub board were rerouted to **RECOVERY AUDIT ONLY**. No runtime implementation, camera/Hex polish, module fan-out, Site publication, merge or Live promotion until the audit returns.
