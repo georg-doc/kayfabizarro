@@ -1,3 +1,7 @@
+## Current human direction and bounded handoff 2026-10-07
+
+Georg selected bounded islands inside WB2. The approved decision is in `ISLAND_TOPOLOGY_DECISION_2026-10-07.md`; current as-built, exported seams and the single next gate are in `ISLAND_FOUNDATION_RETURN_2026-10-07.md`. Source checkpoint: `85ca9ad573097feb66ccbed86b72f5baeb24127e`, draft PR #348, existing receiving branch. NO MVP; full37 requirements unchanged. Earlier one-shot/endless-world routing below is historical where it conflicts with the human steering. No merge, Live or runtime publication.
+
 ## 2026-10-04 · Eingefrorener Vier-Insel-Kandidat auf bestehender GPT Site veröffentlicht
 
 [World Studio öffnen](https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/). Sites meldet **succeeded** (2026-10-04T18:51:43.186786+00:00). Die 92 eingefrorenen Laufzeitdateien wurden im Deployment-Archiv gegen die gesicherten Prüfsummen geprüft: **92/92 identisch**. Keine Produktänderung in diesem Publish-Gate.

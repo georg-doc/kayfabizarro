@@ -1,3 +1,7 @@
+## Current human direction and bounded handoff 2026-10-07
+
+Georg selected bounded islands inside WB2. The approved decision is in `ISLAND_TOPOLOGY_DECISION_2026-10-07.md`; current as-built, exported seams and the single next gate are in `ISLAND_FOUNDATION_RETURN_2026-10-07.md`. Source checkpoint: `85ca9ad573097feb66ccbed86b72f5baeb24127e`, draft PR #348, existing receiving branch. NO MVP; full37 requirements unchanged. Earlier one-shot/endless-world routing below is historical where it conflicts with the human steering. No merge, Live or runtime publication.
+
 # KFB Procedural Test World 01 · current-main convergence
 
 Status: **WORLD-CONVERGENCE-BASE-01 · CANDIDATE · NO PLAYER / DRIVE / RESIDENTS**

@@ -1,7 +1,7 @@
 {
   "schema": "kfb.one-shot-status/1",
-  "date": "2026-10-06",
-  "mode": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
+  "date": "2026-10-07",
+  "mode": "WB2_BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "owner": "KFB WorldBuilder / WB2",
   "repo": "georg-doc/kayfabizarro",
   "pr": 348,
@@ -15,7 +15,7 @@
     "deploymentId": "appgdep_6ac2a03072788191a4d542b2ea7b7301"
   },
   "productOutcome": "COHERENT_BUILDABLE_PERSISTENT_KFB_OPEN_WORLD_FOR_COMIC_STORY_CONTEXT",
-  "state": "COWORKER_LONG_INTEGRATION_RUNNING_EXTERNAL_HANDOFF_PENDING",
+  "state": "BOUNDED_HANDOFF_WITH_EXPORTED_IMPLEMENTATION_SEAMS",
   "checkpointStatus": {
     "primaryProduct": "OPEN_WORLD_PRODUCTION_RESET_ONE_SHOT",
     "failedPredecessor": "PRESERVED_AS_EVIDENCE",
@@ -205,5 +205,19 @@
     "mode": "ANschluss integration / reconciliation only",
     "startsWhen": "Coworker returns exact files/branch/evidence",
     "mustNot": "Rebuild working Coworker integration from scratch"
-  }
+  },
+  "currentReturn": "ISLAND_FOUNDATION_RETURN_2026-10-07.md",
+  "currentDecision": "ISLAND_TOPOLOGY_DECISION_2026-10-07.md",
+  "sourceCheckpointHead": "85ca9ad573097feb66ccbed86b72f5baeb24127e",
+  "topology": "BOUNDED_ISLAND_DOCUMENTS_WITHIN_WB2",
+  "productVerdict": "NO MVP",
+  "nextGate": "One edited bounded island through existing WB2 store; independent same-seed document isolation and exact fresh-load render/collider/support replay",
+  "authorityOverride": "Georg accepted narrower closure and island direction in this chat; historical one-shot/endless scope is superseded for this execution slice",
+  "exportedSeams": [
+    "document/session isolation",
+    "authored render and collider replay",
+    "native ordered sculpt replay and Track-fit policy",
+    "complete pinned recipe persistence",
+    "shared island-local physics frame"
+  ]
 }
