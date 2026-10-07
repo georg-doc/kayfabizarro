@@ -1,10 +1,10 @@
-## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v5 READY
+## CURRENT OVERRIDE · 2026-10-07 · KFB ISLAND MVP R4 · ONE_SHOT READY
 
 Binding machine-readable product contract:
 `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
 **operationalVersion = 5**
 
-Binding final execution brief:
+Binding MVP R4 execution brief:
 `skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`
 
 Current counts:
@@ -12,7 +12,7 @@ Current counts:
 - **13 STRONGLY INCLUDE**
 - **7 OPTIONAL PROOF**
 
-Final pre-WSA alignments:
+MVP R4 pre-WSA alignments:
 - Roads/Track = **Phase 2B**, before Phase-3 Early Golden;
 - Phase-3 Georg Visual Product Gate is mandatory and crash-safe; the accepted head becomes the Golden baseline. Later changes trigger re-gating only for a demonstrated or unresolved regression risk to Phase-3 Golden criteria, not for every visible addition;
 - F-R07 uses `GEORG_PRIMARY_ACCEPTANCE_MACHINE`; WSA instruments, Georg performs one visible/focused target-device run, evidence is persisted against exact head;
@@ -20,7 +20,7 @@ Final pre-WSA alignments:
 - High reasoning explicitly allowed for Phase 2B and Phase 3;
 - PASS and NO MVP both return the complete 44-row status/evidence table.
 
-All lower v2/v3/v4 routing text is historical where conflicting. The current JSON v5 wins.
+All lower routing text — including the 2026-10-05 Production Override, any `runtime paused` wording, and Recovery-Lead / PR-#373 executor routing — is historical where conflicting. The current Matrix JSON v5 and the MVP R4 execution brief win.
 
 ---
 
@@ -208,7 +208,7 @@ This file is intentionally short. It is a router, not project history.
 Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`, project Returns/Recovery files and Git history.
 
 
-## CURRENT PRODUCTION OVERRIDE · 2026-10-05 23:20 CEST
+## HISTORICAL PRODUCTION OVERRIDE · 2026-10-05 23:20 CEST · SUPERSEDED BY KFB ISLAND MVP R4
 
 A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
 
