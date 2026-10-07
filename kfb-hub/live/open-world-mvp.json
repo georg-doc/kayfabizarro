@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.14",
+  "revision": "2026-10-07.15",
   "updatedAt": "2026-10-07T15:00:32.856Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,8 +2103,8 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Frozen Matrix operational v2 remains binding. ToolBox _inbox audit now covers 115 top-level intake entries and preserves useful donors without adding REQUIRED scope. Fresh chats route through Frozen Matrix → Inbox Donor Audit → Integration Census → current WB2 owner.",
-  "overview": "Frozen bounded-Island product contract ready. 44 REQUIRED rows + STRONGLY INCLUDE / OPTIONAL / LATER are persisted. Next step is one final execution brief and exactly one Work/WSA Integrator; no new planning micro-slices.",
+  "recoverySummary": "Final Work/WSA Island MVP ONE_SHOT brief is persisted and binding. Operational Frozen Matrix v2 remains unchanged: 44 REQUIRED, 12 STRONGLY INCLUDE, 7 OPTIONAL. Product starts NO MVP; next executor is exactly one Work/WSA Integrator on WB2 PR #348.",
+  "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
       "title": "Gemeinsame Weltbasis",
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Generate the final ChatGPT Work/WSA Island MVP ONE_SHOT execution brief directly from operational matrix v2 and current owner Returns. Do not reopen broad architecture planning or shorten the matrix.",
+  "nextGate": "Run skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md in ChatGPT Work/WSA against current PR #348 state. Continue until all 44 REQUIRED rows are GREEN or one proven product-outcome blocker remains.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,11 +2247,11 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "FROZEN_MATRIX_OPERATIONAL_V2",
+    "status": "ONE_SHOT_READY_FOR_WORK_WSA",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
-    "currentTask": "Final Work/WSA ONE_SHOT execution brief from operational matrix v2",
+    "currentTask": "Execute one Work/WSA ONE_SHOT on PR #348",
     "noRuntimeWrite": true,
     "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
@@ -2261,6 +2261,7 @@
     "optionalRows": 7,
     "inboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
     "inboxObservedTopLevelEntries": 115,
-    "inboxNewRequiredRows": 0
+    "inboxNewRequiredRows": 0,
+    "finalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md"
   }
 }
