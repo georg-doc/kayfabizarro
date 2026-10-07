@@ -1,7 +1,7 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.1",
-  "updatedAt": "2026-10-07T12:20:00+02:00",
+  "revision": "2026-10-07.2",
+  "updatedAt": "2026-10-07T12:30:00+02:00",
   "owner": "KFB Open World / Recovery Audit",
   "source": "Draft PR #373 · recovery/open-world-master-acceptance-audit-2026-10-07",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
@@ -960,5 +960,9 @@
     }
   ],
   "hubView": "https://kfb-production-hub.frizzlebob.chatgpt.site/?view=open-world-mvp",
-  "recoveryPr": "https://github.com/georg-doc/kayfabizarro/pull/373"
+  "recoveryPr": "https://github.com/georg-doc/kayfabizarro/pull/373",
+  "surfaceStatus": "ONE_TIME_SITE_MIGRATION_REQUIRED_NOT_YET_PUBLISHED",
+  "updateModeAfterMigration": "WEB_CHAT_OR_RECOVERY_AUDIT_TO_GITHUB_MAIN_JSON_TO_HUB_REFRESH",
+  "siteRepublishRequiredForRoutineUpdates": false,
+  "cloudflareUsed": false
 }
