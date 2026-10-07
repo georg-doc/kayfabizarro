@@ -102,14 +102,28 @@ Preserve:
 - Bubble/Emanata layers read state and render it;
 - no hardcoded catchphrase system.
 
-## Phase C · Historian / narrator proposal
+## Phase C · Historian / Chronicler proposal
+
+Georg decision:
+- preferred role = **Historian**
+- preferred persona register = **Chronicler**
+- working identity = **Historian / Chronicler**
+
+Binding authoring contract:
+`KFB_HISTORIAN_CHRONICLER_CONTRACT_01_2026-10-07.md`
+
+Living-Toy support:
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.md`
+- `KFB_LIVING_TOY_EVENT_GRAMMAR_01_2026-10-07.json`
+- `KFB_LIVING_TOY_ACTIVITY_POOL_01_2026-10-07.json`
+
 
 Donor audit now prepared:
 `KFB_HISTORIAN_WORLD_AS_TOY_NIE_OVERWORLD_DONOR_AUDIT_2026-10-07.md`
 
 It records the historical implemented Afterglow/narrator donor, zone-story narrator slot, OPEN narrator-as-character concept, World-as-Toy North Star, mob/activity donors, NIE bridge and current safe reuse boundaries.
 
-The Historian remains a PROPOSAL, not a runtime owner.
+The Historian / Chronicler remains a presentation/content proposal, not a runtime owner.
 
 Use only source-verified donor material from:
 - Caption Boxes;
@@ -130,6 +144,11 @@ Presentation:
 - no second renderer.
 
 ## Phase D · Post-Coworker Architecture Freeze only
+
+Architecture Freeze must map the 13 Living-Toy scenario families onto actual returned runtime seams. Do not promote scenario labels as event API names.
+
+Use the 30-item Living-Toy Activity Pool only as candidate authored activity vocabulary; actual scheduling, navigation and persistence remain with current Resident/World owners.
+
 
 Read first:
 - `skills/chat/START_HERE.md`
@@ -158,6 +177,19 @@ Do not:
 - redesign the accepted Asset Librarian R2 viewer during Seed 05 + 06 import;
 - start Claude Design merely for writing-rule extraction;
 - merge or promote Live.
+
+## Site-ready persistence
+
+Preferred data input for the existing Asset Librarian Site:
+`STYLE_REFERENCE_SITE_DELTA_DIALOGUE_NARRATION_2026-10-07.json`
+
+It contains:
+- 11 idempotent source-record upserts;
+- KFB research-derived Notes/Principles;
+- source-inspection state kept false;
+- expected last-proven 58 → 69 built-ins when fully applied.
+
+This chat has no Sites publisher. A Sites-capable Work/WSA executor must update the existing project in place; do not substitute Cloudflare.
 
 ## Persistence / handoff
 
