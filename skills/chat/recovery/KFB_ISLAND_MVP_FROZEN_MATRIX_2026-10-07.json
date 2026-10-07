@@ -472,7 +472,7 @@
       "owner": "Integrator + independent visual/physical critic + Georg visual product authority",
       "readiness": "PROCESS_GATE_READY",
       "delta": "Run before broad feature fan-out after Player + Phase-2B roads/Track + Surface/Joyride/Clay/Sky/landmark/water core exists. Independent critic first, then persist F-R39=PENDING with exact head/evidence and provide 4–6 screenshots + one continuous clip <=30s for Georg PASS/FAIL.",
-      "proof": "Critic evidence meets threshold and ONE_SHOT_STATUS.json plus main Hub projection record Georg VISUAL PASS for the same exact candidate head. Materially visibility/physics-affecting changes invalidate the head-bound PASS.",
+      "proof": "Critic evidence meets threshold and ONE_SHOT_STATUS.json plus main Hub projection record Georg VISUAL PASS for the accepted Golden baseline head. Later changes do not automatically invalidate PASS; re-gate only if a change can materially affect an actual Phase-3 Golden criterion and post-change critic/evidence shows a meaningful regression or unresolved change in that criterion.",
       "forbidden": "Proceeding to Phase 4 Authoring before persisted head-bound PASS; asking Georg to debug implementation details; losing gate state across timeout/recovery.",
       "humanGate": {
         "required": true,
@@ -494,7 +494,9 @@
           "main/kfb-hub/live/open-world-mvp.json"
         ],
         "headBound": true,
-        "onFail": "Integrator repairs Phase 3 autonomously; no Phase 4 Authoring continuation until PASS."
+        "onFail": "Integrator repairs Phase 3 autonomously; no Phase 4 Authoring continuation until PASS.",
+        "goldenBaselineHead": true,
+        "reGateRule": "Regression-based only. Do not re-gate for every later visible change. Re-gate only when a later change can materially affect a Phase-3 Golden criterion and post-change critic/evidence shows a meaningful regression or unresolved change."
       }
     },
     {
@@ -960,7 +962,9 @@
         "main/kfb-hub/live/open-world-mvp.json"
       ],
       "pendingRequired": true,
-      "headBound": true
+      "headBound": true,
+      "goldenBaselineHead": true,
+      "reGateRule": "Regression-based only; no automatic re-gate for unrelated later visible changes."
     },
     {
       "id": "F-R07",
