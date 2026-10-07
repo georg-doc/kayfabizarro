@@ -65,8 +65,8 @@ Expected after combined Seed 05 + 06 import, if starting from the last proven 58
 69 built-ins total.
 
 Done when:
-- 63 unique built-ins are present;
-- five Seed-05 records are searchable;
+- 69 unique built-ins are present when starting from the last proven 58;
+- all 11 Seed-05 + Seed-06 records are searchable;
 - accepted R2 Browser/Viewer is unchanged;
 - all local Cards/Sets/Notes/Principles persist;
 - non-Style-Reference regressions pass;
@@ -155,7 +155,7 @@ Do not:
 - create a new dialogue engine;
 - create a narrator state machine;
 - duplicate Seed 05 records via Seed 04;
-- redesign the accepted Asset Librarian R2 viewer during Seed 05 import;
+- redesign the accepted Asset Librarian R2 viewer during Seed 05 + 06 import;
 - start Claude Design merely for writing-rule extraction;
 - merge or promote Live.
 
