@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.13",
+  "revision": "2026-10-07.14",
   "updatedAt": "2026-10-07T15:00:32.856Z",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Island MVP Frozen Matrix is now operationalized v2: all 44 REQUIRED rows have owner, readiness, smallest missing delta, acceptance proof and forbidden shortcut; 12 STRONGLY INCLUDE and 7 OPTIONAL PROOF rows also have explicit integration/acceptance/quarantine guards. Product remains NO MVP.",
+  "recoverySummary": "Frozen Matrix operational v2 remains binding. ToolBox _inbox audit now covers 115 top-level intake entries and preserves useful donors without adding REQUIRED scope. Fresh chats route through Frozen Matrix → Inbox Donor Audit → Integration Census → current WB2 owner.",
   "overview": "Frozen bounded-Island product contract ready. 44 REQUIRED rows + STRONGLY INCLUDE / OPTIONAL / LATER are persisted. Next step is one final execution brief and exactly one Work/WSA Integrator; no new planning micro-slices.",
   "architecture": [
     {
@@ -2258,6 +2258,9 @@
     "requiredRows": 44,
     "operationalVersion": 2,
     "stronglyIncludeRows": 12,
-    "optionalRows": 7
+    "optionalRows": 7,
+    "inboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
+    "inboxObservedTopLevelEntries": 115,
+    "inboxNewRequiredRows": 0
   }
 }
