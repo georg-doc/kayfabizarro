@@ -2,7 +2,8 @@
 
 **Mode:** static, read-only, no LLM/API key required  
 **Asset / Registry SSOT:** `georg-doc/kayfabizarro`  
-**Permanent production URL:** `https://kayfabizarro.pages.dev/asset-librarian/`
+**Canonical productive GPT Site:** `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`  
+**Legacy Cloudflare mirror:** `https://kayfabizarro.pages.dev/asset-librarian/` · stale/secondary, not canonical
 
 The Librarian is a browser consumer of the generated Asset Registry and Production Resource Registry. It does **not** create a competing asset index or write back to assets, rigs, actors, motions or consumer runtimes.
 
