@@ -305,3 +305,35 @@ Published accepted Site:
 - deployment `appgdep_6ac5769bdae0819195ca516e9625d6ec`
 
 No second Site. No merge. No Live promotion.
+
+
+## Curated comic-language consumer packs · 2026-10-07
+
+Status: **SOURCE-CURATED PACKS READY · VISUAL DESIGN NOT STARTED**
+
+### Emanata mapping
+Added `EMANATA_SOURCE_MAPPING_01_2026-10-07.json`, mapping authoritative visual-language concepts onto the current eight KFB semantic slots:
+- question;
+- exclamation;
+- sweat-drop;
+- tear;
+- anger-tick;
+- heart;
+- sparkle;
+- gloom-cloud.
+
+Additional future candidates are recorded separately, including blush, dizzy, steam, breath, motion-emphasis and grawlix. Face/eye morphology remains separate from primary Emanata where appropriate.
+
+### Curated reusable packs
+Prepared:
+- `reference-packs/curated/kfb-sound-words-01/`
+- `reference-packs/curated/kfb-bubble-grammar-01/`
+- `reference-packs/curated/kfb-emanata-reaction-symbols-01/`
+
+These are reusable source-selection packets, not active Claude Design jobs.
+
+### Evidence
+**10/10 PASS** validation.
+
+### Boundary
+No Site update, no runtime write, no automatic source-inspection promotion, no Claude Design tokens spent, no merge / Live promotion.
