@@ -97,9 +97,13 @@ jobs:
           BRANCH: ${{ steps.branch.outputs.name }}
           COUNT: ${{ steps.archives.outputs.count }}
         run: |
-          gh pr view "$BRANCH" --json url >/dev/null 2>&1 || \
-            gh pr create \
-              --base main \
-              --head "$BRANCH" \
-              --title "Unpack uploaded asset pack" \
-              --body "Safely unpacked $COUNT newly uploaded ZIP asset pack(s) beside their source path. The source ZIPs are removed in this change; every pack contains a checksummed _kfb-unpack-manifest.json."
+          if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
+            exit 0
+          fi
+          if ! gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Unpack uploaded asset pack" \
+            --body "Safely unpacked $COUNT newly uploaded ZIP asset pack(s) beside their source path. The source ZIPs are removed in this change; every pack contains a checksummed _kfb-unpack-manifest.json."; then
+            echo "::warning::The unpack branch is ready, but repository policy blocked automatic PR creation. Open a PR from $BRANCH to main."
+          fi
