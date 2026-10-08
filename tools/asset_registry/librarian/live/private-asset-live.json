@@ -1,13 +1,13 @@
 {
   "schema": "kfb.asset-private-live.v1",
-  "revision": "2026-10-09.r2-qa-tone",
-  "updatedAt": "2026-10-09T01:32:00+02:00",
+  "revision": "2026-10-09.r3-data-only-verified",
+  "updatedAt": "2026-10-09T01:40:00+02:00",
   "assets": [
     {
       "schema": "kfb.asset-private-projection.v1",
       "assetId": "private:asset-librarian-private-intake-qa-tone",
       "assetKey": "asset-librarian-private-intake-qa-tone",
-      "name": "Asset Librarian Private Intake QA Tone",
+      "name": "Asset Librarian Private Intake QA Tone · Verified",
       "path": "private://asset-librarian-private-intake-qa-tone",
       "root": "private://production-inbox",
       "folder": "private://production-inbox",
@@ -36,9 +36,7 @@
       "collection": "Private Intake Bridge QA",
       "creditText": "Synthetic one-second 440 Hz QA tone",
       "creditUrl": null,
-      "license": {
-        "label": "Synthetic test asset"
-      },
+      "license": { "label": "Synthetic test asset" },
       "tags": ["intake", "qa", "synthetic"],
       "integrity": {
         "sha256": "bf268a8f1521d3176dfb65957b6bb98a88ce08a0213f9f3fda3bfdaa09b373e2"
