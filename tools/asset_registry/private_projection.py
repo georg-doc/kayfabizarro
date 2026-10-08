@@ -31,15 +31,24 @@ ASSET_CLASS_TO_KIND = {
 }
 FORBIDDEN_KEYS = {
     "inboxfileid",
+    "inboxrecordid",
+    "fileid",
+    "recordid",
     "privatepath",
+    "downloadpath",
+    "downloadurl",
     "storagekey",
+    "objectkey",
     "downloadtoken",
+    "accesstoken",
+    "apikey",
     "authorization",
     "cookie",
     "credential",
     "secret",
 }
 PRIVATE_URL_HOST_MARKERS = ("dropbox", "production-inbox", "private")
+PRIVATE_URL_PATH_MARKERS = ("/api/intake/", "/intake/files/", "/private/")
 HEX_64 = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -68,6 +77,8 @@ def _optional_url(value: object, label: str) -> str | None:
         raise ProjectionError(f"{label} must be an absolute HTTPS URL")
     if any(marker in parsed.netloc.casefold() for marker in PRIVATE_URL_HOST_MARKERS):
         raise ProjectionError(f"{label} must not expose a private storage host")
+    if any(marker in parsed.path.casefold() for marker in PRIVATE_URL_PATH_MARKERS):
+        raise ProjectionError(f"{label} must not expose a private storage path")
     return text
 
 

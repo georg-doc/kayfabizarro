@@ -72,10 +72,19 @@ class PrivateProjectionTests(unittest.TestCase):
         with self.assertRaisesRegex(projection.ProjectionError, "forbidden private field"):
             projection.validate_projection_record(record)
 
+        record = projection.project_intake(intake_fixture())
+        record["provenance"]["objectKey"] = "private/object"
+        with self.assertRaisesRegex(projection.ProjectionError, "forbidden private field"):
+            projection.validate_projection_record(record)
+
     def test_projection_rejects_private_storage_urls(self):
         intake = intake_fixture()
         intake["delivery"] = {"previewUrl": "https://private.example.test/song.ogg"}
         with self.assertRaisesRegex(projection.ProjectionError, "private storage host"):
+            projection.project_intake(intake)
+
+        intake["delivery"] = {"previewUrl": "https://assets.example.test/api/intake/files/private-id"}
+        with self.assertRaisesRegex(projection.ProjectionError, "private storage path"):
             projection.project_intake(intake)
 
     def test_live_document_is_sorted_and_duplicate_safe(self):
