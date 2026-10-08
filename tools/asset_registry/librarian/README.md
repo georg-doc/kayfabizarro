@@ -1,6 +1,6 @@
 # KFB Asset Librarian v1.6
 
-**Mode:** static, read-only, no LLM/API key required  
+**Mode:** static catalog/browser with browser-local intake preparation; no LLM/API key required
 **Asset / Registry SSOT:** `georg-doc/kayfabizarro`  
 **Canonical productive GPT Site:** `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`  
 **Legacy Cloudflare mirror:** `https://kayfabizarro.pages.dev/asset-librarian/` · stale/secondary, not canonical
@@ -13,6 +13,20 @@ The Librarian is a browser consumer of the generated Asset Registry and Producti
 - **Canonical** — reads the reviewed Registry committed to `main`.
 
 The selected mode and Registry source commit are visible in the header.
+
+## Private audio / asset intake bridge
+
+The existing Librarian also overlays the public-safe live projection at:
+
+`tools/asset_registry/librarian/live/private-asset-live.json`
+
+That file contains metadata only. Private file bytes, Production Inbox IDs, private paths and credentials are forbidden. A refresh fetches the live JSON with `cache: no-store`, so metadata-only changes appear without a Site redeploy. The deployed Site retains its local snapshot and fails soft if GitHub is temporarily unavailable.
+
+The `Intake` view prepares a `kfb.asset-intake-draft.v1` handoff for 3D, image, texture, animation, audio and ZIP files up to 32 MB each. Draft metadata is stored browser-locally; selected file bytes do not leave the device until an authenticated Production Inbox connector accepts them. Until that connector is explicitly enabled for the Site, the view offers a copy/download handoff and labels direct upload as unavailable.
+
+Private projected audio supports title, artist, collection, `MUSIC` / `SFX` / `UI` / `VOICE` / `AMBIENCE`, credits, license/source notes, tags, duration, loop and BPM. Search and the inspector expose these fields. Playback appears only when the projection contains an authorized public preview or runtime URL; otherwise the UI says `Private source · Preview pending`.
+
+Browser-local assets, sets, notes, principles, tags, relations and inspection state remain separate and are not replaced by live refreshes.
 
 ## KFB Town Workbench · v1.6
 
@@ -151,4 +165,3 @@ PD-POOL-R2 currently registers exactly four proven R1 smoke objects. It does not
 Evidence: Draft PR #246, dedicated run `36288195716`, Asset Registry owner run `36288282662`, Librarian Browser owner run `36288282599`.
 
 Publication remains a separate Georg-gated step.
-

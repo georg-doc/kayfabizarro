@@ -1,6 +1,6 @@
 # KFB Asset Registry · AR1–AR5
 
-**Status:** IMPLEMENTATION CANDIDATE · deterministic Registry + reviewable automation + neutral consumer handoff  
+**Status:** IMPLEMENTATION CANDIDATE · deterministic Registry + reviewable automation + neutral consumer handoff + private metadata projection
 **Owner:** deterministic repo indexer + `Refresh KFB Asset Registry` GitHub Action  
 **Asset source of truth:** tracked files in `georg-doc/kayfabizarro`  
 **Deck owner:** existing `media/kfb/kfb-index.json` (`kfb-deck-registry/v2`)  
@@ -91,12 +91,30 @@ Git/file fact -> Registry / rig sidecar -> Librarian candidate -> receiving cons
 
 No stage silently promotes a recommendation to an implementation decision.
 
+## Private asset metadata projection
+
+Private uploads stay in the existing KFB Production Inbox. The Registry consumes only a deliberately public-safe metadata projection from:
+
+`tools/asset_registry/librarian/live/private-asset-live.json`
+
+`private_projection.py` validates that projection, rejects private Inbox identifiers, private paths, credentials and non-public URLs, and writes `private-projection.jsonl` beside the generated catalog. `query.py` searches both catalogs, including audio title, artist, collection, class, credits and tags. A preview or runtime URL is optional and is accepted only when it is an explicit public HTTPS URL.
+
+The boundary is:
+
+```text
+private file -> KFB Production Inbox -> kfb.asset-intake.v1
+             -> public-safe metadata projection -> Registry / Librarian
+```
+
+The public projection never contains the private file, an Inbox file ID or a private download path.
+
 ## Run locally
 
 ```bash
 python3 -m unittest discover -s tools/asset_registry/tests -v
 python3 tools/asset_registry/build.py
 python3 tools/asset_registry/validate.py
+python3 tools/asset_registry/private_projection.py validate-live tools/asset_registry/librarian/live/private-asset-live.json
 python3 tools/asset_registry/rigfacts.py build
 python3 tools/asset_registry/rigfacts.py validate
 ```
@@ -118,6 +136,7 @@ registry/assets/v1/
 ├── manifest.json
 ├── summary.md
 ├── catalog.jsonl
+├── private-projection.jsonl
 ├── problems.json
 ├── delta.json
 ├── rigfacts.jsonl

@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.asset-private-live.v1",
+  "revision": "2026-10-09.r3-data-only-verified",
+  "updatedAt": "2026-10-09T01:40:00+02:00",
+  "assets": [
+    {
+      "schema": "kfb.asset-private-projection.v1",
+      "assetId": "private:asset-librarian-private-intake-qa-tone",
+      "assetKey": "asset-librarian-private-intake-qa-tone",
+      "name": "Asset Librarian Private Intake QA Tone · Verified",
+      "path": "private://asset-librarian-private-intake-qa-tone",
+      "root": "private://production-inbox",
+      "folder": "private://production-inbox",
+      "kind": "audio",
+      "format": "wav",
+      "sizeBytes": 16044,
+      "packId": "private-production-inbox",
+      "collectionPath": "Private Intake Bridge QA",
+      "source": {
+        "private": true,
+        "visibility": "PRIVATE",
+        "assetKey": "asset-librarian-private-intake-qa-tone",
+        "owner": "KFB Production Inbox"
+      },
+      "delivery": {
+        "previewUrl": null,
+        "runtimeUrl": null,
+        "previewStatus": "PENDING"
+      },
+      "provenance": {
+        "identity": "private-metadata-projection",
+        "kind": "curated-intake",
+        "intakeId": "qa-2026-10-09"
+      },
+      "artist": "KFB QA",
+      "collection": "Private Intake Bridge QA",
+      "creditText": "Synthetic one-second 440 Hz QA tone",
+      "creditUrl": null,
+      "license": {
+        "label": "Synthetic test asset"
+      },
+      "tags": [
+        "intake",
+        "qa",
+        "synthetic"
+      ],
+      "integrity": {
+        "sha256": "bf268a8f1521d3176dfb65957b6bb98a88ce08a0213f9f3fda3bfdaa09b373e2"
+      },
+      "audio": {
+        "audioClass": "MUSIC",
+        "durationSec": 1,
+        "sampleRate": 8000,
+        "channels": 1,
+        "loopClass": "UNKNOWN",
+        "runtimeStatus": "INTAKE_ONLY"
+      }
+    }
+  ]
+}

@@ -10,8 +10,15 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import sys
 from collections import Counter
 from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+from private_projection import ProjectionError, validate_projection_record
 
 
 def find_repo_root(start: Path | None = None) -> Path:
@@ -43,6 +50,7 @@ def validate_registry(out_dir: Path) -> list[str]:
         "summary.md",
         "problems.json",
         "delta.json",
+        "private-projection.jsonl",
         "packs/index.json",
         "decks/index.json",
     ]
@@ -59,6 +67,7 @@ def validate_registry(out_dir: Path) -> list[str]:
         delta = load_json(out_dir / "delta.json")
         pack_index = load_json(out_dir / "packs" / "index.json")
         deck_index = load_json(out_dir / "decks" / "index.json")
+        private_projection = load_catalog(out_dir / "private-projection.jsonl")
     except Exception as exc:
         return [f"generated output is not parseable: {exc}"]
 
@@ -86,6 +95,26 @@ def validate_registry(out_dir: Path) -> list[str]:
         if (record.get("source") or {}).get("commit") != source_commit:
             errors.append(f"source commit mismatch: {record.get('path')}")
             break
+
+    projection_meta = manifest.get("privateProjection") or {}
+    if projection_meta.get("count") != len(private_projection):
+        errors.append(
+            f"private projection count {projection_meta.get('count')} != rows {len(private_projection)}"
+        )
+    if projection_meta.get("shard") != "private-projection.jsonl":
+        errors.append("manifest private projection shard mismatch")
+    private_ids: list[str] = []
+    for record in private_projection:
+        try:
+            validate_projection_record(record)
+            private_ids.append(record["assetId"])
+        except ProjectionError as exc:
+            errors.append(f"invalid private projection record: {exc}")
+            break
+    if len(private_ids) != len(set(private_ids)):
+        errors.append("private projection assetIds are not unique")
+    if set(private_ids).intersection(asset_ids):
+        errors.append("private projection assetIds collide with canonical catalog")
 
     by_kind = Counter(record.get("kind") for record in catalog)
     manifest_by_kind = counts.get("byKind") or {}

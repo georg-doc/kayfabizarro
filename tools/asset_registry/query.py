@@ -40,6 +40,7 @@ def _read_jsonl(path: Path) -> list[dict]:
 def load_records(registry_dir: Path) -> tuple[dict, list[dict]]:
     manifest = json.loads((registry_dir / "manifest.json").read_text(encoding="utf-8"))
     records = _read_jsonl(registry_dir / "catalog.jsonl")
+    records.extend(_read_jsonl(registry_dir / "private-projection.jsonl"))
     rig_by_id = {row["assetId"]: row["rigFacts"] for row in _read_jsonl(registry_dir / "rigfacts.jsonl")}
     joined: list[dict] = []
     for record in records:
@@ -62,6 +63,9 @@ def _match_text(record: dict, term: str | None) -> int | None:
     path = str(record.get("path", "")).casefold()
     pack = str(record.get("packId", "")).casefold()
     collection = str(record.get("collectionPath", "")).casefold()
+    artist = str(record.get("artist", "")).casefold()
+    tags = " ".join(str(tag) for tag in (record.get("tags") or [])).casefold()
+    audio_class = str((record.get("audio") or {}).get("audioClass", "")).casefold()
     if name == q:
         return 0
     if name.startswith(q):
@@ -71,6 +75,8 @@ def _match_text(record: dict, term: str | None) -> int | None:
     if q in pack:
         return 3
     if q in collection:
+        return 4
+    if q in artist or q in tags or q in audio_class:
         return 4
     if q in path:
         return 5
@@ -149,6 +155,12 @@ def compact_record(record: dict) -> dict:
         "license": record.get("license"),
         "rightsEvidence": record.get("rightsEvidence"),
         "tags": record.get("tags"),
+        "artist": record.get("artist"),
+        "collection": record.get("collection"),
+        "creditText": record.get("creditText"),
+        "creditUrl": record.get("creditUrl"),
+        "audio": record.get("audio"),
+        "delivery": record.get("delivery"),
         "rigFacts": rig or None,
     }
 

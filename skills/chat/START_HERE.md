@@ -1,3 +1,33 @@
+## CURRENT ADDITIVE DECISION · 2026-10-08 · VOICE REQUIRED IN NEXT RUNTIME MVP AFTER A/B
+
+Georg has authorized the KFB ChatterBox Voice Layer as a required acceptance seam for the **first runtime MVP slice explicitly authorized after the current Four-Island Story Vision A/B gate**.
+
+This does **not** authorize R5 or runtime work inside the current visual-only design task.
+
+Binding route:
+`skills/chat/KFB_NEXT_RUNTIME_MVP_VOICE_ACCEPTANCE_2026-10-08.md`
+
+Voice integration prep:
+- Draft PR #379;
+- branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`;
+- current evidence head `5e115d7ea5e416c613312370eb319045ced58eb4`;
+- S1 canonical pool adapter: **13/13 PASS** against current `chatter-phrases.js`;
+- 166 stable source-backed voice records;
+- no second dialogue owner or AudioContext.
+
+Minimum later runtime proof:
+- source-backed Dystopia + Utopia + Protopia speakers;
+- bubble remains authoritative/readable muted;
+- valid silence preserved;
+- KFB Audio remains ducking/mix owner;
+- static/Whole-or-fragment route + browser fallback;
+- one real Golden-Journey Social Call through an accepted curated voice asset.
+
+Current world-design gate remains:
+**Four-Island Story Vision R1 → Georg A / B / FAIL**.
+
+---
+
 ## CURRENT DESIGN RECOVERY OVERRIDE · 2026-10-08 · FOUR-ISLAND STORY VISION R1 AUTHORIZED
 
 Georg has authorized **story recovery + visual world direction only** after Island MVP R4 failed.
