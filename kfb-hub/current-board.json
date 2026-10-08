@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-08.2",
-  "updatedAt": "2026-10-08T02:12:00+02:00",
+  "revision": "2026-10-08.3",
+  "updatedAt": "2026-10-08T13:13:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -147,6 +147,16 @@
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md",
       "executor": "Claude Design · completed",
       "nextExecutor": "Receiving runtime integrator after Architecture Freeze / explicit seam"
+    },
+    {
+      "id": "kfb-3d-shader-inspector-donors-2026-10-08",
+      "title": "RESEARCH · KFB 3D Shader / Inspector Donors R1",
+      "summary": "Source-inspected add-on to existing Surface/Material Language A–E lab. three-inspect, WebGL Studio, TSL Node Editor, ShaderPass are donor candidates only; no runtime change or browser proof. Separate AI Game Art Academy remains a concept. R4 stays STOPPED.",
+      "badge": "RESEARCH · NOT INTEGRATED",
+      "action": "Read source audit and conditional isolated material-lab gate",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md",
+      "executor": "KFB Surface / Material Language · research",
+      "nextExecutor": "NONE · optional lab only after explicit authorization"
     }
   ],
   "briefings": [
@@ -393,6 +403,11 @@
       "title": "Island MVP · Final Work/WSA ONE_SHOT",
       "summary": "Binding execution wrapper for the operational Frozen Matrix v2. One Integrator, Early Golden before fan-out, full 44-row acceptance, no placeholders and no Receiving-Core stop.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md"
+    },
+    {
+      "title": "KFB Surface Lab · Shader / Inspector Research R1",
+      "summary": "External browser shader editor, node and inspector donors, evidence limits, security warnings and one isolated inspector proof. Existing K1/K2/Claybound owner retained. No runtime changes.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md"
     }
   ],
   "surfaceRoles": {
