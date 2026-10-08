@@ -1,0 +1,179 @@
+{
+  "schema": "kfb.audio.third-party-master-pool.v1",
+  "id": "PIZZADOGGY_COZY_TUNES_CLASSICS",
+  "date": "2026-10-08",
+  "creator": "Pizza Doggy",
+  "officialSource": "https://pizzadoggy.itch.io/cozy-tunes",
+  "sourcePin": "f8f8f1fd72f76220688af78edbf9703086dac972",
+  "root": "media/3D_Assets/Sounds/Cozy Tunes - The Classics/Audio/ogg/Tracks",
+  "fileCount": 24,
+  "status": "LICENSED_GAME_USE_SOURCE_PRESENT_RUNTIME_UNVERIFIED",
+  "license": {
+    "gameUse": "ALLOWED",
+    "commercialGameUse": "ALLOWED",
+    "modification": "ALLOWED",
+    "standaloneRedistribution": "NOT_ALLOWED",
+    "publicRawRepoHosting": "BLOCKED_PENDING_REMEDIATION",
+    "attribution": "APPRECIATED_NOT_REQUIRED",
+    "recommendedCredit": "Music: Pizza Doggy · Cozy Tunes"
+  },
+  "runtime": {
+    "adaptiveStems": false,
+    "useClass": "MASTER_ROTATION_POOL",
+    "activate": false,
+    "prerequisites": [
+      "raw-public-hosting remediation",
+      "OGG decode QA",
+      "duration/sample-rate/channel audit",
+      "loudness audit",
+      "listening role classification",
+      "crossfade QA"
+    ]
+  },
+  "tracks": [
+    {
+      "id": "cozy-classics-01",
+      "file": "Chickens In The Meadow.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-02",
+      "file": "Cuddle Clouds.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-03",
+      "file": "Drifting Memories.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-04",
+      "file": "Ducks In A Pond.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-05",
+      "file": "Evening Harmony.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-06",
+      "file": "Far Far Away.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-07",
+      "file": "Floating Dream.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-08",
+      "file": "Forgotten Biomes.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-09",
+      "file": "Gentle Breeze.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-10",
+      "file": "Golden Gleam.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-11",
+      "file": "Gymnopédie No.1.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-12",
+      "file": "Minuet (Slower).ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-13",
+      "file": "Minuet.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-14",
+      "file": "Pineapple Under The Sea.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-15",
+      "file": "Polar Lights.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-16",
+      "file": "Sheep.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-17",
+      "file": "Strange Worlds.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-18",
+      "file": "Sunlight Through Leaves.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-19",
+      "file": "Tales from the Vienna Woods.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-20",
+      "file": "Wanderer's Tale.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-21",
+      "file": "What Clouds Are Made Of.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-22",
+      "file": "Whispering Woods.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-23",
+      "file": "Wildflowers By The River.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    },
+    {
+      "id": "cozy-classics-24",
+      "file": "Wind Over The Trees.ogg",
+      "status": "SOURCE_PRESENT_UNVERIFIED",
+      "roleTags": []
+    }
+  ]
+}
