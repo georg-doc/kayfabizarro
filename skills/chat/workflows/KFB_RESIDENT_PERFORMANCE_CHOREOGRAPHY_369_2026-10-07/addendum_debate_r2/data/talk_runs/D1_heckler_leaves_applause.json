@@ -1,0 +1,944 @@
+{
+ "schema": "kfb.talk.run.v2",
+ "seed": 7,
+ "actors": [
+  {
+   "id": "farmer",
+   "rig": "M",
+   "engagement": 3,
+   "fuse": 0.6,
+   "stubbornness": 0.6,
+   "stance": "neutral"
+  },
+  {
+   "id": "orc",
+   "rig": "L",
+   "engagement": 3,
+   "fuse": 0.8,
+   "stubbornness": 0.9,
+   "stance": "contra"
+  },
+  {
+   "id": "farmer_a",
+   "rig": "M",
+   "engagement": 2,
+   "fuse": 0.3,
+   "stubbornness": 0.3,
+   "stance": "pro"
+  },
+  {
+   "id": "gothgirl",
+   "rig": "M",
+   "engagement": 0,
+   "fuse": 0.2,
+   "stubbornness": 0.5,
+   "stance": "neutral"
+  },
+  {
+   "id": "lorekeeper",
+   "rig": "M",
+   "engagement": 1,
+   "fuse": 0.3,
+   "stubbornness": 0.6,
+   "stance": "contra"
+  }
+ ],
+ "finalProfiles": [
+  {
+   "id": "farmer",
+   "rig": "M",
+   "engagement": 3,
+   "fuse": 0.6,
+   "stubbornness": 0.6,
+   "stance": "neutral"
+  },
+  {
+   "id": "orc",
+   "rig": "L",
+   "engagement": 3,
+   "fuse": 0.8,
+   "stubbornness": 0.9,
+   "stance": "contra"
+  },
+  {
+   "id": "farmer_a",
+   "rig": "M",
+   "engagement": 2,
+   "fuse": 0.3,
+   "stubbornness": 0.3,
+   "stance": "pro"
+  },
+  {
+   "id": "gothgirl",
+   "rig": "M",
+   "engagement": 0,
+   "fuse": 0.2,
+   "stubbornness": 0.5,
+   "stance": "neutral"
+  },
+  {
+   "id": "lorekeeper",
+   "rig": "M",
+   "engagement": 2,
+   "fuse": 0.3,
+   "stubbornness": 0.6,
+   "stance": "contra"
+  }
+ ],
+ "outcome": [
+  "applause",
+  null
+ ],
+ "end": 831,
+ "turns": [
+  {
+   "t0": 10,
+   "t1": 105,
+   "speaker": "farmer",
+   "move": "explain",
+   "heatBefore": 0.3,
+   "heatAfter": 0.11,
+   "heckledBy": null
+  },
+  {
+   "t0": 110,
+   "t1": 235,
+   "speaker": "farmer",
+   "move": "explain",
+   "heatBefore": 0.11,
+   "heatAfter": 0.77,
+   "heckledBy": "orc"
+  },
+  {
+   "t0": 240,
+   "t1": 297,
+   "speaker": "farmer",
+   "move": "dismiss",
+   "heatBefore": 0.77,
+   "heatAfter": 1.43,
+   "heckledBy": "orc"
+  },
+  {
+   "t0": 277,
+   "event": "walk_off",
+   "actor": "gothgirl"
+  },
+  {
+   "t0": 302,
+   "t1": 381,
+   "speaker": "farmer",
+   "move": "insist",
+   "heatBefore": 1.43,
+   "heatAfter": 2.09,
+   "heckledBy": "orc"
+  },
+  {
+   "t0": 390,
+   "t1": 477,
+   "speaker": "farmer",
+   "move": "rage",
+   "heatBefore": 2.09,
+   "heatAfter": 2.75,
+   "heckledBy": "orc"
+  },
+  {
+   "t0": 477,
+   "event": "drawn_in",
+   "actor": "lorekeeper",
+   "to": "engaged"
+  },
+  {
+   "t0": 485,
+   "t1": 560,
+   "speaker": "farmer",
+   "move": "rage",
+   "heatBefore": 2.75,
+   "heatAfter": 2.83,
+   "heckledBy": null
+  },
+  {
+   "t0": 540,
+   "event": "walk_off",
+   "actor": "orc"
+  },
+  {
+   "t0": 567,
+   "t1": 629,
+   "speaker": "farmer",
+   "move": "dismiss",
+   "heatBefore": 2.33,
+   "heatAfter": 2.32,
+   "heckledBy": null
+  },
+  {
+   "t0": 643,
+   "t1": 729,
+   "speaker": "farmer",
+   "move": "insist",
+   "heatBefore": 2.32,
+   "heatAfter": 2.26,
+   "heckledBy": null
+  }
+ ],
+ "timelines": {
+  "farmer": [
+   {
+    "short": "talk|kfb_talk_sitting_a",
+    "variant": "upper",
+    "a0": 742,
+    "a1": 837,
+    "start": 10,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "explain",
+    "kind": "speak",
+    "win": "M:kfb_talk_sitting_a#11"
+   },
+   {
+    "short": "talk|kfb_talk_watercooler_a",
+    "variant": "full",
+    "a0": 690,
+    "a1": 744,
+    "start": 110,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "explain",
+    "kind": "speak",
+    "win": "M:kfb_talk_watercooler_a#9"
+   },
+   {
+    "short": "talk|kfb_talk_meeting_a",
+    "variant": "upper",
+    "a0": 296,
+    "a1": 356,
+    "start": 156,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "explain",
+    "kind": "speak",
+    "win": "M:kfb_talk_meeting_a#4"
+   },
+   {
+    "short": "talk|kfb_talk_sitting_a",
+    "variant": "upper",
+    "a0": 359,
+    "a1": 375,
+    "start": 215,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "explain",
+    "kind": "speak",
+    "win": "M:kfb_talk_sitting_a#6"
+   },
+   {
+    "short": "gesture|kfb_gesture_dismissing_gesture_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 50,
+    "start": 240,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "M:kfb_gesture_dismissing_gesture_a#0"
+   },
+   {
+    "short": "talk|kfb_talk_arguing_b",
+    "variant": "full",
+    "a0": 0,
+    "a1": 49,
+    "start": 302,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_talk_arguing_b#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_counting_a",
+    "variant": "full",
+    "a0": 249,
+    "a1": 281,
+    "start": 343,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_gesture_counting_a#3"
+   },
+   {
+    "short": "gesture|kfb_gesture_yelling_a",
+    "variant": "full",
+    "a0": 72,
+    "a1": 127,
+    "start": 390,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "rage",
+    "kind": "speak",
+    "win": "M:kfb_gesture_yelling_a#1"
+   },
+   {
+    "short": "gesture|kfb_gesture_angry_gesture_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 75,
+    "start": 485,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "rage",
+    "kind": "speak",
+    "win": "M:kfb_gesture_angry_gesture_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_dismiss_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 32,
+    "start": 567,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "M:kfb_react_dismiss_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 38,
+    "start": 591,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "M:kfb_react_taunt_a#0"
+   },
+   {
+    "short": "talk|kfb_talk_arguing_b",
+    "variant": "full",
+    "a0": 111,
+    "a1": 166,
+    "start": 643,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_talk_arguing_b#2"
+   },
+   {
+    "short": "talk|kfb_talk_arguing_a",
+    "variant": "full",
+    "a0": 46,
+    "a1": 85,
+    "start": 690,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_talk_arguing_a#1"
+   },
+   {
+    "short": "gesture|kfb_gesture_cheering_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 70,
+    "start": 735,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "applause",
+    "kind": "outcome",
+    "win": "M:kfb_gesture_cheering_a#0"
+   }
+  ],
+  "orc": [
+   {
+    "short": "exchange01|kfb_react_boggle_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 60,
+    "start": 33,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "L:kfb_react_boggle_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 54,
+    "start": 118,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_gesture_annoyed_head_shake_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 53,
+    "start": 192,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "heckle: contradict",
+    "kind": "speak",
+    "win": "L:kfb_gesture_annoyed_head_shake_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_shaking_head_no_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 16,
+    "start": 247,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_gesture_shaking_head_no_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_shaking_head_no_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 41,
+    "start": 266,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "heckle: contradict",
+    "kind": "speak",
+    "win": "L:kfb_gesture_shaking_head_no_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_thoughtful_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 30,
+    "start": 317,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "L:kfb_gesture_thoughtful_head_shake_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_contradict_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 351,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "heckle: contradict",
+    "kind": "speak",
+    "win": "L:kfb_react_contradict_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_outraged_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 17,
+    "start": 400,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_react_outraged_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 37,
+    "start": 421,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "heckle: taunt",
+    "kind": "speak",
+    "win": "L:kfb_react_taunt_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 37,
+    "start": 450,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "heckle: taunt",
+    "kind": "speak",
+    "win": "L:kfb_react_taunt_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 32,
+    "start": 508,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_gesture_annoyed_head_shake_a#0"
+   }
+  ],
+  "farmer_a": [
+   {
+    "short": "idle|kfb_idle_laughing_a",
+    "variant": "full",
+    "a0": 40,
+    "a1": 80,
+    "start": 17,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "approve",
+    "kind": "listen",
+    "win": "M:kfb_idle_laughing_a#1"
+   },
+   {
+    "short": "gesture|kfb_gesture_standing_clap_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 115,
+    "start": 127,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "approve",
+    "kind": "listen",
+    "win": "M:kfb_gesture_standing_clap_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_lengthy_head_nod_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 255,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "attend",
+    "kind": "listen",
+    "win": "M:kfb_gesture_lengthy_head_nod_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_clapping_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 29,
+    "start": 318,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "celebrate",
+    "kind": "listen",
+    "win": "M:kfb_gesture_clapping_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_cheering_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 60,
+    "start": 377,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "celebrate",
+    "kind": "listen",
+    "win": "M:kfb_gesture_cheering_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_amused_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 60,
+    "start": 399,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "approve",
+    "kind": "listen",
+    "win": "M:kfb_react_amused_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_head_nod_yes_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 52,
+    "start": 498,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "attend",
+    "kind": "listen",
+    "win": "M:kfb_gesture_head_nod_yes_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_hard_head_nod_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 27,
+    "start": 584,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "approve",
+    "kind": "listen",
+    "win": "M:kfb_gesture_hard_head_nod_a#0"
+   },
+   {
+    "short": "idle|kfb_idle_laughing_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 655,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "approve",
+    "kind": "listen",
+    "win": "M:kfb_idle_laughing_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_cheering_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 70,
+    "start": 737,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "applause",
+    "kind": "outcome",
+    "win": "M:kfb_gesture_cheering_a#0"
+   }
+  ],
+  "gothgirl": [
+   {
+    "short": "idle|kfb_idle_looking_around_a",
+    "variant": "full",
+    "a0": 40,
+    "a1": 146,
+    "start": 29,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "bored",
+    "kind": "listen",
+    "win": "M:kfb_idle_looking_around_a#1"
+   },
+   {
+    "short": "gesture|kfb_gesture_weight_shift_a",
+    "variant": "full",
+    "a0": 148,
+    "a1": 226,
+    "start": 123,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "bored",
+    "kind": "listen",
+    "win": "M:kfb_gesture_weight_shift_a#2"
+   },
+   {
+    "short": "idle|kfb_idle_unarmed_idle_looking_ver_1_a",
+    "variant": "full",
+    "a0": 40,
+    "a1": 57,
+    "start": 260,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "bored",
+    "kind": "listen",
+    "win": "M:kfb_idle_unarmed_idle_looking_ver_1_a#1"
+   }
+  ],
+  "lorekeeper": [
+   {
+    "short": "exchange01|kfb_react_contradict_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 46,
+    "start": 34,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "M:kfb_react_contradict_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_sarcastic_head_nod_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 54,
+    "start": 130,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_gesture_sarcastic_head_nod_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_thoughtful_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 69,
+    "start": 255,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_gesture_thoughtful_head_shake_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 54,
+    "start": 325,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "M:kfb_gesture_annoyed_head_shake_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_boggle_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 60,
+    "start": 411,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_react_boggle_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_thoughtful_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 74,
+    "start": 506,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_gesture_thoughtful_head_shake_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_outraged_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 579,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "M:kfb_react_outraged_a#0"
+   },
+   {
+    "short": "idle|kfb_idle_laughing_a",
+    "variant": "full",
+    "a0": 120,
+    "a1": 228,
+    "start": 651,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "mock",
+    "kind": "listen",
+    "win": "M:kfb_idle_laughing_a#3"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 38,
+    "start": 742,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "applause",
+    "kind": "outcome",
+    "win": "M:kfb_react_taunt_a#0"
+   }
+  ]
+ },
+ "walks": [
+  {
+   "actor": "gothgirl",
+   "start": 277,
+   "end": 427
+  },
+  {
+   "actor": "orc",
+   "start": 540,
+   "end": 690
+  }
+ ],
+ "looks": [
+  {
+   "actor": "farmer",
+   "target": "orc",
+   "start": 196,
+   "end": 275
+  },
+  {
+   "actor": "farmer_a",
+   "target": "orc",
+   "start": 204,
+   "end": 250
+  },
+  {
+   "actor": "gothgirl",
+   "target": "orc",
+   "start": 201,
+   "end": 242
+  },
+  {
+   "actor": "lorekeeper",
+   "target": "orc",
+   "start": 201,
+   "end": 251
+  },
+  {
+   "actor": "farmer",
+   "target": "orc",
+   "start": 270,
+   "end": 337
+  },
+  {
+   "actor": "farmer_a",
+   "target": "orc",
+   "start": 274,
+   "end": 328
+  },
+  {
+   "actor": "gothgirl",
+   "target": "orc",
+   "start": 276,
+   "end": 317
+  },
+  {
+   "actor": "lorekeeper",
+   "target": "orc",
+   "start": 280,
+   "end": 334
+  },
+  {
+   "actor": "farmer",
+   "target": "gothgirl",
+   "start": 291,
+   "end": 347
+  },
+  {
+   "actor": "farmer",
+   "target": "orc",
+   "start": 355,
+   "end": 421
+  },
+  {
+   "actor": "farmer_a",
+   "target": "orc",
+   "start": 356,
+   "end": 391
+  },
+  {
+   "actor": "lorekeeper",
+   "target": "orc",
+   "start": 364,
+   "end": 395
+  },
+  {
+   "actor": "farmer",
+   "target": "orc",
+   "start": 425,
+   "end": 517
+  },
+  {
+   "actor": "farmer_a",
+   "target": "orc",
+   "start": 433,
+   "end": 470
+  },
+  {
+   "actor": "lorekeeper",
+   "target": "orc",
+   "start": 435,
+   "end": 488
+  },
+  {
+   "actor": "farmer",
+   "target": "orc",
+   "start": 554,
+   "end": 610
+  }
+ ],
+ "variety": {
+  "farmer": {
+   "events": 14,
+   "distinctWindows": 14,
+   "distinctClips": 12
+  },
+  "orc": {
+   "events": 11,
+   "distinctWindows": 7,
+   "distinctClips": 7
+  },
+  "farmer_a": {
+   "events": 10,
+   "distinctWindows": 9,
+   "distinctClips": 8
+  },
+  "gothgirl": {
+   "events": 3,
+   "distinctWindows": 3,
+   "distinctClips": 3
+  },
+  "lorekeeper": {
+   "events": 9,
+   "distinctWindows": 8,
+   "distinctClips": 8
+  }
+ },
+ "name": "D1_heckler_leaves_applause"
+}
