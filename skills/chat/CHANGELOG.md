@@ -1,3 +1,11 @@
+## 2026-10-08 · KFB 3D editor/shader/inspector research reused existing Surface Language owner
+
+- New **source-inspection-only** research branch documentation on `planning/hybrid-baked-clay-texture-architecture-2026-10-07`: `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`, corresponding TEST_REPORT, RETURN and additive local research changelog.
+- External candidates: `threlte/three-inspect` (dev-only material inspection), `RhythrosaLabs/webgl-studio` (GLSL + scene editor patterns), `takahirox/tsl-node-editor` (WebGPU/TSL research), `Design0r/shaderpass` (optional node graph).
+- Confirmed that `theringsofsaturn/3D-ai-school-threejs` is only a 3D tutor UX donor for the **separate** AI Game Art Academy: old backend is not a secure/user-persisted tutor service. Original KFB Cube Academy remains historical lesson/UI donor, not the default Academy runtime.
+- No second Clay/World/editor owner and no shader/geometry/runtime implementation; K1 Golden, K2 v10, existing A–E Surface Lab and Island R4 STOP intact. Browser/visual isolation: 0; build/performance tests: 0; Stage/Live: none.
+- Next conditional evidence gate: isolated `three-inspect` KFB Material Lab candidate, not an Open World repair.
+
 ## 2026-10-08 · Island MVP R4 stopped · World-model / composition synthesis failure
 
 - R4 authoritative fail head: `0a8240b83d4fbfdb69cdba47b812e618cc5cd897` on Draft PR #348.
