@@ -1,14 +1,14 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-07.21",
-  "updatedAt": "2026-10-07T21:26:00+02:00",
+  "revision": "2026-10-08.2",
+  "updatedAt": "2026-10-08T01:59:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
-  "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04 · R4 fail head 0a8240b83d4fbfdb69cdba47b812e618cc5cd897",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
-  "productStatus": "NO MVP · ACCEPTANCE MATRIX NOT FULLY GREEN",
-  "productStatusRule": "Eine einzige nicht erfüllte Pflichtanforderung bedeutet NO MVP. Teilnachweise und brauchbare Donors ersetzen keine Produktabnahme.",
+  "productStatus": "NO MVP · R4 STOPPED · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE",
+  "productStatusRule": "F-R39 = FAIL and there is NO GOLDEN BASELINE. Technical salvage does not rescue the rejected island composition. No repaired R4 or R5 may start without new explicit Georg authorization.",
   "noProgressRollup": true,
-  "contractState": "FROZEN · 37 stable required IDs + 6 explicit non-blockers · independent corrections preserved",
+  "contractState": "FROZEN MATRIX v5 PRESERVED · 44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL · R4 STOPPED",
   "authority": {
     "product": "Explicit Georg decisions + binding GitHub product contracts",
     "candidateTruth": "Dropbox /CLAUDE/KFB Open World",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "Current product iteration: KFB Island MVP R4. Binding acceptance contract remains Frozen Matrix operationalVersion 5 with 44 REQUIRED / 13 Strong / 7 Optional. Older Recovery-Lead/runtime-paused routing is historical where conflicting.",
+  "recoverySummary": "R4 stopped at Early Golden. The 44-row contract prevented feature loss but did not prevent a repeated, already-documented Micro-Storytelling/relation failure. Island layout, town causality, wrong Town asset family and legacy Curtain are rejected; bounded technical salvage remains evidence only.",
   "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "Run the v5 final Work/WSA ONE_SHOT on PR #348. First human stop: persisted F-R39 visual gate. Second human step: instrumented target-device performance run on GEORG_PRIMARY_ACCEPTANCE_MACHINE. Otherwise continue automatically.",
+  "nextGate": "NONE AUTHORIZED. Smallest possible future gate is a cheap source-backed world-model/composition proof before any new geometry, but it requires a new explicit Georg instruction.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,7 +2247,7 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "MVP_R4_ONE_SHOT_READY_FOR_WORK_WSA",
+    "status": "R4_STOPPED_WORLD_MODEL_COMPOSITION_SYNTHESIS_FAILURE",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
@@ -2300,6 +2300,13 @@
     ],
     "targetDeviceId": "GEORG_PRIMARY_ACCEPTANCE_MACHINE",
     "fR39ReGatePolicy": "REGRESSION_BASED_ONLY",
-    "productIteration": "KFB_ISLAND_MVP_R4"
+    "productIteration": "KFB_ISLAND_MVP_R4",
+    "r4FailHead": "0a8240b83d4fbfdb69cdba47b812e618cc5cd897",
+    "fR39": "FAIL",
+    "goldenBaseline": "NONE",
+    "autoContinue": false,
+    "nextExecutor": "NONE",
+    "postmortem": "skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
+    "failReturn": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md"
   }
 }
