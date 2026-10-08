@@ -1,0 +1,62 @@
+PASS  core version ≥ 0.13  · kfb.track-core/0.14
+PASS  family TOWN · road width from lanes, all route checks green  · road 8 m · overall 19.20 m · lanes 1+1 × 4 · green
+PASS  family DRIVING_SCHOOL · road width from lanes, all route checks green  · road 8 m · overall 12.80 m · lanes 1+1 × 4 · green
+PASS  family COUNTRY · road width from lanes, all route checks green  · road 7.5 m · overall 12.50 m · lanes 1+1 × 3.75 · green
+PASS  family MOUNTAIN · road width from lanes, all route checks green  · road 7.5 m · overall 10.10 m · lanes 1+1 × 3.75 · green
+PASS  family HIGHWAY · road width from lanes, all route checks green  · road 22 m · overall 29.80 m · lanes 2+2 × 4.5 · green
+PASS  family RACE · road width from lanes, all route checks green  · road 14.4 m · overall 23.04 m · lanes 0+0 × 0 · green
+PASS  family COSMIC · road width from lanes, all route checks green  · road 14.4 m · overall 23.04 m · lanes 0+0 × 0 · green
+PASS  KFB scale · lane holds the measured car with ≥ 0.3 m each side (TOWN / DRIVING_SCHOOL), ≥ 0.3 m (COUNTRY / MOUNTAIN)  · car 3.11 m · lanes 3.75 / 4 / 4.5
+PASS  K2 · TOWN 1+1 = 19.2 (3 MC), 2+2 = 32.0 (5 MC via median 4.8), DRIVING_SCHOOL 1+1 = 12.8 (2 MC); sidewalk ≥ 4.8, kerb 0.35, highway wall 1.3  · TOWN 19.200000000000003 · TOWN 2+2 32 · DS 12.8 · one-way TOWN 0+1 15.200000000000001 (ramp, unsnapped)
+PASS  lanes · 1..8 lanes, median only between directions, lanes tile the road edge to edge  · max 8
+PASS  lanes · 9 lanes and 0 lanes are refused with the rule  · profile family HIGHWAY: lanes [5, 4] (whole numbers, 1..8 lanes in total)
+PASS  lanes · HIGHWAY 4+4: 8 lanes, median edges ML / MR, 6 dividers, 2 edges  · 40 m road · EL L4|L3 L3|L2 L2|L1 ML MR R1|R2 R2|R3 R3|R4 ER
+PASS  banking · world families ≤ 4° in a 40 m bend, RACE keeps its race banking (> 15°)  · TOWN 4.00° · COUNTRY 4.00° · RACE 24.00°
+PASS  lane add / drop · left road edge stays put (< 1 mm), right edge moves out by one lane and back, route checks green  · left drift 4.4e-16 m · right shift 3.750 m · taper 47.0 m · green
+PASS  lane add · during the taper the new lane grows from 0 (no negative lane), divider band appears only once the lane is half open  · C R1|R2 EL ER
+PASS  family transition TOWN → COUNTRY · all slots continuous (no step > 0.6 m between 0.5 m samples), checks green, ends on the COUNTRY profile  · max slot step 0.551 m · green
+PASS  junction T · every route check, graph check and node check green  · 3 routes · 12 node checks
+PASS  junction T · lane graph  · 6 connectors · right 2 · straight 2 · left 2 · uturn 0; connector ends on their lane centres within 0.0e+0 m
+PASS  junction T · lanes clear of kerbs by half the KFB car  · 2 m ≥ 1.555 · tightest turn 11 m
+PASS  junction T · mouths seamless
+PASS  junction X · every route check, graph check and node check green  · 4 routes · 14 node checks
+PASS  junction X · lane graph  · 12 connectors · right 4 · straight 4 · left 4 · uturn 0; connector ends on their lane centres within 0.0e+0 m
+PASS  junction X · lanes clear of kerbs by half the KFB car  · 2 m ≥ 1.555 · tightest turn 11 m
+PASS  junction X · mouths seamless
+PASS  junction Y · every route check, graph check and node check green  · 3 routes · 12 node checks
+PASS  junction Y · lane graph  · 6 connectors · right 1 · straight 4 · left 1 · uturn 0; connector ends on their lane centres within 5.1e-5 m
+PASS  junction Y · lanes clear of kerbs by half the KFB car  · 2 m ≥ 1.555 · tightest turn 7.6 m
+PASS  junction Y · mouths seamless  · 0.00000162
+PASS  junction X_boulevard · every route check, graph check and node check green  · 4 routes · 14 node checks
+PASS  junction X_boulevard · lane graph  · 16 connectors · right 4 · straight 8 · left 4 · uturn 0; connector ends on their lane centres within 1.4e-14 m
+PASS  junction X_boulevard · lanes clear of kerbs by half the KFB car  · 2 m ≥ 1.555 · tightest turn 11 m
+PASS  junction X_boulevard · mouths seamless  · 1.42e-14
+PASS  junction T_oneway · every route check, graph check and node check green  · 3 routes · 12 node checks
+PASS  junction T_oneway · lane graph  · 4 connectors · right 1 · straight 1 · left 2 · uturn 0; connector ends on their lane centres within 0.0e+0 m
+PASS  junction T_oneway · lanes clear of kerbs by half the KFB car  · 1.733 m ≥ 1.555 · tightest turn 11 m
+PASS  junction T_oneway · mouths seamless
+PASS  junction X_skew · every route check, graph check and node check green  · 4 routes · 14 node checks
+PASS  junction X_skew · lane graph  · 12 connectors · right 4 · straight 4 · left 4 · uturn 0; connector ends on their lane centres within 7.9e-5 m
+PASS  junction X_skew · lanes clear of kerbs by half the KFB car  · 2 m ≥ 1.555 · tightest turn 11 m
+PASS  junction X_skew · mouths seamless  · 0.0000763
+PASS  junction T_country · every route check, graph check and node check green  · 3 routes · 12 node checks
+PASS  junction T_country · lane graph  · 6 connectors · right 2 · straight 2 · left 2 · uturn 0; connector ends on their lane centres within 0.0e+0 m
+PASS  junction T_country · lanes clear of kerbs by half the KFB car  · 1.875 m ≥ 1.555 · tightest turn 11.87 m
+PASS  junction T_country · mouths seamless
+PASS  junction X · main route ends on the 0° mouth and continues from the straight-on mouth  · in 0.0e+0 · out 0.0e+0 · exit arm at 180°
+PASS  lane rules · boulevard 2+2: right turns only from the outer lane into the outer lane, left only from the inner into the inner, straight lane to lane  · 16 connectors · right 4 · left 4
+PASS  one-way side arm [0, 1] · only outbound: nothing enters the node from it, two turns lead into it  · 4 connectors
+PASS  T junction · city biome: zebra on every arm, stop line across the inbound lanes, one signal anchor per arm, socket per arm  · 24 marking strokes · arm0/arm2 90° fillet, arm2/arm1 180° straight, arm1/arm0 90° fillet
+PASS  T junction · the straight side has no fillet, the two stem corners have the TOWN corner radius
+PASS  country T · nature biome: no zebra, give-way sign anchors, lane lines with edges on the arms
+PASS  free-standing junction · stub route per arm, CONNECT into a socket, everything green
+PASS  junction refuses: fan of arms (gap > 180°)  · JUNCTION J: arms arm0 and arm2 leave a gap of 300.0° (at most 180°: a junction needs arms all round; add an arm or use a curve)
+PASS  junction refuses: corner radius below kerb section + 1.5 m  · JUNCTION J: corner arm0/arm2 radius 3 m is below the kerb section + 1.5 m (7.1 m)
+PASS  junction refuses: arms with different side sections  · JUNCTION J: arm arm2 has another side section than arm0 (put a family transition on the arm route, the node needs one kerb section)
+PASS  junction refuses: two arms  · JUNCTION J: needs at least three arms (two arms are a bend: use a curve)
+PASS  negative · a road driven straight across the junction is caught by node_clear (no plate may hide it)  · 51 samples · route samples on the junction plate or its kerbs, first at Q s 35.0
+PASS  donor roundabout (lab values, 6 arms at 60°) with NARROW arms compiles green  · green
+PASS  donor roundabout (lab values, 6 arms at 60°) with STANDARD arms is refused with the angle it needs (lab finding reproduced)  · ROUNDABOUT rb: arms arm0 and arm1 stand 60.0° apart and need 68.2° (narrower arms, a smaller splitter or a larger island)
+PASS  deterministic · same graph, same fingerprints and lane graph  · 3e5ea1f6 6bc4491f 4c453fb2 61de3a6c
+
+60 checks · 0 unexpected result(s)

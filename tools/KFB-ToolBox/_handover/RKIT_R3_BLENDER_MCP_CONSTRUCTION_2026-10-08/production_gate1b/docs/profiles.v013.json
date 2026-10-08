@@ -1,0 +1,2201 @@
+{
+ "core": "kfb.track-core/0.14",
+ "slots": [
+  "under_L",
+  "barrier_out_bot_L",
+  "barrier_out_top_L",
+  "barrier_in_top_L",
+  "barrier_in_bot_L",
+  "shoulder_L",
+  "road_L",
+  "road_R",
+  "shoulder_R",
+  "barrier_in_bot_R",
+  "barrier_in_top_R",
+  "barrier_out_top_R",
+  "barrier_out_bot_R",
+  "under_R"
+ ],
+ "laneWidths": {
+  "NARROW": 3.75,
+  "STANDARD": 4,
+  "WIDE": 4.5
+ },
+ "vehicle": {
+  "length": 6,
+  "width": 3.11,
+  "height": 3.17,
+  "figureH": 3.64
+ },
+ "laneMarkings": {
+  "edge": {
+   "w": 0.2,
+   "inset": 0.3
+  },
+  "lane": {
+   "w": 0.15,
+   "dash": 3,
+   "gap": 6
+  },
+  "centre": {
+   "w": 0.15,
+   "dash": 3,
+   "gap": 3
+  },
+  "median": {
+   "w": 0.2
+  }
+ },
+ "profiles": [
+  {
+   "id": "TOWN_1_1",
+   "family": "TOWN",
+   "lanes": [
+    1,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 8,
+    "offset": 0,
+    "shoulderW": 0.4,
+    "shoulderDrop": 0,
+    "barrierGap": 0,
+    "barrierT": 5.2,
+    "barrierH": 0.35,
+    "barrierOuterTop": 0.37,
+    "deckDepth": 0.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4,
+    "lanesL": 1,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -9.600000000000001,
+     -0.6
+    ],
+    [
+     -9.600000000000001,
+     -0.3
+    ],
+    [
+     -9.600000000000001,
+     0.37
+    ],
+    [
+     -4.4,
+     0.35
+    ],
+    [
+     -4.4,
+     0
+    ],
+    [
+     -4.4,
+     0
+    ],
+    [
+     -4,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4.4,
+     0
+    ],
+    [
+     4.4,
+     0
+    ],
+    [
+     4.4,
+     0.35
+    ],
+    [
+     9.600000000000001,
+     0.37
+    ],
+    [
+     9.600000000000001,
+     -0.3
+    ],
+    [
+     9.600000000000001,
+     -0.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gutter",
+    "barrier_side": "kerb",
+    "barrier_cap": "sidewalk",
+    "barrier_out": "sidewalk_edge",
+    "underside": "foundation"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0.35
+    ],
+    [
+     5.6,
+     0.37
+    ],
+    [
+     5.6,
+     -0.3
+    ],
+    [
+     5.6,
+     -0.6
+    ],
+    [
+     0,
+     -0.6
+    ]
+   ],
+   "sideExtent": 5.6000000000000005,
+   "overall": 19.2,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -2,
+      "w": 4
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 2,
+      "w": 4
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -4
+     },
+     {
+      "id": "C",
+      "kind": "centre",
+      "lat": 0
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 4
+     }
+    ],
+    "width": 8,
+    "laneW": 4,
+    "nL": 1,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES_KERB",
+   "corner": 9
+  },
+  {
+   "id": "TOWN_2_2",
+   "family": "TOWN",
+   "lanes": [
+    2,
+    2
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 20.8,
+    "offset": 0,
+    "shoulderW": 0.4,
+    "shoulderDrop": 0,
+    "barrierGap": 0,
+    "barrierT": 5.2,
+    "barrierH": 0.35,
+    "barrierOuterTop": 0.37,
+    "deckDepth": 0.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4,
+    "lanesL": 2,
+    "lanesR": 2,
+    "median": 4.8,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -16,
+     -0.6
+    ],
+    [
+     -16,
+     -0.3
+    ],
+    [
+     -16,
+     0.37
+    ],
+    [
+     -10.8,
+     0.35
+    ],
+    [
+     -10.8,
+     0
+    ],
+    [
+     -10.8,
+     0
+    ],
+    [
+     -10.4,
+     0
+    ],
+    [
+     10.4,
+     0
+    ],
+    [
+     10.8,
+     0
+    ],
+    [
+     10.8,
+     0
+    ],
+    [
+     10.8,
+     0.35
+    ],
+    [
+     16,
+     0.37
+    ],
+    [
+     16,
+     -0.3
+    ],
+    [
+     16,
+     -0.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gutter",
+    "barrier_side": "kerb",
+    "barrier_cap": "sidewalk",
+    "barrier_out": "sidewalk_edge",
+    "underside": "foundation"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0.35
+    ],
+    [
+     5.6,
+     0.37
+    ],
+    [
+     5.6,
+     -0.3
+    ],
+    [
+     5.6,
+     -0.6
+    ],
+    [
+     0,
+     -0.6
+    ]
+   ],
+   "sideExtent": 5.6000000000000005,
+   "overall": 32,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L2",
+      "dir": -1,
+      "lat": -8.4,
+      "w": 4
+     },
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -4.4,
+      "w": 4
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 4.3999999999999995,
+      "w": 4
+     },
+     {
+      "id": "R2",
+      "dir": 1,
+      "lat": 8.399999999999999,
+      "w": 4
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -10.4
+     },
+     {
+      "id": "L2|L1",
+      "kind": "lane",
+      "lat": -6.4,
+      "open": true
+     },
+     {
+      "id": "ML",
+      "kind": "median",
+      "lat": -2.4000000000000004
+     },
+     {
+      "id": "MR",
+      "kind": "median",
+      "lat": 2.3999999999999995
+     },
+     {
+      "id": "R1|R2",
+      "kind": "lane",
+      "lat": 6.3999999999999995,
+      "open": true
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 10.399999999999999
+     }
+    ],
+    "width": 20.8,
+    "laneW": 4,
+    "nL": 2,
+    "nR": 2,
+    "median": 4.8
+   },
+   "markings": "LANES_KERB",
+   "corner": 9
+  },
+  {
+   "id": "TOWN_0_1",
+   "family": "TOWN",
+   "lanes": [
+    0,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 4,
+    "offset": 0,
+    "shoulderW": 0.4,
+    "shoulderDrop": 0,
+    "barrierGap": 0,
+    "barrierT": 5.2,
+    "barrierH": 0.35,
+    "barrierOuterTop": 0.37,
+    "deckDepth": 0.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4,
+    "lanesL": 0,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -7.6,
+     -0.6
+    ],
+    [
+     -7.6,
+     -0.3
+    ],
+    [
+     -7.6,
+     0.37
+    ],
+    [
+     -2.4,
+     0.35
+    ],
+    [
+     -2.4,
+     0
+    ],
+    [
+     -2.4,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2.4,
+     0
+    ],
+    [
+     2.4,
+     0
+    ],
+    [
+     2.4,
+     0.35
+    ],
+    [
+     7.6,
+     0.37
+    ],
+    [
+     7.6,
+     -0.3
+    ],
+    [
+     7.6,
+     -0.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gutter",
+    "barrier_side": "kerb",
+    "barrier_cap": "sidewalk",
+    "barrier_out": "sidewalk_edge",
+    "underside": "foundation"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0.35
+    ],
+    [
+     5.6,
+     0.37
+    ],
+    [
+     5.6,
+     -0.3
+    ],
+    [
+     5.6,
+     -0.6
+    ],
+    [
+     0,
+     -0.6
+    ]
+   ],
+   "sideExtent": 5.6000000000000005,
+   "overall": 15.2,
+   "layout": {
+    "lanes": [
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 0,
+      "w": 4
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -2
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 2
+     }
+    ],
+    "width": 4,
+    "laneW": 4,
+    "nL": 0,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES_KERB",
+   "corner": 9
+  },
+  {
+   "id": "DRIVING_SCHOOL_1_1",
+   "family": "DRIVING_SCHOOL",
+   "lanes": [
+    1,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 8,
+    "offset": 0,
+    "shoulderW": 0.4,
+    "shoulderDrop": 0,
+    "barrierGap": 0,
+    "barrierT": 2,
+    "barrierH": 0.25,
+    "barrierOuterTop": 0.27,
+    "deckDepth": 0.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4,
+    "lanesL": 1,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -6.4,
+     -0.6
+    ],
+    [
+     -6.4,
+     -0.3
+    ],
+    [
+     -6.4,
+     0.27
+    ],
+    [
+     -4.4,
+     0.25
+    ],
+    [
+     -4.4,
+     0
+    ],
+    [
+     -4.4,
+     0
+    ],
+    [
+     -4,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4.4,
+     0
+    ],
+    [
+     4.4,
+     0
+    ],
+    [
+     4.4,
+     0.25
+    ],
+    [
+     6.4,
+     0.27
+    ],
+    [
+     6.4,
+     -0.3
+    ],
+    [
+     6.4,
+     -0.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gutter",
+    "barrier_side": "kerb",
+    "barrier_cap": "apron",
+    "barrier_out": "apron_edge",
+    "underside": "foundation"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0.25
+    ],
+    [
+     2.4,
+     0.27
+    ],
+    [
+     2.4,
+     -0.3
+    ],
+    [
+     2.4,
+     -0.6
+    ],
+    [
+     0,
+     -0.6
+    ]
+   ],
+   "sideExtent": 2.4,
+   "overall": 12.8,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -2,
+      "w": 4
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 2,
+      "w": 4
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -4
+     },
+     {
+      "id": "C",
+      "kind": "centre",
+      "lat": 0
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 4
+     }
+    ],
+    "width": 8,
+    "laneW": 4,
+    "nL": 1,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES_KERB",
+   "corner": 8
+  },
+  {
+   "id": "DRIVING_SCHOOL_0_1",
+   "family": "DRIVING_SCHOOL",
+   "lanes": [
+    0,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 4,
+    "offset": 0,
+    "shoulderW": 0.4,
+    "shoulderDrop": 0,
+    "barrierGap": 0,
+    "barrierT": 2,
+    "barrierH": 0.25,
+    "barrierOuterTop": 0.27,
+    "deckDepth": 0.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4,
+    "lanesL": 0,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -4.4,
+     -0.6
+    ],
+    [
+     -4.4,
+     -0.3
+    ],
+    [
+     -4.4,
+     0.27
+    ],
+    [
+     -2.4,
+     0.25
+    ],
+    [
+     -2.4,
+     0
+    ],
+    [
+     -2.4,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2.4,
+     0
+    ],
+    [
+     2.4,
+     0
+    ],
+    [
+     2.4,
+     0.25
+    ],
+    [
+     4.4,
+     0.27
+    ],
+    [
+     4.4,
+     -0.3
+    ],
+    [
+     4.4,
+     -0.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gutter",
+    "barrier_side": "kerb",
+    "barrier_cap": "apron",
+    "barrier_out": "apron_edge",
+    "underside": "foundation"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.4,
+     0.25
+    ],
+    [
+     2.4,
+     0.27
+    ],
+    [
+     2.4,
+     -0.3
+    ],
+    [
+     2.4,
+     -0.6
+    ],
+    [
+     0,
+     -0.6
+    ]
+   ],
+   "sideExtent": 2.4,
+   "overall": 8.8,
+   "layout": {
+    "lanes": [
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 0,
+      "w": 4
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -2
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 2
+     }
+    ],
+    "width": 4,
+    "laneW": 4,
+    "nL": 0,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES_KERB",
+   "corner": 8
+  },
+  {
+   "id": "COUNTRY_1_1",
+   "family": "COUNTRY",
+   "lanes": [
+    1,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 7.5,
+    "offset": 0,
+    "shoulderW": 1,
+    "shoulderDrop": 0.05,
+    "barrierGap": 0,
+    "barrierT": 1.5,
+    "barrierH": -0.05,
+    "barrierOuterTop": -0.35,
+    "deckDepth": 0.8,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 3.75,
+    "lanesL": 1,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -6.25,
+     -0.8
+    ],
+    [
+     -6.25,
+     -0.4
+    ],
+    [
+     -6.25,
+     -0.35
+    ],
+    [
+     -4.75,
+     -0.04999999999999999
+    ],
+    [
+     -4.75,
+     -0.05
+    ],
+    [
+     -4.75,
+     -0.05
+    ],
+    [
+     -3.75,
+     0
+    ],
+    [
+     3.75,
+     0
+    ],
+    [
+     4.75,
+     -0.05
+    ],
+    [
+     4.75,
+     -0.05
+    ],
+    [
+     4.75,
+     -0.04999999999999999
+    ],
+    [
+     6.25,
+     -0.35
+    ],
+    [
+     6.25,
+     -0.4
+    ],
+    [
+     6.25,
+     -0.8
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gravel",
+    "barrier_side": "verge_lip",
+    "barrier_cap": "verge",
+    "barrier_out": "ditch",
+    "underside": "embankment"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     -0.05
+    ],
+    [
+     1,
+     -0.05
+    ],
+    [
+     1,
+     -0.05
+    ],
+    [
+     2.5,
+     -0.35
+    ],
+    [
+     2.5,
+     -0.4
+    ],
+    [
+     2.5,
+     -0.8
+    ],
+    [
+     0,
+     -0.8
+    ]
+   ],
+   "sideExtent": 2.5,
+   "overall": 12.5,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -1.875,
+      "w": 3.75
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 1.875,
+      "w": 3.75
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -3.75
+     },
+     {
+      "id": "C",
+      "kind": "centre",
+      "lat": 0
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 3.75
+     }
+    ],
+    "width": 7.5,
+    "laneW": 3.75,
+    "nL": 1,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES",
+   "corner": 10
+  },
+  {
+   "id": "MOUNTAIN_1_1",
+   "family": "MOUNTAIN",
+   "lanes": [
+    1,
+    1
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 7.5,
+    "offset": 0,
+    "shoulderW": 0.5,
+    "shoulderDrop": 0.03,
+    "barrierGap": 0,
+    "barrierT": 0.8,
+    "barrierH": 0,
+    "barrierOuterTop": -0.05,
+    "deckDepth": 1,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 3.75,
+    "lanesL": 1,
+    "lanesR": 1,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -5.05,
+     -1
+    ],
+    [
+     -5.05,
+     -0.5
+    ],
+    [
+     -5.05,
+     -0.04999999999999999
+    ],
+    [
+     -4.25,
+     0
+    ],
+    [
+     -4.25,
+     -0.03
+    ],
+    [
+     -4.25,
+     -0.03
+    ],
+    [
+     -3.75,
+     0
+    ],
+    [
+     3.75,
+     0
+    ],
+    [
+     4.25,
+     -0.03
+    ],
+    [
+     4.25,
+     -0.03
+    ],
+    [
+     4.25,
+     0
+    ],
+    [
+     5.05,
+     -0.04999999999999999
+    ],
+    [
+     5.05,
+     -0.5
+    ],
+    [
+     5.05,
+     -1
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "gravel",
+    "barrier_side": "verge_lip",
+    "barrier_cap": "guardrail_strip",
+    "barrier_out": "rock_cut",
+    "underside": "retaining"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     0.5,
+     -0.03
+    ],
+    [
+     0.5,
+     -0.03
+    ],
+    [
+     0.5,
+     0
+    ],
+    [
+     1.3,
+     -0.05
+    ],
+    [
+     1.3,
+     -0.5
+    ],
+    [
+     1.3,
+     -1
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "sideExtent": 1.3,
+   "overall": 10.1,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -1.875,
+      "w": 3.75
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 1.875,
+      "w": 3.75
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -3.75
+     },
+     {
+      "id": "C",
+      "kind": "centre",
+      "lat": 0
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 3.75
+     }
+    ],
+    "width": 7.5,
+    "laneW": 3.75,
+    "nL": 1,
+    "nR": 1,
+    "median": 0
+   },
+   "markings": "LANES",
+   "corner": 10
+  },
+  {
+   "id": "HIGHWAY_2_2",
+   "family": "HIGHWAY",
+   "lanes": [
+    2,
+    2
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 22,
+    "offset": 0,
+    "shoulderW": 3,
+    "shoulderDrop": 0,
+    "barrierGap": 0.3,
+    "barrierT": 0.6,
+    "barrierH": 1.3,
+    "barrierOuterTop": 1.3,
+    "deckDepth": 1.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4.5,
+    "lanesL": 2,
+    "lanesR": 2,
+    "median": 4,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -14.9,
+     -1.6
+    ],
+    [
+     -14.9,
+     -0.8
+    ],
+    [
+     -14.9,
+     1.2999999999999998
+    ],
+    [
+     -14.3,
+     1.2999999999999998
+    ],
+    [
+     -14.3,
+     0
+    ],
+    [
+     -14,
+     0
+    ],
+    [
+     -11,
+     0
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     14,
+     0
+    ],
+    [
+     14.3,
+     0
+    ],
+    [
+     14.3,
+     1.2999999999999998
+    ],
+    [
+     14.9,
+     1.2999999999999998
+    ],
+    [
+     14.9,
+     -0.8
+    ],
+    [
+     14.9,
+     -1.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "hard_shoulder",
+    "barrier_side": "barrier_side",
+    "barrier_cap": "barrier_cap",
+    "barrier_out": "barrier_side",
+    "underside": "deck_box"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3.3,
+     0
+    ],
+    [
+     3.3,
+     1.3
+    ],
+    [
+     3.9,
+     1.3
+    ],
+    [
+     3.9,
+     -0.8
+    ],
+    [
+     3.9,
+     -1.6
+    ],
+    [
+     0,
+     -1.6
+    ]
+   ],
+   "sideExtent": 3.9,
+   "overall": 29.8,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L2",
+      "dir": -1,
+      "lat": -8.75,
+      "w": 4.5
+     },
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R2",
+      "dir": 1,
+      "lat": 8.75,
+      "w": 4.5
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -11
+     },
+     {
+      "id": "L2|L1",
+      "kind": "lane",
+      "lat": -6.5,
+      "open": true
+     },
+     {
+      "id": "ML",
+      "kind": "median",
+      "lat": -2
+     },
+     {
+      "id": "MR",
+      "kind": "median",
+      "lat": 2
+     },
+     {
+      "id": "R1|R2",
+      "kind": "lane",
+      "lat": 6.5,
+      "open": true
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 11
+     }
+    ],
+    "width": 22,
+    "laneW": 4.5,
+    "nL": 2,
+    "nR": 2,
+    "median": 4
+   },
+   "markings": "LANES",
+   "corner": 18
+  },
+  {
+   "id": "HIGHWAY_3_3",
+   "family": "HIGHWAY",
+   "lanes": [
+    3,
+    3
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 31,
+    "offset": 0,
+    "shoulderW": 3,
+    "shoulderDrop": 0,
+    "barrierGap": 0.3,
+    "barrierT": 0.6,
+    "barrierH": 1.3,
+    "barrierOuterTop": 1.3,
+    "deckDepth": 1.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4.5,
+    "lanesL": 3,
+    "lanesR": 3,
+    "median": 4,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -19.400000000000002,
+     -1.6
+    ],
+    [
+     -19.400000000000002,
+     -0.8
+    ],
+    [
+     -19.400000000000002,
+     1.2999999999999998
+    ],
+    [
+     -18.8,
+     1.2999999999999998
+    ],
+    [
+     -18.8,
+     0
+    ],
+    [
+     -18.5,
+     0
+    ],
+    [
+     -15.5,
+     0
+    ],
+    [
+     15.5,
+     0
+    ],
+    [
+     18.5,
+     0
+    ],
+    [
+     18.8,
+     0
+    ],
+    [
+     18.8,
+     1.2999999999999998
+    ],
+    [
+     19.400000000000002,
+     1.2999999999999998
+    ],
+    [
+     19.400000000000002,
+     -0.8
+    ],
+    [
+     19.400000000000002,
+     -1.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "hard_shoulder",
+    "barrier_side": "barrier_side",
+    "barrier_cap": "barrier_cap",
+    "barrier_out": "barrier_side",
+    "underside": "deck_box"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3.3,
+     0
+    ],
+    [
+     3.3,
+     1.3
+    ],
+    [
+     3.9,
+     1.3
+    ],
+    [
+     3.9,
+     -0.8
+    ],
+    [
+     3.9,
+     -1.6
+    ],
+    [
+     0,
+     -1.6
+    ]
+   ],
+   "sideExtent": 3.9,
+   "overall": 38.8,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L3",
+      "dir": -1,
+      "lat": -13.25,
+      "w": 4.5
+     },
+     {
+      "id": "L2",
+      "dir": -1,
+      "lat": -8.75,
+      "w": 4.5
+     },
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R2",
+      "dir": 1,
+      "lat": 8.75,
+      "w": 4.5
+     },
+     {
+      "id": "R3",
+      "dir": 1,
+      "lat": 13.25,
+      "w": 4.5
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -15.5
+     },
+     {
+      "id": "L3|L2",
+      "kind": "lane",
+      "lat": -11,
+      "open": true
+     },
+     {
+      "id": "L2|L1",
+      "kind": "lane",
+      "lat": -6.5,
+      "open": true
+     },
+     {
+      "id": "ML",
+      "kind": "median",
+      "lat": -2
+     },
+     {
+      "id": "MR",
+      "kind": "median",
+      "lat": 2
+     },
+     {
+      "id": "R1|R2",
+      "kind": "lane",
+      "lat": 6.5,
+      "open": true
+     },
+     {
+      "id": "R2|R3",
+      "kind": "lane",
+      "lat": 11,
+      "open": true
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 15.5
+     }
+    ],
+    "width": 31,
+    "laneW": 4.5,
+    "nL": 3,
+    "nR": 3,
+    "median": 4
+   },
+   "markings": "LANES",
+   "corner": 18
+  },
+  {
+   "id": "HIGHWAY_4_4",
+   "family": "HIGHWAY",
+   "lanes": [
+    4,
+    4
+   ],
+   "scale": "world",
+   "prm": {
+    "width": 40,
+    "offset": 0,
+    "shoulderW": 3,
+    "shoulderDrop": 0,
+    "barrierGap": 0.3,
+    "barrierT": 0.6,
+    "barrierH": 1.3,
+    "barrierOuterTop": 1.3,
+    "deckDepth": 1.6,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 4.5,
+    "lanesL": 4,
+    "lanesR": 4,
+    "median": 4,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -23.900000000000002,
+     -1.6
+    ],
+    [
+     -23.900000000000002,
+     -0.8
+    ],
+    [
+     -23.900000000000002,
+     1.2999999999999998
+    ],
+    [
+     -23.3,
+     1.2999999999999998
+    ],
+    [
+     -23.3,
+     0
+    ],
+    [
+     -23,
+     0
+    ],
+    [
+     -20,
+     0
+    ],
+    [
+     20,
+     0
+    ],
+    [
+     23,
+     0
+    ],
+    [
+     23.3,
+     0
+    ],
+    [
+     23.3,
+     1.2999999999999998
+    ],
+    [
+     23.900000000000002,
+     1.2999999999999998
+    ],
+    [
+     23.900000000000002,
+     -0.8
+    ],
+    [
+     23.900000000000002,
+     -1.6
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "hard_shoulder",
+    "barrier_side": "barrier_side",
+    "barrier_cap": "barrier_cap",
+    "barrier_out": "barrier_side",
+    "underside": "deck_box"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3.3,
+     0
+    ],
+    [
+     3.3,
+     1.3
+    ],
+    [
+     3.9,
+     1.3
+    ],
+    [
+     3.9,
+     -0.8
+    ],
+    [
+     3.9,
+     -1.6
+    ],
+    [
+     0,
+     -1.6
+    ]
+   ],
+   "sideExtent": 3.9,
+   "overall": 47.8,
+   "layout": {
+    "lanes": [
+     {
+      "id": "L4",
+      "dir": -1,
+      "lat": -17.75,
+      "w": 4.5
+     },
+     {
+      "id": "L3",
+      "dir": -1,
+      "lat": -13.25,
+      "w": 4.5
+     },
+     {
+      "id": "L2",
+      "dir": -1,
+      "lat": -8.75,
+      "w": 4.5
+     },
+     {
+      "id": "L1",
+      "dir": -1,
+      "lat": -4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R1",
+      "dir": 1,
+      "lat": 4.25,
+      "w": 4.5
+     },
+     {
+      "id": "R2",
+      "dir": 1,
+      "lat": 8.75,
+      "w": 4.5
+     },
+     {
+      "id": "R3",
+      "dir": 1,
+      "lat": 13.25,
+      "w": 4.5
+     },
+     {
+      "id": "R4",
+      "dir": 1,
+      "lat": 17.75,
+      "w": 4.5
+     }
+    ],
+    "lines": [
+     {
+      "id": "EL",
+      "kind": "edge",
+      "lat": -20
+     },
+     {
+      "id": "L4|L3",
+      "kind": "lane",
+      "lat": -15.5,
+      "open": true
+     },
+     {
+      "id": "L3|L2",
+      "kind": "lane",
+      "lat": -11,
+      "open": true
+     },
+     {
+      "id": "L2|L1",
+      "kind": "lane",
+      "lat": -6.5,
+      "open": true
+     },
+     {
+      "id": "ML",
+      "kind": "median",
+      "lat": -2
+     },
+     {
+      "id": "MR",
+      "kind": "median",
+      "lat": 2
+     },
+     {
+      "id": "R1|R2",
+      "kind": "lane",
+      "lat": 6.5,
+      "open": true
+     },
+     {
+      "id": "R2|R3",
+      "kind": "lane",
+      "lat": 11,
+      "open": true
+     },
+     {
+      "id": "R3|R4",
+      "kind": "lane",
+      "lat": 15.5,
+      "open": true
+     },
+     {
+      "id": "ER",
+      "kind": "edge",
+      "lat": 20
+     }
+    ],
+    "width": 40,
+    "laneW": 4.5,
+    "nL": 4,
+    "nR": 4,
+    "median": 4
+   },
+   "markings": "LANES",
+   "corner": 18
+  },
+  {
+   "id": "RACE",
+   "family": "RACE",
+   "lanes": null,
+   "scale": "race",
+   "prm": {
+    "width": 14.4,
+    "offset": 0,
+    "shoulderW": 1.98,
+    "shoulderDrop": 0.28,
+    "barrierGap": 0.72,
+    "barrierT": 1.62,
+    "barrierH": 1.35,
+    "barrierOuterTop": 1.18,
+    "deckDepth": 2.25,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 0,
+    "lanesL": 0,
+    "lanesR": 0,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -11.52,
+     -2.25
+    ],
+    [
+     -11.52,
+     -1.125
+    ],
+    [
+     -11.52,
+     1.1799999999999997
+    ],
+    [
+     -9.9,
+     1.35
+    ],
+    [
+     -9.9,
+     -0.28
+    ],
+    [
+     -9.18,
+     -0.28
+    ],
+    [
+     -7.2,
+     0
+    ],
+    [
+     7.2,
+     0
+    ],
+    [
+     9.18,
+     -0.28
+    ],
+    [
+     9.9,
+     -0.28
+    ],
+    [
+     9.9,
+     1.35
+    ],
+    [
+     11.52,
+     1.1799999999999997
+    ],
+    [
+     11.52,
+     -1.125
+    ],
+    [
+     11.52,
+     -2.25
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "shoulder",
+    "barrier_side": "barrier_side",
+    "barrier_cap": "barrier_cap",
+    "barrier_out": "barrier_side",
+    "underside": "underside"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     1.98,
+     -0.28
+    ],
+    [
+     2.7,
+     -0.28
+    ],
+    [
+     2.7,
+     1.35
+    ],
+    [
+     4.32,
+     1.18
+    ],
+    [
+     4.32,
+     -1.125
+    ],
+    [
+     4.32,
+     -2.25
+    ],
+    [
+     0,
+     -2.25
+    ]
+   ],
+   "sideExtent": 4.32,
+   "overall": 23.04,
+   "layout": null,
+   "markings": "TRACK",
+   "corner": 14
+  },
+  {
+   "id": "COSMIC",
+   "family": "COSMIC",
+   "lanes": null,
+   "scale": "race",
+   "prm": {
+    "width": 14.4,
+    "offset": 0,
+    "shoulderW": 1.98,
+    "shoulderDrop": 0.28,
+    "barrierGap": 0.72,
+    "barrierT": 1.62,
+    "barrierH": 1.35,
+    "barrierOuterTop": 1.18,
+    "deckDepth": 2.25,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1,
+    "laneW": 0,
+    "lanesL": 0,
+    "lanesR": 0,
+    "median": 0,
+    "laneTaper": 1
+   },
+   "slots": [
+    [
+     -11.52,
+     -2.25
+    ],
+    [
+     -11.52,
+     -1.125
+    ],
+    [
+     -11.52,
+     1.1799999999999997
+    ],
+    [
+     -9.9,
+     1.35
+    ],
+    [
+     -9.9,
+     -0.28
+    ],
+    [
+     -9.18,
+     -0.28
+    ],
+    [
+     -7.2,
+     0
+    ],
+    [
+     7.2,
+     0
+    ],
+    [
+     9.18,
+     -0.28
+    ],
+    [
+     9.9,
+     -0.28
+    ],
+    [
+     9.9,
+     1.35
+    ],
+    [
+     11.52,
+     1.1799999999999997
+    ],
+    [
+     11.52,
+     -1.125
+    ],
+    [
+     11.52,
+     -2.25
+    ]
+   ],
+   "roles": {
+    "road": "road",
+    "shoulder": "shoulder",
+    "barrier_side": "barrier_side",
+    "barrier_cap": "barrier_cap",
+    "barrier_out": "barrier_side",
+    "underside": "underside"
+   },
+   "sideSection": [
+    [
+     0,
+     0
+    ],
+    [
+     1.98,
+     -0.28
+    ],
+    [
+     2.7,
+     -0.28
+    ],
+    [
+     2.7,
+     1.35
+    ],
+    [
+     4.32,
+     1.18
+    ],
+    [
+     4.32,
+     -1.125
+    ],
+    [
+     4.32,
+     -2.25
+    ],
+    [
+     0,
+     -2.25
+    ]
+   ],
+   "sideExtent": 4.32,
+   "overall": 23.04,
+   "layout": null,
+   "markings": "MAG",
+   "corner": 14
+  }
+ ]
+}
