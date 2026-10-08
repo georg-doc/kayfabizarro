@@ -128,6 +128,17 @@ The first runtime MVP after the Four-Island A/B visual gate must read the Voice 
 
 ## Exactly one next gate
 
-**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
+**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1 · HUMAN LISTENING OPEN**
 
-Render/audition only the source-backed voices needed for the bounded MVP proof, starting with Dystopia Demon Lord, Utopia Robot One, Protopia Farmer A and optional Lorekeeper. Do not bulk-render the whole pool.
+The bounded bench is now persisted in KFB Production Control:
+- Demon Lord;
+- Robot One;
+- Farmer A;
+- optional Lorekeeper;
+- Whole / Assembled / Browser;
+- KEEP / TUNE / CUT;
+- 10/10 static bench checks PASS.
+
+No new synthesis credits were spent. The embedded donor lines are casting-only and non-canon.
+
+Next action: Georg listens and returns KEEP / TUNE / CUT per voice. Only accepted voices move to canonical next-MVP rendering.

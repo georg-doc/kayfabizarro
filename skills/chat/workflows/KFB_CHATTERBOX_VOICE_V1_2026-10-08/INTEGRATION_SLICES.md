@@ -48,29 +48,40 @@ Acceptance evidence:
 
 No audio regeneration was required for S1.
 
-## S2 · Three-Resident Casting Proof
+## S2 · MVP Casting Proof · BENCH READY · HUMAN LISTENING OPEN
 
 Owner:
 Resident/ChatterBox authoring + Voice output.
 
-Choose three real Residents using existing sources, ideally representing:
-- Utopia;
-- Dystopia;
-- Protopia.
+Current bench:
+- Production Control artifact: `KFB_CHATTERBOX_VOICE_MVP_CASTING_BENCH_R1.html`;
+- file id: `4d069677-05be-4707-9d0e-4e75e01b5734`;
+- SHA-256: `777c9e49ef5fd4033c832cef814357ca3f77bbda66c4404ee42dfaac176fbedf`;
+- static bench checks: **10/10 PASS**;
+- human listening: **OPEN**.
 
-Work:
-- explicit `residentId → chatterProfileRef → voicePreset`;
-- start from existing 11 audition presets;
-- render only required canonical segments;
-- keep 2–3 emotions per Resident, relying on the current fallback chain;
-- compare Whole vs Assembled for the same accepted lines.
+Bounded audition set:
+- Dystopia Demon Lord → `demon_lord`;
+- Utopia Robot One → `robot`;
+- Protopia Farmer A → `farmer`;
+- optional Lorekeeper → `lorekeeper`.
 
-Acceptance:
-- three real Residents;
-- real canonical dialogue;
-- no private replacement phrase pools;
-- exact model/license attribution;
-- no non-commercial voice in a public candidate.
+Bench compares:
+- Whole;
+- Assembled;
+- Browser fallback;
+- KEEP / TUNE / CUT per voice.
+
+Important:
+the embedded donor lines are **casting-only, non-canon audition material**. They are not promoted into ChatterBox.
+
+After Georg's listening decision, render only the canonical source-backed lines needed by the next-MVP proof.
+
+Acceptance before S2 closes:
+- Georg returns KEEP/TUNE/CUT for the voices actually used;
+- no illustrative Voice-V1 line becomes canon;
+- exact model/license attribution is frozen for kept voices;
+- no non-commercial voice enters a public candidate.
 
 ## S3 · Existing-Surface Voice Bench
 
@@ -178,6 +189,6 @@ Do not block the first useful voice layer on lipsync.
 
 ## One next gate
 
-**S2 · KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
+**S2 HUMAN LISTENING · KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
 
-Use only the source-backed MVP-proof actors already named in `NEXT_MVP_VOICE_PROOF_R1.json`; audition/render the minimum canonical material needed for Demon Lord, Robot One, Farmer A and optional Lorekeeper, then compare Whole/Assembled/browser routes before any World-runtime integration.
+Georg compares Whole / Assembled / Browser for Demon Lord, Robot One, Farmer A and optional Lorekeeper and returns KEEP / TUNE / CUT per voice. Only then render canonical MVP material.

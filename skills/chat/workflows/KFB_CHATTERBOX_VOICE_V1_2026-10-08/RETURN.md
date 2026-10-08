@@ -165,7 +165,7 @@ No public/Stage URL is required by this planning/source-acceptance slice.
 
 - **S0 Source intake/owner audit: COMPLETE**
 - **S1 Canonical pool → Voice Asset Adapter: COMPLETE · 13/13 PASS**
-- **S2 Three-Resident/Actor Casting Proof: NEXT**
+- **S2 MVP Casting Proof: BENCH READY · HUMAN LISTENING OPEN**
 - S3 Existing-surface Voice Bench
 - S4 ChatterBox Consumer Seam
 - S5 Social Calls / Catchphrase Pack
@@ -176,6 +176,20 @@ Next-MVP requirement is now frozen separately in:
 `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`.
 
 It applies to the **first runtime MVP authorized after Georg's Four-Island A/B visual decision**. It does not alter the current visual-only task.
+
+## S2 casting bench
+
+Persisted in KFB Production Control:
+- `KFB_CHATTERBOX_VOICE_MVP_CASTING_BENCH_R1.html`
+- file id `4d069677-05be-4707-9d0e-4e75e01b5734`
+- SHA-256 `777c9e49ef5fd4033c832cef814357ca3f77bbda66c4404ee42dfaac176fbedf`
+- static artifact verification: **10/10 PASS**
+- human listening: **OPEN**
+
+The bench reuses donor audio without spending new synthesis credits and compares Whole / Assembled / Browser for Demon Lord, Robot One, Farmer A and Lorekeeper. All embedded donor wording is explicitly marked casting-only/non-canon.
+
+Manifest:
+`data/CASTING_BENCH_R1_MANIFEST.json`.
 
 ## Current blockers / unresolved items
 
@@ -199,12 +213,6 @@ No Live promotion.
 
 ## Exactly one next gate
 
-**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
+**HUMAN LISTENING · KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
 
-Audition/render only the bounded source-backed MVP proof set:
-- Dystopia Demon Lord → `demon_lord` audition preset;
-- Utopia Robot One → `robot`;
-- Protopia Farmer A → `farmer`;
-- optional Lorekeeper → `lorekeeper`.
-
-Then compare Whole / Assembled / browser fallback on canonical source material before any World runtime integration.
+Georg returns KEEP / TUNE / CUT per auditioned MVP-proof voice. The next implementation then renders only accepted canonical KFB material and prepares the real next-MVP consumer test.

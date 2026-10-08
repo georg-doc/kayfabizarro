@@ -173,3 +173,36 @@ These are not treated as failures.
 `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md` and `data/NEXT_MVP_VOICE_PROOF_R1.json` now freeze the Voice proof for the first runtime MVP after the current Four-Island A/B visual gate.
 
 The current visual-only Story Vision R1 remains unchanged and receives no runtime work.
+
+
+## S2 · MVP Casting Bench static verification · 10/10 PASS
+
+Production Control artifact:
+- `KFB_CHATTERBOX_VOICE_MVP_CASTING_BENCH_R1.html`
+- file id: `4d069677-05be-4707-9d0e-4e75e01b5734`
+- bytes: 276,793
+- SHA-256: `777c9e49ef5fd4033c832cef814357ca3f77bbda66c4404ee42dfaac176fbedf`
+
+The full chunked artifact was reconstructed before verification.
+
+Assertions:
+1. exactly four audition card articles;
+2. exact IDs: demon-lord, robot-one, farmer-a, lorekeeper;
+3. four Whole controls;
+4. four Assembled controls;
+5. four Browser controls;
+6. KEEP/TUNE/CUT controls present;
+7. no `fetch()`;
+8. MP3 data embedded in the HTML;
+9. explicit non-canon audition warning;
+10. decisions persist only in browser localStorage.
+
+Result:
+**10/10 PASS**.
+
+This is a static artifact check, not a listening PASS.
+
+Human listening:
+**OPEN**.
+
+The earlier provisional 2/10 read was discarded because it inspected the chunk wrapper rather than the decoded HTML bytes; it is not product evidence.
