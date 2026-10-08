@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-08.1",
-  "updatedAt": "2026-10-08T01:58:00+02:00",
+  "revision": "2026-10-08.2",
+  "updatedAt": "2026-10-08T02:12:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "KFB Island MVP R4 is STOPPED. Product verdict: NO MVP · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE. F-R39 = FAIL · NO GOLDEN BASELINE. Technical salvage is preserved on PR #348, but the island composition is rejected. No R5 or repaired R4 is authorized."
+    "note": "R4 remains STOPPED / NO MVP. Current authorized next step is Four-Island Story Vision R1: source recovery is complete enough to brief Claude Design for two visual interpretations A/B of the same recovered story. No runtime or geometry work is authorized."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -29,9 +29,21 @@
     "islandMvpFinalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
     "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md",
     "islandMvpR4Postmortem": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
-    "islandMvpR4FailReturn": "https://github.com/georg-doc/kayfabizarro/blob/0a8240b83d4fbfdb69cdba47b812e618cc5cd897/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md"
+    "islandMvpR4FailReturn": "https://github.com/georg-doc/kayfabizarro/blob/0a8240b83d4fbfdb69cdba47b812e618cc5cd897/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md",
+    "fourIslandStoryRecovery": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
+    "fourIslandStoryVisionBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md"
   },
   "p0": [
+    {
+      "id": "four-island-story-vision-r1",
+      "title": "Four-Island Story Vision R1 · Claude Design",
+      "summary": "Recover and visualize the existing Town/Dystopia/Utopia/Protopia story. Two A/B visual-spatial interpretations of the same recovered canon; no new lore, no runtime, no geometry.",
+      "badge": "READY FOR CLAUDE DESIGN · VISUAL ONLY",
+      "action": "Story Vision Brief öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md",
+      "executor": "Claude Design · visual world-direction only",
+      "nextExecutor": "Georg chooses A / B / FAIL"
+    },
     {
       "id": "island-mvp-one-shot-ready",
       "title": "Island MVP R4 · STOPPED · NO MVP",
