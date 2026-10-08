@@ -477,13 +477,9 @@ def stage_book(rig, mode, spot=(-0.02, -0.30)):
     lo, hi = box_world(jb); jb.location.z += top - lo.z
     out = [jb]
     if mode == 'write':
-        pc = _imp('pencil', f'FTP_{rig}_pencil', col); pc.scale = (PENCIL_SCALE * k,) * 3
-        slot = 'handslot.r' if 'handslot.r' in T.pose.bones else 'hand.r'
-        pc.parent = T; pc.parent_type = 'BONE'; pc.parent_bone = slot
-        pc.matrix_parent_inverse.identity()
-        pc.location = (0, -T.data.bones[slot].length, 0)   # bone parenting origin is the bone tail
-        pc.rotation_euler = (0, 0, 0)   # measured: tip lands on the page toward the body centre, top points out and up
-        out.append(pc)
+        bpy.context.view_layer.update()
+        place_pencil(rig, page_z=box_world(jb)[0].z + 0.005)
+        out.append(bpy.data.objects[f'FTP_{rig}_pencil'])
     bpy.context.view_layer.update()
     return out
 
@@ -708,3 +704,48 @@ def push_stool_back(rig, step=0.005, gap=HEEL_GAP):
     hp = hips_world(T)
     a['stoolBackY'] = back
     return dict(stoolBackY=round(back, 3), hipsFromStoolFront=round(hp.y - lo2.y, 3), stoolDepth=round(hi2.y - lo2.y, 3))
+
+
+# ---------- writing pencil (Georg 2026-10-08): the long pencil with the eraser, cartoon-big, in a writing grip ----------
+PROPS['pencil_long'] = RPG + 'pencil_B_long.gltf'    # B_long = the one with the eraser cap (0.65 k native)
+PENCIL_LONG_SCALE = 1.3     # cartoon-big; x FURN for the Orc, like the furniture
+PENCIL_DIR = Vector((-0.65, 0.20, 0.73))   # tip -> eraser, actor space: up and out to the right, a little back (0.35/0.40/0.85 crossed the face)
+GRIP_FWD = 0.04                            # grip point this far in front of handslot.r (x FURN): the tip shows at the front of the fist
+
+
+def place_pencil(rig, page_z=None):
+    """Writing grip: the pencil runs through the right fist (handslot.r), tip down-forward on the page, eraser up,
+    back and out. Placed on frame 0 of the active clip and parented to handslot.r, so it follows the writing loops."""
+    T = bpy.data.objects[F.TARGETS[rig]]
+    k = FURN[rig]
+    sc = bpy.context.scene
+    col = collection()
+    for o in [o for o in bpy.data.objects if o.name == f'FTP_{rig}_pencil']:
+        bpy.data.objects.remove(o, do_unlink=True)
+    pc = _imp('pencil_long', f'FTP_{rig}_pencil', col)
+    s = PENCIL_LONG_SCALE * k
+    zs = [v.co.z for v in pc.data.vertices]
+    tip_local, top_local = min(zs), max(zs)
+    L = (top_local - tip_local) * s
+    sc.frame_set(3); sc.frame_set(0)
+    W = T.matrix_world
+    slot = W @ T.pose.bones['handslot.r'].head + W.to_3x3() @ Vector((0, -GRIP_FWD * k, 0))
+    if page_z is None:
+        page_z = W.translation.z + TABLE_TOP * FURN_TABLE[rig] + 0.03 * k
+    d = (W.to_3x3() @ PENCIL_DIR).normalized()
+    down = max(0.0, (slot.z - (page_z + 0.01 * k)) / d.z)        # grip -> tip distance along the pencil
+    down = min(down, 0.6 * L)
+    tip = slot - d * down
+    from mathutils import Matrix
+    zaxis = d
+    xaxis = zaxis.cross(Vector((0, 0, 1)));
+    if xaxis.length < 1e-4: xaxis = Vector((1, 0, 0))
+    xaxis.normalize(); yaxis = zaxis.cross(xaxis).normalized()
+    R = Matrix((xaxis, yaxis, zaxis)).transposed().to_4x4()
+    origin = tip - zaxis * (tip_local * s)
+    Mw = Matrix.Translation(origin) @ R @ Matrix.Diagonal((s, s, s, 1))
+    pc.parent = T; pc.parent_type = 'BONE'; pc.parent_bone = 'handslot.r'
+    bpy.context.view_layer.update()
+    pc.matrix_world = Mw
+    bpy.context.view_layer.update()
+    return dict(length=round(L, 3), gripToTip=round(down, 3), gripFraction=round(down / L, 2), tipZ=round(tip.z - W.translation.z, 3))
