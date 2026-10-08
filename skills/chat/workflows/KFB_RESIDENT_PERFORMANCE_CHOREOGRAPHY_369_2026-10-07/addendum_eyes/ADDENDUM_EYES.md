@@ -1,6 +1,42 @@
 # #369 Addendum 7 · KFB EyeRig v6 eyes on all residents in the 369 scenes
 
-- **Status:** FIRST PASS (2026-10-08). Waiting for Georg's look check.
+- **Status:** v2 (2026-10-08): eyes now follow Georg's tuned batch profiles. Waiting for his look check.
+
+## v2 · Georg's tuned profiles (replaces the v1 look)
+
+**Georg on v1:** not his tuned versions, and every resident squinted strongly outward.
+
+**Cause:** v1 used the generic anchored mount (`anchored-eyes.v1.js`): every eyeball turned onto the cap normal (about 24° out), with pupil size 0.5 and converge 0. Georg tuned his values on the Atlas **batch path** instead, where the eyes face head-forward.
+
+**v2 ports that path 1:1** (`batch-eyes.v1.js` → `facehost.v1.js` → `pet-eye-rig.v6.js build()` → `eyeoval.v1.js`):
+
+- **Face host:** box of every vertex whose strongest bone is `head` (hat and hair included), in bind pose. Yaw from toes − foot (0° on all five). U = half the box height.
+- **Eye centre:** (±U·dx, U·dy) on the host ellipsoid surface, then back by R·(0.24 + inset·1.15). R = U·ring. No splay, so the eyes face head-forward.
+- **Pupils:** size 0.34. Rest gaze turned inward by converge 0.18 (−sx·0.18·0.5 rad ≈ 5.2°). Seated in front of the oval with `pupilSeatDelta`.
+- **Oval:** w/h/d on sclera and lids. The pupil stays unscaled.
+- **Lid colour:** profile `baseColor` × 0.72, then HSL (0, +0.05, −0.02), as `EyeRig._lidColor`.
+
+| Resident | Source file | State | dx | dy | ring | inset | oval w/h/d | base | R (m) |
+|---|---|---|---|---|---|---|---|---|---|
+| Orc Brute | `rig-large-reviewed.v1.json` | ADJUSTED_APPROVED | 0.295 | −0.26 | 0.175 | 0.9 | 1 / 0.9 / 0.91 | measured `#82c061` (profile null) | 0.099 |
+| Farmer A | `eye-rig-medium.batch-1.json` | ADJUSTED | 0.3153 | −0.2464 | 0.165 | 1.89 | 1 / 1 / 1 | `#fbe2ce` | 0.107 |
+| Farmer B | same | ADJUSTED | 0.3220 | −0.1231 | 0.1133 | 3.48 | 1 / 1 / 1 | `#fbe2ce` | 0.072 |
+| Lorekeeper | same | ADJUSTED | 0.3462 | 0.105 | 0.125 | 1.13 | 1 / 1 / 0.76 | `#fbdfcb` | 0.074 |
+| Goth Girl | same | **UNREVIEWED**: Medium authoring default (Georg 2026-09-19) | 0.295 | 0.045 | 0.153 | 0.4 | 1 / 1 / 1 | `#e6cbc3` | 0.099 |
+
+**Unchanged from v1:** eye-cap removal, bone parenting, and blinks.
+
+**Not ported:** life wander/tremor and gaze kinetics. These are runtime motion; Blender holds the rest gaze.
+
+**Proof:** `renders/eyes_proof_v2/EYES_PROOF_02_sheet.png`.
+
+**Blend copy:** `blend/KFB369_eyes_kfb_rig_02_profiles.blend`.
+
+---
+
+## v1 (superseded look, kept for the record)
+
+- **Status (v1):** FIRST PASS. Georg rejected the look on 2026-10-08.
 - **Writes:** additive to branch `blender/resident-performance-choreography-2026-10-07`.
 - **Boundaries:** no merge, no textures, no raw FBX; `.blend` stays in Dropbox. Motion is unchanged.
 
@@ -34,7 +70,8 @@ Every resident armature in the 369 file now shows the KFB eyes instead of the Ka
 
 | ID | Item |
 |---|---|
-| E1 | Pupils look along the anchor normal (converge 0, as in the three.js mount), so they point about 24° outward. A small converge would make the gaze read more "at you". Georg's call. |
+| E1 | v1 only: pupils followed the cap normal, about 24° outward. Fixed in v2. |
+| E5 | Goth Girl has no tuned profile (UNREVIEWED), so it uses the Medium default. |
 | E2 | No gaze animation yet (EyeRig idle wander / look-at). The look-at targets from the talk engine could drive the pupils. |
 | E3 | Preview videos were rendered before the eyes; they need a re-render to show them. |
 | E4 | Global ground clearance for hands and heads (Georg: later). |

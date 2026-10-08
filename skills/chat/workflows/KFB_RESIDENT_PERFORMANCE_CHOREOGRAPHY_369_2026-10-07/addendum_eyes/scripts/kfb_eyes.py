@@ -1,4 +1,10 @@
-"""KFB EyeRig v6 eyes on measured anchors, for Blender (job 369).
+"""KFB EyeRig v6 eyes for Blender (job 369) - v2: Georg's tuned batch profiles (Atlas batch path).
+
+v2 (2026-10-08): placement, size, inset, oval, pupil size, converge and lid colour follow the Atlas batch path
+(batch-eyes.v1.js -> facehost.v1.js -> pet-eye-rig.v6.js build() -> eyeoval.v1.js), with the per-figure values
+from rig-large-reviewed.v1.json / eye-rig-medium.batch-1.json. Eyes face head-forward (splay 0), pupils turn
+inward by converge. The v1 notes below (anchored mount) describe what v1 did; strip_eye_caps is unchanged.
+
 
 Port of pet-eye-rig.v6.js + anchored-eyes.v1.js (three.js) to static Blender meshes:
   * sclera sphere R=1, #f3ede2, roughness 0.42, clearcoat 1
@@ -59,6 +65,15 @@ def _mat(name, hexcol, rough, coat):
     return m
 
 
+def _lidmat(k, base):
+    m = _mat(f'KFBEYE_lid_{k}', '#000000', 0.98, 0.0)
+    col = lid_color_lin(base)
+    m.node_tree.nodes.get('Principled BSDF').inputs['Base Color'].default_value = col
+    m.diffuse_color = col
+    m['base'] = base
+    return m
+
+
 def _cap_mesh(name, radius, th0, th1, nphi=48, nth=24, axis='Y'):
     """three.js SphereGeometry(radius, nphi, nth, 0, 2pi, th0, th1-th0); axis 'Z' = rotateX(pi/2)."""
     me = bpy.data.meshes.get(name)
@@ -93,7 +108,7 @@ def _cap_mesh(name, radius, th0, th1, nphi=48, nth=24, axis='Y'):
 def shared_meshes():
     return dict(
         sclera=_cap_mesh('KFBEYE_sclera', 1.0, 0, math.pi, 26, 18),
-        pupil=_cap_mesh('KFBEYE_pupil', 1.004, 0, CAP, 30, 22, axis='Z'),
+        pupil=_cap_mesh('KFBEYE_pupil_034', 1.004, 0, 0.12 + 0.34 * 0.62, 30, 22, axis='Z'),
         up=_cap_mesh('KFBEYE_lid_up', LID_R, 0, math.pi * 0.56),
         lo=_cap_mesh('KFBEYE_lid_lo', LID_R, math.pi * 0.44, math.pi),
     )
@@ -137,57 +152,169 @@ def strip_eye_caps(me, anchors_b, expect=66):
     return rep
 
 
-def eye_frame(p_gl, n_gl, r):
-    p, n = gl2b(p_gl), gl2b(n_gl).normalized()
-    up = Vector((0, 0, 1))
-    y = (up - n * up.dot(n)).normalized()
-    x = y.cross(n)
-    rot = Matrix((x, y, n)).transposed().to_4x4()
-    c = p - n * r * SEAT
-    return Matrix.Translation(c) @ rot @ Matrix.Scale(r, 4), (p, r)
+# --- Georg's tuned profiles (Atlas batch path: batch-eyes.v1.js + facehost.v1.js + pet-eye-rig.v6 + eyeoval.v1) ---
+# rig-large-reviewed.v1.json (Georg 2026-09-20) and eye-rig-medium.batch-1.json, copied verbatim.
+PROFILE = {
+    'OrcBrute_Head':   dict(state='ADJUSTED_APPROVED', dx=0.295, dy=-0.26, ring=0.175, inset=0.9, pupil=0.34, converge=0.18,
+                            splay=0, oval=(1, 0.9, 0.91, 0), base=None),
+    'Farmer_A_Head':   dict(state='ADJUSTED', dx=0.315288, dy=-0.246374, ring=0.165, inset=1.89, pupil=0.34, converge=0.18,
+                            splay=0, oval=(1, 1, 1, 0), base='#fbe2ce'),
+    'Farmer_B_Head':   dict(state='ADJUSTED', dx=0.32199, dy=-0.123086, ring=0.113307, inset=3.48, pupil=0.34, converge=0.18,
+                            splay=0, oval=(1, 1, 1, 0), base='#fbe2ce'),
+    'Lorekeeper_Head': dict(state='ADJUSTED', dx=0.34617, dy=0.105, ring=0.125, inset=1.13, pupil=0.34, converge=0.18,
+                            splay=0, oval=(1, 1, 0.76, 0), base='#fbdfcb'),
+    'GothGirl_Head':   dict(state='UNREVIEWED (Medium authoring default)', dx=0.295, dy=0.045, ring=0.153, inset=0.4, pupil=0.34,
+                            converge=0.18, splay=0, oval=(1, 1, 1, 0), base='#e6cbc3'),
+}
+MAX_ANG = 0.5
+
+
+def b2g(v):
+    return Vector((v[0], v[2], -v[1]))
+
+
+def lid_color_lin(hexcol):
+    """EyeRig._lidColor: Color(base) (linear) * 0.72, then offsetHSL(0, +0.05, -0.02)."""
+    import colorsys
+    c = [x * 0.72 for x in srgb2lin(hexcol)[:3]]
+    h, l, s_ = colorsys.rgb_to_hls(*c)
+    s_ = min(1, max(0, s_ + 0.05)); l = min(1, max(0, l - 0.02))
+    return list(colorsys.hls_to_rgb(h, l, s_)) + [1.0]
+
+
+_HOST_CACHE = {}
+
+
+def face_host(arm):
+    """facehost.v1: box of all verts whose strongest bone is 'head' (bind pose), forward from toes - foot."""
+    key = (arm.data.name.split('.')[0],) + tuple(sorted(o.data.name for o in arm.children if o.type == 'MESH' and not o.name.startswith('EYE_')))
+    if key in _HOST_CACHE:
+        return _HOST_CACHE[key]
+    lo = Vector((1e9,) * 3); hi = Vector((-1e9,) * 3); n = 0
+    for ob in arm.children:
+        if ob.type != 'MESH' or 'head' not in ob.vertex_groups or ob.name.startswith('EYE_'):
+            continue
+        gi = ob.vertex_groups['head'].index
+        M = ob.matrix_local
+        for v in ob.data.vertices:
+            if not v.groups:
+                continue
+            best = max(v.groups, key=lambda g: g.weight)
+            if best.group != gi:
+                continue
+            p = b2g(M @ v.co); n += 1
+            lo = Vector(map(min, lo, p)); hi = Vector(map(max, hi, p))
+    c, s = (lo + hi) / 2, hi - lo
+    bones = arm.data.bones
+    fwd = Vector((0, 0, 1))
+    if 'toes.l' in bones and 'foot.l' in bones:
+        d = b2g(bones['toes.l'].head_local) - b2g(bones['foot.l'].head_local); d.y = 0
+        if d.length > 1e-3:
+            fwd = d.normalized()
+    yaw = math.atan2(fwd.x, fwd.z)
+    _HOST_CACHE[key] = dict(c=c, s=s, yaw=yaw, verts=n)
+    return _HOST_CACHE[key]
+
+
+def pupil_seat(w, h, d, ry, cap, clearance=0.006):
+    """eyeoval.v1 pupilSeatDelta with R = 1, rx = 0."""
+    g = Vector((math.sin(ry), 0, math.cos(ry)))
+    ax = Vector((w, h, d))
+    inv = math.sqrt(sum((g[i] ** 2) / (ax[i] ** 2) for i in range(3)))
+    t = 1 / max(inv, 1e-12)
+    q = g * t
+    n0 = Vector((q[i] / ax[i] ** 2 for i in range(3)))
+    nrm = n0.normalized()
+    plane = nrm.dot(q)
+    ng = max(1e-9, nrm.dot(g))
+    alpha = math.acos(max(-1, min(1, ng)))
+    min_cap_dot = math.cos(min(math.pi, alpha + cap))
+    delta = (plane - 1.004 * min_cap_dot) / ng + clearance
+    return g * delta
+
+
+def host_to_b(M3g):
+    """3x3 in glTF/host axes -> Blender axes."""
+    C = Matrix(((1, 0, 0), (0, 0, -1), (0, 1, 0)))   # g -> b
+    return C @ M3g
+
+
+def eye_transforms(arm, head_key):
+    P = PROFILE[head_key]
+    H = face_host(arm)
+    U = H['s'].y / 2
+    a, b, cc = H['s'].x / 2, H['s'].y / 2, H['s'].z / 2
+    R = U * P['ring']
+    yawM = Matrix.Rotation(H['yaw'], 3, 'Y')
+    out = {}
+    for side, sx in (('r', -1), ('l', 1)):          # glTF -x = figure's right
+        ex, ey = sx * U * P['dx'], U * P['dy']
+        k = 1 - (ex / a) ** 2 - (ey / b) ** 2
+        z = cc * math.sqrt(k) if k > 0 else U * 0.7
+        local = Vector((ex, ey, z - R * (0.24 + P['inset'] * 1.15)))
+        cg = H['c'] + yawM @ local
+        rot = host_to_b(yawM)
+        M = Matrix.Translation(gl2b(cg)) @ rot.to_4x4() @ Matrix.Scale(R, 4)
+        out[side] = dict(M=M, sx=sx)
+    return out, H, R, U
 
 
 def mount(arm, head_key, mesh_set, mats):
-    spec = FIG[head_key]
+    P = PROFILE[head_key]
+    w, h, d, tilt = P['oval']
+    cap = 0.12 + P['pupil'] * 0.62
+    tr, H, R, U = eye_transforms(arm, head_key)
     bone = arm.data.bones['head']
-    rest_tail = bone.matrix_local @ Matrix.Translation((0, bone.length, 0))
-    pinv = rest_tail.inverted()
-    out = []
+    pinv = (bone.matrix_local @ Matrix.Translation((0, bone.length, 0))).inverted()
     coll = arm.users_collection
+    out = []
+
+    def new(name, data, parent):
+        ob = bpy.data.objects.new(name, data)
+        for c in coll:
+            c.objects.link(ob)
+        ob.parent = parent
+        return ob
+
     for side in ('l', 'r'):
-        M, _ = eye_frame(*spec[side])
+        sx = tr[side]['sx']
         nm = f'EYE_{arm.name}_{side.upper()}'
         old = bpy.data.objects.get(nm)
         if old:
-            for ch in list(old.children):
+            for ch in list(old.children_recursive):
                 bpy.data.objects.remove(ch, do_unlink=True)
             bpy.data.objects.remove(old, do_unlink=True)
-        root = bpy.data.objects.new(nm, None)
-        root.empty_display_size = 1.0
+        root = new(nm, None, arm)
         root.empty_display_type = 'SPHERE'
-        for c in coll:
-            c.objects.link(root)
-        root.parent = arm; root.parent_type = 'BONE'; root.parent_bone = 'head'
+        root.parent_type = 'BONE'; root.parent_bone = 'head'
         root.matrix_parent_inverse = pinv
-        root.matrix_basis = M
-        parts = {}
-        for key, me, mat in (('sclera', mesh_set['sclera'], mats['W']), ('pupil', mesh_set['pupil'], mats['P']),
-                             ('up', mesh_set['up'], mats['L']), ('lo', mesh_set['lo'], mats['L'])):
-            ob = bpy.data.objects.new(f'{nm}_{key}', me)
-            ob.data = me
-            for c in coll:
-                c.objects.link(ob)
-            ob.parent = root
+        root.matrix_basis = tr[side]['M']
+        root.rotation_mode = 'XYZ'
+        # oval tilt: e.rotation.z = -sx * tilt
+        root.matrix_basis = root.matrix_basis @ Matrix.Rotation(-sx * math.radians(tilt), 4, 'Z')
+
+        def meshob(key, me, mat, parent):
+            ob = new(f'{nm}_{key}', me, parent)
             if not me.materials:
                 me.materials.append(None)
             ob.material_slots[0].link = 'OBJECT'
             ob.material_slots[0].material = mat
             ob.visible_shadow = False
-            parts[key] = ob
-        parts['up'].rotation_euler.x = -(1.30 - REST_U * 1.18)
-        parts['lo'].rotation_euler.x = (1.30 - REST_L * 1.18)
-        root['kfb_eye'] = dict(head=head_key, side=side, r=spec[side][2], skin=spec['skin'])
-        out.append((root, parts))
+            return ob
+        sc = meshob('sclera', mesh_set['sclera'], mats['W'], root); sc.scale = (w, h, d)
+        lids = new(f'{nm}_lids', None, root); lids.scale = (w, h, d); lids.empty_display_size = 0.2
+        up = meshob('up', mesh_set['up'], mats['L'], lids)
+        lo = meshob('lo', mesh_set['lo'], mats['L'], lids)
+        piv = new(f'{nm}_pupilpivot', None, root); piv.empty_display_size = 0.2
+        ry = -sx * P['converge'] * MAX_ANG          # rest gaze: nx = ny = 0
+        piv.rotation_euler = (0, ry, 0)
+        piv.location = pupil_seat(w, h, d, ry, cap)
+        pu = meshob('pupil', mesh_set['pupil'], mats['P'], piv)
+        up.rotation_euler.x = -(1.30 - REST_U * 1.18)
+        lo.rotation_euler.x = (1.30 - REST_L * 1.18)
+        root['kfb_eye'] = dict(head=head_key, side=side, profile=P['state'], R=round(R, 4), U=round(U, 4),
+                               host_size=[round(x, 4) for x in H['s']], yaw_deg=round(math.degrees(H['yaw']), 2))
+        out.append((root, dict(sclera=sc, up=up, lo=lo, pupil=pu, pivot=piv)))
     return out
 
 
@@ -240,7 +367,7 @@ def run(scene_names=None, blink=True):
             done_mesh[head.data.name] = (head.data.get('kfb_eyecaps_removed') and list(head.data['kfb_eyecaps_removed'])) \
                 or strip_eye_caps(head.data, anchors, EXPECT.get(k, 66))
         mats = dict(W=_mat('KFBEYE_sclera', '#f3ede2', 0.42, 1.0), P=_mat('KFBEYE_pupil', '#070707', 0.45, 1.0),
-                    L=_mat(f'KFBEYE_lid_{k}', spec['skin'], 0.98, 0.0))
+                    L=_lidmat(k, PROFILE[k]['base'] or spec['skin']))
         eyes = mount(arm, k, ms, mats)
         bl = []
         if blink and scs:
