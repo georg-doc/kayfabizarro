@@ -1,26 +1,37 @@
-## CURRENT OVERRIDE · 2026-10-07 · KFB ISLAND MVP R4 · ONE_SHOT READY
+## CURRENT OVERRIDE · 2026-10-08 · KFB ISLAND MVP R4 STOPPED · NO MVP
 
-Binding machine-readable product contract:
-`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
-**operationalVersion = 5**
+R4 is stopped.
 
-Binding MVP R4 execution brief:
-`skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md`
+Authoritative fail state:
+- Draft PR #348 head: `0a8240b83d4fbfdb69cdba47b812e618cc5cd897`
+- `F-R39 = FAIL`
+- **NO GOLDEN BASELINE**
+- failure class: **WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE**
+- no repaired One-Shot
+- no further runtime fan-out
+- no merge / Live promotion.
 
-Current counts:
-- **44 REQUIRED**
-- **13 STRONGLY INCLUDE**
-- **7 OPTIONAL PROOF**
+Authoritative Return:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md`
 
-MVP R4 pre-WSA alignments:
-- Roads/Track = **Phase 2B**, before Phase-3 Early Golden;
-- Phase-3 Georg Visual Product Gate is mandatory and crash-safe; the accepted head becomes the Golden baseline. Later changes trigger re-gating only for a demonstrated or unresolved regression risk to Phase-3 Golden criteria, not for every visible addition;
-- F-R07 uses `GEORG_PRIMARY_ACCEPTANCE_MACHINE`; WSA instruments, Georg performs one visible/focused target-device run, evidence is persisted against exact head;
-- terrain evaluation order vs Track-fit/sculpt must be frozen before F-R29/F-R31 can turn GREEN;
-- High reasoning explicitly allowed for Phase 2B and Phase 3;
-- PASS and NO MVP both return the complete 44-row status/evidence table.
+Current Postmortem:
+`skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md`
 
-All lower routing text — including the 2026-10-05 Production Override, any `runtime paused` wording, and Recovery-Lead / PR-#373 executor routing — is historical where conflicting. The current Matrix JSON v5 and the MVP R4 execution brief win.
+Key process finding:
+The Frozen Matrix v5 successfully prevented feature loss, but it did not prevent a repeated, already-documented Micro-Storytelling / relation failure. The same failure class existed in the 2026-09-20 “Die Szene, die keine war” Postmortem: bridge without destination, buildings without social relation, objects at coordinates instead of a network of reasons.
+
+Do not treat this as a request for a larger Story specification.
+Do not start R5 or a repaired R4 automatically.
+Do not ask Georg to restate the product vision.
+
+Any future geometry requires a new explicit authorization after a cheap world-model/composition gate.
+
+Binding engineering contract remains preserved:
+- Frozen Matrix operationalVersion **5**
+- 44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL PROOF
+- existing technical salvage remains evidence only, not product PASS.
+
+All older READY / runtime-paused / Recovery-Lead / previous One-Shot routing below is historical where conflicting. This R4 STOP state wins.
 
 ---
 
