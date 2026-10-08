@@ -28,7 +28,9 @@
 
 **Not ported:** life wander/tremor and gaze kinetics. These are runtime motion; Blender holds the rest gaze.
 
-**Proof:** `renders/eyes_proof_v2/EYES_PROOF_02_sheet.png`.
+**Proof:** `previews/EYES_PROOF_02_sheet.png` (v1 for comparison: `previews/EYES_PROOF_01_sheet.png`).
+
+**SSOT note:** `HANDOVER_EYE_RIG_SSOT.md` (Georg 2026-10-08): eye configs must become one SSOT per character. The Goth Girl here is not Georg's config.
 
 **Blend copy:** `blend/KFB369_eyes_kfb_rig_02_profiles.blend`.
 
@@ -64,14 +66,15 @@ Every resident armature in the 369 file now shows the KFB eyes instead of the Ka
 
 ## Proof
 
-`renders/eyes_proof/EYES_PROOF_01_sheet.png` (Dropbox): the five residents in the dance scene at frame 12, front and ¾.
+`previews/EYES_PROOF_01_sheet.png`: the five residents in the dance scene at frame 12, front and ¾.
 
 ## Open
 
 | ID | Item |
 |---|---|
 | E1 | v1 only: pupils followed the cap normal, about 24° outward. Fixed in v2. |
-| E5 | Goth Girl has no tuned profile (UNREVIEWED), so it uses the Medium default. |
+| E5 | Goth Girl uses the Medium default. Georg configured her differently; the candidate is the Pet Studio contract (see `HANDOVER_EYE_RIG_SSOT.md` §2). |
+| E6 | The eye configs are scattered over 6 places. They need one SSOT per character (`HANDOVER_EYE_RIG_SSOT.md`). |
 | E2 | No gaze animation yet (EyeRig idle wander / look-at). The look-at targets from the talk engine could drive the pupils. |
 | E3 | Preview videos were rendered before the eyes; they need a re-render to show them. |
 | E4 | Global ground clearance for hands and heads (Georg: later). |
