@@ -8,7 +8,7 @@ Output : per-actor event timelines + a readable turn log + the outcome. The Blen
 Actor dict: {id, rig 'M'|'L', engagement 0..3, fuse 0..1 (how fast heat rises against them),
              stubbornness 0..1 (how rarely they give in), stance 'pro'|'contra'|'neutral' (Speaker's Corner)}
 """
-import json, math, random
+import copy, json, math, random
 from collections import deque
 
 
@@ -25,7 +25,7 @@ class Engine:
     def __init__(self, pool, rules, seed):
         self.R = rules; self.rng = random.Random(seed); self.seed = seed
         self.clips = pool["clips"]
-        self.recent = {}; self.tl = {}; self.walks = []; self.log = []
+        self.recent = {}; self.tl = {}; self.walks = []; self.log = []; self.looks = []
 
     # ------------------------------------------------------------------ clip choice
     def pick(self, actor, functions, role, target=None):
@@ -88,6 +88,21 @@ class Engine:
             keep.append(e)
         self.tl[actor["id"]] = keep
 
+    def look(self, actor, target, t0, t1):
+        if t1 - t0 >= 12: self.looks.append({"actor": actor["id"], "target": target["id"], "start": int(t0), "end": int(t1)})
+
+    def draw_in(self, listener, move, t, pat):
+        """A hostile move can pull an absent/polite listener into the argument (engagement +1)."""
+        D = self.R["drawIn"]
+        if listener["engagement"] >= 2 or move not in D["moves"]: return False
+        if self.rng.random() < D["moves"][move] * (0.5 + listener["fuse"]):
+            listener["engagement"] += 1
+            pat[listener["id"]] = max(pat[listener["id"]], self.R["patience"][listener["engagement"]] // 2)
+            self.log.append({"t0": int(t), "event": "drawn_in", "actor": listener["id"],
+                             "to": self.R["engagementNames"][listener["engagement"]]})
+            return True
+        return False
+
     def band(self, heat):
         return sum(1 for b in self.R["heat"]["bands"] if heat >= b)
 
@@ -116,7 +131,8 @@ class Engine:
 
     # ------------------------------------------------------------------ debate (two residents)
     def debate(self, actors, max_frames=620, start=10, heat=0.4, first=0):
-        R = self.R; rng = self.rng; pat = {a["id"]: R["patience"][a["engagement"]] for a in actors}
+        R = self.R; rng = self.rng; start_cast = copy.deepcopy(actors); actors = copy.deepcopy(actors)
+        pat = {a["id"]: R["patience"][a["engagement"]] for a in actors}
         spk = first; t = start; turns = 0; last_move = {a["id"]: None for a in actors}; outcome = None
         while True:
             S, Lr = actors[spk], actors[1 - spk]; band = self.band(heat)
@@ -127,6 +143,9 @@ class Engine:
                 w[m] *= max(0.05, 1 - S["stubbornness"]) * R["stubbornDamp"]
                 if last_move[Lr["id"]] in R["softMoves"]: w[m] *= 2
             if S["engagement"] == 3: w["insist"] *= 1.3
+            if Lr["engagement"] == 0 and S["engagement"] >= 2:
+                for m, k in R["provokeAbsent"].items():
+                    if m in w: w[m] *= k
             if last_move[S["id"]] in w: w[last_move[S["id"]]] *= 0.5
             move = wchoice(rng, w)
             lo, hi = R["turnFrames"][S["engagement"]]
@@ -146,6 +165,7 @@ class Engine:
             turns += 1; last_move[S["id"]] = move
             self.log.append({"t0": t, "t1": end, "speaker": S["id"], "move": move, "heatBefore": round(h0, 2),
                              "heatAfter": round(heat, 2), "interruptedBy": Lr["id"] if inter else None})
+            if self.draw_in(Lr, move, end, pat): heat = min(R["heat"]["max"], heat + R["drawIn"]["heat"])
             if heat >= R["outburstHeat"]: outcome = ("outburst", S["id"] if S["fuse"] >= Lr["fuse"] else Lr["id"])
             elif pat[Lr["id"]] <= 0: outcome = ("walk_off", Lr["id"])
             elif turns >= R["agreeEnd"]["minTurns"] and heat <= R["agreeEnd"]["maxHeat"] and move in R["softMoves"]:
@@ -166,17 +186,20 @@ class Engine:
             W = by[who]; O = [a for a in actors if a["id"] != who][0]
             e1 = self.outcome_clips(W, t, ["dismiss"], "walks off")
             ends.append(self.walk_off(W, e1 - 4))
+            self.look(O, W, e1 + 8, e1 + 150)
             ends.append(self.outcome_clips(O, t + 20, ["surprise", "sulk"], "left standing"))
         else:
             H = by[who]; O = [a for a in actors if a["id"] != who][0]
             ends.append(self.outcome_clips(H, t, ["rage", "rage"], "outburst"))
             ends.append(self.outcome_clips(O, t + 8, ["surprise", "oppose"], "outburst"))
-        return self.result(actors, outcome, max(ends) + 24)
+        return self.result(start_cast, outcome, max(ends) + 24, actors)
 
     # ------------------------------------------------------------------ Speaker's Corner (one speaker, a crowd)
     def corner(self, speaker, crowd, max_frames=720, start=10, heat=0.3):
         R = self.R; C = R["corner"]; rng = self.rng; t = start; heckled = False; outcome = None
-        pat = {a["id"]: R["patience"][a["engagement"]] for a in crowd}; gone = set()
+        start_cast = copy.deepcopy([speaker] + crowd); speaker = copy.deepcopy(speaker); crowd = copy.deepcopy(crowd)
+        pat = {a["id"]: R["patience"][a["engagement"]] * C["stancePatience"][a["stance"]] for a in crowd}; gone = set()
+        lastHeckler = None
         while True:
             band = self.band(heat)
             if heckled: move = wchoice(rng, C["speakerAnswer"]["heckled"])
@@ -202,18 +225,37 @@ class Engine:
                 hend = self.fill_speaker(h, at, rng.randint(*H["frames"]), R["moveFunctions"][hm], heat, "heckle: " + hm)
                 self.cut(speaker, min(end, at + 24)); end = max(min(end, at + 24), hend - 10)
                 heat += C["heatFromHeckle"] * (0.5 + speaker["fuse"]); heckled = True; hecklerId = h["id"]
+                self.look(speaker, h, at + 4, end + 40)
+                for a in crowd:
+                    if a["id"] not in gone and a is not h:
+                        self.look(a, h, at + rng.randint(4, 14), at + rng.randint(40, 70))
+                lastHeckler = h
             else:
                 heat += R["heatEffect"][move] * 0.5 + C["heatFromApplause"] * pros
             heat = max(0.0, min(R["heat"]["max"], heat))
             self.log.append({"t0": t, "t1": end, "speaker": speaker["id"], "move": move, "heatBefore": round(h0, 2),
                              "heatAfter": round(heat, 2), "heckledBy": hecklerId})
+            # the speaker's answer to the last heckle costs the heckler patience (rage/dismiss can drive him off)
+            if lastHeckler is not None and lastHeckler["id"] not in gone and not hecklerId:
+                pat[lastHeckler["id"]] -= C["answerCost"].get(move, 0)
+            if not hecklerId: lastHeckler = None
             for a in crowd:
                 if a["id"] in gone: continue
-                pat[a["id"]] -= (R["absentPatienceCostPerTurn"] if a["engagement"] == 0 else 0) + (1 if a["stance"] == "neutral" and band >= 2 else 0)
-                if pat[a["id"]] <= 0 and len(gone) < len(crowd) - 1:
+                self.draw_in(a, move, end, pat)
+                if a["stance"] != "pro" and a["engagement"] >= 1 and move in C["sway"]["moves"] and band <= 1 \
+                        and rng.random() < C["sway"]["p"] * (1 - a["stubbornness"]):
+                    a["stance"] = "pro"; self.log.append({"t0": end, "event": "swayed", "actor": a["id"]})
+                cost = (R["absentPatienceCostPerTurn"] if a["engagement"] == 0 else 0)
+                cost += C["crowdCost"][a["stance"]][min(band, 3)]
+                pat[a["id"]] -= cost
+                if pat[a["id"]] <= 0:
                     gone.add(a["id"]); self.walk_off(a, end - 20)
+                    self.look(speaker, a, end - 6, end + 50)
                     self.log.append({"t0": end - 20, "event": "walk_off", "actor": a["id"]})
+                    if a["stance"] == "contra" and a["engagement"] >= 2: heat = max(0.0, heat - C["heatFromHecklerLeaving"])
+            left = [a for a in crowd if a["id"] not in gone]
             if heat >= R["outburstHeat"]: outcome = ("outburst", speaker["id"]); break
+            if len(left) <= C["desertedAt"]: outcome = ("deserted", None); break
             if end >= max_frames: outcome = ("applause", None); break
             t = end + rng.randint(*R["pauseFrames"])
         t = end + 6; ends = []
@@ -222,22 +264,27 @@ class Engine:
             for a in crowd:
                 if a["id"] not in gone:
                     ends.append(self.outcome_clips(a, t + rng.randint(4, 16), ["mock"] if a["stance"] == "contra" else ["surprise"], "outburst"))
+        elif outcome[0] == "deserted":
+            ends.append(self.outcome_clips(speaker, t + 20, ["sulk", "bored"], "deserted"))
+            for a in crowd:
+                if a["id"] not in gone: ends.append(self.outcome_clips(a, t + rng.randint(4, 16), ["doubt"], "deserted"))
         else:
             ends.append(self.outcome_clips(speaker, t, ["celebrate"], "applause"))
             for a in crowd:
                 if a["id"] in gone: continue
                 f = {"pro": ["celebrate"], "neutral": ["approve"], "contra": ["dismiss"]}[a["stance"]]
                 ends.append(self.outcome_clips(a, t + rng.randint(0, 14), f, "applause"))
-        return self.result([speaker] + crowd, outcome, max(ends) + 24)
+        return self.result(start_cast, outcome, max(ends) + 24, [speaker] + crowd)
 
-    def result(self, actors, outcome, end):
+    def result(self, actors, outcome, end, final=None):
         uses = {}
         for aid, evs in self.tl.items():
             evs.sort(key=lambda e: e["start"])
             uses[aid] = {"events": len(evs), "distinctWindows": len({e["win"] for e in evs}),
                          "distinctClips": len({e["short"] for e in evs})}
-        return {"schema": "kfb.talk.run.v1", "seed": self.seed, "actors": actors, "outcome": list(outcome),
-                "end": int(end), "turns": self.log, "timelines": self.tl, "walks": self.walks, "variety": uses}
+        return {"schema": "kfb.talk.run.v2", "seed": self.seed, "actors": actors, "finalProfiles": final or actors,
+                "outcome": list(outcome), "end": int(end), "turns": self.log, "timelines": self.tl, "walks": self.walks,
+                "looks": self.looks, "variety": uses}
 
 
 def run(pool_path, rules_path, mode, cast, seed, **kw):

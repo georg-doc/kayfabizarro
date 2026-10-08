@@ -30,6 +30,18 @@ RUNS = {
                                    A("farmer_a", "M", 2, .3, .3, "pro"), A("gothgirl", "M", 0, .2, .5, "neutral"),
                                    A("lorekeeper", "M", 1, .3, .6, "contra")]},
 }
+# r2b: outcome spread + look-at turns (rules v2). Same casts as C and D, seeds picked from a 60-seed sweep.
+_C = [A("orc", "L", 3, .7, .8), A("farmer", "M", 0, .3, .4)]
+_D = [A("farmer", "M", 3, .6, .6), A("orc", "L", 3, .8, .9, "contra"), A("farmer_a", "M", 2, .3, .3, "pro"),
+      A("gothgirl", "M", 0, .2, .5, "neutral"), A("lorekeeper", "M", 1, .3, .6, "contra")]
+RUNS.update({
+    "C1_absent_walks_off": {"mode": "debate", "seed": 3, "heat": 0.7, "max": 640, "layout": DEB, "cam": DEB_CAM, "cast": _C},
+    "C2_drawn_in_stalemate": {"mode": "debate", "seed": 5, "heat": 0.7, "max": 640, "layout": DEB, "cam": DEB_CAM, "cast": _C},
+    "C3_drawn_in_agree": {"mode": "debate", "seed": 7, "heat": 0.7, "max": 640, "layout": DEB, "cam": DEB_CAM, "cast": _C},
+    "D1_heckler_leaves_applause": {"mode": "corner", "seed": 7, "heat": 0.3, "max": 700, "layout": CORNER, "cam": CORNER_CAM, "cast": _D},
+    "D2_outburst": {"mode": "corner", "seed": 12, "heat": 0.3, "max": 700, "layout": CORNER, "cam": CORNER_CAM, "cast": _D},
+    "D3_deserted": {"mode": "corner", "seed": 2, "heat": 0.3, "max": 700, "layout": CORNER, "cam": CORNER_CAM, "cast": _D},
+})
 OUT = os.path.join(L.JOB, "data", "talk_runs")
 
 

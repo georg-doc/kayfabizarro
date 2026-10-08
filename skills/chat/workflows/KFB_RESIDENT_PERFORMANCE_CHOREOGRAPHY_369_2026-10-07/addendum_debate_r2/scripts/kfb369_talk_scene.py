@@ -5,7 +5,7 @@ from 369_DEBATE. realize(run) builds NLA from a generated run, keys turn-away + 
 camera, and exports per-frame head screen positions + labels for the 2D caption overlay.
 """
 import bpy, json, math, os, importlib
-from mathutils import Vector
+from mathutils import Vector, Quaternion
 import kfb369_lib as L
 import kfb_talk as T
 import kfb_talk_gen as G
@@ -145,12 +145,80 @@ def realize(run, layout, cam):
     for w in run["walks"]:
         k = w["actor"]; rig = next(x["rig"] for x in run["actors"] if x["id"] == k)
         walk(sc, arms[k], rig, w, [arms[o] for o in arms if o != k], exits.get(k))
+    look_layer(sc, run, arms)
     c = bpy.data.objects.get("TK_CAM")
     if c is None:
         c = bpy.data.objects.new("TK_CAM", bpy.data.cameras.new("TK_CAM")); sc.collection.objects.link(c)
     c.location = cam["loc"]; c.data.lens = cam.get("lens", 40)
     c.rotation_euler = (Vector(cam["at"]) - Vector(cam["loc"])).to_track_quat('-Z', 'Y').to_euler(); sc.camera = c
     return sc, arms
+
+
+LOOK_SPLIT = (("spine", 0.25), ("chest", 0.30), ("head", 0.45))
+LOOK_MAX = math.radians(75); LOOK_IN, LOOK_OUT = 10, 12
+
+
+def _wrap(a):
+    while a > math.pi: a -= 2 * math.pi
+    while a < -math.pi: a += 2 * math.pi
+    return a
+
+
+def look_layer(sc, run, arms):
+    """Upper-body turn toward a target (heckler, walker): spine/chest/head twist about their local Y (verified:
+    +Y twist = +yaw in the atan2(x, -y) facing convention), on a COMBINE track above the clips, so feet stay planted.
+    Follows moving targets; clamped to +-75 deg; ramps in 10 f, out 12 f."""
+    by = {}
+    for lk in run.get("looks", []): by.setdefault(lk["actor"], []).append(lk)
+    rep = {}
+    for k, lks in by.items():
+        a = arms[k]; name = f"TK_LOOK_{k}"
+        old = bpy.data.actions.get(name)
+        if old: bpy.data.actions.remove(old)
+        act = bpy.data.actions.new(name); act.use_fake_user = True
+        slot = act.slots.new(id_type='OBJECT', name=a.name)
+        cb = act.layers.new("L").strips.new(type='KEYFRAME').channelbag(slot, ensure=True)
+        fcs = {(b, i): cb.fcurves.new(f'pose.bones["{b}"].rotation_quaternion', index=i, group_name=b)
+               for b, _ in LOOK_SPLIT for i in range(4)}
+        keys = {}
+        lks = sorted([x for x in lks if x["target"] in arms], key=lambda x: x["start"])
+        # union of look windows; inside a union the latest-started window picks the target (a new heckler wins)
+        spans = []
+        for lk in lks:
+            s1 = min(lk["end"], run["end"])
+            if spans and lk["start"] <= spans[-1][1]: spans[-1][1] = max(spans[-1][1], s1); spans[-1][2].append(lk)
+            else: spans.append([lk["start"], s1, [lk]])
+        for s0, s1, group in spans:
+            frames = sorted(set([s0 - 1] + list(range(s0, s1 + 1, 3)) + [s1, s1 + LOOK_OUT // 2, s1 + LOOK_OUT]))
+            prev = None
+            for f in frames:
+                act_ = [g for g in group if g["start"] <= f < g["end"]]
+                tg = (max(act_, key=lambda g: g["start"]) if act_ else group[-1])["target"]
+                sc.frame_set(max(1, f))
+                me = a.matrix_world @ a.pose.bones['head'].head
+                th = arms[tg].matrix_world @ arms[tg].pose.bones['head'].head
+                d = th - me; yaw = _wrap(math.atan2(d.x, -d.y) - a.matrix_world.to_euler().z)
+                yaw = max(-LOOK_MAX, min(LOOK_MAX, yaw))
+                if prev is not None and abs(yaw - prev) > math.radians(12):   # target switch: turn over ~6 frames
+                    yaw = prev + math.copysign(math.radians(12), yaw - prev)
+                prev = yaw
+                w = 0.0 if f < s0 or f >= s1 + LOOK_OUT else (min(1.0, (f - s0) / LOOK_IN) if f < s1 else 1 - (f - s1) / LOOK_OUT)
+                w = w * w * (3 - 2 * w)
+                keys[f] = yaw * w
+                rep[k] = max(rep.get(k, 0), round(math.degrees(abs(yaw)), 1))
+        for f in sorted(keys):
+            for b, share in LOOK_SPLIT:
+                q = Quaternion((0, 1, 0), keys[f] * share)
+                for i in range(4):
+                    fcs[(b, i)].keyframe_points.insert(f, q[i], options={'FAST'})
+        for fc in fcs.values(): fc.update()
+        ad = a.animation_data; tr = ad.nla_tracks.new(); tr.name = "look"
+        st = tr.strips.new("look", int(min(keys)), act)
+        try: st.action_slot = act.slots[0]
+        except Exception: pass
+        st.blend_type = 'COMBINE'; st.extrapolation = 'NOTHING'; st.use_auto_blend = False
+        st.blend_in = 0; st.blend_out = 0
+    return rep
 
 
 def overlay_track(sc, run, arms):

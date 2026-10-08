@@ -77,6 +77,12 @@ def main(frames_dir, ov_path, out_mp4, title):
             is_spk = (k == spk and lab not in ("listen",)) or lab.startswith("heckle")
             pill(d, (x, max(int(70 * s), yy)), lab, F(11.5, True), (255, 255, 255) if is_spk else INK,
                  ORANGE + (235,) if is_spk else (255, 255, 255, 215))
+        # engine events (drawn in, swayed, walks off): short flash under the heat meter
+        evs = [e for e in turns if "event" in e and e["t0"] <= f < e["t0"] + 60]
+        for i, e in enumerate(evs[-2:]):
+            txt = {"drawn_in": f'{names[e["actor"]]} gets drawn in → {e.get("to", "")}',
+                   "swayed": f'{names[e["actor"]]} is won over', "walk_off": f'{names[e["actor"]]} has had enough'}.get(e["event"], e["event"])
+            pill(d, (W - int(157 * s), int(108 * s) + i * int(24 * s)), txt, F(11, True), (255, 255, 255), INK + (220,))
         # outcome card
         oc = run["outcome"][0].replace("_", " ")
         last_t1 = max(x.get("t1", 0) for x in turns)
