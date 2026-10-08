@@ -1,0 +1,717 @@
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json
+index b0643d8..31b1096 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json
+@@ -3,15 +3,15 @@
+   "date": "2026-10-08",
+   "product": "KFB Island MVP R4",
+   "mode": "ONE_SHOT",
+-  "state": "RUNNING_EARLY_GOLDEN",
++  "state": "RUNNING_STORY_FIRST_EARLY_GOLDEN_REPAIR",
+   "productVerdict": "NO MVP",
+   "operationalVersion": 5,
+   "owner": "WB2",
+   "repo": "georg-doc/kayfabizarro",
+   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+   "pr": 348,
+-  "baseHead": "9bc11ba0861ac5b41f8a4df3d76922bac1e23134",
+-  "milestone": "early-golden-contact-presentation-1",
++  "baseHead": "e31005f5cca79d675d717709a38af63aaaf339e1",
++  "milestone": "story-law-user-correction-design-withdrawn",
+   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
+   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
+   "required": [
+@@ -77,9 +77,9 @@
+     },
+     {
+       "id": "F-R07",
+-      "status": "NOT_GREEN",
++      "status": "UNKNOWN",
+       "evidence": [],
+-      "unresolved": "WSA instruments the actual integrated product for the Ground\u2192Drive\u2192Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations."
++      "unresolved": "WSA instruments the actual integrated product for the Ground→Drive→Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations."
+     },
+     {
+       "id": "F-R08",
+@@ -133,7 +133,7 @@
+       "id": "F-R16",
+       "status": "NOT_GREEN",
+       "evidence": [],
+-      "unresolved": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60\u00b0 STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner."
++      "unresolved": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60° STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner."
+     },
+     {
+       "id": "F-R17",
+@@ -145,7 +145,7 @@
+       "id": "F-R18",
+       "status": "NOT_GREEN",
+       "evidence": [],
+-      "unresolved": "Preserve avatar/world pose, heading and safe support across Ground\u2194Drive and Ground\u2194Flight handoffs."
++      "unresolved": "Preserve avatar/world pose, heading and safe support across Ground↔Drive and Ground↔Flight handoffs."
+     },
+     {
+       "id": "F-R19",
+@@ -211,7 +211,7 @@
+       "id": "F-R29",
+       "status": "NOT_GREEN",
+       "evidence": [],
+-      "unresolved": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base\u2192river/village\u2192road-fit\u2192sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay."
++      "unresolved": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base→river/village→road-fit→sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay."
+     },
+     {
+       "id": "F-R30",
+@@ -269,9 +269,11 @@
+     },
+     {
+       "id": "F-R39",
+-      "status": "NOT_GREEN",
+-      "evidence": [],
+-      "unresolved": "Run before broad feature fan-out after Player + Phase-2B roads/Track + Surface/Joyride/Clay/Sky/landmark/water core exists. Independent critic first, then persist F-R39=PENDING with exact head/evidence and provide 4\u20136 screenshots + one continuous clip <=30s for Georg PASS/FAIL."
++      "status": "FAIL",
++      "evidence": [
++        "ISLAND_STORY_LAW_2026-10-08.md"
++      ],
++      "unresolved": "Current composition rejected. No Golden baseline. Requires source-correct causal Town scene, fresh independent critic and head-bound Georg PASS."
+     },
+     {
+       "id": "F-R40",
+@@ -301,12 +303,20 @@
+       "id": "F-R44",
+       "status": "NOT_GREEN",
+       "evidence": [],
+-      "unresolved": "Aggregate only actual accepted proofs from F-R01\u2013F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP."
++      "unresolved": "Aggregate only actual accepted proofs from F-R01–F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP."
+     }
+   ],
+   "humanGates": {
+     "F-R39": {
+-      "status": "NOT_READY"
++      "status": "FAIL",
++      "goldenBaselineHead": null,
++      "reason": "User rejects current track/roundabout, Medieval asset choice and legacy curtain; latest binding Island Story Law exposes missing causal composition. Fresh candidate and independent evidence required.",
++      "reviewedSurface": "User-referenced local R4 composition; exact local working tree was uncommitted and has no unique reviewed Git head.",
++      "technicalBaseHead": "e31005f5cca79d675d717709a38af63aaaf339e1",
++      "evidence": [
++        "ISLAND_STORY_LAW_2026-10-08.md"
++      ],
++      "next": "Source-grounded story and coherent scene, independent critic, then exact-head PENDING with 4–6 screenshots and <=30s continuous clip."
+     },
+     "F-R07": {
+       "status": "UNKNOWN",
+@@ -319,7 +329,7 @@
+       "pass": 11,
+       "quarantinedKnownFailure": 1
+     },
+-    "browserSameSeedIsolation": "A\u2192B\u2192fresh A canonical document identical; B empty",
++    "browserSameSeedIsolation": "A→B→fresh A canonical document identical; B empty",
+     "browserSculpt": "overlapping Raise/Lower visible and fresh document exact",
+     "surfaceWitness": {
+       "file": "evidence/r4-foundation/surface-witness-sculpt.json",
+@@ -331,7 +341,7 @@
+     "objectReplay": "Normal editor Move/Rotate/Scale/Snap; exact document, transformed geometry hash/matrix and collider-ray evidence after fresh load.",
+     "invalidImport": "Invalid schema keeps current state; unsupported source rebuild failure rolls back exact geometry/collider evidence."
+   },
+-  "nextInternalAction": "Phase 2 Player Golden; preserve tested Foundation. No broad feature fan-out before F-R39.",
++  "nextInternalAction": "Verify source-grounded causal Town design before further scene construction; preserve technical work, then compose and run fresh independent Phase-3 critique. No Phase 4 before F-R39 PASS.",
+   "previousHandoff": {
+     "schema": "kfb.one-shot-status/1",
+     "date": "2026-10-07",
+@@ -616,7 +626,7 @@
+     ]
+   },
+   "earlyGolden": {
+-    "status": "TECHNICAL_MILESTONE_NOT_VISUAL_PASS",
++    "status": "VISUAL_FAIL_COMPOSITION_WITHDRAWN",
+     "tests": {
+       "pass": 25,
+       "quarantinedTodo": 1
+@@ -635,10 +645,22 @@
+     ],
+     "unresolved": [
+       "Full normal-input river/shore/forest/Flight visual-physical review",
+-      "Fresh independent Phase3 critic, final 4\u20136 screenshots and continuous clip",
++      "Fresh independent Phase3 critic, final 4–6 screenshots and continuous clip",
+       "F-R39 human PASS/FAIL not yet requested",
+       "F-R07 remains UNKNOWN until Georg target-device run",
+-      "Environment/document persistence and later phases remain pending"
++      "Environment/document persistence and later phases remain pending",
++      "Binding Island Story Law: causal geography, routes, market, landmark and residents not proven by current scene.",
++      "Actual Joyride Town donor ensemble has not replaced the rejected Medieval composition.",
++      "Approved Curtain renderer compatibility remains unproven; no legacy substitution."
+     ]
++  },
++  "storyLaw": {
++    "status": "BINDING",
++    "document": "ISLAND_STORY_LAW_2026-10-08.md",
++    "source": "Georg direct instruction 2026-10-08",
++    "designStatus": "WORKING_DESIGN_NOT_VISUAL_PROOF",
++    "priorComposition": "WITHDRAWN",
++    "matrixUnchanged": true,
++    "rule": "Technical completeness without readable micro-story is product FAIL; no second runtime owner."
+   }
+ }
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/VISIBLE_SOURCE_MANIFEST.json b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/VISIBLE_SOURCE_MANIFEST.json
+index d3f1e8b..e76f8c9 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/VISIBLE_SOURCE_MANIFEST.json
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/VISIBLE_SOURCE_MANIFEST.json
+@@ -5,7 +5,8 @@
+   "bannedVisible": [
+     "fixtures/huerth-b1-siblings-v0.json",
+     "tools/osm-city-lab/",
+-    "elastic-grotesque-clay-huerth01"
++    "elastic-grotesque-clay-huerth01",
++    "theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs"
+   ],
+   "donorScope": {
+     "legacyCity": {
+@@ -905,6 +906,136 @@
+           "DATA": "REGISTERED"
+         }
+       }
++    ],
++    "world.joyride-town": [
++      {
++        "name": "building_A",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "71c203c264e37be2e8529459e99d077c4b22b1e4",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 4.1
++      },
++      {
++        "name": "building_E",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_E.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "62b60e8f3cafad09616a4ee3a1216e3024a55200",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_E.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_E.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 4.1
++      },
++      {
++        "name": "building_B",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_B.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "d5b0f1226e6681d286fd08254674a8b32e8227b0",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_B.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_B.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 4.1
++      },
++      {
++        "name": "building_G",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_G.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "02fdeef750541c3de1084d543ec35b69e679e353",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_G.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_G.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 4.1
++      }
++    ],
++    "joyride.props": [
++      {
++        "name": "streetlight",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "0a35577350736d1c3e30fd68caba0a21c1a4168a",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 5.95
++      },
++      {
++        "name": "firehydrant",
++        "assetId": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf",
++        "packId": "KayKit City Builder Bits / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "fabafe7abc5d096b70b308a6452054fcc0f8ad5d",
++          "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 3.49
++      },
++      {
++        "name": "bench",
++        "assetId": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf",
++        "packId": "Tiny Treats Pretty Park / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "7b2193305a4f84a953d2e35cff99ed4ae2c74e4b",
++          "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 1.6
++      },
++      {
++        "name": "trashcan",
++        "assetId": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/trashcan.gltf",
++        "packId": "Tiny Treats Pretty Park / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "4076f51df5418a2aaceb5c98aebd4be316fa83f5",
++          "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/trashcan.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/trashcan.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 1.6
++      },
++      {
++        "name": "tree_large",
++        "assetId": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/tree_large.gltf",
++        "packId": "Tiny Treats Pretty Park / Joyride J14",
++        "source": {
++          "repo": "georg-doc/kayfabizarro",
++          "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
++          "blobSha": "e2f6596c402c30137751c2373270e785387b7f0d",
++          "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/tree_large.gltf",
++          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/tree_large.gltf"
++        },
++        "presentation": "Joyride J14: H0 soften + K1 v8 house; original family-specific props",
++        "scale": 1.9
++      }
+     ]
+   }
+ }
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/island-road-recipe.v1.mjs b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/island-road-recipe.v1.mjs
+index 096d47c..694de97 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/island-road-recipe.v1.mjs
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/island-road-recipe.v1.mjs
+@@ -1,9 +1,16 @@
+ // Authored route intent for the bounded R4 island. All geometry compiles in Track Core.
+ export function islandRoadRecipe(TC){
+- const graph={schema:'kfb.route-graph/0.1-draft',id:'island.r4.village-coast',defaults:{widthClass:'NARROW',markings:'STREET',biome:'city',autoBank:{gain:0,limitDeg:0}},nodes:[{type:'ROUNDABOUT',id:'village.circle',center:[-35,.6,0],island:12,ringWidth:'NARROW',armWidth:'NARROW',fillet:6,splitter:0,armLength:9,arms:[{id:'south',at:0},{id:'north',at:180},{id:'village',at:270}]}],routes:[]};
++ const graph={schema:'kfb.route-graph/0.1-draft',id:'island.r4.village-coast',defaults:{profile:{width:7.2},markings:'STREET',biome:'city',autoBank:{gain:0,limitDeg:0}},nodes:[{type:'ROUNDABOUT',id:'village.circle',center:[-35,.6,0],island:8.5,ringWidth:6.4,armWidth:8.4,fillet:6,splitter:0,armLength:9,arms:[{id:'outbound',at:90},{id:'south',at:0},{id:'north',at:180},{id:'village',at:270}]}],routes:[]};
+  const sockets=TC.compileGraph(graph).sockets;
+- graph.routes.push({id:'coast.loop',start:{socket:'village.circle/north'},pieces:[{id:'north.bend',type:'CURVE_EASE',turn:-180,radius:26,bankDeg:0},{id:'coast.straight',type:'STRAIGHT',markings:'TRACK',skin:'track',length:2*sockets['village.circle/north'].p[2]+12},{id:'south.bend',type:'CURVE_EASE',markings:'STREET',skin:'street',turn:-180,radius:26,bankDeg:0},{id:'south.join',type:'CONNECT',to:'village.circle/south'}]});
+- graph.traversal={id:'island.r4.golden-loop',closed:true,parts:[{route:'village.circle.north'},{route:'coast.loop'},{route:'village.circle.south',reverse:true},{node:'village.circle',path:'south>north'}]};
+- graph.islandLayout={lobes:[{xz:[-5,0],rad:66},{xz:[0,52],rad:52},{xz:[0,-62],rad:52},{xz:[-35,0],rad:45}],waterProfile:'graded-v1',spawn:[-37.7,-52],paletteZone:{id:'purple-grove',fromX:10,toX:34,grass:'#9a74cc',grass2:'#8a66bd',hill:'#8b66c2'},groves:[[40,38],[40,-43],[-62,-45]],pads:[{x:-35,z:0,r:7,h:.6},{x:-3,z:15,r:6,h:.4},{x:-3,z:-15,r:6,h:.4}]};
++ // Native endpoint-derived adjacent-arm loop leaves south and west for island links.
++ const pieces=[{id:'north.run',type:'STRAIGHT',length:12},{id:'north.bend',type:'CURVE_EASE',turn:-90,radius:22,width:7.2,bankDeg:0},{id:'coast.straight',type:'STRAIGHT',markings:'TRACK',skin:'track',length:30,width:9},{id:'east.bend',type:'CURVE_EASE',markings:'STREET',skin:'street',turn:-90,radius:22,width:7.2,bankDeg:0}];
++ const probe=TC.compileGraph({...graph,routes:[{id:'coast.probe',start:{socket:'village.circle/north'},pieces}]}).routes['coast.probe'];
++ const last=probe.samples.at(-1),bendProbe=TC.compileRecipe({start:{p:last.p,headingDeg:180},defaults:{profile:{width:7.2}},pieces:[{type:'CURVE_EASE',turn:-90,radius:22,width:8.4,bankDeg:0}]}),bendEnd=bendProbe.samples.at(-1);
++ const southLength=bendEnd.p[2]-sockets['village.circle/village'].p[2];
++ pieces.push({id:'south.run',type:'STRAIGHT',length:southLength},{id:'south.bend',type:'CURVE_EASE',turn:-90,radius:22,width:8.4,bankDeg:0},{id:'town.join',type:'CONNECT',to:'village.circle/village'});
++ graph.routes.push({id:'coast.loop',start:{socket:'village.circle/north'},pieces});
++ graph.extensions=[{id:'town.island-link.south',socket:'village.circle/south',state:'RESERVED',setback:2},{id:'town.island-link.west',socket:'village.circle/outbound',state:'RESERVED',setback:2}];
++ graph.traversal={id:'island.r4.golden-loop',closed:true,laneOffset:2.1,parts:[{route:'village.circle.north'},{route:'coast.loop'},{route:'village.circle.village',reverse:true},{node:'village.circle',path:'village>north'}]};
++ graph.islandLayout={lobes:[{xz:[-5,0],rad:66},{xz:[20,45],rad:61},{xz:[-15,55],rad:52},{xz:[0,-62],rad:52},{xz:[-35,0],rad:45}],pond:{x:10,z:35,r:4.5},waterProfile:'graded-v2',meshResolution:{angular:384,radial:160},depth:36,hills:[{x:46,z:35,r:23,h:4.5},{x:40,z:-40,r:23,h:5.5},{x:-54,z:55,r:15,h:2.7}],spawn:[-37.1,39],paletteZone:{id:'purple-grove',fromX:10,toX:34,grass:'#9a74cc',grass2:'#8a66bd',hill:'#8b66c2'},groves:[[43,35],[44,-37],[2,-86],[-62,-44],[-65,35],[2,70]],pads:[{x:5,z:-35,r:9,h:1.6},{x:-12,z:-20,r:6,h:.4},{x:-10,z:-49,r:6,h:.4},{x:15,z:-52,r:6,h:.4},{x:-16,z:-63,r:6,h:.4},{x:25,z:-22,r:6,h:.4},{x:-10,z:-34,r:3,h:.4}],plazas:[{kind:'big',x:-7,z:-34,r:9,h:.4},{kind:'small',x:-18,z:-32,r:3,h:.4}]};
+  return graph;
+ }
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-sidewalk.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-sidewalk.v1.js
+index c78d039..8ae9389 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-sidewalk.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-sidewalk.v1.js
+@@ -6,11 +6,11 @@ import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
+ import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
+ import {makeClayMaterial,seedGeometry,PROFILES} from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-material.v10.js';
+ import {TOOLMIX} from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-toolmix.v1.js';
+-export function buildJoyrideSidewalk(stream,U){
++export function buildJoyrideSidewalk(stream,U,{sides=[-1,1],rows=3}={}){
+  const group=new THREE.Group(),S=stream.samples,L=S.at(-1).s,curb=[],slabs=[],h1=n=>{const x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x)},at=s=>S.reduce((best,q)=>Math.abs(q.s-s)<Math.abs(best.s-s)?q:best,S[0]);
+  function place(g,q,sd,d,y,twist){const m=new THREE.Matrix4().makeBasis(new THREE.Vector3(...q.R),new THREE.Vector3(...q.U),new THREE.Vector3(...q.T).negate()).multiply(new THREE.Matrix4().makeRotationY(twist));m.setPosition(...q.p.map((x,i)=>x+q.R[i]*sd*d+q.U[i]*y));g.applyMatrix4(m);return g;}
+- for(let s=1;s<L-1;s+=1.05){const q=at(s);for(const sd of[-1,1]){const hh=h1(Math.floor(s*3.1)+sd*57),g=new RoundedBoxGeometry(.56,.36,.9,2,.13);g.deleteAttribute('uv');g.scale(1+.12*(hh-.5),1+.15*(h1(hh*99)-.5),1-.1*h1(hh*7));place(g,q,sd,q.prm.width/2+.62,.1,(hh-.5)*.12);seedGeometry(THREE,g,2600+curb.length);curb.push(g)}}
+- for(let s=1;s<L-1;s+=2.1){const q=at(s);for(const sd of[-1,1])for(let r=0;r<3;r++){const hh=h1(Math.floor(s*4.7)*3+r+sd*91),g=new RoundedBoxGeometry(1.6,.2,1.95,2,.07);g.deleteAttribute('uv');g.scale(1+.06*(hh-.5),1+.3*(h1(hh*31)-.5),1);place(g,q,sd,q.prm.width/2+1.35+r*1.75,.22,(hh-.5)*.06);seedGeometry(THREE,g,3000+slabs.length);slabs.push(g)}}
++ for(let s=1;s<L-1;s+=1.05){const q=at(s);for(const sd of sides){const hh=h1(Math.floor(s*3.1)+sd*57),g=new RoundedBoxGeometry(.56,.36,.9,2,.13);g.deleteAttribute('uv');g.scale(1+.12*(hh-.5),1+.15*(h1(hh*99)-.5),1-.1*h1(hh*7));place(g,q,sd,q.prm.width/2+.62,.1,(hh-.5)*.12);seedGeometry(THREE,g,2600+curb.length);curb.push(g)}}
++ for(let s=1;s<L-1;s+=2.1){const q=at(s);for(const sd of sides)for(let r=0;r<rows;r++){const hh=h1(Math.floor(s*4.7)*3+r+sd*91),g=new RoundedBoxGeometry(1.6,.2,1.95,2,.07);g.deleteAttribute('uv');g.scale(1+.06*(hh-.5),1+.3*(h1(hh*31)-.5),1);place(g,q,sd,q.prm.width/2+1.35+r*1.75,.22,(hh-.5)*.06);seedGeometry(THREE,g,3000+slabs.length);slabs.push(g)}}
+  for(const [name,parts,color]of[['t4-bordstein',curb,'#e6ded1'],['t4-gehweg',slabs,'#cec3b0']]){if(!parts.length)continue;const material=makeClayMaterial(THREE,U,{src:new THREE.MeshStandardMaterial({color}),profile:{...PROFILES.prop,scale:1.5,print:.3,dent:0,gouge:0,crack:0,stroke:1,facet:.9,crease:.5,legacy:0,tools:TOOLMIX.rock}}),mesh=new THREE.Mesh(mergeGeometries(parts.map(g=>g.index?g.toNonIndexed():g)),material);mesh.name=name;mesh.castShadow=mesh.receiveShadow=true;group.add(mesh)}
+  group.userData.sourceRecord={assetId:'Joyride native sidewalk',packId:'KFB Joyride J14',source:{commit:'927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f',path:'tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-atlas.v1.js'}};return group;
+ }
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-strand.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-strand.v1.js
+index e22b2bb..edc27cd 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-strand.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/joyride-strand.v1.js
+@@ -24,6 +24,20 @@ const ROAD_APPLY = /* glsl */`
+ { vec3 cO = vBio > 0.5 ? uRoadC : uRoadA; float rim; float sel = kfbBlend(vSU, 1.7, vW, rim); diffuseColor.rgb = mix(cO, uRoadB, sel) * (1.0 - 0.12 * rim); }
+ `;
+ 
++// Shared native J14 road treatment for strand and Track Core junction plate.
++export function createJoyrideRoadMaterial(THREE,U,palette){
++ const RU={uRoadA:{value:new THREE.Color(palette.roadStreet||palette.rock)},uRoadB:{value:palette.roadTrack?new THREE.Color(palette.roadTrack):new THREE.Color(palette.rock).multiplyScalar(.72)},uRoadC:{value:new THREE.Color(palette.path||palette.sand)}};
++  {
++    const m = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color: '#ffffff' }), profile: { ...prof('road', 0.5, 3), legacy: 1 } });
++    const prev = m.onBeforeCompile;
++    m.onBeforeCompile = (sh, r) => { prev(sh, r); Object.assign(sh.uniforms, RU);
++      sh.vertexShader = ROAD_V + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n vW = aW; vBio = aBio; vSU = aSU;');
++      sh.fragmentShader = ROAD_F + sh.fragmentShader.replace('#include <color_fragment>', '#include <color_fragment>\n' + ROAD_APPLY); };
++    m.customProgramCacheKey = () => 'kfb-clay-v10-road7'; return m;
++  }
++
++}
++
+ export function buildClayStrand(THREE, td, {U,palette,TP,MR,M2,groundY,connected=true,atlas=null}) {
+  const S=td.samples,N=S.length,ds=td.ds||S[1].s-S[0].s,V=a=>new THREE.Vector3(...a);
+  const AT=atlas||createPresentationAtlas(S,TP,groundY);
+@@ -32,15 +46,7 @@ export function buildClayStrand(THREE, td, {U,palette,TP,MR,M2,groundY,connected
+  const addMesh=(g,mat,{name='' }={})=>{const m=new THREE.Mesh(g,mat);m.name=name;m.castShadow=m.receiveShadow=true;root.add(m);info.tris+=(g.index?g.index.count:g.attributes.position.count)/3;return m};
+  const bake=parts=>mergeGeometries(parts.map(g=>{const n=g.index?g.toNonIndexed():g;n.deleteAttribute('uv');return n}),false);
+  const clay=(key,color,profile,mix='strang')=>M[key]=makeClayMaterial(THREE,U,{src:new THREE.MeshStandardMaterial({color}),profile:{...profile,tools:TOOLMIX[mix],legacy:0}});
+- const RU={uRoadA:{value:new THREE.Color(palette.roadStreet||palette.rock)},uRoadB:{value:palette.roadTrack?new THREE.Color(palette.roadTrack):new THREE.Color(palette.rock).multiplyScalar(.72)},uRoadC:{value:new THREE.Color(palette.path||palette.sand)}};
+-  {
+-    const m = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color: '#ffffff' }), profile: { ...prof('road', 0.5, K), legacy: 1 } });
+-    const prev = m.onBeforeCompile;
+-    m.onBeforeCompile = (sh, r) => { prev(sh, r); Object.assign(sh.uniforms, RU);
+-      sh.vertexShader = ROAD_V + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n vW = aW; vBio = aBio; vSU = aSU;');
+-      sh.fragmentShader = ROAD_F + sh.fragmentShader.replace('#include <color_fragment>', '#include <color_fragment>\n' + ROAD_APPLY); };
+-    m.customProgramCacheKey = () => 'kfb-clay-v10-road7'; M.road = m;
+-  }
++ M.road = createJoyrideRoadMaterial(THREE,U,palette);
+ 
+  clay('strang',palette.rock,prof('house',.6,K,QUIET));
+  clay('strangT',palette.rock,prof('house',.6,K,QUIET));
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js
+index 7d13930..a74db13 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js
+@@ -43,7 +43,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
+   }
+   if(finalizedRecipe?.islandLayout){C=finalizedRecipe.islandLayout.lobes.map(c=>({...c}));sdf=(x,z)=>{let d=1e9;for(const c of C)d=smin(d,Math.hypot(x-c.xz[0],z-c.xz[1])-c.rad,9);return d+2.2*fbm(x*.04,z*.04,seed+3)-.4;};}
+   const c0 = [C.reduce((a, c) => a + c.xz[0], 0) / C.length, C.reduce((a, c) => a + c.xz[1], 0) / C.length];
+-  const NA = 192, edgeR = new Float32Array(NA);
++  const NA = finalizedRecipe?.islandLayout?.meshResolution?.angular||192, edgeR = new Float32Array(NA);
+   for (let a = 0; a < NA; a++) { const th = a / NA * Math.PI * 2, cx = Math.cos(th), cz = Math.sin(th); let r = 0; while (r < 250 && sdf(c0[0] + cx * r, c0[1] + cz * r) < 0) r += 0.5;
+     let lo = Math.max(0, r - 0.5), hi = r; for (let k = 0; k < 7; k++) { const m = (lo + hi) / 2; if (sdf(c0[0] + cx * m, c0[1] + cz * m) < 0) lo = m; else hi = m; } edgeR[a] = lo; }
+   const rAt = th => { const f = ((th / (Math.PI * 2)) % 1 + 1) % 1 * NA, i = Math.floor(f), t = f - i; return lerp(edgeR[i % NA], edgeR[(i + 1) % NA], t); };
+@@ -67,7 +67,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
+   const q0 = samp[Math.floor(samp.length / 2)], lats = q0.slots.map(s => s[0]), mid = (q0.slots[6][0] + q0.slots[7][0]) / 2;
+   const hw = (graph?Math.max(...Object.values(graph.routes).flatMap(r=>r.samples[0].slots.map(q=>Math.abs(q[0])))):Math.max(...lats.map(l => Math.abs(l - mid)))) + 1.0, roadSurf = (sw(q0, 6)[1] + sw(q0, 7)[1]) / 2;
+   const roadDist = (x, z) => { let best = 1e9;if(graph){for(const r of Object.values(graph.routes))for(let i=1;i<r.samples.length;i++){const a=r.samples[i-1].p,b=r.samples[i].p;best=Math.min(best,distSeg(x,z,[a[0],a[2]],[b[0],b[2]]));}for(const n of graph.nodes)best=Math.min(best,Math.abs(Math.hypot(x-n.center[0],z-n.center[2])-n.island-n.ringWidth/2));return best;} for (let i = 0; i < poly.length - 1; i += 1) { const d = distSeg(x, z, poly[i], poly[i + 1]); if (d < best) best = d; } return best; };
+-  const natural = (x, z) => 1.7 * fbm(x * 0.03, z * 0.03, seed + 5) + 0.55 * fbm(x * 0.09, z * 0.09, seed + 9);
++  const natural = (x, z) => 1.7 * fbm(x * 0.03, z * 0.03, seed + 5) + 0.55 * fbm(x * 0.09, z * 0.09, seed + 9)+(recipe.islandLayout?.hills||[]).reduce((sum,p)=>sum+p.h*Math.exp(-((x-p.x)**2+(z-p.z)**2)/(p.r*p.r)),0);
+   // Gebäudeplätze: Zellmitten abseits der Straße und des Rands
+   const padR = 6.5, cand = C.slice(1).map(c => ({ c, rd: roadDist(c.xz[0], c.xz[1]), e: -sdf(c.xz[0], c.xz[1]) })).filter(o => o.rd > hw + 8 && o.e > 8.5).sort((a, b) => b.rd - a.rd);
+   const pads = []; for (const o of cand) { if (pads.length >= 2) break; if (pads.every(p => Math.hypot(p.x - o.c.xz[0], p.z - o.c.xz[1]) > padR * 2 + 6)) pads.push({ x: o.c.xz[0], z: o.c.xz[1], r: padR, h: natural(o.c.xz[0], o.c.xz[1]) * 0.6 + 0.35, cell: [o.c.q, o.c.r] }); }
+@@ -80,6 +80,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
+   if (big) plazas.push({ kind: 'big', x: big.x, z: big.z, r: 6, h: natural(big.x, big.z) * 0.6 + 0.35, note: 'Tanzen · Geschenke · Rauferei' });
+   if (pads[0]) { const p = pads[0], tx = (big ? big.x : c0[0]) - p.x, tz = (big ? big.z : c0[1]) - p.z, l = Math.hypot(tx, tz) || 1, sx = p.x + tx / l * (p.r + 4), sz = p.z + tz / l * (p.r + 4);
+     plazas.push({ kind: 'small', x: sx, z: sz, r: 3.5, h: p.h, note: 'Spieler + 2 Figuren' }); }
++  if(recipe.islandLayout?.plazas)plazas.splice(0,plazas.length,...structuredClone(recipe.islandLayout.plazas));
+   // Gehwege: kleiner Platz → großer Platz → Straßenrand; Haus 2 → großer Platz
+   const nearestRoadPt = (x, z) => { let bi = 0, bd = 1e9; poly.forEach((p, i) => { const d = Math.hypot(p[0] - x, p[1] - z); if (d < bd) { bd = d; bi = i; } }); const p = poly[bi], dx = x - p[0], dz = z - p[1], l = Math.hypot(dx, dz) || 1; return [p[0] + dx / l * (hw + 0.5), p[1] + dz / l * (hw + 0.5)]; };
+   const paths = [];
+@@ -90,6 +91,7 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
+   for (let x = c0[0] - 45; x <= c0[0] + 45; x += 2) for (let z = c0[1] - 45; z <= c0[1] + 45; z += 2) { const e = -sdf(x, z); if (e < pr + 4) continue;
+     const sc = Math.min(e - pr - 4, roadDist(x, z) - hw - pr - 4, ...[...pads, ...plazas].map(p => Math.hypot(p.x - x, p.z - z) - p.r - pr - 3), ...paths.map(s => distSeg(x, z, s[0], s[1]) - pr - 2)); if (sc > ps) { ps = sc; pond = { x, z, r: pr }; } }
+   if (pond && ps < 0) pond = null; if (pond) pond.h = natural(pond.x, pond.z) * 0.6 + 0.1;
++  if(recipe.islandLayout?.pond){pond={...recipe.islandLayout.pond};pond.h=natural(pond.x,pond.z)*.6+.1;}
+   // Bach: vom Teich zur Inselkante, mäandernd, bevorzugt unter der Straße hindurch (dort Schlucht + Brücke), endet als Wasserfall
+   let creek = null;
+   if (pond) { let best = null, bsc = -1e9;
+@@ -104,8 +106,9 @@ export function planIsland(seed, TC, shape = 'frei', finalizedRecipe = null) {
+       let cross = null; for (const p of pts) if (roadDist(p[0], p[1]) < 1.6) { cross = p; break; }
+       let lip = null; for (let i = 1; i < pts.length; i++) if (sdf(pts[i][0], pts[i][1]) >= -0.3) { const ddx = pts[i][0] - pts[i - 1][0], ddz = pts[i][1] - pts[i - 1][1], l = Math.hypot(ddx, ddz) || 1; lip = { p: pts[i], i, dir: [ddx / l, ddz / l] }; break; }
+       creek = { pts, w: 1.3, cross, lip, dist: (x, z) => { let b = 1e9; for (let i = 0; i < pts.length - 1; i++) { const d = distSeg(x, z, pts[i], pts[i + 1]); if (d < b) b = d; } return b; } }; } }
+-  if(creek&&recipe.islandLayout?.waterProfile==='graded-v1'){const pts=creek.pts,lengths=[0];for(let i=1;i<pts.length;i++)lengths.push(lengths[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));const total=lengths[creek.lip?.i??pts.length-1];creek.waterAt=(x,z)=>{let best=Infinity,station=0;for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),d=Math.hypot(x-a[0]-t*dx,z-a[1]-t*dz);if(d<best){best=d;station=lengths[i-1]+t*(lengths[i]-lengths[i-1]);}}return lerp(pond.h-.32,Math.min(-1.8,pond.h-.8),clamp(station/total,0,1));};}
+-  return { seed, shape, cells: C, c0, sdf, NA, edgeR, rAt, recipe, stream, graph, width, hw, roadY: roadSurf, roadDist, natural, pads, plazas, paths, poly, pond, creek };
++  if(creek&&recipe.islandLayout?.waterProfile?.startsWith('graded-v')){const pts=creek.pts,lengths=[0];for(let i=1;i<pts.length;i++)lengths.push(lengths[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));const total=lengths[creek.lip?.i??pts.length-1];creek.waterAt=(x,z)=>{let best=Infinity,station=0;for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),d=Math.hypot(x-a[0]-t*dx,z-a[1]-t*dz);if(d<best){best=d;station=lengths[i-1]+t*(lengths[i]-lengths[i-1]);}}return lerp(pond.h-.32,Math.min(-1.8,pond.h-.8),clamp(station/total,0,1));};}
++  const reservedCorridors=(recipe.extensions||[]).map(ext=>{const socket=graph?.sockets[ext.socket];if(!socket)throw Error('Unresolved island extension socket '+ext.socket);let length=0;while(length<400&&sdf(socket.p[0]+socket.T[0]*length,socket.p[2]+socket.T[2]*length)<2)length+=1;const half=socket.width/2+TC.SIDE_EXTENT+ext.setback,a=[socket.p[0],socket.p[2]],b=[a[0]+socket.T[0]*length,a[1]+socket.T[2]*length],r=[socket.R[0]*half,socket.R[2]*half];return{...ext,kind:'reserved-island-link',position:[...socket.p],direction:[...socket.T],width:half*2,length,polygon:[[a[0]+r[0],a[1]+r[1]],[b[0]+r[0],b[1]+r[1]],[b[0]-r[0],b[1]-r[1]],[a[0]-r[0],a[1]-r[1]]]};});
++  return { reservedCorridors, seed, shape, cells: C, c0, sdf, NA, edgeR, rAt, recipe, stream, graph, width, hw, roadY: roadSurf, roadDist, natural, pads, plazas, paths, poly, pond, creek };
+ }
+ 
+ /* Höhe und Maske an jedem Punkt — analytisch, also für Gelände, Raster, Bäume und Häuser dieselbe Wahrheit */
+@@ -117,10 +120,11 @@ export function fields(P) {
+   const heightAt = (x, z) => { const e = -sdf(x, z); let h = natural(x, z) * sstep(1.5, 11, e) - 1.4 * Math.pow(1 - sstep(0, 3.2, e), 2);
+     for (const p of [...pads, ...plazas]) { const w = 1 - sstep(p.r, p.r + 4, Math.hypot(x - p.x, z - p.z)); h = lerp(h, p.h, w); }
+     if (pond) { const dp = Math.hypot(x - pond.x, z - pond.z); h = lerp(h, pond.h, 1 - sstep(pond.r + 1, pond.r + 5, dp)); h -= 0.9 * Math.pow(1 - sstep(0, pond.r + 0.6, dp), 0.7); }
+-    const d = roadDist(x, z), w = 1 - sstep(hw, hw + 7, d); h = lerp(h, roadY - 0.35, w); if(creek?.waterAt){const dc=creek.dist(x,z),channel=1-sstep(creek.w,creek.w+2.6,dc),bed=creek.waterAt(x,z)-.75;return lerp(h,Math.min(h,bed),channel);}return h - carveAt(x, z)[0]; };
++    const d = roadDist(x, z), w = 1 - sstep(hw, hw + 7, d); h = lerp(h, roadY - 0.35, w); for(const node of P.graph?.nodes||[]){const r=Math.hypot(x-node.center[0],z-node.center[2]),blend=1-sstep(node.island-1.5,node.island-.2,r);h=lerp(h,node.y+.27,blend);} if(creek?.waterAt){const dc=creek.dist(x,z),channel=1-sstep(creek.w,creek.w+2.6,dc),bed=creek.waterAt(x,z)-.75;return lerp(h,Math.min(h,bed),channel);}return h - carveAt(x, z)[0]; };
+   // Übergangsgewichte für das Joyride-Patch-Muster (kfbBlend): Sand an Bankett und Ufer, Pflaster an Plätzen und Wegen, Fels am Rand
+   const weightsAt = (x, z) => { const e = -sdf(x, z), d = roadDist(x, z);
+     let sand = 1 - sstep(hw + 0.6, hw + 3.4, d), pav = 0;
++    for(const node of P.graph?.nodes||[]){const r=Math.hypot(x-node.center[0],z-node.center[2]);sand*=sstep(node.island-1.5,node.island-.2,r);}
+     if (pond) sand = Math.max(sand, 1 - sstep(pond.r + 0.8, pond.r + 3.6, Math.hypot(x - pond.x, z - pond.z)));
+     for (const p of [...pads, ...plazas]) pav = Math.max(pav, 1 - sstep(p.r - 1.2, p.r + 1.4, Math.hypot(x - p.x, z - p.z)));
+     for (const s of paths) pav = Math.max(pav, 1 - sstep(0.8, 2.4, distSeg(x, z, s[0], s[1])));
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js
+index a59bc70..acedccf 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js
+@@ -1,3 +1,4 @@
++import {pointPolygonDistance} from './world-clearance.v1.mjs';
+ /* KFB R2D presentation v1
+  * Source-derived from R2D v0 donor island.js blob 6952697d...
+  * Presentation only: NO renderer, scene, camera, frame loop, movement, collision or material SSOT.
+@@ -37,12 +38,12 @@ const rng=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.i
+ function colorArray(hex){const c=new THREE.Color(hex);return[c.r,c.g,c.b]}
+ 
+ export function buildIslandBody(plan,field,palette,lifeTreeRecipe=null){
+-  const {c0,NA,edgeR,seed}=plan,NR=plan.graph?128:44,NU=30,rows=NR+1+NU;
++  const {c0,NA,edgeR,seed}=plan,NR=plan.recipe.islandLayout?.meshResolution?.radial||(plan.graph?128:44),NU=30,rows=NR+1+NU;
+   const pos=new Float32Array(rows*NA*3),col=new Float32Array(rows*NA*3);
+   const grass=colorArray(palette.grass),grass2=colorArray(palette.grass2||palette.grass),hill=colorArray(palette.hill||palette.grass),
+     paved=colorArray(palette.paved),sand=colorArray(palette.sand),lip=colorArray(palette.lip||palette.rock),rock=colorArray(palette.rock||palette.lip);
+   const zone=plan.recipe.islandLayout?.paletteZone,zoneGrass=zone?colorArray(zone.grass):null;
+-  const R=rng(seed*31+7),depth=13+R()*4,edgeY=new Float32Array(NA);
++  const R=rng(seed*31+7),depth=plan.recipe.islandLayout?.depth||13+R()*4,edgeY=new Float32Array(NA);
+   let vi=0;
+   const put=(x,y,z,c)=>{pos.set([x,y,z],vi*3);col.set(c,vi*3);vi++};
+   for(let i=0;i<=NR;i++){
+@@ -103,6 +104,15 @@ export function buildWaterGroup(plan,field,palette){
+       const L=C.waterAt?C.pts[end]:C.lip.p,dv=C.lip.dir,y0=C.waterAt?C.waterAt(...L):field.heightAt(L[0],L[1])+.42,nx=-dv[1],nz=dv[0],fp=[],fi=[],N=32;
+       const curve=t=>[L[0]+dv[0]*((C.waterAt?0:.6)+3.8*t),y0-24*t*t,L[1]+dv[1]*((C.waterAt?0:.6)+3.8*t)];
+       for(let k=0;k<=N;k++){const t=k/N,p=curve(t),w=hw*(.85+.45*t);for(const [side,sd] of[-1,1].entries()){const off=verts.length-6+side*3;fp.push(p[0]+(C.waterAt?(verts[off]-L[0])*(1+.45*t):nx*sd*w),p[1],p[2]+(C.waterAt?(verts[off+2]-L[1])*(1+.45*t):nz*sd*w));}if(k){const v=(k-1)*2;fi.push(v,v+2,v+1,v+1,v+2,v+3)}}
++      if(plan.recipe.islandLayout?.waterProfile==='graded-v2'){
++        // Receiving seam of the same R2D flow: keep the creek lip and gravity arc,
++        // give its fall a closed rounded section and a narrowing end instead of a cut sheet.
++        fp.length=fi.length=0;const left=new THREE.Vector3().fromArray(verts,verts.length-6),right=new THREE.Vector3().fromArray(verts,verts.length-3),centre=left.clone().add(right).multiplyScalar(.5),side=right.clone().sub(left).normalize(),half=left.distanceTo(right)/2,drop=(plan.recipe.islandLayout.depth||16)+18,K=16;
++        for(let k=0;k<=N;k++){const t=k/N,flow=new THREE.Vector3(dv[0]*3.8,-2*drop*t,dv[1]*3.8).normalize(),normal=new THREE.Vector3().crossVectors(side,flow).normalize(),c=centre.clone().add(new THREE.Vector3(dv[0]*3.8*t,-drop*t*t,dv[1]*3.8*t)),taper=1-sstep(.55,1,t),width=half*(1-.65*sstep(0,.6,t))*taper,thickness=(.10+.36*Math.sin(Math.PI*t))*Math.sin(Math.min(1,t*12)*Math.PI/2)*taper;
++          for(let j=0;j<K;j++){const a=j/K*Math.PI*2,v=c.clone().addScaledVector(side,Math.cos(a)*width).addScaledVector(normal,Math.sin(a)*thickness);fp.push(v.x,v.y,v.z);if(k){const prev=(k-1)*K+j,next=(k-1)*K+(j+1)%K,now=k*K+j,after=k*K+(j+1)%K;fi.push(prev,now,next,next,now,after);}}
++        }
++        report.waterfallSection='closed-rounded-taper';report.waterfallDropM=drop;
++      }
+       const fg=new THREE.BufferGeometry();fg.setAttribute('position',new THREE.Float32BufferAttribute(fp,3));fg.setIndex(fi);fg.computeVertexNormals();
+       const fm=new THREE.Mesh(fg,mat);fm.name='R2D waterfall';group.add(fm);report.waterfall=true;
+     }
+@@ -122,15 +132,18 @@ function instanced(name,geometry,points,material,field,seed,scale=1){
+ export function buildNatureGroup(plan,field,palette){
+   const group=new THREE.Group();group.name='R2D source-proven procedural nature';
+   const R=rng(plan.seed*101+5),all=[];
+-  const free=(x,z)=>field.maskAt(x,z)==='veg';
++  const free=(x,z)=>field.maskAt(x,z)==='veg'&&(plan.reservedCorridors||[]).every(c=>pointPolygonDistance([x,z],c.polygon)>4);
+   const scatter=(n,cx,cz,r0,r1,minD,test,tries=300)=>{const out=[];for(let k=0;k<tries&&out.length<n;k++){const a=R()*Math.PI*2,rr=r0+(r1-r0)*Math.sqrt(R()),x=cx+Math.cos(a)*rr,z=cz+Math.sin(a)*rr;if(!test(x,z)||[...out,...all].some(o=>Math.hypot(o[0]-x,o[1]-z)<minD))continue;out.push([x,z])}all.push(...out);return out};
+   const centres=plan.recipe.islandLayout?.groves||scatter(3,plan.c0[0],plan.c0[1],0,40,15,(x,z)=>free(x,z)&&-plan.sdf(x,z)>8,1200);
+   const trees=[],bushes=[],boulders=[];
+   const entry=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
+   // Preserve native P1 geometry; keep tall vegetation out of the entry/camera corridor.
+   const treeFree=(x,z)=>free(x,z)&&Math.hypot(x-entry.x,z-entry.z)>18;
+-  centres.forEach(c=>{trees.push(...scatter(plan.graph?5:2,c[0],c[1],0,8,4.2,treeFree));bushes.push(...scatter(2,c[0],c[1],3.5,7,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
+-  const edge=scatter(5,plan.c0[0],plan.c0[1],0,60,5,(x,z)=>{const e=-plan.sdf(x,z);return field.maskAt(x,z)==='edge'&&e>.8&&e<2.6},1500);
++  centres.forEach(c=>{if(plan.recipe.islandLayout?.waterProfile==='graded-v2'){
++    // Authored grove silhouette: two staggered arcs with a walkable clearing, no island-wide scatter.
++    for(const [dx,dz] of [[-9,-5],[-3,-9],[4,-8],[10,-3],[-11,3],[-7,10],[1,12],[9,7]]){const x=c[0]+dx,z=c[1]+dz;if(treeFree(x,z))trees.push([x,z]);}
++   }else trees.push(...scatter(plan.graph?5:2,c[0],c[1],0,8,4.2,treeFree));bushes.push(...scatter(plan.graph?5:2,c[0],c[1],3.5,11,2.2,free));boulders.push(...scatter(1,c[0],c[1],5,8,2,free))});
++  const edge=scatter(5,plan.c0[0],plan.c0[1],0,60,5,(x,z)=>{const e=-plan.sdf(x,z);return field.maskAt(x,z)==='edge'&&e>.8&&e<2.6&&(plan.reservedCorridors||[]).every(c=>pointPolygonDistance([x,z],c.polygon)>4)},1500);
+   const detailAnchor=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]};
+   const detail=scatter(4,detailAnchor.x,detailAnchor.z,7,13,2.5,free,600);
+   const mats={
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-mvp.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-mvp.v1.js
+index 24b8c53..35f5f16 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-mvp.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-mvp.v1.js
+@@ -10,7 +10,7 @@ import {BILLBOARD_SOURCE} from './wb2-billboards.v1.js';
+ import {createTaxiDrive,TAXI_SOURCE} from './wb2-taxi.v1.js';
+ import {EncounterBeatBus,createEncounterHost} from '../../../resident_atlas/life/encounter-bus.js';
+ import {createSongTransport,loadPlaylist} from '../../_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/song-transport.js';
+-import {createSharedTheatreCurtain} from '../../_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs';
++import {createApprovedCurtain} from './wb2-curtain.v1.js';
+ import '../../../../overworld/overworld-v13_2026-08-12/overworld-v13/chatter-phrases.js';
+ import '../../../../overworld/overworld-v13_2026-08-12/overworld-v13/chatter-2d.js';
+ import '../../../../overworld/overworld-v13_2026-08-12/overworld-v13/bubble-layout.js';
+@@ -31,10 +31,10 @@ const TEXT={
+ function download(name,value){const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+ export async function createMvp(A){
+  const journey=createJourney(()=>A.doc),cards=createMvpCards(),bus=new EncounterBeatBus();
+- let curtain=null,plaque=null,ready=false,entered=false,introOpening=false,drive=null,music=null,transport=null,playlist=null,played=0,previousSongTime=0,activeUnit=null,selectedTarget=null,offerChoice=null,heldCard=null,almanacOpen=false,dismissed=false,evidenceFrames=0,legendKey=null;
++ let curtain=null,ready=false,entered=false,introOpening=false,drive=null,music=null,transport=null,playlist=null,played=0,previousSongTime=0,activeUnit=null,selectedTarget=null,offerChoice=null,heldCard=null,almanacOpen=false,dismissed=false,evidenceFrames=0,legendKey=null;
+  const stage=$('stage'),bubbleHost=document.createElement('div');bubbleHost.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:8';bubbleHost.cam={x:0,y:0};bubbleHost.zoomEff=()=>1;stage.append(bubbleHost);
+  const phases=new Set(),phaseTotal=10;let enterButton=null,actorButton=null;
+- function report(id){phases.add(id);if(plaque){const c=plaque.userData.canvas,x=c.getContext('2d');x.clearRect(0,0,c.width,c.height);x.fillStyle='#f0dcc0';x.fillRect(0,0,c.width,c.height);x.fillStyle='#3c2417';x.textAlign='center';x.font='bold 88px serif';x.fillText('BLÖDSINN!',512,109);x.font='26px monospace';x.fillText(ready?'ENTER':('Welt wird geladen · '+Math.min(phases.size,phaseTotal)+' / '+phaseTotal),512,171);plaque.material.map.needsUpdate=true}document.body.dataset.mvpLoader=JSON.stringify({completed:phases.size,total:phaseTotal,ready,steps:[...phases]})}
++ function report(id){phases.add(id);curtain?.setProgress(Math.min(phases.size,phaseTotal)/phaseTotal);curtain?.setHostFacts({loadingReady:ready,selectedActorReady:ready,revealAllowed:ready});document.body.dataset.mvpLoader=JSON.stringify({completed:phases.size,total:phaseTotal,ready,steps:[...phases]})}
+  const host=createEncounterHost({bus,waitForDecision:true,durations:{approach:.2,greet:.25,offer:.25,react:.1,accept:.2,decline:.2,leave:.25},offerProvider:e=>journey.offer(e.targetId)});
+  function unitFor(id){const root=targetRoot(id);const u={hp:1,x:0,y:0,unit:{bodyH:0},id,root};projectUnit(u);return u}
+  function targetRoot(id){return A.sceneObjects.get(id==='dystopia.orc'?'dystopia.band':id)}
+@@ -65,7 +65,7 @@ export async function createMvp(A){
+  const importer=document.createElement('input');importer.type='file';importer.accept='.json,application/json';importer.hidden=true;importer.onchange=async()=>{try{const b=JSON.parse(await importer.files[0].text());if(drive?.active)drive.exit();if(b.schema==='kfb.player-journey-bundle/1'){if(b.player?.actorProfileId!==A.play.evidence().actorProfileId)await A.play.setActor(b.player.actorProfileId);journey.applyBundle(b);A.play.readDoc(A.doc);persist();A.setPlay(true)}else if(b.schema==='kfb.authoring-workspace-bundle/1'){A.validateSceneDocument(b.scene);await A.applySceneDocument(b.scene);persist();A.setPlay(true)}else throw Error('Unbekanntes Speicherformat');document.body.dataset.mvpImport='PASS';}catch(e){fail(e)}finally{importer.value=''}};stage.append(importer);
+  function exportJourney(){if(drive?.active)drive.exit();A.saveDoc();download('KFB_PlayerJourney.json',journey.exportBundle())}
+  const API={journey,cards,report,get ready(){return ready},get entered(){return entered},get transport(){return transport},get drive(){return drive},get encounter(){return host.current},interact,choose,openAlmanac,exportJourney,
+-  async prepareIntro(){curtain=await createSharedTheatreCurtain({renderer:A.renderer});if(!A.camera.parent)A.scene.add(A.camera);A.camera.add(curtain.scene);curtain.scene.position.set(0,0,-4.8);const c=document.createElement('canvas');c.width=1024;c.height=208;plaque=new THREE.Mesh(new THREE.BoxGeometry(4.3,.88,.22),new THREE.MeshStandardMaterial({map:new THREE.CanvasTexture(c),roughness:1}));plaque.userData.canvas=c;plaque.position.set(0,-.1,-4.5);A.camera.add(plaque);report('curtain');enterButton=button('mvpEnter','Welt wird geladen',()=>API.enter(),stage);enterButton.disabled=true;actorButton=button('mvpActorChoice','Figur: FrizzleBob',()=>API.selectActor(),stage);actorButton.disabled=true;actorButton.style.cssText='position:absolute;left:calc(50% - 94px);top:70%;z-index:12';enterButton.style.cssText='position:absolute;left:calc(50% - 70px);top:61%;z-index:12;padding:12px 32px;font:700 18px serif';document.body.dataset.mvpPhase='LOADING';},
++  async prepareIntro(){curtain=await createApprovedCurtain({renderer:A.renderer});if(!A.camera.parent)A.scene.add(A.camera);A.camera.add(curtain.scene);curtain.scene.position.set(0,0,-4.8);report('curtain');enterButton=button('mvpEnter','Welt wird geladen',()=>API.enter(),stage);enterButton.disabled=true;actorButton=button('mvpActorChoice','Figur: FrizzleBob',()=>API.selectActor(),stage);actorButton.disabled=true;actorButton.style.cssText='position:absolute;left:calc(50% - 94px);top:70%;z-index:12';enterButton.style.cssText='position:absolute;left:calc(50% - 70px);top:61%;z-index:12;padding:12px 32px;font:700 18px serif';document.body.dataset.mvpPhase='LOADING';},
+   async mount(){
+    A.setPlay(false);report('world');const arch=A.world.archipelago,records=A.world.buildingSceneRecords();
+    for(const def of RESIDENT_SETS){const a=arch.anchorMap.get(def.anchor);records.push({id:def.id,name:def.title,kind:'resident',residentSetId:def.id,source:RESIDENT_SOURCE(def.id),transform:{position:[a.position[0],null,a.position[2]],rotation:[0,a.heading,0],scale:[1,1,1]}})}
+@@ -82,8 +82,8 @@ export async function createMvp(A){
+    $('addActor').hidden=true;$('addProp').hidden=true;$('wiEdit').textContent='Bauen';$('wiPlay').childNodes[0].textContent='Spielen';$('wiHud').style.background='var(--panel)';$('wiHud').style.border='1px solid var(--line)';$('wiHud').style.borderRadius='7px';$('tabDoc').textContent='Szene';$('tabTerrain').textContent='Gelände';$('tabLook').textContent='Aussehen';$('save').textContent='Welt sichern';$('reload').textContent='Gesicherte Welt laden';API.studio.pane.append($('saveGrp'));document.querySelector('.brand').textContent='KFB World Studio';ready=true;actorButton.disabled=false;actorButton.textContent='Figur: '+(A.play.evidence().actorProfileId==='FrizzleBob_v5b'?'FrizzleBob':'Mannequin');report('interaction');enterButton.textContent='ENTER';enterButton.disabled=false;document.body.dataset.mvpPhase='READY_BEHIND_CURTAIN';A.setPlay(false);
+   },
+   async selectActor(){if(!ready||entered)return;const next=A.play.evidence().actorProfileId==='FrizzleBob_v5b'?'Mannequin_Medium':'FrizzleBob_v5b';await A.play.setActor(next);framePlayer();A.play.writeDoc(A.doc);actorButton.textContent='Figur: '+(next==='FrizzleBob_v5b'?'FrizzleBob':'Mannequin');document.body.dataset.mvpActor=next;},
+-  enter(){if(!ready||entered)return false;introOpening=true;entered=true;music.start();enterButton.hidden=true;actorButton.hidden=true;curtain.setState('open');plaque.visible=false;document.body.dataset.mvpPhase='ENTERING';return true},
+-  update(dt){if(curtain){curtain.update(dt);if(introOpening&&curtain.open>=.999){curtain.dispose();curtain=null;A.camera.remove(plaque);A.setPlay(true);document.body.dataset.mvpPhase='PLAYING'}}if(!ready)return;const legend=$('wiHud'),n=entered&&A.play.on?nearest():null,nextLegend=drive?.active?'drive':entered&&A.play.on?(n?.id||'ground'):'off';if(nextLegend!==legendKey){legendKey=nextLegend;if(nextLegend==='off'){if(!A.play.on)legend.hidden=true;}else{legend.hidden=false;legend.replaceChildren();if(nextLegend==='drive')legend.textContent='W Gas · S bremsen · A/D lenken · I aussteigen';else{const k=document.createElement('kbd');k.textContent=n?'I':'W/S';legend.append(k,document.createTextNode(n?(n.id==='town.taxi'?'Taxi benutzen':'Mit '+LABELS[n.id]+' sprechen'):'laufen · A/D drehen · Shift sprinten · Tab bauen'));}}}drive?.update(dt);music?.update(dt);for(const root of A.sceneObjects.values())if(root.userData.billboardWorldId)root.userData.lifecycle?.update(dt,{camera:A.camera});host.update(dt);if(activeUnit){projectUnit(activeUnit);window.OW_BUBBLE.tick(bubbleHost)}if(transport){const t=transport.songTime(),delta=t-previousSongTime;played=transport.playedSeconds;previousSongTime=t;const performing=transport.playing&&transport.song.id==='demon-afro-strut',clock={time:performing?t:0,beatPos:performing?transport.beatPos():0,spb:60/103.18,level:performing?transport.level():0,bass:performing?transport.bass():0,dt,camera:A.camera,playing:performing};for(const kind of ['band','disco']){const root=A.sceneObjects.get('dystopia.'+kind);if(root&&((transport.playing&&transport.song.id==='demon-afro-strut')||root.position.distanceTo(A.play.position)<45))root.userData.lifecycle?.update(dt,clock)}}if(++evidenceFrames%15===0)document.body.dataset.mvpEvidence=JSON.stringify(API.evidence());},
++  enter(){if(!ready||entered)return false;introOpening=true;entered=true;music.start();enterButton.hidden=true;actorButton.hidden=true;curtain.setState('open');document.body.dataset.mvpPhase='ENTERING';return true},
++  update(dt){if(curtain){curtain.update(dt);if(introOpening&&curtain.open>=.999){curtain.dispose();curtain=null;A.setPlay(true);document.body.dataset.mvpPhase='PLAYING'}}if(!ready)return;const legend=$('wiHud'),n=entered&&A.play.on?nearest():null,nextLegend=drive?.active?'drive':entered&&A.play.on?(n?.id||'ground'):'off';if(nextLegend!==legendKey){legendKey=nextLegend;if(nextLegend==='off'){if(!A.play.on)legend.hidden=true;}else{legend.hidden=false;legend.replaceChildren();if(nextLegend==='drive')legend.textContent='W Gas · S bremsen · A/D lenken · I aussteigen';else{const k=document.createElement('kbd');k.textContent=n?'I':'W/S';legend.append(k,document.createTextNode(n?(n.id==='town.taxi'?'Taxi benutzen':'Mit '+LABELS[n.id]+' sprechen'):'laufen · A/D drehen · Shift sprinten · Tab bauen'));}}}drive?.update(dt);music?.update(dt);for(const root of A.sceneObjects.values())if(root.userData.billboardWorldId)root.userData.lifecycle?.update(dt,{camera:A.camera});host.update(dt);if(activeUnit){projectUnit(activeUnit);window.OW_BUBBLE.tick(bubbleHost)}if(transport){const t=transport.songTime(),delta=t-previousSongTime;played=transport.playedSeconds;previousSongTime=t;const performing=transport.playing&&transport.song.id==='demon-afro-strut',clock={time:performing?t:0,beatPos:performing?transport.beatPos():0,spb:60/103.18,level:performing?transport.level():0,bass:performing?transport.bass():0,dt,camera:A.camera,playing:performing};for(const kind of ['band','disco']){const root=A.sceneObjects.get('dystopia.'+kind);if(root&&((transport.playing&&transport.song.id==='demon-afro-strut')||root.position.distanceTo(A.play.position)<45))root.userData.lifecycle?.update(dt,clock)}}if(++evidenceFrames%15===0)document.body.dataset.mvpEvidence=JSON.stringify(API.evidence());},
+   evidence(){return{ready,entered,nearestInteraction:nearest(),selectedTarget,phase:document.body.dataset.mvpPhase,movementOwner:drive?.active?'J14 Drive':'WB2 Ground',residentSets:[...A.sceneObjects.values()].filter(r=>r.userData.lifecycle).map(r=>({id:r.userData.sceneObjectId,evidence:r.userData.lifecycle.evidence()})),cards:cards.evidence(),memory:deep(journey.memory()),audio:transport?{id:transport.song.id,state:transport.state,blobOk:transport.blobOk,songTime:transport.songTime(),playedSeconds:played,heardIntervals:transport.heardIntervals,playing:transport.playing}:null,drive:drive?.evidence(),musicalWorld:music?.evidence(),studio:API.studio?.evidence(),chatter:window.OW_CHATTER.report(),scenePlacements:[...A.sceneObjects.values()].filter(r=>r.userData.lifecycle).map(r=>({id:r.userData.sceneObjectId,position:r.position.toArray(),modelOffset:r.userData.model?.position.toArray(),groundY:A.world.groundAt(r.position.x,r.position.z,A.terrainHeightAt(r.position.x,r.position.z))})),sceneObjectCount:A.doc.objects.length};}
+  };
+  addEventListener('keydown',e=>{if(e.repeat||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName))return;if(e.code==='KeyI'){e.preventDefault();if(drive?.active)drive.exit();else interact()}if(e.code==='KeyY'&&entered){e.preventDefault();openAlmanac().catch(fail)}if(e.code==='Escape'){dismissed=true;music?.social(false);host.choose('decline');window.OW_BUBBLE.schliessen?.(bubbleHost);almanac.hidden=true;almanacOpen=false;if(entered&&!drive?.active)A.setPlay(true)}});
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-player.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-player.v1.js
+index 51fc680..cce9ee2 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-player.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-player.v1.js
+@@ -82,14 +82,14 @@ export async function makePlayer({scene,camera,dom,world,groundAt,hud}) {
+   const travel='../../../../travel/wip/travel_globe_wsa/';
+   const [{createCarpet},{createCameraRig},{createFlightControls},{createPlanarFlightFrame},{createWorldBuilderModeBridge},{createGroundFlightIntent}]=await Promise.all([
+     import(travel+'globe-v13/carpet.js'),import(travel+'globe-v13/camera-rig.js'),import(travel+'globe-v13/flight-controls.js'),import(travel+'globe-v13/planar-frame.js'),import(travel+'world-builder/runtime-mode.js'),import(travel+'world-builder/mode-intent.js')]);
+-  const frame=createPlanarFlightFrame({THREE,surface:world.surfaceAdapter,character:()=>ground.character,spawn:world.spawn}),carpet=createCarpet({THREE,globeRadius:1,seed:world.zone.seed,geometry:frame}),rig=createCameraRig(THREE,camera.aspect,{camera,geometry:frame}),flightControls=createFlightControls(dom);
++  const frame=createPlanarFlightFrame({THREE,surface:world.surfaceAdapter,character:()=>ground.character,spawn:world.spawn}),carpet=createCarpet({THREE,globeRadius:1,seed:world.zone.seed,geometry:frame,params:{schwebeMax:8}}),rig=createCameraRig(THREE,camera.aspect,{camera,geometry:frame}),flightControls=createFlightControls(dom);
+   const mobility=createWorldBuilderModeBridge({ground,carpet,rig,controls:flightControls,frame,physics:world.surfaceAdapter.physics,holder,present,worldId:world.docId,actorProfileId:()=>profile,onMode:mode=>{document.body.dataset.movementOwner=mode==='DRIVE'?'Joyride Drive':mode==='FLIGHT'?'Travel Flight':'WB2 Ground'}});
+   const intent=createGroundFlightIntent({onRequestFlight:()=>mobility.enterFlight()});ground.setSpaceIntent(e=>intent.noteGroundSpace(e));
+   const wrapper=Object.create(api);Object.defineProperty(wrapper,'on',{get:()=>mobility.active});
+   wrapper.attachDrive=next=>mobility.attachDrive(next);wrapper.requestDrive=()=>mobility.requestDrive();wrapper.exitDrive=()=>mobility.exitDrive();
+-  wrapper.update=dt=>mobility.update(dt);wrapper.setOn=on=>{intent.reset('play-edit');mobility.setOn(on)};
++  wrapper.update=dt=>{mobility.update(dt);if(hud){const mode=mobility.mode;hud.parentElement.hidden=!mobility.active;if(mode==='FLIGHT')hud.textContent='Flug · W/S Tempo · A/D Kurve · ↑/↓ Höhe · H Schweben · Shift Boost · ↓ langsam landen · Tab Bauen';else if(mode==='DRIVE')hud.textContent='Taxi · W Gas · S Bremse / Rückwärts · A/D Lenken · Shift Boost · I Aussteigen · Tab Bauen';else if(ground.on)hud.textContent='W/S Gehen · A/D Drehen · Q/E Seitwärts · Shift Sprint · Alt Langsam · Leertaste Sprung · 2× Leertaste Flug · I Taxi · Tab Bauen';}};wrapper.setOn=on=>{intent.reset('play-edit');mobility.setOn(on)};
+   wrapper.readDoc=doc=>{intent.reset('document');mobility.reset();api.readDoc(doc)};
+-  wrapper.evidence=()=>({...api.evidence(),mobility:mobility.evidence(),intent:intent.report()});
++  wrapper.evidence=()=>({...api.evidence(),mobility:mobility.evidence(),intent:intent.report(),flightProfile:{owner:'Travel Carpet',metresPerUnit:10,maxHoverOffsetM:80}});
+   wrapper.writeDoc=doc=>mobility.writeDoc(doc);wrapper.setActor=async next=>{const result=await api.setActor(next);mobility.afterActorChange();return result};
+   wrapper.dispose=()=>{mobility.dispose();api.dispose()};return wrapper;
+ }
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-source-evidence.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-source-evidence.v1.js
+index f163229..7e67322 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-source-evidence.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-source-evidence.v1.js
+@@ -45,6 +45,11 @@ export function createCandidateEvidence(A){
+   const sample=()=>{document.body.dataset.playerMotion=JSON.stringify(A.play?.evidence());const now=performance.now();if(new URLSearchParams(location.search).has('motion-proof')&&now-motionSampleAt>=50){motionSampleAt=now;const p=A.play?.evidence();if(p){motionTrace.push({t:now,position:p.position,speed:p.speed,motion:p.motion,clips:p.rows,camera:A.camera.position.toArray()});if(motionTrace.length>240)motionTrace.shift();document.body.dataset.motionTrace=JSON.stringify(motionTrace)}}residentIsolate?.update(Math.min(.05,(now-last)/1000));frameTimes.push(now-last);last=now;if(frameTimes.length>240)frameTimes.shift();if(frameTimes.length>=120&&++sampleFrames%30===0){const sorted=[...frameTimes].sort((a,b)=>a-b);document.body.dataset.candidateMetrics=JSON.stringify({build:window.__kfbBuild||'LOCAL_UNSEALED',frames:frameTimes.length,medianMs:sorted[Math.floor(sorted.length/2)],p95Ms:sorted[Math.floor(sorted.length*.95)],drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles,pixelRatio:A.renderer.getPixelRatio(),camera:A.camera.position.toArray()})}};
+   // Review-only capture: actual WB2 canvas, continuous frames, no scripted player/camera input.
+   if(new URLSearchParams(location.search).has('motion-proof')){
++    // Explicit review viewpoints use the existing Edit camera; never move the player or world.
++    for(const [i,[label,position,target]] of [['Island overview',[130,135,155],[-5,0,8]],['Town square',[-30,10,-54],[-3,3,-32]],['Town junction',[-64,25,-33],[-35,0,0]]].entries()){
++      const view=document.createElement('button');view.textContent=label;Object.assign(view.style,{position:'fixed',right:'14px',bottom:(14+i*28)+'px',zIndex:30});document.body.append(view);
++      view.onclick=()=>{A.setPlay(false);A.camera.position.set(...position);A.controls.target.set(...target);A.controls.update();view.blur();};
++    }
+     const capture=document.createElement('button');capture.textContent='Record 28 s';capture.setAttribute('aria-label','Record continuous 28 second proof');Object.assign(capture.style,{position:'fixed',left:'14px',bottom:'14px',zIndex:30});document.body.append(capture);
+     capture.onclick=()=>{
+       const type=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
+@@ -71,14 +76,16 @@ export function createCandidateEvidence(A){
+     if(actor){const api=await import('./wb2-player.v1.js'),root=await api.loadActorSource(worldId.slice(6)),source=api.PLAYER_SOURCES[worldId.slice(6)],clipName=new URLSearchParams(location.search).get('clip');let mixer=null,motionSource=null;
+       if(clipName){const pack=clipName==='Walking_Backwards'?'MovementAdvanced':'MovementBasic',path='media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_'+pack+'.glb',commit=api.PLAYER_SOURCES.Mannequin_Medium.commit,g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+commit+'/'+path);const clip=g.animations.find(c=>c.name===clipName);if(!clip)throw Error('Source clip unavailable '+clipName);const names=new Set();root.traverse(o=>names.add(o.name));const tracks=clip.tracks.filter(t=>{const n=t.name.slice(0,t.name.lastIndexOf('.'));if(names.has(n))return true;if(/^handslot[lr]$/.test(n))return false;throw Error('Source bone missing '+n)});mixer=new THREE.AnimationMixer(root);mixer.clipAction(new THREE.AnimationClip(clip.name,clip.duration,tracks)).play();motionSource={commit,path,clip:clip.name,duration:clip.duration,timeScale:1};}
+       residentIsolate={root,update(dt){mixer?.update(dt)},dispose(){mixer?.stopAllAction();mixer?.uncacheRoot(root);root.removeFromParent()},evidence:()=>({actor:source,motionSource})}}
+-    if(taxi){const api=await import('./wb2-taxi.v1.js'),root=await api.createTaxiModel();residentIsolate={root,update(){},dispose(){root.removeFromParent()},evidence:()=>api.TAXI_SOURCE}}
++    if(taxi){const api=await import('./wb2-taxi.v1.js'),root=await api.createTaxiModel(null,{original:variant==='original'});residentIsolate={root,update(){},dispose(){root.removeFromParent()},evidence:()=>api.TAXI_SOURCE}}
+     if(party){const api=await import('./wb2-party.v1.js');residentIsolate=await api.createPartySet(worldId.slice(6),{renderer:A.renderer,original:variant==='original'})}
+     if(card){const api=await import('./wb2-cards.v1.js'),owner=api.createMvpCards(),c=await owner.load(worldId.slice(5));residentIsolate={root:c.group,update(){},dispose:()=>{c.group.removeFromParent();owner.builder.dispose()},evidence:()=>owner.evidence()}}
+-    if(curtain){const api=await import('../../_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs');const c=await api.createSharedTheatreCurtain({renderer:A.renderer});residentIsolate={root:c.scene,update:dt=>c.update(dt),dispose:()=>c.dispose(),evidence:()=>c.snapshot()};c.scene.userData.sourceRecord={assetId:'KFB Theatre Curtain',packId:'KFB Theatre Curtain v2',source:{commit:'1df8edaeb11b695821f73c695b328b00fd85e42f',path:'tools/KFB-ToolBox/_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs',blobSha:null}};}
++    if(curtain)throw Error('Legacy Curtain forbidden: use approved Recovery r3 at 7ca4a36bfeae16dfbc0e0ba99427a4da1b1c2d3e; receiving renderer seam pending.');
++
+     if(resident){const api=await import('./wb2-residents.v1.js');residentIsolate=await api.createResidentSet(worldId.slice(9),{original:variant==='original'})}
+     const record=(resident||curtain||card||party||taxi||actor||billboard)?residentIsolate.root.userData.sourceRecord:procedural?{assetId:bush?'T3_BUSH':'P0B_TREE',packId:'KFB Environment P1',source:{commit:'1df8edaeb11b695821f73c695b328b00fd85e42f',blobSha:'e64ed265882b973235cef04251073840e0231e72',path:'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs'},lineage:bush?SOURCE_PROVENANCE.t3:SOURCE_PROVENANCE.p0b}:manifest.families[worldId][index];
+     const root=(resident||curtain||card||party||taxi||actor||billboard)?residentIsolate.root:procedural?new THREE.Mesh(bush?buildT3BushGeometry(1801,1):buildP0BTreeGeometry(),new THREE.MeshStandardMaterial({color:'#83b33d',roughness:1})):await loadRegistered(record);
+-    if(variant!=='original'&&!resident&&!procedural&&!curtain&&!card&&!party&&!taxi&&!actor&&!billboard)await adaptRegistered(root);
++    if(variant!=='original'&&!resident&&!procedural&&!curtain&&!card&&!party&&!taxi&&!actor&&!billboard){if(worldId==='world.joyride-town'){const {adaptJoyrideHouse}=await import('./joyride-town-presentation.v1.js');await adaptJoyrideHouse(root,manifest.families[worldId][0],loadRegistered);}else await adaptRegistered(root);}
++    if(worldId==='world.joyride-town')root.scale.setScalar(4.1);
+     if(procedural&&variant!=='original'&&bush)root.scale.setScalar(.28);
+     root.userData.sourceRecord=record;root.name='Registered source isolate · '+record.assetId;
+     isolate=root;A.scene.add(root);root.updateMatrixWorld(true);
+diff --git a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-taxi.v1.js b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-taxi.v1.js
+index af11ad7..57b135c 100644
+--- a/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-taxi.v1.js
++++ b/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/wb2-taxi.v1.js
+@@ -1,9 +1,10 @@
+ /* Native Taxi and J14 Drive consumer. Exclusive handoff with WB2 Ground, existing Track samples only. */
+ import * as THREE from 'three';
++import {clayContext,clayFamilyMaterial,seedClayGeometry} from './wb2-source-evidence.v1.js';
+ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+ import {makeFrame,createDriver,stepDriver,pose} from '../../_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/kfb-drive.k2b.js';
+ export const TAXI_SOURCE={commit:'64cbf1031392029f25110dd613247b32148aae42',path:'media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf',blobSha:'266c1113a22f85ee6851b5dab6a89fc51726f4f8'};
+-export async function createTaxiModel(profile=null){const g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+TAXI_SOURCE.commit+'/'+TAXI_SOURCE.path.split('/').map(encodeURIComponent).join('/'));const root=g.scene;root.name='KayKit Taxi';if(profile==='joyride-j06'){const config=await fetch(new URL('../../_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/joyride.j06.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Joyride vehicle profile missing');return r.json()});const native=new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3());root.scale.multiplyScalar(config.vehicles.len/native.z);root.userData.vehicleProfile={owner:'Joyride J06',lengthM:config.vehicles.len};}const box=new THREE.Box3().setFromObject(root);root.position.y=-box.min.y;root.traverse(o=>{if(o.isMesh)o.castShadow=o.receiveShadow=true});root.userData.sourceRecord={assetId:'car_taxi.gltf',packId:'KayKit City Builder Bits',source:TAXI_SOURCE};return root;}
++export async function createTaxiModel(profile=null,{original=false}={}){const g=await new GLTFLoader().loadAsync('https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+TAXI_SOURCE.commit+'/'+TAXI_SOURCE.path.split('/').map(encodeURIComponent).join('/'));const root=g.scene;root.name='KayKit Taxi';if(profile==='joyride-j06'){const config=await fetch(new URL('../../_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-drive/joyride.j06.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Joyride vehicle profile missing');return r.json()});const native=new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3());root.scale.multiplyScalar(config.vehicles.len/native.z);root.userData.vehicleProfile={owner:'Joyride J06',lengthM:config.vehicles.len};}const box=new THREE.Box3().setFromObject(root);root.position.y=-box.min.y;const U=original?null:await clayContext();let seed=91;root.traverse(o=>{if(o.isMesh){o.castShadow=o.receiveShadow=true;if(!U)return;o.geometry=seedClayGeometry(o.geometry.clone(),seed++);const materials=(Array.isArray(o.material)?o.material:[o.material]).map(src=>clayFamilyMaterial(U,src,'vehicle'));o.material=materials.length===1?materials[0]:materials;}});root.userData.sourceRecord={assetId:'car_taxi.gltf',packId:'KayKit City Builder Bits',source:TAXI_SOURCE};return root;}
+ function uniformFrame(samples,closed=false){
+   const list=[];let total=0;for(const q of samples){if(list.length){const d=Math.hypot(...q.p.map((v,i)=>v-list.at(-1).p[i]));if(d<.001)continue;total+=d}list.push({...q,s:total})}
+   if(list.length<2)throw Error('Track route has no samples');const n=Math.ceil(total/.5),ds=total/n,out=[];let j=0;
+diff --git a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/road-graph.test.mjs b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/road-graph.test.mjs
+index f0284ad..39b7d63 100644
+--- a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/road-graph.test.mjs
++++ b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/tests/road-graph.test.mjs
+@@ -5,7 +5,20 @@ import {islandRoadRecipe} from '../../procedural-test-world-01/island-road-recip
+ import {makeIslandCore} from '../../procedural-test-world-01/r2d-island-core.v1.js';
+ import {islandRecipe,validateIslandRecipe} from '../island-document.v1.mjs';
+ test('native roundabout and connected coastal route pass Track Core geometry gates',()=>{const r=islandRoadRecipe(TC),g=TC.compileGraph(r),c=TC.runGraphChecks(g);assert.equal(c.pass,true,JSON.stringify(c));assert.equal(g.nodes.length,1);assert.equal(g.nodes[0].kind,'roundabout');assert.ok(c.results.find(r=>r.id.startsWith('node_clear')).pass);});
+-test('closed drive traversal preserves native graph seams and an upright orthonormal frame',()=>{const r=islandRoadRecipe(TC),g=TC.compileGraph(r),t=compileTraversal(g,r.traversal.parts,r.traversal);assert.deepEqual(t.samples[0].p,t.samples.at(-1).p);assert.ok(t.samples.at(-1).s>390);for(const q of t.samples){assert.ok(q.U[1]>.999);for(const a of [q.T,q.R,q.U])assert.ok(Math.abs(Math.hypot(...a)-1)<1e-6);assert.ok(Math.abs(q.T.reduce((s,x,i)=>s+x*q.R[i],0))<1e-6);}assert.throws(()=>compileTraversal(g,[{route:'coast.loop'},{node:'village.circle',path:'south>north'}],{closed:true}));});
++test('closed drive traversal preserves native graph seams and an upright orthonormal frame',()=>{const r=islandRoadRecipe(TC),g=TC.compileGraph(r),t=compileTraversal(g,r.traversal.parts,r.traversal);assert.deepEqual(t.samples[0].p,t.samples.at(-1).p);assert.ok(t.samples.at(-1).s>300);for(const q of t.samples){assert.ok(q.U[1]>.999);for(const a of [q.T,q.R,q.U])assert.ok(Math.abs(Math.hypot(...a)-1)<1e-6);assert.ok(Math.abs(q.T.reduce((s,x,i)=>s+x*q.R[i],0))<1e-6);}assert.throws(()=>compileTraversal(g,[{route:'coast.loop'},{node:'village.circle',path:'south>north'}],{closed:true}));});
+ test('fresh island replays complete graph, physical path and authored outline with stable segment identities',()=>{const route=islandRoadRecipe(TC),doc=islandRecipe({id:'road-proof',seed:3,shape:'frei',biome:'burg',route}),fresh=validateIslandRecipe(JSON.parse(JSON.stringify(doc))),a=makeIslandCore(3,TC,'frei',doc.route),b=makeIslandCore(3,TC,'frei',fresh.route);assert.deepEqual(a.plan.graph,b.plan.graph);assert.deepEqual(a.plan.stream,b.plan.stream);assert.deepEqual(a.plan.pads,b.plan.pads);for(const q of a.plan.stream.samples){assert.ok(a.plan.sdf(q.p[0],q.p[2])<-10);assert.equal(a.field.heightAt(q.p[0],q.p[2]),b.field.heightAt(q.p[0],q.p[2]));}});
+ 
+ test('authored river descends continuously through the crossing and stays above its carved bed',()=>{const core=makeIslandCore(3,TC,'frei',islandRoadRecipe(TC)),C=core.plan.creek;assert.ok(C?.cross);assert.equal(typeof C.waterAt,'function');let prior=Infinity;for(const p of C.pts.slice(0,C.lip.i+1)){const y=C.waterAt(...p);assert.ok(y<=prior+1e-8);assert.ok(core.field.heightAt(...p)<y-.2);prior=y;}assert.ok(C.waterAt(...C.cross)<core.plan.roadY-.5);});
++
++test('Town distributor reserves two unobstructed native island-link sockets',()=>{
++ const recipe=islandRoadRecipe(TC),core=makeIslandCore(3,TC,'frei',recipe),P=core.plan;
++ assert.equal(P.reservedCorridors.length,2);
++ for(const c of P.reservedCorridors){
++  const socket=P.graph.sockets[c.socket];assert.ok(c.width>=socket.width+2*TC.SIDE_EXTENT+4);
++  assert.ok(P.sdf(c.position[0]+c.direction[0]*c.length,c.position[2]+c.direction[2]*c.length)>=2);
++  // The real Track Core can continue each socket; no placeholder connection metadata.
++  const extended=TC.compileGraph({...recipe,routes:[...recipe.routes,{id:c.id,start:{socket:c.socket},pieces:[{type:'STRAIGHT',length:c.length}]}]});
++  assert.deepEqual(extended.routes[c.id].samples[0].p,socket.p);
++  assert.ok(TC.runGraphChecks(extended).pass);
++ }
++});
+diff --git a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
+index 4548c7e..efe0653 100644
+--- a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
++++ b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
+@@ -147,7 +147,7 @@ const HTML = `
+     </div>
+   </div>
+   <div id="facts"></div>
+-  <div id="wiHud" class="cl" hidden style="position:absolute;z-index:10;left:50%;bottom:12px;transform:translateX(-50%);flex-wrap:wrap;justify-content:center;gap:12px;padding:5px 12px;font-size:11px;color:var(--muted);max-width:calc(100% - 20px)"><span style="white-space:nowrap"><kbd>W</kbd><kbd>S</kbd> walk</span><span style="white-space:nowrap"><kbd>A</kbd><kbd>D</kbd> turn</span><span style="white-space:nowrap"><kbd>Q</kbd><kbd>E</kbd> strafe</span><span style="white-space:nowrap"><kbd>Shift</kbd> run</span><span style="white-space:nowrap"><kbd>Space</kbd> jump</span><span style="white-space:nowrap"><kbd>drag</kbd> look</span><span style="white-space:nowrap"><kbd>Tab</kbd> edit</span><b id="wiState" style="color:var(--text);font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace"></b></div>
++  <div id="wiHud" class="cl" hidden style="position:absolute;z-index:10;left:50%;bottom:12px;transform:translateX(-50%);padding:7px 12px;color:var(--text);width:max-content;max-width:calc(100% - 40px);text-align:center;background:rgba(26,23,17,.82);border-radius:8px;pointer-events:none"><span id="wiState" style="font:500 14px/1.5 system-ui,sans-serif"></span></div>
+   <div id="dock" hidden>
+   <div id="legend" hidden><span><kbd>drag</kbd>sculpt</span><span><kbd>wheel</kbd>radius</span><span><kbd>Space</kbd>hold to orbit</span><span><kbd>Esc</kbd>object</span></div>
+   <div class="cl">
+diff --git a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js
+index f855672..0fef3d6 100644
+--- a/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js
++++ b/tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js
+@@ -95,7 +95,7 @@ export function makePresentation({ scene, renderer, wb2Lights, wb2Background, wb
+       const U=await clouds.makeClayBase(THREE,renderer);Object.values(U).forEach(u=>{if(u.value?.isTexture)cloudTextures.add(u.value)});cloudMaterial=clouds.makeCloudMaterial(THREE,U);cloudMaterial.fog=false;
+       cloudField=clouds.createCloudField({THREE,family:cloudFamily,material:cloudMaterial,parent:scene});
+       cloudField.set([[-140,74,-95,50,0],[100,86,-140,64,1],[160,60,80,55,2],[-120,100,145,72,1]].map(([x,y,z,s,v])=>({p:[x,y,z],s,v,yaw:v*.7,sq:[1,1,1]})));
+-      cloudField.group.userData.sourceRecord={assetId:'SKY3 Jarlan cloud family',packId:'KFB SKY3',source:{commit:'9bc11ba0861ac5b41f8a4df3d76922bac1e23134',path:base+'cloud-family.v3.js',blobSha:donor.inventory.sha}};
++      cloudField.group.userData.sourceRecord={assetId:'SKY3 Jarlan cloud family',packId:'KFB SKY3',source:{commit:'9bc11ba0861ac5b41f8a4df3d76922bac1e23134',path:'media/3D_Assets/KFB/Clouds by Jarlan Perez - b3Kia9N2fS2.glb',blobSha:donor.inventory.sha}};
+       applyProfile();environment.update(0);cloudField.update(camera);
+     },
+     environmentProbe(){return environment?.probe()||null;},
+diff --git a/tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js b/tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
+index 6a057e7..676759d 100644
+--- a/tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
++++ b/tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
+@@ -1,4 +1,5 @@
+ import * as THREE from 'three';
++import {buildJoyrideJunction} from '../procedural-test-world-01/joyride-junction.v1.js';
+ import {buildJoyrideSidewalk} from '../procedural-test-world-01/joyride-sidewalk.v1.js';
+ import {islandRoadRecipe} from '../procedural-test-world-01/island-road-recipe.v1.mjs';
+ import {TAXI_SOURCE} from '../procedural-test-world-01/wb2-taxi.v1.js';
+@@ -101,9 +102,9 @@ function singleWorld({id,Z,TC,ST,R2C,core,island=null}){
+     },
+     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
+     async mount({scene,renderer,heightAt}){heightReader=heightAt;if(island){const M=await import('./island-surface-adapter.v1.mjs');surfaceAdapter=await M.createIslandSurface(Z.seed);}const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});let road;
+-      if(P.graph){const U=await clayContext(),items=Object.entries(P.graph.routes).map(([id,stream])=>({id,plan:{stream,sdf:P.sdf},field:F})),joy=await prepareJoyride({nodes:items,connections:[],routeSkinZones:true});clayU=U;roadCorridors=joy.corridors;road=new THREE.Group();for(const n of items)road.add(buildClayStrand(THREE,n.plan.stream,{U,palette:{...PALETTES.burg,roadStreet:'#566680',roadTrack:'#3d4a60'},...joy.contexts.get(n.id)}));road.add(buildJoyrideSidewalk(P.graph.routes['village.circle.village'],U));for(const node of P.graph.nodes){const paint=Object.values(P.graph.routes)[0].samples[0].paint;const native=ST.buildNode(THREE,{...node,anchor:null},paint,mat);node.deck.zones.forEach((z,i)=>{if(z.kind!=='island'&&z.kind!=='hatch'){native.children[i].material.color.set('#566680');for(let k=1;k<z.rows.length;k++)roadCorridors.push({id:node.id,kind:'junction',polygon:hull([...z.rows[k-1],...z.rows[k]].map(p=>[p[0],p[2]]))});}});native.traverse(o=>{if(o.isMesh&&!o.material?.polygonOffset){seedClayGeometry(o.geometry,37);o.material=clayFamilyMaterial(U,o.material,'road');}});road.add(native);}}
++      if(P.graph){const U=await clayContext(),items=Object.entries(P.graph.routes).map(([id,stream])=>({id,plan:{stream,sdf:P.sdf},field:F})),joy=await prepareJoyride({nodes:items,connections:[],routeSkinZones:true});clayU=U;roadCorridors=[...joy.corridors,...P.reservedCorridors];road=new THREE.Group();for(const n of items)road.add(buildClayStrand(THREE,n.plan.stream,{U,palette:{...PALETTES.burg,roadStreet:'#566680',roadTrack:'#3d4a60'},...joy.contexts.get(n.id)}));road.add(buildJoyrideSidewalk(P.graph.routes['village.circle.village'],U));for(const node of P.graph.nodes){const paint=Object.values(P.graph.routes)[0].samples[0].paint;const native=buildJoyrideJunction(THREE,ST,node,paint,{U,palette:{...PALETTES.burg,roadStreet:'#566680',roadTrack:'#3d4a60'}});for(const z of node.deck.zones){if(z.kind!=='island'&&z.kind!=='hatch')for(let k=1;k<z.rows.length;k++)roadCorridors.push({id:node.id,kind:'junction',polygon:hull([...z.rows[k-1],...z.rows[k]].map(p=>[p[0],p[2]]))});}road.add(native);}}
+       else road=ST.buildTrack(THREE,P.stream,mat);
+-      road.name='R4 Track Core + Joyride';road.traverse(o=>{if(o.isMesh){const paint=o.name.startsWith('M2 ·')||o.material?.polygonOffset;o.castShadow=!paint;o.receiveShadow=true;if(!paint)roadMeshes.push(o)}});group.add(road);if(!P.graph)roadMeshes=[road.children[0]];roadMesh=roadMeshes[0];if(surfaceAdapter)roadMeshes.forEach((mesh,i)=>surfaceAdapter.road(mesh,'route/'+i));const ray=new THREE.Raycaster(),placementField={...F,heightAt(x,z){ray.set(new THREE.Vector3(x,1000,z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects(roadMeshes,false)[0];return Math.max(F.heightAt(x,z),hit?.point.y??-Infinity);}};buildings=await mountR2DBuildings({group,plan:P,field:placementField,renderer,corridors:roadCorridors});scene.add(group)},
++      road.name='R4 Track Core + Joyride';road.traverse(o=>{if(o.isMesh){const paint=o.name.startsWith('M2 ·')||o.material?.polygonOffset;o.castShadow=!paint;o.receiveShadow=true;if(!paint&&!o.userData.contactExcluded)roadMeshes.push(o)}});group.add(road);if(!P.graph)roadMeshes=[road.children[0]];roadMesh=roadMeshes[0];if(surfaceAdapter)roadMeshes.forEach((mesh,i)=>surfaceAdapter.road(mesh,'route/'+i));const ray=new THREE.Raycaster(),placementField={...F,heightAt(x,z){ray.set(new THREE.Vector3(x,1000,z),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects(roadMeshes,false)[0];return Math.max(F.heightAt(x,z),hit?.point.y??-Infinity);}};buildings=await mountR2DBuildings({group,plan:P,field:placementField,renderer,corridors:roadCorridors});scene.add(group)},
+     dressTerrain(mesh){const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color'),C={veg:new THREE.Color(pal.grass),edge:new THREE.Color(pal.rock||pal.lip),walk:new THREE.Color(pal.paved),interact:new THREE.Color(pal.paved),building:new THREE.Color(pal.paved),water:new THREE.Color(pal.sand),under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal,clayU});mesh.visible=false;if(heightReader)presentation.refreshSurface(heightReader);surfaceAdapter?.ground(presentation.top)},
+     onTerrain(){if(heightReader)presentation?.refreshSurface(heightReader);if(presentation)surfaceAdapter?.ground(presentation.top);W.syncObjects(authoredRoots);return buildings?.report?.support||null},frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
+     stepPhysics(dt){surfaceAdapter?.physics.step(dt)},dispose(){surfaceAdapter?.dispose();presentation?.dispose();group.removeFromParent()},
+@@ -211,7 +212,7 @@ export async function prepare(id,options={}){
+     const arch=makeArchipelago(recipeSet,TC),joyride=await prepareJoyride(arch);
+     return archipelagoWorld({id,TC,ST,R2C,arch,joyride});
+   }
+-  const route=stored?.route||(options.island?.startsWith('r4-golden')?islandRoadRecipe(TC):null);
++  const route=stored?.route||(options.island?islandRoadRecipe(TC):null);
+   const core=makeIslandCore(Z.seed,TC,Z.shape,route);
+   const island=options.island?(stored||islandRecipe({id:options.island,seed:Z.seed,shape:Z.shape,biome:Z.biome,route:core.plan.recipe})):null;
+   return singleWorld({id,Z,TC,ST,R2C,core,island});

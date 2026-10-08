@@ -3,15 +3,15 @@
   "date": "2026-10-08",
   "product": "KFB Island MVP R4",
   "mode": "ONE_SHOT",
-  "state": "RUNNING_EARLY_GOLDEN",
+  "state": "STOPPED_BY_USER_R4_FAIL",
   "productVerdict": "NO MVP",
   "operationalVersion": 5,
   "owner": "WB2",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
   "pr": 348,
-  "baseHead": "9bc11ba0861ac5b41f8a4df3d76922bac1e23134",
-  "milestone": "early-golden-contact-presentation-1",
+  "baseHead": "e31005f5cca79d675d717709a38af63aaaf339e1",
+  "milestone": "r4-fail-preservation-return",
   "evidenceHeadRule": "Record and evidence belong to their containing Git commit.",
   "authority": "skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
   "required": [
@@ -77,9 +77,9 @@
     },
     {
       "id": "F-R07",
-      "status": "NOT_GREEN",
+      "status": "UNKNOWN",
       "evidence": [],
-      "unresolved": "WSA instruments the actual integrated product for the Ground\u2192Drive\u2192Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations."
+      "unresolved": "WSA instruments the actual integrated product for the Ground→Drive→Flight performance route; Georg runs it once on GEORG_PRIMARY_ACCEPTANCE_MACHINE in a visible focused browser with no meaningful parallel GPU load. Persist run metadata and performance JSON against the exact candidate head before applying LOD/instancing/terrain-Clay optimizations."
     },
     {
       "id": "F-R08",
@@ -133,7 +133,7 @@
       "id": "F-R16",
       "status": "NOT_GREEN",
       "evidence": [],
-      "unresolved": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60\u00b0 STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner."
+      "unresolved": "Build one simple island loop with POI/village street or sidewalk, bridge/water crossing and modest race/fun segment. Use a cleanly compiled Track-Core-supported junction/roundabout. Lab evidence says some 60° STANDARD-arm roundabouts refuse, T-junction is missing in v0.12, and plate fallback is defective; avoid rediscovery and resolve any genuinely required missing primitive in the Track Core owner."
     },
     {
       "id": "F-R17",
@@ -145,7 +145,7 @@
       "id": "F-R18",
       "status": "NOT_GREEN",
       "evidence": [],
-      "unresolved": "Preserve avatar/world pose, heading and safe support across Ground\u2194Drive and Ground\u2194Flight handoffs."
+      "unresolved": "Preserve avatar/world pose, heading and safe support across Ground↔Drive and Ground↔Flight handoffs."
     },
     {
       "id": "F-R19",
@@ -211,7 +211,7 @@
       "id": "F-R29",
       "status": "NOT_GREEN",
       "evidence": [],
-      "unresolved": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base\u2192river/village\u2192road-fit\u2192sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay."
+      "unresolved": "Serialize native ordered raise/lower strokes with validation and freeze the authoritative evaluation order relative to river/village and Track road-fit contributions. Reconcile the current base→river/village→road-fit→sculpt receiving sequence with Track design that excludes sculpt before claiming exact replay."
     },
     {
       "id": "F-R30",
@@ -269,9 +269,11 @@
     },
     {
       "id": "F-R39",
-      "status": "NOT_GREEN",
-      "evidence": [],
-      "unresolved": "Run before broad feature fan-out after Player + Phase-2B roads/Track + Surface/Joyride/Clay/Sky/landmark/water core exists. Independent critic first, then persist F-R39=PENDING with exact head/evidence and provide 4\u20136 screenshots + one continuous clip <=30s for Georg PASS/FAIL."
+      "status": "FAIL",
+      "evidence": [
+        "ISLAND_STORY_LAW_2026-10-08.md"
+      ],
+      "unresolved": "F-R39 FAIL; NO GOLDEN BASELINE; WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE; user stopped R4."
     },
     {
       "id": "F-R40",
@@ -301,12 +303,20 @@
       "id": "F-R44",
       "status": "NOT_GREEN",
       "evidence": [],
-      "unresolved": "Aggregate only actual accepted proofs from F-R01\u2013F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP."
+      "unresolved": "Aggregate only actual accepted proofs from F-R01–F-R43; no row may be inferred green. Final Return must include the complete 44-row REQUIRED table whether PASS or NO MVP."
     }
   ],
   "humanGates": {
     "F-R39": {
-      "status": "NOT_READY"
+      "status": "FAIL",
+      "goldenBaselineHead": null,
+      "reason": "User rejects current track/roundabout, Medieval asset choice and legacy curtain; latest binding Island Story Law exposes missing causal composition. Fresh candidate and independent evidence required.",
+      "reviewedSurface": "User-referenced local R4 composition; exact local working tree was uncommitted and has no unique reviewed Git head.",
+      "technicalBaseHead": "e31005f5cca79d675d717709a38af63aaaf339e1",
+      "evidence": [
+        "ISLAND_STORY_LAW_2026-10-08.md"
+      ],
+      "next": "STOP. Smallest future gate: one source-grounded 2D composition/story review before geometry; no automatic execution."
     },
     "F-R07": {
       "status": "UNKNOWN",
@@ -319,7 +329,7 @@
       "pass": 11,
       "quarantinedKnownFailure": 1
     },
-    "browserSameSeedIsolation": "A\u2192B\u2192fresh A canonical document identical; B empty",
+    "browserSameSeedIsolation": "A→B→fresh A canonical document identical; B empty",
     "browserSculpt": "overlapping Raise/Lower visible and fresh document exact",
     "surfaceWitness": {
       "file": "evidence/r4-foundation/surface-witness-sculpt.json",
@@ -331,7 +341,7 @@
     "objectReplay": "Normal editor Move/Rotate/Scale/Snap; exact document, transformed geometry hash/matrix and collider-ray evidence after fresh load.",
     "invalidImport": "Invalid schema keeps current state; unsupported source rebuild failure rolls back exact geometry/collider evidence."
   },
-  "nextInternalAction": "Phase 2 Player Golden; preserve tested Foundation. No broad feature fan-out before F-R39.",
+  "nextInternalAction": "STOP. No repaired One-Shot, geometry, assets, integration or fan-out. Await separate design-gate authorization.",
   "previousHandoff": {
     "schema": "kfb.one-shot-status/1",
     "date": "2026-10-07",
@@ -616,7 +626,7 @@
     ]
   },
   "earlyGolden": {
-    "status": "TECHNICAL_MILESTONE_NOT_VISUAL_PASS",
+    "status": "FAIL_STOPPED",
     "tests": {
       "pass": 25,
       "quarantinedTodo": 1
@@ -635,10 +645,32 @@
     ],
     "unresolved": [
       "Full normal-input river/shore/forest/Flight visual-physical review",
-      "Fresh independent Phase3 critic, final 4\u20136 screenshots and continuous clip",
+      "Fresh independent Phase3 critic, final 4–6 screenshots and continuous clip",
       "F-R39 human PASS/FAIL not yet requested",
       "F-R07 remains UNKNOWN until Georg target-device run",
-      "Environment/document persistence and later phases remain pending"
+      "Environment/document persistence and later phases remain pending",
+      "Binding Island Story Law: causal geography, routes, market, landmark and residents not proven by current scene.",
+      "Actual Joyride Town donor ensemble has not replaced the rejected Medieval composition.",
+      "Approved Curtain renderer compatibility remains unproven; no legacy substitution."
     ]
+  },
+  "storyLaw": {
+    "status": "RECOVERY_NOTE_ONLY_NOT_EVIDENCE",
+    "document": "ISLAND_STORY_LAW_2026-10-08.md",
+    "source": "Georg direct instruction 2026-10-08",
+    "designStatus": "WITHDRAWN_NOT_AUTHORIZED",
+    "priorComposition": "WITHDRAWN",
+    "matrixUnchanged": true,
+    "rule": "Technical completeness without readable micro-story is product FAIL; no second runtime owner."
+  },
+  "failureClass": "WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE",
+  "goldenBaseline": "NO GOLDEN BASELINE",
+  "currentReturn": "R4_FAIL_RETURN_2026-10-08.md",
+  "freeze": {
+    "runtimeHead": "e31005f5cca79d675d717709a38af63aaaf339e1",
+    "unacceptedWorkingArchive": "evidence/r4-fail-2026-10-08/unaccepted-working-state.tar.gz",
+    "archiveManifest": "evidence/r4-fail-2026-10-08/working-state-files.json",
+    "critic": "evidence/r4-fail-2026-10-08/phase3-critic/REPORT.md",
+    "publication": "Evidence and Return only; no runtime files changed by freeze commit, no Site/Live deployment."
   }
 }
