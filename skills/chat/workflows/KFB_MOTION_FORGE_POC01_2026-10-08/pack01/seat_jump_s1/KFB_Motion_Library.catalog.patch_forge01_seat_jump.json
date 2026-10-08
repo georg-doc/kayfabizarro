@@ -1,0 +1,507 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "forge01_seat_jump",
+ "date": "2026-10-09",
+ "issue": 381,
+ "apply": "ADDITIVE · NOT APPLIED · Georg approved the jumps (2026-10-08) and the stand-up rev c (2026-10-09, \"top! kann eingecheckt werden\")",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_forge01_seat_jump.glb",
+  "libs/Rig_Large/KFB_Motion_forge01_seat_jump.glb"
+ ],
+ "libraryFiles": {
+  "Rig_Medium": {
+   "path": "libs/Rig_Medium/KFB_Motion_forge01_seat_jump.glb",
+   "bytes": 230248,
+   "sha256": "1e09acafea688c4cf4ef599ca73898c45f10683a982aa7171b7fd01770ad30f6"
+  },
+  "Rig_Large": {
+   "path": "libs/Rig_Large/KFB_Motion_forge01_seat_jump.glb",
+   "bytes": 254704,
+   "sha256": "76295bc327e39cc3b7b7238678226a918d30817de87f9a1b6fda8d4e0f340b4a"
+  }
+ },
+ "space": "glTF, Y up, actor faces +Z, actor root at the origin; all positions in KayKit units (kit factor 1, multiply by the world FIG_SCALE)",
+ "skeleton": "identical to KFB_Motion_forge01.glb / KFB_Motion_forge01_table.glb (24 nodes, no meshes, no skins)",
+ "build": "pose dump from Blender -> scripts/kfb_pose_dump_to_glb.py (no glTF export in live Blender); round trip vs the authored poses: max 0.0003 cm (Medium), 0.05 cm (Large)",
+ "channels": "translation + rotation + scale on every bone; Rig_Medium seat clips also move upperleg.l/.r (KayKit Sit_Chair_* joint offsets)",
+ "attribution": {
+  "file": "ATTRIBUTION.md",
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · rigs, Sit_Chair_Down/StandUp, Jump_Start/Idle/Land, Dungeon stool + table_medium, Mystery Monthly Clown circus_podium"
+  ]
+ },
+ "clips": [
+  {
+   "id": "kfb_seat_sit_down_table_b",
+   "label_de": "An den Tisch setzen (Hocker)",
+   "group": "transition",
+   "frames": {
+    "Rig_Medium": 51,
+    "Rig_Large": 51
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; the root stays at the seated working spot (same as kfb_activity_table_*_b)",
+   "next": "kfb_activity_table_eat_b (frame 0 = the activity's first frame; any table activity works, the arms blend to its frame 0)",
+   "sequence": "KayKit Sit_Chair_Down (unmodified lower body; Rig_Large = Medium retargeted) at scoot distance behind the working spot -> arms blend 14 frames -> scoot in 12 frames with the stool",
+   "scoot": {
+    "Rig_Medium": 0.4323,
+    "Rig_Large": 1.0932
+   },
+   "seatContactFrame": {
+    "Rig_Medium": 25,
+    "Rig_Large": 25
+   },
+   "stool": {
+    "rule": "keyed by the runtime: stool offset along the actor axis, glTF -Z = away from the table, KayKit units of the rig; the stool stands back until seat contact, then slides in with the actor",
+    "offsetZ_perFrame": {
+     "Rig_Medium": [
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4323,
+      -0.4238,
+      -0.4003,
+      -0.3647,
+      -0.3202,
+      -0.2697,
+      -0.2161,
+      -0.1626,
+      -0.1121,
+      -0.0675,
+      -0.032,
+      -0.0085,
+      0.0
+     ],
+     "Rig_Large": [
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0932,
+      -1.0717,
+      -1.0122,
+      -0.9224,
+      -0.8098,
+      -0.682,
+      -0.5466,
+      -0.4112,
+      -0.2834,
+      -0.1708,
+      -0.081,
+      -0.0215,
+      0.0
+     ]
+    }
+   },
+   "furniture": "same as batch forge01_table (KFB_Motion_Library.catalog.patch_forge01_table.json)"
+  },
+  {
+   "id": "kfb_seat_stand_up_table_c",
+   "label_de": "Vom Tisch aufstehen, Beine schieben den Hocker zurück",
+   "group": "transition",
+   "frames": {
+    "Rig_Medium": 41,
+    "Rig_Large": 41
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; ends standing at the scoot distance behind the working spot (glTF -Z), one foot planted from touchdown",
+   "prev": "any kfb_activity_table_*_b (frame 0 of the clip = the activity's frame 0)",
+   "sequence": "6-frame lead-in to KayKit Sit_Chair_StandUp; no back travel while seated; back travel only once the hips leave the seat (first just enough to keep belly and knees out of the table slab, the rest during the hop-off); hands lifted over table and food by a hand path (IK) and dropped behind the edge; head tilted back up to 12° (Farmer) to clear the food; KayKit step of one foot kept, the other planted; 10-frame standing hold",
+   "scoot": {
+    "Rig_Medium": 0.4323,
+    "Rig_Large": 1.0931
+   },
+   "stool": {
+    "rule": "pushed by body vertices below the seat top (back of the thighs during the hop-off), then coasts with friction (velocity x0.70 per frame); the runtime keys it along the actor axis, glTF -Z = away from the table",
+    "offsetZ_perFrame": {
+     "Rig_Medium": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.0496,
+      -0.0952,
+      -0.1735,
+      -0.2975,
+      -0.3991,
+      -0.4703,
+      -0.5201,
+      -0.555,
+      -0.5794,
+      -0.5965,
+      -0.6085,
+      -0.6168,
+      -0.6227,
+      -0.6268,
+      -0.6297,
+      -0.6317,
+      -0.6331,
+      -0.6341,
+      -0.6348,
+      -0.6353,
+      -0.6356,
+      -0.6358,
+      -0.636,
+      -0.6361,
+      -0.6362,
+      -0.6363,
+      -0.6363,
+      -0.6363,
+      -0.6363,
+      -0.6364
+     ],
+     "Rig_Large": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.057,
+      -0.1413,
+      -0.2613,
+      -0.4065,
+      -0.7701,
+      -1.1365,
+      -1.3929,
+      -1.5724,
+      -1.6981,
+      -1.786,
+      -1.8476,
+      -1.8907,
+      -1.9209,
+      -1.942,
+      -1.9568,
+      -1.9671,
+      -1.9744,
+      -1.9794,
+      -1.983,
+      -1.9855,
+      -1.9872,
+      -1.9884,
+      -1.9893,
+      -1.9899,
+      -1.9903,
+      -1.9906,
+      -1.9908,
+      -1.9909,
+      -1.991,
+      -1.9911,
+      -1.9911,
+      -1.9912
+     ]
+    }
+   },
+   "supersedes": "kfb_seat_stand_up_table_b (scoot back seated first; Georg 2026-10-08: no push-off from the table)"
+  },
+  {
+   "id": "kfb_move_jump_up_stool_b",
+   "label_de": "Auf den Hocker springen",
+   "group": "locomotion",
+   "frames": {
+    "Rig_Medium": 66,
+    "Rig_Large": 73
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; glTF end offset per rig (x, y up, z forward)",
+   "rootEndOffset": {
+    "Rig_Medium": [
+     0.0,
+     0.5,
+     0.725
+    ],
+    "Rig_Large": [
+     0.0,
+     0.89,
+     1.2905
+    ]
+   },
+   "jumpHeight": {
+    "Rig_Medium": 0.5,
+    "Rig_Large": 0.89
+   },
+   "jumpDistance": {
+    "Rig_Medium": 0.725,
+    "Rig_Large": 1.2905
+   },
+   "takeoffFrame": {
+    "Rig_Medium": 10,
+    "Rig_Large": 12
+   },
+   "contactFrame": {
+    "Rig_Medium": 22,
+    "Rig_Large": 27
+   },
+   "airFrames": {
+    "Rig_Medium": 12,
+    "Rig_Large": 15
+   },
+   "prop": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/stool.gltf",
+    "scale": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "topY": {
+     "Rig_Medium": 0.5,
+     "Rig_Large": 0.89
+    },
+    "placement": "up: prop centre ahead of the actor so the clip ends on the top centre; down: the actor starts on the top centre and lands depth/2 + 0.75 x scale in front"
+   },
+   "timing": "KayKit Jump_Start / Jump_Idle / Jump_Land; cartoon gravity rev 2: anticipation hold at the deepest crouch (M 2 / L 4 frames), fast rise, 2-frame apex hang, fall ~2.3x harder than the rise, landing compression hold (M 1 / L 3); heavier rig = longer load, shorter air, slower recovery"
+  },
+  {
+   "id": "kfb_move_jump_up_podium_b",
+   "label_de": "Aufs Zirkuspodest springen",
+   "group": "locomotion",
+   "frames": {
+    "Rig_Medium": 67,
+    "Rig_Large": 76
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; glTF end offset per rig (x, y up, z forward)",
+   "rootEndOffset": {
+    "Rig_Medium": [
+     0.0,
+     1.0,
+     1.1
+    ],
+    "Rig_Large": [
+     0.0,
+     1.78,
+     1.958
+    ]
+   },
+   "jumpHeight": {
+    "Rig_Medium": 1.0,
+    "Rig_Large": 1.78
+   },
+   "jumpDistance": {
+    "Rig_Medium": 1.1,
+    "Rig_Large": 1.958
+   },
+   "takeoffFrame": {
+    "Rig_Medium": 10,
+    "Rig_Large": 12
+   },
+   "contactFrame": {
+    "Rig_Medium": 23,
+    "Rig_Large": 30
+   },
+   "airFrames": {
+    "Rig_Medium": 13,
+    "Rig_Large": 18
+   },
+   "prop": {
+    "asset": "KayKit_Mystery_Monthly_Series_4/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+    "scale": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "topY": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "placement": "up: prop centre ahead of the actor so the clip ends on the top centre; down: the actor starts on the top centre and lands depth/2 + 0.75 x scale in front"
+   },
+   "timing": "KayKit Jump_Start / Jump_Idle / Jump_Land; cartoon gravity rev 2: anticipation hold at the deepest crouch (M 2 / L 4 frames), fast rise, 2-frame apex hang, fall ~2.3x harder than the rise, landing compression hold (M 1 / L 3); heavier rig = longer load, shorter air, slower recovery"
+  },
+  {
+   "id": "kfb_move_jump_down_stool_b",
+   "label_de": "Vom Hocker springen",
+   "group": "locomotion",
+   "frames": {
+    "Rig_Medium": 46,
+    "Rig_Large": 54
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; glTF end offset per rig (x, y up, z forward)",
+   "rootEndOffset": {
+    "Rig_Medium": [
+     0.0,
+     -0.5,
+     1.125
+    ],
+    "Rig_Large": [
+     0.0,
+     -0.89,
+     2.0025
+    ]
+   },
+   "jumpHeight": {
+    "Rig_Medium": -0.5,
+    "Rig_Large": -0.89
+   },
+   "jumpDistance": {
+    "Rig_Medium": 1.125,
+    "Rig_Large": 2.0025
+   },
+   "takeoffFrame": {
+    "Rig_Medium": 10,
+    "Rig_Large": 12
+   },
+   "contactFrame": {
+    "Rig_Medium": 20,
+    "Rig_Large": 26
+   },
+   "airFrames": {
+    "Rig_Medium": 10,
+    "Rig_Large": 14
+   },
+   "prop": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/stool.gltf",
+    "scale": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "topY": {
+     "Rig_Medium": 0.5,
+     "Rig_Large": 0.89
+    },
+    "placement": "up: prop centre ahead of the actor so the clip ends on the top centre; down: the actor starts on the top centre and lands depth/2 + 0.75 x scale in front"
+   },
+   "timing": "KayKit Jump_Start / Jump_Idle / Jump_Land; cartoon gravity rev 2: anticipation hold at the deepest crouch (M 2 / L 4 frames), fast rise, 2-frame apex hang, fall ~2.3x harder than the rise, landing compression hold (M 1 / L 3); heavier rig = longer load, shorter air, slower recovery"
+  },
+  {
+   "id": "kfb_move_jump_down_podium_b",
+   "label_de": "Vom Zirkuspodest springen",
+   "group": "locomotion",
+   "frames": {
+    "Rig_Medium": 47,
+    "Rig_Large": 56
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "baked into the hips; glTF end offset per rig (x, y up, z forward)",
+   "rootEndOffset": {
+    "Rig_Medium": [
+     0.0,
+     -1.0,
+     1.5
+    ],
+    "Rig_Large": [
+     0.0,
+     -1.78,
+     2.67
+    ]
+   },
+   "jumpHeight": {
+    "Rig_Medium": -1.0,
+    "Rig_Large": -1.78
+   },
+   "jumpDistance": {
+    "Rig_Medium": 1.5,
+    "Rig_Large": 2.67
+   },
+   "takeoffFrame": {
+    "Rig_Medium": 10,
+    "Rig_Large": 12
+   },
+   "contactFrame": {
+    "Rig_Medium": 21,
+    "Rig_Large": 28
+   },
+   "airFrames": {
+    "Rig_Medium": 11,
+    "Rig_Large": 16
+   },
+   "prop": {
+    "asset": "KayKit_Mystery_Monthly_Series_4/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+    "scale": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "topY": {
+     "Rig_Medium": 1.0,
+     "Rig_Large": 1.78
+    },
+    "placement": "up: prop centre ahead of the actor so the clip ends on the top centre; down: the actor starts on the top centre and lands depth/2 + 0.75 x scale in front"
+   },
+   "timing": "KayKit Jump_Start / Jump_Idle / Jump_Land; cartoon gravity rev 2: anticipation hold at the deepest crouch (M 2 / L 4 frames), fast rise, 2-frame apex hang, fall ~2.3x harder than the rise, landing compression hold (M 1 / L 3); heavier rig = longer load, shorter air, slower recovery"
+  }
+ ]
+}
