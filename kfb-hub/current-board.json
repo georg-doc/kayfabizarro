@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.22",
-  "updatedAt": "2026-10-07T22:58:00+02:00",
+  "revision": "2026-10-08.1",
+  "updatedAt": "2026-10-08T01:58:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "KFB Island MVP R4 is the current Work/WSA product iteration. Frozen Matrix operationalVersion 5 remains the binding contract: 44 REQUIRED / 13 Strong / 7 Optional. Older Recovery/paused/runtime-routing text is historical where conflicting."
+    "note": "KFB Island MVP R4 is STOPPED. Product verdict: NO MVP · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE. F-R39 = FAIL · NO GOLDEN BASELINE. Technical salvage is preserved on PR #348, but the island composition is rejected. No R5 or repaired R4 is authorized."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -27,18 +27,20 @@
     "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "islandMvpInboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
     "islandMvpFinalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
-    "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md"
+    "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md",
+    "islandMvpR4Postmortem": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
+    "islandMvpR4FailReturn": "https://github.com/georg-doc/kayfabizarro/blob/0a8240b83d4fbfdb69cdba47b812e618cc5cd897/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md"
   },
   "p0": [
     {
       "id": "island-mvp-one-shot-ready",
-      "title": "Island MVP R4 · ONE_SHOT READY · NO MVP",
-      "summary": "Current product iteration = MVP R4. Binding contract = Frozen Matrix v5. Phase 2B roads before Early Golden; F-R39 visual gate + F-R07 target-device performance run; all 44 required or NO MVP.",
-      "badge": "READY FOR WORK/WSA · MVP R4",
-      "action": "MVP R4 ONE_SHOT Brief öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
-      "executor": "ChatGPT Work/WSA · single Integrator",
-      "nextExecutor": "ChatGPT Work/WSA on PR #348; no Coworker build in parallel"
+      "title": "Island MVP R4 · STOPPED · NO MVP",
+      "summary": "F-R39 FAIL · NO GOLDEN BASELINE. World-model/composition synthesis failed despite preserved 44-row contract. Technical salvage retained; island layout/semantic composition rejected. No repaired One-Shot or R5 authorized.",
+      "badge": "STOPPED · WORLD-MODEL FAIL",
+      "action": "R4 Postmortem öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
+      "executor": "None · R4 stopped",
+      "nextExecutor": "None until explicit Georg authorization after a cheap world-model/composition gate"
     },
     {
       "id": "issue-360-open-world-recovery-audit",
