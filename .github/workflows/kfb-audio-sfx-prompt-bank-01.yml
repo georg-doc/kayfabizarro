@@ -1,0 +1,24 @@
+name: KFB AUDIO SFX PROMPT BANK 01
+on:
+  push:
+    branches: [chatgpt-web/kfb-audio-sfx-prompt-bank-01-2026-10-04]
+  pull_request:
+    paths:
+      - 'tools/KFB-Audio-Site/SFX_PROMPT_BANK_01.html'
+      - 'tools/KFB-Audio-Site/sfx-prompt-bank.v1.json'
+      - 'tools/KFB-Audio-Site/validate-sfx-prompt-bank.mjs'
+      - 'skills/chat/workflows/KFB_AUDIO_SFX_PROMPT_BANK_01_2026-10-04/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-Audio-Site/SFX_PROMPT_BANK_01.html
+            tools/KFB-Audio-Site/sfx-prompt-bank.v1.json
+            tools/KFB-Audio-Site/validate-sfx-prompt-bank.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: node tools/KFB-Audio-Site/validate-sfx-prompt-bank.mjs
