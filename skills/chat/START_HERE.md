@@ -77,6 +77,23 @@ All older READY / runtime-paused / Recovery-Lead / previous One-Shot routing bel
 
 ---
 
+## ADDITIVE RESEARCH ROUTE · 2026-10-08 · KFB 3D SHADER / INSPECTOR DONORS (NON-RUNTIME)
+
+The new AI Game Art Academy discussion surfaced a separate **KFB production reuse research** lane. This is **not** the Academy implementation and **not** a new material/World owner.
+
+Existing owner/branch: KFB Surface / Material Language · `planning/hybrid-baked-clay-texture-architecture-2026-10-07`.
+
+New branch research records:
+- `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`
+- `skills/chat/research/KFB_3D_WORKFLOW_RESEARCH_TEST_REPORT_2026-10-08.md`
+- `skills/chat/research/KFB_3D_WORKFLOW_RESEARCH_RETURN_2026-10-08.md`
+
+Donors: `threlte/three-inspect`, `RhythrosaLabs/webgl-studio`, `takahirox/tsl-node-editor`, `Design0r/shaderpass`. Source inspected, **NOT VISUALLY ISOLATED / NOT TESTED / NOT ADOPTED**. Existing K1/H0 Golden, K2/v10, surface A–E material comparison and current World R4 STOP remain binding. The 3D AI Classroom is a UX donor for separate Academy planning only; its legacy backend is rejected for direct reuse.
+
+Next conditional gate: isolated existing-material-lab inspector proof; **no WB2 runtime writes, no new editor, no Stage/Live promotion** without an explicit Georg go-ahead.
+
+---
+
 ## CURRENT RECOVERY INDEX · 2026-10-07 · WEB-CHAT IDEATION
 
 For recovery of the 2026-10-07 design work spanning Asset Librarian/external 3D MCP, textures/materials, World Pulse, Cube/MacroCell, Build/Destroy/Repair, Paper/Facade, Threshold grammar and Oxijolt-derived Physics Acceptance/Test Architecture, read:
