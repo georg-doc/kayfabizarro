@@ -1,0 +1,198 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "forge01_table",
+ "date": "2026-10-08",
+ "issue": 376,
+ "apply": "ADDITIVE · NOT APPLIED · Georg approved the look on 2026-10-08 ('sieht jetzt gut aus') after the stool was pushed back",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_forge01_table.glb",
+  "libs/Rig_Large/KFB_Motion_forge01_table.glb"
+ ],
+ "space": "glTF, Y up, actor faces +Z, actor root at the origin; all positions in KayKit units (kit factor 1, multiply by the world FIG_SCALE)",
+ "furniture": {
+  "Rig_Medium": {
+   "scale": 1.0,
+   "stool": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/stool.gltf",
+    "scale": 1.0,
+    "centreXZ": [
+     0.0,
+     -0.624
+    ],
+    "seatTopY": 0.5,
+    "rule": "Resident Atlas sitOn: hips bone on the top centre of the stool box (offset baked into the clip's hips), then the stool is pushed back by stoolBack so the feet dangle in front of it",
+    "stoolBack": 0.227
+   },
+   "table": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/table_medium.gltf",
+    "scale": 1.0,
+    "yawDeg": 90,
+    "nearEdgeZ": -0.045,
+    "centreXZ": [
+     0.0,
+     0.955
+    ],
+    "topY": 1.0,
+    "note": "yaw 90 puts the low stretchers at the sides, away from the shins"
+   }
+  },
+  "Rig_Large": {
+   "scale": 1.78,
+   "stool": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/stool.gltf",
+    "scale": 1.78,
+    "centreXZ": [
+     0.0,
+     -1.327
+    ],
+    "seatTopY": 0.89,
+    "rule": "Resident Atlas sitOn: hips bone on the top centre of the stool box (offset baked into the clip's hips), then the stool is pushed back by stoolBack so the feet dangle in front of it",
+    "stoolBack": 0.308
+   },
+   "table": {
+    "asset": "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/table_medium.gltf",
+    "scale": 1.78,
+    "yawDeg": 90,
+    "nearEdgeZ": -0.198,
+    "centreXZ": [
+     0.0,
+     1.582
+    ],
+    "topY": 1.78,
+    "note": "yaw 90 puts the low stretchers at the sides, away from the shins"
+   }
+  }
+ },
+ "attribution": {
+  "file": "ATTRIBUTION.md",
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · rigs, Sit_Chair_Idle, Dungeon stool + table_medium, RPG Tools, Tiny Treats Pleasant Picnic",
+   "UniMate (L. Mou et al., 2026) · CC BY-NC 4.0 · arm motion of kfb_activity_table_eat_b and _read_b comes from kfb_action_kneel_eat_a"
+  ]
+ },
+ "clips": [
+  {
+   "id": "kfb_activity_table_eat_b",
+   "label_de": "Am Tisch essen (Hocker)",
+   "group": "activity",
+   "frames": 65,
+   "durationSec": 2.133,
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "lowerBody": "KayKit Sit_Chair_Idle (Rig_Medium_Simulation), unmodified; Rig_Large = Medium clip retargeted (no KayKit Large chair sit exists)",
+   "seatHeightY": {
+    "Rig_Medium": 0.5,
+    "Rig_Large": 0.89
+   },
+   "upperBody": "arms (upperarm subtrees) from kfb_action_kneel_eat_a frames 16-80, raised 22° (M) / 8° (L) to clear the table; right hand blended to the mouth by two-bone IK at the bite; head tilted 14°; tail cross-faded 10 frames into the head",
+   "props": {
+    "plate": {
+     "asset": "Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/plate_A.gltf",
+     "posXZ_perScale": [
+      -0.08,
+      0.36
+     ],
+     "onTableTop": true
+    },
+    "food": {
+     "asset": "Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/sandwich.gltf",
+     "onPlate": true,
+     "eatenAway": {
+      "bites": 4,
+      "perLoop": 1,
+      "pickFrame": 24,
+      "mouthFrame": 54,
+      "shrinkAxis": "actor X from the right-hand side",
+      "bitePiece": "1/4 of the sandwich length rides handslot.r from pickFrame and is scaled to 0 over the 4 frames before mouthFrame"
+     }
+    }
+   },
+   "provenance": {
+    "checkpointLicence": "CC BY-NC 4.0 (arm motion)"
+   }
+  },
+  {
+   "id": "kfb_activity_table_write_b",
+   "label_de": "Am Tisch schreiben (Hocker)",
+   "group": "activity",
+   "frames": 48,
+   "durationSec": 1.567,
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "lowerBody": "KayKit Sit_Chair_Idle (Rig_Medium_Simulation), unmodified; Rig_Large = Medium clip retargeted (no KayKit Large chair sit exists)",
+   "seatHeightY": {
+    "Rig_Medium": 0.5,
+    "Rig_Large": 0.89
+   },
+   "upperBody": "both hands placed on the sheet by two-bone IK (elbows out and up); right hand draws 2 small loops per cycle; head tilted 20°",
+   "props": {
+    "sheet": {
+     "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+     "scale": 0.5,
+     "posXZ_perScale": [
+      -0.02,
+      0.3
+     ],
+     "onTableTop": true
+    },
+    "pencil": {
+     "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+     "scale": 1.5,
+     "attach": "handslot.r",
+     "rotation": "identity"
+    }
+   },
+   "provenance": {
+    "checkpointLicence": "none (KayKit clip + IK)"
+   }
+  },
+  {
+   "id": "kfb_activity_table_read_b",
+   "label_de": "Am Tisch lesen (Hocker)",
+   "group": "activity",
+   "frames": 20,
+   "durationSec": 0.633,
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "lowerBody": "KayKit Sit_Chair_Idle (Rig_Medium_Simulation), unmodified; Rig_Large = Medium clip retargeted (no KayKit Large chair sit exists)",
+   "seatHeightY": {
+    "Rig_Medium": 0.5,
+    "Rig_Large": 0.89
+   },
+   "upperBody": "arms from kfb_action_kneel_eat_a frames 16-26 ping-pong, raised like eat; head tilted 14°",
+   "props": {
+    "book": {
+     "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+     "rotationXDeg_blender": -125,
+     "posXZ_perScale": [
+      -0.02,
+      0.3
+     ],
+     "onTableTop": true,
+     "note": "propped toward the reader"
+    }
+   },
+   "provenance": {
+    "checkpointLicence": "CC BY-NC 4.0 (arm motion)"
+   }
+  }
+ ]
+}
