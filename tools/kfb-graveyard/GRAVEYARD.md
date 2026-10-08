@@ -1,6 +1,14 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.11.0 · 2026-10-07** · 61 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.12.0 · 2026-10-08** · 62 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+
+## Neu · 2026-10-08
+
+**Grab 62 · Die Insel mit 44 Kästchen und ohne Geschichte** — Island MVP R4 schützte Featureumfang, Owner, Donors und Persistence, wiederholte aber trotzdem den bereits am 20.09. dokumentierten Micro-Storytelling-/Relations-Fail: technisch verbundene Topologie ohne überzeugenden Grund, fehlende Markt-/Alltagskausalität, falsche Town-Assetfamilie und Legacy-Curtain. R4 wurde mit **F-R39 FAIL · NO GOLDEN BASELINE · NO MVP** gestoppt. Vollständiges Postmortem: `skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md`.
+
+User-reported Impact: Die beiden vorherigen Fehlläufe hatten bereits ungefähr **200 EUR** gekostet; R4 verbrauchte zusätzlich ungefähr **60 % des Work-Wochennutzungsvolumens**. Das Postmortem dokumentiert außerdem den ausdrücklich berichteten psychologischen/creative burden: Vertrauensverlust, Wachsamkeitslast, Frust, Entscheidungserschöpfung und wiederholte Unterbrechung der eigentlichen kreativen Arbeit.
+
+Reißleine: **„Kann ein unvoreingenommener Mensch schon in der billigen Vorstufe erkennen, warum dieser Ort so gebaut ist und wie dort gelebt wird?“**
 
 ## Neu · 2026-10-07
 
