@@ -1,6 +1,6 @@
 # #369 Addendum 4 · Debate r2: talk rule engine + bigger clip pool
 
-- **Status:** FIRST PASS of the engine, waiting for Georg's review.
+- **Status:** FIRST PASS of the engine, plus r2b (outcome spread + look-at turns, requested by Georg on 2026-10-08).
 - **Why:** Georg's review of r1: it read as one hand-cut animation with no modular variation in conversation dynamics, escalation, debate depth or engagement. Talk is a non-repetitive activity, so long conversations need a far larger pool and a dynamic component.
 - **Writes:** additive to branch `blender/resident-performance-choreography-2026-10-07`.
 - **Boundaries:**
@@ -155,11 +155,11 @@ The overlay shows:
 
 | ID | Item |
 |---|---|
-| D4 | Outcome spread: profiles C and D always end the same way (patience/heckle numbers). Tune `patience`, `heckle.p` and `heatFromHeckle` so walk-off / applause / outburst all occur. |
+| D4 | Done in r2b (see below). |
 | D5 | The turn-away before a walk-off is a pivot on the spot, not a step turn. |
 | D6 | The seated-talk windows (29) have not been viewed one by one. Table-height hands from `meeting_a` may read odd. |
 | D7 | Medium speakers still read small next to Large (D1 from r1). |
-| D8 | Facing is fixed. Nobody turns to a heckler or to the person cutting in. |
+| D8 | Done in r2b for hecklers and walk-offs. In a two-person debate the residents already face each other, so an interrupt needs no turn. |
 | D9 | Content is not visible: debate depth and the argument itself need bubbles / calls / triplets. Body language carries engagement and heat only. |
 | D2 | Covered: r2 blends no longer jump; the r1 f373 step stays in r1. |
 
@@ -192,3 +192,57 @@ The overlay shows:
 - `previews/DEBATE_r2_INTAKE_gestures_OrcBrute.jpg`
 
 **Blend copy (Dropbox):** `blend/KFB369_debate_r2_talk_engine.blend`.
+
+## r2b · outcome spread + look-at turns
+
+Rules are now `kfb.talk.rules.v2`. Engine run files are `kfb.talk.run.v2`. A run file also stores `finalProfiles` and `looks`.
+
+**New rules:**
+
+- **Drawn in** (`drawIn`): a hostile move (taunt, rage, dismiss, question, contradict, insist) can pull an absent or polite listener up one engagement level, with probability p × (0.5 + fuse). That listener's patience refills to half the new level, and heat rises by 0.15.
+- **Provoking** (`provokeAbsent`): an engaged or dogged speaker facing an absent listener questions, taunts and dismisses more, and explains less.
+- **Speaker's Corner:**
+  - **Patience by stance** (`stancePatience`): pro ×1.2, neutral ×0.8, contra ×0.55.
+  - **Crowd cost per heat band** (`crowdCost`): how fast each stance loses patience as heat rises.
+  - **Answering a heckle** (`answerCost`): rage, dismiss, taunt or insist costs the heckler patience. When a heckler leaves, heat drops by 0.5.
+  - **Won over** (`sway`): a calm explain or agree can turn a listener pro.
+  - **Deserted** (`desertedAt`): a new outcome when at most one listener is left.
+
+**Seed sweep** (60 seeds per profile):
+
+| Profile | Outcomes |
+|---|---|
+| C, dogged vs absent | 44 walk-off · 12 drawn in then agree to disagree · 4 agree (r2: 39/39 walk-off) |
+| D, Speaker's Corner | 37 applause · 15 applause after the heckler leaves · 6 outburst · 2 deserted (r2: 39/39 applause) |
+
+**Look-at turns** (`kfb369_talk_scene.look_layer`):
+
+- The engine emits look events:
+  - on a heckle, the speaker and every listener turn to the heckler;
+  - when someone walks off, the speaker or the remaining resident watches them go.
+- The realizer adds a COMBINE track on top of the clips. It twists spine, chest and head (25 / 30 / 45 %) about their local Y axis. The sign is verified: +Y twist = +yaw.
+  - The feet stay planted.
+  - Moving targets are followed.
+  - The turn is clamped to ±75°, ramps in over 10 f and out over 12 f.
+  - On a target switch the turn is limited to 12° per key.
+
+**Runs (videos):**
+
+| Run | Seed | Length | Result |
+|---|---|---|---|
+| C1 absent walks off | 3 | 33.3 s | walk-off |
+| C2 drawn in, stalemate | 5 | 37.2 s | Farmer drawn in → polite; agree to disagree |
+| C3 drawn in, agree | 7 | 28.0 s | Farmer drawn in → polite; agree |
+| D1 heckler leaves, applause | 7 | 34.6 s | Goth Girl and the Orc walk off; applause |
+| D2 outburst | 12 | 29.4 s | Goth Girl walks off; the speaker's outburst |
+| D3 deserted | 2 | 39.7 s | Goth Girl, Orc and Lorekeeper walk off; deserted |
+
+**Checks:**
+
+- Hand to head ≥ 0.63 m.
+- Foot step per frame ≤ 26.7°, the largest at walk-off turns.
+- `previews/DEBATE_r2b_*.mp4` were spot-checked as 4-frame sheets per run.
+
+**Note on A and B:** the A and B run files and videos stay as r2. Rules v2 would change their seeds slightly (draw-in can now pull a polite listener in).
+
+**Blend copy (Dropbox):** `blend/KFB369_debate_r2b_outcomes_lookat.blend`.
