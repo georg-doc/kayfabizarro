@@ -2,7 +2,8 @@
 
 Status: CURRENT_TOOL
 Source: `tools/asset_registry/librarian/`
-Live: https://kayfabizarro.pages.dev/asset-librarian/
+Canonical private Site: https://kfb-asset-librarian.frizzlebob.chatgpt.site/
+Legacy mirror: https://kayfabizarro.pages.dev/asset-librarian/
 
 ## Purpose
 
@@ -18,6 +19,21 @@ Discover and hand off KFB assets without forcing every production chat to crawl 
 
 Prefer this current registry over legacy multi-megabyte `kfb-asset-library*.json` copies inside old bootstraps. Legacy files remain historical snapshots, not current asset SSOTs.
 
+## 2026-10-08 · External 3D Search R1
+
+Status: **IMPLEMENTATION PARTIAL · GEORG-GATED MAIN MERGE REMAINS**
+
+- private Site version 9 adds Search → Compare → Inspect Source → Add to Intake;
+- external results remain `EXTERNAL_DISCOVERY_CANDIDATE` and never merge into normal `search_assets` output;
+- new tools: `search_external_assets`, `get_external_asset`, `list_external_asset_providers`, `prepare_external_asset_intake`;
+- intake schema: `kfb.external-asset-intake/1`;
+- one CC0 GLB passed download/hash/source-isolation/3D-preview and bounded Registry registration proof on the review branch;
+- no browser auto-import and no second index/Site/owner;
+- Live Registry registration waits for Georg's optional main merge.
+
+Evidence:
+`tools/asset_registry/librarian/_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/IMPLEMENTATION_RETURN_2026-10-08.md`
+
 ## 2026-09-27 · Public-domain pool R3
 
 Status: **PUBLIC_VERIFIED**
@@ -28,4 +44,3 @@ Status: **PUBLIC_VERIFIED**
 - permanent route: `https://kayfabizarro.pages.dev/asset-librarian/`
 - public browser run `36289917378`: 4/4 public-domain search/detail/preview/provenance PASS, 0 console errors, 0 runtime exceptions
 - Registry mode remains read-only Live by default; no second index and no runtime license inference.
-

@@ -16,6 +16,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
+from external_assets import ExternalAssetClient, ExternalAssetError
 from query import (
     DEFAULT_PROFILES,
     DEFAULT_REGISTRY,
@@ -47,6 +48,7 @@ class LibrarianTools:
         manifest: dict | None = None,
         records: list[dict] | None = None,
         profiles: dict | None = None,
+        external_client: ExternalAssetClient | None = None,
     ) -> None:
         if manifest is None or records is None or profiles is None:
             root = (repo_root or find_repo_root()).resolve()
@@ -62,6 +64,7 @@ class LibrarianTools:
         self.records = [dict(record) for record in records]
         self.profiles = dict(profiles)
         self.by_id = {record["assetId"]: record for record in self.records}
+        self.external_client = external_client
 
     @classmethod
     def from_data(cls, manifest: dict, records: list[dict], profiles: dict) -> "LibrarianTools":
@@ -229,6 +232,71 @@ class LibrarianTools:
             asset["consumerKindAllowed"] = not allowed or asset.get("kind") in allowed
         return payload
 
+    def _external(self) -> ExternalAssetClient:
+        if self.external_client is None:
+            self.external_client = ExternalAssetClient()
+        return self.external_client
+
+    def search_external_assets(
+        self,
+        query: str,
+        *,
+        asset_type: str = "model",
+        providers: list[str] | None = None,
+        free: bool | None = None,
+        downloadable: bool | None = None,
+        limit: int = 24,
+        offset: int = 0,
+    ) -> dict:
+        """Search provider claims without mixing them into Registry results."""
+        try:
+            return self._external().search(
+                query,
+                asset_type=asset_type,
+                providers=providers,
+                free=free,
+                downloadable=downloadable,
+                limit=limit,
+                offset=offset,
+            )
+        except ExternalAssetError as exc:
+            raise LibrarianToolError(str(exc)) from exc
+
+    def get_external_asset(self, external_id: str) -> dict:
+        """Inspect one provider-qualified external candidate."""
+        try:
+            return self._external().asset(external_id)
+        except ExternalAssetError as exc:
+            raise LibrarianToolError(str(exc)) from exc
+
+    def list_external_asset_providers(self) -> dict:
+        """List current provider capabilities and provider license defaults."""
+        try:
+            return self._external().providers()
+        except ExternalAssetError as exc:
+            raise LibrarianToolError(str(exc)) from exc
+
+    def prepare_external_asset_intake(
+        self,
+        external_id: str,
+        *,
+        file_url: str | None = None,
+        measured_height: float | None = None,
+        scale_hint: str | None = None,
+        notes: str | None = None,
+    ) -> dict:
+        """Prepare metadata-only intake; never download or register remote bytes."""
+        try:
+            return self._external().prepare_intake(
+                external_id,
+                file_url=file_url,
+                measured_height=measured_height,
+                scale_hint=scale_hint,
+                notes=notes,
+            )
+        except ExternalAssetError as exc:
+            raise LibrarianToolError(str(exc)) from exc
+
     def tool_catalog(self) -> dict:
         """Return provider-neutral tool metadata for later MCP/OpenAI binding."""
         tools = [
@@ -265,6 +333,32 @@ class LibrarianTools:
                 "description": "Export selected candidates to an existing consumer using kfb.asset-handoff.v1.",
                 "input": {"consumer_id": "string", "asset_ids": "string[]"},
             },
+            {
+                "name": "search_external_assets",
+                "description": "Search external 3D providers. Results remain EXTERNAL_DISCOVERY_CANDIDATE and are not Registry assets.",
+                "input": {
+                    "query": "string",
+                    "asset_type": "model|texture|material|hdri|sprite|ui|audio|font|pack|other",
+                    "providers": "string[]|null",
+                    "free": "boolean|null",
+                    "downloadable": "boolean|null",
+                    "limit": "1..100",
+                    "offset": "integer>=0",
+                },
+            },
+            {"name": "get_external_asset", "description": "Inspect one external provider candidate and its provider-reported files.", "input": {"external_id": "provider:nativeId"}},
+            {"name": "list_external_asset_providers", "description": "List external providers and capabilities.", "input": {}},
+            {
+                "name": "prepare_external_asset_intake",
+                "description": "Prepare metadata-only kfb.external-asset-intake/1 for trusted downstream download and validation.",
+                "input": {
+                    "external_id": "provider:nativeId",
+                    "file_url": "string|null",
+                    "measured_height": "number|null",
+                    "scale_hint": "string|null",
+                    "notes": "string|null",
+                },
+            },
         ]
         return {
             "schema": TOOL_CATALOG_SCHEMA,
@@ -285,6 +379,10 @@ class LibrarianTools:
             "get_rig_facts": self.get_rig_facts,
             "find_same_skeleton": self.find_same_skeleton,
             "export_handoff": self.export_handoff,
+            "search_external_assets": self.search_external_assets,
+            "get_external_asset": self.get_external_asset,
+            "list_external_asset_providers": self.list_external_asset_providers,
+            "prepare_external_asset_intake": self.prepare_external_asset_intake,
         }
         method = methods.get(tool)
         if method is None:

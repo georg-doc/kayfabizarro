@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-07.19",
-  "updatedAt": "2026-10-07T17:08:00Z",
+  "revision": "2026-10-08.3",
+  "updatedAt": "2026-10-08T13:13:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "Final Island MVP ONE_SHOT hardened to operational matrix v3 after Coworker sanity review. No scope expansion: 44 REQUIRED unchanged. New guards: mandatory Georg Phase-3 visual PASS/FAIL gate, persisted Lab road/performance donor findings, strict target-GPU measurement conditions, High reasoning allowed for Phases 3/4, and full 44-row table required even on NO MVP."
+    "note": "R4 remains STOPPED / NO MVP. Current authorized next step is Four-Island Story Vision R1: source recovery is complete enough to brief Claude Design for two visual interpretations A/B of the same recovered story. No runtime or geometry work is authorized."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -27,18 +27,32 @@
     "islandMvpFrozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "islandMvpInboxDonorAudit": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md",
     "islandMvpFinalWorkBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
-    "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md"
+    "islandMvpLabDonorFindings": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md",
+    "islandMvpR4Postmortem": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
+    "islandMvpR4FailReturn": "https://github.com/georg-doc/kayfabizarro/blob/0a8240b83d4fbfdb69cdba47b812e618cc5cd897/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md",
+    "fourIslandStoryRecovery": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
+    "fourIslandStoryVisionBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md"
   },
   "p0": [
     {
+      "id": "four-island-story-vision-r1",
+      "title": "Four-Island Story Vision R1 · Claude Design",
+      "summary": "Recover and visualize the existing Town/Dystopia/Utopia/Protopia story. Two A/B visual-spatial interpretations of the same recovered canon; no new lore, no runtime, no geometry.",
+      "badge": "READY FOR CLAUDE DESIGN · VISUAL ONLY",
+      "action": "Story Vision Brief öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md",
+      "executor": "Claude Design · visual world-direction only",
+      "nextExecutor": "Georg chooses A / B / FAIL"
+    },
+    {
       "id": "island-mvp-one-shot-ready",
-      "title": "Island MVP · ONE_SHOT v3 READY · NO MVP",
-      "summary": "Final Work/WSA brief hardened after sanity review: mandatory Georg Early-Golden visual gate, Lab junction/performance facts, strict target-GPU rules, High reasoning permitted for visual/road phases, and complete 44-row final table. Scope remains 44 REQUIRED.",
-      "badge": "READY FOR WORK/WSA · v3",
-      "action": "Final ONE_SHOT Brief öffnen",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md",
-      "executor": "ChatGPT Work/WSA · single Integrator",
-      "nextExecutor": "ChatGPT Work/WSA on PR #348; no Coworker build in parallel"
+      "title": "Island MVP R4 · STOPPED · NO MVP",
+      "summary": "F-R39 FAIL · NO GOLDEN BASELINE. World-model/composition synthesis failed despite preserved 44-row contract. Technical salvage retained; island layout/semantic composition rejected. No repaired One-Shot or R5 authorized.",
+      "badge": "STOPPED · WORLD-MODEL FAIL",
+      "action": "R4 Postmortem öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
+      "executor": "None · R4 stopped",
+      "nextExecutor": "None until explicit Georg authorization after a cheap world-model/composition gate"
     },
     {
       "id": "issue-360-open-world-recovery-audit",
@@ -133,6 +147,16 @@
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Theatre%20Curtain%20Recovery%20Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md",
       "executor": "Claude Design · completed",
       "nextExecutor": "Receiving runtime integrator after Architecture Freeze / explicit seam"
+    },
+    {
+      "id": "kfb-3d-shader-inspector-donors-2026-10-08",
+      "title": "RESEARCH · KFB 3D Shader / Inspector Donors R1",
+      "summary": "Source-inspected add-on to existing Surface/Material Language A–E lab. three-inspect, WebGL Studio, TSL Node Editor, ShaderPass are donor candidates only; no runtime change or browser proof. Separate AI Game Art Academy remains a concept. R4 stays STOPPED.",
+      "badge": "RESEARCH · NOT INTEGRATED",
+      "action": "Read source audit and conditional isolated material-lab gate",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md",
+      "executor": "KFB Surface / Material Language · research",
+      "nextExecutor": "NONE · optional lab only after explicit authorization"
     }
   ],
   "briefings": [
@@ -379,6 +403,11 @@
       "title": "Island MVP · Final Work/WSA ONE_SHOT",
       "summary": "Binding execution wrapper for the operational Frozen Matrix v2. One Integrator, Early Golden before fan-out, full 44-row acceptance, no placeholders and no Receiving-Core stop.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/WORK_WSA_ISLAND_MVP_ONE_SHOT_FINAL_2026-10-07.md"
+    },
+    {
+      "title": "KFB Surface Lab · Shader / Inspector Research R1",
+      "summary": "External browser shader editor, node and inspector donors, evidence limits, security warnings and one isolated inspector proof. Existing K1/K2/Claybound owner retained. No runtime changes.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md"
     }
   ],
   "surfaceRoles": {

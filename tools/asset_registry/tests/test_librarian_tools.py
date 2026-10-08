@@ -172,6 +172,10 @@ class LibrarianToolsTests(unittest.TestCase):
                 "get_rig_facts",
                 "find_same_skeleton",
                 "export_handoff",
+                "search_external_assets",
+                "get_external_asset",
+                "list_external_asset_providers",
+                "prepare_external_asset_intake",
             ],
         )
 

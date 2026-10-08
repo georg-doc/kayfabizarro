@@ -403,7 +403,7 @@ This audit does not duplicate their ownership.
 ## 7 · One-Shot intake rule
 
 The final Work/WSA One-Shot brief must read:
-1. Frozen Matrix v2;
+1. current machine-readable Frozen Matrix **operationalVersion** (never a hard-coded historical v2/v3/v4);
 2. this Inbox Donor Audit;
 3. Integration Census;
 4. current WB2 Island Foundation/Return;

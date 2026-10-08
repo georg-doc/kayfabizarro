@@ -1,0 +1,109 @@
+name: Asset Pack Unpack
+
+on:
+  push:
+    branches:
+      - main
+      - "asset-unpack/**"
+    paths:
+      - "media/**/*.zip"
+      - "asset-unpack/requests/**"
+  workflow_dispatch:
+    inputs:
+      zip_path:
+        description: "Repository path to one ZIP below media/"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: asset-unpack-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Resolve new archives
+        id: archives
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          MANUAL_ZIP: ${{ inputs.zip_path }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            printf '%s\n' "$MANUAL_ZIP" > "$RUNNER_TEMP/asset-zips.txt"
+          elif [[ "$REF_NAME" == asset-unpack/* ]]; then
+            git diff --name-only --diff-filter=AM "$BEFORE_SHA" "$GITHUB_SHA" -- 'asset-unpack/requests/**' > "$RUNNER_TEMP/asset-requests.txt"
+            : > "$RUNNER_TEMP/asset-zips.txt"
+            while IFS= read -r request; do
+              [[ -n "$request" ]] || continue
+              python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["zipPath"])' "$request" >> "$RUNNER_TEMP/asset-zips.txt"
+              rm -- "$request"
+            done < "$RUNNER_TEMP/asset-requests.txt"
+          else
+            if [[ "$BEFORE_SHA" =~ ^0+$ ]]; then
+              git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" -- 'media/**/*.zip' > "$RUNNER_TEMP/asset-zips.txt"
+            else
+              git diff --name-only --diff-filter=AM "$BEFORE_SHA" "$GITHUB_SHA" -- 'media/**/*.zip' > "$RUNNER_TEMP/asset-zips.txt"
+            fi
+          fi
+          sed -i '/^[[:space:]]*$/d' "$RUNNER_TEMP/asset-zips.txt"
+          test -s "$RUNNER_TEMP/asset-zips.txt"
+          echo "count=$(wc -l < "$RUNNER_TEMP/asset-zips.txt" | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Safely unpack beside each ZIP
+        run: |
+          set -euo pipefail
+          while IFS= read -r archive; do
+            python3 tools/asset_registry/unpack_asset_pack.py "$archive" --remove-zip
+          done < "$RUNNER_TEMP/asset-zips.txt"
+
+      - name: Validate registry tests
+        run: python3 -m unittest tools.asset_registry.tests.test_unpack_asset_pack
+
+      - name: Publish unpack changes
+        id: branch
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ "$REF_NAME" == asset-unpack/* ]]; then
+            branch="$REF_NAME"
+          else
+            branch="asset-unpack/auto-${SOURCE_SHA:0:12}-${GITHUB_RUN_ID}"
+            git switch -c "$branch"
+          fi
+          git config user.name "kfb-asset-unpack[bot]"
+          git config user.email "kfb-asset-unpack[bot]@users.noreply.github.com"
+          git add --all media asset-unpack/requests
+          git commit -m "Unpack uploaded asset pack"
+          git push origin "HEAD:$branch"
+          echo "name=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Open review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.branch.outputs.name }}
+          COUNT: ${{ steps.archives.outputs.count }}
+        run: |
+          if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
+            exit 0
+          fi
+          if ! gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Unpack uploaded asset pack" \
+            --body "Safely unpacked $COUNT newly uploaded ZIP asset pack(s) beside their source path. The source ZIPs are removed in this change; every pack contains a checksummed _kfb-unpack-manifest.json."; then
+            echo "::warning::The unpack branch is ready, but repository policy blocked automatic PR creation. Open a PR from $BRANCH to main."
+          fi

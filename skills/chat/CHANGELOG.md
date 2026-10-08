@@ -1,3 +1,36 @@
+## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
+
+- Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.
+- Current visual Story Vision remains no-runtime/no-geometry; this does not start R5.
+- PR #379 Voice S1 is green: current `chatter-phrases.js` resolves to 166 stable source records and the committed adapter passes 13/13 tests.
+- Added `KFB_NEXT_RUNTIME_MVP_VOICE_ACCEPTANCE_2026-10-08.md` with minimum Dystopia/Utopia/Protopia speaker proof, existing Audio-owner ducking, fallback, silence and Social-Call acceptance.
+- Voice candidate actors: Demon Lord, Robot One, Farmer A; optional Lorekeeper.
+- Existing ElevenLabs Roger/Siren Social Calls remain curated optional assets behind `voiceProfile`; no hard-coded gender semantics.
+- No PR #357 promotion, no second AudioContext/Site, no merge or Live promotion.
+
+## 2026-10-08 · KFB 3D editor/shader/inspector research reused existing Surface Language owner
+
+- New **source-inspection-only** research branch documentation on `planning/hybrid-baked-clay-texture-architecture-2026-10-07`: `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`, corresponding TEST_REPORT, RETURN and additive local research changelog.
+- External candidates: `threlte/three-inspect` (dev-only material inspection), `RhythrosaLabs/webgl-studio` (GLSL + scene editor patterns), `takahirox/tsl-node-editor` (WebGPU/TSL research), `Design0r/shaderpass` (optional node graph).
+- Confirmed that `theringsofsaturn/3D-ai-school-threejs` is only a 3D tutor UX donor for the **separate** AI Game Art Academy: old backend is not a secure/user-persisted tutor service. Original KFB Cube Academy remains historical lesson/UI donor, not the default Academy runtime.
+- No second Clay/World/editor owner and no shader/geometry/runtime implementation; K1 Golden, K2 v10, existing A–E Surface Lab and Island R4 STOP intact. Browser/visual isolation: 0; build/performance tests: 0; Stage/Live: none.
+- Next conditional evidence gate: isolated `three-inspect` KFB Material Lab candidate, not an Open World repair.
+
+## 2026-10-08 · Island MVP R4 stopped · World-model / composition synthesis failure
+
+- R4 authoritative fail head: `0a8240b83d4fbfdb69cdba47b812e618cc5cd897` on Draft PR #348.
+- Product verdict: **NO MVP · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE**.
+- F-R39 = **FAIL**; **NO GOLDEN BASELINE**; no repaired One-Shot, no further fan-out, no merge/Live.
+- Full 44-row Return: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md`.
+- New Postmortem: `skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md`.
+- Critical finding: R4 repeated the already-documented 2026-09-20 Micro-Storytelling/relations failure (“Die Szene, die keine war”): technical connectivity and correct component categories did not create a causally readable place.
+- Visible blockers included semantically unjustified loop/dead-end topology, missing market/town/daily-life causality, wrong medieval Town asset family instead of intended Joyride Town language, and legacy Curtain v1 instead of the Georg-PASS Curtain Recovery r3.
+- Technical evidence is preserved as bounded salvage only: island identity/persistence/sculpt/surface, Ground/Flight handoffs, Drive collision, Track-Core graph/sockets and contact evidence.
+- User-reported direct impact: the two prior failed attempts had already cost roughly **EUR 200**; R4 additionally consumed roughly **60% of the weekly Work usage volume** while still producing NO MVP.
+- User-reported human impact is explicitly recorded: trust loss, vigilance burden, frustration, decision fatigue, repeated interruption of creative work and the need to defend already-established creative intent against regression.
+- Graveyard advanced to **v1.12.0 / 62 graves** with “die Insel mit 44 Kästchen und ohne Geschichte”.
+- No R5 or repaired R4 is authorized. Any future geometry requires a new explicit authorization after a cheap world-model/composition gate.
+
 ## 2026-10-07 · Open World recovery complete and Hub JSON-only refresh proven
 
 - Complete frozen ledger: 37 required rows + 6 explicit nonblockers; product remains NO MVP (0 GREEN / 14 PARTIAL / 16 MISSING / 4 CONFLICT / 3 UNPROVEN).

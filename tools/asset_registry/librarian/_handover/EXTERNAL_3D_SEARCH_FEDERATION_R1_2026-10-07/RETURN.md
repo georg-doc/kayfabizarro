@@ -1,12 +1,20 @@
-# RETURN · Asset Librarian External 3D Search Federation R1 Prep
+# RETURN · Asset Librarian External 3D Search Federation R1
 
-Status: **READY FOR IMPLEMENTATION · PREP ONLY**  
-Date: 2026-10-07  
+Status: **SUPERSEDED BY IMPLEMENTATION RETURN · 2026-10-08**  
+Date: 2026-10-08  
 Owner: **KFB Asset Registry / Asset Librarian**  
 Repo: `georg-doc/kayfabizarro`  
 Branch: `planning/asset-librarian-external-3d-search-r1-2026-10-07`  
 PR: **none created**  
 Verified evidence head before this Return write: `b75672fb42cff8715448115b397bb94a9ebfec7e`
+
+Current implementation result:
+`IMPLEMENTATION_RETURN_2026-10-08.md`
+
+Current implementation tests:
+`IMPLEMENTATION_TEST_REPORT_2026-10-08.md`
+
+The remainder of this file is retained as the original preparation record.
 
 ## Outcome
 

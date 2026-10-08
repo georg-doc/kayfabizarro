@@ -77,7 +77,7 @@ class OpenAILibrarianTests(unittest.TestCase):
         }]
         self.tools = LibrarianTools.from_data(manifest, records, profiles)
 
-    def test_function_tool_surface_is_exactly_six_read_only_tools(self):
+    def test_function_tool_surface_keeps_registry_and_external_discovery_separate(self):
         tools = openai_function_tools()
         self.assertEqual(
             [tool["name"] for tool in tools],
@@ -88,6 +88,10 @@ class OpenAILibrarianTests(unittest.TestCase):
                 "get_rig_facts",
                 "find_same_skeleton",
                 "export_handoff",
+                "search_external_assets",
+                "get_external_asset",
+                "list_external_asset_providers",
+                "prepare_external_asset_intake",
             ],
         )
         self.assertTrue(all(tool["type"] == "function" for tool in tools))

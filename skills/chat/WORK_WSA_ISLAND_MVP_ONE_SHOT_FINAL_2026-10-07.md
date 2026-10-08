@@ -1,9 +1,11 @@
-# WORK / WSA · KFB Island MVP · FINAL ONE_SHOT · 2026-10-07
+# WORK / WSA · KFB Island MVP R4 · ONE_SHOT · 2026-10-07
 
-Status: **READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
+Status: **MVP R4 · READY FOR EXECUTION · ONE_SHOT · NO MVP YET**
 Authority: **Georg / KFB**
+Product iteration: **KFB Island MVP R4**
+Contract version: **Frozen Matrix operationalVersion 5**
 Executor: **ChatGPT Work/WSA · GPT-6 Astra Medium baseline recommended**
-Reasoning escalation: **Phase 3 (Early Visual/Physical Golden) and Phase 4 (Roads / junction integration) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
+Reasoning escalation: **Phase 2B (Roads / junction integration) and Phase 3 (Early Visual/Physical Golden) may explicitly use High reasoning when available.** Elsewhere, increase reasoning only for a named outcome-critical seam after evidence. Do not start a second integrator.
 Receiving owner: **KFB WorldBuilder / WB2**
 Repository: `georg-doc/kayfabizarro`
 Draft PR: **#348**
@@ -17,7 +19,7 @@ This brief **supersedes** the earlier
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/WORK_WSA_OPEN_WORLD_INTEGRATOR_ONE_SHOT_2026-10-07.md`
 where that older file still refers to the former 37-row product contract.
 
-The binding product contract is now the operational Frozen Matrix v2.
+The binding product contract is the current machine-readable Frozen Matrix **operationalVersion 5**. The JSON version is authoritative; older v2/v3/v4 wording is superseded.
 
 ---
 
@@ -49,19 +51,20 @@ Before any implementation write, read the current GitHub versions of:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md`
-5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json`
-6. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
-7. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
-8. `skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
-9. current PR #348:
+5. `skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json` — current operationalVersion = **5**
+6. `skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md` — routing only; preserves Asset Librarian/external 3D, texture/material, Cell/Build/Repair/Threshold and World Pulse design lines without adding MVP scope
+7. `skills/chat/recovery/KFB_ISLAND_MVP_INBOX_DONOR_AUDIT_2026-10-07.md`
+8. `skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md`
+9. `skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+10. current PR #348:
    - `ISLAND_TOPOLOGY_DECISION_2026-10-07.md`
    - `ISLAND_FOUNDATION_RETURN_2026-10-07.md`
-10. current binding canons:
+11. current binding canons:
    - `skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md`
    - `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`
    - `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`
-11. exact current PR #348 head and current Issue #360 state.
+12. exact current PR #348 head and current Issue #360 state.
 
 Only then open specialist Returns for rows that are actually being integrated.
 
@@ -74,7 +77,7 @@ Only then open specialist Returns for rows that are actually being integrated.
 The following are binding:
 
 - **44 REQUIRED** rows in the Frozen Matrix.
-- **12 STRONGLY INCLUDE** rows.
+- **13 STRONGLY INCLUDE** rows.
 - **7 OPTIONAL PROOF** rows.
 - all per-row:
   - phase;
@@ -161,6 +164,7 @@ The representative island must contain at least:
 - one Card → Almanac interaction;
 - one real Audio environmental/POI transition;
 - real Sky/Environment;
+- preferably one F-S13 state-dependent freestanding/Paper-Facade Threshold Door proof without adding a second progression/world/portal owner;
 - Ground + Drive + Flight;
 - PLAY / BUILD / GOD;
 - source isolate / place / move / rotate / scale / snap;
@@ -180,7 +184,7 @@ Do **not** require:
 # EXECUTION PHASES
 
 This is one continuous ONE_SHOT.  
-**Continue automatically across green internal phases.**
+**Continue automatically across green internal phases, except the two explicit human acceptance steps: F-R39 Georg Visual Product Gate and F-R07 target-device performance run.**
 
 ---
 
@@ -211,6 +215,8 @@ Prove:
 - colliders/support return;
 - sculpt/Track state return;
 - invalid import preserves last-known-good.
+
+Before F-R29/F-R31 can become GREEN, explicitly reconcile and freeze the terrain evaluation order between **base field → river/village contributions → Track road-fit contribution → sculpt delta**. The current Foundation Return records a conflict because Track design excludes sculpt while the receiving sequence currently applies sculpt after road fit. Do not claim exact reconstruction until the chosen order and invalidation/recompute policy are source-backed, persisted and replayed.
 
 No feature fan-out on a broken foundation.
 
@@ -308,6 +314,49 @@ Dialogue/Activity may temporarily own control only through explicit handoff.
 
 ---
 
+## PHASE 2B · Roads / world traversal · BEFORE EARLY GOLDEN
+
+Before implementation, read:
+`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
+
+Known donor facts — **evidence, not new canon**:
+
+- per-cell bespoke Bézier sweep is a rejected dead end;
+- Track Core v0.12 ROUNDABOUT can refuse some 60° configurations with STANDARD arms;
+- lab-working donor values included island radius 6.6, NARROW ring, fillet 6, splitter 0, arm length 18 with 9/12 fallback attempts;
+- T-junction / ordinary intersection is missing in Track Core v0.12;
+- the lab plate fallback is **not accepted** because a passing edge can cut it;
+- K=0.375 worked as a lab scale adapter but belongs in a proper Track profile/family if retained.
+
+Use these findings to avoid rediscovery, but inspect the current Track Core owner before applying any value.
+
+For the first island:
+- choose a route topology that uses a **cleanly compiled Track-Core-supported real junction/roundabout**;
+- **do not accept the plate fallback**;
+- if the required route genuinely needs a missing T/Y/4-way primitive, implement that primitive in the **Track Core owner**, not in Island code.
+
+One construction family:
+
+**Route intent → Track Core → Surface Truth → Joyride presentation**
+
+Prove on the same island:
+
+- ordinary road;
+- curve without seam/fold;
+- real junction/intersection where the route needs one;
+- street/sidewalk;
+- bridge/water crossing;
+- modest race/fun section;
+- Drive contact;
+- persistent RouteRecipe/segment identity.
+
+Do not rebuild the rejected bespoke Bézier road renderer.
+
+Historical tangent/radius fixes may be reused only where useful inside/upstream of Track Core.
+
+---
+
+
 ## PHASE 3 · Early Visual / Physical Golden · HARD GATE
 
 Do **not** continue broad feature fan-out until the actual runtime already looks and feels like a plausible KFB game world.
@@ -368,55 +417,23 @@ This is a **visual/product approval gate, not a debugging session**.
 - If Georg says **FAIL**, the Integrator resumes Phase-3 repair autonomously, using the critic evidence and any concrete feedback Georg volunteers.
 - Do not ask Georg to diagnose code, choose implementation details or debug intermediate seams.
 
+Before asking Georg, persist a crash-safe gate record on the exact candidate head:
+
+- receiving branch `ONE_SHOT_STATUS.json`: `F-R39 = PENDING`, exact head, critic evidence refs, screenshot refs, clip ref;
+- `main/kfb-hub/live/open-world-mvp.json`: projected `F-R39 = PENDING` with the same candidate head/evidence refs.
+
+After Georg answers:
+- persist `PASS` or `FAIL`, date/time and exact candidate head in both places;
+- a fresh chat may treat the gate as passed **only** when the persisted record says PASS for the same candidate head;
+- record the accepted Phase-3 head as the **Golden baseline head**. Later code changes do **not** automatically invalidate PASS. Re-gate only when a later change can materially alter one of the actual Phase-3 Golden criteria and the post-change critic/evidence shows a meaningful regression or unresolved change in that criterion. Unrelated visible changes or additions that preserve the Golden do not require another Georg gate.
+
 Do **not** proceed to Phase 4 until this gate is PASS.
 
-If this gate is red, repair the foundation before continuing.
+If this gate is red, repair **Phase 3 / the smallest visual-physical seam that failed** before continuing.
 
 ---
 
-## PHASE 4 · Roads / world traversal
-
-Before implementation, read:
-`skills/chat/recovery/KFB_OPEN_WORLD_VISUAL_TERRAIN_LAB_DONOR_FINDINGS_2026-10-07.md`
-
-Known donor facts — **evidence, not new canon**:
-
-- per-cell bespoke Bézier sweep is a rejected dead end;
-- Track Core v0.12 ROUNDABOUT can refuse some 60° configurations with STANDARD arms;
-- lab-working donor values included island radius 6.6, NARROW ring, fillet 6, splitter 0, arm length 18 with 9/12 fallback attempts;
-- T-junction / ordinary intersection is missing in Track Core v0.12;
-- the lab plate fallback is **not accepted** because a passing edge can cut it;
-- K=0.375 worked as a lab scale adapter but belongs in a proper Track profile/family if retained.
-
-Use these findings to avoid rediscovery, but inspect the current Track Core owner before applying any value.
-
-For the first island:
-- choose a route topology that uses a **cleanly compiled Track-Core-supported real junction/roundabout**;
-- **do not accept the plate fallback**;
-- if the required route genuinely needs a missing T/Y/4-way primitive, implement that primitive in the **Track Core owner**, not in Island code.
-
-One construction family:
-
-**Route intent → Track Core → Surface Truth → Joyride presentation**
-
-Prove on the same island:
-
-- ordinary road;
-- curve without seam/fold;
-- real junction/intersection where the route needs one;
-- street/sidewalk;
-- bridge/water crossing;
-- modest race/fun section;
-- Drive contact;
-- persistent RouteRecipe/segment identity.
-
-Do not rebuild the rejected bespoke Bézier road renderer.
-
-Historical tangent/radius fixes may be reused only where useful inside/upstream of Track Core.
-
----
-
-## PHASE 5 · Authoring + persistence
+## PHASE 4 · Authoring + persistence
 
 Reuse the existing WB2 editor/store.
 
@@ -454,7 +471,7 @@ Fresh load must restore:
 
 ---
 
-## PHASE 6 · Required KFB systems
+## PHASE 5 · Required KFB systems
 
 Integrate real current owners, not stand-ins.
 
@@ -557,7 +574,7 @@ Do not rebuild or replace it with generic UI.
 
 ---
 
-## PHASE 7 · Strong integrations · continue if bounded
+## PHASE 6 · Strong integrations · continue if bounded
 
 Target these in the same One-Shot where they remain low-risk:
 
@@ -568,6 +585,7 @@ Target these in the same One-Shot where they remain low-risk:
 - Living-Toy authoring rules;
 - minimal real Joyride HUD/Radio/Jukebox controls;
 - shared Clay materialize/dematerialize presentation;
+- one bounded state-dependent Threshold Door / Paper-Facade proof where low-risk: base state ordinary local pass-through, unlocked/revealed state routed through the existing portal/instance owner; walking around the facade stays local;
 - bounded procedural structure provider if it improves the island;
 - selected Etherington/Style references for concrete problems;
 - Fluff Work activity if the chosen Resident loop benefits.
@@ -595,11 +613,31 @@ Do not create a new global VFX runtime.
 
 ---
 
-## PHASE 8 · Performance
+## PHASE 7 · Performance
 
 Benchmark the actual integrated island.
 
 ### Binding performance-measurement conditions
+
+Named target device:
+`GEORG_PRIMARY_ACCEPTANCE_MACHINE`
+
+Do not invent a hardware model. The target is Georg's primary machine used for KFB visual/game acceptance. The instrumented run must persist enough environment metadata to identify the actual run, including where available:
+- user agent / browser version;
+- OS/platform;
+- viewport + devicePixelRatio + screen size;
+- hardwareConcurrency / deviceMemory when exposed;
+- WebGL vendor/renderer (including unmasked renderer when available);
+- exact candidate head/build id;
+- date/time and route id.
+
+WSA must prepare an **instrumented performance recorder** in the actual product that records the named Ground → Drive → Flight acceptance route to JSON (frame-time distribution, FPS percentiles/median, long-frame counts and available draw/triangle/material counters).
+
+This is the second planned human acceptance step:
+1. WSA prepares the run-ready candidate/authorized review surface and recorder.
+2. Georg runs the recorder once on `GEORG_PRIMARY_ACCEPTANCE_MACHINE` with the browser visible/focused and no meaningful parallel GPU workload.
+3. Persist the returned JSON/evidence against the exact candidate head in `ONE_SHOT_STATUS.json` and `main/kfb-hub/live/open-world-mvp.json`.
+4. Until that target-device JSON exists and satisfies the current F-R07 gate, **F-R07 = UNKNOWN / NOT GREEN**.
 
 A performance result may be used for F-R07 only when measured:
 
@@ -641,7 +679,7 @@ Do not visually destroy the KFB target merely to hit FPS.
 
 ---
 
-## PHASE 9 · Independent critics
+## PHASE 8 · Independent module critics
 
 ### Module critics
 
@@ -658,7 +696,7 @@ They:
 Required dimension threshold:
 **>= 8.5**
 
-### Different whole-product critic
+## PHASE 9 · Different fresh whole-product critic
 
 Run one continuous normal-input gauntlet:
 
@@ -689,6 +727,31 @@ Run one continuous normal-input gauntlet:
 25. return to PLAY and continue exploring.
 
 No teleport/autoplay/reward injection acceptance substitute.
+
+---
+
+## 5A · Preserved ideation layers · do not lose, do not inflate MVP
+
+Read:
+`skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md`
+
+These are **preserved design/research layers**, not additional REQUIRED scope.
+
+Keep routed for source selection and future-compatible seams:
+
+- **Asset Librarian external 3D federation** — branch `planning/asset-librarian-external-3d-search-r1-2026-10-07`; existing Asset Librarian/Registry remains provenance owner; external search candidates never become canonical assets before controlled intake/source isolation.
+- **Surface/Texture research** — branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07`; Claybound remains the visual Gold Standard; hybrid/baked/toon/cel/directional color/tri-/biplanar/matcap are challengers, not automatic replacements.
+- **UltraTex** — texture-adaptation donor/lab candidate only; not Registry/material owner and not production-ready.
+- **Cell / MacroCell / Build–Destroy–Repair grammar** — branch `planning/kfb-cell-metric-voxel-world-grammar-2026-10-07`; use only where a current MVP seam needs it; do not create a second world/destruction runtime.
+- **Fluff construction choreography** — PREVIEW→HARVEST/GATHER→AGGREGATE→ROUGH_MASS→SCULPT→RESOLVE→CONNECT/FINISH; transition/presentation only, final truth returns to source-proven objects/modules.
+- **Material identity / Paper-Cardboard / Open Stage / Threshold grammar** — preserved design vocabulary; F-S13 is the only current bounded MVP routing addition and remains STRONGLY INCLUDE, not REQUIRED.
+- **World Pulse** — branch `planning/world-pulse-audio-reactive-living-toy-2026-10-07`; presentation-only layer consuming Audio/world facts; never a second AudioContext or simulation owner.
+- **Blender MCP choreography** — current Resident Performance / Issue #369 path; author reusable missing choreography only after source/motion audit.
+- **Oxijolt physics acceptance/test architecture** — read `skills/chat/recovery/KFB_OXIJOLT_PHYSICS_ACCEPTANCE_DONOR_2026-10-07.md`; source-pinned external donor only. Law-style invariants, focused seam witnesses, Physics X-Ray, deterministic input/digest checks and percentile telemetry may be used behind existing F-R02/03/05/07/10/11/16/17/18/31 acceptance. **No Oxijolt/Jolt runtime adoption, no Rapier replacement, no mandatory pre-MVP Physics Lab.**
+
+If one of these layers becomes necessary to satisfy an existing Frozen row, open its exact named owner/branch and consume the smallest proven seam.
+
+Do not bulk-implement the ideation audit.
 
 ---
 
@@ -770,7 +833,7 @@ After two non-improving repair passes on one seam:
    - STRONGLY INCLUDE but noncritical → quarantine/defer + continue;
    - OPTIONAL → defer + continue.
 
-Do not ask Georg to debug intermediate technical failures. The only planned intermediate human stop is the mandatory Phase-3 **visual PASS/FAIL gate** above.
+Do not ask Georg to debug intermediate technical failures. The only planned human acceptance steps are: **(1) the mandatory Phase-3 F-R39 visual PASS/FAIL gate and (2) the F-R07 target-device performance run on GEORG_PRIMARY_ACCEPTANCE_MACHINE**.
 
 Global stop only for a **proven product-outcome blocker**.
 
@@ -896,4 +959,4 @@ Then execute this as **one continuous Island MVP product job**.
 
 Do not reopen broad architecture planning.
 Do not shorten the Frozen Matrix.
-Do not stop at an internal checkpoint.
+Do not stop at an internal checkpoint **except the explicit F-R39 Georg visual PASS/FAIL gate and the F-R07 target-device performance run**.

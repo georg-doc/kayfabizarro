@@ -117,6 +117,7 @@ These are intended in the same One-Shot because they are high-value and largely 
 | F-S10 | Bounded seeded procedural structure provider | Seed-World street/parcel/BuildingRecipe grammar behind Surface Truth + Track Core + Claybound gate; sparse use, not city-block mandate. |
 | F-S11 | Environment construction subset | 3–6 exact Etherington/Style references chosen for actual island problems: Clouds / Environment Mass / grounding as needed. |
 | F-S12 | Fluff Work activity donor | PR #356 clips if one chosen Resident activity benefits; no new clips by default. |
+| F-S13 | **State-dependent Threshold Door / Paper-Facade portal proof** | One source-backed freestanding or Paper/Facade door. Base state = ordinary local pass-through; unlocked/revealed state = real portal/instance/realm or deliberate non-local/local metanarrative target. Walking around the facade stays in the current world. Preserve authoritative state through fresh reload; no second progression/world/portal owner. |
 
 ## 3 · OPTIONAL PROOF · valuable if cheap, never a substitute for required product
 
@@ -166,7 +167,7 @@ Preserve three eventual connection modes without requiring three implementations
 2. **Track / Joyride Highway** — Track-Core authored connection.
 3. **Free Flight** — player-controlled Flight.
 
-First Island MVP proves local Flight and a future connection/port contract. Multi-island expansion later proves actual cross-document handoff.
+First Island MVP proves local Flight, a future connection/port contract and — where bounded/low-risk — the F-S13 state-dependent Threshold Door proof. This may resolve to a bounded Dungeon/scenelet/instance or controlled portal target without requiring a second island. Multi-island expansion later proves actual cross-document handoff.
 
 ## 7 · One representative first-Island content target
 
@@ -186,6 +187,7 @@ The One-Shot should produce one coherent bounded island with:
 - Sky/Environment;
 - KFB Clay + Claybound compatibility + grounding grammar;
 - Curtain entry/transition compatibility and preferably the clay-tuned Curtain;
+- preferably one state-dependent freestanding/Paper-Facade Threshold Door: ordinary pass-through in base state, portal/instance behavior when unlocked/revealed;
 - PLAY / BUILD / GOD;
 - source isolate/place/edit/snap + sculpt;
 - exact Save → unload → fresh reload → PLAY;
@@ -222,7 +224,7 @@ This is one continuous product job, not Baby Slices:
 3. **Early Visual/Physical Golden Gate:** must pass before broad fan-out.
 4. **Authoring/Persistence:** PLAY/BUILD/GOD, place/edit/snap, sculpt, exact fresh reload.
 5. **Required KFB systems:** Residents/ChatterBox, Card/Almanac, Billboard+Quote Pool, Audio, Sky, Landmark/Curtain.
-6. **Strong integrations:** Flight presentation, Resident reactions, Clay transform, bounded procedural structure where valuable.
+6. **Strong integrations:** Flight presentation, Resident reactions, Clay transform, bounded procedural structure where valuable, and F-S13 state-dependent Threshold/Paper-Facade proof if it remains low-risk.
 7. **Performance/LOD.**
 8. **Fresh module critics.**
 9. **Different whole-product critic.**
@@ -397,3 +399,38 @@ Both PASS and NO MVP Returns must attach the **complete 44-row REQUIRED table** 
 
 ### Reasoning policy
 Recommended baseline remains **Astra Medium**. **High reasoning is explicitly authorized for Phase 3 (Early Visual/Physical Golden) and Phase 4 (roads/junction integration)** when available. This does not authorize a second Integrator.
+
+
+## 16 · Final pre-WSA contract alignment · v5
+
+No classification or REQUIRED count changed. This alignment resolves the final sanity-review contradictions before Work/WSA execution.
+
+### Authority/version
+The machine-readable JSON is now **operationalVersion 5**. Older v2/v3/v4 wording in historical routing blocks is superseded by the current JSON.
+
+### Phase order
+Road/Track rows **F-R15/F-R16** are operationally **Phase 2B · Roads / world traversal**, before **Phase 3 · Early Visual/Physical Golden**. The Phase-3 Golden cannot be evaluated without the real Joyride/Track road, contact and bridge/water seam it explicitly scores.
+
+High reasoning is explicitly permitted for:
+- Phase 2B road/junction integration;
+- Phase 3 Early Visual/Physical Golden.
+
+### F-R07 · named target machine
+Target ID: `GEORG_PRIMARY_ACCEPTANCE_MACHINE`.
+
+This is Georg's primary KFB acceptance machine; do **not** invent a hardware model. The product performance recorder must persist browser/OS/viewport/DPR/screen/hardwareConcurrency/deviceMemory where exposed/WebGL vendor+renderer/exact candidate head/timestamp/route id together with the performance JSON. Georg performs one visible/focused Ground→Drive→Flight run with no meaningful parallel GPU workload. Until the exact-head result is persisted, F-R07 remains **UNKNOWN / NOT_GREEN**.
+
+### F-R39 · crash-safe human visual gate
+Before asking Georg, persist `F-R39=PENDING`, exact candidate head and evidence refs in:
+- receiving branch `ONE_SHOT_STATUS.json`;
+- `main/kfb-hub/live/open-world-mvp.json`.
+
+After Georg's PASS/FAIL, persist the decision, timestamp and accepted head in both and treat that head as the **Golden baseline head**. A fresh chat may continue past the gate from that persisted PASS. Later changes do **not** automatically invalidate the PASS: re-gate only when a later change can materially affect a Phase-3 Golden criterion and post-change critic/evidence shows a meaningful regression or unresolved change in that criterion. Unrelated additions that preserve the Golden do not require another Georg gate.
+
+### F-R29 / F-R31 · terrain evaluation order
+Before exact persistence can pass, reconcile and freeze the relationship between:
+`base field → river/village contributions → Track road-fit contribution → sculpt delta`.
+The Foundation Return records that the receiving sequence currently applies sculpt after road fit while Track design excludes sculpt. The chosen source-backed order and invalidation/recompute policy must be persisted and replayed before F-R29/F-R31 may turn GREEN.
+
+### Final Return
+PASS and NO MVP both require the complete 44-row REQUIRED table with status and evidence references.

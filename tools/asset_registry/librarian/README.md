@@ -2,7 +2,8 @@
 
 **Mode:** static, read-only, no LLM/API key required  
 **Asset / Registry SSOT:** `georg-doc/kayfabizarro`  
-**Permanent production URL:** `https://kayfabizarro.pages.dev/asset-librarian/`
+**Canonical productive GPT Site:** `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`  
+**Legacy Cloudflare mirror:** `https://kayfabizarro.pages.dev/asset-librarian/` · stale/secondary, not canonical
 
 The Librarian is a browser consumer of the generated Asset Registry and Production Resource Registry. It does **not** create a competing asset index or write back to assets, rigs, actors, motions or consumer runtimes.
 
@@ -12,6 +13,24 @@ The Librarian is a browser consumer of the generated Asset Registry and Producti
 - **Canonical** — reads the reviewed Registry committed to `main`.
 
 The selected mode and Registry source commit are visible in the header.
+
+## External 3D discovery · R1
+
+The canonical private GPT Site has an additive **External 3D** lane backed by `https://3d.shep.bot/v1`.
+
+External hits are always labelled `EXTERNAL_DISCOVERY_CANDIDATE`. They remain separate from Registry search and may be compared, source-inspected, explicitly previewed and exported as metadata-only `kfb.external-asset-intake/1` packets.
+
+The browser never auto-imports remote GLB/ZIP bytes. Trusted intake still owns download, SHA-256, provenance, source isolation, 3D proof and Registry registration.
+
+Agent-facing tools use separate names so the existing canonical `search_assets` contract stays intact:
+
+- `search_external_assets`
+- `get_external_asset`
+- `list_external_asset_providers`
+- `prepare_external_asset_intake`
+
+Implementation evidence and the one remaining Georg-gated Live Registry step are recorded in:
+`_handover/EXTERNAL_3D_SEARCH_FEDERATION_R1_2026-10-07/IMPLEMENTATION_RETURN_2026-10-08.md`
 
 ## KFB Town Workbench · v1.6
 
@@ -150,4 +169,3 @@ PD-POOL-R2 currently registers exactly four proven R1 smoke objects. It does not
 Evidence: Draft PR #246, dedicated run `36288195716`, Asset Registry owner run `36288282662`, Librarian Browser owner run `36288282599`.
 
 Publication remains a separate Georg-gated step.
-

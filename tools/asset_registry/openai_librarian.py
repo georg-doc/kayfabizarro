@@ -3,7 +3,7 @@
 
 The connector is deliberately thin:
 - Registry/search truth stays in librarian_tools.py.
-- OpenAI receives only six read-only function tools, never the full catalog.
+- OpenAI receives a bounded set of Registry and external-discovery tools.
 - API credentials are read from the environment and are never stored here.
 - Compatibility/suitability remains a downstream consumer decision.
 
@@ -36,7 +36,9 @@ Rules:
 5. Respect consumer ownership boundaries from export_handoff. Do not write rosters, gameplay contracts, measurements, or implementation state.
 6. For Frankenstein/donor requests, prefer at least three candidates when the Registry supports that many, because downstream donor measurement still decides fit.
 7. If the Registry does not support a requested claim, say what is unknown rather than guessing.
-8. Keep answers concise and practical. Answer in the user's language.
+8. External provider results are EXTERNAL_DISCOVERY_CANDIDATE records, never Registry assets. Provider license, price, format, rig and animation fields are claims until trusted intake verifies them.
+9. prepare_external_asset_intake prepares metadata only. It does not download, hash, register or approve an asset.
+10. Keep answers concise and practical. Answer in the user's language.
 """
 
 
@@ -90,7 +92,7 @@ class OpenAIResponsesHTTPTransport:
 
 
 def openai_function_tools() -> list[dict[str, Any]]:
-    """Current Responses API custom-function definitions for the six read-only tools."""
+    """Current bounded Responses API function definitions."""
     return [
         {
             "type": "function",
@@ -182,6 +184,59 @@ def openai_function_tools() -> list[dict[str, Any]]:
                 "additionalProperties": False,
             },
         },
+        {
+            "type": "function",
+            "name": "search_external_assets",
+            "description": "Search external 3D providers. Every result is an EXTERNAL_DISCOVERY_CANDIDATE, not a KFB Registry asset.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string", "minLength": 1},
+                    "asset_type": {"type": "string", "enum": ["model", "texture", "material", "hdri", "sprite", "ui", "audio", "font", "pack", "other"]},
+                    "providers": {"type": ["array", "null"], "items": {"type": "string"}},
+                    "free": {"type": ["boolean", "null"]},
+                    "downloadable": {"type": ["boolean", "null"]},
+                    "limit": {"type": "integer", "minimum": 1, "maximum": 100},
+                    "offset": {"type": "integer", "minimum": 0}
+                },
+                "required": ["query"],
+                "additionalProperties": False
+            }
+        },
+        {
+            "type": "function",
+            "name": "get_external_asset",
+            "description": "Inspect one external provider candidate and its provider-reported files without downloading bytes.",
+            "parameters": {
+                "type": "object",
+                "properties": {"external_id": {"type": "string"}},
+                "required": ["external_id"],
+                "additionalProperties": False
+            }
+        },
+        {
+            "type": "function",
+            "name": "list_external_asset_providers",
+            "description": "List external provider capabilities and default license claims.",
+            "parameters": {"type": "object", "properties": {}, "additionalProperties": False}
+        },
+        {
+            "type": "function",
+            "name": "prepare_external_asset_intake",
+            "description": "Prepare metadata-only kfb.external-asset-intake/1 for later trusted download, hashing, isolation and Registry validation.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "external_id": {"type": "string"},
+                    "file_url": {"type": ["string", "null"], "format": "uri"},
+                    "measured_height": {"type": ["number", "null"], "exclusiveMinimum": 0},
+                    "scale_hint": {"type": ["string", "null"]},
+                    "notes": {"type": ["string", "null"]}
+                },
+                "required": ["external_id"],
+                "additionalProperties": False
+            }
+        }
     ]
 
 
@@ -368,7 +423,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--max-tool-rounds", type=int, default=DEFAULT_MAX_TOOL_ROUNDS)
     parser.add_argument("--json", action="store_true", help="Emit answer plus tool trace as JSON")
-    parser.add_argument("--print-tools", action="store_true", help="Print the six Responses API function definitions without making an API call")
+    parser.add_argument("--print-tools", action="store_true", help="Print the Responses API function definitions without making an API call")
     return parser.parse_args()
 
 

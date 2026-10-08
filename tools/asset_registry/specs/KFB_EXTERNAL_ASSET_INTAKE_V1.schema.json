@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.example/schemas/kfb.external-asset-intake-1.json",
+  "title": "KFB External Asset Intake v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "preparedAt",
+    "source",
+    "providerClaims",
+    "requestedFile",
+    "k2Measurement",
+    "nextGate",
+    "boundaries"
+  ],
+  "properties": {
+    "schema": {"const": "kfb.external-asset-intake/1"},
+    "status": {"const": "EXTERNAL_DISCOVERY_CANDIDATE"},
+    "preparedAt": {"type": "string", "format": "date-time"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["externalId", "provider", "nativeId", "title", "pageUrl"],
+      "properties": {
+        "externalId": {"type": "string", "minLength": 3},
+        "provider": {"type": "string", "minLength": 1},
+        "nativeId": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "author": {"type": ["string", "null"]},
+        "pageUrl": {"type": "string", "format": "uri"}
+      }
+    },
+    "providerClaims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["license", "price", "downloadable", "formats", "resolutions", "polyCount", "rigged", "animated"],
+      "properties": {
+        "license": {"type": ["object", "null"], "additionalProperties": true},
+        "price": {"type": ["object", "null"], "additionalProperties": true},
+        "downloadable": {"type": "boolean"},
+        "formats": {"type": "array", "items": {"type": "string"}},
+        "resolutions": {"type": "array", "items": {"type": "string"}},
+        "polyCount": {"type": ["integer", "null"], "minimum": 0},
+        "rigged": {"type": ["boolean", "null"]},
+        "animated": {"type": ["boolean", "null"]}
+      }
+    },
+    "requestedFile": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "filename", "format", "sizeBytes"],
+          "properties": {
+            "url": {"type": "string", "format": "uri"},
+            "filename": {"type": "string", "minLength": 1},
+            "format": {"type": "string", "minLength": 1},
+            "group": {"type": ["string", "null"]},
+            "sizeBytes": {"type": ["integer", "null"], "minimum": 0}
+          }
+        }
+      ]
+    },
+    "k2Measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["measuredHeight", "scaleHint"],
+      "properties": {
+        "measuredHeight": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "scaleHint": {"type": ["string", "null"]}
+      }
+    },
+    "notes": {"type": ["string", "null"]},
+    "nextGate": {"const": "trusted-download-hash-source-isolation-3d-proof-registry-build"},
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bytesDownloaded", "registered", "compatibilityVerified", "licenseStatus"],
+      "properties": {
+        "bytesDownloaded": {"const": false},
+        "registered": {"const": false},
+        "compatibilityVerified": {"const": false},
+        "licenseStatus": {"const": "provider-claim-only"}
+      }
+    }
+  }
+}

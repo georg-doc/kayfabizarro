@@ -1,4 +1,169 @@
-## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY
+## CURRENT ADDITIVE DECISION · 2026-10-08 · VOICE REQUIRED IN NEXT RUNTIME MVP AFTER A/B
+
+Georg has authorized the KFB ChatterBox Voice Layer as a required acceptance seam for the **first runtime MVP slice explicitly authorized after the current Four-Island Story Vision A/B gate**.
+
+This does **not** authorize R5 or runtime work inside the current visual-only design task.
+
+Binding route:
+`skills/chat/KFB_NEXT_RUNTIME_MVP_VOICE_ACCEPTANCE_2026-10-08.md`
+
+Voice integration prep:
+- Draft PR #379;
+- branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`;
+- current evidence head `5e115d7ea5e416c613312370eb319045ced58eb4`;
+- S1 canonical pool adapter: **13/13 PASS** against current `chatter-phrases.js`;
+- 166 stable source-backed voice records;
+- no second dialogue owner or AudioContext.
+
+Minimum later runtime proof:
+- source-backed Dystopia + Utopia + Protopia speakers;
+- bubble remains authoritative/readable muted;
+- valid silence preserved;
+- KFB Audio remains ducking/mix owner;
+- static/Whole-or-fragment route + browser fallback;
+- one real Golden-Journey Social Call through an accepted curated voice asset.
+
+Current world-design gate remains:
+**Four-Island Story Vision R1 → Georg A / B / FAIL**.
+
+---
+
+## CURRENT DESIGN RECOVERY OVERRIDE · 2026-10-08 · FOUR-ISLAND STORY VISION R1 AUTHORIZED
+
+Georg has authorized **story recovery + visual world direction only** after Island MVP R4 failed.
+
+R4 remains:
+- **STOPPED**
+- **NO MVP**
+- `F-R39 = FAIL`
+- **NO GOLDEN BASELINE**
+- no repaired R4;
+- no R5;
+- no runtime / geometry fan-out.
+
+Recovered story SSOT:
+`skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md`
+
+Current visual-design brief:
+`skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md`
+
+Current next executor:
+**Claude Design · visual world-direction only**
+
+Current product decision:
+Create exactly **two visual/spatial interpretations A/B of the same recovered four-island story**:
+- KFB Town;
+- Dystopia;
+- Utopia;
+- Protopia.
+
+Do not invent replacement lore.
+Do not turn proposal-level Life-Tree / six-sector / ring-road ideas into canon automatically.
+Do not use generic SVG/flowchart output as the visual product.
+Source families must be shown in isolation before integration into concept boards.
+
+Required human gate:
+**Georg: A / B / FAIL**
+
+No implementation is authorized by this design task.
+Only a later explicit Georg instruction after the visual gate can authorize a build blueprint or geometry.
+
+---
+
+## CURRENT OVERRIDE · 2026-10-08 · KFB ISLAND MVP R4 STOPPED · NO MVP
+
+R4 is stopped.
+
+Authoritative fail state:
+- Draft PR #348 head: `0a8240b83d4fbfdb69cdba47b812e618cc5cd897`
+- `F-R39 = FAIL`
+- **NO GOLDEN BASELINE**
+- failure class: **WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE**
+- no repaired One-Shot
+- no further runtime fan-out
+- no merge / Live promotion.
+
+Authoritative Return:
+`tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md`
+
+Current Postmortem:
+`skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md`
+
+Key process finding:
+The Frozen Matrix v5 successfully prevented feature loss, but it did not prevent a repeated, already-documented Micro-Storytelling / relation failure. The same failure class existed in the 2026-09-20 “Die Szene, die keine war” Postmortem: bridge without destination, buildings without social relation, objects at coordinates instead of a network of reasons.
+
+Do not treat this as a request for a larger Story specification.
+Do not start R5 or a repaired R4 automatically.
+Do not ask Georg to restate the product vision.
+
+Any future geometry requires a new explicit authorization after a cheap world-model/composition gate.
+
+Binding engineering contract remains preserved:
+- Frozen Matrix operationalVersion **5**
+- 44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL PROOF
+- existing technical salvage remains evidence only, not product PASS.
+
+All older READY / runtime-paused / Recovery-Lead / previous One-Shot routing below is historical where conflicting. This R4 STOP state wins.
+
+---
+
+## ADDITIVE RESEARCH ROUTE · 2026-10-08 · KFB 3D SHADER / INSPECTOR DONORS (NON-RUNTIME)
+
+The new AI Game Art Academy discussion surfaced a separate **KFB production reuse research** lane. This is **not** the Academy implementation and **not** a new material/World owner.
+
+Existing owner/branch: KFB Surface / Material Language · `planning/hybrid-baked-clay-texture-architecture-2026-10-07`.
+
+New branch research records:
+- `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`
+- `skills/chat/research/KFB_3D_WORKFLOW_RESEARCH_TEST_REPORT_2026-10-08.md`
+- `skills/chat/research/KFB_3D_WORKFLOW_RESEARCH_RETURN_2026-10-08.md`
+
+Donors: `threlte/three-inspect`, `RhythrosaLabs/webgl-studio`, `takahirox/tsl-node-editor`, `Design0r/shaderpass`. Source inspected, **NOT VISUALLY ISOLATED / NOT TESTED / NOT ADOPTED**. Existing K1/H0 Golden, K2/v10, surface A–E material comparison and current World R4 STOP remain binding. The 3D AI Classroom is a UX donor for separate Academy planning only; its legacy backend is rejected for direct reuse.
+
+Next conditional gate: isolated existing-material-lab inspector proof; **no WB2 runtime writes, no new editor, no Stage/Live promotion** without an explicit Georg go-ahead.
+
+---
+
+## CURRENT RECOVERY INDEX · 2026-10-07 · WEB-CHAT IDEATION
+
+For recovery of the 2026-10-07 design work spanning Asset Librarian/external 3D MCP, textures/materials, World Pulse, Cube/MacroCell, Build/Destroy/Repair, Paper/Facade, Threshold grammar and Oxijolt-derived Physics Acceptance/Test Architecture, read:
+
+`skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md`
+
+This is a routing/recovery index only. Named project owners/branches remain authoritative for implementation.
+
+Oxijolt donor note:
+`skills/chat/recovery/KFB_OXIJOLT_PHYSICS_ACCEPTANCE_DONOR_2026-10-07.md`
+Classification: **acceptance/test-architecture donor only · no current runtime adoption**.
+
+---
+
+## SUPERSEDED ADDITIVE OVERRIDE · 2026-10-07 · ISLAND MVP MATRIX v4 · STATEFUL THRESHOLD DOOR · INCORPORATED INTO v5
+
+Georg added one bounded Strong-Include proof without changing REQUIRED acceptance scope.
+
+Current operational matrix:
+- **44 REQUIRED** — unchanged;
+- **13 STRONGLY INCLUDE** — adds **F-S13 State-dependent Threshold Door / Paper-Facade portal proof**;
+- **7 OPTIONAL PROOF** — unchanged;
+- **operationalVersion = 4**.
+
+F-S13 intent:
+- one source-backed freestanding or Paper/Facade threshold;
+- base/locked state = ordinary local pass-through, no realm change;
+- unlocked/revealed state = existing portal/instance/realm routing or deliberate controlled portal target;
+- walking around the facade remains in the current world and may expose the cardboard/stage construction;
+- threshold consumes authoritative progression/world state and never becomes a second progression/world/portal owner;
+- save/fresh reload preserves the authoritative threshold state.
+
+This is **STRONGLY INCLUDE**, not a 45th REQUIRED row. Full key/quest/realm progression remains outside first-Island MVP scope.
+
+Binding matrix files remain:
+`skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.{md,json}`
+
+---
+
+## SUPERSEDED OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT v3 READY · SUPERSEDED BY v5
 
 The binding Work/WSA brief and Frozen Matrix were hardened after an independent Coworker sanity read.
 
@@ -23,7 +188,7 @@ No REQUIRED row was added or removed. Product remains NO MVP until all 44 are GR
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY
+## SUPERSEDED OVERRIDE · 2026-10-07 · FINAL ISLAND MVP ONE_SHOT BRIEF READY · SUPERSEDED BY v5
 
 Georg authorized the next productive step: execute exactly one **ChatGPT Work/WSA Island MVP ONE_SHOT** against the operational Frozen Matrix v2.
 
@@ -58,7 +223,7 @@ or
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX OPERATIONALIZED
+## SUPERSEDED OVERRIDE · 2026-10-07 · ISLAND MVP FROZEN MATRIX v2 OPERATIONALIZED · SUPERSEDED BY v5
 
 Georg authorized continued Web-Chat refinement of the bounded-Island MVP contract and persistent crash-safe recovery.
 
@@ -102,7 +267,7 @@ Binding canon:
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED
+## SUPERSEDED OVERRIDE · 2026-10-07 · SINGLE OPEN WORLD INTEGRATOR AUTHORIZED · SUPERSEDED BY FINAL v5 BRIEF
 
 Georg has explicitly authorized exactly one **ChatGPT Work/WSA WorldBuilder Integrator** to start now.
 
@@ -125,7 +290,7 @@ Product remains **NO MVP** until every required row is GREEN. No Receiving-Core 
 
 ---
 
-## CURRENT OVERRIDE · 2026-10-07 · Recovery audit completed
+## HISTORICAL OVERRIDE · 2026-10-07 · Recovery audit completed · EXECUTION ROUTING SUPERSEDED BY FINAL v5
 
 #360 Recovery audit and the one-time existing-Hub migration are complete. Current route: **RECOVERY PLAN READY · SAFE TO AUTHORIZE ONE INTEGRATOR**. Product remains **NO MVP** and runtime work remains paused until Georg separately authorizes exactly one Integrator. The older ready-to-run audit instructions below are history; do not rerun them. Read the current [owning Recovery Return](https://github.com/georg-doc/kayfabizarro/blob/recovery/open-world-master-acceptance-audit-2026-10-07/skills/chat/recovery/OPEN_WORLD_RECOVERY_RETURN_2026-10-07.md) and frozen ledger on PR #373.
 
@@ -143,7 +308,7 @@ This file is intentionally short. It is a router, not project history.
 Historical decisions and superseded states belong in `skills/chat/CHANGELOG.md`, project Returns/Recovery files and Git history.
 
 
-## CURRENT PRODUCTION OVERRIDE · 2026-10-05 23:20 CEST
+## HISTORICAL PRODUCTION OVERRIDE · 2026-10-05 23:20 CEST · SUPERSEDED BY KFB ISLAND MVP R4
 
 A direct Georg product review supersedes the earlier "Surface Recovery closed / two P0 freeplay gates" state.
 

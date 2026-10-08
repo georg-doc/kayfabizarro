@@ -1,7 +1,10 @@
-# TEST REPORT · Asset Librarian External 3D Search Federation R1 Prep
+# TEST REPORT · Asset Librarian External 3D Search Federation R1 Prep · SUPERSEDED
 
 Date: 2026-10-07  
 Scope: **source/contract audit only · no KFB runtime or Site implementation**
+
+Current implementation test report:
+`IMPLEMENTATION_TEST_REPORT_2026-10-08.md`
 
 ## Evidence inspected
 
