@@ -1,3 +1,13 @@
+## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
+
+- Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.
+- Current visual Story Vision remains no-runtime/no-geometry; this does not start R5.
+- PR #379 Voice S1 is green: current `chatter-phrases.js` resolves to 166 stable source records and the committed adapter passes 13/13 tests.
+- Added `KFB_NEXT_RUNTIME_MVP_VOICE_ACCEPTANCE_2026-10-08.md` with minimum Dystopia/Utopia/Protopia speaker proof, existing Audio-owner ducking, fallback, silence and Social-Call acceptance.
+- Voice candidate actors: Demon Lord, Robot One, Farmer A; optional Lorekeeper.
+- Existing ElevenLabs Roger/Siren Social Calls remain curated optional assets behind `voiceProfile`; no hard-coded gender semantics.
+- No PR #357 promotion, no second AudioContext/Site, no merge or Live promotion.
+
 ## 2026-10-08 · KFB 3D editor/shader/inspector research reused existing Surface Language owner
 
 - New **source-inspection-only** research branch documentation on `planning/hybrid-baked-clay-texture-architecture-2026-10-07`: `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`, corresponding TEST_REPORT, RETURN and additive local research changelog.
