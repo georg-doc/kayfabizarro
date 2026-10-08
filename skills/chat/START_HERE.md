@@ -1,3 +1,45 @@
+## CURRENT DESIGN RECOVERY OVERRIDE · 2026-10-08 · FOUR-ISLAND STORY VISION R1 AUTHORIZED
+
+Georg has authorized **story recovery + visual world direction only** after Island MVP R4 failed.
+
+R4 remains:
+- **STOPPED**
+- **NO MVP**
+- `F-R39 = FAIL`
+- **NO GOLDEN BASELINE**
+- no repaired R4;
+- no R5;
+- no runtime / geometry fan-out.
+
+Recovered story SSOT:
+`skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md`
+
+Current visual-design brief:
+`skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md`
+
+Current next executor:
+**Claude Design · visual world-direction only**
+
+Current product decision:
+Create exactly **two visual/spatial interpretations A/B of the same recovered four-island story**:
+- KFB Town;
+- Dystopia;
+- Utopia;
+- Protopia.
+
+Do not invent replacement lore.
+Do not turn proposal-level Life-Tree / six-sector / ring-road ideas into canon automatically.
+Do not use generic SVG/flowchart output as the visual product.
+Source families must be shown in isolation before integration into concept boards.
+
+Required human gate:
+**Georg: A / B / FAIL**
+
+No implementation is authorized by this design task.
+Only a later explicit Georg instruction after the visual gate can authorize a build blueprint or geometry.
+
+---
+
 ## CURRENT OVERRIDE · 2026-10-08 · KFB ISLAND MVP R4 STOPPED · NO MVP
 
 R4 is stopped.
