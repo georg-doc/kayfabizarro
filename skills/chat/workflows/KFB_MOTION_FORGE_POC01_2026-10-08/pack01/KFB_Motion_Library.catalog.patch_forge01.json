@@ -1,0 +1,168 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "forge01",
+ "date": "2026-10-08",
+ "issue": 376,
+ "base": {
+  "catalog": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+  "ref": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c"
+ },
+ "apply": "ADDITIVE · NOT APPLIED · waiting for Georg's look check",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_forge01.glb",
+  "libs/Rig_Large/KFB_Motion_forge01.glb"
+ ],
+ "qa": {
+  "handInHead": 0,
+  "hipTravelMax": 0.016,
+  "exportRoundTripMaxM": 1.8e-06,
+  "file": "qa_pack01.json"
+ },
+ "attribution": {
+  "file": "ATTRIBUTION.md",
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · rigs and Idle_A",
+   "UniMate (L. Mou et al., 2026) · checkpoints CC BY-NC 4.0 · credit required",
+   "Adobe Mixamo · source of the shrug (Mixamo terms)"
+  ]
+ },
+ "clips": [
+  {
+   "id": "kfb_gesture_point_low_a",
+   "label_de": "Zeigen nach vorn-unten (hüfthoch)",
+   "group": "gesture",
+   "rigs": ["Rig_Medium", "Rig_Large"],
+   "frames": 80,
+   "durationSec": 2.667,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "travelMetersPerCycle": {"Rig_Medium": 0.0, "Rig_Large": 0.0},
+   "startsOn": "KayKit Idle_A frame 0",
+   "endsOn": "KayKit Idle_A frame 0",
+   "lowerBody": "Idle_A frame 0 (masked)",
+   "bonesChanged": ["chest", "hand.l", "hand.r", "handslot.l", "handslot.r", "head", "lowerarm.l", "lowerarm.r", "spine", "upperarm.l", "upperarm.r", "wrist.l", "wrist.r"],
+   "events": {
+    "Rig_Medium": {"transitionInEnd": 10, "peak": 54, "holdStart": 52, "holdEnd": 57, "transitionOutStart": 69},
+    "Rig_Large": {"transitionInEnd": 10, "peak": 55, "holdStart": 41, "holdEnd": 58, "transitionOutStart": 69}
+   },
+   "semantic": ["point low", "show the way", "there, on the ground", "point at loot"],
+   "library": {"Rig_Medium": "libs/Rig_Medium/KFB_Motion_forge01.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_forge01.glb"},
+   "sourceFbx": null,
+   "sourcePack": "UniMate lane A (uniml3d_f60_v3) direct-to-rig, Motion Forge POC 01 (#376) T3_p2_r2, retargeted + Idle_A transitions",
+   "provenance": {
+    "generator": "UniMate (Mou, Lei, Dou, Cai, Song, Finkelstein, Rusinkiewicz 2026, arXiv:2609.05415)",
+    "code": "MIT",
+    "checkpoint": "unimate_uniml3d_f60_v3 step 150k",
+    "checkpointLicence": "CC BY-NC 4.0",
+    "attributionRequired": true,
+    "commercialUse": "not permitted by the checkpoint licence; KFB use = free-to-play portfolio, non-commercial (Georg, 2026-10-08)",
+    "creditLine": "Some gestures generated with UniMate (L. Mou et al., 2026), CC BY-NC 4.0."
+   },
+   "notes": "Solves #369 U1 (donor kfb_gesture_pointing_a had 30 hand-in-head samples, this one 0). Upper body only: legs/hips/root stay on Idle_A frame 0. Reach M 0.32 H / L 0.44 H."
+  },
+  {
+   "id": "kfb_gesture_point_forward_a",
+   "label_de": "Zeigen nach vorn (Brusthöhe, kopffrei)",
+   "group": "gesture",
+   "rigs": ["Rig_Medium", "Rig_Large"],
+   "frames": 80,
+   "durationSec": 2.667,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "travelMetersPerCycle": {"Rig_Medium": 0.0, "Rig_Large": 0.0},
+   "startsOn": "KayKit Idle_A frame 0",
+   "endsOn": "KayKit Idle_A frame 0",
+   "lowerBody": "Idle_A frame 0 (masked)",
+   "bonesChanged": ["chest", "hand.l", "hand.r", "handslot.l", "handslot.r", "head", "lowerarm.l", "lowerarm.r", "spine", "upperarm.l", "upperarm.r", "wrist.l", "wrist.r"],
+   "events": {
+    "Rig_Medium": {"transitionInEnd": 10, "peak": 74, "holdStart": 74, "holdEnd": 75, "transitionOutStart": 69},
+    "Rig_Large": {"transitionInEnd": 10, "peak": 67, "holdStart": 62, "holdEnd": 71, "transitionOutStart": 69}
+   },
+   "semantic": ["point forward", "over there"],
+   "library": {"Rig_Medium": "libs/Rig_Medium/KFB_Motion_forge01.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_forge01.glb"},
+   "sourceFbx": null,
+   "sourcePack": "UniMate lane A (uniml3d_f60_v3), Motion Forge POC 01 T3_p1_r1, retargeted + Idle_A transitions",
+   "provenance": {
+    "generator": "UniMate (Mou, Lei, Dou, Cai, Song, Finkelstein, Rusinkiewicz 2026, arXiv:2609.05415)",
+    "code": "MIT",
+    "checkpoint": "unimate_uniml3d_f60_v3 step 150k",
+    "checkpointLicence": "CC BY-NC 4.0",
+    "attributionRequired": true,
+    "commercialUse": "not permitted by the checkpoint licence; KFB use = free-to-play portfolio, non-commercial (Georg, 2026-10-08)",
+    "creditLine": "Some gestures generated with UniMate (L. Mou et al., 2026), CC BY-NC 4.0."
+   },
+   "notes": "WEAK on Rig_Medium: right-hand reach only 0.08 H, the peak falls into the return transition. Use on Rig_Large (reach 0.24 H) or prefer kfb_gesture_point_low_a. Upper body only."
+  },
+  {
+   "id": "kfb_interaction_kneel_offer_a",
+   "label_de": "Hinknien und nach vorn anbieten",
+   "group": "interaction",
+   "rigs": ["Rig_Medium", "Rig_Large"],
+   "frames": 92,
+   "durationSec": 3.067,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "travelMetersPerCycle": {"Rig_Medium": 0.0, "Rig_Large": 0.0},
+   "startsOn": "KayKit Idle_A frame 0",
+   "endsOn": "KayKit Idle_A frame 0",
+   "lowerBody": "full body",
+   "bonesChanged": ["chest", "hand.l", "hand.r", "handslot.l", "handslot.r", "head", "lowerarm.l", "lowerarm.r", "spine", "upperarm.l", "upperarm.r", "wrist.l", "wrist.r", "hips", "upperleg.l", "upperleg.r", "lowerleg.l", "lowerleg.r", "foot.l", "foot.r", "toes.l", "toes.r"],
+   "events": {
+    "Rig_Medium": {"transitionInEnd": 16, "peak": 71, "holdStart": 18, "holdEnd": 76, "transitionOutStart": 75},
+    "Rig_Large": {"transitionInEnd": 16, "peak": 71, "holdStart": 16, "holdEnd": 77, "transitionOutStart": 75}
+   },
+   "semantic": ["kneel", "offer low", "give to a smaller resident", "propose"],
+   "library": {"Rig_Medium": "libs/Rig_Medium/KFB_Motion_forge01.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_forge01.glb"},
+   "sourceFbx": null,
+   "sourcePack": "UniMate lane B (mixamo_f60_v2) on the Mixamo skeleton, retargeted to KayKit (rest offsets 0-19°) + Idle_A transitions",
+   "provenance": {
+    "generator": "UniMate (Mou, Lei, Dou, Cai, Song, Finkelstein, Rusinkiewicz 2026, arXiv:2609.05415)",
+    "code": "MIT",
+    "checkpoint": "unimate_mixamo_f60_v2 step 120k",
+    "checkpointLicence": "CC BY-NC 4.0",
+    "attributionRequired": true,
+    "commercialUse": "not permitted by the checkpoint licence; KFB use = free-to-play portfolio, non-commercial (Georg, 2026-10-08)",
+    "creditLine": "Some gestures generated with UniMate (L. Mou et al., 2026), CC BY-NC 4.0."
+   },
+   "notes": "Full body. Kneel depth: head down to 0.76 (M) / 0.74 (L) of standing. Per-frame hips lift keeps feet/knees >= 0 (max 0.038 M / 0.058 L). OPEN: toe slide in the in/out transitions 0.137 H (M) / 0.108 H (L); lane B head pitch hides the Medium face under the hat (U4). Does not close the Large->Medium hand-height gap (U3)."
+  },
+  {
+   "id": "kfb_gesture_shrug_georg_a",
+   "label_de": "Schulterzucken (Georgs Mixamo, Arme weniger nach hinten, kürzer gehalten)",
+   "group": "gesture",
+   "rigs": ["Rig_Medium", "Rig_Large"],
+   "frames": 69,
+   "durationSec": 2.3,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "travelMetersPerCycle": {"Rig_Medium": 0.0, "Rig_Large": 0.0},
+   "startsOn": "KayKit Idle_A frame 0",
+   "endsOn": "KayKit Idle_A frame 0",
+   "lowerBody": "Idle_A frame 0 (masked)",
+   "bonesChanged": ["chest", "hand.l", "hand.r", "handslot.l", "handslot.r", "head", "lowerarm.l", "lowerarm.r", "spine", "upperarm.l", "upperarm.r", "wrist.l", "wrist.r"],
+   "events": {
+    "Rig_Medium": {"transitionInEnd": 8, "peak": 44, "holdStart": 22, "holdEnd": 45, "transitionOutStart": 60},
+    "Rig_Large": {"transitionInEnd": 8, "peak": 44, "holdStart": 21, "holdEnd": 46, "transitionOutStart": 60}
+   },
+   "semantic": ["shrug", "doubt", "ask-back (BOGGLE?)", "dunno"],
+   "library": {"Rig_Medium": "libs/Rig_Medium/KFB_Motion_forge01.glb", "Rig_Large": "libs/Rig_Large/KFB_Motion_forge01.glb"},
+   "sourceFbx": null,
+   "sourcePack": "Georg's Mixamo shrug (M/L|MX|perf|kfb_perf_shrug_georg_raw, 24 fps), retimed and edited in Blender MCP",
+   "provenance": {
+    "generator": null,
+    "source": "Adobe Mixamo (via Georg); raw FBX stays off GitHub",
+    "attributionRequired": false,
+    "edits": "arms rotated about the shoulder so the hands' backward swing is 35 % of the original; hold 24 -> 9 source frames; settle trimmed to 6; 24 -> 30 fps; Idle_A transitions"
+   },
+   "notes": "Georg's pick (2026-10-08) over all generated shrugs. Spread M 0.36 / L 0.46, lift M 0.56 / L 0.51. Candidate to replace kfb_perf_shrug_a (#369) once Georg approves the look."
+  }
+ ]
+}
