@@ -1,11 +1,11 @@
 {
   "schema": "kfb.hub.open-world-mvp-live/1",
-  "revision": "2026-10-08.3",
-  "updatedAt": "2026-10-08T02:01:00+02:00",
+  "revision": "2026-10-08.4",
+  "updatedAt": "2026-10-08T02:13:00+02:00",
   "owner": "KFB WorldBuilder / WB2",
   "source": "Draft PR #348 · chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04 · R4 fail head 0a8240b83d4fbfdb69cdba47b812e618cc5cd897",
   "sourceRule": "This is the stable Hub live-data projection. Binding requirement truth remains explicit Georg decisions + current GitHub contracts; the Recovery Audit updates this projection at material milestones.",
-  "productStatus": "NO MVP · R4 STOPPED · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE",
+  "productStatus": "NO MVP · R4 STOPPED · STORY RECOVERY / VISUAL DIRECTION ONLY",
   "productStatusRule": "F-R39 = FAIL and there is NO GOLDEN BASELINE. Technical salvage does not rescue the rejected island composition. No repaired R4 or R5 may start without new explicit Georg authorization.",
   "noProgressRollup": true,
   "contractState": "FROZEN MATRIX v5 PRESERVED · 44 REQUIRED / 13 STRONGLY INCLUDE / 7 OPTIONAL · R4 STOPPED",
@@ -2103,7 +2103,7 @@
     "gameplayAcceptance": false
   },
   "recoveryStrategy": "Reuse existing WB2 bounded island plans, editor and scene/workspace store. Close independent document sessions, full pinned recipes, ordered sculpt and actual authored render/collider replay in one island-local frame. Validate one edited island with fresh load and same-seed isolation before breadth; full37 product acceptance remains required.",
-  "recoverySummary": "R4 stopped at Early Golden. The 44-row contract prevented feature loss but did not prevent a repeated, already-documented Micro-Storytelling/relation failure. Island layout, town causality, wrong Town asset family and legacy Curtain are rejected; bounded technical salvage remains evidence only.",
+  "recoverySummary": "Four-Island Story Recovery now consolidates existing Town/Dystopia/Utopia/Protopia material without inventing new lore. Current authorized next step is Claude Design Four-Island Story Vision R1: two visual/spatial interpretations A/B of the same recovered story. No runtime or geometry authorization.",
   "overview": "Planning/freeze phase closed. Final execution brief ready. One continuous Work/WSA integration job now owns the next product step; no parallel Coworker build and no broad architecture reopening.",
   "architecture": [
     {
@@ -2216,7 +2216,7 @@
   "executionStatus": "BOUNDED_ISLAND_FOUNDATION_HANDOFF",
   "currentExecutor": "WB2 Integrator · bounded handoff and exported seams",
   "currentOwner": "KFB WorldBuilder / WB2",
-  "nextGate": "NONE AUTHORIZED. Smallest possible future gate is a cheap source-backed world-model/composition proof before any new geometry, but it requires a new explicit Georg instruction.",
+  "nextGate": "CLAUDE DESIGN FOUR-ISLAND STORY VISION R1 → Georg A / B / FAIL. No implementation follows automatically.",
   "roadTrackOwnershipCorrection": {
     "status": "BINDING",
     "canon": "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
@@ -2247,11 +2247,11 @@
     ]
   },
   "planningCheckpoint": {
-    "status": "R4_STOPPED_WORLD_MODEL_COMPOSITION_SYNTHESIS_FAILURE",
+    "status": "FOUR_ISLAND_STORY_VISION_R1_READY_FOR_CLAUDE_DESIGN",
     "census": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_INTEGRATION_CENSUS_2026-10-07.md",
     "prototypeGraveyard": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_PROTOTYPE_GRAVEYARD_SALVAGE_INDEX_2026-10-07.md",
     "recoveryWorkflow": "KFB_OPEN_WORLD_ISLAND_MVP_ARCHITECTURE_2026-10-07",
-    "currentTask": "R4 STOPPED · preserve fail evidence and technical salvage only",
+    "currentTask": "Visualize recovered Town/Dystopia/Utopia/Protopia story as two A/B world directions",
     "noRuntimeWrite": true,
     "frozenMatrix": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.md",
     "frozenMatrixJson": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_ISLAND_MVP_FROZEN_MATRIX_2026-10-07.json",
@@ -2305,8 +2305,11 @@
     "fR39": "FAIL",
     "goldenBaseline": "NONE",
     "autoContinue": false,
-    "nextExecutor": "NONE",
+    "nextExecutor": "Claude Design",
     "postmortem": "skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
-    "failReturn": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md"
+    "failReturn": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md",
+    "storyRecovery": "skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
+    "visualBrief": "skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md",
+    "humanGate": "A / B / FAIL"
   }
 }
