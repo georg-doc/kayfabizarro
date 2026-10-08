@@ -1,3 +1,18 @@
+## 2026-10-08 · Island MVP R4 stopped · World-model / composition synthesis failure
+
+- R4 authoritative fail head: `0a8240b83d4fbfdb69cdba47b812e618cc5cd897` on Draft PR #348.
+- Product verdict: **NO MVP · WORLD_MODEL / COMPOSITION_SYNTHESIS_FAILURE**.
+- F-R39 = **FAIL**; **NO GOLDEN BASELINE**; no repaired One-Shot, no further fan-out, no merge/Live.
+- Full 44-row Return: `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md`.
+- New Postmortem: `skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md`.
+- Critical finding: R4 repeated the already-documented 2026-09-20 Micro-Storytelling/relations failure (“Die Szene, die keine war”): technical connectivity and correct component categories did not create a causally readable place.
+- Visible blockers included semantically unjustified loop/dead-end topology, missing market/town/daily-life causality, wrong medieval Town asset family instead of intended Joyride Town language, and legacy Curtain v1 instead of the Georg-PASS Curtain Recovery r3.
+- Technical evidence is preserved as bounded salvage only: island identity/persistence/sculpt/surface, Ground/Flight handoffs, Drive collision, Track-Core graph/sockets and contact evidence.
+- User-reported direct impact: the two prior failed attempts had already cost roughly **EUR 200**; R4 additionally consumed roughly **60% of the weekly Work usage volume** while still producing NO MVP.
+- User-reported human impact is explicitly recorded: trust loss, vigilance burden, frustration, decision fatigue, repeated interruption of creative work and the need to defend already-established creative intent against regression.
+- Graveyard advanced to **v1.12.0 / 62 graves** with “die Insel mit 44 Kästchen und ohne Geschichte”.
+- No R5 or repaired R4 is authorized. Any future geometry requires a new explicit authorization after a cheap world-model/composition gate.
+
 ## 2026-10-07 · Open World recovery complete and Hub JSON-only refresh proven
 
 - Complete frozen ledger: 37 required rows + 6 explicit nonblockers; product remains NO MVP (0 GREEN / 14 PARTIAL / 16 MISSING / 4 CONFLICT / 3 UNPROVEN).
