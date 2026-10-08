@@ -1,0 +1,103 @@
+{
+  "schema": "kfb.chatterbox.voice-next-mvp-proof/0.1",
+  "date": "2026-10-08",
+  "status": "AUTHORIZED_REQUIREMENT_FOR_NEXT_RUNTIME_MVP_AFTER_FOUR_ISLAND_A_B_GATE",
+  "currentDesignGate": {
+    "id": "KFB_FOUR_ISLAND_STORY_VISION_R1",
+    "mode": "VISUAL_ONLY",
+    "rule": "Do not implement Voice inside the current A/B visual-direction task."
+  },
+  "insertionPoint": "First runtime MVP slice explicitly authorized after Georg selects A or B.",
+  "ownerBoundaries": {
+    "dialogue": "existing KFB ChatterBox",
+    "affect": "Resident Life / Affect",
+    "audio": "KFB Audio / PR #365 family",
+    "voice": "ChatterBox Voice output adapter only"
+  },
+  "sourcePhrase": {
+    "path": "overworld/overworld/chatter-phrases.js",
+    "blobSha": "72f0bd5333cdadc2b1dcdbb1d8b782ead1e70ac4",
+    "version": "phrases-v1",
+    "adapter": "runtime/real-pool-adapter.js"
+  },
+  "sourceActors": [
+    {
+      "proofId": "dystopia-demon-lord",
+      "world": "world.dystopia",
+      "residentId": "demon-lord",
+      "actorId": "demon",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "rigFamily": "Rig_Large",
+      "voicePresetCandidate": "demon_lord",
+      "voicePresetStatus": "AUDITION_CANDIDATE",
+      "storyRole": "Demon Lord birthday-party anchor"
+    },
+    {
+      "proofId": "utopia-robot-one",
+      "world": "world.utopia",
+      "residentId": "robot-one",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_One.glb",
+      "sourceBlob": "b31e123c4aa4038aaa4f1c76f003570e4507eee8",
+      "rigFamily": "Rig_Medium",
+      "voicePresetCandidate": "robot",
+      "voicePresetStatus": "AUDITION_CANDIDATE",
+      "storyRole": "Robot A / active engineered-world worker"
+    },
+    {
+      "proofId": "protopia-farmer-a",
+      "world": "world.protopia",
+      "residentId": "farmers",
+      "actorId": "farmer_a",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "rigFamily": "Rig_Medium",
+      "voicePresetCandidate": "farmer",
+      "voicePresetStatus": "AUDITION_CANDIDATE",
+      "storyRole": "Farmer Duo / local activity explanation"
+    },
+    {
+      "proofId": "protopia-lorekeeper",
+      "world": "world.protopia",
+      "residentId": "lorekeeper",
+      "actorId": "lorekeeper",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "rigFamily": "Rig_Medium",
+      "voicePresetCandidate": "lorekeeper",
+      "voicePresetStatus": "AUDITION_CANDIDATE",
+      "storyRole": "Golden Journey Lorekeeper handoff",
+      "optionalSecondProtopiaProof": true
+    }
+  ],
+  "requiredMvpProof": {
+    "spokenResidentsMinimum": 3,
+    "requireWorldCoverage": [
+      "world.dystopia",
+      "world.utopia",
+      "world.protopia"
+    ],
+    "bubbleReadableWithoutAudio": true,
+    "validSilencePreserved": true,
+    "noSecondAudioContext": true,
+    "musicDuckingOwnedByExistingAudio": true,
+    "fallbackProof": [
+      "static_or_whole",
+      "browser"
+    ],
+    "socialCallProof": {
+      "required": true,
+      "allowed": [
+        "bingo",
+        "bongo",
+        "boggle",
+        "bloedsinn"
+      ],
+      "rule": "Use one accepted curated voice asset on a real Golden-Journey choice; text/bubble remains authoritative."
+    },
+    "listeningGate": "Georg KEEP/TUNE/CUT for only the voices actually used in the MVP proof."
+  },
+  "excluded": [
+    "No full 11-voice casting requirement before MVP proof.",
+    "No Resemble Chatterbox-TTS dependency.",
+    "No bulk ElevenLabs generation before source IDs/casting are accepted.",
+    "No voice requirement inside the current visual-only A/B design task."
+  ]
+}
