@@ -19,7 +19,8 @@
 - existing browser-local asset and style-reference state survives refresh;
 - existing external 3D preview and fail-soft paths remain functional;
 - desktop and 390 px mobile viewport have no horizontal overflow;
-- no browser console errors after the main live feed exists.
+- controlled local browser regression has no console errors after the main live feed exists;
+- production loaded the new live feed with HTTP 200; pre-existing anonymous GitHub API freshness calls returned 403 and followed the existing fail-soft path.
 
 ## Private Inbox proof
 
