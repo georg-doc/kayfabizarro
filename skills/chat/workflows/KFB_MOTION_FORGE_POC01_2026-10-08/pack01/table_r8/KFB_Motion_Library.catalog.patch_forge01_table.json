@@ -3,7 +3,7 @@
  "batch": "forge01_table",
  "date": "2026-10-08",
  "issue": 376,
- "apply": "ADDITIVE · NOT APPLIED · Georg approved the look on 2026-10-08 ('sieht jetzt gut aus') after the stool was pushed back",
+ "apply": "ADDITIVE · NOT APPLIED · Georg approved the look on 2026-10-08; rev 2: long eraser pencil in a writing grip",
  "libraries": [
   "libs/Rig_Medium/KFB_Motion_forge01_table.glb",
   "libs/Rig_Large/KFB_Motion_forge01_table.glb"
@@ -148,10 +148,26 @@
      "onTableTop": true
     },
     "pencil": {
-     "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
-     "scale": 1.5,
+     "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+     "note": "the long pencil with the eraser cap (Georg 2026-10-08), cartoon-big",
+     "scale": {
+      "Rig_Medium": 1.3,
+      "Rig_Large": 2.314
+     },
      "attach": "handslot.r",
-     "rotation": "identity"
+     "grip": {
+      "tipToEraserDir": [
+       -0.65,
+       0.73,
+       -0.2
+      ],
+      "space": "actor glTF (x right-of-viewer, y up, +z forward)",
+      "gripPointForward": {
+       "Rig_Medium": 0.04,
+       "Rig_Large": 0.071
+      },
+      "rule": "the pencil passes through the grip point (handslot.r + gripPointForward), tip on the page, eraser up and out to the right; placed on frame 0 and then parented to handslot.r"
+     }
     }
    },
    "provenance": {

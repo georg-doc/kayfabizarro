@@ -5,13 +5,12 @@
 
 ## Defects and open points first
 
-1. **Video predates the stool push-back.** `previews/FORGE_TABLE_R8c_atlas_sitting_eat_write_read.mp4` shows the stool before the push-back. `previews/TABLE_R8_STOOL_BACK_side_back.png` shows the final placement. Blender crashed twice during the GLB export, so the video has not been re-rendered.
+1. **Current preview: `previews/FORGE_TABLE_R8d_atlas_sitting_eat_write_read.mp4`.** It shows the stool pushed back and the new pencil. The older `R8c` video predates both and stays only for the record.
 2. **GLB round trip not measured.** The GLBs come from the Blender glTF exporter. The export also caught unrelated scene objects, so I stripped it down to the one skeleton and the three clips (pygltflib).
    - Checked: the skeleton is identical to `KFB_Motion_forge01.glb` (only one quaternion sign flip on `toes.r`, which is the same rotation).
    - Checked: hips height equals the seat height (0.50 M / 0.89 L).
    - Checked: durations match the frame counts at 30 fps.
 3. **Remaining notes from the external critic:**
-   - The pencil reads small on the Farmer and is hidden in the Orc's fist.
    - The bite piece is hard to see.
    - The sandwich shrinks along the actor's X axis, so a pure side camera does not see it get shorter.
    - Reading and Orc writing leave small arm-to-table contact.
@@ -57,7 +56,8 @@
 | `libs/Rig_Medium/KFB_Motion_forge01_table.glb`, `libs/Rig_Large/KFB_Motion_forge01_table.glb` | 3 clips each, skeleton only |
 | `KFB_Motion_Library.catalog.patch_forge01_table.json` | clips, furniture placement, props, eaten-away timing, provenance |
 | `scripts/kfb_table_atlas.py` | rebuild: `stage_variant`, `build_clip`, `build_write`, `push_stool_back`, `render_seq` |
-| `previews/FORGE_TABLE_R8c_atlas_sitting_eat_write_read.mp4` | eat / write / read, Farmer + Orc, front ¾ + side (before the push-back) |
+| `previews/FORGE_TABLE_R8d_atlas_sitting_eat_write_read.mp4` | eat / write / read, Farmer + Orc, front ¾ + side (current) |
+| `previews/FORGE_TABLE_R8c_atlas_sitting_eat_write_read.mp4` | older: before the push-back and the pencil change |
 | `previews/TABLE_R8_STOOL_BACK_side_back.png` | final stool placement, side + back, both rigs |
 
 ## Attribution
@@ -67,4 +67,4 @@
 
 ## Next gate (one)
 
-Georg plays the three clips in the world runtime with the furniture from the patch, and decides the pencil and bite-piece look.
+Georg plays the three clips in the world runtime with the furniture and props from the patch. Bite-piece tuning is parked for later (Georg).
