@@ -1,6 +1,6 @@
 # KFB ChatterBox Voice Layer · Integration Slices · 2026-10-08
 
-Status: **PLANNED · S0 COMPLETE · NO RUNTIME WRITES YET**
+Status: **S0 + S1 COMPLETE · NEXT-MVP VOICE ACCEPTANCE PREPARED · NO WORLD RUNTIME WRITES YET**
 
 Goal: move the accepted donor into KFB through the smallest owner-safe sequence, without reviving the whole ChatterBox Site project prematurely.
 
@@ -17,32 +17,36 @@ Outcome:
 
 No runtime change.
 
-## S1 · Canonical pool → Voice Asset Adapter · NEXT
+## S1 · Canonical pool → Voice Asset Adapter · COMPLETE
 
 Owner:
 existing ChatterBox content/kernel lane.
 
-Input:
-- `overworld/overworld/chatter-phrases.js`;
-- current Triplet/Curator source if newer;
-- canonical Card/deck refs;
-- three chosen real Resident profiles.
+Implemented:
+- `runtime/real-pool-adapter.js`;
+- `tools/test_real_pool_adapter.cjs`;
+- `data/NEXT_MVP_VOICE_PROOF_R1.json`;
+- `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`.
 
-Work:
-1. enumerate a bounded real phrase/Triplet subset;
-2. assign stable source IDs to voiceable segments;
-3. preserve SHOW/SPIN/SELL or template role/slot;
-4. define text-revision invalidation;
-5. map source IDs to the donor fragment manifest shape;
-6. do not rewrite ChatterBox selection logic.
+Actual current-source result:
+- `chatter-phrases.js` blob `72f0bd5333cdadc2b1dcdbb1d8b782ead1e70ac4`;
+- 8 factions;
+- 128 faction phrase records;
+- 23 synthesis records;
+- 15 activity-thought records;
+- **166 unique stable source IDs total**;
+- `{X}` templates keep stable template identity plus text revision;
+- Triplet adapter preserves owner-supplied status, including `AUTHORING_CANDIDATE`;
+- thought/philo/activity records default silent;
+- no dialogue-selection logic is added.
 
-Acceptance:
-- no illustrative Voice-V1 line is promoted as canon;
-- every rendered source segment points back to exact KFB source/provenance;
-- identical text in different semantic/position roles can remain distinct assets;
-- adapter can emit the existing donor resolver input.
+Acceptance evidence:
+- exact committed adapter against exact current phrase source: **13/13 PASS**;
+- no illustrative Voice-V1 line promoted as canon;
+- source revision and source ID survive into VoiceRequest provenance;
+- normalized text is only an asset/cache key aid.
 
-No audio regeneration required yet.
+No audio regeneration was required for S1.
 
 ## S2 · Three-Resident Casting Proof
 
@@ -174,4 +178,6 @@ Do not block the first useful voice layer on lipsync.
 
 ## One next gate
 
-**S1 · KFB_CHATTERBOX_VOICE_REAL_POOL_ADAPTER_R1**
+**S2 · KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
+
+Use only the source-backed MVP-proof actors already named in `NEXT_MVP_VOICE_PROOF_R1.json`; audition/render the minimum canonical material needed for Demon Lord, Robot One, Farmer A and optional Lorekeeper, then compare Whole/Assembled/browser routes before any World-runtime integration.

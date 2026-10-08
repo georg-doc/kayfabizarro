@@ -1,6 +1,6 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
-Status: **READY FOR INTEGRATION · PLANNING/SOURCE ACCEPTANCE COMPLETE · NO RUNTIME PROMOTION**
+Status: **S1 COMPLETE · REAL POOL ADAPTER GREEN · NEXT-MVP VOICE ACCEPTANCE PREPARED · NO WORLD RUNTIME PROMOTION**
 
 ## Owner / scope
 
@@ -56,6 +56,10 @@ Production Control imported ZIP:
 - `VOICE_LAYER_INTEGRATION_CONTRACT.md`
 - `INTEGRATION_SLICES.md`
 - `TEST_REPORT.md`
+- `runtime/real-pool-adapter.js`
+- `tools/test_real_pool_adapter.cjs`
+- `data/NEXT_MVP_VOICE_PROOF_R1.json`
+- `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`
 - this `RETURN.md`
 
 under:
@@ -160,23 +164,27 @@ No public/Stage URL is required by this planning/source-acceptance slice.
 ## Integration slices
 
 - **S0 Source intake/owner audit: COMPLETE**
-- **S1 Canonical pool → Voice Asset Adapter: NEXT**
-- S2 Three-Resident Casting Proof
+- **S1 Canonical pool → Voice Asset Adapter: COMPLETE · 13/13 PASS**
+- **S2 Three-Resident/Actor Casting Proof: NEXT**
 - S3 Existing-surface Voice Bench
 - S4 ChatterBox Consumer Seam
 - S5 Social Calls / Catchphrase Pack
 - S6 Optional live/provider expansion
 - S7 Mouth/viseme enrichment · deferred
 
+Next-MVP requirement is now frozen separately in:
+`NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`.
+
+It applies to the **first runtime MVP authorized after Georg's Four-Island A/B visual decision**. It does not alter the current visual-only task.
+
 ## Current blockers / unresolved items
 
-1. `chatter-phrases.js` phrase families are not yet the same data shape as the donor's segmented Triplet fixtures.
-2. No accepted runtime mapping yet proves:
-   `residentId → chatterProfileRef → voicePreset`.
-3. The 11 voice presets have not been human-auditioned here.
-4. Assembled versus Whole has not received Georg's listening decision.
+1. The source-ID seam is now closed for current `chatter-phrases.js`; actual accepted Triplet-pool material still depends on its owner/review status.
+2. No accepted runtime mapping yet proves `residentId → chatterProfileRef → voicePreset`.
+3. The MVP-proof audition presets have not yet received Georg's listening decision.
+4. Assembled versus Whole remains a listening decision.
 5. Exact public-license attribution must be frozen for whatever voices actually ship.
-6. PR #357 / issue #362 remain HOLD/TUNE history until explicitly reopened; this slice does not reopen them.
+6. PR #357 / issue #362 remain HOLD/TUNE history until explicitly reopened.
 7. Optional ElevenLabs use remains an extension, not a dependency.
 
 ## Hub / router / Live
@@ -191,6 +199,12 @@ No Live promotion.
 
 ## Exactly one next gate
 
-**KFB_CHATTERBOX_VOICE_REAL_POOL_ADAPTER_R1**
+**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
 
-Take a bounded real canonical KFB phrase/Triplet subset plus three real Residents and produce stable source-backed voice asset IDs that the existing Voice V1 resolver can consume without changing ChatterBox semantics or KFB Audio ownership.
+Audition/render only the bounded source-backed MVP proof set:
+- Dystopia Demon Lord → `demon_lord` audition preset;
+- Utopia Robot One → `robot`;
+- Protopia Farmer A → `farmer`;
+- optional Lorekeeper → `lorekeeper`.
+
+Then compare Whole / Assembled / browser fallback on canonical source material before any World runtime integration.

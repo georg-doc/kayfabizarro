@@ -1,6 +1,6 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
-Status: **READY FOR INTEGRATION PREP · SOURCE PACKAGE ACCEPTED · NO RUNTIME PROMOTION**
+Status: **S1 REAL-POOL ADAPTER GREEN · NEXT-MVP VOICE ACCEPTANCE PREPARED · NO WORLD RUNTIME PROMOTION**
 Date: 2026-10-08
 Owner: **KFB ChatterBox / Resident Speech output**
 Receiving owners: **existing KFB ChatterBox dialogue owner + existing KFB Audio owner**
@@ -108,8 +108,26 @@ PR #365 remains the current KFB Audio module owner and is not modified here.
 
 No GPT Site, Cloudflare route, World runtime, merge or Live promotion is performed in this planning slice.
 
+## S1 implementation milestone · COMPLETE
+
+Implemented:
+- `runtime/real-pool-adapter.js`
+- `tools/test_real_pool_adapter.cjs`
+- `data/NEXT_MVP_VOICE_PROOF_R1.json`
+- `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`
+
+The adapter consumes the real current `OW_PHRASES` object and exposes **166 stable source records**:
+- 128 faction phrases;
+- 23 synthesis lines;
+- 15 activity thoughts.
+
+Exact committed adapter test against current `chatter-phrases.js`:
+**13/13 PASS**.
+
+The first runtime MVP after the Four-Island A/B visual gate must read the Voice Acceptance addendum from the beginning of its frozen matrix.
+
 ## Exactly one next gate
 
-**KFB_CHATTERBOX_VOICE_REAL_POOL_ADAPTER_R1**
+**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
 
-Map a bounded real canonical KFB phrase/Triplet subset plus three real Resident profiles onto stable voice-fragment IDs and prove that the existing resolver can consume them without changing ChatterBox semantics or KFB Audio ownership.
+Render/audition only the source-backed voices needed for the bounded MVP proof, starting with Dystopia Demon Lord, Utopia Robot One, Protopia Farmer A and optional Lorekeeper. Do not bulk-render the whole pool.

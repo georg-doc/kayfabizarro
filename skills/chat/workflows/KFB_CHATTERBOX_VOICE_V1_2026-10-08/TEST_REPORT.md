@@ -1,6 +1,6 @@
 # TEST REPORT · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
-Status: **EVIDENCE MILESTONE · STATIC/SOURCE AUDIT GREEN**
+Status: **EVIDENCE MILESTONE · SOURCE AUDIT + REAL-POOL ADAPTER GREEN**
 Branch-under-test parent: `4d341158b7723732b65e20c94777ac63dcc485d9`
 
 ## Scope
@@ -120,3 +120,56 @@ Do not spend credits or regenerate the full pool before that seam exists.
 ## Next gate
 
 `KFB_CHATTERBOX_VOICE_REAL_POOL_ADAPTER_R1`
+
+
+## S1 · Real canonical pool adapter · 13/13 PASS
+
+Exact source under test:
+- `overworld/overworld/chatter-phrases.js`
+- blob `72f0bd5333cdadc2b1dcdbb1d8b782ead1e70ac4`
+- version `phrases-v1`
+
+Exact adapter under test:
+- `runtime/real-pool-adapter.js`
+- blob `011f3a96975bd66ed2aaca219577e6108b893f42`
+
+Current source census:
+- 8 factions;
+- 128 faction phrase records;
+- 23 synthesis records;
+- 15 activity-thought records;
+- **166 unique source records**.
+
+Assertions:
+1. version = phrases-v1;
+2. current faction count = 8;
+3. current record count = 166;
+4. all source IDs unique;
+5. exact `kingCourt.ueber[0]` template recovered;
+6. `{X}` binding produces exact expected visible text;
+7. `philo` defaults to silent thought;
+8. synthesis source resolves;
+9. activity thought defaults silent;
+10. VoiceRequest preserves stable source ID/provenance;
+11. semantic Triplet adapter produces subject/connector/reframe roles;
+12. `AUTHORING_CANDIDATE` status is preserved and never auto-promoted;
+13. emotion change changes the audio asset key without changing dialogue identity.
+
+Result:
+**13/13 PASS**.
+
+### Still UNKNOWN
+- audio quality;
+- Whole vs Assembled listening preference;
+- final Resident-to-voice casting;
+- actual KFB Audio ducking in an integrated surface;
+- browser playback of newly rendered canonical lines;
+- next-MVP World integration.
+
+These are not treated as failures.
+
+## MVP planning evidence
+
+`NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md` and `data/NEXT_MVP_VOICE_PROOF_R1.json` now freeze the Voice proof for the first runtime MVP after the current Four-Island A/B visual gate.
+
+The current visual-only Story Vision R1 remains unchanged and receives no runtime work.
