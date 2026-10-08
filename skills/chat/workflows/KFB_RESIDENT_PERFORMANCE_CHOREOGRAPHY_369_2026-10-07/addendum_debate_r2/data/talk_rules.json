@@ -1,5 +1,5 @@
 {
- "schema": "kfb.talk.rules.v1",
+ "schema": "kfb.talk.rules.v2",
  "fps": 24,
  "note": "Rule engine for resident conversations (debate and Speaker's Corner). Engagement 0 absent, 1 polite, 2 engaged, 3 dogged. Heat = shared escalation 0..3. All numbers are tuning knobs.",
  "engagementNames": [
@@ -250,7 +250,7 @@
   "overlap": 10
  },
  "patience": [
-  3,
+  4,
   6,
   10,
   14
@@ -292,7 +292,7 @@
   },
   "heckle": {
    "minEngagement": 2,
-   "p": 0.35,
+   "p": 0.42,
    "moves": {
     "contradict": 2,
     "taunt": 1.5,
@@ -315,8 +315,68 @@
     "question": 0.6
    }
   },
-  "heatFromHeckle": 0.45,
+  "heatFromHeckle": 0.6,
   "heatFromApplause": -0.15,
-  "applauseEnd": "fans celebrate, speaker cheers"
+  "applauseEnd": "fans celebrate, speaker cheers",
+  "answerCost": {
+   "rage": 5,
+   "dismiss": 4,
+   "taunt": 3,
+   "insist": 2
+  },
+  "sway": {
+   "moves": [
+    "explain",
+    "agree"
+   ],
+   "p": 0.12
+  },
+  "crowdCost": {
+   "pro": [
+    0,
+    0.3,
+    1.5,
+    3
+   ],
+   "neutral": [
+    0.5,
+    0.7,
+    1.5,
+    2.5
+   ],
+   "contra": [
+    0.3,
+    0.4,
+    0.6,
+    1.5
+   ]
+  },
+  "heatFromHecklerLeaving": 0.5,
+  "desertedAt": 1,
+  "stancePatience": {
+   "pro": 1.2,
+   "neutral": 0.8,
+   "contra": 0.55
+  }
+ },
+ "drawIn": {
+  "note": "hostile move pulls an absent/polite listener in: engagement +1 with p * (0.5 + fuse)",
+  "moves": {
+   "taunt": 0.4,
+   "rage": 0.35,
+   "dismiss": 0.28,
+   "question": 0.18,
+   "contradict": 0.15,
+   "insist": 0.08
+  },
+  "heat": 0.15
+ },
+ "provokeAbsent": {
+  "note": "engaged/dogged speaker facing an absent listener provokes instead of explaining on",
+  "question": 2.0,
+  "taunt": 3.0,
+  "dismiss": 2.0,
+  "insist": 1.5,
+  "explain": 0.6
  }
 }
