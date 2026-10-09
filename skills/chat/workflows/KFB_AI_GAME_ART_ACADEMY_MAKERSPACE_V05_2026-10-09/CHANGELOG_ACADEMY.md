@@ -1,5 +1,16 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Holographic World Foundry / Personal Retreats v0.8
+
+- Extended God Mode MakerSpace architecture to a holographic tabletop WorldRecipe builder with source-backed islands, Terrain (owner/source required), Residents/mini-scenes, Track Core snap/RouteRecipe, Skydome and a reversible Tactical Map representation.
+- Split DRAFT / SIMULATION / PRIVATE VISITABLE / SHARED INVITE / PUBLIC CATALOG / authorized World Stage-Live into **different permission and persistence targets** rather than one instantaneous publish button.
+- Proposed Player Housing/hero retreat as durable privately owned world/lot with editable props/visitors under existing owner; publication for all requires actual authenticated persistent instance service, validation, package/manifest/rollback and content governance. GPT Site interface alone is NOT multiplayer backend.
+- No double World runtime nested inside miniature; low-LOD derived hologram + one focused actual instance when authorized.
+- Source findings: existing God Mode WorldRecipe/Instance, Track Core, measured track-chain donor, Storytelling Map presentation transforms, Resident scene module, Skydome, World Frozen Matrix. Referenced terrain-sculpt path absent on main, SOURCE_REQUIRED.
+- Added `MAKERSPACE_HOLOGRAPHIC_WORLD_FOUNDRY_V08.md` + `MAKERSPACE_HOLOGRAPHIC_WORLD_FOUNDRY_TEST_V08.md`; source checks **16/16 PASS**; actual World/browser/publication tests **0**.
+- Academy gate unchanged `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`; Claude Design preferred source-backed visual executor, sequential code/Work technical fallback only. No World R5 / PR / Stage / new Site / Live.
+
+
 ## 2026-10-09 · God Mode / ToolBox production workbench v0.7
 
 - Current available ToolBox specialist GPT Sites, legacy tools, original source modules, owner seams and missing cross-site integrations inventoried.
