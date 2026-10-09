@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<title>KFB HUD + Flug-VFX · R2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=JetBrains+Mono:wght@500;700&family=Nunito+Sans:wght@400;600;800&family=VT323&display=swap">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+<style>
+html,body{margin:0;background:#EAE5DC;color:#2A2238}
+a{color:#7C69AE}a:hover{color:#4A3D6B}
+button{font-family:inherit}
+</style>
+</helmet>
+
+<div style="width:2520px;padding:72px 80px 96px;box-sizing:border-box;font-family:'Nunito Sans',system-ui,sans-serif;display:flex;flex-direction:column;gap:72px">
+
+  <header data-screen-label="Kopf" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C69AE">KFB MVP · DRIVE LOOP · R2</div>
+      <h1 style="margin:0;font:400 72px/1 'Bangers',sans-serif;letter-spacing:.02em;color:#2A2238">HUD + Flug-VFX</h1>
+      <p style="margin:0;max-width:880px;font-size:19px;line-height:1.5;color:#4C4560;text-wrap:pretty">Knet-Plaketten je Reisemodus, Moduswechsel als Roll- und Plopp-Animation, Flugeffekte als Knet-Wülste, Tropfen und Speedlines. Alle Bilder unten sind live gerendert aus den Modulen, die ins Lab gehen.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;font:500 13px/1.5 'JetBrains Mono',monospace;color:#6B6380">
+      <span>hud-flight/kfb-hud.js</span>
+      <span>hud-flight/kfb-flight-vfx.js</span>
+      <span>hud-flight/kfb-backpack.js</span>
+      <span>hud-flight/kfb-jukebox-data.js</span>
+      <span>hud-flight/hud-board-scene.js · nur Tafel</span>
+      <span style="color:#B87B60">{{ status }}</span>
+    </div>
+  </header>
+
+  <section data-screen-label="A · HUD je Reisemodus" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">A</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">HUD je Reisemodus</h2>
+      <span style="font-size:16px;color:#6B6380">Gestrichelt: Figurzone, bleibt frei.</span>
+    </div>
+    <div style="display:flex;gap:28px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:12px;width:768px">
+        <div style="position:relative;width:768px;height:432px;border-radius:14px;overflow:hidden;background:#C9D6D2;box-shadow:0 18px 40px rgba(42,34,56,.18)">
+          <canvas id="bg-walk" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+          <div id="zone-walk" style="position:absolute;display:none;border:2px dashed rgba(255,255,255,.85);border-radius:40%"></div>
+          <div id="hud-walk" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Gehen</div>
+          <div style="font-size:16px;line-height:1.45;color:#4C4560">Fluff-Score, Kompass bzw. Inselname dezent; kein Tacho. Ruhig, fast leer.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;width:768px">
+        <div style="position:relative;width:768px;height:432px;border-radius:14px;overflow:hidden;background:#C9D6D2;box-shadow:0 18px 40px rgba(42,34,56,.18)">
+          <canvas id="bg-drive" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+          <div id="zone-drive" style="position:absolute;display:none;border:2px dashed rgba(255,255,255,.85);border-radius:40%"></div>
+          <div id="hud-drive" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Fahren</div>
+          <div style="font-size:16px;line-height:1.45;color:#4C4560">Tacho als Knet-Rundinstrument, Radio mit diegetischen Knöpfen (Musik an/aus, Zurück, Play, Weiter, Playlist), Fluff-Score. Armaturenbrett-Teile aus Knete.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;width:768px">
+        <div style="position:relative;width:768px;height:432px;border-radius:14px;overflow:hidden;background:#C9D6D2;box-shadow:0 18px 40px rgba(42,34,56,.18)">
+          <canvas id="bg-fly" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+          <div id="zone-fly" style="position:absolute;display:none;border:2px dashed rgba(255,255,255,.85);border-radius:40%"></div>
+          <div id="hud-fly" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Fliegen</div>
+          <div style="font-size:16px;line-height:1.45;color:#4C4560">Luft-Tacho, Höhensäule, Schub-Tank (Düsenflamme = Schub, fünf Tropfen = Energie), Fluff-Score; das Radio bleibt und rückt zusammen.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:28px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:12px;width:360px">
+        <div style="position:relative;width:360px;height:640px;border-radius:28px;overflow:hidden;background:#C9D6D2;box-shadow:0 18px 40px rgba(42,34,56,.18)">
+          <canvas id="bg-mobile" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+          <div id="zone-mobile" style="position:absolute;display:none;border:2px dashed rgba(255,255,255,.85);border-radius:40%"></div>
+          <div id="hud-mobile" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Mobil · Fliegen</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:620px;padding-top:8px;font-size:17px;line-height:1.55;color:#4C4560">
+        <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">REGELN</div>
+        <div>Ecken und unterer Rand, nie über der Figur. Oben rechts steht immer der Fluff-Zähler, unten links das Fahrzeug- bzw. Jetpack-Instrument, unten rechts das Radio.</div>
+        <div>Unter 1180 px schrumpft das HUD bis auf 62 %. Unter 620 px Breite, oder wenn es unten eng würde, rückt das Radio ohne Display in die obere Reihe neben den Rucksack. Oben bleibt es eine Zeile, unten hat die Figur Platz.</div>
+        <div>Jedes Teil ist ein Gegenstand: Plakette mit Sockelschatten, dunkle Mulde, Pfirsich-Knöpfe drücken sich 2 px in den Sockel. Jedes Teil hat eine feste, leichte Neigung.</div>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
+      <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">RADIO · ZUSTÄNDE</div>
+      <div style="display:flex;gap:20px;align-items:flex-end">
+        <div style="display:flex;flex-direction:column;gap:8px;width:160px">
+          <div id="rs-off" style="position:relative;height:96px;border-radius:12px;background:#D7DED6;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 18px 18px;box-sizing:border-box"></div>
+          <div style="font:800 16px/1.2 'Nunito Sans',sans-serif">Musik aus</div>
+          <div style="font-size:14px;line-height:1.45;color:#4C4560;text-wrap:pretty">Nur der Noten-Knopf. Antippen schaltet ein und klappt auf.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;width:440px">
+          <div id="rs-on" style="position:relative;height:96px;border-radius:12px;background:#D7DED6;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 18px 18px;box-sizing:border-box"></div>
+          <div style="font:800 16px/1.2 'Nunito Sans',sans-serif">Fahren · an</div>
+          <div style="font-size:14px;line-height:1.45;color:#4C4560;text-wrap:pretty">Display mit Titel und Künstler, dazu Zurück, Play, Weiter, Playlist.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;width:380px">
+          <div id="rs-compact" style="position:relative;height:96px;border-radius:12px;background:#D7DED6;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 18px 18px;box-sizing:border-box"></div>
+          <div style="font:800 16px/1.2 'Nunito Sans',sans-serif">Fliegen · kompakt</div>
+          <div style="font-size:14px;line-height:1.45;color:#4C4560;text-wrap:pretty">Kürzeres Display, damit unten Platz für die Jetpack-Instrumente bleibt.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;width:260px">
+          <div id="rs-mini" style="position:relative;height:96px;border-radius:12px;background:#D7DED6;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 18px 18px;box-sizing:border-box"></div>
+          <div style="font:800 16px/1.2 'Nunito Sans',sans-serif">Mobil · ohne Display</div>
+          <div style="font-size:14px;line-height:1.45;color:#4C4560;text-wrap:pretty">Nur die Knöpfe; der Titel steht im Playlist-Menü.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;width:440px">
+          <div id="rs-menu" style="position:relative;height:250px;border-radius:12px;background:#D7DED6;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 18px 18px;box-sizing:border-box"></div>
+          <div style="font:800 16px/1.2 'Nunito Sans',sans-serif">Playlist-Menü</div>
+          <div style="font-size:14px;line-height:1.45;color:#4C4560;text-wrap:pretty">Biom-Radio plus alle Kassetten aus dem Rucksack. Die laufende Playlist ist markiert.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="B · Moduswechsel" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">B</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">Moduswechsel als Knet-Animation</h2>
+      <span style="font-size:16px;color:#6B6380">Eingefrorene Einzelbilder. Tacho rollt ein, Höhensäule ploppt, Tank und Radio steigen auf; Teile, die bleiben, bleiben stehen.</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:800 18px/1 'Nunito Sans',sans-serif">Gehen → Fahren</div>
+      <div style="display:flex;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-a-0-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-a-0" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">0 % · <span id="seq-a-0-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-a-1-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-a-1" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">25 % · <span id="seq-a-1-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-a-2-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-a-2" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">50 % · <span id="seq-a-2-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-a-3-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-a-3" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">75 % · <span id="seq-a-3-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-a-4-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-a-4" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">100 % · <span id="seq-a-4-t">–</span></div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:800 18px/1 'Nunito Sans',sans-serif">Fahren → Fliegen <span style="font-weight:600;color:#6B6380">· Doppel-Leertaste</span></div>
+      <div style="display:flex;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-b-0-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-b-0" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">0 % · <span id="seq-b-0-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-b-1-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-b-1" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">25 % · <span id="seq-b-1-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-b-2-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-b-2" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">50 % · <span id="seq-b-2-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-b-3-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-b-3" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">75 % · <span id="seq-b-3-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-b-4-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-b-4" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">100 % · <span id="seq-b-4-t">–</span></div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:800 18px/1 'Nunito Sans',sans-serif">Fliegen → Gehen <span style="font-weight:600;color:#6B6380">· Landung</span></div>
+      <div style="display:flex;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-c-0-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-c-0" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">0 % · <span id="seq-c-0-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-c-1-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-c-1" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">25 % · <span id="seq-c-1-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-c-2-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-c-2" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">50 % · <span id="seq-c-2-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-c-3-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-c-3" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">75 % · <span id="seq-c-3-t">–</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="position:relative;width:384px;height:216px;border-radius:10px;overflow:hidden;background:#C9D6D2"><div style="position:absolute;left:0;top:0;width:768px;height:432px;transform:scale(.5);transform-origin:0 0"><canvas id="seq-c-4-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas><div id="seq-c-4" style="position:absolute;inset:0"></div></div></div><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">100 % · <span id="seq-c-4-t">–</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="C · Flug-VFX" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">C</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">Flug-VFX</h2>
+      <span style="font-size:16px;color:#6B6380">Jeder Effekt ist ein eigenes Modul und einzeln schaltbar. Feste Pools, fünf bis sechs Draw-Calls.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:240px repeat(3,512px);gap:20px 24px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Speedlines</div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Zwei Bänder an den Außenkanten von Jetpack oder Kart. Sie hängen am Träger, laufen dünn aus und folgen Bank und Rolle ohne Abriss. Unter 18 km/h ziehen sie sich ein.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-trail-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">JETPACK · GERADEAUS 170 KM/H</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-trail-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">JETPACK · KURVE MIT BANK</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-trail-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">KART · KURVE 90 KM/H</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Manöver-Linien</div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Radiale Linien am Bildrand, additiv und hell. Nur auf Auslöser: Barrel Roll, Boost. Unten Mitte bleibt frei.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-man-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">BARREL ROLL · 30 %</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-man-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">BARREL ROLL · 60 %</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-man-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">BARREL ROLL · 90 %</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Jetpack-Schub</div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Drei angeheftete Kern-Wülste je Düse, darunter Tropfen, die sich lösen, abkühlen und mit Knetfleck-Rand zerfallen.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-jet-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">SCHUB 0,15</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-jet-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">SCHUB 0,55</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-jet-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">SCHUB 1,0</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Schweben</div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Minimalschub: Düsen an, kaum Tropfen, kein Staub. Die Figur wippt langsam, pendelt leicht, die Beine baumeln nach.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-hover-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,0 S</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-hover-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,45 S</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-hover-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,9 S</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Überflug <span style="font-weight:600;color:#7C69AE">· optional</span></div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Tief und schnell: Staub über Boden, Gischt über Wasser, in zwei Fahnen unter der Figur. Ab 50 km/h, unter 4,5 m.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-skim-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">BODEN · 180 KM/H · 1,2 M</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-skim-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">WASSER · 180 KM/H · 1,2 M</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-skim-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">WASSER · 180 KM/H · 3,2 M</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px">
+        <div style="font:800 20px/1.2 'Nunito Sans',sans-serif">Start-Puff</div>
+        <div style="font-size:15px;line-height:1.45;color:#4C4560">Rubbel-Ring aus flachen Knetbrocken plus Krümel, die hüpfen und ausrollen. Landung: derselbe Puff, kräftiger.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-puff-0" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,12 S</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-puff-1" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,35 S</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><canvas id="vfx-puff-2" style="width:512px;height:288px;border-radius:10px;background:#C9D6D2"></canvas><div style="font:500 12px/1 'JetBrains Mono',monospace;color:#6B6380">+ 0,75 S</div></div>
+    </div>
+  </section>
+
+  <section data-screen-label="F · Rucksack und Biom-Radio" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">F</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">Rucksack und Biom-Radio</h2>
+      <span style="font-size:16px;color:#6B6380">Das HUD nimmt die Farben der Insel an. Oben links der Rucksack als wippende 3D-Miniatur, unten rechts das Radio mit dem Sender der Insel.</span>
+    </div>
+    <div style="display:flex;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:10px;width:576px">
+          <div style="position:relative;width:576px;height:324px;border-radius:12px;overflow:hidden;background:#C9D6D2;box-shadow:0 14px 32px rgba(42,34,56,.16)">
+            <canvas id="bio-burg-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            <div id="bio-burg-hud" style="position:absolute;inset:0"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div style="font:800 19px/1.2 'Nunito Sans',sans-serif">Burg · King Kayfabian</div>
+            <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#6B6380">RADIO KAYFABIAN</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;width:576px">
+          <div style="position:relative;width:576px;height:324px;border-radius:12px;overflow:hidden;background:#C9D6D2;box-shadow:0 14px 32px rgba(42,34,56,.16)">
+            <canvas id="bio-dystopia-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            <div id="bio-dystopia-hud" style="position:absolute;inset:0"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div style="font:800 19px/1.2 'Nunito Sans',sans-serif">B · Dystopia</div>
+            <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#6B6380">DEMON FM</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;width:576px">
+          <div style="position:relative;width:576px;height:324px;border-radius:12px;overflow:hidden;background:#C9D6D2;box-shadow:0 14px 32px rgba(42,34,56,.16)">
+            <canvas id="bio-utopia-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            <div id="bio-utopia-hud" style="position:absolute;inset:0"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div style="font:800 19px/1.2 'Nunito Sans',sans-serif">A · Utopia</div>
+            <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#6B6380">UTOPIA INC. RADIO</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;width:576px">
+          <div style="position:relative;width:576px;height:324px;border-radius:12px;overflow:hidden;background:#C9D6D2;box-shadow:0 14px 32px rgba(42,34,56,.16)">
+            <canvas id="bio-protopia-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            <div id="bio-protopia-hud" style="position:absolute;inset:0"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div style="font:800 19px/1.2 'Nunito Sans',sans-serif">C · Protopia</div>
+            <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#6B6380">FELDFUNK</div>
+          </div>
+        </div>
+    </div>
+    <div style="display:flex;gap:32px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;width:1280px;height:720px;border-radius:16px;overflow:hidden;background:#C9D6D2;box-shadow:0 22px 50px rgba(42,34,56,.22)">
+          <canvas id="bag-bg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+          <div id="bag-host" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="font-size:15px;color:#6B6380">Bedienbar: Fach antippen, im Kassettenradio eine Kassette einlegen, Donut essen. Rucksack-Knopf oben links öffnet und schließt.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;width:900px">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="display:grid;grid-template-columns:150px auto 70px minmax(0,1fr);gap:14px;padding-bottom:8px;font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:#7C69AE">
+            <div>INSEL</div><div>PALETTE · HEX-ARCHIPEL R2C</div><div>HUD</div><div>BIOM-RADIO · VORSCHLAG</div>
+          </div>
+          <div style="display:grid;grid-template-columns:150px auto 70px minmax(0,1fr);gap:14px;align-items:center;padding:10px 0;border-top:1px solid #DDD6CB">
+            <div style="font:800 15px/1.2 'Nunito Sans',sans-serif">Burg · King Kayfabian</div>
+            <div style="display:flex;gap:3px"><div style="width:18px;height:18px;border-radius:5px;background:#7cba48"></div><div style="width:18px;height:18px;border-radius:5px;background:#6aa83c"></div><div style="width:18px;height:18px;border-radius:5px;background:#e8dcc6"></div><div style="width:18px;height:18px;border-radius:5px;background:#e3c98f"></div><div style="width:18px;height:18px;border-radius:5px;background:#9b6b4a"></div><div style="width:18px;height:18px;border-radius:5px;background:#5f9a38"></div><div style="width:18px;height:18px;border-radius:5px;background:#6fae40"></div><div style="width:18px;height:18px;border-radius:5px;background:#5aa6d6"></div></div>
+            <div style="display:flex;gap:4px"><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#6aa83c;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#5aa6d6;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div></div>
+            <div style="font-size:14px;line-height:1.4;color:#4C4560"><b style="color:#2A2238">Radio Kayfabian</b> · Rubbish Groove · Desert Preacher · Toy Soldier Brass Riot</div>
+          </div>
+          <div style="display:grid;grid-template-columns:150px auto 70px minmax(0,1fr);gap:14px;align-items:center;padding:10px 0;border-top:1px solid #DDD6CB">
+            <div style="font:800 15px/1.2 'Nunito Sans',sans-serif">B · Dystopia</div>
+            <div style="display:flex;gap:3px"><div style="width:18px;height:18px;border-radius:5px;background:#9a74cc"></div><div style="width:18px;height:18px;border-radius:5px;background:#8a66bd"></div><div style="width:18px;height:18px;border-radius:5px;background:#d4c8da"></div><div style="width:18px;height:18px;border-radius:5px;background:#b591d9"></div><div style="width:18px;height:18px;border-radius:5px;background:#6e4a3a"></div><div style="width:18px;height:18px;border-radius:5px;background:#7a58aa"></div><div style="width:18px;height:18px;border-radius:5px;background:#8b66c2"></div><div style="width:18px;height:18px;border-radius:5px;background:#5f8fae"></div></div>
+            <div style="display:flex;gap:4px"><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#8a66bd;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#5f8fae;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div></div>
+            <div style="font-size:14px;line-height:1.4;color:#4C4560"><b style="color:#2A2238">Demon FM</b> · Demon Lord Afro-Strut · Skeleton Shuffle · Orc Cumbia Wobble</div>
+          </div>
+          <div style="display:grid;grid-template-columns:150px auto 70px minmax(0,1fr);gap:14px;align-items:center;padding:10px 0;border-top:1px solid #DDD6CB">
+            <div style="font:800 15px/1.2 'Nunito Sans',sans-serif">A · Utopia</div>
+            <div style="display:flex;gap:3px"><div style="width:18px;height:18px;border-radius:5px;background:#a6d7a8"></div><div style="width:18px;height:18px;border-radius:5px;background:#bfe3b4"></div><div style="width:18px;height:18px;border-radius:5px;background:#f3ecdf"></div><div style="width:18px;height:18px;border-radius:5px;background:#f1dcb5"></div><div style="width:18px;height:18px;border-radius:5px;background:#cdb59a"></div><div style="width:18px;height:18px;border-radius:5px;background:#8cc497"></div><div style="width:18px;height:18px;border-radius:5px;background:#9ccf9e"></div><div style="width:18px;height:18px;border-radius:5px;background:#7cc4e4"></div></div>
+            <div style="display:flex;gap:4px"><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#8cc497;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#7cc4e4;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div></div>
+            <div style="font-size:14px;line-height:1.4;color:#4C4560"><b style="color:#2A2238">Utopia Inc. Radio</b> · BraveNewWorldNews · Witch Hat Acid Picnic</div>
+          </div>
+          <div style="display:grid;grid-template-columns:150px auto 70px minmax(0,1fr);gap:14px;align-items:center;padding:10px 0;border-top:1px solid #DDD6CB">
+            <div style="font:800 15px/1.2 'Nunito Sans',sans-serif">C · Protopia</div>
+            <div style="display:flex;gap:3px"><div style="width:18px;height:18px;border-radius:5px;background:#6aae3a"></div><div style="width:18px;height:18px;border-radius:5px;background:#88b840"></div><div style="width:18px;height:18px;border-radius:5px;background:#e6d3a8"></div><div style="width:18px;height:18px;border-radius:5px;background:#d9b04a"></div><div style="width:18px;height:18px;border-radius:5px;background:#8a5634"></div><div style="width:18px;height:18px;border-radius:5px;background:#58932f"></div><div style="width:18px;height:18px;border-radius:5px;background:#5f9f34"></div><div style="width:18px;height:18px;border-radius:5px;background:#4fa3c9"></div></div>
+            <div style="display:flex;gap:4px"><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#58932f;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div><div style="width:26px;height:26px;border-radius:50% 47% 52% 49%;background:#d9b04a;box-shadow:0 2px 0 rgba(0,0,0,.2)"></div></div>
+            <div style="font-size:14px;line-height:1.4;color:#4C4560"><b style="color:#2A2238">Feldfunk</b> · Van Freestyle v2-1 · Shepards Coaster · Kayfabizarro 02.2</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.55;color:#4C4560">
+          <div>HUD-Farben: Plakette aus dem mittleren Grundton der Insel, Knöpfe aus Wasser oder Sand, je nachdem was sich abhebt. Alle übrigen Töne mischt das HUD selbst.</div>
+          <div>Radio: Der Drehknopf links wechselt zwischen Biom-Radio und Kassette. Zurück und Weiter springen in der Liste. Das Display läuft wie ein Digitalradio: ein Zeichen alle 0,25 s, an Anfang und Ende 1,8 s Pause. Zweite Zeile: Künstler · Quelle · Titelnummer.</div>
+          <div>Fest steht nur Dystopia mit Demon Lord Afro-Strut (Golden Journey). Die übrigen Zuordnungen sind ein Startvorschlag aus Rotation 01 und jukebox.json.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="D · Live" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">D</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">Live</h2>
+      <span style="font-size:16px;color:#6B6380">Tasten 1 / 2 / 3 oder Doppel-Leertaste, R für Barrel Roll, B für den Rucksack. Der Autopilot schwebt, kurvt und fliegt tief über Seen.</span>
+    </div>
+    <div style="display:flex;gap:32px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="position:relative;width:1280px;height:720px;border-radius:16px;overflow:hidden;background:#C9D6D2;box-shadow:0 22px 50px rgba(42,34,56,.22)">
+          <div id="live-3d" style="position:absolute;inset:0"></div>
+          <div id="live-hud" style="position:absolute;inset:0"></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <div style="display:flex;gap:4px;padding:4px;border-radius:12px;background:#DDD6CB">
+            <button onClick="{{ setWalk }}" style="border:0;border-radius:9px;padding:10px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ walkBg }}">1 · Gehen</button>
+            <button onClick="{{ setDrive }}" style="border:0;border-radius:9px;padding:10px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ driveBg }}">2 · Fahren</button>
+            <button onClick="{{ setFly }}" style="border:0;border-radius:9px;padding:10px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ flyBg }}">3 · Fliegen</button>
+          </div>
+          <div style="display:flex;gap:4px;padding:4px;border-radius:12px;background:#DDD6CB">
+            <button onClick="{{ bioBurg }}" style="border:0;border-radius:9px;padding:10px 14px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ bgBurg }}">Burg</button>
+            <button onClick="{{ bioDystopia }}" style="border:0;border-radius:9px;padding:10px 14px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ bgDystopia }}">Dystopia</button>
+            <button onClick="{{ bioUtopia }}" style="border:0;border-radius:9px;padding:10px 14px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ bgUtopia }}">Utopia</button>
+            <button onClick="{{ bioProtopia }}" style="border:0;border-radius:9px;padding:10px 14px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;color:#2A2238;background:{{ bgProtopia }}">Protopia</button>
+          </div>
+          <button onClick="{{ addFluff }}" style="border:0;border-radius:10px;padding:12px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;background:#FFA97A;color:#3A2416" style-hover="background:#FFC3A2">Fluff +3</button>
+          <button onClick="{{ barrelRoll }}" style="border:0;border-radius:10px;padding:12px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;background:#DDD6CB;color:#2A2238">Barrel Roll</button>
+          <button onClick="{{ toggleSkim }}" style="border:0;border-radius:10px;padding:12px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;background:#DDD6CB;color:#2A2238">Überflug: {{ skimLabel }}</button>
+          <button onClick="{{ toggleAuto }}" style="border:0;border-radius:10px;padding:12px 18px;font:800 15px/1 'Nunito Sans',sans-serif;cursor:pointer;background:#DDD6CB;color:#2A2238">Autopilot: {{ autoLabel }}</button>
+          <label style="display:flex;gap:8px;align-items:center;font:600 14px/1 'Nunito Sans',sans-serif;color:#4C4560">Tempo <input type="range" min="0" max="1" step="0.01" defaultValue="0.6" onInput="{{ onSpeed }}" style="width:120px;accent-color:#8E79C4"></label>
+          <label style="display:flex;gap:8px;align-items:center;font:600 14px/1 'Nunito Sans',sans-serif;color:#4C4560">Schub <input type="range" min="0" max="1" step="0.01" defaultValue="0.6" onInput="{{ onThrust }}" style="width:120px;accent-color:#8E79C4"></label>
+          <label style="display:flex;gap:8px;align-items:center;font:600 14px/1 'Nunito Sans',sans-serif;color:#4C4560">Höhe <input type="range" min="0" max="1" step="0.01" defaultValue="0.3" onInput="{{ onAlt }}" style="width:120px;accent-color:#8E79C4"></label>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;width:560px;padding-top:4px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">VFX-ZÄHLER</div>
+          <div id="live-stats" style="font:500 14px/1.6 'JetBrains Mono',monospace;color:#2A2238;white-space:pre">–</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">RADIO → AUDIO-OWNER</div>
+          <div style="font-size:15px;line-height:1.5;color:#4C4560">Das Radio spielt nichts selbst. Es meldet Ereignisse, der KFB-Audio-Owner hört zu. Auf dieser Tafel spielt ein einfacher Platzhalter die Titel direkt aus dem Repo ab, damit man sie hört.</div>
+          <div id="live-radio" style="font:500 14px/1.6 'JetBrains Mono',monospace;color:#2A2238;white-space:pre">Knöpfe am Radio drücken …</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="E · Bauteile und Herkunft" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font:400 40px/1 'Bangers',sans-serif;color:#7C69AE">E</span>
+      <h2 style="margin:0;font:800 28px/1.1 'Nunito Sans',sans-serif">Bauteile und Herkunft</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:12px;background:#F7F3EC;border-radius:14px;padding:24px 26px">
+        <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">API</div>
+        <pre style="margin:0;font:500 14px/1.6 'JetBrains Mono',monospace;color:#2A2238;white-space:pre-wrap">import { createHud } from './kfb-hud.js';
+import { createFlightVfx, createSpeedTrails, hoverPose } from './kfb-flight-vfx.js';
+import { createPropLibrary, createPropRenderer, mountBackpackMini, createBagOverlay } from './kfb-backpack.js';
+import { BIOMES, BIOME_STATIONS, TRACKS, TAPES, ITEMS } from './kfb-jukebox-data.js';
+
+const hud = createHud({ mode: 'walk', palette, host });
+hud.setSpeed(kmh)  hud.setAltitude(m)
+hud.setThrust(0..1)  hud.setEnergy(0..1)
+hud.setFluff(n)  hud.addFluff(k, { from: { x, y } })
+hud.setMode('walk' | 'drive' | 'fly')
+createHud({ palette: BIOMES.dystopia.hud })
+hud.radio.on('music' | 'play' | 'prev' | 'next' | 'playlist', fn)
+hud.radio.setPlaylists([{ id, label, sub }], activeId)
+hud.radio.setTrack({ title, artist, index, count })
+hud.radio.setMusic(b)  hud.radio.setPlaying(b)
+hud.backpack.onOpen(fn)  hud.backpack.setCount(n, 20)
+
+const bag = createBagOverlay({ host, palette: hud.palette, lib, view, items });
+bag.on('insertTape' | 'ownSong' | 'use' | 'eject', fn)
+
+const vfx = createFlightVfx({ scene, camera, body,
+  nozzles: [{ object: jetpack, offset, dir }],
+  trails:  [{ object: jetpack, offset }],  // Außenkanten
+  surfaceAt: (x, z) => ({ y, water }) });
+vfx.update(dt, speedKmh, thrust)
+vfx.maneuver(1, 0.9)               // Manöver-Linien
+vfx.setTrailAnchors(kartCorners)   // Wechsel auf Kart
+vfx.setSkim(false)                 // Überflug aus
+vfx.setGrounded(bool, groundPos)   // löst Puff aus
+hoverPose(t) → { y, pitch, roll, leg }
+createSpeedTrails(...)             // auch fürs Racing
+vfx.dispose()</pre>
+        <div style="font-size:15px;line-height:1.5;color:#4C4560">palette nimmt ein Teilobjekt von HUD_THEME_V1 oder nur { primary, accent }; die übrigen Töne werden gemischt. Damit lässt sich das HUD an ENV_ROLES hängen.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:24px 4px">
+        <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">ÜBERNOMMEN</div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5;color:#2A2238">
+          <div><b>Plaketten-Look</b> aus hud-theme.v1 (Open-World-Styleguide): Lila-Plakette, dunkle Mulde, Pfirsich-Knopf, Knet-Korn, unregelmäßige Radien, Neigung.</div>
+          <div><b>Anordnung</b> aus dem Racer-HUD v2: Tacho unten links, Radio als Leiste, Mitte frei.</div>
+          <div><b>Speedlines</b>: Bandaufbau 1:1 aus TinySkies Contrails.ts über contrails.js (Travel Globe v13): 72 Punkte, Querachse zur Kamera, Breite × fade, Alpha × fade², additiv. Dazu aus v13 Anker im Träger, Mindestschritt, Einzug, kein Tiefentest.</div>
+          <div><b>Manöver-Linien</b>: Spindel-Shader und Ring-Logik aus speed-lines.js (Travel Combat v25, Port von TinySkies SpeedLines.ts).</div>
+          <div><b>Überflug</b>: Emission unter dem Fahrzeug in zwei Fahnen, Alpha (1−t)², Projektionsfaktor mit Pixeldeckel aus carpet-wake.js (Travel Globe v13, Port von TinySkies CarpetWake.ts).</div>
+          <div><b>Flug-Start</b> per Doppel-Leertaste wie in sw-mech.js (Seed World).</div>
+          <div><b>Rucksack-Regeln</b> aus Golden Journey Beat 4: 20 Fächer, Taxi-Schlüssel als Pflicht-Item, KayKit-Rucksack (Hoarder gewählt, Orc als zweiter Kandidat). Karten bleiben im Almanach.</div>
+          <div><b>Modelle</b>: Hoarder_Backpack (KayKit Mystery S6), key (KayKit Dungeon 1.1), donut_pink (Tiny Treats Baked Goods), radio (Tiny Treats Pleasant Picnic), map_rolled (KayKit RPG Tools), live aus dem Repo, Commit f8f8f1fd.</div>
+          <div><b>Biom-Farben</b> vom Referenzblatt 01-farbpaletten (Hex-Inseln, hex-archipel.r2c.js). <b>Titel</b> aus disco-playlist-01 (Rotation 01, gemessene BPM) und jukebox.json.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:24px 4px">
+        <div style="font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7C69AE">NEU GEBAUT</div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5;color:#2A2238">
+          <div><b>HUD-Teile</b>: Höhensäule, Schub-Tank, Fluff-Zähler mit Flugkugel, Kompass-Plakette, Roll-, Plopp- und Steig-Wechsel.</div>
+          <div><b>Speedlines</b>: warmes Creme statt Eisblau, Anker an den Tank-Außenkanten bzw. hinteren Kart-Ecken, Maße für eine 1,7-m-Figur.</div>
+          <div><b>Manöver-Linien</b>: Auslöser mit Hüllkurve statt Dauerbetrieb, additiv hell, verbeulter Rand, Figurzone frei.</div>
+          <div><b>Überflug</b>: flache Welt statt Globus, Höhen-Tor, Knet-Staub mit dunklerem Rand über Boden, Gischt über Wasser.</div>
+          <div><b>Schweben</b>: hoverPose(t) und Minimalschub 0,14.</div>
+          <div><b>Rucksack</b>: wippende Miniatur, Overlay klappt aus dem Slot auf, 5 × 4 Knet-Mulden, Kassettendeck im Radio-Item. Ein WebGL-Kontext für alle kleinen Ansichten.</div>
+          <div><b>Radio R3</b>: Noten-Knopf als Musik an/aus (aus = minifiziert), Zurück/Play/Weiter, Playlist-Menü statt Quellen- und Lautstärkeknopf, Pixel-Lauftext (VT323). Mobil ohne Display in der oberen Reihe.</div>
+          <div><b>Jetpack-Schub, Puff</b>: Knet-Wülste, Tropfen, Rubbel-Ring und Krümel aus einer verbeulten Kugel; Zerfall über Rauschschwelle mit dunklem Rand.</div>
+          <div style="color:#8A5A40"><b>Kassetten</b> sind Knet-Platzhalter: In KayKit und Tiny Treats habe ich kein Tape-Modell gefunden.</div>
+          <div style="color:#8A5A40"><b>Annäherung, nicht gelesen</b>: Clay-SSOT (KFB_CLAYMATION_STYLE_SSOT.md, PR #301) für den Knet-Look der Items, kfbBlend, Clay K2/v10, Rubbel-Grammatik, ENV_ROLES. Der Knetfleck-Rand ist nachempfunden. Comic-Contrails aus Travel Globe v13 sind nicht portiert.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Lila · hud-theme.v1&quot;,&quot;Burg&quot;,&quot;Dystopia&quot;,&quot;Utopia&quot;,&quot;Protopia&quot;],&quot;default&quot;:&quot;Lila · hud-theme.v1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;HUD&quot;},&quot;hudFollowsBiome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;HUD&quot;},&quot;showZones&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tafel&quot;}}">
+function D_BIO(self, S, shot, straight) {
+  const D = self.D; if (!D) return;
+  D.BIOME_ORDER.forEach((id) => { S.setBiome(D.BIOMES[id]); shot('bio-' + id + '-bg', 576, 324, 'fly', { secs: 1.3, step: straight(150, 0.7, 10) }); });
+  S.setBiome(null);
+}
+class Component extends DCLogic {
+  state = { status: 'lädt three.js …', liveMode: 'walk', auto: true, liveBiome: 'burg' };
+  lb = 'burg';
+  minis = [];
+  bags = [];
+  huds = [];
+  zones = {};
+  PAL_BIOME = { 'Burg': 'burg', 'Dystopia': 'dystopia', 'Utopia': 'utopia', 'Protopia': 'protopia' };
+  VALS = {
+    walk: { fluff: 128, heading: 0.6 },
+    drive: { fluff: 342, speed: 84, radio: ['burg', 1] },
+    fly: { fluff: 517, speed: 168, alt: 46, thrust: 0.7, energy: 0.62, radio: ['dystopia', 0] }
+  };
+  pal() { const b = this.PAL_BIOME[this.props.palette]; return b && this.D ? this.D.BIOMES[b].hud : undefined; }
+  livePal() { return (this.props.hudFollowsBiome ?? true) && this.D ? this.D.BIOMES[this.lb].hud : this.pal(); }
+  key() { return (this.props.palette ?? '') + '|' + (this.props.showZones ?? true) + '|' + (this.props.hudFollowsBiome ?? true); }
+
+  componentDidMount() { this.boot().catch((e) => { console.error(e); this.setState({ status: 'Fehler: ' + e.message }); }); }
+  componentDidUpdate() {
+    if (!this.ready) return;
+    const k = this.key(); if (k === this.lastKey) return;
+    const palChanged = !this.lastKey || k.split('|')[0] !== this.lastKey.split('|')[0];
+    this.lastKey = k;
+    if (palChanged) { this.buildHuds(); }
+    this.buildLiveHud();
+    this.applyZones();
+  }
+  componentWillUnmount() {
+    this.dead = true; cancelAnimationFrame(this.raf);
+    this.huds.forEach((h) => h.dispose()); this.liveHud && this.liveHud.dispose(); this.vfx && this.vfx.dispose();
+    this.minis.forEach((m) => m.dispose()); this.bags.forEach((b) => b.dispose()); this.liveBag && this.liveBag.dispose(); this.liveMini && this.liveMini.dispose();
+    if (this.J) { this.J.audio.pause(); this.J.audio.src = ''; } this.view && this.view.dispose();
+    this.ro && this.ro.disconnect(); this.R1 && this.R1.dispose(); this.R2 && this.R2.dispose();
+    window.removeEventListener('keydown', this.onKey);
+  }
+
+  async boot() {
+    const u = (p) => new URL(p, document.baseURI).href;
+    const [H, V, B, THREE, D, K] = await Promise.all([import(u('hud-flight/kfb-hud.js')), import(u('hud-flight/kfb-flight-vfx.js')), import(u('hud-flight/hud-board-scene.js')), import('three'), import(u('hud-flight/kfb-jukebox-data.js')), import(u('hud-flight/kfb-backpack.js'))]);
+    if (this.dead) return;
+    Object.assign(this, { H, V, B, THREE, D, K });
+    this.lib = K.createPropLibrary({ THREE }); this.view = K.createPropRenderer({ THREE });
+    this.renderStills();
+    this.lastKey = this.key();
+    this.buildHuds(); this.applyZones();
+    this.startLive();
+    this.ready = true; this.setState({ status: '' });
+  }
+
+  newRenderer(opts) {
+    const { THREE } = this; const R = new THREE.WebGLRenderer({ antialias: true, ...opts });
+    R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap; R.outputColorSpace = THREE.SRGBColorSpace;
+    return R;
+  }
+
+  renderStills() {
+    const { V, B } = this;
+    const R = this.R1 = this.newRenderer({ preserveDrawingBuffer: true });
+    const S = B.createBoardScene({ seed: 11 }), fig = S.fig, dt = 1 / 60;
+    const run = (vfx, secs, step) => { for (let i = 0, n = Math.round(secs * 60); i < n; i++) { const o = step(i * dt, dt, vfx) || {}; S.frame(true, dt); vfx.update(dt, o.kmh || 0, o.thrust || 0); } };
+    const vf = (kmh) => kmh / 3.6 * 0.45;
+    const pitch = (kmh) => -(0.2 + 0.45 * kmh / 220);
+    const straight = (kmh, thrust, y) => (t, d) => { fig.position.y = y; fig.position.z -= vf(kmh) * d; fig.rotation.x = pitch(kmh); return { kmh, thrust }; };
+    const weave = (kmh, thrust, A, w, y, bankK) => (t, d) => {
+      fig.position.z -= vf(kmh) * d; fig.position.x = A * Math.sin(w * t);
+      const vx = A * w * Math.cos(w * t), ax = -A * w * w * Math.sin(w * t);
+      fig.rotation.y = -Math.atan2(vx, vf(kmh)); fig.rotation.z = -ax * bankK;
+      if (y != null) { fig.position.y = y; fig.rotation.x = pitch(kmh); }
+      return { kmh, thrust };
+    };
+    const roll = (kmh, t0, dur) => { let fired = false; return (t, d, vfx) => {
+      const o = straight(kmh, 0.8, 12)(t, d);
+      if (t >= t0 && !fired) { vfx.maneuver(1, dur); fired = true; }
+      const u = Math.max(0, Math.min(1, (t - t0) / dur)); fig.rotation.z = Math.PI * 2 * u * u * (3 - 2 * u); return o;
+    }; };
+    const hover = (t) => { const h = V.hoverPose(t); fig.position.y = 3 + h.y; fig.rotation.x = h.pitch; fig.rotation.z = h.roll; S.legs.forEach((l) => (l.rotation.x = h.leg)); return { kmh: 0, thrust: V.FLIGHT_IDLE }; };
+    const shot = (id, w, h, mode, o = {}) => {
+      const cv = document.getElementById(id); if (!cv) return;
+      const k = 2; R.setSize(w * k, h * k, false); cv.width = w * k; cv.height = h * k;
+      S.camera.aspect = w / h; S.camera.updateProjectionMatrix();
+      S.fig.position.set(0, 0, o.z0 || 0); S.pose(mode); S.frame(true);
+      const vfx = V.createFlightVfx({ scene: S.scene, camera: S.camera, nozzles: S.nozzles, trails: mode === 'drive' ? S.trailsDrive : mode === 'fly' ? S.trailsFly : [], body: S.fig, surfaceAt: S.surfaceAt, seed: 5 });
+      vfx.setViewHeight(h * k, S.camera.fov);
+      if (o.pre) o.pre(vfx);
+      if (o.step) run(vfx, o.secs || 1, o.step);
+      if (o.cam) { const p = S.fig.position; o.cam(S.camera, p); }
+      R.render(S.scene, S.camera);
+      cv.getContext('2d').drawImage(R.domElement, 0, 0);
+      if (o.zone) this.zones[o.zone] = this.projZone(S, w, h);
+      vfx.dispose();
+    };
+    const look = (dx, dy, dz, lx = 0, ly = 0.6, lz = 0) => (cam, p) => { cam.position.set(p.x + dx, p.y + dy, p.z + dz); cam.lookAt(p.x + lx, p.y + ly, p.z + lz); };
+    shot('bg-walk', 768, 432, 'walk', { secs: 0.1, step: () => ({}), zone: 'walk' });
+    shot('bg-drive', 768, 432, 'drive', { secs: 0.6, step: (t, d) => { fig.position.z -= 23 * d; return { kmh: 84 }; }, zone: 'drive' });
+    shot('bg-fly', 768, 432, 'fly', { secs: 1.3, step: straight(170, 0.75, 12), zone: 'fly' });
+    shot('bg-mobile', 360, 640, 'fly', { secs: 1.3, step: straight(170, 0.75, 12), zone: 'mobile' });
+    shot('vfx-trail-0', 512, 288, 'fly', { secs: 1.6, step: straight(170, 0.7, 12), cam: look(3.6, 3.4, 7.5, 0, 0.2, 2) });
+    shot('vfx-trail-1', 512, 288, 'fly', { secs: 2.6, step: weave(170, 0.7, 6, 0.9, 12, 0.12), cam: look(4, 5.5, 11, 0, 0, 4) });
+    shot('vfx-trail-2', 512, 288, 'drive', { secs: 2.6, step: weave(90, 0, 3, 0.9, null, 0), cam: look(4, 4.5, 10, 0, 0.3, 4) });
+    [0.3, 0.6, 0.9].forEach((f, i) => shot('vfx-man-' + i, 512, 288, 'fly', { secs: 1.4 + 0.9 * f, step: roll(180, 1.4, 0.9), cam: look(3.2, 2.6, 7.5, 0, 0.3, 2) }));
+    [0.15, 0.55, 1].forEach((t, i) => shot('vfx-jet-' + i, 512, 288, 'fly', { secs: 1.0, step: (tt, d) => { fig.position.y = 10; fig.position.z -= 6 * d; fig.rotation.x = -0.3; return { thrust: t }; },
+      cam: (cam, p) => { cam.position.set(p.x + 2.7, p.y + 0.3, p.z + 2.2); cam.lookAt(p.x, p.y + 0.1, p.z + 0.9); } }));
+    [0, 0.45, 0.9].forEach((t, i) => shot('vfx-hover-' + i, 512, 288, 'fly', { secs: 2 + t, step: hover, cam: look(2.8, 0.5, 3.2, 0, 0.5, 0.2) }));
+    shot('vfx-skim-0', 512, 288, 'fly', { secs: 1.2, step: straight(180, 0.7, 1.2), cam: look(3.8, 2.2, 7.5, 0, 0, -1) });
+    shot('vfx-skim-1', 512, 288, 'fly', { z0: -104, secs: 1.2, step: straight(180, 0.7, 1.2), cam: look(3.8, 2.2, 7.5, 0, 0, -1) });
+    shot('vfx-skim-2', 512, 288, 'fly', { z0: -104, secs: 1.2, step: straight(180, 0.7, 3.2), cam: look(3.8, 1.2, 7.5, 0, -1.2, -1) });
+    [0.12, 0.35, 0.75].forEach((t, i) => shot('vfx-puff-' + i, 512, 288, 'fly', {
+      pre: (v) => { v.update(dt, 0, 0); v.takeoff({ x: 0, y: 0, z: 0 }); }, secs: t,
+      step: (tt, d) => { fig.position.y += 2.6 * d; fig.rotation.x = -0.08; return { thrust: 0.85 }; },
+      cam: (cam) => { cam.position.set(3.4, 1.9, 5.0); cam.lookAt(0, 0.9, 0); } }));
+    D_BIO(this, S, shot, straight);
+    S.setBiome(this.D.BIOMES.dystopia); shot('bag-bg', 1280, 720, 'drive', { secs: 0.6, step: (t, d) => { fig.position.z -= 23 * d; return { kmh: 84 }; } }); S.setBiome(null);
+    this.S1 = S;
+  }
+
+  projZone(S, w, h) {
+    const { THREE } = this; const box = new THREE.Box3().setFromObject(S.fig);
+    if (S.kart.visible) box.union(new THREE.Box3().setFromObject(S.kart));
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9; const v = new THREE.Vector3();
+    for (let i = 0; i < 8; i++) {
+      v.set(i & 1 ? box.max.x : box.min.x, i & 2 ? box.max.y : box.min.y, i & 4 ? box.max.z : box.min.z).project(S.camera);
+      const x = (v.x + 1) / 2 * w, y = (1 - v.y) / 2 * h; x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+    }
+    const p = 14; return { l: x0 - p, t: y0 - p, w: x1 - x0 + 2 * p, h: y1 - y0 + 2 * p };
+  }
+  applyZones() {
+    const on = this.props.showZones ?? true;
+    for (const k of Object.keys(this.zones)) {
+      const el = document.getElementById('zone-' + k), z = this.zones[k]; if (!el) continue;
+      Object.assign(el.style, { left: z.l + 'px', top: z.t + 'px', width: z.w + 'px', height: z.h + 'px', display: on ? 'block' : 'none' });
+    }
+  }
+
+  applyVals(hud, v) {
+    if (v.speed != null) hud.setSpeed(v.speed);
+    if (v.alt != null) hud.setAltitude(v.alt);
+    if (v.thrust != null) hud.setThrust(v.thrust);
+    if (v.energy != null) hud.setEnergy(v.energy);
+    if (v.fluff != null) hud.setFluff(v.fluff);
+    if (v.heading != null) hud.setHeading(v.heading);
+    if (v.radio && this.D) {
+      const st = this.D.BIOME_STATIONS[v.radio[0]], id = st.tracks[v.radio[1]], t = this.D.TRACKS[id];
+      hud.radio.setSource(st.name); hud.radio.setTrack({ title: t.title, artist: t.artist, index: v.radio[1], count: st.tracks.length });
+      hud.radio.setPlaylists(this.boardPlaylists(v.radio[0]), 'biome'); hud.radio.setPlaying(true);
+    }
+    if (this.D) hud.backpack.setCount(this.D.DEFAULT_BAG.length, 20);
+    hud.snap();
+  }
+
+  buildHuds() {
+    this.huds.forEach((h) => h.dispose()); this.huds = [];
+    this.minis.forEach((m) => m.dispose()); this.minis = []; this.bags.forEach((b) => b.dispose()); this.bags = [];
+    const { H, K, D } = this, P = this.pal(), VALS = this.VALS;
+    const mk = (id, mode, vals, opt = {}) => {
+      const host = document.getElementById(id); if (!host) return null;
+      const hud = H.createHud({ mode, palette: opt.palette || P, host, autoTick: !!opt.live, island: 'Knetinsel Nord', stations: ['BIOM-RADIO', 'KASSETTE'] });
+      this.applyVals(hud, vals); this.huds.push(hud);
+      this.minis.push({ m: K.mountBackpackMini({ hud, lib: this.lib, view: this.view, still: !opt.live }), live: !!opt.live, dispose() { this.m.dispose(); } });
+      return hud;
+    };
+    this.buildRadioStates();
+    D.BIOME_ORDER.forEach((b, i) => mk('bio-' + b + '-hud', 'fly', { ...VALS.fly, radio: [b, 0], fluff: 120 + i * 97 }, { palette: D.BIOMES[b].hud, live: true }));
+    const bagHost = document.getElementById('bag-host');
+    if (bagHost) {
+      const hud = mk('bag-host', 'drive', { ...VALS.drive, radio: ['dystopia', 0] }, { palette: D.BIOMES.dystopia.hud, live: true });
+      const bag = K.createBagOverlay({ host: bagHost, palette: hud.palette, lib: this.lib, view: this.view, items: D.DEFAULT_BAG, anchor: () => this.anchorOf(bagHost, hud) });
+      hud.backpack.onOpen(() => bag.toggle()); bag.on('open', () => hud.backpack.setOpen(true)); bag.on('close', () => hud.backpack.setOpen(false));
+      bag.on('change', (d) => hud.backpack.setCount(d.count, 20));
+      bag.on('insertTape', (d) => { if (!d.tape || !d.tape.tracks.length) return; const t = D.TRACKS[d.tape.tracks[0]]; hud.radio.setSource('TAPE ' + d.tape.label); hud.radio.setTrack({ title: t.title, artist: t.artist, index: 0, count: d.tape.tracks.length }); });
+      bag.on('ownSong', (d) => { hud.radio.setSource('TAPE ' + d.tape.label); hud.radio.setTrack({ title: d.name.replace(/\.[^.]+$/, ''), artist: 'EIGENER SONG', index: 0, count: 1 }); });
+      this.bags.push(bag); bag.open();
+    }
+    mk('hud-walk', 'walk', VALS.walk); mk('hud-drive', 'drive', VALS.drive); mk('hud-fly', 'fly', VALS.fly); mk('hud-mobile', 'fly', VALS.fly);
+    const F = [0, 0.25, 0.5, 0.75, 1];
+    [['a', 'walk', 'drive'], ['b', 'drive', 'fly'], ['c', 'fly', 'walk']].forEach(([r, from, to]) => F.forEach((f, i) => {
+      const bg = document.getElementById(`seq-${r}-${i}-bg`), src = document.getElementById('bg-' + (f < 0.5 ? from : to));
+      if (bg && src && src.width) { bg.width = 768 * 2; bg.height = 432 * 2; bg.getContext('2d').drawImage(src, 0, 0, bg.width, bg.height); }
+      const hud = mk(`seq-${r}-${i}`, from, { ...VALS[from], ...VALS[to] }); if (!hud) return;
+      const anims = hud.freezeTransition(from, to, f) || [];
+      const total = anims.reduce((m, a) => Math.max(m, a.effect ? a.effect.getComputedTiming().endTime : 0), 0);
+      const lab = document.getElementById(`seq-${r}-${i}-t`); if (lab) lab.textContent = Math.round(f * total) + ' ms';
+    }));
+  }
+
+  boardPlaylists(biome) {
+    const D = this.D, st = D.BIOME_STATIONS[biome];
+    return [{ id: 'biome', label: st.name, sub: 'BIOM' }, ...D.TAPES.filter((t) => !t.blank).map((t) => ({ id: t.id, label: t.label, sub: t.tracks.length + ' T' }))];
+  }
+  buildRadioStates() {
+    (this.rs || []).forEach((r) => { r.dispose(); r.el.remove(); }); this.rs = [];
+    const { H, D } = this, P = H.resolvePalette(this.pal());
+    const t = D.TRACKS['demon-afro-strut'];
+    const mk = (id, f) => {
+      const host = document.getElementById(id); if (!host) return;
+      const r = H.HudParts.radio(P, {}); r.el.style.transform = 'rotate(.9deg)'; host.append(r.el); this.rs.push(r);
+      r.api.setSource('DEMON FM'); r.api.setTrack({ title: t.title, artist: t.artist, index: 0, count: 3 }); r.api.setPlaylists(this.boardPlaylists('dystopia'), 'biome');
+      f(r); r.snap();
+    };
+    mk('rs-off', () => {});
+    mk('rs-on', (r) => r.api.setPlaying(true));
+    mk('rs-compact', (r) => { r.api.setPlaying(true); r.compact(true); });
+    mk('rs-mini', (r) => { r.api.setPlaying(true); r.mini(true); });
+    mk('rs-menu', (r) => { r.api.setPlaying(true); r.api.openMenu(true); });
+  }
+
+  buildLiveHud() {
+    const host = document.getElementById('live-hud'); if (!host || !this.H) return;
+    const prev = this.liveHud; const fl = prev ? prev.parts.fluff.target : 64;
+    if (prev) prev.dispose();
+    const hud = this.liveHud = this.H.createHud({ mode: this.L ? this.L.mode : 'walk', palette: this.livePal(), host, island: this.D.BIOMES[this.lb].short, stations: ['BIOM-RADIO', 'KASSETTE'] });
+    hud.setFluff(fl); hud.snap();
+    const log = this.radioLog = this.radioLog || []; const out = (s) => { log.unshift(s); log.length = Math.min(log.length, 6); const el = document.getElementById('live-radio'); if (el) el.textContent = log.join('\n'); };
+    /* Rucksack */
+    const keep = this.liveBag ? { items: this.liveBag.items, inserted: this.liveBag.inserted, open: this.liveBag.isOpen } : null;
+    this.liveBag && this.liveBag.dispose(); this.liveMini && this.liveMini.dispose();
+    const bag = this.liveBag = this.K.createBagOverlay({ host, palette: hud.palette, lib: this.lib, view: this.view, items: keep ? keep.items : this.D.DEFAULT_BAG, anchor: () => this.anchorOf(host, hud) });
+    if (keep && keep.inserted) bag.setInserted(keep.inserted.id);
+    this.liveMini = this.K.mountBackpackMini({ hud, lib: this.lib, view: this.view });
+    hud.backpack.setCount(bag.count, bag.slots);
+    hud.backpack.onOpen(() => bag.toggle());
+    bag.on('open', () => { hud.backpack.setOpen(true); out('bag      → open'); });
+    bag.on('close', () => hud.backpack.setOpen(false));
+    bag.on('change', (d) => { hud.backpack.setCount(d.count, 20); hud.backpack.pop(); this.liveMini.hop(); this.jbShow(); });
+    bag.on('use', (d) => { out(`use      → { id: '${d.id}' }`); this.spawnFluff(2); });
+    bag.on('insertTape', (d) => { out(`insertTape → '${d.tape.id}'`); this.jbTape(d.tape); });
+    bag.on('eject', () => { out('eject'); this.jbTape(null); });
+    bag.on('ownSong', (d) => { out(`ownSong  → { name: '${d.name}' }`); d.tape.tracks = []; d.tape.ownTrack = { id: d.tape.id, title: d.name.replace(/\.[^.]+$/, ''), artist: 'EIGENER SONG', url: URL.createObjectURL(d.file) }; });
+    if (keep && keep.open) bag.open();
+    /* Radio → Platzhalter-Audio */
+    hud.radio.on('play', (d) => { out(`play     → { playing: ${d.playing} }`); this.jbPlay(d.playing); });
+    hud.radio.on('prev', () => { out('prev'); this.jbStep(-1); });
+    hud.radio.on('next', () => { out('next'); this.jbStep(1); });
+    hud.radio.on('music', (d) => { out(`music    → { on: ${d.on} }`); });
+    hud.radio.on('playlist', (d) => { out(`playlist → '${d.id}'`); if (d.id === 'biome') { bag.setInserted(null); this.jbTape(null); this.jbPlay(true); } else { const tp = bag.tapeById(d.id); bag.setInserted(d.id); this.jbTape(tp); } });
+    this.jbShow();
+  }
+
+  anchorOf(host, hud) {
+    const R = host.getBoundingClientRect(), T = hud.backpack.el.getBoundingClientRect(), z = R.width / (host.clientWidth || R.width) || 1;
+    return { x: ((T.left + T.width / 2) - (R.left + R.width / 2)) / z, y: ((T.top + T.height / 2) - (R.top + R.height / 2)) / z };
+  }
+
+  /* ---------- Jukebox-Platzhalter (steht für den KFB-Audio-Owner) ---------- */
+  jb() {
+    if (!this.J) {
+      const audio = new Audio(); audio.preload = 'none'; audio.crossOrigin = 'anonymous'; audio.volume = 0.6;
+      this.J = { src: 0, tape: null, idx: 0, playing: false, audio };
+      audio.addEventListener('ended', () => this.jbStep(1));
+    }
+    return this.J;
+  }
+  jbList() {
+    const J = this.jb(), D = this.D;
+    if (J.src === 1 && J.tape) return J.tape.ownTrack ? [J.tape.ownTrack] : J.tape.tracks.map((id) => D.TRACKS[id]);
+    return D.BIOME_STATIONS[this.lb].tracks.map((id) => D.TRACKS[id]);
+  }
+  jbShow() {
+    const J = this.jb(), hud = this.liveHud; if (!hud) return;
+    const list = this.jbList(), t = list[J.idx % Math.max(1, list.length)];
+    hud.radio.setSource(J.src === 1 && J.tape ? 'TAPE ' + J.tape.label : this.D.BIOME_STATIONS[this.lb].name, J.src);
+    hud.radio.setTrack(t ? { title: t.title, artist: t.artist, index: J.idx, count: list.length } : null);
+    hud.radio.setPlaying(J.playing);
+    const bag = this.liveBag, D = this.D;
+    const tapes = bag ? bag.items.map((id) => id && bag.tapeById(id)).filter((t) => t && (!t.blank || t.own)) : [];
+    hud.radio.setPlaylists([{ id: 'biome', label: D.BIOME_STATIONS[this.lb].name, sub: 'BIOM' }, ...tapes.map((t) => ({ id: t.id, label: t.label, sub: t.own ? 'EIGEN' : t.tracks.length + ' T' }))], J.src === 1 && J.tape ? J.tape.id : 'biome');
+  }
+  jbLoad() {
+    const J = this.jb(), list = this.jbList(); if (!list.length) return;
+    J.idx = ((J.idx % list.length) + list.length) % list.length;
+    J.audio.src = list[J.idx].url; if (J.playing) J.audio.play().catch(() => { J.playing = false; this.jbShow(); });
+    this.jbShow();
+  }
+  jbPlay(on) { const J = this.jb(); J.playing = on; if (on) { if (!J.audio.src) this.jbLoad(); else J.audio.play().catch(() => { J.playing = false; this.jbShow(); }); } else J.audio.pause(); this.jbShow(); }
+  jbStep(d) { const J = this.jb(); J.idx += d; this.jbLoad(); }
+  jbSource(i) { const J = this.jb(); if (i === 1 && !J.tape) { J.src = 0; this.liveHud && this.liveHud.radio.setTitle('KEINE KASSETTE'); setTimeout(() => this.jbShow(), 1600); return; } J.src = i; J.idx = 0; this.jbLoad(); }
+  jbTape(tape) { const J = this.jb(); J.tape = tape; J.src = tape ? 1 : 0; J.idx = 0; if (tape) J.playing = true; this.jbLoad(); }
+  setLiveBiome(b) {
+    if (!this.D || b === this.lb) return;
+    this.lb = b; this.S2 && this.S2.setBiome(this.D.BIOMES[b]);
+    const J = this.jb(); if (J.src === 0) J.idx = 0;
+    this.buildLiveHud(); if (J.src === 0) this.jbLoad();
+    this.setState({ liveBiome: b });
+  }
+  tickExtras(dt) {
+    for (const m of this.minis) { if (m.live) m.m.tick(dt); }
+    this.liveMini && this.liveMini.tick(dt);
+    for (const b of this.bags) b.tick(dt);
+    this.liveBag && this.liveBag.tick(dt);
+  }
+
+  startLive() {
+    const { V, B } = this; const host = document.getElementById('live-3d'); if (!host) return;
+    const R = this.R2 = this.newRenderer(); const pr = Math.min(window.devicePixelRatio || 1, 1.5); R.setPixelRatio(pr);
+    R.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block'; host.append(R.domElement);
+    const S = this.S2 = B.createBoardScene({ seed: 23 }); S.setBiome(this.D.BIOMES[this.lb]);
+    this.vfx = V.createFlightVfx({ scene: S.scene, camera: S.camera, nozzles: S.nozzles, trails: [], body: S.fig, surfaceAt: S.surfaceAt, seed: 9 });
+    this.L = { mode: 'walk', ground: 'walk', phys: 'ground', speed: 0, thrust: 0, energy: 1, t: 0, nextFluff: 1.2, statT: 0, lastSpace: 0, ph: 0, wAmt: 0, hov: 0, roll: -1, anchors: '', user: { speed: 0.6, thrust: 0.6, alt: 0.3 } };
+    this.vfx.setGrounded(true, S.fig.position);
+    this.buildLiveHud();
+    const resize = () => { const w = host.clientWidth || 1280, h = host.clientHeight || 720; R.setSize(w, h, false); S.camera.aspect = w / h; S.camera.updateProjectionMatrix(); this.vfx.setViewHeight(h * pr, S.camera.fov); };
+    resize(); this.ro = new ResizeObserver(resize); this.ro.observe(host);
+    let last = 0;
+    const loop = (now) => { if (this.dead) return; const dt = last ? Math.min(0.05, (now - last) / 1000) : 0; last = now; this.stepLive(dt); this.tickExtras(dt); this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+    this.onKey = (e) => {
+      const tg = e.target && e.target.tagName; if (tg === 'INPUT' || tg === 'TEXTAREA') return;
+      if (e.code === 'Digit1') this.setLiveMode('walk'); else if (e.code === 'Digit2') this.setLiveMode('drive'); else if (e.code === 'Digit3') this.setLiveMode('fly');
+      else if (e.code === 'KeyR') this.barrelRoll();
+      else if (e.code === 'KeyB') this.liveBag && this.liveBag.toggle();
+      else if (e.code === 'Escape') this.liveBag && this.liveBag.close();
+      else if (e.code === 'Space') {
+        e.preventDefault(); const now = performance.now();
+        if (now - this.L.lastSpace < 320) { this.setLiveMode(this.L.mode === 'fly' ? this.L.ground : 'fly'); this.L.lastSpace = 0; } else this.L.lastSpace = now;
+      }
+    };
+    window.addEventListener('keydown', this.onKey);
+  }
+
+  setLiveMode(m) {
+    const L = this.L; if (!L || L.mode === m) return;
+    L.mode = m; if (m !== 'fly') L.ground = m;
+    this.liveHud && this.liveHud.setMode(m);
+    this.setState({ liveMode: m });
+  }
+
+  barrelRoll() {
+    const L = this.L; if (!L || L.mode !== 'fly' || L.phys !== 'air' || L.roll >= 0) return;
+    L.roll = 0; this.vfx.maneuver(1, 0.9);
+  }
+
+  spawnFluff(k) {
+    const S = this.S2, host = document.getElementById('live-3d'); if (!S || !host || !this.liveHud) return;
+    const v = S.fig.position.clone(); v.y += 1.7; v.project(S.camera);
+    this.liveHud.addFluff(k, { from: { x: (v.x + 1) / 2 * host.clientWidth + 10, y: (1 - v.y) / 2 * host.clientHeight } });
+  }
+
+  stepLive(dt) {
+    const L = this.L, S = this.S2, vfx = this.vfx, hud = this.liveHud, auto = this.state.auto, V = this.V; if (!L || !hud || !dt) return;
+    L.t += dt;
+    const wave = (a, b, p, o = 0) => a + (b - a) * (0.5 + 0.5 * Math.sin(L.t * p + o));
+    const ease = (k) => 1 - Math.exp(-k * dt);
+    const max = { walk: 12, drive: 160, fly: 220 }[L.mode];
+    const u = auto ? (L.mode === 'walk' ? wave(0.4, 0.95, 0.5) : L.mode === 'fly' ? Math.max(0, wave(-0.3, 1.05, 0.21)) : wave(0.3, 0.97, 0.33)) : L.user.speed;
+    L.speed += (u * max - L.speed) * ease(1.6);
+    const fig = S.fig, gy = L.mode === 'drive' ? 0.45 : 0, fly = L.mode === 'fly';
+    let thrust = 0;
+    if (fly && L.phys === 'ground') { L.phys = 'air'; S.pose('fly'); vfx.setGrounded(false, { x: fig.position.x, y: 0, z: fig.position.z }); }
+    const anchors = L.phys === 'air' ? 'fly' : L.mode === 'drive' ? 'drive' : 'none';
+    if (anchors !== L.anchors) { L.anchors = anchors; vfx.setTrailAnchors(anchors === 'fly' ? S.trailsFly : anchors === 'drive' ? S.trailsDrive : []); }
+    /* Kurven: Autopilot schlängelt; Gier folgt der Bahn, Bank aus der Querbeschleunigung */
+    const vf = L.speed / 3.6 * 0.45, w = 0.5;
+    L.wAmt += (((auto && (fly || L.mode === 'drive')) ? (fly ? 6 : 2.5) : 0) - L.wAmt) * ease(0.8);
+    L.ph += dt * w;
+    const nx = L.wAmt * Math.sin(L.ph), vx = (nx - fig.position.x) / dt; fig.position.x = nx;
+    const ax = -L.wAmt * w * w * Math.sin(L.ph);
+    fig.rotation.y += ((vf > 0.5 ? -Math.atan2(vx, vf) : 0) - fig.rotation.y) * ease(6);
+    L.hov += (((fly && L.phys === 'air' && L.speed < 14) ? 1 : 0) - L.hov) * ease(2.5);
+    const hp = V.hoverPose(L.t);
+    let rollA = 0;
+    if (L.roll >= 0) { L.roll += dt / 0.9; const q = Math.min(1, L.roll); rollA = Math.PI * 2 * q * q * (3 - 2 * q); if (L.roll >= 1) L.roll = -1; }
+    if (L.phys === 'air') {
+      const tgtY = fly ? (auto ? wave(1.3, 24, 0.17, 2) : 1.2 + L.user.alt * 56) : 0;
+      const dy = tgtY - fig.position.y; fig.position.y += Math.sign(dy) * Math.min(Math.abs(dy), Math.max(1.5, Math.abs(dy) * 1.4) * dt);
+      thrust = fly ? (auto ? wave(0.4, 1, 0.9, 1) : L.user.thrust) : 0.4;
+      thrust += (V.FLIGHT_IDLE - thrust) * L.hov;
+      if (L.energy <= 0.01) thrust = Math.min(thrust, 0.15);
+      const px = fly ? -(0.15 + 0.5 * L.speed / 220) : -0.05;
+      fig.rotation.x += (px + (hp.pitch - px) * L.hov - fig.rotation.x) * ease(4);
+      fig.rotation.z = (fly ? -ax * 0.35 : 0) * (1 - L.hov) + hp.roll * L.hov + rollA;
+      S.legs.forEach((l) => (l.rotation.x = hp.leg * L.hov));
+      L.energy = Math.max(0, L.energy - thrust * 0.04 * dt);
+      if (!fly && fig.position.y < 0.08) { L.phys = 'ground'; S.pose(L.mode); vfx.setGrounded(true, { x: fig.position.x, y: 0, z: fig.position.z }); }
+    } else {
+      if (S.mode !== L.mode) S.pose(L.mode);
+      const bob = L.mode === 'walk' ? Math.abs(Math.sin(L.t * 9)) * 0.05 * Math.min(1, L.speed / 6) : 0;
+      fig.position.y = gy + bob; fig.rotation.z = 0;
+      L.energy = Math.min(1, L.energy + 0.2 * dt);
+    }
+    L.thrust = thrust;
+    fig.position.z -= vf * dt;
+    S.frame(false, dt);
+    const ry = L.phys === 'air' ? hp.y * L.hov : 0; fig.position.y += ry;
+    vfx.update(dt, L.phys === 'air' || L.mode === 'drive' ? L.speed : 0, thrust);
+    this.R2.render(S.scene, S.camera);
+    fig.position.y -= ry;
+    hud.setSpeed(L.speed); hud.setAltitude(L.phys === 'air' ? fig.position.y : 0); hud.setThrust(thrust); hud.setEnergy(L.energy);
+    hud.setHeading(fig.rotation.y);
+    if (auto && L.t > L.nextFluff) { this.spawnFluff(1 + Math.floor(Math.random() * 3)); L.nextFluff = L.t + 2.2 + Math.random() * 1.8; }
+    L.statT += dt;
+    if (L.statT > 0.4) {
+      L.statT = 0; const s = vfx.stats(), el = document.getElementById('live-stats');
+      const st = L.phys === 'air' && !fly ? ' (Landung)' : L.hov > 0.5 ? ' (Schweben)' : L.roll >= 0 ? ' (Barrel Roll)' : '';
+      if (el) el.textContent = `Modus       ${L.mode}${st}\nTempo       ${Math.round(L.speed)} km/h   Höhe ${fig.position.y.toFixed(1)} m\nSchub       ${thrust.toFixed(2)}   Energie ${L.energy.toFixed(2)}\nSpeedlines  ${s.trails} Bänder · ${s.trailPts} / ${s.caps.trailPts} Punkte · Deckkraft ${s.trailOpacity}\nManöver     ${s.lines} / ${s.caps.lines}   Deckkraft ${s.lineOpacity}\nSchub       ${s.jet} / ${s.caps.jet}\nPuff        ${s.puff} / ${s.caps.puff}\nÜberflug    ${s.skimOn ? s.skim + ' / ' + s.caps.skim + ' · ' + (s.overWater ? 'Wasser' : 'Boden') + ' · Blende ' + s.skimBlend : 'aus'}\nDraw-Calls  ${s.drawCalls}`;
+    }
+  }
+
+  renderVals() {
+    const m = this.state.liveMode, on = '#F7F3EC', off = 'transparent', lb = this.state.liveBiome;
+    return {
+      bgBurg: lb === 'burg' ? on : off, bgDystopia: lb === 'dystopia' ? on : off, bgUtopia: lb === 'utopia' ? on : off, bgProtopia: lb === 'protopia' ? on : off,
+      bioBurg: () => this.setLiveBiome('burg'), bioDystopia: () => this.setLiveBiome('dystopia'), bioUtopia: () => this.setLiveBiome('utopia'), bioProtopia: () => this.setLiveBiome('protopia'),
+      status: this.state.status,
+      walkBg: m === 'walk' ? on : off, driveBg: m === 'drive' ? on : off, flyBg: m === 'fly' ? on : off,
+      setWalk: () => this.setLiveMode('walk'), setDrive: () => this.setLiveMode('drive'), setFly: () => this.setLiveMode('fly'),
+      addFluff: () => this.spawnFluff(3),
+      barrelRoll: () => this.barrelRoll(),
+      skimLabel: this.state.skim === false ? 'aus' : 'an',
+      toggleSkim: () => this.setState((s) => { const on = s.skim === false; this.vfx && this.vfx.setSkim(on); return { skim: on }; }),
+      autoLabel: this.state.auto ? 'an' : 'aus',
+      toggleAuto: () => this.setState((s) => ({ auto: !s.auto })),
+      onSpeed: (e) => { this.L && (this.L.user.speed = +e.target.value); if (this.state.auto) this.setState({ auto: false }); },
+      onThrust: (e) => { this.L && (this.L.user.thrust = +e.target.value); if (this.state.auto) this.setState({ auto: false }); },
+      onAlt: (e) => { this.L && (this.L.user.alt = +e.target.value); if (this.state.auto) this.setState({ auto: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
