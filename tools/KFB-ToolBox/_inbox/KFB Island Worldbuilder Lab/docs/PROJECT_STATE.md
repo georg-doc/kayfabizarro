@@ -17,6 +17,20 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## Content-Atlas und KFB_HUB (2026-10-09)
+
+- **Drei Inventur-Agenten** (nur lesend): Berichte in `docs/content-atlas/` (A Decks-Korpus, B Engines/Tools, C Ordner/Vault). Zusammenfassung: `docs/KFB_CONTENT_ATLAS_R1.md`.
+- **Funde:**
+  - 20.837 Karten als JSON mit 20.705 Bild-Prompts;
+  - Hannover-Decks A/B/C + `00_SHARED_SPINE.md` als Insel-Kanon (Vorschlag);
+  - Mnemosyne's Quill (Warburg-Tafel-Generator, privates Repo);
+  - NIE (~220 Module, privat);
+  - ChatterBox + Triplet-Pool;
+  - alte Hubs (VaultGvW, `_COWORKER_HUB`, Router) seit Juli bis September still;
+  - 67 ZIP-neben-Ordner-Paare.
+- **Neuer Hub** (Georg: passt): `~/Dropbox/CLAUDE/KFB_HUB/` mit `INDEX.md`, `projects.json` (`kfb.hub-projects/1`), `00_INBOX/<quelle>/`, `10_SSOT/` (Zeiger), `20_BRIEFINGS/<empfänger>/` (Zeiger), `30_DECISIONS/`, `90_ARCHIVE/`. Regeln: zeigen statt kopieren, ein Schreiber je Datei. Volle Einrichtung (Regeln je Chat, Schreibrechte testen) nach dem MVP.
+- **Nicht öffentlich synchronisieren:** `docs/content-atlas/` und der Atlas (lokale Pfade, private Repos, sensible Deck-Titel).
+
 ## Problemfeld Figuren-Integrität (2026-10-09)
 
 - **Georg meldet wiederkehrende Fehler** aus dem Blender-Coworker: Props nicht in der Hand (Stammtisch-Bierkrüge, früher Waffen), Originalaugen bzw. falsche oder keine Cartoon-Augen, Schielen, Augen zu weit aus dem Kopf. Approved-Eye-Rig-Konfigurationen (FrizzleBob v5) sind nicht persistiert.

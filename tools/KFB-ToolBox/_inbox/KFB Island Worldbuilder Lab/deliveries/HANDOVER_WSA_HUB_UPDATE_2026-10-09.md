@@ -40,6 +40,10 @@ Eine Karte bzw. einen Abschnitt **„MVP Drive Loop · Island Worldbuilder Lab�
 - HUD R3 und Clay Stage R2 mit TUNE angenommen;
 - nächste Lab-Stufe: R2D-Inselbasis.
 
+## 2b · Dropbox-Hub
+
+Seit 09.10. gibt es `~/Dropbox/CLAUDE/KFB_HUB/` (`INDEX.md`, `projects.json`, `00_INBOX/wsa-work/` für deine Ergebnisse, `20_BRIEFINGS/wsa-work/` für deine Aufträge). Bitte Ergebnisse künftig dort in `00_INBOX/wsa-work/` ablegen (Dateiname `YYYY-MM-DD_wsa-work_<thema>.md`), falls dein Dropbox-Zugriff schreiben darf. Bitte melde, ob Schreiben funktioniert. Die Hub-Karte auf GitHub darf auf `INDEX.md` verweisen.
+
 ## 3 · Masterplan-Abgleich
 
 - Den Masterplan R2 mit dem Stand im Hub und den Sites abgleichen.

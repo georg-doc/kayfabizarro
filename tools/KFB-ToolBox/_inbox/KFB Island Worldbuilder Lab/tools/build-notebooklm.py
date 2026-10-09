@@ -14,7 +14,7 @@ OUT = LAB / 'deliveries/NOTEBOOKLM_UPLOAD'
 SOURCES = {
     '01_KFB_Kontext_und_Masterplan.md': ('Kontext und Masterplan', [
         DOCS / 'KFB_PROJEKTKONTEXT.md',
-        DOCS / 'KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md', DOCS / 'KFB_GLOSSAR.md']),
+        DOCS / 'KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md', DOCS / 'KFB_GLOSSAR.md', DOCS / 'KFB_CONTENT_ATLAS_R1.md']),
     '02_KFB_Regeln_und_Vertraege.md': ('Regeln und Verträge', [
         DOCS / 'QA_RULEBOOK_ENVIRONMENT_R1.md', DOCS / 'QA_RULEBOOK_TRANSITIONS_R1.md',
         DOCS / 'SPEC_EDGE_RUBBLE_GRAMMAR_R1.md', DOCS / 'ETHERINGTON_REGELN_IN_ZAHLEN_R1.md',
