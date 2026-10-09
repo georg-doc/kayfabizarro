@@ -1,4 +1,4 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.6
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.7
 > **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
 >
 > Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
@@ -44,6 +44,22 @@
 > **Scope/status:** first source audit only and small future alternatives (one Quiet water clip loop OR one cartoon Blast effect OR one planted crop) after current playable MVP and Georg authorization. Static source/contract audit **22/22 PASS** after correcting a literal assertion wording; GitHub source proof, **ZERO** runtime build, browser visual, compatible rod/water support/FX validation, real fish reward or multiplayer backend. No PR, merge, Site, Stage, Live or added current MVP gate. KFB public website GPT Site migration still **PARKED**.
 >
 > **ONE unchanged next gate:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`, now to include Rod/Fishing clips, Farmer plots, source Clown bomb, water ripple/VFX, and canonical wallet+Score+Card owners before any new interactive fishing/farming/blast feature.
+
+---
+
+> **LATEST RETURN UPDATE · v0.7 · 2026-10-09 · BLAST-MINING / BOXEL CASCADES / LIVING LOOT**
+>
+> Georg's new post-MVP author direction is captured in [KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md](./KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md); first implementation milestone `156d33792bc64010983715c51fd682e9ece8beb5`, exact source blob `f5e6f81d873dbc018b6739ec52bd3fedeac3cc3a`, 24,008 characters. Preserves v0.6 fishing/farm/cartoon water-blast concept unmodified. No new gameplay runtime, Score owner, Stage/Site or current MVP requirement.
+>
+> **One resource interaction owner; several methods.** A Fluff Sensor may find real World source nodes; Cartoon **Blast-Mining** uses Earth/clay/rubble/carrots/relics shower while water blast uses ripple/splash/buoyancy; same authored single `ActivityResult`, one wallet/loot grant and deterministic organic scatter/settle. Boxel Blitz audio-feedback POC contributes 10-step pickup/cascade Match-Three feedback (real 8/8 historical Chromium tests, human feel review OPEN); Seed World Combat Mech Destruction POC contributes source evidence for bounded cell damage/debris/persistence (Combatech POC still research only; actual destruction HOLD for Combat Arena). Never copy a new terrain/camera/physics/AudioContext owner into the Lab.
+>
+> **Items and UI:** High/Low D6 Fluff auto-pickup via valid walking/driving/flying proximity. Common gray junk never floods the 20-slot Backpack and needs no repeated dialog; unusual real source Props receive **optional nonblocking loot-card/3D magnified inspect** with BINGO (take), BOGGLE (ask) and BONGO (pass) as **local digital semantics**. Analog tabletop BONGO has a different meaning; Golden Journey already used local BONGO to refuse CEO terms. `BLÖDSINN!` remains distinct; do not install it as default delete. One-tap validated gray-trash discard plays a clay/pop effect after inventory mutation; rare/quest items protected. Exceptional funny/haunted objects such as a red-herring fish can offer a bounded lore-sourced claim/Triplet and short Comic/ChatterBox response **as new author-proposed exception** to Layer Zero's generic-object-anthropomorphism avoidance, NOT a blanket voice for each rock. No invented Card art: canonical `deckId + cardNumber` goes only to Card/Almanac with real provenance.
+>
+> **Receipts:** source budget and seeded visual object shower do not imply material minting by every particle; each pending prop/Fluff DropRef can be offered/collected/declined/recycled only once across reload and 20-slot capacity. Fluff wallet/Score/HP/Almanac remain separate authorities. No wall-clock idle farming, compulsory dialogue interrupts, global Hall of Fame backend or loot-rarity-as-moral-valence.
+>
+> **Evidence and boundaries:** new file written and exact GitHub head/file read back, 24/24 corrected static contract assertions PASS (one strict literal/format search fixed, source unchanged). Runtime, source-isolated FX, visual water/mine/audio smoke integration, mobile UI and savegame test **0**. Old R4 STOP / distinct Island Lab Drive Loop and Academy gate unchanged; public-web GPT Site migration PARKED. No PR/merge/Live.
+>
+> **The one deferred gate stays `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`**, once playable core and explicit Georg go-ahead exist. Following it, an intentionally bounded proposed first *one* mine node → one EarthBlast cascade → accessible auto-collected Fluff plus optional strange Loot-Card → real save/reload can test the shared grammar. Do not turn water/farming/mine all into a compulsory bundle.
 
 ---
 
