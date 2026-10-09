@@ -1,0 +1,124 @@
+# KFB Blast-Mining, Cascade Harvest, Living Loot & Social Calls · v0.7
+
+**2026-10-09 · COMMENTED GEORG IDEATION / POST-MVP INTEGRATION CONCEPT · NOT IMPLEMENTED**
+**Single planning owner:** Fluff / Crafting / Alchemy / Fractal Almanac on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`; future receiver remains the owning KFB Island Worldbuilder Lab / Claude Code controller **after a playable core MVP and explicit Georg authorization**. No new World, Combat, Score, Audio, Script, Inventory, Academy or public Site runtime owner.
+**Additive source:** v0.3 Fluff + Almanac; v0.4 Play/Craft/Learn/Chill; v0.5 Genesis/Alchemist/UFO; v0.6 `KFB_FISHING_FARMING_CARTOON_BLAST_ENVIRONMENT_V0_6_2026-10-09.md` (Fishing/Farm/Cartoon Blast). This file develops Blast-Mining and object/personality loot; it does NOT replace the aquatic proof.
+**Current MVP protection:** the old WB2 R4 stays STOP/NO MVP; the distinct Island Worldbuilder Lab branch `sync/lab-rkit-2026-10-09` has an active Drive Loop and its own first playable goal. Absolutely no change to current MVP/acceptance, no World runtime/Cloudflare/Site/Hub work. Public KFB/MED GPT-Site migration remains explicitly PARKED.
+
+## 0. Source audit: what is actually present, what is not
+
+| Donor | Verified source on GitHub | Supported conclusion, not overclaim |
+|---|---|---|
+| **KFB Boxel Blitz** | `KFB Boxel Blitz/audio-feedback-poc/README.md`, `RETURN.md`, `docs/AUDIO_FEEDBACK_POC_EVIDENCE_2026-09-19.md`; standalone source `audio-feedback-poc/`. The evidence reports **8/8 Chromium technical/browser checks PASS** for pickup, checkpoint/cascade ladder 1–10, power-up/down, no page/HTTP errors. Physical Boxel Blitz v4 sources `boxelblitz-v4/dice.v4.js`, `cube.v3.js`, `surfaces.v1.js` are separate. | This is a verified **presentation/audio feedback donor**: crescendo of Match Three synth/xylophone, short squash/stretch and particles; **human approval of its feel OPEN**, not verified real mining/reward physics, not a new AudioContext for the game. Source runtime is not an authoritative CascadeLoot implementation. |
+| **Seed World Combat Mech Destruction POC 01** | `tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/{RETURN.md,INTEGRATION_OPEN_WORLD.md}`, `sw-destruct.js`, `sw-mech.js`, `sw-fx.js`. POC Return reports deterministic cell damage, rockets/minigun/facade collapse, rubble persistence and 12/12 checks. | Genuine **isolated RESEARCH PLAYGROUND**, NOT the accepted World/Combat engine. `INTEGRATION_OPEN_WORLD.md` classifies `cellsFor/sw-destruct` as **HOLD for Combat Arena**, other persistence/FX ideas DONATE only. Do not integrate POC's own terrain, second renderer, weapon/damage handler or destruction writer into Fluff activities. |
+| **Fishing & Cartoon Blast v0.6** | `KFB_FISHING_FARMING_CARTOON_BLAST_ENVIRONMENT_V0_6_2026-10-09.md`. Real KayKit clown bomb `clown_bomb.gltf` (promo prop, no verified throw); seven Rig_Medium fishing clips; Farmer carrot/plots; possible water/VFX donors but **no proven accepted island-water ripple impulse**. | Already defines one source-owned ActivityResult and seed-driven scatter, save-safe grants, no gore/real-world explosive instructions. Blast-Mining **extends this exact grammar** to source-authored rock/ore/soil nodes. No new aquatic engine or second loot roll. |
+| **Original KFB Rules Social Calls** | Current public KFB rules mirrored in `index.html`: BINGO=praise/extra card after story; BOGGLE=one question; BONGO=challenge mechanics narration; BLÖDSINN!=rule adjudication. `GOLDEN_JOURNEY_MVP_2026-10-04.md`: local digital BINGO accepts courier offer, BONGO refuses/declines and explicitly says this does NOT redefine its tabletop meaning. | The new Loot-Card controls may **borrow the call labels with context-specific semantics**, but don't silently rewrite the published analog KFB rules or existing Golden Journey outcome. |
+| **Card/Almanac/Fluff** | v0.3–v0.6 + `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md` and Lean Memory architecture. | Canonical `deckId + cardNumber` and actual source PDF/JSON remain authoritative; there are distinct material-wallet, health/HP and existing Fluff-score meanings. A common/unique prop is **not** a replacement Card asset. |
+| **Layer Zero satire** | `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` explicitly warns against automatic object anthropomorphism except card-as-creature and against filler/AI-meta joke loops. | Georg now proposes **exceptional talking loot/props**; capture as **authorial candidate exception for selected authored finds only**, not a global default voice for every tree/fish/boot. Keep the authorial gate and high writing quality. |
+
+**SOURCE_REQUIRED** before implementation: actual mine node/rock and allowed destruction scope in receiving World; accepted Sensor world node query; visual-isolated Combatech explosion/Clay smoke; water ripple impulse; real loot fish/boot/carrot; player item Bag owner; UI/Voice ChatterBox interface; real mobile pickup and collision volume; score/progression transaction owner. No current minigame integration test was run.
+
+## 1. One harvesting consequence, several diegetic methods
+
+**Conceptual activity family:** `ResourceActivityRequest{sourceNodeId,method,actorRef,profileRef,actionId}` with method one of `SHAKE / MINE_TAP / FISH / SCOOP / CARTOON_BLAST_WATER / CARTOON_BLAST_EARTH / FARM_HARVEST` (examples, not deployed API).
+The **existing World/Environment node** decides eligibility, location, social biography and persistent resource budget. **One authoritative reward resolver** commits a source-backed `ActivityResult` exactly once; the method selects visible choreography and a balanced loot profile. Multiple approaches may point to the *same* mine/pond without duplicating the budget. No explosion creates resources proportional to particle count.
+
+### Blast-Mining: KFB cartoon toy event
+1. Discover a real permitted Fluff seam near Caveman's mine, a Protopia work site, a rocky island or later a selected ruins/geology POI. A later optional **Fluff Sensor** shows a visual/sound hint, linked to real source-node IDs through the existing wayfinding owner; no invented hidden-resource detector with x-ray omniscience or a new Nav writer.
+2. Activate one **fictional cartoon explosive prop** with source/presentation permission. The KayKit Clown bomb source is a candidate, not automatically a licensed and rigged mining tool. Alternatively a silly safe clay charging orb can be a separately approved source. No real explosives recipe/handling or real mining instructions.
+3. Prepare theatrical beat and **distinct EARTH visual treatment**: delayed, squashed rock/soil mass → clay-earth ruptures and cracks/rounded particle clusters (source World Damage may be visual-only) → 1–3 staggered small cascade pops → earth, carrots, strange relics, clay chunks, resource balls in a short firework. Unlike water: little ripple; emphasize dust, soil chunks, wall elasticity, bounce, tumbling and settling. Do not change World terrain/walkability without a separately accepted World terrain/destruction transaction.
+4. **Boxel Blitz cascade grammar** shapes intensity and audio notes: rapid pickup accents, one ascending melodic ladder, a release beat and short decaying clatter. IMPORTANT: ten available sound-steps are **a reusable timbral vocabulary, not ten expensive physical explosions or ten new loot grants**. Honor KFB Audio polyphony/ducking authority, reduced-motion/low-FX budget.
+5. Use exactly one seeded object-scatter presentation: grouped organic rings, height arcs, staggered spawns, shallow weighted landing clusters, occasional visual comical collisions, short elastic squashes, dust/splash as applicable. Inaccessible drops or bounced-away “rare finds” cannot invalidate committed awards.
+6. Resource pickup from existing Walk/Drive/Flight proximity; no separate collision/controller engine. Source node harvest receipt, wallet materials, eventual unusual find and optional score go through one idempotent transaction chain and survive reload.
+
+**Visual identity:** `waterBlast` focuses on water dome/ripple/splash/floats; `earthBlast` focuses on reactive dirt, deforming mass, cascading rubble, staggered pops, tumbling carrots/relics and clay soot; `quietMining` focuses on a small responsive tap. They share timing language, cloud/pool allocation, reward identity, audio owner and controls. A different `VFXProfile` is not a new game.
+
+**Organic scatter discipline:** existing environment placement constraints and World support surfaces determine real landing/pickup eligibility. The display can be stochastic-looking through one pinned seed and bounded minimum separation/cluster weighting, with particles that visually bounce together, but reward contents are deterministic/owned and collision budget bounded. Use pooled instanced pieces / cheap arcs instead of permanent rigidbodies for every vegetable. The final few clay bits stop, wobble and settle together as the cascade's visual punctuation, not a jarring instant despawn.
+
+## 2. Fast pickup hierarchy: Fluff auto, props are invitations
+
+### Layer 0 · Resource auto-pickup, all Travel Modes
+- Colored Fluff balls/ordinary basic crafting materials **automatically collected by reachable proximity** on foot or by approved Drive/Flight travel; travel speed changes pickup envelope only through existing movement/collision owner. Preserve source budget and wallet receipt. Small visual squish, pull/magnet and pleasing SFX, one aggregate quantity toast. Do not slow the car, start a forced modal, hijack camera or fire 20 dialogs while flying.
+- For rapid showers, batch multiple same-type grants into one count update; data idempotency keyed to the ActivityResult's content IDs. A render bloom is not an extra reward.
+- Flight cannot collect through blocked terrain/solid surfaces or from unreachable underground cells; query actual World/POI eligible volume.
+
+### Layer 1 · Common props and gray-junk: no dialog spam
+- Gray trash (boot, bent can, generic scrap) may be auto-recycled at pickup into small source-authored material, ignored, or taken into a designated **junk pouch / single aggregated scrap stack** by preference and safe inventory owner rules. They should not fill 20 normal Bag slots merely because the player drives through an explosion field.
+- Optional tiny floating info label on close pass, not a forced modal. A gray rarity color/tone is a **UI tier**, NOT equivalent to the six canonical Story Mode colors or Low Vibrational Fluff. A gray item may be funny or useful as story lore; don't assume it has no provenance.
+- If taken as an actual loose item, inventory owner decides space/overflow before committing. Never silently delete valuable source props because Bag is full.
+
+### Layer 2 · Unusual, unique or Card-linked props: a compact optional “Loot Card”
+- A first meaningful encounter may show a **nonblocking thumbnail/large 3D turntable or existing item render from Asset Librarian**, with clear authored item name/source-ref, one short description or witty claim, optional one-line World/POI provenance.
+- The player can keep moving; a small pickup/inspection hint stays reachable in a temporary short **Recent Finds tray** or safe World drop. Click/tap/focus (or low-speed approach) opens a short item display; a high-speed passing car/jetpack must NEVER be interrupted by a modal.
+- Existing source asset is depicted, not an AI-reconstructed substitute or wrong inventory icon. The UI is a *Loot-Card presentation*, NOT a new canonical KFB playing Card. Authored Card-linked rewards use existing `deckId+cardNumber` and its proper Almanac path.
+- **KayfaBINGO!** = collect/keep (digital local adaptation; check actual Bag space and one receipt); **KayfaBOGGLE?** = inspect/explain/question (provenance, Card/Triplet related cue if actual source context supports it); **KayfaBONGO!** = pass/decline (the *local Golden Journey* digital use only; not the analog global BONGO meaning). Optional **BLÖDSINN!** is **NOT** an automatic delete button: preserve it for a deliberate authored oddity/claim dispute if desired, rather than inventing canonical discard semantics.
+- Provide conventional accessible labels like `Keep`, `Ask`, `Leave` on hover/focus/mobile or subtitles; don't require knowledge of the analog calls just to pick up loot. If BONGO declines, source keeps the world object or marks it passed without destroying collection/provenance. Card ownership persists in the one Card system.
+
+### Layer 3 · Rare “living loot” with selective agency (author proposal)
+An exceptional source-backed object (a red-herring fish with cartoon X-eyes, odd relic, talking shoe, suspicious cassette) can briefly **introduce itself** through a comic speech balloon or existing ChatterBox voice only if a *curated authored persona, source context or bounded triplet-derived claim* is approved. Its claim is explicitly a **character statement, not canonical fact**. For example one possible English voice line for the fish, as a **proposed gag**:
+> “I'm the red herring. You're looking for the wrong clue.”
+That is a short purposeful misdirection rather than generic chatter from every item.
+
+User explicitly proposes occasional prop anthropomorphism. **Layer Zero currently prohibits generic object anthropomorphism (except card-as-creature)**: treat this as a **targeted future authorial exception pending Georg's creative/product canon decision**; do not change the Layer Zero SSOT or silently personify all loot. An item may be a projected narrator/card-character/haunted object rather than an omniscient sentient widget. Avoid "AI quirk", random meme voice, constant puns or automatic unrelated claims.
+
+Provenance-aware contextual speech:
+`sourceAsset/itemRef + location/biome + source event + optional canonical Card/Triplet refs + authored personaTemplate` → **one** bounded spoken/balloon beat. Use authored KFB language/canonical semantic card JSON with stable source refs, not entirely unconstrained hallucinated lore. If generated, keep it behind actual source-specific semantic validation; fallback authored static claims. Dialogue can use *Claim → Counter/Question → Reply* with 1–2 short sentences per beat only when the player asks via BOGGLE. ChatterBox + KFB Audio remain the one bubble/voice/mix owners; if no compatible source or validation, display an honest one-line item fact instead of "alive" filler. Repeat encounters do not generate another origin or score event.
+
+## 3. Gray trash removal without interface clutter
+- A real inventory item can be discarded with one short deliberate action (drag to discard / contextual `Discard`), with confirmation only for rare/bound/quest/canonical Card objects; no repeated modal confirmation for gray junk.
+- **Cartoon discard animation**: item pops out of Backpack, stretches and splats into small clay pieces, soot or a short toss arc; effect follows one validated item removal, not vice versa. A particle disappearance is NOT an inventory delete before owner transaction success.
+- Optional `Recycle` at Witch Cauldron, Maker bench, Hunky/Dory replicator or resident trade can convert accepted gray scrap into modest existing material through one existing recipe/wallet owner. Avoid infinite profitable `collect trash → recycle → respawn` loops. A “favorite/lock” prevents accidental discard.
+- Trash quality ≠ Low Vibrational morality; low/high is distinct from usefulness/rarity. No giant material categories or additional 20-slot pressure.
+
+## 4. Minimal shared integration contracts (NOT accepted live interfaces)
+
+```text
+Discover(ResourceNodeRef, method, playerContext, requestedMode)
+  → World-owned eligibility / real placement / profile / remaining budget
+  → one stable ActivityResult(actionId, lootContents, visualSeed, originSource)
+  → reward owner durable reserves/grants (colored Fluff, approved prop, actual Card)
+  → presentation strategy: WaterBlast / EarthBlast / QuietFish / Scoop / Farm
+  → pickup on proximity with validated recipient/capacity
+  → meaningful result receipts to existing Wallet, Score, Card/Almanac and Lean Memory
+```
+
+**Very important acquisition safety:** `ActivityResult` is not equivalent to "all loot has been permanently collected". When objects pop but are not yet acquired, persistent `DropRef`/claimable result tracks each object's `offered → collected/recycled/declined/expired` state and avoids auto-awarding the same prop twice. A presented drop only becomes a Bag item upon explicit `BINGO`/take or a documented auto-collect preference; an animation interruption is not a source of dupe loss. For Fluff auto-pickup the single proximity grant marks the corresponding DropRef collected once. Duplicate canonical Cards are handled by existing acquisition/Almanac owner; pickups never bypass Courier custody requirements. Call names are UI semantics; economic debit/credit always belongs to existing item/reward owner.
+
+**Source-specific loot table**, not a gambling wheel: each real environment/node has authored eligible classes, validated source props and rare encounters; deterministic weighted draw by ActivityResult visual/event seed with minimum meaningful outcomes. Different methods can bias presentation and category odds but not conjure unsourced Card art. Inform the player that some outcomes are junk, funny, or Fluff-y. No need to show probability percentages on normal HUD. Honest source id and origin make discovery part of the storytelling.
+
+**Fluff Sensor:** proposed later sourced tool or skill, same material/Item owner. Returns `verified resourceNodeRef` as target for existing minimap/3D arrow and highlights source type/strength. A sensor cannot read private future instance data or spawn nodes that do not exist; no automatic global scan job. Sensor itself may be optional craft/Resident gift rather than an exploration gate.
+
+**Effects budget:** one real explosion can have multiple visual cascades. Grouped object arcs, instanced squash particles, bounded dust/smoke/fx bursts and only meaningful audio accents. Offer reduced-motion/quiet settings and prevent sustained flashes/hard audio clipping. Water Ripple must be the existing Water/Surface owner or freeze exact seam if unavailable. Mech POC cellular damage stays Combat-owned; mining may use a *presentation-only* rock opening until World approves real damage/persistence. All are post-MVP and not copied into current Drive Loop.
+
+## 5. Score, Fluff/HP and the Almanac remain different truth layers
+- **Spendable Fluff:** six actual KFB D6 hues × High/Low, one source-controlled wallet. `Fluff points` in current HUD are not necessarily this balance, and historical HP/POP must not be silently renamed.
+- **Cumulative score:** derived from eligible once-only award events and achievement definitions, independent of wallet spends, not additive for particle count, repetitive replays or recycle chains.
+- **World state:** a permanently broken mining rock/open cavern is a World-owned persistent edit; a temporary explosion ring/crack is only VFX. One event may have both only after explicit owner validation.
+- **Almanac:** the first Red Herring/odd relic, one real Card from a node, encounter with a named Resident or new world/POI may yield a **MomentReceipt**. Hundreds of common trash pickups should not produce diary bloat. A Loot-Card is not itself a printed Canon Card.
+- **Later optional satirical Hall of Fame:** meaningful scores/unique catches/mining feats, sourced events only, user opt-in, server authority/anti-cheat and accessible name/consent; cross-player leaderboard is separate back-end work and no new Site is being authorized.
+
+## 6. Three tiny play examples (proposals)
+1. **Caveman mine:** Fluff Sensor makes a short sound at a genuine node → choose `cartoon earth blast` → delayed clay rupture, Boxel-style rising notes, Möhren/earth/Fluff and an odd relic fan out → driving across gathers 2 gold Absurd HIGH balls, unusual relic remains inspectable at safe walking speed → BOGGLE asks its claim, BINGO keeps it; saved receipt names actual Town mine. High and gold here are illustrative authored node values, not yet a real calibrated resource site.
+2. **Pond:** existing v0.6 clown bomb water method → local ripple + splash → a fish with X-eyes and a suspicious boot bob at shoreline; plain Fluff magnet collects → optional Red Herring speech bubble, one ask action → BONGO passes while leaving item in world or safe Recent Finds. Fish humor does not imply genuinely simulating harm to animals.
+3. **Protopia farm:** harvest actual source-compatible carrot → it squashes/reveals selected Fluff resource once; passing through fields in Drive/Walk auto-grants only valid reachable drops; a unique clue card stays in actual Almanac. A future Witch Cauldron could recycle approved trash but no shared farming-only wallet.
+
+## 7. Deferred tiny proof priorities / one next gate
+**No implementation now.** Keep `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` as the **single existing deferred gate**. It now also inspects true Boxel Blitz audio cascade/source (plus acceptance status), Combat Mech POC destruction owner boundary, actual Clay explosion/Water ripple/Environment source nodes, missing player item Bag and 3D item inspect renderer, existing Social Call/ChatterBox UI and valid reward/Score owners. The inventory from v0.6 already covers Fishing rigs, Clown bomb, Farmer carrots and source water.
+
+After the owner audit and a genuinely playable MVP, select **ONE** small vertical proof:
+- choose a single *actual mining node* and **Cartoon Earth Blast** as method, with one visual sequence, **one** reward event, grouped Fluff autopickup and **one** optional strange prop Loot-Card;
+- show source objects (Mech cells, Boxel POC, Clown bomb/Clay material, real mine and item) **in isolation** first, with exact pins, rights, emitter/audio support and fallback for unavailable sources;
+- acceptance is actual in-browser visual quality and walk/drive pickup, no bag spam, one odd prop inspect & three local calls (or plainer accessible equivalents), save/reload count and item idempotency. Do not claim UI concept proof if it shows only static mocked props; do not create an extra runtime to show it.
+- Later reuse the same event at an eligible pond with a different WATER blast presentation. Do **not** commission both as first mandatory proof. A quiet fishing loop remains equally valid for a later player preference test.
+- If the water shader cannot accept impulse or a Combat Mech POC effect cannot be ported safely, **quarantine that smallest exact seam** and still advance the parent mining proof with accepted real-source visuals, never silently invent a new World or physics engine. Two non-improving repair attempts trigger seam preservation, not endless rewrites.
+
+**Existing Academy v0.8, World/Drive Loop, Combat, ToolBox, KFB Audio, Card/Almanac and public KFB Site ownership remain unchanged.** No new public Stage route, no automatic PR/merge/Live or new requirement for the first playable MVP.
+
+### Sources read in this research turn
+- `KFB Boxel Blitz/audio-feedback-poc/{README.md,RETURN.md}`, `KFB Boxel Blitz/docs/AUDIO_FEEDBACK_POC_EVIDENCE_2026-09-19.md`.
+- `tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/{RETURN.md,INTEGRATION_OPEN_WORLD.md}`.
+- `index.html` KFB Social Calls + current `GOLDEN_JOURNEY_MVP_2026-10-04.md` exact BINGO/BONGO/BOGGLE local use.
+- `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` creative Layer Zero warning against generic object anthropomorphism.
+- current v0.3–v0.6 Fluff planning docs; Lab R2.1 post-MVP backlog and current GitHub owner workflow.
+
+**Evidence status for this addendum:** source documentation and approved source metadata only; zero 3D preview/real code deployment/water or mining gameplay test, zero item-voice test, zero public Site/Stage acceptance.
