@@ -34,7 +34,7 @@ SOURCES = {
         LAB / 'deliveries/BRIEF_CLAUDE_DESIGN_HUD_FLIGHT_R1.md', LAB / 'deliveries/BRIEF_CLAUDE_DESIGN_CURTAIN_CLAY_R1.md',
         DOCS / 'PROJECT_STATE.md']),
     '06_KFB_Probleme_und_Recherche_Prompts.md': ('Probleme und Recherche-Prompts', [
-        DOCS / 'KFB_PAINPOINTS_UND_BLINDSPOTS_R1.md', DOCS / 'notebooklm/KFB_DEEP_RESEARCH_PROMPTS_R1.md']),
+        DOCS / 'KFB_PAINPOINTS_UND_BLINDSPOTS_R1.md', DOCS / 'SPEC_CHARACTER_INTEGRITY_R1.md', DOCS / 'notebooklm/KFB_DEEP_RESEARCH_PROMPTS_R1.md']),
 }
 
 # image number → (source file, caption); numbering matches docs/notebooklm/BILDERLISTE.md and the prompts

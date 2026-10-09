@@ -49,6 +49,11 @@ Stand: 2026-10-09 · Für jeden Punkt steht hier, was wir sehen, was wir wissen,
 - **Wissen:** Vertrag K2. Falsche Annahmen sind mehrfach zwischen Sitzungen gewandert (1,9 m, POC- statt Track-Core-Meter).
 - **Unklar:** Ein automatischer Maßstabs-Wächter im Lab, der falsche Faktoren erkennt.
 
+### B6 · Figuren-Integrität (Spec `SPEC_CHARACTER_INTEGRITY_R1.md`)
+- **Symptom:** Props nicht in der Hand, Originalaugen bzw. falsche Augen, Schielen, gebrochene Arme beim Winken, Schweben über Stühlen.
+- **Wissen:** über zehn Kopien des Eye-Rigs auf GitHub, Freigaben im Browser-Speicher statt in Dateien.
+- **Unklar:** automatische Griff-Ausrichtung (Hand-IK auf Griffrahmen) in three.js und Blender, Gelenkgrenzen für KayKit-Rigs, Verdrahtung Emotion ↔ Geste ↔ Choreografie. Kandidat für einen eigenen Recherche-Prompt P7.
+
 ## C · später
 
 - **C1 · Freistehende Räume und Fluff-An- bzw. -Abbau:** Zellen-Grammatik, Abschlussstücke, die zurückweichen.

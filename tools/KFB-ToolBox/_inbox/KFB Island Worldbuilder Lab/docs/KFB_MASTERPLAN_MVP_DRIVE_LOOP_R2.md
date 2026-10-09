@@ -148,7 +148,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 | **1 Grundlage** | R2D v0 + Scholle v7 im Lab auf three r186, eine Insel mit Viertelkreis-Kante, Sprenkel, Maßstab K2, Gebäude-Katalog umgestellt | keine Verläufe; Tür ≥ 1,15 H; Budget laut Profiler | eine Insel aus 4 Kameras |
 | **2 Ring** | KFB Town in K2-Größe, Ringstraße an der Kante, eine Auffahrt mit Steinbogen-Brücke; Fahren mit Retro-Auto und Cabrio-FB ohne Drehfehler; Kamera nach §3b | Straßenbett T1/T2 (Schürze ≥ 0,3, Gelände an hw ≥ 0,05 unter Oberkante, kein Spalt), Steigung ≤ 8 %, Kamera-Regeln | eine Runde um Town + Auffahrt, Video |
 | **3 Loop** | Drei Satelliten nach Deck + Vorlage, Verbindungen mit Rennstücken, Rand-Rhythmus, Showcase-Tunnel, Landmarke + Billboard je Insel | Katalog vollständig, nur Bord/Bande am Rand, Erdung je Objektart | komplette Fahrt durch alle 4 Inseln |
-| **4 Klang, Stimmen, Gefühl** | Audio-Bett, HUD je Modus, Flugmodus mit VFX, mindestens 3 sprechende Bewohner (Demon Lord, Robot One, Farmer), ein Social Call, Licht und Himmel, Performance, Worldbuilder intakt | Bubble und Text auch stumm; Ducking; kein zweiter AudioContext; Frame-Budget | Gesamterlebnis |
+| **4 Klang, Stimmen, Gefühl** | Audio-Bett, HUD je Modus, Flugmodus mit VFX, mindestens 3 sprechende Bewohner (Demon Lord, Robot One, Farmer), ein Social Call, Licht und Himmel, Performance, Worldbuilder intakt | Bubble und Text auch stumm; Ducking; kein zweiter AudioContext; Frame-Budget; Figuren-Mindestprüfung (Augen, Props in der Hand, Sitzen, Gelenkgrenzen) | Gesamterlebnis |
 
 ## 6 · Vorlagen je Stufe
 
@@ -166,6 +166,10 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 - **Brick-Fish** in Mauerwerk-Familie A.
 - **Freistehende Räume** (Open Stage) und Fluff-An- und Abbau nach der Kanten-Grammatik.
 - **Fluff-Ernte:** Fluff wächst an Bäumen, Farmen ernten, Fallobst rollt in Mulden.
+- **Figuren-Integrität** (Problemfeld, Slice nach dem MVP; Georg 09.10.): `docs/SPEC_CHARACTER_INTEGRITY_R1.md`.
+  - **Fehler:** Props sitzen nicht in der Hand, Originalaugen bzw. falsche Augen-Varianten, Schielen, Arme brechen beim Winken, Schweben über Stühlen.
+  - **Lösung:** eine Figuren-Karte je Bewohner als SSOT (Rig, Augen-Konfiguration, Props mit Griffrahmen, Sitz, Stimme, Ausdruck), ein kanonisches Eye-Rig statt über zehn Kopien, ein Validator.
+  - **Im MVP:** Die Mindestprüfung gilt als harte Regel für die sichtbaren Bewohner (Stufe 4).
 - **Infrastruktur nach dem MVP** (Georg 09.10.): gemeinsamer Zugriff von ChatGPT bzw. WSA, Blender-MCP-Coworker, Claude Code und Claude Design ohne Behelfslösungen.
   - Klar getrennt: öffentliche Inhalte (Regelseiten, statische Seiten, Promotion, PDF-Decks, die im Spiel gezeigt werden) und privater Code bzw. lizenzierte Assets (privates Repo).
   - Dazu feste Workflows und Schnittstellen statt Hin- und Herkopieren.

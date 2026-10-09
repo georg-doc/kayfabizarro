@@ -17,6 +17,11 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## Problemfeld Figuren-Integrität (2026-10-09)
+
+- **Georg meldet wiederkehrende Fehler** aus dem Blender-Coworker: Props nicht in der Hand (Stammtisch-Bierkrüge, früher Waffen), Originalaugen bzw. falsche oder keine Cartoon-Augen, Schielen, Augen zu weit aus dem Kopf. Approved-Eye-Rig-Konfigurationen (FrizzleBob v5) sind nicht persistiert.
+- **Spec:** `docs/SPEC_CHARACTER_INTEGRITY_R1.md`. Figuren-Karte `kfb.character-card/1` als SSOT je Bewohner, kanonisches Eye-Rig (heute über zehn Kopien von `pet-eye-rig.v6.js`), Validator, Kamerasatz „Figur“. Slice nach dem MVP; im MVP Mindestprüfung für die sichtbaren Bewohner.
+
 ## Vorbereitung Stufe 1 (2026-10-09, vor Georgs Reset)
 
 - **Bauplan:** `docs/STAGE1_R2D_PORT_PLAN.md`. Zuordnung R2D → Lab-Module (`src/island/r2d/`), `planFromSpec` aus Editor-Umriss und RKIT-Straßenbett, `IslandField` bleibt als Fassade (gezählte Aufrufer), S1 statt kfbLayer, Scholle v7 statt `buildBody`, eine Farbquelle `ENV_ROLES`. Dazu Reihenfolge in 8 Schritten, harte Regeln, Risiken.
