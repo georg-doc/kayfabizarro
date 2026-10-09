@@ -1,5 +1,16 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Card-to-world discovery & six fractal reputation tiers v1.1
+
+- Georg requested first canonical Card/courier/Fluff-crafted Card as an optional authorable `DISCOVERED`/route/WorldGate evidence and **six reaction stages per Deck, World/Island and NPC**, with distinct warmth/skepticism overlay and no new rank/XP/memory owner.
+- Deck registry main verifies 56 cards for `forget_utopia`, `ignore_dystopia`, `embrace_protopia`. Proposed six Deck recognition bands: 0, 1–2, 3–9, 10–27, 28–50, 51–56 (>90%); NPC personal bonds and world rumors use real event receipts rather than automatically inheriting Card count. Completion 56/56 may enable optional absurd title.
+- Current receiving Lab `sync/lab-rkit-2026-10-09` God Mode spec allows **0…n Decks per Island**, with future known-card pocket portal; verified current World/Lean Memory Source schemas already name PlayerSave, CardCollection, CardProvenance, Moment, Encounter, SocialRelation and NPCMemoryView.
+- Couriers, favors, maker-made gifts, NPC gifts, late deliveries and repeated boss failures yield real compact provenance and bounded one-hop local rumor; visible ChatterBox, gaze/poses and offers change, no infinite global NPC gossip or permanent negative grind.
+- Added `CARD_WORLD_REPUTATION_SIX_TIERS_V11.md`, `CARD_WORLD_REPUTATION_SIX_TIER_FIXTURE_V11.json`, `CARD_WORLD_REPUTATION_SOURCE_TEST_V11.md`, and read-only `HANDOVER_CLAUDE_CODE_DECK_WORLD_REPUTATION_FLUFF_V11.md` for existing Island Worldbuilder Lab steering check-in **together with existing Fluff v0.3/v0.4 docs**. No sibling owner files modified.
+- Validations: 16/16 JSON fixture and 22/22 current source/contract cross-check PASS; **0 browser/game/World/Fluff/reputation runtime tests**.
+- Only next check-in actor: existing Claude Code Lab steering, **READ ONLY compatibility verdict**, no MVP implementation. Academy visual source proof `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1` unchanged, separately under Claude Design. No World R5/PR/Stage/Live/new Site.
+
+
 ## 2026-10-09 · Modular Gatekeeper / Adventure Encounter grammar v1.0
 
 - Extended 4GTN Makerspace toll to reusable island/bridge/castle/mine/disco/VIP/censored-deck FICTION gatekeeper encounters, with CHILL/short forgiving satirical narrative default; hard optional and no forced access grind.
