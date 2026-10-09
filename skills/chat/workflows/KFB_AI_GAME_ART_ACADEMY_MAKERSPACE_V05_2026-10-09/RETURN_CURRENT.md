@@ -1,5 +1,7 @@
 # RETURN_CURRENT · KFB Academy Maker Space · 2026-10-09
 
+**LATEST HANDOFF UPDATE · 2026-10-09:** Claude Design preferred for A/B/C original visual proof, conditional on real asset loading; previous Work-first preference superseded. No new tests, no executor started, same visual gate.
+
 **Outcome:** First actual source-anchored `misc_controls_drag` learner-content seed implemented and tested as data; current source-visual proof prepared, **NOT RUN**. No Academy runtime, no World integration, no public deployment.  
 **Owner:** KFB AI Game Art Academy / Maker Space · curriculum/tutor adapter only.  
 **Repo/branch:** `georg-doc/kayfabizarro` · `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09`.  
@@ -40,7 +42,7 @@ Existing `START_HERE.md`, `RETURN.md`, `SOURCE_ISOLATION_R1.md`, `SOURCE_ISOLATI
 ## Exactly one next gate, who does it, and what Georg does
 
 **Gate:** `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`.  
-**Next executor:** **ChatGPT Work/WSA with browser and GitHub**; Claude Code with real browser may substitute if chosen, never parallel.  
+**Next preferred executor:** **Claude Design**, initially to prove the three real original visuals separately. If exact-source rendering or input proof cannot run there, assign only that technical gap to **Claude Code or ChatGPT Work**, one writer at a time. New route: `CLAUDE_DESIGN_ROUTE_R1.md`.  
 **Exact next job:** follow `WORK_VISUAL_PROOF_START_BRIEF.md`; render the real original external classroom, actual KFB Drag lesson, and accepted current KFB Billboard receiver in isolation; record visible screenshot+interactive evidence and source pins; return source-grounded KEEP/ADAPT/REJECT. No combined World/Academy build.  
 **Georg's immediate task:** nothing. Review only when actual visual proof presents a meaningful product choice.
 
