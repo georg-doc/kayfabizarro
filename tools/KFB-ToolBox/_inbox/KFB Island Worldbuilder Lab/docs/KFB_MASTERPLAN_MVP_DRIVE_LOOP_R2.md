@@ -166,6 +166,10 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 - **Brick-Fish** in Mauerwerk-Familie A.
 - **Freistehende Räume** (Open Stage) und Fluff-An- und Abbau nach der Kanten-Grammatik.
 - **Fluff-Ernte:** Fluff wächst an Bäumen, Farmen ernten, Fallobst rollt in Mulden.
+- **Infrastruktur nach dem MVP** (Georg 09.10.): gemeinsamer Zugriff von ChatGPT bzw. WSA, Blender-MCP-Coworker, Claude Code und Claude Design ohne Behelfslösungen.
+  - Klar getrennt: öffentliche Inhalte (Regelseiten, statische Seiten, Promotion, PDF-Decks, die im Spiel gezeigt werden) und privater Code bzw. lizenzierte Assets (privates Repo).
+  - Dazu feste Workflows und Schnittstellen statt Hin- und Herkopieren.
+  - Bis dahin pragmatisch: öffentliche Sync-Branches, private Quellen bleiben ausgeschlossen (`RKIT-R3/private/`).
 - **Sidequest Academy / Makerspace-Insel** (Georg 09.10., später):
   - **Rahmen:** eine größere Makerspace-Insel mit Academy, angelehnt an den früheren Hex-Ring um das Castle.
   - **Lern-Engine:** Feynman-Methode und Spaced Repetition im Kreislauf „Play → Create → Learn“.

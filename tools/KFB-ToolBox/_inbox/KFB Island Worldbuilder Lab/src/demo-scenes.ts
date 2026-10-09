@@ -68,7 +68,7 @@ async function boot() {
       const o = src.clone(true);
       o.traverse((c) => { const m = c as THREE.Mesh; if (m.isMesh) { m.material = MAT; m.castShadow = m.receiveShadow = true; } });
       const inner = new THREE.Group(); inner.add(o); inner.scale.setScalar(QS.has('km') ? KM : unit);
-      const w = new THREE.Group(); w.add(inner); w.matrixAutoUpdate = false; w.matrix.copy(M);
+      const w = new THREE.Group(); w.add(inner); w.name = it.name || it.go; w.matrixAutoUpdate = false; w.matrix.copy(M);
       root.add(w);
       w.updateMatrixWorld(true);
       const ws = new THREE.Box3().setFromObject(w).getSize(new THREE.Vector3());
@@ -81,6 +81,7 @@ async function boot() {
       const gu = unit * K;
       const m = new THREE.Mesh((mesh as THREE.Mesh).geometry, MAT);
       m.castShadow = m.receiveShadow = true;
+      m.name = it.name || it.go;
       m.matrixAutoUpdate = false;
       m.matrix.copy(M).multiply(new THREE.Matrix4().makeScale(gu, gu, gu));
       root.add(m);
@@ -125,6 +126,8 @@ function setCamera(p: string) {
   waitIdle: async () => { await new Promise((r) => setTimeout(r, 400)); },
   stats: () => ({ calls: renderer.info.render.calls, tris: renderer.info.render.triangles }),
   info: () => info,
+  /** world size of named objects (scale audit against K2) */
+  sizeOf: (re: string) => { const out: Record<string, number[]> = {}; scene.traverse((o) => { if (o.name && new RegExp(re, 'i').test(o.name) && !out[o.name]) { const v = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3()); out[o.name] = v.toArray().map((x) => +x.toFixed(2)); } }); return out; },
 };
 addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
 boot().catch((e) => { console.error(e); errors.push(String(e?.stack ?? e)); });
