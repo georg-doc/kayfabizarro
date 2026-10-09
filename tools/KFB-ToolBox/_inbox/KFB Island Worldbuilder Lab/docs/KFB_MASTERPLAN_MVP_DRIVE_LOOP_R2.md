@@ -1,6 +1,6 @@
 # KFB Masterplan · MVP-Slice „Drive Loop“ R2
 
-Status: **PLAN R2.1 · ABGESCHLOSSEN 2026-10-10 (Georg)** · löst `MVP_DRIVE_LOOP_R1_PLAN.md` ab · Bau ab Georgs Reset durch Claude Code
+Status: **PLAN R2.1 · ABGESCHLOSSEN 2026-10-09 (Georg)** · löst `MVP_DRIVE_LOOP_R1_PLAN.md` ab · Bau ab Georgs Reset durch Claude Code
 Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später läuft es als GPT-Site, gebaut per Work-Job. GitHub `georg-doc/kayfabizarro` bleibt der SSOT-Hub.
 
 **Was gegenüber R1 neu ist:**
@@ -53,7 +53,7 @@ Georg fährt mit einem Retro-Auto oder mit FrizzleBob im Cabrio auf einer Ringst
 - **Ringstraße:** außen an der Inselkante. Sie umrundet die Stadt und zerschneidet sie nicht.
 - **Caveman** (Georg 09.10.): Er wohnt in der (Gold-)Mine bzw. Höhle am Rand von KFB Town, auf der Rückseite des Bergplateaus unter der Burg. Er gehört zu den ältesten Bewohnern; die Mine erzählt die Ausbeutungsgeschichte der Stadt (Story Recovery §3.1).
 
-**Bewohner als Cast-Serie (Georg, 10.10.):** Wiederkehrende Figuren sind gewollt und reiselustig. Skelette arbeiten in verschiedenen Dungeons, die Orc-Band tourt, der Vampir-Lord fliegt als Fledermaus über die Inseln. Nach Multiversum-Logik trägt dieselbe Figur je Welt andere Kostüme und Accessoires und performt dort ihr „Kayfabe“. Dafür hält die Figuren-Karte je Welt eine Variante.
+**Bewohner als Cast-Serie (Georg, 09.10.):** Wiederkehrende Figuren sind gewollt und reiselustig. Skelette arbeiten in verschiedenen Dungeons, die Orc-Band tourt, der Vampir-Lord fliegt als Fledermaus über die Inseln. Nach Multiversum-Logik trägt dieselbe Figur je Welt andere Kostüme und Accessoires und performt dort ihr „Kayfabe“. Dafür hält die Figuren-Karte je Welt eine Variante.
 
 **Gestaltungs-Leitlinie (Georg):** wenig, aber stimmig, wie eine Filmszene, zu der man sofort eine Beziehung hat („Wie ist es dazu gekommen? Wer hat da gecampt?“). Jede Insel ist sofort als eigene Welt erkennbar, eher sparsamer als die 8 Demo-Inseln. Keine Detailkataloge. Sparsam ist zugleich gut für die Renderzeit.
 
@@ -148,7 +148,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 
 ## 5 · Meilensteine, Stufen und Abnahmen
 
-**Georg, 10.10.:** zuerst ein Zwischenziel. **MVP-1** ist früh spielbar, **MVP-2** vervollständigt den Loop.
+**Georg, 09.10.:** zuerst ein Zwischenziel. **MVP-1** ist früh spielbar, **MVP-2** vervollständigt den Loop.
 
 ### MVP-1 · „Town + Protopia“ (erstes spielbares Ziel)
 
@@ -220,12 +220,12 @@ Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
 
   Je Welt wird ein Deck zugeordnet. Die Inventur der neuen Unity-Pakete läuft.
 - **Landmarken-Familie** nach dem Golden Sample Königsturm (Blender MCP, Cartoon-Deformer, OSM-Linie): Kölner Dom, Museen, Vatikan, Eiffelturm.
-- **Worldbuilder bzw. Gott-Modus** (Georg 10.10., Perspektive): `docs/SPEC_WORLDBUILDER_GODMODE_VISION_R1.md`.
+- **Worldbuilder bzw. Gott-Modus** (Georg 09.10., Perspektive): `docs/SPEC_WORLDBUILDER_GODMODE_VISION_R1.md`.
   - **Bausteine:** Insel-Archetypen in zwei Größen (See mit Ring und Bootssteg bzw. Badewannen-Boot, Vulkan mit Tiny-Skies-VFX, Berg, Plateau, Terrassen, Themen-Inseln), Erweitern nach oben, unten und zur Seite, Terrain-Transformer.
   - **Farbe:** Paletten würfeln oder aus Grundfarben ableiten, immer als Rollen.
   - **Track-Editor:** Inseln im Raum platzieren, Anschlussstück wählen, Track Core berechnet den Anschluss auch durch einen Looping hindurch.
   - **Reisen:** Portale bzw. Taschenportal (WoW-Logik).
-  - **Insel-Konfiguration** als gemeinsamer Seed mit Form, Farbe, Gebäuden, Bewohnern und **0…n Card-Decks** je Insel (Georg 10.10.).
+  - **Insel-Konfiguration** als gemeinsamer Seed mit Form, Farbe, Gebäuden, Bewohnern und **0…n Card-Decks** je Insel (Georg 09.10.).
   - **MVP-1 legt dafür die Grundlage:** Inseln als Rezept bzw. Konfiguration, Anker am Rand, Farbe nur über Rollen.
 - **Infrastruktur nach dem MVP** (Georg 09.10.): gemeinsamer Zugriff von ChatGPT bzw. WSA, Blender-MCP-Coworker, Claude Code und Claude Design ohne Behelfslösungen.
   - Klar getrennt: öffentliche Inhalte (Regelseiten, statische Seiten, Promotion, PDF-Decks, die im Spiel gezeigt werden) und privater Code bzw. lizenzierte Assets (privates Repo).
@@ -239,12 +239,31 @@ Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
   - **Quellen:** Branch `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09` (Feynman Learning Core, Source Isolation R1), Georgs Prompt-Struktur als lokaler Export.
   - **Offen:** eigene Insel oder Teil von Protopia bzw. Utopia.
 
-## 7 · Entscheidungen (abgeschlossen 2026-10-10)
+## 6b · Post-MVP-Spielschicht (Konzepte der Webchats, Architektur-Review R1)
 
-- **Meilensteine:** MVP-1 „Town + Protopia“ zuerst, dann MVP-2 (Georg 10.10.).
-- **Inselgrößen:** Town ≈ 40 × 40 MC, Satelliten 20–28 MC; nach dem ersten Bau aus der Spielkamera nachjustieren (Georg 10.10.).
-- **Sitz-Schicht:** Owner ist das Lab über die Figuren-Karte (Sitzpunkte an Figur bzw. Fahrzeug); Joyride bleibt Donor für die Fahrphysik (Georg 10.10.).
-- **Four-Island-A/B-Gate:** erledigt bzw. ersetzt durch diesen Masterplan (Georg 10.10.). Falls die Varianten-Bilder existieren, dienen sie nur als Stimmungsreferenz für die Satelliten. Aufträge, die „nach dem A/B-Gate“ verlangen (z. B. Voice-Abnahme), hängen jetzt am Masterplan.
+Quelle: `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md` (Fluff-Branch v0.3–v0.7.1, Academy-Branch v0.7–v1.1). Ergebnis: passt zur Architektur, kein P0-Bruch, **keine Änderung an MVP-1/2** außer vier Datenfeldern im Insel-Rezept (Stufe 1).
+
+| Stufe | Inhalt | Gate |
+| --- | --- | --- |
+| P0 | `PLAYER_SAVE` + Ereignis-Ledger als **ein** Modul im Lab (Lean Memory §10/§11): Karten-Sammlung mit Herkunft (`deckId + cardNumber`), Welt bzw. Anker, Wallet-Feld | Save → Entladen → Import → Neuladen ohne Doppel-Ereignis |
+| P1 | Fluff-Ernte + Knet-Crafting + fraktaler Almanac: ein Baum, die Caveman-Mine, eine D6-Farbfamilie HIGH/LOW, eine echte Protopia-Karte; Chill als Standard, Standard/Hard nur als Regelprofil | `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` |
+| P2 | Aktivitäten an `nodes[]`: Angeln (See-Insel), Farmer-Beete, Blast-Mining mit Rubbel-Kaskade, Loot-Karte mit BINGO/BOGGLE/BONGO; ein Ergebnis je Aktion, ein Wallet | je Aktivität ein Mini-Beweis |
+| P3 | Gatekeeper-Grammatik (Welt entscheidet, NPC spielt), sechs Reaktionsstufen je Deck, Welt, NPC als reiner Selektor, Gerüchte nur ein Schritt weit | erste Karte → Gate-Reaktion → Neuladen; Gefallen → Nachbar-Gerücht |
+| P4 | Gott-Modus-Werkzeuge, Track-Editor, Hologramm-Werkbank (Miniatur = Ansicht desselben Rezepts), private Inseln, kosmische Archetypen (UFO, Käse-Mond), Genesis-Figuren | nach Gott-Modus-Spec |
+
+**Regeln, die ab jetzt gelten:**
+- **Rezept ≠ Spielstand:** `kfb.island-config/1` speichert nie Sammlung, Wallet, Reputation oder Zugang.
+- **Lebende Props:** Jedes Prop darf wackeln, tanzen, reagieren (Georg 09.10.). Streng ist die Architektur, nicht die Kreativität.
+- **Pull, don't gate:** Im MVP sind alle Inseln offen; Karten sind Einladung, keine Pflicht-Maut; keine bezahlten Zufallsmechaniken.
+- **Fluff-Farben** (D6) sind Akzent-Rollen in `ENV_ROLES`. Fluff-HP, Fluff-Material und Fluff-Score bleiben getrennte Werte.
+- **Generierter Text** (ChatterBox, LLM) vergibt nie Karten, Rechte oder Belohnungen.
+
+## 7 · Entscheidungen (abgeschlossen 2026-10-09)
+
+- **Meilensteine:** MVP-1 „Town + Protopia“ zuerst, dann MVP-2 (Georg 09.10.).
+- **Inselgrößen:** Town ≈ 40 × 40 MC, Satelliten 20–28 MC; nach dem ersten Bau aus der Spielkamera nachjustieren (Georg 09.10.).
+- **Sitz-Schicht:** Owner ist das Lab über die Figuren-Karte (Sitzpunkte an Figur bzw. Fahrzeug); Joyride bleibt Donor für die Fahrphysik (Georg 09.10.).
+- **Four-Island-A/B-Gate:** erledigt bzw. ersetzt durch diesen Masterplan (Georg 09.10.). Falls die Varianten-Bilder existieren, dienen sie nur als Stimmungsreferenz für die Satelliten. Aufträge, die „nach dem A/B-Gate“ verlangen (z. B. Voice-Abnahme), hängen jetzt am Masterplan.
 - **Sprenkel:** S1 (`src/clay/kfb-speckle.ts`) ersetzt `kfbLayer`, TUNE später.
 - **Landmarke KFB Town:** Big Castle aus „Hyper Casual Cartoon Castles“ (× 2,2, 3 Zerstörungsstufen, Palettentausch); später schiefer Königsturm als Golden Sample (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`).
 - **Bewohner:** Cast-Serie mit Multiversum-Logik, reisende Figuren mit Kostüm je Welt.
@@ -257,6 +276,8 @@ Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
 - **Asset Librarian PR #380:** gemergt (`720955a`).
 - **Privates Repo:** ja, Einrichtung mit der Infrastruktur nach dem MVP; bis dahin bleiben lizenzierte Assets lokal (`~/KFB-AssetCache/`).
 - **Ein Renderer (Steuer-Sitzung):** Das Lab bleibt im MVP auf WebGLRenderer r186. Der Billboard-Kit (`kit.js`, reine Geometrie) wird darauf eingebunden. Der Vorhang-Kern (WebGPU) läuft für den Character Select auf eigener Fläche bzw. eigenem Screen mit Fallback, nicht in derselben Szene.
+- **Insel-Rezept-Felder (Architektur-Review R1):** `worldId` fest, `decks: [{ deckId, role }]` mit Registry-IDs, Bewohner `{ id, card, variant }`, Anker `{ id, kind }`, `nodes: []`.
+- **Offen an Georg (Review R1 §6):** Lab als Welt-Besitzer auch nach dem MVP (statt WB2)? Alle Inseln im MVP offen? Town 0 Decks oder verbundene Decks?
 - **Eine Farbquelle (Steuer-Sitzung):** `ENV_ROLES` ist Owner. `palette-roles.js` (Clay Stage), die HUD-Biompaletten und `world-palettes.js` bekommen ihre Werte daraus über eine Zuordnung.
 
 ## 8 · Recherche-Anschluss (NotebookLM)

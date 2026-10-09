@@ -41,7 +41,7 @@ Je Figur eine JSON-Datei, versioniert auf GitHub, gelesen von allen Werkzeugen: 
 }
 ```
 
-**Cast-Serie (Georg, 10.10.):** Figuren reisen zwischen den Welten und tragen je Welt andere Kostüme und Accessoires (Multiversum-Logik). Die Varianten stehen in `variants`, Augen, Griffe und Sitz bleiben gleich.
+**Cast-Serie (Georg, 09.10.):** Figuren reisen zwischen den Welten und tragen je Welt andere Kostüme und Accessoires (Multiversum-Logik). Die Varianten stehen in `variants`, Augen, Griffe und Sitz bleiben gleich.
 
 **Regeln:**
 - Ein Prop trägt seinen **Griffrahmen** (wo die Hand ihn hält) im Prop-Manifest. Die Figur legt nur fest, welche Hand und welche Fingerhaltung gilt.

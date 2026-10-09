@@ -1,6 +1,6 @@
 # Worldbuilder bzw. Gott-Modus · Perspektive R1
 
-Stand: 2026-10-10 · Georg-Vision · **Perspektive nach dem MVP.** MVP-1 baut die Grundlage so, dass dieser Modus später darauf passt (§6).
+Stand: 2026-10-09 · Georg-Vision · **Perspektive nach dem MVP.** MVP-1 baut die Grundlage so, dass dieser Modus später darauf passt (§6).
 
 ## 1 · Idee in einem Satz
 
@@ -33,7 +33,7 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
    - **Ableiten:** Georg setzt 1–3 Grundfarben, der Editor schlägt passende Akzente vor.
    - Ergebnis sind immer die Material-Rollen der Farb-Grammatik (`ENV_ROLES`: Boden, Gras, Stein, Rinde, Laub, Blüte, Wasser, Akzent), damit Natur, Gebäude, HUD und Billboards mitziehen.
 4. **Setzen:** Gebäude aus dem K2-Katalog, Bewohner über ihre Figuren-Karte (mit Welt-Variante), Natur über die Erdungsregeln.
-5. **Decks zuordnen** (Georg 10.10.): Eine Insel kann **kein, ein oder mehrere** KFB-Card-Decks enthalten bzw. mit ihnen verbunden sein, genauso wie Residenzen und Bewohner.
+5. **Decks zuordnen** (Georg 09.10.): Eine Insel kann **kein, ein oder mehrere** KFB-Card-Decks enthalten bzw. mit ihnen verbunden sein, genauso wie Residenzen und Bewohner.
    - Quelle sind die Kanon-Decks in `media/kfb/`, je Deck die ID bzw. Datei.
    - Die Decks liefern Geschichte, Billboard-Zitate, Bildsprache, Bewohner-Sätze (über Quill bzw. den Triplet-Pool) und Kartenfunde auf der Insel.
 
@@ -55,13 +55,22 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
 
 ## 6 · Was MVP-1 dafür schon richtig machen muss
 
-- **Inseln als Rezept bzw. Insel-Konfiguration speichern, nicht als fertiges Mesh:** Archetyp, Größe, Seed, Umriss, Palette (Rollen), Terrain-Edits (Pinselstriche), Anker, **Gebäude bzw. Residenzen, Bewohner (Figuren-Karten-IDs mit Welt-Variante) und Decks (0…n Deck-IDs)**. Alles zusammen ist der gemeinsame Seed der Insel, speicher- und editierbar.
+- **Inseln als Rezept bzw. Insel-Konfiguration speichern, nicht als fertiges Mesh:** Archetyp, Größe, Seed, Umriss, Palette (Rollen), Terrain-Edits (Pinselstriche), Anker, **Gebäude bzw. Residenzen, Bewohner (Figuren-Karten-IDs mit Welt-Variante) und Decks (0…n Deck-IDs)**. Alles zusammen ist der gemeinsame Seed der Insel, speicher- und editierbar. Die Insel-Konfiguration ist das **WorldRecipe einer Insel** im Sinne von `SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE` (Academy-Foundry, Hologramm-Miniatur und Gott-Modus lesen dasselbe Rezept, nur mit anderer Ansicht).
   ```json
-  { "schema": "kfb.island-config/1", "id": "protopia", "archetype": "mountain", "size": "satellite",
-    "seed": 42, "outline": [], "palette": { "roles": "ENV_ROLES.protopia" }, "edits": [], "anchors": [],
-    "buildings": [], "residents": [{ "card": "lorekeeper", "variant": "protopia" }],
-    "decks": ["Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H"] }
-  ``` Das passt zu `planFromSpec` im Bauplan Stufe 1 (§2) und zu `kfb.r2d.island-recipe/0` aus R2D.
+  { "schema": "kfb.island-config/1", "worldId": "protopia", "archetype": "mountain", "size": "satellite",
+    "seed": 42, "outline": [], "palette": { "roles": "ENV_ROLES.protopia" }, "edits": [],
+    "anchors": [{ "id": "protopia.rim.a", "kind": "road" }],
+    "nodes": [],
+    "buildings": [], "residents": [{ "id": "r-lorekeeper-1", "card": "lorekeeper", "variant": "protopia" }],
+    "decks": [{ "deckId": "embrace_protopia", "role": "primary" }] }
+  ```
+  Das passt zu `planFromSpec` im Bauplan Stufe 1 (§2) und zu `kfb.r2d.island-recipe/0` aus R2D. **Regeln der Felder** (Architektur-Review R1, `REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md`):
+  - `worldId` ist ein fester Slug und wird nie neu erzeugt (auch nicht beim Kopieren oder Umbenennen; eine Kopie bekommt eine neue ID).
+  - `decks[].deckId` ist die Registry-ID aus `registry/assets/v1/decks/*.json` (z. B. `embrace_protopia`), **nicht** der PDF-Dateiname. `role` ist `primary` oder `linked`; höchstens ein `primary`, Town darf 0 Decks haben.
+  - `residents[]`: `id` ist die Instanz in dieser Insel, `card` die Figuren-Karte (`kfb.character-card/1`), `variant` die Welt-Variante. Dieselbe Figur kann auf mehreren Inseln stehen.
+  - `anchors[]`: stabile `id` plus `kind` (`road`, `dock`, `portal`, `threshold`, `stair`). Daran docken später Track-Editor, Portale und Gatekeeper an.
+  - `nodes[]`: im MVP leer. Später Interaktions-Punkte mit stabiler ID (`resource`, `water`, `farm`, `craft`, `stage`), z. B. Mine, Obstgarten, Angelstelle, Werkbank.
+  - **Nie im Rezept:** Spielerzustand (Karten-Sammlung, Wallet, Reputation, Zugangsrechte, Begegnungen). Das gehört in `PLAYER_SAVE` bzw. das Ereignis-Ledger.
 - **Anker am Inselrand** als Datenpunkte, damit der Track-Editor später andocken kann.
 - **Farbe nur über Rollen** (eine Farbquelle `ENV_ROLES`), nie fest im Modell.
 - **Größenstufen in MC** (40 × 40 bzw. 20–28).

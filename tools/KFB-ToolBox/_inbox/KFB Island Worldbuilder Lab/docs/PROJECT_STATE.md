@@ -17,7 +17,15 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
-## Gott-Modus-Perspektive, A/B-Gate erledigt (2026-10-10)
+## Architektur-Review Post-MVP-Konzepte (2026-10-09)
+
+- Gelesen: Fluff-Branch (v0.3–v0.7.1: Crafting/Almanac, Chill/Standard/Hard, Genesis/UFO, Angeln/Farm/Blast, Blast-Mining/Loot, lebende Props) und Academy-Branch (Reputation in sechs Stufen v1.1, Gatekeeper-Grammatik, Gott-Modus-Zensus, Holographic Foundry) plus Lean-Memory- und Deck-Pipeline-Verträge auf Main.
+- Ergebnis `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md`: passt, kein P0-Bruch. Im Lab-Code gibt es nur Autoren-Zustand, noch keinen Spielstand.
+- Vier Datenfelder für `kfb.island-config/1` eingetragen (`worldId`, `decks[{deckId, role}]` mit Registry-IDs, Bewohner `{id, card, variant}`, Anker `{id, kind}` + `nodes[]`). Beispiel korrigiert: `embrace_protopia` statt PDF-Name.
+- Masterplan §6b: Post-MVP-Spielschicht P0–P4. Drei offene Fragen an Georg (Welt-Besitzer, offene Inseln, Town-Decks).
+- Datumsfehler korrigiert: „2026-10-10“ → 2026-10-09 in sechs Lab-Dokumenten.
+
+## Gott-Modus-Perspektive, A/B-Gate erledigt (2026-10-09)
 
 - **Four-Island-A/B-Gate** (Bild-Varianten aus der Planung vom 08.10.) ist erledigt und durch den Masterplan ersetzt (Georg).
 - **Worldbuilder bzw. Gott-Modus** als Perspektive nach dem MVP: `docs/SPEC_WORLDBUILDER_GODMODE_VISION_R1.md`.
@@ -26,7 +34,7 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
   - **Verbindung und Reisen:** Track-Editor mit Track-Core-Anschlussberechnung, Portale und Taschenportal.
   - **Folge für Stufe 1:** Inseln werden als Rezept gespeichert, mit Ankern am Rand.
 
-## MVP-Plan abgeschlossen (2026-10-10)
+## MVP-Plan abgeschlossen (2026-10-09)
 
 - **Masterplan R2.1** (`docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
   - **MVP-1 „Town + Protopia“ zuerst**, danach MVP-2 (Dystopia, Utopia, Flug, volles Audio);
@@ -36,7 +44,7 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Neu im Plan:** Definition of Done MVP-1, Ablauf nach dem Reset je Owner (§5b), Renderer-Entscheid (Lab bleibt WebGL r186, Vorhang auf eigener Fläche), Farbquelle `ENV_ROLES`.
 - **Nächster Schritt:** Georgs Reset, dann baut Claude Code Stufe 1.
 
-## WSA-Hub-Auftrag erledigt, Bewohner-Logik, Aufräumen (2026-10-10)
+## WSA-Hub-Auftrag erledigt, Bewohner-Logik, Aufräumen (2026-10-09)
 
 - **WSA-Work** (Return in `KFB_HUB/90_ARCHIVE/2026-10-09_wsa-work_hub-update.md`):
   - PR #380 gemergt (`720955a`), der Asset Librarian v10 lädt (16.054 Assets);
@@ -48,7 +56,7 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
   - Die Figuren sind reiselustig: Skelette arbeiten in verschiedenen Dungeons, die Orc-Band tourt, der Vampir-Lord fliegt als Fledermaus über die Inseln.
   - Gedacht wie eine Character-Cast-Serie mit Multiversum-Logik: je Welt bzw. Kontext andere Kostüme und Accessoires, dieselbe Figur performt ihr „Kayfabe“.
   - Die FrizzleBob-Regel der Character Bible gilt für Comics und Decks.
-- **Aufgeräumt:** 67 ZIPs in `~/Dropbox/CLAUDE/`, deren Inhalt vollständig im gleichnamigen Ordner lag (je Datei geprüft), liegen jetzt im Mac-Papierkorb (`~/.Trash/KFB_zip_cleanup_2026-10-10/`, 493 MB, Liste `_MOVED_LIST.txt`). Sie sind wiederherstellbar; auch Dropbox behält sie unter „Gelöschte Dateien“. 22 ZIPs ohne gleichnamigen Ordner bleiben unangetastet.
+- **Aufgeräumt:** 67 ZIPs in `~/Dropbox/CLAUDE/`, deren Inhalt vollständig im gleichnamigen Ordner lag (je Datei geprüft), liegen jetzt im Mac-Papierkorb (`~/.Trash/KFB_zip_cleanup_2026-10-09/`, 493 MB, Liste `_MOVED_LIST.txt`). Sie sind wiederherstellbar; auch Dropbox behält sie unter „Gelöschte Dateien“. 22 ZIPs ohne gleichnamigen Ordner bleiben unangetastet.
 - **Georg:** `gvw-hub.pages.dev` privat schalten (eigene Aufgabe).
 
 ## Clown-Jonglage J3 einsatzfähig (2026-10-09)

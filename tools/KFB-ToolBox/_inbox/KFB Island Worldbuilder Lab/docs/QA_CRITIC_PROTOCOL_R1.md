@@ -55,7 +55,7 @@ Die Kameras liegen als Presets im Lab bzw. in den Shoot-Werkzeugen (`tools/shoot
 ```json
 {
   "slice": "lab-stage1",
-  "run": "2026-10-10_1",
+  "run": "2026-10-09_1",
   "set": "Insel",
   "scores": { "G1": 0, "G2": 0, "G3": 0, "G4": 0, "G5": 0, "G6": 0, "G7": 0 },
   "mean": 0,
