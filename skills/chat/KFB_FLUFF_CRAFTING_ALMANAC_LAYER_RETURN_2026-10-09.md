@@ -1,4 +1,4 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.5
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.6
 > **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
 >
 > Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
@@ -28,6 +28,22 @@
 > **Actual evidence:** current GitHub addendum and branch read-back PASS; **24/24 static content/owner assertions PASS** after one check corrected its exact literal phrase case. No donor-isolated render, no gameplay tests, no new animations/rig/UFO/cosmic world, no Stage, Site, PR, merge or Live. R4 NO MVP and active Lab Drive Loop remain unaffected; Academy's independent visual gate unchanged. Public KFB/MED GPT Site side quest remains **PARKED**.
 >
 > **Exactly one unchanged next Fluff gate:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` — only once playable MVP and Georg's explicit authority exist. After that source audit, choose **one** small cauldron/Card or UFO room/return proof, not multiple simultaneous new worlds.
+
+---
+
+> **CURRENT RETURN UPDATE · v0.6 · 2026-10-09 · FISHING / FLUFF FARMING / CARTOON BLAST**
+>
+> Added [KFB_FISHING_FARMING_CARTOON_BLAST_ENVIRONMENT_V0_6_2026-10-09.md](./KFB_FISHING_FARMING_CARTOON_BLAST_ENVIRONMENT_V0_6_2026-10-09.md) in this **same Fluff planning owner**, commit milestone `b35ea4924a4cb28cb6e971dbd733e5474e1892e2`, verified doc blob `c8637f7ddddbc45b90957b0e7565171b7677acd1`, 22,937 chars. No Academy or live Island runtime writes.
+>
+> **Georg's intent:** optional fishing in real lakes/ponds/ocean shores, optionally source-crafted/borrowed rod; WoW-like throw → float/bob → bite/twitch reaction → brief reel/catch with KFB cartoon timing; fish/boot/odd props/Fluff-Fish/rare source Card as different KFB source-backed outputs. Farmville-lite using original Farmers' four dirt plots, carrots and lettuce with gentle growth and optional later harvest of missing D6 High/Low Fluff. A satirical **Cartoon Blast Fishing** alternative uses genuine KayKit Clown `clown_bomb.gltf` as toy prop, theatrical delay, KFB Clay explosion/smoke, current-owner water ripple impulse, organic seeded aerial scattering/bouncing/floating Fluff balls, source fish with optional X-eyes and absurd objects, and short Resident reactions. No real explosives advice or gore, no compulsory moralizing; Classic Fishing remains distinct, chill and competitive in acquisition value.
+>
+> **Verified sources:** `registry/resources/v1/motions.jsonl` has 7 distinct `Rig_Medium_Tools` fishing clips (Cast, Idle, Bite, Tug, Struggling, Reeling, Catch), but actual rod grip/bobber/eligible Water anchor unverified. KayKit Mystery Series 6 real Farmer_A/B, four `dirt_plot.gltf`, `carrot.gltf`, `lettuce.gltf`. Resident Atlas contains Clown `clown_bomb.gltf` as a **promo-extra**, NOT an accepted throwable. Existing `KFB_VFX_01_REVIEW` source donor bank has cartoon smoke/explosions; StoryMap radial ripple is **NOT** an already verified current World water shader impulse. Approved fish, rod, bobber, boot and full effect remain SOURCE_REQUIRED. Seeded organic scatter is a rendering proposal, not a proven Environment distribution owner.
+>
+> **Architecture:** one existing World/Environment eligibility-node and one authoritative Resource/Craft/Fluff Wallet, Score, Card/Lean Memory grant path; Quiet and Blast are alternate presentation/interaction modes on real water nodes, not competing economy engines. Fish→Fluff processing consumes original fish exactly once. Personal farms use existing World/Instance persistence, capped time and no daily penalties or browser-clock dupes. Fluff Material stock, earned Fluff Score, Fluff HP/POP and Almanac memory remain separate; optional satirical **Hall of Fame** much later needs actual server-verified score, opt-in, privacy and anti-cheat, not naive uploaded save files.
+>
+> **Scope/status:** first source audit only and small future alternatives (one Quiet water clip loop OR one cartoon Blast effect OR one planted crop) after current playable MVP and Georg authorization. Static source/contract audit **22/22 PASS** after correcting a literal assertion wording; GitHub source proof, **ZERO** runtime build, browser visual, compatible rod/water support/FX validation, real fish reward or multiplayer backend. No PR, merge, Site, Stage, Live or added current MVP gate. KFB public website GPT Site migration still **PARKED**.
+>
+> **ONE unchanged next gate:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`, now to include Rod/Fishing clips, Farmer plots, source Clown bomb, water ripple/VFX, and canonical wallet+Score+Card owners before any new interactive fishing/farming/blast feature.
 
 ---
 
