@@ -1,0 +1,82 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "clown_juggle_j3",
+ "date": "2026-10-09",
+ "issue": 381,
+ "apply": "ADDITIVE · NOT APPLIED · Georg 2026-10-09: \"einbaufähig\", check in for the MVP slice (marketplace clown on his podium); fine-tune later",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_clown_juggle_j3.glb"
+ ],
+ "libraryFiles": {
+  "Rig_Medium": {
+   "path": "libs/Rig_Medium/KFB_Motion_clown_juggle_j3.glb",
+   "bytes": 59196,
+   "sha256": "a52036992e002c26d800d7ea69bdbdac0cc30258de8bf98e957e4e834d94381e"
+  }
+ },
+ "dataFiles": {
+  "propTracks": {
+   "path": "data/clown_juggle_j3.prop_tracks.json",
+   "bytes": 19526,
+   "sha256": "2e48163fc3cea56eb33d74b678678c9036401667856c7b248cdcef8e0f491a7c"
+  }
+ },
+ "space": "glTF, Y up, actor faces +Z, actor root at the origin (stand the root on the podium top); KayKit units",
+ "skeleton": "KayKit Rig_Medium (identical to KFB_Motion_forge01.glb); built from a pose dump, round trip max 0.0022 cm",
+ "clips": [
+  {
+   "id": "kfb_clown_juggle_cascade3_b",
+   "label_de": "Clown jongliert (3er-Kaskade)",
+   "group": "performance",
+   "character": "KayKit Clown (Rig_Medium)",
+   "frames": 96,
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "stage": {
+    "prop": "KayKit_Mystery_Monthly_Series_4/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+    "scale": 1.0,
+    "actorRootY": 1.0
+   },
+   "timing": {
+    "beat": 16,
+    "dwell": 22,
+    "flight": 26,
+    "apex": 1.65,
+    "gravityUnitsPerFrame2": 0.0195,
+    "note": "hands alternate every beat; each prop is held 22 frames and flies 26; loop = 6 beats"
+   },
+   "props": {
+    "tracks": "data/clown_juggle_j3.prop_tracks.json",
+    "attach": "child of the actor root; one transform row per frame",
+    "kinds": {
+     "pin": "KayKit juggling_pin_red/yellow/blue (origin at the grip, scale 1), one turn per throw",
+     "ball": "clown_ball x0.15 or any round prop (clay ball, donut, sweets): same tracks, ignore the rotation or spin it freely"
+    }
+   },
+   "eyes": {
+    "rig": "KFB EyeRig v6 batch path",
+    "profile": "clown, eye-rig-medium.batch-1.json, AUTO_CANDIDATE (not reviewed by Georg)",
+    "dx": 0.295,
+    "dy": -0.29,
+    "ring": 0.25,
+    "inset": 1.1834,
+    "pupil": 0.34,
+    "converge": 0.18,
+    "base": "#f7f9f9",
+    "note": "the two 66-face KayKit eye caps of Clown_Head are removed; never show the clown without KFB eyes"
+   },
+   "knownIssues": [
+    "f19-22 of every 32-frame cycle: a rising and a falling pin cross at eye height on the camera side in a 3/4 front camera (24/96 frames touch the face box; clay balls 10/96)",
+    "a held pin touches the belly (min 0.004)",
+    "tuning pending (Georg)"
+   ],
+   "supersedes": "JUG-P1 clown_juggle_cascade3 (2026-09-23, 24 fps)"
+  }
+ ],
+ "attribution": {
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · Clown, juggling pins, clown ball, circus podium, Rig_Medium Idle_A"
+  ]
+ }
+}
