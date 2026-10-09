@@ -1,13 +1,13 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-08.3",
-  "updatedAt": "2026-10-08T13:13:00+02:00",
+  "revision": "2026-10-09.1",
+  "updatedAt": "2026-10-09T14:37:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
   "status": {
     "label": "CURRENT · ACCEPTED HUB V2 SHELL + LIVE DATA/STYLE",
-    "note": "R4 remains STOPPED / NO MVP. Current authorized next step is Four-Island Story Vision R1: source recovery is complete enough to brief Claude Design for two visual interpretations A/B of the same recovered story. No runtime or geometry work is authorized."
+    "note": "R4 remains STOPPED / NO MVP. The separate Island Worldbuilder Lab lane is current: RKIT construction sheet approved, masonry family A complete, curb/sidewalk in progress; Speckle S1 accepted; HUD R3 and Clay Stage R2 accepted with TUNE; next Lab step is the R2D island base. This Lab lane does not authorize WB2 runtime or geometry work."
   },
   "surfaces": {
     "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
@@ -31,7 +31,11 @@
     "islandMvpR4Postmortem": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/POSTMORTEM_ISLAND_MVP_R4_WORLD_MODEL_SYNTHESIS_FAILURE_2026-10-08.md",
     "islandMvpR4FailReturn": "https://github.com/georg-doc/kayfabizarro/blob/0a8240b83d4fbfdb69cdba47b812e618cc5cd897/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/R4_FAIL_RETURN_2026-10-08.md",
     "fourIslandStoryRecovery": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
-    "fourIslandStoryVisionBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md"
+    "fourIslandStoryVisionBrief": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md",
+    "islandWorldbuilderLab": "https://github.com/georg-doc/kayfabizarro/tree/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab",
+    "islandWorldbuilderMasterplanR2": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md",
+    "islandWorldbuilderProjectState": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/PROJECT_STATE.md",
+    "dropboxHubIndex": "https://www.dropbox.com/preview/CLAUDE/KFB%20HUB/INDEX.md"
   },
   "p0": [
     {
@@ -66,6 +70,16 @@
     }
   ],
   "p1": [
+    {
+      "id": "mvp-drive-loop-island-worldbuilder-lab",
+      "title": "MVP Drive Loop · Island Worldbuilder Lab",
+      "summary": "RKIT construction sheet approved and build active: masonry family A complete, curb/sidewalk in progress. Speckle S1 accepted. HUD R3 and Clay Stage R2 accepted with TUNE. Next Lab step: R2D island base. GitHub links point to the current sync branch until its import gate is resolved; no source is duplicated in the Hub.",
+      "badge": "CURRENT · NEXT R2D ISLAND BASE",
+      "action": "Masterplan R2 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md",
+      "executor": "KFB Island Worldbuilder Lab · Claude Code steering session",
+      "nextExecutor": "Lab owner builds Stage 1 R2D island base after reset; WSA handles Hub, merge and Site tasks only"
+    },
     {
       "id": "open-world-runtime-hold",
       "title": "HOLD · Open World runtime integration until Recovery Audit",
@@ -160,6 +174,72 @@
     }
   ],
   "briefings": [
+    {
+      "id": "brief-island-hud-flight-r4-sources",
+      "title": "Island Lab · HUD Sprint R4-0 sources",
+      "badge": "READY · SOURCE HANDOFF",
+      "status": "ready",
+      "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
+      "desc": "ENV_ROLES, kfbBlend source path and masonry-family-A inputs for the next HUD/Flight refinement.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/HANDOVER_HUD_FLIGHT_R4_0_SOURCES_2026-10-09.md",
+      "tags": ["island lab", "hud", "flight vfx", "r4-0", "env roles", "kfbblend", "masonry"],
+      "prompt": "Read the linked source handoff and retain the one-HUD owner: K7 clay material plus the accepted HUD R3 components. Do not create a second HUD or runtime owner."
+    },
+    {
+      "id": "brief-island-hud-flight-r1",
+      "title": "Island Lab · HUD + Flight VFX R1",
+      "badge": "SOURCE BRIEF · ACCEPTED WITH TUNE",
+      "status": "hold",
+      "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
+      "desc": "Original HUD and flight-VFX design briefing; retained as source context for the accepted-with-TUNE R3 direction.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_HUD_FLIGHT_R1.md",
+      "tags": ["island lab", "hud", "flight vfx", "claude design"],
+      "prompt": "Use as origin context only. Current owner rule and R4-0 source handoff override any conflicting older detail."
+    },
+    {
+      "id": "brief-island-curtain-clay-r1",
+      "title": "Island Lab · Claymation Curtain R1",
+      "badge": "SOURCE BRIEF · ACCEPTED WITH TUNE",
+      "status": "hold",
+      "provider": "Island Worldbuilder Lab → Stage Claude Design session",
+      "desc": "Claymation curtain briefing for the accepted-with-TUNE Clay Stage R2 donor.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_CURTAIN_CLAY_R1.md",
+      "tags": ["island lab", "curtain", "clay stage", "claude design"],
+      "prompt": "Keep the existing Clay Stage / Curtain owner. Use this as source context; no second simulation or stage runtime."
+    },
+    {
+      "id": "brief-rkit-masonry-family-a",
+      "title": "RKIT · Masonry Family A · 31 modules",
+      "badge": "COMPLETE · BUILD INPUT",
+      "status": "ready",
+      "provider": "RKIT → HUD, Stage and Blender coworker",
+      "desc": "Canonical masonry-family-A package for curb, wall, stair, plateau, bridge, pyramid and Brick-Fish work.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/README.md",
+      "tags": ["rkit", "masonry", "31 modules", "blender", "hud", "stage"],
+      "prompt": "Reuse the checked-in masonry family as the source object; do not rebuild or substitute it."
+    },
+    {
+      "id": "brief-rkit-brick-fish",
+      "title": "RKIT · Brick-Fish handoff",
+      "badge": "LATER · BLENDER HANDOFF",
+      "status": "hold",
+      "provider": "RKIT → Blender coworker",
+      "desc": "Brick-Fish handoff derived from masonry family A; explicitly later than the MVP core.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/HANDOVER_BRICK_FISH.md",
+      "tags": ["rkit", "brick fish", "masonry", "blender", "later"],
+      "prompt": "Read the masonry-family source first. Treat Brick-Fish as later work; do not expand MVP scope."
+    },
+    {
+      "id": "brief-island-kfb-town-king-tower",
+      "title": "Island Lab · KFB Town King Tower Golden Sample",
+      "badge": "LATER · LANDMARK BRIEF",
+      "status": "hold",
+      "provider": "Island Worldbuilder Lab → RKIT / Blender coworker",
+      "desc": "Landmark brief for the crooked King Tower, intended as the later Golden Sample for KFB Town landmarks.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md",
+      "tags": ["island lab", "kfb town", "king tower", "landmark", "golden sample"],
+      "prompt": "Run only when the Lab/RKIT owner opens the landmark seam. Preserve the source-backed Town story and masonry owner."
+    },
     {
       "id": "brief-claude-ufo-event-lab",
       "title": "UFO Tractor Beam Event Lab · PASS/TUNE donor",
@@ -284,6 +364,61 @@
     }
   ],
   "quickLinks": [
+    {
+      "title": "Island Worldbuilder Lab · Project state",
+      "summary": "Newest-first owner status, accepted inputs, current open seams and next Lab step.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/PROJECT_STATE.md"
+    },
+    {
+      "title": "Island Worldbuilder Lab · Project context",
+      "summary": "Project context for the MVP Drive Loop; linked from the current sync branch without copying into the Hub.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/KFB_PROJEKTKONTEXT.md"
+    },
+    {
+      "title": "Island Worldbuilder Lab · Glossary",
+      "summary": "Canonical terms for the Lab and its consumers.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/KFB_GLOSSAR.md"
+    },
+    {
+      "title": "Island Lab rules · Environment",
+      "summary": "Environment QA rulebook, including world-logic and no-hard-cut gates.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/QA_RULEBOOK_ENVIRONMENT_R1.md"
+    },
+    {
+      "title": "Island Lab rules · Transitions",
+      "summary": "Transition QA rulebook for built and organic clay seams.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/QA_RULEBOOK_TRANSITIONS_R1.md"
+    },
+    {
+      "title": "Island Lab rules · Edge Rubble Grammar",
+      "summary": "Shared edge, ending and clay-rubble grammar.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/SPEC_EDGE_RUBBLE_GRAMMAR_R1.md"
+    },
+    {
+      "title": "Island Lab rules · Scale Contract K2",
+      "summary": "H and MacroCell scale contract; no silent meter-based substitutions.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/SCALE_CONTRACT_K2.md"
+    },
+    {
+      "title": "Island Lab rules · Etherington in numbers",
+      "summary": "Numeric environment-storytelling and composition guidance used by the Lab gates.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/ETHERINGTON_REGELN_IN_ZAHLEN_R1.md"
+    },
+    {
+      "title": "Island Lab · NotebookLM research",
+      "summary": "P1 Speckle, P2 roads and P3 composition research results.",
+      "url": "https://github.com/georg-doc/kayfabizarro/tree/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/research"
+    },
+    {
+      "title": "Island Lab · Deep Research prompts",
+      "summary": "Staged NotebookLM prompts connected to the MVP plan.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/notebooklm/KFB_DEEP_RESEARCH_PROMPTS_R1.md"
+    },
+    {
+      "title": "Dropbox KFB Hub · Index",
+      "summary": "Private coordination index for results, briefings, SSOT pointers and decisions; GitHub remains implementation truth.",
+      "url": "https://www.dropbox.com/preview/CLAUDE/KFB%20HUB/INDEX.md"
+    },
     {
       "title": "Hub Shell / Data / Style Contract",
       "summary": "Hard separation: deployed behavior shell, GitHub live data, GitHub live CSS, browser-local state. Data updates cannot remove UI; CSS updates cannot change behavior.",
