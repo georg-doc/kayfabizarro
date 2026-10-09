@@ -1,5 +1,15 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Diegetic 4GTN entrance / Fluff sibling reconciliation v0.9
+
+- Recovered exact `4GTN` and `4GTN_Forgotten.glb` original two-model source from Resident Atlas `gtn`, `Rig_Large`, candidate-only. It is a real source asset, **not** a verified functioning gatekeeper; organic moss is geometry.
+- Reconciled active Fluff/Crafting sibling `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09@2c5a1e5` v0.3/v0.4: D6 mode × High/Low wallet, Chill & Fun default, optional Standard/Hard, learner content must not require resource grind.
+- New MakerSpace v0.9 diegetic access design: source-backed 4GTN toll/checkpoint NPC, flight-visible energy boundary, route/portal/road access all consuming **one World-owned persistent grant**; cosmetic key or invitation and optional Fluff-crafted pass are alternative presentations/issuance routes, not skill certificates or new ACL owners.
+- Added `MAKERSPACE_4GTN_GATEKEEPER_ACCESS_V09.md` + `MAKERSPACE_4GTN_GATEKEEPER_SOURCE_TEST_R1.md`; checked 20/20 source/contract assertions, 0 browser/world/access economy proofs.
+- SSOT, Recovery and Return updated in same Academy branch; separate Fluff owner branch NOT edited.
+- **One Academy next gate unchanged:** `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`; 4GTN optional visual concept after original donor isolation. Claude Design preferred next visual executor; no new World R5, Stage, Site or merge.
+
+
 ## 2026-10-09 · Holographic World Foundry / Personal Retreats v0.8
 
 - Extended God Mode MakerSpace architecture to a holographic tabletop WorldRecipe builder with source-backed islands, Terrain (owner/source required), Residents/mini-scenes, Track Core snap/RouteRecipe, Skydome and a reversible Tactical Map representation.
