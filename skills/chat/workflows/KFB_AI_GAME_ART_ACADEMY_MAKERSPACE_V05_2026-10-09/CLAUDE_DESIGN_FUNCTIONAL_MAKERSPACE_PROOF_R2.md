@@ -1,4 +1,7 @@
 # Claude Design brief · Functional Maker Space Source Proof R2
+
+> **CURRENT PRIORITY ADDENDUM v0.7 · 2026-10-09:** Georg's priority is existing KFB ToolBox reusability as a production **God Mode Maker Space**. Functional source proof **B now prefers original KFB Character Alchemy** (real actor + real EyeRig/headzone/facegraft donor shown separately, one actual compatible head/eye change and a native config close/reload/revert receipt) rather than requiring external `three.quarks` in this first proof. A remains real KFB RTT drag lesson, C remains approved Billboard/MediaSurface + real registered prop. `three.quarks` is an **OPTIONAL FX extension** / separate donor study, not a blocking requirement. Read `GODMODE_TOOLBOX_CAPABILITY_CENSUS_V07.md` and `GODMODE_CHARACTER_ALCHEMY_VERTICAL_PROOF_V01.md`. Do not claim a head-color parameter change proves universal new nose/mouth geometry or a live World Forge. Current World R4 STOP remains protected; one existing visual gate remains unchanged.
+
 Date: 2026-10-09 | Owner: KFB AI Game Art Academy / Maker Space
 Mode: BOUNDED VISUAL SOURCE PROOF + optionally one source-grounded design study; NOT World integration.
 Repo: georg-doc/kayfabizarro
