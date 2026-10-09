@@ -1,0 +1,47 @@
+# RETURN_CURRENT · KFB Academy Maker Space · 2026-10-09
+
+**Outcome:** First actual source-anchored `misc_controls_drag` learner-content seed implemented and tested as data; current source-visual proof prepared, **NOT RUN**. No Academy runtime, no World integration, no public deployment.  
+**Owner:** KFB AI Game Art Academy / Maker Space · curriculum/tutor adapter only.  
+**Repo/branch:** `georg-doc/kayfabizarro` · `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09`.  
+**PR:** none · no merge. **Work checkpoint before Return:** `798a079e1a87cd3d12208435cf07ea4fff57a66d`. **Canonical final exact head is the branch HEAD to fetch and is also recorded in Production Control.**
+
+## Files added this continuation
+- `ACADEMY_FIRST_LESSON_DRAG_V01.json` — source-anchored interactive learning content, 4 probes, 5 nodes, 7-step loop, E0–E5 evidence rules.
+- `ACADEMY_FIRST_LESSON_TEST_REPORT_V01.md` — measured 12/12 static-content checks and 9/9 source/contract verification.
+- `WORK_VISUAL_PROOF_START_BRIEF.md` — one exact browser-capable source isolation job A/B/C, with independent tester/critic/guard.
+- `RECOVERY_CURRENT.md` — new-chat cold start, source pins, ledger records, blockers and next actor.
+- this `RETURN_CURRENT.md`.
+
+Existing `START_HERE.md`, `RETURN.md`, `SOURCE_ISOLATION_R1.md`, `SOURCE_ISOLATION_R1_RETURN.md`, `SHARED_LEARNING_CORE_KFB_ADAPTER_NOTE_V01.md` preserved.
+
+## Real results
+
+- KFB lesson source pinned `academy-lessons.js@68d2ce26f438789b24fd4bb6f5c3567d91bf658b`, exact example `misc_controls_drag`; RTT adapter `academy-live.js@7c8b4b842f43541909f63ca7fe9a040e78d11cc9`.
+- Original classroom source `theringsofsaturn/3D-ai-school-threejs` tree `655d4f52c9382a06f09b92d04ad839b457eafb7f`, actual classroom model 31,207,652 bytes; separately pinned teacher model 4,933,284 bytes.
+- KFB Billboard B0 source blob `235b062f9d575a49a4c98d8be57d04d43acc2213`; exact current receiver still requires source-visual ownership proof.
+- FrizzleBob v5/v5b remains source-candidate for Academy tutor, not accepted tutor integration; `FB_TEMPLATE_LOOK_v5b.glb` pin reconciliation remains open.
+- Shared Learning Core and domain adapter were read directly from Production Control artifacts and checked against the lesson content.
+- Site/ledger data artifact `ACADEMY_FIRST_LESSON_DRAG_V01.json` saved, read back, SHA-256 `d0e4c0587e7895740e83a9fd7020feae03e7350bb39b4b454f617eb0c3d73e4b`, file ID `50372341-f548-4c1c-a774-a4dcdad976c5`.
+
+## Tests actually performed
+
+- **12/12 content/contract checks PASS**.
+- **9/9 independent KFB source and learning-contract checks PASS**.
+- Visual source proof **0/3**, browser renders **0**, click/drag interaction **0**, integrated Academy runtime **0**, Site/Stage deploys **0**, human product gate **0**.
+- Environment: Chromium binary available locally, but GitHub DNS/network unavailable from container, Three.js modules and original GLBs not mounted; no fake model substitutes.
+
+## Unresolved and protections
+
+- A/B/C actual source objects must each render separately before a combined Maker Space scene can be accepted.
+- Current World/R4 is STOPPED/NO MVP; no changes to PR #348.
+- Billboard, Card/Almanac, Material, Quote/HyperNormalisation, ChatterBox/Audio, Resident/Rig and Asset Registry remain existing owners.
+- Production Control is persistence ledger, not learner progress database; no new Academy GPT Site or public Cloudflare route.
+
+## Exactly one next gate, who does it, and what Georg does
+
+**Gate:** `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`.  
+**Next executor:** **ChatGPT Work/WSA with browser and GitHub**; Claude Code with real browser may substitute if chosen, never parallel.  
+**Exact next job:** follow `WORK_VISUAL_PROOF_START_BRIEF.md`; render the real original external classroom, actual KFB Drag lesson, and accepted current KFB Billboard receiver in isolation; record visible screenshot+interactive evidence and source pins; return source-grounded KEEP/ADAPT/REJECT. No combined World/Academy build.  
+**Georg's immediate task:** nothing. Review only when actual visual proof presents a meaningful product choice.
+
+No auto-merge/Live promotion.
