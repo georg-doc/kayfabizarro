@@ -77,6 +77,7 @@ Insel-Seite (`kfb.island-config/1`): `"decks": [{ "deckId": "frizzlebob_s_missio
 ## 6 · Regeln
 
 - Neuer Branch, PR an Georg, **kein Merge durch WSA**, `main` nicht direkt anfassen.
+- **Branch von `main` abzweigen, nicht vom Sync-Branch.** Den Donor vom Sync-Branch nur lesen bzw. nach `tools/` kopieren. So hängt dieser Job nicht am Cloudflare-Gate des Sync-Branches (25.702 Dateien).
 - Keine lizenzierten bzw. gekauften Assets und keine privaten Quellen ins öffentliche Repo.
 - Decks bleiben öffentlich, wie sie in `media/kfb/` liegen; Marketing-Pipeline und Gumroad sind nicht Teil des Jobs.
 - Erst die Cloudflare-Hürde des Sync-Branches lösen (`.assetsignore` für `tools/KFB-ToolBox/_inbox/**` oder Tarif klären), falls der Librarian-Deploy davon betroffen ist.
