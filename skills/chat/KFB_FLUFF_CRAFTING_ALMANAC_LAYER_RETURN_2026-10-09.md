@@ -1,4 +1,20 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · Ideation Return v0.3
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.4
+> **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
+>
+> Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
+>
+> **Product direction:** Chill & Fun is default. STANDARD and HARD are opt-in future rule profiles of existing systems, not a second game: future Fluff upkeep (~30 **active-play** minutes in a Hard example only; paused/offline/Academy exempt), manageable scarcity/repairs, Combat-owned telegraphed one-hit boss options, safe profile switching and repeat-death Graveyard **DeathReceipt** → source-grounded Skeleton/ChatterBox callbacks and Almanac Afterglow. Competitive/permadeath is distant separate scope.
+>
+> **Academy/Maker consolidation:** Current read Academy v0.8 `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09` at `d13c32d8019339aab9ace431aaaba07cad7ad0d1` already defines `MAKERSPACE_INTERACTIVE_LEARNING_CRAFTING_V06.md`, `GODMODE_TOOLBOX_CAPABILITY_CENSUS_V07.md` and `MAKERSPACE_HOLOGRAPHIC_WORLD_FOUNDRY_V08.md`. Reuse **one owner-backed operation** as God Mode privilege, Player Maker resource-limited action and Academy Feynman Tutor observed lesson; same canonical WorldRecipe with holographic miniature as view, not nested runtime. Distinguish PlayerSave, WorldDraft/WorldInstance, LearnerState E0–E5, Card Almanac/Lean Memory receipts and Production Control. Example: source-backed blaster clone → owner-approved material/part change → actual muzzle flash VFX lesson → exact validation/export/reload → optional item; basic education must **not** be purchasable-only, Fluff can unlock optional projects/cosmetics rather than competence.
+>
+> **Upload/authority:** private quarantined GLB import, rights/format/rig/material validation, safe preview/undo; public shared worlds require server-backed ACL/publication control; no arbitrary uploaded JS in World. Academy's current gate remains `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`, which this Fluff planning slice did not execute.
+>
+> **Real checks:** v0.4 file written, exact GitHub branch/file fetched, **22/22 static textual contract checks PASS**. **0** source-isolated donor visuals, **0** builds, **0** real Game/Academy integrations, **0** browser tests, **0** Stage/Site tests. No PR, merge, Live or current Drive Loop / R4 status change. Public KFB/MED GPT Site migration remains explicitly **PARKED**.
+>
+> **One next gate for this Fluff outcome (deferred until playable MVP + explicit Georg instruction):** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`. The Academy's separate unchanged visual gate is its own owner's work, not a newly added Fluff gate.
+
+---
+
 **Date:** 2026-10-09 · **Outcome:** PLANNING HANDOFF PERSISTED, NOT IMPLEMENTED  
 **Repository:** `georg-doc/kayfabizarro`  
 **Branch:** `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09` (created from `main` `909828efa85a2f85584cb47d6a7cee3fd37989bd`)  
