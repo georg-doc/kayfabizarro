@@ -1,6 +1,8 @@
 # RECOVERY_CURRENT · KFB AI Game Art Academy / Maker Space
 
-**Last updated:** 2026-10-09 · **crash-safe single-entry recovery**.  
+**Last updated:** 2026-10-09 · **crash-safe single-entry recovery**.
+
+**LATEST EXECUTOR OVERRIDE (2026-10-09):** Claude Design preferred for source-faithful visual A/B/C; Claude Code/ChatGPT Work only as a sequential technical fallback. See `CLAUDE_DESIGN_ROUTE_R1.md`. Original visual evidence remains 0/3, gate unchanged, no executor started.  
 **Owner:** KFB AI Game Art Academy / Maker Space, curriculum/tutor/domain-adapter planning and isolated evidence only.  
 **Repo:** `georg-doc/kayfabizarro`. **Branch:** `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09`. **PR:** none.  
 **Last verified work/evidence commit before this Recovery file:** `2c16f8497b0a93e5f0b9543076eb84c9e780b759`. **DO NOT ASSUME this is still HEAD; fetch the exact branch at restart.**  
@@ -37,7 +39,7 @@
 
 ## Who acts next? Exactly one gate / executor
 
-**Next executor (only when browser proof is to be run): ChatGPT Work/WSA with browser, terminal and GitHub; Claude Code/Design only as an alternative, not a second parallel writer.**
+**Next preferred executor: Claude Design for exact original-source visual proof.** If Claude Design cannot load/test the real unmodified sources, assign only the smallest missing technical proof to one Claude Code or ChatGPT Work executor, sequentially, not in parallel. This preference does not start any executor. Read `CLAUDE_DESIGN_ROUTE_R1.md` for source conditions.
 
 **Its precise task:** follow `WORK_VISUAL_PROOF_START_BRIEF.md`, render A original external 3D Classroom, B untouched current KFB Drag lesson, C current source-backed KFB Billboard receiver in **three independent captures**. Save source/renderer/browser/interaction proof, no replacements or mixed scene before source isolation. Return evidence and KEEP/ADAPT/REJECT plus exact current head.
 
