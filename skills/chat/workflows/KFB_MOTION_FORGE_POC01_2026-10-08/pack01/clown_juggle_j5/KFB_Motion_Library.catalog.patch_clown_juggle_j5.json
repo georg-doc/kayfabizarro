@@ -1,0 +1,121 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "clown_juggle_j5",
+ "date": "2026-10-09",
+ "issue": 381,
+ "apply": "ADDITIVE · NOT APPLIED · Georg 2026-10-09 on J4: apex physics wrong, props pushed sideways at the top, too wide, no circular motion -> J5 rebuilt; Georg chose \"cascade with hand circles\" and \"brief face passes are fine\". Waiting for Georg's look. J3 and J4 stay.",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_clown_juggle_j5.glb"
+ ],
+ "libraryFiles": {
+  "Rig_Medium": {
+   "path": "libs/Rig_Medium/KFB_Motion_clown_juggle_j5.glb",
+   "bytes": 212936,
+   "sha256": "d056042d93a232b74d4e878c03619b4e1b25963ae8b6f4bc3c62440db960c50b"
+  }
+ },
+ "dataFiles": {
+  "pin": {
+   "path": "data/clown_juggle_j5.prop_tracks.pin.json",
+   "bytes": 70540,
+   "sha256": "8a471d00b5fa8b1f0975b2591e86bcde60e85a1cc5801e87a44c58a98efbed0d"
+  },
+  "donut": {
+   "path": "data/clown_juggle_j5.prop_tracks.donut.json",
+   "bytes": 70448,
+   "sha256": "33e522a8de82cd442d9cca122c6460557bafe2b65db5da5de770f4d805aee3c8"
+  },
+  "candy": {
+   "path": "data/clown_juggle_j5.prop_tracks.candy.json",
+   "bytes": 70317,
+   "sha256": "beb782216f3890a4e6d1abcb8b3a70202460dbc00cc295957fadfd5a79e6a48a"
+  }
+ },
+ "space": "glTF, Y up, actor faces +Z, actor root at the origin (stand the root on the podium top, 1.0); KayKit units",
+ "skeleton": "KayKit Rig_Medium (identical to the forge template); built from a pose dump, round trip max 0.0144 cm on all four clips",
+ "stateMachine": {
+  "states": [
+   "kfb_clown_juggle_cascade3_d",
+   "kfb_clown_juggle_stop_j5",
+   "kfb_clown_juggle_talk_j5",
+   "kfb_clown_juggle_resume_j5"
+  ],
+  "flow": "juggle (loop) -> at juggle frame 0, if a line is due: stop -> talk (loop while the Chatterbox line / bad joke plays; leave at talk frame 0) -> resume -> juggle frame 0",
+  "talkWindows": {
+   "kfb_clown_juggle_stop_j5": [
+    [
+     18,
+     47
+    ]
+   ],
+   "kfb_clown_juggle_talk_j5": [
+    [
+     0,
+     95
+    ]
+   ],
+   "kfb_clown_juggle_resume_j5": [],
+   "kfb_clown_juggle_cascade3_d": []
+  }
+ },
+ "clips": [
+  {
+   "id": "kfb_clown_juggle_cascade3_d",
+   "label_de": "Clown jongliert (3er-Kaskade, J5)",
+   "frames": 96,
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "supersedes": "kfb_clown_juggle_cascade3_c (J4) and _b (J3) for the MVP slice once Georg approves"
+  },
+  {
+   "id": "kfb_clown_juggle_stop_j5",
+   "label_de": "Clown fängt alles und hält an (J5)",
+   "frames": 48,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none"
+  },
+  {
+   "id": "kfb_clown_juggle_talk_j5",
+   "label_de": "Clown spricht zum Publikum (J5)",
+   "frames": 96,
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none"
+  },
+  {
+   "id": "kfb_clown_juggle_resume_j5",
+   "label_de": "Clown setzt wieder ein (J5)",
+   "frames": 120,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none"
+  }
+ ],
+ "stage": {
+  "prop": "KayKit_Mystery_Monthly_Series_4/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+  "scale": 1.0,
+  "actorRootY": 1.0
+ },
+ "physics": {
+  "flight": "ballistic: x and y at constant speed, z one parabola, one gravity (0.0249 units/frame^2, apex 2.1 above the release)",
+  "spin": "constant: one turn per throw, axis tilted 17 deg from left-right toward forward (mirrored per thrower), clubs land handle first",
+  "hands": "each hand runs an ellipse: throw inside moving up and in, empty hand out over the top, catch outside moving down and out, carry down and in",
+  "head": "tilted up 24 deg with a 3 deg nod per beat (follows each club to its high point)"
+ },
+ "faceRule": "Georg 2026-10-09: a club may pass the face briefly; eyes never covered more than 3 frames in a row. Pins: 18-19 of 96 frames per camera (about 3 per throw); donuts / sweets: 17-26 of 96, max 3 in a row; talk clip: 0.",
+ "knownIssues": [
+  "side camera: the knob sits on the nose tip on screen for 1 frame per throw (3D gap 0.066)",
+  "front camera: the rising club passes nose / one eye for about 2 frames per throw (allowed)",
+  "talk: the two-club arm still reads as pointing out sideways; ta-da opens level, not up; stop f10 shows the two clubs splayed before the V closes",
+  "release speed: the hand moves at about a third of the club's launch speed (small chibi arms)",
+  "held donuts lie flat against the body; KayKit sweets have open wrapper cones"
+ ],
+ "attribution": {
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · Clown, juggling pins, circus podium, Rig_Medium Idle_A, Halloween Bits sweets",
+   "Tiny Treats (Isa Lousberg) · CC0 · donuts"
+  ]
+ }
+}
