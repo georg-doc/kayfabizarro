@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/","three/webgpu":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js","three/tsl":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.tsl.js"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Big+Shoulders+Display:wght@700;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#1f1a14;color:#1f1a14;font-family:'Archivo',system-ui,sans-serif}
+a{color:#3e6a83}a:hover{color:#b8361f}
+select,input{font:inherit}
+</style>
+</helmet>
+<div style="display:flex;height:100vh;width:100%;min-width:0">
+  <div style="position:relative;flex:1 1 auto;min-width:0;background:#d6d1c6;overflow:hidden">
+    <canvas ref="{{ canvasRef }}" style="{{ bbCanvasStyle }}"></canvas>
+    <div ref="{{ stageRef }}" style="{{ stageStyle }}"></div>
+    <iframe ref="{{ frameRef }}" onLoad="{{ frameLoaded }}" src="export/kfb-collage-session-2026-09-30/KFB%20Billboard%20Kaleidoscope%20H13.dc.html" title="H13" style="{{ frameStyle }}"></iframe>
+    <sc-if value="{{ stageMsg }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:center;pointer-events:none">
+        <div style="font-size:14px;font-weight:600;padding:12px 16px;border:3px solid #1f1a14;background:#f3ead3;max-width:620px;line-height:1.4">{{ stageMsgText }}</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isH13 }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;background:#121110;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;box-sizing:border-box">
+        <canvas ref="{{ mirrorRef }}" width="1024" height="512" style="width:min(100%, 1024px);aspect-ratio:2/1;height:auto;display:block;background:#000"></canvas>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c;max-width:1024px;width:100%;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between">
+          <span>B · H13 unverändert, eigene Leinwand 1024 × 512 (2:1), live aus dem H13-Rahmen gelesen. {{ h13State }}</span>
+          <a href="export/kfb-collage-session-2026-09-30/KFB%20Billboard%20Kaleidoscope%20H13.dc.html" target="_blank" style="color:#ece6da">H13 mit eigener Bedienung öffnen</a>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isRef }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;overflow:auto;background:#efe7d4;display:flex;flex-wrap:wrap;gap:24px;padding:24px;box-sizing:border-box;align-content:flex-start">
+        <figure style="margin:0;flex:1 1 380px;max-width:560px;display:flex;flex-direction:column;gap:8px">
+          <img src="uploads/retro-neon-roadside-signs-vector-1573606.avif" alt="Referenz: Straßenschilder der 50er/60er" style="width:100%;height:auto;display:block;border:3px solid #1f1a14">
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3a342a">C · gelieferte Referenz, unverändert. Gelesen wird die Formsprache, nicht Logo, Schrift oder Wortlaut.</figcaption>
+        </figure>
+        <div style="flex:1 1 320px;max-width:520px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:22px;font-weight:800;line-height:1.1">Formsprache → Familie</div>
+          <sc-for list="{{ refRows }}" as="r" hint-placeholder-count="9">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;align-items:baseline;border-top:2px solid #1f1a14;padding-top:6px">
+              <div style="font-size:14px;line-height:1.35;text-wrap:pretty">{{ r.form }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;text-align:right">{{ r.fam }}</div>
+            </div>
+          </sc-for>
+          <div style="border-top:2px solid #1f1a14;padding-top:8px;font-size:13px;line-height:1.45;color:#3a342a">Nicht übernommen: Logos, Schriftzüge, Wortlaut der Vorlage, flache Vektoroptik, die Kompositionen 1:1.</div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isLogic }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;overflow:auto;background:#efe7d4;padding:24px;box-sizing:border-box">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:start;max-width:1500px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:22px;font-weight:800;line-height:1.1">Regeln · Retro-Cartoon-Schilder</div>
+            <div style="font-size:13px;line-height:1.45;color:#3a342a;text-wrap:pretty">Gilt für Vegas- und Wrestling-Tafeln und für die Bühne. Jede Regel ist im Kit als Baustein umgesetzt, nicht als Vorsatz.</div>
+            <sc-for list="{{ rules }}" as="r" hint-placeholder-count="9">
+              <div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;border-top:2px solid #1f1a14;padding-top:7px">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600">{{ r.k }}</div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="font-size:14px;font-weight:800">{{ r.t }}</div>
+                  <div style="font-size:13px;line-height:1.4;text-wrap:pretty">{{ r.d }}</div>
+                </div>
+              </div>
+            </sc-for>
+            <div style="border-top:2px solid #1f1a14;padding-top:8px;display:flex;flex-direction:column;gap:6px">
+              <sc-for list="{{ vocab }}" as="v" hint-placeholder-count="2">
+                <div style="font-size:13px;line-height:1.45;text-wrap:pretty"><strong>{{ v.k }}</strong> {{ v.d }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:22px;font-weight:800;line-height:1.1">Befund je Familie · v1 → v2</div>
+            <sc-for list="{{ crit }}" as="c" hint-placeholder-count="7">
+              <div style="border-top:2px solid #1f1a14;padding-top:7px;display:flex;flex-direction:column;gap:4px">
+                <button onClick="{{ c.show }}" style="font:inherit;font-size:14px;font-weight:800;padding:0;border:0;background:transparent;text-align:left;cursor:pointer;color:#1f1a14">{{ c.f }} →</button>
+                <div style="font-size:13px;line-height:1.4;color:#5a3a2a;text-wrap:pretty">{{ c.v1 }}</div>
+                <div style="font-size:13px;line-height:1.4;text-wrap:pretty">{{ c.v2 }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:22px;font-weight:800;line-height:1.1">Bühne + Vorhang · aus dem Bestand</div>
+            <div style="font-size:13px;line-height:1.45;color:#3a342a;text-wrap:pretty">Abgleich mit MATERIAL_LOOK_STUDY.md und KEEP_TUNE_REJECT.md (Recovery 07.10.2026).</div>
+            <sc-for list="{{ stageRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;border-top:2px solid #1f1a14;padding-top:6px;align-items:baseline">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">{{ r.k }}</div>
+                <div style="font-size:13px;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ booting }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(214,209,198,.9)">
+        <div style="font-size:16px;font-weight:600;padding:14px 18px;border:3px solid #1f1a14;background:#f3ead3;max-width:80%">{{ bootNote }}</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ drawerClosed }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleDrawer }}" style="position:absolute;right:12px;top:12px;font:inherit;font-size:13px;font-weight:700;padding:7px 11px;border:2px solid #1f1a14;background:#f3ead3;cursor:pointer;box-shadow:2px 2px 0 rgba(31,26,20,.35)">Bedienung</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ true }}">
+  <aside style="flex:0 0 372px;max-width:46vw;overflow:auto;background:#ece1c0;border-left:4px solid #1f1a14;box-sizing:border-box;padding:12px 12px 48px;display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:flex-start;gap:8px">
+      <div style="flex:1 1 auto;min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:#3a342a;font-weight:600">KFB CLAY STAGE R1 · DESIGN PREVIEW</div>
+        <div style="font-size:19px;font-weight:800;line-height:1.1">Billboards + Bühne · ein Clay-Look</div>
+      </div>
+      <button onClick="{{ toggleDrawer }}" style="font:inherit;font-size:12px;font-weight:700;padding:4px 8px;border:2px solid #1f1a14;background:#f3ead3;cursor:pointer">✕</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px">
+      <sc-for list="{{ tabs }}" as="b" hint-placeholder-count="6">
+        <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:6px 4px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }};line-height:1.15">{{ b.label }}</button>
+      </sc-for>
+    </div>
+    <div style="font-size:12.5px;line-height:1.45;color:#3a342a;text-wrap:pretty">{{ tabNote }}</div>
+
+    <sc-if value="{{ showViews }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;display:flex;flex-direction:column;gap:8px;box-shadow:3px 4px 0 rgba(31,26,20,.22)">
+        <div style="font-size:13px;font-weight:800">Ansicht</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ viewBtns }}" as="b" hint-placeholder-count="8">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:5px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ toggles }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:600;padding:4px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isStage }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;display:flex;flex-direction:column;gap:8px;box-shadow:3px 4px 0 rgba(31,26,20,.22)">
+        <div style="font-size:13px;font-weight:800">Look-Tafeln</div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px">
+          <sc-for list="{{ shotBtns }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:6px 4px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ stageViewBtns }}" as="b" hint-placeholder-count="5">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:5px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="font-size:13px;font-weight:800;margin-top:2px">Vorhang (Vertrag)</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ actBtns }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:5px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">
+          <sc-for list="{{ lookBtns }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:600;padding:4px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-word">{{ stageInfo }}</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isFam }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;display:flex;flex-direction:column;gap:8px;box-shadow:3px 4px 0 rgba(31,26,20,.22)">
+          <div style="font-size:13px;font-weight:800">Familie</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px">
+            <sc-for list="{{ famBtns }}" as="b" hint-placeholder-count="7">
+              <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:700;padding:6px 7px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }};text-align:left">{{ b.label }}</button>
+            </sc-for>
+          </div>
+          <div style="font-size:12.5px;line-height:1.45;text-wrap:pretty">{{ famWhy }}</div>
+          <button onClick="{{ pressTv }}" style="font:inherit;font-size:12px;font-weight:700;padding:6px 8px;cursor:pointer;border:2px solid #1f1a14;background:#1f1a14;color:#f3ead3;align-self:flex-start">Clay-Knopf drücken → Vollbild</button>
+        </div>
+
+        <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;display:flex;flex-direction:column;gap:7px;box-shadow:3px 4px 0 rgba(31,26,20,.22)">
+          <div style="font-size:13px;font-weight:800">Inhalt</div>
+          <div style="display:flex;gap:4px">
+            <sc-for list="{{ srcBtns }}" as="b" hint-placeholder-count="2">
+              <button onClick="{{ b.run }}" style="flex:1 1 0;font:inherit;font-size:12px;font-weight:700;padding:5px 6px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">{{ deckLabel }}
+            <select value="{{ packId }}" onChange="{{ onDeck }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0">
+              <sc-for list="{{ decks }}" as="d" hint-placeholder-count="0"><option value="{{ d.id }}">{{ d.title }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">Zitat
+            <select value="{{ quoteId }}" onChange="{{ onQuote }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0">
+              <option value="">auto · deterministisch (Seed)</option>
+              <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="0"><option value="{{ q.id }}">{{ q.label }}</option></sc-for>
+            </select>
+          </label>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px">
+            <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">Card-Seed<input value="{{ cardSeed }}" onChange="{{ onCardSeed }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0"></label>
+            <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">Phase
+              <select value="{{ phasePin }}" onChange="{{ onPhase }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0">
+                <option value="">läuft (Sequenz)</option><option value="context">context</option><option value="quote">quote</option><option value="attribution">attribution</option><option value="question">FrizzleQuestion</option><option value="brainfood">Brain Food</option>
+              </select>
+            </label>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            <sc-for list="{{ seqBtns }}" as="b" hint-placeholder-count="5">
+              <button onClick="{{ b.run }}" style="font:inherit;font-size:12px;font-weight:600;padding:4px 8px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+            </sc-for>
+          </div>
+          <div style="height:8px;border:2px solid #1f1a14;background:#f3ead3;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:{{ progress }};background:#b8361f"></div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-word">{{ quoteInfo }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showPal }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;display:flex;flex-direction:column;gap:7px;box-shadow:3px 4px 0 rgba(31,26,20,.22)">
+        <div style="font-size:13px;font-weight:800">Kontext · Palette (Billboards + Bühne)</div>
+        <div style="display:flex;gap:4px">
+          <sc-for list="{{ palBtns }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.run }}" style="flex:1 1 0;font:inherit;font-size:11.5px;font-weight:700;padding:5px 4px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px">
+          <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">Biom
+            <select value="{{ biomeId }}" onChange="{{ onBiome }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0">
+              <option value="AUTO">AUTO (aus Karte)</option><option value="scorched">scorched</option><option value="luminous">luminous</option><option value="tidal">tidal</option><option value="meadow">meadow</option><option value="fractured">fractured</option><option value="plateau">plateau</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px;font-size:11px;font-weight:600">Biom-Seed<input value="{{ biomeSeed }}" onChange="{{ onBiomeSeed }}" style="padding:4px;border:2px solid #1f1a14;background:#f3ead3;min-width:0"></label>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px">
+          <sc-for list="{{ swatches }}" as="w" hint-placeholder-count="9">
+            <div title="{{ w.k }}" style="height:20px;border:2px solid #1f1a14;background:{{ w.c }}"></div>
+          </sc-for>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.5;white-space:pre-wrap">{{ ctxInfo }}</div>
+        <sc-if value="{{ isFam }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;gap:4px">
+              <sc-for list="{{ h13Btns }}" as="b" hint-placeholder-count="2">
+                <button onClick="{{ b.run }}" style="flex:1 1 0;font:inherit;font-size:11.5px;font-weight:700;padding:5px 4px;cursor:pointer;border:2px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+              </sc-for>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3a342a">{{ h13Note }}</div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showPal }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#1f1a14;color:#f3ead3;border:3px solid #1f1a14;padding:10px 10px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:14px;font-weight:800;letter-spacing:.02em">GEORG CLAY STAGE REVIEW</div>
+        <sc-for list="{{ reviewRows }}" as="r" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center">
+            <button onClick="{{ r.show }}" style="font:inherit;font-size:12px;font-weight:700;padding:3px 0;border:0;background:transparent;color:#f3ead3;text-align:left;cursor:pointer">{{ r.label }}</button>
+            <div style="display:flex;gap:3px">
+              <sc-for list="{{ r.opts }}" as="o" hint-placeholder-count="4">
+                <button onClick="{{ o.run }}" style="font:inherit;font-size:10.5px;font-weight:700;padding:3px 6px;cursor:pointer;border:2px solid #f3ead3;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.45;color:#d9c997">{{ reviewNote }}</div>
+        <button onClick="{{ dlReview }}" style="font:inherit;font-size:12px;font-weight:700;padding:5px 8px;cursor:pointer;border:2px solid #f3ead3;background:#b8361f;color:#f3ead3;align-self:flex-start">Review .json</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isDonor }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.55;white-space:pre-wrap;word-break:break-word">{{ donorInfo }}</div>
+    </sc-if>
+
+    <details style="background:#fffaf0;border:3px solid #1f1a14;padding:8px 10px">
+      <summary style="font-size:13px;font-weight:800;cursor:pointer">Diagnose</summary>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word;margin-top:6px">{{ diag }}</div>
+    </details>
+  </aside>
+  </sc-if>
+
+  <sc-if value="{{ fsOpen }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ fsWrap }}" style="position:fixed;inset:0;z-index:50;background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:18px;box-sizing:border-box">
+      <canvas ref="{{ fsRef }}" width="2048" height="1024" style="width:min(100%, calc((100vh - 130px) * 2));aspect-ratio:2/1;height:auto;display:block;border-radius:14px;box-shadow:0 0 0 10px {{ fsFrame }}, 0 0 0 14px #1f1a14"></canvas>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center">
+        <sc-for list="{{ fsBtns }}" as="b" hint-placeholder-count="4">
+          <button onClick="{{ b.run }}" disabled="{{ b.off }}" style="font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;font-size:18px;letter-spacing:.04em;min-width:96px;height:56px;padding:0 20px;border-radius:999px;border:3px solid #1f1a14;background:{{ b.bg }};color:{{ b.fg }};box-shadow:inset 0 -6px 0 rgba(0,0,0,.28), inset 0 4px 0 rgba(255,255,255,.25), 0 4px 0 #1f1a14;cursor:pointer;opacity:{{ b.op }}" style-active="transform:translateY(3px);box-shadow:inset 0 -3px 0 rgba(0,0,0,.28), 0 1px 0 #1f1a14">{{ b.label }}</button>
+        </sc-for>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">{{ fsLine }}</div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;F&quot;,&quot;S&quot;,&quot;L&quot;],&quot;default&quot;:&quot;F&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;startFamily&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;crown&quot;,&quot;arrow&quot;,&quot;oval&quot;,&quot;tower&quot;,&quot;burst&quot;,&quot;totem&quot;,&quot;belt&quot;],&quot;default&quot;:&quot;arrow&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;startLight&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;studio&quot;,&quot;night&quot;],&quot;default&quot;:&quot;studio&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  canvasRef = React.createRef(); frameRef = React.createRef(); fsRef = React.createRef(); fsWrap = React.createRef(); stageRef = React.createRef();
+  mirrorRef = el => { this.mirrorEl = el; this.api && this.api.setMirror(el); };
+  state = { snap: null, stageSnap: null, stageBoot: false, tab: this.props.startTab ?? 'F', booting: true, bootNote: 'Clay-Familie, Quote-Pool, H14 und Palettenbesitzer laden …', fs: false, muted: false, drawer: true, review: (() => { try { return JSON.parse(localStorage.getItem('kfb-clay-stage-r1-review')) || {}; } catch (e) { return {}; } })() };
+  componentDidMount() { this.boot(); this._fsc = () => { if (!document.fullscreenElement && this.state.fs && this._fsReq) this.closeFs(); }; document.addEventListener('fullscreenchange', this._fsc); }
+  componentWillUnmount() { this.api && this.api.dispose(); this.stage && this.stage.dispose(); document.removeEventListener('fullscreenchange', this._fsc); }
+  async boot() {
+    try {
+      const mod = await import('./KFB_Clay_Stage_R1/billboards/stage.js');
+      this.api = await mod.boot(this.canvasRef.current, snap => this.onSnap(snap));
+      this.api.onTV(() => this.openFs());
+      if (this.frameRef.current) this.api.setH13Frame(this.frameRef.current);
+      const p = this.props; await this.api.set({ family: p.startFamily ?? 'arrow', light: p.startLight ?? 'studio' });
+      window.__bbf = this.api; window.__bbfUI = this;
+      if (this.state.tab === 'S') this.enterStage();
+    } catch (e) { console.error(e); this.setState({ bootNote: 'Fehler: ' + String(e.message).slice(0, 220) }); if (this.state.tab === 'S') this.enterStage(); }
+  }
+  onSnap(snap) {
+    const k = snap.pal ? JSON.stringify(snap.pal) : ''; if (k !== this._palKey) { this._palKey = k; if (this.stage && snap.pal) this.stage.setPalette(snap.pal); }
+    this.setState({ snap, booting: false });
+  }
+  async enterStage() {
+    this.api && this.api.pause(true);
+    if (this.stage) { this.stage.pause(false); return; }
+    if (this._mounting) return; this._mounting = true; this.setState({ stageBoot: true });
+    try {
+      const [H, R] = await Promise.all([import('./KFB_Clay_Stage_R1/curtain/host.js'), import('./KFB_Clay_Stage_R1/palette-roles.js')]);
+      const pal = (this.state.snap && this.state.snap.pal) || R.roles();
+      this.stage = await H.mountStage(this.stageRef.current, { pal, onChange: st => this.setState({ stageSnap: st, stageBoot: false }) });
+      window.__stage = this.stage;
+      if (this.state.tab !== 'S') this.stage.pause(true);
+    } catch (e) { console.error(e); this.setState({ stageSnap: { err: String(e.message || e).slice(0, 220) }, stageBoot: false }); }
+  }
+  leaveStage() { this.stage && this.stage.pause(true); this.api && this.api.pause(false); }
+  openFs() { this._fsReq = false; this.setState({ fs: true }, () => { this.api.setFullscreen(this.fsRef.current); const w = this.fsWrap.current; if (w && w.requestFullscreen) w.requestFullscreen().then(() => { this._fsReq = true; }).catch(() => {}); }); }
+  closeFs() { this.api && this.api.setFullscreen(null); this._fsReq = false; if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); this.setState({ fs: false }); }
+  setReview(id, k, v) { const r = { ...this.state.review, [id]: { ...(this.state.review[id] || {}), [k]: v } }; if (k === 'default') for (const x in r) if (x !== id && r[x]) r[x] = { ...r[x], default: false }; localStorage.setItem('kfb-clay-stage-r1-review', JSON.stringify(r)); this.setState({ review: r }); }
+  renderVals() {
+    const st = this.state, s = st.snap, api = this.api, S = s ? s.S : {}, set = o => api && api.set(o), ss = st.stageSnap || {}, stg = this.stage;
+    const btn = (label, on, run) => ({ label, run, bg: on ? '#1f1a14' : '#f3ead3', fg: on ? '#f3ead3' : '#1f1a14' });
+    const tab = st.tab;
+    const go = t => { const prev = this.state.tab; this.setState({ tab: t }); if (t === 'S') this.enterStage(); else if (prev === 'S') this.leaveStage(); if (!api) return; if (t === 'A') api.set({ layout: 'donor', view: 'isolation' }); if (t === 'F' && prev !== 'F') api.set({ layout: 'single', view: S.view === 'lineup' ? 'lineup' : 'isolation' }); };
+    const showFam = id => { go('F'); set({ family: id, view: 'hero' }); };
+    const tabs = [['F', 'Billboards'], ['S', 'Bühne + Vorhang'], ['L', 'Design-Logik'], ['A', 'A · Spender'], ['B', 'B · H13'], ['C', 'C · Referenz']].map(([k, l]) => btn(l, tab === k, () => go(k)));
+    const notes = {
+      A: 'CLAY-01 aus dem Repo, unverändert: Körper, Palette und eigener Inhalt. Keine Quote-Sequenz.',
+      B: 'H13 im eigenen Rahmen, unverändert. Seine 1024×512-Leinwand ist die Quelle für „H13 live“ auf den Tafeln.',
+      C: 'Die gelieferte Referenz und was davon in die Familie übernommen wurde.',
+      F: 'Sieben Clay-Familien um dieselbe 12 × 6-m-Fläche. v2: 02 neu gebaut, 05 korrigiert, 07 Title Belt als Wrestling-Vorlage. Birnen, Fassungen und Leuchtkugeln kommen aus der Palette, keine schwarzen Aus-Birnen.',
+      S: 'Vorhang-Kern unverändert (Issue #372, über jsDelivr), nur der Look ist neu: Knete/Filz statt Samt, Decals im Stoffraum, Bretterbühne, Diorama-Rahmen, Wülste mit Quasten, Knet-Laternen. Palette wie die Billboards. Braucht WebGPU.',
+      L: 'Bauregeln für Vegas- und Wrestling-Retro-Schilder und die Bühne, der Befund je Familie und der Abgleich mit dem Vorhang-Bestand.'
+    };
+    const views = [['isolation', 'Isolation'], ['road', 'Anfahrt'], ['hero', 'Hero ¾'], ['close', 'Nah · Fläche'], ['back', 'Rückseite'], ['side', 'Seite'], ['night', 'Nacht'], ['lineup', 'Lineup']].filter(([k]) => tab === 'F' || !['lineup', 'road'].includes(k));
+    const fam = s && s.fams.find(f => f.id === S.family);
+    const q = s && s.quote;
+    const rv = st.review, opts = ['KEEP', 'TUNE', 'DROP'];
+    const rowsSrc = (s ? s.fams.map(f => ({ id: f.id, label: f.n + ' ' + f.label, show: () => showFam(f.id) })) : []).concat([{ id: 'stage', label: 'B · Bühne + Vorhang', show: () => go('S') }]);
+    const reviewRows = rowsSrc.map(f => ({ label: f.label, show: f.show, opts: opts.map(o => { const on = rv[f.id] && rv[f.id].verdict === o; return { label: o, run: () => this.setReview(f.id, 'verdict', o), bg: on ? '#f3ead3' : 'transparent', fg: on ? '#1f1a14' : '#f3ead3' }; }).concat(f.id === 'stage' ? [] : [{ label: '★', run: () => this.setReview(f.id, 'default', !(rv[f.id] && rv[f.id].default)), bg: rv[f.id] && rv[f.id].default ? '#e9c14a' : 'transparent', fg: rv[f.id] && rv[f.id].default ? '#1f1a14' : '#f3ead3' }]) }));
+    const def = Object.keys(rv).find(k => rv[k] && rv[k].default);
+    const pal = s && s.pal, c = s && s.ctx;
+    const phaseOk = s && ['attribution', 'turn', 'question', 'brainfood'].includes(s.phase);
+    const st0 = s && s.status, ok = k => st0 && st0[k] ? (st0[k].ok ? 'OK' : 'FEHLT · ' + st0[k].err) : '–';
+    const isS = tab === 'S';
+    const stageMsgText = st.stageBoot ? 'Bühne lädt: Vorhang-Kern (jsDelivr), WebGPU-Renderer, Warm-up …' : ss.err ? ss.err : '';
+    return {
+      canvasRef: this.canvasRef, frameRef: this.frameRef, fsRef: this.fsRef, fsWrap: this.fsWrap, stageRef: this.stageRef,
+      bbCanvasStyle: { position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', visibility: isS ? 'hidden' : 'visible' },
+      stageStyle: { position: 'absolute', inset: 0, display: isS ? 'block' : 'none', background: pal ? '#d6d1c6' : '#d6d1c6' },
+      stageMsg: isS && !!stageMsgText, stageMsgText,
+      frameLoaded: () => { api && api.setH13Frame(this.frameRef.current); },
+      frameStyle: tab === 'B' ? { position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, background: '#121110' } : { position: 'absolute', left: -4000, top: 0, width: 1280, height: 900, border: 0, pointerEvents: 'none' },
+      isH13: tab === 'B', mirrorRef: this.mirrorRef, h13State: s ? (s.h13Live ? 'Status: spielt.' : 'Status: lädt sein Archiv.') : '',
+      isRef: tab === 'C', isFam: tab === 'F', isDonor: tab === 'A', isStage: isS, isLogic: tab === 'L', showViews: tab === 'F' || tab === 'A', showPal: tab === 'F' || isS,
+      booting: st.booting && !isS && tab !== 'L', bootNote: st.bootNote, drawerOpen: st.drawer, drawerClosed: !st.drawer, toggleDrawer: () => this.setState({ drawer: !st.drawer }),
+      tabs, tabNote: notes[tab],
+      refRows: [
+        ['Krone als Ornament über breitem Kopfteil', '01'], ['Pfeil, der physisch zur Straße zeigt, mit Glühbirnen', '02'], ['Ovaler / Kapsel-Schildkörper', '03'], ['Schwebende Blöcke auf Stielen', '03 · 04'],
+        ['Stern, Komet, Atomformen', '05 · 06 · 07'], ['Kleines Schild unter großem Schild', '01 · 06'], ['Dünne hohe Pfosten', '02 · 03'], ['Warme Glühbirnenränder', 'alle'], ['Negativraum zwischen den Teilen, verspielte Asymmetrie', '02 · 04 · 05']
+      ].map(([form, f]) => ({ form, fam: f })),
+      rules: [
+        ['R1', 'Ein Umriss je Teil', 'Schaft und Pfeilspitze, Gürtelriemen und Kappen sind EIN Körper (strokeOutline), nicht zusammengesteckt. Ein Teil, eine Formsprache.'],
+        ['R2', 'Radius aus Dicke', 'Hauptkörper mit Eckenradius 0,5–0,8 m, Spitzenecken 0,3–0,55 m, Schaft 0,06 m. Keine scharfen Dreiecke; Sternzacken bleiben, mit gerundetem Fuß.'],
+        ['R3', 'Licht sitzt auf einem Rand', 'Birnen nur auf Rahmenrand, Plattenrand oder Mittellinie, Teilung 0,5 m, jede mit Fassung. Lauflicht läuft in Leserichtung (zur Pfeilspitze).'],
+        ['R4', 'Konstante Kontur', 'Hauptkörper bekommen ein Trim-Band gleicher Breite (0,25–0,3 m) dahinter; die Silhouette liest sich wie ein Cartoon-Strich.'],
+        ['R5', 'Klare Ebenen', 'Hinterlegung, Tafel, Ornament: jedes Teil liegt ganz vor oder ganz hinter der Tafelebene, nie durch sie hindurch.'],
+        ['R6', 'Sichtbare Befestigung', 'Ornamente hängen an Strebe, Manschette, Kette oder Pfosten. Nichts schwebt, nichts klebt nur an der Kante.'],
+        ['R7', 'Stehen statt kippen', 'Stützen senkrecht oder symmetrisch als Y/A, jede mit Fuß. Schräge nur als Strebe zwischen zwei Teilen.'],
+        ['R8', 'Farbrollen 60/30/10', 'frame trägt den Körper, accent das Ornament, trim Kontur und Fassungen. dark nur in Fugen und Bolzen, nie als Licht.'],
+        ['R9', 'Licht aus der Palette', 'An = warmes Weiß mit Akzentstich (bulbOn), aus = Milchglas im Trim-Ton (bulbOff). Gilt für Tafeln und für die Bühnenlaternen.']
+      ].map(([k, t, d]) => ({ k, t, d })),
+      vocab: [
+        { k: 'Vegas:', d: 'Pfeil zur Einfahrt, Theaterdach mit Lauflicht, Starburst, Atom, Kapsel, Buchstabenblöcke auf Stielen.' },
+        { k: 'Wrestling:', d: 'Gürtel-Mittelplatte, Seitenplatten mit Stern, Nieten, überhängender Riemen, Sternkranz. Nächste Kandidaten: Ringecke mit Spannschraube und drei Seilen, Ringglocke.' }
+      ],
+      crit: [
+        ['arrow', '02 Boomerang Arrow', 'v1: vier lose Teile in drei Formsprachen (Band, scharfes Dreieck, Flügel, Leuchten). Spitze abgesetzt, Flügel klebt an der Tafel, Schaft liegt in der Rahmenebene, Schrägpfosten kippt, Leuchten mit schwarzer Kappe, schwarze Aus-Birnen.', 'v2: ein Pfeilumriss mit Spitze, Trim-Kontur exakt 0,32 m versetzt, Lichtkanal in accent2 auf der Mittellinie, Einlage in der Spitze mit gleichmäßigem Rand (blinkt). Ganz hinter der Tafel, zwei Streben ohne sichtbare Enden, zwei senkrechte Pfosten. Flügel und Leuchten entfallen.'],
+        ['burst', '05 Starburst Fin', 'v1: Flosse lag vor der Tafel und verdeckte den rechten Bildrand, Ecken spitz, Rahmenradius 0,16 neben lauter runden Teilen, Sternkern schwarz.', 'v2: Flosse als gerundetes Polygon ganz hinter der Tafel mit Trim-Kontur, Stern sitzt auf der Spitze, Rahmenradius 0,5, Sternkern accent2.'],
+        ['crown', '01 Crown Marquee', 'v1: Silhouette trägt; Aus-Birnen schwarz.', 'v2: nur Licht und Fassungen aus der Palette.'],
+        ['oval', '03 Oval Orbit', 'v1: Silhouette trägt; Aus-Birnen schwarz.', 'v2: nur Licht und Fassungen aus der Palette.'],
+        ['tower', '04 Letter Tower', 'v1: Silhouette trägt; Aus-Birnen schwarz.', 'v2: nur Licht und Fassungen aus der Palette.'],
+        ['totem', '06 Motel Totem', 'v1: Silhouette trägt; Aus-Birnen schwarz.', 'v2: nur Licht und Fassungen aus der Palette.'],
+        ['belt', '07 Title Belt (neu)', 'Wrestling-Vorlage, nach R1–R9 gebaut.', 'Mittelplatte um die Tafel, zwei Seitenplatten, Riemen läuft dahinter durch und endet in runden Laschen mit Nieten, Lauflicht auf dem Plattenrand, Sternkranz pulsiert.']
+      ].map(([id, f, v1, v2]) => ({ f, v1, v2, show: () => showFam(id) })),
+      stageRows: [
+        ['ÜBERNOMMEN', 'Cloth-Kern T1–T10 unverändert: Hängen ab Bau, Raffen zum Flügel, Pinch-Falten, Saumgewicht, schwerer Antrieb mit Anschlag, Impact.'],
+        ['ÜBERNOMMEN', 'Patina im clothUV-Raum mit niedrigen Frequenzen, damit sie mit der Falte geht (MATERIAL_LOOK_STUDY). Jetzt auch die Decals.'],
+        ['ÜBERNOMMEN', 'Keine Kachel-Textur, keine Normal-Map auf bewegtem Stoff; Weltraum-Rauschen nur auf statischen Teilen.'],
+        ['ÜBERNOMMEN', 'Masking-Border über der Stange, Footlight-Spot über setFootlights(), kein Schild als Identitätsträger vor dem Vorhang.'],
+        ['VERWORFEN', 'Samt (#4a0b11, Sheen 1,0): jetzt Knete/Filz, Sheen 0, Rauheit 0,9.'],
+        ['VERWORFEN', 'Gilt-Messing, Stein-Proszenium mit Bogen, Swag-Pelmet mit Fransen, dunkles Opernlicht.'],
+        ['NEU', 'Decals: zwei Flicken je Bahn mit Naht, Flecken, Greifspur auf Handhöhe, Kantenabrieb, ausgeblichene Bahnen oben, dunkles Saumband mit Stich, Staub.'],
+        ['NEU', 'Bühne: 21 Bretter mit Fugen, Höhenversatz, Nägeln, eine Planke steht vor, ein Flickenbrett; Vorderkante mit Brettenden.'],
+        ['NEU', 'Rahmen: Knetstein-Sockel, gedrechselte Säulen leicht schief, Bretter-Flats, Querbalken mit Kopfbändern, gemaltes Schild ohne Schrift.'],
+        ['NEU', 'Schmuckvorhang aus Knet-Wülsten, Rosetten, Knetkugel-Quasten, eine hängt lose. Fünf Knet-Laternen als Rampenlicht.']
+      ].map(([k, t]) => ({ k, t })),
+      viewBtns: views.map(([k, l]) => btn(l, S.view === k, () => set({ view: k }))),
+      toggles: [btn(S.light === 'night' ? 'Licht: Nacht' : 'Licht: Studio', S.light === 'night', () => set({ light: S.light === 'night' ? 'studio' : 'night' })), btn(S.motion ? 'Bewegung an' : 'Bewegung aus', !!S.motion, () => set({ motion: !S.motion }))],
+      shotBtns: [['closed', 'Geschlossen'], ['half', 'Halb offen'], ['open', 'Offen']].map(([k, l]) => btn(l, ss.shot === k, () => stg && stg.shot(k))),
+      stageViewBtns: [['front', 'Front'], ['frame', 'Rahmen gesamt'], ['stage', 'Bühne nah'], ['cloth', 'Stoff nah'], ['side', 'Seite']].map(([k, l]) => btn(l, ss.view === k, () => stg && stg.view(k))),
+      actBtns: [['reveal', 'Vorhang auf ↵'], ['cover', 'Zu'], ['impact', 'Impact']].map(([k, l]) => btn(l, false, () => stg && stg.act(k))),
+      lookBtns: [btn(ss.decals === false ? 'Decals aus' : 'Decals an', ss.decals !== false, () => stg && stg.set({ decals: ss.decals === false })), btn(ss.sign === false ? 'Schild aus' : 'Schild an', ss.sign !== false, () => stg && stg.set({ sign: ss.sign === false })), btn((ss.age ?? 1) < 1 ? 'Alter: wenig' : 'Alter: viel', (ss.age ?? 1) >= 1, () => stg && stg.set({ age: (ss.age ?? 1) < 1 ? 1 : 0.3 }))],
+      stageInfo: !ss.state ? (ss.err || '–') : `Zustand ${ss.state} · offen ${Math.round((ss.open || 0) * 100)} %${ss.frozen ? ' · angehalten (Host)' : ''}\nfps ${ss.fps ?? '–'}${ss.look ? ' · Look ' + Math.round(ss.look.tris / 1000) + 'k △ · ' + ss.look.parts + ' Teile · ' + ss.look.meshes + ' Meshes' : ''}\nKern @main, unverändert · Enter = requestReveal()`,
+      famBtns: (s ? s.fams : []).map(f => btn(f.n + ' ' + f.label, S.family === f.id && S.layout !== 'lineup', () => set({ family: f.id, view: S.view === 'lineup' ? 'hero' : S.view }))),
+      famWhy: fam ? fam.why + (fam.lettersOk === false ? ' · Schrift nicht geladen: Buchstaben fehlen.' : '') : '',
+      pressTv: () => api && api.press(S.family),
+      srcBtns: [btn('Mapped Pool', S.source === 'mapped', () => set({ source: 'mapped', quoteId: '' })), btn('Research Reserve', S.source === 'reserve', () => set({ source: 'reserve', quoteId: '' }))],
+      deckLabel: S.source === 'reserve' ? 'Bühnen-Kontext (nur Palette, keine Zuordnung)' : 'Deck',
+      decks: s ? s.decks : [], packId: S.packId || '', onDeck: e => set({ packId: e.target.value }),
+      quotes: s ? s.quotes : [], quoteId: S.quoteId || '', onQuote: e => set({ quoteId: e.target.value }),
+      cardSeed: S.cardSeed || '', onCardSeed: e => set({ cardSeed: e.target.value }), phasePin: S.phasePin || '', onPhase: e => set({ phasePin: e.target.value }),
+      seqBtns: [btn(S.playing ? 'Pause' : 'Play', !S.playing, () => set({ playing: !S.playing })), btn('Neustart (gleicher Seed)', false, () => api && api.restart()), btn('Nächster Zyklus', false, () => api && api.next()), btn('Read-along', !!S.readAlong, () => set({ readAlong: !S.readAlong })), btn('nur PD', !!S.pdOnly, () => set({ pdOnly: !S.pdOnly }))],
+      progress: s && s.total ? Math.round(100 * Math.min(1, s.t / s.total)) + '%' : '0%',
+      quoteInfo: !s ? '–' : !q ? (s.pool ? 'Kein Zitat für diese Auswahl.' : 'SOURCE UNAVAILABLE · ' + ok('quotePool')) :
+        `${q.id}\n${q.mapping === 'UNMAPPED_BY_DESIGN' ? 'RESEARCH RESERVE · UNMAPPED_BY_DESIGN' : 'MAPPED · ' + (q.deckReason || '')}\nRechte ${q.rights} · Beleg ${q.verification}${q.rights !== 'PUBLIC_DOMAIN_CONFIRMED' ? '\n→ nur Recherche, nicht runtime-fähig' : ''}\nKarte ${s.card ? '#' + s.card.n + ' ' + s.card.name + ' (' + s.card.how + ')' : '–'}\nPhase ${s.phase} · Zyklus ${S.cycle}${s.seed != null ? ' · Seed ' + s.seed : ''}`,
+      palBtns: [['CARDS', 'CARDS'], ['BIOME', 'BIOME'], ['WORLD', 'WORLD CONTEXT']].map(([k, l]) => btn(l, S.palSource === k, () => set({ palSource: k }))),
+      biomeId: S.biomeId || 'AUTO', onBiome: e => set({ biomeId: e.target.value }), biomeSeed: S.biomeSeed || '', onBiomeSeed: e => set({ biomeSeed: e.target.value }),
+      swatches: pal ? (isS ? ['cloth', 'clothFade', 'valance', 'tassel', 'patchB', 'wood', 'column', 'stone', 'bulbOn'] : ['frame', 'accent', 'accent2', 'trim', 'dark', 'post', 'back', 'bulbOn', 'bulbOff']).map(k => ({ k, c: pal[k] })) : [],
+      ctxInfo: c ? `${c.note}\nBiom ${c.biome}${S.biomeId === 'AUTO' ? '' : ' (gesetzt; aus Karte: ' + c.biomeAuto + ')'} · Story ${c.storyMode} · stärkste Dimension ${c.topDim}${isS ? '\nRollen aus palette-roles.js, dieselben Stops wie die Tafeln' : ''}` : (isS ? 'Billboards noch nicht geladen: Standardpalette' : '–'),
+      h13Btns: [btn('H13 live', S.h13Mode === 'live', () => set({ h13Mode: 'live' })), btn('H14 statisch', S.h13Mode === 'static', () => set({ h13Mode: 'static' }))],
+      h13Note: s ? s.h13Note : '',
+      reviewRows, reviewNote: rowsSrc.filter(f => rv[f.id] && rv[f.id].verdict).length + ' / ' + rowsSrc.length + ' bewertet · Standard-Tafel: ' + (def ? (s && s.fams.find(f => f.id === def) || {}).label || def : 'noch keine') + '. Gespeichert im Browser.',
+      dlReview: () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify({ schema: 'kfb.clay-stage-review/1', at: new Date().toISOString(), review: rv }, null, 2)], { type: 'application/json' })); a.download = 'clay-stage-r1-review.json'; a.click(); },
+      donorInfo: !s ? '–' : `CLAY-01 · ${ok('clay01')} · Spec ${ok('clay01Spec')}\nInhalt (eigener Provider, kaleido-cuts):\n` + (s.donor.pool || []).map(p => '✓ ' + p.replace('media/', '')).join('\n') + ((s.donor.skipped || []).length ? '\nausgelassen: ' + s.donor.skipped.map(x => x.path.split('/').pop() + ' (' + x.why + ')').join(', ') : ''),
+      diag: !s ? '–' : [`fps ${s.fps ?? '–'} · ${s.calls} Draw · ${Math.round(s.tris / 1000)}k △ · Start ${s.bootMs} ms${isS ? ' (Billboards pausiert)' : ''}`,
+        `Quellen: CLAY-01 ${ok('clay01')} · world-context ${ok('worldContext')} · world-palettes ${ok('worldPalettes')} · Quote-Pool ${ok('quotePool')} · Deck-Karten ${ok('deckCards')} · H14 ${ok('h14')} · Schrift ${ok('font')}`,
+        s.pool ? `Pool @${s.pool.pin.slice(0, 7)}: ${s.pool.mapped} mapped · ${s.pool.reserve} reserve · Registry ${s.pool.registry} Decks` : 'Pool –',
+        `Fläche (${S.family}): ${s.faceCheck.w} × ${s.faceCheck.h} m · ${s.faceCheck.mat} · toneMapped ${s.faceCheck.toneMapped} · Canvas ${s.faceCheck.canvas.join('×')}`,
+        'Familien: ' + s.fams.map(f => f.n + ' ' + Math.round(f.tris / 1000) + 'k △ · ' + f.bulbs + ' Birnen').join(' | '),
+        `Bühne: ${ss.state || 'nicht gestartet'}${ss.err ? ' · ' + ss.err : ''}`,
+        s.h13Note].join('\n'),
+      fsOpen: st.fs, fsFrame: pal ? pal.frame : '#c2412c',
+      fsBtns: [
+        { label: 'EXIT', run: () => this.closeFs(), bg: '#f3ead3', fg: '#1f1a14', off: false, op: 1 },
+        { label: st.muted ? 'UNMUTE' : 'MUTE', run: () => this.setState({ muted: !st.muted }), bg: st.muted ? (pal ? pal.accent : '#e9c14a') : '#f3ead3', fg: '#1f1a14', off: false, op: 1 },
+        { label: 'READ-ALONG', run: () => set({ readAlong: !S.readAlong }), bg: S.readAlong ? (pal ? pal.accent : '#e9c14a') : '#f3ead3', fg: '#1f1a14', off: false, op: 1 },
+        { label: 'BRAIN FOOD', run: () => { const b = api && api.brainFood(); if (b) window.open(b.url, '_blank', 'noopener'); }, bg: pal ? pal.frame : '#c2412c', fg: '#f3ead3', off: !phaseOk, op: phaseOk ? 1 : 0.35 }
+      ],
+      fsLine: s ? `${s.quote ? s.quote.author + ' · ' : ''}${s.phase || ''} · ${Math.round(s.t / 100) / 10} s von ${Math.round(s.total / 100) / 10} s · gleiche Zeitleiste wie die Tafel${st.muted ? ' · stumm' : ''}` : ''
+    };
+  }
+}
+
+</script>
+</body>
+</html>
