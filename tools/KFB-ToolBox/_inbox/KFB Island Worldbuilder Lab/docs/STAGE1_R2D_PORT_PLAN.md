@@ -53,6 +53,8 @@ Gebäude-Katalog K2 und Straßenbett laufen darauf. Das alte Gelände bleibt nur
 | `pond`, `creek` | `spec.terrain.pond`; Bach später im Editor |
 | Böschung | `lerp(h, roadY − 0.35, 1 − sstep(hw, hw + W, d))` mit **W = max(7, 1,5 · |h − roadY|)**, rund (Recherche P2) |
 
+**Für den späteren Gott-Modus** (`SPEC_WORLDBUILDER_GODMODE_VISION_R1.md` §6): Die Insel wird als **Rezept** gespeichert, nicht als Mesh. Dazu gehören Archetyp, Größe, Seed, Umriss, Palette als Rollen, Terrain-Edits, Anker am Rand sowie Bewohner und 0…n Decks (`kfb.island-config/1`). Das Format lehnt sich an `kfb.r2d.island-recipe/0` an; die Migration bestehender Welten schreibt dieses Format.
+
 ## 3 · Adapter: Was die anderen Module weiter aufrufen
 
 `IslandField` bleibt als Fassade erhalten, damit Environment, Natur, Straßenbett und Probes ohne Änderung laufen. Gezählte Aufrufe: `height` 11×, `base` 3×, `bed` 3×, `inOpen` 2×, `free` 1×, `isClear` (Environment), `pathDist` 2×, `addEmbed`/`clearEmbeds` (main, probe2).

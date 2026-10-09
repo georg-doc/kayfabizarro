@@ -164,7 +164,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 
 | Stufe | Ergebnis |
 | --- | --- |
-| **3b Dystopia + Utopia** | beide Satelliten nach Deck und Vorlage (Demon Lord mit Orc-Band; CEO mit Robots), Dungeon-Mauertunnel, Rennstücke dazwischen (Looping, Sprung, Steilkurve), Rand-Rhythmus, Billboard je Insel; Four-Island A/B wird hier gewählt |
+| **3b Dystopia + Utopia** | beide Satelliten nach Deck und Vorlage (Demon Lord mit Orc-Band; CEO mit Robots), Dungeon-Mauertunnel, Rennstücke dazwischen (Looping, Sprung, Steilkurve), Rand-Rhythmus, Billboard je Insel |
 | **4b Gefühl komplett** | Flugmodus (Jetpack, VFX), HUD Fliegen, mindestens 3 sprechende Bewohner plus Lorekeeper, Social Call, Licht und Himmel je Insel, Performance-Abnahme |
 
 **Jede Stufe:** harte Regeln automatisch → blinder Kritiker (`QA_CRITIC_PROTOCOL_R1.md`) → Georg. Stopp nach 2 erfolglosen Reparaturen, ein Kriterium unter 4 heißt zurück zum Konzept.
@@ -220,6 +220,13 @@ Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
 
   Je Welt wird ein Deck zugeordnet. Die Inventur der neuen Unity-Pakete läuft.
 - **Landmarken-Familie** nach dem Golden Sample Königsturm (Blender MCP, Cartoon-Deformer, OSM-Linie): Kölner Dom, Museen, Vatikan, Eiffelturm.
+- **Worldbuilder bzw. Gott-Modus** (Georg 10.10., Perspektive): `docs/SPEC_WORLDBUILDER_GODMODE_VISION_R1.md`.
+  - **Bausteine:** Insel-Archetypen in zwei Größen (See mit Ring und Bootssteg bzw. Badewannen-Boot, Vulkan mit Tiny-Skies-VFX, Berg, Plateau, Terrassen, Themen-Inseln), Erweitern nach oben, unten und zur Seite, Terrain-Transformer.
+  - **Farbe:** Paletten würfeln oder aus Grundfarben ableiten, immer als Rollen.
+  - **Track-Editor:** Inseln im Raum platzieren, Anschlussstück wählen, Track Core berechnet den Anschluss auch durch einen Looping hindurch.
+  - **Reisen:** Portale bzw. Taschenportal (WoW-Logik).
+  - **Insel-Konfiguration** als gemeinsamer Seed mit Form, Farbe, Gebäuden, Bewohnern und **0…n Card-Decks** je Insel (Georg 10.10.).
+  - **MVP-1 legt dafür die Grundlage:** Inseln als Rezept bzw. Konfiguration, Anker am Rand, Farbe nur über Rollen.
 - **Infrastruktur nach dem MVP** (Georg 09.10.): gemeinsamer Zugriff von ChatGPT bzw. WSA, Blender-MCP-Coworker, Claude Code und Claude Design ohne Behelfslösungen.
   - Klar getrennt: öffentliche Inhalte (Regelseiten, statische Seiten, Promotion, PDF-Decks, die im Spiel gezeigt werden) und privater Code bzw. lizenzierte Assets (privates Repo).
   - Dazu feste Workflows und Schnittstellen statt Hin- und Herkopieren.
@@ -237,7 +244,7 @@ Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
 - **Meilensteine:** MVP-1 „Town + Protopia“ zuerst, dann MVP-2 (Georg 10.10.).
 - **Inselgrößen:** Town ≈ 40 × 40 MC, Satelliten 20–28 MC; nach dem ersten Bau aus der Spielkamera nachjustieren (Georg 10.10.).
 - **Sitz-Schicht:** Owner ist das Lab über die Figuren-Karte (Sitzpunkte an Figur bzw. Fahrzeug); Joyride bleibt Donor für die Fahrphysik (Georg 10.10.).
-- **Four-Island A/B:** Entscheidung erst bei den Satelliten in Stufe 3b (Georg 10.10.).
+- **Four-Island-A/B-Gate:** erledigt bzw. ersetzt durch diesen Masterplan (Georg 10.10.). Falls die Varianten-Bilder existieren, dienen sie nur als Stimmungsreferenz für die Satelliten. Aufträge, die „nach dem A/B-Gate“ verlangen (z. B. Voice-Abnahme), hängen jetzt am Masterplan.
 - **Sprenkel:** S1 (`src/clay/kfb-speckle.ts`) ersetzt `kfbLayer`, TUNE später.
 - **Landmarke KFB Town:** Big Castle aus „Hyper Casual Cartoon Castles“ (× 2,2, 3 Zerstörungsstufen, Palettentausch); später schiefer Königsturm als Golden Sample (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`).
 - **Bewohner:** Cast-Serie mit Multiversum-Logik, reisende Figuren mit Kostüm je Welt.
