@@ -1,0 +1,144 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "clown_juggle_j4",
+ "date": "2026-10-09",
+ "issue": 381,
+ "apply": "ADDITIVE · NOT APPLIED · tuning pass after Georg 2026-10-09 (\"einbaufähig\"); waiting for Georg's look. J3 (cascade3_b) stays on the branch.",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_clown_juggle_j4.glb"
+ ],
+ "libraryFiles": {
+  "Rig_Medium": {
+   "path": "libs/Rig_Medium/KFB_Motion_clown_juggle_j4.glb",
+   "bytes": 212928,
+   "sha256": "19ed5a872ffecec2e4559e105250618164edc1d6f34be6e399315732d1af1d25"
+  }
+ },
+ "dataFiles": {
+  "pin": {
+   "path": "data/clown_juggle_j4.prop_tracks.pin.json",
+   "bytes": 69835,
+   "sha256": "072d1dc777956b813045d488146a4a0a028189c89f249b2337e1e3798d6affe4"
+  },
+  "donut": {
+   "path": "data/clown_juggle_j4.prop_tracks.donut.json",
+   "bytes": 69811,
+   "sha256": "4b4c1079f2be9bbd163dcbc22a0fe59a30446ce754e2b664f182adc3b732b89f"
+  },
+  "candy": {
+   "path": "data/clown_juggle_j4.prop_tracks.candy.json",
+   "bytes": 69661,
+   "sha256": "a913a9940c427df7d75a17262c143fb1a258804b20d3ffc3e55a7a9a127976d8"
+  }
+ },
+ "space": "glTF, Y up, actor faces +Z, actor root at the origin (stand the root on the podium top, 1.0); KayKit units",
+ "skeleton": "KayKit Rig_Medium (identical to the forge template); built from a pose dump, round trip max 0.0084 cm on all four clips",
+ "stateMachine": {
+  "states": [
+   "kfb_clown_juggle_cascade3_c",
+   "kfb_clown_juggle_stop",
+   "kfb_clown_juggle_talk",
+   "kfb_clown_juggle_resume"
+  ],
+  "flow": "juggle (loop) -> at juggle frame 0, if a line is due: stop -> talk (loop while the Chatterbox line / bad joke plays; leave at talk frame 0) -> resume -> juggle frame 0",
+  "talkWindows": {
+   "kfb_clown_juggle_stop": [
+    [
+     18,
+     47
+    ]
+   ],
+   "kfb_clown_juggle_talk": [
+    [
+     0,
+     95
+    ]
+   ],
+   "kfb_clown_juggle_resume": [],
+   "kfb_clown_juggle_cascade3_c": []
+  },
+  "note": "every join is pose-continuous (bone jump at a join <= a normal frame step); prop tracks are continuous too, so no blending is needed"
+ },
+ "clips": [
+  {
+   "id": "kfb_clown_juggle_cascade3_c",
+   "label_de": "Clown jongliert (3er-Kaskade, J4)",
+   "frames": 96,
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none",
+   "supersedes": "kfb_clown_juggle_cascade3_b (J3) for the MVP slice once Georg approves"
+  },
+  {
+   "id": "kfb_clown_juggle_stop",
+   "label_de": "Clown fängt alles und hält an",
+   "frames": 48,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none"
+  },
+  {
+   "id": "kfb_clown_juggle_talk",
+   "label_de": "Clown spricht zum Publikum (Keulen in der Hand)",
+   "frames": 96,
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "none"
+  },
+  {
+   "id": "kfb_clown_juggle_resume",
+   "label_de": "Clown setzt wieder ein",
+   "frames": 120,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none"
+  }
+ ],
+ "stage": {
+  "prop": "KayKit_Mystery_Monthly_Series_4/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+  "scale": 1.0,
+  "actorRootY": 1.0
+ },
+ "timing": {
+  "beat": 16,
+  "dwell": 22,
+  "flight": 26,
+  "apex": 1.85,
+  "gravityUnitsPerFrame2": 0.0219,
+  "arcs": "three smooth segments: out over 12 % of the flight, cross above the head 30-70 %, in over the last 12 %",
+  "halfWidthRising": 1.4,
+  "halfWidthFalling": 1.7,
+  "spinEase": 0.9,
+  "pinGrip": "0.27 down the handle (held at the knob)"
+ },
+ "propKinds": {
+  "pin": "KayKit juggling_pin_red / yellow / blue (Clown set), one turn per throw",
+  "donut": "Tiny Treats Baked Goods (Isa Lousberg, CC0): donut_pink, donut_chocolate, donut",
+  "candy": "KayKit Bits Bundle 1, Halloween Bits (Kay Lousberg, CC0): candy_pink_A, candy_orange_A, candy_blue_B; tracks already include the axis turn (asset X is the tumble axis)"
+ },
+ "eyes": {
+  "rig": "KFB EyeRig v6 batch path",
+  "profile": "clown AUTO_CANDIDATE, eye-rig-medium.batch-1.json (not reviewed by Georg)",
+  "dx": 0.295,
+  "dy": -0.29,
+  "ring": 0.25,
+  "inset": 1.1834,
+  "pupil": 0.34,
+  "converge": 0.18,
+  "base": "#f7f9f9",
+  "review": "previews/CLOWN_EYES_profile_review.jpg"
+ },
+ "knownIssues": [
+  "arc reads a little \"carried\": the side legs rise almost vertically and the crossing is level (critic tuning)",
+  "crossing clubs overlap on screen for about 3 frames per throw (3D gap >= 0.021)",
+  "held donuts lie flat against the belly/thigh; KayKit sweets have open wrapper cones that read as bobbins at a distance",
+  "ta-da opens the arms level, not up; resume wind-up closes the 45 deg fan in the right hand",
+  "release and catch frames: a club outline touches the head outline on screen in the 3/4 cameras for 1-3 frames per throw"
+ ],
+ "attribution": {
+  "credits": [
+   "KayKit (Kay Lousberg) · CC0 · Clown, juggling pins, circus podium, Rig_Medium Idle_A, Halloween Bits sweets",
+   "Tiny Treats (Isa Lousberg) · CC0 · donuts"
+  ]
+ }
+}
