@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-10-09 · **crash-safe single-entry recovery**.
 
-**LATEST EXECUTOR OVERRIDE (2026-10-09):** Claude Design preferred for source-faithful visual A/B/C; Claude Code/ChatGPT Work only as a sequential technical fallback. See `CLAUDE_DESIGN_ROUTE_R1.md`. Original visual evidence remains 0/3, gate unchanged, no executor started.  
+**CURRENT PRODUCT OVERRIDE · 2026-10-09 · MAKERSPACE v0.6:** The upstream 3D AI classroom was chiefly a chat/tutor shell and its 31-MB original GLB is NOT required for the Academy. Reuse native KFB Academy RTT lessons + God Mode/Material/Rig/Asset/Backpack owner operations. New research: `MAKERSPACE_INTERACTIVE_LEARNING_CRAFTING_V06.md`, `MAKERSPACE_EMBEDDED_EXAMPLES_DONOR_AUDIT_R1.md`, `MAKERSPACE_INTERACTIVE_RESEARCH_TEST_REPORT_R1.md`. New single-executor visual brief: `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md`. Same named gate `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`, **re-scoped to A native KFB RTT interactive lesson; B original external functional FX/Shader donor; C current KFB Billboard + source-verified prop**. Prior large-classroom A requirement superseded. Claude Design preferred; Claude Code/Work sequential proof fallback only. No executor started. No runtime/public acceptance.\n\n**HISTORICAL EXECUTOR OVERRIDE (2026-10-09):** Claude Design preferred for source-faithful visual A/B/C; Claude Code/ChatGPT Work only as a sequential technical fallback. See `CLAUDE_DESIGN_ROUTE_R1.md`. Original visual evidence remains 0/3, gate unchanged, no executor started.  
 **Owner:** KFB AI Game Art Academy / Maker Space, curriculum/tutor/domain-adapter planning and isolated evidence only.  
 **Repo:** `georg-doc/kayfabizarro`. **Branch:** `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09`. **PR:** none.  
 **Last verified work/evidence commit before this Recovery file:** `2c16f8497b0a93e5f0b9543076eb84c9e780b759`. **DO NOT ASSUME this is still HEAD; fetch the exact branch at restart.**  
@@ -39,13 +39,13 @@
 
 ## Who acts next? Exactly one gate / executor
 
-**Next preferred executor: Claude Design for exact original-source visual proof.** If Claude Design cannot load/test the real unmodified sources, assign only the smallest missing technical proof to one Claude Code or ChatGPT Work executor, sequentially, not in parallel. This preference does not start any executor. Read `CLAUDE_DESIGN_ROUTE_R1.md` for source conditions.
+**Next preferred executor: Claude Design for functional A/B/C source isolation and the reduced Maker Space visual study, under `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md`.** If exact source input/renderer proof fails in Claude Design, one Claude Code or ChatGPT Work technical executor tests only that seam sequentially. No executor has started.
 
-**Its precise task:** follow `WORK_VISUAL_PROOF_START_BRIEF.md`, render A original external 3D Classroom, B untouched current KFB Drag lesson, C current source-backed KFB Billboard receiver in **three independent captures**. Save source/renderer/browser/interaction proof, no replacements or mixed scene before source isolation. Return evidence and KEEP/ADAPT/REJECT plus exact current head.
+**Its precise task:** follow `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md` and source-isolate A original current KFB Drag + Instancing RTT lesson, B one original working particle or shader donor (`three.quarks` preferred), C current source-backed KFB MediaSurface + registered prop. Save actual visual screenshots, real pointer/effect stats and source refs, then (only after source proof) a proposal for one tutor, one display, three maker desks and one workbench. The 31-MB 3D chat classroom is optional historic reference, not a blocker.
 
 **Georg acts next:** nothing required yet; later only a genuine product decision on actual visual proof. No requirement to re-upload old Academy files or explain vision again.
 
-**After that proof:** the authorized Academy owner can choose one bounded integrated lesson on the existing MediaSurface; it is not part of the current source-proof task.
+**After that proof:** the owning World/MediaSurface/Asset/Rig/Material teams may consider one separately authorized bounded functional lesson on an existing surface. No World R5 authorization implied.
 
 ## Timeout/UNKNOWN rules
 
