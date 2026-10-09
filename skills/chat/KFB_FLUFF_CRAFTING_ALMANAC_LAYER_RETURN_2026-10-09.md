@@ -1,4 +1,4 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.4
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.5
 > **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
 >
 > Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
@@ -12,6 +12,22 @@
 > **Real checks:** v0.4 file written, exact GitHub branch/file fetched, **22/22 static textual contract checks PASS**. **0** source-isolated donor visuals, **0** builds, **0** real Game/Academy integrations, **0** browser tests, **0** Stage/Site tests. No PR, merge, Live or current Drive Loop / R4 status change. Public KFB/MED GPT Site migration remains explicitly **PARKED**.
 >
 > **One next gate for this Fluff outcome (deferred until playable MVP + explicit Georg instruction):** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`. The Academy's separate unchanged visual gate is its own owner's work, not a newly added Fluff gate.
+
+---
+
+> **CURRENT RETURN UPDATE · v0.5 · 2026-10-09 · GENESIS CONSTELLATION / UFO / COSMIC ISLANDS**
+>
+> Added [KFB_GENESIS_CONSTELLATION_UFO_COSMIC_ISLANDS_V0_5_2026-10-09.md](./KFB_GENESIS_CONSTELLATION_UFO_COSMIC_ISLANDS_V0_5_2026-10-09.md) as strictly **POST-MVP author ideation** to the same Fluff planning owner. Concept milestone commit `cce33e06a8a7c5cc43c1f33aae9becda09ecbabd`, read-back blob `e9a954db836a2bbc41c0c440cef0708fcaaa5e90` (25,323 chars).
+>
+> **Narrative:** five interconnected deep-time figures Lorekeeper, Witch/Alchemist, Caveman, Lord Hunky and Lady Dory; Galactic Academy stays non-personified kafkaesque institutional power. Existing Fluff Incident framing remains, while possible Caveman responsibility, timelessness, character motives and exact timeline are **OPEN/PROPOSED**, not retroactively canonized. Lorekeeper/Almanac/Card time capsules, Witch Cauldron material transformation and Hunky/Dory UFO meta-travel are three independently accessible, mutually informative stations. Town Caveman Mine and Protopia Lorekeeper remain in their current world roles.
+>
+> **Verified donors (source status):** `tools/resident_atlas_s6/data/cast.js` contains candidate-only Rig_Medium Witch with real KayKit `Witch.glb`, `Cauldron.gltf`, mortar/pestle/potion station; genuine Rühr-/Bubbling animation is **absent**. Caveman campfire and Lorekeeper lectern/Staff are real candidate scene recipes, not new approved renders. Existing UFO r2 isolated Lab `RETURN.md` + `EVENT_CONTRACT.json` supports seeded Tractor Beam (Rick's UFO donor + lightweight Kenney alternatives, VFX only), but **no accepted bespoke Hunky/Dory cockpit/rig/World transfer**. Actual spaceship model, licensing and visible two-character dome remain to verify. Existing Dungeon S13.2/Portal/Instance/Academy v0.8 WorldRecipe are planned consumers, not a second nested physics runtime.
+>
+> **Optional future expansion:** nonmandatory, safe-return UFO abduction intro; impossible-interior ship with Hunky's machine room, Dory's garden, doors to finite holographic historical snapshots; Cheese Moon, cosmic Track Core road, future Zero-G/Parabolic Flight profile and universe-edge restaurant with same touring Orc Band/Disco and Audio owner. Same Fluff wallet and authorized `deckId+cardNumber` for Witch/Backpack/UFO replicator. Restrict secret/censored decks to actual licensed source PDF/JSON, preserve real Almanac receipts; chronology mutation deferred. Three short non-gated example loops document Genesis clue / abduct-tour / cosmic performance.
+>
+> **Actual evidence:** current GitHub addendum and branch read-back PASS; **24/24 static content/owner assertions PASS** after one check corrected its exact literal phrase case. No donor-isolated render, no gameplay tests, no new animations/rig/UFO/cosmic world, no Stage, Site, PR, merge or Live. R4 NO MVP and active Lab Drive Loop remain unaffected; Academy's independent visual gate unchanged. Public KFB/MED GPT Site side quest remains **PARKED**.
+>
+> **Exactly one unchanged next Fluff gate:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` — only once playable MVP and Georg's explicit authority exist. After that source audit, choose **one** small cauldron/Card or UFO room/return proof, not multiple simultaneous new worlds.
 
 ---
 
