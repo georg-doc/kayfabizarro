@@ -3,7 +3,7 @@
 **Status:** IMPLEMENTATION CANDIDATE · deterministic Registry + reviewable automation + neutral consumer handoff + private metadata projection
 **Owner:** deterministic repo indexer + `Refresh KFB Asset Registry` GitHub Action  
 **Asset source of truth:** tracked files in `georg-doc/kayfabizarro`  
-**Deck owner:** existing `media/kfb/kfb-index.json` (`kfb-deck-registry/v2`)  
+**Deck owner:** existing `media/kfb/index.json`
 **Not an owner:** chat memory, the historical `media/3D_Assets/CATALOG/`, manually exported library JSON files, generated registry output, or KFB Asset Librarian recommendations.
 
 ## AR1 · flat inventory
@@ -27,9 +27,9 @@ AR2 adds mechanically defensible relationships only:
 
 ## AR3 · small explicit deck adapter
 
-AR3 does not create a second deck owner. `media/kfb/kfb-index.json` remains authoritative for explicit deck membership, filenames, `cardGrid`, sets and rules.
+AR3 does not create a second deck owner. `media/kfb/index.json` remains authoritative for explicit deck membership, filenames, `cardGrid`, sets and rules.
 
-AR3 only projects that existing contract into `decks/index.json` + `decks/<deck-id>.json` and verifies explicitly referenced PDF/card-JSON files. Unregistered PDFs are not silently grouped from filenames.
+AR3 projects that contract into `decks/index.json`, `decks/<deck-id>.json`, `decks/cards.jsonl`, `decks/town.json` and `decks/qa-report.json`. It measures the referenced PDF itself, normalizes the three observed card-JSON schemas, and fails closed on unsafe card/page mappings. Unregistered PDFs are not silently grouped from filenames.
 
 ## AR4 · delta, validation, GitHub Action
 
@@ -150,6 +150,9 @@ registry/assets/v1/
 │   └── <pack-id>.json
 └── decks/
     ├── index.json
+    ├── cards.jsonl
+    ├── town.json
+    ├── qa-report.json
     └── <deck-id>.json
 ```
 
@@ -162,7 +165,7 @@ AR5 passed the full repository workflow on GitHub Actions:
 - rig sidecar validator: **OK**;
 - Librarian query + `combat-arena` candidate handoff smoke test: **OK**.
 
-Current real inventory remains 12,767 assets: 6,442 images, 4,642 models and 1,683 audio files across 99 structural packs plus four explicit decks.
+Current real inventory remains 12,767 assets: 6,442 images, 4,642 models and 1,683 audio files across 99 structural packs. The deck projection contains 130 explicit decks and 6,985 card rows.
 
 Rig sidecar across all 4,642 models:
 
@@ -188,7 +191,7 @@ Mechanical facts come from Git/file structure. Explicit model references come fr
 
 The manual `kfb-asset-library (8).json` export reported 12,767 loadable assets: 6,442 images, 4,642 models and 1,683 audio files. `KayKit_Mystery_Series6` contained 826 entries in that export (586 models + 240 images). The export is test evidence only; GitHub state overrides it.
 
-The current real Farmers control `.../gltf/lettuce.gltf` explicitly references `farmer_texture_A.png` and `lettuce.bin`; both are tracked beside it. The current `media/kfb` tree also contains the exact PDF + JSON pairs referenced by all four explicit deck entries in `kfb-index.json`.
+The current real Farmers control `.../gltf/lettuce.gltf` explicitly references `farmer_texture_A.png` and `lettuce.bin`; both are tracked beside it. The current `media/kfb` tree contains the source material referenced by the 130 explicit deck records in `media/kfb/index.json`; source corrections and mapping exceptions are recorded in `decks/qa-report.json`.
 
 ## Bot-PR prerequisite
 

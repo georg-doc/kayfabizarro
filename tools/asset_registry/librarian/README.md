@@ -1,4 +1,4 @@
-# KFB Asset Librarian v1.6
+# KFB Asset Librarian v1.8 · Deck Library R1
 
 **Mode:** static catalog/browser with browser-local intake preparation; no LLM/API key required
 **Asset / Registry SSOT:** `georg-doc/kayfabizarro`  
@@ -6,6 +6,19 @@
 **Legacy Cloudflare mirror:** `https://kayfabizarro.pages.dev/asset-librarian/` · stale/secondary, not canonical
 
 The Librarian is a browser consumer of the generated Asset Registry and Production Resource Registry. It does **not** create a competing asset index or write back to assets, rigs, actors, motions or consumer runtimes.
+
+## Deck Library · v1.8
+
+The `Decks` tab reads the generated projection of the canonical `media/kfb/index.json` owner. It exposes all 130 tracked deck records and 6,985 card rows without changing the source PDFs or source JSON.
+
+- browse and filter KFB/MED decks by title, tag, set and deck type;
+- inspect exact source PDF/JSON paths, measured PDF page count and source-schema normalization;
+- preview PDF pages with pdf.js;
+- copy `kfb.card-ref/1` references for verified card/page mappings;
+- open the v5 Deck Viewer with stable `?deck=&card=` or `?deck=&page=` deep links;
+- export candidate-only deck assignments through the existing handoff boundary.
+
+When source card metadata does not reconcile safely with the measured PDF, the deck remains searchable and its full pages remain viewable, but card crops are disabled and the mapping is labeled `unverified`.
 
 ## Registry modes
 
