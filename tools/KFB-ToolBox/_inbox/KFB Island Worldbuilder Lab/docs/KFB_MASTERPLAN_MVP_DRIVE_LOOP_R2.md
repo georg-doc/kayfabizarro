@@ -1,6 +1,6 @@
 # KFB Masterplan · MVP-Slice „Drive Loop“ R2
 
-Status: **PLAN R2 · Stand 2026-10-09** · löst `MVP_DRIVE_LOOP_R1_PLAN.md` ab
+Status: **PLAN R2.1 · ABGESCHLOSSEN 2026-10-10 (Georg)** · löst `MVP_DRIVE_LOOP_R1_PLAN.md` ab · Bau ab Georgs Reset durch Claude Code
 Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später läuft es als GPT-Site, gebaut per Work-Job. GitHub `georg-doc/kayfabizarro` bleibt der SSOT-Hub.
 
 **Was gegenüber R1 neu ist:**
@@ -29,6 +29,8 @@ Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später l
 7. **Maßstab K2.** Es gibt keine Meter. Gemessen wird in H (Medium-Figur = 3,64 Lab-Einheiten) und MacroCell (MC = 6,4 = ein Dungeon-Modul bzw. ein Stockwerk). Inselstrecken laufen mit Rennprofil × 1,46 (RACE_W).
 
 ## 1 · Ziel in einem Satz
+
+**Erstes Ziel MVP-1:** KFB Town mit Ringstraße plus Protopia mit dem Lorekeeper, spielbar (§5). Das Gesamtziel MVP-2:
 
 Georg fährt mit einem Retro-Auto oder mit FrizzleBob im Cabrio auf einer Ringstraße um die große Insel **KFB Town**. Über Auf- und Abfahrten in unterschiedlichen Höhen erreicht er drei Satelliten-Inseln, **Dystopia, Utopia und Protopia**. Die Verbindungen haben Rennstrecken-Stücke wie Looping, Rampensprung und Tunnel. Mindestens drei Bewohner sprechen. Das Audio-Bett läuft, ein Flugmodus ist dabei, und der Worldbuilder-Modus bleibt erhalten.
 
@@ -127,12 +129,13 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 
 | Baustein | Besitzer | Quelle |
 | --- | --- | --- |
-| Inselgelände (Höhe, Masken, `aTW`-Gewichte, Polarnetz, Farbkarte, `kfbLayer`, Viertelkreis-Kante, Scholle v7) | Lab | Claude Design Island Kit R2, BAUANLEITUNG |
-| Sprenkelübergang `kfbBlend`/`kfbLayer` | Joyride J14 (`road-markings.m1.js`) | wird eingebunden, nicht nachgebaut |
+| Inselgelände (Höhe, Masken, `aTW`-Gewichte, Polarnetz, Farbkarte, Sprenkel S1, Viertelkreis-Kante, Scholle v7) | Lab | Claude Design Island Kit R2, BAUANLEITUNG; `STAGE1_R2D_PORT_PLAN.md` |
+| Sprenkelübergang S1 `kfbSpeckleLayer` | Lab (`src/clay/kfb-speckle.ts`) | ersetzt `kfbLayer` (Joyride J14); RKIT nutzt denselben Code |
 | Wasser | Lab (fluid.js F0–F2) | Island Kit R2 |
 | Straßen, Übergänge, Brücken, Rennstücke, Tunnel, Rand-Rhythmus | RKIT / Track Core | Bauweise-Blatt (Abnahme läuft), `kfb.road-bed/1` |
 | Mauerwerk-Familie A (Knetstein für Bord, Mauer, Treppe, Plateau, Brücke, Pyramide, Brick-Fish) | RKIT (Blender) | Bauweise-Blatt |
-| Fahren, Sitz, Kamera | Joyride (Donor) + gemeinsames Kamera-Modul | J17 / J10, Seed-World-Kamera-Regel |
+| Fahren, Kamera | Joyride (Donor) + gemeinsames Kamera-Modul | J17 / J10, Seed-World-Kamera-Regel |
+| Sitz (Figur in Fahrzeug, auf Stuhl bzw. Bank) | Lab über die Figuren-Karte | `SPEC_CHARACTER_INTEGRITY_R1.md` |
 | Natur, Erdung, Biom-Vorlagen | Environment | Regelwerk Environment, Erzählraster, Demo-Szenen |
 | Gebäude, Landmarken | Lab-Katalog (K2) | Maßstab-Audit, Tür-Regel |
 | Bewohner, Animationen | Blender-Coworker (Mac mini) | Resident Atlas, Motion Forge |
@@ -143,15 +146,50 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 | Bühne + Vorhang | KFB Clay Stage R2 (`clay-look.js` kleidet den Vorhang-Kern ein) | Georg 09.10.: „passt so mit TUNE für später“; Character Select bzw. Übergang |
 | Assets (Intake, Suche) | Asset Librarian v10 (GPT-Site) | Intake → Handoff → private Inbox → Live-Refresh, ohne Work-Lauf |
 
-## 5 · Stufen und Abnahmen
+## 5 · Meilensteine, Stufen und Abnahmen
+
+**Georg, 10.10.:** zuerst ein Zwischenziel. **MVP-1** ist früh spielbar, **MVP-2** vervollständigt den Loop.
+
+### MVP-1 · „Town + Protopia“ (erstes spielbares Ziel)
 
 | Stufe | Ergebnis | Harte Regeln (Auszug) | Georg sieht |
 | --- | --- | --- | --- |
-| **0 Konzept-Gates** (läuft) | Bauweise-Blatt RKIT freigegeben; Sprenkel-Referenz geklärt; Biom-Vorlagen aus den Demo-Szenen; Etherington-Regeln in Zahlen | §00 und §01 je Eintrag; 3D-Render mit Profilschnitt; Vergleich mit Referenzbild aus Spielkamera | Blätter, PASS/TUNE/FAIL |
-| **1 Grundlage** | R2D v0 + Scholle v7 im Lab auf three r186, eine Insel mit Viertelkreis-Kante, Sprenkel, Maßstab K2, Gebäude-Katalog umgestellt | keine Verläufe; Tür ≥ 1,15 H; Budget laut Profiler | eine Insel aus 4 Kameras |
-| **2 Ring** | KFB Town in K2-Größe, Ringstraße an der Kante, eine Auffahrt mit Steinbogen-Brücke; Fahren mit Retro-Auto und Cabrio-FB ohne Drehfehler; Kamera nach §3b | Straßenbett T1/T2 (Schürze ≥ 0,3, Gelände an hw ≥ 0,05 unter Oberkante, kein Spalt), Steigung ≤ 8 %, Kamera-Regeln | eine Runde um Town + Auffahrt, Video |
-| **3 Loop** | Drei Satelliten nach Deck + Vorlage, Verbindungen mit Rennstücken, Rand-Rhythmus, Showcase-Tunnel, Landmarke + Billboard je Insel | Katalog vollständig, nur Bord/Bande am Rand, Erdung je Objektart | komplette Fahrt durch alle 4 Inseln |
-| **4 Klang, Stimmen, Gefühl** | Audio-Bett, HUD je Modus, Flugmodus mit VFX, mindestens 3 sprechende Bewohner (Demon Lord, Robot One, Farmer) plus der Lorekeeper als Mentor bzw. Guide (Protopia, Eremiten-Hügel), ein Social Call, Licht und Himmel, Performance, Worldbuilder intakt | Bubble und Text auch stumm; Ducking; kein zweiter AudioContext; Frame-Budget; Figuren-Mindestprüfung (Augen, Props in der Hand, Sitzen, Gelenkgrenzen) | Gesamterlebnis |
+| **0 Konzept-Gates** ✓ | Bauweise-Blatt RKIT PASS, Sprenkel S1 angenommen, Erdung und Komposition R2, Kritiker-Protokoll, Bauplan Stufe 1 | – | erledigt |
+| **1 Grundlage** | R2D v0 + Scholle v7 im Lab auf three r186 (`STAGE1_R2D_PORT_PLAN.md`): eine Insel mit Viertelkreis-Kante, Sprenkel S1, Maßstab K2, Gebäude-Katalog K2 | Plan §6; Kritiker-Satz „Insel“ G1–G7 | eine Insel aus 5 Kameras |
+| **2 Town + Ring** | KFB Town (≈ 40 × 40 MC):<br>• Plateau mit Ton-Treppe;<br>• Big Castle (× 2,2) mit Paladin oben und Dark Knight am Tor;<br>• Markt mit Clown (Jonglage J3) und Farmersfrau;<br>• Caveman-Mine in der Plateau-Rückseite;<br>• Ringstraße an der Kante (Bord bzw. Bande).<br>Dazu Fahren mit Retro-Auto und Cabrio-FB ohne Drehfehler (Sitz über die Figuren-Karte) und die Kamera nach §3b | T1/T2 (Schürze ≥ 0,3, kein Spalt), Steigung ≤ 8 %, Kamera: 0 Frames im Mesh, Figur immer sichtbar; Figuren-Mindestprüfung | eine Runde um Town, Video |
+| **3a Protopia** | Protopia als Berg-Insel (≈ 20–28 MC): Schlucht, Lichtung, Plateau. Lorekeeper auf dem Eremiten-Hügel mit Schreibpult, Farmer. Anbindung über Steinbogen-Brücke bzw. Auffahrt, ein Showcase-Tunnel, Billboard | Erdung je Objektart (E1–E7), nur Bord bzw. Bande am Rand | Fahrt Town → Protopia |
+| **4a Stimmen + Gefühl (Basis)** | Lorekeeper und ein Town-Bewohner sprechen (ChatterBox + Voice), ein Golden-Journey-Auftrag, HUD Gehen und Fahren (Knet), Audio-Bett Basis, Bühne bzw. Vorhang als Character Select | Bubble auch stumm, ein AudioContext, Frame-Budget MacBook 30–60 fps | **MVP-1 spielen** |
+
+### MVP-2 · „Drive Loop komplett“
+
+| Stufe | Ergebnis |
+| --- | --- |
+| **3b Dystopia + Utopia** | beide Satelliten nach Deck und Vorlage (Demon Lord mit Orc-Band; CEO mit Robots), Dungeon-Mauertunnel, Rennstücke dazwischen (Looping, Sprung, Steilkurve), Rand-Rhythmus, Billboard je Insel; Four-Island A/B wird hier gewählt |
+| **4b Gefühl komplett** | Flugmodus (Jetpack, VFX), HUD Fliegen, mindestens 3 sprechende Bewohner plus Lorekeeper, Social Call, Licht und Himmel je Insel, Performance-Abnahme |
+
+**Jede Stufe:** harte Regeln automatisch → blinder Kritiker (`QA_CRITIC_PROTOCOL_R1.md`) → Georg. Stopp nach 2 erfolglosen Reparaturen, ein Kriterium unter 4 heißt zurück zum Konzept.
+
+### Definition of Done MVP-1
+
+Eine durchgehende Spielsitzung im Lab:
+1. Character Select am Vorhang.
+2. Start in KFB Town; zu Fuß über den Markt (der Clown jongliert).
+3. Ins Auto, eine Runde auf der Ringstraße.
+4. Über die Brücke nach Protopia, zum Lorekeeper auf den Hügel.
+5. Gespräch mit Auftrag, zurück nach Town.
+
+Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
+
+## 5b · Ablauf nach dem Reset (Owner)
+
+| Wer | Was, in dieser Reihenfolge |
+| --- | --- |
+| **Claude Code, Steuer-Sitzung** | Stufe 1 nach Bauplan → Kritiker → Stufe 2 (Town, Ring, Burg, Kamera, Sitz) → Stufe 3a → 4a; Hub und Projektstand pflegen, GitHub-Sync |
+| **RKIT** | Gehweg + Bord (läuft) → Ortseingang, Rampenfuß → Ringstraßen-Profile für Town → Steinbogen-Brücke (nach den neuen Felsprofilen aus Stufe 1) → Showcase-Tunnel Protopia → Königsturm-Golden-Sample (später) |
+| **Environment** | pausiert bis Stufe 1 steht; dann Protopia-Natur nach Erdungsregeln R2 |
+| **Blender-Coworker** | Wach-Idle Dark Knight, Verkaufs-Idle Farmersfrau, Lorekeeper am Schreibpult; Figuren-Karten für die MVP-1-Bewohner |
+| **Claude Design** | HUD Sprint R4 (Knet-Material K7 + R3-Bauteile); Bühne bzw. Vorhang TUNE |
+| **WSA-Work** | Cloudflare-Gate lösen (`.assetsignore` für `_inbox` oder Tarif), Sync-Branch mergen; FBX/OBJ-Vorschau, 3D-Suche |
 
 ## 6 · Vorlagen je Stufe
 
@@ -194,24 +232,25 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
   - **Quellen:** Branch `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09` (Feynman Learning Core, Source Isolation R1), Georgs Prompt-Struktur als lokaler Export.
   - **Offen:** eigene Insel oder Teil von Protopia bzw. Utopia.
 
-## 7 · Entscheidungen (Stand 2026-10-09)
+## 7 · Entscheidungen (abgeschlossen 2026-10-10)
 
-**Entschieden:**
-- **Sprenkel:** Kandidat S1 (Scheiben-Sprenkel, `src/clay/kfb-speckle.ts`) angenommen, TUNE später. Er ersetzt `kfbLayer`.
-- **Landmarke KFB Town:** MVP-Arbeitshypothese = Burg mit zentralem Turm aus „Hyper Casual Cartoon Castles“ (3 Zerstörungsstufen; Paladin oben, Schwarzer Ritter am Tor). Später schiefer Königsturm auf Anhöhe mit Ton-Treppe, Innenhof, Tor bzw. Zugbrücke (Schwarzer Ritter), Heraldik, optional Thronraum aus Dungeon-Modulen, dazu das königliche Billboard am Markt. Er wird Golden Sample für alle Landmarken (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`). Der Platzhalter kommt aus dem Asset Librarian.
-- **Demo-Szenen:** werden weitere Inseln rund um die vier Hauptinseln, eventuell mit Track-Anbindung, als Stufe nach dem MVP. Die Waldszene wird eine Abenteuergeschichte mit Hiker, Werwolf und Holzhacker als Gestaltwandler. Den Vorschlag für die übrigen sieben macht die Environment-Session.
-- **Asset Librarian PR #380:** gemergt (10.10., `720955a`).
-- **Privates GitHub-Repo:** ja; Ort und Name noch offen.
-
-**Offen:**
-1. **Sprenkel-Referenz für die Nahsicht:** erledigt durch S1, TUNE später.
-2. **Inselgrößen:** Vorschlag gilt, bis Georg anders entscheidet: Town ≈ 40 × 40 MC, Satelliten 20–28 MC.
-3. **Sitz-Schicht:** Owner ToolBox oder Joyride.
-4. **Four-Island A/B** (Claude Design): Die Steuer-Sitzung bereitet eine Empfehlung vor.
-
-**Technische Klärungen (Steuer-Sitzung, nicht Georg):**
-- **Ein Renderer:** Die Billboards laufen auf three 0.180 (WebGL), der Vorhang-Kern auf three/webgpu 0.186, das Lab auf r186 (WebGL).
-- **Eine Farbquelle:** `ENV_ROLES` (Lab), `palette-roles.js` (Clay Stage), die Biom-Paletten des HUD R3 und `world-palettes.js` werden zu einer zusammengeführt.
+- **Meilensteine:** MVP-1 „Town + Protopia“ zuerst, dann MVP-2 (Georg 10.10.).
+- **Inselgrößen:** Town ≈ 40 × 40 MC, Satelliten 20–28 MC; nach dem ersten Bau aus der Spielkamera nachjustieren (Georg 10.10.).
+- **Sitz-Schicht:** Owner ist das Lab über die Figuren-Karte (Sitzpunkte an Figur bzw. Fahrzeug); Joyride bleibt Donor für die Fahrphysik (Georg 10.10.).
+- **Four-Island A/B:** Entscheidung erst bei den Satelliten in Stufe 3b (Georg 10.10.).
+- **Sprenkel:** S1 (`src/clay/kfb-speckle.ts`) ersetzt `kfbLayer`, TUNE später.
+- **Landmarke KFB Town:** Big Castle aus „Hyper Casual Cartoon Castles“ (× 2,2, 3 Zerstörungsstufen, Palettentausch); später schiefer Königsturm als Golden Sample (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`).
+- **Bewohner:** Cast-Serie mit Multiversum-Logik, reisende Figuren mit Kostüm je Welt.
+  - **KFB Town:** King Kayfabian, Dark Knight, Clown, Farmersfrau, Caveman (Mine).
+  - **Protopia:** Lorekeeper (Mentor, Eremiten-Hügel), Farmer.
+  - **Dystopia:** Demon Lord, Orc-Band.
+  - **Utopia:** CEO (Transhumanismus-Monstrosität), Robots.
+- **Kanon-Decks:** die bearbeiteten bzw. veröffentlichten Decks in `media/kfb/` auf GitHub, für die Inseln Deck A/B/C.
+- **Demo-Szenen:** weitere Inseln nach dem MVP (Lageplan liegt vor).
+- **Asset Librarian PR #380:** gemergt (`720955a`).
+- **Privates Repo:** ja, Einrichtung mit der Infrastruktur nach dem MVP; bis dahin bleiben lizenzierte Assets lokal (`~/KFB-AssetCache/`).
+- **Ein Renderer (Steuer-Sitzung):** Das Lab bleibt im MVP auf WebGLRenderer r186. Der Billboard-Kit (`kit.js`, reine Geometrie) wird darauf eingebunden. Der Vorhang-Kern (WebGPU) läuft für den Character Select auf eigener Fläche bzw. eigenem Screen mit Fallback, nicht in derselben Szene.
+- **Eine Farbquelle (Steuer-Sitzung):** `ENV_ROLES` ist Owner. `palette-roles.js` (Clay Stage), die HUD-Biompaletten und `world-palettes.js` bekommen ihre Werte daraus über eine Zuordnung.
 
 ## 8 · Recherche-Anschluss (NotebookLM)
 

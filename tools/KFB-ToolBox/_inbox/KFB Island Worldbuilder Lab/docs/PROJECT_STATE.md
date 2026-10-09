@@ -17,6 +17,16 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## MVP-Plan abgeschlossen (2026-10-10)
+
+- **Masterplan R2.1** (`docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
+  - **MVP-1 „Town + Protopia“ zuerst**, danach MVP-2 (Dystopia, Utopia, Flug, volles Audio);
+  - Inselgrößen Town ≈ 40 × 40 MC, Satelliten 20–28 MC;
+  - Sitz-Schicht im Lab über die Figuren-Karte;
+  - Four-Island A/B erst in Stufe 3b.
+- **Neu im Plan:** Definition of Done MVP-1, Ablauf nach dem Reset je Owner (§5b), Renderer-Entscheid (Lab bleibt WebGL r186, Vorhang auf eigener Fläche), Farbquelle `ENV_ROLES`.
+- **Nächster Schritt:** Georgs Reset, dann baut Claude Code Stufe 1.
+
 ## WSA-Hub-Auftrag erledigt, Bewohner-Logik, Aufräumen (2026-10-10)
 
 - **WSA-Work** (Return in `KFB_HUB/90_ARCHIVE/2026-10-09_wsa-work_hub-update.md`):
