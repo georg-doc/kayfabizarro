@@ -1,0 +1,199 @@
+{
+  "kind": "KFB_GATEKEEPER_ENCOUNTER_FIXTURES",
+  "version": "0.1-proposal",
+  "status": "PLANNING_ONLY_NOT_IMPLEMENTED",
+  "owner": "KFB AI Game Art Academy / Maker Space planning",
+  "authorizationOwner": "KFB WorldBuilder/WorldGraph/PlayerSave (existing owner; API not verified)",
+  "performanceOwner": "KFB Resident Performance/ChatterBox/EyeRig/Audio (existing owners)",
+  "economyOwner": "KFB Fluff/Crafting/Almanac (existing separate planning branch)",
+  "policy": {
+    "defaultProfile": "CHILL",
+    "profiles": [
+      "CHILL",
+      "STANDARD",
+      "HARD"
+    ],
+    "worldAccessDecisionRequired": true,
+    "authViaLLM": false,
+    "basicLearningPaywall": false,
+    "cardConsumptionForGate": false,
+    "idempotentGrantRequired": true,
+    "effectOnlyAfterGrant": true,
+    "nonPunitiveExitRequired": true
+  },
+  "existingCardPlay": {
+    "canonicalSource": "Kayfabizarro_Freestyle_Rules_v18-4.md",
+    "sourceBlob": "38186727f0735a5fb02d25d2cdb052fe641dda4b",
+    "slots": [
+      "CHARACTER",
+      "SCENE_1",
+      "SCENE_2",
+      "SCENE_3",
+      "QUEST"
+    ],
+    "stageSceneReplaceAllowed": true,
+    "socialCalls": {
+      "KayfaBINGO": "recognize that the story landed",
+      "KayfaBONGO": "invite story restatement instead of mechanical Power effect",
+      "KayfaBOGGLE": "one concrete clarification question, answered briefly"
+    },
+    "challengeFiveCardRequirement": "OPTIONAL_CASTLE_SCENARIO_NOT_GENERAL_CARD_GAME_CANON"
+  },
+  "eventVocabulary": [
+    "GATE_NOTICE",
+    "GATE_REQUEST_PROOF",
+    "GATE_BOGGLE_CLARIFY",
+    "GATE_BONGO_REFRAME",
+    "GATE_BINGO_ACK",
+    "GATE_GRANT_REACT",
+    "GATE_REFUSE_SOFT",
+    "GATE_OPEN_PRESENT",
+    "GATE_RETURN_IDLE"
+  ],
+  "recipes": [
+    {
+      "id": "maker-4gtn-gate-proposal",
+      "destination": "MAKERSPACE",
+      "contentTheme": "curiosity, technology reclaimed by organic growth",
+      "actor": {
+        "residentId": "gtn",
+        "name": "4GTN Forgotten",
+        "rig": "Rig_Large",
+        "status": "CANDIDATE_ONLY",
+        "source": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb"
+      },
+      "boundary": {
+        "kind": "WORLD_THRESHOLDED_ROAD_WITH_FLIGHT_FIELD",
+        "sourceStatus": "WORLD_RUNTIME_REQUIRED"
+      },
+      "policyRefs": [
+        "MAKERSPACE_ENTRY_GRANTED"
+      ],
+      "chill": [
+        "SHORT_ENCOUNTER",
+        "AUTHORIZED_INVITATION",
+        "CLEAR_CLUE"
+      ],
+      "hardOptional": [
+        "EXISTING_QUEST_REF",
+        "FLUFF_OWNER_CRAFT_REQUEST"
+      ],
+      "visualGrant": [
+        "GATE_GRANT_REACT",
+        "GATE_OPEN_PRESENT",
+        "GATE_RETURN_IDLE"
+      ],
+      "notes": "Raise barrier or lower katana only if native clip/prop proves it; world access, not VFX, decides pass."
+    },
+    {
+      "id": "kayfabian-castle-knight-proposal",
+      "destination": "CASTLE_KAYFABIAN_PROPOSAL",
+      "contentTheme": "medieval ceremonial authority disarmed by credible absurdity",
+      "actor": {
+        "residentId": "black-knight",
+        "name": "Black Knight",
+        "rig": "Rig_Large",
+        "status": "CANDIDATE_ONLY",
+        "source": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb"
+      },
+      "boundary": {
+        "kind": "WORLD_THRESHOLD_CASTLE_ENTRY",
+        "sourceStatus": "CASTLE_SOURCE_NOT_ACCEPTED"
+      },
+      "policyRefs": [
+        "CASTLE_ENTRY_GRANTED"
+      ],
+      "chill": [
+        "SHORT_STORY_ENCOUNTER",
+        "QUEST_INVITATION",
+        "FIVE_CARD_MICRO_PLAY_OPTIONAL"
+      ],
+      "hardOptional": [
+        "THREE_COLLECTED_SCENE_CARD_REFS_PLUS_CHARACTER_AND_QUEST_CARD_PROPOSAL"
+      ],
+      "fiveCardPlay": {
+        "source": "CANONICAL_FREESTYLE_STAGE",
+        "slots": [
+          "CHARACTER",
+          "SCENE_1",
+          "SCENE_2",
+          "SCENE_3",
+          "QUEST"
+        ],
+        "judge": "NARRATIVE_SOCIAL_FEEDBACK_NOT_LLM_AUTHORIZATION"
+      },
+      "visualGrant": [
+        "GATE_BINGO_ACK",
+        "GATE_GRANT_REACT",
+        "GATE_OPEN_PRESENT",
+        "GATE_RETURN_IDLE"
+      ],
+      "notes": "A five-card challenge is optional gate-specific story, not a universal access requirement. No Card deletion."
+    },
+    {
+      "id": "mine-bridge-trickster-proposal",
+      "destination": "MINE_OR_BRIDGE",
+      "contentTheme": "tired tollkeeper, small comic barter",
+      "actor": {
+        "residentId": null,
+        "name": null,
+        "rig": null,
+        "status": "SOURCE_REQUIRED",
+        "source": null
+      },
+      "boundary": {
+        "kind": "WORLD_THRESHOLD_BRIDGE_OR_MINE",
+        "sourceStatus": "SOURCE_REQUIRED"
+      },
+      "policyRefs": [
+        "MINE_OR_BRIDGE_ENTRY_GRANTED"
+      ],
+      "chill": [
+        "ONE_CLUE",
+        "SMALL_DIALOGUE",
+        "AUTHORED_ALTERNATE"
+      ],
+      "hardOptional": [
+        "OWNER_APPROVED_SMALL_RESOURCE_RECIPE"
+      ],
+      "visualGrant": [
+        "GATE_REQUEST_PROOF",
+        "GATE_GRANT_REACT",
+        "GATE_RETURN_IDLE"
+      ],
+      "notes": "A gnome or troll model has not been source-pinned. Do not substitute arbitrary dwarf or generic actor."
+    },
+    {
+      "id": "disco-vip-bouncer-proposal",
+      "destination": "DISCO_VIP",
+      "contentTheme": "VIP means Very Improbable Person, playful satire",
+      "actor": {
+        "residentId": null,
+        "name": null,
+        "rig": null,
+        "status": "SOURCE_REQUIRED",
+        "source": null
+      },
+      "boundary": {
+        "kind": "WORLD_THRESHOLD_DISCO",
+        "sourceStatus": "SOURCE_REQUIRED"
+      },
+      "policyRefs": [
+        "DISCO_VIP_GRANTED"
+      ],
+      "chill": [
+        "ONE_COMIC_EXCHANGE",
+        "FOUND_INVITATION"
+      ],
+      "hardOptional": [
+        "NONEXCLUSIVE_VIP_STYLE_CHALLENGE"
+      ],
+      "visualGrant": [
+        "GATE_BINGO_ACK",
+        "GATE_OPEN_PRESENT",
+        "GATE_RETURN_IDLE"
+      ],
+      "notes": "Use verified Resident, curtain/rope prop and Audio owner on future proof. A 'censored' fictional deck is not a bypass for real content restrictions."
+    }
+  ]
+}
