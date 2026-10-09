@@ -1,4 +1,4 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.7
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.7.1
 > **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
 >
 > Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
@@ -47,7 +47,19 @@
 
 ---
 
-> **LATEST RETURN UPDATE · v0.7 · 2026-10-09 · BLAST-MINING / BOXEL CASCADES / LIVING LOOT**
+> **LATEST AUTHOR CLARIFICATION · 2026-10-09 · CREATIVE FREEDOM / LIVING WORLD · v0.7.1**
+>
+> Georg explicitly corrects a false cross-domain "canon" inference: Layer Zero's objections to generic anthropomorphic toasters/rooms/passive agents concern *text, geopolitics, source/argument precision and AI-cliché avoidance*, not a ban on playful talking objects in the game. **Every KFB 3D world prop may potentially react, wobble, pulse, dance to Soundbed, perform, make an absurd diegetic claim or show a short ChatterBox/Triplet beat.** One small tactile/visual/audio response is gameplay value even without Card, Fluff or score. The earlier "exceptional item anthropomorphism needs canon approval" statement in v0.7 has been superseded, not promoted to a gate.
+>
+> Material/style constraints must be interpreted **per medium**: ink/watercolor Card or essay aesthetics must **not** prohibit good Clay, smoke, water ripples, explosions, volumetrics, particles, cartoon deformations, energetic lights or playful VFX. Prioritize KFB Playmation visual pleasure and recognizable source assets. Strictness belongs to architecture: one authority each for World/Camera/Audio/Inventory/Card, real source proof, idempotent save/reload, measured performance, actual tests. Be creatively permissive about diegetic shortcuts, clever low-cost visuals and emergent interactions. Explicit author ideation is **not** an automatically binding new canon prohibiting future creativity.
+>
+> Persisted inside existing [KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md](./KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md) as a scope clarification and corrected the active [KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md](./KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md) to v0.7.1 in place. Both changes are **on this Fluff planning branch** only pending normal consolidation/review, not yet asserted merged into main. No new runtime, dedicated AI brain for each prop, forced dialog, global VFX law, extra MVP acceptance criterion, Live/Stage or site work.
+>
+> Source-readback on this branch: global Bigger Picture blob `91d89b159fadd30906f45dded22708d7de0770cf`; corrected v0.7.1 blob `cb8a71f41612ee29ae50c179a25c696cf1c79998`. Follow normal branch/owner review; do **not** auto-merge or overwrite newer main/protocol work. **Next Fluff gate unchanged:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`, only after playable MVP and Georg authorization.
+
+---
+
+> **HISTORICAL RETURN UPDATE · v0.7 · 2026-10-09 · BLAST-MINING / BOXEL CASCADES / LIVING LOOT**
 >
 > Georg's new post-MVP author direction is captured in [KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md](./KFB_BLAST_MINING_CASCADE_AND_LOOT_SOCIAL_CALLS_V0_7_2026-10-09.md); first implementation milestone `156d33792bc64010983715c51fd682e9ece8beb5`, exact source blob `f5e6f81d873dbc018b6739ec52bd3fedeac3cc3a`, 24,008 characters. Preserves v0.6 fishing/farm/cartoon water-blast concept unmodified. No new gameplay runtime, Score owner, Stage/Site or current MVP requirement.
 >
