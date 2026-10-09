@@ -1,4 +1,8 @@
-# KFB AI Game Art Academy · Maker Space v0.5 · START HERE
+# KFB AI Game Art Academy · Maker Space v0.5 + v0.6 Addendum · START HERE
+
+> **CURRENT ADDITIVE PRODUCT OVERRIDE v0.6 · 2026-10-09:** The external 3D AI Classroom is only a historical UX/chat donor; the 31-MB original classroom is **not required** for the interactive Academy. The current product is a **diegetic, interactive Maker Space** with existing KFB God Mode tool actions as permitted Player/Maker verbs, current RTT Academy lessons, in-world teaching MediaSurface, real KFB prop/rig/material/VFX authoring and the Shared Adaptive Learning Core as a Feynman tutor layer. The desired six-color Fluff crafting economy and Backpack handoff are **proposals** until World/Inventory owner approval. Read `MAKERSPACE_INTERACTIVE_LEARNING_CRAFTING_V06.md`, `MAKERSPACE_EMBEDDED_EXAMPLES_DONOR_AUDIT_R1.md`, and `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md` before any historical classroom acceptance brief. **Same active gate:** `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`, now A native KFB RTT lesson + real input, B isolated real external VFX/shader demo, C current KFB Billboard + actual KFB prop. Claude Design preferred for visual proof; technical fallback sequential. NO runtime, no public Site, no World R5.
+
+
 
 **Status:** RECOVERED / PLANNING SSOT · NO RUNTIME IMPLEMENTATION · NO SITE DEPLOYMENT · NO LIVE CLAIM  
 **Date:** 2026-10-09  
