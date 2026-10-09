@@ -1,0 +1,610 @@
+{
+ "layout": {
+  "yOt": -3.8,
+  "yHw": -0.56,
+  "yPJ": -0.55,
+  "zA": 92,
+  "xA": 126.86,
+  "pjDx": 12,
+  "mergeAhead": 75.25,
+  "pjZ": 175,
+  "pjH": -1.4,
+  "pjArm": 5.68,
+  "pjEntryAt": 276,
+  "plazaLen": 6,
+  "xS": 75.61,
+  "zS": -55,
+  "southLen": 50.46,
+  "otIn": 5.21,
+  "ojArm": 7.51,
+  "otNorth": 2,
+  "pre": 22.79,
+  "exitTaper": 54.41,
+  "rampA": 6.37,
+  "rampTurn": 70,
+  "rampR": 14,
+  "rampTr": 8,
+  "rampStretch": 0.82,
+  "entryTaper": 35,
+  "riA": 0.32,
+  "riTr": 12
+ },
+ "errors": [],
+ "gapRuns": [],
+ "gapApproachPoints": 21,
+ "restOnHub_m": 44,
+ "worstCutFill_m": 1.093,
+ "worstPadClearance_m": 1.6,
+ "foreign": [],
+ "length_m": 1334.5,
+ "routes": {
+  "PJ.exit": {
+   "n": 11,
+   "fail": []
+  },
+  "PJ.plaza": {
+   "n": 11,
+   "fail": []
+  },
+  "PJ.entry": {
+   "n": 11,
+   "fail": []
+  },
+  "H": {
+   "n": 11,
+   "fail": []
+  },
+  "OJ.arm1": {
+   "n": 11,
+   "fail": []
+  },
+  "H+OJ": {
+   "n": 12,
+   "fail": [
+    "width_taper(warn)=11.1"
+   ]
+  },
+  "off": {
+   "n": 12,
+   "fail": []
+  },
+  "ramp_in": {
+   "n": 12,
+   "fail": []
+  },
+  "plaza": {
+   "n": 11,
+   "fail": []
+  }
+ },
+ "graph": [
+  {
+   "id": "cross_clearance PJ.exit|PJ.plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|PJ.entry",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|H",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|off",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.exit|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|PJ.entry",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|H",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|off",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.plaza|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|H",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|off",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance PJ.entry|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance H|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance H|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 95.934
+  },
+  {
+   "id": "cross_clearance H|off",
+   "pass": true,
+   "severity": "error",
+   "value": 167.434
+  },
+  {
+   "id": "cross_clearance H|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 252.771
+  },
+  {
+   "id": "cross_clearance H|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance OJ.arm1|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance OJ.arm1|off",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance OJ.arm1|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance OJ.arm1|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance H+OJ|off",
+   "pass": true,
+   "severity": "error",
+   "value": 1.26
+  },
+  {
+   "id": "cross_clearance H+OJ|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 57.232
+  },
+  {
+   "id": "cross_clearance H+OJ|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance off|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 43.416
+  },
+  {
+   "id": "cross_clearance off|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "cross_clearance ramp_in|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": null
+  },
+  {
+   "id": "world_overlap PJ.exit|PJ.plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|PJ.entry",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|H",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.exit|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|PJ.entry",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|H",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.plaza|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|H",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap PJ.entry|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H|OJ.arm1",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap OJ.arm1|H+OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap OJ.arm1|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap OJ.arm1|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap OJ.arm1|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H+OJ|off",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H+OJ|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap H+OJ|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap off|ramp_in",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap off|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "world_overlap ramp_in|plaza",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_fit PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_mouth PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0.0000715
+  },
+  {
+   "id": "node_lanes PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 3
+  },
+  {
+   "id": "node_paths PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 1.745
+  },
+  {
+   "id": "node_path_radius PJ",
+   "pass": false,
+   "severity": "warn",
+   "value": 6.69
+  },
+  {
+   "id": "node_clear PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_sockets PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 3
+  },
+  {
+   "id": "node_finite PJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_fit OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_mouth OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 7.99e-14
+  },
+  {
+   "id": "node_lanes OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 6
+  },
+  {
+   "id": "node_paths OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 2
+  },
+  {
+   "id": "node_path_radius OJ",
+   "pass": true,
+   "severity": "warn",
+   "value": 11
+  },
+  {
+   "id": "node_clear OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  },
+  {
+   "id": "node_sockets OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 3
+  },
+  {
+   "id": "node_finite OJ",
+   "pass": true,
+   "severity": "error",
+   "value": 0
+  }
+ ]
+}

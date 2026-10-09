@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>KFB Maßstab-Aufreihung</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#eef3f8}
+#c{width:100vw;height:100vh;display:block}
+#labels{position:fixed;inset:0;pointer-events:none;font:12px system-ui;color:#2b2340}
+#labels div{position:absolute;transform:translate(-50%,0);text-align:center;white-space:nowrap;background:#fff8eecc;border-radius:6px;padding:2px 6px}
+#labels div b{display:block;font-size:13px}
+#title{position:fixed;top:10px;left:12px;font:600 15px system-ui;color:#2b2340}
+#legend{position:fixed;top:32px;left:12px;font:12px system-ui;color:#2b2340}
+</style></head>
+<body><canvas id="c"></canvas><div id="labels"></div><div id="title"></div><div id="legend"></div>
+<script type="module" src="/src/lineup.ts"></script></body></html>

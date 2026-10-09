@@ -1,0 +1,25 @@
+{
+  "name": "kfb-island-worldbuilder-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5192 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "shoot": "node tools/shoot.mjs"
+  },
+  "dependencies": {
+    "cdt2d": "^1.0.0",
+    "delaunator": "^5.0.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/delaunator": "^5.0.3",
+    "@types/three": "^0.186.0",
+    "playwright-core": "^1.63.0",
+    "three-inspect": "0.7.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  }
+}

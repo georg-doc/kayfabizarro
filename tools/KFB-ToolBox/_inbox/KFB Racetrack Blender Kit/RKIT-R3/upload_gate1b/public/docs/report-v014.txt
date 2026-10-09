@@ -1,0 +1,17 @@
+PASS  core version  · kfb.track-core/0.14
+PASS  highway EXIT + ENTRY compile; every route, graph and module check green  · H · off · R_on
+PASS  main line keeps its line and 2+2 lanes through exit and entry  · max lateral drift 0.0e+0 m
+PASS  exit branch inherits the highway side section and is one-way with 1 lane of 4.5 m  · side 3.90 m · lanes 0+1 · lane 4.50 m
+PASS  exit starts and entry ends exactly on the main road edge (outer edge continuous)  · exit 0.0000 m · entry 0.0000 m
+PASS  gore fill for exit and entry + one U nose each (cushion only at the exit)  · gore,gore · uturn,cushion,uturn
+PASS  main and branches stay clear of each other outside the shared deck (cross_clearance)  · cross_clearance H|off 1.095 · cross_clearance H|R_on 60.176 · cross_clearance off|R_on 9.581
+PASS  anti-Cologne · TOWN: S-curves with grade: inner edge never raised, no wavy edges, route checks green  · 573 curve samples · inner raised 0 · wave flips 0 · max |edge − centre height| 0.66 m
+PASS  anti-Cologne · COUNTRY: S-curves with grade: inner edge never raised, no wavy edges, route checks green  · 573 curve samples · inner raised 0 · wave flips 0 · max |edge − centre height| 0.38 m
+PASS  anti-Cologne · MOUNTAIN: S-curves with grade: inner edge never raised, no wavy edges, route checks green  · 573 curve samples · inner raised 0 · wave flips 0 · max |edge − centre height| 0.30 m
+PASS  anti-Cologne · HIGHWAY: S-curves with grade: inner edge never raised, no wavy edges, route checks green  · 573 curve samples · inner raised 0 · wave flips 0 · max |edge − centre height| 2.29 m
+PASS  anti-Cologne · RACE: S-curves with grade: inner edge never raised, no wavy edges, route checks green  · 573 curve samples · inner raised 0 · wave flips 0 · max |edge − centre height| 5.26 m
+PASS  negative · the waviness witness catches a folded edge (short alternating banks)  · wave flips 7
+PASS  world_overlap · an at-grade crossing of two world roads (no node) is refused; a 9 m overpass passes  · at grade 489 hits · overpass 0
+PASS  negative · a ramp whose entry cannot be found is refused (no silent blunt end)  · route X: to {"route":"nope","piece":"on"} names no ENTRY piece (a socket-started route can only end in an entry)
+
+15 checks · 0 unexpected result(s)

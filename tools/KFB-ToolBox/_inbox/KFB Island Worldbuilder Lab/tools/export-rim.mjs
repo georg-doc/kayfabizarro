@@ -1,0 +1,24 @@
+// Writes public/roadbeds/<id>.rim-profiles.json (kfb.island-rim-profiles/1) and <id>.island.glb for RKIT abutments.
+import fs from 'node:fs';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright-core';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const id = process.argv[2] ?? 'rkit_hub';
+const exe = [process.env.CHROME, '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome'].filter(Boolean).find((c) => fs.existsSync(c) && spawnSync(c, ['--version'], { timeout: 15000 }).status === 0);
+const b = await chromium.launch({ executablePath: exe, headless: true, args: ['--use-angle=metal', '--ignore-gpu-blocklist'] });
+const p = await b.newPage();
+p.on('pageerror', (e) => console.log('PAGEERR', e.message));
+await p.goto('http://127.0.0.1:5192/?shot=1&hub=1');
+await p.waitForFunction(() => window.__kfb?.ready && window.__kfb.exportRimProfiles, null, { timeout: 90000 });
+await p.waitForTimeout(1500);
+const prof = await p.evaluate((i) => window.__kfb.exportRimProfiles(i), id);
+const jf = path.join(ROOT, 'public/roadbeds', `${id}.rim-profiles.json`);
+fs.writeFileSync(jf, JSON.stringify(prof));
+const b64 = await p.evaluate((i) => window.__kfb.exportIslandGLB(i), id);
+const gf = path.join(ROOT, 'public/roadbeds', `${id}.island.glb`);
+fs.writeFileSync(gf, Buffer.from(b64, 'base64'));
+const r = prof.roots ?? [];
+console.log(JSON.stringify({ json: jf, glb: gf, glbBytes: fs.statSync(gf).size, hash: prof.outlineHash, roots: r.map((x) => ({ s: x.rimS, axis: x.axis, long: x.longitudinal.top.length, under: x.longitudinal.underside.length, face0: x.longitudinal.face.length, cross: x.cross.stations.filter((c) => c.face.length).length })) }));
+await b.close();
