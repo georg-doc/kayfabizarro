@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KFB Gameplay Stage — Story Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="kfb-viewer.js"></script>
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F4EFE6"></rect><rect x="33" y="33" width="34" height="34" rx="6" fill="#F3EAD3" stroke="#1F1A14" stroke-width="2.5"></rect><circle cx="43" cy="43" r="3.5" fill="#1F1A14"></circle><circle cx="50" cy="50" r="3.5" fill="#1F1A14"></circle><circle cx="57" cy="57" r="3.5" fill="#1F1A14"></circle></svg>
+  </template>
+  <meta name="ext-resource-dependency" content="pdfs/deck_a_utopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/deck_b_dystopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/deck_c_protopia.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_cardiology.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_emergency.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/medkayfab_pharmacology.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/epistemic_sabotage.pdf">
+  <meta name="ext-resource-dependency" content="pdfs/worlds_fair_conspiracy.pdf">
+  <meta name="ext-resource-dependency" content="decks/deck_a_utopia.json">
+  <meta name="ext-resource-dependency" content="decks/deck_b_dystopia.json">
+  <meta name="ext-resource-dependency" content="decks/deck_c_protopia.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_cardiology.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_emergency.json">
+  <meta name="ext-resource-dependency" content="decks/medkayfab_pharmacology.json">
+  <meta name="ext-resource-dependency" content="decks/epistemic_sabotage.json">
+  <meta name="ext-resource-dependency" content="decks/worlds_fair_conspiracy.json">
+  <meta name="ext-resource-dependency" content="assets/d6-1.svg">
+  <meta name="ext-resource-dependency" content="assets/d6-2.svg">
+  <meta name="ext-resource-dependency" content="assets/d6-3.svg">
+  <meta name="ext-resource-dependency" content="assets/d6-4.svg">
+  <meta name="ext-resource-dependency" content="assets/d6-5.svg">
+  <meta name="ext-resource-dependency" content="assets/d6-6.svg">
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100%; background: #F4EFE6; }
+    body { font-family: "Archivo", "Helvetica Neue", Helvetica, system-ui, sans-serif; color: #26221C; -webkit-font-smoothing: antialiased; }
+    a { color: #A6512E; text-decoration: none; }
+    a:hover { color: #7E3C20; text-decoration: underline; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; display:flex; flex-direction:column; background:radial-gradient(120% 90% at 50% 0%, #F4EFE6 55%, #EAE1D0 100%);">
+
+  <div data-screen-label="Story Table" style="flex:1; display:flex; flex-direction:column; max-width:1240px; width:100%; margin:0 auto; padding:22px 28px 26px; gap:18px;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#A6512E;">KayfaBizarro · Gameplay Sim</div>
+          <h1 style="margin:4px 0 0; font-size:24px; font-weight:800; letter-spacing:-0.01em;">Story Table</h1>
+        </div>
+        <a href="KFB Deck Viewer.dc.html" style="font-size:12px; font-weight:600;">← Deck Viewer</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7B7368;">Players</span>
+        <div style="display:flex; border:1px solid rgba(38,34,28,.2); border-radius:999px; overflow:hidden;">
+          <sc-for list="{{ playerCountBtns }}" as="pc" hint-placeholder-count="6">
+            <button onClick="{{ pc.set }}" style="{{ pc.style }}">{{ pc.n }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:stretch; justify-content:center; gap:22px; flex-wrap:wrap;">
+      <div style="width:min(300px,80vw); display:flex; flex-direction:column; gap:7px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#A6512E;">Quest</span>
+          <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; color:#7B7368;">{{ questProgressLabel }}</span>
+        </div>
+        <sc-if value="{{ questEmpty }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ questOpen }}" style="aspect-ratio:16/9; width:100%; border:1.5px dashed rgba(166,81,46,.55); border-radius:10px; background:rgba(166,81,46,.04); color:#A6512E; font:inherit; font-size:12px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;" style-hover="background:rgba(166,81,46,.09);">+ Play a quest card</button>
+        </sc-if>
+        <sc-if value="{{ questFilled }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;">
+            <div ref="{{ questCanvasRef }}" onClick="{{ questOpen }}" title="Replace quest card" style="aspect-ratio:16/9; width:100%; overflow:hidden; border-radius:10px; background:#FFFFFF; box-shadow:0 16px 34px -16px rgba(56,44,26,.45); cursor:pointer;"></div>
+            <button onClick="{{ questInfo }}" aria-label="Card details" style="position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:99px; border:1px solid rgba(38,34,28,.2); background:rgba(250,247,240,.9); color:#26221C; font:inherit; font-size:12px; font-weight:700; cursor:pointer;">i</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:7px; min-height:18px;">
+            <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9px; font-weight:700; color:#A6512E; border:1px solid currentColor; border-radius:4px; padding:1px 5px;">{{ questGrade }}</span>
+            <span style="font-size:12px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ questName }}</span>
+          </div>
+        </sc-if>
+        <div style="display:flex; gap:8px; align-items:center; justify-content:center; margin-top:4px;">
+          <sc-for list="{{ questSteps }}" as="qs" hint-placeholder-count="6">
+            <button onClick="{{ qs.set }}" aria-label="{{ qs.aria }}" title="{{ qs.aria }}" style="{{ qs.style }}" style-hover="opacity:1; transform:translateY(-2px);" style-active="transform:translateY(0) scale(.96);" style-focus="outline:2px solid #A6512E; outline-offset:2px; border-radius:8px;">
+              <img src="{{ qs.src }}" alt="{{ qs.aria }}" style="display:block; width:100%; height:100%;">
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1; display:flex; align-items:flex-start; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <sc-for list="{{ sceneSlots }}" as="s" hint-placeholder-count="3">
+        <div style="flex:1; min-width:250px; max-width:400px; display:flex; flex-direction:column; gap:7px;">
+          <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#7B7368;">{{ s.label }}</span>
+          <sc-if value="{{ s.empty }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ s.open }}" style="aspect-ratio:16/9; width:100%; border:1.5px dashed rgba(38,34,28,.3); border-radius:10px; background:rgba(38,34,28,.02); color:#7B7368; font:inherit; font-size:12px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;" style-hover="background:rgba(38,34,28,.06); color:#26221C;">+ Play a card</button>
+          </sc-if>
+          <sc-if value="{{ s.filled }}" hint-placeholder-val="{{ false }}">
+            <div style="position:relative;">
+              <div ref="{{ s.canvasRef }}" onClick="{{ s.open }}" title="Overwrite with a new card" style="aspect-ratio:16/9; width:100%; overflow:hidden; border-radius:10px; background:#FFFFFF; box-shadow:0 16px 34px -16px rgba(56,44,26,.45); cursor:pointer;"></div>
+              <button onClick="{{ s.info }}" aria-label="Card details" style="position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:99px; border:1px solid rgba(38,34,28,.2); background:rgba(250,247,240,.9); color:#26221C; font:inherit; font-size:12px; font-weight:700; cursor:pointer;">i</button>
+            </div>
+            <div style="display:flex; align-items:center; gap:7px; min-height:18px;">
+              <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9px; font-weight:700; color:#8B8376; border:1px solid currentColor; border-radius:4px; padding:1px 5px;">{{ s.grade }}</span>
+              <span style="font-size:12px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ s.name }}</span>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display:flex; align-items:flex-end; justify-content:center; gap:22px; flex-wrap:wrap; border-top:1px solid rgba(38,34,28,.12); padding-top:16px;">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#5E8C61;">Actor · Active Player</span>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <sc-for list="{{ playerTabs }}" as="pt" hint-placeholder-count="2">
+            <button onClick="{{ pt.select }}" style="{{ pt.style }}">{{ pt.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="width:min(280px,80vw); display:flex; flex-direction:column; gap:7px;">
+        <sc-if value="{{ actorEmpty }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ actorOpen }}" style="aspect-ratio:16/9; width:100%; border:1.5px dashed rgba(94,140,97,.6); border-radius:10px; background:rgba(94,140,97,.05); color:#5E8C61; font:inherit; font-size:12px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;" style-hover="background:rgba(94,140,97,.1);">+ {{ actorHint }}</button>
+        </sc-if>
+        <sc-if value="{{ actorFilled }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;">
+            <div ref="{{ actorCanvasRef }}" onClick="{{ actorOpen }}" title="Replace actor card" style="aspect-ratio:16/9; width:100%; overflow:hidden; border-radius:10px; background:#FFFFFF; box-shadow:0 16px 34px -16px rgba(56,44,26,.45); cursor:pointer;"></div>
+            <button onClick="{{ actorInfo }}" aria-label="Card details" style="position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:99px; border:1px solid rgba(38,34,28,.2); background:rgba(250,247,240,.9); color:#26221C; font:inherit; font-size:12px; font-weight:700; cursor:pointer;">i</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:7px; min-height:18px;">
+            <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9px; font-weight:700; color:#5E8C61; border:1px solid currentColor; border-radius:4px; padding:1px 5px;">{{ actorGrade }}</span>
+            <span style="font-size:12px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ actorName }}</span>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <p style="margin:0; font-size:10.5px; color:#A9A196; line-height:1.55; text-align:center;">Prototype — shared deck pool from the local test matrix. Structured table state for agents: <span style="font-family:ui-monospace,Menlo,monospace;">window.KFBStageContext</span> (updates on every move).</p>
+  </div>
+
+  <sc-if value="{{ pickerOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Card Picker" style="position:fixed; inset:0; z-index:80; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(38,34,28,.4);">
+      <div style="width:min(880px,96vw); height:min(620px,90vh); background:#FBF8F1; border:1px solid rgba(38,34,28,.18); border-radius:16px; box-shadow:0 30px 70px -24px rgba(0,0,0,.5); display:flex; flex-direction:column; overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; border-bottom:1px solid rgba(38,34,28,.12);">
+          <div style="font-size:14px; font-weight:700;">{{ pickerTitle }}</div>
+          <button onClick="{{ pickerClose }}" aria-label="Close" style="width:30px; height:30px; border-radius:99px; border:1px solid rgba(38,34,28,.2); background:transparent; color:#26221C; font:inherit; font-size:13px; cursor:pointer;">✕</button>
+        </div>
+        <div style="flex:1; display:flex; min-height:0;">
+          <div style="width:250px; flex:none; border-right:1px solid rgba(38,34,28,.12); overflow:auto; padding:10px;">
+            <sc-for list="{{ pickerDecks }}" as="pdk" hint-placeholder-count="8">
+              <button onClick="{{ pdk.select }}" style="{{ pdk.style }}">
+                <span style="display:block; font-size:12.5px; font-weight:600; line-height:1.3;">{{ pdk.title }}</span>
+                <span style="display:block; font-family:ui-monospace,Menlo,monospace; font-size:9.5px; margin-top:2px; opacity:.75;">{{ pdk.status }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="flex:1; overflow:auto; padding:10px 12px;">
+            <sc-if value="{{ pickerHasCards }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-direction:column; gap:2px;">
+                <sc-for list="{{ pickerCards }}" as="pcd" hint-placeholder-count="8">
+                  <button onClick="{{ pcd.pick }}" style="display:flex; align-items:baseline; gap:10px; text-align:left; font:inherit; color:inherit; background:transparent; border:0; border-radius:8px; padding:8px 10px; cursor:pointer;" style-hover="background:rgba(38,34,28,.06);" style-focus="outline:2px solid #A6512E; outline-offset:-2px;">
+                    <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9px; font-weight:700; color:#A6512E; border:1px solid currentColor; border-radius:4px; padding:1px 5px;">{{ pcd.grade }}</span>
+                    <span style="flex:none; font-size:12.5px; font-weight:600; white-space:nowrap;">{{ pcd.name }}</span>
+                    <span style="flex:1; min-width:0; font-size:11.5px; color:#7B7368; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ pcd.power }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ pickerEmptyMsg }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:14px; font-size:12.5px; color:#7B7368;">{{ pickerMsg }}</p>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ detailOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; left:50%; bottom:22px; transform:translateX(-50%); z-index:90; width:min(560px,92vw); background:rgba(252,250,245,.98); border:1px solid rgba(38,34,28,.16); border-radius:14px; box-shadow:0 24px 54px -20px rgba(0,0,0,.4); padding:16px 18px; max-height:44vh; overflow:auto;">
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:10px;">
+        <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9.5px; font-weight:700; color:#A6512E; border:1px solid currentColor; border-radius:4px; padding:1.5px 5px;">{{ detailGrade }}</span>
+        <span style="flex:1; font-size:14.5px; font-weight:700;">{{ detailName }}</span>
+        <span style="flex:none; font-family:ui-monospace,Menlo,monospace; font-size:9.5px; color:#A9A196;">{{ detailDeck }}</span>
+        <button onClick="{{ detailClose }}" aria-label="Close" style="flex:none; width:26px; height:26px; border-radius:99px; border:1px solid rgba(38,34,28,.2); background:transparent; font:inherit; font-size:12px; cursor:pointer;">✕</button>
+      </div>
+      <div style="font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#A6512E; margin-bottom:3px;">Power</div>
+      <p style="margin:0 0 10px; font-size:13.5px; line-height:1.5;">{{ detailPower }}</p>
+      <div style="font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#A6512E; margin-bottom:3px;">Lore</div>
+      <p style="margin:0; font-size:13.5px; line-height:1.5;">{{ detailLore }}</p>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 800 }
+}">
+class Component extends DCLogic {
+  state = {
+    players: 2,
+    activePlayer: 0,
+    actors: [null, null, null, null, null, null], // one actor card per player
+    scenes: [null, null, null],
+    quest: null,
+    questProgress: 0,
+    picker: null,     // { target: {type,idx}, deckId }
+    detail: null,     // resolved card view
+    deckStatus: {}    // deckId -> 'loading' | 'ready' | 'error'
+  };
+
+  // D6 face SVGs (Georg's hand-drawn originals, assets/d6-*.svg) inlined as
+  // data URIs so the tracker works in standalone single-file builds too.
+  diceSrc(n) {
+    const PIPS = {
+      1: [[40, 40]],
+      2: [[24, 24], [56, 56]],
+      3: [[22, 22], [40, 40], [58, 58]],
+      4: [[24, 24], [56, 24], [24, 56], [56, 56]],
+      5: [[24, 24], [56, 24], [40, 40], [24, 56], [56, 56]],
+      6: [[24, 22], [56, 22], [24, 40], [56, 40], [24, 58], [56, 58]]
+    };
+    const pips = PIPS[n].map((p) => '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5" fill="#1f1a14"/>').join('');
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">' +
+      '<path d="M8,12 Q40,8 72,12 Q76,40 72,68 Q40,72 8,68 Q4,40 8,12 Z" fill="#f3ead3" stroke="#1f1a14" stroke-width="2.5" stroke-linejoin="round"/>' +
+      pips + '</svg>';
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+
+  deckDefs() {
+    const emb = window.__KFB_EMBEDDED;
+    const all = this.allDeckDefs();
+    return emb ? all.filter((d) => emb.indexOf(d.pdf) >= 0) : all;
+  }
+
+  allDeckDefs() {
+    return [
+      { id: 'utopia', title: 'Forget Utopia (A)', pdf: 'pdfs/deck_a_utopia.pdf', json: 'decks/deck_a_utopia.json' },
+      { id: 'dystopia', title: 'Anatomy of a Trap (B)', pdf: 'pdfs/deck_b_dystopia.pdf', json: 'decks/deck_b_dystopia.json' },
+      { id: 'protopia', title: 'Protopia Sketchbook (C)', pdf: 'pdfs/deck_c_protopia.pdf', json: 'decks/deck_c_protopia.json' },
+      { id: 'cardio', title: 'MedKayfab Cardiology', pdf: 'pdfs/medkayfab_cardiology.pdf', json: 'decks/medkayfab_cardiology.json' },
+      { id: 'emergency', title: 'MedKayfab Emergency', pdf: 'pdfs/medkayfab_emergency.pdf', json: 'decks/medkayfab_emergency.json' },
+      { id: 'pharma', title: 'MedKayfab Pharmacology', pdf: 'pdfs/medkayfab_pharmacology.pdf', json: 'decks/medkayfab_pharmacology.json' },
+      { id: 'sabotage', title: 'Epistemic Sabotage', pdf: 'pdfs/epistemic_sabotage.pdf', json: 'decks/epistemic_sabotage.json' },
+      { id: 'worldsfair', title: 'World\u2019s Fair Conspiracy', pdf: 'pdfs/worlds_fair_conspiracy.pdf', json: 'decks/worlds_fair_conspiracy.json' }
+    ];
+  }
+
+  constructor(props) {
+    super(props);
+    this.handles = {};   // deckId -> Promise<handle>
+    this.resolved = {};  // deckId -> handle (once ready)
+  }
+
+  ensureDeck(id) {
+    if (this.handles[id]) return this.handles[id];
+    const def = this.deckDefs().find((d) => d.id === id);
+    this.setState({ deckStatus: { ...this.state.deckStatus, [id]: 'loading' } });
+    this.handles[id] = window.KayfabizarroViewer.loadDeck({
+      source: { url: encodeURI(def.pdf) },
+      deckData: { url: encodeURI(def.json) },
+      // Worlds Fair / Sabotage: page 1 carries cards, not a cover
+      cover: (id === 'worldsfair' || id === 'sabotage') ? false : undefined
+    }).then((h) => {
+      this.resolved[id] = h;
+      this.setState({ deckStatus: { ...this.state.deckStatus, [id]: 'ready' } });
+      return h;
+    }).catch((e) => {
+      this.setState({ deckStatus: { ...this.state.deckStatus, [id]: 'error' } });
+      throw e;
+    });
+    return this.handles[id];
+  }
+
+  cardData(ref) {
+    if (!ref) return null;
+    const h = this.resolved[ref.deckId];
+    return h ? (h.getCardData(ref.cardIdx) || {}) : {};
+  }
+  deckTitle(ref) {
+    if (!ref) return '';
+    const def = this.deckDefs().find((d) => d.id === ref.deckId);
+    return def ? def.title : ref.deckId;
+  }
+
+  openPicker(target) {
+    this.setState({ picker: { target, deckId: null }, detail: null });
+  }
+  assign(deckId, cardIdx) {
+    const t = this.state.picker.target;
+    const ref = { deckId, cardIdx };
+    if (t.type === 'quest') this.setState({ quest: ref, picker: null });
+    else if (t.type === 'scene') {
+      const scenes = this.state.scenes.slice();
+      scenes[t.idx] = ref; // full stage: overwrite
+      this.setState({ scenes, picker: null });
+    } else if (t.type === 'actor') {
+      const actors = this.state.actors.slice();
+      actors[t.idx] = ref;
+      this.setState({ actors, picker: null });
+    }
+  }
+
+  drawSlot(el, ref) {
+    if (!el) return;
+    const key = ref ? ref.deckId + ':' + ref.cardIdx : 'empty';
+    if (el._kfbKey === key) return;
+    el._kfbKey = key;
+    if (!ref) { el.innerHTML = ''; return; }
+    el.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#A9A196;">rendering\u2026</div>';
+    this.ensureDeck(ref.deckId)
+      .then((h) => h.getCardCanvas(ref.cardIdx, 900))
+      .then((c) => {
+        if (el._kfbKey !== key) return;
+        c.style.width = '100%'; c.style.height = '100%';
+        c.style.objectFit = 'cover'; c.style.display = 'block';
+        el.innerHTML = '';
+        el.appendChild(c);
+      })
+      .catch(() => {
+        if (el._kfbKey !== key) return;
+        el.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#A6512E;">load failed</div>';
+      });
+  }
+
+  showDetail(ref) {
+    const c = this.cardData(ref) || {};
+    this.setState({
+      detail: {
+        name: c.cardName || 'Card ' + (ref.cardIdx + 1),
+        grade: c.grade != null ? 'G' + c.grade : '\u2014',
+        power: c.power || '\u2014',
+        lore: c.lore || '\u2014',
+        deck: this.deckTitle(ref)
+      }
+    });
+  }
+
+  publishContext() {
+    const s = this.state;
+    const refView = (ref) => {
+      if (!ref) return null;
+      const c = this.cardData(ref) || {};
+      return {
+        deck: this.deckTitle(ref), deckId: ref.deckId, cardIndex: ref.cardIdx,
+        cardNumber: c.cardNumber, cardName: c.cardName, grade: c.grade,
+        power: c.power, lore: c.lore, gradeReason: c.gradeReason, artworkPrompt: c.artworkPrompt
+      };
+    };
+    window.KFBStageContext = {
+      players: s.players,
+      activePlayer: s.activePlayer + 1,
+      questProgress: s.questProgress,
+      quest: refView(s.quest),
+      scenes: s.scenes.map(refView),
+      actors: s.actors.slice(0, s.players).map((a, i) => ({ player: i + 1, card: refView(a) }))
+    };
+  }
+  componentDidMount() { this.publishContext(); }
+  componentDidUpdate() { this.publishContext(); }
+
+  renderVals() {
+    const s = this.state;
+    const segBase = 'font-family:inherit; font-size:11px; font-weight:700; width:30px; padding:6px 0; border:0; cursor:pointer;';
+    const tabBase = 'font-family:inherit; font-size:11px; font-weight:700; letter-spacing:.06em; padding:7px 13px; border-radius:999px; border:1px solid rgba(38,34,28,.2); cursor:pointer;';
+
+    const playerCountBtns = [1, 2, 3, 4, 5, 6].map((n) => ({
+      n,
+      style: segBase + (s.players === n ? 'background:#26221C; color:#FBF8F1;' : 'background:transparent; color:#7B7368;'),
+      set: () => this.setState({ players: n, activePlayer: Math.min(s.activePlayer, n - 1) })
+    }));
+
+    const playerTabs = Array.from({ length: s.players }, (_, i) => ({
+      label: 'P' + (i + 1) + (s.actors[i] ? ' \u25CF' : ''),
+      style: tabBase + (s.activePlayer === i ? 'background:#5E8C61; border-color:#5E8C61; color:#FBF8F1;' : 'background:transparent; color:#26221C;'),
+      select: () => this.setState({ activePlayer: i })
+    }));
+
+    const questSteps = Array.from({ length: 6 }, (_, i) => {
+      const active = s.questProgress === i + 1;
+      const reached = s.questProgress >= i + 1;
+      return {
+        aria: 'Quest progress ' + (i + 1) + ' / 6',
+        src: this.diceSrc(i + 1),
+        style: 'width:44px; height:44px; padding:0; border:0; background:transparent; cursor:pointer; display:block; ' +
+          'transition:opacity .18s ease, transform .18s ease, filter .18s ease; ' +
+          (active
+            ? 'opacity:1; transform:translateY(-3px) scale(1.12); filter:drop-shadow(0 5px 9px rgba(166,81,46,.5));'
+            : reached
+              ? 'opacity:.92;'
+              : 'opacity:.38; filter:grayscale(1);'),
+        set: () => this.setState({ questProgress: s.questProgress === i + 1 ? i : i + 1 })
+      };
+    });
+
+    const sceneSlots = s.scenes.map((ref, i) => {
+      const c = this.cardData(ref) || {};
+      return {
+        label: 'Scene ' + (i + 1),
+        empty: !ref, filled: !!ref,
+        name: c.cardName || (ref ? 'Card ' + (ref.cardIdx + 1) : ''),
+        grade: c.grade != null ? 'G' + c.grade : '\u2014',
+        open: () => this.openPicker({ type: 'scene', idx: i }),
+        info: () => this.showDetail(ref),
+        canvasRef: (el) => this.drawSlot(el, ref)
+      };
+    });
+
+    const questRef = s.quest;
+    const questCard = this.cardData(questRef) || {};
+    const actorRef = s.actors[s.activePlayer];
+    const actorCard = this.cardData(actorRef) || {};
+
+    // picker
+    const p = s.picker;
+    let pickerTitle = '', pickerCards = [], pickerMsg = '';
+    const statusWord = { loading: 'loading\u2026', ready: '', error: 'load failed' };
+    const pickerDecks = this.deckDefs().map((d) => {
+      const st = s.deckStatus[d.id];
+      const on = p && p.deckId === d.id;
+      return {
+        title: d.title,
+        status: st === 'ready' && this.resolved[d.id] ? (this.resolved[d.id].cardCount + ' cards') : (statusWord[st] || 'tap to load'),
+        style: 'display:block; width:100%; text-align:left; font:inherit; color:inherit; border:0; border-radius:8px; padding:9px 10px; cursor:pointer; margin-bottom:2px; ' +
+          (on ? 'background:#26221C; color:#FBF8F1;' : 'background:transparent;'),
+        select: () => {
+          this.setState({ picker: { ...p, deckId: d.id } });
+          this.ensureDeck(d.id).catch(() => {});
+        }
+      };
+    });
+    if (p) {
+      const tt = p.target.type === 'quest' ? 'Quest slot' : p.target.type === 'actor' ? ('Actor \u00b7 Player ' + (p.target.idx + 1)) : ('Scene ' + (p.target.idx + 1));
+      pickerTitle = 'Play a card \u2014 ' + tt;
+      if (!p.deckId) pickerMsg = 'Pick a deck from the shared pool on the left.';
+      else if (s.deckStatus[p.deckId] === 'loading') pickerMsg = 'Loading deck\u2026';
+      else if (s.deckStatus[p.deckId] === 'error') pickerMsg = 'This deck failed to load.';
+      else if (this.resolved[p.deckId]) {
+        const h = this.resolved[p.deckId];
+        const n = h.cardCount;
+        pickerCards = Array.from({ length: n }, (_, i) => {
+          const c = h.getCardData(i) || {};
+          return {
+            name: c.cardName || 'Card ' + (i + 1),
+            grade: c.grade != null ? 'G' + c.grade : '\u2014',
+            power: c.power || '',
+            pick: () => this.assign(p.deckId, i)
+          };
+        });
+      }
+    }
+
+    const d = s.detail;
+    return {
+      playerCountBtns, playerTabs, questSteps, sceneSlots,
+      questProgressLabel: s.questProgress + ' / 6',
+      questEmpty: !questRef, questFilled: !!questRef,
+      questName: questCard.cardName || (questRef ? 'Card ' + (questRef.cardIdx + 1) : ''),
+      questGrade: questCard.grade != null ? 'G' + questCard.grade : '\u2014',
+      questOpen: () => this.openPicker({ type: 'quest' }),
+      questInfo: () => this.showDetail(questRef),
+      questCanvasRef: (el) => this.drawSlot(el, questRef),
+      actorEmpty: !actorRef, actorFilled: !!actorRef,
+      actorHint: 'Actor card for Player ' + (s.activePlayer + 1),
+      actorName: actorCard.cardName || (actorRef ? 'Card ' + (actorRef.cardIdx + 1) : ''),
+      actorGrade: actorCard.grade != null ? 'G' + actorCard.grade : '\u2014',
+      actorOpen: () => this.openPicker({ type: 'actor', idx: s.activePlayer }),
+      actorInfo: () => this.showDetail(actorRef),
+      actorCanvasRef: (el) => this.drawSlot(el, actorRef),
+      pickerOpen: !!p,
+      pickerTitle, pickerDecks, pickerCards,
+      pickerHasCards: pickerCards.length > 0,
+      pickerEmptyMsg: !!p && pickerCards.length === 0,
+      pickerMsg,
+      pickerClose: () => this.setState({ picker: null }),
+      detailOpen: !!d,
+      detailName: d ? d.name : '', detailGrade: d ? d.grade : '',
+      detailPower: d ? d.power : '', detailLore: d ? d.lore : '',
+      detailDeck: d ? d.deck : '',
+      detailClose: () => this.setState({ detail: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

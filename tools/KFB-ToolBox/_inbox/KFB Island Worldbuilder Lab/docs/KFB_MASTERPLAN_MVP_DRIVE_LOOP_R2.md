@@ -279,7 +279,7 @@ Quelle: `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md` (Fluff-Branch v0.3–v0.7.
 - **Insel-Rezept-Felder (Architektur-Review R1):** `worldId` fest, `decks: [{ deckId, role }]` mit Registry-IDs, Bewohner `{ id, card, variant }`, Anker `{ id, kind }`, `nodes: []`.
 - **Welt-Besitzer:** das Lab, auch für die Spielschicht nach dem MVP (nicht WB2) (Georg 09.10.).
 - **Zugang im MVP:** alle Inseln offen; Torwächter erst in P3, Dark Knight im MVP nur als Wache (Georg 09.10.).
-- **Town-Deck:** vorerst Uncle FrizzleBob’s Mission Control (Meta-Quest-Deck), `deckId` vorläufig `frizzlebob_mission_control`, Registry-Eintrag fehlt noch (Georg 09.10.). „ADD“ ist die Endung der unkomprimierten PDFs, kein Deck.
+- **Town-Deck:** vorerst Uncle FrizzleBob’s Mission Control (Meta-Quest-Deck), `deckId` `frizzlebob_s_mission_control` (aus `media/kfb/index.json`; Asset-Registry-Shard fehlt noch) (Georg 09.10.). „ADD“ ist die Endung der unkomprimierten PDFs, kein Deck.
 - **Eine Farbquelle (Steuer-Sitzung):** `ENV_ROLES` ist Owner. `palette-roles.js` (Clay Stage), die HUD-Biompaletten und `world-palettes.js` bekommen ihre Werte daraus über eine Zuordnung.
 
 ## 8 · Recherche-Anschluss (NotebookLM)
