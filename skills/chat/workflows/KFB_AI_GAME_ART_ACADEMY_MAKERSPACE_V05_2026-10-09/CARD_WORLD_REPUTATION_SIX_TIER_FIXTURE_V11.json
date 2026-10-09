@@ -1,0 +1,249 @@
+{
+  "kind": "KFB_SIX_TIER_REACTION_PROJECTION_FIXTURE",
+  "version": "0.1-planning",
+  "status": "NOT_IMPLEMENTED",
+  "owner": "Academy planning; future World PlayerSave + Resident Life + Card/Almanac consumers",
+  "sourceContracts": [
+    "kfb.asset-deck.v1",
+    "PLAYER_SAVE",
+    "CARD_COLLECTION_ENTRY",
+    "CARD_PROVENANCE_EVENT",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "NPC_MEMORY_VIEW"
+  ],
+  "scopes": [
+    "DECK",
+    "WORLD",
+    "NPC"
+  ],
+  "tiers": [
+    {
+      "tier": 1,
+      "id": "STRANGER",
+      "label": "Curious newcomer",
+      "deckUniqueCardsMin": 0,
+      "deckUniqueCardsMax": 0,
+      "react": [
+        "curious",
+        "open"
+      ],
+      "npcUse": "newcomer is normally welcomed"
+    },
+    {
+      "tier": 2,
+      "id": "MESSENGER",
+      "label": "First contact",
+      "deckUniqueCardsMin": 1,
+      "deckUniqueCardsMax": 2,
+      "react": [
+        "recognize-card",
+        "offer-route"
+      ],
+      "npcUse": "encounter or courier introduction"
+    },
+    {
+      "tier": 3,
+      "id": "KNOWN_FACE",
+      "label": "Recognized visitor",
+      "deckUniqueCardsMin": 3,
+      "deckUniqueCardsMax": 9,
+      "react": [
+        "recognize-return",
+        "reference-moment"
+      ],
+      "npcUse": "specific repeated visits"
+    },
+    {
+      "tier": 4,
+      "id": "LOCAL_FRIEND",
+      "label": "Local friend",
+      "deckUniqueCardsMin": 10,
+      "deckUniqueCardsMax": 27,
+      "react": [
+        "remember-favor",
+        "warmth"
+      ],
+      "npcUse": "actual personal help can raise NPC view independently"
+    },
+    {
+      "tier": 5,
+      "id": "TRUSTED_ALLY",
+      "label": "Trusted ally",
+      "deckUniqueCardsMin": 28,
+      "deckUniqueCardsMax": 50,
+      "react": [
+        "ack-help",
+        "local-rumor"
+      ],
+      "npcUse": "repeated deeds verified, valence remains separate"
+    },
+    {
+      "tier": 6,
+      "id": "LEGEND",
+      "label": "Island/Deck legend",
+      "deckUniqueCardsMin": 51,
+      "deckUniqueCardsMax": 56,
+      "react": [
+        "celebrate",
+        "earned-epithet"
+      ],
+      "npcUse": "personal legendary relationship not dependent on deck count"
+    }
+  ],
+  "denominator": "metadata.cardCount from live canonical Deck registry, 56 for three Hannover Decks in 2026-10-09 source snapshot",
+  "source56": true,
+  "thresholdPolicy": "FIXTURE_NOT_BALANCED",
+  "positiveHeroLegendRequiresWitnessedDeed": true,
+  "views": {
+    "DECK": {
+      "key": "playerId+deckId",
+      "truth": [
+        "distinct deckId/cardNumber from collection",
+        "Card provenance"
+      ],
+      "cacheOnly": true,
+      "sixTierRule": "cardCount-based provisional"
+    },
+    "WORLD": {
+      "key": "playerId+worldId",
+      "truth": [
+        "linkedDeckIds 0..n",
+        "world-specific receipts",
+        "witnessed deeds"
+      ],
+      "cacheOnly": true,
+      "sixTierRule": "non-additive projection, owner authoring required"
+    },
+    "NPC": {
+      "key": "playerId+residentId+optional instanceId",
+      "truth": [
+        "RelationshipMemory familiarity/affinity/trust",
+        "direct encounter receipts",
+        "bounded witnessed rumors"
+      ],
+      "cacheOnly": true,
+      "sixTierRule": "independent relationship band mapping"
+    },
+    "valence": {
+      "options": [
+        "warm",
+        "neutral",
+        "skeptical"
+      ],
+      "independentOfSixTier": true
+    }
+  },
+  "worldAccess": {
+    "discoveryByFirstCard": true,
+    "entryByFirstCard": "AUTHORED_GATE_ONLY",
+    "separate": [
+      "DISCOVERED",
+      "ROUTE_KNOWN",
+      "ENTRY_GRANTED",
+      "VISITED",
+      "FAST_TRAVEL_KNOWN"
+    ],
+    "zeroCardsChillAlternateRequired": true,
+    "usesExistingWorldAuthorization": true
+  },
+  "safeMemory": {
+    "npcStoresFullDeckJSON": false,
+    "rumorMaxHopsFirstPass": 1,
+    "noRumorRecascade": true,
+    "noAmbientLLM": true,
+    "rewardTransactionIdempotent": true,
+    "receiptSourceRequired": true,
+    "realTimePenaltyByDefault": false
+  },
+  "sampleWorldLinks": [
+    {
+      "worldId": "protopia",
+      "linkedDeckIds": [
+        "embrace_protopia"
+      ],
+      "sourceStatus": "EXISTING_WORLD_SEED"
+    },
+    {
+      "worldId": "dystopia",
+      "linkedDeckIds": [
+        "ignore_dystopia"
+      ],
+      "sourceStatus": "EXISTING_WORLD_SEED"
+    },
+    {
+      "worldId": "utopia",
+      "linkedDeckIds": [
+        "forget_utopia"
+      ],
+      "sourceStatus": "EXISTING_WORLD_SEED"
+    },
+    {
+      "worldId": "town",
+      "linkedDeckIds": [],
+      "sourceStatus": "TOWN_NOT_FOURTH_FUTURE_DECK"
+    },
+    {
+      "worldId": "personal-maker-world-demo",
+      "linkedDeckIds": [
+        "embrace_protopia",
+        "ignore_dystopia"
+      ],
+      "sourceStatus": "SYNTHETIC_TEST_ONLY"
+    }
+  ],
+  "exampleEvents": [
+    {
+      "eventId": "EX-CARD-FIRST",
+      "kind": "CARD_ACQUIRED",
+      "deckId": "ignore_dystopia",
+      "cardNumber": 1,
+      "worldId": "dystopia",
+      "effect": "discovery candidate; World-owned gate evaluation"
+    },
+    {
+      "eventId": "EX-COURIER",
+      "kind": "COURIER_DELIVERED",
+      "deckId": "ignore_dystopia",
+      "worldId": "dystopia",
+      "effect": "one Card provenance + NPC memory, no duplicate Card"
+    },
+    {
+      "eventId": "EX-FAVOR",
+      "kind": "MAKER_GIFTED_PROP",
+      "worldId": "protopia",
+      "residentId": "source-resident-id-required",
+      "effect": "direct NPC benefit and one-hop possible rumor"
+    },
+    {
+      "eventId": "EX-DELAY",
+      "kind": "COURIER_DELAYED",
+      "worldId": "protopia",
+      "residentId": "source-resident-id-required",
+      "effect": "mild skeptical dialogue, redeemable by later completion"
+    },
+    {
+      "eventId": "EX-BOSS-THIRD",
+      "kind": "BOSS_ATTEMPT",
+      "worldId": "dystopia",
+      "effect": "authored short empathy/comedy, no permanent rank punishment"
+    }
+  ],
+  "semantics": {
+    "noCardDeletion": true,
+    "noSecondCardDB": true,
+    "noNewXPStat": true,
+    "noSecondNpcMemoryDB": true,
+    "noWorldRuntimePatch": true,
+    "basicAcademyAccessible": true,
+    "notAllGatesLocked": true,
+    "optionalCardsAtGate": true
+  },
+  "testsStatus": {
+    "fixtureStaticOnly": true,
+    "browser": 0,
+    "runtime": 0,
+    "worldsaveReload": 0
+  }
+}
