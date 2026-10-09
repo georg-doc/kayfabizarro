@@ -1,5 +1,15 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · God Mode / ToolBox production workbench v0.7
+
+- Current available ToolBox specialist GPT Sites, legacy tools, original source modules, owner seams and missing cross-site integrations inventoried.
+- Source-verified eight `kfb.headzones/0.1` face/head zones; `kfb.nosegraft/1` and `kfb.browgraft/1`; EyeRig v6; `kfb.matzones/0.1`; native `kfb.pets/1` profile persistence contract. Mouth/viseme arbitrary swap remains UNVERIFIED.
+- Current canonical ToolBox front-door still lacks verified Site URL; Maker Space is a **consumer**, not a second portal or reimplementation of FrankenStein/Rigging/Animation.
+- Prepared first Character Alchemy proof: authentic source actor + donor in isolation, one head/eye color modification in current tool, native config export/import, cold reload, same appearance, revert unchanged other actors. Source-level checks **16/16 PASS**; browser/World/native JSON roundtrip **0**.
+- Added `GODMODE_TOOLBOX_CAPABILITY_CENSUS_V07.md`, `GODMODE_CHARACTER_ALCHEMY_VERTICAL_PROOF_V01.md`, `GODMODE_CAPABILITY_TEST_REPORT_V07.md`; updated Academy SSOT, Recovery, Return.
+- Next actor Claude Design source/visual proof, Code/Work sequential technical fallback only; same Academy visual source gate, no World R5, no merge/public route.
+
+
 ## 2026-10-09 · Interactive Maker Space functional pivot v0.6
 
 - User clarified objective is a real **interactive in-world Blender/Three.js/Game Art maker/learning/crafting space**; the external 31-MB AI chat classroom is no longer required for visual source proof.
