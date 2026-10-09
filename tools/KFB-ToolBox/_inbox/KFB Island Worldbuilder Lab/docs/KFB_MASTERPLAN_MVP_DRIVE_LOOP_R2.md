@@ -277,7 +277,9 @@ Quelle: `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md` (Fluff-Branch v0.3–v0.7.
 - **Privates Repo:** ja, Einrichtung mit der Infrastruktur nach dem MVP; bis dahin bleiben lizenzierte Assets lokal (`~/KFB-AssetCache/`).
 - **Ein Renderer (Steuer-Sitzung):** Das Lab bleibt im MVP auf WebGLRenderer r186. Der Billboard-Kit (`kit.js`, reine Geometrie) wird darauf eingebunden. Der Vorhang-Kern (WebGPU) läuft für den Character Select auf eigener Fläche bzw. eigenem Screen mit Fallback, nicht in derselben Szene.
 - **Insel-Rezept-Felder (Architektur-Review R1):** `worldId` fest, `decks: [{ deckId, role }]` mit Registry-IDs, Bewohner `{ id, card, variant }`, Anker `{ id, kind }`, `nodes: []`.
-- **Offen an Georg (Review R1 §6):** Lab als Welt-Besitzer auch nach dem MVP (statt WB2)? Alle Inseln im MVP offen? Town 0 Decks oder verbundene Decks?
+- **Welt-Besitzer:** das Lab, auch für die Spielschicht nach dem MVP (nicht WB2) (Georg 09.10.).
+- **Zugang im MVP:** alle Inseln offen; Torwächter erst in P3, Dark Knight im MVP nur als Wache (Georg 09.10.).
+- **Town-Deck:** vorerst Uncle FrizzleBob’s Mission Control (Meta-Quest-Deck), `deckId` vorläufig `frizzlebob_mission_control`, Registry-Eintrag fehlt noch (Georg 09.10.). „ADD“ ist die Endung der unkomprimierten PDFs, kein Deck.
 - **Eine Farbquelle (Steuer-Sitzung):** `ENV_ROLES` ist Owner. `palette-roles.js` (Clay Stage), die HUD-Biompaletten und `world-palettes.js` bekommen ihre Werte daraus über eine Zuordnung.
 
 ## 8 · Recherche-Anschluss (NotebookLM)

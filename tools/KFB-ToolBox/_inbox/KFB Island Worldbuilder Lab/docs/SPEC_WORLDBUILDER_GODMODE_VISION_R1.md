@@ -66,7 +66,7 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
   ```
   Das passt zu `planFromSpec` im Bauplan Stufe 1 (§2) und zu `kfb.r2d.island-recipe/0` aus R2D. **Regeln der Felder** (Architektur-Review R1, `REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md`):
   - `worldId` ist ein fester Slug und wird nie neu erzeugt (auch nicht beim Kopieren oder Umbenennen; eine Kopie bekommt eine neue ID).
-  - `decks[].deckId` ist die Registry-ID aus `registry/assets/v1/decks/*.json` (z. B. `embrace_protopia`), **nicht** der PDF-Dateiname. `role` ist `primary` oder `linked`; höchstens ein `primary`, Town darf 0 Decks haben.
+  - `decks[].deckId` ist die Registry-ID aus `registry/assets/v1/decks/*.json` (z. B. `embrace_protopia`), **nicht** der PDF-Dateiname. `role` ist `primary` oder `linked`; höchstens ein `primary`. Fehlt ein Deck noch in der Registry, gilt ein vorläufiger Slug mit `"source"` (Pfad in `media/kfb/`) und `"status": "registry-pending"`. Town: `{ "deckId": "frizzlebob_mission_control", "role": "primary", "source": "media/kfb/FrizzleBob_s_Mission_Control_-_ADD_web.pdf.json", "status": "registry-pending" }` (Georg 09.10.).
   - `residents[]`: `id` ist die Instanz in dieser Insel, `card` die Figuren-Karte (`kfb.character-card/1`), `variant` die Welt-Variante. Dieselbe Figur kann auf mehreren Inseln stehen.
   - `anchors[]`: stabile `id` plus `kind` (`road`, `dock`, `portal`, `threshold`, `stair`). Daran docken später Track-Editor, Portale und Gatekeeper an.
   - `nodes[]`: im MVP leer. Später Interaktions-Punkte mit stabiler ID (`resource`, `water`, `farm`, `craft`, `stage`), z. B. Mine, Obstgarten, Angelstelle, Werkbank.

@@ -22,7 +22,7 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - Gelesen: Fluff-Branch (v0.3–v0.7.1: Crafting/Almanac, Chill/Standard/Hard, Genesis/UFO, Angeln/Farm/Blast, Blast-Mining/Loot, lebende Props) und Academy-Branch (Reputation in sechs Stufen v1.1, Gatekeeper-Grammatik, Gott-Modus-Zensus, Holographic Foundry) plus Lean-Memory- und Deck-Pipeline-Verträge auf Main.
 - Ergebnis `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md`: passt, kein P0-Bruch. Im Lab-Code gibt es nur Autoren-Zustand, noch keinen Spielstand.
 - Vier Datenfelder für `kfb.island-config/1` eingetragen (`worldId`, `decks[{deckId, role}]` mit Registry-IDs, Bewohner `{id, card, variant}`, Anker `{id, kind}` + `nodes[]`). Beispiel korrigiert: `embrace_protopia` statt PDF-Name.
-- Masterplan §6b: Post-MVP-Spielschicht P0–P4. Drei offene Fragen an Georg (Welt-Besitzer, offene Inseln, Town-Decks).
+- Masterplan §6b: Post-MVP-Spielschicht P0–P4. Georgs Entscheidungen: Lab ist Welt-Besitzer; alle Inseln im MVP offen; Town-Deck vorerst FrizzleBob’s Mission Control (Registry-Eintrag fehlt noch).
 - Datumsfehler korrigiert: „2026-10-10“ → 2026-10-09 in sechs Lab-Dokumenten.
 
 ## Gott-Modus-Perspektive, A/B-Gate erledigt (2026-10-09)
