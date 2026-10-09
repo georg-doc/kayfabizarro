@@ -1,5 +1,17 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Interactive Maker Space functional pivot v0.6
+
+- User clarified objective is a real **interactive in-world Blender/Three.js/Game Art maker/learning/crafting space**; the external 31-MB AI chat classroom is no longer required for visual source proof.
+- Researched official Three.js Examples, three.quarks VFX/particle editor, three-gltf-viewer, glTF-Transform, webgl-studio, tsl-node-editor, three-inspect, Triplex and official Three.js Editor; sorted as T0 native/T1 RTT/T2 sandbox/T3 media/T4 offline authoring/T5 research, NOT plug-and-play universal iframe.
+- Reused existing KFB `academy-live.js`, God Mode typed operations, MediaSurface, Asset Librarian, Rig/Animation owner, FrankenStein Studio, Material owner and current Backpack/HUD prototypes.
+- Designed learner/creator/god-mode permissioned projections over **one typed action**, and non-canonical proposal for six-color Fluff → cosmetic/recipe → verified maker artifact → player Backpack inventory; canonical Fluff=HP conflicts must be resolved by World economy owner.
+- Added `MAKERSPACE_INTERACTIVE_LEARNING_CRAFTING_V06.md`, `MAKERSPACE_EMBEDDED_EXAMPLES_DONOR_AUDIT_R1.md`, `MAKERSPACE_INTERACTIVE_RESEARCH_TEST_REPORT_R1.md`, `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md`.
+- Source/routing facts 20/20 grounded, runtime/browser/visual donor integration 0. No new runtime, no merge, no public site.
+- Updated SSOT, Recovery, Return. **Same single gate, new functional source targets**: `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`. Next preferred executor Claude Design; Code/Work sequential technical fallback only.
+
+
+
 ## 2026-10-09 · Preferred visual executor changed to Claude Design
 
 - Georg proposed Claude Design as the easier visual authoring and acceptance environment for the public-repository Academy visual proof; accepted as **preferred execution route**, not an execution start.
