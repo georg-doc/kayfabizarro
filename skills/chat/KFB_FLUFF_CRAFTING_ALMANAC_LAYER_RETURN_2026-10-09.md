@@ -1,4 +1,23 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.7.1
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.8
+
+> **CURRENT RETURN UPDATE · v0.8 · 2026-10-09 · PRISON ISLAND / KAYFABE PATROL LOOP**
+>
+> Added [KFB_PRISON_ISLAND_KAYFABE_PATROL_LOOP_V0_8_2026-10-09.md](./KFB_PRISON_ISLAND_KAYFABE_PATROL_LOOP_V0_8_2026-10-09.md) as strictly **POST-MVP concept planning** in the existing KFB Island Worldbuilder Lab / Minigame-Layer ideation owner. Concept checkpoint: `7b32e0dcef20693985011cf135f46cf891905ac2`; verified concept blob `eae32d48756115a572058fc4595465d1ddf46781`. No runtime, current MVP, Four-Island A/B, Academy, Combat, Dungeon Raid or public Site/Stage state changed.
+>
+> **Core product direction:** Toy Soldier becomes a recurring patrol/authority Resident whose job is continually justified by a recurring escaped heel. Preferred existing-source visual/body candidate is the **Black Knight**, not yet a canon-locked identity: both characters know the Kayfabe performance, occasionally break role to repair/negotiate the set, then resume ceremonial arrest/escape. Shared tragicomic direction: each has lost the institution/audience that made his role meaningful, so patrol and villainy keep one another employed. Demon Lord is retained as rarer high-security escalation, not the everyday buddy antagonist.
+>
+> **Prison venue:** proposal is a small Dystopia-adjacent satellite prison / offshore fort / instanced "Prison Planet" venue, **not a fifth canonical core island**. Reuse existing World-Atlas Dungeon S13.2 graph/Recipe family: `solid / door / gate / open`, `wall_gated`, two levels and measured walkability. Current FREE Dungeon inventory explicitly has no standalone cage, so the first cell uses existing gated seams rather than placeholder cage geometry. Existing prop evidence covers bed, table/chair, shelves, keyring, crates/barrels/chests, bones/skull and lights; graffiti/tally marks/CCTV/cardboard facade remain SOURCE_REQUIRED or reuse an existing accepted presentation owner.
+>
+> **Gameplay:** open-top/cutaway clay-dungeon cell, optional reversible breakaway/crumple presentation for Kayfabe wrestling, finite authored cell-block recipes, Toy Soldier "builds" additions only through the existing World/Build owner. The player may also be jailed, with nonblocking routes such as brief stay, official fine, authored bribe, persuasion, distraction, real key/escape prop, authorized loose-facade route or a local release-token mechanic. No universal police heat system, new economy, new dialogue brain or new prison runtime. Panopticon/CCTV and inmate conspiracy talk are optional playable satire; inmate claims remain diegetic viewpoints and may contradict one another.
+>
+> **First later proof, only after playable MVP + explicit Georg authorization:** "The Same Damn Prisoner" = source-isolated Toy Soldier + source-isolated Black Knight + one S13.2 open-top cell with `wall_gated` + 1–2 proven props + one patrol/escape/recapture loop + one player distraction + one short optional ChatterBox beat + save/reload custody state. No full stealth, combat requirement, dynamic prison generator or fifth world.
+>
+> **Recovery:** exact GitHub concept is mirrored in KFB Production Control workflow `KFB_ISLAND_WORLDBUILDER_LAB_MINIGAME_LAYER_IDEATION_2026-10-09`, artifact file id `7ab01265-4a86-414d-9de2-c1605ac327d7`, SHA-256 `1d2c4060e0091469dd40a777456603a9622f569b451d3f24ac4deffc5847f072`; implementation checkpoint id `2317bb6b-df9f-4430-9c05-9fcd337a52ec`. Static concept/source invariant check: **28/28 PASS** against the persisted file plus current S13/S13.3 donor handoffs. Runtime **0**, browser **0**, source-isolated visuals **0**, savegame **0**, Site **0**, Stage **0**.
+>
+> **Exactly one deferred Minigame/Fluff gate remains unchanged:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`. When authorized later, Prison Island is one scoped subsection of that audit; no new P0 or human gate is created by this concept slice.
+
+---
+
 > **CURRENT RETURN UPDATE · v0.4 · 2026-10-09 · POST-MVP PLAY/CRAFT/LEARN + OPTIONAL DIFFICULTY**
 >
 > Added [KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md](./KFB_PLAY_CRAFT_LEARN_OPTIONAL_SURVIVAL_PROFILES_V0_4_2026-10-09.md) as an additive architecture/ideation update in the **same Fluff owner/branch**, without altering the active Academy owner or World runtime. Document source blob `de686cf04f47d5fe6008cd6316223851fbccb5c1` at first implementation milestone `7f6d5b13282387debc81a5717dc09623f3457d02`.
