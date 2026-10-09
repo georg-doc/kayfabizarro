@@ -1,0 +1,235 @@
+{
+  "kind": "KFB_ACADEMY_LESSON_SEED",
+  "version": "0.1",
+  "status": "CONTENT_VERIFIED_SOURCE_BACKED_NOT_RENDERED",
+  "owner": "KFB AI Game Art Academy / Maker Space",
+  "shared_engine": "shared-adaptive-learning-core.v0.1",
+  "domain_adapter": "KFB_ACADEMY",
+  "lesson_id": "KFB-ACADEMY-DRAG-001",
+  "title": "Move an Object, Explain a Coordinate",
+  "source_policy": "SOURCE_LOCKED",
+  "source": {
+    "repository": "georg-doc/kayfabizarro",
+    "path": "travel/KFB Travel Combat v25/terrain-v25/academy-lessons.js",
+    "blob_sha": "68d2ce26f438789b24fd4bb6f5c3567d91bf658b",
+    "example_id": "misc_controls_drag",
+    "initializer": "initDrag",
+    "source_type": "LOCAL_KFB_IMPLEMENTATION",
+    "stage_adapter_path": "travel/KFB Travel Combat v25/terrain-v25/academy-live.js",
+    "stage_adapter_blob_sha": "7c8b4b842f43541909f63ca7fe9a040e78d11cc9",
+    "source_truth": "Eight interactive meshes, Raycaster-based selection, plane intersection and camera orbit, UV pointer adapter, one renderer via WebGLRenderTarget",
+    "unverified": [
+      "original browser render",
+      "stage click/drag round-trip",
+      "KFB MediaSurface runtime receiver",
+      "FrizzleBob v5 tutor/voice",
+      "user artifact persistence"
+    ]
+  },
+  "learner_input": {
+    "required": [
+      "declared_start_level",
+      "goal",
+      "session_minutes"
+    ],
+    "default_session_minutes": 20,
+    "declared_start_level_is_prior_only": true,
+    "levels": [
+      "beginner",
+      "familiar",
+      "intermediate",
+      "advanced"
+    ]
+  },
+  "skills": [
+    {
+      "id": "kfb.three.object_transform",
+      "label": "Object transform vs geometry",
+      "requires": []
+    },
+    {
+      "id": "kfb.three.raycaster",
+      "label": "Raycaster selection",
+      "requires": [
+        "kfb.three.object_transform"
+      ]
+    },
+    {
+      "id": "kfb.three.pointer_coordinates",
+      "label": "UV → NDC",
+      "requires": []
+    },
+    {
+      "id": "kfb.three.intersect_plane",
+      "label": "Ray/plane intersection and grab offset",
+      "requires": [
+        "kfb.three.raycaster",
+        "kfb.three.pointer_coordinates"
+      ]
+    },
+    {
+      "id": "kfb.three.render_to_texture",
+      "label": "RenderTarget vs separate Canvas",
+      "requires": [
+        "kfb.three.object_transform"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D1",
+      "skill_id": "kfb.three.object_transform",
+      "operation": "DIAGNOSE",
+      "ask": "Ein Würfel verschiebt sich in der Szene. Was ändert sich: seine Geometrie, seine Position, oder beides?",
+      "rubric": [
+        "Eine Translation kann die Object-Position verändern ohne Geometrie-Vertices zu ändern",
+        "Lokale Position und Weltposition sind nicht immer identisch, etwa bei Eltern-Transforms"
+      ],
+      "failure_tags": [
+        "geometry_transform_conflation"
+      ]
+    },
+    {
+      "id": "D2",
+      "skill_id": "kfb.three.pointer_coordinates",
+      "operation": "DIAGNOSE",
+      "ask": "Der Pointer trifft eine Textur bei UV (0, 0). Wo liegt er in Three.js-NDC und warum reicht ein Bildschirm-Pixelwert hier nicht?",
+      "rubric": [
+        "NDC ist (-1,-1) bei UV (0,0), wenn v wie Three.js-UV nach oben zeigt",
+        "UV-zu-NDC: (2u-1,2v-1)",
+        "Der Input muss auf die lokale MediaSurface-Texturfläche transformiert werden"
+      ],
+      "failure_tags": [
+        "uv_ndc_flip",
+        "pixel_uv_conflation"
+      ]
+    },
+    {
+      "id": "D3",
+      "skill_id": "kfb.three.raycaster",
+      "operation": "DIAGNOSE",
+      "ask": "Wodurch unterscheidest du einen Klick auf den Körper von einem Klick in den leeren Raum?",
+      "rubric": [
+        "Raycaster wird aus NDC und Kamera gesetzt",
+        "Raycast gegen die interaktiven Bodies liefert Hit oder keinen Hit",
+        "Ohne Hit kann die Kamerainteraktion die Pointer-Bewegung übernehmen"
+      ],
+      "failure_tags": [
+        "raycast_hittest_gap"
+      ]
+    },
+    {
+      "id": "D4",
+      "skill_id": "kfb.three.intersect_plane",
+      "operation": "DIAGNOSE",
+      "ask": "Warum nimmt die Drag-Lektion beim Verschieben eine Ebene plus Grab-Offset statt die 2D-Mausdifferenz direkt zu X/Z zu addieren?",
+      "rubric": [
+        "Screen-Drag ist perspektiv- und kameraabhängig",
+        "Ray/plane liefert einen Punkt im 3D-Koordinatensystem",
+        "Grab-Offset verhindert dass der Körper beim Greifen zum Trefferpunkt springt"
+      ],
+      "failure_tags": [
+        "perspective_drag_conflation"
+      ]
+    }
+  ],
+  "session_loop": [
+    {
+      "phase": "RECAPTURE",
+      "operation": "RECAP",
+      "task": "Zu Beginn 1–3 alte, fällige Skill-Nodes aus vorherigen Sitzungen ohne Hinweise abrufen",
+      "no_previous_history": "skip_not_fabricate"
+    },
+    {
+      "phase": "SEE",
+      "operation": "ACQUIRE",
+      "task": "Unveränderte Original-Lektion misc_controls_drag zeigen; acht 3D-Körper und Kameradrehung benennen"
+    },
+    {
+      "phase": "EXPLAIN",
+      "operation": "TEACH_BACK",
+      "task": "Vor der Interaktion erklären lassen, wie Klick, Ray, Hit und Objektverschiebung zusammenhängen"
+    },
+    {
+      "phase": "MODIFY",
+      "operation": "MODIFY",
+      "task": "Einen Körper greifen, bewegen, loslassen; Kamera im Leerraum drehen; tatsächliche Pointer-/Objektzustände prüfen"
+    },
+    {
+      "phase": "BUILD",
+      "operation": "BUILD",
+      "task": "Eine kleine zweite Anordnung selbst erstellen oder Drag-Logik in einem unabhängigen, quellenechten Übungsprojekt reproduzieren"
+    },
+    {
+      "phase": "SHOW",
+      "operation": "APPLY",
+      "task": "Zwei überprüfbare Objektzustände oder einen Canvas-/Scene-/Render-Test auf der bestehenden KFB MediaSurface zeigen; sonst UNVERIFIED"
+    },
+    {
+      "phase": "RECAP",
+      "operation": "SPACE",
+      "task": "Raycaster, Ebene und Grab-Offset später ohne Vorlage erklären oder in neuer Szene erneut anwenden"
+    }
+  ],
+  "tutoring": {
+    "presentation_actor": "KFB_CURRENT_FRIZZLEBOB_V5_PENDING_SOURCE_ISOLATION",
+    "assistance_ladder": [
+      "A0 no help",
+      "A1 refocus",
+      "A2 discriminating question",
+      "A3 concept cue",
+      "A4 partial structure",
+      "A5 worked example",
+      "A6 explicit correction"
+    ],
+    "policy": "Ask one diagnosis or prediction at a time; wait for learner response; use actual source, no invented Blender inspection",
+    "speech_owner": "Existing ChatterBox/KFB Audio; no parallel TTS graph"
+  },
+  "evaluation": {
+    "evidence_tiers": [
+      "E0 UNSEEN",
+      "E1 EXPOSED",
+      "E2 SUPPORTED",
+      "E3 INDEPENDENT",
+      "E4 APPLY_OR_BUILD",
+      "E5 TRANSFER_TEACH_DEFEND"
+    ],
+    "independence_separate_from_correctness": true,
+    "readiness_separate_from_rank": true,
+    "mandatory_evidence_fields": [
+      "observer",
+      "method",
+      "artifact_ref",
+      "rubric_id",
+      "recorded_at",
+      "verdict",
+      "limitations"
+    ],
+    "no_tool_observation_verdict": "UNVERIFIED",
+    "milestone_rules": [
+      {
+        "tier": "E2",
+        "proof": "Supported correct explanation after hints, with help level recorded"
+      },
+      {
+        "tier": "E3",
+        "proof": "Independent correct explanation of UV→NDC and Raycaster/plane/grab offset"
+      },
+      {
+        "tier": "E4",
+        "proof": "Observed successful drag + camera behavior, or independent build test with valid artifact receipt"
+      },
+      {
+        "tier": "E5",
+        "proof": "Delayed independent transfer to a second nonidentical scene and defensible explanation"
+      }
+    ]
+  },
+  "visual_gate": {
+    "current": "ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1",
+    "original_kfb_demo": "NOT_RENDERED",
+    "original_classroom": "NOT_RENDERED",
+    "current_billboard": "NOT_RENDERED",
+    "no_human_acceptance_claim": true
+  }
+}
