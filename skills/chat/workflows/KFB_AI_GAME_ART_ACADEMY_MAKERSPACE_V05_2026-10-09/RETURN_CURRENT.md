@@ -1,5 +1,9 @@
 # RETURN_CURRENT · KFB Academy Maker Space · 2026-10-09
 
+**CURRENT RETURN UPDATE · 2026-10-09 · Maker Space functional pivot v0.6:** The external 3D AI Classroom original is now optional UX history, not a source acceptance prerequisite. Current user outcome: **interactive, in-world KFB Maker Space** driven by existing typed God Mode/Material/Rig/Asset/MediaSurface operations, with the shared Feynman Learning Core as a learner adaptation/evidence layer; potential six-color Fluff crafting and Backpack output remain non-canonical proposals pending World/Inventory owners. Verified source research report `MAKERSPACE_INTERACTIVE_RESEARCH_TEST_REPORT_R1.md` records **20/20 source/routing findings**, **0** external visual/runtime integration tests. Added `MAKERSPACE_INTERACTIVE_LEARNING_CRAFTING_V06.md`, `MAKERSPACE_EMBEDDED_EXAMPLES_DONOR_AUDIT_R1.md`, `CLAUDE_DESIGN_FUNCTIONAL_MAKERSPACE_PROOF_R2.md`; SSOT and Recovery updated. Single same gate `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1` is now A real KFB interactive RTT lesson, B original three.quarks/official FX/Shader donor, C actual KFB Billboard and prop. Next preferred executor **Claude Design** for isolated visuals and optional sourced composition; if actual WebGL input unsupported, a **single sequential Claude Code or ChatGPT Work** technical executor. No executor launched, no merged code, no World R5, no new product Site. Read this override before older Work-first/Classroom-first text below.
+
+
+
 **LATEST HANDOFF UPDATE · 2026-10-09:** Claude Design preferred for A/B/C original visual proof, conditional on real asset loading; previous Work-first preference superseded. No new tests, no executor started, same visual gate.
 
 **Outcome:** First actual source-anchored `misc_controls_drag` learner-content seed implemented and tested as data; current source-visual proof prepared, **NOT RUN**. No Academy runtime, no World integration, no public deployment.  
