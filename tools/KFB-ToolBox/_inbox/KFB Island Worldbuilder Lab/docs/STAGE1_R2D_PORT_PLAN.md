@@ -71,7 +71,8 @@ Gebäude-Katalog K2 und Straßenbett laufen darauf. Das alte Gelände bleibt nur
 
 - `onBeforeCompile`-Patches: Chunk-Namen `#include <color_fragment>` bzw. `<begin_vertex>` gegen r186 prüfen (im Lab bereits genutzt, also bekannt gut).
 - `customProgramCacheKey` je Patch setzen (S1 vs. alt).
-- Marching Cubes aus `three/addons` (nur falls Scholle sie nutzt): Import-Pfad r186.
+- Scholle v7 braucht **kein** Marching Cubes (Ring-Lofting + Taubin-Glättung, `scholle-bench.js`); keine addons-Abhängigkeit.
+- **Hash ohne Sinus** (Hoskins-Stil, wie in fluid.js vorgeschrieben) für S1 prüfen: `fract(sin(…))` verliert weit vom Ursprung bzw. bei großen Weltkoordinaten an Genauigkeit (Hinweis aus NotebookLM-Report). Teil des S1-TUNE.
 - `outputColorSpace`, `toneMapping`: Lab-Werte beibehalten (Neutral). R2D nutzt ACES, deshalb Farben im Vergleichsbild prüfen.
 - `fwidth` in GLSL3: vorhanden (S1 nutzt es schon).
 

@@ -11,8 +11,8 @@ Stand: 2026-10-09 · Zweck: technischer Überblick für die Recherche. Gesucht s
 | Kamera | OrbitControls (God Mode) mit `zoomToCursor` und `dampingFactor` 0,25; Third-Person-Kamera aus Joyride (Abstand nach Fahrzeuglänge) |
 | Instanzierung | `BatchedMesh` je Insel, zwei Pässe (Schattenwerfer bzw. nur Empfänger); Instanzdaten (Gruppe, Phase, Steifigkeit, Paletten-Slot) in einer Daten-Textur |
 | Knet-Look | Clay v10 bzw. K2: `onBeforeCompile`-Patches am Standard-Material, Relief- und Fingerabdruck-Texturen, weiche Normalen |
-| Triangulierung | cdt2d (Constrained Delaunay) für Gelände mit Straßennaht als feste Kante |
-| Unterseite | SDF-Feld + Marching Cubes (three/addons, 96³) bei R2D |
+| Triangulierung | heute (altes Lab-Gelände): cdt2d mit Straßennaht als feste Kante; nach Stufe 1: Polarnetz nach R2D, Straßenbett analytisch |
+| Unterseite | **Scholle v7:** Ringe des Umrisses, um den Schwerpunkt geschrumpft (Ecken je Ring ≈ 14 → 11 → 8 → 5, Zipper-Triangulation), Zacken = nach unten gezogene Ecken des vorletzten Rings, danach Unterteilung + Taubin-Glättung. Kein Marching Cubes mehr (das war R2D v3–v6) |
 | Wasser | fluid.js (eigenes Modul): ein Feld je Gewässer, Uferabstand als Attribut, Schaum am Ufer |
 | 3D-Werkzeuge | Blender über MCP (Straßenkörper, Mauerwerk, Renders), Blender-Coworker auf zweitem Rechner (Figuren, Animation) |
 | Prüfung | three-inspect (MIT, gepatcht für r186), Headless Chrome für Renders, Messfunktionen `__kfb.sizes()`, `__kfb.envCheck()`, `__kfb.passes()`, `__kfb.measureRoadBed()` |
@@ -23,9 +23,9 @@ Stand: 2026-10-09 · Zweck: technischer Überblick für die Recherche. Gesucht s
 2. **Höhe:** analytisch, zwei Oktaven fBm in Weltkoordinaten. Jede Abflachung ist ein `lerp` mit `smoothstep`-Gewicht über mehrere Einheiten, harte Kanten gibt es nicht.
 3. **Masken und Gewichte je Vertex** (`aTW`): Sand (Bankett, Ufer), Pflaster (Plätze, Wege), Fels (Rand, Schlucht).
 4. **Netz:** Polarnetz über die Insel, Oberseite mit 1024²-Farbkarte in Draufsicht-UV (Grasflecken je Pixel).
-5. **Sprenkel im Fragment-Shader:** `kfbLayer` je Material mit eigener Zellgröße (Basis 1,1 R2D-Einheiten; im Lab × 1,46): große Flecken, mittlere und kleine Tropfen, Rücktropfen. Das Muster hängt an der Weltposition und läuft dadurch nahtlos über Mesh-Grenzen.
+5. **Sprenkel im Fragment-Shader:** seit 09.10. **S1 `kfbSpeckleLayer`** (`src/clay/kfb-speckle.ts`, diskrete Knet-Scheiben, ersetzt `kfbLayer`); bisher `kfbLayer` je Material mit eigener Zellgröße (Basis 1,1 R2D-Einheiten; im Lab × 1,46): große Flecken, mittlere und kleine Tropfen, Rücktropfen. Das Muster hängt an der Weltposition und läuft dadurch nahtlos über Mesh-Grenzen.
 6. **Kante:** Die Oberfläche rundet sich als Viertelkreis über den Rand (Kappe 1,4, Überhang 0,45) und taucht dann in den Fels.
-7. **Körper:** Scholle v7. Querschnitt in Tiefe h ist der Inselumriss, geschrumpft auf den Flächenschwerpunkt, k = (1 − h/D)^pw. Eine Hauptspitze unter dem Schwerpunkt, 2–6 Nebenspitzen senkrecht nach unten.
+7. **Körper:** Scholle v7 (Ring-Lofting, siehe Tabelle oben). Querschnitt in Tiefe h ist der Inselumriss, geschrumpft auf den Flächenschwerpunkt, k = (1 − h/D)^pw. Eine Hauptspitze unter dem Schwerpunkt, 2–6 Nebenspitzen senkrecht nach unten.
 
 **Sprenkel-Befund (09.10.):** Das Muster ist maßstabsabhängig. Aus Spiel- und Fahrkamera liest es sich als Sprenkel, aus Laufhöhe verschmelzen die Felder zu Flächen. Offen ist, ob für die Nahsicht eine kleinere Zelle oder eine eigene Punktlage nötig ist (Recherche P1).
 
