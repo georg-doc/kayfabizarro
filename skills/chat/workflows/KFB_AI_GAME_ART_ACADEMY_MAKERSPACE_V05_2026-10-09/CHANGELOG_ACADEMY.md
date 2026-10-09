@@ -1,5 +1,13 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Preferred visual executor changed to Claude Design
+
+- Georg proposed Claude Design as the easier visual authoring and acceptance environment for the public-repository Academy visual proof; accepted as **preferred execution route**, not an execution start.
+- New source-bounded brief `CLAUDE_DESIGN_ROUTE_R1.md`: original classroom, unchanged KFB Drag lesson and real KFB Billboard individually before Maker Space composition.
+- Claude Code/ChatGPT Work remains a sequential technical fallback if Claude Design cannot fetch/render original GLBs or verify input; no parallel owner or faux original assets.
+- Updated `RECOVERY_CURRENT.md` and `RETURN_CURRENT.md` to name Claude Design first.
+- Same gate `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`; zero additional runtime/browser tests; no PR, merge or deployment.
+
 ## 2026-10-09 · source-backed first lesson & crash-safe continuation
 
 - Added actual `misc_controls_drag` lesson content `ACADEMY_FIRST_LESSON_DRAG_V01.json` on existing Shared Adaptive Learning Core v0.1; it does not create an engine, runtime, media owner or learner-state store.
