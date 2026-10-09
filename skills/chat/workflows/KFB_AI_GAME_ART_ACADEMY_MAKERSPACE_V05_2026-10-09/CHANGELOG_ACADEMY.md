@@ -1,5 +1,15 @@
 # Academy / Maker Space · Additive local changelog
 
+## 2026-10-09 · Modular Gatekeeper / Adventure Encounter grammar v1.0
+
+- Extended 4GTN Makerspace toll to reusable island/bridge/castle/mine/disco/VIP/censored-deck FICTION gatekeeper encounters, with CHILL/short forgiving satirical narrative default; hard optional and no forced access grind.
+- One deterministic World-owned grant/threshold state controls actual road/flight/portal entry; ChatterBox dialogue, Resident Performance body/eyes/props, Audio and barrier animations react to truth and return to idle. No second animation/auth/Wallet owner, no LLM arbitrating access.
+- Reused genuine Resident Performance contract, reaction matrix and native KayKit rig tiers; 4GTN Forgotten + Black Knight Rig_Large candidate-only, gnome/troll/disco actor sources unverified.
+- Exact Freestyle five-card grammar = **1 Character + 3 Scene + 1 Quest**; KayfaBINGO acknowledgment, KayfaBONGO narrative restatement, KayfaBOGGLE one clarification. A 3-collected-Scene castle toll is an **optional noncanonical quest rule**, not a universal card tax.
+- Added `GATEKEEPER_ENCOUNTER_GRAMMAR_V10.md`, `GATEKEEPER_ENCOUNTER_FIXTURES_V10.json`, `GATEKEEPER_ENCOUNTER_TEST_REPORT_V10.md`, 12/12 local fixture + 16/16 independent source checks PASS; 0 runtime/browser/ChatterBox/animation/access acceptance tests.
+- Updated Academy SSOT, Recovery, Return and original Claude Design brief. Same Academy gate `ACADEMY_MAKERSPACE_VISUAL_SOURCE_PROOF_R1`, optional gate storyboard after source isolation only. Fluff deferred gate and World R4 STOP unchanged; no PR/merge/Stage/new Site.
+
+
 ## 2026-10-09 · Diegetic 4GTN entrance / Fluff sibling reconciliation v0.9
 
 - Recovered exact `4GTN` and `4GTN_Forgotten.glb` original two-model source from Resident Atlas `gtn`, `Rig_Large`, candidate-only. It is a real source asset, **not** a verified functioning gatekeeper; organic moss is geometry.
