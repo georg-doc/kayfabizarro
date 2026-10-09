@@ -36,9 +36,12 @@ Je Figur eine JSON-Datei, versioniert auf GitHub, gelesen von allen Werkzeugen: 
   },
   "seat": { "hipOffset": [0.41, 0.85, 0.18], "clip": "Sit_Chair_Idle" },
   "animations": { "library": "Rig_Medium", "limits": "rig_medium_joint_limits/1" },
-  "expressions": { "map": "kfb.expression-map/1" }
+  "expressions": { "map": "kfb.expression-map/1" },
+  "variants": { "dystopia": { "costume": "…", "accessories": ["…"], "kayfabe": "…" }, "utopia": { "…": "…" } }
 }
 ```
+
+**Cast-Serie (Georg, 10.10.):** Figuren reisen zwischen den Welten und tragen je Welt andere Kostüme und Accessoires (Multiversum-Logik). Die Varianten stehen in `variants`, Augen, Griffe und Sitz bleiben gleich.
 
 **Regeln:**
 - Ein Prop trägt seinen **Griffrahmen** (wo die Hand ihn hält) im Prop-Manifest. Die Figur legt nur fest, welche Hand und welche Fingerhaltung gilt.
@@ -60,6 +63,10 @@ Je Figur eine JSON-Datei, versioniert auf GitHub, gelesen von allen Werkzeugen: 
 
 Dazu ein Kamerasatz **„Figur“** im Kritiker-Protokoll: Gesicht frontal, ¾, Hand mit Prop nah, Sitz seitlich.
 
+## 3b · Vorhandene Bausteine
+
+- **KFB Eye-Guard-Skripte** und Prop-Tracks im glTF-Raum aus der Clown-Jonglage J3: Branch `blender-mcp/motion-forge-poc-01-2026-10-08`, Issue #381. Sie sind Startpunkt für die Augen- und Prop-Prüfung des Validators.
+
 ## 4 · Golden Samples und Owner
 
 - **Golden Samples:** FrizzleBob v5 (Eye- und Ear-Rig-Freigabe, Evidence `acceptance_1-7_frizzlebob-earrig-v5.json` in den ToolBox-Cuts vom 30.09.), dazu Farmer A und Mummy B aus dem Lab.
@@ -71,4 +78,4 @@ Dazu ein Kamerasatz **„Figur“** im Kritiker-Protokoll: Gesicht frontal, ¾, 
 
 ## 5 · Mindestprüfung im MVP (Stufe 4)
 
-Für die sprechenden bzw. sichtbaren Bewohner im MVP gelten die Prüfungen aus §3 als **harte Regeln**: Demon Lord, Robot One, Farmer A bzw. Farmer-Duo, Clown (Jonglage), Dark Knight (Wache), Farmersfrau, FrizzleBob im Cabrio. Für diese gibt es eine Figuren-Karte, auch wenn die Slice noch nicht gebaut ist.
+Für die sprechenden bzw. sichtbaren Bewohner im MVP gelten die Prüfungen aus §3 als **harte Regeln**: Demon Lord, Utopia-CEO (Transhumanismus-Monstrosität) und Robots inkl. Robot One, Farmer A bzw. Farmer-Duo, Clown (Jonglage), Dark Knight (Wache), Farmersfrau, Lorekeeper (Mentor, Protopia), Caveman (Mine am Rand von KFB Town), FrizzleBob im Cabrio. Für diese gibt es eine Figuren-Karte, auch wenn die Slice noch nicht gebaut ist.

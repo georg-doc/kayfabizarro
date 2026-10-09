@@ -17,6 +17,32 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## WSA-Hub-Auftrag erledigt, Bewohner-Logik, Aufräumen (2026-10-10)
+
+- **WSA-Work** (Return in `KFB_HUB/90_ARCHIVE/2026-10-09_wsa-work_hub-update.md`):
+  - PR #380 gemergt (`720955a`), der Asset Librarian v10 lädt (16.054 Assets);
+  - Hub-PR #383 gemergt (`909828e`, nur `kfb-hub/current-board.json`), der Production Hub läuft auf v11;
+  - **Dropbox-Schreiben funktioniert.**
+- **Nicht gemergt:** `sync/lab-rkit-2026-10-09`. Der Zielbaum hätte 25.702 Dateien; das Cloudflare-Pages-Limit liegt bei 20.000 (Free). Nächstes Gate: Tarif bzw. 100k nachweisen **oder** die Inbox-Ordner vom Deployment ausschließen (z. B. `.assetsignore` für `tools/KFB-ToolBox/_inbox/**`), dann gegen den aktuellen `main` neu prüfen.
+- **Offen bei WSA:** FBX/OBJ-Vorschau (nicht umgesetzt), externe 3D-Suche (Draft-PR #382).
+- **Bewohner (Georg):** Wiederkehrende NPCs neben FrizzleBob sind ausdrücklich gewollt.
+  - Die Figuren sind reiselustig: Skelette arbeiten in verschiedenen Dungeons, die Orc-Band tourt, der Vampir-Lord fliegt als Fledermaus über die Inseln.
+  - Gedacht wie eine Character-Cast-Serie mit Multiversum-Logik: je Welt bzw. Kontext andere Kostüme und Accessoires, dieselbe Figur performt ihr „Kayfabe“.
+  - Die FrizzleBob-Regel der Character Bible gilt für Comics und Decks.
+- **Aufgeräumt:** 67 ZIPs in `~/Dropbox/CLAUDE/`, deren Inhalt vollständig im gleichnamigen Ordner lag (je Datei geprüft), liegen jetzt im Mac-Papierkorb (`~/.Trash/KFB_zip_cleanup_2026-10-10/`, 493 MB, Liste `_MOVED_LIST.txt`). Sie sind wiederherstellbar; auch Dropbox behält sie unter „Gelöschte Dateien“. 22 ZIPs ohne gleichnamigen Ordner bleiben unangetastet.
+- **Georg:** `gvw-hub.pages.dev` privat schalten (eigene Aufgabe).
+
+## Clown-Jonglage J3 einsatzfähig (2026-10-09)
+
+- **Georg: Clown-Jonglage mit TUNE einsatzfähig** für den Marktplatz von KFB Town, gegebenenfalls mit Flachwitzen über die ChatterBox.
+- **Blender-Coworker hat eingecheckt:** Branch `blender-mcp/motion-forge-poc-01-2026-10-08`, Issue #381 (Commits `ed5c1d6` … `2a14028`). Inhalt:
+  - RETURN + Katalog-Patch (MVP-Slice, additiv);
+  - Prop-Tracks im glTF-Raum;
+  - Rig_Medium-Clip-GLB;
+  - Juggle-Builder und **KFB Eye-Guard-Skripte**;
+  - Vorschau-Videos mit Keulen bzw. Knetbällen.
+- Die Eye-Guard-Skripte sind ein erster Baustein des Validators aus `SPEC_CHARACTER_INTEGRITY_R1.md`.
+
 ## Content-Atlas und KFB_HUB (2026-10-09)
 
 - **Drei Inventur-Agenten** (nur lesend): Berichte in `docs/content-atlas/` (A Decks-Korpus, B Engines/Tools, C Ordner/Vault). Zusammenfassung: `docs/KFB_CONTENT_ATLAS_R1.md`.

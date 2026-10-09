@@ -38,8 +38,8 @@ Georg fährt mit einem Retro-Auto oder mit FrizzleBob im Cabrio auf einer Ringst
 | --- | --- | --- |
 | **KFB Town** (größte Insel, Mitte) | Siehe unten | Story Recovery §3: historischer Hub, sechs Biografie-Schritte, Fluff-Genesis |
 | **Dystopia** | „Anatomy of a Trap“: dunkle zerklüftete Berge, Pentagramm, Demon Lord auf dem Thron; Showcase-Tunnel als Dungeon-Mauertunnel | Story Recovery §4 und Deck Dystopia |
-| **Utopia** | „Forget Utopia“: Industrial City mit Makerspace, Roboter, CEO-Situation, Terms & Conditions | Story Recovery §5 und Deck Utopia |
-| **Protopia** | „Protopia Sketchbook“: Reparatur, Farmer, Werkstatt, Alltag. **Berg-Insel**: ein großer Berg, Schlucht und Lichtung, erhöhtes Plateau, Showcase-Tunnel durchs Gebirge | Story Recovery §6 und Deck Protopia |
+| **Utopia** | „Forget Utopia“: Industrial City mit Makerspace, Terms & Conditions. **Bewohner:** der CEO als Dark-Enlightenment- bzw. Transhumanismus-Monstrosität (satirischer Archetyp, keine Karikatur realer Personen) und seine Roboter (Robot One spricht) | Story Recovery §5 und Deck Utopia |
+| **Protopia** | „Protopia Sketchbook“: Reparatur, Farmer, Werkstatt, Alltag. **Berg-Insel**: ein großer Berg, Schlucht und Lichtung, erhöhtes Plateau, Showcase-Tunnel durchs Gebirge. **Lorekeeper** als Mentor, Guide und Hub-Figur: Er lebt auf einem Eremiten-Hügel mit Schreibpult, man kehrt zu ihm zurück; er gibt die Golden-Journey-Aufträge und ist Tutor-Kandidat der Academy. Im MVP spricht er (Stufe 4) | Story Recovery §6 und Deck Protopia |
 | **Zwischenräume** | Ausdrücklich mehr Rennstrecken-Stücke: Looping, Rampensprung, Steilkurven, Tunnel. Sie dienen als Test für Physik und Fahrgefühl | Track Core / RKIT-Katalog |
 
 **KFB Town im Detail:**
@@ -49,6 +49,9 @@ Georg fährt mit einem Retro-Auto oder mit FrizzleBob im Cabrio auf einer Ringst
 - **Signature-Gebäude:** ein bis zwei, als halb offene Raumszenen.
 - **Gesamtbild:** spärlich, mit Zaunecken statt Umzäunung.
 - **Ringstraße:** außen an der Inselkante. Sie umrundet die Stadt und zerschneidet sie nicht.
+- **Caveman** (Georg 09.10.): Er wohnt in der (Gold-)Mine bzw. Höhle am Rand von KFB Town, auf der Rückseite des Bergplateaus unter der Burg. Er gehört zu den ältesten Bewohnern; die Mine erzählt die Ausbeutungsgeschichte der Stadt (Story Recovery §3.1).
+
+**Bewohner als Cast-Serie (Georg, 10.10.):** Wiederkehrende Figuren sind gewollt und reiselustig. Skelette arbeiten in verschiedenen Dungeons, die Orc-Band tourt, der Vampir-Lord fliegt als Fledermaus über die Inseln. Nach Multiversum-Logik trägt dieselbe Figur je Welt andere Kostüme und Accessoires und performt dort ihr „Kayfabe“. Dafür hält die Figuren-Karte je Welt eine Variante.
 
 **Gestaltungs-Leitlinie (Georg):** wenig, aber stimmig, wie eine Filmszene, zu der man sofort eine Beziehung hat („Wie ist es dazu gekommen? Wer hat da gecampt?“). Jede Insel ist sofort als eigene Welt erkennbar, eher sparsamer als die 8 Demo-Inseln. Keine Detailkataloge. Sparsam ist zugleich gut für die Renderzeit.
 
@@ -148,7 +151,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 | **1 Grundlage** | R2D v0 + Scholle v7 im Lab auf three r186, eine Insel mit Viertelkreis-Kante, Sprenkel, Maßstab K2, Gebäude-Katalog umgestellt | keine Verläufe; Tür ≥ 1,15 H; Budget laut Profiler | eine Insel aus 4 Kameras |
 | **2 Ring** | KFB Town in K2-Größe, Ringstraße an der Kante, eine Auffahrt mit Steinbogen-Brücke; Fahren mit Retro-Auto und Cabrio-FB ohne Drehfehler; Kamera nach §3b | Straßenbett T1/T2 (Schürze ≥ 0,3, Gelände an hw ≥ 0,05 unter Oberkante, kein Spalt), Steigung ≤ 8 %, Kamera-Regeln | eine Runde um Town + Auffahrt, Video |
 | **3 Loop** | Drei Satelliten nach Deck + Vorlage, Verbindungen mit Rennstücken, Rand-Rhythmus, Showcase-Tunnel, Landmarke + Billboard je Insel | Katalog vollständig, nur Bord/Bande am Rand, Erdung je Objektart | komplette Fahrt durch alle 4 Inseln |
-| **4 Klang, Stimmen, Gefühl** | Audio-Bett, HUD je Modus, Flugmodus mit VFX, mindestens 3 sprechende Bewohner (Demon Lord, Robot One, Farmer), ein Social Call, Licht und Himmel, Performance, Worldbuilder intakt | Bubble und Text auch stumm; Ducking; kein zweiter AudioContext; Frame-Budget; Figuren-Mindestprüfung (Augen, Props in der Hand, Sitzen, Gelenkgrenzen) | Gesamterlebnis |
+| **4 Klang, Stimmen, Gefühl** | Audio-Bett, HUD je Modus, Flugmodus mit VFX, mindestens 3 sprechende Bewohner (Demon Lord, Robot One, Farmer) plus der Lorekeeper als Mentor bzw. Guide (Protopia, Eremiten-Hügel), ein Social Call, Licht und Himmel, Performance, Worldbuilder intakt | Bubble und Text auch stumm; Ducking; kein zweiter AudioContext; Frame-Budget; Figuren-Mindestprüfung (Augen, Props in der Hand, Sitzen, Gelenkgrenzen) | Gesamterlebnis |
 
 ## 6 · Vorlagen je Stufe
 
@@ -170,6 +173,15 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
   - **Fehler:** Props sitzen nicht in der Hand, Originalaugen bzw. falsche Augen-Varianten, Schielen, Arme brechen beim Winken, Schweben über Stühlen.
   - **Lösung:** eine Figuren-Karte je Bewohner als SSOT (Rig, Augen-Konfiguration, Props mit Griffrahmen, Sitz, Stimme, Ausdruck), ein kanonisches Eye-Rig statt über zehn Kopien, ein Validator.
   - **Im MVP:** Die Mindestprüfung gilt als harte Regel für die sichtbaren Bewohner (Stufe 4).
+- **Themen-Welten aus einzelnen Packs** (Georg 09.10.): Inseln, die in sich anders aussehen, als Quickstart. Beispiele:
+  - eine Wüstenwelt aus Arabian City und Raft on the Desert;
+  - eine Boardgame-Bits-Welt;
+  - eine Voxel- bzw. Cube-Welt aus KayKit;
+  - eine Bäckerei-Insel (Tiny Treats);
+  - gekaufte Demo-Inseln mit KayKit-Bewohnern, z. B. Zelt plus Hiker.
+
+  Je Welt wird ein Deck zugeordnet. Die Inventur der neuen Unity-Pakete läuft.
+- **Landmarken-Familie** nach dem Golden Sample Königsturm (Blender MCP, Cartoon-Deformer, OSM-Linie): Kölner Dom, Museen, Vatikan, Eiffelturm.
 - **Infrastruktur nach dem MVP** (Georg 09.10.): gemeinsamer Zugriff von ChatGPT bzw. WSA, Blender-MCP-Coworker, Claude Code und Claude Design ohne Behelfslösungen.
   - Klar getrennt: öffentliche Inhalte (Regelseiten, statische Seiten, Promotion, PDF-Decks, die im Spiel gezeigt werden) und privater Code bzw. lizenzierte Assets (privates Repo).
   - Dazu feste Workflows und Schnittstellen statt Hin- und Herkopieren.
@@ -177,7 +189,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 - **Sidequest Academy / Makerspace-Insel** (Georg 09.10., später):
   - **Rahmen:** eine größere Makerspace-Insel mit Academy, angelehnt an den früheren Hex-Ring um das Castle.
   - **Lern-Engine:** Feynman-Methode und Spaced Repetition im Kreislauf „Play → Create → Learn“.
-  - **Tutor:** eine KayKit-Figur oder FrizzleBob, mit Stimme über den ChatterBox Voice Layer.
+  - **Tutor:** der Lorekeeper, FrizzleBob oder eine andere KayKit-Figur, mit Stimme über den ChatterBox Voice Layer.
   - **Präsentation:** Lektionen (z. B. Blender, 3D) auf Bühne und Leinwand im Claymation-Look (Clay Stage R2, Billboards); ausprobiert wird direkt in der Welt (Worldbuilder-Modus, Knetstein-Familie A, freistehende Räume).
   - **Quellen:** Branch `planning/kfb-ai-game-art-academy-makerspace-v05-2026-10-09` (Feynman Learning Core, Source Isolation R1), Georgs Prompt-Struktur als lokaler Export.
   - **Offen:** eigene Insel oder Teil von Protopia bzw. Utopia.
@@ -186,9 +198,9 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 
 **Entschieden:**
 - **Sprenkel:** Kandidat S1 (Scheiben-Sprenkel, `src/clay/kfb-speckle.ts`) angenommen, TUNE später. Er ersetzt `kfbLayer`.
-- **Landmarke KFB Town:** schiefer Königsturm auf Anhöhe mit Ton-Treppe, Innenhof, Tor bzw. Zugbrücke (Schwarzer Ritter), Heraldik, optional Thronraum aus Dungeon-Modulen, dazu das königliche Billboard am Markt. Er wird Golden Sample für alle Landmarken (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`). Der Platzhalter kommt aus dem Asset Librarian.
+- **Landmarke KFB Town:** MVP-Arbeitshypothese = Burg mit zentralem Turm aus „Hyper Casual Cartoon Castles“ (3 Zerstörungsstufen; Paladin oben, Schwarzer Ritter am Tor). Später schiefer Königsturm auf Anhöhe mit Ton-Treppe, Innenhof, Tor bzw. Zugbrücke (Schwarzer Ritter), Heraldik, optional Thronraum aus Dungeon-Modulen, dazu das königliche Billboard am Markt. Er wird Golden Sample für alle Landmarken (`deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md`). Der Platzhalter kommt aus dem Asset Librarian.
 - **Demo-Szenen:** werden weitere Inseln rund um die vier Hauptinseln, eventuell mit Track-Anbindung, als Stufe nach dem MVP. Die Waldszene wird eine Abenteuergeschichte mit Hiker, Werwolf und Holzhacker als Gestaltwandler. Den Vorschlag für die übrigen sieben macht die Environment-Session.
-- **Asset Librarian PR #380:** mergen (Georg: lieber mergen als lose Enden).
+- **Asset Librarian PR #380:** gemergt (10.10., `720955a`).
 - **Privates GitHub-Repo:** ja; Ort und Name noch offen.
 
 **Offen:**
