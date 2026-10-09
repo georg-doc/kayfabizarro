@@ -24,7 +24,7 @@ async function run(){
     const version=await poll(async()=>{try{const r=await fetch(`http://127.0.0.1:${port}/json/version`);return r.ok?await r.json():false;}catch{return false;}},'chrome');
     const r=await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(STABLE)}`,{method:'PUT'}),target=await r.json(),cdp=await connect(target.webSocketDebuggerUrl);await cdp.send('Page.enable');await cdp.send('Runtime.enable');
     await ev(cdp,`window.KFBAssetLibrarianV17?.version==='1.7' && document.getElementById('registryStatus')?.textContent==='Registry ready'`,'v1.7 ready');
-    assert(await cdp.eval(`document.title.includes('v1.7')`),'v1.7 title missing');
+    assert(await cdp.eval(`document.title.includes('KFB Asset Librarian')`),'Asset Librarian title missing');
 
     await cdp.eval(`document.getElementById('kaykitPreset').click()`);
     const page1=await ev(cdp,`(()=>{const n=document.querySelectorAll('#resultList .result-card').length;const t=document.getElementById('resultMeta').textContent;return n===120&&t.includes('primary matches')?{n,t}:false;})()`,'KayKit first page',120000);
