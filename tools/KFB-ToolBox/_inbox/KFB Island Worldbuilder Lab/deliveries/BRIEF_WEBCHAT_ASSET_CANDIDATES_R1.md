@@ -85,6 +85,21 @@ Zweck: ein **verbindliches Zielbild** je Element, das zeigt, wie ein Dioramenbau
 
 **Abnahme:** Georg wählt die Variante bzw. sagt „nochmal“; die gewählte wird `"goldenRef": true`.
 
+## 7a · Nachtrag 10.10. abends: Georgs Urteil zum G4-Steinbrücken-Blatt, „bauarm“ statt Serviervorschlag
+
+**Georg (wörtlich, sinngemäß gekürzt):** Das Blatt „STONE BRIDGE 01“ sieht „wirklich top“ aus, ist aber ein „idealisierter Serviervorschlag“. Wenn wir ohne viele Kritiker-Runden dorthin kommen, ist es „ziemlich nah an dem, wie ich mir den Look vorstellen würde“. Es „kann ruhig noch ein bisschen stilisierter sein und noch ein bisschen mehr Claymation-Look“, aber nur, wenn es dadurch einfacher wird.
+
+**Folgen für alle Gruppen:**
+- **Das G4-Blatt kommt aus der Quarantäne.** Es gilt als **Stil-Richtung** (kein Golden, kein Asset-Pick). Lokale Kopie: `docs/golden/candidates/G4_stone_bridge_sheet_webchat_r1.webp` (Lab).
+- **Das Blattformat ist erlaubt** und sogar erwünscht: Hauptansicht, Ansichten B–F (front, Seite, oben, unten, 3/4), Detail-Nahsichten, Varianten. Beschriftungen der Felder sind in Ordnung. Logos, Spiel-Titel und Werbetexte bleiben verboten, ebenso Figuren, Fahrzeuge und Boote.
+- **Bauarm generieren** (neue Pflicht im Prompt):
+  - Das Element besteht aus **höchstens 5–6 großen Knet-Formen bzw. Bausteinen**, z. B. Block, Keilstein, Deckstein, Sockelfels, Graskappe, Pflanzenbüschel.
+  - Keine Kleinteile, keine feinen Texturen, keine Fotolook-Tiefenunschärfe.
+  - Stilisierter, mehr Claymation: dicke weiche Formen, flache warme Farben, Fingerabdrücke.
+  - Pflanzen als wenige große Knet-Büschel, nicht als viele Einzelblätter.
+- **Teileliste je Blatt** (`PARTS.md`): je Baustein Form in Worten, ungefähre Größe in Figurenhöhen H, Farbrolle, Anzahl bzw. Varianten. Daraus baut die Bau-Sitzung einen kleinen Bausatz statt eines Einzelmodells.
+- **Fahrbrücken:** Fahrbahn ohne Buckel (Steigung ≤ 6 %, kein Scheitel), breit genug für ein Auto plus Gehweg je Seite, Bogenkette über zwei schwebende Brocken (Variante „longer“), Widerlager-Nischen in den Brocken.
+
 ## 7b · Recovery: Chats in Reihe, ohne Datenverlust
 
 Jeder Chat führt **eine Recovery-Datei je Gruppe** und aktualisiert sie **nach jedem abgeschlossenen Schritt** (nicht erst am Ende):
