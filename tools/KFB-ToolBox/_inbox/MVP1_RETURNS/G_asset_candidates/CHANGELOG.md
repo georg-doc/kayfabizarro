@@ -1,5 +1,10 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · G1 · Webchat ZIP-Batch-Workflow zur verlustsicheren Bildserie
+- Georg klärt: schrittweise neue Motive im Webchat, vollständige Original-PNGs in ZIPs sammeln und am Ende per WSA Work/GitHub hochladen; keine erneuten Brückenbilder. Prozess vereinbart und [G1-Webchat-zu-Work-Handoff](G1_WEBCHAT_IMAGE_BATCH_TO_WORK_HANDOFF_R1.md) mit Datei-SHA, Work-Binär-Readback, separaten Fehlerarchiven sowie explicit ZIP-Transfer eingerichtet.
+- Existierende G1-Original-ZIP-Datei lokal intakt (3/3 PNG-SHA) und Chat-Anhang, aber weiterhin **0/3 PNGs auf GitHub**; drei kleinen Vorschauen sind dort 3/3. Ohne ZIP-Upload/Download in dauerhaftes user-controlled Storage keine Garantie chatübergreifender Verfügbarkeit.
+- **Neuer nächster Kreativschritt:** ein einzelner G1-Solitärfelsen `rock_largeA` als KFB-Clay-Bild, erst danach neues additives ZIP; G4-Brücken-Fehlschleife bleibt eingefroren. Kein PR/Stage/Live.
+
 ## 2026-10-10 · G1 R6 · Quellengeometrie / Original-PNG-Upload blockiert
 - Drei original Full-Res-Concept-PNGs weiter nur als unbeschädigtes Chat-ZIP, **GitHub 0/3 Originaldateien**, bestehende **3/3 WebP-Vorschaubilder** bleiben unverändert. GitHub-Connector hat keine direkte Container-/FileRef-Binärübergabe, daher kein erfundener Upload.
 - Kenney `rock_largeA.glb` [source-exakt inspiziert](G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md): 146 Vertices / 80 Dreiecke, [vier Source-Ansichten](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg) und [Testbericht](TEST_REPORT_G1_ROCK_SOURCE_R1.md) **11/11**. G1 Kandidaten-JSON/Worklist ergänzt, keine GoldenRef.
