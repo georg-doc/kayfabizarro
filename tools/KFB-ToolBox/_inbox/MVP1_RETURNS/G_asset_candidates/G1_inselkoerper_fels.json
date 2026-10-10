@@ -464,7 +464,12 @@
               "below"
             ],
             "status": "SOURCE_GEOMETRY_INSPECTED_VISUAL_QA_PENDING",
-            "styleReferenceConditioning": "NONE"
+            "styleReferenceConditioning": "NONE",
+            "source4viewPng": "refs/source-isolation/G1_kenney_rock_largeA_source_4view_900.png",
+            "sourceLockedPaletteStudy": "refs/source-isolation/G1_kenney_rock_largeA_KFB_palette_source_locked_R9_900.png",
+            "sourceHeightToFootprintRatio": 0.256,
+            "suitability": "LOW_SLAB_NOT_TALL_BOULDER",
+            "note": "Historic rank A was assigned before original form inspection. Source is low broad rock, not a tower. ImageGen R9 failed 2/2; change source or renderer, not fabricate height."
           }
         },
         {
@@ -477,13 +482,22 @@
           "license": "CC0",
           "humanMade": true,
           "format": "glb",
-          "polys": null,
-          "polyMetric": "not yet measured",
+          "polys": 72,
+          "polyMetric": "Actual GLB indexed triangle count on sync source branch",
           "scaleNote": "K2: source bbox unavailable; dimension relative to H must be measured in Lab before import.",
           "verdict": "§00 zweite Silhouette ohne Kopiermuster; §01 Material/Schatten und H-Skalierung zu prüfen.",
           "rank": "B",
           "risks": "Gleiche Familie darf nicht in gleicher Rotation wiederholt werden.",
-          "inspection": "registry path/file identified; visual isolation and geometry validation pending"
+          "inspection": "registry path/file identified; visual isolation and geometry validation pending",
+          "sourceMeshEvidence": {
+            "sha": "ebaad0108531dd94d1135f176e3f31d07b9b8068",
+            "bbox": [
+              1.06441,
+              0.32111,
+              1.01566
+            ],
+            "heightFootprintRatio": 0.302
+          }
         },
         {
           "id": "kaykit-forest-nature-pack-1-0-free/Rock_1_A_Color1",
@@ -555,6 +569,14 @@
         "prompt": "refs/large_boulders/PROMPT.md",
         "checkpoint": "KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip",
         "goldenRef": false
+      },
+      "comparisonR9": {
+        "report": "G1_R9_KENNEY_ROCK_MESH_COMPARISON.md",
+        "rockLargeAHeightRatio": 0.256,
+        "rockLargeBHeightRatio": 0.424,
+        "rockLargeCHeightRatio": 0.302,
+        "rockLargeBCandidateStatus": "DISCOVERY_NOT_IN_CURRENT_5_CANDIDATE_SHORTLIST",
+        "recommendation": "inspect rock_largeB before proposing tall solitary boulder; source-fidelity beats category filename"
       }
     },
     {
