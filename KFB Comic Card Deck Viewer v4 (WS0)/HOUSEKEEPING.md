@@ -3,13 +3,14 @@
 Living-Status je Artefakt. Statuswerte: `AKTIV` · `FROZEN` · `SUPERSEDED` · `DEAD` · `ASSET`.
 Nichts wird gelöscht ohne Georgs ausdrückliche Freigabe, jeder Schritt einzeln.
 
-_Letzter Stand: 2026-08-04 (Session „Deck Viewer v4 / Full View + Standalone")_
+_Letzter Stand: 2026-10-09 (Deck Library R1 / Viewer v5 candidate)_
 
 ## Deliverables
 
 | Artefakt | Status | Notiz |
 |---|---|---|
-| `KFB Deck Viewer v4.dc.html` | **AKTIV** | v3 + Full View, responsive Kopfzeile, Scherenfix |
+| `KFB Deck Viewer v5.dc.html` | **AKTIV · CANDIDATE** | v4 donor + canonical Registry, deep links, card references, fail-closed mapping |
+| `KFB Deck Viewer v4.dc.html` | **FROZEN** | verified donor; v3 + Full View, responsive Kopfzeile, Scherenfix |
 | `exports/KFB Deck Viewer v4 standalone.html` | **AKTIV** | Single-File-Build 1,5 MB, Netz nötig (pdf.js + Korpus) |
 | `KFB Deck Viewer v4 -standalone src-.dc.html` | SUPERSEDED | Zwischenstufe für den Bundler, reproduzierbar aus v4 |
 | `KFB Deck Viewer v3.dc.html` | **FROZEN** | Georgs Export v3.2, Referenz — nicht anfassen |
@@ -25,7 +26,7 @@ _Letzter Stand: 2026-08-04 (Session „Deck Viewer v4 / Full View + Standalone")
 | `deckviewer/deck-meta.js` | **AKTIV · GETEILT** | v3, v4 |
 | `deckviewer/deck-edit.js` | **AKTIV · GETEILT** | v3, v4 |
 | `deckviewer/deck-draft.js` | **AKTIV · GETEILT** | v3, v4 |
-| `deckviewer/kfb-corpus.js` | **AKTIV · GETEILT** | v3, v4 — pdf.js-Loader + Registry + Kachel-Cache |
+| `deckviewer/kfb-corpus.js` | **AKTIV · GETEILT** | v3, v4, v5 — pdf.js loader + normalized Registry + tile cache |
 | `deckviewer/ink-frame.js` | **AKTIV · GETEILT** | v3, v4 (module) |
 | `deckviewer/kfb-ink-canon.js` | **AKTIV · GETEILT** | von ink-frame referenziert |
 
@@ -41,7 +42,9 @@ _Letzter Stand: 2026-08-04 (Session „Deck Viewer v4 / Full View + Standalone")
 | `exports/*_standalone.html` (v1, ~18 MB) | SUPERSEDED | schwer — gehört auf Platte/Repo, nicht ins Zip |
 | `screenshots/` | ASSET | Abnahme-Captures |
 
-## Clean-Run-Checkliste (v4)
+## Clean-Run-Checkliste (v5)
+
+0. `KFB Deck Viewer v5.dc.html?deck=frizzlebob_s_mission_control&card=56` opens page 15 and exposes the exact card reference.
 
 1. `KFB Deck Viewer v4.dc.html` öffnen → Boot-Zeile, dann Korpus 130 Decks / 1914 Seiten.
 2. Alle sechs Ansichten durchklicken: Reader · Galerie · Stapel · Coverflow · **Full View** · Deck.

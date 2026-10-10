@@ -3,7 +3,7 @@
 
 AR1 records exact Git inventory facts for loadable assets.
 AR2 adds deterministic structural packs and explicit model dependency resolution.
-AR3 projects the existing media/kfb/kfb-index.json deck contract into small shards.
+AR3 projects the existing media/kfb/index.json deck contract into measured shards.
 AR4 adds stale-output cleanup and a deterministic delta against the previous
 canonical registry committed in Git HEAD.
 
@@ -346,8 +346,11 @@ def _pack_outputs(out_dir: Path, packs: dict[str, dict], records: list[dict]) ->
     _write_json(out_dir / "packs" / "index.json", index)
 
 
-def _deck_outputs(out_dir: Path, decks: list[dict], index: dict) -> None:
+def _deck_outputs(out_dir: Path, decks: list[dict], index: dict, cards: list[dict], town: dict, qa: dict) -> None:
     _write_json(out_dir / "decks" / "index.json", index)
+    write_jsonl(out_dir / "decks" / "cards.jsonl", cards)
+    _write_json(out_dir / "decks" / "town.json", town)
+    _write_json(out_dir / "decks" / "qa-report.json", qa)
     for deck in decks:
         _write_json(out_dir / "decks" / f"{deck['deckId']}.json", deck)
 
@@ -409,12 +412,15 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         "rules": [],
     }
     deck_problems: list[dict] = []
+    deck_cards: list[dict] = []
+    town_decks: dict = {"schema": "kfb.town-deck-library/1", "sourceCommit": commit, "decks": []}
+    deck_qa: dict = {"schema": "kfb.deck-data-qa/1", "sourceCommit": commit, "deckCount": 0, "cardCount": 0, "pageCountMismatches": [], "unverifiedMappings": [], "sourceCorrections": []}
     deck_registry = config.get("deckRegistry")
     deck_root = config.get("deckRoot")
     if deck_registry and deck_root:
         deck_tree_entries = git_tree_entries(repo_root, [deck_root])
         deck_tracked_paths = {entry["path"] for entry in deck_tree_entries}
-        decks, deck_index, deck_problems = build_decks(
+        decks, deck_index, deck_problems, deck_cards, town_decks, deck_qa = build_decks(
             repo_root,
             registry_path=deck_registry,
             deck_root=deck_root,
@@ -526,7 +532,7 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     for kind, rel in shard_paths.items():
         _write_json(out_dir / rel, by_kind.get(kind, []))
     _pack_outputs(out_dir, packs, records)
-    _deck_outputs(out_dir, decks, deck_index)
+    _deck_outputs(out_dir, decks, deck_index, deck_cards, town_decks, deck_qa)
     _write_json(
         out_dir / "problems.json",
         {

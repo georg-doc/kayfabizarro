@@ -2,6 +2,16 @@
 
 Additiv. Neue Einträge oben anhängen, bestehende nie umschreiben oder löschen.
 
+## 2026-10-09 — Deck Viewer v5 · canonical deep links
+
+- v4 was verified as the donor and remains preserved; `KFB Deck Viewer v5.dc.html` is the new candidate.
+- Shared corpus adapter now reads the deterministic v2 deck projection from `media/kfb/index.json`.
+- Real PDF page counts replace manifest guesses: 130 decks / 1,915 pages / 6,985 card rows.
+- Stable `?deck=&card=` and `?deck=&page=` routing plus browser-history handling.
+- Exact `kfb.card-ref/1` copy labels for verified mappings.
+- Fail-closed behavior for 23 unsafe mappings: full pages remain visible, card crops are disabled and labeled unverified.
+- Mission Control card 56 acceptance deep-link resolves to page 15 with zero console errors in Chromium.
+
 ## 2026-09-13 — Kanonische PDFs/Assets via GitHub geladen
 
 - 7 der 8 Test-Matrix-PDFs (`pdfs/*.pdf`) durch kanonische Bytes aus

@@ -1,4 +1,5 @@
 import { previewRigResource, clearRigPreview, canPreviewRig } from './rig-preview.js';
+import { initDeckLibrary } from './deck-library.js';
 
 const RESOURCE_BASE = '../../../registry/resources/v1';
 const $ = (id) => document.getElementById(id);
@@ -11,6 +12,7 @@ const cache = { manifest:null, actors:null, configs:null, motions:null, fx:null 
 let currentTab = 'assets';
 let currentRows = [];
 let showAssetCallback = null;
+let deckUi = null;
 
 async function json(url) {
   const response = await fetch(url, { cache:'no-store' });
@@ -111,6 +113,8 @@ async function fillActorFilter() {
 export async function activateProductionTab(tab) {
   currentTab=tab;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.classList.toggle('active',button.dataset.libraryTab===tab));
+  if (tab === 'decks') { closeResourceDetail(); return deckUi.activateDeckLibrary(); }
+  deckUi.deactivateDeckLibrary();
   const assets=tab==='assets'; $('assetWorkspace').hidden=!assets; $('resourceWorkspace').hidden=assets; closeResourceDetail();
   if (assets) return;
   try {
@@ -119,7 +123,8 @@ export async function activateProductionTab(tab) {
 }
 export function initProductionResources({ showAsset }) {
   showAssetCallback=showAsset;
+  deckUi=initDeckLibrary();
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.onclick=()=>activateProductionTab(button.dataset.libraryTab));
   $('resourceSearch').oninput=renderResources; $('resourceActorFilter').onchange=renderResources; $('resourceStatusFilter').onchange=renderResources; $('resourceDetailClose').onclick=closeResourceDetail;
-  return { activateProductionTab, closeResourceDetail };
+  return { activateProductionTab, closeResourceDetail, closeDeckDetail:deckUi.closeDeckDetail };
 }
