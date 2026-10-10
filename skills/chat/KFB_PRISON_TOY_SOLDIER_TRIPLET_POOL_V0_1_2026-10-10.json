@@ -1,0 +1,788 @@
+{
+  "schema": "kfb.semantic-triplet-pool/0.1-candidate-extension",
+  "status": "AUTHORING_CANDIDATE_NO_RUNTIME_WRITE",
+  "date": "2026-10-10",
+  "owner": "ChatterBox content / Prison Island authoring prep",
+  "receivingOwner": "existing KFB ChatterBox / Triplet lineage",
+  "prisonOwner": "KFB Island Worldbuilder Lab / Minigame-Layer ideation",
+  "sourceContext": {
+    "prisonDocs": [
+      "skills/chat/KFB_PRISON_ISLAND_KAYFABE_PATROL_LOOP_V0_8_2026-10-09.md",
+      "skills/chat/KFB_PRISON_MAZE_FLOATING_ISLAND_TERRAIN_TOWER_V0_9_2026-10-10.md",
+      "skills/chat/KFB_PRISON_MAZE_SOURCE_OWNER_AUDIT_AND_CLAUDE_DESIGN_BRIEF_V1_1_2026-10-10.md",
+      "skills/chat/KFB_BLENDER_MCP_PRISON_MAZE_GREYBOX_HANDOVER_2026-10-10.md"
+    ],
+    "tripletDonor": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/triplet-stage/donor/resident-chat-ensemble-data.mjs",
+    "fluffOlectDonor": "skills/chat/town/references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md",
+    "residentAtlas": "tools/resident_atlas_s6/data/cast.js"
+  },
+  "rules": {
+    "grammar": [
+      "subject",
+      "connector",
+      "reframe"
+    ],
+    "closureOwner": "player/audience/world",
+    "sharedPool": true,
+    "privateResidentPools": false,
+    "defaultFluffReplacementsMax": 1,
+    "signatureMeans": "weight/provenance, not exclusive ownership or catchphrase",
+    "runtimeOwner": false,
+    "publicLanguage": "English",
+    "sourceInspectedInIsolationClaimed": false
+  },
+  "profile": {
+    "residentId": "toy-soldier",
+    "displayName": "Toy Soldier Guard Corps · candidate voice",
+    "sourceStatus": "SOURCE_BACKED_ACTOR_PLUS_AUTHORING_CANDIDATE",
+    "source": {
+      "actorAsset": "ToySoldier.glb",
+      "rigFamily": "Rig_Medium",
+      "confirmedProps": [
+        "ToySoldier_Rifle.gltf",
+        "ToySoldier_Trumpet.gltf",
+        "Present_Base.gltf",
+        "Present_UnwrappedBase.gltf"
+      ],
+      "sourceFacts": [
+        "current Resident Atlas identifies Toy Soldier as watch/parade/toy Resident",
+        "current prison planning establishes numbered cobalt-blue guards with white plume",
+        "No. 1 is current chief-warden/tower-button direction",
+        "No. 2+ are candidate gatekeeper/patrol/service instances"
+      ]
+    },
+    "authoring": {
+      "status": "CANDIDATE",
+      "reasoningBand": "LOWER_RATIONAL_CANDIDATE",
+      "method": "NEEDLE_WAIT_NAME_BOOK",
+      "coreWant": "turn visible reaction into proof that authority was necessary",
+      "coreIrritation": "a person who refuses to supply a usable reaction",
+      "coreFear": "being unnecessary, ignored, unwound, or shown that the rule has no reason behind it",
+      "socialPleasure": "successful conversion of emotion into custody/pretext",
+      "speechAvoid": [
+        "generic Kafka legalese",
+        "compliance dashboard language",
+        "sci-fi security terminal jargon",
+        "constant shouting",
+        "fascist speech cliché",
+        "AI/system/glitch jokes",
+        "catchphrase spam",
+        "philosophical sophistication"
+      ],
+      "lexicalPreference": [
+        "rule",
+        "line",
+        "door",
+        "camera",
+        "temper",
+        "cell",
+        "number",
+        "button",
+        "fine",
+        "light",
+        "witness",
+        "quiet",
+        "run",
+        "stop"
+      ]
+    },
+    "identityPolicy": {
+      "personalNames": false,
+      "soldierToSoldierAddress": "NUMBER_ONLY",
+      "confirmedChief": "No. 1",
+      "fullNumberRankOrder": "UNDECIDED",
+      "possibleColloquialGroupName": "The Numbers · PROPOSAL"
+    },
+    "attitude": {
+      "baseline": {
+        "warmth": "LOW",
+        "energy": "MEDIUM",
+        "pressure": "HIGH",
+        "play": "LOW_VISIBLE_HIGH_PRIVATE",
+        "openness": "LOW",
+        "reserve": "MEDIUM_HIGH"
+      },
+      "colour": "quiet petty authority; pleased when the target supplies a pretext",
+      "fluffOlectBias": "MEDIUM"
+    },
+    "knowledgePolicy": {
+      "self": true,
+      "publicWorld": true,
+      "visibleScene": true,
+      "witnessedEvents": true,
+      "currentAssignment": "ONLY_IF_SUPPLIED",
+      "cameraFacts": "ONLY_IF_SUPPLIED_BY_OWNER",
+      "mazeState": "ONLY_IF_SUPPLIED_BY_OWNER",
+      "custodyState": "ONLY_IF_SUPPLIED_BY_OWNER",
+      "heardOfficialClaims": "VOICE_MAY_PRIVILEGE_THEM_BUT_ENGINE_DOES_NOT",
+      "forbiddenUnseenContext": true,
+      "falseAccusation": "ALLOWED_ONLY_AS_AUTHORED_DIEGETIC_CLAIM_NOT_HIDDEN_ENGINE_FACT"
+    },
+    "chatterBoxAdapter": {
+      "initiative": "HIGH",
+      "interruption": "MEDIUM_HIGH",
+      "silenceAllowed": true,
+      "preferredOperators": [
+        "BONGO",
+        "BINGO"
+      ],
+      "vulnerableToReframe": [
+        "BOGGLE",
+        "BLOEDSINN"
+      ],
+      "defaultMaxGeneratedTurns": 1,
+      "presentationHints": [
+        "deadpan-pause-after-needle",
+        "lower-motion-during-threat",
+        "number-first-address-between-soldiers",
+        "reaction-can-be-satisfied-small-smile-or-stillness"
+      ]
+    },
+    "roleVariants": {
+      "no-1-chief": {
+        "pressure": "HIGH",
+        "energy": "LOW",
+        "style": "calmest, shortest, most pleased by traps",
+        "runtimeRole": "PROPOSAL"
+      },
+      "gatekeeper": {
+        "pressure": "MEDIUM_HIGH",
+        "energy": "MEDIUM",
+        "style": "classification and false-choice emphasis",
+        "runtimeRole": "PROPOSAL"
+      },
+      "groundPatrol": {
+        "pressure": "HIGH",
+        "energy": "MEDIUM_HIGH",
+        "style": "provocation and pursuit emphasis",
+        "runtimeRole": "PROPOSAL"
+      },
+      "airPatrol": {
+        "pressure": "HIGH",
+        "energy": "HIGH",
+        "style": "searchlight callouts; source/performance proof pending",
+        "runtimeRole": "PROPOSAL"
+      },
+      "alienLiaison": {
+        "pressure": "MEDIUM",
+        "energy": "LOW_MEDIUM",
+        "style": "treat bizarre transfer as routine; story acceptance pending",
+        "runtimeRole": "PROPOSAL"
+      }
+    }
+  },
+  "entryCount": 33,
+  "entries": [
+    {
+      "tripletId": "toy.authority.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "No rule broken",
+      "connector": "until you argued",
+      "reframe": "now we have one",
+      "relation": "COLLISION",
+      "tags": [
+        "rule",
+        "provocation",
+        "authority"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.authority.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Perfectly calm",
+      "connector": "while explaining you're calm",
+      "reframe": "noted",
+      "relation": "MISFIT",
+      "tags": [
+        "temper",
+        "self-report",
+        "authority"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.authority.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Nothing happened",
+      "connector": "because we were watching",
+      "reframe": "successful patrol",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "surveillance",
+        "prevention",
+        "self-justification"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.authority.04",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "You want fairness",
+      "connector": "before following the rule",
+      "reframe": "interesting order",
+      "relation": "MISFIT",
+      "tags": [
+        "fairness",
+        "rule",
+        "status"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.status.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Famous hero",
+      "connector": "same gate as everyone",
+      "reframe": "please queue",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "status",
+        "gate",
+        "provocation"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.status.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Very important",
+      "connector": "still correcting my number",
+      "reframe": "easy button",
+      "relation": "MISFIT",
+      "tags": [
+        "status",
+        "number",
+        "provocation"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.provocation.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Say that again",
+      "connector": "a little louder",
+      "reframe": "now I can use it",
+      "relation": "ESCALATION",
+      "tags": [
+        "provocation",
+        "voice",
+        "custody"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.provocation.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Small insult",
+      "connector": "one clenched fist later",
+      "reframe": "public safety",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "provocation",
+        "anger",
+        "pretext"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.provocation.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "I called you frightened",
+      "connector": "you proved me wrong loudly",
+      "reframe": "thank you",
+      "relation": "MISFIT",
+      "tags": [
+        "provocation",
+        "fear",
+        "anger"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.choice.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Walk to the cell",
+      "connector": "or make me carry you",
+      "reframe": "both count as cooperation",
+      "relation": "SYNERGY",
+      "tags": [
+        "false-choice",
+        "custody",
+        "cooperation"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.choice.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Answer now",
+      "connector": "or refuse clearly",
+      "reframe": "either answer helps",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "false-choice",
+        "interrogation",
+        "pretext"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.camera.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Camera saw enough",
+      "connector": "I supply the rest",
+      "reframe": "complete record",
+      "relation": "ESCALATION",
+      "tags": [
+        "camera",
+        "interpretation",
+        "surveillance"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.camera.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Nothing to hide",
+      "connector": "step into the light",
+      "reframe": "good citizen",
+      "relation": "COLLISION",
+      "tags": [
+        "searchlight",
+        "privacy",
+        "surveillance"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.camera.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "One blind spot",
+      "connector": "three people noticed",
+      "reframe": "suspicious privacy",
+      "relation": "ESCALATION",
+      "tags": [
+        "blind-spot",
+        "privacy",
+        "crowd"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.camera.04",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "You looked up twice",
+      "connector": "while the camera moved",
+      "reframe": "mutual interest",
+      "relation": "SYNERGY",
+      "tags": [
+        "camera",
+        "attention",
+        "surveillance"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.prison.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Empty cell",
+      "connector": "all afternoon",
+      "reframe": "poor management",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "private-prison",
+        "capacity",
+        "incentive"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.prison.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "One occupied bed",
+      "connector": "after one minor argument",
+      "reframe": "demand confirmed",
+      "relation": "ESCALATION",
+      "tags": [
+        "private-prison",
+        "custody",
+        "incentive"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.prison.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Official fine",
+      "connector": "short visit instead",
+      "reframe": "choice preserved",
+      "relation": "MISFIT",
+      "tags": [
+        "fine",
+        "custody",
+        "false-choice"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.maze.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Exit was there",
+      "connector": "before Number One noticed",
+      "reframe": "safer now",
+      "relation": "COLLISION",
+      "tags": [
+        "maze",
+        "number-one",
+        "control"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.maze.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Straight corridor",
+      "connector": "encouraged confidence",
+      "reframe": "corrected",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "maze",
+        "hope",
+        "control"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.maze.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Almost outside",
+      "connector": "excellent timing",
+      "reframe": "button",
+      "relation": "MISFIT",
+      "tags": [
+        "maze",
+        "escape",
+        "button"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.maze.04",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Same prisoner",
+      "connector": "new wall",
+      "reframe": "different problem",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "maze",
+        "prisoner",
+        "reset"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.number.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "No names here",
+      "connector": "names start arguments",
+      "reframe": "numbers line up",
+      "relation": "SYNERGY",
+      "tags": [
+        "number",
+        "identity",
+        "institution"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.number.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Number Seven",
+      "connector": "following Number One",
+      "reframe": "independent judgment",
+      "relation": "MISFIT",
+      "tags": [
+        "number",
+        "hierarchy",
+        "obedience"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.number.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Wrong number",
+      "connector": "right uniform",
+      "reframe": "good enough",
+      "relation": "MISFIT",
+      "tags": [
+        "number",
+        "competence",
+        "identity"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.light.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Stay out of the beam",
+      "connector": "looks evasive",
+      "reframe": "step into it",
+      "relation": "COLLISION",
+      "tags": [
+        "searchlight",
+        "surveillance",
+        "trap"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.light.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Run from the light",
+      "connector": "confirm pursuit",
+      "reframe": "thank you",
+      "relation": "ESCALATION",
+      "tags": [
+        "searchlight",
+        "pursuit",
+        "pretext"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.alien.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Visitors asked for three",
+      "connector": "we found four",
+      "reframe": "efficient afternoon",
+      "relation": "ESCALATION",
+      "tags": [
+        "alien-transfer",
+        "custody",
+        "private-prison"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.alien.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Off-world interview",
+      "connector": "they returned your shoes",
+      "reframe": "good sign",
+      "relation": "MISFIT",
+      "tags": [
+        "alien-transfer",
+        "ufo",
+        "custody"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.windup.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "Number Nine stopped",
+      "connector": "the key went missing",
+      "reframe": "sabotage",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "wind-up",
+        "key",
+        "blame"
+      ],
+      "fluffOlect": {
+        "allowed": false
+      }
+    },
+    {
+      "tripletId": "toy.fluff.01",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "You were observed",
+      "connector": "moving near the gate",
+      "reframe": "specific enough",
+      "relation": "CATEGORY_SHIFT",
+      "tags": [
+        "fluff-o-lect",
+        "gate",
+        "ambiguity"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "moving",
+        "variant": "You were observed / FLUFFING near the gate / specific enough"
+      }
+    },
+    {
+      "tripletId": "toy.fluff.02",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "No offense listed",
+      "connector": "one word still open",
+      "reframe": "hold the cell",
+      "relation": "MISFIT",
+      "tags": [
+        "fluff-o-lect",
+        "custody",
+        "ambiguity"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "word",
+        "variant": "No offense listed / one FLUFF still open / hold the cell"
+      }
+    },
+    {
+      "tripletId": "toy.fluff.03",
+      "signatureOf": [
+        "toy-soldier"
+      ],
+      "subject": "The camera recorded",
+      "connector": "something near the fence",
+      "reframe": "I can work with that",
+      "relation": "SYNERGY",
+      "tags": [
+        "fluff-o-lect",
+        "camera",
+        "ambiguity"
+      ],
+      "fluffOlect": {
+        "allowed": true,
+        "replaceTarget": "something",
+        "variant": "The camera recorded / FLUFF near the fence / I can work with that"
+      }
+    }
+  ],
+  "reviewQuestions": [
+    "Does the connector carry the coercive trap rather than bureaucratic wording?",
+    "Do entries remain usable as shared weighted signatures rather than private catchphrases?",
+    "Does the Corps sound lower-rational but socially perceptive?",
+    "Are surveillance/private-prison themes embodied rather than explained?",
+    "Are alien/air-patrol lines clearly proposal-tagged by context rather than asserted runtime facts?",
+    "Is Fluff-o-lect sparse and limited to one authored target?",
+    "Can BOGGLE/BLÖDSINN reframe the Soldier instead of every scene ending in arrest?",
+    "Does No. 1 remain the same worldview at lower energy rather than becoming a mastermind?"
+  ],
+  "nextGate": "TOY_SOLDIER_VOICE_TRIPLET_REVIEW_01"
+}
