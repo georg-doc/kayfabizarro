@@ -1,5 +1,9 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## ADDENDUM · 2026-10-10 · timeout recovery and official source verification
+
+Prior GitHub head `eaa898d431edabd10e7dadb2939aa45407ef7c79` and both intended files were independently read back. Production Control latest Return also existed; **no missing/unknown write**. Continuing source research found the official Mixed Bag 1 page with 24 named creator Live Show modeling requests and channel-link VOD reference (channel URL, not episode permalinks), plus official Series 6 creator-linked animation preview `zSzzEmdIiXI`. New section 11 in the main report records KFB-relevant asset targets and FREE/EXTRA/SOURCE entitlement distinctions. No video frame study or runtime claims. Next gate unchanged: **KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01**.
+
 ## ADDENDUM · 2026-10-10 · Twitch / X / Blender MCP research workflow
 
 Added `KAYKIT_MULTICHANNEL_RESEARCH_AND_BLENDER_MCP_HANDOFF_2026-10-10.md` on this same research branch. Twitch channel verified but individual active VOD IDs were not exposed. Kay's official Patreon confirms Live Show episodes 0–4 and YouTube VOD exports. Twitch VOD expiration and non-guaranteed native captions are documented. X/Grok discovery prompt contract and source/timecode/visual-review schema are specified; Claude Coworker / Blender MCP is assigned only targeted later source-isolated visual comparison/reproduction of selected tutorial segments, not bulk-video viewing or runtime ownership. No creator content re-hosted, no actual Blender reproduction or screen capture performed. One next gate remains `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`.
