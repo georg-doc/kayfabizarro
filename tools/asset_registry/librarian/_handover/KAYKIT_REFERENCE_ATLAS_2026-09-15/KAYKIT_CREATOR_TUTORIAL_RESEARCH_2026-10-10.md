@@ -277,3 +277,50 @@ Return should contain:
 - exactly which KFB A/B fixtures are worth testing next.
 
 No runtime implementation belongs to that scan.
+
+
+## 10. Additive channel discovery pass · 2026-10-10
+
+### Discovery result
+
+A fresh web search did **not** expose a complete searchable upload index for Kay Lousberg's YouTube channel. It would be inaccurate to present a complete channel inventory or invent individual video IDs. The four named tutorial URLs in section 6 remain the verified direct-watch anchors.
+
+One useful expansion was established from creator/peer-origin material:
+
+- **KayKit Live Show episodes 0–4** are an official **five-episode VOD sequence** and produced the 24-asset Mixed Bag 1 pack. Kay explicitly describes teaching Blender modeling while producing the assets.
+  - source: https://www.patreon.com/kaylousberg/posts/updates-recap-169539427
+  - individually verified YouTube VOD URLs in this pass: **0/5**; do not invent episode URLs.
+- **KayKit Live Show episode 6** is supported by an October 2026 link in Kenney's Bluesky feed to Kay Lousberg's Twitch stream, described as "Episode 6 (Blender3D game asset modeling)" involving an Atari 2600 request. That proves the continuing **live series / Twitch episode**, **not** a verified YouTube VOD upload.
+  - source: https://bsky.app/profile/kenney.nl
+  - YouTube VOD URL: **NOT VERIFIED**.
+- Episode 5 is implied by the episode 6 numbering but has not been individually source-verified in this pass. Do not list it as a watched or available YouTube video.
+
+### Expanded priority queue by productive outcome
+
+| Priority | Existing/extra source | Production use | Evidence status |
+|---|---|---|---|
+| P0 | Lighting tutorial `Vfr3n4WKsc0` | Environment visual settings / isolated character readability | Direct URL verified; frames/settings pending |
+| P0 | Detailed KayKit Characters in Godot `4p7QaOd8SHE` | source import/materials/animation workflow, current MVP Resident seam | Direct URL from existing creator-scan brief; full scan pending |
+| P1 | KayKit Animations Overview Set 1 `T1KNCtAqJ7A` | native clip appearance/semantics comparison | Direct URL verified, legacy-vs-1.1 crosswalk pending |
+| P1 | KayKit Animations Unity & Godot `rwst5GnUU7s` | weapon/animation import principles | Direct URL verified; legacy source |
+| P1 (selective) | Live Show Episodes 0–4 | **Blender source-author geometry**: model scale/pivots, modularity, material atlas, reusable props; especially Town/WorldBuilder/Dungeon/track-side scenery | Creator-confirmed VOD series; per-episode YouTube URL/topic/timestamps pending |
+| P2 | Live Show Episode 6 (Twitch stream) | Later modeling academy and prop production; request→Blender asset workflow | Episode/live supported by Kenney; YouTube VOD **unverified** |
+| P2 | More KayKit live sessions/episodes | Only inspect if actual official VOD URL + concrete KFB modeling problem available | Open discovery; no invented entries |
+
+### Reusable work-chat queue
+
+For each actual video or 15–30 minute VOD segment, create one additive Atlas entry with:
+1. verified creator/source URL and exact video/version;
+2. short timestamped evidence table, settings/mesh/material or clip names;
+3. `SOURCE FACT` vs `OBSERVED DEMO` vs `KFB PROPOSAL`;
+4. one current KFB receiving owner and exact already-existing donor, if any;
+5. targeted Lessons Learned / Best-Practice / SOP candidate;
+6. acceptance fixture and what remains untested;
+7. update this report and owning `RETURN.md` at a coherent milestone.
+
+Keep the first implementation gate unchanged: `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`. A channel-index pass can proceed separately as research without blocking it.
+
+### Third-party cross-reference (not Kay's own channel)
+
+Brackeys' later Godot 3D tutorial references Kay Lousberg/KayKit assets. It is a **consumer integration example**, not Kay's native authoring guidance; do not silently include third-party videos in the creator-only queue.
+
