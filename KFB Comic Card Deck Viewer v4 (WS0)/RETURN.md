@@ -1,44 +1,40 @@
-# RETURN.md — KFB/MED Deck Viewer
+# RETURN.md — KFB/MED Deck Viewer v5 candidate
 
-Nach `skills/chat/workflows/handover-return.md`.
+**Repository / branch / base:** `georg-doc/kayfabizarro` · `work/kfb-deck-library-r1-2026-10-09` · `909828efa85a2f85584cb47d6a7cee3fd37989bd`
 
-**Repository / Branch / Commit:** kein eigenes Repo — Claude-Design-Projekt
-"PDF Viewer für Comic Card Decks". Korpus + Assets referenzieren
-`georg-doc/kayfabizarro`@main live per RAW-URL (kein lokaler Commit-Pin nötig,
-da nur gelesen, nie geschrieben).
+**Outcome:** The existing v4 viewer is preserved as donor and v5 adds data-safe deck/card deep links over the canonical 130-deck source.
 
-**Was geändert wurde:**
-- Full View (6. Ansicht) in v4 hinzugefügt, siehe `CHANGELOG.md` 2026-08-04.
-- Standalone-Single-File-Build für v4 erzeugt.
-- `HOUSEKEEPING.md` und `CLAUDE.md` nachgezogen.
+## Changed
 
-**Owner/Contracts unverändert:**
-- `deckviewer/*.js` bleiben geteiltes Modul-SSOT für v3 UND v4 — nicht dupliziert.
-- v3 (`KFB Deck Viewer v3.dc.html`) bleibt Georgs eingefrorene Referenz, nicht angefasst.
-- Layout bleibt arithmetisch abgeleitet (kein CV), Card-Mode = Center-Cut + Regler,
-  nur CSS+Canvas, Paper-Theme default, Modul single-file vanilla JS ohne Build-Step —
-  siehe `uploads/KAYFABIZARRO_VIEWER_HANDOVER.md` §0, weiterhin bindend.
+- added `KFB Deck Viewer v5.dc.html` from the verified v4 donor;
+- upgraded shared `deckviewer/kfb-corpus.js` to consume the generated v2 deck index;
+- real PDF page counts are shown for every deck;
+- stable `?deck=&card=` and `?deck=&page=` routes;
+- copied card labels emit exact `kfb.card-ref/1` JSON;
+- unsafe mappings stay available as full PDF pages but expose no card crop.
 
-**Tests / Environment:**
-- Manuell im Claude-Design-Preview-iframe geprüft: Boot → Korpus (130 Decks / 1914 Seiten) →
-  alle sechs Ansichten → Full-View-Scroll/Klick/Doppelklick → Kopfzeile-Breakpoints →
-  Standalone-Build lädt und rendert. Kein automatisierter Testlauf, kein echter Browser
-  außerhalb der Sandbox.
+## Preserved owners and contracts
 
-**Offene visuelle/menschliche Gates:**
-- Georgs Freeplay-Abnahme auf Full View (Scroll-Gefühl, Deckkraft-Wert 60 %,
-  Breakpoint-Werte 1120/900/620) steht noch aus.
-- Kein Cross-Browser-Check (nur Sandbox-Chromium).
+- `media/kfb/index.json` remains the deck owner;
+- PDFs and source card JSON are unchanged;
+- v4 and earlier viewers remain present;
+- the viewer remains a static pdf.js consumer and does not write Registry/source state;
+- gameplay suitability remains review-only except for the explicit Three Futures and Mission Control allow-list.
 
-**DEFERRED / bekannte Baseline-Lücken:**
-- `worlds_fair_conspiracy.pdf` ungeklärt (kein Match in der aktuellen Registry, siehe CHANGELOG 2026-09-13).
-- Standalone-Build bleibt netzabhängig (pdf.js-CDN + Live-Korpus) — volle Offline-Fassung
-  mit eingebetteten PDFs wäre ein separater, deutlich schwererer Export.
-- v1-Zweig (`KFB Deck Viewer.dc.html`, `kfb-viewer.js`) bleibt SUPERSEDED, aber nicht gelöscht.
+## Evidence
 
-**Evidenz:** keine Screenshots in diesem Re-Home-Export (bewusst ausgeschlossen, siehe Anfrage).
-Ein Abnahme-Screenshot wurde im Chat gezeigt, nicht als Datei abgelegt.
+- 130 decks · 1,915 measured PDF pages · 6,985 card rows;
+- Mission Control card 56 deep-link lands on page 15;
+- real-browser viewer smoke: zero console errors;
+- 14-deck rendered PDF evidence covers Three Futures, Mission Control, schema variants and fail-closed mappings;
+- deterministic regeneration and 57/57 repository unit/browser-contract tests pass.
 
-**Nächster sicherer Wiedereinstiegspunkt:**
-`KFB Deck Viewer v4.dc.html` öffnen, Clean-Run-Checkliste in `HOUSEKEEPING.md` abarbeiten,
-dann Georgs Freeplay-Feedback zu Full View einholen.
+## Unresolved / deferred
+
+- 23 source mappings are deliberately `unverified`; no synthetic card crop is emitted.
+- Cross-browser coverage beyond Chromium remains open.
+- This candidate was not published to GPT Site or Cloudflare.
+
+## Next gate
+
+Review the PR, inspect the two rendered contact sheets, and approve or request corrections. Merge and publication remain separate Georg-owned decisions.

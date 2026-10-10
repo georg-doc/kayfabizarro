@@ -12,6 +12,21 @@ spec.loader.exec_module(decks)
 
 
 class DeckRegistryTests(unittest.TestCase):
+    def test_card_adapter_normalizes_all_observed_shapes(self):
+        canonical, status = decks._normalized_cards({"cards": [{"cardNumber": 7, "cardName": "Seven"}]})
+        self.assertEqual((canonical[0]["cardNumber"], canonical[0]["cardName"], status), (7, "Seven", "canonical"))
+        alternate, status = decks._normalized_cards({"cards": [{"num": "3", "name": "Three"}]})
+        self.assertEqual((alternate[0]["cardNumber"], alternate[0]["cardName"], status), (3, "Three", "normalized-num-name"))
+        ordered, status = decks._normalized_cards({"cards": [{"name": "First"}, {"name": "Second"}]})
+        self.assertEqual([card["cardNumber"] for card in ordered], [1, 2])
+        self.assertEqual(status, "normalized-name-only")
+
+    def test_pdf_page_tree_count_is_measured_without_third_party_dependency(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "sample.pdf"
+            path.write_bytes(b"%PDF-1.4\n1 0 obj << /Type /Pages /Count 17 >> endobj\n%%EOF")
+            self.assertEqual(decks._pdf_page_count(path), 17)
+
     def _fixture(self, root: Path):
         deck_root = root / "media" / "kfb"
         deck_root.mkdir(parents=True)
@@ -37,7 +52,7 @@ class DeckRegistryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
             tracked = self._fixture(root)
-            records, index, problems = decks.build_decks(
+            records, index, problems, cards, town, qa = decks.build_decks(
                 root,
                 registry_path="media/kfb/kfb-index.json",
                 deck_root="media/kfb",
@@ -49,6 +64,10 @@ class DeckRegistryTests(unittest.TestCase):
             self.assertEqual(index["count"], 3)
             self.assertEqual(index["sourceRegistry"]["schema"], "kfb-deck-registry/v2")
             self.assertEqual(problems, [])
+            self.assertEqual(index["cardCount"], 0)
+            self.assertEqual(cards, [])
+            self.assertEqual(town["schema"], "kfb.town-deck-library/1")
+            self.assertEqual(qa["deckCount"], 3)
             for record in records:
                 self.assertEqual(record["groupingStatus"], "explicit")
                 self.assertEqual(len(record["representations"]["pdf"]), 1)
@@ -61,7 +80,7 @@ class DeckRegistryTests(unittest.TestCase):
             root = Path(td)
             tracked = self._fixture(root)
             tracked.remove("media/kfb/b.pdf")
-            records, _, problems = decks.build_decks(
+            records, _, problems, _, _, _ = decks.build_decks(
                 root,
                 registry_path="media/kfb/kfb-index.json",
                 deck_root="media/kfb",

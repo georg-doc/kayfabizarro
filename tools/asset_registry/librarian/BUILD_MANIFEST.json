@@ -1,30 +1,38 @@
 {
   "schema": "kfb.asset-librarian-site-build.v1",
-  "version": "1.6-town-workbench",
-  "date": "2026-09-15",
+  "version": "1.8-deck-library-r1",
+  "date": "2026-10-09",
   "sourceRepo": "georg-doc/kayfabizarro",
-  "branch": "asset-librarian/v1.6-town-workbench-2026-09-15",
-  "baseCommit": "49e6256edf5f9bba6de0678953443f1faa7cf182",
+  "branch": "work/kfb-deck-library-r1-2026-10-09",
+  "baseCommit": "909828efa85a2f85584cb47d6a7cee3fd37989bd",
   "registry": "registry/assets/v1",
+  "deckOwner": "media/kfb/index.json",
   "registryOwnershipChanged": false,
   "llmRequired": false,
   "writesToRegistry": false,
   "handoffSchema": "kfb.asset-handoff.v1",
+  "cardReferenceSchema": "kfb.card-ref/1",
   "townSceneSchema": "kfb.town-scene-candidate.v1",
   "selectionStatus": "candidate-only",
-  "animationCompatibilityOwner": "Animation Lab v2",
-  "testedBrowserRun": 34914515885,
-  "testedBrowserArtifactSha256": "aac14624e0dc0b3f72a3616f514e29d3cceb5b0b681f14d827387fd68dcdce00",
-  "acceptanceTasks": [
-    "Town Nature and Forest first-choice view",
-    "Town Buildings and Town view",
-    "Quaternius Space Kit view",
-    "KayKit Mystery Series character discovery",
-    "GothGirl same-collection prop discovery",
-    "GothGirl local/shared on-character motion playback with measured binding coverage",
-    "candidate-only Town Scene Plan",
-    "historical v1 through v1.5 browser regressions"
+  "publicationStatus": "pr-candidate-not-published",
+  "deckEvidence": {
+    "decks": 130,
+    "pdfPages": 1915,
+    "cards": 6985,
+    "unverifiedMappings": 23
+  },
+  "localAcceptance": [
+    "57/57 Python unit and browser-contract tests",
+    "JavaScript syntax checks",
+    "deterministic deck regeneration",
+    "real-browser Mission Control card 56 deep link to page 15",
+    "real-browser Librarian deck detail and PDF preview",
+    "zero console errors on both acceptance paths"
   ],
+  "historicalBrowserEvidence": {
+    "run": 34914515885,
+    "artifactSha256": "aac14624e0dc0b3f72a3616f514e29d3cceb5b0b681f14d827387fd68dcdce00"
+  },
   "siteSource": [
     "tools/asset_registry/librarian/index.html",
     "tools/asset_registry/librarian/styles.css",
@@ -48,6 +56,8 @@
     "tools/asset_registry/librarian/town-workbench.css",
     "tools/asset_registry/librarian/resources-ui.js",
     "tools/asset_registry/librarian/resources.css",
-    "tools/asset_registry/librarian/rig-preview.js"
+    "tools/asset_registry/librarian/rig-preview.js",
+    "tools/asset_registry/librarian/deck-library.js",
+    "tools/asset_registry/librarian/deck-library.css"
   ]
 }

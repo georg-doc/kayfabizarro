@@ -10,7 +10,7 @@
     'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' + PDFJS_VER + '/'
   ];
   var REGISTRY_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json';
-  var SHEET_VERSION = 's2';   // hochzaehlen, sobald sich Bau oder Aufloesung aendert
+  var SHEET_VERSION = 's3';   // v5: PDF truth + normalisierte Kartenschemata
   var TILE_W = 460;           // gespeicherte Kachelbreite in Pixel
   var SHEET_PARALLEL = 2;
 
@@ -87,8 +87,11 @@
     }).then(function (j) {
       var base = String(j.baseUrl || '').replace(/\/$/, '');
       var decks = (j.decks || []).map(function (d) {
+        var pdfNames = [d.pdf];
+        if (d.pdf && d.pdf.indexOf("'") >= 0) pdfNames.push(d.pdf.replace(/'/g, '’'));
         return Object.assign({}, d, {
-          pdfUrl: base + '/' + encodeURIComponent(d.pdf),
+          pdfUrl: base + '/' + encodeURIComponent(pdfNames[0]),
+          pdfUrls: pdfNames.map(function (name) { return base + '/' + encodeURIComponent(name); }),
           dataUrl: base + '/' + encodeURIComponent(d.data)
         });
       });
@@ -120,6 +123,20 @@
 
   // ---- Kartenindex je Deck (nur auf Anfrage, ~40 KB pro Deck) ----
   var cardP = {};
+  function normalizeCards(j) {
+    return (j.cards || []).map(function (raw, index) {
+      var candidate = raw.cardNumber != null ? raw.cardNumber : (raw.num != null ? raw.num : index + 1);
+      var n = parseInt(candidate, 10);
+      if (!isFinite(n) || n < 1) n = index + 1;
+      return {
+        n: n,
+        name: String(raw.cardName || raw.name || ('Card ' + n)),
+        lore: String(raw.lore || ''),
+        power: String(raw.power || ''),
+        grade: raw.grade == null ? null : raw.grade
+      };
+    });
+  }
   // Wie viele Blaetter liegen VOR der ersten Karte? Die Registry sagt pauschal 1 (bei allen
   // 103 Decks), und sie rechnet `pages = pageCount + 1`. Beides stimmt nicht immer: bei
   // `the_biology_of_rebellion` hat das PDF 9 Seiten, die Registry behauptet 10, und die
@@ -135,12 +152,15 @@
       var d = reg.decks.find(function (x) { return x.packId === packId; });
       if (!d) throw new Error('unknown deck ' + packId);
       var fallback = d.coverOffset == null ? 1 : d.coverOffset;
-      var n = d.cardCount || 0;
-      // Nur rechnen, wenn die Kartenzahl sauber aufgeht — sonst der Registry glauben.
-      if (!n || n % 4) return { off: fallback, pages: d.pages };
-      return pageCount(packId).then(function (real) {
+      return Promise.all([
+        pageCount(packId),
+        fetch(d.dataUrl, { cache: 'no-store' }).then(function (r) { return r.json(); })
+      ]).then(function (values) {
+        var real = values[0];
+        var n = normalizeCards(values[1]).length;
         if (!real) return { off: fallback, pages: d.pages };
-        var sheets = n / 4;
+        if (!n) return { off: fallback, pages: real, verified: false, reason: 'no cards' };
+        var sheets = Math.ceil(n / 4);
         var free = real - sheets;
         // `free` sind die Seiten ohne Karten. Wo sie liegen, verraet das PDF nicht: eine
         // Textebene gibt es nicht (gemessen: 0 Zeichen auf jeder Seite), die Blaetter sind
@@ -150,8 +170,8 @@
         // Bei free >= 2 kann eine zweite Vorseite (etwa ein Regelblatt) dahinterstecken; das
         // waere dann ein Versatz 2. Ungeprueft wird das nicht angenommen — sonst verschiebt
         // man elf Decks auf Verdacht. Die Liste steht im Session-Cut.
-        if (free < 0 || free > 3) return { off: fallback, pages: real };
-        return { off: free === 0 ? 0 : 1, pages: real, free: free };
+        if (free !== 0 && free !== 1) return { off: fallback, pages: real, free: free, verified: false, reason: 'ambiguous non-card pages' };
+        return { off: free, pages: real, free: free, verified: true };
       }, function () { return { off: fallback, pages: d.pages }; });
     });
     return offP[packId];
@@ -168,8 +188,12 @@
       ]).then(function (both) {
         var j = both[0], fit = both[1];
         var off = fit.off;
+        var normalized = normalizeCards(j);
         return {
           pages: fit.pages,
+          mappingVerified: fit.verified === true,
+          mappingReason: fit.verified === true ? '' : (fit.reason || 'cover offset unverified'),
+          coverOffset: off,
           deckTitle: j.deckTitle || '',
           deckType: j.deckType || '',
           blurb: j.blurb || '',
@@ -177,16 +201,14 @@
           marketingEdition: j.marketingEdition || '',
           deckFunction: j.deckFunction || [],
           exhibitionRole: j.exhibitionRole || '',
-          cards: (j.cards || []).map(function (c) {
-            var n = c.cardNumber;
-            return {
-              n: n,
-              name: c.cardName || '',
+          cards: normalized.map(function (c) {
+            var n = c.n;
+            return Object.assign({}, c, {
               // Kanon §8: Seite = coverOffset + 1 + floor((n-1)/4), Quadrant = (n-1)%4.
               // `off` ist hier der GEMESSENE Versatz, nicht der pauschale aus der Registry.
-              page: off + 1 + Math.floor((n - 1) / 4),
-              quadrant: (n - 1) % 4
-            };
+              page: fit.verified === true ? off + 1 + Math.floor((n - 1) / 4) : null,
+              quadrant: fit.verified === true ? (n - 1) % 4 : null
+            });
           })
         };
       });
@@ -227,12 +249,21 @@
     var p = Promise.all([pdfjs(), registry()]).then(function (a) {
       var L = a[0], reg = a[1];
       var d = reg.decks.find(function (x) { return x.packId === packId; });
-      return L.getDocument({
-        url: d.pdfUrl,
-        disableAutoFetch: true,   // Range-Requests, nicht die ganze Datei
-        disableStream: false,
-        rangeChunkSize: 262144
-      }).promise;
+      var urls = d.pdfUrls || [d.pdfUrl];
+      var at = 0;
+      function attempt() {
+        var url = urls[at++];
+        return L.getDocument({
+          url: url,
+          disableAutoFetch: true,
+          disableStream: false,
+          rangeChunkSize: 262144
+        }).promise.catch(function (error) {
+          if (at < urls.length) return attempt();
+          throw error;
+        });
+      }
+      return attempt();
     });
     docs.set(packId, p);
     if (docs.size > 3) {
@@ -349,6 +380,27 @@
     return doc(packId).then(function (d) { return d.numPages; });
   }
 
+  function cardRef(packId, cardNumber) {
+    return Promise.all([registry(), cards(packId)]).then(function (values) {
+      var deck = values[0].decks.find(function (item) { return item.packId === packId; });
+      var index = values[1];
+      var card = index.cards.find(function (item) { return item.n === Number(cardNumber); });
+      if (!deck || !card) throw new Error('unknown card ' + packId + '#' + cardNumber);
+      return {
+        schema: 'kfb.card-ref/1',
+        deckId: packId,
+        cardNumber: card.n,
+        cardName: card.name,
+        page: index.mappingVerified ? card.page : null,
+        quadrant: index.mappingVerified ? card.quadrant : null,
+        pdf: deck.pdf,
+        data: deck.data,
+        mappingVerified: index.mappingVerified,
+        mappingMessage: index.mappingVerified ? '' : index.mappingReason
+      };
+    });
+  }
+
   // ---- Eine Seite als Bild, mit Ablage. Zwei Groessen-Eimer: Leiste und Spalte. ----
   // Nach einem Durchgang liegt das Deck vollstaendig in IndexedDB — danach braucht es kein Netz.
   var imgP = {};
@@ -444,6 +496,8 @@
     focus: focus,
     renderPage: renderPage,
     pageCount: pageCount,
+    cardRef: cardRef,
+    normalizeCards: normalizeCards,
     TILE_W: TILE_W
   };
 })();

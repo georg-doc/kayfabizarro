@@ -53,6 +53,9 @@ def validate_registry(out_dir: Path) -> list[str]:
         "private-projection.jsonl",
         "packs/index.json",
         "decks/index.json",
+        "decks/cards.jsonl",
+        "decks/town.json",
+        "decks/qa-report.json",
     ]
     for rel in required:
         if not (out_dir / rel).is_file():
@@ -67,6 +70,8 @@ def validate_registry(out_dir: Path) -> list[str]:
         delta = load_json(out_dir / "delta.json")
         pack_index = load_json(out_dir / "packs" / "index.json")
         deck_index = load_json(out_dir / "decks" / "index.json")
+        deck_cards = load_catalog(out_dir / "decks" / "cards.jsonl")
+        town_decks = load_json(out_dir / "decks" / "town.json")
         private_projection = load_catalog(out_dir / "private-projection.jsonl")
     except Exception as exc:
         return [f"generated output is not parseable: {exc}"]
@@ -188,6 +193,16 @@ def validate_registry(out_dir: Path) -> list[str]:
             errors.append(f"manifest deck count {counts.get('decks')} != deck index {len(deck_ids)}")
         if deck_index.get("sourceCommit") != source_commit:
             errors.append("deck index sourceCommit differs from manifest")
+        if (deck_index.get("cardCount") or 0) != len(deck_cards):
+            errors.append(f"deck index cardCount {deck_index.get('cardCount')} != card rows {len(deck_cards)}")
+        known_decks = deck_ids
+        for card in deck_cards:
+            if card.get("schema") != "kfb.card-ref/1" or card.get("deckId") not in known_decks:
+                errors.append(f"invalid card projection: {card.get('deckId')}#{card.get('cardNumber')}")
+        if not isinstance(town_decks, dict) or town_decks.get("schema") != "kfb.town-deck-library/1":
+            errors.append("decks/town.json has invalid schema")
+        elif any(item.get("deckId") not in known_decks or item.get("gameUse") != "allowed" for item in town_decks.get("decks", [])):
+            errors.append("decks/town.json contains an invalid or non-allowed deck")
 
     if not isinstance(problems_doc, dict):
         errors.append("problems.json must contain an object")

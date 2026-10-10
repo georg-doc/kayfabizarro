@@ -18,12 +18,13 @@ function closeSelection() {
 function openSelection() {
   closeDetail();
   productionUi?.closeResourceDetail();
+  productionUi?.closeDeckDetail();
   $('selectionTray').classList.add('open');
   $('selectionTray').setAttribute('aria-hidden', 'false');
   $('selectionButton').setAttribute('aria-expanded', 'true');
   $('drawerBackdrop').hidden = false;
 }
-function closePanels() { closeDetail(); closeSelection(); productionUi?.closeResourceDetail(); $('drawerBackdrop').hidden = true; }
+function closePanels() { closeDetail(); closeSelection(); productionUi?.closeResourceDetail(); productionUi?.closeDeckDetail(); $('drawerBackdrop').hidden = true; }
 
 function updateSearchMeta(result) {
   const shown=result.rows.length, total=result.total, raw=result.rawTotal;
@@ -141,8 +142,8 @@ async function bootstrap() { $('browseModeFilter').value=state.browseMode; refre
 productionUi = initProductionResources({ showAsset: openAssetFromResource });
 // Town v1.6 remains a compatibility module and may set its historical visible version during module init.
 // v1.7 is the current shell version after all dependency initializers have run.
-document.title='KFB Asset Librarian v1.7';
-const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibleVersion.textContent='v1.7';
+document.title='KFB Asset Librarian v1.8 · Deck Library R1';
+const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibleVersion.textContent='v1.8';
 
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };

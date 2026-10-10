@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KFB Asset Librarian v1.7</title>
+  <title>KFB Asset Librarian v1.8 · Deck Library R1</title>
   <link rel="canonical" href="https://kayfabizarro.pages.dev/asset-librarian/">
   <link rel="stylesheet" href="./styles.css">
   <script type="importmap">
@@ -20,7 +20,7 @@
     <header class="topbar">
       <div class="brand-block">
         <div class="eyebrow">KFB · repo-truth production librarian</div>
-        <h1>KFB Asset Librarian <span>v1.7</span></h1>
+        <h1>KFB Asset Librarian <span>v1.8</span></h1>
       </div>
       <div class="top-actions">
         <label class="registry-mode-control" title="Live reads the generated bot registry. Canonical reads reviewed registry files from main.">
@@ -43,6 +43,7 @@
       <button class="production-tab" data-library-tab="rigs" type="button">Rigs</button>
       <button class="production-tab" data-library-tab="motions" type="button">Motions</button>
       <button class="production-tab" data-library-tab="fx" type="button">FX</button>
+      <button class="production-tab" data-library-tab="decks" type="button">Decks</button>
     </nav>
 
     <div id="assetWorkspace">
@@ -134,6 +135,21 @@
       </section>
     </section>
 
+    <section id="deckWorkspace" hidden aria-label="Deck and card library">
+      <section class="deck-toolbar panel">
+        <input id="deckSearch" class="global-search" type="search" placeholder="Search deck title, card name, lore or tags…" autocomplete="off">
+        <select id="deckAssetType" aria-label="Deck asset type"><option value="">Decks + cards</option><option value="Deck" selected>Decks</option><option value="Card">Cards</option></select>
+        <select id="deckModeFilter" aria-label="Game mode"><option value="">KFB + MED</option></select>
+        <select id="deckTypeFilter" aria-label="Deck type"><option value="">All deck types</option></select>
+        <select id="deckSetFilter" aria-label="Set"><option value="">All sets</option></select>
+        <select id="deckGameUseFilter" aria-label="Game use"><option value="">Any game use</option><option value="allowed">Allowed</option><option value="review">Review</option><option value="blocked">Blocked</option></select>
+      </section>
+      <section class="results panel">
+        <div class="results-head"><div><div class="eyebrow">deck registry · PDF truth</div><p id="deckMeta">Open the Decks tab to load the deck layer.</p></div></div>
+        <div id="deckList" class="deck-list" aria-live="polite"></div>
+      </section>
+    </section>
+
     <aside class="drawer detail-drawer" id="detailPanel" aria-label="Asset detail" aria-hidden="true">
       <div class="drawer-head">
         <div><div id="detailKind" class="eyebrow"></div><h2 id="detailName">Asset detail</h2></div>
@@ -181,6 +197,16 @@
       </div>
       <div id="resourcePrimaryAction" class="resource-primary-action"></div>
       <details class="resource-tech"><summary>Evidence & technical facts</summary><pre id="resourceDetailJson"></pre></details>
+    </aside>
+
+    <aside class="drawer" id="deckDetailPanel" aria-label="Deck or card detail" aria-hidden="true">
+      <div class="drawer-head"><div><div id="deckDetailKind" class="eyebrow"></div><h2 id="deckDetailName">Deck detail</h2></div><button id="deckDetailClose" class="icon-button" type="button" aria-label="Close deck detail">×</button></div>
+      <div id="deckDetailBadges" class="badges detail-badges"></div>
+      <div id="deckMappingWarning" class="deck-unverified" hidden></div>
+      <div id="deckPreviewWrap" class="preview-wrap"><div class="preview-toolbar"><strong>pdf.js preview · on demand</strong><span id="deckPreviewStatus">Idle</span></div><canvas id="deckPreviewCanvas" class="deck-preview-canvas"></canvas></div>
+      <div class="deck-detail-actions"><a id="deckViewerLink" class="button-link quiet" target="_blank" rel="noreferrer">Open in Deck Viewer v5</a><button id="deckPrimaryAction" class="primary" type="button">Deck zuordnen</button></div>
+      <label id="deckRoleWrap" class="deck-role">Role <select id="deckRole"><option value="primary">primary</option><option value="support">support</option><option value="reference">reference</option><option value="FORGET">FORGET</option><option value="IGNORE">IGNORE</option><option value="EMBRACE">EMBRACE</option></select></label>
+      <pre id="deckHandoffJson" class="deck-json"></pre>
     </aside>
 
     <aside id="selectionTray" class="drawer selection-drawer" aria-label="Selection tray" aria-hidden="true">
