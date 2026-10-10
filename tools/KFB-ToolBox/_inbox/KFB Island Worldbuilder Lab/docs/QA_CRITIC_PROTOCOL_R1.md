@@ -46,6 +46,7 @@ docs/critic/<slice>/<YYYY-MM-DD>_<lauf>/
 | **Insel (Lab, Stufe 1)** | I1 Übersicht schräg · I2 Augenhöhe 1 H vom Hauptweg auf die Landmarke · I3 Seitenansicht Rand (Kante + Scholle) · I4 Untersicht Scholle · I5 Nahaufnahme Übergang (Bankett bzw. Wegrand, Laufhöhe 0,9 H) | Regelwerk Environment §4, ergänzt um Kante, Scholle, Sprenkel |
 | **Natur (Environment)** | Regelwerk Environment §4 (4 Kameras) | – |
 | **Übergang (RKIT)** | Regelwerk Übergänge §4 (3 Kameras): schräg oben · Augenhöhe 1 H · bodennah quer zur Naht | – |
+| **Silhouette (ab Stufe 1, je Insel)** | S1 schwarze Silhouette seitlich aus Flugdistanz · S2 dasselbe aus Racetrack-Höhe · S3 alle Inseln nebeneinander als Silhouetten (gleicher Maßstab) | Masterplan §2 Silhouetten-Regel: jede Insel ohne Landmarke unterscheidbar |
 | **Fahrt (Stufe 2+)** | Video: eine Runde aus der Spielkamera, dazu 6 Standbilder an festen Stationen | Masterplan §3b |
 
 Die Kameras liegen als Presets im Lab bzw. in den Shoot-Werkzeugen (`tools/shoot.mjs`, `tools/render-speckle.mjs`, RKIT-Renderskripte); gleiche Auflösung (1600 × 1000), gleiches Licht.

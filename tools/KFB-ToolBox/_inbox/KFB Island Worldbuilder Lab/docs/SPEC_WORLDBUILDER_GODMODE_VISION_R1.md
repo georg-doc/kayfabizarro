@@ -28,6 +28,8 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
 
 Inseln sollen sich in **Grundfläche und Gesamtform** deutlich unterscheiden. Nicht jede Insel ist eine abgeschnittene Platte mit gleich hoher Kante und gleichem Kegel darunter. Erst wird gestaltet, dann gerechnet: Jede Insel bekommt vor dem Bau ein kurzes Formblatt (Silhouette von vorn, Seite und oben, ein Satz Weltlogik: warum sieht sie so aus).
 
+**Weltlogik dahinter:** Die Inseln sind aus der zersprengten Erde herausgebrochene Schollen (Masterplan §2). Deshalb gibt es zusätzlich `strata` (Erdschichten bzw. Querschnitt der Unterseite, Reste der alten Welt je nach Herkunft) und `breakAge` (frisch gesprengt bis verwittert bzw. bewachsen). Ziel: Jede Insel ist aus der Ferne an ihrer Silhouette erkennbar.
+
 **Form-Modifikatoren** (kombinierbar, im Rezept unter `form`):
 
 | Modifikator | Bild | Weltlogik-Beispiel |
@@ -39,6 +41,8 @@ Inseln sollen sich in **Grundfläche und Gesamtform** deutlich unterscheiden. Ni
 | `split` | zerbrochene Insel: zwei bzw. drei Teile mit gezacktem Bruch und Spalt, verbunden über Brücke bzw. Steg oder getrennt | Katastrophe, Riss, Geschichte des Ortes |
 | `fragments` | kleine abgebrochene Brocken, die neben der Insel schweben, mit Gras bzw. Busch | Folge von `split`, Sprungsteine, Landeplätze |
 | `overhang` | Oberseite ragt über die Scholle hinaus, darunter Höhle bzw. Wurzeln | Wasserfall, Höhle, Unterseite mit Leben |
+| `strata` | Schichten der Unterseite: Erde, Fels, Wurzeln, Kristalle bzw. Reste der alten Welt (Keller, Rohre, Tunnel) | Querschnitt durch die gesprengte Erde |
+| `breakAge` | `fresh` / `old` / `overgrown`: wie gezackt bzw. verwittert die Bruchkanten sind | Alter der Sprengung |
 | `undersideStyle` | `cone` (eine Spitze), `lobes` (2–3 Lappen), `broken` (gezackt), `roots` (Wurzeln hängen) | passend zur Geschichte der Insel |
 
 Regeln: §01 gilt für jede Bruch- und Felskante (gerundete Knet-Kanten, Rubbel, keine glatten Schnittflächen). Jede Insel nutzt mindestens einen Modifikator, der sie von ihren Nachbarn unterscheidet. Die MVP-Inseln geben die Richtung vor: **Town** = Plateau mit Burgfels-Abbruch (`cliffs`) und Terrassen zur Stadtseite; **Protopia** = zerklüftete Berg-Insel (`crags`, `cliffs`) mit 1–2 schwebenden Brocken (`fragments`).

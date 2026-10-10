@@ -2,6 +2,8 @@
 
 Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne das Claude-Code-Kontingent zu belasten. Jeder Abschnitt ist ein eigener Auftrag zum Hineinkopieren. Ergebnisse lädt Georg auf GitHub hoch nach `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/<Auftrag>_<werkzeug>/` (z. B. `A_claude-design/`); Dateiname `<datum>_<werkzeug>_<thema>`. Die Steuerung holt sie dort ab und gleicht sie mit dem Plan ab. Pakete mit allen nötigen Unterlagen (für Werkzeuge ohne Dropbox- bzw. GitHub-Zugriff): `KFB_HUB/30_PACKAGES/2026-10-10_mvp1-parallel/`.
 
+**Weltlogik (Georg 10.10.):** Die Inseln sind aus der zersprengten Erde herausgebrochene Schollen. Die Fragmentierung der Gesellschaft hat den Planeten auseinandergerissen. Form wie Asteroiden bzw. Erdschollen, nicht wie Teller; die Unterseite ist ein Querschnitt durch die Erde (Schichten, Wurzeln, Reste der alten Welt). Town liegt in der Mitte, dystopische bzw. Gefängnis-Inseln eher unten. Jede Insel muss schon an ihrer **Silhouette** erkennbar sein, aus der Ferne vom Racetrack und im Flug.
+
 **Für alle gilt:** §00 Weltlogik zuerst · §01 keine harten Schnitte · Maßstab K2 (H = Figurhöhe, MC = 6,4 Lab-Einheiten = ein Stockwerk, keine Meter) · keine realen Personen bzw. Firmen und keine Verschwörungs-Decks in der Spielwelt · nichts davon ist schon Kanon, alles ist Vorschlag bis zur Abnahme.
 
 | # | Werkzeug | Auftrag | Wofür im MVP | Priorität |

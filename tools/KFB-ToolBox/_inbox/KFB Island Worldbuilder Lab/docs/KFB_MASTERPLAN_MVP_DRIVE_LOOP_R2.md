@@ -41,6 +41,13 @@ Georg fährt mit einem Retro-Auto oder mit FrizzleBob im Cabrio auf einer Ringst
 
 ## 2 · Welt-Anordnung
 
+**Weltlogik der Inseln: die zersprengte Erde (Georg 10.10.).** Die Inseln sind Schollen, die aus der Erde herausgesprengt wurden. Ursache war die Fragmentierung der Gesellschaft: Spaltung, Filterblasen, Polarisierung haben den Planeten auseinandergerissen. Daraus folgt für Bau und Bild:
+- **Form wie Asteroiden bzw. Erdschollen, nicht wie Teller.** Jede Insel hat eine eigene Bruchgeschichte; die Insel-Logik wird nicht zu streng genommen.
+- **Die Unterseite ist ein Querschnitt durch die Erde:** Erdschichten, Fels, Wurzeln, je nach Herkunft auch Reste der alten Welt (Keller, Rohre, Tunnelstücke, Fundamente). Das gibt jeder Scholle Farbe, Relief und Geschichte statt einer braunen Fläche.
+- **Bruchkanten erzählen das Alter:** frisch gesprengt = schärfer gezackt, aber Knet-gerundet (§01); lange her = verwittert, bewachsen, weich.
+- **Anordnung im Raum:** KFB Town mit dem König in der Mitte. Die anderen Inseln liegen in klaren Clustern im 3D-Raum; dystopische und Gefängnis-Inseln eher unten. Der Rest folgt der Geschichte, z. B. Utopia oben und Protopia auf mittlerer Höhe (Vorschlag, noch offen).
+- **Silhouetten-Regel:** Jede Insel ist schon an Kontur und Silhouette erkennbar, nicht nur an ihrer Landmarke, aus der Ferne vom Racetrack und im Flugmodus. Prüfung: Silhouetten-Kamerasatz (QA-Protokoll §3).
+
 | Teil | Inhalt | Geschichte (Quelle) |
 | --- | --- | --- |
 | **KFB Town** (größte Insel, Mitte) | Siehe unten | Story Recovery §3: historischer Hub, sechs Biografie-Schritte, Fluff-Genesis |
