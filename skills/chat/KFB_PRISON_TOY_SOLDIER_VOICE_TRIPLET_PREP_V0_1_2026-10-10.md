@@ -424,6 +424,27 @@ Example voice tests, not frozen copy:
 - "You looked at the camera twice. Good instinct."
 - "Nothing happened. We prevented it."
 
+## 12.1 · Visual / media-aware Needle inputs
+
+Consume:
+- `KFB_VISUAL_CHARACTERIZATION_WORLD_PERCEPTION_CONTEXT_V0_1_2026-10-10.md`
+- `KFB_DIALOGUE_PERCEPTION_CONTEXT_PACKET_V0_1_2026-10-10.json`
+
+The Toy Soldier may Needle from:
+- a source-observed visible Character feature;
+- a current visible prop/costume state;
+- a current canonical Card visual motif via `artworkPrompt`;
+- the currently active Hypernormalisation quote/question context;
+- a witnessed visual callback stored by the real relationship-memory owner.
+
+This does **not** make the Soldier omniscient.
+He sees only context supplied by current owners.
+
+A strong Needle can connect two real things:
+`target feature + current Billboard/Card motif`
+
+That relation may be surprising, but neither input may be invented.
+
 ## 13 · Triplet method
 
 Use existing shared KFB grammar:
