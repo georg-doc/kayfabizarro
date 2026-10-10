@@ -81,6 +81,30 @@ Technical and visual metaphors should reinforce this:
 
 **Operational reading rule:** Scope every prohibition to its original problem, medium, owner and audience. When in doubt, favor the overarching product vision—**a living, surprising, funny, physically satisfying playable KFB universe**—without weakening technical acceptance or inventing a competing SSOT. If a strict rule blocks that vision, explain the conflict and propose a bounded alternative rather than adding another prohibition. Keep this a *guide for decisions*, not a new meta-gateway to sign off before each playful object.
 
+## Georg author direction · Cognitive dissonance as KFB resonance · 2026-10-10
+
+**Status: GLOBAL CREATIVE INTERPRETATION / NORTH-STAR CLARIFICATION, NOT A NEW CONTENT POLICY, CENSORSHIP FILTER, RUNTIME OWNER, DIALOGUE POOL CONTRACT OR CANON GATE.** Applies across Cards/Decks, ChatterBox/Residents, comics, satire, islands, Almanac, world events, media and travel closure.
+
+> **Cognitive dissonance is KayfaBizarro's resonance space. Closure belongs to the reader/player.**
+
+**Kayfabe + Bizarro:** voices perform incompatible worldviews with full internal seriousness. Their claims can be official, conspiratorial, utopian, radically skeptical, authoritarian, sentimental, absurd or intentionally contradictory. They are *character and media performances*, not propositions that KFB, its author or an assistant must endorse. The author is not obliged to enter each scene as a moderator, fact-checker, referee or moral judge to adjudicate whose worldview wins. Credible physical action and contradictory consequences can expose ideology more sharply than a disclaimer monologue.
+
+**Satirical method:** exaggeration, inversion, **overaffirmation / Überaffirmation** and tragicomic failure loops take assumptions to the point where they become recognizable through distortion. Misaligned text/image, unreliable narration, competing Cards, inappropriate seriousness and incompatible visual registers are valid source-native creative devices. A point of view may win the argument and lose the situation; a grotesque character may be right for the wrong reasons. Absurdity is part of the medium, not a defect that must be normalized away.
+
+**Associative and philosophical model, not a forced theory:**
+- **Aby Warburg's good neighbor:** bring images, arguments, artifacts and eras into meaningful, sometimes startling proximity without making every link an asserted causal fact.
+- **Markus Gabriel's fields of sense (Sinnfelder):** different conceptual frames produce different questions and visibilities; do not impose one flattening meta-narrative on every island, Deck or Resident.
+- **Scott McCloud / comic gutter / closure:** let the audience perform the missing relation between conflicting beats, cards, props, islands and journeys.
+- **Warburg ↔ Gabriel ↔ McCloud is KFB's *creative montage*,** not a claim that these philosophies are equivalent.
+
+**Purpose:** expose intellectual and institutional Kayfabe, social filtering, media manipulation, ideological habits and hidden assumptions through play and contradiction; encourage reflective friction instead of a guided "critical thinking lesson." Player freedom includes believing, doubting, mocking, misreading, choosing another route or declining to resolve a contradiction. KFB may be acerbic, irreverent, politically and philosophically challenging, and still invite broad audiences through toy-world comedy and multiple meaningful reading layers (Asterix-like).
+
+**Interpretation and provenance:** a polemical article, conspiracy Card or extreme opinion is a legitimate *performed viewpoint or source artifact* in creative KFB. Its inclusion does not automatically mean endorsement or factual validation; nor does it need recurring on-screen ideological caveats. When a separate task explicitly asks what a real source proves, keep traceability and distinguish source assertion from confirmed observation. This is source hygiene, **not** a fictional-character speech restraint.
+
+**Downstream use:** For a Card, scene, minigame or Resident, ask: What worldview is being performed? What is its attractive kernel or useful insight? Which premise is pushed too far? What changes materially when another worldview or actual event collides with it? What remains for audience closure? These are *optional author prompts*, not mandatory checklist beats. Proactively propose fresh, concrete satirical twists where the scene's actual characters, objects, actions or source conflicts permit one; never apply blanket anti-satire, anti-conspiracy or forced middle-ground filters.
+
+**Existing ownership preserved:** ChatterBox dialogue/triplet content uses its real current Sheet/pool owner, without invented tuple/bubble requirements. Card/Deck registry owns Card origin/source, World/Story owners own their domains. This creative lens neither grants a new runtime nor changes a current MVP P0 gate. Cross-project source siblings: `skills/chat/meta/KFB_META_COMPENDIUM_v1.md`, `skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md`, `skills/chat/masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md`.
+
 ## Analog canon vs digital game
 
 Analog/public rules and KFB meta-narration are **high-value origin references**, not shackles on digital gameplay.
