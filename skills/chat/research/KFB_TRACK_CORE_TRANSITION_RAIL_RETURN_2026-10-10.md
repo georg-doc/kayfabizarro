@@ -1,5 +1,25 @@
 # KFB Track Core · Transition / Dungeon / Rail Research RETURN
 
+## ADDITIVE CHECKPOINT · 2026-10-10 · street→race ground candidate numeric PASS
+
+**Outcome:** A narrowly-scoped, research-only `C_city_track_ground_CANDIDATE` additive JSON profile is ready for exact original-J14-3D comparison. **Not** written into active `transition-profiles.v1.json`, not a new route/mesh/physics owner, not visually accepted.
+
+New research files:
+- `skills/chat/research/fixtures/KFB_T4_CITY_TRACK_GROUND_CANDIDATE_2026-10-10.json` (same existing T4 layer keys; proposed from city to track, sideLag=.06; nine independently staged layer windows).
+- `skills/chat/research/evidence/KFB_T4_CITY_TRACK_GROUND_CANDIDATE_WINDOWS_2026-10-10.svg` (candidate-data-only graphic, not source-3D screenshot).
+- `skills/chat/research/KFB_CITY_TRACK_GROUND_CANDIDATE_EVIDENCE_2026-10-10.md` (full source provenance and executed numerical contract audit).
+
+Source JSON: J14 T4 `transition-profiles.v1.json` blob `af6d52c9e3506ecc99d977c66faa8e7189e6f6e2`. Actual J14 `w(layer,s,side)` formula reconstructed for analytic test; 16/16 contract assertions PASS, 18,000 monotonic comparisons of 18 side-layer curves, exact 1→0 endpoints on both sides. Research exemplar length 100m is **not a global transition-length canon**. The historical elevated `C_city_track_deck` remains untouched and continues to be treated as special-case elevation exit without sidewalk.
+
+**Site recovery copies:** existing private KFB Production Control workflow `KFB_TRACK_CORE_EDGE_TRANSITION_AND_RAIL_RESEARCH_2026-10-10`:
+- candidate test report file ID `3d99a7d0-89e3-4ea5-b3f1-05a8d393fdb3`, saved + byte-identical readback;
+- candidate JSON file ID `8d0a5a06-d43f-4c1e-ba0a-7cf66e6342ec`, saved + byte-identical readback.
+- current Return to be stored as next Site checkpoint.
+
+**Remaining gate / status:** `TRACK_CORE_EDGE_ADAPTER_SOURCE_ISOLATION_01` = **PARTIAL**. Original Joyride J14 donor 3D source-visual isolation, actual curb/barrier endcaps, real vehicle collision/clearance, matched near+driver-camera images, and geometry stability on a curve are still UNTESTED. Source screenshot binary not available through existing connector. World R4 STOP/NO MVP preserved. No new runtime, PR/merge, Stage, Site publication or material owner.
+
+---
+
 ## ADDITIVE CHECKPOINT · 2026-10-10 · Webchat source-data isolation
 
 Georg asked to execute the first Track Core edge-adapter gate here in the Webchat. The Webchat completed the **original authored DATA/CONTRACT isolation** using Track Core v0.12 and Joyride J14 T4 source, not the original 3D donor visual inspection.
