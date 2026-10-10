@@ -62,6 +62,41 @@
       "characterId": "lorekeeper",
       "reason": "main Resident contrast / visual-to-knowledge dialogue",
       "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "vampire",
+      "reason": "new Sinnfeld/Register pilot; strong source-backed design and separate home/territory direction",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb",
+      "sourceFacts": {
+        "rigClass": "Rig_Medium",
+        "jointCount": 23,
+        "props": [
+          "Vampire_Goblet.gltf",
+          "Vampire_Sword.gltf",
+          "Vampire_Throne.gltf",
+          "Gem_Small.gltf",
+          "Gem_Medium.gltf",
+          "Gem_Large.gltf"
+        ],
+        "promoRefs": [
+          "artwork.png",
+          "contents.png"
+        ]
+      },
+      "transformDonorCandidate": {
+        "source": "media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/Bat.gltf",
+        "sourceBlob": "483d61a0d540cd85cc8162eb4401dc8560255c8c",
+        "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+        "skinCount": 1,
+        "animationNames": [
+          "Bite_Front",
+          "Death",
+          "Flying",
+          "HitRecieve"
+        ],
+        "status": "SOURCE_BACKED_DONOR_NOT_TRANSFORM_PROOF"
+      }
     }
   ],
   "currentResidentAtlas": [
@@ -547,5 +582,9 @@
     "review",
     "promote only reviewed source-observed features to runtime seen-fact eligibility"
   ],
-  "nextGate": "VISUAL_CHARACTERIZATION_SOURCE_EXTRACTION_01"
+  "nextGate": "VISUAL_CHARACTERIZATION_SOURCE_EXTRACTION_01",
+  "notes": {
+    "priority01Count": 6,
+    "vampireAdded": "2026-10-10"
+  }
 }
