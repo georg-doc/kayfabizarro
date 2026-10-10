@@ -1,0 +1,102 @@
+{
+  "schema": "kfb.visual-characterization/0.1-candidate",
+  "status": "AUTHORING_METADATA_NO_RUNTIME_OWNER",
+  "date": "2026-10-10",
+  "owner": "KFB Resident / ChatterBox authoring metadata",
+  "truthClasses": [
+    "SOURCE_OBSERVED",
+    "USER_AUTHORED_OR_REPORTED",
+    "STORY_HYPOTHESIS"
+  ],
+  "sourceStatusPolicy": {
+    "runtimeSeenFactAllowed": [
+      "SOURCE_OBSERVED"
+    ],
+    "designCandidateAllowed": [
+      "SOURCE_OBSERVED",
+      "USER_AUTHORED_OR_REPORTED"
+    ],
+    "storyHypothesisPromotesAutomatically": false
+  },
+  "featureShape": {
+    "featureId": "string",
+    "label": "string",
+    "description": "string",
+    "truthClass": "SOURCE_OBSERVED | USER_AUTHORED_OR_REPORTED",
+    "visibility": "NEAR | MID | FAR | PROP_DEPENDENT",
+    "persistence": "STABLE | COSTUME_STATE | ACTIVITY_STATE",
+    "sourceRef": "optional",
+    "banterEligible": "boolean",
+    "hypothesisSeedEligible": "boolean"
+  },
+  "characterizationShape": {
+    "characterId": "string",
+    "sourceCharacterRef": "string",
+    "sourceStatus": "string",
+    "silhouette": [
+      "feature"
+    ],
+    "faceFeatures": [
+      "feature"
+    ],
+    "bodyFeatures": [
+      "feature"
+    ],
+    "costumeFeatures": [
+      "feature"
+    ],
+    "carriedProps": [
+      "feature"
+    ],
+    "movementReads": [
+      "feature"
+    ],
+    "recurringTells": [
+      "feature"
+    ],
+    "socialReads": [
+      "string"
+    ],
+    "comicAffordances": [
+      "string"
+    ],
+    "banterHooks": [
+      {
+        "hookId": "string",
+        "featureRef": "string",
+        "transformType": "STATUS_DEFLATION | SILHOUETTE_EXAGGERATION | PROP_IRONY | ROLE_CONTRADICTION | COSTUME_TEASE | WEAR_CALLBACK | OTHER",
+        "socialEdgeAllowed": [
+          "BUDDY",
+          "CLOWN_ROAST",
+          "DARK_HEEL",
+          "TOY_SOLDIER_NEEDLE"
+        ],
+        "notes": "string"
+      }
+    ],
+    "extractionStatus": "PENDING_SOURCE_ISOLATION | SOURCE_ISOLATED | REVIEWED",
+    "lastSourceIsolationRef": "optional"
+  },
+  "classSupport": {
+    "levels": [
+      "INSTANCE",
+      "RESIDENT_ARCHETYPE",
+      "CLASS_FAMILY"
+    ],
+    "examples": [
+      "skeleton-family",
+      "orc-family",
+      "toy-soldier-corps",
+      "farmers",
+      "animatronics"
+    ],
+    "rule": "class-level features never erase instance/resident differences"
+  },
+  "ownership": {
+    "assetTruth": "Resident Atlas / Asset owners",
+    "dialogueUse": "ChatterBox / authoring consumer",
+    "relationshipMemory": "Resident Life / Memory owner",
+    "storyFactPromotion": "explicit author decision / story owner only"
+  },
+  "runtimeRequirement": false
+}
