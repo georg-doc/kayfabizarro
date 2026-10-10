@@ -206,3 +206,71 @@ Human listening:
 **OPEN**.
 
 The earlier provisional 2/10 read was discarded because it inspected the chunk wrapper rather than the decoded HTML bytes; it is not product evidence.
+
+## S3 · Existing KFB Audio Site Voice Acting Bench
+
+Status: **IMPLEMENTED + PRIVATE SITE PUBLISHED · HUMAN LISTENING OPEN**
+
+Receiving surface:
+- existing Site: `KFB Audio`
+- project id: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- production URL: `https://kfb-audio.frizzlebob.chatgpt.site`
+- saved version: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_fb9dcfe50fe88191a16097759a287686`
+- deployment: `appgdep_6ac9cb6f5a8c819190a2721a64318f64`
+- Site source commit: `86e8a77810351e992e073c48d8596263357029b0`
+
+This is additive to the existing Audio Site. It does not create another Site, dialogue engine, mixer, AudioContext or runtime owner.
+
+### Static verification · 87/87 PASS
+
+`node dist/validate.mjs` passed against the exact packaged/pushed Site source. Voice-specific assertions cover:
+1. Voice Bench schema `0.2`;
+2. all six editable story-mode candidates;
+3. explicit non-final/non-canon mapping status;
+4. four Resident audition candidates;
+5. three meaningful Triplet beats;
+6. `Waffle Fluff` and `Stay fluffy!` candidates;
+7. no Voice-Bench-created AudioContext;
+8. reuse of KFB Audio D state + existing speech-focus ducking;
+9. talk-animation event with explicit no-viseme claim;
+10. no ElevenLabs key or header in browser code;
+11. IndexedDB clip intake + session/SSOT export;
+12. all Voice controls present.
+
+The 87 total also retains the existing catalog, B/C/D, real-stem, prompt and single-owner assertions.
+
+### Published-browser verification · PASS
+
+The exact production URL visibly showed:
+- `SITE SOURCE 0.4`;
+- the new `Voice Acting` tab;
+- all six story modes;
+- `EDITABLE CANDIDATE · NOT CANON`;
+- the three meaningful `Personal freedom / expires automatically at / the next checkpoint` beats;
+- 41 English browser voices on the verifying device;
+- D-bed and existing-ducking controls enabled by default;
+- render queue and local clip intake;
+- secure ElevenLabs bridge explicitly reported as not configured;
+- future Maker Space / God Mode boundary without a substitute actor or viseme claim.
+
+Console errors observed during the browser check: **0**.
+
+The repository Playwright script was not run because the local Playwright package is unavailable. This was recorded once as `PLAYWRIGHT_UNAVAILABLE`; live browser inspection was used instead.
+
+### Audio and performance evidence still OPEN
+
+- no human listening comparison was performed;
+- no claim is made for audible ducking quality;
+- no ElevenLabs API render was performed;
+- Piper and eSpeak NG binaries are not installed in the current environment;
+- no real EyeRig/PetMouth/pose/gesture Resident stage was integrated;
+- talk and beat events are implemented, but exact character choreography remains a receiving-owner test.
+
+## Next gate
+
+On the published Site, Georg runs one chosen Triplet in three passes:
+1. voice solo;
+2. voice over D bed without ducking;
+3. voice over D bed with ducking;
+
+Return **KEEP / TUNE / CUT** for voice, bed balance and ducking. This single listening gate replaces any assumption based on structural checks.

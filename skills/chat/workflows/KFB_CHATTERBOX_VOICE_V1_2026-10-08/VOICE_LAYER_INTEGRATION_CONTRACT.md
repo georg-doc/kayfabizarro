@@ -217,6 +217,10 @@ First review/bench work must dock into an existing productive KFB surface when a
 
 KFB Production Control may store source/evidence artifacts without changing public product routing.
 
+2026-10-10 additive authorization: the Voice Acting / Casting Bench docks into the **existing KFB Audio Site** as a module. KFB Audio supplies its current AudioContext, D bed and ducking controls; ChatterBox Voice retains source/casting/session ownership. This is an existing-surface integration, not a second Site or runtime owner.
+
+The bench may emit `kfb:voice-beat`, `kfb:voice-focus` and `kfb:talk-animation`. Future in-world Maker-Space / God-Mode presentation may orchestrate real Resident, EyeRig, PetMouth, pose, gesture, bubble and partner-relation consumers on that timeline, but may not absorb their ownership.
+
 ## 13 · Acceptance for runtime promotion
 
 A future integration slice passes only when:

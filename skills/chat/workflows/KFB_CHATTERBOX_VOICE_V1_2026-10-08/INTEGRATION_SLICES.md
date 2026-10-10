@@ -83,9 +83,9 @@ Acceptance before S2 closes:
 - exact model/license attribution is frozen for kept voices;
 - no non-commercial voice enters a public candidate.
 
-## S3 · Existing-Surface Voice Bench
+## S3 · Existing-Surface Voice Bench · IMPLEMENTED + PRIVATE SITE PUBLISHED / HUMAN LISTENING OPEN
 
-Do not create a new Site.
+Do not create a new Site. R2 docks into the existing private KFB Audio Site because it already owns the one AudioContext, D conversation bed and ducking path.
 
 Preferred first surface is whichever existing KFB owner is explicitly authorized at execution time:
 - KFB Audio Site bench for isolated listening, or
@@ -104,6 +104,14 @@ Bench shows:
 
 One human gate after the bench is useful:
 **Which voices survive, and is Assembled good enough versus Whole?**
+
+R2 additionally supports editable six-Story-Mode acting candidates, English browser audition, local clip ingestion, Piper/eSpeak/ElevenLabs render queues, voice-solo versus real-bed versus ducked-bed comparison, and event-only talk animation. See `VOICE_ACTING_CASTING_BENCH_R2.md`.
+
+Verified publication:
+- `https://kfb-audio.frizzlebob.chatgpt.site`
+- `SITE SOURCE 0.4`
+- Site source commit `86e8a77810351e992e073c48d8596263357029b0`
+- static Site validation `87/87 PASS`
 
 ## S4 · ChatterBox Consumer Seam
 

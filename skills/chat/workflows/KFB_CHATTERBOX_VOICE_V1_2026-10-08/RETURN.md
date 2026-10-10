@@ -1,6 +1,6 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
-Status: **S1 COMPLETE · REAL POOL ADAPTER GREEN · NEXT-MVP VOICE ACCEPTANCE PREPARED · NO WORLD RUNTIME PROMOTION**
+Status: **S3 EXISTING-SITE VOICE BENCH PUBLISHED · HUMAN LISTENING OPEN · NO WORLD RUNTIME PROMOTION**
 
 ## Owner / scope
 
@@ -32,7 +32,7 @@ Base at branch creation:
 Evidence milestone head:
 `bb9441a626fd8bbc4ee83a5543a82f7402162e6a`
 
-The exact final PR/branch head after this Return write is verified in the accompanying Production Control handoff.
+The exact final PR/branch head after this Return write is verified on PR #379 after push.
 
 ## Source package
 
@@ -60,6 +60,8 @@ Production Control imported ZIP:
 - `tools/test_real_pool_adapter.cjs`
 - `data/NEXT_MVP_VOICE_PROOF_R1.json`
 - `NEXT_MVP_VOICE_ACCEPTANCE_ADDENDUM.md`
+- `VOICE_ACTING_CASTING_BENCH_R2.md`
+- `data/VOICE_CASTING_BENCH_R2_CONTRACT.json`
 - this `RETURN.md`
 
 under:
@@ -137,12 +139,16 @@ Package reports:
 
 These were not rerun as browser/audio tests by this Web Chat.
 
-### Actual tests in this slice
+### Actual tests through S3
 - static/structural assertions: **18/18 PASS**
-- browser audio playback: **0 run**
+- canonical pool adapter: **13/13 PASS**
+- static R1 casting bench: **10/10 PASS**
+- existing KFB Audio Site validation: **87/87 PASS**
+- published-browser structure/interaction inspection: **PASS · 0 console errors**
+- browser audio listening: **0 human judgements**
 - listening quality gates: **0 run**
-- runtime integration tests: **0 run**
-- Site/public deployment tests: **0 run**
+- real Resident choreography integration tests: **0 run**
+- Site production deployment: **SUCCEEDED**
 
 ## Production Control / Site persistence
 
@@ -157,16 +163,25 @@ Artifacts:
 - Integration Slices
 - Test Report
 
-This is authenticated production persistence, not a claim that a new public/product GPT Site was deployed.
+The existing private KFB Audio Site is now the receiving surface for the Voice Acting/Casting Bench. No second Site was created.
 
-No public/Stage URL is required by this planning/source-acceptance slice.
+Published Site:
+`https://kfb-audio.frizzlebob.chatgpt.site`
+
+Exact deployment evidence:
+- Site project: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- Site source commit: `86e8a77810351e992e073c48d8596263357029b0`
+- saved version: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_fb9dcfe50fe88191a16097759a287686`
+- deployment: `appgdep_6ac9cb6f5a8c819190a2721a64318f64`
+- deployment result: `succeeded`
+- visible production marker: `SITE SOURCE 0.4`
 
 ## Integration slices
 
 - **S0 Source intake/owner audit: COMPLETE**
 - **S1 Canonical pool → Voice Asset Adapter: COMPLETE · 13/13 PASS**
 - **S2 MVP Casting Proof: BENCH READY · HUMAN LISTENING OPEN**
-- S3 Existing-surface Voice Bench
+- **S3 Existing-surface Voice Bench: IMPLEMENTED + PRIVATE SITE PUBLISHED · HUMAN LISTENING OPEN**
 - S4 ChatterBox Consumer Seam
 - S5 Social Calls / Catchphrase Pack
 - S6 Optional live/provider expansion
@@ -199,11 +214,13 @@ Manifest:
 4. Assembled versus Whole remains a listening decision.
 5. Exact public-license attribution must be frozen for whatever voices actually ship.
 6. PR #357 / issue #362 remain HOLD/TUNE history until explicitly reopened.
-7. Optional ElevenLabs use remains an extension, not a dependency.
+7. Optional ElevenLabs use remains an extension, not a dependency. The browser contains no key; a scoped server-side Site secret/bridge is still required before direct generation.
+8. Piper English and eSpeak NG are represented as render-queue targets; neither local renderer is installed in this environment.
+9. Talk/beat events are available, but the real EyeRig/PetMouth/pose/gesture/spatial stage remains a later in-world receiving-owner integration.
 
 ## Hub / router / Live
 
-No central KFB Hub or public route update was made.
+No central KFB Hub or public route update was made. The existing canonical KFB Audio Site URL was retained.
 
 Reason:
 this result does not yet change a P0/public human gate or canonical product URL. It is an owner-local integration-prep milestone.
@@ -213,6 +230,6 @@ No Live promotion.
 
 ## Exactly one next gate
 
-**HUMAN LISTENING · KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1**
+**HUMAN LISTENING · PUBLISHED KFB AUDIO VOICE ACTING BENCH**
 
-Georg returns KEEP / TUNE / CUT per auditioned MVP-proof voice. The next implementation then renders only accepted canonical KFB material and prepares the real next-MVP consumer test.
+Georg selects one Triplet and compares voice solo / D bed without ducking / D bed with ducking, then returns KEEP / TUNE / CUT for voice, bed balance and ducking. Only accepted mappings and provider takes may then advance; six-mode mappings remain editable candidates meanwhile.

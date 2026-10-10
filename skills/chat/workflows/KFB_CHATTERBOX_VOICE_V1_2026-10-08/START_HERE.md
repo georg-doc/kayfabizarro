@@ -1,6 +1,6 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
-Status: **S1 REAL-POOL ADAPTER GREEN · NEXT-MVP VOICE ACCEPTANCE PREPARED · NO WORLD RUNTIME PROMOTION**
+Status: **S3 EXISTING-SURFACE VOICE BENCH PUBLISHED · HUMAN LISTENING OPEN · NO WORLD RUNTIME PROMOTION**
 Date: 2026-10-08
 Owner: **KFB ChatterBox / Resident Speech output**
 Receiving owners: **existing KFB ChatterBox dialogue owner + existing KFB Audio owner**
@@ -106,7 +106,7 @@ This check-in does **not** reopen or promote PR #357 / issue #362 as a finished 
 PR #357 remains a HOLD/TUNE donor.
 PR #365 remains the current KFB Audio module owner and is not modified here.
 
-No GPT Site, Cloudflare route, World runtime, merge or Live promotion is performed in this planning slice.
+The existing private KFB Audio GPT Site is the authorized receiving surface for S3. No new Site, Cloudflare route, World runtime, merge or game Live promotion is created.
 
 ## S1 implementation milestone · COMPLETE
 
@@ -128,17 +128,34 @@ The first runtime MVP after the Four-Island A/B visual gate must read the Voice 
 
 ## Exactly one next gate
 
-**KFB_CHATTERBOX_VOICE_CASTING_BENCH_R1 · HUMAN LISTENING OPEN**
+**PUBLISHED KFB AUDIO VOICE ACTING BENCH · HUMAN LISTENING OPEN**
 
-The bounded bench is now persisted in KFB Production Control:
-- Demon Lord;
-- Robot One;
-- Farmer A;
-- optional Lorekeeper;
-- Whole / Assembled / Browser;
-- KEEP / TUNE / CUT;
-- 10/10 static bench checks PASS.
+Open `https://kfb-audio.frizzlebob.chatgpt.site`, choose one Triplet and compare voice solo / D bed without ducking / D bed with ducking. Georg returns KEEP / TUNE / CUT for voice, bed balance and ducking. No new synthesis credits were spent; all mappings and example lines remain audition-only/non-canon.
 
-No new synthesis credits were spent. The embedded donor lines are casting-only and non-canon.
+## 2026-10-10 · additive S3 implementation
 
-Next action: Georg listens and returns KEEP / TUNE / CUT per voice. Only accepted voices move to canonical next-MVP rendering.
+Current user direction authorizes an additive Voice Acting / Casting module on the **existing KFB Audio GPT Site**. This does not create the held PR #357 ChatterBox Site or any second audio/dialogue owner.
+
+Read:
+`VOICE_ACTING_CASTING_BENCH_R2.md`
+
+Machine-readable contract:
+`data/VOICE_CASTING_BENCH_R2_CONTRACT.json`
+
+Implemented in Site-ready source:
+- six editable Story Mode acting candidates;
+- English browser voice audition;
+- real D conversation bed;
+- existing ducking on/off A/B;
+- local ElevenLabs/Piper/eSpeak clip intake;
+- provider-neutral render queue and session/SSOT export;
+- bubble word cues plus `TALK_LOOP_NO_LIPSYNC` performance event;
+- no placeholder character and no viseme claim.
+
+Live ElevenLabs generation remains disabled until a server-side Site secret and guarded bridge exist. Final mode/emotion/casting mappings remain open.
+
+Published evidence:
+- Site source commit `86e8a77810351e992e073c48d8596263357029b0`;
+- Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_fb9dcfe50fe88191a16097759a287686`;
+- deployment `appgdep_6ac9cb6f5a8c819190a2721a64318f64` succeeded;
+- live `SITE SOURCE 0.4` and `Voice Acting` tab verified at the exact production URL.
