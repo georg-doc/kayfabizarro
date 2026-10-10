@@ -1,0 +1,229 @@
+{
+  "schema": "kfb.voice-heuristic-audition-candidates/0.1-proposal",
+  "date": "2026-10-10",
+  "status": "AUTHORING_PREPARATION_ONLY",
+  "owner": "KFB ChatterBox Voice output, Draft PR #379",
+  "receivingSurface": {
+    "owner": "KFB Audio",
+    "site": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "route": "Voice Acting tab",
+    "alreadyExists": true,
+    "republishedByThisSlice": false
+  },
+  "decision": {
+    "heuristicMvpFirst": true,
+    "georgLaterFineTuning": true,
+    "heuristicAllowedWithoutPerVoiceHumanPreapproval": true,
+    "sourceIdentityAndVoiceGenderDifferent": true,
+    "anyAuditionMayBeOverridden": true
+  },
+  "boundaries": {
+    "chatterBox": "semantic selection + source-backed triplets",
+    "kfbAudio": "single playback clock/mix/duck/AudioContext",
+    "residentAffect": "emotion truth",
+    "residentPerformance": "pose/face/bubble presentation consumers",
+    "speakrail": "optional separate future full-duplex donor, not a TTS engine",
+    "resembleChatterboxTts": "unrelated external model, not KFB ChatterBox",
+    "doccheckVoiceIO": "separate product"
+  },
+  "sourcePins": {
+    "residentAtlas": "tools/resident_atlas_s6/data/cast.js@5e918ae1521e63d121558fb7aff4fd1f8239baec",
+    "mvpProof": "data/NEXT_MVP_VOICE_PROOF_R1.json@5f2f299f96bdeb68322dacc4600979731b8aba0f",
+    "existingCastBench": "data/VOICE_CASTING_BENCH_R2_CONTRACT.json@11a8f2965d5a1d0ab83f55fbce0ba405848662a3",
+    "bubbleDonor": "skills/KFB PetStudio/bubble/bubble.v1.js@da7fe114c04c1a3fe7c303a195c8a8ac84fdefa4",
+    "performanceSpec": "skills/chat/RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP_2026-10-06.md@79fc0951de708323fdf527e723f008ca4ce96426"
+  },
+  "selectionProtocol": {
+    "language": "en",
+    "identityPolicy": "user-overridable audition traits, not canonical sex/gender or fixed voiceProvider",
+    "requireRealAudibleSample": true,
+    "requireHumanLicenseApprovalBeforePublicShip": true,
+    "noBulkSynthesis": true,
+    "validSilence": true
+  },
+  "candidates": [
+    {
+      "residentId": "demon-lord",
+      "actorId": "demon",
+      "world": "world.dystopia",
+      "sourceGlb": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "baselinePreset": "demon_lord",
+      "voiceLaneCandidates": [
+        "masculine",
+        "low_dark"
+      ],
+      "traits": [
+        "resonant",
+        "controlled",
+        "darker",
+        "high_intelligibility"
+      ],
+      "notes": "Dry/deadpan alternative is valuable; avoid excessive FX that obscure consonants.",
+      "priority": "MVP_3",
+      "visualBasis": "Existing next-MVP proof actor and user-recommended dark Demon Lord.",
+      "auditionStatus": "HEURISTIC_CANDIDATE",
+      "mappingFinal": false,
+      "providerVoiceId": null,
+      "providerModel": null,
+      "rightsReview": "PENDING",
+      "humanDecision": null
+    },
+    {
+      "residentId": "robot-one",
+      "actorId": "robot-one",
+      "world": "world.utopia",
+      "sourceGlb": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_One.glb",
+      "baselinePreset": "robot",
+      "voiceLaneCandidates": [
+        "synthetic",
+        "neutral",
+        "masculine",
+        "feminine"
+      ],
+      "traits": [
+        "precise",
+        "controlled_pacing",
+        "subtle_mechanical_character",
+        "high_intelligibility"
+      ],
+      "notes": "Synthesis timbre may be synthetic regardless of speaker sex/gender; avoid blanket low-robot-filter.",
+      "priority": "MVP_3",
+      "visualBasis": "Existing next-MVP proof actor.",
+      "auditionStatus": "HEURISTIC_CANDIDATE",
+      "mappingFinal": false,
+      "providerVoiceId": null,
+      "providerModel": null,
+      "rightsReview": "PENDING",
+      "humanDecision": null
+    },
+    {
+      "residentId": "farmers",
+      "actorId": "farmer_a",
+      "world": "world.protopia",
+      "sourceGlb": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "baselinePreset": "farmer",
+      "voiceLaneCandidates": [
+        "warm_adult",
+        "masculine_candidate",
+        "feminine_alternative"
+      ],
+      "traits": [
+        "warm",
+        "clear",
+        "conversational",
+        "grounded"
+      ],
+      "notes": "Male/female is initial voice-audition lane, not source-proven Farmer_A identity; audition against real actor.",
+      "priority": "MVP_3",
+      "visualBasis": "Existing next-MVP proof actor and Atlas multi-actor Farmers candidate.",
+      "auditionStatus": "HEURISTIC_CANDIDATE",
+      "mappingFinal": false,
+      "providerVoiceId": null,
+      "providerModel": null,
+      "rightsReview": "PENDING",
+      "humanDecision": null
+    },
+    {
+      "residentId": "lorekeeper",
+      "actorId": "lorekeeper",
+      "world": "world.protopia",
+      "sourceGlb": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "baselinePreset": "lorekeeper",
+      "voiceLaneCandidates": [
+        "masculine",
+        "older_warm_grandpa"
+      ],
+      "traits": [
+        "older_sounding",
+        "warm",
+        "a_little_air",
+        "patient",
+        "articulate"
+      ],
+      "notes": "User describes balding, grey-bearded Grandpa read. This is visual art direction, not proven by an isolated 3D screenshot.",
+      "priority": "OPTIONAL",
+      "visualBasis": "User steering + Atlas Lorekeeper/staff/tome donor.",
+      "auditionStatus": "HEURISTIC_CANDIDATE",
+      "mappingFinal": false,
+      "providerVoiceId": null,
+      "providerModel": null,
+      "rightsReview": "PENDING",
+      "humanDecision": null
+    },
+    {
+      "residentId": "witch",
+      "actorId": "witch",
+      "world": null,
+      "sourceGlb": null,
+      "baselinePreset": "witch",
+      "voiceLaneCandidates": [
+        "feminine",
+        "mature_characterful"
+      ],
+      "traits": [
+        "crisp",
+        "playful_or_wry",
+        "clear",
+        "distinct_from_lorekeeper"
+      ],
+      "notes": "Optional feminine voice contrast only. Exact Witch GLB should be resolved from current Atlas before any stage build.",
+      "priority": "OPTIONAL",
+      "visualBasis": "Atlas contains candidate Witch; donor preset witch. No accepted voice.",
+      "auditionStatus": "HEURISTIC_CANDIDATE",
+      "mappingFinal": false,
+      "providerVoiceId": null,
+      "providerModel": null,
+      "rightsReview": "PENDING",
+      "humanDecision": null
+    }
+  ],
+  "proposedVoiceInputModes": [
+    "USER_OPTOUT_OFF",
+    "OPTIN_PUSH_TO_TALK",
+    "OPTIN_VAD_AFTER_MIC_PERMISSION",
+    "LATER_ASR_FINAL_FREE_SPEECH_TO_TRIPLET",
+    "LATER_OPTIONAL_BARGE_IN"
+  ],
+  "proposedStateFlow": [
+    "ENCOUNTER_IDLE",
+    "USER_LISTENING",
+    "USER_TURN_FINAL",
+    "NPC_PROCESSING",
+    "SPEECH_PREPARING",
+    "NPC_SPEAKING",
+    "AWAIT_USER"
+  ],
+  "progressPresentation": {
+    "thinkingIndicator": "three_gently_bobbing_dots_reusing_PetStudio_bubble_form_language",
+    "semanticThoughtBubbleIsNotLoading": true,
+    "noPlaceholderGeometry": true,
+    "clipPriority": "physical_action_then_encounter_then_dialogue_then_idle"
+  },
+  "speechSync": {
+    "sourceTextAuthoritative": true,
+    "precomputeBubbleGeometryFromFullText": true,
+    "onsetFromActualAudioPlayback": true,
+    "duckingOwner": "KFB Audio",
+    "talkingLoop": "TALK_LOOP_NO_LIPSYNC",
+    "timingOrder": [
+      "real_word_alignment_if_available",
+      "media_duration_approximate_part_reveal",
+      "fixed_readable_reveal_fallback"
+    ],
+    "onEndOrCancel": [
+      "stop_talk",
+      "restore_duck",
+      "settle_pose",
+      "keep_text_accessible"
+    ],
+    "noSecondAudioContext": true
+  },
+  "acceptance": {
+    "nextGate": "KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1",
+    "worldRuntimeCondition": "Four-Island A/B and explicit later World MVP authorization",
+    "humanFineTuning": "DEFERRED_NOT_A_PRECHECK",
+    "newVoiceSamplesRendered": 0,
+    "newAsrTests": 0,
+    "newResident3dTests": 0
+  }
+}
