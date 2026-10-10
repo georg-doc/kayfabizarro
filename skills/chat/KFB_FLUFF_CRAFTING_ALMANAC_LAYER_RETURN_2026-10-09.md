@@ -1,4 +1,20 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v2.7
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v2.8
+
+> **TOWN XL + FULL ISLAND/RESIDENT DESIGN ROUTER / CLAUDE CODE HANDOFF · 2026-10-11.**
+>
+> **Georg priority correction:** Akashic bookworms, book-shelving/loans, toy-soldier book-burning and Prison-procession ideas remain **side-quest BACKLOG**, explicitly marked in [their concept](./KFB_AKASHIC_BOOKWORMS_GIRLGANG_CENSORSHIP_PROCESSION_V1_2026-10-11.md), not now-executable slice. Current task is source-backed island/Resident **conceptual spatial and visual design** and preparing Claude Code/MVP planner handoff without a second runtime/owner.
+>
+> **Two new primary handoff files:**
+> - [KFB Town XL · Story/Form/Residents source review](./KFB_TOWN_XL_STORY_FORM_RESIDENT_SOURCE_REVIEW_2026-10-11.md) — correct actual `skills/chat/town/LIVING_KFB_TOWN.md` + `town/SESSION_CARD.md` + accepted S001 r017–r022 public delta: **natural Travel Terrain supersedes cutting mat** in current active Town; central ancestral XL silhouette/relationship is new Georg proportion/design direction, not a numeric recipe; town market/King Paladin tower/Caveman mine/farm/showstage/real roads and actual six-beat history. Conflict remains: Town r022 reopened Black Knight permanent bodyguard role; *later* Prison v1.1 says Georg wants him King Kayfabian's bodyguard, not inmate. Do not silently overwrite Town owner; surface alternatives to Georg/Town owner.
+> - [KFB Island & Resident Design Router · Claude Code Visual Brief](./KFB_ISLAND_RESIDENT_DESIGN_ROUTER_CLAUDE_CODE_BRIEF_2026-10-11.md) — documented 4 current story islands (Town/Dystopia/Utopia/Protopia) and 10+ future non-MVP satellites (Prison, Gen Z, Finance, Adventurers, Akashic, SciFi/UFO, Forest/Werewolf, Graveyard, Vampire, Demon, Japanese Garden), each with silhouette/social/Resident/Deck and source-status; no rule that all must be individually implemented or equidistant. Explicit actual source check for Ninja: `media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/character/Ninja.glb`, **FOUR** `texture/ninja_texture_A/B/C/D.png`, real `assets/gltf/Ninja_Katana.gltf` and `Ninja_Shuriken.gltf`; user wants **three** Gang instances + optional mask-on/mask-off actor look; mask detachability not visually/rig verified. "Unity island" recorded as user place-name working label, NOT assumed current Utopia or Unity runtime/engine. May 2026 Magical Girl four-color pack source correction retained.
+>
+> **Owning Galaxy router updated**: [Fragmented Island Galaxy/Stage Design Grammar](./KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md) now links Town XL and design brief and defers Bookworm/Prison sidequest explicitly; old source documents preserved.
+>
+> **Authority / exact gate:** active Open World R4 **STOP / NO MVP**, *current* visual-only Four-Island Story Vision R1 → source isolation → Town/Dystopia/Utopia/Protopia A/B same story → Georg **A/B/FAIL**. This source/design package is an INPUT for the existing named visual executor, not an independent extra A/B brief, an R5 job or authorization for Claude Code to write world geometry. Next **deferred parent Minigame/Fluff integration gate** remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`, after authorized visual work. No PR, merge, Live, public Stage/Site or unverified host claims.
+>
+> **Evidence:** GitHub live-source audits of Town S001 r022, Four-Island Recovery, real Resident Atlas candidate cast (21 vignette records, not accepted Town inhabitants), May 2026 Girl Gang, Ninja four skins and Katana/Shuriken, current Prison v1.1 and existing Island references. New docs and the changed backlog/Galaxy linked source were written, exact branch head & files read after each GitHub write. **Zero actual isolated 3D renders, playable UI, geometry, runtime, audio or formal Site acceptance.** Final exact branch HEAD and blobs appear in this turn's final response.
+
+---
 
 > **2026-10-11 · AKASHIC BOOKWORMS / GIRL GANG / LIBRARY–PRISON PROCESSION · AUTHOR MILESTONE.**
 >
