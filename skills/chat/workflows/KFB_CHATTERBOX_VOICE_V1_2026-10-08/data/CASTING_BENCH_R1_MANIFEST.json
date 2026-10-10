@@ -1,0 +1,86 @@
+{
+  "schema": "kfb.chatterbox.voice-casting-bench/0.1",
+  "date": "2026-10-08",
+  "status": "BENCH_READY_HUMAN_LISTENING_OPEN",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "sourcePackage": {
+    "githubPath": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_VOICE_V1_2026-10-08.zip",
+    "githubBlobSha": "6b3593a2bc3b33120fdb466c9b4267077dd1fc4b",
+    "productionControlFileId": "cb6a5e6b-5517-4ac3-8f58-492eeeb09178",
+    "sha256": "f51bc757fb612af942e79cd217ca1faacc32780ffeb532e740cf2759636883c6"
+  },
+  "bench": {
+    "name": "KFB_CHATTERBOX_VOICE_MVP_CASTING_BENCH_R1.html",
+    "productionControlFileId": "4d069677-05be-4707-9d0e-4e75e01b5734",
+    "bytes": 276793,
+    "sha256": "777c9e49ef5fd4033c832cef814357ca3f77bbda66c4404ee42dfaac176fbedf",
+    "staticChecks": "10/10 PASS",
+    "browserPlayback": "NOT_RUN_BY_WEBCHAT",
+    "humanListening": "OPEN"
+  },
+  "candidates": [
+    {
+      "proofId": "dystopia-demon-lord",
+      "world": "world.dystopia",
+      "residentId": "demon-lord",
+      "voicePreset": "demon_lord",
+      "status": "AUDITION_CANDIDATE",
+      "donorLine": "Freedom is ultimately the greatest virtue.",
+      "donorLineStatus": "CASTING_ONLY_NON_CANON",
+      "whole": "build/lines/demon_lord_01_whole.mp3",
+      "assembled": "build/lines/demon_lord_01_assembled.mp3"
+    },
+    {
+      "proofId": "utopia-robot-one",
+      "world": "world.utopia",
+      "residentId": "robot-one",
+      "voicePreset": "robot",
+      "status": "AUDITION_CANDIDATE",
+      "donorLine": "Your happiness has been optimized to seventy-two percent.",
+      "donorLineStatus": "CASTING_ONLY_NON_CANON",
+      "whole": "build/lines/robot_01_whole.mp3",
+      "assembled": "build/lines/robot_01_assembled.mp3"
+    },
+    {
+      "proofId": "protopia-farmer-a",
+      "world": "world.protopia",
+      "residentId": "farmers",
+      "actorId": "farmer_a",
+      "voicePreset": "farmer",
+      "status": "AUDITION_CANDIDATE",
+      "donorLine": "The rain came late, but so did the tax collector.",
+      "donorLineStatus": "CASTING_ONLY_NON_CANON",
+      "whole": "build/lines/farmer_01_whole.mp3",
+      "assembled": "build/lines/farmer_01_assembled.mp3"
+    },
+    {
+      "proofId": "protopia-lorekeeper",
+      "world": "world.protopia",
+      "residentId": "lorekeeper",
+      "voicePreset": "lorekeeper",
+      "status": "OPTIONAL_AUDITION_CANDIDATE",
+      "donorLine": "That old map only lies where people stopped walking.",
+      "donorLineStatus": "CASTING_ONLY_NON_CANON",
+      "whole": "build/lines/lorekeeper_01_whole.mp3",
+      "assembled": "build/lines/lorekeeper_01_assembled.mp3"
+    }
+  ],
+  "humanGate": {
+    "decisionPerVoice": [
+      "KEEP",
+      "TUNE",
+      "CUT"
+    ],
+    "comparison": [
+      "Whole",
+      "Assembled",
+      "Browser"
+    ],
+    "rule": "Casting decision only. Donor demo wording never becomes canonical dialogue."
+  },
+  "afterGate": {
+    "KEEP": "Render only bounded canonical source material needed by next-MVP proof.",
+    "TUNE": "Adjust preset/FX/rate/pitch then repeat this same voice only.",
+    "CUT": "Choose another existing donor preset/voice; do not expand scope automatically."
+  }
+}

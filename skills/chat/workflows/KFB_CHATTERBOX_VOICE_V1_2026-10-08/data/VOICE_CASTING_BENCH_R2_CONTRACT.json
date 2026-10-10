@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.chatterbox.voice-casting-bench-contract/0.2",
+  "date": "2026-10-10",
+  "status": "PUBLISHED_PRIVATE_HUMAN_LISTENING_OPEN",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "receivingSurface": {
+    "owner": "KFB Audio",
+    "siteProjectId": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "siteSlug": "kfb-audio",
+    "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "sourceCommit": "86e8a77810351e992e073c48d8596263357029b0",
+    "versionId": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_fb9dcfe50fe88191a16097759a287686",
+    "deploymentId": "appgdep_6ac9cb6f5a8c819190a2721a64318f64",
+    "deploymentStatus": "succeeded",
+    "route": "Voice Acting tab",
+    "rule": "The surface supplies the existing AudioContext, D conversation bed and ducking. It does not become the dialogue or casting owner."
+  },
+  "sourceTruth": {
+    "dialogue": "KFB ChatterBox sourceId + exact visible text + text revision",
+    "affect": "Resident Affect canonical ID",
+    "casting": "residentId -> chatterProfileRef -> voicePreset -> provider recipe",
+    "audio": "KFB Audio owns AudioContext, buses, bed, ducking and clock",
+    "presentation": "Bubble/EyeRig/PetMouth/pose/choreography owners consume events",
+    "storyMode": "editable audition direction; never a final emotion mapping"
+  },
+  "storyModeCandidateMapping": [
+    {"id":"tragic","affectCandidates":["sad","worried","tired"],"providerDirectionCandidates":["[sad]","[whispers]","[sighs]"]},
+    {"id":"comic","affectCandidates":["amused","joyful","annoyed"],"providerDirectionCandidates":["[sarcastic]","[laughs]","[irritated]"]},
+    {"id":"absurd","affectCandidates":["surprised","calm","joyful"],"providerDirectionCandidates":["[surprised]","[deadpan]","[delighted]"]},
+    {"id":"heroic","affectCandidates":["proud","joyful","attentive"],"providerDirectionCandidates":["[excited]","[confident]","[determined]"]},
+    {"id":"mystical","affectCandidates":["curious","calm","surprised"],"providerDirectionCandidates":["[whispers]","[softly]","[awed]"]},
+    {"id":"forbidden","affectCandidates":["suspicious","angry","annoyed"],"providerDirectionCandidates":["[whispers]","[angry]","[sarcastic]"]}
+  ],
+  "implemented": [
+    "editable three-beat Triplet audition",
+    "English browser voice enumeration and rate/pitch audition",
+    "existing D conversation-bed start",
+    "existing voice-focus ducking on/off comparison",
+    "word-boundary bubble highlighting where the browser emits boundary events",
+    "local IndexedDB audio clip ingestion with provider/source/resident/mode/affect metadata",
+    "Piper/eSpeak NG/ElevenLabs render-request queue export",
+    "session and SSOT mapping export",
+    "kfb:voice-beat event",
+    "kfb:talk-animation TALK_LOOP_NO_LIPSYNC event"
+  ],
+  "providerBoundary": {
+    "browser": "available now; device voice inventory is not canonical casting",
+    "piper": "build-time English models only for English output; Thorsten Emotional is de_DE",
+    "espeakNg": "optional browser/build-time audition; bundled Web build requires GPLv3 compliance",
+    "elevenLabs": "manual clip ingestion and render queue available now; live generation requires a server-side Site secret and guarded bridge"
+  },
+  "elevenLabsSecurity": {
+    "browserKey": "FORBIDDEN",
+    "requiredSecretName": "ELEVENLABS_API_KEY",
+    "recommendedKey": "restricted, credit-limited, expiring user key for audition or scoped service-account key",
+    "minimumBridgeControls": [
+      "authenticated private Site user",
+      "allowed voice IDs",
+      "allowed TTS model IDs",
+      "per-request character limit",
+      "per-session/day credit guard",
+      "request provenance and actual cost receipt when exposed",
+      "cache exact sourceId/textRevision/voice/model/settings",
+      "no key or provider response headers in browser logs"
+    ]
+  },
+  "performanceTimeline": {
+    "current": ["visible bubble text", "voice start/end", "word/beat cue", "KFB Audio ducking", "TALK_LOOP_NO_LIPSYNC"],
+    "futureInWorldMakerSpace": ["real Resident A/B", "EyeRig pupils/lids/gaze", "PetMouth talk loop", "pose", "gesture", "spatial stance", "partner relation", "bubble skin", "speaker-corner timing"],
+    "rule": "The studio orchestrates and records; it never replaces the contributing subsystem owners."
+  },
+  "nonCanonAuditionItems": [
+    "Personal freedom / expires automatically at / the next checkpoint",
+    "Waffle Fluff",
+    "Stay fluffy!"
+  ]
+}
