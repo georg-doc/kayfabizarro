@@ -114,7 +114,30 @@
       "picked": null,
       "georgNote": "",
       "goldenRef": false,
-      "referenceViews": []
+      "referenceViews": [],
+      "sourceComparisonR2": {
+        "schema": "kfb.g1.source-comparison/1",
+        "evidenceFile": "G1_TOWN_SOURCE_COMPARISON_R2.json",
+        "runbookFile": "G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md",
+        "sourceStatus": "HISTORICAL_MEASUREMENT_NOT_VISUALLY_ISOLATED",
+        "townTargetMC": 40,
+        "port": {
+          "id": "streakbyte-port-base",
+          "triangles": 1585,
+          "localMinima": 6,
+          "undersideDepthPerWidth": 0.434,
+          "scaledUndersideDepthH": 30.52
+        },
+        "backyard": {
+          "id": "streakbyte-backyard-base",
+          "triangles": 700,
+          "localMinima": 22,
+          "undersideDepthPerWidth": 0.506,
+          "scaledUndersideDepthH": 35.59
+        },
+        "nativeFBXUnitsKnown": false,
+        "isolatedViewProofs": 0
+      }
     },
     {
       "element": "protopia_steep_island_body",
