@@ -1,5 +1,18 @@
 # KFB Fragmented Island Galaxy · Meta-Biomes, Silhouette and Track Closure · v1 · 2026-10-10
 
+## Current 2026-10-11 Town XL / Island design routing (additive, planning-only)
+
+**Georg priority:** pause Library bookworms / book-lending / Toy Soldier book-burning/prison-march as a separate [side-quest BACKLOG](./KFB_AKASHIC_BOOKWORMS_GIRLGANG_CENSORSHIP_PROCESSION_V1_2026-10-11.md). Focus now on **island silhouettes, site design and Resident ensemble composition** for Claude Code and MVP planning; do not reopen runtime scope.
+
+- [KFB Town XL source/story/form/resident review](./KFB_TOWN_XL_STORY_FORM_RESIDENT_SOURCE_REVIEW_2026-10-11.md): current Town has **natural Travel terrain**, not historical literal cutting-mat floor, is central **proportionally XL** in KFB multiverse proposal; market/civic life, King Paladin tower, farm, old cave/mine, showstage, believable paths. Current Town SSOT and active Four-Island A/B human selection retain authority. Historical Black Knight guard position conflict tracked instead of overwritten.
+- [Island/Resident design router + Claude Code brief](./KFB_ISLAND_RESIDENT_DESIGN_ROUTER_CLAUDE_CODE_BRIEF_2026-10-11.md): indexes four current worlds and later satellites, source-backed casts, material/landmark differences, cross-island roles, barriers and **Japanese Garden / "Unity" island Ninja Gang**. This is not a Unity engine runtime assignment.
+- **Ninja source:** actual KayKit Mystery February 2024 source includes **ONE** `character/Ninja.glb`, **FOUR** real `texture/ninja_texture_A/B/C/D.png`, Katana and Shuriken. A **three-person gang** is Georg's author casting; fourth palette available. **Masked vs unmasked** counts as an additional proposed look/acting variant only after original source geometry/Face check. Japanese garden landscape/temple/flora set not yet source-accepted. Unity-island placement is a *working user designation*, not automatically identical to Utopia.
+- **Girl Gang source correction:** former “unidentified College Dolls” guess now resolves to one real May 2026 KayKit `MagicalGirl.glb` + four actual `magical_girl_texture_A/B/C/D.png`, as a source-verified **asset identity**, not yet a visual scene/render PASS or four unique models.
+
+**A/B firewall:** the only authorized current visual acceptance remains exactly Town, Dystopia, Utopia and Protopia under the existing Story Vision R1 → Georg **A/B/FAIL**. Future island design register is additive reference; no new fifth MVP requirement, source-less props, second World/Resident runtime or public route.
+
+
+
 ## Additive scene-stage and knowledge hub direction · 2026-10-10
 
 **Author interpretation / optional material/visual grammar; NOT a new mandatory interior type or active MVP island.** Many KFB interiors work especially well as **semi-open, camera-legible stage dioramas**, with actors who play scenes rather than stand still with bubbles. But shared construction logic must NOT flatten distinct island silhouettes, materials, landscapes or social roles into one prefabricated template.
