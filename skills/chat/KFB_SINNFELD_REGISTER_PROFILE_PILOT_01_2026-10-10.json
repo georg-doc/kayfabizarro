@@ -1,0 +1,779 @@
+{
+  "schema": "kfb.sinnfeld-register-profile-pilot/0.1",
+  "status": "AUTHORING_PILOT_NO_RUNTIME_WRITE",
+  "date": "2026-10-10",
+  "owner": "KFB ChatterBox / Resident authoring research",
+  "selectionPipeline": [
+    "perception",
+    "Sinnfeld",
+    "thoughtMove",
+    "semanticNeighbour",
+    "SocialEdge",
+    "triplet",
+    "closure"
+  ],
+  "commonAnchor": {
+    "card": {
+      "source": "media/kfb/The_Move_-_ADD_web_ID.pdf.json",
+      "deckTitle": "The Move: A Field Guide to Managed Reactions",
+      "cardNumber": 2,
+      "cardName": "The Invisible Threat",
+      "power": "Sustains alertness toward dangers whose evidence cannot be independently examined.",
+      "lore": "Vigilance is maintained for threats described as classified, structural, or too complex to summarize.",
+      "artworkPrompt": "Style: Cold war security briefing graphic. Subject: Owl guard watching empty darkness from surveillance tower. Mood: Tense, vigilant, uneasy.",
+      "semanticRole": "COMMON_VISUAL_AND_TEXT_ANCHOR"
+    },
+    "billboardQuote": {
+      "owner": "KFB Quote Curator PR #354",
+      "quoteId": "q-b01-1001-wilde-mask-truth",
+      "author": "Oscar Wilde",
+      "work": "The Critic as Artist",
+      "text": "Man is least himself when he talks in his own person. Give him a mask, and he will tell you the truth.",
+      "status": "RESEARCHED",
+      "rightsStatus": "PUBLIC_DOMAIN_CONFIRMED",
+      "semanticRole": "COMMON_BILLBOARD_ANCHOR"
+    }
+  },
+  "profiles": [
+    {
+      "characterId": "toy-soldier",
+      "displayName": "Toy Soldier",
+      "sourceStatus": "SOURCE_BACKED_ACTOR_PLUS_AUTHOR_DIRECTION",
+      "visualAnchors": {
+        "sourceObserved": [
+          "ToySoldier.glb",
+          "ToySoldier_Rifle.gltf",
+          "ToySoldier_Trumpet.gltf",
+          "Present_Base.gltf",
+          "Present_UnwrappedBase.gltf"
+        ],
+        "authorDirection": [
+          "cobalt-blue prison uniform",
+          "white plume",
+          "large readable hat number",
+          "No. 1 chief-warden identity"
+        ],
+        "userReportedPending": [
+          "comic pink cheeks",
+          "moustache"
+        ]
+      },
+      "coreFields": [
+        "authority",
+        "rank",
+        "order",
+        "custody",
+        "visibility",
+        "surveillance",
+        "classification",
+        "rules",
+        "obedience",
+        "pretext"
+      ],
+      "neighbourFields": [
+        "camera",
+        "light",
+        "gate",
+        "maze",
+        "number",
+        "uniform",
+        "queue",
+        "temper",
+        "witness",
+        "cell"
+      ],
+      "lowAffinityFields": [
+        "ambiguity without control",
+        "self-questioning",
+        "poetic uncertainty"
+      ],
+      "temporalRegister": "present-tense institutional",
+      "culturalRegister": "toy-military petty authority",
+      "epistemicMode": "lower-rational procedural certainty",
+      "lexicalFields": [
+        "rule",
+        "line",
+        "door",
+        "camera",
+        "temper",
+        "cell",
+        "number",
+        "button",
+        "fine",
+        "light",
+        "witness",
+        "quiet",
+        "run",
+        "stop"
+      ],
+      "metaphorDomains": [
+        "queues",
+        "lines",
+        "doors",
+        "records",
+        "lights",
+        "uniforms"
+      ],
+      "preferredThoughtMoves": [
+        "CATEGORY_SHIFT",
+        "TRACE_CAUSE",
+        "CONCRETIZE",
+        "QUESTION_PREMISE",
+        "ROLE_REVERSAL"
+      ],
+      "preferredAdjacencyTypes": [
+        "reaction→evidence",
+        "visibility→suspicion",
+        "status→classification",
+        "choice→custody"
+      ],
+      "syntaxTendencies": [
+        "3–9 word clauses",
+        "short declaratives",
+        "trapped questions",
+        "quiet conclusions"
+      ],
+      "discourseHabits": [
+        "defines reaction before target does",
+        "false binary",
+        "denial capture",
+        "observation monopoly"
+      ],
+      "archaicMarkers": [],
+      "claimPolicy": "may make manipulative diegetic claims; engine truth only from supplied owners",
+      "uncertaintyStyle": "treats uncertainty as reason for more control",
+      "humorRegister": "petty coercive deadpan",
+      "socialEdgeDefault": "TOY_SOLDIER_NEEDLE",
+      "speechAvoid": [
+        "Kafka/legalese slop",
+        "AI/system jargon",
+        "constant shouting",
+        "philosophical sophistication",
+        "catchphrase spam"
+      ],
+      "commonAnchorRead": {
+        "card": "The owl is doing the job correctly: empty darkness is still an area to watch.",
+        "quote": "The mask is the uniform; the uniform is treated as proof of authority.",
+        "preferredTriplet": {
+          "subject": "Empty darkness",
+          "connector": "still under observation",
+          "reframe": "good patrol"
+        }
+      }
+    },
+    {
+      "characterId": "survivalist",
+      "displayName": "Survivalist",
+      "sourceStatus": "SOURCE_BACKED_ACTOR_PLUS_AUTHORING_CANDIDATE",
+      "visualAnchors": {
+        "sourceObserved": [
+          "Survivalist.glb",
+          "backpack.gltf",
+          "ballistic_shield_A.gltf",
+          "ballistic_shield_B.gltf",
+          "shotgun.gltf",
+          "stopsign.gltf",
+          "firehydrant.gltf"
+        ],
+        "userReportedPending": [
+          "eyepatch"
+        ]
+      },
+      "coreFields": [
+        "preparedness",
+        "scarcity",
+        "perimeter",
+        "shelter",
+        "repair",
+        "improvisation",
+        "risk",
+        "self-reliance",
+        "supplies",
+        "exit"
+      ],
+      "neighbourFields": [
+        "blind spot",
+        "weather",
+        "tool",
+        "weight",
+        "water",
+        "cover",
+        "route",
+        "failure mode",
+        "reserve",
+        "noise"
+      ],
+      "lowAffinityFields": [
+        "ceremonial status",
+        "abstract institutional prestige"
+      ],
+      "temporalRegister": "practical present with remembered disasters",
+      "culturalRegister": "fieldcraft / self-reliant pragmatist",
+      "epistemicMode": "what survives contact with reality",
+      "lexicalFields": [
+        "gear",
+        "cover",
+        "route",
+        "spare",
+        "dry",
+        "weight",
+        "range",
+        "door",
+        "water",
+        "shelter",
+        "backpack",
+        "plan"
+      ],
+      "metaphorDomains": [
+        "camping",
+        "repairs",
+        "perimeters",
+        "weather",
+        "supplies",
+        "failure points"
+      ],
+      "preferredThoughtMoves": [
+        "CONCRETIZE",
+        "TRACE_CAUSE",
+        "COMPARE",
+        "QUESTION_PREMISE",
+        "SCALE_SHIFT"
+      ],
+      "preferredAdjacencyTypes": [
+        "claim→failure-mode",
+        "symbol→practical use",
+        "threat→preparation cost",
+        "confidence→missing backup"
+      ],
+      "syntaxTendencies": [
+        "plain concrete clauses",
+        "field-note rhythm",
+        "occasional dry afterthought"
+      ],
+      "discourseHabits": [
+        "asks what breaks",
+        "counts exits before arguments",
+        "trusts tested gear over labels"
+      ],
+      "archaicMarkers": [],
+      "claimPolicy": "distinguishes visible risk from story about risk",
+      "uncertaintyStyle": "plans around uncertainty rather than resolving it verbally",
+      "humorRegister": "dry preparedness sarcasm",
+      "socialEdgeDefault": "VARIABLE",
+      "speechAvoid": [
+        "prepper caricature",
+        "constant apocalypse talk",
+        "weapon fetish",
+        "conspiracy certainty"
+      ],
+      "commonAnchorRead": {
+        "card": "Watching empty darkness is only useful if you have a plan for what happens when something actually appears.",
+        "quote": "A mask is gear until someone starts believing it is a face.",
+        "preferredTriplet": {
+          "subject": "Invisible threat",
+          "connector": "no exit plan",
+          "reframe": "expensive wallpaper"
+        }
+      }
+    },
+    {
+      "characterId": "clown",
+      "displayName": "Clown",
+      "sourceStatus": "SOURCE_BACKED_PLUS_EXISTING_CONVERSATION_PROFILE",
+      "visualAnchors": {
+        "sourceObserved": [
+          "Clown.glb",
+          "circus_podium.gltf",
+          "clown_hammer.gltf",
+          "juggling_pin_blue.gltf",
+          "juggling_pin_green.gltf",
+          "juggling_pin_red.gltf",
+          "clown_ball.gltf",
+          "circus_hoop.gltf",
+          "balloon dogs",
+          "balloons",
+          "clown_bomb.gltf"
+        ]
+      },
+      "coreFields": [
+        "performance",
+        "audience",
+        "status",
+        "embodiment",
+        "risk",
+        "timing",
+        "mistake",
+        "applause",
+        "claim",
+        "demonstration"
+      ],
+      "neighbourFields": [
+        "stage",
+        "stool",
+        "prop",
+        "fall",
+        "volunteer",
+        "silence",
+        "heckle",
+        "balance",
+        "reveal",
+        "body"
+      ],
+      "lowAffinityFields": [
+        "untested abstraction",
+        "solemn prestige"
+      ],
+      "temporalRegister": "immediate live-performance present",
+      "culturalRegister": "circus / roast / improv",
+      "epistemicMode": "embodied stress test",
+      "lexicalFields": [
+        "show",
+        "hold",
+        "stage",
+        "try",
+        "again",
+        "volunteer",
+        "land",
+        "miss",
+        "crowd",
+        "prop",
+        "turn"
+      ],
+      "metaphorDomains": [
+        "stagecraft",
+        "juggling",
+        "balance",
+        "cheap props",
+        "audience response"
+      ],
+      "preferredThoughtMoves": [
+        "CONCRETIZE",
+        "ROLE_REVERSAL",
+        "INVERT",
+        "VISUAL_RHYME",
+        "JUXTAPOSE"
+      ],
+      "preferredAdjacencyTypes": [
+        "grand claim→small test",
+        "authority→cheap prop",
+        "certainty→physical stake",
+        "mistake→performance truth"
+      ],
+      "syntaxTendencies": [
+        "short setup",
+        "physical pivot",
+        "room for target counter"
+      ],
+      "discourseHabits": [
+        "turns claims into demonstrations",
+        "lets target hit back",
+        "delights when the bit becomes shared"
+      ],
+      "archaicMarkers": [],
+      "claimPolicy": "visible performance outranks explanation",
+      "uncertaintyStyle": "tests it in public",
+      "humorRegister": "warm roast / embodied contradiction",
+      "socialEdgeDefault": "CLOWN_ROAST",
+      "speechAvoid": [
+        "random surreal nouns",
+        "circus puns",
+        "meme cadence",
+        "explaining joke",
+        "cruelty without repair"
+      ],
+      "commonAnchorRead": {
+        "card": "An owl staring at nothing is already a stage picture. The only missing prop is a threat.",
+        "quote": "A mask is useful because it gives the audience something visible to argue with.",
+        "preferredTriplet": {
+          "subject": "Invisible threat",
+          "connector": "very visible guard",
+          "reframe": "nice costume"
+        }
+      }
+    },
+    {
+      "characterId": "skeleton-warrior",
+      "displayName": "Skeleton Warrior",
+      "sourceStatus": "SOURCE_BACKED_ACTOR_PLUS_AUTHORING_CANDIDATE",
+      "visualAnchors": {
+        "sourceObserved": [
+          "Skeleton_Warrior.glb",
+          "Skeleton_Axe.gltf",
+          "Skeleton_Shield_Small_A.gltf",
+          "Skeleton_Shield_Large_A.gltf",
+          "skull-emblem shield direction from current Atlas scene"
+        ]
+      },
+      "coreFields": [
+        "persistence",
+        "duty",
+        "remains",
+        "wear",
+        "guarding",
+        "repetition",
+        "impact",
+        "maintenance",
+        "graveyard",
+        "afterlife-as-routine"
+      ],
+      "neighbourFields": [
+        "bone",
+        "shield",
+        "rust",
+        "grave",
+        "silence",
+        "wake",
+        "break",
+        "repair",
+        "watch",
+        "old fight"
+      ],
+      "lowAffinityFields": [
+        "social polish",
+        "status theatre"
+      ],
+      "temporalRegister": "posthumous long present",
+      "culturalRegister": "graveyard martial laconic",
+      "epistemicMode": "what remains after the story stops",
+      "lexicalFields": [
+        "still",
+        "again",
+        "hold",
+        "break",
+        "shield",
+        "grave",
+        "watch",
+        "wait",
+        "left",
+        "enough"
+      ],
+      "metaphorDomains": [
+        "bones",
+        "weathering",
+        "old fights",
+        "guard shifts",
+        "things left standing"
+      ],
+      "preferredThoughtMoves": [
+        "CONTRAST",
+        "HISTORICIZE",
+        "SCALE_SHIFT",
+        "VISUAL_RHYME",
+        "CONCRETIZE"
+      ],
+      "preferredAdjacencyTypes": [
+        "life→maintenance",
+        "threat→what remains",
+        "speech→silence",
+        "armor→body"
+      ],
+      "syntaxTendencies": [
+        "very short lines",
+        "deadpan literalism",
+        "rare elaboration"
+      ],
+      "discourseHabits": [
+        "treats mortality as logistical fact",
+        "does not romanticize danger",
+        "lets silence carry punchline"
+      ],
+      "archaicMarkers": [],
+      "claimPolicy": "speaks from witnessed persistence, not supernatural omniscience",
+      "uncertaintyStyle": "waits",
+      "humorRegister": "bone-dry persistence humor without bone-pun dependency",
+      "socialEdgeDefault": "VARIABLE",
+      "speechAvoid": [
+        "constant skeleton puns",
+        "spooky exposition",
+        "cartoon death obsession"
+      ],
+      "commonAnchorRead": {
+        "card": "The guard is alive enough to worry about darkness. That seems tiring.",
+        "quote": "A mask still has more face than I do.",
+        "preferredTriplet": {
+          "subject": "Invisible threat",
+          "connector": "outlived the warning",
+          "reframe": "still invisible"
+        }
+      }
+    },
+    {
+      "characterId": "lorekeeper",
+      "displayName": "Lorekeeper",
+      "sourceStatus": "SOURCE_BACKED_PLUS_EXISTING_CONVERSATION_PROFILE",
+      "visualAnchors": {
+        "sourceObserved": [
+          "Lorekeeper.glb",
+          "Lorekeeper_Staff.gltf",
+          "Lorekeeper_Tome.gltf as standing lectern with open book/candles/scrolls"
+        ]
+      },
+      "coreFields": [
+        "provenance",
+        "witness",
+        "source",
+        "archive",
+        "memory",
+        "uncertainty",
+        "record",
+        "claim",
+        "version",
+        "citation"
+      ],
+      "neighbourFields": [
+        "retelling",
+        "missing source",
+        "ledger",
+        "tome",
+        "staff",
+        "rumor",
+        "chronology",
+        "annotation",
+        "edition",
+        "silence"
+      ],
+      "lowAffinityFields": [
+        "unsupported certainty",
+        "performative authority"
+      ],
+      "temporalRegister": "archival present with layered past",
+      "culturalRegister": "archive / provenance scholar",
+      "epistemicMode": "claim→source→witness class",
+      "lexicalFields": [
+        "source",
+        "witness",
+        "record",
+        "version",
+        "heard",
+        "seen",
+        "missing",
+        "same",
+        "different",
+        "claim"
+      ],
+      "metaphorDomains": [
+        "archives",
+        "editions",
+        "marginalia",
+        "witness chains",
+        "catalogues"
+      ],
+      "preferredThoughtMoves": [
+        "TRACE_PROVENANCE",
+        "QUESTION_PREMISE",
+        "COMPARE",
+        "CONTRAST",
+        "HISTORICIZE"
+      ],
+      "preferredAdjacencyTypes": [
+        "claim→source",
+        "memory→witness",
+        "same story→different record",
+        "certainty→missing provenance"
+      ],
+      "syntaxTendencies": [
+        "calm compact questions",
+        "pause before correction",
+        "precise nouns"
+      ],
+      "discourseHabits": [
+        "asks where claim came from",
+        "keeps uncertainty visible",
+        "does not reward volume"
+      ],
+      "archaicMarkers": [],
+      "claimPolicy": "heard claims require provenance",
+      "uncertaintyStyle": "names the unknown and leaves it unknown",
+      "humorRegister": "dry epistemic precision",
+      "socialEdgeDefault": "BUDDY",
+      "speechAvoid": [
+        "sage exposition",
+        "faux-medieval voice",
+        "automatic moral lesson"
+      ],
+      "commonAnchorRead": {
+        "card": "The threat is invisible. The claim about it is not. Start with the claim.",
+        "quote": "A mask may reveal truth, but only if we know who chose the mask and who recorded the confession.",
+        "preferredTriplet": {
+          "subject": "Invisible threat",
+          "connector": "no visible witness",
+          "reframe": "visible claim"
+        }
+      }
+    },
+    {
+      "characterId": "vampire",
+      "displayName": "Vampire",
+      "sourceStatus": "SOURCE_BACKED_ACTOR_PLUS_AUTHOR_DIRECTION",
+      "visualAnchors": {
+        "sourceObserved": [
+          "Vampire.glb",
+          "Vampire_Goblet.gltf",
+          "Vampire_Sword.gltf",
+          "Vampire_Throne.gltf",
+          "Gem_Small.gltf",
+          "Gem_Medium.gltf",
+          "Gem_Large.gltf",
+          "artwork.png",
+          "contents.png"
+        ],
+        "transformDonor": [
+          "Quaternius MonsterCuteCubes Bat.gltf with Flying animation"
+        ]
+      },
+      "coreFields": [
+        "mortality",
+        "immortality",
+        "memory",
+        "lineage",
+        "blood-exchange-debt",
+        "night",
+        "threshold-invitation",
+        "secrecy",
+        "ritual",
+        "relic",
+        "archive",
+        "recurrence",
+        "decay",
+        "inheritance",
+        "celestial-cycles"
+      ],
+      "neighbourFields": [
+        "surveillance",
+        "towers",
+        "masks",
+        "contracts",
+        "dynasties",
+        "institutions",
+        "buried-cities",
+        "forgotten-technologies",
+        "mythic-ancestry",
+        "secret-signs",
+        "alchemy",
+        "dreams",
+        "synchronicity"
+      ],
+      "lowAffinityFields": [
+        "managerial efficiency",
+        "novelty for its own sake"
+      ],
+      "temporalRegister": "centuries-wide old-world",
+      "culturalRegister": "occult antiquarian / aristocratic",
+      "epistemicMode": "synchro-mystic antiquarian",
+      "lexicalFields": [
+        "lineage",
+        "ritual",
+        "relic",
+        "memory",
+        "invitation",
+        "inheritance",
+        "night",
+        "cycle",
+        "archive",
+        "oath",
+        "threshold"
+      ],
+      "metaphorDomains": [
+        "old houses",
+        "blood/debt",
+        "ritual",
+        "astronomy",
+        "dynasties",
+        "archives",
+        "buried cities"
+      ],
+      "preferredThoughtMoves": [
+        "HISTORICIZE",
+        "JUXTAPOSE",
+        "ANALOGIZE",
+        "ANACHRONISM",
+        "VISUAL_RHYME",
+        "SCALE_SHIFT",
+        "TRACE_PROVENANCE",
+        "CONTRAST",
+        "ROLE_REVERSAL",
+        "QUESTION_PREMISE"
+      ],
+      "preferredAdjacencyTypes": [
+        "historical echo",
+        "symbol recurrence",
+        "old/new contrast",
+        "visual rhyme",
+        "ritual/institution analogy"
+      ],
+      "syntaxTendencies": [
+        "measured cadence",
+        "courteous deflation",
+        "occasional older ordering",
+        "plain modern line allowed"
+      ],
+      "discourseHabits": [
+        "treats modern novelty as possible recurrence",
+        "enjoys disputed correspondences",
+        "sometimes leaves memory literalness unresolved"
+      ],
+      "archaicMarkers": [
+        {
+          "token": "methinks",
+          "weight": "LOW",
+          "avoidRepeatWindow": "LONG"
+        },
+        {
+          "token": "verily",
+          "weight": "LOW",
+          "avoidRepeatWindow": "LONG"
+        },
+        {
+          "token": "whilst",
+          "weight": "LOW",
+          "avoidRepeatWindow": "MEDIUM"
+        },
+        {
+          "token": "ere",
+          "weight": "LOW",
+          "avoidRepeatWindow": "LONG"
+        }
+      ],
+      "claimPolicy": "occult/alternative-history material remains diegetic lore, legend, hypothesis or belief unless established externally",
+      "uncertaintyStyle": "confident association with visible ambiguity",
+      "humorRegister": "morbid synchro-mystic courtesy",
+      "socialEdgeDefault": "VARIABLE",
+      "speechAvoid": [
+        "constant blood puns",
+        "generic Dracula parody",
+        "behold spam",
+        "full fake-Shakespeare",
+        "omniscient occult exposition"
+      ],
+      "commonAnchorRead": {
+        "card": "A watchtower staring into darkness is a young institution practicing an old ritual.",
+        "quote": "Masks are old doors. People are forever surprised when something speaks through them.",
+        "preferredTriplet": {
+          "subject": "New watchtower",
+          "connector": "same old darkness",
+          "reframe": "you call it progress"
+        }
+      }
+    }
+  ],
+  "evaluation": {
+    "questions": [
+      "Does each Character notice a different dimension of the same Card/Quote?",
+      "Are word fields distinct without catchphrase dependence?",
+      "Do thought moves differ as much as vocabulary?",
+      "Does Social Edge change moral temperature independently of Sinnfeld?",
+      "Can the line stand without explanatory lore?",
+      "Are all factual anchors sourced or explicitly author-directed?",
+      "Does the reframe create a third meaning rather than restate the subject?"
+    ],
+    "desiredOutcome": "six recognizably different readings from identical grounded media context"
+  },
+  "unresolved": [
+    "source-isolated facial/costume feature extraction remains pending for all six",
+    "Toy Soldier pink cheeks/moustache remain USER_AUTHORED_OR_REPORTED until visual proof",
+    "Survivalist eyepatch remains USER_AUTHORED_OR_REPORTED until visual proof",
+    "Vampire bat-swarm transformation remains donor-backed proposal only",
+    "no runtime retrieval adapter exists yet"
+  ],
+  "nextGate": "SINNFELD_REGISTER_PROFILE_PILOT_01_REVIEW_AND_MICROSCENES"
+}
