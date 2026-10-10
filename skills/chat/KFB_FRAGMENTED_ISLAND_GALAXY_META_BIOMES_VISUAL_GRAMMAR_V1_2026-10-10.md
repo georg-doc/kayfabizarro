@@ -1,4 +1,19 @@
 # KFB Fragmented Island Galaxy · Meta-Biomes, Silhouette and Track Closure · v1 · 2026-10-10
+
+## Additive scene-stage and knowledge hub direction · 2026-10-10
+
+**Author interpretation / optional material/visual grammar; NOT a new mandatory interior type or active MVP island.** Many KFB interiors work especially well as **semi-open, camera-legible stage dioramas**, with actors who play scenes rather than stand still with bubbles. But shared construction logic must NOT flatten distinct island silhouettes, materials, landscapes or social roles into one prefabricated template.
+
+Three source-audited and separately scoped planning documents:
+1. [Akashic Library Island v1](./KFB_AKASHIC_LIBRARY_ISLAND_DESIGN_V1_2026-10-10.md): tall rock archive, freestanding books, existing Lorekeeper in possible tunic, cartoon bookworm concepts, knowledge/FOIA/unwritten text associations, source-backed Book/Shelf candidate set, later discover/inspect/shelve interactions via the existing Almanac/Interaction and optional Fluff owner.
+2. [Fantasy Tavern Open Stage v1](./KFB_FANTASY_TAVERN_OPEN_STAGE_DESIGN_V1_2026-10-10.md): warm broken-corner dungeon-tavern with real tables/mugs and **verified KayKit Bits Bundle pizza slices**, dysfunctional Adventurers, 3 + 1 guest scene, one potential Girl-Gang envoy (source model still unidentified), later Dungeon/Card/Orc-Band encounters.
+3. [Sci-Fi Cantina + UFO Interior v1](./KFB_SCIFI_CANTINA_UFO_INTERIOR_DESIGN_V1_2026-10-10.md): distinct tech/Schott/cargo-stage social hub, Space Base/Quaternius/real UFO donors, concept of a room graph (garden, machines, Holodeck, mess, beam vestibule) behind current World/Portal/Instance owner, no assumption that a wall skin swap equals a working Sci-Fi dungeon.
+
+**Cross-stage construction vocabulary, not forced uniformity:** authentic material/support → a visible room/stage edge → purposeful camera/actor sightlines → a social/semantic encounter → optional linked instance/prop. Library = vertical archives and epistemic adjacency; Tavern = hearth, fractured rock and group routine; Cantina = tech gantry and disparate strangers; Vampire = coffin/tower with night, Dystopia = harsh rock/pentagram cave, Orc Band = traveling stage. Keep physical source/isolation, scale, contact and readable silhouette before acceptance.
+
+**Recovery and authority:** These three are only post-MVP creative briefs. Current Four-Island R1 A/B / R4 STOP unchanged; no additional runtime, public Stage/Site URL, independent Card/Dialogue/Fluff owner, or new required acceptance gate. Return home remains `skills/chat/KFB_FLUFF_CRAFTING_ALMANAC_LAYER_RETURN_2026-10-09.md` and the one deferred gate `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`. A current-branch GitHub reference is the persistent handoff; a private Production Control mirror is not a public deployment.
+
+
 Status: GEORG AUTHOR DESIGN DIRECTION + OPEN LORE HYPOTHESES · PLANNING ONLY
 Owner: existing KFB Island Worldbuilder / Minigame ideation and KFB Bigger Picture reference; no new World or Story runtime owner.
 Branch: planning/kfb-fluff-crafting-almanac-ideation-2026-10-09
