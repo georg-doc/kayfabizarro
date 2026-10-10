@@ -210,3 +210,14 @@ No merge. No Live promotion.
 **Quote Research Reserve 14 — Finance II: derivatives/leverage/options/shorting; sovereign debt/tax/QE/inflation; consumer credit/BNPL/credit scoring; insurance/risk transfer; bubbles, bank runs and crash dynamics.**
 
 Georg action required now: **nothing**.
+
+## Additive reference update · 2026-10-10 · Deterministic code-rendered video donor
+
+Source audit now filed: `DONOR_PDOOM_CODE_RENDERED_MUSIC_VIDEO_2026-10-10.md`.
+Original external code source: https://github.com/mexicat/pdoom-video ; Reddit author report and both video links preserved in the donor audit.
+
+Classification: **CONDITIONAL TECHNICAL DONOR / RESEARCH ONLY; NOT ADOPTED**. Absolute-time three.js scene composition, deterministic offline export and possible depth-layer camera parallax may help a later H13 read-along / music sequence production workflow. Current reference documents up to 324 adaptive subframes for **offline** renders. The 2.5D author description is not independent design/source proof.
+
+Existing H13 source, Billboard face/context scheduler, Quote Pool editorial mapping and KFB Audio master clock/mixer remain untouched. No new runtime owner, no cloned code, no audio/3D/browser test, no source visual isolation, no rights promotion, no public Stage/Site/merge/Live change. Source/code-document review only; test count **0 executed** in this research note.
+
+Files for this additive donor checkpoint: donor audit Markdown; this Return; project CHANGELOG.md. Current PR #354 remains open/unmerged on the same owner branch. **No change to the owning project's one next productive step: Quote Research Reserve 14.** Later conditional adoption must first isolate original reference scene(s) and existing H13/physical Billboard/audio owners visibly.
