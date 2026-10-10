@@ -2,6 +2,10 @@
 
 Stand: 2026-10-10 · von der Steuer-Sitzung · Auftraggeber Georg. Ein Briefing für **mehrere parallele Webchats**: Jeder Chat übernimmt **eine Gruppe** aus §4. Alle Chats arbeiten nach demselben Ablauf und schreiben in dieselbe Ablage.
 
+## 0 · Startsatz für jeden neuen Chat
+
+> Du bist Webchat **G<n>** im KFB-Strang „Asset-Kandidaten MVP-1“. Lies `tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/deliveries/BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md` auf `georg-doc/kayfabizarro`, Branch `sync/lab-rkit-2026-10-09`, und – falls vorhanden – `RECOVERY_G<n>.md` und `CHANGELOG.md` auf Branch `planning/kfb-mvp1-asset-candidates-2026-10-10`. Mach beim nächsten offenen Schritt weiter und persistiere nach jedem Schritt.
+
 ## 1 · Warum
 
 Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Treppen aus Text-Regeln **errechnet**. Die Messungen bestanden, der blinde Kritiker blieb bei 5 von 10. Was dagegen gut aussieht, sind fertige, **von Menschen gemachte** Modelle (KayKit, Kenney, Quaternius, gekaufte Packs). Ab jetzt gilt: **Für jedes Element zuerst ein vorhandenes Modell finden.** Es wird entweder direkt verbaut oder dient als Vorlage dafür, wie ein Cartoon-3D-Designer dieses Element modelliert.
@@ -92,6 +96,10 @@ Jeder Chat führt **eine Recovery-Datei je Gruppe** und aktualisiert sie **nach 
 
 **Ein neuer Chat startet immer mit:** „Lies `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md` und `RECOVERY_G<n>.md`, mach beim nächsten Schritt weiter.“ Bricht ein Chat ab (Timeout, Limit), geht nichts verloren; Georg öffnet einfach den nächsten Chat mit diesem Satz. Mehrere Chats können so nacheinander dieselbe Gruppe abarbeiten.
 
+## 7b+ · Ein Strang, additiver Changelog
+
+Alle Webchats einer Gruppe bilden **einen Strang**. Zusätzlich zur Recovery-Datei führt der Strang **einen additiven Changelog**: `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/CHANGELOG.md`. Neue Einträge immer **oben** anhängen, bestehende nie umschreiben oder löschen. Je Eintrag: Datum/Uhrzeit, Gruppe, Chat-Nr., was neu ist (Links), Georgs Entscheidungen wörtlich. Der Production Hub zeigt Briefing, Recovery und Changelog über GitHub (`main` bzw. Branch-Link).
+
 ## 7c · Was danach passiert (nicht Teil der Webchats)
 
 1. Die gewählten Kandidaten und Golden-Referenzen setzt die Bau-Sitzung im Lab ein (Maßstab K2, Material, KFB-Farbrollen, Q1–Q9, Spielkameras).
@@ -102,7 +110,7 @@ Jeder Chat führt **eine Recovery-Datei je Gruppe** und aktualisiert sie **nach 
 
 Gibt es für ein Element nach zwei Suchrunden keinen brauchbaren Kandidaten, markiere es als **Lücke** und schlage einen dieser Wege vor (nicht selbst ausführen, außer c):
 
-**a) Gebaute Formen** (Treppe, Brücke, Tunnelportal, Marktstand, Landmarke): **img2threejs-Skill** (offizielles Repo `img2threejs/img2threejs` v2.0.0, Apache-2.0). Er baut aus **einem Referenzbild** ein three.js-Modell aus Code, mit festen Stufen (Eignung, Qualitätsvertrag, Spezifikation, Bau in Durchgängen, Render-gegen-Referenz-Vergleich, Gates). Läuft in Claude Code; die Steuer-Sitzung testet ihn gerade an einem Steinbogen. **Testergebnis 10.10. (Steinbogen):** Der Skill liefert einen guten Prüfrahmen (Checkliste, Qualitätsvertrag, Vergleiche), aber keine Formkompetenz. Die Bogengeometrie musste von Hand gerechnet werden, Steine kamen erst nach einem Code-Patch rund, der Bogenring wirkte lose, 234 k Dreiecke. Visuelle Wertung 0,62. **Daher nur für einfache gebaute Kleinteile** (Marktstand, Schild, Pfosten), nicht für Brücken bzw. komplexes Mauerwerk. Liefere dafür **das beste Referenzbild** (frontal bzw. 3/4, freigestellt, Cartoon-Stil, Lizenz bzw. Herkunft) und eine Liste der identitätsprägenden Merkmale.
+**a) Gebaute Formen** (Treppe, Brücke, Tunnelportal, Marktstand, Landmarke): **img2threejs-Skill** (offizielles Repo `img2threejs/img2threejs` v2.0.0, Apache-2.0). Er baut aus **einem Referenzbild** ein three.js-Modell aus Code, mit festen Stufen (Eignung, Qualitätsvertrag, Spezifikation, Bau in Durchgängen, Render-gegen-Referenz-Vergleich, Gates). Läuft in Claude Code; die Steuer-Sitzung testet ihn gerade an einem Steinbogen. **Testergebnis 10.10. (Steinbogen, `tools/img2threejs-tests/bridge01/`):** Georg: „sieht super aus … von der Richtung nehmen wir das, es fehlen vielleicht 10–20 %“. Der Look (dicke, weiche Blöcke in warmen Tönen, Diorama-Charakter) ist damit **Richtungsreferenz** für gebaute Formen. Offen: Bogenring wirkt stellenweise lose, 234 k Dreiecke (muss stark reduziert werden), Geometrie wurde teils von Hand gerechnet. Der Lauf selbst geschieht in Claude Code; der Webchat liefert dafür **Referenzbild, Merkmalsliste und ggf. ein Golden-Referenzbild** aus §7. Liefere dafür **das beste Referenzbild** (frontal bzw. 3/4, freigestellt, Cartoon-Stil, Lizenz bzw. Herkunft) und eine Liste der identitätsprägenden Merkmale.
 
 **b) Organische Formen** (Inselkörper, Felsen, Brocken, Gelände): **Bild-zu-3D-Generatoren**, die ein echtes Netz (GLB) erzeugen:
 - **TRELLIS.2** (Microsoft, MIT) gilt als stärkstes Open-Source-Modell, braucht aber eine große GPU, also nur gehostet (z. B. Hugging-Face-Space);

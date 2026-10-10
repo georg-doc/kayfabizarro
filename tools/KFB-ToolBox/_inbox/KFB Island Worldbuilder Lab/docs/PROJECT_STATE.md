@@ -17,6 +17,14 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## Kurswechsel „finden statt bauen“, img2threejs-Brücke (2026-10-10)
+
+- Post-Mortem `docs/POSTMORTEM_MVP1_STAGE1_R1.md`; Stufe 1 nach Lauf 03 (5,0) gestoppt.
+- Pflicht-Schritt „Vorlage zuerst“ (QA §1a), Karte `docs/MVP1_DONOR_AND_MODEL_MAP_R1.md`.
+- Webchat-Strang Asset-Kandidaten G1–G6 mit Bildgenerierung, Recovery und additivem Changelog (`deliveries/BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md`).
+- img2threejs v2.0.0 getestet (`tools/img2threejs-tests/bridge01/`): Georg findet den Steinbogen „super, Richtung nehmen, 10–20 % fehlen“ → Richtungsreferenz für gebaute Formen; 234 k Dreiecke reduzieren.
+- Prinzip Dioramen-Materialmix (Masterplan §0.2). WSA-Modellier-Test Treppe gebrieft. Stufe-2-Spielsysteme (Laufen, Kamera, Fahren, Ein- und Aussteigen) laufen aus Vorlagen.
+
 ## MVP-1 Stufe 1 und RKIT: erste Kritiker-Läufe (2026-10-10)
 
 - **Lab Stufe 1 Lauf 02:** Q1–Q8 bestanden, Kritiker 4,29 (alle G 4–5, Silhouette 6). Teller-Look, Weltlogik Town nicht lesbar, Kegelberge, schwebende Relikte, identisches Sprenkelmuster, Moiré, harte Farbkanten. Reparaturrunde 1 mit Diagnose „reiner R2D-Port gegen Vorlage“. Formblatt R2 und Formsprache §2b umgesetzt; Erdschichten positiv.
