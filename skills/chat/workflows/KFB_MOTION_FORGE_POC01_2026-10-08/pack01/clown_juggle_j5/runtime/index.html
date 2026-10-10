@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Clown J5 · prop-track player proof</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #8f8d89; font: 13px/1.4 system-ui, sans-serif; color: #222; }
+  #hud { position: fixed; left: 10px; top: 8px; background: rgba(255,255,255,.85); padding: 6px 10px; border-radius: 6px; }
+  #hud b { color: #b33; }
+  button { margin-right: 6px; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js",
+               "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="hud">
+  <div><button id="line">Say a line</button><button id="done">Line finished</button></div>
+  <div id="state">loading…</div>
+  <div style="opacity:.7">Skeleton proof: bones drawn as sticks (the real Clown mesh with KFB eyes is added by the game runtime).</div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { PropTrackPerformer } from './kfb_prop_track_player.js';
+
+const params = new URLSearchParams(location.search);
+const W = params.has('w') ? +params.get('w') : innerWidth, H = params.has('h') ? +params.get('h') : innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H); renderer.setPixelRatio(1); document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x8f8d89);
+// Same 3/4 view as the Blender previews: Blender (2.4,-7.4,3.25) -> glTF (x, z, -y); lens 28 mm on a 36 mm sensor
+const cam = new THREE.PerspectiveCamera(39.6, W / H, 0.1, 100);
+cam.position.set(2.4, 3.25, 7.4); cam.lookAt(0, 2.9, 0.4);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x666655, 1.4));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(4, 8, 6); scene.add(sun);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.MeshLambertMaterial({ color: 0xc9c7c2 }));
+ground.rotation.x = -Math.PI / 2; scene.add(ground);
+
+const loader = new GLTFLoader();
+const load = (u) => new Promise((ok, err) => loader.load(u, ok, undefined, err));
+const [podium, perf, pins, tracks] = await Promise.all([
+  load('assets/circus_podium.gltf'),
+  load('assets/KFB_Motion_clown_juggle_j5.glb'),
+  Promise.all(['red', 'yellow', 'blue'].map((c) => load(`assets/juggling_pin_${c}.gltf`))),
+  fetch('assets/clown_juggle_j5.prop_tracks.pin.json').then((r) => r.json()),
+]);
+scene.add(podium.scene);
+const actor = perf.scene;                       // actor root = armature origin
+actor.position.set(0, tracks.podiumTop, 0);     // stands on the podium top
+scene.add(actor);
+const performer = new PropTrackPerformer(actor, perf.animations, tracks, pins.map((g) => g.scene));
+
+// stick skeleton (debug only)
+const bones = []; actor.traverse((o) => { if (o !== actor && o.parent && o.parent !== actor && o.name !== 'Rig_Medium') bones.push(o); });
+const geo = new THREE.BufferGeometry(); const pos = new Float32Array(bones.length * 6);
+geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+scene.add(new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color: 0x1b5cff })));
+const headBall = new THREE.Mesh(new THREE.SphereGeometry(0.62, 24, 16), new THREE.MeshLambertMaterial({ color: 0x55c8d8, transparent: true, opacity: 0.35 }));
+scene.add(headBall);
+const v = new THREE.Vector3(), w = new THREE.Vector3();
+function drawSkeleton() {
+  bones.forEach((b, i) => { b.getWorldPosition(v); b.parent.getWorldPosition(w); pos.set([v.x, v.y, v.z, w.x, w.y, w.z], i * 6); });
+  geo.attributes.position.needsUpdate = true;
+  const head = actor.getObjectByName('head'); head.localToWorld(headBall.position.set(0, 0.62, 0.05));
+}
+
+document.getElementById('line').onclick = () => performer.requestLine();
+document.getElementById('done').onclick = () => performer.endLine();
+const hud = document.getElementById('state');
+function hudText() {
+  hud.innerHTML = `${performer.state} · frame ${Math.floor(performer.frame)}` + (performer.talkWindowOpen ? ' · <b>TALK WINDOW</b>' : '');
+}
+const clock = new THREE.Clock();
+function frame() {
+  if (!window.__manual) performer.update(Math.min(clock.getDelta(), 0.1));
+  drawSkeleton(); hudText(); renderer.render(scene, cam);
+  requestAnimationFrame(frame);
+}
+window.__THREE = THREE; window.__perf = performer; window.__actor = actor; window.__render = () => { drawSkeleton(); hudText(); renderer.render(scene, cam); };
+window.__ready = true;
+frame();
+</script>
+</body>
+</html>
