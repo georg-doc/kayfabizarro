@@ -5,6 +5,14 @@
 **Parents:** `KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`; `KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md`.
 **Sibling stages:** `KFB_FANTASY_TAVERN_OPEN_STAGE_DESIGN_V1_2026-10-10.md`; `KFB_SCIFI_CANTINA_UFO_INTERIOR_DESIGN_V1_2026-10-10.md`.
 
+> **2026-10-11 ADDITIVE AUTHOR EXTENSION:** The library is a recurring **social and political event source**, not only a reading hub. [Bookworms, Girl Gang, Book Lending & Toy Soldier Censorship Procession](./KFB_AKASHIC_BOOKWORMS_GIRLGANG_CENSORSHIP_PROCESSION_V1_2026-10-11.md) documents:
+> (a) KISS colorful mini-tube worm with tiny eye acting, eating-cover *illusion* and satirical author/title thought bubble;
+> (b) all KFB Residents as enthusiastic idiosyncratic readers, lending/recommending/returning books across islands and a *proposed* Backpack Book slot inspired by real Tape/Bag donor (NOT built);
+> (c) one real KayKit ToySoldier model with rifle/bayonet/trumpet, prospective six ranked instances, repeatable absurd book-burning ritual, long-range smoke/fire signature and source-linked propaganda accusations;
+> (d) Lorekeeper protest/clay-cloud brawl, and a recurring Kafkaesque escorted Prison procession with alternating NPCs/player, actual-event arrest count and last English "Shame!" / "Guilty!" performance;
+> (e) publisher-confirmed `MagicalGirl.glb` + **four genuine May 2026 texture files** as KFB Girl Gang guests.
+> This remains *post-MVP concept*: no new ChatterBox pool schema, second actor/Audio/VFX inventory owner, forced player arrest or proven gameplay. Original Book Props/Card facts remain intact. Future first proof is ONE worm/Book encounter before any 6-soldier march.
+>
 ## Core image, identity and silhouette
 **The Akashic Library** = endlessly tall, half-open cartoon archive combining the imaginative Akashic Records, Alexandria, Vatican historical archives and the **Library of Unwritten Books**. The juxtaposition is mythopoetic satire, not a claim that any mystical archive literally knows all history.
 - Fractured, unmistakably **vertical cliff** with shelves stepped into rock, L-shaped open reading chamber, suspended book walks, ladders and scattered freestanding shelves. One hero reading desk and staged line of sight to Lorekeeper; NOT a generic green island or a fully enclosed building.
