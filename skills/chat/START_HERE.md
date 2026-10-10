@@ -1,3 +1,13 @@
+## CURRENT VOICE PRODUCT CHECKPOINT · 2026-10-10 · 3-ACTOR ESPEAK AUDITION / SOURCE OUTPUT IDENTITY
+
+Georg has approved **heuristic first-MVP voice direction**; voice fine-tuning later. The existing Voice owner Draft PR #379 now has **6 actual local English eSpeak MP3 audition renders** (two noncanonical donor audition lines/variants per Demon Lord, Robot One, Farmer A; see `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json`) and a standalone versioned audio identity helper (`runtime/voice-asset-identity.v1.js`). Local Node 24/24; real renders 6/6, FFprobe 6/6, strict rerender hash 6/6. These are **technical audio fixtures, not human-accepted final voices or canonical Triplet speech**.
+
+Owner: `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/START_HERE.md`; current Return and WSA brief on branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`. Existing KFB Audio Voice Acting Site remains the only product receiver; **not republished in this slice**. Current executor cannot publish Sites (`SITES_PUBLISHER_REQUIRED`). The six-audio ZIP is a current-conversation download, **not uploaded to GitHub/Site**; rerender tool and provenance are in GitHub.
+
+**Next voice-local gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` (Sites-capable executor, one accepted source-backed Triplet, audible whole/fragment/fallback, real bubble/talk/duck/timing/stop on existing Site). No new engine/Site. World Four-Island A/B visual gate and R4 STOP remain unchanged; no WB2/R5 promotion or DocCheck runtime writes.
+
+---
+
 ## CURRENT ADDITIVE VOICE ROUTING · 2026-10-10 · HEURISTIC MVP CASTING + SPOKEN NPC DIRECTION
 
 Georg confirms the existing KFB Audio `Voice Acting` experience works well and wants **reversible heuristic voice mapping** for initial MVP actors without immediate one-by-one human cast approval; manual voice fine-tuning is later. This is **not** a blanket accepted final voice, new production audio model, world runtime build, or permission to open World R5.
