@@ -76,7 +76,7 @@
           "group": "G1",
           "label": "Große Solitärfelsen",
           "scene": "alle Inseln",
-          "status": "MOOD_CONCEPT_POSITIVE_SOURCE_FIDELITY_OPEN",
+          "status": "SOURCE_LOCKED_PALETTE_STUDY_READY__SOURCE_ART_GATE_OPEN",
           "notes": "Kenney Nature, KayKit Forest, Quaternius Mood render liked, but visibly different from donor; source-locked concept comparison required before any Golden or model selection.",
           "picked": null,
           "goldenRef": false,
@@ -95,6 +95,27 @@
             "parts": "refs/large_boulders/PARTS.md",
             "prompt": "refs/large_boulders/PROMPT.md",
             "preview": "refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp"
+          },
+          "sourceEvidenceR9": {
+            "raw4view": "refs/source-isolation/G1_kenney_rock_largeA_source_4view_900.png",
+            "materialStudy": "refs/source-isolation/G1_kenney_rock_largeA_KFB_palette_source_locked_R9_900.png",
+            "sameOriginalFaces": true,
+            "glbTriangles": 80,
+            "sourceRatioHOverLongestFootprint": 0.256,
+            "sourceDimensionUnits": "GLB native, not H",
+            "report": "G1_R9_KENNEY_ROCK_MESH_COMPARISON.md",
+            "assessment": "rock_largeA source shape is low slab, not tower",
+            "nextDonor": "kenney_nature-kit/rock_largeB",
+            "nextDonorMeasuredRatio": 0.424,
+            "visualConceptAccepted": false
+          },
+          "generatorFailureR9": {
+            "attempts": 2,
+            "visualPass": 0,
+            "archive": "KFB_G1_ROCK_SOURCE_FIDELITY_FAILURE_RECOVERY_R9_2026-10-10.zip",
+            "report": "G1_R9_ROCK_SOURCE_FIDELITY_RECOVERY.md",
+            "archivePushedToGitHub": false,
+            "locked": true
           }
         },
         {
