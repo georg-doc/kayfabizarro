@@ -11,3 +11,10 @@ Hochgeladen von der Steuer-Sitzung (Claude Code) aus Georgs Download des Webchat
 | `refs/_concepts/G4_stone_bridge_sheet_webchat_r1.webp` | aus Quarantäne, Stil-Richtung (Briefing §7a „bauarm“) | „top, idealisierter Serviervorschlag; gern stilisierter, mehr Claymation“ |
 
 Keine Golden-Refs, keine Asset-Picks. Kein Merge nach `main`.
+
+## Nachtrag R1b · Fels-Blätter (Kenney rock_largeA im KFB-Knetstil)
+
+| Datei | Status | Georg |
+| --- | --- | --- |
+| `refs/_concepts/G1_rock_largeA_concept_sheet_1_webchat.png` | Stil-Richtung Fels, quellbasiert (Kenney rock_largeA) | „cool, sieht besser aus“ (Favorit) |
+| `refs/_concepts/G1_rock_largeA_formation_sheet_2_webchat.png` | Stil-Richtung Fels, Varianten default/sandy/dark | „cool“ |
