@@ -1,3 +1,20 @@
+## CURRENT ADDITIVE VOICE ROUTING · 2026-10-10 · HEURISTIC MVP CASTING + SPOKEN NPC DIRECTION
+
+Georg confirms the existing KFB Audio `Voice Acting` experience works well and wants **reversible heuristic voice mapping** for initial MVP actors without immediate one-by-one human cast approval; manual voice fine-tuning is later. This is **not** a blanket accepted final voice, new production audio model, world runtime build, or permission to open World R5.
+
+Owning branch: `planning/kfb-chatterbox-voice-layer-v1-2026-10-08` · Draft PR #379.
+New source-backed direction:
+`skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md`;
+reversible audition data:
+`skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json`.
+Site documentation: existing **KFB Production Control private Inbox**, two GitHub-identical files; **KFB Audio Site NOT republished**. 23/23 contract assertions; 0 new audible/ASR/3D/browser/runtime proof.
+
+Candidate: Demon Lord, Robot One, Farmer A; optional Lorekeeper older-grandpa and Witch feminine voice contrast. Later optional player microphone/voice-commands (existing BINGO/BOGGLE/BONGO/BLOEDSINN IDs), ASR-final free utterance→LLM/Triplet semantic selection, thinking dots/micro-idle, existing Pet Studio bubble geometries, common voice-playback clock for text reveal/talk/EyeRig/PetMouth/ducking and future in-world Maker Space choreography composer. Reuse all original owner source; no invented final canonical rules.
+
+**Voice owner-local next gate:** `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1` (real audible source-backed audition in existing Site when a future executor is authorized). The historical voice requirement for individual Georg KEEP/TUNE/CUT **before** heuristic mapping is superseded; final tuning/rights approval still later. Independent Four-Island Story Vision A/B visual gate remains current for any WB2/World runtime. Speakrail, Resemble Chatterbox-TTS and KFB ChatterBox are three separate systems.
+
+---
+
 ## CURRENT DESIGN RECOVERY OVERRIDE · 2026-10-08 · FOUR-ISLAND STORY VISION R1 AUTHORIZED
 
 Georg has authorized **story recovery + visual world direction only** after Island MVP R4 failed.
