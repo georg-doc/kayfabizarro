@@ -11,7 +11,7 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for name in (
             "index.html", "styles.css", "resources.css", "animation-sources.css", "app.js", "state.js", "registry.js",
             "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "framing3d.js",
-            "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "README.md",
+            "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "deck-library.js", "deck-crop.js", "deck-library.css", "README.md",
         ):
             self.assertTrue((LIB / name).is_file(), name)
 
@@ -30,13 +30,13 @@ class LibrarianBrowserContractTests(unittest.TestCase):
             self.assertIn(f'id="{control_id}"', html, control_id)
         self.assertIn("No embedded clips", html)
         self.assertIn("https://kayfabizarro.pages.dev/asset-librarian/", html)
-        for tab in ("assets", "actors", "rigs", "motions", "fx"):
+        for tab in ("assets", "actors", "rigs", "motions", "fx", "decks"):
             self.assertIn(f'data-library-tab="{tab}"', html)
 
     def test_browser_reuses_generated_registries_read_only(self):
         js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in (
             "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js",
-            "preview.js", "preview3d.js", "framing3d.js", "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js",
+            "preview.js", "preview3d.js", "framing3d.js", "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "deck-library.js",
         ))
         self.assertIn("../../../registry/assets/v1", js)
         self.assertIn("bot/asset-registry-update/registry/assets/v1", js)
@@ -113,6 +113,26 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for alias in ("V12", "V13", "V14", "V15"):
             self.assertIn(f"window.KFBAssetLibrarian{alias}", js)
         self.assertIn("version:'1.5'", js)
+
+    def test_deck_library_reuses_registry_and_exports_exact_contracts(self):
+        html = (LIB / "index.html").read_text(encoding="utf-8")
+        js = (LIB / "deck-library.js").read_text(encoding="utf-8")
+        self.assertIn('data-library-tab="decks"', html)
+        self.assertIn("cards.jsonl", js)
+        self.assertIn("kfb.card-ref/1", js)
+        self.assertIn("Deck zuordnen", html)
+        self.assertIn("Karte wählen", js)
+        self.assertIn("pdf.min.js", js)
+        self.assertIn("KFB Deck Viewer v5.dc.html", js)
+
+    def test_deck_card_crop_preserves_the_page_two_centre_seam(self):
+        js = (LIB / "deck-library.js").read_text(encoding="utf-8")
+        crop = (LIB / "deck-crop.js").read_text(encoding="utf-8")
+        self.assertIn("cardCropRect", js)
+        self.assertIn("CARD_CROP_SEAM_OVERLAP = 0.035", crop)
+        self.assertIn("midX - seam", crop)
+        self.assertIn("midX + seam", crop)
+        self.assertNotIn("Math.floor(source.width/2)", js)
 
 
 if __name__ == "__main__":

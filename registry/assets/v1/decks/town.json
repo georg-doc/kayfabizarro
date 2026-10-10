@@ -1,0 +1,27 @@
+{
+  "decks": [
+    {
+      "deckId": "embrace_protopia",
+      "gameUse": "allowed",
+      "role": "EMBRACE"
+    },
+    {
+      "deckId": "forget_utopia",
+      "gameUse": "allowed",
+      "role": "FORGET"
+    },
+    {
+      "deckId": "frizzlebob_s_mission_control",
+      "gameUse": "allowed",
+      "role": "primary"
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "gameUse": "allowed",
+      "role": "IGNORE"
+    }
+  ],
+  "schema": "kfb.town-deck-library/1",
+  "selectionRule": "explicit gameUse=allowed only",
+  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+}

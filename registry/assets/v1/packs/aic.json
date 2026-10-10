@@ -1,0 +1,74 @@
+{
+  "assetCount": 1,
+  "assets": [
+    {
+      "assetId": "media/public_domain/aic/great-wave-hokusai-1830-33.jpg",
+      "folder": "media/public_domain/aic",
+      "format": "jpg",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "license": "Public Domain · Art Institute of Chicago (API is_public_domain=true)",
+      "name": "Under the Wave off Kanagawa (Kanagawa oki nami ura), also known as The Great Wave, from the series \"Thirty-Six Views of Mount Fuji (Fugaku sanjūrokkei)\"",
+      "packId": "aic",
+      "packRoot": "media/public_domain/aic",
+      "path": "media/public_domain/aic/great-wave-hokusai-1830-33.jpg",
+      "provenance": {
+        "displayName": "explicit-sidecar",
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural",
+        "rights": "explicit-sidecar"
+      },
+      "rightsEvidence": {
+        "bytes": 238585,
+        "mode": "explicit-sidecar",
+        "provider": "aic",
+        "retrievedAt": "2026-09-27T01:34:54+00:00",
+        "sha256": "e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56",
+        "sidecarPath": "media/public_domain/aic/great-wave-hokusai-1830-33.jpg.license.json",
+        "sourceFacts": {
+          "apiHttpStatus": 200,
+          "downloadHttpStatus": 200,
+          "objectId": 24645
+        },
+        "sourceFileUrl": "https://www.artic.edu/iiif/2/b3974542-b9b4-7568-fc4b-966738f61d78/full/843,/0/default.jpg",
+        "sourceId": 24645,
+        "sourcePage": "https://www.artic.edu/artworks/24645/under-the-wave-off-kanagawa-kanagawa-oki-nami-ura-also-known-as-the-great-wave-from-the-series-thirty-six-views-of-mount-fuji-fugaku-sanjurokkei",
+        "sourceRecordUrl": "https://api.artic.edu/api/v1/artworks/24645?fields=id,title,artist_display,date_display,is_public_domain,image_id",
+        "tier": "free"
+      },
+      "root": "media/public_domain",
+      "sizeBytes": 238585,
+      "source": {
+        "blobSha": "750c2b8048bca8b1253673d8c7a45daa13ce2e48",
+        "commit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/public_domain/aic/great-wave-hokusai-1830-33.jpg",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/public_domain/aic/great-wave-hokusai-1830-33.jpg",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "tags": [
+        "print",
+        "1830s",
+        "public-domain",
+        "smoke-test"
+      ]
+    }
+  ],
+  "collections": [],
+  "dependencyStatus": {},
+  "displayName": "aic",
+  "formats": {
+    "jpg": 1
+  },
+  "kinds": {
+    "image-2d": 1
+  },
+  "packId": "aic",
+  "provenance": "generated-structural",
+  "root": "media/public_domain/aic",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/aic.json"
+}

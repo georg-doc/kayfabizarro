@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.asset-intake.v1",
+  "title": "KFB Asset Intake v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "intakeId",
+    "assetClass",
+    "sourceVisibility",
+    "files"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.asset-intake.v1"
+    },
+    "intakeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assetClass": {
+      "enum": [
+        "MODEL_3D",
+        "TEXTURE_IMAGE",
+        "ANIMATION",
+        "MUSIC",
+        "SFX",
+        "UI_AUDIO",
+        "VOICE",
+        "AMBIENCE",
+        "PACKAGE",
+        "OTHER"
+      ]
+    },
+    "sourceVisibility": {
+      "enum": [
+        "PRIVATE",
+        "PUBLIC"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "artist": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "collection": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "creditText": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "creditUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "license": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "roleTags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "mime",
+          "sizeBytes",
+          "inboxFileId"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mime": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "inboxFileId": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "audio": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "audioClass": {
+          "enum": [
+            "MUSIC",
+            "SFX",
+            "UI",
+            "VOICE",
+            "AMBIENCE"
+          ]
+        },
+        "durationSec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "sampleRate": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "channels": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "bpm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "loopClass": {
+          "enum": [
+            "UNKNOWN",
+            "LOOP_FRIENDLY",
+            "FINITE_CUE",
+            "ONE_SHOT"
+          ]
+        },
+        "runtimeStatus": {
+          "enum": [
+            "INTAKE_ONLY",
+            "QA_PENDING",
+            "RUNTIME_APPROVED",
+            "HOLD"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -2,49 +2,66 @@
   "catalog": "catalog.jsonl",
   "counts": {
     "byKind": {
-      "audio": 1703,
-      "image-2d": 6598,
-      "model-3d": 6467
+      "audio": 2221,
+      "image-2d": 6686,
+      "model-3d": 7819
     },
     "byRoot": {
       "media/2D_Assets": 5132,
-      "media/3D_Assets": 9636
+      "media/3D_Assets": 11590,
+      "media/public_domain": 4
     },
-    "decks": 4,
+    "decks": 130,
     "dependencies": {
-      "complete": 3834,
-      "embedded": 1900,
+      "complete": 4647,
+      "embedded": 2080,
       "missing": 339,
-      "unresolved": 394
+      "unresolved": 753
     },
-    "packs": 115,
+    "packs": 124,
     "problems": {
-      "DUPLICATE_NAME": 672,
+      "DECK_PATH_NORMALIZED": 2,
+      "DUPLICATE_NAME": 716,
       "MISSING_REFERENCED_FILE": 339,
-      "UNRESOLVED_FBX_DEPENDENCY": 305,
-      "UNRESOLVED_MODEL_DEPENDENCY": 89
+      "UNRESOLVED_FBX_DEPENDENCY": 511,
+      "UNRESOLVED_MODEL_DEPENDENCY": 242
     },
-    "textureCandidates": 575,
-    "total": 14768
+    "textureCandidates": 588,
+    "total": 16726
   },
   "determinism": "same commit + same config + same override files => byte-identical output",
   "excludePrefixes": [
     "media/3D_Assets/CATALOG/"
   ],
+  "explicitMetadata": {
+    "licenseInference": false,
+    "publicDomainRoot": "media/public_domain",
+    "rightsMode": "persisted-sidecar-passthrough-only",
+    "sidecarSuffix": ".license.json"
+  },
   "generator": "tools/asset_registry/build.py",
   "overrides": {
     "dependencies": "tools/asset_registry/overrides/dependencies.json",
     "packs": "tools/asset_registry/overrides/packs.json"
   },
   "owners": {
-    "deckRegistry": "media/kfb/kfb-index.json"
+    "deckRegistry": "media/kfb/index.json"
+  },
+  "privateProjection": {
+    "count": 1,
+    "privacy": "public-safe metadata only; no private bytes, storage ids, credentials or private URLs",
+    "revision": "2026-10-09.r3-data-only-verified",
+    "schema": "kfb.asset-private-live.v1",
+    "shard": "private-projection.jsonl",
+    "source": "tools/asset_registry/librarian/live/private-asset-live.json"
   },
   "roots": [
     "media/2D_Assets",
-    "media/3D_Assets"
+    "media/3D_Assets",
+    "media/public_domain"
   ],
   "schema": "kfb.asset-registry.v1",
-  "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; no gameplay roles, license inference, rig compatibility or inferred deck grouping",
+  "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; explicit persisted public-domain sidecars are passed through without license inference; no gameplay roles, donor suitability, rig compatibility or inferred deck grouping",
   "shards": {
     "audio": "kinds/audio.json",
     "decks": "decks/index.json",
@@ -54,7 +71,7 @@
     "packs": "packs/index.json",
     "problems": "problems.json"
   },
-  "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
-  "sourceCommitTime": "2026-09-19T16:42:25+02:00",
+  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+  "sourceCommitTime": "2026-10-10T02:50:21+02:00",
   "sourceRepo": "georg-doc/kayfabizarro"
 }

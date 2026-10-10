@@ -1,5 +1,36 @@
 # Changelog · KFB Asset Librarian
 
+## v1.8.1 Deck crop seam fix · 2026-10-10
+
+- Page-2 review of Ignore Dystopia, Protopia, Observation Underground, Pharaoh Script, AI Kayfabe and Anti-Rules confirmed a real 2x2 grid with artwork and headings crossing the exact centre line.
+- Verified card previews now retain a 3.5% horizontal seam overlap instead of applying a destructive 50/50 hard cut.
+- PDF source files, deck metadata and all `_inbox` content remain unchanged.
+
+## v1.8 Deck Library R1 · 2026-10-09
+
+### Decision
+- Keep `media/kfb/index.json` as the single deck owner and expose a deterministic Registry projection.
+- Use measured PDF page counts. Never imply an exact card crop when JSON-to-PDF mapping is not defensible.
+- Reuse the existing Librarian, selection and candidate-handoff surfaces; do not create another catalog or runtime owner.
+
+### Implementation
+- new `Decks` tab with search, tags, sets, KFB/MED and deck-type filters;
+- 130 deck shards, 6,985 card rows, Town subset and machine-readable QA report;
+- schema normalization for canonical, `num/name` and name-only card JSON;
+- pdf.js page preview plus deep links into the v5 Deck Viewer;
+- exact `kfb.card-ref/1` copy/export for verified mappings;
+- fail-closed full-page presentation for 23 unverified mappings.
+
+### Tested result
+- 57/57 Python unit and browser-contract tests PASS;
+- JavaScript syntax checks PASS;
+- deterministic regeneration PASS (no hash changes);
+- real browser: Mission Control card 56 deep-links to PDF page 15; 130 decks / 1,915 PDF pages / 6,985 cards; 0 console errors;
+- source guard: no changes under `media/kfb/` or `tools/KFB-ToolBox/_inbox/`.
+
+### Boundary
+This is a PR candidate. No GPT Site or Cloudflare publication was performed. The canonical GPT Site therefore remains on its previous published revision until a separate authorized publish step.
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision
@@ -111,4 +142,3 @@ Dedicated browser evidence artifact: `10921660721` (`pd-pool-r2-asset-librarian`
 
 ### Boundary
 The permanent Cloudflare Librarian has **not** been updated by this candidate. Merge/publication remains a separate Georg-gated step. Bulk pool population remains blocked by the missing historical selected-hit manifest.
-

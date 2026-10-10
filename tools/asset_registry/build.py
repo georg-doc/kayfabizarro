@@ -3,7 +3,7 @@
 
 AR1 records exact Git inventory facts for loadable assets.
 AR2 adds deterministic structural packs and explicit model dependency resolution.
-AR3 projects the existing media/kfb/kfb-index.json deck contract into small shards.
+AR3 projects the existing media/kfb/index.json deck contract into measured shards.
 AR4 adds stale-output cleanup and a deterministic delta against the previous
 canonical registry committed in Git HEAD.
 
@@ -34,6 +34,7 @@ from decks import build_decks
 from delta import build_delta, read_previous_registry
 from dependencies import duplicate_name_problems, resolve_all_models
 from packs import assign_packs
+from private_projection import load_live_document, write_jsonl
 
 SCHEMA = "kfb.asset-registry.v1"
 GENERATOR = "tools/asset_registry/build.py"
@@ -56,6 +57,7 @@ GENERATED_FILES = {
     "catalog.jsonl",
     "problems.json",
     "delta.json",
+    "private-projection.jsonl",
 }
 GENERATED_DIRS = {"kinds", "packs", "decks"}
 
@@ -344,8 +346,11 @@ def _pack_outputs(out_dir: Path, packs: dict[str, dict], records: list[dict]) ->
     _write_json(out_dir / "packs" / "index.json", index)
 
 
-def _deck_outputs(out_dir: Path, decks: list[dict], index: dict) -> None:
+def _deck_outputs(out_dir: Path, decks: list[dict], index: dict, cards: list[dict], town: dict, qa: dict) -> None:
     _write_json(out_dir / "decks" / "index.json", index)
+    write_jsonl(out_dir / "decks" / "cards.jsonl", cards)
+    _write_json(out_dir / "decks" / "town.json", town)
+    _write_json(out_dir / "decks" / "qa-report.json", qa)
     for deck in decks:
         _write_json(out_dir / "decks" / f"{deck['deckId']}.json", deck)
 
@@ -360,6 +365,12 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     commit = _git(repo_root, "rev-parse", "HEAD")
     commit_time = _git(repo_root, "show", "-s", "--format=%cI", "HEAD")
     previous = read_previous_registry(repo_root, output_rel)
+    private_projection_rel = config.get("privateProjection")
+    private_projection_doc, private_projection_records = load_live_document(
+        repo_root / private_projection_rel
+        if private_projection_rel
+        else repo_root / "tools/asset_registry/librarian/live/private-asset-live.json"
+    )
 
     tree_entries = git_tree_entries(repo_root, roots)
     tracked_paths = {
@@ -401,12 +412,15 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         "rules": [],
     }
     deck_problems: list[dict] = []
+    deck_cards: list[dict] = []
+    town_decks: dict = {"schema": "kfb.town-deck-library/1", "sourceCommit": commit, "decks": []}
+    deck_qa: dict = {"schema": "kfb.deck-data-qa/1", "sourceCommit": commit, "deckCount": 0, "cardCount": 0, "pageCountMismatches": [], "unverifiedMappings": [], "sourceCorrections": []}
     deck_registry = config.get("deckRegistry")
     deck_root = config.get("deckRoot")
     if deck_registry and deck_root:
         deck_tree_entries = git_tree_entries(repo_root, [deck_root])
         deck_tracked_paths = {entry["path"] for entry in deck_tree_entries}
-        decks, deck_index, deck_problems = build_decks(
+        decks, deck_index, deck_problems, deck_cards, town_decks, deck_qa = build_decks(
             repo_root,
             registry_path=deck_registry,
             deck_root=deck_root,
@@ -462,6 +476,14 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "dependencies": config.get("dependencyOverrides"),
         },
         "owners": {"deckRegistry": deck_registry},
+        "privateProjection": {
+            "schema": private_projection_doc.get("schema"),
+            "revision": private_projection_doc.get("revision"),
+            "count": len(private_projection_records),
+            "source": private_projection_rel,
+            "shard": "private-projection.jsonl",
+            "privacy": "public-safe metadata only; no private bytes, storage ids, credentials or private URLs",
+        },
         "explicitMetadata": {
             "publicDomainRoot": PUBLIC_DOMAIN_ROOT,
             "rightsMode": "persisted-sidecar-passthrough-only",
@@ -506,10 +528,11 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
                 )
                 + "\n"
             )
+    write_jsonl(out_dir / "private-projection.jsonl", private_projection_records)
     for kind, rel in shard_paths.items():
         _write_json(out_dir / rel, by_kind.get(kind, []))
     _pack_outputs(out_dir, packs, records)
-    _deck_outputs(out_dir, decks, deck_index)
+    _deck_outputs(out_dir, decks, deck_index, deck_cards, town_decks, deck_qa)
     _write_json(
         out_dir / "problems.json",
         {
