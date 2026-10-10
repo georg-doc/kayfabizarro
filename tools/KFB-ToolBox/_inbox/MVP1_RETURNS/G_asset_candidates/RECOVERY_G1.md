@@ -5,7 +5,7 @@ Owner: KFB Island Worldbuilder Lab, bounded G1 only
 Repo: `georg-doc/kayfabizarro`  
 Arbeitsbranch: `planning/kfb-mvp1-asset-candidates-2026-10-10`  
 Quellbrief: `sync/lab-rkit-2026-10-09`, `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md`  
-Bekannter geprüfter G1-Meilenstein-Head vor Recovery: `6ed366abff3072102c5fd79b84594d204ac4d664`. **Aktuellen Branch-Head immer live erneut lesen.**
+Prüfbericht-Head vor finalem Recovery/Changelog: `28f88e56af9e3c33103e981a6e0f898e3fd7cb73`. **Aktuellen Branch-Head immer live erneut lesen.**
 
 ## Erledigte Elemente / Evidenz
 - **KFB Town Plateau** (`town_plateau_island_body`): 5 Kandidaten (StreakByte Port, Backyard, River, Forest, Pond); Port als A **zur Sichtprüfung**.
@@ -19,6 +19,11 @@ Bekannter geprüfter G1-Meilenstein-Head vor Recovery: `6ed366abff3072102c5fd79b
 - [G1 JSON](https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/G1_inselkoerper_fels.json)
 - **Bilder:** keine generierten Referenzbilder, keine Source-Objekt-Screenshots; das ist offen, nicht simuliert.
 - Vorhandene Messquelle (privat im lokalen Lab): `/CLAUDE/KFB Island Worldbuilder Lab/docs/ISLAND_ANATOMY_RULES.md` und `tools/out/measure.json`. Original StreakByte Modelle in Dropbox als FBX nachgewiesen. Dropbox FBX file_preview lieferte **keine Thumbnails** (2026-10-10). Keine Paid-Pack-Datei in GitHub kopiert.
+
+## Prüfprotokoll
+- [G1 Testbericht · 18/18 statische Checks PASS](https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/TEST_REPORT_G1.md); 16/16 Repo-Registry-Pfade mit Shard gegengeprüft; 13 Kandidaten nur als gekaufte Privat-Quellen benannt.
+- Quell-Einzelansichten: **0**, native H-BBox-Messungen: **0**, GoldenRefs: **0**. Kein Visual- oder Product-PASS.
+- Quelleninventur und Testbericht wurden vom G1-Schreiber erstellt; unabhängige visuelle Abnahme steht aus.
 
 ## Nicht freigegeben / unbekannt
 Native bbox und tatsächliche Skalierung in H; Quellmodell in vier isolierten Ansichten; §00/§01 visuell; Materialien/Atlas/Umfärbbarkeit, Schatten und Kollisionsfläche; Quelle zu Polygonmetrik für Einzelrocks, Quaternius/Platformer/GLTF; Vertragsbedingungen gekaufter StreakByte-Lizenz. Das 'W=60' der alten Messung ist eine **Normalisierung**, kein Figurenmaßstab. Keine Quellansicht darf als Akzeptanz einer zusammengesetzten Szene ausgegeben werden.
