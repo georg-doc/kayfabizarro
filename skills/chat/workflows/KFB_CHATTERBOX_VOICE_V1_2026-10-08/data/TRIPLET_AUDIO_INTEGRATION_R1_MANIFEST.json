@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.voice-triplet-audio-integration/1",
+  "status": "SITE_SOURCE_PREPARED_NOT_YET_PUBLISHED",
+  "usage": "NON_CANON_AUDITION",
+  "source": {
+    "tripletId": "core.frame.01",
+    "sourceStatus": "AUTHORING_CANDIDATE",
+    "sourceRevision": "cf975a72637630d97fc626962ef591b356ce0bbf",
+    "path": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/triplet-stage/donor/resident-chat-ensemble-data.mjs",
+    "poolFileId": "0d7d3aea-b1a6-43f0-a65f-c327145c5191",
+    "poolSha256": "cac0333d9ea973d2dd727d57bd67314c60789dfc70d04d8e91d5ff9783f81136",
+    "beats": ["Nothing changed", "except the frame", "everything changed"],
+    "visibleText": "Nothing changed / except the frame / everything changed",
+    "textRevisions": {
+      "whole": "sha256:cca192de6ff05cf8d77413a25879b31a1e0dc9543573ec6ba5b3f76a09ebf351",
+      "subject": "sha256:0ba2a5737b2eb11f85a06138a3732c416aaff9ca2661f9c5ada3d49cb98b053f",
+      "connector": "sha256:bbcb43ff7eb2f5b9ef996acbc31ee2805512639c619ad597389d79e137d49e96",
+      "reframe": "sha256:ea362746ba6dbbf4f6851d171e6681870117ddeecefe506796c0916f8f37cebb"
+    }
+  },
+  "site": {
+    "projectId": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "sourceMarker": "0.5",
+    "resolverOrder": ["whole", "fragments", "browser"],
+    "audioOwner": "existing KFB Audio AudioContext/mixer/ducking",
+    "siteSourceCommit": null,
+    "versionId": null,
+    "deploymentId": null
+  },
+  "render": {
+    "provider": "macos-system-voice",
+    "model": "local-system-speech",
+    "locale": "en",
+    "format": "WAVE PCM 16-bit mono 22050 Hz",
+    "recipeRevision": "kfb-triplet-audio-r1",
+    "settingsRevision": "pcm-s16le-mono-22050-v1",
+    "rightsStatus": "PENDING",
+    "castingStatus": "HEURISTIC_CANDIDATE",
+    "publicShip": false
+  },
+  "profiles": [
+    {"residentId":"demon-lord","label":"Demon Lord","voicePreset":"demon_lord","emotion":"measured-menace","voiceId":"macos:Daniel:en_GB","rate":140,"status":"HEURISTIC_EDITABLE_CANDIDATE"},
+    {"residentId":"robot-one","label":"Robot One","voicePreset":"robot","emotion":"precise-deadpan","voiceId":"macos:Zarvox:en_US","rate":175,"status":"HEURISTIC_EDITABLE_CANDIDATE"},
+    {"residentId":"farmer-a","label":"Farmer A","voicePreset":"farmer","emotion":"grounded-dry","voiceId":"macos:Moira:en_IE","rate":155,"status":"HEURISTIC_EDITABLE_CANDIDATE"}
+  ],
+  "assets": {
+    "demon-lord": {
+      "whole": {"duration":4.750522,"sha256":"01ff6b7cf0b159a853fc1c7fb3d721b150271f528a1274cc3fd25d7787327ced"},
+      "subject": {"duration":1.522948,"sha256":"77ad5c7ab9272662dbef53b44633ccaa9e2227f1afae3dc4f7459e7198bce570"},
+      "connector": {"duration":1.499864,"sha256":"41608c02ab54ea21f5d74da7f27e9a16e5f738b6c20ed789966a19f635a19480"},
+      "reframe": {"duration":1.697279,"sha256":"9802dc5ac378c19e8938196b6f785dac0de316f7e88aa3f423e729b1e9e4c864"}
+    },
+    "robot-one": {
+      "whole": {"duration":4.529297,"sha256":"aa132ebc715cd4a5d1dc826f4bcfc291d4b04a8ac841eb68f6126741cb314ed1"},
+      "subject": {"duration":1.150794,"sha256":"2192c41b5c92f6ef91e5c4be11cb19ec3e12cdf31e083002a14065189ba47e6f"},
+      "connector": {"duration":1.046395,"sha256":"f92ce80b209ed9c267fd84ae9a1dcd16726ccb4b35ae30786eabbf2b768ce5e2"},
+      "reframe": {"duration":1.313469,"sha256":"6f9988e70164eb8f0e822678e9d0e39c14f4f70a0ed6e3507d0113d6c607432b"}
+    },
+    "farmer-a": {
+      "whole": {"duration":4.064626,"sha256":"9594290f5351f41e2fb41cb8caa9438d218be95b40aeac3382b44a96a9606175"},
+      "subject": {"duration":1.313061,"sha256":"3fc05ee917054ab238cabc459358ac2f5b65e5fae98171ade0e7ff134b42a193"},
+      "connector": {"duration":1.243311,"sha256":"a74d4c192e67c9262ecf951cd44c11b62272c1b1f7cd045b67bfd29d08089df7"},
+      "reframe": {"duration":1.487120,"sha256":"719a444b5ddf2d1967ad821a3b820bbcd2bfe450fe28d2f203352766e49832b4"}
+    }
+  }
+}
