@@ -1,0 +1,986 @@
+{
+ "schema": "kfb.decisions/1",
+ "updated": "2026-10-11",
+ "entries": [
+  {
+   "id": "V-001",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "USE WHAT WORKS: Vorlage zuerst; Nachbau ohne Freigabe = nicht bestanden.",
+   "values": {},
+   "owner": "alle",
+   "check": "Vorlage-zuerst-Zeile je Teil",
+   "source": "docs/MVP1_DONOR_AND_MODEL_MAP_R1.md §0",
+   "supersedes": null,
+   "why": "Nachbauten haben Abgenommenes verloren und Fehler doppelt gebaut (Post-Mortem Stufe 1).",
+   "applies": "sofort, jede Sitzung"
+  },
+  {
+   "id": "V-002",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg gestaltet, wir bauen Werkzeuge (God-Mode-Editor); keine Kritiker-Endlosschleifen, Abnahme durch Georg im Spiel.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "Plan R1 §0",
+   "source": "docs/KFB_WORLDBUILDER_PLAN_R1.md",
+   "supersedes": null,
+   "why": "LLM-Gestaltung scheitert an Komposition und Raum; Georgs Geschmack ist der Maßstab, Werkzeuge können wir.",
+   "applies": "ab Plan R1"
+  },
+  {
+   "id": "V-003",
+   "date": "2026-10-11",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Entscheidungen leben hier (30_DECISIONS) mit PASS/TUNE/FAIL; sofort eintragen und mit Nummer bestätigen; Prüfung vor jeder Lieferung.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "tools/parity + Bericht listet ungeprüfte V-Nummern",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Entscheidungen gingen in Fließtext verloren; der Ordner 30_DECISIONS war vereinbart und blieb leer.",
+   "applies": "ab 11.10."
+  },
+  {
+   "id": "V-004",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Agenten-Briefings verweisen zuerst auf PASS/TUNE/FAIL bzw. ACCEPTANCE_INDEX; „nicht gefunden in …“ statt „gibt es nicht“.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Ein Agent meldete „kein Zitat“ trotz PASS-Spalte; schlechtes Briefing kostete Tokens und Vertrauen.",
+   "applies": "jede Recherche"
+  },
+  {
+   "id": "V-005",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Höchstens zwei Baustellen gleichzeitig; Plan R1 ist maßgeblich.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "Plan R1",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Zu viele parallele Baustellen, keine wurde fertig.",
+   "applies": "ab Plan R1"
+  },
+  {
+   "id": "V-006",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Disk-Regel: ≥ 40 GB frei vor schweren Läufen, Blender nur headless mit Watchdog.",
+   "values": {},
+   "owner": "alle",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Ein Blender-Lauf blähte sich auf 71 GB auf und füllte die Platte.",
+   "applies": "jeder schwere Lauf"
+  },
+  {
+   "id": "V-007",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg nie um Git-Bedienung bitten; Dateien als Links bzw. Karten liefern.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Git- bzw. CI-Rückfragen überfordern und frustrieren; tiefe Pfade sind im Finder nicht klickbar.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-008",
+   "date": "2026-10-10",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Token sparen: Standbilder statt Video, wo es reicht; keine breiten Suchen.",
+   "values": {},
+   "owner": "alle",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "17 % des Limits verbrannt ohne sichtbaren Fortschritt.",
+   "applies": "ab 11.10."
+  },
+  {
+   "id": "V-009",
+   "date": "2026-10-11",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Doku-Pflicht für die Steuerung: alle Entscheidungen, Designs und Vorgaben sofort ins Living Doc (diese Datei + Plan R1) plus additiver CHANGELOG.md (neueste oben, nie umschreiben), mit Nummer bestätigen.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "jede Antwort mit neuer Vorgabe nennt die V-Nummer",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Damit kein Design und keine Entscheidung mehr verloren geht; Living Doc statt Chat-Gedächtnis.",
+   "applies": "ab 11.10., jede Antwort"
+  },
+  {
+   "id": "V-010",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "PASS",
+   "text": "Joyride J17 ist Goldstandard für den Gesamt-Look: Strecke, rote Banden, orange Fahrbahn, Cartoon-Deformer, Kamera, Paletten. „absoluter Goldstandard … gesetzt“.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bildvergleich gegen J17 pictures/chase-*.jpg",
+   "source": "docs/POSTMORTEM_JOYRIDE_REGRESS_R1.md",
+   "supersedes": null,
+   "why": "Joyride war gesetzt; eng gestellte Frage („nur Physik“) führte zum Regress auf RKIT-Platten.",
+   "applies": "sofort; Phase C Rückgrat"
+  },
+  {
+   "id": "V-011",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Keine harten Schnitte bzw. sichtbaren Kanten an Übergängen; organische Knet-Cartoon-Logik.",
+   "values": {},
+   "owner": "alle",
+   "check": "Q8/Fugen-Test",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Sichtbare Nähte bzw. Geisterlinien waren der häufigste Bildfehler.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-012",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Diorama-Materialmix erlaubt (Knete, Balsa, Pappe, Kork, Filz, Moos); nie konstruiert oder repetitiv.",
+   "values": {},
+   "owner": "alle",
+   "check": "Bild",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Handgebauter Diorama-Look statt CAD; Materialmix macht es lebendig.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-013",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Generierte Bildblätter sind Stil-Richtung („Serviervorschlag“), nicht Pflicht-Abbild; bauarm, stilisierter Claymation.",
+   "values": {},
+   "owner": "alle",
+   "check": "Bild",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Bildgenerierung zeigt Ideale, die nicht 1:1 baubar sind; Kritiker-Schleifen zum Nachbilden sind teuer.",
+   "applies": "ab 10.10."
+  },
+  {
+   "id": "V-014",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "FAIL",
+   "text": "RKIT-Test-Hub in Vorschauen (quergestellte Teilbanden, flacher Asphalt, Gehwegplatten, Nicht-Joyride-Muster).",
+   "values": {},
+   "owner": "Lab",
+   "check": "Vorschau-Bühne = Demo-Insel; ?rkit=1 nur Debug",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Test-Hub-Reste wirken wie Bastelarbeit und verfälschen jede Abnahme.",
+   "applies": "ab 10.10., jede Vorschau"
+  },
+  {
+   "id": "V-015",
+   "date": "2026-10-10",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Weltlogik zuerst: jedes Element braucht eine Geschichte (wer, was, warum); Inseln = Schollen der zersprengten Erde.",
+   "values": {},
+   "owner": "alle",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Elemente ohne Geschichte wirken beliebig (Mittelalter-Generik).",
+   "applies": "immer"
+  },
+  {
+   "id": "V-020",
+   "date": "2026-10-10",
+   "area": "Steuerung",
+   "verdict": "PASS",
+   "text": "W = Joggen (Running_A ≈ 1,40 H/s), Shift+W = Sprint (Running_B ×1,3 ≈ 2,22 H/s), Strg+W = Gehen. „passt so erstmal“.",
+   "values": {
+    "jog_H_s": 1.4,
+    "sprint_H_s": 2.22,
+    "walk_H_s": 0.29
+   },
+   "owner": "Lab",
+   "check": "parity: gait",
+   "source": "docs/critic/lab-stage2/2026-10-10_08/REPORT.md",
+   "supersedes": null,
+   "why": "Gehen als Standard war zu langsam; Georgs dokumentierte Werte aus game_r5.",
+   "applies": "ab Probe 6"
+  },
+  {
+   "id": "V-021",
+   "date": "2026-10-11",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "Nur EIN Gangschema (J17-Travel-Core) für alle Spiel-Einstiege; walk.ts stillgelegt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: beide Einstiege",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Zwei Pfade (walk.ts vs. Travel-Core) erzeugten den Regress im Spiel.",
+   "applies": "ab B0"
+  },
+  {
+   "id": "V-022",
+   "date": "2026-10-11",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "WoW-Schema: ohne Maus A/D drehen, Q/E strafen; RMB = Maus lenkt Figur, A/D strafen; LMB = nur Kamera; beide = vorwärts.",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: mouse-steer",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Vertrautes Schema; Georg will WoW-Gefühl.",
+   "applies": "ab B0"
+  },
+  {
+   "id": "V-023",
+   "date": "2026-10-11",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "Sprung: Leertaste im Stand = auf der Stelle; aus Joggen = vorwärts; Shift+Leertaste aus Sprint = Weitsprung (Jump_Full_Long).",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: jumps",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Sprünge müssen zum Bewegungszustand passen.",
+   "applies": "ab B0"
+  },
+  {
+   "id": "V-024",
+   "date": "2026-10-11",
+   "area": "Steuerung",
+   "verdict": "TBD",
+   "text": "Doppel-Leertaste = Flug-Modus bzw. Jetpack (WoW-Logik, schon gemessen) – später.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Flug kommt später; Taste wird freigehalten.",
+   "applies": "später"
+  },
+  {
+   "id": "V-025",
+   "date": "2026-10-11",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "Spielmodus: Zoom Rad/Touchpad (normalisiert, gedämpft) bis Ich-Perspektive; träges Recenter hinter die Figur bei Bewegung; Default-Position per Slider (Rollercoaster-Vorlage).",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: camera",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Orientierung und Komfort wie in WoW.",
+   "applies": "ab B0"
+  },
+  {
+   "id": "V-026",
+   "date": "2026-10-11",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "God-Mode: Zoom zum Cursor, nicht zu empfindlich; Orbit ohne Ruckeln (geglätteter Arm).",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: camera-calm ≤ 0,05 lab/Frame",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Orbit ruckelte, Zoom zu empfindlich.",
+   "applies": "ab B0"
+  },
+  {
+   "id": "V-027",
+   "date": "2026-10-10",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "Verdeckung: Auto 35 % Dither; Sicht-Loch mit Knetrand Option für Gebäude.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Figur muss sichtbar bleiben.",
+   "applies": "ab Stufe 2"
+  },
+  {
+   "id": "V-030",
+   "date": "2026-10-10",
+   "area": "Auto",
+   "verdict": "PASS",
+   "text": "MVP-1 fährt geschlossenes Retro-Auto (Cicada), Figur beim Fahren unsichtbar; Cabrio nach dem MVP.",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: default car",
+   "source": "Masterplan §3",
+   "supersedes": null,
+   "why": "Cabrio bringt Ein-/Ausstieg, Lenkrad und Kamera-Komplexität ohne MVP-Gewinn.",
+   "applies": "MVP-1"
+  },
+  {
+   "id": "V-031",
+   "date": "2026-10-10",
+   "area": "Auto",
+   "verdict": "TUNE",
+   "text": "Ein- und Aussteigen (Hop) als Arbeitsstand: „etwa 30 % … so nehmen, bevor wir uns verkünsteln“; Rückfall Überblenden.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Details später; erst Environment sauber.",
+   "applies": "MVP-1"
+  },
+  {
+   "id": "V-032",
+   "date": "2026-10-10",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Fahrphysik = J17 k2b bytegleich; Auto vor dem Bordstein halten (Band = Bord − ½ Breite − 0,15).",
+   "values": {},
+   "owner": "Lab",
+   "check": "md5 k2b",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Abgenommenes Fahrgefühl; Bordstein-Stöße sagten nichts aus.",
+   "applies": "ab Probe 6"
+  },
+  {
+   "id": "V-033",
+   "date": "2026-10-10",
+   "area": "Animation",
+   "verdict": "TBD",
+   "text": "Cartoon-Prinzipien Anticipation, Impact, Recovery (Nachfedern nach dem Hop); Hut-Artefakte ggf. metanarrativ.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Cartoon-Qualität kommt nach der Grundstruktur.",
+   "applies": "später"
+  },
+  {
+   "id": "V-040",
+   "date": "2026-10-10",
+   "area": "HUD",
+   "verdict": "PASS",
+   "text": "HUD = Claude-Design-HUD R3 komplett inkl. Rucksack-Overlay und Jukebox-Daten; KEIN Joyride-HUD. Ohne Rucksack nicht abnahmefähig. Spiel↔God-Mode-Plakette.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bild + md5 vendor",
+   "source": "docs/critic/lab-hud/2026-10-10_01/",
+   "supersedes": null,
+   "why": "Das gestaltete HUD mit Rucksack existierte schon; Joyride-HUD wäre Rückschritt.",
+   "applies": "ab Phase A"
+  },
+  {
+   "id": "V-041",
+   "date": "2026-10-10",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "Keine Messdaten bzw. Debug-Werte im Spiel (nur ?debug=1).",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: no-debug",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Cleanes Interface statt Messdaten im Spiel.",
+   "applies": "ab Phase A"
+  },
+  {
+   "id": "V-042",
+   "date": "2026-10-10",
+   "area": "Klang",
+   "verdict": "RULE",
+   "text": "Ein AudioContext, Insel-Bett je Insel, Radio im HUD; Radio auch zu Fuß, wenn das Kassettenradio im Rucksack ist.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bericht",
+   "source": "docs/critic/lab-sound/2026-10-10_01/",
+   "supersedes": null,
+   "why": "Klang je Insel und Radio als Spielgefühl; Radio als Rucksack-Gegenstand ist Weltlogik.",
+   "applies": "ab Phase A"
+  },
+  {
+   "id": "V-043",
+   "date": "2026-10-11",
+   "area": "Almanach",
+   "verdict": "RULE",
+   "text": "Fächer rechts, senkrecht gerade nach unten, letzte 7 + „+N“; Klick → Overlay mit Deck/Welt-Reitern und Raster der Viertel → Viewer.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bild",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Skalierbar für tausende Karten.",
+   "applies": "ab Phase A"
+  },
+  {
+   "id": "V-050",
+   "date": "2026-10-10",
+   "area": "Licht",
+   "verdict": "TUNE",
+   "text": "Licht-Profile Tag/Abend/Nacht/Innen aus SKY3; Abend zu orange und zu dunkel.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bild",
+   "source": "docs/critic/lab-sky/2026-10-10_01/",
+   "supersedes": null,
+   "why": "Tag-Nacht-Grundlage; Abend braucht Feintuning.",
+   "applies": "ab Phase A"
+  },
+  {
+   "id": "V-051",
+   "date": "2026-10-10",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Insel-Thema = Sechser-Palette aus Joyride (canyon, bucht, otown + Ableitungen) + Licht + Klang + Biom + Story-Tint; ein Generierungsschritt (God-Mode, Generator, Spieler).",
+   "values": {},
+   "owner": "Lab",
+   "check": "Schema kfb.island-theme/1",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Farben, Licht und Klang gehören zusammen und sollen generierbar sein.",
+   "applies": "ab Phase A, Generator in F"
+  },
+  {
+   "id": "V-052",
+   "date": "2026-10-10",
+   "area": "Wasser",
+   "verdict": "PASS",
+   "text": "Claude-Design-Wasser F0–F2 inkl. Ufergelände und aller Fixes (keine Haarlinien, Faltung, Säume, Kantenartefakte). „auf keinen Fall verlieren“.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bild",
+   "source": "donors/kfb-island-kit-r2-2026-10-08/STATUS.md",
+   "supersedes": null,
+   "why": "Gut funktionierender Slice, nicht wieder verlieren.",
+   "applies": "Phase B+"
+  },
+  {
+   "id": "V-053",
+   "date": "2026-10-10",
+   "area": "Knete",
+   "verdict": "RULE",
+   "text": "Figuren: dezentes Resident-Atlas-Profil (fine); Umgebung: Kanon 07.10. mit Nahband.",
+   "values": {},
+   "owner": "Lab",
+   "check": "parity: clay-profile",
+   "source": "docs/BASELINE_ACCEPTED_R1.md §4",
+   "supersedes": null,
+   "why": "Figur zu grob, Umgebung ohne Knete – Drift gegen den Kanon.",
+   "applies": "Phase B"
+  },
+  {
+   "id": "V-060",
+   "date": "2026-10-10",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren werden nie skaliert; Maßstab K2 (H = 3,64).",
+   "values": {},
+   "owner": "alle",
+   "check": "parity: scale",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Figuren-Proportionen sind festgelegt; Welt passt sich an.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-061",
+   "date": "2026-10-10",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren-Auswahl: alle KayKit Medium/Large/Legacy, FB v4/v3/v5, alle Textur- und Farbvarianten, KFB-Eye-Rig in Georgs gespeicherter Konfiguration.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Kontaktbogen + Tabelle",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Qualitätskontrolle für Knete, Augen, Licht je Figurenklasse.",
+   "applies": "Phase B2"
+  },
+  {
+   "id": "V-062",
+   "date": "2026-10-10",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Studio-Übernahme 1:1: kein Regler, keine Einstellung geht verloren (inkl. Viseme aus Frankenstein- bzw. Patch-Studio).",
+   "values": {},
+   "owner": "Lab",
+   "check": "Regler-Inventur",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Frühere Ports verloren Regler (z. B. Viseme).",
+   "applies": "Phase H"
+  },
+  {
+   "id": "V-070",
+   "date": "2026-10-10",
+   "area": "Assets",
+   "verdict": "RULE",
+   "text": "Quellen-Reihenfolge: KayKit > Tiny Treats > Quaternius (Natur) > Kenney.",
+   "values": {},
+   "owner": "alle",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "KayKit, Tiny Treats und Quaternius passen zum Cartoon-Look, Kenney ist generischer.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-071",
+   "date": "2026-10-10",
+   "area": "Lizenz",
+   "verdict": "RULE",
+   "text": "Gekaufte Assets (StreakByte, Unity, Cozy Tunes) und private Audio-Dateien nie in ein öffentliches Repo.",
+   "values": {},
+   "owner": "alle",
+   "check": "Push-Prüfung",
+   "source": "docs/KFB_PROJEKTKONTEXT.md",
+   "supersedes": null,
+   "why": "Lizenz bzw. EULA.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-072",
+   "date": "2026-10-10",
+   "area": "Assets",
+   "verdict": "RULE",
+   "text": "Freie Asset-Branches (CC0/eigene Inhalte) darf die Steuerung bei grünen Checks selbst nach main mergen.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Georg will keine Klick-Aufträge für reine Asset-Merges.",
+   "applies": "immer"
+  },
+  {
+   "id": "V-080",
+   "date": "2026-10-10",
+   "area": "Inseln",
+   "verdict": "RULE",
+   "text": "Die 8 StreakByte-Demo-Inseln bleiben, wie sie sind; keine davon ist KFB Town (baut Georg selbst).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Studieren und nutzen statt umbauen; Town ist Georgs eigene Insel.",
+   "applies": "ab 10.10."
+  },
+  {
+   "id": "V-081",
+   "date": "2026-10-10",
+   "area": "Editor",
+   "verdict": "RULE",
+   "text": "God-Mode-Editor: Terrain-Pinsel, Asset-Overlay (Librarian), Resident-Atlas-Inline-Editor mit Snap/Ground, Muster-Pinsel, Terrain-Painter mit Dots-Übergang, Insel-Thema.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Plan F",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Georg gestaltet selbst schneller und besser.",
+   "applies": "Phase F"
+  },
+  {
+   "id": "V-082",
+   "date": "2026-10-10",
+   "area": "Editor",
+   "verdict": "TBD",
+   "text": "Fluff-Zonen (Baum füllen, Mine/Terrain graben, Beete, Angeln) – später.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Spielmechanik Fluff, später.",
+   "applies": "nach F"
+  },
+  {
+   "id": "V-083",
+   "date": "2026-10-11",
+   "area": "Interaktion",
+   "verdict": "TBD",
+   "text": "Tab-Ziel, Angriff per Maustaste, Fluff abschießen/abklopfen mit Zerstörung und Nachwachsen, Action-Bar 1–6 – später.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "why": "Chill-&-Fun-Interaktion, später.",
+   "applies": "nach F"
+  },
+  {
+   "id": "V-084",
+   "date": "2026-10-10",
+   "area": "Claude Design",
+   "verdict": "FAIL",
+   "text": "Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "-",
+   "source": "docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/",
+   "supersedes": null,
+   "why": "Prozedurale Primitive können keine Claymation; Regress.",
+   "applies": "ab 10.10."
+  }
+ ],
+ "imported_acceptance": [
+  {
+   "source": "KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/CHANGELOG.md:11",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
+   "source": "KFB ToolBox Production-05/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r2/TEST_REPORT.md:45",
+   "part": "",
+   "georg": "/ Georg acceptance / PASS 28.09. (UI/UX tune later) /"
+  },
+  {
+   "source": "KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/RETURN.md:2",
+   "part": "",
+   "georg": "Status: **DELIVERED · GEORG ACCEPTANCE PENDING**"
+  },
+  {
+   "source": "_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:293",
+   "part": "",
+   "georg": "Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source"
+  },
+  {
+   "source": "_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:791",
+   "part": "",
+   "georg": "- Georg acceptance OPEN"
+  },
+  {
+   "source": "_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:825",
+   "part": "",
+   "georg": "Georg acceptance remains OPEN. No merge or consumer integration."
+  },
+  {
+   "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95",
+   "part": "",
+   "georg": "/ GEORG ACCEPTANCE / R2 „passt so mit TUNE für später\" (09.10.2026) /"
+  },
+  {
+   "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R1/RETURN.md:39",
+   "part": "",
+   "georg": "/ GEORG ACCEPTANCE / OPEN /"
+  },
+  {
+   "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/RETURN.md:42",
+   "part": "",
+   "georg": "/ GEORG ACCEPTANCE / OPEN /"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3",
+   "part": "",
+   "georg": "Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:8",
+   "part": "Oberseite, ein Mesh, Farb- und Maskenkarte 1024²",
+   "georg": "Richtung gut"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:9",
+   "part": "Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung",
+   "georg": "gut"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:11",
+   "part": "5 Biome (Burg, Utopia, Dystopia, Protopia, Schnee): Palette, Pflanzen, Gelände, ",
+   "georg": "Biome-Logik gut"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:12",
+   "part": "Schnee bis zur Kante, kein Rand-Wall",
+   "georg": "offen"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:13",
+   "part": "Landmarken (Hexagon Pack) ohne Verformung",
+   "georg": "„cool, aber zu eckig, passt nicht zum Knet-Look“"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:14",
+   "part": "Platzierung Bäume (nicht auf Straße, nicht im Bach)",
+   "georg": "offen"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:15",
+   "part": "**Unterseite v2–v6**",
+   "georg": "**FAIL**"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:16",
+   "part": "Wasser, Bach, Wasserfall",
+   "georg": "zurückgestellt"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/KFB_R2D_v0/RETURN.md:114",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu"
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/KFB_R2D_v0/RETURN.md:124",
+   "part": "",
+   "georg": "- OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank."
+  },
+  {
+   "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/KFB_R2D_v0/RETURN.md:127",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“)."
+  },
+  {
+   "source": "KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/RETURN.md:9",
+   "part": "",
+   "georg": "GEORG ACCEPTANCE / OPEN"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.md:16",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1-1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1-1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1-1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.md:16",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1-1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox Stage v1/KFB-ToolBox/stage-first/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox Stage v1/KFB-ToolBox/stage-first/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox Stage v1/KFB-ToolBox/stage-first/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.md:16",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/HANDOVER_WSA.md:33",
+   "part": "",
+   "georg": "Kompaktes Review-Paket: genauer PR/Head, tatsächlich gelaufene Tests, sichtbarer Beleg, offene Punkte, **ein** nächstes Gate. Bericht im Format `SOURCE / DECISI"
+  },
+  {
+   "source": "_kfb_checkin/router/CHANGELOG.md:278",
+   "part": "",
+   "georg": "Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source"
+  },
+  {
+   "source": "_kfb_checkin/router/CHANGELOG.md:776",
+   "part": "",
+   "georg": "- Georg acceptance OPEN"
+  },
+  {
+   "source": "_kfb_checkin/router/CHANGELOG.md:810",
+   "part": "",
+   "georg": "Georg acceptance remains OPEN. No merge or consumer integration."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/STATUS.md:3",
+   "part": "",
+   "georg": "Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/STATUS.md:9",
+   "part": "F0 · Card-Zone-Shader 1:1, Still- und Fließwasser getrennt",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/STATUS.md:10",
+   "part": "F1 · See als Senke, unregelmäßiges Ufer, weiche Wasserlinie",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/STATUS.md:11",
+   "part": "F2 · See → Fluss, zwei Biegungen, Muster entlang der Fließlinie",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/KFB_R2D_v0/RETURN.md:114",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/KFB_R2D_v0/RETURN.md:124",
+   "part": "",
+   "georg": "- OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/KFB_R2D_v0/RETURN.md:127",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“)."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/donors/kfb-island-kit-r2-2026-10-08/KFB_Island_Kit_R1/RETURN.md:69",
+   "part": "",
+   "georg": "**Status Wasser an der Kante:** R1 = FAIL (Georg). Fall v2 = Kandidat, GEORG ACCEPTANCE offen. Überlauf der Meereslippe nach demselben Strang-Prinzip ist OPEN."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/STATUS.md:3",
+   "part": "",
+   "georg": "Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/STATUS.md:9",
+   "part": "F0 · Card-Zone-Shader 1:1, Still- und Fließwasser getrennt",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/STATUS.md:10",
+   "part": "F1 · See als Senke, unregelmäßiges Ufer, weiche Wasserlinie",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/STATUS.md:11",
+   "part": "F2 · See → Fluss, zwei Biegungen, Muster entlang der Fließlinie",
+   "georg": "**PASS**"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/KFB_R2D_v0/RETURN.md:114",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu"
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/KFB_R2D_v0/RETURN.md:124",
+   "part": "",
+   "georg": "- OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/KFB_R2D_v0/RETURN.md:127",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“)."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/_inbox/KFB Island Kit R1 - Hex Assets Worldbuilding(11)/kfb-island-kit-r2-session-2026-10-08/KFB_Island_Kit_R1/RETURN.md:69",
+   "part": "",
+   "georg": "**Status Wasser an der Kante:** R1 = FAIL (Georg). Fall v2 = Kandidat, GEORG ACCEPTANCE offen. Überlauf der Meereslippe nach demselben Strang-Prinzip ist OPEN."
+  },
+  {
+   "source": "KFB Island Worldbuilder Lab/docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/HANDOVER_CLAUDE_CODE.md:41",
+   "part": "",
+   "georg": "SOURCE wie oben · DECISION: Burgmaß, Lage · IMPLEMENTATION: FAILED CANDIDATE · TESTED RESULT: Browser-Messwerte ja, Gestaltung FAIL (Georg) · EXPORT: dieses ZIP"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.md:16",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/stage-first/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",
+   "part": "",
+   "georg": "- Manifest: vier Stände trennen — `technicalSourceBaseline` = WS0 `A_QUELLSTAND/src` (ZIP `948d1950…`) · `currentStudioImplementation` = v18 (7) (`06bc8afe…`, C"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/stage-first/RETURN_STAGE_FIRST_P0_2026-09-16.md:169",
+   "part": "",
+   "georg": "**GEORG ACCEPTANCE: ACCEPTED FOR WORKING BASELINE** (16.09., WSA-Chat) — F-6 / F-7 / F-8 bleiben OFFEN und dokumentiert; nächster Slice `Pose → Props → Stage` *"
+  },
+  {
+   "source": "KFB ToolBox v0.5/KFB-ToolBox/stage-first/CHANGELOG.stage-first.md:4",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge"
+  },
+  {
+   "source": "KFB Billboard Kaleidoscope H14-1/kfb-h14-static-bake-2026-09-30/HANDOVER_WSA_H14.md:80",
+   "part": "",
+   "georg": "Genauer PR/Head, tatsächlich gelaufene Tests (Haltezeiten gemessen, fps), sichtbarer Beleg in Arbeitsgröße, offene Punkte, **ein** nächstes Gate. Format `SOURCE"
+  }
+ ]
+}
