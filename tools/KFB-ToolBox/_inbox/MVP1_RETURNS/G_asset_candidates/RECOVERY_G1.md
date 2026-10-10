@@ -7,6 +7,12 @@ Arbeitsbranch: `planning/kfb-mvp1-asset-candidates-2026-10-10`
 Quellbrief: `sync/lab-rkit-2026-10-09`, `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md`  
 R2-Vergleich/Runbook/Testbericht-Head vor Abschluss: `6a967018bb748d28a33cfdf296eb4e40952962a7`. **Aktuellen Branch-Head immer live erneut lesen.**
 
+## R3 · Dropbox KFB Style References für Bildserie gefunden · 2026-10-10
+- Original-Ordner: `KFB Style References` in `KFB Card Zone Lab v2`; **8/8 Bilddateien** über Dropbox-Liste nachgewiesen, alle mit Preview-Verweisen. Entsprechender GitHub-Spiegel unter `tools/KFB-ToolBox/_inbox/KFB Style References/` enthält sieben gleichnamige Bilder; ROCKOS bisher nur in Dropbox zugeordnet.
+- Neue [Style/Source-Routing- und Webchat-Bildserienanweisung](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md). KFB-Style-Router `skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md` gelesen: Dropbox-Referenzen sind MOOD/STYLE; tatsächliches StreakByte PortLand/Backyard bleibt FORM SOURCE, aktueller Clay/K2-SSOT bindend.
+- **Bisher keine inhaltliche Pixelprüfung durch diesen Chat und kein erzeugtes Bild**. Dropbox Preview-Metadaten sind verfügbar, aber keine Bildgen-Konditionierung mit echten Quelldateien nachgewiesen. Kein `picked`, kein `goldenRef`.
+- Georg: „@Dropbox da liegen in kfb style referenzen alle vorlagen“ (wörtliche Quellenanweisung).
+
 ## R2 · Quellenvergleich / 2026-10-10
 - Native Dropbox-Metadaten der bezahlten Originaldateien geprüft: Port `Floting Base.fbx` 300.044 Byte, Backyard `Backyard Base.fbx` 47.996 Byte. Keine Assets ins Repo übertragen.
 - [Quantitative R2-Vergleichsdaten](G1_TOWN_SOURCE_COMPARISON_R2.json): Port 1.585 Dreiecke / 6 Unterseiten-Tiefpunkte / Tiefe 0,434 W; Backyard 700 / 22 / 0,506 W. Historische Messung, **keine** neuen isolierten 3D-Renders und keine native K2-BBox.
@@ -49,4 +55,4 @@ Native bbox und tatsächliche Skalierung in H; Quellmodell in vier isolierten An
 - Kein externer Ersatz für ein vorhandenes Repo-Asset wurde übernommen.
 
 ## Genau ein nächster Schritt
-**G1 Town Source-Isolation im bestehenden lokalen Lab:** [R2-Protokoll](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md) ohne neue Runtime ausführen: Original-FBX `LPFI_PortLand/Floting Base.fbx` und `LPFL_BackyardLand/Backyard Base.fbx` einzeln zeigen, Front/3-4/Seite/Unterseite (8 Screenshots) plus native `__kfb.info` BBox und Faktor `256/max(sizeX,sizeZ)` messen, Quelle/Blatt/Recovery mit tatsächlichen Bildern aktualisieren. **Keine** paid FBX ins Repo, keine fiktive Freigabe, `picked=null` bis Georg entscheidet.
+**Bild 1 der Webchat-Serie:** echte PortLand-Originalform (durch isolierte Source-Ansicht im bestehenden Island Lab gesichert) plus ausgewählte tatsächliche KFB-Style-Bilddateien als Bildreferenzen in der Bildgenerierung verwenden und **ein** donor-treues 3/4-Town-Island-Claymation-Diorama-Anchor-Bild erzeugen. [Exakter Prompt und Quellenrollen](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md). Kein bloßer Asset-URL-/Dateinamen-Ersatz für das Original-Quellbild; keine Referenz-/Golden-Abnahme ohne reales Bild. Danach Georgs Tuning. Alte Port/Backyard-Vieransichtenprüfung als notwendige Form-Evidenz offen halten.
