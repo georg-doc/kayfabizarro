@@ -1,11 +1,19 @@
 # RECOVERY · G1 Inselkörper und Fels · Webchat G1 · 2026-10-10
 
-Status: **Runde 1 Quelleninventur PERSISTIERT, noch keine Source-Isolation/Georg-Abnahme**  
+Status: **R5 · G1 Concept Previews VERIFIED · full-size PNG GH upload OPEN · G4 bridge visual seam QUARANTINED (2 failed attempts)**  
 Owner: KFB Island Worldbuilder Lab, bounded G1 only  
 Repo: `georg-doc/kayfabizarro`  
 Arbeitsbranch: `planning/kfb-mvp1-asset-candidates-2026-10-10`  
 Quellbrief: `sync/lab-rkit-2026-10-09`, `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md`  
 R2-Vergleich/Runbook/Testbericht-Head vor Abschluss: `6a967018bb748d28a33cfdf296eb4e40952962a7`. **Aktuellen Branch-Head immer live erneut lesen.**
+
+## R5 · G4 Bridge Bildversuche gescheitert und exportiert · 2026-10-10
+- Fortsetzung aus der freigegebenen 40-Motive-Arbeitsliste: [G4-Brückenvergleich und echter img2threejs-Test](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) gelesen. Originale donor-Form und der nicht produktionsreife Render blieben getrennte Quellen.
+- Zwei neue Bilder erzeugt (A1, A2) – beide **FAIL**: beschriftete mehrteilige Präsentationsblätter mit externen Requisiten/Marken statt **einer einzelnen freigestellten** Steinbogenbrücke. Keine visuelle Verbesserung nach der expliziten A2-Reparaturanweisung; deshalb **keine dritte Reparaturrunde**.
+- [Vollständige Fail-Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) und [QA](TEST_REPORT_G1_G4_FAIL_R1.md) erstellt. Originale beider fehlgeschlagenen Bilder (1536×1024 PNG) im Chat-Export `KFB_G4_BRIDGE_FAILURE_RECOVERY_2026-10-10_r1.zip` einschließlich Manifest/Hashes/Report/Previews. ZIP **nicht** auf GitHub, belegte Prüfsumme `4cdf6cbf812650baf62982d17a4402c00d519f8706de6c7d661884b224435735`.
+- **10/10 Paket-/Datei-Checks PASS**, **0/2 G4 Visual-PASS**. Die alten **3/3** tatsächlichen WebP-G1-Vorschauen auf GitHub bleiben unverändert; die drei vollständigen G1-PNGs weiterhin **0/3 GitHub**, trotz intaktem ZIP und **3/3** SHA256-Vergleich.
+- [40-Motive-Editorial-Liste](G1_SCENE_ASSET_WORKLIST_R1.md) und [JSON](G1_SCENE_ASSET_WORKLIST_R1.json) markieren nur G4-Steinbogen als `visual_attempt_failed_quarantined`. Andere Owner, WorldBuilder-Runtime und der übrige Bildserien-Plan bleiben unangetastet.
+- Georgs neue Nachricht: „top! weiter..“. Keine neue `picked`- oder `goldenRef`-Entscheidung zum Steinbogen.
 
 ## R4 · Bildserie im Webchat und Szenen-/Assetliste · 2026-10-10
 - Georgs positive Richtungsrückmeldungen: „sieht cool aus! aber der look könnte noch cartooniger, stilisiert und weniger realistisch sein, denke ich….“ → nach KFB Clay-Tuning: „super!“ → nach Protopia-Variante: „super!“ (nur optische Richtung, **kein** Pick/Golden).
@@ -63,4 +71,4 @@ Native bbox und tatsächliche Skalierung in H; Quellmodell in vier isolierten An
 - Kein externer Ersatz für ein vorhandenes Repo-Asset wurde übernommen.
 
 ## Genau ein nächster Schritt
-**Hochauflösende Bilder in GitHub abschließen:** Die drei vollständigen PNG-Dateien aus dem bereits angehängten `KFB_MVP1_G1_Concept_Images_2026-10-10.zip` in die im [Bildregister](G1_RENDERED_CONCEPTS_R1.md) reservierten Pfade auf dem G1-Branch laden (z. B. durch berechtigten ChatGPT-Work-GitHub-Client oder im ZIP enthaltenen geprüften Uploadhelfer), nach jeder GitHub-Schreibaktion genauen Head und Datei-Checksums zurücklesen, dann Galerie-JSON/MD, Recovery, Return und Changelog aktualisieren. **Keine** neuen Assets oder Renderer, kein Live/Merge, Bilder als `CONCEPT` statt Golden/Source-Original markieren. Anschließend nächstes offenes Einzelmotiv aus [Szenenliste](G1_SCENE_ASSET_WORKLIST_R1.md) schrittweise rendern.
+**Die drei bereits existierenden G1-Original-PNGs auf GitHub fertig hochladen.** Das intakte `KFB_MVP1_G1_Concept_Images_2026-10-10.zip` enthält die vollständigen Bilder und ein verifiziertes Manifest; benutze dafür einen netzwerkfähigen autorisierten GitHub-Binär-Client (z. B. Work) auf `planning/kfb-mvp1-asset-candidates-2026-10-10`. Nach jedem Write exakten Branch-Head und echte Originaldatei-Hashes prüfen; [Bildregister](G1_RENDERED_CONCEPTS_R1.json)/MD, Recovery, Return, Changelog aktualisieren. **G4-Brücke bleibt als gescheiterte Bildgenerierungs-Seam eingefroren**, bis deren Owner eine einzelne tatsächliche Quellansicht bereitstellt. Kein Live, Stage, Merge und keine dritte gleichartige Bildkorrektur.
