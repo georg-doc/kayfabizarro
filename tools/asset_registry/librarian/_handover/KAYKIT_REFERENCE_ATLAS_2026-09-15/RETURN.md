@@ -1,5 +1,32 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## CURRENT CHECKPOINT · 2026-10-10 · Site-backed recovery + Modular / Atlas SOP
+
+**Mode:** RESEARCH ONLY. **Owner:** existing Asset Librarian / KayKit Reference Atlas. **Product state:** WB2 R4 STOPPED / F-R39 FAIL / NO MVP. Neither another World owner nor a new GPT Site was created.
+
+**Latest source report:** `KAYKIT_MODULAR_AND_ATLAS_SOURCE_AUDIT_2026-10-10.md`
+**Crash-safe entry:** `KAYKIT_AND_CO_RECOVERY_READ_FIRST_2026-10-10.md`.
+**Existing topic matrix and source watchlist:** `KAYKIT_AND_CO_TOPIC_COVERAGE_MATRIX_2026-10-10.md`, `KAYKIT_CREATOR_TUTORIAL_RESEARCH_2026-10-10.md`.
+
+**Actual source findings:**
+- KayKit 1024×1024 shared gradient atlas with optional reduction to 128 as creator-pack information; no per-asset acceptance of 128.
+- KFB World Atlas already measured real KayKit pointy-top hex size 2.0×2.309, top Y=0 and six-edge masks; `hex-grid.js` also preserves rejected atlas-colour connectivity sampling and verified edge-class approach.
+- Kenney Asset Forge 1×1×1, bottom pivot and custom-block import are **Kenney-only authoring conventions**, not defaults for KayKit.
+- Source atlas/UV/base-map must be preserved; KFB clay presentation stays with K1/H0 Golden + K2/v10 technical base, not destructive recolouring. World/Track/Motion owners remain unchanged.
+- Prepared modular source/contact and neutral-to-KFB-Clay material SOPs. **0** new source-isolated images, Blender runs, runtime/browser/Stage tests; findings are documentation, not product acceptance.
+
+**Durable Site backup:** existing authenticated `https://kfb-production-control.frizzlebob.chatgpt.site/`, workflow `KFB_KAYKIT_CREATOR_TUTORIAL_RESEARCH_2026-10-10`:
+- modular/atlas source audit: file ID `446386fd-d3be-458f-b0e5-c7d023658ae1`, saved and read back;
+- Recovery Read First: file ID `753b952a-9fc3-4446-a946-ab550b635092`, exact-content readback;
+- cross-creator topic matrix: file ID `a97a25ff-eb55-4bc8-b4ee-20eea141782c`, exact-content readback.
+- current Return snapshot will be saved in the same workflow.
+
+This is **existing Site document-store persistence**, not a new visible Asset Librarian Site page, a new frontend publication or a Hub/Cloudflare change. GitHub branch is authoritative.
+
+**One next productive gate:** `KAYKIT_MODULAR_ATLAS_SOURCE_ISOLATION_01` — isolated original asset+UV and KFB neutral/Clay visual A/B by the existing Blender MCP / World Atlas specialist; no runtime build. Earlier Kay Lighting tutorial frame scan remains separately `INPUT_BLOCKED` and must not be promoted to PASS.
+
+---
+
 ## ADDENDUM · 2026-10-10 · KayKit & Co thematic coverage (research)
 
 New official-source-backed comparison: `KAYKIT_AND_CO_TOPIC_COVERAGE_MATRIX_2026-10-10.md`. It inventories Quaternius's 28 public Blender tutorial topics, Kenney's 3D import/Asset Forge docs, and existing KayKit creator tutorials and asset-pack source facts. Prioritized source-to-KFB knowledge gaps: modular building origins/contact, gradient+UV atlas, native rig/attachment workflows, lighting, facial blendshapes, gap-only animation, tool/Fluff work, nature and editable city/biome modules. Explicitly distinguishes **creator topic AVAILABLE**, **KFB owner/source PRESENT**, and **integration / visual proof NOT YET DONE**. The 18.09 KayKit Registry override supersedes older "missing pack" lists; no acquisition advice or compatibility claim inferred.
