@@ -23,6 +23,7 @@ Anlass: Die Steinbogen-Renders im Bauweise-Blatt v7 (schwebende Steine, Lücken 
 | Q5 | **Keine nackten Kästen bzw. harten Kanten (§01):** jede sichtbare Kante gerundet oder mit Rubbel bzw. Knetfleck eingebettet | 0 scharfe Kanten über 0,2 H Länge |
 | Q6 | **Anschluss:** Fahrbahn, Gehweg und Brückendeck schließen an Gelände bzw. Nachbarstück an | Höhensprung ≤ 0,02 H, Spalt ≤ 0,02 H |
 | Q7 | **Keine Platzhalter im Abnahmebild** (Primitive, Kugeln, Testfarben), außer klar beschriftet als „Platzhalter“ | 0 unbeschriftete |
+| Q8 | **Kein Anschnitt durch Gelände** (ergänzt nach Steinbogen Lauf 01): Mauer- und Pflastersteine sind zu ≥ 90 % sichtbar oder als Passstein auf die Geländelinie zugeschnitten; keine Felsfläche schneidet eine Mauerlage gerade ab | 0 angeschnittene Steine |
 
 Dazu ein Pflicht-Kamerasatz **„Nah“**: Unterseite des Bauteils, Auflager bzw. Widerlager, beide Enden, Anschluss an Gelände, je auf Laufhöhe 0,9 H und schräg von unten. Der Bericht an Georg zeigt die Q-Messwerte vor den Kritiker-Punkten.
 
