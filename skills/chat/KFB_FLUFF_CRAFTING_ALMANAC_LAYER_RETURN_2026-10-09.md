@@ -562,3 +562,228 @@ Then:
 
 Use one real visual feature + one current Card/Quote context to compare:
 Buddy → Clown → Dark Heel → Toy Soldier.
+
+
+---
+
+## Global Sinnfeld / Good Neighbourhood + Vampire authoring reconciliation · 2026-10-10
+
+Status: **AUTHORING RECONCILIATION COMPLETE · SOURCE-BACKED VAMPIRE/BAT PREP · NO RUNTIME WRITE**
+
+Georg asked to bring the new visual-perception / Social-Edge / Triplet work back into the older KFB conceptual spine and add the Vampire as a distinct voice/worldbuilding pilot.
+
+### New global authoring files
+
+- `skills/chat/KFB_GLOBAL_SINNFELD_GOOD_NEIGHBOURHOOD_TRIPLET_AUDIT_2026-10-10.md`
+- `skills/chat/KFB_CHARACTER_SINNFELD_REGISTER_PROFILE_SCHEMA_V0_1_2026-10-10.json`
+
+Core selection chain:
+
+`Perception → Sinnfeld → Denkbewegung → Social Edge → Triplet → Closure`
+
+The audit confirms that this is an additive bridge between already existing KFB ideas rather than a new dialogue engine.
+
+### Existing KFB conceptual sources reconciled
+
+Current/historical GitHub sources already contain:
+- Aby Warburg / good neighbourhood as meaning created by juxtaposition/re-ordering;
+- Markus Gabriel / Sinnfelder as context-dependent meaning;
+- fractal construction across figure → Card → Page → Deck → room → Town → world;
+- player closure rather than explanatory NPC wrap-up;
+- historical Overworld class logic `Doctrine · Actor Form · Sinnfeld`;
+- current Semantic Triplet grammar `subject → connector → reframe`;
+- worldview / sociolect / cadence / response-habit voice guidance;
+- historical TTS fixtures with sparse `Methinks` / `Verily` precedent.
+
+Historical KFB/Mnemosyne/NOS work also used Good Neighborhood as fertile adjacency, Denkbewegung selection and validity-vs-fertility distinctions. The exact old implementation home is **not pinned as current game source** and is therefore recorded only as:
+`HISTORICAL AUTHORING LINE · CURRENT GITHUB HOME UNRESOLVED`.
+
+No runtime dependency is invented from that history.
+
+### Good Neighbourhood → Triplet interpretation
+
+Current authoring model:
+
+`SUBJECT = Anchor A`
+`CONNECTOR = relation / neighbourhood / gutter`
+`REFRAME = offered third meaning`
+
+A useful adjacency must be:
+- grounded;
+- related;
+- decisively different;
+- productive;
+- economical in added assumptions;
+- open enough for player/other-speaker closure.
+
+### Sinnfeld/Register profile
+
+New candidate metadata covers:
+- core/neighbour/low-affinity fields;
+- temporal/cultural register;
+- epistemic mode;
+- lexical fields;
+- metaphor domains;
+- preferred thought moves;
+- adjacency preferences;
+- syntax/discourse tendencies;
+- sparse archaic markers;
+- code-switch triggers;
+- claim/uncertainty policy;
+- humor register;
+- speech-avoid rules.
+
+It complements rather than replaces:
+Resident source truth, Visual Characterization, Relationship Memory, Social Edge and ChatterBox.
+
+### Vampire authoring prep
+
+New:
+`skills/chat/KFB_VAMPIRE_VOICE_SINNFELD_BAT_FORM_PREP_V0_1_2026-10-10.md`
+
+Current Georg direction:
+- strong distinct Vampire Character;
+- separate territory/home;
+- Vampire Island / Vampire Tower as later side-island / satellite / instance / topology candidate, **not silently a fifth current core island**;
+- morbid occult/synchro-mystic humor;
+- long historical perspective;
+- sparse archaic-English touches;
+- differentiated vocabulary and thought movement rather than catchphrase archaeology.
+
+Occult / alternative-history topics such as Freemasonry, Nephilim traditions, Tartaria narratives, hidden-history traditions and esoteric symbolism are treated as:
+**diegetic lore / legend / hypothesis / belief unless established by an external Card/Quote/World source**.
+
+They are not promoted to KFB engine truth by Character voice.
+
+### Vampire source facts
+
+Source:
+`media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb`
+
+Confirmed:
+- Rig_Medium;
+- 23 joints;
+- pack `artwork.png` / `contents.png`;
+- `Vampire_Goblet.gltf`;
+- `Vampire_Sword.gltf`;
+- `Vampire_Throne.gltf`;
+- Gem Small / Medium / Large.
+
+Existing Town direction already keeps Vampire and Black Knight as separate home candidates.
+
+### Bat-form source donor
+
+Exact Quaternius donor:
+`media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/Bat.gltf`
+
+Pinned:
+- blob `483d61a0d540cd85cc8162eb4401dc8560255c8c`;
+- commit `073b79c3fb4052f7f4691976663ffc0c9449f7f3`;
+- 1 mesh;
+- 1 skin;
+- 17 nodes;
+- 4 animations:
+  - `Bite_Front`;
+  - `Death`;
+  - `Flying`;
+  - `HitRecieve`.
+
+This supports a real later **Vampire → bounded clay-bat swarm → traversal → reform** donor study.
+
+It does NOT yet prove:
+- swarm behavior;
+- instancing performance;
+- KFB Clay compatibility;
+- transformation;
+- collision;
+- camera;
+- flight ownership;
+- gameplay balance.
+
+### Vampire Sinnfeld
+
+Core direction:
+mortality · immortality · memory · lineage · blood/exchange/debt · night · threshold/invitation · secrecy · ritual · relic · archive · recurrence · decay · inheritance · celestial cycles.
+
+Preferred Denkbewegungen:
+HISTORICIZE · JUXTAPOSE · ANALOGIZE · ANACHRONISM · VISUAL_RHYME · SCALE_SHIFT · TRACE_PROVENANCE · CONTRAST · ROLE_REVERSAL · QUESTION_PREMISE.
+
+Working epistemic register:
+**synchro-mystic antiquarian**
+
+Working humor register:
+**morbid synchro-mystic courtesy**
+
+Archaic markers are low-weight seasoning, not a grammar engine.
+
+### Productive relationship tensions
+
+- Vampire ↔ Lorekeeper: secret continuity vs provenance.
+- Vampire ↔ Witch: symbolic correspondence vs practical transformation.
+- Vampire ↔ Caveman: elaborate ancient-history reading vs possible first-hand old-world memory.
+- Vampire ↔ Skeletons: competing relationships to mortality/persistence.
+- Vampire ↔ Historian/Chronicler: personal long memory vs recorded chronology.
+- Vampire ↔ Toy Soldier: ancient predation vs petty modern surveillance/control.
+- Vampire ↔ Clown: mystic grandeur forced into physical/stage proof.
+
+The "ancient Character" axis should therefore preserve **different sources of temporal authority**, not one shared old-person voice.
+
+### Visual Characterization priority
+
+The first source-extraction pilot is now six Characters:
+1. Toy Soldier;
+2. Survivalist;
+3. Clown;
+4. Skeleton Warrior;
+5. Lorekeeper;
+6. Vampire.
+
+Current queue remains:
+- 21 current Resident Atlas entries;
+- 49 source-pinned Character coverage records.
+
+Vampire is added as `PENDING_SOURCE_ISOLATION` with exact Character/prop/Bat donor refs.
+
+### Evidence
+
+Verified branch head before this Return write:
+`b584f15ad7a82251c5085c9e321af060bbf1f49b`
+
+Static/source/ownership checks:
+**25/25 PASS**
+
+Checks cover:
+- Warburg/Gabriel/fractal source presence;
+- current Triplet micro-Good-Neighbourhood interpretation;
+- historical unresolved-source boundary;
+- worldview/sociolect voice principle;
+- Methinks/Verily precedent;
+- generic Sinnfeld/Register schema;
+- no runtime owner;
+- Vampire source/props;
+- separate-home precedent;
+- no fifth-core-island promotion;
+- sparse archaic policy;
+- occult claim boundary;
+- relationship field;
+- six-Character visual pilot;
+- 21/49 coverage counts unchanged;
+- Vampire source isolation still pending;
+- exact Bat source structure;
+- real `Flying` animation.
+
+Actual runtime/browser/LLM/TTS/3D source-isolation/transform/Site/Stage tests in this authoring slice:
+**0**.
+
+No PR, merge, Live promotion or current World runtime mutation.
+
+### One next authoring/data gate
+
+`SINNFELD_REGISTER_PROFILE_PILOT_01`
+
+Use the six-Character pilot to source-isolate visuals and write one reviewed Sinnfeld/Register profile per Character.
+
+For Vampire specifically:
+`VAMPIRE_VISUAL_REGISTER_SOURCE_PROOF_01`
+
+No Bat-swarm implementation before isolated visual/material/motion proof.
