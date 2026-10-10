@@ -178,7 +178,7 @@ Eine durchgehende Spielsitzung im Lab:
 4. Über die Brücke nach Protopia, zum Lorekeeper auf den Hügel.
 5. Gespräch mit Auftrag, zurück nach Town.
 
-Ohne Kamera-Fehler und ohne harte Schnitte; Kritiker bestanden; Georg PASS.
+Ohne Kamera-Fehler und ohne harte Schnitte; **Bauqualität Q1–Q7 gemessen bestanden** (nichts schwebt, keine Lücken, keine Durchdringung, keine nackten Kästen, Anschlüsse dicht, keine Platzhalter; `QA_CRITIC_PROTOCOL_R1.md` §1b) auf jeder Stufe, bevor ein Bild an Georg geht; Kritiker bestanden; Georg PASS.
 
 ## 5b · Ablauf nach dem Reset (Owner)
 

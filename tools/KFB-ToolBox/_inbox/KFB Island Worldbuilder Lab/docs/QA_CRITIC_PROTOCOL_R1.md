@@ -6,9 +6,25 @@ Stand: 2026-10-09. Fertige Vorlage, damit die Abnahme ab Stufe 1 sofort mitläuf
 
 - **Blind:** Der Kritiker sieht nur Bilder aus festen Kameras, das passende Regelwerk und die Referenzbilder. Er sieht keinen Code, keine Erklärungen und keine Absichten der Bauenden.
 - **Eigene Instanz:** Er läuft als frischer Subagent ohne Gesprächsverlauf, nie als dieselbe Sitzung, die gebaut hat.
-- **Erst harte Regeln:** Ist eine harte Regel verletzt, gibt es keinen Kritiker-Lauf; zuerst reparieren.
+- **Erst harte Regeln:** Ist eine harte Regel oder eine Bauqualitäts-Prüfung (§1b) verletzt, gibt es keinen Kritiker-Lauf und kein Bild an Georg; zuerst reparieren.
 - **Ehrlich berichten:** Georg sieht Punkte, Befunde und Bilder ungeschönt; „bestanden“ nur nach Schwelle.
 - **Stopp:** Nach 2 erfolglosen Reparaturrunden wird gestoppt und Georg gefragt. Ein Kriterium unter 4 heißt zurück zum Konzept, nicht weiter reparieren.
+
+## 1b · Stufe 0: Bauqualität vor jedem Bild (hart, automatisch; Georg 10.10.)
+
+Anlass: Die Steinbogen-Renders im Bauweise-Blatt v7 (schwebende Steine, Lücken im Mauerwerk, verschmierte Bogensteine, nackter Fahrbahn-Kasten, lila Platzhalter-Kugeln) sind durch die Abnahme gerutscht, auch durch die Steuer-Sitzung. **Nichts geht mehr an Georg oder an einen Kritiker, bevor diese Prüfungen als Messung bestanden sind.** Sie laufen als Skript über die Szene, nicht per Auge.
+
+| Nr. | Prüfung | Grenze |
+| --- | --- | --- |
+| Q1 | **Nichts schwebt:** jedes Bauteil, jeder Rubbel und jede Pflanze berührt einen Träger (Boden, Nachbarstein, Fels) | Abstand ≤ 0,02 H; 0 Ausnahmen |
+| Q2 | **Keine Lücken im Verband:** Mauer-, Pflaster- und Bogenreihen sind geschlossen; Fläche = Steine + Fugen | Lücke ≤ Fuge × 1,5; 0 fehlende Steine |
+| Q3 | **Keine Durchdringung** sichtbarer Körper (außer bewusst eingelassen: Fels im Gelände, Fundamente) | ≤ 0,05 H |
+| Q4 | **Geometrie je Bauteil:** Bogensteine radial und gleich lang (keine gestreckten Platten), Platten im Raster, Kantensteine einzeln | Abweichung ≤ 10 % |
+| Q5 | **Keine nackten Kästen bzw. harten Kanten (§01):** jede sichtbare Kante gerundet oder mit Rubbel bzw. Knetfleck eingebettet | 0 scharfe Kanten über 0,2 H Länge |
+| Q6 | **Anschluss:** Fahrbahn, Gehweg und Brückendeck schließen an Gelände bzw. Nachbarstück an | Höhensprung ≤ 0,02 H, Spalt ≤ 0,02 H |
+| Q7 | **Keine Platzhalter im Abnahmebild** (Primitive, Kugeln, Testfarben), außer klar beschriftet als „Platzhalter“ | 0 unbeschriftete |
+
+Dazu ein Pflicht-Kamerasatz **„Nah“**: Unterseite des Bauteils, Auflager bzw. Widerlager, beide Enden, Anschluss an Gelände, je auf Laufhöhe 0,9 H und schräg von unten. Der Bericht an Georg zeigt die Q-Messwerte vor den Kritiker-Punkten.
 
 ## 2 · Ablage
 
