@@ -1,5 +1,14 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## ADDENDUM · 2026-10-10 · lighting video source audit / visual scan INPUT_BLOCKED
+
+- Attempted the previously designated `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01` with the exact YouTube video URL, oEmbed and targeted transcript/ID discovery. Available Web/HTTP surfaces did not provide actual frames, timecodes or captions. 0 video frames, 0 verified settings, 0 transcript lines. This gate remains `INPUT_BLOCKED`, **not PASS**.
+- Created `KAYKIT_LIGHTING_VIDEO_SOURCE_AUDIT_2026-10-10.md` under the existing Atlas. It documents official Godot environment facts separately from Kay's creator statements and from KFB inferences. KFB current repo source checks: **18/18 static assertions** across `wd-light.js`, WhackMan donor router and the newer `LESSONS_SHADOWS.md`.
+- Important owner correction: `wd-light.js` is the WorldDesign/WhackMan **comparison donor**, not an active universal Sky/Environment owner; it offers only BASELINE and WHACKMAN, a six-torch pool, fixed 2048 shadow map and old bias constants. Existing shared dynamic/texel-relative shadow SOP supersedes fixed lab numbers for later KFB use. Background, fog and tone mapping writes remain host-Environment-owned.
+- Checked actual WorldBuilder PR #348 Return: R4 remains STOPPED, F-R39 FAIL, NO MVP. No implementation, new runtime, lighting preset, Blender render, human visual proof, GitHub PR, merge, Stage/Site or Hub routing change.
+- Updated the main Creator Tutorial Atlas index with the dossier pointer and honest evidence boundary.
+- **One next gate:** `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01` through a video/browser-capable executor able to inspect real timestamped creator frames, then a bounded source-isolated KFB comparison. No re-run of the source audit.
+
 ## ADDENDUM · 2026-10-10 · timeout recovery and official source verification
 
 Prior GitHub head `eaa898d431edabd10e7dadb2939aa45407ef7c79` and both intended files were independently read back. Production Control latest Return also existed; **no missing/unknown write**. Continuing source research found the official Mixed Bag 1 page with 24 named creator Live Show modeling requests and channel-link VOD reference (channel URL, not episode permalinks), plus official Series 6 creator-linked animation preview `zSzzEmdIiXI`. New section 11 in the main report records KFB-relevant asset targets and FREE/EXTRA/SOURCE entitlement distinctions. No video frame study or runtime claims. Next gate unchanged: **KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01**.
