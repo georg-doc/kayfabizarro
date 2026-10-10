@@ -1,6 +1,20 @@
 # G1 · Asset-Kandidaten MVP-1 · Inselkörper und Fels (Runde 1)
 Stand: 2026-10-10 · **Quelleninventur, noch keine visuelle Freigabe** · `kfb.asset-candidates/1`
 
+## R2 · Originalbasen präzisiert (10.10.2026)
+
+Neuer quantitativer Nachweis: [Town Port/Backyard Vergleich](G1_TOWN_SOURCE_COMPARISON_R2.json); [Surgical Source-Isolation Runbook](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md).
+
+| Historischer Messwert (8.10.; Originalbasen auf W=60 normiert) | PortLand | BackyardLand |
+|---|---:|---:|
+| Dreiecke | 1.585 | 700 |
+| Unterseiten-Tiefpunkte | 6 | 22 |
+| Unterseiten-Tiefe / Breite | 0,434 | 0,506 |
+| Schollenplatte / Breite | 0,026 | 0,037 |
+| Hypothetische Unterseiten-Tiefe bei **40 MC = 256 Lab = 70,33 H** Town-Breite | 30,52 H | 35,59 H |
+
+**Schlussfolgerung aus vorhandener Messung:** Port ist zunächst günstiger für eine ruhige Town-Silhouette, nicht nachweislich schon KFB-kompatibel. Geöffneter Source-Viewer `originals.ts` und vorhandenes `tools/shoot.mjs` lassen sich mit einer temporären Kamera-/Sichtbarkeitsänderung im lokalen Lab für acht echte Original-Ansichten nutzen (je Front, 3/4, Seite, Unterseite). Ungepatcht zeigt `originals.ts` kein einziges Objekt wirklich exklusiv und verwendet für alle Basen die Port-Atlastextur: **keine** Abnahme der nativen Materialidentität. Bestehende alte Screenshots `orig__all.jpg` und weitere sind nur Kontext, nicht das verlangte A/B-Isolationspaar. G1 hat **0** neue Original-Render und **0** native K2-BBox-Messungen; kein GoldenRef/Pick/Stage. Lokaler Direktdownload der Dropbox-Binärdateien war in diesem Webchat mangels DNS nicht möglich. Das Runbook ist reproduzierbar, aber **noch nicht ausgeführt**.
+
 ## Ergebnis
 **Town-Plateau:** StreakByte Port-Land `Floting Base.fbx` ist derzeit A-Kandidat **nur für eine isolierte Sichtprüfung**, keine produktive Freigabe. Vier weitere vorhandene Basiskörper sind aufgelistet. **Protopia-Berginsel:** keine einzige der fünf nachgewiesenen Quellen hat bisher eine bestätigte, schmale hohe Gesamt-Silhouette bei gleichzeitig begehbarer Oberseite. Die Höhe lässt sich evtl. durch vorhandene StreakByte-Basis plus `Mountain.fbx` erzielen, aber das ist noch **unbewiesen**.
 
