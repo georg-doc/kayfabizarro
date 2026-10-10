@@ -1,5 +1,7 @@
 # G4 Stairs · Source-locked KFB style/image brief R2
 
+> **R3 SUPERSESSION · 2026-10-11:** This old R2 source-locked **material-only** prompt must not be executed as the current new task. Georg requested **visible geometric form redesign**, not surface repair. Current Work authority: [WSA form-design R3 brief](BRIEF_WSA_G4_FORM_DESIGN_R3_2026-10-11.md). R2 is the tech/donor baseline (updated source HEAD `52099710569a98393325ee94becf616f418b35f2`), and a genuine pillar consists of visible `foot/shaft/cap`, not just a higher blob. Save old prompt as historical reference.
+
 **Current status:** PREPARED; no successful source-faithful generation yet. Do not use the same failing image-only promotional-board route unchanged.
 
 **Required image/mesh inputs (actual pixels, not just URLs):**
