@@ -1,5 +1,12 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · Webchat G1 · R8 §7a, Mood rock, 5-image ZIP, source-first workflow
+- User-uploaded revised `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md` updated **byte-identically** on G1 planning branch (Git blob `e0263ac0a3d709cc6d36f58b39a4a898c2714916`); old sync source remains historical. New §7a permits labeled multi-angle concept sheets and imposes 5–6 large build-form roles plus per-board `PARTS.md`. `STONE BRIDGE 01` reclassified **STYLE_DIRECTION_ONLY**, not Golden/Asset-Pick; historical fail evidence preserved, G4 retains owner.
+- Georg latest rock comment: helpful **Mood** but insufficient **asset-form fidelity**. [Gallery register](G1_RENDERED_CONCEPTS_R1.json) now counts **4 G1 mood/concept entries** and **4/4 real GitHub previews** (new rock WebP blob `3fead6142ebd0ee7876634f1c85975d47ca99a05`), **0 full PNGs on GitHub**. [Kenney `PARTS.md`](refs/large_boulders/PARTS.md), [PROMPT](refs/large_boulders/PROMPT.md) for next source-led generation.
+- New `KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip` holds **4 G1 original PNG + 1 G4 style sheet PNG**, per-image SHA256/manifest and preserved old images, SHA256 `ff939342f5df8d474d70232b269c0a51b0d8f7866b10c54643e8f834a5f92aca`. **Must actually transfer ZIP to Work** for later GitHub upload; ZIP is not hosted on GitHub.
+- [Reconciliation](G1_R8_BRIEF_RECONCILIATION.md), [G4 handoff](G1_G4_STONE_BRIDGE_01_STYLE_HANDOFF_R8.md), [test evidence](TEST_REPORT_G1_R8.md): 13/13 GH static, 13/13 ZIP content tests. No Site or public deployment required.
+- **Next:** source-conditioned (actual source pixels) G1 `rock_largeA` board, no new G4 bridge composition; persist versioned ZIP + `PARTS.md` and await human selection before Golden.
+
 ## 2026-10-10 · G1 · Webchat ZIP-Batch-Workflow zur verlustsicheren Bildserie
 - Georg klärt: schrittweise neue Motive im Webchat, vollständige Original-PNGs in ZIPs sammeln und am Ende per WSA Work/GitHub hochladen; keine erneuten Brückenbilder. Prozess vereinbart und [G1-Webchat-zu-Work-Handoff](G1_WEBCHAT_IMAGE_BATCH_TO_WORK_HANDOFF_R1.md) mit Datei-SHA, Work-Binär-Readback, separaten Fehlerarchiven sowie explicit ZIP-Transfer eingerichtet.
 - Existierende G1-Original-ZIP-Datei lokal intakt (3/3 PNG-SHA) und Chat-Anhang, aber weiterhin **0/3 PNGs auf GitHub**; drei kleinen Vorschauen sind dort 3/3. Ohne ZIP-Upload/Download in dauerhaftes user-controlled Storage keine Garantie chatübergreifender Verfügbarkeit.
