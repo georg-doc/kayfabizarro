@@ -26,6 +26,11 @@ Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später l
 4. **Ein Besitzer je Baustein (§4).** Wer etwas braucht, bindet den Besitzer an und baut es nicht nach.
 5. **Darstellung zur Abnahme.** 3D-Bauteile zeigt man als echte 3D-Renders in Knet-Material mit Profilschnitt, und zwar aus den Spielkameras. Eine Vergrößerung auf wenige Einheiten zählt nicht. Eine 2D-Skizze dient nur als Lageplan.
 6. **Abnahme-Kette.** Erst laufen die harten Regeln automatisch, dann der blinde Kritiker mit Punkten (Mittel ≥ 8, kein Wert < 6, Weltlogik ≥ 7), erst danach sieht Georg das Ergebnis. Nach 2 erfolglosen Reparaturen ist Stopp; ein Kriterium unter 4 heißt zurück zum Konzept.
+8. **Speicher und Rechner schonen (Georg 10.10., nach Plattenvorfall RKIT).** Gilt für alle Sitzungen mit Blender, Unity, Renderjobs oder großen Downloads:
+   - **Vor jedem schweren Lauf** freien Platz (`df -h /System/Volumes/Data`) und Swap (`sysctl vm.swapusage`) prüfen. **Unter 40 GB frei startet kein Lauf**; stattdessen eine Meldung an Georg, wie viel er wofür freiräumen soll.
+   - **Schwere Prüf- und Renderläufe nur im Hintergrund-Blender** (`blender -b … -P …`), nie im offenen Blender bzw. über Blender MCP. Ein Wächter stoppt den Lauf bei über 12 GB Arbeitsspeicher des Prozesses oder unter 20 GB freiem Platz.
+   - **Nach einem MCP-Timeout nicht nachschieben,** sondern erst `top -o mem` und `df -h` ansehen.
+   - **Vorher grob nennen,** wie viel Platz ein Lauf braucht (Renders, Blend-Dateien, Swap-Risiko).
 7. **Maßstab K2.** Es gibt keine Meter. Gemessen wird in H (Medium-Figur = 3,64 Lab-Einheiten) und MacroCell (MC = 6,4 = ein Dungeon-Modul bzw. ein Stockwerk). Inselstrecken laufen mit Rennprofil × 1,46 (RACE_W).
 
 ## 1 · Ziel in einem Satz
