@@ -1,6 +1,6 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
-Status: **S3 EXISTING-SITE VOICE BENCH PUBLISHED · HUMAN LISTENING OPEN · NO WORLD RUNTIME PROMOTION**
+Status: **S3 VOICE ACTING SITE ESTABLISHED · HEURISTIC MVP CASTING AUTHORIZED FOR PREP · FINE-TUNING LATER · NO WORLD RUNTIME PROMOTION**
 
 ## Owner / scope
 
@@ -263,3 +263,23 @@ Current gate remains **HUMAN LISTENING** on existing KFB Audio Voice Acting: voi
 **HUMAN LISTENING · PUBLISHED KFB AUDIO VOICE ACTING BENCH**
 
 Georg selects one Triplet and compares voice solo / D bed without ducking / D bed with ducking, then returns KEEP / TUNE / CUT for voice, bed balance and ducking. Only accepted mappings and provider takes may then advance; six-mode mappings remain editable candidates meanwhile.
+
+## 2026-10-10 · Georg heuristic MVP casting + spoken NPC conversation + shared performance timeline
+
+**Georg steering:** Current S3 Voice Acting usability is reported positively ("funktioniert alles sehr gut"). For first MVPs he approves a reversible **heuristic male/female/synthetic voice-direction audition** based on actual characters and archetypal voice sound; detailed Georg fine-tuning follows later. No individual voice clip/model/rights has been accepted yet, and a voice-lane preference never rewrites Resident identity. This supersedes the older voice-lane step "wait for Georg KEEP/TUNE/CUT before even assigning candidates" only for the **preliminary casting proof**.
+
+Additive owner files on Draft PR #379:
+- `MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md` — annotated direction: real PetStudio thought/speech donor, async 3-dot waiting vs semantic thought/silence, subtle look/idle, real playback-clock-driven KFB Audio ducking + existing TALK_LOOP_NO_LIPSYNC + bubble progressive reveal, optional ASR/operator commands and free LLM→Triplet path, future Maker Space stage.
+- `data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json` — 5 editable audition candidates (3 required Demon Lord / Robot One / Farmer A; optional older Lorekeeper / Witch feminine contrast), `mappingFinal:false`, no invented vendor voice IDs, rights unresolved, no irreversible gender truth.
+- Updated `START_HERE.md`, `TEST_REPORT.md` and future Work/WSA voice brief route; original donor work and version history preserved.
+
+**Source evidence:** Resident Atlas `cast.js`; current Voice MVP proof/Casting R2; original PetStudio `bubble.v1.js` code (two thought-tail circles, one bubble form owner); ChatterBox Studio triplet handover; 8-channel Resident Performance Event Contract; current EyeRig SSOT recovery (#375). **No actual isolated 3D donor screenshot or stage render** was produced. No new figure/mouth/eyerig/audio engine was implemented.
+
+**New checks:** 23/23 static doc/data acceptance assertions; 2/2 Site artifact save+readback exact text match. Site private Production Control documents:
+- concept file `50b32e81-06b4-440e-921d-22b8b5016b5f`, SHA-256 `a41dbf83c0f43399f6d1a59d4622aea986a1fd30c88158b89441d694e2aa5c92`;
+- data file `af5c3ac2-e37b-49dd-8ce8-d0b2a2f6620a`, SHA-256 `2922ea6c135069fe58bbd3fee3345593ae14521954b58a7299cf4544e0fddca2`.
+
+**Actual new audio/ASR/LLM/3D/browser/game/runtime tests:** 0 each; no KFB Audio Site version/update, paid voice generation, World R5, DocCheck runtime, public Stage, Site promotion, PR merge or Live deployment. Existing voice bed/ducking implementation remains unchanged. DocCheck's Speakrail/VoiceIO/CME stays on its separate Draft PR #11.
+
+**Next KFB Voice owner gate (UPDATED): `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1`.** Future WSA if separately authorized: run real audibly grounded English voice auditions against three actual source actors / one source-backed Triplet and existing KFB Audio timeline; retain manual override, annotate sources/licensing and distinguish functional proof from artist acceptance. Optional spoken operator control follows later; free conversational ASR/LLM and actual holographic Maker Space stage are subsequent tasks. In-world voice requires separate Four-Island A/B approval and receiving-owner runtime authorization. Georg fine-tuning remains future, not an early blocking gate.
+
