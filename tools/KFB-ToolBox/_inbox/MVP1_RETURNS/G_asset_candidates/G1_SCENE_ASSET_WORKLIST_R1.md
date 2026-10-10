@@ -15,7 +15,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 | S02 | Protopia: schmalere höhere Scholle | G1 | P0 | 1 Konzeptbild erstellt, originaltreu ungeprüft |
 | S03 | Town-Straße: Fahrbahn/Bord/Gehweg/Anschluss | G2 | P0 | noch ohne Bilder |
 | S04 | Ringstraße / Joyride-Racetrack | G3 | P1 | noch ohne Bilder |
-| S05 | Steinbogenbrücke und Burgaufstieg | G4 | P0 | noch ohne Bilder; img2threejs Steinbogen-Look nur Richtungsdonor |
+| S05 | Steinbogenbrücke und Burgaufstieg | G4 | P0 | 2 Konzeptversuche FEHLGESCHLAGEN/QUARANTÄNE – beschriftete Mehrbildblätter statt Einzelobjekt; kein akzeptiertes Bild |
 | S06 | Markt und Burgumfeld | G5 | P1 | noch ohne Bilder |
 | S07 | Protopia-Farmerland / Bergaufstieg / Eremit | G6 | P1 | noch ohne Bilder |
 
@@ -54,7 +54,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 ## G4 · Brücke und Treppe · P0
 *S05 · Burgaufstieg und Brückenanschluss* · Quellen zuerst: Kenney castle-kit / KayKit Medieval Builder / StreakByte / gekauft Medieval Castle Modular; img2threejs Steinbogen als Richtungsdonor
 
-- [ ] **21. Steinbogenbrücke (optional mehrere Felder)** (`stone_arch_bridge`) — offen; freigestellte Originalquelle vor Integration, Bogen wächst aus Fels
+- [ ] **21. Steinbogenbrücke (optional mehrere Felder)** (`stone_arch_bridge`) — **2 Renderfehler / QUARANTÄNE**; [vollständige Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md); beide Bilder nicht als G4-Asset übernehmen. Freigestellte Originalquelle vor Integration, Bogen wächst aus Fels
 - [ ] **22. Brückenkopf / Widerlager** (`bridge_abutment`) — offen; in Scholle verankert
 - [ ] **23. Brüstung** (`bridge_parapet`) — offen; breit und gerundet
 - [ ] **24. Brückenpfeiler** (`bridge_support`) — offen; Kontakt und Schwerkraft
@@ -87,4 +87,4 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 Ein Objekt pro Bild, gleiche neutrale Studioumgebung, 3/4 zuerst; Front, Seite und Unterseite nach Bildentscheidung bei Schollen/Brücken. Gerundete Knetformen und kontrollierter Materialmix; keine fotorealistischen Oberflächen, keine CAD-Schnitte, keine gleichmäßig wiederholten Module. Kein zusätzliches Set-Dressing, Figuren, Tiere, Autos, Texte oder Logos im isolierten Asset-Render. K2: 1 MC = 1,76 H, Town ≈40 MC, Protopia 20–28 MC. Keine fiktiven Maße. Baseline-Quelle bleibt der aktuelle Lab-/Asset-Librarian-Bestand, nicht die Bildgen-Komposition. Bilder separat als 'CONCEPT / STYLE PROPOSAL' kennzeichnen, bis der tatsächliche Donor einzeln visuell bestätigt ist.
 
 ## Nächste einzelne Bildentscheidung
-Auf Basis der aktuellen Serie als nächstes **G1 schmale Protopia-Bergscholle TUNE** oder **G4 freigestellter Steinbogen** wählen. Der nächste tatsächlich zu erzeugende Render ist eine Bildentscheidung, kein neuer Runtime-Bau. Die aktuelle G1-Recovery gibt das verbindliche nächste Gate vor.
+**G4-Steinbogen ist nach 2 nicht verbesserten Einzelobjekt-Renders eingefroren**; siehe [Fehlerexport/Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md). Das aktuelle G1-Gate ist zunächst das **hochaufgelöste PNG-Upload-Finish**, bevor weitere Bilder eingecheckt werden. Danach kann G1 einen neuen Fels-/Schollen-Donor isoliert darstellen; G4 erst mit tatsächlicher Quelle und eigenem qualitätsgesichertem Einzelbild-Gate.
