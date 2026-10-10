@@ -1,5 +1,12 @@
 # RETURN · G1 · MVP-1 Inselkörper und Fels · 2026-10-10
 
+## Additive Runde R2 · 2026-10-10
+- Source-refined Town comparison: [G1_TOWN_SOURCE_COMPARISON_R2.json](G1_TOWN_SOURCE_COMPARISON_R2.json). Port 6 underside local minima versus Backyard 22, historical depth ratios 0.434 W / 0.506 W. Projected at 40 MC Town width: 30.52 H versus 35.59 H underside, **not native bbox measurements**.
+- Existing Lab `src/originals.ts` and `tools/shoot.mjs` inspected. Original viewer lacks exclusive source focus and shares Port atlas across all bases. [G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md) specifies temporary local four-view source-only proof with rollback, not a second runtime.
+- [TEST_REPORT_G1_R2.md](TEST_REPORT_G1_R2.md): **13/13 new static/source checks PASS**; prior 18/18 inventory checks retained. Source visual proof remains **0/8**; native BBox **0/2**; no Georg selection.
+- Binary source files are private and confirmed via Dropbox metadata; this chat's render environment could not fetch them due to external DNS resolution limits. No fake screenshots or new generated substitutes were recorded.
+- **Exactly one next gate remains unchanged:** execute existing-lab isolated Port/Backyard eight-view capture and native bbox tests; then update this G1 Return/Recovery. No Stage/Site, no merge, no private asset upload.
+
 **Classification:** SOURCE INVENTORY R1 COMPLETE · VISUAL ACCEPTANCE OPEN · NO RUNTIME MVP CLAIM  
 **Owner:** KFB Island Worldbuilder Lab / asset candidate workstream G1  
 **Repo:** `georg-doc/kayfabizarro`  
