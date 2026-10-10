@@ -1,0 +1,114 @@
+{
+ "id": "kfb_gift_held_pop",
+ "fps": 30,
+ "note": "unbox in the hands without a clip; frames count from the end of gift_receive (receiver holds its last pose)",
+ "frames": {
+  "squash": [
+   0,
+   8
+  ],
+  "squashMin": 4,
+  "squashScaleZ": 0.75,
+  "lidOff": 10,
+  "reveal": 10,
+  "propPeak": 18,
+  "propLand": 26,
+  "reactStart": 26
+ },
+ "lid": "flies up about 0.9 m x (H/2.17) and away",
+ "prop": "jumps 0.7 m x (H/2.17) above the box top, lands beside the receiver",
+ "reactionDefault": {
+  "receiver": "kfb_react_delighted_a",
+  "giver": "kfb_react_amused_a",
+  "blendIn": 8
+ },
+ "sequenceRuns": {
+  "M": {
+   "variant": "M",
+   "boxWidth": 0.454,
+   "palmToBoxSide": {
+    "giver": [
+     -0.0,
+     0.001
+    ],
+    "receiver": [
+     0.014,
+     0.014
+    ]
+   },
+   "timeline": {
+    "giveStart": 1,
+    "receiveStart": 11,
+    "release": 51,
+    "grab": 51,
+    "securedHold": 101,
+    "popSquash": [
+     101,
+     109
+    ],
+    "lidOff": 111,
+    "reveal": 111,
+    "propLand": 127,
+    "reactStart": 127
+   }
+  },
+  "Lfit": {
+   "variant": "Lfit",
+   "boxWidth": 0.876,
+   "palmToBoxSide": {
+    "giver": [
+     0.004,
+     0.008
+    ],
+    "receiver": [
+     -0.0,
+     -0.0
+    ]
+   },
+   "timeline": {
+    "giveStart": 1,
+    "receiveStart": 11,
+    "release": 51,
+    "grab": 51,
+    "securedHold": 101,
+    "popSquash": [
+     101,
+     109
+    ],
+    "lidOff": 111,
+    "reveal": 111,
+    "propLand": 127,
+    "reactStart": 127
+   }
+  },
+  "Lgiant": {
+   "variant": "Lgiant",
+   "boxWidth": 1.88,
+   "palmToBoxSide": {
+    "giver": [
+     -0.001,
+     0.003
+    ],
+    "receiver": [
+     0.031,
+     0.031
+    ]
+   },
+   "timeline": {
+    "giveStart": 1,
+    "receiveStart": 11,
+    "release": 51,
+    "grab": 51,
+    "securedHold": 101,
+    "popSquash": [
+     101,
+     109
+    ],
+    "lidOff": 111,
+    "reveal": 111,
+    "propLand": 127,
+    "reactStart": 127
+   }
+  }
+ }
+}

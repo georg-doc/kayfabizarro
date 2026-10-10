@@ -1,0 +1,1012 @@
+{
+ "schema": "kfb.motion-catalog.v1/patch",
+ "batch": "EXCH-01",
+ "date": "2026-10-05",
+ "base": "KFB_Motion_Library.catalog.json (+ patch_an01, patch_duel01, patch_fluff01)",
+ "apply": "append clips[] and libraries{}; exchangeEvents{} and callSet{} annotate existing clips. Nothing existing changes.",
+ "bodyHeight": {
+  "Rig_Medium": 2.17,
+  "Rig_Large": 4.19
+ },
+ "libraries": {
+  "libs/Rig_Medium/KFB_Motion_exchange01.glb": {
+   "rig": "Rig_Medium",
+   "group": "Exchange + reaction kit 01 (EXCH-01)",
+   "bytes": 1062548,
+   "sha256": "7666df8ca6361df845dbdd33487d92c6d2df15c5c3ada1a90ed33c33329bb71a",
+   "clipCount": 14
+  },
+  "libs/Rig_Large/KFB_Motion_exchange01.glb": {
+   "rig": "Rig_Large",
+   "group": "Exchange + reaction kit 01 (EXCH-01)",
+   "bytes": 1502608,
+   "sha256": "f83465b63c62f4706cb8b2ab49500644ee0e86c1952ae350d76340b037c7dc0f",
+   "clipCount": 17
+  }
+ },
+ "clips": [
+  {
+   "id": "kfb_react_delighted_a",
+   "label_de": "Jubeln (BINGO!)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 76,
+    "Rig_Large": 76
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "BINGO!",
+   "source": "kfb_gesture_cheering_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     75
+    ],
+    "Rig_Large": [
+     0,
+     75
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 21.3,
+     "maxStepInnerDeg": 24.2,
+     "footMinY": 0.023
+    },
+    "Rig_Large": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 23.0,
+     "maxStepInnerDeg": 24.2,
+     "footMinY": 0.034
+    }
+   }
+  },
+  {
+   "id": "kfb_react_contradict_a",
+   "label_de": "Kopfschuetteln (BONGO.)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 59,
+    "Rig_Large": 51
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "BONGO.",
+   "source": "kfb_gesture_thoughtful_head_shake_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     6,
+     64
+    ],
+    "Rig_Large": [
+     6,
+     56
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 59,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 6.8,
+     "maxStepInnerDeg": 1.9,
+     "footMinY": 0.026
+    },
+    "Rig_Large": {
+     "frames": 51,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 7.7,
+     "maxStepInnerDeg": 1.2,
+     "footMinY": 0.045
+    }
+   }
+  },
+  {
+   "id": "kfb_react_boggle_a",
+   "label_de": "Verwirrt nachfragen (BOGGLE?)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 76,
+    "Rig_Large": 76
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "BOGGLE?",
+   "source": "kfb_reaction_surprised_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     14,
+     89
+    ],
+    "Rig_Large": [
+     14,
+     89
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 10.5,
+     "maxStepInnerDeg": 3.8,
+     "footMinY": 0.019
+    },
+    "Rig_Large": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 7.9,
+     "maxStepInnerDeg": 3.8,
+     "footMinY": 0.037
+    }
+   }
+  },
+  {
+   "id": "kfb_react_dismiss_a",
+   "label_de": "Abwinken (Bloedsinn...)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 41,
+    "Rig_Large": 40
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "Bloedsinn...",
+   "source": "kfb_gesture_dismissing_gesture_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     4,
+     44
+    ],
+    "Rig_Large": [
+     5,
+     44
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 41,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 9.3,
+     "maxStepInnerDeg": 21.6,
+     "footMinY": 0.026
+    },
+    "Rig_Large": {
+     "frames": 40,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 10.7,
+     "maxStepInnerDeg": 21.6,
+     "footMinY": 0.044
+    }
+   }
+  },
+  {
+   "id": "kfb_react_fluffy_a",
+   "label_de": "Freudenhuepfer (FLUFFY!)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 43,
+    "Rig_Large": 43
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "FLUFFY!",
+   "source": "kfb_locomotion_joyful_jump_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     4,
+     46
+    ],
+    "Rig_Large": [
+     4,
+     46
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 43,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 16.0,
+     "maxStepInnerDeg": 35.6,
+     "footMinY": 0.02
+    },
+    "Rig_Large": {
+     "frames": 43,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 15.8,
+     "maxStepInnerDeg": 35.6,
+     "footMinY": 0.036
+    }
+   }
+  },
+  {
+   "id": "kfb_react_kayfabe_a",
+   "label_de": "Zeigen (Kayfabe!)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 61,
+    "Rig_Large": 61
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "Kayfabe!",
+   "source": "kfb_gesture_pointing_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     60
+    ],
+    "Rig_Large": [
+     0,
+     60
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 61,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 11.6,
+     "maxStepInnerDeg": 19.8,
+     "footMinY": 0.026
+    },
+    "Rig_Large": {
+     "frames": 61,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 12.6,
+     "maxStepInnerDeg": 19.8,
+     "footMinY": 0.048
+    }
+   }
+  },
+  {
+   "id": "kfb_react_pop_a",
+   "label_de": "Starke Geste (Pop!)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 49,
+    "Rig_Large": 49
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "Pop!",
+   "source": "kfb_gesture_strong_gesture_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     48
+    ],
+    "Rig_Large": [
+     0,
+     48
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 49,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 23.0,
+     "maxStepInnerDeg": 31.4,
+     "footMinY": 0.014
+    },
+    "Rig_Large": {
+     "frames": 49,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 23.1,
+     "maxStepInnerDeg": 31.4,
+     "footMinY": 0.027
+    }
+   }
+  },
+  {
+   "id": "kfb_react_outraged_a",
+   "label_de": "Empoert",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 51,
+    "Rig_Large": 51
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": null,
+   "source": "kfb_gesture_angry_gesture_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     6,
+     56
+    ],
+    "Rig_Large": [
+     6,
+     56
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 51,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 8.7,
+     "maxStepInnerDeg": 10.7,
+     "footMinY": 0.025
+    },
+    "Rig_Large": {
+     "frames": 51,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 8.7,
+     "maxStepInnerDeg": 10.7,
+     "footMinY": 0.045
+    }
+   }
+  },
+  {
+   "id": "kfb_react_amused_a",
+   "label_de": "Lachen",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 76,
+    "Rig_Large": 76
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": null,
+   "source": "kfb_idle_laughing_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     78,
+     153
+    ],
+    "Rig_Large": [
+     78,
+     153
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 6.8,
+     "maxStepInnerDeg": 12.9,
+     "footMinY": 0.02
+    },
+    "Rig_Large": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 8.2,
+     "maxStepInnerDeg": 12.9,
+     "footMinY": 0.02
+    }
+   }
+  },
+  {
+   "id": "kfb_react_disappointed_a",
+   "label_de": "Enttaeuscht",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 66,
+    "Rig_Large": 68
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": null,
+   "source": "kfb_idle_sad_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     3,
+     68
+    ],
+    "Rig_Large": [
+     2,
+     69
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 66,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 9.7,
+     "maxStepInnerDeg": 16.8,
+     "footMinY": 0.023
+    },
+    "Rig_Large": {
+     "frames": 68,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 8.8,
+     "maxStepInnerDeg": 16.8,
+     "footMinY": 0.029
+    }
+   }
+  },
+  {
+   "id": "kfb_react_scared_a",
+   "label_de": "Erschrocken",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 76,
+    "Rig_Large": 76
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": null,
+   "source": "kfb_reaction_scared_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     192,
+     267
+    ],
+    "Rig_Large": [
+     60,
+     135
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 10.8,
+     "maxStepInnerDeg": 3.8,
+     "footMinY": 0.002
+    },
+    "Rig_Large": {
+     "frames": 76,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 6.3,
+     "maxStepInnerDeg": 4.8,
+     "footMinY": 0.031
+    }
+   }
+  },
+  {
+   "id": "kfb_react_taunt_a",
+   "label_de": "Necken",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 49,
+    "Rig_Large": 48
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": null,
+   "source": "kfb_gesture_taunt_b",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     48
+    ],
+    "Rig_Large": [
+     0,
+     47
+    ]
+   },
+   "entryExit": "starts and ends on KayKit Idle_A (12-frame ease)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 49,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 32.8,
+     "maxStepInnerDeg": 24.6,
+     "footMinY": 0.015
+    },
+    "Rig_Large": {
+     "frames": 48,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 32.8,
+     "maxStepInnerDeg": 24.6,
+     "footMinY": 0.036
+    }
+   }
+  },
+  {
+   "id": "kfb_react_dizzy_a",
+   "label_de": "Benommen (Bizarro Stufe 2)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 134,
+    "Rig_Large": 134
+   },
+   "fps": 30.0,
+   "loop": true,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "Bizarro...?! (2)",
+   "source": "kfb_reaction_dizzy_idle_a",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     133
+    ],
+    "Rig_Large": [
+     0,
+     133
+    ]
+   },
+   "entryExit": "loop",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 134,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 1.4,
+     "maxStepInnerDeg": 2.0,
+     "footMinY": 0.026
+    },
+    "Rig_Large": {
+     "frames": 134,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 1.4,
+     "maxStepInnerDeg": 2.0,
+     "footMinY": 0.042
+    }
+   }
+  },
+  {
+   "id": "kfb_react_faint_a",
+   "label_de": "Ohnmacht (Bizarro Stufe 3)",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": {
+    "Rig_Medium": 25,
+    "Rig_Large": 51
+   },
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "call": "Bizarro...?! (3)",
+   "source": "Death_A",
+   "sourceTrim": {
+    "Rig_Medium": [
+     0,
+     24
+    ],
+    "Rig_Large": [
+     0,
+     50
+    ]
+   },
+   "entryExit": "starts on Idle_A, ends lying (hold last frame / KayKit Death_A_Pose)",
+   "events": {
+    "reactStart": 0,
+    "peak": null
+   },
+   "verify": {
+    "Rig_Medium": {
+     "frames": 25,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 50.5,
+     "maxStepInnerDeg": 0,
+     "footMinY": 0.016
+    },
+    "Rig_Large": {
+     "frames": 51,
+     "roundTrip": 0.0,
+     "maxStepBlendDeg": 8.5,
+     "maxStepInnerDeg": 21.9,
+     "footMinY": 0.037
+    }
+   }
+  },
+  {
+   "id": "kfb_interaction_gift_give_fit_a",
+   "label_de": "Geschenk geben (Orc, Arme eingezogen)",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "source": "kfb_interaction_gift_give_a",
+   "note": "arm-in IK FIT for normal gift sizes; use the original clip for a giant gift (hands 1.80 m apart)",
+   "events": {
+    "offerReady": 30,
+    "release": 50
+   },
+   "fit": {
+    "maxIK": 0.0491,
+    "maxPalmDeg": 12.0,
+    "boxWidth": 0.876
+   }
+  },
+  {
+   "id": "kfb_interaction_gift_receive_fit_a",
+   "label_de": "Geschenk annehmen (Orc, Arme eingezogen)",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "source": "kfb_interaction_gift_receive_a",
+   "note": "arm-in IK FIT for normal gift sizes; use the original clip for a giant gift (hands 1.80 m apart)",
+   "events": {
+    "reachReady": 38,
+    "grab": 40,
+    "secured": 68
+   },
+   "fit": {
+    "maxIK": 0.0542,
+    "maxPalmDeg": 12.2,
+    "boxWidth": 0.876
+   }
+  },
+  {
+   "id": "kfb_interaction_opening_a_lid_fit_a",
+   "label_de": "Deckel abheben (Orc, Arme eingezogen)",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "intake": "EXCH-01",
+   "source": "kfb_interaction_opening_a_lid_a",
+   "note": "arm-in IK FIT for normal gift sizes; use the original clip for a giant gift (hands 1.80 m apart)",
+   "events": {
+    "lidGrab": 53,
+    "lidOff": 163
+   },
+   "fit": {
+    "maxIK": 0.0013,
+    "maxPalmDeg": 4.4,
+    "lidWidth": 0.926
+   }
+  }
+ ],
+ "exchangeEvents": {
+  "kfb_interaction_gift_give_a": {
+   "offerReady": 30,
+   "release": 50
+  },
+  "kfb_interaction_gift_receive_a": {
+   "reachReady": 38,
+   "grab": 40,
+   "secured": 68,
+   "startAfterGiverFrames": 10
+  },
+  "kfb_interaction_opening_a_lid_a": {
+   "Rig_Medium": {
+    "lidGrab": 52,
+    "lidOff": 162
+   },
+   "Rig_Large": "use kfb_interaction_opening_a_lid_fit_a"
+  },
+  "kfb_fluff_knead_press_a": {
+   "note": "Fluff -> gift: knead loop, then POP to a present (merge timing: squash 26-34, POP 36, settle 56)"
+  },
+  "heldPop": {
+   "clip": null,
+   "note": "unbox in the hands, no clip; frames count from the end of gift_receive (its frame 90); the receiver holds the last pose",
+   "squash": [
+    0,
+    8
+   ],
+   "lidOff": 10,
+   "reveal": 10,
+   "propLand": 26,
+   "reactStart": 26
+  },
+  "handoverRootDistance": {
+   "Rig_Medium": 1.149,
+   "Rig_Large": 2.774
+  },
+  "giftSize": {
+   "rule": "per gift (small / medium / giant), runtime choice",
+   "Rig_Medium": {
+    "boxWidth": 0.454
+   },
+   "Rig_Large": {
+    "normal": {
+     "boxWidth": 0.876,
+     "clips": "*_fit_a"
+    },
+    "giant": {
+     "boxWidth": 1.88,
+     "clips": "original"
+    }
+   }
+  },
+  "measured": {
+   "M": {
+    "giver": [
+     -0.0,
+     0.001
+    ],
+    "receiver": [
+     0.014,
+     0.014
+    ]
+   },
+   "Lfit": {
+    "giver": [
+     0.004,
+     0.008
+    ],
+    "receiver": [
+     -0.0,
+     -0.0
+    ]
+   },
+   "Lgiant": {
+    "giver": [
+     -0.001,
+     0.003
+    ],
+    "receiver": [
+     0.031,
+     0.031
+    ]
+   }
+  }
+ },
+ "callSet": {
+  "BINGO!": {
+   "meaning": "yes / agree",
+   "clip": "kfb_react_delighted_a"
+  },
+  "BONGO.": {
+   "meaning": "no / contradict",
+   "clip": "kfb_react_contradict_a",
+   "strong": "kfb_react_outraged_a"
+  },
+  "BOGGLE?": {
+   "meaning": "unclear / confused, asks back",
+   "clip": "kfb_react_boggle_a",
+   "gap": "puzzled shrug / head tilt (Georg checks Quaternius/Mixamo)"
+  },
+  "Bloedsinn...": {
+   "meaning": "reject + leave",
+   "clip": "kfb_react_dismiss_a",
+   "then": "runtime turn + kfb_locomotion_sad_walk_a"
+  },
+  "FLUFFY!": {
+   "meaning": "delighted surprise",
+   "clip": "kfb_react_fluffy_a"
+  },
+  "Kayfabe!": {
+   "meaning": "interjection",
+   "clip": "kfb_react_kayfabe_a"
+  },
+  "Pop!": {
+   "meaning": "interjection",
+   "clip": "kfb_react_pop_a",
+   "sound": "clay POP"
+  },
+  "Bizarro...?!": {
+   "meaning": "cognitive dissonance / disbelief",
+   "escalation": [
+    "kfb_react_contradict_a",
+    "kfb_react_dizzy_a",
+    "kfb_react_faint_a"
+   ],
+   "runtime": "counter per NPC per session; 3rd trigger = Ontological Schick-Schock, write to Lean Memory",
+   "getUp": "kfb_reaction_getting_up_a (runtime crossfade from the lying pose)"
+  },
+  "calloutObject": "kneaded clay 3D letters, billboard to camera, collider (see CALLOUT_LOOK.png)"
+ }
+}
