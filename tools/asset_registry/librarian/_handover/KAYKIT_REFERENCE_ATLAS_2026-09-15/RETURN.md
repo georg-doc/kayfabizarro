@@ -1,5 +1,9 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## ADDENDUM · 2026-10-10 · Twitch / X / Blender MCP research workflow
+
+Added `KAYKIT_MULTICHANNEL_RESEARCH_AND_BLENDER_MCP_HANDOFF_2026-10-10.md` on this same research branch. Twitch channel verified but individual active VOD IDs were not exposed. Kay's official Patreon confirms Live Show episodes 0–4 and YouTube VOD exports. Twitch VOD expiration and non-guaranteed native captions are documented. X/Grok discovery prompt contract and source/timecode/visual-review schema are specified; Claude Coworker / Blender MCP is assigned only targeted later source-isolated visual comparison/reproduction of selected tutorial segments, not bulk-video viewing or runtime ownership. No creator content re-hosted, no actual Blender reproduction or screen capture performed. One next gate remains `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`.
+
 ## ADDENDUM · 2026-10-10 · creator channel follow-up
 
 The report now includes a separately provenance-labeled channel discovery pass (section 10). Official Live Show VOD episodes 0–4 are creator-confirmed and their Blender-source-author teaching purpose is documented, but the individual YouTube VOD URLs could not be independently verified. A more recent Episode 6 Twitch stream is supported by Kenney's public feed; it is not misrepresented as a verified YouTube VOD. The prior four direct tutorial IDs remain the only named direct-video entries. Priority now distinguishes immediate Lighting/Character MVP evidence from later source modeling/VOD research. No new runtime or lighting owner, video frames, deployment, PR or merge. Next gate unchanged: **KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01**.
