@@ -1,4 +1,17 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.4
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.5
+
+> **ADDITIVE FOREST ISLAND / WEREWOLF + TRIPLET DIALOGUE · 2026-10-10**
+>
+> New [KFB_FOREST_CABIN_WEREWOLF_ISLAND_CHARACTER_COMEDY_V1_2026-10-10.md](./KFB_FOREST_CABIN_WEREWOLF_ISLAND_CHARACTER_COMEDY_V1_2026-10-10.md) on the **existing** planning branch, not a parallel runtime. It documents Georg's next post-MVP liminal forest/campsite/folklore island in the fragmented Island Galaxy; two differently colored Hiker **instances of one authentic source `Hiker.glb`**, two registered real texture options (`hiker_texture.png`, `hiker_texture_b.png`), original Tent and Waterbottle and distinct source models `Werewolf_Man.glb` / `Werewolf_Wolf.glb` with axe/log props. Confirming model and texture file existence does not prove a functioning two-actor scene or animated transformation.
+>
+> Author-specific comic backstory: the woodcutter is persistently mistaken for **Wolverine** due to appearance, resents having his real craft and identity overwritten by pop-culture projection, and may reluctantly exploit the misunderstanding to hide his werewolf nature. No copied superhero visual identity. Two Hikers may embody contrasting but revisable suspicions. Proposed Island silhouettes: broken forest wedge with bent dead tree / campfire and split clearing–wild ridge, adjacent to but distinct from the Graveyard/Vampire/Demon Dark Cluster. Deck mapping OPEN, no new canon island/deck ID.
+>
+> **Dialogue correction:** use actual KFB ChatterBox/semantic Triplet source lineage, `subject → connector → reframe` in a **single bubble**, authored semantic/relation middle beat, valid silence, contextual source/witness/speaker selection and existing ChatterBox owner. Do not substitute ordinary 3-line scripted back-and-forth, hardcode novel generic lines, mutate ChatterBox pool, or add a second dialogue owner. Candidate examples only; two Hiker palettes and transformation/animations require source-isolated later proof.
+>
+> Concept checkpoint `ee7ece1192f0b618af1e468d7ccdedd0d4823fac`, confirmed blob `4ac344040761f629ef940e7c54087eb029ab5358`. **10/10 static content spot checks PASS** and concept file/head read back. Zero new runtime/render/browser/audio/dialogue integration/site/stage tests. No PR/merge/Live. Parent deferred gate `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` unchanged; Forest considered an optional donor-audit subsection.
+
+---
+
 
 > **ADDITIVE DESIGN BRIEF · 2026-10-10 · GRAVEYARD / DARK CLUSTER SILHOUETTES**
 >
