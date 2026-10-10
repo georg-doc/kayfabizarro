@@ -1,5 +1,7 @@
 # PROMPT · G1 large_boulders · source-guided KFB plate R2
-State: **NEXT RENDER, NOT EXECUTED** · owner G1 · uploaded briefing §7a overrides earlier blanket ban on labeled sheets.
+State: **HISTORICAL R2 PROMPT — QUARANTINED AFTER R9 TWO SOURCE FIDELITY FAILS** · owner G1 · uploaded briefing §7a overrides earlier blanket ban on labeled sheets.
+
+> **R9 STOP / CURRENT SOURCE ROUTE · 2026-10-10:** Two ImageGen attempts produced high branded rock towers despite verified four-view image; both failed original shape. Do **not** rerun this prompt unchanged. Actual `rock_largeA` mesh is a low slab (Y/max XZ = 0.256). Inspect `rock_largeB.glb` as a more voluminous alternative (source ratio 0.424) or use source-preserving material shader in existing Lab. Source must enter next image workflow as actual attached pixels or native GLB. R9 recovery: [G1_R9_ROCK_SOURCE_FIDELITY_RECOVERY.md](../../G1_R9_ROCK_SOURCE_FIDELITY_RECOVERY.md). Keep earlier R2 prompt below as historical authoring recipe, not an active repeat gate.
 
 **INPUTS REQUIRED:** attach the actual four-view Kenney `rock_largeA.glb` geometry render as **image**; available source proof `../source-isolation/G1_kenney_rock_largeA_source_4view.svg` (technical 4-view projection). Attach one or two genuinely inspected KFB Style References only for material/light treatment. A GitHub URL loaded as text does not count as image conditioning. If source images cannot be attached, title the result a MOOD exploration, not donor-faithful.
 
