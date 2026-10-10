@@ -24,6 +24,25 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
 | **Terrassen-Insel** | mehrere Stufen in MC-Höhen | Anbau nach oben bzw. unten |
 | **Themen-Insel** | aus einem einzelnen Pack (Wüste, Boardgame-Bits, Voxel, Bäckerei) bzw. aus einer gekauften Demo-Insel | Quickstart, je Insel ein Deck |
 
+## 2b · Formsprache: keine Einheits-Deckplatte (Georg 10.10.)
+
+Inseln sollen sich in **Grundfläche und Gesamtform** deutlich unterscheiden. Nicht jede Insel ist eine abgeschnittene Platte mit gleich hoher Kante und gleichem Kegel darunter. Erst wird gestaltet, dann gerechnet: Jede Insel bekommt vor dem Bau ein kurzes Formblatt (Silhouette von vorn, Seite und oben, ein Satz Weltlogik: warum sieht sie so aus).
+
+**Form-Modifikatoren** (kombinierbar, im Rezept unter `form`):
+
+| Modifikator | Bild | Weltlogik-Beispiel |
+| --- | --- | --- |
+| `rimProfile` | Kante nicht überall gleich hoch: Höhen-Wellen, Senken, Anstiege bis zur Kante | gewachsenes Land statt Tablett |
+| `cliffs` | Abschnitte, an denen die Rundung zu einer Felswand wird (Abbruch), mit Rubbel bzw. Geröll darunter | Erosion, Steinbruch, Burgfels |
+| `terraces` | Stufen in MC-Höhen, auch an der Kante sichtbar | angelegte Felder, Weinberg, Stadtterrassen |
+| `crags` | zerklüftete Felsgrate bzw. Zacken, die aus der Oberseite brechen | Berg-Insel, Protopia |
+| `split` | zerbrochene Insel: zwei bzw. drei Teile mit gezacktem Bruch und Spalt, verbunden über Brücke bzw. Steg oder getrennt | Katastrophe, Riss, Geschichte des Ortes |
+| `fragments` | kleine abgebrochene Brocken, die neben der Insel schweben, mit Gras bzw. Busch | Folge von `split`, Sprungsteine, Landeplätze |
+| `overhang` | Oberseite ragt über die Scholle hinaus, darunter Höhle bzw. Wurzeln | Wasserfall, Höhle, Unterseite mit Leben |
+| `undersideStyle` | `cone` (eine Spitze), `lobes` (2–3 Lappen), `broken` (gezackt), `roots` (Wurzeln hängen) | passend zur Geschichte der Insel |
+
+Regeln: §01 gilt für jede Bruch- und Felskante (gerundete Knet-Kanten, Rubbel, keine glatten Schnittflächen). Jede Insel nutzt mindestens einen Modifikator, der sie von ihren Nachbarn unterscheidet. Die MVP-Inseln geben die Richtung vor: **Town** = Plateau mit Burgfels-Abbruch (`cliffs`) und Terrassen zur Stadtseite; **Protopia** = zerklüftete Berg-Insel (`crags`, `cliffs`) mit 1–2 schwebenden Brocken (`fragments`).
+
 ## 3 · Werkzeuge im Gott-Modus
 
 1. **Form:** Umriss-Editor (vorhanden) plus Archetyp. **Erweitern** nach oben (Terrasse +1 MC), nach unten (Scholle tiefer bzw. Stalaktiten) und zur Seite (Ausbuchtung, Nachbarteil anschmelzen per weichem Abstandsfeld).
@@ -58,7 +77,7 @@ Jeder Archetyp ist ein Rezept aus R2D-Bausteinen (Abstandsfeld, Höhe, Masken, S
 - **Inseln als Rezept bzw. Insel-Konfiguration speichern, nicht als fertiges Mesh:** Archetyp, Größe, Seed, Umriss, Palette (Rollen), Terrain-Edits (Pinselstriche), Anker, **Gebäude bzw. Residenzen, Bewohner (Figuren-Karten-IDs mit Welt-Variante) und Decks (0…n Deck-IDs)**. Alles zusammen ist der gemeinsame Seed der Insel, speicher- und editierbar. Die Insel-Konfiguration ist das **WorldRecipe einer Insel** im Sinne von `SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE` (Academy-Foundry, Hologramm-Miniatur und Gott-Modus lesen dasselbe Rezept, nur mit anderer Ansicht).
   ```json
   { "schema": "kfb.island-config/1", "worldId": "protopia", "archetype": "mountain", "size": "satellite",
-    "seed": 42, "outline": [], "palette": { "roles": "ENV_ROLES.protopia" }, "edits": [],
+    "seed": 42, "outline": [], "form": { "undersideStyle": "lobes", "crags": 3, "cliffs": [], "fragments": 2 }, "palette": { "roles": "ENV_ROLES.protopia" }, "edits": [],
     "anchors": [{ "id": "protopia.rim.a", "kind": "road" }],
     "nodes": [],
     "buildings": [], "residents": [{ "id": "r-lorekeeper-1", "card": "lorekeeper", "variant": "protopia" }],

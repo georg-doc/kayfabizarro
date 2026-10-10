@@ -21,6 +21,7 @@ Anlass: Die Steinbogen-Renders im Bauweise-Blatt v7 (schwebende Steine, Lücken 
 | Q3 | **Keine Durchdringung** sichtbarer Körper (außer bewusst eingelassen: Fels im Gelände, Fundamente) | ≤ 0,05 H |
 | Q4 | **Geometrie je Bauteil:** Bogensteine radial und gleich lang (keine gestreckten Platten), Platten im Raster, Kantensteine einzeln | Abweichung ≤ 10 % |
 | Q5 | **Keine nackten Kästen bzw. harten Kanten (§01):** jede sichtbare Kante gerundet oder mit Rubbel bzw. Knetfleck eingebettet | 0 scharfe Kanten über 0,2 H Länge |
+|  | *Q5 für Gelände-Körper (Scholle, Fels; Entscheidung 2026-10-10):* Übergangszonen (Oberseite, Kantenrundung, Lippe, Anschlüsse) **0** Kanten; gestaltete Formkanten (Zapfenspitzen und -flanken, Körperfacetten) zählen nicht, solange der Flächenwinkel ≤ 75° ist. Gewollte Bevels mit mehreren Segmenten zählen nie. In `qcheck.json` getrennt: `q5_transition`, `q5_designed` | `q5_transition` = 0; `q5_designed` max ≤ 75° |
 | Q6 | **Anschluss:** Fahrbahn, Gehweg und Brückendeck schließen an Gelände bzw. Nachbarstück an | Höhensprung ≤ 0,02 H, Spalt ≤ 0,02 H |
 | Q7 | **Keine Platzhalter im Abnahmebild** (Primitive, Kugeln, Testfarben), außer klar beschriftet als „Platzhalter“ | 0 unbeschriftete |
 | Q8 | **Kein Anschnitt durch Gelände** (ergänzt nach Steinbogen Lauf 01): Mauer- und Pflastersteine sind zu ≥ 90 % sichtbar oder als Passstein auf die Geländelinie zugeschnitten; keine Felsfläche schneidet eine Mauerlage gerade ab | 0 angeschnittene Steine |

@@ -33,6 +33,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 > 2. Für jeden Ort einen Satz Weltlogik: wer hat es gebaut, warum liegt es hier.
 > 3. Drei Kamera-Skizzen: Ankunft über die Brücke, Augenhöhe auf dem Markt Richtung Burg, Verfolgerkamera auf der Ringstraße.
 > 4. Eine Anker-Liste: Treppe, Burg-Platz, Markt, Mine, Brücken-Anschluss, Ring-Einfahrt; je mit Name und Lage im Raster.
+> 5. **Formsprache der Insel** (Georg: keine Einheits-Deckplatte): Silhouette von vorn und von der Seite inkl. Unterseite. Town ist ein Plateau mit unregelmäßiger Kantenhöhe, Burgfels-Abbruch unter der Burg und Terrassen zur Stadtseite. Nutze die Form-Modifikatoren aus `SPEC_WORLDBUILDER_GODMODE_VISION_R1.md` §2b und begründe jede Form mit einem Satz Weltlogik.
 >
 > **Regeln:** Maßstab K2 (Tür ≥ 1,15 Figurhöhen, keine Meter). Keine harten Kanten, alles knetig gerundet. Die Burg ist ein vorhandenes Asset und wird nur als Umriss eingezeichnet. Markiere alles als „Konzept“.
 
@@ -113,4 +114,4 @@ Wie A, aber für **Protopia** (Satellit 20–28 MC, Berg-Archetyp):
 - oben der Eremiten-Hügel des Lorekeepers mit Schreibpult;
 - Farmer-Felder bzw. Obstgarten.
 
-Liefere Draufsicht, Weltlogik je Ort, 3 Kameras (Brückenkopf, Weg, Hügel-Ankunft) und Anker-Liste (Brücke, Tunnel bzw. Einschnitt, Hügel, Felder). Erst starten, wenn A zurück ist, damit beide Blätter dieselbe Sprache sprechen. **Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/E_claude-design/` · **Paket:** `E_claude-design_protopia.zip` (dazu das Ergebnis von A hochladen)
+Liefere Draufsicht, Weltlogik je Ort, 3 Kameras (Brückenkopf, Weg, Hügel-Ankunft) und Anker-Liste (Brücke, Tunnel bzw. Einschnitt, Hügel, Felder). Dazu die **Formsprache**: zerklüftete Berg-Insel mit Felsgraten, Abbruch und 1–2 schwebenden Brocken (Spec §2b), Silhouette vorn, Seite und Unterseite, klar anders als Town. Erst starten, wenn A zurück ist, damit beide Blätter dieselbe Sprache sprechen. **Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/E_claude-design/` · **Paket:** `E_claude-design_protopia.zip` (dazu das Ergebnis von A hochladen)
