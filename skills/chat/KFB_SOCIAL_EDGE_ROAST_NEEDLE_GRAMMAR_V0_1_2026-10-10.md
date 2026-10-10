@@ -124,6 +124,28 @@ He is not magically omniscient.
 
 A false accusation is allowed as a **diegetic claim**, but the authoring record must know that it is false/guessed.
 
+## 4.1 · Visual characterization inputs
+
+Consume:
+`KFB_VISUAL_CHARACTERIZATION_WORLD_PERCEPTION_CONTEXT_V0_1_2026-10-10.md`
+
+A Weak Spot may be anchored to a **source-observed visual feature**:
+- silhouette;
+- face/costume feature;
+- signature prop;
+- movement tell;
+- temporary visible state.
+
+The visual feature is neutral data.
+The Social Edge lane decides whether it becomes:
+- affectionate banter;
+- Clown roast;
+- dark-heel pressure;
+- Toy Soldier Needle;
+- no comment.
+
+A speaker may not invent the history of a visible feature and then treat that invented history as known fact.
+
 ## 5 · Edge dimensions
 
 Use these as authoring sliders, not runtime psychology.
