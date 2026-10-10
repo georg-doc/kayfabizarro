@@ -1,5 +1,13 @@
 # RETURN · G1 · MVP-1 Inselkörper und Fels · 2026-10-10
 
+## Additive Runde R4 · Bildserie, Uploadstatus, Szenen-/Assetliste · 2026-10-10
+- **3** KI-konzipierte isolierte Island-Motive im Chat gerendert: Town R1, Town R2 nach Georgs Wunsch „cartooniger, stilisiert und weniger realistisch“, Protopia R1; Georgs „super!“ als positive gestalterische Richtung, **nicht** GoldenRef oder StreakByte-Asset-Pick.
+- **3 echte komprimierte Bildvorschauen** (`256x192 WebP`) als Git-Blobs auf G1-Branch hochgeladen und exakt verifiziert, Bilder-Commit `a33c95a54bc6fac140957c077d285eb582a870eb`. [Bildregister](G1_RENDERED_CONCEPTS_R1.md) / [JSON](G1_RENDERED_CONCEPTS_R1.json) dokumentieren die Pointers, Originaldateinamen und SHA256.
+- Die **3 Full-Res PNGs (1448×1086, ca. 5,7 MB zusammen) sind NICHT in GitHub**. Ein unverändertes Originalpaket `KFB_MVP1_G1_Concept_Images_2026-10-10.zip` ist als Chat-Datei verfügbar, mit `SOURCE.json` + sicherem Uploadskript; damit ist der fehlende Binärtransport reproducible. Keine Verwechslung von Preview-Verfügbarkeit und Full-Res-Upload.
+- [G1 Szenen- und Assetliste](G1_SCENE_ASSET_WORKLIST_R1.md), [JSON](G1_SCENE_ASSET_WORKLIST_R1.json): **7 Szenen**, **40 Asset-/Render-Motive** aus G1–G6, G2–G6 bleiben im jeweiligen eigenen Owner, dies ist nur der G1-Index für die Bildserie.
+- [Galerie/Listen-Testbericht](TEST_REPORT_G1_GALLERY_R1.md): 15/15 PASS, 3/3 tatsächliche Preview-Blobs verifiziert. Kein neues Source-Isolation-Bild und keine K2-Native-Bbox.
+- **Genau ein nächstes Gate:** Full-Res-PNGs auf dem Planungsbranch mit berechtigtem GitHub-Client aus dem generierten ZIP hochladen, jeden File-Readback und Branch-Head prüfen, dann Register aktualisieren. Kein Runtime-Bau, Stage oder Merge.
+
 ## Additive Runde R3 · Stylebilder für Webchat-Render-Serie · 2026-10-10
 - Über Dropbox den Ordner **KFB Style References** in **KFB Card Zone Lab v2** mit **8/8 Bilddateien** gefunden und jede Preview identifiziert. Sieben gleichnamige Bilder ebenfalls im bestehenden GitHub-Style-References-Repo-Spiegel; ROCKOS nur in Dropbox.
 - [G1_IMAGE_SERIES_STYLE_INPUTS_R1.md](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md) erstellt: bindende SOURCE-/STYLE-Trennung, bildtreuer Town-PortLand-Prompt, Reihenfolge Anchor → Georg-Tune → konsistente Front/Seite/Unterseite. Wahrung des aktuellen `KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md`, K2 und Clay-Surface-Canon.
