@@ -787,3 +787,119 @@ For Vampire specifically:
 `VAMPIRE_VISUAL_REGISTER_SOURCE_PROOF_01`
 
 No Bat-swarm implementation before isolated visual/material/motion proof.
+
+
+---
+
+## Sinnfeld / Register Profile Pilot 01 · 2026-10-10
+
+Status: **SIX-CHARACTER AUTHORING PILOT COMPLETE · NO RUNTIME WRITE**
+
+The global semantic/register bridge has now been tested on the first six Characters.
+
+New:
+- `skills/chat/KFB_SINNFELD_REGISTER_PROFILE_PILOT_01_2026-10-10.json`
+- `skills/chat/KFB_SINNFELD_REGISTER_MICROSCENES_01_2026-10-10.md`
+
+Pilot Characters:
+1. Toy Soldier
+2. Survivalist
+3. Clown
+4. Skeleton Warrior
+5. Lorekeeper
+6. Vampire
+
+### Common grounded test context
+
+All six receive the same Card and Billboard anchor.
+
+Card:
+- `The Move` · Card 2 · **The Invisible Threat**
+- canonical visual prompt: owl guard watching empty darkness from a surveillance tower.
+
+Billboard:
+- Quote Curator PR #354 record `q-b01-1001-wilde-mask-truth`
+- Oscar Wilde · *The Critic as Artist*
+- researched / public-domain status in current Quote owner.
+
+No private hidden knowledge was added for the comparison.
+
+### Result
+
+The profiles produce six different first semantic neighbours from the same media:
+
+- Toy Soldier → surveillance validates authority;
+- Survivalist → lookout reveals failure topology / missing fallback;
+- Clown → invisible premise vs visible performer;
+- Skeleton Warrior → threat vs duration/persistence;
+- Lorekeeper → claim vs provenance;
+- Vampire → modern tower vs older ritual recurrence.
+
+This is the desired Sinnfeld effect:
+**same object, different meaningful world.**
+
+### Voice / register separation
+
+The six profiles also have six distinct:
+- epistemic modes;
+- humor registers;
+- lexical fields;
+- preferred thought moves;
+- adjacency preferences.
+
+Archaic-language handling is proven as sparse authoring rather than catchphrase garnish:
+the Vampire sample uses exactly one `Methinks` marker in the micro-scenes and still reads as old-world in the surrounding plain English.
+
+### Visual-source boundary
+
+No unverified face/history details were promoted.
+
+Still pending:
+- Toy Soldier pink cheeks / moustache = `USER_AUTHORED_OR_REPORTED`;
+- Survivalist eyepatch = `USER_AUTHORED_OR_REPORTED`;
+- source-isolated facial/costume extraction for the six Character pilot;
+- Vampire Bat swarm transformation runtime proof.
+
+The pilot uses source-backed Actor/prop facts where available:
+- Toy Soldier rifle/trumpet/presents;
+- Survivalist backpack/shields/shotgun/stopsign/firehydrant;
+- Clown performance props;
+- Skeleton Warrior axe/shields;
+- Lorekeeper staff/lectern;
+- Vampire goblet/sword/throne/gems + source-backed Quaternius Bat donor.
+
+### Validation
+
+Before this Return write:
+- exact branch head: `ac672653ac41b151f943995fe1c3735adc5a8842`;
+- Pilot JSON parses;
+- 6/6 expected Characters present;
+- unique Character IDs;
+- 6 unique humor registers;
+- 6 unique epistemic modes;
+- common Card + Quote anchors intact;
+- unverified Toy Soldier/Survivalist visual claims remain pending;
+- Vampire claim boundary intact;
+- six micro-scenes present;
+- common-anchor Sinnfeld comparison present;
+- Skeleton anti-bone-pun rule present;
+- sparse archaic marker rule present;
+- next gate present.
+
+Static/data authoring validation:
+**16/16 PASS**
+
+Actual runtime/browser/LLM/TTS/3D visual-isolation/Site/Stage tests:
+**0**.
+
+No ChatterBox code, World runtime, Site, Stage, PR, merge or Live promotion.
+
+### Next content/data gate
+
+`SINNFELD_VISUAL_SOCIAL_EDGE_COMBINED_MICROSCENES_02`
+
+First obtain source-observed visual features for the six pilot Characters, then stress:
+`visible feature + Card/Billboard + Weak Spot + Social Edge`
+
+The purpose is to prove that:
+**what a Character notices** and **how cruel/warm they are about it** remain independent authoring dimensions.
