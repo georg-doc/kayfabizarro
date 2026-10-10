@@ -15,7 +15,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 | S02 | Protopia: schmalere höhere Scholle | G1 | P0 | 1 Konzeptbild erstellt, originaltreu ungeprüft |
 | S03 | Town-Straße: Fahrbahn/Bord/Gehweg/Anschluss | G2 | P0 | noch ohne Bilder |
 | S04 | Ringstraße / Joyride-Racetrack | G3 | P1 | noch ohne Bilder |
-| S05 | Steinbogenbrücke und Burgaufstieg | G4 | P0 | 2 Konzeptversuche FEHLGESCHLAGEN/QUARANTÄNE – beschriftete Mehrbildblätter statt Einzelobjekt; kein akzeptiertes Bild |
+| S05 | Steinbogenbrücke und Burgaufstieg | G4 | P0 | **STONE BRIDGE 01 als Stilrichtung anerkannt (§7a)**, kein Golden/Asset-Pick; frühere Fail-Versuche bleiben im Recovery |
 | S06 | Markt und Burgumfeld | G5 | P1 | noch ohne Bilder |
 | S07 | Protopia-Farmerland / Bergaufstieg / Eremit | G6 | P1 | noch ohne Bilder |
 
@@ -26,7 +26,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 - [ ] **02. Schmale, hohe Protopia-Berginsel** (`protopia_mountain_island`) — Konzept gerendert · **keine Quellenfreigabe**; Protopia R1 erzeugt; eher hohe Felsstufe, keine verifizierte StreakByte-Silhouette
 - [ ] **03. Kleine Felsbrocken / Brückenauflager** (`bridge_rock_piers`) — Quellenkandidaten gefunden · Render offen; StreakByte / Kenney: Verbaukontakt prüfen
 - [ ] **04. Abbruchkante, Felswand / Schollenseiten** (`cliff_rupture`) — Quellenkandidaten gefunden · Render offen; Kenney cliff und StreakByte Cave
-- [ ] **05. Große Solitärfelsen** (`large_boulders`) — **Kenney Nature rock_largeA exakt als GLB-Quellmesh geprüft** ([4 isolierte Quellansichten](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg), [Source-Proof und Maße](G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md)); cartooniges G1-Zielbild noch offen, kein Pick/Golden.
+- [ ] **05. Große Solitärfelsen** (`large_boulders`) — **Mood-Bild positiv, Formtreue offen** ([WebP-Vorschau](refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp)); [echter 4-View Kenney-Donor](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg), [PARTS](refs/large_boulders/PARTS.md), [Prompt](refs/large_boulders/PROMPT.md). Neuer source-gebundener Bildvergleich statt weiterer freier Felsinterpretation.
 - [ ] **06. Felsgrate / Bergsporne** (`rock_ridges`) — Quellenkandidaten gefunden · Render offen; StreakByte Mountain und KayKit/Platformer als Formdonor
 
 ## G2 · Stadtstraße · P0
@@ -54,7 +54,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 ## G4 · Brücke und Treppe · P0
 *S05 · Burgaufstieg und Brückenanschluss* · Quellen zuerst: Kenney castle-kit / KayKit Medieval Builder / StreakByte / gekauft Medieval Castle Modular; img2threejs Steinbogen als Richtungsdonor
 
-- [ ] **21. Steinbogenbrücke (optional mehrere Felder)** (`stone_arch_bridge`) — **2 Renderfehler / QUARANTÄNE**; [vollständige Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md); beide Bilder nicht als G4-Asset übernehmen. Freigestellte Originalquelle vor Integration, Bogen wächst aus Fels
+- [ ] **21. Steinbogenbrücke (optional mehrere Felder)** (`stone_arch_bridge`) — **STYLE_DIRECTION_ONLY (§7a)**: `STONE BRIDGE 01`-Blatt aus Quarantäne als Stilreferenz, **kein Golden oder Asset-Pick**; historischer [Fail-Bericht](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) bleibt erhalten. G4-Owner erstellt für neue Baukastenblätter `PARTS.md` (5–6 Großformrollen), Fahrbahnneigung ≤6 %, Auto plus 2 Gehwege, auf Brocken gestützte längere Variante.
 - [ ] **22. Brückenkopf / Widerlager** (`bridge_abutment`) — offen; in Scholle verankert
 - [ ] **23. Brüstung** (`bridge_parapet`) — offen; breit und gerundet
 - [ ] **24. Brückenpfeiler** (`bridge_support`) — offen; Kontakt und Schwerkraft
@@ -86,5 +86,5 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 ## Einheitlicher Render-Vertrag
 Ein Objekt pro Bild, gleiche neutrale Studioumgebung, 3/4 zuerst; Front, Seite und Unterseite nach Bildentscheidung bei Schollen/Brücken. Gerundete Knetformen und kontrollierter Materialmix; keine fotorealistischen Oberflächen, keine CAD-Schnitte, keine gleichmäßig wiederholten Module. Kein zusätzliches Set-Dressing, Figuren, Tiere, Autos, Texte oder Logos im isolierten Asset-Render. K2: 1 MC = 1,76 H, Town ≈40 MC, Protopia 20–28 MC. Keine fiktiven Maße. Baseline-Quelle bleibt der aktuelle Lab-/Asset-Librarian-Bestand, nicht die Bildgen-Komposition. Bilder separat als 'CONCEPT / STYLE PROPOSAL' kennzeichnen, bis der tatsächliche Donor einzeln visuell bestätigt ist.
 
-## Nächste einzelne Bildentscheidung
-**G4-Steinbogen ist nach 2 nicht verbesserten Einzelobjekt-Renders eingefroren**; siehe [Fehlerexport/Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md). Das aktuelle G1-Gate ist zunächst das **hochaufgelöste PNG-Upload-Finish**, bevor weitere Bilder eingecheckt werden. Danach kann G1 einen neuen Fels-/Schollen-Donor isoliert darstellen; G4 erst mit tatsächlicher Quelle und eigenem qualitätsgesichertem Einzelbild-Gate.
+## Nächster G1-Bildproduktionsschritt
+G1 `large_boulders` mit tatsächlichen Kenney-Originalansichten als FORM-Maßstab und KFB-Style-Bildern als MATERIAL/LICHT-Benchmark neu interpretieren. **Das erste Mood-Bild ist keine 1:1-Quelle**, aber als Stimmungsanker erhalten. Das neue Briefing §7a erlaubt **ein beschriftetes Mehransichten-Blatt** mit Detail- und Variantenbildern **ohne** Marken/Werbetexte und begrenzt die Modellidee auf 5–6 wiederverwendbare große Formrollen. Für jedes Bild `PARTS.md`, Prompt, Original-PNG, Manifest-Hash sichern. G4 bleibt bei seinem eigenen Owner.
