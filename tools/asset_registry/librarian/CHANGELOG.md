@@ -1,5 +1,11 @@
 # Changelog · KFB Asset Librarian
 
+## v1.8.1 Deck crop seam fix · 2026-10-10
+
+- Page-2 review of Ignore Dystopia, Protopia, Observation Underground, Pharaoh Script, AI Kayfabe and Anti-Rules confirmed a real 2x2 grid with artwork and headings crossing the exact centre line.
+- Verified card previews now retain a 3.5% horizontal seam overlap instead of applying a destructive 50/50 hard cut.
+- PDF source files, deck metadata and all `_inbox` content remain unchanged.
+
 ## v1.8 Deck Library R1 · 2026-10-09
 
 ### Decision

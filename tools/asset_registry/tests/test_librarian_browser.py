@@ -11,7 +11,7 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for name in (
             "index.html", "styles.css", "resources.css", "animation-sources.css", "app.js", "state.js", "registry.js",
             "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "framing3d.js",
-            "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "deck-library.js", "deck-library.css", "README.md",
+            "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "deck-library.js", "deck-crop.js", "deck-library.css", "README.md",
         ):
             self.assertTrue((LIB / name).is_file(), name)
 
@@ -124,6 +124,15 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertIn("Karte wählen", js)
         self.assertIn("pdf.min.js", js)
         self.assertIn("KFB Deck Viewer v5.dc.html", js)
+
+    def test_deck_card_crop_preserves_the_page_two_centre_seam(self):
+        js = (LIB / "deck-library.js").read_text(encoding="utf-8")
+        crop = (LIB / "deck-crop.js").read_text(encoding="utf-8")
+        self.assertIn("cardCropRect", js)
+        self.assertIn("CARD_CROP_SEAM_OVERLAP = 0.035", crop)
+        self.assertIn("midX - seam", crop)
+        self.assertIn("midX + seam", crop)
+        self.assertNotIn("Math.floor(source.width/2)", js)
 
 
 if __name__ == "__main__":
