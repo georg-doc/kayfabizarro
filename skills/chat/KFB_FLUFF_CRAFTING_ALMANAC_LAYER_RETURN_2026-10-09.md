@@ -1,4 +1,13 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.9
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.0
+
+> **ADDITIVE UPDATE · 2026-10-10 · PRISON TOWER SOURCE PRIORITY**
+>
+> Added [KFB_PRISON_MAZE_TOWER_DONOR_PRIORITY_V1_0_2026-10-10.md](./KFB_PRISON_MAZE_TOWER_DONOR_PRIORITY_V1_0_2026-10-10.md) on existing planning branch. Georg's priority: **Kenney Tower Defense PRIMARY → Kenney Pirate SECONDARY → KayKit Medieval Hexagon TERTIARY**. Use existing modular rounded/square tower shafts, a possible larger Pirate lookout/rundlauf, KayKit tower details and intentional toy-like Frankensteining. Existing Tower Defense registry blob `9ac07880baf32b0ec3e0f9a540e8dc48547def52` confirms round/square base/build/middle/top/roof families and cannon/catapult. Pirate source directory and 72-model inventory are documented, but exact modular parts still unisolated. KayKit S11 confirms tower A/B four colors; extra/free tier distinctions remain. Compare TD-only, TD+Pirate crown and KayKit-compatible composition in the *same* mutable floating basin. Preserve original asset identity, use measured source isolation, contact, sockets, ramp/stair/ladder and visibility checks before implementation. Optional non-destructive deformation/material harmonization, no replacement runtime.
+>
+> Source/contract spot checks **6/6 PASS**; GitHub donor document + head readback **1/1 PASS**. Runtime, rendered isolated donors, browser, deployment **0**. No PR, merge, current MVP/Four-Island changes, new public Site, or new gate. One deferred gate unchanged: `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`.
+
+---
+
 
 > **CURRENT ADDITIVE UPDATE · 2026-10-10 · PRISON MAZE FLOATING ISLAND / ADAPTIVE TOWER**
 >
