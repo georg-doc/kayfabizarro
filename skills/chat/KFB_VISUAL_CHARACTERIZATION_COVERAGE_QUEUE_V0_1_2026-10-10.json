@@ -1,0 +1,551 @@
+{
+  "schema": "kfb.visual-characterization-coverage-queue/0.1-candidate",
+  "status": "SOURCE_EXTRACTION_QUEUE",
+  "date": "2026-10-10",
+  "owner": "Resident Atlas / ChatterBox authoring metadata",
+  "sourcePins": {
+    "residentAtlasCast": {
+      "path": "tools/resident_atlas_s6/data/cast.js",
+      "blob": "5e918ae1521e63d121558fb7aff4fd1f8239baec"
+    },
+    "characterCoverage": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "blob": "43f886c2bde237608729c338ef07e37c5c2b5778"
+    }
+  },
+  "counts": {
+    "currentResidentAtlasEntries": 21,
+    "sourcePinnedCharacterCoverage": 49
+  },
+  "priority01": [
+    {
+      "characterId": "toy-soldier",
+      "reason": "current Prison/Needle consumer",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION",
+      "userReportedCandidates": [
+        {
+          "featureId": "face.pink-cheeks",
+          "label": "comic pink cheeks",
+          "truthClass": "USER_AUTHORED_OR_REPORTED"
+        },
+        {
+          "featureId": "face.moustache",
+          "label": "moustache",
+          "truthClass": "USER_AUTHORED_OR_REPORTED"
+        }
+      ]
+    },
+    {
+      "characterId": "survivalist",
+      "reason": "current Prison candidate / eyepatch dialogue example",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION",
+      "userReportedCandidates": [
+        {
+          "featureId": "face.eyepatch",
+          "label": "eyepatch",
+          "truthClass": "USER_AUTHORED_OR_REPORTED"
+        }
+      ],
+      "storyHypothesisNote": "history of the eye may be explored as alternatives; no automatic fact promotion"
+    },
+    {
+      "characterId": "clown",
+      "reason": "Social Edge roast baseline",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "skeleton-warrior",
+      "reason": "class/family proof plus individual prop/silhouette",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "lorekeeper",
+      "reason": "main Resident contrast / visual-to-knowledge dialogue",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    }
+  ],
+  "currentResidentAtlas": [
+    {
+      "characterId": "goth-girl",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "clown",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "toy-soldier",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "farmers",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "caveman",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "lorekeeper",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "witch",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "black-knight",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "avian-swordsman",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "skeleton-warrior",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "skeleton-rogue",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "skeleton-mage",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "demon-lord",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "orc-brute",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "monstrosity",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "orc-warband",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "prototype-pete",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "hero-man",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "cleric",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "animatronic",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "action-figure",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    }
+  ],
+  "sourcePinnedCoverage": [
+    {
+      "characterId": "gothgirl",
+      "label": "GothGirl",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "clown",
+      "label": "Clown",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "toy-soldier",
+      "label": "Toy Soldier",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "farmer-a",
+      "label": "Farmer A",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "farmer-b",
+      "label": "Farmer B",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "caveman",
+      "label": "Caveman",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "lorekeeper",
+      "label": "Lorekeeper",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "witch",
+      "label": "Witch",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "avian",
+      "label": "Avian Swordsman",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "ultra-turbo-hero-man",
+      "label": "Ultra Turbo Hero Man",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "cleric",
+      "label": "Cleric",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "animatronic-creepy",
+      "label": "Animatronic Creepy",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "animatronic-normal",
+      "label": "Animatronic Normal",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "action-figure",
+      "label": "Action Figure",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "magical-girl",
+      "label": "Magical Girl",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/MagicalGirl.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "monster",
+      "label": "Monster Costume",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/character/gltf/Monster.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "ninja",
+      "label": "Ninja",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/character/Ninja.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "protagonist-a",
+      "label": "Protagonist A",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "protagonist-b",
+      "label": "Protagonist B",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "vampire",
+      "label": "Vampire",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "werewolf-wolf",
+      "label": "Werewolf Wolf",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "driver",
+      "label": "Driver",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "orc-raider",
+      "label": "Orc Raider",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/character/OrcRaider.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "combat-mech",
+      "label": "Combat Mech",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "paladin",
+      "label": "Paladin",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "paladin-helmet",
+      "label": "Paladin · Helmet",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin_with_Helmet.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "marksman",
+      "label": "Marksman",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2026 - Marksman/Marksman.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "hiker",
+      "label": "Hiker",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "robot-one",
+      "label": "Robot One",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_One.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "robot-two",
+      "label": "Robot Two",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_Two.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "tiefling",
+      "label": "Tiefling",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/characters/Tiefling.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "superhero",
+      "label": "Superhero",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/characters/Superhero.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "monster-costume-alt",
+      "label": "Monster Costume · Alt",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/character/gltf/MonsterCostume.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "werewolf-man",
+      "label": "Werewolf Man",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Man.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "plant-warrior",
+      "label": "Plant Warrior",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/PlantWarrior.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "helper-a",
+      "label": "Helper A",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters/Helper_A.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "helper-b",
+      "label": "Helper B",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters/Helper_B.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "space-ranger",
+      "label": "Space Ranger",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "space-ranger-flight",
+      "label": "Space Ranger · Flight Mode",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger_FlightMode.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "hoarder",
+      "label": "Hoarder",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/Hoarder.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "survivalist",
+      "label": "Survivalist",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2024 - Survivalist/character/Survivalist.glb",
+      "rigClass": "Rig_Medium",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "monstrosity",
+      "label": "Monstrosity",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "black-knight",
+      "label": "Black Knight",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "demon-lord",
+      "label": "Demon Lord",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "orc-brute",
+      "label": "Orc Brute",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "frost-golem",
+      "label": "FrostGolem",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/characters/FrostGolem.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "gtn",
+      "label": "4GTN",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "gtn-forgotten",
+      "label": "4GTN Forgotten",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    },
+    {
+      "characterId": "clanker",
+      "label": "Clanker",
+      "sourceCharacterRef": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/characters/Clanker.glb",
+      "rigClass": "Rig_Large",
+      "extractionStatus": "PENDING_SOURCE_ISOLATION"
+    }
+  ],
+  "classFamilyTargets": [
+    {
+      "classId": "skeleton-family",
+      "members": [
+        "skeleton-warrior",
+        "skeleton-rogue",
+        "skeleton-mage"
+      ],
+      "status": "PENDING_EXTRACTION"
+    },
+    {
+      "classId": "toy-soldier-corps",
+      "members": [
+        "toy-soldier"
+      ],
+      "status": "PENDING_INSTANCE_VARIANTS"
+    },
+    {
+      "classId": "farmers",
+      "members": [
+        "farmer-a",
+        "farmer-b"
+      ],
+      "status": "PENDING_EXTRACTION"
+    },
+    {
+      "classId": "animatronics",
+      "members": [
+        "animatronic-creepy",
+        "animatronic-normal"
+      ],
+      "status": "PENDING_EXTRACTION"
+    },
+    {
+      "classId": "orc-family",
+      "members": [
+        "orc-raider",
+        "orc-brute",
+        "orc-warband"
+      ],
+      "status": "MIXED_SOURCE_FAMILIES_REVIEW_REQUIRED"
+    }
+  ],
+  "extractionOrder": [
+    "show source model/reference in isolation",
+    "record silhouette and stable visible features",
+    "separate source-observed from user-reported features",
+    "record props and movement reads",
+    "derive neutral banter hooks without writing jokes",
+    "review",
+    "promote only reviewed source-observed features to runtime seen-fact eligibility"
+  ],
+  "nextGate": "VISUAL_CHARACTERIZATION_SOURCE_EXTRACTION_01"
+}
