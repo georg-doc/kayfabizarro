@@ -114,5 +114,32 @@
     "g4StyleDirectionCount": 1,
     "status": "LOCAL_CHAT_ZIP_NOT_GITHUB"
   },
-  "lastUserDirection": "Georg: latest rock is useful as a MOOD asset but should more closely match source asset geometry; new brief §7a takes STONE BRIDGE 01 out of style quarantine only; build-light image sheets now allowed."
+  "lastUserDirection": "Georg: latest rock is useful as a MOOD asset but should more closely match source asset geometry; new brief §7a takes STONE BRIDGE 01 out of style quarantine only; build-light image sheets now allowed.",
+  "technicalSourceStudiesR9": [
+    {
+      "id": "g1-rock-largeA-source-4view",
+      "type": "SOURCE_MESH_PROJECTION",
+      "path": "refs/source-isolation/G1_kenney_rock_largeA_source_4view_900.png",
+      "blob": "3a707ce06baf76ecd04183bfe4b48a750e2f8dde",
+      "originalGeometry80Faces": true,
+      "golden": false
+    },
+    {
+      "id": "g1-rock-largeA-kfb-color-study",
+      "type": "SOURCE_LOCKED_COLOR_ONLY",
+      "path": "refs/source-isolation/G1_kenney_rock_largeA_KFB_palette_source_locked_R9_900.png",
+      "blob": "1307ca1b5e60f882e15562aa370c1fad2194b873",
+      "originalGeometry80Faces": true,
+      "colorAdaptationOnly": true,
+      "claySculpture": false,
+      "golden": false
+    }
+  ],
+  "visualGeneratorFailureR9": {
+    "status": "QUARANTINED",
+    "retries": 2,
+    "pass": 0,
+    "archive": "KFB_G1_ROCK_SOURCE_FIDELITY_FAILURE_RECOVERY_R9_2026-10-10.zip",
+    "archiveNotInGitHub": true
+  }
 }
