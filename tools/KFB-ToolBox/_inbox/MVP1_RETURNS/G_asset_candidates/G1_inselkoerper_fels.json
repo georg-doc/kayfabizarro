@@ -543,7 +543,19 @@
       "picked": null,
       "georgNote": "",
       "goldenRef": false,
-      "referenceViews": []
+      "referenceViews": [],
+      "moodStudyR8": {
+        "referenceImage": "G1_Kenney_rock_largeA_MOOD_R1.png",
+        "sha256": "276bbede58cc81d1f3911bb73323c76024f162cf7b17a0d30ae20109622d9404",
+        "classification": "MOOD_ACCEPTED_BUT_NOT_DONOR_FAITHFUL",
+        "userFeedback": "Mood Asset cool und hilfreich, jedoch visuell nicht nah genug an Original-Assets",
+        "originalAsset": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_largeA.glb",
+        "sourceProof": "G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md",
+        "parts": "refs/large_boulders/PARTS.md",
+        "prompt": "refs/large_boulders/PROMPT.md",
+        "checkpoint": "KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip",
+        "goldenRef": false
+      }
     },
     {
       "element": "rock_ridges",
