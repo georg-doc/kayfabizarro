@@ -359,3 +359,13 @@ Official Quaternius catalog confirms 28 tutorials. Most immediately useful, sour
 Kenney official guides add measured **Asset Forge-specific** module/pivot/scale conventions, GLB/material import and modular export; they are not automatically KayKit or KFB canon.
 
 Survey separates **available creator guidance** from **KFB verified modules** and **still-unproven source-to-runtime behaviour**, explicitly correcting historical old-pack gap claims using the Atlas 2026-09-18 override. No creator video frames, new runtime work or public site update. Current Lighting visual-scan gate remains open.
+
+## 14. Modular / Gradient Atlas source deep-dive + Site recovery (2026-10-10)
+
+New detailed source report: `KAYKIT_MODULAR_AND_ATLAS_SOURCE_AUDIT_2026-10-10.md`.
+
+Its core cross-checks reuse `tools/world_atlas/source/lib/hex-grid.js` and `source/scenes/hex-realm.js`: measured pointy-top KayKit hex dimensions, six-edge masks, source road/river/cell failure modes and single shared gradient atlas. It explicitly preserves the KFB Clay K1/H0 vs K2/v10 owner, avoids importing Kenney Asset Forge-specific 1m-pivot rules as KayKit canon, and proposes two bounded source-isolation SOPs.
+
+The same source report was saved and independently read back in the existing private KFB Production Control **Site** document store (file ID `446386fd-d3be-458f-b0e5-c7d023658ae1`). This is **Site persistence**, NOT a new Asset Librarian Site publication or a claimed visible new Site navigation page.
+
+Next useful productive research gate: `KAYKIT_MODULAR_ATLAS_SOURCE_ISOLATION_01` with a real source object/UV and original-vs-Clay visual proof by the existing Blender MCP / World Atlas owners. The earlier creator Lighting video frame gate stays `INPUT_BLOCKED`, not passed.
