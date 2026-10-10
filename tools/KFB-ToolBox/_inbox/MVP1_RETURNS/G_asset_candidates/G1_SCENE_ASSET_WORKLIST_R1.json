@@ -327,14 +327,17 @@
           "group": "G4",
           "label": "Steinbogenbrücke (optional mehrere Felder)",
           "scene": "Verbindung",
-          "status": "not_started",
-          "notes": "freigestellte Originalquelle vor Integration, Bogen wächst aus Fels",
+          "status": "visual_attempt_failed_quarantined",
+          "notes": "G4 editorial R1: two generated multi-panel/branded concept sheets violate brief §7 isolated-object requirements. See G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md; only mood salvage, no source-verified donor art.",
           "picked": null,
           "goldenRef": false,
           "rank": null,
           "source": "Kenney castle-kit / KayKit Medieval Builder / StreakByte / gekauft Medieval Castle Modular; img2threejs Steinbogen als Richtungsdonor",
           "renderIndex": 21,
-          "georgDecision": null
+          "georgDecision": null,
+          "failureRecovery": "G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md",
+          "visualAttempts": 2,
+          "renderAccepted": false
         },
         {
           "id": "bridge_abutment",
@@ -629,7 +632,8 @@
     "items": 40,
     "concepts": 2,
     "sourceAccepted": 0,
-    "goldenRefs": 0
+    "goldenRefs": 0,
+    "failedQuarantinedVisualSeams": 1
   },
   "nextGate": "Persist visible concept image files/proof in G1 and have Georg choose next scene or specific element; source-isolate purchased originals before source-fidelity claims."
 }
