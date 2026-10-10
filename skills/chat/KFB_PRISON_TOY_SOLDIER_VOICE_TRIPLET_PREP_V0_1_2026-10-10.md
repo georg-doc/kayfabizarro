@@ -91,6 +91,23 @@ Do not freeze either as final public naming yet.
 
 The erasure of personal names is part of the joke and the control grammar: the institution reduces even its own agents to inventory.
 
+## 2.1 · Prisoner custody numbers · Georg decision
+
+Prisoners also receive **custody numbers**.
+
+Rules:
+- custody number is not the Character's true identity or global Resident/player ID;
+- actual names remain owned by the existing Character/Resident system;
+- Toy Soldiers prefer number-address while somebody is in custody;
+- other Residents may keep using the prisoner's name;
+- prisoners may swap, refuse, parody or deliberately misuse numbers;
+- a released prisoner may keep a number socially as a nickname/badge if authored;
+- number assignment/persistence belongs later to the existing custody/world-save owner, never ChatterBox.
+
+This creates the useful asymmetry:
+**guards choose institutional number-identity; prisoners have it imposed on them.**
+
+
 ## 3 · Voice North Star
 
 **Short. Concrete. Calmly rigged.**
@@ -270,6 +287,24 @@ Other recurrent defects:
 The Soldier can be beaten conversationally when another character changes the frame rather than debating inside it.
 
 That makes **KayfaBOGGLE / BLÖDSINN!** especially interesting responses later.
+
+## 7.1 · Shared Social Edge grammar
+
+Use:
+`KFB_SOCIAL_EDGE_ROAST_NEEDLE_GRAMMAR_V0_1_2026-10-10.md`
+
+The Toy Soldier Needle is one lane in a wider social spectrum:
+- Buddy Banter;
+- Clown Roast;
+- darker heel / Slatte-like or Squette-adjacent banter;
+- Toy Soldier Needle.
+
+The same Character Weak Spot may be used at different moral temperatures depending on truth proximity, power asymmetry, destabilization intent, audience exposure, warmth/repair and reciprocity.
+
+Toy Soldier rule:
+**high precision + low warmth + real power asymmetry + usable reaction.**
+
+Do not make private high-severity Character history available to generic Triplet selection. Deeper wounds remain relationship/provenance-gated or authored-scene-only.
 
 ## 8 · Relation to Fluff-o-lect
 
