@@ -336,3 +336,14 @@ After verifying previous GitHub head and Production Control records, fresh publi
 - Official Character Animations page https://kaylousberg.itch.io/kaykit-character-animations explicitly describes paid SOURCE-tier editable `.blend` per animation set with a basic control rig. This adds a possible source-authored Blender MCP deep-dive when entitlement is verified, not a request to buy or to supplant the native Motion owner.
 
 **One next gate remains:** `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`. Any further per-episode video link discovery is optional preparatory research.
+
+## 12. Lighting video gate execution attempt · 2026-10-10
+
+The requested next gate was attempted, but the exact YouTube video could not be acquired as playable frames or readable transcript in this Web runtime (YouTube page/oEmbed cache misses; targeted transcript/video-ID searches yielded no source; direct container outbound network/DNS unavailable). Thus: **0 verified frames, 0 timestamps, 0 observed Kay settings**; this is `INPUT_BLOCKED`, not a creator-technique PASS or an authorization to build a substitute lighting runtime.
+
+A useful technical-source audit of the actual KFB lighting donor and newer shared shadow recipe **was** completed with **18/18 source assertions**. Important correction: `wd-light.js` is a **WhackMan WorldDesign Lab comparison donor**, not the authoritative active World Environment implementation. It has only BASELINE/WHACKMAN profiles and fixed old lab shadow biases; the newer `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md` uses texel-relative shadow bias/frustum fit and remains the intended KFB shared contact approach. `wd-light.js` also writes scene background/fog and renderer tone mapping, so host-owner arbitration is mandatory before any integration.
+
+**Read complete source and acceptance boundary:**
+`KAYKIT_LIGHTING_VIDEO_SOURCE_AUDIT_2026-10-10.md`
+
+Single next gate remains `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01` with a video/browser-capable executor; retain source-isolated screenshot/timecode evidence before treating any Kay settings as observed. Current WB2 R4 remains STOPPED/NO MVP, untouched.
