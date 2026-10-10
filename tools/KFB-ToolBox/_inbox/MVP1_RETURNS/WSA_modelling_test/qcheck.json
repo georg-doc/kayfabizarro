@@ -1,0 +1,254 @@
+{
+  "schema": "kfb.qcheck/1",
+  "asset": "KFB_TOWN_CASTLE_CLAY_STAIRS_R1",
+  "date": "2026-10-10",
+  "base_commit": "3c42bf76364f8875cf1a63768fadfb570b6c3ff5",
+  "branch": "wsa/kfb-modelling-test-stairs-2026-10-10",
+  "units": {
+    "up": "Y in GLB",
+    "H_lab": 3.64,
+    "width_lab": 10.92
+  },
+  "budget": {
+    "triangle_limit": 20000,
+    "triangles": 4568,
+    "vertices": 2294,
+    "passed": true
+  },
+  "forms": {
+    "large_clay_forms": 5,
+    "limit": 6,
+    "passed": true
+  },
+  "measurements": {
+    "rises_lab": [
+      0.62,
+      0.66,
+      0.59,
+      0.68,
+      0.61,
+      0.65,
+      0.6,
+      0.67
+    ],
+    "treads_lab": [
+      1.7,
+      1.82,
+      1.66,
+      1.86,
+      1.73,
+      1.79,
+      1.65,
+      1.76
+    ],
+    "landing_depth_lab": 4.0,
+    "wall_above_step_lab": 1.84,
+    "intentional_seam_overlap_lab": 0.08,
+    "rise_range_lab": [
+      0.59,
+      0.68
+    ],
+    "tread_range_lab": [
+      1.65,
+      1.86
+    ],
+    "rise_spread_ratio": 0.1417,
+    "tread_spread_ratio": 0.1203,
+    "rise_max_deviation_ratio": 0.0709,
+    "tread_max_deviation_ratio": 0.0651,
+    "left_treads_actual_lab": [
+      1.7544,
+      1.6987,
+      1.6115,
+      1.9855,
+      1.7689,
+      1.6642,
+      1.6154,
+      1.8833
+    ],
+    "right_treads_actual_lab": [
+      1.6322,
+      1.7143,
+      1.6897,
+      1.9801,
+      1.7367,
+      1.6764,
+      1.6024,
+      1.85
+    ],
+    "actual_tread_min_lab": 1.6024
+  },
+  "mesh_metrics": {
+    "KFB_ClayStair_Core": {
+      "vertices": 694,
+      "triangles": 1384,
+      "nonmanifold_edges": 0,
+      "sharp_edges_over_0_2H": 0,
+      "max_dihedral_degrees": 36.098,
+      "bounds_blender_z_up": {
+        "min": [
+          -5.5774,
+          -0.01198,
+          0.0
+        ],
+        "max": [
+          5.60187,
+          17.98421,
+          5.08
+        ]
+      }
+    },
+    "KFB_ClayStair_Wall_L": {
+      "vertices": 288,
+      "triangles": 572,
+      "nonmanifold_edges": 0,
+      "sharp_edges_over_0_2H": 0,
+      "max_dihedral_degrees": 27.404,
+      "bounds_blender_z_up": {
+        "min": [
+          -6.69,
+          -0.01564,
+          0.0
+        ],
+        "max": [
+          -5.3797,
+          17.96272,
+          6.90558
+        ]
+      }
+    },
+    "KFB_ClayStair_Wall_R": {
+      "vertices": 288,
+      "triangles": 572,
+      "nonmanifold_edges": 0,
+      "sharp_edges_over_0_2H": 0,
+      "max_dihedral_degrees": 27.303,
+      "bounds_blender_z_up": {
+        "min": [
+          5.37972,
+          -0.01711,
+          0.0
+        ],
+        "max": [
+          6.68943,
+          17.97989,
+          6.95642
+        ]
+      }
+    },
+    "KFB_ClayStair_Buttress_L": {
+      "vertices": 512,
+      "triangles": 1020,
+      "nonmanifold_edges": 0,
+      "sharp_edges_over_0_2H": 0,
+      "max_dihedral_degrees": 29.123,
+      "bounds_blender_z_up": {
+        "min": [
+          -7.4568,
+          -0.90536,
+          0.0
+        ],
+        "max": [
+          -4.67232,
+          1.73369,
+          1.83081
+        ]
+      }
+    },
+    "KFB_ClayStair_Buttress_R": {
+      "vertices": 512,
+      "triangles": 1020,
+      "nonmanifold_edges": 0,
+      "sharp_edges_over_0_2H": 0,
+      "max_dihedral_degrees": 29.948,
+      "bounds_blender_z_up": {
+        "min": [
+          4.64536,
+          -0.95239,
+          0.0
+        ],
+        "max": [
+          7.29489,
+          1.76195,
+          1.77532
+        ]
+      }
+    }
+  },
+  "checks": {
+    "Q1": {
+      "name": "nothing floats",
+      "status": "pass",
+      "max_support_gap_H": 0.0,
+      "limit_H": 0.02,
+      "exceptions": 0
+    },
+    "Q2": {
+      "name": "no masonry gaps",
+      "status": "not_applicable",
+      "reason": "monolithic clay forms; no brick or paving bond"
+    },
+    "Q3": {
+      "name": "no unintended visible intersections",
+      "status": "pass",
+      "max_intentional_embed_H": 0.022,
+      "limit_H": 0.05,
+      "unintended": 0
+    },
+    "Q4": {
+      "name": "component geometry",
+      "status": "pass",
+      "max_controlled_variation": 0.0709,
+      "limit": 0.1,
+      "actual_tread_min_lab": 1.6024,
+      "minimum_tread_lab": 1.456,
+      "note": "step fronts are skewed and dimensions vary intentionally while remaining walkable"
+    },
+    "Q5": {
+      "name": "no hard transition edges",
+      "status": "pass",
+      "q5_transition": 0,
+      "limit": 0,
+      "bevel_segments": 4,
+      "designed_max_degrees": 75
+    },
+    "Q6": {
+      "name": "connection",
+      "status": "pass",
+      "height_jump_H": 0.0,
+      "gap_H": 0.0,
+      "limit_H": 0.02
+    },
+    "Q7": {
+      "name": "no placeholders",
+      "status": "pass",
+      "export_placeholder_count": 0,
+      "note": "render-only terrain context is excluded from GLB and identified in report"
+    },
+    "Q8": {
+      "name": "no terrain-cut stones",
+      "status": "not_applicable",
+      "reason": "monolithic walls and stair core; no individual stone course"
+    },
+    "Q9": {
+      "name": "built wall ends",
+      "status": "pass",
+      "open_or_nonmanifold_edges": 0,
+      "lower_ends": "two closed buttresses",
+      "upper_ends": "closed wall caps into landing"
+    }
+  },
+  "renders": [
+    "01_frontal",
+    "02_three_quarter_top",
+    "03_side",
+    "04_eye_1H_at_foot",
+    "05_connection_stair_hill",
+    "06_low_support",
+    "07_left_end",
+    "08_right_end",
+    "09_upper_landing"
+  ],
+  "runtime_seconds": 27.75,
+  "self_verdict": "not_assigned; external blind critic is owned by steering session"
+}

@@ -1,0 +1,135 @@
+{
+  "validator": "Blender 5.2.2 clean-scene glTF re-import",
+  "import_result": [
+    "FINISHED"
+  ],
+  "file": "KFB_TOWN_CASTLE_CLAY_STAIRS_R1.glb",
+  "bytes": 250328,
+  "sha256": "5dc83f19beb8b8ba6b20b3b7ae1d19c6a39b8b80045cda14376ae462e4729151",
+  "mesh_objects": 5,
+  "objects": [
+    {
+      "name": "KFB_ClayStair_Buttress_L",
+      "vertices": 2048,
+      "triangles": 1020,
+      "materials": [
+        "KFB_family_a_deep"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -7.4568,
+          -0.90536,
+          0.0
+        ],
+        "max": [
+          -4.67232,
+          1.73369,
+          1.83081
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Buttress_R",
+      "vertices": 2048,
+      "triangles": 1020,
+      "materials": [
+        "KFB_family_a_deep"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          4.64536,
+          -0.95239,
+          0.0
+        ],
+        "max": [
+          7.29489,
+          1.76195,
+          1.77532
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Core",
+      "vertices": 2736,
+      "triangles": 1384,
+      "materials": [
+        "KFB_family_a_light"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -5.5774,
+          -0.01198,
+          0.0
+        ],
+        "max": [
+          5.60187,
+          17.98421,
+          5.08
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Wall_L",
+      "vertices": 1128,
+      "triangles": 572,
+      "materials": [
+        "KFB_family_a_mid"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -6.69,
+          -0.01564,
+          0.0
+        ],
+        "max": [
+          -5.3797,
+          17.96272,
+          6.90558
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Wall_R",
+      "vertices": 1128,
+      "triangles": 572,
+      "materials": [
+        "KFB_family_a_warm"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          5.37972,
+          -0.01711,
+          0.0
+        ],
+        "max": [
+          6.68943,
+          17.97989,
+          6.95642
+        ]
+      }
+    }
+  ],
+  "total_vertices": 9088,
+  "total_triangles": 4568,
+  "materials": [
+    "KFB_family_a_deep",
+    "KFB_family_a_light",
+    "KFB_family_a_mid",
+    "KFB_family_a_warm"
+  ],
+  "cameras": 0,
+  "lights": 0,
+  "bounds_blender_z_up_after_import": {
+    "min": [
+      -7.4568,
+      -0.95239,
+      0.0
+    ],
+    "max": [
+      7.29489,
+      17.98421,
+      6.95642
+    ]
+  },
+  "coordinate_note": "glTF/GLB is Y-up by specification; Blender converts imported data to its internal Z-up view."
+}
