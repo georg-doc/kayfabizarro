@@ -2760,3 +2760,12 @@ No runtime/product code changed.
 - Subsystems may still be KEEP/PASS donors or useful evidence, but their local status must not be rolled up into “near MVP”, “mostly complete MVP”, “receiving-core MVP” or equivalent aggregate-progress language.
 - The Acceptance Matrix may shrink only after an explicit Georg product decision, never because the newest candidate omitted a feature.
 - ChefWSA Recovery Audit, Issue #360, Production Hub and the Open World contract-collapse postmortem now carry this rule.
+
+### 2026-10-10 · KFB Voice MVP heuristic casting / speech-control performance preparation (Draft PR #379)
+
+- Georg reports existing S3 KFB Audio Voice Acting works well, approves **heuristic, reversible** male/female/synthetic voice-lane audition for the first MVP (Demon Lord, Robot One, Farmer A; optional older Lorekeeper, Witch) with later Georg fine-tuning. No real voice/sample human KEEP granted; rights/model choice still open.
+- Created `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md` and `data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json` on the existing PR #379, not a new runtime/owner.
+- Captured future voice-controlled player/NPC interaction via optional mic/VAD, existing BINGO/BOGGLE/BONGO/BLOEDSINN operators and free ASR-final → bounded LLM/Triplet selection; reuse existing PetStudio speech/thought/three-dot shape family and Resident Performance pose/gesture/EyeRig/PetMouth; real KFB Audio playback clock drives talk/duck/bubble reveal. Speakrail remains a separate optional turn-taking donor, not TTS; DocCheck VoiceIO remains separate.
+- Evidence: **23/23** static doc/data assertions; **2/2** private KFB Production Control Site artifacts mirrored exactly to GitHub; 0 new audio/ASR/LLM/browser/3D/runtime tests. No KFB Audio Site redeploy, Hub/public Stage, World R5, merge or Live promotion.
+- Updated owner `START_HERE`, `TEST_REPORT`, `RETURN`, active-branch chat router and existing WSA brief. One owner-local next gate `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1` for a later separately authorized executor. Global Four-Island A/B world gate unchanged.
+
