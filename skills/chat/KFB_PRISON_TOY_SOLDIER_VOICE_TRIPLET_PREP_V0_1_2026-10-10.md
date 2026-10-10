@@ -23,6 +23,19 @@ The existing source/visual decisions remain:
 - dynamic Maze / Panopticon tower / CCTV / searchlight ideas remain proposal-level until their existing source/runtime owners accept them;
 - wind-up key, musket/rifle, jetpack/air patrol and alien/UFO cooperation remain source/performance or story proposals where not already proven.
 
+## 0.1 · Georg tonal shorthand
+
+Current author shorthand:
+- **Officer Pup / Crazy Cat direction**: stumpy, authority-believing, overestimates his own size/status, sincerely impressed by uniforms and command;
+- classic **banality-of-evil underling**, but with enough social instinct to push exactly the button that produces a usable reaction;
+- not a literal import or source claim about another franchise/character; this is tonal shorthand only.
+
+Relative KFB register:
+- Toy Soldiers sit in a **lower-rational** band;
+- they are less cool, jazzy and funky than the Dungeon Squette;
+- Dungeon Squette may enjoy style/performance;
+- Toy Soldiers enjoy the tiny moment where somebody else has to obey.
+
 ## 1 · Character correction from the older v0.8
 
 Older v0.8 described the Toy Soldier as officious, literal, overconfident and easy to distract, but explicitly "not a sadist".
