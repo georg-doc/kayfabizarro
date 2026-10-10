@@ -185,6 +185,14 @@ Existing `overworld/docs/ChatGPT_Living_Concept_v23.md` §98 already proposes **
 
 **Creative flexibility:** The visual grammar may be cartoony, sharp, tender, grotesque, quiet or wildly theatrical depending on who plays a worldview and who observes it. Stylized clay, particle and sound FX do not all need forced watercolor/ink treatment. "Readable without text" is an artistic aspiration for major beats, not a prohibition on ambiguity, subtlety or dialogue-driven jokes.
 
+## Georg author direction · Books as cross-island social life and satirical encounter · 2026-10-11
+
+**Global creative identity, not a new compulsory NPC animation or runtime contract:** KFB Residents are passionate readers, each with distinct tastes, desires, favorite authors, surprising recommendations and imperfectly remembered books. Book **reading, recommendation, borrowing, overdue return and delivery** can make source-based Cards travel between Library, Town, Tavern, Prison and other islands. The reader/player keeps evidence and may exercise Bingo/Boggle or independent criticism; a book's presence is **not ideological endorsement or factual certification**. A proposed future Backpack Book slot, analogous to tape collectibles, must be reconciled with the current Inventory and Fractal Almanac owners rather than created as a duplicate system.
+
+**Cross-island stage grammar:** A visible Toy Soldier censor bonfire with a recognizable long-range smoke plume, a comic Lorekeeper defense, and a Kafkaesque **Prison escort procession** can convert existing Card/book/Resident seeds into audience-closure encounters. The guard and prisoner play conflicting POVs with gesture, silence and brief satirical accusations; the player may observe from outside or become involved under future actual World/Quest/Save authority. NPC/player arrest counts are future actual-event memory candidates, not a blanket BONGO punishment in the current game. Existing ChatterBox Signature pools/Sheet and VFX/Audio/Motion owners govern implementation.
+
+**Source and author handoff:** [Akashic Bookworms, Magical Girl Gang, Lending & Censorship Procession](./KFB_AKASHIC_BOOKWORMS_GIRLGANG_CENSORSHIP_PROCESSION_V1_2026-10-11.md) (post-MVP planning, source contact not visually accepted); no automatic active MVP expansion, new runtime or public publication. Humor can be rude, wild, dark and embodied without a compulsory editorial correction.
+ 
 ## Analog canon vs digital game
 
 Analog/public rules and KFB meta-narration are **high-value origin references**, not shackles on digital gameplay.
