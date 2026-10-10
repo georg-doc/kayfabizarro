@@ -1,0 +1,159 @@
+{
+  "schema": "kfb.formGrammar.r3/1",
+  "H": 3.64,
+  "clear_width_target": 10.92,
+  "family_count": 5,
+  "mesh_count": 41,
+  "families": [
+    {
+      "id": "tread",
+      "count": 8
+    },
+    {
+      "id": "bearing",
+      "count": 14
+    },
+    {
+      "id": "crown",
+      "count": 10
+    },
+    {
+      "id": "pillar",
+      "count": 6
+    },
+    {
+      "id": "landing",
+      "count": 3
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "y_start": 0,
+      "y_end": 1.7,
+      "z": 0.62
+    },
+    {
+      "index": 2,
+      "y_start": 1.7,
+      "y_end": 3.52,
+      "z": 1.28
+    },
+    {
+      "index": 3,
+      "y_start": 3.52,
+      "y_end": 5.18,
+      "z": 1.87
+    },
+    {
+      "index": 4,
+      "y_start": 5.18,
+      "y_end": 7.04,
+      "z": 2.5500000000000003
+    },
+    {
+      "index": 5,
+      "y_start": 7.04,
+      "y_end": 8.77,
+      "z": 3.16
+    },
+    {
+      "index": 6,
+      "y_start": 8.77,
+      "y_end": 10.559999999999999,
+      "z": 3.81
+    },
+    {
+      "index": 7,
+      "y_start": 10.559999999999999,
+      "y_end": 12.209999999999999,
+      "z": 4.41
+    },
+    {
+      "index": 8,
+      "y_start": 12.209999999999999,
+      "y_end": 13.969999999999999,
+      "z": 5.08
+    }
+  ],
+  "landing": {
+    "y_start": 13.969999999999999,
+    "y_end": 17.97,
+    "z": 5.08
+  },
+  "wall_records": [
+    {
+      "side": "L",
+      "start": 0.45,
+      "end": 4.3,
+      "bearing": 1.2,
+      "upper_start": 2.2887,
+      "slope": 0.286
+    },
+    {
+      "side": "L",
+      "start": 4.3,
+      "end": 8.9,
+      "bearing": 1.2,
+      "upper_start": 3.3898,
+      "slope": 0.286
+    },
+    {
+      "side": "L",
+      "start": 8.9,
+      "end": 13.65,
+      "bearing": 1.2,
+      "upper_start": 4.7054,
+      "slope": 0.286
+    },
+    {
+      "side": "L",
+      "start": 13.65,
+      "end": 17.97,
+      "bearing": 1.2,
+      "upper_start": 6.0639,
+      "slope": 0.286
+    },
+    {
+      "side": "R",
+      "start": 0.45,
+      "end": 4.6,
+      "bearing": 1.2,
+      "upper_start": 2.2887,
+      "slope": 0.286
+    },
+    {
+      "side": "R",
+      "start": 4.6,
+      "end": 8.9,
+      "bearing": 1.2,
+      "upper_start": 3.4756,
+      "slope": 0.286
+    },
+    {
+      "side": "R",
+      "start": 8.9,
+      "end": 13.65,
+      "bearing": 1.2,
+      "upper_start": 4.7054,
+      "slope": 0.286
+    },
+    {
+      "side": "R",
+      "start": 13.65,
+      "end": 17.97,
+      "bearing": 1.2,
+      "upper_start": 6.0639,
+      "slope": 0.286
+    }
+  ],
+  "pillar_anatomy": [
+    "foot",
+    "shaft",
+    "cap"
+  ],
+  "materials": "NEUTRAL_QA_ONLY",
+  "formBeforeMaterials": true,
+  "hill_contact": "NOT_YET_RUN",
+  "human_gate": "PENDING"
+}
