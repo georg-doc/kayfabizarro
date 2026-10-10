@@ -76,8 +76,8 @@
           "group": "G1",
           "label": "Große Solitärfelsen",
           "scene": "alle Inseln",
-          "status": "source_mesh_inspection_ready",
-          "notes": "Kenney Nature, KayKit Forest, Quaternius",
+          "status": "MOOD_CONCEPT_POSITIVE_SOURCE_FIDELITY_OPEN",
+          "notes": "Kenney Nature, KayKit Forest, Quaternius Mood render liked, but visibly different from donor; source-locked concept comparison required before any Golden or model selection.",
           "picked": null,
           "goldenRef": false,
           "rank": null,
@@ -85,7 +85,17 @@
           "renderIndex": 5,
           "georgDecision": null,
           "sourceProof": "G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md",
-          "visualConceptAccepted": false
+          "visualConceptAccepted": false,
+          "moodConcept": {
+            "checkpoint": "G1-R8",
+            "file": "G1_Kenney_rock_largeA_MOOD_R1.png",
+            "sha256": "276bbede58cc81d1f3911bb73323c76024f162cf7b17a0d30ae20109622d9404",
+            "sourceFidelity": "USER_SAYS_VISUALLY_DIFFERENT",
+            "golden": false,
+            "parts": "refs/large_boulders/PARTS.md",
+            "prompt": "refs/large_boulders/PROMPT.md",
+            "preview": "refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp"
+          }
         },
         {
           "id": "rock_ridges",
@@ -329,8 +339,8 @@
           "group": "G4",
           "label": "Steinbogenbrücke (optional mehrere Felder)",
           "scene": "Verbindung",
-          "status": "visual_attempt_failed_quarantined",
-          "notes": "G4 editorial R1: two generated multi-panel/branded concept sheets violate brief §7 isolated-object requirements. See G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md; only mood salvage, no source-verified donor art.",
+          "status": "STYLE_DIRECTION_ACCEPTED_NOT_GOLDEN",
+          "notes": "G4 editorial R1: two generated multi-panel/branded concept sheets violate brief §7 isolated-object requirements. See G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md; only mood salvage, no source-verified donor art. OVERRIDE 2026-10-10 §7a: specifically STONE BRIDGE 01 sheet released as style direction, not Golden/asset. Labeled detail/multiple-view sheets are allowed; KFB logos and marketing copy are prohibited in future. Historical image-brief failures remain evidence.",
           "picked": null,
           "goldenRef": false,
           "rank": null,
@@ -339,7 +349,19 @@
           "georgDecision": null,
           "failureRecovery": "G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md",
           "visualAttempts": 2,
-          "renderAccepted": false
+          "renderAccepted": false,
+          "styleDirection": {
+            "source": "Uploaded G1 planning branch brief §7a",
+            "sheet": "STONE BRIDGE 01",
+            "status": "STYLE_DIRECTION_ONLY",
+            "noGolden": true,
+            "noAssetPick": true,
+            "partListRequired": true,
+            "owner": "G4",
+            "sourceFileInLabReported": "docs/golden/candidates/G4_stone_bridge_sheet_webchat_r1.webp",
+            "sourceVerifiedInLab": false
+          },
+          "failureRecoveryHistorical": true
         },
         {
           "id": "bridge_abutment",
@@ -635,7 +657,10 @@
     "concepts": 2,
     "sourceAccepted": 0,
     "goldenRefs": 0,
-    "failedQuarantinedVisualSeams": 1
+    "failedQuarantinedVisualSeams": 1,
+    "moodPositiveSourceMismatch": 1,
+    "styleDirectionOnlyG4": 1,
+    "g1GeneratedConcepts": 4
   },
   "nextGate": "Persist visible concept image files/proof in G1 and have Georg choose next scene or specific element; source-isolate purchased originals before source-fidelity claims."
 }
