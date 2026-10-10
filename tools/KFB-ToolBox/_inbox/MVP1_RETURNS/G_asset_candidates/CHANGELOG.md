@@ -1,5 +1,11 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · G1 · 3 Webchat-Bildmotive + 40er Arbeitsliste
+- Georg: „sieht cool aus! aber der look könnte noch cartooniger, stilisiert und weniger realistisch sein, denke ich….“; nach Town-Clay-R2: „super!“; nach Protopia-R1: „super!“; **kein** formeller Donor-Pick oder GoldenRef.
+- [Gerenderte Konzeptbild-Galerie](G1_RENDERED_CONCEPTS_R1.md) / [JSON](G1_RENDERED_CONCEPTS_R1.json): drei echte GitHub-WebP-Vorschauen **256×192**, binäre Blobs 3/3 per SHA und Branch-Head geprüft. **0/3 hochauflösende Original-PNGs** auf GitHub; als generiertes Chat-ZIP `KFB_MVP1_G1_Concept_Images_2026-10-10.zip` inkl. Original-SHA und GH-Uploadskript gesichert.
+- [Szenen- und Asset-Worklist](G1_SCENE_ASSET_WORKLIST_R1.md) / [JSON](G1_SCENE_ASSET_WORKLIST_R1.json): **7 Szenen, 40 Motive, 6 Gruppen**, G1/G2/G3/G4/G5/G6 getrennte Owner; [QA](TEST_REPORT_G1_GALLERY_R1.md) **15/15 PASS**.
+- Nächster Schritt: echte 1448×1086 PNGs vom Paket nach GitHub transportieren, verifizieren, Galerie/Return/Recovery fortschreiben; erst danach nächstes offenes Motiv.
+
 ## 2026-10-10 · G1 · Quellenkorrektur KFB Style References
 - Georg wörtlich: „@Dropbox da liegen in kfb style referenzen alle vorlagen“.
 - [G1 Bildserien- und Style-Referenz-Brief](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md): Dropbox `KFB Style References` in KFB Card Zone Lab v2 **8 Bilder identifiziert** und Quelle/Style/Benchmark voneinander getrennt; Repo-Style-Spiegel und KFB-Style-Reference-Router geprüft.
