@@ -37,11 +37,11 @@ Georg will alle laufenden Briefings an **einem** Ort sehen: im KFB Production Hu
     },
     {
       "id": "brief-mvp1-B-dialog",
-      "title": "MVP-1 · B · Lorekeeper-Auftrag + Bewohner-Zeilen",
+      "title": "MVP-1 · B · Triplet-Kandidaten (Lorekeeper + Bewohner)",
       "badge": "READY · CHATGPT / CLAUDE CHAT",
       "status": "ready",
       "provider": "ChatGPT mit GitHub oder Claude Chat (Paket B_chat_mvp1-dialog.zip)",
-      "desc": "Dialog-JSON DE/EN mit Kartenquelle (deckId + cardNumber) für die MVP-1-Runde. Für Stufe 4a. Rückgabe: tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/",
+      "desc": "Triplet-Kandidaten subject → connector → reframe (EN, status candidate, Kartenquelle) im ChatterBox-Format; Anhören in KFB Audio · Voice Acting Bench. Für Stufe 4a. Rückgabe: tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
     },
     {

@@ -153,7 +153,7 @@ Design kommt vorab von Claude Design (Briefing HUD + Flug-VFX). Moduswechsel sin
 | Bewohner, Animationen | Blender-Coworker (Mac mini) | Resident Atlas, Motion Forge |
 | Billboards | KFB Clay Stage R2, Billboard-Kit (7 Formfamilien: Krone, Pfeil, Orbit, Turm, Starburst, Totem, Gürtel; Farbrollen statt fester Farben) | eines je Insel in der Inselpalette, Inhalt Hypernormalization-Loops und Quotes (Quote-Pool PR #354, H13/H14); später diegetisch umschaltbar über Knöpfe an der Tafel (Georg 09.10.) |
 | Audio-Bett | KFB-Audio-Owner | Cozy Tunes, Motor, Umgebung |
-| Voice | ChatterBox Voice Layer (PR #379) | Abnahme Voice; Georg: alle Stimmen KEEP |
+| Voice | ChatterBox (Inhalt: Triplet-Pool, `subject → connector → reframe`, Englisch) + Voice Layer (nur Ausgabe; PR #379, KFB Audio · Voice Acting Bench v6) | Hörtest Georg in der Bench (solo / D-Bed / D-Bed mit Ducking → KEEP/TUNE/CUT); ElevenLabs erst mit serverseitiger Bridge |
 | HUD, Flug-VFX | **ein HUD**: Knet-Material des K7-HUD (`clay-hud.v1.js`) + Bauteile aus HUD R3 von Claude Design (Radio, Moduswechsel, Biom-Paletten, Flug-VFX); Georg 09.10.: Knet statt glattem Interface | Session-Cut `KFB_HUD_FLIGHT_SESSION_CUT_2026-10-09_r1`, R3 „okay, mit TUNE“ |
 | Bühne + Vorhang | KFB Clay Stage R2 (`clay-look.js` kleidet den Vorhang-Kern ein) | Georg 09.10.: „passt so mit TUNE für später“; Character Select bzw. Übergang |
 | Assets (Intake, Suche) | Asset Librarian v10 (GPT-Site) | Intake → Handoff → private Inbox → Live-Refresh, ohne Work-Lauf |

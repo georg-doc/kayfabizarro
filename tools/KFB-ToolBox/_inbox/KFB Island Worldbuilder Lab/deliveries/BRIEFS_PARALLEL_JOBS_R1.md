@@ -9,7 +9,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 | # | Werkzeug | Auftrag | Wofür im MVP | Priorität |
 | --- | --- | --- | --- | --- |
 | A | Claude Design | Town-Lageplan + 3 Kamera-Skizzen | Stufe 2 | hoch |
-| B | ChatGPT (mit GitHub) oder Claude Chat | Lorekeeper-Auftrag + Bewohner-Zeilen aus Kanon-Decks | Stufe 4a | hoch |
+| B | ChatGPT (mit GitHub) oder Claude Chat | Triplet-Kandidaten (subject → connector → reframe, EN) für Lorekeeper + Bewohner | Stufe 4a | hoch |
 | C | Cowork | Figuren-Karten-Inventur der MVP-Bewohner | Stufe 4a | mittel |
 | D | Grok bzw. ChatGPT Web | KayKit-Creator-Recherche, MVP-Fokus | Stufe 2–3a | mittel |
 | E | Claude Design | Protopia-Lageplan Eremiten-Hügel | Stufe 3a | später |
@@ -43,26 +43,30 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 
 ---
 
-## B · ChatGPT (mit GitHub-Zugriff) oder Claude Chat: Lorekeeper-Auftrag + Bewohner-Zeilen (Stufe 4a)
+## B · ChatGPT (mit GitHub-Zugriff) oder Claude Chat: Triplet-Kandidaten für die MVP-Runde (Stufe 4a) · v2 (korrigiert)
 
-**Quellen (GitHub `georg-doc/kayfabizarro`, main):** `media/kfb/index.json` (Deck-Index), die Karten-JSONs von `embrace_protopia` und `frizzlebob_s_mission_control`, `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/GOLDEN_JOURNEY_MVP_2026-10-04.md` und `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`. Ohne GitHub-Zugriff die Dateien hochladen.
+**Korrektur gegenüber v1:** v1 verlangte frei geschriebene Dialogzeilen auf Deutsch und Englisch. Das widerspricht der ChatterBox-Logik. **ChatterBox besitzt den Inhalt** und wählt aus einem **Triplet-Pool**: drei bedeutungsvolle Beats `subject → connector → reframe`, auf **Englisch**, aus kanonischen Quellen. Die Voice Layer spricht nur, was ChatterBox auswählt. Vorlage und Hörprobe: KFB Audio · Voice Acting Bench (Site-Version 6) und PR #379, Branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`, `VOICE_LAYER_INTEGRATION_CONTRACT.md`.
 
-> Schreibe die Dialogzeilen für die erste spielbare Runde von Kayfabizarro (MVP-1). Ablauf: Spieler startet in KFB Town, läuft über den Markt, fährt eine Runde auf der Ringstraße, fährt über die Brücke nach Protopia zum **Lorekeeper** (Mentor, Eremiten-Hügel mit Schreibpult), bekommt einen **Auftrag** und kehrt nach Town zurück.
+**Quellen:** wie v1 (Deck-Index, Karten-JSONs von `embrace_protopia` und `frizzlebob_s_mission_control`, Golden Journey, Deck-Pipeline), dazu der Voice-Layer-Vertrag und vorhandene ChatterBox-Phrasen (`chatter-phrases.js`, laut Vertrag die aktuelle Quelle).
+
+> Erstelle **Triplet-Kandidaten** für die erste spielbare Runde von Kayfabizarro (MVP-1). Ablauf: Start in KFB Town, Markt, Ringstraße, Brücke nach Protopia zum **Lorekeeper** (Mentor, Eremiten-Hügel mit Schreibpult), Auftrag, zurück nach Town.
 >
-> **Liefere als JSON**, je Zeile: `speaker`, `situation`, `de`, `en`, `source` (`deckId + cardNumber` bzw. Regelquelle; „frei“, wenn ohne Quelle):
-> 1. **Lorekeeper:** Begrüßung (2 Varianten: erster Besuch, Wiederkehr); der Auftrag; Abschied. Der Auftrag soll eine echte Karte aus `embrace_protopia` als Kurier-Sache nach Town bringen lassen (Karte bleibt im Almanac, wird nur überbracht). Begründe die Wahl der Karte in einem Satz.
-> 2. **Clown** (Markt, jongliert, flache Witze): 5 Zeilen.
-> 3. **Dark Knight** (Wache vor der Burg): 3 Zeilen. **Farmersfrau** (Gemüsestand): 3. **King Kayfabian**: 2. **Caveman** (Mine): 2.
-> 4. **Rückkehr nach Town:** eine Zeile der Person, die die Karte empfängt (schlage vor, wer passt).
+> **Format je Triplet (JSON):**
+> `tripletId`, `residentId`, `situation`, `subject`, `connector`, `reframe` (je ein kurzer Beat, Englisch), `affect` (Vorschlag), `sourceRefs` (`deckId + cardNumber` bzw. Phrase-ID), `status: "candidate"`.
+>
+> 1. **Lorekeeper:** Begrüßung (erster Besuch bzw. Wiederkehr), Auftrag (eine echte Karte aus `embrace_protopia` als Kurier nach Town; die Karte bleibt im Almanac), Abschied: je 1–2 Triplets.
+> 2. **Clown** (flache Markt-Witze) 3, **Dark Knight** 2, **Farmersfrau** 2, **King Kayfabian** 1, **Caveman** 1, **Empfänger in Town** 1.
+> 3. Wo es passt, die Event-Rufe (Tier B) markieren statt neu zu schreiben: `Kayfa-BINGO!`, `Kayfa-BOGGLE?`, `Kayfa-BONGO!`, `BLÖDSINN!`, `What the FLUFF?!`, `Stay fluffy!`.
 >
 > **Regeln:**
-> - Jede Zeile 1–2 Sätze, Chill & Fun, Monkey-Island-Ton, satirisch, aber nicht verletzend.
+> - Kein Fließtext-Dialog. Jeder Beat ist kurz, die drei Beats zusammen ergeben eine Pointe bzw. Umdeutung.
+> - Inhalt nur aus Kartennamen bzw. Lore der JSONs und vorhandenen Phrasen; nichts als Karte ausgeben, was nicht im JSON steht.
+> - Alles ist `candidate`, nicht Kanon; ChatterBox und Georg entscheiden.
 > - Keine realen Personen bzw. Firmen, keine Inhalte aus Verschwörungs-Decks.
-> - Kartennamen und Lore nur so, wie sie in den JSONs stehen; nichts erfinden, was als Karte ausgegeben wird.
-> - KayfaBINGO, KayfaBONGO und KayfaBOGGLE nur in ihrer echten Bedeutung (Anerkennung, Erzählung statt Mechanik, eine klärende Frage).
+> - KayfaBINGO, KayfaBONGO und KayfaBOGGLE nur in ihrer echten Bedeutung.
+> - Schweigen ist eine gültige Antwort.
 
-**Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/` · **Paket:** `B_chat_mvp1-dialog.zip` (für Chats ohne GitHub-Zugriff)
-
+**Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/` · **Paket:** `B_chat_mvp1-dialog.zip` (v4). Die Kandidaten kann Georg danach in der Voice Acting Bench anhören.
 ---
 
 ## C · Cowork (lokaler Zugriff auf Dropbox): Figuren-Karten-Inventur (Stufe 4a)
