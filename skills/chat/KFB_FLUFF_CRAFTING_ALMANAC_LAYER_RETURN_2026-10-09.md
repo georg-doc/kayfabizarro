@@ -1,4 +1,17 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.8
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v0.9
+
+> **CURRENT ADDITIVE UPDATE · 2026-10-10 · PRISON MAZE FLOATING ISLAND / ADAPTIVE TOWER**
+>
+> [KFB_PRISON_MAZE_FLOATING_ISLAND_TERRAIN_TOWER_V0_9_2026-10-10.md](./KFB_PRISON_MAZE_FLOATING_ISLAND_TERRAIN_TOWER_V0_9_2026-10-10.md) captures Georg's new floating-island / transformable prison terrain direction on this same planning branch. Initial verified concept milestone head `2b81e9fec35d92b1aa1bb23cd334182aeeb46e76`, blob `eb97414b91135f4c2ab286c4a23910fd994e2f13`.
+>
+> The floating island has a thick, torn/wedge-shaped underside; upper terrain can form deep bowl, inverse central mound or morphing hybrid, while orthogonal and radial maze layouts remain explicit comparators. A central Panopticon tower dynamically telescopes/rebuilds upward to preserve the landmark and searchlight vantage as the prison bowl deepens. Existing KayKit/Kenney modular towers and actual Tiny Skies-like beam must be source-isolated first; custom Meshy-style twisted cartoon watchtower remains an optional sourced/exported alternative, not an existing model. The Toy Soldier presses a button to visibly alter maze topology: raised-ground walls ascend/descend, routes change and inmates react with safe cartoon motion. Main Frost Orc is Medium, Large brother and Survivalist remain candidates; Black Knight stays bodyguard, NOT recurring main prisoner. v0.8 Black Knight casting suggestion is superseded, but historical v0.8 text remains preserved.
+>
+> Implementation architecture is explicitly a **hypothesis**, not acceptance: stable underside/support + mutable upper terrain + topology-driven raised-ground walls, using existing authoritative World/Surface, Actor/Navigation, VFX/Lighting, ChatterBox and Save owners. Reconfiguring only affected local segments is a likely economical first proof, not an established technique. After MVP1, a later source-first Claude Design study can compare orthogonal basin, radial basin and central hill/hybrid with isolation boards and before/after transformation. No live feature or fifth core island authorized. Static content spot checks **6/6 PASS**, GitHub milestone file/head **1/1 verified**, runtime **0**, visual isolation **0**, browser **0**, Site/Stage **0**.
+>
+> **One next deferred gate unchanged:** `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` after playable MVP and Georg authorization. No PR, merge, public route or runtime changes.
+
+---
+
 
 > **CURRENT RETURN UPDATE · v0.8 · 2026-10-09 · PRISON ISLAND / KAYFABE PATROL LOOP**
 >
