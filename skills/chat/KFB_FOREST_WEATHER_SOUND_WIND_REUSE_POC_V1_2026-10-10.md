@@ -1,9 +1,12 @@
-# KFB Forest Island · Living Weather, Wind, Tornado & Horror Soundscape POC v1
+# KFB Forest Island · Living Weather, Wind & Horror Soundscape POC v1.1
 Date: 2026-10-10
 Status: POST-MVP AUTHOR DESIGN + SOURCE DONOR AUDIT; DOCUMENTATION ONLY / NOT IMPLEMENTED
 Owner: existing KFB Island Worldbuilder / Minigame planning on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`
 Receiving product: later Forest/Cabin/Werewolf Island; reusable Environment consumer across KFB islands.
 Parent: `skills/chat/KFB_FOREST_CABIN_WEREWOLF_ISLAND_CHARACTER_COMEDY_V1_2026-10-10.md` (current v1.1).
+
+> **GEORG KISS OVERRIDE · 2026-10-10 · CURRENT FIRST POC:** The first proof is **one real forest patch**: subtle GPU grass/bush/tree sway, existing TinySkies rain overlay, existing-owner fog and coherent KFB Audio ambient bed with one spatial close wolf growl OR distant scream. No new weather runtime, complex snow accumulation or physics. Snow remains a deferred simple flurry look check; lightning/thunder a later brief synchronized cue. TinySkies `WaterSpouts.ts` / `CarpetLeaves.ts` remain documented candidates **only**, but **TORNADO = DEFERRED** and carries no first-proof work, no physics/force adapter and no repair budget. If hard, leave it parked. **TinySkies portals** are also desirable, but are a **separate visual/closure donor**, not part of Forest weather POC: see `skills/chat/KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md`.
+
 
 ## 0. Outcome and creative reason
 The Forest/Werewolf Island becomes a bounded, representative testing ground for **sound, wind-driven living vegetation, precipitation, mist/fog, snowfall, storm, lightning/thunder, and tornado/wind VFX**. In the scene, two genre-aware Hikers hear a distant scream, encounter a close unseen wolf growl, misread a wind-shaken bush, and confidently make bad choices despite reciting horror-survival rules. These are event/visual/sound triggers, NOT a new script pool/Triplet contract: Georg corrected the prior dialogue assumption; current independently managed pool Sheet and ChatterBox owner still govern actual lines.
@@ -60,15 +63,16 @@ This is a stylistic menu, not a fixed moral-weather rule or mandatory per-island
 At campsite, loud distant screaming and near growl can interrupt the Hikers' apparently expert plan, leading them to split up. A wind gust collapsing a tent pole looks like monster interference; the actual wolf is elsewhere. Thunder reveals a fleeting silhouette that the tourists confidently misidentify. These are **physical scene beats**, not canonical ChatterBox Triplets. Forest musical score should alternate cozy camp/cabin notes with sparse dark-comic unease, then drop out for meaningful environmental sound; no copied songs, no generic filler.
 ElevenLabs can be an external SFX discovery/generation source, **not** authoritative source pool, player voice runtime, audio mixer or a replacement of existing KFB Audio. Curate recorded/generated sounds with IDs, human listening, loop/crossfade and license receipts.
 
-## 7. Bounded future proof and acceptance (NOT RUN)
-An incremental source-first proof should establish:
-P0: inspect original TinySkies/Travel rain, leaf, spout and flora donors individually in renderer; compare exact source rather than illustrating.
-P1: one real island patch with 1 tree, 1 bush cluster, grass groups under gentle wind, measured contact/LOD and perf.
-P2: weather presets clear→rain→mist→snow / storm with one camera and same island; compare palette, audio and mobile.
-P3: synchronized lightning/near-far thunder and one distant scream/near growl using KFB Audio, voice ducking.
-P4 (OPTIONAL): one waterspout-derived visible tornado with safe motion and a strictly bounded, owner-verified physics influence on a single prop/character, or visuals only if physics access unavailable.
-P5: reuse wind/rain/fog preset on one **different** island to demonstrate genuine portability rather than one-off Forest hardcode.
-Saved evidence: source contact images, settings/seeds, before/after clips, runtime test counts, FPS/draw counts/memory on named target, audible proof and verified build/branch. Weather visuals must not masquerade as physically applied collision effects. DO NOT modify active MVP or deploy a separate weather runtime in this planning slice.
+## 7. KISS first proof and acceptance (NOT RUN)
+**Exactly one tiny scene**, using real existing assets and existing owners:
+1. Inspect `ts-flora.js` GPU wind, TinySkies rain and Environment fog donors in isolation, without calling source availability a 3D integration PASS.
+2. One planted forest patch: 1 source-backed tree, 1 small bush group and several instanced grass tufts; subtle common wind, anchored roots, simple chunk culling and low-FX/off.
+3. Two atmospheric switches: clear ↔ existing rain overlay, fog off ↔ on. One Forest ambient bed using current KFB Audio and one distant scream OR close wolf growl from an actually curated/licensed clip.
+4. Real visual/audio evidence: fixed camera and short walk, before/after screenshots and short capture, asset/donor paths, measured frame/draw costs, mix audibility, no console errors, correct cleanup. If source seam fails, preserve it; no replacement weather engine.
+**After core proof**, optional one-event lightning/thunder and basic snow flurries can be considered separately; neither blocks the first scene. No persistent snow/wet material physics claimed.
+**Tornado DEFERRED:** keep `WaterSpouts.ts` as donor note only, no source-isolated render required in first POC, no physics forces, no actor/prop lifting, no debugging loop.
+**Portals SEPARATE:** `KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md` describes original portal visuals and their KFB comic-gutter transition potential. They must not enlarge the weather test, replace existing Portal/Instance ownership or become a new blocking gate.
+No active MVP changes, no public Stage/Site publication, no runtime implementation in this documentation phase.
 
 ## 8. Protection, recovery and next gate
 Read main `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, this Forest parent and current Fluff Return. Main Four-Island R4 NO MVP / pending A/B remains unchanged. No unauthorized R5, no new World/Environment/Audio/Physics owner, no new P0 or Stage/Site route. Creative proposals do not become global canon restrictions; use effects suited to each 3D medium.
