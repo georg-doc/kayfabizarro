@@ -1,5 +1,13 @@
 # RETURN · G1 · MVP-1 Inselkörper und Fels · 2026-10-10
 
+## Additive Runde R5 · G4 Einzelasset-Bildgate gescheitert · 2026-10-10
+- Nach sichtbarem [source-vs-render-Vergleich](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) und original [bridge01 TEST_REPORT](https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/tools/img2threejs-tests/bridge01/TEST_REPORT.md): Versuch A1 und Korrektur A2 erzeugten beide fehlerhafte **Multi-Panel-Brücken-Marketingbilder mit Beschriftungen und Zusatzprops** statt einem isolierten Einzelasset. **0/2 Bild-Gate PASS**. Keine G4-Golden oder Asset-Pick.
+- **Failure recovery archiviert**, beide unveränderten 1536x1024 PNGs + Previews + SHA256-Manifest + Postmortem im Chat-Artefakt `KFB_G4_BRIDGE_FAILURE_RECOVERY_2026-10-10_r1.zip`, Größe 4,331,883 B; ZIP SHA256 `4cdf6cbf812650baf62982d17a4402c00d519f8706de6c7d661884b224435735`. **ZIP nicht auf GitHub**, dort [Quarantäne-Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md).
+- [Testbericht](TEST_REPORT_G1_G4_FAIL_R1.md): **10/10 tatsächliche Export-/Datei-Checks PASS**, gesondert von gescheiterter Bild-Abnahme; vorherige 15/15 Galerie-Checks bleiben Stand R4.
+- [40-Motive-Liste](G1_SCENE_ASSET_WORKLIST_R1.md) / JSON mit exakt einem G4-Quarantänestatus aktualisiert. G1/G2/G3/G5/G6 unverändert, keine G4-Runtime-Übernahme, kein Stage/Site/Merge.
+- G1 Full-Res-PNGs weiter **0/3 auf GitHub**, drei 256×192 WebP-Vorschauen nach wie vor **3/3** verifiziert. Container ohne GitHub-Binärtransport; Original-ZIP vorhanden und Prüfsummen 3/3 bestätigt.
+- **Genau ein nächstes Gate:** den GitHub-Upload der drei vorhandenen G1-Vollauflösungs-PNGs mit einem netzwerkfähigen autorisierten Client abschließen, readback-verifizieren, danach Bilderregister und Handoff aktualisieren. G4 nach zweimaligem nichtverbesserndem Versuch eingefroren.
+
 ## Additive Runde R4 · Bildserie, Uploadstatus, Szenen-/Assetliste · 2026-10-10
 - **3** KI-konzipierte isolierte Island-Motive im Chat gerendert: Town R1, Town R2 nach Georgs Wunsch „cartooniger, stilisiert und weniger realistisch“, Protopia R1; Georgs „super!“ als positive gestalterische Richtung, **nicht** GoldenRef oder StreakByte-Asset-Pick.
 - **3 echte komprimierte Bildvorschauen** (`256x192 WebP`) als Git-Blobs auf G1-Branch hochgeladen und exakt verifiziert, Bilder-Commit `a33c95a54bc6fac140957c077d285eb582a870eb`. [Bildregister](G1_RENDERED_CONCEPTS_R1.md) / [JSON](G1_RENDERED_CONCEPTS_R1.json) dokumentieren die Pointers, Originaldateinamen und SHA256.
