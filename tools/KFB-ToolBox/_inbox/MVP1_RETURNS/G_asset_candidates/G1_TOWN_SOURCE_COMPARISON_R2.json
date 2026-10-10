@@ -1,0 +1,116 @@
+{
+  "schema": "kfb.g1.source-comparison/1",
+  "group": "G1",
+  "updatedAt": "2026-10-10",
+  "kind": "HISTORICAL_MEASUREMENT_REINTERPRETATION_NOT_SOURCE_ISOLATION",
+  "sources": {
+    "originalData": "/CLAUDE/KFB Island Worldbuilder Lab/tools/out/measure.json",
+    "originalViewer": "tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/src/originals.ts",
+    "algorithm": "tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/src/island/measure.ts",
+    "K2": "tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/docs/SCALE_CONTRACT_K2.md",
+    "originalScreenshots": [
+      "/CLAUDE/KFB Island Worldbuilder Lab/tools/out/orig__all.jpg",
+      "/CLAUDE/KFB Island Worldbuilder Lab/tools/out/orig__forest.jpg",
+      "/CLAUDE/KFB Island Worldbuilder Lab/tools/out/anat__forest-below.jpg"
+    ],
+    "privateFiles": [
+      {
+        "logicalId": "port",
+        "asset": "LPFI_PortLand/Floting Base.fbx",
+        "sizeBytes": 300044,
+        "dropboxContentHash": "694d0c90cbc93321b5cfb8c2bce4d09ba09d055614103659cc12ee8c19f30e53"
+      },
+      {
+        "logicalId": "backyard",
+        "asset": "LPFL_BackyardLand/Backyard Base.fbx",
+        "sizeBytes": 47996,
+        "dropboxContentHash": "92c345501823dea44f9c30878d78bb73ed66f20c6f214d34a36c95fd1085c1d4"
+      }
+    ]
+  },
+  "units": {
+    "H_lab": 3.64,
+    "MC_lab": 6.4,
+    "MC_to_H": 1.7582417582417582,
+    "townTargetMC": 40,
+    "townTargetLab": 256,
+    "warning": "Ratio-based estimates after uniform scaling to Town 40 MC width; these are NOT native FBX bounding boxes or native scale factors."
+  },
+  "candidates": [
+    {
+      "id": "port",
+      "oldNormalizedWidth": 60,
+      "triangles": 1585,
+      "tipCount": 6,
+      "slabToW": 0.026,
+      "undersideDepthToW": 0.434,
+      "totalDepthToW": 0.46,
+      "widthProfile_0to100pct": [
+        1.02,
+        0.89,
+        0.79,
+        0.72,
+        0.66,
+        0.57,
+        0.52,
+        0.4,
+        0.42,
+        0.33,
+        0.2
+      ],
+      "predicted_atTown40MC": {
+        "widthLab": 256,
+        "widthH": 70.33,
+        "normalizedScaling": 4.2667,
+        "slabLab": 6.66,
+        "slabH": 1.83,
+        "undersideDepthLab": 111.1,
+        "undersideDepthH": 30.52
+      }
+    },
+    {
+      "id": "backyard",
+      "oldNormalizedWidth": 60,
+      "triangles": 700,
+      "tipCount": 22,
+      "slabToW": 0.037,
+      "undersideDepthToW": 0.506,
+      "totalDepthToW": 0.543,
+      "widthProfile_0to100pct": [
+        1.17,
+        1.11,
+        0.88,
+        0.77,
+        0.7,
+        0.54,
+        0.52,
+        0.42,
+        0.18,
+        0.18,
+        0.08
+      ],
+      "predicted_atTown40MC": {
+        "widthLab": 256,
+        "widthH": 70.33,
+        "normalizedScaling": 4.2667,
+        "slabLab": 9.47,
+        "slabH": 2.6,
+        "undersideDepthLab": 129.54,
+        "undersideDepthH": 35.59
+      }
+    }
+  ],
+  "delta": {
+    "depthRatioBackyardOverPort": 1.17,
+    "tipDelta": 16,
+    "triangleDelta": 885,
+    "slabRatioBackyardOverPort": 1.42
+  },
+  "sourceIsolation": {
+    "complete": false,
+    "imagesProduced": 0,
+    "nativeBoundingBoxesMeasured": 0,
+    "reason": "Dropbox download links were available but local render container has no external DNS; existing FBX preview supplies no thumbnail."
+  },
+  "review": "Port remains an A for first isolated proof due to 6 vs 22 underside local minima and less massive underside ratio; no visual acceptance."
+}
