@@ -66,3 +66,17 @@ Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Tre
 ## 7 · Was danach passiert (nicht Teil des Webchats)
 
 Die gewählten Kandidaten setzt die Bau-Sitzung im Lab ein: Maßstab K2, Knet-Material, KFB-Farbrollen, Prüfung Q1–Q9, aus Spielkameras. Fehlt für ein Element jeder brauchbare Kandidat, bleibt es eine Lücke für Claude Design bzw. Blender. Erst dann wird neu gebaut.
+
+## 8 · Lücken: img2threejs statt Text-Regeln (Georg 10.10.)
+
+Gibt es für ein **gebautes** Element (Treppe, Brücke mit Widerlager, Tunnelportal, Marktstand, Landmarke) kein brauchbares Modell, aber ein gutes **Bild** (aus der Kandidatensuche, ein Foto bzw. Georgs Midjourney-Bild): dann nach der img2threejs-Methode (`tools/img2threejs/`, Vorbild Kölner Dom v0.2 und Landmark-Pack, Grotesque-Stil) als three.js-Modul nachbauen:
+
+1. Referenzbild festlegen und Georg kurz bestätigen lassen.
+2. Bauteile aus dem Bild beschreiben (Teile, Proportionen in H bzw. MC, Kantenrundung).
+3. Geometrie stufenweise im Code aufbauen (three.js r160+, gerundete Kanten, wenige große Formen, Farben über Rollen).
+4. **Render gegen Referenz aus derselben Kamera vergleichen**, nebeneinander auf einem Blatt; höchstens drei Korrekturrunden.
+5. Ergebnis als Modul bzw. GLB im Maßstab K2 auf demselben Branch ablegen (`…/G_asset_candidates/img2threejs/<element>/`), mit Vergleichsblatt.
+
+**Nicht** für organische Formen (Inselkörper, Felsen, Gelände): Dafür nur vorhandene Modelle (G1). Auch img2threejs-Ergebnisse gehen danach im Lab durch Q1–Q9 und den blinden Kritiker.
+
+**Szenenmontage aus einem Bild:** Für den Town-Lageplan darf ein Chat ein gewähltes Referenzbild (z. B. eine StreakByte-Demo-Insel oder ein Konzeptbild) analysieren und daraus eine Platzierungsliste vorhandener Assets erstellen (Asset-ID, Lage, Drehung, Maßstab in MC). Das ist ein Rezept-Vorschlag, kein Bau.
