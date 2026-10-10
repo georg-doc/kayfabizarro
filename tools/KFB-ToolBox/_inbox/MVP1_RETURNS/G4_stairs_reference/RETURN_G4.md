@@ -1,5 +1,12 @@
 # RETURN · G4 Stair Reference R1 · 2026-10-10
 
+## R3 Handoff Checkpoint · verified documents, no R3 build yet
+
+- **[WORK_START_R3.md](WORK_START_R3.md)**: kurzer WSA-Einstieg.
+- **[BRIEF_WSA_G4_FORM_DESIGN_R3_2026-10-11.md](BRIEF_WSA_G4_FORM_DESIGN_R3_2026-10-11.md)**: vollständiger neu autorisierter Form- und Testauftrag.
+- **[TEST_BRIEF_WSA_G4_FORM_R3.md](TEST_BRIEF_WSA_G4_FORM_R3.md)**: ursprüngliche 17/19 Textmatcher und explizite Korrektur zweier falscher exakter String-Matches; final **19/19 inhaltliche Quellen-/Briefprüfungen PASS**. Nicht mit ausführbaren Modelltests verwechseln.
+- R1/R2 GLB und Bildvergleiche bleiben auf separatem WSA-Branch. R3 Kandidatenbranch noch nicht erzeugt. Aktuelles privates Plugin v0.1.0 ist unverändert; ein Plugin-Update hängt **ausdrücklich vom unabhängigen R3-Form-Ergebnis** ab, sonst nur Update-Handoff/kein behaupteter Erfolg.
+
 ## Additive R3 · 2026-10-11 · Formorientierter WSA-Auftrag vorbereitet
 
 Georg erhält R1/R2 als technische Treppenalternativen. Für die Burgtreppe ist ein neuer sichtbarer Architekturentwurf erforderlich. Die jüngste WSA-Treppe R2 auf `wsa/kfb-modelling-test-stairs-2026-10-10@52099710569a98393325ee94becf616f418b35f2` hat höhere Endkörper, aber weiterhin keilförmige Wangen und keine klar lesbaren Pfeiler mit Sockel, Schaft und Deckstein. Der Source-Code und Vergleichsbilder wurden geprüft.
