@@ -274,3 +274,24 @@ On the published Site, Georg runs one chosen Triplet in three passes:
 3. voice over D bed with ducking;
 
 Return **KEEP / TUNE / CUT** for voice, bed balance and ducking. This single listening gate replaces any assumption based on structural checks.
+
+## S4 preparation · GitHub + KFB Production Control Site documentation · 2026-10-10
+
+Mode: source-only read/contract preparation. No Voice Acting Site deployment, audible render, browser recording, human listening, game runtime or DocCheck runtime run.
+
+### New checks in this preparation
+
+- **16/16 source/contract assertions PASS** by inspecting exact GitHub file contents: real-pool adapter source/roles/revision/silence/candidate status/key pattern; Casting Bench R2 authoritative KFB Audio site/browser route; Next-MVP proof 3 real actors/no second AudioContext/human gate; provider-neutral resolver contract. These are static/source checks, not audio tests.
+- **1/1 new GitHub source-prep file readback PASS**: S4_SOURCE_BACKED_TTS_PREP_R1_2026-10-10.md on current PR #379.
+- **1/1 KFB Production Control Site document write+readback PASS**, exact UTF-8 contents byte-equal to GitHub (8,324 Unicode string code units, 8,330 UTF-8 bytes; SHA-256 7f1d7ad20dad0919c5e775346c72ba709271c14e1f93a978c3b7ffc037f6125a; Site file id 83d3d8f4-b664-427f-b33d-9db48e7d8221). This is private Site INBOX PERSISTENCE ONLY, not KFB Audio Site source or deployment.
+- **0/0 new provider synthesis/browser playback/human audio/3D/runtime tests** (not attempted). Previously recorded 13/13 S1 adapter and 87/87 Audio Site checks were **NOT RERUN** here.
+
+### Material source finding (pre-integration)
+
+Current adapter voiceAssetKey includes sourceId, voicePreset, emotion, slot and normalized-text hash but **not sourceRevision, provider/model, render recipe or license/approval status**. Treat this as a production cache-identity gap before reusing the key for assets; sourceRefs already retains revision and need not be replaced. No new code was written to the adapter.
+
+### Still open
+
+Georg Voice Acting human KEEP/TUNE/CUT; accepted source-backed Triplet and Resident voice profile; exact English TTS renderer models/rights; Whole-versus-fragment listening quality; browser duck/cancel and bubble timing; separate World A/B gate. No automatic S4 implementation/World integration.
+
+Next same human gate: existing KFB Audio Voice Acting tab, compare voice solo / D bed no ducking / D bed ducking and return KEEP/TUNE/CUT.
