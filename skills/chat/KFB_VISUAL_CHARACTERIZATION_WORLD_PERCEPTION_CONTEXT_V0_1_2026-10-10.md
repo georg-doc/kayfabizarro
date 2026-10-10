@@ -530,7 +530,11 @@ Next authoring/data gate:
 **VISUAL_CHARACTERIZATION_SOURCE_EXTRACTION_01**
 
 Extract a small source-isolated set first:
-Toy Soldier · Survivalist · Clown · Skeleton Warrior · one additional main Resident.
+Toy Soldier · Survivalist · Clown · Skeleton Warrior · Lorekeeper · Vampire.
+For the Vampire, also consume:
+- `KFB_VAMPIRE_VOICE_SINNFELD_BAT_FORM_PREP_V0_1_2026-10-10.md`;
+- `KFB_CHARACTER_SINNFELD_REGISTER_PROFILE_SCHEMA_V0_1_2026-10-10.json`.
+
 Then run:
 **SOCIAL_EDGE_WEAKSPOT_MICROSCENES_01**
 using real visual context.
