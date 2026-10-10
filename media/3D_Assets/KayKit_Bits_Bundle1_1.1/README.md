@@ -1,7 +1,17 @@
-# KayKit Bits Bundle 1 (1.1) · Halloween Bits (gltf)
+# KayKit Bits Bundle 1 (1.1)
 
 - Quelle: Georgs Dropbox `3D ASSETS/_INBOX/KayKit_Bits_Bundle1_1.1/` (Kay Lousberg, CC0, siehe `License.txt`).
-- Hier nur **Halloween Bits / gltf** (102 Modelle, eigene Textur `halloweenbits_texture.png`). Gegenüber `media/3D_Assets/KayKit_HalloweenBits/` (1.0 FREE, 63 Modelle) kommen 39 Modelle dazu: Süßigkeiten (`candy_*`, `candycorn`, `lollipop_*`), Farm (`haybale`, `pitchfork`, `scarecrow`, `tractor`, `wagon*`, `wooden_gate*`), Maze, Schilder.
-- Die Textur von 1.1 ist **nicht** identisch mit der von 1.0. Modelle aus diesem Ordner nur mit der Textur aus diesem Ordner verwenden.
-- Verbraucher: Clown J5 (Süßigkeiten-Variante `candy_pink_A`, `candy_orange_A`, `candy_blue_B`, #381).
-- Die übrigen Packs des Bundles (City Builder, Furniture, Prototype, Restaurant, Space Base) laufen später über den Intake des Asset Librarian.
+- Inhalt je Pack: `Assets/gltf` (+ Texturen), Vorschaubilder. Prototype Bits zusätzlich `Character/Dummy.glb` und `Animations/gltf`. FBX bzw. OBJ sind bewusst weggelassen.
+- Gegenüber den FREE-1.0-Ordnern in `media/3D_Assets/` (`KayKit_City_Builder_Bits_1.0_FREE`, `KayKit_Furniture_Bits_1.0_FREE`, `KayKit_HalloweenBits`, `KayKit_Restaurant_Bits_1.0_FREE`, `KayKit_Space_Base_Bits_1.0_FREE`) enthält 1.1 deutlich mehr Modelle; Prototype Bits fehlte ganz.
+
+| Pack | gltf-Modelle 1.1 | FREE 1.0 im Repo |
+| --- | ---: | ---: |
+| City Builder Bits | 73 | 41 |
+| Furniture Bits | 74 | 53 |
+| Halloween Bits | 102 | 63 |
+| Prototype Bits | 85 | 0 |
+| Restaurant Bits | 225 | 144 |
+| Space Base Bits | 69 | 57 |
+
+- **Texturen von 1.1 und 1.0 sind nicht identisch.** Modelle aus diesem Ordner nur mit den Texturen aus diesem Ordner verwenden.
+- Verbraucher: Clown J5, Süßigkeiten-Variante (`Halloween Bits`: `candy_pink_A`, `candy_orange_A`, `candy_blue_B`, #381); Farm-Teile für Protopia (`haybale`, `pitchfork`, `scarecrow`, `tractor`, `wagon*`).
