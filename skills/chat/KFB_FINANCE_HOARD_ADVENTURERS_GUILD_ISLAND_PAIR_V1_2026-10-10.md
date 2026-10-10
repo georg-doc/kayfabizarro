@@ -5,6 +5,9 @@ Owner: existing KFB Island Worldbuilder / Minigame / Fluff-Almanac ideation. Bra
 Global style: `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`; island geometry: `skills/chat/KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md`.
 This is **NOT a fifth/sixth active MVP island**. Existing Town/Dystopia/Utopia/Protopia Story R1 A/B and R4 STOP, runtime and source owners remain unchanged.
 
+> **ADDITIVE GUILD CHARACTER / CROSS-ISLAND SLICING · 2026-10-10:** [KFB Adventurers · The Dungeon Weekenders v1](./KFB_ADVENTURERS_DYSFUNCTIONAL_GUILD_CROSS_ISLAND_ROLES_V1_2026-10-10.md) records all six exact KayKit Adventurers model identities; optional Mystery Cleric, Witch and Lorekeeper guests; centuries-old dysfunctional guild dynamics, WoW/Munchkin/South-Park-style raid trope satire, distributed lost-member encounters, source-backed Dungeon/Trope/Sci-Fi Deck candidates, multi-island role/costume continuity for the **same Resident identity**, compact truthful Lean Memory and the future *one companion first* approach. It does **not** replace the bank-side concept, force a six-agent combat squad, install a new ChatterBox pool or decide whether Dungeon is a detached island versus Town/Caveman instance. No active MVP, PR, Stage or Live changes.
+
+
 ## 1 · Why these two places belong next to one another
 Create a visually readable and narratively productive adjacency:
 - **Finance Hoard / Bank Island**: enormous piles of gold, chests, a dragon's lair, banking hall, ledgers, accounts, debt, monopoly, access control, fictional coinage and a grotesque "central banker" archetype. Visible gold and invisible monetary claims coexist in contradiction.
