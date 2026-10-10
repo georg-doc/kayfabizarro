@@ -1,5 +1,7 @@
 # KFB MVP-1 · G4 Steinbogen-Brücke · Visual Failure Recovery R1
 
+> **CURRENT STATUS OVERRIDE · 2026-10-10 §7a:** The specific **STONE BRIDGE 01** sheet has been **released from style-direction quarantine** by Georg's uploaded new brief, and may be used as a positive **STYLE_DIRECTION_ONLY** benchmark. It is **not** Golden, not a picked 3D model and not a geometrically verified bridge. The following report remains the accurate *historical* account of two old-rule prompt-following failures; do **not** delete or rewrite their evidence. Neutral view labels, detail/variant panels are now allowed; game logos, marketing text, people/vehicles/boats remain forbidden. See [R8 reconciliation](G1_R8_BRIEF_RECONCILIATION.md) and [G4 style handoff](G1_G4_STONE_BRIDGE_01_STYLE_HANDOFF_R8.md).
+
 Status: **G4 IMAGE GENERATION SEAM QUARANTINED · 2 NON-IMPROVING ATTEMPTS · NO ACCEPTED BRIDGE IMAGE**
 Date: 2026-10-10
 Owner: existing KFB Island Worldbuilder Lab / G4 bridge-and-stairs visual review; G1 branch stores an additive editorial failure packet only
