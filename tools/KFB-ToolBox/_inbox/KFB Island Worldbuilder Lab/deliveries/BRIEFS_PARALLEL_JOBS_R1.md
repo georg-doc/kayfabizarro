@@ -1,6 +1,6 @@
 # Parallele Aufträge R1 · für Claude Design, Cowork, ChatGPT bzw. Claude Chat und Recherche
 
-Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne das Claude-Code-Kontingent zu belasten. Jeder Abschnitt ist ein eigener Auftrag zum Hineinkopieren. Ergebnisse immer nach `~/Dropbox/CLAUDE/KFB_HUB/00_INBOX/<werkzeug>/` (Dateiname `<datum>_<werkzeug>_<thema>`). Die Steuerung holt sie dort ab und gleicht sie mit dem Plan ab.
+Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne das Claude-Code-Kontingent zu belasten. Jeder Abschnitt ist ein eigener Auftrag zum Hineinkopieren. Ergebnisse lädt Georg auf GitHub hoch nach `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/<Auftrag>_<werkzeug>/` (z. B. `A_claude-design/`); Dateiname `<datum>_<werkzeug>_<thema>`. Die Steuerung holt sie dort ab und gleicht sie mit dem Plan ab. Pakete mit allen nötigen Unterlagen (für Werkzeuge ohne Dropbox- bzw. GitHub-Zugriff): `KFB_HUB/30_PACKAGES/2026-10-10_mvp1-parallel/`.
 
 **Für alle gilt:** §00 Weltlogik zuerst · §01 keine harten Schnitte · Maßstab K2 (H = Figurhöhe, MC = 6,4 Lab-Einheiten = ein Stockwerk, keine Meter) · keine realen Personen bzw. Firmen und keine Verschwörungs-Decks in der Spielwelt · nichts davon ist schon Kanon, alles ist Vorschlag bis zur Abnahme.
 
@@ -36,7 +36,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 >
 > **Regeln:** Maßstab K2 (Tür ≥ 1,15 Figurhöhen, keine Meter). Keine harten Kanten, alles knetig gerundet. Die Burg ist ein vorhandenes Asset und wird nur als Umriss eingezeichnet. Markiere alles als „Konzept“.
 
-**Ablage:** `KFB_HUB/00_INBOX/claude-design/2026-10-xx_claude-design_town-lageplan.html`
+**Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/A_claude-design/` · **Paket:** `A_claude-design_town-lageplan.zip`
 
 ---
 
@@ -58,7 +58,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 > - Kartennamen und Lore nur so, wie sie in den JSONs stehen; nichts erfinden, was als Karte ausgegeben wird.
 > - KayfaBINGO, KayfaBONGO und KayfaBOGGLE nur in ihrer echten Bedeutung (Anerkennung, Erzählung statt Mechanik, eine klärende Frage).
 
-**Ablage:** `KFB_HUB/00_INBOX/webchat/2026-10-xx_webchat_mvp1-dialog.json` (bzw. `claude-chat/`)
+**Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/` · **Paket:** `B_chat_mvp1-dialog.zip` (für Chats ohne GitHub-Zugriff)
 
 ---
 
@@ -85,7 +85,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 > 3. Eine Liste der `pet-eye-rig.v6.js`-Kopien mit Empfehlung, welche kanonisch werden sollte (gleiche Prüfsumme gruppieren).
 > 4. Lücken: was für die Mindestprüfung in Stufe 4 noch fehlt.
 
-**Ablage:** `KFB_HUB/00_INBOX/cowork/2026-10-xx_cowork_character-cards/` (Tabelle + JSONs)
+**Ablage:** lokal `~/Dropbox/CLAUDE/KFB_HUB/00_INBOX/cowork/2026-10-xx_cowork_character-cards/` (Cowork auf dem Mac mit Dropbox-Zugriff; ohne lokalen Zugriff ist dieser Auftrag nicht machbar) · kein Paket nötig
 
 ---
 
@@ -102,7 +102,7 @@ Stand: 2026-10-10 · von der Steuer-Sitzung · Zweck: MVP-1 vorbereiten, ohne da
 >
 > **Liefere** je Fundstück: Link, Datum, 2–3 Sätze Kern-Aussage, und eine Spalte „für KFB übernehmen: ja / nein / prüfen“ mit Grund. Am Ende maximal 10 konkrete Empfehlungen. Keine Code- bzw. Asset-Kopien, keine Werte blind übernehmen (Godot bzw. Blender ≠ three.js).
 
-**Ablage:** `KFB_HUB/00_INBOX/webchat/2026-10-xx_webchat_kaykit-mvp-research.md`
+**Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/D_research/` · kein Paket nötig (reine Web-Recherche)
 
 ---
 
@@ -113,4 +113,4 @@ Wie A, aber für **Protopia** (Satellit 20–28 MC, Berg-Archetyp):
 - oben der Eremiten-Hügel des Lorekeepers mit Schreibpult;
 - Farmer-Felder bzw. Obstgarten.
 
-Liefere Draufsicht, Weltlogik je Ort, 3 Kameras (Brückenkopf, Weg, Hügel-Ankunft) und Anker-Liste (Brücke, Tunnel bzw. Einschnitt, Hügel, Felder). Erst starten, wenn A zurück ist, damit beide Blätter dieselbe Sprache sprechen.
+Liefere Draufsicht, Weltlogik je Ort, 3 Kameras (Brückenkopf, Weg, Hügel-Ankunft) und Anker-Liste (Brücke, Tunnel bzw. Einschnitt, Hügel, Felder). Erst starten, wenn A zurück ist, damit beide Blätter dieselbe Sprache sprechen. **Ablage:** GitHub `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/E_claude-design/` · **Paket:** `E_claude-design_protopia.zip` (dazu das Ergebnis von A hochladen)
