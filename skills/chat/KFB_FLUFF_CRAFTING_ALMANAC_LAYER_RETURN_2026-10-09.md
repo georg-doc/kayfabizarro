@@ -1,4 +1,17 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.6
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.7
+
+> **ADDITIVE FOREST WEATHER + TINYSKIES PORTALS / KISS CORRECTION · 2026-10-10**
+>
+> [KFB_FOREST_WEATHER_SOUND_WIND_REUSE_POC_V1_2026-10-10.md](./KFB_FOREST_WEATHER_SOUND_WIND_REUSE_POC_V1_2026-10-10.md) captures a bounded reusable island-weather donor inventory. Original TinySkies source `georg-doc/tinyskies` confirms `RainOverlay.ts` (rain with lightning callback), `WaterSpouts.ts` (animated twisting water funnel and swirl particle motion, **not** full tornado forces), `CarpetLeaves.ts` (leaf particle motion). Existing KFB Travel `ts-flora.js` has instanced, per-height and per-instance GPU wind, while KFB Environment handles day/night/weather/fog and KFB Audio remains the single mix owner. Snowflake/deposition and local mist still require authentic source proof. Source-read does NOT mean visual acceptance or working Forest/World implementation.
+>
+> **Georg KISS OVERRIDE** is binding for the immediate conceptual first proof: only one real planted Forest patch with light grass/bush/tree wind, source rain overlay, existing fog and one curated Forest soundbed plus **one** nearby wolf growl or distant scream. Thunder/lightning and simple snow flurries are future optional one-off checks. **Tornado is deferred in full**, including visuals/forces/adapters, even though WaterSpouts source is documented; no time-consuming repair loop or additional P0. Existing Forest Hiker genre-failure scene concepts and ChatterBox sheet authority are unchanged.
+>
+> Separate [KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md](./KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md) records two inspected TinySkies portal source classes: `CarpetPortalSystem.ts` ring/glow/inner/swirl + animated spawn, endpoints/cooldown, and `CosmicWorldPortal.ts` halo/stars/sway portal appearance. These are genuine source donors for optional KFB comic-gutter/Closure visual transitions, **not** Forest weather POC tasks and not a new teleport/Progression/Instance owner. Existing F-S13 threshold/Portal/Instance routing remains authoritative.
+>
+> GitHub source findings only; **zero** new runtime/browser/3D/weather/audio audition/portal visual-in-isolation or public Site/Stage tests. No current MVP/Four-Island gate change, no PR/merge/Live, no Hub route change. Single deferred parent gate remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`; optional future portal source isolation must be scoped separately rather than adding to the tiny Forest patch.
+
+---
+
 
 > **GEORG CORRECTION / FOREST ISLAND HORROR FAILURE SPIRALS · 2026-10-10 · SUPERSEDES v1.5 DIALOGUE CLAIMS**
 >
