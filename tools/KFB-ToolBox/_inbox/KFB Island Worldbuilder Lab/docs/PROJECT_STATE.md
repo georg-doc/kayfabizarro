@@ -21,7 +21,7 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 
 - **PR #384 (WSA, `work/kfb-deck-library-r1-2026-10-09`):** Deck Viewer v5, 130 Deck-Shards (6.985 Karten), Arten Deck/Karte im Asset Librarian, Handoff `kfb.card-ref/1`. CI `build-test`, `build-validate`, `browser-smoke` grün. `Cloudflare Pages` rot, genauso wie auf `main` (Ursache: `wrangler.jsonc` `assets.directory: "."`, Repo 24.995 Dateien), also nicht durch diesen PR verursacht. Empfehlung Steuerung: mergen. Nachprüfen: Karte 1 bei mehreren Decks rechts abgeschnitten (Kontaktbogen).
 - **Cloudflare:** eigener kleiner WSA-Auftrag: Asset-Verzeichnis auf einen öffentlichen Unterordner bzw. `.assetsignore`. Danach baut auch die öffentliche Seite `kayfabizarro.pages.dev` wieder aktuell.
-- **Clown J5 (Blender MCP, #381):** three.js-Prop-Track-Player mit Headless-Beweis (Knochen bzw. Pins gegen Blender < 1e-5, Zustandsmaschine mit Talk-Fenster). Für Stufe 2 (Markt) unverändert übernehmen; Süßigkeiten-Props (KayKit Halloween Bits, CC0) fehlen noch im Repo; Augenprofil des Clowns ist AUTO_CANDIDATE und braucht die Figuren-Karte.
+- **Clown J5 (Blender MCP, #381):** three.js-Prop-Track-Player mit Headless-Beweis (Knochen bzw. Pins gegen Blender < 1e-5, Zustandsmaschine mit Talk-Fenster). Für Stufe 2 (Markt) unverändert übernehmen; Süßigkeiten-Props: Im Repo lag nur Halloween Bits 1.0 FREE ohne `candy_*`; jetzt ergänzt aus Bits Bundle 1.1 (CC0) unter `media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/` (eigene Textur, Sync-Branch `29edff3c`); Augenprofil des Clowns ist AUTO_CANDIDATE und braucht die Figuren-Karte.
 
 ## Architektur-Review Post-MVP-Konzepte (2026-10-09)
 
