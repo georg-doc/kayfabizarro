@@ -1,5 +1,23 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## CURRENT ADDITIVE VOICE DESIGN STEERING · 2026-10-10 · HEURISTIC FIRST-MVP CASTING / LATER FINE-TUNING
+
+Georg reports the current KFB Audio Voice Acting tool is functioning well. He authorizes **heuristic, editable MVP voice casting** without pre-approving every character's voice, with detailed audition/fine-tuning **later**. Initial audition traits may use masculine/feminine/synthetic voice-color, age/role/timbre, but may never mutate actor identity or hard-code a biological gender field. Candidate source actors: Demon Lord, Robot One, Farmer A; optional Lorekeeper (older/"grandpa") and Witch (feminine voice contrast). Exact voice IDs/licensing remain unapproved.
+
+He also requests **a unified longer-term KFB conversation-performance direction**: optional microphone voice commands (KayfaBINGO/KayfaBOGGLE/KayfaBONGO/BLÖDSINN), later free ASR-final player speech → bounded LLM semantic interpretation → ChatterBox source-aware `subject/connector/reframe` NPC response, subtle idle thinking animation, three-dot waiting indicator in existing bubble shape language, actual KFB Audio playback clock/ducking → Talking Loop / EyeRig / PetMouth / body gesture / approximately aligned bubble reveal; future holographic in-world Maker Space stage reuses **existing** systems. Movement stays on regular controls.
+
+New owner concept and audition data:
+- `MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md`
+- `data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json`
+- static/source and Site-document evidence: `TEST_REPORT.md` (23/23 doc/data assertions; 2/2 private Production Control Site mirrors; 0 new audio/ASR/3D/runtime).
+
+Voice Acting Site S3 remains implemented/previously published. **No new Voice Acting Site version was deployed** here; only current concept/data documented in the already existing private KFB Production Control Site Inbox. The existing voice engine, audio mixer, face rig, semantic dialogue, resident state and World authorization stay with their respective owners. Talk/lip sync and free-form voice control are proposal, not implemented. Speakrail, Resemble Chatterbox-TTS and KFB ChatterBox remain unrelated by identity.
+
+The previous local requirement for an immediate Georg per-voice KEEP/TUNE/CUT **before preliminary casting** is superseded: heuristics may be auditioned as reversible candidates; Georg's fine-tuning and final voice/rights acceptance are later. One owner-local next gate: **`KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1`**, a technical real-source/audio audition, not a fabricated final casting PASS. No World R5; global Four-Island A/B gate remains unchanged.
+
+---
+
+
 Status: **S3 EXISTING-SURFACE VOICE BENCH PUBLISHED · HUMAN LISTENING OPEN · NO WORLD RUNTIME PROMOTION**
 Date: 2026-10-08
 Owner: **KFB ChatterBox / Resident Speech output**
