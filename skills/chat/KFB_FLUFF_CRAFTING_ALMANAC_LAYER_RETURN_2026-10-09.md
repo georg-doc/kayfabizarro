@@ -903,3 +903,140 @@ First obtain source-observed visual features for the six pilot Characters, then 
 
 The purpose is to prove that:
 **what a Character notices** and **how cruel/warm they are about it** remain independent authoring dimensions.
+
+
+---
+
+## Dialog Studio coordination + combined Social Edge fixtures · 2026-10-10
+
+Status: **PARALLEL WORK SAFE WITH OWNER BOUNDARY · AUTHORING FIXTURES PERSISTED · NO PRESENTATION WRITE**
+
+Georg reports a separate Web Chat is currently developing a near-MVP **Dialogue Studio** with first presentation templates.
+
+GitHub coordination check:
+
+- historical Resident Chat Presentation branch:
+  `chatgpt-web/resident-chat-presentation-01-2026-10-01`
+  - browser-PASS donor history;
+  - not current authoring owner for this slice.
+
+- ChatterBox ToolBox/Site planning:
+  Draft PR #357 / branch `planning/chatterbox-triplet-curator-site-2026-10-04`
+  - remains **HOLD / TUNE DONOR**;
+  - Issue #362 is closed / PARKED;
+  - explicit older rule: do not create a second review surface while the Triplet/Studio lane is active.
+
+- Voice Layer:
+  `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`
+  - separate output/casting lane;
+  - no semantic/presentation ownership transfer.
+
+At this checkpoint no newer active GitHub Dialogue-Studio branch/PR was visible by that name.
+Therefore parallel work is safe **only with a strict seam**:
+
+### This branch may own
+- Sinnfeld/Register authoring metadata;
+- grounded visual/media context;
+- Weak Spot / Social Edge logic;
+- semantic Triplet/dialogue fixtures;
+- provenance/audit fields.
+
+### This branch must not own while Dialogue Studio is active
+- bubble shape;
+- presentation templates;
+- layout;
+- camera;
+- timing/stagger;
+- animation choreography;
+- Studio UI;
+- review controls;
+- presentation export schema;
+- Site productization.
+
+The separate Dialogue Studio may later consume the semantic fixtures, but it remains free to decide presentation.
+
+### Combined fixture pack
+
+New:
+`skills/chat/KFB_SINNFELD_VISUAL_SOCIAL_EDGE_FIXTURES_02_2026-10-10.json`
+
+Presentation contract:
+`null`
+
+Runtime required:
+`false`
+
+Fixtures:
+1. Survivalist · shield/backpack
+2. Lorekeeper · staff/tome/lectern
+3. Vampire · throne/goblet/sword/gems
+
+Each fixture contains exactly four authoring lanes:
+- BUDDY
+- CLOWN_ROAST
+- DARK_HEEL
+- TOY_SOLDIER_NEEDLE
+
+Total:
+**3 fixtures · 12 lane variants**
+
+No pending visual claims are used:
+- Survivalist eyepatch remains excluded;
+- Toy Soldier face details remain outside this fixture pack;
+- Vampire Bat swarm is excluded as current visible fact.
+
+No new biography facts are introduced.
+
+### Example seam proof
+
+For the same source-backed Survivalist shield/readiness context:
+
+Buddy:
+`You brought the large shield. / I brought options. / Good. The screen brought only a warning.`
+
+Clown:
+`Invisible threat. Very visible shield. / Prepared. / Perfect. Now we only need something to hide behind it.`
+
+Vampire:
+`The ancients used charms. / I use armor. / Same prayer. Better grip.`
+
+Toy Soldier:
+`Large shield. / I like being ready. / For what? / You. / Threat statement. Thank you.`
+
+This demonstrates the intended independence:
+
+**grounded perception stays constant; Sinnfeld + Social Edge change the meaning and moral temperature.**
+
+### Validation
+
+Before this Return write:
+- exact branch head: `455bc6c1900d33a67567a8a59012b7b2285209c0`;
+- combined fixture static validation: **12/12 PASS**;
+- 3 fixtures;
+- 12 variants;
+- all four lanes present for every fixture;
+- 0 pending visual facts used;
+- 0 invented biography facts;
+- presentation contract null;
+- runtime false;
+- explicit Dialogue-Studio share boundary;
+- explicit no-UI/no-template prescription.
+
+No runtime/browser/Studio/Site/Stage tests in this authoring slice.
+
+### Next coordination rule
+
+While the separate Dialogue Studio Web Chat is still building presentation templates:
+**do not modify presentation/studio files from this branch.**
+
+Safe continuation here:
+- enrich semantic fixtures;
+- source-isolate Character visual facts;
+- refine Sinnfeld/Register/WeakSpot data;
+- prepare presentation-agnostic fixture payloads.
+
+After Dialogue Studio returns:
+re-read its exact branch/Return/head and map these fixtures into its accepted presentation contract without creating a second one.
+
+Next authoring gate remains:
+`SINNFELD_VISUAL_SOCIAL_EDGE_COMBINED_MICROSCENES_02_REVIEW`
