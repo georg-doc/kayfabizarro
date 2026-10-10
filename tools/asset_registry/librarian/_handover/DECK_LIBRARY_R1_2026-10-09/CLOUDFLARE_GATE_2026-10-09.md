@@ -10,7 +10,7 @@ The earlier gate below described the repository before the public-asset boundary
 - Wrangler 4.149.0 dry-run: PASS;
 - no file is deleted from GitHub, and nothing under `tools/KFB-ToolBox/_inbox/` is modified.
 
-The first boundary revision still hit Cloudflare Pages' 20-minute build timeout while processing the near-limit upload. The narrowed boundary keeps the root website and tool routes while no longer treating the source-asset warehouse itself as a Pages deployment. A successful GitHub/Cloudflare deployment remains the final external proof after merge.
+The authenticated Pages log proved that Pages ignored the Workers-only `assets.directory` field and therefore also ignored the root `.assetsignore`: it skipped the invalid Wrangler file, treated the repository root as build output, and rejected more than 20,000 files. The repair now uses the Pages-native `pages_build_output_dir` key and a deterministic build script that projects the public surface into `.cloudflare-pages/` while excluding internal/source-only material. A successful GitHub/Cloudflare deployment remains the final external proof after merge.
 
 ## Finding
 
