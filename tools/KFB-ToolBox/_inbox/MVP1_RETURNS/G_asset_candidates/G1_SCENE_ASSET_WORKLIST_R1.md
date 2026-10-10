@@ -26,7 +26,7 @@ Stand: 2026-10-10 · Quelle: [Briefing R1](https://github.com/georg-doc/kayfabiz
 - [ ] **02. Schmale, hohe Protopia-Berginsel** (`protopia_mountain_island`) — Konzept gerendert · **keine Quellenfreigabe**; Protopia R1 erzeugt; eher hohe Felsstufe, keine verifizierte StreakByte-Silhouette
 - [ ] **03. Kleine Felsbrocken / Brückenauflager** (`bridge_rock_piers`) — Quellenkandidaten gefunden · Render offen; StreakByte / Kenney: Verbaukontakt prüfen
 - [ ] **04. Abbruchkante, Felswand / Schollenseiten** (`cliff_rupture`) — Quellenkandidaten gefunden · Render offen; Kenney cliff und StreakByte Cave
-- [ ] **05. Große Solitärfelsen** (`large_boulders`) — Quellenkandidaten gefunden · Render offen; Kenney Nature, KayKit Forest, Quaternius
+- [ ] **05. Große Solitärfelsen** (`large_boulders`) — **Kenney Nature rock_largeA exakt als GLB-Quellmesh geprüft** ([4 isolierte Quellansichten](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg), [Source-Proof und Maße](G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md)); cartooniges G1-Zielbild noch offen, kein Pick/Golden.
 - [ ] **06. Felsgrate / Bergsporne** (`rock_ridges`) — Quellenkandidaten gefunden · Render offen; StreakByte Mountain und KayKit/Platformer als Formdonor
 
 ## G2 · Stadtstraße · P0
