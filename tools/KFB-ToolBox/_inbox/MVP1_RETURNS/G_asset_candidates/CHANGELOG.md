@@ -1,5 +1,11 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · G1 R6 · Quellengeometrie / Original-PNG-Upload blockiert
+- Drei original Full-Res-Concept-PNGs weiter nur als unbeschädigtes Chat-ZIP, **GitHub 0/3 Originaldateien**, bestehende **3/3 WebP-Vorschaubilder** bleiben unverändert. GitHub-Connector hat keine direkte Container-/FileRef-Binärübergabe, daher kein erfundener Upload.
+- Kenney `rock_largeA.glb` [source-exakt inspiziert](G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md): 146 Vertices / 80 Dreiecke, [vier Source-Ansichten](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg) und [Testbericht](TEST_REPORT_G1_ROCK_SOURCE_R1.md) **11/11**. G1 Kandidaten-JSON/Worklist ergänzt, keine GoldenRef.
+- Neuer **unerwarteter G4-Marketingbild-Output** trotz G1-Rock-Auftrag: keine Abnahme, [vollständig dokumentiert](G1_IMAGEGEN_DRIFT_RECOVERY_R2.md), Chat-Recovery-ZIP `KFB_G4_BRIDGE_GENERATOR_DRIFT_RECOVERY_2026-10-10_r2.zip`. Generator-Retry gestoppt.
+- Nächster Gate: 3 Full-Res-PNGs über einen netzwerkfähigen autorisierten Work-/GUI-GitHub-Binär-Client hochladen, Hashes und branch verifizieren; keine Runtime-/Live-Promotion.
+
 ## 2026-10-10 · G1 Bildserien-Koordination / G4 Steinbogen · FAIL-Export
 - Originale [G4-Bridge01-Referenz und img2threejs-Test](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) source-basiert geprüft; danach **2 KI-Bildversuche**, beide **FAIL** des einzelnen freigestellten Steinbogens (mehrteilige Szene, Requisiten, Beschriftungen). Nicht in die Golden-/Asset-Galerie übernommen, weitere gleichartige Reparatur gestoppt.
 - [Quarantäne- und Fehler-Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md), [QA](TEST_REPORT_G1_G4_FAIL_R1.md): originalgetreue PNG-Belege im user-visible `KFB_G4_BRIDGE_FAILURE_RECOVERY_2026-10-10_r1.zip`, **10/10 Export-/Integritätschecks PASS**, **0/2 visueller G4-PASS**. ZIP nicht in GitHub, dort Report mit SHA256 und Quellen.
