@@ -182,3 +182,137 @@ Georg explicitly **PARKED** the separate KFB/MED public Rules + Cut&Play + Deck 
 
 **One next gate (deferred until playable core + Georg authorization):**
 `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` — source-isolate genuine tree/mine/particle/Bag/Almanac donors, resolve single-writer ownership and propose one Tiny Vertical Proof: tree+mine, 1–2 material types, one authentic Card, same receipt in the Almanac and a save/reload round trip. Do not start a competing mini-game runtime.
+
+
+---
+
+## Prison Planet · Toy Soldier Voice / Triplet Prep · v0.1 · 2026-10-10
+
+Status: **AUTHORING / CHARACTER PREP PERSISTED · NO RUNTIME WRITE**
+
+Georg's current direction is now captured in:
+- `skills/chat/KFB_PRISON_TOY_SOLDIER_VOICE_TRIPLET_PREP_V0_1_2026-10-10.md`
+- `skills/chat/KFB_PRISON_TOY_SOLDIER_TRIPLET_POOL_V0_1_2026-10-10.json`
+
+### Character / voice delta
+
+The numbered Toy Soldier Guard Corps is no longer treated merely as a pompous but harmless procedural fool.
+
+Current author direction:
+- Officer-Pup / Crazy-Cat tonal shorthand only: stumpy, authority-believing, self-important underling;
+- classic banality-of-evil register;
+- **lower-rational**, not mindless: weak epistemology but uncomfortable skill at reading anger, insecurity, status and embarrassment;
+- enjoys converting a provoked reaction into a pretext for custody/control;
+- cruelty is petty and socially manipulative rather than torture-fetish sadism;
+- less cool/jazzy/funky than Dungeon Squette;
+- bureaucracy lives in the **logic of the trap**, not in generic Kafka/legal/AI-sounding jargon.
+
+Core authoring move:
+`NEEDLE → WAIT → NAME → BOOK`
+
+The Soldier needles a vulnerability, leaves room for reaction, names that reaction in his own frame, then converts it into detention/search/fine/escort/light/Maze-control justification.
+
+### Identity / number rule
+
+- no personal names in the prison role;
+- soldiers address one another by number;
+- No. 1 remains chief warden / tower-button direction;
+- full number hierarchy beyond No. 1 remains OPEN;
+- working design label `Toy Soldier Guard Corps`;
+- possible colloquial label `The Numbers` remains PROPOSAL.
+
+### Language architecture
+
+Reuse current ChatterBox:
+`subject → connector → reframe`
+
+No private Toy-Soldier dialogue engine.
+
+The companion JSON adds **33 authoring-candidate Triplets** as weighted/signature candidates across:
+- authority;
+- provocation;
+- false choice;
+- CCTV/searchlight;
+- privatized-prison incentive;
+- dynamic Maze;
+- numbered identity;
+- optional alien/UFO transfer;
+- wind-up-key blame;
+- three authored Fluff-o-lect targets.
+
+Fluff-o-lect bias = MEDIUM, but still max one authored replacement per Triplet and never random substitution.
+
+Candidate Social Call tendencies:
+- Soldier likes `BONGO` / `BINGO` because they preserve/land his frame;
+- `BOGGLE` / `BLÖDSINN!` are useful counter-pressure because they can expose/reframe the hidden premise;
+- no Social Call automatically causes arrest.
+
+### Knowledge / truth boundary
+
+Soldier may make false or manipulative **diegetic claims**, but ChatterBox/authoring must not silently convert them into engine truth.
+
+Camera facts, Maze state, custody status, assignment and player history remain available only when supplied by their actual owners.
+
+### Existing prison/world links retained
+
+This voice direction is compatible with the already-persisted:
+- numbered cobalt-blue Toy Soldier / white plume;
+- No. 1 red Maze button;
+- gatekeeper/patrol roles;
+- CCTV / Panopticon satire;
+- private-prison framing;
+- searchlight/air patrol proposal;
+- wind-up-key proposal;
+- UFO/alien cooperation proposal;
+- cartoon violence / toy recovery loop.
+
+Jetpack/air-patrol and alien-transfer dialogue remain **PROPOSAL** until those story/source/runtime seams are accepted.
+
+### Evidence
+
+Verified branch head before this Return write:
+`3e651ce78014be67fb6d61e93e418a004fc86fe3`
+
+Static authoring/data checks:
+**17/17 PASS**
+
+Includes:
+- Voice prep readback;
+- tonal shorthand present;
+- lower-rational direction present;
+- number-only address rule;
+- No. 1 chief direction;
+- JSON parse/schema;
+- 33/33 entry count;
+- 33 unique Triplet IDs;
+- valid existing relation classes;
+- exactly three authored Fluff-o-lect entries with explicit targets;
+- no runtime owner;
+- English public language;
+- air patrol and alien liaison remain PROPOSAL.
+
+Actual runtime/browser/voice/Blender/Site/Stage tests in this content slice:
+**0**.
+
+No PR, merge, Live promotion or current Four-Island runtime mutation.
+
+### Recovery / next gates
+
+Fresh-chat recovery:
+1. current main router/workflow/fresh-chat protocol;
+2. current Prison v0.8, Maze v0.9, source-owner v1.1 and Blender handover;
+3. Toy Soldier Voice Prep v0.1;
+4. Toy Soldier Triplet Pool v0.1;
+5. this owning Return;
+6. current exact branch head.
+
+One **content** next gate:
+`TOY_SOLDIER_VOICE_TRIPLET_REVIEW_01`
+
+Continue in Web Chat by tuning the voice, relationship-specific variants and Triplet pool.
+
+Existing local Blender handoff gate remains:
+`BLENDER_PRISON_GREYBOX_SOURCE_AND_SPATIAL_PROOF`
+
+Existing deferred parent implementation gate remains unchanged:
+`MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`
