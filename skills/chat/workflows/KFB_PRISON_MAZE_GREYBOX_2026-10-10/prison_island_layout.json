@@ -1,0 +1,135 @@
+{
+ "schema": "kfb.prison-island-layout/1",
+ "date": "2026-10-10",
+ "space": "island-local metres, Z up, island centre at the origin, rim ground about z = 0 (Port candidate)",
+ "note": "Everything Blender builds around the maze. Heights that depend on the terrain (gate, tower base) are sampled from the ground at build time.",
+ "gate": {
+  "asset": "kenney_pirate-kit/castle-gate.glb",
+  "pos": [
+   0.0,
+   -10.9
+  ],
+  "heading": [
+   0,
+   -1
+  ],
+  "passageWidth": 2.1,
+  "note": "the Port rim is only about 0.6 m wide at the south, so the gate stands on a stone bridgehead that extends the island"
+ },
+ "bridge": {
+  "start": [
+   0.0,
+   -12.7
+  ],
+  "heading": [
+   0,
+   -1
+  ],
+  "segments": 6,
+  "segmentLength": 2.7,
+  "deckWidth": 3.78,
+  "deckZ": 0.0,
+  "plank": "kenney_pirate-kit/platform-planks.glb (two side by side per segment)",
+  "railHeight": 1.0,
+  "note": "each segment is its own collection (BRIDGE_SEG_01..06) so a cartoon blow-up and a rebuild by the robot crew can address segments one by one"
+ },
+ "sockets": [
+  {
+   "id": "bridge_end_main",
+   "pos": [
+    0.0,
+    -28.9,
+    0.0
+   ],
+   "heading": [
+    0,
+    -1,
+    0
+   ],
+   "width": 3.78,
+   "attaches": "racetrack / road route from the next island (RKIT route start socket)",
+   "only": "single main access"
+  }
+ ],
+ "slots": [
+  {
+   "id": "guard_gate_top",
+   "kind": "toy_soldier_guard",
+   "on": "gate",
+   "pos": [
+    0.0,
+    -10.9
+   ],
+   "heightOn": "gate top (4.4)"
+  },
+  {
+   "id": "guard_bridge_start",
+   "kind": "toy_soldier_guard",
+   "pos": [
+    2.6,
+    -13.6
+   ],
+   "note": "guard post at the island end of the bridge"
+  },
+  {
+   "id": "guard_tower_deck",
+   "kind": "toy_soldier_guard",
+   "on": "tower deck"
+  },
+  {
+   "id": "cannon_tower_deck",
+   "kind": "cannon",
+   "on": "tower deck",
+   "asset": "kenney_pirate-kit/cannon.glb",
+   "aim": [
+    0,
+    -1
+   ]
+  }
+ ],
+ "tower": {
+  "pos": [
+   0.0,
+   0.0
+  ],
+  "stack": {
+   "base": "tower-base-door",
+   "middles": [
+    "tower-middle-windows",
+    "tower-middle"
+   ],
+   "lantern": "tower-watch (rotates, carries the beam)",
+   "crown": "tower-top (crenellated deck, fixed)"
+  },
+  "storey": {
+   "tower-base-door": 2.0,
+   "tower-middle-windows": 2.0,
+   "tower-middle": 2.0,
+   "tower-watch": 2.785,
+   "tower-top": 2.785
+  },
+  "deckFloorInCrown": 2.015,
+  "lampCentreInLantern": 1.39,
+  "lampTargetZ": 3.6,
+  "rule": "middle count = max(0, ceil((lampTargetZ - (groundZ + 2.0 + 1.39)) / 2.0)); the lamp clears rim (0) + wall (1.6) + 2.0 on any terrain",
+  "beam": {
+   "count": 1,
+   "hitRadius": 8.5,
+   "endRadius": 1.6,
+   "secondsPerTurn": 8.0
+  }
+ },
+ "bridgehead": {
+  "from": [
+   -3.2,
+   -9.4
+  ],
+  "to": [
+   3.2,
+   -12.9
+  ],
+  "topZ": 0.0,
+  "depth": 3.0,
+  "material": "dark stone"
+ }
+}

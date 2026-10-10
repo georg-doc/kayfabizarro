@@ -21,6 +21,7 @@ PARAMS = {
     'gateAngleDeg': -90.0,     # outside gate points to -Y (south)
     'seeds': [1, 2, 3],
     'polarSectors': [12, 18, 24],
+    'polarRotationDeg': -7.5,  # turns the rings so an outer cell is centred on the gate (v2)
 }
 
 
@@ -84,7 +85,7 @@ def square(seed, P):
     gdir = math.radians(P['gateAngleDeg']); gx, gy = math.cos(gdir), math.sin(gdir)
     outer = [c for c in cells if any(f's{cells[c]["i"] + di}_{cells[c]["j"] + dj}' not in cells
                                       for di, dj in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
-    gate_cell = max(outer, key=lambda c: cells[c]['x'] * gx + cells[c]['y'] * gy)
+    gate_cell = max(sorted(outer), key=lambda c: (round(cells[c]['x'] * gx + cells[c]['y'] * gy, 6), -abs(cells[c]['x'] * gy - cells[c]['y'] * gx)))
     court_cell = farthest(open_, gate_cell, inner)          # longest escape route from the courtyard to the gate
     # walls: every cell side that is not an open passage
     walls = []; half = p / 2
@@ -122,7 +123,8 @@ def polar(seed, P):
     cells = {}
     for k, ns in enumerate(sectors):
         for s in range(ns):
-            t0, t1 = 2 * math.pi * s / ns, 2 * math.pi * (s + 1) / ns
+            rot = math.radians(P.get('polarRotationDeg', 0.0))
+            t0, t1 = 2 * math.pi * s / ns + rot, 2 * math.pi * (s + 1) / ns + rot
             cells[f'p{k}_{s}'] = {'ring': k, 'sector': s, 'r0': round(Rc + k * dr, 4), 'r1': round(Rc + (k + 1) * dr, 4),
                                   't0': round(t0, 6), 't1': round(t1, 6)}
     nbrs = {c: [] for c in cells}
@@ -140,7 +142,10 @@ def polar(seed, P):
     rng = random.Random(seed)
     open_ = backtracker(cells, nbrs, 'p0_0', rng)
     gdir = math.radians(P['gateAngleDeg']) % (2 * math.pi)
-    gate_cell = next(c for c, v in cells.items() if v['ring'] == rings - 1 and v['t0'] <= gdir < v['t1'])
+    def angdist(a, b):
+        return abs((a - b + math.pi) % (2 * math.pi) - math.pi)
+    gate_cell = min((c for c, v in cells.items() if v['ring'] == rings - 1),
+                    key=lambda c: angdist((cells[c]['t0'] + cells[c]['t1']) / 2, gdir))
     court_cell = farthest(open_, gate_cell, [f'p0_{s}' for s in range(sectors[0])])
     walls = []
     # arcs: inner edge of each cell (courtyard boundary for ring 0) + outer boundary of last ring
@@ -190,10 +195,10 @@ def main(out):
     for seed in P['seeds']:
         for m in (square(seed, P), polar(seed, P)):
             m['check'] = check(m); mazes.append(m)
-    doc = {'schema': 'kfb.prison-maze-graph/1', 'date': '2026-10-10',
+    doc = {'schema': 'kfb.prison-maze-graph/1', 'version': 2, 'date': '2026-10-10',
            'space': 'island-local metres, Z up, island centre at the origin, main ground at z = 0 (Port candidate)',
            'params': P, 'mazes': mazes,
-           'note': 'perfect mazes (one route); walls of kind inner/boundary; gate and courtyard link are openings, not walls'}
+           'note': 'perfect mazes (one route); walls of kind inner/boundary; gate and courtyard link are openings, not walls. v2: the gate opening is centred on the gate direction in both layouts (one bridge socket for both).'}
     json.dump(doc, open(out, 'w'), indent=1)
     for m in mazes:
         print(m['layout'], m['seed'], m['check'], m['courtyardCell'], m['gateCell'])
