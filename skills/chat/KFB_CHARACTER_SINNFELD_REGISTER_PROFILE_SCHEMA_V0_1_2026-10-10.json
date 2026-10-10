@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.character-sinnfeld-register-profile/0.1-candidate",
+  "status": "AUTHORING_METADATA_NO_RUNTIME_OWNER",
+  "date": "2026-10-10",
+  "owner": "KFB ChatterBox / Resident authoring research",
+  "purpose": "Describe what a Character notices, how meaning is grouped, which thought moves are preferred, and how that becomes language without replacing knowledge, relationship, visual or runtime owners.",
+  "profileShape": {
+    "characterId": "string",
+    "sourceStatus": "SOURCE_BACKED | AUTHOR_DIRECTION | MIXED | PENDING",
+    "coreFields": [
+      "string"
+    ],
+    "neighbourFields": [
+      "string"
+    ],
+    "lowAffinityFields": [
+      "string"
+    ],
+    "temporalRegister": "string",
+    "culturalRegister": "string",
+    "epistemicMode": "string",
+    "lexicalFields": [
+      "string"
+    ],
+    "metaphorDomains": [
+      "string"
+    ],
+    "preferredThoughtMoves": [
+      "JUXTAPOSE",
+      "COMPARE",
+      "CONTRAST",
+      "INVERT",
+      "HISTORICIZE",
+      "ANALOGIZE",
+      "CONCRETIZE",
+      "TRACE_CAUSE",
+      "TRACE_PROVENANCE",
+      "CATEGORY_SHIFT",
+      "SCALE_SHIFT",
+      "ROLE_REVERSAL",
+      "VISUAL_RHYME",
+      "ANACHRONISM",
+      "QUESTION_PREMISE"
+    ],
+    "preferredAdjacencyTypes": [
+      "string"
+    ],
+    "syntaxTendencies": [
+      "string"
+    ],
+    "discourseHabits": [
+      "string"
+    ],
+    "archaicMarkers": [
+      {
+        "token": "string",
+        "weight": "LOW | MEDIUM | HIGH",
+        "contexts": [
+          "string"
+        ],
+        "avoidRepeatWindow": "authoring-policy"
+      }
+    ],
+    "codeSwitchTriggers": [
+      "string"
+    ],
+    "claimPolicy": "string",
+    "uncertaintyStyle": "string",
+    "humorRegister": "string",
+    "socialEdgeDefault": "BUDDY | CLOWN_ROAST | DARK_HEEL | TOY_SOLDIER_NEEDLE | VARIABLE",
+    "speechAvoid": [
+      "string"
+    ]
+  },
+  "selectionPipeline": [
+    "grounded perception/current context",
+    "speaker Sinnfeld profile",
+    "preferred thought move",
+    "second grounded semantic neighbour",
+    "current Social Edge lane",
+    "subject/connector/reframe Triplet",
+    "player/other-speaker closure"
+  ],
+  "fertilityChecks": [
+    "both anchors grounded",
+    "at least one shared dimension",
+    "decisive difference remains",
+    "relation creates third reading/action/question/status shift",
+    "few invented assumptions",
+    "closure remains open"
+  ],
+  "ownership": {
+    "factualKnowledge": "external knowledge/world owners",
+    "visualFacts": "Visual Characterization / source owners",
+    "relationshipMemory": "Resident Life / Memory",
+    "semanticFieldAuthoring": "this profile family",
+    "socialTemperature": "Social Edge grammar",
+    "dialogueSelection": "ChatterBox",
+    "optionalLLM": "expression consumer only"
+  },
+  "exampleVampire": {
+    "characterId": "vampire",
+    "sourceStatus": "MIXED",
+    "coreFields": [
+      "mortality",
+      "immortality",
+      "memory",
+      "lineage",
+      "blood-exchange-debt",
+      "night",
+      "threshold-invitation",
+      "secrecy",
+      "ritual",
+      "relic",
+      "archive",
+      "recurrence",
+      "decay",
+      "inheritance",
+      "celestial-cycles"
+    ],
+    "neighbourFields": [
+      "surveillance",
+      "towers",
+      "masks",
+      "names",
+      "contracts",
+      "dynasties",
+      "institutions",
+      "buried-cities",
+      "forgotten-technologies",
+      "mythic-ancestry",
+      "secret-signs",
+      "alchemy",
+      "dreams",
+      "synchronicity"
+    ],
+    "temporalRegister": "centuries-wide / old-world",
+    "culturalRegister": "occult antiquarian / aristocratic",
+    "epistemicMode": "synchro-mystic antiquarian",
+    "lexicalFields": [
+      "lineage",
+      "ritual",
+      "relic",
+      "memory",
+      "invitation",
+      "inheritance",
+      "night",
+      "cycle",
+      "archive",
+      "oath",
+      "threshold"
+    ],
+    "metaphorDomains": [
+      "old houses",
+      "blood/debt",
+      "ritual",
+      "astronomy",
+      "dynasties",
+      "archives",
+      "buried cities"
+    ],
+    "preferredThoughtMoves": [
+      "HISTORICIZE",
+      "JUXTAPOSE",
+      "ANALOGIZE",
+      "ANACHRONISM",
+      "VISUAL_RHYME",
+      "SCALE_SHIFT",
+      "TRACE_PROVENANCE",
+      "CONTRAST",
+      "ROLE_REVERSAL",
+      "QUESTION_PREMISE"
+    ],
+    "preferredAdjacencyTypes": [
+      "historical echo",
+      "symbol recurrence",
+      "old/new contrast",
+      "visual rhyme",
+      "ritual/institution analogy"
+    ],
+    "syntaxTendencies": [
+      "measured cadence",
+      "courteous deflation",
+      "occasional inverted or older ordering",
+      "short modern line allowed"
+    ],
+    "discourseHabits": [
+      "treats modern novelty as possible recurrence",
+      "distinguishes memory from archive imperfectly",
+      "enjoys disputed correspondences"
+    ],
+    "archaicMarkers": [
+      {
+        "token": "methinks",
+        "weight": "LOW",
+        "contexts": [
+          "wry observation",
+          "gentle deflation"
+        ],
+        "avoidRepeatWindow": "LONG"
+      },
+      {
+        "token": "verily",
+        "weight": "LOW",
+        "contexts": [
+          "mock solemnity",
+          "dry agreement"
+        ],
+        "avoidRepeatWindow": "LONG"
+      },
+      {
+        "token": "whilst",
+        "weight": "LOW",
+        "contexts": [
+          "narrative comparison"
+        ],
+        "avoidRepeatWindow": "MEDIUM"
+      },
+      {
+        "token": "ere",
+        "weight": "LOW",
+        "contexts": [
+          "historical contrast"
+        ],
+        "avoidRepeatWindow": "LONG"
+      }
+    ],
+    "codeSwitchTriggers": [
+      "ritual formality",
+      "very old memory",
+      "mock ceremony",
+      "addressing another ancient Character"
+    ],
+    "claimPolicy": "occult/alternative-history material is diegetic lore, legend, hypothesis or belief unless established by current external source",
+    "uncertaintyStyle": "confidently associative but may leave whether memory is literal unresolved",
+    "humorRegister": "morbid synchro-mystic courtesy",
+    "socialEdgeDefault": "VARIABLE",
+    "speechAvoid": [
+      "constant blood puns",
+      "generic Dracula parody",
+      "behold spam",
+      "full fake-Shakespeare",
+      "omniscient occult exposition",
+      "treating every esoteric claim as fact"
+    ]
+  },
+  "runtimeRequired": false,
+  "nextGate": "SINNFELD_REGISTER_PROFILE_PILOT_01"
+}
