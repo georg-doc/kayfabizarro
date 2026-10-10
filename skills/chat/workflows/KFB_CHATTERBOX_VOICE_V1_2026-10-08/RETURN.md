@@ -283,3 +283,23 @@ Additive owner files on Draft PR #379:
 
 **Next KFB Voice owner gate (UPDATED): `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1`.** Future WSA if separately authorized: run real audibly grounded English voice auditions against three actual source actors / one source-backed Triplet and existing KFB Audio timeline; retain manual override, annotate sources/licensing and distinguish functional proof from artist acceptance. Optional spoken operator control follows later; free conversational ASR/LLM and actual holographic Maker Space stage are subsequent tasks. In-world voice requires separate Four-Island A/B approval and receiving-owner runtime authorization. Georg fine-tuning remains future, not an early blocking gate.
 
+## 2026-10-10 · Real three-actor eSpeak CLI audition + source-versioned output asset guard
+
+**Product result:** Georg's heuristic first-three-resident voice approach advanced to **six actual locally synthesized English MP3s**, with two eSpeak alternatives each for Demon Lord, Robot One and Farmer A. Source lines are exact earlier `CASTING_BENCH_R1_MANIFEST.json` donor audition fixtures, **CASTING_ONLY_NON_CANON**, not accepted canonical Triplets or final casting. Native eSpeak 1.48.15 and FFmpeg 7.1.5 were available in the local build; Piper, espeak-ng and ElevenLabs bridge were not exercised.
+
+**Actual executable source checkpoint (same voice owner):**
+- `runtime/voice-asset-identity.v1.js` — dormant output-only source/version/provider/voice/recipe identity and public shipping-candidate gate; legacy real-pool adapter and KFB Audio runtime left intact.
+- `tools/test_voice_asset_identity.cjs` — committed local Node tests.
+- `tools/render_espeak_audition_r1.py` — reproduces the exact private audition samples from the JSON receipt with no external account/provider.
+- `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json` — six measured audio durations, source sentences, CLI parameters, SHA-256 per clip, ZIP SHA-256, and explicit *not hosted* storage status.
+
+**Evidence:** local Node 24/24 PASS; actual eSpeak generation 6/6; FFprobe MP3 checks 6/6; strict rerender/hash comparison 6/6; ZIP integrity 1/1. GitHub module blob was matched byte-exact to the tested local source. No CI test run for the committed test script; no browser audio/duck, TTS Site publication, actual canonical Triplet, new 3D source visual, ASR or LLM turn test. The eSpeak donor's synthetic tone is **not accepted as production character acting**.
+
+**Archive:** `KFB_VOICE_HEURISTIC_AUDITION_R1_ESPEAK_TECHNICAL.zip` (253,347 bytes; SHA-256 `3bc70771f57d690a0c8a91eb5e45f33047149882a48c2162a92731e49e55db49`) is provided as a **current conversation download only**. It is NOT claimed present in the repository, private Production Control or deployed KFB Audio Site; any future execution may deterministically rerender using the checked-in Python tool and receipt. Do not invent an asset URL.
+
+The previously detected production cache-identity gap has a safe standalone candidate helper, but **the real browser / ChatterBox consumer has not yet consumed it**. `evaluateAsset` is a contract-level guard over provided status fields, not authenticated license review.
+
+**Publication limit:** current executor has no Sites publisher. `SITES_PUBLISHER_REQUIRED` for in-place updates to the existing `https://kfb-audio.frizzlebob.chatgpt.site` Voice Acting tab. No second Site or Cloudflare fallback, no PR merge/Live, no KFB WB2 R5, and no DocCheck runtime change.
+
+**Current Voice next gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` — one owner-approved semantic Triplet actually voiced via the existing Site with recorded source rights, audible start/stop, duck restoration, bubble/mute and timing. Georg's detailed final voice fine-tuning remains later, not the current implementation stop. The independent Four-Island A/B World gate remains closed.
+
