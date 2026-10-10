@@ -1,0 +1,159 @@
+{
+  "validator": "Blender 5.2.2 clean-scene glTF re-import",
+  "import_result": [
+    "FINISHED"
+  ],
+  "file": "KFB_TOWN_CASTLE_CLAY_STAIRS_R2.glb",
+  "bytes": 324004,
+  "sha256": "82a20339c39e6e93a71a389dbb39978b7362b562e52999d90539039b131ebb28",
+  "mesh_objects": 5,
+  "mesh_identity_preserved": true,
+  "missing_meshes": [],
+  "unexpected_meshes": [],
+  "objects": [
+    {
+      "name": "KFB_ClayStair_Buttress_L",
+      "vertices_after_import": 2036,
+      "triangles": 1012,
+      "materials": [
+        "KFB_family_a_deep_R2_runtime"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -7.54587,
+          -1.01054,
+          0.0
+        ],
+        "max": [
+          -4.5732,
+          1.79925,
+          3.32638
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Buttress_R",
+      "vertices_after_import": 2066,
+      "triangles": 1028,
+      "materials": [
+        "KFB_family_a_deep_R2_runtime"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          4.54442,
+          -1.06834,
+          0.0
+        ],
+        "max": [
+          7.38055,
+          1.82073,
+          3.1778
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Core",
+      "vertices_after_import": 2736,
+      "triangles": 1384,
+      "materials": [
+        "KFB_family_a_light_R2_runtime"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -5.57695,
+          -0.01775,
+          0.0
+        ],
+        "max": [
+          5.60239,
+          17.98997,
+          5.08
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Wall_L",
+      "vertices_after_import": 1128,
+      "triangles": 572,
+      "materials": [
+        "KFB_family_a_mid_R2_runtime"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          -6.69858,
+          -0.02905,
+          0.0
+        ],
+        "max": [
+          -5.37945,
+          17.95647,
+          6.91145
+        ]
+      }
+    },
+    {
+      "name": "KFB_ClayStair_Wall_R",
+      "vertices_after_import": 1128,
+      "triangles": 572,
+      "materials": [
+        "KFB_family_a_warm_R2_runtime"
+      ],
+      "bounds_blender_z_up": {
+        "min": [
+          5.37951,
+          -0.02994,
+          0.0
+        ],
+        "max": [
+          6.69651,
+          17.98731,
+          6.9629
+        ]
+      }
+    }
+  ],
+  "total_triangles": 4568,
+  "material_base_colors_after_import": {
+    "KFB_family_a_deep_R2_runtime": [
+      0.61961,
+      0.52157,
+      0.41961,
+      1.0
+    ],
+    "KFB_family_a_light_R2_runtime": [
+      0.90196,
+      0.83137,
+      0.7098,
+      1.0
+    ],
+    "KFB_family_a_mid_R2_runtime": [
+      0.81961,
+      0.72941,
+      0.6,
+      1.0
+    ],
+    "KFB_family_a_warm_R2_runtime": [
+      0.69804,
+      0.61176,
+      0.4902,
+      1.0
+    ]
+  },
+  "non_black_materials": true,
+  "cameras": 0,
+  "lights": 0,
+  "bounds_blender_z_up_after_import": {
+    "min": [
+      -7.54587,
+      -1.06834,
+      0.0
+    ],
+    "max": [
+      7.38055,
+      17.98997,
+      6.9629
+    ]
+  },
+  "coordinate_note": "glTF/GLB is Y-up by specification; Blender converts imported data to its internal Z-up view.",
+  "material_note": "Procedural Blender surface is render evidence; GLB intentionally retains safe Family-A base-color fallback."
+}
