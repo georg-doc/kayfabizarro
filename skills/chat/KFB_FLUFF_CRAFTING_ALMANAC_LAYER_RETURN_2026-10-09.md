@@ -408,3 +408,157 @@ Buddy → Clown → dark heel → Toy Soldier.
 The goal is to calibrate moral temperature, connector choice and repair budget before expanding phrase volume.
 
 Existing Prison/Blender/deferred implementation gates remain unchanged.
+
+
+---
+
+## Visual Characterization + World Perception Context · 2026-10-10
+
+Status: **AUTHORING / READ-ONLY CONTEXT PREP PERSISTED · NO RUNTIME WRITE**
+
+Georg's new direction is captured as an additive semantic layer that lets dialogue refer to what is actually visible in the KFB world without creating a second Card, Billboard, Resident or ChatterBox owner.
+
+New files:
+- `skills/chat/KFB_VISUAL_CHARACTERIZATION_WORLD_PERCEPTION_CONTEXT_V0_1_2026-10-10.md`
+- `skills/chat/KFB_VISUAL_CHARACTERIZATION_SCHEMA_V0_1_2026-10-10.json`
+- `skills/chat/KFB_DIALOGUE_PERCEPTION_CONTEXT_PACKET_V0_1_2026-10-10.json`
+- `skills/chat/KFB_VISUAL_CHARACTERIZATION_COVERAGE_QUEUE_V0_1_2026-10-10.json`
+
+Updated:
+- `skills/chat/KFB_SOCIAL_EDGE_ROAST_NEEDLE_GRAMMAR_V0_1_2026-10-10.md`
+- `skills/chat/KFB_PRISON_TOY_SOLDIER_VOICE_TRIPLET_PREP_V0_1_2026-10-10.md`
+
+### Product idea
+
+Dialogue context may consume:
+- source-observed visible Character features;
+- current Character props/costume/movement tells;
+- current canonical Card text + `artworkPrompt`;
+- current Hypernormalisation quote / author / themes / FrizzleQuestion / Card refs;
+- scene/activity/event;
+- relationship and Weak Spot context;
+- Social Edge lane.
+
+This context may feed deterministic Triplet selection, authored pools or an optional LLM call.
+
+LLM remains an **expression consumer**, never truth owner.
+
+### Three visual truth classes
+
+1. `SOURCE_OBSERVED` — source-isolated visible fact; eligible for runtime "seen fact" use.
+2. `USER_AUTHORED_OR_REPORTED` — Georg-provided design/observation awaiting source-isolation proof.
+3. `STORY_HYPOTHESIS` — possible interpretation/history inspired by a visible feature; never auto-promoted to biography.
+
+This explicitly separates:
+**visible fact ≠ social interpretation ≠ invented backstory**.
+
+### Card / Billboard evidence
+
+Existing canonical seams already support the idea:
+- Card Viewer APIs expose `artworkPrompt`;
+- `world-context.js` uses `artworkPrompt` and explicitly weights its Mood signal;
+- Billboard H13 already uses Card text + artwork-prompt Mood for SHOW IT → SPIN IT → SELL IT behavior;
+- Quote Pool schema includes quote ID/text/author/work/themes, optional Card refs, required FrizzleQuestion, provenance and rights;
+- Billboard donor UI already has current `quoteId` and current playback phase.
+
+Concrete source check:
+`media/kfb/The_Move_-_ADD_web_ID.pdf.json`
+contains **56 Cards / 56 artworkPrompts**.
+
+### Visual characterization
+
+Candidate semantic layer references, rather than duplicates, real Character source data.
+
+Potential fields:
+- silhouette;
+- face/body/costume features;
+- signature props;
+- movement reads;
+- recurring tells;
+- neutral comic affordances;
+- BanterHooks.
+
+A visual feature is not automatically a flaw.
+Social Edge decides whether it becomes:
+Buddy Banter / Clown Roast / Dark Heel / Toy Soldier Needle / no comment.
+
+A visible feature never grants knowledge of its history.
+
+### Current coverage
+
+Source-backed extraction queue records:
+- **21** current Resident Atlas entries;
+- **49** source-pinned Character coverage records.
+
+Do not invent 49 descriptions from filenames.
+
+Priority source-isolation batch:
+1. Toy Soldier;
+2. Survivalist;
+3. Clown;
+4. Skeleton Warrior;
+5. Lorekeeper.
+
+Current Georg-reported candidate features retained as **PENDING SOURCE ISOLATION**:
+- Toy Soldier: comic pink cheeks / moustache candidate;
+- Survivalist: eyepatch candidate.
+
+Possible history of the Survivalist's eye, including any Prison/Panopticon/Toy-Soldier connection, remains **STORY_HYPOTHESIS**, not established biography.
+
+### Class / family support
+
+Visual characterization is designed at:
+- Character instance;
+- Resident/archetype;
+- class/family.
+
+Initial family targets include:
+- Skeleton Warrior/Rogue/Mage;
+- Toy Soldier Corps;
+- Farmers;
+- Animatronics;
+- Orc family.
+
+Class data never overwrites individual traits.
+
+### Perception-context budget
+
+Prompt/context priority:
+1. visible target;
+2. current world event/activity;
+3. current Billboard/Card;
+4. relationship-relevant memory;
+5. one or two stable visual facts;
+6. broader lore only when needed.
+
+Existing rule remains:
+**A bubble gets only as much world as its beat can pay for.**
+
+### Validation
+
+Before this Return write:
+- exact branch head: `dcd792d7fea653e2361a99379a35ac7506c84559`;
+- static/data checks: **18/18 PASS**;
+- current Resident Atlas count = 21;
+- source-pinned Character coverage = 49;
+- `The Move` Card source = 56/56 artworkPrompt present;
+- Quote schema has FrizzleQuestion + Card refs;
+- Social Edge and Toy Soldier contracts now consume visual/media context;
+- no second owner introduced.
+
+Actual runtime/browser/LLM/TTS/visual-source-isolation/Site/Stage tests in this slice:
+**0**.
+
+No PR, merge, Live promotion or current World runtime mutation.
+
+### Next authoring/data gate
+
+`VISUAL_CHARACTERIZATION_SOURCE_EXTRACTION_01`
+
+Source-isolate the five-character priority batch and populate only verified visible features.
+
+Then:
+`SOCIAL_EDGE_WEAKSPOT_MICROSCENES_01`
+
+Use one real visual feature + one current Card/Quote context to compare:
+Buddy → Clown → Dark Heel → Toy Soldier.
