@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.g1.generated-image-manifest/1",
+  "group": "G1",
+  "date": "2026-10-10",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-mvp1-asset-candidates-2026-10-10",
+  "sourceStatus": "Generated from textual brief/style instruction; actual StreakByte FBX source form and Dropbox reference pixels were not conditioned into image model.",
+  "classification": "STYLE-CONCEPT ONLY · not source-isolated donor, not K2 checked, not Golden",
+  "githubStatus": {
+    "previews": "PUSHED_VERIFIED",
+    "previewCount": 3,
+    "previewSize": "256x192 WEBP lossy Q32",
+    "originalPNGs": "PENDING_BINARY_UPLOAD",
+    "originalCount": 0
+  },
+  "originalsAvailable": "Full-resolution 1448x1086 PNG originals packaged in ChatGPT conversation as KFB_MVP1_G1_Concept_Images_2026-10-10.zip, with checksum and GitHub upload helper; ZIP not yet in GitHub.",
+  "concepts": [
+    {
+      "id": "g1-town-r1",
+      "label": "Town island / initial R1",
+      "scene": "S01",
+      "kind": "generated-concept",
+      "userFeedback": "sieht cool aus! aber der look könnte noch cartooniger, stilisiert und weniger realistisch sein, denke ich….",
+      "preview": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R1_initial_preview_256.webp",
+      "previewSha": "46a911b34eaac6643adb2a5b31963d0baee45cf9",
+      "sourcePng": "G1_Town_Island_R1_initial.png",
+      "sourcePngSha256": "611a4a0d5877637e13f4c239616048631f8abe53128fe793b15440355b339908",
+      "sourcePngBytes": 2068235,
+      "previewLink": "https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R1_initial_preview_256.webp",
+      "originalPngGithubPath": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R1_initial.png",
+      "originalPngGithubUploaded": false,
+      "previewGithubVerified": true,
+      "picked": null,
+      "goldenRef": false
+    },
+    {
+      "id": "g1-town-r2",
+      "label": "Town island / cartoon clay tuning R2",
+      "scene": "S01",
+      "kind": "generated-concept",
+      "userFeedback": "super!",
+      "preview": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R2_cartoon_clay_preview_256.webp",
+      "previewSha": "6293ac93fe401148660673b392484f1fa9d8c2a2",
+      "sourcePng": "G1_Town_Island_R2_cartoon_clay.png",
+      "sourcePngSha256": "aa4851db8a895c74a16810610a8b367b5ce7d9c2109364ce49945e4f91e13cd1",
+      "sourcePngBytes": 1899026,
+      "previewLink": "https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R2_cartoon_clay_preview_256.webp",
+      "originalPngGithubPath": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Town_Island_R2_cartoon_clay.png",
+      "originalPngGithubUploaded": false,
+      "previewGithubVerified": true,
+      "picked": null,
+      "goldenRef": false
+    },
+    {
+      "id": "g1-protopia-r1",
+      "label": "Protopia island / vertical clay concept R1",
+      "scene": "S02",
+      "kind": "generated-concept",
+      "userFeedback": "super!",
+      "preview": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Protopia_Island_R1_clay_preview_256.webp",
+      "previewSha": "3b4b9beed2a7087daa7cd99a8e18eee17119ea8b",
+      "sourcePng": "G1_Protopia_Island_R1_clay.png",
+      "sourcePngSha256": "c0d961dabd4f41dd3bd5cd7ac8e128cc2d728c5896d2349f853cb8d72fb6a240",
+      "sourcePngBytes": 1772119,
+      "previewLink": "https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Protopia_Island_R1_clay_preview_256.webp",
+      "originalPngGithubPath": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Protopia_Island_R1_clay.png",
+      "originalPngGithubUploaded": false,
+      "previewGithubVerified": true,
+      "picked": null,
+      "goldenRef": false
+    }
+  ]
+}
