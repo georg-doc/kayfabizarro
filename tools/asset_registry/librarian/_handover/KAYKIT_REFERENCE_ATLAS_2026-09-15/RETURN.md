@@ -1,5 +1,11 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## ADDENDUM · 2026-10-10 · KayKit & Co thematic coverage (research)
+
+New official-source-backed comparison: `KAYKIT_AND_CO_TOPIC_COVERAGE_MATRIX_2026-10-10.md`. It inventories Quaternius's 28 public Blender tutorial topics, Kenney's 3D import/Asset Forge docs, and existing KayKit creator tutorials and asset-pack source facts. Prioritized source-to-KFB knowledge gaps: modular building origins/contact, gradient+UV atlas, native rig/attachment workflows, lighting, facial blendshapes, gap-only animation, tool/Fluff work, nature and editable city/biome modules. Explicitly distinguishes **creator topic AVAILABLE**, **KFB owner/source PRESENT**, and **integration / visual proof NOT YET DONE**. The 18.09 KayKit Registry override supersedes older "missing pack" lists; no acquisition advice or compatibility claim inferred.
+
+Scope: research only; no video frame scan, Blender render, world runtime, Site/Stage/Hub publication, PR or merge. World R4 remains STOPPED/NO MVP. Previous lighting visual scan remains INPUT_BLOCKED; one next recorded gate is `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`. Later thematic extraction can proceed separately without changing owners.
+
 ## ADDENDUM · 2026-10-10 · lighting video source audit / visual scan INPUT_BLOCKED
 
 - Attempted the previously designated `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01` with the exact YouTube video URL, oEmbed and targeted transcript/ID discovery. Available Web/HTTP surfaces did not provide actual frames, timecodes or captions. 0 video frames, 0 verified settings, 0 transcript lines. This gate remains `INPUT_BLOCKED`, **not PASS**.
