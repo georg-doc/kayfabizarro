@@ -1,6 +1,16 @@
 # G1 · Gerenderte KFB-Island-Konzeptbilder R1–R2
 Stand: 2026-10-10 · **3/3 verlustbehaftete kleine WebP-Vorschaubilder auf GitHub geprüft. Hochauflösende Original-PNGs noch NICHT auf GitHub.**
 
+## R8 · Ergänzung: Originalnähe vor Mood · 10.10.2026
+
+**Vier G1-Konzept-PNGs im aktuellen R8-ZIP, aber auf GitHub weiterhin nur vier kleine 256×192-WebP-Vorschauen.** Neuestes [Mood-Bild Kenney-Felsen](refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp) – Georg: „als Mood Asset … cool … hilfreich“, aber **visuell anders als die Source-Vorlage**. Nicht als source-fidel, `picked` oder Golden klassifizieren.
+
+**Neue bindende Design-Route:** [hochgeladenes §7a-Briefing, G1-Branch](../KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md) (relativer Repo-Pfad nur Orientierung). G4 `STONE BRIDGE 01` ist ab jetzt eine **freigegebene Stil-Richtung**, *kein* Golden und *kein* akzeptiertes Modell. Historische Fehlversuche bleiben archiviert; beschriftete Ansichts-/Detailblätter sind jetzt erlaubt, Logos/Titel/Werbetexte nicht. Baubarer Baukasten aus **höchstens 5–6 großen Formrollen**, dazu je Blatt `PARTS.md`.
+
+**Archivpaket:** `KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip` · SHA256 `ff939342f5df8d474d70232b269c0a51b0d8f7866b10c54643e8f834a5f92aca` · enthält **3 alte Insel-PNGs + 1 neues Fels-Mood-PNG + 1 G4-Stilreferenz-PNG**, SHA256 je Original in [G1_RENDERED_CONCEPTS_R1.json](G1_RENDERED_CONCEPTS_R1.json) bzw. ZIP-`SOURCE.json`. **ZIP ist Chat-/Download-Datei, NICHT auf GitHub.** Für Work muss es erneut als Datei angehängt oder dauerhaft gespeichert werden.
+
+**Weitere G1-Formbindung:** [Kenney Original-4-Ansichten](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg), [Fels-`PARTS.md`](refs/large_boulders/PARTS.md), [neuer source-first Prompt](refs/large_boulders/PROMPT.md). Kein neuer Render durch diese Statusänderung.
+
 Diese Bilder sind **stilistische KI-Konzepte** auf Basis des textlichen G1-Briefings, **keine echten Views der StreakByte-FBX**. Weder die privaten StreakByte-Meshes noch die eigentlichen Pixel der Dropbox Style References wurden als Bildkonditionierung in diese Generierungen gegeben. Bild/Dateiname alleine ist kein Beleg für Source Fidelity. Georgs „super!“ ist positive Richtungsbestätigung, keine `picked`- oder `goldenRef`-Freigabe.
 
 | Bild | GitHub-Vorschau (256 × 192 WebP) | Vollauflösend (1448 × 1086 PNG) | Stand |
