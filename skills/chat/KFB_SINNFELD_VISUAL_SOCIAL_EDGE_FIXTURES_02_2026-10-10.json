@@ -1,0 +1,445 @@
+{
+  "schema": "kfb.dialogue-authoring-fixtures/0.2",
+  "status": "AUTHORING_FIXTURES_NO_PRESENTATION_OWNER",
+  "date": "2026-10-10",
+  "owner": "KFB ChatterBox / Resident authoring research",
+  "presentationContract": null,
+  "runtimeRequired": false,
+  "rules": {
+    "groundedFactsOnly": true,
+    "unverifiedFaceDetailsAllowed": false,
+    "generatedBiographyPromotion": false,
+    "socialEdgeIndependentFromSinnfeld": true,
+    "dialogueStudioMayConsumeLater": true,
+    "dialogueStudioOwnsPresentation": false,
+    "chatterBoxRemainsDialogueOwner": true
+  },
+  "sharedMedia": {
+    "card": {
+      "deck": "The Move: A Field Guide to Managed Reactions",
+      "cardNumber": 2,
+      "cardName": "The Invisible Threat",
+      "artworkPrompt": "Style: Cold war security briefing graphic. Subject: Owl guard watching empty darkness from surveillance tower. Mood: Tense, vigilant, uneasy."
+    },
+    "quote": {
+      "quoteId": "q-b01-1001-wilde-mask-truth",
+      "author": "Oscar Wilde",
+      "work": "The Critic as Artist",
+      "semanticTheme": [
+        "mask",
+        "truth",
+        "performance",
+        "identity"
+      ]
+    }
+  },
+  "fixtures": [
+    {
+      "id": "f02-survivalist-shield",
+      "target": "survivalist",
+      "visibleFacts": [
+        "backpack.gltf",
+        "ballistic_shield_A.gltf",
+        "ballistic_shield_B.gltf"
+      ],
+      "excludedPendingFacts": [
+        "eyepatch"
+      ],
+      "weakSpotCandidate": {
+        "id": "survivalist.preparedness-identity",
+        "status": "AUTHORING_CANDIDATE",
+        "summary": "Needs preparedness to be meaningful; dislikes being caught unready or having readiness framed as fear."
+      },
+      "targetSinnfeld": [
+        "preparedness",
+        "perimeter",
+        "fallback",
+        "risk",
+        "exit",
+        "failure mode"
+      ],
+      "variants": [
+        {
+          "lane": "BUDDY",
+          "speaker": "lorekeeper",
+          "intent": "recognize preparedness without humiliating it",
+          "turns": [
+            [
+              "LOREKEEPER",
+              "You brought the large shield."
+            ],
+            [
+              "SURVIVALIST",
+              "I brought options."
+            ],
+            [
+              "LOREKEEPER",
+              "Good. The screen brought only a warning."
+            ]
+          ],
+          "repair": "implicit respect",
+          "edge": "LOW"
+        },
+        {
+          "lane": "CLOWN_ROAST",
+          "speaker": "clown",
+          "intent": "make over-preparation visible and playable",
+          "turns": [
+            [
+              "CLOWN",
+              "Invisible threat. Very visible shield."
+            ],
+            [
+              "SURVIVALIST",
+              "Prepared."
+            ],
+            [
+              "CLOWN",
+              "Perfect. Now we only need something to hide behind it."
+            ]
+          ],
+          "repair": "target can answer back; roast stays on stage logic",
+          "edge": "MEDIUM"
+        },
+        {
+          "lane": "DARK_HEEL",
+          "speaker": "vampire",
+          "intent": "elegantly expose preparedness as ritualized fear",
+          "turns": [
+            [
+              "VAMPIRE",
+              "The ancients used charms."
+            ],
+            [
+              "SURVIVALIST",
+              "I use armor."
+            ],
+            [
+              "VAMPIRE",
+              "Same prayer. Better grip."
+            ]
+          ],
+          "repair": "none required, but target can reframe",
+          "edge": "MEDIUM_HIGH"
+        },
+        {
+          "lane": "TOY_SOLDIER_NEEDLE",
+          "speaker": "toy-soldier",
+          "intent": "provoke a usable threat statement",
+          "turns": [
+            [
+              "TOY SOLDIER",
+              "Large shield."
+            ],
+            [
+              "SURVIVALIST",
+              "I like being ready."
+            ],
+            [
+              "TOY SOLDIER",
+              "For what?"
+            ],
+            [
+              "SURVIVALIST",
+              "You."
+            ],
+            [
+              "TOY SOLDIER",
+              "Threat statement. Thank you."
+            ]
+          ],
+          "repair": "none; scene requires counterplay outside line",
+          "edge": "HIGH"
+        }
+      ],
+      "audit": {
+        "groundedAnchors": [
+          "actual shield/backpack props",
+          "current Card threat/surveillance motif"
+        ],
+        "newBiographyFacts": 0,
+        "pendingVisualFactsUsed": 0
+      }
+    },
+    {
+      "id": "f02-lorekeeper-tome",
+      "target": "lorekeeper",
+      "visibleFacts": [
+        "Lorekeeper_Staff.gltf",
+        "Lorekeeper_Tome.gltf",
+        "standing lectern with open book/candles/scrolls"
+      ],
+      "weakSpotCandidate": {
+        "id": "lorekeeper.provenance-before-action",
+        "status": "AUTHORING_CANDIDATE",
+        "summary": "Values source/provenance so strongly that others may frame caution as hesitation."
+      },
+      "targetSinnfeld": [
+        "provenance",
+        "witness",
+        "record",
+        "claim",
+        "version"
+      ],
+      "variants": [
+        {
+          "lane": "BUDDY",
+          "speaker": "survivalist",
+          "intent": "practical nudge without dismissing evidence",
+          "turns": [
+            [
+              "SURVIVALIST",
+              "Found the source?"
+            ],
+            [
+              "LOREKEEPER",
+              "Three versions."
+            ],
+            [
+              "SURVIVALIST",
+              "Good. Pick boots before the fourth arrives."
+            ]
+          ],
+          "repair": "practical collaboration",
+          "edge": "LOW"
+        },
+        {
+          "lane": "CLOWN_ROAST",
+          "speaker": "clown",
+          "intent": "turn archival caution into physical stage business",
+          "turns": [
+            [
+              "CLOWN",
+              "Open book. Tall staff. Serious face."
+            ],
+            [
+              "LOREKEEPER",
+              "And?"
+            ],
+            [
+              "CLOWN",
+              "I'm waiting for the footnote to enter."
+            ]
+          ],
+          "repair": "the joke attacks presentation, not worth",
+          "edge": "MEDIUM"
+        },
+        {
+          "lane": "DARK_HEEL",
+          "speaker": "vampire",
+          "intent": "needle the archive's dependence on surviving records",
+          "turns": [
+            [
+              "VAMPIRE",
+              "Your book remembers what survived."
+            ],
+            [
+              "LOREKEEPER",
+              "That is already a great deal."
+            ],
+            [
+              "VAMPIRE",
+              "Indeed. The missing pages are much freer."
+            ]
+          ],
+          "repair": "epistemic tension, not personal degradation",
+          "edge": "MEDIUM_HIGH"
+        },
+        {
+          "lane": "TOY_SOLDIER_NEEDLE",
+          "speaker": "toy-soldier",
+          "intent": "turn verification behavior into obstruction/pretext",
+          "turns": [
+            [
+              "TOY SOLDIER",
+              "Still reading?"
+            ],
+            [
+              "LOREKEEPER",
+              "Still checking."
+            ],
+            [
+              "TOY SOLDIER",
+              "Delay recorded."
+            ],
+            [
+              "LOREKEEPER",
+              "As what?"
+            ],
+            [
+              "TOY SOLDIER",
+              "You asked twice. Evasive."
+            ]
+          ],
+          "repair": "none; Lorekeeper can reframe by challenging category",
+          "edge": "HIGH"
+        }
+      ],
+      "audit": {
+        "groundedAnchors": [
+          "actual staff/tome scene",
+          "current media claim/mask/surveillance themes"
+        ],
+        "newBiographyFacts": 0,
+        "pendingVisualFactsUsed": 0
+      }
+    },
+    {
+      "id": "f02-vampire-throne",
+      "target": "vampire",
+      "visibleFacts": [
+        "Vampire_Throne.gltf",
+        "Vampire_Goblet.gltf",
+        "Vampire_Sword.gltf",
+        "Gem_Small/Medium/Large.gltf"
+      ],
+      "excludedProposals": [
+        "bat swarm transform as current visible fact"
+      ],
+      "weakSpotCandidate": {
+        "id": "vampire.ancient-status-self-mythology",
+        "status": "AUTHORING_CANDIDATE",
+        "summary": "Enjoys the authority of age, lineage and symbolic continuity; vulnerable to being reduced to theatrical furniture or unsupported memory."
+      },
+      "targetSinnfeld": [
+        "memory",
+        "lineage",
+        "ritual",
+        "recurrence",
+        "archive",
+        "threshold"
+      ],
+      "variants": [
+        {
+          "lane": "BUDDY",
+          "speaker": "lorekeeper",
+          "intent": "respect old memory while preserving provenance",
+          "turns": [
+            [
+              "LOREKEEPER",
+              "You remember the earlier version?"
+            ],
+            [
+              "VAMPIRE",
+              "Several."
+            ],
+            [
+              "LOREKEEPER",
+              "Then sit down. I have dates."
+            ],
+            [
+              "VAMPIRE",
+              "At last. Hospitality."
+            ]
+          ],
+          "repair": "mutual expertise",
+          "edge": "LOW"
+        },
+        {
+          "lane": "CLOWN_ROAST",
+          "speaker": "clown",
+          "intent": "deflate grandeur through visible throne/prop logic",
+          "turns": [
+            [
+              "CLOWN",
+              "Nice throne."
+            ],
+            [
+              "VAMPIRE",
+              "It has endured."
+            ],
+            [
+              "CLOWN",
+              "So has the chair in my dressing room. It complains less."
+            ]
+          ],
+          "repair": "Vampire can enjoy the desecration",
+          "edge": "MEDIUM"
+        },
+        {
+          "lane": "DARK_HEEL",
+          "speaker": "vampire",
+          "intent": "self-directed lane not applicable; use rival dark-heel transform as authoring comparison",
+          "speakerOverride": "black-knight-candidate",
+          "turns": [
+            [
+              "DARK HEEL",
+              "Centuries old, and still posing beside the furniture."
+            ],
+            [
+              "VAMPIRE",
+              "Furniture survives kings."
+            ],
+            [
+              "DARK HEEL",
+              "So does dust."
+            ]
+          ],
+          "repair": "none",
+          "edge": "MEDIUM_HIGH"
+        },
+        {
+          "lane": "TOY_SOLDIER_NEEDLE",
+          "speaker": "toy-soldier",
+          "intent": "reduce ancient self-mythology to present custody classification",
+          "turns": [
+            [
+              "TOY SOLDIER",
+              "Name?"
+            ],
+            [
+              "VAMPIRE",
+              "Names multiply."
+            ],
+            [
+              "TOY SOLDIER",
+              "One will do."
+            ],
+            [
+              "VAMPIRE",
+              "How very modern."
+            ],
+            [
+              "TOY SOLDIER",
+              "Refusal recorded."
+            ]
+          ],
+          "repair": "none; category clash is the point",
+          "edge": "HIGH"
+        }
+      ],
+      "audit": {
+        "groundedAnchors": [
+          "actual throne/goblet/sword/gems",
+          "current quote themes mask/identity",
+          "current Card surveillance"
+        ],
+        "newBiographyFacts": 0,
+        "pendingVisualFactsUsed": 0,
+        "note": "Black Knight speaker is an authoring comparison only; exact current Sinnfeld profile not yet authored."
+      }
+    }
+  ],
+  "integrationBoundary": {
+    "safeToShareWithDialogueStudio": [
+      "fixture ids",
+      "speaker/target ids",
+      "grounded facts",
+      "lane",
+      "turn text",
+      "repair/counterplay metadata",
+      "audit/provenance"
+    ],
+    "doNotPrescribe": [
+      "bubble shape",
+      "layout",
+      "camera",
+      "timing",
+      "animation",
+      "template name",
+      "UI controls",
+      "export presentation schema"
+    ]
+  },
+  "nextGate": "SINNFELD_VISUAL_SOCIAL_EDGE_COMBINED_MICROSCENES_02_REVIEW"
+}
