@@ -1,0 +1,94 @@
+{
+ "schema": "kfb.rkit-r3.blender-tests/0.1",
+ "core": "kfb.track-core/0.13",
+ "blender": "5.2.2 LTS",
+ "passed": 9,
+ "total": 9,
+ "tests": [
+  {
+   "test": "seam \u00b7 every junction mouth: route body and both kerb runs share the mouth section (mesh vertices within 1 mm)",
+   "pass": true,
+   "value": [
+    0.0,
+    3.1e-05
+   ],
+   "note": "3 mouths, 6 kerb ends; max miss route / kerb (m)"
+  },
+  {
+   "test": "seam \u00b7 end cap entry carries the full stub end section (14 slots, mesh vertices within 1 mm)",
+   "pass": true,
+   "value": 0.0,
+   "note": "max miss (m)"
+  },
+  {
+   "test": "sockets \u00b7 abutments and end cap sit exactly on their Track Core frames",
+   "pass": true,
+   "value": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "note": "max matrix element difference"
+  },
+  {
+   "test": "island connectors \u00b7 route starts / ends on the measured lab rim connectors, heading along / against their outward dir, level",
+   "pass": true,
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "note": "position error A/B (m), heading error A/B (deg)"
+  },
+  {
+   "test": "furniture \u00b7 one signal per arm on its Track Core anchor",
+   "pass": true,
+   "value": [
+    3,
+    0
+   ],
+   "note": "count, max foot offset (m)"
+  },
+  {
+   "test": "mesh \u00b7 no degenerate faces, no loose vertices (all generated meshes)",
+   "pass": true,
+   "value": [
+    0,
+    0
+   ],
+   "note": "30 meshes"
+  },
+  {
+   "test": "mesh \u00b7 kerb runs, parapets and parts are closed (no non-manifold edges)",
+   "pass": true,
+   "value": 0,
+   "note": "19 closed meshes"
+  },
+  {
+   "test": "mesh \u00b7 route bodies are closed except at the junction mouths (open vertices all on a mouth section)",
+   "pass": true,
+   "value": {
+    "RKIT_route_M": [
+     12,
+     0
+    ],
+    "RKIT_route_J.arm2": [
+     12,
+     0
+    ],
+    "RKIT_route_M+J": [
+     12,
+     0
+    ]
+   },
+   "note": "route: [open vertices, open vertices off a mouth]"
+  },
+  {
+   "test": "clearance \u00b7 signal mast feet stay off every lane connector by half a KFB car + mast foot",
+   "pass": true,
+   "value": 3.375,
+   "note": "needs 1.905 m"
+  }
+ ]
+}

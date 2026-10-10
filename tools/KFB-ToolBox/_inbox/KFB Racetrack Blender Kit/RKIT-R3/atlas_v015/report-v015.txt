@@ -1,0 +1,95 @@
+PASS  core version 0.15  · kfb.track-core/0.15
+PASS  race fixture has no body (Joyride unchanged)
+PASS  A1 · core checks green
+PASS  A1 · body_points_constant  · 72
+PASS  A1 · body_top_no_fold  · 0
+PASS  A1 · body_no_step  · 0.15 · max key change per unit length at s 36.0
+PASS  A1 · body_closed_clockwise  · 0
+PASS  A1 · every sample has a body  · 145 samples
+PASS  A1 · outline = 2 x 9 keys x 4
+PASS  A4 · core checks green
+PASS  A4 · body_points_constant  · 72
+PASS  A4 · body_top_no_fold  · 0
+PASS  A4 · body_no_step  · 0.1 · max key change per unit length at s 2.5
+PASS  A4 · body_closed_clockwise  · 0
+PASS  A4 · every sample has a body  · 179 samples
+PASS  A4 · outline = 2 x 9 keys x 4
+PASS  B1 · core checks green
+PASS  B1 · body_points_constant  · 72
+PASS  B1 · body_top_no_fold  · 0
+PASS  B1 · body_no_step  · 0.6918 · max key change per unit length at s 22.4
+PASS  B1 · body_closed_clockwise  · 0
+PASS  B1 · every sample has a body  · 91 samples
+PASS  B1 · outline = 2 x 9 keys x 4
+PASS  B2 · core checks green
+PASS  B2 · body_points_constant  · 72
+PASS  B2 · body_top_no_fold  · 0
+PASS  B2 · body_no_step  · 0.5685 · max key change per unit length at s 22.9
+PASS  B2 · body_closed_clockwise  · 0
+PASS  B2 · every sample has a body  · 91 samples
+PASS  B2 · outline = 2 x 9 keys x 4
+PASS  B3 · core checks green
+PASS  B3 · body_points_constant  · 72
+PASS  B3 · body_top_no_fold  · 0
+PASS  B3 · body_no_step  · 0.2767 · max key change per unit length at s 22.4
+PASS  B3 · body_closed_clockwise  · 0
+PASS  B3 · every sample has a body  · 91 samples
+PASS  B3 · outline = 2 x 9 keys x 4
+PASS  B5 · core checks green
+PASS  B5 · body_points_constant  · 72
+PASS  B5 · body_top_no_fold  · 0
+PASS  B5 · body_no_step  · 0.4189 · max key change per unit length at s 22.9
+PASS  B5 · body_closed_clockwise  · 0
+PASS  B5 · every sample has a body  · 91 samples
+PASS  B5 · outline = 2 x 9 keys x 4
+PASS  C1 · core checks green
+PASS  C1 · body_points_constant  · 72
+PASS  C1 · body_top_no_fold  · 0
+PASS  C1 · body_no_step  · 0.4936 · max key change per unit length at s 20.5
+PASS  C1 · body_closed_clockwise  · 0
+PASS  C1 · every sample has a body  · 209 samples
+PASS  C1 · outline = 2 x 9 keys x 4
+PASS  C1H · core checks green
+PASS  C1H · body_points_constant  · 72
+PASS  C1H · body_top_no_fold  · 0
+PASS  C1H · body_no_step  · 0.6313 · max key change per unit length at s 20.5
+PASS  C1H · body_closed_clockwise  · 0
+PASS  C1H · every sample has a body  · 209 samples
+PASS  C1H · outline = 2 x 9 keys x 4
+PASS  C1L · core checks green
+PASS  C1L · body_points_constant  · 72
+PASS  C1L · body_top_no_fold  · 0
+PASS  C1L · body_no_step  · 0.4704 · max key change per unit length at s 20.5
+PASS  C1L · body_closed_clockwise  · 0
+PASS  C1L · every sample has a body  · 209 samples
+PASS  C1L · outline = 2 x 9 keys x 4
+PASS  C2 · core checks green
+PASS  C2 · body_points_constant  · 72
+PASS  C2 · body_top_no_fold  · 0
+PASS  C2 · body_no_step  · 0.6993 · max key change per unit length at s 20.5
+PASS  C2 · body_closed_clockwise  · 0
+PASS  C2 · every sample has a body  · 209 samples
+PASS  C2 · outline = 2 x 9 keys x 4
+PASS  B1 · toe on the test ground (key 7 at ground height)  · -0.1
+PASS  B1 · embankment 1:1.5  · 1.556
+PASS  B1 · one family zone from the catalogue  · [{"id":"B1","kind":"family","name":"Ortseingang","from":"TOWN","to":"COUNTRY","s0":16.492,"s1":28.8}]
+PASS  B2 · one family zone from the catalogue  · [{"id":"B2","kind":"family","name":"Stadt <-> Fahrschule","from":"TOWN","to":"DRIVING_SCHOOL","s0":16.492,"s1":28.8}]
+PASS  B3 · one family zone from the catalogue  · [{"id":"B3","kind":"family","name":"Land <-> Berg","from":"COUNTRY","to":"MOUNTAIN","s0":16.492,"s1":28.8}]
+PASS  B5 · one family zone from the catalogue  · [{"id":"B5","kind":"family","name":"Rampenfuss Highway <-> Stadt","from":"HIGHWAY","to":"TOWN","s0":16.492,"s1":28.8}]
+PASS  B1 · zone length = 2 MC  · {"id":"B1","kind":"family","name":"Ortseingang","from":"TOWN","to":"COUNTRY","s0":16.492,"s1":28.8}
+PASS  C1 · two support zones C1 of 2 MC  · [{"id":"C1","kind":"support","name":"Boden <-> Bruecke","s0":14.1,"s1":26.9,"from":"ground","to":"bridge","rim":false},{"id":"C1","kind":"support","name":"Boden <-> Bruecke","s0":78.134,"s1":90.934,"from":"bridge","to":"ground","rim":false}]
+PASS  C2 · rim zones are C2  · [{"id":"C2","kind":"support","name":"Bruecke waechst aus dem Inselrand","s0":14.1,"s1":26.9,"from":"ground","to":"bridge","rim":true},{"id":"C2","kind":"support","name":"Bruecke waechst aus dem Inselrand","s0":78.134,"s1":90.934,"from":"bridge","to":"ground","rim":true}]
+PASS  C1 · crest apex 0.9  · 0.900
+PASS  C1 · crest grade <= 5 %  · 4.87 %
+PASS  C1 · body deep at the roots, slim mid-span  · mid 2.118
+PASS  C1 · no parapet on the ground  · 0.35 / 0.35
+PASS  C1 · parapet 1.3 over the walk on the bridge  · 1.300
+PASS  C1H · highway wall 1.3 on the ground too  · 1.3
+PASS  B1 · half-way sample sits mid-zone  · 0.5
+PASS  B1 · country end: no kerb above the gravel  · [[4.75,-0.05],[4.75,-0.05],[4.75,-0.05],[6.25,-0.35]]
+PASS  refused · crest steeper than 5 %  · piece br: crest 2 over 40.0 is steeper than 5 % (max crest 0.58)
+PASS  refused · B4 Highway direkt in Stadtstrasse  · transition TOWN -> HIGHWAY: a HIGHWAY never turns into a TOWN street on the line itself (catalogue B4); only at a ramp foot (EXIT / ENTRY branch)
+PASS  refused · MISS Stadt -> Berg (kein Katalog-Eintrag)  · transition TOWN -> MOUNTAIN: no catalogue entry (RKIT R3 transition catalogue); a missing transition is an error, never a silent blend
+PASS  refused · SHORT Ortseingang zu kurz  · piece t: transition B1 TOWN -> COUNTRY needs at least 12.8 (has 6)
+PASS  refused · B6 Welt -> Rennen ohne Track-Tor  · transition TOWN -> RACE: world <-> race needs a track gate (catalogue B6, P2)
+94 checks · 0 unexpected result(s)

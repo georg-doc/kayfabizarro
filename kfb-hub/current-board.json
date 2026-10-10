@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-09.1",
-  "updatedAt": "2026-10-09T14:37:00+02:00",
+  "revision": "2026-10-10.1",
+  "updatedAt": "2026-10-10T06:32:19+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -73,8 +73,8 @@
     {
       "id": "mvp-drive-loop-island-worldbuilder-lab",
       "title": "MVP Drive Loop · Island Worldbuilder Lab",
-      "summary": "RKIT construction sheet approved and build active: masonry family A complete, curb/sidewalk in progress. Speckle S1 accepted. HUD R3 and Clay Stage R2 accepted with TUNE. Next Lab step: R2D island base. GitHub links point to the current sync branch until its import gate is resolved; no source is duplicated in the Hub.",
-      "badge": "CURRENT · NEXT R2D ISLAND BASE",
+      "summary": "MVP-1 Stufe 1 läuft in eigener Claude-Code-Bau-Sitzung (R2D-Insel-Port, Town + Protopia). Neue harte Bauqualität Q1–Q8 vor jedem Bild, blinder Kritiker über die Steuerung. RKIT Steinbogen im Neuaufbau (Kritiker Lauf 01: 5,1, Reparaturrunde 1).",
+      "badge": "CURRENT · MVP-1 STUFE 1",
       "action": "Masterplan R2 öffnen",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md",
       "executor": "KFB Island Worldbuilder Lab · Claude Code steering session",
@@ -175,6 +175,60 @@
   ],
   "briefings": [
     {
+      "id": "brief-mvp1-build-session",
+      "title": "MVP-1 · Bau-Sitzung Stufe 1 (R2D-Insel-Port)",
+      "badge": "RUNNING · CLAUDE CODE",
+      "status": "running",
+      "provider": "Claude Code (Bau-Sitzung) · Steuerung + blinder Kritiker",
+      "desc": "Town + Protopia als kfb.island-config/1 aus R2D v0 + Scholle v7; Q1–Q8 gemessen vor jedem Bild, dann Kritiker, dann Georg.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_MVP1_BUILD_SESSION_R1.md"
+    },
+    {
+      "id": "brief-mvp1-A-town-lageplan",
+      "title": "MVP-1 · A · Town-Lageplan + 3 Kameras",
+      "badge": "READY · CLAUDE DESIGN",
+      "status": "ready",
+      "provider": "Claude Design (Paket A_claude-design_town-lageplan.zip, Dropbox KFB_HUB/30_PACKAGES/2026-10-10_mvp1-parallel)",
+      "desc": "Draufsicht im MC-Raster, Weltlogik je Ort, 3 Kamera-Skizzen, Anker-Liste. Für Stufe 2. Rückgabe: tools/KFB-ToolBox/_inbox/MVP1_RETURNS/A_claude-design/",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
+    },
+    {
+      "id": "brief-mvp1-B-dialog",
+      "title": "MVP-1 · B · Lorekeeper-Auftrag + Bewohner-Zeilen",
+      "badge": "READY · CHATGPT / CLAUDE CHAT",
+      "status": "ready",
+      "provider": "ChatGPT mit GitHub oder Claude Chat (Paket B_chat_mvp1-dialog.zip)",
+      "desc": "Dialog-JSON DE/EN mit Kartenquelle (deckId + cardNumber) für die MVP-1-Runde. Für Stufe 4a. Rückgabe: tools/KFB-ToolBox/_inbox/MVP1_RETURNS/B_chat/",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
+    },
+    {
+      "id": "brief-mvp1-C-character-cards",
+      "title": "MVP-1 · C · Figuren-Karten-Inventur",
+      "badge": "READY · COWORK (LOKAL)",
+      "status": "ready",
+      "provider": "Cowork auf Georgs Mac (lokaler Dropbox-Zugriff nötig)",
+      "desc": "Modelle, Augen-Profile, Props, Sitz je MVP-Bewohner; DRAFT kfb.character-card/1; Eye-Rig-Kopien-Inventur. Für Stufe 4a.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
+    },
+    {
+      "id": "brief-mvp1-D-kaykit-research",
+      "title": "MVP-1 · D · KayKit-Creator-Recherche (MVP-Fokus)",
+      "badge": "READY · GROK / CHATGPT WEB",
+      "status": "ready",
+      "provider": "Grok bzw. ChatGPT Web",
+      "desc": "Komposition, Kamera, Charaktere/Props, Farben; ergänzt research/kaykit-creator-tutorial-atlas-2026-10-10. Rückgabe: tools/KFB-ToolBox/_inbox/MVP1_RETURNS/D_research/",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
+    },
+    {
+      "id": "brief-mvp1-E-protopia",
+      "title": "MVP-1 · E · Protopia Eremiten-Hügel (nach A)",
+      "badge": "QUEUED · CLAUDE DESIGN",
+      "status": "queued",
+      "provider": "Claude Design (Paket E_claude-design_protopia.zip + Ergebnis A)",
+      "desc": "Wie A für Protopia: Bergweg, Bach, Eremiten-Hügel mit Schreibpult, Farmer-Felder. Für Stufe 3a.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEFS_PARALLEL_JOBS_R1.md"
+    },
+    {
       "id": "brief-island-hud-flight-r4-sources",
       "title": "Island Lab · HUD Sprint R4-0 sources",
       "badge": "READY · SOURCE HANDOFF",
@@ -182,7 +236,15 @@
       "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
       "desc": "ENV_ROLES, kfbBlend source path and masonry-family-A inputs for the next HUD/Flight refinement.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/HANDOVER_HUD_FLIGHT_R4_0_SOURCES_2026-10-09.md",
-      "tags": ["island lab", "hud", "flight vfx", "r4-0", "env roles", "kfbblend", "masonry"],
+      "tags": [
+        "island lab",
+        "hud",
+        "flight vfx",
+        "r4-0",
+        "env roles",
+        "kfbblend",
+        "masonry"
+      ],
       "prompt": "Read the linked source handoff and retain the one-HUD owner: K7 clay material plus the accepted HUD R3 components. Do not create a second HUD or runtime owner."
     },
     {
@@ -193,7 +255,12 @@
       "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
       "desc": "Original HUD and flight-VFX design briefing; retained as source context for the accepted-with-TUNE R3 direction.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_HUD_FLIGHT_R1.md",
-      "tags": ["island lab", "hud", "flight vfx", "claude design"],
+      "tags": [
+        "island lab",
+        "hud",
+        "flight vfx",
+        "claude design"
+      ],
       "prompt": "Use as origin context only. Current owner rule and R4-0 source handoff override any conflicting older detail."
     },
     {
@@ -204,7 +271,12 @@
       "provider": "Island Worldbuilder Lab → Stage Claude Design session",
       "desc": "Claymation curtain briefing for the accepted-with-TUNE Clay Stage R2 donor.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_CURTAIN_CLAY_R1.md",
-      "tags": ["island lab", "curtain", "clay stage", "claude design"],
+      "tags": [
+        "island lab",
+        "curtain",
+        "clay stage",
+        "claude design"
+      ],
       "prompt": "Keep the existing Clay Stage / Curtain owner. Use this as source context; no second simulation or stage runtime."
     },
     {
@@ -215,7 +287,14 @@
       "provider": "RKIT → HUD, Stage and Blender coworker",
       "desc": "Canonical masonry-family-A package for curb, wall, stair, plateau, bridge, pyramid and Brick-Fish work.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/README.md",
-      "tags": ["rkit", "masonry", "31 modules", "blender", "hud", "stage"],
+      "tags": [
+        "rkit",
+        "masonry",
+        "31 modules",
+        "blender",
+        "hud",
+        "stage"
+      ],
       "prompt": "Reuse the checked-in masonry family as the source object; do not rebuild or substitute it."
     },
     {
@@ -226,7 +305,13 @@
       "provider": "RKIT → Blender coworker",
       "desc": "Brick-Fish handoff derived from masonry family A; explicitly later than the MVP core.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/HANDOVER_BRICK_FISH.md",
-      "tags": ["rkit", "brick fish", "masonry", "blender", "later"],
+      "tags": [
+        "rkit",
+        "brick fish",
+        "masonry",
+        "blender",
+        "later"
+      ],
       "prompt": "Read the masonry-family source first. Treat Brick-Fish as later work; do not expand MVP scope."
     },
     {
@@ -237,7 +322,13 @@
       "provider": "Island Worldbuilder Lab → RKIT / Blender coworker",
       "desc": "Landmark brief for the crooked King Tower, intended as the later Golden Sample for KFB Town landmarks.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md",
-      "tags": ["island lab", "kfb town", "king tower", "landmark", "golden sample"],
+      "tags": [
+        "island lab",
+        "kfb town",
+        "king tower",
+        "landmark",
+        "golden sample"
+      ],
       "prompt": "Run only when the Lab/RKIT owner opens the landmark seam. Preserve the source-backed Town story and masonry owner."
     },
     {
@@ -543,6 +634,16 @@
       "title": "KFB Surface Lab · Shader / Inspector Research R1",
       "summary": "External browser shader editor, node and inspector donors, evidence limits, security warnings and one isolated inspector proof. Existing K1/K2/Claybound owner retained. No runtime changes.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md"
+    },
+    {
+      "title": "MVP-1 · Architektur-Review Post-MVP-Konzepte",
+      "summary": "Fluff/Academy/Reputation gegen Lab: passt, vier Rezept-Felder, Spielschicht P0–P4.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md"
+    },
+    {
+      "title": "QA · Kritiker-Protokoll mit Bauqualität Q1–Q8",
+      "summary": "Gemessene Bauqualität vor jedem Bild, Kamerasatz Nah, blinder Kritiker, Stopp-Regel.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/docs/QA_CRITIC_PROTOCOL_R1.md"
     }
   ],
   "surfaceRoles": {

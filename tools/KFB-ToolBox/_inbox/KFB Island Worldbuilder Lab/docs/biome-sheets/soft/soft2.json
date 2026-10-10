@@ -1,0 +1,87 @@
+{
+  "url": "http://127.0.0.1:5192/lineup.html?rows=8&pal=canyon&soft=2&envrow=q%3APalmTree_2%40anchor%2Cq%3ACommonTree_5%40anchor%2Cq%3ACactus_2%40smallTree%2Cq%3APineTree_1%40smallTree%2Cq%3ABush_1%40bush%2Cq%3ARock_2%40rimRock%2Ctt%3Atree_large%40anchor&shot=1",
+  "name": "soft2",
+  "startedAt": "2026-10-08T16:23:21.693Z",
+  "size": [
+    420,
+    420
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "shots": [
+    {
+      "preset": "item0",
+      "file": "soft2__item0.jpg"
+    },
+    {
+      "preset": "item1",
+      "file": "soft2__item1.jpg"
+    },
+    {
+      "preset": "item2",
+      "file": "soft2__item2.jpg"
+    },
+    {
+      "preset": "item3",
+      "file": "soft2__item3.jpg"
+    },
+    {
+      "preset": "item4",
+      "file": "soft2__item4.jpg"
+    },
+    {
+      "preset": "item5",
+      "file": "soft2__item5.jpg"
+    },
+    {
+      "preset": "item6",
+      "file": "soft2__item6.jpg"
+    }
+  ],
+  "stats": {
+    "H": 3.64,
+    "rows": 9
+  },
+  "ready": true,
+  "presets": [
+    "row0",
+    "row0-back",
+    "row1",
+    "row1-back",
+    "row2",
+    "row2-back",
+    "row3",
+    "row3-back",
+    "row4",
+    "row4-back",
+    "row5",
+    "row5-back",
+    "row6",
+    "row6-back",
+    "row7",
+    "row7-back",
+    "row8",
+    "row8-back"
+  ],
+  "eval": [
+    [
+      "q:PalmTree_2 · anchor",
+      "q:CommonTree_5 · anchor",
+      "q:Cactus_2 · smallTree",
+      "q:PineTree_1 · smallTree",
+      "q:Bush_1 · bush",
+      "q:Rock_2 · rimRock",
+      "tt:tree_large · anchor"
+    ]
+  ],
+  "streaming": null,
+  "inPageErrors": [],
+  "inPageWarnings": [],
+  "finishedAt": "2026-10-08T16:23:43.897Z",
+  "errorCount": 1
+}

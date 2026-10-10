@@ -1,0 +1,286 @@
+{
+ "A1": {
+  "name": "Spur dazu (Stadt 1+1 -> 2+1)",
+  "outline_points": 72,
+  "samples": 145,
+  "kerb_stones": 89,
+  "slabs": 264,
+  "slab_min_w": 1.2499999999999982,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A1_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A1_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A1_cam3.png"
+  ]
+ },
+ "A4": {
+  "name": "Gerade <-> Kurve (Stadt)",
+  "outline_points": 72,
+  "samples": 179,
+  "kerb_stones": 109,
+  "slabs": 326,
+  "slab_min_w": 1.25,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A4_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A4_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/A4_cam3.png"
+  ]
+ },
+ "B1": {
+  "name": "Ortseingang Stadt -> Land",
+  "outline_points": 72,
+  "samples": 91,
+  "kerb_stones": 26,
+  "slabs": 64,
+  "slab_min_w": 1.25,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "B1",
+    "kind": "family",
+    "name": "Ortseingang",
+    "from": "TOWN",
+    "to": "COUNTRY",
+    "s0": 16.492,
+    "s1": 28.8
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B1_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B1_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B1_cam3.png"
+  ]
+ },
+ "B2": {
+  "name": "Stadt -> Fahrschule",
+  "outline_points": 72,
+  "samples": 91,
+  "kerb_stones": 56,
+  "slabs": 96,
+  "slab_min_w": 1.25,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "B2",
+    "kind": "family",
+    "name": "Stadt <-> Fahrschule",
+    "from": "TOWN",
+    "to": "DRIVING_SCHOOL",
+    "s0": 16.492,
+    "s1": 28.8
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B2_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B2_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B2_cam3.png"
+  ]
+ },
+ "B3": {
+  "name": "Land -> Berg",
+  "outline_points": 72,
+  "samples": 91,
+  "kerb_stones": 0,
+  "slabs": 0,
+  "slab_min_w": null,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "B3",
+    "kind": "family",
+    "name": "Land <-> Berg",
+    "from": "COUNTRY",
+    "to": "MOUNTAIN",
+    "s0": 16.492,
+    "s1": 28.8
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B3_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B3_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B3_cam3.png"
+  ]
+ },
+ "B5": {
+  "name": "Rampenfuss Highway -> Stadt",
+  "outline_points": 72,
+  "samples": 91,
+  "kerb_stones": 28,
+  "slabs": 60,
+  "slab_min_w": 1.2499999999999991,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "B5",
+    "kind": "family",
+    "name": "Rampenfuss Highway <-> Stadt",
+    "from": "HIGHWAY",
+    "to": "TOWN",
+    "s0": 16.492,
+    "s1": 28.8
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B5_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B5_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/B5_cam3.png"
+  ]
+ },
+ "C1": {
+  "name": "Boden -> Bruecke mit Kuppe -> Boden (Stadt)",
+  "outline_points": 72,
+  "samples": 209,
+  "kerb_stones": 128,
+  "slabs": 378,
+  "slab_min_w": 0.6500000000000004,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 14.1,
+    "s1": 26.9,
+    "from": "ground",
+    "to": "bridge",
+    "rim": false
+   },
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 78.134,
+    "s1": 90.934,
+    "from": "bridge",
+    "to": "ground",
+    "rim": false
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1_cam3.png"
+  ]
+ },
+ "C1H": {
+  "name": "Boden -> Bruecke -> Boden (Highway)",
+  "outline_points": 72,
+  "samples": 209,
+  "kerb_stones": 0,
+  "slabs": 0,
+  "slab_min_w": null,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 14.1,
+    "s1": 26.9,
+    "from": "ground",
+    "to": "bridge",
+    "rim": false
+   },
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 78.134,
+    "s1": 90.934,
+    "from": "bridge",
+    "to": "ground",
+    "rim": false
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1H_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1H_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1H_cam3.png"
+  ]
+ },
+ "C1L": {
+  "name": "Boden -> Bruecke -> Boden (Land)",
+  "outline_points": 72,
+  "samples": 209,
+  "kerb_stones": 0,
+  "slabs": 0,
+  "slab_min_w": null,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 14.1,
+    "s1": 26.9,
+    "from": "ground",
+    "to": "bridge",
+    "rim": false
+   },
+   {
+    "id": "C1",
+    "kind": "support",
+    "name": "Boden <-> Bruecke",
+    "s0": 78.134,
+    "s1": 90.934,
+    "from": "bridge",
+    "to": "ground",
+    "rim": false
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1L_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1L_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C1L_cam3.png"
+  ]
+ },
+ "C2": {
+  "name": "Bruecke waechst aus dem Inselrand (Stadt)",
+  "outline_points": 72,
+  "samples": 209,
+  "kerb_stones": 128,
+  "slabs": 378,
+  "slab_min_w": 0.6500000000000004,
+  "kerb_len": 1.6,
+  "slab_size": 1.6,
+  "zones": [
+   {
+    "id": "C2",
+    "kind": "support",
+    "name": "Bruecke waechst aus dem Inselrand",
+    "s0": 14.1,
+    "s1": 26.9,
+    "from": "ground",
+    "to": "bridge",
+    "rim": true
+   },
+   {
+    "id": "C2",
+    "kind": "support",
+    "name": "Bruecke waechst aus dem Inselrand",
+    "s0": 78.134,
+    "s1": 90.934,
+    "from": "bridge",
+    "to": "ground",
+    "rim": true
+   }
+  ],
+  "shots": [
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C2_cam1.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C2_cam2.png",
+   "/Users/georgv.westphalen/Developer/rkit-r3/evidence/atlas_v015/C2_cam3.png"
+  ]
+ }
+}

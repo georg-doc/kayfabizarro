@@ -1,0 +1,596 @@
+{
+  "sourceFile": "Medkayfab_Essential_Pharmacology - ADD web.pdf",
+  "deckTitle": "Essential Pharmacology: The Synaptic Arsenal",
+  "deckType": "Medical Pharmacology Character Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T00:00:00",
+  "savedAt": "2026-06-20T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "teaching",
+    "reference"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Lisino-the-Pril (ACE Inhibitor)",
+      "grade": 2,
+      "power": "The Pressure Drop.",
+      "lore": "Triggers Bradykinin (Cough). Watch for Angio-Edema-Annie & hyperkalemia.",
+      "gradeReason": "Character is vivid but bradykinin/Angio-Edema lore demands prior knowledge.",
+      "artworkPrompt": "Style: Pen-and-ink cartoon. Subject: Armored elephant crushing blood-pressure pipes. Mood: Industrial, weighty."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Amlodi-the-Pine (Calcium Channel Blocker)",
+      "grade": 2,
+      "power": "The Pipe-Relaxer.",
+      "lore": "Targeted at vessels, not the heart. Causes Edema-Eddie (swollen ankles).",
+      "gradeReason": "Vessel vs. heart distinction is educational but requires context to perform.",
+      "artworkPrompt": "Style: Warm cartoon illustration. Subject: Polar bear firefighter relaxing calcium channels in pipes. Mood: Cool, industrial."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Metopro-the-Lol (Beta-Blocker)",
+      "grade": 2,
+      "power": "The Heart-Brake.",
+      "lore": "Excellent for Ischemic-Ache. Masks Hypo-Harry; triggers Asthma-Arthur if selectivity fails.",
+      "gradeReason": "Heart-Brake is instantly clear; the Asthma-Arthur caveat adds real teaching depth.",
+      "artworkPrompt": "Style: Sketchy cartoon. Subject: Tiger driving steam-powered heart locomotive, pulling brake lever. Mood: Tense, controlled."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Lasix-the-Loop (Furosemide)",
+      "grade": 1,
+      "power": "The Flood-Gate.",
+      "lore": "High-potency. Steals potassium (Hypo-K-Karl) and risks Oto-Toxic-Oliver at high doses.",
+      "gradeReason": "Flood-Gate opens, K+ vanishes, ears ring — three facts, one performance.",
+      "artworkPrompt": "Style: Watercolor cartoon. Subject: Hippo opening massive floodgate, potassium tokens swept away. Mood: Torrential, urgent."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Aspirin-the-Ace (Antiplatelet)",
+      "grade": 1,
+      "power": "The Slip-and-Slide.",
+      "lore": "Lifetime commitment for Coronary-Canyons. Irritates Percy-the-Ulcer.",
+      "gradeReason": "Slip-and-Slide + lifetime commitment makes platelets slippery forever — instantly embody-able.",
+      "artworkPrompt": "Style: Retro cartoon. Subject: Beaver with hard hat greasing a platelet slide forever. Mood: Energetic, irreversible."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Rivaro-the-Ban (DOAC)",
+      "grade": 3,
+      "power": "The Factor-Freeze.",
+      "lore": "No INR monitoring. Hard to reverse (needs Andexxa). Renal failure toxicity.",
+      "gradeReason": "Andexxa reversal is too specialist; card describes without giving a student a handle.",
+      "artworkPrompt": "Style: Bold graphic. Subject: Walrus blocking a giant glowing Factor Xa portal. Mood: Imposing, futuristic."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Heparin-the-Heavy (UFH/LMWH)",
+      "grade": 1,
+      "power": "The Instant-Thin.",
+      "lore": "UFH needs the aPTT-Check. Watch out for HIT-the-Hunter.",
+      "gradeReason": "Instant-Thin says it all; HIT-the-Hunter makes immune thrombocytopenia a character you fear.",
+      "artworkPrompt": "Style: Dark ink cartoon. Subject: Octopus spraying anticoagulant web over blood clot. Mood: Rapid, decisive."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Warf-the-Old-Guard (Warfarin)",
+      "grade": 1,
+      "power": "The Slow-Bleed.",
+      "lore": "Requires the INR-Tether. Vulnerable to Food-Fights (greens). Teratogenic!",
+      "gradeReason": "Old Guard character + food-fight vulnerability + teratogenic bang = unforgettable triple-hit.",
+      "artworkPrompt": "Style: Antique cartoon. Subject: Wizened owl in factory monitoring INR clock, greens attacking. Mood: Cautious, old-school."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Metformi-the-Base (Biguanide)",
+      "grade": 2,
+      "power": "The Sugar-Stopper.",
+      "lore": "No hypoglycemia risk! Rare but lethal Lactic-Lucy in renal failure.",
+      "gradeReason": "Sugar-Stopper is solid; Lactic-Lucy is memorable but the renal caveat needs context.",
+      "artworkPrompt": "Style: Warm cartoon. Subject: Bear in lab coat shutting down hepatic glucose factory. Mood: Methodical, reassuring."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Insu-the-Key (Insulin)",
+      "grade": 1,
+      "power": "The Cell-Opener.",
+      "lore": "The Final-Boss for Type 2. Hypo-Harry is always lurking. Rotate sites!",
+      "gradeReason": "Key-into-cell is the perfect mnemonic; Final-Boss framing commands respect immediately.",
+      "artworkPrompt": "Style: Magic-realist cartoon. Subject: Glowing hummingbird key unlocking giant cell door. Mood: Powerful, luminous."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Atorva-the-Statin (HMG-CoA Reductase Inhibitor)",
+      "grade": 2,
+      "power": "The Gunk-Cleaner.",
+      "lore": "Prevents the Clot-Pop. Can cause Myo-Muscle-Ache and Liver-Limp.",
+      "gradeReason": "Gunk-Cleaner lands; Myo-Muscle-Ache is a known statin complaint, performable for pharmacology students.",
+      "artworkPrompt": "Style: Industrial cartoon. Subject: Raccoon scrubbing arterial plaque off vessel walls. Mood: Diligent, scrubby."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Levothyro-the-Pulse (T4 Replacement)",
+      "grade": 1,
+      "power": "The Metabolism-Spark.",
+      "lore": "Take on an empty stomach! Excess causes Hyper-Hanna (palpitations).",
+      "gradeReason": "Phoenix rising as a metabolism metaphor is instantly felt — empty stomach rule sticks.",
+      "artworkPrompt": "Style: Vivid watercolor. Subject: Phoenix rising in blaze of thyroid energy with palpitating heart behind. Mood: Intense, fiery."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Morphine-the-Monarch (Opioid)",
+      "grade": 1,
+      "power": "The Pain-Eraser.",
+      "lore": "Gold standard for agony. Causes Consti-the-Sloth & Breathing-Ben's depression.",
+      "gradeReason": "King of pain is immediately embodied; Consti-Sloth + Breathing-Ben encode opioid side effects as royals.",
+      "artworkPrompt": "Style: Regal cartoon. Subject: Lion king sleeping on cloud of pain-relief, constipated courtier nearby. Mood: Majestic, drowsy."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Ibupro-the-Brake (NSAID)",
+      "grade": 2,
+      "power": "The Fire-Extinguisher.",
+      "lore": "Eats the stomach (Percy-the-Ulcer) and hits the kidneys (Renal-Ray).",
+      "gradeReason": "Fire-Extinguisher is solid; Percy and Renal-Ray name the damage but COX nuance needs context.",
+      "artworkPrompt": "Style: Bold cartoon. Subject: Dalmatian firefighter dousing inflammation flame, stomach in pain background. Mood: Active, cautionary."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Paraceta-the-Ghost (Acetaminophen)",
+      "grade": 2,
+      "power": "The Fever-Killer.",
+      "lore": "Gentle on stomach, but has a Liver-Lethal limit (NAPQI toxicity).",
+      "gradeReason": "Ghost metaphor for 'mechanism unknown' is clever but NAPQI needs a chemistry hook to perform.",
+      "artworkPrompt": "Style: Eerie cartoon. Subject: Translucent chameleon glowing feverishly, liver in danger shadow behind. Mood: Deceptively gentle, toxic."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Gabapenti-the-Numb (Neuropathic Ally)",
+      "grade": 2,
+      "power": "The Nerve-Quietener.",
+      "lore": "Not for acute pain. Causes Dizzy-Dan and massive sleepiness.",
+      "gradeReason": "Nerve-Quietener + Dizzy-Dan teaches limitation and side effect; voltage-gated jargon stays hidden.",
+      "artworkPrompt": "Style: Dark cartoon. Subject: Electric eel with muffler clamped on nerve channels, sleepy characters nearby. Mood: Sedated, electric."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Amoxi-the-Standard (Penicillin)",
+      "grade": 1,
+      "power": "The Wall-Wrecker.",
+      "lore": "Watch for Allergy-Annie and Clostrid-the-Colitis (C. diff).",
+      "gradeReason": "Wall-Wrecker makes beta-lactam action physical and immediate; Allergy-Annie is table lore.",
+      "artworkPrompt": "Style: Construction cartoon. Subject: Woodpecker demolishing bacterial cell wall with drill. Mood: Energetic, decisive."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Ceftriaxo-the-Heavy (3rd Gen Cephalosporin)",
+      "grade": 2,
+      "power": "The Meningitis-Mauler.",
+      "lore": "Go-To for serious Gram+ infections. Causes Biliary-Sludge.",
+      "gradeReason": "Meningitis-Mauler is a strong image; Gram+ hierarchy and Biliary-Sludge need infectious disease context.",
+      "artworkPrompt": "Style: Epic cartoon. Subject: Gorilla firing cannon through blood-brain barrier at bacteria. Mood: Heavy-hitting, clinical."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Vancomy-the-Vault (Glycopeptide)",
+      "grade": 1,
+      "power": "The MRSA-Masher.",
+      "lore": "Needs Trough-Levels to save kidneys. Watch for Red-Man-Ray.",
+      "gradeReason": "MRSA-Masher from the vault — last resort antibiotic character is immediately felt and feared.",
+      "artworkPrompt": "Style: Armored cartoon. Subject: Armadillo guarding vault, smashing MRSA bacteria. Mood: Fortress, last-resort."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Azithro-the-Macrolide",
+      "grade": 2,
+      "power": "The Protein-Sapper.",
+      "lore": "The Z-Pak classic. Prolongs the QT-Interval-Clock!",
+      "gradeReason": "Z-Pak recognition gives instant cultural hook; QT-Interval-Clock needs cardiology context.",
+      "artworkPrompt": "Style: Urban cartoon. Subject: Badger in lab coat sabotaging ribosome factory with wrench. Mood: Sneaky, systemic."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Salbuta-the-Rescue (SABA)",
+      "grade": 1,
+      "power": "The Airway-Opener.",
+      "lore": "Rapid onset. Causes Tremor-Tim and Tachy-Tina.",
+      "gradeReason": "Rescue inhaler role is culturally universal; Tremor-Tim and Tachy-Tina name side effects as characters.",
+      "artworkPrompt": "Style: Action cartoon. Subject: Kangaroo boxer punching open bronchospasm with gloves, trembling sidekick. Mood: Urgent, rapid."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Flutica-the-Steward (ICS)",
+      "grade": 2,
+      "power": "The Swelling-Stopper.",
+      "lore": "Chronic control. Must rinse mouth to avoid Thrush-the-Fungus.",
+      "gradeReason": "Controller vs. rescue distinction needs priming; Thrush-the-Fungus is the teaching hook.",
+      "artworkPrompt": "Style: Botanical cartoon. Subject: Fairy with butterfly wings dousing airway inflammation, fungus lurking. Mood: Delicate, ongoing."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Tiotro-the-LAMA (Anticholinergic)",
+      "grade": 2,
+      "power": "The Secretion-Dryer.",
+      "lore": "24-hour airway management. Causes dry mouth and urinary retention.",
+      "gradeReason": "Sloth metaphor for 24hr slow action is clever; anticholinergic side effects need a mnemonic bridge.",
+      "artworkPrompt": "Style: Lazy cartoon. Subject: Sloth hanging in bronchial tree drying secretions with towel. Mood: Slow, methodical."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Predni-the-Systemic (Oral Steroid)",
+      "grade": 1,
+      "power": "The Total-Body-Cooler.",
+      "lore": "The Double-Edged Sword. Long-term: Buffalo-Hump-Herb & Thin-Skin-Thelma.",
+      "gradeReason": "Double-Edged Sword + Buffalo-Hump make steroid consequence a physical character you embody.",
+      "artworkPrompt": "Style: Dramatic cartoon. Subject: Polar bear with double-edged sword cooling inflammation while Cushing characters form. Mood: Powerful, dangerous."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Omepra-the-PPI",
+      "grade": 1,
+      "power": "The Acid-Lock.",
+      "lore": "Superior for Percy-the-Ulcer. Long-term drops Mg²⁺ and invites C-Diff.",
+      "gradeReason": "Acid-Lock is the perfect PPI mnemonic — proton pumps sealed, ulcer relieved, instantly performable.",
+      "artworkPrompt": "Style: Plumbing cartoon. Subject: Tortoise locking acid pipeline valve with giant padlock. Mood: Decisive, relieving."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Metoclopra-the-Mover (Prokinetic)",
+      "grade": 3,
+      "power": "The Gut-Accelerator.",
+      "lore": "Crosses the BBB. Can cause The-Twitch (Extrapyramidal symptoms).",
+      "gradeReason": "BBB-crossing and EPS without a single hook to perform — jargon outweighs character.",
+      "artworkPrompt": "Style: Mechanical cartoon. Subject: Ostrich accelerating gut conveyor belt, twitching arm in background. Mood: Fast, neurological."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Ondansetro-the-Stopper (Antiemetic)",
+      "grade": 1,
+      "power": "The Vomit-Shield.",
+      "lore": "Gold standard for chemo-nausea. Causes Consti-the-Sloth and QT prolongation.",
+      "gradeReason": "Vomit-Shield for chemo is immediately embody-able by anyone who's seen oncology.",
+      "artworkPrompt": "Style: Action cartoon. Subject: Frog in armor blocking vomit wave with giant shield. Mood: Protective, bold."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Lactulo-the-Breeze (Osmotic Laxative)",
+      "grade": 2,
+      "power": "The Water-Puller.",
+      "lore": "Also a Brain-Saver; traps ammonia to help Encephalo-Ed in liver failure.",
+      "gradeReason": "Laxative-to-brain pivot is genuinely surprising; Encephalo-Ed makes hepatic encephalopathy a character.",
+      "artworkPrompt": "Style: Airy cartoon. Subject: Duck with magnet pulling water into colon, ammonia trapped in cage. Mood: Breezy, surprising."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Levodopo-the-Replacer",
+      "grade": 1,
+      "power": "The Motion-Restorer.",
+      "lore": "Carbidopa protects it peripherally. Causes On-Off-Oscillations.",
+      "gradeReason": "Restoring dopamine-driven motion in Parkinson's is immediately felt; On-Off is a named clinical phenomenon.",
+      "artworkPrompt": "Style: Biopunk cartoon. Subject: Chimpanzee mechanic replacing dopamine gears in brain, gears stuttering. Mood: Hopeful, oscillating."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Pheny-the-Stabilizer (Phenytoin)",
+      "grade": 3,
+      "power": "The Fire-Extinguisher.",
+      "lore": "Stops seizure firestorms. Causes Gingival-Gas (gum overgrowth).",
+      "gradeReason": "Fire-Extinguisher duplicates Ibupro-the-Brake; zero-order kinetics missing; gum overgrowth is trivia without hook.",
+      "artworkPrompt": "Style: Emergency cartoon. Subject: Ferret firefighter extinguishing neural firestorm, overgrown gums in corner. Mood: Crisis, clinical."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Donepezi-the-Memorist (AChE Inhibitor)",
+      "grade": 1,
+      "power": "The Signal-Booster.",
+      "lore": "Fights Alzheimer-Fog. Causes Wet-Symptoms (drooling, slow heart).",
+      "gradeReason": "Signal-Booster for memory + Wet-Symptoms (ACh overload) = two facts one performance.",
+      "artworkPrompt": "Style: Library cartoon. Subject: Owl in spectacles boosting acetylcholine signal in library, drool puddle. Mood: Brainy, parasympathetic."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Sumatripta-the-Migraine-Mauler",
+      "grade": 1,
+      "power": "The Vessel-Shrinker.",
+      "lore": "Not for heart disease patients—it constricts all pipes!",
+      "gradeReason": "The name alone earns G1; 'constricts all pipes' contraindication is one sentence that saves lives.",
+      "artworkPrompt": "Style: Constricting cartoon. Subject: Boa constrictor squeezing cranial vessels, heart with red X nearby. Mood: Targeted, dangerous."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Diazepa-the-Bouncer (Benzodiazepine)",
+      "grade": 1,
+      "power": "The Instant-Calm.",
+      "lore": "Dangerous with Alcohol. Highly addictive.",
+      "gradeReason": "Bouncer at the GABA club is a perfect character; Alcohol danger + addiction is two-word lore that lands.",
+      "artworkPrompt": "Style: Night club cartoon. Subject: Gorilla bouncer calming neural crowd instantly, alcohol bottle crossed out. Mood: Authoritative, addictive."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Sertrali-the-Mood-Lifter (SSRI)",
+      "grade": 1,
+      "power": "The Happy-Reservoir.",
+      "lore": "Takes 4 weeks to work. Watch out for Serotonin-Syndrome.",
+      "gradeReason": "Happy-Reservoir + 4-week delay is a critical clinical pearl; Serotonin-Syndrome names the danger perfectly.",
+      "artworkPrompt": "Style: Warm cartoon. Subject: Capybara sitting in golden serotonin reservoir, clock showing 4 weeks. Mood: Hopeful, slow-build."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Lithiu-the-Anchor (Mood Stabilizer)",
+      "grade": 1,
+      "power": "The Seesaw-Stabilizer.",
+      "lore": "The Lithium-Level-Check is law. Toxic to Thyroid/Renal.",
+      "gradeReason": "Seesaw-Stabilizer for bipolar is iconic; Lithium-Level-Check is law = three words of clinical truth.",
+      "artworkPrompt": "Style: Heavy cartoon. Subject: Tortoise anchoring a bipolar seesaw, thyroid and kidney warning flags. Mood: Steady, precarious."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Haloperido-the-Lock (Antipsychotic)",
+      "grade": 2,
+      "power": "The Dino-Handcuffs.",
+      "lore": "The Old Hammer. Causes Lead-Pipe-Rigidity (NMS) and The-Lean.",
+      "gradeReason": "Dino-Handcuffs is memorable; NMS needs clinical context before it fully performs.",
+      "artworkPrompt": "Style: Gritty cartoon. Subject: T-rex in handcuffs, stiff limbs, leaning posture — NMS rendered physically. Mood: Restrained, old-school."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Spirono-the-Sparing (Diuretic)",
+      "grade": 2,
+      "power": "The Potassium-Guard.",
+      "lore": "Essential for failing hearts. Can cause Mon-Boob-Mike.",
+      "gradeReason": "Potassium-Guard for heart failure is solid; Mon-Boob-Mike (gynecomastia) is unforgettable side-effect humor.",
+      "artworkPrompt": "Style: Desert cartoon. Subject: Camel guarding potassium treasure chest by waterfall, male breast growth sign. Mood: Protective, quirky."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Kay-the-Supplement (Potassium Chloride)",
+      "grade": 1,
+      "power": "The Spark-Plug.",
+      "lore": "Replaces K-Tokens. NEVER give IV push, or the patient dies!",
+      "gradeReason": "NEVER IV push = the most performable contraindication in all of pharmacology. G1 by itself.",
+      "artworkPrompt": "Style: Electric cartoon. Subject: Squirrel inserting potassium spark-plug into cardiac engine, red NEVER flag. Mood: Critical, electrifying."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Calciu-the-Stabilizer (Calcium Gluconate)",
+      "grade": 2,
+      "power": "The Heart-Shield.",
+      "lore": "Protects from Hyper-K-Karl. Doesn't lower K+, just buys time.",
+      "gradeReason": "Membrane-stabilizer role without K-lowering is a nuanced distinction needing context to embody.",
+      "artworkPrompt": "Style: Knight cartoon. Subject: Armored knight shielding heart from potassium attack, timer counting. Mood: Defensive, temporary."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Bicarbonate-the-Buffer",
+      "grade": 3,
+      "power": "The Acid-Neutralizer.",
+      "lore": "Used in arrests or TCA overdose. Caveat: Causes a CO₂-Spike.",
+      "gradeReason": "CO₂-Spike mechanism without an embodied character or hook; arrest context is too clinical to perform.",
+      "artworkPrompt": "Style: Chemistry cartoon. Subject: Manatee pouring HCO3 into acidic ocean during cardiac arrest. Mood: Alkaline, emergency."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Adrenal-the-All-Star (Epinephrine)",
+      "grade": 1,
+      "power": "The Resurrection-Bolt.",
+      "lore": "King of Code-Blue. Can cause Engine-Overheat (ischemia).",
+      "gradeReason": "Resurrection-Bolt is the most embody-able name in the deck; King of Code-Blue seals it.",
+      "artworkPrompt": "Style: Epic cartoon. Subject: Cheetah firing lightning bolt at stopped heart, city in emergency behind. Mood: Explosive, life-saving."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Noradrenal-the-Pressor (Norepinephrine)",
+      "grade": 2,
+      "power": "The Pressure-Jack.",
+      "lore": "Vasopressor of Choice. Leave-Them-Dead-Norepi (necrosis risk).",
+      "gradeReason": "Pressure-Jack is visceral; Leave-Them-Dead-Norepi is dark humor that teaches necrosis risk effectively.",
+      "artworkPrompt": "Style: Industrial cartoon. Subject: Minotaur operating pressure jack on blood vessels, necrosis warning flag. Mood: Powerful, risky."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Atropi-the-Speed-Up (Anticholinergic)",
+      "grade": 1,
+      "power": "The Brake-Cutter.",
+      "lore": "Cuts the Vagus-Brake. Mad as a Hatter, Dry as a Bone.",
+      "gradeReason": "'Mad as a Hatter, Dry as a Bone' is a 300-year-old mnemonic — pure G1 embodiment.",
+      "artworkPrompt": "Style: Mad cartoon. Subject: Eagle cutting vagal brake cables, hatter hat and dry desert behind. Mood: Frenzied, anticholinergic."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Amioda-the-Calmer (Antiarrhythmic)",
+      "grade": 3,
+      "power": "The Rhythm-Lock.",
+      "lore": "Broad-spectrum. Deposits in lungs (Fibro-Fiona) and Thyroid.",
+      "gradeReason": "Multi-organ toxicity (lung, thyroid, skin, liver) is listed not embodied — card describes without inviting performance.",
+      "artworkPrompt": "Style: Organ cartoon. Subject: Octopus locking heart rhythm, tentacles depositing in lungs and thyroid. Mood: Broad, toxic."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Digoxi-the-Fox (Cardiac Glycoside)",
+      "grade": 2,
+      "power": "The Slow-Squeeze.",
+      "lore": "Narrow window. Yellow-Vision & Reverse-Tick ECG in toxicity.",
+      "gradeReason": "Fox = sly, narrow window character works; Yellow-Vision is memorable but ECG sign needs context.",
+      "artworkPrompt": "Style: Vintage cartoon. Subject: Sly fox gently squeezing heart with magnifying glass, yellow tint around. Mood: Precise, treacherous."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Nitro-the-Bomb (Nitroglycerin)",
+      "grade": 1,
+      "power": "The Preload-Dropper.",
+      "lore": "Takes the volume load off. Do NOT use with Viagra!",
+      "gradeReason": "Do NOT use with Viagra is the most viral contraindication in pharmacology — instant G1.",
+      "artworkPrompt": "Style: Explosive cartoon. Subject: Hamster in hazmat suit dropping preload bomb on veins, Viagra crossed out. Mood: Explosive, iconic."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Allopurino-the-Gout-Stopper",
+      "grade": 2,
+      "power": "The Needle-Brakeman.",
+      "lore": "Prevention only! Triggers a riot if started during an acute attack.",
+      "gradeReason": "Needle-Brakeman + riot-if-started-acutely is a critical clinical pearl embedded in a performable moment.",
+      "artworkPrompt": "Style: Industrial cartoon. Subject: Hedgehog mechanic braking uric acid crystal production machine. Mood: Preventive, cautious."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Colchici-the-Joint-Cooler",
+      "grade": 3,
+      "power": "The Riot-Shield.",
+      "lore": "Acute treatment. Toxicity limit marked by Diarrhoea-Don.",
+      "gradeReason": "Microtubule inhibitor mechanism is entirely absent; Diarrhoea-Don is funny but doesn't anchor the teaching.",
+      "artworkPrompt": "Style: SWAT cartoon. Subject: Rhino in riot gear shielding joint from gout crystal attackers. Mood: Acute, tactical."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Cyclosphosha-the-Shredder",
+      "grade": 3,
+      "power": "The Blueprint-Ripper.",
+      "lore": "Heavy artillery. Watch for Hemorrhagic-Holly (bloody bladder)—give Mesna!",
+      "gradeReason": "Mesna as reversal agent is specialist knowledge; without it the Hemorrhagic-Holly danger is just a name.",
+      "artworkPrompt": "Style: Heavy machinery cartoon. Subject: Shark in hard hat shredding DNA blueprints, bloody bladder warning. Mood: Destructive, toxic."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Methotrexa-the-Melt (Antimetabolite)",
+      "grade": 3,
+      "power": "The Folate-Thief.",
+      "lore": "Kills Liver-Larry and the Bone-Marrow-Bank.",
+      "gradeReason": "DHFR inhibitor mechanism absent; Liver-Larry and Bone-Marrow-Bank are evocative but lack the teaching bridge.",
+      "artworkPrompt": "Style: Heist cartoon. Subject: Raccoon detective stealing folate from DHFR vault, liver and marrow victims. Mood: Criminal, cellular."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Ciclospori-the-Transplant-Guardian",
+      "grade": 1,
+      "power": "The Army-Sleeper.",
+      "lore": "Essential for transplants. Toxic to Renal-Ray.",
+      "gradeReason": "Army-Sleeper for immune suppression in transplant is immediately clear; Renal-Ray toxicity is one word of warning.",
+      "artworkPrompt": "Style: Guardian cartoon. Subject: Cat lute player calcineurin singing immune army to sleep, kidney trembling. Mood: Peaceful, essential."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Rituxi-the-B-Cell-Marker",
+      "grade": 2,
+      "power": "The Target-Painter.",
+      "lore": "Used for Lymphoma/Lupus. Can wake up Hepa-B-Ghost.",
+      "gradeReason": "Target-Painter is vivid; Hepa-B-Ghost reactivation is a teaching-level side effect that needs context.",
+      "artworkPrompt": "Style: Sniper cartoon. Subject: Eagle painting targets on B-cells with anti-CD20 brush, hepatitis ghost rising. Mood: Precise, eerie."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "The Pharma-Attending",
+      "grade": 1,
+      "power": "Polypharmacy-Purger.",
+      "lore": "\"Treat the patient, not the side effect! Stay fluffy!\"",
+      "gradeReason": "The attending boss card with a manifesto — Polypharmacy-Purger is the ultimate performable role.",
+      "artworkPrompt": "Style: Boss cartoon. Subject: Rabbit professor in white coat surveying all 52 drug characters on pill board. Mood: Authoritative, clinical."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Quest 1: The Pressure Crisis",
+      "grade": 2,
+      "power": null,
+      "lore": "Patient on Lisino presents with swollen lips & K+ 6.0. QUEST: Identify the Saboteurs & choose the next tool.",
+      "gradeReason": "Synthesis scenario is clear but requires Lisino card knowledge; strong pedagogical payoff for prepared players.",
+      "artworkPrompt": "Style: Clinical scenario. Subject: Elephant patient with swollen lips, K+ monitor alarming, triage panel. Mood: Urgent, diagnostic."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Quest 2: The Heart-Halt",
+      "grade": 2,
+      "power": null,
+      "lore": "Patient on Digoxi/Lasix sees \"Yellow-Halos\". HR 30. QUEST: Identify Toxicity-Trap and choose Reset-Tool.",
+      "gradeReason": "Yellow-Halos cross-reference to Digoxi-the-Fox is elegant; toxicity cascade needs prior card familiarity.",
+      "artworkPrompt": "Style: Emergency cartoon. Subject: Fox patient with yellow vision halo, ECG flat at 30bpm, antidote search. Mood: Tense, toxic."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Quest 3: The Clot-Conundrum",
+      "grade": 1,
+      "power": null,
+      "lore": "Patient on Warfarin has INR 10.0 and bleeding gums. QUEST: Call the Antidote-Squad (Vit-K & FFP).",
+      "gradeReason": "Call the Antidote-Squad — this is an immediately executable emergency order, pure G1 performance.",
+      "artworkPrompt": "Style: Antidote cartoon. Subject: Owl patient bleeding, Vit-K and FFP squad parachuting in on INR 10.0 scene. Mood: Bleeding, heroic."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 22,
+    "G2": 27,
+    "G3": 7
+  },
+  "overallScore": 9,
+  "verdict": "The Synaptic Arsenal is the strongest MedKayfab deck yet — 52 drug characters each carry a mechanism, a danger, and a personality, wrapped in a name that sticks (Warf-the-Old-Guard, Kay-the-Supplement, Nitro-the-Bomb). The Quest synthesis cards on the final page are a brilliant pedagogical layer that turns the deck into a clinical reasoning game. Weakness: the oncology and antiarrhythmic pages lose the playful hook and skew text-heavy. Table-ready: YES.",
+  "blurb": "Fifty-six drug characters teach mechanisms, side effects, and clinical pearls through roleplay and synthesis quests. For medical students who want pharmacology to actually stick.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "5 — Stunning anthropomorphized lab scene with professor rabbit dispensing drugs",
+    "coverTitle": "5 — 'The Synaptic Arsenal' is punchy, memorable, and perfectly frames the deck",
+    "coverVibeMatch": "5 — Educational-satirical tone nailed; matches every card inside",
+    "coverOriginality": "4 — Strong execution within the established MedKayfab visual language",
+    "coverViral": "4 — Highly shareable in med-student communities; niche but loyal audience",
+    "coverScore": 4.6,
+    "coverNote": "Best MedKayfab cover in the series. 'The difference between a medicine and a poison is the dose. Stay Fluffy.' is a genuinely quotable tagline. The lab-bottle character design sells the whole concept before you open the deck."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "ADD version adds 4 synthesis cards (The Pharma-Attending + 3 Quest cards) to the base 52-card deck. 14 content pages × 4 cards = 56 total. Two Power names duplicate: 'The Fire-Extinguisher' appears for both Ibupro-the-Brake (card 14) and Pheny-the-Stabilizer (card 30) — differentiation needed. Decorative KayfaBOGGLE/KayfaBIZARRO page dividers are not card text. Quest cards carry no POWER line, only LORE and QUEST — this is intentional synthesis-card format.",
+  "topCards": [
+    "Nitro-the-Bomb (Nitroglycerin)",
+    "Warf-the-Old-Guard (Warfarin)",
+    "Kay-the-Supplement (Potassium Chloride)"
+  ],
+  "worstCards": [
+    "Metotrexa-the-Melt (Antimetabolite)",
+    "Metoclopra-the-Mover (Prokinetic)"
+  ],
+  "todos": {
+    "urgent": [
+      "Differentiate 'The Fire-Extinguisher' power name — duplicated on Ibupro-the-Brake (card 14) and Pheny-the-Stabilizer (card 30)"
+    ],
+    "quickWins": [
+      "Add POWER lines to Quest cards 54-56 (synthesis cards currently have only LORE/QUEST)",
+      "Consider adding RAF boxes if MedKayfab adds dice mechanics in future editions"
+    ],
+    "niceToHave": [
+      "Cross-reference antidote deck: Naloxone for Morphine, Vitamin-K for Warf, Protamine for Heparin",
+      "System-split version for classroom use (Cardio deck, Neuro deck, Antibiotic deck)",
+      "Add zero-order kinetics hook to Pheny-the-Stabilizer — the kinetics are a teaching goldmine"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Pharmacology",
+    "#MedStudents",
+    "#Kayfabizarro",
+    "#MedicalEducation",
+    "#PharmCards"
+  ],
+  "genre": "education",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Substack",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: PHARMACOLOGY – The Synaptic Arsenal (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master drug mechanisms, narrow therapeutic windows, and the toxicities that turn a medicine into a poison.\n\nYou drew the dose from memory. The heart rate is 30, the patient describes yellow halos around the ceiling lights, and the ECG sags into a reverse tick. Nothing on this chart was an overdose. It was a dose one notch too high for a drug whose safe range is the width of a hair. In pharmacology the gap between rescue and harm is rarely the wrong molecule. It is the wrong number.\n\nMedKayfab Pharmacology translates the invisible war of receptors, half-lives, and therapeutic windows into a narrative wrestling match. Stop memorizing drug tables. Start performing them.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Adrenal-the-All-Star, Digoxi-the-Fox, and Warf-the-Old-Guard\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nYou'll meet Adrenal-the-All-Star, the king of the code-blue who restarts a stalled engine and, in the same breath, can overheat it into ischemia. Digoxi-the-Fox works a window so narrow that trouble announces itself in yellow-tinted vision and a reverse-tick ECG long before a lab value catches up. Warf-the-Old-Guard anticoagulates on an INR-tether, picks food-fights with a plate of leafy greens, and stays teratogenic the moment a pregnancy walks into the room. Every character is a mechanism you can argue with instead of a row you have to recite.\n\nHow it works\nEvery card is a cognitive anchor designed for high-stress retrieval. You have the Character (the mnemonic), the Visual (the scene), the Stat Block (doses, windows, contraindications), the Lore (the clinical story), and the Quest (the reasoning challenge). The Mechanism Flash mode is unforgiving here: if you cannot name the drug's mechanism and its lethal edge in one sentence without looking, the patient on the Stage doesn't make it.\n\nHonest cognitive load\nThis is an S-Tier core engine. It is broad and dense by design, since pharmacology touches every system in the body, which makes it a strong backbone deck for medical students heading into exams and for residents who want their dosing reflexes sharp. It pairs cleanly with Internal Medicine for the disease context, with Cardiology for the rhythm drugs Digoxi-the-Fox and Adrenal-the-All-Star live inside, and with Emergency Medicine when those same drugs get pushed under pressure.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. Student on a budget? Enter €0, no questions asked. Want to support more decks? Anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "KFB"
+}

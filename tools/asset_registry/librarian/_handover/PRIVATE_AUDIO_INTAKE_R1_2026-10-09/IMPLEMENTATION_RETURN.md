@@ -1,7 +1,7 @@
 # Asset Librarian Private Audio Intake Bridge · Implementation Return
 
 **Date:** 2026-10-09
-**Pull request:** Draft PR #380
+**Pull request:** PR #380 (merged)
 **Status:** implementation complete except direct Site-to-Inbox connector activation
 
 ## Delivered
@@ -28,4 +28,4 @@ Only public-safe metadata is projected. The live JSON and generated Registry do 
 
 Direct authenticated upload from the static Site is not enabled because the Sites connector-eligibility capability was unavailable in this execution environment. The Intake UI therefore fails honestly: it keeps files device-local, prepares the exact handoff and does not simulate an upload. The existing ChatGPT/KFB Production Inbox connector can perform the private write today.
 
-No second Site, Registry or Inbox was created. PR #380 remains unmerged.
+No second Site, Registry or Inbox was created. PR #380 is merged into `main`.

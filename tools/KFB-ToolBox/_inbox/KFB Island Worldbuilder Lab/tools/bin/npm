@@ -1,0 +1,3 @@
+#!/bin/sh
+# npm shim -> pnpm (bundled runtime has pnpm, not npm). Real npm works identically on other machines.
+exec pnpm "$@"
