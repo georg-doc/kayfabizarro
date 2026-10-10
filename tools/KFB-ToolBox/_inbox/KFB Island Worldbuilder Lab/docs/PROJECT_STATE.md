@@ -17,6 +17,13 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## MVP-1 Stufe 1 und RKIT: erste Kritiker-Läufe (2026-10-10)
+
+- **Lab Stufe 1 Lauf 02:** Q1–Q8 bestanden, Kritiker 4,29 (alle G 4–5, Silhouette 6). Teller-Look, Weltlogik Town nicht lesbar, Kegelberge, schwebende Relikte, identisches Sprenkelmuster, Moiré, harte Farbkanten. Reparaturrunde 1 mit Diagnose „reiner R2D-Port gegen Vorlage“. Formblatt R2 und Formsprache §2b umgesetzt; Erdschichten positiv.
+- **RKIT Steinbogen Lauf 02:** Q bestanden, Kritiker 5,38 (U3 = 3, Fels-Anschluss). Letzte Reparaturrunde erst mit echtem Fels aus Stufe 1; bis dahin Gehweg/Bord-Pipeline neu und Fels-unabhängige Fixes.
+- **RKIT Q-Rückprüfung:** alle alten Bauweise-Renders fallen durch (schwebender Rubbel, Durchdringungen, ungerundete Platten, Bordsteine 16–27 % im Boden). Renders werden gekennzeichnet; Bauweise bleibt gültig.
+- **Protokoll:** Q9 (Mauerenden gebaut), Relikte bzw. Kleinteile in Q1/Q3; Silhouetten-Kamerasatz; Q5-Regel für Gelände-Körper.
+
 ## Steinbogen-Renders fehlerhaft, neue Bauqualitäts-Stufe (2026-10-10)
 
 - Georg: Brücke und Track im Bauweise-Blatt v7 defekt. Befund der Steuer-Sitzung: verschmierte Bogensteine, Lücken in der Stirnmauer, schwebende Steine, nackter Fahrbahn-Kasten, keine Widerlager, lila Platzhalter-Kugeln. Die v7-Freigabe galt der Bauweise; die Renders hätte das Review stoppen müssen.
