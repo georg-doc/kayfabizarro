@@ -1,4 +1,15 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.1
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.2
+
+> **ADDITIVE HANDOVER · 2026-10-10 · BLENDER MCP PRISON GREYBOX**
+>
+> [KFB_BLENDER_MCP_PRISON_MAZE_GREYBOX_HANDOVER_2026-10-10.md](./KFB_BLENDER_MCP_PRISON_MAZE_GREYBOX_HANDOVER_2026-10-10.md) has been prepared on the existing planning branch. This **authorizes only an isolated Blender-MCP Claude Coworker pre-MVP candidate**, not a World/game runtime, R5, public Site, Stage, or live state. Work begins by auditing existing island anatomy and the **user-reported** eight Unity-imported demo islands (not yet separately source-verified), then a single real-source-derived editable island with deep bowl/inverse mound, square versus polar raised-ground maze geometries, modular Kenney-based adaptive tower, two material/fugue treatments and scene screenshots/evidence. All source assets must be isolated before integration. Current Claude Design Four-Island A/B and MVP hold remain undisturbed.
+>
+> Optional creative hooks captured non-destructively: blue Frost-Orc prison band using existing candidate-only Orc Band/rig donor and original Prison Blues soundtrack through existing KFB Audio; Toy Soldier wind-up key detachable test for immobilize/rewind/temporary control; WhackMan guard chase later, never a mandatory Blender MVP. Existing Toy Soldier numbered cobalt-blue/white-plume guard caste and No.1 red tower button remain binding design intent. **No Blender MCP executor has been launched by this GitHub handover.**
+>
+> Proof at this stage: one full 10,299-character GitHub handover and exact branch/file verification; six source/scope spot checks PASS. **0 Blender builds, 0 scene renders, 0 screenshot proofs, 0 runtime/browser tests, 0 Site/Stage, 0 PR/merge.** Local next handoff check `BLENDER_PRISON_GREYBOX_SOURCE_AND_SPATIAL_PROOF` after future Coworker execution; deferred integration gate `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` unchanged.
+
+---
+
 
 > **ADDITIVE SOURCE AUDIT · 2026-10-10 · PRISON MAZE / TOY SOLDIER / AUDIO / GATEKEEPER**
 >
