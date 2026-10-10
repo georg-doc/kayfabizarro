@@ -1,5 +1,10 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · G1 · Quellenkorrektur KFB Style References
+- Georg wörtlich: „@Dropbox da liegen in kfb style referenzen alle vorlagen“.
+- [G1 Bildserien- und Style-Referenz-Brief](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md): Dropbox `KFB Style References` in KFB Card Zone Lab v2 **8 Bilder identifiziert** und Quelle/Style/Benchmark voneinander getrennt; Repo-Style-Spiegel und KFB-Style-Reference-Router geprüft.
+- Keine Bildgenerierung, keine visuelle Source-Isolation, kein Pick; nächstes Gate Bild 1 / PortLand / originales Geometriebild + echte Style-Bilddateien, 3/4-KFB-Clay-Diorama, danach Georg TUNE.
+
 ## 2026-10-10 · G1 · Webchat G1 · R2 Source-Vergleich
 - [Original-Messvergleich R2](G1_TOWN_SOURCE_COMPARISON_R2.json) und [lokales Source-Isolation-Runbook](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md) gespeichert. Port/Backyard nach Original-Messdaten 1.585/700 Dreiecke; 6/22 Tiefpunkte; 0,434/0,506 W Unterseiten-Tiefe. Town 40 MC hypothetisch normiert, native FBX-BBox noch offen.
 - [R2 Testbericht](TEST_REPORT_G1_R2.md) **13/13 statische Checks PASS**; **0/8** neue isolierte Ansichten und **0/2** native bbox-Reads. Keine Bildersetzung, keine neue Runtime, kein Stage und keine Georg-Freigabe.
