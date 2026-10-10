@@ -1,0 +1,68 @@
+{
+ "schema": "kfb.prison-greybox.source-manifest/1",
+ "date": "2026-10-10",
+ "step": "A · source audit (BLENDER_PRISON_GREYBOX_SOURCE_AND_SPATIAL_PROOF, part 1)",
+ "handover": "skills/chat/KFB_BLENDER_MCP_PRISON_MAZE_GREYBOX_HANDOVER_2026-10-10.md @ planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 (e7a97a4)",
+ "blender": {
+  "scene": "PRISON_A_SOURCES",
+  "file": "BLENDER MCP/PRISON_MAZE_GREYBOX_2026-10-10/blend/PRISON_A_SOURCES.blend (local only: contains Unity Asset Store meshes)",
+  "units": "metres as shipped by each source; Z up"
+ },
+ "islands": {
+  "status": "VERIFIED: 8 of 8 found",
+  "source": "StreakByte 'Low Poly Floating Islands' (Unity Asset Store, bought by Georg)",
+  "licence": "Unity Asset Store EULA: use in a commercial game is fine, also outside Unity; raw files (FBX, textures, rebuilt .blend) are NOT redistributed, so they stay local and never go to GitHub",
+  "rawFiles": "KFB Island Worldbuilder Lab/donors/streakbyte-floating-islands/tree/Assets/Low Poly Floating Islands/ (Models/*.fbx, one shared palette texture Lowpoly_Flaoting_Islands_PortTexture.png)",
+  "layout": "KFB Island Worldbuilder Lab/public/assets/streakbyte/scenes/<scene>.json (the Lab's extraction of the 8 Unity demo scenes: fbx, unit scale, 4x4 matrix per item)",
+  "rebuild": "Blender object matrix = C · M_unity · diag(-1,1,1) · scale(u), C swaps Y/Z; checked visually (props sit on the ground). All 8 scenes rebuilt; item counts match the Lab index (141/96/107/56/134/72/94/74).",
+  "metricsNote": "flat = up-facing terrain (normal z > 0.94), sampled every 0.5 m; level = most common height band; r = radius of the largest flat circle on the main level",
+  "items": [
+   {"id": "01_Port", "terrain": ["Floting Base.fbx"], "tris": 1501, "size_m": [23.6, 21.0], "height_m": 11.2, "flat_m2": 352, "mainLevel_m2": 211, "r_m": 4.0, "notes": "rock rim around sand ring and green centre; source lighthouse in the scene"},
+   {"id": "02_River", "terrain": ["Floting Base_1.fbx", "Floting Base_2.fbx"], "tris": 648, "size_m": [12.0, 12.2], "height_m": 5.8, "flat_m2": 113, "mainLevel_m2": 85, "r_m": 4.0, "notes": "small; river cuts the top; FBX in cm (unit 0.01)"},
+   {"id": "03_Backyard", "terrain": ["Backyard Base.fbx"], "tris": 700, "size_m": [19.7, 20.1], "height_m": 11.2, "flat_m2": 315, "mainLevel_m2": 261, "r_m": 9.5, "notes": "one large flat lawn; unused 'Landscape.fbx' in the folder is the same mesh as Forest Base.fbx"},
+   {"id": "04_Beach", "terrain": ["Beatch Base.fbx", "House Base1.fbx"], "tris": 2751, "size_m": [12.1, 12.3], "height_m": 8.1, "flat_m2": 108, "mainLevel_m2": 87, "r_m": 2.5, "notes": "small; split into beach, lawn and deck"},
+   {"id": "05_PirateCave", "terrain": ["Cave Land base.fbx"], "tris": 1152, "size_m": [25.8, 26.9], "height_m": 15.3, "flat_m2": 503, "mainLevel_m2": 322, "r_m": 6.0, "notes": "cliff plateau (7.5) above a beach level (4.0); separate Cave mesh"},
+   {"id": "06_Iceland", "terrain": ["Snow Base.fbx", "Mountain.fbx"], "tris": 8676, "size_m": [27.2, 30.1], "height_m": 21.7, "flat_m2": 437, "mainLevel_m2": 310, "r_m": 6.5, "notes": "big mountain on one side; heaviest mesh"},
+   {"id": "07_PondLand", "terrain": ["Pond Base.fbx"], "tris": 1977, "size_m": [26.7, 26.7], "height_m": 14.1, "flat_m2": 533, "mainLevel_m2": 334, "r_m": 6.0, "notes": "pond in the middle, paths around it"},
+   {"id": "08_Forest", "terrain": ["Base.fbx"], "tris": 576, "size_m": [19.0, 19.2], "height_m": 10.8, "flat_m2": 273, "mainLevel_m2": 270, "r_m": 9.5, "notes": "simplest mesh: one round flat disk on a cone; easiest to sculpt into basin / mound"}
+  ]
+ },
+ "towers": {
+  "status": "VERIFIED for Kenney Tower Defense, Kenney Pirate, KayKit Hexagon; Tiny Skies lighthouse NOT found as an asset (SOURCE_REQUIRED)",
+  "licence": "CC0 (Kenney, KayKit)",
+  "families": [
+   {"id": "KenneyTD_round", "path": "3D ASSETS/_UPLOAD_kenney_2026-07-25/kenney_tower-defense-kit/Models/GLB format/tower-round-*.glb", "pieceWidth_m": 1.0, "storey_m": 0.6, "pivot": "bottom centre", "stacks_m": {"low (bottom, middle, top, roof)": 2.85, "high (3 middles)": 4.19}, "fit": "height changes by adding middle pieces; needs about x3 to stand next to a 2.17 m resident"},
+   {"id": "KenneyTD_square", "path": "same kit, tower-square-*.glb", "pieceWidth_m": 1.0, "storey_m": 0.5, "pivot": "bottom centre", "stacks_m": {"low": 2.78, "high": 3.72}, "fit": "as round"},
+   {"id": "KenneyPirate", "path": "3D ASSETS/kenney_pirate-kit/Models/GLB format/tower-*.glb", "pieceWidth_m": 3.2, "storey_m": 2.0, "pivot": "bottom centre", "stacks_m": {"watch (base-door, middle-windows, watch)": 6.79, "roofed (base, middle, middle-windows, top, roof)": 12.22, "complete-small": 6.79, "complete-large": 10.23}, "fit": "already at resident scale (door fits 2.17 m); watch crown has crenellations for a searchlight"},
+   {"id": "KayKitHex_blue", "path": "3D ASSETS/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/building_tower_*.gltf", "pieceWidth_m": 1.0, "heights_m": {"base": 1.5, "A": 2.19, "B": 2.49, "catapult": 1.96}, "fit": "fixed heights, not stackable; roofs are separate meshes"},
+   {"id": "TinySkies_lighthouse", "status": "SOURCE_REQUIRED", "searched": "CLAUDE/KFB VoxelWorld/TinySkies Exmaples, tinyskies-cursor-globefly-...; no lighthouse asset or code match. The StreakByte Port scene has its own 'Light House.fbx' (Unity licence)."}
+  ]
+ },
+ "characters": {
+  "eyesRule": "Toy Soldier and Orcs get the KFB eyes in any render; Step A renders no character bodies for that reason",
+  "toySoldier": {
+   "status": "VERIFIED",
+   "path": "3D ASSETS/KayKit_Mystery_Monthly_Series_6_(1.1)/6 - December 2025 - Toy Soldier/characters/ToySoldier.glb (Rig_Medium, CC0)",
+   "windupKey": "separate mesh 'ToySoldier_WindupKey', rigidly parented to bone 'chest' (no skin weights): can be hidden, detached or 'stolen' on a copy without touching the source",
+   "hatAndPlume": "plume is part of the 'ToySoldier_Hat' mesh (red shako, white plume, gold trim); no separate plume object",
+   "hatNumber": "UNTESTED: no number in the source; the flat shako front can take a decal or texture patch",
+   "colour": "uniform red #d3252a from the shared palette texture; cobalt No.1 = palette swap on a copy of the texture (UNTESTED)",
+   "props": {"rifle (musket)": "assets/gltf/ToySoldier_Rifle.gltf, 2.49 m long", "trumpet": "assets/gltf/ToySoldier_Trumpet.gltf (band option)"}
+  },
+  "frostOrc": {
+   "status": "NO 'Frost Orc' asset. Candidates: KayKit texture variant B",
+   "medium": "Orc Raider (Series 4, Rig_Medium): orc_texture_B.png gives grey-teal skin #93b2af (A is green #89c65f)",
+   "large": "Orc Brute (Series 6 1.1, Rig_Large): orcbrute_texture_B.png gives grey-teal skin #73a1a7 (A is green #5cb869)",
+   "note": "B reads frosty grey-teal, not clearly blue; a bluer skin needs a palette swap on a copy. Also available: FrostGolem (Series 5)."
+  },
+  "bandModule": "Resident Band Module 01 not inspected in Step A (optional, later)"
+ },
+ "renders": [
+  "renders/A/A1_ISLANDS_34_BOARD.png",
+  "renders/A/A1_ISLANDS_TOP_SIDE_BOARD.png",
+  "renders/A/A2_TOWERS_BOARD.png",
+  "renders/A/A3_TOYSOLDIER_PARTS.png"
+ ],
+ "scripts": ["scripts/a1_board.py", "scripts/a2_board.py"],
+ "nextGate": "Georg picks the island anatomy (Step B starts only after that)"
+}
