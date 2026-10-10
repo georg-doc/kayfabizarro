@@ -1,9 +1,11 @@
-# KFB · Forest / Cabin / Werewolf Island · Concept v1 · 2026-10-10
+# KFB · Forest / Cabin / Werewolf Island · Concept v1.1 · 2026-10-10
 
 Status: **GEORG AUTHOR IDEATION + SOURCE-ROUTED POST-MVP CONCEPT · NOT IMPLEMENTED**
 Owner: existing KFB Island Worldbuilder / Minigame-Ideation on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`.
 Related reference: `skills/chat/KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md`.
 Current Four-Island R1 A/B visual gate, R4 STOP, runtime ownership and the deferred Minigame/Fluff source gate remain unchanged.
+
+> **GEORG CORRECTION · v1.1 · 2026-10-10:** The previous §4 prescriptive account of the Triplet/ChatterBox pool and its illustrative invented JSON triplets was **NOT VERIFIED AS THE CURRENT ACTUAL DIALOGUE MODEL** and is **SUPERSEDED / RETRACTED**. Georg confirms a separately maintained current pool Sheet. Its canonical structure and authoring status have not been audited in this slice. Do not use the historical v1.0 Triplet description or example lines as implementation instructions. This document now specifies **events, character behavior, satire and physical scene beats**, leaving dialogue authoring and pool mechanics to their existing owner and current Sheet.
 
 ## 1 · Character story / what this island is about
 An uncanny campsite/woodland island built around **two color-variant Hikers, a tent and a woodcutter who becomes a werewolf**. Daily work, outdoor tourism, folklore and social paranoia share the same small inhabitable forest. Neither a generic horror attraction nor an additional current MVP core island.
@@ -25,50 +27,50 @@ The stronger satirical mechanism is **projection beating firsthand testimony**: 
   Two real model files exist, **but no production-accepted transformation rig/morph/timing/animation has been proven**. Later inspect proper bone/animation compatibility and choose reversible visual swap if appropriate; no replacement rig runtime.
 - **Scene assembly:** source assets are confirmed; a fully accepted, precomposed **two-Hiker + woodcutter/wolf + campsite scene** is not yet confirmed as one reusable source recipe. Audit actual Resident Atlas scene donors before claiming ready integration.
 
-## 3 · Two Hikers as complementary witnesses — no personality canon lock
-The two color-distinct Hikers can play *opposing biases*:
-- one treats every incident as genre evidence and has already concluded who the lumberjack is;
-- the other observes physical reality more closely but may form an equally wrong conclusion when details conflict.
-Their behavior should be driven by context, a real observed event and relationship state rather than hard-coded "rational vs irrational" personality labels forever. Both can be wrong, insightful, frightened or complicit as the scene develops.
+## 3 · Two underprepared Hikers: genre-aware, yet trapped in failure spirals
+Two visibly different color variants of the same genuine Hiker model inhabit one shared campsite. Their exact personalities are still open. What matters is the **contrast between their confident knowledge of horror-film survival rules and their consistently bad decisions in the actual world**.
 
-## 4 · The KFB Triplet / ChatterBox dialogue contract
-**Binding reference to existing owner, not a new dialogue subsystem:**
-`tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/HANDOVER_WSA_CHATTERBOX_TRIPLET.md`
-and `lib/triplet-stage/donor/resident-chatter-adapter.v0.1.mjs`, with existing `overworld/overworld/chatter-phrases.js` and ChatterBox presentation owner.
+- They know perfectly well that characters should never split up. They split anyway, because one calls it "checking the generator" and the other calls it "securing the tent". Each sincerely insists this does not count as splitting.
+- They brought sophisticated but irrelevant outdoor equipment, yet forgot something elementary — matches, usable batteries, a working map or weather protection. Do not hardcode any single inventory item unless its actual source exists.
+- Each explains away their own mistake as a sophisticated strategy and the other's as typical horror-movie incompetence.
+- One interprets every sound as evidence of a werewolf; the other constructs increasingly elaborate non-wolf theories that are just as poorly supported. Their positions can reverse after a new observation.
+- Their prior knowledge of plot conventions does **not** give them authorial control of the forest. They try to pre-empt the cliché and cause it to happen.
 
-Write **semantic Triplet turns**, not scripted 3-line back-and-forth as a substitute. One meaningful actor turn has one triplet with:
-1. `subject` — a concrete contextual assertion/scene observation;
-2. `connector` — the relation/tension, essential middle beat;
-3. `reframe` — changed interpretation, consequence or inversion.
-The three pieces belong in **one speech bubble** as three separated blocks (not slash-delimited visible text); silent `…` can be a valid turn. The source-backed selector uses speaker profile, actual witnessed event, Card/source refs if valid, semantic constraints, social operator, recent usage and seed. Keep approved English pool wording unchanged on render, no automatic Fluff-o-lect. Authored concepts below **are candidate lines only**; they are not inserted into canonical shared pool, and future content needs ChatterBox authoring review/semantic validation.
+These are recurring **behavior patterns, not forced permanent personality types**. Both can become helpful, competent or unexpectedly courageous; the comedy requires actions and reversals, not a mechanical parade of ineptitude.
 
-**Illustrative *one-turn* triplet, Woodcutter at autograph request (CANDIDATE):**
-```json
-{
-  "speaker": "woodcutter",
-  "event": "hiker_requests_superhero_autograph",
-  "triplet": {
-    "subject": "They came for a hero",
-    "connector": "because they saw my hair",
-    "reframe": "I came to cut timber"
-  },
-  "status": "AUTHORSHIP_CANDIDATE_NOT_IN_POOL"
-}
-```
-**Illustrative Hiker triplet (CANDIDATE):**
-```json
-{
-  "speaker": "hiker_a",
-  "event": "suspicious_tracks_near_campsite",
-  "triplet": {
-    "subject": "We brought a monster guide",
-    "connector": "so every footprint fits",
-    "reframe": "except the one by our tent"
-  },
-  "status": "AUTHORSHIP_CANDIDATE_NOT_IN_POOL"
-}
-```
-Those are **not** two lines of a continuous conversation and no additional joke must follow. ChatterBox owns the actual choice of speaker, response/valid silence, bubble, voice and Audio ducking. A dialogue is not automatically required for every environmental reaction. Respect ChatterBox operator semantics and resident profiles instead of fabricating a Forest-only dialogue engine.
+## 4 · Dialogue ownership correction: STORY BEATS ONLY, POOL CONTRACT DEFERRED
+**Do not carry over the former §4 "one Triplet = subject/connector/reframe in one bubble" assertion into Forest dialogue production.** That description conflated a particular candidate Studio handover with the actual evolving KFB ChatterBox/pool practice. Georg explicitly reports a **separately maintained pool Sheet**, which was not retrieved or source-verified during this slice.
+
+- This Forest document is authoritative only for **scene situations, character motivations, observable events and suggested comedic reversals**, not Triplet schema, number of bubbles, line count or pool selection rules.
+- The existing ChatterBox/content/presentation owners retain dialogue, roles, voice, cadence, valid silence and all pool integration; no Forest-only dialogue engine or private competing pool.
+- Candidate event tags below are **scene prompts**, not approved content IDs or runtime fields. The later dialogue executor first reads the **current pool Sheet and current owning ChatterBox state**, then uses their real format. Earlier made-up dialogue JSON examples are retired.
+- If current Sheet authority, paths or wording remain unclear, record as OPEN for the owning ChatterBox lane rather than inventing a new normalization rule here.
+- Keep dialogue sharp and source/context-specific. We can think up jokes here without falsely labeling them as valid canonical Triplets.
+
+## 4A · Physical comic scene library / failure spirals (POST-MVP PROPOSALS)
+Every idea uses a **trigger → visible mistake → consequence or reversal → optional Resident response**. These are ingredients, not fixed scripted scenes or new MVP acceptance gates.
+
+**S1 · We must not split up.** The Hikers discuss the classic horror rule at the fire. A noise is heard near the generator or tent; one walks off to check "just for a second", the other goes to fetch the light. The player sees their lights drift in opposite directions. Both later maintain they were following the rule.
+
+**S2 · Emergency kit with no essentials.** They ceremoniously lay out waterproof gadgets, monster guides and tracking devices but cannot get a campfire started or repair a simple tent peg. A quiet local prop reaction — a sputtering flashlight, slipping tent pole or displaced bedroll — says more than generic banter. Real props depend on source inventory; don't invent working item mechanics from a static scene.
+
+**S3 · Every clue confirms the movie.** A mundane footprint is confidently classified as werewolf evidence; a genuine wolf sign is dismissed as a fake-out because "the reveal cannot happen yet". On revisiting the area, an actual environmental change undermines both theories.
+
+**S4 · The cabin rule.** A dark cabin or shelter is clearly unsafe. They recognize the ominous setup and enter anyway, believing that doing so self-consciously exempts them from the cliché. Once inside they bar the wrong door or switch off the only working light.
+
+**S5 · The heroic woodcutter misunderstanding.** They meet the irritated lumberjack and call him Wolverine. Because they assume he is a superhero, they expect a rescue, ask for an autograph or want him to "transform" for a photograph. His perfectly legitimate axe and knowledge of the woods become suspicious when he insists he is merely a woodcutter. The *real* werewolf transformation later overturns their pop-cultural explanation without turning him into a Marvel imitation.
+
+**S6 · Accusation by committee.** After a nocturnal howl, two witnesses arrive at opposite conclusions. They host a village-style vote, then select only clues that support the majority. An actual helpful witness can become the new suspect; the woodcutter has competing reasons to hide evidence and defend an innocent neighbor.
+
+**S7 · Disastrous horror documentation.** One Hiker wants perfect footage of a mysterious noise rather than helping the other. The recording captures the panicked camera operator and misses the actual reveal behind them. If sound/video capture systems are unavailable, keep this a staging/miming gag; do not install a recording runtime.
+
+**S8 · Campfire spiral / failure memory.** The same campers repeatedly tell the story of their previous "successful" escape while repairing the damage it caused. Later visits can rearrange the physical aftermath or reverse which Hiker insists they were right. Meaningful Resident relationship/Almanac memory uses existing owners, not a new death counter.
+
+**S9 · Genre-booking backstage.** A scare is too early, a dramatic howl arrives while someone is boiling water, or the wolf is visibly exhausted after a set piece. The three may briefly discuss whether the suspense scene counts, then snap back into folklore roles as soon as a visitor appears. Meta-awareness is a comedic tool, not a compulsory wink in every scene.
+
+**S10 · The forest refuses the script.** The hikers' method for "not being horror protagonists" causes them to miss the one real practical clue: a cut tree across the return path, unsafe weather, footprints leading to the lumberjack's workplace. The player can notice and help without being forced into an accusation or a horror-game failure loop.
+
+**Escalation rhythm:** start with a believable camping inconvenience; allow genre certainty to trigger a poor choice; let physical environment/Residents create consequences; reveal that the chosen explanation is wrong or incomplete. Preserve opportunities for an earned competent decision or an unexpectedly gentle ending. Dialogue is optional and subordinate to what visibly happens.
 
 ## 5 · Forest island silhouette / Dark Cluster relation
 This is a *liminal folklore/wilderness island*, spatially between ordinary nature/crafting routes and the Graveyard/Vampire/Demon dark constellation; not a default new horror-core island and not automatically a morality axis.
@@ -86,14 +88,15 @@ The story must be readable at three scales: travel-distance island silhouette an
 - distinct local forest soundbed under existing KFB Audio, footsteps, timber strike, night rustle, distant howl; no new AudioContext.
 Any Card/deck mapping is **OPEN**, not an invented deck source or canonical one-island-one-deck rule.
 
-## 7 · Creative seeds · proposals, not generic mandatory jokes
-- **Unwanted celebrity:** A visitor wants superhero merch signed. The woodcutter identifies the tree species of the wooden autograph board; the visitor ignores this.
-- **A protective lie backfires:** He plays the expected hero for one minute to send hikers away from a dangerous trail, unintentionally attracting more fans.
-- **Village vote:** Residents argue about a wolf, but treat a popular story as stronger than witnessed clues. A quiet triplet may subvert the majority instead of a narrator delivering a moral conclusion.
-The underlying character has needs independent of the Wolverine mistake. Keep humor rooted in social interactions and physical place. Additional pro-active satirical/meta ideas are welcome when they have a precise cause, not as automatic filler or globally restrictive canon.
+## 7 · Creative opportunities / authoring intent, not canon locks
+The Wolverine mistaken-identity conflict survives as a **recurring social pressure**, not the island's only joke. Combine it with the Hikers' horror-meta-awareness, changing evidence, practical outdoor failures and woodcutter's real needs. An individual gag should change a visible relationship or cause a new physical choice rather than repeat an invented catchphrase.
+
+Optional narrative tension: The woodcutter knows a visitor is in genuine danger. He could save them by revealing his wolf nature, but the two tourists would immediately turn that revelation into an entirely different kind of celebrity myth. Their knowledge of fictional genres becomes the obstacle to recognizing a real person.
+
+The already existing Resident, Pool, Audio, World, Card and Memory owners decide how any authored scene becomes a supported event and dialogue. Suggestions here are **PROPOSAL**, not a universal new dialogue or cinematic canon.
 
 ## 8 · Ownership, recovery, later next step
-Current Island Lab/World retains terrain, traversal and save truth; Resident Atlas actor/source scene owns compatible characters; ChatterBox/Triplet pool and presentation retain dialogue; KFB Audio retains sound and voice mix; Card/Almanac require real provenance; later Claude Design handles visual exploration, Blender may consume isolated assets, not invent new owners.
+Current Island Lab/World retains terrain, traversal and save truth; Resident Atlas actor/source scene owns compatible characters; current ChatterBox + validated pool Sheet owners retain dialogue; KFB Audio retains sound and voice mix; Card/Almanac require real provenance; later Claude Design handles visual exploration, Blender may consume isolated assets, not invent new owners.
 Later source-first study must show: actual both Hiker texture variants on the *same* Hiker model, isolated Tent and Waterbottle, the two Werewolf forms and actual axe/logs, then 2 island compositions with cabin/camp relationship. Verify scales, source licenses, host anchors and transforms before runtime reuse.
 Recovery read path: main START_HERE → CHAT_GITHUB_KFB_STAGE_WORKFLOW → FRESH_CHAT_SLICE_PROTOCOL → branch global Island Galaxy grammar → this Forest doc → current owning Return → named current Lab/Story recovery. A timed-out GitHub write stays UNKNOWN until exact ref/file readback.
 Status: **concept only**; no runtime, 3D render, tested rig switch, tested two-Hiker stage, Site/Stage, PR/merge/Live. Existing deferred next gate remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` following playable MVP and Georg authorization; include Forest sources as another subsection then.
