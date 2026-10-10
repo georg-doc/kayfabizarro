@@ -1,5 +1,24 @@
 # WSA · KFB Voice Casting Bench — minimal integration brief
 
+## 2026-10-10 CURRENT STEERING AFTER S3 · HEURISTIC CASTING & CONVERSATION PERFORMANCE (SUPERSEDES IMMEDIATE PER-VOICE GATE)
+
+New Georg feedback: **Voice Acting works very well**, and the first MVP casting should be **heuristically assigned, editable**, initially by heard masculine/feminine/synthetic lane, age impression, timbre and actor role. Georg will fine-tune **later**. Thus the older sections below asking for **early individual Georg KEEP/TUNE/CUT before even creating heuristic maps** are HISTORICAL for this preliminary proof; the latest source-backed audition candidate does **not** need preapproval. Final shipped voice takes, rights and public actor/game acceptance remain unapproved.
+
+Read now **before any execution**:
+- `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md`
+- `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json`
+- Current `START_HERE.md`, `TEST_REPORT.md` and `RETURN.md` in the same owner.
+- Existing PetStudio `bubble/bubble.v1.js` and ChatterBox Studio v2 handover, Resident Performance Event Contract, Atlas `cast.js`, current #369/#375 rig/eyes evidence: re-fetch live branch before using.
+
+Revised single next **bounded technical gate**: `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1`. Work/WSA may later be authorized to play **real** available English voices/imported clips for source-backed Demon Lord, Robot One and Farmer A, optionally Lorekeeper/Witch voice-lane contrast, with `mappingFinal:false`, human overrides and no fake engine toggle. Prove one accepted-source Triplet/audio/bubble/duck/cancel path and actual source/manifest; do not spend paid voice credits unless separately approved. Before integration show actual source objects in isolation, not mere asset URLs.
+
+Additional longer-term (NOT same MVP blocker): player voice input behind opt-in mic/VAD, spoken existing operators, later free ASR-final → LLM interpretation → current ChatterBox Triplet semantic owner; thinking/listening idles + three-dot wait sign from existing bubble donor; on real playback start sync mouth Talking Loop, body/face, readable three-part bubble reveal and existing Audio ducking. Future in-world holographic Maker-Space conversation staging is an *existing-owner composition idea*, not authorization for new UI, second Character/Animation/Dialogue engine, World R5 or Site. Speakrail optional turn-taking donor, **not TTS**; Resemble Chatterbox-TTS **unrelated**; DocCheck Feynman VoiceIO separate product.
+
+This addendum does NOT start a Work job, republish the KFB Audio Site, reopen World R4 or override the Four-Island A/B visual gate. It changes only the voice-lane plan/preliminary audition human prerequisite. The older brief stays below as traceable planning history.
+
+---
+
+
 ## CURRENT S3-BASELINE OVERRIDE · 2026-10-10 · FUTURE WSA PREPARATION ONLY
 
 **Authority:** existing KFB ChatterBox Voice owner / Draft PR #379. This new section overrides obsolete S0/S1/S3 *build-a-bench* directions below. Those remain historical planning evidence, NOT permission to build a second bench. This is preparation for a possible LATER Work/WSA integration, **not an instruction to run WSA now**, spend provider credits, change world runtime or deploy a new Site.
