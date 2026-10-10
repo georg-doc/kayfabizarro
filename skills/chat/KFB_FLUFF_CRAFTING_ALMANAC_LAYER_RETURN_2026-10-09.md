@@ -1,4 +1,13 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.3
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.4
+
+> **ADDITIVE DESIGN BRIEF · 2026-10-10 · GRAVEYARD / DARK CLUSTER SILHOUETTES**
+>
+> [KFB_CLAUDE_DESIGN_DARK_CLUSTER_SILHOUETTES_BRIEF_V1_2026-10-10.md](./KFB_CLAUDE_DESIGN_DARK_CLUSTER_SILHOUETTES_BRIEF_V1_2026-10-10.md) prepares a future, source-first **Claude Design** comparison of two meaningful visual directions for KFB Town + Graveyard + Vampire + Demon Lord, based on the newly persisted fragmented-island-galaxy grammar. Real source lead: `resident-graveyard-01` in current Resident Atlas candidate-only module, with KayKit HalloweenBits grave/fence/crypt/lanterns, four dancing skeletons and repeat-collapse/reassembly logic. Its original scene remains owned by Resident Atlas, not copied as a second scene engine. Exact Vampire/Demon source isolation still needed. Outputs require real source contact sheet before A/B composite, 4 distinguishable long-range island silhouettes, approach/arrival views and source evidence. Current Four-Island R1 A/B/FAIL and R4 STOP remain prior active gates, no post-MVP island construction or new runtime permission. Briefing milestone `7957e79428124eead5f1e23c05cc11ea8b7155bf`, source blob `a919b63b4f1c11cff67746c2b9cdc4cbe76b6624`; **7/7 text spot-check PASS, no visual/Blender/browser/source-isolated test and no Claude Design execution**.
+>
+> One local later design step: `CLAUDE_DARK_CLUSTER_SOURCE_CONTACT_AND_SILHOUETTE_R1`, subordinate to existing Four-Island gate. Deferred runtime source gate remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`. No PR/merge/Site/Stage.
+
+---
+
 
 > **ADDITIVE DESIGN MODEL · 2026-10-10 · FRAGMENTED ISLAND GALAXY / META-BIOMES**
 >
