@@ -1,5 +1,9 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## ADDENDUM · 2026-10-10 · creator channel follow-up
+
+The report now includes a separately provenance-labeled channel discovery pass (section 10). Official Live Show VOD episodes 0–4 are creator-confirmed and their Blender-source-author teaching purpose is documented, but the individual YouTube VOD URLs could not be independently verified. A more recent Episode 6 Twitch stream is supported by Kenney's public feed; it is not misrepresented as a verified YouTube VOD. The prior four direct tutorial IDs remain the only named direct-video entries. Priority now distinguishes immediate Lighting/Character MVP evidence from later source modeling/VOD research. No new runtime or lighting owner, video frames, deployment, PR or merge. Next gate unchanged: **KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01**.
+
 ## CURRENT ADDITIVE RESEARCH SLICE · 2026-10-10
 
 **Status:** SOURCE-AUTHOR TUTORIAL RESEARCH PERSISTED · VISUAL FRAME SCAN STILL OPEN  
