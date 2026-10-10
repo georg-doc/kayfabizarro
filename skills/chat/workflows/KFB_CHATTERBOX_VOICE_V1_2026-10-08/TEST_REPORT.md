@@ -295,3 +295,24 @@ Current adapter voiceAssetKey includes sourceId, voicePreset, emotion, slot and 
 Georg Voice Acting human KEEP/TUNE/CUT; accepted source-backed Triplet and Resident voice profile; exact English TTS renderer models/rights; Whole-versus-fragment listening quality; browser duck/cancel and bubble timing; separate World A/B gate. No automatic S4 implementation/World integration.
 
 Next same human gate: existing KFB Audio Voice Acting tab, compare voice solo / D bed no ducking / D bed ducking and return KEEP/TUNE/CUT.
+
+## 2026-10-10 · Heuristic MVP Voice/Conversation/Performance source-and-Site document proof
+
+Status: **SOURCE / DOCUMENT / SITE-INBOX PROOF ONLY**. Georg reports existing Voice Acting usable and wants heuristic MVP voice mappings ahead of later manual fine-tuning. This is **not** a human voice-clip KEEP decision, acceptance of an ASR engine, 3D visual source-isolation proof, or World runtime implementation.
+
+New source-preparation artifacts:
+- `MVP_HEURISTIC_CASTING_VOICE_DIALOGUE_PERFORMANCE_DIRECTION_2026-10-10.md`
+- `data/MVP_HEURISTIC_VOICE_AUDITION_CANDIDATES_R1.json`
+
+Checked exact sources: real-pool adapter, R2 casting contract, next-MVP voice proof, Atlas cast, PetStudio bubble.v1, ChatterBox Studio v2 handover, Resident Performance Event Contract, Blender choreography prep and current EyeRig SSOT recovery. Old donors are **inspected source/code/contract references**, **NOT isolated original 3D designs visually shown**.
+
+New deterministic document/data contract assertions: **23/23 PASS**. This check verified 5 distinct candidate actor IDs (3 required: Demon Lord, Robot One, Farmer A; 2 optional: Lorekeeper, Witch); candidate-only/nonfinal mappings; no fabricated provider voice IDs or cleared licenses; described older Lorekeeper and synthetic Robot auditions; staged optional microphone input, official operator IDs and LLM candidate quarantine; loading versus semantic thought separation; source bubble forms; real playback clock/KFB Audio ducking authority; muted text, protected World gate and distinct Speakrail/Resemble/KFB names.
+
+Private KFB Production Control Site Inbox results:
+- design document: file `50b32e81-06b4-440e-921d-22b8b5016b5f`, SHA-256 `a41dbf83c0f43399f6d1a59d4622aea986a1fd30c88158b89441d694e2aa5c92` — saved, read, UTF-8 text **byte-equal** to GitHub;
+- editable proposal data: file `af5c3ac2-e37b-49dd-8ce8-d0b2a2f6620a`, SHA-256 `2922ea6c135069fe58bbd3fee3345593ae14521954b58a7299cf4544e0fddca2` — saved, read, UTF-8 text **byte-equal** to GitHub;
+- Site document mirror **2/2 PASS**, NOT a republish of KFB Audio Site or a tested new Site tab.
+
+New executable/functional proof counts: **0 actual ASR/microphone/LLM calls; 0 rendered/provider voices; 0 new browser audio or lip-sync test; 0 3D original-source isolation screenshots; 0 Stage; 0 game runtime**. Historical 13/13 adapter and 87/87 Site checks are not rerun by this preparation.
+
+One owner-local next gate: `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1` — candidate real English speaking samples and one source-backed Triplet timeline, retaining editable casting and later Georg tuning. In-world integration still separately requires the Four-Island A/B gate + explicit runtime authority.
