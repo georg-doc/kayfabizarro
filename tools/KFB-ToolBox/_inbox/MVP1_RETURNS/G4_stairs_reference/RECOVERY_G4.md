@@ -1,10 +1,21 @@
 # RECOVERY · G4 Town Castle Clay Stairs · visual references R1
 
-**Status:** TWO GENERATIVE STYLE DRAFTS PRESERVED, SOURCE-FIDELITY FAIL; SOURCE GLB UNCHANGED; NEXT GATE SOURCE-LOCKED MATERIAL QA.
+**Status:** R3 RE-BRIEFED · CURRENT NEXT GATE FORM-FIRST R3-G0 · R1/R2 preserved as technical donors · plugin update contingent on R3 independent outcome.
 **Date:** 2026-10-10
 **Owner:** KFB Island Worldbuilder Lab / G4 stairs design reference, WSA remains 3D source builder.
 **Repo/branch:** `georg-doc/kayfabizarro` / `planning/kfb-g4-stairs-reference-2026-10-10`.
 **Source:** `wsa/kfb-modelling-test-stairs-2026-10-10@f954817c97e368099b5e8aa8d6fce35cc9da94d8`; `WSA_modelling_test/TEST_REPORT.md`, `SOURCE_FIRST.md`, `qcheck.json`, 9 actual renders.
+
+## CURRENT R3 · user-authorized form-design reroute · 2026-10-11
+- **GEORG decision:** R1/R2 stairs may be useful in other contexts; for the KFB Town castle the shape/design is largely absent. This is **not** a request to demolish or rename technical R1/R2 assets. Georg explicitly requests a WSA Work **form-oriented G4 design slice**, then a grounded PASS/FAIL-dependent update of the existing `KFB Asset Scene Composer` plugin.
+- **Latest WSA source actually inspected:** branch `wsa/kfb-modelling-test-stairs-2026-10-10@52099710569a98393325ee94becf616f418b35f2` has new `TUNE_R2/` with GLB SHA256 `82a20339c39e6e93a71a389dbb39978b7362b562e52999d90539039b131ebb28`, full technical checks and real R1-left/R2-right JPG comparisons. Front endings +0.84/+0.72 Lab above adjacent wall, but **still two stone blobs**, not visible columns with foot/shaft/cap. Wangen retain monotone continuous ramp silhouettes; appearance remains materially unlike target. R2 Blender surface study isn't baked to the GLB. The external independent style critic is **not yet reported as passed**.
+- **Binding [R3 WSA Work brief](BRIEF_WSA_G4_FORM_DESIGN_R3_2026-10-11.md):** new candidate branch to be created by Work `wsa/kfb-g4-stairs-form-design-r3-2026-10-11` based on latest WSA source; one coherent form build, not material-only tune. **≤6 visible buildable form families != ≤6 GLB meshes**; actual built cheek walls and two readable architectural end columns with foot/shaft/cap. Eight original steps, ~3H clear width, landing, walkability retained. Grey form silhouettes **before any clay/material pass**.
+- Current [PARTS.md](PARTS.md) and [PROMPT.md](PROMPT.md) are R1/R2 historical inputs; their prior "preserve five meshes"/"material only" restrictions are superseded **for R3**. KFB Clay Surface Canon still binds *surface*, not architecture generation. Donor files remain unchanged.
+- **Conditional plugin training:** plugin `plugins_6acaa1b6b0688191b66448db92767870` currently private v0.1.0; **not updated now**. After *independently evidenced* R3 FORM_PASS, add proven form-grammar/part-anatomy/contacts and artifact QA; after R3 FORM_FAIL add evidenced failure patterns and neutral form preflight; if still undecided/no independent critic, `PLUGIN_UPDATE_PENDING_EVIDENCE`. Current release must be read before update; never create a second plugin, don't teach speculative success.
+- **No merge, Site/Stage, Live or human Golden.** Only brief/Recovery presently changed, WSA not yet executed.
+
+## Exactly one CURRENT next gate
+**WSA R3-G0:** display actually isolated source donors and produce a standalone neutral 3/4 form candidate with *visible built cheek-wall architecture* and *two differentiated foot–shaft–cap lower columns*, **before styling**; record same-camera R2 vs R3 silhouette and true source pixels. Continue into a tested R3 build only if form gate is real. Then independent critic/Georg, only then appropriate plugin learning update.
 
 ## Actual inspected WSA source
 GLB `KFB_TOWN_CASTLE_CLAY_STAIRS_R1.glb`, SHA256 `5dc83f19beb8b8ba6b20b3b7ae1d19c6a39b8b80045cda14376ae462e4729151`, 250,328 bytes, five source meshes, 4,568 triangles, eight steps, clear width ~3 H, landing at top, two wange walls and two grounded lower buttresses. WSA tests report numeric Q1–Q9 positive or N/A as measured, and clean GLB re-import. Independent external blind style critic not completed in checked source. `game-dev` optional CLI unavailable in WSA source report; Blender native used.
@@ -20,5 +31,5 @@ Both are colorful KFB-style examples but violate the source-locked design constr
 
 Full images are in **conversation-generated** `KFB_G4_STAIRS_VISUAL_REFERENCE_R1_2026-10-10.zip`, SHA256 `dbb07487e0a8837b043f139be9115033f4073d1e599073bc55a330f1f53e4e75`, 4,215,063 bytes; ZIP includes `SOURCE.json`, `PARTS.md`, `PROMPT.md`, `REVIEW.md`, checksums; full binary ZIP/PNGs are **not on GitHub**. Must explicitly attach ZIP to WSA Work/another chat or store persistently; paths alone do not transfer bytes.
 
-## Exactly one next gate
+## HISTORICAL R1 gate (superseded by CURRENT R3 above)
 **Existing WSA source-mesh material-only re-render**: preserve same five meshes, eight steps, 3 H width and source endpoints; apply the proposed KFB family-A palette and sculpted surface normal/material variation in the existing Blender/Lab owner. Capture identical 3/4 and attachment before/after images, run source geometry and layout invariants, then external critic + Georg review. Do not rerun a third promotional ImageGen poster. No new runtime, second owner, Stage/Live/merge or automatic Golden.
