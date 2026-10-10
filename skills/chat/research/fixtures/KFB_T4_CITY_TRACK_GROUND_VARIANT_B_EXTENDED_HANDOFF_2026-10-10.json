@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.research.transition-family-candidate/1",
+  "date": "2026-10-10",
+  "status": "RESEARCH_FIXTURE_ONLY_NO_RUNTIME_3D_ACCEPTANCE",
+  "owner": "existing Track Core route/geometry + Joyride T4 look",
+  "source": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-profiles.v1.json",
+  "sourceBlob": "af6d52c9e3506ecc99d977c66faa8e7189e6f6e2",
+  "sampledBy": "existing T4 w(layer,s,side): smoothstep window, invert because to=track",
+  "targetSchema": "kfb.transition-profiles/1",
+  "id": "C_city_track_ground_B_extended_handoff_RESEARCH",
+  "family": {
+    "from": "city",
+    "to": "track",
+    "sideLag": 0.06,
+    "windows": {
+      "props": [
+        0.07,
+        0.28
+      ],
+      "sidewalk": [
+        0.1,
+        0.46
+      ],
+      "curb": [
+        0.18,
+        0.63
+      ],
+      "mark_city": [
+        0.18,
+        0.48
+      ],
+      "road": [
+        0.32,
+        0.77
+      ],
+      "barrier": [
+        0.46,
+        0.85
+      ],
+      "mark_track": [
+        0.7,
+        0.94
+      ],
+      "light": [
+        0.33,
+        0.83
+      ],
+      "vfx": [
+        0.38,
+        0.82
+      ]
+    },
+    "notes": "Research variant B: 17m overlap (100m illustrative zone) between curb taper and emergence of Track Core/Joyride visible barrier, compared with 1m in A. Do not assume physical cap, support or clearance is solved; inspect source sideProfile+curb and test at same cameras. mark_track window remains unwired for city in current M1/M2."
+  },
+  "example": {
+    "lengthMeters": 100,
+    "note": "Illustrative 100m zone for A/B comparison only; actual length remains Track Core author/clearance decision.",
+    "terrain": "GROUND_ONLY",
+    "sides": [
+      "left",
+      "right"
+    ],
+    "socket": "same Track Core CONNECT frame, no overlapping plates"
+  },
+  "invariants": {
+    "endpointMargin": 0.03,
+    "direction": "non-track influence 1 at u=0; 0 at u=1 both sides",
+    "note": "Both sides must land exactly city=1 / race=0; source marker M1/M2 currently ignores mark_track when bio==city, so a consumer wiring acceptance check is needed before adoption.",
+    "geometricAcceptance": [
+      "real Track Core continuous surface and collider",
+      "no barrier noses in vehicle envelope",
+      "curb/sidewalk caps visibly constructed",
+      "fresh reload stable IDs"
+    ],
+    "dontCopy": [
+      "C_city_track_deck elevation/barrier assumptions",
+      "KayKit/Kenney road geometry",
+      "alpha-only seam concealment"
+    ]
+  },
+  "requires": [
+    "real J14 T4 donor isolated 3D view",
+    "genuine grounded Track Core section and current collider",
+    "screenshot near/driver/side and left/right",
+    "Georg A/B only after meaningful visual proof",
+    "M1/M2 mark_track consumer audit and explicit city-to-track marker plan"
+  ],
+  "prohibitions": [
+    "Do not edit T4 runtime source",
+    "Do not place inside stopped WorldBuilder R4",
+    "Do not declare visual PASS based on these weights"
+  ],
+  "variant": "B_EXTENDED_CURB_TO_BARRIER_HANDOFF"
+}
