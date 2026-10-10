@@ -1,5 +1,11 @@
 # RETURN · G1 · MVP-1 Inselkörper und Fels · 2026-10-10
 
+## Additive Runde R7 · verbindlicher Webchat-Bildserie/WSA-Batch-Handoff · 2026-10-10
+- [G1_WEBCHAT_IMAGE_BATCH_TO_WORK_HANDOFF_R1.md](G1_WEBCHAT_IMAGE_BATCH_TO_WORK_HANDOFF_R1.md) neu eingecheckt: gestaffelte neue Bildmotive → Original-PNG + SHA256 + pro-Motiv-Status → regelmäßige ZIP-Checkpoints im Chat plus dauerhafte Nutzerkopie → **ein gezielter WSA-Work-GitHub-Binärimport am Ende der Session**. Work benötigt die tatsächlichen ZIP-Dateien oder permanente Dropbox-Kopien, nicht nur diese Chat-Links.
+- Original-G1-ZIP erneut live lokal geprüft: 3/3 Full-Res-PNG-Hashes verifiziert; ZIP-SHA256 `d6587ac87a1a55cc6fb454acb42221461d76931d67b7f7e6f74440a603fbff83`. Repo-Originalupload weiterhin 0/3, WebP 3/3. Die Quarantäne-G4-Bilder sind weiterhin keine akzeptierten Assets.
+- Keine neue gelungene G1-Boulder-ImageGen-Ausgabe seit der Kenney-`rock_largeA`-Source-Isolation. **Next gate: ein einziges korrektes source-based cartooniges KFB-Boulder-Konzeptbild**, dann direkt als neues ZIP sichern; später Work-Upload.
+- Kein Runtime-/Stage-/Live-/Merge, keine neue PR. R6 Nachweisstand bleibt erhalten und wird nicht umetikettiert.
+
 ## Additive Runde R6 · Originalbild-Upload-Blocker + echte Felsquelle · 2026-10-10
 - Drei Original-PNGs aus erhaltenem Gesprächs-ZIP lokal vorhanden und intakt; **0/3 GitHub Full-Res**, weil GitHub-Connector nicht direkt containerseitige FileRefs/Binärdateien übernimmt und Container keinen GitHub-Netzzugang bzw. Tokens hat. Drei bereits vorhandene 256×192 GitHub-WebP **3/3 unverändert**. Keine fiktive Originalfreigabe.
 - **Kenney rock_largeA.glb source-isolated:** Original-GLB auf `sync/lab-rkit-2026-10-09` SHA `40e1365a43b706bd78c2658b48b189c9a35f8923`, 146 Vertices, 80 Dreiecke, zwei original Materialkategorien, primitive native Größe 0,78491×0,25978×1,01546 (H ungeklärt). [Vier echte Geometrieprojektionen](refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg), [Source-Report](G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md), [11/11 Source-Static-Checks](TEST_REPORT_G1_ROCK_SOURCE_R1.md) PASS; noch kein KFB-Clay/Golden.
