@@ -263,3 +263,9 @@
 - Combined researched inventory is now **415 candidates**: 30 mapped Batch-01 candidates + 385 deliberately unmapped reserve candidates.
 - Scope remains research/data only. No H13, Billboard runtime, Audio, 3D, curator Site runtime/UI, Stage, router, Hub-runtime, merge or Live changes.
 
+## 2026-10-10 · External code-rendered video reference audit (no adoption)
+
+- Added `DONOR_PDOOM_CODE_RENDERED_MUSIC_VIDEO_2026-10-10.md`, a bounded source/evidence audit of `mexicat/pdoom-video`: absolute-time three.js scene timeline, authored typography, offline Chromium/ffmpeg export and optional 2.5D parallax concept.
+- Preserved existing H13 visual owner, Quote Curator/PR #354, physical clay Billboard, and KFB Audio master clock/mixer; no runtime, world, UI, Site or Stage change.
+- Research finding: current source documents adaptive sampling up to 324 subframes, a strictly offline budget. Depth-map/inpainting claim is author-described, not independently source-proven in this slice.
+- Classification: conditional external technical donor only; no source isolation, playback, tests, clone or rights clearance. Existing next gate remains Quote Research Reserve 14.
