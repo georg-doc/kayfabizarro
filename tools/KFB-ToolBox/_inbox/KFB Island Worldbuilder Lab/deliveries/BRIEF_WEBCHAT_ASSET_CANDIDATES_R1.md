@@ -67,16 +67,25 @@ Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Tre
 
 Die gewählten Kandidaten setzt die Bau-Sitzung im Lab ein: Maßstab K2, Knet-Material, KFB-Farbrollen, Prüfung Q1–Q9, aus Spielkameras. Fehlt für ein Element jeder brauchbare Kandidat, bleibt es eine Lücke für Claude Design bzw. Blender. Erst dann wird neu gebaut.
 
-## 8 · Lücken: img2threejs statt Text-Regeln (Georg 10.10.)
+## 8 · Lücken: drei Wege, in dieser Reihenfolge (aktualisiert 10.10.)
 
-Gibt es für ein **gebautes** Element (Treppe, Brücke mit Widerlager, Tunnelportal, Marktstand, Landmarke) kein brauchbares Modell, aber ein gutes **Bild** (aus der Kandidatensuche, ein Foto bzw. Georgs Midjourney-Bild): dann nach der img2threejs-Methode (`tools/img2threejs/`, Vorbild Kölner Dom v0.2 und Landmark-Pack, Grotesque-Stil) als three.js-Modul nachbauen:
+Gibt es für ein Element nach zwei Suchrunden keinen brauchbaren Kandidaten, markiere es als **Lücke** und schlage einen dieser Wege vor (nicht selbst ausführen, außer c):
 
-1. Referenzbild festlegen und Georg kurz bestätigen lassen.
-2. Bauteile aus dem Bild beschreiben (Teile, Proportionen in H bzw. MC, Kantenrundung).
-3. Geometrie stufenweise im Code aufbauen (three.js r160+, gerundete Kanten, wenige große Formen, Farben über Rollen).
-4. **Render gegen Referenz aus derselben Kamera vergleichen**, nebeneinander auf einem Blatt; höchstens drei Korrekturrunden.
-5. Ergebnis als Modul bzw. GLB im Maßstab K2 auf demselben Branch ablegen (`…/G_asset_candidates/img2threejs/<element>/`), mit Vergleichsblatt.
+**a) Gebaute Formen** (Treppe, Brücke, Tunnelportal, Marktstand, Landmarke): **img2threejs-Skill** (offizielles Repo `img2threejs/img2threejs` v2.0.0, Apache-2.0). Er baut aus **einem Referenzbild** ein three.js-Modell aus Code, mit festen Stufen (Eignung, Qualitätsvertrag, Spezifikation, Bau in Durchgängen, Render-gegen-Referenz-Vergleich, Gates). Läuft in Claude Code; die Steuer-Sitzung testet ihn gerade an einem Steinbogen. Liefere dafür **das beste Referenzbild** (frontal bzw. 3/4, freigestellt, Cartoon-Stil, Lizenz bzw. Herkunft) und eine Liste der identitätsprägenden Merkmale.
 
-**Nicht** für organische Formen (Inselkörper, Felsen, Gelände): Dafür nur vorhandene Modelle (G1). Auch img2threejs-Ergebnisse gehen danach im Lab durch Q1–Q9 und den blinden Kritiker.
+**b) Organische Formen** (Inselkörper, Felsen, Brocken, Gelände): **Bild-zu-3D-Generatoren**, die ein echtes Netz (GLB) erzeugen:
+- **TRELLIS.2** (Microsoft, MIT) gilt als stärkstes Open-Source-Modell, braucht aber eine große GPU, also nur gehostet (z. B. Hugging-Face-Space);
+- **Meshy** bzw. **Tripo** (Gratis-Stufen, Low-Poly- bzw. Quad-Modus);
+- **Hunyuan3D 2.1** ist wegen der Lizenz in der EU **nicht** nutzbar.
 
-**Szenenmontage aus einem Bild:** Für den Town-Lageplan darf ein Chat ein gewähltes Referenzbild (z. B. eine StreakByte-Demo-Insel oder ein Konzeptbild) analysieren und daraus eine Platzierungsliste vorhandener Assets erstellen (Asset-ID, Lage, Drehung, Maßstab in MC). Das ist ein Rezept-Vorschlag, kein Bau.
+Liefere dafür 2–3 **Konzeptbilder bzw. Referenzbilder** je Form (eine klare Insel-Scholle, freigestellt, Cartoon) und, falls du Zugang hast, das erzeugte GLB mit Werkzeug, Einstellungen und Lizenz.
+
+**c) Szenenmontage aus einem Bild** (Town-Lageplan): Ein gewähltes Referenzbild (z. B. eine StreakByte-Demo-Insel oder ein Konzeptbild) in eine Platzierungsliste vorhandener Assets übersetzen (Asset-ID, Lage, Drehung, Maßstab in MC). Das darfst du selbst ausführen; es ist ein Rezept-Vorschlag, kein Bau.
+
+Alle Ergebnisse aus a) bis c) gehen danach im Lab durch Q1–Q9 und den blinden Kritiker. Gestaltet wird nur, wo es weder Modell noch Bild gibt.
+
+## 9 · Reihenfolge der Chats (Vorschlag)
+
+1. **Zuerst G1** (Inselkörper und Fels), **G4** (Brücke und Treppe) und **G2** (Stadtstraße): Die blockieren gerade.
+2. Dann G3, G5, G6.
+3. Jeder Chat beginnt mit der eigenen Bibliothek (Asset Librarian) und legt sein Blatt nach der ersten Runde schon ab, auch wenn es noch Lücken hat.
