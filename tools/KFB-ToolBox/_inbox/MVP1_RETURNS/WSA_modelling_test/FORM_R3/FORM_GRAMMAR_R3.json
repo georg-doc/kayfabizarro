@@ -152,8 +152,10 @@
     "shaft",
     "cap"
   ],
-  "materials": "NEUTRAL_QA_ONLY",
+  "materials": "FINAL_GLB_FAMILY_A_BASE_COLORS; Blender donor-probe procedural relief render-only",
   "formBeforeMaterials": true,
-  "hill_contact": "NOT_YET_RUN",
-  "human_gate": "PENDING"
+  "hill_contact": "MEASURED_FAIL_CONTEXT_EXIT; QUARANTINED",
+  "human_gate": "PENDING",
+  "neutral_materials": "NEUTRAL_QA_ONLY preserved in *_NEUTRAL.glb",
+  "independent_outcome": "FORM_FAIL full7axis mean7.7143; neutralG0 subset PASS8.0"
 }

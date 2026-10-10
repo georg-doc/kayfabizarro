@@ -13,3 +13,5 @@ H = 3.64 lab; target clear width 3H = 10.92 lab. All current colors are neutral 
 Family-A light/mid/warm/deep distribution is not yet applied. No material or fingerprints mask missing construction. No purchased models are included in the candidate.
 
 Actual vertex/contact and walkability tests live in the independent test reports. Planned overlaps in this table are construction intent, not substitutes for measurements. Hill embedding is NOT_RUN at G0.
+
+Final status: Gray proof preceded actual Family-A basecolor/procedural donor-probe styling. Source-bound context was measured and remains FAIL/PARTIAL, not NOT_RUN; see qcheck and Failure Recovery. Only three palette roles are used in the final GLB.
