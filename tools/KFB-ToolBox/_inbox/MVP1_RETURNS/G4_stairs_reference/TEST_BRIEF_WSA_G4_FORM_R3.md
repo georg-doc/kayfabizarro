@@ -32,3 +32,11 @@
 
 ## Single next evidence gate
 WSA creates the new candidate branch from exact R2 source, shows real isolated donors and a gray geometry-only R3 silhouette with actual constructed cheekwork plus foot/shaft/cap terminals. If form proof is unavailable, no material simulation should be called a form pass. After Critic and Georg review, guarded update of the **existing** Asset Scene Composer plugin records the demonstrated result.
+
+## QA correction · brittle string-match fixes, no brief content change
+The initial source-check run reported **17/19 PASS, 2/19 FAIL** only because two assertions matched the wrong literal wording: `keine zweite Plugin-ID` versus actual `kein neuer Plugin-Copy`, and lowercase `kein Auto-Golden` versus capitalized `Kein Auto-Golden`. Both semantic requirements were present in the same immutable brief blob `e16674ac95478f84be4e9b49d5fcd5c2aeb4911d`, as shown below.
+
+18. **PASS after assertion correction**: Existing plugin identity and nonduplication
+19. **PASS after assertion correction**: Explicit Georg review and no Auto Golden
+
+**Final content coverage: 19/19 PASS** (17 original matches + 2 corrected matches). Original initial mismatch record preserved above. This is static brief/source validation, not executed Blender work or independent design acceptance.
