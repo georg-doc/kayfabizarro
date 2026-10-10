@@ -87,7 +87,7 @@ Ranks: **A** = zuerst isoliert prüfen, **B** = alternative Quelle, **C** = derz
 **Georgs Wahl:** noch offen (`picked: null`).
 
 ## Quellen und fehlende Nachweise
-- [G1-Datenblatt JSON](G1_inselkoerper_fels.json). Enthält **30** quellengelistete Kandidaten aus sechs Elementgruppen; private Paid-Pack-Dateien werden nicht verteilt.
+- [G1-Datenblatt JSON](G1_inselkoerper_fels.json). Enthält **29** quellengelistete Kandidaten aus sechs Elementgruppen; private Paid-Pack-Dateien werden nicht verteilt.
 - Private StreakByte-Dateinamen: `Low Poly Floating Islands / Models/{LPFI_PortLand,LPFL_BackyardLand,LPFL_ForestLand,LPFL_RiverLand,LPFL_PondLand,LPFL_PirateCave,LPFL_Iceland}`. Historische Messung: `KFB Island Worldbuilder Lab/docs/ISLAND_ANATOMY_RULES.md`, `tools/out/measure.json`. Die FBX-Namen in der Dropbox-Struktur wurden geprüft; Dreieckzahlen der Teilmeshes und skalierte Proportionsfaktoren nicht.
 - Offizielle Lizenzbelege: [Kenney Nature Kit](https://kenney.nl/assets/nature-kit), [KayKit Medieval Hexagon](https://kaylousberg.itch.io/kaykit-medieval-hexagon), [Quaternius Ultimate Nature](https://quaternius.com/packs/ultimatenature.html). StreakByte-Lizenz ist privat/gekauft, Weitergabe nicht freigegeben.
 - **Noch nicht vorhanden:** Einzelobjekt-Render aus 3/4, Front, Seite, Unterseite; überprüfte Preview-URLs; FBX-Konvertierung; Asset-bbox in H; unabhängiger 20k-Triangle-Test für Einzelteile; farbrollentreue Materialprobe; neue Bildgenerierung/GoldenRef.
