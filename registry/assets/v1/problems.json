@@ -2,7 +2,7 @@
   "counts": {
     "DECK_PATH_NORMALIZED": 2,
     "DUPLICATE_NAME": 716,
-    "MISSING_REFERENCED_FILE": 339,
+    "MISSING_REFERENCED_FILE": 338,
     "UNRESOLVED_FBX_DEPENDENCY": 511,
     "UNRESOLVED_MODEL_DEPENDENCY": 242
   },
@@ -11018,12 +11018,6 @@
       "type": "DUPLICATE_NAME"
     },
     {
-      "assetPath": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "target": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
       "assetPath": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb",
       "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
       "target": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
@@ -17571,5 +17565,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+  "sourceCommit": "dccf75cabd222d951380693d84ab88053ee7e519"
 }
