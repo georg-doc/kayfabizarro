@@ -1,0 +1,75 @@
+{
+  "assetCount": 1,
+  "assets": [
+    {
+      "assetId": "media/public_domain/ia/the-general-1926-item-tile.jpg",
+      "folder": "media/public_domain/ia",
+      "format": "jpg",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "license": "http://creativecommons.org/publicdomain/mark/1.0/",
+      "name": "The General 1926",
+      "packId": "ia",
+      "packRoot": "media/public_domain/ia",
+      "path": "media/public_domain/ia/the-general-1926-item-tile.jpg",
+      "provenance": {
+        "displayName": "explicit-sidecar",
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural",
+        "rights": "explicit-sidecar"
+      },
+      "rightsEvidence": {
+        "bytes": 4070,
+        "mode": "explicit-sidecar",
+        "provider": "ia",
+        "retrievedAt": "2026-09-27T01:34:56+00:00",
+        "sha256": "bbc1321e8ca53998e8bb2761a199d0130dc6230de589087ea62eddaf7888ee19",
+        "sidecarPath": "media/public_domain/ia/the-general-1926-item-tile.jpg.license.json",
+        "sourceFacts": {
+          "identifier": "TheGeneral1926",
+          "reportedBytes": 4070,
+          "selectedFormat": "Item Tile"
+        },
+        "sourceFileUrl": "https://archive.org/download/TheGeneral1926/__ia_thumb.jpg",
+        "sourceId": "TheGeneral1926",
+        "sourcePage": "https://archive.org/details/TheGeneral1926",
+        "sourceRecordUrl": "https://archive.org/metadata/TheGeneral1926",
+        "tier": "free"
+      },
+      "root": "media/public_domain",
+      "sizeBytes": 4070,
+      "source": {
+        "blobSha": "753b59d4810590207fa48aff96a05bc1bd0ce18f",
+        "commit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/public_domain/ia/the-general-1926-item-tile.jpg",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/public_domain/ia/the-general-1926-item-tile.jpg",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "tags": [
+        "silent-film",
+        "buster-keaton",
+        "1926",
+        "public-domain",
+        "smoke-test"
+      ]
+    }
+  ],
+  "collections": [],
+  "dependencyStatus": {},
+  "displayName": "ia",
+  "formats": {
+    "jpg": 1
+  },
+  "kinds": {
+    "image-2d": 1
+  },
+  "packId": "ia",
+  "provenance": "generated-structural",
+  "root": "media/public_domain/ia",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/ia.json"
+}
