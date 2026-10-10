@@ -1,4 +1,15 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.0
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.1
+
+> **ADDITIVE SOURCE AUDIT · 2026-10-10 · PRISON MAZE / TOY SOLDIER / AUDIO / GATEKEEPER**
+>
+> [KFB_PRISON_MAZE_SOURCE_OWNER_AUDIT_AND_CLAUDE_DESIGN_BRIEF_V1_1_2026-10-10.md](./KFB_PRISON_MAZE_SOURCE_OWNER_AUDIT_AND_CLAUDE_DESIGN_BRIEF_V1_1_2026-10-10.md) documents the prison-specific subset of the deferred Minigame/Fluff audit: Kenney Tower Defense verified source family (round/square modular parts, cannon, catapult), Pirate exact tower components still open, KayKit Hexagon tower A/B four-color source, Toy Soldier Rig_Medium and unverified musket/button animations, Medium/Large Frost Orc/source-isolation pending, Gatekeeper route concept, Tiny Skies beam behavior donor not integrated, KFB Audio accepted historic baseline and proposed dedicated Prison Planet soundbed. This is a **document-only pre-audit**; it does NOT close the parent `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` nor authorize live runtime work.
+>
+> Georg's design direction: same Toy Soldier mesh instances with **cobalt-blue uniforms**, **white hat plume**, large front hat numbers; **No.1 = Chief Warden** operates red Maze-reconfigure button from tower console, No.2+ may gatekeep/patrol/serve. Entrance visibly frames the red-button tower; visitor voluntary Maze/WhackMan entry and custodial intake/release remain distinct. Source-proven weapon hold, travel, button-reach, searchlight and source animation must be isolated later, never claimed already working. Distinct prison score and local mechanical sound choreography live within existing KFB Audio owner, including voice ducking and mute. Claude Design later compares orthogonal bowl, radial bowl, inverse mound/hybrid and tower donor composites with real sources, no placeholder geometry.
+>
+> Evidence: concept documentation saved + exact branch/blob readback; source paths inspected; **zero** new 3D donor-isolated renders, browser/sound tests, animations, World state tests, Site, Stage, or Claude Design execution. No new MVP gate, PR, merge, Live or Hub route. Single later gate remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`.
+
+---
+
 
 > **ADDITIVE UPDATE · 2026-10-10 · PRISON TOWER SOURCE PRIORITY**
 >
