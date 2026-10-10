@@ -21,6 +21,8 @@ Es war nie **eine** Linie, sondern drei verschiedene Fehler mit demselben Ausseh
 2. **Farbkarte gespiegelt:** Fehler schon in der Vorlage R2D v0 (`flipY`), 1:1 portiert → Farbstreifen und Farblinie an der Kante. Am 10.10. gefunden.
 3. **Naht unter der Rundung:** Oberseite, Kantenrundung und Scholle sind **getrennte Körper**, die sich an einer Linie treffen. Jede kleine Abweichung in Normale, Farbe oder Schatten macht diese Naht sichtbar. Wird gerade behoben.
 
+**Echte Ursache von Nr. 3 (Bau-Sitzung, 10.10.):** Oberseite und Scholle waren zwei getrennt erzeugte Netze, die nie vernäht wurden. Das Oberseiten-Netz endete in einem versteckten „Tauchstreifen“ unter der Rundung; der Scholle-Oberring war absichtlich 0,4 hoch und 0,15 hinter die Rundung gesteckt („Überlappung statt Stoß“). Unter der Lippe schnitten sich deshalb zwei Flächen entlang einer geraden Linie rund um die ganze Insel. Dort wechselten gleichzeitig Normale (40–60°), Knet-Relief, AO und Farbquelle (Farbkarte gegen Scholle-Farbe). Jeder frühere Fix glich nur eine dieser Eigenschaften an; die Überlappung zweier Körper blieb, und mit ihr die Linie. Lösung: Scholle-Oberring aus der letzten Reihe des Oberseiten-Netzes erzeugen (gleiche Vertices, Normalen, Rolle, AO, Schatten), keine Überlappung, plus automatischer Fugen-Test.
+
 **Grundursache:** Wir haben Symptome einzeln bekämpft, statt die Bauart zu ändern. Solange die Insel aus zusammengesetzten Teilen besteht, entsteht an jeder Fuge eine Linie. Die Regel „keine harten Schnitte“ stand im Text, aber nicht in der Konstruktion.
 
 ## 3 · Warum die „mentalen Modelle“ fehlen
