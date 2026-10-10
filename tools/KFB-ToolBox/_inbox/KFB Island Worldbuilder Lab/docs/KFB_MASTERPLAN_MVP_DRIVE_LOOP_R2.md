@@ -108,6 +108,15 @@ Auch die Autobahn-Familie bekommt die Bande statt einer flachen Wand. Ein dritte
 
 **Maßstab:** Weltautos sind 6 lang (1,65 H). Inselstrecken laufen mit Rennprofil × 1,46, die Joyride-Strecke bleibt unverändert daneben.
 
+**Kreuzungs-Mindestmaße für Stufe 2** (RKIT, Track Core 0.16.1, Familie TOWN 1+1; xm = Mitte → Mündung, jeder Arm läuft mindestens xm gerade aus der Mitte):
+
+| Typ | village, Ecke 9 | village, Ecke 7,1 | city, Ecke 9 | city, Ecke 7,1 |
+| --- | ---: | ---: | ---: | ---: |
+| T, X | 15,4 | 13,5 | 20,0 | 18,1 |
+| Y (120°) | 9,9 | 8,8 | 14,5 | 13,4 |
+
+Gerade auf der durchgehenden Straße bei T bzw. X = 2·xm (village 30,8, city 40,0). Jeder Arm braucht einen Stummel von mindestens 0,5 m; alle Arme haben denselben Seitenquerschnitt. Ein Familienwechsel (Bande → Bord, B5) braucht zusätzlich 19,2 vor der Mündung. Der Town-Ring wird so gelegt, dass Ring-Einfahrt, Markt-Querung und Brückenkopf diese Geraden haben.
+
 ## 3b · Kamera
 
 1. **Spiel-Kamera (Third Person):**
