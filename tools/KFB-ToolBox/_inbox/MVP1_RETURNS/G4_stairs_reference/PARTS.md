@@ -1,5 +1,7 @@
 # PARTS · KFB Town Castle Stairs · G4 R1
 
+> **CURRENT R3 FORM-DESIGN OVERRIDE · 2026-10-11:** Georg has explicitly requested a NEW constructed KFB castle stair; the R1 list of **five continuous meshes** below is only the TECHNICAL DONOR identity and is **not** a mesh-count constraint on R3. The binding new [WSA R3 brief](BRIEF_WSA_G4_FORM_DESIGN_R3_2026-10-11.md) allows a different mesh structure while holding **≤6 buildable form families**. In particular, front architectural terminals need legible **foot/shaft/cap**, cheek walls need composed stone volumes, not extrusion wedges. Preserve old R1/R2 as usable other-context donors.
+
 **DESIGN GUIDANCE ONLY — not a modified runtime asset.** Actual owner model: `tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/KFB_TOWN_CASTLE_CLAY_STAIRS_R1.glb` on `wsa/kfb-modelling-test-stairs-2026-10-10@f954817c97e368099b5e8aa8d6fce35cc9da94d8`.
 
 Preserve the **five original continuous WSA mesh/form groups**. No new masonry wall tile kit, no detached repeated stones or second geometry owner.
