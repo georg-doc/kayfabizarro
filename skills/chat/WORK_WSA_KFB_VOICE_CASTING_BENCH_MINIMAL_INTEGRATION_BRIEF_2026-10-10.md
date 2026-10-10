@@ -1,4 +1,45 @@
 # WSA · KFB Voice Casting Bench — minimal integration brief
+
+## CURRENT S3-BASELINE OVERRIDE · 2026-10-10 · FUTURE WSA PREPARATION ONLY
+
+**Authority:** existing KFB ChatterBox Voice owner / Draft PR #379. This new section overrides obsolete S0/S1/S3 *build-a-bench* directions below. Those remain historical planning evidence, NOT permission to build a second bench. This is preparation for a possible LATER Work/WSA integration, **not an instruction to run WSA now**, spend provider credits, change world runtime or deploy a new Site.
+
+### Current, verified-in-GitHub baseline (re-fetch before future execution)
+- Existing private **KFB Audio** GPT Site is the productive receiving owner/surface: `https://kfb-audio.frizzlebob.chatgpt.site`. The existing `Voice Acting` tab already exists (Site source 0.4, S3 RETURN reports publication and browser validation; a future WSA must open/verify the exact Site again).
+- Current S0 source intake, S1 real-pool adapter (166 stable source records; 13/13 recorded tests), S2 audition fixtures and S3 editing/casting surface are ALREADY IMPLEMENTED/PREPARED. S3 has six editable non-final Story Mode candidates, an English browser-voice audition, the real D conversation bed, ducking A/B, dynamic Triplet editing, clip intake, render-queue/session export and talk/beat event hooks. Do not report those as a new WSA outcome.
+- Piper/eSpeak local rendering is not established on the existing Site; queue/export is not audio synthesis. Live ElevenLabs requires a guarded server-side secret bridge and explicit spend permission. Human listening approval remains **OPEN**.
+- The older WSA text below was created before these facts were reconciled. Never infer a separate ChatterBox voice Site identity from it. Keep the KFB Audio owner authoritative over AudioContext, mixer, D bed, ducking and playback.
+- The existing voice layer remains a ChatterBox speech consumer, not a new semantic owner. The `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09` Triplet/Sinnfeld authoring branch is read-only to this executor; no promotion of candidate Triplets by assumption.
+
+### Human prerequisite / one current gate
+Georg uses the existing `Voice Acting` tab and returns `KEEP / TUNE / CUT` on one source-backed or clearly non-canonical audition Triplet, at minimum across **voice solo / D bed no ducking / D bed with ducking**, with notes on voice identity, expressiveness, fragment seams and bubble timing where audible. This is the next gate of the current Voice owner and remains so until an actual acceptance is recorded.
+
+### Bounded future WSA job after that decision (only when explicitly authorized)
+**Outcome:** one *real, accepted, source-backed* KFB Triplet speech path end-to-end through the EXISTING ChatterBox consumer → VoiceRequest/asset resolver → EXISTING KFB Audio playback/ducking → existing bubble/talk event consumers, then expand only if the isolated slice proves sufficient. Do not make an abstract super-framework.
+
+**Wave A · exact owner/donor census.** Reopen PR #379, KFB Audio PR #365, current ChatterBox/Triplet SSOT, real-pool adapter, source ZIP, accepted Site version, Resident Affect (15 canonical IDs) and existing voice assets. Diff current Site against old WSA brief and mark `EXISTS / PARTIAL / MISSING / CONFLICT`. Show any imported source design/asset independently before integrating. Freeze only tested capability; recorded test counts are not current execution results.
+
+**Wave B · TTS asset production seam.** Define and implement only the smallest missing provider-neutral render recipe/manifest within the existing voice owner: stable `sourceTripletId/partId + sourceRevision + speaker/voiceProfile + locale + affect/acting + position + provider/model/recipeRevision + rights/status + clip/timing refs`. Distinguish *full-triplet curated takes* (preferred when expressive quality matters), *position-aware fragments* (only if listening acceptable) and *live TTS* (only for truly new text); browser speech remains the last fallback. Ensure versioned invalidation, import/export without fresh Work deployment, exact-text visibility, silence and cancellation. No bulk generation or expensive provider requests.
+
+**Wave C · narrow listening + event integration.** Test Demon Lord/Dystopia, Robot One/Utopia and Farmer A/Protopia only after profile/source/rights review; Lorekeeper optional. Begin with a small accepted subset rather than auto-rendering 12 voices. Validate source-based whole-versus-assembled audible seams, voice continuity across emotion changes, stop/interrupt/duck restoration, muted transcript, bubble/beat timing and `TALK_LOOP_NO_LIPSYNC`; do not claim visemes without source timing. Runtime World/Resident implementation is a separate gate after Four-Island A/B and an explicit next-runtime-MVP authorization. One real Social Call must eventually pass the accepted next-MVP voice contract; do not force it into a bench-only pilot.
+
+**Wave D · optional provider and real-time R&D.** Evaluate actual English Piper models, eSpeak NG and ElevenLabs as swappable, separately licensed providers, with audible source evidence. Secure ElevenLabs bridge only with authenticated server-side secret/budget controls and Georg's spend authorization. **Speakrail is an independent full-duplex conversation/turn-taking technology donor, not a TTS voice engine**; test its architecture in read-only source isolation first, then a separate sandbox only if hardware/licenses support it. Do NOT require Speakrail, Voxtral, Gemma or Breeze TTS for the KFB voice MVP. Breeze TTS 2's restricted non-commercial terms make direct production use unacceptable absent separate rights. No replacement of the established ChatterBox semantic selection or KFB Audio engine.
+
+### Cross-product interface separation
+The DocCheck branch `georg-doc/doccheck` / Draft PR #11 contains `lab/audio/DOCCHECK_SPEAKRAIL_FULL_DUPLEX_FEYNMAN_SPATIAL_FLEXIKON_CME_HANDOVER_2026-10-10.md`. Its VoiceIO owns DocCheck microphone/playback and medical assessment stays with DocCheck. WSA may compare *interface/event patterns* across projects, but has no authority to write DocCheck from this KFB brief or transplant the KFB ChatterBox runtime. **Speakrail / Resemble Chatterbox-TTS / internal KFB ChatterBox are three distinct systems.**
+
+### Work acceptance, bounded evidence and authority
+- No new Site, engine shell, dialogue owner, AudioContext, mixer, Resident state writer, paid renders, Cloudflare public route, world/runtime work, PR merge or Live promotion from THIS preparation.
+- Future WSA tests must include successful and fallback speech, identical source text in audible/muted modes, silence/thought behavior, start/stop/interrupt, active ducking state restoration, clip provenance, real human listening, data import/export/reload, and explicit capability/licensing failures. Report exact numerators/denominators for tests *run*, not historical or claimed.
+- Site-capable production only updates and opens the existing KFB Audio Site; exact revision/interaction proof required before any publication claim.
+- **Independent execution:** Outcome = bounded accepted Triplet-speech integration; Builder = authorized Work/WSA Integrator (sole production writer); Tester = deterministic/browser/audio integration QA (read-only); Critic = independent source/UX check (read-only); Guard = existing KFB Production Guard (STOP authority); Human gate = Georg `KEEP/TUNE/CUT`. See `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`. If a seam gets two non-improving repairs, preserve/quarantine that seam and continue unless Guard proves core outcome blocked.
+- Checkpoints at coherent source milestone, measured evidence milestone and owning Return/handoff. Re-fetch exact branch head and files after writes. Do not update Hub/router for routine preparation.
+- Future WSA Return: exact repo/branch/PR/head, changed files, original reused source objects, tests/real listening counts, exact verified Site URL only if actually published, unresolved rights/cost/provider seams, one next gate.
+
+**One current next gate:** `VOICE_ACTING_S3_HUMAN_LISTEN_KEEP_TUNE_CUT`. No WSA execution starts implicitly.
+
+---
+
 Date: 2026-10-10
 Status: IMPLEMENTATION BRIEF · BOUNDED SITE TOOL · NO GAME RUNTIME / WORLD R5 AUTHORIZATION
 Repo: georg-doc/kayfabizarro
