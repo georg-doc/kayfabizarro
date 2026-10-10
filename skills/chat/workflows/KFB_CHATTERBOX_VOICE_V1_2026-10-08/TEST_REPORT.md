@@ -316,3 +316,28 @@ Private KFB Production Control Site Inbox results:
 New executable/functional proof counts: **0 actual ASR/microphone/LLM calls; 0 rendered/provider voices; 0 new browser audio or lip-sync test; 0 3D original-source isolation screenshots; 0 Stage; 0 game runtime**. Historical 13/13 adapter and 87/87 Site checks are not rerun by this preparation.
 
 One owner-local next gate: `KFB_VOICE_HEURISTIC_THREE_ACTOR_SOURCE_AUDITION_R1` — candidate real English speaking samples and one source-backed Triplet timeline, retaining editable casting and later Georg tuning. In-world integration still separately requires the Four-Island A/B gate + explicit runtime authority.
+
+## 2026-10-10 · Three-actor real eSpeak technical audition + versioned audio identity
+
+Mode: bounded owner-local technical proof, **not a human casting pass, Site deployment, or a canonical Triplet consumer test**.
+
+### Render evidence
+- Local available CLI: **eSpeak 1.48.15**, FFmpeg/FFprobe **7.1.5**. `piper` and `espeak-ng` are unavailable in this exact execution environment; no ElevenLabs provider/secret used.
+- Exact source for all three spoken lines: existing `data/CASTING_BENCH_R1_MANIFEST.json` blob `e30dc9b7eb020dbdaf9cc346cc3d4cf0feef77f9`. Status: `CASTING_ONLY_NON_CANON`, no canonical Triplet IDs. This is an **audio pipeline/sound contrast** fixture only, not proof of approved semantic NPC conversation.
+- **6/6 actual eSpeak renders** and **6/6 ffprobe MP3 codec/duration inspections**, each with two variants for Demon Lord, Robot One and Farmer A.
+- Sandbox package `KFB_VOICE_HEURISTIC_AUDITION_R1_ESPEAK_TECHNICAL.zip` (6 MP3s, manifest and README; 8 ZIP entries), 253,347 bytes, SHA-256 `3bc70771f57d690a0c8a91eb5e45f33047149882a48c2162a92731e49e55db49`; ZIP integrity **1/1 PASS**. Exact 6 clip hashes and provenance are persisted in `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json`. **Audio binaries are in the conversation attachment only; not uploaded to GitHub, KFB Production Control or KFB Audio Site.** Future executor should rerender from recorded parameters if the original attachment is not available.
+- Human listening: **0**; Site/browser playback: **0**. The older eSpeak voice is synthetic and not a final natural/neural voice candidate.
+
+### Implementation / local tests
+- Added `runtime/voice-asset-identity.v1.js` as **output-only optional module**, not wired to the audio player or existing `real-pool-adapter.js`. Existing source/semantic/runtime ownership remains unchanged.
+- New `tools/test_voice_asset_identity.cjs`; local Node **24/24 PASS** on the implementation bytes (exact implementation GitHub blob matched local git blob SHA `3cd1bd4a49db842931ea9284acc44ab4f86ff689`). Tests cover stable identities, invalidation on source/text/preset/affect/provider/model/voice/settings/recipe/locale/part changes, missing-version fail-closed, candidate internal audition allowed, shipping-rights/source/casting guard and public approved asset gating. The committed test file was read back; **no GitHub Actions run was performed**, and the committed test-file bytes are not asserted independently executed in CI.
+- Asset identity is a complete JSON tuple (collision-resistant delimiter encoding, **not cryptographic asset signing**); caller may hash it for cache keys. **Rights and human acceptance remain separate release gates**, not meaning embedded in a computed hash. This closes the identified output-identity *design* gap in a dormant adapter; it does not yet integrate cache lookup in the published Site.
+
+### Boundaries / remaining gates
+- 0 actual new canonical Triplet Whole-vs-fragment listening comparisons;
+- 0 new KFB Audio Voice Acting Site publications or exact published browser checks;
+- 0 source-isolated 3D Resident visual proofs;
+- 0 ASR/LLM/free-voice input runs, 0 World/WB2 R5 changes;
+- no paid rendering, no merge or Live.
+
+**Next productive gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` after a Sites-capable WSA reopens the existing KFB Audio Voice Acting tab, resolves one approved source Triplet + actual audible model/rights, reuses the tested identity guard and proves one real start/stop/duck/bubble loop. Heuristic casting can remain tentative until Georg later fine-tunes.
