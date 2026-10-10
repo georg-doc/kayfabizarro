@@ -6,7 +6,7 @@
 - Confirmed a real 2x2 card grid whose artwork and page-level headings cross the exact centre seam.
 - Replaced the destructive 50/50 card-preview cut with a tested 3.5% horizontal seam overlap.
 - `deck-card-crop-smoke.mjs`: **PASS** for all four quadrants and the 70 px centre overlap at a 1000 px source width.
-- Python suite: **57/57 PASS**.
+- Python suite: **58/58 PASS**.
 - Wrangler 4.149.0 dry-run: **PASS**; `.assetsignore` is applied and the sparse acceptance checkout contains 5,497 upload candidates.
 - The first remote Pages proof timed out after 20 minutes with the near-limit boundary, so the public boundary was narrowed further to exclude the bulk `media/2D_Assets/` and `media/3D_Assets/` source libraries.
 - Full tracked-tree calculation: 25,137 tracked files; the bulk library exclusions remove another 18,720 tracked source assets and bring the deployable upper bound below **6,000** files.
@@ -16,7 +16,7 @@ Executed on 2026-10-09 against base `909828efa85a2f85584cb47d6a7cee3fd37989bd`.
 
 ## Passing
 
-- Python test suite: **57/57 PASS**
+- Python test suite: **58/58 PASS**
 - JavaScript syntax checks: **PASS**
 - deterministic deck generation: **PASS**, identical hashes after regeneration
 - source guard: **PASS**, no diff under `media/kfb/`
