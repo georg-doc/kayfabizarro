@@ -1,0 +1,578 @@
+{
+ "schema": "kfb.dance.run.v1",
+ "seed": 7,
+ "music": "reggae",
+ "musicBpm": 92.3,
+ "halfTime": false,
+ "beatFrames": [
+  7,
+  25,
+  40,
+  56,
+  71,
+  86,
+  102,
+  118,
+  133,
+  149,
+  164,
+  179,
+  196,
+  211,
+  227,
+  242,
+  258,
+  273,
+  289,
+  304,
+  320,
+  335,
+  351,
+  367,
+  382,
+  398,
+  413,
+  429,
+  445,
+  460,
+  476,
+  491,
+  507,
+  522
+ ],
+ "cast": [
+  {
+   "id": "farmer",
+   "rig": "M",
+   "styles": [
+    "hiphop",
+    "house"
+   ]
+  },
+  {
+   "id": "farmer_a",
+   "rig": "M",
+   "styles": [
+    "retro",
+    "jazz"
+   ]
+  },
+  {
+   "id": "orc",
+   "rig": "L",
+   "styles": [
+    "novelty",
+    "hiphop"
+   ]
+  },
+  {
+   "id": "gothgirl",
+   "rig": "M",
+   "styles": [
+    "house",
+    "hiphop"
+   ]
+  },
+  {
+   "id": "lorekeeper",
+   "rig": "M",
+   "styles": [
+    "retro",
+    "latin"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "mode": "unison",
+   "blocks": [
+    0,
+    2
+   ],
+   "sequence": [
+    "kfb_dance_house_a",
+    "kfb_dance_hip_hop_c"
+   ]
+  },
+  {
+   "mode": "canon",
+   "blocks": [
+    2,
+    4
+   ],
+   "offsetBeatsPerDancer": 1
+  },
+  {
+   "mode": "unison",
+   "blocks": [
+    4,
+    6
+   ],
+   "sequence": [
+    "kfb_dance_locking_hip_hop_a",
+    "kfb_dance_house_a"
+   ]
+  },
+  {
+   "mode": "freestyle",
+   "blocks": [
+    6,
+    8
+   ]
+  }
+ ],
+ "timelines": {
+  "farmer": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 246,
+    "a1": 304,
+    "scale": 1.1048,
+    "start": 7.25,
+    "mirror": false,
+    "label": "unison",
+    "win": 20
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8839,
+    "start": 71.33,
+    "mirror": false,
+    "label": "unison",
+    "win": 7
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 155,
+    "a1": 221,
+    "scale": 0.9455,
+    "start": 133.2,
+    "mirror": false,
+    "label": "canon +0",
+    "win": 61
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0233,
+    "start": 195.6,
+    "mirror": false,
+    "label": "canon +0",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.2885,
+    "start": 258.02,
+    "mirror": false,
+    "label": "unison",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 416,
+    "a1": 475,
+    "scale": 1.058,
+    "start": 319.87,
+    "mirror": false,
+    "label": "unison",
+    "win": 23
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0233,
+    "start": 382.3,
+    "mirror": false,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8835,
+    "start": 444.72,
+    "mirror": false,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 7
+   }
+  ],
+  "farmer_a": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 246,
+    "a1": 304,
+    "scale": 1.1048,
+    "start": 7.25,
+    "mirror": false,
+    "label": "unison",
+    "win": 20
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8839,
+    "start": 71.33,
+    "mirror": false,
+    "label": "unison",
+    "win": 7
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 155,
+    "a1": 221,
+    "scale": 0.9455,
+    "start": 148.8,
+    "mirror": false,
+    "label": "canon +1",
+    "win": 61
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0143,
+    "start": 211.2,
+    "mirror": false,
+    "label": "canon +1",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.2885,
+    "start": 258.02,
+    "mirror": false,
+    "label": "unison",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 416,
+    "a1": 475,
+    "scale": 1.058,
+    "start": 319.87,
+    "mirror": false,
+    "label": "unison",
+    "win": 23
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 199,
+    "a1": 255,
+    "scale": 1.1147,
+    "start": 382.3,
+    "mirror": true,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 5
+   },
+   {
+    "clip": "kfb_dance_northern_soul_spin_a",
+    "frozen": false,
+    "a0": 7,
+    "a1": 86,
+    "scale": 0.7829,
+    "start": 444.72,
+    "mirror": false,
+    "label": "freestyle \u00b7 retro",
+    "win": 39
+   }
+  ],
+  "orc": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 246,
+    "a1": 304,
+    "scale": 1.1048,
+    "start": 7.25,
+    "mirror": false,
+    "label": "unison",
+    "win": 20
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8839,
+    "start": 71.33,
+    "mirror": false,
+    "label": "unison",
+    "win": 7
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 155,
+    "a1": 221,
+    "scale": 0.9542,
+    "start": 163.85,
+    "mirror": false,
+    "label": "canon +2",
+    "win": 61
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0139,
+    "start": 226.82,
+    "mirror": false,
+    "label": "canon +2",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.2885,
+    "start": 258.02,
+    "mirror": false,
+    "label": "unison",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 416,
+    "a1": 475,
+    "scale": 1.058,
+    "start": 319.87,
+    "mirror": false,
+    "label": "unison",
+    "win": 23
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 139,
+    "a1": 199,
+    "scale": 1.0404,
+    "start": 382.3,
+    "mirror": true,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 4
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 86,
+    "a1": 155,
+    "scale": 0.8963,
+    "start": 444.72,
+    "mirror": false,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 60
+   }
+  ],
+  "gothgirl": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 246,
+    "a1": 304,
+    "scale": 1.1048,
+    "start": 7.25,
+    "mirror": false,
+    "label": "unison",
+    "win": 20
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8839,
+    "start": 71.33,
+    "mirror": false,
+    "label": "unison",
+    "win": 7
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 155,
+    "a1": 221,
+    "scale": 0.9542,
+    "start": 179.45,
+    "mirror": false,
+    "label": "canon +3",
+    "win": 61
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0139,
+    "start": 242.42,
+    "mirror": false,
+    "label": "canon +3",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.2885,
+    "start": 258.02,
+    "mirror": false,
+    "label": "unison",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 416,
+    "a1": 475,
+    "scale": 1.058,
+    "start": 319.87,
+    "mirror": false,
+    "label": "unison",
+    "win": 23
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 120,
+    "a1": 171,
+    "scale": 1.224,
+    "start": 382.3,
+    "mirror": false,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 34
+   },
+   {
+    "clip": "kfb_dance_thriller_part3_a",
+    "frozen": true,
+    "a0": 150,
+    "a1": 198,
+    "scale": 1.2885,
+    "start": 444.72,
+    "mirror": false,
+    "label": "freestyle \u00b7 novelty",
+    "win": 69
+   }
+  ],
+  "lorekeeper": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 246,
+    "a1": 304,
+    "scale": 1.1048,
+    "start": 7.25,
+    "mirror": false,
+    "label": "unison",
+    "win": 20
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.8839,
+    "start": 71.33,
+    "mirror": false,
+    "label": "unison",
+    "win": 7
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 155,
+    "a1": 221,
+    "scale": 0.9458,
+    "start": 195.6,
+    "mirror": false,
+    "label": "canon +4",
+    "win": 61
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 78,
+    "a1": 139,
+    "scale": 1.0139,
+    "start": 258.02,
+    "mirror": false,
+    "label": "canon +4",
+    "win": 3
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.2885,
+    "start": 258.02,
+    "mirror": false,
+    "label": "unison",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 416,
+    "a1": 475,
+    "scale": 1.058,
+    "start": 319.87,
+    "mirror": false,
+    "label": "unison",
+    "win": 23
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "frozen": false,
+    "a0": 86,
+    "a1": 155,
+    "scale": 0.9047,
+    "start": 382.3,
+    "mirror": true,
+    "label": "freestyle \u00b7 hiphop",
+    "win": 60
+   },
+   {
+    "clip": "kfb_dance_hokey_pokey_a",
+    "frozen": false,
+    "a0": 162,
+    "a1": 216,
+    "scale": 1.1453,
+    "start": 444.72,
+    "mirror": true,
+    "label": "freestyle \u00b7 novelty",
+    "win": 14
+   }
+  ]
+ },
+ "end": 542,
+ "name": "DANCE_B_line_unison_canon"
+}

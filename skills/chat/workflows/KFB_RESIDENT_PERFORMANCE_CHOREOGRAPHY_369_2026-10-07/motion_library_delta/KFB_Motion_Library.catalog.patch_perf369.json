@@ -1,0 +1,72 @@
+{
+ "schema": "kfb.motion-catalog.patch.v1",
+ "batch": "perf369",
+ "date": "2026-10-07",
+ "issue": 369,
+ "base": {
+  "catalog": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+  "ref": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c"
+ },
+ "apply": "ADDITIVE · NOT APPLIED · candidate for post-freeze Resident Performance Composer",
+ "libraries": [
+  "libs/Rig_Medium/KFB_Motion_perf369.glb",
+  "libs/Rig_Large/KFB_Motion_perf369.glb"
+ ],
+ "clips": [
+  {
+   "id": "kfb_perf_shrug_a",
+   "label_de": "Schulterzucken (Hände offen)",
+   "group": "gesture",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 35,
+   "durationSec": 1.133,
+   "fps": 30.0,
+   "loop": false,
+   "rootMotion": "none",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "startsOn": "KayKit Idle_A frame 0",
+   "endsOn": "KayKit Idle_A frame 0",
+   "additiveReferenceFrame": 0,
+   "bonesChanged": [
+    "upperarm.l",
+    "upperarm.r",
+    "lowerarm.l",
+    "lowerarm.r",
+    "wrist.l",
+    "wrist.r",
+    "chest",
+    "head"
+   ],
+   "events": {
+    "peak": 8,
+    "holdEnd": 24
+   },
+   "semantic": [
+    "shrug",
+    "doubt",
+    "ask-back (BOGGLE?)",
+    "trade-declined doubt",
+    "embarrassed dunno",
+    "suspicious accent"
+   ],
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf369.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf369.glb"
+   },
+   "sourceFbx": null,
+   "sourcePack": "authored · Blender MCP #369 (KayKit Idle_A base + additive arm/chest/head envelope)",
+   "notes": "Only NEW_CLIP_REQUIRED of #369. Validated on Farmer_B, Farmer_A, Lorekeeper, Goth Girl (M) and Orc Brute (L): toe unchanged, travel 0, hand-in-head 0 (Goth Girl hair 1 sample at peak). Export round-trip <=1e-6 m. Replaceable by a sourced Mixamo shrug under the same id."
+  }
+ ],
+ "layers": {
+  "file": "skills/chat/workflows/KFB_RESIDENT_PERFORMANCE_CHOREOGRAPHY_369_2026-10-07/data/kfb_perf_layers.json",
+  "note": "basePose / relational / microEnvelopes are runtime additive recipes, not baked clips."
+ }
+}

@@ -1,0 +1,415 @@
+{
+ "schema": "kfb.talk.run.v1",
+ "seed": 10,
+ "actors": [
+  {
+   "id": "farmer",
+   "rig": "M",
+   "engagement": 2,
+   "fuse": 0.6,
+   "stubbornness": 0.5,
+   "stance": "neutral"
+  },
+  {
+   "id": "orc",
+   "rig": "L",
+   "engagement": 3,
+   "fuse": 0.9,
+   "stubbornness": 0.9,
+   "stance": "neutral"
+  }
+ ],
+ "outcome": [
+  "outburst",
+  "orc"
+ ],
+ "end": 727,
+ "turns": [
+  {
+   "t0": 10,
+   "t1": 132,
+   "speaker": "farmer",
+   "move": "insist",
+   "heatBefore": 0.9,
+   "heatAfter": 1.15,
+   "interruptedBy": null
+  },
+  {
+   "t0": 136,
+   "t1": 229,
+   "speaker": "orc",
+   "move": "insist",
+   "heatBefore": 1.15,
+   "heatAfter": 1.35,
+   "interruptedBy": null
+  },
+  {
+   "t0": 245,
+   "t1": 307,
+   "speaker": "farmer",
+   "move": "dismiss",
+   "heatBefore": 1.35,
+   "heatAfter": 1.74,
+   "interruptedBy": null
+  },
+  {
+   "t0": 316,
+   "t1": 435,
+   "speaker": "orc",
+   "move": "contradict",
+   "heatBefore": 1.74,
+   "heatAfter": 2.07,
+   "interruptedBy": null
+  },
+  {
+   "t0": 444,
+   "t1": 477,
+   "speaker": "farmer",
+   "move": "rage",
+   "heatBefore": 2.07,
+   "heatAfter": 2.8,
+   "interruptedBy": "orc"
+  },
+  {
+   "t0": 467,
+   "t1": 504,
+   "speaker": "orc",
+   "move": "dismiss",
+   "heatBefore": 2.8,
+   "heatAfter": 3.0,
+   "interruptedBy": "farmer"
+  }
+ ],
+ "timelines": {
+  "farmer": [
+   {
+    "short": "talk|kfb_talk_meeting_a",
+    "variant": "upper",
+    "a0": 899,
+    "a1": 992,
+    "start": 10,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_talk_meeting_a#12"
+   },
+   {
+    "short": "talk|kfb_talk_arguing_a",
+    "variant": "full",
+    "a0": 46,
+    "a1": 83,
+    "start": 95,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "M:kfb_talk_arguing_a#1"
+   },
+   {
+    "short": "gesture|kfb_gesture_thoughtful_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 74,
+    "start": 156,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_gesture_thoughtful_head_shake_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 38,
+    "start": 245,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "M:kfb_react_taunt_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_dismiss_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 32,
+    "start": 275,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "M:kfb_react_dismiss_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_contradict_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 46,
+    "start": 335,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "M:kfb_react_contradict_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_sarcastic_head_nod_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 51,
+    "start": 414,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "M:kfb_gesture_sarcastic_head_nod_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_angry_gesture_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 33,
+    "start": 444,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "rage",
+    "kind": "speak",
+    "win": "M:kfb_gesture_angry_gesture_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 18,
+    "start": 482,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "M:kfb_gesture_annoyed_head_shake_a#0"
+   },
+   {
+    "short": "reaction|kfb_reaction_reacting_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 88,
+    "start": 518,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "outburst",
+    "kind": "outcome",
+    "win": "M:kfb_reaction_reacting_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_shaking_head_no_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 41,
+    "start": 598,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "outburst",
+    "kind": "outcome",
+    "win": "M:kfb_gesture_shaking_head_no_a#0"
+   }
+  ],
+  "orc": [
+   {
+    "short": "exchange01|kfb_react_contradict_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 24,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_react_contradict_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_sarcastic_head_nod_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 54,
+    "start": 80,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "doubt",
+    "kind": "listen",
+    "win": "L:kfb_gesture_sarcastic_head_nod_a#0"
+   },
+   {
+    "short": "talk|kfb_talk_arguing_a",
+    "variant": "full",
+    "a0": 46,
+    "a1": 92,
+    "start": 136,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "L:kfb_talk_arguing_a#1"
+   },
+   {
+    "short": "talk|kfb_talk_meeting_a",
+    "variant": "upper",
+    "a0": 639,
+    "a1": 694,
+    "start": 174,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "insist",
+    "kind": "speak",
+    "win": "L:kfb_talk_meeting_a#9"
+   },
+   {
+    "short": "exchange01|kfb_react_outraged_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 255,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_react_outraged_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_shaking_head_no_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 41,
+    "start": 316,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "contradict",
+    "kind": "speak",
+    "win": "L:kfb_gesture_shaking_head_no_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_annoyed_head_shake_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 54,
+    "start": 349,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "contradict",
+    "kind": "speak",
+    "win": "L:kfb_gesture_annoyed_head_shake_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_contradict_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 40,
+    "start": 395,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "contradict",
+    "kind": "speak",
+    "win": "L:kfb_react_contradict_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_outraged_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 20,
+    "start": 453,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "oppose",
+    "kind": "listen",
+    "win": "L:kfb_react_outraged_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_dismiss_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 31,
+    "start": 467,
+    "mirror": false,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "L:kfb_react_dismiss_a#0"
+   },
+   {
+    "short": "exchange01|kfb_react_taunt_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 16,
+    "start": 490,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "dismiss",
+    "kind": "speak",
+    "win": "L:kfb_react_taunt_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_angry_gesture_a",
+    "variant": "full",
+    "a0": 0,
+    "a1": 79,
+    "start": 510,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "outburst",
+    "kind": "outcome",
+    "win": "L:kfb_gesture_angry_gesture_a#0"
+   },
+   {
+    "short": "gesture|kfb_gesture_yelling_a",
+    "variant": "full",
+    "a0": 72,
+    "a1": 194,
+    "start": 581,
+    "mirror": true,
+    "bi": 8,
+    "bo": 8,
+    "label": "outburst",
+    "kind": "outcome",
+    "win": "L:kfb_gesture_yelling_a#1"
+   }
+  ]
+ },
+ "walks": [],
+ "variety": {
+  "farmer": {
+   "events": 11,
+   "distinctWindows": 11,
+   "distinctClips": 11
+  },
+  "orc": {
+   "events": 13,
+   "distinctWindows": 11,
+   "distinctClips": 11
+  }
+ },
+ "name": "B_heated_argument"
+}
