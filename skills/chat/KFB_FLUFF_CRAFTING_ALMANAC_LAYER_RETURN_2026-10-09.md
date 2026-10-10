@@ -1,4 +1,13 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.7
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.8
+
+> **KISS FOREST PROOF HANDOVER · 2026-10-10 · TINYSKIES LIGHT / SNOW / FOG CLARIFICATION**
+>
+> [KFB_FOREST_KISS_LIVING_WEATHER_LIGHT_EXECUTOR_BRIEF_2026-10-10.md](./KFB_FOREST_KISS_LIVING_WEATHER_LIGHT_EXECUTOR_BRIEF_2026-10-10.md) is the prepared single-scene, source-first handover, and [KFB_FOREST_WEATHER_SOUND_WIND_REUSE_POC_V1_2026-10-10.md](./KFB_FOREST_WEATHER_SOUND_WIND_REUSE_POC_V1_2026-10-10.md) is supersession-corrected to **v1.2**. Georg wants the first proof deliberately cheap: authentic KayKit Forest Nature vegetation in gentle GPU instance wind, source-backed TinySkies rain overlay, optional low-cost simple snowfall, atmospheric fog, local nighttime reveal via existing warm TinySkies **PointLight** as ported in `travel/wip/travel_globe_wsa/globe-v13/avatar-lamp.js`, and existing KFB Audio ambience plus one source-curated howl or scream. True persistent Fog-of-War discovery masks are **NOT currently proven in TinySkies**, and the KFB avatar-lamp source explicitly labels that separately needed mechanism **NOT BUILT**. Overworld design text contains a cheap Fog-of-War concept; stay with local light visibility for this KISS scene, no World/Save expansion. TinySkies `CampsiteScene.ts` source verifies genuine fire light, but a cheap one-light variant must not inherit its desktop four-spot shadow rig. The TinySkies original player light is a warm **point light, not a cone**, and scale must be adapted from a globe. Source-evidence for a TinySkies snowflake port is **NOT VERIFIED**. Tornado remains entirely deferred and portals a separate visual/Closure donor.
+>
+> Source pointers verified: KayKit Forest Clearing `tools/world_atlas/source/scenes/forest-clearing.js` 105 GLTF source vocabulary; Travel `ts-flora.js`, `rain-overlay.js`, `avatar-lamp.js`; TinySkies `RainOverlay.ts`, `SkyPresets.ts`, `DayNightCycle.ts`, `CampsiteScene.ts`. **Documentation/source inspection only; 0 actual new forest renders, 0 runtime/browser tests, 0 SFX audition or Site/Stage proof.** One World/Environment/Audio owner preserved and same Four-Island visual A/B and R4 holds. No PR/merge/Live. Next gate deferred `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`; the mini-POC has no independent P0/Stage authority.
+
+---
+
 
 > **ADDITIVE FOREST WEATHER + TINYSKIES PORTALS / KISS CORRECTION · 2026-10-10**
 >
