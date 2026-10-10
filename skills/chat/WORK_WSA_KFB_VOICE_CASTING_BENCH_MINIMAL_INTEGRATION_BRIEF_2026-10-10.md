@@ -1,5 +1,17 @@
 # WSA · KFB Voice Casting Bench — minimal integration brief
 
+## 2026-10-10 · FINAL PRE-WORK TRIPLET SOURCE STATUS AND SITES ACCEPTANCE
+
+Source-preflight in the current GitHub state: the inspected ChatterBox Studio v2 donor `tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/triplet-stage/donor/resident-chat-ensemble-data.mjs` (blob `cf975a72637630d97fc626962ef591b356ce0bbf`) marks the shared pool `AUTHORING_CANDIDATE` and profiles `DESIGN_CANDIDATE`. Parallel authoring branch `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`, `KFB_TRIPLET_FIRST_PLAYER_BUBBLE_DIALOGUE_DIRECTION_AND_DRIFT_POSTMORTEM_2026-10-10.md` (blob `2608a1b8b0969377c18c73365c719ff989ea7788`) explicitly requires review before promotion. **No accepted production Triplet was verified among these inspected sources.** Future WSA must re-check the current semantic/authoring owner for a source-backed `APPROVED/KEEP` record before claiming a canonical integration.
+
+Do not block the **private technical UI proof** unnecessarily: take one real `AUTHORING_CANDIDATE` Triplet and preserve ID, sourceRevision, status and exact visible text; render/play it as `NON_CANON_AUDITION` only inside the authenticated existing KFB Audio Site. Test voice source → Whole/fragment/fallback → actual playback clock / KFB Audio duck/restore → stable bubble and talk event. `NON_CANON_AUDITION` is an implementation/QA fixture, **not a production/canonical Triplet PASS**. Promotion to game runtime or public accepted voice asset still needs real source approval, rights and subsequent relevant human gate. Never silently rename a candidate to APPROVED to satisfy the test.
+
+Site publication constraint: existing site identity `https://kfb-audio.frizzlebob.chatgpt.site`; publish *in place* only when the Sites-capable executor can open the exact deployed revision and prove real audible playback. If Site publisher unavailable return `SITES_PUBLISHER_REQUIRED` with source packet, not a fake live URL or Cloudflare substitution. The eSpeak ZIP is currently a prior-conversation attachment, **not guaranteed mounted in a future WSA context**; rerender via committed `tools/render_espeak_audition_r1.py` and the receipt, or use verified rights-cleared existing samples.
+
+**Scope:** one in-place Site voice-consumer proof, no World R5 / ASR / free LLM NPC chat / second audio/dialogue owner / new Site, no final heuristic casting freeze, no paid generation without approval. Next gate remains `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1`.
+
+---
+
 ## 2026-10-10 NEXT WORK / WSA INPUT · THREE ACTUAL ESPEAK TECHNICAL AUDITIONS + VERSIONED ASSET IDENTITY
 
 Status: source-level **implementation and local audio generation have now happened**, with **no KFB Audio Site republish** and no user-approved casting voice. This overrides historical S0/S1/S2 "start by building a casting tool" work below.
