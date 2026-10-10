@@ -1,5 +1,11 @@
 # Asset Candidates MVP-1 · additive Changelog
 
+## 2026-10-10 · G1 Bildserien-Koordination / G4 Steinbogen · FAIL-Export
+- Originale [G4-Bridge01-Referenz und img2threejs-Test](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md) source-basiert geprüft; danach **2 KI-Bildversuche**, beide **FAIL** des einzelnen freigestellten Steinbogens (mehrteilige Szene, Requisiten, Beschriftungen). Nicht in die Golden-/Asset-Galerie übernommen, weitere gleichartige Reparatur gestoppt.
+- [Quarantäne- und Fehler-Recovery](G1_G4_BRIDGE_VISUAL_FAILURE_RECOVERY_R1.md), [QA](TEST_REPORT_G1_G4_FAIL_R1.md): originalgetreue PNG-Belege im user-visible `KFB_G4_BRIDGE_FAILURE_RECOVERY_2026-10-10_r1.zip`, **10/10 Export-/Integritätschecks PASS**, **0/2 visueller G4-PASS**. ZIP nicht in GitHub, dort Report mit SHA256 und Quellen.
+- [40-Motive-Liste](G1_SCENE_ASSET_WORKLIST_R1.md)/[JSON](G1_SCENE_ASSET_WORKLIST_R1.json): G4-Brücke auf `visual_attempt_failed_quarantined` gesetzt; keine zweite Runtime oder globaler Stop. Georg: „top! weiter..“ (kein Pick).
+- G1-Vollauflösungsbilder verbleiben bei **0/3 GitHub**, 3/3 GitHub-Vorschaubilder intakt; **ein nächstes Gate**: Original-PNG-Upload aus vorbereitetem ZIP durch autorisierten netzwerkfähigen Client.
+
 ## 2026-10-10 · G1 · 3 Webchat-Bildmotive + 40er Arbeitsliste
 - Georg: „sieht cool aus! aber der look könnte noch cartooniger, stilisiert und weniger realistisch sein, denke ich….“; nach Town-Clay-R2: „super!“; nach Protopia-R1: „super!“; **kein** formeller Donor-Pick oder GoldenRef.
 - [Gerenderte Konzeptbild-Galerie](G1_RENDERED_CONCEPTS_R1.md) / [JSON](G1_RENDERED_CONCEPTS_R1.json): drei echte GitHub-WebP-Vorschauen **256×192**, binäre Blobs 3/3 per SHA und Branch-Head geprüft. **0/3 hochauflösende Original-PNGs** auf GitHub; als generiertes Chat-ZIP `KFB_MVP1_G1_Concept_Images_2026-10-10.zip` inkl. Original-SHA und GH-Uploadskript gesichert.
