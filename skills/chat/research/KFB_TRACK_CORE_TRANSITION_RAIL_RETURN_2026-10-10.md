@@ -1,4 +1,22 @@
 # KFB Track Core · Transition / Dungeon / Rail Research RETURN
+
+## ADDITIVE CHECKPOINT · 2026-10-10 · Webchat source-data isolation
+
+Georg asked to execute the first Track Core edge-adapter gate here in the Webchat. The Webchat completed the **original authored DATA/CONTRACT isolation** using Track Core v0.12 and Joyride J14 T4 source, not the original 3D donor visual inspection.
+
+New files:
+- `skills/chat/research/KFB_TRACK_EDGE_ADAPTER_SOURCE_DATA_CHECK_2026-10-10.md` — detailed audited source values, numeric risk findings, numerical test methodology and exact unresolved acceptance;
+- `skills/chat/research/evidence/KFB_T4_AUTHORED_WINDOWS_SOURCE_2026-10-10.svg` — source-derived T4 A_track_city independent authored windows (DATA-ONLY evidence, not original 3D render).
+
+**Verified source findings**: A_track_city zone ZA at s=1470–1570m, sideLag=.08 and 10 authored windows; C_city_track_deck ZC at s=560–650m, seven windows, no sidewalk; Track Core STANDARD slots derived from true default profile (width14.4, half7.2, shoulder9.18, barrier inner9.9/out11.52, heights1.35/1.18). `SKIN_BLEND.length=32` is a separate color-blend context, not automatically coextensive with 100m T4 look windows. Potential right-side endpoint residual (influence only): curb .008916, sidewalk .012741, props .022299; not yet a confirmed visible defect.
+
+**Checks**: every A/C window ordered in [0,1], four source zones ordered/nonoverlapping; 34 side-layer monotonic smoothstep curves checked over 1001 stations each (34,000 neighbouring step comparisons); C reverse-deck missing sidewalk proved; nominal Track Core cross-section mathematically self-consistent. This was local Python source-value transcription, not executing full Track Core/WebGL.
+
+**Original donor images**: J14 screenshots are listed in `tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/screenshots/`, but the Webchat could not access raw binary pixels via its current GitHub/web download methods. No screenshots are called source-isolated. The new SVG is deliberately labelled DATA-ONLY. No visual/product acceptance, Blender/Three.js contact proof or runtime writes.
+
+**Next gate unchanged**: `TRACK_CORE_EDGE_ADAPTER_SOURCE_ISOLATION_01` with actual J14 source object visually isolated; then one bounded in-owner ground-level street→race reverse adapter candidate only if the proof shows a real missing seam.
+
+---
 Date: 2026-10-10
 Mode: RESEARCH · source/reference handoff only
 Owner: existing Track Core / KFB Racer and Joyride presentation owners
