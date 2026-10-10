@@ -1,0 +1,140 @@
+{
+  "schema": "kfb.voice-tech-audition-receipt/0.1",
+  "date": "2026-10-10",
+  "owner": "KFB ChatterBox Voice / PR #379",
+  "status": "LOCAL_AUDIO_RENDER_PROVEN_NONCANON_NO_HUMAN_AUDIO_QA_NO_SITE_DEPLOY",
+  "source": {
+    "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/CASTING_BENCH_R1_MANIFEST.json",
+    "blob": "e30dc9b7eb020dbdaf9cc346cc3d4cf0feef77f9",
+    "lineStatus": "CASTING_ONLY_NON_CANON",
+    "rule": "Exact existing donor audition sentences; never promote to canonical Triplet pool or World runtime."
+  },
+  "renderer": {
+    "engine": "espeak",
+    "version": "1.48.15",
+    "language": "en",
+    "testEnvironment": "local tool sandbox",
+    "postprocess": "ffmpeg 7.1.5",
+    "encoding": "MP3 mono 44100 Hz 112k"
+  },
+  "availability": {
+    "espeakNative": true,
+    "ffmpeg": true,
+    "piper": false,
+    "espeakNG": false,
+    "elevenLabsBridge": false
+  },
+  "archive": {
+    "name": "KFB_VOICE_HEURISTIC_AUDITION_R1_ESPEAK_TECHNICAL.zip",
+    "bytes": 253347,
+    "sha256": "3bc70771f57d690a0c8a91eb5e45f33047149882a48c2162a92731e49e55db49",
+    "contains": [
+      "README.md",
+      "MANIFEST.json",
+      "six MP3s"
+    ],
+    "storage": "Current conversation downloadable attachment only; NOT GitHub, not Production Control, not Site. Re-render deterministically from CLI recipe if absent in next execution."
+  },
+  "clips": [
+    {
+      "proofId": "dystopia-demon-lord",
+      "voicePreset": "demon_lord",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "Freedom is ultimately the greatest virtue.",
+      "variant": "dark_m7",
+      "espeakVoice": "en+m7",
+      "speed": 135,
+      "pitch": 34,
+      "durationSeconds": 3.213,
+      "sha256": "33a814d52e4c9cba0c19d780a11e8ef7e80cbdc5a0c46611c046c994fcd73447",
+      "fileName": "dystopia-demon-lord__dark_m7.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    },
+    {
+      "proofId": "dystopia-demon-lord",
+      "voicePreset": "demon_lord",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "Freedom is ultimately the greatest virtue.",
+      "variant": "dry_m3",
+      "espeakVoice": "en+m3",
+      "speed": 155,
+      "pitch": 47,
+      "durationSeconds": 2.743,
+      "sha256": "a08ef62a5f02df7148bca5374acb354c3924fdb190a924215382764ed914ef0f",
+      "fileName": "dystopia-demon-lord__dry_m3.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    },
+    {
+      "proofId": "utopia-robot-one",
+      "voicePreset": "robot",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "Your happiness has been optimized to seventy-two percent.",
+      "variant": "klatt",
+      "espeakVoice": "en+klatt",
+      "speed": 165,
+      "pitch": 50,
+      "durationSeconds": 3.579,
+      "sha256": "bc88339e34933503e26877bb69385ee83ac9089a081e72d6a173e068d90643dd",
+      "fileName": "utopia-robot-one__klatt.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    },
+    {
+      "proofId": "utopia-robot-one",
+      "voicePreset": "robot",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "Your happiness has been optimized to seventy-two percent.",
+      "variant": "klatt3",
+      "espeakVoice": "en+klatt3",
+      "speed": 170,
+      "pitch": 56,
+      "durationSeconds": 3.448,
+      "sha256": "d23012f18fcc8553d984a95c07ac9405bc4e58e580c817ca83912b6ba4438833",
+      "fileName": "utopia-robot-one__klatt3.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    },
+    {
+      "proofId": "protopia-farmer-a",
+      "voicePreset": "farmer",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "The rain came late, but so did the tax collector.",
+      "variant": "warm_m1",
+      "espeakVoice": "en+m1",
+      "speed": 153,
+      "pitch": 49,
+      "durationSeconds": 3.683,
+      "sha256": "db0e6601638db4102b7da4dc19c09b56439a0866beefa63fcb868ccca09e86bf",
+      "fileName": "protopia-farmer-a__warm_m1.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    },
+    {
+      "proofId": "protopia-farmer-a",
+      "voicePreset": "farmer",
+      "sourceStatus": "CASTING_ONLY_NON_CANON",
+      "exactText": "The rain came late, but so did the tax collector.",
+      "variant": "alt_f3",
+      "espeakVoice": "en+f3",
+      "speed": 155,
+      "pitch": 57,
+      "durationSeconds": 3.553,
+      "sha256": "c761002cb7040f5f0379f7e5c5fc404da00fb2520314c2476953258f0f6c4076",
+      "fileName": "protopia-farmer-a__alt_f3.mp3",
+      "humanDecision": null,
+      "publicRightsCleared": false
+    }
+  ],
+  "tests": {
+    "sourceRefsRead": 1,
+    "clipsRendered": 6,
+    "ffprobeCodecDurationChecks": 6,
+    "archiveIntegrityChecks": 1,
+    "humanAudibleDecisions": 0,
+    "sitePlaybackChecks": 0,
+    "canonicalAcceptedTriplets": 0
+  },
+  "nextGate": "SOURCE_BACKED_TRIPLET_WHOLE_FRAGMENT_AUDIO_COMPARISON_WITH_ACCEPTED_SOURCE"
+}
