@@ -1,0 +1,1 @@
+Agent /root/r3_form_critic. Parent requested independent final styled/context opening and rerender, seven-axis scoring using exact final tester, separate neutral geometryScore/styleScore, real donor/mood evidence, no invented unverified scores and no geometry writes. Evidence writes limited to critic/final.

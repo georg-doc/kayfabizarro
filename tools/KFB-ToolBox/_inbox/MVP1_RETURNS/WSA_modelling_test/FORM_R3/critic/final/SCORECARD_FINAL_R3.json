@@ -1,0 +1,62 @@
+{
+  "agent_id": "/root/r3_form_critic",
+  "candidate_sha256": "df59928f0d45cbd0ea6669cd78be7adc3850a766000e537c0ab5d09c73cb622c",
+  "result": "FORM_FAIL",
+  "neutral_G0": {
+    "result": "FORM_PASS",
+    "geometryScore": 8.0,
+    "scored_axes": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "original_scorecard": "../SCORECARD_R3.json"
+  },
+  "styleScore": 7,
+  "styleScope": "Blender donor-probe surface only; GLB FamilyA basecolors, not K2 or Golden parity",
+  "axes": [
+    {
+      "axis": 1,
+      "score": 8,
+      "evidence": "Own neutral and styled renders show eight individually legible broad built treads."
+    },
+    {
+      "axis": 2,
+      "score": 8,
+      "evidence": "Base/carrier/staggered large wall pieces/crown make architectural anatomy legible before and after materials."
+    },
+    {
+      "axis": 3,
+      "score": 9,
+      "evidence": "Both foot pillars have unequivocal foot/shaft/projecting cap anatomy."
+    },
+    {
+      "axis": 4,
+      "score": 8,
+      "evidence": "Isolated landing and upper terminations coherently finish stairs. Terrain exit failure recorded separately on axis5."
+    },
+    {
+      "axis": 5,
+      "score": 6,
+      "evidence": "Own rerender now shows source-bound side banks and rear receiving terrace, but hard triangular/overlap creases remain and foot bodies do not read as anchored. Tester: all exit lines now terrain-present yet drops0.26941\u20130.55830Lab, center0.34104; source96/96 affine match; mid/rear wall side contact exists but left foot y0.5 no terrain, right foot terrain below datum."
+    },
+    {
+      "axis": 6,
+      "score": 7,
+      "evidence": "Quiet cartoon proportions, restrained FamilyA colors and fine material surface support diorama reading. Uniform bevel bands and closely symmetric architecture stay more manufactured than STYLE_DIRECTION_ONLY bridge mood. No Golden parity claim."
+    },
+    {
+      "axis": 7,
+      "score": 8,
+      "evidence": "Independent tester confirms final-to-neutral exact geometry parity;8steps,10.92Lab=3H width,7007 sampled tread rays,13036tris/max380,45meshes,source clarity. Runtime swept-controller NOT_RUN and failed terrain exit limit acceptance."
+    }
+  ],
+  "mean": 7.714285714285714,
+  "minimum": 6,
+  "threshold": "mean>=8 and all>=6",
+  "repair_recommendation": "Quarantine/preserve only the unresolved source-bound context seam; if a later authorized pass is made, match receiving terrain to the full landing exit and foot datum, preserving accepted stairs and avoiding more overlapping bank slabs.",
+  "human_Golden": "PENDING_Georg_A_B_FAIL",
+  "revision": "READY_CONTEXT_R1"
+}

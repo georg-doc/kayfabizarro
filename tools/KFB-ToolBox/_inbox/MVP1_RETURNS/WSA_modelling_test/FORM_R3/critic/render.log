@@ -1,0 +1,58 @@
+addon_utils.disable: bl_ext.lab_blender_org.mcp not enabled
+01:11:22 | INFO: Data are loaded, start creating Blender stuff
+01:11:22 | INFO: Blender create Mesh node Crown_L_0
+01:11:22 | INFO: Blender create Mesh node Crown_L_1
+01:11:22 | INFO: Blender create Mesh node Crown_L_2
+01:11:22 | INFO: Blender create Mesh node Crown_L_3
+01:11:22 | INFO: Blender create Mesh node Crown_L_4
+01:11:22 | INFO: Blender create Mesh node Crown_R_0
+01:11:22 | INFO: Blender create Mesh node Crown_R_1
+01:11:22 | INFO: Blender create Mesh node Crown_R_2
+01:11:22 | INFO: Blender create Mesh node Crown_R_3
+01:11:22 | INFO: Blender create Mesh node Crown_R_4
+01:11:22 | INFO: Blender create Mesh node Foundation_L_0
+01:11:22 | INFO: Blender create Mesh node Foundation_L_1
+01:11:22 | INFO: Blender create Mesh node Foundation_L_2
+01:11:22 | INFO: Blender create Mesh node Foundation_R_0
+01:11:22 | INFO: Blender create Mesh node Foundation_R_1
+01:11:22 | INFO: Blender create Mesh node Foundation_R_2
+01:11:22 | INFO: Blender create Mesh node Landing_endstone
+01:11:22 | INFO: Blender create Mesh node Pillar_L_cap
+01:11:22 | INFO: Blender create Mesh node Pillar_L_foot
+01:11:22 | INFO: Blender create Mesh node Pillar_L_shaft
+01:11:22 | INFO: Blender create Mesh node Pillar_R_cap
+01:11:22 | INFO: Blender create Mesh node Pillar_R_foot
+01:11:22 | INFO: Blender create Mesh node Pillar_R_shaft
+01:11:22 | INFO: Blender create Mesh node Tread_01
+01:11:22 | INFO: Blender create Mesh node Tread_02
+01:11:22 | INFO: Blender create Mesh node Tread_03
+01:11:22 | INFO: Blender create Mesh node Tread_04
+01:11:22 | INFO: Blender create Mesh node Tread_05
+01:11:22 | INFO: Blender create Mesh node Tread_06
+01:11:22 | INFO: Blender create Mesh node Tread_07
+01:11:22 | INFO: Blender create Mesh node Tread_08
+01:11:22 | INFO: Blender create Mesh node Upper_termination_L
+01:11:22 | INFO: Blender create Mesh node Upper_termination_R
+01:11:22 | INFO: Blender create Mesh node WallLower_L_1
+01:11:22 | INFO: Blender create Mesh node WallLower_L_3
+01:11:22 | INFO: Blender create Mesh node WallLower_R_1
+01:11:22 | INFO: Blender create Mesh node WallLower_R_3
+01:11:22 | INFO: Blender create Mesh node WallTragstein_L_0
+01:11:22 | INFO: Blender create Mesh node WallTragstein_L_2
+01:11:22 | INFO: Blender create Mesh node WallTragstein_R_0
+01:11:22 | INFO: Blender create Mesh node WallTragstein_R_2
+01:11:22 | INFO: Blender create Mesh node WallUpper_L_1
+01:11:22 | INFO: Blender create Mesh node WallUpper_L_3
+01:11:22 | INFO: Blender create Mesh node WallUpper_R_1
+01:11:22 | INFO: Blender create Mesh node WallUpper_R_3
+01:11:22 | INFO: glTF import finished in 0.09s
+/private/tmp/kfb-wsa-stairs-r3/critic/render.py:10: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('critic_world');scene.world.use_nodes=True;scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.2,.2,.2,1);scene.world.node_tree.nodes['Background'].inputs[1].default_value=.8
+00:03.026  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/critic/three_quarter.png'
+00:04.789  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/critic/front.png'
+00:06.217  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/critic/side.png'
+00:08.699  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/critic/pedestal_detail.png'
+00:11.466  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/critic/upper_detail.png'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

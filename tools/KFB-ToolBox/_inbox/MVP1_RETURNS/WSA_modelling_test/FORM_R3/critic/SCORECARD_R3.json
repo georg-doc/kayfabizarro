@@ -1,0 +1,54 @@
+{
+  "agent_id": "/root/r3_form_critic",
+  "scope": "Independent neutral-form G0 critique; no geometry or production writes",
+  "brief_sha": "e16674ac95478f84be4e9b49d5fcd5c2aeb4911d",
+  "g0": "FORM_PASS",
+  "overall_seven_axis_status": "UNDECIDED_PENDING_CONTEXT_AND_TECH",
+  "axes": [
+    {
+      "axis": 1,
+      "score": 8,
+      "evidence": "Eight distinct broad slabs; softly uneven front edges; clearly built tread sequence in front and three_quarter."
+    },
+    {
+      "axis": 2,
+      "score": 8,
+      "evidence": "Reimported READY_R1 side shows staggered large block joints and differentiated crown segment lengths; base/carrier/crown anatomy is now clearly masonry rather than one CAD wedge. Crown underside no longer bulky wedge segments."
+    },
+    {
+      "axis": 3,
+      "score": 9,
+      "evidence": "Both foot pillars unmistakably show broad foot, compact shaft and projecting cap; pedestal_detail confirms connected anatomy."
+    },
+    {
+      "axis": 4,
+      "score": 8,
+      "evidence": "Wide landing and two upper terminating bodies resolve the run; upper_detail shows continuous destination and closed sides."
+    },
+    {
+      "axis": 5,
+      "score": null,
+      "status": "UNTESTED",
+      "evidence": "No real slope donor/context supplied; isolated asset cannot prove terrain embedment."
+    },
+    {
+      "axis": 6,
+      "score": 7,
+      "evidence": "Differing crown lengths and stepped block joints remove the most repetitive prior rhythm. Quiet cartoon massing is convincing; uniformly bevelled slab edges and close bilateral similarity retain some manufactured character."
+    },
+    {
+      "axis": 7,
+      "score": null,
+      "status": "PENDING_TECH",
+      "evidence": "Eight steps visually countable and source isolations reviewed; actual 3H, collisions and walkability are tester responsibility and have not been independently signed off by this critic."
+    }
+  ],
+  "tested_visual_mean": 8.0,
+  "minimum_tested_score": 7,
+  "threshold": "mean >=8; no score <6; untested axes excluded, never assigned invented scores",
+  "repair_recommendation": "No further repair required for isolated G0. For optional later form refinement, one bounded pass on the uniform bevel/corner treatment of wall crowns could strengthen handbuilt character; do not add noise or tiny blocks.",
+  "golden": "No Georg A/B/FAIL decision claimed",
+  "revision": "READY_R1",
+  "candidate_sha256": "1291d54fed33c86ff8edad6bbcdf96a8a1a97fcdb499ff90d4892cca6404190b",
+  "gate_scope": "Neutral isolated G0 visual axes only; not full seven-axis asset acceptance"
+}

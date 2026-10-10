@@ -1,0 +1,61 @@
+{
+  "agent_id": "/root/r3_form_critic",
+  "candidate_sha256": "df59928f0d45cbd0ea6669cd78be7adc3850a766000e537c0ab5d09c73cb622c",
+  "result": "FORM_FAIL",
+  "neutral_G0": {
+    "result": "FORM_PASS",
+    "geometryScore": 8.0,
+    "scored_axes": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "original_scorecard": "../SCORECARD_R3.json"
+  },
+  "styleScore": 7,
+  "styleScope": "Blender donor-probe surface only; GLB FamilyA basecolors, not K2 or Golden parity",
+  "axes": [
+    {
+      "axis": 1,
+      "score": 8,
+      "evidence": "Own neutral and styled renders show eight individually legible broad built treads."
+    },
+    {
+      "axis": 2,
+      "score": 8,
+      "evidence": "Base/carrier/staggered large wall pieces/crown make architectural anatomy legible before and after materials."
+    },
+    {
+      "axis": 3,
+      "score": 9,
+      "evidence": "Both foot pillars have unequivocal foot/shaft/projecting cap anatomy."
+    },
+    {
+      "axis": 4,
+      "score": 8,
+      "evidence": "Isolated landing and upper terminations coherently finish stairs. Terrain exit failure recorded separately on axis5."
+    },
+    {
+      "axis": 5,
+      "score": 5,
+      "evidence": "Own context render shows rear hill abutment, no side/foot embedment; tester actual surface rays show center exit terrain0.70887Lab below landing, x4 drop4.6003, x5.46 no hit. Real donor provenance is valid but connection is not."
+    },
+    {
+      "axis": 6,
+      "score": 7,
+      "evidence": "Quiet cartoon proportions, restrained FamilyA colors and fine material surface support diorama reading. Uniform bevel bands and closely symmetric architecture stay more manufactured than STYLE_DIRECTION_ONLY bridge mood. No Golden parity claim."
+    },
+    {
+      "axis": 7,
+      "score": 8,
+      "evidence": "Independent tester confirms final-to-neutral exact geometry parity;8steps,10.92Lab=3H width,7007 sampled tread rays,13036tris/max380,45meshes,source clarity. Runtime swept-controller NOT_RUN and failed terrain exit limit acceptance."
+    }
+  ],
+  "mean": 7.571428571428571,
+  "minimum": 5,
+  "threshold": "mean>=8 and all>=6",
+  "repair_recommendation": "Repair only the source-bound terrain connection seam: place the real hill as a receiving continuous surface at the entire landing exit, with side bearing/foot embedment, then verify actual surface heights across full clear width and rerender contact. Do not alter accepted stair anatomy or mask the seam with material.",
+  "human_Golden": "PENDING_Georg_A_B_FAIL"
+}

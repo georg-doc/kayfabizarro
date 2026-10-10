@@ -1,0 +1,136 @@
+00:00.574  blend            | Read blend: "/private/tmp/kfb-wsa-stairs-r3/output/R3_NEUTRAL_WORK.blend"
+/private/tmp/kfb-wsa-stairs-r3/scripts/style_and_context.py:13: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=hex_rgba(h);p=m.node_tree.nodes['Principled BSDF'];p.inputs['Base Color'].default_value=m.diffuse_color;p.inputs['Roughness'].default_value=.88
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+01:18:57 | INFO: Starting glTF 2.0 export
+01:18:57 | INFO: Extracting primitive: Crown_L_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_L_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_L_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_L_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_L_4
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_R_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_R_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_R_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_R_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Crown_R_4
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_L_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_L_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_L_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_R_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_R_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Foundation_R_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Landing_endstone
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_L_cap
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_L_foot
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_L_shaft
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_R_cap
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_R_foot
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Pillar_R_shaft
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_01
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_02
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_03
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_04
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_05
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_06
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_07
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Tread_08
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Upper_termination_L
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: Upper_termination_R
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallLower_L_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallLower_L_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallLower_R_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallLower_R_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallTragstein_L_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallTragstein_L_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallTragstein_R_0
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallTragstein_R_2
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallUpper_L_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallUpper_L_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallUpper_R_1
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Extracting primitive: WallUpper_R_3
+01:18:57 | INFO: Primitives created: 1
+01:18:57 | INFO: Finished glTF 2.0 export in 0.061254024505615234 s
+/private/tmp/kfb-wsa-stairs-r3/scripts/style_and_context.py:13: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=hex_rgba(h);p=m.node_tree.nodes['Principled BSDF'];p.inputs['Base Color'].default_value=m.diffuse_color;p.inputs['Roughness'].default_value=.88
+00:04.545  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/front.jpg'
+00:08.082  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/three_quarter.jpg'
+00:10.324  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/side.jpg'
+00:12.320  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/foot_eye.jpg'
+
+01:19:09 | INFO: Data are loaded, start creating Blender stuff
+01:19:09 | INFO: Blender create Mesh node hill_single_A
+01:19:09 | INFO: glTF import finished in 0.04s
+01:19:09 | INFO: Data are loaded, start creating Blender stuff
+01:19:09 | INFO: Blender create Mesh node hill_single_A
+01:19:09 | INFO: glTF import finished in 0.00s
+01:19:09 | INFO: Data are loaded, start creating Blender stuff
+01:19:09 | INFO: Blender create Mesh node hill_single_A
+01:19:09 | INFO: glTF import finished in 0.00s
+00:14.967  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/hill_connection.jpg'
+00:17.969  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/kfb_clay/hill_contact_detail.jpg'
+Info: Saved as "R3_STYLED_CONTEXT_WORK.blend"
+01:19:14 | INFO: Starting glTF 2.0 export
+01:19:14 | INFO: Extracting primitive: hill_single_A
+01:19:14 | INFO: Primitives created: 1
+01:19:14 | INFO: Extracting primitive: hill_single_A.001
+01:19:14 | INFO: Primitives created: 1
+01:19:14 | INFO: Extracting primitive: hill_single_A.002
+01:19:14 | INFO: Primitives created: 1
+01:19:14 | INFO: Finished glTF 2.0 export in 0.008580684661865234 s
+
+01:19:14 | INFO: Data are loaded, start creating Blender stuff
+01:19:14 | INFO: Blender create Mesh node KFB_ClayStair_Buttress_LMesh
+01:19:14 | INFO: Blender create Mesh node KFB_ClayStair_Buttress_RMesh
+01:19:14 | INFO: Blender create Mesh node KFB_ClayStair_CoreMesh
+01:19:14 | INFO: Blender create Mesh node KFB_ClayStair_Wall_LMesh
+01:19:14 | INFO: Blender create Mesh node KFB_ClayStair_Wall_RMesh
+01:19:14 | INFO: glTF import finished in 0.02s
+00:20.745  render           | Saved: '/private/tmp/kfb-wsa-stairs-r3/output/renders/source/R2_styled_three_quarter.jpg'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

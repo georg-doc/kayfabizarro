@@ -1,0 +1,21 @@
+{
+ "agent_id":"/root/r3_form_critic",
+ "scope":"Independent neutral-form G0 critique; no geometry or production writes",
+ "brief_sha":"e16674ac95478f84be4e9b49d5fcd5c2aeb4911d",
+ "g0":"FORM_FAIL",
+ "overall_seven_axis_status":"UNDECIDED_PENDING_CONTEXT_AND_TECH",
+ "axes":[
+  {"axis":1,"score":8,"evidence":"Eight distinct broad slabs; softly uneven front edges; clearly built tread sequence in front and three_quarter."},
+  {"axis":2,"score":7,"evidence":"Separate base, carrier blocks and crowns visibly replace R2 homogeneous wedges. Side still presents a continuous triangular envelope with mostly vertical divisions, little stone bonding."},
+  {"axis":3,"score":9,"evidence":"Both foot pillars unmistakably show broad foot, compact shaft and projecting cap; pedestal_detail confirms connected anatomy."},
+  {"axis":4,"score":8,"evidence":"Wide landing and two upper terminating bodies resolve the run; upper_detail shows continuous destination and closed sides."},
+  {"axis":5,"score":null,"status":"UNTESTED","evidence":"No real slope donor/context supplied; isolated asset cannot prove terrain embedment."},
+  {"axis":6,"score":6,"evidence":"Quiet chunky cartoon proportions and restrained asymmetry, but long near-identical crown plates, regular vertical wall sections and uniform bevel bands retain a manufactured/CAD character. Front crown sequence is notably repetitive."},
+  {"axis":7,"score":null,"status":"PENDING_TECH","evidence":"Eight steps visually countable and source isolations reviewed; actual 3H, collisions and walkability are tester responsibility and have not been independently signed off by this critic."}
+ ],
+ "tested_visual_mean":7.6,
+ "minimum_tested_score":6,
+ "threshold":"mean >=8; no score <6; untested axes excluded, never assigned invented scores",
+ "repair_recommendation":"One bounded geometry pass on the wall/crown family: make a small number of deliberately different large stone groupings with legible staggered bearing joints and varied crown lengths/end contours, preserving existing tread and pillar anatomy. Do not try to cure the remaining CAD rhythm through material/noise.",
+ "golden":"No Georg A/B/FAIL decision claimed"
+}

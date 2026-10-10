@@ -15,15 +15,17 @@ def stone(name,family,cx,y0,y1,z0,z1,w,seed,bevel=.14,slope=0,topflat=False):
  # Authored eight-corner outlines, shifted shoulders and broad chamfers. No sinusoidal surface/noise.
  # Ring widths differ deliberately; bearing surfaces stay planar and closed.
  a=.18+.025*(seed%3);b=.24+.03*((seed+1)%3)
+ if topflat:a=b=.02
  outline=[(-1,-1+a),(-1+a,-1),(1-b,-1),(1,-1+b),(1,1-a),(1-a,1),(-1+b,1),(-1,1-b)]
  verts=[]
  for ring in range(2):
   for i,(x,y) in enumerate(outline):
    skew=0 if topflat else ((seed%3)-1)*.045*(y+1)/2
-   xx=cx+x*w/2+skew;yy=y0+(y+1)/2*(y1-y0)
+   shoulder=[.97,1.03,1.00,.94,1.02,.96,1.04,1.00][(i+seed)%8] if family in ('bearing','crown') and ring==1 else 1
+   xx=cx+x*w/2*shoulder+skew;yy=y0+(y+1)/2*(y1-y0)
    # slight intentional front-outline differences, with continuous flat treads
    if family=='tread' and y<-.8: yy+=.035*((seed%3)-1)*(x+1)/2
-   zz=z0 if ring==0 else z1+slope*(yy-y0)
+   zz=z0+(slope*(yy-y0) if family=='crown' else 0) if ring==0 else z1+slope*(yy-y0)
    verts.append((xx,yy,zz))
  faces=[tuple(range(7,-1,-1)),tuple(range(8,16))]
  for i in range(8):j=(i+1)%8;faces.append((i,j,8+j,8+i))
@@ -57,12 +59,18 @@ for side,sign in [('L',-1),('R',1)]:
  # Four large hand-set masonry bodies. Their slope follows the stair, but the base/course and joints read as construction.
  for i,(a,b) in enumerate(zip(cuts,cuts[1:])):
   top=2.16+.286*a
-  asset.append(stone('WallTragstein_%s_%d'%(side,i),'bearing',cx,a-.05,b+.05,1.20,top,1.76,i+7,.14,slope=.286))
+  if i in (1,3):
+   bedding=2.62 if i==1 else 4.32
+   asset.append(stone('WallLower_%s_%d'%(side,i),'bearing',cx,a-.05,b+.05,1.20,bedding,1.84,i+7,.14))
+   asset.append(stone('WallUpper_%s_%d'%(side,i),'bearing',cx,a-.05,b+.05,bedding-.12,top,1.76,i+9,.14,slope=.286))
+  else:asset.append(stone('WallTragstein_%s_%d'%(side,i),'bearing',cx,a-.05,b+.05,1.20,top,1.76,i+7,.14,slope=.286))
   wall_records.append(dict(side=side,start=a,end=b,bearing=1.20,upper_start=top,slope=.286))
- crowns=[.45,3.45+(0.2 if side=='R' else 0),7.35,11.3,15.0,TOTAL]
+ crowns=[.45,3.05+(0.25 if side=='R' else 0),7.85,10.85,15.55,TOTAL]
  for i,(a,b) in enumerate(zip(crowns,crowns[1:])):
   bottom=2.16+.286*(a-.07)-.08
-  asset.append(stone('Crown_%s_%d'%(side,i),'crown',cx,a-.07,b+.07,bottom,bottom+.44,1.98,i+13,.14,slope=.286))
+  thickness=[.48,.61,.44,.57,.49][i]
+  width=[2.01,1.96,2.06,1.98,2.03][i]
+  asset.append(stone('Crown_%s_%d'%(side,i),'crown',cx,a-.07,b+.07,bottom,bottom+thickness,width,i+13,.14,slope=.286))
  # Planned upper termination is a wider end-block at landing, not a free ramp tip.
  asset.append(stone('Upper_termination_'+side,'landing',cx,TOTAL-1.15,TOTAL+.20,0,7.72,2.15,17,.19))
  # Two lower terminal pillars: visible load-bearing foot, squat shaft, overhanging cap.

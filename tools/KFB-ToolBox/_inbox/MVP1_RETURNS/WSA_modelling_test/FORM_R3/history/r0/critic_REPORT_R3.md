@@ -1,0 +1,10 @@
+# Independent R3 neutral form critique
+Agent `/root/r3_form_critic`. Live GitHub brief read from planning/kfb-g4-stairs-reference-2026-10-10, blob e16674ac95478f84be4e9b49d5fcd5c2aeb4911d.
+
+G0: **FORM_FAIL against the requested >=8 visual quality threshold**. This is a substantial architectural improvement over R2, not the old wedge-plus-blob: the foot pillars now have real anatomy and the wall has base/carrier/crown roles. However, the front and side still show a regular kit of matching beveled crown plates and vertical wall slices; handbuilt KFB character is not yet strong enough. Tested neutral visual scores: 8 / 7 / 9 / 8 / UNTESTED / 6 / PENDING_TECH. Tested mean 7.6, minimum 6. The seven-axis total remains UNDECIDED until terrain and technical proof; missing axes are not zero and not invented PASS.
+
+Independent proof: opened Blender 5.2.2, factory-empty scene, imported actual output/KFB_TOWN_CASTLE_STAIRS_FORM_R3.glb, replaced all mesh materials with one flat gray, created neutral lighting and five own 1600x1000 PNG views. Cameras use the supplied lock for comparison; no production scene objects, clay or textures reused. See render.py, render.log and import.json. First launch used unsupported EEVEE_NEXT enum, corrected to this version's EEVEE; final run completed all images. No geometry changed.
+
+Inspected own three_quarter, front, side, pedestal_detail, upper_detail and actual source isolation contact sheet showing R1, R2, KayKit walled/wide and Kenney stone/wall. R2 has uninterrupted wedge bodies and blob ends; R3 clearly improves architectural semantics. Source resemblance supports proportional inheritance but is not a KFB Golden claim.
+
+One repair recommendation: make a small number of deliberately different wall/crown stone groupings with visible staggered bearing joints and varied crown lengths/end contours, preserving tread and pillar anatomy. Geometry must carry the handbuilt reading before material. No second recommendation and no authority to replace Production Guard or Georg's A/B/FAIL.
