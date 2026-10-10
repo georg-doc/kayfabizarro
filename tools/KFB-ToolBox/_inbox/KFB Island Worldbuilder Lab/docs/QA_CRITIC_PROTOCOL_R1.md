@@ -10,6 +10,10 @@ Stand: 2026-10-09. Fertige Vorlage, damit die Abnahme ab Stufe 1 sofort mitläuf
 - **Ehrlich berichten:** Georg sieht Punkte, Befunde und Bilder ungeschönt; „bestanden“ nur nach Schwelle.
 - **Stopp:** Nach 2 erfolglosen Reparaturrunden wird gestoppt und Georg gefragt. Ein Kriterium unter 4 heißt zurück zum Konzept, nicht weiter reparieren.
 
+## 1a · Stufe −1: Vorlage zuerst („Use what works“, Georg 10.10.)
+
+Vor jedem neuen Bauteil meldet die bauende Sitzung der Steuerung je Element: vorhandene Vorlage (Pfad, three-Version, läuft ja/nein), was übernommen wird, was neu gebaut werden muss und warum. Erst nach Freigabe wird gebaut. **Nachbau ohne Freigabe = nicht bestanden.** Abnahme nur im Lab mit Spielkameras (eine Laufzeit). Karte der Vorlagen: `docs/MVP1_DONOR_AND_MODEL_MAP_R1.md`.
+
 ## 1b · Stufe 0: Bauqualität vor jedem Bild (hart, automatisch; Georg 10.10.)
 
 Anlass: Die Steinbogen-Renders im Bauweise-Blatt v7 (schwebende Steine, Lücken im Mauerwerk, verschmierte Bogensteine, nackter Fahrbahn-Kasten, lila Platzhalter-Kugeln) sind durch die Abnahme gerutscht, auch durch die Steuer-Sitzung. **Nichts geht mehr an Georg oder an einen Kritiker, bevor diese Prüfungen als Messung bestanden sind.** Sie laufen als Skript über die Szene, nicht per Auge.

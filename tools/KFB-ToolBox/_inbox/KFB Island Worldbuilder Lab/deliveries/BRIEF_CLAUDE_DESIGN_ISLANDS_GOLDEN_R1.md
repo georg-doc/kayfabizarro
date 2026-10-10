@@ -47,6 +47,15 @@ Du hast die R2D-v0-Insel und die Scholle v7 entworfen; das ist bisher das Einzig
    - Fahrbahn und Gehwege auf der Brücke.
 6. **Pfeiler-Brocken:** Brocken mit zwei Widerlager-Nischen und zwei Bogenansätzen.
 
+**Runde 2 (nach B1–B6, gleiche Art):**
+7. **Ton-Treppe zur Burg:** Treppe in der Terrasse bzw. im Burgfels, Familie-A-Steine, Wangenmauern, Podest; Stufenmaß passend zur Figur.
+8. **Gebäude am Boden:** Burg, Marktstand, Haus sitzen mit Sockel bzw. Fundament auf dem Gelände, Gras und Rubbel am Fuß; nicht schwebend, nicht eingesunken.
+9. **Marktplatz:** Anordnung von Ständen, Clown-Podest, Billboard, Wegen; Dichte und Blickachse zur Burg.
+10. **Weg am Hang:** Weg auf den Eremiten-Hügel (Serpentinen bzw. Stufen), Böschungen, Steigung begehbar.
+11. **Teichufer:** Wasser, Ufer, Gras ohne harten Ring.
+12. **Tunnelportal:** Showcase-Tunnel in Protopia, Portal aus Familie A bzw. Fels, Lichtraum fürs Auto.
+13. **Figur am Boden:** KayKit-Figur stehend und gehend auf Gras bzw. Pflaster, Schatten, Füße setzen auf.
+
 Die Blätter werden nach Georgs Abnahme **Ziel für die Bau-Sitzung und Maßstab für den blinden Kritiker**. Bitte deshalb sauber, aus festen Kameras und ohne Platzhalter-Look.
 
 ## 2 · Regeln (nicht verhandelbar)

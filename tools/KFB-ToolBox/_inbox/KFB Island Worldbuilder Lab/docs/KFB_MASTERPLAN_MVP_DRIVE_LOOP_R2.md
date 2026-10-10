@@ -22,7 +22,7 @@ Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später l
    - die 8 gekauften Demo-Inseln als Kompositionsvorlage;
    - Joyride als Fahr- und Banden-Look;
    - KayKit, Tiny Treats und Kenney als Haupt-Kits.
-   Nachbauen erzeugt eine zweite Wahrheit.
+   Nachbauen erzeugt eine zweite Wahrheit. **Pflicht-Schritt „Vorlage zuerst“** (QA-Protokoll §1a): vor jedem Bauteil Vorlage melden, Steuerung gibt frei; Nachbau ohne Freigabe = nicht bestanden. Karte: `docs/MVP1_DONOR_AND_MODEL_MAP_R1.md`.
 4. **Ein Besitzer je Baustein (§4).** Wer etwas braucht, bindet den Besitzer an und baut es nicht nach.
 5. **Darstellung zur Abnahme.** 3D-Bauteile zeigt man als echte 3D-Renders in Knet-Material mit Profilschnitt, und zwar aus den Spielkameras. Eine Vergrößerung auf wenige Einheiten zählt nicht. Eine 2D-Skizze dient nur als Lageplan.
 6. **Abnahme-Kette.** Erst laufen die harten Regeln automatisch, dann der blinde Kritiker mit Punkten (Mittel ≥ 8, kein Wert < 6, Weltlogik ≥ 7), erst danach sieht Georg das Ergebnis. Nach 2 erfolglosen Reparaturen ist Stopp; ein Kriterium unter 4 heißt zurück zum Konzept.
