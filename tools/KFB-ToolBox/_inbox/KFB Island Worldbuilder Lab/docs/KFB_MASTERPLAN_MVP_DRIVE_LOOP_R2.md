@@ -16,6 +16,7 @@ Heimat: **KFB Island Worldbuilder Lab** (lokal, Vite + three.js r186). Später l
 ## 0 · Grundsätze (gelten vor allem anderen)
 
 1. **Weltlogik zuerst (§00).** Bevor ein Element gebaut wird, steht ein Satz: Wer hat es gebaut oder wachsen lassen, womit, warum, und was erzählt es? Lässt sich die Geschichte nicht erzählen, wird das Element nicht gebaut. Messregeln sind nur die Untergrenze.
+2. **Gebasteltes Diorama (Georg 10.10.):** Die Welt sieht aus wie von den Bewohnern bzw. einem Dioramenbauer und Stop-Motion-Künstler gebaut. Knete ist das Grundmaterial, **Materialmix ist erlaubt** (Balsaholz, Pappe, Kork, Filz, Draht, Moos), wo er hilft. Nie konstruiert bzw. CAD-artig, nie repetitiv.
 2. **Keine harten Schnitte, keine sichtbaren Kanten (§01).** Jeder Übergang wirkt organisch, cartoonig und plausibel aus Knetgummi geformt. Gebaute Enden wie Kantenstein, Bordsteinkopf, Bandenkopf und Portal sind gerundete Knet-Bauteile mit Rubbel bzw. Knetflecken. Freie Enden runden sich durch Wachstum oder Verfall. Verboten sind Farbverläufe, Alpha-Übergänge, gerade Schnittlinien, Rausch-Gesprenkel und dunkle Ringe unter Objekten.
 3. **Vorlagen statt Basteln.** Gearbeitet wird mit dem, was nachweislich funktioniert hat:
    - R2D v0 bzw. R2B als Inselbasis;

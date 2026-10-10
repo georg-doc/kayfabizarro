@@ -15,12 +15,13 @@ Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Tre
 **Filter für externe Treffer:**
 - **von Menschen gemacht**; Treffer mit dem Tag „ai-generated“ sind ausgeschlossen (die Stichprobe zeigte graue Klötze);
 - **Lizenz** CC0 bzw. frei mit kommerzieller Nutzung;
-- **Look:** Cartoon bzw. stilisiert, gerundete Kanten, wenige große Formen; kein Realismus, kein Pixel- bzw. Voxel-Look;
+- **Look:** Cartoon bzw. stilisiert, gerundete Kanten, wenige große Formen, gern handgemacht bzw. Diorama-Charakter (Knete, Holz, Pappe); kein Realismus, kein Pixel- bzw. Voxel-Look;
 - **Format:** glb bzw. gltf bevorzugt, sonst fbx bzw. obj; Polygonzahl im Spielbereich (≤ 20 k je Teil).
 
 ## 3 · Was ein guter Kandidat erfüllt (für alle Gruppen)
 
 - **§00 Weltlogik:** Man versteht, wer es gebaut hat bzw. warum es so aussieht. Die Inseln sind aus der zersprengten Erde gebrochene Schollen (Erdschichten, Bruchkanten mit Alter).
+- **Dioramen-Look mit Materialmix** (Georg 10.10.): Die Welt ist ein **gebasteltes Diorama**, wie von den Bewohnern selbst bzw. von einem Dioramenbauer und Stop-Motion-Künstler gemacht. Knete ist das Grundmaterial, aber **Materialmix ist erlaubt und erwünscht**, wo er hilft, etwas zu kaschieren oder besser zu bauen: Balsaholz, Pappe, Kork, Filz, Draht, Stoff, bemalte Steinchen, Moos. Verboten bleibt nur: **konstruiert bzw. CAD-artig aussehen** und **repetitiv** wirken (gleiche Teile in gleichem Abstand, Raster, Kopien).
 - **§01 keine harten Schnitte:** gerundete, knetige Kanten; keine scharfen Schnittflächen, keine dünnen Platten bzw. Krempen, keine Linien zwischen Teilen.
 - **Maßstab K2:** Figur = 1 H (KayKit-Medium), Tür ≥ 1,15 H, Stockwerk = 1 MC (= 1,76 H). Gib je Kandidat an, wie hoch bzw. breit er im Verhältnis zu einer KayKit-Figur ist bzw. welcher Skalierungsfaktor nötig wäre.
 - **Umfärbbar:** einfache Materialien bzw. Farbflächen (Gradient-Atlas oder wenige Farben), damit das Lab sie auf die KFB-Farbrollen umfärben kann (Knetstein, Gras, Fels, Asphalt).
@@ -41,9 +42,10 @@ Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Tre
 
 1. Die Gruppe aus §4 lesen; je Element **3–5 Kandidaten** suchen, eigene Bibliothek zuerst.
 2. Pro Kandidat festhalten: Name, Quelle bzw. Pfad bzw. URL, Vorschaubild-URL, Lizenz, von Menschen gemacht (ja/nein), Format, Polygonzahl, Maßstab gegenüber KayKit-Figur, **Kurzurteil** zu §3 (Weltlogik, Kanten, Maßstab, Umfärbbar, Passt zusammen), **Empfehlung** (A erste Wahl, B möglich, C nur als Vorlage), Risiken.
-3. **Kandidatenblatt** erstellen (siehe §6) und auf GitHub persistieren.
-4. **Georg zur Abnahme** vorlegen: pro Element eine Wahl (`picked`) oder „weiter suchen“ mit Grund. Georgs Wahl in Blatt und JSON nachtragen und erneut persistieren.
-5. Bei „weiter suchen“: nächste Runde mit Georgs Grund als zusätzlichem Filter, höchstens zwei Runden je Element; danach als Lücke markieren.
+3. **Referenzansichten generieren** (ChatGPT-Bildgenerierung), wenn ein Element eine Lücke ist **oder** der beste Kandidat nur als Vorlage taugt (Rang C). Regeln siehe §7.
+4. **Kandidatenblatt** erstellen (siehe §6) und auf GitHub persistieren.
+5. **Georg zur Abnahme** vorlegen: pro Element eine Wahl (`picked`) oder „weiter suchen“ mit Grund. Georgs Wahl in Blatt und JSON nachtragen und erneut persistieren.
+6. Bei „weiter suchen“: nächste Runde mit Georgs Grund als zusätzlichem Filter, höchstens zwei Runden je Element; danach als Lücke markieren.
 
 ## 6 · Ablage (für alle Chats gleich)
 
@@ -63,9 +65,38 @@ Die Bau-Sitzungen haben drei Tage lang Inselkanten, Brücken, Bordsteine und Tre
 - **Keine Modell-Dateien** hochladen, nur Verweise. Gekaufte Packs nur benennen.
 - Nach jeder Persistierung den Link zur Datei im Chat ausgeben.
 
-## 7 · Was danach passiert (nicht Teil des Webchats)
+## 7 · Referenzansichten per Bildgenerierung (ChatGPT)
 
-Die gewählten Kandidaten setzt die Bau-Sitzung im Lab ein: Maßstab K2, Knet-Material, KFB-Farbrollen, Prüfung Q1–Q9, aus Spielkameras. Fehlt für ein Element jeder brauchbare Kandidat, bleibt es eine Lücke für Claude Design bzw. Blender. Erst dann wird neu gebaut.
+Zweck: ein **verbindliches Zielbild** je Element, das zeigt, wie ein Dioramenbauer es bauen würde. Es dient als Vorgabe für die Bau-Sitzung, als Eingabe für img2threejs bzw. Bild-zu-3D und als Maßstab für den Kritiker.
+
+**Harte Regeln für jedes Bild:**
+- **Nur das Element**, freigestellt auf neutralem, hellem Grund bzw. auf einem kleinen Stück Insel-Boden, wenn der Anschluss gezeigt werden soll.
+- **Keine Figuren, keine Tiere, keine Fahrzeuge, kein Text, keine Logos**, keine zusätzlichen Requisiten und keine Szenen-Komposition, die nicht verlangt ist. Nichts dazuerfinden.
+- **Ansichten:** frontal, 3/4 von oben, seitlich; bei Brücken bzw. Inselkörpern zusätzlich von unten. Gleiche Beleuchtung, gleicher Stil in allen Ansichten.
+- **Stil:** handgebautes Stop-Motion-Diorama, Knete plus erlaubter Materialmix (Balsaholz, Pappe, Kork, Filz, Moos), sichtbare Handarbeit (Fingerabdrücke, leicht unregelmäßig), **nicht konstruiert, nicht repetitiv**, warme Farben passend zu den KFB-Rollen (Knetstein-Töne #e6d4b5 / #d1ba99 / #b29c7d / #9e856b, Asphalt #545e7a, Gras-Grün, Fels-Grau).
+- **Proportionen in Worten** angeben (z. B. „Brüstung halb so hoch wie eine kleine Spielfigur, Fahrbahn fünf Figuren breit“), nicht durch eine Figur im Bild.
+- **Prompt mitliefern** (für Wiederholbarkeit) und je Element höchstens 3 Varianten.
+
+**Ablage:** `…/G_asset_candidates/refs/<element>/<element>_<ansicht>_v<n>.png` plus `PROMPT.md`. Im JSON beim Element: `"referenceViews": [{ "file": "...", "view": "front|34|side|below", "prompt": "..." }]`.
+
+**Abnahme:** Georg wählt die Variante bzw. sagt „nochmal“; die gewählte wird `"goldenRef": true`.
+
+## 7b · Recovery: Chats in Reihe, ohne Datenverlust
+
+Jeder Chat führt **eine Recovery-Datei je Gruppe** und aktualisiert sie **nach jedem abgeschlossenen Schritt** (nicht erst am Ende):
+`tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/RECOVERY_G<n>.md` mit:
+- Stand (Datum, Chat-Nummer), erledigte Elemente mit Links zu Blatt, JSON und Bildern;
+- **genau ein nächster Schritt** (Element, Quelle, was zu tun ist);
+- offene Fragen an Georg und dessen letzte Entscheidungen (wörtlich);
+- Liste der verwendeten Prompts bzw. Suchbegriffe.
+
+**Ein neuer Chat startet immer mit:** „Lies `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md` und `RECOVERY_G<n>.md`, mach beim nächsten Schritt weiter.“ Bricht ein Chat ab (Timeout, Limit), geht nichts verloren; Georg öffnet einfach den nächsten Chat mit diesem Satz. Mehrere Chats können so nacheinander dieselbe Gruppe abarbeiten.
+
+## 7c · Was danach passiert (nicht Teil der Webchats)
+
+1. Die gewählten Kandidaten und Golden-Referenzen setzt die Bau-Sitzung im Lab ein (Maßstab K2, Material, KFB-Farbrollen, Q1–Q9, Spielkameras).
+2. **Wenn der Ablauf über die Webchats trägt:** ein **WSA-Work-One-Shot**, der alle abgenommenen Referenzansichten sauber und einheitlich durchrendert (gleiche Kameras, gleiche Beleuchtung, alle Ansichten) und als Golden-Set auf GitHub ablegt; ein großer Lauf statt vieler kleiner.
+3. Was dann noch fehlt, geht an img2threejs bzw. Bild-zu-3D (§8).
 
 ## 8 · Lücken: drei Wege, in dieser Reihenfolge (aktualisiert 10.10.)
 
