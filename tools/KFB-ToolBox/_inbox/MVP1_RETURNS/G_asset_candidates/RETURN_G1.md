@@ -1,5 +1,11 @@
 # RETURN · G1 · MVP-1 Inselkörper und Fels · 2026-10-10
 
+## Additive Runde R3 · Stylebilder für Webchat-Render-Serie · 2026-10-10
+- Über Dropbox den Ordner **KFB Style References** in **KFB Card Zone Lab v2** mit **8/8 Bilddateien** gefunden und jede Preview identifiziert. Sieben gleichnamige Bilder ebenfalls im bestehenden GitHub-Style-References-Repo-Spiegel; ROCKOS nur in Dropbox.
+- [G1_IMAGE_SERIES_STYLE_INPUTS_R1.md](G1_IMAGE_SERIES_STYLE_INPUTS_R1.md) erstellt: bindende SOURCE-/STYLE-Trennung, bildtreuer Town-PortLand-Prompt, Reihenfolge Anchor → Georg-Tune → konsistente Front/Seite/Unterseite. Wahrung des aktuellen `KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md`, K2 und Clay-Surface-Canon.
+- Noch keine echten Quellpixel als Bildgenerator-Input übergeben, kein Bild generiert, keine neuen Original-BBox-Werte oder Source-Isolationsansichten; **0 Bildgen-Ergebnisse / 0 Georg-Picks**. Preview-Verfügbarkeit ist nicht Rendering-Beweis.
+- Nächstes Gate: **ein** echter Original-PortLand-basierter 3/4-KFB-Clay-Anchor-Render im bildgenerierenden Webchat; Original-Isolation vor akzeptierter "source-fidel" Behauptung.
+
 ## Additive Runde R2 · 2026-10-10
 - Source-refined Town comparison: [G1_TOWN_SOURCE_COMPARISON_R2.json](G1_TOWN_SOURCE_COMPARISON_R2.json). Port 6 underside local minima versus Backyard 22, historical depth ratios 0.434 W / 0.506 W. Projected at 40 MC Town width: 30.52 H versus 35.59 H underside, **not native bbox measurements**.
 - Existing Lab `src/originals.ts` and `tools/shoot.mjs` inspected. Original viewer lacks exclusive source focus and shares Port atlas across all bases. [G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md) specifies temporary local four-view source-only proof with rollback, not a second runtime.
