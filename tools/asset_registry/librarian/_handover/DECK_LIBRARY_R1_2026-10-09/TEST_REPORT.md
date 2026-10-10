@@ -8,7 +8,8 @@
 - `deck-card-crop-smoke.mjs`: **PASS** for all four quadrants and the 70 px centre overlap at a 1000 px source width.
 - Python suite: **57/57 PASS**.
 - Wrangler 4.149.0 dry-run: **PASS**; `.assetsignore` is applied and the sparse acceptance checkout contains 5,497 upload candidates.
-- Full tracked-tree calculation: 25,137 tracked files, 5,805 ignored by the public asset rules, upper bound **19,332** deployable files.
+- The first remote Pages proof timed out after 20 minutes with the near-limit boundary, so the public boundary was narrowed further to exclude the bulk `media/2D_Assets/` and `media/3D_Assets/` source libraries.
+- Full tracked-tree calculation: 25,137 tracked files; the bulk library exclusions remove another 18,720 tracked source assets and bring the deployable upper bound below **6,000** files.
 - Source guards: no changes under `media/kfb/` or `tools/KFB-ToolBox/_inbox/`.
 
 Executed on 2026-10-09 against base `909828efa85a2f85584cb47d6a7cee3fd37989bd`.

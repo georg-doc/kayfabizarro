@@ -2,15 +2,15 @@
 
 ## Follow-up resolution · 2026-10-10
 
-The earlier gate below described the repository before the public-asset boundary existed. The root URL layout is intentionally preserved, while a root `.assetsignore` now excludes repository-internal documentation, `_inbox`, handovers and editable authoring formats from the Cloudflare asset upload.
+The earlier gate below described the repository before the public-asset boundary existed. The root URL layout is intentionally preserved, while a root `.assetsignore` now excludes repository-internal documentation, `_inbox`, handovers, editable authoring formats and the bulk 2D/3D source libraries from the Cloudflare asset upload. The source libraries remain canonical in GitHub and available to the GPT Site-backed Asset Librarian; they are not duplicated into the small public Pages website.
 
 - tracked tree: 25,137 files;
-- ignored by public asset rules: 5,805 files;
-- deployable upper bound: 19,332 files;
+- ignored by public asset rules: at least 24,245 files before overlap de-duplication;
+- deployable upper bound: below 6,000 files;
 - Wrangler 4.149.0 dry-run: PASS;
 - no file is deleted from GitHub, and nothing under `tools/KFB-ToolBox/_inbox/` is modified.
 
-This resolves the 20,000-file gate while preserving existing public routes. A successful GitHub/Cloudflare deployment remains the final external proof after merge.
+The first boundary revision still hit Cloudflare Pages' 20-minute build timeout while processing the near-limit upload. The narrowed boundary keeps the root website and tool routes while no longer treating the source-asset warehouse itself as a Pages deployment. A successful GitHub/Cloudflare deployment remains the final external proof after merge.
 
 ## Finding
 
