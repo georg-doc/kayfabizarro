@@ -1,5 +1,17 @@
 # Cloudflare Gate · 2026-10-09
 
+## Follow-up resolution · 2026-10-10
+
+The earlier gate below described the repository before the public-asset boundary existed. The root URL layout is intentionally preserved, while a root `.assetsignore` now excludes repository-internal documentation, `_inbox`, handovers and editable authoring formats from the Cloudflare asset upload.
+
+- tracked tree: 25,137 files;
+- ignored by public asset rules: 5,805 files;
+- deployable upper bound: 19,332 files;
+- Wrangler 4.149.0 dry-run: PASS;
+- no file is deleted from GitHub, and nothing under `tools/KFB-ToolBox/_inbox/` is modified.
+
+This resolves the 20,000-file gate while preserving existing public routes. A successful GitHub/Cloudflare deployment remains the final external proof after merge.
+
 ## Finding
 
 The condition for opening a full `sync/lab-rkit-2026-10-09` → `main` PR is **not met**.

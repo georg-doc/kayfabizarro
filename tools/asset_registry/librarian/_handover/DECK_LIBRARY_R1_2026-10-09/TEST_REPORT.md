@@ -1,5 +1,16 @@
 # Test Report · Deck Library R1
 
+## Follow-up · 2026-10-10
+
+- Rendered page 2 of Ignore Dystopia, Protopia, Observation Underground, Pharaoh Script, AI Kayfabe and Anti-Rules from the tracked PDFs.
+- Confirmed a real 2x2 card grid whose artwork and page-level headings cross the exact centre seam.
+- Replaced the destructive 50/50 card-preview cut with a tested 3.5% horizontal seam overlap.
+- `deck-card-crop-smoke.mjs`: **PASS** for all four quadrants and the 70 px centre overlap at a 1000 px source width.
+- Python suite: **57/57 PASS**.
+- Wrangler 4.149.0 dry-run: **PASS**; `.assetsignore` is applied and the sparse acceptance checkout contains 5,497 upload candidates.
+- Full tracked-tree calculation: 25,137 tracked files, 5,805 ignored by the public asset rules, upper bound **19,332** deployable files.
+- Source guards: no changes under `media/kfb/` or `tools/KFB-ToolBox/_inbox/`.
+
 Executed on 2026-10-09 against base `909828efa85a2f85584cb47d6a7cee3fd37989bd`.
 
 ## Passing

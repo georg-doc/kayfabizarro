@@ -1,0 +1,21 @@
+# Repository-internal material is not part of the public Cloudflare surface.
+.git/
+.github/
+skills/
+_handoff/
+tools/KFB-ToolBox/_inbox/
+tools/**/_handover/
+
+# Documentation and editable source formats stay in GitHub, not in the static deploy.
+**/*.md
+**/*.docx
+**/*.zip
+**/*.blend
+**/*.psd
+**/*.aseprite
+**/*.fbx
+**/*.obj
+**/*.mtl
+**/*.dae
+**/*.c3p
+**/*.capx

@@ -1,5 +1,6 @@
 import { registryBase } from './state.js';
 import { copyText } from './selection.js';
+import { cardCropRect } from './deck-crop.js';
 
 const $ = (id) => document.getElementById(id);
 const style = document.createElement('link');
@@ -72,7 +73,7 @@ async function renderPdf(row){
     const lib=await pdfjs();const doc=await lib.getDocument({url:representation.rawLatest,disableAutoFetch:true,rangeChunkSize:262144}).promise;if(token!==previewToken)return;
     const pageNo=row.assetType==='Card'&&row.mappingVerified&&row.page?row.page:1;const page=await doc.getPage(pageNo);const view=page.getViewport({scale:1.25});
     const source=document.createElement('canvas');source.width=Math.round(view.width);source.height=Math.round(view.height);await page.render({canvasContext:source.getContext('2d'),viewport:view}).promise;
-    if(row.assetType==='Card'&&row.mappingVerified){const col=row.quadrant%2,rowIndex=Math.floor(row.quadrant/2),w=Math.floor(source.width/2),h=Math.floor(source.height/2);canvas.width=w;canvas.height=h;canvas.getContext('2d').drawImage(source,col*w,rowIndex*h,w,h,0,0,w,h);status.textContent=`Card ${row.cardNumber} · page ${pageNo} · quadrant ${['TL','TR','BL','BR'][row.quadrant]}`;}
+    if(row.assetType==='Card'&&row.mappingVerified){const crop=cardCropRect(source.width,source.height,row.quadrant);canvas.width=crop.sw;canvas.height=crop.sh;canvas.getContext('2d').drawImage(source,crop.sx,crop.sy,crop.sw,crop.sh,0,0,crop.sw,crop.sh);status.textContent=`Card ${row.cardNumber} · page ${pageNo} · quadrant ${['TL','TR','BL','BR'][row.quadrant]} · seam-safe crop`;}
     else{canvas.width=source.width;canvas.height=source.height;canvas.getContext('2d').drawImage(source,0,0);status.textContent=`PDF page ${pageNo} of ${doc.numPages}`;}
   }catch(error){if(token===previewToken)status.textContent=`Preview unavailable: ${error.message}`;}
 }
