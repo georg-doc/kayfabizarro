@@ -316,3 +316,95 @@ Existing local Blender handoff gate remains:
 
 Existing deferred parent implementation gate remains unchanged:
 `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`
+
+
+---
+
+## Social Edge / Prisoner Numbering calibration · 2026-10-10
+
+Status: **AUTHORING FRAMEWORK PERSISTED · NO RUNTIME WRITE**
+
+Georg accepted and extended the Toy Soldier direction:
+
+### Prisoner custody numbers
+Prisoners receive custody numbers during confinement.
+This is a presentation/social identity layer only:
+- custody number ≠ global Character/Resident/player identity;
+- actual names remain with existing Character owners;
+- Toy Soldiers prefer number-address during custody;
+- other Residents may continue using names;
+- prisoners may swap, refuse, parody or deliberately misuse numbers;
+- custody-number persistence belongs later to the existing custody/world-save owner.
+
+### Shared Social Edge grammar
+New authoring contract:
+`skills/chat/KFB_SOCIAL_EDGE_ROAST_NEEDLE_GRAMMAR_V0_1_2026-10-10.md`
+
+It places Toy Soldier Needles on one wider continuum:
+- L0 Buddy Banter;
+- L1 Clown Roast;
+- L2 dark heel / Slatte-like / Squette-adjacent banter;
+- L3 Toy Soldier Needle;
+- RED authored-scene-only material.
+
+The same Character Weak Spot may be handled differently by speaker/relationship rather than duplicated as unrelated joke systems.
+
+Diagnostic authoring dimensions:
+- truth proximity;
+- shame/exposure;
+- power asymmetry;
+- destabilization intent;
+- audience exposure;
+- warmth/repair;
+- reciprocity.
+
+Candidate diagnostic:
+`EDGE = 2T + S + P + I + A - W - R`
+
+This is an authoring lens only, **not runtime scoring**.
+
+### Character-depth boundary
+The authoring framework separates:
+- surface, pool-safe insecurities/contradictions;
+- relationship/provenance-gated Character wounds;
+- sealed high-severity personal history that is never generic pool material.
+
+The machine/runtime layer must not mine private Character history automatically.
+Deep personal history may shape characterization/subtext and only becomes direct dialogue material in explicitly authored scenes.
+
+### Clown ↔ Toy Soldier distinction
+Clown Roast:
+- can hit hard;
+- preserves warmth/repair;
+- target can usually counter-roast;
+- contradiction becomes performance.
+
+Toy Soldier Needle:
+- precision plus power asymmetry;
+- much less repair;
+- wants the target's reaction to become useful to authority;
+- target still requires scene-level counterplay/reframe.
+
+Dark heel / Slatte-like / Dungeon-Squette-adjacent material sits between them, with exact cast mapping still open.
+
+### Evidence
+Verified before this Return write:
+- branch head `9efa66daf3a806386dacab34c3e970d580364398`;
+- Toy Soldier Voice contract blob `055e6ce5979795e5ad590ac6fa3f89263df58031`;
+- Social Edge grammar blob `cd63578033b95fa060a20bf3449defba82faa7c4`;
+- custody-number decision present;
+- Social Edge link present;
+- formula present;
+- all four primary lanes present.
+
+No runtime, ChatterBox code, custody system, psychology engine, Site/Stage, PR/merge or Live changes.
+
+### Next authoring gate
+`SOCIAL_EDGE_WEAKSPOT_MICROSCENES_01`
+
+Build the **same factual Weak Spot** in 3–4 relationship-calibrated versions:
+Buddy → Clown → dark heel → Toy Soldier.
+
+The goal is to calibrate moral temperature, connector choice and repair budget before expanding phrase volume.
+
+Existing Prison/Blender/deferred implementation gates remain unchanged.
