@@ -17,6 +17,12 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## Deck Library PR #384 und Clown J5 (2026-10-10)
+
+- **PR #384 (WSA, `work/kfb-deck-library-r1-2026-10-09`):** Deck Viewer v5, 130 Deck-Shards (6.985 Karten), Arten Deck/Karte im Asset Librarian, Handoff `kfb.card-ref/1`. CI `build-test`, `build-validate`, `browser-smoke` grün. `Cloudflare Pages` rot, genauso wie auf `main` (Ursache: `wrangler.jsonc` `assets.directory: "."`, Repo 24.995 Dateien), also nicht durch diesen PR verursacht. Empfehlung Steuerung: mergen. Nachprüfen: Karte 1 bei mehreren Decks rechts abgeschnitten (Kontaktbogen).
+- **Cloudflare:** eigener kleiner WSA-Auftrag: Asset-Verzeichnis auf einen öffentlichen Unterordner bzw. `.assetsignore`. Danach baut auch die öffentliche Seite `kayfabizarro.pages.dev` wieder aktuell.
+- **Clown J5 (Blender MCP, #381):** three.js-Prop-Track-Player mit Headless-Beweis (Knochen bzw. Pins gegen Blender < 1e-5, Zustandsmaschine mit Talk-Fenster). Für Stufe 2 (Markt) unverändert übernehmen; Süßigkeiten-Props (KayKit Halloween Bits, CC0) fehlen noch im Repo; Augenprofil des Clowns ist AUTO_CANDIDATE und braucht die Figuren-Karte.
+
 ## Architektur-Review Post-MVP-Konzepte (2026-10-09)
 
 - Gelesen: Fluff-Branch (v0.3–v0.7.1: Crafting/Almanac, Chill/Standard/Hard, Genesis/UFO, Angeln/Farm/Blast, Blast-Mining/Loot, lebende Props) und Academy-Branch (Reputation in sechs Stufen v1.1, Gatekeeper-Grammatik, Gott-Modus-Zensus, Holographic Foundry) plus Lean-Memory- und Deck-Pipeline-Verträge auf Main.
