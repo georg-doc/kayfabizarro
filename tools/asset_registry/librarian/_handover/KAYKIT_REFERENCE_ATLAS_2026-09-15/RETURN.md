@@ -1,5 +1,84 @@
 # KFB Asset Librarian · KayKit Reference Atlas · RETURN
 
+## CURRENT ADDITIVE RESEARCH SLICE · 2026-10-10
+
+**Status:** SOURCE-AUTHOR TUTORIAL RESEARCH PERSISTED · VISUAL FRAME SCAN STILL OPEN  
+**Repo:** `georg-doc/kayfabizarro`  
+**Branch:** `research/kaykit-creator-tutorial-atlas-2026-10-10`  
+**Owner:** existing Asset Librarian / KayKit Reference Atlas  
+**Product consumer:** existing KFB Environment / Sky owner; no second lighting/runtime owner  
+**Report:** `KAYKIT_CREATOR_TUTORIAL_RESEARCH_2026-10-10.md`
+
+### Result
+
+The linked Kay Lousberg tutorial `Vfr3n4WKsc0` was added as a creator-reference research source for the current KFB lighting/environment problem.
+
+Creator-authored source evidence establishes the tutorial scope as:
+- World Environment + Lighting;
+- day-time scene;
+- turning the same scene into night-time;
+- indoor/dungeon lighting principles.
+
+The KFB transfer is intentionally architectural rather than Godot-specific:
+- consume the research through the existing Environment Profile / Sky owner;
+- keep material/shader ownership orthogonal to lighting;
+- preserve one authored world/scene while varying environment state;
+- test representative KayKit characters under neutral and production lighting;
+- use source-authored emissive material roles when present;
+- keep local lights bounded and performance-owned;
+- never copy Godot numeric lighting values into Three.js without KFB calibration.
+
+### Creator video queue
+
+Verified/source-confirmed next references are prioritized in the report:
+1. current Lighting tutorial `Vfr3n4WKsc0` — P0, visual settings scan still required;
+2. `Using KayKit Characters In Godot (Detailed Version)` · `4p7QaOd8SHE` — P0;
+3. `How to use KayKit Character Animations in Unity and Godot` · `rwst5GnUU7s` — P1 / legacy 2022 workflow;
+4. `KayKit - Animations - Overview Set 1` · `T1KNCtAqJ7A` — P1 / pre-current-1.1 overview;
+5. KayKit Live Show VODs Episodes 0–4 — P2 selective Blender/source-author modeling research.
+
+Current official Character Animations page (updated 2026-09-16) advertises 161 humanoid animations for Rig_Medium + Rig_Large, so older videos must be version-labeled before deriving current inventory claims.
+
+### Evidence boundary
+
+The current Web connector did not expose the linked YouTube frames/transcript reliably enough for frame-level inspection. No exact Godot setting, timestamp or visual claim has been invented.
+
+A pre-existing Dropbox brief for creator-video scanning was recovered and reused as the evidence format reference:
+`BRIEF_VIDEO_REFERENCE_SCAN_01.md`.
+
+### Tests / evidence
+
+- current GitHub main read before slice;
+- current Atlas owner/read-only boundary read;
+- current WorldBuilder Environment Profile owner read;
+- current `wd-light.js` donor read;
+- current Island F-R24/F-R39 contract read;
+- existing Dropbox creator-video scan brief read;
+- creator/source Web evidence checked;
+- GitHub report exact readback complete.
+
+No runtime test was required because this slice is research-only.
+
+### No mutation outside research owner
+
+- no runtime code changed;
+- no lighting module changed;
+- no Asset Registry source changed;
+- no PR opened;
+- no merge;
+- no Hub/router change;
+- no GPT Site or Cloudflare deployment.
+
+### Next gate
+
+**KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01**
+
+Obtain real timestamp/still/settings evidence from `Vfr3n4WKsc0`, then compare only the useful creator-observed principles against the existing KFB Environment Profile.
+
+---
+
+## HISTORICAL RECOVERY RETURN · 2026-09-15
+
 **Date:** 2026-09-15  
 **Recovery branch:** `chat/kaykit-reference-atlas-2026-09-15`  
 **Base remote main:** `967d872ea5d0c4894ae55bd9e89a5f1067c49bd1`
