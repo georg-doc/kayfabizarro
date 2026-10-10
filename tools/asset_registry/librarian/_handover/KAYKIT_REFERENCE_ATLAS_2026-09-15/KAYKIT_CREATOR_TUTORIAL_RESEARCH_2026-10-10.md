@@ -324,3 +324,15 @@ Keep the first implementation gate unchanged: `KAYKIT-CREATOR-LIGHTING-VISUAL-SC
 
 Brackeys' later Godot 3D tutorial references Kay Lousberg/KayKit assets. It is a **consumer integration example**, not Kay's native authoring guidance; do not silently include third-party videos in the creator-only queue.
 
+
+## 11. Recovery continuation · 2026-10-10 · newly verified official sources
+
+After verifying previous GitHub head and Production Control records, fresh public source discovery found:
+
+- Official KayKit Mixed Bag 1 source page: https://kaylousberg.itch.io/mixed-bag-1 . Kay lists **24 viewer requests**, over **50 models** counting accessories/variants, and confirms the models were authored live on stream. The page's "watch the VODs here" link resolves to the official channel `https://www.youtube.com/@KayLousberg`, **not to individual episode permalinks**. Therefore per-episode URL/timecode extraction remains open.
+- High-value modeling/source-isolation targets from Kay's official request list: **Circus Tent** (Town/performance/stage), **Dungeon Chains** (Dungeon/Prison), **Bicycle/Skateboard/Rollerskates** (mobility props/attachment), **Arcade Machine** (Town/minigame), **Tool Cart** (Fluff worker/equipment), **Sandcastle** (Town/beach terrain staging), **Comic Boxes** (physical KFB-deck/prop composition). These are source-authored asset requests, not proof of present KFB repository ownership or attachment compatibility.
+- Mixed Bag 1 FREE vs EXTRA vs SOURCE tiers are distinct: source page describes 16+ FREE models, all 24+ requested assets and variants in EXTRA (59 models), and Blender `.blend` editable files in SOURCE. Do not claim a specific tier is owned without Registry/entitlement proof.
+- Official Series 6 pack page https://kaylousberg.itch.io/kaykit-series-6 contains an embedded animation preview `https://www.youtube.com/watch?v=zSzzEmdIiXI`. Treat as **creator-site linked visual demo** for clip/body-scale comparison, not a new standalone tutorial or proof of current Rig_Medium/Rig_Large compatibility.
+- Official Character Animations page https://kaylousberg.itch.io/kaykit-character-animations explicitly describes paid SOURCE-tier editable `.blend` per animation set with a basic control rig. This adds a possible source-authored Blender MCP deep-dive when entitlement is verified, not a request to buy or to supplant the native Motion owner.
+
+**One next gate remains:** `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01`. Any further per-episode video link discovery is optional preparatory research.
