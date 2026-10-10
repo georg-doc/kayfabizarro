@@ -1,4 +1,15 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.2
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.3
+
+> **ADDITIVE DESIGN MODEL · 2026-10-10 · FRAGMENTED ISLAND GALAXY / META-BIOMES**
+>
+> New [KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md](./KFB_FRAGMENTED_ISLAND_GALAXY_META_BIOMES_VISUAL_GRAMMAR_V1_2026-10-10.md) saved on existing branch. Georg's creative direction: an asteroid-field-like claymation constellation of shattered, wedge-shaped, crescent, shard, bowl, cliff or other individually recognizable floating land masses; **no universal standard grassy floating island silhouette**. Every island needs a far-distance signature landmark, atmosphere/material palette, resident/action relations, purposeful travel connection and actual Deck/Story semantic grounding. KFB Town is the ancestral central island with King Kayfabian; a Fluff Incident / hypernormalization-related fragmentation of a once-coherent reality is an **OPEN backstory hypothesis**, not automatically frozen canon. Protopian DIY race/stunt tracks provide a comic-gutter/Closure metaphor for reconnection, constructed by existing Track Core/Joyride owners. Graveyard (Skeleton dance/respawn), Vampire Night Manor and Demon Lord can form a lower/darker differentiated post-MVP cluster; Prison Maze is an optional Dystopia-adjacent satellite. No fifth MVP core island, no new live geometry, no new Track/World owner.
+>
+> Concept first written at GitHub commit `59049419ed3d085ed16ffa41b26a104022f7c955`, blob `adeee787650087667675ad7754825de7cfeee136`. Donor/visual model is a **concept/production reference**, NOT source-isolated 3D, accepted world layout, launched Claude Design or new MVP gate. Current Four-Island Story R1 A/B/FAIL and R4 STOP remain unchanged. No public Site/Cloudflare Stage requested or deployed.
+>
+> Single existing deferred gate stays `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`; visual-source comparison and cluster-layout design may be separately commissioned after relevant human authority.
+
+---
+
 
 > **ADDITIVE HANDOVER · 2026-10-10 · BLENDER MCP PRISON GREYBOX**
 >
