@@ -1,5 +1,18 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## CURRENT VOICE EXECUTION CHECKPOINT · 2026-10-10 · SIX AUDIBLE ESPEAK RENDERS + OUTPUT IDENTITY
+
+Georg's heuristic first-MVP direction is now advanced beyond planning, within the **same KFB ChatterBox Voice PR #379**:
+- **6/6 real English native-eSpeak MP3 files rendered locally**, two auditions each for Demon Lord / Robot One / Farmer A, exact donor R1 test sentences only. Noncanonical voice fixtures, **not accepted final casting**. Local archive `KFB_VOICE_HEURISTIC_AUDITION_R1_ESPEAK_TECHNICAL.zip` is a current-conversation attachment (not in GitHub/Site); see reproducible `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json` and `tools/render_espeak_audition_r1.py` (strict checksum rerender 6/6).
+- New dormant **`runtime/voice-asset-identity.v1.js`**, versioned output-only identity plus private audition / public source-rights-cast guard, without modifying current ChatterBox Kernel, `real-pool-adapter.js`, AudioContext or the existing GPT Site. `tools/test_voice_asset_identity.cjs`, local Node 24/24 PASS on exact implementation bytes. See new `TEST_REPORT.md` milestone.
+- **Not yet built:** approved source Triplet → Whole/fragment real audio → actual KFB Audio Site playback/duck/bubble/talk loop; no human voice acceptance, no actual browser playback in this slice, no World/3D runtime or voice input. eSpeak sounds synthetic and is merely a cost-free technical compare; neural English provider/rights remain unresolved.
+- Current Sites publisher is not exposed to this executor. **`SITES_PUBLISHER_REQUIRED`** for the next in-place KFB Audio Voice Acting Site integration; do not invent a Cloudflare mirror.
+
+**One next Voice owner gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` — a separately authorized Sites-capable WSA integrates one accepted source-backed Triplet + genuine available English voice into the already existing KFB Audio Site and verifies actual browser audio/timing/mute/duck/stop; no other Site or runtime owner. World A/B and no R5 remain unchanged.
+
+---
+
+
 ## CURRENT ADDITIVE VOICE DESIGN STEERING · 2026-10-10 · HEURISTIC FIRST-MVP CASTING / LATER FINE-TUNING
 
 Georg reports the current KFB Audio Voice Acting tool is functioning well. He authorizes **heuristic, editable MVP voice casting** without pre-approving every character's voice, with detailed audition/fine-tuning **later**. Initial audition traits may use masculine/feminine/synthetic voice-color, age/role/timbre, but may never mutate actor identity or hard-code a biological gender field. Candidate source actors: Demon Lord, Robot One, Farmer A; optional Lorekeeper (older/"grandpa") and Witch (feminine voice contrast). Exact voice IDs/licensing remain unapproved.
