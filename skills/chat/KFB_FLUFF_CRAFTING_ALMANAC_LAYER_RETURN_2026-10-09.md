@@ -1,4 +1,15 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.5
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.6
+
+> **GEORG CORRECTION / FOREST ISLAND HORROR FAILURE SPIRALS · 2026-10-10 · SUPERSEDES v1.5 DIALOGUE CLAIMS**
+>
+> The [Forest / Cabin / Werewolf Island concept](./KFB_FOREST_CABIN_WEREWOLF_ISLAND_CHARACTER_COMEDY_V1_2026-10-10.md) is now **v1.1** with a direct source-authority correction and concrete scene beats. Georg states that the preceding triplet/bubble model was **wrong** and that the actual pools are maintained in a separate current **Sheet**. The prior v1.5 Return's strong claim that all KFB dialogue should be `subject → connector → reframe` in one speech bubble and the invented JSON examples are **withdrawn as current binding instructions**. The Sheet's identity/schema has not been audited or changed here; actual content/selection/presentation stays with the ChatterBox/pool owner. This is explicitly not a new dialogue contract.
+>
+> New primary forest authoring direction: **two differently colored Hiker instances knowingly discuss horror tropes yet repeatedly trigger them through disastrously poor outdoor preparation and rationalized choices**. Ten authored, nonbinding physical/comic scene seeds cover "don't split" while splitting for generator/tent, luxurious survival kit with missing essentials, false and real tracks interpreted through plot expectations, entering the ominous cabin, Wolverine mistaken identity obscuring real woodcutter/werewolf, village-werewolf vote fed by chosen clues, failed documentation/camera angle, repeated campfire repair and memory, self-aware staged horror cues, and a real-world clue overlooked by film logic. Each scene uses visible trigger → action → consequence → reversal, not mechanically generated filler or predetermined dialogue. Some beats allow actual competence or compassion. Two Hiker texture variants and separated Werewolf source forms unchanged, no source-isolated transform proof.
+>
+> Forest concept updated at verified GitHub document checkpoint `ebfa1c77518a47effb681dd66056f0e9f7f452b7` / blob `996722a847a6b3963ab34e77bc2790e8ae9f89b8`. Static correction/source spot checks **9/9 PASS**, GitHub checkpoint head+file **1/1 PASS**. No runtime/browser/Blender/dialogue pool integration; no PR, merge, Site or Stage. The same deferred `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` stays next for the broader Minigame owner; actual Sheet/Triplet schema belongs to a separate future ChatterBox owner review only when needed.
+
+---
+
 
 > **ADDITIVE FOREST ISLAND / WEREWOLF + TRIPLET DIALOGUE · 2026-10-10**
 >
