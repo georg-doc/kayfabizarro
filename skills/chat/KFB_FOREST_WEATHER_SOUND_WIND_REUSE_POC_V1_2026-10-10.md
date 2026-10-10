@@ -1,9 +1,13 @@
-# KFB Forest Island · Living Weather, Wind & Horror Soundscape POC v1.1
+# KFB Forest Island · Living Weather, Wind & Horror Soundscape POC v1.2
 Date: 2026-10-10
 Status: POST-MVP AUTHOR DESIGN + SOURCE DONOR AUDIT; DOCUMENTATION ONLY / NOT IMPLEMENTED
 Owner: existing KFB Island Worldbuilder / Minigame planning on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`
 Receiving product: later Forest/Cabin/Werewolf Island; reusable Environment consumer across KFB islands.
 Parent: `skills/chat/KFB_FOREST_CABIN_WEREWOLF_ISLAND_CHARACTER_COMEDY_V1_2026-10-10.md` (current v1.1).
+
+
+> **GEORG UPDATE · 2026-10-10 · SNOW + FOG OF WAR + TINYSKIES NIGHT LAMP:** The **current execution handoff** is [KFB_FOREST_KISS_LIVING_WEATHER_LIGHT_EXECUTOR_BRIEF_2026-10-10.md](./KFB_FOREST_KISS_LIVING_WEATHER_LIGHT_EXECUTOR_BRIEF_2026-10-10.md). Author intent is deliberately **KISS snow and fog**, not simulation: cheap sparse snowflake visuals; existing atmosphere `fogNear/fogFar`; optional darkness with **TinySkies warm avatar-following point light** (KFB port `travel/wip/travel_globe_wsa/globe-v13/avatar-lamp.js`, blob `7c8029162d8b116aad975a81cd0c2f754999b370`). TinySkies `Game.ts` gives original `PointLight` and `CampsiteScene.ts` gives campfire light; this is **NOT a spotlight cone** and the globe light scale must be refit. The **light-radius night effect** provides suspense *instead of* a new stateful Fog-of-War system. Existing `avatar-lamp.js` explicitly says true persistent explored/unexplored masking is **not built**; KFB Overworld documents that idea, but it must be treated as a separate future World/Save/visibility feature, not claimed as donor-complete. No proof of TinySkies snowfall source port. TinySkies portals stay separate; Tornado remains entirely deferred. No new runtime task is authorized by this planning note.
+
 
 > **GEORG KISS OVERRIDE · 2026-10-10 · CURRENT FIRST POC:** The first proof is **one real forest patch**: subtle GPU grass/bush/tree sway, existing TinySkies rain overlay, existing-owner fog and coherent KFB Audio ambient bed with one spatial close wolf growl OR distant scream. No new weather runtime, complex snow accumulation or physics. Snow remains a deferred simple flurry look check; lightning/thunder a later brief synchronized cue. TinySkies `WaterSpouts.ts` / `CarpetLeaves.ts` remain documented candidates **only**, but **TORNADO = DEFERRED** and carries no first-proof work, no physics/force adapter and no repair budget. If hard, leave it parked. **TinySkies portals** are also desirable, but are a **separate visual/closure donor**, not part of Forest weather POC: see `skills/chat/KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md`.
 
@@ -63,16 +67,9 @@ This is a stylistic menu, not a fixed moral-weather rule or mandatory per-island
 At campsite, loud distant screaming and near growl can interrupt the Hikers' apparently expert plan, leading them to split up. A wind gust collapsing a tent pole looks like monster interference; the actual wolf is elsewhere. Thunder reveals a fleeting silhouette that the tourists confidently misidentify. These are **physical scene beats**, not canonical ChatterBox Triplets. Forest musical score should alternate cozy camp/cabin notes with sparse dark-comic unease, then drop out for meaningful environmental sound; no copied songs, no generic filler.
 ElevenLabs can be an external SFX discovery/generation source, **not** authoritative source pool, player voice runtime, audio mixer or a replacement of existing KFB Audio. Curate recorded/generated sounds with IDs, human listening, loop/crossfade and license receipts.
 
-## 7. KISS first proof and acceptance (NOT RUN)
-**Exactly one tiny scene**, using real existing assets and existing owners:
-1. Inspect `ts-flora.js` GPU wind, TinySkies rain and Environment fog donors in isolation, without calling source availability a 3D integration PASS.
-2. One planted forest patch: 1 source-backed tree, 1 small bush group and several instanced grass tufts; subtle common wind, anchored roots, simple chunk culling and low-FX/off.
-3. Two atmospheric switches: clear ↔ existing rain overlay, fog off ↔ on. One Forest ambient bed using current KFB Audio and one distant scream OR close wolf growl from an actually curated/licensed clip.
-4. Real visual/audio evidence: fixed camera and short walk, before/after screenshots and short capture, asset/donor paths, measured frame/draw costs, mix audibility, no console errors, correct cleanup. If source seam fails, preserve it; no replacement weather engine.
-**After core proof**, optional one-event lightning/thunder and basic snow flurries can be considered separately; neither blocks the first scene. No persistent snow/wet material physics claimed.
-**Tornado DEFERRED:** keep `WaterSpouts.ts` as donor note only, no source-isolated render required in first POC, no physics forces, no actor/prop lifting, no debugging loop.
-**Portals SEPARATE:** `KFB_TINYSKIES_PORTAL_VISUAL_CLOSURE_DONORS_V1_2026-10-10.md` describes original portal visuals and their KFB comic-gutter transition potential. They must not enlarge the weather test, replace existing Portal/Instance ownership or become a new blocking gate.
-No active MVP changes, no public Stage/Site publication, no runtime implementation in this documentation phase.
+## 7. Current KISS first proof / acceptance (NOT RUN)
+Use **the linked executable source-first brief** as the current instruction, not the superseded shorter §7. The first actual host-based scene should show one authentic KayKit tree, bush group and cheap grass with GPU wind; a real rain overlay; a simple **sparse snowflake switch** (without accumulation and without claiming a preexisting TinySkies snow particle source); inexpensive existing **atmospheric fog**; **night + avatar point light** or campfire light as cheap horror visibility; one actually sourced and auditioned wolf growl or distant scream through existing KFB Audio. The same fixed-camera footage should compare clear/wind/rain/snow/fog/night lamp on-off, subject to target performance. Only after that consider one other island and optional thunder.
+**True Fog-of-War = future optional separate World/Save exploration map gate, not part of this KISS scene.** A point light does not persist explored areas. **Tornado = DEFERRED**; **portals = SEPARATE**. Zero new owner, URL/Stage, MVP gate or runtime code until explicit authority.
 
 ## 8. Protection, recovery and next gate
 Read main `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, this Forest parent and current Fluff Return. Main Four-Island R4 NO MVP / pending A/B remains unchanged. No unauthorized R5, no new World/Environment/Audio/Physics owner, no new P0 or Stage/Site route. Creative proposals do not become global canon restrictions; use effects suited to each 3D medium.
