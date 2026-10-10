@@ -439,13 +439,33 @@
           "license": "CC0",
           "humanMade": true,
           "format": "glb",
-          "polys": null,
-          "polyMetric": "not yet measured",
+          "polys": 80,
+          "polyMetric": "indexed source GLB triangles (parsed exactly); K2 kit factor unmeasured",
           "scaleNote": "K2: source bbox unavailable; dimension relative to H must be measured in Lab before import.",
           "verdict": "§00 glaubhafter großer Fels als isolierter Natur-Prop; §01 wenig Formdetails, wohl leicht umfärbbar.",
           "rank": "A",
           "risks": "Erst nach Isolationsansicht und bbox/triangle check final A.",
-          "inspection": "registry path/file identified; visual isolation and geometry validation pending"
+          "inspection": "registry path/file identified; visual isolation and geometry validation pending",
+          "evidence": {
+            "sourceGeometryProof": "refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg",
+            "sourceReport": "G1_ROCK_LARGEA_SOURCE_EVIDENCE_R1.md",
+            "sourceBlob": "40e1365a43b706bd78c2658b48b189c9a35f8923",
+            "sourceVertexCount": 146,
+            "sourceTriangles": 80,
+            "nativeBBoxUnits": [
+              0.78491,
+              0.25978,
+              1.01546
+            ],
+            "viewsProvided": [
+              "34",
+              "front",
+              "side",
+              "below"
+            ],
+            "status": "SOURCE_GEOMETRY_INSPECTED_VISUAL_QA_PENDING",
+            "styleReferenceConditioning": "NONE"
+          }
         },
         {
           "id": "kenney-nature-kit/rock_largeC",
