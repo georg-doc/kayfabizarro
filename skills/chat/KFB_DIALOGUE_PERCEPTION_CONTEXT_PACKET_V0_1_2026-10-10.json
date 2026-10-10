@@ -1,0 +1,87 @@
+{
+  "schema": "kfb.dialogue-perception-context/0.1-candidate",
+  "status": "READ_ONLY_CONTEXT_ADAPTER_PREP",
+  "date": "2026-10-10",
+  "owner": "existing ChatterBox consumer adapter",
+  "llmRequired": false,
+  "packet": {
+    "speaker": {
+      "characterId": "string",
+      "conversationProfileRef": "optional"
+    },
+    "target": {
+      "characterId": "optional",
+      "visibleFeaturesNow": [
+        "visualFeatureRef"
+      ],
+      "visualCharacterizationRef": "optional"
+    },
+    "media": {
+      "currentCard": {
+        "deckId": "optional",
+        "cardNumber": "optional",
+        "cardName": "optional",
+        "power": "optional",
+        "lore": "optional",
+        "gradeReason": "optional",
+        "artworkPrompt": "optional",
+        "semanticSource": "CANONICAL_CARD_JSON"
+      },
+      "billboard": {
+        "mediaKind": "QUOTE | CARD | OTHER | NONE",
+        "quoteId": "optional",
+        "phase": "optional",
+        "text": "optional",
+        "author": "optional",
+        "work": "optional",
+        "themes": [
+          "string"
+        ],
+        "frizzleQuestion": "optional",
+        "cardRefs": [
+          "object"
+        ],
+        "provenanceStatus": "optional",
+        "rightsStatus": "optional"
+      }
+    },
+    "scene": {
+      "poi": "optional",
+      "activity": "optional",
+      "witnessedEvent": "optional",
+      "nearbyResidents": [
+        "characterId"
+      ]
+    },
+    "relationship": {
+      "band": "optional",
+      "knownWeakSpotRefs": [
+        "optional"
+      ],
+      "rememberedVisualCallbacks": [
+        "optional"
+      ]
+    },
+    "socialEdge": {
+      "lane": "BUDDY | CLOWN_ROAST | DARK_HEEL | TOY_SOLDIER_NEEDLE | NONE",
+      "repairBudget": "optional",
+      "reciprocity": "optional"
+    }
+  },
+  "promptPriority": [
+    "current-visible-target",
+    "current-world-event-or-activity",
+    "current-visible-billboard-or-card",
+    "relationship-relevant-memory",
+    "one-or-two-stable-visual-facts",
+    "broader-lore-only-if-needed"
+  ],
+  "invariants": [
+    "ChatterBox does not own Billboard schedule",
+    "ChatterBox does not own Card truth",
+    "visual features must be source-observed before runtime seen-fact use",
+    "story hypotheses never auto-promote to biography",
+    "generated dialogue may reference only supplied context",
+    "optional LLM remains expression consumer, never truth owner"
+  ]
+}
