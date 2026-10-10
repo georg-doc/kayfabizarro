@@ -228,6 +228,14 @@ this result does not yet change a P0/public human gate or canonical product URL.
 No merge.
 No Live promotion.
 
+## 2026-10-10 · Future WSA voice pipeline preparation · planning-only
+
+The already-existing WSA casting-bench brief is now rebaselined onto the actually published **S3 KFB Audio Site Voice Acting tab**. It now explicitly says: do **not** rebuild the bench or create a second ChatterBox/Audio Site; keep PR #365 KFB Audio as mixer/ducking owner; keep PR #379 ChatterBox Voice as speech-output owner and the parallel Triplet/Sinnfeld authoring branch read-only.
+
+Updated future WSA handoff: `skills/chat/WORK_WSA_KFB_VOICE_CASTING_BENCH_MINIMAL_INTEGRATION_BRIEF_2026-10-10.md` on this PR. Conditional sequence after human listening: source/license/capability census → source-backed accepted Triplet voice resolution and whole/fragment/dynamic fallback → real voice/bubble/bed/ducking/cancel QA → optional provider expansion. Speakrail remains a **separate full-duplex technology research donor, not a TTS engine or KFB dialogue replacement**. DocCheck's VoiceIO and Speakrail/CME handover remain under `georg-doc/doccheck` PR #11 with **no cross-repo runtime write**.
+
+New changes in this checkpoint: documentation only, no code, no paid synthesis, no newly auditioned human takes, no Site deployment, no new runtime or browser/audio tests (0 each); previously reported 18/18, 13/13 and 87/87 evidence was not rerun. Do not elevate previous test figures into new PASS. Current user-facing gate remains unchanged: **voice solo / real D bed without ducking / D bed with ducking → Georg KEEP / TUNE / CUT**. No Hub/router/Cloudflare routing change.
+
 ## Exactly one next gate
 
 **HUMAN LISTENING · PUBLISHED KFB AUDIO VOICE ACTING BENCH**
