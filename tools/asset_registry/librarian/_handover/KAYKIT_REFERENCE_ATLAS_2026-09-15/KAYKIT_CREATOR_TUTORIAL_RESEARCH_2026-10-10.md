@@ -347,3 +347,15 @@ A useful technical-source audit of the actual KFB lighting donor and newer share
 `KAYKIT_LIGHTING_VIDEO_SOURCE_AUDIT_2026-10-10.md`
 
 Single next gate remains `KAYKIT-CREATOR-LIGHTING-VISUAL-SCAN-01` with a video/browser-capable executor; retain source-isolated screenshot/timecode evidence before treating any Kay settings as observed. Current WB2 R4 remains STOPPED/NO MVP, untouched.
+
+
+## 13. KayKit & Co thematic coverage · 2026-10-10
+
+New cross-creator topic/production gap survey:
+`KAYKIT_AND_CO_TOPIC_COVERAGE_MATRIX_2026-10-10.md`
+
+Official Quaternius catalog confirms 28 tutorials. Most immediately useful, source-unreviewed new subjects: Gradient Texturing (#2), Character Rigging (#8), Easy IK (#10), Medieval House (#11), Rigging Objects (#12), Atlas Texturing (#19), Blender Blendshapes (#21–22), Wiggle Bones (#24), Cel Shader (#26), UV Mapping (#27).
+
+Kenney official guides add measured **Asset Forge-specific** module/pivot/scale conventions, GLB/material import and modular export; they are not automatically KayKit or KFB canon.
+
+Survey separates **available creator guidance** from **KFB verified modules** and **still-unproven source-to-runtime behaviour**, explicitly correcting historical old-pack gap claims using the Atlas 2026-09-18 override. No creator video frames, new runtime work or public site update. Current Lighting visual-scan gate remains open.
