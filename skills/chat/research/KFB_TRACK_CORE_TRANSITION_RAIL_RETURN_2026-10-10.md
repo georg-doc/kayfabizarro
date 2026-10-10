@@ -1,5 +1,22 @@
 # KFB Track Core · Transition / Dungeon / Rail Research RETURN
 
+## ADDITIVE CHECKPOINT · 2026-10-10 · Ground adapter A/B source-consumer audit
+
+**This was a productive SOURCE-WIRING discovery, not a runtime build or visual acceptance.** Genuine original J14 `transition-atlas.v1.js`, `track-look.v5.js`, M1/M2 marking modules and Track Core v0.12 cross-read.
+
+New files:
+- `skills/chat/research/fixtures/KFB_T4_CITY_TRACK_GROUND_VARIANT_B_EXTENDED_HANDOFF_2026-10-10.json` — research-only B alternative for the original ground city→race candidate A. Relative curb/barrier overlap grows from **1m** to **17m** over the illustrative 100m zone (not approved length).
+- `skills/chat/research/KFB_CITY_TRACK_GROUND_AB_SOURCE_WIRING_AUDIT_2026-10-10.md` — full source/consumer mapping, formula calculations, tests, limits and proposed narrow receiving-owner approach.
+
+**Actual source correction:** `track-look.v5.js` already uses `AT.barrierT` from original T4 to morph the visible KFB clay sideProfile built from authentic Track Core slots. The geometry is not wholly missing; the unresolved gap is deliberate curb/sidewalk cap handoff, actual collision/vehicle clearance and verified view.
+
+**New specific gap discovered:** Both default M2 and fallback M1 `mark_track` edge-line presence logic are gated to **nature** `bio===1`. Within a city→race transition, the source segment classifier returns city `bio===0`, so the new candidate `mark_track` window is **not wired as a city race-marker consumer**. Existing M2 city edge lines should not be globally switched off (would create a regression). This is a candidate-integration gap, not a claim of broken original T4.
+
+**Tests:** 18/18 source consumer/static checks; A and B each 16/16 normalized window tests with 18,000 monotonic pair comparisons, exact endpoints both sides; 5/5 source visible-side height/lateral/curb/mark formula confirmations. Straight-standard source approximation over 0.5m gives A max ~0.0534m vs B ~0.0452m change for sampled barrier inner height/offset; not a 3D mesh/collider measurement.
+
+**Next outcome gate unchanged:** `TRACK_CORE_EDGE_ADAPTER_SOURCE_ISOLATION_01` = still partial. **B preferred ONLY for a true matched-camera 3D A/B against original T4; no active T4 runtime edits**. Original J14 binary screenshots were indexed but not retrievable via authenticated GitHub text connector or disconnected container. Need actual source geometry visual, curb caps, sidewalk connection, road/vehicle collision, driver sightline. No R4/R5, Track Core owner refactor, PR, merge or Stage/Site deployment.
+
+---
 ## ADDITIVE CHECKPOINT · 2026-10-10 · street→race ground candidate numeric PASS
 
 **Outcome:** A narrowly-scoped, research-only `C_city_track_ground_CANDIDATE` additive JSON profile is ready for exact original-J14-3D comparison. **Not** written into active `transition-profiles.v1.json`, not a new route/mesh/physics owner, not visually accepted.
