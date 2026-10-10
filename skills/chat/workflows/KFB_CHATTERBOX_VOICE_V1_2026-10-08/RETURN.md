@@ -1,5 +1,59 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-10 · FINAL RETURN · Triplet Audio Integration R1
+
+Status: **PUBLISHED PRIVATE FUNCTIONAL AUDITION · HUMAN CASTING/QUALITY GATE OPEN · NO MERGE/LIVE**
+
+Exact owner state:
+- repo `georg-doc/kayfabizarro`;
+- branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`;
+- Draft PR #379;
+- exact final branch head is recorded after this Return write and must be read from the PR, not inferred from the pre-Return implementation head.
+
+Product result:
+- existing KFB Audio Site updated in place at `https://kfb-audio.frizzlebob.chatgpt.site`;
+- Site Source `0.5.1` binds exact donor Triplet `core.frame.01` / `cf975a72637630d97fc626962ef591b356ce0bbf` and labels it permanently `AUTHORING_CANDIDATE · NON_CANON_AUDITION`;
+- 12 real local-system WAV assets: Whole plus subject/connector/reframe for editable heuristic Demon Lord, Robot One and Farmer A profiles;
+- explicit Whole → fragments → Browser fallback routes; exact-source edits invalidate static assets; the Browser route uses Web Speech when it actually starts and otherwise transparently falls back to the identity-matched Whole WAV;
+- existing `voice-asset-identity/1`, KFB Audio D-bed, single AudioContext, mixer and ducking owner reused;
+- actual media/Web Speech start controls text reveal, TALK_LOOP_NO_LIPSYNC and voice focus; Pause releases Talk/duck without losing position; Resume reacquires; Stop/cancel/end/error reset the lifecycle; Whole and fragments carry canonical role-specific `kfb.semantic-triplet:core.frame.01:{role}` refs from `tripletToSegments()`.
+
+Changed owner files:
+- `data/TRIPLET_AUDIO_INTEGRATION_R1_MANIFEST.json`;
+- `tools/test_triplet_audio_integration_r1.cjs`;
+- `START_HERE.md`;
+- `TEST_REPORT.md`;
+- `RETURN.md`;
+- central additive `skills/chat/CHANGELOG.md`.
+
+Site source commit `8f472837ea94d0b6f691ec2dfff6a68e68891a01` changed:
+- `dist/audio-site.js`;
+- `dist/index.html`;
+- `dist/qa.mjs`;
+- `dist/validate.mjs`;
+- `dist/voice-bench-data.json`;
+- `dist/voice-bench.css`;
+- `dist/voice-bench.js`;
+- `dist/voice-asset-identity.v1.js`;
+- `dist/voice-triplet-r1.json`;
+- 12 WAVs under `dist/voice-assets/triplet-core-frame-01/`.
+
+Evidence:
+- owner manifest/identity test **51/51 PASS**;
+- packaged Site validation **151/151 PASS**;
+- published exact-URL browser: Whole, `1/3 → 2/3 → 3/3`, Browser fallback, Pause/Resume/Stop, edit invalidation, mute, D-bed duck lifecycle and 390×844 layout PASS; **0 console errors**;
+- Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_aedfc74524ac8191beec5c72ac5c8e25`;
+- deployment `appgdep_6aca863aca548191b8a79ae1bc54eb5e` succeeded.
+
+Open items:
+- subjective human listening for casting, seams, intelligibility, clicks/pumping and duck balance;
+- real iOS/Android device check;
+- source approval, public rights clearance and final casting KEEP before any public/game promotion.
+
+No paid generation, second Site/audio engine/AudioContext, World/R5, ASR/microphone, Hub/router/Cloudflare change, merge or Live promotion.
+
+Exactly one next gate: **`KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1`** — Georg compares Demon Lord, Robot One and Farmer A in Whole and fragments over D bed with ducking and returns KEEP / TUNE / CUT.
+
 Status: **S3 VOICE ACTING SITE ESTABLISHED · HEURISTIC MVP CASTING AUTHORIZED FOR PREP · FINE-TUNING LATER · NO WORLD RUNTIME PROMOTION**
 
 ## Owner / scope

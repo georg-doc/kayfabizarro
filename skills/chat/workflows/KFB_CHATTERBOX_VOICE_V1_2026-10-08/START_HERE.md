@@ -1,14 +1,15 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
-## CURRENT VOICE EXECUTION CHECKPOINT · 2026-10-10 · SIX AUDIBLE ESPEAK RENDERS + OUTPUT IDENTITY
+## CURRENT VOICE EXECUTION CHECKPOINT · 2026-10-10 · SOURCE-BOUND TRIPLET AUDIO R1 PUBLISHED
 
-Georg's heuristic first-MVP direction is now advanced beyond planning, within the **same KFB ChatterBox Voice PR #379**:
-- **6/6 real English native-eSpeak MP3 files rendered locally**, two auditions each for Demon Lord / Robot One / Farmer A, exact donor R1 test sentences only. Noncanonical voice fixtures, **not accepted final casting**. Local archive `KFB_VOICE_HEURISTIC_AUDITION_R1_ESPEAK_TECHNICAL.zip` is a current-conversation attachment (not in GitHub/Site); see reproducible `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json` and `tools/render_espeak_audition_r1.py` (strict checksum rerender 6/6).
-- New dormant **`runtime/voice-asset-identity.v1.js`**, versioned output-only identity plus private audition / public source-rights-cast guard, without modifying current ChatterBox Kernel, `real-pool-adapter.js`, AudioContext or the existing GPT Site. `tools/test_voice_asset_identity.cjs`, local Node 24/24 PASS on exact implementation bytes. See new `TEST_REPORT.md` milestone.
-- **Not yet built:** approved source Triplet → Whole/fragment real audio → actual KFB Audio Site playback/duck/bubble/talk loop; no human voice acceptance, no actual browser playback in this slice, no World/3D runtime or voice input. eSpeak sounds synthetic and is merely a cost-free technical compare; neural English provider/rights remain unresolved.
-- Current Sites publisher is not exposed to this executor. **`SITES_PUBLISHER_REQUIRED`** for the next in-place KFB Audio Voice Acting Site integration; do not invent a Cloudflare mirror.
+The bounded consumer integration now runs in the **existing KFB Audio Site** and the same Draft PR #379 owner line:
+- exact shared-pool candidate `core.frame.01`, donor blob `cf975a72637630d97fc626962ef591b356ce0bbf`, visibly preserved as `AUTHORING_CANDIDATE · NON_CANON_AUDITION`;
+- 12 local System Voice WAVs: Whole plus subject/connector/reframe for Demon Lord, Robot One and Farmer A, all `HEURISTIC_EDITABLE_CANDIDATE`, rights `PENDING`, `publicShip:false`;
+- explicit Whole → fragments → Browser fallback routes using the existing `voice-asset-identity/1` adapter and the sole KFB Audio mixer/ducking owner; role-specific source IDs are derived from the existing `tripletToSegments()` contract;
+- real-browser Play/Pause/Resume/Stop, text reveal, Talking Loop and D-bed duck restoration verified on published Site Source `0.5.1` with zero console warnings/errors; Chrome transparently uses the identity-matched Whole asset when Web Speech reports no actual start;
+- exact receipt: `data/TRIPLET_AUDIO_INTEGRATION_R1_MANIFEST.json`; executable owner test: `tools/test_triplet_audio_integration_r1.cjs` → 51/51 PASS; packaged Site validation → 151/151 PASS.
 
-**One next Voice owner gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` — a separately authorized Sites-capable WSA integrates one accepted source-backed Triplet + genuine available English voice into the already existing KFB Audio Site and verifies actual browser audio/timing/mute/duck/stop; no other Site or runtime owner. World A/B and no R5 remain unchanged.
+**One next Voice owner gate:** `KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1` — Georg compares the three heuristic profiles in Whole and fragment modes over D bed with ducking and returns KEEP / TUNE / CUT. This is the next casting/quality gate only; source approval and rights clearance remain separate prerequisites for public/game use. No World R5, merge or Live promotion.
 
 ---
 

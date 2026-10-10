@@ -1,9 +1,10 @@
 {
   "schema": "kfb.voice-triplet-audio-integration/1",
-  "status": "SITE_SOURCE_PREPARED_NOT_YET_PUBLISHED",
+  "status": "PUBLISHED_PRIVATE_NON_CANON_AUDITION",
   "usage": "NON_CANON_AUDITION",
   "source": {
     "tripletId": "core.frame.01",
+    "sourceNamespace": "kfb.semantic-triplet",
     "sourceStatus": "AUTHORING_CANDIDATE",
     "sourceRevision": "cf975a72637630d97fc626962ef591b356ce0bbf",
     "path": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/triplet-stage/donor/resident-chat-ensemble-data.mjs",
@@ -21,12 +22,12 @@
   "site": {
     "projectId": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
     "url": "https://kfb-audio.frizzlebob.chatgpt.site",
-    "sourceMarker": "0.5",
+    "sourceMarker": "0.5.1",
     "resolverOrder": ["whole", "fragments", "browser"],
     "audioOwner": "existing KFB Audio AudioContext/mixer/ducking",
-    "siteSourceCommit": null,
-    "versionId": null,
-    "deploymentId": null
+    "siteSourceCommit": "8f472837ea94d0b6f691ec2dfff6a68e68891a01",
+    "versionId": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_aedfc74524ac8191beec5c72ac5c8e25",
+    "deploymentId": "appgdep_6aca863aca548191b8a79ae1bc54eb5e"
   },
   "render": {
     "provider": "macos-system-voice",

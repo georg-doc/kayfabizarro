@@ -1,5 +1,48 @@
 # TEST REPORT · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-10 · Triplet Audio Integration R1 · published evidence
+
+Status: **FUNCTIONAL PRIVATE AUDITION PASS · HUMAN CASTING/QUALITY LISTENING OPEN**
+
+Exact source fixture:
+- `core.frame.01` · `Nothing changed / except the frame / everything changed`;
+- donor blob `cf975a72637630d97fc626962ef591b356ce0bbf`;
+- `AUTHORING_CANDIDATE · NON_CANON_AUDITION`;
+- shared-pool candidate, not a character-authored line.
+
+Executable evidence:
+- owner manifest/identity test: **51/51 PASS**, including exact role-specific IDs emitted by the existing `real-pool-adapter.tripletToSegments()` contract;
+- packaged existing KFB Audio Site validation: **151/151 PASS**;
+- 12/12 PCM WAV files exist, are nonempty, match recorded SHA-256 values and have measured positive duration;
+- all 12 asset identities eligible only in private `audition` mode; all 12 rejected in `public` mode because source/rights/casting gates are not approved;
+- stable identity, text invalidation and missing-revision fail-closed checks PASS;
+- exactly one AudioContext constructor remains in the existing KFB Audio owner; Voice Bench creates none.
+
+Published real-browser evidence at `https://kfb-audio.frizzlebob.chatgpt.site`:
+- exact URL loaded `SITE SOURCE 0.5.1` after deployment and reload;
+- isolated source card showed exact Triplet ID, donor revision, status and three beats;
+- Whole Line emitted `actual media started`, TALK LOOP speaking; Pause retained position and returned TALK/duck to idle; Resume reacquired both; Stop reset all states;
+- fragments observed in strict `1/3 → 2/3 → 3/3 → complete` order under one utterance lifecycle;
+- Browser fallback emitted `Web Speech started` in the in-app browser; Chrome reported no Web Speech start and transparently started the exact identity-matched Whole WAV as an explicitly labelled browser media safety fallback. Both paths drove TALK LOOP; Chrome Pause/Resume/Stop passed;
+- D bed remained owned by existing KFB Audio: TTS ducking `off → on → off → on → off` across start/pause/resume/stop;
+- edited beat immediately produced `EDITED_DERIVATIVE_NON_CANON`, disabled Whole/fragments and retained Browser fallback only;
+- mute disabled static playback while leaving exact transcript visible;
+- mobile production check at 390×844: `scrollWidth === clientWidth === 390`, source card and all five route/lifecycle controls present;
+- console warnings/errors observed: **0**.
+
+Publication receipt:
+- Site source commit `8f472837ea94d0b6f691ec2dfff6a68e68891a01`;
+- Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_aedfc74524ac8191beec5c72ac5c8e25`;
+- deployment `appgdep_6aca863aca548191b8a79ae1bc54eb5e` · `succeeded`;
+- production URL unchanged.
+
+Still UNKNOWN / human-required:
+- subjective voice fit, intelligibility over music, fragment seam quality, audible clicks/pumping and final ducking balance;
+- real iOS/Android device playback;
+- source approval, public rights clearance and final casting KEEP.
+
+No paid provider, microphone/ASR, World runtime, R5, second Site, second AudioContext, merge or Live promotion was used.
+
 Status: **EVIDENCE MILESTONE · SOURCE AUDIT + REAL-POOL ADAPTER GREEN**
 Branch-under-test parent: `4d341158b7723732b65e20c94777ac63dcc485d9`
 

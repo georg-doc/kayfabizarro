@@ -1,3 +1,13 @@
+## 2026-10-10 · KFB Voice Triplet Audio Integration R1 published in existing KFB Audio Site
+
+- Existing KFB Audio Site advanced in place to Source `0.5.1`; no new Site or audio owner.
+- Bound shared-pool `core.frame.01` as visible `AUTHORING_CANDIDATE · NON_CANON_AUDITION` with exact donor revision and three beats.
+- Added Whole + three-fragment WAV auditions for editable heuristic Demon Lord, Robot One and Farmer A profiles, plus an honest Browser fallback: Web Speech when it starts, otherwise the exact identity-matched Whole WAV.
+- Reused `voice-asset-identity/1` and the existing single AudioContext/D-bed/ducking owner; added actual-start reveal/Talk, Pause/Resume and clean Stop/reset.
+- Evidence: owner 51/51, Site 151/151, exact published browser routes/lifecycle/mobile PASS, zero console warnings/errors. Canonical role refs reuse `tripletToSegments()`. Human listening, rights/source approval and final casting remain open.
+- Site source `8f472837ea94d0b6f691ec2dfff6a68e68891a01`; version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_aedfc74524ac8191beec5c72ac5c8e25`; deployment `appgdep_6aca863aca548191b8a79ae1bc54eb5e` succeeded.
+- Next gate: `KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1`. No merge or Live promotion.
+
 ## 2026-10-08 · KFB 3D editor/shader/inspector research reused existing Surface Language owner
 
 - New **source-inspection-only** research branch documentation on `planning/hybrid-baked-clay-texture-architecture-2026-10-07`: `skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md`, corresponding TEST_REPORT, RETURN and additive local research changelog.
@@ -2775,4 +2785,3 @@ No runtime/product code changed.
 - New dormant `runtime/voice-asset-identity.v1.js` and `tools/test_voice_asset_identity.cjs`; tested locally in Node **24/24 PASS**, exact implementation blob matched. Guards source/text revision, provider/model, voice, locale, affect, fragment/whole role and render recipe; audition candidate flags cannot silently become public source/rights/cast-approved assets. No change to existing ChatterBox Kernel/real-pool adapter/KFB Audio owner.
 - Added empirical `TEST_REPORT.md` and updated active Voice `START_HERE.md`, `RETURN.md` and future WSA brief. No committed binary MP3, new KFB Audio Site publish, browser audio, neural Piper/ElevenLabs, canonical Triplet-in-world, ASR, game runtime, World R5, PR merge or Live promotion.
 - Next owner-local gate `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1`: Sites-capable WSA later integrates one accepted source Triplet and true audio/bubble/duck/stop proof into existing Audio Voice Acting Site. `SITES_PUBLISHER_REQUIRED` in current executor; global Four-Island A/B world gate unaffected.
-
