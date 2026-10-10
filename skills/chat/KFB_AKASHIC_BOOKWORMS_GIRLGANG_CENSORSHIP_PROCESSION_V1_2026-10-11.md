@@ -1,5 +1,5 @@
 # KFB Akashic Library · Bookworms, Girl Gang, Lending & Censorship Procession v1
-Date: 2026-10-11 | Status: GEORG AUTHOR POST-MVP CONCEPT + REAL SOURCE AUDIT / NOT IMPLEMENTED.
+Date: 2026-10-11 | Status: **BACKLOG / SIDE QUEST** — Georg 2026-10-11 priority correction; source-audited post-MVP concept, not implemented. Keep out of the current island/resident design and Town XL planning critical path.
 Owner: existing KFB Island Worldbuilder/Minigame/Fluff-Almanac planning, on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`. Parents: `KFB_AKASHIC_LIBRARY_ISLAND_DESIGN_V1_2026-10-10.md` and `KFB_FANTASY_TAVERN_OPEN_STAGE_DESIGN_V1_2026-10-10.md`.
 No new World, Card, Audio, VFX, Inventory, Story, ChatterBox, Combat or Resident Life runtime owner. Current Four-Island R1 A/B / R4 STOP unchanged.
 
