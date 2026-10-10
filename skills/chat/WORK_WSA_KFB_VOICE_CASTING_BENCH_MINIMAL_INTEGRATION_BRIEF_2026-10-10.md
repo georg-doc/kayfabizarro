@@ -1,5 +1,22 @@
 # WSA · KFB Voice Casting Bench — minimal integration brief
 
+## 2026-10-10 NEXT WORK / WSA INPUT · THREE ACTUAL ESPEAK TECHNICAL AUDITIONS + VERSIONED ASSET IDENTITY
+
+Status: source-level **implementation and local audio generation have now happened**, with **no KFB Audio Site republish** and no user-approved casting voice. This overrides historical S0/S1/S2 "start by building a casting tool" work below.
+
+- Actual output-only production preparation on existing PR #379: `runtime/voice-asset-identity.v1.js` (output-asset identity uses stable source IDs, source/text revisions, preset, Affect, segment role, provider, voice/model, locale and recipe/settings version). `tools/test_voice_asset_identity.cjs` committed; local Node suite **24/24 PASS**; existing `real-pool-adapter.js` and KFB Audio unchanged. This is NOT yet wired into published Site.
+- **6 actual English eSpeak 1.48.15 MP3 recordings**: 2 variants each for Demon Lord, Robot One, Farmer A using exact non-canonical donor audition lines. All six ffprobe-validated and hashed. See `data/MVP_ESPEAK_AUDITION_R1_RECEIPT.json` for CLI parameters/hashes/provenance. The ZIP is a **conversation sandbox attachment only**, not a GitHub/Site-hosted audio asset. A future WSA must rerender (or receive the supplied ZIP) instead of pointing the Site at a nonexistent asset URL.
+- `piper`, `espeak-ng` and a secure ElevenLabs generation bridge were not present in this environment. eSpeak is a cheap build-time/robotic comparator, not accepted natural acting or Piper evidence.
+- No approved production Triplet was rendered: all lines carry `CASTING_ONLY_NON_CANON`. KFB semantic/Triplet owner must supply a genuinely accepted source-backed Triplet before the next consumer proof. Do not promote this fixture to game canon.
+- Existing private KFB Audio Site `Voice Acting` tab remains the only audio/casting UI. No new browser/ASR/LLM/3D/game tests, no new site/version/deployment, no 2nd audio engine, no provider spend.
+
+**Current single next technical gate:** `KFB_VOICE_TRIPLET_AUDIO_CONSUMER_SITE_INTEGRATION_R1` — use a Sites-capable authorized Work/WSA executor to reuse/update the existing KFB Audio Voice Acting tab, import or generate real licensed English takes for one accepted source-backed Triplet, consume the dormant asset-identity helper, prove source-to-Whole/fragment/fallback with true playback start/end + existing bed duck + mute/bubble/talk-loop/stop restoration and actual browser listening evidence. Casting heuristics remain editable pending Georg's later tuning. If Site publishing capability is unavailable, persist exact Site-ready source and `SITES_PUBLISHER_REQUIRED`; do not publish an invented Cloudflare mirror.
+
+**Known limits:** current helper's `evaluateAsset()` checks record flags and identity equality but is not an authenticated license/approval authority; the true owning source and actual legal rights require independent confirmation. Never use an unreviewed model for public shipping.
+
+---
+
+
 ## 2026-10-10 CURRENT STEERING AFTER S3 · HEURISTIC CASTING & CONVERSATION PERFORMANCE (SUPERSEDES IMMEDIATE PER-VOICE GATE)
 
 New Georg feedback: **Voice Acting works very well**, and the first MVP casting should be **heuristically assigned, editable**, initially by heard masculine/feminine/synthetic lane, age impression, timbre and actor role. Georg will fine-tune **later**. Thus the older sections below asking for **early individual Georg KEEP/TUNE/CUT before even creating heuristic maps** are HISTORICAL for this preliminary proof; the latest source-backed audition candidate does **not** need preapproval. Final shipped voice takes, rights and public actor/game acceptance remain unapproved.
