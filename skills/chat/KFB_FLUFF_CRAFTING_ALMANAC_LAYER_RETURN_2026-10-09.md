@@ -1,4 +1,10 @@
-# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v1.9
+# KFB Fluff / Crafting / Alchemy / Fractal Almanac · CURRENT Return v2.0
+
+> **GLOBAL CREATIVE NORTH STAR · 2026-10-10:** Georg's author clarification is now persisted directly in the existing cross-product [KFB Game Bigger-Picture Reference](./KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md), on this branch. **Cognitive dissonance as resonance / audience Closure**: KFB is a plural Kayfabe+Bizarro montage, not an editorial referee. Warburg's associative good neighbors, Gabriel's Sinnfelder and McCloud's comic gutter are creative lenses, not equal philosophical theories. Overaffirmation, clashing real and invented assertions, incompatible viewpoints and text-image inversions may expose their own contradictions through actions and tragicomic failure. Author is not automatically endorsing depicted viewpoints; creative world scenes do not need boilerplate ideological qualifiers. Critical inquiry into external factual sources still preserves attribution and evidence, without narrowing creative character speech. Existing actual ChatterBox Sheet and Card/World owners remain authoritative. **No new canon lock/content guardrail, route, human gate or MVP runtime authorization.** Verified global reference section commit `f8fe63368e70df12bb200ff7d37f0dbba0cd1b6a`, source blob `5e41c6187152da0fa35463119f5314fa045faa86`. No new visual/browser/3D/site-public tests. Deferred Minigame integration gate remains `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`.
+
+---
+
+
 
 > **GEN Z ISLAND CAST · 2026-10-10:** New [Gen Z / Hyperbubble philosopher trio](./KFB_GEN_Z_HYPERBUBBLE_PHILOSOPHER_TRIO_V1_2026-10-10.md). Georg specifies three full surnames: Goth Girl = Foucault, female-read Protagonist A = Derrida, Protagonist B = Deleuze. Existing source identities untouched; actual ChatterBox Sheet still requires owner verification. Concept-only; no new runtime, published Site, source-isolated 3D, PR or merge. Parent gate unchanged: `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT`.
 
