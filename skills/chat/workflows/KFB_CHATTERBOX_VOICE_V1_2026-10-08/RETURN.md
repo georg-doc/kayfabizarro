@@ -236,6 +236,28 @@ Updated future WSA handoff: `skills/chat/WORK_WSA_KFB_VOICE_CASTING_BENCH_MINIMA
 
 New changes in this checkpoint: documentation only, no code, no paid synthesis, no newly auditioned human takes, no Site deployment, no new runtime or browser/audio tests (0 each); previously reported 18/18, 13/13 and 87/87 evidence was not rerun. Do not elevate previous test figures into new PASS. Current user-facing gate remains unchanged: **voice solo / real D bed without ducking / D bed with ducking → Georg KEEP / TUNE / CUT**. No Hub/router/Cloudflare routing change.
 
+## 2026-10-10 · S4 voice/TTS source-prep documented on existing KFB Production Control Site
+
+Georg confirmed the bounded path: continue preparing source-backed Triplet speech for later Work/WSA, document the preparation on the existing Site, **but no voice take was given a human KEEP/TUNE/CUT verdict in this chat**. This is **no authorization** for World R5, another voice/dialogue engine or paid provider generation.
+
+New canonical owner-preparation document:
+`skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/S4_SOURCE_BACKED_TTS_PREP_R1_2026-10-10.md`.
+
+Evidence: the exact adapter/casting/next-MVP/voice-contract source files inspected, **16/16 static source assertions PASS**. Material preflight finding: the existing `voiceAssetKey` lacks sourceRevision, provider/model, recipeRevision and asset approval/rights status. The next S4 implementation should fix the output manifest/cache identity seam and prove one source-backed accepted Whole/fragment playback path; **no adapter/runtime modification occurred here**.
+
+KFB Production Control private Site Inbox now contains the exact GitHub text document:
+- workflow `KFB_CHATTERBOX_VOICE_LAYER_2026-10-08`;
+- record `0925b418-fdae-4d76-b1f0-d37e8374e950`;
+- file `83d3d8f4-b664-427f-b33d-9db48e7d8221` (`KFB_S4_SOURCE_BACKED_TTS_PREP_R1_2026-10-10.md`);
+- 8,330 UTF-8 bytes, SHA-256 `7f1d7ad20dad0919c5e775346c72ba709271c14e1f93a978c3b7ffc037f6125a`;
+- Site artifact was read back and its UTF-8 contents matched GitHub exactly.
+
+Additive evidence is recorded in `TEST_REPORT.md`: 16/16 static/contract checks; 1/1 source document GitHub readback; 1/1 Site save/readback+byte comparison; **0** fresh audio-synthesis, browser listening, human audio, 3D and game-runtime tests. Historic S1 and S3 test figures are unchanged and were not rerun.
+
+Existing **KFB Audio Voice Acting Site** itself was **not edited or republished**; only the private KFB Production Control Site document store changed. No changes to DocCheck VoiceIO/CME PR #11, KFB Audio PR #365, Triplet/Sinnfeld authoring branch, KFB Hub, public Stage, merge or Live.
+
+Current gate remains **HUMAN LISTENING** on existing KFB Audio Voice Acting: voice solo / D bed without ducking / D bed with ducking → Georg KEEP / TUNE / CUT. After real listening acceptance, Work/WSA may be separately authorized to integrate the bounded S4 consumer.
+
 ## Exactly one next gate
 
 **HUMAN LISTENING · PUBLISHED KFB AUDIO VOICE ACTING BENCH**
