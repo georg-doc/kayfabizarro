@@ -1,0 +1,710 @@
+{
+ "schema": "kfb.motion-handoff/1",
+ "date": "2026-10-09",
+ "for": "Claude Code, KFB Island Worldbuilder Lab MVP",
+ "owner": "Blender-Coworker (Mac mini), issue #381",
+ "repo": "georg-doc/kayfabizarro",
+ "readFirst": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/MOTION_HANDOFF_MVP.md",
+ "baseLibrary": {
+  "path": "media/3D_Assets/Animations/KFB_Motion_Library/",
+  "catalog": "media/3D_Assets/Animations/KFB_Motion_Library/catalog.json",
+  "branch": "main",
+  "note": "Patches below are additive and NOT applied to the catalogue. Read clips from each batch's own GLB."
+ },
+ "rules": {
+  "eyes": "Every resident shown in the game carries the KFB eyes (eye rig v6). Never the KayKit original eyes, never no eyes.",
+  "eyesCovered": "A prop may pass the face briefly; the eyes are never covered for more than 3 frames in a row.",
+  "scale": "Scale the whole actor-root group (actor + its props) by FIG_SCALE = 1.6 (src/scale.ts). Never scale props one by one.",
+  "fps": 30,
+  "space": "glTF, Y up, actor faces +Z, KayKit units, actor root = armature origin",
+  "rigs": "KayKit Rig_Medium and Rig_Large. Bone names match the KayKit characters, so clips drive the characters directly.",
+  "clipJoins": "Clips start and end on KayKit Idle_A unless stated; loops wrap seamlessly (frame n = frame 0).",
+  "notOnGitHub": [
+   "raw Mixamo FBX",
+   "itch.io clay textures"
+  ]
+ },
+ "propTrackContract": {
+  "schema": "kfb.prop-tracks.v2",
+  "row": [
+   "tx",
+   "ty",
+   "tz",
+   "qx",
+   "qy",
+   "qz",
+   "qw",
+   "s"
+  ],
+  "space": "glTF, relative to the actor root",
+  "apply": "row = local transform of the RAW prop asset (glTF scene as shipped) under the actor root",
+  "interpolate": "lerp position and scale, slerp rotation",
+  "perClip": [
+   "frames",
+   "loop",
+   "next",
+   "talkWindows",
+   "props[{id, track[[row] per frame]}]"
+  ],
+  "header": [
+   "fps",
+   "space",
+   "columns",
+   "assets[] (prop_i = assets[i])",
+   "podiumTop",
+   "timing",
+   "throws"
+  ],
+  "oneShotJoin": "the last frame of a one-shot blends into the next clip's frame 0",
+  "reference": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/runtime/kfb_prop_track_player.js"
+ },
+ "assets": {
+  "clown": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+  "pins": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_{red,yellow,blue}.gltf",
+  "podium": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+  "donuts": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/{donut_pink,donut_chocolate,donut}.gltf",
+  "sweets": {
+   "status": "NOT IN THE REPO",
+   "source": "KayKit Bits Bundle 1 · Halloween Bits (CC0), Dropbox 3D ASSETS/_INBOX/KayKit_Bits_Bundle1_1.1/",
+   "files": [
+    "candy_pink_A",
+    "candy_orange_A",
+    "candy_blue_B"
+   ]
+  },
+  "trackAssetNames": "assets[] inside the track files use Dropbox folder names; map them to the repo paths above",
+  "eyeProfiles": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json"
+ },
+ "batches": [
+  {
+   "batch": "CLOWN-J5",
+   "status": "use (Georg accepted the look 2026-10-09; fine-tuning open)",
+   "issue": 381,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5",
+   "catalogPatch": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/KFB_Motion_Library.catalog.patch_clown_juggle_j5.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/libs/Rig_Medium/KFB_Motion_clown_juggle_j5.glb"
+   },
+   "propTracks": {
+    "pin": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/data/clown_juggle_j5.prop_tracks.pin.json",
+    "donut": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/data/clown_juggle_j5.prop_tracks.donut.json",
+    "candy": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/data/clown_juggle_j5.prop_tracks.candy.json"
+   },
+   "runtime": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j5/runtime/kfb_prop_track_player.js",
+   "clips": [
+    {
+     "id": "kfb_clown_juggle_cascade3_d",
+     "label_de": "Clown jongliert (3er-Kaskade, J5)",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 96
+     }
+    },
+    {
+     "id": "kfb_clown_juggle_stop_j5",
+     "label_de": "Clown fängt alles und hält an (J5)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 48
+     }
+    },
+    {
+     "id": "kfb_clown_juggle_talk_j5",
+     "label_de": "Clown spricht zum Publikum (J5)",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 96
+     }
+    },
+    {
+     "id": "kfb_clown_juggle_resume_j5",
+     "label_de": "Clown setzt wieder ein (J5)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 120
+     }
+    }
+   ],
+   "stateMachine": {
+    "states": [
+     "kfb_clown_juggle_cascade3_d",
+     "kfb_clown_juggle_stop_j5",
+     "kfb_clown_juggle_talk_j5",
+     "kfb_clown_juggle_resume_j5"
+    ],
+    "flow": "juggle (loop) -> at juggle frame 0, if a line is due: stop -> talk (loop while the Chatterbox line / bad joke plays; leave at talk frame 0) -> resume -> juggle frame 0",
+    "talkWindows": {
+     "kfb_clown_juggle_stop_j5": [
+      [
+       18,
+       47
+      ]
+     ],
+     "kfb_clown_juggle_talk_j5": [
+      [
+       0,
+       95
+      ]
+     ],
+     "kfb_clown_juggle_resume_j5": [],
+     "kfb_clown_juggle_cascade3_d": []
+    }
+   },
+   "physics": {
+    "flight": "ballistic: x and y at constant speed, z one parabola, one gravity (0.0249 units/frame^2, apex 2.1 above the release)",
+    "spin": "constant: one turn per throw, axis tilted 17 deg from left-right toward forward (mirrored per thrower), clubs land handle first",
+    "hands": "each hand runs an ellipse: throw inside moving up and in, empty hand out over the top, catch outside moving down and out, carry down and in",
+    "head": "tilted up 24 deg with a 3 deg nod per beat (follows each club to its high point)"
+   },
+   "faceRule": "Georg 2026-10-09: a club may pass the face briefly; eyes never covered more than 3 frames in a row. Pins: 18-19 of 96 frames per camera (about 3 per throw); donuts / sweets: 17-26 of 96, max 3 in a row; talk clip: 0.",
+   "knownIssues": [
+    "side camera: the knob sits on the nose tip on screen for 1 frame per throw (3D gap 0.066)",
+    "front camera: the rising club passes nose / one eye for about 2 frames per throw (allowed)",
+    "talk: the two-club arm still reads as pointing out sideways; ta-da opens level, not up; stop f10 shows the two clubs splayed before the V closes",
+    "release speed: the hand moves at about a third of the club's launch speed (small chibi arms)",
+    "held donuts lie flat against the body; KayKit sweets have open wrapper cones"
+   ],
+   "notes": "Rig_Medium only. Supersedes J3 and J4 (both stay on the branch, do not use)."
+  },
+  {
+   "batch": "CLOWN-J4",
+   "status": "superseded by CLOWN-J5",
+   "issue": 381,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j4"
+  },
+  {
+   "batch": "CLOWN-J3",
+   "status": "superseded by CLOWN-J5",
+   "issue": 381,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/clown_juggle_j3"
+  },
+  {
+   "batch": "FORGE-01",
+   "status": "use",
+   "issue": 376,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01",
+   "catalogPatch": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/KFB_Motion_Library.catalog.patch_forge01.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/libs/Rig_Medium/KFB_Motion_forge01.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/libs/Rig_Large/KFB_Motion_forge01.glb"
+   },
+   "clips": [
+    {
+     "id": "kfb_gesture_point_low_a",
+     "label_de": "Zeigen nach vorn-unten (hüfthoch)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 80,
+      "Rig_Large": 80
+     }
+    },
+    {
+     "id": "kfb_gesture_point_forward_b",
+     "label_de": "Zeigen nach vorn (gerader Arm)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 60,
+      "Rig_Large": 60
+     }
+    },
+    {
+     "id": "kfb_action_kneel_eat_a",
+     "label_de": "Hinknien und essen / werkeln",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 92,
+      "Rig_Large": 92
+     }
+    },
+    {
+     "id": "kfb_gesture_shrug_georg_a",
+     "label_de": "Schulterzucken (Georgs Mixamo, Arme weniger nach hinten, kürzer gehalten)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 69,
+      "Rig_Large": 69
+     }
+    }
+   ],
+   "credits": [
+    "KayKit (Kay Lousberg) · CC0 · rigs and Idle_A",
+    "UniMate (L. Mou et al., 2026) · checkpoints CC BY-NC 4.0 · credit required (kfb_gesture_point_low_a, kfb_action_kneel_eat_a)",
+    "Adobe Mixamo · source of the shrug (Mixamo terms)"
+   ]
+  },
+  {
+   "batch": "FORGE-01-TABLE",
+   "status": "use",
+   "issue": 376,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/table_r8",
+   "catalogPatch": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/table_r8/KFB_Motion_Library.catalog.patch_forge01_table.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/table_r8/libs/Rig_Medium/KFB_Motion_forge01_table.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/table_r8/libs/Rig_Large/KFB_Motion_forge01_table.glb"
+   },
+   "clips": [
+    {
+     "id": "kfb_activity_table_eat_b",
+     "label_de": "Am Tisch essen (Hocker)",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 65,
+      "Rig_Large": 65
+     },
+     "seatHeightY": {
+      "Rig_Medium": 0.5,
+      "Rig_Large": 0.89
+     },
+     "props": {
+      "plate": {
+       "asset": "Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/plate_A.gltf",
+       "posXZ_perScale": [
+        -0.08,
+        0.36
+       ],
+       "onTableTop": true
+      },
+      "food": {
+       "asset": "Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/sandwich.gltf",
+       "onPlate": true,
+       "eatenAway": {
+        "bites": 4,
+        "perLoop": 1,
+        "pickFrame": 24,
+        "mouthFrame": 54,
+        "shrinkAxis": "actor X from the right-hand side",
+        "bitePiece": "1/4 of the sandwich length rides handslot.r from pickFrame and is scaled to 0 over the 4 frames before mouthFrame"
+       }
+      }
+     }
+    },
+    {
+     "id": "kfb_activity_table_write_b",
+     "label_de": "Am Tisch schreiben (Hocker)",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 48,
+      "Rig_Large": 48
+     },
+     "seatHeightY": {
+      "Rig_Medium": 0.5,
+      "Rig_Large": 0.89
+     },
+     "props": {
+      "sheet": {
+       "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+       "scale": 0.5,
+       "posXZ_perScale": [
+        -0.02,
+        0.3
+       ],
+       "onTableTop": true
+      },
+      "pencil": {
+       "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+       "note": "the long pencil with the eraser cap (Georg 2026-10-08), cartoon-big",
+       "scale": {
+        "Rig_Medium": 1.3,
+        "Rig_Large": 2.314
+       },
+       "attach": "handslot.r",
+       "grip": {
+        "tipToEraserDir": [
+         -0.65,
+         0.73,
+         -0.2
+        ],
+        "space": "actor glTF (x right-of-viewer, y up, +z forward)",
+        "gripPointForward": {
+         "Rig_Medium": 0.04,
+         "Rig_Large": 0.071
+        },
+        "rule": "the pencil passes through the grip point (handslot.r + gripPointForward), tip on the page, eraser up and out to the right; placed on frame 0 and then parented to handslot.r"
+       }
+      }
+     }
+    },
+    {
+     "id": "kfb_activity_table_read_b",
+     "label_de": "Am Tisch lesen (Hocker)",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 20,
+      "Rig_Large": 20
+     },
+     "seatHeightY": {
+      "Rig_Medium": 0.5,
+      "Rig_Large": 0.89
+     },
+     "props": {
+      "book": {
+       "asset": "KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+       "rotationXDeg_blender": -125,
+       "posXZ_perScale": [
+        -0.02,
+        0.3
+       ],
+       "onTableTop": true,
+       "note": "propped toward the reader"
+      }
+     }
+    }
+   ],
+   "credits": [
+    "KayKit (Kay Lousberg) · CC0 · rigs, Sit_Chair_Idle, Dungeon stool + table_medium, RPG Tools, Tiny Treats Pleasant Picnic",
+    "UniMate (L. Mou et al., 2026) · CC BY-NC 4.0 · arm motion of kfb_activity_table_eat_b and _read_b comes from kfb_action_kneel_eat_a"
+   ]
+  },
+  {
+   "batch": "FORGE-01-SEAT-JUMP",
+   "status": "use",
+   "issue": 381,
+   "branch": "blender-mcp/motion-forge-poc-01-2026-10-08",
+   "folder": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/seat_jump_s1",
+   "catalogPatch": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/seat_jump_s1/KFB_Motion_Library.catalog.patch_forge01_seat_jump.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/seat_jump_s1/libs/Rig_Medium/KFB_Motion_forge01_seat_jump.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_MOTION_FORGE_POC01_2026-10-08/pack01/seat_jump_s1/libs/Rig_Large/KFB_Motion_forge01_seat_jump.glb"
+   },
+   "clips": [
+    {
+     "id": "kfb_seat_sit_down_table_b",
+     "label_de": "An den Tisch setzen (Hocker)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 51,
+      "Rig_Large": 51
+     },
+     "next": "kfb_activity_table_eat_b (frame 0 = the activity's first frame; any table activity works, the arms blend to its frame 0)",
+     "sequence": "KayKit Sit_Chair_Down (unmodified lower body; Rig_Large = Medium retargeted) at scoot distance behind the working spot -> arms blend 14 frames -> scoot in 12 frames with the stool",
+     "seatContactFrame": {
+      "Rig_Medium": 25,
+      "Rig_Large": 25
+     }
+    },
+    {
+     "id": "kfb_seat_stand_up_table_c",
+     "label_de": "Vom Tisch aufstehen, Beine schieben den Hocker zurück",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 41,
+      "Rig_Large": 41
+     },
+     "sequence": "6-frame lead-in to KayKit Sit_Chair_StandUp; no back travel while seated; back travel only once the hips leave the seat (first just enough to keep belly and knees out of the table slab, the rest during the hop-off); hands lifted over table and food by a hand path (IK) and dropped behind the edge; head tilted back up to 12° (Farmer) to clear the food; KayKit step of one foot kept, the other planted; 10-frame standing hold"
+    },
+    {
+     "id": "kfb_move_jump_up_stool_b",
+     "label_de": "Auf den Hocker springen",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 66,
+      "Rig_Large": 73
+     }
+    },
+    {
+     "id": "kfb_move_jump_up_podium_b",
+     "label_de": "Aufs Zirkuspodest springen",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 67,
+      "Rig_Large": 76
+     }
+    },
+    {
+     "id": "kfb_move_jump_down_stool_b",
+     "label_de": "Vom Hocker springen",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 46,
+      "Rig_Large": 54
+     }
+    },
+    {
+     "id": "kfb_move_jump_down_podium_b",
+     "label_de": "Vom Zirkuspodest springen",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 47,
+      "Rig_Large": 56
+     }
+    }
+   ],
+   "credits": [
+    "KayKit (Kay Lousberg) · CC0 · rigs, Sit_Chair_Down/StandUp, Jump_Start/Idle/Land, Dungeon stool + table_medium, Mystery Monthly Clown circus_podium"
+   ]
+  },
+  {
+   "batch": "PERF-369",
+   "status": "use",
+   "issue": 369,
+   "branch": "blender/resident-performance-choreography-2026-10-07",
+   "folder": "skills/chat/workflows/KFB_RESIDENT_PERFORMANCE_CHOREOGRAPHY_369_2026-10-07/motion_library_delta",
+   "catalogPatch": "skills/chat/workflows/KFB_RESIDENT_PERFORMANCE_CHOREOGRAPHY_369_2026-10-07/motion_library_delta/KFB_Motion_Library.catalog.patch_perf369.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_RESIDENT_PERFORMANCE_CHOREOGRAPHY_369_2026-10-07/motion_library_delta/libs/Rig_Medium/KFB_Motion_perf369.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_RESIDENT_PERFORMANCE_CHOREOGRAPHY_369_2026-10-07/motion_library_delta/libs/Rig_Large/KFB_Motion_perf369.glb"
+   },
+   "clips": [
+    {
+     "id": "kfb_perf_shrug_a",
+     "label_de": "Schulterzucken (Hände offen)",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 35,
+      "Rig_Large": 35
+     }
+    }
+   ],
+   "notes": "Additive-layer data in the patch ('layers'). Replaceable by a sourced shrug under the same id."
+  },
+  {
+   "batch": "EXCH-01",
+   "status": "use",
+   "branch": "planning/exchange-reaction-kit-01-2026-10-05",
+   "folder": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta",
+   "catalogPatch": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/KFB_Motion_Library.catalog.patch_exch01.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/libs/Rig_Medium/KFB_Motion_exchange01.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/libs/Rig_Large/KFB_Motion_exchange01.glb"
+   },
+   "clipCount": {
+    "Rig_Medium": 14,
+    "Rig_Large": 17
+   },
+   "clips": [
+    {
+     "id": "kfb_react_delighted_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 76,
+      "Rig_Large": 76
+     }
+    },
+    {
+     "id": "kfb_react_contradict_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 59,
+      "Rig_Large": 51
+     }
+    },
+    {
+     "id": "kfb_react_boggle_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 76,
+      "Rig_Large": 76
+     }
+    },
+    {
+     "id": "kfb_react_dismiss_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 41,
+      "Rig_Large": 40
+     }
+    },
+    {
+     "id": "kfb_react_fluffy_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 43,
+      "Rig_Large": 43
+     }
+    },
+    {
+     "id": "kfb_react_kayfabe_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 61,
+      "Rig_Large": 61
+     }
+    },
+    {
+     "id": "kfb_react_pop_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 49,
+      "Rig_Large": 49
+     }
+    },
+    {
+     "id": "kfb_react_outraged_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 51,
+      "Rig_Large": 51
+     }
+    },
+    {
+     "id": "kfb_react_amused_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 76,
+      "Rig_Large": 76
+     }
+    },
+    {
+     "id": "kfb_react_disappointed_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 66,
+      "Rig_Large": 68
+     }
+    },
+    {
+     "id": "kfb_react_scared_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 76,
+      "Rig_Large": 76
+     }
+    },
+    {
+     "id": "kfb_react_taunt_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 49,
+      "Rig_Large": 48
+     }
+    },
+    {
+     "id": "kfb_react_dizzy_a",
+     "loop": true,
+     "frames": {
+      "Rig_Medium": 134,
+      "Rig_Large": 134
+     }
+    },
+    {
+     "id": "kfb_react_faint_a",
+     "loop": false,
+     "frames": {
+      "Rig_Medium": 25,
+      "Rig_Large": 51
+     }
+    },
+    {
+     "id": "kfb_interaction_gift_give_fit_a",
+     "loop": false,
+     "frames": {
+      "Rig_Large": null
+     },
+     "note": "Rig_Large only; frame count in the patch"
+    },
+    {
+     "id": "kfb_interaction_gift_receive_fit_a",
+     "loop": false,
+     "frames": {
+      "Rig_Large": null
+     },
+     "note": "Rig_Large only; frame count in the patch"
+    },
+    {
+     "id": "kfb_interaction_opening_a_lid_fit_a",
+     "loop": false,
+     "frames": {
+      "Rig_Large": null
+     },
+     "note": "Rig_Large only; frame count in the patch"
+    }
+   ],
+   "notes": "Reaction calls (BINGO! / BONGO. / BOGGLE? / Bloedsinn... / FLUFFY! / Kayfabe! / Pop! / Bizarro...?!) are mapped to clips in the patch ('callSet'); gift hand-over events in 'exchangeEvents'. Starts and ends on Idle_A."
+  },
+  {
+   "batch": "FLUFF-01",
+   "status": "use",
+   "branch": "planning/fluff-blender-slice-01-2026-10-04",
+   "folder": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta",
+   "catalogPatch": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/KFB_Motion_Library.catalog.patch_fluff01.json",
+   "libraries": {
+    "Rig_Medium": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "clipCount": {
+    "Rig_Medium": 17,
+    "Rig_Large": 13
+   },
+   "clips": "read the catalogue patch (ids kfb_fluff_*)"
+  }
+ ],
+ "characterCards": [
+  {
+   "schema": "kfb.character-card/1",
+   "status": "DRAFT (not approved; eye profile unreviewed by Georg)",
+   "id": "clown",
+   "displayName": "Clown",
+   "rig": {
+    "base": "KayKit Rig_Medium",
+    "asset": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+    "scaleH": 1.0,
+    "hideMeshes": [
+     "KayKit eye caps on Clown_Head (confirm node names on load)"
+    ]
+   },
+   "eyes": {
+    "rig": "kfb-eye-rig",
+    "version": "v6",
+    "approved": null,
+    "source": "Clown_Head AUTO_CANDIDATE in eye-rig-medium.batch-1.json",
+    "socket": "head",
+    "dx": 0.295,
+    "dy": -0.29,
+    "ring": 0.25,
+    "inset": 1.18,
+    "pupil": 0.34,
+    "converge": 0.18,
+    "base": "#f7f9f9"
+   },
+   "voice": {
+    "chatterbox": "clown",
+    "keep": true
+   },
+   "props": {
+    "juggling_pin": {
+     "hand": "R/L (tracks decide)",
+     "bone": "handslot.r / handslot.l",
+     "grip": [
+      0,
+      -0.27,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "gripNote": "glTF prop-local: 0.27 down the pin axis from the asset origin",
+     "fingers": "closed_handle"
+    }
+   },
+   "stage": {
+    "prop": "circus_podium",
+    "actorRootY": 1.0
+   },
+   "animations": {
+    "library": "Rig_Medium",
+    "performance": "CLOWN-J5"
+   }
+  }
+ ],
+ "openTuning": [
+  "side view: club knob on the nose tip for 1 frame per throw (3D gap 0.066)",
+  "talk pose: two-club arm still reads sideways; ta-da opens level",
+  "hand speed at release about a third of the club speed",
+  "donuts lie flat when held; KayKit sweets have open wrapper cones",
+  "Clown eye profile unreviewed",
+  "Halloween Bits sweets not in the repo"
+ ],
+ "credits": [
+  "KayKit (Kay Lousberg) · CC0 · rigs, Idle_A, characters, Clown, pins, podium, Dungeon furniture, Halloween Bits",
+  "Tiny Treats (Isa Lousberg) · CC0 · donuts, Pleasant Picnic",
+  "UniMate (L. Mou et al., 2026) · checkpoints CC BY-NC 4.0 · credit required: kfb_gesture_point_low_a, kfb_action_kneel_eat_a, arm motion of kfb_activity_table_eat_b and _read_b",
+  "Adobe Mixamo · source of kfb_gesture_shrug_georg_a (Mixamo terms; raw FBX never on GitHub)"
+ ],
+ "licenceNote": "KFB is free-to-play / portfolio. The UniMate-derived clips are non-commercial (CC BY-NC); keep the credit line visible."
+}
