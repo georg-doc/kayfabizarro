@@ -5,7 +5,16 @@ Owner: KFB Island Worldbuilder Lab, bounded G1 only
 Repo: `georg-doc/kayfabizarro`  
 Arbeitsbranch: `planning/kfb-mvp1-asset-candidates-2026-10-10`  
 Quellbrief: `sync/lab-rkit-2026-10-09`, `BRIEF_WEBCHAT_ASSET_CANDIDATES_R1.md`  
-Prüfbericht-Head vor finalem Recovery/Changelog: `28f88e56af9e3c33103e981a6e0f898e3fd7cb73`. **Aktuellen Branch-Head immer live erneut lesen.**
+R2-Vergleich/Runbook/Testbericht-Head vor Abschluss: `6a967018bb748d28a33cfdf296eb4e40952962a7`. **Aktuellen Branch-Head immer live erneut lesen.**
+
+## R2 · Quellenvergleich / 2026-10-10
+- Native Dropbox-Metadaten der bezahlten Originaldateien geprüft: Port `Floting Base.fbx` 300.044 Byte, Backyard `Backyard Base.fbx` 47.996 Byte. Keine Assets ins Repo übertragen.
+- [Quantitative R2-Vergleichsdaten](G1_TOWN_SOURCE_COMPARISON_R2.json): Port 1.585 Dreiecke / 6 Unterseiten-Tiefpunkte / Tiefe 0,434 W; Backyard 700 / 22 / 0,506 W. Historische Messung, **keine** neuen isolierten 3D-Renders und keine native K2-BBox.
+- [R2-Runbook für vorhandenen lokalen Lab-Viewer](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md): temporäre Sichtbarkeits-/Kamera-Diagnose am bestehenden `originals.ts`, acht Ansichten über bestehendes `shoot.mjs`. Nicht ausgeführt, keine zweite Runtime.
+- [R2 Testbericht](TEST_REPORT_G1_R2.md): **13/13 statische Quellenprüfungen PASS**; ursprüngliche **18/18** G1-Inventurprüfungen bleiben PASS. Visuelle Source-Isolation **0/8**, native K2 bbox **0/2**; kompletter Bildbeweis OFFEN.
+- Historischer `orig.json` im lokalen Lab belegt einen früheren Ladevorgang, aber keinen Port/Backyard-Vieransichten-Vergleich. Ursprünglicher Viewer legt dieselbe Port-Textur auf alle Basen: Farbvergleich damit nicht belegt.
+- Container-Grenze: verfügbare private Original-FBX-Binärdateien konnten ohne externes DNS nicht in die aktuelle Render-Umgebung geladen werden; kein fingierter Visual-PASS.
+- **Georg:** bisher keine G1-Auswahl, keine GoldenRef, kein neues Gate für Georg ohne echte Voransichten.
 
 ## Erledigte Elemente / Evidenz
 - **KFB Town Plateau** (`town_plateau_island_body`): 5 Kandidaten (StreakByte Port, Backyard, River, Forest, Pond); Port als A **zur Sichtprüfung**.
@@ -40,4 +49,4 @@ Native bbox und tatsächliche Skalierung in H; Quellmodell in vier isolierten An
 - Kein externer Ersatz für ein vorhandenes Repo-Asset wurde übernommen.
 
 ## Genau ein nächster Schritt
-**Source-Isolation G1-Town:** Das originale private StreakByte `LPFI_PortLand/Floting Base.fbx` und die Alternative `LPFL_BackyardLand/Backyard Base.fbx` im bestehenden Island Lab isoliert (nicht Demo-Szene) rendern: gleiche Kamera/Licht für Front, 3/4 von oben, Seite und von unten; native bbox, grobe H-Skalierung nach `40 MC = 70,4 H`, Kanten-/Unterseiten-/Materialprüfung. PNGs als referenzierbare Proofs in das G1-Blatt aufnehmen, ohne bezahlte FBX zu veröffentlichen. Danach G1 Recovery + Changelog aktualisieren und nur die konkrete Formwahl Georg vorlegen. **Kein Runtime-Bau/Stage/Live/Auto-Merge.**
+**G1 Town Source-Isolation im bestehenden lokalen Lab:** [R2-Protokoll](G1_TOWN_SOURCE_ISOLATION_RUNBOOK_R2.md) ohne neue Runtime ausführen: Original-FBX `LPFI_PortLand/Floting Base.fbx` und `LPFL_BackyardLand/Backyard Base.fbx` einzeln zeigen, Front/3-4/Seite/Unterseite (8 Screenshots) plus native `__kfb.info` BBox und Faktor `256/max(sizeX,sizeZ)` messen, Quelle/Blatt/Recovery mit tatsächlichen Bildern aktualisieren. **Keine** paid FBX ins Repo, keine fiktive Freigabe, `picked=null` bis Georg entscheidet.
