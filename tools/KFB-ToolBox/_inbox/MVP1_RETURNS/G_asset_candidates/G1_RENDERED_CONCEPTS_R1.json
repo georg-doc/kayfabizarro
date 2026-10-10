@@ -8,12 +8,13 @@
   "classification": "STYLE-CONCEPT ONLY · not source-isolated donor, not K2 checked, not Golden",
   "githubStatus": {
     "previews": "PUSHED_VERIFIED",
-    "previewCount": 3,
+    "previewCount": 4,
     "previewSize": "256x192 WEBP lossy Q32",
     "originalPNGs": "PENDING_BINARY_UPLOAD",
-    "originalCount": 0
+    "originalCount": 0,
+    "g1MoodCount": 1
   },
-  "originalsAvailable": "Full-resolution 1448x1086 PNG originals packaged in ChatGPT conversation as KFB_MVP1_G1_Concept_Images_2026-10-10.zip, with checksum and GitHub upload helper; ZIP not yet in GitHub.",
+  "originalsAvailable": "R8 full-resolution chat ZIP KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip includes all four G1 original PNGs, one G4 STONE BRIDGE 01 style-reference PNG and checksums; full-size bytes not on GitHub.",
   "concepts": [
     {
       "id": "g1-town-r1",
@@ -68,6 +69,50 @@
       "previewGithubVerified": true,
       "picked": null,
       "goldenRef": false
+    },
+    {
+      "id": "g1-rock-largeA-mood-r1",
+      "label": "Kenney rock_largeA / KFB clay mood study R1",
+      "scene": "S01/G1 large boulders",
+      "kind": "generated-mood-not-donor-accurate",
+      "userFeedback": "vom Design und als Mood Asset cool und hilfreich; näher an tatsächliche Original-Assets heran",
+      "preview": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp",
+      "previewSha": "3fead6142ebd0ee7876634f1c85975d47ca99a05",
+      "sourcePng": "G1_Kenney_rock_largeA_MOOD_R1.png",
+      "sourcePngSha256": "276bbede58cc81d1f3911bb73323c76024f162cf7b17a0d30ae20109622d9404",
+      "sourcePngBytes": 1752980,
+      "previewLink": "https://github.com/georg-doc/kayfabizarro/blob/planning/kfb-mvp1-asset-candidates-2026-10-10/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1_preview_256.webp",
+      "originalPngGithubPath": "tools/KFB-ToolBox/_inbox/MVP1_RETURNS/G_asset_candidates/refs/_concepts/G1_Kenney_rock_largeA_MOOD_R1.png",
+      "originalPngGithubUploaded": false,
+      "previewGithubVerified": true,
+      "picked": null,
+      "goldenRef": false,
+      "sourceAsset": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_largeA.glb",
+      "sourceGeometryProof": "refs/source-isolation/G1_kenney_rock_largeA_source_4view.svg",
+      "sourceFidelity": "NOT_VERIFIED__USER_SAYS_VISUALLY_DIFFERENT",
+      "classification": "MOOD_CONCEPT_ONLY"
     }
-  ]
+  ],
+  "styleDirection": {
+    "id": "g4-stone-bridge-01",
+    "status": "STYLE_DIRECTION_ONLY",
+    "goldenRef": false,
+    "assetPicked": false,
+    "userSource": "uploaded brief §7a on G1 branch",
+    "pngName": "G4_STONE_BRIDGE_01_STYLE_DIRECTION.png",
+    "pngSha256": "4b85e9a21549846c10a3cc20f82af286a72a965602a74c8d49cdfc1dc34f7724",
+    "originalPngGithubUploaded": false,
+    "assetOwner": "G4",
+    "priorFailureReportsRetained": true
+  },
+  "checkpoint": {
+    "id": "G1-R8",
+    "file": "KFB_G1_WEBCHAT_IMAGE_CHECKPOINT_R8_2026-10-10.zip",
+    "sha256": "ff939342f5df8d474d70232b269c0a51b0d8f7866b10c54643e8f834a5f92aca",
+    "pngCount": 5,
+    "g1PngCount": 4,
+    "g4StyleDirectionCount": 1,
+    "status": "LOCAL_CHAT_ZIP_NOT_GITHUB"
+  },
+  "lastUserDirection": "Georg: latest rock is useful as a MOOD asset but should more closely match source asset geometry; new brief §7a takes STONE BRIDGE 01 out of style quarantine only; build-light image sheets now allowed."
 }
