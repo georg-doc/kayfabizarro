@@ -9,3 +9,14 @@
 - Static source assertions: 19/19 PASS, runtime/browser/Blender visual tests: 0. Report: `KFB_COCONINO_MESA_ASSET_TEST_REPORT_R1_2026-10-11.md`.
 - Modelling/visual-evidence job created as [GitHub issue #388](https://github.com/georg-doc/kayfabizarro/issues/388).
 - No asset/model implementation, merge, Site/Stage, Hub route or Live publication. Existing central KFB router, World R4 stop and Four-Island A/B gate remain unchanged.
+
+
+## 2026-10-11 · R2 · Joyride island scene + palette/light + Composer / WSA
+- Georg requested KFB Coconino island scene reference design based on Dropbox `/CLAUDE/KFB Claymation Reference`, specifically **include Joyride race tracks** and implementation guidance for Blender MCP / Work WSA.
+- Source folders discovered: 9 Diorama image titles, Floating Islands design, 15 Race Track Builder images; metadata and limited preview surface only, no actual source pixels transferred to the image producer.
+- Four additional docs/image-job files authored: `KFB_COCONINO_SCENE_COMPOSER_R2_2026-10-11.md`, `KFB_COCONINO_PALETTE_LIGHT_ENVIRONMENT_R2_2026-10-11.md`, `KFB_COCONINO_SCENE_JOBS_R2_2026-10-11.json`, `KFB_COCONINO_BLENDER_MCP_WSA_EXECUTION_R2_2026-10-11.md`.
+- Three typed jobs: J1 Sunset Mesa Serpentine, J2 Painted Desert Twilight Pass, J3 optional Mesa Rim Cosmic Raceway; actual SHA-backed source paths with `BLOCKED_SOURCE`, source pixels `false`, no provider receipt or generated hero image.
+- Palette proposals P1/P2/P3; separates historic KFB R2C light numbers/track widths as **BENCHMARK** from current J17/Track Core geometry and game renderer owner. One continuous island-base / current Joyride race materials and barriers / Track Core connectors, no Hex or wrong bridge class.
+- New `KFB_COCONINO_SCENE_TEST_REPORT_R2_2026-10-11.md`: 17/17 static checks PASS, no actual source-pixel conditioning, Blender build, race gameplay test or public route. Issue #388 amended/read back.
+- Existing Four-Island R1 A/B and R4 STOP kept untouched; no second material, asset, road or runtime owner and no public Hub routing change.
+- Single next gate: real donor source-isolated 3D contact sheet + neutral M01–M03 + source-conditioned track-aware scene directions J1/J2 for Georg's A/B/FAIL review.
