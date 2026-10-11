@@ -24,9 +24,13 @@
     ]
   },
   "heightProposal": {
-    "highVariant": 2.6,
-    "choice": "PENDING_USER_TEXT_RESPONSE",
-    "baselineUnchanged": true
+    "choice": "GEORG_CONFIRMED_BASELINE_WITH_TALL_CELL_MODULES",
+    "baselineHeight": 1.6,
+    "higherCellModules": true,
+    "higherModuleHeight": null,
+    "placement": "selected cell-block/window modules only; do not raise all walls",
+    "baselineUnchanged": true,
+    "decision": "1,6 m plus höhere Zellenmodule"
   },
   "roles": [
     {
@@ -117,10 +121,25 @@
   },
   "sourcePixelStatus": {
     "bridgeDonors": "ACTUALLY_RENDERED_AND_VIEWED",
-    "prisonBoards": "FILES_EXIST_ON_GITHUB; connector returned no image bytes, NOT_PIXEL_INSPECTED",
-    "privateGreybox": "LOCAL_ONLY_SOURCE_ACCESS_REQUIRED; no Unity mesh/texture redistribution"
+    "prisonBoards": "Existing greybox Git boards remain separate; user design PNGs are STYLE references, not actual model/source proof",
+    "privateGreybox": "LOCAL_ONLY_SOURCE_ACCESS_REQUIRED; no Unity mesh/texture redistribution",
+    "userProvidedDesigns": "THREE_ORIGINAL_PNG_BYTES_AVAILABLE_AND_VISUALLY_INSPECTED"
   },
   "noNewRuntime": true,
   "noGolden": true,
-  "noMerge": true
+  "noMerge": true,
+  "designReferences": [
+    {
+      "file": "PRISON_DESIGN_INPUTS_R1/refs/prison_orthogonal_design.png",
+      "role": "orthogonal island context"
+    },
+    {
+      "file": "PRISON_DESIGN_INPUTS_R1/refs/prison_modular_wall_design.png",
+      "role": "modular wall/joint/damage/rubble kit primary"
+    },
+    {
+      "file": "PRISON_DESIGN_INPUTS_R1/refs/prison_round_design.png",
+      "role": "round island/polar maze/crater context"
+    }
+  ]
 }

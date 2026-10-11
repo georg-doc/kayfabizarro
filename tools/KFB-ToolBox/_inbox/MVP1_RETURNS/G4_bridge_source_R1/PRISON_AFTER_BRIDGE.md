@@ -1,5 +1,12 @@
 # Prison after bridge · exact source audit + modular-wall briefing
 
+## CURRENT · height choice confirmed; actual design PNGs found
+
+Georg chooses **1.6m standard walls plus higher cell modules**, not uniform2.6m. Allthree explicitly named Downloads PNGs now available and actuallyviewed. [Source design input](PRISON_DESIGN_INPUTS_R1/README.md), [wall-kit original](PRISON_DESIGN_INPUTS_R1/refs/prison_modular_wall_design.png). No additional whole-island reference generation needed. User-provided designs are STYLE_DIRECTION_ONLY, not real greybox/model/tiling/motion proof. OriginalGreybox/private mesh access and exacthighermodule dimensions remain open. ExistingToySoldierNo.1/KFB eyes retained; illustratedgreenfigure notsource replacement. Bridgefirst/Prisonqueued, noGolden/merge. Earlier optionalheight-pending/designimage-gap text below is superseded.
+
+## Earlier audit retained
+
+
 Queued after active G4 bridge, not a second active builder/runtime. Existing sourceowner Blender-Coworker / Island Worldbuilder Lab / post-MVP minigame planning. Currentgreybox branchblender-mcp/prison-maze-greybox-2026-10-10@bb3e4d9ef4cc11dfd39cbb7acc1c15197fecc82c, currentstylebriefBRIEF_CLAUDE_DESIGN_PRISON_ISLAND_LOOK_R1.md and ReturnsA/B/C read live. Do not replace that owner or generate another mazeengine.
 
 ## Already exists
