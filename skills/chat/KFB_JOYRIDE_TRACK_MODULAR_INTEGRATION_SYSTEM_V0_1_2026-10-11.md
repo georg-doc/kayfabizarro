@@ -69,7 +69,7 @@ Minimum conceptual socket payload for the design ledger (NOT a new runtime schem
 
 ### 2.3 Width transition, elevation and bank
 
-`WIDTH_STEP` missing length computes: **`L = max(40m, ceil(25 * |Wtarget−Wcurrent| / 2))`**. Hence STANDARD 14.4 → WIDE 18 yields `45m`; STANDARD → HERO 21.6 yields `90m`. Use compiler's `smootherstep` and source profile rather than shortening for visual convenience.
+`WIDTH_STEP` missing length computes: **`L = max(40m, ceil(25 * |Wtarget−Wcurrent| / 2))`**. Hence STANDARD 14.4 → WIDE 18 evaluates to **45m**. **Important v0.12 numeric precision case:** STANDARD 14.4 → HERO 21.6 is **nominally 90m** in the source comment, but actual JavaScript arithmetic is `(21.6−14.4) = 7.200000000000001`, then `Math.ceil(25 * ΔW / 2) = 91`; **the present code yields 91m** when the piece omits `length`. Do not silently use the 90m comment as compiled truth. Preserve this as a future Track Core precision/regression test before revising its implementation or explicit lengths. Use compiler's `smootherstep` and source profile rather than shortening for visual convenience.
 
 Height schedules support `rise` with `smootherstep` or piece-specific `ramp/rampIn/rampOut` blends. No globally binding maximum road grade was proven here; use existing `runChecks`, terrain contact and real vehicle climb/braking review. `autoBank` source defaults: `gain=26`, `limitDeg=24`, bank smoothing circa `24m`; DO NOT reinterpret it as an author-approved banking value for every parking plaza or town street. A neutral building entry may need `bankDeg:0` and level approach from legitimate available pieces.
 
