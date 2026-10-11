@@ -60,3 +60,28 @@ Historical images of `Krazy Kat` are references, never ingested mesh assets. No 
 **Current constraints/unresolved:** Actual donor geometry isolated renders still needed, Dropbox pixels not available to generator in this session, no Composer provider receipt, source SciFi pack heading mismatched, existing Four-Island A/B design and R4 STOP unchanged. The R1 original neutral form source gate was NOT completed, do not call the scene renders source-locked just because job JSON has correct blob SHA.
 
 **Exactly one next gate:** A genuine source-isolated contact sheet of KFB mesa, Kenney tall rock/cliff, KayKit Forest rock and Quaternius rock + original neutral M01–M03 + J1/J2 Joyride scenic reference A/B with verified image-pixel conditioning. Georg A/B/FAIL then separate explicitly authorized build after current Four-Island owner gate. All R2 Composer jobs currently `BLOCKED_SOURCE`; optional mood-only drafts are not accepted source proof.
+
+
+---
+
+## CURRENT R3 RETURN ADDENDUM · 2026-10-11 · Actual source projection and original neutral OBJ forms
+
+**Outcome:** Partial source-isolated geometry and neutral Mesa design proof generated from actual data, with truthful limits. Current baseline remains Four-Island A/B *design only*; Island MVP R4 STOP/NO GOLDEN, not converted into build authorization.
+
+**Same owner:** existing `tools/asset_registry` + KFB Asset Librarian source/handoff, `georg-doc/kayfabizarro`, branch `planning/kfb-coconino-mesa-asset-recon-2026-10-11`. Last R3 evidence commit before this additive Return: `a12c84403a2e070c2ecfbceb6fb141249ef6cc37`. Resolve final head from branch ref after this metadata write; no PR and no merge.
+
+**New/proven R3 files**
+- `tools/asset_registry/specs/visual/KFB_COCONINO_R3_QUATERNIUS_OBJ_SOURCE_PLATE.svg` (actual source OBJ polygon projection, 4 donor objects, 656 triangles).
+- `tools/asset_registry/specs/visual/M01_FLAT_CAP_R3.obj` (386v,768t), `M02_NEEDLE_BUTTE_R3.obj` (434v,864t), `M03_STEPPED_MESA_R3.obj` (578v,1152t).
+- `tools/asset_registry/specs/visual/KFB_COCONINO_R3_M01_M03_NEUTRAL_ORTHO.svg` (844 polygons with 8/48 radial display downsampling; actual full source mesh is in the OBJ files).
+- `tools/asset_registry/specs/KFB_COCONINO_SOURCE_PROOF_R3_2026-10-11.json` including donor source blob identity, new candidate blobs, honest image provenance and hashes.
+- `tools/asset_registry/specs/KFB_COCONINO_TEST_REPORT_R3_2026-10-11.md`, with FAIL->fix->recheck and source/visual/runtime boundaries.
+- Additive entry in owning `KFB_COCONINO_MESA_CHANGELOG.md` and this owning Return.
+
+**Tests actual:** Quaternius 4/4 original OBJ files parsed to source-derived polygon board; three new OBJ files original exports 3/3 repo-readback; initial inward-facing normals test FAIL for all; after one coherent correction, **3/3 final mesh topology PASS**, 0 degenerate triangles, 0 unmatched edges, all normals outward by positive volume, 0 inconsistent edge winding. Two SVG presence/readbacks (one 109,349 chars, other 130,489 chars). R3 SOURCE_PROOF+TEST_REPORT 2/2 full exact readback. 0 Blender MCP, Kenney GLB visual isolation, KayKit GLTF+BIN visual isolation, KFB `mesa()` actual runtime render, 0 Track Core drive, 0 FPS, 0 independent visual human PASS.
+
+**Two generated visual outcomes, not source-conditioned:** first two-row generated sunset/twilight image FORM FAIL for detached rocks/split sheet; second standalone warm one-clod Joyride scene **MOOD_ONLY** with no real source pixels supplied to provider, no path-collision/contact proof, no Golden. PNGs/chat ZIP exists at `/mnt/data/KFB_Coconino_R3_Mood_Only_Image_Pack_2026-10-11.zip`, SHA256 `afd2486d7210a47a6a9c89ba6c8f0503a47c5df750a8fc0c39933f177bf1b6fc`, 4,470,017 bytes, four CRC-verified entries. **This is a chat-local transfer link only, NOT a GitHub/Dropbox/Site/public asset.** Original PNG hashes in SOURCE_PROOF file.
+
+**Open:** remaining source donor KFB procedural `mesa()`, Kenney GLB & KayKit GLTF+BIN not isolated; 0 external Dropbox actual pixels handed to image generator. Original visual prototypes need actual Blender preview/independent critic; conceptual route needs World/Track Core no-HEX approved lane to be playable. Quaternius SciFi license-header mismatch unresolved. Do not integrate as new island or R5.
+
+**Exactly one next gate:** actual remaining KFB/Kenney/KayKit real donor isolation + Dropbox pixel-transfer into Composer, then single-image source-conditioned J1 Sunset vs J2 Violet Joyride environment A/B with neutral M01–M03, Georg A/B/FAIL. Do not block ongoing broader parent World design artificially. No Site/Stage/Live or central Hub metadata changes because no new public product route.

@@ -20,3 +20,12 @@
 - New `KFB_COCONINO_SCENE_TEST_REPORT_R2_2026-10-11.md`: 17/17 static checks PASS, no actual source-pixel conditioning, Blender build, race gameplay test or public route. Issue #388 amended/read back.
 - Existing Four-Island R1 A/B and R4 STOP kept untouched; no second material, asset, road or runtime owner and no public Hub routing change.
 - Single next gate: real donor source-isolated 3D contact sheet + neutral M01–M03 + source-conditioned track-aware scene directions J1/J2 for Georg's A/B/FAIL review.
+
+
+## 2026-10-11 · R3 · Actual Quaternius OBJ isolation + neutral M01-M03 mesh candidates + Mood QA
+- Four real CC0 Quaternius Ultimate Nature OBJ files (`Rock_1`, `Rock_2`, `Rock_3`, `Cactus_1`) parsed from pinned repo content (vertex/face indices); 656 genuine source-derived SVG polygons in `visual/KFB_COCONINO_R3_QUATERNIUS_OBJ_SOURCE_PLATE.svg`. This is source model 2D projection, NOT Blender or image-provider pixel conditioning.
+- Original neutral M01 flat-cap/M02 needle/M03 stepped Mesa Y-up OBJ meshes created separately (386v/768t, 434v/864t, 578v/1152t), with a 3/4/front/side/top sampled neutral SVG visualization; NO island runtime edit.
+- Geometry QA exposed inward face winding for all 3; fixed via one bounded OBJ face-index reversal. Re-fetch topological QA 3/3 passed: watertight consistent manifold edge incidence, zero degenerate triangles, positive signed volume. Blender/engine proof unrun.
+- Image generation attempts 2: first split sheet/disconnected geology FORM FAIL and retained; second single continuous organic island visual improvement but MOOD_ONLY, 0 source pixels fed, not proof of drivability/Golden. Files /mnt/data chat-only with verified SHA / CRC ZIP; NOT uploaded to GitHub. See `KFB_COCONINO_SOURCE_PROOF_R3_2026-10-11.json`, `KFB_COCONINO_TEST_REPORT_R3_2026-10-11.md`.
+- R4 STOP, Four-Island A/B design gate, Track Core/Joyride, existing Librarian and KFB Clay owners all unchanged. No Stage/Site/Hub, PR, merge, Live.
+- Only next gate: remaining KFB procedural `mesa()`/Kenney GLB/KayKit GLTF+BIN visual source-isolation and actual Dropbox image pixels available to Composer provider for source-conditioned J1/J2, then Georg A/B/FAIL.
