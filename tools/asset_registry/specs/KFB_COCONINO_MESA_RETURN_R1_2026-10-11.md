@@ -30,3 +30,33 @@ Historical images of `Krazy Kat` are references, never ingested mesh assets. No 
 **One next gate:** Deliver an actual source-isolated donor contact sheet (real rendered KFB K1 mesa, Kenney tall rock/cliff, KayKit original rock and Quaternius original rock), plus one original grey-clay silhouette comparison for M01 flat mesa / M02 butte / M03 stepped mesa. Georg evaluates the visible silhouettes; only then does a separate authorized asset-build/integration slice proceed.
 
 **Publishing:** No Site or Cloudflare Stage required for documentation-only research; no Hub/router changes because no new canonical runtime/public route, and no auto-merge/Live promotion.
+
+
+---
+
+## CURRENT R2 RETURN ADDENDUM · 2026-10-11 · Joyride island scene reference/lighting
+
+**Current outcome:** Source-backed Composer scene jobs, three creative light/palette presets and Blender MCP/Work WSA sequencing documented and verified on SAME owner/branch; this is NOT a visual donor lock or new runtime.
+
+**Owner:** existing `tools/asset_registry` Asset Librarian/Registry for discovery/handoff. Future World/Environment owner remains the only island scene build receiver. Track Core constructs/supports the geometry; Joyride presents the race-track; KFB Clay is the sole surface owner.
+
+**R2 intended GitHub files** (additive):
+- `tools/asset_registry/specs/KFB_COCONINO_SCENE_COMPOSER_R2_2026-10-11.md`
+- `tools/asset_registry/specs/KFB_COCONINO_PALETTE_LIGHT_ENVIRONMENT_R2_2026-10-11.md`
+- `tools/asset_registry/specs/KFB_COCONINO_SCENE_JOBS_R2_2026-10-11.json`
+- `tools/asset_registry/specs/KFB_COCONINO_BLENDER_MCP_WSA_EXECUTION_R2_2026-10-11.md`
+- `tools/asset_registry/specs/KFB_COCONINO_SCENE_TEST_REPORT_R2_2026-10-11.md`
+- owning additive `tools/asset_registry/specs/KFB_COCONINO_MESA_CHANGELOG.md`
+- this original owning Return updated additively.
+
+**Last milestone before this Return write:** `6093ce9cc0645dd23b29a73ecf5934712346ff51`. Resolve final branch HEAD from GitHub ref after this update; do not presume it is this predecessor.
+**Issue:** [#388](https://github.com/georg-doc/kayfabizarro/issues/388) updated and fetched back, Joyride scene pack included.
+**PR:** none; no merge or Stage/Site/Hub update, because there is no canonical new public product route.
+
+**Evidence:** Four R2 authored files exact branch-readback 4/4, valid three-job JSON; 17/17 R2 static checks PASS. R1 19/19 earlier structural checks retained separately. Dropbox lists real names, metadata and preview for 9 Diorama image titles, Floating Islands reference and 15 Race Track Builder images; source input PNG data has NOT been passed to image generator. New Blender models/render files 0, generated hero images 0, actual model-isolated captures 0, Track Core driving tests 0, target GPU benchmarks 0, independent acceptance 0. No false source-faithful PASS.
+
+**Source references and art work:** J1 warm sunset switchback, J2 violet-hour desert pass, J3 optional cosmic rim; two are priority and all include identifiable Joyride track geometry **as visual intent only**, respecting no Hex base and no wrong stone bridge structures. Palette P1/P2/P3 original design candidates, not measured historic comic palette or accepted game tokens.
+
+**Current constraints/unresolved:** Actual donor geometry isolated renders still needed, Dropbox pixels not available to generator in this session, no Composer provider receipt, source SciFi pack heading mismatched, existing Four-Island A/B design and R4 STOP unchanged. The R1 original neutral form source gate was NOT completed, do not call the scene renders source-locked just because job JSON has correct blob SHA.
+
+**Exactly one next gate:** A genuine source-isolated contact sheet of KFB mesa, Kenney tall rock/cliff, KayKit Forest rock and Quaternius rock + original neutral M01–M03 + J1/J2 Joyride scenic reference A/B with verified image-pixel conditioning. Georg A/B/FAIL then separate explicitly authorized build after current Four-Island owner gate. All R2 Composer jobs currently `BLOCKED_SOURCE`; optional mood-only drafts are not accepted source proof.
