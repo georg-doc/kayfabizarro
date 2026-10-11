@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Tunnel-Prototyp TUNE
+- V-130 Georg: Joyride-Tunnel-Ein-/Ausgänge (4 Varianten inkl. Rechteck) fehlen. Referenz tc1-looks.v3.jpg; Rechteckprofil existiert (Core v0.12 tunnelLooks). Neue Probe am Hirn mit allen 4 Portal-Bausätzen an beiden Enden, dann Stopp.
+
 ## 2026-10-11 · VFX/SFX eingebaut, C4 freigegeben
 - V-128/V-129 eingebaut: J17-Motor, Jingles, Kontakt-Engine, Kenney-CC0, Tunnel-Hall, J17-Knet-Partikel, Radio wechselt beim Einsteigen auf Suno RoadTrip; Kosten im Rauschen. Mitschnitt an Georg. Nebel-Farbe jetzt CPU-seitig aus dem Kuppelbild (GPU-Zurücklesen ließ Frames hängen; Korrektur der Bau-Sitzung).
 - C4 freigegeben: C4a B7-Haltebucht am Hex-Hub + Fußzugang → C4b Ring über Track Core 0.16.1 (≤ 1 mm sonst Stopp) → C4c erste Ausfahrt EXIT/Rampe/ENTRY im J17-Look. Wendeschleife offen bei Georg; Parkdeck-Tunnel Phase E/F.
