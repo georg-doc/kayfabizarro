@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Zwei FAILs
+- V-123 Blender Island Form Kit 01 K1+K2 R1 FAIL; Georg hat Blender direkt neu gebrieft.
+- V-124 WSA Protopia/Maker-Szene R1 FAIL (Zitat registriert, von WSA gemeldet nach V-122).
+
 ## 2026-10-11 · Blender Form Kit gestartet
 - V-119: Georg hat die Freigabe an den Blender-Coworker weitergegeben; K1 + K2 laufen (zweite Baustelle neben C1b+C3). WSA nur Recherche.
 
