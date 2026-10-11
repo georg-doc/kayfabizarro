@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · WSA Look-Spec R1 abgenommen, R2 beauftragt
+- R1: 9 Rundkurs-Module mit J17-Quellen (13/13 bytegleich J16-r2, 115 Zeilenverweise, Maße ×1,46), ehrliche Lücken (kein J17-Kreisel-/EXIT-Gore-Verbraucher). R2: town → Übergänge → country → dirt → cosmic (nur Quellen), nach V-150/V-151.
+- Spiegel-Skript: WSA-Dateien in replies/ werden nie aus lokalen Kopien überschrieben (Schutz nach Fehlgriff).
+
 ## 2026-10-11 · 21 Fragen beantwortet
 - V-150 Vorschläge angenommen; Berm/Wandfahrt + Sandkurven befahrbar; offen #4 Banden-Übergang, Cosmic-Look. V-151 Cartoon-Stunt-Race mit chill & fun Assist als Standard, später normal/hard.
 
