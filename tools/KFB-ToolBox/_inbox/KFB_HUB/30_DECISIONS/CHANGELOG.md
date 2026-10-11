@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Housekeeping: Register-Check, Plan R1 + Slices, START_HERE, Post-Mortem R2
+- Register-Check: alle 150 Einträge in DECISIONS.md und decisions.json, Warum/Wann vollständig, V-160 … V-187 alle im CHANGELOG. Querverweise additiv ergänzt („[12.10.: → …]“) an V-010, V-024, V-033, V-050, V-060, V-071, V-073, V-118, V-119, V-123, V-156, V-166, V-168, V-169, V-171, V-174, V-175, V-182 (u. a. V-175 (3) → V-185, V-169 Einheit TC-m → V-185, V-166/V-168/V-171 → V-183). Neu erzeugt.
+- Plan R1: Stand bis V-187; neu §2h Rhythmus/Billboards/Freiraum, §2i Banden-Enden und Audit-Reihenfolge, §2j Motion, §2k Dungeon, §2l Prozess 12.10.; §3 offen aktualisiert; §5 „Nächste Slices (Stand 12.10.)“ mit 12 Slices (Besitzer, Voraussetzung, Abnahme, V-Nummern, Lab 5192 vs. parallel).
+- START_HERE: Aufträge 12.10. (Bau C4c-Folgen → V-171 Punkte 2–3; RKIT pausiert; Blender R4 im eigenen Branch; WSA pausiert bis V-178; Fable02/WSO Clip-Katalog geliefert; Hintergrund Dungeon-POC Schritt 1 + NPC Performance Proof R1). Vorrang-Liste unverändert.
+- Post-Mortem R2 (Lab docs/POSTMORTEM_STEERING_R2_2026-10-12.md): acht Fälle (Banden, Einheiten, ungeprüfte Behauptungen, Fußtest unter Last, Bezugsmaße, Ladezeit/Flackern, Lizenz-Floskeln, Persistenz), Ursachen Steuerung zuerst, Lessons-Tabelle. sync_github.sh spiegelt jetzt alle Lab-POSTMORTEM_*.md.
+- ACCEPTANCE_INDEX neu erzeugt (66 Abnahmen).
+
 ## 2026-10-12 · Dungeon-POC Schritt 1 gestartet, NPC Performance Proof vorgemerkt
 - Agent baut Dungeon-Blockout (V-182) getrennt vom Lab: ~/Developer/kfb-dungeon-poc, Port 5194, Lab nur gelesen, Speicher-Wächter. Lieferung replies/DUNGEON_POC_R1/.
 - V-187 (TBD) NPC Performance Proof R1 als nächster One-Shot.

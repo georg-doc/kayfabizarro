@@ -1,6 +1,6 @@
 # START HERE · KFB Steuerung (für jede Sitzung: Claude Code, WSA, Blender-Coworker, Webchats)
 
-Stand: 11.10.2026 spät (bis V-168) · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`.
+Stand: 12.10.2026 (bis V-187) · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`.
 
 ## Maßgeblich (in dieser Reihenfolge)
 1. `DECISIONS.md` / `decisions.json`: Georgs PASS / TUNE / FAIL / RULE / TBD mit V-Nummern, Warum und Wann. Was dort steht, gilt.
@@ -43,9 +43,11 @@ Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist D
 Gesperrt für alle außer der Bau-Sitzung (MVP-1): `src/main.ts`, `src/play/travel.ts`, `src/play/surface.ts`, `src/play/race-fx.ts`, `src/audio/*`, `src/sky/sky.ts`, `src/world/organ/*`, `src/world/tunnel/*`, `src/bench/*`, `j17-track.lab.js`.
 WSA-Bereich (mit Georgs OK): `src/editor.ts`, `src/island/spec.ts`, `src/scene-study.ts`; Änderungen nur nach Vorlagen-Zeile an die Steuerung, parity vor und nach.
 
-## Aktuelle Aufträge (11.10. spät)
-- **Bau-Sitzung (Lab):** C4c erste Aus-/Auffahrt am Hub; zuerst Banden-Reparatur (Live-FAIL), Standardansicht nur geprüfter Stand (V-166); dann Flackern, Ladezeit.
+## Aktuelle Aufträge (12.10.)
+- **Bau-Sitzung (Lab, Port 5192):** C4c-Folgen nach V-183 (Auto in die Haltebucht, Randlinie unterbrochen, Zebra 3 Balken, Spalt bis zur Nase füllen), dann C4c als Standardansicht nach den üblichen Prüfungen. Danach V-171 Punkt 2 (Flacker-Paket, begonnen hinter `?flk=1`) und Punkt 3 (Insel-Cache, warm ≤ 5 s). Reihenfolge danach: Plan R1 §5.
 - **RKIT (Track Core, privat):** pausiert; Skins/Module bis 0.16.9 fertig (Plan R1 §2e).
-- **Blender-Coworker:** R4 Coconino-Mesas (Brief im eigenen Branch), danach R3 Inselboden.
-- **WSA:** Szenen-Studie Teil C Licht (replies/STEERING_REPLY_WSA_R2.md).
+- **Blender-Coworker:** R4 Coconino-Mesas im eigenen Branch (V-167), danach R3 Inselboden (V-142).
+- **WSA:** pausiert bis zur Audit-Gegenprüfung nach V-171 Punkt 1–3 (V-178); die Steuerung meldet sich mit Branch-Link und Fragen.
+- **Fable02/WSO (Mac mini):** Clip-Katalog R1 geliefert (replies/WSO_CLIP_CATALOG_R1.md).
+- **Hintergrund-Agenten:** Dungeon-POC Schritt 1 (V-182; `~/Developer/kfb-dungeon-poc`, Port 5194, Lab nur gelesen) · NPC Performance Proof R1 (V-187).
 - **Lab-Code-Schnappschuss** (ohne private Teile): Branch `sync/lab-snapshot-2026-10-11`.

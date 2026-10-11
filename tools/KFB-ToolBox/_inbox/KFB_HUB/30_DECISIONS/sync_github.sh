@@ -17,6 +17,7 @@ for f in DECISIONS.md decisions.json CHANGELOG.md build_decisions.py START_HERE_
 for f in "$H"/replies/**/*(.N); do r=${f#$H/replies/}; [[ $r == WSA_* || $r == track-module-look* ]] && continue; add "$f" "$BASE/replies/$r"; done  # WSA files are written on GitHub by WSA: never overwrite them from local copies
 add "$L/CLAUDE.md" "$BASE/LAB_CLAUDE.md"
 for f in KFB_WORLDBUILDER_PLAN_R1.md PROJECT_STATE.md PHASE_C_DONORS_R1.md POSTMORTEM_JOYRIDE_REGRESS_R1.md POSTMORTEM_MVP1_STAGE1_R1.md BASELINE_ACCEPTED_R1.md ACCEPTANCE_INDEX.md ISLAND_ANATOMY_RULES.md SCALE_CONTRACT_K2.md; do add "$L/docs/$f" "$BASE/lab-docs/$f"; done
+for f in "$L"/docs/POSTMORTEM_*.md(N); do add "$f" "$BASE/lab-docs/${f:t}"; done
 for d in "$L"/docs/golden/candidates/*_2026-10-1[1-9](N/); do for f in "$d"/*(.N); do add "$f" "$BASE/lab-docs/golden/${d:t}/${f:t}"; done; done
 T=$(git write-tree)
 if [[ $T == $(git rev-parse "$PARENT^{tree}") ]]; then echo "no change"; exit 0; fi
