@@ -1,0 +1,115 @@
+{
+  "schema": "kfb.source-isolation-receipt/1",
+  "status": "SOURCE_GEOMETRY_ISOLATED_SVG_UNTEXTURED",
+  "created": "2026-10-11",
+  "sourceRenderer": "deterministic GLTF/GLB accessor decoding and triangle orthographic projection",
+  "models": [
+    {
+      "name": "KayKit Lorekeeper",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "blobSha": "5d4f21fe9fa621011c2061011c45ede74aa7fd6b",
+      "vertices": 9439,
+      "triangles": 10738,
+      "nativeBbox": {
+        "min": [
+          -0.9712533354759216,
+          0,
+          -0.8292487859725952
+        ],
+        "max": [
+          0.9712533354759216,
+          2.1365437507629395,
+          0.5664989948272705
+        ],
+        "size": [
+          1.9425066709518433,
+          2.1365437507629395,
+          1.3957477807998657
+        ]
+      },
+      "meshProjection": "34_and_front",
+      "pixelsSuppliedToImageGen": false
+    },
+    {
+      "name": "Lorekeeper Tome lectern",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "blobSha": "faa36ea1327c8287d24213d119929fa92c696fe5",
+      "vertices": 4523,
+      "triangles": 4281,
+      "nativeBbox": {
+        "min": [
+          -0.8684759140014648,
+          2.828656988640432e-7,
+          -0.4839012622833252
+        ],
+        "max": [
+          0.7144352793693542,
+          1.6536723375320435,
+          0.659818172454834
+        ],
+        "size": [
+          1.582911193370819,
+          1.6536720546663446,
+          1.1437194347381592
+        ]
+      },
+      "meshProjection": "34_and_front",
+      "pixelsSuppliedToImageGen": false
+    },
+    {
+      "name": "Kenney open bookcase",
+      "path": "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "blobSha": "9a0cce7691e94277f3409719e9e68c910c25aa2c",
+      "vertices": 400,
+      "triangles": 320,
+      "nativeBbox": {
+        "min": [
+          0,
+          0,
+          -0.25
+        ],
+        "max": [
+          0.4000000059604645,
+          0.8799999356269836,
+          0
+        ],
+        "size": [
+          0.4000000059604645,
+          0.8799999356269836,
+          0.25
+        ]
+      },
+      "meshProjection": "34_and_front",
+      "pixelsSuppliedToImageGen": false
+    },
+    {
+      "name": "Kenney wide bookcase",
+      "path": "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "blobSha": "e508f7738fc99a383242c6d0a013351026f6c25e",
+      "vertices": 540,
+      "triangles": 372,
+      "nativeBbox": {
+        "min": [
+          0,
+          0,
+          -0.25
+        ],
+        "max": [
+          0.800000011920929,
+          0.7899999618530273,
+          0
+        ],
+        "size": [
+          0.800000011920929,
+          0.7899999618530273,
+          0.25
+        ]
+      },
+      "meshProjection": "34_and_front",
+      "pixelsSuppliedToImageGen": false
+    }
+  ],
+  "svgPath": "tools/asset_registry/specs/akashic_library_island_r1/R2_SOURCE_ISOLATED_NEUTRAL.svg",
+  "sourceFrameStatus": "ORIGINAL_TRIANGLES_PROJECTED; SKIN_BIND/POSE UNVERIFIED",
+  "licenseStatus": "see canonical manifests; not assessed as full proof"
+}
