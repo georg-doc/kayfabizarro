@@ -1,0 +1,161 @@
+{
+  "schema": "kfb.asset-scene-image-job/1",
+  "jobId": "AKASHIC-LIBRARY-R2-OPEN-STAGE-SCENELETS",
+  "mode": "scene_context",
+  "designClass": "OPEN_STAGE_LIVING_DIORAMA_CONCEPT_SOURCE_NOT_YET_ISOLATED",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "assetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.gltf"
+    ],
+    "sourcePaths": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.gltf"
+    ],
+    "blobShas": [
+      "5d4f21fe9fa621011c2061011c45ede74aa7fd6b",
+      "faa36ea1327c8287d24213d119929fa92c696fe5",
+      "9a0cce7691e94277f3409719e9e68c910c25aa2c",
+      "e508f7738fc99a383242c6d0a013351026f6c25e",
+      "615aaa9632cf1b262c257f2cb7c208a6f199ab84",
+      "f091e34bf4e16fa661512f02148257c6ba76ba9f"
+    ],
+    "sourceRenderViews": [],
+    "licenseStatus": "UNKNOWN",
+    "sourceModelTriCount": null,
+    "sourceAssetBlobSha": null,
+    "nativeBbox": null,
+    "K2KitFactor": null,
+    "geometryLock": "loose",
+    "sourceProofStatus": "REGISTRY_IDENTITY_VERIFIED_RENDER_NOT_ISOLATED",
+    "originalSourcePixelsAvailableToRenderer": false
+  },
+  "context": {
+    "scenePurpose": "One continuous floating-island living library, a readable chain of HALF-OPEN scenelets; Lorekeeper, 1.65-high ground-pivot Tome lectern and shelf activity visible from the front",
+    "selectedScenePacket": null,
+    "environmentAssetIds": [],
+    "characterAssetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb"
+    ],
+    "propAssetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.gltf"
+    ],
+    "camera": "elevated 3/4 open-front inhabited diorama; human-scale actor readable; entire continuous island visible",
+    "viewLabelsAllowed": false,
+    "contacts": [
+      "one continuous island Terrain/Surface Truth foundation",
+      "OPEN/FLOOR_MARK court → TWO_WALL study → PARTIAL gallery → OPEN reading nook",
+      "walkable linked routes, stairs and access at human scale",
+      "no new terrain or road owner"
+    ],
+    "scenelets": [
+      {
+        "id": "arrival",
+        "boundaryProfile": "FLOOR_MARK",
+        "activity": "walk in, index"
+      },
+      {
+        "id": "lorekeeper",
+        "boundaryProfile": "TWO_WALL",
+        "activity": "Lorekeeper at real Tome lectern"
+      },
+      {
+        "id": "archive-gallery",
+        "boundaryProfile": "PARTIAL",
+        "activity": "bookshelves and traversable stacked reading shelves"
+      },
+      {
+        "id": "reading-nook",
+        "boundaryProfile": "OPEN",
+        "activity": "read and interact in open reading nook"
+      }
+    ]
+  },
+  "style": {
+    "bindingSSOT": [
+      "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+      "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md"
+    ],
+    "benchmarkRefs": [
+      "Dropbox /CLAUDE/KFB Claymation Reference/FLOATING ISLANDS DESIGN.webp",
+      "Dropbox /CLAUDE/KFB Claymation Reference/DioramaScenes - overview -f0a9d090-49c7-406e-9bc6-64f63cc6aa53.webp",
+      "skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md",
+      "skills/chat/KFB_CELL_METRIC_VOXEL_WORLD_GRAMMAR_PREP_2026-10-07.md @ planning/kfb-cell-metric-voxel-world-grammar-2026-10-07",
+      "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/docs/MENTAL_MODEL_DIORAMA.md"
+    ],
+    "paletteRoles": [
+      "sandstone ivory #E8CFA8",
+      "weathered clay shadow #A47F78",
+      "oxidized copper #69A99B",
+      "garden #759981",
+      "interior parchment #F4DCAA",
+      "indigo shade #29384F"
+    ],
+    "materialMixAllowed": true,
+    "partsBudgetMax": 6
+  },
+  "generation": {
+    "sourcePixelsActuallySupplied": false,
+    "provider": null,
+    "providerRequestId": null,
+    "renderPrompt": "ONE KFB claymation 3/4 hero showing four connected OPEN / TWO_WALL / PARTIAL library scenelets on one continuous floating island. The FRONT is completely OPEN like a living dollhouse stage, no masking wall. Two REAR bookcase walls frame the KayKit Lorekeeper at his authentic standing Tome lectern; next to this is a multi-level open archive gallery built around authentic visible bookcases, desks, a short accessible staircase and a quiet open reading nook. Every station is readable from the normal view. Preserve actor size, scenelet purpose, reachable walkways, coherent clay stone/wood/paper materials and soft daytime light with gentle amber work lamps. Source-authentic only if real original donor view pixels and Dropbox image pixels have been fed to renderer. No castle, no closed library shell, no monumental observatory, no high domed roof, no window-only interior, no promotional graphics, no fake label or typography, no random extras.",
+    "status": "BLOCKED_SOURCE",
+    "blockingChecks": [
+      "original 3D donor source views are not supplied to generator",
+      "actual Dropbox reference image pixels are not proven in image provider request",
+      "neutral-form placement and independent contact proof not executed"
+    ],
+    "requiredBeforeExecution": [
+      "source-isolated real Lorekeeper, Tome, Staff, bookshelves",
+      "same-camera front-open neutral form",
+      "actual source-image pixel binding"
+    ]
+  },
+  "architecturalFormPreflight": {
+    "formGrammarCount": 6,
+    "meshCount": null,
+    "formAnatomy": "PARTS_R2_OPEN_STAGE.md",
+    "formBeforeMaterials": {
+      "sourceIsolation": false,
+      "neutralForm": false,
+      "styledSourceMaterial": false
+    },
+    "constructionContacts": {
+      "measured": false,
+      "independentProof": false,
+      "fullWidthRouteLanding": false
+    },
+    "geometryScore": null,
+    "styleScore": null,
+    "formScore": null,
+    "verdict": "UNDECIDED"
+  },
+  "approval": {
+    "classification": "UNREVIEWED",
+    "georgPicked": false,
+    "goldenRef": false
+  },
+  "provenance": {
+    "targetOwner": "tools/asset_registry/librarian",
+    "conceptFileOutsideGitHub": null,
+    "outputSha256": null,
+    "pixelFileStatus": "NO_R2_IMAGE_YET",
+    "dropboxImagePixelsFedToGenerator": false,
+    "originalR1VisualReview": "FAILED_QUARANTINED_DO_NOT_REUSE"
+  },
+  "reviewStatus": "UNREVIEWED_R2_DESIGN_BRIEF",
+  "supersededBy": null
+}
