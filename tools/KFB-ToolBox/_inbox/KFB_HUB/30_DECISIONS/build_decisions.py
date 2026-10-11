@@ -137,6 +137,7 @@ d('V-156','2026-10-11','Insel','TUNE','Der Berg bzw. Hügel, durch den der Tunne
 d('V-157','2026-10-11','Insel','RULE','Trittstein-Abstand (und Stufenmaße der Pfade) wird für Locomotion und Animationen gemessen und optimiert, Hauptreferenz Medium-Rig (Gehen, Joggen, Sprint, Sprünge aus V-021); kein geschätzter Wert. Gemessen 11.10.: Schritt walk 0,561 / jog 2,034 / sprint 2,483 lab, Sprung jog 2,71 / sprint 4,93; Trittsteine nach Standard-Gangart jog (Steuerung), Treppe Setzstufe ≤ min(0,45 Masonry A, 0,70).', 'Lab + RKIT', 'Messung Schrittlänge je Gangart + Fußtest', 'Georg 11.10.')
 d('V-158','2026-10-11','Insel','RULE','Fuß- und Wanderpfade: höchstens 12 % Steigung ohne Stufen; darüber Treppe (Stufenmaße nach V-157 gemessen) mit Podest.', 'RKIT + Lab', 'trailChecks walk_grade', 'Georg 11.10.: „12 % passt“')
 d('V-159','2026-10-11','Prüfung','RULE','Fuß- und Fahrtests zählen nur bei ≥ 50 fps im Testlauf; darunter wiederholen. Grund: Große Zeitschritte springen über Löcher bzw. Fugen und erzeugen falsche PASS (V-138- und V-153-Fußtest am 11.10. nachmittags waren falsch PASS: Fuge zwischen Bord und Gehweg, behoben mit LAB PATCH G2).', 'Lab', 'fps-Angabe in jedem Fuß-/Fahrtest-Bericht', 'Bau-Sitzung 11.10. (Selbstkorrektur), Steuerung')
+d('V-160','2026-10-11','Insel','RULE','Treppen werden nach dem abgenommenen J17-Walker gebaut, nicht umgekehrt: Standard Setzstufe 0,30 / Tritt ≥ 1,3 lab (Alternative 0,22 / 0,889), gemessen bei 60 fps ohne Auto-Hüpfer beim Joggen und Sprint. Kein Eingriff in den Walker der Gold-Vorlage; steilere Treppen nur, wenn Georg es ausdrücklich will (dann Walker-Patch mit Freigabe und neuer Parity).', 'RKIT + Lab', 'Treppen-Fußtest walk/jog/sprint ohne Hüpfer', 'Steuerung 11.10. nach V-157-Treppentest')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -262,6 +263,7 @@ WHY = {
  'V-157':('Trittsteine müssen zur echten Schrittlänge der Figuren passen, sonst stolpert die Animation.','trail'),
  'V-158':('Bequem begehbar, steiler wird Treppe.','trail'),
  'V-159':('Ein Test unter Last hat ein Loch übersprungen; Ergebnisse müssen von der Bildrate unabhängig gültig sein.','sofort'),
+ 'V-160':('Use what works: Die Treppe passt sich der abgenommenen Fortbewegung an; Gold-Vorlage bleibt unberührt.','trail'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

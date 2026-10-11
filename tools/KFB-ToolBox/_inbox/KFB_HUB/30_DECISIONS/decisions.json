@@ -1701,6 +1701,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-160",
+   "date": "2026-10-11",
+   "area": "Insel",
+   "verdict": "RULE",
+   "text": "Treppen werden nach dem abgenommenen J17-Walker gebaut, nicht umgekehrt: Standard Setzstufe 0,30 / Tritt ≥ 1,3 lab (Alternative 0,22 / 0,889), gemessen bei 60 fps ohne Auto-Hüpfer beim Joggen und Sprint. Kein Eingriff in den Walker der Gold-Vorlage; steilere Treppen nur, wenn Georg es ausdrücklich will (dann Walker-Patch mit Freigabe und neuer Parity).",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "Treppen-Fußtest walk/jog/sprint ohne Hüpfer",
+   "source": "Steuerung 11.10. nach V-157-Treppentest",
+   "supersedes": null,
+   "why": "Use what works: Die Treppe passt sich der abgenommenen Fortbewegung an; Gold-Vorlage bleibt unberührt.",
+   "applies": "trail"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

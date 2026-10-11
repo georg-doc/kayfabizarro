@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Treppen nach Walker
+- V-157-Treppentest: 0,444/0,889 → Jog/Sprint hüpfen (J17-Auto-Hüpfer summiert voraus). V-160 Treppen 0,30/1,3 (bzw. 0,22/0,889), kein Walker-Patch.
+
 ## 2026-10-11 · Bank B geliefert
 - Tunnel im prozeduralen Inselkörper (ein Feld, ein levelSet, 0/0, Durchsicht 0, Freiraum ok, M und L). Tunnel-Technik passt; Inselkörper weit von IB2/IB3/CR3 (glatt, Fels als Splitter, Berg als Kappe). An Georg; Inselkörper-Arbeit pausiert bis zu seinem Urteil; Bau-Sitzung weiter mit C4b/C4c.
 
