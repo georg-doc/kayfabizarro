@@ -1,5 +1,12 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+
+## 2026-10-12 · RULE1-only Suno stand-up steering · R0.2
+
+Georg's binding edit: **RULE1 alone is sufficient** (`No AI Quirk. No Meme Logic. No Filler.`); no invented Humanizer gate. Compact fast-paced, impact-timed Suno authoring; strict **<5000 characters total for script + style + cues**. New current candidate references: `RULE1_SUNO_HOOK_PUNCHLINE_CONTRACT_R0_2_2026-10-12.md`, `data/SUNO_SPOKEN_MUSIC_PILOT_R0_2.json`, `RULE1_SUNO_TEST_REPORT_R0_2_2026-10-12.md`. The R0.1 pilot text is `SUPERSEDED_TUNE` for quality, not deleted. Current r0.2: 172 words, packet 1619 characters, 21/21 structural assertions only. Rule1/humor/listening remains editorially PENDING until an actual take. Keep one ChatterBox semantic owner, one Audio owner; next Suno audition gate remains `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`.
+
+---
+
 ## NEW SIDE SLICE · 2026-10-11 · Suno Spoken-Music / Stand-up R0.1
 
 Georg's spoken stand-up + backing-band Suno experiment is recorded as a **non-canon authoring/performance candidate**, not a replacement Voice Runtime:
