@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Banden-Übergang B gebaut, DIRT R1a freigegeben
+- Track Core 0.16.4: q.edge inner/outer nach J17-Schwellen, Anlauf ≥ 8 m, bitgleich (88/88). DIRT R1a: Welt-Maßstab (1,705), Ausnahme RACE|DIRT, Übergänge 20 m nur auf Geraden, Berm-Lippe über width/offset ≤ 35°, nur Schotter-Arme.
+
 ## 2026-10-11 · Updates an WSA und Blender
 - WSA-Brief R2 um V-153/V-154 ergänzt; Blender-Branch Nachtrag R3c (Schnee = Insel, Stützmauern talseitig aus Mauer-Baukasten, Berginsel CR3 als zusätzliche Referenz).
 

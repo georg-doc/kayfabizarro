@@ -30,3 +30,23 @@ Stand 2026-10-11 · Grundlage:
 | A | **beantwortet (V-152):** alle Autos auf allen Skins. Daraus folgt Knoten-Abstand 2,05 (breiteste Hülle), Breite NARROW 10,8. |
 | B | Assist-Grenze für die Berm-Querneigung: 35° als Startwert in Ordnung? |
 | C | Schotter in Kreuzungen und Kreiseln: Soll es eigene Schotter-Knoten geben, oder nur Schotter-Arme an Straßen-Knoten (#14: Ring = Skin der Hauptstrecke)? |
+
+## Abgleich mit V-154 (R1 → R1a, vor dem Bau)
+
+Georgs Antworten B und C sowie der spätere V-143-Zusatz ändern die Vorlage R1 in fünf Punkten:
+
+| # | R1 | jetzt (R1a) | Grund |
+|---|---|---|---|
+| 1 | Maßstab race, Knoten-Abstand 2,05 | **Maßstab world** (wie town/country), Knoten-Abstand **1,705** (breitestes registriertes Spiel-Auto / 2 + 0,15); keine Spuren, Markierung NONE, Breite NARROW 10,8 | V-143-Zusatz der Steuerung: Welt-Knoten (town/country/dirt/trail) prüfen mit dem Spiel-Auto, die Renn-Hülle bleibt RACE |
+| 2 | Katalog-Eintrag `RACE\|DIRT` | bleibt, aber als **ausdrückliche Ausnahme** in `transitionEntry`: Heute lehnt der Core race ↔ world ab (B6 = Look-Zone). RACE ↔ DIRT wird der einzige erlaubte race ↔ world-Körperwechsel. | Georg: Übergänge zu RACE freigegeben |
+| 3 | Übergänge 20 m | 20 m **nur auf Geraden**: Ein Übergangsstück mit Krümmung ist ein Fehler | CS2-7 |
+| 4 | Berm-Lippe: shoulder steigt außen an | Die Lippe wird **befahrbare Fahrfläche** über die vorhandenen Parameter `width` + `offset`: In der BERM_CURVE wächst die Fahrbahn außen um die Lippe (1,5–2,5) mit Ease, dazu Querneigung ≤ 35°. Kein asymmetrisches Profil nötig, keine neue Slot-Art. | Querschnitt-Schlüssel sind symmetrisch; „befahrbar“ heißt Fahrfläche |
+| 5 | Schotter-Knoten offen (C) | **nur Schotter-Arme** an bestehenden Knoten. Ein Kreisel- oder Kreuzungs-Arm mit `family: 'DIRT'` bekommt einen Übergangs-Arm zur Knoten-Familie (Ring = Skin der Hauptstrecke, #14). Eigene `skin: 'dirt'`-Knoten bleiben reserviert. | DIRT C |
+
+Unverändert gegenüber R1:
+- Querschnitt (Kies 1,0, Graslippe 1,5, Damm 0,8);
+- Bande nur an Gefahrenstellen per `edge`;
+- Kappen Wiese, Hof bzw. Gatter als Daten;
+- Platzhalter-Palette `dirt`;
+- Tests;
+- Aufwand L.

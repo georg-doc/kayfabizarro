@@ -37,3 +37,15 @@ Der J17-Look (`lab-track/track-look.v5.js:191–216`, J14 = J15 = J17) hat den �
 **Frage an Georg (am Bild):**
 - A, B oder C?
 - Bei B: Sollen die J17-Schwellen (R 125 / 45 innen, R 71 / 25 außen) bleiben, oder nach V-151 (Assist) früher einsetzen?
+
+## Entscheid und Umsetzung (V-154, 11.10.)
+
+Georg hat **Variante B** gewählt und die J17-Schwellen beibehalten. Umgesetzt in Track Core 0.16.4:
+- `q.edge = {L: {inner, outer}, R: {inner, outer}}` auf jeder Probe mit race-Querschnitt;
+- Anlauf je Kanal mindestens 8 m (R 25 innen: 5 → 8 m);
+- Fingerprint und alle übrigen Probenfelder sind identisch mit 0.16.3, Kontaktgeometrie unverändert;
+- Weltstraßen haben kein `q.edge`.
+
+Tests: test-skin 88/88, alle Suiten unverändert, Teil 0 bitgleich.
+
+Lab-Look: Der J17-`sideProfile` liest künftig `q.edge[side].inner / .outer` statt selbst zu rechnen. Das ist eine Zeile je Wert im Look; den Umbau macht das Lab.
