@@ -1,5 +1,12 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## 2026-10-12 · ADDITIVE META NPC EPISODE ROSTER R0.1 · SOURCE-MAPPED
+
+Parallel NPC stand-up intake now has an **eight-premise** authoring-only source map at `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json`, connecting all three user-provided public origin routes `#kfb`, `#cutplay`, `#thegame` (the third is repo-nav verified, NOT Cloudflare pixel verified) to current KFB Game Bigger Picture, actual Freestyle rules, Four-Island story, Meta Compendium and the existing RULE1 Suno speech slice. Reference established `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md`; no second authoring engine or runtime. **12/12** static/source-link checks, exact GitHub readback, exact private Production Control Inbox mirror. See `SUNO_META_NPC_EPISODE_ROSTER_TEST_REPORT_R0_1_2026-10-12.md`. All proposed King/Driver/Demon Lord/Monstrosity CEO/Protopia Farmer/Lorekeeper/Hunky-Dory jokes are **NOT WRITTEN / NOT CANON**; prior Clown remains the sole existing authoring candidate. No Suno/audio/rights/staging/Live PASS. Same next Suno gate `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`.
+
+---
+
+
 ## 2026-10-12 · Speech Beta meta NPC parallel-chat and Claude Code recovery
 
 Georg authorizes additive persistence of a **parallel authoring/research lane**, *not* delivery of the other chat's future writing and *not* a second ChatterBox/Audio runtime or new product Site. Current side slice under same PR #379:
