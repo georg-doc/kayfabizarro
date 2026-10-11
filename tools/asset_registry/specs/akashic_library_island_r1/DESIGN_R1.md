@@ -1,3 +1,9 @@
+# REJECTED · SUPERSEDED BY R2 OPEN STAGE / LIVING DIORAMA
+
+**DO NOT USE THIS R1 AS DESIGN/IMAGE/BUILD SOURCE.** Georg rejected the closed monument / opaque windowed library concept on 2026-10-11. Binding source: `skills/chat/KFB_CELL_METRIC_VOXEL_WORLD_GRAMMAR_PREP_2026-10-07.md` at `planning/kfb-cell-metric-voxel-world-grammar-2026-10-07` (§ Open Stage / Living Diorama). Current correct brief: `CORRECTION_R2_OPEN_STAGE_SCENELETS.md`, current families: `PARTS_R2_OPEN_STAGE.md`. The previous R1 PNG/SVG/ZIP are **FAILED_QUARANTINED**, even though previous static job/metadata checks passed. Do not carry its closed façade, observatory, dome, tower or window-only interior into implementation automatically.
+
+---
+
 # Akashic Library Island · KFB Claymation Design R1
 Date 2026-10-11 · status CONCEPT / MOOD_ONLY · no geometry authority · no new world canon
 Owner for source discovery and Composer handoff: existing Asset Registry / Asset Librarian (`tools/asset_registry/`).
