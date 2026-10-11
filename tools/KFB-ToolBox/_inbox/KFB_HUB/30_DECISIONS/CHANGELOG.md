@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Gehweg Haltebucht geliefert (RKIT)
+- V-138 (b): hex_b7.parts.glb (177 Teile), Q1–Q9 PASS; Gehweg volle Breite mit Querreihen („kürzen statt biegen“). Einbinden durch Bau-Sitzung. RKIT als Nächstes: Vorlagen-Zeilen Ebenen-Rampe + Wendeschleife.
+
 ## 2026-10-11 · Sperrliste Lab-src
 - Keine Überschneidung Bau-Sitzung ↔ WSA (tsc sauber, parity PASS nach Wiederholung; Check 4 Jitter unter Last knapp). Sperrliste für WSA in START_HERE und WSA-Antwort. B7-Strom an RKIT übergeben.
 
