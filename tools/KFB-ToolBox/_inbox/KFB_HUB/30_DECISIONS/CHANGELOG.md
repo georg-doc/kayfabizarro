@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Dungeon-POC Schritt 1, 5192-Ausfall
+- replies/DUNGEON_POC_R1/ (V-182): fahrbare Runde mit k2b, Cicada, J17-Kamera; WhackMan-Grundriss, KayKit-Dungeon-Pack; lichte Höhe ≥ 12,24 lab, Rampe 8,00 %, 0 Wandtreffer, Median 59,9 fps. Probleme: zwei gerade Rampen statt Spindel, eckige Haarnadeln R 8,8 (3,4 g), Sims, Licht zu hell, Track Core nicht benutzt. 3 Fragen ins Steuerpult.
+- Lab-Server 5192 war ca. 00:50 und erneut um 01:09 weg (u. a. pkill -f vite eines POC-Agenten); Bau-Sitzung hat neu gestartet. Regel: Agenten beenden nur eigene PIDs.
+
 ## 2026-10-12 · NPC Performance Proof R1
 - replies/NPC_PERFORMANCE_PROOF_R1/ (V-187): Clown, 8 s, seek(t) pixelgleich über zwei Läufe (auch rückwärts), Fußkontakt 0,0000 dank Oberkörper-Maske, Start=Ende, Augen/Kopf/Rumpf Frame 1/4/10. Schwach: Zweifel liest sich kaum, Mischbild in v2, Gesicht dünn. Projekt ~/Developer/kfb-npc-proof (Port 5195). 3 Fragen mit Kontaktbögen ins Steuerpult.
 
