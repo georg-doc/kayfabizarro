@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Haltebucht-Gehfläche
+- V-138 Georg: orange Plattform = zu breite Bande; stattdessen Bürgersteig mit gemauerter Bordsteinkante (RKIT Lauf 03 / B7 TOWN_BAY), weicher Übergang auf die Insel.
+
 ## 2026-10-11 · RKIT-Lückenliste (V-134)
 - Alle Strecken stammen aus Track Core v0.12; 0.16.1 ist Nachfolger. Vorhanden: Grundstrecke, Brücke im Raum, EXIT/ENTRY (HIGHWAY), Straße über Platz, Kreisel. Teilweise: Ebenen-Rampe, Wendeschleife (einarmiger ROUNDABOUT, TOWN-Abstand rot), Spindel (td03 ohne Ausfahrten), Tunnel mit Rampe. Fehlt: B6 race ↔ world (Georgs Entwurf), Paternoster.
 - Freigabe: RKIT macht Teil 0 (Gleichstand ≤ 1 mm + Katalog-Felder), dann EXIT/ENTRY auf RACE; MVP-Sitzung baut C4b darauf, nicht doppelt.

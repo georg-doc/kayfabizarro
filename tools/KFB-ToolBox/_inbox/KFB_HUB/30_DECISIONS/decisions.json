@@ -1393,6 +1393,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-138",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "TUNE",
+   "text": "Haltebucht C4a: Die orange Fläche, auf der der Farmer steht, liest sich als zu breite Track-Bande. Dort gehört ein Bürgersteig mit gemauerter Bordsteinkante hin (Vorlage RKIT Gehweg/Bord Lauf 03: Bord, Gehweg, Kantensteine, Haltebucht mit Sitzmauer; B7 TOWN_BAY), mit weichem Übergang auf die Insel; Alternative wäre Grünfläche mit Race-Track-Bande.",
+   "values": {},
+   "owner": "Lab + RKIT",
+   "check": "Standbild bay_from_hex vorher/nachher",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Aussteigen und zu Fuß weiter ist ein Stadt-Moment; Orange gehört zur Bande, nicht zur Gehfläche.",
+   "applies": "vor C4c"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
