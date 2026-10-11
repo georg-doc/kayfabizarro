@@ -1,5 +1,33 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-11 · ADDITIVE RETURN · Suno spoken-music / Stand-up planning slice R1
+
+**Status:** PLANNING_PREP_VERIFIED + PRIVATE PRODUCTION-CONTROL INBOX MIRRORED; not implemented, not a new Site product. Existing Voice/Triplet human listening gate remains open; no approval or Live promotion.
+
+Georg demonstrated a strong rockabilly-backed Suno philosophical stand-up performance but requested a solution for script/gag quality and an additional ChatterBox/Triplet production slice. Two candidate authoring routes were bounded: prompt-to-performance exploration and script-to-performance curation. First scoped proof: a 75–105 second same-topic juggling Clown A/B, with separate human verdicts for written comedy and sound/acting. A mixed voice+music track is classified as program-mixed playback under **existing KFB Audio**, not a new TTS/dialogue engine or stem/mixer owner.
+
+Original KayKit Clown source, juggling pin and podium paths + repository tree object SHA are recorded. Source isolation, animation, mic fit and actual stage proof **remain undone**.
+
+New owner files:
+- SUNO_SPOKEN_MUSIC_PERFORMANCE_SLICE_R1_2026-10-11.md;
+- data/SUNO_SPOKEN_PERFORMANCE_R1_CANDIDATES.json;
+- TEST_REPORT_SUNO_SPOKEN_PERFORMANCE_R1.md;
+- CHANGELOG_SUNO_SPOKEN_PERFORMANCE_R1.md;
+- this additive Return entry.
+
+Tests actually run for this slice: candidate invariants **12/12 PASS**; GitHub source/spec integration checks **22/22 PASS**; first three GitHub file HEAD and exact content readbacks **3/3 PASS**. No playback/browser/audio/human/rig tests for this new slice (all 0). Previous Voice 51/51 and Site 151/151 are historical, **not** counted as new tests.
+
+Exact private Site Inbox artifact: fileId 723bc3d1-401f-4375-9b25-22a39205f529; SHA256 fea9ae476780cbe74d0902ad2b884541237837fff2d376a14c433e0f40bcbd24; GitHub source content verified byte-identical as UTF-8. This does not publish the KFB Audio Site nor create a public Stage route.
+
+Budget: 0 Suno generations/downloads; four in-app audition candidates planned, cap first exports at 2 selected takes; user plan and availability unverified, shared quota reserved with RoadTrip and other audio.
+
+Unresolved: editorial script for B1, audible spoken/sung adherence, source/rights acceptance, human comedy+audio A/B judgement, separate performer-stage donor isolation and future stage integration. Four-Island A/B world gate and R4 STOP unchanged. Draft PR #379 remains open/unmerged.
+
+**Exactly one next gate:** KFB_SUNO_CLOWN_PROMPT_VS_SCRIPT_A_B_LISTENING_R1 — prepare an approved scripted candidate, compare both modes in Suno and decide separately CONTENT and PERFORMANCE KEEP/TUNE/CUT before exporting more than two finished pieces.
+
+---
+
+
 ## 2026-10-10 · FINAL RETURN · Triplet Audio Integration R1
 
 Status: **PUBLISHED PRIVATE FUNCTIONAL AUDITION · HUMAN CASTING/QUALITY GATE OPEN · NO MERGE/LIVE**
