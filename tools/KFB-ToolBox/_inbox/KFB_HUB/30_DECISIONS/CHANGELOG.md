@@ -1,7 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-11 · Strecke + Module mit zwei Kritikern
-- V-125 Georg: Rennstrecke und alle Module sauber bauen, je Lieferung Kritiker 3D/Baukasten-Logik + Design-Kritiker; max. 2 Reparaturrunden.
+- V-125 Georg: Rennstrecke und alle Module sauber bauen und mit korrekter Physik befahrbar (automatische Fahrtest-Runde), je Lieferung Kritiker 3D/Baukasten-Logik + Design-Kritiker; max. 2 Reparaturrunden.
 
 ## 2026-10-11 · Zwei FAILs
 - V-123 Blender Island Form Kit 01 K1+K2 R1 FAIL; Georg hat Blender direkt neu gebrieft.
