@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schnittstelle 0.16.3 komplett
+- Schritt 5: Modul-Skins (EXIT/ENTRY/PIT/WEICHE), Kanten-Enden mit Kappenform nach tatsächlicher Kante, Familien-Übergänge mit Skin-Paar; 83/83, bitgleich. 0.16.3 als privater Vendor für C4b/C4c angeboten. RKIT pausiert bis Georgs Antworten.
+
 ## 2026-10-11 · Skin-Schritt 3 + Freigabe 5
 - Markierungen als Daten (Pfeile nur EXIT/ENTRY/FORK/JOIN/Kreisel-Ausfahrt, Ringspuren nur ausdrücklich, Scheitel-Kerb race R ≤ 45 ≥ 8 m); 73/73, bitgleich. Schritt 5 (Modul-Skins, Kanten-Enden, Übergänge als Daten) freigegeben.
 
