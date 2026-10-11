@@ -1,0 +1,61 @@
+# KFB Polar Xmas Island · Santa III / The Great Kayfabe Awakening · Design v0.1 · 2026-10-11
+
+**Authority:** Georg author concept, additive post-MVP island and Resident/interaction design candidate. **Mode:** concept/source audit only; no new runtime, geometry, shader, animation, game state, card, audio, dialogue, deck or resident owner. **Receiving owner:** existing KFB Island Worldbuilder / Minigame / Fluff-Almanac planning on `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`. Source of truth for Four-Island story is still `skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md`; its pending A/B gate does not include this satellite. World R4 remains **STOP / NO MVP / NO GOLDEN**.
+
+## 1. Premise and dramatic contradiction
+
+A single **Arctic + Antarctic mash-up floating ice island**: glacial ice shelf, sharp blue-white crevasses, compact Arctic Iglu shelter, sea-ice and dislocated North-Pole holiday outpost; nowhere is there a generic Christmas town spread evenly across the island. The tourist image promises comfort, goodwill and revelation; the lived-in infrastructure is a shabby KayfabeKola-sponsored polar Christmas enterprise and a persistent psychedelic awakening sales pitch.
+
+**Santa III:** a drunk substitute Santa, third-generation heir to a Christmas celebrity dynasty. Grandfather = former superstar; current Santa = disreputable, creepy child-frightening figure, visibly KayfabeKola sponsored/equipped. He staggers with a rum bottle on the frozen surface, roaring deliberately absurd three-line/triplet-cadence satirical Xmas carols. Brand items must use actual KFB KayfabeKola source if available; do not fabricate an approved logo/label, or conflate a bottle donor with a completed branded Rum prop. Keep the satire anchored in behavior, patronage and intrusive spectacle, not generic one-liner quips.
+
+**Two flying machine elves:** Terence McKenna-inspired bizarre techno-psychedelic helpers; **the two existing KayKit Helper_A and Helper_B models are real source candidates**, but model shape/rig/flying adaptation are NOT source-isolated or accepted yet. Their social loop is aggressively friendly proselytization: free colorful clay-gum mushrooms, candy canes, absurd donuts; claim to grant insights, trauma healing and “The Great Kayfabe Awakening.” On refusal they downshift to a microdosing pitch. Their promises are knowingly suspect within the fiction. They do not hand out real-world substance advice or dosage instructions.
+
+**Snowman pair:** actual KayKit Holiday Bits `snowman_A` and `snowman_B` form an established visual duo at the shelter / festive perimeter; proposed dynamic: silently watch the pitches, occasionally puncture the elvish narrative through expressive posing or source-approved reactions. Do not invent new residents/models. Their exact social role/dialogue is an OPEN authoring choice.
+
+## 2. Spatial story / why this place exists
+
+1. **Glacial rim and entrance:** high, broken ice mass, readable icy underside; safe landing/arrival shelf and coherent line of sight toward a shabby seasonal beacon. Iceberg silhouette distinct from other dark, farm, prison or maker satellites. Unreal cartoon-world latitude permits North/South Pole hybrid as a deliberate joke, not geography simulation.
+2. **Igloo / refuge:** one source-backed KFB `Igloo by Jarlan Perez - 4t1hupO69xj.glb` candidate (source/license/shape/scale verification pending); shelter and social place, not an arbitrary prop. Snowman_A/B sit in direct visual/social relation to this area.
+3. **Santa's sponsored camp:** sloped frozen plaza by holiday trees, lamp/string props and improvised stand. Santa's stumbling/performance trajectory starts at camp, wanders onto ice and returns toward shelter; branded refill/storage/backstage position explains the bottle and patronage. Multiple triplet-cadence satirical carols are an authored AUDIO/Lore asset lane, not a new playback engine.
+4. **The elf acquisition circuit:** two separate aerial encounter orbits connect arrival path, peppermint/candy offer stand and Santa's camp. Primary free offer → player refusal → microdosing counteroffer → acceptance/clear rejection. For actual product the player retains agency; “decline” must not silently force altered effects.
+5. **Frozen lake / perception playground:** broad level ice patch with snow banks and clear safe movement path so optional wobble/hypnosis is readable, not camera-unplayable. Cracks, ice ridges, occasional wind/snow particle directions mark depth and lanes.
+6. **Billboard/revelation site:** a physically supported KayfabeKola or “Awakening” advertising structure with a second revealed layer. Existing KFB Billboard Media/Hypernormalisation owner stays authoritative; no fake second billboard engine or random text.
+7. **Connection to wider galaxy:** potential Joyride v17 **floating race-track** ingress/egress at ice-lip if a real world-routing reason and clear landing can be shown. Follow binding `KFB_MAKER_SPACE_JOYRIDE17_FLOATING_TRACK_LINK_CORRECTION_2026-10-11.md`: NO inter-island masonry/pier bridge, no floating supports in the void; correct real orange rim/blue-grey road material family must be isolated/proven. On-island bridge classes only for legitimate river/road crossings. Track is OPTIONAL for this satellite until a route and purpose are authored.
+
+**Two scene relationship tests:** arriving player → elf solicitation → Santa's sponsored gig → billboard truth switch; snowman pair → Iglu/social refuge → witness to Santa/elf circuit. These relationships must read from geography, distance and routes before explanatory annotations. Do not build another universal ring-road/six-zone/identical-island template.
+
+## 3. Optional stateful perception event · “The Great Kayfabe Awakening”
+
+Proposal: adapt the already-known *They Live* Driver sunglasses **reveal principle** to an opt-in, bounded `PerceptionOverlay` presentation state without replacing existing World truth, Cards, Media or player locomotion owner. This is a DIFFERENT aesthetic trigger, potentially a shared reveal consumer, not proof the current sunglasses state runtime already exists.
+
+Player flow:
+- FREE OFFER: humorous, emphatic promise by elves; accept or decline.
+- IF DECLINED: one microdose pitch; repeated decline exits without penalty/effect.
+- IF ACCEPTED: a short temporary clay-world visual trip with psychedelic palette shifts, undulating/hypnotic shader layers and a disco ball/light-ray attachment over the player; gentle cartoon sway / drunk-like gait perception inspired by WoW inebriation, **not** a replacement motion controller or loss of controls.
+- REVEAL: existing physical billboards show alternate authored/registered “true” messages via their existing media owner; reality-layer claims are fictional in-world content, never random text invented by shader.
+- END: controlled fade to baseline materials/camera, remove ball/effects, restore billboard normal state, leave world/quest truth unchanged unless separately authored by existing progression owner.
+
+**Visual control / comfort:** brief default exposure; immediate exit/skip/reduce-motion mode, no hard camera roll, flashing/strobing, unbounded shader oscillations or persistent camera wobble. State resets on leave/fast travel/reload. A purely cosmetic simplified mode should preserve discoverable story content without motion distortion.
+
+**Comedic thesis:** the elves aggressively sell ‘awakening’ as a consumable branded product while the sunglasses/billboard contrast can distinguish revelation from mere hallucination. The island's joke is the recruitment industry and false promise of certainty, not a drug tutorial.
+
+## 4. Source-backed candidates, not visual approval
+
+GitHub main paths were directly inspected/listed **2026-10-11**:
+- **KayKit Holiday Bits FREE** root `media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/`: `snowman_A.gltf` (blob `97a1889c2b35b912ebc1c0add73d2d9048e97370`), `snowman_B.gltf` (blob `c2e46c526f0055c3b46db9983270b408e4117bae`); each glTF document declares 1 mesh and original `holiday_bits_texture.png` plus its .bin. Same source folder contains `candycane_small.gltf`, `snowball.gltf`, trees, gifts, snowball cannon, toy train and train track segments. **Toy train track != Joyride road/inter-island bridge.**
+- **KayKit Mystery Helpers** `media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters/Helper_A.glb` and `Helper_B.glb` exist on main. Props `assets/gltf/Candycane.gltf`, `Toy_Workbench.gltf` etc. No source evidence of flying animation, machine-elf lore or rig compliance.
+- **Festive Mini-Pack Santa** `media/3D_Assets/Kaykit_Festive Mini-Pack/character/gltf/character_santa.gltf` directly read on main; 4 named mesh parts (left arm/right arm/head/body) with embedded geometry payload. This is the **candidate visual base**, not yet Santa III's accepted Resident/voice/rig.
+- **Iglu** `registry/assets/v1/packs/kfb.json` lists `media/3D_Assets/KFB/Igloo by Jarlan Perez - 4t1hupO69xj.glb`, registered as embedded GLB. Check original source/license and isolate true 3D shape before adoption.
+- **Other physical props:** KayKit Dungeon FREE `bottle_A_brown.gltf` and siblings are verified repository candidates; a Rum bottle/KayfabeKola livery is not source-approved. Any mushrooms/donuts/psychedelic material palette must come from current registry source candidates and be individually audited; no invented models on finished visuals.
+- **Ice/snow architecture donors:** `kenney_holiday-kit/Models/GLB format/` has real snow-covered cabin modular source; use only if architecture is justified and visual-isolated. Glacier/island snow body, icy traversal and full KFB clay material are NOT yet proven assets or approved geometry.
+- **Existing owner hooks:** KFB Joyride J17 / Track Core, KFB Clay/Surface, Resident Atlas/Motion/ChatterBox, Billboard Media/Hypernormalisation, Audio owner, existing Card/Almanac/Fluff state, World player movement/camera. The same owner must serve existing Driver *They Live* reveal when/if a shared effect is adopted.
+
+**Source-isolation next time:** original textured/rigged model object **individually visible** for `snowman_A`, `snowman_B`, `Helper_A`, `Helper_B`, `character_santa`, Iglu, candycane, bottle and any billboard before stage composition. A loaded URL, GLTF JSON text or a model name is not source visual proof. No NPC stand-ins; omit unproven characters from concept shots.
+
+## 5. Claude Code visual brief · bounded output
+
+One CLEAN establishing 3/4 island view showing an asymmetric real ice mass, Iglu refuge, snowman duo, shabby sponsored Santa camp, elf acquisition flight circuit, reachable skating/ice path and a coherent billboard location. A top-down relation inset and one ground-level scene vignette may support but must not replace the image. Produce an ANNOTATED copy explaining cause/function/path/relations and an isolated actual donor contact sheet (each source plus KEEP/ADAPT/REJECT). Source-correct KFB clay/toy-world look; not generic sci-fi/neon or default stock Arctic. Do not draw actors/assets not source-isolated. Track entry only when its real J17 source shape/colors and purpose are demonstrated.
+
+**Scope firewall:** not a fifth Four-Island R1 requirement; do not touch paused WB2 R4 / PR #348 or authorize R5, no new render/runtime owner, generic replacement effects, copyrighted brand substitutes, merge or Live. No Site/Cloudflare/Stage is required for this ideation checkpoint.
+
+**Proof now:** GitHub source listings + three glTF text-level inspections; no isolated original textured meshes, screenshot, 3D render, runtime trip effect, audio implementation, locomotion, route contact, browser/Stage or independent visual critique. **One next parent gate:** the existing Four-Island Story Vision R1 A/B source-faithful visual comparison → Georg A / B / FAIL. Polar Xmas remains a queued satellite and does not block that gate.
