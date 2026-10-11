@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · RKIT Such-Protokoll, Race-Exit-Tests
+- RKIT korrigiert B6: vorhanden (J14 ZA / J17-Atlas, RACE-Strom läuft weiter, Bord/Bande als Look-Schicht). Wendeschleife, Ebenen-Rampe, Einschnitt, Spindel-Ausfahrten bleiben teilweise (Bausteine gelistet). Freigegeben: nur Tests für EXIT/ENTRY auf RACE + B6-Zone.
+
 ## 2026-10-11 · WSA-Schema bestätigt
 - V-141 kfb.scene-study/2 bestätigt (Antwort replies/STEERING_REPLY_WSA_SCHEMA_R1.md, war liegen geblieben). WSA hat Lab-src (editor.ts, spec.ts, scene-study.ts) mit Georgs OK erweitert → künftige Lab-src-Patches nur nach Vorlagen-Zeile an die Steuerung. SCALE_CONTRACT_K2 Status auf verbindlich (V-060) nachgezogen.
 
