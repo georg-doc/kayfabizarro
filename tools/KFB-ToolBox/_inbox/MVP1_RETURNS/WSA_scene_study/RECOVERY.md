@@ -11,7 +11,7 @@ Steering decision intake verified: 263aa60f76e1f7e417a22939e38ea85f87f0396d (1/1
 
 ## Actual completed research
 D_JOYRIDE_GOLD.md:9 original J17 pictures actually viewed;9 local/Git blob hashes match main@dccf75cabd222d951380693d84ab88053ee7e519. Code palette, original section, material/transition rules and driving-camera parameters read. Values labelled CODE_PARAMETER versus OBSERVED versus UNKNOWN.
-scene-rules.json is D-only; A/B composition/density and C light recommendations remain null, not fabricated. V-102 source colors preserved; V-118 EXIT/ENTRY templates belong to receiving Lab/Core owner.
+scene-rules.json now includes A observations and C source-derived proposals; B density and physical staging distances remain null, not fabricated. V-102 source colors preserved; V-118 EXIT/ENTRY templates belong to receiving Lab/Core owner.
 No copied image source pack, private Track Core version, StreakByte/Unity island or private audio pushed. Existing J17 source image paths reused.
 
 ## Failed scene work preserved
@@ -26,5 +26,11 @@ tools/parity **NOT_RUN** because no Lab runtime/code/product delivery was made. 
 SCALE_CONTRACT_K2 document still labelled VORSCHLAG while V-060 H3.64 is binding; discrepancy explicitly reported to Steering, not silently rewritten.
 Part B private 8-island screenshot ZIP not found among this chat's supplied files. B remains pending; that does not block A/C.
 
-Next productive research: A from existing KayKit tutorial atlas and Creator previews, then C, then B when private evidence is available.
+Next gate: private 8-island screenshot ZIP for B; receiving owner may use A/C as research input, not an adopted design or live validation.
 No merge; no newly promoted Golden; no new runtime owner.
+
+
+## A/C evidence milestone
+A: six actual Creator GIFs, eight samples each (48 frames); hierarchy, shared tasks, ground and projected bounds documented. C: nine actual tutorial captures with observed timestamps; ad capture excluded; existing Lab light adapter audited read-only. Private media/transcript archived locally; only summaries, hashes and metadata published. Creator promo measurements are not world-scale or game-camera prescriptions.
+
+Checks: JSON schema groups, frame counts/hash identities, private-public boundary and archive CRC passed (RESEARCH_VALIDATION.json). No driving, live light, GPU or parity validation in this research slice. No implementation change, plugin update, merge or Golden.

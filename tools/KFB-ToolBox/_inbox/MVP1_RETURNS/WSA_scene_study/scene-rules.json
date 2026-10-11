@@ -1,6 +1,6 @@
 {
   "schema": "kfb.scene-rules/1",
-  "status": "PART_D_SOURCE_STUDY_COMPLETE_A_C_B_PENDING",
+  "status": "D_A_C_RESEARCH_COMPLETE_B_INPUT_REQUIRED",
   "authorities": [
     "V-002",
     "V-010",
@@ -16,24 +16,60 @@
     "V-122"
   ],
   "composition": {
-    "status": "A_CREATOR_STAGING_NOT_YET_MEASURED",
-    "groups": null,
+    "status": "A_SOURCE_OBSERVED_RESEARCH_INPUT",
+    "groups": {
+      "observedCounts": [
+        1,
+        2,
+        3
+      ],
+      "source": "A_KAYKIT_STAGING.md / six creator GIFs",
+      "adoption": false
+    },
     "spacingH": null,
     "embedPercent": null,
     "relationships": [
-      "route addresses façades and active places",
-      "farm loading -> receiving -> repair -> upper destination is a design input, not an adopted world"
+      "one shared task/focal action connects figures and props",
+      "height hierarchy and ground contacts support the action",
+      "architecture must connect receiving, working and destination places"
     ],
-    "failureReference": "Georg R1 visual asset-collection FAIL, registration pending"
+    "failureReference": "Georg R1 HUMAN_VISUAL_FAIL; V-122 design input"
   },
   "biomes": {
-    "status": "A_B_PENDING",
+    "status": "B_INPUT_REQUIRED_NO_DENSITY_INVENTED",
     "density": null,
     "paletteOwner": "existing island-theme/1, V-051"
   },
   "light": {
-    "status": "C_PENDING",
-    "recommendedRig": null
+    "status": "C_SOURCE_AUDIT_PROPOSAL_NOT_ADOPTED",
+    "recommendedRig": "existing EnvironmentHost / SKY3 -> light.skyRig; no second owner",
+    "source": "C_LIGHT.md + C_SOURCE_SNAPSHOTS.json",
+    "derivedDefaultReceiver": {
+      "scope": "local code defaults, not live measurement",
+      "day": [
+        2.4,
+        1.25,
+        0.9
+      ],
+      "evening": [
+        1.68,
+        0.6714,
+        0.45
+      ],
+      "night": [
+        0.6,
+        0.4464,
+        0.3214
+      ],
+      "columns": [
+        "key",
+        "hemi",
+        "fill"
+      ],
+      "formula": "key=world/5; hemi=ambient/1.75; fill=world*.375/1.75; world=2.4 ambient=1.25"
+    },
+    "creatorValuesAreGodotOnly": true,
+    "runtimeValidated": false
   },
   "staging": {
     "status": "SOURCE_DRIVE_CAMERA_CONFIG_ONLY",
@@ -64,7 +100,22 @@
       }
     },
     "orbit360": null,
-    "labAdoption": false
+    "labAdoption": false,
+    "creatorStudy": {
+      "source": "A_GIF_METADATA.json + A_STAGING_MEASUREMENTS.json",
+      "frameCount": 48,
+      "heroImageHeightFraction": {
+        "range": [
+          0.455,
+          0.627
+        ],
+        "scope": "display frame incl pose/headgear; NOT 3D scale/game camera",
+        "uncertaintyPixels": 10
+      },
+      "cameraFocalLength": null,
+      "physicalSpacing": null,
+      "gifDurationIsOrbitPeriod": false
+    }
   },
   "trackSource": {
     "palette": {

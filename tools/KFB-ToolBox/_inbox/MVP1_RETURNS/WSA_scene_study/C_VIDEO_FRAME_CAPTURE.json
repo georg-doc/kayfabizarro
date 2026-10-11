@@ -1,0 +1,122 @@
+{
+  "video": "Vfr3n4WKsc0",
+  "durationSeconds": 1907.521,
+  "frames": [
+    {
+      "requestedSeconds": 141,
+      "observedSeconds": 144.349397,
+      "file": "video_141.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "625dc1c98a5b18871a83eea13103044f21ec33ede6084daf90dfc2bd45d36316",
+      "bytes": 103799,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 441,
+      "observedSeconds": 440.47826,
+      "file": "video_441.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "c102c929276defd925a485b0d5dba455d96315eb5bbd31c276c1764000fde9ef",
+      "bytes": 113210,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 555,
+      "observedSeconds": 556.613333,
+      "file": "video_555.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "1ee590923d9d5d10888862bc68963066e10d1e8186cb9a6248fe272bfb5cddb9",
+      "bytes": 117267,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 825,
+      "observedSeconds": 824.878787,
+      "file": "video_825.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "4868da75b9a66e7b6086dfe3ac024a83c4ce275f60c3410567852199dc83cc3e",
+      "bytes": 117301,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 1005,
+      "observedSeconds": 1006.423076,
+      "file": "video_1005.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "e6200ab829e457e890ab99742e8e974dae6016be615f6b3fabb699a4b713c889",
+      "bytes": 122264,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 1155,
+      "observedSeconds": 1159.567567,
+      "file": "video_1155.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "f12bb990ac99ba0f0869b4e9645ec7335cb8e975a0eb7af061e336a8557b1801",
+      "bytes": 104473,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "observedSeconds": 1417.588208,
+      "file": "video_actual_1417.jpg",
+      "status": "SOURCE_CAPTURE_NIGHT",
+      "sha256": "1c25dfeecc04f8b2421ac9aacdff553e6bd0e47198f756743a93b1b428dcf626",
+      "bytes": 104579,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "requestedSeconds": 1485,
+      "observedSeconds": 1500.893203,
+      "file": "video_1485.jpg",
+      "status": "SOURCE_CAPTURE",
+      "readyState": 4,
+      "sha256": "10e9c523ffacce0ff26177f16f9cf871f37e1e39aafb99ce0678627b51b009fa",
+      "bytes": 111286,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    },
+    {
+      "observedSeconds": 1690.397402,
+      "file": "video_actual_1690.jpg",
+      "status": "SOURCE_CAPTURE_INDOOR",
+      "sha256": "ae45895e3a2d6455d7751d880ba5124a378c199561514c92759d0240949eebf7",
+      "bytes": 106492,
+      "publication": "PRIVATE_TUTORIAL_FRAME_NOT_REHOSTED"
+    }
+  ],
+  "rejectedAdCapture": {
+    "file": "frame_441.jpg",
+    "reason": "advertisement, never tutorial evidence"
+  },
+  "transcript": {
+    "bytes": 29358,
+    "sha256": "b37320704663641e13ee1128360522a540338634644e6d579e62f1e42c8cc8eb",
+    "language": "en",
+    "captionType": "authored or unspecified per exporter, not assumed verbatim author audio",
+    "publication": "PRIVATE_COMPLETE_TRANSCRIPT_NOT_REHOSTED"
+  },
+  "actualSourceFrameCount": 9,
+  "samplingMethod": "9 strategic actual source frames; observedSeconds is authoritative (midroll playback may shift requestedSeconds)",
+  "plannedButNotCapturedSeconds": [
+    1340,
+    1585,
+    1670,
+    1790
+  ],
+  "coverage": [
+    "day sunlight",
+    "ambient",
+    "ambient occlusion",
+    "fog",
+    "contrast",
+    "biome atmosphere",
+    "night",
+    "emission",
+    "interior area lighting"
+  ]
+}
