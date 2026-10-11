@@ -1,0 +1,2362 @@
+{
+  "schema": "kfb.suno-soundscape-deck-routing.proposal.v1",
+  "status": "SOURCE_COMPARE_DESIGN_ONLY",
+  "date": "2026-10-11",
+  "owner": "KFB Island Worldbuilder / Fluff-Crafting-Almanac; receiving KFB Audio/JukeBox",
+  "deckRegistry": {
+    "path": "registry/assets/v1/decks/index.json",
+    "sha": "b1399317c33fbd6ff17a622da68c684207bd5b4c",
+    "deckCount": 130,
+    "cardCount": 6985
+  },
+  "promptPack": "skills/chat/KFB_SUNO_30_SOUNDSCAPE_PROMPT_PACK_V1_2026-10-11.md",
+  "principle": "one PRIMARY thematic candidate per 130 registry decks; optional SECONDARY scene/music family; not 6985 per-card validated matches; KFB Audio decides actual playable cue; source metadata independent",
+  "budget": "30 named song candidate slots; Suno consumption depends on account/variations",
+  "trackSlots": [
+    {
+      "songSlot": "KFB_SC01",
+      "title": "KFB Hotel Afterhours 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "the_importance_of_being_kayfab_earnest"
+      ],
+      "secondaryDecks": [
+        "bullshit_jobs_uncut",
+        "medkayfab_hospital_hierarchy",
+        "romantic_kayfabe",
+        "the_kayfabe_crucible_coming_of_age",
+        "what_work_was_for"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC02",
+      "title": "KFB Detective Rain Ledger 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "cosmic_grift_dark_journalism",
+        "medkayfab_diagnostic_tools",
+        "medkayfab_laboratory_medicine",
+        "medkayfab_pathology",
+        "medkayfab_radiology",
+        "medkayfab_thinking_traps",
+        "mind_traps",
+        "reality_redrawn",
+        "saboteur_sketchbook_medicine_history_psyops_add_",
+        "the_kayfabe_money_trail_9_11",
+        "the_kayfabizarro_manifesto_cover_up"
+      ],
+      "secondaryDecks": [
+        "deep_state_plumbing",
+        "federal_kayfabe",
+        "geopolitical_thrillers_conspiracy_theories",
+        "kayfabizarro_monopolies_manipulation_murder_vol",
+        "kayfabizzaro_politics",
+        "medkayfab_atomic_elements",
+        "medkayfab_biochemistry",
+        "medkayfab_cardiology",
+        "medkayfab_dentistry",
+        "medkayfab_dermatology_01",
+        "medkayfab_dermatology_02",
+        "medkayfab_differential_diagnosis",
+        "medkayfab_disease_timelines",
+        "medkayfab_endocrinology",
+        "medkayfab_essential_pharmacology",
+        "medkayfab_gastrology",
+        "medkayfab_genetics",
+        "medkayfab_gross_anatomy",
+        "medkayfab_hematology",
+        "medkayfab_histology",
+        "medkayfab_immunology",
+        "medkayfab_internal_medicine",
+        "medkayfab_microbiology_infectiology",
+        "medkayfab_nephrology",
+        "medkayfab_neuroanatomy",
+        "medkayfab_neurology",
+        "medkayfab_obstetrics_gynaecology",
+        "medkayfab_ophthalmology",
+        "medkayfab_otolaryngology_ent",
+        "medkayfab_pharmacology_01",
+        "medkayfab_pharmacology_02",
+        "medkayfab_physiology",
+        "medkayfab_pneumology",
+        "medkayfab_urology_01",
+        "medkayfab_urology_02",
+        "observation_underground",
+        "project_gateway_kayfabe",
+        "secret_spy_suplexes",
+        "shadow_monopoly_blackrock_vanguard_co",
+        "the_biological_metropolis",
+        "the_move_1",
+        "the_move_id"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC03",
+      "title": "KFB Spycraft Listening Room 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "deep_state_plumbing",
+        "federal_kayfabe",
+        "geopolitical_thrillers_conspiracy_theories",
+        "kayfabizarro_monopolies_manipulation_murder_vol",
+        "kayfabizzaro_politics",
+        "observation_underground",
+        "project_gateway_kayfabe",
+        "secret_spy_suplexes",
+        "shadow_monopoly_blackrock_vanguard_co",
+        "the_move_1",
+        "the_move_id"
+      ],
+      "secondaryDecks": [
+        "cosmic_grift_dark_journalism",
+        "ideology_wrestling",
+        "ignore_dystopia",
+        "medkayfab_diagnostic_tools",
+        "medkayfab_laboratory_medicine",
+        "medkayfab_pathology",
+        "medkayfab_radiology",
+        "medkayfab_thinking_traps",
+        "mind_traps",
+        "programming_the_whole_child",
+        "reality_redrawn",
+        "saboteur_sketchbook_medicine_history_psyops_add_",
+        "shadow_politics",
+        "the_kayfabe_money_trail_9_11",
+        "the_kayfabizarro_manifesto_cover_up"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC04",
+      "title": "KFB Akashic Closed Stacks 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "help_i_am_a_human",
+        "kayfabizarro_philosophy",
+        "medkayfab_ancestral_medicine",
+        "medkayfab_science",
+        "suppressed_book_deck",
+        "unspoken_systems_kayfabizarro_meta_deck_01"
+      ],
+      "secondaryDecks": [
+        "academic_anarchy_intellectual",
+        "cinematic_kayfabizarro_2",
+        "cosmic_grift_dark_journalism",
+        "medkayfab_diagnostic_tools",
+        "medkayfab_laboratory_medicine",
+        "medkayfab_pathology",
+        "medkayfab_radiology",
+        "medkayfab_thinking_traps",
+        "mind_traps",
+        "reality_redrawn",
+        "saboteur_sketchbook_medicine_history_psyops_add_",
+        "symphonic_savagery",
+        "the_bards_barnyard_beatdown",
+        "the_kayfabe_money_trail_9_11",
+        "the_kayfabizarro_manifesto_cover_up",
+        "uncle_frizzlebob_s_tragic_flaws_id",
+        "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC05",
+      "title": "KFB Dungeon Torchline 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "kayfabizarro_siege_tower_wall_siege_kampaigns",
+        "kayfabizarros_ontological_hazards",
+        "philosopher_dungeon_raid",
+        "platos_dungeon_raid_v05"
+      ],
+      "secondaryDecks": [
+        "1001_kayfabe_nights",
+        "grimms_kayfabe_legends_expansion_set_02",
+        "kayfabizarro_monomyth_mayhem",
+        "pharaoh_piledriver",
+        "platos_dungeon_raid_hero_set_01",
+        "the_pharaoh_script_psychology_of_evil"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC06",
+      "title": "KFB Forest Second Footstep 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "dream_wrestling_with_kayfabe_freud",
+        "jung_and_shinn_a_guide_to_cosmic_cringe"
+      ],
+      "secondaryDecks": [
+        "brain_flipper_image_spots",
+        "frizzlebob_s_ego_mania_narcissist",
+        "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+        "kayfabizarro_siege_tower_wall_siege_kampaigns",
+        "kayfabizarros_ontological_hazards",
+        "medkayfab_geriatrics",
+        "medkayfab_psychiatry",
+        "medkayfab_tropical_medicine",
+        "philosopher_dungeon_raid",
+        "platos_dungeon_raid_v05",
+        "the_carnival_of_unsolved_problems_therapy",
+        "trust_and_betrayal",
+        "wrinkle_rumble"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC07",
+      "title": "KFB Coast Blue Hour Pier 01",
+      "priority": "P0",
+      "primaryDecks": [],
+      "secondaryDecks": [
+        "medkayfab_tropical_medicine",
+        "protopia_web",
+        "the_importance_of_being_kayfab_earnest"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC08",
+      "title": "KFB Polar Under Ice 01",
+      "priority": "P0",
+      "primaryDecks": [],
+      "secondaryDecks": [
+        "frizzlebob_s_mission_control",
+        "kosmik_kayfabizarro_sci_fi_space_opera"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC09",
+      "title": "KFB Pharaoh Painted Chamber 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "pharaoh_piledriver",
+        "the_pharaoh_script_psychology_of_evil"
+      ],
+      "secondaryDecks": []
+    },
+    {
+      "songSlot": "KFB_SC10",
+      "title": "KFB Woad And Iron 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "nibelungen_booster_pack_design",
+        "the_uruk_rumble",
+        "woad_and_warriors"
+      ],
+      "secondaryDecks": []
+    },
+    {
+      "songSlot": "KFB_SC11",
+      "title": "KFB MedKayfab Differential 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "medkayfab_atomic_elements",
+        "medkayfab_biochemistry",
+        "medkayfab_cardiology",
+        "medkayfab_dentistry",
+        "medkayfab_dermatology_01",
+        "medkayfab_dermatology_02",
+        "medkayfab_differential_diagnosis",
+        "medkayfab_disease_timelines",
+        "medkayfab_endocrinology",
+        "medkayfab_essential_pharmacology",
+        "medkayfab_gastrology",
+        "medkayfab_genetics",
+        "medkayfab_gross_anatomy",
+        "medkayfab_hematology",
+        "medkayfab_histology",
+        "medkayfab_immunology",
+        "medkayfab_internal_medicine",
+        "medkayfab_microbiology_infectiology",
+        "medkayfab_nephrology",
+        "medkayfab_neuroanatomy",
+        "medkayfab_neurology",
+        "medkayfab_obstetrics_gynaecology",
+        "medkayfab_ophthalmology",
+        "medkayfab_otolaryngology_ent",
+        "medkayfab_pharmacology_01",
+        "medkayfab_pharmacology_02",
+        "medkayfab_physiology",
+        "medkayfab_pneumology",
+        "medkayfab_urology_01",
+        "medkayfab_urology_02",
+        "the_biological_metropolis"
+      ],
+      "secondaryDecks": [
+        "medkayfab_clinical_cases",
+        "medkayfab_emergency_medicine",
+        "medkayfab_intensive_care_medicine",
+        "medkayfab_orthopedics_trauma",
+        "medkayfab_surgery"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC12",
+      "title": "KFB MedKayfab Golden Hour 01",
+      "priority": "P0",
+      "primaryDecks": [
+        "medkayfab_clinical_cases",
+        "medkayfab_emergency_medicine",
+        "medkayfab_intensive_care_medicine",
+        "medkayfab_orthopedics_trauma",
+        "medkayfab_surgery"
+      ],
+      "secondaryDecks": [
+        "medkayfab_atomic_elements",
+        "medkayfab_biochemistry",
+        "medkayfab_cardiology",
+        "medkayfab_dentistry",
+        "medkayfab_dermatology_01",
+        "medkayfab_dermatology_02",
+        "medkayfab_differential_diagnosis",
+        "medkayfab_disease_timelines",
+        "medkayfab_endocrinology",
+        "medkayfab_essential_pharmacology",
+        "medkayfab_gastrology",
+        "medkayfab_genetics",
+        "medkayfab_gross_anatomy",
+        "medkayfab_hematology",
+        "medkayfab_histology",
+        "medkayfab_immunology",
+        "medkayfab_internal_medicine",
+        "medkayfab_microbiology_infectiology",
+        "medkayfab_nephrology",
+        "medkayfab_neuroanatomy",
+        "medkayfab_neurology",
+        "medkayfab_obstetrics_gynaecology",
+        "medkayfab_ophthalmology",
+        "medkayfab_otolaryngology_ent",
+        "medkayfab_pharmacology_01",
+        "medkayfab_pharmacology_02",
+        "medkayfab_physiology",
+        "medkayfab_pneumology",
+        "medkayfab_urology_01",
+        "medkayfab_urology_02",
+        "the_biological_metropolis"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC13",
+      "title": "KFB Canopy Tiger Trails 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "medkayfab_tropical_medicine"
+      ],
+      "secondaryDecks": [
+        "dream_wrestling_with_kayfabe_freud",
+        "jung_and_shinn_a_guide_to_cosmic_cringe"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC14",
+      "title": "KFB Almost A Waltz 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "romantic_kayfabe",
+        "the_kayfabe_crucible_coming_of_age"
+      ],
+      "secondaryDecks": [
+        "shakespearean_animal_beatdown",
+        "the_importance_of_being_kayfab_earnest"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC15",
+      "title": "KFB After The Door 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "brain_flipper_image_spots",
+        "frizzlebob_s_ego_mania_narcissist",
+        "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+        "medkayfab_geriatrics",
+        "medkayfab_psychiatry",
+        "the_carnival_of_unsolved_problems_therapy",
+        "trust_and_betrayal",
+        "wrinkle_rumble"
+      ],
+      "secondaryDecks": [
+        "dream_wrestling_with_kayfabe_freud",
+        "ideology_wrestling",
+        "ignore_dystopia",
+        "jung_and_shinn_a_guide_to_cosmic_cringe",
+        "programming_the_whole_child",
+        "romantic_kayfabe",
+        "shadow_politics",
+        "the_kayfabe_crucible_coming_of_age"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC16",
+      "title": "KFB Window Rain & Tea 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "medkayfab_neonatal_medicine",
+        "medkayfab_nursing_care",
+        "medkayfab_pediatrics",
+        "medkayfab_the_bedside_ballet"
+      ],
+      "secondaryDecks": [
+        "anti_rules_toolkit",
+        "brain_flipper_image_spots",
+        "embrace_protopia",
+        "frizzlebob_s_ego_mania_narcissist",
+        "help_i_am_a_human",
+        "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+        "kayfabizarro_philosophy",
+        "medkayfab_ancestral_medicine",
+        "medkayfab_geriatrics",
+        "medkayfab_psychiatry",
+        "medkayfab_science",
+        "suppressed_book_deck",
+        "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+        "the_carnival_of_unsolved_problems_therapy",
+        "trust_and_betrayal",
+        "unspoken_systems_kayfabizarro_meta_deck_01",
+        "wrinkle_rumble"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC17",
+      "title": "KFB Town Saturday Assembly 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "bullshit_jobs_uncut",
+        "medkayfab_hospital_hierarchy",
+        "what_work_was_for"
+      ],
+      "secondaryDecks": [
+        "epistemic_sabotage",
+        "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+        "kayfabizarro_improv_comedy",
+        "kayfabizarro_pulitzer_punk",
+        "kreative_kayfab_creative_hero_journey",
+        "medkayfab_neonatal_medicine",
+        "medkayfab_nursing_care",
+        "medkayfab_pediatrics",
+        "medkayfab_rules_comic_01",
+        "medkayfab_the_bedside_ballet",
+        "museum_of_modern_mess",
+        "plot_pusher_posse"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC18",
+      "title": "KFB Protopia Repair Waltz 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "anti_rules_toolkit",
+        "embrace_protopia",
+        "protopia_web",
+        "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc"
+      ],
+      "secondaryDecks": [
+        "epistemic_sabotage",
+        "kayfabizarro_pulitzer_punk",
+        "kreative_kayfab_creative_hero_journey",
+        "medkayfab_neonatal_medicine",
+        "medkayfab_nursing_care",
+        "medkayfab_pediatrics",
+        "medkayfab_the_bedside_ballet"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC19",
+      "title": "KFB Maker Conveyor Samba 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "epistemic_sabotage",
+        "kayfabizarro_pulitzer_punk",
+        "kreative_kayfab_creative_hero_journey"
+      ],
+      "secondaryDecks": [
+        "anti_rules_toolkit",
+        "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC20",
+      "title": "KFB Utopia Service Corridor 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "ai_kayfabe",
+        "forget_utopia"
+      ],
+      "secondaryDecks": [
+        "kosmik_kayfabizarro_sci_fi_space_opera"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC21",
+      "title": "KFB Dystopia Emergency Over 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "ideology_wrestling",
+        "ignore_dystopia",
+        "programming_the_whole_child",
+        "shadow_politics"
+      ],
+      "secondaryDecks": [
+        "ai_kayfabe",
+        "forget_utopia",
+        "kayfabizarro_1_morale_ethics",
+        "medkayfab_oncology"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC22",
+      "title": "KFB Slow Orbit 01",
+      "priority": "P1",
+      "primaryDecks": [
+        "frizzlebob_s_mission_control",
+        "kosmik_kayfabizarro_sci_fi_space_opera"
+      ],
+      "secondaryDecks": []
+    },
+    {
+      "songSlot": "KFB_SC23",
+      "title": "KFB Next Ridge Adventure 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "1001_kayfabe_nights",
+        "grimms_kayfabe_legends_expansion_set_02",
+        "kayfabizarro_monomyth_mayhem",
+        "platos_dungeon_raid_hero_set_01"
+      ],
+      "secondaryDecks": [
+        "kayfabizarro_siege_tower_wall_siege_kampaigns",
+        "kayfabizarros_ontological_hazards",
+        "nibelungen_booster_pack_design",
+        "pharaoh_piledriver",
+        "philosopher_dungeon_raid",
+        "platos_dungeon_raid_v05",
+        "the_pharaoh_script_psychology_of_evil",
+        "the_uruk_rumble",
+        "woad_and_warriors"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC24",
+      "title": "KFB Third Attempt Boss 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "kayfabizarro_1_morale_ethics",
+        "medkayfab_oncology"
+      ],
+      "secondaryDecks": [
+        "big_bad_brain_wrestling",
+        "medkayfab_clinical_cases",
+        "medkayfab_emergency_medicine",
+        "medkayfab_intensive_care_medicine",
+        "medkayfab_orthopedics_trauma",
+        "medkayfab_surgery"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC25",
+      "title": "KFB Counterpunch Arena 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "big_bad_brain_wrestling"
+      ],
+      "secondaryDecks": [
+        "kayfabizarro_1_morale_ethics",
+        "medkayfab_oncology",
+        "nibelungen_booster_pack_design",
+        "the_uruk_rumble",
+        "woad_and_warriors"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC26",
+      "title": "KFB Filing For Fun 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+        "kayfabizarro_improv_comedy",
+        "medkayfab_rules_comic_01",
+        "museum_of_modern_mess",
+        "plot_pusher_posse"
+      ],
+      "secondaryDecks": [
+        "academic_anarchy_intellectual",
+        "big_bad_brain_wrestling",
+        "cinematic_kayfabizarro_2",
+        "shakespearean_animal_beatdown",
+        "sonic_slaughterhouse",
+        "sonic_warfare_music_history_01",
+        "symphonic_savagery",
+        "the_bards_barnyard_beatdown",
+        "uncle_frizzlebob_s_tragic_flaws_id",
+        "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC27",
+      "title": "KFB Plastic Promises Disco 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "sonic_slaughterhouse",
+        "sonic_warfare_music_history_01"
+      ],
+      "secondaryDecks": [
+        "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+        "kayfabizarro_improv_comedy",
+        "medkayfab_rules_comic_01",
+        "museum_of_modern_mess",
+        "plot_pusher_posse"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC28",
+      "title": "KFB Scenic Detour RoadTrip 01",
+      "priority": "P2",
+      "primaryDecks": [],
+      "secondaryDecks": [
+        "1001_kayfabe_nights",
+        "bullshit_jobs_uncut",
+        "embrace_protopia",
+        "frizzlebob_s_mission_control",
+        "grimms_kayfabe_legends_expansion_set_02",
+        "kayfabizarro_monomyth_mayhem",
+        "medkayfab_hospital_hierarchy",
+        "platos_dungeon_raid_hero_set_01",
+        "protopia_web",
+        "what_work_was_for"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC29",
+      "title": "KFB Last Exit NightDrive 01",
+      "priority": "P2",
+      "primaryDecks": [],
+      "secondaryDecks": [
+        "ai_kayfabe",
+        "deep_state_plumbing",
+        "federal_kayfabe",
+        "forget_utopia",
+        "geopolitical_thrillers_conspiracy_theories",
+        "kayfabizarro_monopolies_manipulation_murder_vol",
+        "kayfabizzaro_politics",
+        "observation_underground",
+        "project_gateway_kayfabe",
+        "secret_spy_suplexes",
+        "shadow_monopoly_blackrock_vanguard_co",
+        "the_move_1",
+        "the_move_id"
+      ]
+    },
+    {
+      "songSlot": "KFB_SC30",
+      "title": "KFB Fugue Of Bad Ideas 01",
+      "priority": "P2",
+      "primaryDecks": [
+        "academic_anarchy_intellectual",
+        "cinematic_kayfabizarro_2",
+        "shakespearean_animal_beatdown",
+        "symphonic_savagery",
+        "the_bards_barnyard_beatdown",
+        "uncle_frizzlebob_s_tragic_flaws_id",
+        "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+      ],
+      "secondaryDecks": [
+        "help_i_am_a_human",
+        "kayfabizarro_philosophy",
+        "medkayfab_ancestral_medicine",
+        "medkayfab_science",
+        "sonic_slaughterhouse",
+        "sonic_warfare_music_history_01",
+        "suppressed_book_deck",
+        "unspoken_systems_kayfabizarro_meta_deck_01"
+      ]
+    }
+  ],
+  "decks": [
+    {
+      "ordinal": 1,
+      "deckId": "1001_kayfabe_nights",
+      "deckTitle": "Uncle FrizzleBob's 1001 Kayfabe Nights",
+      "deckType": "Narrative Wrestling Mashup",
+      "cardCount": 60,
+      "primarySong": "KFB_SC23",
+      "secondarySongs": [
+        "KFB_SC05",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 2,
+      "deckId": "academic_anarchy_intellectual",
+      "deckTitle": "Unseal the Academic Anarchy — Academic Alphas vs Brain Benders",
+      "deckType": "Satirical archetype booster",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 3,
+      "deckId": "ai_kayfabe",
+      "deckTitle": "Roko's Basilisk & The AI Kayfabe Takeover",
+      "deckType": "AI satire deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC20",
+      "secondarySongs": [
+        "KFB_SC29",
+        "KFB_SC21"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 4,
+      "deckId": "anti_rules_toolkit",
+      "deckTitle": "The Anti-Rules Manifesto",
+      "deckType": "Meta-rules deck",
+      "cardCount": 57,
+      "primarySong": "KFB_SC18",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC19"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 5,
+      "deckId": "big_bad_brain_wrestling",
+      "deckTitle": "Big Bad Brain Wrestling",
+      "deckType": "Wrestling psychology satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC25",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 6,
+      "deckId": "brain_flipper_image_spots",
+      "deckTitle": "The Brain-Flipper Pack",
+      "deckType": "Psychological chaos deck",
+      "cardCount": 60,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 7,
+      "deckId": "bullshit_jobs_uncut",
+      "deckTitle": "Bullshit Jobs Uncut: A Field Report from Before the Timesheet",
+      "deckType": "Labor history card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC17",
+      "secondarySongs": [
+        "KFB_SC01",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 8,
+      "deckId": "cinematic_kayfabizarro_2",
+      "deckTitle": "Cinematic Legacy & Motion Picture Kayfabe",
+      "deckType": "Film poll satire deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 9,
+      "deckId": "cosmic_grift_dark_journalism",
+      "deckTitle": "Cosmic Grift – Dark Journalism",
+      "deckType": "Conspiracy investigative card deck",
+      "cardCount": 60,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 10,
+      "deckId": "deep_state_plumbing",
+      "deckTitle": "Power, Plumbing & Pyramid Pimps",
+      "deckType": "Deep-state archetype deck / shadow-story wrestling",
+      "cardCount": 52,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 11,
+      "deckId": "dream_wrestling_with_kayfabe_freud",
+      "deckTitle": "Dream-Wrestling with Kayfabe-Freud: Where the Id Always Kicks Out at Two!",
+      "deckType": "Psychoanalytic Expansion Pack",
+      "cardCount": 56,
+      "primarySong": "KFB_SC06",
+      "secondarySongs": [
+        "KFB_SC13",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 12,
+      "deckId": "embrace_protopia",
+      "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+      "deckType": "Protopian action-invitation deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC18",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 13,
+      "deckId": "epistemic_sabotage",
+      "deckTitle": "Epistemic Sabotage: Let AI Read Your Comic",
+      "deckType": "AI Workshop Tool for Comic Creators",
+      "cardCount": 60,
+      "primarySong": "KFB_SC19",
+      "secondarySongs": [
+        "KFB_SC18",
+        "KFB_SC17"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 14,
+      "deckId": "federal_kayfabe",
+      "deckTitle": "Federal Kayfabe",
+      "deckType": "Monetary conspiracy satire deck",
+      "cardCount": 60,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 15,
+      "deckId": "forget_utopia",
+      "deckTitle": "Forget Utopia",
+      "deckType": "Utopian Manipulation Deconstruction",
+      "cardCount": 56,
+      "primarySong": "KFB_SC20",
+      "secondarySongs": [
+        "KFB_SC29",
+        "KFB_SC21"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 16,
+      "deckId": "frizzlebob_s_ego_mania_narcissist",
+      "deckTitle": "It’s All About Me! (And Also FrizzleBob)",
+      "deckType": "Narcissist ego-mania trauma-wrestling deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 17,
+      "deckId": "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+      "deckTitle": "Du Elender Wicht! — Uncle FrizzleBob’s Kayfabizarro Kompendium of Insults, Curses & Ritual Provocations",
+      "deckType": "Uncle FrizzleBob’s Komik Kards for Bizarro Insults, Kayfabe Curses Karaoke & Ritual Provocations",
+      "cardCount": 60,
+      "primarySong": "KFB_SC26",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC27"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 18,
+      "deckId": "frizzlebob_s_mission_control",
+      "deckTitle": "Uncle FrizzleBob’s Mission Control Deck",
+      "deckType": "meta quest deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC22",
+      "secondarySongs": [
+        "KFB_SC28",
+        "KFB_SC08"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 19,
+      "deckId": "geopolitical_thrillers_conspiracy_theories",
+      "deckTitle": "Power Pyramid Plumbing & Global Psyop Wrestling – Expansion Deck 01",
+      "deckType": "Geopolitical conspiracy satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 20,
+      "deckId": "grimms_kayfabe_legends_expansion_set_02",
+      "deckTitle": "Grimms' Kayfabe Legends — Expansion Set 02: The Fairy Tale Screwjob",
+      "deckType": "fairy tale wrestling expansion",
+      "cardCount": 52,
+      "primarySong": "KFB_SC23",
+      "secondarySongs": [
+        "KFB_SC05",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 21,
+      "deckId": "help_i_am_a_human",
+      "deckTitle": "Hilfe, ich bin ein Mensch! — Human Nature Science Wrestling",
+      "deckType": "human nature science cards",
+      "cardCount": 56,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 22,
+      "deckId": "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+      "deckTitle": "Human Nature Uncut — Hilfe ich bin ein Mensch",
+      "deckType": "human nature educational expansion",
+      "cardCount": 56,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 23,
+      "deckId": "ideology_wrestling",
+      "deckTitle": "George's Ideology-Wrestling Kayfabizarro Komik Kards — A Field Guide to the War for Your Mind (Version 4.1 Unstable)",
+      "deckType": "ideology history political theory",
+      "cardCount": 68,
+      "primarySong": "KFB_SC21",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 24,
+      "deckId": "ignore_dystopia",
+      "deckTitle": "IGNORE DYSTOPIA — Anatomy of a Trap (Deck B)",
+      "deckType": "Exhibition media-critique deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC21",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 25,
+      "deckId": "jung_and_shinn_a_guide_to_cosmic_cringe",
+      "deckTitle": "Jung and Shinn: A Guide to Cosmic Cringe",
+      "deckType": "Jungian-Shinn psyche satire",
+      "cardCount": 60,
+      "primarySong": "KFB_SC06",
+      "secondarySongs": [
+        "KFB_SC13",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 26,
+      "deckId": "kayfabizarro_1_morale_ethics",
+      "deckTitle": "Beyond the Banalities of Good vs Evil — Uncle FrizzleBob's KAYFABIZARRO Komik Kards for Monster Morality Wrestling & Flexible Kayfabizarro Ethiks",
+      "deckType": "Satirical moral-trope exposé",
+      "cardCount": 56,
+      "primarySong": "KFB_SC24",
+      "secondarySongs": [
+        "KFB_SC25",
+        "KFB_SC21"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 27,
+      "deckId": "kayfabizarro_improv_comedy",
+      "deckTitle": "The Great Kayfabe Improv Komedy SKETCHBOOK",
+      "deckType": "improv training engine",
+      "cardCount": 60,
+      "primarySong": "KFB_SC26",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC27"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 28,
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "deckTitle": "Monomyth Mayhem",
+      "deckType": "Hero's Journey expansion",
+      "cardCount": 56,
+      "primarySong": "KFB_SC23",
+      "secondarySongs": [
+        "KFB_SC28",
+        "KFB_SC05"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 29,
+      "deckId": "kayfabizarro_monopolies_manipulation_murder_vol",
+      "deckTitle": "Monopolies, Manipulation & Murder Vol. II",
+      "deckType": "Financial conspiracy history",
+      "cardCount": 56,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 30,
+      "deckId": "kayfabizarro_philosophy",
+      "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+      "deckType": "Philosophical satire card expansion",
+      "cardCount": 68,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 31,
+      "deckId": "kayfabizarro_pulitzer_punk",
+      "deckTitle": "Pulitzer Punk — Kayfabizarro #05",
+      "deckType": "Writing Craft / Character Psychology / Honesty vs. Fidelity",
+      "cardCount": 60,
+      "primarySong": "KFB_SC19",
+      "secondarySongs": [
+        "KFB_SC18",
+        "KFB_SC17"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 32,
+      "deckId": "kayfabizarro_siege_tower_wall_siege_kampaigns",
+      "deckTitle": "Kayfabizarro Siege Kompendium",
+      "deckType": "siege warfare history compendium",
+      "cardCount": 60,
+      "primarySong": "KFB_SC05",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 33,
+      "deckId": "kayfabizarros_ontological_hazards",
+      "deckTitle": "Plato’s Dungeon Raids",
+      "deckType": "Philosophical Reality/RPG Satire",
+      "cardCount": 47,
+      "primarySong": "KFB_SC05",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 34,
+      "deckId": "kayfabizzaro_politics",
+      "deckTitle": "Politics — The Starter Set of Doom: 5,000 Years of Bad Ideas & One Very Tired Ballot Box",
+      "deckType": "Political archetypes satire",
+      "cardCount": 52,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 35,
+      "deckId": "kosmik_kayfabizarro_sci_fi_space_opera",
+      "deckTitle": "Kosmik Kayfabizarro Kollektive (Vol II)",
+      "deckType": "Sci-fi faction sandbox",
+      "cardCount": 56,
+      "primarySong": "KFB_SC22",
+      "secondarySongs": [
+        "KFB_SC08",
+        "KFB_SC20"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 36,
+      "deckId": "kreative_kayfab_creative_hero_journey",
+      "deckTitle": "Kreative Kayfab-Kicks & Boomerang Brain Boosters",
+      "deckType": "Creative Process Sabotage",
+      "cardCount": 52,
+      "primarySong": "KFB_SC19",
+      "secondarySongs": [
+        "KFB_SC18",
+        "KFB_SC17"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 37,
+      "deckId": "medkayfab_ancestral_medicine",
+      "deckTitle": "History of Medicine: The Ancestral Arena",
+      "deckType": "Medical history character deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 38,
+      "deckId": "medkayfab_atomic_elements",
+      "deckTitle": "MedKayfab Elemental Wrestling: The Atomic Arena",
+      "deckType": "Medical chemistry educational wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 39,
+      "deckId": "medkayfab_biochemistry",
+      "deckTitle": "Biochemistry & Cell Biology Wrestling",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 40,
+      "deckId": "medkayfab_cardiology",
+      "deckTitle": "MedKayfab: Cardiology Expansion",
+      "deckType": "Medical Education Expansion",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 41,
+      "deckId": "medkayfab_clinical_cases",
+      "deckTitle": "MedKayfab Synthesis Scenarios: The Grand Rumble",
+      "deckType": "Medical synthesis emergency education",
+      "cardCount": 56,
+      "primarySong": "KFB_SC12",
+      "secondarySongs": [
+        "KFB_SC11",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 42,
+      "deckId": "medkayfab_dentistry",
+      "deckTitle": "MedKayfab: Dentistry — The Oral Arena",
+      "deckType": "Medical education card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 43,
+      "deckId": "medkayfab_dermatology_01",
+      "deckTitle": "MedKayfab Dermatology 01: The Great Barrier Brawl",
+      "deckType": "medical education wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 44,
+      "deckId": "medkayfab_dermatology_02",
+      "deckTitle": "Dermatology Wrestling: The Surface Skirmish",
+      "deckType": "Medical education card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 45,
+      "deckId": "medkayfab_diagnostic_tools",
+      "deckTitle": "The Diagnostic Toolkit: The Detective's Gear",
+      "deckType": "Medical Diagnostic Tools",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 46,
+      "deckId": "medkayfab_differential_diagnosis",
+      "deckTitle": "The Differential Engine",
+      "deckType": "Medical Diagnostic Reasoning Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 47,
+      "deckId": "medkayfab_disease_timelines",
+      "deckTitle": "Disease Timeline Wrestling: The Temporal Tide",
+      "deckType": "Medical educational timeline deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 48,
+      "deckId": "medkayfab_emergency_medicine",
+      "deckTitle": "The Golden Hour Gauntlet — Resuscitation, Rhythms & The Triage Tempest",
+      "deckType": "Emergency medicine education deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC12",
+      "secondarySongs": [
+        "KFB_SC11",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 49,
+      "deckId": "medkayfab_endocrinology",
+      "deckTitle": "Endocrinology Edition",
+      "deckType": "medical education roleplay",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 50,
+      "deckId": "medkayfab_essential_pharmacology",
+      "deckTitle": "Essential Pharmacology: The Synaptic Arsenal",
+      "deckType": "Medical Pharmacology Character Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 51,
+      "deckId": "medkayfab_gastrology",
+      "deckTitle": "Gastrology Edition",
+      "deckType": "Unclassified",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 52,
+      "deckId": "medkayfab_genetics",
+      "deckTitle": "Medical Genetics: The Genetic Codebreaker — Source Code Sabotage & The Blueprint Rebellion",
+      "deckType": "medical genetics education",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 53,
+      "deckId": "medkayfab_geriatrics",
+      "deckTitle": "MedKayfab Geriatrics — The Silver Circuit",
+      "deckType": "Medical education geriatrics",
+      "cardCount": 56,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 54,
+      "deckId": "medkayfab_gross_anatomy",
+      "deckTitle": "MedKayfab: Gross Anatomy — Systems Edition",
+      "deckType": "Medical anatomy education deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 55,
+      "deckId": "medkayfab_hematology",
+      "deckTitle": "Hematology Wrestling: The Bloodline Feuds",
+      "deckType": "Medical Education Add-on",
+      "cardCount": 52,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 56,
+      "deckId": "medkayfab_histology",
+      "deckTitle": "MedKayfab: Histology & Microanatomy Edition",
+      "deckType": "Medical education card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 57,
+      "deckId": "medkayfab_hospital_hierarchy",
+      "deckTitle": "The Hospital Hierarchy",
+      "deckType": "medical hierarchy team card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC17",
+      "secondarySongs": [
+        "KFB_SC01",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 58,
+      "deckId": "medkayfab_immunology",
+      "deckTitle": "MedKayfab: Immunology & Pathology Edition",
+      "deckType": "Medical Immunology Character Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 59,
+      "deckId": "medkayfab_intensive_care_medicine",
+      "deckTitle": "Intensive Care Medicine: The Vital Vigil",
+      "deckType": "medical education wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC12",
+      "secondarySongs": [
+        "KFB_SC11",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 60,
+      "deckId": "medkayfab_internal_medicine",
+      "deckTitle": "Internal Medicine Wrestling: The Multimorbid Melee",
+      "deckType": "medical education wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 61,
+      "deckId": "medkayfab_laboratory_medicine",
+      "deckTitle": "Laboratory Medicine Wrestling: The Numerical Noir & The Biomarker Betrayal",
+      "deckType": "Medical Education Lab Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 62,
+      "deckId": "medkayfab_microbiology_infectiology",
+      "deckTitle": "MedKayfab: Microbiology & Infectiology Edition",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 63,
+      "deckId": "medkayfab_neonatal_medicine",
+      "deckTitle": "Neonatal Medicine: The Micro-Battalion",
+      "deckType": "Medical education character deck",
+      "cardCount": 52,
+      "primarySong": "KFB_SC16",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC18"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 64,
+      "deckId": "medkayfab_nephrology",
+      "deckTitle": "Nephrology Edition — MedKayfab",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 65,
+      "deckId": "medkayfab_neuroanatomy",
+      "deckTitle": "MedKayfab: Neuroanatomy Edition",
+      "deckType": "Medical Education Card Game",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 66,
+      "deckId": "medkayfab_neurology",
+      "deckTitle": "Neurology Edition",
+      "deckType": "Medical neurology education",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 67,
+      "deckId": "medkayfab_nursing_care",
+      "deckTitle": "Nursing & Care: The Vigilance Vanguard",
+      "deckType": "Medical Education / Nursing Procedures",
+      "cardCount": 56,
+      "primarySong": "KFB_SC16",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC18"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 68,
+      "deckId": "medkayfab_obstetrics_gynaecology",
+      "deckTitle": "The Pelvic Proving Grounds — MedKayfab OB/GYN",
+      "deckType": "medical education character cards",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 69,
+      "deckId": "medkayfab_oncology",
+      "deckTitle": "MedKayfab: Oncology Wrestling! — The Hall of Malignant Mirrors",
+      "deckType": "Medical education wrestling cards",
+      "cardCount": 60,
+      "primarySong": "KFB_SC24",
+      "secondarySongs": [
+        "KFB_SC25",
+        "KFB_SC21"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 70,
+      "deckId": "medkayfab_ophthalmology",
+      "deckTitle": "The Optical Octagon: Focal Points & Retinal Rebels",
+      "deckType": "Medical ophthalmology education",
+      "cardCount": 55,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 71,
+      "deckId": "medkayfab_orthopedics_trauma",
+      "deckTitle": "The Kinetic Chaos — Orthopaedics & Trauma",
+      "deckType": "Medical education wrestling cards",
+      "cardCount": 56,
+      "primarySong": "KFB_SC12",
+      "secondarySongs": [
+        "KFB_SC11",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 72,
+      "deckId": "medkayfab_otolaryngology_ent",
+      "deckTitle": "ENT: The Sensory Siege",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 73,
+      "deckId": "medkayfab_pathology",
+      "deckTitle": "Pathology & Forensic Medicine: The Post-Mortem Posture",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 74,
+      "deckId": "medkayfab_pediatrics",
+      "deckTitle": "Pediatrics: The Growing Gauntlet",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC16",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC18"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 75,
+      "deckId": "medkayfab_pharmacology_01",
+      "deckTitle": "Pharmacology Core Edition",
+      "deckType": "Medical Education Pharmacology",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 76,
+      "deckId": "medkayfab_pharmacology_02",
+      "deckTitle": "MedKayfab: Pharmacology Wrestling",
+      "deckType": "Medical education card game",
+      "cardCount": 54,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 77,
+      "deckId": "medkayfab_physiology",
+      "deckTitle": "Physiology Wrestling: Life-Force Logic & Homeostatic Heavyweights",
+      "deckType": "medical physiology education wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 78,
+      "deckId": "medkayfab_pneumology",
+      "deckTitle": "Pneumology — MedKayfab Pneumology Wrestling!",
+      "deckType": "Medical education persona cards",
+      "cardCount": 52,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 79,
+      "deckId": "medkayfab_psychiatry",
+      "deckTitle": "MedKayfab — Psychiatry Wrestling: The Mind-Bending Mat",
+      "deckType": "medical education wrestling card deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 80,
+      "deckId": "medkayfab_radiology",
+      "deckTitle": "MedKayfab: Radiology ADD",
+      "deckType": "Medical imaging education deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 81,
+      "deckId": "medkayfab_rules_comic_01",
+      "deckTitle": "MedKayfab: Mnemetic Medicine Mayhem — Anti-Rule Book",
+      "deckType": "Comic game rulebook",
+      "cardCount": 0,
+      "primarySong": "KFB_SC26",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC27"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 82,
+      "deckId": "medkayfab_science",
+      "deckTitle": "The Epistemia Edge: Peer-Review Pandemonium!",
+      "deckType": "Medical science epistemology ADD deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 83,
+      "deckId": "medkayfab_surgery",
+      "deckTitle": "MedKayfab: General Surgery — The Surgical Scrimmage",
+      "deckType": "Medical Education Expansion Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC12",
+      "secondarySongs": [
+        "KFB_SC11",
+        "KFB_SC24"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 84,
+      "deckId": "medkayfab_the_bedside_ballet",
+      "deckTitle": "The Bedside Ballet: Human Interaction",
+      "deckType": "Clinical Communication Skills",
+      "cardCount": 25,
+      "primarySong": "KFB_SC16",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC18"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 85,
+      "deckId": "medkayfab_thinking_traps",
+      "deckTitle": "Thinking Traps: The Mental Muddle",
+      "deckType": "Medical Cognitive Bias",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 86,
+      "deckId": "medkayfab_tropical_medicine",
+      "deckTitle": "Global Outbreak: The Vector Vengeance",
+      "deckType": "tropical medicine educational",
+      "cardCount": 56,
+      "primarySong": "KFB_SC13",
+      "secondarySongs": [
+        "KFB_SC06",
+        "KFB_SC07"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 87,
+      "deckId": "medkayfab_urology_01",
+      "deckTitle": "MedKayfab Urology 01 — The Renal Reservoir: Pressure, Pipes, and the Pelvic Vault",
+      "deckType": "Medical Education Card Deck",
+      "cardCount": 52,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 88,
+      "deckId": "medkayfab_urology_02",
+      "deckTitle": "MedKayfab Urology Wrestling: The Renal Reservoir",
+      "deckType": "Medical Education Urology",
+      "cardCount": 56,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 89,
+      "deckId": "mind_traps",
+      "deckTitle": "17 Kayfabe-Questions from Socrates to the FBI",
+      "deckType": "psychological influence technique cards",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 90,
+      "deckId": "museum_of_modern_mess",
+      "deckTitle": "Museum of Modern Mess",
+      "deckType": "Domestic mess art satire",
+      "cardCount": 60,
+      "primarySong": "KFB_SC26",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC27"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 91,
+      "deckId": "nibelungen_booster_pack_design",
+      "deckTitle": "Nibelungen Booster Pack",
+      "deckType": "Germanic epic mythology booster",
+      "cardCount": 60,
+      "primarySong": "KFB_SC10",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC25"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 92,
+      "deckId": "observation_underground",
+      "deckTitle": "Observation Underground — ADD",
+      "deckType": "Surveillance Tech Satire Expansion",
+      "cardCount": 48,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 93,
+      "deckId": "pharaoh_piledriver",
+      "deckTitle": "Pharaoh Piledriver",
+      "deckType": "Egyptian Mythology Wrestling",
+      "cardCount": 52,
+      "primarySong": "KFB_SC09",
+      "secondarySongs": [
+        "KFB_SC05",
+        "KFB_SC23"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 94,
+      "deckId": "philosopher_dungeon_raid",
+      "deckTitle": "Plato's Dungeon Raids: The Odyssey Edition",
+      "deckType": "philosophical dungeon scenario expansion",
+      "cardCount": 20,
+      "primarySong": "KFB_SC05",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 95,
+      "deckId": "platos_dungeon_raid_hero_set_01",
+      "deckTitle": "Plato's Dungeon Raid: Bring Your Own Legend — Hero Set 01",
+      "deckType": "Character Level Card Set",
+      "cardCount": 56,
+      "primarySong": "KFB_SC23",
+      "secondarySongs": [
+        "KFB_SC28",
+        "KFB_SC05"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 96,
+      "deckId": "platos_dungeon_raid_v05",
+      "deckTitle": "Plato's Dungeon Raid — Full Class Roster v05",
+      "deckType": "D&D class parody deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC05",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 97,
+      "deckId": "plot_pusher_posse",
+      "deckTitle": "Dramatic Drops & Krazy Konflikts",
+      "deckType": "narrative chaos expansion",
+      "cardCount": 56,
+      "primarySong": "KFB_SC26",
+      "secondarySongs": [
+        "KFB_SC17",
+        "KFB_SC27"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 98,
+      "deckId": "programming_the_whole_child",
+      "deckTitle": "Programming the Whole Child",
+      "deckType": "Education Control Conspiracy",
+      "cardCount": 60,
+      "primarySong": "KFB_SC21",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 99,
+      "deckId": "project_gateway_kayfabe",
+      "deckTitle": "Project Gateway Kayfabe",
+      "deckType": "CIA black ops conspiracy",
+      "cardCount": 60,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 100,
+      "deckId": "protopia_web",
+      "deckTitle": "Propositum 2040: Forget Utopia, Ignore Dystopia, Embrace Protopia",
+      "deckType": "Futurist Satire Mega Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC18",
+      "secondarySongs": [
+        "KFB_SC28",
+        "KFB_SC07"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 101,
+      "deckId": "reality_redrawn",
+      "deckTitle": "Reality Redrawn",
+      "deckType": "Secret History Investigation Deck",
+      "cardCount": 60,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 102,
+      "deckId": "romantic_kayfabe",
+      "deckTitle": "Romantic Love-Wrestling & Krass Kayfabe-Heartbreaks",
+      "deckType": "Romance craft deck — writing mechanics as performative card game",
+      "cardCount": 56,
+      "primarySong": "KFB_SC14",
+      "secondarySongs": [
+        "KFB_SC01",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 103,
+      "deckId": "saboteur_sketchbook_medicine_history_psyops_add_",
+      "deckTitle": "Medicine Madness: The Waiting Room Anarchy",
+      "deckType": "Medical Conspiracy Investigative",
+      "cardCount": 56,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 104,
+      "deckId": "secret_spy_suplexes",
+      "deckTitle": "Secret Spy Suplexes",
+      "deckType": "Spy Fiction Wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 105,
+      "deckId": "shadow_monopoly_blackrock_vanguard_co",
+      "deckTitle": "Shadow Monopoly: The Great Octopus Wrestling Match — BlackRock, Vanguard & Co",
+      "deckType": "Corporate Shadow Monopoly Satire",
+      "cardCount": 60,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 106,
+      "deckId": "shadow_politics",
+      "deckTitle": "Ruled by Organized Kayfabe-Krime",
+      "deckType": "political conspiracy satire deck",
+      "cardCount": 48,
+      "primarySong": "KFB_SC21",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 107,
+      "deckId": "shakespearean_animal_beatdown",
+      "deckTitle": "Shakespearean Animal Beatdown — The Shakespearean Expansion",
+      "deckType": "Shakespeare character cards + rules module",
+      "cardCount": 7,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC14",
+        "KFB_SC26"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 108,
+      "deckId": "sonic_slaughterhouse",
+      "deckTitle": "Sonic Slaughterhouse — Music Industry",
+      "deckType": "Music Industry Satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC27",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC26"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 109,
+      "deckId": "sonic_warfare_music_history_01",
+      "deckTitle": "The Iceberg Session Cards",
+      "deckType": "Music History Iceberg",
+      "cardCount": 48,
+      "primarySong": "KFB_SC27",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC26"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 110,
+      "deckId": "suppressed_book_deck",
+      "deckTitle": "The Most Suppressed Books",
+      "deckType": "Banned Books Story-Wrestling",
+      "cardCount": 20,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 111,
+      "deckId": "symphonic_savagery",
+      "deckTitle": "Symphonic Savagery",
+      "deckType": "Classical Music History Wrestling",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC04",
+        "KFB_SC26"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 112,
+      "deckId": "the_bards_barnyard_beatdown",
+      "deckTitle": "The Bard's Barnyard Beatdown",
+      "deckType": "Shakespeare literary wrestling satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 113,
+      "deckId": "the_biological_metropolis",
+      "deckTitle": "The Biological Metropolis",
+      "deckType": "Body-as-city biology cards",
+      "cardCount": 32,
+      "primarySong": "KFB_SC11",
+      "secondarySongs": [
+        "KFB_SC12",
+        "KFB_SC02"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 114,
+      "deckId": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+      "deckTitle": "The Biology of Rebellion",
+      "deckType": "Human Nature Science Expansion",
+      "cardCount": 36,
+      "primarySong": "KFB_SC18",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC19"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 115,
+      "deckId": "the_carnival_of_unsolved_problems_therapy",
+      "deckTitle": "The Carnival of Unsolved Problems",
+      "deckType": "Therapeutic Satire / Inner Systems",
+      "cardCount": 48,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 116,
+      "deckId": "the_importance_of_being_kayfab_earnest",
+      "deckTitle": "Oscar Wilde's Importance of KAYFAB-EARNEST",
+      "deckType": "literary satire expansion",
+      "cardCount": 10,
+      "primarySong": "KFB_SC01",
+      "secondarySongs": [
+        "KFB_SC14",
+        "KFB_SC07"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 117,
+      "deckId": "the_kayfabe_crucible_coming_of_age",
+      "deckTitle": "Kayfabe Koming-of-Age Wrestling All-Stars",
+      "deckType": "Coming-of-Age Satirical Card Game",
+      "cardCount": 48,
+      "primarySong": "KFB_SC14",
+      "secondarySongs": [
+        "KFB_SC01",
+        "KFB_SC15"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 118,
+      "deckId": "the_kayfabe_money_trail_9_11",
+      "deckTitle": "The Kayfabe Money Trail: 9/11",
+      "deckType": "9/11 financial forensics add-on",
+      "cardCount": 60,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 119,
+      "deckId": "the_kayfabizarro_manifesto_cover_up",
+      "deckTitle": "How To Stage A Cover-Up",
+      "deckType": "satirical cover-up card game",
+      "cardCount": 60,
+      "primarySong": "KFB_SC02",
+      "secondarySongs": [
+        "KFB_SC03",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 120,
+      "deckId": "the_move_1",
+      "deckTitle": "THE MOVE: A Field Guide to Managed Reactions",
+      "deckType": "Managed Reaction Playbook",
+      "cardCount": 56,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 121,
+      "deckId": "the_move_id",
+      "deckTitle": "The Move: A Field Guide to Managed Reactions",
+      "deckType": "Systems of control taxonomy",
+      "cardCount": 56,
+      "primarySong": "KFB_SC03",
+      "secondarySongs": [
+        "KFB_SC02",
+        "KFB_SC29"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 122,
+      "deckId": "the_pharaoh_script_psychology_of_evil",
+      "deckTitle": "The Pharaoh Script — Psychology of Evil",
+      "deckType": "conspiracy mythology deep dive",
+      "cardCount": 60,
+      "primarySong": "KFB_SC09",
+      "secondarySongs": [
+        "KFB_SC05",
+        "KFB_SC23"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 123,
+      "deckId": "the_uruk_rumble",
+      "deckTitle": "The Uruk Rumble",
+      "deckType": "Ancient mythology wrestling satire",
+      "cardCount": 54,
+      "primarySong": "KFB_SC10",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC25"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 124,
+      "deckId": "trust_and_betrayal",
+      "deckTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+      "deckType": "Betrayal Archetypes Satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 125,
+      "deckId": "uncle_frizzlebob_s_tragic_flaws_id",
+      "deckTitle": "Uncle FrizzleBob's Tragic Flaws",
+      "deckType": "Shakespearean Animal Wrestling Card Deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 126,
+      "deckId": "uncle_frizzlebob_s_tragic_flaws_shakespeare",
+      "deckTitle": "Uncle FrizzleBob’s Tragic Flaws",
+      "deckType": "Shakespearean Tragedy Satire",
+      "cardCount": 56,
+      "primarySong": "KFB_SC30",
+      "secondarySongs": [
+        "KFB_SC26",
+        "KFB_SC04"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 127,
+      "deckId": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+      "deckType": "Meta systems performance deck",
+      "cardCount": 56,
+      "primarySong": "KFB_SC04",
+      "secondarySongs": [
+        "KFB_SC30",
+        "KFB_SC16"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 128,
+      "deckId": "what_work_was_for",
+      "deckTitle": "What Work Was For: A Field Report from Before the Timesheet — Vol. I",
+      "deckType": "Sociological Work Field Report",
+      "cardCount": 56,
+      "primarySong": "KFB_SC17",
+      "secondarySongs": [
+        "KFB_SC01",
+        "KFB_SC28"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 129,
+      "deckId": "woad_and_warriors",
+      "deckTitle": "Wine, Woad & Warrior Chiefs",
+      "deckType": "Gallic Wars Historical Satire",
+      "cardCount": 52,
+      "primarySong": "KFB_SC10",
+      "secondarySongs": [
+        "KFB_SC23",
+        "KFB_SC25"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    },
+    {
+      "ordinal": 130,
+      "deckId": "wrinkle_rumble",
+      "deckTitle": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+      "deckType": "aging comedy starter kit",
+      "cardCount": 48,
+      "primarySong": "KFB_SC15",
+      "secondarySongs": [
+        "KFB_SC16",
+        "KFB_SC06"
+      ],
+      "mappingBasis": "curated registry deck title/type/tags to source gap/situation roles, not per-card listening validation"
+    }
+  ]
+}
