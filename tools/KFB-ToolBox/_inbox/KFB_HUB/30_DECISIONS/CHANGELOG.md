@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · WSA-Schema bestätigt
+- V-141 kfb.scene-study/2 bestätigt (Antwort replies/STEERING_REPLY_WSA_SCHEMA_R1.md, war liegen geblieben). WSA hat Lab-src (editor.ts, spec.ts, scene-study.ts) mit Georgs OK erweitert → künftige Lab-src-Patches nur nach Vorlagen-Zeile an die Steuerung. SCALE_CONTRACT_K2 Status auf verbindlich (V-060) nachgezogen.
+
 ## 2026-10-11 · Klick behoben (V-137)
 - Ursache gemessen: Loop-Naht der Motor-MP3 (alle 1,588 s unter Gas) + Bandenkontakt-Flackern + Pegel-Sprünge je Frame. Behoben: 60-ms-Equal-Power-Loop, Rampen τ 30 ms, Hysterese 80/150 ms. Nachher 0 Klicks (Gas/Leerlauf). Hör-Mitschnitt für Georg angefordert.
 

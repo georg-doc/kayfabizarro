@@ -1,6 +1,6 @@
 # KFB Maßstab-Kontrakt K2 · Figur und MacroCell als Maß
 
-Status: **VORSCHLAG · gemessen 2026-10-08 · von Georg zu bestätigen**
+Status: **VERBINDLICH für H = 3,64 und „Figuren nie skalieren“ (Register V-060, Georg)** · Kit-Faktoren (z. B. Tiny Treats `tt`) bleiben Vorschlag, bis eigens bestätigt · gemessen 2026-10-08 · Status nachgezogen 2026-10-11 auf Hinweis von WSA
 Ersetzt K1 (in K1 standen „1 Einheit = 1 m“ und eine Figurgröße in Metern; daraus entstand das Durcheinander).
 Belege: `docs/SCALE_AUDIT_R1.md` und die Aufreihung `http://127.0.0.1:5192/lineup.html` (`?tt=1.6` für Tiny Treats im Kit-Faktor).
 Bezug:

@@ -1435,6 +1435,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-141",
+   "date": "2026-10-11",
+   "area": "Editor",
+   "verdict": "RULE",
+   "text": "Ortsbeziehungen als Daten: Schema kfb.scene-study/2 (WSA-Vorschlag) bestätigt: binding receiver-selected-world, places/connections mit Zweck, desiredAttachment nach V-099 (entry_exit_ramp, tunnel_with_surface_ramp, paternoster_platform DEFERRED, null); keine Geometrie, Koordinaten, Assets, Paletten; Tunnel-Profil/-Look und Module wählt Georg im Lab (E). Lab-Welt-Dokument ist Besitzer, Importer baut das Lab in E/F. WSA-Änderungen an Lab-src nur nach Vorlagen-Zeile an die Steuerung.",
+   "values": {},
+   "owner": "Lab + WSA",
+   "check": "Validator 15 Fälle PASS; Import in E/F",
+   "source": "replies/STEERING_REPLY_WSA_SCHEMA_R1.md",
+   "supersedes": null,
+   "why": "Georg will Beziehungen importierbar; ein Vertrag statt zweitem Editor bzw. zweiter Weg-Geometrie. Lab-src wird von zwei Strängen berührt.",
+   "applies": "Phase E/F"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

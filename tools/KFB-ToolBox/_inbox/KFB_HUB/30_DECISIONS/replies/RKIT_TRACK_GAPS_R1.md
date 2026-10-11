@@ -76,15 +76,18 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 - **Tests:** test-v014 (HIGHWAY). Fehlt: dieselben 15 Prüfungen auf RACE.
 - **Aufwand:** **S**
 
-### 1.4 Übergang Strecke → Inselstraße: Track-Gate **B6** (neu, Voraussetzung für 1.3, 1.5, 1.7)
-- **Vorlage:** keine. Track Core lehnt es ausdrücklich ab: `transition RACE → TOWN: world ↔ race needs a track gate (catalogue B6, P2)` (heute geprüft).
-- **Stand:** **fehlt.** Jede Ankunft der J17-Strecke (Maßstab race) auf einer Inselstraße (Maßstab world: TOWN, COUNTRY …) braucht ihn. Heute gibt es nur Welt-zu-Welt-Übergänge: B1, B2, B3, B5, B7.
-- **Schnittstelle:**
-  - Katalogeintrag wie B5/B7: Mindestlänge, Fenster je Schlüsselgruppe (Bande, Bankett, Bord, Gehweg, Fuß).
-  - Gebaute Abfolge (z. B. Bande endet mit Kopf → Breiten-Stufe 14,4 → 8 → Bordkopf).
-  - Der Maßstabswechsel race m → lab ist ausdrücklich zu benennen (MODULES.md l.3: lab = m × 1,46).
-- **Tests:** neu: Kante durchgehend, kein Höhensprung, Fenster, Fahrtest-Linie.
-- **Aufwand:** **M.** Die Gestaltung des Kopfes bzw. der Abfolge ist Georgs Entscheidung (Vorlagen-Zeile).
+### 1.4 Übergang Strecke → Inselstraße (B6) · **korrigiert nach V-139 / V-140**
+- **Vorlage (vorhanden, 1:1 nutzen):** Joyride J14 T4 Zone **ZA** und J17 transition-atlas.
+  - `transition-profiles.v1.json`: Familie `A_track_city`, s 1470–1570 (100 m), beide Seiten, sideLag 0,08.
+  - `transition-atlas.v1.js:57–59` (Gewichte je Schicht, smoothstep im Fenster), `:198` (Bordsteine).
+  - `track-look.v5.js`: `:203` Bande H → 0,32 und an die Kante, `:75–77 / 139–144 / 229` `ROAD_APPLY`.
+  - Fenster Bande 0–0,55, Bord 0,28–1, Gehweg 0,40–1.
+  - **Variante B** (V-095, V-104; Lab `docs/critic/lab-track/2026-10-11_C0/c0-ab.json`): Bord 0,37–0,82, Bande 0,15–0,54 → **17 m Überlappung** auf 100 m.
+  - Der Atlas ist in J14, J15, J16 und J17 byte-gleich.
+- **Wie es dort gelöst ist:** **kein Familienwechsel im Core.** Ein einziger RACE-Strom läuft weiter. Im Strom ändern sich nur die Markierung je Stück (z. B. td03 `street_out` `markings: STREET`) und die Zone (TRANSITION bzw. `zones`). Bande, Bord, Gehweg und Häuser sind Look-Schichten über dem Strom („Owner: nur Look“, `transition-atlas.v1.js:1–6`).
+- **Stand:** **vorhanden.** Track Core 0.16.1 kann das schon: Stück TRANSITION, Biome bzw. Zonen, Markierungen. Teil 0 zeigt den gleichen Strom wie v0.12. Das frühere „fehlt“ war falsch, es fehlte das Such-Protokoll.
+- **Was die Ablehnung in Track Core meint:** `transitionEntry` lehnt RACE → TOWN nur für **Weltstraßen-Körper** ab (roadbed-Straßen mit Körper, Bord und Gehweg als gebaute Teile). Einen Typwechsel braucht es nur, wenn eine J17-Strecke in eine **roadbed-Straße** (kfb.road-bed/1, z. B. hub_town) übergehen soll. Dann ist das eine **Naht zwischen zwei Rahmen** (Strom-Ende in Zone ZA ↔ roadbed-Anfang) nach dem Modul-Katalog. Ein neuer Entwurf ist das nicht. Umsetzung genau nach ZA bzw. Variante B, falls nötig.
+- **Aufwand:** **S** (Naht-Rahmen + Test, nur falls gebraucht).
 
 ### 1.5 Rampe auf eine Ebene (V-110 „Rampe nach oben auf Gerüst bzw. Plattform“; C4; V-099 Typ 2 „Ausfahrt nach oben“)
 - **Vorlage:**
@@ -173,7 +176,7 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 | B7 Haltebucht | vorhanden (0.16.1) | test-v016 116/116; im Lab C4a abgenommen |
 
 - **Für C4b** (Ring über 0.16.1, ≤ 1 mm sonst Stopp) fehlt der Gleichstand-Test v0.12 ↔ 0.16.1 (Teil 0).
-- **Für C4c** fehlen EXIT/ENTRY auf RACE (1.3) und B6 (1.4), sobald die Rampe auf eine Inselstraße führt.
+- **Für C4c** fehlen die EXIT/ENTRY-Tests auf RACE (1.3). B6 (1.4) gibt es als Zone ZA bzw. Variante B.
 
 ### 1.13 Paternoster (V-099 Typ 3)
 **fehlt**, laut V-099 „später“. Nicht in dieser Runde.
@@ -186,7 +189,7 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 | 1.1 | J17-Grundstrecke | vorhanden | (Teil 0) |
 | 1.2 | Brücke frei im Raum | vorhanden | – |
 | 1.3 | Auf- bzw. Abfahrt EXIT/ENTRY auf RACE | teilweise | S |
-| 1.4 | **Track-Gate B6 race ↔ world** | **fehlt** | M (+ Georg) |
+| 1.4 | B6 race ↔ Straße (J14 ZA / J17 Atlas, Variante B) | **vorhanden** (Zone im Look über einem RACE-Strom); roadbed-Naht nur falls nötig | S |
 | 1.5 | Ebenen-Rampe auf Plattform | teilweise | S |
 | 1.6 | Straße durch den Platz | vorhanden | – |
 | 1.7 | **Wendeschleife um Drehscheibe** | teilweise | M |
@@ -198,7 +201,7 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 
 ## 3 · Vorschlag Reihenfolge (je mit Vorlagen-Zeile an die Steuerung)
 1. **Teil 0:** Gleichstand-Test 0.16.1 gegen v0.12 über alle Lab-Rezepte (J17 p1b.v2, td03, O1-Ringe, Module) + MODULES-Felder.
-2. **1.3 + 1.4:** EXIT/ENTRY auf RACE testen; B6 erst nach Georgs Entwurf für die Abfolge.
+2. **1.3 + 1.4:** EXIT/ENTRY auf RACE testen; B6 nach Vorlage ZA bzw. Variante B (V-139), kein neuer Entwurf.
 3. **1.5** Ebenen-Rampe, **1.7** Wendeschleife (einarmiger Kreisel, Drehscheibe).
 4. **1.10** Einschnitt, **1.9** Spindel (Phase E/F).
 
@@ -211,3 +214,43 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 
 _Quellen: `~/Developer/rkit-r3/trackcore/track-core.mjs` (0.16.1); Lab `docs/concepts/C4_VORLAGE_R1.md`, `docs/PHASE_C_DONORS_R1.md`, `docs/critic/lab-track/2026-10-11_C1b-C3-r2/MODULES.md`; J14/J17/O1 wie oben. Messungen vom 11.10. (einarmiger Kreisel, HAIRPIN_180, td03, modul_kreisverkehr, B6-Ablehnung) mit Track Core 0.16.1._
 
+
+
+## 5 · Such-Protokoll nach V-140 (nachgetragen 2026-10-11)
+Zwei Suchläufe. Alle Greps ohne Groß-/Kleinschreibung, ohne node_modules, Basis `~/Dropbox/CLAUDE`, dazu Track Core privat `~/Developer/rkit-r3`.
+
+**Suchbegriffe**
+- **A (B6):** B6, ZA, A_track_city, transition-atlas, ROAD_APPLY, kerb/Bord, 17 m, Variante B, RACE→TOWN, track gate.
+- **B (Wendeschleife):** wende*, Wendehammer, U-turn, turnaround, turntable, Drehscheibe, roundabout/Kreisel, hairpin, WENDESTELLE.
+- **C (Ebenen-Rampe):** Ebenen-Rampe, ramp to level/platform/deck, Gerüst, landing plate, roadLift, isle_HX.
+- **D (Einschnitt):** cut, trench, Einschnitt, schlucht_, hang_, Stützmauer, retaining wall, support kinds.
+- **E (Spindel):** Parkhaus, Parkdeck, Spindel, helix, riseSteps, td03, ZC, level exit, build_td01_parkdeck.
+
+| Quelle | gesucht | gefunden |
+|---|---|---|
+| Donor-Karte `Lab/docs/PHASE_C_DONORS_R1.md` | A–E | A: l.21 Atlas, l.31–33 Variante A/B (1 → 17 m). C: l.48 „keine Ausfahrt-Rampe auf einen Inselboden“. D: l.44–45 CUT_R und schlucht_, l.65–66. B, E: nicht gefunden |
+| Donor-Karte `Lab/docs/MVP1_DONOR_AND_MODEL_MAP_R1.md` | A–E | l.26 „B5–B6“ = Brücken-Zielbild-IDs (nicht das Gate). B–E nicht gefunden |
+| `Lab/docs/ACCEPTANCE_INDEX.md` | A–E + track, strecke, joyride | nicht gefunden |
+| J14 `KFB_JOYRIDE_J14_…_r1/` | A–E | A: transition-profiles ZA; transition-atlas.v1.js:1–6, 57–59, 198; track-look.v5.js:75, 203, 229. B: p1-recipes.js:54 `wende_j14` (Pad um plaza_hairpin r 22, assist guided), TEST_REPORT.md:10,16. E: presets td03 helix, riseSteps; ZC `C_city_track_deck` s 560–650; core `heightSchedule` l.160–164. D: Tunnel-Hosts ohne cut |
+| J15 (TC1) `KFB_JOYRIDE_J15_…_r1/` | A–E | wie J14 (Core und Atlas byte-gleich) |
+| J16 `Lab/donors/joyride-j16r2-zip/` | A–E | wie J14; tc1 Erdhügel `ramp()` l.130 (Abdeckung, kein Einschnitt) |
+| J17 `Lab/donors/joyride-j17-staged/` und `KFB Joyride J17 · FB Cabrio/` | A–E | A: Atlas, ROAD_APPLY. B: travel-modes.j17.js:32,54; travel-core.j17.js:124 (wende-Ereignis, keine Lenklogik) |
+| Organ-Inseln v4–v7 `KFB Organ-Inseln + race track v4+/` | A–E | A: kein Atlas; `into()` wechselt TRACK → STREET je Stück (v7 l.621). B: `lab-v7/vehicle-manoeuvre.v1.js` (Mehrpunkt-Wende des Fahrzeugs), Kehren HAIRPIN_180 (v6:581, v7:718). C: isle_HX flache Gerade, roadLift = Decktiefe. D: schlucht_ / hang_ als SDF-Ausschnitt (v4:4, 87, 492, 543–547; v7:4, 105, 472–500, 907–914, 1054–1056), keine Wände, keine Rampe aus dem Portal |
+| RollerCoaster v11 `KFB VoxelWorld/KFB RollerCoaster v11/` | A–E | nicht gefunden (nur Farb- und Tempo-Rampen) |
+| Stunt Car Race `KFB Stunt Car Race/` | A–E | A: „Track-Gate-Modus“ (VFX, nicht das). B: U-Turn-Research RESEARCH.md:358–567, Kreisel-GLB-Kandidaten ASSET_INDEX.md:106–107. C: Sprungkeil world.js:15,62. D, E nicht gefunden |
+| Frühere RKIT-Lieferungen `KFB Racetrack Blender Kit/` (27 RETURN, TRACK-CORE, RKIT-R3, TD01, GC02) | A–E | A: S4-Brief §4A.4 l.312–316 (Adapter Stadt ↔ Rennstrecke auf demselben Core). B: S13 RETURN l.16–36 (Kreisel, Mitte ohne Drehscheibe). D: S8 `s8_tunnel_site.py` l.209, 245–262 (offener Einschnitt am Portal, Blender); GC02 `canyon_lib.py:257` (cut/fill/bridge/tunnel). E: TD01 `build_td01_parkdeck.py` (5 Ebenen, Einfahrt je Ebene l.83, Sockel `level_k_entry` l.142–153, 2,9 %, ohne ebene Absätze); S3 RETURN l.45, 54–55, 83 (riseSteps) |
+| `KFB_HUB/` (30_DECISIONS, replies, 20_BRIEFINGS) | A–E | V-095, V-099, V-104, V-110, V-113, V-134, V-139; REVIEW_STEUERUNG_R1.md:21,30; REPLY_BLENDER_FORM_KIT_01_R1.md:15,24 |
+| Lab `docs/critic/lab-track/2026-10-11_C0/`, `docs/concepts/C4_VORLAGE_R1.md` | A, B | c0-ab.json, REPORT.md:12–24, Fixture Variante B l.53–57; C4_VORLAGE_R1.md:16–17, 43 |
+
+**Nicht durchsucht:** der GitHub-Zweig `research/kfb-track-core-transition-rail-2026-10-10` (nur die lokalen Fixture-Kopien).
+
+**Ergebnis je Teil nach dem Protokoll**
+- **1.4 B6:** **vorhanden** (oben korrigiert).
+- **1.7 Wendeschleife:** bleibt **teilweise**.
+  - Vorlagen: J14-Pad WENDESTELLE (Pad um HAIRPIN_180), einarmiger ROUNDABOUT (Track Core), Mehrpunkt-Wende des Fahrzeugs (O1 v7, Fahrlogik, keine Geometrie).
+  - Eine Drehscheibe bzw. Wendeschleife um eine Mitte ist in keiner Quelle gefunden.
+- **1.5 Ebenen-Rampe:** bleibt **teilweise**. Bausteine: `riseSteps` (ebene Absätze), CONNECT auf einen Rahmen, TD01-Ebenen-Sockel. Eine Rampe, die eben auf einem Ebenen-Anker endet, ist in keiner Quelle gefunden.
+- **1.10 Einschnitt:** bleibt **teilweise**. Bausteine: O1 schlucht_ / hang_ (SDF), S8 offener Einschnitt am Portal (Blender), GC02 classify. Ein Graben mit Wänden aus einem Portal ist in keiner Quelle gefunden.
+- **1.9 Spindel-Ausfahrten:** bleibt **teilweise**.
+  - Bausteine: td03-Spirale mit riseSteps, Zone ZC, TD01-Parkdeck (Einfahrt je Ebene, Sockel `level_k_entry`).
+  - Fehlt: Ausfahrt aus der Spirale auf eine ebene Platte im Track Core. TD01 zeigt die Form als Blender-Hülle, ohne ebene Absätze.
