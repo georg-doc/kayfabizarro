@@ -29,7 +29,7 @@ Quelle: core/track-core.v012.mjs:889–907; stream-to-three.v5.mjs:332–356; na
 
 Quellbeispiele: armLength30m→43,8lab, fillet14m→20,44lab, flare18m→26,28lab. Für heutige Module gelten V-143 und gewählte Katalogmaße, nicht diese historischen Defaults. Innen/Außen-Bande folgt dem tatsächlichen Core-Kerblauf bis zum tangentialen Anschluss; keine gelöschten Banden am Mund. Vulkan = echte Szenerie am Mittel-Anker.
 
-1:1 verfügbar sind native Stream-Schnittstellen und J17-Strang/Material. Der untersuchte J17 track-look.v5.js zeigt keinen dedizierten Verbraucher der vierarmigen Node-Decks. Der Alt-Core-Loader besitzt einen Preview-Node-Verbraucher, das belegt noch keinen fertigen J17-Clay-Kreisel. Look-Abgleich ist daher beim Lab erforderlich. [Ausschnitt Außenstrang](https://github.com/georg-doc/kayfabizarro/blob/dccf75cabd222d951380693d84ab88053ee7e519/tools/KFB-ToolBox/_inbox/KFB%20Joyride%20J17%20%C2%B7%20FB%20Cabrio/JOYRIDE_J17_2026-10-01/pictures/chase-curve.jpg) belegt nur J17-Masse/Farbe, keinen Kreisel.
+1:1 verfügbar sind native Stream-Schnittstellen und J17-Strang/Material. Der untersuchte J17 track-look.v5.js zeigt keinen dedizierten Verbraucher der vierarmigen Node-Decks. Der Alt-Core-Loader besitzt einen Preview-Node-Verbraucher, das belegt noch keinen fertigen J17-Clay-Kreisel. Look-Abgleich ist daher beim Lab erforderlich. [Ausschnitt Außenstrang](WSA_TRACK_MODULE_LOOK_SPEC_R1/evidence/curve_outer.png) belegt nur J17-Masse/Farbe, keinen Kreisel.
 
 ## 2 · Geführte ENTRY
 Quelle: Alt-Core MERGE_HALF core/track-core.v012.mjs:245–256; interne Seitenabschlüsse stream-to-three:56–82; J17-Strang track-look:196–220. Der aktuelle geometrische Donor ist **ENTRY/CONVERGE ab0.14 nach V-118**, nicht ein Nachbau von MERGE_HALF.
@@ -48,7 +48,7 @@ Nicht gefunden im untersuchten J17-Renderer/Bildsatz: ein vollständig bebildert
 ## 4 · Innerer Banden-Übergang
 track-look.v5.js:190–214: signierte Kurvenkrümmung; innen bei ks×side>0. `inner=sstep(.008,.022,ks×side)×(1−bt)`; Schwellen sind Quellkrümmungen, keine Meterlängen. RIB3,5m→5,11lab; Kehlen-Lift-Term0,26m→0,3796lab, multipliziert mit inner/Rippengewicht. Lokales R und Kurvenzeichen entscheiden, nicht immer Welt-links.
 
-Gerolltes Profil 1:1 erhalten: Radius clamp(.55×(Hx+drop),.14,1.25), Krone entlang240° mit14 Abschnitten, Handwelle mit Quell-s-Koordinate. Nicht auf glatte Kastenschiene/Bevel reduzieren. [Echter J17-Innenausschnitt](https://github.com/georg-doc/kayfabizarro/blob/dccf75cabd222d951380693d84ab88053ee7e519/tools/KFB-ToolBox/_inbox/KFB%20Joyride%20J17%20%C2%B7%20FB%20Cabrio/JOYRIDE_J17_2026-10-01/pictures/chase-curve.jpg) zeigt Kehle/Krone; kein isolierter Modul-Neubau.
+Gerolltes Profil 1:1 erhalten: Radius clamp(.55×(Hx+drop),.14,1.25), Krone entlang240° mit14 Abschnitten, Handwelle mit Quell-s-Koordinate. Nicht auf glatte Kastenschiene/Bevel reduzieren. [Echter J17-Innenausschnitt](WSA_TRACK_MODULE_LOOK_SPEC_R1/evidence/curve_inner.png) zeigt Kehle/Krone; kein isolierter Modul-Neubau.
 
 ## 5 · Äußerer Banden-Übergang
 track-look:200–218: `outer=sstep(.014,.04,−ks×side)×(1−bt)`; Radius wird ×(1+.32×outer), Krone um0,3m×outer erhöht und seitlich um0,12m×outer versetzt (lab-Koeffizienten0,438 /0,1752). Bauch/Unterseite bleiben Teil des Strangs.
@@ -77,7 +77,7 @@ M2 JSON:14–81,183–268,305–317; M2 JS:58–108; Atlas:185–189. **M2 erset
 
 M2-Rand bündig road_L/R, matte flach gewölbte Knetlinie; Profil lift.008, maxh.055 Quell-m, gerade Enden, corner.075. bio−1 Strecke: keine Mittelstreifen/Zebra. bio0 Stadt: passende Mitte/Zebra; bio1 Natur: mark_track-Präsenz; MAG signal3/3-Blöcke. Markierungsformen müssen Zweck tragen, nicht alle Straßen wie Rennbahnen beschriften.
 
-**Drei Grenzen:** (a) M2 JS rendert im untersuchten Stand Rand/MAG/Mitte/Zebra; generische Pfeil-/Vorfahrt-/Schraffur-Definitionen im JSON sind noch kein dortiger Verbraucher. (b) Alt-Core-Kreisel liefert eigene yield(.4/.9/.55), TRACK edge(.30,inset.25), die nicht M2 Q/flush entsprechen; separat als Alt-Core kennzeichnen. (c) lokaler MODULES-Katalog bezeichnet B0,6 als lab; J17-Quelle ist0,6 Track-m→0,876lab. Einheitenbezeichnung vom Lab klären, kein stiller WSA-Patch. [Straßen-Crop](https://github.com/georg-doc/kayfabizarro/blob/dccf75cabd222d951380693d84ab88053ee7e519/tools/KFB-ToolBox/_inbox/KFB%20Joyride%20J17%20%C2%B7%20FB%20Cabrio/JOYRIDE_J17_2026-10-01/pictures/chase-straight.jpg) belegt nur das sichtbare fertige J17-Straßenbild.
+**Drei Grenzen:** (a) M2 JS rendert im untersuchten Stand Rand/MAG/Mitte/Zebra; generische Pfeil-/Vorfahrt-/Schraffur-Definitionen im JSON sind noch kein dortiger Verbraucher. (b) Alt-Core-Kreisel liefert eigene yield(.4/.9/.55), TRACK edge(.30,inset.25), die nicht M2 Q/flush entsprechen; separat als Alt-Core kennzeichnen. (c) lokaler MODULES-Katalog bezeichnet B0,6 als lab; J17-Quelle ist0,6 Track-m→0,876lab. Einheitenbezeichnung vom Lab klären, kein stiller WSA-Patch. [Straßen-Crop](WSA_TRACK_MODULE_LOOK_SPEC_R1/evidence/street_surface.png) belegt nur das sichtbare fertige J17-Straßenbild.
 
 ## 8 · Endkappen / Bandenköpfe
 ROUND_END / END_TAPER: Core:173–195; individuelle Seitenkappen:773–781 und stream-to-three:212–215; J17-Fix:track-look:235–268 + echtes J17_overlay:24–28.
@@ -101,4 +101,4 @@ B ist Arbeitshypothese; mark_track-Verbraucher ist für City im geprüften M2 no
 Empfangs-Gate: RKIT/Lab ordnen diese Look-IDs realen MODULES-Zeilen zu, klären Einheiten/Markierungs-Verbraucher und behalten vorhandene Vorlagen. Module in gleicher Kamera neben J17 zeigen, dann Core-Naht-/Fahrprüfungen und Lab-Parity durch ihre Owner. Diese Lieferung enthält keine neuen Implementierungs-/Fahr-/Render-/Golden-Abnahmen und keine Lab-src-Änderungen.
 
 ## Bildlieferung
-Drei reine Pixel-Crops wurden lokal erstellt, betrachtet und 3/3 auf Pixelgleichheit geprüft. PNGs bleiben lokal; automatische Freigabeprüfung hat deren GitHub-Veröffentlichung wegen fehlender ausdrücklicher Bilddaten-Freigabe abgelehnt. Die Links oben führen stattdessen zu den bereits veröffentlichten Original-J17-Bildern; IMAGE_EVIDENCE.json nennt die exakten Ausschnittsrechtecke. Keine neuen Bilder generiert.
+Georg hat die Veröffentlichung der drei konkreten J17-Ausschnitte auf diesem Register-Branch ausdrücklich freigegeben. Die PNGs sind jetzt mit der Spezifikation verknüpft; 3/3 reine Pixel-Crops aus vorhandenen Originalen, keine Bildgenerierung. IMAGE_EVIDENCE.json enthält Originalhash und Ausschnittsrechteck. R1 ist laut BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R2.md abgenommen; R2 setzt V-150/V-151 fort.
