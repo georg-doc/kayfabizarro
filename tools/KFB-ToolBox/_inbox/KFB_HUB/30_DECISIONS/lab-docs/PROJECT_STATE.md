@@ -21,6 +21,21 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## Prototyp „Tunnel im Feld“ geliefert (11.10., Steuerung Konzept C1b_C3 R1 (a)) · wartet auf Georgs OK
+
+**Prototyp:** Hirn + race_tube hinter `?tunnelField=hirn`. Kein Ausrollen vor Georgs OK.
+- Bericht und Bild: `docs/critic/lab-track/2026-10-11_tunnel-field-proto/REPORT.md` + `PROTOTYP_BLATT.jpg`.
+
+**Messwerte:**
+- Körper geschlossen: offen 0, Mehrfachkanten 0 (Hero + Light).
+- Q1: 0 schwebende Teile.
+- Durchsicht: 0 Fehltreffer.
+- Q3: Freiraum 1,49 m.
+- Q5: längste Kette 19,6 m.
+- Parity: PASS.
+
+**Danach (nach OK):** Rechteckring stone_rect/mine · J17-Tageslicht · M2-Zone track · VFX/SFX · C4.
+
 ## Stand 11.10. abends (nach Blender-Review, gilt vor „Übergabepunkt“)
 
 **Maßgeblich:** `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001…V-121) + `docs/KFB_WORLDBUILDER_PLAN_R1.md` + diese Datei. Abgelöst: siehe V-117 bzw. `START_HERE_STEERING.md` im Register-Ordner. Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, wird bei jeder Register-Änderung mitgeschoben.

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Prototyp Tunnel im Feld
+- Hirn + race_tube (?tunnelField=hirn): Ring weich aus dem O1-Feld geschnitten, ein levelSet, TC1-Bänder/Lampen auf der Feldwand, Tonsockel unter dem Deck. Körper offen 0 / Mehrfachkanten 0 (Hero + Light), Durchsicht 0, Q5-Ketten kürzer (max 21 m statt 51 m). Bauzeit 53,7 s (Farbzuordnung unoptimiert). Wartet auf Georgs Urteil vor dem Ausrollen.
+
 ## 2026-10-11 · Fahrtest R2 abgenommen
 - Echter k2b-Fahrtest (nur Tasten, 8 Läufe, 2 Autos, assist 0/0,8, Boost, Randlauf, je Runde + 200 m über Start/Ziel): 0 unter Deck/hängen/Bande/rescue, Landungen 3/3, Kamera 0 Clips. Fahrzeugabhängig nur über Breite (k2b hat mehr nicht). Befund: Hex-Fläche zu Fuß unerreichbar → C4. Nebel wirkt jetzt (fogFar 0,95 × far, Farbe aus Kuppel-Horizont).
 
