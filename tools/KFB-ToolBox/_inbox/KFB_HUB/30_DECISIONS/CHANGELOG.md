@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · VFX/SFX eingebaut, C4 freigegeben
+- V-128/V-129 eingebaut: J17-Motor, Jingles, Kontakt-Engine, Kenney-CC0, Tunnel-Hall, J17-Knet-Partikel, Radio wechselt beim Einsteigen auf Suno RoadTrip; Kosten im Rauschen. Mitschnitt an Georg. Nebel-Farbe jetzt CPU-seitig aus dem Kuppelbild (GPU-Zurücklesen ließ Frames hängen; Korrektur der Bau-Sitzung).
+- C4 freigegeben: C4a B7-Haltebucht am Hex-Hub + Fußzugang → C4b Ring über Track Core 0.16.1 (≤ 1 mm sonst Stopp) → C4c erste Ausfahrt EXIT/Rampe/ENTRY im J17-Look. Wendeschleife offen bei Georg; Parkdeck-Tunnel Phase E/F.
+
 ## 2026-10-11 · M2-Zone und Nebel-Kosten
 - M2 Streckenzone bio −1 (J17-treu: weiße Randlinie 0,6 m, keine Mittellinie/Zebras) als Standard; Boost-Pfeile 1:1 v5, Dichte unter J17 (Kritiker-Eindruck kam von der Standbild-Kamera). Nebel-Horizontprobe asynchron (0,2 ms Median). Checkpoints = Beginn Insel-Stück, Ziel = Start/Ziel-Naht.
 

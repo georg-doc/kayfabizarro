@@ -21,6 +21,28 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
 - **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
+## V-128/V-129 VFX/SFX + Suno-Radio im FAHREN, Nebelkosten, M2-Zone, C4-Vorlage (11.10. mittags)
+
+**Nebelkosten:** Die Horizont-Probe rechnet auf der CPU aus dem Kuppelbild.
+- Das GPU-Zurücklesen hat auch asynchron 105–250 ms angehalten (Korrektur im REPORT).
+- Jetzt: kein Stillstand, parity Check 4 in Organ ruhig.
+- Ordner: `docs/critic/lab-track/2026-10-11_perf-fog/`.
+
+**M2:** Die J17-Streckenzone `bio −1` ist Standard: weiße Randlinie 0,6 m, keine Mittellinie, kein Zebra.
+- Der alte Stand bleibt über `?m2zone=city` abrufbar.
+- Ordner: `…/2026-10-11_m2-zone/`.
+
+**VFX/SFX** (`src/audio/race-audio.ts`, `src/play/race-fx.ts`, `audio-owner.ts`):
+- Enthalten: Motor, Jingles, Kontakt-Engine, Kenney-Einzelklänge, Tunnel-Hall, Knet-Partikel und Banden-Wackeln.
+- Das Suno-Radio übernimmt beim Fahren mit 2,5 s Übergang.
+- Kosten im Rauschen.
+- Mitschnitt mit Ton (41 s): `…/2026-10-11_vfx-sfx/FAHRT_MIT_TON_720p.mp4`.
+
+**C4-Vorlage:** `docs/concepts/C4_VORLAGE_R1.md`, an die Steuerung geschickt.
+- C4a: Hex-Zugang über die Haltebucht B7 (Track Core 0.16.1).
+- C4b: Ring auf 0.16.1 heben.
+- C4c: EXIT/ENTRY am Hex-Hub.
+
 ## Prototyp „Tunnel im Feld“ geliefert (11.10., Steuerung Konzept C1b_C3 R1 (a)) · wartet auf Georgs OK
 
 **Prototyp:** Hirn + race_tube hinter `?tunnelField=hirn`. Kein Ausrollen vor Georgs OK.
