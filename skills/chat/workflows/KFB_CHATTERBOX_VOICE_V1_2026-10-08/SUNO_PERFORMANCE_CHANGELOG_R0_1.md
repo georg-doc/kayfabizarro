@@ -1,6 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 Owner: existing KFB ChatterBox / Voice Layer, Draft PR #379. Planning candidate only.
 
+## 2026-10-12 · R0.2 RULE1 quality clarification
+- RULE1 only: No AI Quirk. No Meme Logic. No Filler. No external Humanizer suite assumed.
+- Hard Suno prompt packet under 5,000 characters; R0.2 script+style+cues = 1,619, spoken words = 172, target 75 seconds.
+- Authoring-only, causally linked Hook/Conflict/Reframe/Punchline/Callback beat families; no automatic Triplet promotion or new owner.
+- Prior R0.1 Clown script SUPERSEDED_TUNE. Revised draft is still noncanon, no claim of audible comedy PASS.
+- 21/21 structural checks PASS; real audio, rights, staging, and human verdict remain open.
+- Next Suno gate KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1.
+
 ## 2026-10-11 · R0.1 authoring contract and private Site handoff
 - Georg's demonstrated Suno spoken philosophical stand-up / rockabilly band format registered as a new **candidate performance-media lane**; generated humor quality remains an explicit editorial/human control.
 - New `SUNO_SPOKEN_MUSIC_PERFORMANCE_SLICE_R0_1_2026-10-11.md` with SCRIPT_FIRST (preferred) vs PROMPT_FIRST, 20–150s formats, actor/Triplet provenance, current audio/Resident owner separation, cue/mute/duck/fallback, limited-download budgeting and performance quality rubric.
