@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Modulkarte Worldbuilder R1
+- replies/WORLDBUILDER_MODULE_MAP_R1.md (V-188): 38 Lab-Module, 24 Spender, 16 Live-Seiten (Einstieg /kfb-hub/). Wiederverwendbar: Insel-Rezept kfb.island-config/1, Track Core compileGraph/Checks, J17/TC1, Travel-Core/k2b, Kamera, HUD, Wasser, Klang, WB2-Sculpt, Resident-Atlas-Edit-Layer, Librarian. Lücken: Editor ohne Undo/Snap/Pinsel, edits[] leer, world-layout nur geplant, kein Zieh-Streckeneditor, scene-study /1 statt /2. Vorschlag kfb.world/1 + Befehle/Undo + Rechte je Modus. 7 Fragen ins Steuerpult.
+
 ## 2026-10-12 · Replay-Harness-Spezifikation
 - replies/REPLAY_HARNESS_SPEC_R1.md: Ursachen (ein Sim-Schritt pro Bild, dt Wanduhr ≤ 50 ms, Walker prüft den Weg nicht, fps-Gate nur Mittelwert, Tests über Wanduhr-Tasten), Zielentwurf, 8 Migrationsschritte (6–9 Tage), Risiko Physik-Abgleich offline in Node. V-190 regelt Übergang von V-159. Nebenbefund vendor/SOURCE.md veraltet. Slice S6 im Steuerpult ergänzt.
 
