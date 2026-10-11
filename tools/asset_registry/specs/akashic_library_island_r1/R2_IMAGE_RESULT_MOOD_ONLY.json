@@ -1,0 +1,69 @@
+{
+  "schema": "kfb.asset-scene-image-result/1",
+  "jobId": "AKASHIC-LIBRARY-R2-OPEN-STAGE-SCENELETS",
+  "sourceJob": "SCENE_JOB_R2_OPEN_STAGE.json",
+  "classification": "MOOD_ONLY",
+  "createdAt": "2026-10-11",
+  "engine": "image_gen",
+  "generatorReceipt": {
+    "genId": "a5ce3371-e981-4ab1-9730-7ff2081b63bb",
+    "sourceConditioningReceipt": null,
+    "actualSourceImagesUsed": []
+  },
+  "image": {
+    "name": "KFB_Akashic_Library_Open_Stage_R2_MOOD_ONLY.png",
+    "sha256": "7b66ac0d026b934a7c7dc04e7b4831ead967630cd931871a04e9b0d2c08cdbb8",
+    "bytes": 2684097,
+    "width": 1536,
+    "height": 1024,
+    "persistence": "CHAT_CONVERSATION_ONLY",
+    "onGithub": false
+  },
+  "archive": {
+    "name": "KFB_Akashic_Library_R2_Open_Stage_Visual_Pack.zip",
+    "sha256": "15fafbba460cb1638061a59feace2bf04ffd4407ed15806c610c0e4e8b519918",
+    "bytes": 2638764,
+    "contents": 3,
+    "onGithub": false
+  },
+  "sourceIsolation": {
+    "neutralSvgPath": "tools/asset_registry/specs/akashic_library_island_r1/R2_SOURCE_ISOLATED_NEUTRAL.svg",
+    "sourceProofPath": "tools/asset_registry/specs/akashic_library_island_r1/R2_SOURCE_PROOF.json",
+    "rawVerticesParsed": 14902,
+    "rawTrianglesParsed": 15791,
+    "samplesRenderedAs2DSvg": true,
+    "neutralSourceImagePixelsAvailableInImageGenerator": false,
+    "blenderVisualSourceRender": false,
+    "sourceMeshFidelityOfHero": "UNVERIFIED"
+  },
+  "sceneletCandidateProfiles": [
+    "FLOOR_MARK",
+    "TWO_WALL",
+    "PARTIAL",
+    "OPEN"
+  ],
+  "checks": {
+    "moodImageDimensionsVerified": true,
+    "originalPngShaComputed": true,
+    "zipEntries": 3,
+    "zipCrc": "PASS",
+    "staticGeometryCountRecorded": true,
+    "sourceConditioningBound": false,
+    "architectureNeutralFormApproved": false,
+    "contactMeasured": false,
+    "independentVisualCriticRun": false,
+    "georgApproved": false
+  },
+  "approval": {
+    "classification": "MOOD_ONLY",
+    "golden": false,
+    "georgPicked": false
+  },
+  "limitations": [
+    "R2 image is not conditioned on original KayKit / Kenney mesh pixels or actual Dropbox reference pixels",
+    "The depicted Lorekeeper and furniture are not certified original donor geometry",
+    "Not a Blender source model, gameplay or collision proof",
+    "R1 closed-monument image was separately rejected and remains quarantined"
+  ],
+  "nextGate": "ISOLATED_SOURCE_RENDER_PLUS_DROPBOX_PIXEL_BINDING_THEN_ONE_SOURCE_LOCKED_HALF_OPEN_HERO"
+}
