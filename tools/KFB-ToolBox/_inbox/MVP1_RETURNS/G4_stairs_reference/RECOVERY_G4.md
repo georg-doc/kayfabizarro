@@ -1,5 +1,20 @@
 # RECOVERY · G4 Town Castle Clay Stairs · visual references R1
 
+## CURRENT · Georg selected B; targeted attachment repaired and independently checked
+
+Georg explicitly retained R3 form, authorised hill/foot repair + independent walkability/KFB recheck; noGolden/merge. Actual source owner/candidate branch `wsa/kfb-g4-stairs-form-design-r3-2026-10-11@5485c4ccce1be251abaae79ac84dc492b0664fa8` (noPR). [Current ATTACH_R1 Return](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/RETURN.md), [true repaired images](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/renders/three_quarter.jpg), [independent contact proof](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/renders/INDEPENDENT_CONTACT_PROOF.jpg).
+
+CanonicalR3 stairs byte-identicaldf59928...;45worldgeometry/triangle sets unchanged. One actual source-derived ADAPTED_HILL replaced failedaffineoverlay context, grounded and connected7096tris. Freshindependent21609surface/288000finitecapsuleoffsetsegment rays,0safebandcollision; exitheightgapmax.00000962lab;bothpillarfeetembedded. Tinysoil.009933lab tolerated+recorded. Runtime/controllerNOT_RUN; noanalyticwholebodyproof. [Tester](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/tester/TEST_REPORT_ATTACHMENT_INDEPENDENT.md).
+
+Fullfreshseven8/8/9/8/8/7/8 mean8,min7 meetsnumericFORMcriterion; separateSTYLE_TUNE7. Rightfootnearperimeter/plainfaceting/regularcrowns remainlimits. [Critic owncaptures+report](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/critic/CRITIC_REPORT.md). K2/GoldenparityNOT_TESTED; noRuntimePASS orhumanGolden. [Guard](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/guard/PRODUCTION_GUARD.md) CONTINUE truthfulclosure, noadditionaltuning.
+
+ExistingprivateSceneComposer0.1.2/pluginrel_6acad47f8aec8191974fd1a074420919, sameIDplugins_6acaa1b6b0688191b66448db92767870;guardedprovenform/contact additions,5changedfiles+failurehistory6/6exactreadbacks. No secondplugin/App/MCP/config oraudiencechange. EarlierR3FORM_FAIL andv0.1.1failure reference remain historicaltruth. [Plugin Return](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/PLUGIN_RETURN.md).
+
+**One next gate: Georg visual acceptance of actual repairedattachment.** InitialA/Bformgate is closed byB. NoautoGolden/merge/Live; noWorldBuilder/runtime/Hub/Cloudflare/Site/Stagewrite. Earliercontextfailures remainhistory, notcurrentgate.
+
+## Preserved prior decisions and outcomes
+
+
 ## CURRENT · 2026-10-11 · WSA R3 result, source-bound context quarantined
 
 WSA Work implemented and independently tested the new architectural form. Candidate `wsa/kfb-g4-stairs-form-design-r3-2026-10-11@b22e747b80e87767f0d186fa1488e1aa4a46f406` (PR none); [actual R3 Return](https://github.com/georg-doc/kayfabizarro/blob/b22e747b80e87767f0d186fa1488e1aa4a46f406/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/RETURN_R3.md). Initial implementation62e42141cb545e3e0bbf203866e5550bd193af4c, tested evidencee6f2aa1e1f0efb130975b1af498fcdba635f3ad0. Every branch write/ref and intended file read back. R1/R2 unchanged at52099710569a98393325ee94becf616f418b35f2.
