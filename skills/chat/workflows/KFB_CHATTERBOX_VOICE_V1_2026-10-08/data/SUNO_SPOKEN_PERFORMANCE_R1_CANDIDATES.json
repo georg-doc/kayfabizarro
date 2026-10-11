@@ -1,0 +1,92 @@
+{
+  "schema": "kfb.suno-spoken-performance-planning/0.1-candidate",
+  "status": "PLANNING_ONLY",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "receiver": "KFB Audio current owner / ToolBox Performance Suite",
+  "sourceDate": "2026-10-11",
+  "mediaGenerated": 0,
+  "downloadCreditsConsumed": 0,
+  "siteProductChanged": false,
+  "worldRuntimeChanged": false,
+  "auditions": [
+    {
+      "id": "clown-fineprint-prompt-a1",
+      "mode": "PROMPT_FIRST",
+      "status": "NOT_GENERATED",
+      "durationTargetSeconds": [
+        75,
+        100
+      ],
+      "actor": {
+        "type": "EXISTING_KAYKIT_SOURCE",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+        "blobSha": "9d5db2f3a00694b49c6ba182a3b51ebd370f09c8"
+      },
+      "stageProps": [
+        {
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_blue.gltf",
+          "blobSha": "ee29969e7d46502ce45f89b44c6f6077f0c5153a"
+        },
+        {
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+          "blobSha": "f25a76577cef3bc850f381f661b40403412d0f68"
+        }
+      ],
+      "sourceTriplets": [],
+      "cardRefs": [],
+      "scriptApproval": "NOT_APPLICABLE_GENERATIVE_AUDITION",
+      "voiceStyle": "dry adult clown monologue",
+      "musicStyle": "restrained rockabilly trio",
+      "transcriptMatch": "NOT_TESTED",
+      "audioQuality": "NOT_TESTED",
+      "rights": "NOT_REVIEWED",
+      "sunoUrl": null,
+      "audioAsset": null,
+      "downloaded": false
+    },
+    {
+      "id": "clown-fineprint-script-b1",
+      "mode": "SCRIPT_FIRST",
+      "status": "SCRIPT_NOT_AUTHORED",
+      "durationTargetSeconds": [
+        85,
+        105
+      ],
+      "actor": {
+        "type": "SAME_SOURCE_AS_A1",
+        "ref": "clown-fineprint-prompt-a1"
+      },
+      "sourceTriplets": [],
+      "cardRefs": [],
+      "scriptApproval": "PENDING",
+      "scriptRevision": null,
+      "voiceStyle": "sardonic mature feminine voice as a casting experiment, not actor identity",
+      "musicStyle": "restrained rockabilly trio",
+      "transcriptMatch": "NOT_TESTED",
+      "audioQuality": "NOT_TESTED",
+      "rights": "NOT_REVIEWED",
+      "sunoUrl": null,
+      "audioAsset": null,
+      "downloaded": false
+    }
+  ],
+  "acceptance": {
+    "text": "GEORG_KEEP_TUNE_CUT",
+    "sound": "GEORG_KEEP_TUNE_CUT",
+    "transcript": "SOURCE_EDIT_DIFF_CHECK",
+    "mixedProgramAudio": true,
+    "existingAudioOwnerOnly": true,
+    "newDialogueOwner": false,
+    "runStage": false
+  },
+  "budget": {
+    "planNotVerified": true,
+    "proMonthlyDownloads20": true,
+    "premierMonthlyDownloads60": true,
+    "initialAuditionCandidates4": true,
+    "initialDownloadCap2": true,
+    "sharedWithRoadTrip": true,
+    "remainingUnknown": true
+  },
+  "nextGate": "KFB_SUNO_CLOWN_PROMPT_VS_SCRIPT_A_B_LISTENING_R1"
+}
