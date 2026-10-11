@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Kamera tiefer in engen Räumen (später)
+- V-170 Kamera-Absenkung für Minenschächte bzw. niedrige Tunnel als späteres Kamera-Modul; Deckenhöhe als Strecken-Daten.
+
 ## 2026-10-11 · Spiral-Freiraum gemessen
 - RKIT: td03-Spirale (auch in J17/P1 B/td05) 3,35 statt nötig 4,9 → FAIL; O1-Ring PASS. Prüfung spiral_clearance freigegeben; neue/genutzte Spiralen steiler (Georgs Richtung), J17-Referenz unverändert.
 

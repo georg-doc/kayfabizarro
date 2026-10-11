@@ -1841,6 +1841,20 @@
    "applies": "ab nächstem Core-Schritt"
   },
   {
+   "id": "V-170",
+   "date": "2026-10-11",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "Später zusätzlich: Kamera-Absenkung in engen Räumen (z. B. Minenschächte bzw. Tunnel mit tiefer Decke) als eigenes Kamera-Modul mit weicher Überblendung; Spiralen werden trotzdem nach V-169 hoch genug gebaut. Kamera-Parameter je Strecken-Abschnitt als Daten (Track Core liefert Deckenhöhe, Lab-Kamera folgt).",
+   "values": {},
+   "owner": "Lab + RKIT",
+   "check": "Kamera-Test im niedrigen Tunnel",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Niedrige Stollen sollen fahrbar bleiben, ohne dass die Kamera in der Decke steckt.",
+   "applies": "später (Minen-Tunnel)"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
