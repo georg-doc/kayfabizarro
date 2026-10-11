@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Cosmic-Look, Mesa-Insel, Steinbrücken später
+- V-163 Cosmic = Neon-Vibe aus CO1/CO2 (ohne halluzinierte Elemente). V-164 Mesa-/Krazy-Kat-Coconino-Insel (ME1/ME2). V-165 Steinbrücken später für Antike-Inseln. Abgelegt replies/REFS_COSMIC_MESA_2026-10-11/.
+
 ## 2026-10-11 · Bank B TUNE, Budget
 - V-162 Bank B TUNE 5–6/10 (Bergmasse um Tunnel zu dünn, Unterseite/Terrain „draufgelegt“, Strecke wenig organisch), passt erstmal. Georg: 20 % Nutzungsbudget verbraucht → Berichte bündeln.
 
