@@ -1,5 +1,14 @@
 # RETURN · G4 Stair Reference R1 · 2026-10-10
 
+## CURRENT · Georg PASS WITH TUNE / future shared Clay presentation
+
+Georg accepts retainedR3 + repairedattachment as PASS_WITH_TUNE: „passt für mich mit TUNE“. Previousattachmentvisualgate CLOSED. Futureassets AND islandterrain should be rendered with the existingKFBClaymation texture/look; currentR2Blenderprobe/GLBfallback is not finalK2/Goldenparity. NoGolden/merge/runtimepromotion. Exactdecision oncandidatehead6d7d4aad86ab9e4341f380d4f23e72c4fcaaf2fe: [Georg record](https://github.com/georg-doc/kayfabizarro/blob/6d7d4aad86ab9e4341f380d4f23e72c4fcaaf2fe/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/GEORG_PASS_WITH_TUNE.md).
+
+Next structure recommendation only: G4 stone_arch_bridge + abutments/parapets, currentP0roster. RealKenney main bridge-straight, bridge-straight-pillar, bridge-draw sourcefiles present; bridgeSTYLE_DIRECTION_ONLY sheet available. Functional span/placement/vehicle-width and actual supportingrocks notyetlocked; oldimg2threejs bridge01 package notfound at testedGitpaths(main/sync). No newbridgebuild authorized by the user's planning question; firstsource-isolation proposal only. Earlier acceptancepending text below is historical.
+
+## Preserved prior state
+
+
 ## CURRENT · Georg selected B; targeted attachment repaired and independently checked
 
 Georg explicitly retained R3 form, authorised hill/foot repair + independent walkability/KFB recheck; noGolden/merge. Actual source owner/candidate branch `wsa/kfb-g4-stairs-form-design-r3-2026-10-11@5485c4ccce1be251abaae79ac84dc492b0664fa8` (noPR). [Current ATTACH_R1 Return](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/RETURN.md), [true repaired images](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/renders/three_quarter.jpg), [independent contact proof](https://github.com/georg-doc/kayfabizarro/blob/5485c4ccce1be251abaae79ac84dc492b0664fa8/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/renders/INDEPENDENT_CONTACT_PROOF.jpg).
