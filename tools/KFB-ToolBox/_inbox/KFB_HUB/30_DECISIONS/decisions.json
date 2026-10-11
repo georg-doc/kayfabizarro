@@ -2111,7 +2111,7 @@
    "date": "2026-10-12",
    "area": "Prozess",
    "verdict": "RULE",
-   "text": "Steuer-Seite: ein privates Artifact mit Masterplan (Phasen, Slices S1–S12 aus Plan R1 §5) und Entscheidungs-Reiter (offene Urteile mit Bild, PASS/TUNE/FAIL bzw. Optionen + Notiz); die Steuerung liest die Klicks und trägt sie ins Register ein.",
+   "text": "Steuer-Seite: ein privates Artifact mit Masterplan (Phasen, Slices S1–S12 aus Plan R1 §5) und Entscheidungs-Reiter (offene Urteile mit Bild, PASS/TUNE/FAIL bzw. Optionen + Notiz); die Steuerung liest die Klicks und trägt sie ins Register ein. [12.10.: → abgelöst durch V-191]",
    "values": {},
    "owner": "Steuerung",
    "check": "Seite live",
@@ -2133,6 +2133,20 @@
    "supersedes": null,
    "why": "Ursache falscher PASS: ein Sim-Schritt pro Bild mit Wanduhr-dt; Replay macht Tests maschinenunabhängig.",
    "applies": "ab S6"
+  },
+  {
+   "id": "V-191",
+   "date": "2026-10-12",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Offene Entscheidungen, Briefings und nächste Schritte liegen zentral auf WSAs Production-Hub- bzw. Control-Sites bei ChatGPT (wie bisher alles), nicht im claude.ai-Steuerpult (V-189 abgelöst). Übergabe replies/HANDOVER_WSA_PRODUCTION_HUB_R1.md + open-decisions-2026-10-12.json; Rückweg replies/GEORG_ANSWERS_<Datum>.json (kfb.georg-answers/1); das Register bleibt die Wahrheit.",
+   "values": {},
+   "owner": "WSA + Steuerung",
+   "check": "Hub-Bereich live",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Georg will alles zentral in seinem ChatGPT-Production-Hub.",
+   "applies": "ab jetzt"
   },
   {
    "id": "V-084",

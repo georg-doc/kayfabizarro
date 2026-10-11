@@ -1,6 +1,21 @@
 # KFB Island Worldbuilder · Projektstand
 
-Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
+Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. Maßgeblich sind `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-Nummern), `docs/KFB_WORLDBUILDER_PLAN_R1.md` (Slices §5) und diese Datei.
+
+## Aktuell (12.10.)
+
+- **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
+- **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
+- **Als Nächstes (Plan R1 §5):** S2 Flacker-Paket (begonnen hinter `?flk=1`) → S3 Insel-Cache / Ladezeit, gemeldet zusammen → S5 Speicher → S6 Tests/Git. S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185) nach Freigabe.
+- **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
+
+## Lieferungen 11./12.10. (neueste oben)
+
+**Lieferung 12.10. · V-183 C4c-Folgen + C4c Standardansicht:** `docs/critic/lab-track/2026-10-11_C4c/v183/` (REPORT-Abschnitt V-183) — offene Kanten 0/0, Parity incl. Check 11 PASS, Teil 0 PASS, Fußtests 6/6 und Platz PASS bei 60 fps, Fahrtest 2 Autos × 6 Läufe (Exit mit Assist 0,8 ohne Treffer).
+
+**Lieferung 12.10. · C4c Banden-Enden v2 (V-168, V-183 PASS):** `docs/critic/lab-track/2026-10-11_C4c/` (REPORT, `C4C_ENDEN_BLATT_v2.jpg`) — Strang je Seite geteilt (LAB PATCH K, J17-strangCap) + Kopf auf dem Wulst-Ende; Bucht-Befund, Bucht-Ende ohne Strich-Reste.
+
+**Lieferung 11.10. · C4c Aus-/Auffahrt (V-171 Punkt 1, v1):** Track Core 0.16.9 `compileGraph`, Weichen-Wechsel im k2b-Rahmen (V-161), Ausstattung (Gore, Nasen, Pfeile, Zebra, RKIT-Poller), Parity-Check 11 (offene Kanten).
 
 **Lieferung 11.10. · C4b Track Core 0.16.8 in der Organ-Welt:** `docs/critic/lab-track/2026-10-11_C4b/` — LAB PATCH 15 Alias (`?core=012` Rollback), Teil 0 bitgleich (21 124 Proben Δ 0, Rezept gleich), Fahrtest rundengleich, Fußtest + Parity bei 60 fps PASS.
 
@@ -20,20 +35,27 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 
 **Lieferung 11.10. · C1b+C3 Strecken-Welt + TC1-Tunnel (generisch) + Fahrtest:** `docs/critic/lab-track/2026-10-11_C1b-C3/` (REPORT, MODULES, REFS, qcheck.json, drive_test.json). V-112 PASS (4 Styles), Fahrtest + Dock PASS, Parity PASS, **V-115 FAIL (Mitte 16,7 fps; Platzhalter-Material bringt 35/59/56 fps, Entscheidung offen)**.
 
-## Rollen (seit 2026-10-08)
+## Rollen (Stand 12.10.)
 
 | Wer | Was |
 | --- | --- |
-| Claude Code, Steuer-Sitzung | Konzept, Integration, Prüfung; dieses Lab; Briefings; Zusammenführen der Ergebnisse |
-| Claude Code, RKIT-Sitzung | Straßenbaukasten RKIT R3 in Blender (Profile, Andock-Bauteile, T/Y/X-Kreuzungen im Track Core) |
-| Blender-Coworker (Mac mini) | Bewohner, Rigging, Animationen, NPC-Activities |
-| Claude Design | Formen: Natur-Kit, Wasser, Pyramide, Unterseite (`deliveries/KFB_ISLAND_KIT_R1.zip`) |
-| WSA | MVP-Integration in WB2 nach `docs/SPEC_PLACEMENT_GRAMMAR_R1.md` |
+| Claude Code, Steuer-Sitzung | Konzept, Register, Briefings, Prüfung; legt Georg die Lieferungen vor |
+| Claude Code, Bau-Sitzung (Lab) | dieses Lab auf 5192: Strecke, C4c, Technik-Slices S1–S3, S5–S9; Besitzer dieser Datei |
+| Claude Code, RKIT-Sitzung | Straßenbaukasten RKIT R3 und Track Core; **pausiert** (Budget), Lab steht auf Track Core 0.16.9 |
+| Motion-Agent / Dungeon-POC-Agent | S12 NPC Performance Proof / S11 Dungeon-POC (eigene Ports, nie 5180/5192; beenden nur eigene PIDs) |
+| Blender-Coworker | S10 Coconino-Mesas, Inselboden (headless + Watchdog, ≥ 40 GB frei) |
+| Claude Design | Formen und HUD (Natur-Kit, Wasser, Pyramide, Unterseite; HUD R3) |
+| WSA | MVP-Integration; Gegenprüfung des Audits (S4, V-178) |
 
-## Parallele Stränge (Stand 2026-10-08, von Georg eingebracht)
+## Stand 11.10. spät (Steuerung) · historisch
 
-- **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
-- **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
+*Stand 12.10. überholt:* Banden **PASS** (V-183, nicht mehr FAIL) · C4c ist Standardansicht (V-183) · WSA-Lichtstudie C abgenommen (Lichtvergleich = Slice S7) · Architektur-Audit geliefert (`replies/AUDIT_ARCH_R1.md`, V-171) · Tunnel-Berge entschieden (V-174) · Haltebucht entschieden (V-183).
+
+**Fertig:** C1a J17 1:1 · C1b+C3 Organ-Ring-Welt (Organe = Platzhalter) · Fahrtest echt (k2b, 3 Autos, bildratenunabhängig) · VFX/SFX + Suno-Radio (Klick behoben, PASS) · V-130 Tunnel-Portale PASS · Bank B Tunnel im Inselberg TUNE 5–6/10 · C4a Haltebucht + RKIT-Bürgersteig (TUNE nachgebessert, Urteil offen) · C4b Track Core 0.16.9 · Track-Core-Skins/Module/trail/DIRT/Poller (RKIT) · Register bis V-168 auf GitHub, Lab-Code-Schnappschuss `sync/lab-snapshot-2026-10-11`.
+
+**Läuft:** C4c erste Aus-/Auffahrt (Live-Test: Banden FAIL → Reparatur zuerst; Standardansicht nur geprüfter Stand V-166), danach Flackern, Ladezeit (Vorab-Backen). Blender R4 Coconino-Mesas (wartet auf Blender-Start). WSA Licht-Studie C. Architektur-Audit (extern) läuft.
+
+**Offen bei Georg:** Haltebucht-Urteil · Tunnel-Berge ≥ L.
 
 ## C4a Hex-Zugang geliefert, V-130 Vorlage gesendet (11.10. nachmittags)
 
@@ -84,21 +106,6 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 - Parity: PASS.
 
 **Danach (nach OK):** Rechteckring stone_rect/mine · J17-Tageslicht · M2-Zone track · VFX/SFX · C4.
-
-## C4c Aus-/Auffahrt + Banden-Endstücke geliefert (11.10., V-171 Punkt 1) · nur `?c4c=1`
-
-**Bericht:** `docs/critic/lab-track/2026-10-11_C4c/REPORT.md` + `C4C_ENDEN_BLATT.jpg` (Nahbild jedes Endes). Standardansicht = C4b (V-166).
-- Track Core 0.16.9 `compileGraph`, Teil 0 PASS, offene Kanten Standard 0 (neuer Parity-Check 11), Fahr- und Fußtests PASS bei 60 fps.
-- v2 (12.10., Steuerung): Strang je Seite geteilt (LAB PATCH K, J17-strangCap) + Kopf auf dem Wulst-Ende; offene Kanten `c4c=1` 0/0; Parity incl. organ Check 11 PASS; Fußtests PASS. Neues Blatt `C4C_ENDEN_BLATT_v2.jpg` (12 Enden + Zebra), Bucht-Schrägbilder `bay/`.
-- Offen: Auto steht in der Fahrbahnmitte, nicht in der Bucht (Vorschlag wartet auf OK); Zebra = 1 Balken auf 4-m-Spur.
-
-## Stand 11.10. spät (Steuerung)
-
-**Fertig:** C1a J17 1:1 · C1b+C3 Organ-Ring-Welt (Organe = Platzhalter) · Fahrtest echt (k2b, 3 Autos, bildratenunabhängig) · VFX/SFX + Suno-Radio (Klick behoben, PASS) · V-130 Tunnel-Portale PASS · Bank B Tunnel im Inselberg TUNE 5–6/10 · C4a Haltebucht + RKIT-Bürgersteig (TUNE nachgebessert, Urteil offen) · C4b Track Core 0.16.9 · Track-Core-Skins/Module/trail/DIRT/Poller (RKIT) · Register bis V-168 auf GitHub, Lab-Code-Schnappschuss `sync/lab-snapshot-2026-10-11`.
-
-**Läuft:** C4c erste Aus-/Auffahrt (Live-Test: Banden FAIL → Reparatur zuerst; Standardansicht nur geprüfter Stand V-166), danach Flackern, Ladezeit (Vorab-Backen). Blender R4 Coconino-Mesas (wartet auf Blender-Start). WSA Licht-Studie C. Architektur-Audit (extern) läuft.
-
-**Offen bei Georg:** Haltebucht-Urteil · Tunnel-Berge ≥ L.
 
 ## Stand 11.10. abends (nach Blender-Review, gilt vor „Übergabepunkt“)
 
@@ -509,6 +516,11 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 - **Zeiten:** GPU-Timer in Headless Chrome streuen stark. Stabil über alle Läufe ist nur, dass Natur und Gelände oben den größten Grenzanteil haben. Belastbare Millisekunden gibt es nur im echten Chrome über den Perf-Monitor.
 - **Folgerung:** Die selbstgebaute Vegetation ist 60 % der Dreiecke. Abhilfe ist der Ersatz durch das Claude-Design- oder KayKit-Kit, ohnehin geplant, plus Instancing. Schnelle Hilfe: Kugelsegmente senken, kleine Büsche nicht in die Schattenkarte.
 
+## Parallele Stränge (Stand 08.10., historisch)
+
+- **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
+- **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
+
 ## Stand 2026-10-08
 
 - **Inseln:** Umriss-Editor, Joyride-Paletten + Wüste, gemessene Unterseiten-Regel (`docs/ISLAND_ANATOMY_RULES.md`), Clay-Look der Unterseite, runde Grasnarbe, Wege mit ausgeformten Enden und Randanschluss.
@@ -518,7 +530,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 - **Schatten:** globaler Saum-Fix (FrontSide, normalBias 1,2 × Texel).
 - **Originale:** StreakByte-Inseln als Vergleich, in Joyride-Farben mit Clay.
 
-## Offen
+## Offen (Stand 08.10., historisch · aktuell: Plan R1 §5 und „Aktuell“ oben)
 
 - Natur → Environment Kit R1: E1 + E2 erledigt (siehe oben); E3–E6 offen. Pyramide, Wasser, Unterseiten-Zapfen → Claude Design (Brief verschickt, Teil A entfällt).
 - Gebäude-Maßstab gegen Figur (Türen) vor MVP klären.

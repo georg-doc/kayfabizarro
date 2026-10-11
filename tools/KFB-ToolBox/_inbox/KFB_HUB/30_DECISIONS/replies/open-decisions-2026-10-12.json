@@ -1,0 +1,418 @@
+{
+ "schema": "kfb.open-decisions/1",
+ "stand": "2026-10-12",
+ "branch": "docs/kfb-decisions-register-2026-10-11",
+ "decisions": [
+  {
+   "context": "Housekeeping hat gefunden:\n• docs/critic/lab-track/C1b_wip/ (25 MB)\n• C4c wip1–wip8 (etwa 14 MB) und drive_test_wip.json\n• Doppelte Referenzbilder ME1/ME2 im Ordner Cosmic Mesa (byte-gleich mit Coconino; eine Kopie bleibt)\nAlles geht in den Papierkorb, nichts wird endgültig gelöscht.",
+   "options": [
+    "Ja, alles",
+    "Nur die WIP-Ordner",
+    "Nein"
+   ],
+   "order": 1,
+   "source": "Housekeeping-Bericht 12.10.",
+   "status": "offen",
+   "title": "Alte Arbeitsstände in den Papierkorb?",
+   "vref": "Aufräumen",
+   "id": "d01-trash"
+  },
+  {
+   "context": "Nach docs/retired bzw. replies/archiv verschieben, nichts löschen:\n• alte Pläne, abgelöst von Plan R1 (Masterplan Drive Loop R2, MVP Drive Loop R1, Stage-1-Port-Plan, Stage-2-Lücken)\n• Claude-Design-3D-Briefs (V-084 FAIL)\n• RKIT-Vorlagen Dirt, Trail, Poller (Nachfolger existieren; die Poller-Vorlage hat noch die falsche Hüfte 1,50)\n• WSA-Look-Spec R1 (R2 gilt), Blender Form Kit 01 R1 (V-123 FAIL)",
+   "options": [
+    "Ja, archivieren",
+    "Nein"
+   ],
+   "order": 2,
+   "source": "Housekeeping-Bericht 12.10.",
+   "status": "offen",
+   "title": "Überholte Dokumente archivieren?",
+   "vref": "Aufräumen",
+   "id": "d02-archive"
+  },
+  {
+   "context": "Die Bucht ist gebaut (3 breiter, Bordstein, Gehweg). Nach V-183 kommt das Auto in die Bucht und die Randlinie wird dort unterbrochen. Reicht dir das als Abschluss, oder willst du sie danach nochmal sehen?",
+   "options": [
+    "Erledigt",
+    "Nach dem Umbau nochmal ansehen"
+   ],
+   "order": 3,
+   "status": "offen",
+   "title": "Haltebucht: erledigt oder weiter TUNE?",
+   "vref": "V-138",
+   "id": "d03-bay"
+  },
+  {
+   "context": "Nach Flackern und Ladezeit (S2, S3) kommen laut Audit Speicher (S5) und deterministische Tests (S6). Licht-Vergleich (S7) und Rhythmus-Paket (S8) sind sichtbarer für dich, die Technik macht spätere Abnahmen verlässlicher. Empfehlung Steuerung: Technik zuerst, weil S6 falsche PASS-Meldungen verhindert.",
+   "options": [
+    "Technik zuerst (S5, S6)",
+    "Licht und Rhythmus vorziehen (S7, S8)"
+   ],
+   "order": 4,
+   "status": "offen",
+   "title": "Licht und Rhythmus vor Speicher und Tests?",
+   "vref": "V-171",
+   "id": "d04-order"
+  },
+  {
+   "context": "Für POC-Schritt 2 brauchen wir die Lage: als Tunnel durch eine Insel (Parkhaus-Logik nach unten), als eigene Dungeon-Insel, oder frei im Raum als geschlossene Röhre.",
+   "options": [
+    "Durch eine Insel",
+    "Eigene Dungeon-Insel",
+    "Frei im Raum",
+    "Alle drei als Varianten"
+   ],
+   "order": 5,
+   "source": "DUNGEON_TRACK_FEASIBILITY_R1 §7",
+   "status": "offen",
+   "title": "Wo liegt die Dungeon-Strecke?",
+   "vref": "V-182",
+   "id": "d05-dungeon"
+  },
+  {
+   "context": "Neuer Fall, eine Zeile: Eine alte Track-Core-Version (v0.12) liegt auf dem öffentlichen main-Branch (Review Nr. 8). Entfernen wäre ein neuer Commit; die Git-Historie bliebe.",
+   "options": [
+    "Mit neuem Commit entfernen",
+    "So lassen",
+    "Später klären"
+   ],
+   "order": 6,
+   "status": "offen",
+   "title": "Track Core v0.12 liegt öffentlich auf main",
+   "vref": "V-071",
+   "id": "d06-trackcore"
+  },
+  {
+   "context": "Die Figur mit weißem Bart und roter Robe ist in allen vier Akashic-Bildern. Ist sie eine bestehende KFB-Figur? Bis dahin wird sie nicht modelliert. Den Namen bitte in die Notiz.",
+   "options": [
+    "Bestehende Figur (Name in Notiz)",
+    "Neue Figur, später",
+    "Weglassen"
+   ],
+   "order": 7,
+   "source": "replies/REFS_AKASHIC_2026-10-11",
+   "status": "offen",
+   "title": "Wer ist der Bibliothekar der Akashic Library?",
+   "vref": "V-176",
+   "id": "d07-librarian"
+  },
+  {
+   "context": "Die Modulkarte hat 38 Lab-Module, 24 Spender und 16 Live-Seiten gefunden. Vorschlag: drei Schritte ohne Lab-Server.\n1. Vertrags-Dokument mit JSON-Schemas: Welt-Hülle kfb.world/1, Befehle, Rechte je Modus, Katalog-Eintrag.\n2. Delta-Liste vom heutigen Code zum Vertrag.\n3. Kleiner Node-Prototyp für Befehls-Log und Undo auf dem Insel-Rezept, mit Tests.\nDer Einbau ins Lab kommt erst nach Flackern und Ladezeit.",
+   "options": [
+    "Ja, als Agent starten",
+    "Später"
+   ],
+   "order": 8,
+   "source": "replies/WORLDBUILDER_MODULE_MAP_R1.md §9",
+   "status": "offen",
+   "title": "Vorbereitung Worldbuilder-Module jetzt starten?",
+   "vref": "V-188",
+   "id": "d08-prep"
+  },
+  {
+   "context": "V-110/V-120 beschreiben eine Maker-Space-Insel als Ort in der Welt. Offen ist, ob Spieler dort selbst bauen oder ob es einen allgemeinen Bau-Modus auf eigenen Inseln geben soll.",
+   "options": [
+    "Maker-Space-Insel als Bauort",
+    "Bau-Modus auf eigenen Inseln",
+    "Beides"
+   ],
+   "order": 9,
+   "status": "offen",
+   "title": "Was meinst du mit Maker Island?",
+   "vref": "V-188 · nach MVP",
+   "id": "d09-maker"
+  },
+  {
+   "context": "Davon hängen Raster, Rechte und Prüfungen ab.",
+   "options": [
+    "Nur Teile auf ein Hex-Raster",
+    "Teile frei mit Snap an Strecke und Mauer",
+    "Auch Gelände und Strecke ändern"
+   ],
+   "order": 10,
+   "status": "offen",
+   "title": "Was dürfen Spieler im Maker-Modus?",
+   "vref": "V-188 · nach MVP",
+   "id": "d10-makerscope"
+  },
+  {
+   "context": "Lokal beim Spieler oder veröffentlicht, mit deiner Freigabe vorher.",
+   "options": [
+    "Lokal",
+    "Veröffentlichen mit Freigabe"
+   ],
+   "order": 11,
+   "status": "offen",
+   "title": "Maker-Bauten teilen?",
+   "vref": "V-188 · nach MVP",
+   "id": "d11-share"
+  },
+  {
+   "context": "Vorschlag: eine Hülle kfb.world/1, die auf die bestehenden Formate verweist (Insel-Rezept, Layout, Track-Core-Graph, Szenen-Regeln). Alternative: eine Datei je Insel plus Layout-Datei. Gespeichert wird als Dateien im Repo bzw. Hub, im Editor zusätzlich lokal mit Export.",
+   "options": [
+    "Eine Hülle (Empfehlung)",
+    "Datei je Insel + Layout"
+   ],
+   "order": 12,
+   "status": "offen",
+   "title": "Eine Welt-Datei oder eine je Insel?",
+   "vref": "V-188",
+   "id": "d12-worldfile"
+  },
+  {
+   "context": "Wie der God-Mode per Schalter im Spiel, oder getrennt als eigene Seite.",
+   "options": [
+    "Schalter im Spiel",
+    "Eigene Seite"
+   ],
+   "order": 13,
+   "status": "offen",
+   "title": "Maker-Modus im Spiel oder als eigene Seite?",
+   "vref": "V-188 · nach MVP",
+   "id": "d13-makerui"
+  },
+  {
+   "context": "Eine GPT-Site mit diesem Namen antwortet nur mit 401 und ließ sich nicht prüfen. Ist sie ein Spender für den Editor? Kurz in die Notiz.",
+   "options": [
+    "Spender, prüfen lassen",
+    "Nicht relevant"
+   ],
+   "order": 14,
+   "status": "offen",
+   "title": "Was ist „KFB World Studio MVP1“?",
+   "vref": "V-188",
+   "id": "d14-worldstudio"
+  },
+  {
+   "context": "8 Sekunden: Beobachten → Bemerken → Zweifel → Winken → Zurück.\n\nTechnisch bestanden:\n• Bilder sind bei zwei Läufen pixelgleich, auch rückwärts gesucht.\n• Die Füße rutschen und schweben nicht (0,0000).\n• Start- und Endpose sind gleich.\n• Reihenfolge: Augen, 3 Frames später der Kopf, dann der Rumpf.\n\nSchwach (Kritik des Agenten): Der Zweifel liest sich kaum, weil er fast wie das Idle aussieht. Mund und Brauen fehlen noch. Der Farmer steht zu groß im Bild.",
+   "order": 15,
+   "source": "replies/NPC_PERFORMANCE_PROOF_R1/REPORT.md",
+   "status": "offen",
+   "title": "NPC Performance Proof: Urteil zum Clown (v1)",
+   "vref": "V-187",
+   "id": "d15-npc-v1",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/NPC_PERFORMANCE_PROOF_R1/contact_v1.jpg",
+   "options": [
+    "PASS",
+    "TUNE",
+    "FAIL"
+   ]
+  },
+  {
+   "context": "v2 hält den Zweifel länger und macht das Winken knapper. Geändert wurde nur die Zeitdatei; die Füße bleiben fest. Bei 5,33 s gibt es ein Mischbild mit waagrechtem Arm.",
+   "options": [
+    "v1 besser",
+    "v2 besser",
+    "Beide zu still"
+   ],
+   "order": 16,
+   "status": "offen",
+   "title": "Nachgetimte Version v2: besser oder schlechter?",
+   "vref": "V-187",
+   "id": "d16-npc-v2",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/NPC_PERFORMANCE_PROOF_R1/contact_v2.jpg"
+  },
+  {
+   "context": "Möglich sind drei Wege:\n• Den Zweifel deutlicher machen: Seitenkamera, mehr Rumpf und Hüfte, ein „?“-Plattchen als Emanata, kurzer Squash.\n• Erst auf Brauen und Mund im Lab warten (S9).\n• Direkt mit Demo D1 (Gang-Parcours) und D4 (Emotions-Kontaktbogen) weitermachen.",
+   "options": [
+    "Zweifel deutlicher machen",
+    "Auf Brauen und Mund warten",
+    "D1 und D4 als Nächstes"
+   ],
+   "order": 17,
+   "status": "offen",
+   "title": "Nächster Motion-Schritt",
+   "vref": "V-187 · S12",
+   "id": "d17-npc-next"
+  },
+  {
+   "context": "Schritt 1 fährt: eine geschlossene Runde mit unserer Fahrphysik, dem Cicada und der J17-Kamera. Grundriss aus WhackMan, Teile aus dem KayKit-Dungeon-Pack, 86 Fackeln, Truhen und Gitterfenster.\n\nGeprüft: Das Auto fährt nie durch Wände, die Kamera steckt nie in der Decke (mindestens 12,24 lab frei), die Rampe hat genau 8 %, die Bildrate liegt bei 60 fps.\n\nEs ist ein Blockout, kein Look: Das Licht ist zu hell, auf halber Wandhöhe läuft ein Sims, und die Ecken sind noch eckig.",
+   "order": 18,
+   "source": "replies/DUNGEON_POC_R1/REPORT.md",
+   "status": "offen",
+   "title": "Dungeon-Blockout: Richtung stimmt?",
+   "vref": "V-182",
+   "id": "d18-dungeon-blockout",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/DUNGEON_POC_R1/S1_chase_fackelgang.jpg",
+   "options": [
+    "PASS",
+    "TUNE",
+    "FAIL"
+   ]
+  },
+  {
+   "context": "Ein Rundkurs mit Oberdeck braucht ein Rauf und ein Runter. Schritt 1 hat zwei gerade Rampen in eigenen Hallen (oben und unten im Bild, je 184 lab). Alternative ist eine Parkhaus-Spindel in einem Raum von 11 × 11 Modulen.",
+   "options": [
+    "Zwei gerade Rampen reichen",
+    "Spindel in Schritt 2",
+    "Beides als Varianten"
+   ],
+   "order": 19,
+   "status": "offen",
+   "title": "Rampen: Spindel oder zwei gerade Rampen?",
+   "vref": "V-182 · S11",
+   "id": "d19-dungeon-ramps",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/DUNGEON_POC_R1/S3_draufsicht_layout.jpg"
+  },
+  {
+   "context": "Die eckigen Innenecken erlauben nur Radius 8,8 lab; das ergibt bis 3,4 g Querbeschleunigung, also eine langsame Geisterbahn-Kurve. Runde Innenecken (Radius etwa 11) bräuchten ein neues Knetteil von RKIT oder Blender. Dazu: Dürfen Truhen auch im Gang stehen, mit unsichtbarer Bande drumherum?",
+   "options": [
+    "Eckig lassen (Geisterbahn)",
+    "Runde Innenecken bauen",
+    "Beides, je nach Strecke"
+   ],
+   "order": 20,
+   "status": "offen",
+   "title": "Haarnadeln: eckig lassen oder runde Innenecken bauen?",
+   "vref": "V-182 · S11",
+   "id": "d20-dungeon-corners",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/DUNGEON_POC_R1/S4_chase_haarnadel.jpg"
+  }
+ ],
+ "slices": [
+  {
+   "code": "S1",
+   "gate": "Parity PASS, offene Kanten 0/0, Tests ≥ 50 fps, Standbild Bucht",
+   "order": 1,
+   "owner": "Bau-Sitzung",
+   "prereq": "–",
+   "server": "Lab 5192",
+   "status": "läuft",
+   "title": "C4c-Folgen: Auto in die Bucht, Randlinie, Zebra 3 Balken, Spalt füllen; dann C4c als Standard",
+   "vrefs": "V-183 · V-166 · V-159",
+   "id": "S01"
+  },
+  {
+   "code": "S2",
+   "gate": "Flicker-Probe: kein Bildpaar über 0,5 %",
+   "order": 2,
+   "owner": "Bau-Sitzung",
+   "prereq": "S1",
+   "server": "Lab 5192",
+   "status": "als Nächstes",
+   "title": "Flacker-Paket (dynres, LOD-Hysterese, Rippe nur nah)",
+   "vrefs": "V-171 (2)",
+   "id": "S02"
+  },
+  {
+   "code": "S3",
+   "gate": "kalt ≤ 15 s, warm ≤ 5 s, Parity unverändert",
+   "order": 3,
+   "owner": "Bau-Sitzung",
+   "prereq": "S2",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Insel-Cache: fertige Körper zwischenspeichern",
+   "vrefs": "V-171 (3)",
+   "id": "S03"
+  },
+  {
+   "code": "S4",
+   "gate": "Gegenprüfung R1 ohne Schlussfolgerungen der Steuerung",
+   "order": 4,
+   "owner": "WSA",
+   "prereq": "S1–S3, frischer Code-Schnappschuss",
+   "server": "Parallel",
+   "status": "wartet",
+   "title": "WSA-Gegenprüfung des Audits am reparierten Stand",
+   "vrefs": "V-178",
+   "id": "S04"
+  },
+  {
+   "code": "S5",
+   "gate": "Heap vorher/nachher gemessen",
+   "order": 5,
+   "owner": "Bau-Sitzung",
+   "prereq": "S3",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Speicher: manifold delete, Caches leeren, Debug nur mit Schalter",
+   "vrefs": "V-171 (4)",
+   "id": "S05"
+  },
+  {
+   "code": "S6",
+   "gate": "3× gleiche Hashes, einmal mit CPU × 4; k2b byte-gleich",
+   "order": 6,
+   "owner": "Bau-Sitzung",
+   "prereq": "S5; Bauanleitung REPLAY_HARNESS_SPEC_R1 (8 Schritte, 6–9 Tage); vorher vendor/SOURCE.md nachziehen",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Vendors entkoppeln, deterministische Tests, lokales Git",
+   "vrefs": "V-171 (5–7) · V-190",
+   "id": "S06"
+  },
+  {
+   "code": "S7",
+   "gate": "3 Standbilder gleiche Kamera + Tunnel; dein Urteil",
+   "order": 7,
+   "owner": "Bau-Sitzung",
+   "prereq": "frei ab S2",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Lichtvergleich J17-Tag / E50",
+   "vrefs": "V-050 · V-174 (4)",
+   "id": "S07"
+  },
+  {
+   "code": "S8",
+   "gate": "Messwert in lab; Standbild-Serien je Skin",
+   "order": 8,
+   "owner": "Bau-Sitzung",
+   "prereq": "S3; Modell-Auswahl steht",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Rhythmus-Paket: Kamera-Freiraum messen, Tempo loggen, Δt-Serie; dann Laternen, Fackeln, Tor, Billboards",
+   "vrefs": "V-172 · V-173 · V-175 · V-185",
+   "id": "S08"
+  },
+  {
+   "code": "S9",
+   "gate": "Parity PASS, Kontaktbogen je Clip",
+   "order": 9,
+   "owner": "Bau-Sitzung",
+   "prereq": "S1–S3",
+   "server": "Lab 5192",
+   "status": "wartet",
+   "title": "Motion ins Lab: 3 Library-Clips, Seitwärts-Clips, Brauen",
+   "vrefs": "V-179 · V-186",
+   "id": "S09"
+  },
+  {
+   "code": "S10",
+   "gate": "Blatt gegen CC1/CC2, ein geschlossenes Mesh",
+   "order": 10,
+   "owner": "Blender (Mac mini)",
+   "prereq": "Brief R4",
+   "server": "Parallel",
+   "status": "wartet",
+   "title": "Blender R4 Coconino-Mesas M01–M03, dann Insel J1",
+   "vrefs": "V-167",
+   "id": "S10"
+  },
+  {
+   "code": "S11",
+   "gate": "Draufsicht mit Fahrlinie, Tests ≥ 50 fps",
+   "order": 11,
+   "owner": "Dungeon-Agent (Port 5194)",
+   "prereq": "Schritt 1 läuft gerade",
+   "server": "Parallel",
+   "status": "wartet",
+   "title": "Dungeon-POC Schritt 2: Labyrinth über Adapter",
+   "vrefs": "V-182 · V-185",
+   "id": "S11"
+  },
+  {
+   "code": "S12",
+   "gate": "reproduzierbar, Kontaktbögen, Fußkontakt",
+   "order": 12,
+   "owner": "Motion-Agent",
+   "prereq": "R1 läuft gerade",
+   "server": "Parallel",
+   "status": "wartet",
+   "title": "NPC Performance Proof: nächster Schritt",
+   "vrefs": "V-187",
+   "id": "S12"
+  }
+ ]
+}
