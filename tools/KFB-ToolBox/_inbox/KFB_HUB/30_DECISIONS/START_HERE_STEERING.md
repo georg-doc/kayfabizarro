@@ -1,6 +1,6 @@
 # START HERE · KFB Steuerung (für jede Sitzung: Claude Code, WSA, Blender-Coworker, Webchats)
 
-Stand: 11.10.2026 · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`.
+Stand: 11.10.2026 spät (bis V-168) · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`.
 
 ## Maßgeblich (in dieser Reihenfolge)
 1. `DECISIONS.md` / `decisions.json`: Georgs PASS / TUNE / FAIL / RULE / TBD mit V-Nummern, Warum und Wann. Was dort steht, gilt.
@@ -41,3 +41,10 @@ Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist D
 ## Sperrliste Lab-src (V-141, Stand 11.10. abends)
 Gesperrt für alle außer der Bau-Sitzung (MVP-1): `src/main.ts`, `src/play/travel.ts`, `src/play/surface.ts`, `src/play/race-fx.ts`, `src/audio/*`, `src/sky/sky.ts`, `src/world/organ/*`, `src/world/tunnel/*`, `src/bench/*`, `j17-track.lab.js`.
 WSA-Bereich (mit Georgs OK): `src/editor.ts`, `src/island/spec.ts`, `src/scene-study.ts`; Änderungen nur nach Vorlagen-Zeile an die Steuerung, parity vor und nach.
+
+## Aktuelle Aufträge (11.10. spät)
+- **Bau-Sitzung (Lab):** C4c erste Aus-/Auffahrt am Hub; zuerst Banden-Reparatur (Live-FAIL), Standardansicht nur geprüfter Stand (V-166); dann Flackern, Ladezeit.
+- **RKIT (Track Core, privat):** pausiert; Skins/Module bis 0.16.9 fertig (Plan R1 §2e).
+- **Blender-Coworker:** R4 Coconino-Mesas (Brief im eigenen Branch), danach R3 Inselboden.
+- **WSA:** Szenen-Studie Teil C Licht (replies/STEERING_REPLY_WSA_R2.md).
+- **Lab-Code-Schnappschuss** (ohne private Teile): Branch `sync/lab-snapshot-2026-10-11`.
