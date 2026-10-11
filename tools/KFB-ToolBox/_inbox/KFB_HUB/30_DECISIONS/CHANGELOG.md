@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · trail-Bibliothek
+- Track Core 0.16.6: trailProfile/Stairs/SteppingStones/Footbridge/Transition/Checks (12 %, Masonry-A-Stufen, Abstand = gemessene Schrittlänge, Fehler ohne gait), 19/19, Graphen identisch; Test-gait markiert, Lab-Vendor erst mit echten Werten. DIRT|MOUNTAIN ergänzt (20 m), HIGHWAY|DIRT bleibt verboten (über Landstraße).
+
 ## 2026-10-11 · Haltebucht TUNE, Pfad 12 %
 - V-138 Lieferung = TUNE (Gehweg-Ende gerade, Tropfen flach; Georg: die zwei Punkte reichen). V-158 Pfade ≤ 12 % ohne Stufen.
 
