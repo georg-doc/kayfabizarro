@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Lab auf Track Core 0.16.9
+- Teil 0 gegen v0.12 Δ 0; Gore/U-Turn 1:1 aus Core-Daten; nur noch track-core-0.16.9 im Lab. RKIT pausiert.
+
 ## 2026-10-11 · Poller endgültig, Track Core 0.16.9
 - Poller-Parität PASS. Core-Fix moduleDeck (Gore/Nase an EXIT/ENTRY auf langen Strecken falsch), 22/22 + Regressionen, Ströme identisch; Ersatz 0.16.8→0.16.9 im Lab.
 
