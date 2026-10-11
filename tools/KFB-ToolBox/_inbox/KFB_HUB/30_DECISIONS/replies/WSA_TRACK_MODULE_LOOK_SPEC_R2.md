@@ -1,5 +1,7 @@
 # WSA · Track-Modul-Look R2 · 11.10.2026
 
+> R2 abgenommen. Die damalige Fragenliste bleibt als Recherche-Snapshot unverändert; aktuelle Antworten siehe [V-154 / Steering-Antworten](STEERING_ANSWERS_TD_R2.md) und [Zuordnung der Steuerung](STEERING_REPLY_WSA_R2.md).
+
 **RESEARCH / SOURCE-SPEC, kein Bau, kein Lab-src, keine neue Skin-Look-Abnahme.** R1 ist laut R2-Brief abgenommen. Seine drei freigegebenen J17-Pixel-Crops sind veröffentlicht und verknüpft. R2 erweitert [track-module-look.json](track-module-look.json) im gleichen Schema `kfb.track-module-look/1` um `skin`: race, town, country, dirt, trail, cosmic. V-146–V-152 sowie V-118/V-120/V-134 gelten.
 
 ## Umfang / Quellen
