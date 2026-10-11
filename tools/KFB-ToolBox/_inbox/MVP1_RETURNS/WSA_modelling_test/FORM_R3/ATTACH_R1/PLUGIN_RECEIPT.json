@@ -1,0 +1,38 @@
+{
+  "plugin": {
+    "plugin_id": "plugins_6acaa1b6b0688191b66448db92767870",
+    "name": "kfb-asset-scene-composer",
+    "description": "A source-first, KFB-style scene-reference and asset-concept workflow. Builds reviewable image jobs from verified KFB Asset Librarian records and preserves accurate provenance and feedback.",
+    "version": "0.1.2",
+    "current_release_id": "pluginrel_6acad47f8aec8191974fd1a074420919",
+    "scope": "USER",
+    "discoverability": "PRIVATE"
+  },
+  "checks": [
+    {
+      "path": "plugin.json",
+      "exact": true
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "exact": true
+    },
+    {
+      "path": "skills/compose-kfb-scene/SKILL.md",
+      "exact": true
+    },
+    {
+      "path": "skills/compose-kfb-scene/references/job-contract.md",
+      "exact": true
+    },
+    {
+      "path": "skills/compose-kfb-scene/references/g4-r3-attachment-proven-evidence.md",
+      "exact": true
+    },
+    {
+      "path": "skills/compose-kfb-scene/references/g4-r3-failure-evidence.md",
+      "exact": true
+    }
+  ],
+  "passed": true
+}

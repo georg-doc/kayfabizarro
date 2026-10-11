@@ -1,5 +1,14 @@
 # RETURN · WSA G4 Burgtreppe Formdesign R3 · 2026-10-11
 
+## CURRENT · Georg B retained R3; ATTACH_R1 independently repaired
+
+Georg selected B: unchanged stairform, targeted hill/foot repair, independent retest, noGolden/merge. [Current Return](ATTACH_R1/RETURN.md), [actual images](ATTACH_R1/renders/three_quarter.jpg), [independent Tester](ATTACH_R1/tester/TEST_REPORT_ATTACHMENT_INDEPENDENT.md), [fresh Critic](ATTACH_R1/critic/CRITIC_REPORT.md).
+
+Evidencehead36f81f11e942d1bfebefc3d2e63b7ca4fd828db6. GEOMETRIC_ATTACHMENT PASS; exitgapmax.00000962lab, bothfeetembedded,288000finitecapsule-segment tests0safe-bandcollisions. Canonicalstairsdf59928...byteidentical; all45worldposition/triangles exact. Fullseven8/8/9/8/8/7/8 =>mean8,min7: numericFORMPASS. STYLE_TUNE7/runtimeNOT_RUN/K2parityNOT_TESTED, minorsoil.009933 recorded. NoGoldenorMerge. Same privateplugin0.1.2/pluginrel_6acad47f8aec8191974fd1a074420919,5changedfiles+historicalfailure6/6exactreadbacks. One next gate: Georg visual acceptance of actual repairedattachment, not another initial A/B selection.
+
+## Historical initial R3 failure (preserved)
+
+
 ## Actual result and next action
 
 A genuine new neutral architectural candidate exists: built wall foundation/bearing/crown and two real foot–shaft–cap pillars. Independent neutral G0 PASS8.0 retained. **Full R3 FORM_FAIL7.7143** because context/embedding is incomplete and handmade style remains7. This is not a QA-complete castle asset or Golden. Georg can now decide A/B/FAIL on the isolated form direction with the full failure visible. Exactly one next gate: **GEORG_ISOLATED_FORM_A_B_FAIL_WITH_CONTEXT_QUARANTINED**. No further automatic geometry/context repair.
