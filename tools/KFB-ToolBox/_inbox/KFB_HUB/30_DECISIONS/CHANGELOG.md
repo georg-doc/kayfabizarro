@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · 3D Style Guide v0.2
+- STYLE_GUIDE_3D_R1.md v0.2: V-174 eingearbeitet (§4 Banden J17, §5 S/M/L + Unterseiten nach IB1–3/CR3/ME2, §6/§7 country/mesa-Variante, Cosmic Glow-Standard); neu §6b Rhythmus-Elemente je Skin (Abstand = Zielgeschwindigkeit × Δt, zwei Höhenlagen unter/über Kamera) [V-172] und §6c Billboards + Insel-Eingangsschilder [V-173]. Δt-Werte und Platzierungsdetails als AD-Vorschlag markiert. Neue offene Fragen: Zielgeschwindigkeit je Zone in Lab-Einheiten, Δt-Werte, Durchfahrtshöhe 4,9 vs. 5,8, Inhalt über der Fahrbahn, Billboard-Größe in K2, fehlende Modelle (Fackeln, Leitpfosten, Pylonen).
+
 ## 2026-10-11 · dist/ entfernt
 - Georg „YES“: alter Lab-Build-Ordner dist/ (76 MB, enthielt StreakByte-Assets) in den Papierkorb verschoben (~/.Trash/KFB-Lab-dist_2026-10-11); dist/ bleibt gitignored.
 

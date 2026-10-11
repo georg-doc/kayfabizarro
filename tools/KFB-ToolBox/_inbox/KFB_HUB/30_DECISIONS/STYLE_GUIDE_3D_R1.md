@@ -1,11 +1,13 @@
-# KFB · 3D-Styleguide und Designkonzept R1 (v0.1)
+# KFB · 3D-Styleguide und Designkonzept R1 (v0.2)
 
 Stand 11.10.2026 · Synthese aus Register, Plan R1, Specs und Georgs Referenzbildern · **kein neuer Beschluss**.
+v0.2: Georgs Antworten auf die Fragen aus v0.1 eingearbeitet [V-174]; neu §6b Rhythmus-Elemente [V-172] und §6c Billboards und Insel-Eingangsschilder [V-173].
 Maßgeblich bleiben DECISIONS.md, Plan R1 und PROJECT_STATE (V-117). Bei Widerspruch gilt das Register.
 
 **Lesehilfe**
 - `[V-xxx]` = verbindliche Vorgabe aus dem Register (PASS, TUNE, FAIL oder RULE).
 - „Bild“ = Stil-Richtung, keine Pixel-Vorgabe [V-013, V-148]. Je Bild steht dabei, was gilt und was nicht.
+- „**AD-Vorschlag**“ = Vorschlag des Art Directors ohne Quelle; gilt erst nach Georgs Ja.
 - Was die Quellen offen lassen oder wo sie sich widersprechen, steht in §10, nicht im Fließtext.
 
 ---
@@ -101,6 +103,7 @@ Georg gestaltet die Welt im Editor; dieser Guide beschreibt die Regeln, nach den
 | Himmel | `#96bede` | |
 
 - Die beiden Nebenwelten aus J17: **bucht** (korallenroter Strang `#f2708a` auf Sand, Aqua-Dünen, violette Korallentürme) und **otown** (senfgelber Strang `#e9b53b` auf Petrol, magenta Wackeltürme, orange Kronen auf lila Stämmen) [track-look.v5.js].
+- **Rot-Weiß ist nur Kerb-Farbe.** Die alten Lab-Werte (`palettes.ts` `BANDE_DEFAULT` rot `#d73d30` / weiß, `ASPHALT` `#545e7a`) werden auf J17 vereinheitlicht, nachdem die Bau-Sitzung geprüft hat, wo sie noch benutzt werden [V-174 (1)].
 - Tunnel `race_tube`: rot-weiße Ringe mit gelben Kanten, helle Lampenpunkte (chase-tunnel.jpg, tc1-looks.v3).
 - Auf der Strecke liest man: blaue Fahrbahn gegen orange Bande gegen violetten bzw. grünen Boden. Dieser Dreiklang trägt die Lesbarkeit (§8).
 
@@ -113,7 +116,8 @@ Georg gestaltet die Welt im Editor; dieser Guide beschreibt die Regeln, nach den
 - **protopia:** Bergwiese `#6aae3a`, grauer Bergfels `#857d73`, Werkstatt-Orange `#e8742a`.
 
 **Licht**
-- Profile Tag, Abend, Nacht, Innen aus SKY3; **Abend ist TUNE: zu orange und zu dunkel** [V-050].
+- **J17 ist Maßstab für Licht und Sättigung.** Die generierten Bilder geben nur Stimmung, nicht Helligkeit, Wärme oder Sättigung vor [V-174 (4)].
+- Profile Tag, Abend, Nacht, Innen aus SKY3; **Abend ist TUNE: zu orange und zu dunkel** [V-050]. Ziel für das Tuning ist J17, nicht ME1/ME2 [V-174 (4)].
 - Der Tag-Nacht-Lauf wechselt den Himmel per Überblendung zweier Dome-Ebenen, nie hart [V-101].
 - Nachts: Lichtkreis um die Figur (WhackMan-Fog-of-War 1:1, Standard 60 %, kein Ring, keine Vignette); Aurora im oberen Bilddrittel [V-096, V-097].
 - TinySkies-Effekte stehen bereit: Regen mit Tropfen auf dem Bildschirm, Aurora, Lens-Flare; noch nicht alle verdrahtet [V-092].
@@ -134,7 +138,11 @@ Georg gestaltet die Welt im Editor; dieser Guide beschreibt die Regeln, nach den
 - Moos quillt über die Kante.
 - Wenige dünne Wurzeln an der Wand; weiche Höhlen erlaubt.
 - Ein geschlossenes Mesh [V-136].
-- Messwerte aus den StreakByte-Inseln: dünne Grasnarbe (2–4 % der Breite), tiefe Masse (0,43–0,52 × Breite), gleichmäßige Verjüngung, viele Zapfen statt einer Spitze, tiefster Punkt außermittig [ISLAND_ANATOMY_RULES].
+- **Tiefe und Schattierung der Unterseite folgen Georgs Inselboden-Bildern** (IB1–IB3, CR3, ME2), nicht mehr der alten Messregel aus den StreakByte-Inseln (0,43–0,52 × Breite, flache Schattierung) [V-174 (5); ISLAND_ANATOMY_RULES]. Aus der Messregel bleiben nur: dünne Grasnarbe, viele Loben statt einer Spitze, tiefster Punkt außermittig.
+
+**Größenklassen** [V-174 (5)]
+- Inseln bekommen die Klassen **S / M / L**. Tunnel-Berge sind mindestens **L**.
+- Die Maße je Klasse (in H bzw. MC) sind noch nicht festgelegt (§10).
 
 **Oberseite**
 - Mauern und Bauten stehen auf einem Moos- bzw. Erdsaum, nie mit hartem Kontakt (prison-maze README).
@@ -174,9 +182,10 @@ Gemeinsame Ursache: Form aus Text bzw. Regeln generiert statt nach echten Vorbil
 | **race** | J17: schieferblau, orange Knet-Bande [V-102] | Bande innen/außen mit Übergang ≥ 8 m nach J17-Schwellen; Kerb nur innen am Scheitel enger Kurven [V-150, V-154] | keine Spuren; Pfeile nur an EXIT/ENTRY/FORK/JOIN [V-150] | runder J17-Bandenkopf; offenes Ende nur Start oder Baustelle |
 | **town** | Asphalt, gemauerter Bord, Gehwegplatten, Graskante (CS1) | Ecke, T, Kreuzung, Kreisel, Mittelinsel ≥ 2 m, Bordabsenkung nur vor Haus oder Hof [V-150, V-154] | Haifischzähne; Zebra nur an Armen mit Gehweg, eine Autolänge vor der Wartelinie | Sackgasse immer mit Wendeschleife; Platz bündig mit Pollern |
 | **country** | Landstraße zweispurig; HIGHWAY = country [V-154] | Leitplanke optional, Standard an Kurven und Hängen; Zaun an Weiden; Haltebucht bündig mit Kies; Haarnadel R ≥ 8; Serpentinen ≤ 8 % | Strichlinie; kein Zebra außerorts | Kappen `bande_head` |
+| **country / mesa** | Variante von country: graue Fahrbahn + rot-weißer Kerb (ME1/ME2, CC2) [V-174 (2)] | Serpentinen durch die Mesas, ins Gelände eingebettet, keine Pfeiler [V-164, V-167] | wie country | wie country |
 | **dirt** | Schotter, schmaler als Rennen | Bande nur an Gefahrenstellen; Berm ≤ 35°, befahrbar; zuerst nur Schotter-Arme [V-150, V-154] | keine | Wiese, Hof oder Gatter, nie offen |
 | **trail** | Erde, Kies, Stein, Fels; Schnee gehört zur Insel | Geh-Netz ohne Autos; Pfad 1 bzw. 2 MC; ≤ 12 % sonst Treppe mit Podest; Trittsteine im Jog-Schritt [V-154, V-157, V-158] | keine | natürlich; Netz gehört dem Lab-Layout [V-155] |
-| **cosmic** | Neon-Vibe aus CO1/CO2, Basis bleibt Knete/K2 [V-163] | die Bande selbst leuchtet; keine Stützen im All, nur auf Asteroiden-Inseln [V-154] | wie race | Stärke des Leuchtens offen (§10) |
+| **cosmic** | Standard: J17-Basis mit leuchtenden Bandenkanten; voller Neon-Look aus CO1/CO2 nur auf Cosmic-Inseln [V-174 (3), V-163]. Basis bleibt Knete/K2 | die Bande selbst leuchtet; keine Stützen im All, nur auf Asteroiden-Inseln [V-154] | wie race | wie race |
 | rail / coaster | später | gleiche Knoten-Logik [V-145] | – | – |
 
 **Übergänge**
@@ -201,7 +210,70 @@ Gemeinsame Ursache: Form aus Text bzw. Regeln generiert statt nach echten Vorbil
 - Knallblaue Fahrbahn, gelb-blaue Plastik-Leitplanken, sichtbare Steckverbinder und Kachelfugen (TD1–TD5, RK2).
 - Steinbogen-Brücken zwischen Inseln (M0); gemauerte Brücke zwischen Inseln ist FAIL [V-120a]. Viadukte erst für Antike-Inseln [V-165].
 - Strecken, die an der Inselkante einfach abbrechen (RK1, ME2) [V-168].
-- Graue Fahrbahn mit nur rot-weißem Kerb als „Joyride v17“ (CC2): Der J17-Look ist schieferblau mit oranger Bande [V-102]; siehe §10.
+- Die Beschriftung „Joyride v17 track ribbon“ in CC2: Die graue Fahrbahn mit Kerb dort ist die Variante country/mesa, nicht der race-Skin [V-174 (2), V-102].
+
+---
+
+## 6b · Rhythmus-Elemente je Skin [V-172]
+
+Wiederkehrende Elemente am Rand machen Tempo spürbar (Stakkato-Effekt). Sie sitzen auf Track-Core-Ankern, der Look kommt aus dem Bestand [V-172, V-140].
+
+**Rhythmus-Regel**
+- Der Abstand richtet sich nach dem Tempo [V-172]: **Abstand = Zieltempo der Zone × Δt**. Bei Zieltempo vergeht also immer dieselbe Zeit Δt zwischen zwei Elementen. Der Track Core rechnet den Abstand je Abschnitt aus dem Zieltempo.
+- Die Δt-Werte unten sind **AD-Vorschläge**. Das Zieltempo je Zone in Lab-Einheiten pro Sekunde ist in den Quellen nicht festgelegt. Die J17-Bilder zeigen 104 bzw. 148 km/h im HUD; eine Umrechnung HUD ↔ Lab wurde nicht gefunden in PHASE_C_DONORS_R1 und SCALE_CONTRACT_K2 (§10).
+- Vorbild im Bestand: Die TC1-Tunnel haben schon einen festen Takt, ein Ring und eine Lampe je Modul (race_tube 39 Module à 6, stone 29 à 8, mine 46 à 5; tc1-looks.v3, chase-tunnel.jpg).
+- Kamera: 3,5–4,4 über der Fahrbahn (Steuerung; J17-Höhe 3,5). **AD-Vorschlag** für zwei Höhen-Ebenen:
+  - **unten** (unter der Kamera, unteres Bilddrittel): Kerbs, Leitpfosten, Poller, Zaunpfähle;
+  - **oben** (Kopf über 4,4, zieht oben aus dem Bild): Laternen, Straßenlichter, Pylonen.
+- **Verdichten (AD-Vorschlag):** vor Kurven, Kreiseln und Sprüngen Δt in den letzten rund 2 s halbieren; Chevrons an der Kurvenaußenseite ab dem Bremspunkt. Gelb-schwarze Chevron-Schilder an Kurven zeigen CR3, CS2, CO1 und CO2.
+- **Pausen (AD-Vorschlag):** keine Rhythmus-Elemente auf Plätzen, in Haltebuchten, in Billboard-Zonen (§6c), auf Insel-Zufahrten und in Tunneln. Im Tunnel trägt der Tunnel-Look den Takt.
+- **Immer:** jedes Element hat eine Funktion in der Welt, also Licht, Leitung oder Grenze [V-015]. Es ist gerundete Knete und steht mit Fuß im Moos bzw. Knetfleck [V-011, V-168]. Es verdeckt in Spiralen nie das Auto [V-169]. Es ist instanziert; Schatten werfen nur große Anker [SPEC_ENVIRONMENT_KIT §4].
+
+| Skin | Element | Δt (AD-Vorschlag) | Höhe | Seite | Bestand-Kandidaten |
+| --- | --- | --- | --- | --- | --- |
+| **race** | Straßenlichter bzw. Pfosten; J17-Kerbs; Chevrons | Lichter 0,25 s; Kerb als durchgehender Streifen, die rot-weißen Blöcke geben den Takt | Lichter oben, Kerb unten | Kerb nur innen am Scheitel enger Kurven [V-150 #3]; Chevrons außen; Lichter im All auf der Bande, nicht auf Stützen [V-154] | KayKit City `streetlight` (im Lab); TC1-Lampenschild (race_tube). Ein eigener J17-Bandenpfosten ist im Lab-Bestand nicht gefunden; zuerst im J17-Code prüfen [V-140] |
+| **town** | Laternen; RKIT-Poller (0,85) | Laternen 0,5 s | Laternen oben, Poller unten (0,85 = Hüfte) | Laternen auf dem Gehweg an der Bordseite, beidseitig, im Wechsel mit Bäumen (so in J17 `chase-straight`) | KayKit Park `street_lantern`, KayKit City `streetlight` (im Lab); `rkit_poller.parts.glb`. **Poller folgen nicht dem Tempo:** Mittenabstand fest 2,30 an Platzkanten [RKIT_POLLER_R1] |
+| **country** (inkl. mesa) | Leitpfosten; Zaunpfähle; Chevrons an Haarnadeln | Leitpfosten 0,4 s; Zaun durchgehend | unten (Leitpfosten etwa Leitplankenhöhe 0,35 H ≈ 1,3, AD-Vorschlag) | Leitpfosten beidseitig; Zaun nur an Weiden und Höfen [V-154] | Tiny Treats `fence_straight`, KayKit Hex `fence_wood_straight`, `fence_stone_straight` (im Lab). Leitpfosten nicht gefunden in Lab `public/assets/kaykit` |
+| **dirt / Stein / Fantasy** | Fackeln, Laternen, Pfähle | 0,4–0,5 s | oben (Flamme bzw. Laterne über der Kamera) | an Gefahrenstellen und Kurvenaußenseiten, wo auch die Bande steht [V-150 #13] | Laternen vom TC1-Minenportal (J15-Cut). Fackel-Pfeiler mit Ketten als Bild (D1/D2, P1/P2). Fackeln nicht gefunden in Lab `public/assets/kaykit` (dort nur `dungeon/wall_doorway`); vollständiges KayKit-Dungeon-Pack prüfen (ungeprüfte Annahme) |
+| **cosmic** | leuchtende Bandenkanten; Licht-Pylonen | Leuchtsegmente bzw. Lichtpuls entlang der Kante 0,2 s | Kante unten, Pylonen oben | auf der Bande; im All keine Stützen [V-154, V-174 (3)] | Joyride-Glow bzw. Emission, TinySkies, RollerCoaster v11 als Quellen-Liste (BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R2). Pylon-Modell nicht gefunden in Lab `public/assets/kaykit` |
+
+**Aus den Bildern nicht übernehmen:** blau-gelbe Plastik-Pfosten und Steckverbinder (TD1–TD5), metallische Sci-Fi-Pfosten (CS3, CO1/CO2).
+**Prüfung:** Fahrt-Standbilder je Skin [V-172].
+
+---
+
+## 6c · Billboards und Insel-Eingangsschilder [V-173]
+
+**Bestand zuerst** [V-173, V-140]
+- Billboard-Strang „Quote Hypernormalisation“ (Branch `planning/billboard-quote-hypernorm-curator-2026-10-04`): Knet-Billboard mit Körper 12 × 6 m, CanvasTexture-Fläche und genau einem `BillboardScheduler`. Bild-Vorlage ist H13 Kaleidoscope. Kein zweiter Renderer, keine zweite Kamera, kein zweiter Scheduler.
+- Ablauf: Zitat in Phrasen-Beats (kein Wort-für-Wort-Karaoke) → Quelle → eine FrizzleQuestion. Ein Knet-TV-Knopf unter der Fläche öffnet den Vollbild-Modus, nur in Interaktionsreichweite.
+- Die Farbe des Billboard-Körpers kommt aus dem Welt- bzw. Insel-Kontext (WorldLook-Besitzer); ein Billboard je Insel in der Inselpalette. Clay Stage R2 hat 7 Formfamilien, „passt so mit TUNE für später“ [BASELINE Zeile 20].
+- Stand 07.10.: Kein Zitat ist für die öffentliche Laufzeit freigegeben; Zitate ohne geklärte Rechte bleiben draußen (RETURN.md).
+
+**Platzierung über der Strecke**
+- **Durchfahrtshöhe:** Unterkante ≥ Kamera-Freiraum 4,9 (Steuerung nach V-169). Der Maßstab K2 verlangt unter Brücken ≥ 1,6 H ≈ 5,8 [SCALE_CONTRACT_K2]. Bis Georg entscheidet, gilt hier der größere Wert, 5,8 (§10). In niedrigen Abschnitten folgt die Kamera den Abschnittsdaten [V-170].
+- **Nur ruhige Zonen:** nicht in High-Speed- oder Stunt-Zonen, also nicht an Sprüngen, Loopings, Spiralen und Berms. Gute Orte sind die, an denen man kurz lesen oder anhalten kann: Insel-Zufahrten, Ortsdurchfahrten, vor Kreiseln, an Haltebuchten [V-173, V-138].
+- **Lesezeit:** Mindestsichtstrecke = Zonentempo × Lesezeit. **AD-Vorschlag:**
+  - Überkopf-Displays zeigen nur Deck-Cover und einen kurzen Titel, lesbar in etwa 2 s.
+  - Die volle Sequenz (Zitat, Quelle, Frage) läuft nur an Billboards, an denen man anhalten kann, z. B. an einer Haltebucht mit dem TV-Knopf.
+  - Über die ganze Sichtstrecke ist die Anfahrt frei: keine Kurve, keine Kuppe, keine Tunnelausfahrt kurz davor.
+- **Kein Konflikt mit Fahr-Hinweisen:** Pfeile vor der Gore bleiben frei sichtbar [V-161]; Displays stehen nicht im Verdichtungs-Bereich vor Kurven (§6b).
+- **Gerüst-Füße:** Auf Inseln stehen sie auf dem Boden. Im All hängt das Gerüst an der Bande, ohne Stützen [V-154, V-120].
+
+**Stil je Skin** (Rahmen; die Fläche bleibt der Billboard-Bestand)
+
+| Skin | Rahmen | Herkunft |
+| --- | --- | --- |
+| race | Knete-Gerüst in Banden-Orange `#ef5a22` | J17-Bande [V-102]; Gerüst-Form AD-Vorschlag |
+| country, dirt | Holz-Torbogen (Balsa) | Materialmix [V-012]; TC1-Minenportal als Bestand |
+| Stein, mesa, Antike | Stein-Portal aus hellem Knetstein (Masonry A) | TC1 `stone_arch` / `stone_rect` als Bestand |
+| cosmic | Neon-Rahmen | Schilder über der Strecke in CO1/CO2 [V-163]; auf J17-Basis nur Glow-Kante [V-174 (3)] |
+| town | offen | §10 |
+
+**Insel-Eingangsschilder** [V-173]
+- Über der Zufahrt zur Insel, mit Inselname und Deck-Cover der Insel, in der Inselpalette [V-051].
+- **AD-Vorschlag:** hinter der Weiche, auf der Auffahrt bzw. am Brückenkopf, wo das Tempo sinkt. Pfeil-Schilder an Übergängen zeigt auch M1.
+- Aus CO1/CO2 nicht übernehmen: „KFB“-Platzhalterschrift, metallische Rahmen, viele Schilder hintereinander.
 
 ---
 
@@ -238,11 +310,13 @@ Alle Karten: Inselbasis nach §5; Bilder nur Stil-Richtung; Inselboden der Blät
 - Formen: M01 Flat Cap, M02 Needle Butte, M03 Stepped Mesa; Cap → Body → Talus; Kakteen; Serpentinen.
 - Palette: Welt `canyon`; Sandstein Rot-Orange (ME1) bzw. Violett (ME2).
 - Landmarke: Needle Butte am Pass.
+- Strecke: Skin-Variante country/mesa, graue Fahrbahn mit rot-weißem Kerb [V-174 (2)].
 - Do: Inselkörper und Mesas modelliert Blender, Lab setzt Track ein; Track ins Gelände eingebettet, keine Pfeiler. Don't: Strecke an der Kante abbrechen lassen.
 
 **Cosmic** [V-132, V-154, V-163]
 - Formen: violetter Weltraum, Planeten mit Ringen, Knet-Asteroiden, Kristalle, Pilzbäume, leuchtende Kanten in Orange, Türkis und Gelb.
 - Landmarke: offen; Vulkan mit Hub-Ring ist im Bild, aber nicht beschlossen.
+- Voller Neon-Look nur auf Cosmic-Inseln; auf der übrigen Strecke J17 mit leuchtenden Bandenkanten [V-174 (3)].
 - Do: Stil, Farben und Stimmung aus CO1/CO2; Basis Knete/K2; Stützen nur auf Asteroiden-Inseln. Don't: halluzinierte Raumstationen, Glaskuppeln, Verkehr aus vielen Autos, metallische Viadukte.
 
 **Organe → MED-Welten (später)** [V-111, V-127]
@@ -300,25 +374,37 @@ Alle Karten: Inselbasis nach §5; Bilder nur Stil-Richtung; Inselboden der Blät
 
 ## 10 · Offen / Optionen für Georg
 
-1. **Banden-Farbe im Code:** Das Lab hat `BANDE_DEFAULT` rot `#d73d30` / weiß und `ASPHALT` `#545e7a`; das Register sagt Bande `#ef5a22`, Fahrbahn `#3d4a60` [V-102]. Sollen die Lab-Konstanten auf J17 gezogen werden, oder ist Rot-Weiß eine eigene Rolle (z. B. für Kerbs und town)?
-2. **Mesa-Strecke:** ME1/ME2 und CC2 zeigen graue Fahrbahn mit rot-weißem Kerb, V-164 nennt „Serpentinen mit rot-weißem Kerb“. Gilt dort der race-Skin (J17, orange Bande), oder ist das ein eigener Look (z. B. country mit Kerb)?
-3. **Cosmic-Intensität:** Wie stark leuchtet die Bande, und wie viel Neon verträgt die Knete? Option A: nur Kantenleuchten auf J17-Basis. Option B: ganzer Neon-Skin wie CO1/CO2 [V-154 CS3-11, V-163].
-4. **Abendlicht:** V-050 sagt „zu orange und zu dunkel“, ME1/ME2 sind aber sehr orange. Gelten ME1/ME2 als Ziel für Abend, oder nur als Insel-Stimmung für Mesa?
-5. **Sättigung:** Die generierten Blätter sind wärmer, satter und studio-beleuchtet; J17 ist kühler und flacher. Richtwert J17, oder etwas Richtung Blätter?
-6. **Inselgrößen-Klassen:** Plan R1 nennt „Tunnel-Berge mindestens L“, aber keine Klassen sind definiert (S/M/L/XL in H oder MC). Soll es feste Klassen geben?
-7. **Tiefe der Inselbasis:** Die Anatomie-Messung verlangt 0,43–0,52 × Breite und „flache Schattierung“; die Strecken-Blätter zeigen deutlich flachere Unterseiten, IB1–IB3 weiche Knet-Schattierung. Was gilt für Tiefe und Schattierung?
+**Entschieden mit V-174 (aus v0.1)**
+- ~~1 Banden-Farbe im Code~~ → Lab wird auf J17 vereinheitlicht, nachdem die Bau-Sitzung die Fundstellen geprüft hat; Rot-Weiß nur für Kerbs (§4).
+- ~~2 Mesa-Strecke~~ → Skin-Variante country/mesa: graue Fahrbahn + rot-weißer Kerb (§6, §7).
+- ~~3 Cosmic-Intensität~~ → Standard: leuchtende Bandenkanten auf J17-Basis; voller Neon-Look nur auf Cosmic-Inseln (§6, §7).
+- ~~4 Abendlicht~~ und ~~5 Sättigung~~ → J17 ist Maßstab für Licht und Sättigung, Bilder geben nur Stimmung; Abend-Tuning (V-050) zielt auf J17 (§4).
+- ~~6 Größenklassen~~ → S / M / L, Tunnel-Berge mindestens L (§5). Maße je Klasse siehe Frage 13.
+- ~~7 Tiefe der Inselbasis~~ → nach Georgs Inselboden-Bildern (IB1–IB3, CR3, ME2), nicht nach der alten Messregel (§5).
+
+**Weiter offen**
 8. **Materialmix konkret:** Wo kommen Filz, Kork und Pappe hin (z. B. Filz = Moos bzw. Wiese, Pappe = Kulissen)? Bisher nur „erlaubt“ [V-012].
 9. **Maker-Space-Palette:** Es gibt keine eigene Rolle. Ableiten aus protopia (Werkstatt-Orange) oder eigenes Thema mit den bunten Bauklötzen aus M1?
 10. **Mauerhöhe Maze:** 1,6 m stammt aus Metern; in K2 wäre das rund 0,7–0,75 H. Ist das gemeint, oder soll die Standardmauer höher als die Figur sein?
 11. **Steinviadukt auf Inseln:** Weiter offen laut V-154; V-165 verschiebt Steinbögen auf Antike. Gilt das auch für Viadukte auf Berginseln (CR4)?
 12. **Cosmic-Landmarke:** Vulkan mit Hub-Ring aus CO1/CO2 übernehmen oder eigene Landmarke?
+13. **Maße der Größenklassen:** Wie groß sind S, M und L (Breite in MC bzw. H)? Option: Klassen aus den 8 StreakByte-Inseln und den Organ-Inseln ableiten und Georg als Blatt zeigen.
+
+**Neu aus §6b und §6c**
+14. **Zieltempo je Zone:** Die Rhythmus-Regel braucht ein Zieltempo in Lab-Einheiten pro Sekunde (race, town, country, dirt, cosmic). Eine Umrechnung HUD-km/h ↔ Lab wurde nicht gefunden. Sollen die Werte aus k2b-Fahrten gemessen werden?
+15. **Takt Δt:** Passen die AD-Vorschläge (race 0,25 s, town 0,5 s, country 0,4 s, dirt 0,4–0,5 s, cosmic 0,2 s, Halbierung rund 2 s vor Kurven und Sprüngen)? Option: je Skin eine Probefahrt mit drei Δt-Stufen als Standbild-Reihe.
+16. **Durchfahrtshöhe Billboards:** 4,9 (Kamera-Freiraum nach V-169) oder 5,8 (K2: unter Brücken ≥ 1,6 H)? Bis zur Entscheidung gilt 5,8.
+17. **Inhalt über der Strecke:** Nur Deck-Cover und kurzer Titel über der Fahrbahn, die volle Zitat-Sequenz nur an Billboards zum Anhalten (AD-Vorschlag)? Oder auch Zitate in Phrasen-Beats über der Strecke bei langsamer Zone?
+18. **Billboard-Größe in K2:** Der Bestand nennt 12 × 6 m. Wie groß wird das in H bzw. MC, und muss das Display die ganze Fahrbahnbreite überspannen?
+19. **Fehlende Modelle:** Fackeln, Leitpfosten und Licht-Pylonen sind nicht gefunden in Lab `public/assets/kaykit`. Zuerst die vollständigen KayKit-, Tiny-Treats- und Quaternius-Packs durchsuchen [V-070, V-140], sonst RKIT baut sie als Knet-Bauteile?
+20. **Billboard-Rahmen town:** Welcher Rahmen in der Stadt? Option A: Laternen-Gerüst aus dem Stadt-Bestand. Option B: gemauerter Rahmen aus Masonry A.
 
 ---
 
 ## 11 · Quellen
 
 **Register und Plan**
-- `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001 … V-169, Teil B)
+- `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001 … V-174, Teil B)
 - `KFB Island Worldbuilder Lab/docs/KFB_WORLDBUILDER_PLAN_R1.md` (§0, §1, §2, §2d–§2g, §3)
 - `KFB_HUB/30_DECISIONS/replies/STEERING_ANSWERS_TD_R1.md` (V-150), `STEERING_ANSWERS_TD_R2.md` (V-154)
 - `replies/BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R1.md` / `R2.md` (nur Aufträge). Die WSA-Antworten `WSA_TRACK_MODULE_LOOK_SPEC_R1/R2.md` wurden nicht gefunden in `replies/`.
@@ -327,6 +413,11 @@ Alle Karten: Inselbasis nach §5; Bilder nur Stil-Richtung; Inselboden der Blät
 - `SPEC_EDGE_RUBBLE_GRAMMAR_R1.md`, `SPEC_ENVIRONMENT_KIT_R1.md`, `ISLAND_ANATOMY_RULES.md`, `SCALE_CONTRACT_K2.md`, `QA_RULEBOOK_ENVIRONMENT_R1.md`, `BASELINE_ACCEPTED_R1.md`, `PHASE_C_DONORS_R1.md`
 - `src/palettes.ts` (ENV_ROLES, MASONRY_DEFAULT, BANDE_DEFAULT)
 - `KFB Open World Visual Terrain Recovery Lab/donors/lab-track/track-look.v5.js` (J17 WORLDS)
+- `KFB_HUB/30_DECISIONS/replies/RKIT_POLLER_R1.md` (Poller 0,85, Mittenabstand 2,30)
+- Lab-Bestand `KFB Island Worldbuilder Lab/public/assets/kaykit/` (city, park, tinytreats, hex, dungeon) für die Rhythmus-Kandidaten
+
+**Billboard-Strang** (Repo-Klon `~/KFB_GitHub_sync`, Branch `gh/planning/billboard-quote-hypernorm-curator-2026-10-04`)
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/START_HERE.md` (Besitzer, Knet-Billboard 12 × 6 m, ein Scheduler, Ablauf, TV-Knopf) und `RETURN.md` (Stand 07.10.: kein Zitat für Laufzeit freigegeben)
 
 **Bilder**
 - Goldstandard: `KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01/pictures/chase-curve.jpg`, `chase-straight.jpg`, `chase-tunnel.jpg`; `KFB_JOYRIDE_J15_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/tc1-looks.v3.jpg`
