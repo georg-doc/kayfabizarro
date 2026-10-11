@@ -1,0 +1,140 @@
+{
+  "schema": "kfb.coconino-r3-source-proof/1",
+  "date": "2026-10-11",
+  "scope": "isolated-source OBJ polygons + neutral form candidates, source-mesh evidence only",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-coconino-mesa-asset-recon-2026-10-11",
+  "baselineMain": "dccf75cabd222d951380693d84ab88053ee7e519",
+  "sourceDonors": [
+    {
+      "name": "Quaternius Rock_1",
+      "path": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/OBJ/Rock_1.obj",
+      "gitBlob": "7af0a7d54ce5649c23e510b5dd8f3d64c858de69",
+      "vertices": 37,
+      "faces": 36,
+      "projectionOnBranch": "tools/asset_registry/specs/visual/KFB_COCONINO_R3_QUATERNIUS_OBJ_SOURCE_PLATE.svg",
+      "status": "SOURCE_GEOMETRY_PROJECTED"
+    },
+    {
+      "name": "Quaternius Rock_2",
+      "path": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/OBJ/Rock_2.obj",
+      "gitBlob": "553748d367a3883b801872c0531b4ed3ea65431b",
+      "vertices": 42,
+      "faces": 42,
+      "status": "SOURCE_GEOMETRY_PROJECTED"
+    },
+    {
+      "name": "Quaternius Rock_3",
+      "path": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/OBJ/Rock_3.obj",
+      "gitBlob": "6e83aeafd34291536f6fa43ac1499e8f905a1b2e",
+      "vertices": 38,
+      "faces": 41,
+      "status": "SOURCE_GEOMETRY_PROJECTED"
+    },
+    {
+      "name": "Quaternius Cactus_1",
+      "path": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/OBJ/Cactus_1.obj",
+      "gitBlob": "f34d14d01e86f34a99b28ac2bf86545bde28146d",
+      "vertices": 305,
+      "faces": 303,
+      "status": "SOURCE_GEOMETRY_PROJECTED"
+    }
+  ],
+  "sourceVisualEvidence": {
+    "path": "tools/asset_registry/specs/visual/KFB_COCONINO_R3_QUATERNIUS_OBJ_SOURCE_PLATE.svg",
+    "gitBlob": "caf5b6d242f60fa2df40e9985177689aeaf22b20",
+    "actualPolygons": 656,
+    "method": "Projection of actual source OBJ vertices and face indices; image is 2D polygon SVG visualization, not Blender renderer nor image-generation conditioning.",
+    "sourceLockedToQuaterniusOBJ": true,
+    "otherSourcesVisuallyVerified": false
+  },
+  "candidateOriginals": [
+    {
+      "name": "M01 Flat Cap",
+      "path": "tools/asset_registry/specs/visual/M01_FLAT_CAP_R3.obj",
+      "gitBlob": "3b28696ba1b3ce473b93b79f7e33280f4caa03c7",
+      "vertices": 386,
+      "triangles": 768,
+      "closedManifold": true,
+      "nonManifoldEdges": 0,
+      "degenerates": 0,
+      "signedVolume": 76.3837
+    },
+    {
+      "name": "M02 Needle Butte",
+      "path": "tools/asset_registry/specs/visual/M02_NEEDLE_BUTTE_R3.obj",
+      "gitBlob": "66b30fdc995c8846fc56e493564e2b24bc20c0c3",
+      "vertices": 434,
+      "triangles": 864,
+      "closedManifold": true,
+      "nonManifoldEdges": 0,
+      "degenerates": 0,
+      "signedVolume": 9.66755
+    },
+    {
+      "name": "M03 Stepped Mesa",
+      "path": "tools/asset_registry/specs/visual/M03_STEPPED_MESA_R3.obj",
+      "gitBlob": "98eee69e4719edb7e58c4b97cf116ddd9b2cf7c4",
+      "vertices": 578,
+      "triangles": 1152,
+      "closedManifold": true,
+      "nonManifoldEdges": 0,
+      "degenerates": 0,
+      "signedVolume": 44.83746
+    }
+  ],
+  "neutralProof": {
+    "path": "tools/asset_registry/specs/visual/KFB_COCONINO_R3_M01_M03_NEUTRAL_ORTHO.svg",
+    "gitBlob": "e1a32bc20c77f6034959417fc6a4be951a57be4d",
+    "polygonCount": 844,
+    "method": "2D projection with 8/48 display downsampling from the actual stored source OBJ vertices; OBJ files retain full triangles",
+    "status": "VISUAL_PREVIEW_ONLY"
+  },
+  "moodImages": {
+    "classification": "MOOD_ONLY_NOT_SOURCE_CONDITIONED",
+    "generationProvider": "ChatGPT image generation",
+    "sourcePixelsFedIntoImageGenerator": false,
+    "githubUploaded": false,
+    "firstAttempt": {
+      "originalFile": "a_wide_cinematic_split_panel_scene_with_two_stack.png",
+      "sha256": "889f15833ad01dc96d15e635c0eb3952938c8c58a8e735e2ecf3bcc856ab25db",
+      "sizeBytes": 2639490,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "classification": "FORM_FAIL_MANY_DISCONNECTED_CLUMPS_AND_SPLIT_SHEET"
+    },
+    "secondAttempt": {
+      "originalFile": "wide_cinematic_stylized_3d_stop_motion_claymation.png",
+      "sha256": "f4318277863dafe98204f800e7d44e3003b97dece8953d0e6c7328020ba47170",
+      "sizeBytes": 2043085,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "classification": "MOOD_ONLY_CONTINUOUS_CLOD_BETTER_BUT_NO_SOURCE_OR_DRIVE_PROOF"
+    },
+    "chatOnlyArchive": {
+      "filename": "KFB_Coconino_R3_Mood_Only_Image_Pack_2026-10-11.zip",
+      "sha256": "afd2486d7210a47a6a9c89ba6c8f0503a47c5df750a8fc0c39933f177bf1b6fc",
+      "bytes": 4470017,
+      "githubUploaded": false,
+      "entries": 4,
+      "crcPass": true
+    }
+  },
+  "remainingSourceGate": [
+    "Real KFB procedural mesa source model isolation",
+    "Real Kenney tall rock and cliff GLB pixels",
+    "Real KayKit Forest rock GLTF+BIN isolation",
+    "Dropbox full reference pixels to actual image producer",
+    "Pixel-conditioned standalone J1/J2 reference generation; current output MOOD_ONLY"
+  ],
+  "runtimeTests": 0,
+  "gameDriveTests": 0,
+  "blenderTests": 0,
+  "stage": null,
+  "pr": null,
+  "merged": false
+}
