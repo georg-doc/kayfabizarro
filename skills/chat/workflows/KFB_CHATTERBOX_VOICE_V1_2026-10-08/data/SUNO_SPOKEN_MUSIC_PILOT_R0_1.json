@@ -1,0 +1,120 @@
+{
+  "schema": "kfb.chatterbox.performance-take/0.1-candidate",
+  "status": "AUTHORING_CANDIDATE",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "receiver": "existing KFB Audio Voice Acting Site",
+  "sitePublication": "NOT_PUBLISHED",
+  "sample": {
+    "performanceId": "kfb.clown.juggling-standup.r0.1",
+    "mode": "SCRIPT_FIRST",
+    "title": "The Safest Performance",
+    "residentId": "clown",
+    "residentModuleId": "clown-juggling-island",
+    "residentSource": {
+      "path": "tools/resident_atlas/modules/clown-juggling-island.module.json",
+      "blobSha": "1c75730143e3481b43edaa8e7231e1a853f7834d",
+      "status": "candidate-only",
+      "activity": "juggle-cascade-v1",
+      "clubCount": 3,
+      "props": [
+        "pin_blue",
+        "pin_green",
+        "pin_red"
+      ]
+    },
+    "topicSourceRefs": [],
+    "theme": "juggling, freedom, security, convenience, public risk",
+    "voiceDirection": "adult dry precise stand-up; playful understatement; no singer",
+    "spokenLanguage": "en",
+    "targetSeconds": 85,
+    "spokenScript": "I juggle three clubs for a living. The audience calls it talent. The insurance company calls it a pattern of deliberate negligence.\n\nThe blue club is freedom. The red club is security. The green one's convenience. Everyone wants all three in the air. Nobody wants to stand underneath.\n\nYesterday a man told me the trick was balance. Then he moved my feet two inches to the left and charged a consulting fee.\n\nI dropped the green one. The crowd gasped. The blue one hit the security officer. Suddenly we had a committee.\n\nThey voted unanimously that juggling should continue, provided nobody throws anything.\n\nThank you. You've just witnessed the safest performance this venue has ever cancelled.",
+    "stylePrompt": "Spoken-word stand-up, adult dry observant stage comedian, quick precisely articulated English delivery, conversational not sung, compact live rockabilly trio: upright bass walking lightly, brushed snare, muted hollow-body guitar, occasional two-beat sting only after a punchline. Keep instruments behind clear foreground speech. 75–90 seconds, audience room tone quiet, natural pauses, no canned laughter, no chorus or lyrical singing, decisive clean finish.",
+    "musicStyle": "rockabilly-vaudeville-acoustic-trio",
+    "actualTranscript": null,
+    "transcriptVerification": "UNGENERATED",
+    "audioAsset": {
+      "provider": "Suno",
+      "providerTakeId": null,
+      "filePath": null,
+      "sha256": null,
+      "format": null,
+      "measuredSeconds": null,
+      "rightsStatus": "PENDING",
+      "commercialUsageVerified": false,
+      "publicShip": false,
+      "mixType": "SPEECH_AND_MUSIC_MASTER_UNGENERATED"
+    },
+    "cues": [
+      {
+        "cue": "INTRO",
+        "anchor": "before opening line",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      },
+      {
+        "cue": "TALK",
+        "anchor": "start monologue",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      },
+      {
+        "cue": "ACCENT",
+        "anchor": "insurance-company punchline",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      },
+      {
+        "cue": "JUGGLE_HOLD",
+        "anchor": "They voted unanimously...",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      },
+      {
+        "cue": "PUNCHLINE_PAUSE",
+        "anchor": "nobody throws anything",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      },
+      {
+        "cue": "OUTRO",
+        "anchor": "safest performance this venue has ever cancelled",
+        "source": "MANUAL_PROPOSAL",
+        "timeSeconds": null
+      }
+    ],
+    "selectionStatus": "UNGENERATED",
+    "usage": "PRIVATE_AUDITION",
+    "playbackPolicy": {
+      "singleLocalPerformance": true,
+      "fullTranscriptVisibleMuted": true,
+      "allowAutoLoop": false,
+      "audioClockOwner": "existing KFB Audio",
+      "duckingOwner": "existing KFB Audio",
+      "animationOwner": "existing Resident Performance/Atlas",
+      "interruptResetsMix": true
+    }
+  },
+  "budget": {
+    "estimatedMonthlyDownloadBudget": 60,
+    "estimateSource": "GEORG_APPROXIMATE_UNVERIFIED",
+    "actualDownloadsThisMonth": null,
+    "initialSelectedExportsCap": 6,
+    "selectedExportsFromThisSlice": 0,
+    "sharedWithRoadTripSoundscapes": true
+  },
+  "policy": {
+    "noSecondDialogueRuntime": true,
+    "noSecondAudioContext": true,
+    "noWorldR5": true,
+    "noPromotedTriplet": true,
+    "scriptRequiresHumanReview": true,
+    "rightsRequiredBeforePublic": true,
+    "noInventedSourceAsset": true
+  },
+  "references": {
+    "briefing": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/SUNO_SPOKEN_MUSIC_PERFORMANCE_SLICE_R0_1_2026-10-11.md",
+    "voiceIdentity": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/runtime/voice-asset-identity.v1.js",
+    "existingSunoTest": "USER_SUPPLIED_CHAT_EXAMPLE_NOT_REPRODUCED",
+    "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1"
+  }
+}
