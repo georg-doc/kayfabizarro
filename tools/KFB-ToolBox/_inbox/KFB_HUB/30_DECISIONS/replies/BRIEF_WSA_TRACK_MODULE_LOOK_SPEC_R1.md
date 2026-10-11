@@ -22,3 +22,6 @@ Für jedes Modul aus Georgs Rundkurs-Baukasten (`replies/REFS_RUNDKURS_2026-10-1
 
 ## Ergebnis
 `replies/WSA_TRACK_MODULE_LOOK_SPEC_R1.md` + `track-module-look.json` (Schema-Vorschlag `kfb.track-module-look/1`, Felder passend zu den MODULES-Spalten: id, family, section, edge, frames, look-Quelle, Maße, Farb-Rollen, Markierung). Look bleibt J17 (V-102); die Farben in Georgs Bild zählen nicht.
+
+## Zusätzliche Pflicht-Quellen (V-146)
+Track Core `SLOTS`/`SKINS` (14-Slot-Querschnitt, paint je Teil), S4-v2-Brief `KFB Racetrack Blender Kit/TRACK-CORE/S4_DESIGN_BRIEF_v2_2026-09-27/` (Edge-Atlas, Übergangs-Matrix), `REF_ANALYSIS_2026-09-27/REFERENCE_ANALYSIS_2026-09-27.md` (Oberfläche je Slot, Edge-Layer), Lab `docs/SPEC_EDGE_RUBBLE_GRAMMAR_R1.md`. Ordne jedes Modul diesen Schichten zu: Asphalt, Markierung (mit Farbe), Seitenstreifen, Bord bzw. Kerb, Bande, Rubble, Unterseite.

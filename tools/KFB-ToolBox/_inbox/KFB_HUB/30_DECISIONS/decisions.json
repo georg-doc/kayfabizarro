@@ -1505,6 +1505,20 @@
    "applies": "ab Wendeschleife"
   },
   {
+   "id": "V-146",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Skin-Schichtung der Strecke (Bande, Seitenstreifen, Markierung inkl. Farben, Asphalt, Rubble usw.) ist schon abgeleitet und wird nicht neu recherchiert: Track Core 14-Slot-Querschnitt (SLOTS: road, shoulder, barrier in/out top/bot, under) + SKINS (paint je Teil, weich überblendet) + marking; S4-v2-Look-Brief (Edge-Atlas: Kerbs flach/rumble/sausage, rot-weiße Blöcke, Leitplanke, Fangzaun, Gras/Kies/Sand-Bett, Graben, Bord + Gehweg, Brüstung; Übergangs-Matrix); REFERENCE_ANALYSIS 27.09. (Race Track Builder / Mario Kart World / Stunt Paradise 2 vom Reddit-Trailer: Oberfläche je Slot, Edge-Layer); Lab SPEC_EDGE_RUBBLE_GRAMMAR_R1; J17 track-look v5 Rollen. Die Skin-Schnittstelle (V-145) baut darauf auf; neue Recherche nur für echte Lücken (z. B. Eisenbahn bzw. Rollercoaster später).",
+   "values": {},
+   "owner": "RKIT + Lab + WSA",
+   "check": "Such-Protokoll in der Skin-Zeile",
+   "source": "Georg 11.10. (Frage nach Bau-Logik-Recherche); Bestand gefunden",
+   "supersedes": null,
+   "why": "Use what works: Die Kabel-Track-/Reddit-Ableitung und die Schichtung existieren schon in Track Core und S4; neu recherchieren hieße Doppelarbeit.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

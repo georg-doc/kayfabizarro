@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schichtung = Bestand
+- V-146 Schichtung (Slots, Skins, Markierung, Edge-Atlas, Rubble) existiert: Track Core SLOTS/SKINS, S4-v2-Brief, REFERENCE_ANALYSIS 27.09. (Reddit-Trailer), SPEC_EDGE_RUBBLE_GRAMMAR_R1, J17 v5. Basis für die Skin-Schnittstelle; keine neue Recherche.
+
 ## 2026-10-11 · Wendeschleife fertig
 - Track Core 0.16.2: einarmiger Kreisel (Wendeweg-Radius 11–12,3), turntable-Anker, Prüfgrenze Welt 1,705 für Kreisel und Kreuzung (V-143), 17/17, Gleichstand bitgleich. Befund: Kreisel-Arme erben die Familie nicht → Skin-Schnittstelle (V-145).
 
