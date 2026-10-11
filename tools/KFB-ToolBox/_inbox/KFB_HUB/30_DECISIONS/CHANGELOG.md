@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · V-153 nach V-159 bestätigt
+- Hatchback-Fußtest bei 60 fps grün; Fußtest-Skript schreibt fps/fpsOk. Fahrtest-Runden laufen in festen Physik-Schritten (bildratenunabhängig).
+
 ## 2026-10-11 · Haltebucht nachgebessert, falsches PASS korrigiert
 - V-138-TUNE geliefert (Gehweg-Ende mit Knet-Zungen und eingesunkenen Kantensteinen, gewölbte Kleckse); an Georg. Korrektur: Fußtests V-138/V-153 von nachmittags waren falsch PASS (Fuge Bord↔Gehweg, unter Last übersprungen); Fix LAB PATCH G2, Fußtest bei 60 fps 6/6, parity PASS. V-159 Fuß-/Fahrtests nur ≥ 50 fps.
 
