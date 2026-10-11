@@ -19,3 +19,6 @@ Gleiches Verfahren wie R1, jetzt für die übrigen Module aus `replies/REFS_TRAC
 
 ## Erweiterung (V-152)
 Auch `replies/REFS_COUNTRY_TUNNEL_2026-10-11/CR1–CR4` (Berg-Schotter, Fußwege/Wanderpfade = Skin `trail`, Berginsel, Landstraße zweispurig). Für Tunnel: TC1-Cut (J15) stone_arch/stone_rect als Bestand; Stützmauern: Mauer-Baukasten V-105 + RKIT-Mauern; Brücken/Viadukte nur auf Inseln (V-120). Alle Autos fahren alle Skins (V-152).
+
+## Update (V-153/V-154)
+Georg hat alle offenen Katalog-Fragen beantwortet: `replies/STEERING_ANSWERS_TD_R2.md` (V-154) zusätzlich zu `STEERING_ANSWERS_TD_R1.md` (V-150). Wichtig für die Spec: Haifischzähne nur town; Banden-Übergang Variante B (q.edge, ≥ 8 m, J17-Schwellen); Berm ≤ 35°; trail = Geh-Netz ohne Autos (Pfad 1/2 MC, Steinstufen Masonry A); Schnee = Insel, nicht Skin; Haltebucht Land bündig mit Kies; Y-Gabel = EXIT; im All keine Stützen. KayKit-Autos mit gemeinsamem Kit-Faktor (V-153). Offen bei Georg: Steinviadukt auf Inseln, Cosmic-Look; dort nur Quellen listen.

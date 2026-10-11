@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Updates an WSA und Blender
+- WSA-Brief R2 um V-153/V-154 ergänzt; Blender-Branch Nachtrag R3c (Schnee = Insel, Stützmauern talseitig aus Mauer-Baukasten, Berginsel CR3 als zusätzliche Referenz).
+
 ## 2026-10-11 · Offene Katalog-Fragen beantwortet
 - V-154 „alle Vorschläge ok“ (Antworten R2); offen nur Steinviadukt auf Inseln + Cosmic-Look. RKIT: #4 B (q.edge) und DIRT freigegeben.
 
