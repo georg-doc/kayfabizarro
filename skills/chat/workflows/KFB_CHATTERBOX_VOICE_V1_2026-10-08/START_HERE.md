@@ -1,5 +1,19 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## NEW SIDE SLICE · 2026-10-11 · Suno Spoken-Music / Stand-up R0.1
+
+Georg's spoken stand-up + backing-band Suno experiment is recorded as a **non-canon authoring/performance candidate**, not a replacement Voice Runtime:
+- Brief: `SUNO_SPOKEN_MUSIC_PERFORMANCE_SLICE_R0_1_2026-10-11.md`;
+- pilot data: `data/SUNO_SPOKEN_MUSIC_PILOT_R0_1.json`;
+- test: `SUNO_PERFORMANCE_TEST_REPORT_R0_1_2026-10-11.md` (29/29 + 20/20 source/static PASS, 0 audio/browser runs);
+- owning `RETURN.md` / local `SUNO_PERFORMANCE_CHANGELOG_R0_1.md`;
+- durable private KFB Production Control Site Inbox workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`, brief and JSON saved/read back.
+
+First audition target: existing source-pinned Clown three-club `clown-juggling-island` with one 60–90s Script-first rockabilly spoken take. No Suno download spent, no runtime Site build, no new owner, no rights approval or World work. **Next side-slice gate** `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`. The primary existing Voice owner gate `KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1` and Four-Island A/B World restrictions are unchanged.
+
+---
+
+
 ## CURRENT VOICE EXECUTION CHECKPOINT · 2026-10-10 · SOURCE-BOUND TRIPLET AUDIO R1 PUBLISHED
 
 The bounded consumer integration now runs in the **existing KFB Audio Site** and the same Draft PR #379 owner line:
