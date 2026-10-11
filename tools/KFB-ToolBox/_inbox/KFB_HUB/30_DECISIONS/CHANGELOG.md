@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Dungeon-POC Schritt 1 gestartet, NPC Performance Proof vorgemerkt
+- Agent baut Dungeon-Blockout (V-182) getrennt vom Lab: ~/Developer/kfb-dungeon-poc, Port 5194, Lab nur gelesen, Speicher-Wächter. Lieferung replies/DUNGEON_POC_R1/.
+- V-187 (TBD) NPC Performance Proof R1 als nächster One-Shot.
+
 ## 2026-10-12 · Clip-Katalog R1 (Fable02/WSO)
 - replies/WSO_CLIP_CATALOG_R1.md + clip-catalog.json: 16 GLB, 290 Clips gemessen (139 Medium, 34 Large bestätigt), Tags als Vorschlag, Zuordnung zu Zuständen, Emotionen, Survival Kit, Kulturmechaniken. Top 20 fürs MVP: 17 im Lab, 3 aus der Motion Library nachladen (später, Bau-Sitzung nach V-171). Lücken: Flug, Beifahrer, Sprech-Clip, Geschenke, Kayfabulieren, Paar-Tanz, Lesen.
 - V-186 Motion Library 01 Abnahme 24.09. nachgetragen. Offen an Georg: Strafe-Clips vorhanden vs. V-022.

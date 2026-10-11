@@ -2079,6 +2079,20 @@
    "applies": "seit 24.09."
   },
   {
+   "id": "V-187",
+   "date": "2026-10-12",
+   "area": "Animation",
+   "verdict": "TBD",
+   "text": "NPC Performance Proof R1 (Vorschlag aus Movez/Opus-5.5-Review): ein echter KFB-Resident (z. B. Clown) mit vorhandenem Rig und Clips, 8-s-Performance Idle → Notice → Doubt → Reaction → Recovery; seek(t)-reproduzierbar, automatische Kontaktbögen, Frame-Kritik, Fußkontakt, EyeRig/PetMouth unbeschädigt. KEEP: seek(t), Beat Sheets, Kontaktbögen, Frame-Kritik; ADAPT: Closed-form Springs, Audio-Sync; REJECT: eigene HTML-/Video-Engine. Nächster One-Shot nach dem Dungeon-POC.",
+   "values": {},
+   "owner": "Motion",
+   "check": "Performance-Proof",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Reproduzierbare, prüfbare NPC-Choreografie auf Bestand statt neuer Engine.",
+   "applies": "nach Dungeon-POC"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

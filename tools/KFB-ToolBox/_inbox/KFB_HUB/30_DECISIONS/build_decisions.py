@@ -164,6 +164,7 @@ d('V-183','2026-10-12','Strecke','PASS','Banden-Enden C4c v2 PASS (geschlossene 
 d('V-184','2026-10-12','Prozess','RULE','Lizenz und öffentlich/privat sind geklärt (V-071, Asset-Merge-Ausnahme, Mixamo V-179). Schluss mit Wiederholungen: keine Lizenz- bzw. Public-Disclaimer mehr in Briefs, Berichten und Antworten (auch kein „nur Text und Zahlen“, „kein Merge“ als Floskel). Gemeldet wird nur ein NEUER, ungeklärter Fall, in einer Zeile.', 'alle Sitzungen + WSA + Blender', '-', 'Georg 12.10.')
 d('V-185','2026-10-12','Strecke','RULE','Korrektur zu V-175 (3), Einheitenfehler der Steuerung: Der Kamera-Freiraum 4,9 aus V-169 ist in Track-Core-Metern (J17 chaseCam 3,5 + 0,9 + 0,5) = 7,15 lab; die Lab-Kamera sitzt laut camera.ts bei 6,9–8,2 lab. 5,8 lab deckt die Kamera also nicht. Georgs Absicht („der größere Wert, deckt die Kamera“) gilt: Durchfahrtshöhe für Billboards, Schilderbrücken, Tunnel- und Dungeon-Decken = max(K2 1,6 H = 5,8 lab, Lab-Kamera-Maximum + 0,5); vorläufig ≈ 9,0 lab, die Bau-Sitzung misst den Endwert. Alle Freiraum-Angaben künftig mit Einheit (lab bzw. TC-m).', 'Lab + RKIT', 'Kamera-Messung camera.ts', 'Steuerung 12.10. (Absicht Georg 11.10.)')
 d('V-186','2026-09-24','Animation','PASS','KFB Motion Library 01 als Ganzes abgenommen, nach Kontaktbögen (nachgetragen aus RETURN.md der Motion Library; gefunden im Clip-Katalog R1).', 'Motion', 'Kontaktbögen', 'Georg 24.09. (nachgetragen 12.10.)')
+d('V-187','2026-10-12','Animation','TBD','NPC Performance Proof R1 (Vorschlag aus Movez/Opus-5.5-Review): ein echter KFB-Resident (z. B. Clown) mit vorhandenem Rig und Clips, 8-s-Performance Idle → Notice → Doubt → Reaction → Recovery; seek(t)-reproduzierbar, automatische Kontaktbögen, Frame-Kritik, Fußkontakt, EyeRig/PetMouth unbeschädigt. KEEP: seek(t), Beat Sheets, Kontaktbögen, Frame-Kritik; ADAPT: Closed-form Springs, Audio-Sync; REJECT: eigene HTML-/Video-Engine. Nächster One-Shot nach dem Dungeon-POC.', 'Motion', 'Performance-Proof', 'Georg 12.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -316,6 +317,7 @@ WHY = {
  'V-184':('Georg: der ewige Lizenz- und Public-Check kostet Zeit und Nerven; alles ist längst geklärt.','ab jetzt'),
  'V-185':('Machbarkeits-Agent Dungeon fand den Einheiten-Widerspruch; 5,8 lab wäre unter der Kamera.','ab jetzt'),
  'V-186':('Bestehende Abnahme war nicht im Register.','seit 24.09.'),
+ 'V-187':('Reproduzierbare, prüfbare NPC-Choreografie auf Bestand statt neuer Engine.','nach Dungeon-POC'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:
