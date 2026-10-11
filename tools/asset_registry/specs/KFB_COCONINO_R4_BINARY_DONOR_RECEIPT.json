@@ -1,0 +1,152 @@
+{
+  "schema": "kfb.coconino.r4-donor-source-isolation/1",
+  "date": "2026-10-11",
+  "repo": "georg-doc/kayfabizarro",
+  "ref": "dccf75cabd222d951380693d84ab88053ee7e519",
+  "method": "Exact GitHub binary contents decoded from base64. GLB header/chunks parsed and indexed accessor positions + triangle faces used to render orthographic source-derived SVG. Node translations applied; original vertex data not modified. No Blender or image generation.",
+  "models": [
+    {
+      "name": "rock_tallA.glb",
+      "path": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+      "blobSha": "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+      "binBlobSha": null,
+      "nativeBBoxMin": [
+        -0.49153444170951843,
+        -0.05,
+        -0.34160539507865906
+      ],
+      "nativeBBoxMax": [
+        0.49153444170951843,
+        0.9459259033203125,
+        0.34160539507865906
+      ],
+      "nativeDimensions": [
+        0.98307,
+        0.99593,
+        0.68321
+      ],
+      "nodeTranslation": [
+        0,
+        -0.05,
+        0
+      ],
+      "sourceVertexCount": 254,
+      "sourceTriangleCount": 136,
+      "sourceMaterials": [
+        "dirt",
+        "grass",
+        "_defaultMat"
+      ],
+      "sourceState": "SOURCE_GEOMETRY_ISOLATED_IN_VECTOR_RENDER",
+      "classification": "DRESSING_CANDIDATE_ONLY",
+      "sourcePixelsActuallyFedToImagegen": false
+    },
+    {
+      "name": "cliff_top_rock.glb",
+      "path": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cliff_top_rock.glb",
+      "blobSha": "df8835990094d36b796de110a5d1b11c786abefa",
+      "binBlobSha": null,
+      "nativeBBoxMin": [
+        -0.5,
+        -0.05000000000000018,
+        0.23149998486042023
+      ],
+      "nativeBBoxMax": [
+        0.5,
+        0.95,
+        0.5
+      ],
+      "nativeDimensions": [
+        1,
+        1,
+        0.2685
+      ],
+      "nodeTranslation": [
+        0,
+        -0.05,
+        0
+      ],
+      "sourceVertexCount": 87,
+      "sourceTriangleCount": 53,
+      "sourceMaterials": [
+        "grass",
+        "dirt"
+      ],
+      "sourceState": "SOURCE_GEOMETRY_ISOLATED_IN_VECTOR_RENDER",
+      "classification": "ADAPT_OR_REJECT_VISIBLE_TILE_SEAMS",
+      "sourcePixelsActuallyFedToImagegen": false
+    },
+    {
+      "name": "cactus_tall.glb",
+      "path": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+      "blobSha": "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+      "binBlobSha": null,
+      "nativeBBoxMin": [
+        -0.19946128129959106,
+        -0.05,
+        -0.13247953355312347
+      ],
+      "nativeBBoxMax": [
+        0.19678866863250732,
+        0.7,
+        0.2066025286912918
+      ],
+      "nativeDimensions": [
+        0.39625,
+        0.75,
+        0.33908
+      ],
+      "nodeTranslation": [
+        0,
+        -0.05,
+        0
+      ],
+      "sourceVertexCount": 210,
+      "sourceTriangleCount": 122,
+      "sourceMaterials": [
+        "leafsGreen"
+      ],
+      "sourceState": "SOURCE_GEOMETRY_ISOLATED_IN_VECTOR_RENDER",
+      "classification": "DRESSING_CANDIDATE_ONLY",
+      "sourcePixelsActuallyFedToImagegen": false
+    },
+    {
+      "name": "Rock_1_A_Color1.gltf",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+      "blobSha": "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+      "binBlobSha": "df23c5d4e393fc366f992340aea4433ec7fc3c8e",
+      "nativeBBoxMin": [
+        -0.3195270001888275,
+        0,
+        -0.3038882315158844
+      ],
+      "nativeBBoxMax": [
+        0.2585027813911438,
+        0.5402679443359375,
+        0.3038882315158844
+      ],
+      "nativeDimensions": [
+        0.57803,
+        0.54027,
+        0.60778
+      ],
+      "nodeTranslation": [
+        0,
+        0,
+        0
+      ],
+      "sourceVertexCount": 80,
+      "sourceTriangleCount": 48,
+      "sourceMaterials": [
+        "forest"
+      ],
+      "sourceState": "SOURCE_GEOMETRY_ISOLATED_IN_VECTOR_RENDER",
+      "classification": "DRESSING_CANDIDATE_ONLY",
+      "sourcePixelsActuallyFedToImagegen": false
+    }
+  ],
+  "actualRenderedPolyCount": 718,
+  "svgPath": "tools/asset_registry/specs/visual/KFB_COCONINO_R4_KENNEY_KAYKIT_SOURCE_ISOLATION.svg",
+  "remaining": "KFB mesa() final softened runtime isolation and source-conditioned image provider pending",
+  "runtimeTests": 0
+}
