@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · walkOuter geliefert
+- hex_b7.parts.json mit walkOuter (53 Punkte, ±0,0001 gegen GLB), GLB unverändert, parity PASS. RKIT wartet auf Georg (trail A/B).
+
 ## 2026-10-11 · V-138 geliefert, V-130 Bank A
 - Haltebucht mit RKIT-Bürgersteig 1:1, Knet-Schüttung, Kachel-Kerbe gefüllt, Fußtest 6/6, parity PASS (Wiederholung unter Last). Bank A: 4 Looks im Feld, Profil arch/rect/round, Portal + Innen 1:1 an beiden Enden, 0/0/0, Freiraum ≥ 0,308. Beides an Georg. Offen: Gehweg-Ende gerade, Tropfen flach; race_tube im Hügel statt frei.
 

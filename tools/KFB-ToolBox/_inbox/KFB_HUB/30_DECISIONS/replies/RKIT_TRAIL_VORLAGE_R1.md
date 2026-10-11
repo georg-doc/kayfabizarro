@@ -58,3 +58,8 @@ Stand 2026-10-11 · Grundlage:
 | Aufwand | L | **M** |
 
 Gebaut wird erst, wenn Georg A (Steigung ohne Stufen) und B (Trittstein-Abstand) beantwortet hat.
+
+**Ergänzung MVP-Sicht (11.10.):** passt zu R1a.
+- Das Insel-Layout führt; die Lab-Gehfläche (`surface.ts`, Walker 35°, `stepMax`) prüft.
+- TRAIL rechnet das Profil aus Mittellinie + Höhenverlauf des Lab: Stufenzahl und -höhe, Steg- bzw. Brückenspanne, Trittstein-Abstand.
+- TRAIL gibt Anker `{p, T, U}` zurück. Es gilt dasselbe Schema wie bei B7: Geometrie RKIT, Look und Platzierung Lab.
