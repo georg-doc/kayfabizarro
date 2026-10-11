@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Icosphere: Lab nicht betroffen
+- Lab-Farmer-Dateien ohne Icosphere; Figuren-Maße aus Konstanten (FIG_SCALE 1,6, H 3,64) bzw. Knochen. RKIT nutzt künftig nur Lab-Figurdateien.
+
 ## 2026-10-11 · Poller-Höhe korrigiert, Icosphere-Fund
 - RKIT: Hüfte 1,50 war falsch (Farmer-A-Modell enthält Hilfskörper „Icosphere“ in der Bounding-Box). Richtig 0,65–0,83 lab → Poller 0,85 hoch, Ø 0,50→0,44, lichte Weite 1,80. Lab prüft, ob Figuren-Maße irgendwo die Icosphere mitmessen.
 
