@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · LEVEL_RAMP fertig
+- Track Core 0.16.2: LEVEL_RAMP 16/16 (RACE/TOWN, max 4,8 %, Halteplatte eben, Anker exakt), Teil-0-Gleichstand bitgleich, alle Suiten unverändert.
+
 ## 2026-10-11 · LEVEL_RAMP + Wendeschleife freigegeben
 - RKIT baut in Track Core 0.16.2: Makro LEVEL_RAMP (≤ 8 %, ebene Halteplatte, Endrahmen auf Anker) und einarmige Kreisel-Größenregel + Szenerie-Anker turntable (V-110, V-134). Such-Protokoll: keine fertige Form in den Quellen. Nach jedem Schritt Teil-0-Gleichstand; Vendor-Wechsel im Lab abgestimmt.
 
