@@ -1911,6 +1911,34 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-175",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Antworten Style Guide v0.2: (1) Zielgeschwindigkeit je Zone wird bei normalen Testfahrten (k2b) in Lab-Einheiten mitgemessen. (2) Δt-Vorschlag des AD (race 0,25 s, town 0,5, country 0,4, dirt 0,4–0,5, cosmic 0,2; ~2 s vor Kurven/Sprüngen halbiert) zuerst per Race-Skin-Testfahrt in drei Stufen als Standbild-Serie prüfen. (3) Durchfahrtshöhe Billboards/Schilder 5,8 (K2 ≥ 1,6 H, deckt Kamera 4,9). (4) Über der Fahrbahn nur Deck-Cover + kurzer Titel; volle Zitat-Sequenz nur an Billboards mit Halt. (5) Fehlende Rhythmus-Modelle (Fackeln, Leitpfosten, Pylonen): erst komplette KayKit-, Tiny-Treats-, Quaternius-Pakete durchsuchen (V-140), sonst RKIT als Knete-Teile.",
+   "values": {},
+   "owner": "Lab + RKIT + AD",
+   "check": "Messwerte + Standbild-Serie",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Damit Rhythmus-Abstände und Billboards messbar statt geschätzt gebaut werden.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-176",
+   "date": "2026-10-11",
+   "area": "Referenz",
+   "verdict": "RULE",
+   "text": "KFB Akashic Library (4 ChatGPT-Bilder AK1–AK4, replies/REFS_AKASHIC): Stil und Stimmung PASS, ebenso Strecken-Integration (AK2/AK3: Fahrbahn am Inselrand mit Kerbs, Drive-in als Haltebucht, Eingangsschild über Zufahrt). Teilweise Halluzinationen; Szenerie darf weniger komplex sein. Nur Logik- und Stil-Hinweis (V-148), keine Bauvorlage.",
+   "values": {},
+   "owner": "Steuerung (Referenz-Bibliothek §2f)",
+   "check": "README mit Halluzinations-Liste",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Neue Insel-Referenz mit Strecken-Integration; Stil passt, Details teils erfunden.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

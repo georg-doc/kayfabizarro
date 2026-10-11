@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Style-Guide-Antworten, Akashic-Referenzen, WSA Licht C
+- V-175 Georg „1–5 ok“: Zieltempo bei Testfahrten messen, Δt per Race-Testfahrt in 3 Stufen, Durchfahrtshöhe 5,8, über der Fahrbahn nur Cover + Titel, fehlende Rhythmus-Modelle erst im Bestand suchen.
+- V-176 KFB Akashic Library (replies/REFS_AKASHIC_2026-10-11, README mit Halluzinations-Liste): Stil, Stimmung, Strecken-Integration PASS; Szenerie weniger komplex.
+- WSA Teil C Licht abgenommen (J17-Sonne 48,99°). Steuerung: ein Lichtvergleich J17-Tag + E50 über den vorhandenen Adapter, durch die Bau-Sitzung nach Banden + Flackern, hinter URL-Schalter. Nächster WSA-Auftrag: Bestandssuche Rhythmus- und Schildermodelle (replies/STEERING_REPLY_WSA_C_R1.md).
+
 ## 2026-10-11 · 3D Style Guide v0.2
 - STYLE_GUIDE_3D_R1.md v0.2: V-174 eingearbeitet (§4 Banden J17, §5 S/M/L + Unterseiten nach IB1–3/CR3/ME2, §6/§7 country/mesa-Variante, Cosmic Glow-Standard); neu §6b Rhythmus-Elemente je Skin (Abstand = Zielgeschwindigkeit × Δt, zwei Höhenlagen unter/über Kamera) [V-172] und §6c Billboards + Insel-Eingangsschilder [V-173]. Δt-Werte und Platzierungsdetails als AD-Vorschlag markiert. Neue offene Fragen: Zielgeschwindigkeit je Zone in Lab-Einheiten, Δt-Werte, Durchfahrtshöhe 4,9 vs. 5,8, Inhalt über der Fahrbahn, Billboard-Größe in K2, fehlende Modelle (Fackeln, Leitpfosten, Pylonen).
 
