@@ -455,8 +455,8 @@ Die Kulturmechaniken sind die Anlässe, zu denen Figuren spielen. Jede braucht s
 | Tanz (dance) | Mixamo-Tänze in `DL` [V-179], `Dance` im KayKit-Legacy-Rig 1.2 | Solo, Paar, Gruppe? |
 | Debatte (debate) | ChatterBox-Triplets, Triplet-Takt §3c, H&D-Gespräche (§1d) | Ablauf, Publikum |
 | Rauferei (brawl) | KayKit CombatMelee (22 Clips, nicht im Lab), Controlled Damage (§1d) | Abgrenzung zu Kampf §4; cartoonig ohne Schaden? |
-| Brick-Fish | nicht gefunden in KFB_HUB, Lab-Docs | Was ist es? (Frage an Georg) |
-| Kayfabe / Kayfabulieren | Projektname Kayfabizarro; sonst nicht gefunden in KFB_HUB | Was tun Figuren dabei? |
+| Brick-Fish (throw) | Georg 11.10.: Krazy-Kat-Logik (Ziegelwurf) mit Red-Herring-Meta-Ebene; NPCs werfen sich gegenseitig oder dem Spieler Brick-Fische an den Kopf. Weitere Vorlagen sucht Georg heraus. | **nach MVP**; Wurf + Treffer-Reaktion (Controlled Damage §1d) |
+| Kayfabe / Kayfabulieren | Georg 11.10.: in den KFB-Regeln erklärt (https://kayfabizarro.pages.dev/#kfb); genutzt für die Quest von King Kayfabian (Overworld) | **nach MVP**; bei Bedarf Regeln lesen |
 | Fluff ernten / formen / zerstören | Fluff-Ernte: Fluffbälle wachsen an Bäumen, Höfe ernten, Fallobst springt, Aufsammeln durch Darüberlaufen (Steuer-Gedächtnis) | Formen und Zerstören |
 | Lesen | Akashic Library [V-176], KFB-Clips „Karten“ und „Schreiben“ (Motion Library v6), Alltags-Register „reading“ (§1d) | Lesen allein, vorlesen, in der Bibliothek |
 

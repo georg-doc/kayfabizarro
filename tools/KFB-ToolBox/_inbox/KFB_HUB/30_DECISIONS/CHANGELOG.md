@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Brick-Fish und Kayfabulieren erklärt
+- Georg: Brick-Fish-Wurf = Krazy-Kat-Logik mit Red-Herring-Meta-Ebene (NPCs bzw. Spieler am Kopf getroffen); Kayfabulieren steht in den KFB-Regeln (kayfabizarro.pages.dev/#kfb), Quest King Kayfabian. Beides nach MVP (zu V-181), MOTION_GUIDE §3f ergänzt.
+
 ## 2026-10-11 · Kulturmechaniken definiert
 - V-181 Geschenke, Tanz, Debatte, Rauferei, Brick-Fish, Kayfabe/Kayfabulieren, Fluff ernten/formen/zerstören, Lesen. MOTION_GUIDE_R1 §3f mit vorhandenen Bezügen; Brick-Fish und Kayfabulieren nicht in den Docs gefunden.
 
