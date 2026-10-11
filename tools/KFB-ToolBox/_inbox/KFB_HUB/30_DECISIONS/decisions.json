@@ -1407,6 +1407,20 @@
    "applies": "vor C4c"
   },
   {
+   "id": "V-139",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Übergang Rennstrecke ↔ Straße ist in Joyride schon vorhanden und wird 1:1 genutzt: J14-T4-Zone ZA bzw. J17 transition-atlas + ROAD_APPLY (Fahrbahn-Haut Straße → Strecke), Variante B nach V-104. Kein neuer Entwurf; „B6 race ↔ world“ = diese Vorlage. Fehlt dem Track Core der Typwechsel RACE → TOWN im Graph, wird er nach dieser Vorlage ergänzt, nicht neu erfunden.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "Standbild Übergang neben J14/J17",
+   "source": "Georg 11.10.: „der track- -> strasse übergang ist doch in joyride schon vorhanden!!!“",
+   "supersedes": null,
+   "why": "Ich habe RKITs „fehlt, Georgs Entwurf nötig“ ungeprüft weitergegeben; die Vorlage lag seit C0 auf dem Tisch.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

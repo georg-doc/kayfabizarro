@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Track → Straße existiert
+- V-139 Georg: Übergang Rennstrecke ↔ Straße ist in Joyride vorhanden (J14 T4 ZA, J17 transition-atlas + ROAD_APPLY, V-104 B) → 1:1, kein Entwurf. Meine Rückfrage war falsch.
+
 ## 2026-10-11 · Haltebucht-Gehfläche
 - V-138 Georg: orange Plattform = zu breite Bande; stattdessen Bürgersteig mit gemauerter Bordsteinkante (RKIT Lauf 03 / B7 TOWN_BAY), weicher Übergang auf die Insel.
 
