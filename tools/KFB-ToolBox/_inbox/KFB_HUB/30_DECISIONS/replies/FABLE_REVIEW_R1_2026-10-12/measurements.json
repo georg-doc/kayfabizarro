@@ -1,0 +1,68 @@
+{
+  "run": "2026-10-11_review01",
+  "browser": {
+    "shoot": "HeadlessChrome/155.0.0.0 (Playwright 1.63, Google Chrome 155.0.8059.39, --use-angle=metal), deviceScaleFactor 1",
+    "interactive": "Claude Desktop Browser pane (Chromium), devicePixelRatio 2",
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4)",
+    "node": "v24.19.0 (codex runtime)",
+    "three": "0.186.1",
+    "vite": "8.3.3",
+    "renderer": { "shadowMap": "PCFShadowMap (1)", "toneMapping": "NeutralToneMapping (7)", "outputColorSpace": "srgb" }
+  },
+  "calibration": {
+    "file": "shots/00_kalibrierung.png",
+    "expected": { "red": [255, 0, 0], "green": [0, 255, 0], "blue": [0, 0, 255], "grey": [128, 128, 128], "white": [255, 255, 255], "rect": [100, 100, 400, 200], "counter": "4711", "text": "24 px" },
+    "measured": { "red": [255, 0, 0], "green": [0, 255, 0], "blue": [0, 0, 255], "grey": [128, 128, 128], "white": [255, 255, 255], "rulerBlack": [0, 0, 0], "rulerWhite": [255, 255, 255], "rectTL(101,100)": [255, 0, 0], "rectBR(499,299)": [255, 0, 0], "outside(500,300)": [255, 255, 255], "counterVisible": "4711", "text24px": "lesbar" },
+    "verdict": "Kanal zuverlässig: Farben exakt, Rechteck an der erwarteten Stelle, Text und Zähler korrekt"
+  },
+  "gate2_verbund_4_inseln_1600x1000": {
+    "old_nature(default)": { "fps_headless_vsync": 60, "drawCallsPerFrame": 158, "trianglesPerFrame": 483448, "mainPass": { "calls": 77, "tris": 259598 }, "shadowPass": { "calls": 81, "tris": 223850 }, "nature": { "mainCalls": 25, "shadowCalls": 25, "mainTris": 144640 }, "consoleErrors": ["GET /favicon.ico 404"], "warnings": ["THREE.Clock deprecated"] },
+    "kit_environment(?env=kit)": { "fps_headless_vsync": 60, "drawCallsPerFrame": 120, "trianglesPerFrame": 260769, "mainPass": { "calls": 60, "tris": 165566 }, "shadowPass": { "calls": 60, "tris": 95203 }, "nature": { "mainCalls": 8, "shadowCalls": 4, "mainTris": 50608 }, "consoleErrors": ["GET /favicon.ico 404"], "envCheck": { "pyramide": { "instances": 39, "floating": 0, "sinkOutside5to15": 0, "landmarkHighest": true, "freeShare": 0.9 }, "canyon": { "instances": 38, "floating": 0, "landmarkHighest": true, "freeShare": 0.89 }, "bucht": { "instances": 41, "floating": 0, "landmarkHighest": true, "freeShare": 0.83 }, "otown": { "instances": 40, "floating": 0, "landmarkHighest": true, "freeShare": 0.87 } } }
+  },
+  "gate1_solo_1600x1000": {
+    "canyon": { "drawCalls": 26, "tris": 90006 },
+    "bucht": { "drawCalls": 24, "tris": 98780 },
+    "otown": { "drawCalls": 41, "tris": 128858 },
+    "pyramide": { "drawCalls": 66, "tris": 139884 },
+    "note": "solo blendet die anderen Inseln nur aus (visible=false); Wolken aus. Jede Insel allein bleibt in Dutzenden Calls."
+  },
+  "rkit_hub(?hub=1&env=kit)": { "drawCalls": 122, "tris": 265691, "islands": 5, "T1": { "terrainTriangles": 17027, "aboveRoadKerbWalk": 0, "maxAbove": 0 }, "T2": { "seamPoints": 244, "notInMesh": 0, "seamSegments": 242, "notMeshEdges": 0, "heightErrorMax": 0 } },
+  "mobile": {
+    "shoot_390x844_dsf1_kit": { "drawCalls": 103, "tris": 209659, "canvasPx": [390, 844] },
+    "browserpane_375x812_dpr2_kit": { "canvasPx": [750, 1624], "pixelRatio": 2, "drawCalls": 103, "tris": 209659, "frameMs_on_M4": { "median": 16.7, "p95": 18.7 }, "shadowMapSize": 4096, "textures": 47, "programs": 15, "panelRect": [12, 12, 298, 752], "panelCoversViewportShare": 0.74, "maxTouchPoints": 5 },
+    "note": "Es gibt kein Telefon im Prüfstand; Frame-Zeiten stammen vom M4 und sagen nichts über ein Telefon. Belastbar sind Calls, Dreiecke, Schattenkarte 4096² und die 74 % Panel-Abdeckung."
+  },
+  "determinism": {
+    "method": "zwei getrennte Headless-Läufe mit ?reset=1, gleiche Presets, Pixel-Diff (Chrome Canvas), dazu __kfb.sizes() und __kfb.measure()",
+    "overview": { "diffPx": 0 },
+    "canyon": { "diffPx": 0 },
+    "pyramide-ref": { "diffPx": 789, "bigDiffPx": 162, "maxDelta": 196, "where": "nur die beiden Mumien (Animationsphase)", "evidence": "shots/D_diff_A1_A2__pyramide-ref.png" },
+    "sizes": { "identical": "alle Gebäude", "differs": { "r-mummyA": [[1.84, 3.25, 1.78], [1.83, 3.25, 1.78]], "r-mummyB": [[1.88, 3.62, 1.78], [1.86, 3.61, 1.77]] } },
+    "measure_canyon": { "W": 70.26, "tris": 5330, "tips": 56, "meanEdge": 0.023 },
+    "source": "src/residents/resident.ts:74 act.time = Math.random() * clip.duration; src/residents/pet-eye-rig.v6.js Blinzeln und Blick mit Math.random"
+  },
+  "ground_contact_world_units": {
+    "method": "Browser, ?reset=1&env=kit: Mesh-Bounding-Box-Minimum je Gebäude gegen groundAtWorld unter der Mitte und unter 4 Punkten ±1,5 Einheiten",
+    "buildings": [
+      { "id": "b-pyr", "gapCentre": 0.07, "gapLowestNearby": 0.07 },
+      { "id": "b-sarc", "gapCentre": 0.07, "gapLowestNearby": 0.07 },
+      { "id": "b-pot1", "gapCentre": 0.07, "gapLowestNearby": 0.271 },
+      { "id": "b-pot2", "gapCentre": 0.07, "gapLowestNearby": 0.233 },
+      { "id": "b-car1 (Cicada)", "gapCentre": 0.07, "gapLowestNearby": 0.31 },
+      { "id": "b-canyon (Wassermühle)", "gapCentre": 0.07, "gapLowestNearby": 0.07 },
+      { "id": "b-bucht (Taverne)", "gapCentre": 0.07, "gapLowestNearby": 0.07 },
+      { "id": "b-otown (Stadthaus E)", "gapCentre": 0.07, "gapLowestNearby": 0.07 },
+      { "id": "b-car2 (Cruiser)", "gapCentre": 0.07, "gapLowestNearby": 0.31 },
+      { "id": "b-car3 (Carrier)", "gapCentre": 0.07, "gapLowestNearby": 0.07 }
+    ],
+    "residents": [ { "id": "r-mummyA (sitzt)", "gap": 0.781, "note": "Sitzplatz, erwartet" }, { "id": "r-mummyB", "gap": 0 } ],
+    "finding": "Jedes Gebäude steht konstruktiv 0,07 Einheiten über seinem Pad (src/island/island.ts placeBuilding: max(height, base + 0.07)). Autos mit pad 3 bei 6 Einheiten Länge hängen auf Gefälle bis 0,31 Einheiten in der Luft (Bild G_nah_kit__orbit_-12_3.5_142_1.5_0.1_10.png)."
+  },
+  "panel_shift": { "cameraBefore": [10, 110, 200], "cameraAfter": [10, 110, 200], "canvasBefore": [1344, 1324], "canvasAfter": [1344, 1324], "verdict": "Panel ein/aus verschiebt die Bühne nicht" },
+  "first_material_change": { "method": "Browser, Palette canyon → bucht per isl.build(true), rAF-Lücken", "buildMs": 95, "worstFrameMsDuring": 83.5, "baselineWorstMs": 18.7, "framesOver100ms": 0, "secondChangeBuildMs": 81, "programsAfter": 11, "verdict": "ein Ruckler von 83 ms beim ersten Palettenwechsel (Geometrie-Neubau, nicht Shader), kein Shader-Aufwärmen vorhanden" },
+  "missing_textures_masked_by_spa_fallback": {
+    "requests": ["/assets/cars/Cicada/CICADA_3072.psd", "/assets/cars/Cruiser/CRUISER_LOW_3072.psd", "/assets/cars/Carrier/CARRIER_3072.psd"],
+    "server_answer": "200 text/html 1976 B (index.html) für jede fehlende Datei, auch /assets/nix/gibtsnicht.png",
+    "finding": "Der Vite-Dev-Server beantwortet fehlende Assets mit 200 und der SPA-Seite. Fehlende Texturen erzeugen keinen 404 und keinen Konsolenfehler. Der Boden „Konsolenfehler null“ ist unter diesem Server kein Nachweis für vollständige Assets."
+  }
+}
