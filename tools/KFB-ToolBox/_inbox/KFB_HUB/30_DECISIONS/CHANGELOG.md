@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Wendeschleife fertig
+- Track Core 0.16.2: einarmiger Kreisel (Wendeweg-Radius 11–12,3), turntable-Anker, Prüfgrenze Welt 1,705 für Kreisel und Kreuzung (V-143), 17/17, Gleichstand bitgleich. Befund: Kreisel-Arme erben die Familie nicht → Skin-Schnittstelle (V-145).
+
 ## 2026-10-11 · Skins für Strecken-Module
 - V-145 Kreisel/Wendeschleife und Anschluss-Module in zwei Skins (Renn-Look RACE + Stadtstraße TOWN), eine Logik; später Eisenbahn/Rollercoaster.
 
