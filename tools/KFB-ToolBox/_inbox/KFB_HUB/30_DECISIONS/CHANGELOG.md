@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · C4b fertig
+- Organ-Welt auf Track Core 0.16.8 (LAB PATCH 15, Rollback ?core=012), Teil 0 bitgleich, Fahrt rundengleich, Fuß 60 fps PASS, parity PASS. Treppen v2 ohne Hüpfer (Füße kurz unter Trittkante → Kritiker). Alte Vendor-Kopien archivieren statt löschen.
+
 ## 2026-10-11 · Track Core 0.16.8
 - trailStairs nach V-160 (0,30/1,3 bzw. 0,22/0,889 aus minTreadByRiser, Masonry A nur Look, 0,45 nie), 27/27, bitgleich. Folge fürs Layout: Treppen flach und lang, steile Wege brauchen Serpentinen.
 

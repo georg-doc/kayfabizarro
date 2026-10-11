@@ -106,3 +106,18 @@ Alle Ergebnisse tragen `gaitSource: 'measured'`, alle trail-Checks bestehen.
 **Tests:** test-trail 27/27, alle Suiten unverändert, Teil 0 bitgleich.
 
 **Neue Fußtest-Anker:** `Lab/docs/handoff/rkit_trail_stairs_foottest_v2.json` (Standard- und Alternativ-Treppe).
+
+## Nachtest 0.16.8 (MVP, 11.10., 60 fps)
+
+Ergebnisse: `Lab/docs/critic/lab-track/2026-10-11_V157-stairs/stairs_v2_route0.json`, `stairs_v2_route1.json`.
+
+| Treppe | Joggen / Sprint | Gehen |
+|---|---|---|
+| Standard (14 × 0,286 / 1,40, Podest) | oben, 0 Hüpfer, kein Hängenbleiben | alle Stufen und Podest ohne Hüpfer, kein Hängenbleiben (40-s-Fenster lief vor dem Ziel ab) |
+| Alternative (19 × 0,211 / 0,926, Podest) | dasselbe | dasselbe |
+
+**Am Bild zu bewerten (Kritiker):** Beim Hochsteigen liegen die Füße 14–19 Bilder lang kurz unter der Trittkante. Das ist die Stufen-Glättung des Walkers und gilt für alle Treppen gleich.
+
+**Ergebnis:** V-160 ist bestätigt. `minTread` in `gait_v157.json` bleibt, wie eingetragen.
+
+**Lab-Vendor:** nur noch `vendor/private/track-core-0.16.8/` (aktiv). 0.16.1, 0.16.2, 0.16.3 und 0.16.7 sind entfernt und bei RKIT privat archiviert; im Lab verwies nichts mehr darauf.

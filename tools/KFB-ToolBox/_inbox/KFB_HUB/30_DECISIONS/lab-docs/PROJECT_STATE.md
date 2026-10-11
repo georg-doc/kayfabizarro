@@ -2,6 +2,10 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · C4b Track Core 0.16.8 in der Organ-Welt:** `docs/critic/lab-track/2026-10-11_C4b/` — LAB PATCH 15 Alias (`?core=012` Rollback), Teil 0 bitgleich (21 124 Proben Δ 0, Rezept gleich), Fahrtest rundengleich, Fußtest + Parity bei 60 fps PASS.
+
+**Lieferung 11.10. · V-157/V-160 Treppen-Fußtest:** `docs/critic/lab-track/2026-10-11_V157-stairs/` — Auto-Hüpfer des Walkers begrenzt Treppen; minTread gemessen (0,30 → 1,3 · 0,22 → 0,889), RKIT v2-Anker (0.16.8) ohne Hüpfer.
+
 **Lieferung 11.10. · V-130 Bank B (V-156) Tunnel im echten Inselkörper:** `docs/critic/lab-track/2026-10-11_V130-bankB/` (REPORT, BANK_B_BLATT mit CR3/IB2/IB3) — `?host=berg[&size=M|L]`, ein Feld/levelSet: Erdmasse + Scholle-Profil + Loben, Fels verschmolzen, Moos, Schnee, Voreinschnitt mit Felsstirn; M stone_arch/mine + L geschlossen (0/0, 1 Komp.); M-Proportion als Abstand benannt.
 
 **Lieferung 11.10. · V-138 TUNE (Gehweg-Ende organisch, Tropfen plastisch):** `docs/critic/lab-track/2026-10-11_V138-tune/` (REPORT, V138_TUNE_BLATT) — Knet-Zungen + lose Kantensteine am Ende, gewölbte Kleckse; Nebenbefund Bord-Fuge (falsches Fußtest-PASS unter Last) per LAB PATCH G2 geschlossen; Fußtest + Parity bei 60 fps PASS.
