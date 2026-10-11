@@ -160,6 +160,8 @@ d('V-179','2026-10-11','Animation','RULE','Antworten Motion-Leitfaden R1: (1) Ku
 d('V-180','2026-10-11','Animation','RULE','Stürze und Wipeouts (heavy_fall, impact_crash u. ä.) dürfen kurz stärker stauchen als die 8-%-Grenze aus V-179, volumenerhaltend und mit Erholung zurück auf 1,0. Obergrenze schlägt der Motion-Leitfaden vor (Recherche-Matrix Sy 0,75), Georg urteilt am Demo.', 'Lab + Motion', 'Sturz-Demo', 'Georg 11.10.')
 d('V-181','2026-10-11','Gameplay','RULE','Kulturmechaniken (Georgs Definition): Geschenke (gifts), Tanz (dance), Debatte (debate), Rauferei (brawl), Brick-Fish, Kayfabe/Kayfabulieren, Fluff ernten/formen/zerstören usw., Lesen. Sie sind die Anlässe für emotionales Acting und NPC-Choreografien (V-177). Details je Mechanik kommen von Georg bzw. aus bestehenden Konzepten, nicht erfunden.', 'Steuerung + Motion', 'MOTION_GUIDE_R1 §3f', 'Georg 11.10.')
 d('V-182','2026-10-12','Strecke','TBD','Idee Georg: Race-Track mit KayKit-Dungeon-Pack/-Generator. Draufsicht wie WhackMan, für die Strecke breiter; als Tunnel mit 2–n Stockwerken (Parkhaus-Logik) mit Dungeon-Decke, -Boden und -Wänden; Props wie Fackeln, Schatztruhen, Gitterfenster; als Fantasy/Sci-Fi-RPG-Geisterbahn bzw. Themenpark. Erst Machbarkeit messen, POC später als eigene Sitzung.', 'Steuerung', 'Machbarkeits-Notiz', 'Georg 12.10.')
+d('V-183','2026-10-12','Strecke','PASS','Banden-Enden C4c v2 PASS (geschlossene Knet-Köpfe, Strang je Seite); großes konzeptionelles TUNE später, jetzt kein weiteres Feilen. Dazu ja zu: Auto in die Haltebucht (lat ≈ 8,2) + Randlinie dort unterbrechen; Zebra auf 4-m-Spur mit 3 schmaleren Balken; Spalt zwischen parallelen Strängen bis zur Nase füllen. C4c wird Standardansicht nach den üblichen Prüfungen.', 'Lab', 'C4c Standard + Parity', 'Georg 12.10.')
+d('V-184','2026-10-12','Prozess','RULE','Lizenz und öffentlich/privat sind geklärt (V-071, Asset-Merge-Ausnahme, Mixamo V-179). Schluss mit Wiederholungen: keine Lizenz- bzw. Public-Disclaimer mehr in Briefs, Berichten und Antworten (auch kein „nur Text und Zahlen“, „kein Merge“ als Floskel). Gemeldet wird nur ein NEUER, ungeklärter Fall, in einer Zeile.', 'alle Sitzungen + WSA + Blender', '-', 'Georg 12.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -308,6 +310,8 @@ WHY = {
  'V-180':('Squash proportional zur Aktion (Motion Matrix); Stürze brauchen sichtbaren Aufprall.','ab jetzt'),
  'V-181':('Begriff aus dem Motion-Auftrag geklärt; Grundlage für Acting-Anlässe.','ab jetzt'),
  'V-182':('Nutzt vorhandenen Baukasten für Tunnel, Minen und Themenstrecken.','nach V-171 Punkt 1–3'),
+ 'V-183':('Banden waren der größte sichtbare Fehler; gut genug für jetzt, Konzept später.','ab jetzt'),
+ 'V-184':('Georg: der ewige Lizenz- und Public-Check kostet Zeit und Nerven; alles ist längst geklärt.','ab jetzt'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:
