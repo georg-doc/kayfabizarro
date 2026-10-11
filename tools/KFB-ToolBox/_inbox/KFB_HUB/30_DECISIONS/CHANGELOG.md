@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Fahrzeuge
+- V-126 nur registrierte Retro- und KayKit-Autos (geschlossen), kein Cabrio, auch nicht das J17-Cabrio im Lab.
+
 ## 2026-10-11 · Strecke + Module mit zwei Kritikern
 - V-125 Georg: Rennstrecke und alle Module sauber bauen und mit korrekter Physik befahrbar (automatische Fahrtest-Runde), je Lieferung Kritiker 3D/Baukasten-Logik + Design-Kritiker; max. 2 Reparaturrunden.
 
