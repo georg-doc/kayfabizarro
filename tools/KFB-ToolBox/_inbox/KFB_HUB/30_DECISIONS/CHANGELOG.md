@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Offene Katalog-Fragen beantwortet
+- V-154 „alle Vorschläge ok“ (Antworten R2); offen nur Steinviadukt auf Inseln + Cosmic-Look. RKIT: #4 B (q.edge) und DIRT freigegeben.
+
 ## 2026-10-11 · Skin-Schnittstelle 0.16.3 komplett
 - Schritt 5: Modul-Skins (EXIT/ENTRY/PIT/WEICHE), Kanten-Enden mit Kappenform nach tatsächlicher Kante, Familien-Übergänge mit Skin-Paar; 83/83, bitgleich. 0.16.3 als privater Vendor für C4b/C4c angeboten. RKIT pausiert bis Georgs Antworten.
 
