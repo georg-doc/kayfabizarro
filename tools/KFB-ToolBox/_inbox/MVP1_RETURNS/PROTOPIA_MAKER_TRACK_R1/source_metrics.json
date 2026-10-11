@@ -1,0 +1,582 @@
+[
+  {
+    "id": "Workbench",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench.gltf",
+    "sha256": "27be850a54713c0ccff76ed0d777a4ec8974661f4f55aee02e8c9c321b442d03",
+    "blobSha": "74f307a711d2326f1e09cb7d373d37c6422476aa",
+    "dependencies": [
+      {
+        "uri": "Workbench.bin",
+        "sha256": "4d81fc93a27f3f6b94b1760888b28e4824de60a3577f618dc6d40ebbebbd0574"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.5,
+        -0.75,
+        -7.450580596923828e-09
+      ],
+      [
+        1.5,
+        0.75,
+        2.5999999046325684
+      ]
+    ],
+    "triangles": 256,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Pallet_Large",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Pallet_Large.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Pallet_Large.gltf",
+    "sha256": "dac65d2406b4d695f5df994953f69d7adbc278dbe594e2e5a9fb1fe737444e93",
+    "blobSha": "efb22488906647a795d86270de57bd8c94f9a238",
+    "dependencies": [
+      {
+        "uri": "Pallet_Large.bin",
+        "sha256": "13e8ed324cf009d0986a5be0c16de7a775f0c8b5ccfae026162a34b708165506"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -2.0,
+        -2.0,
+        -2.9802322387695312e-08
+      ],
+      [
+        2.0,
+        2.0,
+        0.4999999403953552
+      ]
+    ],
+    "triangles": 132,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Primitive_Floor",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Floor.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Floor.gltf",
+    "sha256": "8ac6a1729fa2f1e3f67b26e3a8a354e3b5550c9adb50a9aeadab12c2c1a71f37",
+    "blobSha": "8e92ff1dea6badf0fe94df83de765d87cba70ad9",
+    "dependencies": [
+      {
+        "uri": "Primitive_Floor.bin",
+        "sha256": "ff5e513d1c42418298e4dd97b2722f5a288f54dd343297d9708902fcd84c2f92"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -2.0,
+        -2.0,
+        1.4901161193847656e-07
+      ],
+      [
+        2.0,
+        2.0,
+        1.0
+      ]
+    ],
+    "triangles": 12,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Primitive_Stairs",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Stairs.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Stairs.gltf",
+    "sha256": "00e2fbcf6fa00482601a42cf33c5d321a12259a5ff8c6ad32ca8ea5c1c11749d",
+    "blobSha": "cbec7dbb92f0f478d841c69de04511781499262a",
+    "dependencies": [
+      {
+        "uri": "Primitive_Stairs.bin",
+        "sha256": "d91608e22f14e9b4d54fe4dcce4c180828cec2d7a475a12a585f61bd643a1de3"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -2.0,
+        -2.0,
+        1.4901161193847656e-07
+      ],
+      [
+        2.0,
+        2.0,
+        4.000000476837158
+      ]
+    ],
+    "triangles": 68,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Primitive_Pillar",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Pillar.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Pillar.gltf",
+    "sha256": "0c278dc30008c2dc58df01a32f42d520ec6ab03824edb9fd45d827514c244640",
+    "blobSha": "75e3eb847c9dd6653d7c8cc89aa50481619b38a7",
+    "dependencies": [
+      {
+        "uri": "Primitive_Pillar.bin",
+        "sha256": "fb5904c609d17e3fb05431bba373093205f4e5a6b90545f1651de95f82cc0ba2"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.5,
+        -0.5000000596046448,
+        1.4901161193847656e-07
+      ],
+      [
+        0.5,
+        0.5000000596046448,
+        4.000000476837158
+      ]
+    ],
+    "triangles": 12,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Primitive_Beam",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Beam.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Beam.gltf",
+    "sha256": "04b8a2e819d2780304ef4a53d746dcdab88a3225d7c11fb5941579aef0282d84",
+    "blobSha": "7ad036ed6a26a8745047e4db94d9102c8e3e3b14",
+    "dependencies": [
+      {
+        "uri": "Primitive_Beam.bin",
+        "sha256": "1365025a37ac8a77b856266514ded5263133fb6114bea90e06ab0332dcc2db72"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -2.0,
+        -0.5000000596046448,
+        1.4901161193847656e-07
+      ],
+      [
+        2.0,
+        0.5000000596046448,
+        1.0
+      ]
+    ],
+    "triangles": 12,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "wood",
+    "repoPath": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+    "local": "donors/assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+    "sha256": "63ad9bdf917b243aac6ff5b39a3bca160a1abee731bedec9217fb3fa72b248b9",
+    "blobSha": "1cfe138c5891ef06489fe1fa6784af843f7a193d",
+    "dependencies": [
+      {
+        "uri": "wood.bin",
+        "sha256": "f7135170ffe0a14a7b566ef5d1d10a6a0c83906783c5bdb579cbb4f724d2a13e"
+      },
+      {
+        "uri": "block_bits_texture.png",
+        "sha256": "a5fba2cb82f62d41f764f33d98482fec9e35756a2dbd07fd5e5806b59710d6c7"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.0000001192092896,
+        -0.9999998807907104,
+        -1.0
+      ],
+      [
+        0.9999997615814209,
+        1.0000001192092896,
+        1.0000001192092896
+      ]
+    ],
+    "triangles": 1168,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "metal",
+    "repoPath": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+    "local": "donors/assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+    "sha256": "d3a00cc6cc3a23f1a930fee433e74fee2515ce37d1748a9ef3f856f3ec1dd1e0",
+    "blobSha": "88d645fa2c1f3e44818fbf7c5c3d8dda39779d14",
+    "dependencies": [
+      {
+        "uri": "metal.bin",
+        "sha256": "f4bf932e66b01a0314a5dbff36f547a884b3e528fe330906daf10e78dab45732"
+      },
+      {
+        "uri": "block_bits_texture.png",
+        "sha256": "a5fba2cb82f62d41f764f33d98482fec9e35756a2dbd07fd5e5806b59710d6c7"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "triangles": 672,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "colored_block_blue",
+    "repoPath": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+    "local": "donors/assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+    "sha256": "2cf25a32c4c7375f9b43a5e3570a0a58eb4a8cc86c80b124cf24bd04032ad0f3",
+    "blobSha": "7a216802cfb07a9e1090fcd1a2937d38145d01da",
+    "dependencies": [
+      {
+        "uri": "colored_block_blue.bin",
+        "sha256": "df17c662d4bfaff95c009874507101e376be30cc6f53be46378e7a3c7b73acb0"
+      },
+      {
+        "uri": "block_bits_texture.png",
+        "sha256": "a5fba2cb82f62d41f764f33d98482fec9e35756a2dbd07fd5e5806b59710d6c7"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "triangles": 108,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "colored_block_yellow",
+    "repoPath": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+    "local": "donors/assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+    "sha256": "9f94ff9991e4d15d1af6c6078cf8fd4e1813b3266c74e565a501f7afdb8a7611",
+    "blobSha": "cb512cc579856650c375e6f643deeb566f1582f3",
+    "dependencies": [
+      {
+        "uri": "colored_block_yellow.bin",
+        "sha256": "9208f5ae911f3cbc71c0ba10b6333e00fae5ff9f09a68d9e77dbc2287fca2449"
+      },
+      {
+        "uri": "block_bits_texture.png",
+        "sha256": "a5fba2cb82f62d41f764f33d98482fec9e35756a2dbd07fd5e5806b59710d6c7"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "triangles": 108,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "building_home_A_red",
+    "repoPath": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.gltf",
+    "local": "donors/assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_home_A_red.gltf",
+    "sha256": "158bcb4149f4d6db461774d7bd67d264262f30145762eddd0a8def8be292286c",
+    "blobSha": "853afb548b9d9271d8d96408fc15e99042411585",
+    "dependencies": [
+      {
+        "uri": "building_home_A_red.bin",
+        "sha256": "5d527ca5908c1bbbe80ffbd9443135e9387654bf2187a94796d018d00c6c5726"
+      },
+      {
+        "uri": "hexagons_medieval.png",
+        "sha256": "5301a06866ba3be68dcc14cc429bd6d0f69004b72884283715d7e233f2e9782e"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.39597994089126587,
+        -0.385000079870224,
+        -2.086162709247219e-08
+      ],
+      [
+        0.3959798812866211,
+        0.46865156292915344,
+        0.9300001263618469
+      ]
+    ],
+    "triangles": 1011,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "building_windmill_red",
+    "repoPath": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_windmill_red.gltf",
+    "local": "donors/assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_windmill_red.gltf",
+    "sha256": "0a32ab29ec4a424e0a272e4116d0d5c471336c6a32470fa5599928eb67944983",
+    "blobSha": "51e478234194509d21ef066a2a52245410b354da",
+    "dependencies": [
+      {
+        "uri": "building_windmill_red.bin",
+        "sha256": "2fa075b2a19a5c8811db95cb8e36402fda881e894de280bc424f33a1562f6dd5"
+      },
+      {
+        "uri": "hexagons_medieval.png",
+        "sha256": "5301a06866ba3be68dcc14cc429bd6d0f69004b72884283715d7e233f2e9782e"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.5578987002372742,
+        -0.43758144974708557,
+        -1.4480118807114195e-05
+      ],
+      [
+        0.5678712129592896,
+        0.37893959879875183,
+        1.457864761352539
+      ]
+    ],
+    "triangles": 2653,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "tree_single_A",
+    "repoPath": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/tree_single_A.gltf",
+    "local": "donors/assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/tree_single_A.gltf",
+    "sha256": "ac913af6eaed6f15d26a2b75a877aa8dd10de90f26298f3f953abad86a4b4606",
+    "blobSha": "0c230093dab0c16d5dd65974917fd95bd119eb04",
+    "dependencies": [
+      {
+        "uri": "tree_single_A.bin",
+        "sha256": "437deac68f35338bb309b01e4d346dd4be37557d7a2f033d04765f63e1b88825"
+      },
+      {
+        "uri": "hexagons_medieval.png",
+        "sha256": "5301a06866ba3be68dcc14cc429bd6d0f69004b72884283715d7e233f2e9782e"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.28753381967544556,
+        -0.2452930510044098,
+        -0.10260728746652603
+      ],
+      [
+        0.28644031286239624,
+        0.30171626806259155,
+        1.0938414335250854
+      ]
+    ],
+    "triangles": 50,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "Workbench_Decorated",
+    "repoPath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench_Decorated.gltf",
+    "local": "donors/assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench_Decorated.gltf",
+    "sha256": "c881d113221b487701c72d069307edb74b0cbe7a14e4685f972a58fab755b919",
+    "blobSha": "cc491dbb91be1c69d038319f727edaab698c10cc",
+    "dependencies": [
+      {
+        "uri": "Workbench_Decorated.bin",
+        "sha256": "8ee38ad206b7d19e3bd29fee36c33faf448dc83e1f254299608ae4c45e6a174d"
+      },
+      {
+        "uri": "prototypebits_texture.png",
+        "sha256": "dec912e8cc8f8d09c29be48dda0daad90e653939c4e6fc799309ec1ae7a4cbcd"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.5,
+        -0.75,
+        -7.450580596923828e-09
+      ],
+      [
+        1.5,
+        0.75,
+        2.5999999046325684
+      ]
+    ],
+    "triangles": 3996,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "anvil",
+    "repoPath": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+    "local": "donors/assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+    "sha256": "6878db53dfdceac3970dd881808f02f38ea06c59cb3dbfe9ae3a463123d7499a",
+    "blobSha": "c7b012f1bf67d0d89539b5d5002b589275615d1a",
+    "dependencies": [
+      {
+        "uri": "anvil.bin",
+        "sha256": "4dabc949ce4c0876731693c2e70e7020da9d48592c7a469803ba2aaa23ff88d2"
+      },
+      {
+        "uri": "tools_bits_texture.png",
+        "sha256": "e0663527c0c0a8e9f4dba0bb15261c367de31981cb3e3ec80f84bf6a5e47fc60"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.9047044515609741,
+        -0.375,
+        0.0
+      ],
+      [
+        0.7124999761581421,
+        0.375,
+        0.800000011920929
+      ]
+    ],
+    "triangles": 316,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "saw",
+    "repoPath": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+    "local": "donors/assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+    "sha256": "3ab6f3a679f4f9f79841f02ba8d65364c45c43c26ce91ba2c041ccbd55b54720",
+    "blobSha": "446a6a3c90ac15456f7ad2b181497518ce03a9d6",
+    "dependencies": [
+      {
+        "uri": "saw.bin",
+        "sha256": "970ae1ab92be6d167429cc00be1f95087f143f789b478362d6df266d5a3eed39"
+      },
+      {
+        "uri": "tools_bits_texture.png",
+        "sha256": "e0663527c0c0a8e9f4dba0bb15261c367de31981cb3e3ec80f84bf6a5e47fc60"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -1.222371220588684,
+        -0.07738907635211945,
+        -0.2855393886566162
+      ],
+      [
+        0.1260288506746292,
+        0.051639948040246964,
+        0.2855420410633087
+      ]
+    ],
+    "triangles": 512,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "hammer",
+    "repoPath": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+    "local": "donors/assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+    "sha256": "c5d203d2c0e00e1d69b033943c01e7bc9c2a0f6a2fbbb4de1d240ca1e23fe225",
+    "blobSha": "49479694d07d925e2a0dcf44395cce54aa7b348e",
+    "dependencies": [
+      {
+        "uri": "hammer.bin",
+        "sha256": "74133dc5be0278e6310db3427b60325540d2214fb7faa9ac339ac284bb709cd2"
+      },
+      {
+        "uri": "tools_bits_texture.png",
+        "sha256": "e0663527c0c0a8e9f4dba0bb15261c367de31981cb3e3ec80f84bf6a5e47fc60"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.27169811725616455,
+        -0.16306547820568085,
+        -0.22490279376506805
+      ],
+      [
+        0.2717466354370117,
+        0.1630672961473465,
+        0.5984509587287903
+      ]
+    ],
+    "triangles": 396,
+    "original_materials": true,
+    "geometry_unchanged": true
+  },
+  {
+    "id": "blueprint",
+    "repoPath": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+    "local": "donors/assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+    "sha256": "17f90e0cef18d079bb73b2d702253eed95c8390aacf882e40ae1049c55bbfed0",
+    "blobSha": "c2ed249e80986d0f5f6155743e07a3c6d0f88775",
+    "dependencies": [
+      {
+        "uri": "blueprint.bin",
+        "sha256": "415c7a36844a71c2cb1324d8af9f702c9b383d578f368f173f9761f8e39bfe5b"
+      },
+      {
+        "uri": "tools_bits_texture.png",
+        "sha256": "e0663527c0c0a8e9f4dba0bb15261c367de31981cb3e3ec80f84bf6a5e47fc60"
+      },
+      {
+        "uri": "tools_bits_blueprint.png",
+        "sha256": "577c357193d38c2c10fe8c31e545b86ec0e3f9a5eab4bf2632791d4207d2a98e"
+      }
+    ],
+    "native_blender_bbox": [
+      [
+        -0.7447472214698792,
+        -0.7303577065467834,
+        0.0
+      ],
+      [
+        0.741167426109314,
+        0.7291968464851379,
+        0.18031826615333557
+      ]
+    ],
+    "triangles": 128,
+    "original_materials": true,
+    "geometry_unchanged": true
+  }
+]

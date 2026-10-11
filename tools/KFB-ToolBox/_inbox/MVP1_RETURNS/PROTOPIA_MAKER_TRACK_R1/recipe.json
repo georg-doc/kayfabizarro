@@ -1,0 +1,52 @@
+{
+  "schema": "kfb.route-recipe/0.1-draft",
+  "id": "PROTOPIA_MAKER_FLOATING_LINK_R1",
+  "ds": 0.5,
+  "closed": false,
+  "start": {
+    "p": [
+      210,
+      0,
+      -20
+    ],
+    "headingDeg": 90
+  },
+  "defaults": {
+    "width": "STANDARD",
+    "markings": "TRACK",
+    "skin": "track"
+  },
+  "pieces": [
+    {
+      "id": "maker_dock",
+      "type": "STRAIGHT",
+      "length": 42
+    },
+    {
+      "id": "maker_exit",
+      "type": "CURVE_EASE",
+      "turn": 20,
+      "radius": 100,
+      "ease": 18,
+      "bankDeg": 0
+    },
+    {
+      "id": "floating_span",
+      "type": "STRAIGHT",
+      "length": 180
+    },
+    {
+      "id": "farm_entry",
+      "type": "CURVE_EASE",
+      "turn": -20,
+      "radius": 100,
+      "ease": 18,
+      "bankDeg": 0
+    },
+    {
+      "id": "farm_dock",
+      "type": "STRAIGHT",
+      "length": 42
+    }
+  ]
+}
