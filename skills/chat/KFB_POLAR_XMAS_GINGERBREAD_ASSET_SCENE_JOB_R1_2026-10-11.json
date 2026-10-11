@@ -1,0 +1,96 @@
+{
+  "schema": "kfb.asset-scene-image-job/1",
+  "jobId": "kfb-polar-xmas-gingerbread-dj-r1-2026-10-11",
+  "mode": "asset_plate",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "ref": "main",
+    "assetIds": [
+      "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/gingerbread_man.gltf"
+    ],
+    "sourcePaths": [
+      "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/gingerbread_man.gltf"
+    ],
+    "blobShas": [
+      "be068754fb59b0199e39773806967e749ba11c63"
+    ],
+    "sourceAssetBlobSha": "be068754fb59b0199e39773806967e749ba11c63",
+    "dependentFiles": [
+      "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/gingerbread_man.bin",
+      "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/holiday_bits_texture.png"
+    ],
+    "sourceModelTriCount": 968,
+    "nativeBbox": {
+      "min": [
+        -0.278853327,
+        -1.17e-8,
+        -0.397787213
+      ],
+      "max": [
+        0.278853327,
+        0.112954721,
+        0.336969435
+      ],
+      "space": "gltf accessor local before node transform",
+      "axisOrientation": "UNKNOWN—Y dimension is shallow, audit authored normals/forward/up and scene transforms before mounting"
+    },
+    "sourceRenderViews": [],
+    "sourceProof": "GLTF_TEXT_METADATA_VERIFIED_ONLY_BINARY_TEXTURE_VISUAL_NOT_TESTED",
+    "sourcePixelsAvailableToGenerator": false,
+    "licenseStatus": "PACK_LICENSE_RECHECK_AT_IMPORT",
+    "K2KitFactor": null,
+    "mediumRigScaleFactor": null,
+    "geometryLock": "strict"
+  },
+  "context": {
+    "scenePurpose": "Source-original Gingerbread Man proposed as medium-rig-sized subversive party DJ/clown on polar Xmas island; retain source mesh and atlas, validate actual 3D orientation/rig feasibility and then KFB Eye Rig attachment.",
+    "selectedScenePacket": "skills/chat/KFB_POLAR_XMAS_ASSET_SCENE_COMPOSER_PRODUCTION_SHEET_R1_2026-10-11.md",
+    "environmentAssetIds": [],
+    "characterAssetIds": [
+      "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/gingerbread_man.gltf"
+    ],
+    "propAssetIds": [],
+    "camera": "isolated off-white studio: hero 3/4 front/side/top and original/native up axis; fixed orthographic camera for before-after",
+    "viewLabelsAllowed": true
+  },
+  "style": {
+    "bindingSSOT": [
+      "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+      "tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md"
+    ],
+    "benchmarkRefs": [
+      "tools/KFB-ToolBox/_inbox/KFB_OPEN_WORLD_STYLEGUIDE_2026-10-07/03_knete",
+      "K1/H0 Golden comparison before K2/v10"
+    ],
+    "paletteRoles": [
+      "authentic holiday atlas colors retained",
+      "bounded clay relief",
+      "same source parts preserved",
+      "neutral original lighting vs KFB studio clay"
+    ],
+    "materialMixAllowed": true,
+    "partsBudgetMax": 6
+  },
+  "generation": {
+    "sourcePixelsActuallySupplied": false,
+    "provider": null,
+    "providerRequestId": null,
+    "imageConditioningReceipt": null,
+    "renderPrompt": "AFTER source views are actually attached: show the exact gingerbread_man GLTF source, not a reconstructed/invented mascot. On an off-white studio sheet give hero 3/4, front, side, top, original-geometry closeups, KFB Eye Rig mount test and medium-rig size comparison using only approved originals. Preserve source silhouette/mesh and holiday atlas; material-only KFB Clay comparison. Do not add a DJ console, sunglasses, branding, other characters or props to this isolated asset plate. Keep neutral labels with original ref, native dimensions, mesh/triangle count and flags for rig/axis uncertainty.",
+    "status": "BLOCKED_SOURCE"
+  },
+  "approval": {
+    "classification": "UNREVIEWED",
+    "georgPicked": false,
+    "goldenRef": false
+  },
+  "provenance": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+    "purpose": "planning-only input to existing KFB Asset Librarian and WSA/Blender MCP/Claude Design; no new runtime owner",
+    "sourceObjectIsolation": false,
+    "actualSourcePixelProof": false,
+    "worldBuild": false,
+    "publicStage": false
+  }
+}
