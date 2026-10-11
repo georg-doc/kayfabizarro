@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Kreisel-Prüfgrenze
+- V-143 Kreisel-Wegabstand wie Kreuzung (Familien-Fahrzeugbreite) + 0,15 Marge (V-032); RACE unverändert. Einarm-Wendeschleife Ausrundung ≥ 20, turntable-Anker.
+
 ## 2026-10-11 · LEVEL_RAMP fertig
 - Track Core 0.16.2: LEVEL_RAMP 16/16 (RACE/TOWN, max 4,8 %, Halteplatte eben, Anker exakt), Teil-0-Gleichstand bitgleich, alle Suiten unverändert.
 

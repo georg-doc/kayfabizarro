@@ -1463,6 +1463,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-143",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Track-Core-Knotenprüfung vereinheitlicht: Kreisel prüfen den Wegabstand zum Bord wie Kreuzungen mit der Fahrzeugbreite der Familie plus Lab-Marge 0,15 (V-032): Weltstraßen 3,11/2 + 0,15 = 1,705; RACE bzw. Renn-Hülle bleibt 2,05. Einarmiger Kreisel (Wendeschleife) mit Ausrundung ≥ 20 (Wendeweg-Radius ≥ 8) und Szenerie-Anker turntable. Geometrie bitgleich, nur Prüfergebnis ändert sich.",
+   "values": {},
+   "owner": "RKIT",
+   "check": "test-turnaround + Kreisel M/S/L unverändert",
+   "source": "Steuerung 11.10. nach RKIT-Messung",
+   "supersedes": null,
+   "why": "Die feste Grenze 2,05 (Renn-Hülle) war für 4-m-Weltstraßen nie erfüllbar und widersprach der Kreuzungsprüfung; mit Marge bleibt echter Abstand.",
+   "applies": "ab Track Core 0.16.2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
