@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Poller endgültig, Track Core 0.16.9
+- Poller-Parität PASS. Core-Fix moduleDeck (Gore/Nase an EXIT/ENTRY auf langen Strecken falsch), 22/22 + Regressionen, Ströme identisch; Ersatz 0.16.8→0.16.9 im Lab.
+
 ## 2026-10-11 · Poller geliefert (vorläufig)
 - rkit_poller.parts.glb (0,85, lichte Weite 1,80), Q1–Q9 PASS; Lab-Parität steht aus (Spiel-Seite lädt gerade nicht, MVP baut an src). Icosphere = Blender-Import-Knochenform, keine falsche Datei.
 
