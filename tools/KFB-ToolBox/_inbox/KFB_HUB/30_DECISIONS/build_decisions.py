@@ -106,6 +106,7 @@ d('V-125','2026-10-11','Strecke','RULE','Georg (afk-Auftrag): Rennstrecke und al
 d('V-126','2026-10-11','Auto','RULE','Fahrzeuge für Strecke und Fahrtest: registrierte Retro-Autos (Standard Cicada, V-030) und KayKit-Autos, geschlossen; kein Cabrio (auch nicht das J17-Cabrio außerhalb der J17-Referenzseite). Fahrphysik k2b je Fahrzeug, Figur beim Fahren unsichtbar.', 'Lab', 'Fahrtest mit je einem Retro- und KayKit-Auto', 'Georg 11.10.: „ohne cabrio, reg. retro & kaykit cars erstmal reicht“')
 d('V-127','2026-10-11','Welten','RULE','Organ-Inseln für MVP out of scope: Sie müssen später medizinisch-cartoonig plausibel nachmodelliert werden (MED-Welten, V-111). Im MVP sind sie nur Platzhalter-Körper für Ring, Tunnel und Anschlüsse; keine weitere Arbeit an ihrer Form. Lieferbar sind Strecke und Module (V-125); der Design-Kritiker bewertet die Organ-Form nicht. Phase D tauscht das Insel-Set.', 'Steuerung', 'Kritiker-Briefing markiert Organe als Platzhalter', 'Georg 11.10.')
 d('V-128','2026-10-11','Klang','RULE','In der Strecken-Welt Joyride-VFX und -SFX 1:1 integrieren (z. B. Motor, Reifen, Bandenkontakt, Tunnel, Fahr-Effekte, soweit in J16/J17 vorhanden) plus Soundbed bzw. Radio (V-042, ein AudioContext). Ziel: Georg testet das „chill & fun cosmic roadtrip“-Gefühl. Vorlage zuerst; Leistung V-115 bleibt Schranke.', 'Lab', 'Liste Effekt → Quelle; Fahrt mit Ton; fps', 'Georg 11.10.')
+d('V-129','2026-10-11','Klang','RULE','Beim Fahren laufen Georgs Suno-Tunes (RoadTrip JukeBox v2, 15 Tracks, lokal in public/private-audio/suno-roadtrip-jukebox-v2/, privat); Cozy Tunes sind für die Inseln. Dazu Racer-SFX und Drohnen aus den Joyride- bzw. Race-Vorlagen. Stems (u. a. Cosmic Roadtrip Orchestral) später für adaptiven Mix.', 'Lab', 'Fahrt mit Suno-Radio + SFX im Mitschnitt', 'Georg 11.10.: „vor allem meine suno tunes will ich fahren hören – cozy tunes sind eher islands“; „und die racer SFX, drohnen etc“')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -200,6 +201,7 @@ WHY = {
  'V-126':('Bestätigt V-030; das J17-Original fährt ein Cabrio, das darf nicht durch die 1:1-Übernahme ins Lab rutschen.','ab C1b/C3'),
  'V-127':('Organe sind inhaltlich MED-Stoff und brauchen eigenes Nachmodellieren; Aufwand jetzt gehört in Strecke und Module.','sofort'),
  'V-128':('Das Fahrgefühl entsteht erst mit Ton und Effekten; Joyride hat beides schon gestaltet.','mit C1b/C3 bzw. direkt danach'),
+ 'V-129':('Fahren und Insel-Leben haben verschiedene Stimmungen; die Roadtrip-Tracks wurden dafür gemacht.','mit V-128'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

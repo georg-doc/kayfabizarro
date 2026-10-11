@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Suno fürs Fahren
+- V-129 Suno RoadTrip JukeBox v2 beim Fahren (lokal privat kopiert), Cozy Tunes für Inseln; Racer-SFX und Drohnen dazu.
+
 ## 2026-10-11 · Cosmic Roadtrip
 - V-128 Joyride-VFX/SFX + Soundbed bzw. Radio in der Strecken-Welt, damit Georg das „chill & fun cosmic roadtrip“-Gefühl testen kann.
 
