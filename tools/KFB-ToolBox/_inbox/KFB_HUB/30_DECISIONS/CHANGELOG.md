@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Georg zurück: Himmel, Sprünge, Strecken-Module, Blender
+- V-132 Weltraum-Himmel (KFB-Wolken, ferne Inseln, surreale Planeten, Knet-Asteroiden; später Käse-Mond, TinySkies-Sonnen). V-133 Sprung-Lücken bleiben. V-134 fehlende Strecken-Teile modular, nahtlos, konsistent (Track Core RKIT + Look Lab). V-135 Bildblätter verfälschen Inselbasis (Blender-Klötze). Mitschnitt hört Georg später.
+
 ## 2026-10-11 · C4a fertig, V-130-Vorlage freigegeben
 - C4a: B7-Haltebucht (Track Core 0.16.1, J17-Querschnitt), Gehflächen-Suche repariert, Fußtest 6/6 Kachelpunkte; alter Fußtest hatte verdrehtes Lenkvorzeichen (R2-Befund „Hex unerreichbar“ gestrichen). Böschungsrand noch gerade → organisch vor C4c. Plattform-Farbe offen bei Georg.
 - V-130-Vorlage: Profil {look, profile} mit Ring aus Core v0.12, Portal + Innen 1:1 aus tunnelParts an beiden Enden, Knet-Fuß per Feld-smin; Prüfbank ?bench=tc1 (A) + StreakByte-Insel mit Berg (B), bei Naht-Fehlern Stopp und Scholle als Plan B.
