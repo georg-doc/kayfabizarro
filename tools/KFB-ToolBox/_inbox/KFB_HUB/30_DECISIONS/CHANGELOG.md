@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Cosmic Roadtrip
+- V-128 Joyride-VFX/SFX + Soundbed bzw. Radio in der Strecken-Welt, damit Georg das „chill & fun cosmic roadtrip“-Gefühl testen kann.
+
 ## 2026-10-11 · Organe out of scope
 - V-127 Organ-Inseln für MVP out of scope (später medizinisch-cartoonig nachmodellieren); jetzt nur Platzhalter-Körper, keine Formarbeit mehr; Fokus Strecke + Module.
 
