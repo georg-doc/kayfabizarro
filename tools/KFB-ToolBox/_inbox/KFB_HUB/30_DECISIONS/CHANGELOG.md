@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · hex_b7 Fuge an der Quelle behoben
+- RKIT: Gehweg-Bett füllt Fuge Bord↔Platten (neuer sha 18a7dbc70243, Q1–Q9 PASS, alter Stand gesichert). LAB PATCH G2 bleibt optional; Lab prüft im nächsten Fußtest.
+
 ## 2026-10-11 · V-153 nach V-159 bestätigt
 - Hatchback-Fußtest bei 60 fps grün; Fußtest-Skript schreibt fps/fpsOk. Fahrtest-Runden laufen in festen Physik-Schritten (bildratenunabhängig).
 
