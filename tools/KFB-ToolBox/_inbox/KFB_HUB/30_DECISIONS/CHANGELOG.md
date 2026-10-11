@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · WSA R2 abgenommen, Licht-Studie beauftragt
+- WSA Look-Spec R2 (TD/CS/CR, skin inkl. trail) abgenommen; 17 der 19 Fragen bereits durch V-154/V-157/V-158 beantwortet (Zuordnung replies/STEERING_REPLY_WSA_R2.md). Nächster WSA-Auftrag: Szenen-Studie C Licht (J17-Tageslicht, Abend V-050, Tunnel-Innenlicht).
+
 ## 2026-10-11 · KayKit-Faktor, Gangwerte
 - V-153 umgesetzt (Hatchback 5,40 × 2,80, breitestes Auto Cicada 3,11), Fahrtest 3 Autos alle Läufe 0 Fehler, Fußtest 6/6. V-157 gemessen (jog-Schritt 2,03 → Trittsteine nach jog). game Check 4 kippt unter Last (Notiz).
 
