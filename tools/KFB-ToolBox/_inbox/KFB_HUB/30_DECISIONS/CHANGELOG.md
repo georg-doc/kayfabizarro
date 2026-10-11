@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Architektur-Audit, Spiral-Prüfung
+- Externes Audit R1 (replies/AUDIT_ARCH_R1.md): Ladezeit = Neuberechnung je Aufruf, Flackern belegt durch dynres-Sprung, Banden offen/kollabiert, dist/ mit StreakByte nicht ignoriert (jetzt ignoriert), Tests bildratenabhängig. V-171 Prioritäten an die Bau-Sitzung.
+- Track Core 0.16.10 spiral_clearance (td03 mit Stufen ≥ 20,74, ohne ≥ 23,53).
+
 ## 2026-10-11 · 3D Style Guide v0.1
 - STYLE_GUIDE_3D_R1.md (Art-Director-Synthese aus Register, Plan, Referenzen; keine neuen Entscheidungen; 12 offene Fragen §10). Auf GitHub gespiegelt.
 

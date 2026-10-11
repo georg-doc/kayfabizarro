@@ -48,3 +48,33 @@ Freie Höhe = Fahrbahn unten → Unterseite Deck oben (deckDepth). **Bedarf 4,90
   - Das ist ein Eingriff in die J17-Goldvorlage (V-102); Teil 0 ändert sich dann für diese Ströme gewollt.
   - Alternative ohne Geometrie: Die Kamera in Spiralen wird abgesenkt bzw. per `drive`-Zone geführt (Lab bzw. J17-Kamera). Das ist eine Frage an die MVP-Sitzung bzw. Georg.
 - **td05 Balkon-Kreuzung** (4,34): nur Warnung, kurzer Durchlauf.
+
+## Umsetzung 0.16.10 (Steuerung 11.10.: Prüfung freigegeben, Richtung a „Spiralen höher bauen“)
+
+**Prüfungen:**
+- `spiral_clearance` (Fehler) und `stack_camera_clearance` (Warnung) in `runChecks`.
+- Prüfung örtlich; Kamera als Parameter `TOL.chaseCam`, Standard J17 j06 (4,9).
+
+**Genaue Steigung statt Faustregel:** Die Prüfung nennt den nötigen Faktor aus den gemessenen Etagen.
+
+| td03-Spirale | Steigung neu | freie Höhe |
+|---|---|---|
+| mit Stufen (Vorlage) | ≥ **20,74** (×1,355), Probe mit 20,8 | 4,917 → PASS |
+| ohne Stufen | ≥ **23,53** | 4,917 → PASS |
+| ohne Stufen, naive Schätzung 17,7 | 17,7 | 3,44 → FAIL |
+
+Meine erste Zahl „ohne Stufen ≥ 17,7“ war zu knapp. Zwei Effekte waren nicht berücksichtigt:
+- Das obere Deck überdeckt den unteren Umlauf über die Fahrbahnbreite hinweg (Winkelversatz ≈ 9 %).
+- Die Anstiegsrampe (`riseEase`) ist an den Enden flacher.
+
+Für neue Lab-Spiralen (V-113 Parkdeck) gilt deshalb: Die Steigung kommt aus der Prüfung, nicht aus einer Formel. `stream.spirals[].minRisePerTurn` (5,9) ist nur die Untergrenze.
+
+**J17-Referenz:** bleibt original. In `test.mjs` ist die Spirale für td03, td04 und td05 als bekannter V-169-Befund geführt.
+
+**Tests:**
+- test-spiral 12/12;
+- test.mjs 357/0;
+- alle übrigen Suiten unverändert;
+- Teil 0 bitgleich, keine Geometrie geändert.
+
+**V-170 (Deckenhöhe als Daten, `q.ceiling`):** noch nicht gebaut. Das Feld ändert die Strom-Ausgabe, ist also nicht „billig“. Es steht als Notiz für später im CHANGELOG. Quelle wäre Tunnel-Ring oben bzw. Unterseite der oberen Etage.

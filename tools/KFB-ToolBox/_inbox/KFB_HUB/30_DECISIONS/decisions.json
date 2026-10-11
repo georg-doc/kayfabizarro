@@ -1855,6 +1855,20 @@
    "applies": "später (Minen-Tunnel)"
   },
   {
+   "id": "V-171",
+   "date": "2026-10-11",
+   "area": "Technik",
+   "verdict": "RULE",
+   "text": "Prioritäten aus dem externen Architektur-Audit R1 (replies/AUDIT_ARCH_R1.md): 1 Bandenenden als geschlossener Baustein + Offene-Kanten-Test, 2 Flacker-Paket (dynres, LOD-Hysterese, near/polygonOffset), 3 Cache der fertigen Inselkörper (warm ≤ 5 s), 4 Speicher (manifold delete), 5 private Vendors entkoppeln, 6 deterministische Tests (fixedDt, Sim-Zeit), 7 lokales Git + Vendor-Prüfskript; Aufteilung main.ts bzw. Chunk-Neubau mit Phase E. Veröffentlichungs-Hygiene: dist/ ist gitignored (enthält StreakByte); Löschen nur nach Georgs Ja.",
+   "values": {},
+   "owner": "Lab",
+   "check": "je Punkt Abnahme laut Audit §7",
+   "source": "Steuerung 11.10.",
+   "supersedes": null,
+   "why": "Audit belegt die Ursachen der Live-Befunde; feste Reihenfolge statt Einzelreaktionen.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
