@@ -28,3 +28,5 @@ Die Steuerung hat diese Punkte selbst entschieden, damit die Arbeit weiterläuft
 7. **Lampenschild über dem race_tube-Portal** (TC1) hat keinen Zweck: behalten, Startbogen bzw. Namensschild draus machen, oder weg?
 
 **Beantwortet 11.10.:** 4 (Stein innen/Minen-Licht: TC1 v3 hat beides, V-130), 5 (V-132 Weltraum-Himmel), 6 (V-133 behalten), 7 (Lampenschild = TC1 race_rim, bleibt). Wendeschleife → V-134.
+
+8. **Track Core v0.12 öffentlich:** `track-core.v012.mjs` liegt auf main (J14-Cut `lab-track/core/`, Organ-Attraktion C2 `vendor-j15`) und im WSA-Branch `PROTOPIA_MAKER_TRACK_R1/independent/`. Regel war „Track Core nie öffentlich“. Darf v0.12 bleiben (Teil der Joyride-Cuts), oder entfernen? Entfernen braucht dein ausdrückliches Ja.

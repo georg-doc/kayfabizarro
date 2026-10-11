@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Track Core Teil 0 PASS
+- v0.12 ↔ 0.16.1 bitgleich (O1-Ring, J17 p1b.v2, td03); neu nur 5 Spur-Felder ohne RACE-Wirkung. 0.16.1 als privater Vendor im Lab (vendor/private, gitignored). Gemeinsames MODULES.md-Schema (Geometrie RKIT, Look Lab).
+- Befund für Georg: track-core.v012.mjs liegt schon öffentlich auf main (J14-Cut, Organ-Attraktion C2) und im WSA-Branch (PROTOPIA_MAKER_TRACK_R1/independent). Entscheidung offen, ob das so bleiben darf.
+
 ## 2026-10-11 · Use what works
 - V-140 „Fehlt“-Meldungen nur mit Such-Protokoll; Steuerung prüft vor Weitergabe. In Lab-CLAUDE.md und START_HERE ergänzt.
 
