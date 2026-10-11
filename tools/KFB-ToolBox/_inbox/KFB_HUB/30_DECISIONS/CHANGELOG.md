@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Plan R1 gilt auch für WSA
+- V-122 Georg: Plan R1 + Register maßgeblich gegenüber WSA-Router; Vier-Insel-A/B als Eingang für D/F. WSA bekommt START_HERE_STEERING.md. Antwort an Blender um Start K1+K2 ergänzt.
+
 ## 2026-10-11 · RKIT umgestellt
 - Zu V-118/V-120 a: RKIT stoppt Widerlager-Paket und Bogenkette Town → Brocken → Protopia; Brücken-Dateien aus public/roadbeds nach retired/rkit-bridge_2026-10-11 (verschoben, nicht gelöscht); Bande am Ring gehört zur Strecke (J17, Lab). Gehweg/Bord Lauf 03 wartet auf Phase F.
 

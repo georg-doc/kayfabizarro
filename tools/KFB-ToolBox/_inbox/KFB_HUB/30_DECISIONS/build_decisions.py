@@ -99,6 +99,7 @@ d('V-118','2026-10-11','Strecke','RULE','RKIT nur noch innerhalb von Georgs Town
 d('V-119','2026-10-11','Insel','RULE','Golden-Referenzen für Insel-Rand, Unterseite und Übergang Straße → Insel liefert der Blender-Coworker (Island Form Kit 01): K1 Unterseiten-Familien (Anatomie-Basis, gesprengte Scholle, Wurzelballen gegen v6-„Würste“, nebeneinander) + K2 Silhouetten auf einem Blatt → Georg wählt → K3 Übergänge in J17-Kamera → K4 später. Nur Optionen und Referenzen in K2-Einheiten, keine Laufzeit, kein zweiter Insel-Besitzer. Ersetzt Weg A (Claude Design, V-084).', 'Blender-Coworker', 'Blatt K1+K2, Georg-Wahl', 'Blender-Review §1.2, §3')
 d('V-120','2026-10-11','Insel','RULE','Aus WSA-Returns übernommen (dort von Georg entschieden, bisher nicht im Register): (a) gemauerte bzw. Pfeiler-Brücke zwischen Inseln FAIL; Steinbrücken nur auf Inseln; zwischen Inseln die schwebende J17-Strecke mit Ein- und Ausfahrt an der Inselkante. (b) Protopia und Maker Space sind zwei getrennte Inseln mit direkter Auf- bzw. Abfahrt. (c) Gefängnis-Labyrinth: Standardmauern 1,6 m plus ausgewählte höhere Zellenmodule (Höhe offen; Umrechnung in K2 vor Lab-Einsatz).', 'Steuerung (Abgleich)', '-', 'planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 Router 11.10.; planning/kfb-g4-stairs-reference-2026-10-10 @5047ba3')
 d('V-121','2026-10-11','Insel','TBD','Gefängnis-Greybox (Blender, Meter, Figur 2,17 m) erst nach MVP-1 ins Lab: dann Umrechnung in K2 (H = 3,64) und Brücken-Sockel durch Track-Core-ENTRY ersetzen; auf Anfrage der Steuerung.', 'Blender-Coworker', 'K2-Maßprüfung', 'Blender-Review §1.6')
+d('V-122','2026-10-11','Prozess','RULE','Plan R1 und dieses Register gelten auch gegenüber dem WSA-Router (planning/kfb-fluff-crafting-almanac-ideation-2026-10-09). Der Vier-Insel-Story-A/B-Vergleich (Town, Dystopia, Utopia, Protopia) ist Design-Eingang für Phase D/F, kein Tor für das Lab; „Open World R4 = STOP“ betrifft das Lab nicht. WSA arbeitet ab START_HERE_STEERING.md und meldet Georg-Entscheidungen zur Registrierung an die Steuerung.', 'Steuerung', 'WSA-Returns verweisen auf V-Nummern', 'Georg 11.10.: „Plan R1 gilt, gib WSA die Startseite“')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -186,6 +187,7 @@ WHY = {
  'V-119':('Nach V-084 fehlte ein Lieferant für Golden-Referenzen; Ursache „Bauen aus Text statt Bild“ blieb offen.','ab 11.10.'),
  'V-120':('Zwei Planungs-Systeme drifteten: Georg-Entscheidungen standen nur in WSA-Returns.','sofort'),
  'V-121':('Greybox ist in Metern gebaut; ohne K2 und Track-Core-Anschluss würde sie eine zweite Maß- bzw. Sockel-Logik einführen.','nach MVP-1'),
+ 'V-122':('Zwei Planungs-Systeme mit verschiedenen Toren führen zu Drift; ein Plan, ein Register.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

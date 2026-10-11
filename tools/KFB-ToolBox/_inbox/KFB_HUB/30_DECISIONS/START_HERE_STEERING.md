@@ -10,6 +10,9 @@ Stand: 11.10.2026 · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf 
 5. `lab-docs/PHASE_C_DONORS_R1.md`: Vorlagen für Phase C.
 6. `REVIEW_STEUERUNG_R1.md`: Entscheidungen der Steuerung, die Georg noch durchsehen soll, und offene Konflikte.
 
+## Gilt auch für WSA (V-122)
+Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist Design-Eingang, nicht Plan. Vier-Insel-A/B = Eingang für Phase D/F, kein Tor für das Lab.
+
 ## Abgelöst (V-117), nicht mehr als Grundlage nutzen
 - `KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` (R2/R2.1), insb. §4 Besitzer-Tabelle („Straßen, Übergänge, Brücken, Rennstücke → RKIT“) und §7 („Joyride nur Physik“).
 - Weg A aus `POSTMORTEM_MVP1_STAGE1_R1.md` §5.1 (Golden-Referenzen von Claude Design; V-084). Ersatz: V-119 Blender Island Form Kit 01.
