@@ -5694,6 +5694,13 @@
         {
           "source": "RKIT_SKIN_S4_R1.md",
           "lines": [
+            11,
+            11
+          ]
+        },
+        {
+          "source": "RKIT_SKIN_S4_R1.md",
+          "lines": [
             10,
             10
           ]
@@ -5715,19 +5722,19 @@
       ],
       "dimensions": [],
       "colorRoles": [
-        "stone[]",
-        "paved[]",
-        "source construction barrier as equipment"
+        "country verge/grass/embankment source roles",
+        "construction barrier equipment"
       ],
       "materialLayers": [
-        "Dead end always turntable/one-arm turnaround; bare closed end only construction",
-        "Caps from actual socket; rounded bedded stone head, no invented blue block"
+        "COUNTRY source verge_end at actual socket; retain grass/earth source section rather than town masonry head",
+        "Dead-end requires turnaround; bare end only construction V150 #7"
       ],
       "oneToOne": [
         "Reuse named source family; source availability != new visual acceptance"
       ],
       "sourceLimits": [
-        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround."
+        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround.",
+        "Stone-ended graphic does not override COUNTRY cap source or create a town kerb implicitly."
       ],
       "marking": "receiver source marking rules, no unsupported automatic pattern",
       "evidence": [
@@ -5763,6 +5770,13 @@
         {
           "source": "RKIT_SKIN_S4_R1.md",
           "lines": [
+            11,
+            11
+          ]
+        },
+        {
+          "source": "RKIT_SKIN_S4_R1.md",
+          "lines": [
             10,
             10
           ]
@@ -5784,19 +5798,19 @@
       ],
       "dimensions": [],
       "colorRoles": [
-        "stone[]",
-        "paved[]",
-        "source construction barrier as equipment"
+        "country verge/grass/embankment source roles",
+        "construction barrier equipment"
       ],
       "materialLayers": [
-        "Dead end always turntable/one-arm turnaround; bare closed end only construction",
-        "Caps from actual socket; rounded bedded stone head, no invented blue block"
+        "COUNTRY source verge_end at actual socket; retain grass/earth source section rather than town masonry head",
+        "Dead-end requires turnaround; bare end only construction V150 #7"
       ],
       "oneToOne": [
         "Reuse named source family; source availability != new visual acceptance"
       ],
       "sourceLimits": [
-        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround."
+        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround.",
+        "Stone-ended graphic does not override COUNTRY cap source or create a town kerb implicitly."
       ],
       "marking": "receiver source marking rules, no unsupported automatic pattern",
       "evidence": [
@@ -7144,6 +7158,13 @@
         {
           "source": "RKIT_SKIN_S4_R1.md",
           "lines": [
+            11,
+            11
+          ]
+        },
+        {
+          "source": "RKIT_SKIN_S4_R1.md",
+          "lines": [
             10,
             10
           ]
@@ -7165,19 +7186,19 @@
       ],
       "dimensions": [],
       "colorRoles": [
-        "stone[]",
-        "paved[]",
-        "source construction barrier as equipment"
+        "country verge/grass/embankment source roles",
+        "construction barrier equipment"
       ],
       "materialLayers": [
-        "Dead end always turntable/one-arm turnaround; bare closed end only construction",
-        "Caps from actual socket; rounded bedded stone head, no invented blue block"
+        "COUNTRY source verge_end at actual socket; retain grass/earth source section rather than town masonry head",
+        "Dead-end requires turnaround; bare end only construction V150 #7"
       ],
       "oneToOne": [
         "Reuse named source family; source availability != new visual acceptance"
       ],
       "sourceLimits": [
-        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround."
+        "Cap data ≠ built cap look. No cap at used inlet/outlet socket or on one-arm turnaround.",
+        "Stone-ended graphic does not override COUNTRY cap source or create a town kerb implicitly."
       ],
       "marking": "receiver source marking rules, no unsupported automatic pattern",
       "evidence": [
