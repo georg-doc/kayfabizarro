@@ -1,3 +1,5 @@
+> **2026-10-11 · ACTUAL JOYRIDE17 + KAYKIT MAKER SOURCE / K2 STUDY:** [Native source + scene Return](../../tools/KFB-ToolBox/_inbox/MVP1_RETURNS/PROTOPIA_MAKER_TRACK_R1/RETURN.md) at verified evidence head `bec6454cbb330e22571da35d60b6d0ca0c7dd050`:18 original textured source assets and original J17 inherited P1B/TC1 geometry isolated, new Core route369.813m, actual K2 shader on assets and terrain. Independent original-controller12/12 and sampled mesh/contacts PASS; rendered-GLB road/body parity0.0m. K2 surface **PASS_WITH_TUNE**, full composition **TUNE_REQUIRED** (uniform yellow workshop / abrupt open docks). Whole interactive world/network exits **NOT_TESTED**. No World R5, Golden, merge or public deployment. Previous Blender material approximation FAIL retained. Exact relative source refs and original pack CC0 byte proof persisted; private local archive holds native scene/donors. Current next review: Georg sees the actual isolated sources and K2 pictures; parent Four-Island gate and R4 STOP remain unchanged.
+
 # Georg decision · Maker Space / Joyride track connection · 2026-10-11
 
 Owner: existing Island Worldbuilder / Fluff planning.

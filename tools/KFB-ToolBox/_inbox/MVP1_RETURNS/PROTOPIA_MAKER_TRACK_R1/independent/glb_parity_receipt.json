@@ -1,0 +1,51 @@
+{
+  "glb_sha256": "4aea6f933d693764fc7d31ae65e3a8020b214b75ea31e8adf1bbf1a0ddd6257e",
+  "tested_scene_geometry_sha256": "c82c54b1fba777576ad12e55579fdada38e652985b65d3706df5a49c93469923",
+  "Blender_evaluated_mesh_count": 152,
+  "GLB_imported_mesh_objects": 152,
+  "tolerance_m": 0.0001,
+  "coordinates": "Blender importer restores glTF[x,z,-y] to Blender[x,y,z]; native Three[x,y,z] compared as Blender[x,-z,y].",
+  "road_body_markings": [
+    {
+      "name": "fahrbahn",
+      "imported_mesh_objects": 1,
+      "reference_vertices": 5187,
+      "imported_vertices": 5187,
+      "reference_triangles": 8880,
+      "imported_triangles": 8880,
+      "reference_to_glb_max_m": 0.0,
+      "glb_to_reference_max_m": 0.0,
+      "native_source_to_glb_max_m": 0.0,
+      "pass": true
+    },
+    {
+      "name": "strang",
+      "imported_mesh_objects": 1,
+      "reference_vertices": 40014,
+      "imported_vertices": 186595,
+      "reference_triangles": 78542,
+      "imported_triangles": 78542,
+      "reference_to_glb_max_m": 0.0,
+      "glb_to_reference_max_m": 0.0,
+      "native_source_to_glb_max_m": 0.0,
+      "pass": true
+    },
+    {
+      "name": "markings",
+      "imported_mesh_objects": 1,
+      "reference_vertices": 2964,
+      "imported_vertices": 2964,
+      "reference_triangles": 2960,
+      "imported_triangles": 2960,
+      "reference_to_glb_max_m": 0.0,
+      "glb_to_reference_max_m": 0.0,
+      "native_source_to_glb_max_m": 0.0,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "limits": "World vertex bidirectional nearest-neighbor distance and triangle counts; does not verify procedural shader visual fidelity or add browser collision proof.",
+  "GLB_json_mesh_records": 152,
+  "GLB_json_primitives": 160,
+  "GLB_material_split_explanation": "152 glTF mesh records / Blender mesh objects, 160 material primitives; split primitives are not 160 distinct geometry objects."
+}
