@@ -445,6 +445,21 @@ Niedrige Ebenen löschen nie Kontakt oder Gameplay-Pose.
 
 ---
 
+### 3f · Kulturmechaniken (Georg, 11.10. [V-181])
+
+Die Kulturmechaniken sind die Anlässe, zu denen Figuren spielen. Jede braucht später eigene Choreografien. Hier steht nur, was es dazu schon gibt; Regeln und Abläufe je Mechanik sind noch nicht festgelegt und werden nicht erfunden.
+
+| Mechanik | Vorhandener Bezug | Offen |
+|---|---|---|
+| Geschenke (gifts) | – (nicht gefunden in KFB_HUB, Lab-Docs) | Ablauf geben, annehmen, ablehnen |
+| Tanz (dance) | Mixamo-Tänze in `DL` [V-179], `Dance` im KayKit-Legacy-Rig 1.2 | Solo, Paar, Gruppe? |
+| Debatte (debate) | ChatterBox-Triplets, Triplet-Takt §3c, H&D-Gespräche (§1d) | Ablauf, Publikum |
+| Rauferei (brawl) | KayKit CombatMelee (22 Clips, nicht im Lab), Controlled Damage (§1d) | Abgrenzung zu Kampf §4; cartoonig ohne Schaden? |
+| Brick-Fish | nicht gefunden in KFB_HUB, Lab-Docs | Was ist es? (Frage an Georg) |
+| Kayfabe / Kayfabulieren | Projektname Kayfabizarro; sonst nicht gefunden in KFB_HUB | Was tun Figuren dabei? |
+| Fluff ernten / formen / zerstören | Fluff-Ernte: Fluffbälle wachsen an Bäumen, Höfe ernten, Fallobst springt, Aufsammeln durch Darüberlaufen (Steuer-Gedächtnis) | Formen und Zerstören |
+| Lesen | Akashic Library [V-176], KFB-Clips „Karten“ und „Schreiben“ (Motion Library v6), Alltags-Register „reading“ (§1d) | Lesen allein, vorlesen, in der Bibliothek |
+
 ## 4 · Kampf (später, nicht MVP)
 
 **später, nicht MVP.** Register: Tab-Ziel, Angriff per Maustaste, Fluff abklopfen bzw. abschießen = TBD nach F [V-083]; Plan R1 §2c.
@@ -546,7 +561,7 @@ Alle Demos laufen auf der Demo-Insel bzw. dem Hub, nie im RKIT-Test-Hub [V-014].
 4. **Hop [V-031]:** Bleibt der Hop bei „30 %“, oder soll D-Schritt Nachfedern nach [V-033] schon jetzt kommen?
 5. **Strafe und Rückwärts:** MovementAdvanced aus dem KayKit-Vollpaket nachladen, damit Q/E einen eigenen Clip haben?
 6. **Emotion beim Sprechen:** Triplets haben kein Emotions-Feld; der Affekt kommt vom Sprecher. Wer besitzt die Abbildung Affekt-ID → Acting-Rezept → Ruhemund (Tabelle §3c): ChatterBox, Voice Layer oder Figuren-Karte?
-7. **„Kulturmechanik“:** Was ist damit gemeint? Nicht gefunden in `LAB/docs`, `KFB_HUB` und ChatterBox. Sind es die sozialen Operatoren (BINGO/BOGGLE/BONGO/BLÖDSINN), die sechs Reaktionsstufen oder die Gatekeeper-Grammatik?
+7. ✅ **Entschieden [V-181]:** siehe §3f. — **„Kulturmechanik“:** Was ist damit gemeint? Nicht gefunden in `LAB/docs`, `KFB_HUB` und ChatterBox. Sind es die sozialen Operatoren (BINGO/BOGGLE/BONGO/BLÖDSINN), die sechs Reaktionsstufen oder die Gatekeeper-Grammatik?
 8. **Large-Figuren:** Cross-Rig FIT für Sitzen, Winken, Jubeln testen, oder bleiben Large-NPCs bei Idle/Flexing?
 9. ✅ **Entschieden [V-179]:** 400-ms-Fenster gilt. — **Flug:** Gilt das 400-ms-Fenster für die zweite Leertaste aus dem Convergence-Brief („human-accepted“) auch für [V-024]? Dann bitte mit V-Nummer eintragen.
 10. **Beifahrer:** Gibt es im MVP Mitfahrer, oder erst mit dem Cabrio?

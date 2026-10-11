@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Kulturmechaniken definiert
+- V-181 Geschenke, Tanz, Debatte, Rauferei, Brick-Fish, Kayfabe/Kayfabulieren, Fluff ernten/formen/zerstören, Lesen. MOTION_GUIDE_R1 §3f mit vorhandenen Bezügen; Brick-Fish und Kayfabulieren nicht in den Docs gefunden.
+
 ## 2026-10-11 · Squash bei Stürzen
 - V-180 Stürze/Wipeouts dürfen kurz stärker stauchen als 8 % (volumenerhaltend, Erholung auf 1,0); Grenze am Demo.
 
