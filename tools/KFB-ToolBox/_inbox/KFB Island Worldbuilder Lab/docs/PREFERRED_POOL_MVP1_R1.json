@@ -1,0 +1,1342 @@
+{
+ "schema": "kfb.preferred-pool/1",
+ "version": "R1.1",
+ "created": "2026-10-10",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "ref": "main",
+  "commit": "dccf75cab",
+  "root": "media/3D_Assets",
+  "method": "git ls-tree file lists + pack names only; no models opened"
+ },
+ "sourceOrder": [
+  "kaykit",
+  "tinytreats",
+  "quaternius",
+  "kenney"
+ ],
+ "note": "KFB-eigene Assets (Krone, Münze, Almanach) gelten als eigene Quelle vor KayKit.",
+ "groups": {
+  "residents": {
+   "farmer_duo": {
+    "label": "Farmer A / Farmer-Duo",
+    "items": [
+     {
+      "asset": "pitchfork",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/pitchfork.gltf",
+      "why": "Ernte-Werkzeug, gleiche Serie wie die Figur",
+      "worldLogic": "Der Farmer wendet das Heu und trägt die Gabel über der Schulter zum Markt.",
+      "gap": false
+     },
+     {
+      "asset": "wheelbarrow",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow.gltf",
+      "why": "Transport Feld → Markt",
+      "worldLogic": "Das Duo karrt die Ernte über die Ringstraße zum Stand der Farmersfrau.",
+      "gap": false
+     },
+     {
+      "asset": "Basket_Mushrooms_Handle",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/assets/obj/Basket_Mushrooms_Handle.obj",
+      "why": "Tragekorb, gefüllt",
+      "worldLogic": "Gesammelt am Waldrand unter der Burg, verkauft am Markt.",
+      "gap": false
+     },
+     {
+      "asset": "dirt_plot",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/dirt_plot.gltf",
+      "why": "Beet als Arbeitsort",
+      "worldLogic": "Ihr Beet am Plateau-Fuß: hier wächst, was später am Stand liegt.",
+      "gap": false
+     },
+     {
+      "asset": "carrot",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/carrot.gltf",
+      "why": "Ernte-Gut",
+      "worldLogic": "Frisch gezogen, liegt im Korb und am Stand.",
+      "gap": false
+     },
+     {
+      "asset": "shovel",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+      "why": "Graben, Pflanzen",
+      "worldLogic": "Mit dem Spaten wird das Beet umgegraben.",
+      "gap": false
+     },
+     {
+      "asset": "haybale",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/haybale.gltf",
+      "why": "Hof-Requisit (nur im Bundle)",
+      "worldLogic": "Heu für die Tiere, gestapelt am Feldrand.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 Farmer_A + Farmer_B; Figuren-Karte public/cards/farmer_a.card.json (Lab)"
+   },
+   "farmer_wife": {
+    "label": "Farmersfrau (Gemüsestand)",
+    "items": [
+     {
+      "asset": "crate_carrots",
+      "pack": "KayKit_Restaurant_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_carrots.gltf",
+      "why": "Gemüsekiste, gefüllt",
+      "worldLogic": "Die Kisten vom Feld des Duos stehen offen am Stand.",
+      "gap": false
+     },
+     {
+      "asset": "crate_lettuce",
+      "pack": "KayKit_Restaurant_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_lettuce.gltf",
+      "why": "Gemüsekiste",
+      "worldLogic": "Salat vom eigenen Beet, morgens gebracht.",
+      "gap": false
+     },
+     {
+      "asset": "crate_potatoes",
+      "pack": "KayKit_Restaurant_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_potatoes.gltf",
+      "why": "Gemüsekiste",
+      "worldLogic": "Kartoffeln aus der Erde unter der Burg-Anhöhe.",
+      "gap": false
+     },
+     {
+      "asset": "Basket_Handle",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/assets/obj/Basket_Handle.obj",
+      "why": "Korb für Kunden",
+      "worldLogic": "Sie reicht den Korb über die Theke.",
+      "gap": false
+     },
+     {
+      "asset": "scale",
+      "pack": "Tiny_Treats_Bakery_Interior_1.1_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/scale.gltf",
+      "why": "Waage am Stand (Tiny Treats)",
+      "worldLogic": "Gewogen wird ehrlich – oder auch nicht.",
+      "gap": false
+     },
+     {
+      "asset": "sack",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/sack.gltf",
+      "why": "Sack mit Ware",
+      "worldLogic": "Saatgut und Mehl, gegen Fluff getauscht.",
+      "gap": false
+     }
+    ],
+    "figure": "LÜCKE: keine eigene Farmersfrau-Figur in Mystery Series6 (nur Farmer_A/B) – Resident Atlas klären"
+   },
+   "clown": {
+    "label": "Clown (Jonglage)",
+    "items": [
+     {
+      "asset": "juggling_pin_red",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_red.gltf",
+      "why": "Jonglierkeule (4 Farben)",
+      "worldLogic": "Er jongliert am Markt, bis jemand stehen bleibt – dann redet er.",
+      "gap": false
+     },
+     {
+      "asset": "juggling_pin_yellow",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_yellow.gltf",
+      "why": "zweite Farbe",
+      "worldLogic": "Wechselt die Farben je nach Laune des Publikums.",
+      "gap": false
+     },
+     {
+      "asset": "clown_ball",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/clown_ball.gltf",
+      "why": "Ball für die Nummer",
+      "worldLogic": "Der Ball rollt manchmal den Markt hinunter (Ursache-Regel E7).",
+      "gap": false
+     },
+     {
+      "asset": "circus_podium",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/circus_podium.gltf",
+      "why": "Bühne auf dem Markt",
+      "worldLogic": "Sein Podest steht mitten zwischen den Ständen.",
+      "gap": false
+     },
+     {
+      "asset": "balloon_dog_red",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/balloon_dog_red.gltf",
+      "why": "Requisit für Kinder",
+      "worldLogic": "Ballontiere als Lockmittel für Zuhörer.",
+      "gap": false
+     },
+     {
+      "asset": "circus_tent",
+      "pack": "KayKit_Mixed_Bag_1_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/circus_tent.gltf",
+      "why": "Wohnort / Kulisse",
+      "worldLogic": "Sein Zelt am Marktrand – er ist auf Tour hier gestrandet.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 Clown (Ordner \"11 - May 2024 - Clown\"); Jonglage-Laufzeit J5 clown_juggle_j5 unverändert (Masterplan §5)"
+   },
+   "lorekeeper": {
+    "label": "Lorekeeper (Schreibpult, Eremiten-Hügel)",
+    "items": [
+     {
+      "asset": "Lorekeeper_Tome",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "why": "sein eigenes Buch (Serie)",
+      "worldLogic": "Das Buch, in dem er die Golden Journey aufschreibt.",
+      "gap": false
+     },
+     {
+      "asset": "Lorekeeper_Staff",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.gltf",
+      "why": "Wanderstab (Serie)",
+      "worldLogic": "Mit dem Stab steigt er den Eremiten-Hügel hinauf.",
+      "gap": false
+     },
+     {
+      "asset": "desk_decorated",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Furniture Bits/Assets/gltf/desk_decorated.gltf",
+      "why": "Schreibtisch als Pult-Ersatz (nur im Bundle)",
+      "worldLogic": "Sein Pult unter freiem Himmel; LÜCKE: echtes Stehpult fehlt.",
+      "gap": true
+     },
+     {
+      "asset": "journal_open",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+      "why": "aufgeschlagenes Journal",
+      "worldLogic": "Hier notiert er, was ihm Besucher erzählen.",
+      "gap": false
+     },
+     {
+      "asset": "map_rolled",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.gltf",
+      "why": "Karte der Inseln",
+      "worldLogic": "Er gibt Aufträge mit einer Karte der zersprengten Erde.",
+      "gap": false
+     },
+     {
+      "asset": "candle_lit",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/candle_lit.gltf",
+      "why": "Licht am Pult",
+      "worldLogic": "Er schreibt bis in die Nacht.",
+      "gap": false
+     },
+     {
+      "asset": "OpenBook_FrizzleBobFractalAlmanac_01",
+      "pack": "KFB (media/3D_Assets root)",
+      "tier": "kfb",
+      "path": "media/3D_Assets/OpenBook_FrizzleBobFractalAlmanac_01.glb",
+      "why": "eigenes KFB-Asset",
+      "worldLogic": "Der Almanach liegt aufgeschlagen auf dem Pult.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 Lorekeeper"
+   },
+   "dark_knight": {
+    "label": "Dark Knight (Wache am Tor)",
+    "items": [
+     {
+      "asset": "BlackKnight_Sword_Large",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/assets/gltf/BlackKnight_Sword_Large.gltf",
+      "why": "Waffe der Serie",
+      "worldLogic": "Er stützt sich auf das große Schwert vor dem Tor.",
+      "gap": false
+     },
+     {
+      "asset": "BlackKnight_Shield_Large",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/assets/gltf/BlackKnight_Shield_Large.gltf",
+      "why": "Schild der Serie",
+      "worldLogic": "Der Schild lehnt an der Torwand, wenn niemand kommt.",
+      "gap": false
+     },
+     {
+      "asset": "halberd",
+      "pack": "KayKit_FantasyWeaponsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/halberd.gltf",
+      "why": "Torwachen-Waffe",
+      "worldLogic": "Die Hellebarde kreuzt er vor dem Tor, wenn jemand rein will.",
+      "gap": false
+     },
+     {
+      "asset": "torch",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+      "why": "Licht am Tor",
+      "worldLogic": "Die Fackel am Tor brennt Tag und Nacht.",
+      "gap": false
+     },
+     {
+      "asset": "banner_patternA_red",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/banner_patternA_red.gltf",
+      "why": "Burg-Banner",
+      "worldLogic": "Das Banner des Königs über dem Tor.",
+      "gap": false
+     },
+     {
+      "asset": "Weaponrack_Decorated",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Weaponrack_Decorated.gltf",
+      "why": "Waffenständer (nur im Bundle)",
+      "worldLogic": "Seine Ersatzwaffen stehen griffbereit im Torbogen.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 BlackKnight (\"3 - September 2024 - Black Knight\")"
+   },
+   "paladin_king": {
+    "label": "Paladin oben auf der Burg = King Kayfabian (Masterplan §2: heller Paladin mit Krone)",
+    "items": [
+     {
+      "asset": "KFB_Crown_01",
+      "pack": "KFB (media/3D_Assets root)",
+      "tier": "kfb",
+      "path": "media/3D_Assets/KFB_Crown_01.glb",
+      "why": "die Krone (eigenes KFB-Asset)",
+      "worldLogic": "Die Krone macht den Paladin zum König Kayfabian.",
+      "gap": false
+     },
+     {
+      "asset": "paladin_hammer",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/assets/gltf/paladin_hammer.gltf",
+      "why": "Waffe der Serie",
+      "worldLogic": "Der Hammer ist eher Zepter als Waffe.",
+      "gap": false
+     },
+     {
+      "asset": "paladin_shield",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/assets/gltf/paladin_shield.gltf",
+      "why": "Schild der Serie",
+      "worldLogic": "Sein Wappen auf dem Schild = Wappen der Stadt.",
+      "gap": false
+     },
+     {
+      "asset": "paladin_book",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/assets/gltf/paladin_book.gltf",
+      "why": "Buch der Serie",
+      "worldLogic": "Gesetzbuch bzw. Regelwerk des Königs (Kayfabe).",
+      "gap": false
+     },
+     {
+      "asset": "Vampire_Throne",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Vampire_Throne.gltf",
+      "why": "einziger Thron im Bestand",
+      "worldLogic": "LÜCKE: gotischer Vampir-Thron, kein heller Königsthron – nur Platzhalter bzw. umfärben.",
+      "gap": true
+     },
+     {
+      "asset": "Vampire_Goblet",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Vampire_Goblet.gltf",
+      "why": "Kelch",
+      "worldLogic": "Der König prostet vom Turm herab.",
+      "gap": false
+     },
+     {
+      "asset": "flag_yellow",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/flag_yellow.gltf",
+      "why": "Flagge auf der Turmspitze",
+      "worldLogic": "Weht über dem König, sichtbar von der Ringstraße.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 Paladin bzw. Paladin_with_Helmet; Krone KFB_Crown_01.glb (eigenes Asset)"
+   },
+   "caveman": {
+    "label": "Caveman (Mine)",
+    "items": [
+     {
+      "asset": "Caveman_Club",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf",
+      "why": "Werkzeug der Serie",
+      "worldLogic": "Ältester Bewohner: klopft mit der Keule Gestein ab.",
+      "gap": false
+     },
+     {
+      "asset": "pickaxe",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "why": "Mine-Werkzeug",
+      "worldLogic": "Die Spitzhacke hat er der Stadt abgenommen – oder umgekehrt.",
+      "gap": false
+     },
+     {
+      "asset": "mining_helmet",
+      "pack": "KayKit_Mixed_Bag_1_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/mining_helmet.gltf",
+      "why": "Grubenhelm",
+      "worldLogic": "Der Helm passt nicht zur Steinzeit – genau das ist der Witz.",
+      "gap": false
+     },
+     {
+      "asset": "Gold_Nuggets",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Nuggets.gltf",
+      "why": "Ausbeute",
+      "worldLogic": "Das Gold, das die Stadt reich gemacht hat (Ausbeutungsgeschichte).",
+      "gap": false
+     },
+     {
+      "asset": "Stone_Chunks_Large",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Stone_Chunks_Large.gltf",
+      "why": "Abraum",
+      "worldLogic": "Abraum liegt hangabwärts vor dem Mineneingang (E7).",
+      "gap": false
+     },
+     {
+      "asset": "Gem_Medium",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Medium.gltf",
+      "why": "Fund",
+      "worldLogic": "Ein Edelstein, den er niemandem zeigt.",
+      "gap": false
+     },
+     {
+      "asset": "Campfire_Logs",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf",
+      "why": "Wohnspur",
+      "worldLogic": "Sein Feuer vor der Höhle.",
+      "gap": false
+     }
+    ],
+    "figure": "Resident Atlas: KayKit Mystery Series6 Caveman"
+   }
+  },
+  "places": {
+   "market": {
+    "label": "Markt",
+    "items": [
+     {
+      "asset": "building_market_red",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf",
+      "why": "Marktgebäude (Hex-Kachel, Maßstab prüfen)",
+      "worldLogic": "Der überdachte Stand der Farmersfrau.",
+      "gap": false
+     },
+     {
+      "asset": "crate_tomatoes",
+      "pack": "KayKit_Restaurant_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_tomatoes.gltf",
+      "why": "Ware",
+      "worldLogic": "Gemüse vom Feld unter der Burg.",
+      "gap": false
+     },
+     {
+      "asset": "Barrel_A",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Barrel_A.gltf",
+      "why": "Fass (nur im Bundle)",
+      "worldLogic": "Wasser bzw. Most für die Händler.",
+      "gap": false
+     },
+     {
+      "asset": "crate_open",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/crate_open.gltf",
+      "why": "offene Kiste",
+      "worldLogic": "Halb ausgeräumt, der Markt läuft.",
+      "gap": false
+     },
+     {
+      "asset": "bench",
+      "pack": "Tiny_Treats_Pretty_Park_1.0_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf",
+      "why": "Sitzplatz (Tiny Treats)",
+      "worldLogic": "Hier sitzt das Publikum des Clowns.",
+      "gap": false
+     },
+     {
+      "asset": "picnic_basket_round",
+      "pack": "Tiny_Treats_Pleasant_Picnic_1.0_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/picnic_basket_round.gltf",
+      "why": "Korb (Tiny Treats)",
+      "worldLogic": "Ein Einkaufskorb, vergessen auf der Bank.",
+      "gap": false
+     },
+     {
+      "asset": "market.gltf",
+      "pack": "KayKit Medieval Builder Pack 1.0",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit Medieval Builder Pack 1.0/Models/objects/gltf/market.gltf.glb",
+      "why": "freistehender Marktstand (KayKit Medieval Builder, Legacy; Steuerung-Nachtrag)",
+      "worldLogic": "Der Stand der Farmersfrau – erste Wahl für Lücke 4.",
+      "gap": false
+     },
+     {
+      "asset": "Market Scene by Quaternius - LkNRqxdCKp",
+      "pack": "KFB (media/3D_Assets/KFB)",
+      "tier": "quaternius",
+      "path": "media/3D_Assets/KFB/Market Scene by Quaternius - LkNRqxdCKp.glb",
+      "why": "Markt-Szene (Quaternius, Steuerung-Nachtrag)",
+      "worldLogic": "Kompositions- bzw. Stand-Kandidat, falls der KayKit-Stand nicht passt.",
+      "gap": false
+     },
+     {
+      "asset": "stall-red",
+      "pack": "kenney_fantasy-town-kit_2.0",
+      "tier": "kenney",
+      "path": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/stall-red.glb",
+      "why": "nur noch letzte Wahl (KayKit und Quaternius davor)",
+      "worldLogic": "Klassischer Stand mit Markise.",
+      "gap": false
+     }
+    ]
+   },
+   "castle": {
+    "label": "Burg",
+    "items": [
+     {
+      "asset": "banner_patternB_red",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/banner_patternB_red.gltf",
+      "why": "Banner",
+      "worldLogic": "Banner an der Burgmauer, Farbe der Stadt.",
+      "gap": false
+     },
+     {
+      "asset": "flag_red",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/flag_red.gltf",
+      "why": "Flagge",
+      "worldLogic": "Flaggen auf den Türmen.",
+      "gap": false
+     },
+     {
+      "asset": "torch",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+      "why": "Fackel",
+      "worldLogic": "Licht am Tor (Dark Knight).",
+      "gap": false
+     },
+     {
+      "asset": "barrier",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/barrier.gltf",
+      "why": "Torsperre",
+      "worldLogic": "Die Sperre, die der Dark Knight öffnet.",
+      "gap": false
+     },
+     {
+      "asset": "Weaponrack_Decorated",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Weaponrack_Decorated.gltf",
+      "why": "Waffenständer",
+      "worldLogic": "Im Torbogen.",
+      "gap": false
+     },
+     {
+      "asset": "stairs",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/stairs.gltf",
+      "why": "Treppe (Maßstab/Familie A prüfen)",
+      "worldLogic": "Hinweis: Plateau-Treppe ist RKIT Familie A; dies nur Innen-/Detailtreppe.",
+      "gap": false
+     }
+    ]
+   },
+   "mine": {
+    "label": "Mine (Caveman, Plateau-Rückseite)",
+    "items": [
+     {
+      "asset": "building_mine_yellow",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/yellow/building_mine_yellow.gltf",
+      "why": "Mineneingang (Hex-Kachel, Maßstab prüfen)",
+      "worldLogic": "Der Stolleneingang in der Plateau-Rückseite.",
+      "gap": false
+     },
+     {
+      "asset": "tracks_straight",
+      "pack": "KayKit_Holiday_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Holiday_Bits_1.0_FREE/Assets/gltf/tracks_straight.gltf",
+      "why": "Gleise (Holiday-Look, umfärben)",
+      "worldLogic": "Die alten Lorengleise führen aus dem Stollen.",
+      "gap": false
+     },
+     {
+      "asset": "lantern",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+      "why": "Grubenlampe",
+      "worldLogic": "Hängt am Stolleneingang.",
+      "gap": false
+     },
+     {
+      "asset": "rope_bundle_A",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.gltf",
+      "why": "Seil",
+      "worldLogic": "Zum Abseilen in den Schacht.",
+      "gap": false
+     },
+     {
+      "asset": "Pallet_Wood_Covered_A",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Pallet_Wood_Covered_A.gltf",
+      "why": "abgedeckte Lieferung",
+      "worldLogic": "Was die Stadt aus der Mine holt.",
+      "gap": false
+     },
+     {
+      "asset": "Iron_Nuggets",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Iron_Nuggets.gltf",
+      "why": "Erz",
+      "worldLogic": "Liegt neben dem Gleis.",
+      "gap": false
+     },
+     {
+      "asset": "wood-support",
+      "pack": "kenney_mini-dungeon",
+      "tier": "kenney",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wood-support.glb",
+      "why": "Stollen-Stützbalken; LÜCKE KayKit (Kenney letzte Wahl)",
+      "worldLogic": "Hält den Stolleneingang offen.",
+      "gap": true
+     }
+    ]
+   },
+   "hermit_hill": {
+    "label": "Eremiten-Hügel (Lorekeeper)",
+    "items": [
+     {
+      "asset": "Tent",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/assets/gltf/Tent.gltf",
+      "why": "Wohnort",
+      "worldLogic": "Sein Zelt auf dem Hügel – er wohnt, wo er schreibt.",
+      "gap": false
+     },
+     {
+      "asset": "Campfire_Base",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf",
+      "why": "Feuerstelle",
+      "worldLogic": "Abends erzählt er am Feuer.",
+      "gap": false
+     },
+     {
+      "asset": "Table_Small",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/assets/gltf/Table_Small.gltf",
+      "why": "Beistelltisch",
+      "worldLogic": "Für Tee und Besucher.",
+      "gap": false
+     },
+     {
+      "asset": "chair_desk_A",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Furniture Bits/Assets/gltf/chair_desk_A.gltf",
+      "why": "Stuhl am Pult",
+      "worldLogic": "Sein Platz am Pult.",
+      "gap": false
+     },
+     {
+      "asset": "book_set",
+      "pack": "KayKit_Furniture_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_set.gltf",
+      "why": "Bücherstapel",
+      "worldLogic": "Bücher stapeln sich neben dem Pult.",
+      "gap": false
+     },
+     {
+      "asset": "lantern",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+      "why": "Laterne",
+      "worldLogic": "Laterne am Pfad hinauf – Wegweiser für Besucher.",
+      "gap": false
+     }
+    ]
+   },
+   "pond": {
+    "label": "Teich",
+    "items": [
+     {
+      "asset": "waterlily_A",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/waterlily_A.gltf",
+      "why": "Seerose",
+      "worldLogic": "Seerosen am ruhigen Ufer.",
+      "gap": false
+     },
+     {
+      "asset": "waterplant_B",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/waterplant_B.gltf",
+      "why": "Wasserpflanze",
+      "worldLogic": "Schilf am Ufer, wo die Fische stehen.",
+      "gap": false
+     },
+     {
+      "asset": "bucket_water",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/bucket_water.gltf",
+      "why": "Eimer",
+      "worldLogic": "Der Farmer holt hier Gießwasser.",
+      "gap": false
+     },
+     {
+      "asset": "bucket_metal",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+      "why": "Fang-Eimer",
+      "worldLogic": "Später: Fang beim Fluff-Angeln.",
+      "gap": false
+     },
+     {
+      "asset": "Lilypad",
+      "pack": "Ultimate Nature Pack by Quaternius(1)",
+      "tier": "quaternius",
+      "path": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/FBX/Lilypad.fbx",
+      "why": "Seerosenblatt (Quaternius)",
+      "worldLogic": "Großes Blatt, auf dem ein Frosch säße.",
+      "gap": false
+     },
+     {
+      "asset": "Grass_2_A_Color1",
+      "pack": "KayKit_Forest_Nature_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Color1.gltf",
+      "why": "Ufergras (KayKit)",
+      "worldLogic": "Gras am Ufer, vom Wasser gewachsen.",
+      "gap": false
+     }
+    ]
+   },
+   "ring": {
+    "label": "Ringstraße",
+    "items": [
+     {
+      "asset": "sign_both",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/sign_both.gltf",
+      "why": "Wegweiser (nur im Bundle)",
+      "worldLogic": "Zeigt zur Brücke nach Protopia und zur Burg.",
+      "gap": false
+     },
+     {
+      "asset": "street_lantern",
+      "pack": "Tiny_Treats_Pretty_Park_1.0_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/street_lantern.gltf",
+      "why": "Straßenlaterne (Tiny Treats)",
+      "worldLogic": "Laternen säumen die Ringstraße.",
+      "gap": false
+     },
+     {
+      "asset": "post_lantern",
+      "pack": "KayKit_HalloweenBits",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/post_lantern.gltf",
+      "why": "Laternenpfahl (Alternative)",
+      "worldLogic": "Holzpfahl mit Laterne – Kandidat für den Rand-Rhythmus.",
+      "gap": false
+     },
+     {
+      "asset": "bench",
+      "pack": "KayKit_City_Builder_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/bench.gltf",
+      "why": "Bank",
+      "worldLogic": "Rastplatz an der Kante mit Blick auf die Inseln.",
+      "gap": false
+     },
+     {
+      "asset": "cone",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/assets/gltf/cone.glb",
+      "why": "Pylon (Baustelle/Satire)",
+      "worldLogic": "Wo die Straße noch gebaut wird.",
+      "gap": false
+     }
+    ]
+   },
+   "bridgehead": {
+    "label": "Brückenkopf",
+    "items": [
+     {
+      "asset": "building_bridge_A",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/building_bridge_A.gltf",
+      "why": "Brücken-Referenz (Hex; Bau ist RKIT)",
+      "worldLogic": "Nur Formreferenz – die Brücke selbst baut RKIT.",
+      "gap": false
+     },
+     {
+      "asset": "sign_right",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/sign_right.gltf",
+      "why": "Wegweiser",
+      "worldLogic": "Hier geht es nach Protopia.",
+      "gap": false
+     },
+     {
+      "asset": "street_lantern",
+      "pack": "Tiny_Treats_Pretty_Park_1.0_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/street_lantern.gltf",
+      "why": "Laterne",
+      "worldLogic": "Laternen an beiden Brückenköpfen.",
+      "gap": false
+     },
+     {
+      "asset": "banner_patternA_yellow",
+      "pack": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/banner_patternA_yellow.gltf",
+      "why": "Banner",
+      "worldLogic": "Die Stadt markiert ihre Grenze.",
+      "gap": false
+     }
+    ]
+   }
+  },
+  "activities": {
+   "write_read": {
+    "label": "Schreiben / Lesen",
+    "items": [
+     {
+      "asset": "journal_open",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+      "why": "aufgeschlagen",
+      "worldLogic": "Lorekeeper schreibt.",
+      "gap": false
+     },
+     {
+      "asset": "pencil_A_short",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+      "why": "Stift (Ersatz für Feder)",
+      "worldLogic": "LÜCKE: Federkiel + Tintenfass fehlen im Bestand.",
+      "gap": true
+     },
+     {
+      "asset": "map",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.gltf",
+      "why": "Karte",
+      "worldLogic": "Aufträge werden auf der Karte gezeigt.",
+      "gap": false
+     },
+     {
+      "asset": "magnifying_glass",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.gltf",
+      "why": "Lupe",
+      "worldLogic": "Lesen der kleinen Schrift im Almanach.",
+      "gap": false
+     },
+     {
+      "asset": "Lorekeeper_Tome",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "why": "Buch",
+      "worldLogic": "Das Hauptbuch.",
+      "gap": false
+     },
+     {
+      "asset": "book_single",
+      "pack": "KayKit_Furniture_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_single.gltf",
+      "why": "Einzelbuch",
+      "worldLogic": "Ein Buch, das ein Besucher liest.",
+      "gap": false
+     }
+    ]
+   },
+   "juggling": {
+    "label": "Jonglieren",
+    "items": [
+     {
+      "asset": "juggling_pin_blue",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_blue.gltf",
+      "why": "Keule",
+      "worldLogic": "Clown am Markt (J5-Laufzeit).",
+      "gap": false
+     },
+     {
+      "asset": "juggling_pin_green",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/juggling_pin_green.gltf",
+      "why": "Keule",
+      "worldLogic": "dto.",
+      "gap": false
+     },
+     {
+      "asset": "clown_ball",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/clown_ball.gltf",
+      "why": "Ball",
+      "worldLogic": "dto.",
+      "gap": false
+     },
+     {
+      "asset": "circus_hoop",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/circus_hoop.gltf",
+      "why": "Reifen",
+      "worldLogic": "Zugabe-Nummer.",
+      "gap": false
+     },
+     {
+      "asset": "balloon_red",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/balloon_red.gltf",
+      "why": "Ballon",
+      "worldLogic": "Belohnung für Zuschauer.",
+      "gap": false
+     }
+    ]
+   },
+   "guard": {
+    "label": "Wache",
+    "items": [
+     {
+      "asset": "halberd",
+      "pack": "KayKit_FantasyWeaponsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/halberd.gltf",
+      "why": "Hellebarde",
+      "worldLogic": "Dark Knight am Tor.",
+      "gap": false
+     },
+     {
+      "asset": "spear_A",
+      "pack": "KayKit_FantasyWeaponsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/spear_A.gltf",
+      "why": "Speer",
+      "worldLogic": "Zweite Wache (später).",
+      "gap": false
+     },
+     {
+      "asset": "BlackKnight_Shield",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/assets/gltf/BlackKnight_Shield.gltf",
+      "why": "Schild",
+      "worldLogic": "Dark Knight.",
+      "gap": false
+     },
+     {
+      "asset": "torch",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+      "why": "Fackel",
+      "worldLogic": "Nachtwache.",
+      "gap": false
+     },
+     {
+      "asset": "Trainingdummy_Base",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/gltf/Trainingdummy_Base.gltf",
+      "why": "Übungspuppe",
+      "worldLogic": "Die Wache übt, wenn keiner kommt.",
+      "gap": false
+     }
+    ]
+   },
+   "harvest": {
+    "label": "Ernte",
+    "items": [
+     {
+      "asset": "pitchfork",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/pitchfork.gltf",
+      "why": "Gabel",
+      "worldLogic": "Farmer-Duo.",
+      "gap": false
+     },
+     {
+      "asset": "wheelbarrow",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow.gltf",
+      "why": "Schubkarre",
+      "worldLogic": "Transport zum Markt.",
+      "gap": false
+     },
+     {
+      "asset": "dirt_plot",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/dirt_plot.gltf",
+      "why": "Beet",
+      "worldLogic": "Arbeitsort.",
+      "gap": false
+     },
+     {
+      "asset": "lettuce",
+      "pack": "KayKit_Mystery_Series6",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/lettuce.gltf",
+      "why": "Ernte-Gut",
+      "worldLogic": "Liegt im Beet bzw. Korb.",
+      "gap": false
+     },
+     {
+      "asset": "scarecrow",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/scarecrow.gltf",
+      "why": "Vogelscheuche (nur im Bundle)",
+      "worldLogic": "Schützt das Beet am Plateau-Fuß.",
+      "gap": false
+     },
+     {
+      "asset": "wagon_hay",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Halloween Bits/Assets/gltf/wagon_hay.gltf",
+      "why": "Heuwagen (nur im Bundle)",
+      "worldLogic": "Großernte.",
+      "gap": false
+     },
+     {
+      "asset": "watering_can_A",
+      "pack": "Tiny_Treats_House_Plants_1.0_FREE 2",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_House_Plants_1.0_FREE 2/Assets/gltf/watering_can_A.gltf",
+      "why": "Gießkanne (Tiny Treats)",
+      "worldLogic": "Gießen mit Teichwasser.",
+      "gap": false
+     }
+    ],
+    "animations": {
+     "source": "KayKit_Character_Animations_1.1.zip → Rig_Medium_Tools.glb",
+     "clips": [
+      "Dig",
+      "Digging",
+      "Work_A",
+      "Working_A",
+      "Holding_A"
+     ]
+    }
+   },
+   "trade": {
+    "label": "Handel am Stand",
+    "items": [
+     {
+      "asset": "crate_onions",
+      "pack": "KayKit_Restaurant_Bits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_onions.gltf",
+      "why": "Ware",
+      "worldLogic": "Farmersfrau.",
+      "gap": false
+     },
+     {
+      "asset": "scale",
+      "pack": "Tiny_Treats_Bakery_Interior_1.1_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/scale.gltf",
+      "why": "Waage",
+      "worldLogic": "Abwiegen.",
+      "gap": false
+     },
+     {
+      "asset": "KFB_Coin_01",
+      "pack": "KFB (media/3D_Assets root)",
+      "tier": "kfb",
+      "path": "media/3D_Assets/KFB_Coin_01.glb",
+      "why": "Münze (eigenes KFB-Asset)",
+      "worldLogic": "Bezahlt wird in Fluff bzw. Münzen.",
+      "gap": false
+     },
+     {
+      "asset": "Coin_A",
+      "pack": "KayKit_Bits_Bundle1_1.1",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Coin_A.gltf",
+      "why": "Münze (KayKit)",
+      "worldLogic": "Wechselgeld auf der Theke.",
+      "gap": false
+     },
+     {
+      "asset": "pastry_stand_A_covered",
+      "pack": "Tiny_Treats_Bakery_Interior_1.1_FREE",
+      "tier": "tinytreats",
+      "path": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/pastry_stand_A_covered.gltf",
+      "why": "Auslage (Tiny Treats)",
+      "worldLogic": "Brot vom Bäcker nebenan.",
+      "gap": false
+     },
+     {
+      "asset": "sack",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/sack.gltf",
+      "why": "Sack",
+      "worldLogic": "Tauschware.",
+      "gap": false
+     }
+    ],
+    "animations": {
+     "source": "KayKit_Character_Animations_1.1.zip → Rig_Medium_Tools.glb",
+     "clips": [
+      "Holding_B",
+      "Work_B",
+      "Working_B"
+     ]
+    }
+   },
+   "mining": {
+    "label": "Graben in der Mine",
+    "items": [
+     {
+      "asset": "pickaxe",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "why": "Spitzhacke",
+      "worldLogic": "Caveman.",
+      "gap": false
+     },
+     {
+      "asset": "shovel",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+      "why": "Schaufel",
+      "worldLogic": "Abraum wegschaufeln.",
+      "gap": false
+     },
+     {
+      "asset": "mining_helmet",
+      "pack": "KayKit_Mixed_Bag_1_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/mining_helmet.gltf",
+      "why": "Helm",
+      "worldLogic": "Caveman.",
+      "gap": false
+     },
+     {
+      "asset": "Stone_Chunks_Small",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Stone_Chunks_Small.gltf",
+      "why": "Gestein",
+      "worldLogic": "Liegt unter dem Abbau (E7).",
+      "gap": false
+     },
+     {
+      "asset": "Gold_Nugget_Small",
+      "pack": "KayKit_ResourceBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Nugget_Small.gltf",
+      "why": "Gold",
+      "worldLogic": "Ausbeute.",
+      "gap": false
+     },
+     {
+      "asset": "bucket_metal",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+      "why": "Eimer",
+      "worldLogic": "Für Wasser aus dem Stollen.",
+      "gap": false
+     }
+    ],
+    "animations": {
+     "source": "KayKit_Character_Animations_1.1.zip → Rig_Medium_Tools.glb",
+     "clips": [
+      "Pickaxe",
+      "Pickaxing",
+      "Dig",
+      "Digging"
+     ]
+    }
+   },
+   "fluff_fishing": {
+    "label": "Fluff-Angeln (später)",
+    "items": [
+     {
+      "asset": "bucket_metal",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+      "why": "Fang-Eimer",
+      "worldLogic": "Der Fluff-Fang landet im Eimer.",
+      "gap": false
+     },
+     {
+      "asset": "rope_bundle_B",
+      "pack": "KayKit_RPGToolsBits_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.gltf",
+      "why": "Schnur-Ersatz",
+      "worldLogic": "LÜCKE: kein Angel-Mesh im Bestand. Georgs Angel = KayKit Character Animations 1.1 Rig_Medium_Tools: 7 Fishing-Clips (Cast, Idle, Bite, Tug, Reeling, Struggling, Catch), nur Animation, kein Mesh.",
+      "gap": true
+     },
+     {
+      "asset": "campfire-fishing-stand",
+      "pack": "kenney_survival-kit",
+      "tier": "kenney",
+      "path": "media/3D_Assets/kenney_survival-kit/Models/GLB format/campfire-fishing-stand.glb",
+      "why": "Angel-Gestell (Kenney, letzte Wahl)",
+      "worldLogic": "Einziges Angel-Objekt im Bestand.",
+      "gap": false
+     },
+     {
+      "asset": "waterlily_B",
+      "pack": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "tier": "kaykit",
+      "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/waterlily_B.gltf",
+      "why": "Angelplatz",
+      "worldLogic": "Geangelt wird zwischen den Seerosen am Teich.",
+      "gap": false
+     }
+    ],
+    "animations": {
+     "source": "KayKit_Character_Animations_1.1.zip → Animations/gltf/Rig_Medium/Rig_Medium_Tools.glb",
+     "clips": [
+      "Fishing_Cast",
+      "Fishing_Idle",
+      "Fishing_Bite",
+      "Fishing_Tug",
+      "Fishing_Reeling",
+      "Fishing_Struggling",
+      "Fishing_Catch"
+     ]
+    }
+   }
+  }
+ },
+ "gaps": [
+  "Farmersfrau (Gemüsestand): Figur – LÜCKE: keine eigene Farmersfrau-Figur in Mystery Series6 (nur Farmer_A/B) – Resident Atlas klären",
+  "Lorekeeper (Schreibpult, Eremiten-Hügel): desk_decorated – Sein Pult unter freiem Himmel; LÜCKE: echtes Stehpult fehlt.",
+  "Paladin oben auf der Burg = King Kayfabian (Masterplan §2: heller Paladin mit Krone): Vampire_Throne – LÜCKE: gotischer Vampir-Thron, kein heller Königsthron – nur Platzhalter bzw. umfärben.",
+  "Mine (Caveman, Plateau-Rückseite): wood-support – Stollen-Stützbalken; LÜCKE KayKit (Kenney letzte Wahl)",
+  "Schreiben / Lesen: pencil_A_short – LÜCKE: Federkiel + Tintenfass fehlen im Bestand.",
+  "Fluff-Angeln (später): rope_bundle_B – LÜCKE: kein Angel-Mesh im Bestand. Georgs Angel = KayKit Character Animations 1.1 Rig_Medium_Tools: 7 Fishing-Clips (Cast, Idle, Bite, Tug, Reeling, Struggling, Catch), nur Animation, kein Mesh."
+ ],
+ "changes": [
+  "R1.1 (Steuerung): Marktstand-Kandidaten KayKit Medieval Builder market.gltf.glb und KFB/Market Scene by Quaternius vor Kenney",
+  "R1.1: Angel = KayKit Character Animations 1.1 Rig_Medium_Tools, 7 Fishing-Clips (kein Mesh); Tools-Clips (Dig, Pickaxe, Work, Holding) bei Ernte, Graben, Handel eingetragen"
+ ]
+}

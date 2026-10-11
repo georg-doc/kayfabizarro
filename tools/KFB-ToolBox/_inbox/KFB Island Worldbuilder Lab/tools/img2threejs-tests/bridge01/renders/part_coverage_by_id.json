@@ -1,0 +1,88 @@
+{
+  "model": "kfb-cartoon-stone-arch-bridge",
+  "specifiedComponents": 253,
+  "builtParts": 254,
+  "errors": 0,
+  "warnings": 12,
+  "result": "pass",
+  "findings": [
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "keystone",
+      "detail": "mapsTo 'arch-ring-front/keystone-proud' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "voussoir-joints",
+      "detail": "mapsTo 'arch-ring-front/voussoir-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "arch-opening",
+      "detail": "mapsTo 'arch-barrel/arch-opening' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "coping-rounded",
+      "detail": "mapsTo 'parapet-front/coping-rounded' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "coping-joints",
+      "detail": "mapsTo 'parapet-front/coping-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "deck-slab-joints",
+      "detail": "mapsTo 'deck/deck-slab-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "abutment-block-joints",
+      "detail": "mapsTo 'abutment-east/block-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "block-bevel",
+      "detail": "mapsTo 'spandrel-front/block-bevel' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "tone-variation",
+      "detail": "mapsTo 'stone-1/tone-variation' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "cavity-darkening",
+      "detail": "mapsTo 'stone-4/cavity-darkening' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "road-tone",
+      "detail": "mapsTo 'road-surface/road-tone' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "deck-edge-course",
+      "detail": "mapsTo 'deck/deck-edge-course' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "part-not-specified",
+      "severity": "info",
+      "subject": "root",
+      "detail": "built part has no matching component in the spec (fine for detail groups; a sign of spec drift for anything larger)"
+    }
+  ]
+}

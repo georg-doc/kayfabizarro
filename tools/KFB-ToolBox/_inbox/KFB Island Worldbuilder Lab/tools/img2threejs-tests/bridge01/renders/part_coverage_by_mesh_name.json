@@ -1,0 +1,148 @@
+{
+  "model": "kfb-cartoon-stone-arch-bridge",
+  "specifiedComponents": 253,
+  "builtParts": 254,
+  "errors": 10,
+  "warnings": 12,
+  "result": "fail",
+  "findings": [
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "abutment-west block",
+      "detail": "components abutment-west-b000, abutment-west-b001, abutment-west-b002, abutment-west-b010, abutment-west-b011, abutment-west-b012, abutment-west-b100, abutment-west-b101, abutment-west-b102, abutment-west-b110, abutment-west-b111, abutment-west-b112, abutment-west-b200, abutment-west-b201, abutment-west-b202, abutment-west-b210, abutment-west-b211, abutment-west-b212 all resolve to the single part 'abutment-west block' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "abutment-east block",
+      "detail": "components abutment-east-b000, abutment-east-b001, abutment-east-b002, abutment-east-b010, abutment-east-b011, abutment-east-b012, abutment-east-b100, abutment-east-b101, abutment-east-b102, abutment-east-b110, abutment-east-b111, abutment-east-b112, abutment-east-b200, abutment-east-b201, abutment-east-b202, abutment-east-b210, abutment-east-b211, abutment-east-b212 all resolve to the single part 'abutment-east block' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "voussoir",
+      "detail": "components arch-ring-back-v00, arch-ring-back-v01, arch-ring-back-v02, arch-ring-back-v03, arch-ring-back-v04, arch-ring-back-v05, arch-ring-back-v06, arch-ring-back-v08, arch-ring-back-v09, arch-ring-back-v10, arch-ring-back-v11, arch-ring-back-v12, arch-ring-back-v13, arch-ring-back-v14, arch-ring-front-v00, arch-ring-front-v01, arch-ring-front-v02, arch-ring-front-v03, arch-ring-front-v04, arch-ring-front-v05, arch-ring-front-v06, arch-ring-front-v08, arch-ring-front-v09, arch-ring-front-v10, arch-ring-front-v11, arch-ring-front-v12, arch-ring-front-v13, arch-ring-front-v14, arch-ring-inner1-v00, arch-ring-inner1-v01, arch-ring-inner1-v02, arch-ring-inner1-v03, arch-ring-inner1-v04, arch-ring-inner1-v05, arch-ring-inner1-v06, arch-ring-inner1-v07, arch-ring-inner1-v08, arch-ring-inner1-v09, arch-ring-inner1-v10, arch-ring-inner1-v11, arch-ring-inner1-v12, arch-ring-inner1-v13, arch-ring-inner2-v00, arch-ring-inner2-v01, arch-ring-inner2-v02, arch-ring-inner2-v03, arch-ring-inner2-v04, arch-ring-inner2-v05, arch-ring-inner2-v06, arch-ring-inner2-v07, arch-ring-inner2-v08, arch-ring-inner2-v09, arch-ring-inner2-v10, arch-ring-inner2-v11, arch-ring-inner2-v12, arch-ring-inner2-v13 all resolve to the single part 'voussoir' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "keystone",
+      "detail": "components arch-ring-back-v07, arch-ring-front-v07 all resolve to the single part 'keystone' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "spandrel block",
+      "detail": "components spandrel-back-b03-119, spandrel-back-b04-120, spandrel-back-b04-121, spandrel-back-b05-122, spandrel-back-b05-123, spandrel-back-b05-124, spandrel-back-b05-125, spandrel-back-b06-126, spandrel-back-b06-127, spandrel-back-b06-128, spandrel-back-b06-129, spandrel-back-b06-130, spandrel-back-b06-131, spandrel-back-b06-132, spandrel-back-b06-133, spandrel-front-b03-103, spandrel-front-b04-104, spandrel-front-b04-105, spandrel-front-b05-106, spandrel-front-b05-107, spandrel-front-b05-108, spandrel-front-b05-109, spandrel-front-b06-110, spandrel-front-b06-111, spandrel-front-b06-112, spandrel-front-b06-113, spandrel-front-b06-114, spandrel-front-b06-115, spandrel-front-b06-116, spandrel-front-b06-117 all resolve to the single part 'spandrel block' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "road slab",
+      "detail": "components road-slab-00, road-slab-01, road-slab-02, road-slab-03, road-slab-04, road-slab-05, road-slab-06, road-slab-07, road-slab-08, road-slab-09, road-slab-10, road-slab-11, road-slab-12, road-slab-13 all resolve to the single part 'road slab' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "deck fill",
+      "detail": "components deck-fill-00, deck-fill-01, deck-fill-02, deck-fill-03, deck-fill-04, deck-fill-05, deck-fill-06, deck-fill-07, deck-fill-08, deck-fill-09, deck-fill-10, deck-fill-11, deck-fill-12, deck-fill-13 all resolve to the single part 'deck fill' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "deck edge stone",
+      "detail": "components edge-course-back-00, edge-course-back-01, edge-course-back-02, edge-course-back-03, edge-course-back-04, edge-course-back-05, edge-course-back-06, edge-course-back-07, edge-course-back-08, edge-course-back-09, edge-course-back-10, edge-course-back-11, edge-course-back-12, edge-course-back-13, edge-course-front-00, edge-course-front-01, edge-course-front-02, edge-course-front-03, edge-course-front-04, edge-course-front-05, edge-course-front-06, edge-course-front-07, edge-course-front-08, edge-course-front-09, edge-course-front-10, edge-course-front-11, edge-course-front-12, edge-course-front-13 all resolve to the single part 'deck edge stone' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "parapet wall block",
+      "detail": "components parapet-back-wall-00, parapet-back-wall-01, parapet-back-wall-02, parapet-back-wall-03, parapet-back-wall-04, parapet-back-wall-05, parapet-back-wall-06, parapet-back-wall-07, parapet-back-wall-08, parapet-back-wall-09, parapet-back-wall-10, parapet-back-wall-11, parapet-back-wall-12, parapet-back-wall-13, parapet-front-wall-00, parapet-front-wall-01, parapet-front-wall-02, parapet-front-wall-03, parapet-front-wall-04, parapet-front-wall-05, parapet-front-wall-06, parapet-front-wall-07, parapet-front-wall-08, parapet-front-wall-09, parapet-front-wall-10, parapet-front-wall-11, parapet-front-wall-12, parapet-front-wall-13 all resolve to the single part 'parapet wall block' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "components-fused",
+      "severity": "error",
+      "subject": "coping stone",
+      "detail": "components parapet-back-coping-00, parapet-back-coping-01, parapet-back-coping-02, parapet-back-coping-03, parapet-back-coping-04, parapet-back-coping-05, parapet-back-coping-06, parapet-back-coping-07, parapet-back-coping-08, parapet-back-coping-09, parapet-back-coping-10, parapet-back-coping-11, parapet-back-coping-12, parapet-back-coping-13, parapet-front-coping-00, parapet-front-coping-01, parapet-front-coping-02, parapet-front-coping-03, parapet-front-coping-04, parapet-front-coping-05, parapet-front-coping-06, parapet-front-coping-07, parapet-front-coping-08, parapet-front-coping-09, parapet-front-coping-10, parapet-front-coping-11, parapet-front-coping-12, parapet-front-coping-13 all resolve to the single part 'coping stone' \u2014 they are fused, not separable"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "keystone",
+      "detail": "mapsTo 'arch-ring-front/keystone-proud' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "voussoir-joints",
+      "detail": "mapsTo 'arch-ring-front/voussoir-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "arch-opening",
+      "detail": "mapsTo 'arch-barrel/arch-opening' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "coping-rounded",
+      "detail": "mapsTo 'parapet-front/coping-rounded' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "coping-joints",
+      "detail": "mapsTo 'parapet-front/coping-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "deck-slab-joints",
+      "detail": "mapsTo 'deck/deck-slab-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "abutment-block-joints",
+      "detail": "mapsTo 'abutment-east/block-joints' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "block-bevel",
+      "detail": "mapsTo 'spandrel-front/block-bevel' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "tone-variation",
+      "detail": "mapsTo 'stone-1/tone-variation' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "cavity-darkening",
+      "detail": "mapsTo 'stone-4/cavity-darkening' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "road-tone",
+      "detail": "mapsTo 'road-surface/road-tone' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "deck-edge-course",
+      "detail": "mapsTo 'deck/deck-edge-course' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "part-not-specified",
+      "severity": "info",
+      "subject": "KFB Cartoon Stone Arch Bridge",
+      "detail": "built part has no matching component in the spec (fine for detail groups; a sign of spec drift for anything larger)"
+    }
+  ]
+}

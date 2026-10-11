@@ -1,0 +1,367 @@
+{
+ "schema": "kfb.trail-foottest/1",
+ "core": "track-core 0.16.7 (private)",
+ "units": "lab",
+ "frame": "local: path start at the origin, heading +z (T = [0,0,1]), y up; place it anywhere with one rigid transform",
+ "gait": "docs/critic/lab-track/2026-10-11_V157-gait/gait_v157.json as is (wallTan 0.70)",
+ "route": {
+  "id": "foottest_hill",
+  "pts": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0.6,
+    10
+   ],
+   [
+    0,
+    4.6,
+    18
+   ],
+   [
+    0,
+    5,
+    30
+   ]
+  ],
+  "width": 6.4,
+  "ends": [
+   {
+    "anchor": "test:start"
+   },
+   {
+    "anchor": "test:top"
+   }
+  ]
+ },
+ "profile": {
+  "kind": "trail_profile",
+  "route": "foottest_hill",
+  "gaitSource": "measured",
+  "width": 6.4,
+  "length": 30,
+  "parts": [
+   {
+    "kind": "ramp",
+    "s0": 0,
+    "s1": 10,
+    "maxGrade": 0.06,
+    "width": 6.4
+   },
+   {
+    "kind": "stairs",
+    "gaitSource": "measured",
+    "n": 9,
+    "h": 0.4444,
+    "tread": 0.8889,
+    "landings": [],
+    "steps": [
+     {
+      "kind": "step",
+      "i": 0,
+      "p": [
+       0,
+       1.0444,
+       10
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 1,
+      "p": [
+       0,
+       1.4889,
+       10.8889
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 2,
+      "p": [
+       0,
+       1.9333,
+       11.7778
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 3,
+      "p": [
+       0,
+       2.3778,
+       12.6667
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 4,
+      "p": [
+       0,
+       2.8222,
+       13.5556
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 5,
+      "p": [
+       0,
+       3.2667,
+       14.4444
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 6,
+      "p": [
+       0,
+       3.7111,
+       15.3333
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 7,
+      "p": [
+       0,
+       4.1556,
+       16.2222
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     },
+     {
+      "kind": "step",
+      "i": 8,
+      "p": [
+       0,
+       4.6,
+       17.1111
+      ],
+      "T": [
+       0,
+       0,
+       1
+      ],
+      "U": [
+       0,
+       1,
+       0
+      ],
+      "R": [
+       -1,
+       0,
+       0
+      ],
+      "h": 0.4444,
+      "tread": 0.8889,
+      "width": 6.4,
+      "kit": "STUFE_1MC",
+      "up": 1
+     }
+    ],
+    "rise": 4,
+    "run": 8,
+    "s0": 10,
+    "s1": 18
+   },
+   {
+    "kind": "ramp",
+    "s0": 18,
+    "s1": 30,
+    "maxGrade": 0.0333,
+    "width": 6.4
+   }
+  ]
+ },
+ "checks": {
+  "gaitSource": "measured",
+  "results": [
+   {
+    "id": "walk_grade",
+    "pass": true,
+    "value": 0.06,
+    "note": "ramps <= 12 % (V-158), stairs within the measured step / wall rule"
+   },
+   {
+    "id": "walk_ends",
+    "pass": true,
+    "value": [
+     "test:start",
+     "test:top"
+    ],
+    "note": "both ends at an anchor (place, building, plaza), never in nothing"
+   },
+   {
+    "id": "walk_clear",
+    "pass": true,
+    "value": 0,
+    "note": "no road on the path outside declared crossings"
+   }
+  ],
+  "pass": true
+ },
+ "note": "step p = front edge centre of the tread top (lab), h = riser, tread = depth, width = 1 MC, kit STUFE_1MC (masonry A, RKIT). Ramp parts: the centre line between the stairs follows route.pts. minTread is still open: this flight is the stair foot test (V-157)."
+}

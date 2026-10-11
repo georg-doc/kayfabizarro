@@ -1,0 +1,98 @@
+{
+  "angles": [
+    {
+      "azimuth": 0.0,
+      "path": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/renders/final_front.png",
+      "isReference": true,
+      "segmented": true,
+      "holed": true,
+      "interiorHolePixelCount": 46911,
+      "interiorHoleFraction": 0.45010218473849345,
+      "largestHolePixelCount": 46911,
+      "largestHoleBBox": {
+        "x": 168,
+        "y": 306,
+        "width": 387,
+        "height": 161
+      },
+      "areaFraction": 0.2010474537037037,
+      "ratio": 1.0,
+      "degenerate": false
+    },
+    {
+      "azimuth": 90.0,
+      "path": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/renders/final_right.png",
+      "isReference": false,
+      "segmented": true,
+      "holed": false,
+      "interiorHolePixelCount": 0,
+      "interiorHoleFraction": 0.0,
+      "largestHolePixelCount": 0,
+      "largestHoleBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "areaFraction": 0.1507735339506173,
+      "ratio": 0.7499400324304617,
+      "degenerate": false
+    },
+    {
+      "azimuth": 180.0,
+      "path": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/renders/final_rear.png",
+      "isReference": false,
+      "segmented": true,
+      "holed": true,
+      "interiorHolePixelCount": 50106,
+      "interiorHoleFraction": 0.47898364385473524,
+      "largestHolePixelCount": 50106,
+      "largestHoleBBox": {
+        "x": 166,
+        "y": 306,
+        "width": 390,
+        "height": 169
+      },
+      "areaFraction": 0.2017920524691358,
+      "ratio": 1.0037035970946913,
+      "degenerate": false
+    },
+    {
+      "azimuth": 270.0,
+      "path": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/renders/final_left.png",
+      "isReference": false,
+      "segmented": true,
+      "holed": false,
+      "interiorHolePixelCount": 0,
+      "interiorHoleFraction": 0.0,
+      "largestHolePixelCount": 0,
+      "largestHoleBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "areaFraction": 0.15226273148148148,
+      "ratio": 0.757347226619844,
+      "degenerate": false
+    }
+  ],
+  "referenceAzimuth": 0.0,
+  "requiredAzimuths": [
+    0.0,
+    90.0,
+    180.0,
+    270.0
+  ],
+  "azimuthTolerance": 5.0,
+  "missingAzimuths": [],
+  "covered": true,
+  "collapseRatio": 0.15,
+  "degenerate": false,
+  "allowHoles": false,
+  "holed": true,
+  "unsegmentedAzimuths": [],
+  "segmentationReliable": true,
+  "passed": false,
+  "note": "deterministic; zero token; mandatory azimuth coverage catches off-axis-only defects, interior-hole flood fill catches silhouette-enclosed background that an area-only check misses"
+}

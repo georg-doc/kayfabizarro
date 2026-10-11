@@ -1,0 +1,160 @@
+STATUS pass=blockout completed=0 blocked=none next=diagnose_render.py
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.3664,
+    "aspectRatioDelta": 0.3673,
+    "scaleDelta": 0.5859,
+    "bilateralSymmetryError": 0.1822,
+    "colorDelta": {
+      "checked": 33,
+      "maxDeltaE": 17.32,
+      "perComponent": [
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 6.04
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 8.04
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 8.04
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.22
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.22
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 10.95
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.32
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.32
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.32
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.78
+        },
+        {
+          "componentId": null,
+          "deltaE": 17.32
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        },
+        {
+          "componentId": null,
+          "deltaE": 11.27
+        }
+      ],
+      "gated": false
+    }
+  },
+  "failures": [
+    "silhouette IoU 0.366 is below threshold 0.85",
+    "aspect-ratio delta 0.367 exceeds threshold 0.05",
+    "scale delta 0.586 exceeds threshold 0.08",
+    "blockout requires --map-stripped-render evidence"
+  ],
+  "maskWarnings": [
+    "reference: 2.9% of foreground cells lie outside the largest connected blob and were excluded from the bounding box; if the subject really has separated parts in this projection, they are not being measured"
+  ],
+  "renderHash": "ad8d91cb22cb8ff7",
+  "passId": "blockout"
+}

@@ -1,0 +1,644 @@
+{
+  "targetName": "KFB Cartoon Stone Arch Bridge",
+  "sourceImage": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/reference.jpg",
+  "preSpecAssessment": {
+    "objectClass": {
+      "primaryType": "single-span segmental stone arch bridge (game prop)",
+      "primaryDomain": "object",
+      "formLanguage": [
+        "architectural",
+        "sculptural"
+      ],
+      "structureKind": [
+        "compound object",
+        "repeated modules"
+      ],
+      "motionPotential": [
+        "static prop"
+      ],
+      "materialFamilies": [
+        "stone"
+      ],
+      "notes": "Observed: one-arch masonry bridge with abutments, spandrels, cambered deck, parapets. KFB re-style: claymation rounded blocks."
+    },
+    "complexity": {
+      "tier": "complex",
+      "scores": {
+        "silhouetteComplexity": 2,
+        "componentCount": 2,
+        "hierarchyDepth": 2,
+        "repetitionDensity": 2,
+        "materialLayerCount": 1,
+        "localDetailDensity": 2,
+        "occlusionRisk": 1,
+        "actionReadinessNeed": 0
+      },
+      "estimatedCounts": {
+        "macroComponents": 5,
+        "mesoComponents": 9,
+        "microFeatureGroups": 5,
+        "materialLayers": 3,
+        "repetitionSystems": 4
+      },
+      "reasoning": [
+        "Five macro assemblies (arch barrel, 2 spandrel walls, 2 abutments, deck, 2 parapets) with repeated block modules (voussoirs, coping stones, wall blocks, deck slabs) -> complex tier.",
+        "Single stone material but 4 albedo tones + road surface -> 3 material layers.",
+        "Static prop: no articulation; action-readiness is only explode/click per part."
+      ]
+    },
+    "specDepthDecision": {
+      "requiredDepth": "complex",
+      "minimumComponentLevels": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "needsRepetitionSystems": true,
+      "needsMaterialLocalOverrides": true,
+      "needsMultipleReviewViews": true,
+      "needsActionReadyHierarchy": true,
+      "rationale": "Choose simple/moderate/complex/ultra-complex from observed structure, not from a hardcoded domain."
+    },
+    "unknownsToResolveBeforeImplementation": [
+      "far face hidden -> mirrored from near face (bilateral symmetry assumption)",
+      "vault intrados only partly visible -> assumed continuous barrel of voussoir rings",
+      "reference is a 360px low-poly render; masonry bond pattern unreadable -> replaced by KFB block layout",
+      "KFB target dimensions (span 8H, deck 5H, parapet 0.5H; H=3.64u) override reference proportions"
+    ],
+    "detailInventory": {
+      "scanMethod": "grid-3x3",
+      "targetMinDetails": 10,
+      "note": "Enumerate every identity-defining small detail before authoring the spec. Each detail must map to a component.localFeatures entry or material.localOverrides entry, never prose only. Use forge/stage1_intake/build_detail_inventory.py to scan zones.",
+      "details": [
+        {
+          "id": "keystone",
+          "kind": "ridge",
+          "description": "crown voussoir proud of arch face, larger than neighbours",
+          "region": {
+            "x": 0.33,
+            "y": 0.4,
+            "width": 0.2,
+            "height": 0.2,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "arch-ring-front.keystone-proud"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+          "confidence": 0.6
+        },
+        {
+          "id": "voussoir-joints",
+          "kind": "groove",
+          "description": "radial joints of arch ring converge on arch centre",
+          "region": {
+            "x": 0.15,
+            "y": 0.45,
+            "width": 0.4,
+            "height": 0.35,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "arch-ring-front.voussoir-joints"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c0.png",
+          "confidence": 0.55
+        },
+        {
+          "id": "arch-opening",
+          "kind": "hole",
+          "description": "full-width segmental arch opening through the bridge",
+          "region": {
+            "x": 0.18,
+            "y": 0.5,
+            "width": 0.4,
+            "height": 0.35,
+            "units": "normalized"
+          },
+          "scale": "macro",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "arch-barrel.arch-opening"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c0.png",
+          "confidence": 0.95
+        },
+        {
+          "id": "coping-rounded",
+          "kind": "bevel",
+          "description": "parapet coping stones overhang wall; KFB: rounded capsule-like tops",
+          "region": {
+            "x": 0.35,
+            "y": 0.15,
+            "width": 0.6,
+            "height": 0.4,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "parapet-front.coping-rounded"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c1.png",
+          "confidence": 0.7
+        },
+        {
+          "id": "coping-joints",
+          "kind": "groove",
+          "description": "stepped joints between coping stones along the parapet",
+          "region": {
+            "x": 0.6,
+            "y": 0.2,
+            "width": 0.35,
+            "height": 0.35,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "parapet-front.coping-joints"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c2.png",
+          "confidence": 0.7
+        },
+        {
+          "id": "deck-slab-joints",
+          "kind": "groove",
+          "description": "transverse slab/plank joints across the deck near end",
+          "region": {
+            "x": 0.55,
+            "y": 0.4,
+            "width": 0.35,
+            "height": 0.2,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "deck.deck-slab-joints"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c2.png",
+          "confidence": 0.7
+        },
+        {
+          "id": "abutment-block-joints",
+          "kind": "groove",
+          "description": "block masonry courses on abutment faces",
+          "region": {
+            "x": 0.6,
+            "y": 0.6,
+            "width": 0.35,
+            "height": 0.3,
+            "units": "normalized"
+          },
+          "scale": "micro",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "abutment-east.block-joints"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r2c2.png",
+          "confidence": 0.5
+        },
+        {
+          "id": "block-bevel",
+          "kind": "bevel",
+          "description": "every stone block edge rounded (KFB claymation constraint)",
+          "region": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "spandrel-front.block-bevel"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+          "confidence": 0.9
+        },
+        {
+          "id": "tone-variation",
+          "kind": "stain",
+          "description": "per-block albedo variation across 4 warm stone tones",
+          "region": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "albedo",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "stone-warm.tone-variation"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+          "confidence": 0.8
+        },
+        {
+          "id": "cavity-darkening",
+          "kind": "stain",
+          "description": "darker value inside the vault / under the arch (AO, cavityBias)",
+          "region": {
+            "x": 0.2,
+            "y": 0.5,
+            "width": 0.35,
+            "height": 0.35,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "ao",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "stone-warm.cavity-darkening"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r2c0.png",
+          "confidence": 0.6
+        },
+        {
+          "id": "road-tone",
+          "kind": "decal",
+          "description": "road surface strip on deck, KFB colour #545e7a",
+          "region": {
+            "x": 0.3,
+            "y": 0.2,
+            "width": 0.5,
+            "height": 0.4,
+            "units": "normalized"
+          },
+          "scale": "macro",
+          "affects": "albedo",
+          "mapsTo": {
+            "type": "material.localOverrides",
+            "ref": "road-surface.road-tone"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c1.png",
+          "confidence": 0.9
+        },
+        {
+          "id": "deck-edge-course",
+          "kind": "ridge",
+          "description": "string course of stones marking the deck edge above the arch",
+          "region": {
+            "x": 0.15,
+            "y": 0.3,
+            "width": 0.7,
+            "height": 0.2,
+            "units": "normalized"
+          },
+          "scale": "meso",
+          "affects": "geometry",
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "deck.deck-edge-course"
+          },
+          "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+          "confidence": 0.6
+        }
+      ]
+    },
+    "anatomy": {
+      "applies": false,
+      "styleHeads": 0.0,
+      "proportions": {
+        "headUnit": 0.0,
+        "torso": 0.0,
+        "legs": 0.0,
+        "shoulderWidth": 0.0,
+        "hipWidth": 0.0
+      },
+      "pose": {
+        "type": "unassessed",
+        "jointAngles": {}
+      },
+      "faceLandmarks": {
+        "eyeLine": 0.0,
+        "eyeSpacing": 0.0,
+        "noseBase": 0.0,
+        "mouthLine": 0.0,
+        "hairline": 0.0
+      },
+      "features": [],
+      "confidence": 0.0,
+      "note": "Only meaningful when objectClass.primaryDomain is character or hybrid. Set applies=true and fill from forge/stage1_intake/extract_landmarks.py. See grimoire/character/reconstruction.md and grimoire/character/likeness_maximization.md."
+    },
+    "sourceImage": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/reference.jpg"
+  },
+  "qualityContract": {
+    "qualityBar": "complex",
+    "definitionOfDone": [
+      "Reads at first glance as a single-arch stone bridge from the reference 3/4 viewpoint: arch opening through full width, humped deck, boxy abutments, parapets.",
+      "Claymation look: every stone is a thick rounded block (bevel radius >= 18% of smallest block dimension), no sharp cut faces, no plate thinner than 0.35 H.",
+      "Arch ring is radial voussoirs (odd count, wedge-shaped, normal to intrados) with a visibly proud keystone at the crown.",
+      "Palette is exactly the 4 stone tones #e6d4b5 #d1ba99 #b29c7d #9e856b distributed per block with seeded randomness, road #545e7a.",
+      "Scale contract: span 8H=29.1u, deck width 5H=18.2u, parapet height 0.5H=1.82u above road (H=3.64u)."
+    ],
+    "minimumSpecDepth": {
+      "macroComponents": 3,
+      "mesoComponents": 8,
+      "microFeatureGroups": 5,
+      "materialLayers": 3,
+      "repetitionSystems": 1,
+      "reviewViewpoints": 4
+    },
+    "featureGroups": [
+      {
+        "id": "overall-silhouette",
+        "name": "Overall silhouette and proportions",
+        "required": true,
+        "qualityCriteria": [
+          "Bounding shape, dominant curves, negative spaces, and scale relationships are explicitly described."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model reads as a generic placeholder instead of the reference object",
+          "major proportions are guessed without evidence"
+        ]
+      },
+      {
+        "id": "primary-structure",
+        "name": "Primary structure and hierarchy",
+        "required": true,
+        "qualityCriteria": [
+          "Major parts, joints, seams, contact points, and parent-child relationships are named before code generation."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "large visible parts are merged into one mesh",
+          "component hierarchy is too shallow for the observed complexity"
+        ]
+      },
+      {
+        "id": "attachment-joint-correctness",
+        "name": "Attachment and joint correctness",
+        "required": true,
+        "qualityCriteria": [
+          "Every visible child appendage, branch, limb, handle, connector, tube, cable, horn, wing, leg, or hinged part has an attachment contract with parent socket, localStart/localEnd, contact type, embed/overlap, and gap tolerance."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "child part root floats away from the parent",
+          "branch/limb/tube is centered in space instead of pivoting from its root",
+          "parent-child transform mixes world and local coordinates"
+        ]
+      },
+      {
+        "id": "surface-material-response",
+        "name": "Surface material response",
+        "required": true,
+        "qualityCriteria": [
+          "Albedo zones, roughness, normal/bump/displacement intent, cavity dirt, edge wear, and local overrides are specified where visible.",
+          "Important materials define independent albedo, roughness, height/normal, and AO responses instead of reusing one texture for unrelated PBR channels.",
+          "Surface response is decomposed into macro, meso, and micro frequency bands with scale and amplitude tied to object scale."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "surface looks like flat plastic",
+          "local material variation is missing or not tied to image evidence"
+        ]
+      },
+      {
+        "id": "reference-lookdev",
+        "name": "Reference color, material, and lighting response",
+        "required": true,
+        "qualityCriteria": [
+          "Material-pass names the reference-derived albedo palette, roughness variation, tactile normal/bump/displacement response, and local masks.",
+          "When a source image is available, run reference PBR extraction and require confidence >= 0.7 before treating maps as implementation-ready.",
+          "Lighting-pass names key/fill/rim or environment light, exposure, tone mapping, background, and contact shadow behavior.",
+          "Neutral, grazing-angle, and reference-matched renders prove that surface relief survives relighting and is not painted into albedo."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model has acceptable shape but reads as flat shaded or plastic",
+          "colors are a generic average instead of reference-observed local color zones",
+          "lighting is evenly ambient and cannot reproduce the source value range"
+        ]
+      },
+      {
+        "id": "radial-voussoir-arch",
+        "name": "Radial voussoir arch ring with keystone",
+        "required": true,
+        "qualityCriteria": [
+          "odd number of wedge voussoirs (13-17) whose joints point to the arch centre",
+          "keystone 1.25x deeper and proud of the face by >=0.15H",
+          "intrados continuous, no gaps between voussoirs > 0.02u"
+        ],
+        "evidenceRefs": [
+          "reference arch ring on near face"
+        ],
+        "failureModes": [
+          "voussoirs placed vertically instead of radially",
+          "no keystone",
+          "arch reads as cut-out hole in a slab"
+        ]
+      },
+      {
+        "id": "claymation-rounded-blocks",
+        "name": "Thick rounded clay stone blocks",
+        "required": true,
+        "qualityCriteria": [
+          "all blocks rounded-box geometry with bevel radius >= 18% of min dimension",
+          "slight per-block size/rotation jitter (seeded)",
+          "no thin plates"
+        ],
+        "evidenceRefs": [
+          "KFB style constraint"
+        ],
+        "failureModes": [
+          "sharp box edges",
+          "flat textured slabs instead of blocks"
+        ]
+      },
+      {
+        "id": "parapet-coping",
+        "name": "Parapets with rounded copings following the deck camber",
+        "required": true,
+        "qualityCriteria": [
+          "parapet top 0.5H above road",
+          "coping stones are rounded (capsule-like) and wider than the wall",
+          "follow the cambered deck curve"
+        ],
+        "evidenceRefs": [
+          "reference stepped parapet top"
+        ],
+        "failureModes": [
+          "parapet flat while deck is cambered",
+          "floating copings"
+        ]
+      },
+      {
+        "id": "abutments-solid",
+        "name": "Solid abutments wider than the deck",
+        "required": true,
+        "qualityCriteria": [
+          "abutments project laterally beyond the spandrels",
+          "arch springs from abutment inner faces",
+          "embedded in ground plane"
+        ],
+        "evidenceRefs": [
+          "reference boxy end blocks"
+        ],
+        "failureModes": [
+          "arch floats",
+          "abutments missing or as thin walls"
+        ]
+      },
+      {
+        "id": "deck-road",
+        "name": "Cambered deck with road surface #545e7a",
+        "required": true,
+        "qualityCriteria": [
+          "road surface runs between parapets along the camber",
+          "deck edge stones visible"
+        ],
+        "evidenceRefs": [
+          "reference humped walkway"
+        ],
+        "failureModes": [
+          "flat deck",
+          "road colour wrong"
+        ]
+      }
+    ],
+    "visualDeltaChecks": [
+      "silhouette and negative-space delta",
+      "component hierarchy depth delta",
+      "repetition density and distribution delta",
+      "material albedo/roughness/normal response delta",
+      "local feature placement and scale delta",
+      "voussoir radiality (joint lines converge on arch centre)",
+      "edge roundness: no visible hard silhouette corners at review distance"
+    ],
+    "antiShallowSpecRules": [
+      "Do not proceed to code if qualityContract.qualityBar is unassessed.",
+      "Do not proceed to code if the spec only contains a root component for a moderate or complex object.",
+      "Do not proceed to code if required featureGroups are not represented by componentTree, materials, or repetitionSystems.",
+      "Do not proceed to code if visible local features are described only in prose and not attached to components/materials/evidenceRefs.",
+      "Do not proceed past structural-pass if attached child parts lack attachment.parentSocket, localStart, localEnd, embedDepth/overlap, and gapTolerance.",
+      "Do not pass material look-dev when albedo is reused as roughness, height, normal, or AO.",
+      "Do not pass material look-dev without macro, meso, and micro surface frequency bands for close-up materials.",
+      "Do not pass reference-fidelity material look-dev from a source image without usable referencePbr maps or an explicit documented limitation.",
+      "Do not patch a spec with extracted PBR maps when extraction confidence is below the target threshold unless the user explicitly accepts lower fidelity.",
+      "Do not place adjacent separate-geometry parts below 0.02 world-unit seam overlap (source: grimoire/build/geometry_patterns.md).",
+      "Do not satisfy raised or recessed relief, fasteners, or grip structure with a map alone when the feature affects form; use geometry or displacement (source: grimoire/build/geometry_patterns.md)."
+    ]
+  },
+  "authoringInstruction": "Fill observed object class, complexity reasoning, featureGroups, visualDeltaChecks, and unknowns before generating or implementing ObjectSculptSpec.",
+  "localSpecSearch": {
+    "collection": "core_3d",
+    "query": "KFB Cartoon Stone Arch Bridge stone arch voussoir keystone masonry rounded bevel stylized clay stone block bridge parapet coping abutment",
+    "index": {
+      "status": "rebuilt",
+      "reason": "missing",
+      "fingerprint": "62f2831e1d52eeb6dbb94a87c44fa25b1f4926626a7b1f8c2bcadc63e04e9471"
+    },
+    "matches": [
+      {
+        "record_id": "core.coordinate-relative-units",
+        "file_path": "grimoire/glossary/3d_vocabulary.md",
+        "heading": "Geometry And Topology",
+        "key_path": null,
+        "score": 5.594547623161,
+        "snippets": [
+          "A bevel radius is sized in object-relative units."
+        ],
+        "source_refs": [
+          {
+            "path": "grimoire/glossary/3d_vocabulary.md",
+            "heading": "Geometry And Topology",
+            "key_path": null
+          },
+          {
+            "path": "grimoire/intake/image_analysis.md",
+            "heading": "Layer 2 \u2014 Overall form & silhouette",
+            "key_path": null
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "grimoire/glossary/3d_vocabulary.md"
+          },
+          {
+            "kind": "notebooklm-research",
+            "ref": "notebooklm:4b03c2f9-8393-411f-b5b4-039ab9532843",
+            "note": "Validated generic schema vocabulary; numeric claims remain backed by local source_refs."
+          }
+        ]
+      },
+      {
+        "record_id": "core.shader-mapping-capsulegeometry-rounded-edge-components",
+        "file_path": "docs/raw/img2threejs-skill-dataset.json",
+        "heading": null,
+        "key_path": "categories.rendering_shader_mapping[6]",
+        "score": 5.386043518442,
+        "snippets": [
+          "Maps to components with hemispherical rounded ends. \u00c1nh x\u1ea1 t\u1edbi c\u00e1c b\u1ed9 ph\u1eadn c\u00f3 \u0111\u1ea7u bo tr\u00f2n d\u1ea1ng b\u00e1n c\u1ea7u. Recognition cues: Rod-like part with distinctly rounded (not flat-cut) ends, e.g. a knife spine or a safety lever D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/raw/img2threejs-skill-dataset.json",
+            "heading": null,
+            "key_path": "categories.rendering_shader_mapping[6]"
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "docs/raw/img2threejs-skill-dataset.json",
+            "note": "img2threejs NotebookLM research distillation"
+          }
+        ]
+      },
+      {
+        "record_id": "core.description-pbr-vocabulary-caption-calibration",
+        "file_path": "docs/raw/img2threejs-skill-dataset.json",
+        "heading": null,
+        "key_path": "categories.description_conventions[7]",
+        "score": 2.994852144769,
+        "snippets": [
+          "Embedding a technical material-attribute block (Albedo, Metalness, Roughness, Normals) with measured reflectance ranges directly into the structured description, not just prose. Nh\u00fang m\u1ed9t kh\u1ed1i thu\u1ed9c t\u00ednh v\u1eadt li\u1ec7u k\u1ef9 thu\u1eadt (Albedo, Metalness, ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/raw/img2threejs-skill-dataset.json",
+            "heading": null,
+            "key_path": "categories.description_conventions[7]"
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "docs/raw/img2threejs-skill-dataset.json",
+            "note": "img2threejs NotebookLM research distillation"
+          }
+        ]
+      }
+    ]
+  }
+}

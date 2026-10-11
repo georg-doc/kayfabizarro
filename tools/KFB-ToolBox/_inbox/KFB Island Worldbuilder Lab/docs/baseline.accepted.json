@@ -1,0 +1,613 @@
+{
+ "schema": "kfb.baseline/1",
+ "generated": "2026-10-10",
+ "doc": "docs/BASELINE_ACCEPTED_R1.md",
+ "labRoot": "KFB Island Worldbuilder Lab",
+ "notes": "Read-only reconstruction. labStatus from grep of src/, nothing executed. KFB Open World not readable (permission filter). Entries with 'open' need the pending clay/light research.",
+ "counts": {
+  "same": 9,
+  "different": 9,
+  "missing": 6
+ },
+ "blocks": [
+  {
+   "id": "figure_base",
+   "acceptedSource": "KayKit Rig_Medium; docs/SCALE_CONTRACT_K2.md; src/scale.ts (r186)",
+   "acceptedDate": "2026-10-08",
+   "quote": "im Prinzip würde ich denken, dass wir alles hochskalieren (2ecdb67e 13:09)",
+   "values": {
+    "H_lab": 3.64,
+    "H_tolerance_max": 3.85,
+    "MC_lab": 6.4,
+    "MC_in_H": 1.76,
+    "FIG_SCALE": 1.6,
+    "door_H": 1.2,
+    "door_min_H": 1.15,
+    "figuresRescaled": false
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/scale.ts",
+    "src/play/camera.ts:12"
+   ],
+   "parityCheck": "every resident bbox height / 3.64 in [1.0, 1.06] for Medium; no figure scale != FIG_SCALE"
+  },
+  {
+   "id": "eye_rig",
+   "acceptedSource": "pet-eye-rig.v6.js (md5 1c194efa…) + anchored-eyes.v1.js + facehost.v1.js on *_NoEyes.glb anchors eye_anchorl/r; canonical KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/ (Resident Atlas S16, three 0.184)",
+   "acceptedDate": "2026-10-01",
+   "quote": "EYE-CLEANUP-01 PASS for Mummy_A, Mummy_B, Witch, Orc Brute (MUMMY_01_RETURN.md Runde 6, agent-reported); rule 09.10.: never without eyes, never original painted eyes",
+   "values": {
+    "rigVersion": "v6",
+    "mount": "anchored-eyes.v1",
+    "seatBehindCap_r": 0.24,
+    "pupilStyle": "matte-cute",
+    "inset": 0,
+    "lidFit": 0.9,
+    "pupilSize_v6default": 0.5,
+    "converge_v6default": 0,
+    "splay": 0,
+    "lidRest": {
+     "upper": 0.12,
+     "lower": 0.06
+    },
+    "lidColor": "measured skin",
+    "mediumAuthoringDefault_2026-09-19": {
+     "dx": 0.295,
+     "dy": 0.045,
+     "ring": 0.153,
+     "track": 0.15,
+     "pupilSize": 0.34,
+     "inset": 0.4,
+     "converge": 0.18
+    },
+    "farmer_a": {
+     "skin": "#f6c19d",
+     "anchorR": 0.0649,
+     "approved": false
+    }
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/residents/pet-eye-rig.v6.js",
+    "src/residents/anchored-eyes.v1.js",
+    "src/residents/resident.ts:57-63",
+    "src/play/walk.ts:48",
+    "public/cards/farmer_a.card.json"
+   ],
+   "parityCheck": "for every resident: KayKit eye meshes visible == 0, cartoon eyes == 2, rig md5 == 1c194efa…, lid colour == card skin, card.eyes present and approved != null"
+  },
+  {
+   "id": "face_readability",
+   "acceptedSource": "Open World module list 2026-10-06 (Silhouette/Pose > Orientation > Gesture > Emanata > Face); SPEC_CHARACTER_INTEGRITY_R1 camera set 'Figur'",
+   "acceptedDate": null,
+   "quote": "kann mir vorstellen, dass das Gesicht relativ schlecht lesbar ist (2ecdb67e 2026-10-10 18:54, concern)",
+   "values": {
+    "cameraSet": [
+     "face_front",
+     "face_34",
+     "hand_prop_close",
+     "seat_side"
+    ],
+    "noClayDentsOnFace": true
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "docs/critic/lab-stage2/2026-10-10_10/REPORT.md"
+   ],
+   "parityCheck": "face-front still from game camera: eye pixel height >= agreed minimum (open); max clay relief amplitude on head mesh below threshold"
+  },
+  {
+   "id": "clay_figure",
+   "acceptedSource": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 v8 visual golden; K2 clay-material.v10 only with golden parity)",
+   "acceptedDate": "2026-10-10",
+   "quote": "nicht unserer vereinbarten Standardtextur, die etwas dezenter war (2ecdb67e 18:54)",
+   "values": {
+    "K1_hand": 0.5,
+    "K1_tile": 1.6,
+    "K1_fingerprintTile": 4.5,
+    "scaledToObjectSize": true,
+    "fingerprintsNearBandOnly": true,
+    "residentAtlasFigureValues": "open"
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/residents/resident.ts:54",
+    "src/clay/index.ts (CLAY_K 2.2)",
+    "src/clay/clay-profiles.ts (figure profile unused)"
+   ],
+   "parityCheck": "figure material profile == 'figure' (not 'model') and hand scale relative to head width <= agreed ratio; no thumb dent > 0.15 head width"
+  },
+  {
+   "id": "clay_environment",
+   "acceptedSource": "Clay canon §3/§5/§8 (K2 clay-material.v10, clay-relief.v4, clay-toolmix.v1; K1/H0 terrain golden); clay_floor_001 = STAND-IN",
+   "acceptedDate": "2026-10-06",
+   "quote": "machen wir gerne so mit der textur (54443e11 23:33); die ganze Umgebung gar keine Claymation-Textur (2ecdb67e 2026-10-10 18:54)",
+   "values": {
+    "K2_hand_m": 1.5,
+    "K2_tile_m": 4.8,
+    "K2_fingerprintTile_m": 13.5,
+    "toolFamilies": 6,
+    "microDetailFadeByPixelFootprint": true,
+    "clay_floor_001_extraRelief": false
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/island/r2d/ground.ts:55-56",
+    "src/island/r2d/ground.ts:104",
+    "src/island/rkit-parts.ts:57",
+    "src/island/island.ts:92"
+   ],
+   "parityCheck": "every terrain/road/kerb material isClay == true; terrain tools != {} in near band; road preview not plain MeshStandardMaterial; car glass isClay == false"
+  },
+  {
+   "id": "speckle_transition",
+   "acceptedSource": "S1 kfbSpeckleLayer src/clay/kfb-speckle.ts (speckleThresholds); kfbBlend src/clay/kfb-blend.ts (Joyride road-markings.m1.js, 3 sizes) for built transitions",
+   "acceptedDate": "2026-10-09",
+   "quote": "das mit den Sprenkeln, das gefällt mir, können wir … so nehmen … Tune später (2ecdb67e 02:12)",
+   "values": {
+    "sizes": 3,
+    "microOnlyNear": true,
+    "edgeAA": "fwidth",
+    "worldFixed": true,
+    "forbidden": [
+     "gradient",
+     "alpha",
+     "noise speckle",
+     "grid",
+     "dots"
+    ]
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/clay/kfb-speckle.ts",
+    "src/island/r2d/top-material.ts",
+    "src/island/r2d/ground.ts:56"
+   ],
+   "parityCheck": "island top material uses patchSpeckle (S1) and no kfbLayer/gradient blend; per-island seed differs (critic: identical pattern)"
+  },
+  {
+   "id": "palette_env_roles",
+   "acceptedSource": "src/palettes.ts ENV_ROLES (Joyride palettes canyon/bucht/otown + wueste, kfb_town, protopia)",
+   "acceptedDate": "2026-10-08",
+   "quote": "Die Farbstimmung stimmt, die Claymation-Anmutung stimmt (2ecdb67e 01:43)",
+   "values": {
+    "roles": [
+     "ground",
+     "grass",
+     "stone",
+     "bark",
+     "leaf",
+     "bloom",
+     "water",
+     "accent",
+     "sand",
+     "paved",
+     "earth"
+    ],
+    "bande_rot": "#d73d30",
+    "bande_weiss": "#eee9dc",
+    "colourBakedIntoAssets": false
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/palettes.ts:128",
+    "src/palettes.ts:176",
+    "src/palettes.ts:188"
+   ],
+   "parityCheck": "single colour source: no hex colours in scene materials outside ENV_ROLES/PALETTES; palette-roles.js (Clay Stage R2) merged before use"
+  },
+  {
+   "id": "lighting",
+   "acceptedSource": "src/world/light.ts; LESSONS_SHADOWS.md (GitHub main)",
+   "acceptedDate": null,
+   "quote": null,
+   "values": {
+    "shadowContract": "fit frustum, texel snap, normalBias ∝ texel",
+    "normalBias_texel": 4.5,
+    "shadowMap": 2048,
+    "goldenLight": "K1",
+    "status": "open, no Georg acceptance"
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/world/light.ts"
+   ],
+   "parityCheck": "light rig hash equals baseline snapshot; shadow map size and normalBias equal baseline"
+  },
+  {
+   "id": "locomotion",
+   "acceptedSource": "docs/critic/lab-stage2/2026-10-10_08/REPORT.md (Probe 6, Seed World game_r5 canon); skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md",
+   "acceptedDate": "2026-10-10",
+   "quote": "jogging als default tempo -> shift=sprint (18:26); das passt so erstmal (18:44)",
+   "values": {
+    "default": {
+     "key": "W",
+     "clip": "Running_A",
+     "speed_H_s": 1.4,
+     "rate": 1.0
+    },
+    "sprint": {
+     "key": "Shift+W",
+     "clip": "Running_B",
+     "speed_H_s": 2.22,
+     "rate": 1.3
+    },
+    "walk": {
+     "key": "Ctrl+W",
+     "clip": "Walking_A",
+     "speed_H_s": 0.29
+    },
+    "startHop": false,
+    "controlsCanon": "W/S fwd/back, A/D turn, Q/E strafe, Shift run, Space jump, RMB camera, wheel zoom"
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/play/travel.ts",
+    "src/main.ts",
+    "src/play/walk.ts"
+   ],
+   "parityCheck": "travel default gait == Running_A at 1.40 H/s ±5 %; Shift gait == Running_B at 2.22 H/s; no clip between Idle and Running_A"
+  },
+  {
+   "id": "camera",
+   "acceptedSource": "src/play/camera.ts (Seed World sw-mech.js:434-448 three 0.170 + J17 hand-over); Masterplan §3b",
+   "acceptedDate": "2026-10-10",
+   "quote": "das passt so (2ecdb67e 18:44, video incl. camera; no camera-specific acceptance)",
+   "values": {
+    "minArm": 0.7,
+    "neverLifts": true,
+    "hitIgnore_H": 0.115,
+    "hitKeep_H": 0.192,
+    "groundClear_H": 0.308,
+    "walk": {
+     "pivot_H": 0.62,
+     "side_H": 0.42,
+     "back_H": 3.9,
+     "pitch": -0.15
+    },
+    "drive": {
+     "back_lab": 13.14,
+     "up_lab": 5.11,
+     "pitch": -0.28
+    },
+    "T_CAM_s": 0.7,
+    "dither": 0.35,
+    "maxTurnInCuts_deg_s": 45,
+    "maxLag_s": 0.15,
+    "godMode": {
+     "zoomToCursor": true,
+     "dampingFactor": 0.25
+    },
+    "wheelZoom": [
+     0.55,
+     2.8
+    ],
+    "lockToggle": true,
+    "orbitButton": "RMB"
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/play/camera.ts:14-57",
+    "src/play/travel.ts:150-214",
+    "src/main.ts:346-348"
+   ],
+   "parityCheck": "camera frames inside mesh == 0; arm length >= 0.7 of rest; figure always visible; turn rate in cuts <= 45°/s; wheel zoom present; lock toggle present; orbit only on RMB"
+  },
+  {
+   "id": "driving",
+   "acceptedSource": "KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01/code/ (three 0.160), k2b vendored md5 8f1ba4…",
+   "acceptedDate": "2026-10-10",
+   "quote": "das passt so erstmal (2ecdb67e 18:44, Probe 6 incl. kerb fix)",
+   "values": {
+    "maxForward_m_s": 41,
+    "boost_m_s": 48.5,
+    "accel_m_s2": 18.5,
+    "RACE_W": 1.46,
+    "laneBand": "kerb face key 2 − ½ car width − 0.15 lab"
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/play/drive.ts",
+    "src/play/vendor/j17"
+   ],
+   "parityCheck": "md5(k2b) == J17 md5; lane wall hits in probe route == 0"
+  },
+  {
+   "id": "enter_exit_hop",
+   "acceptedSource": "src/play/car-hop.ts (J17 hop)",
+   "acceptedDate": "2026-10-10",
+   "quote": "etwa 30 % einer sauberen Cartoon-Animation … so nehmen (via steering); die Animation ist okay (18:44)",
+   "values": {
+    "dockOffset_H": 0.3,
+    "apex_lab": 0.5,
+    "dustDabs": 5,
+    "dustLife_s": 0.37,
+    "camCap_deg_s": 36,
+    "exitSameDoor": true,
+    "fallback": "crossfade on key"
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/play/car-hop.ts",
+    "src/play/travel.ts"
+   ],
+   "parityCheck": "lowest skinned vertex never below car skin/ground during hop (== 0 violations); camera never inside car"
+  },
+  {
+   "id": "car_choice",
+   "acceptedSource": "Retro Cartoon Cars Cicada (closed), figure hidden; cabrio frozen behind ?car=cabrio",
+   "acceptedDate": "2026-10-10",
+   "quote": "dachte, wir hätten gesagt, dass wir keine Cabrios nehmen (2ecdb67e 16:25)",
+   "values": {
+    "default": "cicada",
+    "length_lab": 6,
+    "driverVisible": false,
+    "cabrio": "post-MVP"
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/play/travel.ts",
+    "src/play/cabrio.ts"
+   ],
+   "parityCheck": "default car id == cicada when no ?car param; cabrio only reachable via ?car=cabrio"
+  },
+  {
+   "id": "hud",
+   "acceptedSource": "K7 lab-clay/clay-hud.v1.js (27.09., 'top!', file not found) + HUD R3 KFB_HUD_FLIGHT_SESSION_CUT_2026-10-09_r1 (three r170)",
+   "acceptedDate": "2026-10-09",
+   "quote": "sieht ganz okayisch aus … können wir durchaus so nehmen (2ecdb67e 01:02)",
+   "values": {
+    "walk": [
+     "fluffScore",
+     "compass"
+    ],
+    "drive": [
+     "clayTacho",
+     "radio",
+     "fluffScore"
+    ],
+    "fly": [
+     "speed",
+     "height",
+     "thrust",
+     "fluffScore",
+     "radio"
+    ],
+    "backpackSlots": 20,
+    "material": "clay (not flat UI)"
+   },
+   "labStatus": "missing",
+   "labPaths": [],
+   "parityCheck": "exactly one HUD module mounted; mode switch walk/drive shows tacho only in drive/fly; HUD material isClay"
+  },
+  {
+   "id": "road_edge",
+   "acceptedSource": "Bauweise sheet v7 (RKIT); masonry family A v1 (31 modules, kfb.masonry-family/1); Track Core 0.16.1",
+   "acceptedDate": "2026-10-09",
+   "quote": "ok, freigabe - auch mit rubble-eiern (2ecdb67e 01:32); masonry A: YES (2026-10-08 21:53)",
+   "values": {
+    "families": [
+     "kerb",
+     "joyride_bande"
+    ],
+    "bandeColour": "#d73d30",
+    "trackColour": "orange",
+    "maxGrade": 0.08,
+    "skirtBelowTerrain": 0.3,
+    "freeEnd": "whole slabs, last 3 stepped, rubble, 1–2 slab lengths",
+    "colourFrom": "ENV_ROLES stone"
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/island/rkit-parts.ts:57",
+    "src/play/road-ends.ts",
+    "src/island/r2d/road.ts",
+    "src/island/r2d/ground.ts:104"
+   ],
+   "parityCheck": "only kerb or bande edge types on drivable roads; Q1–Q9 pass; road surface isClay"
+  },
+  {
+   "id": "island_body_underside",
+   "acceptedSource": "R2D v0 + Scholle v7 (donors/kfb-island-kit-r2-2026-10-08/BAUANLEITUNG.md); v6 FAILED 2026-10-03",
+   "acceptedDate": "2026-10-08",
+   "quote": "verschieden lange Zapfen … wie eine Tropfsteinhöhlenoberfläche … auf gar keinen Fall die spitz zulaufenden Enden (2ecdb67e 01:43)",
+   "values": {
+    "scholleVersion": "v7",
+    "apexK": 1.18,
+    "sharedSeamRing": true,
+    "terrainDrawCallsPerIsland": 2
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/island/r2d/scholle.ts:1",
+    "src/island/r2d/ground.ts"
+   ],
+   "parityCheck": "underside builder id == 'scholle-v7'; seam-scan hard.fuge == 0; no v6 drip geometry in refs"
+  },
+  {
+   "id": "island_edge",
+   "acceptedSource": "quarter-circle rim roll, edgeFor (ref radius 34); ENV_ERZAEHLRASTER_R1.md §9",
+   "acceptedDate": "2026-10-08",
+   "quote": "natürliche Rundungen … gesprenkelten Dots … Gras über diese Böschung (fb323139 20:45, spec)",
+   "values": {
+    "profile": "quarter circle",
+    "edgeRefRadius": 34,
+    "transition": "S1 speckle grass→earth",
+    "snowBiome": "thawed rim with drips",
+    "formVariancePerIsland": true
+   },
+   "labStatus": "same",
+   "labPaths": [
+    "src/island/r2d/ground.ts",
+    "src/island/r2d/form.ts"
+   ],
+   "parityCheck": "rim radius scales with island size (edgeFor); no straight shading line under rim (ghost-line test == 0)"
+  },
+  {
+   "id": "nature_grounding",
+   "acceptedSource": "src/environment/*; QA_RULEBOOK_ENVIRONMENT_R1.md §2b E1–E7; embed hook boulder/outcrop",
+   "acceptedDate": "2026-10-08",
+   "quote": "grounding sheet approved (PROJECT_STATE); look: durchgängiger fail (fb323139 20:24); source order KayKit > Tiny Treats > Quaternius > Kenney (2026-10-10 17:41)",
+   "values": {
+    "E1_maxFloat_H": 0.003,
+    "E4_groupSizes": [
+     3,
+     5,
+     7
+    ],
+    "E6_ratio": [
+     1,
+     0.6,
+     0.35
+    ],
+    "E7": "windfall downhill of origin",
+    "sourceOrder": [
+     "KayKit",
+     "TinyTreats",
+     "Quaternius",
+     "Kenney"
+    ]
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/environment/index.ts",
+    "src/environment/rock-kit.ts",
+    "src/environment/moss-cap.ts"
+   ],
+   "parityCheck": "envCheck: floating == 0, E4/E5/E6 violations == 0; asset source of every rock in priority order (no Kenney if KayKit/Quaternius candidate exists)"
+  },
+  {
+   "id": "water",
+   "acceptedSource": "donors/…/KFB_Island_Kit_R1/kit/fluid.js (F0–F2 PASS)",
+   "acceptedDate": null,
+   "quote": null,
+   "values": {
+    "noOrangeRing": true
+   },
+   "labStatus": "missing",
+   "labPaths": [
+    "src/island/r2d/ground.ts:89"
+   ],
+   "parityCheck": "water mesh uses fluid.js module (not R2D pond sheet)"
+  },
+  {
+   "id": "billboards",
+   "acceptedSource": "KFB Clay Stage R2 billboards/kit.js (three 0.180), 7 form families",
+   "acceptedDate": "2026-10-09",
+   "quote": "passt so mit TUNE für später (PROJECT_STATE)",
+   "values": {
+    "perIsland": 1,
+    "colours": "island palette roles",
+    "content": [
+     "hypernormalization loops",
+     "quotes"
+    ]
+   },
+   "labStatus": "missing",
+   "labPaths": [],
+   "parityCheck": "one billboard per MVP island, recolor from ENV_ROLES"
+  },
+  {
+   "id": "chatterbox_voice",
+   "acceptedSource": "ChatterBox chatter-phrases.js / chatterbox-core.js; Voice Layer PR #379; KFB Audio Voice Acting Bench v6",
+   "acceptedDate": "2026-10-08",
+   "quote": "die Hörproben … waren eigentlich alle gut, die würde ich … alle nehmen (2ecdb67e 21:53)",
+   "values": {
+    "format": "EN triplet subject→connector→reframe",
+    "sourceRefs": "deckId+cardNumber",
+    "audioContexts": 1,
+    "freeProse": false
+   },
+   "labStatus": "missing",
+   "labPaths": [],
+   "parityCheck": "every spoken line has triplet id + sourceRef; exactly one AudioContext"
+  },
+  {
+   "id": "character_select_curtain",
+   "acceptedSource": "KFB Clay Stage R2 curtain/clay-look.js (three 0.180); core kfb-curtain-core.js not found; candidate core on GitHub tools/KFB-ToolBox/_inbox/KFB Theatre Curtain Recovery Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/…/candidate/kfb-curtain-core.js (unverified)",
+   "acceptedDate": "2026-10-09",
+   "quote": "passt so mit TUNE für später (PROJECT_STATE)",
+   "values": {
+    "ownSurface": true
+   },
+   "labStatus": "missing",
+   "labPaths": [],
+   "parityCheck": "game starts at curtain character select; curtain renders on own surface"
+  },
+  {
+   "id": "clown_market",
+   "acceptedSource": "blender-mcp/motion-forge-poc-01-2026-10-08 clown_juggle_j5/runtime/kfb_prop_track_player.js (three 0.160)",
+   "acceptedDate": "2026-10-09",
+   "quote": "clown ist mit TUNE jonglage auch einsatzfähig für marktplatz (2ecdb67e 03:31)",
+   "values": {
+    "taken": "unchanged",
+    "states": [
+     "juggle",
+     "stop",
+     "talkWindow",
+     "resume"
+    ]
+   },
+   "labStatus": "missing",
+   "labPaths": [],
+   "parityCheck": "md5(kfb_prop_track_player.js) == J5 branch file; prop pins vs Blender < 1e-5"
+  },
+  {
+   "id": "bridge",
+   "acceptedSource": "stone arch; direction tools/img2threejs-tests/bridge01/",
+   "acceptedDate": "2026-10-10",
+   "quote": "Die sieht übrigens super aus … da fehlen vielleicht noch 10, 20 Prozent (2ecdb67e 12:03)",
+   "values": {
+    "maxGrade": 0.08,
+    "drivableHump": false,
+    "abutment": "masonry niche",
+    "trisTarget": 40000
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "tools/img2threejs-tests/bridge02/"
+   ],
+   "parityCheck": "grade <= 8 %; Q1–Q9 pass; tris <= 40k"
+  },
+  {
+   "id": "look.joyride-gold",
+   "acceptedSource": "KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01 (three 0.160) + track-look.v5 WORLDS",
+   "acceptedDate": "2026-10-01 / bestätigt 2026-10-10",
+   "quote": "Joyride war von Gesamtdesign, Gesamtkonzeption, Cartoon-Deformern absoluter Goldstandard … gesetzt (Georg 10.10.)",
+   "values": {
+    "track": "Joyride-Racetrack durchgängig, rote Banden, orange Fahrbahn (Masterplan §3)",
+    "camera": "Joyride-Abstand nach Fahrzeuglänge",
+    "palettes": "track-look.v5 WORLDS → ENV_ROLES"
+   },
+   "labStatus": "different",
+   "labPaths": [
+    "src/play/drive.ts",
+    "src/island/r2d/ground.ts"
+   ],
+   "parityCheck": "Lab-Fahrkamera neben J17 pictures/chase-curve.jpg und chase-straight.jpg bei gleicher Kamera; Strecke = Track-Core/Joyride-Profil, nicht RKIT-Bordprofil (außer in Georgs Town)"
+  }
+ ],
+ "conflictsForGeorg": 10,
+ "integrationRanking": [
+  {
+   "build": "KFB Island Worldbuilder Lab (r186)",
+   "acceptedBlocks": "9 same + 6 partial ≈ 15/24"
+  },
+  {
+   "build": "KFB Open World (Seed World receiving core, local HEAD 5f0cdfa)",
+   "acceptedBlocks": "guess 6–8, unverified (read denied)",
+   "quote": "das ergebnis bisher gefällt mir sehr gut und es ist reifer als die beiden FAILS zuvor (54443e11 2026-10-06 23:33)",
+   "pointers": [
+    "KFB Open World/RETURN.md",
+    "KFB Open World/docs/ARCHITECTURE_AS_BUILT.md",
+    "KFB Open World/docs/FREEZE_GAP_CHECK.md",
+    "KFB Open World/docs/STATUS.json"
+   ]
+  },
+  {
+   "build": "KFB Joyride J17 · FB Cabrio (three 0.160)",
+   "acceptedBlocks": "≈ 6/24"
+  }
+ ]
+}

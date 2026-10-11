@@ -1,0 +1,10 @@
+import { openLab } from '../stage1/browser.mjs';
+const [out, up, pitch] = process.argv.slice(2);
+const { page, close } = await openLab(`shot=1&hub=1&bg=b0c6d8&play=travel&island=rkit_hub&road=0&car=cabrio&camUp=${up}&camPitch=${pitch}`);
+await page.waitForFunction(() => window.__kfb?.travel?.()?.cabSeat, null, { timeout: 180000 });
+await page.evaluate(() => { const t = window.__kfb.travel(); Object.assign(t.core.S, { mode: 'AUTO', st: 'AUTO.SEATED', cam: 'chase' }); });
+await page.evaluate(() => new Promise((r) => setTimeout(r, 800)));
+await page.evaluate(() => { window.__kfb.travel().keys.fwd = true; });
+await page.evaluate(() => new Promise((r) => setTimeout(r, 2300)));
+await page.screenshot({ path: out, type: 'jpeg', quality: 85 });
+await close();

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+const q = process.argv[2] ?? '';
+const b = await chromium.launch({ executablePath: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome', headless: true, args: ['--use-angle=metal'] }); const p = await b.newPage({ viewport: { width: 1600, height: 1000 } });
+await p.goto('http://127.0.0.1:5192/?hub=1&play=game&sound=0&almanac=0&dynres=0&' + q); await p.waitForFunction(() => window.__kfb?.travel?.() && window.__kfb.playCam?.(), null, { timeout: 600000 }); await p.waitForTimeout(2500); await p.mouse.click(800, 500);
+const start = await p.evaluate(() => { const w = window.__kfb.travel().walk.walker.state; return { x: w.position.x, z: w.position.z, h: w.heading }; });
+await p.evaluate((s) => { const W = window.__kfb.travel().walk; W.walker.reset(s.x, s.z, W.heightAt(s.x, s.z), s.h + Math.PI); }, start); await p.waitForTimeout(400);
+await p.evaluate(() => { window.__sl = []; window.__so = window.__kfb.onFrame((dt) => { const t = window.__kfb.travel(), w = t.walk.walker.state, f = t.walk.root.position; window.__sl.push([dt, w.speed ?? 0, w.position.x, w.position.z, f.x, f.z]); }); });
+await p.keyboard.down('ShiftLeft'); await p.keyboard.down('KeyW'); await p.waitForTimeout(2500); await p.keyboard.up('KeyW'); await p.keyboard.up('ShiftLeft');
+const L = await p.evaluate(() => { window.__so(); return window.__sl; }); const a = L[8], z = L[L.length - 1]; let sim = 0; for (let i = 9; i < L.length; i++) sim += L[i][0];
+console.log(q || 'default', 'frames', L.length, 'sim', sim.toFixed(2), 'walker v', (Math.hypot(z[2] - a[2], z[3] - a[3]) / sim).toFixed(2), 'root v', (Math.hypot(z[4] - a[4], z[5] - a[5]) / sim).toFixed(2), 'cmd', z[1].toFixed(2)); await b.close();

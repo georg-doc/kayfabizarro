@@ -1,0 +1,251 @@
+{
+  "sourceImage": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/reference.jpg",
+  "zonesDir": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory",
+  "detailInventory": {
+    "scanMethod": "grid-3x3",
+    "targetMinDetails": 10,
+    "details": [
+      {
+        "id": "keystone",
+        "kind": "ridge",
+        "description": "crown voussoir proud of arch face, larger than neighbours",
+        "region": {
+          "x": 0.33,
+          "y": 0.4,
+          "width": 0.2,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "arch-ring-front.keystone-proud"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+        "confidence": 0.6
+      },
+      {
+        "id": "voussoir-joints",
+        "kind": "groove",
+        "description": "radial joints of arch ring converge on arch centre",
+        "region": {
+          "x": 0.15,
+          "y": 0.45,
+          "width": 0.4,
+          "height": 0.35,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "arch-ring-front.voussoir-joints"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c0.png",
+        "confidence": 0.55
+      },
+      {
+        "id": "arch-opening",
+        "kind": "hole",
+        "description": "full-width segmental arch opening through the bridge",
+        "region": {
+          "x": 0.18,
+          "y": 0.5,
+          "width": 0.4,
+          "height": 0.35,
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "arch-barrel.arch-opening"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c0.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "coping-rounded",
+        "kind": "bevel",
+        "description": "parapet coping stones overhang wall; KFB: rounded capsule-like tops",
+        "region": {
+          "x": 0.35,
+          "y": 0.15,
+          "width": 0.6,
+          "height": 0.4,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "parapet-front.coping-rounded"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c1.png",
+        "confidence": 0.7
+      },
+      {
+        "id": "coping-joints",
+        "kind": "groove",
+        "description": "stepped joints between coping stones along the parapet",
+        "region": {
+          "x": 0.6,
+          "y": 0.2,
+          "width": 0.35,
+          "height": 0.35,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "parapet-front.coping-joints"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c2.png",
+        "confidence": 0.7
+      },
+      {
+        "id": "deck-slab-joints",
+        "kind": "groove",
+        "description": "transverse slab/plank joints across the deck near end",
+        "region": {
+          "x": 0.55,
+          "y": 0.4,
+          "width": 0.35,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "deck.deck-slab-joints"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c2.png",
+        "confidence": 0.7
+      },
+      {
+        "id": "abutment-block-joints",
+        "kind": "groove",
+        "description": "block masonry courses on abutment faces",
+        "region": {
+          "x": 0.6,
+          "y": 0.6,
+          "width": 0.35,
+          "height": 0.3,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "abutment-east.block-joints"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r2c2.png",
+        "confidence": 0.5
+      },
+      {
+        "id": "block-bevel",
+        "kind": "bevel",
+        "description": "every stone block edge rounded (KFB claymation constraint)",
+        "region": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "spandrel-front.block-bevel"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "tone-variation",
+        "kind": "stain",
+        "description": "per-block albedo variation across 4 warm stone tones",
+        "region": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "albedo",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "stone-warm.tone-variation"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+        "confidence": 0.8
+      },
+      {
+        "id": "cavity-darkening",
+        "kind": "stain",
+        "description": "darker value inside the vault / under the arch (AO, cavityBias)",
+        "region": {
+          "x": 0.2,
+          "y": 0.5,
+          "width": 0.35,
+          "height": 0.35,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "ao",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "stone-warm.cavity-darkening"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r2c0.png",
+        "confidence": 0.6
+      },
+      {
+        "id": "road-tone",
+        "kind": "decal",
+        "description": "road surface strip on deck, KFB colour #545e7a",
+        "region": {
+          "x": 0.3,
+          "y": 0.2,
+          "width": 0.5,
+          "height": 0.4,
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "albedo",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "road-surface.road-tone"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r0c1.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "deck-edge-course",
+        "kind": "ridge",
+        "description": "string course of stones marking the deck edge above the arch",
+        "region": {
+          "x": 0.15,
+          "y": 0.3,
+          "width": 0.7,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "deck.deck-edge-course"
+        },
+        "evidenceRef": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/tools/img2threejs-tests/bridge01/detail-inventory/zone-r1c1.png",
+        "confidence": 0.6
+      }
+    ]
+  },
+  "authoringInstruction": "Open each zone crop under zonesDir and replace every detail stub's kind, description, scale, affects, mapsTo, and confidence with what is actually observed. Add more detail entries per zone if a single zone contains multiple distinct marks; do not leave stubs unfilled or unlinked (mapsTo must reference a real component.localFeatures or material.localOverrides entry)."
+}

@@ -1,0 +1,1227 @@
+{
+ "schema": "kfb.trail-foottest/2",
+ "core": "track-core 0.16.8 (private)",
+ "units": "lab",
+ "frame": "local per route: start at the origin, heading +z, y up; second route can sit beside the first (x + 10)",
+ "gait": "docs/critic/lab-track/2026-10-11_V157-gait/gait_v157.json as is (minTreadByRiser)",
+ "rule": "V-160: riser 0.30 / tread >= 1.3 standard, 0.22 / >= 0.889 alternative; masonry A = look only",
+ "routes": [
+  {
+   "route": {
+    "id": "foottest_std_030",
+    "pts": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0.6,
+      10
+     ],
+     [
+      0,
+      4.6,
+      36
+     ],
+     [
+      0,
+      5,
+      48
+     ]
+    ],
+    "width": 6.4,
+    "ends": [
+     {
+      "anchor": "test:start"
+     },
+     {
+      "anchor": "test:top"
+     }
+    ]
+   },
+   "profile": {
+    "kind": "trail_profile",
+    "route": "foottest_std_030",
+    "gaitSource": "measured",
+    "width": 6.4,
+    "length": 48,
+    "parts": [
+     {
+      "kind": "ramp",
+      "s0": 0,
+      "s1": 10,
+      "maxGrade": 0.06,
+      "width": 6.4
+     },
+     {
+      "kind": "stairs",
+      "gaitSource": "measured",
+      "n": 14,
+      "h": 0.2857,
+      "tread": 1.4,
+      "minTread": 1.3,
+      "riserClass": 0.3,
+      "kitNative": false,
+      "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+      "landings": [
+       {
+        "kind": "landing",
+        "p": [
+         0,
+         4.0286,
+         26.8
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "len": 6.4,
+        "width": 6.4
+       }
+      ],
+      "steps": [
+       {
+        "kind": "step",
+        "i": 0,
+        "p": [
+         0,
+         0.8857,
+         10
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 1,
+        "p": [
+         0,
+         1.1714,
+         11.4
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 2,
+        "p": [
+         0,
+         1.4571,
+         12.8
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 3,
+        "p": [
+         0,
+         1.7429,
+         14.2
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 4,
+        "p": [
+         0,
+         2.0286,
+         15.6
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 5,
+        "p": [
+         0,
+         2.3143,
+         17
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 6,
+        "p": [
+         0,
+         2.6,
+         18.4
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 7,
+        "p": [
+         0,
+         2.8857,
+         19.8
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 8,
+        "p": [
+         0,
+         3.1714,
+         21.2
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 9,
+        "p": [
+         0,
+         3.4571,
+         22.6
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 10,
+        "p": [
+         0,
+         3.7429,
+         24
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 11,
+        "p": [
+         0,
+         4.0286,
+         25.4
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 12,
+        "p": [
+         0,
+         4.3143,
+         33.2
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 13,
+        "p": [
+         0,
+         4.6,
+         34.6
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2857,
+        "tread": 1.4,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.3 / tread 1.4 (V-160)",
+        "up": 1
+       }
+      ],
+      "rise": 4,
+      "run": 26,
+      "s0": 10,
+      "s1": 36
+     },
+     {
+      "kind": "ramp",
+      "s0": 36,
+      "s1": 48,
+      "maxGrade": 0.0333,
+      "width": 6.4
+     }
+    ]
+   },
+   "checks": {
+    "gaitSource": "measured",
+    "results": [
+     {
+      "id": "walk_grade",
+      "pass": true,
+      "value": 0.06,
+      "note": "ramps <= 12 % (V-158), stairs within the measured step / wall rule"
+     },
+     {
+      "id": "walk_ends",
+      "pass": true,
+      "value": [
+       "test:start",
+       "test:top"
+      ],
+      "note": "both ends at an anchor (place, building, plaza), never in nothing"
+     },
+     {
+      "id": "walk_clear",
+      "pass": true,
+      "value": 0,
+      "note": "no road on the path outside declared crossings"
+     }
+    ],
+    "pass": true
+   }
+  },
+  {
+   "route": {
+    "id": "foottest_alt_022",
+    "pts": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0.6,
+      10
+     ],
+     [
+      0,
+      4.6,
+      34
+     ],
+     [
+      0,
+      5,
+      46
+     ]
+    ],
+    "width": 6.4,
+    "ends": [
+     {
+      "anchor": "test:start"
+     },
+     {
+      "anchor": "test:top"
+     }
+    ]
+   },
+   "profile": {
+    "kind": "trail_profile",
+    "route": "foottest_alt_022",
+    "gaitSource": "measured",
+    "width": 6.4,
+    "length": 46,
+    "parts": [
+     {
+      "kind": "ramp",
+      "s0": 0,
+      "s1": 10,
+      "maxGrade": 0.06,
+      "width": 6.4
+     },
+     {
+      "kind": "stairs",
+      "gaitSource": "measured",
+      "n": 19,
+      "h": 0.2105,
+      "tread": 0.9263,
+      "minTread": 0.889,
+      "riserClass": 0.22,
+      "kitNative": false,
+      "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+      "landings": [
+       {
+        "kind": "landing",
+        "p": [
+         0,
+         3.1263,
+         21.1158
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "len": 6.4,
+        "width": 6.4
+       }
+      ],
+      "steps": [
+       {
+        "kind": "step",
+        "i": 0,
+        "p": [
+         0,
+         0.8105,
+         10
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 1,
+        "p": [
+         0,
+         1.0211,
+         10.9263
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 2,
+        "p": [
+         0,
+         1.2316,
+         11.8526
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 3,
+        "p": [
+         0,
+         1.4421,
+         12.7789
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 4,
+        "p": [
+         0,
+         1.6526,
+         13.7053
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 5,
+        "p": [
+         0,
+         1.8632,
+         14.6316
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 6,
+        "p": [
+         0,
+         2.0737,
+         15.5579
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 7,
+        "p": [
+         0,
+         2.2842,
+         16.4842
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 8,
+        "p": [
+         0,
+         2.4947,
+         17.4105
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 9,
+        "p": [
+         0,
+         2.7053,
+         18.3368
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 10,
+        "p": [
+         0,
+         2.9158,
+         19.2632
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 11,
+        "p": [
+         0,
+         3.1263,
+         20.1895
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 12,
+        "p": [
+         0,
+         3.3368,
+         27.5158
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 13,
+        "p": [
+         0,
+         3.5474,
+         28.4421
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 14,
+        "p": [
+         0,
+         3.7579,
+         29.3684
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 15,
+        "p": [
+         0,
+         3.9684,
+         30.2947
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 16,
+        "p": [
+         0,
+         4.1789,
+         31.2211
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 17,
+        "p": [
+         0,
+         4.3895,
+         32.1474
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       },
+       {
+        "kind": "step",
+        "i": 18,
+        "p": [
+         0,
+         4.6,
+         33.0737
+        ],
+        "T": [
+         0,
+         0,
+         1
+        ],
+        "U": [
+         0,
+         1,
+         0
+        ],
+        "R": [
+         -1,
+         0,
+         0
+        ],
+        "h": 0.2105,
+        "tread": 0.9263,
+        "width": 6.4,
+        "kit": "STUFE_1MC look, sized to riser 0.22 / tread 0.926 (V-160)",
+        "up": 1
+       }
+      ],
+      "rise": 4,
+      "run": 24,
+      "s0": 10,
+      "s1": 34
+     },
+     {
+      "kind": "ramp",
+      "s0": 34,
+      "s1": 46,
+      "maxGrade": 0.0333,
+      "width": 6.4
+     }
+    ]
+   },
+   "checks": {
+    "gaitSource": "measured",
+    "results": [
+     {
+      "id": "walk_grade",
+      "pass": true,
+      "value": 0.06,
+      "note": "ramps <= 12 % (V-158), stairs within the measured step / wall rule"
+     },
+     {
+      "id": "walk_ends",
+      "pass": true,
+      "value": [
+       "test:start",
+       "test:top"
+      ],
+      "note": "both ends at an anchor (place, building, plaza), never in nothing"
+     },
+     {
+      "id": "walk_clear",
+      "pass": true,
+      "value": 0,
+      "note": "no road on the path outside declared crossings"
+     }
+    ],
+    "pass": true
+   }
+  }
+ ]
+}

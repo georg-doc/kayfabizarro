@@ -1,0 +1,28 @@
+WARN  detail-dangling: keystone
+      mapsTo 'arch-ring-front/keystone-proud' matches no component, localFeature or localOverride
+WARN  detail-dangling: voussoir-joints
+      mapsTo 'arch-ring-front/voussoir-joints' matches no component, localFeature or localOverride
+WARN  detail-dangling: arch-opening
+      mapsTo 'arch-barrel/arch-opening' matches no component, localFeature or localOverride
+WARN  detail-dangling: coping-rounded
+      mapsTo 'parapet-front/coping-rounded' matches no component, localFeature or localOverride
+WARN  detail-dangling: coping-joints
+      mapsTo 'parapet-front/coping-joints' matches no component, localFeature or localOverride
+WARN  detail-dangling: deck-slab-joints
+      mapsTo 'deck/deck-slab-joints' matches no component, localFeature or localOverride
+WARN  detail-dangling: abutment-block-joints
+      mapsTo 'abutment-east/block-joints' matches no component, localFeature or localOverride
+WARN  detail-dangling: block-bevel
+      mapsTo 'spandrel-front/block-bevel' matches no component, localFeature or localOverride
+WARN  detail-dangling: tone-variation
+      mapsTo 'stone-1/tone-variation' matches no component, localFeature or localOverride
+WARN  detail-dangling: cavity-darkening
+      mapsTo 'stone-4/cavity-darkening' matches no component, localFeature or localOverride
+WARN  detail-dangling: road-tone
+      mapsTo 'road-surface/road-tone' matches no component, localFeature or localOverride
+WARN  detail-dangling: deck-edge-course
+      mapsTo 'deck/deck-edge-course' matches no component, localFeature or localOverride
+note  part-not-specified: root
+      built part has no matching component in the spec (fine for detail groups; a sign of spec drift for anything larger)
+
+check_part_coverage: 253 specified, 254 built, 0 error(s), 12 warning(s)

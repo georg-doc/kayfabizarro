@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import { chromium } from 'playwright-core';
+const q = process.argv[2];
+const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome', headless: true, args: ['--use-angle=metal'] });
+const page = await (await browser.newContext({ viewport: { width: 1600, height: 1000 } })).newPage();
+const errs = []; page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') errs.push(m.type() + ': ' + m.text()); }); page.on('pageerror', (e) => errs.push('pageerror: ' + e.stack));
+await page.goto('http://127.0.0.1:5192/?' + q, { waitUntil: 'load' });
+await page.waitForTimeout(40000);
+console.log(errs.filter((e) => !e.includes('404')).slice(0, 8).join('\n'));
+await browser.close();
