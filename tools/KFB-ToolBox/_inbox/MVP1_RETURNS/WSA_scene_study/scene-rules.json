@@ -1,0 +1,118 @@
+{
+  "schema": "kfb.scene-rules/1",
+  "status": "PART_D_SOURCE_STUDY_COMPLETE_A_C_B_PENDING",
+  "authorities": [
+    "V-002",
+    "V-010",
+    "V-011",
+    "V-015",
+    "V-051",
+    "V-053",
+    "V-060",
+    "V-102",
+    "V-110",
+    "V-118",
+    "V-120",
+    "V-122"
+  ],
+  "composition": {
+    "status": "A_CREATOR_STAGING_NOT_YET_MEASURED",
+    "groups": null,
+    "spacingH": null,
+    "embedPercent": null,
+    "relationships": [
+      "route addresses façades and active places",
+      "farm loading -> receiving -> repair -> upper destination is a design input, not an adopted world"
+    ],
+    "failureReference": "Georg R1 visual asset-collection FAIL, registration pending"
+  },
+  "biomes": {
+    "status": "A_B_PENDING",
+    "density": null,
+    "paletteOwner": "existing island-theme/1, V-051"
+  },
+  "light": {
+    "status": "C_PENDING",
+    "recommendedRig": null
+  },
+  "staging": {
+    "status": "SOURCE_DRIVE_CAMERA_CONFIG_ONLY",
+    "driveCamera": {
+      "boom": {
+        "value": 9,
+        "units": "source_units",
+        "source": "J16-r2 lab-drive/joyride.j06.json / drive.camera.boom",
+        "classification": "CODE_PARAMETER"
+      },
+      "height": {
+        "value": 3.5,
+        "units": "source_units",
+        "source": "J16-r2 lab-drive/joyride.j06.json / drive.camera.height",
+        "classification": "CODE_PARAMETER"
+      },
+      "side": {
+        "value": 2.4,
+        "units": "source_units",
+        "source": "J16-r2 lab-drive/joyride.j06.json / drive.camera.side",
+        "classification": "CODE_PARAMETER"
+      },
+      "fov": {
+        "value": 58,
+        "units": "degrees",
+        "source": "J16-r2 lab-drive/joyride.j06.json / drive.camera.fov",
+        "classification": "CODE_PARAMETER"
+      }
+    },
+    "orbit360": null,
+    "labAdoption": false
+  },
+  "trackSource": {
+    "palette": {
+      "road": {
+        "value": "#3d4a60",
+        "source": "track-look.v5.js:49 / WORLDS.canyon.roadTrack",
+        "decision": "V-102"
+      },
+      "strand": {
+        "value": "#ef5a22",
+        "source": "track-look.v5.js:49 / WORLDS.canyon.strang",
+        "decision": "V-102"
+      }
+    },
+    "section": {
+      "width": {
+        "value": 14.4,
+        "units": "SOURCE_ONLY",
+        "source": "inherited TC0.12 WIDTHS.STANDARD",
+        "classification": "CODE_PARAMETER"
+      },
+      "ribSpacing": {
+        "value": 3.5,
+        "units": "SOURCE_ONLY",
+        "source": "track-look.v5.js / RIB",
+        "classification": "CODE_PARAMETER"
+      }
+    },
+    "doNotRebuild": [
+      "native profile/ringOf",
+      "native transition atlas/patch grammar",
+      "actual EXIT/ENTRY >=0.14 under V-118"
+    ],
+    "turnaround": "TBD_OWNER_TRACK_CORE_NOT_IMPLEMENTED_BY_THIS_STUDY"
+  },
+  "scale": {
+    "labH": {
+      "value": 3.64,
+      "source": "DECISIONS.md V-060",
+      "classification": "BINDING_REGISTER_PARAMETER"
+    },
+    "figuresMustNotBeRescaled": true,
+    "unconfirmedKitFactors": "remain labelled proposals under SCALE_CONTRACT_K2"
+  },
+  "sources": {
+    "mainRef": "dccf75cabd222d951380693d84ab88053ee7e519",
+    "images": "D_SOURCE_IMAGES.json",
+    "styleSheetStatus": "direction_only_no_newGolden"
+  },
+  "labParity": "NOT_RUN_NO_LAB_DELIVERY_OR_CODE_CHANGE"
+}
