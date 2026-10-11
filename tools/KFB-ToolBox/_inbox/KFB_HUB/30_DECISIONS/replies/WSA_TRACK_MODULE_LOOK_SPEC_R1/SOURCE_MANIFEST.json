@@ -1,0 +1,150 @@
+{
+  "provenance": "J17 overlay inherits J16-r2; staged source bytes compared to original J16-r2 archive",
+  "sources": [
+    {
+      "id": "lab-track/track-look.v5.js",
+      "path": "J16-r2/lab-track/track-look.v5.js",
+      "sha256": "e616a93755a0627c47faba6bddcf3a33ba395200effb046eac4c4021a9d3d59f",
+      "lines": 529,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/core/stream-to-three.v5.mjs",
+      "path": "J16-r2/lab-track/core/stream-to-three.v5.mjs",
+      "sha256": "1298d004c95c77b7551388e09df42b48d0c0a8abfc42cf6e408964d71d06add7",
+      "lines": 410,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/core/track-core.v012.mjs",
+      "path": "J16-r2/lab-track/core/track-core.v012.mjs",
+      "sha256": "0dbf45312802bc165e5b73b7aec5c23dc40893c2ef4c8445ba26d5188d2a396f",
+      "lines": 1656,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/transition-atlas.v1.js",
+      "path": "J16-r2/lab-track/transition-atlas.v1.js",
+      "sha256": "def14193553ba58abc27efb062506cc62b4aa8ec6949e2aaffa392a40b4f565e",
+      "lines": 370,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/transition-profiles.v1.json",
+      "path": "J16-r2/lab-track/transition-profiles.v1.json",
+      "sha256": "e7956c2d66f2c61566e70e1099732b6f6f5a133e7f1abf7e5bcf6b008926b426",
+      "lines": 67,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/road-markings.m1.js",
+      "path": "J16-r2/lab-track/road-markings.m1.js",
+      "sha256": "bc4f1425d38731e3a0bc226a947cbf8b102fc760362dea76896e56925803ed77",
+      "lines": 126,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/road-markings.m1.json",
+      "path": "J16-r2/lab-track/road-markings.m1.json",
+      "sha256": "50c15fdea4afa7fa56eca8968bbbdaf88c902af68871e6ac80a6bcfd70838928",
+      "lines": 112,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/road-markings.m2.js",
+      "path": "J16-r2/lab-track/road-markings.m2.js",
+      "sha256": "7f1176c28593df93c6d77bd4c2c2563c0edc974236dcbf75da41ea72f4a4d7da",
+      "lines": 109,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/road-markings.m2.json",
+      "path": "J16-r2/lab-track/road-markings.m2.json",
+      "sha256": "461a52587ea98ad0a41c5f193c54dbe03b1711c241b03a455eef94ae399f3a6e",
+      "lines": 386,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-clay/clay-material.v10.js",
+      "path": "J16-r2/lab-clay/clay-material.v10.js",
+      "sha256": "4d070ce1f9e0a23acd53573271f40492ea5d69b3e03648086ecc1376c9d482a9",
+      "lines": 558,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-clay/clay-profiles.v2.js",
+      "path": "J16-r2/lab-clay/clay-profiles.v2.js",
+      "sha256": "2eecc234ef24d9d6655fa14b5645837cc456f43672707a25914ab95b01f9cd79",
+      "lines": 28,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-clay/clay-toolmix.v1.js",
+      "path": "J16-r2/lab-clay/clay-toolmix.v1.js",
+      "sha256": "ea61e784d4321b566cbe30b7de0ad2a9ec8dfaecaf81d36ee9861493c7dd32a0",
+      "lines": 14,
+      "J16ArchiveIdentity": true,
+      "J14Identity": true,
+      "J15Identity": true
+    },
+    {
+      "id": "lab-track/tunnel-clay.tc1.js",
+      "path": "J16-r2/lab-track/tunnel-clay.tc1.js",
+      "sha256": "e1efc36b8a2448aaaec441b255c9dd5072b4c547bd36f7a63110628eaf1673a7",
+      "lines": 195,
+      "J16ArchiveIdentity": true,
+      "J14Identity": false,
+      "J15Identity": true
+    },
+    {
+      "id": "J17_overlay",
+      "path": "J17/code/KFB Joyride J17 · FB Cabrio.dc.html",
+      "sha256": "66797e04e423333eeeb25456d34dd02cc88d1df9fabdabf1fd8149518a87f77d",
+      "lines": 438,
+      "status": "READ_ONLY_SOURCE_OBSERVATION_NOT_CURRENT_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "id": "C0_B_fixture",
+      "path": "Lab/docs/critic/lab-track/2026-10-11_C0/fixtures/KFB_T4_CITY_TRACK_GROUND_VARIANT_B_EXTENDED_HANDOFF_2026-10-10.json",
+      "sha256": "7ac4edbe85e596643e175bf11e12f126410299d4eb63864f07ab87916b0635a5",
+      "lines": 94,
+      "status": "READ_ONLY_SOURCE_OBSERVATION_NOT_CURRENT_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "id": "MODULES_snapshot",
+      "path": "Lab/docs/MODULES.md",
+      "sha256": "926557ab045888ba3ba6563c06710f439a0a833b70ac76dac0a77a0aac1dcd8b",
+      "lines": 104,
+      "status": "READ_ONLY_SOURCE_OBSERVATION_NOT_CURRENT_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "id": "C0_report",
+      "path": "Lab/docs/critic/lab-track/2026-10-11_C0/REPORT.md",
+      "sha256": "95775d39b128610027dea32363cc9f2e5d4f0f10742912075ef9e65af80659dc",
+      "lines": 28,
+      "status": "READ_ONLY_SOURCE_OBSERVATION_NOT_CURRENT_RUNTIME_ACCEPTANCE"
+    }
+  ]
+}

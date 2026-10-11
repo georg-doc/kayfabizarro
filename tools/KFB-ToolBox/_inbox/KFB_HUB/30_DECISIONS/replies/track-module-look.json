@@ -1,0 +1,1515 @@
+{
+  "schema": "kfb.track-module-look/1",
+  "status": "RESEARCH_SPEC_SCHEMA_PROPOSAL_NO_RUNTIME_ADOPTION",
+  "decisions": [
+    "V-102",
+    "V-104",
+    "V-118",
+    "V-134",
+    "V-139",
+    "V-140",
+    "V-143",
+    "V-144"
+  ],
+  "geometryOwner": "RKIT/Track Core",
+  "lookOwner": "Lab J17",
+  "conversion": {
+    "trackMetersToLab": 1.46,
+    "source": "BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R1.md + MODULES.md",
+    "applyOnce": true,
+    "figuresNeverScale": "V060"
+  },
+  "referenceSection": {
+    "name": "STANDARD_SOURCE",
+    "source": {
+      "source": "lab-track/core/track-core.v012.mjs",
+      "lines": [
+        62,
+        70
+      ]
+    },
+    "dimensions": [
+      {
+        "name": "width",
+        "trackMeters": 14.4,
+        "labUnits": 21.024,
+        "source": {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            14,
+            14
+          ]
+        },
+        "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+      },
+      {
+        "name": "barrierGap",
+        "trackMeters": 0.72,
+        "labUnits": 1.0512,
+        "source": {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            65,
+            65
+          ]
+        },
+        "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+      },
+      {
+        "name": "barrierThickness",
+        "trackMeters": 1.62,
+        "labUnits": 2.3652,
+        "source": {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            65,
+            65
+          ]
+        },
+        "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+      },
+      {
+        "name": "barrierHeight",
+        "trackMeters": 1.35,
+        "labUnits": 1.971,
+        "source": {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            65,
+            65
+          ]
+        },
+        "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+      },
+      {
+        "name": "deckDepth",
+        "trackMeters": 2.25,
+        "labUnits": 3.285,
+        "source": {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            66,
+            66
+          ]
+        },
+        "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+      }
+    ]
+  },
+  "colorRoles": {
+    "roadTrack": {
+      "hex": "#3d4a60",
+      "source": {
+        "source": "lab-track/track-look.v5.js",
+        "lines": [
+          49,
+          49
+        ]
+      }
+    },
+    "roadStreet": {
+      "hex": "#566680",
+      "source": {
+        "source": "lab-track/track-look.v5.js",
+        "lines": [
+          49,
+          49
+        ]
+      }
+    },
+    "strang": {
+      "hex": "#ef5a22",
+      "source": {
+        "source": "lab-track/track-look.v5.js",
+        "lines": [
+          49,
+          49
+        ]
+      }
+    },
+    "mark.hell": {
+      "source": {
+        "source": "lab-track/track-look.v5.js",
+        "lines": [
+          150,
+          151
+        ]
+      },
+      "valueBinding": "MR.colors.worlds.canyon.hell"
+    },
+    "mark.signal": {
+      "source": {
+        "source": "lab-track/track-look.v5.js",
+        "lines": [
+          150,
+          151
+        ]
+      },
+      "valueBinding": "MR.colors.worlds.canyon.signal"
+    },
+    "curb": {
+      "source": {
+        "source": "lab-track/transition-profiles.v1.json",
+        "lines": [
+          54,
+          54
+        ]
+      },
+      "valueBinding": "TP.worldPresets.canyon.city.curb"
+    }
+  },
+  "sourceManifest": "SOURCE_MANIFEST.json",
+  "searchProtocol": "SEARCH_PROTOCOL_V140.json",
+  "modules": [
+    {
+      "id": "straight_to_node",
+      "label": "1 Gerade → Kreisel/Abzweig",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "L/R native bande; node kerb paths from Core",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            889,
+            907
+          ]
+        },
+        {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            332,
+            356
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "legacy roundabout armLength",
+          "trackMeters": 30,
+          "labUnits": 43.8,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              900,
+              901
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "legacy fillet",
+          "trackMeters": 14,
+          "labUnits": 20.44,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              900,
+              901
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "legacy flare",
+          "trackMeters": 18,
+          "labUnits": 26.28,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              900,
+              901
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Use actual Core sockets and node outline; keep rolled J17 crown on matching native section.",
+        "Node centre is scenery anchor; volcano is scene content, not road geometry."
+      ],
+      "sourceLimits": [
+        "Roundabout node geometry and yield polylines exist in legacy Core. stream-to-three preview body/deck/scenery is not proof of a J17-clay node consumer.",
+        "J17 look renderer audited: dedicated four-arm node deck consumer not found in track-look.v5.js; no global absence claim. Current Core selection remains V-143/V-144."
+      ],
+      "marking": "M2 lane-free race section; node yield stream is separate from route markings",
+      "evidence": [
+        "curve_outer"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "guided_entry",
+      "label": "2 Geführte Einfädelung ENTRY",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "L/R emitted profiles; internal barrier follows merge weights",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            232,
+            256
+          ]
+        },
+        {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            56,
+            82
+          ]
+        }
+      ],
+      "dimensions": [],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Use >=0.14 ENTRY/CONVERGE per V-118; preserve section/frame semantics, then apply native J17 material roles.",
+        "Historic MERGE_HALF supplies smooth lateral axis and diminishing internal barrier reference."
+      ],
+      "sourceLimits": [
+        "MERGE_HALF is legacy reference, not a substitute for current ENTRY. No exact current ENTRY length inferred from its constants.",
+        "An ENTRY-specific complete J17 screenshot not found in the inspected J17 picture set."
+      ],
+      "marking": "M2 block/guidance definitions; concrete marking events from Core/Lab module",
+      "evidence": [
+        "curve_outer_LOOK_ONLY_NOT_ENTRY"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "guided_exit",
+      "label": "3 Geführte Ausfädelung EXIT / Gore / Leitwand-Nase",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Native main/branch sections, real gore surface and closed wall head",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            232,
+            245
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            727,
+            755
+          ]
+        },
+        {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            199,
+            218
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "legacy split gore default",
+          "trackMeters": 1,
+          "labUnits": 1.46,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              235,
+              236
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "PIT gore reference, not EXIT default",
+          "trackMeters": 5,
+          "labUnits": 7.3,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              679,
+              679
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "PIT wall width reference",
+          "trackMeters": 1,
+          "labUnits": 1.46,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              679,
+              679
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "PIT wall height reference",
+          "trackMeters": 1.2,
+          "labUnits": 1.752,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              679,
+              679
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Use >=0.14 EXIT/DIVERGE and emitted gore from current Core; no erased guardrails or extra overlay road slab.",
+        "Apply strang role to actual wall/head geometry; hatch/mark roles to the core-emitted gore."
+      ],
+      "sourceLimits": [
+        "stream-to-three DECK_COLOUR is explicitly preview only (header); do not canonize beige gore/orange hatch hex values.",
+        "No complete J17 EXIT/gore-specific clay image in inspected pictures; Core geometry evidence is not a finished J17 look."
+      ],
+      "marking": "M2 hatch frame S, bars B, 45°, pitch 3 m; renderer wiring is receiving Lab work",
+      "evidence": [],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "inner_barrier_transition",
+      "label": "4 Innerer Banden-Übergang",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Curve inner = ks*side >0; side determined in local frame",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            190,
+            214
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "inner rib pitch",
+          "trackMeters": 3.5,
+          "labUnits": 5.11,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              198,
+              198
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "rib lift amplitude factor",
+          "trackMeters": 0.26,
+          "labUnits": 0.3796,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              211,
+              212
+            ]
+          },
+          "scope": "SOURCE_METRIC_TERM_MULTIPLIED_BY_CURVATURE_AND_RIB_WEIGHT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Continuous native throat and rolled crown; inside curvature weight sstep(.008,.022,ks*side).",
+        "No fixed world-left/right assumption; side comes from curve sign and local R."
+      ],
+      "sourceLimits": [
+        "Curvature thresholds are inverse-length source parameters, not meters; full formula retained by citation.",
+        "No standalone modular inner connector image; crop proves the continuous J17 appearance only."
+      ],
+      "marking": "M2 edge stays aligned with road slots; no racing lanes added",
+      "evidence": [
+        "curve_inner"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "outer_barrier_transition",
+      "label": "5 Äußerer Banden-Übergang",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Curve outer = -ks*side >0",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            200,
+            218
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "outer crown added height coefficient",
+          "trackMeters": 0.3,
+          "labUnits": 0.438,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              207,
+              208
+            ]
+          },
+          "scope": "SOURCE_METRIC_TERM_MULTIPLIED_BY_OUTER_WEIGHT"
+        },
+        {
+          "name": "outer lateral shift coefficient",
+          "trackMeters": 0.12,
+          "labUnits": 0.1752,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              207,
+              208
+            ]
+          },
+          "scope": "SOURCE_METRIC_TERM_MULTIPLIED_BY_OUTER_WEIGHT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Native outer crown inflates radius by (1+.32*outer), raises crown, and preserves strand underside.",
+        "Curve weight sstep(.014,.04,-ks*side); no segmented rail aesthetic from RK2 colors."
+      ],
+      "sourceLimits": [
+        "No constant extra safety-wall height prescribed; values are terms in the source function."
+      ],
+      "marking": "Continuous M2 boundary only where source presence permits",
+      "evidence": [
+        "curve_outer"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "shoulder_kerb_taper",
+      "label": "6 Bord-/Schulter-Verjüngung",
+      "family": "race/world",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "sideL/R and barrierVis from Core, atlas gated by height",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            62,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            232,
+            256
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            65,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            200,
+            218
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "baseline shoulder width",
+          "trackMeters": 1.98,
+          "labUnits": 2.8908,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              64,
+              64
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "baseline shoulder drop",
+          "trackMeters": 0.28,
+          "labUnits": 0.4088,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              64,
+              64
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "urban source lip height target",
+          "trackMeters": 0.32,
+          "labUnits": 0.4672,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              202,
+              202
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "nature source lip height target",
+          "trackMeters": 0.5,
+          "labUnits": 0.73,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              202,
+              202
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "Use continuous native section morph; shoulder and barrier are constructed, not deleted.",
+        "City barrierT = window weight * groundK; no exposed elevated road reduced to low curb.",
+        "Nature becomes wider/lower by existing rxK rule; do not mirror nature and city blindly."
+      ],
+      "sourceLimits": [
+        "groundK=1-sstep(1.2,4.0,height); curbK=1-sstep(3,8,height), source units; not new Lab thresholds.",
+        "Precise current node taper length must come from selected Core module, not historic end cap len."
+      ],
+      "marking": "M2 road-edge weight tapers B→S over 20 source m at city boundary",
+      "evidence": [
+        "street_surface_LOOK_ONLY_NOT_TAPER"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "marking_logic",
+      "label": "7 Markierungs-Logik",
+      "family": "race/world",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Marks on actual road surface, outside edge flush",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/road-markings.m1.json",
+          "lines": [
+            1,
+            32
+          ]
+        },
+        {
+          "source": "lab-track/road-markings.m2.json",
+          "lines": [
+            14,
+            81
+          ]
+        },
+        {
+          "source": "lab-track/road-markings.m2.json",
+          "lines": [
+            183,
+            268
+          ]
+        },
+        {
+          "source": "lab-track/road-markings.m2.js",
+          "lines": [
+            58,
+            108
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            185,
+            189
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            98,
+            105
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "M2 S",
+          "trackMeters": 0.3,
+          "labUnits": 0.438,
+          "source": {
+            "source": "lab-track/road-markings.m2.json",
+            "lines": [
+              14,
+              25
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "M2 B",
+          "trackMeters": 0.6,
+          "labUnits": 0.876,
+          "source": {
+            "source": "lab-track/road-markings.m2.json",
+            "lines": [
+              14,
+              25
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "M2 Q",
+          "trackMeters": 1.2,
+          "labUnits": 1.752,
+          "source": {
+            "source": "lab-track/road-markings.m2.json",
+            "lines": [
+              14,
+              25
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "M2 arrow length",
+          "trackMeters": 10,
+          "labUnits": 14.6,
+          "source": {
+            "source": "lab-track/road-markings.m2.json",
+            "lines": [
+              238,
+              248
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "M2 width wedge length",
+          "trackMeters": 20,
+          "labUnits": 29.2,
+          "source": {
+            "source": "lab-track/road-markings.m2.json",
+            "lines": [
+              305,
+              317
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "M2 replaces M1 geometry/rhythm; M1 remains source color/rounded clay material and runout fallback.",
+        "bio -1 race: wide edge, no middle lanes/zebra. bio 0 city: centre rhythm and applicable zebra. bio1 nature: source presence(mark_track). MAG: signal block 3/3.",
+        "M2 definitions: guide6/12, nodeguide3/3, warning6/3, block3/3, yield1.2/.6."
+      ],
+      "sourceLimits": [
+        "M2 JS inspected draws edge/block/centre/zebra, not all JSON arrow/yield/hatch elements. Do not treat a schema definition as rendered feature.",
+        "Legacy node yield w.4,dash.9,gap.55 differs from M2 Q1.2,dash1.2,gap.6; keep provenance separate, receiving Lab needs explicit choice.",
+        "MODULES current text labels B0.6 lab; audited J17 M2 says .6 source m ->.876lab. Unit label discrepancy, no silent geometry/material change."
+      ],
+      "marking": "J17 M2 source version2.2, M1 v1.2 historical only; bio logic exact by citations",
+      "evidence": [
+        "street_surface"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "end_heads",
+      "label": "8 Endkappen / Bandenköpfe",
+      "family": "race",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Separate full-track open ends from side guardrail heads and closed seams",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            173,
+            195
+          ]
+        },
+        {
+          "source": "lab-track/core/track-core.v012.mjs",
+          "lines": [
+            773,
+            781
+          ]
+        },
+        {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            56,
+            82
+          ]
+        },
+        {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            212,
+            215
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            235,
+            268
+          ]
+        },
+        {
+          "source": "J17_overlay",
+          "lines": [
+            24,
+            28
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "ROUND_END len",
+          "trackMeters": 16,
+          "labUnits": 23.36,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              178,
+              179
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "ROUND_END nose",
+          "trackMeters": 9,
+          "labUnits": 13.14,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              178,
+              179
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        },
+        {
+          "name": "legacy side cap radius",
+          "trackMeters": 0.81,
+          "labUnits": 1.1826,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              774,
+              777
+            ]
+          },
+          "scope": "DERIVED_barrierT/2"
+        },
+        {
+          "name": "legacy side cap height",
+          "trackMeters": 1.63,
+          "labUnits": 2.3798,
+          "source": {
+            "source": "lab-track/core/track-core.v012.mjs",
+            "lines": [
+              774,
+              777
+            ]
+          },
+          "scope": "DERIVED_barrierH+shoulderDrop"
+        },
+        {
+          "name": "J17 whole-road run-end lip capsule radius",
+          "trackMeters": 0.48,
+          "labUnits": 0.7008,
+          "source": {
+            "source": "lab-track/track-look.v5.js",
+            "lines": [
+              264,
+              266
+            ]
+          },
+          "scope": "HISTORICAL_SOURCE_REFERENCE_NOT_NEW_CORE_DEFAULT"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "END_TAPER aliases ROUND_END; baseline vis1, quarter-ellipse shoulder/deck nose, drive width retained.",
+        "J17 FIX.strangCap true: real R/U polygon cap; closed stream joins first/last rings with no artificial caps/lips.",
+        "Internal topology break closes only changed side, never a full face across road.",
+        "Individual side furniture cap follows its actual T/U frame; full-road capsule is not a branch-head replacement."
+      ],
+      "sourceLimits": [
+        "Do not copy RK2 blue block ends. Dedicated manufactured modular edge head look not proved by full-road end image.",
+        "Source FIX flag is present in actual J17 overlay; generic fallback centroid fan is not that fixed cap implementation."
+      ],
+      "marking": "Open-end noMark d<1 source m; keep width/lane rule distinct from ROUND_END visual nose",
+      "evidence": [],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "race_to_street",
+      "label": "9 Strecke → Straße / ZA / Variante B",
+      "family": "race/world",
+      "section": {
+        "binding": "selected MODULES section, no new dimensions prescribed",
+        "sourceBaseline": "STANDARD_SOURCE",
+        "slots": {
+          "source": {
+            "source": "lab-track/core/stream-to-three.v5.mjs",
+            "lines": [
+              15,
+              24
+            ]
+          },
+          "roadEdges": [
+            "road_L",
+            "road_R"
+          ],
+          "sideProfile": "14-slot native Core section"
+        }
+      },
+      "edge": "Native strand morph at ground, curb/sidewalk staggered, elevated safety retained",
+      "frames": {
+        "binding": "Core-emitted MODULES frames; no authored coordinates",
+        "source": {
+          "source": "lab-track/core/stream-to-three.v5.mjs",
+          "lines": [
+            1,
+            24
+          ]
+        },
+        "axes": "p position, T tangent, U up, R right; positions scale once, normalized axes unchanged"
+      },
+      "lookSource": [
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            133,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            196,
+            220
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/transition-profiles.v1.json",
+          "lines": [
+            26,
+            58
+          ]
+        },
+        {
+          "source": "lab-track/transition-atlas.v1.js",
+          "lines": [
+            50,
+            70
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            138,
+            152
+          ]
+        },
+        {
+          "source": "lab-track/track-look.v5.js",
+          "lines": [
+            223,
+            230
+          ]
+        },
+        {
+          "source": "C0_B_fixture",
+          "lines": [
+            1,
+            60
+          ]
+        },
+        {
+          "source": "C0_report",
+          "lines": [
+            1,
+            28
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "original ZA source span",
+          "trackMeters": 100,
+          "labUnits": 146.0,
+          "source": {
+            "source": "lab-track/transition-profiles.v1.json",
+            "lines": [
+              49,
+              54
+            ]
+          },
+          "scope": "DERIVED_1570-1470_SOURCE_ZONE"
+        },
+        {
+          "name": "B illustrative overlap",
+          "trackMeters": 17,
+          "labUnits": 24.82,
+          "source": {
+            "source": "C0_B_fixture",
+            "lines": [
+              1,
+              60
+            ]
+          },
+          "scope": "V104_WORKING_HYPOTHESIS_100M_ILLUSTRATIVE_ZONE_NOT_ALL_MODULE_LENGTH"
+        }
+      ],
+      "colorRoles": [
+        "roadTrack",
+        "strang",
+        "mark.hell",
+        "mark.signal"
+      ],
+      "materialLayers": [
+        "native continuous strand/side profile",
+        "v10 road legacy=1; strand/tool masses legacy=0",
+        "ROAD_APPLY + patchify only at authored transition windows",
+        "M2 dimensions with M1 color/material roles"
+      ],
+      "oneToOne": [
+        "J14 T4 ZA s1470–1570 A_track_city is the authored ground transition; ZC560–650 is elevated parkdeck, not a ground template.",
+        "J17 ROAD_APPLY and atlas roadTrack replace old 24m skin seam; patchify strand↔curb/nature, existing roles only.",
+        "V104/V139 B: curb/strand coexist over illustrative17m; C0 applies reversed windows at ZA to preserve town region."
+      ],
+      "sourceLimits": [
+        "B work hypothesis adopted routing, not a universal17m physical taper.",
+        "mark_track remains ungated for city in audited M2 presence; C0 fixture warns wiring/clearance/caps not solved.",
+        "C0 pictures not matched-side proofs; no new look design needed."
+      ],
+      "marking": "M2 B→S city wedge, mark_city/source bio events; verify mark_track consumer before Lab adoption",
+      "evidence": [
+        "street_surface_LOOK_ONLY_NOT_TRANSITION_SEAM"
+      ],
+      "catalogueModuleId": null,
+      "status": "SOURCE_LOOK_SPEC_NOT_IMPLEMENTED"
+    }
+  ],
+  "notTested": [
+    "new geometry",
+    "driving",
+    "render adoption",
+    "Lab parity"
+  ],
+  "picturesAreExistingPixelCropsOnly": true
+}

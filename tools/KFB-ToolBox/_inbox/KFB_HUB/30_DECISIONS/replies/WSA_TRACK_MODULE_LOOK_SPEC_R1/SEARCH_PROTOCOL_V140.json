@@ -1,0 +1,228 @@
+{
+  "patterns": "ENTRY|EXIT|DIVERGE|CONVERGE|ROUND_END|END_TAPER|roundabout|Kreisel|transition-atlas|ROAD_APPLY|yield|gore|nose",
+  "scopes": [
+    {
+      "scope": "J14",
+      "scriptDocFilesScanned": 69,
+      "matches": 425,
+      "sampleMatchedPaths": [
+        "SOURCE.json",
+        "RETURN.md",
+        "START_HERE.md",
+        "support.js",
+        "NEXT_CHAT.md",
+        "TEST_REPORT.md",
+        "EXPORT_MANIFEST.json",
+        "lab-track/road-markings.m2.js",
+        "lab-track/transition-atlas.v1.js",
+        "lab-track/road-markings.m1.json",
+        "lab-track/road-markings.m2.json",
+        "lab-track/track-look.v5.js",
+        "lab-track/road-markings.m1.js",
+        "lab-track/core/presets.v012.json",
+        "lab-track/core/stream-to-three.v5.mjs",
+        "lab-track/core/track-core.v012.mjs",
+        "evidence/j14-probe-A.trace.json",
+        "evidence/j14-probe-C.trace.json",
+        "evidence/j14-clip-selection.json",
+        "evidence/j14-probes.summary.json"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "J15_TC1",
+      "scriptDocFilesScanned": 65,
+      "matches": 191,
+      "sampleMatchedPaths": [
+        "SOURCE.json",
+        "START_HERE.md",
+        "support.js",
+        "NEXT_CHAT.md",
+        "KFB Joyride P1 · Parcours-Plan.dc.html",
+        "EXPORT_MANIFEST.json",
+        "lab-track/road-markings.m2.js",
+        "lab-track/transition-atlas.v1.js",
+        "lab-track/road-markings.m1.json",
+        "lab-track/road-markings.m2.json",
+        "lab-track/track-look.v5.js",
+        "lab-track/road-markings.m1.js",
+        "lab-track/core/presets.v012.json",
+        "lab-track/core/stream-to-three.v5.mjs",
+        "lab-track/core/track-core.v012.mjs",
+        "evidence/FIX_2026-09-30_WSA.md",
+        "evidence/P1_RETURN_2026-09-29.md",
+        "lab-travel/travel-core.j14.js",
+        "lab-travel/pinned/anim-map.v1.js"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "J16_r2",
+      "scriptDocFilesScanned": 67,
+      "matches": 187,
+      "sampleMatchedPaths": [
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/SOURCE.json",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/START_HERE.md",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/support.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/NEXT_CHAT.md",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/KFB Joyride P1 · Parcours-Plan.dc.html",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/EXPORT_MANIFEST.json",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/road-markings.m2.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/transition-atlas.v1.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/road-markings.m1.json",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/road-markings.m2.json",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/track-look.v5.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/road-markings.m1.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/core/presets.v012.json",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/core/stream-to-three.v5.mjs",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-track/core/track-core.v012.mjs",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-travel/travel-core.j14.js",
+        "KFB_JOYRIDE_J16_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/lab-travel/pinned/anim-map.v1.js"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "J17_overlay",
+      "scriptDocFilesScanned": 19,
+      "matches": 163,
+      "sampleMatchedPaths": [
+        "evidence/j17-seat-evidence.json",
+        "code/lab-travel/travel-core.j17.js",
+        "code/lab-travel/cabrio-seat.j17.js",
+        "code/lab-travel/fb-car-01/VEHICLE_SEAT_CONTRACT.json",
+        "code/lab-travel/pinned/clay-lids.v1.js",
+        "code/lab-travel/pinned/ear-dangle.v1.js",
+        "code/lab-travel/pinned/face-mount.v1.js"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "O1_v4_v7",
+      "scriptDocFilesScanned": 1136,
+      "matches": 3070,
+      "sampleMatchedPaths": [
+        "KFB Clay Stack Vergleich MAT-02.dc.html",
+        "KFB FrankenStein Studio 16B.dc.html",
+        "KFB Cartoon Vehicle Deformer Lab.dc.html",
+        "KFB Animation Lab v4.dc.html",
+        "CHANGELOG.md",
+        "carl-proof.html",
+        "github.md",
+        "HANDOVER_LAB_v4_COMBAT.md",
+        "POSTMORTEM_carlrig_v4_16B.md",
+        "LIVING_CLAY.md",
+        "POSTMORTEM_S4_T1_T2_TRACK_LOOK.md",
+        "support.js",
+        "KFB Rigging Lab v1.dc.html",
+        "KFB Animation Lab v2.dc.html",
+        "KFB Skydome Gates SKY2.dc.html",
+        "Knet-Medizin Konzept.dc.html",
+        "KFB Insel-Dioramen I3.dc.html",
+        "MISSING_ANIMATIONS.md",
+        "KFB Skydome Gates SKY3.dc.html",
+        "KFB Animation Lab v3.dc.html"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "Rollercoaster_v11",
+      "scriptDocFilesScanned": 8,
+      "matches": 18,
+      "sampleMatchedPaths": [
+        "BOOTSTRAP_v11.md",
+        "HOUSEKEEPING.md",
+        "rollercoaster-ride.v11.js"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "Stunt_Car_Race",
+      "scriptDocFilesScanned": 4035,
+      "matches": 17971,
+      "sampleMatchedPaths": [
+        "MASTERPLAN.html",
+        "HOUSEKEEPING.md",
+        "RECOVERY.md",
+        "MASTERPLAN.md",
+        "WSA_START.md",
+        "HOUSEKEEPING.html",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_4.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_5.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_1.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_41.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_10.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_24.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_34.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_20.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_14.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_45.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_30.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_21.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_15.md",
+        "ChatGPT_web/KFB_STUNT_CAR_RACE_MASTER_HANDOFF_2026-09-11/04_HANDOVER_HISTORY/HANDOVER_Workspace_A_KFB_Stunt_Car_Racing_Living_v1_44.md"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "Earlier_phase_deliveries",
+      "scriptDocFilesScanned": 141,
+      "matches": 92,
+      "sampleMatchedPaths": [
+        "2026-10-11_C1b-C3-r2/REFS.md",
+        "2026-10-11_C1b-C3-r2/MODULES.md",
+        "2026-10-11_C1b-C3-r2/qcheck.json",
+        "2026-10-11_C1b-C3-r2/drive_test.json",
+        "2026-10-11_C1b-C3-r2/critic_3d/verdict.json",
+        "2026-10-11_C4a/c4a_foot_test.json",
+        "2026-10-11_C0/REPORT.md",
+        "2026-10-11_C0/fixtures/KFB_T4_CITY_TRACK_GROUND_CANDIDATE_2026-10-10.json",
+        "2026-10-11_C0/fixtures/KFB_T4_CITY_TRACK_GROUND_VARIANT_B_EXTENDED_HANDOFF_2026-10-10.json",
+        "2026-10-11_V138/foot_test.json",
+        "2026-10-11_drive-test-r2/drive_test.json",
+        "2026-10-11_C1b-C3/REFS.md",
+        "2026-10-11_C1b-C3/MODULES.md",
+        "2026-10-11_C1b-C3/qcheck.json",
+        "2026-10-11_C1b-C3/drive_test.json",
+        "2026-10-11_C1a/REPORT.md",
+        "2026-10-11_C1a/drive/travel-probe.json",
+        "2026-10-11_C1a/drive/travel-frames.json",
+        "C1b_wip/drive_test.json",
+        "C1b_wip/drive2/drive_test_r2.json"
+      ],
+      "exclusions": "model/media directories, node_modules, .git, archive directory names; files >2.5MB",
+      "claim": "discovery search, not every match visually or line-audited"
+    },
+    {
+      "scope": "PHASE_C_DONORS_R1.md",
+      "sha256": "4dd20c5a67a2c63dfdf377ba215ccfe0732461065445ea0a457d14bf9ac03576",
+      "matches": 4,
+      "status": "routing/acceptance source read or keyword-index inspected; dated entries may be superseded"
+    },
+    {
+      "scope": "MVP1_DONOR_AND_MODEL_MAP_R1.md",
+      "sha256": "31fc979705682917ddbd86d38aee2714fd1152fa9a5c9a38f444dc46dea2a10a",
+      "matches": 0,
+      "status": "routing/acceptance source read or keyword-index inspected; dated entries may be superseded"
+    },
+    {
+      "scope": "ACCEPTANCE_INDEX.md",
+      "sha256": "9ac6d852c889b8fc9be2df90adc66bf3c4b1682d50b056bc19b59740a7bfc02f",
+      "matches": 0,
+      "status": "routing/acceptance source read or keyword-index inspected; dated entries may be superseded"
+    },
+    {
+      "scope": "MODULES.md",
+      "sha256": "926557ab045888ba3ba6563c06710f439a0a833b70ac76dac0a77a0aac1dcd8b",
+      "matches": 0,
+      "status": "routing/acceptance source read or keyword-index inspected; dated entries may be superseded"
+    }
+  ],
+  "limits": "No global absence claim. Missing renderer consumers limited to the audited J16-inherited J17 files. Current private Track Core >=0.14 ENTRY/EXIT existence follows V-118; not superseded by old-core search."
+}

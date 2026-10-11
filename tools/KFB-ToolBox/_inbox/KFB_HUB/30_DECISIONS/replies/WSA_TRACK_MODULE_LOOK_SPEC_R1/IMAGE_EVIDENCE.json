@@ -1,0 +1,62 @@
+[
+  {
+    "id": "curve_inner",
+    "sourcePicture": "chase-curve.jpg",
+    "sourceSha256": "7d386af64da24e016116b01aea0fd495a402a3ca36180b88d5a155f1bf36bc4b",
+    "sourceSize": [
+      924,
+      540
+    ],
+    "boxPixels": [
+      220,
+      252,
+      590,
+      470
+    ],
+    "output": "curve_inner.png",
+    "sha256": "f0956b5210eac77badca7ba9254ccc45a746bb9a946dd3f2f68d468a2df5227b",
+    "pixelOperation": "exact crop, no resize, no recolor, no generation",
+    "scope": "J17 continuous inner crown/throat; not a modular node or ENTRY proof",
+    "publication": "LOCAL_CROP_ONLY_SOURCE_ORIGINAL_ALREADY_PUBLIC"
+  },
+  {
+    "id": "curve_outer",
+    "sourcePicture": "chase-curve.jpg",
+    "sourceSha256": "7d386af64da24e016116b01aea0fd495a402a3ca36180b88d5a155f1bf36bc4b",
+    "sourceSize": [
+      924,
+      540
+    ],
+    "boxPixels": [
+      510,
+      178,
+      915,
+      310
+    ],
+    "output": "curve_outer.png",
+    "sha256": "d21eba8c85c6a448696a4469425b7fee9f6ae5f947f5a52809fb5184b8a8fc30",
+    "pixelOperation": "exact crop, no resize, no recolor, no generation",
+    "scope": "J17 continuous outer strand; not a gore/EXIT proof",
+    "publication": "LOCAL_CROP_ONLY_SOURCE_ORIGINAL_ALREADY_PUBLIC"
+  },
+  {
+    "id": "street_surface",
+    "sourcePicture": "chase-straight.jpg",
+    "sourceSha256": "3c81b3bb7b4397f5604c0903d2555315504eec5771cf1491e1294c32ce10ce6a",
+    "sourceSize": [
+      924,
+      540
+    ],
+    "boxPixels": [
+      70,
+      192,
+      780,
+      420
+    ],
+    "output": "street_surface.png",
+    "sha256": "1c456081d0415843e8f960581a30182de3a86cf6868273373f9544351ed1c7eb",
+    "pixelOperation": "exact crop, no resize, no recolor, no generation",
+    "scope": "J17 finished street look; not the transition seam",
+    "publication": "LOCAL_CROP_ONLY_SOURCE_ORIGINAL_ALREADY_PUBLIC"
+  }
+]
