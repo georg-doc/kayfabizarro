@@ -1,0 +1,158 @@
+--- a/src/editor.ts
++++ b/src/editor.ts
+@@ -9,6 +9,8 @@
+ import { blobOutline, centroid, type P2 } from './island/shape';
+ import { newId, defaultWorld, type IslandSpec, type WorldSpec } from './island/spec';
+ import type { Island } from './island/island';
++
++import { study, checkStudy, linkPlaces, escapeText } from './scene-study';
+ 
+ type Mode = 'view' | 'form' | 'build';
+ 
+@@ -225,6 +227,9 @@
+   // ---------- buildings ----------
+   private selectBuilding(id: string | null) {
+     this.selBuilding = id;
++    const asset = this.selected?.spec.buildings.find(b => b.id === id)?.asset;
++    const assetIndex = ASSETS.findIndex(a => a.asset === asset);
++    if (assetIndex >= 0) this.assetIx = assetIndex;
+     const o = id && this.selected ? this.selected.buildingObjs.get(id) : null;
+     if (o) {
+       this.tc.attach(o);
+@@ -319,6 +324,69 @@
+     this.app.save();
+     this.select(isl);
+     this.app.setCamera(spec.id);
++  }
++
++  // Evidence-backed workflow: name the activity, reuse selected source object, link places; no auto scatter.
++  private studyPanel() {
++    const w = this.app.world, data = w.sceneStudy, esc = escapeText;
++    const places = data?.places ?? [], current = places.find(p => p.island === this.selected?.spec.id && p.focus === this.selBuilding);
++    const options = places.map(p => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
++    return `<h2>Orte &amp; Beziehungen</h2>
++      <div class="hint">Ein Ort verbindet Tätigkeit und echte Objekte. Verbindungen beschreiben den Zweck; sie bauen keine Straße.</div>
++      <div class="hint">Freie Ankunft vor dem Fokus, Landmarke dahinter, passende Requisiten am Handlungsort. Höhenwechsel brauchen sichtbare Zugänge. Keine feste Objektzahl oder neue Palette.</div>
++      <label>Ort ansehen<select id="placeView"><option value="">Ort wählen</option>${options}</select></label>
++      <button class="ghost" id="placeDelete">Gewählten Ort entfernen</button>
++      <label>Ort<input id="placeName" value="${esc(current?.name ?? '')}" placeholder="z. B. Werkstattannahme"></label>
++      <label>Tätigkeit<input id="placeAction" value="${esc(current?.action ?? '')}" placeholder="Was geschieht hier?"></label>
++      <button class="ghost" id="placeSave" ${this.selBuilding ? '' : 'disabled'}>Ausgewähltes Objekt als Fokus</button>
++      <label>Zu Ort<select id="placeMember"><option value="">Ort wählen</option>${options}</select></label>
++      <button class="ghost" id="memberAdd" ${this.selBuilding ? '' : 'disabled'}>Ausgewähltes Objekt zuordnen</button>
++      <button class="ghost" id="memberRemove">Zuordnung entfernen</button>
++      <label>Von<select id="placeFrom">${options}</select></label><label>Nach<select id="placeTo">${options}</select></label>
++      <label>Zweck<input id="placeReason" placeholder="z. B. Ernte zur Werkstatt liefern"></label>
++      <button class="ghost" id="placeLink">Orte verbinden</button>
++      <div class="hint">${places.map(p=>`${esc(p.name)}: ${esc(p.action)} (${p.members.length} zugehörige Objekte)`).join('<br>') || 'Gebäude auswählen, Ort und Tätigkeit benennen.'}</div>
++      <div class="hint">${(data?.connections??[]).map(c=>`${esc(places.find(p=>p.id===c.from)?.name??'?')} → ${esc(places.find(p=>p.id===c.to)?.name??'?')}: ${esc(c.reason)}`).join('<br>')}</div>
++      <div class="hint">${checkStudy(w).map(esc).join('<br>') || 'Orte und Beziehungen vollständig beschrieben.'}<br>Bodenanschluss, Freiraum und Fahrbarkeit: separat prüfen.</div>`;
++  }
++  private bindStudy() {
++    const input = (id: string) => this.panel.querySelector<HTMLInputElement>('#'+id)!;
++    const on = (id: string, fn:()=>void) => input(id)?.addEventListener('click',fn);
++    input('placeView')?.addEventListener('change',()=>{
++      const p = this.app.world.sceneStudy?.places.find(p=>p.id===input('placeView').value);
++      const i = p && this.app.islands.get(p.island); if (!p || !i) return;
++      this.select(i); this.setMode('build'); this.selectBuilding(p.focus); this.app.setCamera(p.island);
++    });
++    on('placeDelete',()=>{
++      const data = this.app.world.sceneStudy, id = input('placeView').value || data?.places.find(p=>p.island===this.selected?.spec.id&&p.focus===this.selBuilding)?.id;
++      if (!data || !id) return;
++      data.places=data.places.filter(p=>p.id!==id); data.connections=data.connections.filter(c=>c.from!==id&&c.to!==id);
++      this.app.save(); this.render();
++    });
++    on('memberRemove',()=>{
++      const p=this.app.world.sceneStudy?.places.find(p=>p.id===input('placeMember').value);
++      if (!p || !this.selBuilding) return; p.members=p.members.filter(id=>id!==this.selBuilding); this.app.save(); this.render();
++    });
++    on('placeSave',()=>{
++      const isl = this.selected, focus = this.selBuilding;
++      if (!isl || !focus) return;
++      const name = input('placeName').value.trim(), action = input('placeAction').value.trim();
++      if (!name || !action) { toast('Ort und Tätigkeit benennen.'); return; }
++      const data = study(this.app.world), old = data.places.find(p=>p.island===isl.spec.id&&p.focus===focus);
++      if (old) Object.assign(old,{name,action});
++      else data.places.push({id:newId('place'),island:isl.spec.id,name,action,focus,members:[]});
++      this.app.save(); this.render();
++    });
++    on('memberAdd',()=>{
++      const p = study(this.app.world).places.find(p=>p.id===input('placeMember').value);
++      if (!p || p.island!==this.selected?.spec.id || !this.selBuilding) { toast('Ein Objekt derselben Insel zuordnen.'); return; }
++      if (p.focus!==this.selBuilding && !p.members.includes(this.selBuilding)) p.members.push(this.selBuilding);
++      this.app.save(); this.render();
++    });
++    on('placeLink',()=>{
++      if (!linkPlaces(this.app.world,input('placeFrom').value,input('placeTo').value,input('placeReason').value)) { toast('Zwei verschiedene Orte und einen Zweck wählen.'); return; }
++      this.app.save(); this.render();
++    });
+   }
+ 
+   // ---------- panel ----------
+@@ -354,6 +422,7 @@
+       <div class="row"><button class="ghost" id="pond">${s.terrain.pond ? 'Teich entfernen' : 'Teich anlegen'}</button><button class="ghost" id="mount">${s.terrain.mount ? 'Berg entfernen' : 'Berg anlegen'}</button></div>
+       <div class="row"><button class="ghost" id="focus">Kamera hin</button><button class="ghost" id="del">Insel löschen</button></div>` : ''}
+       ${this.mode === 'build' ? `<h2>Gebäude</h2><label>Setzen<select id="asset">${opts(ASSETS.map((a, i) => [String(i), a.label]), String(this.assetIx))}</select></label>` : ''}
++      ${this.studyPanel()}
+       <h2>Welt</h2>
+       <div class="row"><button id="new">+ Neue Insel</button><button class="ghost" id="overview">Übersicht</button></div>
+       <div class="row"><button class="ghost" id="orig">Originale ein/aus</button><button class="ghost" id="compare">Vergleich</button></div>
+@@ -361,6 +430,7 @@
+       <input type="file" id="file" accept=".json" style="display:none">`;
+     const $ = (id: string) => this.panel.querySelector('#' + id) as HTMLInputElement | null;
+     this.panel.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => this.setMode((b as HTMLElement).dataset.mode as Mode)));
++    this.bindStudy();
+     $('hide')?.addEventListener('click', () => this.togglePanel(false));
+     $('isl')?.addEventListener('change', (e) => this.select(this.app.islands.get((e.target as HTMLSelectElement).value) ?? null));
+     $('new')?.addEventListener('click', () => this.newIsland());
+--- a/src/island/spec.ts
++++ b/src/island/spec.ts
+@@ -132,6 +132,8 @@
+ }
+ 
+ export interface WorldSpec {
++  /** Optional scene-research authoring; survives existing save/import without moving source objects. */
++  sceneStudy?: import('../scene-study').SceneStudy;
+   version: 1;
+   islands: IslandSpec[];
+   /** default islands already added once (so a deleted one is not re-added) */
+--- /dev/null
++++ b/src/scene-study.ts
+@@ -0,0 +1,37 @@
++// Source-qualified authoring metadata. No geometry, palette, lighting or placement writer.
++import type { WorldSpec } from './island/spec';
++export interface SceneStudy {
++  schema: 'kfb.scene-study/1';
++  places: { id: string; island: string; name: string; action: string; focus: string; members: string[] }[];
++  connections: { from: string; to: string; reason: string }[];
++}
++export function study(world: WorldSpec): SceneStudy {
++  return world.sceneStudy ??= { schema: 'kfb.scene-study/1', places: [], connections: [] };
++}
++export function checkStudy(world: WorldSpec): string[] {
++  const s = world.sceneStudy; if (!s) return ['Noch kein Handlungsort angelegt.'];
++  const notes: string[] = [];
++  for (const p of s.places) {
++    const island = world.islands.find(i => i.id === p.island);
++    const objects = new Set(island?.buildings.map(b => b.id) ?? []);
++    if (!island) notes.push(`${p.name}: Insel fehlt.`);
++    if (!p.action.trim()) notes.push(`${p.name}: Tätigkeit fehlt.`);
++    if (!objects.has(p.focus)) notes.push(`${p.name}: Fokusobjekt fehlt.`);
++    for (const id of p.members) if (!objects.has(id)) notes.push(`${p.name}: Zugehöriges Objekt ${id} fehlt.`);
++    if (s.places.length > 1 && !s.connections.some(c => c.from === p.id || c.to === p.id)) notes.push(`${p.name}: Beziehung zu anderen Orten fehlt.`);
++  }
++  for (const c of s.connections) {
++    if (!s.places.some(p => p.id === c.from) || !s.places.some(p => p.id === c.to)) notes.push('Verbindung: Ort fehlt.');
++    if (!c.reason.trim()) notes.push('Verbindung: Zweck fehlt.');
++  }
++  if (!s.places.length) notes.push('Noch kein Handlungsort angelegt.');
++  return notes;
++}
++export function linkPlaces(world: WorldSpec, from: string, to: string, reason: string): boolean {
++  const s = study(world);
++  if (from === to || !reason.trim() || ![from,to].every(id => s.places.some(p=>p.id===id))) return false;
++  const c = s.connections.find(c=>c.from===from&&c.to===to);
++  if (c) c.reason = reason.trim(); else s.connections.push({from,to,reason:reason.trim()});
++  return true;
++}
++export const escapeText = (s: string) => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));

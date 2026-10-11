@@ -1,0 +1,53 @@
+{
+  "authoring": {
+    "status": "PASS_AUTHORING_WORKFLOW_ONLY",
+    "donorGeometryUnchanged": true,
+    "saveReload": "PASS",
+    "deletedFocusDetected": true,
+    "navigation": "PASS",
+    "deleteCascade": "PASS",
+    "selfAndBlankLinksRejected": true,
+    "errors": [],
+    "physicalContact": "NOT_TESTED",
+    "drive": "NOT_TESTED"
+  },
+  "typecheck": "PASS",
+  "installedParityGame": {
+    "1_W_jog_Running_A": {
+      "pass": true
+    },
+    "2_ShiftW_sprint_Running_B": {
+      "pass": true
+    },
+    "3_jumps": {
+      "pass": true
+    },
+    "4_camera_calm_orbit": {
+      "pass": true
+    },
+    "5_recenter_after_orbit": {
+      "pass": true
+    },
+    "6_zoom_pov_and_max": {
+      "pass": true
+    },
+    "7_wow_rmb_steers_lmb_looks": {
+      "pass": true
+    },
+    "8_wow_both_buttons_forward": {
+      "pass": true
+    },
+    "9_no_debug_in_game": {
+      "pass": true
+    },
+    "10_cozy_offline": {
+      "pass": true
+    }
+  },
+  "installedParityErrors": [],
+  "sourceObjectsVisuallyInspected": [
+    "watermill",
+    "tavern"
+  ],
+  "noNewSceneOrDriveAcceptance": true
+}

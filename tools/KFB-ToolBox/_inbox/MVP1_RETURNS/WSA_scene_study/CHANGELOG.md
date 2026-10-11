@@ -9,3 +9,6 @@ Six Creator GIFs /48 observed samples and9 actual lighting-video frames document
 
 ## 11.10.2026 · B supplied screenshots
 Eight individual private promo views and overview inspected; spatial/task/terrain transition findings added. Numeric density/physical distances remain UNKNOWN. No images, model code, merge or Golden published.
+
+## 11.10.2026 · Authorized existing-editor integration
+Existing world v1 gains optional places, activities, actual source-object memberships and purpose-labelled relations. Editor navigation/corrections/save/reload; meaningful negative gates passed. Exact3 Lab source files installed after concurrent-change guards. Installed game parity10/10 PASS. Source donors isolated; real UI proof retained privately. No new architecture/drive acceptance, Golden or merge.

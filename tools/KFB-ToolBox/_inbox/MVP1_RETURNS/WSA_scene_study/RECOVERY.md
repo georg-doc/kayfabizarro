@@ -37,3 +37,6 @@ Checks: JSON schema groups, frame counts/hash identities, private-public boundar
 
 ## B supplied evidence milestone
 Georg supplied private reference folder: eight individual DioramaScenes A/B/C/D/E/F/G/I plus overview actually inspected as contact sheet. B_SOURCE_SCREENSHOTS hashes recorded; B report distinguishes promo observations from unknown model/Unity metrics. Earlier private-ZIP dependency is resolved for bounded image study, not for physical measurements. No images uploaded. Next gate: receiving owner Plan/design input; no runtime or driving validation claimed.
+
+## Authorized Editor Rules R1 integration
+Installed optional place/action/source-membership and cross-island relation authoring in existing Lab. Source-first Steering d8c2d08833c6f5abf244decca9120cd83e7d63eb. Three source files hash-verified; typecheck, authoring/reload/negative cases PASS and installed game parity10/10 PASS. Exact scope/limits/patch/tests in EDITOR_RULES_R1/RETURN.md. No new composed scene, phase-D whole-scene gizmo, drive acceptance, Golden or merge.
