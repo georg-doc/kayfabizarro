@@ -1939,6 +1939,34 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-177",
+   "date": "2026-10-11",
+   "area": "Animation",
+   "verdict": "RULE",
+   "text": "Motion- und Animations-Leitfaden R1 (Agent Motion-Director): zuerst Bestand sichten (Animation Lab, Flight/Travel-Konzept, Rigs, Gangwerte, Triplets), dann Konzept für Fortbewegung und Reisezustände, emotionales Acting (Pose, Geste, Augen, Brauen, Lider, Emanata) mit NPC-Choreografie-Bauanleitungen; Kampf nur als Skizze (nicht MVP). Demos erst danach als eigener Bauschritt mit Georgs Okay.",
+   "values": {},
+   "owner": "Steuerung + Motion-Director-Agent",
+   "check": "MOTION_GUIDE_R1.md",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Figuren sollen expressiv cartoonig spielen; erst Konzept auf Bestand, dann Bau.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-178",
+   "date": "2026-10-11",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WSA als unabhängiger Gegenprüfer des Architektur-Audits (AUDIT_ARCH_R1), aber erst wenn es Wirkung hat: nach den V-171-Punkten Banden, Flackern und Insel-Cache. Dann prüft WSA den reparierten Stand gegen das Audit, nur mit Branch-Link und Fragen, ohne Schlussfolgerungen der Steuerung.",
+   "values": {},
+   "owner": "Steuerung + WSA",
+   "check": "WSA-Gegenprüfung R1",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Gleiches Modell prüft sich selbst nicht unabhängig; Gegenprüfung erst am reparierten Stand sinnvoll.",
+   "applies": "nach V-171 Punkt 1–3"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

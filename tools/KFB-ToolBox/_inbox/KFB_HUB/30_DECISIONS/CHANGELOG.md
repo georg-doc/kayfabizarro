@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Motion-Leitfaden R1, WSA-Gegenprüfung terminiert
+- V-177 MOTION_GUIDE_R1.md v0.1 (Motion-Director-Agent, blind gestartet): Bestand (Gangwerte gait_v157, travel-core.j17, car-hop, Eye-Rig v6, Acting Lab v0.4, ToolBox Brauen/Mund, Motion Library v6), 4-Kanal-Modell, 8-Emotionen-Matrix, Triplet-Takt-Kopplung, 5 NPC-Vorlagen, Demo-Plan D1–D5; alle Frame-Werte Vorschlag. Ungelesen: THE_BIZARRO_MOTION_MATRIX.pdf, H&D Runtime Animation Strategy.pdf.
+- V-178 WSA prüft das Architektur-Audit gegen, nach V-171 Punkt 1–3.
+- KFB Mesa Design (2 Bilder) = byte-gleich mit CC1/CC2 (REFS_COCONINO), nicht neu abgelegt; Georg gefragt.
+
 ## 2026-10-11 · Style-Guide-Antworten, Akashic-Referenzen, WSA Licht C
 - V-175 Georg „1–5 ok“: Zieltempo bei Testfahrten messen, Δt per Race-Testfahrt in 3 Stufen, Durchfahrtshöhe 5,8, über der Fahrbahn nur Cover + Titel, fehlende Rhythmus-Modelle erst im Bestand suchen.
 - V-176 KFB Akashic Library (replies/REFS_AKASHIC_2026-10-11, README mit Halluzinations-Liste): Stil, Stimmung, Strecken-Integration PASS; Szenerie weniger komplex.
