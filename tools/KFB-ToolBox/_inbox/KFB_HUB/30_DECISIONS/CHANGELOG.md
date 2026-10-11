@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · dist/ entfernt
+- Georg „YES“: alter Lab-Build-Ordner dist/ (76 MB, enthielt StreakByte-Assets) in den Papierkorb verschoben (~/.Trash/KFB-Lab-dist_2026-10-11); dist/ bleibt gitignored.
+
 ## 2026-10-11 · Style-Guide-Fragen beantwortet
 - V-174 Bandenfarben vereinheitlichen (J17), Mesa-Strecke als Landstraßen-Skin-Variante, Cosmic Glow-Standard + Neon auf Cosmic-Inseln, J17 als Licht-Maßstab, S/M/L mit Tunnel-Bergen ≥ L.
 
