@@ -6,3 +6,6 @@ Plan R1/Register adopted; router and Steering intake verified. Human R1 scene FA
 
 ## 11.10.2026 · A/C research evidence
 Six Creator GIFs /48 observed samples and9 actual lighting-video frames documented; advertisement excluded. Existing SKY3/light adapter read-only audit and source-qualified proposals added. B explicitly awaits private8-island ZIP; paid/private media excluded from public files. Research validation and private archive receipt persisted. No Lab code, new runtime, plugin change, merge or Golden.
+
+## 11.10.2026 · B supplied screenshots
+Eight individual private promo views and overview inspected; spatial/task/terrain transition findings added. Numeric density/physical distances remain UNKNOWN. No images, model code, merge or Golden published.

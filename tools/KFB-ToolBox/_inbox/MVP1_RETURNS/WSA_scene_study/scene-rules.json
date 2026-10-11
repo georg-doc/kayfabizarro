@@ -1,6 +1,6 @@
 {
   "schema": "kfb.scene-rules/1",
-  "status": "D_A_C_RESEARCH_COMPLETE_B_INPUT_REQUIRED",
+  "status": "D_A_C_B_BOUNDED_RESEARCH_COMPLETE",
   "authorities": [
     "V-002",
     "V-010",
@@ -36,9 +36,16 @@
     "failureReference": "Georg R1 HUMAN_VISUAL_FAIL; V-122 design input"
   },
   "biomes": {
-    "status": "B_INPUT_REQUIRED_NO_DENSITY_INVENTED",
+    "status": "EIGHT_SUPPLIED_PROMO_VIEWS_OBSERVED_PHYSICAL_METRICS_UNKNOWN",
     "density": null,
-    "paletteOwner": "existing island-theme/1, V-051"
+    "paletteOwner": "existing island-theme/1, V-051",
+    "source": "B_STREAKBYTE_ISLANDS.md + B_SOURCE_SCREENSHOTS.json",
+    "principles": [
+      "landmark behind readable activity space",
+      "group by place function",
+      "visible transitions across terrain levels"
+    ],
+    "runtimeValidated": false
   },
   "light": {
     "status": "C_SOURCE_AUDIT_PROPOSAL_NOT_ADOPTED",

@@ -34,3 +34,6 @@ No merge; no newly promoted Golden; no new runtime owner.
 A: six actual Creator GIFs, eight samples each (48 frames); hierarchy, shared tasks, ground and projected bounds documented. C: nine actual tutorial captures with observed timestamps; ad capture excluded; existing Lab light adapter audited read-only. Private media/transcript archived locally; only summaries, hashes and metadata published. Creator promo measurements are not world-scale or game-camera prescriptions.
 
 Checks: JSON schema groups, frame counts/hash identities, private-public boundary and archive CRC passed (RESEARCH_VALIDATION.json). No driving, live light, GPU or parity validation in this research slice. No implementation change, plugin update, merge or Golden.
+
+## B supplied evidence milestone
+Georg supplied private reference folder: eight individual DioramaScenes A/B/C/D/E/F/G/I plus overview actually inspected as contact sheet. B_SOURCE_SCREENSHOTS hashes recorded; B report distinguishes promo observations from unknown model/Unity metrics. Earlier private-ZIP dependency is resolved for bounded image study, not for physical measurements. No images uploaded. Next gate: receiving owner Plan/design input; no runtime or driving validation claimed.
