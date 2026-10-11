@@ -1631,6 +1631,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-155",
+   "date": "2026-10-11",
+   "area": "Insel",
+   "verdict": "RULE",
+   "text": "Geh-Netz-Besitz: Das Lab-Layout (IslandLayout.routes/places, Georg gestaltet im Editor) besitzt das Netz der Fuß- und Wanderwege; Track Core TRAIL liefert nur Bauteile und Prüfungen (Treppe, Trittsteine, Fußbrücken-Anker, Übergänge Pfad ↔ Platz/Straße/Schotter, walk_grade/walk_ends/walk_clear) als Bibliothek. Kein zweiter Netz-Besitzer.",
+   "values": {},
+   "owner": "Lab + RKIT",
+   "check": "Vorlagen-Zeile trail",
+   "source": "Steuerung 11.10. nach RKIT-Frage C",
+   "supersedes": null,
+   "why": "Ein Besitzer je Sache (V-002, V-041): Georg legt Wege im Editor an, der Core prüft und baut Teile.",
+   "applies": "ab trail"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

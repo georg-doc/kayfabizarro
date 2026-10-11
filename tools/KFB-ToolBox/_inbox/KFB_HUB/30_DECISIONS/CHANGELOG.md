@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · DIRT gebaut, Geh-Netz-Besitz
+- Track Core 0.16.5 DIRT (D1–D3 Übergänge, Berm ≤ 35°, Schotter-Arme, Enden Wiese/Hof/Gatter), test-dirt 27/27, Bestand graph-identisch. V-155 Geh-Netz gehört dem Lab-Layout, Core TRAIL = Bauteile + Prüfungen. Offen an Georg: trail-Steigung ohne Stufen, Trittstein-Abstand.
+
 ## 2026-10-11 · Banden-Übergang B gebaut, DIRT R1a freigegeben
 - Track Core 0.16.4: q.edge inner/outer nach J17-Schwellen, Anlauf ≥ 8 m, bitgleich (88/88). DIRT R1a: Welt-Maßstab (1,705), Ausnahme RACE|DIRT, Übergänge 20 m nur auf Geraden, Berm-Lippe über width/offset ≤ 35°, nur Schotter-Arme.
 
