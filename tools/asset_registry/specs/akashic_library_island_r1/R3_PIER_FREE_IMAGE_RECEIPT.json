@@ -1,0 +1,54 @@
+{
+  "schema": "kfb.asset-scene-image-result/1",
+  "jobId": "AKASHIC-LIBRARY-R3-PIER-FREE-MOOD-REVISION",
+  "designAuthority": "R3_FLOATING_TRACK_NO_STONE_PIERS.md",
+  "status": "MOOD_ONLY_TUNE",
+  "generationId": "f07f9e80-dee7-4905-abd6-f2c9328d8fa9",
+  "source": {
+    "originalImage": "schwebende_bibliotheksinsel_im_sonnenuntergang.png",
+    "originalSha256": "6b41b4142c9ee678c38da2e12eca538255b4fc83729895792a6bbd29148148cf",
+    "sourceImagePixelsActuallyBoundToImageGenerator": false,
+    "originalSourceMeshPixelsConditioned": false,
+    "dropboxPixelsConditioned": false
+  },
+  "output": {
+    "file": "KFB_Akashic_Library_R3_PierFree_MOOD_ONLY.png",
+    "sha256": "177cceec758712d22cc5239c4c881aa1a6653fba61444d42c9ef051646257a00",
+    "bytes": 2900262,
+    "width": 1536,
+    "height": 1024,
+    "onGitHub": false,
+    "host": "CONVERSATION_FILE_ONLY"
+  },
+  "archive": {
+    "file": "KFB_Akashic_Library_R3_PierFree_Visual_Correction.zip",
+    "sha256": "60992dfa9d2418c1d7aafec803510dc3b700a1fd3cdb6bd96c87210ef1abb9f4",
+    "bytes": 5731352,
+    "entryCount": 4,
+    "crcCheck": "PASS",
+    "onGitHub": false
+  },
+  "visual": {
+    "target": "No ground-class stone masonry support columns at island edge or under suspended approach/exit",
+    "observed": "No distinct stone support piers under free-air track in regenerated image; image is broad re-composition, not surgical pixel edit",
+    "meanAbsoluteRgbDelta": [
+      63.93,
+      46.47,
+      53.31
+    ],
+    "independentlyReviewed": false,
+    "newExtraSignage": true,
+    "finalRating": "TUNE_NOT_GOLDEN"
+  },
+  "geometry": {
+    "trackCompiled": false,
+    "groundLandingContactMeasured": false,
+    "collisionChecked": false,
+    "sourceLocked": false
+  },
+  "approval": {
+    "georgAccepted": false,
+    "golden": false
+  },
+  "nextGate": "FAITHFUL_SOURCE_PIXEL_CLEANUP_WITH_NO_PIER_CLASS_BEFORE_HUMAN_PASS"
+}
