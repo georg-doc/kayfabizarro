@@ -1,5 +1,13 @@
 # RETURN · KFB Cosmic Highway visual batch R1 · 2026-10-11
 
+## Additive R3 · curated image reference batch after R2 hero failure · 2026-10-11
+- Created NEW 12,036,109-byte ZIP `KFB_Cosmic_Highway_R3_Curated_Reference_Pack_2026-10-11.zip`, SHA256 `2cf4371443154fecd35ebe9257072797ecceb30e8fb1c53305cc8575e34207ff`. Includes **five unchanged previous PNG originals** (one user-positive Cosmic design, one Joyride connector aesthetic sheet, two R2 single-hero FAIL posters as MOOD_ONLY, one technical 2D source flora atlas), CONTACT_SHEET, per-file SHA256/size/role manifest, true source-PNG URL/blob and focused R3 Work next-job. **No new neural 3D hero generated; no Golden or product PASS.**
+- Actual mesh source PNG remains on GitHub `refs/Quaternius_Source_4View_R2_920.png` at blob `89b68c66a50d84910b72a9d847a20eaf3f7fe250`, not physically in ZIP due current container binary networking limits. Work must fetch real image bytes and pass source conditioning receipt before claiming donor accuracy.
+- [R3 image roles, exact SHA + workflow](R3_CURATED_IMAGE_REFERENCE_HANDOFF.md); [QA 15/15](TEST_REPORT_R3.md) (initial literal-matcher 14/15, corrected to semantic 15/15); [R3 fresh-chat Recovery](RECOVERY_R3.md). All are now on the **same** planning branch.
+- Historical R2 imagegen 0/2 failures retained in own recovery ZIP and GitHub report; the two posters remain only light/color material references. R1 source masks/illustrations remain technical 2D. No duplicate model owner or assumed working Track Core connections. 
+- **Next one gate:** actual Quaternius source raster pixels + selected curated style ZIP fed through source-conditioned existing Composer/WSA, generate **one** unlabelled KFB-Clay Cosmic island hero, single eroded island base, clean track/guardrail and recognized source trees, ask Georg A/B/FAIL. Preserve old ZIPs. 
+- This is a non-runtime archival/creative handoff, no GPT Site/Stage publication or merge/Live. No PR.
+
 ## Additive R2 return · 2026-10-11 · original Quaternius source forms verified
 - **Real source proof:** [four GLTF objects independently rendered from actual vertex/index mesh data](refs/Quaternius_Source_4View_R2_920.png), PNG blob `89b68c66a50d84910b72a9d847a20eaf3f7fe250` pushed on this branch, 920×690. Asset sources `Base_Large` (2790 triangles), `Planet_7` (2010), `Tree_Spiral_1` (748), `Tree_Floating_1` (2440). Source images are flat-shaded technical meshes, not atlas-textured GLTF or KFB-clay Golden.
 - **Corrected donor interpretation:** `Base_Large` is a sci-fi **dome architecture** and `Planet_7` is a ringed planet, neither can serve as a cohesive organic island-earth body; terrain remains separate continuous eroded geology. Both exotic Quaternius tree donor silhouettes now visually verified.
