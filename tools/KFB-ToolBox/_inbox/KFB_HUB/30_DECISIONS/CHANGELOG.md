@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Use what works
+- V-140 „Fehlt“-Meldungen nur mit Such-Protokoll; Steuerung prüft vor Weitergabe. In Lab-CLAUDE.md und START_HERE ergänzt.
+
 ## 2026-10-11 · Track → Straße existiert
 - V-139 Georg: Übergang Rennstrecke ↔ Straße ist in Joyride vorhanden (J14 T4 ZA, J17 transition-atlas + ROAD_APPLY, V-104 B) → 1:1, kein Entwurf. Meine Rückfrage war falsch.
 

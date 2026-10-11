@@ -117,6 +117,7 @@ d('V-136','2026-10-11','Insel','RULE','Inseln sind ein geschlossenes Mesh (keine
 d('V-137','2026-10-11','Klang','TUNE','Sound in der Strecken-Welt okay, aber ein seltsames Schmatz- bzw. Klick-Geräusch stört; Quelle finden und beheben.', 'Lab', 'Mitschnitt ohne Klick', 'Georg 11.10.')
 d('V-138','2026-10-11','Strecke','TUNE','Haltebucht C4a: Die orange Fläche, auf der der Farmer steht, liest sich als zu breite Track-Bande. Dort gehört ein Bürgersteig mit gemauerter Bordsteinkante hin (Vorlage RKIT Gehweg/Bord Lauf 03: Bord, Gehweg, Kantensteine, Haltebucht mit Sitzmauer; B7 TOWN_BAY), mit weichem Übergang auf die Insel; Alternative wäre Grünfläche mit Race-Track-Bande.', 'Lab + RKIT', 'Standbild bay_from_hex vorher/nachher', 'Georg 11.10.')
 d('V-139','2026-10-11','Strecke','RULE','Übergang Rennstrecke ↔ Straße ist in Joyride schon vorhanden und wird 1:1 genutzt: J14-T4-Zone ZA bzw. J17 transition-atlas + ROAD_APPLY (Fahrbahn-Haut Straße → Strecke), Variante B nach V-104. Kein neuer Entwurf; „B6 race ↔ world“ = diese Vorlage. Fehlt dem Track Core der Typwechsel RACE → TOWN im Graph, wird er nach dieser Vorlage ergänzt, nicht neu erfunden.', 'RKIT + Lab', 'Standbild Übergang neben J14/J17', 'Georg 11.10.: „der track- -> strasse übergang ist doch in joyride schon vorhanden!!!“')
+d('V-140','2026-10-11','Prozess','RULE','„Use what works“ verschärft: Eine Meldung „fehlt“, „gibt es nicht“ bzw. „braucht Georgs Entwurf“ ist nur gültig mit Such-Protokoll („nicht gefunden in …“) über PHASE_C_DONORS_R1.md, MVP1_DONOR_AND_MODEL_MAP_R1.md, ACCEPTANCE_INDEX.md, die Joyride-Cuts J14/J15 (TC1)/J16/J17, Organ-Inseln v4–v7, RollerCoaster v11, Stunt Car Race und die früheren Lieferungen dieser Phase. Die Steuerung prüft jede solche Meldung gegen diese Liste, bevor sie an Georg geht.', 'alle Sitzungen + Steuerung', 'Such-Protokoll in jeder Fehlt-Meldung', 'Georg 11.10.: „use what works“!!')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -222,6 +223,7 @@ WHY = {
  'V-137':('Klicks zerstören das „chill“-Gefühl.','sofort'),
  'V-138':('Aussteigen und zu Fuß weiter ist ein Stadt-Moment; Orange gehört zur Bande, nicht zur Gehfläche.','vor C4c'),
  'V-139':('Ich habe RKITs „fehlt, Georgs Entwurf nötig“ ungeprüft weitergegeben; die Vorlage lag seit C0 auf dem Tisch.','sofort'),
+ 'V-140':('Zweimal an einem Tag (Rechteckprofil, Track→Straße) wurde Vorhandenes als fehlend gemeldet und ungeprüft an Georg gegeben.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

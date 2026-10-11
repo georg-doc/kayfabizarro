@@ -1421,6 +1421,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-140",
+   "date": "2026-10-11",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "„Use what works“ verschärft: Eine Meldung „fehlt“, „gibt es nicht“ bzw. „braucht Georgs Entwurf“ ist nur gültig mit Such-Protokoll („nicht gefunden in …“) über PHASE_C_DONORS_R1.md, MVP1_DONOR_AND_MODEL_MAP_R1.md, ACCEPTANCE_INDEX.md, die Joyride-Cuts J14/J15 (TC1)/J16/J17, Organ-Inseln v4–v7, RollerCoaster v11, Stunt Car Race und die früheren Lieferungen dieser Phase. Die Steuerung prüft jede solche Meldung gegen diese Liste, bevor sie an Georg geht.",
+   "values": {},
+   "owner": "alle Sitzungen + Steuerung",
+   "check": "Such-Protokoll in jeder Fehlt-Meldung",
+   "source": "Georg 11.10.: „use what works“!!",
+   "supersedes": null,
+   "why": "Zweimal an einem Tag (Rechteckprofil, Track→Straße) wurde Vorhandenes als fehlend gemeldet und ungeprüft an Georg gegeben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
