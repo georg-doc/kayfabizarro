@@ -85,6 +85,14 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 
 **Danach (nach OK):** Rechteckring stone_rect/mine · J17-Tageslicht · M2-Zone track · VFX/SFX · C4.
 
+## Stand 11.10. spät (Steuerung)
+
+**Fertig:** C1a J17 1:1 · C1b+C3 Organ-Ring-Welt (Organe = Platzhalter) · Fahrtest echt (k2b, 3 Autos, bildratenunabhängig) · VFX/SFX + Suno-Radio (Klick behoben, PASS) · V-130 Tunnel-Portale PASS · Bank B Tunnel im Inselberg TUNE 5–6/10 · C4a Haltebucht + RKIT-Bürgersteig (TUNE nachgebessert, Urteil offen) · C4b Track Core 0.16.9 · Track-Core-Skins/Module/trail/DIRT/Poller (RKIT) · Register bis V-168 auf GitHub, Lab-Code-Schnappschuss `sync/lab-snapshot-2026-10-11`.
+
+**Läuft:** C4c erste Aus-/Auffahrt (Live-Test: Banden FAIL → Reparatur zuerst; Standardansicht nur geprüfter Stand V-166), danach Flackern, Ladezeit (Vorab-Backen). Blender R4 Coconino-Mesas (wartet auf Blender-Start). WSA Licht-Studie C. Architektur-Audit (extern) läuft.
+
+**Offen bei Georg:** Haltebucht-Urteil · Tunnel-Berge ≥ L.
+
 ## Stand 11.10. abends (nach Blender-Review, gilt vor „Übergabepunkt“)
 
 **Maßgeblich:** `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001…V-121) + `docs/KFB_WORLDBUILDER_PLAN_R1.md` + diese Datei. Abgelöst: siehe V-117 bzw. `START_HERE_STEERING.md` im Register-Ordner. Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, wird bei jeder Register-Änderung mitgeschoben.

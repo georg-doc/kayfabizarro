@@ -1,6 +1,6 @@
 # KFB Worldbuilder · Plan R1 (ersetzt die Stufenfolge des Masterplans R2 für MVP-1)
 
-Stand: 11.10.2026 (nachgeführt bis V-121) · vorher 10.10.2026 spät · Steuer-Sitzung · Grundlage: Georgs Entscheidungen vom 10.10., `BASELINE_ACCEPTED_R1.md`, `BACKBONE_EDITOR_DONORS_R1.md`, `POSTMORTEM_JOYRIDE_REGRESS_R1.md`
+Stand: 11.10.2026 abends (nachgeführt bis V-168) · vorher 10.10.2026 spät · Steuer-Sitzung · Grundlage: Georgs Entscheidungen vom 10.10., `BASELINE_ACCEPTED_R1.md`, `BACKBONE_EDITOR_DONORS_R1.md`, `POSTMORTEM_JOYRIDE_REGRESS_R1.md`
 
 ## 0 · Grundsätze
 
@@ -21,7 +21,7 @@ Stand: 11.10.2026 (nachgeführt bis V-121) · vorher 10.10.2026 spät · Steuer-
 | **B+ · Wasser (Pflicht, Georg 10.10.)** | Claude-Design-Wasser-Shader übernehmen: fließendes Wasser bzw. Flüsse und Seen mit Tiefe (`donors/kfb-island-kit-r2-2026-10-08/KFB_Island_Kit_R1/kit/fluid.js`, F0–F2 PASS). **Inklusive des geformten Geländes drumherum:** See als Geländesenke (`lakeHAt`, `heightField`), weiche Wasserlinie per Marching Squares (`waterline`), Fluss als Rinne (`flowPath`, `lakeRiver`: Gelände = min(See, Rinne)), ein Netz für See und Fluss (`fieldWater`), Uferschaum (`uShoreFoam`), Deckkraft nach Tiefe.
 **Alle Fixes mitnehmen:** F0.4 Hash ohne sin (keine Haarlinien), F0.5–F0.7 (keine Faltung), F1.2 (kein weißer Saum bzw. keine TinySkies-Linien), F2.1 (am Schnittrand kein Wasser unter der Böschung, keine dunklen bzw. schwarzen Kantenartefakte).
 Doku: `donors/kfb-island-kit-r2-2026-10-08/STATUS.md` (F0–F2: Georg-Abnahme PASS) und `CHANGELOG_ADDITIVE.md` (2026-10-08). In Szene gesetzt auf den Demo-Inseln mit Wasser und als Wasser-Werkzeug im Insel-Editor (F). Darf nicht verloren gehen. | fluid.js 1:1 | Einbau, r186-Check | M | Georg sieht Fluss und See mit Tiefe im Spiel |
-| **C · Joyride-Rückgrat** (läuft) | Reihenfolge V-103, geändert 11.10.: **C0** ✓ Übergang A/B (V-095 → V-104 B) · **C1a** ✓ J17 1:1 als Lab-Seite, Squash + Schienen-Kamera im FAHREN · **C1b+C3** (läuft) neue Standard-Welt: O1-v7-Ring + Organ-Inseln + Hex-Hub mit J17-Look (V-109, V-111), Tunnel = O1-Bohrung + TC1-Portal/Innenschale/Licht, geschlossen per manifold-3d (V-112–V-116), Leistung ≥ 30 fps (V-115) · **C2** Brücke Track Core 0.16 → v5 · **C4** Ausfahrt auf Inselboden nach V-110/V-113 mit Track-Core-v0.14-EXIT/ENTRY (V-118) · **C5** Umgebungs-Knete Nahband (V-053, im Organ-Bereich schon Standard) | J17 (p1b.v2, track-look v5, tc1), Organ-Inseln v7 (Ring-Modus), Track Core 0.14/0.16.1 | LAB-Host-Patch, Nahband-Kopie, Boolean-Einbau | M–L | Lab-Bild neben J17 `chase-curve` bzw. `chase-straight`; Blatt je Schritt |
+| **C · Joyride-Rückgrat** (läuft) | Reihenfolge V-103, geändert 11.10.: **C0** ✓ Übergang A/B (V-095 → V-104 B) · **C1a** ✓ J17 1:1 als Lab-Seite, Squash + Schienen-Kamera im FAHREN · **C1b+C3** (läuft) neue Standard-Welt: O1-v7-Ring + Organ-Inseln + Hex-Hub mit J17-Look (V-109, V-111), Tunnel = O1-Bohrung + TC1-Portal/Innenschale/Licht, geschlossen per manifold-3d (V-112–V-116), Leistung ≥ 30 fps (V-115) · **C2** Brücke Track Core 0.16 → v5 · **C4a** ✓ Haltebucht B7 + RKIT-Bürgersteig (V-138, TUNE nachgebessert) · **C4b** ✓ Track Core 0.16.9 im Lab, Teil 0 bitgleich · **C4c** (läuft) erste Aus-/Auffahrt am Hub: EXIT/ENTRY, LEVEL_RAMP, J17-Übergang B vor dem Platz, Poller, Weichen-Wechsel nach Seitenlage (V-161) · **C5** Umgebungs-Knete Nahband (V-053, im Organ-Bereich schon Standard) | J17 (p1b.v2, track-look v5, tc1), Organ-Inseln v7 (Ring-Modus), Track Core 0.14/0.16.1 | LAB-Host-Patch, Nahband-Kopie, Boolean-Einbau | M–L | Lab-Bild neben J17 `chase-curve` bzw. `chase-straight`; Blatt je Schritt |
 | **D · Archipel im Raum** | Die 8 Demo-Inseln als ganze Szenen (Maßstab je Szene über die Tür- bzw. Bank-Regel), Anordnungs-Werkzeug im Orbit (greifen, verschieben, heben, drehen), Speichern als `kfb.world-layout/1`; erster Vorschlag nach Raumregeln (Höhenstufen, Gruppen, Überschneidung der Silhouetten) | demo-scenes.ts | Anordnungs-Gizmo, Layout-Datei | M | Georg ordnet selbst an |
 | **E · Strecken-Editor** | Punkte im Raum setzen bzw. ziehen → Track-Core-Spline im Joyride-Look; Anschlüsse mit Auf- und Abfahrt an Insel-Ankern; hin, um und vorbei; sofort befahrbar | Track Core 0.16.1 (Rampen, Ein- und Ausfahrt), k2b | Zieh-Editor (der vorhandene Streckenbauer kann nur Stücklisten) | L | Georg fährt eine Runde |
 | **F · Insel-Editor (God-Mode)** | Grundkörper (Scholle oder StreakByte-Basis), Terrain-Pinsel (WB2-Sculpt), Asset-Overlay mit Live-Suche und Vorschau (Librarian-Index; KayKit, Tiny Treats, Quaternius), Inline-Editor mit Snap und Ground (Resident Atlas), Muster-Pinsel (WB2-Strich plus nest/fan plus `scene-rules.json`), **Insel-Thema** (siehe §2), **Terrain-Painter** (Pinsel mit Radius wie der Terrain-Editor, Übergang als Dots- bzw. Sprenkel-Muster S1, Farbe per Color-Picker aus dem Toolbox-Studio, Auswahl aus der Insel-Palette; vom Webchat als God-Mode- bzw. Maker-Space-Feature angemeldet), Speichern und „Spielen“ | Resident-Atlas-Editor (0.184), WB2-Sculpt, grounding.ts, Librarian-JSONL | Muster-Pinsel-Adapter, Thema-Panel | L | Georg baut eine Taverne bzw. eine erste Insel |
@@ -71,7 +71,28 @@ Referenz: `docs/golden/candidates/prison-maze_2026-10-11/` (Gefängnis- bzw. Maz
 - **Vorlage zuerst:** Bestand prüfen (KayKit > Tiny Treats > Quaternius > Kenney); Georg setzt die Teile im Insel-Editor (F), der Generator (G) kann Labyrinthe auslegen.
 - **Nicht übernehmen:** der Inselboden der Blätter (TUNE, zu sehr drangeklebt). Inselkörper bleibt Scholle (V-015).
 
+## 2e · Strecken-Baukasten mit Skins (Georg 11.10., V-134 … V-161)
+
+Ein System: **Logik** (Plan, Wege-Graph, Sockel, Anker, Prüfungen) im Track Core (RKIT, privat), **Skin** (Querschnitt, Kanten, Markierung, Kappen, Palette) je Familie, **Look** im Lab. Alle Autos fahren alle Skins (V-152). Leitprinzip chill & fun Assist (V-151).
+- **Skins:** race (J17, V-102) · town (gemauerter Bord + Gehweg, Lauf 03) · country (Landstraße, HIGHWAY dazu) · dirt (Schotter, Berm ≤ 35°) · trail (Geh-Netz, nur Fuß, Netz gehört dem Lab-Layout V-155) · cosmic (Neon-Vibe V-163, reserviert) · später rail/coaster.
+- **Track Core 0.16.9 (Stand 11.10.):** Kreisel/Kreuzung mit node.skin, Arme erben Familie, Prüfgrenze Welt 1,705 (V-143/V-153), EXIT/ENTRY auf RACE, LEVEL_RAMP ≤ 8 %, Wendeschleife (1-Arm-Kreisel + turntable-Anker), Markierungen als Daten (Pfeile nur EXIT/ENTRY/FORK/JOIN/Kreisel-Aus, Scheitel-Kerb R ≤ 45), Kanten-Enden mit Kappenform, Übergänge mit Skin-Paar, q.edge Banden-Übergang ≥ 8 m, DIRT D1–D4, trail-Bibliothek mit gemessenen Gangwerten (Treppe 0,30/1,3 nach Walker, V-160; Trittsteine nach jog-Schritt, V-157; Pfade ≤ 12 %, V-158), Poller.
+- **Katalog:** Georgs Blätter RK2, TD1–TD5, CS1–CS3, CR1–CR4 (replies/REFS_*), RKIT-Abgleich `RKIT_CATALOG_TD_R1.md`, Look-Spezifikation WSA R1/R2, Antworten V-150/V-154.
+- **Abschlüsse:** alle Schnittflächen gerundet in Claymation-Form, ggf. Rubble (V-168).
+- **Tunnel:** O1-Bohrung bzw. Feld-Tunnel + TC1-Portale/Innenausbau 1:1, Profil arch|rect getrennt vom Look (V-130 PASS); Tunnel-Berge echt modelliert, mindestens L (offen).
+
+## 2f · Inselkörper und Referenz-Bibliothek (Georg 11.10.)
+
+- **Inselkörper:** zusammenhängende Erdmasse, Fels als Teil der Masse, Moos über der Kante, dünne Wurzeln ok, nie aufgesetzte Felskugeln, ein geschlossenes Mesh (V-106, V-136, V-142, V-152). Prozedural bisher 5–6/10 (V-162). **Modelliert Blender** nach Georgs Referenzen (V-167 Coconino-Mesas R4 vor R3 Inselboden); das Lab setzt Strecke und Tunnel ein.
+- **Themen-Inseln (Referenzen, Stil-Richtung):** Gefängnis-Maze + Mauer-Baukasten (V-105), Dystopia-Vulkan (V-108), Protopia-Farm + Maker Space (V-110), Organe → MED-Welten (V-111, im MVP Platzhalter V-127), Mesa/Coconino (V-164/V-167), Cosmic Highway (V-163), Antike mit Steinbrücken (V-165).
+- **Bilder prüfen, nicht erfinden (V-148); use what works (V-140).**
+
+## 2g · Klang und Fahrgefühl (V-128 … V-137)
+
+J17-Motor, Jingles, Kontakt-Engine, Kenney-CC0, Knet-Partikel, Tunnel-Hall; Radio beim Fahren = Georgs Suno RoadTrip JukeBox, zu Fuß Insel-Bett/Cozy; RollerCoaster-Drone-Bett später (V-131).
+
 ## 3 · Offen bei Georg
+
+- Stand 11.10. abends: Haltebucht nach Nachbesserung (PASS/TUNE/FAIL); Tunnel-Berge mindestens L; Live-Befunde Banden FAIL, Laden 40–60 s, Flackern (in Arbeit, V-166).
 
 - 10 Fragen aus `BASELINE_ACCEPTED_R1.md` §2; die Empfehlungen gelten, bis Georg anders entscheidet.
 - Cozy Tunes (Pizza Doggy) liegen öffentlich auf GitHub ohne Lizenzdatei: Lizenz klären, gegebenenfalls ins private Repo.
