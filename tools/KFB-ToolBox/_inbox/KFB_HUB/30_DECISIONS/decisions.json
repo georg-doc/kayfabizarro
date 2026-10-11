@@ -1813,6 +1813,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-168",
+   "date": "2026-10-11",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Grundkonzept für alle Schnittflächen und Mesh-Abschlüsse (Bandenenden, Strecken- und Gehweg-Enden, Insel-Anschnitte, Portale, Mauerenden): gerundete Claymation-Form, bei Bedarf mit Rubble (SPEC_EDGE_RUBBLE_GRAMMAR_R1), nie ein offener oder harter Schnitt; Vorbild die halboffenen Insel-Szenen und Dungeon-Ruinen-Wände. Ergänzt V-011, Q5/Q9.",
+   "values": {},
+   "owner": "alle Sitzungen",
+   "check": "Q5/Q9 + Nahbild jedes Abschlusses",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Die zerrissenen offenen Banden zeigen, was passiert, wenn Abschlüsse nicht gebaut werden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

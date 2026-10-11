@@ -145,6 +145,7 @@ d('V-164','2026-10-11','Insel','RULE','Mesa-Insel im Krazy-Kat-/Coconino-Stil (R
 d('V-165','2026-10-11','Insel','RULE','Steinbrücken bzw. -viadukte (CR4) kommen später für Geschichts-, Römer- bzw. Griechen-Themen-Inseln; jetzt kein Steinbogen-Builder.', 'RKIT', '-', 'Georg 11.10.')
 d('V-166','2026-10-11','Prozess','RULE','Standardansicht des Lab zeigt nur den letzten geprüften Stand; laufende Arbeit hinter einem Schalter. Anlass Georgs Live-Test: zerrissene Banden (FAIL) aus einem Arbeitsstand, 40–60 s Ladezeit, Flackern auch im Stand.', 'Lab', 'Standard-URL = letzte Lieferung', 'Georg 11.10. (Live-Test)')
 d('V-167','2026-10-11','Insel','RULE','Coconino-Blätter (Georg, „Blender MCP Prep“): CC1 Mesa-Module M01 Flat Cap, M02 Needle Butte, M03 Stepped Mesa (Cap → Main Body → Erosion Skirt/Talus, Dressing-Sockets) und CC2 Inseln J1 Sunset Mesa Serpentine / J2 Violet Desert Pass (eine Inselscholle, Mesas darauf, J17-Track ins Gelände eingebettet, keine Pfeiler). Inselkörper bzw. Mesas modelliert Blender (Brief R4, Priorität vor R3); das Lab setzt Track und Tunnel ein.', 'Blender-Coworker + Lab', 'Blatt M01–M03 gegen CC1, dann J1', 'Georg 11.10.')
+d('V-168','2026-10-11','Look','RULE','Grundkonzept für alle Schnittflächen und Mesh-Abschlüsse (Bandenenden, Strecken- und Gehweg-Enden, Insel-Anschnitte, Portale, Mauerenden): gerundete Claymation-Form, bei Bedarf mit Rubble (SPEC_EDGE_RUBBLE_GRAMMAR_R1), nie ein offener oder harter Schnitt; Vorbild die halboffenen Insel-Szenen und Dungeon-Ruinen-Wände. Ergänzt V-011, Q5/Q9.', 'alle Sitzungen', 'Q5/Q9 + Nahbild jedes Abschlusses', 'Georg 11.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -278,6 +279,7 @@ WHY = {
  'V-165':('Steinbögen gehören thematisch zu Antike-Inseln.','später'),
  'V-166':('Georg testet live; halbfertige Stände kosten Vertrauen und Zeit.','sofort'),
  'V-167':('Klare modulare Vorlage für Blender; prozedurale Inselkörper überzeugten dreimal nicht.','ab jetzt'),
+ 'V-168':('Die zerrissenen offenen Banden zeigen, was passiert, wenn Abschlüsse nicht gebaut werden.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

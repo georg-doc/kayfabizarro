@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Abschlüsse rund + Rubble
+- V-168 alle Schnittflächen/Mesh-Abschlüsse als gerundete Claymation-Form, ggf. Rubble (wie halboffene Insel-Szenen, Dungeon-Ruinen-Wände).
+
 ## 2026-10-11 · Coconino-Mesas für Blender
 - V-167 CC1 (Mesa-Module M01–M03) + CC2 (Inseln J1/J2) als Blender-Auftrag R4 (vor R3). Abgelegt replies/REFS_COCONINO_2026-10-11/, Brief replies/BRIEF_BLENDER_COCONINO_R4.md (auch im Blender-Branch).
 
