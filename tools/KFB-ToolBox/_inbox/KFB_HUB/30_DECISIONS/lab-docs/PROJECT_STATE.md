@@ -89,7 +89,8 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 
 **Bericht:** `docs/critic/lab-track/2026-10-11_C4c/REPORT.md` + `C4C_ENDEN_BLATT.jpg` (Nahbild jedes Endes). Standardansicht = C4b (V-166).
 - Track Core 0.16.9 `compileGraph`, Teil 0 PASS, offene Kanten Standard 0 (neuer Parity-Check 11), Fahr- und Fußtests PASS bei 60 fps.
-- Offen: Kehle hinter dem Kopf an drei Ring-Enden (Lösung: Strang je Seite getrennt sweepen).
+- v2 (12.10., Steuerung): Strang je Seite geteilt (LAB PATCH K, J17-strangCap) + Kopf auf dem Wulst-Ende; offene Kanten `c4c=1` 0/0; Parity incl. organ Check 11 PASS; Fußtests PASS. Neues Blatt `C4C_ENDEN_BLATT_v2.jpg` (12 Enden + Zebra), Bucht-Schrägbilder `bay/`.
+- Offen: Auto steht in der Fahrbahnmitte, nicht in der Bucht (Vorschlag wartet auf OK); Zebra = 1 Balken auf 4-m-Spur.
 
 ## Stand 11.10. spät (Steuerung)
 

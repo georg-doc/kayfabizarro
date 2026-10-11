@@ -1,6 +1,6 @@
 # KFB Entscheidungen (PASS / TUNE / FAIL / RULE / TBD)
 
-Stand 2026-10-11 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
+Stand 2026-10-12 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
 
 ## A · Entscheidungen und Vorgaben
 
@@ -149,6 +149,7 @@ Stand 2026-10-11 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur
 | V-179 | 2026-10-11 | ab jetzt | Animation | **RULE** | Antworten Motion-Leitfaden R1: (1) Kurzer, volumenerhaltender Squash an Figuren ≤ 8 % ist erlaubt (V-060 gilt für Figurengröße, nicht für Animation). (2) Emanata als Knet-Plättchen. (3) Brauen (brow-rig.v2) jetzt ins Lab, Mund später. (4) Mixamo-Clips (auf KayKit retargetet) nutzen, Rohdateien nie in ein öffentliches Repo. (5) Flug: 400-ms-Fenster für die zweite Leertaste gilt (zu V-024). | Damit Figuren-Acting auf Bestand gebaut werden kann. | Lab + Motion | MOTION_GUIDE_R1 v0.2 | Georg 11.10. |
 | V-180 | 2026-10-11 | ab jetzt | Animation | **RULE** | Stürze und Wipeouts (heavy_fall, impact_crash u. ä.) dürfen kurz stärker stauchen als die 8-%-Grenze aus V-179, volumenerhaltend und mit Erholung zurück auf 1,0. Obergrenze schlägt der Motion-Leitfaden vor (Recherche-Matrix Sy 0,75), Georg urteilt am Demo. | Squash proportional zur Aktion (Motion Matrix); Stürze brauchen sichtbaren Aufprall. | Lab + Motion | Sturz-Demo | Georg 11.10. |
 | V-181 | 2026-10-11 | ab jetzt | Gameplay | **RULE** | Kulturmechaniken (Georgs Definition): Geschenke (gifts), Tanz (dance), Debatte (debate), Rauferei (brawl), Brick-Fish, Kayfabe/Kayfabulieren, Fluff ernten/formen/zerstören usw., Lesen. Sie sind die Anlässe für emotionales Acting und NPC-Choreografien (V-177). Details je Mechanik kommen von Georg bzw. aus bestehenden Konzepten, nicht erfunden. | Begriff aus dem Motion-Auftrag geklärt; Grundlage für Acting-Anlässe. | Steuerung + Motion | MOTION_GUIDE_R1 §3f | Georg 11.10. |
+| V-182 | 2026-10-12 | nach V-171 Punkt 1–3 | Strecke | **TBD** | Idee Georg: Race-Track mit KayKit-Dungeon-Pack/-Generator. Draufsicht wie WhackMan, für die Strecke breiter; als Tunnel mit 2–n Stockwerken (Parkhaus-Logik) mit Dungeon-Decke, -Boden und -Wänden; Props wie Fackeln, Schatztruhen, Gitterfenster; als Fantasy/Sci-Fi-RPG-Geisterbahn bzw. Themenpark. Erst Machbarkeit messen, POC später als eigene Sitzung. | Nutzt vorhandenen Baukasten für Tunnel, Minen und Themenstrecken. | Steuerung | Machbarkeits-Notiz | Georg 12.10. |
 | V-084 | 2026-10-10 | ab 10.10. | Claude Design | **FAIL** | Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr. | Prozedurale Primitive können keine Claymation; Regress. | Steuerung | - | docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/ |
 
 ## B · Abnahmen aus Projektdateien (66)

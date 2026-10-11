@@ -159,6 +159,7 @@ d('V-178','2026-10-11','Prozess','RULE','WSA als unabhängiger Gegenprüfer des 
 d('V-179','2026-10-11','Animation','RULE','Antworten Motion-Leitfaden R1: (1) Kurzer, volumenerhaltender Squash an Figuren ≤ 8 % ist erlaubt (V-060 gilt für Figurengröße, nicht für Animation). (2) Emanata als Knet-Plättchen. (3) Brauen (brow-rig.v2) jetzt ins Lab, Mund später. (4) Mixamo-Clips (auf KayKit retargetet) nutzen, Rohdateien nie in ein öffentliches Repo. (5) Flug: 400-ms-Fenster für die zweite Leertaste gilt (zu V-024).', 'Lab + Motion', 'MOTION_GUIDE_R1 v0.2', 'Georg 11.10.')
 d('V-180','2026-10-11','Animation','RULE','Stürze und Wipeouts (heavy_fall, impact_crash u. ä.) dürfen kurz stärker stauchen als die 8-%-Grenze aus V-179, volumenerhaltend und mit Erholung zurück auf 1,0. Obergrenze schlägt der Motion-Leitfaden vor (Recherche-Matrix Sy 0,75), Georg urteilt am Demo.', 'Lab + Motion', 'Sturz-Demo', 'Georg 11.10.')
 d('V-181','2026-10-11','Gameplay','RULE','Kulturmechaniken (Georgs Definition): Geschenke (gifts), Tanz (dance), Debatte (debate), Rauferei (brawl), Brick-Fish, Kayfabe/Kayfabulieren, Fluff ernten/formen/zerstören usw., Lesen. Sie sind die Anlässe für emotionales Acting und NPC-Choreografien (V-177). Details je Mechanik kommen von Georg bzw. aus bestehenden Konzepten, nicht erfunden.', 'Steuerung + Motion', 'MOTION_GUIDE_R1 §3f', 'Georg 11.10.')
+d('V-182','2026-10-12','Strecke','TBD','Idee Georg: Race-Track mit KayKit-Dungeon-Pack/-Generator. Draufsicht wie WhackMan, für die Strecke breiter; als Tunnel mit 2–n Stockwerken (Parkhaus-Logik) mit Dungeon-Decke, -Boden und -Wänden; Props wie Fackeln, Schatztruhen, Gitterfenster; als Fantasy/Sci-Fi-RPG-Geisterbahn bzw. Themenpark. Erst Machbarkeit messen, POC später als eigene Sitzung.', 'Steuerung', 'Machbarkeits-Notiz', 'Georg 12.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -306,6 +307,7 @@ WHY = {
  'V-179':('Damit Figuren-Acting auf Bestand gebaut werden kann.','ab jetzt'),
  'V-180':('Squash proportional zur Aktion (Motion Matrix); Stürze brauchen sichtbaren Aufprall.','ab jetzt'),
  'V-181':('Begriff aus dem Motion-Auftrag geklärt; Grundlage für Acting-Anlässe.','ab jetzt'),
+ 'V-182':('Nutzt vorhandenen Baukasten für Tunnel, Minen und Themenstrecken.','nach V-171 Punkt 1–3'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

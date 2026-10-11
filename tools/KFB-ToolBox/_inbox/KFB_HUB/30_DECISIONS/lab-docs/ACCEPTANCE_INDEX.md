@@ -1,4 +1,4 @@
-# Acceptance-Index (automatisch, 2026-10-11)
+# Acceptance-Index (automatisch, 2026-10-12)
 
 Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien unter ~/Dropbox/CLAUDE (ohne KFB Open World). Spalte bzw. Zeile „GEORG ACCEPTANCE“ bzw. „Georg-Abnahme“.
 

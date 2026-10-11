@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Banden-Enden v2, Dungeon-Idee
+- Bau-Sitzung C4c v2 (?c4c=1): Strang je Seite geteilt + J17-strangCap, alle 12 Enden geschlossen ohne Kehle, offene Kanten 0/0, Parity PASS. Haltebucht ist geometrisch da (+3,0 breit, 24 m, Verjüngung 19,2), liest sich nicht, weil das Auto in Fahrbahnmitte steht. Georg vorgelegt: Auto in die Bucht, Zebra, Spalt.
+- V-182 (TBD) Idee Dungeon-Track mit KayKit-Dungeon-Pack: erst Machbarkeit, POC nach V-171 Punkt 1–3.
+
 ## 2026-10-11 · WSA Rhythmus-Inventur abgenommen
 - 199 Kandidaten, 187 CC0. Steuerung wählt: Tiny Treats street_lantern + KayKit streetlight (town), KayKit post_lantern (Land), KayKit torch/torch_lit (stone/mesa), KayKit arch_gate (Eingangstor), Kenney sign-highway als Schilderbrücken-Form, RKIT-Poller. Leitpfosten + Cosmic-Pylonen fehlen → später RKIT-Knete. WSA pausiert bis Audit-Gegenprüfung V-178 (replies/STEERING_REPLY_WSA_RHYTHM_R1.md).
 
