@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Tunnel PASS, Berg TUNE
+- V-130 PASS (Portale + Innen 1:1). V-156 Berg/Hügel-Wirt schlecht modelliert → echte Inselkörper nach V-142/V-152. V-157 Trittstein-Abstand aus Medium-Rig-Locomotion messen.
+
 ## 2026-10-11 · walkOuter geliefert
 - hex_b7.parts.json mit walkOuter (53 Punkte, ±0,0001 gegen GLB), GLB unverändert, parity PASS. RKIT wartet auf Georg (trail A/B).
 
