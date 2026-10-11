@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Klick PASS
+- V-137 auf PASS (Georg: „klick ist weg, passt“).
+
 ## 2026-10-11 · Gehweg-Weg (b), Hörprobe
 - V-138 Weg (b): Lab exportiert B7-Strom, RKIT baut Bord/Gehweg/Kantensteine nach Lauf 03 (Q1–Q9), Lab macht Bordtasche, Knet-Übergang, Kacheln, Fußtest. Hörprobe nach Klick-Fix an Georg.
 
