@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Poller
+- Kein Poller im Bestand (Lab-Suche + externe CC0-Suche nur realistisch/KI). Platzrand vorerst bündig ohne Poller; RKIT baut Poller als Town-Ausstattung im Lauf-03-Stil (Vorlagen-Zeile vorab). Zebra M2 1:1 je Zweig.
+
 ## 2026-10-11 · C4c freigegeben
 - Erste Aus-/Auffahrt am Hex-Hub: compileGraph EXIT/ENTRY (RACE-Zweig), LEVEL_RAMP 0,6 m statt B5, J17-Übergang Variante B vor dem Platz, Bande endet mit strangCap, auf dem Platz bündig mit Pollern (Bestand). V-161 Weichen-Wechsel nach Seitenlage + Assist.
 
