@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KFB scene-study v2 — confirmed V-141, relation intent only",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "kfb.scene-study/2"
+    },
+    "binding": {
+      "const": "receiver-selected-world"
+    },
+    "places": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/place"
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/connection"
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "binding",
+    "places",
+    "connections"
+  ],
+  "$defs": {
+    "attachment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "entry_exit_ramp",
+            "tunnel_with_surface_ramp",
+            "paternoster_platform",
+            null
+          ]
+        },
+        "anchorId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        }
+      },
+      "required": [
+        "type",
+        "anchorId"
+      ]
+    },
+    "place": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "island": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "sourceObjectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^\\S+$"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "island",
+        "name",
+        "action",
+        "sourceObjectId",
+        "members"
+      ]
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "from": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^\\S+$"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "desiredAttachment": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "from": {
+              "$ref": "#/$defs/attachment"
+            },
+            "to": {
+              "$ref": "#/$defs/attachment"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "from",
+        "to",
+        "reason",
+        "desiredAttachment"
+      ]
+    }
+  }
+}

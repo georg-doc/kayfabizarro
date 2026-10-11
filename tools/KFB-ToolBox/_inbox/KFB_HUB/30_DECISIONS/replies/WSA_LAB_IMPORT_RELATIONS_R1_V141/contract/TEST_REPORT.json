@@ -1,0 +1,68 @@
+{
+  "schemaMetaValidation": "PASS_DRAFT_2020_12",
+  "cases": [
+    {
+      "case": "existing-editor-relations.example.json",
+      "result": "VALID_INTENT_UNRESOLVED"
+    },
+    {
+      "case": "attachment-types.example.json",
+      "result": "VALID_INTENT_UNRESOLVED"
+    },
+    {
+      "case": "geometry not permitted",
+      "result": "REJECTED"
+    },
+    {
+      "case": "unknown attachment type",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing source object",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong island source object",
+      "result": "REJECTED"
+    },
+    {
+      "case": "duplicate place ID",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing endpoint",
+      "result": "REJECTED"
+    },
+    {
+      "case": "self connection",
+      "result": "REJECTED"
+    },
+    {
+      "case": "blank purpose",
+      "result": "REJECTED"
+    },
+    {
+      "case": "blank activity",
+      "result": "REJECTED"
+    },
+    {
+      "case": "foreign anchor",
+      "result": "REJECTED"
+    },
+    {
+      "case": "duplicate edge",
+      "result": "REJECTED"
+    },
+    {
+      "case": "paternoster",
+      "result": "DEFERRED_INTENT_ONLY"
+    },
+    {
+      "case": "directed return cycle",
+      "result": "VALID_INTENT"
+    }
+  ],
+  "importerRuntime": "NOT_IMPLEMENTED_SCHEMA_PROPOSAL",
+  "sourceObjectsAndAnchors": "SCOPED_BY_RECEIVER_ISLAND",
+  "tests": "PASS"
+}

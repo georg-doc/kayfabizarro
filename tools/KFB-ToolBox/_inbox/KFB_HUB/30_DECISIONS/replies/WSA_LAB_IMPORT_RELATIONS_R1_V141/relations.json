@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.scene-study/2",
+  "binding": "receiver-selected-world",
+  "places": [
+    {
+      "id": "place-mv3sre72-0",
+      "island": "canyon",
+      "name": "Canyon · Ankunft",
+      "action": "Lieferung vorbereiten",
+      "sourceObjectId": "b-canyon",
+      "members": []
+    },
+    {
+      "id": "place-mv3sredn-1",
+      "island": "bucht",
+      "name": "Bikini-Bucht · Ankunft",
+      "action": "Lieferung entgegennehmen",
+      "sourceObjectId": "b-bucht",
+      "members": []
+    }
+  ],
+  "connections": [
+    {
+      "id": "relation-v1-f2d357d9ad19ef498a485353ace286ea0b29f9e86a97a873f6f7e32c96b2160c",
+      "from": "place-mv3sre72-0",
+      "to": "place-mv3sredn-1",
+      "reason": "Versorgung zwischen den vorhandenen Orten",
+      "desiredAttachment": {
+        "from": {
+          "type": null,
+          "anchorId": null
+        },
+        "to": {
+          "type": null,
+          "anchorId": null
+        }
+      }
+    }
+  ]
+}
