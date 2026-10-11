@@ -25,3 +25,6 @@ Für jedes Modul aus Georgs Rundkurs-Baukasten (`replies/REFS_RUNDKURS_2026-10-1
 
 ## Zusätzliche Pflicht-Quellen (V-146)
 Track Core `SLOTS`/`SKINS` (14-Slot-Querschnitt, paint je Teil), S4-v2-Brief `KFB Racetrack Blender Kit/TRACK-CORE/S4_DESIGN_BRIEF_v2_2026-09-27/` (Edge-Atlas, Übergangs-Matrix), `REF_ANALYSIS_2026-09-27/REFERENCE_ANALYSIS_2026-09-27.md` (Oberfläche je Slot, Edge-Layer), Lab `docs/SPEC_EDGE_RUBBLE_GRAMMAR_R1.md`. Ordne jedes Modul diesen Schichten zu: Asphalt, Markierung (mit Farbe), Seitenstreifen, Bord bzw. Kerb, Bande, Rubble, Unterseite.
+
+## Erweiterung (V-147)
+Modul-Liste jetzt aus allen fünf Blättern `replies/REFS_TRACK_DETAILS_2026-10-11/TD1–TD5` (Renn-Kern, Straße, Schotter, Übergänge, Fortgeschritten). Je Modul: welche Joyride-Quelle den Look 1:1 liefert, für die Skins race und town; dirt nur soweit Joyride-Quellen (J17 Biome canyon u. a.) es hergeben, sonst „nicht gefunden in …“.

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Race-track-details-Katalog
+- V-147 fünf Georg-Blätter (Renn-Kern, Straße, Schotter, Übergänge, Fortgeschritten) als Modul-/Skin-Katalog; Skins race/town/dirt, Cosmic Highway folgt. Abgelegt replies/REFS_TRACK_DETAILS_2026-10-11/.
+
 ## 2026-10-11 · Skin-Schnittstelle freigegeben
 - RKIT: RACE-Kreisel existiert schon (durchgehende Banden); Lücke ist der TOWN-Kreisel. 8 Rundkurs-Module abgeglichen (vorhanden/teilweise). Freigegeben: Track Core 0.16.3 mit Knoten = logic + skin (race|town), Arme erben Einfahrts-Familie, Endkappen/Splitter je Skin, Markierungen als Daten; skins[] mit benannten Schichten nach V-146.
 

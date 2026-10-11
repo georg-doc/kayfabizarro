@@ -1519,6 +1519,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-147",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Georgs fünf „Race track details“-Blätter (11.10. 15:35) sind der Referenz-Katalog für Strecken-Module und Skins (Logik, nicht Farben; Look je Skin, Rennen = J17 V-102): TD1 Renn-Kernmodule (Gerade Standard/breit/kurz, 45°/90°, S-Paar, Haarnadel, Schikane, Markierungs-Logik, innere/äußere Banden-Übergänge, Verjüngung, End-/Startkappe, gemeinsamer Verbinder, Seitenprofil); TD2 Straße (Bord beidseitig/einseitig, Ecke, T, Kreuzung, Zebrastreifen, Mittelinsel, Bordabsenkung/Einfahrt, Bankett, Endkappe, Straße→Platz); TD3 Schotter/Off-Road (Kurven, überhöhte Kurve, Sprunghügel, Spurrillen, Kanten Kies/Graslippe, Breitenwechsel); TD4 Übergänge (Einfädeln, Ausfädeln, Strecke→Straße, Straße→Schotter, Bord→Leitplanke, Kreisel Ein/Aus, Rampe, Brückenanschluss); TD5 Fortgeschritten (kompakter Kreisel, Mini-Kleeblatt, versetzte Kreuzung, Schikane + Seiteneinfahrt, Y, Boxengasse, Stadt-Hybrid, Kreuzung mit Brücke und Durchfahrtshöhe). Skins damit: race, town, dirt; cosmic highway folgt; rail/coaster später. Pfeiler bzw. Brücken nur auf Inseln (V-120), im All schwebt die Strecke.",
+   "values": {},
+   "owner": "RKIT + Lab + WSA",
+   "check": "Modul-Katalog-Abgleich je Blatt",
+   "source": "Georg 11.10.; Straße/Bord und Cosmic-Highway-Skin folgen",
+   "supersedes": null,
+   "why": "Erstmals ein vollständiger Modul-Katalog als Bild; macht V-134/V-145 prüfbar.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
