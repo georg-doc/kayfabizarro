@@ -40,3 +40,6 @@ Georg supplied private reference folder: eight individual DioramaScenes A/B/C/D/
 
 ## Authorized Editor Rules R1 integration
 Installed optional place/action/source-membership and cross-island relation authoring in existing Lab. Source-first Steering d8c2d08833c6f5abf244decca9120cd83e7d63eb. Three source files hash-verified; typecheck, authoring/reload/negative cases PASS and installed game parity10/10 PASS. Exact scope/limits/patch/tests in EDITOR_RULES_R1/RETURN.md. No new composed scene, phase-D whole-scene gizmo, drive acceptance, Golden or merge.
+
+## 11.10.2026 · Data-only relation schema proposal
+Georg: spatial ways/ramps/docks stay Track Core + J17 in Lab (V-122/V-118/V-134). Proposal kfb.scene-study/2 with place/activity/scoped source object IDs, purpose-labelled connections and endpoint V-099 attachment wishes submitted to Steering replies/WSA_PLACE_RELATIONS_SCHEMA_R1_2026-10-11.md at 4aae7f86b5330220ed30a8d796af01d66983125c; 9/9 files and branch verified. JSON Schema Draft2020-12 meta-validation +15 positive/negative cases PASS. Existing v1 relations exported without invented anchors or attachment choices. Schema is PROPOSAL, no Lab-import runtime implemented or changed. Next gate: Steering confirms/adapts schema for existing E/F owner. No new geometry, Golden or merge.
