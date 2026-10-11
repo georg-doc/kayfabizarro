@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Replay-Harness-Spezifikation
+- replies/REPLAY_HARNESS_SPEC_R1.md: Ursachen (ein Sim-Schritt pro Bild, dt Wanduhr ≤ 50 ms, Walker prüft den Weg nicht, fps-Gate nur Mittelwert, Tests über Wanduhr-Tasten), Zielentwurf, 8 Migrationsschritte (6–9 Tage), Risiko Physik-Abgleich offline in Node. V-190 regelt Übergang von V-159. Nebenbefund vendor/SOURCE.md veraltet. Slice S6 im Steuerpult ergänzt.
+
 ## 2026-10-12 · Steuerpult, Housekeeping, Modulkarte
 - V-189 Steuerpult (privates Artifact https://claude.ai/artifact/WxG16gvt7LNrBXxYkAhr9d, Quelle STEUERPULT.html): Reiter Entscheidungen (7 offene Fragen, Klick + Notiz, Steuerung liest aus) und Masterplan (Phasen A–H, Slices S1–S12 aus Plan R1 §5).
 - Housekeeping: Register-Querverweise (18 Einträge), Plan R1 §2h–§2l + §5 Slices, START_HERE, Acceptance-Index, POSTMORTEM_STEERING_R2.

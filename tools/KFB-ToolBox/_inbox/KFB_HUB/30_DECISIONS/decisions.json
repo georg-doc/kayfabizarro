@@ -2121,6 +2121,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-190",
+   "date": "2026-10-12",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Replay-Harness (replies/REPLAY_HARNESS_SPEC_R1.md) ist die Bauanleitung für V-171 deterministische Tests (S6): fester Sim-Schritt 1/120 mit Akkumulator (Fallback 60 Hz), Seed-RNG, Sim-Uhr, Aufnahmeformat kfb.replay/1, Headless-Runner; k2b bleibt byte-gleich, nur der Aufrufer wird gekapselt. Sobald ein Test als Replay läuft und drei Läufe (einer mit CPU × 4) gleiche Hashes liefern, gilt für ihn die fps-Grenze aus V-159 nicht mehr; bis dahin gilt V-159 unverändert. Vorher vendor/SOURCE.md nachziehen (travel-core md5 und 5 LAB PATCHes).",
+   "values": {},
+   "owner": "Bau-Sitzung",
+   "check": "Hash-Gleichheit 3 Läufe",
+   "source": "Steuerung 12.10.",
+   "supersedes": null,
+   "why": "Ursache falscher PASS: ein Sim-Schritt pro Bild mit Wanduhr-dt; Replay macht Tests maschinenunabhängig.",
+   "applies": "ab S6"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
