@@ -1,4 +1,7 @@
 # KFB · Protopia RPG Tools / Tiny Treats Bakery, Candy & Cozy Islands · Donor Review v1
+
+> **2026-10-11 · LATEST GEORG CORRECTION / DONOR-LOCATION STATUS:** The earlier phrase **"Protopia Maker Space" is NOT one combined island**. Protopia is a separate farming/social island; Maker Space is a **large distinct DIY/playground satellite** with direct Protopia drive-on/drive-off. Farmer pair and **Klanker** built Maker Space with the Lorekeeper's architecture/philosophy; Lorekeeper occasionally visits to craft powerful Fluff artifacts. Tool/Block/Prototype donors described below remain source candidates for Maker Space **on its own island**, not permission to overwrite Protopia's farm. Correct visual route and source requirements: [Protopia ⇄ Maker Space image clarification](./KFB_MAKER_SPACE_PROTOPIA_SATELLITE_RENDER_CLARIFICATION_2026-10-11.md). Four-Island Story Vision R1 keeps its four named mandatory worlds.
+
 Date: 2026-10-11
 Status: GEORG AUTHOR CONCEPT; repo-exact source inventory plus publisher source audit. NOT source-isolated/visually accepted, NOT world implementation.
 Owner: existing Island Worldbuilder / Fluff-Crafting-Almanac planning, branch `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`.
