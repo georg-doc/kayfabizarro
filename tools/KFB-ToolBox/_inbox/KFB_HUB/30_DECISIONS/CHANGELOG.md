@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Motion-Leitfaden v0.2, C4c-Banden Zwischenstand
+- V-179 Georg: Squash ≤ 8 % erlaubt, Emanata als Knet-Plättchen, Brauen jetzt ins Lab, Mixamo nutzen (nie öffentlich), Flug-400-ms-Fenster gilt. MOTION_GUIDE_R1 v0.2 mit Nachtrag §1d (THE_BIZARRO_MOTION_MATRIX: Survival Kit MVP 1, Augen→Kopf→Körper, Tag-Schema; H&D Runtime Strategy: Fake-Lip-Sync, Emotion als Datum, Alltags-Register). Neue offene Frage: Squash bei Stürzen über 8 %?
+- Bau-Sitzung V-171 Punkt 1: C4c hinter ?c4c=1, geschlossene Knet-Köpfe, offene Kanten Standard 0, Fahr- und Fußtests grün, Palette V-174 umgesetzt. Offen: dunkle Kehle an mehreren Enden → Steuerung: getrennter Sweep je Seite jetzt, vor Flackern; Haltebucht-Bild neu (Schrägbild).
+
 ## 2026-10-11 · Motion-Leitfaden R1, WSA-Gegenprüfung terminiert
 - V-177 MOTION_GUIDE_R1.md v0.1 (Motion-Director-Agent, blind gestartet): Bestand (Gangwerte gait_v157, travel-core.j17, car-hop, Eye-Rig v6, Acting Lab v0.4, ToolBox Brauen/Mund, Motion Library v6), 4-Kanal-Modell, 8-Emotionen-Matrix, Triplet-Takt-Kopplung, 5 NPC-Vorlagen, Demo-Plan D1–D5; alle Frame-Werte Vorschlag. Ungelesen: THE_BIZARRO_MOTION_MATRIX.pdf, H&D Runtime Animation Strategy.pdf.
 - V-178 WSA prüft das Architektur-Audit gegen, nach V-171 Punkt 1–3.

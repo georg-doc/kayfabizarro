@@ -1,6 +1,7 @@
-# KFB · Motion- und Animations-Leitfaden R1 (v0.1)
+# KFB · Motion- und Animations-Leitfaden R1 (v0.2)
 
 Stand 11.10.2026 · Agent Motion-Director nach [V-177] · **kein neuer Beschluss**.
+v0.2: Georgs Antworten [V-179], Nachtrag §1d mit den zwei PDFs (Motion Matrix, H&D Runtime Strategy).
 Maßgeblich bleiben DECISIONS.md, Plan R1 und PROJECT_STATE [V-117]. Bei Widerspruch gilt das Register.
 Fokus: MVP. Demos erst als eigener Bauschritt mit Georgs Okay [V-177].
 
@@ -136,6 +137,42 @@ Rig_Medium hat 23 Knochen: root, hips, spine, chest, head, upperarm/lowerarm/wri
 | L7 | Keine Animation hat eine Georg-Abnahme außer Gangtempo [V-020] und Kamera [V-088]. | Alle Acting-Werte sind Startwerte, keine Vorgabe. |
 
 ---
+
+### 1d · Nachtrag: die zwei PDFs (Steuerung, 11.10. spät)
+
+Gelesen von der Steuerung, Text per PDFKit, Bildseiten einzeln angesehen. Beide sind Bestand, kein Beschluss.
+
+**`DL/THE_BIZARRO_MOTION_MATRIX.pdf`** (15 Bildtafeln, NotebookLM, KFB-eigen). Eine regelbasierte Bewegungsgrammatik. Kernaussagen je Tafel:
+- **Motion Foundation:** Pose zuerst → Antizipation → Squash → Follow-through → Erholung. Die Erholung gehört zur Bewegung. Bewegungsrang: **Augen → Kopf → Körper**.
+- **Floating Eyeball:** Augen entkoppelt, folgen aber weich. LEAD (reagiert vor dem Kopf), LAG (folgt leicht verzögert), LOCK (bleibt am Ziel), FLOAT (minimal lose). Passt zu Eye-Rig v6.
+- **Rigging-Architektur:** Zustandsmaschine + additive Ebenen + prozedurale Mikrobewegung. Ebene 1 Grundzustand (idle, jump, turn), Ebene 2 Ausdruck (blink, worry, surprise), Ebene 3 Physik (bounce, Nachschwingen), Ebene 4 Gameplay (selected, victory). Deckt sich mit §3e/§5; die Gameplay-Ebene fehlt dort bisher.
+- **Survival Kit = MVP 1:** `idle_breathe` (2–4 s, Basis + Mikro), `look_at` (Kopf 2–4 Frames hinter den Augen), `blink` (weicher öffnen als schließen), `hop` (kurzer Augen-Halt), `turn_90` (Augen gehen zuerst in die neue Richtung).
+- **Cartoon-Physik = MVP 2:** `rubber_band_return`, `gumball_roll`, `spring_up`. „Stil wichtiger als reine Funktion.“
+- **Wipeouts = MVP 3:** `launch`, `midair_flip`, `impact_crash`. Steif-zu-weich-Kontrast, Root-Motion hat Vorrang vor Accessoire-Nachschwingen, **Squash proportional zur Aktion**.
+- **Doing nothing, loudly:** `sleep` (Lider sinken, langsames Blinzeln, 2–6 s), `fear_shiver` (leichtes Zittern 0,6–1,5 s), `peek` (ein Auge führt, 0,3–0,7 s).
+- **Gravity is a suggestion:** Squash beim Ansetzen, Stretch im Steigen. Sprung: Augen hängen leicht nach; Schweben: Augen gelockt; `heavy_fall`: starker Squash, Augen flach.
+- **Controlled damage:** `hit_react`, `stagger`, `slide_stop` (Überschwingen, dann schnell bremsen). Schnell rein, etwas langsamer raus.
+- **Emotional Baggage:** `emote_yes`, `emote_no`, `taunt`, `double_take`. Ein klarer Akzent, kein Overacting; Haltemomente länger halten.
+- **Produktions-SOP (8 Schritte):** Motion-Brief → Referenzclips → Posen-Thumbnails → Blockout (Root + Hauptteile) → Überlappung/Versatz → Timing-Feinschliff → Gameplay-Test → Tagging.
+- **Tag it or trash it:** Jeder Clip trägt NAME, TRIGGER, DURATION, LOOP-FLAG, LAYER, EYE BEHAVIOR, CAMERA READABILITY.
+- **Unified Theory of Fluff:** ein JSON-Schema für die Motion Library = Grundzustände + Ausdrucksebenen + Physikebenen.
+
+Folgen für diesen Leitfaden:
+- Das Survival Kit ist die MVP-Reihenfolge für §6 (Demo D1 um `look_at`, `turn_90`, `blink`, `idle_breathe` ergänzen).
+- Das Tag-Schema wird Pflichtfeld im Clip-Vertrag §5 (`eyeBehavior`: lead/lag/lock/float; `cameraReadability`).
+- „Squash proportional zur Aktion“ und „starker Squash bei heavy_fall“ gehen über die Obergrenze 8 % aus §3 hinaus. Georg hat am 11.10. Squash ≤ 8 % freigegeben [V-179]. Ob Stürze und Wipeouts mehr dürfen, ist offen (§7).
+- Die sozialen Operatoren (KayfaBINGO, KayfaBOGGLE, KayfaBONGO, BLÖDSINN, HUMBUG, „What the FLUFF?!“) stehen hier nur als Ausrufe. Eine Definition von „Kulturmechanik“ steht in keinem der beiden PDFs.
+
+**`DL/H&D Runtime Animation Strategy.pdf`** (Session Cut 07, Juni 2026, 2D-Kenney-Strang für Hunky & Dory). Nicht 3D, aber die Grundsätze sind übertragbar:
+- Priorität 1 sind sprechende Figuren, nicht Laufen. Zustände: idle, talk, blink, surprised, angry, confused, thinking.
+- KISS: nie mehr animieren als nötig. Erst Tausch (Mund, Ausdruck), dann prozedural, dann Skelett.
+- **Fake-Lip-Sync:** drei Mundformen (zu, halb, offen) zufällig, kein echtes Lip-Sync. Blinzeln zufällig alle 4–12 s.
+- **Emotion ist Laufzeit-Datum:** `{character, emotion, pose, prop, isTalking}`; die Runtime wählt Augen, Brauen und Mund selbst. 8 Ausdrücke: happy, sad, angry, confused, surprised, thinking, smug, afraid.
+- **„Accessorize to characterize“:** gleiche Figur + neues Requisit statt neuer Figur. Requisiten-Register nach Kategorien.
+- **Alltags-Register:** activity → prop + pose + animation (z. B. researching → Mikroskop, idle, thinking). Figuren werden über Tätigkeiten nahbar, nicht über Lore.
+- Nicht-Ziele: Kampf, Physik, Inventar, Multiplayer.
+
+Folgen: Das Sprechen löst die Lücke L6 ohne Mixamo-Lip-Sync (Mund-Tausch zufällig im Triplet-Takt). Das Emotions-Datenmodell passt zu §3b. Das Alltags-Register ist eine gute Quelle für NPC-Leerlauf auf den Inseln.
 
 ## 2 · Fortbewegung und Reisezustände
 
@@ -503,20 +540,21 @@ Alle Demos laufen auf der Demo-Insel bzw. dem Hub, nie im RKIT-Test-Hub [V-014].
 
 ## 7 · Offene Fragen an Georg
 
-1. **Squash an Figuren:** Ist vorübergehender, volumenerhaltender Squash (≤ 8 %, zurück auf 1,0) mit [V-060] vereinbar? Oder bleibt jede Verformung in Knochen-Posen ohne Scale?
-2. **Emanata-Stil:** 2D-Tuschestrich wie im Acting Lab oder flache Knet-Plättchen im Claymation-Look?
-3. **Gesicht im MVP:** Reichen Augen und Lider für das MVP-Acting, oder sollen Brauen (brow-rig.v2) schon vor Phase H ins Lab?
+1. ✅ **Entschieden [V-179]:** Squash ≤ 8 %, volumenerhaltend, ist erlaubt (V-060 betrifft die Figurengröße, nicht Animation). — **Squash an Figuren:** Ist vorübergehender, volumenerhaltender Squash (≤ 8 %, zurück auf 1,0) mit [V-060] vereinbar? Oder bleibt jede Verformung in Knochen-Posen ohne Scale?
+2. ✅ **Entschieden [V-179]:** Knet-Plättchen. — **Emanata-Stil:** 2D-Tuschestrich wie im Acting Lab oder flache Knet-Plättchen im Claymation-Look?
+3. ✅ **Entschieden [V-179]:** Brauen jetzt ins Lab, Mund später. — **Gesicht im MVP:** Reichen Augen und Lider für das MVP-Acting, oder sollen Brauen (brow-rig.v2) schon vor Phase H ins Lab?
 4. **Hop [V-031]:** Bleibt der Hop bei „30 %“, oder soll D-Schritt Nachfedern nach [V-033] schon jetzt kommen?
 5. **Strafe und Rückwärts:** MovementAdvanced aus dem KayKit-Vollpaket nachladen, damit Q/E einen eigenen Clip haben?
 6. **Emotion beim Sprechen:** Triplets haben kein Emotions-Feld; der Affekt kommt vom Sprecher. Wer besitzt die Abbildung Affekt-ID → Acting-Rezept → Ruhemund (Tabelle §3c): ChatterBox, Voice Layer oder Figuren-Karte?
 7. **„Kulturmechanik“:** Was ist damit gemeint? Nicht gefunden in `LAB/docs`, `KFB_HUB` und ChatterBox. Sind es die sozialen Operatoren (BINGO/BOGGLE/BONGO/BLÖDSINN), die sechs Reaktionsstufen oder die Gatekeeper-Grammatik?
 8. **Large-Figuren:** Cross-Rig FIT für Sitzen, Winken, Jubeln testen, oder bleiben Large-NPCs bei Idle/Flexing?
-9. **Flug:** Gilt das 400-ms-Fenster für die zweite Leertaste aus dem Convergence-Brief („human-accepted“) auch für [V-024]? Dann bitte mit V-Nummer eintragen.
+9. ✅ **Entschieden [V-179]:** 400-ms-Fenster gilt. — **Flug:** Gilt das 400-ms-Fenster für die zweite Leertaste aus dem Convergence-Brief („human-accepted“) auch für [V-024]? Dann bitte mit V-Nummer eintragen.
 10. **Beifahrer:** Gibt es im MVP Mitfahrer, oder erst mit dem Cabrio?
-11. **Mixamo-Clips:** 365 auf KayKit retargetete FBX liegen in Downloads (Sprechen, Emotionen, Ein-/Aussteigen, Tänze). Lizenz klären und als KFB Motion Library nutzen, oder weglassen?
+11. ✅ **Entschieden [V-179]:** nutzen, Rohdateien nie in ein öffentliches Repo. — **Mixamo-Clips:** 365 auf KayKit retargetete FBX liegen in Downloads (Sprechen, Emotionen, Ein-/Aussteigen, Tänze). Lizenz klären und als KFB Motion Library nutzen, oder weglassen?
 12. **Kenney Emotes:** Dürfen die Kenney-Emotes (CC0) als Formvorlage für Emanata dienen, obwohl Kenney in der Reihenfolge zuletzt steht [V-070]?
 13. **Timing-Rahmen:** Gilt der 3,6-s-Rahmen aus dem Acting Lab als Prüfrahmen, mit verkürzten Spielszenen nach §3b?
 14. **Demo-Reihenfolge:** Welche Demos zuerst? Vorschlag D1 → D4 → D2 → D3, D5 erst mit Triplet.
+15. **Squash bei Stürzen (neu aus der Motion Matrix §1d):** Die Matrix will „Squash proportional zur Aktion“ und starken Squash bei `heavy_fall`/`impact_crash`. Bleibt die 8-%-Grenze überall, oder dürfen Wipeouts kurz mehr (z. B. bis Sy 0,75 laut Recherche-Matrix)?
 
 ---
 

@@ -85,6 +85,12 @@ Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Ne
 
 **Danach (nach OK):** Rechteckring stone_rect/mine · J17-Tageslicht · M2-Zone track · VFX/SFX · C4.
 
+## C4c Aus-/Auffahrt + Banden-Endstücke geliefert (11.10., V-171 Punkt 1) · nur `?c4c=1`
+
+**Bericht:** `docs/critic/lab-track/2026-10-11_C4c/REPORT.md` + `C4C_ENDEN_BLATT.jpg` (Nahbild jedes Endes). Standardansicht = C4b (V-166).
+- Track Core 0.16.9 `compileGraph`, Teil 0 PASS, offene Kanten Standard 0 (neuer Parity-Check 11), Fahr- und Fußtests PASS bei 60 fps.
+- Offen: Kehle hinter dem Kopf an drei Ring-Enden (Lösung: Strang je Seite getrennt sweepen).
+
 ## Stand 11.10. spät (Steuerung)
 
 **Fertig:** C1a J17 1:1 · C1b+C3 Organ-Ring-Welt (Organe = Platzhalter) · Fahrtest echt (k2b, 3 Autos, bildratenunabhängig) · VFX/SFX + Suno-Radio (Klick behoben, PASS) · V-130 Tunnel-Portale PASS · Bank B Tunnel im Inselberg TUNE 5–6/10 · C4a Haltebucht + RKIT-Bürgersteig (TUNE nachgebessert, Urteil offen) · C4b Track Core 0.16.9 · Track-Core-Skins/Module/trail/DIRT/Poller (RKIT) · Register bis V-168 auf GitHub, Lab-Code-Schnappschuss `sync/lab-snapshot-2026-10-11`.
