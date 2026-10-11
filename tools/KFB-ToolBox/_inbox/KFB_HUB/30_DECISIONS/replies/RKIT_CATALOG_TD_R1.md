@@ -216,6 +216,34 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | CS3 | #8 | Y-Kreuzung im All: Knoten mit 3 Armen (Kreuzungslogik, Vorfahrt?) oder FORK ohne Kreuzung? |
 | Core | HIGHWAY | Welchem Skin gehört HIGHWAY (Bande auf Grasbett)? Vorläufig country, weil ein Knoten einen Skin braucht; bitte bestätigen oder umsetzen. |
 
+## 6b · Entscheide V-150 (Georg 11.10.) und Folgen für die Liste
+
+| Nr. | Stelle | Entscheid | Folge im Katalog |
+|---|---|---|---|
+| 1 | TD1 #9 | Pfeile nur an EXIT/ENTRY bzw. FORK/JOIN; race ohne Spuren | Skin-Schritt 3: Pfeile nur an diesen Stellen und an Kreisel-Ausfahrten |
+| 2 | TD1 #13 | offenes Ende nur Startaufstellung bzw. Baustelle; runder J17-Bandenkopf | Kappe race = ROUND_END-Nase / Strang-Kappe (vorhanden); in Schritt 4 als Kappen-Daten |
+| 3 | TD1 Kerb | nur innen am Scheitel ab enger Kurve; RKIT schlägt den Radius vor | Vorschlag folgt mit Schritt 3 (Markierungs-/Kanten-Daten), aus Krümmung |
+| 4 | TD1 #10/#11 | **offen**: Vorschlag aus Bestand mit Skizze | eigener Bericht folgt (S4 v2 Matrix + J17) |
+| 5 | TD2 #8 | Bordsteinhöhe, gerundete Nasen, zusätzlich zur Spurbreite | TD2 #8 / CS1 #13: Bauumfang klar (M), später |
+| 6 | TD2 #9 | Absenkung nur vor Haus, Hof, Garage | TD2 #9 / CS1 #11: Absenkung braucht einen Anker (Gebäude) |
+| 7 | TD2 #11 | Sackgasse immer mit Wendeschleife; bloßes Ende nur Baustelle | TD2 #11, CS1 #14: **vorhanden** (1-Arm-Kreisel); CS1 #16 / CS2 #18 = Baustellen-Ende |
+| 8 | TD2 #12 | Platz nicht befahrbar, bündig mit Pollern | TD2 #12 / CS1 #15: Platzrand = Kante `free` + Poller-Ausstattung (S) |
+| 9 | TD2 Zebra | an Armen mit Gehweg zu Gebäuden bzw. Platz | Zebra-Regel als Daten am Arm (S) |
+| 10 | TD3 #5 | Berm / Wandfahrt / Sandkurve befahrbar | RKIT_DIRT_VORLAGE_R1 (BERM_CURVE) |
+| 11 | TD3 #9 | ~20 m, Kerb endet zuerst, Belag franst aus | RKIT_DIRT_VORLAGE_R1 (Katalog-Fenster) |
+| 12 | TD3 #13 | Schotter-Ende = Wiese, Hof oder Gatter | RKIT_DIRT_VORLAGE_R1 (Kappen-Daten) |
+| 13 | TD3 Hero | schmaler als Rennen; Bande nur an Gefahrenstellen | RKIT_DIRT_VORLAGE_R1 (NARROW, `edge` bande optional) |
+| 14 | TD4 Hero | Ring = Skin der Hauptstrecke; Ecken mit Übergangsstück Bande ↔ Bord | Knoten mit Armen in anderen Skins: Erweiterung von Schritt 1 (Arm-Skin je Arm), L, Vorlagen-Zeile nötig |
+| 15 | TD4 #3 | J17 Variante B, 17 m (V-139) | vorhanden als Look-Zone; Teile nur Gliederung |
+| 16 | TD4 #5 | Bord → Leitplanke auf freier Strecke erlaubt, wie am Rampenfuß | Katalog: B5-Fenster ohne `ramp`-Pflicht für diesen Fall (S) |
+| 17 | TD4 #11/#12 | Pfeiler nur auf Inseln; Brücke mit Geländer, Wechsel am Brückenkopf | Kante `railing` am Brückenkopf (C1/C2), M |
+| 18 | TD5 #2 | zwei Ebenen, kreuzungsfrei, Radius ≥ 8; Phase E | später |
+| 19 | TD5 #3 | Versatz ≥ Autolänge + Wartefläche; RKIT misst | Messung mit dem nächsten Junction-Check |
+| 20 | TD5 Hero | mehrere Knoten | vorhanden aus Teilen |
+| 21 | TD5 #7 | Bande endet vor dem Übergang, danach Stadtstraße mit Zebra | wie #15 + Zebra-Regel #9 |
+
+Leitprinzip V-151: chill & fun Assist als Standard. Berm, Sand, Rampen und Sprünge werden so ausgelegt, dass sie mit Assist sicher fahrbar sind.
+
 ## 7 · Such-Protokoll (V-140)
 
 | Quelle | gesucht | gefunden |

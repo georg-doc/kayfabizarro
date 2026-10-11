@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schritt 2, DIRT-Vorlage
+- node.skin race/town/country/dirt/cosmic (dirt/cosmic reserviert mit Fehler), test-skin 48/48, Geometrie unverändert. Schritt 4 (Kappen je Skin) freigegeben. DIRT-Vorlage (Familie DIRT 10,8, Berm atan(v²/gR) gedeckelt) wartet auf Georg (A Fahrzeug, B 35°, C Knoten); 12 CS-Fragen + HIGHWAY an Georg.
+
 ## 2026-10-11 · WSA Look-Spec R1 abgenommen, R2 beauftragt
 - R1: 9 Rundkurs-Module mit J17-Quellen (13/13 bytegleich J16-r2, 115 Zeilenverweise, Maße ×1,46), ehrliche Lücken (kein J17-Kreisel-/EXIT-Gore-Verbraucher). R2: town → Übergänge → country → dirt → cosmic (nur Quellen), nach V-150/V-151.
 - Spiegel-Skript: WSA-Dateien in replies/ werden nie aus lokalen Kopien überschrieben (Schutz nach Fehlgriff).

@@ -35,7 +35,7 @@ Stand 2026-10-11 · privat `~/Developer/rkit-r3/trackcore/` · Lab-Vendor nicht 
 |---|---|
 | `test-skin.mjs` | **48/48**, davon 16 neu für Schritt 2 (siehe unten) |
 | `test-turnaround.mjs` | 18/18. Die Bitgleichheit lässt nur das zusätzliche Feld `node.skin` aus; Strom und alle übrigen Knotenfelder sind gleich. |
-| test.mjs, v013 60, v014 15, v015 97 (1 erwartet), v016 116, race-exit 19, level-ramp 16 | unverändert |
+| test.mjs 329 PASS / 0 FAIL, v013 60, v014 15, v015 97 (1 erwartet), v016 116, race-exit 19, level-ramp 16 | unverändert |
 | **Teil 0** (`parity/teil0_parity_v0163s2.json`) | bitgleich (siehe §3) |
 
 Die 16 neuen Fälle in `test-skin.mjs`:
@@ -52,7 +52,7 @@ Die 16 neuen Fälle in `test-skin.mjs`:
 ## 3 · Teil 0 und Weltstraßen
 
 - Schritt 2 ändert keine Geometrie. Die Welt-Kreisel-Zahlen sind die von Schritt 1 (RKIT_SKIN_S1_R1 §1).
-- Teil 0: siehe unten (wird nach dem Lauf eingetragen).
+- Teil 0 bitgleich: O1 v7 Ring, J17 p1b.v2, td03, p1-Rezept B; alle Abweichungen 0; Prüfung des Nachsample-Laufs PASS.
 
 ## 4 · MODULES-Feld `skin`
 
