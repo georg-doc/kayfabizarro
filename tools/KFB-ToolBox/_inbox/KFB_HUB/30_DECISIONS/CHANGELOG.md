@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · LEVEL_RAMP + Wendeschleife freigegeben
+- RKIT baut in Track Core 0.16.2: Makro LEVEL_RAMP (≤ 8 %, ebene Halteplatte, Endrahmen auf Anker) und einarmige Kreisel-Größenregel + Szenerie-Anker turntable (V-110, V-134). Such-Protokoll: keine fertige Form in den Quellen. Nach jedem Schritt Teil-0-Gleichstand; Vendor-Wechsel im Lab abgestimmt.
+
 ## 2026-10-11 · Gehweg Haltebucht geliefert (RKIT)
 - V-138 (b): hex_b7.parts.glb (177 Teile), Q1–Q9 PASS; Gehweg volle Breite mit Querreihen („kürzen statt biegen“). Einbinden durch Bau-Sitzung. RKIT als Nächstes: Vorlagen-Zeilen Ebenen-Rampe + Wendeschleife.
 
