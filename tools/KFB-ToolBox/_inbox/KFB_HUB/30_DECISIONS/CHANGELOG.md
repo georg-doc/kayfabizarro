@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Poller-Höhe korrigiert, Icosphere-Fund
+- RKIT: Hüfte 1,50 war falsch (Farmer-A-Modell enthält Hilfskörper „Icosphere“ in der Bounding-Box). Richtig 0,65–0,83 lab → Poller 0,85 hoch, Ø 0,50→0,44, lichte Weite 1,80. Lab prüft, ob Figuren-Maße irgendwo die Icosphere mitmessen.
+
 ## 2026-10-11 · Poller
 - Kein Poller im Bestand (Lab-Suche + externe CC0-Suche nur realistisch/KI). Platzrand vorerst bündig ohne Poller; RKIT baut Poller als Town-Ausstattung im Lauf-03-Stil (Vorlagen-Zeile vorab). Zebra M2 1:1 je Zweig.
 
