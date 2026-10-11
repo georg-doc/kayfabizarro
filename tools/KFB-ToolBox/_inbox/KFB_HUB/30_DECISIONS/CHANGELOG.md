@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · M2-Zone und Nebel-Kosten
+- M2 Streckenzone bio −1 (J17-treu: weiße Randlinie 0,6 m, keine Mittellinie/Zebras) als Standard; Boost-Pfeile 1:1 v5, Dichte unter J17 (Kritiker-Eindruck kam von der Standbild-Kamera). Nebel-Horizontprobe asynchron (0,2 ms Median). Checkpoints = Beginn Insel-Stück, Ziel = Start/Ziel-Naht.
+
 ## 2026-10-11 · Prototyp Tunnel im Feld
 - Hirn + race_tube (?tunnelField=hirn): Ring weich aus dem O1-Feld geschnitten, ein levelSet, TC1-Bänder/Lampen auf der Feldwand, Tonsockel unter dem Deck. Körper offen 0 / Mehrfachkanten 0 (Hero + Light), Durchsicht 0, Q5-Ketten kürzer (max 21 m statt 51 m). Bauzeit 53,7 s (Farbzuordnung unoptimiert). Wartet auf Georgs Urteil vor dem Ausrollen.
 
