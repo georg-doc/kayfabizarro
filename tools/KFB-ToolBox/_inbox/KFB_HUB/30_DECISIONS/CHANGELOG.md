@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · VFX/SFX-Vorlagen freigegeben
+- Zu V-128/V-129: 1:1 Motor (cologne-audio.v1 createEngineBed), Jingles (J17), Kontakt-Engine + Kenney-CC0 (Stunt Car Race), Knet-Partikel clay-vfx.v1, j10-Effekte + Tempo-FOV nur im FAHREN; Suno-Radio über song-transport. Neu: Tunnel-Hall (Convolver, nur Motor/SFX). Nein: Fahrtwind. Drohnen: kein Code/Asset vorhanden → Georg fragen.
+
 ## 2026-10-11 · Suno fürs Fahren
 - V-129 Suno RoadTrip JukeBox v2 beim Fahren (lokal privat kopiert), Cozy Tunes für Inseln; Racer-SFX und Drohnen dazu.
 
