@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · C4a fertig, V-130-Vorlage freigegeben
+- C4a: B7-Haltebucht (Track Core 0.16.1, J17-Querschnitt), Gehflächen-Suche repariert, Fußtest 6/6 Kachelpunkte; alter Fußtest hatte verdrehtes Lenkvorzeichen (R2-Befund „Hex unerreichbar“ gestrichen). Böschungsrand noch gerade → organisch vor C4c. Plattform-Farbe offen bei Georg.
+- V-130-Vorlage: Profil {look, profile} mit Ring aus Core v0.12, Portal + Innen 1:1 aus tunnelParts an beiden Enden, Knet-Fuß per Feld-smin; Prüfbank ?bench=tc1 (A) + StreakByte-Insel mit Berg (B), bei Naht-Fehlern Stopp und Scholle als Plan B.
+
 ## 2026-10-11 · Drohnen = RollerCoaster-Drones; Blender K1 R2
 - V-131 „Drohnen“ = Klang-Drones aus RollerCoaster v11 (später 1:1 nachziehen); Soundbed passt erstmal.
 - Blender K1 R2 (Ziel M1, Wurzeln gestrichen): blinder Kritiker 5 / 5,5 / 4, nach 2 Runden gestoppt; Blender in der Cloud gebaut, weil Blender MCP auf dem Mac mini hängt. Offen bei Georg: Blatt, Block-Bauweise vs. „ein geschlossenes Mesh“.
