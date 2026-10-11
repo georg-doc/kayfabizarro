@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skins für Strecken-Module
+- V-145 Kreisel/Wendeschleife und Anschluss-Module in zwei Skins (Renn-Look RACE + Stadtstraße TOWN), eine Logik; später Eisenbahn/Rollercoaster.
+
 ## 2026-10-11 · WSA-Handoff V-141, neuer WSA-Auftrag
 - WSA hat das Datenpaket für den Lab-Import übergeben (15 Tests PASS, kein Lab-src). Importer = Lab Phase E/F.
 - Neuer WSA-Auftrag (Recherche): J17-Look-Spezifikation je Strecken-Modul aus V-144 (replies/BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R1.md).

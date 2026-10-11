@@ -1491,6 +1491,20 @@
    "applies": "ab C4/E"
   },
   {
+   "id": "V-145",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Beide Varianten für Kreisel bzw. Wendeschleife und die Anschluss-Module: Renn-Look (J17-Banden, RACE-Querschnitt) und Stadtstraße mit Bordstein (TOWN). Technisch als „Skins“ einplanen: eine gemeinsame Knoten-Logik bzw. ein Wege-Graph, Querschnitt und Kanten (edge: Bande | Bord) je Skin, Look je Skin im Lab. Gleiche Logik später für Eisenbahn und Rollercoaster.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "je Modul beide Skins grün, Graph gleich",
+   "source": "Georg 11.10.: „ich brauche beide … als skins einplanen – gleiche logik später für eisenbahn/rollercoaster“",
+   "supersedes": null,
+   "why": "Gleiche Fahrlogik, verschiedene Welten; ein Baukasten statt Parallel-Familien.",
+   "applies": "ab Wendeschleife"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
