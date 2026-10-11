@@ -1,3 +1,5 @@
+> **LATEST GEORG TRACK / MAKER CORRECTION · 2026-10-11:** The cinematic inter-island masonry/pier bridge is **FAIL**. Stone/pier bridge classes are **ON-ISLAND ONLY**. Prioritize authentic **Joyride v17 suspended racetrack** with island-lip entry/exit and **cartoon KayKit Bits / verified Platformer Maker Space** integration. Actual O1-v4 tunnel/track sources supplied and inspected; no runtime acceptance inferred. Binding [correction and source evidence](./KFB_MAKER_SPACE_JOYRIDE17_FLOATING_TRACK_LINK_CORRECTION_2026-10-11.md). Earlier bridge wording is superseded for inter-island use.
+
 # KFB Maker Space ↔ Protopia · Island Relationship / Source-Led Image Clarification · 2026-10-11
 
 **Authority:** latest explicit Georg author clarification, 2026-10-11. **Status:** binding **concept geography and narrative ownership** for image briefs; visual-only preparation; **NOT** geometry/runtime, site publication, new current MVP island, or a new A/B gate.
