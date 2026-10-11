@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · WSA Rhythmus-Inventur abgenommen
+- 199 Kandidaten, 187 CC0. Steuerung wählt: Tiny Treats street_lantern + KayKit streetlight (town), KayKit post_lantern (Land), KayKit torch/torch_lit (stone/mesa), KayKit arch_gate (Eingangstor), Kenney sign-highway als Schilderbrücken-Form, RKIT-Poller. Leitpfosten + Cosmic-Pylonen fehlen → später RKIT-Knete. WSA pausiert bis Audit-Gegenprüfung V-178 (replies/STEERING_REPLY_WSA_RHYTHM_R1.md).
+
 ## 2026-10-11 · Brick-Fish und Kayfabulieren erklärt
 - Georg: Brick-Fish-Wurf = Krazy-Kat-Logik mit Red-Herring-Meta-Ebene (NPCs bzw. Spieler am Kopf getroffen); Kayfabulieren steht in den KFB-Regeln (kayfabizarro.pages.dev/#kfb), Quest King Kayfabian. Beides nach MVP (zu V-181), MOTION_GUIDE §3f ergänzt.
 
