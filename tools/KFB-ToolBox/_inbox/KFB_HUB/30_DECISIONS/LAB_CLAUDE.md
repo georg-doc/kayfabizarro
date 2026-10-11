@@ -6,6 +6,7 @@
 4. **Goldstandard:** Joyride J17 für Strecke, Banden, Fahrbahn, Deformer, Kamera und Paletten (V-010). HUD = Claude-Design-HUD R3 komplett (V-040).
 5. **Prüfung vor jeder Lieferung:** `tools/parity` laufen lassen. Fällt ein Test zu einem PASS-Eintrag durch, ist die Lieferung ungültig. Der Bericht listet die betroffenen V-Nummern und die noch ungeprüften.
 6. **Use what works (V-140):** „Fehlt“, „gibt es nicht“ oder „braucht Georgs Entwurf“ nur mit Such-Protokoll: Donor-Karten (`PHASE_C_DONORS_R1.md`, `MVP1_DONOR_AND_MODEL_MAP_R1.md`), `ACCEPTANCE_INDEX.md`, Joyride-Cuts J14/J15 (TC1)/J16/J17, Organ-Inseln v4–v7, RollerCoaster v11, Stunt Car Race, frühere Lieferungen. Ohne Protokoll ist die Meldung ungültig.
-7. **Recherche:** zuerst `docs/ACCEPTANCE_INDEX.md` (Skript `tools/acceptance/build_index.py`) und die PASS/TUNE/FAIL-Spalten in STATUS- bzw. RETURN-Dateien. „Nicht gefunden in …“ statt „gibt es nicht“.
-8. **Lizenzen:** Gekaufte bzw. private Assets (StreakByte, Unity, Cozy Tunes, private Audio-Dateien, Deck-PDFs) nie in ein öffentliches Repo (V-071). Figuren nie skalieren (V-060).
-9. **Port 5180** gehört einer anderen Sitzung: nie benutzen. `~/Dropbox/CLAUDE/KFB Open World/` nicht verändern.
+7. **Bilder prüfen, nicht erfinden (V-148):** Generierte Referenzbilder sind Logik- und Stil-Hinweise, keine Bauanleitung. Logik im Detail prüfen, im KFB-Stil umsetzen (J17, Knete, K2). Uneindeutiges mit Bildstelle in die Vorlagen-Zeile an die Steuerung; nicht selbst ausdenken.
+8. **Recherche:** zuerst `docs/ACCEPTANCE_INDEX.md` (Skript `tools/acceptance/build_index.py`) und die PASS/TUNE/FAIL-Spalten in STATUS- bzw. RETURN-Dateien. „Nicht gefunden in …“ statt „gibt es nicht“.
+9. **Lizenzen:** Gekaufte bzw. private Assets (StreakByte, Unity, Cozy Tunes, private Audio-Dateien, Deck-PDFs) nie in ein öffentliches Repo (V-071). Figuren nie skalieren (V-060).
+10. **Port 5180** gehört einer anderen Sitzung: nie benutzen. `~/Dropbox/CLAUDE/KFB Open World/` nicht verändern.

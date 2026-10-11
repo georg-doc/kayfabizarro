@@ -26,6 +26,7 @@ Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist D
 - Parity vor jeder Lab-Lieferung (`tools/parity`), Bericht mit V-Nummern.
 - Lizenzen V-071: gekaufte bzw. private Assets nie öffentlich. Figuren nie skalieren (V-060). Maßstab K2 (H = 3,64).
 - Recherche: zuerst `ACCEPTANCE_INDEX.md` bzw. PASS/TUNE/FAIL; „nicht gefunden in …“ statt „gibt es nicht“.
+- **Bilder prüfen, nicht erfinden (V-148):** Logik generierter Referenzbilder im Detail prüfen und im KFB-Stil umsetzen; Uneindeutiges mit Bildstelle an die Steuerung melden, Georg entscheidet. Nie selbst ausdenken.
 - **Use what works (V-140):** „fehlt“ bzw. „braucht Georgs Entwurf“ nur mit Such-Protokoll über Donor-Karten, Acceptance-Index, Joyride-Cuts J14/J15 (TC1)/J16/J17, Organ-Inseln v4–v7, RollerCoaster v11, Stunt Car Race und frühere Lieferungen.
 - Neue Georg-Entscheidungen, auch wenn sie in einer anderen Sitzung fallen: an die Steuerung melden, damit sie hier eine V-Nummer bekommen (V-120 zeigt, was sonst passiert).
 

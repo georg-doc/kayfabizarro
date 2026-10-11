@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Bilder prüfen, bei Unklarheit fragen
+- V-148 Logik generierter Referenzbilder im Detail prüfen und im KFB-Stil umsetzen; uneindeutig → nachfragen, nicht erfinden. In START_HERE und Lab-CLAUDE.md.
+
 ## 2026-10-11 · Race-track-details-Katalog
 - V-147 fünf Georg-Blätter (Renn-Kern, Straße, Schotter, Übergänge, Fortgeschritten) als Modul-/Skin-Katalog; Skins race/town/dirt, Cosmic Highway folgt. Abgelegt replies/REFS_TRACK_DETAILS_2026-10-11/.
 
