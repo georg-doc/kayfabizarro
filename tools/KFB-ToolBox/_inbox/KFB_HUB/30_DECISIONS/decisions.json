@@ -1827,6 +1827,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-169",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Spiral- bzw. Helix-Strecken (wie Joyride, O1-Ring, td03-Parkdeck) brauchen grundsätzlich mehr Höhe je Umdrehung: Die Verfolger-Kamera darf nicht „eine Etage höher“ fahren und das Auto verdecken. Regel: Steighöhe je Umlauf ≥ Kamerahöhe über Fahrbahn + Fahrzeughülle + Marge; als Core-Prüfung (spiral_clearance gegen Chase-Kamera) und Kamera-Test im Lab.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "Kamera-Clip-/Sicht-Test in Spiralen",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "In engen Spiralen sieht man den Wagen nicht, weil die Kamera in der Etage darüber hängt.",
+   "applies": "ab nächstem Core-Schritt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

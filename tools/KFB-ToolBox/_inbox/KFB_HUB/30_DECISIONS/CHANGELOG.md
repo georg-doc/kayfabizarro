@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Spiralen höher
+- V-169 Steighöhe je Umlauf ≥ Kamerahöhe + Hülle + Marge; Core-Prüfung + Kamera-Test.
+
 ## 2026-10-11 · Plan R1 + Projektstand nachgeführt, Lab-Code-Schnappschuss
 - Plan R1: neue Abschnitte 2e Strecken-Baukasten mit Skins, 2f Inselkörper + Referenz-Bibliothek, 2g Klang; Phase C Status. PROJECT_STATE „Stand 11.10. spät“. Lab-Code + Text-Doku (ohne private/lizenzierte Teile) auf Branch sync/lab-snapshot-2026-10-11; Lab-.gitignore um StreakByte/MegaKit Pro/Decks ergänzt. Externes Architektur-Audit gestartet.
 
