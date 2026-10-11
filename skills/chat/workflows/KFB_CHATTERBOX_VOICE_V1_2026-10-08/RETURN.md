@@ -1,5 +1,14 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+
+## 2026-10-12 · RULE1 / TIMED STAND-UP R0.2 · SOURCE-CONTRACT ONLY
+
+Georg narrowed the quality gate to **RULE1** (No AI Quirk / No Meme Logic / No Filler); no separate Humanizer test required or claimed. The former R0.1 authored Clown routine is `SUPERSEDED_TUNE`, still accessible historically. New authoring-side linked `HOOK → CONNECTOR_CONFLICT → REFRAME/PUNCHLINE → CALLBACK` beat families preserve the original Triplet semantics, do not randomly assemble jokes and remain `AUTHORING_CANDIDATE`, no content-pool promotion. Revised fast English sample is 172 spoken words; Suno script+style+cues **1619 code points (<5000)**, planned 75s, all action timing unmeasured.
+
+Files: `RULE1_SUNO_HOOK_PUNCHLINE_CONTRACT_R0_2_2026-10-12.md`, `data/SUNO_SPOKEN_MUSIC_PILOT_R0_2.json`, `RULE1_SUNO_TEST_REPORT_R0_2_2026-10-12.md`. **21/21** structural in-memory checks PASS plus exact source/file readbacks; **0** Suno generations, 0 downloads, 0 human comedy review, 0 staged audio/browser performance tests, 0 Site publication or Cloudflare Stage. The Clown source is still candidate-only; two-club motion remains unproven. Existing PR #379 Voice test/casting and World Four-Island gates unchanged. One Suno next gate: `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1` after genuine audio, transcript/rights/time/cue check, then Georg KEEP/TUNE/CUT. No merge or Live promotion.
+
+---
+
 ## 2026-10-11 · SUNO SPOKEN-MUSIC PERFORMANCE R0.1 · AUTHORING CANDIDATE / SITE INBOX SAVED
 
 Scope: Georg's Suno spoken comedy + accompaniment experiment becomes one **additive ChatterBox/Voice authored-performance candidate**, with original Clown first. No second dialogue/AudioContext/mixer/Resident rig/runtime owner. The current Voice R1 product stays privately published on existing KFB Audio Site at Source 0.5.1, unchanged by this planning slice. Source-backed Triplet `core.frame.01` non-canon audition and active Voice human listening gate remain unchanged.
