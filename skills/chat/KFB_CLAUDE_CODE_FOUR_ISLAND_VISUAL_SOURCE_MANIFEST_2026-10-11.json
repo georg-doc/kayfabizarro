@@ -1,0 +1,142 @@
+{
+  "schema": "kfb.island-visual-source-brief/1",
+  "date": "2026-10-11",
+  "owner": "KFB Island Worldbuilder / Fluff-Crafting-Almanac design planning",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+  "executionMode": "VISUAL_SOURCE_ISOLATION_PREP_ONLY",
+  "sourceVerification": {
+    "directGltfRead": 11,
+    "workingBranch": 9,
+    "mainOnly": 2,
+    "visualIsolated": 0,
+    "fullBufferAndTextureLoad": 0,
+    "composedScreenshots": 0
+  },
+  "authoritativeBrief": "skills/chat/CLAUDE_DESIGN_FOUR_ISLAND_STORY_VISION_R1_2026-10-08.md",
+  "authoritativeStory": "skills/chat/recovery/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
+  "productGate": "FOUR_ISLAND_STORY_VISION_R1_GEORG_A_B_FAIL",
+  "worldRuntime": "R4_STOP_NO_MVP",
+  "status": "SITE_HANDOFF_PACKET_ONLY_NOT_PUBLISHED",
+  "existingSite": "kfb-production-hub",
+  "existingGameReviewSite": "kfb-world-studio-mvp",
+  "noNewSite": true,
+  "noStageRoute": true,
+  "sitePublisherRequiredForFutureVisualReview": true,
+  "records": [
+    {
+      "role": "protopia-tool",
+      "asset": "anvil",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "protopia-tool",
+      "asset": "saw",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "protopia-tool",
+      "asset": "blueprint",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "shared-workstation",
+      "asset": "Workbench",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench.gltf",
+      "ref": "main",
+      "planningBranchAvailable": false,
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "utopia-industrial",
+      "asset": "Pallet_Large",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Pallet_Large.gltf",
+      "ref": "main",
+      "planningBranchAvailable": false,
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "shared-construction",
+      "asset": "wood",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "bakery-candidate",
+      "asset": "bread_oven",
+      "path": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/bread_oven.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "bakery-sweets",
+      "asset": "donut_pink",
+      "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "cozy-house",
+      "asset": "house",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "cozy-post",
+      "asset": "mailbox",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    },
+    {
+      "role": "cozy-park",
+      "asset": "fountain",
+      "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/fountain.gltf",
+      "ref": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09",
+      "gltfConfirmed": true,
+      "visualAcceptance": "NOT_TESTED"
+    }
+  ],
+  "plannedReviews": [
+    {
+      "id": "same-donor-utopia-protopia",
+      "status": "WITHIN_EXISTING_FOUR_ISLAND_R1_VISUAL",
+      "scene": "Same Workbench/Block materials; Utopia Monstrosity, Robot A/B, controlled production, concealed cleanup vs Protopia peer maker/community repairs actual walk route."
+    },
+    {
+      "id": "tiny-treats-bakery-candy",
+      "status": "POST_MVP_VISUAL_ONLY",
+      "scene": "Ingredients → mixing and oven → sale and sharing; candy-land structures only after true licensed source proof."
+    },
+    {
+      "id": "tiny-treats-house-park",
+      "status": "POST_MVP_VISUAL_ONLY",
+      "scene": "Resident home → real mailbox + letter → path across green to park/fountain; no mail runtime."
+    }
+  ],
+  "acceptance": [
+    "Show original actual meshes with correct buffer/texture in isolation first",
+    "Measure visual size relative to real resident scale; no generic substitute",
+    "A and B must be complete same-story Town/Dystopia/Utopia/Protopia overview+four story boards",
+    "Test social relation readable without annotation",
+    "No geometry/runtime/R5 or Site/Stage publication until separately authorized"
+  ]
+}
