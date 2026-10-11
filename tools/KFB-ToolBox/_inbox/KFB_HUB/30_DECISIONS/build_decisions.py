@@ -138,6 +138,7 @@ d('V-157','2026-10-11','Insel','RULE','Trittstein-Abstand (und Stufenmaße der P
 d('V-158','2026-10-11','Insel','RULE','Fuß- und Wanderpfade: höchstens 12 % Steigung ohne Stufen; darüber Treppe (Stufenmaße nach V-157 gemessen) mit Podest.', 'RKIT + Lab', 'trailChecks walk_grade', 'Georg 11.10.: „12 % passt“')
 d('V-159','2026-10-11','Prüfung','RULE','Fuß- und Fahrtests zählen nur bei ≥ 50 fps im Testlauf; darunter wiederholen. Grund: Große Zeitschritte springen über Löcher bzw. Fugen und erzeugen falsche PASS (V-138- und V-153-Fußtest am 11.10. nachmittags waren falsch PASS: Fuge zwischen Bord und Gehweg, behoben mit LAB PATCH G2).', 'Lab', 'fps-Angabe in jedem Fuß-/Fahrtest-Bericht', 'Bau-Sitzung 11.10. (Selbstkorrektur), Steuerung')
 d('V-160','2026-10-11','Insel','RULE','Treppen werden nach dem abgenommenen J17-Walker gebaut, nicht umgekehrt: Standard Setzstufe 0,30 / Tritt ≥ 1,3 lab (Alternative 0,22 / 0,889), gemessen bei 60 fps ohne Auto-Hüpfer beim Joggen und Sprint. Kein Eingriff in den Walker der Gold-Vorlage; steilere Treppen nur, wenn Georg es ausdrücklich will (dann Walker-Patch mit Freigabe und neuer Parity).', 'RKIT + Lab', 'Treppen-Fußtest walk/jog/sprint ohne Hüpfer', 'Steuerung 11.10. nach V-157-Treppentest')
+d('V-161','2026-10-11','Fahren','RULE','Weichen-Wechsel an EXIT/ENTRY: Hinter der Nase entscheidet die Seitenlage des Autos, auf welchem Strom es weiterfährt; der Assist lenkt weich in die gewählte Spur (V-151), keine Taste bzw. kein Blinker; Pfeile vor der Gore zeigen die Wahl. Neu (in J14–J17 nicht vorhanden), Georg kann es später ändern.', 'Lab', 'Fahrtest Ein-/Ausfädeln ≥ 50 fps', 'Steuerung 11.10. (C4c)')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -264,6 +265,7 @@ WHY = {
  'V-158':('Bequem begehbar, steiler wird Treppe.','trail'),
  'V-159':('Ein Test unter Last hat ein Loch übersprungen; Ergebnisse müssen von der Bildrate unabhängig gültig sein.','sofort'),
  'V-160':('Use what works: Die Treppe passt sich der abgenommenen Fortbewegung an; Gold-Vorlage bleibt unberührt.','trail'),
+ 'V-161':('k2b fährt nur einen Strom; für Ausfahrten braucht es eine Übergabe, chill & fun ohne Extra-Taste.','ab C4c'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

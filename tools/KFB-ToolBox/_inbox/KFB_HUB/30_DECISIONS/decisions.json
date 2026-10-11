@@ -1715,6 +1715,20 @@
    "applies": "trail"
   },
   {
+   "id": "V-161",
+   "date": "2026-10-11",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Weichen-Wechsel an EXIT/ENTRY: Hinter der Nase entscheidet die Seitenlage des Autos, auf welchem Strom es weiterfährt; der Assist lenkt weich in die gewählte Spur (V-151), keine Taste bzw. kein Blinker; Pfeile vor der Gore zeigen die Wahl. Neu (in J14–J17 nicht vorhanden), Georg kann es später ändern.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Fahrtest Ein-/Ausfädeln ≥ 50 fps",
+   "source": "Steuerung 11.10. (C4c)",
+   "supersedes": null,
+   "why": "k2b fährt nur einen Strom; für Ausfahrten braucht es eine Übergabe, chill & fun ohne Extra-Taste.",
+   "applies": "ab C4c"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

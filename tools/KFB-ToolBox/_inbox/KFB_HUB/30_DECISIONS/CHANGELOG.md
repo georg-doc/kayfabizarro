@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · C4c freigegeben
+- Erste Aus-/Auffahrt am Hex-Hub: compileGraph EXIT/ENTRY (RACE-Zweig), LEVEL_RAMP 0,6 m statt B5, J17-Übergang Variante B vor dem Platz, Bande endet mit strangCap, auf dem Platz bündig mit Pollern (Bestand). V-161 Weichen-Wechsel nach Seitenlage + Assist.
+
 ## 2026-10-11 · C4b fertig
 - Organ-Welt auf Track Core 0.16.8 (LAB PATCH 15, Rollback ?core=012), Teil 0 bitgleich, Fahrt rundengleich, Fuß 60 fps PASS, parity PASS. Treppen v2 ohne Hüpfer (Füße kurz unter Trittkante → Kritiker). Alte Vendor-Kopien archivieren statt löschen.
 
