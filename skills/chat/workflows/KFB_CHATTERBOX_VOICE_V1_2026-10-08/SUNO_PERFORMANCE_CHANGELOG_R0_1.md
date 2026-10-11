@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Meta NPC 8-episode source map · additive content only
+
+- Added `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json` under existing KFB ChatterBox/Voice Draft PR #379, as the source-grounded follow-on to the already-persisted Speech Beta parallel-chat onboarding/research. **Eight distinct candidate premises**, one existing Clown first-take reused, seven new script slots NOT WRITTEN; explicitly distinguishes analog `#kfb`, Cut&Play `#cutplay`, digital game `#thegame` and the present Four-Island story.
+- Concrete personas: Clown, King Kayfabian, Driver, Demon Lord, **Monstrosity CEO**, Protopia Farmer pair, Lorekeeper, Lord Hunky/Lady Dory. Each links dramatic action, viewpoint, source refs, conflict/causality, reversal, callback and suggested Speech music bed. No canonical new dialogue, no fake digital rules or invented scene adoption.
+- `SUNO_META_NPC_EPISODE_ROSTER_TEST_REPORT_R0_1_2026-10-12.md`: **12/12** programmatic structural/source-path checks PASS; exact GitHub and private KFB Production Control Inbox text readbacks **1/1 each**. Site Inbox file `14f6c823-172b-4afe-be35-8485440ef63c`, SHA-256 `dcc5cdde780fdb119479d1b3f013cb905068c87ca7a913d9d77ffbce84ddd07a`.
+- No actual Suno generation, audio listening, source-object isolation, 3D stage work, published GPT Site/Cloudflare Stage, rights clearance, World R5 or merge. No source-based structural test certifies a funny performance. Single existing Suno gate unchanged: `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`.
+
+
 ## 2026-10-12 · Speech Beta meta-stand-up intake + source research + first take packet
 - Existing Voice PR #379: additive onboarding for **parallel** KFB game rules / concepts / Cut&Play backstory comedy NPC sets. Current parallel chat work NOT imported or claimed complete.
 - Read KFB Game Bigger-Picture/Meta Compendium and current analog rules; preserved origin links `/#kfb` and `/#cutplay` without pretending to have verified exact live UI content.
