@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Clip-Katalog R1 (Fable02/WSO)
+- replies/WSO_CLIP_CATALOG_R1.md + clip-catalog.json: 16 GLB, 290 Clips gemessen (139 Medium, 34 Large bestätigt), Tags als Vorschlag, Zuordnung zu Zuständen, Emotionen, Survival Kit, Kulturmechaniken. Top 20 fürs MVP: 17 im Lab, 3 aus der Motion Library nachladen (später, Bau-Sitzung nach V-171). Lücken: Flug, Beifahrer, Sprech-Clip, Geschenke, Kayfabulieren, Paar-Tanz, Lesen.
+- V-186 Motion Library 01 Abnahme 24.09. nachgetragen. Offen an Georg: Strafe-Clips vorhanden vs. V-022.
+
 ## 2026-10-12 · Dungeon-Machbarkeit, Einheiten-Korrektur
 - replies/DUNGEON_TRACK_FEASIBILITY_R1.md: JA MIT UMBAU (Kit-Faktor K2 × 1,6, Gänge 3 Zellen = 17,6 lab für NARROW-Fahrbahn, Wände 2 Module = 12,8 lab, Etage 12,8, Rampe 8 % ≈ 160–300 lab oder Spindel R ≈ 25,5; Donor WhackMan v1 + S13.2 dungeon-grid.js; Lücken: runde Innenecken, Rampen-/Spindelraum, breites Portal, Dungeon-Skin im Core, Deckenlicht). POC nach V-171 Punkt 1–3 als eigene Sitzung.
 - V-185 Korrektur V-175 (3): Kamera-Freiraum 4,9 ist TC-m (= 7,15 lab); Durchfahrtshöhe = max(5,8 lab, Lab-Kamera + 0,5), vorläufig ≈ 9,0 lab.
