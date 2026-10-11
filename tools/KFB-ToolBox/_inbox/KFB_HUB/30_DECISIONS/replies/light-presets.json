@@ -1,0 +1,613 @@
+{
+  "schema": "kfb.light-presets/1",
+  "status": "RESEARCH_PROPOSAL_NO_RUNTIME_ADOPTION",
+  "owner": "existing day-night.js through EnvironmentHost + existing skyRig/tunnel compose; no second rig",
+  "sources": "SOURCE_MANIFEST.json",
+  "authority": [
+    "V-050",
+    "V-053",
+    "V-060",
+    "V-141"
+  ],
+  "classificationLegend": [
+    "SOURCE_CODE",
+    "COMPUTED_FROM_SOURCE_STREAM",
+    "DERIVED_RECEIVER_VALUE",
+    "PROPOSED_ESTIMATE_NOT_GEORG_ACCEPTED",
+    "NOT_MEASURED"
+  ],
+  "j17DaySource": {
+    "sunColor": {
+      "value": "#fff4e6",
+      "units": "sRGB hex",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          126,
+          126
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "sunIntensity": {
+      "value": 2.9,
+      "units": "Three source intensity, not lux",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          126,
+          126
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "hemiSkyColor": {
+      "value": "#eef4fa",
+      "units": "sRGB hex",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          128,
+          128
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "hemiGroundColor": {
+      "value": "#9a8a78",
+      "units": "sRGB hex",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          128,
+          128
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "hemiIntensity": {
+      "value": 1.05,
+      "units": "Three source intensity",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          128,
+          128
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "backColor": {
+      "value": "#ffe6d6",
+      "units": "sRGB hex",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          129,
+          129
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "backIntensity": {
+      "value": 0.6,
+      "units": "Three source intensity",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          129,
+          129
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "toneMapping": {
+      "value": "ACESFilmicToneMapping",
+      "units": "source renderer enum",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          93,
+          93
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "output": {
+      "value": "SRGBColorSpace",
+      "units": "source renderer enum",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          93,
+          93
+        ]
+      },
+      "classification": "SOURCE_CODE"
+    },
+    "exposure": {
+      "value": null,
+      "units": "source code override",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          90,
+          96
+        ]
+      },
+      "classification": "NOT_EXPLICITLY_SET_IN_AUDITED_SOURCE"
+    },
+    "fog": {
+      "mode": "linear",
+      "color": "WORLDS.canyon.sky #96bede",
+      "nearTrackMeters": 700,
+      "farTrackMeters": 1900,
+      "scaledLabReference": [
+        1022,
+        2774
+      ],
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          473,
+          473
+        ]
+      }
+    },
+    "direction": {
+      "absoluteHeightTrackMeters": 260,
+      "centreHeightTrackMeters": 29.99890293200448,
+      "relativeHeightTrackMeters": 230.00109706799552,
+      "elevationDeg": 48.99104842070159,
+      "azimuthDegFromPositiveZ": -53.13010235415598,
+      "classification": "COMPUTED_FROM_SOURCE_STREAM",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          294,
+          295
+        ]
+      },
+      "measurement": "J17_SUN_MEASUREMENT.json"
+    }
+  },
+  "labAudit": {
+    "stateDefaults": {
+      "world": 2.4,
+      "ambient": 1.25,
+      "exposure": 1.0
+    },
+    "defaultSource": {
+      "source": "Lab_light",
+      "lines": [
+        23,
+        23
+      ]
+    },
+    "adapterScale": {
+      "key": 0.48,
+      "hemi": 0.7142857142857143,
+      "fill": 0.5142857142857142
+    },
+    "adapterSource": {
+      "source": "Lab_light",
+      "lines": [
+        148,
+        148
+      ]
+    },
+    "sinks": [
+      "sun2",
+      "fill2",
+      "back",
+      "amb"
+    ],
+    "rawPresets": {
+      "day": {
+        "fogNear": 15.0,
+        "fogFar": 40.0,
+        "hemiIntensity": 1.75,
+        "sunIntensity": 5.0,
+        "fillIntensity": 1.75,
+        "ambientIntensity": 1.25,
+        "fogColor": "#60ccde",
+        "hemiSkyColor": "#80ccdd",
+        "hemiGroundColor": "#66aa44",
+        "sunColor": "#fff0d0",
+        "fillColor": "#90bbcc",
+        "source": {
+          "source": "Lab_sky_presets",
+          "lines": [
+            18,
+            18
+          ]
+        }
+      },
+      "evening": {
+        "fogNear": 12.0,
+        "fogFar": 35.0,
+        "hemiIntensity": 0.94,
+        "sunIntensity": 3.5,
+        "fillIntensity": 0.875,
+        "ambientIntensity": 0.44,
+        "fogColor": "#c07848",
+        "hemiSkyColor": "#ff9944",
+        "hemiGroundColor": "#554422",
+        "sunColor": "#ffaa40",
+        "fillColor": "#cc8855",
+        "source": {
+          "source": "Lab_sky_presets",
+          "lines": [
+            68,
+            68
+          ]
+        }
+      }
+    },
+    "effectiveDefaultExterior": {
+      "day": {
+        "key": 2.4,
+        "hemi": 1.25,
+        "fill": 0.8999999999999999
+      },
+      "evening": {
+        "key": 1.68,
+        "hemi": 0.6714285714285714,
+        "fill": 0.44999999999999996
+      }
+    },
+    "direction": {
+      "elevationDeg": 50.19442890773481,
+      "azimuthDegFromPositiveZ": -53.13010235415598,
+      "source": {
+        "source": "Lab_light",
+        "lines": [
+          31,
+          31
+        ]
+      }
+    },
+    "toneMapping": "NeutralToneMapping",
+    "toneMappingSource": {
+      "source": "Lab_light",
+      "lines": [
+        84,
+        84
+      ]
+    },
+    "fog": {
+      "normalSceneScale": "R/5 (R half horizontal stage extent); near/far preset ×scale",
+      "source": {
+        "source": "Lab_sky",
+        "lines": [
+          29,
+          34
+        ]
+      },
+      "trackWorldFar": "camera.far*.95; supplied by current Organ stage",
+      "trackWorldSource": {
+        "source": "Lab_main",
+        "lines": [
+          462,
+          462
+        ]
+      },
+      "effectiveColor": "runtime horizon hook may override preset; NOT_SAMPLED",
+      "hookSource": {
+        "source": "Lab_day_night",
+        "lines": [
+          262,
+          273
+        ]
+      }
+    },
+    "overrides": "actual state sliders, island palette hue/tint, neutral groundTint and tunnelWeight may change result; values are code-default computations, not live probe"
+  },
+  "proposals": {
+    "j17DayReferenceThroughExistingReceiver": {
+      "classification": "DERIVED_RECEIVER_VALUE_NOT_FULL_RIG_PARITY",
+      "rawSkyInputs": {
+        "sunIntensity": 6.041666666666667,
+        "hemiIntensity": 1.47,
+        "fillIntensity": 1.1666666666666667,
+        "sunColor": "#fff4e6",
+        "hemiSkyColor": "#eef4fa",
+        "hemiGroundColor": "#9a8a78",
+        "fillColor": "#ffe6d6"
+      },
+      "expectedIntensities": {
+        "key": 2.9,
+        "hemi": 1.05,
+        "fill": 0.6
+      },
+      "derivation": "source intensities divided by existing adapter scales",
+      "limitations": [
+        "J17 back is mapped to receiver fill reference, not identical direction",
+        "Lab key50.194deg differs from source48.991deg",
+        "tone mapping/fog/clock/palette remain existing-owner receiving decisions; no writes here"
+      ]
+    },
+    "eveningReadableE50": {
+      "classification": "PROPOSED_ESTIMATE_NOT_GEORG_ACCEPTED",
+      "mixToDayForIntensities": {
+        "value": 0.5,
+        "units": "fraction",
+        "source": {
+          "source": "Lab_sky_presets",
+          "lines": [
+            18,
+            18
+          ]
+        },
+        "classification": "PROPOSED_ESTIMATE_NOT_GEORG_ACCEPTED",
+        "note": "Halfway test point; no source claims this as a sunset preset"
+      },
+      "rawSkyInputs": {
+        "sunIntensity": 4.25,
+        "hemiIntensity": 1.345,
+        "fillIntensity": 1.3125,
+        "sunColor": "#ffd3ae",
+        "hemiSkyColor": "#eef4fa",
+        "hemiGroundColor": "#9a8a78",
+        "fillColor": "#ffe6d6"
+      },
+      "expectedDefaultExterior": {
+        "key": 2.04,
+        "hemi": 0.9607142857142857,
+        "fill": 0.6749999999999999
+      },
+      "intensityChangeVsEveningPercent": {
+        "key": 21.42857142857144,
+        "hemi": 43.085106382978736,
+        "fill": 50.0
+      },
+      "colorSources": {
+        "warmSunReference": {
+          "source": "J17_track",
+          "lines": [
+            126,
+            126
+          ]
+        },
+        "coolHemiAndGround": {
+          "source": "J17_track",
+          "lines": [
+            128,
+            128
+          ]
+        },
+        "fill": {
+          "source": "J17_track",
+          "lines": [
+            129,
+            129
+          ]
+        }
+      },
+      "sunColorDerivation": "linear-sRGB midpoint of existing evening #ffaa40 and J17 #fff4e6, rounded to sRGB8; not CCT conversion",
+      "exposureDuringLightComparison": 1,
+      "exposureSource": {
+        "source": "Lab_light",
+        "lines": [
+          23,
+          23
+        ]
+      },
+      "fogAndSky": "retain existing hook/time/sky owner; no forced new fog color or dome",
+      "goal": "test brighter shadow fill with localized warm key instead of orange key+hemi+fill together; no rendered acceptance"
+    },
+    "separateExposureComparison": {
+      "sourceUnityPostExposureEV": {
+        "value": 0.2,
+        "units": "Unity postExposure EV",
+        "source": {
+          "source": "Quater_Unity_profile",
+          "lines": [
+            63,
+            65
+          ]
+        },
+        "classification": "SOURCE_CODE"
+      },
+      "derivedInputMultiplier": 1.148698354997035,
+      "classification": "DERIVED_MATH_NOT_ENGINE_PARITY",
+      "application": "separate locked-light comparison only, not stacked into E50; Three toneMappingExposure equivalence is a proposal, not a calibrated result"
+    }
+  },
+  "creatorEvidence": {
+    "KayKit": {
+      "video": "https://www.youtube.com/watch?v=Vfr3n4WKsc0",
+      "ambientEnergy": 0.75,
+      "units": "Godot source Energy",
+      "actualFrameSeconds": 440.47826,
+      "source": "existing C_VIDEO_FRAME_CAPTURE.json / video_441.jpg inspector",
+      "classification": "ACTUAL_SOURCE_FRAME_OBSERVED_NOT_THREE_INTENSITY",
+      "transfer": "Separate ambient from background; preserve cool/neutral readability; cannot infer light power from promo GIFs"
+    },
+    "Quaternius": {
+      "directional": {
+        "intensity": 2,
+        "colorRGBA": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "temperatureK": 5116,
+        "temperatureEnabled": true,
+        "source": {
+          "source": "Quater_Unity_scene",
+          "lines": [
+            5530,
+            5591
+          ]
+        },
+        "classification": "UNITY_SCENE_SOURCE_NOT_THREE_INTENSITY"
+      },
+      "transformHint": {
+        "EulerDegrees": [
+          34.016,
+          -30,
+          0
+        ],
+        "source": {
+          "source": "Quater_Unity_scene",
+          "lines": [
+            5592,
+            5612
+          ]
+        },
+        "classification": "SOURCE_LOCAL_EULER_HINT_NOT_J17_AZIMUTH"
+      },
+      "post": {
+        "postExposureEV": 0.2,
+        "contrast": 7,
+        "saturation": 10,
+        "bloomThreshold": 0.3,
+        "bloomIntensity": 0.8,
+        "tonemappingSerializedMode": 2,
+        "source": [
+          {
+            "source": "Quater_Unity_profile",
+            "lines": [
+              13,
+              26
+            ]
+          },
+          {
+            "source": "Quater_Unity_profile",
+            "lines": [
+              61,
+              79
+            ]
+          },
+          {
+            "source": "Quater_Unity_profile",
+            "lines": [
+              165,
+              175
+            ]
+          }
+        ]
+      },
+      "previewObservation": "bright sky/shadow-plane hierarchy actually seen; camera/rig for marketing JPEG unknown; painted albedo already carries highlights, not illumination calibration",
+      "privateMedia": "no images, textures, Unity scene or paid asset files published"
+    }
+  },
+  "tunnelSource": {
+    "kit": "TC1 race_tube (source recipe); creamy cloud + red-orange strang",
+    "materialRoles": {
+      "band": [
+        "strang",
+        "cloud"
+      ],
+      "rim": [
+        "strang",
+        "cloud"
+      ],
+      "rib": "pad",
+      "source": {
+        "source": "TC1",
+        "lines": [
+          17,
+          18
+        ]
+      }
+    },
+    "roleColors": {
+      "strang": "#ef5a22",
+      "cloud": "#f3e6cf",
+      "source": {
+        "source": "J17_track",
+        "lines": [
+          49,
+          50
+        ]
+      }
+    },
+    "lamp": {
+      "baseColor": "#fff2c8",
+      "emissive": "#ffc15a",
+      "emissiveIntensity": 2.2,
+      "roughness": 0.5,
+      "source": {
+        "source": "TC1",
+        "lines": [
+          74,
+          74
+        ]
+      }
+    },
+    "lightPlacement": {
+      "source": {
+        "source": "TC1",
+        "lines": [
+          124,
+          125
+        ]
+      },
+      "note": "lamps attached to real source modules; no per-figure light"
+    },
+    "pointLightInAuditedTC1": "NOT_FOUND_IN_TC1_FILE; emission does not illuminate neighbouring surfaces by itself",
+    "labCurrentDeepTunnel": {
+      "presetSource": {
+        "source": "Lab_light",
+        "lines": [
+          80,
+          80
+        ]
+      },
+      "hemiSky": "#fff1dc",
+      "hemiGround": "#e6c49c",
+      "hemiDefault": 2,
+      "keyFactor": 0.12,
+      "fillFactor": 0.35,
+      "expectedFromDefaultDay": {
+        "key": 0.288,
+        "fill": 0.315
+      },
+      "poolSize": 4,
+      "poolGainAtFullWeight": 3,
+      "poolDerivation": "x.intensity*(1+2*tunnelWeight), not x.intensity*2",
+      "composeSource": {
+        "source": "Lab_light",
+        "lines": [
+          107,
+          107
+        ]
+      },
+      "poolSource": {
+        "source": "Lab_light",
+        "lines": [
+          196,
+          196
+        ]
+      },
+      "classification": "EXISTING_CODE_DERIVED_NOT_NEW_TUNE"
+    },
+    "labTC1PointExample": {
+      "sourceBase": 260,
+      "sourceFactor": 0.35,
+      "scale": 1.46,
+      "intensityBeforeTunnelGain": 193.9756,
+      "deepTunnelIntensity": 581.9268,
+      "source": {
+        "source": "Lab_organ",
+        "lines": [
+          232,
+          235
+        ]
+      },
+      "classification": "DERIVED_CURRENT_BRANCH_FOR_TC1_POINTS_NOT_LUX_OR_NEW_TARGET"
+    },
+    "proposal": "keep actual TC1 roles/lamps, source-supported neutral-warm fill and existing fixed pool; verify white clipping/red discrimination/road legibility before adoption, do not substitute brighter emission for fill"
+  },
+  "notDone": [
+    "Lab-src writes",
+    "new rig",
+    "runtime renders/photometry",
+    "parity",
+    "GPU performance",
+    "Golden/merge"
+  ]
+}

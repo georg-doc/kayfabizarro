@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "kfb.light-presets/1 research proposal",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "owner",
+    "j17DaySource",
+    "labAudit",
+    "proposals",
+    "creatorEvidence",
+    "tunnelSource",
+    "notDone"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.light-presets/1"
+    },
+    "status": {
+      "const": "RESEARCH_PROPOSAL_NO_RUNTIME_ADOPTION"
+    },
+    "proposals": {
+      "type": "object",
+      "required": [
+        "j17DayReferenceThroughExistingReceiver",
+        "eveningReadableE50",
+        "separateExposureComparison"
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "streamSha256": "2eec607913380419117a9ee56359cc9e478e8a80ce00ce08b2641c22fa7fb309",
+  "samples": 8786,
+  "bounds": {
+    "min": [
+      -52.20503673911765,
+      -4.297809090764767e-14,
+      -188.75066554491204
+    ],
+    "max": [
+      634.9360679182888,
+      59.997805864009,
+      731.7596270541488
+    ]
+  },
+  "centre": [
+    291.3655155895856,
+    29.99890293200448,
+    271.5044807546184
+  ],
+  "sunPosition": [
+    131.36551558958558,
+    260,
+    391.5044807546184
+  ],
+  "sunRelative": [
+    -160.0,
+    230.00109706799552,
+    120.0
+  ],
+  "elevationDeg": 48.99104842070159,
+  "azimuthDegFromPositiveZ": -53.13010235415598,
+  "meaning": "direction towards light; computed from actual p1b.v2 centre, not measured runtime pixels",
+  "source": [
+    {
+      "source": "J17_track",
+      "lines": [
+        294,
+        295
+      ]
+    },
+    {
+      "source": "J17_track",
+      "lines": [
+        442,
+        444
+      ]
+    },
+    {
+      "source": "J17_overlay",
+      "lines": [
+        24,
+        27
+      ]
+    }
+  ]
+}
