@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · RKIT umgestellt
+- Zu V-118/V-120 a: RKIT stoppt Widerlager-Paket und Bogenkette Town → Brocken → Protopia; Brücken-Dateien aus public/roadbeds nach retired/rkit-bridge_2026-10-11 (verschoben, nicht gelöscht); Bande am Ring gehört zur Strecke (J17, Lab). Gehweg/Bord Lauf 03 wartet auf Phase F.
+
 ## 2026-10-11 · Blender-Review: Persistenz-Lücken geschlossen
 - Anlass: Blender-Coworker (Mac mini) fand: Plan R1 und Projektstand nicht auf GitHub, GitHub-Register nur bis V-084, kein Golden-Lieferant nach V-084, alte Besitzer-Tabelle bzw. RKIT-P2 nicht abgelöst, Georg-Entscheidungen nur in WSA-Returns.
 - V-117 Dokument-Vorrang + Persistenz-Pflicht (GitHub bei jeder Änderung). V-118 RKIT nur Town, Rampen aus Track Core v0.14. V-119 Island Form Kit 01 als Golden-Lieferant. V-120 WSA-Entscheidungen übernommen (Brücke zwischen Inseln FAIL, Protopia/Maker getrennt, Gefängnismauern 1,6 m). V-121 Gefängnis-Greybox nach MVP-1.
