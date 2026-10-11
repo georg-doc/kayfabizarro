@@ -1,0 +1,140 @@
+{
+  "schema": "kfb.chatterbox.performance-take/0.2-candidate",
+  "status": "AUTHORING_CANDIDATE",
+  "rule1": "No AI Quirk. No Meme Logic. No Filler.",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "pr": 379,
+  "predecessor": "data/SUNO_SPOKEN_MUSIC_PILOT_R0_1.json",
+  "predecessorQuality": "SUPERSEDED_TUNE",
+  "scriptFirst": {
+    "id": "kfb.clown.juggling-standup.r0.2",
+    "residentId": "clown",
+    "language": "en",
+    "targetSeconds": 75,
+    "spokenScript": "Three clubs. Two hands. Don't worry about the third club. Worry if you see me catch all three.\n\nLast week a safety inspector came to watch. Waited till I had a good rhythm, pointed at the red one.\n\n\"What's that one for?\"\n\"Juggling.\"\n\"Your hands are full.\"\n\"Exactly.\"\n\"Then it's surplus.\"\n\nHe made me stop. Took the red club away. Locked it in a drawer for public safety.\n\nWith two clubs, one hand is always free. No surprises. No risk. I did it for eleven minutes. The inspector wrote \"demonstration successful.\" One child began stacking chairs. Frankly, it had better suspense.\n\nI asked for the red club back.\n\"First prove you can manage three.\"\n\"I was.\"\n\"Then why did you stop?\"\n\nI pointed at the drawer.\n\"Don't change the subject.\"\n\nYesterday the lab returned the red one. No defects. Now he wants me to submit the other two so they can test how the three interact.\n\nI told him the interaction's at eight on Friday.\n\nFront row. He can stop it himself.",
+    "stylePrompt": "Rapid dry spoken English stand-up, strictly speech NOT singing. Close-miked adult clown voice with precise cynical timing. Sparse rockabilly trio: walking upright bass, light brushed snare, short hollow-body guitar stabs ONLY after actual reversals; drop to near silence for inspector exchanges and the final callback. No chorus, canned laughs, generic metaphors, slogan ending or narration of stage directions. One clean stop. Voice dominant over live band.",
+    "cueText": "[0–5 hook: three clubs] [15–20 inspector challenge] [25–38 imagined two-club interlude; unverified on rig] [42–55 contradictory demand; silence] [60–75 callback; three-club cascade only if source-compatible]",
+    "spokenWords": 172,
+    "estimatedSpeechWpm": 175,
+    "estimatedPausesSeconds": 12,
+    "charBudget": {
+      "capExclusive": 5000,
+      "spoken": 954,
+      "style": 458,
+      "inlineCues": 207,
+      "combined": 1619
+    }
+  },
+  "source": {
+    "clownModule": "tools/resident_atlas/modules/clown-juggling-island.module.json",
+    "blob": "1c75730143e3481b43edaa8e7231e1a853f7834d",
+    "sceneStatus": "candidate-only",
+    "juggleClass": "juggle-cascade-v1",
+    "clubs": 3,
+    "animationTimingStatus": "UNVERIFIED",
+    "twoClubVariant": "PROPOSAL_NOT_BUILT"
+  },
+  "linkedBeatPool": {
+    "poolSchema": "kfb.triplet-performance-beats/0.1-authoring-candidate",
+    "state": "AUTHORING_CANDIDATE",
+    "existingKernelUnchanged": true,
+    "pairs": [
+      {
+        "id": "clown.inspect.hook.01",
+        "roles": [
+          "HOOK",
+          "SUBJECT"
+        ],
+        "anchor": "Three clubs. Two hands.",
+        "causalNext": "clown.inspect.contradiction.02",
+        "sourceStatus": "WRITER_CANDIDATE"
+      },
+      {
+        "id": "clown.inspect.contradiction.02",
+        "roles": [
+          "CONNECTOR_CONFLICT",
+          "PUNCHLINE"
+        ],
+        "anchor": "Then it's surplus.",
+        "causalNext": "clown.inspect.consequence.03",
+        "sourceStatus": "WRITER_CANDIDATE"
+      },
+      {
+        "id": "clown.inspect.consequence.03",
+        "roles": [
+          "REFRAME",
+          "PUNCHLINE"
+        ],
+        "anchor": "Then why did you stop?",
+        "causalNext": "clown.inspect.callback.04",
+        "sourceStatus": "WRITER_CANDIDATE"
+      },
+      {
+        "id": "clown.inspect.callback.04",
+        "roles": [
+          "CALLBACK",
+          "PUNCHLINE"
+        ],
+        "anchor": "Front row. He can stop it himself.",
+        "callbackTo": "clown.inspect.contradiction.02",
+        "sourceStatus": "WRITER_CANDIDATE"
+      }
+    ],
+    "rules": "Linked writer-authored setup/payoff chains only; never random-join/auto-promote. One authored performance does not become four dialogue turns."
+  },
+  "cuePlan": {
+    "timeStatus": "AUTHOR_ESTIMATES_NOT_MEASURED",
+    "bands": [
+      {
+        "start": 0,
+        "end": 5,
+        "beat": "hook",
+        "action": "existing three-club activity candidate"
+      },
+      {
+        "start": 5,
+        "end": 20,
+        "beat": "challenger",
+        "action": "tighter rhythm; inspector dialogue only vocal"
+      },
+      {
+        "start": 20,
+        "end": 39,
+        "beat": "escalate",
+        "action": "imagined two-club interlude; animation unverified"
+      },
+      {
+        "start": 39,
+        "end": 55,
+        "beat": "contradict",
+        "action": "band duck and brief pause"
+      },
+      {
+        "start": 55,
+        "end": 75,
+        "beat": "callback",
+        "action": "three-club rhythm and last hold if rig supports"
+      }
+    ]
+  },
+  "audition": {
+    "provider": "Suno",
+    "status": "UNGENERATED",
+    "audioFile": null,
+    "actualTranscript": null,
+    "durationSeconds": null,
+    "rights": "PENDING",
+    "humanRule1Decision": "PENDING",
+    "humanComedyDecision": "PENDING",
+    "publicShip": false
+  },
+  "boundaries": {
+    "noSecondDialogueOwner": true,
+    "noSecondAudioContext": true,
+    "kfbAudioMixOwner": true,
+    "noWorldR5": true,
+    "noSitePublication": true
+  },
+  "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1"
+}
