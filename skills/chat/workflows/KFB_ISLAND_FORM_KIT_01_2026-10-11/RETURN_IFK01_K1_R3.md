@@ -23,9 +23,13 @@ Scope: references only. No Lab wiring, and no purchased assets: all geometry is 
    - The light is flat and frontal.
    - There is a pale seam where rock meets earth.
    - The moss balls are evenly lit.
-4. **Roots dropped.** Georg's call on 11.10. ("will surely fail"). The root code stays in the generator with `roots=0`.
-5. **Depth** is 0.57 W including the tip, above the anatomy rule of 0.43–0.52 W. That suits IB1/IB2 better.
-6. **Material** is vertex colour plus a procedural Cycles shader (pits, cracks, AO). The GLBs carry the vertex colours only. Pits, cracks and AO do not travel with them.
+4. **Conflict with V-152, which arrived during the build** (`NOTE_FROM_STEERING_R3b_INSELBASIS.md`). The rule is "one cohesive terrain mass … never separate rock balls".
+   - **Conflicts:** the half-embedded boulders, especially A's 7 boulders toward the tip, still read as single rock balls.
+   - **Fits:** the rock band is closer, because its slabs are fused into the earth.
+   - **Next round:** drop the single boulders and keep the grey rock only as modelled-out rock parts and bands of the same mass.
+5. **Roots dropped.** Georg's call on 11.10. ("will surely fail"). The root code stays in the generator with `roots=0`.
+6. **Depth** is 0.57 W including the tip, above the anatomy rule of 0.43–0.52 W. That suits IB1/IB2 better.
+7. **Material** is vertex colour plus a procedural Cycles shader (pits, cracks, AO). The GLBs carry the vertex colours only. Pits, cracks and AO do not travel with them.
 
 ## What was built
 
