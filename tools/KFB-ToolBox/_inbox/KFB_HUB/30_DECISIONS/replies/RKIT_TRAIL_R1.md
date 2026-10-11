@@ -73,3 +73,36 @@ Alle Ergebnisse tragen `gaitSource: 'measured'`, alle trail-Checks bestehen.
 **D4** `DIRT|MOUNTAIN` (Bergstraße ↔ Schotter) ist wie D1 ergänzt. **HIGHWAY → Schotter** bleibt verboten (analog B4) und wirft einen eigenen Fehler.
 
 **Tests:** test-trail 24/24, test-dirt 30/30, alle Suiten unverändert, Teil 0 bitgleich, Graphen identisch zu 0.16.6.
+
+## Nachtrag 0.16.8: Treppen nach dem Fußtest (V-160)
+
+**Befund des Fußtests** (MVP, J17-Walker, 60 fps): Die RKIT-Treppe 0,444 / 0,889 wird bei Jog und Sprint hochgehüpft. Ursache ist der vorausschauende Auto-Hüpfer des Walkers, nicht die Gehfläche.
+
+**Gemessene Tabelle** (Tritt, ab dem nicht mehr gehüpft wird):
+
+| Setzstufe | Tritt mindestens |
+|---|---|
+| 0,22 | 0,889 |
+| 0,30 | 1,3 |
+| 0,444 | 2,4 |
+
+**trailStairs 0.16.8:**
+- Liest die Tabelle direkt aus `gait_v157.json`.
+- Setzstufe nach V-160: Standard **0,30 (Tritt ≥ 1,3)**, Alternative **0,22 (≥ 0,889)**. Die größere Klasse, die in die Lauflänge passt, gewinnt.
+- Die Masonry-A-Setzstufe 0,45 wird nie genommen. Masonry A liefert nur noch den Look; die Stufen werden auf das Tabellenmaß gebracht.
+
+**Zur Einordnung:** 0.16.7 hätte mit der ergänzten Datei 0,444 / 1,3 gebaut, und das hüpft. Das ist jetzt behoben.
+
+**Beispiele:**
+
+| Lauf | Ergebnis |
+|---|---|
+| 4 m auf 26 m | 14 × 0,286, Tritt 1,40, Klasse 0,30, 1 Podest |
+| 4 m auf 24 m | 19 × 0,211, Tritt 0,926, Klasse 0,22 |
+| 4 m auf 8 m | abgelehnt: 0,30 bräuchte 24,6 m, 0,22 bräuchte 23,3 m |
+
+**Folge für das Lab-Layout:** Treppen sind jetzt flach und lang (Steigung ≈ 20–23 %). Steile Wege brauchen Serpentinen.
+
+**Tests:** test-trail 27/27, alle Suiten unverändert, Teil 0 bitgleich.
+
+**Neue Fußtest-Anker:** `Lab/docs/handoff/rkit_trail_stairs_foottest_v2.json` (Standard- und Alternativ-Treppe).

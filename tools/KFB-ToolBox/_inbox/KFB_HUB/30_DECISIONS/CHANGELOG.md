@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Track Core 0.16.8
+- trailStairs nach V-160 (0,30/1,3 bzw. 0,22/0,889 aus minTreadByRiser, Masonry A nur Look, 0,45 nie), 27/27, bitgleich. Folge fürs Layout: Treppen flach und lang, steile Wege brauchen Serpentinen.
+
 ## 2026-10-11 · Treppen nach Walker
 - V-157-Treppentest: 0,444/0,889 → Jog/Sprint hüpfen (J17-Auto-Hüpfer summiert voraus). V-160 Treppen 0,30/1,3 (bzw. 0,22/0,889), kein Walker-Patch.
 
