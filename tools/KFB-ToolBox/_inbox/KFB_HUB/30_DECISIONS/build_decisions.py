@@ -143,6 +143,7 @@ d('V-162','2026-10-11','Insel','TUNE','Bank B (Tunnel im Inselberg) = TUNE 5–6
 d('V-163','2026-10-11','Look','RULE','Cosmic-Skin: Neon-Vibe wie in Georgs Referenzen CO1/CO2 (violetter Weltraum, Planeten mit Ringen, Asteroiden, leuchtende Kanten orange/türkis/gelb, Kristalle, Pilzbäume) für Stil, Farben und Stimmung; viele halluzinierte Elemente nicht übernehmen (V-148). Basis bleibt Knete/K2, Stützen nur auf Asteroiden-Inseln (V-154).', 'Lab', 'Standbild Cosmic-Skin gegen CO1/CO2', 'Georg 11.10.: „Cosmic-Look: ok … zu viel halluzinierte Elemente, aber ggf. hilfreich für style, colors & vibe“')
 d('V-164','2026-10-11','Insel','RULE','Mesa-Insel im Krazy-Kat-/Coconino-Stil (Referenzen ME1/ME2): geschichteter Sandstein in Rot-Orange bzw. Violett, Tafelberge und Felsnadeln, Kakteen, Serpentinen mit rot-weißem Kerb; die Inselunterseite als zusammenhängende geschichtete Felsmasse ist zugleich gute Basis-Referenz (V-142/V-152). Passt zur J17-Welt canyon.', 'Lab + Blender', 'Standbild Mesa-Insel gegen ME1/ME2', 'Georg 11.10.')
 d('V-165','2026-10-11','Insel','RULE','Steinbrücken bzw. -viadukte (CR4) kommen später für Geschichts-, Römer- bzw. Griechen-Themen-Inseln; jetzt kein Steinbogen-Builder.', 'RKIT', '-', 'Georg 11.10.')
+d('V-166','2026-10-11','Prozess','RULE','Standardansicht des Lab zeigt nur den letzten geprüften Stand; laufende Arbeit hinter einem Schalter. Anlass Georgs Live-Test: zerrissene Banden (FAIL) aus einem Arbeitsstand, 40–60 s Ladezeit, Flackern auch im Stand.', 'Lab', 'Standard-URL = letzte Lieferung', 'Georg 11.10. (Live-Test)')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -274,6 +275,7 @@ WHY = {
  'V-163':('Cosmic-Look geklärt über Bilder statt Text.','bei Cosmic-Skin'),
  'V-164':('Neue Themen-Insel mit starker Basis-Referenz.','Phase D/F'),
  'V-165':('Steinbögen gehören thematisch zu Antike-Inseln.','später'),
+ 'V-166':('Georg testet live; halbfertige Stände kosten Vertrauen und Zeit.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

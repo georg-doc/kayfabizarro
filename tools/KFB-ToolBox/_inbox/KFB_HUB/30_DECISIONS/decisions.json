@@ -1785,6 +1785,20 @@
    "applies": "später"
   },
   {
+   "id": "V-166",
+   "date": "2026-10-11",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Standardansicht des Lab zeigt nur den letzten geprüften Stand; laufende Arbeit hinter einem Schalter. Anlass Georgs Live-Test: zerrissene Banden (FAIL) aus einem Arbeitsstand, 40–60 s Ladezeit, Flackern auch im Stand.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Standard-URL = letzte Lieferung",
+   "source": "Georg 11.10. (Live-Test)",
+   "supersedes": null,
+   "why": "Georg testet live; halbfertige Stände kosten Vertrauen und Zeit.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

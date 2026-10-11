@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Georg live: Banden FAIL, Laden, Flackern
+- Live-Test: zerrissene J17-Banden am Hub (FAIL, vermutlich C4c-Arbeitsstand), Laden 40–60 s, Flackern im Stand, Haltebucht nicht gefunden. V-166 Standardansicht nur geprüfter Stand. Organe als Platzhalter ok (V-127).
+
 ## 2026-10-11 · Cosmic-Look, Mesa-Insel, Steinbrücken später
 - V-163 Cosmic = Neon-Vibe aus CO1/CO2 (ohne halluzinierte Elemente). V-164 Mesa-/Krazy-Kat-Coconino-Insel (ME1/ME2). V-165 Steinbrücken später für Antike-Inseln. Abgelegt replies/REFS_COSMIC_MESA_2026-10-11/.
 
