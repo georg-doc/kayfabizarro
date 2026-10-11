@@ -31,16 +31,17 @@
    "id": "d02-archive"
   },
   {
-   "context": "Die Bucht ist gebaut (3 breiter, Bordstein, Gehweg). Nach V-183 kommt das Auto in die Bucht und die Randlinie wird dort unterbrochen. Reicht dir das als Abschluss, oder willst du sie danach nochmal sehen?",
+   "context": "Umgesetzt (V-183): Das Auto parkt in der Bucht, 0,25 m innerhalb des Bordsteins; die Randlinie ist dort als Blocklinie unterbrochen. Die Strich-Reste am Buchtende sind weg. Reicht dir das als Abschluss der Haltebucht?",
    "options": [
-    "Erledigt",
-    "Nach dem Umbau nochmal ansehen"
+    "Erledigt (PASS)",
+    "TUNE"
    ],
    "order": 3,
    "status": "offen",
    "title": "Haltebucht: erledigt oder weiter TUNE?",
    "vref": "V-138",
-   "id": "d03-bay"
+   "id": "d03-bay",
+   "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V183_BAY/bay_oblique_from_ahead.jpg"
   },
   {
    "context": "Nach Flackern und Ladezeit (S2, S3) kommen laut Audit Speicher (S5) und deterministische Tests (S6). Licht-Vergleich (S7) und Rhythmus-Paket (S8) sind sichtbarer für dich, die Technik macht spätere Abnahmen verlässlicher. Empfehlung Steuerung: Technik zuerst, weil S6 falsche PASS-Meldungen verhindert.",
@@ -277,7 +278,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "–",
    "server": "Lab 5192",
-   "status": "läuft",
+   "status": "fertig",
    "title": "C4c-Folgen: Auto in die Bucht, Randlinie, Zebra 3 Balken, Spalt füllen; dann C4c als Standard",
    "vrefs": "V-183 · V-166 · V-159",
    "id": "S01"
@@ -289,7 +290,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S1",
    "server": "Lab 5192",
-   "status": "als Nächstes",
+   "status": "läuft",
    "title": "Flacker-Paket (dynres, LOD-Hysterese, Rippe nur nah)",
    "vrefs": "V-171 (2)",
    "id": "S02"
