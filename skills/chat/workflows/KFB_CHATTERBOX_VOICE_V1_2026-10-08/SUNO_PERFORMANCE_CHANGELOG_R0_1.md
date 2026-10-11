@@ -1,4 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
+
+## 2026-10-12 · Speech Beta meta-stand-up intake + source research + first take packet
+- Existing Voice PR #379: additive onboarding for **parallel** KFB game rules / concepts / Cut&Play backstory comedy NPC sets. Current parallel chat work NOT imported or claimed complete.
+- Read KFB Game Bigger-Picture/Meta Compendium and current analog rules; preserved origin links `/#kfb` and `/#cutplay` without pretending to have verified exact live UI content.
+- New Oct 1 Suno Speech beta source-research with contemporary Reddit r/SunoAI Oct 1–10 failure/success anecdotes and controlled evaluation assignment.
+- New source-backed Script-first Clown R1, beta-short 146 words, 1,690 script+style+cues chars, 59s estimated. Current R0.2 75s remains available.
+- 25/25 candidate structure checks executed, GitHub roundtrip after each write; private Production Control Site Inbox onboarding/research/packet/QA all saved + read back. No actual audio, Site deployment, Stage or merge.
+- One next Suno gate `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`; other Voice/World gates unchanged.
+
 Owner: existing KFB ChatterBox / Voice Layer, Draft PR #379. Planning candidate only.
 
 ## 2026-10-12 · R0.2 RULE1 quality clarification
