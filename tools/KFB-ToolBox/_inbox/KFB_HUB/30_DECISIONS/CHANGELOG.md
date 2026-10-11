@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · V-138 mit neuem GLB
+- Bei 60 fps: RKIT-Bett allein lässt eine 0,05–0,1-Lücke vor dem Bord bei s≈119 (an RKIT, nicht eilig); mit Lab-Tasche G2 zusätzlich 0 Löcher, Fußtest PASS. Beide Lösungen aktiv.
+
 ## 2026-10-11 · hex_b7 Fuge an der Quelle behoben
 - RKIT: Gehweg-Bett füllt Fuge Bord↔Platten (neuer sha 18a7dbc70243, Q1–Q9 PASS, alter Stand gesichert). LAB PATCH G2 bleibt optional; Lab prüft im nächsten Fußtest.
 
