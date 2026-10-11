@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Konzept C1b-C3 R1 (Steuerung)
+- REPORT r2 korrigiert (Körper verschweißt 0 offene Kanten, aber 2/18/11 Mehrfachkanten; „Schlitz“ = O1-Wasserfläche; Fahrtest k2b-Tasten mit assist, nicht fahrzeugabhängig; Dock-Test unecht).
+- Freigegeben: echter Fahrtest zuerst; Tunnel-im-Feld als Prototyp an einem Körper + race_tube (generisch, Mesh→Feld-Adapter benennen), dann Stopp für Georg; rect-Ring aus Core v0.12; J17-Tagwerte als Strecken-Tag-Preset; Markierungen nach J17-Messung; Nebel. An Georg: Innen-Mauerwerk/Minen-Licht, Himmel „cosmic“, Sprunglücken, Lampenschild.
+
 ## 2026-10-11 · Kritiker C1b-C3-r2: FAIL, zurück zum Konzept
 - Blinde Kritiker (V-125): 3D + Baukasten 5,14 (T4 3 → laut Protokoll Konzept statt Reparatur), Design 4,5 (D3 3); harte Schnitte gesehen. Hauptbefunde: Portale stehen vor dem Körper (Plattenrand, Geisterbogen, Messerkanten-Platte), Loch entlang der Tunnellinie im Hirn, Strecke speert in die Hub-Seite, stone_rect = stone_arch innen, Mine ohne Holzrahmen, Teal-Stich, unbeleuchtete Tunnel.
 - Bericht-Ehrlichkeit: REPORT „0/0/0, 1 Bauteil“ galt nur für die Join-Box; Körper haben 382–710 offene Kanten. Fahrtest war ein Schienen-Folger (beide Autos bitgleich), kein k2b-Beweis. Bau-Sitzung korrigiert REPORT und liefert ein Konzeptblatt; Georg entscheidet.
