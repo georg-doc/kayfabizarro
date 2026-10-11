@@ -5,7 +5,9 @@
 ## Umfang / Quellen
 Alle 12 vorhandenen Blätter TD1–TD5, CS1–CS3, CR1–CR4 tatsächlich betrachtet; lokale Bytes **12/12 gegen aktuelle GitHub-Original-Blobs bestätigt**. Nur Originale werden verlinkt, keine neuen R2-PNGs veröffentlicht. [Referenzblatt-Verzeichnis](WSA_TRACK_MODULE_LOOK_SPEC_R2/REFERENCE_BOARDS.json) enthält Originalpfade und Hashes.
 
-175 neue nummerierte Look-Einträge + 9 akzeptierte R1-Source-Einträge = **184 Datensätze**, mit **194 Bildstellen-/Hero-/Seitenprofil-Zuordnungen** in [BOARD_COVERAGE.json](WSA_TRACK_MODULE_LOOK_SPEC_R2/BOARD_COVERAGE.json). Wiederkehrende Gerade/Kurve/T/Kreisel werden ausdrücklich über ihren Skin und Source-Bestand beschrieben; sie sind keine 175 neuen Geometrie-Module. Quellenpfade, Zeilen und Maßherkunft stehen pro Datensatz. Fehlende Maße bleiben unbekannt statt geschätzt.
+175 neue nummerierte Look-Einträge + 9 akzeptierte R1-Source-Einträge = **184 Datensätze**, mit **194 Bildstellen-/Hero-/Seitenprofil-Zuordnungen** in [BOARD_COVERAGE.json](WSA_TRACK_MODULE_LOOK_SPEC_R2/BOARD_COVERAGE.json). Root-Felder colorRoles/referenceSection enthalten weiterhin den akzeptierten R1-Race-Quellenwortschatz; sie sind keine globale Palette oder STANDARD-Section für town/country/dirt/trail/cosmic. Maßgeblich für R2 ist der jeweilige Skin-Eintrag, Cosmic hat keine festgelegten Rollen.
+
+Wiederkehrende Gerade/Kurve/T/Kreisel werden ausdrücklich über ihren Skin und Source-Bestand beschrieben; sie sind keine 175 neuen Geometrie-Module. Quellenpfade, Zeilen und Maßherkunft stehen pro Datensatz. Fehlende Maße bleiben unbekannt statt geschätzt.
 
 Reihenfolge der Recherche: town → Übergänge → country → dirt/trail → cosmic; verbleibende TD1/TD5-Bauformen über bestehende Race-Quellen. R1-Caps/ENTRY/EXIT/Seitenform werden wiederverwendet. `catalogueModuleId:null` bedeutet keine erfundene Core-ID. `family:null` bei unbestätigten DIRT/TRAIL-Bindungen verhindert eine erdachte Familie; gewünschter Skin und Source-Status bleiben lesbar.
 
@@ -86,3 +88,18 @@ Arrows nur ENTRY/EXIT/FORK/JOIN bzw. Kreisel-Ausfahrt, race ohne Fahrspuren (#1)
 [VALIDATION_R2.json](WSA_TRACK_MODULE_LOOK_SPEC_R2/VALIDATION_R2.json): Schema, eindeutige IDs, vollständige nummerierte Blattzuordnung, Source-Zeilen/Hashes, Maßumrechnung und Cosmic-Nichtfestlegung. [SEARCH_PROTOCOL_R2.json](WSA_TRACK_MODULE_LOOK_SPEC_R2/SEARCH_PROTOCOL_R2.json) baut auf dem R1-V140-Protokoll auf und dokumentiert zusätzlich aktuelle RKIT-Reports/Lauf03/B7/S4/Sky-Quellen. RKIT-Core-Tests sind nur gemeldeter Bestand, nicht von WSA erneut ausgeführt. Lab-src-Schreibvorgänge0, keine Parity/Fahr-/Render-Abnahme in dieser Recherche.
 
 Nächster Gate: Steuerung prüft R2 und beantwortet/verteilt V-148-Liste; RKIT/Lab binden Source-Look an tatsächliche MODULES-Schnitte und bauen nach ihrem Plan. Kein Golden oder Merge.
+
+## Vorhandene Originalblätter (keine neuen R2-Bilder)
+
+- [TD1](REFS_TRACK_DETAILS_2026-10-11/TD1_race_kit_kernmodule.png)
+- [TD2](REFS_TRACK_DETAILS_2026-10-11/TD2_street_kit.png)
+- [TD3](REFS_TRACK_DETAILS_2026-10-11/TD3_dirt_offroad_kit.png)
+- [TD4](REFS_TRACK_DETAILS_2026-10-11/TD4_uebergaenge_rampen.png)
+- [TD5](REFS_TRACK_DETAILS_2026-10-11/TD5_fortgeschritten.png)
+- [CS1](REFS_CITY_STREETS_2026-10-11/CS1_inselstrassen_bord_gehweg.png)
+- [CS2](REFS_CITY_STREETS_2026-10-11/CS2_landstrasse_schotter.png)
+- [CS3](REFS_CITY_STREETS_2026-10-11/CS3_cosmic_highway.png)
+- [CR1](REFS_COUNTRY_TUNNEL_2026-10-11/CR1_bergschotter.png)
+- [CR2](REFS_COUNTRY_TUNNEL_2026-10-11/CR2_fusswege_wanderpfade.png)
+- [CR3](REFS_COUNTRY_TUNNEL_2026-10-11/CR3_berginsel_gesamt.png)
+- [CR4](REFS_COUNTRY_TUNNEL_2026-10-11/CR4_landstrasse_kit.png)
