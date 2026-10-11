@@ -1397,7 +1397,7 @@
    "date": "2026-10-11",
    "area": "Strecke",
    "verdict": "TUNE",
-   "text": "Haltebucht C4a: Die orange Fläche, auf der der Farmer steht, liest sich als zu breite Track-Bande. Dort gehört ein Bürgersteig mit gemauerter Bordsteinkante hin (Vorlage RKIT Gehweg/Bord Lauf 03: Bord, Gehweg, Kantensteine, Haltebucht mit Sitzmauer; B7 TOWN_BAY), mit weichem Übergang auf die Insel; Alternative wäre Grünfläche mit Race-Track-Bande.",
+   "text": "[11.10. spät: Lieferung mit RKIT-Bürgersteig = TUNE; bekannte Punkte: Gehweg-Ende als gerade Linie ins Gras, Knet-Tropfen lesen sich als flache Scheiben] Haltebucht C4a: Die orange Fläche, auf der der Farmer steht, liest sich als zu breite Track-Bande. Dort gehört ein Bürgersteig mit gemauerter Bordsteinkante hin (Vorlage RKIT Gehweg/Bord Lauf 03: Bord, Gehweg, Kantensteine, Haltebucht mit Sitzmauer; B7 TOWN_BAY), mit weichem Übergang auf die Insel; Alternative wäre Grünfläche mit Race-Track-Bande.",
    "values": {},
    "owner": "Lab + RKIT",
    "check": "Standbild bay_from_hex vorher/nachher",
@@ -1670,6 +1670,20 @@
    "source": "Georg 11.10.",
    "supersedes": null,
    "why": "Trittsteine müssen zur echten Schrittlänge der Figuren passen, sonst stolpert die Animation.",
+   "applies": "trail"
+  },
+  {
+   "id": "V-158",
+   "date": "2026-10-11",
+   "area": "Insel",
+   "verdict": "RULE",
+   "text": "Fuß- und Wanderpfade: höchstens 12 % Steigung ohne Stufen; darüber Treppe (Stufenmaße nach V-157 gemessen) mit Podest.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "trailChecks walk_grade",
+   "source": "Georg 11.10.: „12 % passt“",
+   "supersedes": null,
+   "why": "Bequem begehbar, steiler wird Treppe.",
    "applies": "trail"
   },
   {

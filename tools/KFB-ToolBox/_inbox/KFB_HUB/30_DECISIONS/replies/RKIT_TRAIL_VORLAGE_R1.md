@@ -63,3 +63,21 @@ Gebaut wird erst, wenn Georg A (Steigung ohne Stufen) und B (Trittstein-Abstand)
 - Das Insel-Layout führt; die Lab-Gehfläche (`surface.ts`, Walker 35°, `stepMax`) prüft.
 - TRAIL rechnet das Profil aus Mittellinie + Höhenverlauf des Lab: Stufenzahl und -höhe, Steg- bzw. Brückenspanne, Trittstein-Abstand.
 - TRAIL gibt Anker `{p, T, U}` zurück. Es gilt dasselbe Schema wie bei B7: Geometrie RKIT, Look und Platzierung Lab.
+
+## Entscheid B (Georg, V-157) und Parameter-Schnittstelle
+
+Der Trittstein-Abstand wird nicht geschätzt, sondern aus Locomotion bzw. Animationen gemessen. Hauptreferenz ist das Medium-Rig. Die MVP-Sitzung liefert die Schrittlängen je Gangart. Im Core steht **kein fester Wert**.
+
+**Schnittstelle (vorgesehen, Bau erst nach A):**
+
+```js
+// gait = vom Lab gemessen (Medium-Rig), Lab-Einheiten; Track Core rechnet nur damit, speichert nichts davon
+const gait = { rig: 'medium', walk: { stride }, jog: { stride }, hop: { maxGap, maxRise },   // Schrittlänge je Gangart, Sprung-Grenzen
+               step: { maxRise, minTread } };                                                   // was der Walker als Stufe nimmt
+trailSteppingStones(segment, { gait, mode: 'walk' | 'hop' })   // Abstand = gait[mode].stride (bzw. ≤ hop.maxGap), Steine {p, T, U, r}
+trailStairs(segment, { gait, kit: 'masonry_a' })               // Stufenhöhe = min(Masonry-A-Steigung 0,45, gait.step.maxRise); Auftritt ≥ gait.step.minTread
+```
+
+- Fehlt `gait`, wirft die Funktion einen Fehler. Es gibt keinen stillen Standardwert.
+- `trailChecks` prüft zusätzlich: Steinabstand ≤ `stride`, Stufe ≤ `maxRise`.
+- Offen bleibt A, die größte Pfad-Steigung ohne Stufen.
