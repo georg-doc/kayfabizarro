@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Spiral-Freiraum gemessen
+- RKIT: td03-Spirale (auch in J17/P1 B/td05) 3,35 statt nötig 4,9 → FAIL; O1-Ring PASS. Prüfung spiral_clearance freigegeben; neue/genutzte Spiralen steiler (Georgs Richtung), J17-Referenz unverändert.
+
 ## 2026-10-11 · Spiralen höher
 - V-169 Steighöhe je Umlauf ≥ Kamerahöhe + Hülle + Marge; Core-Prüfung + Kamera-Test.
 
