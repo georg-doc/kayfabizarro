@@ -1477,6 +1477,20 @@
    "applies": "ab Track Core 0.16.2"
   },
   {
+   "id": "V-144",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Georgs Referenzen „Vulkaninsel mit Rundkurs“ und „Rundkurs-Baukasten“ (11.10. 15:23) gelten für Logik und Modul-Katalog, nicht für Farben: Kreisel mit vier Anschlüssen, Landmarke (Vulkan) als Mitte (Szenerie-Anker), Module gerade→Kreisel, geführte Einfädelung (ENTRY), geführte Ausfädelung (EXIT), innere bzw. äußere Banden-Übergänge, Bord- bzw. Schulter-Verjüngung, Markierungs-Logik (Vorfahrt, gestrichelt, Ausfahrtpfeile), Endkappen; „keine gelöschten Banden, saubere Übergänge, wiederverwendbar“. Look bleibt J17 (V-102: schieferblau, orange Banden). Inselbasis bestätigt V-142.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "Modul-Katalog-Abgleich + Standbild Kreisel",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Georg zeigt erstmals das ganze Baukasten-Prinzip mit Anschluss-Modulen in einem Blatt; passt zu V-134.",
+   "applies": "ab C4/E"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

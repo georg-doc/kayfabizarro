@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Rundkurs-Baukasten-Referenz
+- V-144 Vulkaninsel + Rundkurs-Baukasten als Logik-/Modul-Referenz (Look bleibt J17); Inselbasis bestätigt V-142. Abgelegt replies/REFS_RUNDKURS_2026-10-11/.
+
 ## 2026-10-11 · Kreisel-Prüfgrenze
 - V-143 Kreisel-Wegabstand wie Kreuzung (Familien-Fahrzeugbreite) + 0,15 Marge (V-032); RACE unverändert. Einarm-Wendeschleife Ausrundung ≥ 20, turntable-Anker.
 
