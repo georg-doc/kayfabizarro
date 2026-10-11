@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "kfb.rhythm-props-inventory/1 research",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "models",
+    "providerPriority",
+    "sourceFilesPublished",
+    "previewImagesPublished"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.rhythm-props-inventory/1"
+    },
+    "sourceFilesPublished": {
+      "const": false
+    },
+    "previewImagesPublished": {
+      "const": false
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "provider",
+          "package",
+          "file",
+          "license",
+          "metrics",
+          "skins",
+          "clayFit"
+        ],
+        "properties": {
+          "provider": {
+            "enum": [
+              "KayKit",
+              "Tiny Treats",
+              "Quaternius",
+              "Kenney"
+            ]
+          },
+          "clayFit": {
+            "enum": [
+              "ja",
+              "mit Material-Tausch",
+              "nein"
+            ]
+          },
+          "metrics": {
+            "type": "object",
+            "required": [
+              "heightModelUnits",
+              "triangleCount",
+              "measurement"
+            ],
+            "properties": {
+              "heightModelUnits": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "exclusiveMinimum": 0
+              },
+              "triangleCount": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
