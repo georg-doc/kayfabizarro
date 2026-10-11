@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Blender Form Kit gestartet
+- V-119: Georg hat die Freigabe an den Blender-Coworker weitergegeben; K1 + K2 laufen (zweite Baustelle neben C1b+C3). WSA nur Recherche.
+
 ## 2026-10-11 · levelSet Zwischenstand
 - Zu V-116: Hirn/Darm/Niere gleich, Topologie 0/0/0 bei allen 8 Körpern, Dreiecke −60 %. Herz: Truncus-Rest (von O1 entfernt) per Feld-Maske entfernen (vorlagengetreu), helle Flecken mit geraden Kanten (Normalen/Farbe) beheben; Gefäßstümpfe als Befund mit Spielkamera-Bild. ?rkit=1 bootet mit 0 Warnungen.
 
