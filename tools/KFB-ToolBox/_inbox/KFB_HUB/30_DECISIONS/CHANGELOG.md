@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Bank B TUNE, Budget
+- V-162 Bank B TUNE 5–6/10 (Bergmasse um Tunnel zu dünn, Unterseite/Terrain „draufgelegt“, Strecke wenig organisch), passt erstmal. Georg: 20 % Nutzungsbudget verbraucht → Berichte bündeln.
+
 ## 2026-10-11 · Lab auf Track Core 0.16.9
 - Teil 0 gegen v0.12 Δ 0; Gore/U-Turn 1:1 aus Core-Daten; nur noch track-core-0.16.9 im Lab. RKIT pausiert.
 
