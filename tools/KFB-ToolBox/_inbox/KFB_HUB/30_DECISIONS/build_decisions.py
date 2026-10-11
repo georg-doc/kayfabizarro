@@ -157,6 +157,7 @@ d('V-176','2026-10-11','Referenz','RULE','KFB Akashic Library (4 ChatGPT-Bilder 
 d('V-177','2026-10-11','Animation','RULE','Motion- und Animations-Leitfaden R1 (Agent Motion-Director): zuerst Bestand sichten (Animation Lab, Flight/Travel-Konzept, Rigs, Gangwerte, Triplets), dann Konzept für Fortbewegung und Reisezustände, emotionales Acting (Pose, Geste, Augen, Brauen, Lider, Emanata) mit NPC-Choreografie-Bauanleitungen; Kampf nur als Skizze (nicht MVP). Demos erst danach als eigener Bauschritt mit Georgs Okay.', 'Steuerung + Motion-Director-Agent', 'MOTION_GUIDE_R1.md', 'Georg 11.10.')
 d('V-178','2026-10-11','Prozess','RULE','WSA als unabhängiger Gegenprüfer des Architektur-Audits (AUDIT_ARCH_R1), aber erst wenn es Wirkung hat: nach den V-171-Punkten Banden, Flackern und Insel-Cache. Dann prüft WSA den reparierten Stand gegen das Audit, nur mit Branch-Link und Fragen, ohne Schlussfolgerungen der Steuerung.', 'Steuerung + WSA', 'WSA-Gegenprüfung R1', 'Georg 11.10.')
 d('V-179','2026-10-11','Animation','RULE','Antworten Motion-Leitfaden R1: (1) Kurzer, volumenerhaltender Squash an Figuren ≤ 8 % ist erlaubt (V-060 gilt für Figurengröße, nicht für Animation). (2) Emanata als Knet-Plättchen. (3) Brauen (brow-rig.v2) jetzt ins Lab, Mund später. (4) Mixamo-Clips (auf KayKit retargetet) nutzen, Rohdateien nie in ein öffentliches Repo. (5) Flug: 400-ms-Fenster für die zweite Leertaste gilt (zu V-024).', 'Lab + Motion', 'MOTION_GUIDE_R1 v0.2', 'Georg 11.10.')
+d('V-180','2026-10-11','Animation','RULE','Stürze und Wipeouts (heavy_fall, impact_crash u. ä.) dürfen kurz stärker stauchen als die 8-%-Grenze aus V-179, volumenerhaltend und mit Erholung zurück auf 1,0. Obergrenze schlägt der Motion-Leitfaden vor (Recherche-Matrix Sy 0,75), Georg urteilt am Demo.', 'Lab + Motion', 'Sturz-Demo', 'Georg 11.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -302,6 +303,7 @@ WHY = {
  'V-177':('Figuren sollen expressiv cartoonig spielen; erst Konzept auf Bestand, dann Bau.','ab jetzt'),
  'V-178':('Gleiches Modell prüft sich selbst nicht unabhängig; Gegenprüfung erst am reparierten Stand sinnvoll.','nach V-171 Punkt 1–3'),
  'V-179':('Damit Figuren-Acting auf Bestand gebaut werden kann.','ab jetzt'),
+ 'V-180':('Squash proportional zur Aktion (Motion Matrix); Stürze brauchen sichtbaren Aufprall.','ab jetzt'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

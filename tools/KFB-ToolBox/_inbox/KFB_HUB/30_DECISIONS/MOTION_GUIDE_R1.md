@@ -554,7 +554,7 @@ Alle Demos laufen auf der Demo-Insel bzw. dem Hub, nie im RKIT-Test-Hub [V-014].
 12. **Kenney Emotes:** Dürfen die Kenney-Emotes (CC0) als Formvorlage für Emanata dienen, obwohl Kenney in der Reihenfolge zuletzt steht [V-070]?
 13. **Timing-Rahmen:** Gilt der 3,6-s-Rahmen aus dem Acting Lab als Prüfrahmen, mit verkürzten Spielszenen nach §3b?
 14. **Demo-Reihenfolge:** Welche Demos zuerst? Vorschlag D1 → D4 → D2 → D3, D5 erst mit Triplet.
-15. **Squash bei Stürzen (neu aus der Motion Matrix §1d):** Die Matrix will „Squash proportional zur Aktion“ und starken Squash bei `heavy_fall`/`impact_crash`. Bleibt die 8-%-Grenze überall, oder dürfen Wipeouts kurz mehr (z. B. bis Sy 0,75 laut Recherche-Matrix)?
+15. ✅ **Entschieden [V-180]:** Stürze dürfen kurz mehr stauchen. — **Squash bei Stürzen (neu aus der Motion Matrix §1d):** Die Matrix will „Squash proportional zur Aktion“ und starken Squash bei `heavy_fall`/`impact_crash`. Bleibt die 8-%-Grenze überall, oder dürfen Wipeouts kurz mehr (z. B. bis Sy 0,75 laut Recherche-Matrix)?
 
 ---
 
