@@ -1,3 +1,18 @@
+# CURRENT OVERRIDE · Akashic Library R3 · no stone support piers under floating track · 2026-10-11
+**Human correction accepted as DESIGN RULE ONLY · R3 illustration MOOD_ONLY/TUNE · R2 OPEN-STAGE grammar retained.**
+
+Georg corrected the previous drive-in/race-track illustration: ground-class **stone columns and masonry support pylons along the island rim and under free-hovering approach/exit track are REJECTED**. These belong to grounded island structures only and are physically misleading when hung below a floating/cosmic Joyride deck. Grounded on-island stone parapets/short retaining walls remain possible, but no pillar rhythm supports a sky track. Two real island attachment/transition landings and connected up/down ramps are the design intent; actual Track Core/Joyride sockets, collision and Terrain/Surface Truth contacts remain untested, so nothing is certified mechanically.
+
+Read **`R3_FLOATING_TRACK_NO_STONE_PIERS.md`** first for the additive current visual correction. R2's half-open inhabited library scenelets and single continuous island remain binding; neither a new island nor a closed fantasy castle is authorized. Current generator result documented in **`R3_PIER_FREE_IMAGE_RECEIPT.json`** and **`TEST_REPORT_R3_PIER_FREE.md`**.
+
+Image result: `KFB_Akashic_Library_R3_PierFree_MOOD_ONLY.png` 1536×1024, SHA256 `177cceec758712d22cc5239c4c881aa1a6653fba61444d42c9ef051646257a00`; chat ZIP with before+after and manifest `KFB_Akashic_Library_R3_PierFree_Visual_Correction.zip`, 5,731,352 bytes SHA256 `60992dfa9d2418c1d7aafec803510dc3b700a1fd3cdb6bd96c87210ef1abb9f4`, CRC 4/4 PASS. **Artifacts are conversation-local only, not uploaded as original binary pixels to GitHub/Site.** Regeneration materially altered the picture and introduced unrequested signage/branding. Therefore **NOT surgical, NOT source locked, NOT HUMAN_ACCEPTED, NOT GOLDEN**. Existing R2 source geometry evidence is unchanged.
+
+Repo `georg-doc/kayfabizarro` / branch `planning/kfb-akashic-library-island-visual-r1-2026-10-11` / no PR. Exact branch head is supplied by a post-commit ref fetch and durable Production Control checkpoint. No Site, Stage, geometry, runtime, merge, Live or change to Four-Island R4 STOP.
+
+**ONE next gate:** produce source-image-conditioned, visually faithful **pier-free** revision from the real selected donor/frame. Keep everything else unchanged, especially original Diorama/Drive-in layout, and show true source proof to Georg for TUNE/PASS/FAIL. Do not invent replacements for piers.
+
+---
+
 # Akashic Library Island · Owning RETURN · R2 OPEN STAGE MOOD + ORIGINAL SOURCE ISOLATION
 Date 2026-10-11 · **ONE NEW R2 MOOD IMAGE GENERATED · ORIGINAL MODEL GEOMETRY ISOLATED · SOURCE-LOCKED IMAGE STILL BLOCKED**.
 
