@@ -1,5 +1,22 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-11 · SUNO SPOKEN-MUSIC PERFORMANCE R0.1 · AUTHORING CANDIDATE / SITE INBOX SAVED
+
+Scope: Georg's Suno spoken comedy + accompaniment experiment becomes one **additive ChatterBox/Voice authored-performance candidate**, with original Clown first. No second dialogue/AudioContext/mixer/Resident rig/runtime owner. The current Voice R1 product stays privately published on existing KFB Audio Site at Source 0.5.1, unchanged by this planning slice. Source-backed Triplet `core.frame.01` non-canon audition and active Voice human listening gate remain unchanged.
+
+Project state:
+- Repo: `georg-doc/kayfabizarro`; branch: `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`; existing Draft PR **#379**; source head after documentation commits must be fetched from exact branch ref.
+- Owner: existing KFB ChatterBox / Resident Speech output, with KFB Audio PR #365 sole mix/duck/playback owner and Resident Atlas/Performance Suite original acting/prop owner.
+- New working design: `SUNO_SPOKEN_MUSIC_PERFORMANCE_SLICE_R0_1_2026-10-11.md` (Script-first vs Prompt-first; authorial anti-slop review, theatrical cues, full mixed-media take, rights/provenance, shared approximate download limit); one original candidate `data/SUNO_SPOKEN_MUSIC_PILOT_R0_1.json` (Clown with exact `clown-juggling-island`, three clubs, ungenerated 85s target and no invented audio URL), `SUNO_PERFORMANCE_TEST_REPORT_R0_1_2026-10-11.md`, additive `SUNO_PERFORMANCE_CHANGELOG_R0_1.md`.
+- **Actual current checks:** manifest 29/29 structural PASS, source/contract 20/20 PASS; a case-sensitive harness wording error was corrected before reporting, not a production defect. GitHub writes/readbacks are source/doc checks only.
+- **Private Site persisted and re-read:** KFB Production Control workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`; design file id `b502e3c7-f4ca-462a-a8de-8fbc52f73651`, SHA256 `0086491451b5d1ceb25ca1dc81fa7b932c6917c54acb693549eca91beaf05dd6`; pilot JSON file id `0b9c4825-8ece-43e1-8306-20b90a2b6787`, SHA256 `2caa2cd15d1d329ad1ba7fb76c84ac534ccb2844f4fb2578aa2b267a3c203a4f`.
+- **No audio generation, Suno downloads, human audible proof, playback changes, Site publishing, Cloudflare Stage, World R5, PR merge, Live promotion or rights clearance.** User-estimated 60 monthly downloads is UNVERIFIED and shared with RoadTrip/Soundscape; first pilot export cap six selected files, not an account quota.
+- **One next Suno lane gate:** `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`: acquire/inspect one genuinely generated 60–90s Script-first Clown performance; confirm transcript, duration, licensing and intelligibility; stage one actual mix/cue sync on existing KFB Audio + Resident consumers; only then Georg KEEP/TUNE/CUT for the resulting take. Separate earlier Voice gate `KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1` remains open, not superseded.
+- Existing KFB World Four-Island Story Vision A/B remains sole World human design gate; this media research is independent and nonblocking.
+
+---
+
+
 ## 2026-10-11 · ADDITIVE RETURN · Suno spoken-music / Stand-up planning slice R1
 
 **Status:** PLANNING_PREP_VERIFIED + PRIVATE PRODUCTION-CONTROL INBOX MIRRORED; not implemented, not a new Site product. Existing Voice/Triplet human listening gate remains open; no approval or Live promotion.
