@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Bank B geliefert
+- Tunnel im prozeduralen Inselkörper (ein Feld, ein levelSet, 0/0, Durchsicht 0, Freiraum ok, M und L). Tunnel-Technik passt; Inselkörper weit von IB2/IB3/CR3 (glatt, Fels als Splitter, Berg als Kappe). An Georg; Inselkörper-Arbeit pausiert bis zu seinem Urteil; Bau-Sitzung weiter mit C4b/C4c.
+
 ## 2026-10-11 · V-138 mit neuem GLB
 - Bei 60 fps: RKIT-Bett allein lässt eine 0,05–0,1-Lücke vor dem Bord bei s≈119 (an RKIT, nicht eilig); mit Lab-Tasche G2 zusätzlich 0 Löcher, Fußtest PASS. Beide Lösungen aktiv.
 

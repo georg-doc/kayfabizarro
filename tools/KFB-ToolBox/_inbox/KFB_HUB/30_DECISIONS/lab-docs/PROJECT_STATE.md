@@ -2,6 +2,8 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · V-130 Bank B (V-156) Tunnel im echten Inselkörper:** `docs/critic/lab-track/2026-10-11_V130-bankB/` (REPORT, BANK_B_BLATT mit CR3/IB2/IB3) — `?host=berg[&size=M|L]`, ein Feld/levelSet: Erdmasse + Scholle-Profil + Loben, Fels verschmolzen, Moos, Schnee, Voreinschnitt mit Felsstirn; M stone_arch/mine + L geschlossen (0/0, 1 Komp.); M-Proportion als Abstand benannt.
+
 **Lieferung 11.10. · V-138 TUNE (Gehweg-Ende organisch, Tropfen plastisch):** `docs/critic/lab-track/2026-10-11_V138-tune/` (REPORT, V138_TUNE_BLATT) — Knet-Zungen + lose Kantensteine am Ende, gewölbte Kleckse; Nebenbefund Bord-Fuge (falsches Fußtest-PASS unter Last) per LAB PATCH G2 geschlossen; Fußtest + Parity bei 60 fps PASS.
 
 **Lieferung 11.10. · V-153 KayKit-Faktor + Hatchback-Test:** `docs/critic/lab-track/2026-10-11_V153-cars/` — ein Kit-Faktor (Sedan), Hatchback 5,40 × 2,80, Cicada-BODY im Lab richtig; Fahrtest 3 Autos × 4 Läufe sauber, Fußtest 6/6. Parity hub/organ PASS, game C4 0,054–0,062 unter Last (Notiz).
