@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Inselboden-Referenzen an Blender
+- V-142 drei Georg-Referenzen (Knet-Erdkörper, eingebettete Felsbrocken, überquellendes Moos, dünne Wurzeln) als Basis-Vorbild; Brief R3 an Blender (replies/BRIEF_BLENDER_INSELBODEN_R3.md + REFS_INSELBODEN_2026-10-11/).
+
 ## 2026-10-11 · EXIT/ENTRY auf RACE PASS
 - RKIT 19/19 (Track Core unverändert): RACE-Aus-/Einfahrt, Gleichstand Hauptstrecke 0, Gore/Nase, Rampe mit CONNECT auf Ebene; B6-Zone ohne Geometrie-Änderung. Für C4c im Lab: Banden-Enden an Bruchfugen, Gore/Nase im J17-Look, Randlinien im Übergang; Astbreite 4,0 m bis Fahrtest anders zeigt.
 
