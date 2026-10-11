@@ -1285,7 +1285,7 @@
    "date": "2026-10-11",
    "area": "Strecke",
    "verdict": "TUNE",
-   "text": "Prototyp „Tunnel im Feld“ (Hirn + race_tube): TUNE, weil die Joyride-Tunnel-Ein- und -Ausgänge fehlen, alle 4 Varianten inkl. Rechteck. Goldene Referenz: J15-Cut evidence/tc1-looks.v3.jpg (4 Looks × Portal Einfahrt / Innen / Portal Ausfahrt): stone_arch Bogensteine, stone_rect Stein-Sturz + innen rechteckig, race_tube rot-weißer Rand + Lampenschild, mine Holzportal + Laternen + innen Rechteckrahmen. Rechteckprofil aus Core v0.12 tunnelLooks (Bestand). Körper ersetzt nur den Wirt, Portal-Bausatz je Look an beiden Enden. Profil (Bogen | Rechteck) ist eigene Modul-Eigenschaft, getrennt vom Look; Rechteck-Tunnel im Feld baubar (z. B. Mine), im Strecken-Editor je Tunnel wählbar.",
+   "text": "Prototyp „Tunnel im Feld“ (Hirn + race_tube): TUNE, weil die Joyride-Tunnel-Ein- und -Ausgänge fehlen, alle 4 Varianten inkl. Rechteck. Goldene Referenz: J15-Cut evidence/tc1-looks.v3.jpg (4 Looks × Portal Einfahrt / Innen / Portal Ausfahrt): stone_arch Bogensteine, stone_rect Stein-Sturz + innen rechteckig, race_tube rot-weißer Rand + Lampenschild, mine Holzportal + Laternen + innen Rechteckrahmen. Rechteckprofil aus Core v0.12 tunnelLooks (Bestand). Körper ersetzt nur den Wirt, Portal-Bausatz je Look an beiden Enden. Profil (Bogen | Rechteck) ist eigene Modul-Eigenschaft, getrennt vom Look; Rechteck-Tunnel im Feld baubar (z. B. Mine), im Strecken-Editor je Tunnel wählbar. Probe nicht am Hirn (Platzhalter), sondern (1) am TC1-Knethügel 1:1 gegen tc1-looks.v3 und (2) an einem MVP-Inselkörper (StreakByte-Demo-Insel bzw. R2D-Scholle) über den Mesh→Feld-Adapter.",
    "values": {},
    "owner": "Lab",
    "check": "Blatt im tc1-looks.v3-Raster neben der Referenz",
