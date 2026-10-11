@@ -2093,6 +2093,34 @@
    "applies": "nach Dungeon-POC"
   },
   {
+   "id": "V-188",
+   "date": "2026-10-12",
+   "area": "Worldbuilder",
+   "verdict": "RULE",
+   "text": "Modulkarte Worldbuilder R1: Bestand aller Lab-Module, der KFB-ToolBox und der veröffentlichten Sites (kayfabizarro.pages.dev) prüfen; modular vorbereiten für drei Modi (Insel-Editor/God-Mode, Spieler, später Maker Island) mit gemeinsamem Welt-Dokument statt Abspaltungen. Erst Inventur und Vertrag, Bau danach.",
+   "values": {},
+   "owner": "Steuerung + Modul-Agent",
+   "check": "replies/WORLDBUILDER_MODULE_MAP_R1.md",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Editor, Spieler und Maker sollen dieselben Module nutzen; Bestand zuerst (V-140).",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-189",
+   "date": "2026-10-12",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Steuer-Seite: ein privates Artifact mit Masterplan (Phasen, Slices S1–S12 aus Plan R1 §5) und Entscheidungs-Reiter (offene Urteile mit Bild, PASS/TUNE/FAIL bzw. Optionen + Notiz); die Steuerung liest die Klicks und trägt sie ins Register ein.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "Seite live",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Georg soll offene Urteile an einem Ort klicken statt im Chat suchen.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

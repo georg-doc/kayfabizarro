@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Steuerpult, Housekeeping, Modulkarte
+- V-189 Steuerpult (privates Artifact https://claude.ai/artifact/WxG16gvt7LNrBXxYkAhr9d, Quelle STEUERPULT.html): Reiter Entscheidungen (7 offene Fragen, Klick + Notiz, Steuerung liest aus) und Masterplan (Phasen A–H, Slices S1–S12 aus Plan R1 §5).
+- Housekeeping: Register-Querverweise (18 Einträge), Plan R1 §2h–§2l + §5 Slices, START_HERE, Acceptance-Index, POSTMORTEM_STEERING_R2.
+- V-188 Modulkarte Worldbuilder (Agent läuft).
+
 ## 2026-10-12 · Housekeeping: Register-Check, Plan R1 + Slices, START_HERE, Post-Mortem R2
 - Register-Check: alle 150 Einträge in DECISIONS.md und decisions.json, Warum/Wann vollständig, V-160 … V-187 alle im CHANGELOG. Querverweise additiv ergänzt („[12.10.: → …]“) an V-010, V-024, V-033, V-050, V-060, V-071, V-073, V-118, V-119, V-123, V-156, V-166, V-168, V-169, V-171, V-174, V-175, V-182 (u. a. V-175 (3) → V-185, V-169 Einheit TC-m → V-185, V-166/V-168/V-171 → V-183). Neu erzeugt.
 - Plan R1: Stand bis V-187; neu §2h Rhythmus/Billboards/Freiraum, §2i Banden-Enden und Audit-Reihenfolge, §2j Motion, §2k Dungeon, §2l Prozess 12.10.; §3 offen aktualisiert; §5 „Nächste Slices (Stand 12.10.)“ mit 12 Slices (Besitzer, Voraussetzung, Abnahme, V-Nummern, Lab 5192 vs. parallel).
