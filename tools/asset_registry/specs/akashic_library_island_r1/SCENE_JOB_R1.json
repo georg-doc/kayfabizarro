@@ -1,0 +1,125 @@
+{
+  "schema": "kfb.asset-scene-image-job/1",
+  "jobId": "AKASHIC-LIBRARY-ISLAND-R1-HERO",
+  "mode": "scene_context",
+  "designClass": "MOOD_ONLY_UNTIL_SOURCE_VISUAL_PROOF",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "assetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb"
+    ],
+    "sourcePaths": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb"
+    ],
+    "blobShas": [
+      "5d4f21fe9fa621011c2061011c45ede74aa7fd6b",
+      "faa36ea1327c8287d24213d119929fa92c696fe5",
+      "9a0cce7691e94277f3409719e9e68c910c25aa2c",
+      "e508f7738fc99a383242c6d0a013351026f6c25e",
+      "615aaa9632cf1b262c257f2cb7c208a6f199ab84"
+    ],
+    "sourceRenderViews": [],
+    "licenseStatus": "UNKNOWN",
+    "sourceModelTriCount": null,
+    "sourceAssetBlobSha": null,
+    "nativeBbox": null,
+    "K2KitFactor": null,
+    "geometryLock": "loose",
+    "sourceProofStatus": "REGISTRY_IDENTITY_VERIFIED_RENDER_NOT_ISOLATED",
+    "originalSourcePixelsAvailableToRenderer": false
+  },
+  "context": {
+    "scenePurpose": "Akashic library island with lived-in paths: arrival -> Lorekeeper + real Tome -> reading alcoves / archive -> memory garden -> observatory; no arbitrary scattered landmarks.",
+    "selectedScenePacket": null,
+    "environmentAssetIds": [],
+    "characterAssetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb"
+    ],
+    "propAssetIds": [
+      "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseOpen.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/bookcaseClosedWide.glb",
+      "media/3D_Assets/kenney_furniture-kit/Models/GLTF format/books.glb"
+    ],
+    "camera": "single elevated 3/4 hero, ~35 degrees, entire island and underside visible",
+    "viewLabelsAllowed": false,
+    "contacts": [
+      "single continuous landmass with plateau bearing",
+      "supported door, steps and lower archive",
+      "pedestrian arrival-to-library walk path",
+      "optional separate Track Core/Joyride two-socket approach/exit, not a river bridge"
+    ]
+  },
+  "style": {
+    "bindingSSOT": [
+      "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+      "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md"
+    ],
+    "benchmarkRefs": [
+      "Dropbox /CLAUDE/KFB Claymation Reference/FLOATING ISLANDS DESIGN.webp",
+      "Dropbox /CLAUDE/KFB Claymation Reference/DioramaScenes - overview -f0a9d090-49c7-406e-9bc6-64f63cc6aa53.webp",
+      "skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md"
+    ],
+    "paletteRoles": [
+      "sandstone ivory #E8CFA8",
+      "weathered clay shadow #A47F78",
+      "oxidized copper #69A99B",
+      "garden #759981",
+      "interior parchment #F4DCAA",
+      "indigo shade #29384F"
+    ],
+    "materialMixAllowed": true,
+    "partsBudgetMax": 6
+  },
+  "generation": {
+    "sourcePixelsActuallySupplied": false,
+    "provider": null,
+    "providerRequestId": null,
+    "renderPrompt": "Create one 16:10 high-quality 3/4 KFB claymation floating island environment concept, with a single cohesive thick irregular floating earth island, physically plausible striated rock underside, weathered sandstone library with large visible book-filled arched windows, one large off-center copper dome, narrower observatory tower, modest reading apse, warm inhabited lantern-lit interior, tiny grown memory garden, deeply inset undercroft vault, connected arrival forecourt. Tactile hand-built volumes, gentle softened edges, faceted material regions, restrained fingerprints in near clay, distinct stone/wood/copper/glass/greenery, cinematic lavender dusk and warm amber lamp glow. One legible continuous walking route. Keep original source-asset character, tome and bookcase identity from provided REAL isolated source captures when available. NO cars, fake logo, KFB text, promotional typography, poster panels, labels, hex tiles, detached stacked boulders, arbitrary extra floating islands, stone pier bridge in empty space, neon, plastic shine. Show full foundation and connected architecture. If source captures are missing, BLOCK source-fidelity claim and keep image as MOOD_ONLY.",
+    "status": "BLOCKED_SOURCE",
+    "blockingChecks": [
+      "original Dropbox image pixel bytes not proven in image-generation input",
+      "actual source donor render/view isolation missing",
+      "architectural neutral-form and measured contact evidence missing"
+    ]
+  },
+  "architecturalFormPreflight": {
+    "formGrammarCount": 6,
+    "meshCount": null,
+    "formAnatomy": "DESIGN_R1.md and PARTS_R1.md",
+    "formBeforeMaterials": {
+      "sourceIsolation": false,
+      "neutralForm": false,
+      "styledSourceMaterial": false
+    },
+    "constructionContacts": {
+      "measured": false,
+      "independentProof": false,
+      "fullWidthRouteLanding": false
+    },
+    "geometryScore": null,
+    "styleScore": null,
+    "formScore": null,
+    "verdict": "UNDECIDED"
+  },
+  "approval": {
+    "classification": "MOOD_ONLY",
+    "georgPicked": false,
+    "goldenRef": false
+  },
+  "provenance": {
+    "targetOwner": "tools/asset_registry/librarian",
+    "conceptFileOutsideGitHub": "KFB_Akashic_Library_Island_R1_MOOD_ONLY.png",
+    "outputSha256": "5bd671f79f63b7c3e1a150f034a0538fd0de7c13507007fcfc9a88b594c0c42f",
+    "pixelFileStatus": "CHAT_ONLY_NOT_COMMITTED",
+    "dropboxImagePixelsFedToGenerator": false
+  }
+}
