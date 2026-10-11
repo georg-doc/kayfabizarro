@@ -2,6 +2,10 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · V-153 KayKit-Faktor + Hatchback-Test:** `docs/critic/lab-track/2026-10-11_V153-cars/` — ein Kit-Faktor (Sedan), Hatchback 5,40 × 2,80, Cicada-BODY im Lab richtig; Fahrtest 3 Autos × 4 Läufe sauber, Fußtest 6/6. Parity hub/organ PASS, game C4 0,054–0,062 unter Last (Notiz).
+
+**Lieferung 11.10. · V-157 Gangwerte Medium-Rig:** `docs/critic/lab-track/2026-10-11_V157-gait/` (GAIT_V157.md, gait_v157.json) — Schritt walk 0,561 / jog 2,034 / sprint 2,483 lab, Sprungweite 2,71 / 4,93, stepMax 0,885; Treppen-Fußtest folgt an trailStairs.
+
 **Lieferung 11.10. · V-138 Hex-Haltebucht mit RKIT-Bürgersteig:** `docs/critic/lab-track/2026-10-11_V138/` (REPORT, V138_BLATT, foot_test, parity). Bord, Gehweg und Kantensteine aus RKIT `hex_b7.parts.glb`, Knet-Schüttung zur Hex-Insel (Lauf 4,4 m), Kachel-Kerbe gefüllt. Fußtest 6/6, Parity PASS nach Wiederholung unter Last (Swap ~17,5 / 18,4 GB).
 
 **Lieferung 11.10. · C1b+C3 Runde 2:** `docs/critic/lab-track/2026-10-11_C1b-C3-r2/` — Mündungs-Ringspalt geschlossen (O1 bohrt nicht mehr, TC1 schneidet, Stirnfläche per manifold-3d), Tunnel-Licht wie J17, Q5-Kehlen, J17-Markierungen M2, Platzhalter-Material. V-112 PASS (4 Styles), Fahrtest/Dock/Parity PASS, V-115 Mitte/Übersicht PASS, nah 27–33 fps grenzwertig.

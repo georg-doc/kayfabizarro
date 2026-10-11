@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · KayKit-Faktor, Gangwerte
+- V-153 umgesetzt (Hatchback 5,40 × 2,80, breitestes Auto Cicada 3,11), Fahrtest 3 Autos alle Läufe 0 Fehler, Fußtest 6/6. V-157 gemessen (jog-Schritt 2,03 → Trittsteine nach jog). game Check 4 kippt unter Last (Notiz).
+
 ## 2026-10-11 · trail-Bibliothek
 - Track Core 0.16.6: trailProfile/Stairs/SteppingStones/Footbridge/Transition/Checks (12 %, Masonry-A-Stufen, Abstand = gemessene Schrittlänge, Fehler ohne gait), 19/19, Graphen identisch; Test-gait markiert, Lab-Vendor erst mit echten Werten. DIRT|MOUNTAIN ergänzt (20 m), HIGHWAY|DIRT bleibt verboten (über Landstraße).
 
