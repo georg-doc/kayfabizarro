@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · WSA-Handoff V-141, neuer WSA-Auftrag
+- WSA hat das Datenpaket für den Lab-Import übergeben (15 Tests PASS, kein Lab-src). Importer = Lab Phase E/F.
+- Neuer WSA-Auftrag (Recherche): J17-Look-Spezifikation je Strecken-Modul aus V-144 (replies/BRIEF_WSA_TRACK_MODULE_LOOK_SPEC_R1.md).
+
 ## 2026-10-11 · Rundkurs-Baukasten-Referenz
 - V-144 Vulkaninsel + Rundkurs-Baukasten als Logik-/Modul-Referenz (Look bleibt J17); Inselbasis bestätigt V-142. Abgelegt replies/REFS_RUNDKURS_2026-10-11/.
 
