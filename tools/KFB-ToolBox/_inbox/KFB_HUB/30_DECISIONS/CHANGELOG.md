@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Track Core 0.16.7
+- trail mit gemessenen Gangwerten (Trittsteine jog ≤ 2,034, hop ≤ 2,705; Stufe 0,444/0,889), D4 DIRT|MOUNTAIN, HIGHWAY→DIRT eigener Fehler; trail 24/24, dirt 30/30, bitgleich. wallTan fehlt als Zahl in gait_v157.json → MVP-Sitzung trägt nach. RKIT pausiert.
+
 ## 2026-10-11 · WSA R2 abgenommen, Licht-Studie beauftragt
 - WSA Look-Spec R2 (TD/CS/CR, skin inkl. trail) abgenommen; 17 der 19 Fragen bereits durch V-154/V-157/V-158 beantwortet (Zuordnung replies/STEERING_REPLY_WSA_R2.md). Nächster WSA-Auftrag: Szenen-Studie C Licht (J17-Tageslicht, Abend V-050, Tunnel-Innenlicht).
 

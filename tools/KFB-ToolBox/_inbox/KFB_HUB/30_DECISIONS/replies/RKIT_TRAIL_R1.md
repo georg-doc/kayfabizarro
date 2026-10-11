@@ -52,3 +52,24 @@ Entscheidung bitte über die Steuerung.
 
 - Sobald die MVP-Sitzung die Medium-Rig-Werte liefert: TEST_GAIT ersetzen, Tests neu laufen lassen, Bericht R2. Erst danach wird trail ins Lab vendort.
 - Der Tunnel-Steg (Core-Tunneldatum aus R1a) folgt als eigener kleiner Schritt nach Freigabe.
+
+## Nachtrag 0.16.7: echte Gangwerte (V-157) und D4
+
+**Gangwerte:** gemessen am Medium-Rig (Farmer A), Lab-Datei `docs/critic/lab-track/2026-10-11_V157-gait/gait_v157.json` (`kfb.gait/1`). Track Core liest sie direkt über `normalizeGait` ein.
+
+| Bauteil | Regel | Ergebnis mit gemessenem gait |
+|---|---|---|
+| Stufen | Setzstufe = min(Masonry A 0,4545; stepMax 0,885; Wandregel 0,70) | Hang 4 m auf 8 m: 9 × 0,444, Tritt 0,889 (≥ max(⅛ MC, 0,444 / 0,70)) |
+| Trittsteine (Standard jog, V-021) | Abstand ≤ jog.stride 2,034 | 9 m: 4 Steine, Abstand 1,8 |
+| Trittsteine walk (Sonderfall) | Abstand ≤ walk.stride 0,561 | 9 m: 16 Steine, Abstand 0,53 |
+| Trittsteine hop | Abstand ≤ jog-Sprung 2,705; Höhe ≤ Kante 1,181 | 9 m: 3 Steine, Abstand 2,25; 1,3 m Höhe wird abgelehnt |
+
+Alle Ergebnisse tragen `gaitSource: 'measured'`, alle trail-Checks bestehen.
+
+**Offen beim Lab:**
+- `step.minTread` ist `null`, und die Wandregel 0,70 steht nur als Text in der Datei. Track Core verlangt deshalb `step.wallTan` als Zahl; im Test steht 0,70 nach Steuerungs-Festlegung.
+- Bitte `step.wallTan: 0.70` (und nach dem Treppen-Fußtest `step.minTread`) in `gait_v157.json` eintragen. Danach geht die Datei ohne Zusatz durch.
+
+**D4** `DIRT|MOUNTAIN` (Bergstraße ↔ Schotter) ist wie D1 ergänzt. **HIGHWAY → Schotter** bleibt verboten (analog B4) und wirft einen eigenen Fehler.
+
+**Tests:** test-trail 24/24, test-dirt 30/30, alle Suiten unverändert, Teil 0 bitgleich, Graphen identisch zu 0.16.6.
