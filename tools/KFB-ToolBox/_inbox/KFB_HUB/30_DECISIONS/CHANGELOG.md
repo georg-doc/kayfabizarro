@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · 3D Style Guide v0.1
+- STYLE_GUIDE_3D_R1.md (Art-Director-Synthese aus Register, Plan, Referenzen; keine neuen Entscheidungen; 12 offene Fragen §10). Auf GitHub gespiegelt.
+
 ## 2026-10-11 · Kamera tiefer in engen Räumen (später)
 - V-170 Kamera-Absenkung für Minenschächte bzw. niedrige Tunnel als späteres Kamera-Modul; Deckenhöhe als Strecken-Daten.
 

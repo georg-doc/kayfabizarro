@@ -8,7 +8,8 @@ Stand: 11.10.2026 spät (bis V-168) · gepflegt von der Steuer-Sitzung (Claude C
 3. `lab-docs/KFB_WORLDBUILDER_PLAN_R1.md`: Phasen A–H.
 4. `lab-docs/PROJECT_STATE.md`: oberster Abschnitt = aktueller Stand.
 5. `lab-docs/PHASE_C_DONORS_R1.md`: Vorlagen für Phase C.
-6. `REVIEW_STEUERUNG_R1.md`: Entscheidungen der Steuerung, die Georg noch durchsehen soll, und offene Konflikte.
+6. `STYLE_GUIDE_3D_R1.md`: 3D Style Guide v0.1 (Synthese, Offen-Liste §10).
+7. `REVIEW_STEUERUNG_R1.md`: Entscheidungen der Steuerung, die Georg noch durchsehen soll, und offene Konflikte.
 
 ## Gilt auch für WSA (V-122)
 Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist Design-Eingang, nicht Plan. Vier-Insel-A/B = Eingang für Phase D/F, kein Tor für das Lab.
