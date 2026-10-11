@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Kritiker C1b-C3-r2: FAIL, zurück zum Konzept
+- Blinde Kritiker (V-125): 3D + Baukasten 5,14 (T4 3 → laut Protokoll Konzept statt Reparatur), Design 4,5 (D3 3); harte Schnitte gesehen. Hauptbefunde: Portale stehen vor dem Körper (Plattenrand, Geisterbogen, Messerkanten-Platte), Loch entlang der Tunnellinie im Hirn, Strecke speert in die Hub-Seite, stone_rect = stone_arch innen, Mine ohne Holzrahmen, Teal-Stich, unbeleuchtete Tunnel.
+- Bericht-Ehrlichkeit: REPORT „0/0/0, 1 Bauteil“ galt nur für die Join-Box; Körper haben 382–710 offene Kanten. Fahrtest war ein Schienen-Folger (beide Autos bitgleich), kein k2b-Beweis. Bau-Sitzung korrigiert REPORT und liefert ein Konzeptblatt; Georg entscheidet.
+
 ## 2026-10-11 · C1b+C3 Lieferung R1 geprüft
 - Fahrtest grün (Runde 10,58 km, 0× unter Fahrbahn/hängen/Bande, Nähte 0 m), V-112-Prüfungen 0/0/0 für 4 Styles × 4 Körper, Parity PASS.
 - Steuerung: Platzhalter-Organe mit einfachem Material (V-127/V-115: 35/59/56 fps), Parity Check 1 Sim-Zeit. Vor Kritiker: ringförmiger Spalt Röhre ↔ Bohrung schließen, Tunnel-Licht wie J17 (jetzt teal/braun), Q5-Kehlen. Pfeiler entfallen (Strecke schwebt).
