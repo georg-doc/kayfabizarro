@@ -1,5 +1,12 @@
 # RETURN · KFB Cosmic Highway visual batch R1 · 2026-10-11
 
+## Additive R2 return · 2026-10-11 · original Quaternius source forms verified
+- **Real source proof:** [four GLTF objects independently rendered from actual vertex/index mesh data](refs/Quaternius_Source_4View_R2_920.png), PNG blob `89b68c66a50d84910b72a9d847a20eaf3f7fe250` pushed on this branch, 920×690. Asset sources `Base_Large` (2790 triangles), `Planet_7` (2010), `Tree_Spiral_1` (748), `Tree_Floating_1` (2440). Source images are flat-shaded technical meshes, not atlas-textured GLTF or KFB-clay Golden.
+- **Corrected donor interpretation:** `Base_Large` is a sci-fi **dome architecture** and `Planet_7` is a ringed planet, neither can serve as a cohesive organic island-earth body; terrain remains separate continuous eroded geology. Both exotic Quaternius tree donor silhouettes now visually verified.
+- Two image-generation 1536×1024 attempts yielded branded modular marketing sheets instead of single unlabeled 3/4 KFB Cosmic Highway island. **0/2 hero image PASS**. After two non-improving attempts stopped the imagegen seam; [R2 recovery](R2_SOURCE_PROOF_AND_FAILURE_RECOVERY.md) and [QA](TEST_REPORT_R2.md). Full failed PNG originals preserved in conversation ZIP `KFB_Cosmic_Highway_R2_SourceProof_FailureRecovery_2026-10-11.zip` SHA256 `49e06e78f2e6c398e7b2e0adb8aae0bb08a95f734841d963be0288dc546cffb5`, 5,261,115 bytes, ZIP CRC + 2/2 image hashes verified; ZIP **not** on GitHub.
+- Repo static source/provenance: 11/11 checks PASS following explicit correction of one overly literal Markdown matcher. No independent visual reviewer, user acceptance, runtime graph proof, Site/Stage/PR or merge.
+- **Current next gate:** [single-source-conditioned R3 hero brief](BRIEF_COSMIC_HERO_R3.md), route through an image-capable executor that proves actual donor pixel conditioning; do not repeat old text-only poster prompt. Persist a correctly produced single hero image and Georg's A/B/FAIL before broader batch. Source owner remains Track Core/Asset Librarian with KFB Clay presentation, not this conceptual chat.
+
 **Outcome:** four **2D illustrative visual studies** with genuine Quaternius foliage silhouette evidence, source-led brief and exact file hashes; **not finished 3D claymation render batch nor playable KFB Cosmic Highway**.
 
 **Owner:** Joyride Track Core receiving visual-design slice; repo `georg-doc/kayfabizarro` / branch `planning/kfb-cosmic-highway-visual-batch-2026-10-11`; baseline `main@dccf75cabd222d951380693d84ab88053ee7e519`; PR none. No new geometry owner.
