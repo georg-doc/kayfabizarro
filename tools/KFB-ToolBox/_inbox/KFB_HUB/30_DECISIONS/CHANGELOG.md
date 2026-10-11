@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Sound TUNE, geschlossene Insel
+- V-137 Sound okay, Schmatz-/Klick-Geräusch stört (TUNE). V-136 Inseln = ein geschlossenes Mesh. Leerer Blender-Ordner „3D ASSETS/BLENDER MCP“ lokal nicht vorhanden (nichts zu löschen).
+
 ## 2026-10-11 · Georg zurück: Himmel, Sprünge, Strecken-Module, Blender
 - V-132 Weltraum-Himmel (KFB-Wolken, ferne Inseln, surreale Planeten, Knet-Asteroiden; später Käse-Mond, TinySkies-Sonnen). V-133 Sprung-Lücken bleiben. V-134 fehlende Strecken-Teile modular, nahtlos, konsistent (Track Core RKIT + Look Lab). V-135 Bildblätter verfälschen Inselbasis (Blender-Klötze). Mitschnitt hört Georg später.
 

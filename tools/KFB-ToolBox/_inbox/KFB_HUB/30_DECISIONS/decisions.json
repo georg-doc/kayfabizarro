@@ -1365,6 +1365,34 @@
    "applies": "sofort"
   },
   {
+   "id": "V-136",
+   "date": "2026-10-11",
+   "area": "Insel",
+   "verdict": "RULE",
+   "text": "Inseln sind ein geschlossenes Mesh (keine Block-Bauweise aus Einzelkörpern); gilt für Blender-Referenzen, Lab-Inseln, Tunnel-Einsatz und Prüfkörper.",
+   "values": {},
+   "owner": "alle",
+   "check": "offen 0 / nicht-mannigfaltig 0 je Insel",
+   "source": "Georg 11.10.: „geschlossene insel“",
+   "supersedes": null,
+   "why": "Blender R2 fragte nach Block-Bauweise (M1); Georg bleibt bei geschlossenen Körpern.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-137",
+   "date": "2026-10-11",
+   "area": "Klang",
+   "verdict": "TUNE",
+   "text": "Sound in der Strecken-Welt okay, aber ein seltsames Schmatz- bzw. Klick-Geräusch stört; Quelle finden und beheben.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Mitschnitt ohne Klick",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Klicks zerstören das „chill“-Gefühl.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

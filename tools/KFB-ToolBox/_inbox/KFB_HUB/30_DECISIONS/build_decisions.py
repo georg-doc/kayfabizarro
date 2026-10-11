@@ -113,6 +113,8 @@ d('V-132','2026-10-11','Himmel','RULE','Strecken-Welt bekommt einen Weltraum-Him
 d('V-133','2026-10-11','Strecke','PASS','Die drei Sprung-Lücken aus der Organ-Vorlage bleiben (Landungen im Fahrtest R2 sauber).', 'Lab', 'Fahrtest Landungen 3/3', 'Georg 11.10.: „ja“')
 d('V-134','2026-10-11','Strecke','RULE','Alle fehlenden Strecken-Teile (u. a. Wendeschleife, Kreisel, weitere Anschluss-Arten) werden konsistent, nahtlos einbaubar und modular gebaut: Geometrie im Track Core (Besitzer RKIT, V-118), Look im Lab (J17), gemeinsame Schnittstellen im Modul-Katalog (MODULES.md). Vorher Lückenliste gegen J17/O1/V-110/V-113 und Vorlagen-Zeile.', 'RKIT + Lab', 'Modul-Katalog + Naht-Prüfung je Teil', 'Georg 11.10.: „alle fehlenden track teile sollen konsistent und nahtlos einbaubar und modular gebaut werden“')
 d('V-135','2026-10-11','Insel','TUNE','Generierte 2D-Bildblätter führen bei der Insel-Basis in die Irre: Blender leitete aus M1 bzw. den Blättern falsche Beton- bzw. Steinklötze als Inselkörper ab. Bildblätter gelten nur für Stimmung bzw. Oberseite; Inselbasis bleibt Scholle (V-015, V-106). Georg hat Blender direkt Feedback gegeben.', 'Blender-Coworker', '-', 'Georg 11.10.')
+d('V-136','2026-10-11','Insel','RULE','Inseln sind ein geschlossenes Mesh (keine Block-Bauweise aus Einzelkörpern); gilt für Blender-Referenzen, Lab-Inseln, Tunnel-Einsatz und Prüfkörper.', 'alle', 'offen 0 / nicht-mannigfaltig 0 je Insel', 'Georg 11.10.: „geschlossene insel“')
+d('V-137','2026-10-11','Klang','TUNE','Sound in der Strecken-Welt okay, aber ein seltsames Schmatz- bzw. Klick-Geräusch stört; Quelle finden und beheben.', 'Lab', 'Mitschnitt ohne Klick', 'Georg 11.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -214,6 +216,8 @@ WHY = {
  'V-133':('Sprünge sind Teil des Spaßes und landen sauber.','sofort'),
  'V-134':('Einzelteile ohne gemeinsame Schnittstellen erzeugen Nähte und Nachbauten.','ab C4'),
  'V-135':('Zweites Mal (nach V-106), dass Bildblätter die Inselbasis verfälschen.','sofort'),
+ 'V-136':('Blender R2 fragte nach Block-Bauweise (M1); Georg bleibt bei geschlossenen Körpern.','sofort'),
+ 'V-137':('Klicks zerstören das „chill“-Gefühl.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:
