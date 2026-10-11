@@ -36,3 +36,7 @@ Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist D
 - Joyride J17: `KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01/` (Bilder `pictures/chase-curve.jpg`, `chase-straight.jpg`, `chase-tunnel.jpg`).
 - Organ-Inseln: `KFB Organ-Inseln + race track v4+/` (v4 bis v7).
 - Track Core: privat, `~/Developer/rkit-r3` (nie öffentlich).
+
+## Sperrliste Lab-src (V-141, Stand 11.10. abends)
+Gesperrt für alle außer der Bau-Sitzung (MVP-1): `src/main.ts`, `src/play/travel.ts`, `src/play/surface.ts`, `src/play/race-fx.ts`, `src/audio/*`, `src/sky/sky.ts`, `src/world/organ/*`, `src/world/tunnel/*`, `src/bench/*`, `j17-track.lab.js`.
+WSA-Bereich (mit Georgs OK): `src/editor.ts`, `src/island/spec.ts`, `src/scene-study.ts`; Änderungen nur nach Vorlagen-Zeile an die Steuerung, parity vor und nach.

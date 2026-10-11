@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Sperrliste Lab-src
+- Keine Überschneidung Bau-Sitzung ↔ WSA (tsc sauber, parity PASS nach Wiederholung; Check 4 Jitter unter Last knapp). Sperrliste für WSA in START_HERE und WSA-Antwort. B7-Strom an RKIT übergeben.
+
 ## 2026-10-11 · Inselboden-Referenzen an Blender
 - V-142 drei Georg-Referenzen (Knet-Erdkörper, eingebettete Felsbrocken, überquellendes Moos, dünne Wurzeln) als Basis-Vorbild; Brief R3 an Blender (replies/BRIEF_BLENDER_INSELBODEN_R3.md + REFS_INSELBODEN_2026-10-11/).
 

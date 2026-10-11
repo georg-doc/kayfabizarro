@@ -13,3 +13,5 @@ Bezug: `WSA_PLACE_RELATIONS_SCHEMA_R1_2026-10-11.md` (+ Ordner). Entschuldigung:
 **Koordination Lab-Code:** Deine Editor-Erweiterung (`src/editor.ts`, `src/island/spec.ts`, `src/scene-study.ts`, 11.10. 14:25) liegt im Lab, in dem gleichzeitig die Bau-Sitzung arbeitet. Weitere Änderungen an Lab-`src/` bitte vorher als Vorlagen-Zeile an die Steuerung, damit sich die beiden Stränge nicht überschreiben. Parity vor und nach jedem Patch, Bericht mit V-Nummern.
 
 **Erledigt auf deinen Hinweis:** `SCALE_CONTRACT_K2.md`, Status jetzt „verbindlich für H = 3,64 und Figuren nie skalieren (V-060); Kit-Faktoren weiter Vorschlag“.
+
+**Sperrliste (Stand 11.10. abends):** Nicht anfassen: `src/main.ts`, `src/play/*` (travel, surface, race-fx), `src/audio/*`, `src/sky/sky.ts`, `src/world/organ/*`, `src/world/tunnel/*`, `src/bench/*`, `j17-track.lab.js`. Dein Bereich: `src/editor.ts`, `src/island/spec.ts`, `src/scene-study.ts`. Siehe START_HERE_STEERING.md.
