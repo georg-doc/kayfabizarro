@@ -2,7 +2,7 @@
 
 ## CURRENT · Georg PASS WITH TUNE
 
-R3 + repairedattachment accepted withTUNE; priorvisualreview gate closed. [Exact decision and future shared Clay direction](ATTACH_R1/GEORG_PASS_WITH_TUNE.md). Assets AND islandterrain should use current KFB Claymation presentation in future. Currentmaterial/runtime limits remain; noGolden/merge or newimplementation authority. Older next-gate text below is historical.
+R3 + repairedattachment accepted withTUNE; priorvisualreview gate closed. [Exact decision and future shared Clay direction](GEORG_PASS_WITH_TUNE.md). Assets AND islandterrain should use current KFB Claymation presentation in future. Currentmaterial/runtime limits remain; noGolden/merge or newimplementation authority. Older next-gate text below is historical.
 
 
 **Result:** Georg's B-selected R3 form retained; hill/foot attachment independently GEOMETRIC_PASS. Complete fresh seven-axis numerical FORM_PASS **8.0**, minimum7; **STYLE_TUNE7 / NO_GOLDEN / NO_MERGE**. Runtime/controller locomotion NOT_RUN. Exactly one next gate: Georg reviews actual repaired attachment pictures; no automatic further tuning.
