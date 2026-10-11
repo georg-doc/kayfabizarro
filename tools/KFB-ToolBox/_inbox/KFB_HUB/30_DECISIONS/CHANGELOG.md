@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · WSA-Auftrag Clip-Katalog vorbereitet
+- replies/BRIEF_WSA_CLIP_CATALOG_R1.md für einen frischen WSA-Chat: alle KayKit-/Quaternius-Clips messen, Tag-Schema der Motion Matrix, Zuordnung zu Leitfaden-Zuständen, Survival Kit und Kulturmechaniken (V-177, V-181). Unabhängig vom Fable-Review.
+
 ## 2026-10-12 · Banden PASS, Schluss mit Lizenz-Floskeln
 - V-183 Banden-Enden C4c v2 PASS (konzeptionelles TUNE später); Auto in die Bucht, Zebra 3 Balken, Spalt füllen; C4c wird Standard.
 - V-184 Lizenz/öffentlich geklärt: keine Disclaimer mehr in Briefs/Berichten, nur neue Fälle in einer Zeile. START_HERE angepasst.
