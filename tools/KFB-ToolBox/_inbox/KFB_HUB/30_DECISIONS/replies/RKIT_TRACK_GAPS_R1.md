@@ -188,7 +188,7 @@ Original: `KFB Racetrack Blender Kit/TRACK-CORE/S13_V012_2026-09-28/`. `track-lo
 | 0 | Stream-Vertrag 0.16.1 ↔ Lab (Gleichstand ≤ 1 mm) + Modul-Katalog-Felder | teilweise | M |
 | 1.1 | J17-Grundstrecke | vorhanden | (Teil 0) |
 | 1.2 | Brücke frei im Raum | vorhanden | – |
-| 1.3 | Auf- bzw. Abfahrt EXIT/ENTRY auf RACE | teilweise | S |
+| 1.3 | Auf- bzw. Abfahrt EXIT/ENTRY auf RACE | **vorhanden** (test-race-exit.mjs 19/19, 2026-10-11) | – |
 | 1.4 | B6 race ↔ Straße (J14 ZA / J17 Atlas, Variante B) | **vorhanden** (Zone im Look über einem RACE-Strom); roadbed-Naht nur falls nötig | S |
 | 1.5 | Ebenen-Rampe auf Plattform | teilweise | S |
 | 1.6 | Straße durch den Platz | vorhanden | – |
@@ -242,7 +242,7 @@ Zwei Suchläufe. Alle Greps ohne Groß-/Kleinschreibung, ohne node_modules, Basi
 | `KFB_HUB/` (30_DECISIONS, replies, 20_BRIEFINGS) | A–E | V-095, V-099, V-104, V-110, V-113, V-134, V-139; REVIEW_STEUERUNG_R1.md:21,30; REPLY_BLENDER_FORM_KIT_01_R1.md:15,24 |
 | Lab `docs/critic/lab-track/2026-10-11_C0/`, `docs/concepts/C4_VORLAGE_R1.md` | A, B | c0-ab.json, REPORT.md:12–24, Fixture Variante B l.53–57; C4_VORLAGE_R1.md:16–17, 43 |
 
-**Nicht durchsucht:** der GitHub-Zweig `research/kfb-track-core-transition-rail-2026-10-10` (nur die lokalen Fixture-Kopien).
+**GitHub-Zweig** `georg-doc/kayfabizarro` · `research/kfb-track-core-transition-rail-2026-10-10` (eb124448): nachgetragen 2026-10-11 in `RKIT_RACE_EXIT_R1.md`. Ergebnis: Look-Adapter über Track-Core-Slots, keine Track-Core-Lücke; Gate PARTIAL; Look-Lücke `mark_track` in Stadt-Zonen.
 
 **Ergebnis je Teil nach dem Protokoll**
 - **1.4 B6:** **vorhanden** (oben korrigiert).

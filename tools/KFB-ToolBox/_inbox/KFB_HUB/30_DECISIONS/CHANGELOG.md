@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · EXIT/ENTRY auf RACE PASS
+- RKIT 19/19 (Track Core unverändert): RACE-Aus-/Einfahrt, Gleichstand Hauptstrecke 0, Gore/Nase, Rampe mit CONNECT auf Ebene; B6-Zone ohne Geometrie-Änderung. Für C4c im Lab: Banden-Enden an Bruchfugen, Gore/Nase im J17-Look, Randlinien im Übergang; Astbreite 4,0 m bis Fahrtest anders zeigt.
+
 ## 2026-10-11 · Klick PASS
 - V-137 auf PASS (Georg: „klick ist weg, passt“).
 
