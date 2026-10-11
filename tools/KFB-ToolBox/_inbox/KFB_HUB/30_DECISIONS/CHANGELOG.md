@@ -1,7 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-11 · Haltebucht TUNE, Pfad 12 %
-- V-138 Lieferung = TUNE (Gehweg-Ende gerade, Tropfen flach; Georg nach weiteren Punkten gefragt). V-158 Pfade ≤ 12 % ohne Stufen.
+- V-138 Lieferung = TUNE (Gehweg-Ende gerade, Tropfen flach; Georg: die zwei Punkte reichen). V-158 Pfade ≤ 12 % ohne Stufen.
 
 ## 2026-10-11 · Tunnel PASS, Berg TUNE
 - V-130 PASS (Portale + Innen 1:1). V-156 Berg/Hügel-Wirt schlecht modelliert → echte Inselkörper nach V-142/V-152. V-157 Trittstein-Abstand aus Medium-Rig-Locomotion messen.
