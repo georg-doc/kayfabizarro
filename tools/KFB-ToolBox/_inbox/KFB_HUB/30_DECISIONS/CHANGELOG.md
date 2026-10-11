@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · levelSet Nachbesserungen
+- Zu V-116: Truncus-Rest per Feld-Maske (Herz max 0,59 Zellen), helle Flecken behoben (Farbe von SN-Ecken, refine 1,5 Zellen; Dreiecke wieder ≈ SN). Light-Stufe = vereinfachter Hero-levelSet (Aorta-Löcher im O1-Light-Feld), Rückweg ?lsLight=own. Bauzeit 15,1 s.
+
 ## 2026-10-11 · Fahrzeuge
 - V-126 nur registrierte Retro- und KayKit-Autos (geschlossen), kein Cabrio, auch nicht das J17-Cabrio im Lab.
 
