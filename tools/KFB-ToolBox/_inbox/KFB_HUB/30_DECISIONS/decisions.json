@@ -1561,6 +1561,34 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-150",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Antworten auf die 21 Fragen zum Strecken-Katalog: Vorschläge der Steuerung angenommen (replies/STEERING_ANSWERS_TD_R1.md), dazu: Berm- bzw. Wandfahrt und Sandkurven nach Rennfahrer- bzw. Track-Logik befahrbar. Offen: #4 Banden-Übergang innen/außen (am Bild), Cosmic-Look.",
+   "values": {},
+   "owner": "RKIT + Lab",
+   "check": "Katalog-Einträge je Antwort",
+   "source": "Georg 11.10.: „passt soweit“",
+   "supersedes": null,
+   "why": "Uneindeutige Bildstellen geklärt statt erfunden (V-148).",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-151",
+   "date": "2026-10-11",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Leitprinzip für alle Strecken-Module: Cartoon-Stunt-Race mit chill & fun Fahr- bzw. Physik-Assist als Standard (Berm, Sand, Rampen, Sprünge, Wandfahrt); normal bzw. hard mode können später schwieriger werden.",
+   "values": {},
+   "owner": "Lab + RKIT",
+   "check": "Fahrtest mit assist-Standard",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Spielgefühl vor Simulation; schwerere Modi bleiben möglich.",
+   "applies": "immer"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

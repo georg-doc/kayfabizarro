@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · 21 Fragen beantwortet
+- V-150 Vorschläge angenommen; Berm/Wandfahrt + Sandkurven befahrbar; offen #4 Banden-Übergang, Cosmic-Look. V-151 Cartoon-Stunt-Race mit chill & fun Assist als Standard, später normal/hard.
+
 ## 2026-10-11 · Skin-Schritt 1 + Katalog-Abgleich
 - Track Core 0.16.3-s1: Kreisel-Arme erben Familie (Welt-Kreisel ändern sich gewollt, Race bitgleich), test-skin 32/32. Katalog TD1–TD5: Renn-Kern vollständig; Straße fehlen Bordabsenkung, Straße→Platz, erhabene Mittelinsel; DIRT größter Block (L). 21 Fragen „uneindeutig“ an Georg. Schritt 2 freigegeben mit Skins race/town/country/dirt/cosmic (dirt/cosmic Platzhalter).
 

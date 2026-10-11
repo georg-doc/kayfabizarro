@@ -1,6 +1,8 @@
-# RKIT · TD-Katalog (V-147) gegen Track Core 0.16.3-Schritt 1 (R1) · nur Liste, kein Bau
+# RKIT · TD- und CS-Katalog (V-147 / V-149) gegen Track Core 0.16.3 (R1) · nur Liste, kein Bau
 
-Stand 2026-10-11 · Bilder: `replies/REFS_TRACK_DETAILS_2026-10-11/TD1…TD5` · Farben zählen nicht (V-147) · uneindeutige Stellen in §6 (V-148)
+Stand 2026-10-11 · Bilder: `replies/REFS_TRACK_DETAILS_2026-10-11/TD1…TD5` und `replies/REFS_CITY_STREETS_2026-10-11/CS1…CS3` (V-149) · Farben zählen nicht (V-147) · uneindeutige Stellen in §6 (V-148)
+
+Skins: race · town · country · dirt · cosmic (V-149). Bestand Town-Look: RKIT Gehweg Lauf 03 (Bord, Gehweg, Kantensteine) und hex_b7 (Bord einseitig, Haltebucht).
 
 **Legende**
 
@@ -109,7 +111,71 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | H | Belagswechsel Straße → Schotter | fehlt | – | DIRT + Katalog | (in DIRT) |
 | Hero | Mehrebenen-Kreuzung mit Kreisel + Rampen | teilweise | Teile vorhanden | → §6 | L |
 
-**Summe:** Der Renn-Kern ist vollständig. Straße bis auf Absenkung, Platz und erhabene Mittelinsel ebenfalls. Der größte Block ist **DIRT** (Querschnitt + 2 Katalog-Einträge). Querschnittsthema über alle Blätter: **Pfeile** (Skin-Schritt 3).
+## 5b · CS1 Inselstraßen mit gemauertem Bord und Gehweg (Skin town)
+
+| # | Modul | Stand | Track Core / Bestand | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1 | Inselstraße ohne Bord | vorhanden | COUNTRY bzw. `edge` free | – | – |
+| 2 | Bord + Gehweg beidseitig | vorhanden | TOWN + RKIT Lauf 03 (Bord, Gehwegplatten, Kantensteine, Knet-Übergang zur Wiese) | – | – |
+| 3 | Bord einseitig | vorhanden | `edge: {L, R}`; hex_b7 (Bord nur rechts) | – | – |
+| 4 | 90°-Ecke | vorhanden | CURVE_EASE TOWN, Lauf 03 folgt dem Strom | – | – |
+| 5 | Sanfte Kurve | vorhanden | dto. | – | – |
+| 6 | T-Kreuzung | teilweise | JUNCTION 3 Arme (Core ✓) | RKIT-Bord und Gehweg an Knoten-Ecken nicht gebaut (Lauf 03 = Strecke) | M |
+| 7 | Kreuzung 4 Arme | teilweise | JUNCTION 4 Arme | dto. | (mit 6) |
+| 8 | Kreisel-Einfahrt (Wartelinie) | teilweise | ROUNDABOUT, seit Schritt 1 im TOWN-Querschnitt; Wartelinie gestrichelt | RKIT-Bord am Kreisel nicht gebaut; Haifischzähne statt Strichlinie → §6 | M |
+| 9 | Kreisel-Ausfahrt mit Spurmarkierung | teilweise | Bord-Durchgang ✓ | Ausfahrtpfeil (Schritt 3) | S |
+| 10 | Kreisel-Ring | vorhanden | Ring + Insel-Lauf im TOWN-Querschnitt; Insel-Bepflanzung = `anchor.scenery` park | Look | – |
+| 11 | Einfahrt / Bordabsenkung | fehlt | – | wie TD2 #9 | M |
+| 12 | Zebrastreifen-Abschnitt | teilweise | Zebra nur an JUNCTION | wie TD2 #7; Zebra am Kreisel-Arm (Hero) fehlt | S |
+| 13 | Mittelinsel (erhaben, Bord) | teilweise | `median` flach | wie TD2 #8 | M |
+| 14 | Sackgassen-Kappe (Absperrung) | teilweise | Wendeschleife (V-110) | → §6 | – |
+| 15 | Straße → Platz | fehlt | – | wie TD2 #12 | M |
+| 16 | Straßen-Endkappe mit Gehweg | fehlt | – | → §6 (Unterschied zu #14) | S |
+| – | Seitenprofil (Asphalt, Bord, Gehweg, Gras) | vorhanden | TOWN-Körper + Lauf 03 + Knet-Übergang | – | – |
+
+## 5c · CS2 Landstraße + Schotter (Skins country und dirt)
+
+| # | Modul | Stand | Track Core | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1–4 | Landstraße gerade, kurz, Kurve, 90° | teilweise | COUNTRY (Bankett, Graslippe, Graben) | im Bild Leitplanke auf beiden Seiten: COUNTRY hat keine Planke, die Bande gibt es nur bei HIGHWAY → §6 | M |
+| 5 | Land-T-Kreuzung | vorhanden | JUNCTION COUNTRY | – | – |
+| 6 | Land-Kreuzung 4 Arme | vorhanden | dto. | – | – |
+| 7 | Schulter-Verjüngung | vorhanden | params-Rampen | – | – |
+| 8 | Graben / Grasrand | vorhanden | COUNTRY `barrier_out` = ditch, `barrier_cap` = verge | Steine = Rubbel (L) | – |
+| 9 | Straße → Schotter | fehlt | – | DIRT + Katalog | M |
+| 10–14 | Schotter gerade, kurz, Kurve, Berm-Kurve, S-Paar | fehlt | Geometrie ✓, Querschnitt DIRT fehlt | wie TD3 | (in DIRT) |
+| 15 | Hügel / Sprung | vorhanden | CREST (KICKER → AIR → LANDING) | – | – |
+| 16 | Schotter-Kante Kiesel | – (Look) | Rubbel-Streuung | – | – |
+| 17 | Spurbreiten-Wechsel | vorhanden | WIDTH_STEP | – | – |
+| 18 | Straßen-Endkappe (Steine) | fehlt | – | → §6 | S |
+| 19 | Schotter-Endkappe | fehlt | – | wie TD3 #13 | S |
+| 20 | Gemischter Eckverbinder (90° Straße → Schotter) | fehlt | Übergänge heute nur auf Geraden-Fenstern | → §6 | M |
+| 21 | Gemischter Geradenverbinder | fehlt | – | wie #9 | (mit 9) |
+| Bsp. | Gabel / Y | teilweise | Welt: EXIT / ENTRY; FORK nur race | → §6 | M |
+| Bsp. | Hof-Einfahrt | fehlt | – | Einfahrt + dirt | (in DIRT) |
+| Bsp. | Brücken-Anschluss (Bach) | vorhanden | SUPPORT_CATALOGUE C1; Steinbogen bis 8 % | V-120: nur auf der Insel | – |
+| Bsp. | Land-Kreisel / Wendeschleife | vorhanden | ROUNDABOUT COUNTRY (seit Schritt 1 im COUNTRY-Querschnitt), 1-Arm-Wende | – | – |
+| – | Zaun optional, Warnschild | fehlt | – (Ausstattung) | Lab-Ausstattung oder Core-`furniture` → §6 | S |
+
+## 5d · CS3 Cosmic Highway (Skin cosmic, Schlüssel reserviert)
+
+| # | Modul | Stand | Track Core | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1–5 | Gerade, breit, kurz, 45°, 90° | vorhanden | Familie COSMIC (race-Maßstab, MAG-Markierung, Palette `mag`, `floating`) | Skin `cosmic` nur Platzhalter | – |
+| 6 | Merge-Verbinder | vorhanden | MERGE_HALF / JOIN | Pfeil (Schritt 3) | – |
+| 7 | Split-Verbinder | vorhanden | SPLIT_HALF / FORK | dto. | – |
+| 8 | Y-Kreuzung (3 Wege) | teilweise | FORK; JUNCTION ist für Welt-Familien gebaut | → §6 | M |
+| 9 | Kreisel-Einfahrt | vorhanden | ROUNDABOUT race-Querschnitt | – | – |
+| 10 | Kreisel-Ausfahrt mit Pfeil | teilweise | dto. | Pfeil (Schritt 3) | S |
+| 11 | Hub-Ring | vorhanden | ROUNDABOUT; Mitte = `anchor` (Kugel = scenery) | – | – |
+| 12 / 13 | Rampe hoch / runter | vorhanden | CONNECT / LEVEL_RAMP | Stützen: → §6 | – |
+| 14 | Schwebebrücke | teilweise | `crossing_ok` + Durchfahrtshöhe | kein benanntes Stück | S |
+| 15 | Spurmarkierungs-Logik | teilweise | MAG-Balken | wie TD1 #9 | – |
+| 16 | End- / Startkappe | teilweise | ROUND_END | wie TD1 #13 | – |
+| – | Energie-Kante | – | Bande-Slots (L-Look) oder Markierung? | → §6 | – |
+| Bsp. | Kompakte Kreuzung, Mehrebenen-Kreuzung, Split-Merge, Hub mit 4 Zufahrten | vorhanden bzw. teilweise | ROUNDABOUT, `crossing_ok`, FORK / JOIN | Pfeile | – |
+
+**Summe:** Der Renn-Kern ist vollständig. Straße bis auf Absenkung, Platz und erhabene Mittelinsel ebenfalls. Der größte Block ist **DIRT** (Querschnitt + 2 Katalog-Einträge). Querschnittsthema über alle Blätter: **Pfeile** (Skin-Schritt 3). Aus CS1/CS2 kommen dazu: RKIT-Bord an Knoten (Kreuzung, Kreisel), Planke bzw. Zaun für country, gemischte Verbinder.
 
 ## 6 · Uneindeutig (V-148): bitte über die Steuerung bei Georg klären, nicht erfunden
 
@@ -136,6 +202,19 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | TD5 | #3 | Versetzte Kreuzung: Versatz-Maß zwischen den beiden Knoten? |
 | TD5 | Hero | Mehrebenen-Kreuzung: ein Knoten oder mehrere (Kreisel unter der Brücke + Rampen)? Wie viele Arme hat der Kreisel? |
 | TD5 | #7 | Urbane Einfahrt: Fährt das Rennauto über den Zebrastreifen? Wo endet die Bande? |
+| CS1 | Hero, Kreisel; #8 | Wartelinie als Haifischzähne (Dreiecke) statt Strichlinie: gilt das für town, für alle Skins oder bleibt die Strichlinie? |
+| CS1 | Hero, unten Mitte | Zebrastreifen direkt am Kreisel-Arm: Abstand zur Wartelinie, auf allen Armen? |
+| CS1 | #14 vs. #16 | Sackgasse mit Absperrung vs. fertiges Straßenende mit Gehweg: Wann welches, und wie wenden die Autos (V-110)? |
+| CS1 | #13 | Mittelinsel mit Bepflanzung: Mindestbreite, steht sie in der Fahrbahnbreite oder verbreitert sie die Straße? |
+| CS2 | #1–#4, Hero | Leitplanke auf beiden Seiten der Landstraße: Immer, nur an Kurven bzw. Hang, oder optional per Abschnitt? Planke oder Zaun – Regel? |
+| CS2 | #18 | Straßen-Endkappe mit Steinen: Baustelle, Sackgasse oder Inselrand? Weltlogik? |
+| CS2 | #20 | Belagswechsel mitten in der 90°-Kurve: erlaubt (heute nur auf Geraden-Fenstern)? Übergangslänge? |
+| CS2 | Beispiel „Fork / Y-junction“ | Y-Gabel auf der Landstraße: als Kreuzung (JUNCTION mit spitzem Winkel) oder als Ausfädelung (EXIT)? |
+| CS2 | Hero, Kurve links | Warnschild und Zaun: Gehören sie zum Straßen-Modul (Core-Daten) oder zur Inselausstattung (Lab)? |
+| CS3 | Seitenprofil, Hero | Stützen und „anti-grav base“ unter der Fahrbahn vs. „im All schwebt die Strecke“ (Steuerung): Stützen nur auf Asteroiden-Inseln (V-120) oder gar keine? |
+| CS3 | Legende „energy edge“ | Energie-Kante: Ist das die Bande (Slots), ein Markierungsband am Fahrbahnrand oder beides? Wie hoch? |
+| CS3 | #8 | Y-Kreuzung im All: Knoten mit 3 Armen (Kreuzungslogik, Vorfahrt?) oder FORK ohne Kreuzung? |
+| Core | HIGHWAY | Welchem Skin gehört HIGHWAY (Bande auf Grasbett)? Vorläufig country, weil ein Knoten einen Skin braucht; bitte bestätigen oder umsetzen. |
 
 ## 7 · Such-Protokoll (V-140)
 
@@ -151,3 +230,5 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | Stunt Car Race Handover v1.x | dirt, off-road | nur Erwähnungen in Handover-Texten, kein Code |
 | Lab `docs` (STAGE1_R2D_PORT_PLAN, C4_VORLAGE_R1) | plaza | Plätze als Kompositions-Teil der Insel (`:51`), kein Straßen-Rand |
 | KFB_HUB DECISIONS V-147 / V-148 | Katalog-Regel | Katalog = Logik, nicht Farben; uneindeutig → nachfragen |
+| RKIT-Bestand Town | Bord, Gehweg | `public/roadbeds/rkit_hub.*` (Lauf 03), `hex_b7.*` (V-138 b); Blender `rkit_r3_gehweg_v3.py`, `rkit_r3_hexbay.py`; keine Knoten-Ecken |
+| Track Core COSMIC | cosmic | `PROFILE_FAMILIES.COSMIC` `:132` (`skin: 'mag'`, `floating: true`); keine Energie-Kante, keine Stützen-Regel |
