@@ -1603,6 +1603,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-153",
+   "date": "2026-10-11",
+   "area": "Auto",
+   "verdict": "RULE",
+   "text": "KayKit-Autos werden mit einem gemeinsamen Kit-Faktor (Sedan-Faktor) skaliert statt jedes einzeln auf 6,28 Länge; so bleiben ihre Verhältnisse untereinander und die breiteste Breite ≤ 3,11 (Hatchback 5,40 × 2,80). Welt-Knotengrenze bleibt 1,705 (V-143). Figuren nie skalieren (V-060).",
+   "values": {},
+   "owner": "Lab",
+   "check": "Fahrtest mit Hatchback",
+   "source": "RKIT_CAR_WIDTHS_R1.md; Steuerung 11.10.",
+   "supersedes": null,
+   "why": "Einzel-Strecken verzerrte den Hatchback auf 3,26 Breite und hätte Land-Kreisel rot gemacht.",
+   "applies": "ab nächstem Lab-Schritt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Autobreiten
+- RKIT-Messung: breitestes registriertes Auto KayKit-Hatchback 3,26 (durch Einzel-Strecken auf 6,28). V-153 gemeinsamer KayKit-Faktor → 2,80; Grenze bleibt 1,705. Cicada-FBX BODY 90° gedreht → Lab prüft.
+
 ## 2026-10-11 · CR im Katalog, V-143 präzisiert
 - CR1–CR4 im RKIT-Katalog (trail reserviert, Geh-Netz fehlt im Core, Aufwand L); 12 neue CR-Fragen. V-143 präzisiert: Welt-Knoten-Abstand nach breitestem registrierten Spiel-Auto (V-126) + 0,15, Renn-Hülle bleibt für RACE; RKIT misst.
 
