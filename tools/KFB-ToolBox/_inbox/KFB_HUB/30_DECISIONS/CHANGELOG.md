@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Coconino-Mesas für Blender
+- V-167 CC1 (Mesa-Module M01–M03) + CC2 (Inseln J1/J2) als Blender-Auftrag R4 (vor R3). Abgelegt replies/REFS_COCONINO_2026-10-11/, Brief replies/BRIEF_BLENDER_COCONINO_R4.md (auch im Blender-Branch).
+
 ## 2026-10-11 · Georg live: Banden FAIL, Laden, Flackern
 - Live-Test: zerrissene J17-Banden am Hub (FAIL, vermutlich C4c-Arbeitsstand), Laden 40–60 s, Flackern im Stand, Haltebucht nicht gefunden. V-166 Standardansicht nur geprüfter Stand. Organe als Platzhalter ok (V-127).
 
