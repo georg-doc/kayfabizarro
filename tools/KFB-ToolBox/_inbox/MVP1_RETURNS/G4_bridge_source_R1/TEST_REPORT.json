@@ -1,0 +1,118 @@
+{
+  "source_models": 3,
+  "source_views": 15,
+  "dimensions": [
+    1600,
+    1000
+  ],
+  "geometry_original": true,
+  "native_geometry_reference_not_finished_bridge": true,
+  "source_blob_hash_matches_main": true,
+  "bridge_build_tests": "NOT_RUN",
+  "prison_graph_checks": [
+    {
+      "layout": "square",
+      "seed": 1,
+      "cells": 48,
+      "openEdges": 47,
+      "reachable": 48,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "line"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    },
+    {
+      "layout": "polar",
+      "seed": 1,
+      "cells": 54,
+      "openEdges": 53,
+      "reachable": 54,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "arc",
+        "radial"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    },
+    {
+      "layout": "square",
+      "seed": 2,
+      "cells": 48,
+      "openEdges": 47,
+      "reachable": 48,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "line"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    },
+    {
+      "layout": "polar",
+      "seed": 2,
+      "cells": 54,
+      "openEdges": 53,
+      "reachable": 54,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "arc",
+        "radial"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    },
+    {
+      "layout": "square",
+      "seed": 3,
+      "cells": 48,
+      "openEdges": 47,
+      "reachable": 48,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "line"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    },
+    {
+      "layout": "polar",
+      "seed": 3,
+      "cells": 54,
+      "openEdges": 53,
+      "reachable": 54,
+      "allReachable": true,
+      "tree": true,
+      "wallTypes": [
+        "arc",
+        "radial"
+      ],
+      "wallKinds": [
+        "boundary",
+        "inner"
+      ]
+    }
+  ],
+  "prison_image_pixel_access": "NOT_AVAILABLE_FROM_CONNECTOR",
+  "prison_geometry_build": "NOT_RUN",
+  "prison_runtime": "NOT_RUN",
+  "golden": false,
+  "merged": false
+}

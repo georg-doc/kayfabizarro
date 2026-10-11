@@ -1,5 +1,14 @@
 # RECOVERY · G4 Town Castle Clay Stairs · visual references R1
 
+## CURRENT · Bridge source audit active; Prison wall/skin study queued
+
+R3 acceptedPASS_WITH_TUNE remainsclosed/unchanged; noGolden/merge. Userauthorises bridge sourcecomparison and then Prisonisland wall/skin prep. [Bridge audit Return](../G4_bridge_source_R1/RETURN.md), [actualsource card](../G4_bridge_source_R1/BRIDGE_SOURCE_CARD.jpg), [queuedPrison source/gaps](../G4_bridge_source_R1/PRISON_AFTER_BRIDGE.md). Main source dccf75cabd222d951380693d84ab88053ee7e519: bridgeAarch192tri, Bpier156tri, Cdrawleaf40tri; actual15nativeviews/hash/RegistryIDs verified. Aselectedbuilderformreference, nofinishedbridge/georgassetpick. Span/vehicle/supportpair stillmust be locked before neutralprototype; no newbridge3D construction claimed.
+
+ExistingPrisonMCPbranchbb3e4d9ef4cc11dfd39cbb7acc1c15197fecc82c read-onlyaudited: actualPortbasin/mound, graphv2square+polar, Pirate tower, brickUVs. Fresh6/6logicalgraphBFSreachable. PerwallUVu resets0; crossmoduletexturephase unproven. Proposedmodeledfugues/scratches/fewruinpebbles andseamlessClayskins, reset/saferecovery/towerheight designqueued; actualToybutton runtime NOT_RUN. No paidislandmeshredistribution ornewmaze/runtimeowner. Optionalheightquestionpending,1.6mbaselineunchanged/2.6mhighproposal. Existinggreyboxboards presentbutconnectorpixelsunavailable, nofakeimageconditioning. EarlierG4Bridge-priorrecommendation prose belowhistorical.
+
+## Earlier preserved state
+
+
 ## CURRENT · Georg PASS WITH TUNE / future shared Clay presentation
 
 Georg accepts retainedR3 + repairedattachment as PASS_WITH_TUNE: „passt für mich mit TUNE“. Previousattachmentvisualgate CLOSED. Futureassets AND islandterrain should be rendered with the existingKFBClaymation texture/look; currentR2Blenderprobe/GLBfallback is not finalK2/Goldenparity. NoGolden/merge/runtimepromotion. Exactdecision oncandidatehead6d7d4aad86ab9e4341f380d4f23e72c4fcaaf2fe: [Georg record](https://github.com/georg-doc/kayfabizarro/blob/6d7d4aad86ab9e4341f380d4f23e72c4fcaaf2fe/tools/KFB-ToolBox/_inbox/MVP1_RETURNS/WSA_modelling_test/FORM_R3/ATTACH_R1/GEORG_PASS_WITH_TUNE.md).

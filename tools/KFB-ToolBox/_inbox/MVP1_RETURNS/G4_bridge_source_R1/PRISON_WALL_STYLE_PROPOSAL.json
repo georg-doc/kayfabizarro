@@ -1,0 +1,126 @@
+{
+  "schema": "kfb.prison-wall-style-proposal/1",
+  "status": "QUEUED_AFTER_BRIDGE_NOT_IMPLEMENTED",
+  "sourceOwner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "blender-mcp/prison-maze-greybox-2026-10-10",
+    "head": "bb3e4d9ef4cc11dfd39cbb7acc1c15197fecc82c",
+    "folder": "skills/chat/workflows/KFB_PRISON_MAZE_GREYBOX_2026-10-10",
+    "graph": "prison_maze_graph_v2.json",
+    "builder": "kfb_prison_maze_build.py"
+  },
+  "existingDimensions": {
+    "units": "island-local metres",
+    "residentHeight": 2.17,
+    "pitch": 2.1,
+    "corridor": 1.5,
+    "wallThickness": 0.6,
+    "wallHeight": 1.6,
+    "courtyardRadius": 3,
+    "walkableRadius": 9.4,
+    "basinMoundRange": [
+      -2.5,
+      2.5
+    ]
+  },
+  "heightProposal": {
+    "highVariant": 2.6,
+    "choice": "PENDING_USER_TEXT_RESPONSE",
+    "baselineUnchanged": true
+  },
+  "roles": [
+    {
+      "id": "wall_carrier",
+      "variants": [
+        "line",
+        "arc",
+        "radial"
+      ],
+      "source": "existing graph-driven wall builder"
+    },
+    {
+      "id": "masonry_joint_damage",
+      "variants": [
+        "modeled_mortar_groove",
+        "authored_scratches"
+      ],
+      "status": "NEW_GEOMETRY_PROPOSAL_NOT_TEXTURE_ONLY"
+    },
+    {
+      "id": "crown",
+      "variants": [
+        "clay_stone_cap",
+        "wire_or_bar_crown"
+      ]
+    },
+    {
+      "id": "foot_rubble",
+      "variants": [
+        "few_instanced_ruin_pebbles"
+      ],
+      "constraint": "outside 1.5m clear corridor; not an alternate graph collision owner"
+    },
+    {
+      "id": "window_bar_insert",
+      "source": "extract window/bars only from actual KayKit Dungeon donors; don't replace wall with whole Dungeon tile"
+    },
+    {
+      "id": "wall_termination",
+      "variants": [
+        "closed_end",
+        "corner",
+        "gate_contact"
+      ]
+    }
+  ],
+  "material": {
+    "owner": "existing KFB Clay Surface Canon/K2 adapter; texture-map queue remains Clay Asset Studio",
+    "base": "darker clay masonry consistent with Prison look R1",
+    "mapsProposed": [
+      "tileable_basecolor",
+      "roughness",
+      "normal_or_height"
+    ],
+    "uvExisting": {
+      "u": "metres along each wall centreline",
+      "v": "world height at build time",
+      "brickSize": [
+        0.56,
+        0.27
+      ],
+      "mortar": 0.035
+    },
+    "verifiedCodeRisk": "arc starts at0 for each graph wall; per-wall mapping is present but continuous texture phase between independent walls/corners/loop closure is not proven",
+    "requiredProof": [
+      "2x2/3x3 texture repeat",
+      "straight-arc-corner material join",
+      "tall module physical-scale parity",
+      "modeled joint/damage silhouette vs normal-map-only",
+      "same skin across basin/mound and rising-wall movement; no swim/stretch"
+    ]
+  },
+  "resetProposal": {
+    "operator": "source ToySoldier No.1 on fixed tower crown; KFB eyes, cobalt uniform/white plume/hat number remain source-owner checks",
+    "sequence": [
+      "button cue",
+      "validate next seeded graph and safe actor cells",
+      "old wall sections lower",
+      "new sections rise and settle",
+      "handoff collision/path updates to existing owners",
+      "save authoritative seed/layout and recovered actor states"
+    ],
+    "status": "DESIGN_INTENT_ONLY_NO_TOWER_BUTTON_ANIMATION_OR_RUNTIME_PROOF"
+  },
+  "tower": {
+    "existing": "Kenney Pirate base/middles + rotating tower-watch lantern + fixed tower-top deck",
+    "constraint": "stack height derives from terrain and selected maximum wall height; fixed operator deck must not inherit lantern rotation"
+  },
+  "sourcePixelStatus": {
+    "bridgeDonors": "ACTUALLY_RENDERED_AND_VIEWED",
+    "prisonBoards": "FILES_EXIST_ON_GITHUB; connector returned no image bytes, NOT_PIXEL_INSPECTED",
+    "privateGreybox": "LOCAL_ONLY_SOURCE_ACCESS_REQUIRED; no Unity mesh/texture redistribution"
+  },
+  "noNewRuntime": true,
+  "noGolden": true,
+  "noMerge": true
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "kfb.asset-scene-image-job/1",
+  "jobId": "G4_BRIDGE_SOURCE_AUDIT_R1_2026-10-11",
+  "mode": "asset_plate",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "ref": "dccf75cabd222d951380693d84ab88053ee7e519",
+    "assetIds": [
+      "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-straight.glb",
+      "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-straight-pillar.glb",
+      "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-draw.glb"
+    ],
+    "blobShas": [
+      "ffe74668a7e26fa5f2bc03d53b74fd0bc7600545",
+      "54516c363d2ff9b79a0cc0fcd31aa9a23646b9cc",
+      "90f8473b81a168a9ea46a3d59b77225f0c6e465e"
+    ],
+    "sourceModelTriCounts": [
+      192,
+      156,
+      40
+    ],
+    "K2KitFactor": null,
+    "licenseStatus": "VERIFIED_CC0_KENNEY_CASTLE_KIT",
+    "geometryLock": "strict source renders; future new bridge form separate",
+    "sourceProof": "SOURCE_ISOLATED_NEUTRAL",
+    "sourcePixelsActuallyAvailable": true
+  },
+  "context": {
+    "scenePurpose": "choose original arch-body construction reference and distinguish complementary pier from drawbridge leaf",
+    "camera": "native bounds recorded; uniform display scaling; orthographic front/side/3quarter",
+    "viewLabelsAllowed": true
+  },
+  "style": {
+    "bindingSSOT": [
+      "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md"
+    ],
+    "partsBudgetMax": 6,
+    "benchmarkRefs": [
+      "G4_stone_bridge_sheet_webchat_r1.webp STYLE_DIRECTION_ONLY"
+    ]
+  },
+  "generation": {
+    "executionSystem": "Blender5.2.2 native actual-GLB source renders",
+    "sourcePixelsActuallySupplied": false,
+    "provider": null,
+    "imageConditioningReceipt": null,
+    "renderPrompt": "Render each exact original GLB independently in neutral gray, no source deformation, no props or brand, record native boundingbox, front/side/3quarter with full framing.",
+    "status": "COMPLETE_SOURCE_AUDIT_ONLY"
+  },
+  "approval": {
+    "classification": "SOURCE_ISOLATED; BUILDER_RECOMMENDS_ARCH_BODY_A_AS_FORM_REFERENCE",
+    "georgPicked": false,
+    "goldenRef": false
+  },
+  "assetRefs": [
+    {
+      "assetId": "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-straight.glb",
+      "packId": "kenney-castle-kit",
+      "sourceAssetBlobSha": "ffe74668a7e26fa5f2bc03d53b74fd0bc7600545",
+      "sourceModelTriCount": 192,
+      "nativeBbox": [
+        [
+          -0.4650000035762787,
+          -0.4650000035762787,
+          0.0
+        ],
+        [
+          0.4650000035762787,
+          0.4650000035762787,
+          1.1759999990463257
+        ]
+      ],
+      "K2KitFactor": null,
+      "sourceRenderViews": [
+        {
+          "view": "front",
+          "path": "source/Bridge_straight_front.jpg",
+          "sha256": "511f08fe2e57595c9a69c6364fd187aae426d3c76eb4e9c9b83ba5128d24f2c4",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "side",
+          "path": "source/Bridge_straight_side.jpg",
+          "sha256": "d7aa7ef14a557778451f82e181be6ead28854f21fe5b3d1f0390fc201096da15",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "three_quarter",
+          "path": "source/Bridge_straight_three_quarter.jpg",
+          "sha256": "cefa6eb0e8af477b607b85e3bd8b16703afc1fcd1151fafe5f3c9dff721b1502",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "top",
+          "path": "source/Bridge_straight_top.jpg",
+          "sha256": "bc203202f2ea9b8afcc7eba9bc37ad65bf7b3537da740a042ed2170bdacdaee5",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "below",
+          "path": "source/Bridge_straight_below.jpg",
+          "sha256": "c713cc04cbefa5d5705103df005d11c8834b51db0d095f59ebbf3d90444cb774",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        }
+      ]
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-straight-pillar.glb",
+      "packId": "kenney-castle-kit",
+      "sourceAssetBlobSha": "54516c363d2ff9b79a0cc0fcd31aa9a23646b9cc",
+      "sourceModelTriCount": 156,
+      "nativeBbox": [
+        [
+          -0.4650000035762787,
+          -0.4650000035762787,
+          0.0
+        ],
+        [
+          0.4650000035762787,
+          0.4650000035762787,
+          1.1759999990463257
+        ]
+      ],
+      "K2KitFactor": null,
+      "sourceRenderViews": [
+        {
+          "view": "front",
+          "path": "source/Bridge_pillar_front.jpg",
+          "sha256": "87438c70c51e621c417dc91e4e544eb3a5c464e6c9434be44f68c0b42f97bef3",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "side",
+          "path": "source/Bridge_pillar_side.jpg",
+          "sha256": "9af3e99c3a1538978008e8e6fc01e87e7f9f8a36aae7ac1e82bc62d2463fe2aa",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "three_quarter",
+          "path": "source/Bridge_pillar_three_quarter.jpg",
+          "sha256": "100d55f8198fe853f3b745ee78a856f0b1ef3fdff0781cc84d81f9172ed43e8f",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "top",
+          "path": "source/Bridge_pillar_top.jpg",
+          "sha256": "7f122812432ef3f5931e3f6384860e2ee928b1eb1c9ae90d533e945158dbe398",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "below",
+          "path": "source/Bridge_pillar_below.jpg",
+          "sha256": "c85581cd808ecd4c84d25fb4fc3752f1dcf5b1386360833abfd5fe16cfcb4af5",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        }
+      ]
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_castle-kit/Models/GLB format/bridge-draw.glb",
+      "packId": "kenney-castle-kit",
+      "sourceAssetBlobSha": "90f8473b81a168a9ea46a3d59b77225f0c6e465e",
+      "sourceModelTriCount": 40,
+      "nativeBbox": [
+        [
+          -1.0020725727081299,
+          -0.4155377149581909,
+          -7.331912559221793e-17
+        ],
+        [
+          0.0,
+          0.4155377149581909,
+          0.10000000149011612
+        ]
+      ],
+      "K2KitFactor": null,
+      "sourceRenderViews": [
+        {
+          "view": "front",
+          "path": "source/Bridge_draw_front.jpg",
+          "sha256": "1bc14a170943309842b9846d51d1e3fe77232047049f7a050f106c3cf23a1a25",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "side",
+          "path": "source/Bridge_draw_side.jpg",
+          "sha256": "bcee35e8553923858a10479355953bf015e70aa16755446848257552df7a6790",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "three_quarter",
+          "path": "source/Bridge_draw_three_quarter.jpg",
+          "sha256": "269cc587c4ed0eee4f843b25d4042bed78e00a0e19cdca02827bcb49a1b7266a",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "top",
+          "path": "source/Bridge_draw_top.jpg",
+          "sha256": "31f8a1cfe7aa7d387c6f9a05df5b8b787afa137c701c1aa35c880a1773304294",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        },
+        {
+          "view": "below",
+          "path": "source/Bridge_draw_below.jpg",
+          "sha256": "67a307f406712bf0a5917aed7c5d729c7d6be8fce9bc9efb5472e036a580a298",
+          "pixelsActuallyAvailable": true,
+          "pixelsAvailableToGenerator": false
+        }
+      ]
+    }
+  ],
+  "sourceProof": {
+    "status": "SOURCE_ISOLATED_NEUTRAL",
+    "actualPixelAvailability": true,
+    "imageGeneratorConditioned": false
+  }
+}
