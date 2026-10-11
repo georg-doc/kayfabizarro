@@ -1,0 +1,489 @@
+{
+  "schema": "kfb.coconino-scene-batch/1",
+  "batchId": "KFB_COCONINO_SCENE_R2_2026-10-11",
+  "sourceResearch": "tools/asset_registry/specs/KFB_COCONINO_MESA_ASSET_RECON_AND_MODEL_BRIEF_R1_2026-10-11.md",
+  "jobSpec": "skills://plugins/kfb-asset-scene-composer/compose-kfb-scene/references/job-contract.md",
+  "jobs": [
+    {
+      "schema": "kfb.asset-scene-image-job/1",
+      "version": "R2_2026-10-11",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "ref": "dccf75cabd222d951380693d84ab88053ee7e519",
+        "assetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "assetRefs": [
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+            "format": "glb",
+            "role": "tall erosion rock donor",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+            "format": "glb",
+            "role": "desert dressing",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+            "packId": "kaykit-forest-nature-pack-1-0-free",
+            "sourceAssetBlobSha": "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+            "format": "gltf+bin",
+            "role": "source-geometry boulder",
+            "sourceModelTriCount": 48
+          },
+          {
+            "assetId": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+            "packId": "scifi-ultimate-space-kit-quaternius",
+            "sourceAssetBlobSha": "4074d7c4f766026916138eeb704e561898c91ca0",
+            "format": "gltf-embedded",
+            "role": "optional surreal secondary rock, NOT Mesa shape",
+            "sourceModelTriCount": 222
+          },
+          {
+            "assetId": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa",
+            "packId": "kfb-clay-k1-h0",
+            "sourceAssetBlobSha": "1cb40e45dc4d2ca20a554e4315b68f9331af4152",
+            "format": "procedural-threejs-js",
+            "role": "primary mesa geometry formula donor",
+            "sourceModelTriCount": null
+          }
+        ],
+        "sourcePaths": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js"
+        ],
+        "blobShas": [
+          "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+          "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+          "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+          "4074d7c4f766026916138eeb704e561898c91ca0",
+          "1cb40e45dc4d2ca20a554e4315b68f9331af4152"
+        ],
+        "sourceRenderViews": [],
+        "licenseStatus": "VERIFIED_WITH_SCI_FI_PACK_HEADING_MISMATCH",
+        "nativeBbox": null,
+        "K2KitFactor": null,
+        "geometryLock": "loose",
+        "sourceProof": "REPO_SOURCE_VERIFIED__ACTUAL_MESH_PIXEL_ISOLATION_PENDING",
+        "sourcePixelsAvailableToGenerator": false
+      },
+      "style": {
+        "bindingSSOT": [
+          "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+          "skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md"
+        ],
+        "benchmarkRefs": [
+          "tools/KFB-ToolBox/_inbox/KFB_OPEN_WORLD_STYLEGUIDE_2026-10-07/README.md",
+          "/CLAUDE/KFB Claymation Reference/DioramaScenes - overview -f0a9d090-49c7-406e-9bc6-64f63cc6aa53.webp",
+          "/CLAUDE/KFB Claymation Reference/FLOATING ISLANDS DESIGN.webp",
+          "/CLAUDE/KFB Claymation Reference/Race Track Builder/road-consturctor - 5fe21f39-ece6-45ac-8d16-c34788d2eec2.webp"
+        ],
+        "materialMixAllowed": true,
+        "partsBudgetMax": 6,
+        "paletteContract": "tools/asset_registry/specs/KFB_COCONINO_PALETTE_LIGHT_ENVIRONMENT_R2_2026-10-11.md",
+        "trackAuthority": "Track Core construction + Surface Truth support + Joyride v17-style presentation only",
+        "paletteId": "P1_SUNSET",
+        "paletteRoles": [
+          "track.asphalt",
+          "track.raceRed",
+          "track.raceWhite",
+          "terrain.base",
+          "terrain.ochre",
+          "terrain.shadow",
+          "flora.sage",
+          "skyZenith",
+          "skyHorizon"
+        ]
+      },
+      "generation": {
+        "sourcePixelsActuallySupplied": false,
+        "imageModel": null,
+        "provider": null,
+        "providerRequestId": null,
+        "imageConditioningReceipt": null,
+        "renderOutputSha256": null,
+        "status": "BLOCKED_SOURCE",
+        "request": "Source-conditioned scene generation only after actual isolated donor view pixels and Dropbox images are supplied to the image provider; otherwise output may be MOOD_ONLY but never source-faithful.",
+        "renderPrompt": "An original stylized handcrafted KFB claymation game island, ONE continuous organic geological sandstone clod, broad irregular flat-cap mesa on the left, one needle butte and one two-tier mesa grounded in the same eroded land mass. A source-accurate KFB Joyride v17-style slate-blue race-track ribbon with oxide-red support and red/cream safety curbs enters from a clear legitimate receiver at foreground, takes a readable S-shaped elevated hairpin around the left mesa, passes a justified scenic overlook with safe road-edge barriers, then visibly continues to a destination/exit. Balanced asymmetric contours and vast open sky in painterly 1930s Herriman Coconino spirit, original claymation interpretation not copied panel. Sparse, source-verified cactus and few small rocks. Golden-hour peach sky, ochre cream strata and warm side sunlight. Wide clean single 3/4 hero, no labels, no infographic, no poster border, no floating disconnected islands, no generic bridge pillars, no extra cars/characters/branding; convincing bank and road/terrain continuity. Preserve actual source donor silhouettes only when source pixels are provided; otherwise label MOOD_ONLY. "
+      },
+      "approval": {
+        "classification": "UNREVIEWED",
+        "georgPicked": false,
+        "goldenRef": false
+      },
+      "provenance": {
+        "sourceAuthor": "George Herriman Krazy Kat colored Sundays (historical visual inspiration only)",
+        "copyrightHandling": "do not trace panels; author original KFB geometry",
+        "sourceBinariesFetchedByGenerator": false,
+        "durableImageOutput": false,
+        "artistApproval": false
+      },
+      "jobId": "COCONINO-JOY-SUNSET-R2",
+      "mode": "scene_context",
+      "context": {
+        "scenePurpose": "Sunset Mesa Serpentine — traversable Joyride island exploration and readable landmark geography",
+        "sceneWorldRole": "OPTIONAL_VISUAL_ENVIRONMENT_OVERLAY_NOT_FIFTH_CANON_ISLAND",
+        "environmentAssetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "characterAssetIds": [],
+        "propAssetIds": [],
+        "camera": "single unlabelled 3/4 hero, wide 16:9, 40-55mm equivalent; separate 3/4 overhead and driving approach proof",
+        "viewLabelsAllowed": false,
+        "parts": [
+          "continuous earthen base",
+          "M01 broad flat mesa",
+          "M02/M03 buttes",
+          "Joyride race ribbon",
+          "tapered barriers and shoulder",
+          "sparse cactus/rocks"
+        ],
+        "constructionContacts": {
+          "roadEntry": "requires Track Core verified connector",
+          "roadExit": "requires Track Core verified connector",
+          "roadIslandSupport": "requires common Surface Truth/mesh measured height",
+          "bridge": "if used require owner-approved free span"
+        }
+      }
+    },
+    {
+      "schema": "kfb.asset-scene-image-job/1",
+      "version": "R2_2026-10-11",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "ref": "dccf75cabd222d951380693d84ab88053ee7e519",
+        "assetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "assetRefs": [
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+            "format": "glb",
+            "role": "tall erosion rock donor",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+            "format": "glb",
+            "role": "desert dressing",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+            "packId": "kaykit-forest-nature-pack-1-0-free",
+            "sourceAssetBlobSha": "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+            "format": "gltf+bin",
+            "role": "source-geometry boulder",
+            "sourceModelTriCount": 48
+          },
+          {
+            "assetId": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+            "packId": "scifi-ultimate-space-kit-quaternius",
+            "sourceAssetBlobSha": "4074d7c4f766026916138eeb704e561898c91ca0",
+            "format": "gltf-embedded",
+            "role": "optional surreal secondary rock, NOT Mesa shape",
+            "sourceModelTriCount": 222
+          },
+          {
+            "assetId": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa",
+            "packId": "kfb-clay-k1-h0",
+            "sourceAssetBlobSha": "1cb40e45dc4d2ca20a554e4315b68f9331af4152",
+            "format": "procedural-threejs-js",
+            "role": "primary mesa geometry formula donor",
+            "sourceModelTriCount": null
+          }
+        ],
+        "sourcePaths": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js"
+        ],
+        "blobShas": [
+          "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+          "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+          "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+          "4074d7c4f766026916138eeb704e561898c91ca0",
+          "1cb40e45dc4d2ca20a554e4315b68f9331af4152"
+        ],
+        "sourceRenderViews": [],
+        "licenseStatus": "VERIFIED_WITH_SCI_FI_PACK_HEADING_MISMATCH",
+        "nativeBbox": null,
+        "K2KitFactor": null,
+        "geometryLock": "loose",
+        "sourceProof": "REPO_SOURCE_VERIFIED__ACTUAL_MESH_PIXEL_ISOLATION_PENDING",
+        "sourcePixelsAvailableToGenerator": false
+      },
+      "style": {
+        "bindingSSOT": [
+          "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+          "skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md"
+        ],
+        "benchmarkRefs": [
+          "tools/KFB-ToolBox/_inbox/KFB_OPEN_WORLD_STYLEGUIDE_2026-10-07/README.md",
+          "/CLAUDE/KFB Claymation Reference/DioramaScenes - overview -f0a9d090-49c7-406e-9bc6-64f63cc6aa53.webp",
+          "/CLAUDE/KFB Claymation Reference/FLOATING ISLANDS DESIGN.webp",
+          "/CLAUDE/KFB Claymation Reference/Race Track Builder/road-consturctor - 5fe21f39-ece6-45ac-8d16-c34788d2eec2.webp"
+        ],
+        "materialMixAllowed": true,
+        "partsBudgetMax": 6,
+        "paletteContract": "tools/asset_registry/specs/KFB_COCONINO_PALETTE_LIGHT_ENVIRONMENT_R2_2026-10-11.md",
+        "trackAuthority": "Track Core construction + Surface Truth support + Joyride v17-style presentation only",
+        "paletteId": "P2_TWILIGHT",
+        "paletteRoles": [
+          "track.asphalt",
+          "track.raceRed",
+          "track.raceWhite",
+          "terrain.base",
+          "terrain.ochre",
+          "terrain.shadow",
+          "flora.sage",
+          "skyZenith",
+          "skyHorizon"
+        ]
+      },
+      "generation": {
+        "sourcePixelsActuallySupplied": false,
+        "imageModel": null,
+        "provider": null,
+        "providerRequestId": null,
+        "imageConditioningReceipt": null,
+        "renderOutputSha256": null,
+        "status": "BLOCKED_SOURCE",
+        "request": "Source-conditioned scene generation only after actual isolated donor view pixels and Dropbox images are supplied to the image provider; otherwise output may be MOOD_ONLY but never source-faithful.",
+        "renderPrompt": "One cohesive hand-sculpted KFB clay island with two asymmetrically tall eroded buttes forming a picturesque rock pass, a narrow-looking BUT mechanically track-profile-consistent Joyride slate-blue racetrack sweeps around the rocks into a wide cambered switchback and clearly continues beyond the cut. Lilac-plum terracotta stone with light peach overhanging caps, dusky blue distant sky, soft amber rim and gentle violet fill, legible white/red race kerbs and painted route centerline. The cliffs join the ONE same underlying geological island body, not detached rocky chunks. Keep generous negative space, no photoreal grit. Single unlabeled 3/4 hero; separate optional driver eye camera proof and track plan can be made in a distinct render pass. No invented guardrail joins, fantasy bridge supports or impossible sharp road seams. Actual sourced models must be isolated before claiming match."
+      },
+      "approval": {
+        "classification": "UNREVIEWED",
+        "georgPicked": false,
+        "goldenRef": false
+      },
+      "provenance": {
+        "sourceAuthor": "George Herriman Krazy Kat colored Sundays (historical visual inspiration only)",
+        "copyrightHandling": "do not trace panels; author original KFB geometry",
+        "sourceBinariesFetchedByGenerator": false,
+        "durableImageOutput": false,
+        "artistApproval": false
+      },
+      "jobId": "COCONINO-JOY-VIOLET-R2",
+      "mode": "scene_context",
+      "context": {
+        "scenePurpose": "Painted Desert Twilight Pass — traversable Joyride island exploration and readable landmark geography",
+        "sceneWorldRole": "OPTIONAL_VISUAL_ENVIRONMENT_OVERLAY_NOT_FIFTH_CANON_ISLAND",
+        "environmentAssetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "characterAssetIds": [],
+        "propAssetIds": [],
+        "camera": "single unlabelled 3/4 hero, wide 16:9, 40-55mm equivalent; separate 3/4 overhead and driving approach proof",
+        "viewLabelsAllowed": false,
+        "parts": [
+          "continuous earthen base",
+          "M02 needle formations",
+          "M03 stepped butte",
+          "Joyride track and apex",
+          "tapered curbs/shoulder",
+          "sparse ground dressing"
+        ],
+        "constructionContacts": {
+          "roadEntry": "requires Track Core verified connector",
+          "roadExit": "requires Track Core verified connector",
+          "roadIslandSupport": "requires common Surface Truth/mesh measured height",
+          "bridge": "if used require owner-approved free span"
+        }
+      }
+    },
+    {
+      "schema": "kfb.asset-scene-image-job/1",
+      "version": "R2_2026-10-11",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "ref": "dccf75cabd222d951380693d84ab88053ee7e519",
+        "assetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "assetRefs": [
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+            "format": "glb",
+            "role": "tall erosion rock donor",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+            "packId": "kenney-nature-kit",
+            "sourceAssetBlobSha": "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+            "format": "glb",
+            "role": "desert dressing",
+            "sourceModelTriCount": null
+          },
+          {
+            "assetId": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+            "packId": "kaykit-forest-nature-pack-1-0-free",
+            "sourceAssetBlobSha": "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+            "format": "gltf+bin",
+            "role": "source-geometry boulder",
+            "sourceModelTriCount": 48
+          },
+          {
+            "assetId": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+            "packId": "scifi-ultimate-space-kit-quaternius",
+            "sourceAssetBlobSha": "4074d7c4f766026916138eeb704e561898c91ca0",
+            "format": "gltf-embedded",
+            "role": "optional surreal secondary rock, NOT Mesa shape",
+            "sourceModelTriCount": 222
+          },
+          {
+            "assetId": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa",
+            "packId": "kfb-clay-k1-h0",
+            "sourceAssetBlobSha": "1cb40e45dc4d2ca20a554e4315b68f9331af4152",
+            "format": "procedural-threejs-js",
+            "role": "primary mesa geometry formula donor",
+            "sourceModelTriCount": null
+          }
+        ],
+        "sourcePaths": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js"
+        ],
+        "blobShas": [
+          "31d1fb480f2bd18b47e7d6b8e2308d4b7301da4a",
+          "7896d4ee7e478b1f8a138f891cdd0e704d33e95e",
+          "cfee4dd720002583c195f1e4f6ce35eeb984b51d",
+          "4074d7c4f766026916138eeb704e561898c91ca0",
+          "1cb40e45dc4d2ca20a554e4315b68f9331af4152"
+        ],
+        "sourceRenderViews": [],
+        "licenseStatus": "VERIFIED_WITH_SCI_FI_PACK_HEADING_MISMATCH",
+        "nativeBbox": null,
+        "K2KitFactor": null,
+        "geometryLock": "loose",
+        "sourceProof": "REPO_SOURCE_VERIFIED__ACTUAL_MESH_PIXEL_ISOLATION_PENDING",
+        "sourcePixelsAvailableToGenerator": false
+      },
+      "style": {
+        "bindingSSOT": [
+          "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md",
+          "skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md"
+        ],
+        "benchmarkRefs": [
+          "tools/KFB-ToolBox/_inbox/KFB_OPEN_WORLD_STYLEGUIDE_2026-10-07/README.md",
+          "/CLAUDE/KFB Claymation Reference/DioramaScenes - overview -f0a9d090-49c7-406e-9bc6-64f63cc6aa53.webp",
+          "/CLAUDE/KFB Claymation Reference/FLOATING ISLANDS DESIGN.webp",
+          "/CLAUDE/KFB Claymation Reference/Race Track Builder/road-consturctor - 5fe21f39-ece6-45ac-8d16-c34788d2eec2.webp"
+        ],
+        "materialMixAllowed": true,
+        "partsBudgetMax": 6,
+        "paletteContract": "tools/asset_registry/specs/KFB_COCONINO_PALETTE_LIGHT_ENVIRONMENT_R2_2026-10-11.md",
+        "trackAuthority": "Track Core construction + Surface Truth support + Joyride v17-style presentation only",
+        "paletteId": "P3_COSMIC_OPTIONAL",
+        "paletteRoles": [
+          "track.asphalt",
+          "track.raceRed",
+          "track.raceWhite",
+          "terrain.base",
+          "terrain.ochre",
+          "terrain.shadow",
+          "flora.sage",
+          "skyZenith",
+          "skyHorizon"
+        ]
+      },
+      "generation": {
+        "sourcePixelsActuallySupplied": false,
+        "imageModel": null,
+        "provider": null,
+        "providerRequestId": null,
+        "imageConditioningReceipt": null,
+        "renderOutputSha256": null,
+        "status": "BLOCKED_SOURCE",
+        "request": "Source-conditioned scene generation only after actual isolated donor view pixels and Dropbox images are supplied to the image provider; otherwise output may be MOOD_ONLY but never source-faithful.",
+        "renderPrompt": "Original claymation cosmic-edge scenic optional KFB visual: one continuous sandstone-purple organic island clod with a deliberately designed, truly legible elevated Joyride race-track section bending past a flat sandstone mesa and a few unusual source-proven Quaternius Space Kit plant/rocks, distant surreal celestial forms only if supported by actual source images. The track must visibly enter/exit on geological supported landings or an approved Track Core free-spanning bridge, never perched on fantasy columns or random cobblestone arches. Maintain road's slate asphalt, red/cream curbs and coherent taper through track/ground interfaces. Cool violet sky and warm glowing horizon, subtle accent lights only from real sourced emissive props. One unlabelled hero image (not contact-sheet advertising). No second island, no generic sci-fi city, no source-faithful claim if genuine source pixels absent."
+      },
+      "approval": {
+        "classification": "UNREVIEWED",
+        "georgPicked": false,
+        "goldenRef": false
+      },
+      "provenance": {
+        "sourceAuthor": "George Herriman Krazy Kat colored Sundays (historical visual inspiration only)",
+        "copyrightHandling": "do not trace panels; author original KFB geometry",
+        "sourceBinariesFetchedByGenerator": false,
+        "durableImageOutput": false,
+        "artistApproval": false
+      },
+      "jobId": "COCONINO-JOY-COSMIC-R2",
+      "mode": "scene_context",
+      "context": {
+        "scenePurpose": "Mesa Rim Cosmic Raceway — traversable Joyride island exploration and readable landmark geography",
+        "sceneWorldRole": "OPTIONAL_VISUAL_ENVIRONMENT_OVERLAY_NOT_FIFTH_CANON_ISLAND",
+        "environmentAssetIds": [
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/rock_tallA.glb",
+          "media/3D_Assets/kenney_nature-kit/Models/GLTF format/cactus_tall.glb",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+          "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Rock_Large_1.gltf",
+          "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js#mesa"
+        ],
+        "characterAssetIds": [],
+        "propAssetIds": [],
+        "camera": "single unlabelled 3/4 hero, wide 16:9, 40-55mm equivalent; separate 3/4 overhead and driving approach proof",
+        "viewLabelsAllowed": false,
+        "parts": [
+          "continuous earthen base",
+          "M01/M03 mesa",
+          "approved free-span track",
+          "track transition/abutments",
+          "source-verified Quaternius nature",
+          "minimal skyline props"
+        ],
+        "constructionContacts": {
+          "roadEntry": "requires Track Core verified connector",
+          "roadExit": "requires Track Core verified connector",
+          "roadIslandSupport": "requires common Surface Truth/mesh measured height",
+          "bridge": "if used require owner-approved free span"
+        }
+      }
+    }
+  ],
+  "notes": "All 3 jobs BLOCKED_SOURCE for source-fidelity output. Pure mood concepts may be generated only if separately classified MOOD_ONLY; source isolation and actual pixel conditioning required before any source-faithful claim."
+}
