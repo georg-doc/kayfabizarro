@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Rhythmus-Elemente und Billboards
+- V-172 Stakkato-Elemente je Skin (Lichter, Fackeln/Laternen/Pfähle, Licht-Pylonen). V-173 Billboards quer über der Strecke an ruhigen Stellen bzw. als Insel-Eingangsschilder. Art Director ergänzt den Style Guide.
+
 ## 2026-10-11 · Architektur-Audit, Spiral-Prüfung
 - Externes Audit R1 (replies/AUDIT_ARCH_R1.md): Ladezeit = Neuberechnung je Aufruf, Flackern belegt durch dynres-Sprung, Banden offen/kollabiert, dist/ mit StreakByte nicht ignoriert (jetzt ignoriert), Tests bildratenabhängig. V-171 Prioritäten an die Bau-Sitzung.
 - Track Core 0.16.10 spiral_clearance (td03 mit Stufen ≥ 20,74, ohne ≥ 23,53).
