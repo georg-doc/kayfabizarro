@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Vendor 0.16.7 im Lab
+- Lab-Vendor: 0.16.1/0.16.2/0.16.3/0.16.7 (0.16.5 privat archiviert); gait_v157.json mit wallTan; Treppen-Fußtest-Anker in docs/handoff/rkit_trail_stairs_foottest_v1.json. RKIT pausiert.
+
 ## 2026-10-11 · Track Core 0.16.7
 - trail mit gemessenen Gangwerten (Trittsteine jog ≤ 2,034, hop ≤ 2,705; Stufe 0,444/0,889), D4 DIRT|MOUNTAIN, HIGHWAY→DIRT eigener Fehler; trail 24/24, dirt 30/30, bitgleich. wallTan fehlt als Zahl in gait_v157.json → MVP-Sitzung trägt nach. RKIT pausiert.
 
