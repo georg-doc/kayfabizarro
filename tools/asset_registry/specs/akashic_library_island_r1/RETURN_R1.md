@@ -1,27 +1,33 @@
-# AKASHIC LIBRARY · OWNING RETURN · CURRENT R2 OPEN STAGE CORRECTION
-2026-10-11 · **CORRECTED DESIGN ROUTE ONLY · R1 VISUAL FAIL / QUARANTINED · R2 IMAGE NOT YET RUN**.
+# Akashic Library Island · Owning RETURN · R2 OPEN STAGE MOOD + ORIGINAL SOURCE ISOLATION
+Date 2026-10-11 · **ONE NEW R2 MOOD IMAGE GENERATED · ORIGINAL MODEL GEOMETRY ISOLATED · SOURCE-LOCKED IMAGE STILL BLOCKED**.
 
-## Correction source / decision
-Georg rejected R1 because it presents a closed architectural monument rather than the already documented *half-open scenelets / living dioramas*. The authoring authority is `skills/chat/KFB_CELL_METRIC_VOXEL_WORLD_GRAMMAR_PREP_2026-10-07.md` at **`planning/kfb-cell-metric-voxel-world-grammar-2026-10-07` @ `d1c0848bffc5bb8a5e8b8ee14fdd6a6b12209a7e`**, Open Stage / Living Diorama section. Main recovery routing: `skills/chat/recovery/KFB_2026-10-07_WEBCHAT_IDEATION_PERSISTENCE_AUDIT.md`, §10; exact Room Study `docs/MENTAL_MODEL_DIORAMA.md` plus `WALL_NODES_S22.md`; Town Lorekeeper + true `Lorekeeper_Tome` lectern from Resident Atlas.
+## Correct creative authority
+Georg rejected R1's closed sandstone-library façade with concealed interiors. The corrected R2 target is **half-open inhabited library scenelets / living dioramas**, not a monument. Authority: `skills/chat/KFB_CELL_METRIC_VOXEL_WORLD_GRAMMAR_PREP_2026-10-07.md` on `planning/kfb-cell-metric-voxel-world-grammar-2026-10-07` @ `d1c0848bffc5bb8a5e8b8ee14fdd6a6b12209a7e`; main recovery index §10, Room Study `MENTAL_MODEL_DIORAMA.md`, and Resident Atlas's actual 1.65-high floor-pivot Lorekeeper_Tome. No four-wall sealed building, no mandatory dome/observatory, no hidden rooms, no Hex parts. One continuous island support, with library activity visible from the open-front 3/4 camera. The four *candidate* scenelets remain arrival FLOOR_MARK, Lorekeeper TWO_WALL, shelf gallery PARTIAL and reading nook OPEN. No new library canon/world or runtime owner.
 
-The current candidate is a **single continuous island support** carrying visible, interconnected OPEN/FLOOR_MARK/TWO_WALL/PARTIAL library scenelets, not a closed roofed building. Actual bookcase/lectern/reading life is visible without window peeking or roof cutaway. A 1.65-high standing Lorekeeper_Tome, not a handheld tome. No new fifth main-world canon, no mandatory observatory/dome/closed library, no new World/scene runtime, no Hex.
+## Source extraction actually executed
+- Actual GitHub GLB and glTF+BIN binary geometry read and decoded; original triangle/index data retained, downsampled only for isolated SVG display:
+  - KayKit Lorekeeper: 9,439 vertices, 10,738 triangles;
+  - KayKit Lorekeeper_Tome: 4,523 vertices, 4,281 triangles, native height 1.654;
+  - Kenney bookcaseOpen: 400 vertices, 320 triangles;
+  - Kenney bookcaseClosedWide: 540 vertices, 372 triangles.
+  - **Total 14,902 source vertices and 15,711 source triangles; 4/4 exact geometry sources**.
+- Two neutral 2D projected source views per donor (original 3/4 and front triangle sampling), no fabricated replacement triangles: `R2_SOURCE_ISOLATED_NEUTRAL.svg` (242,014 chars, exact GitHub readback); exact SHA, source bbox, geometry counts: `R2_SOURCE_PROOF.json`. Source mesh geometry isolation is done; source **texture, pose, attachment/contact, Blender shaded visual proof not done**.
+- Existing compositor still owns source imagery and identity, and original source GLB is not merged into a new runtime.
 
-## Current files and use
-- `CORRECTION_R2_OPEN_STAGE_SCENELETS.md`: **read this first** — binding-source-backed correct design, 4 candidate activity scenelets, room boundary separation, camera/readability and imagery.
-- `PARTS_R2_OPEN_STAGE.md`: six major shape/presentation roles, one mass plus open set wings. These are NOT mesh count or build acceptance.
-- `SCENE_JOB_R2_OPEN_STAGE.json`: correctly staged source-blocked Composer job (four profiles FLOOR_MARK/TWO_WALL/PARTIAL/OPEN, source identity preserved).
-- `TEST_REPORT_R2_CORRECTION.md`: 19/19 executed static checks PASS after one adjusted test assertion on Markdown formatting; 6/6 contract/source files read by the checker. No runtime/visual test claims.
-- `DESIGN_R1.md`, `PARTS_R1.md`, `SCENE_JOB_R1.json`, `TEST_REPORT_R1.md`: **historical REJECTED / FAILED_QUARANTINED**. Previous syntax checks are not a visual PASS; R1 image job now disabled/FAILED.
-- `CHANGELOG_R1.md`: additive R1 and corrected R2 history.
-- This `RETURN_R1.md` is still the current owning Return at the existing source location.
+## New authored image result
+- ONE 1536×1024 new open-stage R2 illustration generated in current ChatGPT conversation with `image_gen` (generation receipt `a5ce3371-e981-4ab1-9730-7ff2081b63bb`). Locally saved chat PNG: `KFB_Akashic_Library_Open_Stage_R2_MOOD_ONLY.png`, 2,684,097 bytes, SHA256 `7b66ac0d026b934a7c7dc04e7b4831ead967630cd931871a04e9b0d2c08cdbb8`.
+- Chat-only ZIP: `KFB_Akashic_Library_R2_Open_Stage_Visual_Pack.zip`, 2,638,764 bytes, SHA256 `15fafbba460cb1638061a59feace2bf04ffd4407ed15806c610c0e4e8b519918`, includes complete PNG, machine manifest, README, 3/3 archive contents CRC PASS. **Neither ZIP nor PNG has been committed to GitHub or deployed to Site**.
+- Artifact documentation saved as `R2_IMAGE_RESULT_MOOD_ONLY.json`; evidence/test report `TEST_REPORT_R2_VISUAL_AND_MESH_SOURCE.md`.
+- Explicit classification: **MOOD_ONLY, NO GOLDEN, NOT source-conditioned**. The drawn character/props MUST NOT be claimed actual source mesh identity; no original Source-image pixels or Dropbox `KFB Claymation Reference` pixels were available/bound to the image-generation request. Job `SCENE_JOB_R2_OPEN_STAGE.json` remains `BLOCKED_SOURCE` for true source-locked hero.
 
-## Verified earlier content / unrun
-Corrected source document and R2 Source Job physically saved and read back on this branch. Source mesh and actual donor-image isolation: 0. Original Dropbox reference pixel transfer to the image generator: 0. New R2 images: **0**. Blender/neutral form: 0. Contact/Track/gameplay/FPS tests: 0. Actual open-stage browser/human acceptance: 0. No PR, no Cloudflare Stage/GPT Site publication, no merge/Live. Four-island Story Vision A/B and R4 STOP remain untouched.
-
-The earlier chat-local R1 1800×1125 vector `KFB_Akashic_Library_Island_R1_MOOD_ONLY.png` and concept ZIP were rejected by Georg on **conceptual grounds**; keep them only as negative/historical evidence, never promote as KFB Golden or use as reference to generate next image.
-
-## Repo/branch
-`georg-doc/kayfabizarro` · `planning/kfb-akashic-library-island-visual-r1-2026-10-11` · PR NONE. The verified exact final branch head is reported by the final readback/checkpoint; do not assume an SHA before this Return commit.
+## Verification / branches
+- Geometry source identity `4/4` parsed, 2 source projection views each; neutral isolated SVG fetched/read back at full length after replacing oversized first attempt.
+- **23/23** static semantic+provenance checks executed against 6 actual GitHub files; earlier 19/19 design correction checks remain separate.
+- Original PNG dimensions and SHA256 validated; ZIP 3/3 CRC validated.
+- See `TEST_REPORT_R2_VISUAL_AND_MESH_SOURCE.md` for the explicit UNRUN roster. No actual 3D mesh assembly, Blender/MCP, measured construction or track contact, gameplay/browser or FPS, independent visual critique, new Site/Stage or human Golden.
+- `DESIGN_R1.md`, `PARTS_R1.md`, `SCENE_JOB_R1.json`, old R1 PNG/SVG/ZIP are **FAILED_QUARANTINED**. Do not reuse the closed-monument image. The last valid source brief is `CORRECTION_R2_OPEN_STAGE_SCENELETS.md`.
+- Repo: `georg-doc/kayfabizarro`, branch: `planning/kfb-akashic-library-island-visual-r1-2026-10-11`, PR: NONE. Exact final branch HEAD must be read after this write and recorded in the durable KFB Production Control checkpoint. No merge/Live.
+- Current Four-Island Story Vision A/B gate and World MVP R4 STOP remain unchanged.
 
 ## ONE next gate
-Use the existing Asset Librarian / Composer source discovery to produce isolated authentic KayKit Lorekeeper/Tome/Staff and Kenney shelf/book source views, obtain actual Dropbox reference pixel input receipt and generate **ONE** source-backed 3/4 **half-open Akashic library diorama hero**, scenelets visible from front. Georg decides KEEP/TUNE/FAIL. Only a later separate authority can authorize 3D build/integration.
+In existing Asset Librarian / Asset Scene Composer production owner, produce **real isolated shaded source render pixels** (Lorekeeper/Tome/Staff/shelves and verified architectural donor) and bind both those pixels and actual Dropbox style-reference image pixels to a generation provider with a receipt. Then create ONE genuinely source-locked 3/4 half-open library island hero for Georg's KEEP / TUNE / FAIL decision. Do not build 3D geometry on the strength of the current mood image alone.
