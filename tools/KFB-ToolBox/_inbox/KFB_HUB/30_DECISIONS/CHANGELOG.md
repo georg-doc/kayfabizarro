@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Fahrtest R2 abgenommen
+- Echter k2b-Fahrtest (nur Tasten, 8 Läufe, 2 Autos, assist 0/0,8, Boost, Randlauf, je Runde + 200 m über Start/Ziel): 0 unter Deck/hängen/Bande/rescue, Landungen 3/3, Kamera 0 Clips. Fahrzeugabhängig nur über Breite (k2b hat mehr nicht). Befund: Hex-Fläche zu Fuß unerreichbar → C4. Nebel wirkt jetzt (fogFar 0,95 × far, Farbe aus Kuppel-Horizont).
+
 ## 2026-10-11 · Konzept C1b-C3 R1 (Steuerung)
 - REPORT r2 korrigiert (Körper verschweißt 0 offene Kanten, aber 2/18/11 Mehrfachkanten; „Schlitz“ = O1-Wasserfläche; Fahrtest k2b-Tasten mit assist, nicht fahrzeugabhängig; Dock-Test unecht).
 - Freigegeben: echter Fahrtest zuerst; Tunnel-im-Feld als Prototyp an einem Körper + race_tube (generisch, Mesh→Feld-Adapter benennen), dann Stopp für Georg; rect-Ring aus Core v0.12; J17-Tagwerte als Strecken-Tag-Preset; Markierungen nach J17-Messung; Nebel. An Georg: Innen-Mauerwerk/Minen-Licht, Himmel „cosmic“, Sprunglücken, Lampenschild.
