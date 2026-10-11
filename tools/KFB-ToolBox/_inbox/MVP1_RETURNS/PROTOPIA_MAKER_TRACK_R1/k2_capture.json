@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "view": "overview",
+      "meshes": 160,
+      "tris": 163226,
+      "shader": "actual clay-material.v10.js + clay-relief.v2/v4 + TOOLMIX",
+      "programs": [
+        {
+          "name": "",
+          "runnable": null
+        },
+        {
+          "name": "clay:tools.004",
+          "runnable": null
+        },
+        {
+          "name": "clay:soil",
+          "runnable": null
+        }
+      ],
+      "calls": 320
+    },
+    {
+      "view": "close",
+      "meshes": 160,
+      "tris": 163226,
+      "shader": "actual clay-material.v10.js + clay-relief.v2/v4 + TOOLMIX",
+      "programs": [
+        {
+          "name": "",
+          "runnable": null
+        },
+        {
+          "name": "clay:tools.004",
+          "runnable": null
+        },
+        {
+          "name": "clay:soil",
+          "runnable": null
+        }
+      ],
+      "calls": 258
+    }
+  ],
+  "errors": [],
+  "performance": "NOT_MEASURED_HEADLESS_SOFTWARE_GPU"
+}

@@ -1,0 +1,6168 @@
+{
+  "scene_sha256": "c82c54b1fba777576ad12e55579fdada38e652985b65d3706df5a49c93469923",
+  "evaluated_objects": 152,
+  "obstacle_rays": 4684,
+  "vehicle_envelope_m": {
+    "length": 6.5,
+    "width": 4.1,
+    "height_reserve": 7,
+    "tested_lateral_extent_including_controller_offset": 3.55
+  },
+  "obstacle_hits": [],
+  "docking_contact_missing": [],
+  "docking_max_gap_m": -0.009999513626098633,
+  "docking_min_gap_m": -1.5920628309249878,
+  "docking_samples": [
+    {
+      "sample": 0,
+      "s": 0,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.2768850326538086,
+        "gap_m": -0.7231149673461914,
+        "point": [
+          210.0,
+          10.0,
+          -1.5268850326538086
+        ]
+      }
+    },
+    {
+      "sample": 0,
+      "s": 0,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.5953524112701416,
+        "gap_m": -0.4046475887298584,
+        "point": [
+          210.0,
+          15.0,
+          -1.8453524112701416
+        ]
+      }
+    },
+    {
+      "sample": 0,
+      "s": 0,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.932612657546997,
+        "gap_m": -0.06738734245300293,
+        "point": [
+          210.0,
+          20.0,
+          -2.182612657546997
+        ]
+      }
+    },
+    {
+      "sample": 0,
+      "s": 0,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6396985054016113,
+        "gap_m": -0.36030149459838867,
+        "point": [
+          210.0,
+          25.0,
+          -1.8896985054016113
+        ]
+      }
+    },
+    {
+      "sample": 0,
+      "s": 0,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.307309865951538,
+        "gap_m": -0.6926901340484619,
+        "point": [
+          210.0,
+          30.0,
+          -1.557309865951538
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "s": 0.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.320178508758545,
+        "gap_m": -0.6798214912414551,
+        "point": [
+          209.5,
+          10.0,
+          -1.570178508758545
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "s": 0.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.621767044067383,
+        "gap_m": -0.3782329559326172,
+        "point": [
+          209.5,
+          15.0,
+          -1.8717670440673828
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "s": 0.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9041683673858643,
+        "gap_m": -0.09583163261413574,
+        "point": [
+          209.5,
+          20.0,
+          -2.1541683673858643
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "s": 0.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6085586547851562,
+        "gap_m": -0.39144134521484375,
+        "point": [
+          209.5,
+          25.0,
+          -1.8585586547851562
+        ]
+      }
+    },
+    {
+      "sample": 1,
+      "s": 0.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.2841033935546875,
+        "gap_m": -0.7158966064453125,
+        "point": [
+          209.5,
+          30.0,
+          -1.5341033935546875
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "s": 1,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.3634724617004395,
+        "gap_m": -0.6365275382995605,
+        "point": [
+          209.0,
+          10.0,
+          -1.6134724617004395
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "s": 1,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.648181438446045,
+        "gap_m": -0.3518185615539551,
+        "point": [
+          209.0,
+          15.0,
+          -1.898181438446045
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "s": 1,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.875722885131836,
+        "gap_m": -0.12427711486816406,
+        "point": [
+          209.0,
+          20.0,
+          -2.125722885131836
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "s": 1,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.577418565750122,
+        "gap_m": -0.42258143424987793,
+        "point": [
+          209.0,
+          25.0,
+          -1.827418565750122
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "s": 1,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.260897397994995,
+        "gap_m": -0.7391026020050049,
+        "point": [
+          209.0,
+          30.0,
+          -1.5108973979949951
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "s": 1.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.406766414642334,
+        "gap_m": -0.593233585357666,
+        "point": [
+          208.5,
+          10.0,
+          -1.656766414642334
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "s": 1.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6763951778411865,
+        "gap_m": -0.3236048221588135,
+        "point": [
+          208.5,
+          15.0,
+          -1.9263951778411865
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "s": 1.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.847277879714966,
+        "gap_m": -0.15272212028503418,
+        "point": [
+          208.5,
+          20.0,
+          -2.097277879714966
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "s": 1.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.546278953552246,
+        "gap_m": -0.4537210464477539,
+        "point": [
+          208.5,
+          25.0,
+          -1.796278953552246
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "s": 1.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.2376909255981445,
+        "gap_m": -0.7623090744018555,
+        "point": [
+          208.5,
+          30.0,
+          -1.4876909255981445
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "s": 2,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.4500608444213867,
+        "gap_m": -0.5499391555786133,
+        "point": [
+          208.0,
+          10.0,
+          -1.7000608444213867
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "s": 2,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.7049994468688965,
+        "gap_m": -0.2950005531311035,
+        "point": [
+          208.0,
+          15.0,
+          -1.9549994468688965
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "s": 2,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.949374198913574,
+        "gap_m": -0.05062580108642578,
+        "point": [
+          208.0,
+          20.0,
+          -2.199374198913574
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "s": 2,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.515138864517212,
+        "gap_m": -0.4848611354827881,
+        "point": [
+          208.0,
+          25.0,
+          -1.765138864517212
+        ]
+      }
+    },
+    {
+      "sample": 4,
+      "s": 2,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.211530923843384,
+        "gap_m": -0.7884690761566162,
+        "point": [
+          208.0,
+          30.0,
+          -1.4615309238433838
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "s": 2.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.493354320526123,
+        "gap_m": -0.506645679473877,
+        "point": [
+          207.5,
+          10.0,
+          -1.743354320526123
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "s": 2.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.733603000640869,
+        "gap_m": -0.26639699935913086,
+        "point": [
+          207.5,
+          15.0,
+          -1.9836030006408691
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "s": 2.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9577620029449463,
+        "gap_m": -0.04223799705505371,
+        "point": [
+          207.5,
+          20.0,
+          -2.2077620029449463
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "s": 2.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.484001636505127,
+        "gap_m": -0.515998363494873,
+        "point": [
+          207.5,
+          25.0,
+          -1.734001636505127
+        ]
+      }
+    },
+    {
+      "sample": 5,
+      "s": 2.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.1832799911499023,
+        "gap_m": -0.8167200088500977,
+        "point": [
+          207.5,
+          30.0,
+          -1.4332799911499023
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "s": 3,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.5366482734680176,
+        "gap_m": -0.4633517265319824,
+        "point": [
+          207.0,
+          10.0,
+          -1.7866482734680176
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "s": 3,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.762207508087158,
+        "gap_m": -0.2377924919128418,
+        "point": [
+          207.0,
+          15.0,
+          -2.012207508087158
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "s": 3,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9661495685577393,
+        "gap_m": -0.03385043144226074,
+        "point": [
+          207.0,
+          20.0,
+          -2.2161495685577393
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "s": 3,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.4529144763946533,
+        "gap_m": -0.5470855236053467,
+        "point": [
+          207.0,
+          25.0,
+          -1.7029144763946533
+        ]
+      }
+    },
+    {
+      "sample": 6,
+      "s": 3,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.155029296875,
+        "gap_m": -0.844970703125,
+        "point": [
+          207.0,
+          30.0,
+          -1.405029296875
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "s": 3.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.579942226409912,
+        "gap_m": -0.4200577735900879,
+        "point": [
+          206.5,
+          10.0,
+          -1.829942226409912
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "s": 3.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.79081130027771,
+        "gap_m": -0.20918869972229004,
+        "point": [
+          206.5,
+          15.0,
+          -2.04081130027771
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "s": 3.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9745373725891113,
+        "gap_m": -0.025462627410888672,
+        "point": [
+          206.5,
+          20.0,
+          -2.2245373725891113
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "s": 3.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.421827793121338,
+        "gap_m": -0.5781722068786621,
+        "point": [
+          206.5,
+          25.0,
+          -1.671827793121338
+        ]
+      }
+    },
+    {
+      "sample": 7,
+      "s": 3.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.1267786026000977,
+        "gap_m": -0.8732213973999023,
+        "point": [
+          206.5,
+          30.0,
+          -1.3767786026000977
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "s": 4,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6232364177703857,
+        "gap_m": -0.37676358222961426,
+        "point": [
+          206.0,
+          10.0,
+          -1.8732364177703857
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "s": 4,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.81941556930542,
+        "gap_m": -0.18058443069458008,
+        "point": [
+          206.0,
+          15.0,
+          -2.06941556930542
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "s": 4,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9829249382019043,
+        "gap_m": -0.017075061798095703,
+        "point": [
+          206.0,
+          20.0,
+          -2.2329249382019043
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "s": 4,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.3907411098480225,
+        "gap_m": -0.6092588901519775,
+        "point": [
+          206.0,
+          25.0,
+          -1.6407411098480225
+        ]
+      }
+    },
+    {
+      "sample": 8,
+      "s": 4,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.098527669906616,
+        "gap_m": -0.9014723300933838,
+        "point": [
+          206.0,
+          30.0,
+          -1.3485276699066162
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "s": 4.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6665303707122803,
+        "gap_m": -0.3334696292877197,
+        "point": [
+          205.5,
+          10.0,
+          -1.9165303707122803
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "s": 4.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.848909616470337,
+        "gap_m": -0.15109038352966309,
+        "point": [
+          205.5,
+          15.0,
+          -2.098909616470337
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "s": 4.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          205.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "s": 4.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.359654664993286,
+        "gap_m": -0.6403453350067139,
+        "point": [
+          205.5,
+          25.0,
+          -1.6096546649932861
+        ]
+      }
+    },
+    {
+      "sample": 9,
+      "s": 4.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.0702764987945557,
+        "gap_m": -0.9297235012054443,
+        "point": [
+          205.5,
+          30.0,
+          -1.3202764987945557
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "s": 5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.7098240852355957,
+        "gap_m": -0.2901759147644043,
+        "point": [
+          205.0,
+          10.0,
+          -1.9598240852355957
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "s": 5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.8813741207122803,
+        "gap_m": -0.11862587928771973,
+        "point": [
+          205.0,
+          15.0,
+          -2.1313741207122803
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "s": 5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          205.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "s": 5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.3285677433013916,
+        "gap_m": -0.6714322566986084,
+        "point": [
+          205.0,
+          25.0,
+          -1.5785677433013916
+        ]
+      }
+    },
+    {
+      "sample": 10,
+      "s": 5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.0398967266082764,
+        "gap_m": -0.9601032733917236,
+        "point": [
+          205.0,
+          30.0,
+          -1.2898967266082764
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "s": 5.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.7531180381774902,
+        "gap_m": -0.24688196182250977,
+        "point": [
+          204.5,
+          10.0,
+          -2.0031180381774902
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "s": 5.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9138388633728027,
+        "gap_m": -0.08616113662719727,
+        "point": [
+          204.5,
+          15.0,
+          -2.1638388633728027
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "s": 5.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          204.5,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "s": 5.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.2982771396636963,
+        "gap_m": -0.7017228603363037,
+        "point": [
+          204.5,
+          25.0,
+          -1.5482771396636963
+        ]
+      }
+    },
+    {
+      "sample": 11,
+      "s": 5.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.008756637573242,
+        "gap_m": -0.9912433624267578,
+        "point": [
+          204.5,
+          30.0,
+          -1.2587566375732422
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "s": 6,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.796412229537964,
+        "gap_m": -0.20358777046203613,
+        "point": [
+          204.0,
+          10.0,
+          -2.046412229537964
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "s": 6,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9463038444519043,
+        "gap_m": -0.0536961555480957,
+        "point": [
+          204.0,
+          15.0,
+          -2.1963038444519043
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "s": 6,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          204.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "s": 6,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.269832134246826,
+        "gap_m": -0.7301678657531738,
+        "point": [
+          204.0,
+          25.0,
+          -1.5198321342468262
+        ]
+      }
+    },
+    {
+      "sample": 12,
+      "s": 6,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.9776166677474976,
+        "gap_m": -1.0223833322525024,
+        "point": [
+          204.0,
+          30.0,
+          -1.2276166677474976
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "s": 6.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.8397059440612793,
+        "gap_m": -0.1602940559387207,
+        "point": [
+          203.5,
+          10.0,
+          -2.0897059440612793
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "s": 6.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9787681102752686,
+        "gap_m": -0.021231889724731445,
+        "point": [
+          203.5,
+          15.0,
+          -2.2287681102752686
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "s": 6.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          203.5,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "s": 6.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.241387367248535,
+        "gap_m": -0.7586126327514648,
+        "point": [
+          203.5,
+          25.0,
+          -1.4913873672485352
+        ]
+      }
+    },
+    {
+      "sample": 13,
+      "s": 6.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.9464768171310425,
+        "gap_m": -1.0535231828689575,
+        "point": [
+          203.5,
+          30.0,
+          -1.1964768171310425
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "s": 7,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.8843815326690674,
+        "gap_m": -0.11561846733093262,
+        "point": [
+          203.0,
+          10.0,
+          -2.1343815326690674
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "s": 7,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          203.0,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "s": 7,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          203.0,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "s": 7,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.212942123413086,
+        "gap_m": -0.7870578765869141,
+        "point": [
+          203.0,
+          25.0,
+          -1.462942123413086
+        ]
+      }
+    },
+    {
+      "sample": 14,
+      "s": 7,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.9153369665145874,
+        "gap_m": -1.0846630334854126,
+        "point": [
+          203.0,
+          30.0,
+          -1.1653369665145874
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "s": 7.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9291651248931885,
+        "gap_m": -0.07083487510681152,
+        "point": [
+          202.5,
+          10.0,
+          -2.1791651248931885
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "s": 7.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          202.5,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "s": 7.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          202.5,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "s": 7.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.184497117996216,
+        "gap_m": -0.8155028820037842,
+        "point": [
+          202.5,
+          25.0,
+          -1.4344971179962158
+        ]
+      }
+    },
+    {
+      "sample": 15,
+      "s": 7.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.8841969966888428,
+        "gap_m": -1.1158030033111572,
+        "point": [
+          202.5,
+          30.0,
+          -1.1341969966888428
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "s": 8,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9739491939544678,
+        "gap_m": -0.026050806045532227,
+        "point": [
+          202.0,
+          10.0,
+          -2.2239491939544678
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "s": 8,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          202.0,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "s": 8,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          202.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "s": 8,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.156052589416504,
+        "gap_m": -0.8439474105834961,
+        "point": [
+          202.0,
+          25.0,
+          -1.406052589416504
+        ]
+      }
+    },
+    {
+      "sample": 16,
+      "s": 8,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.8530713319778442,
+        "gap_m": -1.1469286680221558,
+        "point": [
+          202.0,
+          30.0,
+          -1.1030713319778442
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "s": 8.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          201.5,
+          10.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "s": 8.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          201.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "s": 8.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          201.5,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "s": 8.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.127607583999634,
+        "gap_m": -0.8723924160003662,
+        "point": [
+          201.5,
+          25.0,
+          -1.3776075839996338
+        ]
+      }
+    },
+    {
+      "sample": 17,
+      "s": 8.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.8219845294952393,
+        "gap_m": -1.1780154705047607,
+        "point": [
+          201.5,
+          30.0,
+          -1.0719845294952393
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "s": 9,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          201.0,
+          10.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "s": 9,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          201.0,
+          15.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "s": 9,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          201.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "s": 9,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.2591969966888428,
+        "gap_m": -0.7408030033111572,
+        "point": [
+          201.0,
+          25.0,
+          -1.5091969966888428
+        ]
+      }
+    },
+    {
+      "sample": 18,
+      "s": 9,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.7908977270126343,
+        "gap_m": -1.2091022729873657,
+        "point": [
+          201.0,
+          30.0,
+          -1.0408977270126343
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "s": 9.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          200.5,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "s": 9.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          200.5,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "s": 9.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          200.5,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "s": 9.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.4440667629241943,
+        "gap_m": -0.5559332370758057,
+        "point": [
+          200.5,
+          25.0,
+          -1.6940667629241943
+        ]
+      }
+    },
+    {
+      "sample": 19,
+      "s": 9.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.7598111629486084,
+        "gap_m": -1.2401888370513916,
+        "point": [
+          200.5,
+          30.0,
+          -1.0098111629486084
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "s": 10,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          200.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "s": 10,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          200.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "s": 10,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          200.0,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "s": 10,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.6289360523223877,
+        "gap_m": -0.3710639476776123,
+        "point": [
+          200.0,
+          25.0,
+          -1.8789360523223877
+        ]
+      }
+    },
+    {
+      "sample": 20,
+      "s": 10,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.7287243604660034,
+        "gap_m": -1.2712756395339966,
+        "point": [
+          200.0,
+          30.0,
+          -0.9787243604660034
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "s": 10.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          199.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "s": 10.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          199.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "s": 10.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          199.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "s": 10.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.8138060569763184,
+        "gap_m": -0.18619394302368164,
+        "point": [
+          199.5,
+          25.0,
+          -2.0638060569763184
+        ]
+      }
+    },
+    {
+      "sample": 21,
+      "s": 10.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.6976374387741089,
+        "gap_m": -1.3023625612258911,
+        "point": [
+          199.5,
+          30.0,
+          -0.9476374387741089
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "s": 11,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          199.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "s": 11,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          199.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "s": 11,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          199.0,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "s": 11,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9660191535949707,
+        "gap_m": -0.0339808464050293,
+        "point": [
+          199.0,
+          25.0,
+          -2.2160191535949707
+        ]
+      }
+    },
+    {
+      "sample": 22,
+      "s": 11,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.6665513515472412,
+        "gap_m": -1.3334486484527588,
+        "point": [
+          199.0,
+          30.0,
+          -0.9165513515472412
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "s": 11.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          198.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "s": 11.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          198.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "s": 11.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          198.5,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "s": 11.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9744069576263428,
+        "gap_m": -0.025593042373657227,
+        "point": [
+          198.5,
+          25.0,
+          -2.2244069576263428
+        ]
+      }
+    },
+    {
+      "sample": 23,
+      "s": 11.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.6354957818984985,
+        "gap_m": -1.3645042181015015,
+        "point": [
+          198.5,
+          30.0,
+          -0.8854957818984985
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "s": 12,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          198.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "s": 12,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          198.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "s": 12,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          198.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "s": 12,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9827942848205566,
+        "gap_m": -0.01720571517944336,
+        "point": [
+          198.0,
+          25.0,
+          -2.2327942848205566
+        ]
+      }
+    },
+    {
+      "sample": 24,
+      "s": 12,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.607050895690918,
+        "gap_m": -1.392949104309082,
+        "point": [
+          198.0,
+          30.0,
+          -0.857050895690918
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "s": 12.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          197.5,
+          10.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "s": 12.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          197.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "s": 12.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          197.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "s": 12.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          197.5,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 25,
+      "s": 12.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.5786062479019165,
+        "gap_m": -1.4213937520980835,
+        "point": [
+          197.5,
+          30.0,
+          -0.8286062479019165
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "s": 13,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          197.0,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "s": 13,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          197.0,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "s": 13,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          197.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "s": 13,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          197.0,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 26,
+      "s": 13,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.550161361694336,
+        "gap_m": -1.449838638305664,
+        "point": [
+          197.0,
+          30.0,
+          -0.8001613616943359
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "s": 13.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          196.5,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "s": 13.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          196.5,
+          15.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "s": 13.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          196.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "s": 13.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          196.5,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 27,
+      "s": 13.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.5217164754867554,
+        "gap_m": -1.4782835245132446,
+        "point": [
+          196.5,
+          30.0,
+          -0.7717164754867554
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "s": 14,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          196.0,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "s": 14,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          196.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "s": 14,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          196.0,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "s": 14,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          196.0,
+          25.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 28,
+      "s": 14,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.4932717084884644,
+        "gap_m": -1.5067282915115356,
+        "point": [
+          196.0,
+          30.0,
+          -0.7432717084884644
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "s": 14.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          195.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "s": 14.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          195.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "s": 14.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          195.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "s": 14.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          195.5,
+          25.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 29,
+      "s": 14.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.4648268222808838,
+        "gap_m": -1.5351731777191162,
+        "point": [
+          195.5,
+          30.0,
+          -0.7148268222808838
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "s": 15,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          195.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "s": 15,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          195.0,
+          15.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "s": 15,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          195.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "s": 15,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          195.0,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 30,
+      "s": 15,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.4363820552825928,
+        "gap_m": -1.5636179447174072,
+        "point": [
+          195.0,
+          30.0,
+          -0.6863820552825928
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "s": 15.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          194.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "s": 15.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          194.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "s": 15.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          194.5,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "s": 15.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          194.5,
+          25.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 31,
+      "s": 15.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.4079371690750122,
+        "gap_m": -1.5920628309249878,
+        "point": [
+          194.5,
+          30.0,
+          -0.6579371690750122
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "s": 16,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          194.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "s": 16,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          194.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "s": 16,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          194.0,
+          20.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "s": 16,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          194.0,
+          25.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 32,
+      "s": 16,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.5367317199707031,
+        "gap_m": -1.4632682800292969,
+        "point": [
+          194.0,
+          30.0,
+          -0.7867317199707031
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "s": 16.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          193.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "s": 16.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          193.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "s": 16.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          193.5,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "s": 16.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          193.5,
+          25.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 33,
+      "s": 16.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.721601128578186,
+        "gap_m": -1.278398871421814,
+        "point": [
+          193.5,
+          30.0,
+          -0.971601128578186
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "s": 17,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          193.0,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "s": 17,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          193.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "s": 17,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          193.0,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "s": 17,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          193.0,
+          25.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 34,
+      "s": 17,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 1.9064706563949585,
+        "gap_m": -1.0935293436050415,
+        "point": [
+          193.0,
+          30.0,
+          -1.1564706563949585
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "s": 17.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          192.5,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "s": 17.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          192.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "s": 17.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          192.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "s": 17.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          192.5,
+          25.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 35,
+      "s": 17.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.0913405418395996,
+        "gap_m": -0.9086594581604004,
+        "point": [
+          192.5,
+          30.0,
+          -1.3413405418395996
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "s": 18,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          192.0,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "s": 18,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          192.0,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "s": 18,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          192.0,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "s": 18,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          192.0,
+          25.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 36,
+      "s": 18,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.276210069656372,
+        "gap_m": -0.7237899303436279,
+        "point": [
+          192.0,
+          30.0,
+          -1.526210069656372
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "s": 18.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          191.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "s": 18.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          191.5,
+          15.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "s": 18.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          191.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "s": 18.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          191.5,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 37,
+      "s": 18.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.4610798358917236,
+        "gap_m": -0.5389201641082764,
+        "point": [
+          191.5,
+          30.0,
+          -1.7110798358917236
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "s": 19,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          191.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "s": 19,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          191.0,
+          15.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "s": 19,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          191.0,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "s": 19,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          191.0,
+          25.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 38,
+      "s": 19,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.645949125289917,
+        "gap_m": -0.354050874710083,
+        "point": [
+          191.0,
+          30.0,
+          -1.895949125289917
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "s": 19.5,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          190.5,
+          10.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "s": 19.5,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          190.5,
+          15.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "s": 19.5,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          190.5,
+          20.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "s": 19.5,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          190.5,
+          25.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 39,
+      "s": 19.5,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.8308188915252686,
+        "gap_m": -0.16918110847473145,
+        "point": [
+          190.5,
+          30.0,
+          -2.0808188915252686
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "s": 20,
+      "lat": -10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          190.0,
+          10.0,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "s": 20,
+      "lat": -5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          190.0,
+          15.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "s": 20,
+      "lat": 0,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          190.0,
+          20.0,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "s": 20,
+      "lat": 5,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          190.0,
+          25.0,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 40,
+      "s": 20,
+      "lat": 10,
+      "terrain": {
+        "object": "MakerSpace_terrain",
+        "distance": 2.982664108276367,
+        "gap_m": -0.017335891723632812,
+        "point": [
+          190.0,
+          30.0,
+          -2.232664108276367
+        ]
+      }
+    },
+    {
+      "sample": 700,
+      "s": 349.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -126.54619598388672,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 700,
+      "s": 349.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -126.54619598388672,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 700,
+      "s": 349.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -126.54619598388672,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 700,
+      "s": 349.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -126.54619598388672,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 700,
+      "s": 349.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.603675365447998,
+        "gap_m": -0.39632463455200195,
+        "point": [
+          -126.54619598388672,
+          109.79623413085938,
+          -1.853675365447998
+        ]
+      }
+    },
+    {
+      "sample": 701,
+      "s": 350.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -127.04619598388672,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 701,
+      "s": 350.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -127.04619598388672,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 701,
+      "s": 350.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -127.04619598388672,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 701,
+      "s": 350.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -127.04619598388672,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 701,
+      "s": 350.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.6610710620880127,
+        "gap_m": -0.3389289379119873,
+        "point": [
+          -127.04619598388672,
+          109.79623413085938,
+          -1.9110710620880127
+        ]
+      }
+    },
+    {
+      "sample": 702,
+      "s": 350.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -127.54619598388672,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 702,
+      "s": 350.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -127.54619598388672,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 702,
+      "s": 350.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -127.54619598388672,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 702,
+      "s": 350.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -127.54619598388672,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 702,
+      "s": 350.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.7184672355651855,
+        "gap_m": -0.28153276443481445,
+        "point": [
+          -127.54619598388672,
+          109.79623413085938,
+          -1.9684672355651855
+        ]
+      }
+    },
+    {
+      "sample": 703,
+      "s": 351.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -128.0461883544922,
+          89.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 703,
+      "s": 351.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -128.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 703,
+      "s": 351.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -128.0461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 703,
+      "s": 351.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -128.0461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 703,
+      "s": 351.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.775862216949463,
+        "gap_m": -0.2241377830505371,
+        "point": [
+          -128.0461883544922,
+          109.79623413085938,
+          -2.025862216949463
+        ]
+      }
+    },
+    {
+      "sample": 704,
+      "s": 351.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -128.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 704,
+      "s": 351.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -128.5461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 704,
+      "s": 351.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -128.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 704,
+      "s": 351.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -128.5461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 704,
+      "s": 351.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.8332581520080566,
+        "gap_m": -0.16674184799194336,
+        "point": [
+          -128.5461883544922,
+          109.79623413085938,
+          -2.0832581520080566
+        ]
+      }
+    },
+    {
+      "sample": 705,
+      "s": 352.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -129.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 705,
+      "s": 352.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -129.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 705,
+      "s": 352.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -129.0461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 705,
+      "s": 352.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -129.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 705,
+      "s": 352.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.8906543254852295,
+        "gap_m": -0.10934567451477051,
+        "point": [
+          -129.0461883544922,
+          109.79623413085938,
+          -2.1406543254852295
+        ]
+      }
+    },
+    {
+      "sample": 706,
+      "s": 352.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -129.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 706,
+      "s": 352.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -129.5461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 706,
+      "s": 352.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -129.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 706,
+      "s": 352.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -129.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 706,
+      "s": 352.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9480502605438232,
+        "gap_m": -0.05194973945617676,
+        "point": [
+          -129.5461883544922,
+          109.79623413085938,
+          -2.1980502605438232
+        ]
+      }
+    },
+    {
+      "sample": 707,
+      "s": 353.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -130.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 707,
+      "s": 353.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -130.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 707,
+      "s": 353.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -130.0461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 707,
+      "s": 353.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -130.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 707,
+      "s": 353.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -130.0461883544922,
+          109.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 708,
+      "s": 353.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -130.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 708,
+      "s": 353.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -130.5461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 708,
+      "s": 353.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -130.5461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 708,
+      "s": 353.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -130.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 708,
+      "s": 353.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -130.5461883544922,
+          109.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 709,
+      "s": 354.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -131.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 709,
+      "s": 354.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -131.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 709,
+      "s": 354.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -131.0461883544922,
+          99.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 709,
+      "s": 354.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -131.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 709,
+      "s": 354.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -131.0461883544922,
+          109.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 710,
+      "s": 354.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -131.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 710,
+      "s": 354.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -131.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 710,
+      "s": 354.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -131.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 710,
+      "s": 354.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -131.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 710,
+      "s": 354.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -131.5461883544922,
+          109.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 711,
+      "s": 355.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -132.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 711,
+      "s": 355.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -132.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 711,
+      "s": 355.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -132.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 711,
+      "s": 355.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -132.0461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 711,
+      "s": 355.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -132.0461883544922,
+          109.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 712,
+      "s": 355.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -132.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 712,
+      "s": 355.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -132.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 712,
+      "s": 355.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -132.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 712,
+      "s": 355.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -132.5461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 712,
+      "s": 355.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -132.5461883544922,
+          109.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 713,
+      "s": 356.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -133.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 713,
+      "s": 356.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -133.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 713,
+      "s": 356.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -133.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 713,
+      "s": 356.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -133.0461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 713,
+      "s": 356.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -133.0461883544922,
+          109.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 714,
+      "s": 356.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -133.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 714,
+      "s": 356.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -133.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 714,
+      "s": 356.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -133.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 714,
+      "s": 356.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -133.5461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 714,
+      "s": 356.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9674644470214844,
+        "gap_m": -0.032535552978515625,
+        "point": [
+          -133.5461883544922,
+          109.79623413085938,
+          -2.2174644470214844
+        ]
+      }
+    },
+    {
+      "sample": 715,
+      "s": 357.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -134.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 715,
+      "s": 357.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -134.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 715,
+      "s": 357.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -134.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 715,
+      "s": 357.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -134.0461883544922,
+          104.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 715,
+      "s": 357.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.8752737045288086,
+        "gap_m": -0.1247262954711914,
+        "point": [
+          -134.0461883544922,
+          109.79623413085938,
+          -2.1252737045288086
+        ]
+      }
+    },
+    {
+      "sample": 716,
+      "s": 357.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -134.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 716,
+      "s": 357.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -134.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 716,
+      "s": 357.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -134.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 716,
+      "s": 357.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -134.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 716,
+      "s": 357.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.7830841541290283,
+        "gap_m": -0.21691584587097168,
+        "point": [
+          -134.5461883544922,
+          109.79623413085938,
+          -2.0330841541290283
+        ]
+      }
+    },
+    {
+      "sample": 717,
+      "s": 358.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -135.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 717,
+      "s": 358.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -135.0461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 717,
+      "s": 358.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -135.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 717,
+      "s": 358.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -135.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 717,
+      "s": 358.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.69089412689209,
+        "gap_m": -0.30910587310791016,
+        "point": [
+          -135.0461883544922,
+          109.79623413085938,
+          -1.9408941268920898
+        ]
+      }
+    },
+    {
+      "sample": 718,
+      "s": 358.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -135.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 718,
+      "s": 358.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -135.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 718,
+      "s": 358.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -135.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 718,
+      "s": 358.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -135.5461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 718,
+      "s": 358.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.5987038612365723,
+        "gap_m": -0.40129613876342773,
+        "point": [
+          -135.5461883544922,
+          109.79623413085938,
+          -1.8487038612365723
+        ]
+      }
+    },
+    {
+      "sample": 719,
+      "s": 359.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -136.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 719,
+      "s": 359.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -136.0461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 719,
+      "s": 359.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -136.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 719,
+      "s": 359.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -136.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 719,
+      "s": 359.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.5065133571624756,
+        "gap_m": -0.4934866428375244,
+        "point": [
+          -136.0461883544922,
+          109.79623413085938,
+          -1.7565133571624756
+        ]
+      }
+    },
+    {
+      "sample": 720,
+      "s": 359.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -136.5461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 720,
+      "s": 359.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -136.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 720,
+      "s": 359.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -136.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 720,
+      "s": 359.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -136.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 720,
+      "s": 359.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.414323568344116,
+        "gap_m": -0.5856764316558838,
+        "point": [
+          -136.5461883544922,
+          109.79623413085938,
+          -1.6643235683441162
+        ]
+      }
+    },
+    {
+      "sample": 721,
+      "s": 360.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -137.0461883544922,
+          89.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 721,
+      "s": 360.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -137.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 721,
+      "s": 360.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -137.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 721,
+      "s": 360.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -137.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 721,
+      "s": 360.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.3221333026885986,
+        "gap_m": -0.6778666973114014,
+        "point": [
+          -137.0461883544922,
+          109.79623413085938,
+          -1.5721333026885986
+        ]
+      }
+    },
+    {
+      "sample": 722,
+      "s": 360.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -137.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 722,
+      "s": 360.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -137.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 722,
+      "s": 360.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -137.5461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 722,
+      "s": 360.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -137.5461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 722,
+      "s": 360.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.229943037033081,
+        "gap_m": -0.770056962966919,
+        "point": [
+          -137.5461883544922,
+          109.79623413085938,
+          -1.479943037033081
+        ]
+      }
+    },
+    {
+      "sample": 723,
+      "s": 361.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -138.0461883544922,
+          89.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 723,
+      "s": 361.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 723,
+      "s": 361.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 723,
+      "s": 361.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 723,
+      "s": 361.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.1377530097961426,
+        "gap_m": -0.8622469902038574,
+        "point": [
+          -138.0461883544922,
+          109.79623413085938,
+          -1.3877530097961426
+        ]
+      }
+    },
+    {
+      "sample": 724,
+      "s": 361.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 724,
+      "s": 361.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 724,
+      "s": 361.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -138.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 724,
+      "s": 361.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -138.5461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 724,
+      "s": 361.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.045562982559204,
+        "gap_m": -0.9544370174407959,
+        "point": [
+          -138.5461883544922,
+          109.79623413085938,
+          -1.295562982559204
+        ]
+      }
+    },
+    {
+      "sample": 725,
+      "s": 362.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900004863739014,
+        "gap_m": -0.009999513626098633,
+        "point": [
+          -139.0461883544922,
+          89.79623413085938,
+          -2.2400004863739014
+        ]
+      }
+    },
+    {
+      "sample": 725,
+      "s": 362.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -139.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 725,
+      "s": 362.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -139.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 725,
+      "s": 362.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -139.0461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 725,
+      "s": 362.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.9533727169036865,
+        "gap_m": -1.0466272830963135,
+        "point": [
+          -139.0461883544922,
+          109.79623413085938,
+          -1.2033727169036865
+        ]
+      }
+    },
+    {
+      "sample": 726,
+      "s": 362.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -139.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 726,
+      "s": 362.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -139.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 726,
+      "s": 362.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -139.5461883544922,
+          99.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 726,
+      "s": 362.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -139.5461883544922,
+          104.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 726,
+      "s": 362.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.8611828088760376,
+        "gap_m": -1.1388171911239624,
+        "point": [
+          -139.5461883544922,
+          109.79623413085938,
+          -1.1111828088760376
+        ]
+      }
+    },
+    {
+      "sample": 727,
+      "s": 363.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 727,
+      "s": 363.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 727,
+      "s": 363.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 727,
+      "s": 363.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 727,
+      "s": 363.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.7689924240112305,
+        "gap_m": -1.2310075759887695,
+        "point": [
+          -140.0461883544922,
+          109.79623413085938,
+          -1.0189924240112305
+        ]
+      }
+    },
+    {
+      "sample": 728,
+      "s": 363.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 728,
+      "s": 363.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 728,
+      "s": 363.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -140.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 728,
+      "s": 363.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -140.5461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 728,
+      "s": 363.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.7381203174591064,
+        "gap_m": -1.2618796825408936,
+        "point": [
+          -140.5461883544922,
+          109.79623413085938,
+          -0.9881203174591064
+        ]
+      }
+    },
+    {
+      "sample": 729,
+      "s": 364.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 729,
+      "s": 364.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 729,
+      "s": 364.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 729,
+      "s": 364.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -141.0461883544922,
+          104.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 729,
+      "s": 364.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.784844994544983,
+        "gap_m": -1.215155005455017,
+        "point": [
+          -141.0461883544922,
+          109.79623413085938,
+          -1.034844994544983
+        ]
+      }
+    },
+    {
+      "sample": 730,
+      "s": 364.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 730,
+      "s": 364.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 730,
+      "s": 364.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -141.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 730,
+      "s": 364.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -141.5461883544922,
+          104.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 730,
+      "s": 364.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.831570029258728,
+        "gap_m": -1.168429970741272,
+        "point": [
+          -141.5461883544922,
+          109.79623413085938,
+          -1.081570029258728
+        ]
+      }
+    },
+    {
+      "sample": 731,
+      "s": 365.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -142.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 731,
+      "s": 365.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -142.0461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 731,
+      "s": 365.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -142.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 731,
+      "s": 365.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -142.0461883544922,
+          104.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 731,
+      "s": 365.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.8782949447631836,
+        "gap_m": -1.1217050552368164,
+        "point": [
+          -142.0461883544922,
+          109.79623413085938,
+          -1.1282949447631836
+        ]
+      }
+    },
+    {
+      "sample": 732,
+      "s": 365.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -142.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 732,
+      "s": 365.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -142.5461883544922,
+          94.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 732,
+      "s": 365.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -142.5461883544922,
+          99.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 732,
+      "s": 365.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -142.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 732,
+      "s": 365.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.9250199794769287,
+        "gap_m": -1.0749800205230713,
+        "point": [
+          -142.5461883544922,
+          109.79623413085938,
+          -1.1750199794769287
+        ]
+      }
+    },
+    {
+      "sample": 733,
+      "s": 366.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 733,
+      "s": 366.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 733,
+      "s": 366.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -143.0461883544922,
+          99.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 733,
+      "s": 366.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 733,
+      "s": 366.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 1.9717447757720947,
+        "gap_m": -1.0282552242279053,
+        "point": [
+          -143.0461883544922,
+          109.79623413085938,
+          -1.2217447757720947
+        ]
+      }
+    },
+    {
+      "sample": 734,
+      "s": 366.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 734,
+      "s": 366.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 734,
+      "s": 366.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -143.5461883544922,
+          99.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 734,
+      "s": 366.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -143.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 734,
+      "s": 366.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.029067039489746,
+        "gap_m": -0.9709329605102539,
+        "point": [
+          -143.5461883544922,
+          109.79623413085938,
+          -1.279067039489746
+        ]
+      }
+    },
+    {
+      "sample": 735,
+      "s": 367.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 735,
+      "s": 367.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 735,
+      "s": 367.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 735,
+      "s": 367.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 735,
+      "s": 367.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.1255743503570557,
+        "gap_m": -0.8744256496429443,
+        "point": [
+          -144.0461883544922,
+          109.79623413085938,
+          -1.3755743503570557
+        ]
+      }
+    },
+    {
+      "sample": 736,
+      "s": 367.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 736,
+      "s": 367.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 736,
+      "s": 367.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9900002479553223,
+        "gap_m": -0.009999752044677734,
+        "point": [
+          -144.5461883544922,
+          99.79623413085938,
+          -2.2400002479553223
+        ]
+      }
+    },
+    {
+      "sample": 736,
+      "s": 367.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -144.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 736,
+      "s": 367.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.222081422805786,
+        "gap_m": -0.7779185771942139,
+        "point": [
+          -144.5461883544922,
+          109.79623413085938,
+          -1.4720814228057861
+        ]
+      }
+    },
+    {
+      "sample": 737,
+      "s": 368.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.0461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 737,
+      "s": 368.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 737,
+      "s": 368.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 737,
+      "s": 368.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 737,
+      "s": 368.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.3185884952545166,
+        "gap_m": -0.6814115047454834,
+        "point": [
+          -145.0461883544922,
+          109.79623413085938,
+          -1.5685884952545166
+        ]
+      }
+    },
+    {
+      "sample": 738,
+      "s": 368.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.5461883544922,
+          89.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 738,
+      "s": 368.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.5461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 738,
+      "s": 368.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 738,
+      "s": 368.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -145.5461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 738,
+      "s": 368.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.4150960445404053,
+        "gap_m": -0.5849039554595947,
+        "point": [
+          -145.5461883544922,
+          109.79623413085938,
+          -1.6650960445404053
+        ]
+      }
+    },
+    {
+      "sample": 739,
+      "s": 369.31317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.9595043659210205,
+        "gap_m": -0.04049563407897949,
+        "point": [
+          -146.0461883544922,
+          89.79623413085938,
+          -2.2095043659210205
+        ]
+      }
+    },
+    {
+      "sample": 739,
+      "s": 369.31317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -146.0461883544922,
+          94.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 739,
+      "s": 369.31317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -146.0461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 739,
+      "s": 369.31317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -146.0461883544922,
+          104.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 739,
+      "s": 369.31317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.5116028785705566,
+        "gap_m": -0.48839712142944336,
+        "point": [
+          -146.0461883544922,
+          109.79623413085938,
+          -1.7616028785705566
+        ]
+      }
+    },
+    {
+      "sample": 740,
+      "s": 369.81317007977276,
+      "lat": -10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.923243761062622,
+        "gap_m": -0.07675623893737793,
+        "point": [
+          -146.5461883544922,
+          89.79623413085938,
+          -2.173243761062622
+        ]
+      }
+    },
+    {
+      "sample": 740,
+      "s": 369.81317007977276,
+      "lat": -5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.970367431640625,
+        "gap_m": -0.029632568359375,
+        "point": [
+          -146.5461883544922,
+          94.79623413085938,
+          -2.220367431640625
+        ]
+      }
+    },
+    {
+      "sample": 740,
+      "s": 369.81317007977276,
+      "lat": 0,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.990000009536743,
+        "gap_m": -0.009999990463256836,
+        "point": [
+          -146.5461883544922,
+          99.79623413085938,
+          -2.240000009536743
+        ]
+      }
+    },
+    {
+      "sample": 740,
+      "s": 369.81317007977276,
+      "lat": 5,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.989999771118164,
+        "gap_m": -0.010000228881835938,
+        "point": [
+          -146.5461883544922,
+          104.79623413085938,
+          -2.239999771118164
+        ]
+      }
+    },
+    {
+      "sample": 740,
+      "s": 369.81317007977276,
+      "lat": 10,
+      "terrain": {
+        "object": "Protopia_terrain",
+        "distance": 2.6081106662750244,
+        "gap_m": -0.3918893337249756,
+        "point": [
+          -146.5461883544922,
+          109.79623413085938,
+          -1.8581106662750244
+        ]
+      }
+    }
+  ],
+  "limits": "Sampled evaluated-mesh rays, not continuous exact convex sweep; original frame and native road independently tested elsewhere. Vehicle straight oriented to local route tangent. No browser gameplay or new runtime collider owner."
+}

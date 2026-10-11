@@ -1,0 +1,269 @@
+{
+  "candidate": "work/track-maker-r1/candidate.stream.json",
+  "sha256": "11a1096b2828f53a8f335ef4006d5da16a6de0a1da89f8d53b38bddebc47458f",
+  "checks": [
+    {
+      "id": "s_monotonic",
+      "pass": true,
+      "value": 0,
+      "note": "count of non-increasing s (zero-length only at topology breaks)",
+      "severity": "error"
+    },
+    {
+      "id": "s_matches_arc",
+      "pass": true,
+      "value": 2.3925306180672123e-14,
+      "note": "max |chord - ds|",
+      "severity": "error"
+    },
+    {
+      "id": "frame_orthonormal",
+      "pass": true,
+      "value": 2.220446049250313e-16,
+      "severity": "error"
+    },
+    {
+      "id": "frame_flips",
+      "pass": true,
+      "value": 0,
+      "note": "min dot(R_i, R_i-1) = 1.0000",
+      "severity": "error"
+    },
+    {
+      "id": "tangent_kink",
+      "pass": true,
+      "value": 0.0159,
+      "note": "max jump of the turning rate (deg/m), at s 94.9; air spans exempt",
+      "severity": "error"
+    },
+    {
+      "id": "curvature_step",
+      "pass": true,
+      "value": 0.00028,
+      "note": "max |dkappa| between samples of the same law",
+      "severity": "error"
+    },
+    {
+      "id": "bank_rate",
+      "pass": true,
+      "value": 0,
+      "note": "max deg per metre",
+      "severity": "error"
+    },
+    {
+      "id": "slot_parity",
+      "pass": true,
+      "value": 0,
+      "severity": "error"
+    },
+    {
+      "id": "inner_edge_fold",
+      "pass": true,
+      "value": 0,
+      "note": "min radius margin 88.48 m",
+      "severity": "error"
+    },
+    {
+      "id": "self_clearance",
+      "pass": true,
+      "value": null,
+      "note": "no far pairs closer than 24 m",
+      "severity": "error"
+    },
+    {
+      "id": "fingerprint",
+      "pass": true,
+      "value": "e50c222b",
+      "severity": "error"
+    }
+  ],
+  "maxGrade": 0,
+  "minWidth": 14.4,
+  "maxDsDeviation": 0.0008812732086340702,
+  "vehicleEnvelope": {
+    "height": 4,
+    "reserve": 3,
+    "width": 4.1
+  },
+  "profile": {
+    "width": 14.4,
+    "offset": 0,
+    "shoulderW": 1.98,
+    "shoulderDrop": 0.28,
+    "barrierGap": 0.72,
+    "barrierT": 1.62,
+    "barrierH": 1.35,
+    "barrierOuterTop": 1.18,
+    "deckDepth": 2.25,
+    "barrierVisL": 1,
+    "barrierVisR": 1,
+    "sideL": 1,
+    "sideR": 1,
+    "surface": 1
+  },
+  "controller": "byte-identical original kfb-drive.k2b.js inherited J16-r2 by J17 joyride-drive.j10.js",
+  "cases": [
+    {
+      "fps": 30,
+      "halfWidth": 1.08,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.3950055416374099,
+      "minRoadReserve": 4.72499445836259,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 30,
+      "halfWidth": 1.08,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3063031549697868,
+      "minRoadReserve": 5.813696845030213,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 30,
+      "halfWidth": 2.05,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.3950055416374099,
+      "minRoadReserve": 3.7549944583625905,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 30,
+      "halfWidth": 2.05,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3063031549697868,
+      "minRoadReserve": 4.843696845030213,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 60,
+      "halfWidth": 1.08,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.442714686696958,
+      "minRoadReserve": 4.677285313303042,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 60,
+      "halfWidth": 1.08,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3167748782398785,
+      "minRoadReserve": 5.803225121760121,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 60,
+      "halfWidth": 2.05,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.442714686696958,
+      "minRoadReserve": 3.7072853133030423,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 60,
+      "halfWidth": 2.05,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3167748782398785,
+      "minRoadReserve": 4.833225121760122,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 120,
+      "halfWidth": 1.08,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.4665663591240148,
+      "minRoadReserve": 4.653433640875985,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 120,
+      "halfWidth": 1.08,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3220107334574663,
+      "minRoadReserve": 5.797989266542534,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 120,
+      "halfWidth": 2.05,
+      "direction": "forward",
+      "complete": true,
+      "seconds": 9.933,
+      "maxLat": 1.4665663591240148,
+      "minRoadReserve": 3.6834336408759856,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    },
+    {
+      "fps": 120,
+      "halfWidth": 2.05,
+      "direction": "reverse",
+      "complete": true,
+      "seconds": 40.633,
+      "maxLat": 0.3220107334574663,
+      "minRoadReserve": 4.827989266542534,
+      "hits": 0,
+      "rescues": 0,
+      "takeoffs": 0,
+      "finite": true
+    }
+  ],
+  "limits": [
+    "Headless original-controller test on route stream only; does not exercise rendered-world colliders, browser camera, input or imported vehicle wheels.",
+    "Original makeFrame uses uniform s/ds indexing; ds deviations are reported, not silently repaired.",
+    "Original controller road contact is prescribed by route frame rather than independent mesh collision physics.",
+    "Reverse uses original brake/reverse behavior (maxReverse 9m/s), not a replaced controller."
+  ]
+}

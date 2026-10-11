@@ -1,0 +1,34 @@
+{
+  "reviewer": "independent pixel critic",
+  "scope": "corrected native Blender stills; source/visual/contact review only",
+  "inspected_sha256": {
+    "source_RaceTube": "b1a8a0d986be16b7a4d8689b4b8d02d4231a239c43fbe9c4452c427a6375546d",
+    "clay_two_islands": "3e0d4087a58cd4e2d46355774335c1465e25cbcb44b72e01da289b1637413429",
+    "clay_reverse": "25feea8c80a12e35eabe37145d91e4dbf0fba2f4f0c6b72371fa49d7a1f67a71",
+    "clay_makerspace": "ec1b502fe841bca7bba3c00e9799b094672f0b71dd84900849fa652855ce8add",
+    "clay_track_contact": "955684dab6c4e5b6f9b8434e5cb4603e2afa7ba37cf29b0226ecb7fab08ddb57"
+  },
+  "scores": {
+    "actual_source_visibility": 9,
+    "island_role_readability": 7,
+    "hovering_class_compliance": 9,
+    "endpoint_visual_integration": 6,
+    "communal_workshop_specificity": 5,
+    "tactile_clay_style": 4
+  },
+  "decisions": {
+    "source_isolation": "PASS after blank tube framing repair",
+    "hovering_bridge_class": "PASS",
+    "overall_visual_target": "FAIL",
+    "technical_driveability": "separate tester only; not inferred from stills",
+    "golden": "NOT_AUTHORIZED"
+  },
+  "limitations": [
+    "Native clean low-poly surfaces dominate, hand-pressed clay effect not convincing",
+    "Broad flat green terrain, triangulated strip-like rock colors; source-aware greybox with material approximation",
+    "Maker yellow repetitive platforms dominate; no multilevel on-island race route, ramp/circular end or dense shared craft design comparable to supplied reference",
+    "Abrupt straight road end in grass, no visual driveway continuation into workshop",
+    "Blender approximation; canonical K2 shader not consumed",
+    "No actual 2025 Platformer-pack asset proof supplied; Prototype primitives must remain honestly named"
+  ]
+}

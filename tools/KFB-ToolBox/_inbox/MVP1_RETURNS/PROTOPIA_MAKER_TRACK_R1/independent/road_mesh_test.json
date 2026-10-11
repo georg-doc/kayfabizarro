@@ -1,0 +1,55 @@
+{
+  "mesh_sha256": "8f1a826cc3ea6b9c47f637af691794968db4c95b817ffb517defe34a07954907",
+  "sample_count": 741,
+  "rays": 7410,
+  "road_lateral_probes_m": [
+    -5,
+    -3,
+    -2.05,
+    0,
+    2.05,
+    3,
+    5
+  ],
+  "road_misses": [],
+  "exact_boundary_retries": [
+    [
+      0,
+      -5,
+      0.001
+    ],
+    [
+      0,
+      -3,
+      0.001
+    ],
+    [
+      0,
+      -2.05,
+      0.001
+    ],
+    [
+      0,
+      0,
+      0.001
+    ],
+    [
+      0,
+      2.05,
+      0.001
+    ],
+    [
+      0,
+      3,
+      0.001
+    ],
+    [
+      0,
+      5,
+      0.001
+    ]
+  ],
+  "max_surface_deviation_m": 2.9802322387695312e-08,
+  "track_body_overhead_obstructions_7m": [],
+  "limits": "Native exact JSON track meshes only. Does not include terrain or Maker/Protopia props. Road has donor display micro-relief, contact deviation measured against authoritative stream."
+}
