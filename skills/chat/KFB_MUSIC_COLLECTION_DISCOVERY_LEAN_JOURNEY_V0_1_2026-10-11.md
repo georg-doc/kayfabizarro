@@ -93,3 +93,105 @@ All checks above are **PROPOSED**, with **0 new runtime/browser/independent-crit
 No new SongBook owner, no new JukeBox/AudioContext, no second card deck renderer, no parallel NPC/gift progression, no forced Hex world, no R4/R5 restart. Implementation, candidate routes, source-performer tests and final gameplay acceptance remain outstanding.
 
 **One next implementation evidence gate:** existing Audio/Progression/Lean Memory owner maps the already-authored **Golden Demon Lord/Orc Band song-to-end receipt** through exactly one persisted collection entry and recoverable Journey event; then reuse the same path for gift, Disco and RoadTrip when those real sources are available.
+
+
+---
+
+## 7 · ADDITIVE GEORG AUTHOR DIRECTION · v0.2 · Personal Radio, User Tracks and Context Soundtrack · 2026-10-11
+
+**Status:** approved authoring DIRECTION for *future capability*; design/data-only handoff, no current source integration, no uploaded player MP3, no executable host acceptance. This is an in-place extension of the same KFB Music Collection owner, **not** a second Jukebox or second inventory. Earlier section 3's "playlist/station is a read-only projection" still describes **auto-generated/deck-curated stations**; it is now refined: **personal playlists are player-editable save preferences**, assembled from source-backed KFB songs and optional personal media references. The player does not author the global canonical asset catalog or card-seed mapping by editing a personal playlist.
+
+### 7.1 · Three player-facing playback modes
+
+| Concept mode (names are UX suggestions, not implemented enums) | What the player hears | Island/track/situation transition | Persistence |
+| --- | --- | --- | --- |
+| **KFB Soundtrack / AUTO** | Existing KFB context-selected score: island/biome, road/race, weather or dramatic/world event; source-backed Suno signature tracks first, then curated Cozy Tunes / secondary pack when appropriate, plus valid silence | Score selector follows existing World/Audio \`AUDIO / JUKEBOX_CONTEXT\`, WorldRecipe/deck tags and event signals; no hard-coded geography in HUD | Current selected mode and optional score preferences in existing \`PLAYER_SAVE\` |
+| **My Radio / MANUAL** | Player's chosen station or editable custom playlist: collected KFB songs and, later, valid personal MP3/direct media URLs or authorized private media | User playlist remains authoritative across island/track changes. World soundscape and local diegetic sources remain spatial/available; no forced global score retune | Selected playlist, order, favorites, repeat/shuffle/mute/level and references via PlayerSave/Journey Bundle |
+| **My Mix / HYBRID** | Mixed **sequence** of collected KFB and user-provided songs, with authored/personal weights or player order; optionally contextual KFB moments where the player allows them | Context can suggest/queue KFB tracks or opt-in briefly take focus for a meaningful scene, then return to the personal playlist/position; do not override player choice silently | Mode, personal mix order/weights and whether meaningful scene takeover is enabled via PlayerSave |
+
+**Terminology:** *mix* defaults to a combined playlist/queue, NOT two arbitrary full MP3s overlaid and not stem separation. True score stems/adaptive layer mixing require specifically curated compatible files/beat maps, user-authorized AUDIO acceptance, licensing and one existing music transport. Do not pretend a user MP3 has stems/BPM/crossfade synchronization.
+
+### 7.2 · Context input mapping stays with current World + Audio owners
+
+World/experience context signals (proposals to map to existing contracts; **not** new runtime enums):
+- World/biome/primary \`deckId\` and optional \`cardRefs\` (Town, Dystopia \`ignore_dystopia\`, Utopia \`forget_utopia\`, Protopia \`embrace_protopia\`), plus themed satellite only when source-approved;
+- Track Core route/segment \`RouteRecipe\` ID and Drive state (ROAD vs RACE profile), but Track Core never selects/plays songs or stores audio;
+- player state and journey/dramaturgy beats, weather/time/low-stress vs action, named World Pulse/event context only if *existing owner emits* a real accepted signal;
+- actual Resident performance/Orc Band/Disco scenelets supply foreground \`DIEGETIC_MUSIC\` rather than generic SCORE; positional attenuation and valid silence are meaningful;
+- scripted signature song selects a real source asset; no automatic generative soundtrack claim or invented narrative event.
+
+**Contextual music selector** is a small, existing-audio-owner policy choosing real playable canonical song refs from relevant authored deck/scene stations. No second audio registry, tempo/scene clock, audio output bus, soundtrack graph or Track Core metadata owner. *Suno-first* is selection/curation priority, not a universal force-play rule. Fall back to compatible existing collection or silence when no valid source matches. Do not introduce generic UI themes or fake track posters.
+
+### 7.3 · Theatrical focus and player control (read existing KFB Audio precedence)
+
+The original KFB Audio contract has semantic buses:
+\`VOICE | UI | PLAYER_CRITICAL | WORLD_SFX | DIEGETIC_MUSIC | SCORE | LOCAL_AMBIENCE | GLOBAL_BED\`; preserve **one host AudioContext and mixer**.
+
+- **Narration/dialogue focus and critical SFX** remain intelligible and duck music/ambience via existing Audio owner (not by pausing the player timeline). Local performance and scene focus can change relative DIEGETIC_MUSIC vs SCORE priority.
+- **AUTO:** context selects/fades SCORE on real changes; avoid restart/churn at small boundary oscillations. Short hold/cooldown, eligible transition/crossfade only where existing owner supports it and has suitable sources. Respect silence and the original soundscape.
+- **MANUAL:** own radio/playlist is foreground music. Existing environmental sounds remain; audible local band/disco is still a real world emitter, but automatic world-score switches should not steal the player's personal radio.
+- **HYBRID:** user chooses whether an authored world event is (a) ambience/duck only, (b) gentle score insertion/queue next, or (c) a temporary foreground takeover with safe restoration. This is an explicit preference, not an inferred override. No two competing full music transports.
+- **Exiting focus/event:** restore the previous queue, cursor and playback state when the underlying owner can; never duplicate or restart a song to fake preservation. A blocked stream reports unavailable and can move to a fallback / user action.
+- **Muting:** muting radio/global score never destroys song ownership or receipts. An Orc Band full-listen discovery event must still prove a genuinely valid complete performance/listening criterion (per existing Golden Journey); a private URL listened to in My Radio does **not** create a KFB performance receipt.
+- Preserve browser user-gesture unlock, background/suspend/resume semantics, controls accessible on desktop/mobile and not forced autoplays.
+
+### 7.4 · Later player-supplied music inputs — user library vs global KFB catalog
+
+**User intent:** players may later add their **own songs/playlists**, starting with direct **MP3/audio HTTPS URLs** (or equivalent verified playable source), or optionally local/private-file intake if its real existing owner supports it. They may hear those tracks in HUD/Radio and compose mixed playlists with earned KFB songs.
+
+**SOURCE TYPES and boundaries:**
+
+1. **Canonical KFB song** — author-curated and source/license/asset-pinned by the existing Asset Librarian/JukeBox catalog; earnable via NPC/Orc/Disco/RoadTrip. Source-owned \`songId\`; collection unlock truth in PlayerSave.
+2. **Player-supplied URL** — private-to-player *media reference* and metadata (name, display artist optional, HTTPS URL/normalized safe reference, resolver state, optional tags). It is **not** a global KFB song ID, not automatically deck canon, not a collectible reward, not advertised to other players and not a source of NPC story truth. Store personal refs in existing player library/save, optionally mapped to player's playlists/deck labels.
+3. **Future local file / private upload** — explicit player-driven import only; local browser File/Blob preview may not persist across browsers/reloads, so never claim durable replay from an ephemeral object URL. A durable private binary must use an authorized existing private intake/source resolver (Production Inbox/Asset Librarian plan is a donor, not yet a player-audio feature). No unsolicited file uploads or public CDN publication. File permission and cross-device portability require tested owner flow.
+
+**Direct URL eligibility** must be browser-tested, not guessed from ".mp3" spelling:
+- Only player-submitted **HTTPS** for external streams in first concept; reject \`javascript:\`, \`data:\`, \`file:\`, arbitrary redirects, plaintext HTTP, unsupported media types/invalid streams. Treat pasted URLs and titles as untrusted; don't render unsanitized HTML or execute media metadata.
+- A webpage/share link (Spotify, YouTube, SoundCloud page, DRM/proprietary player) is **not** a usable direct MP3 automatically. No unapproved downloading, account tokens, credential scraping or cross-platform ripping. An authorized provider adapter, if later wanted, requires separate real integration.
+- The actual player browser must be able to fetch/decode/play the resource. **CORS matters especially when using \`MediaElementAudioSourceNode\` in the existing Web Audio mixer**: a remote file may play in a bare HTML audio element but be silent/blocked by Web Audio cross-origin policy. Validate URL, redirects, correct media response and CORS/mixer compatibility before marking available. No server-side proxy to bypass restrictions, and no access to local/private network endpoints.
+- Do not store access tokens, signed private credentials or secrets embedded in URLs in canonical game save/export. Show "source unavailable / reconnect / replace URL", retain playlist entry metadata and player preference without faking playback. A user may delete/revoke any personal media reference and its playlist use.
+- Runtime metadata and credit/rights follow the original source. Public KFB distribution of player music is **out of scope**; user may add only media they can legitimately access/use. No automated public rehosting.
+- A remote source failing HTTP/CORS/expiration should be displayed as unavailable, skipped/fallback with clear UI, not erase the personal playlist or KFB music collection. Resume and offline guarantees only for actually retained/authorized files.
+- Do not fetch remote URLs on every world-tick and do not leak player-private playlist URLs to Residents, shared room telemetry, public Almanac/Card exports or server logs by default.
+
+### 7.5 · HUD, radio and playlist authoring contract
+
+**Verified source donor:** \`tools/KFB-ToolBox/_inbox/KFB HUD Flight Board - Flight VFX/KFB_HUD_FLIGHT_SESSION_CUT_2026-10-09_r1/hud-flight/kfb-hud.js\` exposes \`radio.on('music'|'play'|'prev'|'next'|'playlist', fn)\`, \`radio.setPlaylists\`, \`radio.setTrack\`, \`radio.setSource\`, \`setPlaying\`, etc.; it is currently **a presentation source, not proof of active World JukeBox integration**. Retain its HUD visual identity/input router; user controls are delegated to existing KFB Audio music owner.
+
+Suggested narrow expansion *only when authorized in the active product*: a compact station mode choice **AUTO / MY RADIO / MY MIX** within this existing radio, a way to select playlists and a separate collection/library manager for adding URLs, assigning own tags, ordering/removing items, and marking favorites. Do not crowd the drive HUD with URL edit forms. No replacement branding, generic dashboard, or new full-screen mixer by default.
+
+- **Curated auto stations:** read-only KFB-authored/deck-seed projections; source/rights remain global canonical catalog; track must be collected if station is presented as *personal unlocked* library, but an authored ambient score may be audible without collection unlock.
+- **Personal playlist:** editable set/ordering of canonical collected KFB song refs + validated personal media refs, with player display name and optional deck/biome tags. Song can be in multiple personal playlists with one actual ownership record.
+- **Playlist/source selection** never changes the underlying world score/Resident choreography truth or generates progression events.
+- **Mix modes** are player preferences, not new \`Quest\` or \`WorldObject\` truth.
+
+### 7.6 · Lean Memory, Journey and portability update
+
+Use the same **authoritative \`PLAYER_SAVE\` + \`LEAN EVENT MEMORY LEDGER\` + \`FRACTAL ALMANAC/JOURNEY\`** architecture from section 4:
+- \`PLAYER_SAVE\` current preferences: chosen mode, current station/playlist ref, user playlist order, song references, shuffle/repeat/mix preferences, event focus behavior and optionally persisted cursor/seek position *if the actual transport supports it*. No duplicated binary. Portable play counts are optional, not a spammy ledger.
+- \`LEAN EVENT MEMORY\`: KFB earned song unlocks, NPC gift, performance heard, RoadTrip collected + meaningful playlist-creation/edit milestones *only if editorially valuable*. **Do not emit a MomentReceipt for every shuffle, volume change, pause or every user-URL attempt**. User media added is a private-library change, not automatically a diegetic song discovery or earned Card.
+- \`NPC MEMORY\`: references only real shared social/performance events, not a user's private audio history without explicit authorization.
+- \`JOURNEY/ALMANAC\`: displays earned KFB songs and meaningful RoadTrip/Orc/NPC discovery sources. Can show personal playlists in a *private player view* but not convert custom MP3s into KFB lore/Card canon.
+- \`PLAYER JOURNEY BUNDLE\`: include sanitized personal playlists/user media *references* + source resolver availability and KFB source pins, **not** remote song bytes, local ObjectURLs, bearer tokens, or private access data. On import, mark unresolved refs unavailable and retain playlist/order/metadata until repaired; avoid claiming a cross-device download automatically occurs.
+- Preserve collection integrity if one playlist item is missing, unavailable or removed, and preserve the Golden Demon Lord complete-listen source event unchanged.
+
+### 7.7 · Sequenced build plan and conditional acceptance
+
+**Phase P0 — Already-authored Golden collection proof (no new scope):** existing Golden Demon Lord/Orc Band full-song completion → ONE canonical song grant + MomentReceipt → save/export/import/reload + Journey. Preserve dance unlock. This remains the immediate gate for music collection integration.
+
+**Phase P1 — Minimal context radio integration:** source-backed KFB Audio AUTO and existing HUD selection on a real accepted world/Drive surface; a valid context changes a real score; player can choose manual collected KFB playlist and return AUTO; no second player/music owner; diegetic performance + speech ducking remain coherent.
+
+**Phase P2 — Later user library:** one legitimate playable direct HTTPS MP3 media URL added to an editable personal playlist, tested in the browser's actual AudioContext; persist sanitized reference + user title, save/export/import/fresh reload, unavailable failure state; no global music catalog mutation or unwanted upload. This is **future scope**, not a new MVP blocking row.
+
+**Phase P3 — Hybrid sequences/mix and optional private upload:** player-created mix of one collected KFB song + one working external/user media ref; consecutive transport, clean fallback, durable preference; opt-in event context insert/takeover and restore; later private-file intake only with real existing private owner. Optional compatible stem layering only by later explicit approval.
+
+**Proposed acceptance assertions once separately authorized, NONE run in this planning slice:**
+1. AUTO Dystopia→Protopia real contextual switch, no phantom unlock or wrong deck source.
+2. MANUAL chosen personal playlist persists across island and Track Core changes; remains spatial band audible by scene policy.
+3. HYBRID combines KFB and own song in queue with deterministic shuffle/skip; event changes only per saved user preference and returns to previous song/position without duplicate transport.
+4. One authorized direct MP3 URL can be played through real target browser/mixer; hostile/bad CORS/signed-expired/proprietary webpage links fail visibly and never falsify play.
+5. PlayerSave/Journey export/fresh import recovers custom playlist ordering, mode, sanitized media reference; lost URL only marks source unavailable.
+6. Audio muted never deletes collection; Orc Band end-of-song event remains the only qualified original Golden reward; personal MP3 cannot spoof it.
+7. Sound voice focus ducking, valid silence, one AudioContext, old HUD/Drive/World inputs unchanged.
+
+**Exactly one next active integration gate is unchanged:** existing Golden Demon Lord/Orc Band full-song→single collected song+MomentReceipt→PlayerSave/Lean Memory/Journey export/import proof. AUTO/user URL/HYBRID remain sequenced future enhancements; no automatic new R4/R5, Stage, user-profile asset upload or Live publication. No PR or runtime tests authorized by this author-design addendum.
