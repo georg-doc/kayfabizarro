@@ -1,5 +1,31 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · META NPC SPEECH BETA R1 · GITHUB + PRIVATE SITE RECOVERY
+
+**Outcome:** Existing ChatterBox Voice PR #379 extended only with a **parallel-meta authoring handoff**, current Suno Speech beta research, and a new controlled shorter Clown production card. Original digital/analog rules and parallel chat writings not altered/promoted. Owner KFB ChatterBox / Resident Speech; KFB Audio remains sole mix/audio clock; Resident Atlas original Clown remains 3-club candidate-only.
+
+New files:
+- `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md`
+- `SUNO_SPEECH_BETA_RESEARCH_FINDINGS_AND_TASK_R1_2026-10-12.md`
+- `data/SUNO_SPEECH_CLOWN_FIRST_TAKE_R1_2026-10-12.json`
+- `SUNO_SPEECH_META_RESEARCH_AND_FIRST_TAKE_TEST_REPORT_R1_2026-10-12.md`
+- This owning Return, `START_HERE.md`, `SUNO_PERFORMANCE_CHANGELOG_R0_1.md` updated additively.
+
+Executed: **25/25** source/length/beat/status assertions PASS. **146** spoken words, **808** spoken chars + **571** music/style + **311** separate producer cues = **1690**, strictly less than **5000**. Length ~59s **ESTIMATED**, no generated audio. Prior R0.2 ~75s remains for A/B after a real listening observation. Speech official beta 2026-10-01 and Reddit notes cited by dated research document; report distinguishes official facts and community impressions. KFB original pages were attempted but browser tool disabled, source-backed GitHub project origin routes read instead.
+
+Private Site recovery: in existing KFB Production Control workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`, exact artifacts saved/read back:
+- onboarding `f54e1870-b55b-4e9f-8b5b-1360dddb227e`, sha256 `0331a44abf26540a1bbf29710e7ae1ac97078c3c814bc1f45e24ec686180315c`;
+- research `1bd59325-df5f-464a-a49f-5140aeb42647`, sha256 `0d29c5a393f5046c67849c2e39a914cb9e6aa8b863241c8a0aecaa208a4de9e3`;
+- production card `87b932a2-0018-4410-a517-71118f08b85b`, sha256 `2070cc3e3ab97ce6e9f0a1d0e555bffe400a47ea91dd5b8c76b9a25011b34318`;
+- QA `8b6f8961-37a0-48b9-87fb-6e90758e9c21`, sha256 `6fa599f60cd210d895b12d6f3e26fd0a49503bccab49a7213d5c91863fe97a73`.
+
+**Unknown/not done:** No Suno account integration, no actual generation/download, no audition file/provider URL, no transcript or spoken timing comparison, no measured pauses, no human RULE1 or comedy PASS, no public-use license clearance, no clown stage-body sync, no new KFB Audio Site publish, no public Cloudflare Stage, no merge or Live. Fresh parallel meta/Triplet chat output not yet supplied; absolutely no invented acceptance or content.
+
+**Next ONE Suno outcome gate:** `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`. An actual produced Suno Speech beta take is needed for audible evaluation. Existing `KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1` and Four-Island A/B World constraints unchanged. GitHub exact final head is checked after Return/changelog writes, not guessed.
+
+---
+
+
 
 ## 2026-10-12 · RULE1 / TIMED STAND-UP R0.2 · SOURCE-CONTRACT ONLY
 
