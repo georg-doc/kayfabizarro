@@ -1,3 +1,5 @@
+> **LATEST HUMAN DECISION: GEORG FAIL.** Rejected as an asset collection without storytelling, architecture or transitions. Read [Georg decision](GEORG_FAIL.md). Technical results below are donors only, not scene acceptance. R2 composition now authorized; no Golden or merge.
+
 # Protopia ⇄ Maker Space / Joyride17 floating track R1 · Return · 2026-10-11
 
 **Result: SOURCE PASS · ORIGINAL-CONTROLLER / SAMPLED-GEOMETRY PASS · K2 SURFACE PASS_WITH_TUNE · COMPLETE SCENE TUNE_REQUIRED.**
