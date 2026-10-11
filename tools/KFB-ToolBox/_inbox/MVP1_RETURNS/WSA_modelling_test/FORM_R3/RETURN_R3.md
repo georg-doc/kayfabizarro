@@ -1,5 +1,10 @@
 # RETURN · WSA G4 Burgtreppe Formdesign R3 · 2026-10-11
 
+## CURRENT · Georg PASS WITH TUNE
+
+R3 + repairedattachment accepted withTUNE; priorvisualreview gate closed. [Exact decision and future shared Clay direction](ATTACH_R1/GEORG_PASS_WITH_TUNE.md). Assets AND islandterrain should use current KFB Claymation presentation in future. Currentmaterial/runtime limits remain; noGolden/merge or newimplementation authority. Older next-gate text below is historical.
+
+
 ## CURRENT · Georg B retained R3; ATTACH_R1 independently repaired
 
 Georg selected B: unchanged stairform, targeted hill/foot repair, independent retest, noGolden/merge. [Current Return](ATTACH_R1/RETURN.md), [actual images](ATTACH_R1/renders/three_quarter.jpg), [independent Tester](ATTACH_R1/tester/TEST_REPORT_ATTACHMENT_INDEPENDENT.md), [fresh Critic](ATTACH_R1/critic/CRITIC_REPORT.md).

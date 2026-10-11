@@ -1,5 +1,10 @@
 # RETURN · R3 B / ATTACH_R1 · 2026-10-11
 
+## CURRENT · Georg PASS WITH TUNE
+
+R3 + repairedattachment accepted withTUNE; priorvisualreview gate closed. [Exact decision and future shared Clay direction](ATTACH_R1/GEORG_PASS_WITH_TUNE.md). Assets AND islandterrain should use current KFB Claymation presentation in future. Currentmaterial/runtime limits remain; noGolden/merge or newimplementation authority. Older next-gate text below is historical.
+
+
 **Result:** Georg's B-selected R3 form retained; hill/foot attachment independently GEOMETRIC_PASS. Complete fresh seven-axis numerical FORM_PASS **8.0**, minimum7; **STYLE_TUNE7 / NO_GOLDEN / NO_MERGE**. Runtime/controller locomotion NOT_RUN. Exactly one next gate: Georg reviews actual repaired attachment pictures; no automatic further tuning.
 
 Owner/only writer: existing WSA stair modelling / WSA Work, repo georg-doc/kayfabizarro, same branch `wsa/kfb-g4-stairs-form-design-r3-2026-10-11`, PR none. Decision5d143bf0bc5447cdbd169606ab94d6e509b0cba7, implementation12c6e22c4385f070ab81d679756e44f4587009a6 (18/18 verified), immutable independent evidence **36f81f11e942d1bfebefc3d2e63b7ca4fd828db6** (21/21 verified). Closure commit containing this Return is exact branch head; Production Control records its returned hash after ref/file verification. R1/R2 unchanged and all previous failure history retained. No WorldBuilder/runtime/Site/Stage/Hub/Cloudflare edit or promotion.
