@@ -1,0 +1,211 @@
+{
+ "schema": "kfb.island-form-kit/1",
+ "part": "K1+K2 params",
+ "date": "2026-10-11",
+ "units": {
+  "H": 3.64,
+  "MC": 6.4,
+  "note": "K2 lab units; Dm = equal-area island diameter"
+ },
+ "template": {
+  "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/KFB_R2D_v0/scholle-bench.js",
+  "functions": [
+   "buildScholle",
+   "soften"
+  ],
+  "soft": 2,
+  "deviation": "spike pick: seeded Fisher-Yates instead of JS random sort"
+ },
+ "preset_C": {
+  "id": "C",
+  "label": "Garten",
+  "elev": 0.32,
+  "depth": 0.48,
+  "prof": [
+   1,
+   0.94,
+   0.88,
+   0.81,
+   0.76,
+   0.69,
+   0.64,
+   0.56,
+   0.49,
+   0.33,
+   0.01
+  ],
+  "rim": 0.028,
+  "inset": 0.05,
+  "c": 0.5,
+  "saw": 0.05,
+  "zack": 5,
+  "zackD": 0.32,
+  "off": 0.03,
+  "lobes": [
+   [
+    3,
+    0.05
+   ],
+   [
+    8,
+    0.035
+   ]
+  ],
+  "bands": [
+   [
+    1,
+    "#6ccb35"
+   ]
+  ],
+  "body": "#7c4a26",
+  "seed": 37
+ },
+ "K1": {
+  "Dm": 128,
+  "families": {
+   "base": {
+    "note": "Scholle v7 as is"
+   },
+   "blast": {
+    "strata": {
+     "colours": [
+      "#4a3220",
+      "#9a5e34",
+      "#c08a52",
+      "#7a6a5d",
+      "#5a4d45"
+     ],
+     "bands": 4,
+     "terrace": 0.07,
+     "wobble": [
+      0.015,
+      0.008
+     ]
+    },
+    "fractures": {
+     "n": 3,
+     "cut": 0.84,
+     "depth_to": 0.75,
+     "colour": "#b9a48c",
+     "seed": 9
+    },
+    "openings": [
+     {
+      "kind": "pipe",
+      "r_R0": 0.065,
+      "out_R0": 0.08
+     },
+     {
+      "kind": "pipe",
+      "r_R0": 0.05,
+      "out_R0": 0.08
+     },
+     {
+      "kind": "cellar",
+      "r_R0": 0.11,
+      "in_R0": 0.08
+     },
+     {
+      "kind": "tunnel",
+      "r_R0": 0.16,
+      "in_R0": 0.16
+     }
+    ],
+    "openings_target_deg": [
+     -48,
+     -138,
+     -112,
+     -76
+    ],
+    "depth_band": [
+     0.2,
+     0.45
+    ]
+   },
+   "roots": {
+    "strata": {
+     "colours": [
+      "#4a3220",
+      "#9a5e34",
+      "#c08a52",
+      "#7a6a5d",
+      "#5a4d45"
+     ],
+     "bands": 4,
+     "terrace": 0.03
+    },
+    "main": {
+     "n": 5,
+     "r_R0": [
+      0.06,
+      0.085
+     ],
+     "L_D": [
+      0.5,
+      0.75
+     ],
+     "segs": 10,
+     "band": [
+      0.04,
+      0.2
+     ]
+    },
+    "thin": {
+     "n": 9,
+     "r_R0": [
+      0.022,
+      0.034
+     ],
+     "L_D": [
+      0.22,
+      0.44
+     ],
+     "segs": 6,
+     "band": [
+      0.03,
+      0.3
+     ]
+    },
+    "taper": {
+     "base": 1.12,
+     "step": 0.87,
+     "tip": 0.3
+    },
+    "colours": [
+     "#3f2a1b",
+     "#7a5536"
+    ],
+    "seed": 21
+   }
+  }
+ },
+ "K2": {
+  "sizes_MC": {
+   "S": 12,
+   "M": 20,
+   "L": 40
+  },
+  "family": "base",
+  "outlines": {
+   "round": "v7 lobes",
+   "long": "ellipse a=1.38 b=0.72 (x 35 % of v7 lobes)",
+   "bean": "ellipse 1.22/0.86, bay at +z: depth 0.32, width 0.55 rad",
+   "twin": "ellipse 1.5/0.74, waists at +-z: depth 0.36, width 0.36 rad",
+   "terrace": {
+    "outline": "v7 lobes",
+    "plateau_u": 0.55,
+    "h_Dm": 0.045
+   },
+   "shard": {
+    "outline": "7-gon, radii 0.85-1.17, seed 5",
+    "preset_override": {
+     "depth": 0.55,
+     "zack": 3,
+     "zackD": 0.5,
+     "saw": 0.08,
+     "seed": 41
+    }
+   }
+  }
+ }
+}
