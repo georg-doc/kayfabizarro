@@ -1,8 +1,9 @@
-# RKIT · TD- und CS-Katalog (V-147 / V-149) gegen Track Core 0.16.3 (R1) · nur Liste, kein Bau
+# RKIT · TD-, CS- und CR-Katalog (V-147 / V-149 / V-152) gegen Track Core 0.16.3 (R1) · nur Liste, kein Bau
 
 Stand 2026-10-11 · Bilder: `replies/REFS_TRACK_DETAILS_2026-10-11/TD1…TD5` und `replies/REFS_CITY_STREETS_2026-10-11/CS1…CS3` (V-149) · Farben zählen nicht (V-147) · uneindeutige Stellen in §6 (V-148)
 
-Skins: race · town · country · dirt · cosmic (V-149). Bestand Town-Look: RKIT Gehweg Lauf 03 (Bord, Gehweg, Kantensteine) und hex_b7 (Bord einseitig, Haltebucht).
+Skins: race · town · country · dirt · cosmic (V-149) · trail (V-152, reserviert). Fahrzeug und Skin sind unabhängig (V-152): alle Autos fahren alle Skins.
+CR-Blätter: `replies/REFS_COUNTRY_TUNNEL_2026-10-11/CR1…CR4`. Bestand Town-Look: RKIT Gehweg Lauf 03 (Bord, Gehweg, Kantensteine) und hex_b7 (Bord einseitig, Haltebucht).
 
 **Legende**
 
@@ -175,7 +176,79 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | – | Energie-Kante | – | Bande-Slots (L-Look) oder Markierung? | → §6 | – |
 | Bsp. | Kompakte Kreuzung, Mehrebenen-Kreuzung, Split-Merge, Hub mit 4 Zufahrten | vorhanden bzw. teilweise | ROUNDABOUT, `crossing_ok`, FORK / JOIN | Pfeile | – |
 
-**Summe:** Der Renn-Kern ist vollständig. Straße bis auf Absenkung, Platz und erhabene Mittelinsel ebenfalls. Der größte Block ist **DIRT** (Querschnitt + 2 Katalog-Einträge). Querschnittsthema über alle Blätter: **Pfeile** (Skin-Schritt 3). Aus CS1/CS2 kommen dazu: RKIT-Bord an Knoten (Kreuzung, Kreisel), Planke bzw. Zaun für country, gemischte Verbinder.
+## 5e · CR1 Berg-Schotter (Skin dirt)
+
+| # | Modul | Stand | Track Core / Bestand | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1–3 | Schotter gerade, kurz, sanfte Kurve | fehlt | Geometrie ✓, DIRT-Querschnitt fehlt | RKIT_DIRT_VORLAGE_R1 | (in DIRT) |
+| 4 | Enge Haarnadel 180° | teilweise | HAIRPIN_180 (Ease 0,8·R) | NPC-Radius ≥ 8 auf dirt prüfen → §6 | – |
+| 5 | Berm-Kurve | fehlt | `bankDeg` ✓ | BERM_CURVE (DIRT-Vorlage) | (in DIRT) |
+| 6 | Serpentinen-Paar | teilweise | 2 × HAIRPIN_180 + Steigung (CONNECT, ≤ 8 % CREST-Regel) | Steigungs-Regel zwischen den Kehren → §6 | – |
+| 7 | T-Kreuzung | teilweise | JUNCTION (Welt-Familien) | DIRT-Knoten = Frage C (offen) | (in DIRT) |
+| 8 | 4-Wege / Gabel | teilweise | dto.; FORK | dto. | – |
+| 9 | Wendeplatz | vorhanden | 1-Arm-ROUNDABOUT (V-110), sobald `skin: 'dirt'` frei ist | – | – |
+| 10 | Sackgasse | teilweise | Kappe (Schritt 4) | Schotter-Ende = Wiese / Hof / Gatter (V-150 #12) | S |
+| 11 | Hügel / Sprung | vorhanden | CREST / KICKER → AIR → LANDING (Assist V-151) | – | – |
+| 12 | Graben / Damm | teilweise | COUNTRY-Rollen `ditch`, `embankment`; Damm-Fuß über `groundAt` (v0.15) | in DIRT übernehmen | (in DIRT) |
+| 13 | Schotter → Belag | fehlt | – | Katalog DIRT ↔ COUNTRY/TOWN (20 m, V-150 #11) | (in DIRT) |
+| 14 | Schotter → Fußweg | fehlt | – | trail-Skin (reserviert) | → 5f |
+| 15 | Gemischter Verbinder | fehlt | – | wie CS2 #20 | M |
+| 16 | Fels- / Ruinen-Detail | – (Lab) | Ausstattung | – | – |
+| Hero | Tunnel- / Brücken-Anschluss, Steinbogen über Bach | teilweise | Tunnel (Core v0.7/v0.8, Portal-Rahmen), SUPPORT C1/C2 | Portale = TC1 (Lab); Brücke nur auf der Insel (V-120) | – |
+
+## 5f · CR2 Fußwege und Wanderpfade (Skin trail, reserviert)
+
+Track Core hat heute kein Geh-Netz. Fahrstraßen sind Ströme, der Gehweg ist ein Körper an der Straße (TOWN, RKIT Lauf 03). Freie Wege gibt es im Lab nur als Insel-Komposition (`plazas`, `paths`, `places` kind `lookout` in `src/island/spec.ts:86`).
+
+| # | Modul | Stand | Bestand | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1–4 | Pfad gerade, kurz, Kurve, enge Kehre | fehlt | – | trail = Strom mit Geh-Breite (Vorlage nötig) | L (mit trail) |
+| 5–7 | Gabel, T, Y | fehlt | – | Geh-Knoten | (mit trail) |
+| 8 | Steinstufen | teilweise | Masonry A `STUFE_1MC`, `STUFE_12MC` (RKIT) | Treppen-Stück im Strom (Stufenhöhe nach K2) → §6 | M |
+| 9 | Kiesweg | – (Look) | Belag-Variante | – | – |
+| 10 | Trittsteine | fehlt | – | → §6 | S |
+| 11 | Holzbrücke (schmal) | fehlt | nur „Stege“ in SPEC_PLACEMENT_GRAMMAR_R1 `:52` | Holz-Familie fehlt → §6 | M |
+| 12 | Aussichtsplattform | teilweise | Lab `places` kind `lookout` | Plattform-Bauteil | S |
+| 13 | Pfad → Straße | fehlt | – | mit Zebra-Regel (V-150 #9) | S |
+| 14 | Pfad → Schotter | fehlt | – | trail ↔ dirt | (mit trail) |
+| 15 | Pfad → Platz | fehlt | – | Platzrand bündig (V-150 #8) | S |
+| 16 | Tunnel-Gehweg | teilweise | Tunnel-Profil hat Seitenstreifen (`shoulder`) | Geh-Steg im Tunnel → §6 | S |
+| 17 | Sackgasse (Wegweiser) | fehlt | – | Pfad-Ende | S |
+| 18 | Endkappe (Steine, Gras) | teilweise | Abschluss-Familie (Masonry A `ABSCHLUSS_BODEN`), Rubbel | – | – |
+| – | Oberflächen: Erde, Kies, Stufen, Fels, Schnee | – (Look) | – | – | – |
+
+## 5g · CR3 Berginsel (alles in einer Insel)
+
+| # | Modul | Stand | Bestand | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1 | Gemauertes Tunnelportal im Fels | teilweise | Core-Tunnel `arch` / `rect`, Preset `gotthard` (arch, host mountain); Lab TC1 `stone_arch` / `stone_rect` (V-112, V-130, `docs/concepts/V130_PORTALE_VORLAGE_R1.md`) | Portal = TC1 (Lab), Core liefert Portal-Rahmen | – |
+| 2 | Serpentine mit Stützmauer | teilweise | MOUNTAIN-Rollen `rock_cut` / `retaining`; Masonry A `MAUER_12/14/18` | Stützmauer als Körper-Schlüssel (BODY `wall` heute 0) → Mauer-Baukasten V-105 | M |
+| 3 | Belag → Schotter | fehlt | – | DIRT | (in DIRT) |
+| 4 | Schotter → Wanderpfad mit Stufen | fehlt | – | trail | (mit trail) |
+| 5 | Inselboden | – (Lab) | Lab Inselboden | – | – |
+| Hero | Wasserfall, Holzbrücke über Bach, Schnee | – (Lab / Ausstattung) | – | Holzbrücke wie CR2 #11 | – |
+
+## 5h · CR4 Landstraße zweispurig (Skin country)
+
+| # | Modul | Stand | Track Core | Lücke | Aufwand |
+|---|---|---|---|---|---|
+| 1–3 | Gerade lang / kurz, Kurve | vorhanden | COUNTRY [1,1] (bzw. MOUNTAIN) | Leitplanke: siehe CS2-Frage | – |
+| 4 | Haarnadel | vorhanden | HAIRPIN_180 | Welt-Familie: NPC-Radius ≥ 8 prüfen | – |
+| 5 | S-Kurve | vorhanden | CURVE_EASE-Paar / OFFSET_S | – | – |
+| 6 | T-Kreuzung | vorhanden | JUNCTION COUNTRY | – | – |
+| 7 | 4-Wege mit Zebra | teilweise | JUNCTION; Zebra nur in `city` | Zebra-Regel (V-150 #9) | S |
+| 8 | Tunnel-Zufahrt (Felshang, Portal) | teilweise | Tunnel-Portal-Rahmen; `cut` für Rampen fehlt (Lückenliste) | Felseinschnitt = Lab | – |
+| 9 | Tunnel-Stück | vorhanden | `tunnel` arch / rect, responsive Querschnitt | – | – |
+| 10 | Tunnel-Ausfahrt | vorhanden | dto. | Portal TC1 | – |
+| 11 | Brücken-Anschluss | vorhanden | SUPPORT C1 | Geländer am Brückenkopf (V-150 #17) | M |
+| 12 | Brücke / Viadukt (Stein, zweispurig) | teilweise | Steinbogen-Code archiviert (V-120); erlaubt nur auf der Insel | Neu-Freigabe nötig (nur Insel) → §6 | L |
+| 13 | Haltebucht | teilweise | B7 Haltebucht (HIGHWAY \| TOWN_BAY) | Haltebucht an COUNTRY (Kies, Schild) fehlt im Katalog | S |
+| 14 | Sackgasse mit Absperrung | teilweise | Kappe `verge_end` (Schritt 4) | Absperrung = Baustelle (V-150 #7) | – |
+| 15 | Straßen-Endkappe | teilweise | dto. | dto. | – |
+| 16 | Straße → Platz / Pfad | fehlt | – | Platzrand (V-150 #8), Pfad = trail | S |
+| – | Seitenprofil Hang: Stützmauer wo nötig | teilweise | wie CR3 #2 | – | M |
+
+**Summe:** Der Renn-Kern ist vollständig. Straße bis auf Absenkung, Platz und erhabene Mittelinsel ebenfalls. Der größte Block ist **DIRT** (Querschnitt + 2 Katalog-Einträge). Querschnittsthema über alle Blätter: **Pfeile** (Skin-Schritt 3). Aus CS1/CS2 kommen dazu: RKIT-Bord an Knoten (Kreuzung, Kreisel), Planke bzw. Zaun für country, gemischte Verbinder. Aus CR1–CR4: **trail** (Geh-Netz, ganz neu, L), Stützmauer als Körper-Schlüssel (Mauer-Baukasten V-105), Haltebucht an COUNTRY, Steinviadukt nur auf Inseln.
 
 ## 6 · Uneindeutig (V-148): bitte über die Steuerung bei Georg klären, nicht erfunden
 
@@ -214,6 +287,18 @@ Eine DIRT-Familie gibt es im Core nicht. Die Geometrie (Kurven, Kuppen, Breiten)
 | CS3 | Seitenprofil, Hero | Stützen und „anti-grav base“ unter der Fahrbahn vs. „im All schwebt die Strecke“ (Steuerung): Stützen nur auf Asteroiden-Inseln (V-120) oder gar keine? |
 | CS3 | Legende „energy edge“ | Energie-Kante: Ist das die Bande (Slots), ein Markierungsband am Fahrbahnrand oder beides? Wie hoch? |
 | CS3 | #8 | Y-Kreuzung im All: Knoten mit 3 Armen (Kreuzungslogik, Vorfahrt?) oder FORK ohne Kreuzung? |
+| CR1 | #6 Serpentinen-Paar, Hero | Steigung zwischen den Kehren: gilt die 8-%-Grenze (CREST_MAX_GRADE) auch für Schotter, oder mehr mit Assist (V-151)? |
+| CR1 | #4 / CR4 #4 | Haarnadel-Radius auf Schotter und Landstraße: NPC-Weg ≥ 8 wie am Kreisel, und Kehre mit Querneigung? |
+| CR2 | #8 Steinstufen | Stufenhöhe und Auftritt (K2-Raster)? Können Autos Stufen-Pfade befahren (V-152: alle Autos fahren alle Skins) oder bleibt trail Geh-Netz? |
+| CR2 | #10 Trittsteine | Über Wasser oder Wiese? Abstand der Steine (Figurenschritt)? |
+| CR2 | #11 Holzbrücke | Neue Material-Familie Holz: wer baut (RKIT wie Masonry A?), Spannweite, Geländer? |
+| CR2 | #16 Tunnel-Gehweg | Geh-Steg im Straßentunnel (erhöht, mit Geländer) oder eigener Fußgänger-Tunnel? |
+| CR2 | Legende | trail-Breite: 1, 2 oder 3 MC? |
+| CR3 | #2 Stützmauer | Wann steht eine Stützmauer (Hangneigung ab welchem Winkel, Höhe)? Bergseite oder Talseite? |
+| CR3 / CR4 | Schnee-Linie | Gehört Schnee zum Skin (Belag-Variante) oder nur zur Insel (Lab)? |
+| CR4 | #12 Viadukt | Mehrbogiges Steinviadukt auf der Insel: Ist der archivierte Steinbogen-Builder freigegeben (V-120 erlaubt Stein nur auf Inseln)? |
+| CR4 | #13 Haltebucht | Haltebucht an der Landstraße mit Kies und Schild: wie B7 (Bord 0,12) oder bündig (Kies)? |
+| CR4 | #7 | Zebrastreifen an einer Landstraßen-Kreuzung außerhalb des Orts: Regel V-150 #9 (nur mit Gehweg zu Gebäuden)? Im Bild ohne Gehweg. |
 | Core | HIGHWAY | Welchem Skin gehört HIGHWAY (Bande auf Grasbett)? Vorläufig country, weil ein Knoten einen Skin braucht; bitte bestätigen oder umsetzen. |
 
 ## 6b · Entscheide V-150 (Georg 11.10.) und Folgen für die Liste
@@ -259,4 +344,5 @@ Leitprinzip V-151: chill & fun Assist als Standard. Berm, Sand, Rampen und Sprü
 | Lab `docs` (STAGE1_R2D_PORT_PLAN, C4_VORLAGE_R1) | plaza | Plätze als Kompositions-Teil der Insel (`:51`), kein Straßen-Rand |
 | KFB_HUB DECISIONS V-147 / V-148 | Katalog-Regel | Katalog = Logik, nicht Farben; uneindeutig → nachfragen |
 | RKIT-Bestand Town | Bord, Gehweg | `public/roadbeds/rkit_hub.*` (Lauf 03), `hex_b7.*` (V-138 b); Blender `rkit_r3_gehweg_v3.py`, `rkit_r3_hexbay.py`; keine Knoten-Ecken |
+| CR-Suche | Holzbrücke, Trittstein, Aussicht, Serpentine, Haltebucht, Fußweg | Holz: nur „Stege“ SPEC_PLACEMENT_GRAMMAR_R1 `:52`; lookout: Lab `src/island/spec.ts:86`; Haltebucht: Lab MODULES.md B7 `:57ff`; Serpentine / Trittstein / Geh-Netz: nicht gefunden in Core, Lab docs/src, J15 lab-track; Masonry A (RKIT): STUFE_1MC / 12MC, MAUER_12/14/18, ABSCHLUSS_BODEN / WAND; TC1-Portale: Lab V130_PORTALE_VORLAGE_R1, DECISIONS V-112 / V-130 |
 | Track Core COSMIC | cosmic | `PROFILE_FAMILIES.COSMIC` `:132` (`skin: 'mag'`, `floating: true`); keine Energie-Kante, keine Stützen-Regel |

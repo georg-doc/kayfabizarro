@@ -11,7 +11,7 @@ Stand 2026-10-11 · Grundlage:
 | Feld | Vorschlag |
 |---|---|
 | **Logik** | neue Profil-Familie `DIRT` im Core; `NODE_SKINS.dirt.families = ['DIRT']`; Schlüssel `dirt` wird freigeschaltet (`open` entfällt) |
-| **Maßstab** | race (keine Spuren, keine Markierung = `NONE`). Knoten-Abstand = Renn-Hülle 2,05; offen: KFB-Auto (Landweg) bzw. Rennauto, siehe Frage A |
+| **Maßstab** | keine Spuren, keine Markierung (`NONE`). **V-152 (Antwort A):** alle Autos fahren alle Skins, keine Fahrzeugbindung. Knoten-Abstand nach Skin-Logik wie bei den übrigen Familien: DIRT bekommt ein eigenes `vehicleW` = das breiteste Fahrzeug, das es befahren kann (Renn-Hülle 4,1 → 2,05), weil Rennautos auf Schotter fahren |
 | **Breite** | `NARROW` 10,8 als Vorgabe (schmaler als Rennen 14,4, #13); `WIDTH_STEP` wie überall |
 | **Querschnitt** (14 SLOTS, Rollen) | shoulder = Kies-Kante 1,0 (Rolle `gravel`, Absenkung 0,05, wie COUNTRY); barrier = Graslippe 1,5 (Rolle `grass_lip`, Höhe +0,15, außen −0,2); underside = Damm (Rolle `embankment`, Tiefe 0,8). Bande **aus** als Vorgabe; nur an Gefahrenstellen per `edge: {L, R}: 'bande'` (#13) |
 | **Berm-Kurve** (#10, V-151) | Makro `BERM_CURVE` = CURVE_EASE + Querneigung nach der Bank-Regel aus REF_ANALYSIS (ideal atan(v²/(g·R))), gedeckelt auf einen Assist-Grenzwert (Vorschlag 35°), dazu die äußere Lippe als befahrbare Wand: shoulder steigt außen um 0,6–1,0 an. Wandfahrt bzw. Sandkurve = Teil der Fahrfläche (`surface` 1), nicht Kante. Grenzen je Modus später (V-151) |
@@ -27,6 +27,6 @@ Stand 2026-10-11 · Grundlage:
 
 | | Frage |
 |---|---|
-| A | Wer fährt auf Schotter: das Rennauto (Rallye, Renn-Hülle 4,1) oder das KFB-Auto (Landweg, 3,11)? Davon hängen Knoten-Abstand und Breite ab. |
+| A | **beantwortet (V-152):** alle Autos auf allen Skins. Daraus folgt Knoten-Abstand 2,05 (breiteste Hülle), Breite NARROW 10,8. |
 | B | Assist-Grenze für die Berm-Querneigung: 35° als Startwert in Ordnung? |
 | C | Schotter in Kreuzungen und Kreiseln: Soll es eigene Schotter-Knoten geben, oder nur Schotter-Arme an Straßen-Knoten (#14: Ring = Skin der Hauptstrecke)? |
