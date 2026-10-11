@@ -1,0 +1,202 @@
+{
+  "schema": "kfb.npc-performance-beats/0.1",
+  "id": "npc_proof_r1_v2",
+  "decision": "V-187",
+  "note": "Events follow the Resident Performance Event Contract PREP 2026-10-06 (event names \u00a73, channels \u00a72, PerformanceCue \u00a74). Times in seconds. Gesture clips are KayKit 1.1 Rig_Medium names, never renamed. Gesture layers use an upper-body bone mask (spine and above + arms); legs/hips stay on the base idle so feet keep contact.",
+  "duration": 8.0,
+  "fps": 30,
+  "seed": 187,
+  "story": "Clown watches the farmer next to him. The player (camera) steps up. He notices: eyes, then head, then body. He doubts the stranger and leans back. He shoos/greets with a clear wave. Then he turns back to the farmer as if nothing happened.",
+  "actors": {
+    "clown": {
+      "figure": "clown",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "yawDeg": 0,
+      "role": "performer"
+    },
+    "actorB": {
+      "figure": "farmer_a",
+      "pos": [
+        -2.9,
+        0,
+        2.4
+      ],
+      "lookAt": "clown",
+      "baseClip": "Idle_B",
+      "role": "watched neighbour (static idle)"
+    },
+    "camera": {
+      "pos": [
+        1.2,
+        3.0,
+        11.5
+      ],
+      "target": [
+        -1.35,
+        1.75,
+        0.8
+      ],
+      "fovDeg": 32,
+      "role": "player"
+    }
+  },
+  "base": {
+    "clip": "Idle_A",
+    "cycles": 7,
+    "note": "idle phase maps 8 s onto exactly 7 cycles, so t=8 has the same idle frame as t=0"
+  },
+  "rig": {
+    "gazeSplit": {
+      "spine": 0.18,
+      "chest": 0.14,
+      "head": 0.48,
+      "eyesRangeRad": 0.5
+    },
+    "headSpring": {
+      "omega": 15,
+      "zeta": 0.55
+    },
+    "bodySpring": {
+      "omega": 7.5,
+      "zeta": 1.0
+    },
+    "leanSpring": {
+      "omega": 9,
+      "zeta": 0.6
+    },
+    "hatSpring": {
+      "omega": 11,
+      "zeta": 0.35,
+      "gain": 0.9
+    },
+    "eyeSimDt": 0.008333333,
+    "leanDeg": 18,
+    "tiltDeg": 14
+  },
+  "events": [
+    {
+      "t": 0.0,
+      "type": "EncounterBeat",
+      "params": {
+        "beat": "watch",
+        "gaze": {
+          "target": "actorB",
+          "eyeBehavior": "lock"
+        },
+        "face": "neutral",
+        "pose": {
+          "base": "attentive"
+        }
+      }
+    },
+    {
+      "t": 1.1,
+      "type": "Blink",
+      "params": {
+        "note": "scheduled blink, no random blink timer"
+      }
+    },
+    {
+      "t": 2.0,
+      "type": "PlayerApproached",
+      "params": {
+        "beat": "notice",
+        "gaze": {
+          "target": "camera",
+          "eyeBehavior": "lead"
+        },
+        "headLagFrames": 3,
+        "bodyLagFrames": 7,
+        "face": "alert"
+      }
+    },
+    {
+      "t": 2.55,
+      "type": "Blink",
+      "params": {
+        "note": "double-take blink after the head arrives"
+      }
+    },
+    {
+      "t": 3.0,
+      "type": "ReactionPulse",
+      "params": {
+        "kind": "doubt",
+        "intensity": 0.55,
+        "target": "camera",
+        "pose": {
+          "leanBack": 0.62,
+          "headTilt": 0.55
+        },
+        "gesture": {
+          "clip": "Hit_B",
+          "at": 0.3,
+          "weight": 0.35,
+          "in": 0.2,
+          "out": 0.35,
+          "mask": "upper"
+        },
+        "face": "skepsis",
+        "holdUntil": 5.25,
+        "emanata": null
+      }
+    },
+    {
+      "t": 5.2,
+      "type": "Blink",
+      "params": {}
+    },
+    {
+      "t": 5.3,
+      "type": "ReactionPulse",
+      "params": {
+        "kind": "dismiss",
+        "intensity": 0.8,
+        "target": "camera",
+        "gesture": {
+          "clip": "Waving",
+          "from": 0.12,
+          "to": 1.42,
+          "duration": 0.65,
+          "in": 0.06,
+          "out": 0.45,
+          "mask": "upper"
+        },
+        "pose": {
+          "leanBack": 0.0,
+          "headTilt": -0.2
+        },
+        "face": "alert"
+      }
+    },
+    {
+      "t": 6.0,
+      "type": "EncounterBeat",
+      "params": {
+        "beat": "resume",
+        "gaze": {
+          "target": "actorB",
+          "eyeBehavior": "lead"
+        },
+        "headLagFrames": 3,
+        "bodyLagFrames": 7,
+        "pose": {
+          "leanBack": 0.0,
+          "headTilt": 0.0
+        },
+        "face": "neutral",
+        "recover": true
+      }
+    },
+    {
+      "t": 6.9,
+      "type": "Blink",
+      "params": {}
+    }
+  ],
+  "tuning": "v2 = v1 with a longer Doubt hold (4.65 -> 5.25 s) and a snappier Reaction (wave 1.0 s -> 0.65 s, in 0.12 -> 0.06 s, starts 5.3 s). Same base, same start/end beats."
+}

@@ -1,0 +1,417 @@
+{
+  "date": "2026-10-11T23:01:53.460Z",
+  "tolerance": 0.02,
+  "sheetTimes": [
+    0,
+    0.5333,
+    1.0667,
+    1.6,
+    2.1333,
+    2.6667,
+    3.2,
+    3.7333,
+    4.2667,
+    4.8,
+    5.3333,
+    5.8667,
+    6.4,
+    6.9333,
+    7.4667,
+    8
+  ],
+  "hashTimes": [
+    0.5,
+    2.1,
+    3.9,
+    5.5
+  ],
+  "v1": {
+    "beats": "beats_v1.json",
+    "clips": {
+      "base": "Idle_A",
+      "layers": [
+        "Hit_B (upper-body mask)",
+        "Waving (upper-body mask)"
+      ],
+      "actorB": "Idle_B"
+    },
+    "eyeReport": {
+      "mode": "anchored",
+      "source": "EYE-CLEANUP-02 · Kandidat",
+      "status": "OK",
+      "lid": "#e8eced"
+    },
+    "figure": "clown",
+    "lag": [
+      {
+        "t": 2,
+        "beat": "notice",
+        "eyesMoveFrame": 1,
+        "headMoveFrame": 4,
+        "bodyMoveFrame": 10
+      },
+      {
+        "t": 6,
+        "beat": "resume",
+        "eyesMoveFrame": 1,
+        "headMoveFrame": 4,
+        "bodyMoveFrame": 10
+      }
+    ],
+    "windows": {
+      "idle": [
+        0,
+        2
+      ],
+      "doubt": [
+        3,
+        4.65
+      ],
+      "recovery": [
+        6,
+        8
+      ],
+      "all": [
+        0,
+        8
+      ]
+    },
+    "feet": {
+      "idle": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "doubt": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "recovery": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "all": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      }
+    },
+    "startEnd": {
+      "maxBoneDelta": 0.00001,
+      "bone": "wristl",
+      "eyePupilDelta": 0,
+      "gazeYaw": [
+        -0.8795,
+        -0.8795
+      ]
+    },
+    "hashesLoad1": [
+      {
+        "t": 0.5,
+        "hash": "9208dccec9efd4ce7ddd1f09075ba653f1fd1e2c20fd774ea5c92ef2bd3408f6"
+      },
+      {
+        "t": 2.1,
+        "hash": "d9d9015f7dd0c33074cc5ee88a3e95b0147306d2d87a637ddb046c8928a768a6"
+      },
+      {
+        "t": 3.9,
+        "hash": "16ef134cb7f7b59db1452732968adabf789cc64b3d0b3fad99c43f66baa541fc"
+      },
+      {
+        "t": 5.5,
+        "hash": "61c2da04466a18372848528ef8fc63fb9e5420d2e9ad8c7c75266bca11dcd57d"
+      }
+    ],
+    "renderMs": 10406,
+    "hashesLoad2": [
+      {
+        "t": 0.5,
+        "hash": "9208dccec9efd4ce7ddd1f09075ba653f1fd1e2c20fd774ea5c92ef2bd3408f6"
+      },
+      {
+        "t": 2.1,
+        "hash": "d9d9015f7dd0c33074cc5ee88a3e95b0147306d2d87a637ddb046c8928a768a6"
+      },
+      {
+        "t": 3.9,
+        "hash": "16ef134cb7f7b59db1452732968adabf789cc64b3d0b3fad99c43f66baa541fc"
+      },
+      {
+        "t": 5.5,
+        "hash": "61c2da04466a18372848528ef8fc63fb9e5420d2e9ad8c7c75266bca11dcd57d"
+      }
+    ],
+    "hashesReverseOrder": [
+      {
+        "t": 0.5,
+        "hash": "9208dccec9efd4ce7ddd1f09075ba653f1fd1e2c20fd774ea5c92ef2bd3408f6"
+      },
+      {
+        "t": 2.1,
+        "hash": "d9d9015f7dd0c33074cc5ee88a3e95b0147306d2d87a637ddb046c8928a768a6"
+      },
+      {
+        "t": 3.9,
+        "hash": "16ef134cb7f7b59db1452732968adabf789cc64b3d0b3fad99c43f66baa541fc"
+      },
+      {
+        "t": 5.5,
+        "hash": "61c2da04466a18372848528ef8fc63fb9e5420d2e9ad8c7c75266bca11dcd57d"
+      }
+    ],
+    "reproducible": true,
+    "seekOrderIndependent": true
+  },
+  "v2": {
+    "beats": "beats_v2.json",
+    "clips": {
+      "base": "Idle_A",
+      "layers": [
+        "Hit_B (upper-body mask)",
+        "Waving (upper-body mask)"
+      ],
+      "actorB": "Idle_B"
+    },
+    "eyeReport": {
+      "mode": "anchored",
+      "source": "EYE-CLEANUP-02 · Kandidat",
+      "status": "OK",
+      "lid": "#e8eced"
+    },
+    "figure": "clown",
+    "lag": [
+      {
+        "t": 2,
+        "beat": "notice",
+        "eyesMoveFrame": 1,
+        "headMoveFrame": 4,
+        "bodyMoveFrame": 10
+      },
+      {
+        "t": 6,
+        "beat": "resume",
+        "eyesMoveFrame": 1,
+        "headMoveFrame": 4,
+        "bodyMoveFrame": 10
+      }
+    ],
+    "windows": {
+      "idle": [
+        0,
+        2
+      ],
+      "doubt": [
+        3,
+        5.25
+      ],
+      "recovery": [
+        6,
+        8
+      ],
+      "all": [
+        0,
+        8
+      ]
+    },
+    "feet": {
+      "idle": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "doubt": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "recovery": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      },
+      "all": {
+        "footL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "footR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesL": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "toesR": {
+          "slide": 0,
+          "float": 0,
+          "sink": 0
+        },
+        "maxSlide": 0,
+        "maxFloat": 0,
+        "pass": true
+      }
+    },
+    "startEnd": {
+      "maxBoneDelta": 0.00001,
+      "bone": "wristl",
+      "eyePupilDelta": 0,
+      "gazeYaw": [
+        -0.8795,
+        -0.8795
+      ]
+    },
+    "hashesLoad1": null,
+    "renderMs": 8936
+  },
+  "sheetSha256": {
+    "v1": "d5ad6cad95d87d0e91fa78634ec8e3fc068a94134c36a2a543699b7a9ab5d3c1",
+    "v2": "f75394835d46ba6ab194061d3980dbdfa963323a188ab1c122db92eb02bf6e7d"
+  }
+}

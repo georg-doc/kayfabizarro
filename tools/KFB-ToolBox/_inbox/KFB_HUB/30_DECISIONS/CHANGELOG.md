@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · NPC Performance Proof R1
+- replies/NPC_PERFORMANCE_PROOF_R1/ (V-187): Clown, 8 s, seek(t) pixelgleich über zwei Läufe (auch rückwärts), Fußkontakt 0,0000 dank Oberkörper-Maske, Start=Ende, Augen/Kopf/Rumpf Frame 1/4/10. Schwach: Zweifel liest sich kaum, Mischbild in v2, Gesicht dünn. Projekt ~/Developer/kfb-npc-proof (Port 5195). 3 Fragen mit Kontaktbögen ins Steuerpult.
+
 ## 2026-10-12 · Modulkarte Worldbuilder R1
 - replies/WORLDBUILDER_MODULE_MAP_R1.md (V-188): 38 Lab-Module, 24 Spender, 16 Live-Seiten (Einstieg /kfb-hub/). Wiederverwendbar: Insel-Rezept kfb.island-config/1, Track Core compileGraph/Checks, J17/TC1, Travel-Core/k2b, Kamera, HUD, Wasser, Klang, WB2-Sculpt, Resident-Atlas-Edit-Layer, Librarian. Lücken: Editor ohne Undo/Snap/Pinsel, edits[] leer, world-layout nur geplant, kein Zieh-Streckeneditor, scene-study /1 statt /2. Vorschlag kfb.world/1 + Befehle/Undo + Rechte je Modus. 7 Fragen ins Steuerpult.
 
