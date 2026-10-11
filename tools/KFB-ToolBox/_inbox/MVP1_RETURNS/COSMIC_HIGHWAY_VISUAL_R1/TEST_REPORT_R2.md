@@ -23,3 +23,6 @@ Date: 2026-10-11 · **No hero image PASS or model/track Golden.**
 
 ## Blocking seam
 Image generator twice ignored single-hero presentation and produced multi-panel branded charts. The R3 Work brief requires actual source image byte-conditioning and verifiable request receipt, otherwise `BLOCKED_SOURCE`. Reuse existing KFB Asset Scene Composer and Track Core; do not create second geometry owner or reattempt identical text-only poster seam. User review for R3 remains OPEN.
+
+## Matcher correction (historical test preserved)
+The first automated pass reported **10/11**, because criterion 7 searched a plain string `not a continuous floating geological island` while the authoring uses Markdown emphasis `**not** a continuous floating geological island`. Re-evaluation against the actual read-back source verifies **PASS** and the source interpretation is unchanged. **Final static criteria: 11/11 PASS**. This is a literal-matcher correction, not a model or image quality PASS.
