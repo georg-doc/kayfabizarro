@@ -1,4 +1,9 @@
 # Fresh Chat Brief · KFB Meta NPC Speech Sets · 2026-10-12
+
+## ADDITIVE SOURCE MAP · 2026-10-12 · EIGHT NPC EPISODES
+
+Before inventing a new topic list, open `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json` (same owner branch, Draft PR #379). It provides **eight** source-linked dramatic *premises* and performer-awareness classes, not scripts or accepted gags. Reuse Clown R0.2/new 59-second R1 first; then choose King Kayfabian, Driver, Demon Lord, **Monstrosity CEO**, Farmer duo, Lorekeeper or higher-frame Lord Hunky/Lady Dory. Important: `https://kayfabizarro.pages.dev/#thegame` is the digital-game orientation in `index.html`, distinct from analog `#kfb` and Cut&Play meta `#cutplay`. No new game rule/canonical scene/third dialogue runtime may be inferred from the comedy concept. Source/length/status evidence: `SUNO_META_NPC_EPISODE_ROSTER_TEST_REPORT_R0_1_2026-10-12.md`, **12/12** PASS structural only. Human comedy, actual beta speech, rig motion and rights remain unreviewed.
+
 Status: PARALLEL_AUTHORING_INTAKE / NOT INTEGRATED / NOT CANON
 Existing owner: KFB ChatterBox content/Triplet pool on the current source branches. Receiving Voice/Music owner: existing ChatterBox Voice PR #379, `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`. No second semantic engine or new Site.
 
