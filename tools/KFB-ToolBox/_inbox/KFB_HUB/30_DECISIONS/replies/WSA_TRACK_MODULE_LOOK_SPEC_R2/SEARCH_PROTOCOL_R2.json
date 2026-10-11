@@ -1,0 +1,92 @@
+{
+  "inherits": "WSA_TRACK_MODULE_LOOK_SPEC_R1/SEARCH_PROTOCOL_V140.json",
+  "additionalSources": [
+    {
+      "source": "Sky_Presets",
+      "lines": 195,
+      "matches": 3,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "S4_v2",
+      "lines": 651,
+      "matches": 96,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "Sky_Host",
+      "lines": 112,
+      "matches": 0,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RKIT_SKIN_S4_R1.md",
+      "lines": 51,
+      "matches": 29,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "STEERING_ANSWERS_TD_R1.md",
+      "lines": 32,
+      "matches": 11,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RKIT_CATALOG_TD_R1.md",
+      "lines": 263,
+      "matches": 168,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RKIT_SKIN_S2_R1.md",
+      "lines": 75,
+      "matches": 34,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RC_v11",
+      "lines": 3459,
+      "matches": 117,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RKIT_SKIN_S1_R1.md",
+      "lines": 114,
+      "matches": 80,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "Town_parts_metadata",
+      "lines": 187,
+      "matches": 9,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "B7_parts_metadata",
+      "lines": 141,
+      "matches": 9,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "Town_Run03",
+      "lines": 77,
+      "matches": 15,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "RKIT_DIRT_VORLAGE_R1.md",
+      "lines": 33,
+      "matches": 24,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    },
+    {
+      "source": "Edge_Rubble",
+      "lines": 58,
+      "matches": 6,
+      "scope": "actual inspected source snapshot; declarations vs implementation separated"
+    }
+  ],
+  "patterns": "dirt|trail|country|cosmic|kerb|Bord|Gehweg|transition|berm|emiss|glow|stone_arch|stone_rect|TOWN|COUNTRY",
+  "candidateDescriptors": "WALL_FENCE_SOURCE_CANDIDATES.json",
+  "limits": "No global missing claim. New look gaps scoped to inspected J17/S2/S4/S4-v2 sources; old RKIT catalog missing entries superseded by newer S4 cap/splitter data where applicable. No private Core source published."
+}
