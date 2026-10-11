@@ -28,3 +28,6 @@ Track Core `SLOTS`/`SKINS` (14-Slot-Querschnitt, paint je Teil), S4-v2-Brief `KF
 
 ## Erweiterung (V-147)
 Modul-Liste jetzt aus allen fünf Blättern `replies/REFS_TRACK_DETAILS_2026-10-11/TD1–TD5` (Renn-Kern, Straße, Schotter, Übergänge, Fortgeschritten). Je Modul: welche Joyride-Quelle den Look 1:1 liefert, für die Skins race und town; dirt nur soweit Joyride-Quellen (J17 Biome canyon u. a.) es hergeben, sonst „nicht gefunden in …“.
+
+## Erweiterung (V-149)
+Auch `replies/REFS_CITY_STREETS_2026-10-11/CS1–CS3` (Inselstraßen mit Bord/Gehweg, Landstraße/Schotter, Cosmic Highway). Für town zusätzlich RKIT Gehweg/Bord Lauf 03 und hex_b7 als Bestand prüfen. Für cosmic: nur auflisten, welche vorhandenen KFB-Quellen (TinySkies, RollerCoaster v11, Joyride-Glow/Emission) passen; keine Look-Festlegung, die trifft Georg.

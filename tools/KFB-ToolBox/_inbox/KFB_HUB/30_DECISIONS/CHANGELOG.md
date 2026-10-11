@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Stadt-, Land- und Cosmic-Blätter
+- V-149 CS1 Inselstraßen (Bord/Gehweg), CS2 Landstraße/Schotter, CS3 Cosmic Highway; Skins race/town/country/dirt/cosmic. Abgelegt replies/REFS_CITY_STREETS_2026-10-11/.
+
 ## 2026-10-11 · Bilder prüfen, bei Unklarheit fragen
 - V-148 Logik generierter Referenzbilder im Detail prüfen und im KFB-Stil umsetzen; uneindeutig → nachfragen, nicht erfinden. In START_HERE und Lab-CLAUDE.md.
 

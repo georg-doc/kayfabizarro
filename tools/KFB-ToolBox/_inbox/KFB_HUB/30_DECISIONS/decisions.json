@@ -1547,6 +1547,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-149",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Drei weitere Georg-Blätter (11.10. 15:45): CS1 Inselstraßen mit gemauertem Bord + Gehweg (Schichtung Asphalt → Bordstein-Blöcke → Gehwegplatten → Graskante; Kreisel Ein/Aus/Ring, Bordabsenkung, Zebrastreifen, Mittelinsel, Sackgassen-Kappe, Straße→Platz; „single island base, not glued rocks“); CS2 Landstraße + Schotter (Leitplanke bzw. Zaun optional, Graben/Graskante, Straße→Schotter, gemischte Verbinder, Landkreisel/Wendeschleife, Gabelung, Hofeinfahrt, Brückenanschluss); CS3 Cosmic Highway (Energie-Kante, Schulter, Leitplanke, Hover-Brücke, Rampen, Hub-Ring, Y, Merge/Split, Anti-Grav-Stützen). Skins damit: race (J17), town, country, dirt, cosmic; rail/coaster später. Logik prüfen nach V-148; Look je Skin: race = J17 (V-102), übrige Skins Look-Entscheidung bei Georg.",
+   "values": {},
+   "owner": "RKIT + Lab + WSA",
+   "check": "Modul-Katalog-Abgleich + Liste uneindeutig",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Vervollständigt den Katalog um Stadt mit Bordstein, Land und den Cosmic-Highway-Skin.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
