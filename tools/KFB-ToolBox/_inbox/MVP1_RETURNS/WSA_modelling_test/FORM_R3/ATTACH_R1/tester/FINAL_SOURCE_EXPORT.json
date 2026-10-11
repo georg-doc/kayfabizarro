@@ -1,0 +1,208 @@
+{
+  "source_byte_checks": [
+    {
+      "file": "hill_single_A.gltf",
+      "actual_sha256": "00eb206cb0239257d05c107568bcf1fd6548d2f3da2cfb6ec8ecd41c377bbf06",
+      "expected_sha256": "00eb206cb0239257d05c107568bcf1fd6548d2f3da2cfb6ec8ecd41c377bbf06",
+      "match": true
+    },
+    {
+      "file": "hill_single_A.bin",
+      "actual_sha256": "db4fdd504cbdcc0d793c296be7a6e59705295dfa6fc453d770804c986f082c65",
+      "expected_sha256": "db4fdd504cbdcc0d793c296be7a6e59705295dfa6fc453d770804c986f082c65",
+      "match": true
+    }
+  ],
+  "source_classification": "ADAPTED_HILL: source isolated, footprint/topology subdivided and top heights intentionally reshaped; not affine clone",
+  "glb_version": 2,
+  "mesh_triangles": [
+    {
+      "mesh": "hill_single_A.003",
+      "triangles": 7096
+    },
+    {
+      "mesh": "Crown_L_0.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Crown_L_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Crown_L_2.001",
+      "triangles": 348
+    },
+    {
+      "mesh": "Crown_L_3.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Crown_L_4.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Crown_R_0.001",
+      "triangles": 348
+    },
+    {
+      "mesh": "Crown_R_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Crown_R_2.001",
+      "triangles": 348
+    },
+    {
+      "mesh": "Crown_R_3.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Crown_R_4.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Foundation_L_0.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Foundation_L_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Foundation_L_2.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Foundation_R_0.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Foundation_R_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Foundation_R_2.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Landing_endstone.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Pillar_L_cap.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Pillar_L_foot.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Pillar_L_shaft.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Pillar_R_cap.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Pillar_R_foot.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Pillar_R_shaft.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Tread_01.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_02.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_03.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_04.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_05.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_06.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_07.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Tread_08.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "Upper_termination_L.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "Upper_termination_R.001",
+      "triangles": 380
+    },
+    {
+      "mesh": "WallLower_L_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallLower_L_3.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallLower_R_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallLower_R_3.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallTragstein_L_0.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallTragstein_L_2.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallTragstein_R_0.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallTragstein_R_2.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallUpper_L_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallUpper_L_3.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallUpper_R_1.001",
+      "triangles": 252
+    },
+    {
+      "mesh": "WallUpper_R_3.001",
+      "triangles": 252
+    }
+  ],
+  "all_parts_under_20k": true,
+  "total_triangles": 20132,
+  "nodes": 46,
+  "cameras": 0
+}
