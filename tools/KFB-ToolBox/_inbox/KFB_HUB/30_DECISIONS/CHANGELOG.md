@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Style-Guide-Fragen beantwortet
+- V-174 Bandenfarben vereinheitlichen (J17), Mesa-Strecke als Landstraßen-Skin-Variante, Cosmic Glow-Standard + Neon auf Cosmic-Inseln, J17 als Licht-Maßstab, S/M/L mit Tunnel-Bergen ≥ L.
+
 ## 2026-10-11 · Rhythmus-Elemente und Billboards
 - V-172 Stakkato-Elemente je Skin (Lichter, Fackeln/Laternen/Pfähle, Licht-Pylonen). V-173 Billboards quer über der Strecke an ruhigen Stellen bzw. als Insel-Eingangsschilder. Art Director ergänzt den Style Guide.
 

@@ -1897,6 +1897,20 @@
    "applies": "Phase D/E"
   },
   {
+   "id": "V-174",
+   "date": "2026-10-11",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Antworten auf Style-Guide-Fragen v0.1: (1) Bandenfarben im Lab vereinheitlichen auf J17 (V-102), nachdem die Bau-Sitzung geprüft hat, wo die alten Werte (palettes.ts BANDE_DEFAULT rot/weiß, ASPHALT #545e7a) noch benutzt werden; Rot-Weiß nur für Kerbs. (2) Mesa-Strecke bewusst wie eine Landstraße: graue Fahrbahn + rot-weißer Kerb als Skin-Variante (country/mesa). (3) Cosmic: leuchtende Bandenkanten auf J17-Basis als Standard, voller Neon-Look auf Cosmic-Inseln. (4) J17 bleibt Licht- und Sättigungs-Maßstab, Bilder nur Stimmung. (5) Inselgrößen S/M/L festlegen, Tunnel-Berge mindestens L, Unterseiten-Tiefe nach Georgs Inselboden-Bildern statt alter Messregel.",
+   "values": {},
+   "owner": "Lab + RKIT + AD",
+   "check": "Style Guide v0.2 übernimmt",
+   "source": "Georg 11.10.",
+   "supersedes": null,
+   "why": "Offene Stil-Fragen aus dem Style Guide geklärt.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
