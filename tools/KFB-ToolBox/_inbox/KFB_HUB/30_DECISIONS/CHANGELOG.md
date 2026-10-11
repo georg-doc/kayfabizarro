@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schritt 1 + Katalog-Abgleich
+- Track Core 0.16.3-s1: Kreisel-Arme erben Familie (Welt-Kreisel ändern sich gewollt, Race bitgleich), test-skin 32/32. Katalog TD1–TD5: Renn-Kern vollständig; Straße fehlen Bordabsenkung, Straße→Platz, erhabene Mittelinsel; DIRT größter Block (L). 21 Fragen „uneindeutig“ an Georg. Schritt 2 freigegeben mit Skins race/town/country/dirt/cosmic (dirt/cosmic Platzhalter).
+
 ## 2026-10-11 · Stadt-, Land- und Cosmic-Blätter
 - V-149 CS1 Inselstraßen (Bord/Gehweg), CS2 Landstraße/Schotter, CS3 Cosmic Highway; Skins race/town/country/dirt/cosmic. Abgelegt replies/REFS_CITY_STREETS_2026-10-11/.
 
