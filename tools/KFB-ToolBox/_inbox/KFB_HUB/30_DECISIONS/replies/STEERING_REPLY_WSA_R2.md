@@ -27,7 +27,7 @@ Bitte `replies/STEERING_ANSWERS_TD_R2.md` (V-154) lesen; R2 ist offenbar vor die
 | 18 Stützmauer | V-154: talseitig, Mauer-Baukasten V-105 |
 | 19 Haltebucht Land | V-154: bündig mit Kies, ohne Bord; Sackgasse immer mit Wendeschleife (V-150 #7) |
 
-Offen bleiben nur: **Cosmic-Look** und **Steinviadukt auf Inseln**. Bitte R2 nicht nachbessern, nur im Kopf auf V-154 verweisen.
+Inzwischen entschieden: **Cosmic-Look** = Neon-Vibe aus Georgs Referenzen `REFS_COSMIC_MESA_2026-10-11/CO1–CO2` (V-163), **Steinbrücken/Viadukte** später für Antike-Inseln (V-165). Neue Insel-Referenz: Mesa/Krazy-Kat-Coconino ME1–ME2 (V-164). Bitte R2 nicht nachbessern, nur im Kopf auf V-154 verweisen.
 
 ## Nächster Auftrag: Szenen-Studie Teil C · Licht (Recherche, kein Bau, kein Lab-src)
 Aus `BRIEF_WSA_SCENE_STUDY_R1.md` §3, fokussiert:
