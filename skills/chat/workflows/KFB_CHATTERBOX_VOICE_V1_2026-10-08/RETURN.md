@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · ADDITIVE META NPC COMEDY ROSTER R0.1 · EXACT SOURCE/PRIVATE SITE RECOVERY
+
+Outcome: no new standalone generator or runtime. Within existing KFB ChatterBox / Voice owner Draft PR #379, an eight-episode **writing-only** NPC stage-comedy source map was added: `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json`. It extends the separately persisted Suno Speech beta onboarding, first-take Clown candidate and research report without duplicating those deliverables. Source scope spans official `#kfb` analog freestyle + `#cutplay` meta narration + `#thegame` digital game orientation, with source-status differentiation. The third route is verified as a main-branch `index.html` navigation action, **not** remote browser/pixel verified. Digital gameplay is NOT inferred from analog rules.
+
+Candidates (all non-canon): Clown source-locked first take (existing), King Kayfabian, Driver, Demon Lord birthday performance, **Monstrosity CEO** Terms & Conditions, Protopia Farmer duo, Lorekeeper, Lord Hunky/Lady Dory. Each item states conflict, physical prop, stakes/escalation, reframe/callback, awareness constraints, specific KFB source paths and compatible backing style; **seven new scripts not yet written**. Existing Triplet subject/connector/reframe and legitimate silence retained; single KFB Audio and Resident Performance owners retained. Current World R4 STOP, Four-Island A/B and Voice human listening gate unchanged.
+
+Evidence: `SUNO_META_NPC_EPISODE_ROSTER_TEST_REPORT_R0_1_2026-10-12.md` (12/12 structural/source-reference checks PASS, GitHub text readback 1/1, private Site Inbox text readback 1/1). Site Inbox workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`, file id `14f6c823-172b-4afe-be35-8485440ef63c`, SHA-256 `dcc5cdde780fdb119479d1b3f013cb905068c87ca7a913d9d77ffbce84ddd07a`. The private Inbox is **not** a published Site. 0 new audio mixes, 0 copyrights/rights approved, 0 comedy/acting human PASS, 0 new game/runtime/Stage/Live/merge. Branch/head must be read from actual PR after Return metadata commit (never infer from pre-Return implementation commit).
+
+**One next Suno gate** `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`: independently hear/transcribe one actual Suno Speech beta Clown mix, verify style/speech/rights/timing and record Georg's content/performance judgments; the parallel writing chat may create further candidate texts on this single owner meanwhile.
+
+---
+
+
 ## 2026-10-12 · META NPC SPEECH BETA R1 · GITHUB + PRIVATE SITE RECOVERY
 
 **Outcome:** Existing ChatterBox Voice PR #379 extended only with a **parallel-meta authoring handoff**, current Suno Speech beta research, and a new controlled shorter Clown production card. Original digital/analog rules and parallel chat writings not altered/promoted. Owner KFB ChatterBox / Resident Speech; KFB Audio remains sole mix/audio clock; Resident Atlas original Clown remains 3-club candidate-only.
