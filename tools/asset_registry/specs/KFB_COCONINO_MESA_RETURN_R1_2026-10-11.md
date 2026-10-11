@@ -85,3 +85,27 @@ Historical images of `Krazy Kat` are references, never ingested mesh assets. No 
 **Open:** remaining source donor KFB procedural `mesa()`, Kenney GLB & KayKit GLTF+BIN not isolated; 0 external Dropbox actual pixels handed to image generator. Original visual prototypes need actual Blender preview/independent critic; conceptual route needs World/Track Core no-HEX approved lane to be playable. Quaternius SciFi license-header mismatch unresolved. Do not integrate as new island or R5.
 
 **Exactly one next gate:** actual remaining KFB/Kenney/KayKit real donor isolation + Dropbox pixel-transfer into Composer, then single-image source-conditioned J1 Sunset vs J2 Violet Joyride environment A/B with neutral M01–M03, Georg A/B/FAIL. Do not block ongoing broader parent World design artificially. No Site/Stage/Live or central Hub metadata changes because no new public product route.
+
+
+---
+
+## CURRENT COCONINO R4 RETURN ADDENDUM · 2026-10-11 · Kenney/KayKit binary source isolation
+
+**Result:** The previously missing Kenney and KayKit **actual binary model geometry** has now been retrieved via GitHub connector, decoded, mesh-projected in isolation and filed on this existing Asset Librarian research branch. This is a source/form milestone **not** an island/track/runtime integration.
+
+**Owner/branch:** `georg-doc/kayfabizarro` · `planning/kfb-coconino-mesa-asset-recon-2026-10-11` · owner `tools/asset_registry` and existing Librarian candidate handoff. Last verified R4 *evidence* commit `6b318a79850adb0937d272e330e9e5db1ec38aa3`. Get the exact post-Return head from GitHub; no PR, merge or Live.
+
+**New source/evidence files**:
+- `tools/asset_registry/specs/visual/KFB_COCONINO_R4_KENNEY_KAYKIT_SOURCE_ISOLATION.svg`
+- `tools/asset_registry/specs/KFB_COCONINO_R4_BINARY_DONOR_RECEIPT.json`
+- `tools/asset_registry/specs/KFB_COCONINO_R4_BINARY_DONOR_TEST_REPORT.md`
+- `tools/asset_registry/specs/KFB_COCONINO_R4_DONOR_SELECTION_FOR_COMPOSER.md`
+- plus this owning Return and additive `KFB_COCONINO_MESA_CHANGELOG.md`.
+
+**Fact checks:** Four original binary source files loaded (3 Kenney GLB + 1 KayKit GLTF and separate BIN) and decoded; 10/10 source/static checks PASS; all four distinct sources each shown from two angles = 718 polygon SVG, built from 359 original native source triangles. Four source SHA IDs plus KayKit BIN SHA and real native bounding dimensions in receipt. Four new GitHub source/evidence files verified via exact branch readback. R3 3/3 original new Mesa prototype topology PASS remains historical separate evidence.
+
+**Creative decision (provisional):** Kenney tall rock, cactus and KayKit small rock = reusable incidental details; `cliff_top_rock` is a narrow tile (1 × 1 × 0.2685) and should not make a visible square-edged island. Distinctive Coconino mesa massing still needs original KFB M01–M03 / actual existing KFB K1 mesa source. One-continuous-clod rule; only current Track Core geometry plus Joyride presentation, no Hex or generic race bridge piers.
+
+**Unresolved / not-run:** KFB K1/H0 *post-soft* `mesa()` visual capture remains unavailable; Dropbox reference folder images are accessible as metadata/preview, but host cannot ingest actual original pixels through its download boundary. **0 source-conditioned Composer output, 0 Blender 3D renders, 0 J1/J2 A/B matched image proof, 0 World runtime/driving/perf tests, 0 independently accepted Golden**, no existing Four-Island R1 gate changed. The Dropbox source thumbnail or generated R3 `MOOD_ONLY` PNG must not masquerade as source conditioning.
+
+**Next single gate:** capture actual KFB K1/H0 post-soft geometry and original Dropbox Claymation Reference pixels in the existing Composer/Librarian render owner, then generate real source-conditioned stand-alone J1 Sunset and J2 Violet Joyride 3/4 scene hero references for Georg A/B/FAIL. This is a **visual** direction step, not blanket game-world geometry authorization. World Island MVP R4 remains STOPPED.

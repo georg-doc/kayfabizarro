@@ -29,3 +29,13 @@
 - Image generation attempts 2: first split sheet/disconnected geology FORM FAIL and retained; second single continuous organic island visual improvement but MOOD_ONLY, 0 source pixels fed, not proof of drivability/Golden. Files /mnt/data chat-only with verified SHA / CRC ZIP; NOT uploaded to GitHub. See `KFB_COCONINO_SOURCE_PROOF_R3_2026-10-11.json`, `KFB_COCONINO_TEST_REPORT_R3_2026-10-11.md`.
 - R4 STOP, Four-Island A/B design gate, Track Core/Joyride, existing Librarian and KFB Clay owners all unchanged. No Stage/Site/Hub, PR, merge, Live.
 - Only next gate: remaining KFB procedural `mesa()`/Kenney GLB/KayKit GLTF+BIN visual source-isolation and actual Dropbox image pixels available to Composer provider for source-conditioned J1/J2, then Georg A/B/FAIL.
+
+
+## 2026-10-11 · Coconino R4 · Actual Kenney/KayKit binary donor isolation
+- GitHub pinned real Kenney `rock_tallA.glb`, `cliff_top_rock.glb`, `cactus_tall.glb`, and KayKit Forest `Rock_1_A_Color1.gltf` with exact `.bin` dependency loaded and parsed from original source bytes via `fetch_file(encoding=base64)`.
+- Source index positions/triangles and scene node translations rendered **unmodified geometry in isolated neutral SVG** (3/4 and side per model) at `visual/KFB_COCONINO_R4_KENNEY_KAYKIT_SOURCE_ISOLATION.svg`; combined 359 native triangles ×2 views = 718 source-derived projected polygons, exact 101527-character GitHub readback.
+- Measured native bounding dimensions and SHA links persisted to `KFB_COCONINO_R4_BINARY_DONOR_RECEIPT.json`. Kenney rock tall 136 triangles, cliff-top 53, cactus 122, KayKit rock 48.
+- 10/10 R4 factual source/static checks PASS, `KFB_COCONINO_R4_BINARY_DONOR_TEST_REPORT.md`. `KFB_COCONINO_R4_DONOR_SELECTION_FOR_COMPOSER.md` maps explicit KEEP / ADAPT / REJECT and track/world ownership. Real raw KFB `mesa()` final post-soft source still unrendered.
+- Dropbox original pixel transfer into this host remains blocked despite read-only metadata/preview and minted temporary URL. No source-conditioned generated image claimed. No public link/share token persisted.
+- No Blender source renderer, no actual Joyride drive/collision, no R5, no new product owner, no new Site/Stage/Hub, no PR/merge/Live.
+- Single next gate: actual KFB post-soft `mesa()` and Dropbox reference pixel capture in existing Composer owner → 2 source-conditioned Joyride J1/J2 A/B hero references → Georg A/B/FAIL.
