@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · levelSet Zwischenstand
+- Zu V-116: Hirn/Darm/Niere gleich, Topologie 0/0/0 bei allen 8 Körpern, Dreiecke −60 %. Herz: Truncus-Rest (von O1 entfernt) per Feld-Maske entfernen (vorlagengetreu), helle Flecken mit geraden Kanten (Normalen/Farbe) beheben; Gefäßstümpfe als Befund mit Spielkamera-Bild. ?rkit=1 bootet mit 0 Warnungen.
+
 ## 2026-10-11 · Plan R1 gilt auch für WSA
 - V-122 Georg: Plan R1 + Register maßgeblich gegenüber WSA-Router; Vier-Insel-A/B als Eingang für D/F. WSA bekommt START_HERE_STEERING.md. Antwort an Blender um Start K1+K2 ergänzt.
 
