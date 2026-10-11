@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Poller geliefert (vorläufig)
+- rkit_poller.parts.glb (0,85, lichte Weite 1,80), Q1–Q9 PASS; Lab-Parität steht aus (Spiel-Seite lädt gerade nicht, MVP baut an src). Icosphere = Blender-Import-Knochenform, keine falsche Datei.
+
 ## 2026-10-11 · Icosphere: Lab nicht betroffen
 - Lab-Farmer-Dateien ohne Icosphere; Figuren-Maße aus Konstanten (FIG_SCALE 1,6, H 3,64) bzw. Knochen. RKIT nutzt künftig nur Lab-Figurdateien.
 
