@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Haltebucht nachgebessert, falsches PASS korrigiert
+- V-138-TUNE geliefert (Gehweg-Ende mit Knet-Zungen und eingesunkenen Kantensteinen, gewölbte Kleckse); an Georg. Korrektur: Fußtests V-138/V-153 von nachmittags waren falsch PASS (Fuge Bord↔Gehweg, unter Last übersprungen); Fix LAB PATCH G2, Fußtest bei 60 fps 6/6, parity PASS. V-159 Fuß-/Fahrtests nur ≥ 50 fps.
+
 ## 2026-10-11 · Vendor 0.16.7 im Lab
 - Lab-Vendor: 0.16.1/0.16.2/0.16.3/0.16.7 (0.16.5 privat archiviert); gait_v157.json mit wallTan; Treppen-Fußtest-Anker in docs/handoff/rkit_trail_stairs_foottest_v1.json. RKIT pausiert.
 

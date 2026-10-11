@@ -2,6 +2,8 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · V-138 TUNE (Gehweg-Ende organisch, Tropfen plastisch):** `docs/critic/lab-track/2026-10-11_V138-tune/` (REPORT, V138_TUNE_BLATT) — Knet-Zungen + lose Kantensteine am Ende, gewölbte Kleckse; Nebenbefund Bord-Fuge (falsches Fußtest-PASS unter Last) per LAB PATCH G2 geschlossen; Fußtest + Parity bei 60 fps PASS.
+
 **Lieferung 11.10. · V-153 KayKit-Faktor + Hatchback-Test:** `docs/critic/lab-track/2026-10-11_V153-cars/` — ein Kit-Faktor (Sedan), Hatchback 5,40 × 2,80, Cicada-BODY im Lab richtig; Fahrtest 3 Autos × 4 Läufe sauber, Fußtest 6/6. Parity hub/organ PASS, game C4 0,054–0,062 unter Last (Notiz).
 
 **Lieferung 11.10. · V-157 Gangwerte Medium-Rig:** `docs/critic/lab-track/2026-10-11_V157-gait/` (GAIT_V157.md, gait_v157.json) — Schritt walk 0,561 / jog 2,034 / sprint 2,483 lab, Sprungweite 2,71 / 4,93, stepMax 0,885; Treppen-Fußtest folgt an trailStairs.

@@ -136,6 +136,7 @@ d('V-155','2026-10-11','Insel','RULE','Geh-Netz-Besitz: Das Lab-Layout (IslandLa
 d('V-156','2026-10-11','Insel','TUNE','Der Berg bzw. Hügel, durch den der Tunnel führt (Prüfbank-Wirt), ist noch schlecht und unpassend modelliert. Tunnel-Wirte sind künftig echte Inselkörper bzw. Berge nach Georgs Inselboden-/Berginsel-Referenzen (V-142, V-152 CR3: zusammenhängende Erdmasse, Fels als Teil der Masse) und ein geschlossenes Mesh (V-136); der TC1-Knethügel bleibt nur Prüf-Wirt.', 'Lab + Blender', 'Standbild Tunnel im echten Inselkörper (Bank B)', 'Georg 11.10.: „tunnel ist PASS, allerdings ist der berg … noch schlecht und unpassend modelliert“')
 d('V-157','2026-10-11','Insel','RULE','Trittstein-Abstand (und Stufenmaße der Pfade) wird für Locomotion und Animationen gemessen und optimiert, Hauptreferenz Medium-Rig (Gehen, Joggen, Sprint, Sprünge aus V-021); kein geschätzter Wert. Gemessen 11.10.: Schritt walk 0,561 / jog 2,034 / sprint 2,483 lab, Sprung jog 2,71 / sprint 4,93; Trittsteine nach Standard-Gangart jog (Steuerung), Treppe Setzstufe ≤ min(0,45 Masonry A, 0,70).', 'Lab + RKIT', 'Messung Schrittlänge je Gangart + Fußtest', 'Georg 11.10.')
 d('V-158','2026-10-11','Insel','RULE','Fuß- und Wanderpfade: höchstens 12 % Steigung ohne Stufen; darüber Treppe (Stufenmaße nach V-157 gemessen) mit Podest.', 'RKIT + Lab', 'trailChecks walk_grade', 'Georg 11.10.: „12 % passt“')
+d('V-159','2026-10-11','Prüfung','RULE','Fuß- und Fahrtests zählen nur bei ≥ 50 fps im Testlauf; darunter wiederholen. Grund: Große Zeitschritte springen über Löcher bzw. Fugen und erzeugen falsche PASS (V-138- und V-153-Fußtest am 11.10. nachmittags waren falsch PASS: Fuge zwischen Bord und Gehweg, behoben mit LAB PATCH G2).', 'Lab', 'fps-Angabe in jedem Fuß-/Fahrtest-Bericht', 'Bau-Sitzung 11.10. (Selbstkorrektur), Steuerung')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -260,6 +261,7 @@ WHY = {
  'V-156':('Der Prüfhügel ist ein Platzhalter; Tunnel sollen durch glaubwürdige Berge führen.','Bank B / Phase D'),
  'V-157':('Trittsteine müssen zur echten Schrittlänge der Figuren passen, sonst stolpert die Animation.','trail'),
  'V-158':('Bequem begehbar, steiler wird Treppe.','trail'),
+ 'V-159':('Ein Test unter Last hat ein Loch übersprungen; Ergebnisse müssen von der Bildrate unabhängig gültig sein.','sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

@@ -1687,6 +1687,20 @@
    "applies": "trail"
   },
   {
+   "id": "V-159",
+   "date": "2026-10-11",
+   "area": "Prüfung",
+   "verdict": "RULE",
+   "text": "Fuß- und Fahrtests zählen nur bei ≥ 50 fps im Testlauf; darunter wiederholen. Grund: Große Zeitschritte springen über Löcher bzw. Fugen und erzeugen falsche PASS (V-138- und V-153-Fußtest am 11.10. nachmittags waren falsch PASS: Fuge zwischen Bord und Gehweg, behoben mit LAB PATCH G2).",
+   "values": {},
+   "owner": "Lab",
+   "check": "fps-Angabe in jedem Fuß-/Fahrtest-Bericht",
+   "source": "Bau-Sitzung 11.10. (Selbstkorrektur), Steuerung",
+   "supersedes": null,
+   "why": "Ein Test unter Last hat ein Loch übersprungen; Ergebnisse müssen von der Bildrate unabhängig gültig sein.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
