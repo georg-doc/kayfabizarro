@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · V-138 geliefert, V-130 Bank A
+- Haltebucht mit RKIT-Bürgersteig 1:1, Knet-Schüttung, Kachel-Kerbe gefüllt, Fußtest 6/6, parity PASS (Wiederholung unter Last). Bank A: 4 Looks im Feld, Profil arch/rect/round, Portal + Innen 1:1 an beiden Enden, 0/0/0, Freiraum ≥ 0,308. Beides an Georg. Offen: Gehweg-Ende gerade, Tropfen flach; race_tube im Hügel statt frei.
+
 ## 2026-10-11 · DIRT gebaut, Geh-Netz-Besitz
 - Track Core 0.16.5 DIRT (D1–D3 Übergänge, Berm ≤ 35°, Schotter-Arme, Enden Wiese/Hof/Gatter), test-dirt 27/27, Bestand graph-identisch. V-155 Geh-Netz gehört dem Lab-Layout, Core TRAIL = Bauteile + Prüfungen. Offen an Georg: trail-Steigung ohne Stufen, Trittstein-Abstand.
 

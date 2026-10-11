@@ -2,6 +2,8 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · V-138 Hex-Haltebucht mit RKIT-Bürgersteig:** `docs/critic/lab-track/2026-10-11_V138/` (REPORT, V138_BLATT, foot_test, parity). Bord, Gehweg und Kantensteine aus RKIT `hex_b7.parts.glb`, Knet-Schüttung zur Hex-Insel (Lauf 4,4 m), Kachel-Kerbe gefüllt. Fußtest 6/6, Parity PASS nach Wiederholung unter Last (Swap ~17,5 / 18,4 GB).
+
 **Lieferung 11.10. · C1b+C3 Runde 2:** `docs/critic/lab-track/2026-10-11_C1b-C3-r2/` — Mündungs-Ringspalt geschlossen (O1 bohrt nicht mehr, TC1 schneidet, Stirnfläche per manifold-3d), Tunnel-Licht wie J17, Q5-Kehlen, J17-Markierungen M2, Platzhalter-Material. V-112 PASS (4 Styles), Fahrtest/Dock/Parity PASS, V-115 Mitte/Übersicht PASS, nah 27–33 fps grenzwertig.
 
 **Lieferung 11.10. · C1b+C3 Strecken-Welt + TC1-Tunnel (generisch) + Fahrtest:** `docs/critic/lab-track/2026-10-11_C1b-C3/` (REPORT, MODULES, REFS, qcheck.json, drive_test.json). V-112 PASS (4 Styles), Fahrtest + Dock PASS, Parity PASS, **V-115 FAIL (Mitte 16,7 fps; Platzhalter-Material bringt 35/59/56 fps, Entscheidung offen)**.

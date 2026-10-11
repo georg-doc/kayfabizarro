@@ -42,3 +42,19 @@ Stand 2026-10-11 · Grundlage:
 | A | Größte Pfad-Steigung ohne Stufen: 12 % in Ordnung? Der Walker schafft bis 35°, aber Pfade sollen gemütlich sein. |
 | B | Trittstein-Abstand: Was ist ein „Figurenschritt“ in Lab-Maß (Vorschlag 0,6 H ≈ 2,2)? |
 | C | Wer besitzt das Geh-Netz: Track Core TRAIL (wie Straßen) mit Übergabe an `IslandLayout.routes`, oder bleibt das Lab-Layout führend und TRAIL liefert nur Bauteile (Stufen, Steg, Brücke)? |
+
+## Entscheid C (Steuerung 11.10., V-002) und Folge für die Vorlage (R1a)
+
+**Das Geh-Netz gehört dem Lab-Layout** (`IslandLayout.routes / places`, Georg gestaltet im Editor). Es gibt keinen zweiten Netz-Besitzer. Damit ändert sich die Vorlage:
+
+| Feld | R1 | R1a |
+|---|---|---|
+| Logik | Familie TRAIL mit eigenen Strömen und Knoten | **Bibliothek** `trail` in Track Core, die das Lab aufruft. Sie baut keine eigenen Routen und keine Knoten. |
+| Eingabe | Rezept | Lab-Route: Mittellinie (Punkte), Breite (1 bzw. 2 MC), Boden-Höhenfunktion bzw. Höhenprofil, Anker an beiden Enden |
+| Bauteile | STAIRS, STEPPING_STONES, FOOTBRIDGE als Rezept-Stücke | Funktionen, die Daten zurückgeben: `trailStairs(segment)` (Stufen aus Masonry A, 3–12, Podest 1 MC), `trailSteppingStones(segment, gap)`, `trailFootbridge(a, b)` (Anker + Spannweite; Look aus KayKit-Bestand), `trailTransition(kind)` (Pfad ↔ Platz / Straße / Schotter) |
+| Prüfungen | Graph-Checks | `trailChecks(route)`: `walk_grade` (Rampe ≤ A, sonst Stufen), `walk_ends` (beide Enden an einem Anker), `walk_clear` (keine Fahrstraße auf dem Pfad, außer an Übergängen; prüft gegen die Track-Core-Ströme der Insel) |
+| Tunnel-Steg | Tunnel-Seitendaten | bleibt ein Tunnel-Datum im Core (Straßentunnel gehört dem Core) |
+| Knoten / Wenden | Geh-Knoten in Core | entfällt: Kreuzungen und Gabeln macht das Lab-Layout |
+| Aufwand | L | **M** |
+
+Gebaut wird erst, wenn Georg A (Steigung ohne Stufen) und B (Trittstein-Abstand) beantwortet hat.
