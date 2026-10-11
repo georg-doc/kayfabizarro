@@ -2,7 +2,7 @@
   "schema": "kfb.asset-scene-image-job/1",
   "jobId": "AKASHIC-LIBRARY-ISLAND-R1-HERO",
   "mode": "scene_context",
-  "designClass": "MOOD_ONLY_UNTIL_SOURCE_VISUAL_PROOF",
+  "designClass": "FAILED_QUARANTINED_CLOSED_MONUMENT_DRIFT",
   "source": {
     "repo": "georg-doc/kayfabizarro",
     "assetIds": [
@@ -83,12 +83,13 @@
     "sourcePixelsActuallySupplied": false,
     "provider": null,
     "providerRequestId": null,
-    "renderPrompt": "Create one 16:10 high-quality 3/4 KFB claymation floating island environment concept, with a single cohesive thick irregular floating earth island, physically plausible striated rock underside, weathered sandstone library with large visible book-filled arched windows, one large off-center copper dome, narrower observatory tower, modest reading apse, warm inhabited lantern-lit interior, tiny grown memory garden, deeply inset undercroft vault, connected arrival forecourt. Tactile hand-built volumes, gentle softened edges, faceted material regions, restrained fingerprints in near clay, distinct stone/wood/copper/glass/greenery, cinematic lavender dusk and warm amber lamp glow. One legible continuous walking route. Keep original source-asset character, tome and bookcase identity from provided REAL isolated source captures when available. NO cars, fake logo, KFB text, promotional typography, poster panels, labels, hex tiles, detached stacked boulders, arbitrary extra floating islands, stone pier bridge in empty space, neon, plastic shine. Show full foundation and connected architecture. If source captures are missing, BLOCK source-fidelity claim and keep image as MOOD_ONLY.",
-    "status": "BLOCKED_SOURCE",
+    "renderPrompt": "DO_NOT_RENDER_R1. Concept rejected: enclosed library monolith with window-only interior. Use R2 open-stage scenelet job instead.",
+    "status": "FAILED",
     "blockingChecks": [
       "original Dropbox image pixel bytes not proven in image-generation input",
       "actual source donor render/view isolation missing",
-      "architectural neutral-form and measured contact evidence missing"
+      "architectural neutral-form and measured contact evidence missing",
+      "Georg explicitly rejected R1 enclosed spatial composition"
     ]
   },
   "architecturalFormPreflight": {
@@ -111,7 +112,7 @@
     "verdict": "UNDECIDED"
   },
   "approval": {
-    "classification": "MOOD_ONLY",
+    "classification": "FAILED_QUARANTINED",
     "georgPicked": false,
     "goldenRef": false
   },
@@ -119,7 +120,9 @@
     "targetOwner": "tools/asset_registry/librarian",
     "conceptFileOutsideGitHub": "KFB_Akashic_Library_Island_R1_MOOD_ONLY.png",
     "outputSha256": "5bd671f79f63b7c3e1a150f034a0538fd0de7c13507007fcfc9a88b594c0c42f",
-    "pixelFileStatus": "CHAT_ONLY_NOT_COMMITTED",
+    "pixelFileStatus": "CHAT_ONLY_NOT_COMMITTED_FAILED_QUARANTINED",
     "dropboxImagePixelsFedToGenerator": false
-  }
+  },
+  "reviewStatus": "GEORG_REJECTED_2026-10-11",
+  "supersededBy": "CORRECTION_R2_OPEN_STAGE_SCENELETS.md"
 }
