@@ -2,6 +2,8 @@
 
 Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
+**Lieferung 11.10. · C1b+C3 Strecken-Welt + TC1-Tunnel (generisch) + Fahrtest:** `docs/critic/lab-track/2026-10-11_C1b-C3/` (REPORT, MODULES, REFS, qcheck.json, drive_test.json). V-112 PASS (4 Styles), Fahrtest + Dock PASS, Parity PASS, **V-115 FAIL (Mitte 16,7 fps; Platzhalter-Material bringt 35/59/56 fps, Entscheidung offen)**.
+
 ## Rollen (seit 2026-10-08)
 
 | Wer | Was |

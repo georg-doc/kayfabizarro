@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · C1b+C3 Lieferung R1 geprüft
+- Fahrtest grün (Runde 10,58 km, 0× unter Fahrbahn/hängen/Bande, Nähte 0 m), V-112-Prüfungen 0/0/0 für 4 Styles × 4 Körper, Parity PASS.
+- Steuerung: Platzhalter-Organe mit einfachem Material (V-127/V-115: 35/59/56 fps), Parity Check 1 Sim-Zeit. Vor Kritiker: ringförmiger Spalt Röhre ↔ Bohrung schließen, Tunnel-Licht wie J17 (jetzt teal/braun), Q5-Kehlen. Pfeiler entfallen (Strecke schwebt).
+
 ## 2026-10-11 · VFX/SFX-Vorlagen freigegeben
 - Zu V-128/V-129: 1:1 Motor (cologne-audio.v1 createEngineBed), Jingles (J17), Kontakt-Engine + Kenney-CC0 (Stunt Car Race), Knet-Partikel clay-vfx.v1, j10-Effekte + Tempo-FOV nur im FAHREN; Suno-Radio über song-transport. Neu: Tunnel-Hall (Convolver, nur Motor/SFX). Nein: Fahrtwind. Drohnen: kein Code/Asset vorhanden → Georg fragen.
 
