@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schritt 4, Banden-Übergang-Vorschlag
+- Kappen je Skin (race J17-Kopf, town Bordkopf, country verge_end), town-Splitter erhaben 0,35; 58/58, Ströme bitgleich. Schritt 3 Markierungen freigegeben.
+- #4: J17 hat den Übergang schon (track-look v5:191–216, krümmungsabhängig, ±8 m geglättet); bei R 25 innen nur 5 m Anlauf. Varianten A (J17 so) / B (q.edge-Daten mit ≥ 8 m Anlauf) / C (Geometrie, nicht empfohlen) an Georg.
+
 ## 2026-10-11 · Alle Autos auf allen Skins; Berg/Land/Pfad-Blätter
 - V-152 Fahrzeug und Skin unabhängig; CR1–CR4 (Berg-Schotter, Fußwege/Wanderpfade als Skin trail, Berginsel, Landstraße-Kit) abgelegt replies/REFS_COUNTRY_TUNNEL_2026-10-11/. Inselbasis-Hinweis an Blender (keine einzelnen Felskugeln).
 
