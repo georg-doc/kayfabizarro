@@ -1,5 +1,12 @@
 # RECOVERY · G4 Town Castle Clay Stairs · visual references R1
 
+## CURRENT · Prison queued design inputs found; height decision confirmed
+
+Georg chooses **1.6m standard maze walls plus selected higher cell modules**, not global2.6m. Exacthighermoduleheight is unchosen. Allthree explicitlynamedDownloads PNGs were actuallyviewed and archivedbyte-identically (1448x1086) under [Prison design inputs](../G4_bridge_source_R1/PRISON_DESIGN_INPUTS_R1/README.md) at8fd4cc88ef96abe20787711a795a0eca12cd9f71;10/10source/proposal filesverified. Primarywallkit image, orthogonal andround islanddirections nowavailable; design-imagegapclosed. They remain STYLE_DIRECTION_ONLY/noGolden/noactualmodel/tiling/resetproof. Greenillustratedsoldier notsubstitute foractualToySoldierNo.1/KFBeyes. Current[wallproposal](../G4_bridge_source_R1/PRISON_WALL_STYLE_PROPOSAL.json) recordsheightchoice/references. Bridgefirst/Prisonqueued; originalprivateGreyboxaccess, realmodule source/tiling/motionchecks remainopen. Earlierheight-pending/design-image-gap prosebelowhistorical.
+
+## Preserved previous state
+
+
 ## CURRENT · Bridge source audit active; Prison wall/skin study queued
 
 R3 acceptedPASS_WITH_TUNE remainsclosed/unchanged; noGolden/merge. Userauthorises bridge sourcecomparison and then Prisonisland wall/skin prep. [Bridge audit Return](../G4_bridge_source_R1/RETURN.md), [actualsource card](../G4_bridge_source_R1/BRIDGE_SOURCE_CARD.jpg), [queuedPrison source/gaps](../G4_bridge_source_R1/PRISON_AFTER_BRIDGE.md). Main source dccf75cabd222d951380693d84ab88053ee7e519: bridgeAarch192tri, Bpier156tri, Cdrawleaf40tri; actual15nativeviews/hash/RegistryIDs verified. Aselectedbuilderformreference, nofinishedbridge/georgassetpick. Span/vehicle/supportpair stillmust be locked before neutralprototype; no newbridge3D construction claimed.
