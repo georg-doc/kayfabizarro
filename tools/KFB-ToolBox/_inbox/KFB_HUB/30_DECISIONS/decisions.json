@@ -2051,6 +2051,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-185",
+   "date": "2026-10-12",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Korrektur zu V-175 (3), Einheitenfehler der Steuerung: Der Kamera-Freiraum 4,9 aus V-169 ist in Track-Core-Metern (J17 chaseCam 3,5 + 0,9 + 0,5) = 7,15 lab; die Lab-Kamera sitzt laut camera.ts bei 6,9–8,2 lab. 5,8 lab deckt die Kamera also nicht. Georgs Absicht („der größere Wert, deckt die Kamera“) gilt: Durchfahrtshöhe für Billboards, Schilderbrücken, Tunnel- und Dungeon-Decken = max(K2 1,6 H = 5,8 lab, Lab-Kamera-Maximum + 0,5); vorläufig ≈ 9,0 lab, die Bau-Sitzung misst den Endwert. Alle Freiraum-Angaben künftig mit Einheit (lab bzw. TC-m).",
+   "values": {},
+   "owner": "Lab + RKIT",
+   "check": "Kamera-Messung camera.ts",
+   "source": "Steuerung 12.10. (Absicht Georg 11.10.)",
+   "supersedes": null,
+   "why": "Machbarkeits-Agent Dungeon fand den Einheiten-Widerspruch; 5,8 lab wäre unter der Kamera.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
