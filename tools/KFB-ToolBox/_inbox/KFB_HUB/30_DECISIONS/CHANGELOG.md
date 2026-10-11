@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Skin-Schnittstelle freigegeben
+- RKIT: RACE-Kreisel existiert schon (durchgehende Banden); Lücke ist der TOWN-Kreisel. 8 Rundkurs-Module abgeglichen (vorhanden/teilweise). Freigegeben: Track Core 0.16.3 mit Knoten = logic + skin (race|town), Arme erben Einfahrts-Familie, Endkappen/Splitter je Skin, Markierungen als Daten; skins[] mit benannten Schichten nach V-146.
+
 ## 2026-10-11 · Skin-Schichtung = Bestand
 - V-146 Schichtung (Slots, Skins, Markierung, Edge-Atlas, Rubble) existiert: Track Core SLOTS/SKINS, S4-v2-Brief, REFERENCE_ANALYSIS 27.09. (Reddit-Trailer), SPEC_EDGE_RUBBLE_GRAMMAR_R1, J17 v5. Basis für die Skin-Schnittstelle; keine neue Recherche.
 
