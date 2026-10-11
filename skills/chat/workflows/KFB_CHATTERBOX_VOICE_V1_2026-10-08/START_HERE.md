@@ -1,5 +1,21 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## 2026-10-12 · Speech Beta meta NPC parallel-chat and Claude Code recovery
+
+Georg authorizes additive persistence of a **parallel authoring/research lane**, *not* delivery of the other chat's future writing and *not* a second ChatterBox/Audio runtime or new product Site. Current side slice under same PR #379:
+- `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md`: short fresh-chat / Claude Code read-first and meta-rules stand-up content brief.
+- `SUNO_SPEECH_BETA_RESEARCH_FINDINGS_AND_TASK_R1_2026-10-12.md`: dated official Suno October 1 Speech Beta source plus dated Reddit experience hypotheses, experiment matrix and risk/economics.
+- `data/SUNO_SPEECH_CLOWN_FIRST_TAKE_R1_2026-10-12.json`: **146 words; 1690 chars inclusive of style and producer cues, 59 seconds estimated; 25/25 structural checks; NOT GENERATED**. R0.2 75-second script retained for conditional A/B.
+- `SUNO_SPEECH_META_RESEARCH_AND_FIRST_TAKE_TEST_REPORT_R1_2026-10-12.md`: actual QA boundary and 0 audio/browser/rights proof.
+- Mirrored to existing private KFB Production Control Site Inbox workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`; four files **saved and read back**, not KFB Audio Site product deployment.
+- Public origin references `https://kayfabizarro.pages.dev/#kfb` and `#cutplay` are project-canonical pointers; direct access failed in this chat, so their visible live content is **NOT VERIFIED**.
+- Content from parallel authoring chat remains **NOT RECEIVED**; accept later by exact file/revision, do not overwrite. RULE1 only. No new runtime, external Humanizer, Suno generation, Stage or World R5.
+
+Exactly one Suno outcome gate: `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1` via user's real Suno Speech Beta account. Listen to the actual 50–60s mix, capture URL/file and exact audible transcript/duration/rights, then accept/tune/cut; use existing Audio/Resident consumers only after source review. Current independent Voice human gate remains open.
+
+---
+
+
 
 ## 2026-10-12 · RULE1-only Suno stand-up steering · R0.2
 
