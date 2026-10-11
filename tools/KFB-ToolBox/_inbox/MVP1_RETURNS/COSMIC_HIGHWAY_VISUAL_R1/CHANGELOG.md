@@ -1,5 +1,10 @@
 # Cosmic Highway visual design · additive changelog
 
+## 2026-10-11 · R3 curated images for next single-hero render
+- New `KFB_Cosmic_Highway_R3_Curated_Reference_Pack_2026-10-11.zip` (**12,036,109 B**, SHA256 `2cf4371443154fecd35ebe9257072797ecceb30e8fb1c53305cc8575e34207ff`) packages exactly **5 unchanged previous images** with role labels: user-positive Cosmic style, Joyride connector skin, 2 R2 imagegen single-hero FAIL posters as **MOOD ONLY**, 1 earlier Quaternius 2D silhouette atlas. Includes contact sheet and manifests; **no new neural image generation performed**, ZIP not uploaded as GitHub binary.
+- [R3 Image Handoff](R3_CURATED_IMAGE_REFERENCE_HANDOFF.md) requires actual mesh-derived Quaternius source PNG fetched separately by exact Git blob before claiming source-conditioned generation; [R3 QA](TEST_REPORT_R3.md) **15/15 PASS** archive criteria and [R3 Recovery](RECOVERY_R3.md) saved for fresh chat.
+- R2 historical rejected poster images remain rejected for hero/geometry and in failure ZIP. Next gate exactly one connected-road, coherent-earth KFB clay island hero, then Georg A/B/FAIL. No new Site, PR, merge or runtime.
+
 ## 2026-10-11 · R2 Quaternius real-mesh 4-view proof and bounded imagegen failure
 - **Real source capture**: original GH GLTF-indexed 3/4 projections for `Base_Large`, `Planet_7`, `Tree_Spiral_1`, `Tree_Floating_1` combined in actual PNG `refs/Quaternius_Source_4View_R2_920.png` and branch blob SHA `89b68c66a50d84910b72a9d847a20eaf3f7fe250`. Source renders clearly show Base_Large is a **dome building** and Planet_7 a **ringed planet**, **not** an alien earth-island body.
 - Two generated Cosmic Highway hero attempts failed (both promotional multi-panel boards), **0/2 pass**; stopped after two non-improving attempts, preserved full image ZIP `KFB_Cosmic_Highway_R2_SourceProof_FailureRecovery_2026-10-11.zip` (SHA256 `49e06e78f2e6c398e7b2e0adb8aae0bb08a95f734841d963be0288dc546cffb5`, ZIP chat-only), [report](R2_SOURCE_PROOF_AND_FAILURE_RECOVERY.md).
