@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Alle Autos auf allen Skins; Berg/Land/Pfad-Blätter
+- V-152 Fahrzeug und Skin unabhängig; CR1–CR4 (Berg-Schotter, Fußwege/Wanderpfade als Skin trail, Berginsel, Landstraße-Kit) abgelegt replies/REFS_COUNTRY_TUNNEL_2026-10-11/. Inselbasis-Hinweis an Blender (keine einzelnen Felskugeln).
+
 ## 2026-10-11 · Skin-Schritt 2, DIRT-Vorlage
 - node.skin race/town/country/dirt/cosmic (dirt/cosmic reserviert mit Fehler), test-skin 48/48, Geometrie unverändert. Schritt 4 (Kappen je Skin) freigegeben. DIRT-Vorlage (Familie DIRT 10,8, Berm atan(v²/gR) gedeckelt) wartet auf Georg (A Fahrzeug, B 35°, C Knoten); 12 CS-Fragen + HIGHWAY an Georg.
 

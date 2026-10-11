@@ -16,3 +16,6 @@ Gleiches Verfahren wie R1, jetzt für die übrigen Module aus `replies/REFS_TRAC
 
 ## Ergebnis
 `replies/WSA_TRACK_MODULE_LOOK_SPEC_R2.md` + Erweiterung `track-module-look.json` (gleiches Schema, Feld `skin`: race | town | country | dirt | cosmic). Bilder: nur vorhandene Originale verlinken; keine neuen PNG-Veröffentlichungen ohne Freigabe.
+
+## Erweiterung (V-152)
+Auch `replies/REFS_COUNTRY_TUNNEL_2026-10-11/CR1–CR4` (Berg-Schotter, Fußwege/Wanderpfade = Skin `trail`, Berginsel, Landstraße zweispurig). Für Tunnel: TC1-Cut (J15) stone_arch/stone_rect als Bestand; Stützmauern: Mauer-Baukasten V-105 + RKIT-Mauern; Brücken/Viadukte nur auf Inseln (V-120). Alle Autos fahren alle Skins (V-152).

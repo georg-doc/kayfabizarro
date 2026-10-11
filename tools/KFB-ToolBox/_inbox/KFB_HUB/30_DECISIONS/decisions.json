@@ -1589,6 +1589,20 @@
    "applies": "immer"
   },
   {
+   "id": "V-152",
+   "date": "2026-10-11",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Alles ist ein Baukasten mit Skins: Alle Autos fahren auf allen Skins (Schotter, Landstraße, Stadt, Rennen, Cosmic); Fahrzeug und Skin sind unabhängig. Vier weitere Georg-Blätter „KFB country roads + tunnel“ (11.10. 15:57): CR1 Berg-Schotter (Serpentinen, Wendeplatz, Graben/Damm, Schotter→Belag, Schotter→Fußweg, Ruinen-Detail), CR2 Fußwege und Wanderpfade (Steinstufen, Trittsteine, Holzbrücke, Aussichtsplattform, Pfad→Straße/Platz, Tunnel-Gehweg, Oberflächen Erde/Kies/Stein/Fels/Schnee) als eigener Skin `trail` für das Geh-Netz, CR3 Berginsel (Straße, Schotter, Pfade, Tunnel in einer Insel; gemauertes Portal geht in Fels über; Serpentinen mit Stützmauern; Inselbasis „eine zusammenhängende Erdmasse, nie einzelne Felskugeln, dünne Wurzeln ok“), CR4 Landstraße zweispurig (Haarnadel, Tunnelzufahrt/-stück/-ausfahrt, Steinviadukt, Haltebucht, Sackgasse mit Absperrung, Stützmauer). Vorlage zuerst: Tunnelportale aus TC1 (stone_arch/stone_rect), Stützmauern aus dem Mauer-Baukasten (V-105), Viadukte nur auf Inseln (V-120). Logik prüfen nach V-148.",
+   "values": {},
+   "owner": "RKIT + Lab + WSA + Blender",
+   "check": "Katalog-Abgleich + Liste uneindeutig",
+   "source": "Georg 11.10.: „alle cars können schotter oder sonstige tracks fahren – es ist alles ein baukasten/system mit skins“",
+   "supersedes": null,
+   "why": "Ein System statt Fahrzeug-Sonderfälle; Berg-, Land- und Pfad-Module vervollständigen den Katalog, Fußwege werden ein eigener Skin.",
+   "applies": "ab jetzt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
