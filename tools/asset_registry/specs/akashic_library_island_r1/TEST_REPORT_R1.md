@@ -1,3 +1,8 @@
+# R1 VISUAL REJECTED · STATIC TESTS ONLY · 2026-10-11 CORRECTION
+Georg rejected the R1 closed-monument composition. All previous 12/12 R1 static checks covered **metadata/schema**, not the visual or conceptual product. They do **not** establish a valid Akashic Library island. The R1 PNG/SVG/ZIP are **FAILED_QUARANTINED**; `SCENE_JOB_R1.json` is explicitly disabled. Current corrective evidence: `TEST_REPORT_R2_CORRECTION.md`; authoritative design: `CORRECTION_R2_OPEN_STAGE_SCENELETS.md`.
+
+---
+
 # TEST REPORT · Akashic Library Island R1 · 2026-10-11
 Scope: source registry / composer job *static contract only*; visual sketch/manual artifact inspection. No Blender, real source-geometry contact or provider image generation.
 
