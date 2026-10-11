@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Drohnen = RollerCoaster-Drones; Blender K1 R2
+- V-131 „Drohnen“ = Klang-Drones aus RollerCoaster v11 (später 1:1 nachziehen); Soundbed passt erstmal.
+- Blender K1 R2 (Ziel M1, Wurzeln gestrichen): blinder Kritiker 5 / 5,5 / 4, nach 2 Runden gestoppt; Blender in der Cloud gebaut, weil Blender MCP auf dem Mac mini hängt. Offen bei Georg: Blatt, Block-Bauweise vs. „ein geschlossenes Mesh“.
+
 ## 2026-10-11 · Tunnel-Prototyp TUNE
 - V-130 Georg: Joyride-Tunnel-Ein-/Ausgänge (4 Varianten inkl. Rechteck) fehlen. Referenz tc1-looks.v3.jpg; Rechteckprofil existiert (Core v0.12 tunnelLooks). Neue Probe am Hirn mit allen 4 Portal-Bausätzen an beiden Enden, dann Stopp. Georg: Rechteck-Tunnel als Profil baubar (Profil getrennt vom Look). Prüfwirt statt Hirn: TC1-Knethügel 1:1 + ein MVP-Inselkörper per Adapter.
 
