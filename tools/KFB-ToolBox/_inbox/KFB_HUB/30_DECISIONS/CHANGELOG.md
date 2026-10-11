@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-12 · Perspektive Production-Ansicht
+- Georg: Die Production-/Meta-Ansicht soll später auch in der produktiven/Beta-GPT-Site KFB Worldbuilder/Game erscheinen. Übergabe §5 + V-191 ergänzt: Hub-Bereich datengetrieben aus open-decisions-JSON.
+
 ## 2026-10-12 · Übergabe an WSA Production Hub
 - V-191 (löst V-189 ab): offene Entscheidungen (20), Briefings und Slices zentral auf WSAs Production Hub. replies/HANDOVER_WSA_PRODUCTION_HUB_R1.md + replies/open-decisions-2026-10-12.json; Antworten zurück als replies/GEORG_ANSWERS_<Datum>.json. Steuerpult-Fehler (Syntax) behoben, Seite bleibt nur als Archiv.
 

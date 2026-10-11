@@ -38,6 +38,9 @@ Alle Pfade gelten relativ zu `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/` im
 - Keine Lizenz- oder „kein Bau“-Floskeln (V-184).
 - Keine neuen Entscheidungen erfinden; Fragen nur aus der JSON-Datei oder von der Steuerung.
 
+## 5 · Perspektive (Georg 12.10.)
+Diese Meta- bzw. Production-Ansicht (Entscheidungen, Briefings, nächste Schritte) soll später auch in der produktiven bzw. Beta-GPT-Site **KFB Worldbuilder/Game** erscheinen. Baue den Hub-Bereich deshalb von Anfang an aus der JSON-Datei (`kfb.open-decisions/1`) und nicht als Handtext, damit dieselben Daten später dort eingebunden werden können.
+
 ## Offene Entscheidungen (20)
 
 | ID | Bezug | Frage | Optionen | Bild |
