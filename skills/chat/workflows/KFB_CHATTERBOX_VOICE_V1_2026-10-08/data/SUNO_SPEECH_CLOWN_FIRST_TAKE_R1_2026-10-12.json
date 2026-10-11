@@ -1,0 +1,131 @@
+{
+  "schema": "kfb.chatterbox.suno-speech-first-take/1-candidate",
+  "status": "READY_FOR_USER_SUNO_AUDITION_NOT_GENERATED",
+  "date": "2026-10-12",
+  "owner": "KFB ChatterBox / Resident Speech output",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "draftPr": 379,
+  "mode": "SCRIPT_FIRST",
+  "sunoFeature": "Speech beta",
+  "candidate": {
+    "id": "kfb.clown.suno-speech.audition.r1",
+    "title": "The Controlled Transfer",
+    "residentId": "clown",
+    "language": "en",
+    "spokenScript": "Three clubs. Two hands. One safety inspector.\n\nHe watched me for six minutes, then pointed at the red club.\n\n\"What happens if you drop that?\"\n\"It lands on the floor.\"\n\"And if you catch it?\"\n\"It doesn't.\"\n\nHe wrote that down. Twice.\n\nThen he confiscated the red club. Preventive measures.\n\nNow I do two clubs. One at a time, below shoulder height. Last night a child offered me a third club from the gift shop. Security removed him.\n\nI asked for the red one back.\n\n\"Prove you can safely juggle three.\"\n\"You watched me do it.\"\n\"That was before we made it safe. It doesn't count.\"\n\nHe's returning it Friday, in person.\n\nI'm not allowed to take it while juggling. He's not allowed to throw it.\n\nSo we'll stand there, holding one end each.\n\nHe's selling tickets to the handover.\n\nI'm still not allowed to perform.",
+    "voiceMusicStyle": "Suno Speech beta. Spoken English stand-up, not a song. A dry, quick-thinking adult clown, light mid-range voice with crisp consonants; impatient when interrupted, matter-of-fact about absurd rules. Close-miked foreground speech, brisk conversational pace, short pointed pauses only after the inspector's contradictions. Low-volume live rockabilly backing: upright bass, rim-click snare, hollow-body electric guitar. Music drops to near-silence for the final handover. No singing, chorus, ad-libs, audience laughter or vocal doubling. Stop cleanly after the last sentence.",
+    "producerCuesNotSpoken": "0-4s: cold open, three physical clubs. 5-17s: inspector exchange, no band stings. 18-32s: consequences and child removed, dry acceleration. 33-46s: inspector's impossible proof request, half-beat silence. 47-59s: handover callback, band drops out; clean ending. All timings editorial guesses, not audio-aligned.",
+    "scriptStatus": "AUTHORING_CANDIDATE",
+    "humanRule1Review": "OPEN",
+    "musicStyle": "low-volume sparse rockabilly",
+    "targetSeconds": 59,
+    "spokenWords": 146,
+    "characterCount": {
+      "spoken": 808,
+      "style": 571,
+      "producerCues": 311,
+      "combined": 1690,
+      "maximumExclusive": 5000
+    },
+    "timeEstimation": {
+      "wordsPerMinute": 175,
+      "speechSecondsAtWpm": 50.1,
+      "extraPausesEstimatedSeconds": 8.5,
+      "audioMeasured": false
+    }
+  },
+  "source": {
+    "clownModule": "tools/resident_atlas/modules/clown-juggling-island.module.json",
+    "moduleBlob": "1c75730143e3481b43edaa8e7231e1a853f7834d",
+    "status": "candidate-only",
+    "provenMotion": "juggle-cascade-v1",
+    "clubCount": 3,
+    "productionCaveat": "Two-club gag is verbal/story only. Actual original animated two-club action, inspector actor, safety props and stage are NOT source-proven."
+  },
+  "linkedBeats": {
+    "schema": "kfb.triplet-performance-beats/0.1-authoring-candidate",
+    "source": "WRITER_CANDIDATE",
+    "kernelUnchanged": true,
+    "beats": [
+      {
+        "id": "clown.inspector.hook",
+        "role": [
+          "HOOK",
+          "SUBJECT"
+        ],
+        "anchor": "Three clubs. Two hands. One safety inspector.",
+        "next": "clown.inspector.question"
+      },
+      {
+        "id": "clown.inspector.question",
+        "role": [
+          "CONNECTOR_CONFLICT",
+          "PUNCHLINE"
+        ],
+        "anchor": "And if you catch it?",
+        "next": "clown.inspector.confiscate"
+      },
+      {
+        "id": "clown.inspector.confiscate",
+        "role": [
+          "REFRAME",
+          "HEIGHTEN"
+        ],
+        "anchor": "Then he confiscated the red club.",
+        "next": "clown.inspector.impossible"
+      },
+      {
+        "id": "clown.inspector.impossible",
+        "role": [
+          "CONNECTOR_CONFLICT",
+          "PUNCHLINE"
+        ],
+        "anchor": "That was before we made it safe. It doesn't count.",
+        "next": "clown.inspector.callback"
+      },
+      {
+        "id": "clown.inspector.callback",
+        "role": [
+          "CALLBACK",
+          "PUNCHLINE"
+        ],
+        "anchor": "He's selling tickets to the handover.",
+        "callbackTo": "clown.inspector.confiscate"
+      }
+    ]
+  },
+  "auditionProcedure": {
+    "tool": "Suno Speech beta via user account",
+    "sourceInput": "candidate.spokenScript",
+    "styleInput": "candidate.voiceMusicStyle",
+    "cueInput": "Producer notes ONLY; do not paste timing notes into text-to-speech field unless user verifies control syntax",
+    "firstRun": "One 50–60s audition; listen before downloading",
+    "secondRun": "Only when first has an actionable defect; compare to R0.2 75s length or one controlled style edit, not both simultaneously",
+    "maxInitialSelectedExports": 2,
+    "uploadedAudioRequiredForIndependentAudibleReview": true
+  },
+  "evidence": {
+    "providerAudioUrl": null,
+    "providerTakeId": null,
+    "downloadedFile": null,
+    "audioHash": null,
+    "measuredDurationSeconds": null,
+    "verifiedTranscript": null,
+    "license": "UNKNOWN",
+    "publicShip": false,
+    "humanListenVerdict": null,
+    "stagingEvidence": null,
+    "siteUpdated": false,
+    "stage": null,
+    "generated": 0,
+    "downloads": 0
+  },
+  "rights": "Account/model/content usage rights must be checked before public shipping.",
+  "inheritPrevious": {
+    "priorCandidate": "data/SUNO_SPOKEN_MUSIC_PILOT_R0_2.json",
+    "relationship": "NEW_SHORT_BETA_CONTROL_CANDIDATE_NOT_REPLACEMENT",
+    "existingVoiceOwnerGate": "KFB_VOICE_TRIPLET_HUMAN_LISTENING_R1"
+  },
+  "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1"
+}
