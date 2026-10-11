@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-11 · Klick behoben (V-137)
+- Ursache gemessen: Loop-Naht der Motor-MP3 (alle 1,588 s unter Gas) + Bandenkontakt-Flackern + Pegel-Sprünge je Frame. Behoben: 60-ms-Equal-Power-Loop, Rampen τ 30 ms, Hysterese 80/150 ms. Nachher 0 Klicks (Gas/Leerlauf). Hör-Mitschnitt für Georg angefordert.
+
 ## 2026-10-11 · Track Core Teil 0 PASS
 - v0.12 ↔ 0.16.1 bitgleich (O1-Ring, J17 p1b.v2, td03); neu nur 5 Spur-Felder ohne RACE-Wirkung. 0.16.1 als privater Vendor im Lab (vendor/private, gitignored). Gemeinsames MODULES.md-Schema (Geometrie RKIT, Look Lab).
 - Befund für Georg: track-core.v012.mjs liegt schon öffentlich auf main (J14-Cut, Organ-Attraktion C2) und im WSA-Branch (PROTOPIA_MAKER_TRACK_R1/independent). Entscheidung offen, ob das so bleiben darf.
