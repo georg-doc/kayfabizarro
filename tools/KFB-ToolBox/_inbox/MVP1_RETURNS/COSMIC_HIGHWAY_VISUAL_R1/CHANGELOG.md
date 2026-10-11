@@ -1,5 +1,10 @@
 # Cosmic Highway visual design · additive changelog
 
+## 2026-10-11 · R3 actual Hero attempt · failure recovery
+- Georg authorized one single Cosmic Highway 3/4 hero via "ok - go". Two 1536×1024 ImageGen outputs now showed whole 3D scenes rather than contact-sheet posters but both added forbidden **vehicles/KFB signs/volcano/other islands** and lacked documented Quaternius image-conditioning proof, so **0/2 content PASS**. Same generation route stopped after non-improving repair; both retained MOOD_ONLY.
+- [Full failure QA+provenance](R3_HERO_FAILURE_RECOVERY.md), [Test report](TEST_REPORT_R3_HERO.md), conversation ZIP `KFB_Cosmic_Highway_R3_Hero_Failure_2026-10-11.zip` (19,044,930 bytes; SHA256 `d75a1b51f128821ddc2618846b539c6ac66924aa980345e05e614136a2782862`). ZIP contains both untouched output PNGs, contact, manifest, recovery, and nested verified earlier R3 curated source-image ZIP. **Binary pack NOT in GitHub**.
+- One next gate is **actual source-pixel binding and provider receipt** via existing Composer/WSA, then ONE new unlabelled KFB Clay/Quaternius donor-faithful island and two connectors, checked by Georg. No new runtime owner/GOLDEN/Stage/merge.
+
 ## 2026-10-11 · R3 curated images for next single-hero render
 - New `KFB_Cosmic_Highway_R3_Curated_Reference_Pack_2026-10-11.zip` (**12,036,109 B**, SHA256 `2cf4371443154fecd35ebe9257072797ecceb30e8fb1c53305cc8575e34207ff`) packages exactly **5 unchanged previous images** with role labels: user-positive Cosmic style, Joyride connector skin, 2 R2 imagegen single-hero FAIL posters as **MOOD ONLY**, 1 earlier Quaternius 2D silhouette atlas. Includes contact sheet and manifests; **no new neural image generation performed**, ZIP not uploaded as GitHub binary.
 - [R3 Image Handoff](R3_CURATED_IMAGE_REFERENCE_HANDOFF.md) requires actual mesh-derived Quaternius source PNG fetched separately by exact Git blob before claiming source-conditioned generation; [R3 QA](TEST_REPORT_R3.md) **15/15 PASS** archive criteria and [R3 Recovery](RECOVERY_R3.md) saved for fresh chat.
