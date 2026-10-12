@@ -1,0 +1,1563 @@
+{
+  "schema": "kfb.deck-source-triplet-cutup/0.1-authoring-candidate",
+  "date": "2026-10-12",
+  "status": "SOURCE_VERIFIED_EDITORIAL_CANDIDATE",
+  "owner": "Existing ChatterBox content; Voice Draft PR 379 holds prep only",
+  "registry": "media/kfb/index.json",
+  "corpusCensus": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_CORPUS_CONSOLIDATED_CENSUS_R0_1_2026-10-12.json",
+  "grammar": [
+    "subject",
+    "connector",
+    "reframe"
+  ],
+  "policies": [
+    "Fragments are contiguous exact excerpts, not new ChatGPT prose",
+    "Title, card power, lore and original artworkPrompt preserved as distinct fields",
+    "Card illustration NOT verified; drawing/text disparity is intentional editorial space",
+    "Cross-card mismatches are experiments, not automatic canon or factual statements",
+    "Keep legacy 20 Triplet candidate donor quarantined pending separate human curation",
+    "Do not patch kernel or create a second authoring runtime; require Georg KEEP before any canonical pool import"
+  ],
+  "checks": {
+    "entries": 20,
+    "within15": true,
+    "sourceExact": true,
+    "sameCard": 13,
+    "crossCard": 7,
+    "sourceDecks": 13
+  },
+  "entries": [
+    {
+      "tripletId": "kfb.deckcut.rules",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Rules Lawyer",
+      "connector": "demand a player cite a non-existent rule.",
+      "reframe": "their action fails.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Rules Lawyer",
+          "deckKey": "rules",
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "sourceField": "name",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "demand a player cite a non-existent rule.",
+          "deckKey": "rules",
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "sourceField": "power",
+          "start": 29
+        },
+        {
+          "role": "reframe",
+          "text": "their action fails.",
+          "deckKey": "rules",
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "sourceField": "power",
+          "start": 89
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "deckTitle": "The Anti-Rules Manifesto",
+          "deckType": "Meta-rules deck",
+          "deckFunction": [
+            "improv"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+          "lore": "Dry leader. Busy.",
+          "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.pluralism",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "PLURALISM SIMULATOR",
+      "connector": "Target player wastes 2 turns arguing with themselves.",
+      "reframe": "Nothing changes.",
+      "words": 12,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "PLURALISM SIMULATOR",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Target player wastes 2 turns arguing with themselves.",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "Nothing changes.",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "power",
+          "start": 54
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "deckTitle": "Ruled by Organized Kayfabe-Krime",
+          "deckType": "political conspiracy satire deck",
+          "deckFunction": [
+            "game",
+            "satire",
+            "education"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "power": "Target player wastes 2 turns arguing with themselves. Nothing changes.",
+          "lore": "Two identical parties ensure the masses can throw the rascals out without changing the policy.",
+          "artworkPrompt": "Style: watercolor satire. Subject: two ostriches with blue and red ties, heads in sand sandbox. Mood: absurd futility."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.retcon",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "RETCON",
+      "connector": "Rewrites the past from the present",
+      "reframe": "nobody remembered it as a revision.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "RETCON",
+          "deckKey": "retcon",
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Rewrites the past from the present",
+          "deckKey": "retcon",
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "nobody remembered it as a revision.",
+          "deckKey": "retcon",
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "sourceField": "lore",
+          "start": 43
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+          "deckType": "Meta systems performance deck",
+          "deckFunction": [
+            "meta-systemic roleplay",
+            "social mechanics education",
+            "narrative performance"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "power": "Rewrites the past from the present — so the story took it for granted.",
+          "lore": "The revision was accepted so smoothly that nobody remembered it as a revision.",
+          "artworkPrompt": "Style: crosshatch ink, warm tones. Subject: raccoon erasing and redrawing a scroll, others nodding. Mood: casual, slightly unsettling."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.360deal",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "THE 360 DEAL",
+      "connector": "TAKE half of target player's resource tokens.",
+      "reframe": "merch, touring, and soul.",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "THE 360 DEAL",
+          "deckKey": "music",
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "TAKE half of target player's resource tokens.",
+          "deckKey": "music",
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "merch, touring, and soul.",
+          "deckKey": "music",
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "sourceField": "power",
+          "start": 60
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "deckTitle": "Sonic Slaughterhouse — Music Industry",
+          "deckType": "Music Industry Satire",
+          "deckFunction": [
+            "music-industry satire",
+            "exploitation mechanics",
+            "phase-structured narrative"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "power": "TAKE half of target player's resource tokens. You own their merch, touring, and soul.",
+          "lore": "They say it's a partnership. A tick also calls the dog a partner.",
+          "artworkPrompt": "Style: Ink cartoon. Subject: Octopus in suit signing contract with small rabbit. Mood: Predatory menace."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.contrast",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Contrast Collider",
+      "connector": "reveal their character's greatest strength.",
+      "reframe": "triggers your character's worst flaw.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Contrast Collider",
+          "deckKey": "love",
+          "sourcePath": "media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json",
+          "sourceSha": "88e47ea8b0680231c013a37560f21ddfe1948995",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Contrast Collider",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "reveal their character's greatest strength.",
+          "deckKey": "love",
+          "sourcePath": "media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json",
+          "sourceSha": "88e47ea8b0680231c013a37560f21ddfe1948995",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Contrast Collider",
+          "sourceField": "power",
+          "start": 18
+        },
+        {
+          "role": "reframe",
+          "text": "triggers your character's worst flaw.",
+          "deckKey": "love",
+          "sourcePath": "media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json",
+          "sourceSha": "88e47ea8b0680231c013a37560f21ddfe1948995",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Contrast Collider",
+          "sourceField": "power",
+          "start": 75
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json",
+          "sourceSha": "88e47ea8b0680231c013a37560f21ddfe1948995",
+          "deckTitle": "Romantic Love-Wrestling & Krass Kayfabe-Heartbreaks",
+          "deckType": "Romance craft deck — writing mechanics as performative card game",
+          "deckFunction": [
+            "storytelling",
+            "educational",
+            "writing-craft"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Contrast Collider",
+          "power": "Force opponent to reveal their character's greatest strength. It instantly triggers your character's worst flaw.",
+          "lore": "Attraction is no accident. It's a collision. Strengths and weaknesses must violently clash to create the narrative spark.",
+          "artworkPrompt": "Style: Ink with watercolor. Subject: Punk raccoon and elegant swan colliding mid-air, sparks flying. Mood: Magnetic chaos."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.walkin",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "CHANDLER'S WALK-IN",
+      "connector": "Interrupt any action.",
+      "reframe": "A new threat enters the scene immediately.",
+      "words": 12,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "CHANDLER'S WALK-IN",
+          "deckKey": "plot",
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Interrupt any action.",
+          "deckKey": "plot",
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "A new threat enters the scene immediately.",
+          "deckKey": "plot",
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "sourceField": "power",
+          "start": 22
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "deckTitle": "Dramatic Drops & Krazy Konflikts",
+          "deckType": "narrative chaos expansion",
+          "deckFunction": [
+            "plot disruption",
+            "narrative chaos"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "power": "Interrupt any action. A new threat enters the scene immediately.",
+          "lore": "When in doubt, have a man come through the door with a gun.",
+          "artworkPrompt": "Style: noir comic panel. Subject: fox in fedora kicking door open with tommy gun. Mood: explosive interruption."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.erasable",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Erasable Line",
+      "connector": "Draw the next step in pencil.",
+      "reframe": "you expect to be wrong",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Erasable Line",
+          "deckKey": "protopia",
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Draw the next step in pencil.",
+          "deckKey": "protopia",
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "you expect to be wrong",
+          "deckKey": "protopia",
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "sourceField": "power",
+          "start": 43
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+          "deckType": "Protopian action-invitation deck",
+          "deckFunction": [
+            "exhibition"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "power": "Draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.",
+          "lore": "The ability to correct beats the appearance of certainty.",
+          "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grinning raccoon erasing a blueprint mid-sketch. Mood: gleeful impermanence."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.improv",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "Uncle FrizzleBob",
+      "connector": "Cut the cards.",
+      "reframe": "Shuffle them. See what happens.",
+      "words": 10,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "Uncle FrizzleBob",
+          "deckKey": "improv",
+          "sourcePath": "media/kfb/Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json",
+          "sourceSha": "30da6ffcdb465c4c7961e5f4b4469f3fa465613a",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "Uncle FrizzleBob",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Cut the cards.",
+          "deckKey": "improv",
+          "sourcePath": "media/kfb/Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json",
+          "sourceSha": "30da6ffcdb465c4c7961e5f4b4469f3fa465613a",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "Uncle FrizzleBob",
+          "sourceField": "power",
+          "start": 19
+        },
+        {
+          "role": "reframe",
+          "text": "Shuffle them. See what happens.",
+          "deckKey": "improv",
+          "sourcePath": "media/kfb/Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json",
+          "sourceSha": "30da6ffcdb465c4c7961e5f4b4469f3fa465613a",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "Uncle FrizzleBob",
+          "sourceField": "power",
+          "start": 34
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json",
+          "sourceSha": "30da6ffcdb465c4c7961e5f4b4469f3fa465613a",
+          "deckTitle": "The Great Kayfabe Improv Komedy SKETCHBOOK",
+          "deckType": "improv training engine",
+          "deckFunction": [
+            "improv game facilitator",
+            "improv education",
+            "status training"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "Uncle FrizzleBob",
+          "power": "Destroy this book. Cut the cards. Shuffle them. See what happens.",
+          "lore": "No board. No pawns. No manual thicker than your wrist. That was a design decision, not laziness. Probably.",
+          "artworkPrompt": "Style: ink+watercolor. Subject: yellow rabbit punching alarm clock in wrestling ring. Mood: designed chaos."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.chompers",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Chatter-Chompers",
+      "connector": "Steal an item from a player.",
+      "reframe": "Give them \"Gingivitis\" in return.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Chatter-Chompers",
+          "deckKey": "wrinkle",
+          "sourcePath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+          "sourceSha": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Chatter-Chompers",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Steal an item from a player.",
+          "deckKey": "wrinkle",
+          "sourcePath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+          "sourceSha": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Chatter-Chompers",
+          "sourceField": "power",
+          "start": 16
+        },
+        {
+          "role": "reframe",
+          "text": "Give them \"Gingivitis\" in return.",
+          "deckKey": "wrinkle",
+          "sourcePath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+          "sourceSha": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Chatter-Chompers",
+          "sourceField": "power",
+          "start": 45
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+          "sourceSha": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+          "deckTitle": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+          "deckType": "aging comedy starter kit",
+          "deckFunction": [
+            "warmup",
+            "aging satire",
+            "time-wrestling comedy"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Chatter-Chompers",
+          "power": "Swap Equipment: Steal an item from a player. Give them \"Gingivitis\" in return.",
+          "lore": "The indignity isn't losing your teeth; it's accidentally wearing your enemy's smile.",
+          "artworkPrompt": "Style: splatter ink comic. Subject: dog and cat mid-teeth-swap chaos mid-run. Mood: gleeful dental horror."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.betrayal",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "INEVITABLE MUTUAL BETRAYAL",
+      "connector": "Both players reveal their hands.",
+      "reframe": "must immediately copy the strongest move.",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "INEVITABLE MUTUAL BETRAYAL",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Both players reveal their hands.",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "must immediately copy the strongest move.",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "power",
+          "start": 63
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "deckTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+          "deckType": "Betrayal Archetypes Satire",
+          "deckFunction": [
+            "performative",
+            "social sabotage"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "power": "Both players reveal their hands. The one with the weakest card must immediately copy the strongest move.",
+          "lore": "We formed an alliance with the intention of betraying each other.",
+          "artworkPrompt": "Style: ink cartoon. Subject: two frogs shaking hands over a bomb timer. Mood: doomed solidarity."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.certificates",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Ten Certificates",
+      "connector": "declare NOTHING WRONG!",
+      "reframe": "best signed by the accused.",
+      "words": 11,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Ten Certificates",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "declare NOTHING WRONG!",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "power",
+          "start": 38
+        },
+        {
+          "role": "reframe",
+          "text": "best signed by the accused.",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "lore",
+          "start": 36
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "deckTitle": "How To Stage A Cover-Up",
+          "deckType": "satirical cover-up card game",
+          "deckFunction": [
+            "satirical",
+            "improv",
+            "investigative"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "power": "PLAY: Slam your hand on the table and declare NOTHING WRONG!",
+          "lore": "IDEA: A certificate of innocence is best signed by the accused.",
+          "artworkPrompt": "Style: bureaucratic satire ink wash. Subject: wall covered in self-signed certificates. Mood: smug authority."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cave",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "THE CAVE MYTH",
+      "connector": "Force another player to accept your description",
+      "reframe": "make questioning it dangerous.",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "THE CAVE MYTH",
+          "deckKey": "ideology",
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Force another player to accept your description",
+          "deckKey": "ideology",
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "sourceField": "power",
+          "start": 13
+        },
+        {
+          "role": "reframe",
+          "text": "make questioning it dangerous.",
+          "deckKey": "ideology",
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "sourceField": "lore",
+          "start": 104
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "deckTitle": "George's Ideology-Wrestling Kayfabizarro Komik Kards — A Field Guide to the War for Your Mind (Version 4.1 Unstable)",
+          "deckType": "ideology history political theory",
+          "deckFunction": [
+            "investigative"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "power": "Shadow Play: Force another player to accept your description of a card as truth until end of turn.",
+          "lore": "Myth solved the coordination problem. Tell them a story about where they came from, make it sacred, and make questioning it dangerous.",
+          "artworkPrompt": "Style: cave painting. Subject: bear casting a monstrous shadow, two small figures accepting it as the whole truth. Mood: administered belief."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.apparatchik",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "ONE_CARD_TRIPLET",
+      "subject": "The Apparatchik",
+      "connector": "Discard a player's loyalty token",
+      "reframe": "The institution doesn't love you back.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Apparatchik",
+          "deckKey": "spy",
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Discard a player's loyalty token",
+          "deckKey": "spy",
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "The institution doesn't love you back.",
+          "deckKey": "spy",
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "sourceField": "lore",
+          "start": 0
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "deckTitle": "Secret Spy Suplexes",
+          "deckType": "Spy Fiction Wrestling",
+          "deckFunction": [
+            "institutional critique",
+            "spy fiction roleplay",
+            "surveillance satire"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "power": "Discard a player's loyalty token to save yourself.",
+          "lore": "The institution doesn't love you back. It just manages you as a resource.",
+          "artworkPrompt": "Style: editorial cartoon. Subject: owl in brown suit trading loyalty chips. Mood: smug bureaucratic survival."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.certification",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "The Ten Certificates",
+      "connector": "demand a player cite a non-existent rule.",
+      "reframe": "Nothing changes.",
+      "words": 12,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Ten Certificates",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "demand a player cite a non-existent rule.",
+          "deckKey": "rules",
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "sourceField": "power",
+          "start": 29
+        },
+        {
+          "role": "reframe",
+          "text": "Nothing changes.",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "power",
+          "start": 54
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "deckTitle": "How To Stage A Cover-Up",
+          "deckType": "satirical cover-up card game",
+          "deckFunction": [
+            "satirical",
+            "improv",
+            "investigative"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "power": "PLAY: Slam your hand on the table and declare NOTHING WRONG!",
+          "lore": "IDEA: A certificate of innocence is best signed by the accused.",
+          "artworkPrompt": "Style: bureaucratic satire ink wash. Subject: wall covered in self-signed certificates. Mood: smug authority."
+        },
+        {
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "deckTitle": "The Anti-Rules Manifesto",
+          "deckType": "Meta-rules deck",
+          "deckFunction": [
+            "improv"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+          "lore": "Dry leader. Busy.",
+          "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+        },
+        {
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "deckTitle": "Ruled by Organized Kayfabe-Krime",
+          "deckType": "political conspiracy satire deck",
+          "deckFunction": [
+            "game",
+            "satire",
+            "education"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "power": "Target player wastes 2 turns arguing with themselves. Nothing changes.",
+          "lore": "Two identical parties ensure the masses can throw the rascals out without changing the policy.",
+          "artworkPrompt": "Style: watercolor satire. Subject: two ostriches with blue and red ties, heads in sand sandbox. Mood: absurd futility."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.retcon",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "RETCON",
+      "connector": "Force another player to accept your description",
+      "reframe": "best signed by the accused.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "RETCON",
+          "deckKey": "retcon",
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Force another player to accept your description",
+          "deckKey": "ideology",
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "sourceField": "power",
+          "start": 13
+        },
+        {
+          "role": "reframe",
+          "text": "best signed by the accused.",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "lore",
+          "start": 36
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+          "deckType": "Meta systems performance deck",
+          "deckFunction": [
+            "meta-systemic roleplay",
+            "social mechanics education",
+            "narrative performance"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "power": "Rewrites the past from the present — so the story took it for granted.",
+          "lore": "The revision was accepted so smoothly that nobody remembered it as a revision.",
+          "artworkPrompt": "Style: crosshatch ink, warm tones. Subject: raccoon erasing and redrawing a scroll, others nodding. Mood: casual, slightly unsettling."
+        },
+        {
+          "sourcePath": "media/kfb/Ideology_Wrestling_-_ADD_web.pdf.json",
+          "sourceSha": "010402edc1dc8f0724a5b0f4658c692426162de1",
+          "deckTitle": "George's Ideology-Wrestling Kayfabizarro Komik Kards — A Field Guide to the War for Your Mind (Version 4.1 Unstable)",
+          "deckType": "ideology history political theory",
+          "deckFunction": [
+            "investigative"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE CAVE MYTH",
+          "power": "Shadow Play: Force another player to accept your description of a card as truth until end of turn.",
+          "lore": "Myth solved the coordination problem. Tell them a story about where they came from, make it sacred, and make questioning it dangerous.",
+          "artworkPrompt": "Style: cave painting. Subject: bear casting a monstrous shadow, two small figures accepting it as the whole truth. Mood: administered belief."
+        },
+        {
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "deckTitle": "How To Stage A Cover-Up",
+          "deckType": "satirical cover-up card game",
+          "deckFunction": [
+            "satirical",
+            "improv",
+            "investigative"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "power": "PLAY: Slam your hand on the table and declare NOTHING WRONG!",
+          "lore": "IDEA: A certificate of innocence is best signed by the accused.",
+          "artworkPrompt": "Style: bureaucratic satire ink wash. Subject: wall covered in self-signed certificates. Mood: smug authority."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.erasable",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "The Erasable Line",
+      "connector": "Target player wastes 2 turns arguing with themselves.",
+      "reframe": "Nothing changes.",
+      "words": 13,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Erasable Line",
+          "deckKey": "protopia",
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Target player wastes 2 turns arguing with themselves.",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "Nothing changes.",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "power",
+          "start": 54
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+          "sourceSha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+          "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+          "deckType": "Protopian action-invitation deck",
+          "deckFunction": [
+            "exhibition"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Erasable Line",
+          "power": "Draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.",
+          "lore": "The ability to correct beats the appearance of certainty.",
+          "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grinning raccoon erasing a blueprint mid-sketch. Mood: gleeful impermanence."
+        },
+        {
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "deckTitle": "Ruled by Organized Kayfabe-Krime",
+          "deckType": "political conspiracy satire deck",
+          "deckFunction": [
+            "game",
+            "satire",
+            "education"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "power": "Target player wastes 2 turns arguing with themselves. Nothing changes.",
+          "lore": "Two identical parties ensure the masses can throw the rascals out without changing the policy.",
+          "artworkPrompt": "Style: watercolor satire. Subject: two ostriches with blue and red ties, heads in sand sandbox. Mood: absurd futility."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.loyalty",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "INEVITABLE MUTUAL BETRAYAL",
+      "connector": "Discard a player's loyalty token",
+      "reframe": "doesn't love you back.",
+      "words": 12,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "INEVITABLE MUTUAL BETRAYAL",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Discard a player's loyalty token",
+          "deckKey": "spy",
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "doesn't love you back.",
+          "deckKey": "spy",
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "sourceField": "lore",
+          "start": 16
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "deckTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+          "deckType": "Betrayal Archetypes Satire",
+          "deckFunction": [
+            "performative",
+            "social sabotage"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "power": "Both players reveal their hands. The one with the weakest card must immediately copy the strongest move.",
+          "lore": "We formed an alliance with the intention of betraying each other.",
+          "artworkPrompt": "Style: ink cartoon. Subject: two frogs shaking hands over a bomb timer. Mood: doomed solidarity."
+        },
+        {
+          "sourcePath": "media/kfb/Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json",
+          "sourceSha": "ce693ba39f2c56b1b24e5300c4442633db353d16",
+          "deckTitle": "Secret Spy Suplexes",
+          "deckType": "Spy Fiction Wrestling",
+          "deckFunction": [
+            "institutional critique",
+            "spy fiction roleplay",
+            "surveillance satire"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Apparatchik",
+          "power": "Discard a player's loyalty token to save yourself.",
+          "lore": "The institution doesn't love you back. It just manages you as a resource.",
+          "artworkPrompt": "Style: editorial cartoon. Subject: owl in brown suit trading loyalty chips. Mood: smug bureaucratic survival."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.contract",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "THE 360 DEAL",
+      "connector": "Both players reveal their hands.",
+      "reframe": "must immediately copy the strongest move.",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "THE 360 DEAL",
+          "deckKey": "music",
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Both players reveal their hands.",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "must immediately copy the strongest move.",
+          "deckKey": "trust",
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "sourceField": "power",
+          "start": 63
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+          "sourceSha": "32ad0e6a053029a365fca65c300409702ef12e7e",
+          "deckTitle": "Sonic Slaughterhouse — Music Industry",
+          "deckType": "Music Industry Satire",
+          "deckFunction": [
+            "music-industry satire",
+            "exploitation mechanics",
+            "phase-structured narrative"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "THE 360 DEAL",
+          "power": "TAKE half of target player's resource tokens. You own their merch, touring, and soul.",
+          "lore": "They say it's a partnership. A tick also calls the dog a partner.",
+          "artworkPrompt": "Style: Ink cartoon. Subject: Octopus in suit signing contract with small rabbit. Mood: Predatory menace."
+        },
+        {
+          "sourcePath": "media/kfb/Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json",
+          "sourceSha": "bb52f5bec375438ba41b9a1a1c2890d409b07d3e",
+          "deckTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+          "deckType": "Betrayal Archetypes Satire",
+          "deckFunction": [
+            "performative",
+            "social sabotage"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "INEVITABLE MUTUAL BETRAYAL",
+          "power": "Both players reveal their hands. The one with the weakest card must immediately copy the strongest move.",
+          "lore": "We formed an alliance with the intention of betraying each other.",
+          "artworkPrompt": "Style: ink cartoon. Subject: two frogs shaking hands over a bomb timer. Mood: doomed solidarity."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.interrupt",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "PLURALISM SIMULATOR",
+      "connector": "Interrupt any action.",
+      "reframe": "A new threat enters the scene immediately.",
+      "words": 12,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "PLURALISM SIMULATOR",
+          "deckKey": "politics",
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "sourceField": "cardName",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Interrupt any action.",
+          "deckKey": "plot",
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "A new threat enters the scene immediately.",
+          "deckKey": "plot",
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "sourceField": "power",
+          "start": 22
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+          "sourceSha": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+          "deckTitle": "Ruled by Organized Kayfabe-Krime",
+          "deckType": "political conspiracy satire deck",
+          "deckFunction": [
+            "game",
+            "satire",
+            "education"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "PLURALISM SIMULATOR",
+          "power": "Target player wastes 2 turns arguing with themselves. Nothing changes.",
+          "lore": "Two identical parties ensure the masses can throw the rascals out without changing the policy.",
+          "artworkPrompt": "Style: watercolor satire. Subject: two ostriches with blue and red ties, heads in sand sandbox. Mood: absurd futility."
+        },
+        {
+          "sourcePath": "media/kfb/Plot_Pusher_Posse_-_ADD_web_ID.pdf.json",
+          "sourceSha": "b5513cfd1da3021354a8a3f8f2b260558c4d7260",
+          "deckTitle": "Dramatic Drops & Krazy Konflikts",
+          "deckType": "narrative chaos expansion",
+          "deckFunction": [
+            "plot disruption",
+            "narrative chaos"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "CHANDLER'S WALK-IN",
+          "power": "Interrupt any action. A new threat enters the scene immediately.",
+          "lore": "When in doubt, have a man come through the door with a gun.",
+          "artworkPrompt": "Style: noir comic panel. Subject: fox in fedora kicking door open with tommy gun. Mood: explosive interruption."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    },
+    {
+      "tripletId": "kfb.deckcut.cutup.law",
+      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "type": "CROSS_CARD_CUTUP",
+      "subject": "The Rules Lawyer",
+      "connector": "Rewrites the past from the present",
+      "reframe": "best signed by the accused.",
+      "words": 14,
+      "sourceFragments": [
+        {
+          "role": "subject",
+          "text": "The Rules Lawyer",
+          "deckKey": "rules",
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "sourceField": "name",
+          "start": 0
+        },
+        {
+          "role": "connector",
+          "text": "Rewrites the past from the present",
+          "deckKey": "retcon",
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "sourceField": "power",
+          "start": 0
+        },
+        {
+          "role": "reframe",
+          "text": "best signed by the accused.",
+          "deckKey": "cover",
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "sourceField": "lore",
+          "start": 36
+        }
+      ],
+      "cards": [
+        {
+          "sourcePath": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+          "sourceSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+          "deckTitle": "The Anti-Rules Manifesto",
+          "deckType": "Meta-rules deck",
+          "deckFunction": [
+            "improv"
+          ],
+          "cardIndex": 0,
+          "cardNumber": 1,
+          "cardName": "The Rules Lawyer",
+          "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+          "lore": "Dry leader. Busy.",
+          "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+        },
+        {
+          "sourcePath": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+          "sourceSha": "5559510b4a00940f5eea2bc9887298920f8c2311",
+          "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+          "deckType": "Meta systems performance deck",
+          "deckFunction": [
+            "meta-systemic roleplay",
+            "social mechanics education",
+            "narrative performance"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "RETCON",
+          "power": "Rewrites the past from the present — so the story took it for granted.",
+          "lore": "The revision was accepted so smoothly that nobody remembered it as a revision.",
+          "artworkPrompt": "Style: crosshatch ink, warm tones. Subject: raccoon erasing and redrawing a scroll, others nodding. Mood: casual, slightly unsettling."
+        },
+        {
+          "sourcePath": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+          "sourceSha": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+          "deckTitle": "How To Stage A Cover-Up",
+          "deckType": "satirical cover-up card game",
+          "deckFunction": [
+            "satirical",
+            "improv",
+            "investigative"
+          ],
+          "cardIndex": 1,
+          "cardNumber": 2,
+          "cardName": "The Ten Certificates",
+          "power": "PLAY: Slam your hand on the table and declare NOTHING WRONG!",
+          "lore": "IDEA: A certificate of innocence is best signed by the accused.",
+          "artworkPrompt": "Style: bureaucratic satire ink wash. Subject: wall covered in self-signed certificates. Mood: smug authority."
+        }
+      ],
+      "artworkEvidence": "SOURCE_PROMPT_ONLY_NOT_RENDERED_IMAGE",
+      "humanComedyReview": "PENDING",
+      "runtimeImport": false
+    }
+  ],
+  "nextGate": "KFB_NONMED_CARD_CUTUP_HUMAN_AUDITION_R1"
+}
