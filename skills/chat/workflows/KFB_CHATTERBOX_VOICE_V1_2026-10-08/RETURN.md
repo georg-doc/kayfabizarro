@@ -1,5 +1,16 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · Suno backstory · two takes per single run
+
+Georg corrected the provenance: Suno returns **two variants in one prompt run**. The previously saved West Sealand text is **take A**, not an independent run; new take B is the 137-word Munich Philharmonic / maritime-lawyer circus / pelican / lighthouse in ex-wife driveway / sovereign oil-rig autobiography. Verbatim B and comparison are in `SUNO_BACKSTORY_DUAL_TAKE_RUN_R0_1_2026-10-12.md`; existing A file now has a pairing pointer. No new Suno generation or download was made in this chat.
+
+Text-only editorial: both **TUNE**, B has stronger concrete surreal after-effect (lighthouse in driveway) but its backstory leaps between disconnected props and both takes cluster around maritime jurisdiction. This is a **single-generation observation**, not a demonstrated systematic model defect. Georg has not issued a KEEP/TUNE/CUT for this pair. No audio from either variant was provided, so musical/acting/cutoff quality was not tested. Neither is KFB-canonical nor does it override human FAIL for assistant-written Clown scripts.
+
+One next pair gate: `KFB_SUNO_BACKSTORY_DUAL_TAKE_LISTEN_COMPARE_R1`, hear A and B from this same Suno run when actual files exist, compare exact boundaries/music/punchlines and collect Georg KEEP/TUNE/CUT. No new runtime/Site/Stage/merge/Live.
+
+---
+
+
 ## 2026-10-12 · Suno first real West Sealand backstory text · R0.1
 
 Georg supplied **the actual Suno-generated textual transcript** of the first absurd backstory Clown experiment (Chief of Protocol of West Sealand, two barges, goat Bartholomew, educated sea bass, lost northern barge, later municipal circus). The entire verbatim user-provided transcript is preserved at `SUNO_WEST_SEALAND_CLOWN_FIRST_BACKSTORY_TAKE_R0_1_2026-10-12.md` (172 words, 967 codepoints). Distinct from assistant's three quarantined script attempts. **Exact Suno input and actual audio were not supplied**; do not assert this originated from the earlier different 410-character minimal-prompt test.
