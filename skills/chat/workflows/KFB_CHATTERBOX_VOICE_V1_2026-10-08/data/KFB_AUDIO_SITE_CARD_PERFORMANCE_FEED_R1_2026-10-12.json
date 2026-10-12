@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.audio-site.card-performance-feed/1",
+  "date": "2026-10-12",
+  "status": "EDITORIAL_CANDIDATE_PREVIEW",
+  "owner": "KFB ChatterBox Voice / Draft PR #379",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceRef": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "contentRevision": "audio-site-preview-r1-initial",
+  "canonicalDefault": false,
+  "siteConsumer": {
+    "owner": "existing KFB Audio Site / Draft PR #365",
+    "projectId": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "mode": "EXPLICIT_PREVIEW_RELOAD_ONLY",
+    "siteRedeployRequiredForDataRows": false
+  },
+  "source": {
+    "deckPath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "deckRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "performancePath": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_WRINKLE_RUMBLE_48_CARD_PERFORMANCE_STAY_FLUFFY_R0_1_2026-10-12.txt",
+    "performanceRevision": "a9e6631267dac39bd04012f6402497db591c6d06",
+    "bridgesPath": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_CARD_PERFORMANCE_BRIDGES_R0_1_2026-10-12.json",
+    "bridgesRevision": "4e60fd1c7f9a12c6f865917230026743b291c3a1",
+    "timedCuesPath": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json",
+    "timedCuesRevision": "01858ae1661f3c205c42edcfde6b8788fe636e9b"
+  },
+  "performances": [
+    {
+      "id": "wrinkle-rumble-6-11-12-lorekeeper-r1",
+      "label": "Cards 6 · 11 · 12 · Lorekeeper",
+      "status": "EDITORIAL_CANDIDATE",
+      "selectedCardNumbers": [
+        6,
+        11,
+        12
+      ],
+      "sentenceOverrides": {
+        "6": "The Phantom Waistline hogs two zones, shoves everyone into the Void; old and wide, alone.",
+        "11": "The Salad Dressing Divider steals your Ranch, claims forty years of ownership; robots must listen.",
+        "12": "The Unsent Apology heals your enemy, costs ten psychic damage; he died hating you."
+      },
+      "speaker": {
+        "id": "lorekeeper",
+        "label": "Lorekeeper"
+      },
+      "storyMode": "absurd",
+      "seed": "wrinkle-6-11-12-r1",
+      "intro": "Welcome, dear Fluffheads. Three Cards, one local audition.",
+      "outro": "Stay Fluffy!",
+      "bed": "D",
+      "delivery": "dry, deliberate, source-first",
+      "rate": 0.9,
+      "pitch": 0.82,
+      "editorialNote": "Initial hot-reload baseline. Unknown causal edges remain silent."
+    }
+  ],
+  "promotion": {
+    "sourceToCandidate": "SOURCE_ORIGINAL_READ_ONLY -> EDITORIAL_CANDIDATE",
+    "reviewedStatus": "REVIEWED",
+    "automaticCanon": false,
+    "clientPromotion": false
+  }
+}
