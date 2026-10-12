@@ -352,7 +352,8 @@
     "Kein Flackern mehr (PASS)",
     "Flackert noch (FAIL)"
    ],
-   "status": "offen"
+   "status": "beantwortet",
+   "answer": "Kein Flackern mehr (PASS), V-198"
   }
  ],
  "slices": [
@@ -375,7 +376,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S1",
    "server": "Lab 5192",
-   "status": "wartet auf Georg (flk=1)",
+   "status": "fertig (PASS, V-198)",
    "title": "Flacker-Paket (dynres, LOD-Hysterese, Rippe nur nah)",
    "vrefs": "V-171 (2)",
    "id": "S02"
@@ -411,7 +412,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S3",
    "server": "Lab 5192",
-   "status": "läuft",
+   "status": "nach Spielbarkeits-Slice (V-199)",
    "title": "Speicher: manifold delete, Caches leeren, Debug nur mit Schalter",
    "vrefs": "V-171 (4)",
    "id": "S05"

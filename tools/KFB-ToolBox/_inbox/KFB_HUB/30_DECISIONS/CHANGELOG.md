@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Flackern PASS, Spielbarkeits-Befunde
+- V-198 flk=1 PASS → Standard. V-199 Georg: Strafen nur mit Vorwärts (gegen V-022), Einsteigen geht nicht, Figur läuft durch Hügel, Hüpfen beim Gehen komisch (TUNE). Steuerung: kurzer Spielbarkeits-Slice vor S5.
+
 ## 2026-10-13 · S2 Flackern + S3 Ladezeit
 - Ladezeit 48,2 → 7,0 s (Neuladen 6,7): Lab-Inseln/Wolken im Organ-Modus aus, inhaltsadressierter Ergebnis-Cache (levelSet, TC1-Booleans, Knet-Karten) in ~/Library/Caches/kfb-lab/organ, alle 1017 Meshes byte-gleich. Warm ≤ 5 s noch offen, später.
 - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen (d24). Weiter S5 Speicher, dann S6.

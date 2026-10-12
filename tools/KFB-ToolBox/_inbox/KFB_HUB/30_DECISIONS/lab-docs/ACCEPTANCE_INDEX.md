@@ -13,6 +13,7 @@ Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien 
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95` |  | / GEORG ACCEPTANCE / R2 „passt so mit TUNE für später" (09.10.2026) / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R1/RETURN.md:39` |  | / GEORG ACCEPTANCE / OPEN / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/RETURN.md:42` |  | / GEORG ACCEPTANCE / OPEN / |
+| `KFB_HUB/30_DECISIONS/CHANGELOG.md:8` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3` |  | Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:8` | Oberseite, ein Mesh, Farb- und Maskenkarte 1024² | Richtung gut |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:9` | Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung | gut |

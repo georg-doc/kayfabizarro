@@ -2233,6 +2233,34 @@
    "applies": "Architektur jetzt, Bau nach MVP"
   },
   {
+   "id": "V-198",
+   "date": "2026-10-13",
+   "area": "Technik",
+   "verdict": "PASS",
+   "text": "Flacker-Paket (?flk=1) PASS: Georg sieht kein Flackern mehr → wird Standardansicht.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Parity mit flk Standard",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Ursache dynres-Pendeln behoben.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-199",
+   "date": "2026-10-13",
+   "area": "Steuerung",
+   "verdict": "FAIL",
+   "text": "Spielbarkeits-Befunde Georg (Standardansicht): (1) Strafen falsch gegenüber V-022: Q/E wirkt nur zusammen mit Vorwärts, nicht im Stand bzw. für sich. (2) Ins Auto einsteigen geht nicht (Georg versuchte I); Taste prüfen, im HUD anzeigen, Konflikt mit E (Strafen) ausschließen. (3) Man läuft durch die modellierten Hügel bzw. Erhebungen hindurch statt darüber; Figur soll dem Gelände folgen. (4) Hüpfen beim langsamen Gehen wirkt komisch (TUNE, niedrige Priorität). Vor S5 als kurzer Spielbarkeits-Slice.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Fußtests + Georg spielt",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Georg will endlich spielen; Grundsteuerung muss stimmen.",
+   "applies": "sofort, vor S5"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2292,6 +2320,11 @@
    "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/RETURN.md:42",
    "part": "",
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
+  },
+  {
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:8",
+   "part": "",
+   "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
   {
    "source": "KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3",
