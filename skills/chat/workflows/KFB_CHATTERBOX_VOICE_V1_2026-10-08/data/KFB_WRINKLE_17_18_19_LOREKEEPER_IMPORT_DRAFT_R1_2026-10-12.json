@@ -1,0 +1,82 @@
+{
+  "schema": "kfb.audio-site.card-performance-draft/1",
+  "draftStatus": "LOCAL_EDITORIAL_DRAFT",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceRef": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+  "contentRevision": "audio-site-preview-r3-card-11-tune",
+  "fetchedContentSha": "180a7ea461620e469e4f8bdf73905a06308f3ece",
+  "performanceId": "wrinkle-rumble-17-18-19-lorekeeper-separate-candidate-r1",
+  "performanceStatus": "EDITORIAL_CANDIDATE",
+  "deckId": "wrinkle_rumble",
+  "speaker": {
+    "id": "lorekeeper",
+    "label": "Lorekeeper"
+  },
+  "storyMode": "absurd",
+  "seed": "wrinkle-17-18-19-lorekeeper-r1",
+  "selectedCardNumbers": [
+    17,
+    18,
+    19
+  ],
+  "lines": {
+    "17": "The Skeleton of Waiter makes you hum while Madame Foster shops for three decades; stop, and you skip a turn.",
+    "18": "The Slide of Eternity won't let you off until you roll doubles; otherwise, the ride ends when you die.",
+    "19": "The Unanswered Riddle freezes anyone who hesitates at trivia; win, and you have to keep playing."
+  },
+  "bridgeDrafts": {
+    "17>18": {
+      "id": "wrinkle-17-18-chair-slides-r1",
+      "fromCardId": 17,
+      "toCardId": 18,
+      "relation": "cartoon_transformation",
+      "text": "After three decades, the waiting chair finally moves. Straight downhill.",
+      "cost": "indefinite waiting becomes forced descent",
+      "callback": "three decades",
+      "sourceRefs": [
+        {
+          "deckId": "wrinkle_rumble",
+          "cardNumber": 17,
+          "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+        },
+        {
+          "deckId": "wrinkle_rumble",
+          "cardNumber": 18,
+          "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+        }
+      ],
+      "editorialStatus": "LOCAL_EDITORIAL_CANDIDATE",
+      "provenance": "EDITORIAL_STAGE_BRIDGE_NOT_ORIGINAL_CARD_RULE"
+    },
+    "18>19": {
+      "id": "wrinkle-18-19-exit-trivia-r1",
+      "fromCardId": 18,
+      "toCardId": 19,
+      "relation": "obstruction",
+      "text": "Roll doubles, and the exit opens onto a trivia question.",
+      "cost": "escaping one trap starts a second",
+      "callback": "cannot stop playing",
+      "sourceRefs": [
+        {
+          "deckId": "wrinkle_rumble",
+          "cardNumber": 18,
+          "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+        },
+        {
+          "deckId": "wrinkle_rumble",
+          "cardNumber": 19,
+          "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+        }
+      ],
+      "editorialStatus": "LOCAL_EDITORIAL_CANDIDATE",
+      "provenance": "EDITORIAL_STAGE_BRIDGE_NOT_ORIGINAL_CARD_RULE"
+    }
+  },
+  "intro": "Welcome, dear Fluffheads. Madame Foster is just finishing up.",
+  "outro": "Stay Fluffy!",
+  "bed": "D",
+  "delivery": "dry, patient, understated; one longer wait before the final line",
+  "rate": 0.9,
+  "pitch": 0.82
+}
