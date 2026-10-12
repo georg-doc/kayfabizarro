@@ -1,5 +1,18 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## CURRENT CORRECTION · 2026-10-12 · KEEP CLOWN OUT OF META-COMEDY WRITING
+
+Georg observed the same Clown sketch being returned from two parallel chats. Root cause confirmed: the former meta-onboarding defaulted to reusing Clown first, conflating an existing Speech Beta AUDIO-BENCH fixture with a separate creative assignment. **SPLIT BINDING:** Clown R0.2/R1 remains only the *technical* first Suno voice+music audition; parallel meta-NPC content writing **must NOT recycle or paraphrase it as first piece**.
+
+The independent writing lane now begins with **King Kayfabian** as a new source-backed, fictional 147-word stand-up, available as **copy/paste plain text**, with separately labeled Speech text and voice/music prompt:
+`SUNO_META_KING_KAYFABIAN_COPY_PASTE_R0_1_2026-10-12.md`.
+Seven eligible non-Clown writing entries are prioritized in `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json`. Revised authoritative fresh-chat briefing: `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md`. Evidence: `SUNO_META_NON_CLONE_ROUTING_TEST_R0_1_2026-10-12.md`, **8/8 plain-text/content assertions** + **12/12 split-routing checks**, **3/3 private Production Control Site mirror matches**. SCRIPT_FIRST fields incl. producer cues **1,622** Unicode code points (<5,000). RULE1 editorial humor judgment OPEN; Suno renders 0, hearing 0, publishing 0. No new runtime, audio owner, Site, merge, World R5 or Live.
+
+Exactly one next **meta-writing** task: `KFB_META_KING_KAYFABIAN_EDITORIAL_AUDITION_R1`. Unchanged separate technical audio next gate: `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`. Do not use the technical audio gate to override the writer queue.
+
+---
+
+
 ## 2026-10-12 · ADDITIVE META NPC EPISODE ROSTER R0.1 · SOURCE-MAPPED
 
 Parallel NPC stand-up intake now has an **eight-premise** authoring-only source map at `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json`, connecting all three user-provided public origin routes `#kfb`, `#cutplay`, `#thegame` (the third is repo-nav verified, NOT Cloudflare pixel verified) to current KFB Game Bigger Picture, actual Freestyle rules, Four-Island story, Meta Compendium and the existing RULE1 Suno speech slice. Reference established `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md`; no second authoring engine or runtime. **12/12** static/source-link checks, exact GitHub readback, exact private Production Control Inbox mirror. See `SUNO_META_NPC_EPISODE_ROSTER_TEST_REPORT_R0_1_2026-10-12.md`. All proposed King/Driver/Demon Lord/Monstrosity CEO/Protopia Farmer/Lorekeeper/Hunky-Dory jokes are **NOT WRITTEN / NOT CANON**; prior Clown remains the sole existing authoring candidate. No Suno/audio/rights/staging/Live PASS. Same next Suno gate `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`.
