@@ -1,5 +1,15 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Wrinkle Rumble 48-card performance / Stay Fluffy / LLM-free Bridges / TTS audition
+
+- Georg's direct current feedback: complete Wrinkle Rumble Suno song works musically and causally; adopt spoken **"Stay Fluffy!" as the fixed final line of card-based performances** across character voices, with **"Welcome, dear Fluffheads!"** an optional actor-tailored opening.
+- Preserve **all original 48 source Cards** (not 56), full 4,266-char Suno-format performance text, source deck blob pin, a 3-card/2-edge editorial sample of typed causal Bridges rather than naive connective randomization; no approval of arbitrary automatic stories or new ChatterBox kernel.
+- Written durable files: `KFB_WRINKLE_RUMBLE_48_CARD_PERFORMANCE_STAY_FLUFFY_R0_1_2026-10-12.txt`, `data/KFB_CARD_PERFORMANCE_BRIDGES_R0_1_2026-10-12.json`, `KFB_CARD_PERFORMANCE_TTS_BED_BRIDGES_SPEAKERS_CORNER_R0_1_2026-10-12.md`, `KFB_CARD_PERFORMANCE_TTS_BRIDGE_TEST_REPORT_R0_1_2026-10-12.md`.
+- Actual tests: **14/14 GitHub source/content/bridge assertions** and **14/14 local FFprobe/audio package assertions** PASS. One full eSpeak 48-Card test MP3 at 229.77 s and two shorter variant MP3s; audio ZIP lives **only in this conversation**. Not an audible equivalent of Suno, no user's KFB music bed bytes, no Site/browser audio run, no word-timed video, 0 quality PASS for new TTS voices.
+- Existing receiver remains **KFB Audio PR #365 / Voice Acting Site**, not a new mixer/LLM service. Browser voices + existing D bed/duck first; only then consider Piper/Kokoro/Resemble Chatterbox-TTS as distinct possible providers after rights/perf review. Current World R4 STOP, no Stage/Site publish/Live/merge/Hub churn.
+- **ONE next gate**: `VOICE_ACTING_EXISTING_SITE_SAME_TEXT_D_BED_A_B_AUDITION_R1` — identical script in actual browser TTS, dry versus D-bed + ducking, compare Georg's Suno performance, record audible human decision.
+
+
 ## 2026-10-12 · Wrinkle Rumble 13 one-sentence title-power-lore Triplets
 
 - User clarified **one exact Card title + 2–3 source words POWER + 2–3 source words LORE**, combined into **one spoken sentence**. Visual prompt remains nonspoken visual anchor.
