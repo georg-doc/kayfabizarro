@@ -2,6 +2,15 @@
 Owner: existing ChatterBox / Resident Speech output · Draft PR #379
 No standalone runtime owner, no new Site. Earlier Voice milestones remain in owning RETURN.md.
 
+## 2026-10-13 · KFB Triplets first user invocation · 1001 Kayfabe Nights 5→6→7
+
+- User explicitly invoked private KFB Triplets + KFB Production Control for original `media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json`; original user commit and current `main` source share blob `c5b6719d6a0612f227615d9917bbfbb45563f45d`; registry packId `1001_kayfabe_nights`, 60/60 actual Card IDs.
+- Source-verified three-card (not full-deck/page) Uncle FrizzleBob editorial candidate #5 Shahryār → #6 Scheherazade → #7 Dunyazad; three single-sentence title/POWER/LORE Triplets, two typed editorial causal bridges, Suno spoken lyrics 735 Unicode codepoints, style 364.
+- Created `KFB_1001_KAYFABE_NIGHTS_5_6_7_FRIZZLEBOB_TRIPLETS_SUNO_R1_2026-10-13.md` on existing Voice PR #379 branch, content milestone `a8cd8e140edc5d179dd582520fc8bfc072c59f9c`; exact branch ref and file bytes verified (17/17 in-chat static/source checks). Saved exact copy in Production Control Inbox, fileId `dbfebcb9-d24b-41b6-a842-c9d5d93985a6`.
+- Import blocker surfaced from actual current Audio PR #365 `card-performance.js`: it rejects decks other than `wrinkle_rumble` on local JSON import. This 1001 script is **NOT Site-importable** yet; no fabricated `kfb.audio-site.card-performance-draft/1` for unsupported deck, no new site/runtime or Work.
+- Existing r3 Card11 live-preview feed and Audio Site Source 0.6.0/v9 preserved. No new feed revision, Suno render, heard playback, Site/browser test, merge/Live/Cloudflare; human KEEP/TUNE/CUT still open.
+- One next gate: `GEORG_1001_5_6_7_SUNO_SCRIPT_KEEP_TUNE_CUT_R1` before scaling or separately authorizing a multi-deck Site extension.
+
 ## 2026-10-11 · R1 planning and production preparation
 
 - Georg's real Suno experiment: intellectually themed female spoken stand-up + rockabilly accompaniment works convincingly as sound/acting, but generated gag writing needs editorial improvement.
