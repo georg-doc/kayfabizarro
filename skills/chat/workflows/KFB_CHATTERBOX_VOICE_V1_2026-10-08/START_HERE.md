@@ -1,3 +1,15 @@
+## CURRENT CARD PERFORMANCE RECOVERY · 2026-10-12 · 48-CARD WRINKLE / STAY FLUFFY / BRIDGE SIDE-CAR
+
+Georg reports **positive creative listening** for the Wrinkle Rumble 48-card Suno performance (not uploaded to this repo). His new binding *card-performance* ending is literal spoken **"Stay Fluffy!"**; **"Welcome, dear Fluffheads!"** is a proposed optional, character-flexible intro. Repeat it for Clown, Orc Band, King Kayfabian, Speakers' Corner and Tavern ensemble where the performance format applies, not every functional NPC utterance.
+
+**Read first:** `KFB_CARD_PERFORMANCE_TTS_BED_BRIDGES_SPEAKERS_CORNER_R0_1_2026-10-12.md`, `data/KFB_CARD_PERFORMANCE_BRIDGES_R0_1_2026-10-12.json`, `KFB_WRINKLE_RUMBLE_48_CARD_PERFORMANCE_STAY_FLUFFY_R0_1_2026-10-12.txt`, and `KFB_CARD_PERFORMANCE_TTS_BRIDGE_TEST_REPORT_R0_1_2026-10-12.md`. Real source is `media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json` (48 Cards; pin to blob). One Card = one sentence, typed concrete causal bridges between cards, editorial provenance and no blind "therefore/but" pool. LLM-free variation limited to source/curator-compatible links; fallback can be valid silence or a story reset.
+
+**Evidence:** 14/14 GitHub source/authoring checks, 14/14 local eSpeak+FFprobe/package checks; dry full-48 technical clip **229.77s** + two short character variants, **download package only in conversation**. No actual Site playback, browser-system voice A/B, KFB conversation bed/music mix, original Suno stem import, human acceptance of eSpeak quality, caption/video alignment or in-world runtime integration.
+
+**ONE NEXT GATE:** `VOICE_ACTING_EXISTING_SITE_SAME_TEXT_D_BED_A_B_AUDITION_R1`. Receiver is **existing KFB Audio Voice Acting Site / PR #365**. Test same pinned text on existing browser voices dry versus real D-bed duck, compare Suno original, preserve source Card cue identity and exact outro. No second KFB ChatterBox semantic engine, no new AudioContext, no Site/Cloudflare/World publish or PR merge; WB2 R4 STOP remains.
+
+---
+
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
 ## ONE-CARD ONE-SENTENCE CORRECTION · 2026-10-12
