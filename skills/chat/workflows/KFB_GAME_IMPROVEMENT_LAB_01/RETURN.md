@@ -15,3 +15,12 @@
 **Protected gates:** World PR #348 STOP/NO MVP/F-R39, Four-Island A/B design-only gate, no auto-merge or Live promotion remain binding.
 
 **Next gate (one):** `KFB_GIL_01_MANUAL_SCOPE_CLAIM_PILOT` — one manual, read-only, evidence-only run using the historical R4 failure and current contract; do not run Breaker Mode yet.
+
+## 2026-10-12 · Optional invocation + help · plugin creation milestone
+
+- **Created private skills-only plugin** `kfb-game-improvement-lab` v0.1.0:
+  https://chatgpt.com/plugins/plugins_6acd274ca7848191bc9e657220ce5b18
+- Backend ID `plugins_6acd274ca7848191bc9e657220ce5b18`; release `pluginrel_6acd274eff908191ad0fca7c73b6dbb6`.
+- Optional `focus` and `scope` (plus `mode`) and side-effect-free `help`, `-h`, `--help`; default `discover`, `auto`, `current`.
+- Plugin package persisted privately and its current text files mirrored in this versioned workflow folder. Source/check verification is not a playtest. No Hub Site update and no game implementation.
+- **Next gate unchanged:** `KFB_GIL_01_MANUAL_SCOPE_CLAIM_PILOT`.

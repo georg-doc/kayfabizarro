@@ -12,6 +12,20 @@ Manually request one **high-impact, low-effort improvement** for the current, so
 
 All rounds recover fresh GitHub owner, branch, head, project SSOT, current Recovery/Return, explicit scope and acceptance gates first. Read `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` and `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`. Product-specific current contracts take priority.
 
+## Webchat plugin invocation · manual v0.1.0
+
+Existing private skills-only plugin: [KFB Game Improvement Lab](https://chatgpt.com/plugins/plugins_6acd274ca7848191bc9e657220ce5b18).
+Package release: `pluginrel_6acd274eff908191ad0fca7c73b6dbb6`.
+A plugin release does not by itself prove the plugin is connected in the current conversation, nor any gameplay/QA outcome.
+
+Optional parameters:
+- `focus=auto` (theme, including free text);
+- `scope=current` (exact current target if resolvable, or explicit project/PR/slice);
+- `mode=discover` (read-only default; `build` needs independently authorized write scope; `break` remains DEFERRED).
+
+`KFB Game Lab help`, `-h`, and `--help`: display compact parameter descriptions, usage and permissions **without** launching a Playtester run or touching game code.
+See [INVOCATION_CONTRACT_V1.md](INVOCATION_CONTRACT_V1.md) and versioned source package in [plugin/](plugin/).
+
 ## Five roles and sequencing
 
 1. **Playtester / Player Advocate / Problem Scout**: read or play the exact candidate; identify up to three observed weaknesses. Evidence first, no invented feature requirements. Return to test the result after implementation only through the applicable independent QA route.

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "georg@cimoc.de",
+    "name": "Georg Westphalen"
+  },
+  "description": "Evidence-first KFB game improvement workflow with five expert roles and optional focus, scope, mode and help commands.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": [
+          "KFB Game Lab help",
+          "KFB Game Lab focus=auto scope=current mode=discover",
+          "KFB Game Lab focus=animation scope=current"
+        ],
+        "developerName": "Georg Westphalen",
+        "displayName": "KFB Game Improvement Lab",
+        "longDescription": "A five-role Webchat workflow for source-verified KFB gameplay improvements. Optional focus and scope route to the right current product; help shows concise options. Breaker Mode is deferred and code writes require separate authorization.",
+        "shortDescription": "Improve KFB game slices"
+      }
+    }
+  },
+  "name": "kfb-game-improvement-lab",
+  "version": "0.1.0"
+}
