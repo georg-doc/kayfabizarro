@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Assistant-written comedy HUMAN FAIL
+
+- Georg rejected the previously assistant-written Clown scripts (R0.1, R0.2 and short R1) as irrelevant, unfunny AI slop. This is **EDITORIAL SCRIPT FAIL**, NOT Suno audio/model FAIL.
+- Full root-cause record: `POSTMORTEM_ASSISTANT_WRITTEN_CLOWN_COMEDY_RULE1_FAIL_2026-10-12.md`; negative-golden quarantine index: `data/SUNO_CLOWN_EDITORIAL_FAIL_NEGATIVE_GOLDEN_2026-10-12.json`.
+- Original candidate JSON scripts preserved for review, but quarantined via owner Return and START_HERE override; do not generate, reuse, promote or rewrite the safety-inspector routine. Two source status-update attempts were blocked and stopped without false success claims.
+- Static 21/21 and 25/25 were not human comedy passes. No Suno audio was produced from these scripts. Prompt-first *method* and separate parallel NPC scripts not assessed by this verdict.
+- One next editorial gate `KFB_SUNO_EDITORIAL_SOURCE_RESET_R1`: new premise with human RULE1 review before an audio audition. No runtime/Site/Stage/merge/Live changes.
+
+
 ## 2026-10-12 · Corrected duplicate Clown routing (Georg feedback) · authoring separation
 
 - Georg flagged: two web chats returned the same Clown stand-up. Root cause traced to meta-onboarding's incorrect "Reuse Clown ... first" instruction. Corrected **existing** meta brief in place; Clown R0.2/R1 now technical Suno Speech Beta audio-bench only, **NOT** a default for the parallel NPC comedy-writing chat.
