@@ -1,4 +1,17 @@
 # KFB Cut & Play Cards → ChatterBox Triplets · SOURCE RESET R0.1
+
+## 2026-10-12 · BINDING CORRECTION: FRACTAL SCALE, NPC TRIPLET = ONE SENTENCE
+
+Georg: **"ein triplet=ein satz!!!!!"** and **"es kann auch die kfb game verbindung aus der king k. quest mini game logik sein"** and then **"eine karte als triplet-satz scheint mir ein guter start"**. This supersedes any implication below that three exact isolated excerpts separated by newlines are an acceptable spoken Triplet. Those first 20 cut-ups are **FORMAL_FAIL_AS_NPC_TRIPLETS**, even though their source fragments are verifiable. They are negative grammar fixtures, NOT a new ChatterBox semantic pool.
+
+**Chosen simplest proving scope:** ONE original KFB card `cardName/power/lore` → ONE source-grounded short grammatical NPC utterance, with `subject / connector / reframe` as three internal roles/subspans **inside the sentence**. The current source-backed seven-card pilot is `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_SOURCE_PILOT_R0_1_2026-10-12.json`. Those utterances are intentionally *derived/reworded from an original card*, not mislabeled as verbatim source excerpts, and still need human RULE1 editorial acceptance.
+
+**Fractal second scale:** Town `LIVING_KFB_TOWN.md` §13.4, King Kayfabian Quest mini-game: existing Actor Card + three collected Scene Cards + choose one of three Quest offers → each Scene Card may provide one short Triplet sentence (or valid silence); full `Actor/POV → A/SHOW IT → B/SPIN IT → C/SELL IT → Quest/Endpanel` gives **player closure**, not a fourth mandatory NPC sentence. Source image/power/lore and existing Quest choices have different roles and cannot be interchanged.
+
+Legacy wording below records the failed experiment for recovery, not current output rules. Older Studio visual `subject/connector/reframe` shown as 3 sub-blocks in **one** bubble remains a presentation option, not a three-sentence mandate. See source `overworld/docs/ChatGPT_Living_Concept_v23.md` §112, `skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md` §5, `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md` §15 and Town §13.4. No new Runtime/Site/Stage, no card lore promotion.
+
+---
+
 Date: 2026-10-12
 Mode: **SOURCE STUDY / ZERO-COPY AUTHORING CANDIDATES**; no new runtime, no public product Site deployment.
 Owner: existing **KFB ChatterBox CONTENT authoring**, current Voice Draft PR #379 is planning/evidence receiving branch only. Prior PR #310/#305 Studio/Kernel are closed donors and not new implementation authority.
