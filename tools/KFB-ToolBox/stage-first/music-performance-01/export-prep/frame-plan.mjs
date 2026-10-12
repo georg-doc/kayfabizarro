@@ -31,6 +31,8 @@ export function createFramePlan(recipe,donor,profile=EXPORT_PROFILE){
  const names=new Set();
  const performerPlan=recipe.performers.map(p=>{
    guard(typeof p.id==='string'&&!names.has(p.id),'duplicate performer id');names.add(p.id);
+   const approval={leader:'PASS',guitarist:'PASS',drummer:'HOLD'};
+   guard(p.humanResult===approval[p.id], 'unverified performer review status '+p.id);
    const c=donor.clips.find(v=>v.name===p.choreography?.actionRef);
    guard(!!c&&Number.isFinite(c.duration)&&c.duration>0,'missing or invalid donor clip '+p.id);
    guard(c.performer===p.id&&c.beats===p.choreography.cycleBeats,'choreography donor mismatch '+p.id);

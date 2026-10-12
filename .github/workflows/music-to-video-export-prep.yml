@@ -1,0 +1,26 @@
+name: MUSIC-TO-VIDEO-EXPORT-PREP
+on:
+  push:
+    branches:
+      - planning/kfb-motion-to-video-prep-r1-2026-10-12
+    paths:
+      - "tools/KFB-ToolBox/stage-first/music-performance-01/export-prep/**"
+      - ".github/workflows/music-to-video-export-prep.yml"
+  pull_request:
+    paths:
+      - "tools/KFB-ToolBox/stage-first/music-performance-01/export-prep/**"
+      - ".github/workflows/music-to-video-export-prep.yml"
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check tools/KFB-ToolBox/stage-first/music-performance-01/export-prep/frame-plan.mjs
+      - name: Original-source and deterministic frame-plan tests
+        run: node tools/KFB-ToolBox/stage-first/music-performance-01/export-prep/test/frame-plan.test.mjs
