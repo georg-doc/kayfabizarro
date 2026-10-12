@@ -1,0 +1,320 @@
+{
+  "schema": "kfb.card-to-semantic-triplet/0.1-sentence-candidate",
+  "date": "2026-10-12",
+  "status": "ONE_CARD_ONE_SENTENCE_DEMONSTRATOR_NOT_APPROVED",
+  "owner": "Existing ChatterBox content / consumer sidecar PR #379",
+  "policy": {
+    "spokenUnit": "One Triplet = one short sentence for NPC voice at this presentation scale",
+    "semanticStructure": "Subject/Connector/Reframe are inner sentence roles, not three stand-alone utterances",
+    "otherScales": "King Kayfabian 3 Scene Cards can produce three short sentences plus player Closure at Quest scale; do not confuse A/B/C card stages with one Triplet",
+    "sourcePriority": "Card deck / cardName-power-lore / witnessed world fact / NPC knowledge",
+    "visualRail": "artworkPrompt distinct; don't claim the printed artwork was seen",
+    "previous20Cutups": "FORMAL_FAIL_AS_TRIPLET_3_FRAGMENTS; preserve raw source snippets as negative examples only",
+    "legacy20Pool": "CREATIVE_QUALITY_BLOCKED",
+    "wordBudget": "prefer 5-9, normal up to approximately 15; no arbitrary three-line scripts",
+    "humanGate": "RULE1; no automatic humor pass"
+  },
+  "checks": [
+    {
+      "name": "seven real card sources",
+      "pass": true
+    },
+    {
+      "name": "unique IDs",
+      "pass": true
+    },
+    {
+      "name": "one sentence joined",
+      "pass": true
+    },
+    {
+      "name": "15 words max",
+      "pass": true
+    },
+    {
+      "name": "one terminal stop",
+      "pass": true
+    },
+    {
+      "name": "valid source cards",
+      "pass": true
+    },
+    {
+      "name": "seven different decks",
+      "pass": true
+    },
+    {
+      "name": "no human quality assumed",
+      "pass": true
+    },
+    {
+      "name": "no canonical import",
+      "pass": true
+    },
+    {
+      "name": "role subspans",
+      "pass": true
+    }
+  ],
+  "examples": [
+    {
+      "id": "kfb.card.triplet.rules-lawyer",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "The Rules Lawyer demands a nonexistent rule, and your move fails when you hesitate.",
+      "semantic": {
+        "subject": "The Rules Lawyer",
+        "connector": " demands a nonexistent rule",
+        "reframe": ", and your move fails when you hesitate."
+      },
+      "wordCount": 14,
+      "source": {
+        "deckId": "anti_rules_toolkit",
+        "deckTitle": "The Anti-Rules Manifesto",
+        "deckType": "Meta-rules deck",
+        "deckFunction": [
+          "improv"
+        ],
+        "path": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+        "blob": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+        "cardIndex": 0,
+        "cardNumber": 1,
+        "cardName": "The Rules Lawyer",
+        "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+        "lore": "Dry leader. Busy.",
+        "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "rule-exploit",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.pluralism",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "The Pluralism Simulator makes you argue with yourself for two turns without changing anything.",
+      "semantic": {
+        "subject": "The Pluralism Simulator",
+        "connector": " makes you argue with yourself for two turns",
+        "reframe": " without changing anything."
+      },
+      "wordCount": 14,
+      "source": {
+        "deckId": "shadow_politics",
+        "deckTitle": "Ruled by Organized Kayfabe-Krime",
+        "deckType": "political conspiracy satire deck",
+        "deckFunction": [
+          "game",
+          "satire",
+          "education"
+        ],
+        "path": "media/kfb/Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json",
+        "blob": "2aba23155e2d2a43e98091dc1a01e851cf15c337",
+        "cardIndex": 1,
+        "cardNumber": 2,
+        "cardName": "PLURALISM SIMULATOR",
+        "power": "Target player wastes 2 turns arguing with themselves. Nothing changes.",
+        "lore": "Two identical parties ensure the masses can throw the rascals out without changing the policy.",
+        "artworkPrompt": "Style: watercolor satire. Subject: two ostriches with blue and red ties, heads in sand sandbox. Mood: absurd futility."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "loop-cost",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.chompers",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "The Chatter-Chompers steal your gear and give you gingivitis in return.",
+      "semantic": {
+        "subject": "The Chatter-Chompers",
+        "connector": " steal your gear",
+        "reframe": " and give you gingivitis in return."
+      },
+      "wordCount": 11,
+      "source": {
+        "deckId": "wrinkle_rumble",
+        "deckTitle": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+        "deckType": "aging comedy starter kit",
+        "deckFunction": [
+          "warmup",
+          "aging satire",
+          "time-wrestling comedy"
+        ],
+        "path": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+        "blob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+        "cardIndex": 1,
+        "cardNumber": 2,
+        "cardName": "The Chatter-Chompers",
+        "power": "Swap Equipment: Steal an item from a player. Give them \"Gingivitis\" in return.",
+        "lore": "The indignity isn't losing your teeth; it's accidentally wearing your enemy's smile.",
+        "artworkPrompt": "Style: splatter ink comic. Subject: dog and cat mid-teeth-swap chaos mid-run. Mood: gleeful dental horror."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "transaction-inversion",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.erasable-line",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "Draw your next step in pencil, expecting to be wrong but staying anyway.",
+      "semantic": {
+        "subject": "Draw your next step",
+        "connector": " in pencil, expecting to be wrong",
+        "reframe": " but staying anyway."
+      },
+      "wordCount": 13,
+      "source": {
+        "deckId": "embrace_protopia",
+        "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+        "deckType": "Protopian action-invitation deck",
+        "deckFunction": [
+          "exhibition"
+        ],
+        "path": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+        "blob": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+        "cardIndex": 1,
+        "cardNumber": 2,
+        "cardName": "The Erasable Line",
+        "power": "Draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.",
+        "lore": "The ability to correct beats the appearance of certainty.",
+        "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grinning raccoon erasing a blueprint mid-sketch. Mood: gleeful impermanence."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "correctable-action",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.360-deal",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "The 360 Deal takes half your tokens and owns your tours, merch, and soul.",
+      "semantic": {
+        "subject": "The 360 Deal",
+        "connector": " takes half your tokens",
+        "reframe": " and owns your tours, merch, and soul."
+      },
+      "wordCount": 14,
+      "source": {
+        "deckId": "sonic_slaughterhouse",
+        "deckTitle": "Sonic Slaughterhouse — Music Industry",
+        "deckType": "Music Industry Satire",
+        "deckFunction": [
+          "music-industry satire",
+          "exploitation mechanics",
+          "phase-structured narrative"
+        ],
+        "path": "media/kfb/Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json",
+        "blob": "32ad0e6a053029a365fca65c300409702ef12e7e",
+        "cardIndex": 0,
+        "cardNumber": 1,
+        "cardName": "THE 360 DEAL",
+        "power": "TAKE half of target player's resource tokens. You own their merch, touring, and soul.",
+        "lore": "They say it's a partnership. A tick also calls the dog a partner.",
+        "artworkPrompt": "Style: Ink cartoon. Subject: Octopus in suit signing contract with small rabbit. Mood: Predatory menace."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "exploitation",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.retcon",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "RETCON rewrites the past so smoothly nobody remembers the revision.",
+      "semantic": {
+        "subject": "RETCON",
+        "connector": " rewrites the past so smoothly",
+        "reframe": " nobody remembers the revision."
+      },
+      "wordCount": 10,
+      "source": {
+        "deckId": "unspoken_systems_kayfabizarro_meta_deck_01",
+        "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+        "deckType": "Meta systems performance deck",
+        "deckFunction": [
+          "meta-systemic roleplay",
+          "social mechanics education",
+          "narrative performance"
+        ],
+        "path": "media/kfb/Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json",
+        "blob": "5559510b4a00940f5eea2bc9887298920f8c2311",
+        "cardIndex": 1,
+        "cardNumber": 2,
+        "cardName": "RETCON",
+        "power": "Rewrites the past from the present — so the story took it for granted.",
+        "lore": "The revision was accepted so smoothly that nobody remembered it as a revision.",
+        "artworkPrompt": "Style: crosshatch ink, warm tones. Subject: raccoon erasing and redrawing a scroll, others nodding. Mood: casual, slightly unsettling."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "historical-reframe",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    },
+    {
+      "id": "kfb.card.triplet.ten-certificates",
+      "mode": "NPC_SPOKEN_ONE_SENTENCE",
+      "status": "SOURCE_GROUNDED_REWRITE_CANDIDATE_NOT_VERBATIM_CARD_TEXT",
+      "sentence": "The accused signs ten certificates, slams the table, and declares nothing wrong.",
+      "semantic": {
+        "subject": "The accused",
+        "connector": " signs ten certificates, slams the table",
+        "reframe": ", and declares nothing wrong."
+      },
+      "wordCount": 12,
+      "source": {
+        "deckId": "the_kayfabizarro_manifesto_cover_up",
+        "deckTitle": "How To Stage A Cover-Up",
+        "deckType": "satirical cover-up card game",
+        "deckFunction": [
+          "satirical",
+          "improv",
+          "investigative"
+        ],
+        "path": "media/kfb/The_Kayfabizarro_Manifesto_-_How_To_Stage_A_Cover-Up_-_ADD_web_ID.pdf.json",
+        "blob": "4fbf650aa6ece14507ce91a753fe1e65d04765e6",
+        "cardIndex": 1,
+        "cardNumber": 2,
+        "cardName": "The Ten Certificates",
+        "power": "PLAY: Slam your hand on the table and declare NOTHING WRONG!",
+        "lore": "IDEA: A certificate of innocence is best signed by the accused.",
+        "artworkPrompt": "Style: bureaucratic satire ink wash. Subject: wall covered in self-signed certificates. Mood: smug authority."
+      },
+      "sourceTransform": "SINGLE_CARD_POWER_LORE_TO_ONE_SENTENCE; no source-exactness claim for reworded output",
+      "performanceRole": "self-certification",
+      "visualRail": "artworkPrompt only; real printed illustration not inspected",
+      "characterAssignment": "PENDING_KFB_RESIDENT_AND_WITNESS_FILTER",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "noAutomaticCanon": true
+    }
+  ],
+  "kingScaleExample": {
+    "sourceContract": "skills/chat/town/LIVING_KFB_TOWN.md §13.4",
+    "state": "DESIGN_ONLY",
+    "actor": "existing Actor Card, not invented actor",
+    "sceneCards": "three collected real Scene Cards",
+    "questChoice": "one of three King Kayfabian offers from existing Quest source, no fictional quest defined",
+    "sceneToSentenceRule": "each card may trigger one source-grounded short NPC sentence from above, or valid silence",
+    "resolution": "Quest/Endpanel + Social Calls + player Closure",
+    "notAClaimOfLiveRuntime": true
+  },
+  "nextGate": "KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_RULE1_HUMAN_CHECK_R1"
+}
