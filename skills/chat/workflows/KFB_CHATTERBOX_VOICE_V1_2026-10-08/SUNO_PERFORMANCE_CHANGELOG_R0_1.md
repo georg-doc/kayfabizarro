@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · One Card ONE sentence concept reset
+
+- User corrected Triplet unit: ONE subject/connector/reframe utterance = ONE spoken sentence; older 3-block/3-line output interpreted incorrectly as 3 sentences.
+- Verified original KFB source grammar, positional-audio fragment vs whole-sentence Voice contract, and existing Card/world knowledge binding. Documented the corrected fractal Card→Page→Deck→Cross-Deck→King's Quest pathway without claiming a new game engine.
+- Source-backed example from `wrinkle_rumble` Card #2 / page 2 TR; **11-word** adapted one-sentence Triplet with original power/lore/artworkPrompt kept separate; **10/10** static checks, no human PASS.
+- New concept brief `DECK_CARD_ONE_SENTENCE_TRIPLET_AND_FRACTAL_QUEST_R0_1_2026-10-12.md` and JSON proof `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_PROOF_R0_1_2026-10-12.json`. No auto-generated 4,119-piece canon pool, no audio/World/Site/runtime release.
+- One next content gate `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_HUMAN_REVIEW_R1`.
+
+
 ## 2026-10-12 · Pool quality RULE1 human FAIL and frozen 8-triplet test
 
 - Georg explicitly FAILS `clown.consensus.01` ("Everybody agrees / until somebody acts / volunteer?") as responsibility diffusion, empty cliché and AI slop, drawn from actual shared 20-entry ChatterBox candidate pool.
