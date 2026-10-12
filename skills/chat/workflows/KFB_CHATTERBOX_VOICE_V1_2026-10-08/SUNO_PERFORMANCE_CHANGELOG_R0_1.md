@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Corrected duplicate Clown routing (Georg feedback) · authoring separation
+
+- Georg flagged: two web chats returned the same Clown stand-up. Root cause traced to meta-onboarding's incorrect "Reuse Clown ... first" instruction. Corrected **existing** meta brief in place; Clown R0.2/R1 now technical Suno Speech Beta audio-bench only, **NOT** a default for the parallel NPC comedy-writing chat.
+- Updated original 8-episode roster with **7 eligible distinct non-Clown writing tracks**; the Clown entry remains a historical technical reference. Writing begins with **King Kayfabian**, then Lorekeeper, Monstrosity CEO, Protopia Farmers, Driver, Demon Lord, Lord Hunky/Dory.
+- Added immediately usable **human copy/paste plain-text** Suno King package `SUNO_META_KING_KAYFABIAN_COPY_PASTE_R0_1_2026-10-12.md`: spoken script 857 Unicode code points / ~147 words, voice/music 537, editorial cues 228, total **1,622 (<5,000)**. Separate speaking/style fields; producer notes not spoken; no JSON-only user delivery.
+- Proof `SUNO_META_NON_CLONE_ROUTING_TEST_R0_1_2026-10-12.md`: **8/8** King package structural checks, **12/12** lane separation assertions, private Production Control Inbox **3/3** exact GitHub file copies. No actual audio, humor PASS, rig, Site publish, Stage or merge. Existing standalone Clown audio listening gate unchanged. Exactly one writing task: `KFB_META_KING_KAYFABIAN_EDITORIAL_AUDITION_R1`.
+
+
 ## 2026-10-12 · Meta NPC 8-episode source map · additive content only
 
 - Added `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json` under existing KFB ChatterBox/Voice Draft PR #379, as the source-grounded follow-on to the already-persisted Speech Beta parallel-chat onboarding/research. **Eight distinct candidate premises**, one existing Clown first-take reused, seven new script slots NOT WRITTEN; explicitly distinguishes analog `#kfb`, Cut&Play `#cutplay`, digital game `#thegame` and the present Four-Island story.
