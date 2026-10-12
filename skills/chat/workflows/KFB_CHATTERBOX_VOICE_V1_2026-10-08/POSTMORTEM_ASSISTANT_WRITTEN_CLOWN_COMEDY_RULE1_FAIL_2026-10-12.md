@@ -73,3 +73,11 @@ The phrasing above is a failure analysis, **not** a claim that any external humo
 - Existing Voice owner `START_HERE.md`, `RETURN.md`, `SUNO_PERFORMANCE_CHANGELOG_R0_1.md`.
 - Negative-Golden receipt: `data/SUNO_CLOWN_EDITORIAL_FAIL_NEGATIVE_GOLDEN_2026-10-12.json`.
 - Public KFB rules/meta origin remains `https://kayfabizarro.pages.dev/#kfb`, `#cutplay`; no new Stage/Live evidence or router change.
+
+## Additive clarification · 2026-10-12 · The lazy premise was the initial failure
+
+Georg specifically identified the assistant-chosen **safety-inspector premise itself** as the first failure, before wording, timing, callbacks or Suno production. It was a generic, already predictable contradiction. Subsequent scripting and structure checks only polished the defective seed. Root-cause ordering is **bad premise selection first**, repeated generic rewrites second, false assurance from 21/21 and 25/25 structural checks third. Do not imply that a better music bed, faster pacing or a different voice would have rescued that material.
+
+**Actual user-controlled Suno prompt-first test was later clarified:** a **410-codepoint minimal prompt** with 55–65 second speech format and gritty deep male cowboy clown characterization **only**, no safety inspector or predefined comic situation. Exact user prompt preserved in `SUNO_PROMPT_FIRST_MINIMAL_ACTUAL_USER_PROMPT_R1_2026-10-12.md`. Do **not** attribute the earlier long safety-inspector prompt to this reported use, and do **not** characterize the generated Suno output as passed or failed without seeing or hearing it. This postmortem still FAILS the assistant's scripted variants, not Suno's premise generation.
+
+Next separate observation gate for this user test: `KFB_SUNO_MINIMAL_PROMPT_TAKE_REVIEW_R1` once real Suno output is provided. Quarantined assistant text remains blocked; no new editorial rewrite authorized.
