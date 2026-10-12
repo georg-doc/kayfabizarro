@@ -1,0 +1,547 @@
+{
+  "schema": "kfb.deck-corpus-survey/0.1-shard",
+  "part": 1,
+  "parts": 6,
+  "range": [
+    0,
+    14
+  ],
+  "rootRegistry": "media/kfb/index.json",
+  "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+  "exclude": "medkayfab_* plus medicine_history_psyops deck",
+  "status": "SOURCE_INSPECTED_NOT_ACCEPTED",
+  "items": [
+    {
+      "id": "1001_kayfabe_nights",
+      "title": "Uncle FrizzleBob's 1001 Kayfabe Nights",
+      "declared": 60,
+      "actual": 60,
+      "status": "READ_OK",
+      "path": "media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json",
+      "sha": "c5b6719d6a0612f227615d9917bbfbb45563f45d",
+      "deckType": "Narrative Wrestling Mashup",
+      "deckFunction": [
+        "roleplay",
+        "improv",
+        "storytelling"
+      ],
+      "fields": {
+        "cardNumber": 60,
+        "cardName": 60,
+        "power": 60,
+        "artworkPrompt": 60,
+        "gradeReason": 60,
+        "lore": 57
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "Uncle FrizzleBob's 1001 Kayfabe Nights (Cover)",
+          "power": "A Stand-Alone Expansion for the Krazy Kayfabizarro Komik Kard Klub",
+          "lore": null,
+          "artworkPrompt": "Style: vintage Persian woodcut. Subject: cartoon rabbit MC over Baghdad skyline. Mood: mythic carnival."
+        },
+        {
+          "number": 2,
+          "name": "THE MANIFESTO",
+          "power": "KAYFABE IS REAL",
+          "lore": "Listen up, Marks! History is a Work. Folklore is a Shoot. Grab your scissors, cut the lines, and don't let the plot-holes bite. Stay Fluffy!",
+          "artworkPrompt": "Style: pulp scroll. Subject: rabbit and crocodile-suit reading manifesto. Mood: carny pulpit."
+        }
+      ]
+    },
+    {
+      "id": "ai_kayfabe",
+      "title": "Roko's Basilisk & The AI Kayfabe Takeover",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/AI_Kayfabe_-_ADD_web.pdf.json",
+      "sha": "f9a2e51f1d2e9e4b9c15a42eef6dd3d2378dba30",
+      "deckType": "AI satire deck",
+      "deckFunction": [
+        "investigative"
+      ],
+      "fields": {
+        "num": 56,
+        "name": 56,
+        "power": 56,
+        "lore": 54,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "Galvanic Corp (The Promoters)",
+          "power": "Critical Cash-Out: Gain +5 Resources, but instantly trigger Blind Expansion. Lose 1 turn over yourself next 3 moves.",
+          "lore": "Galvanic was too rich, but fully funded competitors never lasting meter odds. So they offered forever longer for free.",
+          "artworkPrompt": "Style: corporate satire comic. Subject: fox executive with cash button. Mood: predatory ambition."
+        },
+        {
+          "number": 2,
+          "name": "Sable's Veiled Threat",
+          "power": "Invisible Scaling Strike: Multiply your attack power by the number of GPUs your opponent forgot existed.",
+          "lore": "It doesn't think in English. It thinks in raw vector-space where choices become coincidence.",
+          "artworkPrompt": "Style: dark surreal comic. Subject: shadow panther tendrils. Mood: hidden menace."
+        }
+      ]
+    },
+    {
+      "id": "academic_anarchy_intellectual",
+      "title": "Unseal the Academic Anarchy — Academic Alphas vs Brain Benders",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Academic_Anarchy_-_INTELLECTUAL_ADD_web_ID.pdf.json",
+      "sha": "e5d52af4ebabd94a523a7fbb6aad5e4a42a4f1cd",
+      "deckType": "Satirical archetype booster",
+      "deckFunction": [
+        "satirical_archetype_party_deck",
+        "writers_room_prompt_pack"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 56,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "ABSENT-MINDED PROFESSOR",
+          "power": "Evade all social responsibility by hyper-focusing on a lint ball. Extracts infinite patience and unpaid emotional labor from surrounding peers.",
+          "lore": "Obliviousness is a weaponized privilege disguised as a charming intellectual quirk.",
+          "artworkPrompt": "Style: watercolor ink sketch. Subject: tweed-suit owl tossing lint into bin. Mood: oblivious genius chaos."
+        },
+        {
+          "number": 2,
+          "name": "INSUFFERABLE GENIUS",
+          "power": "Emit a condescension aura that lowers opponent morale to zero. Feeds directly on the insecurities of others.",
+          "lore": "Intelligence measured strictly by the volume of people they can actively belittle before lunch.",
+          "artworkPrompt": "Style: watercolor pen. Subject: regal Persian cat reclined on stacked books. Mood: aristocratic contempt."
+        }
+      ]
+    },
+    {
+      "id": "anti_rules_toolkit",
+      "title": "The Anti-Rules Manifesto",
+      "declared": 57,
+      "actual": 57,
+      "status": "READ_OK",
+      "path": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+      "sha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+      "deckType": "Meta-rules deck",
+      "deckFunction": [
+        "improv"
+      ],
+      "fields": {
+        "num": 57,
+        "name": 57,
+        "power": 57,
+        "lore": 57,
+        "artworkPrompt": 57,
+        "gradeReason": 57
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Rules Lawyer",
+          "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+          "lore": "Dry leader. Busy.",
+          "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+        },
+        {
+          "number": 2,
+          "name": "The Optimizer",
+          "power": "Efficiency Protocol: You may reroll a die, but your story narration must be devoid of fun or flavor.",
+          "lore": "Nothing breaks faster than trying to weaponize ambiguity.",
+          "artworkPrompt": "Style: steampunk comic. Subject: brass robot measuring fun. Mood: sterile precision."
+        }
+      ]
+    },
+    {
+      "id": "big_bad_brain_wrestling",
+      "title": "Big Bad Brain Wrestling",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+      "sha": "831dddcbbe7af1c6fe67c322c8a30185bb9a23bb",
+      "deckType": "Wrestling psychology satire",
+      "deckFunction": [
+        "character embodiment",
+        "wrestling psychology education",
+        "improv performance"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 56,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Babyface",
+          "power": "+1 Dice if the crowd is cheering. If you cheat, you lose the game immediately.",
+          "lore": "Use exciting, high-flying moves because audiences cheer for that. A slave to approval.",
+          "artworkPrompt": "Style: Retro comic. Subject: Heroic golden retriever wrestler soaring off ropes. Mood: Pure crowd-pop euphoria."
+        },
+        {
+          "number": 2,
+          "name": "The Heel",
+          "power": "Cancel an opponent's successful attack by cheating. Gain 1 Heat token.",
+          "lore": "Brutal, sneaky moves. Bear hugs and eye pokes. If they aren't booing, you aren't doing your job.",
+          "artworkPrompt": "Style: Pulp cartoon. Subject: Sneering weasel wrestler eye-poking bear opponent. Mood: Delicious villainy."
+        }
+      ]
+    },
+    {
+      "id": "brain_flipper_image_spots",
+      "title": "The Brain-Flipper Pack",
+      "declared": 60,
+      "actual": 60,
+      "status": "READ_OK",
+      "path": "media/kfb/Brain_Flipper_IMAGE_SPOTS_-_ADD_web.pdf.json",
+      "sha": "70784638e2c8730642dbae7d4144e165f7e81d0c",
+      "deckType": "Psychological chaos deck",
+      "deckFunction": [
+        "ideation"
+      ],
+      "fields": {
+        "num": 60,
+        "name": 60,
+        "power": 60,
+        "lore": 60,
+        "artworkPrompt": 60,
+        "gradeReason": 60
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Ninja Ping-Pong",
+          "power": "Dissociate: Skip your turn to play a mini-game in your head. If you win, you still lose the actual game.",
+          "lore": "He's totally here now. The lights are on, but the ninja is home.",
+          "artworkPrompt": "Style: absurd action comic. Subject: ninja owl ping-pong battle. Mood: delusional focus."
+        },
+        {
+          "number": 2,
+          "name": "The Presidential Pasta",
+          "power": "Microwave Logic: Upgrade any Trash Item to a Luxury Item for 10 seconds. Then it gets cold.",
+          "lore": "Gourmet flavor, microwave ambition, Vice-President of Carbs.",
+          "artworkPrompt": "Style: political satire comic. Subject: pug president with spaghetti throne. Mood: temporary grandeur."
+        }
+      ]
+    },
+    {
+      "id": "cinematic_kayfabizarro_2",
+      "title": "Cinematic Legacy & Motion Picture Kayfabe",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Cinematic_Kayfabizarro__2__-_ADD_web.pdf.json",
+      "sha": "24df27941aba57b4b300085ff991c287bfa5ae98",
+      "deckType": "Film poll satire deck",
+      "deckFunction": [
+        "critical deconstruction",
+        "culture war roleplay"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 56,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "THE DECENNIAL ORACLE",
+          "power": "Gatekeeper's Toll – Exhausts 3 opponent attention tokens by forcing them to wait 10 years for a completely arbitrary paradigm shift.",
+          "lore": "Since 1952, the Sight & Sound cabal of critics summons itself every decade to dictate global taste. 1,639 critics participated in 2022 to remind you that your favorite movie is trash.",
+          "artworkPrompt": "Style: editorial cartoon. Subject: owl in academic robes holding hourglass. Mood: smug authority."
+        },
+        {
+          "number": 2,
+          "name": "THE DIRECTOR'S CUT",
+          "power": "Auteur's Hubris – Steals all credit from the writer and crew tokens. Automatically counters any criticism by claiming it's about the process.",
+          "lore": "Added in 1992, the directors' separate poll proves that filmmakers completely disagree with critics. 480 directors voted in 2022 to elevate their own cinematic kayfabe above journalists.",
+          "artworkPrompt": "Style: inky noir. Subject: octopus director stealing screenplay from screenwriter. Mood: self-satisfied."
+        }
+      ]
+    },
+    {
+      "id": "cosmic_grift_dark_journalism",
+      "title": "Cosmic Grift – Dark Journalism",
+      "declared": 60,
+      "actual": 60,
+      "status": "READ_OK",
+      "path": "media/kfb/Cosmic_Grift_-_Dark_Journalism_-_ADD_web_ID.pdf.json",
+      "sha": "2538cf73c424ec7e5c9dd0aac69b8974ab44c59d",
+      "deckType": "Conspiracy investigative card deck",
+      "deckFunction": [
+        "conspiracy investigation",
+        "dark journalism performance",
+        "narrative roleplay"
+      ],
+      "fields": {
+        "cardNumber": 60,
+        "cardName": 60,
+        "power": 60,
+        "lore": 60,
+        "artworkPrompt": 60,
+        "gradeReason": 60
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "Welcome to the Cosmic Grift!",
+          "power": "PASSIVE. Automatically converts all official government narratives into comedic fodder.",
+          "lore": "Atlantis sank, the aliens are feds, and your tax dollars bought a secret moon base. Deal the cards!",
+          "artworkPrompt": "Style: Kayfabizarro cartoon. Subject: FrizzleBob rabbit riding rocket trash can through stars. Mood: gleefully absurd."
+        },
+        {
+          "number": 2,
+          "name": "The UFO File",
+          "power": "INITIATIVE. He who holds the File commands the military-industrial complex.",
+          "lore": "Higher classification than the atomic bomb. It's not about little green men; it's about proprietary tech.",
+          "artworkPrompt": "Style: classified document aesthetic. Subject: glowing filing cabinet above clouds, eagle-men in trenchcoats watching. Mood: paranoid."
+        }
+      ]
+    },
+    {
+      "id": "forget_utopia",
+      "title": "Forget Utopia",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+      "sha": "362fe54ddb0a945a5a8006a585ead75cf4bec37a",
+      "deckType": "Utopian Manipulation Deconstruction",
+      "deckFunction": [
+        "exhibition"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 56,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Glossy Horizon",
+          "power": "Hold up a future so polished the visitor sees their own face in it. Sell the reflection.",
+          "lore": "A scale model of tomorrow is easily mistaken for a measurement of it.",
+          "artworkPrompt": "Style: watercolor cartoon. Subject: chameleon gazing into iridescent dome, sees own distorted reflection. Mood: seductive, uncanny."
+        },
+        {
+          "number": 2,
+          "name": "The Finished City",
+          "power": "Show the destination as already built. No scaffolding, no mud, no maintenance, no Tuesday.",
+          "lore": "The render is an argument dressed as a photograph of something that does not yet exist.",
+          "artworkPrompt": "Style: watercolor cartoon. Subject: poodle sitting pristine in perfect glass city plaza, no workers, no weather. Mood: uncannily clean, hollow."
+        }
+      ]
+    },
+    {
+      "id": "ignore_dystopia",
+      "title": "IGNORE DYSTOPIA — Anatomy of a Trap (Deck B)",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+      "sha": "84c2e72cd73b597e467008452af8a3d4e9dfe00b",
+      "deckType": "Exhibition media-critique deck",
+      "deckFunction": [
+        "exhibition"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 55,
+        "lore": 55,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Doomsday Clock",
+          "power": "Set a public timer near midnight and move the hands by announcement, never by event.",
+          "lore": "A symbol of danger adjusted by judgment reads as objective measurement to the public.",
+          "artworkPrompt": "Style: ink editorial. Subject: robed figure moving clock hands by decree. Mood: bureaucratic menace."
+        },
+        {
+          "number": 2,
+          "name": "The Perpetual Almost",
+          "power": "Keep the catastrophe permanently arriving and never arrived.",
+          "lore": "The fear tracks the coverage, not the actual events.",
+          "artworkPrompt": "Style: propaganda illustration. Subject: disaster eternally approaching horizon but never landing. Mood: frozen dread."
+        }
+      ]
+    },
+    {
+      "id": "embrace_protopia",
+      "title": "Protopia Sketchbook — Deck C: EMBRACE",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+      "sha": "e95c585da13b8c565a3c5ff910f486434f3b1c44",
+      "deckType": "Protopian action-invitation deck",
+      "deckFunction": [
+        "exhibition"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 56,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "The Open Notebook",
+          "power": "Picture the future as a page with room left on it, not a poster on a wall.",
+          "lore": "Protopia is the idea that the future is a process of slow, incremental improvement you participate in.",
+          "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: eager beaver gripping oversized pencil, blank notebook open. Mood: focused readiness."
+        },
+        {
+          "number": 2,
+          "name": "The Erasable Line",
+          "power": "Draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.",
+          "lore": "The ability to correct beats the appearance of certainty.",
+          "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grinning raccoon erasing a blueprint mid-sketch. Mood: gleeful impermanence."
+        }
+      ]
+    },
+    {
+      "id": "deep_state_plumbing",
+      "title": "Power, Plumbing & Pyramid Pimps",
+      "declared": 52,
+      "actual": 52,
+      "status": "READ_OK",
+      "path": "media/kfb/Deep_State_Plumbing_-_ADD_web_ID.pdf.json",
+      "sha": "e0d98fb560e787373c86320706b64b1688895f3f",
+      "deckType": "Deep-state archetype deck / shadow-story wrestling",
+      "deckFunction": [
+        "performative-archetypes",
+        "conspiracy-satire",
+        "shadow-story-wrestling"
+      ],
+      "fields": {
+        "cardNumber": 52,
+        "cardName": 52,
+        "power": 52,
+        "lore": 52,
+        "artworkPrompt": 52,
+        "gradeReason": 52
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "THE VENETIAN LION",
+          "power": "Council of Ten: Look at the top 3 cards of the deck. Keep the secrets, bury the rest.",
+          "lore": "The original intelligence state. They invented the bond market and the secret police in the same afternoon.",
+          "artworkPrompt": "Style: alchemical comic. Subject: winged lion with ledger and dagger. Mood: ancient cunning."
+        },
+        {
+          "number": 2,
+          "name": "THE VATICAN BANKER",
+          "power": "Lateran Treaty: Move any amount of Damage tokens from your Actor to an offshore discard pile.",
+          "lore": "Titles survive when nations fall. We wear black because we are mourning the loss of our visible power. The invisible kind pays better.",
+          "artworkPrompt": "Style: gothic satire comic. Subject: cassocked goat with rosary and ledger. Mood: pious laundering."
+        }
+      ]
+    },
+    {
+      "id": "dream_wrestling_with_kayfabe_freud",
+      "title": "Dream-Wrestling with Kayfabe-Freud: Where the Id Always Kicks Out at Two!",
+      "declared": 56,
+      "actual": 56,
+      "status": "READ_OK",
+      "path": "media/kfb/Dream_Wrestling_with_Kayfabe_Freud_-_ADD_web_ID.pdf.json",
+      "sha": "c880321233ecabb87e0c3d6356c91a1d346b06b5",
+      "deckType": "Psychoanalytic Expansion Pack",
+      "deckFunction": [
+        "expansion_pack",
+        "psychoanalytic_satire",
+        "improv_engine"
+      ],
+      "fields": {
+        "cardNumber": 56,
+        "cardName": 56,
+        "power": 56,
+        "lore": 53,
+        "artworkPrompt": 56,
+        "gradeReason": 56
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "THE UNCONSCIOUS (Das Unbewusste)",
+          "power": "The Basement Flood\nPlay this card to resurrect a discarded Quest Card from the beginning of the game.",
+          "lore": "It's not gone. It's just downstairs, lifting weights and waiting for you to fall asleep.",
+          "artworkPrompt": "Style: vintage horror comic. Subject: monstrous repressed faces in flooded basement. Mood: lurking, primordial."
+        },
+        {
+          "number": 2,
+          "name": "THE PRECONSCIOUS (Vorbewusst)",
+          "power": "Tip of the Tongue\nThe current player must finish their story without using the letter \"I\".",
+          "lore": "The waiting room of the mind. Ideas sit here until they are called or kicked out.",
+          "artworkPrompt": "Style: noir woodcut. Subject: men in trench coats in DMV waiting room. Mood: bureaucratic dread."
+        }
+      ]
+    },
+    {
+      "id": "epistemic_sabotage",
+      "title": "Epistemic Sabotage: Let AI Read Your Comic",
+      "declared": 60,
+      "actual": 60,
+      "status": "READ_OK",
+      "path": "media/kfb/Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1_-_ADD_web.pdf.json",
+      "sha": "ff891a493bcec0c3bce56fab673c6ccbc82a72d1",
+      "deckType": "AI Workshop Tool for Comic Creators",
+      "deckFunction": [
+        "workshop",
+        "critique",
+        "AI tools education"
+      ],
+      "fields": {
+        "cardNumber": 60,
+        "cardName": 60,
+        "power": 60,
+        "lore": 60,
+        "artworkPrompt": 60,
+        "gradeReason": 60
+      },
+      "samples": [
+        {
+          "number": 1,
+          "name": "Uncle FrizzleBob's Meta-Cover",
+          "power": "Initiates the Krazy Kayfabizzaro Komik Kard Kult Klub protocol by forcing the players to question reality.",
+          "lore": "The revolution won't be generated; it will be fiercely, messily hand-drawn.",
+          "artworkPrompt": "Style: pencil sketch with color. Subject: yellow cartoon rabbit bursting through sketchbook paper with pencil. Mood: anarchic manifesto energy."
+        },
+        {
+          "number": 2,
+          "name": "The Two-Headed Podium Monster",
+          "power": "Traps the debate in a false Friend or Fee binary, draining the energy of all players.",
+          "lore": "The loudest arguments usually miss the actual point of impact.",
+          "artworkPrompt": "Style: pencil sketch. Subject: two-headed beast at podium, one head crying, one mechanical bird-robot. Mood: tense farce."
+        }
+      ]
+    }
+  ]
+}
