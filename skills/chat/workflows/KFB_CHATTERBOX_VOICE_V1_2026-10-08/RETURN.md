@@ -1,5 +1,16 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · Suno first real West Sealand backstory text · R0.1
+
+Georg supplied **the actual Suno-generated textual transcript** of the first absurd backstory Clown experiment (Chief of Protocol of West Sealand, two barges, goat Bartholomew, educated sea bass, lost northern barge, later municipal circus). The entire verbatim user-provided transcript is preserved at `SUNO_WEST_SEALAND_CLOWN_FIRST_BACKSTORY_TAKE_R0_1_2026-10-12.md` (172 words, 967 codepoints). Distinct from assistant's three quarantined script attempts. **Exact Suno input and actual audio were not supplied**; do not assert this originated from the earlier different 410-character minimal-prompt test.
+
+Assistant editorial review: **TUNE, not RULE1 PASS**. Stronger causal persona: failed diplomat/circus blame-shifter. Still stock whimsy ("highly educated sea bass", aggressive goat), explanatory public relations phrase, weak last callback. Georg hasn't issued a KEEP/TUNE/FAIL on this take. No approved Resident lore, canonical Triplet, voice asset, or flaming club VFX. No tested audio duration, cutoff, music or acting. Separate Toy Soldier Brick-Fish scenelet remains an unimplemented user idea.
+
+One next gate for this take: actual Suno audio/source link and Georg decision on whether to retain any distinctive character trait. Prior unrelated Voice/World gates remain intact.
+
+---
+
+
 ## 2026-10-12 · USER MINIMAL SUNO PROMPT-FORM CORRECTION
 
 Georg clarified his actually used Suno Speech prompt to **only** a 55–65s spoken English stand-up request and a deep, gritty male cowboy Clown performer profile. The exact **410-codepoint input** is preserved without additions at `SUNO_PROMPT_FIRST_MINIMAL_ACTUAL_USER_PROMPT_R1_2026-10-12.md`. Unlike the earlier example, **no specific inspector situation, joke structure, scripted lines, music style, RULE1 instruction or callback was given**. Suno selected the premise in the user-reported test, but its output has not been supplied or audited. **Do not attach our failed assistant-written inspector material to this experiment.**
