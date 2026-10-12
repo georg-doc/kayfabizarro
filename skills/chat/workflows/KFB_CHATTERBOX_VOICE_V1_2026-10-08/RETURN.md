@@ -1,5 +1,14 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · Pure-pool ChatterBox Triplet ideology beat test
+
+Georg requested a real **pool-based Triplet script**, NOT assistant-written sentences, to test whether Triplets work as stand-up beats after Suno's second ideology-roast text. Script source: `SUNO_PURE_POOL_TRIPLET_IDEOLOGY_BEAT_SCRIPT_R0_1_2026-10-12.md`. Source pinned: real ChatterBox Studio donor `lib/triplet-stage/donor/resident-chat-ensemble-data.mjs` blob `cf975a72637630d97fc626962ef591b356ce0bbf`; `kfb.semantic-triplet-pool/0.1-candidate`, 20 candidate entries. Eight are available by global or Clown signature; all eight selected once in exact source wording and 3-line `subject / connector / reframe` formatting, **58 words**. Manual ordered playlist, not deterministic kernel-selection proof. Excluded Lorekeeper/Witch/GothGirl signature borrowing. Did not add freetext or canon. No audio audition, source pool Georg KEEP/export, or public Site verified. Static source/identity checks passed.
+
+Suno Take 2 user text is ~320 words, ~98–110s at 175–195 WPM, so not a reliable 55–65s clip at that rate. The exact pool-only test is ~19s bare speech at 180 WPM and must not be padded to a minute with invented dialogue; test the beats first. Earlier AI-written Clown inspector FAIL remains quarantined. One next gate: `KFB_TRIPLET_PURE_POOL_CLOWN_BEAT_AUDITION_R1`, listen to the 8-Triplet order and judge if beat logic and delivery work, then Georg KEEP/TUNE/CUT. Existing voice/world gates unaffected. No merge/Stage/Live.
+
+---
+
+
 ## 2026-10-12 · Suno freestyle ideology roast, text-only
 
 Georg shared one Suno prompt emphasizing a deep, gritty, fast cowboy Clown **roasting human ideologies**, and one complete generated transcript (180 words, 1068 codepoints), saved verbatim in `SUNO_FREESTYLE_IDEOLOGY_ROAST_FIRST_TAKE_R0_1_2026-10-12.md`. Do not falsely call this two verified takes or an audio file; only one text was supplied for this run. Source content is political character POV, not established factual/real-world canon.
