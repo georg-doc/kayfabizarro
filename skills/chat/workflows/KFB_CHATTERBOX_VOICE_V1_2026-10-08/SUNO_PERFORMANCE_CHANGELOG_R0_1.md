@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Pure pool Triplet ideology beat probe
+
+- Exact eight existing ChatterBox Studio pool triplets in manual order, four Clown signature plus four globals; 58 words, no invented dialogue or borrowing, source donor blob pinned.
+- Pool remains candidate-only and the older PR #310/#305 remain closed donors. This is a source-verified script, not an automatic `prepareResidentTurn` run or a human comedy acceptance.
+- Source-verified test packet: `SUNO_PURE_POOL_TRIPLET_IDEOLOGY_BEAT_SCRIPT_R0_1_2026-10-12.md`.
+- Next one gate `KFB_TRIPLET_PURE_POOL_CLOWN_BEAT_AUDITION_R1`; no Suno generation, audio listening or Site/Stage publication in this work.
+
+
 ## 2026-10-12 · Freestyle ideology roast source
 - Preserved Georg's 180-word Suno ideology monologue plus original prompt in `SUNO_FREESTYLE_IDEOLOGY_ROAST_FIRST_TAKE_R0_1_2026-10-12.md`.
 - Text-only editorial TUNE. No confirmed audio, human humor PASS or second take.
