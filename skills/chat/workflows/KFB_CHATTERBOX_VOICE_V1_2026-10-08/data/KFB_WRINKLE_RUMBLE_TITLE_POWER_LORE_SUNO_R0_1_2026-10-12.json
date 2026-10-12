@@ -1,0 +1,288 @@
+{
+  "schema": "kfb.chatterbox.card-title-power-lore-one-sentence/0.1-candidate",
+  "status": "WRINKLE_RUMBLE_SUNO_TEST_CANDIDATE_NOT_APPROVED",
+  "owner": "Existing KFB ChatterBox content; Voice PR #379 sidecar",
+  "date": "2026-10-12",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "source": {
+    "path": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "blob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "deckId": "wrinkle_rumble",
+    "deckTitle": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+    "totalDeckCards": 48
+  },
+  "assembly": {
+    "sourceCardOrder": "ASCENDING_SELECTED_SEQUENCE",
+    "selectedCardNumbers": [
+      1,
+      2,
+      3,
+      7,
+      10,
+      15,
+      17,
+      25,
+      31,
+      34,
+      40,
+      46,
+      48
+    ],
+    "oneCardOneSentence": true,
+    "titleExact": true,
+    "powerAnchorWords": "2–3 sourced words",
+    "loreAnchorWords": "2–3 sourced words",
+    "imageAsContextNotSpoken": true,
+    "noCrossDeck": true,
+    "noGenericPool": true,
+    "authorEditedConnectiveGrammar": true,
+    "canRenderWithoutLLMWhenSaved": true
+  },
+  "spokenText": "The Proboscis of Doom groans loudly at every whispered insult.\n\nThe Chatter-Chompers steal an item; you wear your enemy's smile.\n\nThe Wrinkle-Storm makes both players cry; the diaper remains constant.\n\nThe Toupee of Denial fails its stealth check; graceful aging is a myth.\n\nThe Cookie of Causality restarts the game; the war began over a snickerdoodle.\n\nThe Grudge-Tree binds you to Harold; if you fall, he falls.\n\nThe Skeleton of Waiter makes you hum while Madame Foster shops for three decades.\n\nThe Pink Slip Robot replaces your hand with an algorithm and orders you to vacate the premises.\n\nThe Abyss Home removes you from play; soup stays warm behind locked doors.\n\nThe Empty Dance Floor skips your turn; the music stopped forty years ago.\n\nThe 4th Wall Brick rewrites a card with a marker to escape the medium.\n\nThe Eraser tears up your opponent's card, the permanent cure for aging.\n\nUncle FrizzleBob's Exit flips the table, goes outside, and you're still old.",
+  "spokenWords": 162,
+  "spokenCodepoints": 968,
+  "budgetExclusive": 5000,
+  "targetSeconds": "55–65 editorial estimate, verify two actual Suno takes",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "The Proboscis of Doom",
+      "oneSentence": "The Proboscis of Doom groans loudly at every whispered insult.",
+      "subject": "The Proboscis of Doom",
+      "powerCue": "Groan loudly",
+      "loreCue": "every insult whispered",
+      "source": {
+        "power": "Eavesdrop: Look at the top 3 cards of the deck. Groan loudly at what you see.",
+        "lore": "As the body fails, the sensors expand. You will hear every insult whispered by the youth.",
+        "artworkPrompt": "Style: aged ink watercolor. Subject: elderly cat with enormous drooping nose eavesdropping on cards. Mood: suspicious decay."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "The Chatter-Chompers",
+      "oneSentence": "The Chatter-Chompers steal an item; you wear your enemy's smile.",
+      "subject": "The Chatter-Chompers",
+      "powerCue": "Steal an item",
+      "loreCue": "enemy's smile",
+      "source": {
+        "power": "Swap Equipment: Steal an item from a player. Give them \"Gingivitis\" in return.",
+        "lore": "The indignity isn't losing your teeth; it's accidentally wearing your enemy's smile.",
+        "artworkPrompt": "Style: splatter ink comic. Subject: dog and cat mid-teeth-swap chaos mid-run. Mood: gleeful dental horror."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "The Wrinkle-Storm",
+      "oneSentence": "The Wrinkle-Storm makes both players cry; the diaper remains constant.",
+      "subject": "The Wrinkle-Storm",
+      "powerCue": "Both players cry",
+      "loreCue": "diaper remains constant",
+      "source": {
+        "power": "Collision: Destroy 1 Future Timeline card. Both players cry.",
+        "lore": "If you do not complete the mission, you age instantly. The diaper remains constant.",
+        "artworkPrompt": "Style: watercolor explosion. Subject: two elderly figures on scooters triggering mushroom cloud. Mood: inevitable catastrophe."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "The Toupee of Denial",
+      "oneSentence": "The Toupee of Denial fails its stealth check; graceful aging is a myth.",
+      "subject": "The Toupee of Denial",
+      "powerCue": "stealth check",
+      "loreCue": "Graceful aging",
+      "source": {
+        "power": "Camouflage: Fail a stealth check. Everyone knows it's a squirrel.",
+        "lore": "Graceful aging is a myth sold by hat salesmen.",
+        "artworkPrompt": "Style: ink comedy. Subject: eagle with live squirrel on head failing to look inconspicuous. Mood: transparent self-delusion."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "The Cookie of Causality",
+      "oneSentence": "The Cookie of Causality restarts the game; the war began over a snickerdoodle.",
+      "subject": "The Cookie of Causality",
+      "powerCue": "Restart the game",
+      "loreCue": "over a snickerdoodle",
+      "source": {
+        "power": "Inciting Incident: Restart the game from Turn 1. Keep all damage.",
+        "lore": "The war didn't start over land or ideology. It started over a snickerdoodle.",
+        "artworkPrompt": "Style: cosmic horror watercolor. Subject: glowing cookie surrounded by green lightning vortex in void. Mood: apocalyptic pastry."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "The Grudge-Tree",
+      "oneSentence": "The Grudge-Tree binds you to Harold; if you fall, he falls.",
+      "subject": "The Grudge-Tree",
+      "powerCue": "Bind yourself",
+      "loreCue": "with Harold",
+      "source": {
+        "power": "Entanglement: Bind yourself to another player. If you fall, they fall.",
+        "lore": "Hope is for people who aren't stuck in a tree for 70 years with Harold.",
+        "artworkPrompt": "Style: overgrown ink. Subject: two elderly men tangled in massive tree, football lodged in beard knot. Mood: grudge eternal."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "The Skeleton of Waiter",
+      "oneSentence": "The Skeleton of Waiter makes you hum while Madame Foster shops for three decades.",
+      "subject": "The Skeleton of Waiter",
+      "powerCue": "opponent to hum",
+      "loreCue": "three decades",
+      "source": {
+        "power": "Hold Music: Force an opponent to hum a tune while you think. If they stop, they skip a turn.",
+        "lore": "Madame Foster is just finishing up. She's been in the craft aisle for three decades.",
+        "artworkPrompt": "Style: vintage craft store horror. Subject: skeleton waiter in cobwebbed chair holding deli number ticket. Mood: indefinite waiting."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "The Pink Slip Robot",
+      "oneSentence": "The Pink Slip Robot replaces your hand with an algorithm and orders you to vacate the premises.",
+      "subject": "The Pink Slip Robot",
+      "powerCue": "Replace your hand",
+      "loreCue": "vacate the premises",
+      "source": {
+        "power": "Automation: Replace your hand with a random algorithm (roll dice for actions).",
+        "lore": "The future is efficient. You are not. Please vacate the premises.",
+        "artworkPrompt": "Style: industrial watercolor. Subject: silver robot handing pink FIRED slip to crying dog construction worker. Mood: efficient ruthlessness."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "The Abyss Home",
+      "oneSentence": "The Abyss Home removes you from play; soup stays warm behind locked doors.",
+      "subject": "The Abyss Home",
+      "powerCue": "Remove a character",
+      "loreCue": "doors are locked",
+      "source": {
+        "power": "Institutionalize: Remove a character from play. They are 'safe' now.",
+        "lore": "A nice place where the soup is warm and the doors are locked from the outside.",
+        "artworkPrompt": "Style: brutalist watercolor. Subject: grey concrete residential block descending into abyss void. Mood: institutional comfort."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "The Empty Dance Floor",
+      "oneSentence": "The Empty Dance Floor skips your turn; the music stopped forty years ago.",
+      "subject": "The Empty Dance Floor",
+      "powerCue": "Skip your turn",
+      "loreCue": "forty years ago",
+      "source": {
+        "power": "Nostalgia: Skip your turn to relive a better turn from the past.",
+        "lore": "The music stopped forty years ago, but the feet keep moving.",
+        "artworkPrompt": "Style: ghost watercolor. Subject: wolf couple dancing as blue ghosts in cobwebbed Victorian drawing room by clock. Mood: nostalgic haunting."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "The 4th Wall Brick",
+      "oneSentence": "The 4th Wall Brick rewrites a card with a marker to escape the medium.",
+      "subject": "The 4th Wall Brick",
+      "powerCue": "with a marker",
+      "loreCue": "Escape the medium",
+      "source": {
+        "power": "Effect: Allows player to rewrite the text of one card with a marker.",
+        "lore": "Escape the medium.",
+        "artworkPrompt": "Style: shattered glass ink. Subject: red brick crashing through card frame amid exploding glass shards. Mood: medium escape."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "The Eraser",
+      "oneSentence": "The Eraser tears up your opponent's card, the permanent cure for aging.",
+      "subject": "The Eraser",
+      "powerCue": "Physically tear up",
+      "loreCue": "cure for aging",
+      "source": {
+        "power": "Delete: Physically tear up one card from an opponent's hand.",
+        "lore": "The only permanent cure for aging.",
+        "artworkPrompt": "Style: erased ink on paper. Subject: giant pink eraser destroying card paper in close-up hand. Mood: permanent deletion."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Uncle FrizzleBob's Exit",
+      "oneSentence": "Uncle FrizzleBob's Exit flips the table, goes outside, and you're still old.",
+      "subject": "Uncle FrizzleBob's Exit",
+      "powerCue": "Flip the table",
+      "loreCue": "You're still old",
+      "source": {
+        "power": "Resign: Flip the table. Go outside. Play outside.",
+        "lore": "Game Over. You're still old. Go home.",
+        "artworkPrompt": "Style: cartoon exit watercolor. Subject: FrizzleBob rabbit walking away waving BYE with ghost blob trailing behind. Mood: triumphant surrender."
+      },
+      "sourceTransform": "CONDENSED_EDITORIAL_UTTERANCE_NOT_VERBATIM",
+      "editorialVerdict": "PENDING_GEORG_RULE1",
+      "visualStatus": "PROMPT_SOURCE_ONLY",
+      "noNewCardLore": true
+    }
+  ],
+  "checks": {
+    "selected": 13,
+    "allTitlesExact": true,
+    "allPowerCuesSourceExact": true,
+    "allLoreCuesSourceExact": true,
+    "cuesTwoToThreeWords": true,
+    "oneGrammaticalSentencePerCard": true,
+    "sourceAscending": true,
+    "under5000": true,
+    "sourceFieldsKeptSeparate": true
+  },
+  "acceptance": {
+    "quality": "PENDING_GEORG",
+    "audition": "UNGENERATED",
+    "noLivePromotion": true,
+    "noSecondRuntime": true
+  },
+  "nextGate": "KFB_WRINKLE_RUMBLE_ONE_SENTENCE_SUNO_PAIR_AUDITION_R1"
+}
