@@ -1,4 +1,13 @@
 # Clown ideology: eight exact pool Triplets
+
+## 2026-10-12 · EDITORIAL FAIL OVERRIDE / DO NOT SEND AS APPROVED COMEDY
+
+Georg explicitly rejected source `clown.consensus.01` ("Everybody agrees / until somebody acts / volunteer?") as generic cliché and diffusion-of-responsibility slop. The previous eight-beat set includes that exact line and is now `CREATIVE_GATE_BLOCKED` pending ChatterBox content curation. **The source-extraction checks remain valid; they were never a comedy PASS.** Preserve all 58 original spoken words below unmodified as **negative evaluation material**. Do NOT send this sequence to Suno as an endorsed performance, promote any of its entries or invent bridge text to save it.
+
+Read `CHATTERBOX_POOL_RULE1_EDITORIAL_FAIL_REVIEW_R0_1_2026-10-12.md` and `data/CHATTERBOX_POOL_RULE1_SOURCE_AUDIT_R0_1_2026-10-12.json`. Other entries are assistant-flagged for review, not additional Georg FAIL verdicts. One next content gate `KFB_CHATTERBOX_POOL_RULE1_EDITORIAL_CURATE_R1`, no new runtime or Site.
+
+---
+
 Date: 2026-10-12
 Status: AUTHORING_CANDIDATE. Manual ordering only, no kernel execution or audio PASS.
 
