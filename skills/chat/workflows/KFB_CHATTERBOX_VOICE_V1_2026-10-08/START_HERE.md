@@ -1,5 +1,14 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## POOL QUALITY RECOVERY · 2026-10-12 · RULE1
+
+Georg directly rejected the actual ChatterBox Studio candidate Triplet `clown.consensus.01` ("Everybody agrees / until somebody acts / volunteer?") as responsibility-diffusion, cliché and generic AI slop. The **eight-Triplet pure-pool stand-up script is now `CREATIVE_GATE_BLOCKED`**, though its source-validation checks were correct. **Do not use the 58-word test sequence as accepted Suno script.** Original donor `resident-chat-ensemble-data.mjs` still has 20 candidate entries, only one expressly human-failed by Georg; the other 19 carry assistant triage notes, not fabricated Georg verdicts. Read `CHATTERBOX_POOL_RULE1_EDITORIAL_FAIL_REVIEW_R0_1_2026-10-12.md` and `data/CHATTERBOX_POOL_RULE1_SOURCE_AUDIT_R0_1_2026-10-12.json` before any further Triplet comedy use. No new pool owner, kernel patch, runtime or Site.
+
+One next ChatterBox CONTENT gate: `KFB_CHATTERBOX_POOL_RULE1_EDITORIAL_CURATE_R1` (real character/scene context and human RULE1, no synonym repairs), without blocking other Voice/World production.
+
+---
+
+
 ## HUMAN EDITORIAL FAIL OVERRIDE 2026-10-12
 
 Georg has rejected the assistant's previously authored Clown scripts (R0.1, R0.2, first-take R1) as unfunny generic writing. This is NOT a failure verdict on Suno Speech or the prompt-first method. Read `POSTMORTEM_ASSISTANT_WRITTEN_CLOWN_COMEDY_RULE1_FAIL_2026-10-12.md` and `data/SUNO_CLOWN_EDITORIAL_FAIL_NEGATIVE_GOLDEN_2026-10-12.json` before using earlier candidate manifests. They are quarantined regardless of their original candidate statuses. Stop rewriting the same inspector gag. No generated audio exists for the failed scripts. One next editorial gate: `KFB_SUNO_EDITORIAL_SOURCE_RESET_R1`, actual human RULE1 quality check of a new source-specific premise before Suno generation. Previous voice/world gates remain separate.
