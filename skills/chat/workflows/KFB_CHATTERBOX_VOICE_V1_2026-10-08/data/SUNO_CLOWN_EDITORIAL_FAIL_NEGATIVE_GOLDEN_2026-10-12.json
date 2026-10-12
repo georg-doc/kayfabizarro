@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.editorial-negative-golden/1",
+  "verdict": "HUMAN_FAIL",
+  "date": "2026-10-12",
+  "reviewScope": "Assistant-authored editorial Clown stand-up writing only",
+  "excludedScope": [
+    "Suno Speech model quality",
+    "Any actually rendered Suno audio",
+    "Prompt-first method itself",
+    "Original user-supplied Foucault/Deleuze/Derrida Suno experiment",
+    "Separate parallel NPC scripts without Georg verdict"
+  ],
+  "rule1": "No AI Quirk. No Meme Logic. No Filler.",
+  "negativeGolden": true,
+  "doNotPromoteOrGenerateFromTheseScripts": true,
+  "originals": [
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/SUNO_SPOKEN_MUSIC_PILOT_R0_1.json",
+      "sourceBlob": "75eef685f7c0a2a693851e900d4e001f962443d4",
+      "editorialVerdict": "FAIL"
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/SUNO_SPOKEN_MUSIC_PILOT_R0_2.json",
+      "sourceBlob": "71288a53933721494c5aae2e41480dd551490fab",
+      "editorialVerdict": "FAIL"
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/SUNO_SPEECH_CLOWN_FIRST_TAKE_R1_2026-10-12.json",
+      "sourceBlob": "7b1c74fba2976072a1d14d0b41e53889167f9e90",
+      "editorialVerdict": "FAIL"
+    }
+  ],
+  "affectedUnstoredPrompt": "Earlier assistant-authored single prompt repeating same inspector premise is tainted as creative seed, not evidence of failure of prompt-first Suno generation.",
+  "originalFilesIntact": true,
+  "previousStructureChecks": "MECHANICAL_ONLY_NOT_HUMOR_EVIDENCE",
+  "audioGenerationForThisFamily": 0,
+  "postmortem": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/POSTMORTEM_ASSISTANT_WRITTEN_CLOWN_COMEDY_RULE1_FAIL_2026-10-12.md",
+  "recovery": "Keep exact written outputs as negative examples and override their old authoring-ready fields via this receipt and owner Return. Do not delete or rewrite artifacts, do not reinterpret as Suno audio failure.",
+  "userNextGate": "KFB_SUNO_EDITORIAL_SOURCE_RESET_R1"
+}
