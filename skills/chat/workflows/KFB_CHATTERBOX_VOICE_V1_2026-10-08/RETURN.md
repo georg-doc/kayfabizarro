@@ -1,5 +1,24 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · KFB TRIPLETS FIRST USER INVOCATION · 1001 KAYFABE NIGHTS THREE-CARD SUNO CANDIDATE
+
+**Outcome:** Georg invoked the new private `KFB Triplets` authoring plugin with source JSON `media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json` and KFB Production Control. Authenticated GitHub fetch pinned his explicit original commit `34102e8bec6ae76e5b2e8de1f1c2a6abb4f4bd1c` to source blob `c5b6719d6a0612f227615d9917bbfbb45563f45d`, identical to current default-branch source at composition time. Registry deck ID `1001_kayfabe_nights`, exact 60 original Card records.
+
+**Content:** focused THREE_CARD source-ordered narrative #5 `SHAHRYĀR, THE DESTROYER` → #6 `SCHEHERAZADE, THE UNENDING` → #7 `DUNYAZAD, THE HYPE WOMAN`, Uncle FrizzleBob as editorial narrator, comic/deadpan. One Card-derived English sentence per Card, real title/POWER/LORE anchors, two explicitly editorial cause/cost Bridges, `Stay Fluffy!` final spoken line. Exact copy-ready **Suno Lyrics 735 Unicode codepoints / Style 364** in `KFB_1001_KAYFABE_NIGHTS_5_6_7_FRIZZLEBOB_TRIPLETS_SUNO_R1_2026-10-13.md`. Not full-deck coverage, not a 4-quadrant verified PDF page; no visual art source/object displayed. SOURCE_VERIFIED / EDITORIAL_CANDIDATE, NOT HUMAN ACCEPTED.
+
+**Actual proof:** 17/17 in-chat deterministic source/registry/content checks PASS, exact branch-head and file readback after candidate GitHub content milestone `a8cd8e140edc5d179dd582520fc8bfc072c59f9c`. GitHub changelog commit followed and was read back; final Return commit/branch head must be fetched after this update. Exact Markdown saved/read in authenticated Production Control Inbox file ID `dbfebcb9-d24b-41b6-a842-c9d5d93985a6`. Original cards and active audio preview file are **unchanged**.
+
+**Integration limitation discovered:** Existing Audio PR #365 `tools/KFB-ToolBox/audio/card-performance-self-service/card-performance.js` import code only accepts `wrinkle_rumble` via `deckId` hard gate. Thus this `1001_kayfabe_nights` content is **not** a functional import into current Audio Site and no fake supported draft was generated. This is a genuine later **multi-deck importer extension** if Georg wants in-Site preview; separately authorize and verify against the existing Audio owner, not a second player, Site or Work dependency.
+
+**Protected:** Existing Audio Site Source 0.6.0/v9, Voice preview feed `audio-site-preview-r3-card-11-tune`, Card11 human dry/D gate, Audio PR #365, Voice PR #379 draft state. No Suno upload/generation, no paid credits, audio listening/DRY/D A/B, exact Site browser test or deployment, new feed revision, Cloudflare, PR merge or Live; count for those tests/operations **0**.
+
+**Repo/PR:** `georg-doc/kayfabizarro`, Voice Draft PR #379, branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`. No new PR.
+
+**Exactly one next gate:** `GEORG_1001_5_6_7_SUNO_SCRIPT_KEEP_TUNE_CUT_R1`: Georg tries/pastes the two fields into Suno and returns KEEP/TUNE/CUT on writing/performance before 60-card scaling or any separately authorized Audio multi-deck importer work.
+
+---
+
+
 ## 2026-10-12 · PRIVATE KFB TRIPLETS COMPOSER PLUGIN CREATED · SOURCE VERIFIED
 
 **Outcome:** one private ChatGPT skills-only authoring plugin **KFB Triplets** was actually created (comparable workflow type to KFB Asset Scene Composer) at https://chatgpt.com/plugins/plugins_6accc59cff7481918f9113f65965335f. Backend ID `plugins_6accc59cff7481918f9113f65965335f`, version `0.1.0`, release `pluginrel_6accc59e6d348191a40a2bc74fe7537c`, USER PRIVATE. Five normalized files retrieved from Creator after release, all five skill/manifest text files mirrored *exactly* into current Voice branch `plugin/kfb-triplets/` with 5/5 verified post-write GitHub branch-head comparisons/file readbacks. Plugin ZIP (9,756 bytes, SHA256 `d55c3e02dad1452c8a77d7613380931bbb5e4117c889a17bf9ace3dcbd8de9c4`) available only in creation conversation; do not claim binary in GitHub.
