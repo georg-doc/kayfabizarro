@@ -41,3 +41,11 @@
 - No actual frames or source-isolated visual acceptance, no CI, Site/Stage, merge, Live or WorldBuilder R5. Parent research gate remains weather/SFX three-scenario source isolation, not superseded by optional plant design.
 
 **Disposition:** plant-owner routing correction documented; implementation/visual adoption **PENDING**.
+
+
+## 2026-10-12 · Wobbleflora Crazy-Cat pot + potless variant · source-owner routing refinement
+
+- Georg explicitly included **decorated potted Wobbleflora** as an equal alternative to previously proposed ground-rooted tubes. Style update: less small pattern noise and stronger Mexican-inspired/Crazy-Cat painted ceramic forms.
+- Original `PLANT_PROP_LAB_2026-09-18` owner project now carries a standalone art-direction brief, updated `START_HERE.md`, additive `CHANGELOG.md`, and new bounded `RETURN.md` on **the same Draft PR #389 branch**, without creating a new owner/branch/renderer.
+- Reused original S19 native `plant-pattern.js` register grammar/biome palettes and current `plant-recipe.js`, `plant-rig.js`, `plant-eyes.js` truth. Art-direction A/B is **candidate only**; no silently changed source shaders, motif thresholds or source asset registry, no new release.
+- World Lab concept now links back to owning Plant Lab art direction, preserving original Weather/SFX parent source-isolation gate unchanged. No P0/human gate or canonical public product URL changed; KFB Hub/router/Cloudflare therefore not updated.
