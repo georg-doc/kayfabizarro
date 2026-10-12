@@ -77,3 +77,13 @@ Status: **DOCUMENTATION ONLY**. Added `FLXRNC_MOTION_LAB_DONOR_AUDIT_2026-10-12.
 Newly executed browser motion captures: **0**; new code/FX imports: **0**; external source images/videos inspected: **0**; audio decoded/listened: **0**; actual test frames rendered: **0**; target-GPU/CI tests: **0**; Site/Stage: **0**. GitHub full file write-readback will be separately verified after each documentation write.
 
 **Single next gate remains:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT, incorporating frame-exact transition receipts in the existing owner; no World R5 authorization.
+
+## 2026-10-12 · Wobbleflora concept intake (documentation only)
+
+- New concept file: `WOBBLEFLORA_INFLATABLE_TUBE_PLANTS_CONCEPT_2026-10-12.md`.
+- Actually executed in-chat source-document contract assertions: **10/10 PASS**: name, user's idea, R5 guard, one AudioContext, current EyeRig donor route, La-Ola mode, source isolation, no public promotion, no SOURCES.json count change, preserved parent next gate.
+- Exact branch file readback after creation: **1/1 PASS**, new file text matched write; branch ref independently proved target commit even when PR head initially lagged, then PR head converged.
+- This is a textual/contract check, NOT a correctness test of Three.js skinning or any runnable animation.
+- **0** new browser renders, screenshots, actual 3D frames, speech/beat/wind data feed tests, source EyeRig-v6 isolation renders, measured draw calls/FPS, target mobile checks, QA/perf acceptance, Site/Stage or Live.
+- Existing 25-source research inventory and its previous 12/12 + 16/16 + 20/20 evidence are not altered.
+- The existing three-scenario source-isolation research gate remains the only current parent gate; Wobbleflora MVP is an optional separately authorized scenery candidate.
