@@ -1,0 +1,132 @@
+{
+  "schema": "kfb.nonmed-card-corpus-census/0.1",
+  "date": "2026-10-12",
+  "status": "GITHUB_SOURCES_READ_ONLY_NOT_CANONICAL_PROMOTION",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "registry": {
+    "path": "media/kfb/index.json",
+    "blob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+    "declaredDecks": 130,
+    "declaredCards": 6985
+  },
+  "scope": {
+    "medPrefixExcluded": 52,
+    "otherMedicalExcluded": 1,
+    "nonMedReviewed": 77,
+    "excludedDeckIds": [
+      "medkayfab_ancestral_medicine",
+      "medkayfab_biochemistry",
+      "medkayfab_cardiology",
+      "medkayfab_clinical_cases",
+      "medkayfab_differential_diagnosis",
+      "medkayfab_dentistry",
+      "medkayfab_dermatology_01",
+      "medkayfab_dermatology_02",
+      "medkayfab_diagnostic_tools",
+      "medkayfab_disease_timelines",
+      "medkayfab_emergency_medicine",
+      "medkayfab_endocrinology",
+      "medkayfab_gastrology",
+      "medkayfab_geriatrics",
+      "medkayfab_gross_anatomy",
+      "medkayfab_hematology",
+      "medkayfab_histology",
+      "medkayfab_hospital_hierarchy",
+      "medkayfab_immunology",
+      "medkayfab_internal_medicine",
+      "medkayfab_laboratory_medicine",
+      "medkayfab_microbiology_infectiology",
+      "medkayfab_neonatal_medicine",
+      "medkayfab_nephrology",
+      "medkayfab_neuroanatomy",
+      "medkayfab_neurology",
+      "medkayfab_nursing_care",
+      "medkayfab_obstetrics_gynaecology",
+      "medkayfab_oncology",
+      "medkayfab_ophthalmology",
+      "medkayfab_orthopedics_trauma",
+      "medkayfab_otolaryngology_ent",
+      "medkayfab_pathology",
+      "medkayfab_pediatrics",
+      "medkayfab_pharmacology_01",
+      "medkayfab_pharmacology_02",
+      "medkayfab_physiology",
+      "medkayfab_pneumology",
+      "medkayfab_psychiatry",
+      "medkayfab_rules_comic_01",
+      "medkayfab_science",
+      "medkayfab_surgery",
+      "medkayfab_the_bedside_ballet",
+      "medkayfab_thinking_traps",
+      "medkayfab_tropical_medicine",
+      "medkayfab_urology_01",
+      "medkayfab_urology_02",
+      "medkayfab_atomic_elements",
+      "medkayfab_essential_pharmacology",
+      "medkayfab_genetics",
+      "medkayfab_intensive_care_medicine",
+      "medkayfab_radiology",
+      "saboteur_sketchbook_medicine_history_psyops_add_"
+    ]
+  },
+  "observed": {
+    "readOk": 77,
+    "readErrors": [],
+    "declaredCardsSelected": 4119,
+    "actualCardsParsed": 4119,
+    "countMismatches": [],
+    "cardFieldCounts": {
+      "cardNumber": 3511,
+      "cardName": 3511,
+      "power": 4043,
+      "artworkPrompt": 4119,
+      "gradeReason": 4119,
+      "lore": 4001,
+      "num": 405,
+      "name": 608
+    },
+    "identityRule": "cardNumber else num else deterministic source ordinal. cardName else name. No fabricated cardNumber for missing."
+  },
+  "shards": [
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_01_2026-10-12.json",
+      "blob": "571ae56b3aa99a1d8b42bc090fc70b4cea9af627",
+      "recordCount": 14
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_02_2026-10-12.json",
+      "blob": "833682a97ae7fccc2cdee408b669ae0e99422aa6",
+      "recordCount": 14
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_03_2026-10-12.json",
+      "blob": "dbf826a26fc7d70dfa763e7bfe484932415249ef",
+      "recordCount": 14
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_04_2026-10-12.json",
+      "blob": "efaa6851c4ba1960e9b1c4dcf6996d0a0aba1396",
+      "recordCount": 14
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_05_2026-10-12.json",
+      "blob": "63c3d1ee28b6f093f3f136b938454bee7df3ed28",
+      "recordCount": 14
+    },
+    {
+      "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_SOURCE_SHARD_06_2026-10-12.json",
+      "blob": "9da3775d861dff88a4104bb97dbee68ce7d34073",
+      "recordCount": 7
+    }
+  ],
+  "boundaries": [
+    "These 77 source JSONs were fetched and their card fields counted, but visual artworks were NOT opened; artworkPrompt is a text field, not verified picture pixels.",
+    "Grade and gradeReason are existing source/editorial metadata, NOT proof of Georg KEEP or RULE1 quality.",
+    "Some cards are missing power or lore; don't synthesize absent fields. Some have no explicit number; source ordinal is a pointer, not original cardNumber.",
+    "KFB analog card powers are staged game actions; do not imply the digital world has implemented them.",
+    "Do not copy all 4119 texts into a second canonical corpus; read existing pinned JSONs on demand and store only source indexes/curated fragments.",
+    "Source-inspired CUT-UP may combine different cards, but must track exact excerpt and image-text opposition; never automatically shuffle unrelated aphorisms."
+  ],
+  "nextGate": "KFB_NONMED_CUTUP_TRIPLET_AUTHORING_PROOF_R1"
+}
