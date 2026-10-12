@@ -1,5 +1,18 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## ONE-CARD ONE-SENTENCE CORRECTION · 2026-10-12
+
+Georg clarified **Triplet on spoken NPC scale = ONE short sentence**, with `subject / connector / reframe` as internal semantic roles. The earlier 20 cardcut snippets `data/KFB_CARD_SOURCE_CUTUP_TRIPLET_POOL_R0_1_2026-10-12.json` were not valid sentences and are **FORMAL_FAIL_AS_SPOKEN_TRIPLET**, even though original excerpt attribution is valid. DO NOT use that set for audio, kernel or Quest.
+
+**New source-grounded pilot:** `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_SOURCE_PILOT_R0_1_2026-10-12.json`: seven real KFB cards in seven non-MED decks, one single utterance per card, 10/10 invariant checks prior to commit, 12/12 final review checks including conceptual scope, pending human RULE1 editorial verdict. Read `KFB_TRIPLET_FRACTAL_KING_QUEST_CONCEPT_CHECK_R0_1_2026-10-12.md` (correct source contracts; NOT general three-sentence instruction).
+
+**Fractal stage scale remains separate:** Town `LIVING_KFB_TOWN.md` §13.4 King Kayfabian quest: Actor/POV + three collected Scene Cards + 1 of 3 existing offered Quests → SHOW IT / SPIN IT / SELL IT → Quest/Endpanel + Social Calls/Closure. Each Scene Card may elicit ONE spoken Triplet sentence; the three-card larger quest is NOT a sentence and the three semantic roles are NOT three separately spoken lines. That game direction is documented design, NOT implemented/QA passed here.
+
+77 non-MED decks / 4119 original cards have been source-fetched and field-counted in six shards + consolidated census. PDF/comic artwork NOT inspected; `artworkPrompt` is text source only, do not infer verified pixels. Next gate: `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_RULE1_HUMAN_CHECK_R1`. No new runtime, Site/Stage, merge or Live.
+
+---
+
+
 ## ONE TRIPLET = ONE SENTENCE · CARD FIRST · 2026-10-12
 
 **Georg direct correction:** ChatterBox's semantic Triplet is **ONE spoken sentence** assembled from three roles `subject + connector + reframe`, not three independently spoken sentences. Staggered visual blocks do not change the sentence unit. The earlier proposed 3-fragment-per-card Cut&Play literalism is not accepted.
