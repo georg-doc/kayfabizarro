@@ -79,3 +79,12 @@ Georg proposed rhythmic, wind/beat/mood-reactive tubular cactus/plant/character 
 **GitHub check:** 13/13 conceptual owner/donor/boundary checks; exact post-write branch ref + file readback for each updated document. **0** actual rendered/accepted plants, **0** mobile/physics/audio/live tests, no site/public Stage, no deployment/merge. F-R39 FAIL / NO MVP / no R5 stays protected; no change to the 25-source VFX/SFX catalog or its test counts.
 
 **One current parent gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT. Wobbleflora first local optional gate after Plant Lab owner authorization: original v2 plant/EyeRig source in isolation → one actual tubelike plant using native motion seam, then the 3-plant LA-OLA. Georg action now: none.
+
+
+## Additive cross-owner reference · 2026-10-12 · Plant Lab Wobbleflora/Crazy-Cat pot motifs
+
+Georg clarified that decorative **potted** Wobbleflora and **ground-rooted** Wobbleflora are equal member variants of the existing **KFB Plant Prop Lab / Living Plants**, and that the pot patterns should be **less fine-grained and more bold, Mexican-inspired/Crazy-Cat ceramic**. Exact owning art-direction brief: `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/WOBBLEFLORA_CRAZY_CAT_POT_STYLE_DIRECTION_2026-10-12.md`; Plant Lab START_HERE, CHANGELOG and RETURN updated additively on this existing Draft PR #389. This World Lab branch is a document carrier, **not** a new Plant authoring/runtime owner.
+
+Original S19 register grammar is already implemented in `plant-pattern.js` with 3–10 loud motifs, biome palettes and contrast gates; the proposed 3–5 enlarged hero motifs and calm secondary registers are **visual trial candidates**, not code changes or PASS. Existing `plant-recipe.js` only builds containers; potless variant is a separate future receiving-owner adapter, **NOT BUILT**. Native rig/EyeRig remain current donors. No rendered source isolation, browser QA, asset import, new Stage/Site, merge/Live or R4/R5.
+
+**World Lab single parent gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT. Distinct optional Plant Lab next gate: PPL POT-MACRO SOURCE A/B, when separately authorized.
