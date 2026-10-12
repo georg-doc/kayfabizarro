@@ -1,4 +1,15 @@
 ## CURRENT CARD PERFORMANCE RECOVERY · 2026-10-12 · 48-CARD WRINKLE / STAY FLUFFY / BRIDGE SIDE-CAR
+## PLUGIN ROUTE · 2026-10-12 · KFB TRIPLETS PRIVATE v0.1.0 CREATED
+
+**KFB Triplets** is a newly created **private skills-only authoring plugin**, analogous in pattern to KFB Asset Scene Composer, not another ChatterBox, GitHub registry or Audio runtime. Personal plugin URL: https://chatgpt.com/plugins/plugins_6accc59cff7481918f9113f65965335f ; Creator release `pluginrel_6accc59e6d348191a40a2bc74fe7537c`. Portable source manifests/skill/references are mirrored under `plugin/kfb-triplets/` in this **existing Voice owner** (five file exact post-write readbacks). Creation/release verified; installation/first user invocation not yet verified.
+
+Read `KFB_TRIPLETS_PLUGIN_R1_CREATION_TEST_REPORT_2026-10-12.md` and the actual plugin `skills/compose-card-performance/SKILL.md`. Source smoke against original Wrinkle card data and existing Audio draft importer: **20/20 checks PASS**. First 17→18→19 Suno plain-text candidate `KFB_TRIPLETS_PLUGIN_SMOKE_CARD_17_18_19_SUNO_R1_2026-10-12.md`: lyrics 541 characters, style 352, content not heard or Suno-generated. Existing automatic Audio Site preview feed is **unchanged r3**; human Card 11 DRY/D listening still open. New plugin must not bypass that gate or require Work for routine authoring.
+
+**Next single gate:** first user invocation of private KFB Triplets plugin and editorial choice of its output; then optional direct import into existing KFB Audio Voice Acting editor. No plugin MCP server, no direct Suno generation, no new Site/Stage/World runtime/merge/Live.
+
+---
+
+
 
 ## LATEST · 2026-10-12 · POST WORK · AUDIO SITE VERSION 9 / SAFE NEXT EDITOR IMPORT
 
