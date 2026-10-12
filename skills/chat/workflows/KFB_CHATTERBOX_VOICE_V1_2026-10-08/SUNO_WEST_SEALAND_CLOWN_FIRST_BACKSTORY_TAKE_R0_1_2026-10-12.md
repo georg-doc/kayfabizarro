@@ -1,4 +1,10 @@
 # Suno user-supplied take · West Sealand Clown backstory · Editorial R0.1
+
+## 2026-10-12 · PAIRING CORRECTION
+
+Georg clarified that Suno produces **two takes per prompt run**. This West Sealand text is **TAKE A**, paired with the Munich Philharmonic / lighthouse **TAKE B** from **the same reported prompt run**, saved verbatim in `SUNO_BACKSTORY_DUAL_TAKE_RUN_R0_1_2026-10-12.md`. Do not count as separate experiments or independent prompts. Neither actual audio nor exact input settings have been captured here; both remain noncanonical, not human-passed editorial source.
+
+
 Date: 2026-10-12
 Status: **ACTUAL USER-SUPPLIED SUNO TEXT / EDITORIAL TUNE / AUDIO NOT AUDITED**
 Owner: existing KFB ChatterBox / Voice authoring side-slice, Draft PR #379.
