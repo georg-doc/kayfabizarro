@@ -1,0 +1,88 @@
+{
+  "schema": "kfb.motion-to-video.source-manifest/1",
+  "status": "PREPARATION_ONLY",
+  "date": "2026-10-12",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "primary": "KFB ToolBox / existing MUSIC-PERF-01",
+    "parentPr": 207,
+    "parentHead": "aef93c2521a0818318e0810752f065727c1e5622",
+    "baseToolboxPr": 185,
+    "prepBranch": "planning/kfb-motion-to-video-prep-r1-2026-10-12"
+  },
+  "source": {
+    "recipe": "../performance-recipe.json",
+    "recipeSchema": "kfb.resident-performance.v1",
+    "donorMetadata": "../donor/orb_module_source.json",
+    "model": "../donor/orb_band_module_v5.glb",
+    "modelGitBlob": "446b044ed7c68bf877afc0f456f0aa87cc390b46",
+    "metadataGitBlob": "35de1a9d6138b0a27b61f07056f26970ac56dada",
+    "id": "orb-kayfabizarros-band",
+    "version": "v5",
+    "isolatedVisualProofRequired": true
+  },
+  "audio": {
+    "owner": "MUSIC-PERF-01 existing single song transport; future AV output consumes existing KFB Audio",
+    "song": "../audio/rubbish_groove.mp3",
+    "songGitBlob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+    "bpm": 100,
+    "phaseOffsetSec": 0.465,
+    "videoAudioStartSec": 0.465,
+    "videoAudioEndSec": 8.465
+  },
+  "capture": {
+    "durationSec": 8,
+    "frameRate": 30,
+    "frameCount": 240,
+    "width": 1280,
+    "height": 720,
+    "mode": "performance",
+    "endExclusive": true
+  },
+  "performers": [
+    {
+      "id": "leader",
+      "action": "bounce",
+      "cycleBeats": 8,
+      "humanResult": "PASS",
+      "enabled": true
+    },
+    {
+      "id": "guitarist",
+      "action": "strum",
+      "cycleBeats": 1,
+      "humanResult": "PASS",
+      "enabled": true
+    },
+    {
+      "id": "drummer",
+      "action": "drum",
+      "cycleBeats": 2,
+      "humanResult": "HOLD",
+      "enabled": false
+    }
+  ],
+  "reusedModules": [
+    "../music-performance-01.js",
+    "../performance-recipe.json",
+    "../donor/orb_module_source.json",
+    "../audio/rubbish_groove.mp3",
+    "../donor/orb_band_module_v5.glb"
+  ],
+  "noNewOwners": [
+    "audio transport",
+    "motion library",
+    "threejs renderer",
+    "resident affect",
+    "dialogue",
+    "world runtime"
+  ],
+  "proof": {
+    "realFrames": 0,
+    "realVideos": 0,
+    "realMuxes": 0,
+    "browserCaptureTests": 0,
+    "sitePublishes": 0,
+    "humanExportAcceptance": false
+  }
+}
