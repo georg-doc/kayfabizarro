@@ -83,7 +83,11 @@
       "scriptStatus": "REUSE_PRIOR_AUTHORING_CANDIDATE",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "TECHNICAL_SUNO_SPEECH_BETA_AUDIO_BENCH_ONLY",
+      "metaComedyWritingEligible": false,
+      "metaComedyWritingPriority": null,
+      "routingNote": "Clown is an existing SCRIPT_FIRST technical voice/mix fixture ONLY; do not reuse or paraphrase in separate meta-comedy chat."
     },
     {
       "id": "meta.02.king-booking",
@@ -115,10 +119,15 @@
         "SILENCE_OR_ACTION"
       ],
       "linkedTripletPoolPolicy": "WRITER_ONLY_CAUSAL_BEAT_IDS; preserve existing subject/connector/reframe and valid silence",
-      "scriptStatus": "NOT_WRITTEN",
+      "scriptStatus": "PLAIN_TEXT_SCRIPT_FIRST_R0_1_AUTHORING_CANDIDATE",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 1,
+      "copyPastePath": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/SUNO_META_KING_KAYFABIAN_COPY_PASTE_R0_1_2026-10-12.md",
+      "humanComedyVerdict": "PENDING"
     },
     {
       "id": "meta.03.driver",
@@ -151,7 +160,10 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 5
     },
     {
       "id": "meta.04.demon-party",
@@ -184,7 +196,10 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 6
     },
     {
       "id": "meta.05.monstrosity",
@@ -217,7 +232,10 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 3
     },
     {
       "id": "meta.06.protopia-farm",
@@ -250,7 +268,10 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 4
     },
     {
       "id": "meta.07.lorekeeper",
@@ -284,7 +305,10 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 2
     },
     {
       "id": "meta.08.fluff-oversight",
@@ -317,10 +341,43 @@
       "scriptStatus": "NOT_WRITTEN",
       "contentVerdict": "PENDING_EDITORIAL_RULE1",
       "audioVerdict": "NOT_GENERATED_OR_TESTED",
-      "noCanonPromotion": true
+      "noCanonPromotion": true,
+      "assignmentLane": "META_NPC_STANDUP_CONTENT_WRITING",
+      "metaComedyWritingEligible": true,
+      "metaComedyWritingPriority": 7
     }
   ],
   "researchPointer": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/SUNO_SPEECH_BETA_RESEARCH_FINDINGS_AND_TASK_R1_2026-10-12.md",
   "parallelChatPointer": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md",
-  "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1"
+  "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1",
+  "routingCorrection": {
+    "date": "2026-10-12",
+    "authority": "Georg directly objected to duplicated Clown sketch across two parallel chats",
+    "reason": "old onboarding mistakenly recommended reusing existing Clown first in both technical Suno beta audio testing and separate meta-comedy authoring",
+    "technicalAudioBenchmark": {
+      "episodeId": "meta.01.clown",
+      "allowed": true,
+      "purpose": "single first technical Speech Beta listening fixture; existing original Clown R0.2 and R1",
+      "nextGate": "KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1"
+    },
+    "metaComedyWriting": {
+      "doNotReuseClown": true,
+      "preferredFirstEpisodeId": "meta.02.king-booking",
+      "firstPlainTextPromptFile": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/SUNO_META_KING_KAYFABIAN_COPY_PASTE_R0_1_2026-10-12.md",
+      "writingQueue": [
+        "meta.02.king-booking",
+        "meta.07.lorekeeper",
+        "meta.05.monstrosity",
+        "meta.06.protopia-farm",
+        "meta.03.driver",
+        "meta.04.demon-party",
+        "meta.08.fluff-oversight"
+      ],
+      "nextAction": "Edit/audition a genuinely different King Kayfabian plain-text set; subsequent scripts need distinct source conflicts, stakes, reversals, callbacks"
+    },
+    "sunoDelivery": "PASTE_READY_PLAIN_TEXT; separate script and style blocks; JSON metadata optional, never sole output",
+    "contentGate": "RULE1 editorial, not a synthetic automatic comedy PASS",
+    "ownerUnchanged": true,
+    "noNewRuntime": true
+  }
 }
