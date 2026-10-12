@@ -1,0 +1,391 @@
+{
+  "schema": "kfb.chatterbox.rule1-pool-editorial-audit/0.1",
+  "date": "2026-10-12",
+  "owner": "Existing ChatterBox content; Voice PR #379 holds only consumer preparation",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+    "path": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/triplet-stage/donor/resident-chat-ensemble-data.mjs",
+    "blobSha": "cf975a72637630d97fc626962ef591b356ce0bbf",
+    "sourceSchema": "kfb.semantic-triplet-pool/0.1-candidate",
+    "sourceStatus": "AUTHORING_CANDIDATE",
+    "originalEntries": 20
+  },
+  "explicitHumanFeedback": {
+    "tripletId": "clown.consensus.01",
+    "verdict": "FAIL",
+    "quote": [
+      "Everybody agrees",
+      "until somebody acts",
+      "volunteer?"
+    ],
+    "analysis": "Responsibility diffusion/general 'everybody', no named chooser or concrete cost, cliché action vs words and an unearned volunteer plea"
+  },
+  "editorialBoundary": {
+    "noOtherUserVerdictImputed": true,
+    "assistantFlagsNotHumanFails": true,
+    "fullPoolNotAutomaticallyRejected": true,
+    "sourceUnchanged": true,
+    "previousEightBeatSequence": "CREATIVE_GATE_BLOCKED",
+    "structuralSourcePassStillTrue": true,
+    "sourceApprovalNotClaimed": true,
+    "noNewCanonicalPool": true,
+    "notAnAutomatedHumorTest": true
+  },
+  "editorialHeuristic": "Original source bytes and 3-part grammar are valid but not proof of situational comedy; require actor/scene-specific stakes, visible action, causality and a non-template reframe before spending Suno credits or admitting to accepted speech.",
+  "entries": [
+    {
+      "tripletId": "core.frame.01",
+      "signatureOf": [],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Nothing changed",
+        "except the frame",
+        "everything changed"
+      ],
+      "riskCode": "ABSTRACT_FRAME",
+      "riskNote": "Change of viewpoint asserted, but no actual frame/observation",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "core.witness.01",
+      "signatureOf": [],
+      "relation": "ESCALATION",
+      "sourceParts": [
+        "One witness",
+        "after three retellings",
+        "sounds like a crowd"
+      ],
+      "riskCode": "PARTIAL_MECHANISM",
+      "riskNote": "Retelling escalation is legible, but witness, claim and consequence absent",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "core.rule.01",
+      "signatureOf": [],
+      "relation": "COLLISION",
+      "sourceParts": [
+        "Beautiful rule",
+        "until somebody uses it",
+        "new rule"
+      ],
+      "riskCode": "GENERIC_RULE",
+      "riskNote": "A hypothetical rule changes without a specific actor using it",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "core.applause.01",
+      "signatureOf": [],
+      "relation": "MISFIT",
+      "sourceParts": [
+        "Easy applause",
+        "before the thing lands",
+        "expensive silence"
+      ],
+      "riskCode": "PARTIAL_STAGE",
+      "riskNote": "Promising silence/impact rhythm, but 'thing' is not sourced to action",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "lorekeeper.provenance.01",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "relation": "ESCALATION",
+      "sourceParts": [
+        "You heard it",
+        "from someone who heard it",
+        "now it sounds witnessed"
+      ],
+      "riskCode": "SOURCELESS_CHAIN",
+      "riskNote": "Generic rumor chain, no traceable witness",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "lorekeeper.provenance.02",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Same story",
+        "different witness",
+        "different fact"
+      ],
+      "riskCode": "UNPROVEN_FACT_CHANGE",
+      "riskNote": "Asserts different fact without an actual conflicting account",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "lorekeeper.provenance.03",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "relation": "MISFIT",
+      "sourceParts": [
+        "Two memories",
+        "one missing source",
+        "excellent theatre"
+      ],
+      "riskCode": "GENERIC_META_PUNCH",
+      "riskNote": "'excellent theatre' does not expose a particular source failure",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "lorekeeper.unknown.01",
+      "signatureOf": [
+        "lorekeeper"
+      ],
+      "relation": "SYNERGY",
+      "sourceParts": [
+        "Good question",
+        "no witness",
+        "still a question"
+      ],
+      "riskCode": "TAUTOLOGY",
+      "riskNote": "Question remains question; no progression or cost",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "gothgirl.performance.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "relation": "MISFIT",
+      "sourceParts": [
+        "Perfect performance",
+        "until you explained it",
+        "now it has instructions"
+      ],
+      "riskCode": "GENERIC_MOTTO",
+      "riskNote": "Explanation ruins performance trope without witnessed scene",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "gothgirl.performance.02",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "relation": "SYNERGY",
+      "sourceParts": [
+        "The mistake",
+        "survived the polish",
+        "keep that"
+      ],
+      "riskCode": "GENERIC_MOTTO",
+      "riskNote": "Writing advice rather than a character-caused event",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "gothgirl.applause.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "relation": "MISFIT",
+      "sourceParts": [
+        "Everybody cheered",
+        "before it landed",
+        "interesting"
+      ],
+      "riskCode": "FILLER_LANDING",
+      "riskNote": "'interesting' is an empty reframe absent a concrete response",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "gothgirl.silence.01",
+      "signatureOf": [
+        "goth-girl"
+      ],
+      "relation": "COLLISION",
+      "sourceParts": [
+        "Room went quiet",
+        "right on the ugly part",
+        "play that again"
+      ],
+      "riskCode": "PARTIAL_STAGE",
+      "riskNote": "Silence and replay are stageable but 'ugly part' ungrounded",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "clown.stage.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "relation": "ESCALATION",
+      "sourceParts": [
+        "Big claim",
+        "one small stage",
+        "your turn"
+      ],
+      "riskCode": "EMPTY_PROMPT",
+      "riskNote": "'Big claim' unspecified; 'your turn' shifts task to listener",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "clown.consensus.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "relation": "ESCALATION",
+      "sourceParts": [
+        "Everybody agrees",
+        "until somebody acts",
+        "volunteer?"
+      ],
+      "riskCode": "USER_RULE1_FAIL",
+      "riskNote": "'Everybody' hides responsibility, no decision or cost, generic action-talk cliché; 'volunteer?' unearned",
+      "humanVerdict": "FAIL_GEORG",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "clown.theory.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Excellent theory",
+        "for one round",
+        "hold this"
+      ],
+      "riskCode": "EMPTY_THEORY",
+      "riskNote": "No concrete theory, test or playable object",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "clown.authority.01",
+      "signatureOf": [
+        "clown"
+      ],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Important person",
+        "same cheap stool",
+        "continue"
+      ],
+      "riskCode": "UNMOTIVATED_STATUS",
+      "riskNote": "'important person' and stool have no witnessed interaction",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "witch.variable.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Same story",
+        "one ingredient missing",
+        "different creature"
+      ],
+      "riskCode": "PARTIAL_MECHANISM",
+      "riskNote": "Missing ingredient makes different creature, but no actual ingredient/creature identity",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "witch.dose.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "relation": "CATEGORY_SHIFT",
+      "sourceParts": [
+        "Strong cause",
+        "only at this dose",
+        "so it has a dosage"
+      ],
+      "riskCode": "TAUTOLOGY",
+      "riskNote": "A cause limited by dose means dosage; tautological conclusion",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "witch.falsifier.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "relation": "MISFIT",
+      "sourceParts": [
+        "Strong belief",
+        "without a stopping condition",
+        "untested ingredient"
+      ],
+      "riskCode": "PARTIAL_MECHANISM",
+      "riskNote": "Falsification concept, but no specific belief or falsifying condition",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    },
+    {
+      "tripletId": "witch.substitution.01",
+      "signatureOf": [
+        "witch"
+      ],
+      "relation": "SYNERGY",
+      "sourceParts": [
+        "Same result",
+        "with the source swapped",
+        "interesting cause"
+      ],
+      "riskCode": "EMPTY_CAUSAL_TEST",
+      "riskNote": "Swapped source but no real source, result, or affected choice",
+      "humanVerdict": "NOT_REQUESTED_OTHER_IDS",
+      "assistantTriage": "EDITORIAL_REVIEW_REQUIRED",
+      "runtimeEligibleUnknown": true,
+      "canAutoPromote": false
+    }
+  ],
+  "nextGate": "KFB_CHATTERBOX_POOL_RULE1_EDITORIAL_CURATE_R1"
+}
