@@ -69,3 +69,39 @@ Source inspection: upstream README, package.json, AGENTS, LICENSING, 3D-Layers, 
 ## Wiedervorlage · 2026-10-12
 
 **QUEUED / DEFERRED — executor not started.** Georg requested durable follow-up, not immediate external Editor deployment. Recover this exact briefing when Claude Code or WSA Work is available for isolated original MasterSelects UI/MCP/persistence testing. Keep it separate from KFB runtime integration and from the parallel semantic material-family Reddit donor research (`KFB_SEMANTIC_MATERIAL_FAMILY_CITY_ASSET_DONOR_2026-10-12.md`). Avoid interpreting `READY_FOR_INTEGRATION` in an intake as product/runtime acceptance; this is a ready-to-test **research briefing only**. Execute after explicitly routing the agent tool with a supported Node/browser environment. No scheduled date or notification was requested.
+
+
+---
+
+## EXECUTED · 2026-10-12 · Claude Code (local macOS)
+
+The Wiedervorlage above is **closed**. `MASTERSELECTS_SOURCE_ISOLATED_AGENT_BRIDGE_PROOF_01` and follow-up `MASTERSELECTS_3D_RASTER_READBACK_ENV_PROOF_02` were executed; the original briefing remains preserved above.
+
+| Gate | Result |
+|---|---|
+| SOURCE_ISOLATED | PASS |
+| GRAPH_SCENE | **FAIL** — environment-scoped 3D raster failure on Apple M4 / Chrome 147 |
+| MCP_CONTROL | PASS |
+| PERSISTENCE | PASS |
+| LICENSE_BOUNDARY | PASS |
+| KFB_OWNER_PROTECTION | PASS |
+
+Upstream pin stayed byte-exact and unmodified: `Sportinger/MasterSelects@db912a05028eada21d37ec76d5317a36de865af2`, v3.1.8, AGPL-3.0-only. Tests against that pin: `test:security` 118/118, `test:kernel-boundary` 42/42, plus `mcp:smoke` PASS for 12 control tools.
+
+**Accepted research finding: ADAPT PATTERN.** Reimplement the proven control pattern natively in KFB — one state owner, policy-gated tools, dry run, explicit confirmation, idempotency keys, entity-diff audit, reversible operations and durable fresh-reload persistence. **DIRECT CODE REUSE remains unauthorized**. **EXTERNAL TOOL for 3D is conditional** because no 3D raster output was produced in the tested environment.
+
+Important QA carry-forward: the donor's golden-fixture helpers can report `failures: []` while every frame is blank. KFB visual checks must distinguish “tool completed” from “expected visible output exists”.
+
+Checked-in records:
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_KLARTEXT_2026-10-12.md`
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_RETURN_2026-10-12.md`
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_GATE_02_RESULT_2026-10-12.md`
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_TEST_REPORT_2026-10-12.md`
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_SOURCE_2026-10-12.json`
+- `skills/chat/research/KFB_MASTERSELECTS_PROOF_01_EVIDENCE_2026-10-12/README.md`
+
+Original screenshots/raw measurements remain immutable in the uploaded ToolBox Inbox packet; they are indexed, not duplicated.
+
+No KFB runtime write, no second owner, no Site/Stage publication, no merge and no Live promotion.
+
+**Next gate: MASTERSELECTS_3D_UPSTREAM_ISSUE_CONFIRMATION_03** — report the exact reproduction upstream and ask whether Apple Silicon / Chrome 147 is expected to work, or confirm on a second GPU/OS. External clarification only; no KFB engineering slice.

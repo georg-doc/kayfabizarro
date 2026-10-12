@@ -1,0 +1,76 @@
+{
+  "proof": "MASTERSELECTS_SOURCE_ISOLATED_AGENT_BRIDGE_PROOF_01",
+  "executedAt": "2026-10-12",
+  "executor": "Claude Code (local macOS)",
+  "mode": "RESEARCH / source-isolated donor evaluation",
+  "kfb": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/hybrid-baked-clay-texture-architecture-2026-10-07",
+    "headAtRead": "1128054cbcb7eac7e861a8d14ffd20533df0ac13",
+    "headReVerifiedLiveAfterRun": "1128054cbcb7eac7e861a8d14ffd20533df0ac13",
+    "headCommitSubject": "docs(research): mark MasterSelects isolated proof for Wiedervorlage",
+    "writes": 0,
+    "localCommitsAheadOfOrigin": 0,
+    "pushes": 0,
+    "merges": 0,
+    "sitePublications": 0,
+    "stagePublications": 0,
+    "livePromotions": 0
+  },
+  "upstreamDonor": {
+    "repo": "Sportinger/MasterSelects",
+    "pinnedCommit": "db912a05028eada21d37ec76d5317a36de865af2",
+    "pinReVerifiedLive": "db912a05028eada21d37ec76d5317a36de865af2 (refs/heads/master)",
+    "version": "3.1.8",
+    "license": "AGPL-3.0-only",
+    "trackedFilesModified": 0,
+    "codeCopiedIntoKFB": 0
+  },
+  "environment": {
+    "os": "macOS 26.6.2 (Darwin 25.6.0, build 25G83)",
+    "cpu": "Apple M4",
+    "memoryGB": 24,
+    "node": "v24.16.0 (matches upstream engines requirement 24.16.0)",
+    "npm": "11.13.0",
+    "vite": "7.3.6",
+    "browser": "Google Chrome via Playwright 1.63.0 channel=chrome, headed, CDP 9222",
+    "gpu": "WebGPU available, adapter vendor=apple architecture=metal-3",
+    "storageBackend": "OPFS (browser-local project repository)",
+    "hostedKernel": "unavailable by design (credits badge FREE 0; /api/* worker on :8788 not started)"
+  },
+  "gates": {
+    "SOURCE_ISOLATED": "PASS",
+    "GRAPH_SCENE": "FAIL",
+    "MCP_CONTROL": "PASS",
+    "PERSISTENCE": "PASS",
+    "LICENSE_BOUNDARY": "PASS",
+    "KFB_OWNER_PROTECTION": "PASS"
+  },
+  "nextGate": "MASTERSELECTS_3D_UPSTREAM_ISSUE_CONFIRMATION_03",
+  "gate02": {
+    "id": "MASTERSELECTS_3D_RASTER_READBACK_ENV_PROOF_02",
+    "question": "Is the blank 3D readback an artifact of the Playwright/CDP-driven browser?",
+    "answer": "No. Hypothesis refuted.",
+    "armA": {
+      "launch": "Playwright 1.63 channel=chrome",
+      "flags": "instrumented, incl. --enable-unsafe-swiftshader",
+      "adapter": "apple/metal-3",
+      "webgl": "ANGLE Metal Renderer: Apple M4",
+      "universal3dFixture": "blank at t=0,1,2 (hash 1f116dc5)"
+    },
+    "armB": {
+      "launch": "Chrome binary launched directly",
+      "flags": "--remote-debugging-port --user-data-dir --no-first-run --no-default-browser-check",
+      "chrome": "147.0.7727.102",
+      "adapter": "apple/metal-3",
+      "webgl": "ANGLE Metal Renderer: Apple M4",
+      "universal3dFixture": "blank at t=0,1,2 (hash 1f116dc5)"
+    },
+    "positiveControl": {
+      "fixture": "runWorkerFirstSolidTextImageGoldenFixture",
+      "result": "nonBlankRatio 1, meanLuma 58.19, hash 7a5c08a9 at t=0.5 and t=1 on a freshly reloaded renderer"
+    },
+    "additionalFinding": "The 3D fixture suppresses otherwise-working 2D output in the same composition, and leaves the renderer degraded for subsequent 2D runs.",
+    "osScreenshot": "unavailable - screencapture denied (Screen Recording permission not granted)"
+  }
+}
