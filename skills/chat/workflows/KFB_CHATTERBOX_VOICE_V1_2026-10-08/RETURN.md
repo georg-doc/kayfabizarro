@@ -1,5 +1,13 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · USER MINIMAL SUNO PROMPT-FORM CORRECTION
+
+Georg clarified his actually used Suno Speech prompt to **only** a 55–65s spoken English stand-up request and a deep, gritty male cowboy Clown performer profile. The exact **410-codepoint input** is preserved without additions at `SUNO_PROMPT_FIRST_MINIMAL_ACTUAL_USER_PROMPT_R1_2026-10-12.md`. Unlike the earlier example, **no specific inspector situation, joke structure, scripted lines, music style, RULE1 instruction or callback was given**. Suno selected the premise in the user-reported test, but its output has not been supplied or audited. **Do not attach our failed assistant-written inspector material to this experiment.**
+
+Postmortem amended: **assistant's lazy, generic premise selection was the FIRST editorial failure**, later rewrites only hid it. Three assistant scripts remain negative-golden quarantined; this clarification does not fail Suno or the Prompt-first method. No new Suno audio/session/browser test/Stage/Live. Single observation gate for the actual reported user test: `KFB_SUNO_MINIMAL_PROMPT_TAKE_REVIEW_R1`, requiring real Suno text/audio before any quality verdict. Old script-repair gate remains frozen and should not be performed as a rewrite.
+
+---
+
 ## 2026-10-12 · EDITORIAL POSTMORTEM / HUMAN FAIL OVERRIDE
 
 Georg explicitly **FAILED the assistant-authored Clown editorial comedy writing** ("übelster, belangloser, unkomischer-trauriger AI slop") and clarified the complaint was **the prior editorial script**, **not Suno Speech**. The three prior Clown R0.1/R0.2/short-R1 texts must no longer be treated as ready-for-audition, usable candidate dialogue, canon, or positive RULE1 evidence. Earlier 21/21 and 25/25 checks were structural only. **No audio was generated** from these rejected drafts, so Suno model quality and prompt-first approach remain unevaluated.
