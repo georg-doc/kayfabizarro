@@ -1,0 +1,680 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.op/1",
+ "title": "kfb.op/1 · ein Befehl auf kfb.world/1 (Vorschlag)",
+ "description": "Jede Änderung ist genau ein Op. applyOp(doc, op) → { doc, inverse, dirty }. Später geplant (noch nicht im Prototyp): track.attach (Anschluss an Anker, V-099), track.skin, track.tunnel, paint.stroke (Sprenkel S1), pattern.stroke, theme.set, relation.place.*.",
+ "oneOf": [
+  {
+   "type": "object",
+   "title": "island.add",
+   "description": "Gruppe island. Gegen-Befehl: island.remove.",
+   "required": [
+    "op",
+    "island"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "island.add"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "island": {
+     "description": "Rezept kfb.island-config/1"
+    },
+    "index": {
+     "type": "integer"
+    },
+    "pose": {
+     "$ref": "#/$defs/pose"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "island.remove",
+   "description": "Gruppe island. Gegen-Befehl: island.add (mit index und pose).",
+   "required": [
+    "op",
+    "id"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "island.remove"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "island.pose",
+   "description": "Gruppe layout. Gegen-Befehl: island.pose (alte Lage).",
+   "required": [
+    "op",
+    "id",
+    "pose"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "island.pose"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "pose": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/pose"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "island.field",
+   "description": "Gruppe island-field. Gegen-Befehl: island.field (alter Wert). Gesperrt: schema, worldId, edits, nodes, buildings, outline, pos (eigene Ops).",
+   "required": [
+    "op",
+    "id",
+    "path",
+    "value"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "island.field"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "path": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1
+    },
+    "value": {}
+   }
+  },
+  {
+   "type": "object",
+   "title": "outline.move",
+   "description": "Gruppe outline. Gegen-Befehl: outline.move.",
+   "required": [
+    "op",
+    "id",
+    "index",
+    "to"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "outline.move"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "index": {
+     "type": "integer"
+    },
+    "to": {
+     "$ref": "#/$defs/p2"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "outline.insert",
+   "description": "Gruppe outline. Gegen-Befehl: outline.remove.",
+   "required": [
+    "op",
+    "id",
+    "index",
+    "point"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "outline.insert"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "index": {
+     "type": "integer"
+    },
+    "point": {
+     "$ref": "#/$defs/p2"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "outline.remove",
+   "description": "Gruppe outline. Gegen-Befehl: outline.insert. Mindestens 5 Punkte (editor.ts:188).",
+   "required": [
+    "op",
+    "id",
+    "index"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "outline.remove"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "index": {
+     "type": "integer"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "place.put",
+   "description": "Gruppe place. Gegen-Befehl: place.remove.",
+   "required": [
+    "op",
+    "id",
+    "item"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "place.put"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "item": {
+     "description": "BuildingSpec (spec.ts:5)",
+     "type": "object",
+     "required": [
+      "id",
+      "asset",
+      "x",
+      "z"
+     ]
+    },
+    "index": {
+     "type": "integer"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "place.move",
+   "description": "Gruppe place. Gegen-Befehl: place.move (alte Werte).",
+   "required": [
+    "op",
+    "id",
+    "itemId",
+    "set"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "place.move"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "itemId": {
+     "type": "string"
+    },
+    "set": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "x",
+       "y",
+       "z",
+       "rot",
+       "scale",
+       "pad"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "place.remove",
+   "description": "Gruppe place. Gegen-Befehl: place.put (mit index).",
+   "required": [
+    "op",
+    "id",
+    "itemId"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "place.remove"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "itemId": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "terrain.stroke",
+   "description": "Gruppe terrain. Gegen-Befehl: edit.remove. Landet als {kind:'terrain.stroke', id, stroke} in edits[].",
+   "required": [
+    "op",
+    "id",
+    "editId",
+    "stroke"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "terrain.stroke"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "editId": {
+     "type": "string"
+    },
+    "stroke": {
+     "$ref": "#/$defs/wb2Stroke"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "edit.add",
+   "description": "Gruppe terrain. Gegen-Befehl: edit.remove.",
+   "required": [
+    "op",
+    "id",
+    "edit"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "edit.add"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "edit": {
+     "type": "object",
+     "required": [
+      "kind",
+      "id"
+     ]
+    },
+    "index": {
+     "type": "integer"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "edit.remove",
+   "description": "Gruppe terrain. Gegen-Befehl: edit.add (mit index).",
+   "required": [
+    "op",
+    "id",
+    "editId"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "edit.remove"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "id": {
+     "type": "string"
+    },
+    "editId": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "track.piece.insert",
+   "description": "Gruppe track. Gegen-Befehl: track.piece.remove.",
+   "required": [
+    "op",
+    "track",
+    "route",
+    "piece"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "track.piece.insert"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "track": {
+     "type": "string"
+    },
+    "route": {
+     "type": "string"
+    },
+    "index": {
+     "type": "integer"
+    },
+    "piece": {
+     "type": "object",
+     "required": [
+      "id",
+      "type"
+     ],
+     "description": "Track-Core-Teil (PIECES, track-core.mjs:316)"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "track.piece.remove",
+   "description": "Gruppe track. Gegen-Befehl: track.piece.insert (mit index).",
+   "required": [
+    "op",
+    "track",
+    "route",
+    "pieceId"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "track.piece.remove"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "track": {
+     "type": "string"
+    },
+    "route": {
+     "type": "string"
+    },
+    "pieceId": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "track.piece.set",
+   "description": "Gruppe track. Gegen-Befehl: track.piece.set (alte Werte, null = Feld fehlte).",
+   "required": [
+    "op",
+    "track",
+    "route",
+    "pieceId",
+    "set"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "track.piece.set"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "track": {
+     "type": "string"
+    },
+    "route": {
+     "type": "string"
+    },
+    "pieceId": {
+     "type": "string"
+    },
+    "set": {
+     "type": "object"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "relation.link",
+   "description": "Gruppe relation. Gegen-Befehl: relation.unlink.",
+   "required": [
+    "op",
+    "connection"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "relation.link"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "connection": {
+     "type": "object",
+     "required": [
+      "id",
+      "from",
+      "to",
+      "reason"
+     ],
+     "description": "kfb.scene-study/2 connection (V-141)"
+    },
+    "index": {
+     "type": "integer"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "relation.unlink",
+   "description": "Gruppe relation. Gegen-Befehl: relation.link (mit index).",
+   "required": [
+    "op",
+    "connectionId"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "relation.unlink"
+    },
+    "snap": {
+     "$ref": "#/$defs/snap"
+    },
+    "connectionId": {
+     "type": "string"
+    }
+   }
+  },
+  {
+   "type": "object",
+   "title": "batch",
+   "description": "Gruppe batch. Eine Geste, mehrere Ops (z. B. editor.ts scaleOutline). Gegen-Befehl: batch der Gegen-Befehle in umgekehrter Folge. Rechte gelten je Teil. Kein batch im batch.",
+   "required": [
+    "op",
+    "ops"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "op": {
+     "const": "batch"
+    },
+    "ops": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#"
+     }
+    }
+   }
+  }
+ ],
+ "$defs": {
+  "p2": {
+   "type": "array",
+   "prefixItems": [
+    {
+     "type": "number"
+    },
+    {
+     "type": "number"
+    }
+   ],
+   "minItems": 2,
+   "maxItems": 2
+  },
+  "pose": {
+   "type": "object",
+   "required": [
+    "pos",
+    "rotY"
+   ],
+   "properties": {
+    "pos": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "minItems": 3,
+     "maxItems": 3
+    },
+    "rotY": {
+     "type": "number"
+    }
+   }
+  },
+  "snap": {
+   "type": "object",
+   "required": [
+    "kind"
+   ],
+   "description": "Snap-Ziel. Hex ist Legacy (V-194) und kein gültiger Wert.",
+   "oneOf": [
+    {
+     "properties": {
+      "kind": {
+       "const": "track-anchor"
+      },
+      "anchor": {
+       "type": "string",
+       "description": "Anker-ID aus recipe.anchors oder Track-Core-Socket"
+      }
+     },
+     "required": [
+      "kind",
+      "anchor"
+     ]
+    },
+    {
+     "properties": {
+      "kind": {
+       "const": "wall-grid"
+      },
+      "cell": {
+       "type": "array",
+       "items": {
+        "type": "integer"
+       },
+       "minItems": 2,
+       "maxItems": 2
+      }
+     },
+     "required": [
+      "kind",
+      "cell"
+     ]
+    },
+    {
+     "properties": {
+      "kind": {
+       "const": "terrain"
+      }
+     },
+     "required": [
+      "kind"
+     ]
+    }
+   ]
+  },
+  "wb2Stroke": {
+   "type": "object",
+   "description": "WB2 terrain-sculpt.js makeStroke (Georg abgenommen)",
+   "required": [
+    "points"
+   ],
+   "properties": {
+    "mode": {
+     "enum": [
+      "raise",
+      "lower"
+     ]
+    },
+    "radius": {
+     "type": "number",
+     "minimum": 0.05
+    },
+    "strength": {
+     "type": "number",
+     "minimum": 0.001
+    },
+    "falloff": {
+     "const": "smooth-c2"
+    },
+    "points": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/p2"
+     }
+    }
+   }
+  }
+ }
+}

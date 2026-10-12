@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.world-layout/1",
+ "title": "kfb.world-layout/1 · Lage der Inseln (Vorschlag, Plan R1 Phase D)",
+ "description": "Besitzer der Insel-Lage in der Welt. recipe.pos wird nur bei der Migration gelesen.",
+ "type": "object",
+ "required": ["schema", "poses"],
+ "additionalProperties": false,
+ "properties": {
+  "schema": { "const": "kfb.world-layout/1" },
+  "poses": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object", "required": ["pos", "rotY"], "additionalProperties": false,
+    "properties": {
+     "pos": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3, "description": "Lab-Einheiten, Oberseite auf pos.y (spec.ts:95)" },
+     "rotY": { "type": "number", "description": "Radiant" }
+    }
+   }
+  }
+ }
+}

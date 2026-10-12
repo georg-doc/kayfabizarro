@@ -1,0 +1,74 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.world/1",
+ "title": "kfb.world/1 · Welt-Hülle (Vorschlag, V-194)",
+ "description": "Eine Hülle für God, Maker und Player. Verweist auf bestehende Formate. Meshes, Felder, Streams sind nur Cache und stehen nie hier. Nie Spielstand (Sperrliste recipe.ts:8).",
+ "type": "object",
+ "required": ["schema", "worldId", "rev", "islands", "layout", "tracks", "sceneStudy", "theme", "plots", "provenance"],
+ "additionalProperties": false,
+ "properties": {
+  "schema": { "const": "kfb.world/1" },
+  "worldId": { "type": "string", "pattern": "^[a-z0-9_]+$", "description": "fester Slug, z. B. main oder mvp1" },
+  "rev": { "type": "integer", "minimum": 0, "description": "zählt Speicherstände, nicht Ops" },
+  "islands": {
+   "type": "array",
+   "description": "je Insel ein Verweis auf ein Rezept kfb.island-config/1 (Lab src/island/recipe.ts:7)",
+   "items": { "$ref": "#/$defs/ref", "required": ["id", "ref"] }
+  },
+  "layout": { "$ref": "#/$defs/ref", "description": "Verweis auf kfb.world-layout/1 (Lage der Inseln im Raum, Plan R1 Phase D)" },
+  "tracks": {
+   "type": "array",
+   "description": "je Strecke ein Verweis auf eine Track-Core-Graph-Eingabe (track-core.mjs:1127, compileGraph :1386). plot = Parzelle, falls ein Maker sie besitzt.",
+   "items": { "allOf": [{ "$ref": "#/$defs/ref" }], "required": ["id", "ref"], "properties": { "id": {}, "ref": {}, "sha256": {}, "plot": { "type": "string" } } }
+  },
+  "sceneStudy": { "$ref": "#/$defs/ref", "description": "Verweis auf kfb.scene-study/2 (V-141)" },
+  "theme": { "$ref": "#/$defs/ref", "description": "Verweis auf kfb.island-theme/1 (public/themes/island-themes.json, V-051)" },
+  "plots": {
+   "type": "array",
+   "description": "Maker-Parzellen. Leer bis Maker (nach MVP). bounds fehlt = ganze Insel (eigene Insel).",
+   "items": {
+    "type": "object", "required": ["id", "island", "owner", "kind"], "additionalProperties": false,
+    "properties": {
+     "id": { "type": "string" },
+     "island": { "type": "string" },
+     "owner": { "type": "string", "description": "Spieler-ID" },
+     "kind": { "enum": ["maker-space", "own-island"] },
+     "bounds": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/p2" }, "description": "Polygon Insel-lokal (x, z)" },
+     "publish": { "type": "string", "description": "ID des letzten kfb.publish-request/1" }
+    }
+   }
+  },
+  "provenance": {
+   "type": "object", "required": ["createdBy", "createdIn", "edits"], "additionalProperties": false,
+   "properties": {
+    "createdBy": { "type": "string" },
+    "createdIn": { "enum": ["god", "maker"] },
+    "edits": {
+     "type": "array",
+     "description": "je zusammenhängendem Op-Block (gleicher Akteur und Modus) eine Zeile; geschrieben beim Speichern",
+     "items": {
+      "type": "object", "required": ["actor", "mode", "fromSeq", "toSeq", "ops", "families", "targets", "at"], "additionalProperties": false,
+      "properties": {
+       "actor": { "type": "string" }, "mode": { "enum": ["god", "maker"] },
+       "fromSeq": { "type": "integer" }, "toSeq": { "type": "integer" }, "ops": { "type": "integer" },
+       "families": { "type": "array", "items": { "type": "string" } },
+       "targets": { "type": "array", "items": { "type": "string" }, "description": "island:<id>, track:<id>, sceneStudy" },
+       "at": { "type": "string", "format": "date-time" }
+      }
+     }
+    }
+   }
+  }
+ },
+ "$defs": {
+  "p2": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }], "minItems": 2, "maxItems": 2 },
+  "ref": {
+   "type": "object", "required": ["ref"],
+   "properties": {
+    "id": { "type": "string" },
+    "ref": { "type": "string", "description": "Pfad relativ zur world.json" },
+    "sha256": { "type": "string", "description": "optional: Prüfsumme der Teil-Datei" }
+   }
+  }
+ }
+}

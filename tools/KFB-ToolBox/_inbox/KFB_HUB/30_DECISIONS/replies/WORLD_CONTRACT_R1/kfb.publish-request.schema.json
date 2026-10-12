@@ -1,0 +1,23 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.publish-request/1",
+ "title": "kfb.publish-request/1 · Antrag auf Veröffentlichen (Vorschlag, V-194)",
+ "description": "Maker stellt den Antrag. Nur Georg (Profil god, approvers) setzt approved oder rejected. Lab-Host-Prüfungen müssen vor approved nachgeholt sein.",
+ "type": "object",
+ "required": ["schema", "id", "worldId", "rev", "plot", "island", "actor", "status", "at", "validation"],
+ "properties": {
+  "schema": { "const": "kfb.publish-request/1" },
+  "id": { "type": "string" },
+  "worldId": { "type": "string" },
+  "rev": { "type": "integer" },
+  "plot": { "type": "string" },
+  "island": { "type": "string" },
+  "actor": { "type": "string" },
+  "status": { "enum": ["pending", "approved", "rejected"] },
+  "at": { "type": "string", "format": "date-time" },
+  "validation": { "type": "object", "required": ["pass", "hostPending"], "properties": { "pass": { "type": "boolean" }, "hostPending": { "type": "array", "items": { "type": "string" } } } },
+  "decidedBy": { "type": "string" },
+  "decidedAt": { "type": "string", "format": "date-time" },
+  "note": { "type": "string" }
+ }
+}

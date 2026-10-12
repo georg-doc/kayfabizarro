@@ -299,6 +299,45 @@
    "vref": "V-182 · S11",
    "id": "d20-dungeon-corners",
    "image": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/DUNGEON_POC_R1/S4_chase_haarnadel.jpg"
+  },
+  {
+   "id": "d21-maker-island",
+   "order": 21,
+   "vref": "V-194 · nach MVP",
+   "title": "Darf ein Spieler im Maker-Modus eine eigene Insel neu anlegen?",
+   "context": "Maker kommt nach dem MVP. Davon hängt ab, ob Spieler auch den Umriss einer Insel formen dürfen oder nur auf zugeteilten Inseln bauen.",
+   "options": [
+    "Ja, eigene Insel anlegen",
+    "Nein, nur zugeteilte Inseln"
+   ],
+   "source": "replies/WORLD_CONTRACT_R1.md",
+   "status": "offen"
+  },
+  {
+   "id": "d22-maker-plots",
+   "order": 22,
+   "vref": "V-194 · nach MVP",
+   "title": "Maker-Space-Insel: feste Parzelle je Spieler?",
+   "context": "Jeder Spieler bekommt eine eigene Fläche, oder alle bauen gemeinsam auf einer Fläche.",
+   "options": [
+    "Feste Parzelle je Spieler",
+    "Gemeinsame Fläche"
+   ],
+   "source": "replies/WORLD_CONTRACT_R1.md",
+   "status": "offen"
+  },
+  {
+   "id": "d23-publish",
+   "order": 23,
+   "vref": "V-194 · nach MVP",
+   "title": "Was heißt „veröffentlicht“ bei Maker-Bauten?",
+   "context": "Nach deiner Freigabe: in der Hauptwelt für alle sichtbar, oder nur als Datei zum Teilen.",
+   "options": [
+    "In der Hauptwelt sichtbar",
+    "Nur als Datei zum Teilen"
+   ],
+   "source": "replies/WORLD_CONTRACT_R1.md",
+   "status": "offen"
   }
  ],
  "slices": [

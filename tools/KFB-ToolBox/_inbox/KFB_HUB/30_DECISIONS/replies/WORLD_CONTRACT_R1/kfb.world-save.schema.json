@@ -1,0 +1,29 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.world-save/1",
+ "title": "kfb.world-save/1 · Speicherstand = Schnappschuss + Op-Log (Vorschlag)",
+ "description": "replay(snapshot, log) ergibt head (ohne rev und provenance). Nach dem Speichern beginnt ein neuer Abschnitt: snapshot = head, log leer.",
+ "type": "object",
+ "required": ["schema", "snapshot", "log", "head"],
+ "properties": {
+  "schema": { "const": "kfb.world-save/1" },
+  "snapshot": { "description": "aufgelöstes Dokument: { envelope: kfb.world/1, islands, layout, tracks, sceneStudy }" },
+  "head": { "description": "Stand nach dem Log, mit neuer Provenienz und rev + 1" },
+  "log": {
+   "type": "array",
+   "items": {
+    "type": "object", "required": ["seq", "kind", "op", "actor", "mode", "at"],
+    "properties": {
+     "seq": { "type": "integer" },
+     "kind": { "enum": ["do", "undo", "redo"] },
+     "op": { "$ref": "kfb.op/1" },
+     "actor": { "type": "string" },
+     "mode": { "enum": ["god", "maker"] },
+     "at": { "type": "string", "format": "date-time" },
+     "undoOf": { "type": "integer" },
+     "redoOf": { "type": "integer" }
+    }
+   }
+  }
+ }
+}

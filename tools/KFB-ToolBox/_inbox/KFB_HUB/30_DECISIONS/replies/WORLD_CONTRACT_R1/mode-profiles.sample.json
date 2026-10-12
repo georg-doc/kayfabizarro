@@ -1,0 +1,49 @@
+{
+ "schema": "kfb.mode-profile/1",
+ "status": "Vorschlag",
+ "source": "V-194 (God-Mode = Georg, Maker = Spieler auf Maker-Space-Insel und eigenen Inseln inkl. Gelände und Strecke, Veröffentlichen nur mit Georgs Freigabe)",
+ "snapKinds": ["track-anchor", "wall-grid", "terrain"],
+ "legacySnapKinds": ["hex"],
+ "approvers": ["georg"],
+ "profiles": {
+  "god": {
+   "families": "*",
+   "area": "world",
+   "catalog": "all",
+   "snapRequired": false,
+   "budget": "warn",
+   "validateBeforeSave": "warn",
+   "canRequestPublish": false,
+   "canApprovePublish": true
+  },
+  "maker": {
+   "families": ["place", "terrain", "track"],
+   "area": "own-plot",
+   "catalog": "maker-allowed",
+   "snapRequired": true,
+   "scaleFixedK2": true,
+   "budget": "hard",
+   "validateBeforeSave": "required",
+   "canRequestPublish": true,
+   "canApprovePublish": false,
+   "limitsStatus": "Platzhalter: Zahlen setzt die Steuerung nach Messung (KFB_TECHNIK §5, V-115)",
+   "limits": {
+    "maxItemsPerPlot": 60,
+    "maxStrokesPerPlot": 200,
+    "terrainStrengthMax": 0.12,
+    "terrainRadiusMax": 6.4,
+    "maxTrackPiecesPerTrack": 40
+   }
+  },
+  "player": {
+   "families": [],
+   "area": "none",
+   "catalog": "none",
+   "snapRequired": true,
+   "budget": "hard",
+   "validateBeforeSave": "required",
+   "canRequestPublish": false,
+   "canApprovePublish": false
+  }
+ }
+}

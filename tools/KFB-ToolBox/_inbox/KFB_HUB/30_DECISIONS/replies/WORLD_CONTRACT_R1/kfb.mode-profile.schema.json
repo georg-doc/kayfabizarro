@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.mode-profile/1",
+ "title": "kfb.mode-profile/1 · Rechte je Modus (Vorschlag, V-194)",
+ "description": "Beispiel: mode-profiles.sample.json (= Prototyp src/profiles.json).",
+ "type": "object",
+ "required": ["schema", "snapKinds", "legacySnapKinds", "approvers", "profiles"],
+ "properties": {
+  "schema": { "const": "kfb.mode-profile/1" },
+  "status": { "type": "string" },
+  "snapKinds": { "type": "array", "items": { "enum": ["track-anchor", "wall-grid", "terrain"] } },
+  "legacySnapKinds": { "type": "array", "items": { "const": "hex" }, "description": "abgelehnt für alle Modi" },
+  "approvers": { "type": "array", "items": { "type": "string" }, "description": "wer Veröffentlichen freigibt: nur georg" },
+  "profiles": {
+   "type": "object",
+   "required": ["god", "maker", "player"],
+   "additionalProperties": { "$ref": "#/$defs/profile" }
+  }
+ },
+ "$defs": {
+  "profile": {
+   "type": "object",
+   "required": ["families", "area", "catalog", "snapRequired", "budget", "validateBeforeSave", "canRequestPublish", "canApprovePublish"],
+   "properties": {
+    "families": { "oneOf": [{ "const": "*" }, { "type": "array", "items": { "enum": ["island", "layout", "island-field", "outline", "place", "terrain", "track", "relation"] } }] },
+    "area": { "enum": ["world", "own-plot", "none"] },
+    "catalog": { "enum": ["all", "maker-allowed", "none"] },
+    "snapRequired": { "type": "boolean" },
+    "scaleFixedK2": { "type": "boolean" },
+    "budget": { "enum": ["warn", "hard"] },
+    "validateBeforeSave": { "enum": ["warn", "required"] },
+    "canRequestPublish": { "type": "boolean" },
+    "canApprovePublish": { "type": "boolean" },
+    "limitsStatus": { "type": "string" },
+    "limits": {
+     "type": "object",
+     "properties": {
+      "maxItemsPerPlot": { "type": "integer" },
+      "maxStrokesPerPlot": { "type": "integer" },
+      "terrainStrengthMax": { "type": "number" },
+      "terrainRadiusMax": { "type": "number" },
+      "maxTrackPiecesPerTrack": { "type": "integer" }
+     }
+    }
+   }
+  }
+ }
+}

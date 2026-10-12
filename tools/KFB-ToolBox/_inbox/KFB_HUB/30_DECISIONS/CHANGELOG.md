@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Welt-Vertrag R1
+- replies/WORLD_CONTRACT_R1.md + 7 Schemas + DELTA.md (V-188/V-194): Hülle kfb.world/1, 18 Ops mit Gegen-Befehl, Undo/Redo, Rechte god/maker/player, Veröffentlichen per Antrag + Georg-Freigabe, Snap ohne Hex. Prototyp ~/Developer/kfb-world-ops: 34/34 Tests grün, Track Core runGraphChecks echt. Delta Top: editor.ts schreibt direkt (L), WorldSpec in localStorage (M), edits[] leer und Rundweg verliert Felder (M), Strecken-Graph im Code (M–L), scene-study /1 → /2 (S). Steuerung entscheidet: God-Mode-Welten zusätzlich als Dateien im KFB_HUB (V-191); Mauer-Raster aus dem bestehenden Mauer-Baukasten (V-105/V-106) übernehmen. 3 Maker-Fragen ins open-decisions-JSON (nach MVP).
+
 ## 2026-10-13 · Haltebucht geparkt, 5192 dauerhaft
 - V-196 Haltebucht so übernommen, kein weiteres Feilen; später im Strecken-Konzept-TUNE.
 - Lab-Server 5192 war 12.10. 02:20–13.10. aus (Vorschau-Server der Bau-Sitzung endet mit Zugende). Jetzt hält ein Watchdog-Tab im Terminal-Panel der Steuerung 5192 dauerhaft; Sitzungen starten 5192 nicht mehr aus der Vorschau.

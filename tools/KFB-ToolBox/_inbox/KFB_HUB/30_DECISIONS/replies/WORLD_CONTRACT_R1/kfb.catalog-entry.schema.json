@@ -1,0 +1,38 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "kfb.catalog-entry/1",
+ "title": "kfb.catalog-entry/1 · Katalog-Eintrag (Vorschlag)",
+ "description": "Der Librarian besitzt die Einträge (registry/assets/v1/catalog.jsonl), das Lab liest nur. Quellen-Reihenfolge V-070.",
+ "type": "object",
+ "required": ["schema", "librarianId", "labAsset", "kind", "k2", "snap", "maker"],
+ "properties": {
+  "schema": { "const": "kfb.catalog-entry/1" },
+  "librarianId": { "type": "string", "description": "assetId aus catalog.jsonl, z. B. media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/…/building_windmill_green.gltf; Lab-eigene Teile: lab:<pfad>" },
+  "packId": { "type": "string" },
+  "labAsset": { "type": "string", "description": "Pfad unter /assets/kaykit/ bzw. proc:<name> (BuildingSpec.asset, spec.ts:7)" },
+  "kind": { "enum": ["building", "prop", "nature", "figure", "vehicle", "module", "wall"] },
+  "source": { "enum": ["KayKit", "TinyTreats", "Quaternius", "Kenney", "RKIT", "KFB"] },
+  "k2": { "type": "number", "exclusiveMinimum": 0, "description": "Maßstabs-Faktor nach Türregel (catalog-k2.ts, SCALE_CONTRACT_K2); Figuren nie skalieren (V-060)" },
+  "k2Source": { "type": "string" },
+  "snap": {
+   "type": "array",
+   "description": "Snap-Punkte. Hex ist Legacy und kein Wert (V-194).",
+   "items": {
+    "type": "object", "required": ["kind"],
+    "properties": {
+     "kind": { "enum": ["track-anchor", "wall-grid", "terrain"] },
+     "anchorKinds": { "type": "array", "items": { "enum": ["road", "dock", "portal", "threshold", "stair", "bridge"] }, "description": "passende Anker-Arten (spec.ts:125)" },
+     "p": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3, "description": "Snap-Punkt im Modell-Raum" },
+     "dir": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+    }
+   }
+  },
+  "footprint": { "type": "array", "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 } },
+  "skins": { "type": "array", "items": { "type": "string" }, "description": "z. B. race, town, country, dirt, trail, cosmic, stone (V-145) bzw. Mauer A Stein, B Sci-Fi (V-105)" },
+  "local": { "type": "boolean", "description": "gekauft bzw. privat: nur lokal, nie für Maker" },
+  "maker": {
+   "type": "object", "required": ["allowed"],
+   "properties": { "allowed": { "type": "boolean" }, "cost": { "type": "number", "description": "Budget-Punkte, offen" } }
+  }
+ }
+}
