@@ -1,5 +1,12 @@
 ## CURRENT HUMAN FAIL OVERRIDE · 2026-10-13 · 1001 NIGHTS TRIPLETS / BRIDGES QUARANTINED
 
+### INDEPENDENT RECOVERY GATE COMPLETED · 2026-10-13
+Read `KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1_2026-10-13.md` next. Exact original Meta-Narration/FrizzleBob semantic donors and current Audio owner code were independently compared. **15/15 source/code assertions PASS** as evidence of the fault; **no new Triplet or Bridge creative PASS**, no new Suno candidate and **no plugin update**. Audio Site v9 has separate hardcodes `wrinkle_rumble`, 48 Cards, 50 utterances and 3 × 50 audio cues; therefore **multi-deck import is NOT supported**. Stop implying any GitHub JSON for 1001 Nights is currently importable in the Audio Site.
+
+**One next gate:** bounded fail-closed repair of the *existing private* KFB Triplets v0.1 skill (same plugin identity), preserving Human FAIL negative Goldens and requiring genuine subject→meaningful connector→reframe and before→causal action→after Bridge proof; an independent critic evaluates the controlled source examples. Audio importer generalization is a later receiving-owner gate. Do not reuse the failed 5→6→7 candidate.
+
+
+
 **Georg explicitly rejected the first KFB Triplets plugin output for 1001_kayfabe_nights as not being actual Triplets and lacking a genuine semantic Bridge.** Its exact 5→6→7 FrizzleBob/Suno candidate is **HUMAN_FAIL_QUARANTINED / NEGATIVE GOLDEN**, not a script to audition or a plugin product PASS. All older EDITORIAL_CANDIDATE, 17/17 source checks, “first invocation success”, or suggested Suno KEEP/TUNE/CUT steps referring to that exact text are superseded as creative-quality claims.
 
 Read POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md and data/KFB_1001_NIGHTS_TRIPLETS_FAIL_PROVENANCE_AUDIT_R1_2026-10-13.json **before further work**. Quantified spoken output: **36/114 = 31.58%** verbatim matched ≥3-word original Card sequences; **78/114 = 68.42%** assistant-authored/rephrased. Lenient ≥2-word match: 48/114 = 42.11%; 3/60 Cards used; 0/6 complete original POWER/LORE fields reproduced; 2 labeled transition sentences, **0 functional Bridges demonstrated**. Nonverbatim can include faithful paraphrase; match can include incidental words.
