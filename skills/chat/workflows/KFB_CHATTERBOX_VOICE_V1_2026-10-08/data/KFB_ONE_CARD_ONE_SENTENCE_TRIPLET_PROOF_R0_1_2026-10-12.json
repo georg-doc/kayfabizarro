@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.chatterbox.card-one-sentence-triplet/0.1-authoring-candidate",
+  "status": "SOURCE_VERIFIED_NOT_HUMAN_ACCEPTED",
+  "scope": "ONE_CARD_ONLY_NO_LLM_GENERATION_RUNTIME",
+  "date": "2026-10-12",
+  "owner": "Existing ChatterBox content, Voice #379 sidecar",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+    "deckId": "wrinkle_rumble",
+    "deckTitle": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+    "registryPath": "media/kfb/index.json",
+    "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+    "cardJsonPath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "cardJsonBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "cardNumber": 2,
+    "cardIndex": 1,
+    "pdfPage": 2,
+    "pdfQuadrant": "TR",
+    "realPdfCropChecked": false
+  },
+  "originalCard": {
+    "cardName": "The Chatter-Chompers",
+    "power": "Swap Equipment: Steal an item from a player. Give them \"Gingivitis\" in return.",
+    "lore": "The indignity isn't losing your teeth; it's accidentally wearing your enemy's smile.",
+    "artworkPrompt": "Style: splatter ink comic. Subject: dog and cat mid-teeth-swap chaos mid-run. Mood: gleeful dental horror."
+  },
+  "candidate": {
+    "utterance": "The Chatter-Chompers steal an item and give you Gingivitis in return.",
+    "slots": {
+      "subject": "The Chatter-Chompers",
+      "connector": "steal an item",
+      "reframe": "and give you Gingivitis in return"
+    },
+    "spokenSentenceCount": 1,
+    "spokenWords": 11,
+    "authoredFrom": "cardName + same-card power, lightly rewritten into third-person single sentence",
+    "verbatim": false,
+    "editLog": [
+      "Third-person grammatical inflection of imperative Steal/Give",
+      "Condensed source 'an item from a player' to 'an item'",
+      "Render 'Gingivitis' as spoken proper game-token word",
+      "No separate spoken lore or visual prompt"
+    ],
+    "humanRule1Review": "PENDING",
+    "visualMeaningSeparate": true
+  },
+  "tests": {
+    "matchesExactSource": true,
+    "cardNumber": true,
+    "cardTitle": true,
+    "powerHasAction": true,
+    "powerHasConsequence": true,
+    "oneSentence": true,
+    "under15Words": true,
+    "pageSource": true,
+    "nonMed": true,
+    "artPromptPreserved": true
+  },
+  "fractalConsumers": {
+    "cardSentence": "PROPOSED_SOURCE_AUTHORING_PROOF",
+    "pageMicrostory": "LATER",
+    "deckSequencer": "LATER",
+    "crossDeckCutUp": "LATER",
+    "kingKayfabianQuest": "LATER_DEFERRED_DIGITAL_MINIGAME"
+  },
+  "nextGate": "KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_HUMAN_REVIEW_R1"
+}
