@@ -69,3 +69,13 @@ Georg proposed rhythmic, wind/beat/mood-reactive tubular cactus/plant/character 
 **Evidence:** 10/10 written-concept structure/owner/guard assertions; exact GitHub write/branch-ref/file readback completed. 0 render/visual/audio/runtime/mobile tests, no Stage/Site or human adoption. No changes to `SOURCES.json` (25 existing records); prior source research and results preserved. This is an optional environment/scenery backlog item and does not change project routing, the current Four-Island Vision gate or a public URL.
 
 **One parent next gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT, separately authorized. Later Wobbleflora source-isolation MVP is conditional and not a blocker. No Georg action required now.
+
+## Georg owner correction · 2026-10-12 · Wobbleflora belongs to existing KFB Plant Prop Lab
+
+**Owner corrected and source-backed:** KFB Plants = `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/START_HERE.md` + the original Plant Prop Lab v2 source package. Wobbleflora is an optional new tubular/bouncy **Living Plants** family/preset, with pot or candidate ground-rooted form and existing KFB EyeRig v6. This PR #389 is a *cross-owner research intake carrier*, not a new World Lab plants runtime. No source owner is transferred or duplicated.
+
+**Existing sources now identified and inspected:** actual v2 `src/plant-recipe.js` (documented), `src/plant-rig.js` (pivot/spring/wind), `src/plant-eyes.js` (measured EyeRig-v6 FaceHost), existing pot/biome palettes and S18 source handoff. S19 proposed shader Cartoon Deformer + S20 planned motion clips remain explicitly **NOT IMPLEMENTED**. Prefer this native Plant path before considering any tube-specific bone approach, while keeping source meshes, original PlantRecipe identity and current WB2/SKY3/Audio owners unchanged.
+
+**GitHub check:** 13/13 conceptual owner/donor/boundary checks; exact post-write branch ref + file readback for each updated document. **0** actual rendered/accepted plants, **0** mobile/physics/audio/live tests, no site/public Stage, no deployment/merge. F-R39 FAIL / NO MVP / no R5 stays protected; no change to the 25-source VFX/SFX catalog or its test counts.
+
+**One current parent gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT. Wobbleflora first local optional gate after Plant Lab owner authorization: original v2 plant/EyeRig source in isolation → one actual tubelike plant using native motion seam, then the 3-plant LA-OLA. Georg action now: none.
