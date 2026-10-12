@@ -1,5 +1,15 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-13 · Semantic Triplet / Bridge and multi-deck importer failure independently compared
+
+- Georg rejected 1001 Nights plugin candidate: 3 one-sentence summaries do NOT demonstrate semantic Triplets; 2 labelled transitions do NOT demonstrate causal Bridges; 60-card deck was improperly defaulted to 3. Historical 17/17 static checks remain non-creative.
+- Actual source/code comparison 15/15 checks: original Triplet L-26 meaning-bearing middle predicate + reframe; narrator causal hinge/Closure; v0.1 skill defaults; audio Site generic limitation (**48 Card / 50 utterance / 3×50 cue / `wrinkle_rumble` hardcodes**). No new Triplets or Bridges, 0 content repairs/Suno/audio Site tests.
+- Report `KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1_2026-10-13.md` defines independent repaired-skill gate and separate audio-owner generalization. Original 1001 negative Golden and original r3 active preview untouched. Plugin v0.1.0 remains unchanged, no newly published release.
+- Next one gate: `KFB_TRIPLETS_V0_1_1_FAIL_CLOSED_SKILL_REPAIR_AND_INDEPENDENT_REGRESSION_R1`; no new Site/deployment/merge/Live.
+
+---
+
+
 ## 2026-10-12 · Private KFB Triplets plugin v0.1.0 · source-first authoring
 
 - Created **KFB Triplets** private personal skills-only plugin, ID `plugins_6accc59cff7481918f9113f65965335f`, release `pluginrel_6accc59e6d348191a40a2bc74fe7537c`, https://chatgpt.com/plugins/plugins_6accc59cff7481918f9113f65965335f.
