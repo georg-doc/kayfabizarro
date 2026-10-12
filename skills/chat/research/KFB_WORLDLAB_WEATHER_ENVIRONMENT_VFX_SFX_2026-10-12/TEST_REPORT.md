@@ -44,3 +44,36 @@ No automated GitHub Actions run requested; no CI claim. No public Site/Cloudflar
 
 ## Exactly one next gate
 KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT on the existing Sky/VFX/Audio owners, after the owner is separately authorized for product work.
+
+## 2026-10-12 · Florence Motion Lab method audit + Claude Code/WSA handoff
+
+Status: **DOCUMENTATION ONLY**. Added `FLXRNC_MOTION_LAB_DONOR_AUDIT_2026-10-12.md` and `CLAUDE_CODE_WSA_INTAKE_2026-10-12.md` to the same research branch, no new owner.
+
+- Exact user X status and indexed text source mapped; original X/page video not directly opened. Report clearly marks all author claims and source-media verification limits.
+- Actual structural/contract cross-checks of seven current branch documents: **20/20 PASS** (below); these verify document consistency, **not** visual quality, motion, audio, runtime or screenshot acceptance.
+- All seven current branch files fetched/read, with existing `SOURCES.json` count unchanged at 25.
+
+- allSevenFilesNonempty: PASS
+- existingInventoryUnchanged: PASS
+- exactOriginalPostReference: PASS
+- sourceAccessLimitedHonest: PASS
+- donorMethodNotRuntime: PASS
+- authorNumbersClassifiedUnverified: PASS
+- threeOwnersNamed: PASS
+- singleAudioOwner: PASS
+- motionBodyOwnerRetained: PASS
+- frameSampleReadOnly: PASS
+- actualSourceIsolationBeforeClay: PASS
+- sameSeedReplay: PASS
+- audioListeningRequired: PASS
+- noAestheticCopy: PASS
+- noWebVideoStudio: PASS
+- worldR4Blocked: PASS
+- oneGateMatched: PASS
+- independentExecution: PASS
+- selfContainedInvocation: PASS
+- noStagePublication: PASS
+
+Newly executed browser motion captures: **0**; new code/FX imports: **0**; external source images/videos inspected: **0**; audio decoded/listened: **0**; actual test frames rendered: **0**; target-GPU/CI tests: **0**; Site/Stage: **0**. GitHub full file write-readback will be separately verified after each documentation write.
+
+**Single next gate remains:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT, incorporating frame-exact transition receipts in the existing owner; no World R5 authorization.
