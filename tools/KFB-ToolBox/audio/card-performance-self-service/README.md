@@ -1,6 +1,6 @@
 # KFB Audio Site · self-service Card Performances
 
-Status: implementation checkpoint for existing KFB Audio Site Source 0.6.0.  
+Status: deployed technical checkpoint for existing KFB Audio Site Source 0.6.0 / Site version 9.  
 Owner: KFB Audio / Draft PR #365.  
 Content source owner: KFB ChatterBox Voice / Draft PR #379.  
 Site: existing project `appgprj_6ac1c73dc28881919123106bd6d3e90e`; no second Site or runtime.
@@ -38,4 +38,4 @@ The managed Site source also updates its existing `index.html`, `audio-site.js`,
 - Card Performance core: 18/18 PASS;
 - complete packaged Site validator: 172/172 PASS;
 - `git diff --check`: PASS;
-- browser/Site publication and two post-deploy data-only reloads: pending this checkpoint.
+- Site version 9 publication: PASS;\n- two post-deploy data-only loader checks: 12/12 PASS each;\n- additional Site publishes after setup: 0;\n- owner-visible Reload and audible DRY/D verdict: pending human gate.

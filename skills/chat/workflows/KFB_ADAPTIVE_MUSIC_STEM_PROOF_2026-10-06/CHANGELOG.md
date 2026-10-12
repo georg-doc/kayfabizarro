@@ -1,6 +1,16 @@
 # CHANGELOG · KFB Adaptive Music Stem Proof
 
+## 2026-10-12 · Self-service Card Performances deployed once
 
+- Extended the existing KFB Audio Voice Acting surface to Source 0.6.0 with a dynamic GitHub content loader and local Card Performance editor.
+- Published exactly Site version 9 from source `e1a1637395855ae59e6bd73aa36a2da93b2e5365`; deployment `appgdep_6accacccd79c8191be9c35ff35736f35` succeeded.
+- Added the Voice PR #379 preview feed and then made two post-deploy data-only edits: r2/Card 6 and r3/Card 11.
+- Both revisions passed the 12-check live loader contract; Site remained version 9 with zero additional publishes.
+- Static checks: 18/18 core, 172/172 packaged Site, diff check PASS.
+- Preserved source/candidate split, single `window.KFBAudioSite` audio owner, owner-only access and Draft/no-merge boundary.
+- Owner-visible Reload and audible DRY-vs-D decision remain the one open gate because the separate automated browser still receives the private sign-in screen.
+
+---
 ## 2026-10-12 · Site one-time self-service content authoring requirement
 
 - Georg rejected any routine dependency on Work/WSA for new ChatterBox Triplets, creative Bridges and Card performances; Site one-time enhancement must allow ordinary Chat/GitHub content changes and in-Site auditions/edits afterwards **with zero more Site publishes for data-only updates**.

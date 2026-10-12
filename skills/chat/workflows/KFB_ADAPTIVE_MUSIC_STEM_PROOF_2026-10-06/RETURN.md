@@ -1,6 +1,75 @@
 # RETURN · KFB Audio Module Pre-Integration · No World Writes
 
+## 2026-10-12 · RETURN · AUDIO SITE SELF-SERVICE CARD PERFORMANCES R1
 
+Status: **DEPLOYED_TECHNICAL_GREEN · ROUTINE_CONTENT_PATH_PROVEN · OWNER_RELOAD_AND_LISTEN_OPEN**
+
+The existing KFB Audio Site was upgraded once, in place, to Source 0.6.0. No second Site, runtime, mixer, clock or application shell was created.
+
+### Exact implementation and publication
+
+- repo: `georg-doc/kayfabizarro`
+- Audio Draft PR: #365
+- branch: `web/kfb-adaptive-music-stem-proof-2026-10-06`
+- implementation commit: `0528fa48312278f6a37bc03b1a0cf55e09a47aa9`
+- evidence head before final Return: `1d54c1fe695c31f44d5c74646332e24506122792`
+- existing Site: https://kfb-audio.frizzlebob.chatgpt.site
+- project: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- Site source/version: `e1a1637395855ae59e6bd73aa36a2da93b2e5365` / `9`
+- version id: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_225a4be325ac819190d6fcfd6e3bc9e2`
+- deployment: `appgdep_6accacccd79c8191be9c35ff35736f35` · succeeded
+- archive: `sha256:55628a1abf77b17e9a628bc79bdcbe7dc7276dff1fb5853a3cdcbabb9c9483af`
+- access: existing custom owner-only audience retained
+
+The Site screenshot visibly shows the preserved KFB Audio shell, `SITE SOURCE 0.6.0` and `GitHub = SSOT + HOT RELOAD`.
+
+### Product result
+
+Inside the existing Voice Acting tab, the additive Card Performance editor:
+
+- fetches the designated Voice PR #379 preview feed through public GitHub Contents reads;
+- validates pinned 48-Card source, full 50-segment performance, typed Bridge sidecar and renderer-specific cue manifest;
+- exposes 1/3/4/48 selection, reorder, source Card lineage, sentence and explicit Bridge editing;
+- supports speaker, Story Mode, delivery, rate, pitch, DRY/D bed, browser voice and local authorized clip intake;
+- stores non-canon local drafts and authorized clips locally;
+- exports provenance JSON/CSV/lyrics for ordinary Web Chat → GitHub review;
+- has no fake direct GitHub Save and no client-side canon promotion;
+- reuses `window.KFBAudioSite`, its single AudioContext, MusicClock, D bed and Speech Focus.
+
+### Two content-only changes after publication
+
+Voice PR #379 was changed twice after Site version 9 was deployed:
+
+1. `a3eba17e2473d511268055a2471df0c19ccbc302` → `audio-site-preview-r2-card-6-tune` → live integration 12/12 PASS;
+2. `341fe721a7280c7d0ed025de129ace750a06ed49` → `audio-site-preview-r3-card-11-tune` → live integration 12/12 PASS.
+
+Final feed blob: `180a7ea461620e469e4f8bdf73905a06308f3ece`. After both writes the same Site still reports version 9, the same source commit and the same deployment. Additional Site publishes: **0**.
+
+### Verification
+
+- Card Performance core: **18/18 PASS**
+- live source/feed baseline: **12/12 PASS**
+- live source/feed r2: **12/12 PASS**
+- live source/feed r3: **12/12 PASS**
+- packaged Site validator: **172/172 PASS**
+- `git diff --check`: PASS
+- source Cards: 48
+- cue profiles: 3 × 50
+- module-created AudioContexts: 0
+
+Detailed evidence: `SITE_CARD_PERFORMANCE_SELF_SERVICE_TEST_EVIDENCE_2026-10-12.md` and `tools/KFB-ToolBox/audio/card-performance-self-service/TEST_REPORT.md`.
+
+### Honest open boundary
+
+The automated browser remained at the private ChatGPT sign-in gate even after the normal UI was signed in. Therefore pressing **Reload GitHub content** on the owner-visible Voice Acting tab, seeing r3 there, and hearing DRY versus D were not claimed. The deploy and two GitHub hot-data transitions are technically proven; the visible owner-browser and human listening decision remain one gate.
+
+No merge, Live promotion, Cloudflare, Production Hub/router or unrelated product write occurred. Both PRs remain Draft.
+
+### One next gate
+
+`KFB_AUDIO_CARD_PERFORMANCE_OWNER_RELOAD_AND_LISTEN_R1`: Georg opens Voice Acting on the existing Site, presses **Reload GitHub content**, confirms `audio-site-preview-r3-card-11-tune`, then compares the identity-matched control vocal with **Play dry** and **Play D** and returns KEEP / TUNE / CUT.
+
+---
 ## 2026-10-12 · WSA SELF-SERVICE SITE UPGRADE BRIEF · PREP ONLY
 
 **Georg binding correction:** WSA may edit the existing KFB Audio Voice Acting Site once to provide full content/voice/music testing access, but **ordinary future Triplet generation, Bridge edits, Card performance sequences and new source data cannot depend on more Work runs**. This is the new product P0 for the bounded future Site upgrade, not permission to create a second application.

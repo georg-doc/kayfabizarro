@@ -1,12 +1,25 @@
 # WORK / WSA ONE-TIME SITE UPGRADE · KFB Audio Voice Acting: self-service Card Performances
 Date: 2026-10-12
-Status: **GEORG EXECUTION DIRECTION; WORK BRIEF PERSISTED, NOT EXECUTED IN THIS CHAT**
+Status: **EXECUTED ON EXISTING SITE · TECHNICAL HOT-RELOAD GREEN · OWNER RELOAD/LISTEN OPEN**
 Execution mode: BOUNDED ONE-SHOT · Sites-capable Work/WSA Builder, one production writer only.
 Owning product: **existing KFB Audio Site / KFB Audio + Jukebox + Mixer**.
 Repo: `georg-doc/kayfabizarro` · Audio Draft PR **#365** · branch `web/kfb-adaptive-music-stem-proof-2026-10-06`.
 Existing Site: **https://kfb-audio.frizzlebob.chatgpt.site** · project `appgprj_6ac1c73dc28881919123106bd6d3e90e`.
 Consumer source, never a second Site/runtime owner: KFB ChatterBox/Voice **Draft PR #379**, branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`, current recovery head at brief creation `4a43779faa5b99ddf9dd34b3b3058e9c3b90ef8d` (re-read when executing).
 Human authority: Georg for creative voice and promotion decision. Audio owner only for mixer/clock/Site shell.
+
+## Execution result · 2026-10-12
+
+Status: **ONE-TIME SITE UPGRADE EXECUTED · TWO POST-DEPLOY DATA EDITS VALIDATED · OWNER VISUAL/AUDIO GATE OPEN**
+
+- Existing Site only: Source 0.6.0, Site version 9, deployment `appgdep_6accacccd79c8191be9c35ff35736f35`.
+- Audio implementation commit: `0528fa48312278f6a37bc03b1a0cf55e09a47aa9`.
+- Two later ordinary Voice content commits: `a3eba17e2473d511268055a2471df0c19ccbc302` and `341fe721a7280c7d0ed025de129ace750a06ed49`.
+- Loader contract: 12/12 PASS for both r2 and r3; Site remained version 9; additional Site publishes: 0.
+- Full static validation: 18/18 core and 172/172 packaged Site.
+- Generated Site screenshot proves Source 0.6.0 and hot-reload marker. Automated access to the private Voice Acting tab still stops at ChatGPT sign-in, so screenshots of r2/r3 inside the editor and an audible D-base verdict are not fabricated and remain open.
+- Final evidence: `SITE_CARD_PERFORMANCE_SELF_SERVICE_TEST_EVIDENCE_2026-10-12.md`.
+
 
 ## Binding user correction: ONE Work/WSA implementation, ZERO Work dependency for new Triplets
 Georg explicitly wants **full authoring/testing access** to the existing KFB Audio Voice Acting Site. Work/WSA is permitted to enhance the existing Site **once**, but must never become the required executor for a routine new Triplet, Card, editorial Bridge, three-Card scene, full-deck Suno/TTS performance, actor voice selection or a data-only content revision.

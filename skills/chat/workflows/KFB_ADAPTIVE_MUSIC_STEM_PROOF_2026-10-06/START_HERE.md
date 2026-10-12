@@ -1,6 +1,20 @@
 # KFB Adaptive Music Stem Proof 01
 
+## Current continuation · 2026-10-12 · Card Performance self-service
 
+The one-time existing-Site implementation is deployed at https://kfb-audio.frizzlebob.chatgpt.site as Source 0.6.0 / Site version 9. Two later Voice PR #379 data-only revisions were accepted by the live loader contract with zero additional Site publishes.
+
+Current tested content revision: `audio-site-preview-r3-card-11-tune` at Voice head `341fe721a7280c7d0ed025de129ace750a06ed49`.
+
+Read next:
+
+1. `RETURN.md` top section;
+2. `SITE_CARD_PERFORMANCE_SELF_SERVICE_TEST_EVIDENCE_2026-10-12.md`;
+3. `tools/KFB-ToolBox/audio/card-performance-self-service/TEST_REPORT.md`.
+
+One gate only: owner-visible Voice Acting Reload plus DRY-vs-D listening verdict. Do not republish the Site for routine Card/Triplet rows.
+
+---
 ## NEXT SITE UPGRADE · 2026-10-12 · CONTENT EDITS WITHOUT WORK
 
 Georg explicitly rejects **Work/WSA as a recurring requirement for new Card Triplets or authoring updates**. The **existing** KFB Audio Voice Acting Site, same project/site/audio owner, needs one bounded Sites-capable Work enhancement to support **self-service audition plus GitHub-truth content hot reload after future ordinary Chat/GitHub writes**. In-Site drafts must be editable/testable/importable/exportable without another Site publish; secure direct GitHub save only when authorized backend is actually supported. Existing D Conversation Base (94 BPM real stems), mixer, clock, catalog and Site shell stay unchanged. **Audio A/B and two subsequent content-only GitHub hot reloads with zero Site redeploys are required acceptance, not optional.**

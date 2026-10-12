@@ -1,5 +1,21 @@
 # SITE INTEGRATION PACKET · existing KFB Audio Site
 
+## 2026-10-12 · Card Performance self-service publication receipt
+
+- existing URL: https://kfb-audio.frizzlebob.chatgpt.site
+- project: `appgprj_6ac1c73dc28881919123106bd6d3e90e`
+- source marker: `0.6.0`
+- source commit: `e1a1637395855ae59e6bd73aa36a2da93b2e5365`
+- version: `9`
+- version id: `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_225a4be325ac819190d6fcfd6e3bc9e2`
+- deployment: `appgdep_6accacccd79c8191be9c35ff35736f35` · succeeded
+- archive: `sha256:55628a1abf77b17e9a628bc79bdcbe7dc7276dff1fb5853a3cdcbabb9c9483af`
+- Voice content revision: `audio-site-preview-r3-card-11-tune`
+- two post-deploy data updates: PASS
+- extra Site publishes after setup: 0
+- next gate: owner-visible Reload + DRY/D listening only
+
+---
 Target: `https://kfb-audio.frizzlebob.chatgpt.site`
 Mode: **INTEGRATED AND PUBLISHED IN THE EXISTING SITE ONLY**
 Site source: `0.3` / runtime query `0.3.1`
