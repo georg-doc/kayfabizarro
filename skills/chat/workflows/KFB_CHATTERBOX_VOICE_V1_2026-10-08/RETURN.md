@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · CORRECTIVE RETURN · TWO CHATS WERE BOTH SENT THE CLOWN
+
+**User-reported failure:** two different ChatGPT web chats repeatedly supplied the same Clown routine rather than distinct KFB meta-comedy NPC episodes. **Confirmed cause in GitHub:** `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md` explicitly suggested "Reuse Clown first". This was an editorial routing error, not a Suno generation result.
+
+**Corrections actually saved:** old cloned recommendation removed/replaced in same onboarding; the eight-episode source map now marks Clown **TECHNICAL_SUNO_SPEECH_BETA_AUDIO_BENCH_ONLY** and orders seven other writer episodes (King Kayfabian → Lorekeeper → Monstrosity CEO → Protopia Farmer duo → Driver → Demon Lord → Hunky/Dory). New copy/paste plain-text first writer example at `SUNO_META_KING_KAYFABIAN_COPY_PASTE_R0_1_2026-10-12.md`; 147 spoken words, 857 spoken code points + 537 separate voice/music style + 228 producer cues = **1,622 Unicode code points**, below exclusive 5,000 hard cap. The Scene/auction material is new **FICTIONAL_AUTHORING_CANDIDATE**, not KFB published canon and not a recycled Clown joke.
+
+**Evidence:** `SUNO_META_NON_CLONE_ROUTING_TEST_R0_1_2026-10-12.md` includes actual **8/8** content/format checks and **12/12** split-lane checks, all against branch source. Three exact GitHub source versions re-read in existing private Production Control Site Inbox workflow `KFB-CHATTERBOX-SUNO-SPOKEN-MUSIC-R0-1`: copy/paste King `bd34b71d-0553-4a6c-8a95-04bd27216d1a`, corrected onboarding `13270ca6-3d14-4f5d-a025-ce160928c0b6`, corrected authoring roster `59802e3e-10c8-4cd4-93c2-e22065e90da6`. **3/3 content-identical.** This is a private Inbox recovery copy, not a Site product publication.
+
+**Owners/gates:** same `georg-doc/kayfabizarro` Draft PR #379 branch `planning/kfb-chatterbox-voice-layer-v1-2026-10-08`, no new dialogue kernel, KFB Audio mixer, rights, rig or World owner. 0 new Suno audio generations/downloads, 0 actual vocal/listening/creative comedy PASS, 0 Site/Stage/Live/merge. Existing technical Voice Clown audition remains `KFB_SUNO_CLOWN_FIRST_TAKE_AUDITION_R1`, but it must **never** become the default writing task. Exactly one next bounded **meta-comedy content** task: `KFB_META_KING_KAYFABIAN_EDITORIAL_AUDITION_R1`; revise distinctive jokes and then inspect first real Speech beta take only after its editorial premise is selected. Final exact head follows from fresh branch ref after Return check-in; do not assert a pre-Return head.
+
+---
+
+
 ## 2026-10-12 · ADDITIVE META NPC COMEDY ROSTER R0.1 · EXACT SOURCE/PRIVATE SITE RECOVERY
 
 Outcome: no new standalone generator or runtime. Within existing KFB ChatterBox / Voice owner Draft PR #379, an eight-episode **writing-only** NPC stage-comedy source map was added: `data/SUNO_META_NPC_EPISODE_ROSTER_R0_1_2026-10-12.json`. It extends the separately persisted Suno Speech beta onboarding, first-take Clown candidate and research report without duplicating those deliverables. Source scope spans official `#kfb` analog freestyle + `#cutplay` meta narration + `#thegame` digital game orientation, with source-status differentiation. The third route is verified as a main-branch `index.html` navigation action, **not** remote browser/pixel verified. Digital gameplay is NOT inferred from analog rules.
