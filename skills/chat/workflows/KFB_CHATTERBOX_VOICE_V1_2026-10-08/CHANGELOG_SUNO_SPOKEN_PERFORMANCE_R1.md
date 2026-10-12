@@ -2,6 +2,14 @@
 Owner: existing ChatterBox / Resident Speech output · Draft PR #379
 No standalone runtime owner, no new Site. Earlier Voice milestones remain in owning RETURN.md.
 
+## 2026-10-13 · Georg HUMAN FAIL · 1001 Nights Triplets/Bridge postmortem
+
+- **Human FAIL supersedes 17/17 technical PASS as content verdict.** Exact candidate kept intact as HUMAN_FAIL_QUARANTINED / NEGATIVE GOLDEN; private v0.1 plugin not proven as semantic Triplet generator for this request. 0/3 genuine semantic Triplets and 0/2 actual Bridges demonstrated despite 2 labeled transitions.
+- Exact tokenized provenance: 114 audible words; strict original ≥3-word overlap 36/114 = **31.58% verbatim**, 78/114 = **68.42% own wording**; lenient ≥2-word overlap 48/114 = 42.11%; original 103 selected Card words and 36/103 = 34.95% strict verbatim-source coverage. Only 3/60 Cards represented, 0/6 complete POWER/LORE; 34 Bridge-labeled words, only 3/34 strictly copied; remaining 31/34 independently phrased. Own wording includes source-grounded paraphrases and must not be called all fabricated lore.
+- Root cause: synopsis-as-triplet, stage-link label-as-causal-Bridge, unrequested 60→3/Suno default, structural test confused with creative proof, earlier RULE1 negative examples not respected.
+- New durable POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md and data/KFB_1001_NIGHTS_TRIPLETS_FAIL_PROVENANCE_AUDIT_R1_2026-10-13.json. START_HERE/RETURN corrected. No generated replacement, Suno take, Audio Site deploy, feed change, Stage or Live.
+- Rejected candidate Suno listening gate CANCELLED. One next seam gate KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1; independent Audio r3 Card11 human listening remains open.
+
 ## 2026-10-13 · KFB Triplets first user invocation · 1001 Kayfabe Nights 5→6→7
 
 - User explicitly invoked private KFB Triplets + KFB Production Control for original `media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json`; original user commit and current `main` source share blob `c5b6719d6a0612f227615d9917bbfbb45563f45d`; registry packId `1001_kayfabe_nights`, 60/60 actual Card IDs.
