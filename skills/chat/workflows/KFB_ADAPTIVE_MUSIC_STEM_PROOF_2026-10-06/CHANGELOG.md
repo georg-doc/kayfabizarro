@@ -1,5 +1,15 @@
 # CHANGELOG · KFB Adaptive Music Stem Proof
 
+
+## 2026-10-12 · Site one-time self-service content authoring requirement
+
+- Georg rejected any routine dependency on Work/WSA for new ChatterBox Triplets, creative Bridges and Card performances; Site one-time enhancement must allow ordinary Chat/GitHub content changes and in-Site auditions/edits afterwards **with zero more Site publishes for data-only updates**.
+- Added WSA execution brief `WORK_WSA_AUDIO_VOICE_ACTING_SELF_SERVICE_CARD_PERFORMANCES_R1_2026-10-12.md` to current Audio PR #365. It requests same existing Voice Acting tab, 48 original Wrinkle Rumble Cards, 3 voice dry auditions, actual D 94-BPM bed/duck, performance cues and persistent editorial draft/approved content separation.
+- Acceptance includes **2 data-only GitHub changes plus 2 same-Site reloads without another Work run or Site deploy**, no leaked secrets, no fake GitHub "Save". One-time Site upgrade not yet executed; true audio A/B = 0, hot-reload Site checks = 0; no new runtime owner/Stage/Live.
+- Existing Voice PR #379 retains source authoring identity; existing Audio PR #365 retains playback/mix and Site ownership. One next gate: `AUDIO_SITE_SELF_SERVICE_HOT_RELOAD_AND_D_BED_SITE_AB_R1`.
+
+---
+
 ## 2026-10-06
 
 - recovered current KFB Audio owner and AUDIO-CAL-01 donor;
