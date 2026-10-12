@@ -1,5 +1,17 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · TRIPLET POOL RULE1 FAIL / EIGHT-BEAT AUDITION BLOCKED
+
+Georg gave explicit **HUMAN FAIL** to real `clown.consensus.01` from the Studio candidate pool: `Everybody agrees / until somebody acts / volunteer?`. Problem: responsibility diffusion, cliché, generic no-one/does-nothing beat without actor, concrete decision, consequential action or earned payoff. User reports many other similar issues but did not name individual additional ids. Source reviewer inspected all **20/20** exact triplets in donor `resident-chat-ensemble-data.mjs` @ `cf975a72637630d97fc626962ef591b356ce0bbf`, logged assistant editorial risk flags for all without asserting 19 further human FAILs. Six source/schema checks PASS. Files:
+- `CHATTERBOX_POOL_RULE1_EDITORIAL_FAIL_REVIEW_R0_1_2026-10-12.md`
+- `data/CHATTERBOX_POOL_RULE1_SOURCE_AUDIT_R0_1_2026-10-12.json`
+- Updated `SUNO_PURE_POOL_TRIPLET_IDEOLOGY_BEAT_SCRIPT_R0_1_2026-10-12.md` with **CREATIVE_GATE_BLOCKED** banner; exact original 58-word script retained unchanged.
+
+The previous "eight real pool Triplets" extraction/identity claim remains **technically true** but is not a creative approval. Its proposed automated/Suno audition must not run as a quality-approved comedy set. **No human Comedy PASS, no new authored lines, no content-pool migration, no audio/Stage/Site/World runtime, no merge.** Existing content owner remains ChatterBox; Voice PR #379 only receives editorial audit sidecar. Next single content gate `KFB_CHATTERBOX_POOL_RULE1_EDITORIAL_CURATE_R1`: review source entries against actual resident/card/scene performance and Georg KEEP/TUNE/FAIL; avoid editing closed donors or forcing the rest of the pool into FAIL. Existing Voice/World gates are unaffected.
+
+---
+
+
 ## 2026-10-12 · Pure-pool ChatterBox Triplet ideology beat test
 
 Georg requested a real **pool-based Triplet script**, NOT assistant-written sentences, to test whether Triplets work as stand-up beats after Suno's second ideology-roast text. Script source: `SUNO_PURE_POOL_TRIPLET_IDEOLOGY_BEAT_SCRIPT_R0_1_2026-10-12.md`. Source pinned: real ChatterBox Studio donor `lib/triplet-stage/donor/resident-chat-ensemble-data.mjs` blob `cf975a72637630d97fc626962ef591b356ce0bbf`; `kfb.semantic-triplet-pool/0.1-candidate`, 20 candidate entries. Eight are available by global or Clown signature; all eight selected once in exact source wording and 3-line `subject / connector / reframe` formatting, **58 words**. Manual ordered playlist, not deterministic kernel-selection proof. Excluded Lorekeeper/Witch/GothGirl signature borrowing. Did not add freetext or canon. No audio audition, source pool Georg KEEP/export, or public Site verified. Static source/identity checks passed.
