@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · EDITORIAL POSTMORTEM / HUMAN FAIL OVERRIDE
+
+Georg explicitly **FAILED the assistant-authored Clown editorial comedy writing** ("übelster, belangloser, unkomischer-trauriger AI slop") and clarified the complaint was **the prior editorial script**, **not Suno Speech**. The three prior Clown R0.1/R0.2/short-R1 texts must no longer be treated as ready-for-audition, usable candidate dialogue, canon, or positive RULE1 evidence. Earlier 21/21 and 25/25 checks were structural only. **No audio was generated** from these rejected drafts, so Suno model quality and prompt-first approach remain unevaluated.
+
+Binding negative-golden override:
+- `POSTMORTEM_ASSISTANT_WRITTEN_CLOWN_COMEDY_RULE1_FAIL_2026-10-12.md`
+- `data/SUNO_CLOWN_EDITORIAL_FAIL_NEGATIVE_GOLDEN_2026-10-12.json`
+
+Do not regenerate or cosmetically revise the same safety-inspector premise. Preserve source JSON script text as original failure evidence. Two attempts to update those historical JSON candidates were blocked at the connector, and no file mutation was confirmed; the negative-golden receipt is the recovery override. No new content, Site/audio/runtimes, Stage or Live. Current Clown script audio gate is blocked for these specific texts. **Single next editorial gate: `KFB_SUNO_EDITORIAL_SOURCE_RESET_R1`**: a truly new source-specific premise must earn human RULE1 editorial acceptance before sending it to Suno. Parallel meta-NPC content and KFB Audio Voice R1 remain separate, not universally failed.
+
+---
+
+
 ## 2026-10-12 · CORRECTIVE RETURN · TWO CHATS WERE BOTH SENT THE CLOWN
 
 **User-reported failure:** two different ChatGPT web chats repeatedly supplied the same Clown routine rather than distinct KFB meta-comedy NPC episodes. **Confirmed cause in GitHub:** `META_NPC_SUNO_SPEECH_PARALLEL_CHAT_ONBOARDING_R1_2026-10-12.md` explicitly suggested "Reuse Clown first". This was an editorial routing error, not a Suno generation result.
