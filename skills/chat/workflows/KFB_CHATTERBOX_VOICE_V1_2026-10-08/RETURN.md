@@ -1,5 +1,24 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · HUMAN FAIL · 1001 NIGHTS TRIPLETS/BRIDGES POSTMORTEM
+
+**Binding feedback:** Georg explicitly rejected the generated 1001 Nights #5→6→7 Suno candidate as NOT the KFB Triplets concept and lacking real Bridges. The old **17/17 PASS** meant source/shape checks ONLY; it was not a content or artistic PASS. The previously suggested **GEORG_1001_5_6_7_SUNO_SCRIPT_KEEP_TUNE_CUT_R1 gate is cancelled for this failed text**.
+
+**Negative Golden retained unchanged:** KFB_1001_KAYFABE_NIGHTS_5_6_7_FRIZZLEBOB_TRIPLETS_SUNO_R1_2026-10-13.md, Git blob 4d813bfd5aadf57c80552afb4960473c0558b23e. New evidence:
+- POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md
+- data/KFB_1001_NIGHTS_TRIPLETS_FAIL_PROVENANCE_AUDIT_R1_2026-10-13.json
+
+**Quantitative verbatim/authoring:** Original three selected Card name/POWER/LORE fields = 103 tokens. Audible output = 114 words; strict ≥3 contiguous source words **36/114 = 31.58% verbatim and 78/114 = 68.42% assistant-worded**; lenient ≥2 words **48/114 = 42.11% verbatim, 66/114 = 57.89% nonverbatim**. Unique source-field tokens appearing in ≥3-word original spans = 36/103 (34.95%). Only 3/60 Cards used; three titles exact, **0/6 complete POWER/LORE**. Claimed transitions contain 34 spoken words, strict literal 3/34, assistant-worded 31/34; **2 labeled / zero semantically proven Bridges**. Nonverbatim is not synonymous with fabricated facts.
+
+**Root causes:** TYPE_CONFLATION between subject/connector/reframe and title/POWER/LORE synopsis; BRIDGE_LABEL_SUBSTITUTION lacking prior state→next caused change; UNAUTHORIZED_SCOPE_DEFAULT 60→3 cards plus Suno; SELF_VALIDATION_LEAK 17/17 structural checks treated as success; prior negative Goldens ignored. No rewrite or repair performed: plugin v0.1 remains unvalidated for this output class; reject this exact candidate for Suno, Triplet pool, Game/Audio canon.
+
+**Owner:** georg-doc/kayfabizarro · Voice/ChatterBox Draft PR #379 · branch planning/kfb-chatterbox-voice-layer-v1-2026-10-08. Source original blob c5b6719d6a0612f227615d9917bbfbb45563f45d. Explicit user verdict HUMAN_FAIL; deterministic text/source audit executed, audio/Suno/browser/Site test count **0**; active Audio r3 Card11 feed blob 180a7ea461620e469e4f8bdf73905a06308f3ece unchanged. No PR merge, Live, Cloudflare or new Site. Final verified head reported after metadata writes.
+
+**Exactly one next gate:** KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1 — independently recover semantic Triplet and causal Bridge contracts from the existing named Goldens, then decide bounded correction of existing plugin skill prior to fresh generation. No listening gate for failed candidate; Audio r3 human hearing gate unaffected.
+
+---
+
+
 ## 2026-10-13 · KFB TRIPLETS FIRST USER INVOCATION · 1001 KAYFABE NIGHTS THREE-CARD SUNO CANDIDATE
 
 **Outcome:** Georg invoked the new private `KFB Triplets` authoring plugin with source JSON `media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json` and KFB Production Control. Authenticated GitHub fetch pinned his explicit original commit `34102e8bec6ae76e5b2e8de1f1c2a6abb4f4bd1c` to source blob `c5b6719d6a0612f227615d9917bbfbb45563f45d`, identical to current default-branch source at composition time. Registry deck ID `1001_kayfabe_nights`, exact 60 original Card records.
