@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Wrinkle Rumble 13 one-sentence title-power-lore Triplets
+
+- User clarified **one exact Card title + 2–3 source words POWER + 2–3 source words LORE**, combined into **one spoken sentence**. Visual prompt remains nonspoken visual anchor.
+- Built a copy-ready ordered Suno candidate from real Wrinkle Rumble cards 1, 2, 3, 7, 10, 15, 17, 25, 31, 34, 40, 46, 48. 13 sentences, 162 spoken words, 968 Unicode codepoints.
+- Manifest and original source fields in `data/KFB_WRINKLE_RUMBLE_TITLE_POWER_LORE_SUNO_R0_1_2026-10-12.json`. All cue excerpts source checked, exact GitHub readback verified.
+- Source compression is editor-authored, NOT exact quoted full power/lore or automated humor PASS. No 48-card deck generation, Suno render, Site/Stage or runtime replacement.
+- One next gate `KFB_WRINKLE_RUMBLE_ONE_SENTENCE_SUNO_PAIR_AUDITION_R1`.
+
+
 ## 2026-10-12 · Card-to-sentence concept recovery
 
 - User corrected: one spoken NPC Triplet = one short sentence, with three semantic roles inside; not three independent utterances or mechanically glued card fragments. Old twenty cut-ups `FORMAL_FAIL_AS_SPOKEN_TRIPLET`; original sources preserved.
