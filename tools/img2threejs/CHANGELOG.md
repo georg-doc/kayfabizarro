@@ -282,3 +282,16 @@ The Stage mirror uses exact tested runtime files except two import-path-only ada
 **RECOVERY EXPORT:** [Pilot 08 failure recovery](landmarks/pilot-08/failure-recovery/START_HERE.md) preserves source, attempts, evidence, proven causes, salvage map, known issue and one next gate.
 
 **NEXT GATE ONLY:** correct the marker trailing literal `\\n`, repository-parse it, mirror that exact marker to `cloudflare-live`, verify the exact public marker revision, then rerun the existing public proof unchanged. No visual/runtime changes.
+
+
+## 2026-10-12 · WORLD MONUMENTS01 Claude Design session cut · PASS / Tune later
+
+**GEORG HUMAN DECISION:** `tools/KFB_WORLD_MONUMENTS01_CLAUDE_DESIGN_SESSION_CUT_2026-10-12_r1.zi` is **PASS · TUNE LATER** as the next implementation reference for Claude Code / WSA.
+
+**SOURCE / RECOVERY:** GitHub upload commit `7ea1385ac5cd3b7092407ad527baf98315b4c919`, blob `6fddd4cc802e6afeae9d49361ca74c7f9e7baf08`, 2,626,367 bytes. Exact raw source was also mirrored to the private KFB Production Control workflow `KFB-WORLD-MONUMENTS01-2026-10-12` as file `3e3d98b9-2ab8-4992-8904-9d1af8ae1d12`, SHA-256 `075ca47e473d6744918db9ad88c051cea3810e94d23a9cc43c4263f893e866a9`.
+
+**BOUNDARY:** This closes the design/handoff gate only. No archive-content QA, Runtime/physics, OSM placement, browser/WebGL, public Stage, merge or Live PASS is inferred. Existing Landmark/img2threejs, City Lab, Registry, Travel, Race and Audio ownership remains unchanged.
+
+**NEXT:** `WORLD_MONUMENTS01_CLAUDE_CODE_WSA_INTAKE_R1` — ingest/inventory the exact accepted session cut, source-isolate actual objects, reuse existing owners/modules, then implement one bounded receiving monument/world slice. Tune-later refinements remain non-blocking unless proven outcome-critical.
+
+[Full Return](docs/WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md)

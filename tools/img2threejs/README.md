@@ -2,11 +2,14 @@
 
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
 **WSA Review Package:** [Landmarks · full handoff + backlog](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md)  
-**Aktueller Return:** [Grotesque World Style Bridge v1](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md)  
+**Aktueller Return:** [WORLD MONUMENTS01 · Claude Design PASS / Tune later](docs/WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md)  
+**Underlying landmark tech Return:** [Grotesque World Style Bridge v1](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md)  
 **Slice:** [Pilot 06 · bounded style bridge](landmarks/pilot-06/SLICE.md)  
 **Aktuelle Evidenz:** [World Style v1 · 1354/1354](evidence/2026-09-19-landmark-world-style-v1/summary.json)  
 **Vorherige akzeptierte Rig-Evidenz:** [Band Rig v2](docs/LANDMARK_BAND_RIG_V2_RETURN_2026-09-19.md)  
 **Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
+
+**2026-10-12 · WORLD MONUMENTS01:** Georg accepted the uploaded Claude Design session cut as **PASS · TUNE LATER** for Claude Code / WSA intake. [Current PASS Return](docs/WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md). This is a design/handoff acceptance; existing OSM / Travel / Race / Audio owners and Runtime/Stage gates remain unchanged.
 
 ## Aktuell
 

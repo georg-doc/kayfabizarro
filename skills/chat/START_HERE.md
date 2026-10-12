@@ -1,3 +1,20 @@
+## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
+
+Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
+
+Binding handoff:
+`tools/img2threejs/docs/WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md`
+
+Accepted source:
+`tools/KFB_WORLD_MONUMENTS01_CLAUDE_DESIGN_SESSION_CUT_2026-10-12_r1.zi`
+at upload commit `7ea1385ac5cd3b7092407ad527baf98315b4c919`.
+
+Owner remains the existing Landmark / img2threejs authoring lane with current OSM / Travel / Race / Audio owners unchanged. Next executor is **Claude Code / WSA**: inventory the actual session cut, show source objects in isolation, reuse verified donors/modules, then implement one bounded receiving slice. **Tune later is non-blocking.**
+
+This is human design/handoff acceptance only — no new Runtime, Stage, public-verification, merge or Live claim.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-08 · VOICE REQUIRED IN NEXT RUNTIME MVP AFTER A/B
 
 Georg has authorized the KFB ChatterBox Voice Layer as a required acceptance seam for the **first runtime MVP slice explicitly authorized after the current Four-Island Story Vision A/B gate**.

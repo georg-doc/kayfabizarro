@@ -264,3 +264,14 @@ Do not reconstruct the landmark donor from prose; consume the pinned source.
 **DECISION CLOSED:** default landmark-review environment = **OSM City Lab**. Travel Verdant / Day remains the alternate comparison context.
 
 **NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode; if accepted, start the modular Grotesque Cologne Cathedral OSM Golden Sample.
+
+
+## ADDITIVE HUMAN GATE · 2026-10-12 · WORLD MONUMENTS01
+
+Georg has accepted the uploaded `KFB_WORLD_MONUMENTS01_CLAUDE_DESIGN_SESSION_CUT_2026-10-12_r1.zi` as **PASS · TUNE LATER**.
+
+Current handoff: [WORLD MONUMENTS01 PASS Return](WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md).
+
+For this new slice, the next productive gate is **`WORLD_MONUMENTS01_CLAUDE_CODE_WSA_INTAKE_R1`**: Claude Code / WSA inventories the accepted session cut, shows actual source objects in isolation, maps them to existing owners/donors, and implements one bounded receiving monument/world slice. Tune-later work is deferred unless it proves outcome-critical.
+
+This additive decision does not erase the historical Pilot-06 / Pilot-08 evidence or their own public-proof state. It also does not authorize a second Runtime, automatic Stage publication, merge or Live promotion.
