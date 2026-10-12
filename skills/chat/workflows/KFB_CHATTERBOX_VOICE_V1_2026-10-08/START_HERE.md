@@ -1,4 +1,13 @@
 ## CURRENT CARD PERFORMANCE RECOVERY · 2026-10-12 · 48-CARD WRINKLE / STAY FLUFFY / BRIDGE SIDE-CAR
+## R2 RECOVERY · 2026-10-12 · FULL-DECK TTS CUES MEASURED, AUDIO BED A/B STILL OPEN
+
+3 real *dry-only* offline eSpeak full-deck audition MP3s (239.07s / 252.60s / 238.03s) read the exact same source-pinned 48-Card performance ending **"Stay Fluffy!"**. Three 50-cue measured timelines (150 segment intervals total), corresponding SRT/CSV/JSON, local receipt **22/22 PASS** and compact GitHub manifest 11/11 preflight PASS. Durable files: `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`, `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`. User-facing 16-file audio ZIP is conversation-only, not present in GitHub or actual product Site. No confirmed listener preference from eSpeak, no original KFB D music bed file, no real Site A/B run or voice browser rendering. Do not infer real synchronized Card image or word visemes from these segment cues.
+
+**NEXT ONE GATE:** existing KFB Audio Voice Acting Site same-script dry vs real D-bed/duck audible audition. KFB Audio PR #365 owns playback/mix; Voice PR #379 owns source/voice output. No new runtime, no World R4 reopen, no Site publish or Live/merge.
+
+---
+
+
 
 Georg reports **positive creative listening** for the Wrinkle Rumble 48-card Suno performance (not uploaded to this repo). His new binding *card-performance* ending is literal spoken **"Stay Fluffy!"**; **"Welcome, dear Fluffheads!"** is a proposed optional, character-flexible intro. Repeat it for Clown, Orc Band, King Kayfabian, Speakers' Corner and Tavern ensemble where the performance format applies, not every functional NPC utterance.
 
