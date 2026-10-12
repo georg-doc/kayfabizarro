@@ -38,3 +38,9 @@ Documentation-only concept; initial owner note checks comprise named owner, pot/
 **PPL POT-MACRO SOURCE A/B:** show original v2 decorated pot geometry alone, same seed/source/camera with original S19 register preset vs proposed enlarged, simplified macro ornament, in one isolated actual browser comparison. Record actual screenshots at intended world and mobile size, then get a real Georg visual decision. If this A/B is not separately authorized, status remains queued proposal.
 
 This optional Plant Lab gate does not supersede the distinct World Lab weather/SFX source-isolation gate on PR #389.
+
+## Additive evidence closure · 2026-10-12
+
+**Test report:** `TEST_REPORT.md` contains the actually performed document/source ownership assertions: **27/27 PASS** after correcting one literal phrase matcher (first 26/27, focused corrected check 7/7). This is a **static design/owner check only**, not a runnable plant implementation or art-direction review. The six main owner/cross-carrier documents were checked in through exact branch-head + full-content readback after each GitHub write.
+
+**Unchanged visual proof state:** source isolation not run for the candidate macro pot A/B, no actual new geometric Wobbleflora, no potted/grounded browser comparison, no sounds, mobile FPS, CI, Stage/Site or merge. The one next Plant Lab gate remains **PPL POT-MACRO SOURCE A/B**. World Lab parent research gate unchanged.
