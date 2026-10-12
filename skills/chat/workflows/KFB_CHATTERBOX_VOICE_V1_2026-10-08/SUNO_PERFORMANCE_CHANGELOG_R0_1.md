@@ -1,5 +1,10 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Freestyle ideology roast source
+- Preserved Georg's 180-word Suno ideology monologue plus original prompt in `SUNO_FREESTYLE_IDEOLOGY_ROAST_FIRST_TAKE_R0_1_2026-10-12.md`.
+- Text-only editorial TUNE. No confirmed audio, human humor PASS or second take.
+- Distinct from the West Sealand/Munich backstory pair; prior assistant scripts remain quarantined.
+
 ## 2026-10-12 · Paired Suno backstory take B and provenance
 
 - Georg established: Suno emits **2 takes per prompt run**. Previous West Sealand text is take A. Newly supplied Munich Philharmonic/maritime-circus/lighthouse text is take B **of that same run**, not another independent prompt.
