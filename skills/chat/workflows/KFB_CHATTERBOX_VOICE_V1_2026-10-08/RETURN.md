@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · ONE CARD ONE SENTENCE FRACTAL KING QUEST · CONCEPT RECOVERY
+
+Georg corrected the failing card-cutup approach: an NPC Triplet is **one short spoken sentence**, not the three independent snippets I had joined. `subject / connector / reframe` are internal utterance roles. The 20 prior source-exact but disconnected cut-ups remain preserved in `data/KFB_CARD_SOURCE_CUTUP_TRIPLET_POOL_R0_1_2026-10-12.json` with explicit `FORMAL_FAIL_AS_SPOKEN_TRIPLET`; source-provenance valid but format FAIL.
+
+User also requires *fractal expansion* through existing King Kayfabian Quest minigame: `LIVING_KFB_TOWN.md` §13.4 shows Actor Card + three collected Scene Cards + choose from three existing Quest offers, with `Actor/POV → SHOW IT → SPIN IT → SELL IT → Quest/Endpanel` and player Closure. This is higher-scale performance grammar, **not** a mandate for three independent sentences or invented quest logic. King game intent read and grounded, live game implementation NOT tested.
+
+New clean candidate `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_SOURCE_PILOT_R0_1_2026-10-12.json` proposes seven one-sentence English outputs from seven original card title/power/lore records. Short-form subspans yield exact combined sentence; original source field values/artworkPrompt and source blob identity retained; no visual art checked and sentences are explicitly derived, not falsely sold as exact source quotes. Initial 10/10 + independent 12/12 structure checks PASS; 0 Georg creative KEEP or actual ChatterBox/Voice/game/audio tests. Consolidated nonMED source census stays: 77/77 deck JSONs, 4119/4119 card records read; 52 MED plus one medicine-history outlier excluded.
+
+Read `KFB_TRIPLET_FRACTAL_KING_QUEST_CONCEPT_CHECK_R0_1_2026-10-12.md` and corrected top of `KFB_CUT_PLAY_CARD_SOURCE_TO_CHATTERBOX_TRIPLETS_R0_1_2026-10-12.md`. **One gate** `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_RULE1_HUMAN_CHECK_R1`: Georg tests a couple original Cards beside derived sentences and actual artwork to approve/adjust and only then tries a ChatterBox voice consumer. Existing World/Voice gates unchanged. No Site product build or public Stage/Live.
+
+---
+
+
 ## 2026-10-12 · ONE-CARD / ONE-SENTENCE TRIPLET CORRECTION
 
 **Outcome:** Georg corrected an actual semantic-contract error while discussing the 77 KFB non-MED Decks/4,119 JSON Card source census: **one Triplet = one spoken sentence**, with `subject / connector / reframe` as *internal parts*. The original cross-workspace KFB examples and §5 Voice handover explicitly support this. Three staggered presentation blocks and three different Card fields MUST NOT be misread as three autonomous utterances. This correction is additive and source-grounded, not a rewrite of the accepted ChatterBox/Audio runtime.
