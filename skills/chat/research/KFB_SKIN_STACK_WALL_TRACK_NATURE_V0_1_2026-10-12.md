@@ -82,3 +82,9 @@ Tree and nature authoring is an excellent GN Gizmo use case and should consume r
 
 ## Next single gate
 **KFB_SKIN_STACK_SOURCE_ISOLATION_W1_T1_R1** — show the actual Prism/Prison wall donor and existing Joyride/Track donor in isolation, then create same-geometry/same-graph A/B for *one* wall and *one* track with genuine SSOT material and editable preview. Tree models stay a separate intake sidequest (see Intake Return) and do not block these two style comparisons.
+
+## Additive nature asset batch · 2026-10-12
+- New source intake also covers **Broken Vector LowPolyRockPack.** (literal trailing dot; BLEND + Models.zip) and **modular_terrain_collection.zip** (archive source-only; contents/rights unverified). Do not invent rock models or modular plate/terrain geometry until originals are extracted and shown alone.
+- Exact source JSON, rights/format flags and Claude Code route live under `tools/asset_registry/intake/NATURE_BATCH_2026-10-12.md` and `NATURE_BATCH_SOURCE_2026-10-12.json`.
+- Future nature Gizmos can guide rock patches/cliff boundaries and placement density, but World/Surface Truth retains terrain/contact and Skin Stack retains visual-only role. No new engine or current Island MVP runtime authorization.
+- Preserving first next Skin Stack gate `KFB_SKIN_STACK_SOURCE_ISOLATION_W1_T1_R1`; the parallel Asset Librarian source gate is `NATURE_BATCH_AR4_REFRESH_PLUS_SOURCE_ISOLATION_R1`.
