@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · West Sealand first user Suno backstory take
+
+- Verbatim user-supplied *Suno-generated* Clown transcript stored in `SUNO_WEST_SEALAND_CLOWN_FIRST_BACKSTORY_TAKE_R0_1_2026-10-12.md`: 172 words, 967 Unicode codepoints.
+- Actual experiment uses improvised personal backstory and causal character failure, **not** the assistant's rejected generic safety-inspector sketch and not proven to use the earlier 410-character minimal prompt.
+- Assistant's RULE1 editorial finding TUNE: unusual diplomat/circus situation and blame-shifting persona; still generic educated sea bass/goat whimsy, explained jokes and weak ending. **No human comedy verdict from Georg yet**.
+- No audio file/timing/music verification, no inferred KayKit flaming clubs or canonical micronation and no Site/audio Runtime or Stage deployment.
+
+
 ## 2026-10-12 · Minimal Suno source prompt locked
 
 - Georg corrected the record: his actual prompt-first Suno request was **only** format (55–65s spoken comedy, not song) + gritty deep male cowboy Clown voice/profile. Exact **410 codepoints** pinned as `SUNO_PROMPT_FIRST_MINIMAL_ACTUAL_USER_PROMPT_R1_2026-10-12.md`.
