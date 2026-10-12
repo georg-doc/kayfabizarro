@@ -1,6 +1,16 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
 
+## 2026-10-12 · Work Site v9 checked · New standalone #17–19 source-bound editor import
+
+- Verified exact existing Audio PR #365 current Work handoff: Source 0.6.0 / Site v9 with 18/18 core, 172/172 packaged, r2/r3 12/12 live content loader and zero extra deployment; visual owner-browser DRY/D still pending.
+- Verified Voice PR #379 current r3 feed `audio-site-preview-r3-card-11-tune` blob `180a7ea461620e469e4f8bdf73905a06308f3ece`. Kept it **unchanged** to preserve today's instructed Card 11 listening.
+- Authored additively separate `data/KFB_WRINKLE_17_18_19_LOREKEEPER_IMPORT_DRAFT_R1_2026-10-12.json`: actual Card 17 Hold Music + Madame Foster, Card 18 Gravity Trap, Card 19 Analysis Paralysis; two explicitly fictional stage-to-stage bridges. Existing site's importable draft schema matches; 9/9 source/shape checks PASS, post-write GitHub readback. Editorial/casting NOT human approved and no real Site import test.
+- No Audio Site deployment, change to central Hub/Cloudflare, merge or Live. Next one gate stays exact r3 owner listener test.
+
+---
+
+
 ## 2026-10-12 · Three full-deck dry TTS renders with 150 real audio-bound cues · R2
 - One unchanged source-verified 48-Card speech text with exact final "Stay Fluffy!" is now truly rendered as three separate offline eSpeak MP3s: dry_storyteller_m3 239.0727s, dark_orc_m7 252.6041s, higher_storyteller_f3 238.0278s. All intentionally technical, not approved character casting.
 - 50 measured cue intervals in each voice file = intro, 48 Card IDs, outro, saved at `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`. Audio/CSV/SRT/JSON ZIP 16 files / 9,121,644 bytes in conversation only; no GitHub binary. Reproduction/proofs at `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`.
