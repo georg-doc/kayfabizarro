@@ -21,3 +21,13 @@
 - `CLAUDE_CODE_WSA_INTAKE_2026-10-12.md` is the concrete read-first source-isolation handoff for Claude Code / WSA; no parallel world implementer, no R5, no publication.
 - Evidence: **20/20** newly run document/owner/rights-gate assertions, **7/7** current documents fetched and read during cross-check, 0 browser render or listening proof. Exact post-write readbacks for added documents and TEST_REPORT passed.
 - One next gate preserved: KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT; routine Hub/Cloudflare update not required.
+
+## 2026-10-12 · Georg ambient scenery idea: Wobbleflora inflatable tubes · PROPOSAL ONLY
+
+- Added `WOBBLEFLORA_INFLATABLE_TUBE_PLANTS_CONCEPT_2026-10-12.md` to this existing research branch and Draft PR #389: placeable 3D inflatable tube/cactus/plants with optional branched arms, EyeRig and individual/group motion.
+- Proposed low-cost procedural bone/centerline spring with fake inflation/upper-body buckle, existing read-only SKY3/Travel wind and KFB Audio beat, seed-stable solo/pair/unison/La-Ola and biome/clay variation.
+- Source routing checked: existing Living Toy World response layers, historical Travel ts-flora wind clock, EyeRig donor, Resident Performance face ownership. Donor source isolation before integration remains mandatory.
+- Explicitly no source inventory/rights count changes, no WorldBuilder R4/R5, no new owner, no actual 3D render, no Site/Stage/Live. This optional idea does not block the original three-scenario weather/SFX source-isolation gate.
+- Concept note pre-write static checks **10/10**; GitHub exact note write + readback separately verified. Zero animation/browser/audio/device tests.
+
+**Existing parent next gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT.
