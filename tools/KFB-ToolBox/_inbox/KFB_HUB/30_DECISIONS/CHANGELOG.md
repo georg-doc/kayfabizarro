@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Haltebucht geparkt, 5192 dauerhaft
+- V-196 Haltebucht so übernommen, kein weiteres Feilen; später im Strecken-Konzept-TUNE.
+- Lab-Server 5192 war 12.10. 02:20–13.10. aus (Vorschau-Server der Bau-Sitzung endet mit Zugende). Jetzt hält ein Watchdog-Tab im Terminal-Panel der Steuerung 5192 dauerhaft; Sitzungen starten 5192 nicht mehr aus der Vorschau.
+
 ## 2026-10-13 · Georgs Antworten umgesetzt
 - V-192 Aufräumen erledigt (43 MB in ~/.Trash/KFB-cleanup_2026-10-13), Pläne/Briefs archiviert (Lab docs/retired, replies/archiv), Reihenfolge S2 → S3 → S5 → S6 → S7 → S8, Lorekeeper nicht modellieren. V-193 Dungeon in drei Varianten. V-194 God-Mode vs. Maker getrennt, Hex Legacy, Vorbereitungs-Agent (Vertrag kfb.world/1, Delta, Undo-Prototyp) gestartet. V-195 NPC-Proof TUNE; Vergleichsfragen nur mit großen Bildern. open-decisions-JSON aktualisiert (offen: d03 Bucht mit neuem Bild, d17–d20 werden neu gestellt).
 
