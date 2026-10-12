@@ -1,4 +1,16 @@
 ## CURRENT CARD PERFORMANCE RECOVERY · 2026-10-12 · 48-CARD WRINKLE / STAY FLUFFY / BRIDGE SIDE-CAR
+
+## LATEST · 2026-10-12 · POST WORK · AUDIO SITE VERSION 9 / SAFE NEXT EDITOR IMPORT
+
+Work succeeded in an **in-place one-time enhancement** to existing `https://kfb-audio.frizzlebob.chatgpt.site`: Site Source 0.6.0, version 9, Audio PR #365 and original Voice Acting owner. Two post-deploy content-only Voice PR #379 feed changes each passed 12/12 (r2/r3); no new Site publish. Current visible owner-listening gate is still r3 `audio-site-preview-r3-card-11-tune`, **not** closed by those automated results.
+
+The next Web Chat authored an entirely separate **local-import-only** Lorekeeper performance for real Wrinkle Cards #17→18→19 in `data/KFB_WRINKLE_17_18_19_LOREKEEPER_IMPORT_DRAFT_R1_2026-10-12.json`. It uses existing Site draft schema and concrete editorial bridges with `Stay Fluffy!` outro. It does **not** update the active r3 feed, whose original blob is preserved: `180a7ea461620e469e4f8bdf73905a06308f3ece`. This is a source-based authoring candidate, not automatically funny nor Site-tested. See new top of `RETURN.md`.
+
+**NEXT HUMAN GATE:** owner-visible Site Voice Acting -> Reload GitHub content -> confirm r3 Card 11 -> Play dry vs Play D -> KEEP/TUNE/CUT. After that, optional import of #17–19 as local draft for further creative test, without Work, deploying or replacing active source.
+
+---
+
+
 ## R2 RECOVERY · 2026-10-12 · FULL-DECK TTS CUES MEASURED, AUDIO BED A/B STILL OPEN
 
 3 real *dry-only* offline eSpeak full-deck audition MP3s (239.07s / 252.60s / 238.03s) read the exact same source-pinned 48-Card performance ending **"Stay Fluffy!"**. Three 50-cue measured timelines (150 segment intervals total), corresponding SRT/CSV/JSON, local receipt **22/22 PASS** and compact GitHub manifest 11/11 preflight PASS. Durable files: `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`, `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`. User-facing 16-file audio ZIP is conversation-only, not present in GitHub or actual product Site. No confirmed listener preference from eSpeak, no original KFB D music bed file, no real Site A/B run or voice browser rendering. Do not infer real synchronized Card image or word visemes from these segment cues.
