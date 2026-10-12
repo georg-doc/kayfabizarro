@@ -1,5 +1,16 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+
+## 2026-10-12 · TIMED R2 · 3 COMPLETE VOICES / 48 CARDS / 150 SEGMENT CUES
+
+**Result:** Advanced same-text Card-Performance audio audition using original GitHub Wrinkle Rumble source. Exactly three actual independent full 48-card offline eSpeak dry vocal MP3s (239.0727, 252.6041, 238.0278 seconds), all have **"Welcome, dear Fluffheads!"** and final **"Stay Fluffy!"**, source ordered Cards 1–48 unchanged. **50 measured source-linked cue intervals per MP3** (intro + 48 card sentences + outro) now durable in `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`; original speech Git blob `a9e6631267dac39bd04012f6402497db591c6d06` reconfirmed byte-exact. Full independent evidence in `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`. All 3 MP3s, exact SRT/CSV/JSON, original speech and manifest in **conversation-only ZIP** `KFB_Wrinkle_48_Card_TTS_Cue_Audition_R2.zip` (16 entries, 9,121,644 B), **not GitHub or Site**.
+
+**Actual tests:** 22/22 local render/source/timing/ZIP checks; 11/11 compact new GitHub cue-manifest structural checks; all intended files read back at their GitHub post-write heads. Measured cue timing is for exact segmented eSpeak file only; *not* Suno, browser voices, or dynamic ChatterBox output. These are dry technical audio renders; still **0 real D-bed mix, 0 genuine Site A/B, 0 human TTS-voice quality PASS, 0 visual Card crop, 0 new Site publish**. The KFB Audio Site URL could not be opened through available web browsing; do not claim PUBLIC_VERIFIED. Current KFB Audio owner PR #365 remains the receiver, no second runtime. World R4 STOP/no R5, no Cloudflare, Live, or merge.
+
+**One next gate unchanged:** `VOICE_ACTING_EXISTING_SITE_SAME_TEXT_D_BED_A_B_AUDITION_R1`. Sites-capable executor performs exact audio import or browser voice performance in the *existing* KFB Audio Voice Acting Site, dry-vs-original-D-bed with actual ducking, actor voice selection and listener comparison to Georg's approved Suno direction. Do not reuse R2 timings for a different renderer.
+
+---
+
 ## 2026-10-12 · FULL-DECK CARD PERFORMANCE STAY FLUFFY + LLM-FREE BRIDGES + LOCAL TTS PROOF
 
 **Status:** SOURCE VERIFIED + LOCAL AUDIO TECHNICAL FIXTURE. Georg reports **successful/compelling Suno performance** of the earlier complete Wrinkle Rumble script, and authorizes applying the format across card-based performers, **not human acceptance of rendered TTS clones**, no actual Suno file ingested.
