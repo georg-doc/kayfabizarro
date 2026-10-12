@@ -59,3 +59,13 @@ New files (this same existing research branch/PR):
 No files from the original 25-record SOURCES.json were changed or newly vendored. **Still 4 KFB owners + 21 external asset-source entries; motion article is a separate workflow reference, not a 26th CC0 asset lead.**
 
 **Current intended PR remains Draft #389**, existing branch, no merge/Live or Stage/Site. Final exact head is whatever the verified branch points to after the last documentation commit; do not trust a self-embedded future hash. Current overall next gate unchanged: **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT**, now using frame-exact capture methodology when a receiving test executor is separately authorized. Georg action now: none.
+
+## Additive concept intake · 2026-10-12 · Wobbleflora ambient inflatable tube plants
+
+Georg proposed rhythmic, wind/beat/mood-reactive tubular cactus/plant/character scenery with long swinging arms, optional KFB EyeRig eyes and small groups capable of synchronized or spatially staggered La-Ola motion. The exact concept and minimal technical options are persisted in `WOBBLEFLORA_INFLATABLE_TUBE_PLANTS_CONCEPT_2026-10-12.md` **on the existing Draft PR #389 research branch**.
+
+**Status:** PROPOSAL / NOT IMPLEMENTED / NOT RENDERED / NO NEW RUNTIME. The recommended first isolated 3D proof is one anchored deformable tube, then three individually seeded objects showing idle → wind → music → La-Ola → deflate/reinflate using existing environment/audio inputs. EyeRig-v6 donor/source must be shown in isolation before reuse. No world geometry/terrain integration is authorized by this note; WB2 R4 remains STOPPED/F-R39 FAIL/NO MVP/NO R5.
+
+**Evidence:** 10/10 written-concept structure/owner/guard assertions; exact GitHub write/branch-ref/file readback completed. 0 render/visual/audio/runtime/mobile tests, no Stage/Site or human adoption. No changes to `SOURCES.json` (25 existing records); prior source research and results preserved. This is an optional environment/scenery backlog item and does not change project routing, the current Four-Island Vision gate or a public URL.
+
+**One parent next gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT, separately authorized. Later Wobbleflora source-isolation MVP is conditional and not a blocker. No Georg action required now.
