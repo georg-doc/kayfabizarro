@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Pool quality RULE1 human FAIL and frozen 8-triplet test
+
+- Georg explicitly FAILS `clown.consensus.01` ("Everybody agrees / until somebody acts / volunteer?") as responsibility diffusion, empty cliché and AI slop, drawn from actual shared 20-entry ChatterBox candidate pool.
+- Audited all 20 actual source entries, preserving exact three-part text and provenance, with 6/6 static integrity assertions. Logged independent assistant triage concerns for other 19, **not** fabricated Georg FAILs.
+- Added `CHATTERBOX_POOL_RULE1_EDITORIAL_FAIL_REVIEW_R0_1_2026-10-12.md` and `data/CHATTERBOX_POOL_RULE1_SOURCE_AUDIT_R0_1_2026-10-12.json`. The previously composed eight-entry ideology set is now `CREATIVE_GATE_BLOCKED`; original script text preserved for negative evaluation.
+- Earlier provenance/schema passes were valid but **no humor acceptance**. No rewrite of donor, no new pool or ChatterBox runtime, no Suno generation/audio, Site or Live deployment.
+- One next content gate `KFB_CHATTERBOX_POOL_RULE1_EDITORIAL_CURATE_R1`.
+
+
 ## 2026-10-12 · Pure pool Triplet ideology beat probe
 
 - Exact eight existing ChatterBox Studio pool triplets in manual order, four Clown signature plus four globals; 58 words, no invented dialogue or borrowing, source donor blob pinned.
