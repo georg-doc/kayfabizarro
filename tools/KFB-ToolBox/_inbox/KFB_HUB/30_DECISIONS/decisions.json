@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-12",
+ "updated": "2026-10-13",
  "entries": [
   {
    "id": "V-001",
@@ -2146,6 +2146,62 @@
    "source": "Georg 12.10.",
    "supersedes": null,
    "why": "Georg will alles zentral in seinem ChatGPT-Production-Hub.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-192",
+   "date": "2026-10-12",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georgs Antworten 12.10. (Steuerpult): (1) Arbeitsstände in den Papierkorb (C1b_wip, C4c wip1–8, drive_test_wip, doppelte ME1/ME2) → erledigt 13.10. (~/.Trash/KFB-cleanup_2026-10-13). (2) Abgelöste Pläne und Briefs archiviert (Lab docs/retired, replies/archiv). (3) Reihenfolge: Technik zuerst, S5 Speicher und S6 deterministische Tests vor S7 Licht und S8 Rhythmus. (4) Track Core v0.12 auf main: später klären. (5) Akashic-Bibliothekar = Lorekeeper, wird nicht modelliert. (6) KFB World Studio MVP1: nicht relevant.",
+   "values": {},
+   "owner": "Steuerung + Bau-Sitzung",
+   "check": "-",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Aufräumen und Reihenfolge geklärt.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-193",
+   "date": "2026-10-12",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Dungeon-Strecke in allen drei Varianten: durch eine Insel (Parkhaus-Logik nach unten), als eigene Dungeon-Insel und frei im Raum als geschlossene Röhre (zu V-182).",
+   "values": {},
+   "owner": "Dungeon-POC",
+   "check": "POC Schritt 2",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Dungeon als Baukasten für alle Lagen.",
+   "applies": "ab POC Schritt 2"
+  },
+  {
+   "id": "V-194",
+   "date": "2026-10-12",
+   "area": "Worldbuilder",
+   "verdict": "RULE",
+   "text": "Modi klar getrennt: God-Mode = Georgs Editor (alles bearbeiten). Maker = Spieler bauen, und zwar auf der Maker-Space-Insel UND auf eigenen Inseln, inklusive Gelände und Strecke; Veröffentlichen nur mit Georgs Freigabe; Maker-Modus als Schalter im Spiel. Eine Welt-Hülle kfb.world/1 für alle Modi. Hex-Raster ist Legacy und keine Grundlage. Vorbereitung (Vertrag, Delta-Liste, Undo-Prototyp) als Agent starten. Maker-Bau nach MVP.",
+   "values": {},
+   "owner": "Steuerung + Modul-Agent",
+   "check": "Vertrag kfb.world/1",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Verwechslung God-Mode und Maker ausgeräumt; Hex ist Legacy.",
+   "applies": "ab jetzt"
+  },
+  {
+   "id": "V-195",
+   "date": "2026-10-12",
+   "area": "Animation",
+   "verdict": "TUNE",
+   "text": "NPC Performance Proof R1 (Clown): TUNE. Technik (seek, Fußkontakt) trägt; das Acting reicht nicht. Vergleichsfragen künftig nur mit großen, lesbaren Bildern nebeneinander oder kurzem Clip, nicht mit kleinen Kontaktbögen.",
+   "values": {},
+   "owner": "Motion",
+   "check": "nächster Proof",
+   "source": "Georg 12.10.",
+   "supersedes": null,
+   "why": "Zweifel liest sich nicht; Georg konnte v1/v2 auf den Kontaktbögen nicht beurteilen.",
    "applies": "ab jetzt"
   },
   {

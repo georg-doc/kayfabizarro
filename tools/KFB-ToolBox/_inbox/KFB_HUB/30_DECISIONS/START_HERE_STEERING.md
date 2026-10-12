@@ -17,7 +17,7 @@ Der WSA-Router (`planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`) ist D
 ## Abgelöst (V-117), nicht mehr als Grundlage nutzen
 - `KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` (R2/R2.1), insb. §4 Besitzer-Tabelle („Straßen, Übergänge, Brücken, Rennstücke → RKIT“) und §7 („Joyride nur Physik“).
 - Weg A aus `POSTMORTEM_MVP1_STAGE1_R1.md` §5.1 (Golden-Referenzen von Claude Design; V-084). Ersatz: V-119 Blender Island Form Kit 01.
-- `MVP_DRIVE_LOOP_R1_PLAN.md`, `STAGE1_R2D_PORT_PLAN.md`.
+- `MVP_DRIVE_LOOP_R1_PLAN.md`, `STAGE1_R2D_PORT_PLAN.md` (alle abgelösten Pläne seit 13.10. in Lab `docs/retired/`).
 - `PROJECT_STATE.md`-Abschnitte vor „Stand 11.10.“ sind Geschichte.
 
 ## Feste Regeln (Kurzfassung)

@@ -6,7 +6,7 @@ Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. M
 
 - **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
 - **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
-- **Als Nächstes (Plan R1 §5):** S2 Flacker-Paket (begonnen hinter `?flk=1`) → S3 Insel-Cache / Ladezeit, gemeldet zusammen → S5 Speicher → S6 Tests/Git. S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185) nach Freigabe.
+- **Als Nächstes (Plan R1 §5, Reihenfolge V-192: Technik zuerst):** S2 Flacker-Paket (begonnen hinter `?flk=1`) → S3 Insel-Cache / Ladezeit, gemeldet zusammen → S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
 - **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
 
 ## Lieferungen 11./12.10. (neueste oben)
@@ -248,7 +248,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## MVP-Plan abgeschlossen (2026-10-09)
 
-- **Masterplan R2.1** (`docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
+- **Masterplan R2.1** (`docs/retired/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
   - **MVP-1 „Town + Protopia“ zuerst**, danach MVP-2 (Dystopia, Utopia, Flug, volles Audio);
   - Inselgrößen Town ≈ 40 × 40 MC, Satelliten 20–28 MC;
   - Sitz-Schicht im Lab über die Figuren-Karte;
@@ -303,7 +303,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## Vorbereitung Stufe 1 (2026-10-09, vor Georgs Reset)
 
-- **Bauplan:** `docs/STAGE1_R2D_PORT_PLAN.md`. Zuordnung R2D → Lab-Module (`src/island/r2d/`), `planFromSpec` aus Editor-Umriss und RKIT-Straßenbett, `IslandField` bleibt als Fassade (gezählte Aufrufer), S1 statt kfbLayer, Scholle v7 statt `buildBody`, eine Farbquelle `ENV_ROLES`. Dazu Reihenfolge in 8 Schritten, harte Regeln, Risiken.
+- **Bauplan:** `docs/retired/STAGE1_R2D_PORT_PLAN.md`. Zuordnung R2D → Lab-Module (`src/island/r2d/`), `planFromSpec` aus Editor-Umriss und RKIT-Straßenbett, `IslandField` bleibt als Fassade (gezählte Aufrufer), S1 statt kfbLayer, Scholle v7 statt `buildBody`, eine Farbquelle `ENV_ROLES`. Dazu Reihenfolge in 8 Schritten, harte Regeln, Risiken.
 - **Kritiker-Protokoll:** `docs/QA_CRITIC_PROTOCOL_R1.md` (blind, Kamerasätze, neue Inselkriterien G1–G7, Schema `verdict.json`, Auftragsvorlage, Bericht).
 - **Satelliten:** Lageplan auf die MVP-Welt umgestellt (Environment), Stufe nach dem MVP. Abenteuer auf 02 Fluss-Camp + 08 Holzhacker-Hütte.
 - **Infrastruktur nach dem MVP** im Masterplan-Backlog (Georg: bis dahin pragmatisch; Track Core bleibt privat, `RKIT-R3/private/` wird nie synchronisiert).
@@ -373,7 +373,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## Masterplan R2 und NotebookLM-Paket (2026-10-09)
 
-- **Masterplan R2:** `docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` löst den R1-Plan ab. Neu sind die Grundsätze §0, Stufe 0 (Konzept-Gates), die zwei Randfamilien (Bord, Joyride-Bande), der Sprenkel-Befund, der Asset Librarian v10 und der Recherche-Anschluss.
+- **Masterplan R2:** `docs/retired/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` löst den R1-Plan ab. Neu sind die Grundsätze §0, Stufe 0 (Konzept-Gates), die zwei Randfamilien (Bord, Joyride-Bande), der Sprenkel-Befund, der Asset Librarian v10 und der Recherche-Anschluss.
 - **Neue Regeldateien:** `docs/ETHERINGTON_REGELN_IN_ZAHLEN_R1.md` (Arbeitsfassung, wird über Recherche P3 geprüft); §01 „keine harten Schnitte“ in beiden QA-Regelwerken; Darstellungsregel (3D-Render mit Profilschnitt) im Übergangs-Regelwerk §1.
 - **NotebookLM-Upload:** `deliveries/NOTEBOOKLM_UPLOAD/`, ein flacher Ordner zum Hochladen mit 28 einzelnen Markdown-Dateien (eine je SSOT-Dokument, nummeriert) und 18 Bildern. Er wird erzeugt mit `python3 tools/build-notebooklm.py` (keine zweite Ablage; nach Änderungen neu bauen). Georg: keine Bündel-Dateien, kein Lies-mich.
   - **Neue SSOT-Dateien:** `docs/KFB_PROJEKTKONTEXT.md`, `docs/KFB_GLOSSAR.md`, `docs/KFB_TECHNIK_UND_SCHNITTSTELLEN_R1.md`, `docs/KFB_PAINPOINTS_UND_BLINDSPOTS_R1.md`, `docs/notebooklm/KFB_DEEP_RESEARCH_PROMPTS_R1.md`, v5-Renders in `docs/feedback/`.
@@ -406,7 +406,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## MVP-Slice „Drive Loop“ R1 (Plan, 2026-10-08 nachts)
 
-- Plan: `docs/MVP_DRIVE_LOOP_R1_PLAN.md`. Heimat ist das Lab, später GPT-Site per Work-Job, GitHub bleibt SSOT-Hub.
+- Plan: `docs/retired/MVP_DRIVE_LOOP_R1_PLAN.md`. Heimat ist das Lab, später GPT-Site per Work-Job, GitHub bleibt SSOT-Hub.
 - **Welt:** KFB Town groß in der Mitte mit Ringstraße an der Inselkante, Auffahrten zu Dystopia, Utopia und Protopia in verschiedenen Höhen, Rennstücke (Looping, Sprung) in den Zwischenräumen, Rand-Rhythmus aus der Geschichte je Insel.
 - **Fahren:** Retro Cars + J17-Cabrio mit FrizzleBob; den Drehfehler um die eigene Achse vor Stufe 2 beheben.
 - **4 Stufen:** Grundlage → Ring → Loop → Klang + Gefühl, jede mit harten Regeln, blindem Kritiker und Georg.

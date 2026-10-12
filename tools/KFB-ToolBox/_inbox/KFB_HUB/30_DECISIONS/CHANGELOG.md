@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Georgs Antworten umgesetzt
+- V-192 Aufräumen erledigt (43 MB in ~/.Trash/KFB-cleanup_2026-10-13), Pläne/Briefs archiviert (Lab docs/retired, replies/archiv), Reihenfolge S2 → S3 → S5 → S6 → S7 → S8, Lorekeeper nicht modellieren. V-193 Dungeon in drei Varianten. V-194 God-Mode vs. Maker getrennt, Hex Legacy, Vorbereitungs-Agent (Vertrag kfb.world/1, Delta, Undo-Prototyp) gestartet. V-195 NPC-Proof TUNE; Vergleichsfragen nur mit großen Bildern. open-decisions-JSON aktualisiert (offen: d03 Bucht mit neuem Bild, d17–d20 werden neu gestellt).
+
 ## 2026-10-12 · S1 fertig: C4c ist Standard
 - Bau-Sitzung V-183: Auto in der Bucht (Band auf Buchtseite verbreitert, Parkposition 0,25 m im Bordstein), Blocklinie, Zebra 3 Balken, Spalt gefüllt (LAB PATCH L), Bucht-Ende bereinigt; C4c Standard (?c4c=0 = C4b). open-edges 0/0, Parity PASS, Fuß- und Fahrtests grün. PROJECT_STATE aufgeräumt. Bild replies/V183_BAY/, d03 und Slices im open-decisions-JSON aktualisiert. Weiter S2 + S3.
 
