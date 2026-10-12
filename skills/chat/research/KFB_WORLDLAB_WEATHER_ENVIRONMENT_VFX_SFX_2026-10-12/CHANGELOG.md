@@ -12,3 +12,12 @@
 - No binary acquisition, no VFX/SFX import, no implementation, no runtime/Stage/Live/Hub mutation, no merge.
 
 **Next:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT in the existing owners, only when a receiving executor is separately authorized.
+ 
+## 2026-10-12 · Additive Florence/Opus Motion Lab + Claude Code/WSA recovery handoff
+
+- Georg supplied Florence/@flxrnc X article `2105311836190978392`; exact source URL and indexed text mirror documented in `FLXRNC_MOTION_LAB_DONOR_AUDIT_2026-10-12.md`. Source **not** directly rendered/inspected; author claims not promoted to KFB test results.
+- KEEP as **method donor**: exact-time samples, numeric choreography, real frame contact sheets, transition seam checks, decoded audio timing; ADAPT to current SKY3, VFX-01, Audio, Joyride and Resident owner boundaries.
+- REJECT the article's default chrome/branding/UI showreel, duplicate sound engine, shader/runtime framework, untested model performance assumptions and generic FX authoring without exact source.
+- `CLAUDE_CODE_WSA_INTAKE_2026-10-12.md` is the concrete read-first source-isolation handoff for Claude Code / WSA; no parallel world implementer, no R5, no publication.
+- Evidence: **20/20** newly run document/owner/rights-gate assertions, **7/7** current documents fetched and read during cross-check, 0 browser render or listening proof. Exact post-write readbacks for added documents and TEST_REPORT passed.
+- One next gate preserved: KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT; routine Hub/Cloudflare update not required.
