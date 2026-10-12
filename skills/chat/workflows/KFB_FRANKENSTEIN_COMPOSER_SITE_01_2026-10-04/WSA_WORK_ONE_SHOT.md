@@ -1,3 +1,5 @@
+> **CURRENT 2026-10-12 WSA CONVERGENCE EXTENSION:** Read [WSA_COMPOSER_CREATURE_SELF_SERVICE_EXTENSION_2026-10-12.md](./WSA_COMPOSER_CREATURE_SELF_SERVICE_EXTENSION_2026-10-12.md) before implementing. The existing private GPT Site has source-isolation evidence in the current Site Registry, but Composer composite/motion/reload are not yet accepted. WSA owns ONE receiving run on PR #355: recover real existing Site source, complete Composer core, then add deterministic zero-LLM Creature mode from doc-only donor PR #390. The old separate Claude Code-first Creature sequence is superseded. No second site/runtime.
+
 # WSA / WORK ONE-SHOT · KFB FrankenStein Composer GPT Site
 
 Status: **AUTHORIZED IMPLEMENTATION HANDOVER**

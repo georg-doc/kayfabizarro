@@ -183,3 +183,10 @@ S5's 2026-09-27 material references predate the accepted K2 2026-09-28 base. New
 
 ### BOUNDARY
 No renderer, deformer, WorldBuilder, OSM presenter, track geometry, material runtime, Stage or Live surface changed. This is a documentation/routing repair only; shared integration verification remains open under issue #247.
+
+## 2026-10-12 · Composer + Creature Self-Service WSA convergence steering
+
+- Georg prefers **one WSA Work product outcome on existing Composer PR #355**, avoiding a separate Claude Code-first Creature runtime and second token-consuming integration.
+- Added `skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/WSA_COMPOSER_CREATURE_SELF_SERVICE_EXTENSION_2026-10-12.md` and a read-first route on the existing WSA One-Shot. Existing private GPT Site actual source/revision must be recovered before code changes.
+- P0: fix/verify real source-backed composites, rig/motion, Pencil face and durable Actor Recipe roundtrip. P1: deterministic browser-local CL01-A Creature generate/mutate/pose/QA/export within SAME Site, using PR #390 as doc-only donor; optional B/C variants if core proven.
+- No implementation or runtime/browser test in this checkpoint, no Site publish/Stage/Live/merge. Formal Stage remains downstream per existing PR #355. One next gate: WSA_SITE_SOURCE_RECOVERY_AND_P0_CORE.

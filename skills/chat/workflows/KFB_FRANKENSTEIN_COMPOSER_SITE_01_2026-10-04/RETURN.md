@@ -189,3 +189,17 @@ Work is instructed to continue through implementation, tests, actual GPT Site cr
 Current planning/runtime status before Work starts remains: source audit **12/12 PASS**; runtime/browser/GPT Site/Stage **NOT YET BUILT**.
 
 Exactly one next gate: **WSA/WORK BUILDS AND PUBLICLY VERIFIES THE COMPLETE COMPOSER.**
+
+---
+
+## CURRENT ADDITIVE STEERING · 2026-10-12 · WSA directly converges Composer + Creature Self-Service
+
+Georg requested the rationalized production route: use **WSA Work directly** to finish the missing Composer Site capabilities and, only after its existing P0 core is proven, implement the first browser-local, zero-per-creature-token SDF Creature mode in the SAME existing Site/ToolBox owner. Do not ask for a separate Claude Code Creature Generator runtime as prerequisite; Draft PR #390 remains doc-only donor/negative-control test source, not a second active executor.
+
+Binding updated WSA addendum: `WSA_COMPOSER_CREATURE_SELF_SERVICE_EXTENSION_2026-10-12.md` (this branch, PR #355). Status **AUTHORIZED DIRECTION / NOT BUILT**.
+
+2026-10-12 Site registry on main records existing private Site `https://kfb-frankenstein-composer.frizzlebob.chatgpt.site` as `SITE_DEPLOYED_PRIVATE_SOURCE_FIRST` with GothGirl, Black Knight, FB v5 and Pencil isolation, and `COMPOSITE_MOTION_INTEGRATION_OPEN`. The earlier 2026-10-04 statement "Site not created" is historical where inconsistent. Branch PR #355 remains documentation-only at pre-addendum head `38d489ff0436f4102640647184f97ff5d7564ffb`: actual deployed Site source/revision must be recovered before the first productive write.
+
+No claimed new feature acceptance: Composer integration 0 in this addendum; Creature runtime meshes 0; headless skinning checks 0; real browser tests 0; deployed revision verification 0; no merge or Live. Current World R4 STOP and existing KayKit/EyeRig/Material owners remain untouched.
+
+**WHO NEXT:** WSA Work (only writer, PR #355); Georg does nothing until formal human product review. **ONE NEXT GATE:** `WSA_RECOVER_EXISTING_COMPOSER_SITE_SOURCE_AND_CLOSE_P0_CORE`. Then execute Creature Phase 2 as an internal continuation, not a fresh external work order.
