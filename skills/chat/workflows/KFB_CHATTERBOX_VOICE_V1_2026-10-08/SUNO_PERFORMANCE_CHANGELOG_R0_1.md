@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Card-to-sentence concept recovery
+
+- User corrected: one spoken NPC Triplet = one short sentence, with three semantic roles inside; not three independent utterances or mechanically glued card fragments. Old twenty cut-ups `FORMAL_FAIL_AS_SPOKEN_TRIPLET`; original sources preserved.
+- Verified higher fractal form `LIVING_KFB_TOWN.md` §13.4: Actor + three Scene Cards + one selected King Kayfabian Quest → SHOW/SPIN/SELL → player Closure; still gameplay intent, not tested runtime.
+- Produced `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_SOURCE_PILOT_R0_1_2026-10-12.json` seven real KFB-card-backed sentence candidates and `KFB_TRIPLET_FRACTAL_KING_QUEST_CONCEPT_CHECK_R0_1_2026-10-12.md`. Seven unique nonMED source records, sentence-subparts retained, real title/power/lore/artworkPrompt available.
+- Structural 10/10 + 12/12 checks PASS; 0 human RULE1 approval, 0 real card-art pixels, audio or Site. Next gate `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_RULE1_HUMAN_CHECK_R1`.
+
+
 ## 2026-10-12 · One Card ONE sentence concept reset
 
 - User corrected Triplet unit: ONE subject/connector/reframe utterance = ONE spoken sentence; older 3-block/3-line output interpreted incorrectly as 3 sentences.
