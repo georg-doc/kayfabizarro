@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+
+## 2026-10-12 · Three full-deck dry TTS renders with 150 real audio-bound cues · R2
+- One unchanged source-verified 48-Card speech text with exact final "Stay Fluffy!" is now truly rendered as three separate offline eSpeak MP3s: dry_storyteller_m3 239.0727s, dark_orc_m7 252.6041s, higher_storyteller_f3 238.0278s. All intentionally technical, not approved character casting.
+- 50 measured cue intervals in each voice file = intro, 48 Card IDs, outro, saved at `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`. Audio/CSV/SRT/JSON ZIP 16 files / 9,121,644 bytes in conversation only; no GitHub binary. Reproduction/proofs at `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`.
+- Locally 22/22 waveform/render/ZIP/cue checks PASS; compact GitHub manifest 11/11 shape/source checks PASS. One meaningful new milestone is **measured per-Card timeline** that may drive the existing billboard/bubble consumer when attached to its exact audio source.
+- **Not tested:** real KFB Music D-bed, imported Suno stems, Site actual browser voice playback, visual Card crops, quality review, Site publishing, Stage/Live, merge. Next gate remains **existing Audio Voice Acting Site same text dry-vs-true D-bed A/B**.
+
+
 ## 2026-10-12 · Wrinkle Rumble 48-card performance / Stay Fluffy / LLM-free Bridges / TTS audition
 
 - Georg's direct current feedback: complete Wrinkle Rumble Suno song works musically and causally; adopt spoken **"Stay Fluffy!" as the fixed final line of card-based performances** across character voices, with **"Welcome, dear Fluffheads!"** an optional actor-tailored opening.
