@@ -65,3 +65,7 @@ Executor: **Claude Code** if it has a supported local Node/browser/MCP setup; ot
 Source inspection: upstream README, package.json, AGENTS, LICENSING, 3D-Layers, Node-Workspace, AI-Bridge-Control and Project-Persistence; KFB steering/research donor report/current workflow read. Tests executed **0**; screenshots **0**; external app runs **0**; MCP calls to external editor **0**; KFB runtime changes **0**.
 
 **Next gate: MASTERSELECTS_SOURCE_ISOLATED_AGENT_BRIDGE_PROOF_01.**
+
+## Wiedervorlage · 2026-10-12
+
+**QUEUED / DEFERRED — executor not started.** Georg requested durable follow-up, not immediate external Editor deployment. Recover this exact briefing when Claude Code or WSA Work is available for isolated original MasterSelects UI/MCP/persistence testing. Keep it separate from KFB runtime integration and from the parallel semantic material-family Reddit donor research (`KFB_SEMANTIC_MATERIAL_FAMILY_CITY_ASSET_DONOR_2026-10-12.md`). Avoid interpreting `READY_FOR_INTEGRATION` in an intake as product/runtime acceptance; this is a ready-to-test **research briefing only**. Execute after explicitly routing the agent tool with a supported Node/browser environment. No scheduled date or notification was requested.
