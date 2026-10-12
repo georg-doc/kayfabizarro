@@ -1,0 +1,26 @@
+{
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Use KFB Triplets: make a source-backed 3-card story from Wrinkle Rumble cards 17, 18 and 19 for the Lorekeeper, with two causal bridges and Stay Fluffy!",
+      "Use KFB Triplets: build a full-deck Wrinkle Rumble spoken Suno script under 5,000 characters from the current canonical card JSON.",
+      "Use KFB Triplets: prepare a new KFB Audio Voice Acting draft from verified cards and check it into the existing Voice GitHub branch without republishing the Site."
+    ],
+    "developerName": "Georg Westphalen",
+    "displayName": "KFB Triplets",
+    "longDescription": "Turn verified KayfaBizarro Card JSON into one-sentence Triplets, meaningful causal bridges, three-card scenes, page/deck performances, Audio Site preview drafts and paste-ready Suno speech. Use existing GitHub and KFB Audio owners; no duplicate runtime.",
+    "shortDescription": "Card Triplets & performances"
+  },
+  "name": "kfb-triplets",
+  "version": "0.1.0",
+  "description": "Source-verified KayfaBizarro Card Triplets and causal Card Performances for ChatterBox, KFB Audio Voice Acting and copy-ready Suno speech.",
+  "author": {
+    "name": "Georg Westphalen",
+    "email": "georg@cimoc.de"
+  },
+  "keywords": [],
+  "skills": "./skills"
+}
