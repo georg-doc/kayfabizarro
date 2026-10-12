@@ -1,0 +1,170 @@
+{
+  "schema": "kfb.card-performance.bridge-sidecar/0.1",
+  "status": "EDITORIAL_CANDIDATE_NOT_RUNTIME_NOT_ALL_BRIDGES_APPROVED",
+  "date": "2026-10-12",
+  "owner": "existing KFB ChatterBox semantic authoring -> Voice output PR #379",
+  "audioReceiver": "existing KFB Audio PR #365 / Voice Acting Site",
+  "source": {
+    "deckId": "wrinkle_rumble",
+    "path": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "blob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "cardsTotal": 48,
+    "selection": [
+      1,
+      2,
+      3
+    ]
+  },
+  "performance": {
+    "outro": {
+      "literalFinalLine": "Stay Fluffy!",
+      "scope": "card-based performances (Clown/Orc band/King/Residents), avoid auto-applying to ordinary functional dialogue",
+      "humanDirection": "GEORG_STANDARD_ENDING"
+    },
+    "intro": {
+      "option": "Welcome, dear Fluffheads!",
+      "status": "GEORG_SUGGESTION_CANDIDATE",
+      "mayVaryByResident": true
+    },
+    "formats": [
+      "SINGLE_CARD",
+      "THREE_CARD",
+      "FOUR_CARD_PAGE",
+      "CURATED_DECK",
+      "FULL_DECK",
+      "SPEAKERS_CORNER",
+      "TAVERN_ENSEMBLE"
+    ],
+    "speechUnit": "ONE_CARD_ONE_SPOKEN_SENTENCE_OR_VALID_SILENCE",
+    "tripleSlots": [
+      "subject",
+      "connector",
+      "reframe"
+    ],
+    "higherArc": [
+      "actor_pov",
+      "show_it",
+      "spin_it",
+      "sell_it",
+      "quest_endpanel"
+    ]
+  },
+  "deterministicBridgeContract": {
+    "type": "EDITORIAL_EDGE_GRAPH_NOT_RANDOM_CONNECTIVE_WORDS",
+    "selection": "stable-seeded choice only among curator-certified compatible edges",
+    "match": [
+      "previousCardId",
+      "previousConcreteEffect",
+      "nextCardId",
+      "mode",
+      "speakerProfile",
+      "persistentStoryState"
+    ],
+    "required": [
+      "concrete_previous_anchor",
+      "specific_next_effect_or_obstacle",
+      "semantic_relation",
+      "licensed_bridge_text",
+      "source_ids"
+    ],
+    "relationKinds": [
+      "consequence",
+      "obstruction",
+      "reversal",
+      "retaliation",
+      "cost",
+      "callback",
+      "escalation",
+      "unexpected_equivalence",
+      "emotional_pivot",
+      "rule_rewrite"
+    ],
+    "incompatibleFallback": "NO_EDGE: stop scene, draw alternative card, use authored reset, or valid silence; never invent a therefore connection",
+    "banned": [
+      "generic LLM aphorisms",
+      "bare but/therefore randomness",
+      "unbound catchphrase padding",
+      "title substitution without original power/lore anchors",
+      "cloned static output bank as canon"
+    ],
+    "provenance": "Source card JSON and manually derived 1-sentence candidate are separately identifiable; relation is EDITORIAL bridging, not original canonical Card power",
+    "importableByExistingKernelOnly": true
+  },
+  "threeCardEditorialFixture": [
+    {
+      "cardNumber": 1,
+      "cardName": "The Proboscis of Doom",
+      "sourcePowerCue": "Groan loudly",
+      "sourceLoreCue": "insult whispered",
+      "effect": "eavesdrop_then_groan",
+      "line": "The Proboscis of Doom sees the next three cards and groans at every whispered insult."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "The Chatter-Chompers",
+      "sourcePowerCue": "Steal an item",
+      "sourceLoreCue": "enemy's smile",
+      "effect": "steal_and_gingivitis",
+      "line": "The Chatter-Chompers steal an item, give Gingivitis in return, and leave you wearing your enemy's smile."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "The Wrinkle-Storm",
+      "sourcePowerCue": "Both players cry",
+      "sourceLoreCue": "diaper remains constant",
+      "effect": "destroy_future_both_cry",
+      "line": "The Wrinkle-Storm destroys one Future Timeline; both players cry, but the diaper remains constant."
+    }
+  ],
+  "editorialEdges": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "distraction",
+      "previousConcreteEffect": "eavesdrop_then_groan",
+      "nextConcreteEffect": "steal_and_gingivitis",
+      "bridgeText": "While you're groaning,",
+      "provenance": "EDITORIAL_PROPOSED_LINK_NOT_SOURCE_RULE",
+      "humanApproval": false
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "escalation",
+      "previousConcreteEffect": "steal_and_gingivitis",
+      "nextConcreteEffect": "destroy_future_both_cry",
+      "bridgeText": "The loss leaves both players exposed when",
+      "provenance": "EDITORIAL_PROPOSED_LINK_NOT_SOURCE_RULE",
+      "humanApproval": false
+    }
+  ],
+  "voiceProfiles": {
+    "principle": "resident characterId maps to editable browser/recorded/other TTS voice profile, not hardcoded device URI",
+    "dimensions": [
+      "baseVoiceId",
+      "tempo",
+      "pitch",
+      "roughness_or_filter_if_supported",
+      "whisper_or_drowsy_acting",
+      "affect",
+      "pauses",
+      "fallback"
+    ],
+    "disallow": "treating eSpeak variant changes as proof of natural or charming character voices"
+  },
+  "voicePoc": {
+    "kind": "LOCAL_ESPEAK_CLI_TECHNICAL_PROXY_NOT_BROWSER_SITE",
+    "wholeTextCards": 48,
+    "requestedFinalText": "Stay Fluffy!",
+    "localDurationSeconds": 229.77,
+    "otherBriefClips": 2,
+    "realKfbDConversationBed": false,
+    "realSunoStem": false,
+    "sitePlayVerification": false,
+    "qualityVerdict": "NOT_REVIEWED",
+    "localPackage": "KFB_Wrinkle_TTS_Stay_Fluffy_Local_Audition_R1.zip (conversation attachment, not in GitHub)"
+  },
+  "nextGate": "VOICE_ACTING_EXISTING_SITE_SAME_TEXT_D_BED_A_B_AUDITION_R1",
+  "merge": false,
+  "live": false
+}
