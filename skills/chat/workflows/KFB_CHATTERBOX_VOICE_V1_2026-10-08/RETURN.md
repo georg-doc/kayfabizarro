@@ -1,5 +1,20 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · ONE-CARD / ONE-SENTENCE TRIPLET CORRECTION
+
+**Outcome:** Georg corrected an actual semantic-contract error while discussing the 77 KFB non-MED Decks/4,119 JSON Card source census: **one Triplet = one spoken sentence**, with `subject / connector / reframe` as *internal parts*. The original cross-workspace KFB examples and §5 Voice handover explicitly support this. Three staggered presentation blocks and three different Card fields MUST NOT be misread as three autonomous utterances. This correction is additive and source-grounded, not a rewrite of the accepted ChatterBox/Audio runtime.
+
+Written sources:
+- `DECK_CARD_ONE_SENTENCE_TRIPLET_AND_FRACTAL_QUEST_R0_1_2026-10-12.md`: concept correction and fractal source levels, including existing King Kayfabian Actor+3 Scene+Quest proposal. Digital King's mini-game is **DEFERRED**, not part of the built/accepted Golden Journey.
+- `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_PROOF_R0_1_2026-10-12.json`: original *Wrinkle Rumble* Card #2 `The Chatter-Chompers` from `media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json` blob `695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c`, mapped via existing `media/kfb/index.json` to PDF page 2 TR, **11-word single sentence** with full `subject/connector/reframe` roles. Explicit edit log distinguishes derived sentence from verbatim `power`, with `lore` and `artworkPrompt` preserved; physical image crop not checked. **10/10** source/shape static checks PASS, **0** human RULE1 quality approvals, 0 new audio renders and 0 new runtime tests.
+
+Correction to previously proposed Cut-up fragments: **mixing source card fragments without syntactic and relational integration does NOT make a valid one-sentence Triplet**. Existing 20-entry generic pool (Georg RULE1 FAIL) stays editorially blocked for Comedy. The corpus scan is an inventory, not automatic 4,119-line authoring/promotions. Fractal scales are editorial source selection and may be deterministic without LLM calls; page, deck, cross-deck and King's-Quest applications remain follow-on candidates, not implemented owners. No site product publication, Cloudflare Stage, World R5, PR merge or Live.
+
+One next content gate: `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_HUMAN_REVIEW_R1`: Georg reviews exactly one Card-derived single sentence together with original Card semantics/picture prompt, then decides KEEP/TUNE/CUT before expanding.
+
+---
+
+
 ## 2026-10-12 · TRIPLET POOL RULE1 FAIL / EIGHT-BEAT AUDITION BLOCKED
 
 Georg gave explicit **HUMAN FAIL** to real `clown.consensus.01` from the Studio candidate pool: `Everybody agrees / until somebody acts / volunteer?`. Problem: responsibility diffusion, cliché, generic no-one/does-nothing beat without actor, concrete decision, consequential action or earned payoff. User reports many other similar issues but did not name individual additional ids. Source reviewer inspected all **20/20** exact triplets in donor `resident-chat-ensemble-data.mjs` @ `cf975a72637630d97fc626962ef591b356ce0bbf`, logged assistant editorial risk flags for all without asserting 19 further human FAILs. Six source/schema checks PASS. Files:
