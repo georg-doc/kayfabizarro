@@ -31,3 +31,13 @@
 - Concept note pre-write static checks **10/10**; GitHub exact note write + readback separately verified. Zero animation/browser/audio/device tests.
 
 **Existing parent next gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT.
+
+## 2026-10-12 · Georg owner correction: Wobbleflora is KFB Plant Prop Lab / Living Plants
+
+- Verified the real original KFB Plants owner on current `main`: `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/START_HERE.md`; original Plant Prop Lab v2 sources in ToolBox include `plant-recipe.js`, `plant-rig.js`, `plant-eyes.js` and biome palettes.
+- Updated `WOBBLEFLORA_INFLATABLE_TUBE_PLANTS_CONCEPT_2026-10-12.md`: it is a *plant-form/motion-family proposal inside Plant Prop Lab*, not a new World Lab/Resident/animation owner. Research PR #389 remains the intake carrier only, and no new Plant Lab branch or runtime was created.
+- Source inspected: real v2 `plant-rig.js` deterministic pivot/impulse behavior and `plant-eyes.js` adapter to KFB EyeRig v6. S19 Cartoon Deformer and S20 Living Plants motion clips are design contracts **NOT BUILT**. Prefer current rig/adapter and existing S19 Deformer seam before inventing a skinned tube/bone runtime.
+- Keep pot-mounted and optional proposed potless ground-anchored plant variants within PlantRecipe identity; optional music/group La-Ola is presentation choreography reading KFB Audio, environment wind and stable per-plant seeds.
+- No actual frames or source-isolated visual acceptance, no CI, Site/Stage, merge, Live or WorldBuilder R5. Parent research gate remains weather/SFX three-scenario source isolation, not superseded by optional plant design.
+
+**Disposition:** plant-owner routing correction documented; implementation/visual adoption **PENDING**.
