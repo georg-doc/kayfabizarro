@@ -1,5 +1,12 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## HUMAN EDITORIAL FAIL OVERRIDE 2026-10-12
+
+Georg has rejected the assistant's previously authored Clown scripts (R0.1, R0.2, first-take R1) as unfunny generic writing. This is NOT a failure verdict on Suno Speech or the prompt-first method. Read `POSTMORTEM_ASSISTANT_WRITTEN_CLOWN_COMEDY_RULE1_FAIL_2026-10-12.md` and `data/SUNO_CLOWN_EDITORIAL_FAIL_NEGATIVE_GOLDEN_2026-10-12.json` before using earlier candidate manifests. They are quarantined regardless of their original candidate statuses. Stop rewriting the same inspector gag. No generated audio exists for the failed scripts. One next editorial gate: `KFB_SUNO_EDITORIAL_SOURCE_RESET_R1`, actual human RULE1 quality check of a new source-specific premise before Suno generation. Previous voice/world gates remain separate.
+
+---
+
+
 ## CURRENT CORRECTION · 2026-10-12 · KEEP CLOWN OUT OF META-COMEDY WRITING
 
 Georg observed the same Clown sketch being returned from two parallel chats. Root cause confirmed: the former meta-onboarding defaulted to reusing Clown first, conflating an existing Speech Beta AUDIO-BENCH fixture with a separate creative assignment. **SPLIT BINDING:** Clown R0.2/R1 remains only the *technical* first Suno voice+music audition; parallel meta-NPC content writing **must NOT recycle or paraphrase it as first piece**.
