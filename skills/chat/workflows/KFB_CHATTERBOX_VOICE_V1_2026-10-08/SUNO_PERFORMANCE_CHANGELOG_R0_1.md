@@ -1,5 +1,13 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Minimal Suno source prompt locked
+
+- Georg corrected the record: his actual prompt-first Suno request was **only** format (55–65s spoken comedy, not song) + gritty deep male cowboy Clown voice/profile. Exact **410 codepoints** pinned as `SUNO_PROMPT_FIRST_MINIMAL_ACTUAL_USER_PROMPT_R1_2026-10-12.md`.
+- No safety-inspector premise, scripted text, comedy rubric, soundtrack cues or detailed timing were part of that actual shorter input. Earlier elaborate prompt was not the reported minimal run.
+- Postmortem corrected: **generic assistant-chosen premise itself was initial human editorial failure**; the three assistant-written scripts remain blocked. Their editorial FAIL must not transfer to Suno-generated material or Prompt-first as a method.
+- No Suno output attached, audio playback or verified quality. One observation gate `KFB_SUNO_MINIMAL_PROMPT_TAKE_REVIEW_R1`. No product Site/Stage/merge.
+
+
 ## 2026-10-12 · Assistant-written comedy HUMAN FAIL
 
 - Georg rejected the previously assistant-written Clown scripts (R0.1, R0.2 and short R1) as irrelevant, unfunny AI slop. This is **EDITORIAL SCRIPT FAIL**, NOT Suno audio/model FAIL.
