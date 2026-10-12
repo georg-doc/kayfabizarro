@@ -1,5 +1,20 @@
 # RETURN · KFB Audio Module Pre-Integration · No World Writes
 
+
+## 2026-10-12 · WSA SELF-SERVICE SITE UPGRADE BRIEF · PREP ONLY
+
+**Georg binding correction:** WSA may edit the existing KFB Audio Voice Acting Site once to provide full content/voice/music testing access, but **ordinary future Triplet generation, Bridge edits, Card performance sequences and new source data cannot depend on more Work runs**. This is the new product P0 for the bounded future Site upgrade, not permission to create a second application.
+
+**New exact handoff:** `WORK_WSA_AUDIO_VOICE_ACTING_SELF_SERVICE_CARD_PERFORMANCES_R1_2026-10-12.md` on existing Audio PR #365, branch `web/kfb-adaptive-music-stem-proof-2026-10-06`. Design keeps existing `https://kfb-audio.frizzlebob.chatgpt.site` source/project and D Conversation Base 94 BPM real 10-stem family; existing Audio owns AudioContext/MusicClock/mixer/duck. Source/Card/Triplet candidate truth remains KFB ChatterBox Voice PR #379, exact 48-card original deck; 3 dry recorded voice sources and 150 time cues were produced in conversation ZIPs, **not added as binary blobs in GitHub**.
+
+**One-time Site feature required:** In-place Voice Acting section consumes source-revisioned content from GitHub (approved default and explicitly opted-in candidate preview), reloads new data without Site source redeploy; edits/imports/exports Card/Bridge/narrator/bed/voice locally, preview audition with no new UI shell; secure optional delegated Save only if supported, otherwise explicit JSON export to ordinary Web Chat + GitHub connector workflow. No invented credentials, accidental public promotion, or permanently baked 48-Card source data. **Same A/B voice DRY vs real D-bed** with original music timeline and current Speech Focus is required.
+
+**Acceptance is NOT satisfied** until 2 actually new ordinary data-only GitHub commits (not authored via Work) appear at same real Site after reload with 0 additional Site deploys, with documented real browser/visual evidence, and one actual D-base speech audition. This Web Chat only wrote/verifies a Work brief and recovery metadata. New runnable audio, UI testing, actual Site revisions, measured hot updates: **0**. No hub URL change, Cloudflare, Stage, Live or merge.
+
+**Next one gate:** `AUDIO_SITE_SELF_SERVICE_HOT_RELOAD_AND_D_BED_SITE_AB_R1` carried by the **Sites-capable Work/WSA builder** in existing Audio project; after product behavior is proven, routine content authoring is ordinary Web Chat or in-Site editor (no Work).
+
+---
+
 Date: 2026-10-06
 Status: **AUDIO_MODULE_TECHNICAL_GREEN · NO_WORLD_WRITES · NOT_HUMAN_ACCEPTED**
 Owner: KFB Audio / Jukebox / Mixer
