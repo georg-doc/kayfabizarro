@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de" data-theme="paper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#171819">
+  <meta name="description" content="Private KFB ToolBox source-first actor composition studio.">
+  <title>KFB FrankenStein Composer</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="studio">
+    <header class="topbar">
+      <div class="identity">
+        <div class="kfb-mark"><i></i><span>KFB</span></div>
+        <div><small>KFB TOOLBOX / ACTOR ASSEMBLY</small><strong>FrankenStein Composer</strong><span class="head-context">Source-first · PR #355</span></div>
+      </div>
+      <div class="top-status">
+        <button id="themeToggle" class="theme-toggle" type="button">Dark</button>
+        <span class="private"><i></i>READY</span>
+        <a href="#panel-source">Source audit</a>
+        <a href="#panel-recipe">Recipe</a>
+      </div>
+    </header>
+
+    <aside class="source-rail">
+      <div class="panel-head"><span>01</span><div><b>Quelle wählen</b><small>Geprüfte Originale</small></div></div>
+      <div class="source-tabs" role="tablist">
+        <button class="source-tab active" data-filter="all">All</button>
+        <button class="source-tab" data-filter="body">Body</button>
+        <button class="source-tab" data-filter="head">Head</button>
+        <button class="source-tab" data-filter="prop">Prop</button>
+        <button class="source-tab" data-filter="creature">Creature</button>
+      </div>
+      <div class="source-list" id="sourceList"></div>
+      <div class="rail-note">
+        <b>Original prüfen</b>
+        <p>Wähle zuerst einen Donor. Der Composer zeigt das echte Quellobjekt isoliert, bevor du es kombinierst.</p>
+      </div>
+    </aside>
+
+    <main class="stage-column">
+      <div class="stage-toolbar">
+        <div class="mode-switch" aria-label="Review mode">
+          <button class="active" data-mode="source">1 · Quelle</button>
+          <button data-mode="composite">2 · Kombinieren</button>
+          <button data-mode="motion">3 · Bewegung</button>
+        </div>
+        <div class="stage-tools">
+          <button id="frontView" title="Front view">Front</button>
+          <button id="threeView" title="Three-quarter view">¾</button>
+          <button id="resetCamera" title="Reset camera">Frame</button>
+        </div>
+      </div>
+
+      <section class="viewport" id="viewport" aria-label="3D source stage">
+        <canvas id="stageCanvas"></canvas>
+        <div class="stage-state" id="stageState">
+          <div class="spinner"></div>
+          <b>Preparing source stage</b>
+          <span>No substitute geometry</span>
+        </div>
+        <div class="source-proof">
+          <span id="proofState">SOURCE</span>
+          <b id="proofName">—</b>
+        </div>
+        <div class="revision-badge" id="revisionBadge">select a verified donor</div>
+      </section>
+
+      <section class="recipe-strip" aria-label="Actor recipe chain">
+        <div><span>Body</span><b id="chainBody">—</b></div><i>+</i>
+        <div><span>Skeleton</span><b id="chainRig">—</b></div><i>+</i>
+        <div><span>Head graft</span><b id="chainHead">—</b></div><i>+</i>
+        <div><span>Face stack</span><b id="chainFace">—</b></div><i>+</i>
+        <div><span>Motion</span><b id="chainMotion">—</b></div>
+      </section>
+    </main>
+
+    <aside class="inspector">
+      <div class="panel-head"><span>02</span><div><b>Anpassen</b><small id="inspectorSub">Quellidentität</small></div></div>
+      <div class="inspector-tabs">
+        <button class="active" data-panel="source">Quelle</button>
+        <button data-panel="fit">Passform</button>
+        <button data-panel="face">Gesicht</button>
+        <button data-panel="recipe">Rezept</button>
+        <button data-panel="creature">Creature</button>
+      </div>
+
+      <div class="inspector-panel active" id="panel-source">
+        <div class="status-card verified"><span>Compatibility</span><b id="sourceStatus">VERIFIED_SOURCE</b></div>
+        <dl class="facts">
+          <div><dt>Rig family</dt><dd id="sourceRig">—</dd></div>
+          <div><dt>Role</dt><dd id="sourceRole">—</dd></div>
+          <div><dt>Blob</dt><dd><code id="sourceBlob">—</code></dd></div>
+          <div><dt>Bounds</dt><dd id="sourceBounds">waiting</dd></div>
+          <div><dt>Meshes</dt><dd id="sourceMeshes">waiting</dd></div>
+          <div><dt>Animations</dt><dd id="sourceAnimations">waiting</dd></div>
+        </dl>
+        <label class="path-field"><span>Exact source</span><textarea id="sourcePath" rows="5" readonly></textarea></label>
+      </div>
+
+      <div class="inspector-panel" id="panel-fit">
+        <div class="section-label">Authoring transforms</div>
+        <label class="control"><span>Head scale <b id="headScaleValue">1.00</b></span><input id="headScale" type="range" min="0.65" max="1.35" step="0.01" value="1"></label>
+        <label class="control"><span>Head height <b id="headYValue">0.00</b></span><input id="headY" type="range" min="-0.5" max="0.5" step="0.01" value="0"></label>
+        <label class="control"><span>Head depth <b id="headZValue">0.00</b></span><input id="headZ" type="range" min="-0.5" max="0.5" step="0.01" value="0"></label>
+        <label class="control"><span>Head tilt <b id="headTiltValue">0°</b></span><input id="headTilt" type="range" min="-25" max="25" step="1" value="0"></label>
+        <div class="owner-note"><b>Recorded, not applied in SOURCE mode</b><p>Fit becomes visual only through the verified FaceHost / headgraft owner chain.</p></div>
+      </div>
+
+      <div class="inspector-panel" id="panel-face">
+        <div class="owner-row"><span>Eyes</span><b>EyeRig v6</b><i class="ready"></i></div>
+        <div class="owner-row"><span>Brows</span><b>brow-rig v2</b><i class="ready"></i></div>
+        <div class="owner-row"><span>Clay lids</span><b>0.3 candidate</b><i class="candidate"></i></div>
+        <div class="owner-row"><span>Ears</span><b>EarRig v5</b><i class="pinned"></i></div>
+        <label class="control"><span>Gaze follow <b id="gazeValue">0.85</b></span><input id="gaze" type="range" min="0" max="1" step="0.01" value="0.85"></label>
+        <label class="control"><span>Lid cover <b id="lidValue">0.16</b></span><input id="lid" type="range" min="0" max="0.7" step="0.01" value="0.16"></label>
+        <label class="control"><span>Brow lift <b id="browValue">0.30</b></span><input id="brow" type="range" min="-1" max="1" step="0.01" value="0.30"></label>
+        <div class="owner-note"><b>Owner references only</b><p>The Site does not clone face geometry or claim an animation proof before the existing modules are mounted.</p></div>
+      </div>
+
+      <div class="inspector-panel" id="panel-recipe">
+        <div class="section-label">Reversible actor recipe</div>
+        <label class="path-field"><span>Name</span><input id="recipeName" value="FrankenStein draft 01"></label>
+        <label class="path-field"><span>Motion profile</span><select id="motionSelect"><option value="kfb_idle_breathing_a">Breathing idle · Medium/Large</option><option value="kfb_action_fireball_a">Fireball · Medium/Large</option><option value="kfb_dance_chicken_a">Chicken Dance · Medium/Large</option><option value="kfb_climb_to_top_a">Climb to top · Medium/Large</option></select></label>
+        <button id="motionPlay" class="wide-action" type="button">Play / stop exact rig clip</button>
+        <div class="recipe-meta"><span>Primary format</span><b>kfb.pets/1</b><small>companion manifest preserves composition provenance</small></div>
+        <pre id="recipePreview"></pre>
+      </div>
+
+      <div class="inspector-panel" id="panel-creature">
+        <div class="section-label">CL01-A · Fassbeiner</div>
+        <div class="creature-row"><label><span>Seed</span><input id="creatureSeed" type="number" value="1042" min="1" max="999999"></label><button id="generateCreature" type="button">Generate</button></div>
+        <label class="control"><span>Torso length <b id="torsoValue">1.15</b></span><input id="torsoLength" type="range" min="0.80" max="1.55" step="0.01" value="1.15"></label>
+        <label class="control"><span>Leg length <b id="legValue">0.92</b></span><input id="legLength" type="range" min="0.55" max="1.35" step="0.01" value="0.92"></label>
+        <label class="control"><span>Barrel roundness <b id="roundValue">1.00</b></span><input id="barrelRound" type="range" min="0.72" max="1.30" step="0.01" value="1.00"></label>
+        <div class="variant-buttons" aria-label="Deterministic variants"><button data-seed="1042">A</button><button data-seed="2718">B</button><button data-seed="7331">C</button><button id="mutateCreature">Mutate</button></div>
+        <label class="path-field"><span>Pose</span><select id="creaturePose"><option value="rest">Rest</option><option value="front_left_lift">Front left lift</option><option value="front_right_lift">Front right lift</option><option value="squat">Squat</option><option value="stress_abduction">Stress abduction</option></select></label>
+        <label class="toggle-row"><input id="badWeights" type="checkbox"><span>Seed known-bad leg-midline weights</span></label>
+        <div class="creature-actions"><button id="runCreatureQa">Run pose QA</button><button id="exportCreatureGlb">Export GLB</button></div>
+        <pre id="creatureReport">Generate Fassbeiner to inspect topology, weights and pose metrics.</pre>
+        <div class="owner-note"><b>Local deterministic generator</b><p>No model call, remote inference or per-creature Work token. Recipe + seed reconstruct the same welded mesh.</p></div>
+      </div>
+    </aside>
+
+    <footer class="dock">
+      <div class="dock-left"><span class="batch-label">BATCH</span><b id="dockStatus">Loading source…</b><small id="dockDetail">—</small><i id="loadDot"></i></div>
+      <div class="dock-actions">
+        <button id="isolateButton" class="active">Quelle isolieren</button>
+        <button id="saveButton">Rezept speichern</button>
+        <button id="exportButton">Export JSON</button>
+        <label class="import-button">Import<input id="importInput" type="file" accept="application/json"></label>
+        <button id="resetButton">Zurücksetzen</button>
+      </div>
+    </footer>
+    <div class="technical-gates"><b>ONE_SHOT R1</b><span>Source</span><span>Composite</span><span>Motion</span><span>Roundtrip</span><span>Creature local</span><em>source-first · reversible · zero inference</em></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
