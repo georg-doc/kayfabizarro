@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Paired Suno backstory take B and provenance
+
+- Georg established: Suno emits **2 takes per prompt run**. Previous West Sealand text is take A. Newly supplied Munich Philharmonic/maritime-circus/lighthouse text is take B **of that same run**, not another independent prompt.
+- Added `SUNO_BACKSTORY_DUAL_TAKE_RUN_R0_1_2026-10-12.md` with complete B and source A pointer. Updated A file with pairing correction, not a silent overwrite of original transcript.
+- Assistant text-only assessment: both TUNE, B stronger in unusual real-world consequence but causal setup weak; motif convergence nautical/legal in two same-run takes is only one observation.
+- No human Georg verdict, audio files, true durations or end-cue QA. No site product/Stage/Live change and prior assistant-written script failure unchanged.
+
+
+
 ## 2026-10-12 · West Sealand first user Suno backstory take
 
 - Verbatim user-supplied *Suno-generated* Clown transcript stored in `SUNO_WEST_SEALAND_CLOWN_FIRST_BACKSTORY_TAKE_R0_1_2026-10-12.md`: 172 words, 967 Unicode codepoints.
