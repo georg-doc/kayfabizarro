@@ -87,3 +87,13 @@ Newly executed browser motion captures: **0**; new code/FX imports: **0**; exter
 - **0** new browser renders, screenshots, actual 3D frames, speech/beat/wind data feed tests, source EyeRig-v6 isolation renders, measured draw calls/FPS, target mobile checks, QA/perf acceptance, Site/Stage or Live.
 - Existing 25-source research inventory and its previous 12/12 + 16/16 + 20/20 evidence are not altered.
 - The existing three-scenario source-isolation research gate remains the only current parent gate; Wobbleflora MVP is an optional separately authorized scenery candidate.
+
+## 2026-10-12 · Wobbleflora → existing KFB Plants owner-resolution audit
+
+Source fetched on current GitHub main: canonical `PLANT_PROP_LAB_2026-09-18/START_HERE.md`, `MENTAL_MODEL.md`, existing v2 `README.md`, S19 Deformer and S20 Living Plants contracts, actual `src/plant-rig.js` and `src/plant-eyes.js`, original Plant Lab backlog and handoff. Also read four PR #389 World Lab carrier documents before writing.
+
+- Existing module ownership and behavior independently inspected at text/source level: `makePropRig()` (deterministic phases, springs, no world transform), `plant-eyes.js` (KFB EyeRig v6 FaceHost adapter), PlantRecipe/pot/biome authoring. No new custom rig/eye system is required by the *concept*.
+- Existing S19/S20 are **specifications only**, no implemented deformer/clip gate observed in their own documents. Avoid claims of animation adoption or product PASS.
+- Concept cross-file/contract checks at authoring time: **13/13 PASS**, recorded as textual source/routing assertions, not automated runtime test suite.
+- Measured new 3D browser frames: **0**, source-isolation visual comparisons **0**, generated assets **0**, source-player audio tests **0**, mobile performance tests **0**, new deployments **0**.
+- Wobbleflora remains optional Plant Prop Lab family/variant; existing WorldLab WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT remains unchanged.
