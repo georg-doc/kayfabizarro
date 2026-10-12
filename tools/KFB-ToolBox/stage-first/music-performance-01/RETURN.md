@@ -179,3 +179,12 @@ No second music player per Resident, no universal animation engine, no donor reb
 3. is the beat/bar ruler useful without feeling like a DAW?
 
 No merge or broad Resident/Town integration before that gate.
+
+
+---
+
+## 2026-10-12 · Additive export-preparation child PR #391 (NO runtime change)
+
+**The existing MUSIC-PERF-01 #207 public/human review state above remains unchanged.** The frozen source and public Stage URL were not altered. A separate planning child branch, `planning/kfb-motion-to-video-prep-r1-2026-10-12`, Draft PR #391 (base #207), adds `export-prep/` with an original-source-pinned, pure eight-second/30fps/240-frame sampling contract. This is an **export plan, not an exported video**.
+
+Verified source/time-plan CI at head `3ce484f638d4e2bb592797cb9b6fa8435b0ace46`: [run 38278887068](https://github.com/georg-doc/kayfabizarro/actions/runs/38278887068) **37/37 PASS**, real donor GLB/metadata/MP3 git SHA verification, negative source/HOLD/timing tests; inherited MUSIC-PERF QA [run 38278887147](https://github.com/georg-doc/kayfabizarro/actions/runs/38278887147) **SUCCESS** on the same pre-handoff head. Output pixels/video/mux/browser export/tests **0**. Full prep Return: `export-prep/RETURN.md`. No Work/WSA, Site, Stage or Hub update, merge or new human gate. Next one gate for this child only: `MOTION_TO_VIDEO_8S_REAL_FRAME_CAPTURE_AND_AV_MUX_R1`.

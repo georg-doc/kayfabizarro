@@ -42,3 +42,11 @@ Direct playback review / Cloudflare publication only. Runtime candidate is froze
 - public pass 2: **22/22 PASS** — direct route + Stage navigator + exact source pins + seek/playback + 0 page/HTTP errors;
 - public proof: run `36047130373`, job `107793328531`, artifact `10829491166`;
 - current human result remains `PENDING`; no merge or Live product promotion.
+
+## 2026-10-12 · VIDEO export preparation child PR #391 · non-runtime
+
+- Created additive `export-prep/` on a new branch stacked on MUSIC-PERF PR #207; **did not update parent PR #207**.
+- Pinned actual ORB-P1 v5 original GLB + metadata, Rubbish Groove MP3 and current `kfb.resident-performance.v1` recipe; pure seekable 240-frame sampling module and tests only.
+- CI run `38278887068` returned **37/37 PASS**, exact source Git SHA matches, deterministic replay and negative-controls.
+- Parent MUSIC-PERF existing QA on pre-handoff head: run `38278887147` SUCCESS; original Stage candidate/human review remains unchanged.
+- No 3D frame capture, actual video, mux, new library, new Site/Stage/Hub/Cloudflare route, merge or Live.
