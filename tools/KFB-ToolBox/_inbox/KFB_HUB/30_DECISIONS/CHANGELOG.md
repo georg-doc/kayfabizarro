@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · V-199 Ursachen und Freigabe
+- Strafen: Travel-Core nullt Seitwärts ohne Strafe-Clip → echte KayKit-Strafe-Clips aus S9 vorziehen. Einsteigen = Leertaste (J17), Hinweis „␣ Einsteigen/Aussteigen“ im Inselschild. „Hügel“ = Knet-Kleckse, Kantensteine, Ring-Köpfe, Zwickel nicht in der Lauf-Oberfläche → aufnehmen. Hüpfen: Bordsteinkanten beim Gehen weich hochsteigen statt Hüpfer. S5 halb (WASM kalt 2,65 → 0,38 GB, warm 6,6 s), danach fortsetzen.
+
 ## 2026-10-13 · Augen nicht abgenommen
 - V-200 FAIL: Eye-Rigs im Spiel sind nicht Georgs abgenommene Fassung (V-061, V-090 EYE-CLEANUP-01); in den Spielbarkeits-Slice aufgenommen, Abnahme per Nahbild-Vergleich.
 
