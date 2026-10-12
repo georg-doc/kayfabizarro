@@ -1,5 +1,15 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · WRINKLE RUMBLE 13-CARD ONE-SENTENCE SUNO · SOURCE-VERIFIED
+
+Georg's direct correction: a **Triplet is one uttered sentence** composed from the **exact card title + condensed 2–3 source words of POWER + condensed 2–3 source words of LORE**, with the visual prompt held as scene meaning and never spoken automatically. No 3 spoken blocks, generic connectors, or free AI-written stand-up prose.
+
+Delivered immediate plain-text Suno trial: **13** sequentially selected source cards from `media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json` blob `695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c`, cards **#1,2,3,7,10,15,17,25,31,34,40,46,48**. **162 words, 968 Unicode codepoints**, under strict 5000. Exact one-sentence text plus one-to-one cardName/powerCue/loreCue and complete original power/lore/artworkPrompt pins saved in `data/KFB_WRINKLE_RUMBLE_TITLE_POWER_LORE_SUNO_R0_1_2026-10-12.json`; verified by GitHub post-write exact head/file readback. All cue excerpts individually grounded with 2–3 original words each; connecting verbs and punctuation are **editorial adaptation**, not verbatim source speech.
+
+No actual Suno audio, duration, paired takes, human RULE1 PASS, real artwork pixels, speech kernel or runtime integration here; this is an audition candidate, not a 48-card full deck export or approved pool migration. Using saved candidate lines later need not call an LLM. Existing old generic 20-triplet pool and earlier invalid 3-fragment cut-ups stay quarantined; distinct project voice/World gates unaffected. One next gate `KFB_WRINKLE_RUMBLE_ONE_SENTENCE_SUNO_PAIR_AUDITION_R1`: audition both real Suno takes, verify actual speech/cutoffs, then Georg KEEP/TUNE/CUT.
+
+---
+
 ## 2026-10-12 · ONE CARD ONE SENTENCE FRACTAL KING QUEST · CONCEPT RECOVERY
 
 Georg corrected the failing card-cutup approach: an NPC Triplet is **one short spoken sentence**, not the three independent snippets I had joined. `subject / connector / reframe` are internal utterance roles. The 20 prior source-exact but disconnected cut-ups remain preserved in `data/KFB_CARD_SOURCE_CUTUP_TRIPLET_POOL_R0_1_2026-10-12.json` with explicit `FORMAL_FAIL_AS_SPOKEN_TRIPLET`; source-provenance valid but format FAIL.
