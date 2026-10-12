@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · S2 Flackern + S3 Ladezeit
+- Ladezeit 48,2 → 7,0 s (Neuladen 6,7): Lab-Inseln/Wolken im Organ-Modus aus, inhaltsadressierter Ergebnis-Cache (levelSet, TC1-Booleans, Knet-Karten) in ~/Library/Caches/kfb-lab/organ, alle 1017 Meshes byte-gleich. Warm ≤ 5 s noch offen, später.
+- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen (d24). Weiter S5 Speicher, dann S6.
+
 ## 2026-10-13 · Maker offen
 - V-197 Maker so frei wie möglich: eigene Heimatinsel/Welt, für andere sichtbar, gemeinsames Bauen; jetzt nur Architektur offenhalten (Welt-Vertrag R2: Welt je Spieler, teilbar, Op-Log für gemeinsames Bauen), Bau nach dem spielbaren MVP. Maker-Fragen d21–d23 damit beantwortet.
 

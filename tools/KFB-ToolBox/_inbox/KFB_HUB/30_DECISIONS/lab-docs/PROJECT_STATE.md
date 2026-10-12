@@ -6,10 +6,12 @@ Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. M
 
 - **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
 - **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
-- **Als Nächstes (Plan R1 §5, Reihenfolge V-192: Technik zuerst):** S2 Flacker-Paket (begonnen hinter `?flk=1`) → S3 Insel-Cache / Ladezeit, gemeldet zusammen → S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
+- **Als Nächstes (Plan R1 §5, Reihenfolge V-192: Technik zuerst):** S2/S3 geliefert 13.10. (flk-Abnahme offen, warm ≤ 5 s offen) → S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
 - **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
 
-## Lieferungen 11./12.10. (neueste oben)
+## Lieferungen 11.–13.10. (neueste oben)
+
+**Lieferung 13.10. · S2 Flackern + S3 Ladezeit (V-171 Punkte 2 und 3):** `docs/critic/lab-track/2026-10-13_load/REPORT.md` — Ladezeit 48,2 → 7,0 s (frischer Browser) / 6,7 s (Neuladen) über inhaltsadressierten Ergebnis-Cache (1017/1017 Meshes byte-gleich) + Lab-Inseln im Organ-Modus aus; warm ≤ 5 s noch nicht. Flacker-Paket hinter `?flk=1` (dynres ein Schritt, LOD-Hysterese, Rippe nah, near 1,0, polygonOffset), Gate PASS mit und ohne; Prüfungen alle PASS bei 60 fps.
 
 **Lieferung 12.10. · V-183 C4c-Folgen + C4c Standardansicht:** `docs/critic/lab-track/2026-10-11_C4c/v183/` (REPORT-Abschnitt V-183) — offene Kanten 0/0, Parity incl. Check 11 PASS, Teil 0 PASS, Fußtests 6/6 und Platz PASS bei 60 fps, Fahrtest 2 Autos × 6 Läufe (Exit mit Assist 0,8 ohne Treffer).
 

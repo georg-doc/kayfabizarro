@@ -341,6 +341,18 @@
    "source": "replies/WORLD_CONTRACT_R1.md",
    "status": "beantwortet",
    "answer": "V-197: so offen wie möglich (eigene Welt, für andere sichtbar, gemeinsames Bauen)"
+  },
+  {
+   "id": "d24-flicker",
+   "order": 24,
+   "vref": "V-171 (2)",
+   "title": "Flackert es noch?",
+   "context": "Bitte einmal spielen: localhost:5192/?hub=1&play=game&flk=1 (auch idle stehen lassen). Wenn es nicht mehr flackert, wird das die Standardansicht.",
+   "options": [
+    "Kein Flackern mehr (PASS)",
+    "Flackert noch (FAIL)"
+   ],
+   "status": "offen"
   }
  ],
  "slices": [
@@ -363,7 +375,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S1",
    "server": "Lab 5192",
-   "status": "läuft",
+   "status": "wartet auf Georg (flk=1)",
    "title": "Flacker-Paket (dynres, LOD-Hysterese, Rippe nur nah)",
    "vrefs": "V-171 (2)",
    "id": "S02"
@@ -375,7 +387,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S2",
    "server": "Lab 5192",
-   "status": "wartet",
+   "status": "fertig (7,0 s; warm ≤ 5 s später)",
    "title": "Insel-Cache: fertige Körper zwischenspeichern",
    "vrefs": "V-171 (3)",
    "id": "S03"
@@ -399,7 +411,7 @@
    "owner": "Bau-Sitzung",
    "prereq": "S3",
    "server": "Lab 5192",
-   "status": "wartet",
+   "status": "läuft",
    "title": "Speicher: manifold delete, Caches leeren, Debug nur mit Schalter",
    "vrefs": "V-171 (4)",
    "id": "S05"
