@@ -174,6 +174,7 @@ d('V-193','2026-10-12','Strecke','RULE','Dungeon-Strecke in allen drei Varianten
 d('V-194','2026-10-12','Worldbuilder','RULE','Modi klar getrennt: God-Mode = Georgs Editor (alles bearbeiten). Maker = Spieler bauen, und zwar auf der Maker-Space-Insel UND auf eigenen Inseln, inklusive Gelände und Strecke; Veröffentlichen nur mit Georgs Freigabe; Maker-Modus als Schalter im Spiel. Eine Welt-Hülle kfb.world/1 für alle Modi. Hex-Raster ist Legacy und keine Grundlage. Vorbereitung (Vertrag, Delta-Liste, Undo-Prototyp) als Agent starten. Maker-Bau nach MVP.', 'Steuerung + Modul-Agent', 'Vertrag kfb.world/1', 'Georg 12.10.')
 d('V-195','2026-10-12','Animation','TUNE','NPC Performance Proof R1 (Clown): TUNE. Technik (seek, Fußkontakt) trägt; das Acting reicht nicht. Vergleichsfragen künftig nur mit großen, lesbaren Bildern nebeneinander oder kurzem Clip, nicht mit kleinen Kontaktbögen.', 'Motion', 'nächster Proof', 'Georg 12.10.')
 d('V-196','2026-10-13','Strecke','TUNE','Haltebucht (V-138) so übernommen: sieht nicht gut aus, aber jetzt kein weiteres Feilen. Kommt im späteren konzeptionellen TUNE der Strecke mit (zusammen mit V-183).', 'Lab', '-', 'Georg 13.10.')
+d('V-197','2026-10-13','Worldbuilder','RULE','Maker so frei und offen wie möglich: Jeder Spieler kann seine eigene Heimatinsel bzw. eigene Welt bauen (inkl. neue Insel anlegen, Gelände, Strecke); andere Spieler können sie sehen; gemeinsames Bauen ist erwünscht, soweit technisch möglich. Jetzt nur die Architektur dafür offenhalten (Welt je Spieler, teilbare Welten, Op-Log taugt für gemeinsames Bauen), kein Maker-Bau vor dem spielbaren MVP. Beantwortet die Maker-Fragen d21–d23.', 'Steuerung', 'Vertrag kfb.world/1 R2', 'Georg 13.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -336,6 +337,7 @@ WHY = {
  'V-194':('Verwechslung God-Mode und Maker ausgeräumt; Hex ist Legacy.','ab jetzt'),
  'V-195':('Zweifel liest sich nicht; Georg konnte v1/v2 auf den Kontaktbögen nicht beurteilen.','ab jetzt'),
  'V-196':('Aufwand steht in keinem Verhältnis; später mit dem Strecken-Konzept.','geparkt bis Konzept-TUNE'),
+ 'V-197':('Georg: je flexibler und offener, desto besser; erst muss er selbst spielen können.','Architektur jetzt, Bau nach MVP'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:

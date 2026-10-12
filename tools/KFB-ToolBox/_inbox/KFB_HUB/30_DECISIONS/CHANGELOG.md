@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Maker offen
+- V-197 Maker so frei wie möglich: eigene Heimatinsel/Welt, für andere sichtbar, gemeinsames Bauen; jetzt nur Architektur offenhalten (Welt-Vertrag R2: Welt je Spieler, teilbar, Op-Log für gemeinsames Bauen), Bau nach dem spielbaren MVP. Maker-Fragen d21–d23 damit beantwortet.
+
 ## 2026-10-13 · Welt-Vertrag R1
 - replies/WORLD_CONTRACT_R1.md + 7 Schemas + DELTA.md (V-188/V-194): Hülle kfb.world/1, 18 Ops mit Gegen-Befehl, Undo/Redo, Rechte god/maker/player, Veröffentlichen per Antrag + Georg-Freigabe, Snap ohne Hex. Prototyp ~/Developer/kfb-world-ops: 34/34 Tests grün, Track Core runGraphChecks echt. Delta Top: editor.ts schreibt direkt (L), WorldSpec in localStorage (M), edits[] leer und Rundweg verliert Felder (M), Strecken-Graph im Code (M–L), scene-study /1 → /2 (S). Steuerung entscheidet: God-Mode-Welten zusätzlich als Dateien im KFB_HUB (V-191); Mauer-Raster aus dem bestehenden Mauer-Baukasten (V-105/V-106) übernehmen. 3 Maker-Fragen ins open-decisions-JSON (nach MVP).
 
