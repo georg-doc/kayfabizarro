@@ -1,7 +1,7 @@
 {
   "schema": "kfb.deck-source-triplet-cutup/0.1-authoring-candidate",
   "date": "2026-10-12",
-  "status": "SOURCE_VERIFIED_EDITORIAL_CANDIDATE",
+  "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
   "owner": "Existing ChatterBox content; Voice Draft PR 379 holds prep only",
   "registry": "media/kfb/index.json",
   "corpusCensus": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_NONMED_CORPUS_CONSOLIDATED_CENSUS_R0_1_2026-10-12.json",
@@ -29,7 +29,7 @@
   "entries": [
     {
       "tripletId": "kfb.deckcut.rules",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Rules Lawyer",
       "connector": "demand a player cite a non-existent rule.",
@@ -96,7 +96,7 @@
     },
     {
       "tripletId": "kfb.deckcut.pluralism",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "PLURALISM SIMULATOR",
       "connector": "Target player wastes 2 turns arguing with themselves.",
@@ -165,7 +165,7 @@
     },
     {
       "tripletId": "kfb.deckcut.retcon",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "RETCON",
       "connector": "Rewrites the past from the present",
@@ -234,7 +234,7 @@
     },
     {
       "tripletId": "kfb.deckcut.360deal",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "THE 360 DEAL",
       "connector": "TAKE half of target player's resource tokens.",
@@ -303,7 +303,7 @@
     },
     {
       "tripletId": "kfb.deckcut.contrast",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Contrast Collider",
       "connector": "reveal their character's greatest strength.",
@@ -372,7 +372,7 @@
     },
     {
       "tripletId": "kfb.deckcut.walkin",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "CHANDLER'S WALK-IN",
       "connector": "Interrupt any action.",
@@ -440,7 +440,7 @@
     },
     {
       "tripletId": "kfb.deckcut.erasable",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Erasable Line",
       "connector": "Draw the next step in pencil.",
@@ -507,7 +507,7 @@
     },
     {
       "tripletId": "kfb.deckcut.improv",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "Uncle FrizzleBob",
       "connector": "Cut the cards.",
@@ -576,7 +576,7 @@
     },
     {
       "tripletId": "kfb.deckcut.chompers",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Chatter-Chompers",
       "connector": "Steal an item from a player.",
@@ -645,7 +645,7 @@
     },
     {
       "tripletId": "kfb.deckcut.betrayal",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "INEVITABLE MUTUAL BETRAYAL",
       "connector": "Both players reveal their hands.",
@@ -713,7 +713,7 @@
     },
     {
       "tripletId": "kfb.deckcut.certificates",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Ten Certificates",
       "connector": "declare NOTHING WRONG!",
@@ -782,7 +782,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cave",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "THE CAVE MYTH",
       "connector": "Force another player to accept your description",
@@ -849,7 +849,7 @@
     },
     {
       "tripletId": "kfb.deckcut.apparatchik",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "ONE_CARD_TRIPLET",
       "subject": "The Apparatchik",
       "connector": "Discard a player's loyalty token",
@@ -918,7 +918,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.certification",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "The Ten Certificates",
       "connector": "demand a player cite a non-existent rule.",
@@ -1019,7 +1019,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.retcon",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "RETCON",
       "connector": "Force another player to accept your description",
@@ -1120,7 +1120,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.erasable",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "The Erasable Line",
       "connector": "Target player wastes 2 turns arguing with themselves.",
@@ -1204,7 +1204,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.loyalty",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "INEVITABLE MUTUAL BETRAYAL",
       "connector": "Discard a player's loyalty token",
@@ -1289,7 +1289,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.contract",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "THE 360 DEAL",
       "connector": "Both players reveal their hands.",
@@ -1374,7 +1374,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.interrupt",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "PLURALISM SIMULATOR",
       "connector": "Interrupt any action.",
@@ -1459,7 +1459,7 @@
     },
     {
       "tripletId": "kfb.deckcut.cutup.law",
-      "status": "SOURCE_CUTUP_CANDIDATE_NOT_ACCEPTED",
+      "status": "FORMAL_FAIL_AS_SPOKEN_TRIPLET",
       "type": "CROSS_CARD_CUTUP",
       "subject": "The Rules Lawyer",
       "connector": "Rewrites the past from the present",
@@ -1559,5 +1559,17 @@
       "runtimeImport": false
     }
   ],
-  "nextGate": "KFB_NONMED_CARD_CUTUP_HUMAN_AUDITION_R1"
+  "nextGate": "KFB_NONMED_CARD_CUTUP_HUMAN_AUDITION_R1",
+  "conceptCorrection": {
+    "date": "2026-10-12",
+    "humanInstruction": "One NPC spoken Triplet = one sentence with Subject/Connector/Reframe roles",
+    "reason": "Twenty exact-source multi-card 3-fragment concatenations are not complete valid spoken sentences and are not usable as ChatterBox pool entries.",
+    "sourceFragmentsRemainPreserved": true,
+    "mayServeAs": "NEGATIVE_FORMAT_FIXTURES_ONLY",
+    "nextAcceptedDirection": "ONE_KFB_CARD_TO_ONE_SHORT_SENTENCE",
+    "replacementCandidate": "data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_SOURCE_PILOT_R0_1_2026-10-12.json",
+    "fractalKingQuest": "Three Scene Cards may each yield one spoken sentence; one Actor Card + three Scene Cards + chosen existing Quest offers the larger Show/Spin/Sell/Closure arc.",
+    "notAnAudioVerdict": true,
+    "noHumanComedyPass": true
+  }
 }
