@@ -2261,6 +2261,20 @@
    "applies": "sofort, vor S5"
   },
   {
+   "id": "V-200",
+   "date": "2026-10-13",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "Augen im Spiel (z. B. Farmer) sind nicht Georgs abgenommene Eye-Rig-Fassung. Soll: Georgs gespeicherte Konfiguration (V-061) bzw. die geltende Abnahme EYE-CLEANUP-01 vom 01.10. (anchored, Lid = Haut der Figur; V-090) für alle Figuren. Vorher Such-Protokoll (V-140), wo die abgenommene Konfiguration liegt; Abnahme mit Nahbild-Vergleich gegen die abgenommenen Referenzbilder vor jeder Lieferung. Beleg: docs/critic/lab-track/2026-10-13_georg-live/farmer_eyes_not_approved.png.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Nahbild-Vergleich gegen Abnahme",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Abgenommene Augen gingen im Spiel verloren (Regress).",
+   "applies": "im Spielbarkeits-Slice"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2322,7 +2336,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:8",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:11",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

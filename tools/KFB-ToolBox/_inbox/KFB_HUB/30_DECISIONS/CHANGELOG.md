@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Augen nicht abgenommen
+- V-200 FAIL: Eye-Rigs im Spiel sind nicht Georgs abgenommene Fassung (V-061, V-090 EYE-CLEANUP-01); in den Spielbarkeits-Slice aufgenommen, Abnahme per Nahbild-Vergleich.
+
 ## 2026-10-13 · Flackern PASS, Spielbarkeits-Befunde
 - V-198 flk=1 PASS → Standard. V-199 Georg: Strafen nur mit Vorwärts (gegen V-022), Einsteigen geht nicht, Figur läuft durch Hügel, Hüpfen beim Gehen komisch (TUNE). Steuerung: kurzer Spielbarkeits-Slice vor S5.
 

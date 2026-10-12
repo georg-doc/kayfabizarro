@@ -177,6 +177,7 @@ d('V-196','2026-10-13','Strecke','TUNE','Haltebucht (V-138) so übernommen: sieh
 d('V-197','2026-10-13','Worldbuilder','RULE','Maker so frei und offen wie möglich: Jeder Spieler kann seine eigene Heimatinsel bzw. eigene Welt bauen (inkl. neue Insel anlegen, Gelände, Strecke); andere Spieler können sie sehen; gemeinsames Bauen ist erwünscht, soweit technisch möglich. Jetzt nur die Architektur dafür offenhalten (Welt je Spieler, teilbare Welten, Op-Log taugt für gemeinsames Bauen), kein Maker-Bau vor dem spielbaren MVP. Beantwortet die Maker-Fragen d21–d23.', 'Steuerung', 'Vertrag kfb.world/1 R2', 'Georg 13.10.')
 d('V-198','2026-10-13','Technik','PASS','Flacker-Paket (?flk=1) PASS: Georg sieht kein Flackern mehr → wird Standardansicht.', 'Lab', 'Parity mit flk Standard', 'Georg 13.10.')
 d('V-199','2026-10-13','Steuerung','FAIL','Spielbarkeits-Befunde Georg (Standardansicht): (1) Strafen falsch gegenüber V-022: Q/E wirkt nur zusammen mit Vorwärts, nicht im Stand bzw. für sich. (2) Ins Auto einsteigen geht nicht (Georg versuchte I); Taste prüfen, im HUD anzeigen, Konflikt mit E (Strafen) ausschließen. (3) Man läuft durch die modellierten Hügel bzw. Erhebungen hindurch statt darüber; Figur soll dem Gelände folgen. (4) Hüpfen beim langsamen Gehen wirkt komisch (TUNE, niedrige Priorität). Vor S5 als kurzer Spielbarkeits-Slice.', 'Lab', 'Fußtests + Georg spielt', 'Georg 13.10.')
+d('V-200','2026-10-13','Figuren','FAIL','Augen im Spiel (z. B. Farmer) sind nicht Georgs abgenommene Eye-Rig-Fassung. Soll: Georgs gespeicherte Konfiguration (V-061) bzw. die geltende Abnahme EYE-CLEANUP-01 vom 01.10. (anchored, Lid = Haut der Figur; V-090) für alle Figuren. Vorher Such-Protokoll (V-140), wo die abgenommene Konfiguration liegt; Abnahme mit Nahbild-Vergleich gegen die abgenommenen Referenzbilder vor jeder Lieferung. Beleg: docs/critic/lab-track/2026-10-13_georg-live/farmer_eyes_not_approved.png.', 'Lab', 'Nahbild-Vergleich gegen Abnahme', 'Georg 13.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -342,6 +343,7 @@ WHY = {
  'V-197':('Georg: je flexibler und offener, desto besser; erst muss er selbst spielen können.','Architektur jetzt, Bau nach MVP'),
  'V-198':('Ursache dynres-Pendeln behoben.','ab jetzt'),
  'V-199':('Georg will endlich spielen; Grundsteuerung muss stimmen.','sofort, vor S5'),
+ 'V-200':('Abgenommene Augen gingen im Spiel verloren (Regress).','im Spielbarkeits-Slice'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 for e in E:
