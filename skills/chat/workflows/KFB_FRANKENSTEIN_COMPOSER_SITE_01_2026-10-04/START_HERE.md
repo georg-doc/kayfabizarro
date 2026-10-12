@@ -1,3 +1,16 @@
+# CURRENT STATUS · 2026-10-12
+
+**Implementation is complete; formal acceptance is not.**
+
+- Draft PR #355 contains the Composer core and deterministic browser-local Fassbeiner generator.
+- Private owner Site v4 is active at https://kfb-frankenstein-composer.frizzlebob.chatgpt.site.
+- Static/deployment identity QA passed: 22/22 contract checks and exact served-byte hashes.
+- The remaining gate is one authenticated owner-browser pass for WebGL interaction plus GLB/JSON export/import.
+- Cloudflare is not part of this product path.
+- Continue with `TEST_REPORT_2026-10-12.md`; do not merge or promote Live/public without Georg's explicit approval.
+
+---
+
 # KFB FrankenStein Composer · GPT Site
 
 Status: **PLANNING READY · IMPLEMENTATION NOT STARTED**

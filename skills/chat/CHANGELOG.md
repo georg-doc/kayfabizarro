@@ -1,3 +1,12 @@
+## 2026-10-12 · FrankenStein Composer ONE_SHOT R1 · implementation + QA evidence
+
+- Completed the existing Composer core and added the deterministic browser-local Fassbeiner generator in Draft PR #355.
+- Published the same source to the owner-private GPT Site v4; no public/Live promotion.
+- Static contract suite is 22/22 PASS; authenticated private-Site HTTP bytes match the deployment source exactly.
+- Interactive owner-browser WebGL and GLB/JSON export gate remains open and is documented in the workflow test report.
+- Cloudflare is explicitly not a product path; accidental adapter changes were reverted before this evidence checkpoint.
+- No merge performed.
+
 ## 2026-10-04 · Coworker Card-Hex Combat Ascent One-Shot authorized
 
 - Georg explicitly authorized exactly one parallel Claude Coworker implementation run for the Card-Hex platformer/combat concept; this does not reopen Sol/Astra/provider comparison.

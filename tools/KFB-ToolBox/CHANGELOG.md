@@ -3,6 +3,14 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-10-12 · FrankenStein Composer ONE_SHOT R1 · Site-only implementation
+
+- Existing Composer core completed; no second editor and no additional runtime.
+- Deterministic browser-local Fassbeiner generator added with seeded SDF/isovolume mesh, skin QA, negative control, recipe, and binary GLB export path.
+- Private GPT Site v4 is active; static/deployment identity checks pass (22/22 plus exact served-byte hashes).
+- Authenticated owner-browser interaction/export remains the single human acceptance gate.
+- Cloudflare is not used. No public Stage/Live promotion and no merge.
+
 ## 2026-10-04 · FrankenStein Composer GPT Site · planning/source lock
 
 ### DECISION

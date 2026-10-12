@@ -1,3 +1,17 @@
+# CURRENT RETURN · 2026-10-12 · ONE_SHOT R1
+
+Status: **IMPLEMENTATION COMPLETE · PRIVATE SITE v4 ACTIVE · STATIC/DEPLOYMENT IDENTITY PASS · INTERACTIVE BROWSER/EXPORT HUMAN GATE OPEN**
+
+- Core + Creature implementation: `1a543618460b25044b297bd19c27d5cbaac5007a`.
+- Private owner Site v4: https://kfb-frankenstein-composer.frizzlebob.chatgpt.site
+- Automated contract: 22/22 PASS; served private-Site files match deployment source byte-for-byte.
+- Actual authenticated WebGL interaction and GLB/JSON export round-trip are not claimed as passed because the separate automation browser cannot inherit the owner's UI session.
+- Cloudflare is not used. The accidental adapter attempt was fully reverted at `de01a3c6016f429ddacd8fd216b786d83c12ad00`.
+- No merge, public Stage, or Live promotion occurred.
+- Next executor: Georg performs the short private-Site checklist in `TEST_REPORT_2026-10-12.md`. After PASS, WSA records acceptance and may prepare merge only after explicit approval.
+
+---
+
 # RETURN · KFB FrankenStein Composer GPT Site 01
 
 Date: 2026-10-04
