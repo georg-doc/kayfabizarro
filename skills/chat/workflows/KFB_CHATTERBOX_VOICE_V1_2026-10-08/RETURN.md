@@ -1,5 +1,33 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · FULL-DECK CARD PERFORMANCE STAY FLUFFY + LLM-FREE BRIDGES + LOCAL TTS PROOF
+
+**Status:** SOURCE VERIFIED + LOCAL AUDIO TECHNICAL FIXTURE. Georg reports **successful/compelling Suno performance** of the earlier complete Wrinkle Rumble script, and authorizes applying the format across card-based performers, **not human acceptance of rendered TTS clones**, no actual Suno file ingested.
+
+**Creative rule:** one final spoken "**Stay Fluffy!**" across card-based performances, optional opening "**Welcome, dear Fluffheads!**" varied per character. No catchphrase spam within cards; performance scope only. One Card Triplet = one sentence combining actual Card title, condensed power and lore; use visual prompt as nonspoken presentation metadata. Fractal 1 Card / 3 / 4 Page / 48 Deck / Speakers' Corner / Tavern ensemble; higher-scale King Kayfabian Quest remains deferred.
+
+**LLM-free assembly:** typed causal bridge/edge graph keyed by source Card IDs, prior concrete effect and next concrete consequence. Stable seeded selection only among curator-authored compatible edges, not random "therefore"/"but". Unmatched pairs give no automatic fabricated joke; cut/silence/curated reset or alternative Card. Two proposed editorial edges for real first three source Cards, **not accepted automatic story generation**.
+
+**Verified original source:** `media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json` blob `695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c` (48 cards, NOT 56). The full 48-card source-ordered Suno-format performance is preserved at `KFB_WRINKLE_RUMBLE_48_CARD_PERFORMANCE_STAY_FLUFFY_R0_1_2026-10-12.txt` (4,266 Unicode codepoints incl tags), under 5,000.
+
+**Material files in existing owner PR #379:**
+- `KFB_WRINKLE_RUMBLE_48_CARD_PERFORMANCE_STAY_FLUFFY_R0_1_2026-10-12.txt`;
+- `data/KFB_CARD_PERFORMANCE_BRIDGES_R0_1_2026-10-12.json`;
+- `KFB_CARD_PERFORMANCE_TTS_BED_BRIDGES_SPEAKERS_CORNER_R0_1_2026-10-12.md`;
+- `KFB_CARD_PERFORMANCE_TTS_BRIDGE_TEST_REPORT_R0_1_2026-10-12.md`;
+- this `RETURN.md`, `START_HERE.md`, additive `SUNO_PERFORMANCE_CHANGELOG_R0_1.md`.
+
+**Actual new tests:** 14/14 separate source/shape/bridge GitHub assertions PASS; 14/14 local eSpeak MP3/FFprobe/SHA256/ZIP technical assertions PASS. ESpeak local eSpeak 1.48.15 and FFmpeg produce **three real private audition clips**: `en+m3 190wpm pitch42` whole source **229.77 s**, two short `en+m7` **6.09 s** and `en+f3` **5.75 s** samples; actual audio archive downloadable **in originating conversation only, not saved in GitHub**. Real audio hashes and log are in the test report. The local spoken text strips stage tags and exchanges opening / ending for Georg's new intro/outro.
+
+**Audio owner/source review:** existing `travel/travel-v16/terrain-v16/frizzlebob-voice.js` donor is browser SpeechSynthesis with variable OS voices; existing KFB Audio Voice Acting Site `https://kfb-audio.frizzlebob.chatgpt.site` (from existing Site registry) has browser voice auditions, D conversation bed/ducking, clip import, word/beat events where available. No new audio mixer/ChatterBox kernel. Future natural-voice comparisons may consider Piper/Kokoro/Resemble Chatterbox-TTS (NOT identical to KFB ChatterBox); no installation, rights clearance or quality PASS claimed.
+
+**NOT PROVEN:** 0 actual browser-Site A/B runs, 0 KFB D-BED/Suno instrumental stem audio mixes (no bytes available), 0 full-48 card visual sync/captions, 0 accepted natural character-voice audition, 0 newly deployed GPT Site, 0 Cloudflare Stage/Live, no PR merge, no World R4 reopen. The previous full-deck Suno result is Georg's listening report, not an ingested audio file.
+
+**One next gate:** `VOICE_ACTING_EXISTING_SITE_SAME_TEXT_D_BED_A_B_AUDITION_R1`: exact full source text and 2+ real browser voices dry versus existing D music bed with ducking in **the existing KFB Audio Voice Acting Site**; compare to Suno performance with actual audible screenshots/timing evidence, then Georg KEEP/TUNE/CUT. If Site publishing needed, Sites-capable executor updates existing product only; no second owner. Existing World R4 STOP remains binding.
+
+---
+
+
 ## 2026-10-12 · WRINKLE RUMBLE 13-CARD ONE-SENTENCE SUNO · SOURCE-VERIFIED
 
 Georg's direct correction: a **Triplet is one uttered sentence** composed from the **exact card title + condensed 2–3 source words of POWER + condensed 2–3 source words of LORE**, with the visual prompt held as scene meaning and never spoken automatically. No 3 spoken blocks, generic connectors, or free AI-written stand-up prose.
