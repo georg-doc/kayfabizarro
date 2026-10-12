@@ -1,0 +1,115 @@
+{
+  "schema": "kfb.triplets.negative-golden.provenance-audit/1",
+  "date": "2026-10-13",
+  "status": "HUMAN_FAIL_QUARANTINED",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+  "pr": 379,
+  "source": {
+    "path": "media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json",
+    "ref": "34102e8bec6ae76e5b2e8de1f1c2a6abb4f4bd1c",
+    "blob": "c5b6719d6a0612f227615d9917bbfbb45563f45d",
+    "deckId": "1001_kayfabe_nights",
+    "totalCards": 60,
+    "usedCards": [
+      5,
+      6,
+      7
+    ],
+    "selectedSourceFieldWords": 103
+  },
+  "rejectedCandidate": {
+    "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_1001_KAYFABE_NIGHTS_5_6_7_FRIZZLEBOB_TRIPLETS_SUNO_R1_2026-10-13.md",
+    "blob": "4d813bfd5aadf57c80552afb4960473c0558b23e",
+    "originalCommit": "a8cd8e140edc5d179dd582520fc8bfc072c59f9c",
+    "preserve": true,
+    "noSunoGeneration": true
+  },
+  "method": {
+    "tokenizer": "Unicode letters/numbers with internal apostrophes; lowercase; punctuation removed",
+    "comparison": "consecutive exact tokens within one cardName, power or lore field of selected three cards only; nonoverlap per output segment",
+    "strictMinConsecutive": 3,
+    "lenientMinConsecutive": 2,
+    "notes": [
+      "Matched words may include incidental generic phrases.",
+      "Nonverbatim text includes faithful paraphrase; not all 68.42% are fabricated facts."
+    ]
+  },
+  "spoken": {
+    "tokens": 114,
+    "strictSourceMatched": 36,
+    "strictPercent": 31.58,
+    "strictAssistantWording": 78,
+    "strictAssistantPercent": 68.42,
+    "lenientSourceMatched": 48,
+    "lenientSourcePercent": 42.11,
+    "lenientAssistantWording": 66,
+    "lenientAssistantPercent": 57.89
+  },
+  "segments": [
+    {
+      "type": "intro",
+      "words": 12,
+      "strictSource": 3
+    },
+    {
+      "type": "card5",
+      "words": 18,
+      "strictSource": 6
+    },
+    {
+      "type": "bridge5to6",
+      "words": 18,
+      "strictSource": 3
+    },
+    {
+      "type": "card6",
+      "words": 22,
+      "strictSource": 14
+    },
+    {
+      "type": "bridge6to7",
+      "words": 16,
+      "strictSource": 0
+    },
+    {
+      "type": "card7",
+      "words": 26,
+      "strictSource": 10
+    },
+    {
+      "type": "outro",
+      "words": 2,
+      "strictSource": 0
+    }
+  ],
+  "bridgeSegments": {
+    "tokens": 34,
+    "strictSourceMatched": 3,
+    "assistantWording": 31,
+    "assistantPercent": 91.18,
+    "claimedBridgeCount": 2,
+    "functionalBridgesProven": 0
+  },
+  "originalFieldCoverage": {
+    "words": 103,
+    "uniqueCoveredBy3Gram": 36,
+    "percent": 34.95,
+    "cardTitlesFullyExact": 3,
+    "cardTitlesTotal": 3,
+    "fullPowerLoreVerbatim": 0,
+    "fullPowerLoreTotal": 6
+  },
+  "cardCoverage": {
+    "selectedCards": 3,
+    "totalCards": 60,
+    "percent": 5
+  },
+  "quality": {
+    "georgVerdict": "FAIL",
+    "validTripletDemonstrated": 0,
+    "validBridgeDemonstrated": 0,
+    "structuralHistoricalChecks": "17/17 PASS - NOT PRODUCT QUALITY"
+  },
+  "nextGate": "KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1"
+}
