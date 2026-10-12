@@ -1,5 +1,21 @@
 # KFB ChatterBox Voice Layer v1 · Production Integration Route
 
+## ONE TRIPLET = ONE SENTENCE · CARD FIRST · 2026-10-12
+
+**Georg direct correction:** ChatterBox's semantic Triplet is **ONE spoken sentence** assembled from three roles `subject + connector + reframe`, not three independently spoken sentences. Staggered visual blocks do not change the sentence unit. The earlier proposed 3-fragment-per-card Cut&Play literalism is not accepted.
+
+Source proof (single non-MED Card, not large automatic pool):
+- `DECK_CARD_ONE_SENTENCE_TRIPLET_AND_FRACTAL_QUEST_R0_1_2026-10-12.md` (GitHub-authored original concept + fractal King Quest reference).
+- `data/KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_PROOF_R0_1_2026-10-12.json` (one source-pinned `Wrinkle Rumble` Card #2, page 2 TR, 11-word spoken sentence, 10/10 static checks).
+- Existing `data/KFB_NONMED_CORPUS_CONSOLIDATED_CENSUS_R0_1_2026-10-12.json`: 77 non-MED decks / 4,119 card records, **SOURCE AUDIT ONLY**, not 4,119 approved voice lines.
+
+Scales: **one Card → one sentence**, Page→micro-story of multiple Cards/sentences, Deck→sequenced/shuffled material, cross-Deck→Cut&Play, King Kayfabian's Actor/3 Scene/Quest & closure assembly as a **later/deferred digital mini-game**. No LLM required for known source selection; do not claim arbitrary Card fields already make grammatical, funny sentences. `power/lore/artworkPrompt` stay distinct and visible for text/image shear. The Chatter-Chompers utterance is an EDITOR-ADAPTED candidate, NOT verbatim and NOT Georg-accepted comedy. Do not activate generic 20-entry candidate pool or old 8-beat FAIL to substitute for Card content.
+
+**One next content gate** `KFB_ONE_CARD_ONE_SENTENCE_TRIPLET_HUMAN_REVIEW_R1` before Page or cross-deck scaling. Existing Audio/Resident/World gates unchanged; no new runtime or Site.
+
+---
+
+
 ## POOL QUALITY RECOVERY · 2026-10-12 · RULE1
 
 Georg directly rejected the actual ChatterBox Studio candidate Triplet `clown.consensus.01` ("Everybody agrees / until somebody acts / volunteer?") as responsibility-diffusion, cliché and generic AI slop. The **eight-Triplet pure-pool stand-up script is now `CREATIVE_GATE_BLOCKED`**, though its source-validation checks were correct. **Do not use the 58-word test sequence as accepted Suno script.** Original donor `resident-chat-ensemble-data.mjs` still has 20 candidate entries, only one expressly human-failed by Georg; the other 19 carry assistant triage notes, not fabricated Georg verdicts. Read `CHATTERBOX_POOL_RULE1_EDITORIAL_FAIL_REVIEW_R0_1_2026-10-12.md` and `data/CHATTERBOX_POOL_RULE1_SOURCE_AUDIT_R0_1_2026-10-12.json` before any further Triplet comedy use. No new pool owner, kernel patch, runtime or Site.
