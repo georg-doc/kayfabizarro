@@ -1,5 +1,20 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-12 · PRIVATE KFB TRIPLETS COMPOSER PLUGIN CREATED · SOURCE VERIFIED
+
+**Outcome:** one private ChatGPT skills-only authoring plugin **KFB Triplets** was actually created (comparable workflow type to KFB Asset Scene Composer) at https://chatgpt.com/plugins/plugins_6accc59cff7481918f9113f65965335f. Backend ID `plugins_6accc59cff7481918f9113f65965335f`, version `0.1.0`, release `pluginrel_6accc59e6d348191a40a2bc74fe7537c`, USER PRIVATE. Five normalized files retrieved from Creator after release, all five skill/manifest text files mirrored *exactly* into current Voice branch `plugin/kfb-triplets/` with 5/5 verified post-write GitHub branch-head comparisons/file readbacks. Plugin ZIP (9,756 bytes, SHA256 `d55c3e02dad1452c8a77d7613380931bbb5e4117c889a17bf9ace3dcbd8de9c4`) available only in creation conversation; do not claim binary in GitHub.
+
+**Source contract** reuses current `media/kfb/` Card JSON and `media/kfb/index.json`/Registry; current KFB ChatterBox Voice PR #379 remains sole content authoring owner, Audio PR #365/current KFB Audio Voice Acting Site is existing TTS/music/preview consumer. Plugin provides a reusable web-chat skill, **not** a second runtime, server/tool with new permissions or Site. Modes: one Card = one grammatical source-anchored utterance, 3 Card scene, verified 4-card Page, full Deck (Wrinkle 48/48, not 56), typed causal Bridges with editorial status, Story Mode/persona and fixed Card-Performance outro **Stay Fluffy!**, paste-ready Suno Lyrics+Style, source-pinned local Site draft JSON, connector-mediated user-requested GitHub check-in. No arbitrary `therefore/but` link lottery and no generic dialogue substitute.
+
+**Actual tests:** 20/20 plugin/source/content contract assertions PASS against exact original Wrinkle JSON/three real Card #17,#18,#19 candidates, live protected preview feed `audio-site-preview-r3-card-11-tune` blob `180a7ea461620e469e4f8bdf73905a06308f3ece`, 48 Card full-deck script and current Audio Site `card-performance.js` draft importer. Additional one preview candidate `KFB_TRIPLETS_PLUGIN_SMOKE_CARD_17_18_19_SUNO_R1_2026-10-12.md` 541-char Lyrics + 352-char Style, copy-paste without JSON; its importable JSON donor is `data/KFB_WRINKLE_17_18_19_LOREKEEPER_IMPORT_DRAFT_R1_2026-10-12.json`. Smoke audio: **NOT GENERATED / NOT HEARD**; static source checks are not Georg comedy approval.
+
+**Protected:** existing Audio Site Source 0.6.0 / Version 9 not changed, no Work/WSA need for future normal Triplet content edits; GitHub auto-loaded r3 preview NOT changed or promoted, pending Card11 DRY/D human hearing remains. Plugin created and read-back, but ChatGPT activation/attachment and *actual* in-chat plugin invocation are **UNVERIFIED**. No Suno direct app/API integration was found; Suno uses copy/paste human flow, not paid generation. No Site publish, Hub URL change, new Cloudflare Stage, World/R5, PR merge or Live. Plugin itself cannot bypass authenticating existing private Audio Site.
+
+**Durable evidence:** `KFB_TRIPLETS_PLUGIN_R1_CREATION_TEST_REPORT_2026-10-12.md`, `KFB_TRIPLETS_PLUGIN_SMOKE_CARD_17_18_19_SUNO_R1_2026-10-12.md`, five portable release source files under `plugin/kfb-triplets/`; START_HERE/RETURN/additive Changelog advanced. One next gate `KFB_TRIPLETS_PLUGIN_FIRST_USER_INVOKE_AND_AUDIO_SITE_PREVIEW_R1`: user adds private plugin to ChatGPT and invokes a source-backed set, then can audition/import it at existing Voice Acting Site with human KEEP/TUNE/CUT while still preserving r3 until explicitly superseded.
+
+---
+
+
 
 ## 2026-10-12 · POST-WORK SELF-SERVICE VERIFIED · R3 HELD · NEW LOCAL IMPORT CANDIDATE
 
