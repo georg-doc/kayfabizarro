@@ -1,5 +1,17 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-12 · Private KFB Triplets plugin v0.1.0 · source-first authoring
+
+- Created **KFB Triplets** private personal skills-only plugin, ID `plugins_6accc59cff7481918f9113f65965335f`, release `pluginrel_6accc59e6d348191a40a2bc74fe7537c`, https://chatgpt.com/plugins/plugins_6accc59cff7481918f9113f65965335f.
+- Based on KFB Asset Scene Composer's source-first *skill workflow* design, NOT a duplicate audio, ChatterBox, Card/Registry, Site or external provider server. Full 5-file post-Creator source mirrored under `plugin/kfb-triplets/`; GitHub readbacks 5/5.
+- Supports original Card JSON → one grammatical title/Power/Lore utterance, typed causal Bridges, verified 4-Card page/3-Card stories/full-Deck spoken scripts, source-backed Voice Acting local JSON draft, Suno copy/paste speech and style, optional explicit GitHub connector check-in. No automatic canon/public preview promotion.
+- New test `KFB_TRIPLETS_PLUGIN_R1_CREATION_TEST_REPORT_2026-10-12.md`: 20/20 checks against actual KFB GitHub Card source, existing site importer and r3 feed. Smoke `KFB_TRIPLETS_PLUGIN_SMOKE_CARD_17_18_19_SUNO_R1_2026-10-12.md` 541-char Lyrics and 352-char Style, original 17→18→19 source.
+- Still **not** a demonstrated connected plugin invocation in user's chat, original Suno model execution, site audio or human approval. Keep original r3 feed unchanged for current owner Card 11 DRY/D listening.
+- One next gate: activate private plugin and try its first voice/Suno Card performance (no Work/Site redeploy).
+
+---
+
+
 
 ## 2026-10-12 · Work Site v9 checked · New standalone #17–19 source-bound editor import
 
