@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · INDEPENDENT SEMANTIC CONTRACT RECOVERY · NO PLUGIN PATCH
+
+**Georg's HUMAN FAIL remains authoritative.** This source-comparison pass read existing actual original KFB Triplet/Bridge donors (Meta-Narration L-26 subject / meaning-bearing predicate / reframe, lexical appropriation; FrizzleBob narrator's audible causal hinge) and frozen 1001 Nights negative Golden. **15/15 code/source presence assertions PASS**, not a quality or audio PASS; old failed 17/17 structural candidate checks are still superseded. Newly demonstrated valid Triplets **0**, valid Bridges **0**, new creative revisions/Suno takes **0**.
+
+New additive source/evidence: `KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1_2026-10-13.md` (one named owner, exact source blobs, four disjoint types: original Card, semantic Triplet, causal Bridge, higher narrative scale; explicit before/after stakes, `NO_EDGE` fallback; user scope not silently 60→3; full 60 Card coverage/splitting rather than invented scale). **Plugin v0.1 remains UNPATCHED and creatively FAIL for the 1001 task**. Do not reuse or Suno-test the frozen 5→6→7 example.
+
+Current Audio Site Source 0.6.0/v9 importer issue is stronger than a string restriction: core hardcodes `48` cards and `50` utterances; UI importer hardcodes `wrinkle_rumble`, and timed cue validator hardcodes 3 profiles × 50 cues. **1001 Nights 60-card Site import is currently UNSUPPORTED**; not repaired by a JSON export or changing a deckId. Site capability fix belongs only to existing Audio PR #365, as a separate one-time Site generalization preserving future content-only GitHub hot reload. The active r3 Card11 feed remains protected. No new Site, no merge or Live.
+
+**Next single gate:** `KFB_TRIPLETS_V0_1_1_FAIL_CLOSED_SKILL_REPAIR_AND_INDEPENDENT_REGRESSION_R1` in current Voice owner #379. Only after a demonstrable semantic source-backed Triplet and real Bridge on controlled examples, proceed to optional Audio generic multi-deck receiver gate. No automatic successful creative classification.
+
+---
+
+
 ## 2026-10-13 · HUMAN FAIL · 1001 NIGHTS TRIPLETS/BRIDGES POSTMORTEM
 
 **Binding feedback:** Georg explicitly rejected the generated 1001 Nights #5→6→7 Suno candidate as NOT the KFB Triplets concept and lacking real Bridges. The old **17/17 PASS** meant source/shape checks ONLY; it was not a content or artistic PASS. The previously suggested **GEORG_1001_5_6_7_SUNO_SCRIPT_KEEP_TUNE_CUT_R1 gate is cancelled for this failed text**.
