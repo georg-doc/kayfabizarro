@@ -1,6 +1,19 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
 
+## 2026-10-12 · POST-WORK SELF-SERVICE VERIFIED · R3 HELD · NEW LOCAL IMPORT CANDIDATE
+
+**Work report independently read from current Audio PR #365:** existing Audio Site Source 0.6.0 / version 9 / same deploy, no new Site; Audio head before this Voice content slice `6346c776c6ff64d7020447e2ec9c051bea23d752`. Audio core **18/18**, Site validator **172/172**, two subsequent content-only GitHub reloads each **12/12** with Site version unchanged. This establishes a technical no-Work content path, **not** owner-browser visible/audio listening acceptance. Georg reported Work complete; in this chat exact PR head and Return read back, but direct site open was disabled.
+
+**Voice self-service baseline retained:** GitHub Voice PR #379 head before this new candidate `341fe721a7280c7d0ed025de129ace750a06ed49`. Active preview feed `data/KFB_AUDIO_SITE_CARD_PERFORMANCE_FEED_R1_2026-10-12.json` remains **unchanged** with exact blob `180a7ea461620e469e4f8bdf73905a06308f3ece` and `audio-site-preview-r3-card-11-tune`. No automatic new reload revision r4 and no override of currently instructed Card 11 human listening gate.
+
+**New non-active creative candidate:** `data/KFB_WRINKLE_17_18_19_LOREKEEPER_IMPORT_DRAFT_R1_2026-10-12.json` directly conforms to existing `kfb.audio-site.card-performance-draft/1` import contract (reviewed `card-performance.js` and `card-performance-core.mjs` from Audio #365). Original Card IDs #17 Skeleton of Waiter, #18 Slide of Eternity, #19 Unanswered Riddle, pinned source deck blob `695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c`, one original-source-derived spoken sentence each, two explicitly **EDITORIAL** cartoon-causal transitions, optional "Welcome, dear Fluffheads" intro, literal "Stay Fluffy!" outro, Lorekeeper voice, D bed preference. The corresponding original card POWER/LORE fields were fetched and compared before writing. **9/9** authoring-schema/provenance checks PASS; GitHub file and branch head fetched/read back; r3 feed checked unchanged. This file can be imported into the existing editor as a LOCAL DRAFT, **not** a new live feed or accepted canon. The editor import method and bridge preservation were source inspected, but no authenticated owner Site import/playback or hearing quality test took place here.
+
+**Only one next human gate:** `KFB_AUDIO_CARD_PERFORMANCE_OWNER_RELOAD_AND_LISTEN_R1`: sign in on original existing Site -> Voice Acting -> Reload GitHub content -> see **r3 Card 11** -> compare Play dry vs Play D -> Georg KEEP/TUNE/CUT. After that gate, evaluate importing the new #17–19 sample, then decide if it belongs in the explicitly preview-only feed. Do not require Work again for ordinary text edits; no new Site, World, merge or Live.
+
+---
+
+
 ## 2026-10-12 · TIMED R2 · 3 COMPLETE VOICES / 48 CARDS / 150 SEGMENT CUES
 
 **Result:** Advanced same-text Card-Performance audio audition using original GitHub Wrinkle Rumble source. Exactly three actual independent full 48-card offline eSpeak dry vocal MP3s (239.0727, 252.6041, 238.0278 seconds), all have **"Welcome, dear Fluffheads!"** and final **"Stay Fluffy!"**, source ordered Cards 1–48 unchanged. **50 measured source-linked cue intervals per MP3** (intro + 48 card sentences + outro) now durable in `data/KFB_WRINKLE_48_TTS_TIMED_CUE_AUDITION_R2_2026-10-12.json`; original speech Git blob `a9e6631267dac39bd04012f6402497db591c6d06` reconfirmed byte-exact. Full independent evidence in `KFB_WRINKLE_TTS_TIMED_AUDITION_R2_TEST_REPORT_2026-10-12.md`. All 3 MP3s, exact SRT/CSV/JSON, original speech and manifest in **conversation-only ZIP** `KFB_Wrinkle_48_Card_TTS_Cue_Audition_R2.zip` (16 entries, 9,121,644 B), **not GitHub or Site**.
