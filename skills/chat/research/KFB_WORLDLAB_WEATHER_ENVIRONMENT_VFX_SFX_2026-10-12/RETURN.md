@@ -45,3 +45,17 @@ Product route: none (documentation only).
 **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT**: an explicitly authorized existing-owner executor proves (A) current dry→rain→dry with one EnvironmentHost and no second fog/sun owner; (B) one real CC0 candidate audio loop with voice duck/mute; (C) source-isolated real Kenney/VFX-01 frame/animation visibly appropriate to KFB Clay. Record screenshots/source pins, audible result, draw calls and GPU timing before marking a specific donor ADOPTABLE.
 
 This research does not constitute an instruction to start the World MVP, new Stage or integrate automatically.
+ 
+## Additive handoff · 2026-10-12 · Claude Code / WSA + Florence Motion Lab
+
+Georg requested check-in for Claude Code / ChatGPT Work–WSA plus evaluation of https://x.com/flxrnc/status/2105311836190978392 ("Opus 5.5 Motion Lab: Make Claude Animate Like a Studio", 2026-09-30). External article wording/timings recovered from index for exact post, but original X/media could not be directly opened. No upstream video/artifact/source code downloaded or inspected. Classification: **KEEP/ADAPT frame-exact production QA method**, **REJECT as a KFB runtime owner/style package**, **NOT_ADOPTED**.
+
+New files (this same existing research branch/PR):
+- `FLXRNC_MOTION_LAB_DONOR_AUDIT_2026-10-12.md` — evidence status, technical techniques, owner-by-owner routing and exclusions.
+- `CLAUDE_CODE_WSA_INTAKE_2026-10-12.md` — complete read-first brief/invocation for Claude Code or Work/WSA, protects SKY3/VFX/Audio, no WB2 runtime and uses one next source-isolation gate.
+- TEST_REPORT.md updated with **20/20** new contract/file assertions and explicit 0 browser/render/audio/listen/source-media tests.
+- CHANGELOG.md updated additively.
+
+No files from the original 25-record SOURCES.json were changed or newly vendored. **Still 4 KFB owners + 21 external asset-source entries; motion article is a separate workflow reference, not a 26th CC0 asset lead.**
+
+**Current intended PR remains Draft #389**, existing branch, no merge/Live or Stage/Site. Final exact head is whatever the verified branch points to after the last documentation commit; do not trust a self-embedded future hash. Current overall next gate unchanged: **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT**, now using frame-exact capture methodology when a receiving test executor is separately authorized. Georg action now: none.
