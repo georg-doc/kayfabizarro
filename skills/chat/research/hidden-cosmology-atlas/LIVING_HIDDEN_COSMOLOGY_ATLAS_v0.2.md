@@ -1,14 +1,36 @@
+## CURRENT ADDITIVE OUTCOME — 2026-10-13 — SEVEN WORLDVIEWS + WORLDVIEW PERFORMANCE DESIGN
+
+**User direction:** Add David Icke as a seventh source-centered author; add the Solari Report Substack to Catherine Austin Fitts' publication corpus; add Jesse Michels / *American Alchemy* as an interview, documentary and guest-discovery corpus ("alternative mainstream"). Distinguish Michels' interviewer/host statements from guests' worldviews. None of the newly indexed sources is grounds to silently assign unspoken beliefs to the other authors.
+
+**CURRENT NotebookLM intake:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R5_SEVEN_AUTHORS_2026-10-13.md` (2,730 English characters, no preset URLs). R4 and all earlier prompts are historical; none has been run here. Seven separate "Worldview According To" author dossiers are the research target. The new source register `SOURCE_EXPANSION_SOLARI_ICKE_MICHELS_R1_2026-10-13.md` records published Solari essays, David Icke's books/article entry points, the American Alchemy host/episode index and source-specific cautions about speaker attribution. The existing six-author source seeds are preserved and still relevant.
+
+**User's long-term game-product intent:** A KFB fictional Clown or other actual Resident temporarily embodies one researched author's worldview and reasoning while keeping its own established character identity. User/Card/scene prompts trigger fast, confrontational in-character stand-up-style monologues, ongoing arguments and player heckle/retort interactions; the author-worldview lens remains source-faithful, and any creative satirical extensions belong explicitly to the KFB performance layer, not forged author quotations. The distinct source/retrieval, Resident identity, ChatterBox semantic and KFB Audio owners remain intact.
+
+**NEW PRODUCT CONCEPT:** `WORLDVIEW_PERFORMANCE_SITE_CONCEPT_R1_2026-10-13.md` is the design-only receiving contract for a possible future GPT Site authoring/test bench. It specifies Card/Question/Scene inputs; author Lens + real Resident + context; short/long monologues, stand-up, in-character rebuttals, cross-lens dialogues; provenance in a separate non-diegetic panel; source gap handling; existing Card `deckId + cardNumber` identity; donor-isolation proof and role ownership. **NO Site, code runtime, browser proof, Cloudflare Stage, merge or Live is authorized or claimed.** A Site implementation is downstream of the actual Card+Resident+source-fit test.
+
+**Current research/format policy still binding:** English for every artifact, script, specification, source description, prompt, report and game output, German only for direct conversation with Georg. No content filtering or external speculative labels in author-worldview acquisition. Capture source-authored certainty/uncertainty, retain complete voices and preserve author-vs-KFB creative origin.
+
+**HCA-020 · CORPUS EXPANSION — USER AUTHORIZED:** David Icke is the seventh principal worldview author; the Solari Substack is an additional Fitts publication index, while Jesse Michels' *American Alchemy* is primarily an interview/documentary source hub. Roles remain distinguishable.
+**HCA-021 · KFB WORLDVIEW PERFORMANCE — USER PRODUCT DIRECTION:** Use existing KFB characters as independent comic performers embodying source-grounded worldview lenses, not as simulated literal persons or a second resident roster.
+**HCA-022 · SOURCE / PERFORMANCE BOUNDARY — BINDING:** Author-only records remain source-faithful and unfiltered. KFB comic invention happens downstream with its own traceable provenance and may never be attributed as a verbatim real author claim.
+**HCA-023 · SITE WORKBENCH — PROPOSAL, NOT BUILD AUTHORIZATION:** Site would author/preview source-backed performances while the existing Resident ChatterBox, Card and Audio receivers retain execution ownership.
+**HCA-024 · NOTEBOOKLM R5 CURRENT:** Seven-author brief supersedes R4 for future import, preserving the complete historical prompts.
+
+**One next research/product gate:** `WORLDVIEW_PERFORMANCE_R1_SOURCE_AND_RECEIVER_FIT` — collect source-rich passages for two genuinely differing author lenses, resolve one real KFB Card and one approved fictional Resident and inspect source Card/Resident/dialogue donors in isolation; editorially test one source-faithful monologue and heckle. Independent author dossiers can continue in parallel without requiring a new Site.
+
+---
+
 ## CURRENT ADDITIVE RESEARCH SCOPE — 2026-10-13 — SIX CORE AUTHORS
 
 Georg has added three equal-priority authors to the three-person corpus: **Jason Reza Jorjani** (author of "Breakaway Culture"), **Joseph P. Farrell** (Giza Death Star / "hidden system of finance"), and **Catherine Austin Fitts** (Solari, Black Budget and Breakaway Economy research). Spelling and identity confirmed by the original author and interview sources.
 
-**Current NotebookLM research instruction:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` (**2,982 characters**), superseding R3 for future NotebookLM intake. R3 remains historical and exact, not deleted. R4 instructs independent discovery of publications, podcasts, talks and interviews, plus six independent "Worldview According To" dossiers. No preset links or formal hexagonal/KFB UI instructions. **All artifacts strictly English; chat in German.** The source-native emic/non-exclusion contract of HCA-013 and HCA-014 remains unchanged.
+**Historical six-author NotebookLM instruction (superseded by R5 above):** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` (**2,982 characters**), superseding R3 for future NotebookLM intake. R3 remains historical and exact, not deleted. R4 instructs independent discovery of publications, podcasts, talks and interviews, plus six independent "Worldview According To" dossiers. No preset links or formal hexagonal/KFB UI instructions. **All artifacts strictly English; chat in German.** The source-native emic/non-exclusion contract of HCA-013 and HCA-014 remains unchanged.
 
 **New verified research seed:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` contains direct author works and interview links: Jorjani's own 2025 "Breakaway Culture" and "Catastrophic Disclosure"; Farrell's Dark Journalist interview, secret-finance and Epstein essays; Fitts' Dark Journalist interviews, Corbett interview and February 27, 2026 Tucker Carlson episode. Strong direct cross-reference: in the 2026 episode Fitts calls a secret-finance concept **"Joseph Farrell calls it the hidden system of finance"**; primary video/host episode are identified and the transcribed wording requires audio confirmation before verbatim quotation. Farrell's writing also references Fitts on missing money. Other possible author links, especially Jorjani ↔ Epstein, are open discovery questions, **not asserted collaborations**.
 
 **Extended thematic inquiry:** What do these six authors independently say about breakaway culture/civilization, postwar covert networks, financial diversion, black budgets, secret technologies, aerospace/off-world programs and Epstein-related institutional narratives, and where do they explicitly connect those subjects? Preserve each author’s own certainty and terms. Do not unify their positions before attribution.
 
-**Current single next gate:** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — expand the six-author primary corpus, source-verify direct collaborations, and build six separate attributed worldview dossiers before cross-author narrative synthesis.
+**Earlier six-author next gate (continued as a research subtask beneath the new active product design gate):** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — expand the six-author primary corpus, source-verify direct collaborations, and build six separate attributed worldview dossiers before cross-author narrative synthesis.
 
 **HCA-017 · SIX_AUTHOR_SCOPE — USER AUTHORIZED.** All three additions are core authors, not merely incidental citations.  
 **HCA-018 · NOTEBOOKLM_R4 — CURRENT.** R4 replaces R3 only for the next NotebookLM source discovery input; historic prompts remain retained, no NotebookLM run performed here.  
@@ -150,8 +172,11 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 
 ## 11 — Document Register / Status
 
+- **CURRENT / NotebookLM R5:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R5_SEVEN_AUTHORS_2026-10-13.md` — seven emic author dossiers, additional guest/publication discovery; no preloaded URLs.
+- **CURRENT / extended sources:** `SOURCE_EXPANSION_SOLARI_ICKE_MICHELS_R1_2026-10-13.md` — Solari publications, Icke and American Alchemy, with source IDs and host/guest boundaries.
+- **CURRENT / performance proposal:** `WORLDVIEW_PERFORMANCE_SITE_CONCEPT_R1_2026-10-13.md` — source-backed KFB cartoon worldview performances, donor reuse and separate later Site authorization.
 - **CURRENT / SSOT:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — present source/recovery contract, fully English.
-- **CURRENT / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — concise English-only six-author research prompt (no preset links).
+- **HISTORICAL / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — concise English-only six-author research prompt (no preset links).
 - **HISTORICAL / NotebookLM:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` — earlier three-author prompt, preserved for recovery.
 - **CURRENT / source discovery:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` — primary works and confirmed interview/citation ties.
 - **HISTORICAL:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` — prior planning and explicit source inventory; old external labeling method is superseded.
@@ -160,4 +185,4 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 - **PRIVATE ORIGINAL:** `libfile_2bf3eb4b0e908191a4a8097de5198d45` (full attached transcript, 192,811 bytes). KFB Production Control stores exact text mirrors of important editorial files, not automatically the private transcript.
 - **RETURN:** `RETURN.md` in this directory; final head and verification counts. Exact head from the latest branch/PR must be read after writes.
 
-**ONE NEXT GATE: `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — independently discover and review first-hand work from all six core authors, build six source-faithful worldview dossiers (starting with the archived Metzger interview), and only then conduct cross-author narrative mapping.**
+**HISTORICAL GATE (six-author milestone): `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — intake remains ongoing for seven authors; the current next named gate is stated in the 2026-10-13 additive outcome above.**
