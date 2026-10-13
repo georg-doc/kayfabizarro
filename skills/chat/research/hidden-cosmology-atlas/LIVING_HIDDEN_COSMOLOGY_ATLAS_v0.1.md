@@ -11,7 +11,7 @@
 
 ## 00 · Übergabe / Recovery cursor
 
-**Zuletzt passiert · 2026-10-13:** User supplied a ~2h22 YouTube-associated, ASR-like transcript and three researcher/channel seeds; read KFB production router, fresh-chat, Stage/Sites-first workflows and living-document skill. Initial source-linked research established high-level author lenses, not any consensus or factual corroboration. A new research branch was opened without changing main or a runtime.
+**Zuletzt passiert · 2026-10-13, second editorial milestone:** Georg explicitly accepted flexible hexagonal semantic neighborhood exploration inspired by Aby Warburg and Markus Gabriel, with attention to field translations and possible category errors; researched and documented the method and prepared a reproducible NotebookLM Deep Research prompt. Existing KFB Fractal Canvas masterplan already included Warburg/Gabriel direction since 2026-09-14; Iceberg Explorer has a narrower Warburg-inspired related-neighbors donor (max three, not a six-position runtime). **Earlier milestone:** user supplied ~2h22 ASR-like transcript, three researcher/channel seeds and original Living Document; source archive secured in private Library. Current research remains conceptual, not empirically corroborated.
 
 **Als Nächstes — Corpus Intake 01:** Verify the video’s title, host, publication metadata and speakers; preserve the full supplied 192,811-byte original transcript through a durable source-object lane; start a source-index with attributed, timestamped claim records from Metzger's appearance (approx. 01:36–01:15:56). Do not silently assign later presenter discussion to Metzger. Identify 2–3 transcripts per author and build the first comparative claim matrix before writing cosmological chapters.
 
@@ -108,12 +108,14 @@ Each node supports `mentioned_by`, `opposes`, `interprets`, `historically_derive
 - **HCA-007 · Title is provisional — PROPOSAL.** The Hidden Cosmology Atlas is a working title.
 - **HCA-008 · No KFB canon rewrite — DECISION.** Research may later feed a Deck/Almanac, but never automatically becomes accepted Resident lore, Triplets, or runtime data.
 - **HCA-009 · Full source retention via personal Library — VERIFIED.** Original transcript uploaded with unchanged 192811 byte size as private file `libfile_2bf3eb4b0e908191a4a8097de5198d45`, allowing future sessions to recover original wording without reupload. The initial `container_path` method failed due to session mismatch; exact original conversation `file_id` copy succeeded.
+- **HCA-010 · Flexible semantic hexagons and explicitly typed field bridges — NEW USER DESIGN DIRECTION, 2026-10-13.** Keep Warburg-style productive neighborhood and Gabriel-inspired plurality of fields, not a rigid six-ontology; a category-transfer can be deliberate authorial lens or a category mistake depending on what inference it carries. Detailed constraints, examples and sources in `HEXAGONAL_SEMANTIC_CONSTELLATIONS_R1_2026-10-13.md`. No runtime acceptance, six D6 colors, or new algorithm.
+- **HCA-011 · NotebookLM is research input, KFB Living Document remains recovery source — DECISION.** Provide a portable Deep Research prompt with primary-source obligations and citations; import any future NotebookLM findings through a provenance-gated, human/independent review before treating as KFB facts or cards. The prompt is saved in `NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R1_2026-10-13.md`, but no NotebookLM execution or actual imported report is claimed.
 
 ## 06 · Backlog and research gates
 
 **G0 · Source intake & metadata** [WIP] — original transcript archived/verified as private Library file (192811 bytes); video metadata, speaker/audio attribution still pending. 1 attached seed transcript partially mapped; other authors profiled at site/channel level only.
 
-**G1 · Each author's own worldview** [NOT STARTED] — minimum 2–3 source-specific texts/episodes per core author; reconstruct internal vocabulary, ontology, cosmogenesis, agents, history and salvation/agency model in separate 1–2 page dossiers.
+**G1 · Each author's own worldview** [NOT STARTED] — minimum 2–3 source-specific texts/episodes per core author; reconstruct internal vocabulary, ontology, cosmogenesis, agents, history and salvation/agency model in separate 1–2 page dossiers. NotebookLM Deep Research research prompt prepared, not executed.
 
 **G2 · Comparative claim/relationship matrix** [NOT STARTED] — start with 30–50 atomic claims across three authors, no generalized claims without citation, all significant contradictions retained; typed graph.
 
@@ -146,6 +148,13 @@ https://darkjournalist.com/ ; about: https://darkjournalist.com/about.php . Rese
 ### SRC-003 · Michael Wann / Susquehanna Alchemy source hubs
 Podcast: https://podcasts.apple.com/us/podcast/susquehanna-alchemy/id1586176738 . Context/interview: https://thecosmicsalon.com/guest-feature-michael-wann/ . The 40th parallel / ritual geography / perception and synchromysticism are documented subject areas. **No transcript-specific claims ingested yet.** Confirm preferred spelling **Michael Wann**.
 
+### Warburg, Gabriel and KFB existing canon anchors (read 2026-10-13)
+- Warburg good-neighbor / Mnemosyne historical research entry: Cornell University Library, https://warburg.library.cornell.edu/about/aby-warburg/ — library-neighborhood principle is historically distinct from Atlas montage.
+- Markus Gabriel `Sinn und Existenz`, 2016: https://markus-gabriel.com/sinn-und-existenz-2016 ; philosophical review of `Fields of Sense`: https://ndpr.nd.edu/reviews/fields-of-sense-a-new-realist-ontology/ . Sinnfelder are not reducible to arbitrary subjective lenses; do not turn interpretive coherence into universal empirical truth.
+- Existing KFB masterplan direction `skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md` (main blob `e050b8b35becb60f3fb6d6df0b5c90c2bd020939`) explicitly includes Warburg, Gabriel, McCloud, Blair and D6/Heim; latter's exact color mapping UNRESOLVED.
+- Existing `travel/3D Conspiracy Iceberg Explorer/docs/SCHEMA-v2.md` (main blob `5d71565a70fb76e816c5ff69f272e70bf578ca2c`) uses Warburg-inspired `related` up to three per entry; analogy/donor only, no schema adoption or forced six `related` refs.
+- NotebookLM Deep Research official feature note: https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-deep-research-file-types/ ; enables research/report/source suggestions, NOT proof that NotebookLM imported or researched these sources.
+
 ### Ancient-text research entry points (not yet chapter analyses)
 - Plato, `Timaeus` 24e–25d: https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0180%3Atext%3DTim.%3Apage%3D25
 - Plato, `Critias` 108e / 113c–e: https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0180%3Atext%3DCriti.%3Asection%3D108e
@@ -175,7 +184,9 @@ Read `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md
 
 ## 11 · Document register
 
-- **HCA-LIVING-01** · `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` · **current / first milestone** · this project cursor, method, source index and editorial chapter plan.
+- **HCA-LIVING-01** · `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` · **current / second additive milestone** · this project cursor, method, source index, Warburg/Gabriel decision and editorial chapter plan.
+- **HCA-HEX-R1** · `skills/chat/research/hidden-cosmology-atlas/HEXAGONAL_SEMANTIC_CONSTELLATIONS_R1_2026-10-13.md` · **current / research method** · Warburg/Gabriel conceptual distinction, six-place/typed-edge method, first explicitly provisional transcript-based example, adjacent KFB masterplan/iceberg donor inventory.
+- **HCA-NOTEBOOKLM-R1** · `skills/chat/research/hidden-cosmology-atlas/NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R1_2026-10-13.md` · **current / copy-paste research instruction** · NotebookLM research request, three-author/source-first recovery and optional later Deck candidate extraction; not an actual NotebookLM run.
 - **SRC-001-original-transcript** · private personal Library file `libfile_2bf3eb4b0e908191a4a8097de5198d45` at `/KFB Research/Hidden Cosmology Atlas/SRC-001_TINFOIL-HAT_KURT-METZGER_ASR-TRANSCRIPT_2026-10-13.txt` / source video `ymbb8q2mBuo` · **PRIVATE ARCHIVE, 192811 BYTES, LIBRARY METADATA VERIFIED** · original bytes reference/fingerprint from §00. This source is not stored in the public GitHub repository.
 - **Future source claim-ledger** · NOT CREATED. A separate compact JSON/TSV claims index is considered only after a representative extraction, not a new product runtime.
 - **Related existing KFB source-method failure** · `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md` · methodological negative, not a dependency.
