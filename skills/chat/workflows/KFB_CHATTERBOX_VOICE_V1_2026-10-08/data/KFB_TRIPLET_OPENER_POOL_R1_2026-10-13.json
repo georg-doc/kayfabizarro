@@ -1,6 +1,6 @@
 {
   "schema": "kfb.voice.triplet-opener-pool/1",
-  "contentRevision": "triplet-opener-pool-r1",
+  "contentRevision": "triplet-opener-pool-r2-new-opener",
   "canonicalDefault": false,
   "status": "EDITORIAL_CANDIDATE_PREVIEW",
   "owner": {
@@ -239,6 +239,25 @@
       "source": {
         "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
         "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "HAVE_YOU_HEARD",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Have you heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf",
+        "note": "New editorial source-neutral variation of HEARD_OF; not an implemented donor quote."
       },
       "history": []
     }
