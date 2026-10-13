@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · V-202 erste Spielszene geliefert
+- Hinter ?islands=1: Ring → PondLand (Witch + Clown) → Forest (Lorekeeper + Goth Girl) → Ring, Triplets aus dem Pool (#305/#310), Plain-Blasen (V-204), Suno je Insel, Räder auf der Fahrbahn + Kontaktflecken (V-203), Props geerdet. Abnahmefahrt PASS 59–60 fps, open-edges 0/0, Parity PASS. Steuerung geprüft: lesbar, läuft; bekannt: Lorekeeper und Goth Girl stehen zu dicht bzw. überlappen, Tür an der PondLand-Bank blockiert. Wartet auf Georgs Daumen.
+
 ## 2026-10-13 · Modul-Inventur für R3F-Slice
 - replies/MODULE_INVENTORY_R1.md (+ proofs/) nach Georgs BRIEF_MODULE_INVENTORY_R1: Card Viewer (3 Wege, Datenweg geprüft), Clay v10 (HÜLLE, geprüft), Table Diorama (VORLAGE, Karten flach, eigenes three 0.160), Skydome (HÜLLE, geprüft), Env-Host (HÜLLE, besitzt Fog/BG/Licht), Seed World (HÜLLE, geprüft ohne Worker), KayKit-Clips (PASST), LOCO_SET kanonisch FEHLT, Blase V-204 (HÜLLE), chatter-2d nicht nutzen. Single-three- und pdf.js-Versionskonflikte notiert, 6 Fragen an Georg.
 

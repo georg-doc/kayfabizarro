@@ -2,15 +2,17 @@
 
 Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. Maßgeblich sind `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-Nummern), `docs/KFB_WORLDBUILDER_PLAN_R1.md` (Slices §5) und diese Datei.
 
-## Aktuell (12.10.)
+## Aktuell (13.10.)
 
 - **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
 - **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
-- **Als Nächstes (V-202, Kurswechsel „Spiel statt Breite“):** erste Spielszene — PondLand + Forest an den Ring (C4c-Zweig verlängert), NPCs mit ChatterBox-Triplets, Insel-Musik, Bodenkontakt Auto/Props (V-203). Ruhen bis Georg gespielt hat: S6, Editor, Dungeon, Ladezeit-Rest, Rhythmus, Licht, Augen-Slice. Früher geplant: S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
+- **Steht zur Prüfung (V-202/203/204):** erste Spielszene hinter `?islands=1` — PondLand + Forest an der verlängerten C4c-Schleife, Original-NPCs mit ChatterBox-Triplets (Clay-pur-Blasen), Inselmusik, Bodenkontakt Auto/Props/NPCs. Steuerung prüft, dann spielt Georg. Ruhen bis Georg gespielt hat: S6, Editor, Dungeon, Ladezeit-Rest, Rhythmus, Licht, Augen-Slice. Früher geplant: S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
 - **Augen (V-201 FAIL, 13.10.):** V-200-Stand bleibt eingecheckt; eigener Slice „Augen-Wiederherstellung“ nach S5: Eye-Rig-Studio 1:1 mit Georgs Presets, Konvergenz-Richtung, v6-Kinetik / Leben / Blinzeln / Blickziele, Abnahme als Nahbild-Paar Studio | Spiel.
 - **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
 
 ## Lieferungen 11.–13.10. (neueste oben)
+
+**Lieferung 13.10. · V-202 erste Spielszene + V-203 Bodenkontakt + V-204 Blasen:** `docs/critic/lab-track/2026-10-13_V202/REPORT.md` — Abnahmefahrt Ring → A → B → Ring mit Aussteigen, Sprechen, Gehen auf die Insel PASS bei 59–60 fps; offene Kanten 0/0 mit und ohne Inseln; Parity PASS; Fahr- und Fußtests wie V-199.
 
 **Lieferung 13.10. · S5 Speicher (V-171 Punkt 4, abgeschlossen nach V-202) + V-199 + V-198:** `docs/critic/lab-track/2026-10-13_mem/REPORT.md`, `…/2026-10-13_V199/REPORT.md` — manifold-WASM kalt 2 647 → 381 MB, HUD-Rucksack-Miniatur als Bild (+13 fps bei 1280 × 800, Spiel mit HUD 60 fps), Checks aus dem Cache; V-199 Strafen / Einsteigen / Hügel / Hüpfer PASS; flk Standard. V-200 Augen gebaut, V-201 FAIL (Slice geparkt, Such-Protokoll `docs/concepts/EYE_RESTORE_SEARCH_R1.md`).
 
