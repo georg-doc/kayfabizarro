@@ -1,3 +1,7 @@
+> **HISTORICAL WORKFLOW — SUPERSEDED 2026-10-13.** Georg has chosen **one dedicated Google Doc per author** instead of one combined multi-author Google Doc. The binding current topology and actual evidence are in [Multi-Doc Author Worldview Network Workflow R2](MULTI_DOC_AUTHOR_WORLDVIEW_NETWORK_WORKFLOW_R2_2026-10-13.md). The prior one-doc author-tab direction below is retained as historical research context, not a new implementation instruction. NotebookLM's per-Doc single-source limitation still applies.
+
+---
+
 # KFB Worldview Research — Google Docs ⇄ NotebookLM ⇄ GitHub Workflow R1
 
 **Date:** 2026-10-13  
