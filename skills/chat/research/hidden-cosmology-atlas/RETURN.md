@@ -1,3 +1,29 @@
+## CURRENT RETURN — EIGHT AUTHOR DOSSIERS + COMPARATIVE RELATION MATRIX v0.1.0 — 2026-10-13
+
+**Bounded product result:** The user-provided Gemini research cleanup/handover was checked against actual Google Drive and existing KFB GitHub owner, then integrated without creating a second research SSOT/branch or unwarranted NotebookLM cleanup. The present deliverable is a **GitHub-maintained eight-author source-derived comparison matrix**, not a fact-certified unified worldview, active NotebookLM crawler, new game runtime, standalone Site or archive deletion.
+
+**Owner, repo, branch, PR:** KFB Hidden Cosmology Atlas Editorial Research, `georg-doc/kayfabizarro` / `research/hidden-cosmology-atlas-2026-10-13` / Draft PR #394. GitHub milestone head immediately before this Return write: `8efb9d021a64159707d143f547264d61e8934349`. Verify actual final branch HEAD, target files and matrix after this update.
+
+**Observed Google Drive evidence:** Search returned the exact eight distinct Gemini-authored Google Docs named Kurt Metzger, David Icke, Daniel Liszt/Dark Journalist, William Bramley, Joseph P. Farrell, Catherine Austin Fitts, Jason Reza Jorjani and Michael Wann. We read **all eight** source texts and their current connector revisions. Each text includes the proposed emic worldview, the KFB performance/Triplet layer and an `Inter-Author Matrix` section; all **eight** contain **zero in-body primary-source URLs or page/timecode citations**. Their `Updated & Consolidated` naming is the original Google-Doc title, NOT an editorial source-acceptance result. Exact private Drive file IDs and revisions can be recovered via authenticated KFB Production Control evidence, not exposed in public GitHub.
+
+**Current GitHub author corpus (eight stable paths):**
+- Updated in closer Markdown-form from newer Gemini Docs: `authors/kurt-metzger.md`, `authors/catherine-austin-fitts.md`, `authors/david-icke.md`, `authors/daniel-liszt.md`.
+- `authors/william-bramley.md`: newer Gemini dossier contents, retaining the previous first-edition/Archive bibliographic ledger.
+- New **condensed author dossier derivatives** (complete source text still retained unchanged in original Google Doc): `authors/joseph-farrell.md`, `authors/jason-reza-jorjani.md`, `authors/michael-wann.md`.
+- `authors/README.md` updated with eight-author files and exact distinctions between fuller and condensed migration.
+
+**New comparison output:** `conflicts/author-cross-matrix_v0.1.0.md` contains **eight author viewpoints, sixteen typed Gemini-dossier-derived relation candidates and three proposed KFB fictional staging examples**. These comparisons are **not** direct author-on-author endorsements or demonstrated disagreements: `DOC_RELATION` marks the Gemini editor's own interpreted link. Independently documented interview events were previously indexed, but those do not imply worldview agreement. Primary passage-based authorship and source-native expressed certainty remain required before an edge is promoted.
+
+**Research & source-scope precision:** Existing GitHub Issues #395 (Metzger source bridge) and #396 (Bramley original book passages) remain open, and existing `RESEARCH_BACKLOG_R1_2026-10-13.md` remains the task queue. Christopher Knowles and Jan Irvin are future candidate discovery leads, not new accepted core author profiles. Existing Borromean/D6 has repo source donors but **no implementation mapping** from worldview matrix to game dice or KFB Triplet contract was attempted.
+
+**Sync/cleanup:** No NotebookLM connector/NotebookLM source-list read or deletion was available or performed. The eight actual Google **Drive** docs are not proof those exact Docs are imported to the user's NotebookLM notebook. No GitHub Website source readback/auto-refresh test was performed; Google Drive sync and NotebookLM HTML Website source behavior are still distinct. Do not delete source records before source-identity backup and accepted replacements.
+
+**Actual tests done:** Eight Google Drive source reads + their content audit; readback of every write against the exact GitHub branch head and intended file, and aggregate repository checks; current PR remains draft. No primary author-source quotation validation, Gemini/Perplexity research execution, editor-controlled NotebookLM cleanup, dynamic vectors, KFB Game/Audio/Resident execution, GPT Site/Cloudflare Stage, merge or Live.
+
+**ONE NEXT GATE — `MATRIX_RQ001_PRIMARY_SOURCE_ALIGNMENT`:** locate an original Kurt Metzger passage and a separately sourced author comparison for one `EDGE` in matrix v0.1.0 through existing GitHub Issue #395, add exact speaker/work/date/time or page and review the edge before creating new KFB Card/Triplet/Stand-up outputs. The `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0` remains a separate outstanding consumer test.
+
+---
+
 ## CURRENT RETURN — VERSIONED RESEARCH NAMING + WILLIAM BRAMLEY SOURCE INTAKE — 2026-10-13
 
 **Result:** Georg prohibited imprecise naming such as new `golden`, `final`, `ultimate`, `latest` or misleading completion claims. A versioned English policy now governs **new** KFB Research deliverables: stable `authors/<slug>.md` paths with internal `content_version`/source/review status, SemVer `vMAJOR.MINOR.PATCH` for protocols/exports, and exact Git commit SHAs for immutable revisions. Existing historical names are retained as compatibility/recovery links and not bulk-renamed. The old source-refresh experiment is called `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0` going forward; its outcome remains untested.
