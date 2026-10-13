@@ -1,5 +1,9 @@
 ## CURRENT HUMAN FAIL OVERRIDE · 2026-10-13 · 1001 NIGHTS TRIPLETS / BRIDGES QUARANTINED
 
+### GROK STAND-UP OPENER IDEATION TRIAGE · 2026-10-13
+Read `KFB_GROK_STANDUP_OPENERS_CUT_SPIN_TRIAGE_R1_2026-10-13.md` and `data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json`. User supplied an extensive Grok stand-up/improv memo. It is editorial *idea input*, not independently researched comedy law or a mandate to generate new material. 6 original runtime openers remain unchanged; 6 proposed patterns not enabled; noncausal set pivots/real pause cues are separate from semantically supported causal Bridges, and SREP/Rule-of-Three/extra punchlines are strictly optional. Performer biography/restaurants/crowd work only with source class, actual context or explicit staged-fiction approval. **21/21 exact source/runtime/catalog-boundary checks PASS**, no human comedy PASS, no Site, plugin or Audio changes. This adds to, does NOT override, the current standalone dry solo editorial listening gate. No acceptance of flawed R1 Cut-Up/1001 negative Goldens.
+
+
 ### CURRENT STANDALONE VOICE-ONLY CARD BEAT R1 · 2026-10-13
 Georg clarified that each original Card must work as an independent mini stand-up routine *without an inter-Card Bridge*, beginning with a source-appropriate improv opener (e.g. heard-of, tasted, met, restaurant ordered), one physical **Card line / blank line** cut separator, optionally no separate punchline/Closure, truly DRY voice-only delivery and per-beat cue/pause metadata. A deck may be resequenced or split without LLM calls, while speaker-specific stage fiction is explicitly marked and cannot become Card lore.
 
