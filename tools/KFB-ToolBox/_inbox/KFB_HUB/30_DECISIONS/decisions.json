@@ -2429,6 +2429,20 @@
    "applies": "ab WS1-Start"
   },
   {
+   "id": "V-212",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Sprechblasen sind 2D (DOM-Overlay im Host-Slot #ui-bubbles mit projizierten Ankerpunkten), keine 3D-Sprechblasen. Genau ein Blasen-Renderer: chatterbox-core in der Plain-Variante mit Flip-Reveal (V-204). Die Wireface-eigenen Blasen dienen nur als Stil-Referenz; was Georg daran gefällt, fließt über Claude Design in den einen Renderer ein, kein zweiter Renderer. Host-Vertrag R1.2 übernimmt das (löst den Widerspruch Abschnitt 4 „Sprechblasen 3D“).",
+   "values": {},
+   "owner": "Web-Chat (Vertrag) + WS1",
+   "check": "Bildpaar Blase Lab | R3F",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Lesbare 2D-Blasen sind abgenommen; 3D-Blasen wären ein Nachbau.",
+   "applies": "ab Host-Vertrag R1.2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2490,7 +2504,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:71",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:77",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
