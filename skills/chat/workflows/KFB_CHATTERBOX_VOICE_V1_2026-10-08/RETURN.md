@@ -1,5 +1,23 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+
+## 2026-10-13 · STANDALONE CARD BEATS / SOURCE-SAFE IMPROV OPENERS / VOICE ONLY
+
+**New user requirement:** Each single Card is its own closed and rearrangeable stand-up mini-story/beat. A separate inter-Card Bridge is **optional**, never required for basic one-card playback. User-chosen/curated comedy opener patterns (heard-of, do-you-know, food/tasted, person/met, restaurant order) frame the original Card; invented stage settings are clearly `PERFORMER_FICTION` and gated by explicit opt-in and Card category. The original absurd result may be allowed to stand; **no mandatory additional joke/Closure**. In a script, **one physical text line per Card Beat**, then a blank line, giving source-segment cutpoints. Audio must be dry solo voice-only with intended delivery and pauses, but no measured audio timestamp or claim Suno obeys no-music style.
+
+**Implemented** on the current existing Voice PR #379:
+- `tools/assemble_standalone_card_beats_r1.cjs`: new source-filtered six-option opener catalog, compact Cookie Triplet wrapper **and** full original Card source recitation alternative, exact Card title/Power/Lore coverage stats, immutable source refs, source-authorized stage framing, local no-Bridge compiler, seeded reorder, cut transcript, script char limit and lossless split, source missing-field deck audit.
+- `data/KFB_STANDALONE_VOICE_ONLY_2_CARD_PREVIEW_R1_2026-10-13.json`: two source-exact full-text Wrinkle Cards #10 The Cookie of Causality and #31 The Abyss Home, one physical line per Card with blank lines, intro `Welcome, dear Fluffheads!`, outro `Stay Fluffy!`, no bed, cue identities and advisory pauses; **397 characters**, no audio rendered.
+- `KFB_STANDALONE_VOICE_ONLY_CARD_BEATS_R1_TEST_REPORT_2026-10-13.md`: real checks, source offsets, example text, privacy/human-review boundaries.
+
+**Real test results:** Executed exact GitHub-fetched JS and current Card JSON in V8: **35/35 PASS** on opener class/explicit performer-fiction restrictions, Power/Lore preservation, output text cut boundaries, dry metadata, stable permutation, source coverage contrast, chapter char caps and source-missing blocking. Compact source-aware Cookie utterance source field token coverage **14/28 = 50%**; full original source-recitational variant retains **28/28 = 100%**. **Neither percentage establishes good comedy or a semantic Triplet by itself.** 56-card Dystopia audit: 55 Power/Lore-complete source recitation candidates, blocked original Card #9 `The Firehose` (`power:null,lore:null`), complete-deck automatic audition disallowed; 55 partial candidate cuts split 27/26/2 across 3 chapters <=5000 chars with Card IDs retained. **No 56/56 audible Deck script, no invented missing Card data, no new TTS run**. Title/Power/Lore must still be reviewed for actual stand-up utility.
+
+**Protected:** Original R1 rejected Lore-only candidate and failed 1001 Nights negative Golden remain unchanged; R2 compact Cookie source fixture original; current Audio Site Source 0.6.0/v9 still source-locked to Wrinkle, r3 Card11 feed unchanged, private KFB Triplets v0.1.0 plugin unchanged, no Suno direct API, Site deploy, 3D Scenelet, World, Hub/Cloudflare, merge or Live.
+
+**One next gate:** `KFB_STANDALONE_CARD_BEAT_R1_EDITORIAL_LISTENING_GATE`: audition the source-exact versus edited compact Cookie and chosen opener with no background music through existing Audio DRY after authenticating, compare KEEP/TUNE/CUT on source information preserved, comedy delivery, pacing and standalone modularity; then decide source-mode standard before wider recipe and plugin content admission.
+
+---
+
 ## 2026-10-13 · CARD PERFORMANCE SCENELET / CLAY STAGE R1 · DESIGN ONLY
 
 Georg's reduced-MVP direction is now recorded as one source-backed modular **Card Performance Scenelet**: a small 3D Resident ensemble with authentic KFB clay, controlled lighting/camera/stage variants, actual PDF-backed Cards on the accepted Kenney Billboard donor, Card SHOW/SPIN/SELL beats with real source-dependent Bridges and ChatterBox NPC choice/reaction. Future worldview/author dossiers remain a separately sourced interpretation layer, not a replacement of original card text. `Fallmodul`/floor module exact source remains **UNVERIFIED** and must be identified from the user's receiving modular MVP before implementation.
