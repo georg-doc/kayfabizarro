@@ -2275,6 +2275,20 @@
    "applies": "im Spielbarkeits-Slice"
   },
   {
+   "id": "V-201",
+   "date": "2026-10-13",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "Augen nach V-200-Umbau weiterhin falsch: nicht Georgs Augen, sie schielen nach außen; vermutlich fehlt auch die Pupillen-/Blicksteuerung im Leerlauf (Umschauen, Leben; gehört zur Figuren-Choreografie). Georg: so einchecken und weitermachen. Steuerung: eigener Slice „Augen-Wiederherstellung“ nach S5 – Vorlage 1:1 aus dem Eye-Rig-Studio (Phase H, kein Regler darf verloren gehen), Konvergenz-Vorzeichen prüfen, v6-Kinetik/Leben und Blickziele im Spiel einschalten; Abnahme nur als Nahbild-Paar Studio | Spiel, von der Steuerung geprüft, bevor Georg es sieht. Keine weiteren Augen-Rückfragen an Georg, bis es dem Studio entspricht.",
+   "values": {},
+   "owner": "Lab + Steuerung",
+   "check": "Paar Studio | Spiel",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Zweimal falsche Augen geliefert; Georg ist es leid.",
+   "applies": "Slice nach S5"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2336,7 +2350,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:11",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:23",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

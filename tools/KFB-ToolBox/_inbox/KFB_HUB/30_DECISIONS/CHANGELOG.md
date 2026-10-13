@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Augen weiter FAIL
+- V-201: Augen nach Umbau nicht Georgs Augen, schielen nach außen, Blick-Leerlauf fehlt vermutlich. Stand einchecken, weiter mit S5; danach Slice Augen-Wiederherstellung 1:1 aus dem Eye-Rig-Studio, Abnahme nur Paar Studio | Spiel.
+
 ## 2026-10-13 · V-199 fertig, spielbar
 - Strafen mit echten KayKit-Strafe-Clips (Medium lädt MovementAdvanced, S = rückwärts; Large gleitet mit walk-Clip), Einsteigen Leertaste + I (Georgs georgI-Schema 30.09.), Hinweis im Inselschild, Kleckse/Steine/Köpfe/Zwickel begehbar (steil nur Wand über stepMax), Hüpfer nur an echten Kanten, nie beim Gehen. Alle Tests ≥ 50 fps grün. Hinweis: Blick nahe Bucht headless 40–46 fps bei 1280×800 → in S5. Weiter V-200, dann S5.
 
