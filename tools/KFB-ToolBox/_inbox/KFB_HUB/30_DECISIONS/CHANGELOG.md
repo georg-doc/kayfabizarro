@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · V-199 fertig, spielbar
+- Strafen mit echten KayKit-Strafe-Clips (Medium lädt MovementAdvanced, S = rückwärts; Large gleitet mit walk-Clip), Einsteigen Leertaste + I (Georgs georgI-Schema 30.09.), Hinweis im Inselschild, Kleckse/Steine/Köpfe/Zwickel begehbar (steil nur Wand über stepMax), Hüpfer nur an echten Kanten, nie beim Gehen. Alle Tests ≥ 50 fps grün. Hinweis: Blick nahe Bucht headless 40–46 fps bei 1280×800 → in S5. Weiter V-200, dann S5.
+
 ## 2026-10-13 · V-200 Ursache Augen
 - Spiel lädt pet-eye-rig.v6 mit Standardwerten (pupil .5, gloss .85, inset 0, converge 0); Georgs 19.09-Konfiguration (eye-rig-medium.batch-1.json, V-061) wurde nie gelesen; Farmer aus EYE-CLEANUP-02 (nur Kandidat). Steuerung: Sitz EYE-CLEANUP-01 + Georgs 19.09-Werte als Standard, Large mit rig-large-reviewed, Lid = Haut (V-090); Batch-Datei ins Lab; BASELINE-Lücke schließen.
 
