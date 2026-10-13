@@ -1,3 +1,19 @@
+## CURRENT RETURN — KURT METZGER GOOGLE DOCS SCOPED MIRROR PROBE v0.1.0 — 2026-10-13
+
+**Outcome:** Successful user-authorized **additive in-place Google Docs write** for the existing Kurt Metzger Google Doc, proved by revision-guarded batchUpdate, new exact revision and readback of unique metadata-only phrase `WV_DOC_SYNC_20261013_01` exactly once. Existing body and formatting elements were not replaced; source-author claims and KFB performance text were not edited. Google Docs is still the **preserved Gemini donor**, not a complete content-equivalent mirror of the current GitHub author Markdown. This proves safe document writing, not end-to-end NotebookLM synchronization.
+
+**Target and actual evidence:** `KFB Author Dossier: Kurt Metzger (Updated & Consolidated)` (existing Google Docs ID `1Se9B_9kvDhFUJFjEYGfn7yrplcAwOC2pHyfThUuP3Xk`), native tab `t.0`; pre-write revision `AHj4eMQzCFfnYVqXebrL26vdDSowj1bn7pc3gtV8f8cHFMP4CjxJkTu12dYWd6NTJKDYZztL3dBfWJptKX7xviAloCJGdSEOH5OpuwZG-fE`; new revision `AHj4eMQJkl6it1BAvoqOiYVznOBN3rai52YvlI1qLYvvY7YGNDPpMqU15A1ai7gQL1XewqihGtqCBvU4A4MMOcFZXs3mOK1HUt4uCsxBNE0`. Extracted characters 4,069 → 4,863; paragraphs 30 → 38; exact marker present once; pre-existing ending preserved. GitHub `authors/kurt-metzger.md` had blob `19163e6f13f117dd0dbfdce2e67d1bbb23addfbc` and remains the editorial SSOT, unchanged in this test.
+
+**New GitHub briefing for Claude Code:** `skills/chat/research/hidden-cosmology-atlas/GOOGLE_DOCS_MIRROR_SYNC_PILOT_v0.1.0.md` (exact Google Docs API receipt, source/probe ID, repeatability, guarded write, no unsafe full overwrite, mirror-delta planning, actual NotebookLM witness steps and one next gate). **Updated** `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` and **updated** `skills/chat/research/hidden-cosmology-atlas/RETURN.md`.
+
+**Repo and authority:** Existing `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. Pre-Return SSOT milestone `f25546022b4e4bdedf8c72ca2e0e4708a31f7ed5`. Verify actual final HEAD and intended file reads after this write. No GitHub/Cloudflare Pages, no additional GPT Site, no Docs duplicate, no automatic merge/Live.
+
+**Outstanding:** The user's NotebookLM notebook contents and source-list status are not available via Google Drive; no direct NotebookLM sync action or search was performed. The experiment cannot claim the phrase appears in NotebookLM or that Google Docs and GitHub are now content-equivalent. The tested Google Doc still contains Gemini's legacy performance layer; future source-only generated mirrors must first reconcile that content without deleting the original donor. No automated repeating sync/background agent implemented.
+
+**One next gate:** `NOTEBOOKLM_DRIVE_SOURCE_MARKER_CHECK_v0.1.0` — confirm the specific Google Drive source is selected in NotebookLM, manually synchronize if needed, and find exact marker `WV_DOC_SYNC_20261013_01` in the notebook source or answer; log pass or precise failure. Only then authorize any GitHub→Google Docs full mirror generation.
+
+---
+
 ## CURRENT RETURN — WORLDVIEW RESEARCH CORE / PRIVATE PLUGIN v0.1.0 — 2026-10-13
 
 **Product outcome:** A real **private skills-only ChatGPT plugin** named **KFB WorldView** v0.1.0 was created successfully (https://chatgpt.com/plugins/plugins_6ace954d03f48191badb64cb68ba6281, plugin ID `plugins_6ace954d03f48191badb64cb68ba6281`, release `pluginrel_6ace954e3eec819188b5ff324c3fe8d1`). Despite the brand, its source research kernel is **project-neutral** and allows use on non-KFB repos/sources; no game application or fake worldview spin. This release provides reusable instructions/skill, **NOT** a new backend, NotebookLM connector, Perplexity access, autonomous scheduled agent or published Site. The Plugin Creator verified release exists and exposed the source files, which were copied into GitHub and read back.
