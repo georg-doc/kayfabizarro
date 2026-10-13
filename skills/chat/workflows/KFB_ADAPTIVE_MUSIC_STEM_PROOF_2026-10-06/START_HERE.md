@@ -1,5 +1,16 @@
 # KFB Adaptive Music Stem Proof 01
 
+
+## CURRENT PHASE ORDER · 2026-10-13 · WORK/WSA FIRST → CLAUDE CODE SECOND
+
+**Georg's explicit direction overrides competing next-executor claims:** FIRST Work/WSA makes the EXISTING KFB Audio Voice Acting Site a self-service, GitHub-hot-reloading **Triplets + editable Opener Pool** with source Card/POWER/LORE audit, multi-deck input, export and DRY listening. Routine new data must not require Work or Site republish. SECOND, and only after a confirmed Source/Opener/Voice downstream JSON packet and tested same-version hot reload, Claude Code consumes the accepted pool for original KFB FrankenStein Composer PR #355 / genuine Wireface/3D Scenelet. Wireface integration is DEFERRED and must not become WSA Phase 1 scope.
+
+**Read the binding current one-shot brief first:** `WSA_TRIPLET_OPENER_POOL_SITE_FIRST_THEN_CLAUDE_CODE_2026-10-13.md` (Audio site owner PR #365). Existing Source 0.6.0 / Site v9 and r2/r3 loader proof remain historical green; owner-visible r3 dry/D hearing still separate. Current v9 editor is NOT generic for 56/60 Card Decks and cannot cloud-save editorial data without proper credentials/backend. Target is in-place extension, not a second Site. Voice data SSOT stays current PR #379; no duplicate runtime/owner.
+
+**One immediate gate:** `WSA_EXISTING_AUDIO_SITE_TRIPLET_OPENER_POOL_HOT_RELOAD_MVP_R1`. No Claude Code action, Site deployment or Wireface SDK integration yet in this planning/check-in slice.
+
+---
+
 ## Current continuation · 2026-10-12 · Card Performance self-service
 
 The one-time existing-Site implementation is deployed at https://kfb-audio.frizzlebob.chatgpt.site as Source 0.6.0 / Site version 9. Two later Voice PR #379 data-only revisions were accepted by the live loader contract with zero additional Site publishes.
