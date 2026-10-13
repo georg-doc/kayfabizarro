@@ -243,4 +243,47 @@ function splitSoloParts(entries,opts={}){
   admitted:false});
 }
 
-module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,toFullSourceBeat,assembleSolo,splitSoloParts});
+/* Deck-level intake: source deficiencies are reported before export.
+ * An incomplete deck is never called full-deck-complete.
+ * No attempted generative repair of missing POWER or LORE.
+ */
+function planFullSourceDeck(deck,meta,opts={}){
+ requireTrue(Array.isArray(deck?.cards)&&deck.cards.length>0,'DECK_SOURCE_REQUIRED');
+ requireTrue(meta?.deckId&&/^[0-9a-f]{40}$/.test(String(meta?.sourceRevision)),
+  'SOURCE_REVISION_REQUIRED');
+ const numbers=deck.cards.map(x=>x.cardNumber);
+ requireTrue(numbers.every(Number.isInteger)&&new Set(numbers).size===numbers.length,
+  'DUPLICATE_OR_INVALID_CARD_NUMBER');
+ const ordered=deck.cards.slice().sort((a,b)=>a.cardNumber-b.cardNumber);
+ const openerChoices=opts.openerModes??['DIRECT','HEARD_OF','DO_YOU_KNOW'];
+ requireTrue(Array.isArray(openerChoices)&&openerChoices.length>0&&
+  openerChoices.every(x=>['DIRECT','HEARD_OF','DO_YOU_KNOW'].includes(x)),
+  'DECK_AUTO_OPENERS_MUST_BE_SOURCE_NEUTRAL');
+ const beatCandidates=[],blocked=[];
+ ordered.forEach((card,index)=>{
+  const missing=['cardName','power','lore'].filter(field=>
+   typeof card[field]!=='string'||!card[field].trim());
+  if(missing.length){
+   blocked.push({deckId:meta.deckId,cardNumber:card.cardNumber,
+    kind:'NO_BEAT_SOURCE_INCOMPLETE',missingFields:missing,
+    sourceRevision:meta.sourceRevision,
+    fallback:'ORIGINAL_CARD_VISUAL_ONLY_OR_EXPLICIT_HUMAN_SOURCE_REVIEW'});
+   return;
+  }
+  beatCandidates.push(toFullSourceBeat(card,{
+   deckId:meta.deckId,cardNumber:card.cardNumber,
+   sourceRevision:meta.sourceRevision
+  },{openerMode:openerChoices[index%openerChoices.length],
+   pauseAfterMs:opts.pauseAfterMs??800,rate:opts.rate??0.92}));
+ });
+ return Object.freeze({schema:SCHEMA,kind:blocked.length?
+  'SOURCE_DECK_PARTIALLY_BLOCKED':'SOURCE_DECK_BEAT_CANDIDATES_COMPLETE',
+  sourceDeckId:meta.deckId,sourceRevision:meta.sourceRevision,
+  originalCardCount:ordered.length,preparedCardCount:beatCandidates.length,
+  originalOrderedCardIds:ordered.map(x=>x.cardNumber),
+  blocked,beatCandidates,complete:blocked.length===0,
+  automaticPreviewAllowed:blocked.length===0,
+  admitted:false});
+}
+
+module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,toFullSourceBeat,assembleSolo,splitSoloParts,planFullSourceDeck});
