@@ -1,5 +1,15 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+
+## 2026-10-13 · R1 Card Performance conceptual FAIL supersedes 35/35 technical source pass
+
+- Georg flagged essential missing Show-it/Card identity and neglected POWER→LORE semantic integration in all five R1 pilot outputs.
+- Exact JS replay against pinned source/fixtures: **0/5 spoken original titles, 1/5 POWER excerpt, 5/5 LORE excerpt, 0/5 combined required Card representation**. Historical 35/35 checks measured offsets/fail-closed contracts only, not intended Card Performance Triplet; historical 94.92% source-word-share is insufficient.
+- Added independent source/code omission report `POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md`. Mark outputs human/product FAIL and preserve as negative regression. Corrected intended spoken one-Card structure: original title SHOW IT, POWER+LORE tied in SPIN IT, existing contradiction/cost/punchline SELLS/REFRAMES, one utterance. Example is provisional, not Golden.
+- No plugin v0.1 or CJS patch, Audio Site, r3 preview, Suno, merge or Live. One next gate: validate single Card formula with Georg, then make only testable targeted correction and independent negatives, no false auto-pass.
+
+---
+
 ## 2026-10-13 · Deterministic three-deck source-span pilot implemented (R1)
 
 - Implemented actual source-offset-preserving CJS Triplet/Bridge candidate compiler in **existing Voice #379** with explicit approved micro-operators, limited grammar glue, stable seed, whole-deck scope planning and NO_TRIPLET/NO_EDGE.
