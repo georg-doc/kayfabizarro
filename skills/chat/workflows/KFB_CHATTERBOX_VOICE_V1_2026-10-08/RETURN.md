@@ -1,5 +1,15 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · CARD-VERBATIM FIRST / DETERMINISTIC GRAMMAR / STUDIO DIRECTION
+
+Georg refined the goal: source-preserving **modular one-Card stand-up beats**, short credible or intentionally pseudo-causal humorous Bridges and an editable **1/2/3/4/page/whole-deck performance** chain, deployable as Suno script or ChatterBox NPC game turn with Card-on-Billboard synchronization. Aim for routine LLM-free generation, with optional normal Web Chat/agent source research **before admission**, no repeated Work for content. Full script default includes optional Fluffhead welcome and mandatory final spoken `Stay Fluffy!` for Card performances.
+
+Recovered existing Card SSOT/PDF grid and Card Builder, accepted Billboard B0 card surface donor, Billboard Quote Curator source/provenance patterns, Meta-Narration L-26 semantic triples and existing Audio #365 voice clock/mix. **Named next design artifact written** in current Voice PR #379: `KFB_TRIPLETS_DETERMINISTIC_SOURCE_GRAMMAR_AND_AUTHORING_STUDIO_BRIEF_2026-10-13.md`. Contracts: immutable exact Card span refs (with offsets), micro-operator grammar with relationPredicate/reframe proof, before/after Bridge states and changed stakes, editorial source/grammar/bridge attribution, seeded selector and explicit `NO_TRIPLET`/`NO_EDGE`; higher performance scheduling separate from a Card utterance, original-image ref/Audio-clock cue. Separate source-verbatim percentage from semantic provenance and actual artistic quality. No new plugin, Site or Audio owner; Audio v9 still Wrinkle 48-only.
+
+**No new code/creative audition executed** in this conceptual slice: previous failed 1001 example remains HUMAN FAIL quarantined, repaired plugin version not published and 60-Card import NOT_SUPPORTED. Existing Audio r3 Card11 human DRY/D hearing unchanged; no Site deployment, World runtime, merge or Live. The next **one** implementation gate is `KFB_TRIPLETS_DETERMINISTIC_CARD_SPAN_OPERATOR_PILOT_R1` in existing Voice branch: verified extraction and semantic operator on small diverse Card set + negative Golden, independent critique **before** authoring Site or global plugin patch. Work/WSA later only for necessary Site infrastructure, normal data edits by Chat/GitHub.
+
+---
+
 ## 2026-10-13 · INDEPENDENT SEMANTIC CONTRACT RECOVERY · NO PLUGIN PATCH
 
 **Georg's HUMAN FAIL remains authoritative.** This source-comparison pass read existing actual original KFB Triplet/Bridge donors (Meta-Narration L-26 subject / meaning-bearing predicate / reframe, lexical appropriation; FrizzleBob narrator's audible causal hinge) and frozen 1001 Nights negative Golden. **15/15 code/source presence assertions PASS**, not a quality or audio PASS; old failed 17/17 structural candidate checks are still superseded. Newly demonstrated valid Triplets **0**, valid Bridges **0**, new creative revisions/Suno takes **0**.
