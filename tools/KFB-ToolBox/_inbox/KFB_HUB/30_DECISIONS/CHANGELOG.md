@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Claude Design GitHub Cold Start · Wireface Studio Source Intake
+- `replies/CLAUDE_DESIGN_WIREFACE_STAGE_GITHUB_COLD_START_R1_2026-10-14.md` ist der verbindliche **GitHub-Kaltstart** für neue Claude-Design-Sitzungen ohne Chat-Vorwissen. Verifizierte Repo-Dateipfade als Lesequellen: Joyride J17 Originalbilder; KFB Style Guide §4 (ENV_ROLES, Farbpaletten, Seed-Provenienz offen wo Code nicht verifiziert); Clay K2; Original KFB Billboard / H13 / Clay Stage; KFB Deck-Registry + PDF/JSON; ChatterBox plain + Lab-Donor; Composer PR #355 und Wireface Theatre nur nach nachweislicher Originalansicht; Voice Pool PR #379 ohne Kanon-Annahme. Source-Isolation vor Studio 9:16/16:9. Bestehendes Wireface-Briefing R1.1 verweist oben darauf, Vertrags-Owner-Angabe an V-213 korrigiert (**WS0 Host R1.2, WS1 Receives**). Nur Design/Handoff, keine Site/Stage-/Runtime-Änderung; keine neue V-Nummer.
+
 ## 2026-10-14 · Struktur WS0/WS1, Lab-Spender
 - V-213: WS0 steuert und besitzt den Host-Vertrag, WS1 baut in ws1/r3f-frame mit WS1_STATUS.md, Web-Chat raus, GitHub als Briefkasten.
 - replies/lab-donors/: islands-npc.ts (Blase V-204, Auslöser, Triplet-Auswahl), contact-blob.ts, SOURCE.md – entsperrt S5a von WS1.
