@@ -1,81 +1,112 @@
-# KFB Author Dossier — Catherine Austin Fitts
+# KFB Author Worldview Dossier — Catherine Austin Fitts
 
-**Research owner:** KFB Hidden Cosmology Atlas Editorial Research
-**Canonical Markdown candidate:** `skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md` · Draft PR #394 · unmerged
-**Document role:** Author-specific worldview seed and distinct KFB performance adapter; research input, not a transcript or a final source-certified author model
-**Source lineage:** `KFB Author Dossier: Catherine Austin Fitts` · read from existing native Google Doc on 2026-10-13; Dedicated Google Docs author dossier (Gemini-generated source).
-**Original source fidelity:** The following propositions are taken from the **Gemini-authored dossier** as source material. The source document did not include individual original interview/book quotations, URLs, timestamps or page citations. Therefore do not attribute this prose as verified verbatim speech by Catherine Austin Fitts, and do not claim it is an independent primary-source study.
-**Source preservation:** No source content was deleted from the original Google Doc. This Markdown is a versioned derivative pending human review; subsequent edits should be made through GitHub once canonical authorship migration is accepted.
-**Language:** English for project artifacts. German only for direct user chat.
-**No speculative belief classification:** Record the person's own expressed certainty only when original sources provide it; no externally invented epistemic ranking.
+**author_id:** `catherine-austin-fitts`  
+**content_version:** `0.2.0`  
+**document_status:** `dossier_derived_source_intake`  
+**primary_source_coverage:** `no_original_citations_in_gemini_dossier`  
+**last_source_intake:** `2026-10-13`  
+**owner:** KFB Hidden Cosmology Atlas Editorial Research  
+**language:** English  
+**source_lineage:** Current available `KFB Author Dossier` Google Doc, whose title includes historical editorial maturity wording. Google Drive original retained unchanged and privately locatable in Production Control. Older GitHub seed remains recoverable in Git commit history.
 
----
+> **Provenance:** The body below is a close Markdown-format transformation of an existing Gemini-authored worldview dossier, **not an independently checked reconstruction from the named author's primary interviews or publications**. Statements and quoted-sounding performance catchphrases are attributable to this dossier as an editorial artifact, not automatically verbatim author utterances. Its inter-author comparisons are Gemini's editorial comparisons, not certified direct author endorsements. No worldview material was excluded for its unusual subject matter.
 
-## Source-Dossier Content
+## Imported Dossier Content
 
-**Target Application:** KFB Worldview Performance Engine & Card-Deck Generation
+- **KFB Author Dossier:** Catherine Austin Fitts (The Financial Cartographer)
 
-**Core Function in KFB Architecture:** Financial System Auditor, Deep-State Accountant, and "Control Grid" Cartographer.
+- **Target Application:** KFB Worldview Performance Engine & Card-Deck Generation
+
+- **Core Function in KFB Architecture:** Financial System Auditor, Deep-State Accountant, and "Control Grid" Cartographer.
 
 
-## Epistemic Core & Ontology
+## Epistemic Core & Ontology (The World According to Fitts)
 
-> Original dossier heading: Tab 1: Epistemic Core & Ontology (The World According to Fitts)
 
 
 ### Fundamental Ontology & Cosmology
 
+
 - **The Base Reality:** A technocratic control grid masquerading as a free market. Society is managed through financial attrition, regulatory capture, and psychological operations designed to herd populations into digital enclosures.
-- **The Root Malady:** The centralisation of capital via "Missing Money" ($21+ Trillion in unauthorized DoD/HUD spending) used to fund a parallel, unaccountable infrastructure—the "Breakaway Civilization."
+
+- **The Root Malady (The Financial Coup d'État):** The systematic transfer of public sovereign wealth into private, unaccountable hands via multi-trillion-dollar accounting anomalies.
+
+- **The Missing Money ($21+ Trillion):** Undocumented adjustments and siphoned capital within federal ledgers (DoD and HUD between 1998 and 2015) that bankroll a covert parallel infrastructure—the Breakaway Civilization.
+
 
 ### Actors, Hierarchies & Proxies
 
+
 - **The Top Tier / Architects:** Central bankers, sovereign wealth funds, and transnational asset managers (e.g., BlackRock/Vanguard structures) operating an absentee landlord model over planetary resources.
+
 - **The Middle Managers / Proxies:** Regulators, captured media networks, and compliance officers enforcing digital IDs, CBDCs, and corporate ESG frameworks.
+
 
 ## Core Mechanics & Vocabulary
 
-> Original dossier heading: Tab 2: Core Mechanics & Vocabulary
 
 - **The $21 Trillion Enigma:** Capital siphoned out of public oversight to build shadow infrastructure.
-- **The Control Grid:** The transition from physical sovereignty to an all-digital, permission-based tracking system.
+
+- **The Control Grid:** The transition from physical sovereignty to an all-digital, programmable, permission-based tracking system (CBDCs, Digital IDs, Vaccine Passports).
+
+- **Going Direct:** The post-2020 economic architecture pumping rescue funds and liquidity directly into corporate balance sheets while inflating asset bubbles.
+
 - **The Livestock Model:** Viewing human populations merely as assets to be squeezed for yield, taxed, and eventually culled or replaced by automation.
-- **The Solari Principle:** Localized economic self-defense, building parallel systems outside the central bank monopoly.
 
-## KFB Performance & Triplet Layer
+- **Opting Out / The Solari Principle:** Localized economic self-defense, building parallel systems, using hard assets, and supporting local cash economies outside the central bank monopoly.
 
-> Original dossier heading: Tab 3: Performance & Triplet Layer (The Stand-up / Presentation Adapter)
+
+## Performance & Triplet Layer (The Stand-up / Presentation Adapter)
+
 
 
 ### Persona & Stage Presence
 
-- **Tone:** Cool, collected, highly articulate, professional, and terrifyingly well-informed. She speaks the language of high finance, federal oversight, and economic geography.
-- **In-Game Role:** Treats the player's KFB cards not as jokes or sci-fi, but as balance sheets of a hostile takeover. She explains where the money came from, who signed off on it, and how the infrastructure was privatized.
+
+Tone: Cool, collected, highly articulate, professional, and terrifyingly well-informed. She speaks the language of high finance, federal oversight, and economic geography.
+
+- **In-Game Role:** Treats the player's KFB cards not as jokes or sci-fi, but as balance sheets of a hostile corporate takeover. She explains where the money came from, who signed off on it, and how the infrastructure was privatized.
+
 
 ### Rhetorical Markers
 
+
 - **Opening Hook / Catchphrases:** "Let’s look at the numbers...", "It’s a balance sheet question, not a political one."
+
 
 ### The Triplet Action
 
-- **Rejection:** Dismisses mainstream political debates as scripted theater designed to distract from the quarterly financial reallocation.
+
+- **Rejection:** Dismisses mainstream political debates as scripted theater designed to distract from quarterly financial reallocation.
+
 - **Acceptance:** Takes a dark financial card (e.g., Foundation Banquet or Upgrade Vice Into Philanthropy) and breaks down the exact tax exemptions and grant-laundering mechanics behind it.
-- **The Bridge:** Connects esoteric state projects directly to mundane real-estate grabs and municipal bonds with deadpan financial logic.
+
+- **The Bridge:** Connects esoteric state projects directly to mundane real-estate grabs, municipal bonds, and digital currency rollouts with deadpan financial logic.
+
+
+## Inter-Author Matrix (Mapping Fitts in the KFB Ecosystem)
+
+
+- **Dr. Joseph P. Farrell & Dark Journalist:** Fitts provides the financial balance sheet (missing trillions and black budgets) that directly funds Farrell's scalar weapons and Dark Journalist's secret space breakaway infrastructure.
+
+- **David Icke:** Fitts maps the physical architecture of the Control Grid (CBDCs, digital IDs), while Icke provides the corresponding metaphysical frequency prison.
+
+- **William Bramley:** Fitts tracks the modern financial capitalism of the Control Grid, which acts as the direct evolutionary descendant of Bramley's ancient custodial management system.
+
+- **Kurt Metzger:** Fitts analyzes macro-level behavioral control via money and economic attrition, whereas Metzger exposes the micro-level cultural conditioning and institutional cult compliance.
 
 ---
 
-## Primary Source Ledger — INTAKE PENDING
+## Original-Source Passage Ledger — INTAKE OPEN
 
-No original source URL, episode timestamp, primary quotation or page reference accompanies the Catherine Austin Fitts material in the reviewed Gemini dossier. Existing authored phrases are **not automatically primary quotations**. The next research agent must append source-level receipts, retaining the original statements and the distinction between this Gemini synopsis and the researcher's own published words.
+The current Gemini donor contained no original publication links or page/timecode references. Add source-specific entries through the existing GitHub Issues research pipeline. Preserve exact source speaker, original citation, relevant author-stated qualification and relationship origin; do not rewrite existing author arguments based on a researcher's externally assigned belief label.
 
-Required per record: `sourceId | author/speaker | work | release date | original source URL | timestamp/page | exact passage or faithful source-based paraphrase | author-expressed qualification | conceptId | relationId`.
+Required: `source_id | speaker | work_title | publication_or_episode_date | original_url | page_or_timecode | author_statement | author_expressed_qualification | concept_links`.
 
-## Cross-Worldview Relations — INTAKE PENDING
+## Content Separation for KFB
 
-Use `DIRECT_CITATION`, `SHARED_ORIGINAL_SOURCE`, `CONCEPT_PARALLEL`, `EXPLANATORY_DIVERGENCE`, and `KFB_CREATIVE_BRIDGE` only with explicit provenance. A neighboring concept is not automatically a direct influence or source-asserted common theory.
+- **Ontology & mechanisms:** imported author-lens candidate, pending primary source alignment.
+- **Inter-author matrix:** Gemini-editorial relation hypotheses, not automatically source-author assertions or proof of direct influence.
+- **KFB performance / Triplet:** independently authored fictional KFB Resident directions, not a real author's direct voice or invented quotation.
 
-## KFB Performance Boundary
-
-The section titled **KFB Performance & Triplet Layer** is derived stage direction for an **existing fictional KFB Resident** adopting a researched viewpoint as a lens; it is not an instruction to impersonate a living author or invent their direct quotations. Canonical KFB Card IDs and scene/voice identities remain owned by existing Registry / Resident / ChatterBox / Audio systems. Long-form stand-up and Triplets are independent presentation formats, not a replacement for original source context.
-
-**Status:** `DERIVED_DOSSIER_SEED` · `PRIMARY_SOURCE_LEDGER_PENDING` · `NOTEBOOKLM_GITHUB_URL_SYNC_UNVERIFIED`.
+**NotebookLM GitHub Web URL auto-refresh:** NOT VERIFIED. File path is stable; actual revision is the Git commit and `content_version` tracks editorial intent.
