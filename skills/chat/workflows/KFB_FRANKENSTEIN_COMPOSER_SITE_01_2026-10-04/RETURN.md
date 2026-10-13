@@ -1,5 +1,7 @@
 ## 2026-10-13 · CLAUDE CODE R2 EXECUTION PACKET · PLAN GO / CARD BUILD NO-GO
 
+**Additive test milestone:** In addition to the Composer readiness 15/15 PASS, the **actual Audio-owner `consumePacket()`** was executed on the real exported v11 packet: **3/3 PASS** — ordinary default rejects preview, explicitly permitted preview reads one candidate/zero clips/one PDF-page ref, and simply changing `preview:false` still rejects unaccepted opener. Test source and exact blob receipts: `CLAUDE_WIREFACE_THEATRE_AUDIO_V11_READINESS_TEST_REPORT_R2_2026-10-13.md`. This is code-path safety evidence, NOT human audio, crop or Wireface SDK acceptance.
+
 **One named owner:** `georg-doc/kayfabizarro`, FrankenStein Composer Draft PR #355, branch `planning/frankenstein-composer-gpt-site-2026-10-04`. This slice is **SOURCE-PINNED EXECUTION/HANDOFF**, not implemented/vendor-bundled talking face. The existing Composer Site `https://kfb-frankenstein-composer.frizzlebob.chatgpt.site/` remained at last documented v4, no new release/real browser QA by this chat. Previously observed Composer head prior to this slice `4068d3e3022efb452e1ee317d4ca0e08c741be8c`.
 
 **New files source-verified / current readme:** 
