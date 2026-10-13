@@ -93,8 +93,9 @@ function compileBridge(fromDeck, toDeck, fromMeta, toMeta, recipe) {
     to: { deckId: toMeta.deckId, cardNumber: toMeta.cardNumber } };
   if (!recipe) return fail('NO_EDGE', 'NO_CURATED_COMPATIBLE_EDGE', anchor);
   assert(Object.hasOwn(BRIDGE_OPERATORS, recipe.operatorId), 'UNKNOWN_BRIDGE_OPERATOR');
-  assert(recipe.fromCard === fromMeta.cardNumber &&
-    recipe.toCard === toMeta.cardNumber, 'BRIDGE_CARDS_MISMATCH');
+  assert((recipe.fromCard ?? recipe.from?.cardNumber) === fromMeta.cardNumber &&
+    (recipe.toCard ?? recipe.to?.cardNumber) === toMeta.cardNumber,
+    'BRIDGE_CARDS_MISMATCH');
   const proof = recipe.proof;
   for (const k of ['beforeState', 'trigger', 'afterState', 'changedStake']) {
     assert(typeof proof?.[k] === 'string' && proof[k].trim(), 'MISSING_BRIDGE_PROOF:' + k);
