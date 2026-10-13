@@ -1,3 +1,26 @@
+## CURRENT RETURN — GOOGLE DOCS / NOTEBOOKLM TAB WORKFLOW RECOVERY — 2026-10-13
+
+**Outcome:** User's multi-app tabbed Worldview research workflow is committed as a distinct English research contract and mirrored to the existing editorial Living SSOT. Google Docs is the editable author-dossier master, NotebookLM is the supported Drive-synced research view, GitHub is the independent versioned KFB decisions/source-pointer/Return authority, while the proposed later GPT Site is only a performance consumer using existing Resident/ChatterBox/Card/Audio owners.
+
+**Repo/branch/PR:** `georg-doc/kayfabizarro` / `research/hidden-cosmology-atlas-2026-10-13` / Draft PR #394. The exact final branch head must be read back after this GitHub write (then recorded in Production Control); previous file milestone `c55612e81b89a1cb33c2d828303a4675212fec48`.
+
+**Changes in this recovery milestone:** 
+- NEW `skills/chat/research/hidden-cosmology-atlas/GOOGLE_DOCS_NOTEBOOKLM_WORLDVIEW_SYNC_WORKFLOW_R1_2026-10-13.md` — edited Doc vs NotebookLM source vs GitHub research SSOT boundaries, exact observed Docs revision/tab metadata, manual/periodic sync semantics and flat multi-tab source caveat; proposed author/cluster indexing, five headings plus primary-source traceability, stable IDs, source-preservation rules and next gate.
+- UPDATED `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive HCA-030–035 and recovery pointer.
+- UPDATED `skills/chat/research/hidden-cosmology-atlas/RETURN.md` — present handoff and observed tests.
+
+**Actual Google Docs read:** `KFB Worldview Dossier: Golden Test 01`, id `1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg`, revision `AHj4eMQXURzIKL8bJj5iwpqkLO8DdRwA79OHHFT-ioVJlr9yF84VxfWLXYiBhmW2oQL_zONTvn1F9gYbShCOyLVryaOBBG7hS6mdzXiHCnU`, **only `Tab 1` / `t.0` currently visible**. No verified author-tab update yet. Gemini has been instructed by Georg to update Kurt Metzger's tab; no Google Docs write from this chat to avoid collision. The prior two-author dossier contained ~4,454 characters and has no original passage-level citations as previously inspected.
+
+**Verified public product contract:** Google's NotebookLM help documents import of Google Drive sources, automatic/periodic update plus manual sync and the limitation that several Google Doc tabs are ingested as **one NotebookLM source**: https://support.google.com/gemininotebook/answer/16215270?co=GENIE.Platform%3DDesktop&hl=en . This is a documented feature, NOT verification that this user's NotebookLM notebook imported or synced the current Google Doc.
+
+**Source/quality boundaries:** All artifact output English, German direct chat only. The source author controls his own expressed certainty and doubts. Any satirical character role, joke, stand-up or voice is a downstream KFB performer overlay; do not silently ascribe it to Kurt Metzger or other named authors. Stable per-topic/source attribution and lossless preservation of original materials; no source pruning without a traceable archived source/ID log. Flexible clusters Hidden Cosmology/Occult, Historical/Deep State, Pop Culture and Improv/Performance are overlapping navigation aids, not separate competing facts/schemas.
+
+**Not performed:** new Google Doc tabs, actual NotebookLM synchronization, webpage/Game/GPT Site publication, engine/runtimes, KFB Card/deck/actor edits, source-level claim verification, comedy/play Golden tests, merge or Live. No second knowledge/runtime owner.
+
+**ONE NEXT GATE:** `GOOGLE_DOCS_AUTHOR_TAB_AND_NOTEBOOKLM_SYNC_R1` — inspect Gemini's completed Kurt Metzger tab and exact new Docs revision, check five headings and source passage links, then test NotebookLM sync against a changed phrase and export a reviewed versioned Lens for Golden Test 01.
+
+---
+
 ## CURRENT RETURN — GOOGLE DOCS DOSSIER + CAYCE SPHINX GENIUS LOCI — 2026-10-13
 
 **Outcome:** The previously proposed Gemini↔ChatGPT research bridge has been **actually verified** through the connected Google Drive Google Docs API. Opened user-supplied document `https://docs.google.com/document/d/1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg/edit`, title "KFB Worldview Dossier: Golden Test 01"; 32 paragraphs, approximately 4,454 text characters, observed revision `AHj4eMQXURzIKL8bJj5iwpqkLO8DdRwA79OHHFT-ioVJlr9yF84VxfWLXYiBhmW2oQL_zONTvn1F9gYbShCOyLVryaOBBG7hS6mdzXiHCnU`. Its two source-author worldview seeds are Kurt Metzger and Daniel Liszt. They are structured for the fictional KFB Clown but do NOT provide exact claim sources or primary transcript passages; access PASS, source-fidelity Golden NOT YET TESTED.
