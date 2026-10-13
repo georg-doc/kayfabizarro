@@ -1,5 +1,13 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-13 · Wireface Theatre voices + Card/Opener MVP · Claude Code PLAN FIRST
+
+- Georg reports original developer Theatre **faces and voices excellent**; this is demo-only aesthetic/listening input, not licensed KFB voice/sample acceptance.
+- Existing Composer PR #355 now contains **`CLAUDE_CODE_WIREFACE_THEATRE_CARD_PERFORMANCE_MVP_PLAN_2026-10-13.md`**. Same real donor FrankenStein/FaceHost/optional Wireface adapter; study voice clip vs programmable TTS identity/license, real donor visual isolation, exact Cookie #10 + source-qualified opener + existing Card/Billboard/Audio v11 packet. React Three Fiber feasible as a later consumer; do not migrate the existing single imperative Three renderer or duplicate owners.
+- Audio PR #365 Source 0.7.1/v11 technically hot-reloads Card/Opener pool, but voice rights, accepted recorded clips and exact Card crop, plus Georg's audio listening, remain OPEN; no new KFB 3D integration, Site deploy, Cloudflare, merge or Live is claimed.
+- Next planning gate: `CLAUDE_CODE_WIREFACE_THEATRE_VOICE_PROVENANCE_AND_ONE_CARD_MVP_PLAN_R1`; execution gated by existing `KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1`.
+
+
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
