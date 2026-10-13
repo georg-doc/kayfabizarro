@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Onboarding Wireface-Bühne für WSA
+- replies/ONBOARDING_WSA_WIREFACE_STAGE_DESIGN_R1.md: Web-Chat plant Claude-Design-Briefing für die Wireface-Bühne (ein Modul, vier Einsätze: Insel/Kartenzone, Promo-Clip-Authoring mit seek(t), Demo-Sim, React-Spiel), auf Basis V-209/V-211, Modul-Inventur, Style/Motion Guide, Atomium (#397), Natur-Intake (#393). Natur-Intake und Atomium als Bestand im Hintergrund; Claude-Code-Ausführung erst nach Fokus Karten-Dialog.
+
 ## 2026-10-14 · Host-Vertrag R3F R1.1
 - V-211: replies/KFB_HOST_CONTRACT_R3F_R1.md ins Register; Nachträge für R1.2: fiber exakt pinnen, Sprechblasen als Host-DOM-Slot (chatterbox-core 1:1).
 
