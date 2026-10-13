@@ -1,3 +1,21 @@
+## CURRENT ADDITIVE RESEARCH SCOPE — 2026-10-13 — SIX CORE AUTHORS
+
+Georg has added three equal-priority authors to the three-person corpus: **Jason Reza Jorjani** (author of "Breakaway Culture"), **Joseph P. Farrell** (Giza Death Star / "hidden system of finance"), and **Catherine Austin Fitts** (Solari, Black Budget and Breakaway Economy research). Spelling and identity confirmed by the original author and interview sources.
+
+**Current NotebookLM research instruction:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` (**2,982 characters**), superseding R3 for future NotebookLM intake. R3 remains historical and exact, not deleted. R4 instructs independent discovery of publications, podcasts, talks and interviews, plus six independent "Worldview According To" dossiers. No preset links or formal hexagonal/KFB UI instructions. **All artifacts strictly English; chat in German.** The source-native emic/non-exclusion contract of HCA-013 and HCA-014 remains unchanged.
+
+**New verified research seed:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` contains direct author works and interview links: Jorjani's own 2025 "Breakaway Culture" and "Catastrophic Disclosure"; Farrell's Dark Journalist interview, secret-finance and Epstein essays; Fitts' Dark Journalist interviews, Corbett interview and February 27, 2026 Tucker Carlson episode. Strong direct cross-reference: in the 2026 episode Fitts calls a secret-finance concept **"Joseph Farrell calls it the hidden system of finance"**; primary video/host episode are identified and the transcribed wording requires audio confirmation before verbatim quotation. Farrell's writing also references Fitts on missing money. Other possible author links, especially Jorjani ↔ Epstein, are open discovery questions, **not asserted collaborations**.
+
+**Extended thematic inquiry:** What do these six authors independently say about breakaway culture/civilization, postwar covert networks, financial diversion, black budgets, secret technologies, aerospace/off-world programs and Epstein-related institutional narratives, and where do they explicitly connect those subjects? Preserve each author’s own certainty and terms. Do not unify their positions before attribution.
+
+**Current single next gate:** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — expand the six-author primary corpus, source-verify direct collaborations, and build six separate attributed worldview dossiers before cross-author narrative synthesis.
+
+**HCA-017 · SIX_AUTHOR_SCOPE — USER AUTHORIZED.** All three additions are core authors, not merely incidental citations.  
+**HCA-018 · NOTEBOOKLM_R4 — CURRENT.** R4 replaces R3 only for the next NotebookLM source discovery input; historic prompts remain retained, no NotebookLM run performed here.  
+**HCA-019 · EPISTEMIC_FIDELITY_UNCHANGED.** No new system-generated belief ratings or preemptive omissions; distinguish source-author claims, named interlocutors, and our cross-source comparisons without rewriting the worldview.
+
+---
+
 # Hidden Cosmology Atlas — Living Research Document v0.2
 
 **Date:** 2026-10-13  
@@ -10,11 +28,11 @@
 
 ## 00 — Recovery / Next Action
 
-**Last outcome, 2026-10-13:** The user rejected the former wording asking the research system to flag speculation, filter claims by external assessment or pre-emptively qualify alternative worldviews. The user expressly requests an **emic, source-first, complete reconstruction**: “The Worldview According to [Author]”, with each author's own stated confidence, uncertainty, irony, hearsay or interpretive movement preserved *as that author frames it*. No observer-imposed epistemic or rhetorical classification belongs in this acquisition stage. The former NotebookLM R2 was also in German, violating the output-language rule. **The current prompt is R3, in English.**
+**Last outcome, 2026-10-13:** The user rejected the former wording asking the research system to flag speculation, filter claims by external assessment or pre-emptively qualify alternative worldviews. The user expressly requests an **emic, source-first, complete reconstruction**: “The Worldview According to [Author]”, with each author's own stated confidence, uncertainty, irony, hearsay or interpretive movement preserved *as that author frames it*. No observer-imposed epistemic or rhetorical classification belongs in this acquisition stage. The former NotebookLM R2 was also in German, violating the output-language rule. **At that earlier milestone the current prompt was R3; the six-author R4 override at the top is now binding.**
 
-**Current prompt:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` (2,753 characters; no YouTube URLs or Warburg/Gabriel/hexagon scaffolding). R1 and R2 are retained as superseded history. NotebookLM has **not been executed from this conversation**, and no future NotebookLM findings have yet been reviewed or imported.
+**Historical three-author prompt:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` (2,753 characters; no YouTube URLs or Warburg/Gabriel/hexagon scaffolding). R1 and R2 are retained as superseded history. NotebookLM has **not been executed from this conversation**, and no future NotebookLM findings have yet been reviewed or imported.
 
-**Current named next gate:** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01`: obtain the independently discovered original interviews, talks and publications and build the first **“The Worldview According to Kurt Metzger”** profile, with complete source register, source-native confidence/uncertainty, verified speaker attribution and mapped author-explicit connections. Then build distinct profiles for Daniel Liszt and Michael Wann before cross-author synthesis.
+**Earlier three-author gate (scope extended above):** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01`; the present gate includes six individual dossiers, with Kurt Metzger as initial source anchor and the three new core authors in the same intake.
 
 **Current source archive:** The user-provided, approximately 2h22 ASR-like transcript is retained in private ChatGPT Library, path `/KFB Research/Hidden Cosmology Atlas/SRC-001_TINFOIL-HAT_KURT-METZGER_ASR-TRANSCRIPT_2026-10-13.txt`, stable library ID `libfile_2bf3eb4b0e908191a4a8097de5198d45`, 192,811 bytes, SHA-256 `0ae8762299aef941879046de63f3795f042704446a8cf7584a92f95341276815`. Video identifier from the supplied source: `https://www.youtube.com/watch?v=ymbb8q2mBuo`. Existing claim notes are *first-pass working excerpts* and await exact speaker/audio alignment. Approximate Metzger guest segment: 00:01:36–01:15:56; later host discussion belongs to other speakers.
 
@@ -133,7 +151,7 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 ## 11 — Document Register / Status
 
 - **CURRENT / SSOT:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — present source/recovery contract, fully English.
-- **CURRENT / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` — concise English-only author-centric research prompt.
+- **CURRENT / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — concise English-only six-author research prompt (no preset links).\n- **HISTORICAL / NotebookLM:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` — earlier three-author prompt, preserved for recovery.\n- **CURRENT / source discovery:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` — primary works and confirmed interview/citation ties.
 - **HISTORICAL:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` — prior planning and explicit source inventory; old external labeling method is superseded.
 - **HISTORICAL:** `NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R1_2026-10-13.md`; `NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R2_SHORT_2026-10-13.md`.
 - **DESIGN REFERENCE ONLY:** `HEXAGONAL_SEMANTIC_CONSTELLATIONS_R1_2026-10-13.md`, not a primary worldview research filter.
