@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Struktur WS0/WS1, Lab-Spender
+- V-213: WS0 steuert und besitzt den Host-Vertrag, WS1 baut in ws1/r3f-frame mit WS1_STATUS.md, Web-Chat raus, GitHub als Briefkasten.
+- replies/lab-donors/: islands-npc.ts (Blase V-204, Auslöser, Triplet-Auswahl), contact-blob.ts, SOURCE.md – entsperrt S5a von WS1.
+
 ## 2026-10-14 · Wireface Stage Claude Design Brief R1.1 · V-212 übernommen
 - `replies/WIREFACE_STAGE_CLAUDE_DESIGN_BRIEF_R1_2026-10-14.md`: modulares Claude-Design-Briefing mit 3 Bühnen-Presets, 9:16/16:9, Quell-Isolation, 6-Shot-Storyboard, Authoring-UI und Claude-Code-Modulkarte, nun auf V-212 korrigiert. **Ein** `chatterbox-core` Plain-Flip-Reveal als 2D DOM-Overlay im Host-Slot `#ui-bubbles`, Position über projizierte 3D-Anker; Wireface-Blasen ausschließlich Stil-Referenz. Claude Design dokumentiert **Form, Schrift, Zipfel und Schatten** als KEEP/ADAPT/DROP mit Quelle und Vorher/Nachher desselben Renderers. Der alte 3D-Blasen-Satz im Host-Vertrag R1.1 bleibt bis zur Vertrags-Owner-Korrektur R1.2 textlich widersprüchlich; V-212 hat Vorrang. Kein neuer Bubble-Renderer, keine Runtime oder Stage-Änderung, kein neuer V-Beschluss.
 

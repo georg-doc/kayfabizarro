@@ -2443,6 +2443,20 @@
    "applies": "ab Host-Vertrag R1.2"
   },
   {
+   "id": "V-213",
+   "date": "2026-10-14",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Arbeitsstruktur: WS0 (Steuer-Sitzung) steuert, entscheidet, vergibt V-Nummern, gibt frei und besitzt den Host-Vertrag (ab R1.2). WS1 baut im Branch ws1/r3f-frame und schreibt Status und Fragen in WS1_STATUS.md dort; WS0 antwortet im Register-Branch. Der Planungs-Web-Chat ist raus. GitHub ist der Briefkasten; an Georg nur fertige, geprüfte Stände zum Ausprobieren.",
+   "values": {},
+   "owner": "WS0 + WS1",
+   "check": "-",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Jede Absprache lief über Georg; jetzt direkt über GitHub.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2504,7 +2518,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:77",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:87",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
