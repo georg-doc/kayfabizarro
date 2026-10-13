@@ -1,4 +1,6 @@
 # KFB Wireface Stage · Claude Design Brief R1.1 (V-212)
+
+> **GITHUB FIRST · Mandatory fresh-session entrypoint:** [CLAUDE_DESIGN_WIREFACE_STAGE_GITHUB_COLD_START_R1_2026-10-14.md](./CLAUDE_DESIGN_WIREFACE_STAGE_GITHUB_COLD_START_R1_2026-10-14.md). A designer with no KFB chat history must open that source-pinned file and its real GitHub donors **before** following the design details below. No stand-alone chat prompt may replace these sources. **V-213 overrides previous contract ownership: WS0 owns Host R1.2; WS1 builds/receives, not authors that contract.**
 **Stand:** 14.10.2026 · **Status:** DESIGN BRIEF / V-212 übernommen; Vorschlag für den nächsten Claude-Design-Cut, keine Design-Abnahme oder Implementierung.  
 **Owner / SSOT:** `georg-doc/kayfabizarro`, Branch `docs/kfb-decisions-register-2026-10-11`, `30_DECISIONS/DECISIONS.md`. **Outcome:** eine wiederverwendbare *Karten-Dialog-Bühne* für Spielbegegnungen, Promo-Clip-Authoring, automatische Demo-Szenen und späteren WS1/R3F-Host. **Executor jetzt:** Claude Design (visuelle Konzeption); **später:** Claude Code/WSA im bestehenden Owner.
 
@@ -62,4 +64,4 @@ Alle **3D-Empfänger** hängen ausschließlich am bestehenden **WS1 R3F ModuleHo
 **Next gate:** Claude Design liefert *originale ChatterBox-Plain-/Wireface-Style-Blasen einzeln → 4-Merkmal-Stiltransfermatrix → erste Studio-Komposition 9:16/16:9 → markierter Gesamt-Cut*. Steuerung prüft Quelle und Bildpaare; erst dann Entscheidung, ob diese Richtung für die übrigen Presets übernommen wird. Ohne gestalterisches PASS keine Claude-Code-Umsetzung dieses Designs.
 
 ---
-**GitHub-Handoff-Status:** Design-Plan R1.1 mit V-212; Host-Vertrag R1.1 §4 noch nicht auf R1.2 aktualisiert (zuständig: WS1/Vertrags-Owner). Keine Runtime-Änderung, kein Browser-/Stage-Beleg. No public route required for this planning slice.
+**GitHub-Handoff-Status:** Design-Plan R1.1 mit V-212; Host-Vertrag R1.1 §4 noch nicht auf R1.2 aktualisiert (zuständig: WS0 als Vertrags-Owner nach V-213; WS1 übernimmt). Keine Runtime-Änderung, kein Browser-/Stage-Beleg. No public route required for this planning slice.
