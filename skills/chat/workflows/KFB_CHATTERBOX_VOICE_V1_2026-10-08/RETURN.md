@@ -1,6 +1,21 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
 
+## 2026-10-13 · NIE DROPBOX SOURCE FIRST · 14 STORYTELLING DONORS FOR CHATTTERBOX/TRIPLETS
+
+**Origin:** user-specified Dropbox **MD NARRATIVE INTELLIGENCE ENGINE**, found `00_system/START_HERE_paths.md` (v1, March 7, 2026; 158 active files claimed, seven curated minimal paths). Read **22 actually accessible files**, focused on FrizzleBob/Wordacrobat/Auditor/Research→Satire, Story Beats/South Park/Fragment System, Dialogue/Authentic Dialogue/Conversation Power, Monologue, irony/satire and Writers Room. These are pre-existing user-owned donors, not a second mandatory runtime or copied NIE master.
+
+**Two new coherent files in existing Voice PR #379:** `KFB_NIE_TO_TRIPLETS_CHATTERBOX_DIALOGUE_DONOR_REVIEW_R1_2026-10-13.md` (source-linked file-by-file KEEP/ADAPT/RESTRICT decisions, KFB dialog/card/voice/Worldview applications, source-fact and persona guards) and `data/KFB_NIE_SOURCE_MODULE_REUSE_CANDIDATES_R1_2026-10-13.json` (**14 distinct inactive candidate recipes, all source links/explicit required inputs/NO_EDGE or fail codes**). Initial editorial five: `NIE_CARD_MECH_COST_AUDIT`, `NIE_DIALOGUE_SAID_MEANT_WANTED`, `NIE_ADJACENCY_AND_REPAIR`, `NIE_CAUSAL_BRIDGE_DIAGNOSTIC`, `NIE_CADENCE_SWITCH`. Technical 12/12 source/schema/owner boundary checks PASS, NOT output-quality or independent comedy acceptance.
+
+**Essential corrections:** NIE Wordacrobat/Auditor/South Park prescribe broad `THEREFORE/BUT` chains, forced mechanism/cost and compressed text; KFB original card POWER+LORE must not be invented/omitted, and a standalone beat may end with sourced absurdity, question or silence; CAUSAL_BRIDGE only when actual source effect creates next condition. NIE Roastmaster extra kicker optional, Banterbuddy mandatory insults/AI jokes excluded. NIE SAID/MEANT/WANTED and actual lexical uptake need actual preceding words/turn ID; if no input, regular independently intelligible base Beat with source-neutral opener. Worldview factual claims remain research PR #394; KFB fiction is downstream actor performance only. Intro/opener pool and previous 43 Perplexity operator catalog remain **byte unchanged**; no automatic operator promotion.
+
+**Bounded non-actions:** Original Dropbox NIE untouched, current Card SSOT unchanged, no new KFB audio/Triplets Site revision, no private plugin update, no Voice/World/KFB Audio runtime integration, no claim all 158 NIE docs audited, no actual 3D/voices or human user acceptance. Work/WSA Audio #365 **FIRST** and Claude Code Composer #355 **SECOND** order preserved.
+
+**One next gate:** `KFB_NIE_DONOR_FIVE_OPERATOR_EDITORIAL_PILOT_R1` with source-verified Card sample and actual previous speaker line, fail/NO_EDGE negative cases, independent critique and Georg KEEP/TUNE/CUT, then if approved queue source-linked candidate data into existing Site editor without another authoring system.
+
+---
+
+
 ## 2026-10-13 · PERPLEXITY RESEARCH INTAKE / GOOGLE DOC READ / NOTEBOOKLM PROMPT
 
 **Bounded product outcome:** exact user-uploaded modular stand-up/fourth-wall research DOCX read (248,784 bytes, SHA256 `663787224c8804fa65d89c799416159c94367774cac3b8ae554708d7ff6dccfd`), its mapped Google Docs source resolved/read at `https://docs.google.com/document/d/1w9dRLIK5rnO1nnv8K3VVxd4i8k2eWat0-YG9gzZwUuc/edit?usp=drivesdk`. The separately supplied NotebookLM URL was **not readable** by available tools and not edited. Google Doc is technically connector-readable/editable, but **was not edited**. Research's "36 operators" differs from **43 actual table rows** (25 OP, 10 UP, 8 FW). Original 12 columns per research entry preserved and all `UNREVIEWED_RESEARCH_CANDIDATE` with `runtimeEnabled:false`.
