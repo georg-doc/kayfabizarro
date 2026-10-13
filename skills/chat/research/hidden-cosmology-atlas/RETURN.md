@@ -1,3 +1,27 @@
+## CURRENT RETURN — SIX-AUTHOR RESEARCH EXPANSION — 2026-10-13
+
+**Product outcome:** Three original core author worldviews expanded to **six**. New primary authors: Jason Reza Jorjani; Joseph P. Farrell; Catherine Austin Fitts. Current R4 NotebookLM prompt is 2,982 characters, English only, without preset source links, Warburg/Gabriel/hexagons or an externally imposed appraisal vocabulary. Retain prior R3 as historical, not the current intake instruction. The six-author scope and two author-specific new research source sets are now anchored in the current Living SSOT.
+
+**Evidence-based relational seeds:** Jorjani's own "Breakaway Culture" (2025-05-09) distinguishes his chosen term from "Breakaway Civilization"; Farrell's 2014 Dark Journalist interview and further public essays anchor the black-budget/secrecy strand; Fitts has multiple firsthand Dark Journalist interviews; in a 2026-02-27 published Fitts interview she explicitly names Farrell's "hidden system of finance" term. Farrell published "The Epstein Affair" in 2019, while Fitts' 2026 interview includes an "Epstein Network" segment. No direct Jorjani ↔ Epstein collaboration inferred.
+
+**Four intended changed GitHub files in this milestone:**
+1. `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — new current NotebookLM prompt.
+2. `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` — new research discovery and cross-reference ledger.
+3. `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive binding six-author scope and registry/current prompt reference.
+4. `RETURN.md` — this project checkpoint.
+
+**Repository / owner:** `georg-doc/kayfabizarro` · KFB Editorial Research; existing `research/hidden-cosmology-atlas-2026-10-13` branch; Draft PR #394. Last source/SSOT milestone head verified before this Return update: `9c08ed4ba2cc941c3b7b7aff506f30013b69c1c0`. Final Return commit/head must be checked after the write, with exact files, then recorded in KFB Production Control.
+
+**Tests/evidence:** Exact branch head and individual intended-file readbacks after each content write; source discovery based on author-host websites, published book/essay/interview pages and the 2026 video description. No complete interview-listening test, no independent transcript alignment, no full-six worldview dossiers, no NotebookLM run, no deployed Site/Stage or browser acceptance. Do not call this an Almanac synthesis or existing KFB-DEX integration.
+
+**Protected:** Emic source-faithful preservation; source-native self-expressed uncertainty, no filtering or fact-status tagging; all exported research content in English, chat in German; KFB creative Deck adaptation downstream only; main Hub/router and all runtime owners unchanged; no merge/Live promotion.
+
+**Unresolved:** complete 6-source corpus, exact audio quote verification in Fitts 2026 and Farrell/Dark Journalist recordings, specific Jorjani↔Farrell/Fitts citations if they exist, mapped author-level Epstein links beyond verified sources, additional adjacent authors from primary citations.
+
+**One next gate:** `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — independently discover actual publications/interviews for all six authors, construct six comprehensive source-native "Worldview According To" dossiers, then map links by verbatim attribution.
+
+---
+
 # Hidden Cosmology Atlas — Research Return
 
 **Date:** 2026-10-13  
