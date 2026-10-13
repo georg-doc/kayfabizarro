@@ -1,8 +1,8 @@
 {
   "schema": "kfb.voice.card-performance-packet/1",
   "preview": true,
-  "contentRevision": "triplet-opener-pool-r3-cookie-tune",
-  "contentBlob": "8991f29acd239b6b0dc66c25462ea166a15ebd49",
+  "contentRevision": "triplet-opener-pool-r5-cookie-tune-v11",
+  "contentBlob": "dfb5435bc0c913ea48f8f5558f801b293962fbc8",
   "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
   "Openers": [
     {
@@ -27,12 +27,12 @@
   "CardBeats": [
     {
       "beatId": "wrinkle_rumble:10:compact",
-      "version": 2,
+      "version": 3,
       "deckId": "wrinkle_rumble",
       "cardNumber": 10,
       "cardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
       "mode": "COMPACT",
-      "surfaceText": "The Cookie of Causality restarts the war at Turn One over a snickerdoodle, but keeps all the damage.",
+      "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
       "status": "EDITORIAL_CANDIDATE",
       "owner": "KFB Voice / PR #379",
       "reviewer": null,
@@ -87,14 +87,14 @@
         "reframe": "Restarting war does not erase damage",
         "newClaims": "No new Card facts; source-anchored interpretation pending review",
         "humanAcceptance": "PENDING",
-        "editorialReview": "Revision 2 reorders existing source-anchored clauses for audition. Independent revision-1 source review retained in history; revision 2 and human listening pending."
+        "editorialReview": "Version3 content-only tune of independently source-reviewed v2: clause order and pause changed for audition, title/Power/Lore evidence unchanged; human listening and revision3 review pending."
       },
       "speaker": {
         "id": "lorekeeper"
       },
       "delivery": {
         "pauseBeforeMs": 300,
-        "pauseAfterMs": 1100,
+        "pauseAfterMs": 900,
         "rate": 0.93,
         "pitch": 1,
         "emphasis": "keeps all the damage"
@@ -108,6 +108,12 @@
           "status": "REVIEWED",
           "reviewer": "Independent source critic /root/pool_critic_guard",
           "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage."
+        },
+        {
+          "version": 2,
+          "status": "REVIEWED",
+          "reviewer": "Independent source critic /root/pool_critic_guard",
+          "surfaceText": "The Cookie of Causality restarts the war at Turn One over a snickerdoodle, but keeps all the damage."
         }
       ],
       "sourceRetention": {
@@ -168,5 +174,5 @@
       "artworkPrompt": "Style: cosmic horror watercolor. Subject: glowing cookie surrounded by green lightning vortex in void. Mood: apocalyptic pastry."
     }
   ],
-  "text": "The Cookie of Causality restarts the war at Turn One over a snickerdoodle, but keeps all the damage.\n\nStay Fluffy!"
+  "text": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.\n\nStay Fluffy!"
 }

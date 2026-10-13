@@ -1,3 +1,27 @@
+# FINAL UPDATE · Source 0.7.1 / Site v11 · 2026-10-13
+
+Existing exact Site https://kfb-audio.frizzlebob.chatgpt.site/ is visibly verified in authenticated normal Chrome at Source 0.7.1.
+Site version 11; source d3c1df83347367ce49634a2d29972f773c322574.
+Saved version appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_c3f0656c4cd08191bef6313a7c10f4cd.
+Deployment appgdep_6ace980dd63481919f64b77fb4436fb6 succeeded.
+Archive SHA256 50063398594d9392635f6db4eff6c86d782f9e53d092c2f87239c5fdc349fce4.
+
+Final QA caught a stale original PDF canvas after Card/Deck switches. Source 0.7.1 clears the canvas/proof and publishes async PDF bytes only after deck/Card/source-revision identity checks. Actual local UI test: Cookie original PDF rendered, then Card11 chosen, canvas width/height=0 and original page explicitly not loaded. Independent Guard CONTINUE. Same receiving Site only; two engineering publications total (v10, then this focused source-display repair), no public audience change.
+
+## Two post-final-deploy content-only updates · primary proof
+- Baseline Voice 8118478a1ae05f01ae16a25c9a6d83a8333fb6f9 / triplet-opener-pool-r3-cookie-reviewed / blob 72a2f62d4d38487bb6c82184cbdadc9485bc6045: independently source-reviewed Cookie v2, human PENDING.
+- New proposed opener: Voice 7ad155660e7740fd6c527597e8f1b7aa2b445069 / triplet-opener-pool-r4-new-opener-v11 / blob 56c78f3274dcbae88abc198ec164819e2866c37a; exact Site visibly showed 14 openers including disabled PROPOSED EVER_HEARD_BEFORE.
+- Reviewed Beat modified into candidate: Voice f4c23f72945dde9bd7449ad6e15d5b61c1ca5def / triplet-opener-pool-r5-cookie-tune-v11 / blob dfb5435bc0c913ea48f8f5558f801b293962fbc8. Site visibly showed remote Cookie v3, reordered source-anchored clause and pause900; deliberate Reload Card adopted it.
+- Site remained version11, same source/deployment/URL after both; additional deployments after final setup = 0. Both writes used only the ordinary GitHub content-file connector route.
+- [Final baseline](evidence/site-v11-before-content-updates.jpg), [new opener](evidence/site-v11-r4-new-opener.jpg), [Cookie v3](evidence/site-v11-r5-cookie-v3.jpg), [current pool](evidence/site-v11-current-pool.jpg), [original Cookie page](evidence/site-v11-original-cookie-page.jpg).
+
+Final 35/35 adapter and 172/172 Site checks PASS. Existing r3 feed12/12 and core18/18 remain unchanged. Actual final Site Download consumer-packet.json contains r5/blob/Beatv3 and original PDF revision; preview adapter read passed, accepted-only rejected it; rendered VoiceClips remain0. Old eSpeak not used as intelligibility benchmark. Source full-page proof actual; exact Card crop and human listening remain open.
+
+Technical core outcome PASS; overall product TUNE until Georg hearing/comedy/source-fidelity verdict. One gate KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1. Composer/Wireface remains deferred.
+
+---
+
+## Historical v10 evidence retained
 # Audio Triplet & Opener Studio · actual test evidence
 Date: 2026-10-13
 Status: DEPLOYED_AND_VISIBLY_VERIFIED · HOT_RELOAD_PASS · PRODUCT_TUNE_HUMAN_LISTENING_PENDING

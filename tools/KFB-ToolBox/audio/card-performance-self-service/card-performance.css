@@ -10,3 +10,5 @@
 .card-import-export{margin-top:15px;padding-top:11px;border-top:1px solid var(--line)}.card-import-export summary{cursor:pointer;color:var(--voice-mint);font-size:.8rem}.card-import-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.card-drop{display:flex!important;align-items:center;justify-content:center;min-height:132px}.card-local-assets{margin:10px 0}.card-local-assets b{color:var(--voice-mint)}
 @media(max-width:1050px){.card-load-row{grid-template-columns:1fr 1fr}.performance-controls{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.card-performance-head,.card-performance-grid{display:grid;grid-template-columns:1fr}.content-revision{min-width:0}.card-load-row,.performance-controls,.performance-text-controls,.card-import-grid{grid-template-columns:1fr}.card-load-row .btn{width:100%}.card-picker-head{align-items:flex-start;flex-direction:column}.card-picker-head>div:last-child{display:flex;gap:5px;flex-wrap:wrap}.card-playback-row .btn{flex:1 1 180px}}
+
+#tripletOpenerPool #poolActive{min-height:0;height:auto}#tripletOpenerPool #poolRevision,#tripletOpenerPool #poolSource{overflow-wrap:anywhere}

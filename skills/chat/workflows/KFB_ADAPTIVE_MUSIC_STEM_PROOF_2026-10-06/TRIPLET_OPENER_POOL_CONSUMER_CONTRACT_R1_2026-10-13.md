@@ -5,8 +5,8 @@ Status: TESTED_PREVIEW_CONTRACT · HUMAN_ACCEPTANCE_PENDING · PHASE_2_DEFERRED
 ## Exact owners
 Audio owner: georg-doc/kayfabizarro PR #365, web/kfb-adaptive-music-stem-proof-2026-10-06.
 Editorial content owner: same repo PR #379, planning/kfb-chatterbox-voice-layer-v1-2026-10-08.
-Existing Audio Site: https://kfb-audio.frizzlebob.chatgpt.site/ · Source 0.7.0 · version 10.
-Site source: 43d78782a652ce852ae923fe42193807a8d6a168.
+Existing Audio Site: https://kfb-audio.frizzlebob.chatgpt.site/ · Source 0.7.1 · version 11.
+Site source: d3c1df83347367ce49634a2d29972f773c322574.
 Composer #355 head read-only context: 9cf3e25998d5523b3c1844266ab979b8aea6723b. No Composer/Wireface/Scenelet writes.
 
 ## One tested data read path
@@ -14,10 +14,10 @@ GitHub Contents API:
 GET https://api.github.com/repos/georg-doc/kayfabizarro/contents/skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_TRIPLET_OPENER_POOL_R1_2026-10-13.json?ref=planning%2Fkfb-chatterbox-voice-layer-v1-2026-10-08
 
 Decode UTF-8 Base64 content, validate kfb.voice.triplet-opener-pool/1.
-Record returned Git blob SHA separately from contentRevision. Current r3:
-- Voice commit d9cfc557875a6f9067221bd050820b32938c1768.
-- contentRevision triplet-opener-pool-r3-cookie-tune.
-- content blob 8991f29acd239b6b0dc66c25462ea166a15ebd49.
+Record returned Git blob SHA separately from contentRevision. Current final r5:
+- Voice commit f4c23f72945dde9bd7449ad6e15d5b61c1ca5def.
+- contentRevision triplet-opener-pool-r5-cookie-tune-v11.
+- content blob dfb5435bc0c913ea48f8f5558f801b293962fbc8.
 Resolve originals via media/kfb/index.json and exact media/kfb Card JSON blob. No 60-to-3 default. Pool preview is explicitly opted in; no accepted public pool is currently published.
 
 ## Actual exported packet
@@ -36,7 +36,7 @@ Browser speech start/boundary events are factual runtime events, not saved clip 
 ## Acceptance and source protection
 Default consumer rejects preview/candidate records, missing source evidence, absent original title/Power/Lore, unsupported or retired/disabled opener, opener version drift, and missing human approval.
 Local KEEP is a local preference, not ACCEPTED. Import clears untrusted reviewer/human approval in current beats AND history; Undo cannot restore imported acceptance claims. QUARANTINED/PROPOSED remain blocked.
-Independent editorial source review of Cookie v1 is in history. Cookie v2 is EDITORIAL_CANDIDATE. Human comedy/intelligibility acceptance stays PENDING. No ACCEPTED pool records were invented.
+Independent editorial source review of Cookie v1 is in history. Cookie v3 is EDITORIAL_CANDIDATE. Human comedy/intelligibility acceptance stays PENDING. No ACCEPTED pool records were invented.
 Full-source recital preserves source wording but is not automatically a semantic Triplet or comedy PASS.
 SemanticCoverage is an editorial claim for human review; token-position retention is separately measured. Compact Cookie references 14/28 original source tokens (50%); full source references 28/28 (100%).
 

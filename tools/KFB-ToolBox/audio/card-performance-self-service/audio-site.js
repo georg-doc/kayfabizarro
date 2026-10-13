@@ -102,7 +102,7 @@ function getContextSnapshot(){
 }
 
 function exposeApi(){
- window.KFBAudioSite={version:'0.7.0',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()}};
+ window.KFBAudioSite={version:'0.7.1',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()}};
 }
 
 function bindExternalAdapter(){

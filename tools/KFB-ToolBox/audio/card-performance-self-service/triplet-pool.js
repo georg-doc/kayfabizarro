@@ -1,5 +1,5 @@
 import { originalCardPage } from './card-source-visual.mjs';
-import { fetchGithubFile } from './card-performance.js?v=0.7.0';
+import { fetchGithubFile } from './card-performance.js?v=0.7.1';
 import { POOL_SCHEMA,validatePool,validateSource,missingFields,fullSourceBeat,validateBeat,retention,applyOpener,openerAllowed,makePacket,seededOrder,validateOpener } from './triplet-pool-core.mjs';
 const REF='planning/kfb-chatterbox-voice-layer-v1-2026-10-08';
 const PATH='skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_TRIPLET_OPENER_POOL_R1_2026-10-13.json';
@@ -59,6 +59,7 @@ function render(){
 }
 function renderCard(){
   $('#poolActive').value=state.active;
+  const canvas=$('#poolOriginalCanvas');canvas.width=0;canvas.height=0;$('#poolVisualProof').textContent='Original page not loaded for this Card. Open the source PDF explicitly.';
   const c=card(),b=beat(),blocked=missingFields(c);
   $('#poolSource').innerHTML=`<div class="eyebrow">ORIGINAL · ${esc(state.deckId)} / ${c.cardNumber} · ${meta.cardBlob}</div><h4>${esc(c.cardName)}</h4><dl><dt>POWER</dt><dd>${esc(c.power??'null · SOURCE MISSING')}</dd><dt>LORE</dt><dd>${esc(c.lore??'null · SOURCE MISSING')}</dd></dl><a href="https://github.com/georg-doc/kayfabizarro/blob/${encodeURIComponent(REF)}/${meta.pdfPath.split('/').map(encodeURIComponent).join('/')}#page=${meta.coverOffset+1+Math.floor((c.cardNumber-1)/4)}" target="_blank" rel="noopener">Original PDF Card Grid · page ${meta.coverOffset+1+Math.floor((c.cardNumber-1)/4)} · ${['TL','TR','BL','BR'][(c.cardNumber-1)%4]}</a>`;
   $('#poolLine').value=b?.surfaceText||'';$('#poolLine').disabled=!!blocked.length;
@@ -93,7 +94,7 @@ function editOpener(retire=false){
 function download(value,name,type='application/json'){const url=URL.createObjectURL(new Blob([typeof value==='string'?value:JSON.stringify(value,null,2)],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function exportEditor(){return {schema:'kfb.voice.pool-editor-draft/1',baseContentBlob:state.baseContentBlob,baseContentRevision:state.baseContentRevision,sourceCardBlob:meta.cardBlob,pool,state:{...state,pool:undefined},packet:packet(),writeback:{repo:'georg-doc/kayfabizarro',branch:REF,path:PATH,expectedBlob:state.baseContentBlob,directCloudSave:false,route:'ORDINARY_WEB_CHAT_GITHUB_COMPARE_AND_COMMIT'}};}
 function bind(){
-  $('#poolShowVisual').onclick=guard(async()=>{const current=state.active;const proof=await originalCardPage({repo:'georg-doc/kayfabizarro',ref:REF,path:meta.pdfPath,cardNumber:current,coverOffset:meta.coverOffset},$('#poolOriginalCanvas'));meta.pdfRevision=proof.pdfRevision;$('#poolVisualProof').textContent=`Original PDF ${proof.pdfRevision} · page ${proof.page} · Card ${current} ${proof.quadrant} · exact crop pending`;});
+  $('#poolShowVisual').onclick=guard(async()=>{const current=state.active,identity=state.deckId,sourceMeta={...meta},staging=document.createElement('canvas');const proof=await originalCardPage({repo:'georg-doc/kayfabizarro',ref:REF,path:sourceMeta.pdfPath,cardNumber:current,coverOffset:sourceMeta.coverOffset},staging);if(state.active!==current||state.deckId!==identity||meta.cardBlob!==sourceMeta.cardBlob)return;const canvas=$('#poolOriginalCanvas');canvas.width=staging.width;canvas.height=staging.height;canvas.getContext('2d').drawImage(staging,0,0);meta.pdfRevision=proof.pdfRevision;$('#poolVisualProof').textContent=`Original PDF ${proof.pdfRevision} · ${identity} · page ${proof.page} · Card ${current} ${proof.quadrant} · exact crop pending`;});
   $('#poolReload').onclick=guard(reload);$('#poolPreview').onchange=()=>{if(!$('#poolPreview').checked){window.KFBCardAudition.stop();note('Preview disabled. Accepted pool not published.');}};
   $('#poolDeck').onchange=guard(()=>loadDeck($('#poolDeck').value));
   $('#poolCards').onchange=()=>{state.selection=[...$('#poolCards').selectedOptions].map(o=>Number(o.value));save();render();};
@@ -131,6 +132,6 @@ function bind(){
     state=saved;pool={...importedPool,openers:importedOpeners};deck=importedDeck;meta=importedMeta;save();render();note('Editor state restored locally. Untrusted review claims downgraded; quarantine preserved.');
   });
   const populate=()=>{$('#poolVoice').innerHTML=window.speechSynthesis?.getVoices().filter(v=>/^en[-_]/i.test(v.lang)).map(v=>`<option value="${esc(v.voiceURI)}" ${/Samantha|Google US English/.test(v.name)?'selected':''}>${esc(v.name)} · ${esc(v.lang)}</option>`).join('')||'<option value="">Default English</option>';};populate();window.speechSynthesis?.addEventListener('voiceschanged',populate);
-  window.KFBTripletPool={version:'0.7.0',getState:()=>structuredClone({state,pool,meta,contentBlob:poolBlob,registryBlob}),getPacket:packet,reload};
+  window.KFBTripletPool={version:'0.7.1',getState:()=>structuredClone({state,pool,meta,contentBlob:poolBlob,registryBlob}),getPacket:packet,reload};
 }
 bind();note('Enable explicit preview, then Reload pool. No private draft is loaded silently.');
