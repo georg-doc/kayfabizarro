@@ -1,3 +1,23 @@
+## CURRENT BINDING ADDENDUM — 2026-10-13 — GOOGLE DOCS AUTHOR TABS AND NOTEBOOKLM SYNC
+
+**User-approved cross-app workflow, not implemented automation:** The existing Google Doc `KFB Worldview Dossier: Golden Test 01` is the **editable author-dossier master**; NotebookLM serves as an imported Google Drive source reader/research engine with Google's supported periodic/manual sync; the current GitHub living research SSOT remains the **independent versioned KFB decision/recovery authority**. None of these may silently replace the primary interviews or publications as source truth. No proven bidirectional NotebookLM→Docs or NotebookLM→GitHub sync exists; the user/editor closes that loop by explicit updates and reviewed exports.
+
+**Current linked document:** https://docs.google.com/document/d/1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg/edit ; Google Docs ID `1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg`, observed revision `AHj4eMQXURzIKL8bJj5iwpqkLO8DdRwA79OHHFT-ioVJlr9yF84VxfWLXYiBhmW2oQL_zONTvn1F9gYbShCOyLVryaOBBG7hS6mdzXiHCnU`, one observed tab `Tab 1` with ID `t.0`. Gemini's promised separate author-tab edit is **not yet present in the checked revision**. Avoid a conflicting Google Docs write while Gemini has the active editing assignment.
+
+**Google product caveat:** Google Help says Drive-imported Docs can periodically/manually sync into NotebookLM; multiple tabs from the same Google Doc are ingested as **one NotebookLM source**. Author tabs do NOT automatically acquire independent source toggles or dedicated citations. Specific import/sync/changed-passage evidence for the user notebook remains **UNVERIFIED** by this chat. Stable `authorId`, `clusterId`, `sourceId`, `tabId` and `docRevision` are necessary recovery anchors; optional later separate author docs require a named revision to avoid duplicate masters.
+
+**Five tab headings (Gemini blueprint, user authorized):** `Core Function & Character Archetype`; `Fundamental Ontology & Cosmology`; `Actors, Hierarchies & Proxies`; `Core Mechanics & Terminology`; `Rhetorical Markers & Performance Blueprint`. Each derived author section must also carry original sources, passage/timecodes, named speaker and source-native conviction/qualification without researcher-created speculation/debunking tags. Comic character archetype/performance remains a **KFB adaptation overlay**, never a real author speech/identity.
+
+**Flexible cross-cutting clusters:** `HIDDEN_COSMOLOGY_OCCULT`, `HISTORY_DEEP_STATE`, `POP_CULTURE_MEDIA`, `IMPROV_PERFORMANCE` are user examples for navigation; an author may inhabit multiple clusters. Do not force monolithic ontology/one-author-per-cluster or delete source positions that do not fit a cluster.
+
+**New canonical workflow reference:** `GOOGLE_DOCS_NOTEBOOKLM_WORLDVIEW_SYNC_WORKFLOW_R1_2026-10-13.md` contains user direction, exact Google Docs readback, authority split, NotebookLM tab/sync caveat, five-headings-plus-provenance author template, source retention, revision and research→performance acceptance gates.
+
+**New decisions HCA-030–035:** user approved the Google Docs/NotebookLM/GitHub layered workflow; Google Docs author tabs and flexible cluster index; source truth vs KFB comedy; observed sync and revision checks; parallel Gemini edit safety; no new Site or runtime without own gate.
+
+**ONE NEXT GATE:** `GOOGLE_DOCS_AUTHOR_TAB_AND_NOTEBOOKLM_SYNC_R1` — once Gemini finishes editing the existing Doc, fetch its exact new revision and Kurt Metzger tab, verify five headings plus primary-source anchors, then check NotebookLM refresh against one identifiable changed excerpt, and only then version the author Lens and resume Golden Test 01. Do not substitute a claim that a sync ran for a verified passage match.
+
+---
+
 ## CURRENT ADDITIVE INTAKE — 2026-10-13 — GEMINI GOOGLE DOC + SPHINX / GENIUS LOCI
 
 **External Google Docs connection now FUNCTIONAL.** Exact native document **"KFB Worldview Dossier: Golden Test 01"** (Google Doc ID `1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg`) was opened via connected Google Drive, revision `AHj4eMQXURzIKL8bJj5iwpqkLO8DdRwA79OHHFT-ioVJlr9yF84VxfWLXYiBhmW2oQL_zONTvn1F9gYbShCOyLVryaOBBG7hS6mdzXiHCnU`; 32 paragraphs / approximately 4,454 text characters. The two authored worldview seeds are Kurt Metzger and Daniel Liszt/Dark Journalist. **No atomic source citations, interview timestamps or bibliography appear in that dossier.** This is a verified document read and useful worldview-performance seed, **NOT** a source-attribution/comedy/runtime Golden PASS.
