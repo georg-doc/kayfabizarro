@@ -1,86 +1,153 @@
-/* KFB Card Performance Solo Cuts R1
- * Pure content assembler: compiled source-locked, self-contained one-Card beats.
- * 1 spoken line per card; exactly 1 empty line between units in the script.
- * No LLM, TTS, soundbed, timing invention or Audio engine ownership.
+/* KFB Card Performance Standalone Solo Cuts R1.1
+ * One card = one independent spoken line (potentially two sentences).
+ * Blank line = editable cut boundary; it is NOT verified audio timing.
+ * Source title/POWER/LORE preserved in compiled core; optional matched comedy opener.
+ * Zero network, model or extra AudioContext.
  */
 'use strict';
 const SCHEMA='kfb.triplets.standalone-card-beat-set/0.1';
-const ONE_SENTENCE=/(?<=[.!?])\s+(?=\S)/u;
 const MAX_SCRIPT_CHARS=5000;
 const ONLY_CARD='CARD_TRIPLET_CANDIDATE';
-function requireTrue(ok, why){if(!ok)throw Error(why);}
-function toBeat(entry, delivery){
+const OPENERS=Object.freeze({
+ DIRECT: {kind:'SOURCE_ONLY'},
+ HEARD_OF: {kind:'AUDIENCE_ADDRESS',prefix:'Ever heard of ',suffix:'?'},
+ DO_YOU_KNOW: {kind:'AUDIENCE_ADDRESS',prefix:'Do you know ',suffix:'?'},
+ EVER_TASTED: {kind:'FOOD_AUDIENCE_ADDRESS',prefix:'Ever tasted ',suffix:'?',requires:'FOOD'},
+ I_ONCE_MET: {kind:'PERFORMER_FICTION',prefix:'I once met ',suffix:'.',requires:'PERSON',fiction:true},
+ RESTAURANT_ORDERED: {kind:'PERFORMER_FICTION',prefix:'I went to a restaurant and ordered ',suffix:'.',requires:'FOOD',fiction:true}
+});
+function requireTrue(ok,why){if(!ok)throw Error(why);}
+const tokenize=text=>[...String(text??'').matchAll(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu)].map(m=>({start:m.index,end:m.index+m[0].length,word:m[0]}));
+function sourceCoverage(entry,card){
+ if(!card) return {kind:'NOT_MEASURED',reason:'FULL_ORIGINAL_CARD_REQUIRED',contentCoveragePct:null};
+ requireTrue(card.cardName===entry.cardName,'SOURCE_TITLE_DRIFT');
+ for(const field of ['cardName','power','lore'])requireTrue(typeof card[field]==='string'&&card[field].length,'ORIGINAL_FIELD_MISSING:'+field);
+ const parts=entry.pieces.filter(p=>p.kind==='source');
+ const fields={};let total=0,covered=0;
+ for(const field of ['cardName','power','lore']){
+  const raw=card[field],all=tokenize(raw),refs=parts.filter(x=>x.field===field);
+  for(const p of refs)requireTrue(raw.slice(p.start,p.end)===p.verbatim,'SOURCE_SPAN_DRIFT:'+field);
+  const hits=all.filter(t=>refs.some(p=>t.start>=p.start&&t.end<=p.end));
+  total+=all.length;covered+=hits.length;
+  fields[field]={originalTokens:all.length,referencedTokens:hits.length,
+    pct:all.length?Math.round(10000*hits.length/all.length)/100:0};
+ }
+ return {kind:'EXACT_ORIGINAL_TOKEN_COVERAGE',fields,
+   originalTokens:total,referencedOriginalTokens:covered,
+   contentCoveragePct:total?Math.round(10000*covered/total)/100:0,
+   semanticInformationCoveragePct:null,
+   caution:'Word-token field coverage is NOT automatically semantic/information coverage.'};
+}
+function renderBeat(core,openerMode,opts){
+ const opener=OPENERS[openerMode];
+ requireTrue(opener,'UNKNOWN_OPENER_MODE');
+ if(openerMode==='DIRECT')return {text:core.text,openerText:null,openerKind:'SOURCE_ONLY',performerFiction:false};
+ if(opener.requires==='FOOD'){
+  requireTrue(opts.sourceClass==='FOOD'&&/cookie|snickerdoodle/i.test(
+   core.cardName+' '+core.pieces.filter(p=>p.kind==='source').map(p=>p.verbatim).join(' ')),
+   'OPENER_NOT_SUPPORTED_BY_CARD_SOURCE');
+ }
+ if(opener.requires==='PERSON')
+  requireTrue(opts.sourceClass==='PERSON'&&['He','She','They'].includes(opts.referentPronoun),
+    'PERSON_REFERENCE_AND_PRONOUN_REQUIRED');
+ if(opener.fiction)requireTrue(opts.allowPerformerFiction===true,
+   'FICTIONAL_STAGE_FRAMING_REQUIRES_EXPLICIT_OPT_IN');
+ const pronoun=opts.referentPronoun??'It';
+ requireTrue(['It','He','She','They'].includes(pronoun),'UNAPPROVED_REFERENT_PRONOUN');
+ const tail=core.text.slice(core.cardName.length).trimStart();
+ requireTrue(core.text.startsWith(core.cardName+' ')&&tail,'TITLE_CORE_MISMATCH');
+ const opening=opener.prefix+core.cardName+opener.suffix;
+ const line=opening+' '+pronoun+' '+tail;
+ requireTrue(line.split(core.cardName).length===2,'ORIGINAL_CARD_TITLE_MUST_BE_SPOKEN_ONCE');
+ return {text:line,openerText:opening,openerKind:opener.kind,
+   performerFiction:!!opener.fiction};
+}
+function toBeat(entry,opts={}){
  requireTrue(entry?.kind===ONLY_CARD&&entry.admitted===false,
-   'SOURCE_LOCKED_UNREVIEWED_CANDIDATE_REQUIRED');
+  'SOURCE_LOCKED_UNREVIEWED_CANDIDATE_REQUIRED');
  requireTrue(typeof entry.cardName==='string'&&entry.text.startsWith(entry.cardName+' '),
-   'SHOW_TITLE_MISSING');
+  'SHOW_TITLE_MISSING');
  requireTrue(entry.usedFields?.includes('cardName')&&entry.usedFields?.includes('power')&&
-   entry.usedFields?.includes('lore'),'POWER_LORE_SOURCE_PROOF_REQUIRED');
- requireTrue(typeof entry.text==='string'&&entry.text.trim()===entry.text&&
-   !/[\r\n]/.test(entry.text),'ONE_CARD_ONE_LINE');
+  entry.usedFields?.includes('lore'),'POWER_LORE_SOURCE_PROOF_REQUIRED');
+ requireTrue(typeof entry.text==='string'&&!/[\r\n]/.test(entry.text),
+  'CORE_MUST_BE_ONE_LINE');
  requireTrue(entry.text.endsWith('.')&&!entry.text.slice(0,-1).includes('.'),
-   'CARD_BEAT_MUST_BE_ONE_SENTENCE');
+  'SOURCE_CARD_TRIPLET_MUST_BE_ONE_SENTENCE');
  requireTrue(entry.audit?.newFactsAdded===false&&entry.pieces?.length>0,
-   'NO_SOURCE_PROOF');
- requireTrue(entry.audit?.creativeAcceptance==='UNREVIEWED',
-   'DO_NOT_FAKE_HUMAN_APPROVAL');
+  'SOURCE_PROOF_REQUIRED');
+ requireTrue(entry.audit?.creativeAcceptance==='UNREVIEWED','HUMAN_ACCEPTANCE_NOT_PROVEN');
+ const openerMode=opts.openerMode??'DIRECT';
+ const surface=renderBeat(entry,openerMode,opts);
+ requireTrue(!/[\r\n]/.test(surface.text),'BEAT_ONE_LINE_REQUIRED');
+ const coverage=sourceCoverage(entry,opts.originalCard);
+ const goal=opts.targetOriginalTokenCoveragePct;
+ if(goal!==undefined){
+  requireTrue(typeof goal==='number'&&goal>=0&&goal<=100,'BAD_COVERAGE_TARGET');
+  requireTrue(coverage.contentCoveragePct!==null&&coverage.contentCoveragePct>=goal,
+   'ORIGINAL_CONTENT_COVERAGE_TARGET_UNMET');
+ }
+ const pauseBeforeMs=Number(opts.pauseBeforeMs??300);
+ const pauseAfterMs=Number(opts.pauseAfterMs??700);
+ const rate=Number(opts.rate??0.93);
+ requireTrue([pauseBeforeMs,pauseAfterMs,rate].every(Number.isFinite)&&
+  pauseBeforeMs>=0&&pauseAfterMs>=0&&rate>=0.5&&rate<=1.5,
+  'INVALID_DELIVERY_TIMING');
  return Object.freeze({
-   kind:'STANDALONE_CARD_BEAT_CANDIDATE',id:entry.cardId+'@'+entry.sourceRevision,
-   deckId:entry.cardId.split(':')[0],cardNumber:Number(entry.cardId.split(':').at(-1)),
-   originalCardName:entry.cardName,cardSourceRevision:entry.sourceRevision,
-   text:entry.text,originalFields:['cardName','power','lore'],
-   sourcePieces:entry.pieces.filter(p=>p.kind==='source'),
-   startCue:'beat:'+entry.cardId+':start',endCue:'beat:'+entry.cardId+':end',
-   optionalBridgeAfter:null,
-   delivery:Object.freeze({
-     tone:delivery?.tone||'deadpan',
-     pauseBeforeMs:Math.max(0,Number(delivery?.pauseBeforeMs??300)),
-     pauseAfterMs:Math.max(0,Number(delivery?.pauseAfterMs??700)),
-     rate:Math.max(0.5,Math.min(1.5,Number(delivery?.rate??0.93))),
-     emphasis:delivery?.emphasis||'original punchline, unhurried landing'
-   }),admitted:false,
-   productionStatus:'EDITORIAL_CANDIDATE_NOT_AUDIO_RENDERED'
+  kind:'STANDALONE_CARD_BEAT_CANDIDATE',id:entry.cardId+'@'+entry.sourceRevision,
+  deckId:entry.cardId.split(':')[0],cardNumber:Number(entry.cardId.split(':').at(-1)),
+  originalCardName:entry.cardName,cardSourceRevision:entry.sourceRevision,
+  text:surface.text,coreTriplet:entry.text,openerMode,openerText:surface.openerText,
+  openerKind:surface.openerKind,performerFiction:surface.performerFiction,
+  originalFields:['cardName','power','lore'],sourcePieces:entry.pieces.filter(x=>x.kind==='source'),
+  sourceCoverage:coverage,extraPunchlineAdded:false,
+  startCue:'beat:'+entry.cardId+':start',endCue:'beat:'+entry.cardId+':end',
+  optionalBridgeAfter:null,
+  delivery:Object.freeze({tone:opts.tone||'deadpan',pauseBeforeMs,pauseAfterMs,rate,
+    emphasis:opts.emphasis||'source absurdity can stand without extra punchline'}),
+  admitted:false,productionStatus:'EDITORIAL_CANDIDATE_NOT_AUDIO_RENDERED'
  });
 }
 function assembleSolo(entries,opts={}){
  requireTrue(Array.isArray(entries)&&entries.length>0,'AT_LEAST_ONE_BEAT_REQUIRED');
- const items=entries.map(x=>x.kind==='STANDALONE_CARD_BEAT_CANDIDATE'?x:toBeat(x,opts.delivery));
- requireTrue(items.every(x=>x.admitted===false&&x.kind==='STANDALONE_CARD_BEAT_CANDIDATE'),
-   'UNSAFE_IMPORTED_BEAT');
+ const items=entries.map(x=>x.kind==='STANDALONE_CARD_BEAT_CANDIDATE'?x:toBeat(x,opts));
+ requireTrue(items.every(x=>x.admitted===false&&x.kind==='STANDALONE_CARD_BEAT_CANDIDATE'&&
+  x.text.includes(x.originalCardName)&&!/[\r\n]/.test(x.text)),
+  'UNSAFE_OR_MALFORMED_BEAT');
  const keys=items.map(x=>x.id);
  requireTrue(new Set(keys).size===keys.length,'DUPLICATE_BEAT_ID');
  const ordered=[...items];
  if(opts.order==='seeded_shuffle'){
-   let seed=2166136261;
-   for(const c of String(opts.seed??'kfb')){
-     seed=Math.imul(seed^c.charCodeAt(0),16777619)>>>0;
-   }
-   for(let i=ordered.length-1;i>0;i--){
-     seed=(Math.imul(seed,1664525)+1013904223)>>>0;
-     const j=seed%(i+1);[ordered[i],ordered[j]]=[ordered[j],ordered[i]];
-   }
+  let seed=2166136261;
+  for(const c of String(opts.seed??'kfb'))seed=Math.imul(seed^c.charCodeAt(0),16777619)>>>0;
+  for(let i=ordered.length-1;i>0;i--){
+   seed=(Math.imul(seed,1664525)+1013904223)>>>0;
+   const j=seed%(i+1);[ordered[i],ordered[j]]=[ordered[j],ordered[i]];
+  }
  }else requireTrue(!opts.order||opts.order==='source','UNSUPPORTED_SEQUENCE_MODE');
  const intro=opts.intro===undefined?'Welcome, dear Fluffheads!':opts.intro;
  const outro='Stay Fluffy!';
- requireTrue(intro===null||typeof intro==='string','INTRO_MUST_BE_TEXT_OR_NULL');
- requireTrue(!intro||(!intro.includes('\n')&&intro.trim()===intro),'INTRO_ONE_LINE');
- const scriptRows=[...(intro?[intro]:[]),...ordered.map(x=>x.text),outro];
- const spokenBody=scriptRows.join('\n\n');
- requireTrue(!/\n\n\n/.test(spokenBody),'EXTRA_BLANK_LINES');
- requireTrue(spokenBody.length<=(opts.maxChars??MAX_SCRIPT_CHARS),'SCRIPT_OVER_CHAR_LIMIT_SPLIT_PARTS');
+ requireTrue(intro===null||(typeof intro==='string'&&!/[\r\n]/.test(intro)),
+  'INTRO_MUST_BE_ONE_LINE_OR_NULL');
+ const rows=[...(intro?[intro]:[]),...ordered.map(x=>x.text),outro];
+ const text=rows.join('\n\n');
+ requireTrue(!/\n\n\n/.test(text),'INVALID_CARD_CUT_DELIMITER');
+ requireTrue(text.length<=(opts.maxChars??MAX_SCRIPT_CHARS),
+  'SCRIPT_OVER_CHARACTER_LIMIT_SPLIT_INTO_EXPLICIT_PARTS');
  return Object.freeze({
   schema:SCHEMA,kind:'SOLO_VOICE_ONLY_SCRIPT_CANDIDATE',
-  text:spokenBody,lines:scriptRows,cardBeatCount:ordered.length,
-  beatRefs:ordered.map((x,index)=>({position:index,cardId:x.deckId+':'+x.cardNumber,
-   beatId:x.id,startCue:x.startCue,endCue:x.endCue,text:x.text,
+  text,lines:rows,cardBeatCount:ordered.length,
+  beatRefs:ordered.map((x,index)=>({position:index,
+   cardId:x.deckId+':'+x.cardNumber,beatId:x.id,startCue:x.startCue,endCue:x.endCue,
+   openerMode:x.openerMode,text:x.text,cardTitle:x.originalCardName,
    pauseBeforeMs:x.delivery.pauseBeforeMs,pauseAfterMs:x.delivery.pauseAfterMs,
-   recommendedDelivery:x.delivery,sourceRevision:x.cardSourceRevision})),
+   recommendedDelivery:x.delivery,sourceRevision:x.cardSourceRevision,
+   sourceCoverage:x.sourceCoverage,performerFiction:x.performerFiction})),
   intro:intro||null,outro,bridgesUsed:0,soundbed:'NONE',outputMode:'VOICE_ONLY_DRY',
-  timingStatus:'GAPS_REQUESTED_NOT_AUDIO_MEASURED',transcriptFormat:'ONE_LINE_PER_CARD_BLANK_LINE_BETWEEN',
-  sunoStyle:'Solo spoken-word stand-up, dry character voice, no singing, a cappella, no instruments, no soundtrack, crisp articulation, short comedic pauses between each independent beat. No chorus.',
-  sunoNoMusicGuaranteed:false,
-  dataStatus:'EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED',
-  isLlmFree:true,admitted:false
+  transcriptFormat:'ONE_PHYSICAL_LINE_PER_CARD_BLANK_LINE_BETWEEN',
+  timingStatus:'ONLY_RECOMMENDED_PAUSES_NOT_MEASURED_AUDIO_TIMESTAMPS',
+  sunoStyle:'Solo stand-up spoken word, completely dry a cappella voice, no music, no instruments, no singing, clear natural delivery, independent comedic beats, varied short pauses between cards. No chorus.',
+  noMusicGuaranteedBySuno:false,isLlmFree:true,
+  dataStatus:'EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED',admitted:false
  });
 }
-module.exports=Object.freeze({SCHEMA,toBeat,assembleSolo});
+module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,assembleSolo});
