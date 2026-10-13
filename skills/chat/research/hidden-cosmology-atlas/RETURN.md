@@ -1,3 +1,28 @@
+## CURRENT RETURN — VERSIONED RESEARCH NAMING + WILLIAM BRAMLEY SOURCE INTAKE — 2026-10-13
+
+**Result:** Georg prohibited imprecise naming such as new `golden`, `final`, `ultimate`, `latest` or misleading completion claims. A versioned English policy now governs **new** KFB Research deliverables: stable `authors/<slug>.md` paths with internal `content_version`/source/review status, SemVer `vMAJOR.MINOR.PATCH` for protocols/exports, and exact Git commit SHAs for immutable revisions. Existing historical names are retained as compatibility/recovery links and not bulk-renamed. The old source-refresh experiment is called `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0` going forward; its outcome remains untested.
+
+**New eighth source author: William Bramley.** *The Gods of Eden: A New Look at Human History* is catalogued as 1989 Dahlin Family Press first edition, and the user-linked https://archive.org/details/godsofeden0000will is the 1993 Avon edition, **access-restricted**. `authors/william-bramley.md` v0.1.0 captures book/source identity, Bramley's `Custodial society` and `Brotherhood of the Snake` as passage-level research targets, chapter leads and conditional edges to Icke, Metzger, Liszt/Farrell. This is a source-intake seed, **not** a full original edition read or an independently source-certified worldview.
+
+**Mutable source task:** [RQ-011 / GitHub Issue #396](https://github.com/georg-doc/kayfabizarro/issues/396) was created and re-found through issue search, left open. Existing Issue #395 remains current. The shared backlog now contains eleven questions; Issues own status and receipt, not duplicated Markdown checklist state.
+
+**GitHub source-of-record:** `georg-doc/kayfabizarro`; branch `research/hidden-cosmology-atlas-2026-10-13`; existing Draft PR #394. Source and SSOT milestone HEAD before this Return: `50f2edfaf834bba5cba3e4e9b37bc4ffa9c31872`. After this update, verify the exact branch head and affected files; that later SHA is the current head.
+
+**Changed files in this slice (7 including this Return):**
+1. NEW `skills/chat/research/hidden-cosmology-atlas/NAMING_AND_VERSIONING_POLICY_v1.0.0.md`.
+2. NEW `skills/chat/research/hidden-cosmology-atlas/authors/william-bramley.md`.
+3. UPDATED `skills/chat/research/hidden-cosmology-atlas/authors/README.md` (eighth author and metadata policy).
+4. NEW `skills/chat/research/hidden-cosmology-atlas/NOTEBOOKLM_WORLDVIEW_RESEARCH_PROMPT_v1.0.0.md` (eight author concise English scope, 2,658 characters).
+5. UPDATED `skills/chat/research/hidden-cosmology-atlas/RESEARCH_BACKLOG_R1_2026-10-13.md` (RQ-011 Issue #396, 11 tasks).
+6. UPDATED `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md`.
+7. UPDATED `skills/chat/research/hidden-cosmology-atlas/RETURN.md` (this checkpoint).
+
+**Verification / limitations:** WorldCat/Open Library first edition and the Internet Archive item's Avon 1993 catalog were inspected. The Archive item has restricted access and no complete edition chapter-by-chapter reading or primary page-specific quote QA occurred. The new William Bramley author page is anchored in bibliographic/source leads, not invented full text. Every GitHub write was followed by exact branch head and target file fetch. No NotebookLM imported GitHub Web URL/same-source refresh was run, no public KFB Site/Cloudflare/Pages/GPT Site, no author-performance implementation, no original book uploaded, no research autonomy, no merge or Live. The original Google Docs and seven previous author/source research materials remain preserved.
+
+**ONE NEXT GATE — `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0`:** carry out a single in-NotebookLM GitHub Markdown Web-source content/refresh test and document actual provider behavior. Separately continue Bramley's open `RQ-011` primary passage intake as source work.
+
+---
+
 ## CURRENT RETURN — GITHUB MARKDOWN AUTHOR MASTERS / NOTEBOOKLM WEB SOURCE TRIAL — 2026-10-13
 
 **Outcome:** The user selected GitHub Markdown to replace repetitive manual Google Docs author-master updates. The **existing** research owner is retained: `georg-doc/kayfabizarro`, `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394, open first Issue #395 (RQ-001). This is a source-archive + authoring contract and seed-file migration, NOT a new Site or live NotebookLM integration.
