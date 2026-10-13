@@ -1,0 +1,287 @@
+{
+  "schema": "kfb.triplets.source-span-pilot.fixtures/0.1",
+  "date": "2026-10-13",
+  "status": "SOURCE_PINNED_EDITORIAL_CANDIDATES_NOT_HUMAN_ACCEPTED",
+  "decks": [
+    {
+      "deckId": "wrinkle_rumble",
+      "path": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+      "blob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+    },
+    {
+      "deckId": "1001_kayfabe_nights",
+      "path": "media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json",
+      "blob": "c5b6719d6a0612f227615d9917bbfbb45563f45d"
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "path": "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+      "blob": "84c2e72cd73b597e467008452af8a3d4e9dfe00b"
+    }
+  ],
+  "selectedBeforeAuthoringReport": [
+    "wrinkle_rumble:10",
+    "wrinkle_rumble:31",
+    "ignore_dystopia:2",
+    "ignore_dystopia:4",
+    "1001_kayfabe_nights:12"
+  ],
+  "triplets": [
+    {
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 10,
+      "operatorId": "NEGATED_EXPECTATION",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "surface": [
+        {
+          "field": "lore",
+          "quote": "The war didn't start over land or ideology"
+        },
+        {
+          "glue": ", but over "
+        },
+        {
+          "field": "lore",
+          "quote": "a snickerdoodle"
+        },
+        {
+          "glue": "."
+        }
+      ],
+      "proof": {
+        "subjectEvidence": "The war",
+        "predicateClaim": "didn't start over",
+        "reframeEvidence": "a snickerdoodle",
+        "interpretationBefore": "war over land or ideology",
+        "interpretationAfter": "war over snickerdoodle",
+        "changedStake": "grand war origin becomes small cookie dispute"
+      }
+    },
+    {
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 31,
+      "operatorId": "SAFETY_CAUSAL_IRONY",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "surface": [
+        {
+          "field": "power",
+          "quote": "They are 'safe' now"
+        },
+        {
+          "glue": " because "
+        },
+        {
+          "field": "lore",
+          "quote": "the doors are locked from the outside"
+        },
+        {
+          "glue": "."
+        }
+      ],
+      "proof": {
+        "subjectEvidence": "They are 'safe' now",
+        "predicateClaim": "because",
+        "reframeEvidence": "the doors are locked from the outside",
+        "interpretationBefore": "safety as protection",
+        "interpretationAfter": "safety as captivity",
+        "changedStake": "loss of freedom"
+      }
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "cardNumber": 2,
+      "operatorId": "SOURCE_CONTRAST",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "surface": [
+        {
+          "field": "lore",
+          "quote": "The fear"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "tracks"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "the coverage, not the actual events"
+        },
+        {
+          "glue": "."
+        }
+      ],
+      "proof": {
+        "subjectEvidence": "The fear",
+        "predicateClaim": "tracks",
+        "reframeEvidence": "the coverage, not the actual events",
+        "interpretationBefore": "events cause fear",
+        "interpretationAfter": "coverage sustains fear",
+        "changedStake": "fear detached from actual events"
+      }
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "cardNumber": 4,
+      "operatorId": "SOURCE_RECLASSIFICATION",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "surface": [
+        {
+          "field": "lore",
+          "quote": "The fear"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "is"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "the renewable product, not the forecast"
+        },
+        {
+          "glue": "."
+        }
+      ],
+      "proof": {
+        "subjectEvidence": "The fear",
+        "predicateClaim": "is",
+        "reframeEvidence": "the renewable product, not the forecast",
+        "interpretationBefore": "fear a forecast",
+        "interpretationAfter": "fear the renewable product",
+        "changedStake": "prediction replaced by product"
+      }
+    },
+    {
+      "deckId": "1001_kayfabe_nights",
+      "cardNumber": 12,
+      "operatorId": "SOURCE_CONTRAST",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "surface": [
+        {
+          "field": "lore",
+          "quote": "She"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "doesn't want"
+        },
+        {
+          "glue": " "
+        },
+        {
+          "field": "lore",
+          "quote": "the Vizier's son; she wants the guy with the blue giant in his corner"
+        },
+        {
+          "glue": "."
+        }
+      ],
+      "proof": {
+        "subjectEvidence": "She",
+        "predicateClaim": "doesn't want",
+        "reframeEvidence": "the Vizier's son; she wants the guy with the blue giant in his corner",
+        "interpretationBefore": "court match",
+        "interpretationAfter": "blue giant alliance",
+        "changedStake": "choice of partner changes political stake"
+      }
+    }
+  ],
+  "bridges": [
+    {
+      "from": {
+        "deckId": "ignore_dystopia",
+        "cardNumber": 2
+      },
+      "to": {
+        "deckId": "ignore_dystopia",
+        "cardNumber": 4
+      },
+      "operatorId": "MISSED_DEADLINE_RENEWED_ALARM",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "before": {
+        "field": "power",
+        "quote": "never arrived"
+      },
+      "after": {
+        "field": "power",
+        "quote": "issue the next at full volume"
+      },
+      "proof": {
+        "beforeState": "never arrived",
+        "trigger": "When one deadline passes",
+        "afterState": "issue the next at full volume",
+        "changedStake": "unfulfilled forecast triggers another announcement"
+      },
+      "pseudoCausal": false,
+      "surface": [
+        {
+          "glue": "It "
+        },
+        {
+          "side": "before",
+          "field": "power",
+          "quote": "never arrived"
+        },
+        {
+          "glue": ", so "
+        },
+        {
+          "side": "after",
+          "field": "power",
+          "quote": "issue the next at full volume"
+        },
+        {
+          "glue": "."
+        }
+      ]
+    }
+  ],
+  "failClosed": [
+    {
+      "kind": "NO_TRIPLET",
+      "deckId": "1001_kayfabe_nights",
+      "cardNumber": 11,
+      "reason": "NO_CURATED_SEMANTIC_RECIPE"
+    },
+    {
+      "kind": "NO_EDGE",
+      "from": "wrinkle_rumble:31",
+      "to": "1001_kayfabe_nights:12",
+      "reason": "NO_CURATED_COMPATIBLE_EDGE"
+    }
+  ],
+  "frozenNegative": {
+    "sourceCards": [
+      5,
+      6,
+      7
+    ],
+    "deckId": "1001_kayfabe_nights",
+    "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_1001_KAYFABE_NIGHTS_5_6_7_FRIZZLEBOB_TRIPLETS_SUNO_R1_2026-10-13.md",
+    "blob": "4d813bfd5aadf57c80552afb4960473c0558b23e",
+    "status": "HUMAN_FAIL_QUARANTINED",
+    "previousStructuralChecks": "17/17 NOT CONTENT PASS",
+    "semanticTripletsAccepted": 0,
+    "bridgesAccepted": 0,
+    "doNotGenerateReplacements": true
+  },
+  "audioSite": {
+    "currentImporter": "wrinkle_rumble",
+    "otherDecksSupported": false,
+    "activePreview": "audio-site-preview-r3-card-11-tune",
+    "doNotMutate": true
+  }
+}
