@@ -211,4 +211,36 @@ function assembleSolo(entries,opts={}){
   dataStatus:'EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED',admitted:false
  });
 }
-module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,toFullSourceBeat,assembleSolo});
+/* Split an entire deck into honest consecutive chapters; never truncate or drop a Card.
+ * Each chapter is independently performable and has its own intro and Stay Fluffy outro.
+ * A physically separated beat remains one line, not a guessed WAV segment.
+ */
+function splitSoloParts(entries,opts={}){
+ requireTrue(Array.isArray(entries)&&entries.length,'AT_LEAST_ONE_BEAT_REQUIRED');
+ const limit=Number(opts.maxChars??MAX_SCRIPT_CHARS);
+ requireTrue(Number.isInteger(limit)&&limit>=200,'BAD_CHARACTER_LIMIT');
+ const chapters=[];let current=[];
+ const partOpts={intro:opts.intro,maxChars:limit,order:'source'};
+ function emit(){if(current.length){chapters.push(assembleSolo(current,partOpts));current=[];}}
+ for(const item of entries){
+  try{assembleSolo([...current,item],partOpts);current.push(item);}
+  catch(error){
+   if(error.message!=='SCRIPT_OVER_CHARACTER_LIMIT_SPLIT_INTO_EXPLICIT_PARTS')throw error;
+   requireTrue(current.length>0,'ONE_CARD_EXCEEDS_CHAPTER_LIMIT');
+   emit();
+   assembleSolo([item],partOpts);
+   current.push(item);
+  }
+ }
+ emit();
+ const expected=entries.map(x=>x.id);
+ const actual=chapters.flatMap(x=>x.beatRefs.map(y=>y.beatId));
+ requireTrue(JSON.stringify(expected)===JSON.stringify(actual),'SPLIT_LOST_OR_REORDERED_BEATS');
+ return Object.freeze({schema:SCHEMA,kind:'FULL_DECK_SOLO_CHAPTERS_CANDIDATE',
+  chapters,chapterCount:chapters.length,totalCards:entries.length,cardBeatIds:actual,
+  omittedBeats:[],maxChars:limit,bridgesUsed:0,soundbed:'NONE',
+  timingStatus:'CUE_BOUNDARIES_ONLY_TIMING_NOT_MEASURED',
+  admitted:false});
+}
+
+module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,toFullSourceBeat,assembleSolo,splitSoloParts});
