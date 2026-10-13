@@ -107,6 +107,67 @@ function toBeat(entry,opts={}){
   admitted:false,productionStatus:'EDITORIAL_CANDIDATE_NOT_AUDIO_RENDERED'
  });
 }
+/* Verbatim-heavy fallback: full original Card information, no compulsory final joke.
+ * Deliberately NOT a validated semantic Triplet or a Title+Power+Lore quality PASS.
+ * Title is spoken once; POWER and LORE are each spoken completely, under a matched opener.
+ */
+function toFullSourceBeat(card,meta,opts={}){
+ requireTrue(meta&&meta.deckId&&Number.isInteger(meta.cardNumber)&&
+  typeof meta.sourceRevision==='string'&&/^[0-9a-f]{40}$/.test(meta.sourceRevision),
+  'PINNED_SOURCE_CARD_ID_REQUIRED');
+ requireTrue(card?.cardNumber===meta.cardNumber,'CARD_ID_MISMATCH');
+ for(const field of ['cardName','power','lore']){
+  requireTrue(typeof card[field]==='string'&&card[field].trim()&&
+   !/[\r\n]/.test(card[field]),'COMPLETE_SOURCE_FIELD_REQUIRED:'+field);
+ }
+ const openerMode=opts.openerMode??'HEARD_OF';
+ requireTrue(OPENERS[openerMode],'UNKNOWN_OPENER_MODE');
+ // Subject/title source proof plus a non-semantic probe text; opener syntax is curated.
+ const core={cardName:card.cardName,text:card.cardName+'.',
+  pieces:[{kind:'source',field:'cardName',verbatim:card.cardName,start:0,end:card.cardName.length}]};
+ const opener=openerMode==='DIRECT'
+  ?{openerText:card.cardName+'.',openerKind:'SOURCE_ONLY',performerFiction:false}
+  :renderBeat({...core,text:card.cardName+' is here.'},openerMode,opts);
+ const opening=openerMode==='DIRECT'?card.cardName+'.':opener.openerText;
+ const text=opening+' '+card.power+' '+card.lore;
+ requireTrue(!/[\r\n]/.test(text),'ONE_CARD_ONE_LINE');
+ const rate=Number(opts.rate??0.93);
+ const pauseBeforeMs=Number(opts.pauseBeforeMs??300);
+ const pauseAfterMs=Number(opts.pauseAfterMs??900);
+ requireTrue([rate,pauseBeforeMs,pauseAfterMs].every(Number.isFinite)&&
+  rate>=0.5&&rate<=1.5&&pauseBeforeMs>=0&&pauseAfterMs>=0,'INVALID_DELIVERY_TIMING');
+ const total=['cardName','power','lore'].reduce((sum,field)=>sum+tokenize(card[field]).length,0);
+ const fields=Object.fromEntries(['cardName','power','lore'].map(field=>[field,{
+  originalTokens:tokenize(card[field]).length,referencedTokens:tokenize(card[field]).length,pct:100
+ }]));
+ return Object.freeze({
+  kind:'STANDALONE_CARD_BEAT_CANDIDATE',
+  beatType:'ORIGINAL_CARD_FULL_RECITAL_NOT_PROVEN_SEMANTIC_TRIPLET',
+  id:meta.deckId+':'+meta.cardNumber+'@'+meta.sourceRevision,
+  deckId:meta.deckId,cardNumber:meta.cardNumber,
+  originalCardName:card.cardName,cardSourceRevision:meta.sourceRevision,
+  text,coreTriplet:null,openerMode,
+  openerText:opening,openerKind:opener.openerKind,
+  performerFiction:opener.performerFiction,extraPunchlineAdded:false,
+  originalFields:['cardName','power','lore'],
+  sourcePieces:['cardName','power','lore'].map(field=>({
+   kind:'source',field,verbatim:card[field],start:0,end:card[field].length,
+   cardRef:{deckId:meta.deckId,cardNumber:meta.cardNumber,
+    sourceRevision:meta.sourceRevision}})),
+  sourceCoverage:{kind:'EXACT_ORIGINAL_TOKEN_COVERAGE',fields,originalTokens:total,
+   referencedOriginalTokens:total,contentCoveragePct:100,
+   semanticInformationCoveragePct:null,
+   caution:'100% word retention proves faithful copy, NOT an engaging semantic Triplet.'},
+  startCue:'beat:'+meta.deckId+':'+meta.cardNumber+':start',
+  endCue:'beat:'+meta.deckId+':'+meta.cardNumber+':end',
+  optionalBridgeAfter:null,
+  delivery:Object.freeze({tone:opts.tone??'deadpan',
+   pauseBeforeMs,pauseAfterMs,rate,
+   emphasis:opts.emphasis??'let original lore land; additional punchline not required'}),
+  admitted:false,productionStatus:'EDITORIAL_CANDIDATE_SOURCE_RECITAL_NO_AUDIO'
+ });
+}
+
 function assembleSolo(entries,opts={}){
  requireTrue(Array.isArray(entries)&&entries.length>0,'AT_LEAST_ONE_BEAT_REQUIRED');
  const items=entries.map(x=>x.kind==='STANDALONE_CARD_BEAT_CANDIDATE'?x:toBeat(x,opts));
@@ -150,4 +211,4 @@ function assembleSolo(entries,opts={}){
   dataStatus:'EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED',admitted:false
  });
 }
-module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,assembleSolo});
+module.exports=Object.freeze({SCHEMA,OPENERS,sourceCoverage,toBeat,toFullSourceBeat,assembleSolo});
