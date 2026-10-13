@@ -1,5 +1,26 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · R1 EXECUTED SOURCE-SPAN DETERMINISTIC TRIPLET PILOT
+
+**Outcome:** a **real deterministic source-cut-up CJS generator** in the existing Voice PR #379, not just a brief, with exact source Card field substring/offset mapping, restricted glue, typed semantic operator and proof slots, state-anchored Bridge operator, `NO_TRIPLET`/`NO_EDGE`, complete-deck planning and stable seeded candidate selection. It produces **candidate outputs only** and neither calls a model nor touches Audio runtime. No new Site/Plugin Creator release.
+
+**Created/changed:**
+- `tools/deterministic_triplet_pilot_r1.cjs` (exact-current source blob `7cb25020d9ef14c54dda7ebfc859caa014d55d3d`);
+- `data/KFB_TRIPLETS_SPAN_OPERATOR_PILOT_R1_FIXTURES_2026-10-13.json` (blob `f6ef0f8bfee9425d1ad827fe77895d92d895f71d`);
+- `tools/test_deterministic_triplet_pilot_r1.cjs` (blob `91d7060a8a423f6a95dc6d23aeb61f57b28c1bf6`, Node regression harness syntactically parsed, full Node execution not performed here);
+- `KFB_TRIPLETS_DETERMINISTIC_SPAN_OPERATOR_PILOT_R1_TEST_REPORT_2026-10-13.md` (test evidence, blob `56d0b938142c4c9ec7d6cfdea76129b842887d48`);
+- current `START_HERE.md`, `RETURN.md` and additive Performance Changelog refreshed.
+
+**Exact original source corpora:** Wrinkle Rumble **48**, 1001 Nights **60**, IGNORE DYSTOPIA **56**; three source blobs pinned in fixture. Actual emitted five candidates: Wrinkle #10 (snickerdoodle war) and #31 (safety / doors outside), Dystopia #2 (fear tracks coverage) and #4 (fear as product), Nights #12 (princess choosing blue giant ally). All are **EDITORIAL_CANDIDATE**, not accepted. One Dystopia #2→4 Bridge "It never arrived, so issue the next at full volume." editorial/source-pinned with prior/next source effects, but no human/independent creative acceptance. NO_TRIPLET Nights #11, NO_EDGE Wrinkle #31→Nights #12. Nights deck request produces a 60/60 scope **plan** rather than silent 3/60. No bulk Deck lyrics generated.
+
+**Measured test:** source/field offset, candidate reproducibility, Bridge, negative rejected source and fail-closed checks **35/35 PASS** in V8 using exact GitHub-retrieved module, source JSON and fixture. First wider run **20/22** was fixed at smallest interface seam (nested `from/to` Card reference vs flat `fromCard/toCard`) with one bounded code correction. Source-excerpt token count **56/59 = 94.92%** across five candidate utterances (does not include Bridge; different method from earlier ≥3-gram postmortem). These scores do not certify genuine semantic art/comedy. Original frozen 1001 Nights rejected #5→6→7 candidate remains **HUMAN_FAIL** and unchanged. **Independent critic and Georg KEEP/TUNE/CUT outstanding.**
+
+**Protected:** Existing private `kfb-triplets` plugin still v0.1.0, **not** patched/published; Audio PR #365 Site v9 remains Wrinkle-only 48/50/3×50, current Audio r3 Card11 preview unchanged; no GPT Site, Suno song/TTS, card Billboard in-world, World integration, Cloudflare Stage, merge or Live.
+
+**One next gate:** `KFB_TRIPLETS_PILOT_R1_INDEPENDENT_SEMANTIC_CRITIC_AND_HUMAN_REVIEW` for the five rendered candidate sentences plus the one supported Dystopia Bridge. Independent reviewer must check whether semantics exceed title/Power/Lore synopsis and whether Bridge is actually comic/causal; Georg adjudicates KEEP/TUNE/CUT. Only after source+creative gate decide in-place private plugin v0.1.1 update, broader curated library and subsequent Source-linked authoring Studio, and separately receiving Audio multi-deck generalization.
+
+---
+
 ## 2026-10-13 · CARD-VERBATIM FIRST / DETERMINISTIC GRAMMAR / STUDIO DIRECTION
 
 Georg refined the goal: source-preserving **modular one-Card stand-up beats**, short credible or intentionally pseudo-causal humorous Bridges and an editable **1/2/3/4/page/whole-deck performance** chain, deployable as Suno script or ChatterBox NPC game turn with Card-on-Billboard synchronization. Aim for routine LLM-free generation, with optional normal Web Chat/agent source research **before admission**, no repeated Work for content. Full script default includes optional Fluffhead welcome and mandatory final spoken `Stay Fluffy!` for Card performances.
