@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Insel-Zweige FAIL, Server neu
+- V-205 FAIL: Knubbel-Bandenenden an den Insel-Abzweigungen, Strecken-Look Regress gegenüber J17/Ring. Fix mit C4c-Nase und gleichem J17-Profil, Abnahme nur Bildpaar gleiche Kamera. Steuerung hatte die Knubbel bei der Bildprüfung übersehen.
+- 5192 war nach App-Neustart aus (Watchdog-Tab weg); neuer Watchdog-Tab gestartet.
+
 ## 2026-10-13 · V-202 erste Spielszene geliefert
 - Hinter ?islands=1: Ring → PondLand (Witch + Clown) → Forest (Lorekeeper + Goth Girl) → Ring, Triplets aus dem Pool (#305/#310), Plain-Blasen (V-204), Suno je Insel, Räder auf der Fahrbahn + Kontaktflecken (V-203), Props geerdet. Abnahmefahrt PASS 59–60 fps, open-edges 0/0, Parity PASS. Steuerung geprüft: lesbar, läuft; bekannt: Lorekeeper und Goth Girl stehen zu dicht bzw. überlappen, Tür an der PondLand-Bank blockiert. Wartet auf Georgs Daumen.
 

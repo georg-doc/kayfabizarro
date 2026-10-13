@@ -2331,6 +2331,20 @@
    "applies": "ab V-202"
   },
   {
+   "id": "V-205",
+   "date": "2026-10-13",
+   "area": "Strecke",
+   "verdict": "FAIL",
+   "text": "Insel-Zweige der ersten Spielszene (V-202): Knubbel-Bandenenden frei in der Luft an der Abzweigung („bizarr und planlos“) und Strecken-Look als Regress gegenüber Ring/J17. Soll: Zweige bekommen exakt dasselbe J17-Profil, dieselbe Skin und dieselben Markierungen wie der abgenommene Ring; Abzweigungen schließen mit der vorhandenen C4c-Nase/Gore statt mit freien Köpfen; Bandenenden nur dort, wo sie in Boden oder Insel laufen. Abnahme nur mit Bildpaar „Ring/J17 | Zweig“ aus gleicher Kamera, von der Steuerung geprüft. Beleg: docs/critic/lab-track/2026-10-13_georg-live/island_branch_blob_ends_FAIL.png.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Bildpaar J17 | Zweig",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Steuerung hat die Knubbel bei der Prüfung übersehen; Regress gegenüber J17.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2392,7 +2406,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:42",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:52",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
