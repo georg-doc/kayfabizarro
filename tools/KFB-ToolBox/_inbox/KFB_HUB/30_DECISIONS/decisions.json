@@ -2345,6 +2345,20 @@
    "applies": "sofort"
   },
   {
+   "id": "V-206",
+   "date": "2026-10-13",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Fertig vor Vorlage, Übernahme statt Nachbau: (1) Georg bekommt nur fertige, gegen die Referenz geprüfte Stände, keine Zwischenstände und keine „Serviervorschläge“. (2) „Vorlage nutzen“ heißt denselben Code-Pfad aufrufen (gleiche Funktion, gleiches Modul), niemals „ähnlich nachbauen“; ein zweiter Code-Weg für dasselbe Element ist ein FAIL. (3) Strecke: Alle Strecken (Ring, Ausfahrten, Insel-Zweige, künftige Stücke) laufen durch genau einen J17-Pfad; vor weiteren Inseln wird der Baukasten fertig gemacht: Stückliste, jedes Stück durch denselben Pfad gerendert, Bildpaar J17 | Stück je Stück, von der Steuerung geprüft. (4) Die Steuerung prüft jede Lieferung gegen die Referenz, bevor sie Georg erreicht, und lässt bei Abweichung nichts durch.",
+   "values": {},
+   "owner": "alle Sitzungen + Steuerung",
+   "check": "Bildpaare je Stück",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Wiederholte Regresse durch Nachbau „nach Vorlage“ und halbfertige Lieferungen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2406,7 +2420,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:52",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:55",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

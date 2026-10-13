@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Fertig vor Vorlage
+- V-206: nur fertige, gegen Referenz geprüfte Stände an Georg; Vorlage = derselbe Code-Pfad, nie Nachbau; ein J17-Pfad für alle Strecken; Track-Baukasten wird vor weiteren Inseln fertig gemacht (Stückliste, Bildpaar je Stück); Steuerung lässt Abweichungen nicht durch.
+
 ## 2026-10-13 · Insel-Zweige FAIL, Server neu
 - V-205 FAIL: Knubbel-Bandenenden an den Insel-Abzweigungen, Strecken-Look Regress gegenüber J17/Ring. Fix mit C4c-Nase und gleichem J17-Profil, Abnahme nur Bildpaar gleiche Kamera. Steuerung hatte die Knubbel bei der Bildprüfung übersehen.
 - 5192 war nach App-Neustart aus (Watchdog-Tab weg); neuer Watchdog-Tab gestartet.
