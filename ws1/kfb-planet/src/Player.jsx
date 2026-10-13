@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { useHostKeys, PRIO, ACTION_KEYS } from './hostKeys'
 import { useEffect, useMemo, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useRapier } from '@react-three/rapier'
@@ -67,6 +68,8 @@ export default function Player() {
   const flying = useGame((s) => s.flying)
   const buildFocus = useGame((s) => s.buildFocus)
   const assisting = useGame((s) => s.assisting)
+  const dialogOpen = useGame((s) => !!s.dialog)
+  const controllerOn = mode === 'play' && !flying && !assisting && !dialogOpen
   const [, getKeys] = useKeyboardControls()
   const t = useRef({ flyStart: 0, upLerp: new THREE.Vector3(0, 1, 0), wasBuild: false })
   const v = useMemo(() => ({ a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3(), m: new THREE.Matrix4(), q: new THREE.Quaternion(), zero: new THREE.Vector3() }), [])
@@ -78,13 +81,12 @@ export default function Player() {
   const jumpWas = useRef(false)
 
   // Tasten: F = abheben/landen, R = zurück zum Start
-  useEffect(() => {
-    const onKey = (e) => {
+  useHostKeys((e) => {
       const s = useGame.getState()
       if (s.mode !== 'play' || s.dialog || !ecctrl.current) return
       const body = ecctrl.current.body
       if (!body) return
-      if (e.code === 'KeyF') {
+      if (e.code === ACTION_KEYS.fly) {
         if (!s.flying) {
           const up = nearestUp(body.translation())
           body.setLinvel({ x: up.x * 9, y: up.y * 9, z: up.z * 9 }, true)
@@ -92,13 +94,10 @@ export default function Player() {
           s.setFlying(true)
         } else s.setFlying(false)
       }
-      if (e.code === 'KeyR') {
+      if (e.code === ACTION_KEYS.reset) {
         body.setTranslation(start, true); body.setLinvel({ x: 0, y: 0, z: 0 }, true); s.setFlying(false)
       }
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [start])
+  }, PRIO.player)
 
   useEffect(() => { cam.current?.dollyTo(flying ? 12 : 7.5, true) }, [flying])
 
@@ -227,7 +226,7 @@ export default function Player() {
       camera.up.lerp(up, 1 - Math.exp(-5 * dt)).normalize()
       cc.setUp(camera.up)
     }
-    window.__kfb = { pos: pos.toArray(), place: adapter.name(pos), flying: s.flying, grounded: h.isOnGround, mode: s.mode, assist: !!assist.current, lastPlat: lastPlat.current?.kind }
+    window.__kfb = { pos: pos.toArray(), place: adapter.name(pos), flying: s.flying, grounded: h.isOnGround, mode: s.mode, ctrl: controllerOn, assist: !!assist.current, lastPlat: lastPlat.current?.kind }
   })
 
   return (
@@ -237,7 +236,7 @@ export default function Player() {
         ref={ecctrl}
         position={startArr}
         enableCustomGravity
-        enable={mode === 'play' && !flying && !assisting}
+        enable={controllerOn}
         capsuleHalfHeight={HALF}
         capsuleRadius={RAD}
         floatHeight={FLOAT}

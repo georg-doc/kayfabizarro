@@ -11,4 +11,4 @@ export function createProbe({ color = '#e0475b', pos = [0, 6, 0] } = {}) {
     dispose() { probeLog.dispose++; geo.dispose(); mat.dispose() },
   }
 }
-if (typeof window !== 'undefined') window.__probeLog = probeLog
+if (typeof window !== 'undefined') window.__kfbProbeLog = probeLog

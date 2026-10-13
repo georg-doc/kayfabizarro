@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { useHostKeys, PRIO, ACTION_KEYS } from './hostKeys'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { TransformControls } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
@@ -102,18 +103,12 @@ export default function Editor() {
   }, [gl, controls])
   const sel = objects.find((o) => o.id === selected)
 
-  useEffect(() => {
-    const onKey = (e) => {
-      const s = useGame.getState(); if (s.mode !== 'build') return
-      if (e.code === 'Delete' || e.code === 'Backspace') s.removeSelected()
-      if (e.code === 'Escape') s.select(null)
-      if (e.code === 'Digit1') s.setGizmo('translate')
-      if (e.code === 'Digit2') s.setGizmo('rotate')
-      if (e.code === 'Digit3') s.setGizmo('scale')
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
+  useHostKeys((e) => {
+    const s = useGame.getState(); if (s.mode !== 'build') return
+    if (ACTION_KEYS.buildDelete.includes(e.code)) s.removeSelected()
+    if (e.code === ACTION_KEYS.buildDeselect) s.select(null)
+    if (ACTION_KEYS.gizmo[e.code]) s.setGizmo(ACTION_KEYS.gizmo[e.code])
+  }, PRIO.editor)
 
   return (
     <>

@@ -1,6 +1,7 @@
 // Monkey-Island-artige Dialoge nach den KFB Freestyle Rules v18-4:
 // Start (3 Karten, Actor wählen) · Quest-Reveal · Zug: würfeln → Karte ausspielen → Intro-Ritual (SHOW/SPIN/SELL) → erzählen → Quest-Würfel setzen
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { useHostKeys, PRIO, ACTION_KEYS } from './hostKeys'
 import { useGame } from './store'
 import { randomCard, pickFragments, CONNECTORS, STORY_MODES, deckColor } from './cards'
 
@@ -22,15 +23,11 @@ export function CardFace({ card, small, label }) {
 }
 
 function Choices({ options, onPick }) {
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.target.tagName === 'INPUT') return
-      const n = parseInt(e.key, 10)
-      if (n >= 1 && n <= Math.min(9, options.length) && !options[n - 1].disabled) { e.preventDefault(); onPick(options[n - 1], n - 1) }
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [options, onPick])
+  useHostKeys((e) => {
+    if (e.target.tagName === 'INPUT') return
+    const n = parseInt(e.key, 10)
+    if (n >= 1 && n <= Math.min(9, options.length) && !options[n - 1].disabled) { e.preventDefault(); onPick(options[n - 1], n - 1) }
+  }, PRIO.choice)
   return (
     <ol className="choices">
       {options.map((o, i) => (
@@ -317,21 +314,18 @@ export default function Dialog() {
   const collection = useGame((s) => s.collection)
   const episode = useGame((s) => s.episode)
 
-  useEffect(() => {
-    const onKey = (e) => {
-      const s = useGame.getState()
-      if (s.mode !== 'play') return
-      if (e.code === 'Escape' && s.dialog && s.dialog.kind !== 'start') { s.setStoryMode(null); s.closeDialog(); return }
-      if (e.code !== 'KeyE' || s.dialog || !s.near) return
-      if (s.near.type === 'card') s.openDialog({ kind: 'card', card: s.near.card })
-      if (s.near.type === 'stage') {
-        if (!s.collection.length && !s.episode) s.showToast('Sammle zuerst Karten für die Bühne')
-        else s.openDialog({ kind: 'stage', id: Date.now() })
-      }
+  useHostKeys((e) => {
+    const s = useGame.getState()
+    if (s.mode !== 'play') return
+    if (e.code === ACTION_KEYS.close && s.dialog && s.dialog.kind !== 'start') { e.preventDefault(); s.setStoryMode(null); s.closeDialog(); return }
+    if (e.code !== ACTION_KEYS.talk || s.dialog || !s.near) return
+    e.preventDefault()
+    if (s.near.type === 'card') s.openDialog({ kind: 'card', card: s.near.card })
+    if (s.near.type === 'stage') {
+      if (!s.collection.length && !s.episode) s.showToast('Sammle zuerst Karten für die Bühne')
+      else s.openDialog({ kind: 'stage', id: Date.now() })
     }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
+  }, PRIO.dialog)
 
   if (mode !== 'play') return null
   return (

@@ -70,3 +70,8 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tline.ritual .name { color: var(--ink); text-transform: none; font-size: 14px; }
 .tline.note { color: var(--muted); font-size: 12px; }
 .row-cards.scroll { max-height: 220px; overflow: auto; }
+
+/* Host-Vertrag R1.2 §4: feste Slots. Blasen werden vom Host per transform gesetzt (kein React-State). */
+#ui-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: 20; overflow: hidden; }
+#ui-choice { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; pointer-events: none; }
+#ui-choice > * { pointer-events: auto; }

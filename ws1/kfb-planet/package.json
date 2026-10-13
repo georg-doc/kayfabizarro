@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test:host": "node test/host.mjs"
+    "test:host": "node test/host.mjs",
+    "test:static": "node test/contract-static.mjs",
+    "test:deps": "node test/deps.mjs",
+    "test:s0": "node test/s0.mjs",
+    "test": "node test/contract-static.mjs && node test/deps.mjs && node test/host.mjs && node test/s0.mjs"
   },
   "keywords": [],
   "author": "",
