@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Modul-Inventur für R3F-Slice
+- replies/MODULE_INVENTORY_R1.md (+ proofs/) nach Georgs BRIEF_MODULE_INVENTORY_R1: Card Viewer (3 Wege, Datenweg geprüft), Clay v10 (HÜLLE, geprüft), Table Diorama (VORLAGE, Karten flach, eigenes three 0.160), Skydome (HÜLLE, geprüft), Env-Host (HÜLLE, besitzt Fog/BG/Licht), Seed World (HÜLLE, geprüft ohne Worker), KayKit-Clips (PASST), LOCO_SET kanonisch FEHLT, Blase V-204 (HÜLLE), chatter-2d nicht nutzen. Single-three- und pdf.js-Versionskonflikte notiert, 6 Fragen an Georg.
+
 ## 2026-10-13 · Sprechblasen Plain
 - V-204 Sprechblasen Plain ohne Outline/Ink, gut lesbar, leichter Schatten ohne zweite Ebene bzw. doppelte Pfeilspitze; ab V-202.
 

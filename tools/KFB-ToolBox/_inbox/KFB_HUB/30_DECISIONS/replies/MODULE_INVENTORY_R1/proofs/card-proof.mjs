@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const LAB = process.env.HOME + '/Dropbox/CLAUDE/KFB Island Worldbuilder Lab';
+const deckId = process.argv[2] || 'forget_utopia', n = +(process.argv[3] || 7);
+const reg = JSON.parse(fs.readFileSync(LAB + '/public/decks/index.json', 'utf8'));
+const grids = JSON.parse(fs.readFileSync(LAB + '/public/vendor/ow/card-grids.json', 'utf8'));
+const d = reg.decks.find(x => x.packId === deckId);
+const data = JSON.parse(fs.readFileSync(LAB + '/public/decks/' + d.data, 'utf8'));
+const cards = Array.isArray(data) ? data : (data.cards || []);
+const c = cards.find(x => (x.cardNumber ?? x.n) === n);
+const page = d.coverOffset + 1 + Math.floor((n - 1) / 4), quad = (n - 1) % 4;
+const g = grids[deckId] ?? null;
+console.log(JSON.stringify({ deckId, n, name: c?.cardName ?? c?.name, regPages: d.pages, cardCount: d.cardCount, jsonCards: cards.length, page, quad, quadName: reg.cardMapping.quadrantOrder[quad], measuredGrid: g, pdf: d.pdf }));
