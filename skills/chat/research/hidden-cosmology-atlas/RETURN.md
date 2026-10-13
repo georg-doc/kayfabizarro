@@ -1,3 +1,29 @@
+## CURRENT RETURN — SEVEN-AUTHOR SOURCE EXPANSION + WORLDVIEW PERFORMANCE PRODUCT PROPOSAL — 2026-10-13
+
+**Status:** Editorial milestone ready / Research still in progress / Product Site not built. Source-grounded worldview-performance proposal.  
+**Owner:** Existing KFB Editorial Research in `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. The future consumer is the existing ChatterBox/Resident Dialogue semantic owner; no new runtime owner is established.  
+**Current GitHub source milestone prior to this Return write:** `b2bd35ea179f101ef69bddc7c28e1bac637f5476`. Read the final branch head after updating Return; record its exact value in Production Control.
+
+**User-approved additions:** **David Icke** joins as seventh core author worldview; The Solari Report Substack joins the **Catherine Austin Fitts** publication sources; **Jesse Michels / American Alchemy** joins as guest/interview and documentary discovery corpus, not an assumed unified host+guest worldview. Preserve all prior six-author research and the original source transcript. Research attribution and full subject coverage remain emic-first; outputs are all English (direct chat alone is German).
+
+**Current authored deliverables (five affected files in this milestone, including this Return):**
+
+1. `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R5_SEVEN_AUTHORS_2026-10-13.md`: concise 2,730-character English seven-author independent source-research prompt, no preset URLs or KFB hexagon UI.
+2. `SOURCE_EXPANSION_SOLARI_ICKE_MICHELS_R1_2026-10-13.md`: actual Solari Substack writings, source-first Icke publication leads, American Alchemy listings and speaker/host distinctions; references and source IDs; topic overlaps are not silently upgraded to direct author agreement.
+3. `WORLDVIEW_PERFORMANCE_SITE_CONCEPT_R1_2026-10-13.md`: proposed KFB Resident + author lens + canonical Card + game situation → long-form in-character comic monologue/stand-up/heckle/dialogue with source provenance accessible outside the scene. Existing Card, ChatterBox, Resident, Audio and memory owners preserved; source isolation and source-fidelity acceptance contract defined; GPT Site only a later proposed authoring bench.
+4. `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md`: current SSOT amended with seven-author scope and separate performance direction, decision IDs HCA-020–024 and a single next gate.
+5. `RETURN.md`: this additive recovery update.
+
+**Source-level proof:** Published Solari Substack essay index (Fitts), Solari's 2015 Breakaway Civilization event listing (Fitts and Farrell separately listed), official David Icke author site/publications, American Alchemy official YouTube channel and published podcast / episode metadata. Complete source passages have **not** been ingested and author statements from interview audio have not been independently transcribed in this milestone.
+
+**Checks and protected state:** after every GitHub write, its commit was checked against the exact branch head and the intended file was fetched. Final five-file readback required after this Return. No KFB Game runtime, Card registry, voice/Audio mixer, Creative Deck, GPT Site, Cloudflare Stage or public KFB Hub route was changed. No NotebookLM runs, performance LLM calls, sample comedy auditions or browser acceptance tests. No merge or Live promotion.
+
+**Open:** independent seven-author corpus, direct source evidence per topic and Card, concrete authentic KFB Clown/Resident and Card donor isolation, current receiving Site/ChatterBox consumer selection, audition of one real source-grounded monologue and response; explicit build authorization needed for any GPT Site or runtime integration.
+
+**ONE NEXT GATE: `WORLDVIEW_PERFORMANCE_R1_SOURCE_AND_RECEIVER_FIT` — locate and isolate one canonical real Card, one actual KFB Resident/Clown, the existing ChatterBox/voice receiver and two author lenses with exact topical sources; author and independently critic one monologue plus player retort, before creating any Site.**
+
+---
+
 ## CURRENT RETURN — SIX-AUTHOR RESEARCH EXPANSION — 2026-10-13
 
 **Product outcome:** Three original core author worldviews expanded to **six**. New primary authors: Jason Reza Jorjani; Joseph P. Farrell; Catherine Austin Fitts. Current R4 NotebookLM prompt is 2,982 characters, English only, without preset source links, Warburg/Gabriel/hexagons or an externally imposed appraisal vocabulary. Retain prior R3 as historical, not the current intake instruction. The six-author scope and two author-specific new research source sets are now anchored in the current Living SSOT.
