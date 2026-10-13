@@ -1,3 +1,36 @@
+## CURRENT RETURN — WORLDVIEW RESEARCH CORE / PRIVATE PLUGIN v0.1.0 — 2026-10-13
+
+**Product outcome:** A real **private skills-only ChatGPT plugin** named **KFB WorldView** v0.1.0 was created successfully (https://chatgpt.com/plugins/plugins_6ace954d03f48191badb64cb68ba6281, plugin ID `plugins_6ace954d03f48191badb64cb68ba6281`, release `pluginrel_6ace954e3eec819188b5ff324c3fe8d1`). Despite the brand, its source research kernel is **project-neutral** and allows use on non-KFB repos/sources; no game application or fake worldview spin. This release provides reusable instructions/skill, **NOT** a new backend, NotebookLM connector, Perplexity access, autonomous scheduled agent or published Site. The Plugin Creator verified release exists and exposed the source files, which were copied into GitHub and read back.
+
+**User correction adopted:** Any Borromean Dice, KFB Cards, Triplets, character, satire or invented performance stage inside the previous author comparison matrix is downstream **fictional KFB application**, not WorldView Research. The old `conflicts/author-cross-matrix_v0.1.0.md` is now explicitly labeled **historical creative exploration**; a **new research-only relation register** `relations/source-relations_v0.1.0.md` treats the current Gemini dossier-derived cross-author comparisons only as editorial research candidates. No invented cross-citation or author agreement is permitted. Real author source passages remain the authority, with no outside belief/speculation grades.
+
+**Mandatory first-stage audit before more research:** For a named author/source and selected topic, consult the **current authorized project's** GitHub dossier/ledger and existing source IDs; inspect existing Google Docs when connected and useful; inspect NotebookLM source inventory **only if a direct authorized action or user-provided exported source list actually makes it available**. A Drive Doc is NOT evidence that its contents have been imported to or synced in NotebookLM. Detect `ALREADY_COVERED` vs missing original quotes, new publications, version gaps and possible speaker confusion. Prompt Perplexity / NotebookLM only for real deeper gaps and newly published source works; avoid repeating completed basic research. A drafted prompt is not an executed deep dive.
+
+**Jesse Michels retained and actually inspected:** Connected Google Drive `KFB Author Dossier: Jesse Michels (American Alchemy)`, 30 paragraphs/~4,345 characters, contains Gemini editorial own-worldview model but no primary source URLs or timecodes. We created `sources/jesse-michels-american-alchemy.md` as interviewer/publisher/source-discovery + own-claim candidate; a guest's interview thesis is not attributed to Michels. Previous `SOURCE_EXPANSION_SOLARI_ICKE_MICHELS_R1_2026-10-13.md` remains the publication metadata donor. Core eight current author records remain; source network includes Jesse independently.
+
+**Repo / owner / branch / PR:** `georg-doc/kayfabizarro`, `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. All KFB source/research changes stayed with existing Editorial Research owner; no common KFB Hub/Cloudflare re-routing.
+
+**Changed GitHub files for this milestone (11 paths):**
+1. NEW `WORLDVIEW_RESEARCH_CORE_v1.0.0.md` — active generic source-only research contract, Gemini meta-admin role, incremental search and plugin QA gate.
+2. NEW `sources/jesse-michels-american-alchemy.md` — publication/host role and source-gapped personal-claim intake.
+3. NEW `relations/source-relations_v0.1.0.md` — non-diegetic source-only comparison graph, with editorial origin marked.
+4. UPDATED `conflicts/author-cross-matrix_v0.1.0.md` — historical application/fantasy-only warning.
+5. NEW `plugin-source/kfb-worldview/plugin.json` — exact actual plugin manifest from created release.
+6. NEW `plugin-source/kfb-worldview/skills/research-worldview/SKILL.md` — actual skill source.
+7. NEW `plugin-source/kfb-worldview/skills/research-worldview/references/outputs.md` — actual output/prompt contract.
+8. NEW `plugin-source/kfb-worldview/README.md` — plugin identity, release and audit/recovery.
+9. UPDATED `authors/README.md` — source research only; Michels and meta-admin/index boundary.
+10. UPDATED `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive HCA-063–068 and single next gate.
+11. UPDATED `RETURN.md` — this recovered milestone.
+
+**Actual checks:** Existing GitHub protocols/current Living/Return, older matrix, prompt and source registry read. Current plugin directory inspected for duplicates; there was no existing `kfb-worldview` personal plugin before creation. Plugin created and current release file list inspected. Three exact released textual source files transferred to current GitHub branch, each exact head and content read back after write. Core, Jesse node, relations, matrix reclassification, index and Living similarly verified. After this Return write fetch exact branch head and all eleven affected paths. Any Site/Production Control mirrors/checkpoints must reflect their actual file save/readback status, not merely intention.
+
+**Not performed:** Real end-to-end plugin run `audit/research/prompt/prepare`; Perplexity search; NotebookLM source-list read/sync/deletion; full primary-source alignment for eight author dossiers or Michels; automatic background agent; Game Cards, Triplets, audio, Site publication, Cloudflare/Public Stage, merge or Live.
+
+**ONE NEXT GATE:** `WORLDVIEW_PLUGIN_SOURCE_AUDIT_v0.1.0` — run the installed plugin once against an existing author/source with known GitHub and Google Drive context, then once in a non-KFB project/topic. Require evidence of no repeated baseline research, selective new-publications Perplexity prompt, correct Michels host/guest disambiguation, accurate NotebookLM access limitation, and **zero creative/performance leakage** before claiming the plugin is operationally proven.
+
+---
+
 ## CURRENT RETURN — EIGHT AUTHOR DOSSIERS + COMPARATIVE RELATION MATRIX v0.1.0 — 2026-10-13
 
 **Bounded product result:** The user-provided Gemini research cleanup/handover was checked against actual Google Drive and existing KFB GitHub owner, then integrated without creating a second research SSOT/branch or unwarranted NotebookLM cleanup. The present deliverable is a **GitHub-maintained eight-author source-derived comparison matrix**, not a fact-certified unified worldview, active NotebookLM crawler, new game runtime, standalone Site or archive deletion.
