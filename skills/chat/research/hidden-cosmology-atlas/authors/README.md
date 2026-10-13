@@ -1,3 +1,28 @@
+## CURRENT AUTHOR CORPUS INDEX — 2026-10-13
+
+**Eight Gemini author Dossiers were discovered and read through the connected Google Drive account**, including the newer Google Docs whose titles contain historical `Updated & Consolidated` wording. These titles are *not* used as KFB status names. All eight had `Epistemic Core`, `Core Mechanics`, `Performance & Triplet Layer` and editorial `Inter-Author Matrix` sections; **zero extracted original source URLs/page/timecodes**. Original Docs were not edited or removed.
+
+| author_id | GitHub file | Latest observed Gemini Doc migration | Corpus state |
+| --- | --- | --- | --- |
+| `kurt-metzger` | [kurt-metzger.md](kurt-metzger.md) | Fuller Markdown transformation of newer independent Gemini Doc | Dossier-derived, source pages pending |
+| `david-icke` | [david-icke.md](david-icke.md) | Fuller Markdown transformation of newer independent Gemini Doc | Dossier-derived, source pages pending |
+| `daniel-liszt` | [daniel-liszt.md](daniel-liszt.md) | Fuller Markdown transformation replacing previous condensed seed | Dossier-derived, source pages pending |
+| `william-bramley` | [william-bramley.md](william-bramley.md) | Fuller Gemini dossier plus preserved prior first-edition/Archive bibliographic source register | Dossier-derived, edition-page verification pending |
+| `joseph-farrell` | [joseph-farrell.md](joseph-farrell.md) | **Condensed** original-Doc intake, after full-import write unavailable | Complete original still retained in Google Drive |
+| `catherine-austin-fitts` | [catherine-austin-fitts.md](catherine-austin-fitts.md) | Fuller Markdown transformation of newer independent Gemini Doc | Dossier-derived, source pages pending |
+| `jason-reza-jorjani` | [jason-reza-jorjani.md](jason-reza-jorjani.md) | **Condensed** original-Doc intake | Complete original still retained in Google Drive |
+| `michael-wann` | [michael-wann.md](michael-wann.md) | **Condensed** original-Doc intake | Complete original still retained in Google Drive |
+
+**Editorial research comparisons:** [Author Conflict & Affinity Matrix v0.1.0](../conflicts/author-cross-matrix_v0.1.0.md) contains eight source-dossier summaries and sixteen editorial relation candidates. `DOC_RELATION` is NOT a certified citation from the real author or proof of an actual conflict/alliance. All originals need source-specific quote/page/timecode intake before source claims are asserted.
+
+**Source cleanup:** User-supplied Gemini note advocates removing duplicate NotebookLM items. **We verified only the Google Drive originals, not the exact NotebookLM source inventory or deletion state.** Do not delete a NotebookLM entry before recording exact source identity and ensuring the replacement is retrievable. The earlier Google Docs remain safe archival source donors.
+
+**Naming/versioning:** [Policy v1.0.0](../NAMING_AND_VERSIONING_POLICY_v1.0.0.md) applies to new files; stable author slugs plus explicit `content_version` and Git commit revision, no new maturity claims through filenames. Historical maturity words may occur in original Google Docs titles and old filenames but should not be reused in new output names.
+
+**Active gate:** `MATRIX_RQ001_PRIMARY_SOURCE_ALIGNMENT`: attach exact original Kurt Metzger source passages and a counterpart from one second author to a single matrix relationship. GitHub Issue [#395](https://github.com/georg-doc/kayfabizarro/issues/395) remains source research owner; NotebookLM GitHub Web-import/update behavior is an independent unverified technical gate.
+
+---
+
 > **CURRENT NAMING + CORPUS UPDATE — 2026-10-13:** [Naming and Versioning Policy v1.0.0](../NAMING_AND_VERSIONING_POLICY_v1.0.0.md) prohibits new unearned maturity labels in artifact names. Stable `authors/<slug>.md` filenames carry explicit `content_version` and `review_status` within the file, with Git commits as exact revisions. **William Bramley** is newly enrolled as the **eighth** principal author, [william-bramley.md](william-bramley.md) (`content_version: 0.1.0`, book/source intake, not a complete source-verified worldview). Its primary source entry is [*The Gods of Eden* (1993 Avon archive item)](https://archive.org/details/godsofeden0000will), whose first edition was published in 1989. Research question [RQ-011 / Issue #396](https://github.com/georg-doc/kayfabizarro/issues/396) covers edition-specific original passages. The list of four below is historical first-migration evidence, **not the current author count**.
 
 ---
