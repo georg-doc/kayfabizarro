@@ -1,3 +1,7 @@
+> **HISTORICAL VERSION — SUPERSEDED ON 2026-10-13.** The current project source of truth is [Living Research Document v0.2](LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md), which establishes **English-only artifacts** (German only in direct chat) and **emic, author-centered worldview research without imposed speculation labels, debunking, filtering or external truth-rating**. Use [NotebookLM Research Prompt R3](NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md). Prior language instructions and source-classification proposals below are preserved as history, **not current guidance**. No source material has been removed.
+
+---
+
 # The Hidden Cosmology Atlas · Living Research Document v0.1
 
 **Stand:** 2026-10-13  
