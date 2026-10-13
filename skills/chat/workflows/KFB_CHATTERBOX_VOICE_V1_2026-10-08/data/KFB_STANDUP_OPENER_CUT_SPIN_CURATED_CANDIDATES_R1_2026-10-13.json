@@ -1,0 +1,315 @@
+{
+  "schema": "kfb.triplets.comedy-opener-curation/0.1",
+  "date": "2026-10-13",
+  "status": "EDITORIAL_TAXONOMY_CANDIDATE_NOT_PLUGIN_UPDATE",
+  "origin": {
+    "type": "USER_SUPPLIED_GROK_DRAFT",
+    "evidenceLevel": "IDEATION_NOT_INDEPENDENT_RESEARCH",
+    "originalTextStoredVerbatim": false
+  },
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 379,
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08"
+  },
+  "sourceRules": {
+    "defaultLanguage": "en",
+    "spokenCardTitle": "EXACT_ORIGINAL",
+    "powerAndLore": "BOTH_REQUIRED_FOR_CARD_TRIPLET_NOT_JUST_SEPARATE_SOURCE_FIELD_PRESENT",
+    "noNewCardFacts": true,
+    "allowFictionOnlyExplicit": true,
+    "standaloneBeatAlwaysWorksWithoutBridge": true,
+    "cardBeat": "ONE_PHYSICAL_LINE_POTENTIALLY_MULTIPLE_SENTENCES",
+    "separator": "ONE_BLANK_LINE",
+    "mayEndOnAuthoredAbsurdity": true,
+    "mandatoryNewPunchline": false,
+    "showSpinSell": "original title + concrete Power mechanism linked to Lore and an optional source-anchored reframe",
+    "musicBed": "NONE_BY_DEFAULT_VOICE_ONLY",
+    "time": "NO_ASSUMED_AUDIO_TIMESTAMPS",
+    "introScope": "ONCE_PER_SET_OPTIONAL_WELCOME_DEAR_FLUFFHEADS",
+    "outro": "Stay Fluffy!",
+    "contentRetentionTarget": "TRACK_ORIGINAL_TOKEN_COVERAGE_AND_SEMANTIC_INFORMATION_SEPARATELY_NOT_CLAIM_90_UNMEASURED"
+  },
+  "existingRuntimeOpeners": [
+    {
+      "id": "DIRECT",
+      "category": "source_present",
+      "prefix": null,
+      "suffix": null,
+      "existingRuntime": true,
+      "requires": [],
+      "fiction": false,
+      "priority": "BASELINE"
+    },
+    {
+      "id": "HEARD_OF",
+      "category": "rhetorical",
+      "prefix": "Ever heard of ",
+      "suffix": "?",
+      "existingRuntime": true,
+      "requires": [],
+      "fiction": false,
+      "priority": "DEFAULT_SAFE"
+    },
+    {
+      "id": "DO_YOU_KNOW",
+      "category": "rhetorical",
+      "prefix": "Do you know ",
+      "suffix": "?",
+      "existingRuntime": true,
+      "requires": [],
+      "fiction": false,
+      "priority": "DEFAULT_SAFE"
+    },
+    {
+      "id": "EVER_TASTED",
+      "category": "sensory_relational",
+      "prefix": "Ever tasted ",
+      "suffix": "?",
+      "existingRuntime": true,
+      "requires": [
+        "FOOD_SOURCE_EVIDENCE"
+      ],
+      "fiction": false,
+      "priority": "SOURCE_CONDITIONAL"
+    },
+    {
+      "id": "I_ONCE_MET",
+      "category": "first_person_story",
+      "prefix": "I once met ",
+      "suffix": ".",
+      "existingRuntime": true,
+      "requires": [
+        "PERSON_SOURCE_CLASS",
+        "APPROVED_REFERENT_PRONOUN",
+        "EXPLICIT_PERFORMER_FICTION_OPT_IN"
+      ],
+      "fiction": true,
+      "priority": "OPT_IN_ONLY"
+    },
+    {
+      "id": "RESTAURANT_ORDERED",
+      "category": "first_person_story",
+      "prefix": "I went to a restaurant and ordered ",
+      "suffix": ".",
+      "existingRuntime": true,
+      "requires": [
+        "FOOD_SOURCE_EVIDENCE",
+        "EXPLICIT_PERFORMER_FICTION_OPT_IN"
+      ],
+      "fiction": true,
+      "priority": "OPT_IN_ONLY"
+    }
+  ],
+  "proposedNotEnabledOpeners": [
+    {
+      "id": "ANYONE_HEARD_OF",
+      "category": "rhetorical",
+      "prefix": "Anyone here heard of ",
+      "suffix": "?",
+      "existingRuntime": false,
+      "requires": [],
+      "fiction": false,
+      "priority": "CANDIDATE_SOURCE_NEUTRAL",
+      "note": "Invitation to listeners; does not assume real audience response."
+    },
+    {
+      "id": "LET_ME_TELL_YOU_ABOUT",
+      "category": "narrator_frame",
+      "prefix": "Let me tell you about ",
+      "suffix": ".",
+      "existingRuntime": false,
+      "requires": [],
+      "fiction": false,
+      "priority": "CANDIDATE_SOURCE_NEUTRAL",
+      "note": "Source title only; no fabricated personal event."
+    },
+    {
+      "id": "QUICK_QUESTION",
+      "category": "rhetorical",
+      "prefix": "Quick question. Ever heard of ",
+      "suffix": "?",
+      "existingRuntime": false,
+      "requires": [],
+      "fiction": false,
+      "priority": "CANDIDATE_SHORTEN_FIRST",
+      "note": "Two short sentences but same physical Card line, avoid duplicating an already long intro."
+    },
+    {
+      "id": "YOU_KNOW_THE_THING_WITH",
+      "category": "persona_observation",
+      "prefix": "You know the thing with ",
+      "suffix": "?",
+      "existingRuntime": false,
+      "requires": [],
+      "fiction": false,
+      "priority": "CANDIDATE_LOW_PRIORITY",
+      "note": "Only if following Card actually supplies a specific mechanism; generic phrasing alone does no comedy."
+    },
+    {
+      "id": "DID_YOU_EVER_TRY",
+      "category": "action_premise",
+      "prefix": "Did you ever try ",
+      "suffix": "?",
+      "existingRuntime": false,
+      "requires": [
+        "CURATED_POWER_ACTION_FRAGMENT",
+        "VERIFIED_GRAMMATICAL_OBJECT",
+        "SPECIFIC_SOURCE_MECHANISM"
+      ],
+      "fiction": false,
+      "priority": "BLOCKED_UNTIL_ACTION_SLOTS_ADMITTED",
+      "note": "Do not insert noun-title blindly after an action verb; only an approved action phrase."
+    },
+    {
+      "id": "WHAT_IF",
+      "category": "conditional_premise",
+      "prefix": "What if ",
+      "suffix": "?",
+      "existingRuntime": false,
+      "requires": [
+        "SOURCED_CONDITION",
+        "SOURCED_CONSEQUENCE",
+        "GRAMMATICAL_RECIPE"
+      ],
+      "fiction": false,
+      "priority": "BLOCKED_UNTIL_CONDITIONAL_RECIPE_ADMITTED",
+      "note": "A new hypothetical with unmentioned powers cannot be auto-derived from title alone."
+    }
+  ],
+  "setLevelDirectorsNotStandaloneBridges": [
+    {
+      "id": "THOUGHT_PAUSE",
+      "kind": "nonverbal_reset",
+      "trigger": "between any independent Card Beats",
+      "requirements": [
+        "actual_audio_clock_for_timestamp"
+      ],
+      "text": null,
+      "render": "pause advisory in metadata, not extra Card line",
+      "isBridge": false
+    },
+    {
+      "id": "ANYWAY",
+      "kind": "topic_reset",
+      "trigger": "new Card without compatible causal edge",
+      "requirements": [
+        "intentionally marked cut"
+      ],
+      "text": "Anyway.",
+      "render": "prefix within next beat or separate non-card cue",
+      "isBridge": false
+    },
+    {
+      "id": "SPEAKING_OF",
+      "kind": "semantic_pivot",
+      "trigger": "prior and next cards share a source-derived named theme",
+      "requirements": [
+        "priorCardRef",
+        "nextCardRef",
+        "verifiedSharedTheme"
+      ],
+      "text": "Speaking of [SOURCED_SHARED_THEME]…",
+      "render": "optional short prefix; never claim cause/cost",
+      "isBridge": false
+    },
+    {
+      "id": "THAT_REMNDS_ME",
+      "kind": "semantic_pivot",
+      "trigger": "current narrator can cite a real earlier Card effect",
+      "requirements": [
+        "priorCardRef",
+        "nextCardRef",
+        "reviewedActualReference"
+      ],
+      "text": "That reminds me of…",
+      "render": "editorial candidate only, does not invent biographical anecdote",
+      "isBridge": false
+    },
+    {
+      "id": "CALLBACK",
+      "kind": "callback",
+      "trigger": "earlier Card detail is explicitly present and eligible",
+      "requirements": [
+        "previousCardId",
+        "verbatimEarlierPhrase",
+        "sourceRefs"
+      ],
+      "text": null,
+      "render": "optional stage cue or sourced short repeat",
+      "isBridge": false
+    },
+    {
+      "id": "ROOM_OBSERVATION",
+      "kind": "live_context",
+      "trigger": "actual provided room observation in live performance",
+      "requirements": [
+        "userSuppliedTrueContext",
+        "speakerPermission",
+        "privacySafety"
+      ],
+      "text": null,
+      "render": "BLOCKED for static source-only Suno full-deck assembly",
+      "isBridge": false
+    }
+  ],
+  "optionalComedyTechniques": [
+    {
+      "id": "SREP",
+      "status": "OPTIONAL_COMPLEX_BEAT",
+      "why": "can expand selected card into multiple story phrases, but must not force invented escalation or payoff; preserve one physical beat line"
+    },
+    {
+      "id": "RULE_OF_THREE",
+      "status": "OPTIONAL_IF_THREE_SOURCED_ELEMENTS",
+      "why": "not permitted to manufacture two ordinary examples to make a third funny"
+    },
+    {
+      "id": "MISDIRECTION",
+      "status": "OPTIONAL_SOURCE_CONTRAST_ONLY",
+      "why": "source Lore itself may already be the twist"
+    },
+    {
+      "id": "ESCALATION",
+      "status": "OPTIONAL_SOURCED_STATE_CHANGE",
+      "why": "a louder voice or generic exaggeration is not a new Card rule"
+    },
+    {
+      "id": "TAGS",
+      "status": "OPTIONAL_CURATED_ONLY",
+      "why": "extra tag jokes only if wholly source-supported and actually funny"
+    },
+    {
+      "id": "ACT_OUT",
+      "status": "DELIVERY_METADATA_ONLY",
+      "why": "performance mannerism, timing, voice acting, not fabricated spoken lore"
+    },
+    {
+      "id": "CALLBACK_BOOKEND",
+      "status": "OPTIONAL_SET_STATE_SOURCE_LINK",
+      "why": "one set can call back to already played real card, but every single beat remains separately usable"
+    },
+    {
+      "id": "EXTRA_PUNCHLINE",
+      "status": "NOT_REQUIRED",
+      "why": "the absurd authored consequence can stand without a final manufactured reveal"
+    }
+  ],
+  "inadmissibleDefaults": [
+    "Raw LLM multi-agent writer creating unrelated new jokes in active performance",
+    "Automatic fiction claiming the actor visited a restaurant or met a character",
+    "Fake crowd response, local venue facts or autobiographical memories",
+    "Random 'Speaking of' without shared source element labelled as causal Bridge",
+    "Obligatory SREP, extra punchlines, Rule of Three or automatic sound effects",
+    "Repeated vague intros on every Card, generic meta commentary as punchline",
+    "Parrot of title, Power and Lore mistakenly marked human-accepted semantic Triplet"
+  ],
+  "testRefs": {
+    "existingRuntimeFile": "tools/assemble_standalone_card_beats_r1.cjs",
+    "existingRuntimeBlob": "41db1d6a9f296a4fe6323894f50e3d6b1ee4a96d",
+    "originalWrinkleDeckBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "negativeGolden": "POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md",
+    "audioReceiver": "Existing KFB Audio PR #365, Wrinkle-only import until generalized"
+  },
+  "nextGate": "EDITORIAL_GROK_OPENERS_R1_SELECT_SAFE_SOURCE_FRAMES_BEFORE_RUNTIME_EXPANSION"
+}
