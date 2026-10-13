@@ -1,6 +1,13 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
 
+## 2026-10-13 · COOKIE SIX-TAKE REAL DRY AUDITION · HUMAN REVIEW OPEN
+Implemented real **dry-only audio audition** of original Wrinkle #10. Exact six matched scripts generated with existing verified source-locked Card compiler and Standalone Assembler: DIRECT/HEARD_OF/EVER_TASTED, each compact **14/28 =50%** original-token coverage and full-source **28/28=100%**. Local eSpeak `en+m3 -s178 -p43` 6 mono MP3s from actual WAVs, no music/FX, plus concatenated **77.740408s** comparison MP3 and measured six segment cue offsets. Comparison SHA256 `2b2682f63f43e81df3b290233f4690a8d4f35282da7fa0e039bb82696e0b76a4`. ZIP archive `KFB_Cookie_Dry_Standalone_AB_R1.zip` 2,064,782B / 16 files CRC PASS, SHA256 `8dafd1c593e00deabcee7e36cc51340c73f1b7e169095607d1eefb93e1e5eaac`, **conversation attachment only** (no files transferred into GitHub or actual Audio Site).
+**GitHub proof:** `data/KFB_COOKIE_DRY_AB_SIX_TEXTS_AND_CLIP_RECEIPTS_R1_2026-10-13.json` exact 6 text/MP3 hashes and durations; `KFB_COOKIE_DRY_AB_SIX_OPENER_SOURCE_VERSIONS_TEST_REPORT_R1_2026-10-13.md` real QA: **37/37 GitHub source vs render metadata tests**, FFprobe and ZIP CRC, sound content not human reviewed. Previous Grok opener candidate pool is separate and NOT runtime-enabled; 6 existing openers unchanged. No Source/ChatterBox semantic canon, plugin v0.1 release, Audio Site, r3 preview, Suno, World, Stage, merge or Live touched.
+**Next one gate:** `GEORG_COOKIE_DRY_AB_OPENERS_AND_COVERAGE_KEEP_TUNE_CUT_R1`. Georg listens to six real voice-only clips and judges KEEP/TUNE/CUT and preferred source retention; no automated comedy PASS.
+---
+
+
 ## 2026-10-13 · STANDALONE CARD BEATS / SOURCE-SAFE IMPROV OPENERS / VOICE ONLY
 
 **New user requirement:** Each single Card is its own closed and rearrangeable stand-up mini-story/beat. A separate inter-Card Bridge is **optional**, never required for basic one-card playback. User-chosen/curated comedy opener patterns (heard-of, do-you-know, food/tasted, person/met, restaurant order) frame the original Card; invented stage settings are clearly `PERFORMER_FICTION` and gated by explicit opt-in and Card category. The original absurd result may be allowed to stand; **no mandatory additional joke/Closure**. In a script, **one physical text line per Card Beat**, then a blank line, giving source-segment cutpoints. Audio must be dry solo voice-only with intended delivery and pauses, but no measured audio timestamp or claim Suno obeys no-music style.
