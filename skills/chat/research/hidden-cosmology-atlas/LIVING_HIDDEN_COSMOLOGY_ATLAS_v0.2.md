@@ -1,3 +1,21 @@
+## CURRENT ADDITIVE DECISION — 2026-10-13 — VERSION NAMING AND WILLIAM BRAMLEY
+
+**User-directed naming policy:** Unambiguous, stable, meaning-based KFB research names; no new `golden`, `final`, `ultimate`, `perfect`, `latest` or similarly unearned completion labels. Binding [`NAMING_AND_VERSIONING_POLICY_v1.0.0.md`](NAMING_AND_VERSIONING_POLICY_v1.0.0.md). Author documents retain stable `authors/<slug>.md` paths for potential NotebookLM inputs and carry separate internal `content_version`, `review_status`, `source_coverage`; Git commit SHA is immutable version proof. Versioned protocols and exports use `vMAJOR.MINOR.PATCH`. Historical titles/paths remain as compatibility references rather than wholesale renamed/broken dependencies. The previously named `GITHUB_MARKDOWN_NOTEBOOKLM_URL_GOLDEN_R1` gate is retained as a historical identifier; all **new** documents name the acceptance question `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0`. This is not an acceptance claim.
+
+**Corpus grows from seven to EIGHT core authors:** Add **William Bramley**, whose book [*The Gods of Eden: A New Look at Human History*](https://archive.org/details/godsofeden0000will) is the source anchor. **1989 first edition** (Dahlin Family Press; WorldCat / Open Library) and **1993 Avon edition** (user-linked Internet Archive item) are separately catalogued; the Archive record is `access-restricted-item: true`, so a complete edition/full passage read is not claimed. Bramley's own `Custodial society` and `Brotherhood of the Snake` vocabulary is an explicit extraction lead from identifiable book-text fragments, not a source-proof of other authors' entity models.
+
+**New stable author file:** [`authors/william-bramley.md`](authors/william-bramley.md), `content_version: 0.1.0`, `review_status: source_intake`, primary book/page passages pending. Contains bibliographic metadata, author's initial nonhuman/institutional subject framing, chapter-title retrieval anchors and distinct *research comparison* leads toward Icke, Metzger, Farrell and Liszt. No fabricated author quotes, full book access, established direct citations or source-certified worldview complete claim.
+
+**Dedicated research gap:** [`RQ-011 / Issue #396`](https://github.com/georg-doc/kayfabizarro/issues/396) is open to extract and align Bramley's original Custodial/Brotherhood explanation chains with precise chapter/edition/page references. Prior RQ-001 Issue #395 remains open, and the current [`RESEARCH_BACKLOG_R1_2026-10-13.md`](RESEARCH_BACKLOG_R1_2026-10-13.md) now holds **eleven** questions with GitHub Issues owning mutable task states.
+
+**New compact eight-author NotebookLM input:** [`NOTEBOOKLM_WORLDVIEW_RESEARCH_PROMPT_v1.0.0.md`](NOTEBOOKLM_WORLDVIEW_RESEARCH_PROMPT_v1.0.0.md), approximately 2,658 English characters; replaces R5 as the **current research request**. R5 and earlier prompt filenames are retained as historical records; their statuses do not silently update. No actual NotebookLM run/import/source refresh is reported.
+
+**Decisions:** `HCA-052: NEUTRAL_VERSIONED_NAMES`, `HCA-053: BRAMLEY_EIGHTH_AUTHOR`, `HCA-054: EDITION_PROVENANCE`, `HCA-055: NOTEBOOKLM_PROMPT_v1.0.0`, `HCA-056: RETAIN_HISTORICAL_IDENTITIES`. These are additive editorial decisions; no new KFB card/dialogue/asset runtime, Site/public Stage or Hub-router change.
+
+**ONE NEXT GATE:** `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_TEST_v1.0.0` — test one current GitHub Markdown author file as an actual NotebookLM URL source, inspect exact text import and observe whether a later authorized same-URL Git commit appears without reimport; if not, record the real refresh/reimport behavior. `RQ-011` is an independent research-source task and does not automatically authorize downloading/reproducing restricted book content.
+
+---
+
 ## CURRENT BINDING AUTHORING OVERRIDE — 2026-10-13 — GITHUB MARKDOWN / NOTEBOOKLM WEB-URL TEST
 
 **Georg's latest explicit editorial workflow decision:** Prefer **GitHub Markdown** as the writable KFB worldview dossier master. Do not create or copy Google Docs on every editorial update. The existing KFB seven-author research owner, existing PR #394, GitHub Issue-backed Research Backlog and source-native emic worldview reconstruction remain unchanged. All project artifacts in English; direct Georg ↔ ChatGPT conversation in German.
