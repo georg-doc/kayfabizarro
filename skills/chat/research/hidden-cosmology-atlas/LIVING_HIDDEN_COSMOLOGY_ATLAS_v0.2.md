@@ -151,11 +151,13 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 ## 11 — Document Register / Status
 
 - **CURRENT / SSOT:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — present source/recovery contract, fully English.
-- **CURRENT / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — concise English-only six-author research prompt (no preset links).\n- **HISTORICAL / NotebookLM:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` — earlier three-author prompt, preserved for recovery.\n- **CURRENT / source discovery:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` — primary works and confirmed interview/citation ties.
+- **CURRENT / NotebookLM INPUT:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R4_SIX_AUTHORS_2026-10-13.md` — concise English-only six-author research prompt (no preset links).
+- **HISTORICAL / NotebookLM:** `NOTEBOOKLM_WORLDVIEW_ACCORDING_TO_R3_2026-10-13.md` — earlier three-author prompt, preserved for recovery.
+- **CURRENT / source discovery:** `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` — primary works and confirmed interview/citation ties.
 - **HISTORICAL:** `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` — prior planning and explicit source inventory; old external labeling method is superseded.
 - **HISTORICAL:** `NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R1_2026-10-13.md`; `NOTEBOOKLM_DEEP_RESEARCH_PROMPT_R2_SHORT_2026-10-13.md`.
 - **DESIGN REFERENCE ONLY:** `HEXAGONAL_SEMANTIC_CONSTELLATIONS_R1_2026-10-13.md`, not a primary worldview research filter.
 - **PRIVATE ORIGINAL:** `libfile_2bf3eb4b0e908191a4a8097de5198d45` (full attached transcript, 192,811 bytes). KFB Production Control stores exact text mirrors of important editorial files, not automatically the private transcript.
 - **RETURN:** `RETURN.md` in this directory; final head and verification counts. Exact head from the latest branch/PR must be read after writes.
 
-**ONE NEXT GATE: `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — perform independent source discovery and complete the initial author-faithful Kurt Metzger research dossier with accurate attributable sources, then repeat for Liszt and Wann before cross-author mapping.**
+**ONE NEXT GATE: `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — independently discover and review first-hand work from all six core authors, build six source-faithful worldview dossiers (starting with the archived Metzger interview), and only then conduct cross-author narrative mapping.**
