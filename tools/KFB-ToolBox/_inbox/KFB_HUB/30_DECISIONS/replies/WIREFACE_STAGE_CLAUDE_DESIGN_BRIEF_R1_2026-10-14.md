@@ -60,4 +60,4 @@ Alle rendernden Empfänger hängen ausschließlich am bestehenden **WS1 R3F Modu
 **Next gate:** Claude Design liefert *Quelle einzeln → erste Studio-Komposition 9:16/16:9 → markierter Gesamt-Cut*. Steuerung prüft Quelle und Bildpaare; erst dann Entscheidung, ob diese Richtung für die übrigen Presets übernommen wird. Ohne gestalterisches PASS keine Claude-Code-Umsetzung dieses Designs.
 
 ---
-**GitHub-Handoff-Status:** Design-Plan בלבד; no runtime edit, no browser/Stage evidence. No public route required for this planning slice.
+**GitHub-Handoff-Status:** Design-Plan only; no runtime edit, no browser/Stage evidence. No public route required for this planning slice.
