@@ -1,3 +1,26 @@
+## CURRENT RETURN — GITHUB RESEARCH BACKLOG + TARGETED SOURCE SCOUT PIPELINE — 2026-10-13
+
+**Outcome:** Added a bounded issue-backed KFB research-question queue, a reusable research executor/attribution/Docs/NotebookLM/Issue verification contract, and four English source-gap briefs for **Kurt Metzger, Catherine Austin Fitts, David Icke, Daniel Liszt / Dark Journalist**. No research agent was run by creating this workflow.
+
+**Exact repo / branch / PR:** `georg-doc/kayfabizarro`, `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. **Actual GitHub Issue #395** `[Research] RQ-001 · Metzger institutional cult / media source-bridge` was created and rediscovered by exact repository issue search at https://github.com/georg-doc/kayfabizarro/issues/395 . Last coherent SSOT milestone HEAD before Return update: `d8511815e03bf66489483be9fa4cdcc82d5bc60c`. Following this Return write, inspect exact branch head and all affected files.
+
+**Changed GitHub files in this milestone:**
+1. `RESEARCH_BACKLOG_R1_2026-10-13.md` — additive prioritized 10-question RQ index, Issue #395, scoped acceptance/source-link protocol. GitHub **Issues are mutable task status owner**; Markdown list checkbox state is an initial agenda only.
+2. `AUTONOMOUS_RESEARCH_PIPELINE_CONTRACT_R1_2026-10-13.md` — one-task input/output contract; actual source receipts; no unverified autonomous background agent, Gem/Perplexity API authentication or direct NotebookLM write claims; single authorized Docs writer and independent attribution critic; successful close conditions, timeouts unknown.
+3. `TARGETED_SOURCE_GAP_BRIEFS_R1_2026-10-13.md` — source-first prompts for the four authors and their real primary references, actor/source certainty fidelity and absence of invented connections.
+4. `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive HCA-041–046 decisions, linked Issue and one next gate.
+5. `RETURN.md` — this recovery update.
+
+**Current fit:** In the previous verified Multi-Doc R2 review, Catherine Austin Fitts, David Icke and Daniel Liszt each had a dedicated native Google Doc, but their `Tab 1/2/3` headings were still plain text, not independently native tabs; the Kurt standalone author Doc was unresolved. These documents had no original source URLs in the extracted body; this provenance gap is the reason to fetch individual passages **before** treating any synthesized lens as source-certified. Their content has **not** been rewritten or filtered by this slice.
+
+**Completed verification:** Issue #395 existence and content re-read by repository issue search; three new files and the Living SSOT GitHub branch-head/file readbacks after each write. Final file + head aggregate checks follow this Return write. Site/Production Control private mirrors/checkpoint are recovery snapshots, not a published Worldview Performance Site.
+
+**Not done:** No Perplexity source research execution, Gemini Gem automation, chatbot scheduled task, Gemini-author Docs edit, direct NotebookLM import/sync, cross-service webhook, vector store, performance Golden audition, GPT Site build/browser QA, new runtime, Hub/Cloudflare Stage, merge or Live. Do not infer automation from a Markdown agent prompt.
+
+**One next gate:** `RESEARCH_BACKLOG_RQ001_SOURCE_PACKET` — source-discover real Metzger passages connecting religious-institutional experience and media/social conditioning, with named original speakers/episodes/timestamps and his own stated qualifications; preserve search gaps, attach attributable packet to Issue #395, then authorize a single author-doc editor to integrate accepted sources. The existing `MULTI_DOC_AUTHOR_TABS_AND_SOURCE_ANCHORS_R1` doc migration gate remains a separate necessary step before claiming synced lens acceptance.
+
+---
+
 ## CURRENT RETURN — MULTI-DOC AUTHOR WORLDVIEW NETWORK R2 — 2026-10-13
 
 **Outcome:** The user has selected **one dedicated editable Google Doc per author**, replacing the earlier proposal to keep all authors in one large Doc. A native per-author tab layout will separate ontological core, mechanics/vocabulary, source ledger/cross-author connections and KFB performance/Triplets. The existing combined two-lens `Golden Test 01` remains a comparison fixture, not a second editable author master. Cross-worldview associations are typed, source-linked author/network records; embeddings and gameplay use are **future derived adapters**, not proven runtime products.
