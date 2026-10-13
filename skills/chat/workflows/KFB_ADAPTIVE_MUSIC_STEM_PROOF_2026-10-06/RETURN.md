@@ -1,5 +1,18 @@
 # RETURN · KFB Audio Module Pre-Integration · No World Writes
 
+
+## 2026-10-13 · WORK/WSA SITE FIRST / CLAUDE CODE FACE SECOND · ORDER CORRECTION
+
+**Product order authorized by Georg:** (1) Sites-capable **Work/WSA** completes editing/persisting/reloading KFB Triplets and a continually maintained opener/pivot catalog in existing KFB Audio Voice Acting Site; (2) only after actual Site acceptance and a tested stable downstream packet **Claude Code** integrates the accepted Card Beat+Opener+audio cue and PDF Billboard data into the existing FrankenStein Composer/Wireface scenelet owner (#355). Do not run the previous Wireface-specific Composer WSA brief before Phase 1 and do not create a second Triplet runtime/Site.
+
+**One new binding Phase-1 brief:** `WSA_TRIPLET_OPENER_POOL_SITE_FIRST_THEN_CLAUDE_CODE_2026-10-13.md`. GitHub current Audio owner Draft PR #365, branch `web/kfb-adaptive-music-stem-proof-2026-10-06`; original Cards remain `media/kfb/*.pdf.json`, admitted candidate pools in Voice PR #379. Existing Audio Source 0.6.0/Site v9 has GitHub reload r2+r3 tested (12/12 each, no redeploy) BUT hardcodes Wrinkle 48/50/3×50, restricts import to that Deck, and does not have a persisted multi-deck editorial Opener Pool. New Work task requires **two ordinary post-deploy GitHub content-only changes** (new opener + modified Beat) visible on the SAME Site without any extra Work or Site publish, plus actual QA preserving existing r3, no hallucinated missing Card source, semantic negative Goldens and truthful separate original token coverage. Everyday source data editing must be possible by ordinary Chat/GitHub without further Work, with secure site write only if verified authenticated provider is available.
+
+**What this chat did:** SOURCE INSPECTION + SPECIFICATION/BRIEF PERSISTENCE only. No audio site, opener runtime, native Wireface SDK, Composer Site, browser or audio changes; previous Composer PR #355 head `9cf3e25998d5523b3c1844266ab979b8aea6723b` remains a protected later implementation branch. No human UI gate closed by writing this brief. No new Site URL, Cloudflare Stage, auto-merge or Live.
+
+**Next one gate:** `WSA_EXISTING_AUDIO_SITE_TRIPLET_OPENER_POOL_HOT_RELOAD_MVP_R1`. After Work returns tested source/URL/revisions, Claude Code can be separately authorized using that exact handoff.
+
+---
+
 ## 2026-10-12 · RETURN · AUDIO SITE SELF-SERVICE CARD PERFORMANCES R1
 
 Status: **DEPLOYED_TECHNICAL_GREEN · ROUTINE_CONTENT_PATH_PROVEN · OWNER_RELOAD_AND_LISTEN_OPEN**
