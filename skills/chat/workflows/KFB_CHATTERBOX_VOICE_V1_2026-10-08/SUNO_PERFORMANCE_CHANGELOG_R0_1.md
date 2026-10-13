@@ -1,5 +1,16 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-13 · Deterministic three-deck source-span pilot implemented (R1)
+
+- Implemented actual source-offset-preserving CJS Triplet/Bridge candidate compiler in **existing Voice #379** with explicit approved micro-operators, limited grammar glue, stable seed, whole-deck scope planning and NO_TRIPLET/NO_EDGE.
+- Original input decks: Wrinkle 48, 1001 Nights 60, Dystopia 56. Five source-heavy one-sentence candidate utterances and one Dystopia 2→4 transition, none human approved. Source excerpts 56/59 candidate tokens (94.92%), special measurement not comparable to prior ≥3-gram postmortem.
+- Original 1001 #5–7 rejected text and historical creative FAIL preserved as negative Golden. 35/35 actual V8 source/contract/fail-closed checks PASS after one API fixture Bridge seam fix; repo-native Node test runner written/syntax verified but not run in Node in this chat. No 60-Card composition/Suno or new Audio Site import was fabricated.
+- Evidence: `KFB_TRIPLETS_DETERMINISTIC_SPAN_OPERATOR_PILOT_R1_TEST_REPORT_2026-10-13.md`, actual `tools/deterministic_triplet_pilot_r1.cjs`, pinned `data/KFB_TRIPLETS_SPAN_OPERATOR_PILOT_R1_FIXTURES_2026-10-13.json`, test script.
+- Next one gate **independent semantic critic & Georg creative review**; only then update private plugin v0.1.0 or create Studio, no Site/Cloudflare/World/merge/Live action in this implementation milestone.
+
+---
+
+
 ## 2026-10-13 · Semantic Triplet / Bridge and multi-deck importer failure independently compared
 
 - Georg rejected 1001 Nights plugin candidate: 3 one-sentence summaries do NOT demonstrate semantic Triplets; 2 labelled transitions do NOT demonstrate causal Bridges; 60-card deck was improperly defaulted to 3. Historical 17/17 static checks remain non-creative.
