@@ -1,5 +1,15 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-13 · Standalone Card Beats · source-compatible improv openers / dry voice-only
+
+- Georg refined format: independent, reorderable mini stand-up routine per Card, without mandatory inter-Card Bridge or an added punchline. A source-appropriate improv opener can reference original Card identity; each beat is one physical script line, separated by a blank line.
+- Existing Voice assembler `tools/assemble_standalone_card_beats_r1.cjs` added six typed openers, source-compatible actor/food restrictions, explicit performer-fiction opt-in for "I once met" / restaurant contexts, compact semantic vs full original-source recitation, stable reorder and dry/no-bed intent; a blank line is a cut marker, **not measured audio**. Suno no-instrument prompt cannot guarantee purely dry voice.
+- Actual exact GitHub JS + original source V8 QA **35/35 technical PASS**. Cookie compact uses 14/28=50% original Card word tokens; full-source variant preserves 28/28=100% but is not automatically an acceptable funny semantic Triplet. Two-Card dry, cut-separated script in `data/KFB_STANDALONE_VOICE_ONLY_2_CARD_PREVIEW_R1_2026-10-13.json` (397 characters).
+- Original IGNORE DYSTOPIA has 56 Cards, but #9 The Firehose `power:null` / `lore:null`. Intake is fail closed: 55 source-complete recitation candidates, 1 blocked, 55 partial text preview chapters (27/26/2) under 5000 chars. **Never claim all 56 original Beats are ready** or invent missing Card fields from art prompt.
+- Report `KFB_STANDALONE_VOICE_ONLY_CARD_BEATS_R1_TEST_REPORT_2026-10-13.md` preserves source/quality/audio distinction. No plugin Site/Suno/Audio/World publish or PR promotion. Next gate source-vs-compact voice-only creative comparison.
+
+---
+
 
 ## 2026-10-13 · R1 Card Performance conceptual FAIL supersedes 35/35 technical source pass
 
