@@ -1,3 +1,7 @@
+> **CURRENT NAMING + CORPUS UPDATE — 2026-10-13:** [Naming and Versioning Policy v1.0.0](../NAMING_AND_VERSIONING_POLICY_v1.0.0.md) prohibits new unearned maturity labels in artifact names. Stable `authors/<slug>.md` filenames carry explicit `content_version` and `review_status` within the file, with Git commits as exact revisions. **William Bramley** is newly enrolled as the **eighth** principal author, [william-bramley.md](william-bramley.md) (`content_version: 0.1.0`, book/source intake, not a complete source-verified worldview). Its primary source entry is [*The Gods of Eden* (1993 Avon archive item)](https://archive.org/details/godsofeden0000will), whose first edition was published in 1989. Research question [RQ-011 / Issue #396](https://github.com/georg-doc/kayfabizarro/issues/396) covers edition-specific original passages. The list of four below is historical first-migration evidence, **not the current author count**.
+
+---
+
 # KFB Hidden Cosmology Atlas — Author Markdown Masters
 
 **Date:** 2026-10-13  
