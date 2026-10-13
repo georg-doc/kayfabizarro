@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Game-Design-Briefing für Web-Chat
+- replies/BRIEF_WEBCHAT_GAME_DESIGN_R1.md: Georg klärt im Web-Chat Kern-Loop, Kartenspiel-Verbindung, Kern-Mechaniken (Kulturmechaniken), erste vertikale Scheibe ohne Schwundversion, Testfragen, Weglass-Liste. Ergebnis „KFB Game Design Kern R1“ wird Vorgabe für die Bau-Schritte. V-202 läuft parallel weiter.
+
 ## 2026-10-13 · Kurswechsel vertikale Scheibe
 - V-202: Insel für Insel in voller Qualität statt Breite. Nach S5: erste Spielszene (2–3 vorhandene Inseln an den Ring, NPCs mit Triplet-Sprechblase, Suno je Insel, Original-KayKit-Augen). S6, Editor/Maker, Dungeon, Agenten, Fragenlisten ruhen bis Georg gespielt hat.
 
