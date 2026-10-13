@@ -1,3 +1,11 @@
+## CURRENT CLAUDE CODE PLAN-FIRST ROUTE · 2026-10-13 · THEATRE VOICES + CARD/OPENER MVP
+
+Georg reports original Wireface Theatre **faces and voices excellent**. New bounded plan-first Claude Code handoff: **`CLAUDE_CODE_WIREFACE_THEATRE_CARD_PERFORMANCE_MVP_PLAN_2026-10-13.md`**, same FrankenStein Composer Draft PR #355, branch `planning/frankenstein-composer-gpt-site-2026-10-04`. Claude first identifies original Theatre clip vs actually synthesizable TTS voice, source/rights and license, original vendor source isolation, current optional face driver, one *real source-backed* Cookie #10 Card/Opener/physical Billboard fixture, and React/R3F future adapter compatibility. **No second renderer or premature React rewrite** of current native Three Composer. Audio #365 Site Source 0.7.1/v11 consumer packet technically exists, BUT original card crop/voice rights/human source+audio acceptance pending; no accepted KFB VoiceClips yet. Prior Composer WebGL/GLB/JSON human gate still OPEN. Voice/source owner PR #379 only read-only donor; no new SDK/React/Audio/Composer Site, Cloudflare, merge or Live in this planning checkpoint.
+
+**One next immediate Claude Code gate:** `CLAUDE_CODE_WIREFACE_THEATRE_VOICE_PROVENANCE_AND_ONE_CARD_MVP_PLAN_R1`. Actual Card-performance build remains conditional on `KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1` plus authorized clip/accepted content packet.
+
+---
+
 
 ## NEW OPTIONAL FACE DRIVER MVP SOURCE CHECKPOINT · 2026-10-13
 
