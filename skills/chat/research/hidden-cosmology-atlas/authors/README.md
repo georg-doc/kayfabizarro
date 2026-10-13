@@ -1,3 +1,13 @@
+## CURRENT WORLDVIEW-ONLY RESEARCH BOUNDARY — 2026-10-13
+
+The active research deliverable is **source-based, project-neutral worldview research**. The KFB game/comedy/Triplets/Borromean Dice parts of older Gemini-generated dossiers are **historical downstream creative proposals**, not material eligible for automatic author-source ingestion. See [WorldView Research Core v1.0.0](../WORLDVIEW_RESEARCH_CORE_v1.0.0.md) and the private [KFB WorldView plugin v0.1.0](../plugin-source/kfb-worldview/README.md). The new [source-only relations register](../relations/source-relations_v0.1.0.md) is the active comparison source; the old `conflicts/author-cross-matrix_v0.1.0.md` was explicitly reclassified as historical KFB application exploration.
+
+**Jesse Michels / American Alchemy remains included** as interviewer/publisher/source-discovery node, plus a possible independent author only where his own original speaking/publishing evidence supports it. We verified a current Gemini Google Doc titled `KFB Author Dossier: Jesse Michels (American Alchemy)` but found no original-source URLs or timecodes in its extracted body. This is separately recorded at [`sources/jesse-michels-american-alchemy.md`](../sources/jesse-michels-american-alchemy.md). Eight current dedicated author files **plus the Michels source/host node** does not imply guests' positions are all his.
+
+**Research agent rule:** Inspect existing GitHub and Google Drive content and any *actually accessible* NotebookLM inventory **before** requesting further research. Produce only an additive, source-specific Perplexity/NotebookLM prompt and source receipt. The installed Google Drive connector cannot by itself certify NotebookLM source-list membership or sync. Gemini operates as a research meta-admin, not an independent author-dossier authority. Other non-KFB projects can use the same plugin by resolving their own source owner and avoiding KFB semantics.
+
+---
+
 ## CURRENT AUTHOR CORPUS INDEX — 2026-10-13
 
 **Eight Gemini author Dossiers were discovered and read through the connected Google Drive account**, including the newer Google Docs whose titles contain historical `Updated & Consolidated` wording. These titles are *not* used as KFB status names. All eight had `Epistemic Core`, `Core Mechanics`, `Performance & Triplet Layer` and editorial `Inter-Author Matrix` sections; **zero extracted original source URLs/page/timecodes**. Original Docs were not edited or removed.
