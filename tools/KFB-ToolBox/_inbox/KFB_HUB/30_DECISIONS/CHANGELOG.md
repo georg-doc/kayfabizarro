@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Racetrack-Baukasten für R3F vorgemerkt
+- V-210 (TBD): R3F-Track-Baukasten mit sauberer Physik/Steuerung/Architektur nach dem Karten-Dialog-MVP; Quellen SP13KTRA, KFB-Stunt-Car-Race/_inbox, Rapier, Track Core als Datenmodell; zuerst Spezifikation.
+
 ## 2026-10-14 · Neue Ausrichtung: Karten-Dialog zuerst
 - V-209: Fokus ChatterBox/karten-basierter Dialog mit Wireface (PR #355/#365/#379); kein Racetrack nötig, J17 nur Look-Referenz; Spielrahmen WS1 (R3F); Worldbuilding prozedural + God-Mode, KFB-Landmarks als Eingang; Lab wird Teilelager. Georg: Drift Q/E im Auto vertauscht bzw. kaputt (Regress, nicht mehr gefixt).
 

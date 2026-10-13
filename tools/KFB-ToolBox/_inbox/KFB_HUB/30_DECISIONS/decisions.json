@@ -2401,6 +2401,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-210",
+   "date": "2026-10-14",
+   "area": "Strecke",
+   "verdict": "TBD",
+   "text": "Später (nach Karten-Dialog-MVP und R3F-Rahmen-Vertrag): KFB-Racetrack-Baukasten für React/R3F neu, mit sauberer Physik, Steuerung und Baukasten-Architektur, auf Basis der Lehren aus den Lab-Fails (POSTMORTEM_STEERING_R2, V-205/V-206/V-199/V-209). Quellen: github.com/KilledByAPixel/SP13KTRA, github.com/georg-doc/KFB-Stunt-Car-Race (insb. _inbox: Recherche und Physik), Rapier (Fahrzeug-Controller) und weitere R3F-Demos/Bibliotheken; Track Core (RKIT) als renderer-unabhängiges Datenmodell mit Prüfungen; J17 nur als Look-Referenz. Erst Spezifikation (Agent liest Quellen), Bau danach.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "Spec R1",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Baukasten-Idee bleibt, aber nach dem Fokus Karten-Dialog; Lehren nicht verlieren.",
+   "applies": "nach Karten-Dialog-MVP"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2462,7 +2476,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:62",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:65",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
