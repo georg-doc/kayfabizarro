@@ -7,7 +7,7 @@
 
 const SCHEMA = 'kfb.triplets.source-span-pilot/0.1';
 const ALLOWED_GLUE = new Set(['', ' ', ', ', '; ', '. ', '.',
-  ' because ', ', but ', ', so ', 'It ', ' and ', ' not ', ' but ']);
+  ' because ', ', but ', ', but over ', ', so ', 'It ', ' and ', ' not ', ' but ']);
 const OPERATORS = Object.freeze({
   SOURCE_CONTRAST: 'Explicit source contrast alters the stake',
   SAFETY_CAUSAL_IRONY: 'Source assertion recast by a sourced confinement effect',
