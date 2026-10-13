@@ -1,3 +1,17 @@
+## 2026-10-13 · CLAUDE CODE PLAN-FIRST · WIREFACE THEATRE VOICES + CARD PERFORMANCE
+
+**Georg original demo feedback:** Wireface Theatre **faces and voices both excellent**, but this accepts only the developer's original demo, NOT legal reuse of its recording files nor arbitrary-text reuse of its voice model. Official product page proves demo `face.clip('sarah')` + `face.say` recorded clip playback; voice provider/IDs, sample rights, programmable TTS reuse UNKNOWN until actual SDK/source evidence.
+
+**Plan-first handoff saved:** `CLAUDE_CODE_WIREFACE_THEATRE_CARD_PERFORMANCE_MVP_PLAN_2026-10-13.md`, on the same existing Composer Draft PR #355. Claude Code performs initial SDK/Theatre voice provenance-license/source isolation and a source-backed ONE original Wrinkle Cookie #10 Card + opener + Billboard + Wireface performance implementation **PLAN** first, with no second Site, renderer, audio/context owner or current React migration. React Three Fiber future consumption is possible through an adapter in ONE R3F Canvas, but existing Composer remains imperative Three.js 0.160.
+
+**Latest confirmed downstream donor:** Audio PR #365 Site Source **0.7.1 / v11**, technical hot-reload PASS and tested `kfb.voice.card-performance-packet/1` preview consumer contract; Voice PR #379 GitHub is editorial owner, active candidate revision; VoiceClips **0** and exact Card crop pending. Preview candidate ≠ accepted. Human DRY/D voice, source and opener verdict remains `KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1`; no Card consumer production build/claim until a legally permitted, intelligible, actual clip and accepted beat/opener/crop exists. Existing Composer v4 authenticated WebGL/GLB/JSON gate remains open.
+
+**Actual actions in this Chat:** planning brief GitHub created and exact branch/file read back; no SDK imported, no React code, no KFB browser/browser voice test or new Site deployed; prior source-level 17/17 adapter checks remain historical, not rerun. PR remains Draft; no Cloudflare, Live, merge.
+
+**One immediate new executor gate:** `CLAUDE_CODE_WIREFACE_THEATRE_VOICE_PROVENANCE_AND_ONE_CARD_MVP_PLAN_R1` (PLAN FIRST, not authorization to bypass the existing Audio user gate).
+
+---
+
 
 ## 2026-10-13 · OPTIONAL WIREFACE FACE DRIVER MVP · ADAPTER ONLY, SITE INTEGRATION OPEN
 
