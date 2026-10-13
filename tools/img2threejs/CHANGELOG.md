@@ -295,3 +295,10 @@ The Stage mirror uses exact tested runtime files except two import-path-only ada
 **NEXT:** `WORLD_MONUMENTS01_CLAUDE_CODE_WSA_INTAKE_R1` — ingest/inventory the exact accepted session cut, source-isolate actual objects, reuse existing owners/modules, then implement one bounded receiving monument/world slice. Tune-later refinements remain non-blocking unless proven outcome-critical.
 
 [Full Return](docs/WORLD_MONUMENTS01_CLAUDE_DESIGN_PASS_RETURN_2026-10-12.md)
+
+
+## 2026-10-14 · Atomium chat sketch rejected as production baseline / modular stage-scenery handover
+
+**GEORG FEEDBACK:** In-chat Atomium canvas study “sieht noch sehr roh aus”. It was a non-WebGL interactive form sketch, not original KFB design, 3D asset or accepted donor. **NO VISUAL PASS**. Original WORLD MONUMENTS01 Claude Design session cut retains its separate **PASS · TUNE LATER**.
+
+**PLANNING CHECKPOINT:** Claude Code/WSA source-isolation-first brief and bounded modular Atomium stage/scenery proposal: [Handover](docs/WORLD_MONUMENTS01_ATOMIUM_SCENERY_CLAUDE_CODE_WSA_HANDOVER_2026-10-14.md). No replacement style, new runtime owner, R5 build, Site/Stage publication or Live promotion. Next gate: `ATOMIUM_SOURCE_ISOLATION_TO_MODULAR_PREVIEW_R1`.
