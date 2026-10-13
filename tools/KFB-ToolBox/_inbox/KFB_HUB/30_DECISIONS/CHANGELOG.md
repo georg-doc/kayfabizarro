@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Host-Vertrag R3F R1.1
+- V-211: replies/KFB_HOST_CONTRACT_R3F_R1.md ins Register; Nachträge für R1.2: fiber exakt pinnen, Sprechblasen als Host-DOM-Slot (chatterbox-core 1:1).
+
 ## 2026-10-14 · Arbeitsregeln R1
 - KFB_WORKING_RULES_R1.md: 26 bewährte Regeln aus zwei Wochen Lab (Vorlage zuerst, derselbe Code-Pfad, Bildpaare, Parity/Replay, blinder Kritiker, externes Audit, unabhängige Gegenprüfung, Register + Changelog, GitHub SSOT, Post-Mortems, glanceable Fragen, Single-three, Cache, Speicherwächter, Dialog nur aus Pool, plain Blasen). In START_HERE verlinkt, für WS1 und Strang B.
 

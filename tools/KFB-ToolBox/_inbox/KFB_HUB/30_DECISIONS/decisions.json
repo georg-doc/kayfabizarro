@@ -2415,6 +2415,20 @@
    "applies": "nach Karten-Dialog-MVP"
   },
   {
+   "id": "V-211",
+   "date": "2026-10-14",
+   "area": "Technik",
+   "verdict": "RULE",
+   "text": "Host-Vertrag R3F R1.1 (replies/KFB_HOST_CONTRACT_R3F_R1.md, Autor Web-Chat, WS1 übernimmt 1:1): ein Spielrahmen R3F, Versionen exakt gepinnt (three 0.186.1, rapier3d-compat 0.19.2, @react-three/rapier 2.2.0, ecctrl 2.0.2, pdf.js 4.7.76 …), npm ci only, ein Besitzer je globalem Zustand, Modulvertrag create/update/dispose über ModuleHost, React-Fallen, Text nur aus KEEP-Pool, Vertragstest + deterministische Tests + Endabnahme auf Georgs Mac. Zwei Nachträge der Steuerung für R1.2: (a) @react-three/fiber exakt pinnen (steht als „9.8“); (b) Sprechblasen als Host-DOM-Slot (#ui-bubbles, projizierte Ankerpunkte) zulassen, damit chatterbox-core 1:1 übernommen wird statt als 3D-Blase nachgebaut (V-206).",
+   "values": {},
+   "owner": "Web-Chat + WS1",
+   "check": "test:host PASS auf Georgs Mac",
+   "source": "Steuerung 14.10.",
+   "supersedes": null,
+   "why": "Ein Rahmen mit festen Versionen und Modulvertrag verhindert die Nahtstellen-Fails.",
+   "applies": "ab WS1-Start"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2476,7 +2490,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:65",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:71",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
