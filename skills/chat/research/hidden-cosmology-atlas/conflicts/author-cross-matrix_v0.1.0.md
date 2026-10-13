@@ -1,3 +1,7 @@
+> **RECLASSIFIED — 2026-10-13: HISTORICAL KFB APPLICATION EXPLORATION, NOT WORLDVIEW RESEARCH SOURCE.** This previously authored comparative sheet contains fictional KFB scenes, Triplet suggestions and an incidental Borromean Dice reference. Those are **narrative/application concepts only** and must NOT be used to infer a real author's ontology, argument or original-source relationship. Research-only source comparisons now live at [WorldView Source Relations v0.1.0](../relations/source-relations_v0.1.0.md), under the [WorldView Research Core v1.0.0](../WORLDVIEW_RESEARCH_CORE_v1.0.0.md). This historical file is preserved to protect linked review history; no creative KFB material is part of the plugin research contract.
+
+---
+
 # KFB Hidden Cosmology Atlas — Author Conflict and Affinity Matrix
 
 **matrix_version:** `0.1.0`  
