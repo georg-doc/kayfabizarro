@@ -1,3 +1,19 @@
+## CURRENT SOURCE MIRROR VALIDATION — 2026-10-13 — KURT METZGER GOOGLE DOC IN-PLACE WRITE
+
+**User-authorized bounded integration test:** A pre-existing Google Doc `KFB Author Dossier: Kurt Metzger (Updated & Consolidated)` was read through the connected Google Drive API and updated **in place** with one additive, metadata-only probe `WV_DOC_SYNC_20261013_01`, using native tab `t.0`, a guarded `requiredRevisionId`, one append-only Google Docs `batchUpdate` insert and direct readback.
+
+**Real Google Docs proof:** Initial revision `AHj4eMQzCFfnYVqXebrL26vdDSowj1bn7pc3gtV8f8cHFMP4CjxJkTu12dYWd6NTJKDYZztL3dBfWJptKX7xviAloCJGdSEOH5OpuwZG-fE` → returned and re-read revision `AHj4eMQJkl6it1BAvoqOiYVznOBN3rai52YvlI1qLYvvY7YGNDPpMqU15A1ai7gQL1XewqihGtqCBvU4A4MMOcFZXs3mOK1HUt4uCsxBNE0`; extracted 4,069 → 4,863 text characters, 30 → 38 paragraphs. Unique marker found **once** and previous text preserved. The document remains the original Gemini-derived donor plus a technical note; **this is not a full source-only GitHub Markdown mirror nor a source-certified author revision**. The existing GitHub Kurt source at comparison was `authors/kurt-metzger.md`, blob `19163e6f13f117dd0dbfdce2e67d1bbb23addfbc`, dossier `content_version: 0.2.0`, unchanged by the probe.
+
+**Exact test contract and Claude Code handoff:** [`GOOGLE_DOCS_MIRROR_SYNC_PILOT_v0.1.0.md`](GOOGLE_DOCS_MIRROR_SYNC_PILOT_v0.1.0.md). It documents exact target, read/write revisions, safe scoped patch and fallback, notebook source identity check, one-way GitHub→Drive mirror semantics, no simultaneous Gemini authoring, no second editable SSOT and unrelated project portability.
+
+**NotebookLM remains UNVERIFIED:** A Google Drive Docs connector cannot read or sync NotebookLM sources. No NotebookLM source-list read, manual sync, imported marker verification, source deletion or refresh was performed. The next observer must locate the exact **Drive-linked** Google Doc source inside the intended notebook, synchronize if present and search `WV_DOC_SYNC_20261013_01`. If missing or outdated, report the actual status instead of assuming it updated.
+
+**Decisions HCA-069–071:** `GOOGLE_DOCS_SCOPED_PATCH_VERIFIED`; `GITHUB_SSOT_DRIVE_MIRROR_ONE_WAY_ONLY`; `NOTEBOOKLM_SYNC_SEPARATE_OBSERVATION_REQUIRED`. No public Stage/Site, runtime change, merge or Live.
+
+**ONE NEXT GATE:** `NOTEBOOKLM_DRIVE_SOURCE_MARKER_CHECK_v0.1.0` — actual NotebookLM source/marker witness before claiming end-to-end GitHub → Drive → NotebookLM synchronization. The previous generic plugin topic-audit gate remains open but is not a substitute for this document-chain test.
+
+---
+
 ## CURRENT BINDING RESEARCH BOUNDARY — 2026-10-13 — WORLDVIEW SOURCE CORE AND PLUGIN v0.1.0
 
 **Georg's correction is binding:** The Hidden Cosmology Atlas is an **original-source worldview research project first**, with no Borromean Dice, game/Card mechanic, KFB twist, spin, Triplets, fictional performance or satire entering original author/source records or comparative relations. Earlier matrix content that did so was **drift**. It has been retained only as [historical KFB application exploration](conflicts/author-cross-matrix_v0.1.0.md), with an explicit non-research warning. The new actual research-comparison owner is [`relations/source-relations_v0.1.0.md`](relations/source-relations_v0.1.0.md). Its author-to-author links are dossier-editorial comparison candidates, not original cited mutual agreements. No evidence-less KFB universe/game concept is allowed into the source layer.
