@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Wireface Stage · modulares Claude-Design-Briefing R1
+- `replies/WIREFACE_STAGE_CLAUDE_DESIGN_BRIEF_R1_2026-10-14.md` angelegt: 3 Bühnen-Presets (Studio/Card Zone/Insel), 9:16/16:9, Storyboard 6 Shots im KEEP-Triplet-Takt, V-204-Plain-Bubble, source-isolated bestehende Donors, responsive Authoring-Oberfläche, Claude-Code-Modulkarte und vier optionale Designentscheidungen. Nur Design-Planung, keine Geometrie/Runtime/Stage; nächster Schritt Claude Design Source-Isolation + Studio-Visual-Cut. Keine neue V-Entscheidung.
+
 ## 2026-10-14 · Onboarding Wireface-Bühne für WSA
 - replies/ONBOARDING_WSA_WIREFACE_STAGE_DESIGN_R1.md: Web-Chat plant Claude-Design-Briefing für die Wireface-Bühne (ein Modul, vier Einsätze: Insel/Kartenzone, Promo-Clip-Authoring mit seek(t), Demo-Sim, React-Spiel), auf Basis V-209/V-211, Modul-Inventur, Style/Motion Guide, Atomium (#397), Natur-Intake (#393). Natur-Intake und Atomium als Bestand im Hintergrund; Claude-Code-Ausführung erst nach Fokus Karten-Dialog.
 
