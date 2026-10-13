@@ -1,5 +1,14 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+
+## 2026-10-13 · Actual six dry single-card Cookie vocal A/B (no Suno)
+- Six actual eSpeak MP3s and one 77.74s voice-only montage, 3 source-safe original runtime openers × 2 source-retention variants, same synthetic voice/delivery, no added music/soundbed.
+- Real MP3 SHA/duration/cue and complete text rows pinned in `data/KFB_COOKIE_DRY_AB_SIX_TEXTS_AND_CLIP_RECEIPTS_R1_2026-10-13.json`. User ZIP only in originating conversation, not GitHub/Site.
+- Exact current GitHub compiler/source comparison **37/37** checks, actual MP3 FFprobe/ZIP CRC PASS; 50% compact vs 100% full original word-position coverage. No person/music/Suno/provider quality PASS.
+- Previous Grok opener research catalog remains pending editorial approval; no new runtime opener activated or Site/source feed change.
+- Next gate: Georg voice-only Cookie six-take KEEP/TUNE/CUT. No Live/merge.
+---
+
 ## 2026-10-13 · Standalone Card Beats · source-compatible improv openers / dry voice-only
 
 - Georg refined format: independent, reorderable mini stand-up routine per Card, without mandatory inter-Card Bridge or an added punchline. A source-appropriate improv opener can reference original Card identity; each beat is one physical script line, separated by a blank line.
