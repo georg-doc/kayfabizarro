@@ -100,6 +100,11 @@ export default function Player() {
   }, PRIO.player)
 
   useEffect(() => { cam.current?.dollyTo(flying ? 12 : 7.5, true) }, [flying])
+  // Debug (Vertrag §6: nur window.__kfb*): Figur versetzen, z. B. für Bildpaare aus fester Position
+  useEffect(() => {
+    window.__kfbTeleport = (x, y, z) => { const b = ecctrl.current?.body; if (!b) return false; b.setTranslation({ x, y, z }, true); b.setLinvel({ x: 0, y: 0, z: 0 }, true); return true }
+    return () => { delete window.__kfbTeleport }
+  }, [])
 
   // Bauen: Figur einfrieren, Kamera auf Planet
   useEffect(() => {

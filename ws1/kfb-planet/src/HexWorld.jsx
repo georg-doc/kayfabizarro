@@ -8,8 +8,10 @@ import { TOWER } from './scene'
 import { playerState } from './world'
 import { useGame } from './store'
 import { deckColor } from './cards'
+import { useCardTexture } from './useCardTexture'
+import { CARD_AR } from './cardImage'
 
-// --- Querformat-Kartenbild (Platzhalter, bis die echten Kartenbilder aus dem Card Viewer kommen) ---
+// --- Querformat-Platzhalter: steht, bis cardImage() das echte Kartenbild liefert (S1), und bleibt bei Fehler stehen ---
 function wrap(g, text, x, y, maxW, lh, maxLines) {
   const words = text.split(/\s+/); let line = '', n = 0
   for (const w of words) {
@@ -79,7 +81,7 @@ function Clouds() {
 }
 
 function CardSlab({ piece, open }) {
-  const tex = useMemo(() => cardTextureLandscape(piece.card, open), [piece.card, open])
+  const tex = useCardTexture(piece.card, { open, placeholder: cardTextureLandscape })
   const ref = useRef(), born = useRef(open ? performance.now() : 0)
   useFrame(() => {
     if (!ref.current || !born.current) return
@@ -89,7 +91,7 @@ function CardSlab({ piece, open }) {
   })
   return (
     <mesh ref={ref} position={[piece.pos.x, piece.pos.y + 0.06, piece.pos.z]} rotation={[-Math.PI / 2, 0, 0]}>
-      <planeGeometry args={[3.7, 2.6]} />
+      <planeGeometry args={[3.7, 3.7 / CARD_AR]} />
       <meshStandardMaterial map={tex} roughness={0.85} emissive="#ffffff" emissiveMap={tex} emissiveIntensity={0.15} side={THREE.DoubleSide} />
     </mesh>
   )

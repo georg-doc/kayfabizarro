@@ -7,17 +7,18 @@ import { playerState } from './world'
 import { adapter, SCENE } from './scene'
 import { RigidBody } from '@react-three/rapier'
 import { STORY_MODES } from './cards'
-import { cardTexture } from './CardBeings'
+import { cardTextureLandscape } from './HexWorld'
+import { useCardTexture } from './useCardTexture'
+import { CARD_AR } from './cardImage'
 
-const texCache = new Map()
-const texFor = (card) => { if (!texCache.has(card.idx)) texCache.set(card.idx, cardTexture(card)); return texCache.get(card.idx) }
+const SW = 1.9, SH = SW / CARD_AR // Aufsteller im Querformat der Karte
 const _v = new THREE.Vector3(), _q = new THREE.Quaternion(), _m = new THREE.Matrix4()
 
 // Karte, die sich zur Kamera dreht (nur um die lokale Hochachse) und beim Erscheinen aufrichtet
 function Standee({ card, position, scale = 1, born }) {
   const ref = useRef()
   const { camera } = useThree()
-  const tex = useMemo(() => texFor(card), [card])
+  const tex = useCardTexture(card, { placeholder: cardTextureLandscape })
   useFrame(() => {
     const g = ref.current; if (!g) return
     const t = Math.min(1, (performance.now() - born) / 650)
@@ -31,7 +32,7 @@ function Standee({ card, position, scale = 1, born }) {
   return (
     <group position={position}>
       <group ref={ref}>
-        <mesh position={[0, 0.88, 0]} castShadow><planeGeometry args={[1.25, 1.75]} /><meshStandardMaterial map={tex} side={THREE.DoubleSide} roughness={0.85} emissive="#ffffff" emissiveMap={tex} emissiveIntensity={0.12} /></mesh>
+        <mesh position={[0, SH / 2 + 0.05, 0]} castShadow><planeGeometry args={[SW, SH]} /><meshStandardMaterial map={tex} side={THREE.DoubleSide} roughness={0.85} emissive="#ffffff" emissiveMap={tex} emissiveIntensity={0.12} /></mesh>
         <mesh position={[0, 0.02, 0]}><boxGeometry args={[0.9, 0.06, 0.35]} /><meshStandardMaterial color="#3a2d5c" roughness={0.9} /></mesh>
       </group>
     </group>
@@ -75,7 +76,6 @@ function ActorBadge() {
   const actor = useGame((s) => s.actor)
   const ref = useRef()
   const { camera } = useThree()
-  const tex = useMemo(() => (actor ? texFor(actor) : null), [actor])
   useFrame((st) => {
     const g = ref.current; if (!g || !actor) return
     const up = adapter.up(playerState.pos, _v)
@@ -89,7 +89,12 @@ function ActorBadge() {
   if (!actor) return null
   return (
     <group ref={ref}>
-      <mesh><planeGeometry args={[0.42, 0.59]} /><meshBasicMaterial map={tex} side={THREE.DoubleSide} toneMapped={false} /></mesh>
+      <ActorCard card={actor} />
     </group>
   )
+}
+
+function ActorCard({ card }) {
+  const tex = useCardTexture(card, { placeholder: cardTextureLandscape })
+  return <mesh><planeGeometry args={[0.72, 0.72 / CARD_AR]} /><meshBasicMaterial map={tex} side={THREE.DoubleSide} toneMapped={false} /></mesh>
 }

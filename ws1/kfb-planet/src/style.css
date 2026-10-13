@@ -75,3 +75,7 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 #ui-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: 20; overflow: hidden; }
 #ui-choice { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; pointer-events: none; }
 #ui-choice > * { pointer-events: auto; }
+
+/* S1 · echtes Kartenbild (fit, ohne Tusche) */
+.card-art { display: block; background: #fbf3e2; border-radius: 4px; margin: 0 auto 6px; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+.chip .card-art { display: inline-block; vertical-align: middle; margin: 0 6px 0 0; border-radius: 2px; }

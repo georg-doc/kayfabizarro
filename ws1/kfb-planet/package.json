@@ -10,7 +10,8 @@
     "test:static": "node test/contract-static.mjs",
     "test:deps": "node test/deps.mjs",
     "test:s0": "node test/s0.mjs",
-    "test": "node test/contract-static.mjs && node test/deps.mjs && node test/host.mjs && node test/s0.mjs"
+    "test": "node test/contract-static.mjs && node test/deps.mjs && node test/host.mjs && node test/s0.mjs && node test/s1.mjs",
+    "test:s1": "node test/s1.mjs"
   },
   "keywords": [],
   "author": "",

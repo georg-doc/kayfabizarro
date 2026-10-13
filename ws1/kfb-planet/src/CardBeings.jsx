@@ -5,6 +5,9 @@ import { useFrame } from '@react-three/fiber'
 import { useGame } from './store'
 import { PLANETS, placeOnSurface, rng, playerState, stagePosition } from './world'
 import { deckColor } from './cards'
+import { useCardTexture } from './useCardTexture'
+import { CARD_AR } from './cardImage'
+import { cardTextureLandscape } from './HexWorld'
 
 function wrap(ctx, text, x, y, maxW, lh, maxLines) {
   const words = text.split(/\s+/); let line = ''; let n = 0
@@ -35,13 +38,13 @@ export function cardTexture(card) {
 
 function Being({ card, transform, i }) {
   const ref = useRef()
-  const tex = useMemo(() => cardTexture(card), [card])
+  const tex = useCardTexture(card, { placeholder: cardTextureLandscape })
   useFrame((st) => { if (ref.current) { ref.current.rotation.y = st.clock.elapsedTime * 0.6 + i; ref.current.position.y = 1.4 + Math.sin(st.clock.elapsedTime * 1.6 + i) * 0.12 } })
   return (
     <group position={transform.position} quaternion={transform.quaternion}>
       <mesh position={[0, 0.15, 0]}><cylinderGeometry args={[0.45, 0.55, 0.3, 20]} /><meshStandardMaterial color={deckColor(card.deck.id)} roughness={0.9} /></mesh>
       <group ref={ref}>
-        <mesh castShadow><planeGeometry args={[1.25, 1.75]} /><meshStandardMaterial map={tex} side={THREE.DoubleSide} roughness={0.85} emissive="#ffffff" emissiveIntensity={0.08} emissiveMap={tex} /></mesh>
+        <mesh castShadow><planeGeometry args={[1.9, 1.9 / CARD_AR]} /><meshStandardMaterial map={tex} side={THREE.DoubleSide} roughness={0.85} emissive="#ffffff" emissiveIntensity={0.08} emissiveMap={tex} /></mesh>
       </group>
     </group>
   )

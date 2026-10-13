@@ -5,7 +5,7 @@ await page.waitForFunction(() => window.__kfb && window.__kfbStore, null, { time
 const a = await page.evaluate(() => ({
   bubbles: document.querySelectorAll('#ui-bubbles').length,
   choice: document.querySelectorAll('#ui-choice').length,
-  canvases: document.querySelectorAll('canvas').length,
+  canvases: document.querySelectorAll('canvas[data-engine]').length, // nur WebGL-Canvas von R3F; Kartenbilder im DOM sind 2D-Canvas
   keys: window.__kfbHostKeys(),
   dialog: !!window.__kfbStore.getState().dialog,
   ctrl: window.__kfb.ctrl,

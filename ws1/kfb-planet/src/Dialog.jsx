@@ -1,6 +1,7 @@
 // Monkey-Island-artige Dialoge nach den KFB Freestyle Rules v18-4:
 // Start (3 Karten, Actor wählen) · Quest-Reveal · Zug: würfeln → Karte ausspielen → Intro-Ritual (SHOW/SPIN/SELL) → erzählen → Quest-Würfel setzen
 import { useEffect, useMemo, useRef, useState } from 'react'
+import CardArt from './CardArt'
 import { useHostKeys, PRIO, ACTION_KEYS } from './hostKeys'
 import { useGame } from './store'
 import { randomCard, pickFragments, CONNECTORS, STORY_MODES, deckColor } from './cards'
@@ -12,6 +13,7 @@ export function CardFace({ card, small, label }) {
   return (
     <div className={'card' + (small ? ' small' : '')} style={{ '--deck': deckColor(card.deck.id) }}>
       {label && <div className="card-label">{label}</div>}
+      <CardArt card={card} width={small ? 150 : 300} />
       <div className="card-name">{card.name}</div>
       {!small && <>
         <div className="card-power">{card.power}</div>

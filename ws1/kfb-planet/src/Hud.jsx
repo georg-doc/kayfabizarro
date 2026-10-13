@@ -1,4 +1,5 @@
 import { useGame } from './store'
+import CardArt from './CardArt'
 import { deckColor } from './cards'
 import { SCENE } from './scene'
 
@@ -59,7 +60,7 @@ export default function Hud() {
       {s.mode === 'play' && (
         <div className="panel hand">
           <div className="actor-k">Sammlung {s.collection.length}</div>
-          {s.collection.length === 0 ? <div className="hint">leer: Karten finden</div> : s.collection.slice(0, 10).map((c) => <div key={c.idx} className="chip" style={{ '--deck': deckColor(c.deck.id) }}>{c.name}</div>)}
+          {s.collection.length === 0 ? <div className="hint">leer: Karten finden</div> : s.collection.slice(0, 10).map((c) => <div key={c.idx} className="chip" style={{ '--deck': deckColor(c.deck.id) }}><CardArt card={c} width={56} />{c.name}</div>)}
           {s.collection.length > 10 && <div className="hint">+{s.collection.length - 10} weitere</div>}
           <div className="actor-k" style={{ marginTop: 6 }}>Ablagestapel {s.discard.length}</div>
           {s.memories.length > 0 && <div className="actor-k">Erinnerungen {s.memories.length}</div>}
