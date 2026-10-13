@@ -2303,6 +2303,20 @@
    "applies": "ab jetzt"
   },
   {
+   "id": "V-203",
+   "date": "2026-10-13",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Auto und alle Props brauchen sauberen Bodenkontakt und Schatten: Räder bzw. Fußflächen sitzen auf der Fahrbahn bzw. dem Boden, kein Schweben, kein abgelöster Schatten (Peter-Panning), Kontaktschatten unter Auto und Props. Teil der Abnahme der ersten Spielszene (V-202). Beleg: docs/critic/lab-track/2026-10-13_georg-live/car_ground_contact.png.",
+   "values": {},
+   "owner": "Lab",
+   "check": "Nahbild Rad/Boden + Prop/Boden",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Schwebendes Auto mit versetztem Schatten wirkt billig.",
+   "applies": "in V-202"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2364,7 +2378,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:26",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:35",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

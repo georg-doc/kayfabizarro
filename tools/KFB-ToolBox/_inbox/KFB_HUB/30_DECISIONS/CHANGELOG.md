@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Bodenkontakt
+- V-203 Auto und Props: sauberer Bodenkontakt und Schatten (kein Schweben, kein abgelöster Schatten), Teil der V-202-Abnahme.
+
 ## 2026-10-13 · V-202 Vorlage freigegeben
 - Erste Spielszene: StreakByte-Demo-Inseln 07 PondLand (A) und 08 Forest (B), je ein Zweig per verallgemeinertem c4cCompile (EXIT/LEVEL_RAMP/ENTRY); NPCs PondLand Clown + Witch, Forest Goth-Girl (+ Lorekeeper nur als fertige Figur); Original-KayKit-Augen; Triplets aus RUNTIME_POOL (PR #310) über prepareResidentTurn (PR #305), DOM-Blase nach Formatvertrag; Suno-Track je Insel. Hinter ?islands=1. Beach erst nach Georgs Daumen. S5 fertig gebaut, Prüfreihe läuft.
 
