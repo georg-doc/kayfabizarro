@@ -1,3 +1,7 @@
+> **CURRENT TARGET OVERRIDE — 2026-10-13:** New author dossier research writes go to the existing GitHub Markdown research master under [`authors/`](authors/README.md), not to Google Docs as an edit target. Existing `KFB Author Dossier` target names in historical entries below designate **source donors**, not current writable destinations. `RQ-001` still belongs to [Issue #395](https://github.com/georg-doc/kayfabizarro/issues/395). Issue state remains authoritative for mutable task progress; these Markdown checkboxes are the backlog agenda, not duplicated execution status. No NotebookLM GitHub Web URL refresh verified. See [current source workflow](GITHUB_MARKDOWN_NOTEBOOKLM_SOURCE_WORKFLOW_R1_2026-10-13.md).
+
+---
+
 # KFB Hidden Cosmology Atlas — Research Backlog R1
 
 **Date:** 2026-10-13
