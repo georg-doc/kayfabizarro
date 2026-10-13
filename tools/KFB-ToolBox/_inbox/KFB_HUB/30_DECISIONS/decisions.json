@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "entries": [
   {
    "id": "V-001",
@@ -2387,6 +2387,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-209",
+   "date": "2026-10-14",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Neue Ausrichtung (ersetzt V-207 und V-208 Strang A; V-202 ruht): (1) Fokus jetzt: ChatterBox und karten-basierter Dialog – Triplets, Opener, Billboards – mit dem Wireface-Ansatz (PR #355 Ausführungspaket R2, Audio Site v11 #365, Triplet-Pool #379). (2) Kein Racetrack nötig; J17 bleibt nur Design-Referenz (Look), nicht Fahrphysik oder Strecke; Reisen in der Kartenwelt gern per Flug mit sauberem Controller. (3) Spielrahmen ist WS1 (R3F, Rapier, ecctrl), Combat-Destruction-Mech-Slice als POC vorhanden; Reisen und Aussehen der Kartenwelt sind nachgelagert. (4) Worldbuilding-Ansatz: prozedural sauber und für Georg als Worldbuilder/God-Mode nutzbar; KFB-Landmarks (Claude Design bzw. Web-Chat 12./13.10.) als Eingang, Quelle liefert Georg. (5) Lab 5192 wird Teilelager: keine neuen Features; die Bau-Sitzung schreibt eine Übergabe, was davon wiederverwendbar ist (Module laut MODULE_INVENTORY_R1).",
+   "values": {},
+   "owner": "Steuerung + WS1 + Strang-B-Sitzung",
+   "check": "-",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Lab-Prototyp nicht spielbar, Racetrack-Design nicht erhaltenswert, J17 selbst war buggy; Mehrwert liegt im Karten-Dialog.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2448,7 +2462,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:59",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:62",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
