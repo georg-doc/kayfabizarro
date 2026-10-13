@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Arbeitsregeln R1
+- KFB_WORKING_RULES_R1.md: 26 bewährte Regeln aus zwei Wochen Lab (Vorlage zuerst, derselbe Code-Pfad, Bildpaare, Parity/Replay, blinder Kritiker, externes Audit, unabhängige Gegenprüfung, Register + Changelog, GitHub SSOT, Post-Mortems, glanceable Fragen, Single-three, Cache, Speicherwächter, Dialog nur aus Pool, plain Blasen). In START_HERE verlinkt, für WS1 und Strang B.
+
 ## 2026-10-14 · Racetrack-Baukasten für R3F vorgemerkt
 - V-210 (TBD): R3F-Track-Baukasten mit sauberer Physik/Steuerung/Architektur nach dem Karten-Dialog-MVP; Quellen SP13KTRA, KFB-Stunt-Car-Race/_inbox, Rapier, Track Core als Datenmodell; zuerst Spezifikation.
 

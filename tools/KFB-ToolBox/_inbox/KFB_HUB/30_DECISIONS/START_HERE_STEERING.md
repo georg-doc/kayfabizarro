@@ -1,5 +1,7 @@
 # START HERE · KFB Steuerung (für jede Sitzung: Claude Code, WSA, Blender-Coworker, Webchats)
 
+**Neu 14.10.:** Arbeitsregeln, die sich bewährt haben, für jede neue Sitzung: `KFB_WORKING_RULES_R1.md`.
+
 Stand: 12.10.2026 (bis V-187) · gepflegt von der Steuer-Sitzung (Claude Code). Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`.
 
 ## Maßgeblich (in dieser Reihenfolge)
