@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · V-202 Vorlage freigegeben
+- Erste Spielszene: StreakByte-Demo-Inseln 07 PondLand (A) und 08 Forest (B), je ein Zweig per verallgemeinertem c4cCompile (EXIT/LEVEL_RAMP/ENTRY); NPCs PondLand Clown + Witch, Forest Goth-Girl (+ Lorekeeper nur als fertige Figur); Original-KayKit-Augen; Triplets aus RUNTIME_POOL (PR #310) über prepareResidentTurn (PR #305), DOM-Blase nach Formatvertrag; Suno-Track je Insel. Hinter ?islands=1. Beach erst nach Georgs Daumen. S5 fertig gebaut, Prüfreihe läuft.
+
 ## 2026-10-13 · Game-Design-Briefing für Web-Chat
 - replies/BRIEF_WEBCHAT_GAME_DESIGN_R1.md: Georg klärt im Web-Chat Kern-Loop, Kartenspiel-Verbindung, Kern-Mechaniken (Kulturmechaniken), erste vertikale Scheibe ohne Schwundversion, Testfragen, Weglass-Liste. Ergebnis „KFB Game Design Kern R1“ wird Vorgabe für die Bau-Schritte. V-202 läuft parallel weiter.
 
