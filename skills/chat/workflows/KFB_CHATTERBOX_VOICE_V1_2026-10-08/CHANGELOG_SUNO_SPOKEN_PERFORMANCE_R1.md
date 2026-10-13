@@ -1,4 +1,11 @@
 # KFB ChatterBox Voice · Additive Suno spoken-performance changelog
+
+## 2026-10-13 · Additive Card Performance Scenelet R1 / Clay theatre concept
+
+- Georg requested a reusable reduced 3D MVP scenelet with source-proven Residents, KFB clay material/contact, controlled stage/light/camera, real Card-on-Billboard, spoken one-Card Triplet, real inter-Card Bridge, existing ChatterBox NPC responses, and later authored dossiers as independent source-backed lenses.
+- New source-locked design/owner map in `KFB_CARD_PERFORMANCE_SCENELET_CLAY_STAGE_CONCEPT_R1_2026-10-13.md`. It does not convert PR #305/#310 or donor code to owners; protects Resident Atlas, WB2, Clay PR #301, Billboard B0, Card Builder, Audio #365 and author-doc PR #394.
+- R1 test/build count 0; isolated object renders 0; public Site/Stage 0. Failed current Triplet R1 remains quarantined. Next gate unchanged: `KFB_TRIPLETS_SHOW_SPIN_SELL_SINGLE_CARD_HUMAN_FORMULA_GATE_R1`.
+
 Owner: existing ChatterBox / Resident Speech output · Draft PR #379
 No standalone runtime owner, no new Site. Earlier Voice milestones remain in owning RETURN.md.
 
