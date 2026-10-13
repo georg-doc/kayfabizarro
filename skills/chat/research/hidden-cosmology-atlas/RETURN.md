@@ -1,3 +1,32 @@
+## CURRENT RETURN — GITHUB MARKDOWN AUTHOR MASTERS / NOTEBOOKLM WEB SOURCE TRIAL — 2026-10-13
+
+**Outcome:** The user selected GitHub Markdown to replace repetitive manual Google Docs author-master updates. The **existing** research owner is retained: `georg-doc/kayfabizarro`, `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394, open first Issue #395 (RQ-001). This is a source-archive + authoring contract and seed-file migration, NOT a new Site or live NotebookLM integration.
+
+**Eleven intended changed GitHub files in this phase:**
+1. NEW `authors/kurt-metzger.md` — extracted Metzger portion of the existing Gemini two-author Golden Doc, including KFB Clown stage directions, original-source receipt gaps preserved.
+2. NEW `authors/catherine-austin-fitts.md` — Markdown transformation of the existing author Google Doc.
+3. NEW `authors/david-icke.md` — Markdown transformation of the existing author Google Doc.
+4. NEW `authors/daniel-liszt.md` — **condensed edited derivative** of the standalone Dark Journalist Google Doc; full original preserved.
+5. NEW `authors/README.md` — exact source-role and migration-quality inventory, future source/relationship schema, NotebookLM URL acceptance task.
+6. NEW `GITHUB_MARKDOWN_NOTEBOOKLM_SOURCE_WORKFLOW_R1_2026-10-13.md` — GitHub research master / Web source import vs Drive sync distinction, one-file pilot, fallback and no-second-master rules.
+7. UPDATED `MULTI_DOC_AUTHOR_WORLDVIEW_NETWORK_WORKFLOW_R2_2026-10-13.md` — prior writable Google Docs master is a historical plan, not current.
+8. UPDATED `AUTONOMOUS_RESEARCH_PIPELINE_CONTRACT_R1_2026-10-13.md` — one authorized patch writer now targets GitHub authors.
+9. UPDATED `RESEARCH_BACKLOG_R1_2026-10-13.md` — GitHub Issues remain actual mutable status; historic Docs targets superseded.
+10. UPDATED `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive HCA-047–051 with direct recovery and one active next gate.
+11. UPDATED `RETURN.md` — this exact phase Return.
+
+**Actual upstream reads:** Four connected native Google Docs (Metzger+Liszt Golden, Catherine Austin Fitts, David Icke, Daniel Liszt) read through provider action before migration; the original source documents were left completely unchanged. Their Gemini summaries contain no atomic original author URLs/page/timecode references. Never portray the migrated dossier text as verified direct statements by each author. No terms/topics pruned by outside ideology or speculations labels; provenance and speaker/source origin remain the research boundary. The original Google Docs remain available privately and as NotebookLM Drive-source fallback. No standalone Kurt Google Doc was verified.
+
+**NotebookLM verification:** Google's Help Center explicitly supports HTML text extraction for Website URL sources and automatic/manual synchronization for Google Drive sources, **not verified automatic refresh for GitHub raw/blobs**. A web-tool read of a newly created branch HTML/blob URL and raw URL returned cache misses; this does not prove NotebookLM failure. No actual NotebookLM import/update run has been observed. Controlled one-source test is mandatory before bulk migration: import stable branch blob, inspect exact dossier text, authorized harmless version-marker commit, reopen/refresh same source and check for changed phrase. If unsupported, use explicitly documented reimport or an approved read-only Google Drive mirror fed from GitHub, never a second independently edited master.
+
+**Source fidelity and system boundaries:** Original interviews/books remain authoritative for author claims. The Gemini dossier-derived Markdown text is not an independently source-certified worldview; primary receipts will be appended in `Primary Source Ledger` through GitHub Issues / author master. KFB performance/Triplets remain separately authored fictional Resident layers. No changes to game Card, ChatterBox, Audio, World, OSM, existing GPT Sites, common Hub/router, Cloudflare Stage, Github Pages, or Live. No auto research runner, no merge.
+
+**Implementation checks:** Every actual GitHub content write above is followed by exact branch-head compare and the intended file readback. An initial attempt to create the complete Daniel Liszt version was blocked, and exact branch/file inspection proved ABSENT before the successful condensed replacement. Do not claim a complete Daniel migration. Final head after this Return write must be read and persisted into Production Control. Browser acceptance, NotebookLM import/refresh, original book/audio claim citation review: all NOT PERFORMED.
+
+**ONE NEXT GATE:** `GITHUB_MARKDOWN_NOTEBOOKLM_URL_GOLDEN_R1` — test real NotebookLM import and **same-source post-commit refresh** for exactly one author Markdown file, using GitHub branch URL; record whether it updates, requires reimport, or fails. Meanwhile RQ-001 research continues through Issue #395 under the same source-first rules.
+
+---
+
 ## CURRENT RETURN — GITHUB RESEARCH BACKLOG + TARGETED SOURCE SCOUT PIPELINE — 2026-10-13
 
 **Outcome:** Added a bounded issue-backed KFB research-question queue, a reusable research executor/attribution/Docs/NotebookLM/Issue verification contract, and four English source-gap briefs for **Kurt Metzger, Catherine Austin Fitts, David Icke, Daniel Liszt / Dark Journalist**. No research agent was run by creating this workflow.
