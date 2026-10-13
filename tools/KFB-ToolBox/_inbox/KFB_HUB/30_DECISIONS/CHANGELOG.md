@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Sprechblasen Plain
+- V-204 Sprechblasen Plain ohne Outline/Ink, gut lesbar, leichter Schatten ohne zweite Ebene bzw. doppelte Pfeilspitze; ab V-202.
+
 ## 2026-10-13 · S5 Speicher fertig
 - manifold-WASM 2 647 → 381 MB (ohne Cache) bzw. 16 MB (mit Cache); HUD-Rucksack-Miniatur kostete ≈ 13 fps → jetzt 60 statt 46–52 fps bei 1280×800; Pro-Bild-Allokationen raus; Ring-/Graph-Checks aus dem Cache (−0,9 s). Alle Prüfungen grün.
 - Augen-Ursache (V-201): Mount übernimmt Anker-Drehung (14–55° nach außen) → Schielen; im Lab fehlen blink, life, kinetics, oval, Tracking, Blickziele. Studio „KFB Batch EyeRig Atlas“ live unter kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/. Such-Protokoll Lab docs/concepts/EYE_RESTORE_SEARCH_R1.md; Slice später.

@@ -2317,6 +2317,20 @@
    "applies": "in V-202"
   },
   {
+   "id": "V-204",
+   "date": "2026-10-13",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Sprechblasen grundsätzlich in der Plain-Variante ohne Outline bzw. Ink (die frühere „Clay“-Variante ohne Tusche), maximal lesbar; leichter Schatten, so gesetzt, dass er nicht als zweite Ebene mit doppelter Pfeilspitze über den Figuren liegt. Gilt ab der ersten Spielszene (V-202).",
+   "values": {},
+   "owner": "Lab (ChatterBox-Blase)",
+   "check": "Standbild Blase über NPC",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Lesbarkeit vor Comic-Tusche; doppelte Pfeilspitzen störten.",
+   "applies": "ab V-202"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2378,7 +2392,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:35",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:42",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
