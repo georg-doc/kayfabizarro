@@ -1,3 +1,7 @@
+> **HISTORICAL EDITABLE-AUTHORING TOPOLOGY — SUPERSEDED 2026-10-13.** Georg selected GitHub Markdown author files as the working research master to avoid repetitive Google Docs edits/copies. See [GitHub Markdown → NotebookLM Source Workflow R1](GITHUB_MARKDOWN_NOTEBOOKLM_SOURCE_WORKFLOW_R1_2026-10-13.md) and [authors/README](authors/README.md). The description of actual Google Docs and their native tabs remains valuable donor evidence; the direction to update Google Docs as the sole mutable author master is **not** current. The proposed NotebookLM dynamic GitHub web-URL refresh is not yet proven.
+
+---
+
 # KFB Worldview Research — Multi-Doc Author Network Workflow R2
 
 **Date:** 2026-10-13  
