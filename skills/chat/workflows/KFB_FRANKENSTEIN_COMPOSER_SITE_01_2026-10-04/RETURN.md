@@ -1,3 +1,23 @@
+
+## 2026-10-13 · OPTIONAL WIREFACE FACE DRIVER MVP · ADAPTER ONLY, SITE INTEGRATION OPEN
+
+**Owner/branch/PR:** `georg-doc/kayfabizarro`, `planning/frankenstein-composer-gpt-site-2026-10-04`, Draft #355. The exact current HEAD after this Return must be fetched; original before slice `c9615e8bbd65ad54edeaa89e50f16eeffa9dafb7`. Existing private Composer Site URL **https://kfb-frankenstein-composer.frizzlebob.chatgpt.site**, previously v4, was not republished or freshly verified by this Web Chat.
+
+**User-directed product outcome:** real KayKit GothGirl Rig_Medium and proven FB v5 source head, selectable KFB Native vs real original Wireface Three.js FaceMesh/ModelFace on the same head, same rig animation, camera and lighting, **one intelligible identical recorded voice clip**, no conflicting KFB EyeRig/lids/mouth owners, reversible source-pinned Actor+Face companion export/import. No new runtime/ownership, no synthetic placeholder or unrelated Babylon Wireface replacement.
+
+**Source milestone actually implemented:**
+- Existing `kfb-hub/stage/toolbox/frankenstein-composer/app.js` minimally adds `composition.faceDriver:'KFB_NATIVE'`, `wirefaceCompanion:null` in existing reversible actor recipe, preserving default native, original body/head motion/GLB capabilities. Git blob `da5b06812b0b776cbdf79d782ee7af944a76fead`.
+- New `kfb-hub/stage/toolbox/frankenstein-composer/wireface-face-driver-contract.mjs` Git blob `74d03061ccaa61c2a2f85e3414b8d4b46cca77e7` guards exact source visualization, vendor license, measured head node and face channel exclusivity; SDK attach/voice via injected real vendor/Audio-owned source only; no new AudioContext, GLB animation claim, provider fallback or new THREE renderer.
+- New regression `kfb-hub/stage/toolbox/frankenstein-composer/tests/wireface-face-driver-contract.mjs` Git blob `8edda5022fa6d693a34f9149d7468b91dde1f901`, actual V8 adapter behavior + negative controls **17/17 PASS**, actual GitHub source structure **25/25 PASS**, these are NOT browser/WebGL/vendor SDK tests. Node script committed, standalone Node execution not claimed.
+- New Work ONE_SHOT brief `WSA_WIREFACE_FACE_DRIVER_MVP_ONE_SHOT_2026-10-13.md` for real SDK/version/rights, visual donor isolation, small in-place A/B UI, real speaking-face overlay, scene lifecycle, existing audio, recipe roundtrip, same private Site actual browser tests and human creative verdict.
+- New report `WIREFACE_FACE_DRIVER_MVP_ADAPTER_TEST_REPORT_2026-10-13.md` enumerates actual test cases, known limits and donor source/licence gate.
+
+**Not done:** actual vendor SDK fetched/imported, original vendor face object visually shown, Wireface face moving on actual GothGirl, human intelligible voice A/B, 3D source-isolation screenshots, browser/export follow-up, new Site publication. The existing Composer v4 interactive browser acceptance is still open, separate from source-level tests. Vendor docs were reported in earlier Wireface donor matrix but web reader could not reach current `wireface.dev/docs/three/` in this chat. The similarly named `styk-tv/wireface` library is Babylon.js and not the intended donor. Existing Audio PR #365 unmodified; earlier eSpeak clip complained unintelligible, so must not be selected for facial A/B. No Clock duplication, Cloudflare, World/R5, merge or Live.
+
+**One next gate:** `COMPOSER_WIREFACE_REAL_SOURCE_ISOLATION_AND_FACE_A_B_MVP_R1`. One Sites-capable Work/WSA builder executes the named brief in the EXISTING Composer PR #355 and original private Site. Independently QA the real vendor source, natural audio, actual A/B, same body/motion and source+face roundtrip before Georg KEEP/TUNE/CUT; do not claim Site verified until exact URL reports expected new revision.
+
+---
+
 # CURRENT RETURN · 2026-10-12 · ONE_SHOT R1
 
 Status: **IMPLEMENTATION COMPLETE · PRIVATE SITE v4 ACTIVE · STATIC/DEPLOYMENT IDENTITY PASS · INTERACTIVE BROWSER/EXPORT HUMAN GATE OPEN**
