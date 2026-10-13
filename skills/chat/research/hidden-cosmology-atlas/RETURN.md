@@ -1,3 +1,22 @@
+## CURRENT RETURN — GOOGLE DOCS DOSSIER + CAYCE SPHINX GENIUS LOCI — 2026-10-13
+
+**Outcome:** The previously proposed Gemini↔ChatGPT research bridge has been **actually verified** through the connected Google Drive Google Docs API. Opened user-supplied document `https://docs.google.com/document/d/1kbkpqvZ7c0-IAVc1pz8lGTgQeNlKxUADKbB1D0Itxxg/edit`, title "KFB Worldview Dossier: Golden Test 01"; 32 paragraphs, approximately 4,454 text characters, observed revision `AHj4eMQXURzIKL8bJj5iwpqkLO8DdRwA79OHHFT-ioVJlr9yF84VxfWLXYiBhmW2oQL_zONTvn1F9gYbShCOyLVryaOBBG7hS6mdzXiHCnU`. Its two source-author worldview seeds are Kurt Metzger and Daniel Liszt. They are structured for the fictional KFB Clown but do NOT provide exact claim sources or primary transcript passages; access PASS, source-fidelity Golden NOT YET TESTED.
+
+**User's new spatial direction:** Deploy recognized KFB Genius Loci/landmark monuments as diegetic stages for KFB Worldview Performances linked to canonical Cards, billboards, Residents, player queries, optional quests and Almanac. First specific case: Giza Great Sphinx, Edgar Cayce "Hall of Records" / right forepaw reading 378-16. A.R.E. source publication and complete pinpoint in new review. Existing current Giza three-pyramid Grotesque source donor found in `tools/img2threejs/landmarks/pilot-01/geometry.mjs`; no source-proven Sphinx mesh in that function. Existing `dream_wrestling_with_kayfabe_freud` Card 30 "THE SPHINX" is about the Greek/riddle story, not Cayce's archaeological/Atlantean context. Link as semantic neighboring interpretation if chosen, not a Card rewrite. Preserve accepted WORLD MONUMENTS01 design PASS/TUNE LATER and its later WSA donor-isolation/implementation gate.
+
+**Changed files for this milestone (3):**
+1. `GOLDEN_TEST_01_DOSSIER_AND_GIZA_GENIUS_LOCI_REVIEW_2026-10-13.md` — new English source/landmark/owner alignment and early Goldens.
+2. `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — additive current editorial decision and next gate.
+3. `RETURN.md` — this exact recovery.
+
+**Source checks:** Current Google Docs doc read via Google Drive action; primary Cayce/A.R.E. archive reading 378-16 publicly located; exact main GitHub donor Giza `giza()`, canonical Sphinx Card and accepted Monument return fetched. **No** actual source transcript excerpt alignment for Gemini worldview claims, no complete seven-author dossier, no Sphinx donor isolated or built, no Worldview Performance LLM run, no game/browser/Site test or staged voice. Gemini claims of NotebookLM pruning twelve sources are user-reported only, not independently verified. Request source preservation/removal log rather than irreversible loss.
+
+**Owner/surface:** KFB Editorial Research in `georg-doc/kayfabizarro`; existing `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. Source/SSOT commit before this Return: `07ca5173add48755e7e0530e8a27af5bbd50569a`. Final head must be verified after Return write and entered in Production Control. No new runtime, Card registry, OSM, Travel, Landmark, ChatterBox, Audio, Site, Cloudflare Stage/Hub or Live changes; no merge.
+
+**One next gate:** `WORLDVIEW_PERFORMANCE_R1_SOURCE_AND_RECEIVER_FIT` — Gemini adds claim-to-source appendix for Metzger and Liszt; then inspect and separately show one canonical Card, one Giza landmark donor, one actual Resident and the ChatterBox receiving seam; source-editorially audition one in-character monologue and heckle before any Site implementation.
+
+---
+
 ## CURRENT RETURN — SEVEN-AUTHOR SOURCE EXPANSION + WORLDVIEW PERFORMANCE PRODUCT PROPOSAL — 2026-10-13
 
 **Status:** Editorial milestone ready / Research still in progress / Product Site not built. Source-grounded worldview-performance proposal.  
