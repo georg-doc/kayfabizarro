@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · J17 als Grundlinie, zwei Stränge
+- V-207: MVP = J17 1:1 + fertige Blender-Stücke als Erweiterung; Abzweige von der Joyride-Platte zu den Inseln; J17-Parcours = KFB Town (später God-Mode); ersetzt Organ-Ring-Welt als Basis. Später Platte organisch oder Meta-Kubus mit Dungeons/Etagen.
+- V-208: Strang A J17-Welt (Lab, kein React-Umbau), Strang B Karten-Dialog-Modul (Triplets, Opener, Billboards) nach Modulvertrag; WS1-R3F-Slice getrennt (KFB_SLICE_INTEGRATIONSPLAN_R1), teilt nur Module; GitHub SSOT, Drive/NotebookLM nur Lese-Spiegel.
+
 ## 2026-10-13 · Fertig vor Vorlage
 - V-206: nur fertige, gegen Referenz geprüfte Stände an Georg; Vorlage = derselbe Code-Pfad, nie Nachbau; ein J17-Pfad für alle Strecken; Track-Baukasten wird vor weiteren Inseln fertig gemacht (Stückliste, Bildpaar je Stück); Steuerung lässt Abweichungen nicht durch.
 

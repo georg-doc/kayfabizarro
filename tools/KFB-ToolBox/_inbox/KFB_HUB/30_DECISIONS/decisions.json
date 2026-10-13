@@ -2359,6 +2359,34 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-207",
+   "date": "2026-10-13",
+   "area": "Strecke",
+   "verdict": "RULE",
+   "text": "Neue Grundlinie: Das MVP ist Joyride J17 1:1 (alle Track-Bausteine aus J17, der ganze Parcours bzw. das Diorama; Basis ist die abgenommene Lab-Seite C1a) plus fertige, abgenommene Blender-Baustücke und -Übergänge als Erweiterung. Von der Joyride-Platte gehen Strecken mit J17s eigenen Stücken zu den neuen Inseln (PondLand, Forest …). Meta-narrativ ist der Joyride-Parcours KFB Town, später im God-Mode editierbar; danach Asset Librarian und Bewohner wie geplant. Ersetzt die Organ-Ring-Welt als Basis (Organe später MED-Decks, V-127); Aus-/Einfahrt-, Tunnel-, Steuerungs-, Ladezeit- und Blasen-Arbeit zieht mit. Erster Schritt: J17-Basiswelt mit Byte-Vergleich gegen das Original, dann ein Abzweig zu PondLand. Später: Platte organisch formen mit Inselunterboden, oder Meta-Kubus mit Joyride oben und Treppen/Dungeons/tieferen Etagen (Instanzen, falls technisch besser).",
+   "values": {},
+   "owner": "Bau-Sitzung + Steuerung",
+   "check": "Byte-Vergleich J17 + Abzweig PondLand",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "J17 ist das einzige fertige, abgenommene, spaßige Teil; Erweitern statt Nachbauen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-208",
+   "date": "2026-10-13",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Zwei Stränge, eine Wahrheit: (A) J17-Welt im Lab (Bau-Sitzung, vanilla three 0.186.1, kein React-Umbau des Labs). (B) Parallel ein karten-basiertes Dialog-Modul (Triplets, Opener, Billboards) als eigenständiges Modul nach dem Modulvertrag create/update/dispose, nutzbar im Lab und im R3F-Slice von WS1. Der R3F-Platformer/Karten-Kampf-Slice (WS1, Integrationsplan R1) läuft getrennt und teilt nur Module. GitHub-Register bleibt SSOT; Google Drive/Docs/NotebookLM nur als Lese-Spiegel für Web-Chats, kein zweiter Ort für Entscheidungen; kein Notion.",
+   "values": {},
+   "owner": "Steuerung",
+   "check": "-",
+   "source": "Georg 13.10.",
+   "supersedes": null,
+   "why": "Mehr Wert durch Karten-Dialog-Modul; React nur im getrennten Slice; eine Wahrheit.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2420,7 +2448,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:55",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:59",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
