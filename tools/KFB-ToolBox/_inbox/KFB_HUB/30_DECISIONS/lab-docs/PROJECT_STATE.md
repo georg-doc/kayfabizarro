@@ -6,11 +6,13 @@ Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. M
 
 - **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
 - **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
-- **Als Nächstes (Plan R1 §5, Reihenfolge V-192: Technik zuerst):** S2/S3 geliefert 13.10. (flk-Abnahme offen, warm ≤ 5 s offen) → S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
+- **Als Nächstes (V-202, Kurswechsel „Spiel statt Breite“):** erste Spielszene — PondLand + Forest an den Ring (C4c-Zweig verlängert), NPCs mit ChatterBox-Triplets, Insel-Musik, Bodenkontakt Auto/Props (V-203). Ruhen bis Georg gespielt hat: S6, Editor, Dungeon, Ladezeit-Rest, Rhythmus, Licht, Augen-Slice. Früher geplant: S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
 - **Augen (V-201 FAIL, 13.10.):** V-200-Stand bleibt eingecheckt; eigener Slice „Augen-Wiederherstellung“ nach S5: Eye-Rig-Studio 1:1 mit Georgs Presets, Konvergenz-Richtung, v6-Kinetik / Leben / Blinzeln / Blickziele, Abnahme als Nahbild-Paar Studio | Spiel.
 - **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
 
 ## Lieferungen 11.–13.10. (neueste oben)
+
+**Lieferung 13.10. · S5 Speicher (V-171 Punkt 4, abgeschlossen nach V-202) + V-199 + V-198:** `docs/critic/lab-track/2026-10-13_mem/REPORT.md`, `…/2026-10-13_V199/REPORT.md` — manifold-WASM kalt 2 647 → 381 MB, HUD-Rucksack-Miniatur als Bild (+13 fps bei 1280 × 800, Spiel mit HUD 60 fps), Checks aus dem Cache; V-199 Strafen / Einsteigen / Hügel / Hüpfer PASS; flk Standard. V-200 Augen gebaut, V-201 FAIL (Slice geparkt, Such-Protokoll `docs/concepts/EYE_RESTORE_SEARCH_R1.md`).
 
 **Lieferung 13.10. · S2 Flackern + S3 Ladezeit (V-171 Punkte 2 und 3):** `docs/critic/lab-track/2026-10-13_load/REPORT.md` — Ladezeit 48,2 → 7,0 s (frischer Browser) / 6,7 s (Neuladen) über inhaltsadressierten Ergebnis-Cache (1017/1017 Meshes byte-gleich) + Lab-Inseln im Organ-Modus aus; warm ≤ 5 s noch nicht. Flacker-Paket hinter `?flk=1` (dynres ein Schritt, LOD-Hysterese, Rippe nah, near 1,0, polygonOffset), Gate PASS mit und ohne; Prüfungen alle PASS bei 60 fps.
 
