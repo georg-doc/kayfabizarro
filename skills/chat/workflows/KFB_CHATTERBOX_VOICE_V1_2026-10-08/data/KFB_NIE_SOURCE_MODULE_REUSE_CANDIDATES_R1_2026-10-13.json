@@ -1,0 +1,396 @@
+{
+  "schema": "kfb.nie.standalone-dialogue-donor-matrix/0.1",
+  "date": "2026-10-13",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+    "pr": 379
+  },
+  "source": {
+    "name": "MD NARRATIVE INTELLIGENCE ENGINE",
+    "startHere": {
+      "relativePath": "00_system/START_HERE_paths.md",
+      "sourcePath": "ns:13807851539//00_system/START_HERE_paths.md",
+      "dropboxUrl": "https://www.dropbox.com/scl/fi/fxnrvk7yp2m0ephbml6k7"
+    },
+    "catalogClaim": "158 active files per START_HERE_paths.md 2026-03-07",
+    "sampleActuallyRead": 19,
+    "readPolicy": "seven curated entry routes; minimum viable files before depth"
+  },
+  "status": "SOURCE_REVIEW_AND_ADAPTATION_PROPOSAL_ONLY",
+  "immutability": {
+    "originalNIEUnmodified": true,
+    "originalCardsImmutable": true,
+    "openerPoolUnmodified": true,
+    "worldviewResearchOwnerPR": 394,
+    "audioSiteOwnerPR": 365,
+    "composerClaudePhase2PR": 355
+  },
+  "operators": [
+    {
+      "id": "NIE_CARD_MECH_COST_AUDIT",
+      "sourceModules": [
+        {
+          "id": "WORDACROBAT",
+          "relativePath": "engine_prompts/frizzlebob_modes/wordacrobat_core.md",
+          "sourcePath": "ns:13807851539//engine_prompts/frizzlebob_modes/wordacrobat_core.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/3d0ynex8qiib2eooicu3t"
+        },
+        {
+          "id": "FRIZZLEBOB_OVERVIEW",
+          "relativePath": "engine_prompts/frizzlebob_modes/frizzlebob_overview.md",
+          "sourcePath": "ns:13807851539//engine_prompts/frizzlebob_modes/frizzlebob_overview.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/3qbvk91cq8x8zqwdip3n2"
+        },
+        {
+          "id": "AUDITOR",
+          "relativePath": "engine_prompts/frizzlebob_modes/auditor_mode.md",
+          "sourcePath": "ns:13807851539//engine_prompts/frizzlebob_modes/auditor_mode.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/45kax5b28vp1f9nb8zzmg"
+        }
+      ],
+      "target": "CARD_BEAT_QA",
+      "adaptation": "Check whether a beat communicates original POWER mechanism and LORE consequence/cost; do not manufacture a cost when source lacks it",
+      "requiredInputs": [
+        "cardRef",
+        "cardName",
+        "power",
+        "lore",
+        "spokenBeat",
+        "sourceSpanRefs"
+      ],
+      "outputMode": "EDITORIAL_AUDIT_ONLY",
+      "failCode": "MISSING_POWER_LORE_OR_NEW_FACT",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_CADENCE_SWITCH",
+      "sourceModules": [
+        {
+          "id": "WORDACROBAT",
+          "relativePath": "engine_prompts/frizzlebob_modes/wordacrobat_core.md",
+          "sourcePath": "ns:13807851539//engine_prompts/frizzlebob_modes/wordacrobat_core.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/3d0ynex8qiib2eooicu3t"
+        },
+        {
+          "id": "SCM",
+          "relativePath": "engine_prompts/style_compression_module.md",
+          "sourcePath": "ns:13807851539//engine_prompts/style_compression_module.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/em7szamdu645xg89kxj6v"
+        }
+      ],
+      "target": "DRY_MONOLOGUE_DELIVERY",
+      "adaptation": "Rehearse cadence change and end pause in delivery metadata, not new source facts",
+      "requiredInputs": [
+        "approvedBeat",
+        "actorVoiceProfile",
+        "audioClipRefOptional"
+      ],
+      "outputMode": "DELIVERY_METADATA_CANDIDATE",
+      "failCode": "NO_ACTUAL_RENDERER_TIMING",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_SOURCE_FIRST_SATIRE_STAGES",
+      "sourceModules": [
+        {
+          "id": "RESEARCH_TO_SATIRE",
+          "relativePath": "engine_prompts/research_distill_satire_pipeline.md",
+          "sourcePath": "ns:13807851539//engine_prompts/research_distill_satire_pipeline.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/2your4apbetcq0a1ctkm6"
+        }
+      ],
+      "target": "WORLDVIEW_AUTHORING",
+      "adaptation": "Use R0 source ledger → D0 concept seeds → X0 adjacency → P1 satire technique → C1 performance → A1 audit; researcher quote and fictional KFB speech are separate",
+      "requiredInputs": [
+        "authorSourceRefs",
+        "verifiedClaimLedger",
+        "worldviewLensRef",
+        "residentId"
+      ],
+      "outputMode": "AUTHORING_PROCESS_ONLY",
+      "failCode": "SOURCE_PROVENANCE_MISSING",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_DIALOGUE_SAID_MEANT_WANTED",
+      "sourceModules": [
+        {
+          "id": "CONVERSATION_POWER",
+          "relativePath": "tools/conversation_power_dynamics.md",
+          "sourcePath": "ns:13807851539//tools/conversation_power_dynamics.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/flzrh255kzwl5pr93p78b"
+        }
+      ],
+      "target": "CHATTERBOX_DIALOGUE",
+      "adaptation": "Attach SAID/MEANT/WANTED intent metadata to each speaker turn; distinguish claim and strategic objective",
+      "requiredInputs": [
+        "priorUtteranceRef",
+        "speakerId",
+        "speakerObjective",
+        "literalClaim"
+      ],
+      "outputMode": "TURN_PROOF_CANDIDATE",
+      "failCode": "UNMAPPED_SPEAKER_OBJECTIVE",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_ADJACENCY_AND_REPAIR",
+      "sourceModules": [
+        {
+          "id": "DIALOGUE_DEBATE",
+          "relativePath": "grammars/dialogue_debate_grammar.md",
+          "sourcePath": "ns:13807851539//grammars/dialogue_debate_grammar.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/lxig8i1uue2b281avisj0"
+        }
+      ],
+      "target": "CHATTERBOX_RESPONSE",
+      "adaptation": "Choose answer/refusal/deflect/repair based on actual previous turn; silence and deliberate nonresponse allowed",
+      "requiredInputs": [
+        "previousUtteranceRef",
+        "speechActType",
+        "respondingResidentId"
+      ],
+      "outputMode": "RESPONSIVE_OPERATOR_CANDIDATE",
+      "failCode": "NO_PREVIOUS_TURN",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_DIALOGUE_ANTI_SLOP",
+      "sourceModules": [
+        {
+          "id": "AUTHENTIC_DIALOGUE",
+          "relativePath": "tools/authentic_dialogue_craft.md",
+          "sourcePath": "ns:13807851539//tools/authentic_dialogue_craft.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/pd02qke4scvzil40oqy6b"
+        }
+      ],
+      "target": "CHATTERBOX_EDITORIAL_QA",
+      "adaptation": "Flag mechanical alternation, perfect rhetoric, over-explanation, and generic agreement; human judges naturalness",
+      "requiredInputs": [
+        "scriptTurns",
+        "characterVoiceRefs"
+      ],
+      "outputMode": "EDITORIAL_QA_ONLY",
+      "failCode": "HUMAN_TUNE_REQUIRED",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_STANDALONE_MICRO_BEAT",
+      "sourceModules": [
+        {
+          "id": "STORY_BEATS",
+          "relativePath": "tools/story_beats.md",
+          "sourcePath": "ns:13807851539//tools/story_beats.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/8gw0gbgzm01s7vy6d20yk"
+        },
+        {
+          "id": "NARRATIVE_FIELD",
+          "relativePath": "01_engine/narrative_field_solver.md",
+          "sourcePath": "ns:13807851539//01_engine/narrative_field_solver.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/ed7qu0ajdvhce5hvhbqi4"
+        }
+      ],
+      "target": "CARD_BEAT_AUTHORING",
+      "adaptation": "Use optional local goal/obstacle/change in stakes to test beat self-containment; do not require complete scene arc for every Card",
+      "requiredInputs": [
+        "originalCard",
+        "sourceEffect",
+        "outcome"
+      ],
+      "outputMode": "BEAT_DESIGN_CANDIDATE",
+      "failCode": "NO_SOURCE_CHANGE_OR_NOTHING_TO_SAY",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_SOURCE_IRONY",
+      "sourceModules": [
+        {
+          "id": "IRONY",
+          "relativePath": "tools/irony_engine.md",
+          "sourcePath": "ns:13807851539//tools/irony_engine.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/0nz3whk3b46pa4pbtd2z4"
+        },
+        {
+          "id": "SATIRE",
+          "relativePath": "grammars/satire.md",
+          "sourcePath": "ns:13807851539//grammars/satire.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/w0105rdqapew961jl948n"
+        }
+      ],
+      "target": "CARD_TRIPLET_SPIN",
+      "adaptation": "Detect source-supported contradiction between POWER promise and LORE consequence; optional reframe, never ungrounded comic escalation",
+      "requiredInputs": [
+        "verifiedPower",
+        "verifiedLore",
+        "originalCardName"
+      ],
+      "outputMode": "TRIPLET_EDITORIAL_CANDIDATE",
+      "failCode": "UNVERIFIED_IRONY",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_SPIN_VARIANTS",
+      "sourceModules": [
+        {
+          "id": "WRITERS_ROOM",
+          "relativePath": "writers_room/room_brainstorm.md",
+          "sourcePath": "ns:13807851539//writers_room/room_brainstorm.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/kzlr6rzldn9i5klz2d2xb"
+        }
+      ],
+      "target": "EDITORIAL_VARIATION",
+      "adaptation": "Spin inverted emphasis/actor vantage under same source facts; yes-and means accepting conversational offer, not its truth",
+      "requiredInputs": [
+        "unchangedCardSource",
+        "openerId",
+        "speakerId",
+        "reviewer"
+      ],
+      "outputMode": "DRAFT_ONLY",
+      "failCode": "INVENTED_MECHANIC",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_FRAGMENT_POLARITY",
+      "sourceModules": [
+        {
+          "id": "FRAGMENTS",
+          "relativePath": "01_engine/fragment_system.md",
+          "sourcePath": "ns:13807851539//01_engine/fragment_system.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/midkdjlst3xijmryob0zr"
+        }
+      ],
+      "target": "OPENER_THEME_INDEX",
+      "adaptation": "Index source phrases by motif/polarity/tone/medium and propose source-linked opener categories without creating new card meanings",
+      "requiredInputs": [
+        "sourcePhraseRefs",
+        "originalCardRefs"
+      ],
+      "outputMode": "TAG_CANDIDATE",
+      "failCode": "NO_VERBATIM_SOURCE",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_CAUSAL_BRIDGE_DIAGNOSTIC",
+      "sourceModules": [
+        {
+          "id": "SOUTH_PARK",
+          "relativePath": "tools/southpark_logic.md",
+          "sourcePath": "ns:13807851539//tools/southpark_logic.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/akfaydpyosgeu49d9dxu6"
+        }
+      ],
+      "target": "OPTIONAL_BRIDGE_QA",
+      "adaptation": "Apply THEREFORE/BUT only when prior actual state changes next condition/cost; otherwise CUT/PAUSE/NO_EDGE",
+      "requiredInputs": [
+        "fromBeatRef",
+        "toBeatRef",
+        "beforeState",
+        "trigger",
+        "afterState",
+        "cost"
+      ],
+      "outputMode": "BRIDGE_EDITORIAL_ONLY",
+      "failCode": "NO_CAUSAL_LINK",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_THINKING_THROUGH_SPEAKING",
+      "sourceModules": [
+        {
+          "id": "MONOLOGUE",
+          "relativePath": "grammars/monologue_interior_epistolary.md",
+          "sourcePath": "ns:13807851539//grammars/monologue_interior_epistolary.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/bzhnf95ev6cudidsaebib"
+        }
+      ],
+      "target": "MONOLOGUE_DELIVERY",
+      "adaptation": "Use sourced hesitant self-revision, changing inference and held pause as an optional performance mask, not compulsory new plot material",
+      "requiredInputs": [
+        "sourceClaim",
+        "characterKnowledge",
+        "voiceProfile"
+      ],
+      "outputMode": "PERFORMANCE_DIRECTION_ONLY",
+      "failCode": "FAKE_MEMORY_OR_AUTHOR_CLAIM",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_ROAST_TARGET_AND_PACING",
+      "sourceModules": [
+        {
+          "id": "ROASTMASTER",
+          "relativePath": "engine_prompts/frizzlebob_modes/roastmaster_mode.md",
+          "sourcePath": "ns:13807851539//engine_prompts/frizzlebob_modes/roastmaster_mode.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/wwldr3oov25nfa7kmtux7"
+        }
+      ],
+      "target": "CHARACTER_COMEDY_QA",
+      "adaptation": "Keep precise satirical target and source-adjacent pause/emphasis; 'mandatory final kicker' disallowed for KFB self-contained Card beats",
+      "requiredInputs": [
+        "sourceTarget",
+        "cardBeat",
+        "speakerVoice"
+      ],
+      "outputMode": "EDITORIAL_OPTIONAL",
+      "failCode": "NO_SOURCE_TARGET_OR_PUNCH_DOWN",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    },
+    {
+      "id": "NIE_NARRATIVE_DEBT",
+      "sourceModules": [
+        {
+          "id": "NARRATIVE_DEBT",
+          "relativePath": "tools/narrative_debt_tracker.md",
+          "sourcePath": "ns:13807851539//tools/narrative_debt_tracker.md",
+          "dropboxUrl": "https://www.dropbox.com/scl/fi/vogn1pttf34d61h88mmwy"
+        }
+      ],
+      "target": "SET_LONGFORM_ONLY",
+      "adaptation": "Track optional callback/foreshadowing obligations in multi-Beat sets but never impose unresolved debt on standalone units",
+      "requiredInputs": [
+        "performanceSetId",
+        "callbackSourceRef"
+      ],
+      "outputMode": "SET_LEVEL_OPTIONAL",
+      "failCode": "STANDALONE_DEPENDENCY_INTRODUCED",
+      "editorialStatus": "DONOR_CANDIDATE_NOT_RUNTIME_ENABLED",
+      "independentTested": false
+    }
+  ],
+  "guards": {
+    "noMandatoryInterCardBridge": true,
+    "noForcedComicPunchline": true,
+    "noUnverifiedPowerLore": true,
+    "noFakeFirstPersonExperience": true,
+    "noAutomaticArtistApproval": true,
+    "noSecondRuntime": true,
+    "sourceResearchAndFictionSeparated": true,
+    "stageFictionRequiresOptIn": true,
+    "playerSpeakerWordsMustExist": true,
+    "oneCardOneCuttablePhysicalLine": true,
+    "blankLineNotTimestamp": true
+  },
+  "suggestedFirstSpike": [
+    "NIE_CARD_MECH_COST_AUDIT",
+    "NIE_DIALOGUE_SAID_MEANT_WANTED",
+    "NIE_ADJACENCY_AND_REPAIR",
+    "NIE_CAUSAL_BRIDGE_DIAGNOSTIC",
+    "NIE_CADENCE_SWITCH"
+  ],
+  "noAutomaticPromotion": true
+}
