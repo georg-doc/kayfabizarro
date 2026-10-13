@@ -1,0 +1,108 @@
+{
+  "schema": "kfb.triplets.show-spin-sell-one-card-fixture/0.2",
+  "date": "2026-10-13",
+  "status": "SOURCE_PINNED_EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED",
+  "deckId": "wrinkle_rumble",
+  "cardNumber": 10,
+  "originalSource": {
+    "path": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "revision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "title": "The Cookie of Causality",
+    "power": "Inciting Incident: Restart the game from Turn 1. Keep all damage.",
+    "lore": "The war didn't start over land or ideology. It started over a snickerdoodle."
+  },
+  "operatorId": "RESTART_WITH_PERSISTENT_DAMAGE",
+  "reviewStatus": "EDITORIAL_CANDIDATE",
+  "surface": [
+    {
+      "field": "cardName",
+      "role": "show",
+      "quote": "The Cookie of Causality"
+    },
+    {
+      "glue": " "
+    },
+    {
+      "field": "power",
+      "role": "spin",
+      "quote": "Restart",
+      "morph": "restart_3s"
+    },
+    {
+      "glue": " "
+    },
+    {
+      "field": "lore",
+      "role": "spin",
+      "quote": "The war",
+      "morph": "lower_war"
+    },
+    {
+      "glue": " over "
+    },
+    {
+      "field": "lore",
+      "role": "spin",
+      "quote": "a snickerdoodle"
+    },
+    {
+      "glue": " at "
+    },
+    {
+      "field": "power",
+      "role": "spin",
+      "quote": "Turn 1",
+      "morph": "turn_one"
+    },
+    {
+      "glue": ", but "
+    },
+    {
+      "field": "power",
+      "role": "sell",
+      "quote": "Keep all damage",
+      "morph": "keep_3s_article"
+    },
+    {
+      "glue": "."
+    }
+  ],
+  "expectedSpoken": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+  "semanticContract": {
+    "show": "Original cardName spoken verbatim first",
+    "spin": "POWER restart Turn 1 applied to LORE war started over snickerdoodle",
+    "sell": "POWER retained damage as comic cost/reframe",
+    "oneSentence": true,
+    "connectorMeaningful": true,
+    "notApprovedGolden": true
+  },
+  "negativeTests": [
+    "original title omitted",
+    "original POWER omitted",
+    "original LORE omitted",
+    "no turn in final sell",
+    "randomly permuted source fields",
+    "generic title+power+lore synopsis",
+    "new person/prop invented in grammar glue",
+    "other card source spliced",
+    "unapproved inflection",
+    "unlicensed source quote",
+    "wrong operator",
+    "old R1 lore-only output reproduced"
+  ],
+  "dependencies": {
+    "previousHumanFailedNegative": "POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md",
+    "pluginVersion": "0.1.0_UNCHANGED",
+    "audioSiteDeckStatus": "WRINKLE_ONLY_V9",
+    "activePreview": "audio-site-preview-r3-card-11-tune"
+  },
+  "outputsAllowed": [
+    "EDITORIAL_CANDIDATE",
+    "NO_TRIPLET"
+  ],
+  "outputsForbidden": [
+    "HUMAN_ACCEPTED",
+    "CANON",
+    "PUBLIC_FEED_ADDED"
+  ]
+}
