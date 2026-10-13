@@ -1,0 +1,140 @@
+{
+  "schema": "kfb.frankenstein.wireface-theatre-card-mvp-readiness/1",
+  "date": "2026-10-13",
+  "status": "SOURCE_VERIFIED_PLAN_GO_PRODUCT_PLAYBACK_NO_GO",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 355,
+    "branch": "planning/frankenstein-composer-gpt-site-2026-10-04",
+    "preSliceHead": "4068d3e3022efb452e1ee317d4ca0e08c741be8c",
+    "composerSite": "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site/",
+    "composerSiteLastVerifiedVersion": 4,
+    "composerNewDeployThisSlice": false
+  },
+  "dependencies": {
+    "audio": {
+      "pr": 365,
+      "branch": "web/kfb-adaptive-music-stem-proof-2026-10-06",
+      "head": "9325a4af861d0a07e1986490f7ee42aa3f047819",
+      "site": "https://kfb-audio.frizzlebob.chatgpt.site/",
+      "sourceVersion": "0.7.1",
+      "siteVersion": 11,
+      "siteEvidence": "TRIPLET_OPENER_POOL_SITE_TEST_EVIDENCE_R1_2026-10-13.md",
+      "consumerContract": "TRIPLET_OPENER_POOL_CONSUMER_CONTRACT_R1_2026-10-13.md",
+      "consumerContractBlob": "954235f4cfbed2ced4cf4ba8310da53b61c6da92",
+      "packetPath": "skills/chat/workflows/KFB_ADAPTIVE_MUSIC_STEM_PROOF_2026-10-06/evidence/consumer-packet.json",
+      "packetBlob": "f350e2ff666c34382a91c76ec0e97ff7e66ec042",
+      "consumerSchema": "kfb.voice.card-performance-packet/1",
+      "publishedVersionVerifiedByPriorWork": true,
+      "sitePersonallyAuditionedByCurrentChat": false
+    },
+    "voice": {
+      "pr": 379,
+      "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+      "head": "d788e429c5fed1afa033cd69222edf6cf9470b7f",
+      "poolPath": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_TRIPLET_OPENER_POOL_R1_2026-10-13.json",
+      "poolBlob": "dfb5435bc0c913ea48f8f5558f801b293962fbc8",
+      "contentRevision": "triplet-opener-pool-r5-cookie-tune-v11",
+      "poolSchema": "kfb.voice.triplet-opener-pool/1",
+      "poolOpenersCount": 14,
+      "enabledOpeners": 6,
+      "acceptedOpenersCount": 0,
+      "compactBeatId": "wrinkle_rumble:10:compact",
+      "compactBeatVersion": 3,
+      "compactBeatStatus": "EDITORIAL_CANDIDATE",
+      "compactHumanAcceptance": "PENDING",
+      "acceptedBeatCount": 0
+    },
+    "worldview": {
+      "pr": 394,
+      "branch": "research/hidden-cosmology-atlas-2026-10-13",
+      "head": "78f9424d1e2e34861dfb6e2b9a8e9899b8a7c502",
+      "scope": "SOURCE_ATTRIBUTION_ONLY_NOT_AUTOMATIC_RUNTIME_DIALOGUE"
+    },
+    "researchDonors": {
+      "sourceOwnerPR": 379,
+      "perplexityCatalogCount": 43,
+      "perplexityCatalogSha": "aa9b720ba9dc07b666f3b62e797e8cb17ca27b93",
+      "nieDonorCandidateCount": 14,
+      "nieDonorSha": "cde42324778ee6a0a4d1419cac699f1dfef35248",
+      "runtimeEnabledByThisSlice": false,
+      "tvTropesCreatorBreakdownRead": false,
+      "tvTropesUse": "OPTIONAL_REFERENCE_TAGS_ONLY"
+    }
+  },
+  "fixture": {
+    "deckId": "wrinkle_rumble",
+    "cardNumber": 10,
+    "originalCardName": "The Cookie of Causality",
+    "originalCardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "beatId": "wrinkle_rumble:10:compact",
+    "beatVersion": 3,
+    "beatStatus": "EDITORIAL_CANDIDATE",
+    "humanAccepted": false,
+    "cardPdfPath": "media/kfb/Wrinkle_Rumble - ADD web ID.pdf",
+    "cardPdfBlob": "07e6ef8666a1b352ae2f0edd1d5399e4ca7ab16f",
+    "pdfPageOneIndexed": 4,
+    "quadrant": "TR",
+    "actualSourcePageVerified": true,
+    "exactCardCropVerified": false,
+    "voiceClipsCount": 0,
+    "acceptedVoiceClipCount": 0,
+    "voiceClipProviderId": null,
+    "voiceId": null,
+    "clipSHA256": null,
+    "clipDurationMs": null,
+    "audioRightsVerified": false,
+    "renderedCueTimesVerified": false,
+    "sourceTextFrozenForPlan": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+    "sourceContentIsPreview": true,
+    "performanceSet": {
+      "orderedBeatIds": [
+        "wrinkle_rumble:10:compact"
+      ],
+      "bridgeIds": [],
+      "outro": "Stay Fluffy!",
+      "cutBoundary": "BLANK_LINE",
+      "requiresCausalBridge": false
+    }
+  },
+  "vendor": {
+    "name": "Wireface Three.js (not unrelated Babylon library)",
+    "officialDocs": "https://wireface.dev/docs/three/",
+    "theatreDemo": "https://wireface.dev/threejs/demo/",
+    "vendorLicense": "https://wireface.dev/license/",
+    "demoSourceVisuallyIsolatedInComposer": false,
+    "sdkPackageBytesRetrieved": false,
+    "sdkVersionVerified": false,
+    "licensedForThisKfbDistribution": false,
+    "actualVoiceClipsInventoried": 0,
+    "claimedTheatreCharacterNames": 11,
+    "voiceProviderIdentityKnown": false,
+    "programmableTtsForArbitraryKfbTextVerified": false,
+    "humanVendorDemoApproval": "FACES_AND_DEMO_VOICES_POSITIVE",
+    "rightsApprovalForDemoRecordings": false,
+    "reactR3f": "FUTURE_ADAPTER_ONLY_KEEP_EXISTING_IMPERATIVE_THREE_RENDERER"
+  },
+  "guards": {
+    "canPlanWithoutAcceptedAudio": true,
+    "canIsolateVendorAndResearchLicense": true,
+    "canRunPreviewOnlyForPrivateQA": true,
+    "canClaimAcceptedCardPerformance": false,
+    "canShipUnlicensedTheatreVoice": false,
+    "canUseOldUnintelligibleEspeakAsAcceptance": false,
+    "canClaimStandaloneGLBWirefaceExport": false,
+    "oneComposerRenderer": true,
+    "oneKfbAudioClockOwner": true,
+    "mustProveFaceSourceInIsolation": true,
+    "mustResolveFaceOwnerOverlap": true,
+    "mustVerifyExactOriginalCardCrop": true,
+    "mustHaveHumanApprovedBeatAndOpener": true,
+    "mustHaveRightsClearedIntelligibleClipAndRealCues": true
+  },
+  "nextGate": "CLAUDE_CODE_WIREFACE_THEATRE_SOURCE_VOICE_RIGHTS_AND_COMPOSER_A_B_PLAN_R1",
+  "notes": [
+    "Snapshot/acceptance proof only. Re-read live Github refs; do not treat SHA/head pin as latest after next write.",
+    "An explicit preview consumer read is allowed for private QA; default consumer must keep candidates blocked.",
+    "No source Card, candidate, opener, clip, research document, or vendor SDK files were copied into this owner.",
+    "No actual accepted creator media or card audio evidence exists in exported v11 packet."
+  ]
+}
