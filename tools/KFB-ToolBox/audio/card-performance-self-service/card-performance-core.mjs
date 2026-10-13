@@ -12,12 +12,13 @@ const sourceTextOrSilence = (value, label) => {
   return value;
 };
 
-export function validateDeck(deck) {
+export function validateDeck(deck, metadata) {
+  const expectedCount = metadata?.cardCount ?? deck?.cardCount ?? 48; // Legacy v9 fixture contract.
   if (!deck || !Array.isArray(deck.cards)) throw new Error('Source deck has no cards array');
-  if (deck.cards.length !== 48) throw new Error(`Wrinkle Rumble must contain 48 Cards, received ${deck.cards.length}`);
+  if (deck.cards.length !== expectedCount) throw new Error(`Source deck must contain ${expectedCount} Cards, received ${deck.cards.length}`);
   const numbers = deck.cards.map(card => Number(card.cardNumber));
-  if (new Set(numbers).size !== 48 || numbers.some((number, index) => number !== index + 1)) {
-    throw new Error('Wrinkle Rumble Card numbers must be unique and contiguous 1..48');
+  if (new Set(numbers).size !== expectedCount || numbers.some((number, index) => number !== index + 1)) {
+    throw new Error('Source Card numbers must be unique and contiguous per verified deck count');
   }
   for (const card of deck.cards) {
     requiredString(card.cardName, `Card ${card.cardNumber} name`);
@@ -27,18 +28,19 @@ export function validateDeck(deck) {
   return deck;
 }
 
-export function parsePerformanceText(text) {
+export function parsePerformanceText(text, cardNumbers = Array.from({length:48},(_,i)=>i+1)) {
   const rows = String(text || '')
     .split(/\r?\n/)
     .map(row => row.trim())
     .filter(Boolean)
     .filter(row => !/^\[(?:Spoken Word|End)\]$/i.test(row));
-  if (rows.length !== 50) throw new Error(`Performance text must contain intro + 48 Cards + outro, received ${rows.length} segments`);
+  if (![cardNumbers.length+1,cardNumbers.length+2].includes(rows.length)) throw new Error(`Performance text must contain optional intro + ${cardNumbers.length} Cards + outro, received ${rows.length} segments`);
   if (rows.at(-1) !== 'Stay Fluffy!') throw new Error('Card Performance outro must be exactly "Stay Fluffy!"');
-  return { intro: rows[0], cardLines: Object.fromEntries(rows.slice(1, 49).map((line, index) => [index + 1, line])), outro: rows[49] };
+  const offset=rows.length===cardNumbers.length+2?1:0;
+  return { intro: offset?rows[0]:'', cardLines: Object.fromEntries(rows.slice(offset,-1).map((line,index)=>[cardNumbers[index],line])), outro:rows.at(-1) };
 }
 
-export function normalizeBridges(sidecar, sourceRevision) {
+export function normalizeBridges(sidecar, sourceRevision, deckId='wrinkle_rumble') {
   const edges = Array.isArray(sidecar?.editorialEdges) ? sidecar.editorialEdges : [];
   return edges.map((edge, index) => ({
     id: edge.id || `wrinkle-edge-${edge.fromCardId ?? edge.from}-${edge.toCardId ?? edge.to}-${index + 1}`,
@@ -49,8 +51,8 @@ export function normalizeBridges(sidecar, sourceRevision) {
     cost: edge.cost ?? null,
     callback: edge.callback ?? null,
     sourceRefs: edge.sourceRefs || [
-      { deckId: 'wrinkle_rumble', cardNumber: Number(edge.fromCardId ?? edge.from), sourceRevision },
-      { deckId: 'wrinkle_rumble', cardNumber: Number(edge.toCardId ?? edge.to), sourceRevision }
+      { deckId, cardNumber: Number(edge.fromCardId ?? edge.from), sourceRevision },
+      { deckId, cardNumber: Number(edge.toCardId ?? edge.to), sourceRevision }
     ],
     editorialStatus: edge.editorialStatus || (edge.humanApproval ? 'REVIEWED' : 'EDITORIAL_CANDIDATE'),
     provenance: edge.provenance || 'EDITORIAL_PROPOSED_LINK_NOT_SOURCE_RULE'
@@ -70,8 +72,8 @@ export function validateFeed(feed) {
   for (const item of feed.performances) {
     requiredString(item.id, 'Performance id');
     requiredString(item.status, `${item.id} status`);
-    if (!Array.isArray(item.selectedCardNumbers) || !item.selectedCardNumbers.length || item.selectedCardNumbers.some(number => !Number.isInteger(number) || number < 1 || number > 48)) {
-      throw new Error(`${item.id} selectedCardNumbers must contain Card numbers 1..48`);
+    if (!Array.isArray(item.selectedCardNumbers) || !item.selectedCardNumbers.length || item.selectedCardNumbers.some(number => !Number.isInteger(number) || number < 1 || number > (feed.source.cardCount ?? Number.MAX_SAFE_INTEGER))) {
+      throw new Error(`${item.id} selectedCardNumbers must contain positive source Card numbers`);
     }
   }
   return feed;
@@ -86,6 +88,7 @@ export function selectBridge(edges, fromCardId, toCardId, seed = 'kfb') {
 }
 
 export function createDraft({ feed, performance, deck, script, bridges, contentSha }) {
+  const deckId=feed.deckId || deck.deckId || 'wrinkle_rumble';
   const selected = [...performance.selectedCardNumbers];
   const sentenceOverrides = performance.sentenceOverrides || {};
   const lines = Object.fromEntries(selected.map(number => [number, sentenceOverrides[number] || script.cardLines[number]]));
@@ -102,8 +105,8 @@ export function createDraft({ feed, performance, deck, script, bridges, contentS
       cost: null,
       callback: null,
       sourceRefs: [
-        { deckId: 'wrinkle_rumble', cardNumber: from, sourceRevision: feed.source.deckRevision },
-        { deckId: 'wrinkle_rumble', cardNumber: to, sourceRevision: feed.source.deckRevision }
+        { deckId, cardNumber: from, sourceRevision: feed.source.deckRevision },
+        { deckId, cardNumber: to, sourceRevision: feed.source.deckRevision }
       ],
       editorialStatus: 'LOCAL_DRAFT_NO_EDGE',
       provenance: 'NO_SOURCE_COMPATIBLE_EDGE'
@@ -119,7 +122,7 @@ export function createDraft({ feed, performance, deck, script, bridges, contentS
     fetchedContentSha: contentSha,
     performanceId: performance.id,
     performanceStatus: performance.status,
-    deckId: 'wrinkle_rumble',
+    deckId,
     speaker: performance.speaker || { id: 'lorekeeper', label: 'Lorekeeper' },
     storyMode: performance.storyMode || 'comic',
     seed: performance.seed || performance.id,

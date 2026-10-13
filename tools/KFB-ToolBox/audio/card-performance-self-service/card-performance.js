@@ -46,7 +46,7 @@ function writeCache(ref, path, value) {
   try { localStorage.setItem(cacheKey(ref, path), JSON.stringify(value)); } catch { /* last-known-good remains best effort */ }
 }
 
-async function fetchGithubFile(ref, path, expectedSha = null) {
+export async function fetchGithubFile(ref, path, expectedSha = null) {
   const cached = readCache(ref, path);
   if (expectedSha && cached?.sha === expectedSha && cached?.text) return { ...cached, cacheState: 'REVISION_CACHE' };
   const headers = { accept: 'application/vnd.github+json', 'x-github-api-version': '2022-11-28' };
@@ -58,10 +58,11 @@ async function fetchGithubFile(ref, path, expectedSha = null) {
     if (!response.ok) throw new Error(`GitHub ${response.status} for ${path}`);
     const raw = await response.json();
     const entry = { path, ref, sha: raw.sha, etag: response.headers.get('etag'), text: decodeBase64(raw.content), fetchedAt: new Date().toISOString() };
+    if (expectedSha && entry.sha !== expectedSha) throw new Error('Pinned source revision mismatch: ' + path);
     writeCache(ref, path, entry);
     return { ...entry, cacheState: 'NETWORK' };
   } catch (error) {
-    if (cached?.text) return { ...cached, cacheState: 'LAST_KNOWN_GOOD', warning: String(error.message || error) };
+    if (cached?.text && (!expectedSha || cached.sha === expectedSha)) return { ...cached, cacheState: 'LAST_KNOWN_GOOD', warning: String(error.message || error) };
     throw error;
   }
 }
@@ -72,8 +73,8 @@ const jsonFrom = (entry, label) => {
 
 function validateTimedCues(value) {
   const profiles = Object.values(value?.profiles || {});
-  if (profiles.length !== 3 || profiles.some(profile => !Array.isArray(profile.cuesMs) || profile.cuesMs.length !== 50)) {
-    throw new Error('Timed cue manifest must contain 3 rendition-specific profiles with 50 cues each');
+  if (profiles.some(profile => !Array.isArray(profile.cuesMs) || !profile.sha256 || !profile.cuesMs.length)) {
+    throw new Error('Timed cues require a matching rendered clip SHA and nonempty cue list');
   }
   return value;
 }
@@ -89,10 +90,15 @@ async function loadBundle() {
     fetchGithubFile(sourceRef, feed.source.bridgesPath, feed.source.bridgesRevision),
     fetchGithubFile(sourceRef, feed.source.timedCuesPath, feed.source.timedCuesRevision)
   ]);
-  const deck = validateDeck(jsonFrom(deckEntry, 'Source deck'));
-  const script = parsePerformanceText(performanceEntry.text);
+  const registryEntry=await fetchGithubFile(sourceRef,'media/kfb/index.json');
+  const deckMeta=jsonFrom(registryEntry,'Deck registry').decks.find(d=>'media/kfb/'+d.data===feed.source.deckPath);
+  if(!deckMeta)throw Error('Source deck absent from registry');
+  const deck = validateDeck(jsonFrom(deckEntry, 'Source deck'),deckMeta);
+  deck.deckId=deckMeta.packId;
+  if(feed.performances.some(p=>p.selectedCardNumbers.some(n=>!deck.cards.some(c=>c.cardNumber===n))))throw Error('Selection outside actual source deck');
+  const script = parsePerformanceText(performanceEntry.text,deck.cards.map(c=>c.cardNumber));
   const bridgesRaw = jsonFrom(bridgesEntry, 'Bridge sidecar');
-  const bridges = normalizeBridges(bridgesRaw, feed.source.deckRevision);
+  const bridges = normalizeBridges(bridgesRaw, feed.source.deckRevision,deck.deckId);
   const timedCues = validateTimedCues(jsonFrom(cuesEntry, 'Timed cue manifest'));
   bundle = { feed, feedEntry, deck, script, bridges, timedCues, entries: [feedEntry, deckEntry, performanceEntry, bridgesEntry, cuesEntry] };
   renderRevision();
@@ -130,7 +136,7 @@ function renderCardPicker() {
 function loadDraft() {
   try {
     const value = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
-    if (!value || value.schema !== DRAFT_SCHEMA || value.deckId !== 'wrinkle_rumble' || !Array.isArray(value.selectedCardNumbers)) return null;
+    if (!value || value.schema !== DRAFT_SCHEMA || value.deckId !== bundle.deck.deckId || !Array.isArray(value.selectedCardNumbers)) return null;
     return value;
   } catch { return null; }
 }
@@ -192,7 +198,7 @@ function renderActiveCard() {
   }
   sentence.disabled = false;
   sentence.value = draft.lines[activeCard] || '';
-  $('#cardSourceDetail').innerHTML = `<div class="eyebrow">SOURCE CARD · READ ONLY · ${String(activeCard).padStart(2, '0')}/48</div><h4>${esc(card.cardName)}</h4><dl><div><dt>POWER</dt><dd>${esc(card.power)}</dd></div><div><dt>LORE</dt><dd>${esc(card.lore)}</dd></div><div><dt>VISUAL</dt><dd>${esc(card.artworkPrompt || 'No source artwork prompt')}</dd></div></dl>`;
+  $('#cardSourceDetail').innerHTML = `<div class="eyebrow">SOURCE CARD · READ ONLY · ${String(activeCard).padStart(2, '0')}/${bundle.deck.cards.length}</div><h4>${esc(card.cardName)}</h4><dl><div><dt>POWER</dt><dd>${esc(card.power)}</dd></div><div><dt>LORE</dt><dd>${esc(card.lore)}</dd></div><div><dt>VISUAL</dt><dd>${esc(card.artworkPrompt || 'No source artwork prompt')}</dd></div></dl>`;
   const index = draft.selectedCardNumbers.indexOf(activeCard), previous = draft.selectedCardNumbers[index - 1];
   const edge = previous ? draft.bridgeDrafts[`${previous}>${activeCard}`] : null;
   bridge.disabled = !previous;
@@ -212,13 +218,13 @@ function rebuildBridgeDrafts() {
   for (let index = 1; index < draft.selectedCardNumbers.length; index++) {
     const from = draft.selectedCardNumbers[index - 1], to = draft.selectedCardNumbers[index], key = `${from}>${to}`;
     const source = bundle.bridges.find(edge => edge.fromCardId === from && edge.toCardId === to);
-    next[key] = old[key] || source || { id: null, fromCardId: from, toCardId: to, relation: 'NO_EDGE', text: '', cost: null, callback: null, sourceRefs: [{ deckId: 'wrinkle_rumble', cardNumber: from, sourceRevision: draft.sourceRevision }, { deckId: 'wrinkle_rumble', cardNumber: to, sourceRevision: draft.sourceRevision }], editorialStatus: 'LOCAL_DRAFT_NO_EDGE', provenance: 'NO_SOURCE_COMPATIBLE_EDGE' };
+    next[key] = old[key] || source || { id: null, fromCardId: from, toCardId: to, relation: 'NO_EDGE', text: '', cost: null, callback: null, sourceRefs: [{ deckId: draft.deckId, cardNumber: from, sourceRevision: draft.sourceRevision }, { deckId: draft.deckId, cardNumber: to, sourceRevision: draft.sourceRevision }], editorialStatus: 'LOCAL_DRAFT_NO_EDGE', provenance: 'NO_SOURCE_COMPATIBLE_EDGE' };
   }
   draft.bridgeDrafts = next;
 }
 
 function setCards(numbers) {
-  const unique = [...new Set(numbers.map(Number).filter(number => number >= 1 && number <= 48))];
+  const unique = [...new Set(numbers.map(Number).filter(number => number >= 1 && bundle.deck.cards.some(c=>c.cardNumber===number)))];
   draft.selectedCardNumbers = unique;
   for (const number of unique) if (!draft.lines[number]) draft.lines[number] = bundle.script.cardLines[number];
   rebuildBridgeDrafts(); activeCard = unique[0] || null; saveDraft(); renderDraft();
@@ -243,7 +249,7 @@ async function ensureDbed() {
   await window.KFBAudioSite?.resume?.();
   window.KFBAudioSite?.musicContext?.setState?.('D', { source: 'card-performance-editor', reason: 'audition-over-conversation-bed' });
   const snapshot = window.KFBAudioSite?.adaptiveMusic?.getSnapshot?.();
-  if (!snapshot?.deckId) await window.KFBAudioSite?.adaptiveMusic?.startDeck?.('D');
+  if (snapshot?.deckId !== 'D') await window.KFBAudioSite?.adaptiveMusic?.startDeck?.('D');
 }
 
 function setFocus(active, source = 'card-performance-editor') {
@@ -257,34 +263,38 @@ function stopPlayback(message = 'Stopped · voice focus released') {
   if (activeAudio) { activeAudio.pause(); activeAudio.currentTime = 0; activeAudio = null; }
   if (activeObjectUrl) { URL.revokeObjectURL(activeObjectUrl); activeObjectUrl = null; }
   setFocus(false, 'card-performance-stop');
+  window.KFBAudioSite?.setAuditionDry?.(false);
   renderTimeline();
   $('#cardPlaybackStatus').textContent = message;
 }
 
-async function playBrowserPerformance() {
+async function playBrowserPerformance(request) {
+  const audition = request?.segments ? { ...draft, ...request } : draft;
   stopPlayback('Preparing browser performance…');
   const token = playbackToken;
   let segments;
-  try { segments = buildSegments(draft); } catch (error) { $('#cardPlaybackStatus').textContent = error.message; return; }
+  try { segments = request?.segments || buildSegments(draft); } catch (error) { $('#cardPlaybackStatus').textContent = error.message; return; }
   if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) { $('#cardPlaybackStatus').textContent = 'Browser voice unavailable. Import an authorized clip for exact audio A/B.'; return; }
-  if (draft.bed === 'D') await ensureDbed().catch(error => { $('#cardPlaybackStatus').textContent = 'D bed unavailable · ' + error.message; });
-  const voice = voices.find(item => item.voiceURI === $('#cardVoice').value);
+  if(audition.bed==='DRY')await window.KFBAudioSite?.setAuditionDry?.(true,()=>token===playbackToken);
+  if (audition.bed === 'D') await ensureDbed().catch(error => { $('#cardPlaybackStatus').textContent = 'D bed unavailable · ' + error.message; });
+  if(token!==playbackToken)return;
+  const voice = voices.find(item => item.voiceURI === (audition.voiceURI || $('#cardVoice').value));
   let index = 0;
   const next = () => {
     if (token !== playbackToken) return;
     if (index >= segments.length) { stopPlayback('Complete · local draft remains non-canon'); return; }
     const segment = segments[index++];
     const utterance = new SpeechSynthesisUtterance(segment.text);
-    utterance.lang = 'en-US'; utterance.rate = Number(draft.rate); utterance.pitch = Number(draft.pitch); if (voice) utterance.voice = voice;
+    utterance.lang = 'en-US'; utterance.rate = Number(audition.rate); utterance.pitch = Number(audition.pitch); if (voice) utterance.voice = voice;
     utterance.onstart = () => {
       if (token !== playbackToken) return;
-      if (draft.bed === 'D') setFocus(true, 'card-performance-browser');
+      if (audition.bed === 'D') setFocus(true, 'card-performance-browser');
       renderTimeline(segment.cueId);
-      $('#cardPlaybackStatus').textContent = `${segment.cueId} · ${draft.bed === 'D' ? 'D bed + Speech Focus' : 'DRY'} · Browser boundary events only when emitted`;
-      dispatchEvent(new CustomEvent('kfb:card-performance-cue', { detail: { ...segment, deckId: draft.deckId, sourceRevision: draft.sourceRevision, contentRevision: draft.contentRevision, route: 'browser' } }));
+      $('#cardPlaybackStatus').textContent = `${segment.cueId} · ${audition.bed === 'D' ? 'D bed + Speech Focus' : 'DRY'} · Browser boundary events only when emitted`;
+      dispatchEvent(new CustomEvent('kfb:card-performance-cue', { detail: { ...segment, deckId: audition.deckId, sourceRevision: audition.sourceRevision, contentRevision: audition.contentRevision, route: 'browser' } }));
     };
-    utterance.onboundary = event => dispatchEvent(new CustomEvent('kfb:voice-beat', { detail: { cueId: segment.cueId, charIndex: event.charIndex, cardNumber: segment.cardNumber || null, sourceRevision: draft.sourceRevision, route: 'browser' } }));
-    utterance.onend = () => { if (draft.bed === 'D') setFocus(false, 'card-performance-browser-gap'); next(); };
+    utterance.onboundary = event => dispatchEvent(new CustomEvent('kfb:voice-beat', { detail: { cueId: segment.cueId, charIndex: event.charIndex, cardNumber: segment.cardNumber || null, sourceRevision: audition.sourceRevision, route: 'browser' } }));
+    utterance.onend = () => { if (audition.bed === 'D') setFocus(false, 'card-performance-browser-gap'); setTimeout(next,Math.max(0,Math.min(5000,Number(segment.pauseAfterMs)||0))); };
     utterance.onerror = event => stopPlayback('Browser speech error · ' + event.error);
     window.speechSynthesis.speak(utterance);
   };
@@ -294,7 +304,9 @@ async function playBrowserPerformance() {
 async function playExactAudio(source, withBed, label) {
   stopPlayback(`Preparing ${label}…`);
   const token = playbackToken;
+  if(!withBed)await window.KFBAudioSite?.setAuditionDry?.(true,()=>token===playbackToken);
   if (withBed) await ensureDbed().catch(error => { $('#cardPlaybackStatus').textContent = 'D bed unavailable · ' + error.message; });
+  if(token!==playbackToken)return;
   const audio = source instanceof Blob ? new Audio(activeObjectUrl = URL.createObjectURL(source)) : new Audio(source);
   activeAudio = audio;
   audio.preload = 'auto';
@@ -322,7 +334,7 @@ function applyImportedValue(value) {
   if (value?.schema === DRAFT_SCHEMA) {
     const allowed = ['draftStatus', 'sourceRepo', 'sourceRef', 'sourceRevision', 'contentRevision', 'fetchedContentSha', 'performanceId', 'performanceStatus', 'deckId', 'speaker', 'storyMode', 'seed', 'selectedCardNumbers', 'lines', 'bridgeDrafts', 'intro', 'bed', 'delivery', 'rate', 'pitch'];
     const imported = Object.fromEntries(allowed.filter(key => key in value).map(key => [key, value[key]]));
-    if (imported.deckId !== 'wrinkle_rumble' || !Array.isArray(imported.selectedCardNumbers)) throw new Error('Imported draft is not a Wrinkle Rumble Card Performance');
+    if (imported.deckId !== bundle.deck.deckId || !Array.isArray(imported.selectedCardNumbers)) throw new Error('Imported draft does not match loaded source Deck');
     draft = { ...draft, ...imported, outro: 'Stay Fluffy!', cards: Object.fromEntries(bundle.deck.cards.map(card => [card.cardNumber, card])), draftStatus: 'LOCAL_EDITORIAL_DRAFT' };
     activeCard = draft.selectedCardNumbers[0]; rebuildBridgeDrafts(); saveDraft(); renderDraft(); return;
   }
@@ -362,7 +374,7 @@ async function ingestFiles(files) {
   for (const file of [...files]) {
     if (file.type.startsWith('audio/')) {
       const sha256 = [...new Uint8Array(await crypto.subtle.digest('SHA-256', await file.arrayBuffer()))].map(byte => byte.toString(16).padStart(2, '0')).join('');
-      const matchedProfile = Object.entries(bundle.timedCues.profiles).find(([, profile]) => profile.sha256 === sha256)?.[0] || null;
+      const matchedProfile = Object.entries(bundle?.timedCues?.profiles||{}).find(([, profile]) => profile.sha256 === sha256)?.[0] || null;
       await putAsset({ id: crypto.randomUUID(), name: file.name, type: file.type, size: file.size, sha256, matchedCueProfile: matchedProfile, status: matchedProfile ? 'EXACT_R2_RENDITION_WITH_50_MATCHING_CUES' : 'LOCAL_AUTHORIZED_CLIP_TIMING_MUST_BE_CLIP_SPECIFIC', createdAt: new Date().toISOString(), blob: file });
       continue;
     }
@@ -385,7 +397,7 @@ function bind() {
   $('#cardPerformancePreset').onchange = () => status('Preset selected. Choose “Reset draft from selected source” to replace the local draft.', '');
   $('#cardSourcePicker').onchange = event => setCards([...event.target.selectedOptions].map(option => Number(option.value)));
   document.querySelectorAll('[data-card-set]').forEach(button => button.onclick = () => {
-    const map = { one: [1], three: [1, 2, 3], four: [1, 2, 3, 4], full: Array.from({ length: 48 }, (_, index) => index + 1) };
+    const map = { one: [1], three: [1, 2, 3], four: [1, 2, 3, 4], full: Array.from({ length: bundle.deck.cards.length }, (_, index) => index + 1) };
     setCards(map[button.dataset.cardSet]);
   });
   $('#cardSentence').oninput = event => { if (!activeCard) return; draft.lines[activeCard] = event.target.value; draft.draftStatus = 'LOCAL_EDITORIAL_DRAFT'; saveDraft(); renderTimeline(); };
@@ -412,6 +424,8 @@ function bind() {
   drop.ondrop = event => { event.preventDefault(); drop.classList.remove('drag'); ingestFiles(event.dataTransfer.files).catch(error => status('Import rejected safely · ' + error.message, 'fail')); };
   window.speechSynthesis?.addEventListener?.('voiceschanged', populateVoices);
 }
+
+window.KFBCardAudition = { play: playBrowserPerformance, stop: stopPlayback, exact: playExactAudio };
 
 async function init() {
   bind(); populateVoices(); await renderAssets();
