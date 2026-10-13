@@ -1,0 +1,167 @@
+{
+  "schema": "kfb.triplets.cookie.dry-ab-receipt/0.1",
+  "date": "2026-10-13",
+  "state": "AUDIO_RENDERED_TECHNICAL_PROOF_HUMAN_CREATIVE_NOT_ACCEPTED",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+    "pr": 379
+  },
+  "source": {
+    "deckId": "wrinkle_rumble",
+    "cardNumber": 10,
+    "cardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+    "sourcePath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+    "cardName": "The Cookie of Causality",
+    "power": "Inciting Incident: Restart the game from Turn 1. Keep all damage.",
+    "lore": "The war didn't start over land or ideology. It started over a snickerdoodle."
+  },
+  "contentBlobs": {
+    "assembler": "41db1d6a9f296a4fe6323894f50e3d6b1ee4a96d",
+    "compactCompiler": "a4b31e939df2410838d3656ee9f7c9a850315585",
+    "fixture": "9c662bff3c1e65a69c4b5583b5ae8b89b1b3f19d"
+  },
+  "render": {
+    "provider": "Local eSpeak 1.48.15",
+    "voice": "en+m3",
+    "speedWpm": 178,
+    "pitch": 43,
+    "wordgapMs": 9,
+    "format": "mono MP3 44100 Hz 160kbps",
+    "musicBed": "NONE",
+    "musicSourcesCount": 0,
+    "leadSilenceMs": 150,
+    "tailSilenceMs": 700,
+    "interClipComparisonGapMs": 1100,
+    "postEffects": "NONE",
+    "newCharacterVoiceApproval": false
+  },
+  "clips": [
+    {
+      "order": 1,
+      "id": "compact__direct",
+      "mode": "COMPACT",
+      "opener": "DIRECT",
+      "text": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+      "originalTokenCoveragePercent": 50,
+      "durationSeconds": 8.3069,
+      "mp3File": "01_compact__direct.mp3",
+      "mp3SHA256": "47bb9a9d452caae6358fe3be74cc17e0ae853bff628f8811189d6fdb01dd905b",
+      "mp3Bytes": 166705
+    },
+    {
+      "order": 2,
+      "id": "full_source__direct",
+      "mode": "FULL_SOURCE",
+      "opener": "DIRECT",
+      "text": "The Cookie of Causality. Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "originalTokenCoveragePercent": 100,
+      "durationSeconds": 14.3673,
+      "mp3File": "02_full_source__direct.mp3",
+      "mp3SHA256": "7f62b4c3ba88db9f07496fb65f589c51af5ae595c0440e8325d5d89da2452a4e",
+      "mp3Bytes": 287913
+    },
+    {
+      "order": 3,
+      "id": "compact__heard_of",
+      "mode": "COMPACT",
+      "opener": "HEARD_OF",
+      "text": "Ever heard of The Cookie of Causality? It restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+      "originalTokenCoveragePercent": 50,
+      "durationSeconds": 9.6653,
+      "mp3File": "03_compact__heard_of.mp3",
+      "mp3SHA256": "c502ce773769a66bb1b1ae99b82571d6428a7182e36bcc56a576166e61cced5f",
+      "mp3Bytes": 193872
+    },
+    {
+      "order": 4,
+      "id": "full_source__heard_of",
+      "mode": "FULL_SOURCE",
+      "opener": "HEARD_OF",
+      "text": "Ever heard of The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "originalTokenCoveragePercent": 100,
+      "durationSeconds": 15.151,
+      "mp3File": "04_full_source__heard_of.mp3",
+      "mp3SHA256": "bd2cd1f78f950ecc7c3e285f1a612ca617543a723b7b9938fe35851009320d17",
+      "mp3Bytes": 303586
+    },
+    {
+      "order": 5,
+      "id": "compact__ever_tasted",
+      "mode": "COMPACT",
+      "opener": "EVER_TASTED",
+      "text": "Ever tasted The Cookie of Causality? It restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+      "originalTokenCoveragePercent": 50,
+      "durationSeconds": 9.7176,
+      "mp3File": "05_compact__ever_tasted.mp3",
+      "mp3SHA256": "14387e3079eca46e281377fde7be51c8132a638923fa3bf991fec29d00568d04",
+      "mp3Bytes": 194917
+    },
+    {
+      "order": 6,
+      "id": "full_source__ever_tasted",
+      "mode": "FULL_SOURCE",
+      "opener": "EVER_TASTED",
+      "text": "Ever tasted The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "originalTokenCoveragePercent": 100,
+      "durationSeconds": 15.2294,
+      "mp3File": "06_full_source__ever_tasted.mp3",
+      "mp3SHA256": "a75f60218d0c8023f11d02cff63cbb5b4f62ecdbad7bafc723e6976e837ddec3",
+      "mp3Bytes": 305154
+    }
+  ],
+  "comparison": {
+    "file": "00_comparison_all_six_dry.mp3",
+    "durationSeconds": 77.740408,
+    "sha256": "2b2682f63f43e81df3b290233f4690a8d4f35282da7fa0e039bb82696e0b76a4",
+    "offsetType": "NOMINAL_PCM_SEGMENT_START_END_NOT_WORD_ALIGNED",
+    "offsets": [
+      [
+        "compact__direct",
+        0,
+        8.261
+      ],
+      [
+        "full_source__direct",
+        9.361,
+        23.68
+      ],
+      [
+        "compact__heard_of",
+        24.78,
+        34.396
+      ],
+      [
+        "full_source__heard_of",
+        35.496,
+        50.619
+      ],
+      [
+        "compact__ever_tasted",
+        51.719,
+        61.409
+      ],
+      [
+        "full_source__ever_tasted",
+        62.509,
+        77.707
+      ]
+    ]
+  },
+  "conversationZip": {
+    "file": "KFB_Cookie_Dry_Standalone_AB_R1.zip",
+    "sha256": "8dafd1c593e00deabcee7e36cc51340c73f1b7e169095607d1eefb93e1e5eaac",
+    "bytes": 2064782,
+    "zipEntries": 16,
+    "zipCRC": "PASS",
+    "location": "CONVERSATION_SANDBOX_ONLY_NOT_GITHUB_OR_SITE"
+  },
+  "limits": [
+    "Technical sources and audio durations verified, but no actual listen/cinematic/creative human assessment",
+    "Source coverage percentages describe original token positions, not comedy",
+    "No KFB Site/browser TTS audition or Suno audition",
+    "No word-level forced alignment; only whole-clip boundaries measured",
+    "No multi-deck Audio importer, plugin release, Site publish or world runtime edits"
+  ],
+  "nextGate": "GEORG_COOKIE_DRY_AB_OPENERS_AND_COVERAGE_KEEP_TUNE_CUT_R1"
+}
