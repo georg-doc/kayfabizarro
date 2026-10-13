@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-13 · Kurswechsel vertikale Scheibe
+- V-202: Insel für Insel in voller Qualität statt Breite. Nach S5: erste Spielszene (2–3 vorhandene Inseln an den Ring, NPCs mit Triplet-Sprechblase, Suno je Insel, Original-KayKit-Augen). S6, Editor/Maker, Dungeon, Agenten, Fragenlisten ruhen bis Georg gespielt hat.
+
 ## 2026-10-13 · Augen weiter FAIL
 - V-201: Augen nach Umbau nicht Georgs Augen, schielen nach außen, Blick-Leerlauf fehlt vermutlich. Stand einchecken, weiter mit S5; danach Slice Augen-Wiederherstellung 1:1 aus dem Eye-Rig-Studio, Abnahme nur Paar Studio | Spiel.
 

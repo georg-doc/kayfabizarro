@@ -7,6 +7,7 @@ Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. M
 - **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
 - **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
 - **Als Nächstes (Plan R1 §5, Reihenfolge V-192: Technik zuerst):** S2/S3 geliefert 13.10. (flk-Abnahme offen, warm ≤ 5 s offen) → S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
+- **Augen (V-201 FAIL, 13.10.):** V-200-Stand bleibt eingecheckt; eigener Slice „Augen-Wiederherstellung“ nach S5: Eye-Rig-Studio 1:1 mit Georgs Presets, Konvergenz-Richtung, v6-Kinetik / Leben / Blinzeln / Blickziele, Abnahme als Nahbild-Paar Studio | Spiel.
 - **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
 
 ## Lieferungen 11.–13.10. (neueste oben)
