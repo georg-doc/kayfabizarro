@@ -17,7 +17,7 @@
 
 **So weiterarbeiten:** Read this file first, then user-provided transcript, then primary sources. Maintain a unique SOURCE / CLAIM / MOTIF / LINK / CHAPTER identifier. Add source-specific findings, preserve dissent and discrepancies, version significant revisions instead of replacing evidence. A source URL or a speaker's assertion does not establish truth. Date/checkpoint all material editorial decisions. No implementation, Stage, Site, public KFB lore promotion or card import without later authorization.
 
-**Original seed source:** https://www.youtube.com/watch?v=ymbb8q2mBuo ; current chat upload `Eingefügter Text(4).txt` is 192,811 UTF-8 bytes, 1,384 lines; SHA-256 `0ae8762299aef941879046de63f3795f042704446a8cf7584a92f95341276815`. It has 31 section headings and timestamps through approx. 2:22:54. **Full transcript not yet written to GitHub nor Production Inbox; retain the original upload for verbatim future processing.** The transcript contains ASR/transcription uncertainty; source/video alignment not yet independently proven.
+**Original seed source:** https://www.youtube.com/watch?v=ymbb8q2mBuo ; current chat upload `Eingefügter Text(4).txt` is 192,811 UTF-8 bytes, 1,384 lines; SHA-256 `0ae8762299aef941879046de63f3795f042704446a8cf7584a92f95341276815`. It has 31 section headings and timestamps through approx. 2:22:54. **Full transcript is durably archived as a private personal Library file (not in GitHub / Production Inbox):** `/KFB Research/Hidden Cosmology Atlas/SRC-001_TINFOIL-HAT_KURT-METZGER_ASR-TRANSCRIPT_2026-10-13.txt`, `libfile_2bf3eb4b0e908191a4a8097de5198d45`, 192811 bytes; verified by Library metadata query. Reopen via Files Library search in future research sessions. The transcript contains ASR/transcription uncertainty; source/video alignment not yet independently proven.
 
 ## 01 · North Star
 
@@ -107,10 +107,11 @@ Each node supports `mentioned_by`, `opposes`, `interprets`, `historically_derive
 - **HCA-006 · Initial 12-chapter book architecture — PROPOSAL.** Chapter order is revisable after comparative sampling; not locked editorial canon.
 - **HCA-007 · Title is provisional — PROPOSAL.** The Hidden Cosmology Atlas is a working title.
 - **HCA-008 · No KFB canon rewrite — DECISION.** Research may later feed a Deck/Almanac, but never automatically becomes accepted Resident lore, Triplets, or runtime data.
+- **HCA-009 · Full source retention via personal Library — VERIFIED.** Original transcript uploaded with unchanged 192811 byte size as private file `libfile_2bf3eb4b0e908191a4a8097de5198d45`, allowing future sessions to recover original wording without reupload. The initial `container_path` method failed due to session mismatch; exact original conversation `file_id` copy succeeded.
 
 ## 06 · Backlog and research gates
 
-**G0 · Source intake & metadata** [WIP] — inspect attachment/video identity, transcript integrity and author attribution, preserve source. 1 attached seed transcript partially mapped; outside creators profiled at site/channel level only.
+**G0 · Source intake & metadata** [WIP] — original transcript archived/verified as private Library file (192811 bytes); video metadata, speaker/audio attribution still pending. 1 attached seed transcript partially mapped; other authors profiled at site/channel level only.
 
 **G1 · Each author's own worldview** [NOT STARTED] — minimum 2–3 source-specific texts/episodes per core author; reconstruct internal vocabulary, ontology, cosmogenesis, agents, history and salvation/agency model in separate 1–2 page dossiers.
 
@@ -166,7 +167,7 @@ Podcast: https://podcasts.apple.com/us/podcast/susquehanna-alchemy/id1586176738 
 - Final public output language English? Default **proposed English** given KFB-facing authoring; current internal research German.
 - Corpus priority after core three: author(s) with first-hand UFO reports, ancient texts, secret-history historians, or counter-interpreters?
 - Book length and chapter depth to be set after representative claim/section sampling.
-- Source-object persistence: keep exact attached 192,811-byte transcript recoverable in a durable file/archive, not merely this file's fingerprint.
+- Source-object persistence: **DONE for SRC-001** in private personal Library, independently visible by metadata. Next: verify exact episode/video speaker claims against playback.
 
 ## 10 · Operating rules
 
@@ -175,8 +176,8 @@ Read `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md
 ## 11 · Document register
 
 - **HCA-LIVING-01** · `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.1.md` · **current / first milestone** · this project cursor, method, source index and editorial chapter plan.
-- **SRC-001-original-transcript** · user upload `Eingefügter Text(4).txt` / candidate YouTube video ID `ymbb8q2mBuo` · **current conversation attachment, NOT DURABLY ARCHIVED IN REPO** · retain original text and fingerprint from §00.
+- **SRC-001-original-transcript** · private personal Library file `libfile_2bf3eb4b0e908191a4a8097de5198d45` at `/KFB Research/Hidden Cosmology Atlas/SRC-001_TINFOIL-HAT_KURT-METZGER_ASR-TRANSCRIPT_2026-10-13.txt` / source video `ymbb8q2mBuo` · **PRIVATE ARCHIVE, 192811 BYTES, LIBRARY METADATA VERIFIED** · original bytes reference/fingerprint from §00. This source is not stored in the public GitHub repository.
 - **Future source claim-ledger** · NOT CREATED. A separate compact JSON/TSV claims index is considered only after a representative extraction, not a new product runtime.
 - **Related existing KFB source-method failure** · `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md` · methodological negative, not a dependency.
 
-**One next gate:** **CORPUS_INTAKE_01 — preserve original transcript and verify video/speaker metadata, then produce a sampled verbatim/claim ledger for the 01:03–01:16 occult-cosmology block.**
+**One next gate:** **CORPUS_INTAKE_01 — verify episode/video metadata and speaker attribution against playback, then produce a sampled verbatim/claim ledger for the 01:03–01:16 occult-cosmology block.**
