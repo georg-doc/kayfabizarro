@@ -1,3 +1,27 @@
+## CURRENT RETURN — MULTI-DOC AUTHOR WORLDVIEW NETWORK R2 — 2026-10-13
+
+**Outcome:** The user has selected **one dedicated editable Google Doc per author**, replacing the earlier proposal to keep all authors in one large Doc. A native per-author tab layout will separate ontological core, mechanics/vocabulary, source ledger/cross-author connections and KFB performance/Triplets. The existing combined two-lens `Golden Test 01` remains a comparison fixture, not a second editable author master. Cross-worldview associations are typed, source-linked author/network records; embeddings and gameplay use are **future derived adapters**, not proven runtime products.
+
+**Actual exact Google Drive read (2026-10-13):** `KFB Author Dossier: Daniel Liszt / Dark Journalist` (approximately 4,128 extracted characters), `KFB Author Dossier: Catherine Austin Fitts` (~2,787), `KFB Author Dossier: David Icke` (~3,334), and `KFB Worldview Dossier: Golden Test 01` (~4,454). All four are accessible native Google Docs with **exactly one physical tab `Tab 1` / ID `t.0`** apiece. The three apparent headings `Tab 1: Epistemic Core`, `Tab 2: Core Mechanics`, `Tab 3: Performance` are **plain text labels** within that single native tab, not actual tab objects. The current extracted bodies contain **zero explicit original source URLs**, so source-grounded author position alignment still requires a source ledger. A standalone Kurt Metzger author Doc was not established in this exact four-file inspection. Google Drive metadata reports these documents currently `shared=false`, so do not publish new private provider IDs/URLs in GitHub.
+
+**Source truth and performance:** Original interview/publication source text wins over Gemini's compressed dossier; preserve the author's own expressed certainty and distinction from hosts and guests, with no researcher-invented epistemic status labeling. KFB comedy, Triplets and stand-up are separately derived from the research and acted by existing fictional KFB characters, not direct impersonations or forged author quotations. Source/claim/edge IDs and actual passages are compulsory for later semantic mapping, while optional vectors are just a secondary retrieval index.
+
+**NotebookLM / Docs capability:** Per-author Docs can be independently imported into topic/cluster notebooks. Multiple real tabs in **one** Google Doc are imported as **one NotebookLM source**. Google Docs supports tab- and all-tab export and tab-scoped links; NotebookLM's Google Docs source import omits footnotes/comments, so source citations belong inside the primary tab body. NotebookLM sync of a specific document **has not been independently verified here**. No Google Docs edits/migration were performed; Gemini owns the active author-document changes.
+
+**Changed GitHub files:**
+1. NEW `skills/chat/research/hidden-cosmology-atlas/MULTI_DOC_AUTHOR_WORLDVIEW_NETWORK_WORKFLOW_R2_2026-10-13.md` — full English owner/multi-doc/native-tab/relations/embedding/provenance and privacy contract.
+2. UPDATED `skills/chat/research/hidden-cosmology-atlas/GOOGLE_DOCS_NOTEBOOKLM_WORLDVIEW_SYNC_WORKFLOW_R1_2026-10-13.md` — historical/superseded marker; prior reasoning preserved.
+3. UPDATED `skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md` — new binding HCA-036–040 and active one next gate.
+4. UPDATED `skills/chat/research/hidden-cosmology-atlas/RETURN.md` — this additive Return and evidence.
+
+**Owner:** `georg-doc/kayfabizarro` · branch `research/hidden-cosmology-atlas-2026-10-13` · Draft PR #394. GitHub content milestone before this Return: `276f1e3e7958234d1bf73302d762bf50de182e19`. Fetch exact final branch HEAD and intended file blobs after this write.
+
+**Protected boundaries and open work:** No changes to Google Docs, NotebookLM, canonical game Card registry, Resident identity/ChatterBox, KFB Audio, World/Landmarks, Game runtime, public Stage/Cloudflare, or Live. No new GPT Site created or deployed. Missing: actual native tab conversion by the authorized editor, original-source citation passages, separate Metzger author Doc identification, concrete NotebookLM author-source refresh proof, and downstream comic/performance Golden QA. Source identities and private revisions must be retained in authenticated Production Control, not leaked into a public code repository.
+
+**ONE NEXT GATE — `MULTI_DOC_AUTHOR_TABS_AND_SOURCE_ANCHORS_R1`:** Under one authorized Google Docs editor, losslessly convert one existing author Doc into actual native tabs with in-body source ledger; inspect new Doc revision/tab IDs and source passages, then demonstrate one independently selected and refreshed author source in NotebookLM. After that, replicate for other authors and export a versioned source-grounded KFB Lens.
+
+---
+
 ## CURRENT RETURN — GOOGLE DOCS / NOTEBOOKLM TAB WORKFLOW RECOVERY — 2026-10-13
 
 **Outcome:** User's multi-app tabbed Worldview research workflow is committed as a distinct English research contract and mirrored to the existing editorial Living SSOT. Google Docs is the editable author-dossier master, NotebookLM is the supported Drive-synced research view, GitHub is the independent versioned KFB decisions/source-pointer/Return authority, while the proposed later GPT Site is only a performance consumer using existing Resident/ChatterBox/Card/Audio owners.
