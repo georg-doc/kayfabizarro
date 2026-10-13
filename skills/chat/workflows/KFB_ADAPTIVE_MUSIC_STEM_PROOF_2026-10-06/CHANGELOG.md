@@ -1,5 +1,15 @@
 # CHANGELOG · KFB Adaptive Music Stem Proof
 
+
+## 2026-10-13 · Work/WSA before Claude Code · editable Triplet and Opener Pool
+
+- Georg explicitly sequenced **Work/WSA FIRST** to upgrade the existing Audio Voice Acting Site for multi-deck source-verified Triplet/Beat, opener/pivot pool, original Card preview, versioned editorial status, DRY listening, stable JSON export and continuous GitHub content hot reload with no repeat Work/deploy.
+- **Claude Code SECOND**, conditional on a real Site+data handoff, to consume accepted Beat/Opener/Voice/Cue source in the existing FrankenStein Composer/Wireface/Scenelet owner PR #355. No second audio/card/dialogue source, Site or runtime.
+- Created `WSA_TRIPLET_OPENER_POOL_SITE_FIRST_THEN_CLAUDE_CODE_2026-10-13.md`; purely specification/recovery milestone, not yet WSA execution or published Site change. Current version 9/r3 protected; old 56/60 Deck generic receiver gap must be addressed in Phase 1.
+- One next gate: `WSA_EXISTING_AUDIO_SITE_TRIPLET_OPENER_POOL_HOT_RELOAD_MVP_R1`; original Audio Site/Composer Drafts remain unmerged.
+
+---
+
 ## 2026-10-12 · Self-service Card Performances deployed once
 
 - Extended the existing KFB Audio Voice Acting surface to Source 0.6.0 with a dynamic GitHub content loader and local Card Performance editor.
