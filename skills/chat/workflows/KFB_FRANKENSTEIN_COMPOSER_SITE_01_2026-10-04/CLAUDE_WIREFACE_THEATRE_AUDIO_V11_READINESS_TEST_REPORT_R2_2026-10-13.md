@@ -33,3 +33,13 @@ The positive status authorizes only **Claude Code's source/licence investigation
 - No new Site/Cloudflare, separate React frontend, Work run, merge, Live or automatic promotions.
 
 **ONE next gate: `CLAUDE_CODE_WIREFACE_THEATRE_VOICE_PROVENANCE_AND_ONE_CARD_MVP_PLAN_R1`**, as currently named by the original Composer owner. An accepted talking Card performer is a later gated outcome.
+
+## Additional real Audio consumer test · authoritative module (not duplicate validator)
+Fetched the actual Audio-owner `tools/KFB-ToolBox/audio/card-performance-self-service/triplet-pool-core.mjs` at Git blob `517bb34bd64c968ebb4614a500460b55428b9257`, evaluated its original `consumePacket()` function (no imports) against the **actual Audio Work-exported packet** Git blob `f350e2ff666c34382a91c76ec0e97ff7e66ec042`.
+
+- `consumePacket(realPacket)` → **REJECTED `EXPLICIT_PREVIEW_REQUIRED`**, as it must.
+- `consumePacket(realPacket,{preview:true})` → **PASS**, exactly 1 candidate Beat, 0 VoiceClips, 1 PDF-page-only CardVisual (isolated QA only).
+- `consumePacket({...realPacket,preview:false})` → **REJECTED `ACCEPTED_OPENER_ONLY`**; stripping the preview flag cannot promote an editorial candidate.
+
+**3/3 authoritative current-Audio-consumer smoke assertions PASS** in the JavaScript V8 executor, in addition to the separate **15/15 Composer-readiness negative/owner gates**. No Node process, actual browser/UI/audio, sample licence or WebGL integration was exercised. These tests prove guard semantics for this exact snapshot; require the live source/tests and real signed media again when implementing.
+
