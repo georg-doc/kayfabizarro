@@ -1,5 +1,10 @@
 ## CURRENT HUMAN FAIL OVERRIDE · 2026-10-13 · 1001 NIGHTS TRIPLETS / BRIDGES QUARANTINED
 
+### NEW DETERMINISTIC DESIGN BRIEF · 2026-10-13
+Read `KFB_TRIPLETS_DETERMINISTIC_SOURCE_GRAMMAR_AND_AUTHORING_STUDIO_BRIEF_2026-10-13.md`. Georg's further direction: maximize meaningful **original Card wording**, derive one semantic subject / predicate / reframe utterance by **source span + curated micro-operators**, link beats with short state-proven causal/pseudocausal Bridges, and produce one Card, few Cards, real page or full Deck without runtime LLM calls. Research may be augmented via chat/agents then reviewed; the generator consumes only versioned admitted recipes and source IDs. In-world Billboard uses real Card Builder/PDF crop consumer and Audio owns authoritative beat/voice timing. Start with a tiny source-span/operator negative-regression pilot, **not** a new Site/plugin deployment or bulk 60-Card rewrite. Any future Triplets Studio Site is only an authoring surface of this existing owner, never a second SSOT, kernel or mixer. The prior 1001 HUMAN FAIL and current Audio r3 preview remain unchanged.
+
+
+
 ### INDEPENDENT RECOVERY GATE COMPLETED · 2026-10-13
 Read `KFB_TRIPLETS_SEMANTIC_BRIDGE_CONTRACT_RECOVERY_R1_2026-10-13.md` next. Exact original Meta-Narration/FrizzleBob semantic donors and current Audio owner code were independently compared. **15/15 source/code assertions PASS** as evidence of the fault; **no new Triplet or Bridge creative PASS**, no new Suno candidate and **no plugin update**. Audio Site v9 has separate hardcodes `wrinkle_rumble`, 48 Cards, 50 utterances and 3 × 50 audio cues; therefore **multi-deck import is NOT supported**. Stop implying any GitHub JSON for 1001 Nights is currently importable in the Audio Site.
 
