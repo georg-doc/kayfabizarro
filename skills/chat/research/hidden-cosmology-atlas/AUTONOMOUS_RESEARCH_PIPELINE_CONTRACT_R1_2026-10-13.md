@@ -1,3 +1,7 @@
+> **CURRENT WRITE-TARGET OVERRIDE — 2026-10-13:** The user has elected [GitHub Markdown Author Masters](authors/README.md) and the [GitHub → NotebookLM Workflow R1](GITHUB_MARKDOWN_NOTEBOOKLM_SOURCE_WORKFLOW_R1_2026-10-13.md). The **single authorized author-master writer now patches the corresponding GitHub `authors/<slug>.md`** after source checking; it must fetch and verify the exact branch head and file. The Google Docs edit and revision gates in the historical sections below are relevant only to the preserved donor/fallback workflow, not mandatory for new GitHub author updates. NotebookLM Web URL import/update remains **UNVERIFIED**, and any actual refresh receipt must be observed. This override changes the writer destination only; the source fidelity, independent attribution and GitHub Issue completion contracts remain binding.
+
+---
+
 # KFB Research Pipeline — Task → Sources → Author Doc → NotebookLM → Evidence
 
 **Date:** 2026-10-13  
