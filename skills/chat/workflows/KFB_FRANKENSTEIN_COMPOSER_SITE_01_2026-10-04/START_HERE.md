@@ -1,3 +1,14 @@
+
+## NEW OPTIONAL FACE DRIVER MVP SOURCE CHECKPOINT · 2026-10-13
+
+Georg authorized preparation/integration of original **Wireface Three.js** as an optional donor in the **existing FrankenStein Composer**, beginning with same real GothGirl Rig_Medium + FB v5 head and one intelligible voice recording, KFB Native face A vs true vendor Wireface B. No new Site, renderer, audio engine or alternate actor owner. Read `WIREFACE_OPTIONAL_FACE_DONOR_MATRIX_2026-10-13.md`, **`WSA_WIREFACE_FACE_DRIVER_MVP_ONE_SHOT_2026-10-13.md`** and `WIREFACE_FACE_DRIVER_MVP_ADAPTER_TEST_REPORT_2026-10-13.md`.
+
+**Current actual GitHub implementation milestone:** additive KFB_NATIVE `composition.faceDriver` / `wirefaceCompanion:null` in real `app.js` Actor Recipe, separate optional `kfb-hub/stage/toolbox/frankenstein-composer/wireface-face-driver-contract.mjs` and negative Node ESM test module. Verified source/status/mount/audio-exclusivity with **17/17 V8 adapter checks** and **25/25 structural Composer checks**. This DOES NOT mean the actual Wireface SDK was imported, attached, visibly rendered, listening to a real clip or exported. Real vendor website/API/license was inaccessible in this executor; beware unrelated Babylon `styk-tv/wireface`. No new Composer Site v5 published; the existing private v4/human interactive WebGL acceptance remains OPEN.
+
+**One next gate:** `COMPOSER_WIREFACE_REAL_SOURCE_ISOLATION_AND_FACE_A_B_MVP_R1` in one Sites-capable WSA/Work ONE_SHOT on existing PR #355/Site. First visually isolate real donor before mounting, use a truly understandable voice clip (NOT old unintelligible eSpeak) and only one AudioContext. Preserve current Composer v4 source/load/export regressions; report actual screenshots, audio/clip/hash, Site version and Georg KEEP/TUNE/CUT. No Cloudflare, merge or Live.
+
+---
+
 # CURRENT STATUS · 2026-10-12
 
 **Implementation is complete; formal acceptance is not.**
