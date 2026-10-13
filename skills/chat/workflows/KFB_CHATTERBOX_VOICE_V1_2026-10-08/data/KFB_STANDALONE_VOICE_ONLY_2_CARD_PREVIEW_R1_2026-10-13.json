@@ -1,0 +1,335 @@
+{
+  "schema": "kfb.triplets.standalone-card-beat-preview/0.1",
+  "date": "2026-10-13",
+  "status": "EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED_NOT_AUDIO_RENDERED",
+  "engineSha": "41db1d6a9f296a4fe6323894f50e3d6b1ee4a96d",
+  "sourceDeckPath": "media/kfb/Wrinkle_Rumble_-_ADD_web_ID.pdf.json",
+  "sourceBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+  "scope": "TWO_CARDS_STANDALONE_NO_BRIDGE",
+  "cardNumbers": [
+    10,
+    31
+  ],
+  "cardBeats": [
+    {
+      "kind": "STANDALONE_CARD_BEAT_CANDIDATE",
+      "beatType": "ORIGINAL_CARD_FULL_RECITAL_NOT_PROVEN_SEMANTIC_TRIPLET",
+      "id": "wrinkle_rumble:10@695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 10,
+      "originalCardName": "The Cookie of Causality",
+      "cardSourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "text": "Ever tasted The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "coreTriplet": null,
+      "openerMode": "EVER_TASTED",
+      "openerText": "Ever tasted The Cookie of Causality?",
+      "openerKind": "FOOD_AUDIENCE_ADDRESS",
+      "performerFiction": false,
+      "extraPunchlineAdded": false,
+      "originalFields": [
+        "cardName",
+        "power",
+        "lore"
+      ],
+      "sourcePieces": [
+        {
+          "kind": "source",
+          "field": "cardName",
+          "verbatim": "The Cookie of Causality",
+          "start": 0,
+          "end": 23,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 10,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        },
+        {
+          "kind": "source",
+          "field": "power",
+          "verbatim": "Inciting Incident: Restart the game from Turn 1. Keep all damage.",
+          "start": 0,
+          "end": 65,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 10,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        },
+        {
+          "kind": "source",
+          "field": "lore",
+          "verbatim": "The war didn't start over land or ideology. It started over a snickerdoodle.",
+          "start": 0,
+          "end": 76,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 10,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        }
+      ],
+      "sourceCoverage": {
+        "kind": "EXACT_ORIGINAL_TOKEN_COVERAGE",
+        "fields": {
+          "cardName": {
+            "originalTokens": 4,
+            "referencedTokens": 4,
+            "pct": 100
+          },
+          "power": {
+            "originalTokens": 11,
+            "referencedTokens": 11,
+            "pct": 100
+          },
+          "lore": {
+            "originalTokens": 13,
+            "referencedTokens": 13,
+            "pct": 100
+          }
+        },
+        "originalTokens": 28,
+        "referencedOriginalTokens": 28,
+        "contentCoveragePct": 100,
+        "semanticInformationCoveragePct": null,
+        "caution": "100% word retention proves faithful copy, NOT an engaging semantic Triplet."
+      },
+      "startCue": "beat:wrinkle_rumble:10:start",
+      "endCue": "beat:wrinkle_rumble:10:end",
+      "optionalBridgeAfter": null,
+      "delivery": {
+        "tone": "dry",
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 1100,
+        "rate": 0.93,
+        "emphasis": "let original lore land; additional punchline not required"
+      },
+      "admitted": false,
+      "productionStatus": "EDITORIAL_CANDIDATE_SOURCE_RECITAL_NO_AUDIO"
+    },
+    {
+      "kind": "STANDALONE_CARD_BEAT_CANDIDATE",
+      "beatType": "ORIGINAL_CARD_FULL_RECITAL_NOT_PROVEN_SEMANTIC_TRIPLET",
+      "id": "wrinkle_rumble:31@695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 31,
+      "originalCardName": "The Abyss Home",
+      "cardSourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "text": "Do you know The Abyss Home? Institutionalize: Remove a character from play. They are 'safe' now. A nice place where the soup is warm and the doors are locked from the outside.",
+      "coreTriplet": null,
+      "openerMode": "DO_YOU_KNOW",
+      "openerText": "Do you know The Abyss Home?",
+      "openerKind": "AUDIENCE_ADDRESS",
+      "performerFiction": false,
+      "extraPunchlineAdded": false,
+      "originalFields": [
+        "cardName",
+        "power",
+        "lore"
+      ],
+      "sourcePieces": [
+        {
+          "kind": "source",
+          "field": "cardName",
+          "verbatim": "The Abyss Home",
+          "start": 0,
+          "end": 14,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 31,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        },
+        {
+          "kind": "source",
+          "field": "power",
+          "verbatim": "Institutionalize: Remove a character from play. They are 'safe' now.",
+          "start": 0,
+          "end": 68,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 31,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        },
+        {
+          "kind": "source",
+          "field": "lore",
+          "verbatim": "A nice place where the soup is warm and the doors are locked from the outside.",
+          "start": 0,
+          "end": 78,
+          "cardRef": {
+            "deckId": "wrinkle_rumble",
+            "cardNumber": 31,
+            "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c"
+          }
+        }
+      ],
+      "sourceCoverage": {
+        "kind": "EXACT_ORIGINAL_TOKEN_COVERAGE",
+        "fields": {
+          "cardName": {
+            "originalTokens": 3,
+            "referencedTokens": 3,
+            "pct": 100
+          },
+          "power": {
+            "originalTokens": 10,
+            "referencedTokens": 10,
+            "pct": 100
+          },
+          "lore": {
+            "originalTokens": 16,
+            "referencedTokens": 16,
+            "pct": 100
+          }
+        },
+        "originalTokens": 29,
+        "referencedOriginalTokens": 29,
+        "contentCoveragePct": 100,
+        "semanticInformationCoveragePct": null,
+        "caution": "100% word retention proves faithful copy, NOT an engaging semantic Triplet."
+      },
+      "startCue": "beat:wrinkle_rumble:31:start",
+      "endCue": "beat:wrinkle_rumble:31:end",
+      "optionalBridgeAfter": null,
+      "delivery": {
+        "tone": "dry",
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 850,
+        "rate": 0.93,
+        "emphasis": "let original lore land; additional punchline not required"
+      },
+      "admitted": false,
+      "productionStatus": "EDITORIAL_CANDIDATE_SOURCE_RECITAL_NO_AUDIO"
+    }
+  ],
+  "performance": {
+    "schema": "kfb.triplets.standalone-card-beat-set/0.1",
+    "kind": "SOLO_VOICE_ONLY_SCRIPT_CANDIDATE",
+    "text": "Welcome, dear Fluffheads!\n\nEver tasted The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.\n\nDo you know The Abyss Home? Institutionalize: Remove a character from play. They are 'safe' now. A nice place where the soup is warm and the doors are locked from the outside.\n\nStay Fluffy!",
+    "lines": [
+      "Welcome, dear Fluffheads!",
+      "Ever tasted The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "Do you know The Abyss Home? Institutionalize: Remove a character from play. They are 'safe' now. A nice place where the soup is warm and the doors are locked from the outside.",
+      "Stay Fluffy!"
+    ],
+    "cardBeatCount": 2,
+    "beatRefs": [
+      {
+        "position": 0,
+        "cardId": "wrinkle_rumble:10",
+        "beatId": "wrinkle_rumble:10@695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+        "startCue": "beat:wrinkle_rumble:10:start",
+        "endCue": "beat:wrinkle_rumble:10:end",
+        "openerMode": "EVER_TASTED",
+        "text": "Ever tasted The Cookie of Causality? Inciting Incident: Restart the game from Turn 1. Keep all damage. The war didn't start over land or ideology. It started over a snickerdoodle.",
+        "cardTitle": "The Cookie of Causality",
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 1100,
+        "recommendedDelivery": {
+          "tone": "dry",
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 1100,
+          "rate": 0.93,
+          "emphasis": "let original lore land; additional punchline not required"
+        },
+        "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+        "sourceCoverage": {
+          "kind": "EXACT_ORIGINAL_TOKEN_COVERAGE",
+          "fields": {
+            "cardName": {
+              "originalTokens": 4,
+              "referencedTokens": 4,
+              "pct": 100
+            },
+            "power": {
+              "originalTokens": 11,
+              "referencedTokens": 11,
+              "pct": 100
+            },
+            "lore": {
+              "originalTokens": 13,
+              "referencedTokens": 13,
+              "pct": 100
+            }
+          },
+          "originalTokens": 28,
+          "referencedOriginalTokens": 28,
+          "contentCoveragePct": 100,
+          "semanticInformationCoveragePct": null,
+          "caution": "100% word retention proves faithful copy, NOT an engaging semantic Triplet."
+        },
+        "performerFiction": false
+      },
+      {
+        "position": 1,
+        "cardId": "wrinkle_rumble:31",
+        "beatId": "wrinkle_rumble:31@695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+        "startCue": "beat:wrinkle_rumble:31:start",
+        "endCue": "beat:wrinkle_rumble:31:end",
+        "openerMode": "DO_YOU_KNOW",
+        "text": "Do you know The Abyss Home? Institutionalize: Remove a character from play. They are 'safe' now. A nice place where the soup is warm and the doors are locked from the outside.",
+        "cardTitle": "The Abyss Home",
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 850,
+        "recommendedDelivery": {
+          "tone": "dry",
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 850,
+          "rate": 0.93,
+          "emphasis": "let original lore land; additional punchline not required"
+        },
+        "sourceRevision": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+        "sourceCoverage": {
+          "kind": "EXACT_ORIGINAL_TOKEN_COVERAGE",
+          "fields": {
+            "cardName": {
+              "originalTokens": 3,
+              "referencedTokens": 3,
+              "pct": 100
+            },
+            "power": {
+              "originalTokens": 10,
+              "referencedTokens": 10,
+              "pct": 100
+            },
+            "lore": {
+              "originalTokens": 16,
+              "referencedTokens": 16,
+              "pct": 100
+            }
+          },
+          "originalTokens": 29,
+          "referencedOriginalTokens": 29,
+          "contentCoveragePct": 100,
+          "semanticInformationCoveragePct": null,
+          "caution": "100% word retention proves faithful copy, NOT an engaging semantic Triplet."
+        },
+        "performerFiction": false
+      }
+    ],
+    "intro": "Welcome, dear Fluffheads!",
+    "outro": "Stay Fluffy!",
+    "bridgesUsed": 0,
+    "soundbed": "NONE",
+    "outputMode": "VOICE_ONLY_DRY",
+    "transcriptFormat": "ONE_PHYSICAL_LINE_PER_CARD_BLANK_LINE_BETWEEN",
+    "timingStatus": "ONLY_RECOMMENDED_PAUSES_NOT_MEASURED_AUDIO_TIMESTAMPS",
+    "sunoStyle": "Solo stand-up spoken word, completely dry a cappella voice, no music, no instruments, no singing, clear natural delivery, independent comedic beats, varied short pauses between cards. No chorus.",
+    "noMusicGuaranteedBySuno": false,
+    "isLlmFree": true,
+    "dataStatus": "EDITORIAL_CANDIDATE_NOT_HUMAN_ACCEPTED",
+    "admitted": false,
+    "voiceIdentity": "UNCAST_STANDUP_SOLO",
+    "recordingFormat": "DRY_TTS_OR_NO_INSTRUMENT_SUNO_PROMPT",
+    "note": "Blank lines are edit/cut markers, not measured audio timestamps."
+  },
+  "comparison": {
+    "compactCookieCardOriginalTokenCoveragePct": 50,
+    "fullSourceCookieCardOriginalTokenCoveragePct": 100,
+    "sourceCoverageMethod": "exact original word tokens covered by selected spans; not measured semantic humor"
+  },
+  "optionalLater": "approved beats may be cached individually and reassembled; do not import to canonical Audio r3 preview",
+  "nextGate": "GEORG_LISTENS_AND_EVALUATES_STANDALONE_CARD_BEAT_VOICE_ONLY_AFTER_SOURCE_VERIFICATION"
+}
