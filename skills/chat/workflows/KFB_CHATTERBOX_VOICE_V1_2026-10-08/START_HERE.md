@@ -1,5 +1,16 @@
 ## CURRENT HUMAN FAIL OVERRIDE · 2026-10-13 · 1001 NIGHTS TRIPLETS / BRIDGES QUARANTINED
 
+### CURRENT STANDALONE VOICE-ONLY CARD BEAT R1 · 2026-10-13
+Georg clarified that each original Card must work as an independent mini stand-up routine *without an inter-Card Bridge*, beginning with a source-appropriate improv opener (e.g. heard-of, tasted, met, restaurant ordered), one physical **Card line / blank line** cut separator, optionally no separate punchline/Closure, truly DRY voice-only delivery and per-beat cue/pause metadata. A deck may be resequenced or split without LLM calls, while speaker-specific stage fiction is explicitly marked and cannot become Card lore.
+
+**Implemented in existing Voice branch:** `tools/assemble_standalone_card_beats_r1.cjs` now has 6 source-filtered/op-in opener patterns, source-position coverage audit, compact semantic beat and **full original Card POWER/LORE word-retaining stand-up recitation** alternatives, no obligatory Bridge, fixed `Stay Fluffy!` outro, blank-line cut-separated scripts and 5000-char lossless chapter splitting. Tested against exact original deck JSON in V8: **35/35 technical checks PASS**. `data/KFB_STANDALONE_VOICE_ONLY_2_CARD_PREVIEW_R1_2026-10-13.json` contains 2 Wrinkle #10/#31 independently cuttable source-full candidates (397 characters with intro/outro), both 100% original Card title/Power/Lore token retention; **not a proved clever stand-up Triplet**. Compact Cookie variant preserves 14/28 original tokens = 50%, despite conveying salient source action/lore.
+
+**Fail-closed 56-deck trial:** IGNORE DYSTOPIA exactly 56 Cards, #9 Firehose has actual POWER=null and LORE=null. Planner exposes `NO_BEAT_SOURCE_INCOMPLETE`; other 55 source-full candidates split for technical QA into 27/26/2 paragraphs in three <=5000-character chapters, **NOT 56/56 complete nor human-accepted performance**. Do not replace missing original source from artworkPrompt, and do not pass partial deck off as full. Source token retention ≠ humor or full semantic coverage. Suno dry prompt not proof of no accompaniment; exact cue timings require actual rendition.
+Report `KFB_STANDALONE_VOICE_ONLY_CARD_BEATS_R1_TEST_REPORT_2026-10-13.md`. **Plugin v0.1.0 and Audio Site v9/r3 not changed, no new TTS/Suno/Billboard/World.**
+**One next gate:** `KFB_STANDALONE_CARD_BEAT_R1_EDITORIAL_LISTENING_GATE` comparing compact versus full-source Cookie Card and matching openners, judge natural comic pacing and source fidelity before any batch promotion.
+
+
+
 ### NEW BINDING HUMAN FAIL · 2026-10-13 · R1 MISSING SPOKEN CARD TITLE AND POWER
 
 **Read `POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md` BEFORE touching pilot, plugin, performance, Site or generator.** Georg rejected the five R1 deterministic outputs as conceptually wrong: card titles not spoken, most POWER completely absent, resulting lines are LORE cut-ups rather than one semantic Card show/spin/sell Triplet. Re-executed exact committed JS against pinned original Card JSON: **0/5 title present, 1/5 POWER source used, 5/5 LORE source used, 0/5 all three**. Previous 35/35 source/shape tests remain technical history but **R1 is PRODUCT/HUMAN FAIL; 94.92% cut-up word share is not acceptance**.
