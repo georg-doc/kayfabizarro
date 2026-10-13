@@ -1,5 +1,18 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+
+## 2026-10-13 · SECOND BINDING PRODUCT FAIL · R1 SOURCE CUT-UP OMITTED SHOW/POWER
+
+Georg's explicit correction: the R1 "The war didn't start over land or ideology..." candidate and four peers do NOT satisfy KFB Card Triplet design, because **the exact Card title must be audibly named (Show it), and POWER + LORE jointly feed the semantic subject / relation / reframe (Spin it / Sell it)** in one short spoken beat. Source spans alone ≠ Triplet; high literal-overlap percentage hides omission of entire source fields.
+
+Replayed **exact current committed R1 JS** using its actual pinned 3 original Decks and fixtures; verified findings: **0/5 exact cardName in speech; 1/5 source POWER used; 5/5 LORE used; 0/5 all three**. Prior 35/35 technical tests and 56/59 source/glue share are preserved as *debug evidence only*, **NOT product semantic PASS**. R1 candidate outputs now `HUMAN_FAIL_QUARANTINED`. New own Voice-branch postmortem `POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md` contains five exact outputs, source-field coverage table, the actual faulty assertions, a title/power/lore-based one-card candidate example ("The Cookie of Causality ...", **not human Golden**) and new negative acceptance requirements.
+
+**No blind automated repair:** R1 code, fixtures, test report, plugin private v0.1.0 and frozen earlier 1001 negative Goldens left unchanged. No audio Site, live r3 preview, WSA/Site deployment, Suno, new playable story, World, merge or Live changed.
+
+**Exactly one next gate:** `KFB_TRIPLETS_SHOW_SPIN_SELL_SINGLE_CARD_HUMAN_FORMULA_GATE_R1` — Georg first judges one actual original Card title/POWER/LORE-to-one-utterance recipe before a targeted code/compiler/independent regression rebuild. Separate Audio multi-deck importer gate remains downstream after semantics, not a reason to build second runtime.
+
+---
+
 ## 2026-10-13 · R1 EXECUTED SOURCE-SPAN DETERMINISTIC TRIPLET PILOT
 
 **Outcome:** a **real deterministic source-cut-up CJS generator** in the existing Voice PR #379, not just a brief, with exact source Card field substring/offset mapping, restricted glue, typed semantic operator and proof slots, state-anchored Bridge operator, `NO_TRIPLET`/`NO_EDGE`, complete-deck planning and stable seeded candidate selection. It produces **candidate outputs only** and neither calls a model nor touches Audio runtime. No new Site/Plugin Creator release.
