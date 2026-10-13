@@ -1,5 +1,16 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-10-13 · CARD PERFORMANCE SCENELET / CLAY STAGE R1 · DESIGN ONLY
+
+Georg's reduced-MVP direction is now recorded as one source-backed modular **Card Performance Scenelet**: a small 3D Resident ensemble with authentic KFB clay, controlled lighting/camera/stage variants, actual PDF-backed Cards on the accepted Kenney Billboard donor, Card SHOW/SPIN/SELL beats with real source-dependent Bridges and ChatterBox NPC choice/reaction. Future worldview/author dossiers remain a separately sourced interpretation layer, not a replacement of original card text. `Fallmodul`/floor module exact source remains **UNVERIFIED** and must be identified from the user's receiving modular MVP before implementation.
+
+New design brief: `KFB_CARD_PERFORMANCE_SCENELET_CLAY_STAGE_CONCEPT_R1_2026-10-13.md`. Primary editorial/ChatterBox content owner remains Voice PR #379. Protected receivers: existing Resident Atlas/Scenelets (visual), WB2 only after separate explicit world authorization, KFB Clay PR #301, Card Builder/PDF, Billboard B0, Audio PR #365 and author research PR #394. This is **not** a new World or Stage runtime; no source objects were isolated or Clay Golden proven here. Existing R1 Triplet outputs still **HUMAN FAIL** (0/5 full Title/POWER/LORE); the new Scenelet concept does not grant their publication. No new browser scene, author dossier ingestion, GPT Site, Cloudflare Stage, Merge or Live.
+
+Evidence: one GitHub design file exact text/head readback; conceptual/source inspection only, executed 3D/browser/audio tests **0**, visual screenshots **0**, human creative acceptance **OPEN**. The previous binding next gate is preserved unchanged: `KFB_TRIPLETS_SHOW_SPIN_SELL_SINGLE_CARD_HUMAN_FORMULA_GATE_R1`. Real isolated visual donors may be prepared in parallel, but they do not waive the semantic gate.
+
+---
+
+
 
 ## 2026-10-13 · SECOND BINDING PRODUCT FAIL · R1 SOURCE CUT-UP OMITTED SHOW/POWER
 
