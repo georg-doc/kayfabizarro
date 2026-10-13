@@ -1,3 +1,53 @@
+## 2026-10-13 · RETURN · Triplet & Opener Studio · existing Audio Site v11
+
+Status: **DEPLOYED_AND_VISIBLY_VERIFIED · CONTENT_HOT_RELOAD_PASS · PRODUCT_TUNE / HUMAN_LISTENING_PENDING**
+Executor: Codex desktop, Sites-capable Builder; independent read-only Critic/Guard `/root/pool_critic_guard`.
+Owner: `georg-doc/kayfabizarro`, Audio Draft PR **#365**, `web/kfb-adaptive-music-stem-proof-2026-10-06`.
+Implementation/evidence head before this Return: **dd17f2fa00d62715c48a18b83f11708dcd7aeecb**. Final Return head is read back and recorded in Production Control after the write.
+
+### What works and everyday operation
+Open **https://kfb-audio.frizzlebob.chatgpt.site/** in the normal authenticated browser → **Voice Acting → Triplet & Opener Pool → Enable PREVIEW → Reload pool**.
+The existing Site now discovers real Decks, shows original title/POWER/LORE, edits standalone beats and versioned openers, offers compact versus explicitly labeled full-source recital, auditions natural browser voice DRY or over the existing D owner, retains local Deck drafts, exports/restores editor JSON, and exports a tested source/Beat/Opener/Set consumer packet.
+Routine content route: local draft → Download editor + writeback JSON → ordinary Web Chat/GitHub compares current Voice pool blob, reconciles conflicts and commits → same Site Reload. **Zero repeat Work job or Site deployment for ordinary content rows.** Direct in-Site cloud Save remains unavailable and is explicitly labeled; no client GitHub token.
+Local KEEP does not promote canon. New/edited openers and Beats retain truthful candidate/review status. Original source cards stay immutable.
+
+### Final publication and two new content-only updates
+- Existing Site project `appgprj_6ac1c73dc28881919123106bd6d3e90e`; existing custom owner-only audience retained.
+- Source **0.7.1**, Site **version 11**, source commit `d3c1df83347367ce49634a2d29972f773c322574`.
+- Saved version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_c3f0656c4cd08191bef6313a7c10f4cd`.
+- Deployment `appgdep_6ace980dd63481919f64b77fb4436fb6` succeeded; exact owner-authenticated Chrome URL displays expected revision.
+- Archive SHA256 `50063398594d9392635f6db4eff6c86d782f9e53d092c2f87239c5fdc349fce4`.
+- Final post-deploy update 1: Voice `7ad155660e7740fd6c527597e8f1b7aa2b445069`, `triplet-opener-pool-r4-new-opener-v11`, blob `56c78f3274dcbae88abc198ec164819e2866c37a`; Site visibly shows **14 openers**, new record PROPOSED/disabled.
+- Final post-deploy update 2: Voice `f4c23f72945dde9bd7449ad6e15d5b61c1ca5def`, `triplet-opener-pool-r5-cookie-tune-v11`, blob `dfb5435bc0c913ea48f8f5558f801b293962fbc8`; reviewed Cookie v2 modified into candidate **v3**, new clause order/pause900 adopted by explicit Reload Card.
+- Site remained **version11 / identical source / identical deployment / same URL** after both. **Additional deployments for these content updates: 0.**
+- Two engineering publications total: initial v10, then bounded v11 correction clearing stale PDF artwork on Card/Deck changes and rejecting stale async image results. Earlier v10 r2/r3 hot-reload proof is retained as history, not overwritten.
+
+### Tests and durable proof
+**35/35** new source/consumer checks executed again from exact fetched GitHub head; existing core **18/18**, protected r3 live feed **12/12**, packaged Site **172/172**, syntax and diff checks PASS.
+Actual Chrome: Cookie DIRECT/HEARD_OF/gated EVER_TASTED text, full source, DRY start, D audition completion/Stop, real PDF page and hash, 56/60 Deck intake, four-Card selection and full-deck block, local edit retained after Deck switch.
+Actual JSON downloaded from Site and restored via UI in a separate browser storage origin; invalid active-card import rejected without losing visible draft; untrusted acceptance/history downgraded.
+Actual final Site-downloaded consumer packet parsed in explicit preview; accepted-only mode rejected candidate. VoiceClips **0**, no guessed clip times.
+Normal Chrome pool console sample: 0 warnings/errors. Human audible/creative acceptance and exhaustive device regression are not inferred from these checks.
+
+Files: `tools/KFB-ToolBox/audio/card-performance-self-service/` additive pool/core/PDF source adapter, receiving owner modules/index/style, runnable tests and read-only fixtures; owner consumer contract, test report, JSON and screenshots under `evidence/`.
+Read:
+- `TRIPLET_OPENER_POOL_CONSUMER_CONTRACT_R1_2026-10-13.md`
+- `TRIPLET_OPENER_POOL_SITE_TEST_EVIDENCE_R1_2026-10-13.md`
+- `evidence/consumer-packet.json`
+
+### Honest pending boundaries
+Source intake retains all IDs and fails closed: Wrinkle **48 / #28,#33 Lore missing**, Dystopia **56 / #9 Power+Lore null**, Nights **60 / #1,#3,#4 incomplete**. No manufactured field or claim of a complete performed Deck.
+Compact pool seed is curated Cookie only; other complete Cards are source recitals, not automated semantic/comedy PASS.
+Original PDF full page verified; exact measured Card crop pending. Actual accepted voice clip/renderer-specific timing pending.
+New standalone pool uses NO_EDGE; legacy typed Bridge editing remains available. No invented Bridge, second audio clock/mixer/dialogue owner or fake face integration.
+Independent Guard **CONTINUE** after source/persistence/import/cancellation repairs. Human KEEP/TUNE/CUT remains authoritative.
+No Composer/Wireface/Scenelet/World/Hub/Cloudflare writes, auto-merge or Live promotion. Composer PR #355 unchanged at `9cf3e25998d5523b3c1844266ab979b8aea6723b`.
+
+### One next gate
+**KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1**: Georg compares Cookie compact/full source and three source-eligible opener choices with an intelligible browser/authorized voice, DRY/D, and decides voice, tempo and source fidelity. Claude Code #355 integration remains deferred until that acceptance and an actual accepted voice/crop packet.
+
+---
+
 # RETURN · KFB Audio Module Pre-Integration · No World Writes
 
 

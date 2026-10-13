@@ -1,3 +1,14 @@
+## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
+
+- Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.
+- Existing Audio renderer/context/clock/D bed preserved; source PDF page isolated and Git-blob verified; stale Card/Deck/async canvas seam fixed in final Source0.7.1.
+- Two engineering Site versions v10→v11, existing audience/URL retained. Final v11 post-deploy data updates r4 new opener and r5 modified reviewed Beat each visibly reloaded with zero extra publish.
+- 35 source/consumer +18 core +12 old-r3 live feed +172 Site checks PASS; authenticated Chrome screenshots and actual cross-browser editor import persisted.
+- No human acceptance invented, incomplete source rows blocked, actual VoiceClips0/exact crop pending, new standalone NO_EDGE retained. No Composer/Wireface/World/Hub/Cloudflare/merge/Live.
+- One gate KFB_AUDIO_TRIPLET_OPENER_POOL_HUMAN_KEEP_TUNE_CUT_R1; conditional Claude Code contract saved.
+
+---
+
 # CHANGELOG · KFB Adaptive Music Stem Proof
 
 
