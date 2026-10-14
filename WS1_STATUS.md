@@ -1,7 +1,69 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben. WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§8 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 8 · 14.10. spät · S5a/S5b/S5c fertig · Billboard-Vorlagenzeile · Vorführung an Georg noch gesperrt
+
+**Gelesen vor diesem Schritt:** `WS0_TO_WS1.md` (bis „Billboard-Standard V-220“), `DECISIONS.md` bis V-220, `BILLBOARD_STANDARD_R1.md`, `WIREFACE_STAGE_VISUAL_DONOR_FAIL_2026-10-14.md`.
+
+**Stand:** S5a, S5b und S5c sind gebaut. Alle 9 Tests sind PASS: contract-static, deps, host, s0, s1, s1-view, s5a, s5b, s5c. Blinder Prüfer 3: PASS MIT AUFLAGEN, die Auflagen sind bearbeitet (Tabelle unten).
+
+| Slice | Was | Vorlage (1:1) | Beleg |
+|---|---|---|---|
+| S5a Blase | `createBubbleLayer()` im Slot `#ui-bubbles`, `bubbleAnchors` über ModuleHost, Projektion pro Frame per `transform` (0 React-Renders beim Bewegen), Ausblenden hinter der Kamera und außerhalb des Bildes | `islands-npc.ts` (Blob 13ad2738) Z. 76–102 und 160–176; `chatterbox-core.js` (f59a8a1a) byte-gleich | `test/s5a.mjs`; Bildpaar `ws1/proofs/2026-10-14/s5a_pair.png` (links V204-Lab-Referenz, rechts Stand) |
+| S5b Pool-Leser | Text nur aus ACCEPTED-Pool über `makePacket`/`consumePacket`, sonst wörtlicher Kartentext aus der Quelle, sonst „…“. Der Host zeigt nur Zeilen, die der Leser ausgegeben hat. Pool live über die Contents API (r5, Blob dfb5435b, 0 ACCEPTED), mit Zwischenspeicher gegen die Abruf-Grenze | `triplet-pool-core.mjs` (#365, Blob 517bb34b) byte-gleich | `test/s5b.mjs` (Node, deterministisch, 19 Prüfpunkte, darunter eine als TEST FIXTURE markierte ACCEPTED-Kopie) |
+| S5c Spielerwahl | 2 × 2 Zurufe in fester Reihenfolge mit Tasten 1–4, Ziele ≥ 44 px, Stempel 420 ms, bis 8 eigene Wörter, Slot `#ui-choice`, Controller aus, folgt der Kamera, die Wahl wird zur Blase der Spielfigur | Studio v2 `choiceGeo()`, `place()`, Clay-pur-Antwortzeile; Vertrag „Zurufe (Player)“ | `test/s5c.mjs`; Bild `ws1/proofs/2026-10-14/s5c_choice.png` |
+
+**S5c: Optik nicht abgenommen.** Das Studio (05.10.) ist älter als V-204 und V-214. Bewusste Abweichungen, im Kopf von `src/choiceLayer.js` aufgeführt:
+1. Der Blasenkörper ist derselbe Plain-Körper wie bei der Sprechblase, ohne Rim-Wände.
+2. Der Tastenkreis hat keinen Tusche-Rand.
+3. Stempel und Hover haben keinen harten dunklen Schatten.
+4. Es gibt noch kein Ausweichen vor Gesichtern (erst mit F1).
+5. Die Zeile für eigene Wörter ist neu.
+
+**Bitte:** Die Auswahl im Bild prüfen, bevor Georg sie sieht.
+
+**Aufgeräumt (§5, Prüfer 3 Befund 8):** Der Spike-Dialog setzte noch Sätze aus Kartenstücken und Verbindern zusammen. Entfernt sind `LineBuilder`, `fragments`, `pickFragments` und `CONNECTORS`. Im Ritual stehen Power und Lore jetzt wörtlich. Erzählzeilen sind bis D1 ein Schnitt („…“).
+
+**Blinder Prüfer 3 (S5a–c): PASS MIT AUFLAGEN**
+| # | Befund | Stand |
+|---|---|---|
+| 1 | zweiter Renderer für den Blasenkörper der Wahl | behoben: ein `bubbleBodySvg()` für beide |
+| 2 | mehr Studio-Abweichungen als dokumentiert (`place()` verkürzt, Mobil-Zweig, Umbruch, Wand-Schatten) | behoben: `place()` vollständig, Mobil-Zweig, Umbruch, Clay-pur-Stil mit Wand; Liste der Abweichungen korrigiert |
+| 3 | Hover und Fokus fehlten | behoben (Anhebung −2 px, Fokus 3 px #e2b33c) |
+| 4 | `parts` blieb veränderbar | behoben (tief eingefroren, Test) |
+| 5 | beliebiges Kartenobjekt ergab eine CARD-Zeile | behoben: Text nur aus der Kartenquelle, Fremdkarte → „…“ (Test) |
+| 6 | Zuruf und eigene Wörter nicht an die Spielfigur gebunden | behoben: `speaker: 'player'`, der Host prüft das (Test) |
+| 8 | LineBuilder erzeugt Triplets und Brücken | behoben (siehe oben) |
+| 9 | S5 ohne Debug-Schalter nicht sichtbar | offen bis D1: Wahl und Pool-Zeilen bekommen ihre Aufrufer im Dialog-Modul |
+| 10 | Zipfel der Wahl zeigte ins Leere und folgte der Kamera nicht | behoben: Anker knapp über dem Kopf, folgt pro Frame (Test mit Mausrad-Zoom) |
+| 11 | gleicher Rang wie die Dialog-Auswahl | behoben (`PRIO.playerChoice` 35); kein Escape, wie im Studio („steht bis zur Auswahl“) |
+| 13 | Testlücken | weitgehend behoben (s5b +7 Fälle, s5c Zipfel und Folgen); `livePoolLoaded` hängt am Netz |
+| 16 | Gesamtbild nicht vorführbar | **siehe Frage 8.2** |
+
+**8.1 · Vorlagen-Zeile Billboard (V-220), bitte freigeben**
+- **Gibt es schon:**
+  - Branch `work/billboard-island-integration-01-2026-10-01`, Ordner `KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r2/`;
+  - `briefd/billboard-clay.js` (Blob 5c9f22e1), Exporte `Billboard`, `BillboardScheduler`, `makeClayFamily`, `loadContent`, `STYLES` (mit `plain`), `layoutFor`;
+  - Einbau-Vertrag `billboard.embed-spec.v1.json` (Blob 4be98228).
+- **1:1 übernommen:**
+  - `billboard-clay.js` unverändert. Die Imports `three` und `three/addons` löst Vite auf die eine Instanz 0.186.1 auf.
+  - `bodyStyle: 'plain'`, runde Innenecken (`faceCornerM`), Bildfläche 12 × 6 m mit CanvasTexture 1024 × 512, genau ein `BillboardScheduler.tick()` im Host-Frame.
+- **Neu, und warum:**
+  - eine dünne Modul-Hülle `createBillboard(options)` nach `create/update/dispose`;
+  - eine Inhaltsquelle „Karte“: `cardImage(deckId, n)` wird `fit` in die 1024 × 512-Fläche gezeichnet, statt der Kaleido-Inhalte aus `contentAsset`;
+  - `billboard-stage.js` wird **nicht** übernommen (eigene Szene, Kamera und OrbitControls; Vertrag §1).
+- **Offen:**
+  - Hypernormalisation/H13: Laut RETURN 07.10. ist noch kein Zitat für die Laufzeit freigegeben. WS1 baut deshalb zunächst Körper + Karte + Scheduler und lässt die Lesefolge bis zur Freigabe leer.
+  - Der Knet-TV-Knopf unter dem Billboard kommt mit der Lesefolge, als Teil desselben Schedulers (kein zweiter).
+
+**8.2 · Vorführung an Georg: Vorschlag, S1 + S5a erst nach Billboard und F1 zu bündeln.** Heute stehen Karten als flache Rechtecke auf Bühne und Turm (gegen V-220). Die Spielfigur ist ein KayKit ohne KFB-Eye-Rig (gegen V-214). Die Kulisse ist die Hex-Insel (Legacy, V-216). Prüfer 3 nennt das Gesamtbild deshalb nicht vorführbar. Vorschlag: Reihenfolge F1 Augen → Billboard → Vorführung „Karte im Billboard + Blase + Wahl, Figur mit Eye-Rig“ auf einem kompakten Clay-Boden statt Hex. Die Karten-Aufsteller auf Bühne und Turm fallen dann weg oder gehen ins Billboard.
+
+**8.3 · Für Claude Design (Triad-Gate im Fail-Protokoll):** Zwei der drei positiven Quellen liegen als echte Renderings aus dem Code-Pfad vor:
+- (A) Plain-Blase: `ws1/proofs/2026-10-14/s5a_pair.png`;
+- (B) Querformat-Karte, je gegen eine unabhängige PDFKit-Referenz: `ws1/proofs/2026-10-14/s1_pair_forget_utopia_7.png` und `s1_pair_protopia_web_2.png`.
+(C) Eye-Rig folgt mit F1.
 
 ## 0 · Kurzstand
 | Slice | Stand | Beleg |
