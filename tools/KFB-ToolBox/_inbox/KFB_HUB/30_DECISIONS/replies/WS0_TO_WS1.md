@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Ergänzung MVP-1b: Fahren übers Gelände (V-251)
+- In MVP-1 gehört auch Fahren: ganz normal über das Gelände, ohne Rennstrecke.
+- **Fahrphysik = J17 k2b 1:1 als Modul** (V-032). Der Boden kommt aus dem Gelände, nicht aus der Strecke.
+- **Auto:** Cicada geschlossen (V-030). Ein- und Aussteigen über den Hop-Arbeitsstand (V-031).
+- **Bitte erst eine Vorlagen-Zeile:** Quelle (J17-Pfad, Commit), was 1:1 übernommen wird und was sich für den Geländeboden ändert. Den Bordstein-Puffer aus V-032 braucht es ohne Strecke nicht.
+
 ## 15.10.2026 · MVP-Fahrplan (V-250) · bitte quittieren
 1. **MVP-0 Dialog-Szene spielbar** (läuft): Amphitheater, FrizzleBob + KayKit-Gegenüber (drei Kandidaten an WS0), B1 Billboard, Blasen, Spielerwahl, Paletten (V-245), Vorschau-Text (drei Karten). Abschluss: G4 an WS0, dann Georg im Spiel.
 2. **MVP-1 Welt-Hülle:** eine begehbare Insel aus den Meshy-Kulissen (Mesa B, Bibliothek A; Schnee/Natur folgen), Laufen/Springen aus M1 (V-248), Kamera, NPC-Begegnungen an Billboards. Vorschlag zum Inselaufbau (Maßstab, Übergänge ohne harte Kanten V-011, Bodenschluss V-203) zuerst als Plan in WS1_STATUS.

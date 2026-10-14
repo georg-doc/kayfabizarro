@@ -3223,9 +3223,26 @@
    "check": "Georg je Schritt im Spiel",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-251"
+   ],
    "why": "Ziel: eine spielbare, veröffentlichte Welt mit God-Mode, die schrittweise wächst.",
    "applies": "ab sofort"
+  },
+  {
+   "id": "V-251",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Ergänzung zu V-250: Fahren gehört zur Welt-Hülle (MVP-1b), unabhängig von der Rennstrecke – ganz normal über das Gelände fahren. Fahrphysik = J17 k2b 1:1 als Modul (V-032, abgenommenes Fahrgefühl), Boden aus dem Gelände statt aus der Strecke; Auto = Cicada geschlossen (V-030), Ein-/Aussteigen Hop als Arbeitsstand (V-031). Vorlagen-Zeile vor Bau; Rennstrecke später.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Fahrprobe auf der Insel, Georg",
+   "source": "Georg 15.10.",
+   "supersedes": "V-250 (MVP-1 ohne Fahren)",
+   "superseded_by": [],
+   "why": "Fahrphysik und Auto sind schon abgenommen; Fahren über Gelände braucht keine Strecke.",
+   "applies": "ab MVP-1"
   },
   {
    "id": "V-084",
@@ -3290,7 +3307,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:271",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:277",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Fahren in MVP-1
+- V-251: MVP-1b Fahren übers Gelände mit J17-k2b-Physik 1:1, Cicada, Hop; Rennstrecke später.
+
 ## 2026-10-15 · MVP-Fahrplan
 - V-250: MVP-0 Dialog-Szene → MVP-1 Welt-Hülle → MVP-2 God-Mode v1 → MVP-3 Veröffentlichen → MVP-4 Combat-Arena; an WS1 übergeben.
 
