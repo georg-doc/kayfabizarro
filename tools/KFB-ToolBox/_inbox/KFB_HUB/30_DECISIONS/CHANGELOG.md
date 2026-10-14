@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · UFO Phase 1 fertig
+- Master SHA-256 60ef25fa…, 2,3 Mio. Dreiecke, ein Teil; A 400 k/14,1 MB/1,4 ms (empfohlen), B 300 k/11,1 MB. Steuerknüppel verschmolzen (kein stage_clean; schmaler Hals, Schnitt möglich). Monitor in zerstückelter Textur → Karte als Ebene davor. Bühnenplan L1/L2, Kameras C0–C3. Dateien ~/Dropbox/CLAUDE/MeshyModels/_browser/ufo/; drei Fragen im Hub (u01–u03).
+
 ## 2026-10-15 · UFO-Cockpit-Bühne
 - V-252: Webchat-Intake freigegeben; Phase 1 (Quell-Isolation, Browser A/B, Steuerknüppel → stage_clean, Bühnenplan, Monitor) läuft bei WS0; Phase 2 WS1 nach MVP-0; B1 darf freistehend oder auf dem Monitor montiert werden.
 
