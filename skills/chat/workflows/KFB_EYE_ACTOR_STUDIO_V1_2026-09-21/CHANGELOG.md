@@ -1,5 +1,14 @@
 # KFB Eye Actor Studio v1 · CHANGELOG
 
+## 2026-10-14 · RG3D Video B transcript received; Claude Design source-first gate ready
+
+Georg supplied second timed transcript as `Eingefügter Text(5).txt` (0:00–18:02), verified content is Raymond Gabriel RG3D, unlike accompanying pasted step-list copied from Video A. Timecoded Video B evidence added to `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md`: texture alpha/UV projection; nested armature bones, separate cornea/eye vertex weights, IK/Copy Scale, L/R weight-group correction and 15:46–17:38 Lattice for oval eyeball adaptation. Video does not construct eyelids or prove their shared deformation; proposed simultaneous eye/lid ovalization remains HYPOTHESIS pending 3D proof. Video A rig-only control graph preserved. Both transcripts now received, caption origin unverified. Previous rejected thin-clay mesh remains NEGATIVE DONOR; no new Blender/browser/runtime tests, Site, Stage, merge or Live.
+
+One next gate: `CLAUDE_DESIGN_KFB_EYELID_SOURCE_ISOLATION_AND_CLEAN_MESH_PROOF_01` under existing Eye Actor Studio PR #159, receiver EyeRig v6 PR #104 only after independent clean-mesh visual proof.
+
+---
+
+
 
 ## 2026-10-14 · Video A transcript analyzed; Video B awaited
 
