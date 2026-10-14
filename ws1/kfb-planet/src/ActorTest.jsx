@@ -7,10 +7,12 @@ import { useThree } from '@react-three/fiber'
 import ModuleHost from './ModuleHost'
 import { createActor } from './actors/actorSlot'
 import { faceActorLog } from './modules/faceMountActor'
-import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5.glb?url'
+import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5b.glb?url'
 import hairUrl from './assets/actors/fb-hair/FrizzleBob_Yellow.gltf?url'
 import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
-import recipe from './data/actors/frizzlebob-v5.recipe.json'
+import recipe from './data/actors/frizzlebob-v5b.recipe.json'
+import georg from './data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json'
+const pet = georg.pets.find((p) => p.id === recipe.entry.pet) // V-240: Georgs Eintrag 1:1
 import earRig from './data/actors/fb-default.ear-rig.json'
 import { expose } from './debug'
 
@@ -18,10 +20,10 @@ const decals = import.meta.glob('./assets/actors/fb-mouth/*.png', { eager: true,
 const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k.split('/').pop(), v])) // lokale Kopien, main @ac9dbaed
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
-export const VIEWS = { face: { pos: [0, 1.62, 2.9], target: [0, 1.5, 0] }, full: { pos: [0, 1.7, 8.2], target: [0, 1.3, 0] }, q: { pos: [2.05, 1.62, 2.05], target: [0, 1.5, 0] } }
+export const VIEWS = { face: { pos: [0, 1.62, 2.9], target: [0, 1.5, 0] }, full: { pos: [0, 1.7, 8.2], target: [0, 1.3, 0] }, q: { pos: [2.05, 1.62, 2.05], target: [0, 1.5, 0] }, side: { pos: [2.9, 1.62, 0], target: [0, 1.5, 0] } }
 const view = VIEWS[/view=(\w+)/.exec(hash)?.[1]] || VIEWS.face
 const motion = /motion=(\w+)/.exec(hash)?.[1] || 'bind'
-const OPTIONS = { recipe, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, anchorId: 'actortest-fb' }
+const OPTIONS = { recipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, anchorId: 'actortest-fb' }
 let last = null
 const create = (o) => { last = createActor(o); expose('Actor', last); return last }
 

@@ -18,16 +18,26 @@
  *   Ziele: geschlossen liegt die Oberkante bei seam − Überlapp, die Unterkante bei seam + Überlapp. Ein geschlossenes Auge
  *   ist damit überall zu — vorn, oben, unten, an den Winkeln (vorher: Augapfel stach oben/unten durch).
  *   Die Original-Schalen des EyeRig bleiben daneben wählbar (die klappen immer, sie sind starr).
- * Status: Kandidat, Georgs Sichtabnahme steht aus. */
-export const SCHEMA = 'kfb.clay-lids/0.2';
+ * Status: Kandidat, Georgs Sichtabnahme steht aus.
+ *
+ * FB-EYES-LIDS-02 (30.09., additiv): mech 'slide' (Kante = eine Breite, wandert hoch/runter) neben 'hinge'; lip 'round' | 'cut'
+ * (dicke Knete, harte Kante, 45°-Fase, Doppel-Eckpunkte → geteilte Normalen); tilt 'level' (Lidlinie waagerecht trotz Oval-Neigung,
+ * nur Emote-Slant dreht) | 'follow'. Neue Speicherstände: on, hinge, round, level. Gespeicherte Werte bleiben, glide/fold unverändert
+ * (Referenz eingefroren: kfb-lib/_ref/clay-lids.v1.lids01.js). */
+export const SCHEMA = 'kfb.clay-lids/0.3';
 export const DONOR = { pr: 159, branch: 'chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21', file: 'tools/KFB-ToolBox/eye-actor-studio-v1/upper-lid-volume.v1.mjs', schema: 'kfb.upper-lid-volume/0.3-candidate' };
-export const DEFAULTS = Object.freeze({ on: false, shape: 'cap', look: 'clay', mech: 'glide', seam: -0.08, fit: 0.02, cover: 0.16, coverLo: 0.12, thickness: 0.2, roundness: 0.72, bulge: 0.42,
+export const DEFAULTS = Object.freeze({ on: true, shape: 'cap', look: 'clay', mech: 'hinge', lip: 'round', tilt: 'level', roll: 0, seam: -0.08, fit: 0.02, cover: 0.16, coverLo: 0.12, thickness: 0.2, roundness: 0.72, bulge: 0.42,
   curve: 0, curveLo: 0, corner: 0.5, reach: 0.85, wrap: 1.45, open: 0.38, sweep: 0.85, color: null,
   /* hinge (FB-EYE-SOCKET-CLAY-LIDS-01 §2.3–2.4) · start values from START_HERE, angles in degrees, lengths in eyeball radii */
-  hOpenU: 74, hOpenL: 66, hSeam: -5, hOverlap: 2.5, hCurve: 0.10, hCurveLo: 0.06, hThick: 0.14, hBead: 0.07, hSpan: 150, hTaper: 0.7 });
+  hOpenU: 74, hOpenL: 66, hSeam: -5, hOverlap: 2.5, hCurve: 0.10, hCurveLo: 0.06, hThick: 0.14, hBead: 0.07, hSpan: 150, hTaper: 0.7,
+  /* slide + cut (FB-EYES-LIDS-02 §2.3, §2.5) */
+  slideOpenU: 58, slideOpenL: 50, cutThick: 0.28, cutChamfer: 0.04 });
 export const DONOR_LOOK = Object.freeze({ shape: 'pad', reach: 0, wrap: 1.04 });   // PR #159 kompakter Pad, 1:1
 export const THIN_LOOK = Object.freeze({ thickness: 0.07, roundness: 0.3, bulge: 0 });
-export const MECHS = [['glide', 'Glide · contact'], ['fold', 'Fold · clamshell'], ['hinge', 'Hinge · shared corners']];
+/* [key, label, legacy] — the menu shows Hinge + Slide on top, Glide + Fold under »Legacy« (LIDS-02 §2.3) */
+export const MECHS = [['hinge', 'Hinge · shared corners'], ['slide', 'Slide · level band'], ['glide', 'Glide · contact', 1], ['fold', 'Fold · clamshell', 1]];
+export const LIPS = [['round', 'Round'], ['cut', 'Cut · hard edge']];
+export const TILTS = [['level', 'Level'], ['follow', 'Follow the oval tilt']];
 export const META = [
   ['seam', 'Contact line · where the lids meet (− lower · + higher)', -0.6, 0.6, 0.01, 'cap'],
   ['fit', 'Fit · extra gap to the eyeball (auto-measured + this)', 0, 0.15, 0.005],
@@ -38,11 +48,20 @@ export const META = [
   ['reach', 'Reach · pad only · 0 compact (PR #159) → 1 over the crown', 0, 1, 0.01, 'pad'], ['wrap', 'Wrap · pad only · around the sides (rad)', 0.8, 1.6, 0.01, 'pad'],
   ['open', 'Open · pad only · rest opening (rad)', -0.3, 0.9, 0.01, 'pad'], ['sweep', 'Sweep · pad only · how far blink swings the pad', 0, 1.5, 0.01, 'pad'],
   ['hOpenU', 'Upper · open angle (°)', 30, 110, 0.5, 'hinge'], ['hOpenL', 'Lower · open angle (°)', 20, 100, 0.5, 'hinge'],
+  ['slideOpenU', 'Upper · open latitude (°)', 20, 89, 0.5, 'slide'], ['slideOpenL', 'Lower · open latitude (°)', 20, 89, 0.5, 'slide'],
   ['hSeam', 'Seam · where closed lids meet (°, − lower)', -30, 30, 0.5, 'hinge'], ['hOverlap', 'Overlap at the seam (°)', 0, 8, 0.1, 'hinge'],
   ['hCurve', 'Upper edge · convex when open', -0.3, 0.4, 0.005, 'hinge'], ['hCurveLo', 'Lower edge · convex when open', -0.3, 0.4, 0.005, 'hinge'],
   ['hThick', 'Thickness · × eyeball radius', 0.03, 0.4, 0.005, 'hinge'], ['hBead', 'Bead · rounded rim', 0, 0.2, 0.005, 'hinge'],
+  ['cutThick', 'Cut · thickness × eyeball radius', 0.1, 0.45, 0.005, 'cut'], ['cutChamfer', 'Cut · chamfer on the outer corner', 0, 0.1, 0.002, 'cut'],
   ['hSpan', 'Coverage · how far back the shell runs (°)', 90, 175, 1, 'hinge'], ['hTaper', 'Corner melt · cos(ψ)^taper', 0.2, 1.5, 0.01, 'hinge'],
 ];
+const HS_KEYS = { both: ['fit', 'hSeam', 'hOverlap'], hinge: ['hOpenU', 'hOpenL', 'hCurve', 'hCurveLo', 'hSpan', 'hTaper'], slide: ['slideOpenU', 'slideOpenL'], round: ['hThick', 'hBead'], cut: ['cutThick', 'cutChamfer'] };
+/** Which META sliders the panel shows for a clay entry. Glide / fold / pad: exactly the P06 rule. */
+export function metaVisible(C) {
+  const c = { ...DEFAULTS, ...(C || {}) }, shape = c.shape || 'cap';
+  if (shape !== 'pad' && (c.mech === 'hinge' || c.mech === 'slide')) { const k = new Set([...HS_KEYS.both, ...HS_KEYS[c.mech], ...HS_KEYS[c.lip === 'cut' ? 'cut' : 'round']]); return META.filter((m) => k.has(m[0])); }
+  return META.filter(([, , , , , only]) => only !== 'hinge' && only !== 'slide' && only !== 'cut' && (!only || only === shape));
+}
 /* ── HINGE · one hinge, two shells, shared corners (FB-EYE-SOCKET-CLAY-LIDS-01 §2.3). Unit sphere in the eye's socket frame:
    ψ along the hinge (−90°…+90°, corner to corner), φ around it from n (+z) toward v (+y). Point (sin ψ, cos ψ sin φ, cos ψ cos φ)·r.
    Upper φ ∈ [θ(ψ), θ(ψ)+span], lower mirrored. At ψ = ±90° every φ is the same point → the corners are shared by construction.
@@ -50,39 +69,73 @@ export const META = [
    margin) · half-round lip · inner (margin → back) · closed back seam. Topology fixed; hingePositions() rewrites it. ── */
 export const HINGE_N = 48, HINGE_P = 26, HINGE_L = 7, HINGE_Q = 2 * (HINGE_P + 1) + HINGE_L - 1;
 const RAD = Math.PI / 180;
-export function hingePositions(o, theta, lower, out) {
-  const arr = out || new Float32Array((HINGE_N + 1) * HINGE_Q * 3); let w = 0;
-  for (let i = 0; i <= HINGE_N; i++) {
-    const psi = (-1 + 2 * i / HINGE_N) * Math.PI / 2, c = (i === 0 || i === HINGE_N) ? 0 : Math.cos(psi), sp = i === 0 ? -1 : i === HINGE_N ? 1 : Math.sin(psi);
-    const prof = Math.pow(c, o.taper), th = theta - o.curve * c * c * (1 - clamp(o.closure || 0, 0, 1)), ri = 1 + o.gap * prof;
-    const put = (r, phi) => { const ph = lower ? -phi : phi; arr[w++] = sp * r; arr[w++] = c * Math.sin(ph) * r; arr[w++] = c * Math.cos(ph) * r; };
-    for (let j = 0; j <= HINGE_P; j++) { const u = j / HINGE_P, b = o.bead * Math.exp(-Math.pow((1 - u) * o.span / 0.22, 2)); put(ri + (o.t + b) * prof, th + o.span * (1 - u)); }
+/* ── LIP RING per row (LIDS-02 §2.5) · outer (back → margin) · lip · inner (margin → back). put(r, angle).
+   round = the LIDS-01 ring verbatim (bead + half-round lip, HINGE_L − 1 steps).
+   cut   = flat outer shell to θ + c · 45° chamfer to (ro − c, θ) · flat edge face at θ to the inner radius. Both chamfer vertices
+           are written TWICE: the zero-area quad between the copies adds nothing to computeVertexNormals(), so the normals split. ── */
+export const RING_Q = Object.freeze({ round: HINGE_Q, cut: 2 * (HINGE_P + 1) + 4 });
+export const ringQ = (lip) => (lip === 'cut' ? RING_Q.cut : RING_Q.round);
+export const SLIDE_N = 72;
+export const lidRows = (mech) => (mech === 'slide' ? SLIDE_N : HINGE_N + 1);
+const SL_A = 30 * RAD, SL_W = 80 * RAD, SL_POLE = 89 * RAD;
+function ringRow(o, lip, th, span, ri, prof, put) {
+  if (lip === 'cut') {
+    const t = (+o.tc || 0) * prof, ro = ri + t, c = Math.min((+o.ch || 0) * prof, 0.45 * t);
+    for (let j = 0; j <= HINGE_P; j++) { const u = j / HINGE_P; put(ro, th + c + (span - c) * (1 - u)); }
+    put(ro, th + c); put(ro - c, th); put(ro - c, th); put((ro - c + ri) / 2, th);
+  } else {
+    for (let j = 0; j <= HINGE_P; j++) { const u = j / HINGE_P, b = o.bead * Math.exp(-Math.pow((1 - u) * span / 0.22, 2)); put(ri + (o.t + b) * prof, th + span * (1 - u)); }
     const ro = ri + (o.t + o.bead) * prof, mid = (ro + ri) / 2, hr = (ro - ri) / 2;
     for (let k = 1; k < HINGE_L; k++) { const a = Math.PI * k / HINGE_L; put(mid + hr * Math.cos(a), th - hr * Math.sin(a)); }
-    for (let j = HINGE_P; j >= 0; j--) put(ri, th + o.span * (1 - j / HINGE_P));
+  }
+  for (let j = HINGE_P; j >= 0; j--) put(ri, th + span * (1 - j / HINGE_P));
+}
+/** Both mechanisms, one writer. hinge: rows along ψ (open strip, corners shared). slide (§2.3): 72 rows of longitude s (closed loop),
+    point (cos a · sin s, sin a, cos a · cos s) · r, margin = ONE latitude θ → pole 89°; thickness + bead × prof(s) melt from 30° to 110°,
+    gap × max(prof, 0.3). Lower lid mirrors the angle. Topology fixed per (mech, lip). */
+export function lidPositions(mech, o, theta, lower, out) {
+  const lip = o.lip === 'cut' ? 'cut' : 'round', Q = ringQ(lip), N = lidRows(mech), arr = out || new Float32Array(N * Q * 3); let w = 0;
+  for (let i = 0; i < N; i++) {
+    let th, span, ri, prof, put;
+    if (mech === 'slide') {
+      const s = -Math.PI + 2 * Math.PI * i / SLIDE_N, ss = Math.sin(s), cs = Math.cos(s), q = clamp((Math.abs(s) - SL_A) / SL_W, 0, 1);
+      prof = 1 - q * q * (3 - 2 * q); th = theta; span = Math.max(0.02, SL_POLE - theta); ri = 1 + o.gap * Math.max(prof, 0.3);
+      put = (r, a0) => { const a = lower ? -a0 : a0, ca = Math.cos(a); arr[w++] = ca * ss * r; arr[w++] = Math.sin(a) * r; arr[w++] = ca * cs * r; };
+    } else {
+      const psi = (-1 + 2 * i / HINGE_N) * Math.PI / 2, c = (i === 0 || i === HINGE_N) ? 0 : Math.cos(psi), sp = i === 0 ? -1 : i === HINGE_N ? 1 : Math.sin(psi);
+      prof = Math.pow(c, o.taper); th = theta - o.curve * c * c * (1 - clamp(o.closure || 0, 0, 1)); ri = 1 + o.gap * prof; span = o.span;
+      put = (r, phi) => { const ph = lower ? -phi : phi; arr[w++] = sp * r; arr[w++] = c * Math.sin(ph) * r; arr[w++] = c * Math.cos(ph) * r; };
+    }
+    ringRow(o, lip, th, span, ri, prof, put);
   }
   return arr;
 }
-export function buildHingeGeometry(THREE, o, theta, lower) {
-  const pos = hingePositions(o, theta, lower), idx = [], Q = HINGE_Q;
-  for (let i = 0; i < HINGE_N; i++) { const A = i * Q, B = (i + 1) * Q; for (let q = 0; q < Q; q++) { const q1 = (q + 1) % Q; idx.push(A + q, B + q, B + q1, A + q, B + q1, A + q1); } }
-  const P3 = (id) => new THREE.Vector3(pos[id * 3], pos[id * 3 + 1], pos[id * 3 + 2]), m = HINGE_N / 2, qa = Math.floor(HINGE_P / 2);
+export const hingePositions = (o, theta, lower, out) => lidPositions('hinge', o, theta, lower, out);
+export const slidePositions = (o, theta, lower, out) => lidPositions('slide', o, theta, lower, out);
+export function buildLidGeometry(THREE, mech, o, theta, lower) {
+  const pos = lidPositions(mech, o, theta, lower), idx = [], lip = o.lip === 'cut' ? 'cut' : 'round', Q = ringQ(lip), N = lidRows(mech), wrap = mech === 'slide';
+  for (let i = 0; i < (wrap ? N : N - 1); i++) { const A = i * Q, B = ((i + 1) % N) * Q; for (let q = 0; q < Q; q++) { const q1 = (q + 1) % Q; idx.push(A + q, B + q, B + q1, A + q, B + q1, A + q1); } }
+  const P3 = (id) => new THREE.Vector3(pos[id * 3], pos[id * 3 + 1], pos[id * 3 + 2]), m = wrap ? SLIDE_N / 2 : HINGE_N / 2, qa = Math.floor(HINGE_P / 2);
   const a0 = P3(m * Q + qa), b0 = P3((m + 1) * Q + qa), c0 = P3((m + 1) * Q + qa + 1);
   if (b0.clone().sub(a0).cross(c0.clone().sub(a0)).dot(a0) < 0) for (let t = 0; t < idx.length; t += 3) { const b = idx[t + 1]; idx[t + 1] = idx[t + 2]; idx[t + 2] = b; }
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setIndex(idx);
-  g.computeVertexNormals(); g.computeBoundingSphere(); g.userData = { schema: 'kfb.lid-hinge/0.1', closedVolume: true, sharedCorners: true };
+  g.computeVertexNormals(); g.computeBoundingSphere(); g.userData = { schema: wrap ? 'kfb.lid-slide/0.1' : 'kfb.lid-hinge/0.1', closedVolume: true, sharedCorners: !wrap, lip, Q, rows: N };
   return g;
 }
-/** hinge options for the two shells (lower: gap + 0.006, thickness × 0.93, bead × 0.8 — no z-fight at the seam) */
+export const buildHingeGeometry = (THREE, o, theta, lower) => buildLidGeometry(THREE, 'hinge', o, theta, lower);
+export const buildSlideGeometry = (THREE, o, theta, lower) => buildLidGeometry(THREE, 'slide', o, theta, lower);
+/** options for the two shells (lower: gap + 0.006, thickness × 0.93, bead × 0.8 — no z-fight at the seam); lip + cut fields ride along */
 export function hingeOpts(p, gap) {
-  const base = { span: (+p.hSpan || 150) * RAD, taper: +p.hTaper || 0.7 };
-  return { u: { ...base, gap, t: +p.hThick, bead: +p.hBead, curve: +p.hCurve }, l: { ...base, gap: gap + 0.006, t: +p.hThick * 0.93, bead: +p.hBead * 0.8, curve: +p.hCurveLo } };
+  const base = { span: (+p.hSpan || 150) * RAD, taper: +p.hTaper || 0.7, lip: p.lip === 'cut' ? 'cut' : 'round' }, tc = p.cutThick != null ? +p.cutThick : 0.28, ch = p.cutChamfer != null ? +p.cutChamfer : 0.04;
+  return { u: { ...base, gap, t: +p.hThick, bead: +p.hBead, curve: +p.hCurve, tc, ch }, l: { ...base, gap: gap + 0.006, t: +p.hThick * 0.93, bead: +p.hBead * 0.8, curve: +p.hCurveLo, tc: tc * 0.93, ch } };
 }
-/** §2.4 · closure 0…1 (EyeRig cu/cl) → hinge angles (rad). Negative closure (wide open) extrapolates a little. */
-export function hingeAngles(p, cu, cl) {
-  const s = (+p.hSeam || 0) * RAD, ov = (+p.hOverlap || 0) * RAD, u = cu > 0.97 ? 1 : clamp(cu, -0.3, 1), l = cl > 0.97 ? 1 : clamp(cl, -0.3, 1);
-  return { u: lerp((+p.hOpenU) * RAD, s - ov, u), l: lerp((+p.hOpenL) * RAD, -s - ov, l), cu: u, cl: l };
+/** §2.4 (LIDS-01) / §2.3 (LIDS-02) · closure 0…1 (EyeRig cu/cl) → margin angles (rad). hinge: hOpenU/L · slide: slideOpenU/L (latitudes). */
+export function lidAngles(p, cu, cl, mech) {
+  const s = (+p.hSeam || 0) * RAD, ov = (+p.hOverlap || 0) * RAD, u = cu > 0.97 ? 1 : clamp(cu, -0.3, 1), l = cl > 0.97 ? 1 : clamp(cl, -0.3, 1), sl = mech === 'slide';
+  const oU = (sl ? (p.slideOpenU != null ? +p.slideOpenU : 58) : +p.hOpenU) * RAD, oL = (sl ? (p.slideOpenL != null ? +p.slideOpenL : 50) : +p.hOpenL) * RAD;
+  return { u: lerp(oU, s - ov, u), l: lerp(oL, -s - ov, l), cu: u, cl: l };
 }
+export const hingeAngles = (p, cu, cl) => lidAngles(p, cu, cl, 'hinge');
 const REST_U = -(1.30 - 0.12 * 1.18), REST_L = 1.30 - 0.06 * 1.18;   // EyeRig v6 Ruhewinkel (_rest u 0.12 / l 0.06)
 const OV = 0.035;   // Überlapp der geschlossenen Kanten (rad)
 
@@ -194,6 +247,26 @@ export class ClayLids {
       for (let i = 0; i < pa.count; i += step) { v.fromBufferAttribute(pa, i).applyMatrix4(MM).sub(centre); ext = Math.max(ext, Math.hypot(v.x / half.x, v.y / half.y, v.z / half.z)); } });
     return { centre, half, ext: Math.min(ext, 1.25), sig: [centre.x, centre.y, centre.z, half.x, half.y, half.z].map((v) => Math.round(v * 1e4)).join(',') };
   }
+  /* LIDS-04 (FB-LIDS-LEVEL-FIX-01, Blender MCP 01.10.): 'level' = remove the oval tilt only. The socket frame (face-mount socketEyes:
+     X = UP × n) is already level to the head; LIDS-03 levelled to the line through both eyes projected into the turned/pitched eye plane,
+     which added yaw × pitch error (+5.4° at yaw 25°, pitch 11°). P08 additions: (1) exact solve — the oval's non-uniform scale (w ≠ h on the
+     eye group) skews a pure counter-rotation by up to ~0.9° at turn 30; the angle is solved so the lid x axis has no head-up component
+     (falls back to −tilt). (2) roll = sx × roll: + = both outer corners up, checked in world space and on screen (the brief's −1 turned them down). */
+  _lvl(e, p) {
+    const sx = e._sx || 1, rl = sx * (+p.roll || 0) * Math.PI / 180;
+    if (p.tilt === 'follow') return rl;
+    const a0 = -(+e._kfbTilt || 0), K = e._kfbClay, par = K && K.tilt && K.tilt.parent, hp = e.parent;
+    if (!par || !hp) return a0 + rl;
+    try {
+      par.updateWorldMatrix(true, false); const m = par.matrixWorld.elements, h = hp.matrixWorld.elements;
+      const ul = Math.hypot(h[4], h[5], h[6]) || 1, ux = h[4] / ul, uy = h[5] / ul, uz = h[6] / ul;
+      const u0 = ux * m[0] + uy * m[1] + uz * m[2], u1 = ux * m[4] + uy * m[5] + uz * m[6];
+      if (Math.abs(u0) + Math.abs(u1) < 1e-9) return a0 + rl;
+      let a = Math.atan2(-u0, u1); const w = (x) => Math.atan2(Math.sin(x), Math.cos(x));
+      if (Math.abs(w(a + Math.PI - a0)) < Math.abs(w(a - a0))) a += Math.PI;
+      return a0 + w(a - a0) + rl;
+    } catch (err) { return a0 + rl; }
+  }
   _params(p) { return p.look === 'thin' ? { ...p, ...THIN_LOOK } : p; }
   _build(e, R, p0, fit) {
     const T = this.T, p = this._params(p0), old = e._kfbClay;
@@ -202,8 +275,8 @@ export class ClayLids {
     mat.side = T.FrontSide; mat.transparent = false; mat.opacity = 1; mat.depthWrite = true; if ('roughness' in mat) mat.roughness = 0.84; if ('metalness' in mat) mat.metalness = 0; mat.name = 'KFB_ClayLid'; mat.needsUpdate = true;
     const fitNode = new T.Group(), tilt = new T.Group(); fitNode.name = 'kfb-lid-fit'; tilt.name = 'kfb-lid-tilt'; fitNode.userData.kfbClay = true; fitNode.add(tilt); (e._lids.parent || e).add(fitNode);
     const clearance = Math.max(0.015, (fit ? fit.ext - 1 : 0) + 0.012) + (+p.fit || 0), geo = { clearance, thickness: p.thickness, roundness: p.roundness, bulge: p.bulge };
-    let upG, loG, mode = p.shape === 'pad' ? 'pad' : (p.mech === 'fold' ? 'fold' : p.mech === 'hinge' ? 'hinge' : 'glide');
-    if (mode === 'hinge') { const H = hingeOpts(p, clearance), a = hingeAngles(p, 0.12, 0.06); upG = buildHingeGeometry(T, { ...H.u, closure: a.cu }, a.u, false); loG = buildHingeGeometry(T, { ...H.l, closure: a.cl }, a.l, true); }
+    let upG, loG, mode = p.shape === 'pad' ? 'pad' : (p.mech === 'fold' ? 'fold' : p.mech === 'hinge' ? 'hinge' : p.mech === 'slide' ? 'slide' : 'glide');
+    if (mode === 'hinge' || mode === 'slide') { const H = hingeOpts(p, clearance), a = lidAngles(p, 0.12, 0.06, mode); upG = buildLidGeometry(T, mode, { ...H.u, closure: a.cu }, a.u, false); loG = buildLidGeometry(T, mode, { ...H.l, closure: a.cl }, a.l, true); }
     else
     if (mode === 'pad') { const base = { radius: 1, thickness: p.thickness, roundness: p.roundness, bulge: p.bulge, reach: p.reach, lonMax: p.wrap, clearance };
       upG = buildUpperLidVolumeGeometry(T, { ...base, cover: p.cover, curve: p.curve }); loG = lowerFrom(T, { ...base, cover: p.coverLo, curve: -p.curveLo }); }
@@ -218,7 +291,7 @@ export class ClayLids {
     /* Schatten: Lider EMPFANGEN, werfen nicht (dünne Volumen dicht am Augapfel = Akne + helle Naht; handover/LESSONS_SHADOWS.md). */
     for (const m of [up, lo]) { m.castShadow = false; m.receiveShadow = true; m.userData.noMeasure = true; m.userData.petOverlay = true; m.userData.kfbClay = true; m.raycast = () => {}; m.frustumCulled = false; tilt.add(m); }
     up.name = 'kfb-clay-lid · upper'; lo.name = 'kfb-clay-lid · lower';
-    e._kfbClay = { up, lo, mat, fitNode, tilt, key: this._key, R, mode, geo, fit, ru: null, rl: null }; this.eyes.add(e);
+    e._kfbClay = { up, lo, mat, fitNode, tilt, key: this._key, R, mode, geo, fit, ru: null, rl: null, lip: p.lip === 'cut' ? 'cut' : 'round', Q: (mode === 'hinge' || mode === 'slide') ? ringQ(p.lip) : null, rows: (mode === 'hinge' || mode === 'slide') ? lidRows(mode) : null }; this.eyes.add(e);
   }
   _place(K, fit) { if (!fit) return; K.fitNode.position.copy(fit.centre); K.fitNode.scale.copy(fit.half); K.fitNode.quaternion.identity(); K.fitSig = fit.sig; }
   _reglide(K, p, ru, rl) {
@@ -230,43 +303,51 @@ export class ClayLids {
     a.needsUpdate = b.needsUpdate = true; K.up.geometry.computeVertexNormals(); K.lo.geometry.computeVertexNormals(); K.ru = ru; K.rl = rl;
   }
   _rehinge(K, p, pu, pl) {
-    const a = hingeAngles(p, pu, pl), sig = [a.u, a.l, a.cu, a.cl, p.hCurve, p.hCurveLo, p.hThick, p.hBead, p.hSpan, p.hTaper, K.geo.clearance].map((v) => (+v).toFixed(4)).join('|');
+    const a = lidAngles(p, pu, pl, K.mode), sig = [a.u, a.l, a.cu, a.cl, p.hCurve, p.hCurveLo, p.hThick, p.hBead, p.hSpan, p.hTaper, K.geo.clearance, p.cutThick, p.cutChamfer].map((v) => (+v).toFixed(4)).join('|');
     if (K.hsig === sig) return a; K.hsig = sig;
     const H = hingeOpts(p, K.geo.clearance), A = K.up.geometry.attributes.position, B = K.lo.geometry.attributes.position;
-    hingePositions({ ...H.u, closure: a.cu }, a.u, false, A.array); hingePositions({ ...H.l, closure: a.cl }, a.l, true, B.array);
+    lidPositions(K.mode, { ...H.u, closure: a.cu }, a.u, false, A.array); lidPositions(K.mode, { ...H.l, closure: a.cl }, a.l, true, B.array);
     A.needsUpdate = B.needsUpdate = true; K.up.geometry.computeVertexNormals(); K.lo.geometry.computeVertexNormals(); K.up.geometry.computeBoundingSphere(); K.lo.geometry.computeBoundingSphere();
+    /* LIDS-02 fix: the box too — Box3.setFromObject (shadow fit, framing) caches it once; a stale box made closed lids miss rays (raycast culls by box) */
+    K.up.geometry.computeBoundingBox(); K.lo.geometry.computeBoundingBox();
     K.theta = a; return a;
   }
-  /** Acceptance probe (hinge only): force a lid state now (closure 0…1, slant as EyeRig slant units). The next sync() takes over again. */
-  poseHinge(e, params, cu, cl, slant = 0) {
-    const K = e && e._kfbClay; if (!K || K.mode !== 'hinge') return null;
+  /** Acceptance probe (hinge + slide): force a lid state now (closure 0…1, slant as EyeRig slant units). The next sync() takes over again.
+      tilt 'level' also removes the oval tilt the seat put on the eye group (e._kfbTilt, face-mount.v1) — LIDS-02 §2.4. */
+  poseLids(e, params, cu, cl, slant = 0) {
+    const K = e && e._kfbClay; if (!K || (K.mode !== 'hinge' && K.mode !== 'slide')) return null;
     const p = this._params({ ...DEFAULTS, ...(params || {}) }); K.hsig = null; const a = this._rehinge(K, p, cu, cl);
-    K.tilt.rotation.z = -(e._sx || 1) * slant * 0.85; K.fitNode.updateMatrixWorld(true); return a;
+    K.tilt.rotation.z = -(e._sx || 1) * slant * 0.85 + this._lvl(e, p); K.fitNode.updateMatrixWorld(true); return a;
   }
+  poseHinge(e, params, cu, cl, slant = 0) { return this.poseLids(e, params, cu, cl, slant); }
   /** Jedes Bild nach rig.update(): misst/baut bei Bedarf, blendet die alten Schalen aus, setzt Lider aus den Rig-Signalen. */
   sync(rig, params) {
     if (!rig || !rig.eyes) return;
-    const p = this._params({ ...DEFAULTS, ...(params || {}) });
-    this._key = [p.shape, p.mech, p.look, p.fit, p.cover, p.coverLo, p.thickness, p.roundness, p.bulge, p.curve, p.curveLo, p.corner, p.reach, p.wrap].join('|');
+    const p = this._params({ ...DEFAULTS, ...(params || {}) }); this._tilt = p.tilt; this._eyes = rig.eyes;
+    this._key = [p.shape, p.mech, p.look, p.fit, p.cover, p.coverLo, p.thickness, p.roundness, p.bulge, p.curve, p.curveLo, p.corner, p.reach, p.wrap, p.lip].join('|');
     for (const e of rig.eyes) {
       if (!e || !e._up || !e._lids) continue;
       const C = e._kfbClay;
-      if (!p.on) { if (C) { C.fitNode.visible = false; e._up.visible = e._lo.visible = true; } continue; }
+      if (!p.on) { if (C) { C.fitNode.visible = false; e._up.visible = e._lo.visible = true; }
+        /* §2.4 for the rigid EyeRig shells — only when the entry says tilt 'level' itself (a saved entry without the field stays as today) */
+        if (params && params.tilt === 'level' && e._lids && e._lids.rotation.z !== e._kfbLidZ) { e._lids.rotation.z -= (+e._kfbTilt || 0); e._kfbLidZ = e._lids.rotation.z; }
+        continue; }
       const fit = this._measure(e);
       if (!C || C.key !== this._key || C.R !== rig._R || (fit && C.fit && Math.abs(fit.ext - C.fit.ext) > 0.01)) { this._build(e, rig._R, p, fit); this._place(e._kfbClay, fit); }
       const K = e._kfbClay; if (fit && K.fitSig !== fit.sig) { this._place(K, fit); K.fit = fit; }
       e._up.visible = false; e._lo.visible = false; K.fitNode.visible = true;
-      K.tilt.rotation.z = e._lids.rotation.z;   // Slant + Asymmetrie aus dem Rig
+      const hs = K.mode === 'hinge' || K.mode === 'slide';
+      K.tilt.rotation.z = e._lids.rotation.z + (hs ? this._lvl(e, p) : 0);   // Slant + Asymmetrie aus dem Rig · level: minus Oval-Neigung
       const pu = (1.30 + e._up.rotation.x) / 1.18, pl = (1.30 - e._lo.rotation.x) / 1.18;
       if (K.mode === 'pad') { K.up.rotation.x = (e._up.rotation.x - REST_U) * p.sweep - p.open; K.lo.rotation.x = (e._lo.rotation.x - REST_L) * p.sweep + p.open; }
-      else if (K.mode === 'hinge') this._rehinge(K, p, pu, pl);
+      else if (hs) this._rehinge(K, p, pu, pl);
       else { const r = rims(p, pu, pl);
         if (K.mode === 'fold') { K.up.rotation.x = -(r.u + 0.03); K.lo.rotation.x = 0.03 - r.l; }   // +x rotation LOWERS the front rim
         else this._reglide(K, p, r.u, r.l); }
       if (p.color) K.mat.color.set(p.color); else if (e._up.material && e._up.material.color) K.mat.color.copy(e._up.material.color);
     }
   }
-  report(rig) { const e = rig && rig.eyes && rig.eyes[0], K = e && e._kfbClay; return K ? { schema: SCHEMA, donor: DONOR, mode: K.mode, eyes: rig.eyes.filter((x) => x && x._kfbClay).length, upTris: K.up.geometry.index.count / 3, loTris: K.lo.geometry.index.count / 3,
+  report(rig) { const e = rig && rig.eyes && rig.eyes[0], K = e && e._kfbClay; return K ? { schema: SCHEMA, donor: DONOR, mode: K.mode, lip: K.lip, tilt: this._tilt || null, eyes: rig.eyes.filter((x) => x && x._kfbClay).length, upTris: K.up.geometry.index.count / 3, loTris: K.lo.geometry.index.count / 3,
     fit: K.fit ? { half: K.fit.half.toArray().map((v) => +v.toFixed(4)), ext: +K.fit.ext.toFixed(3) } : null, clearance: +K.geo.clearance.toFixed(3) } : null; }
   dispose() { for (const e of this.eyes) { const K = e._kfbClay; if (!K) continue; K.up.geometry.dispose(); K.lo.geometry.dispose(); K.fitNode.removeFromParent(); K.mat.dispose(); delete e._kfbClay; if (e._up) e._up.visible = true; if (e._lo) e._lo.visible = true; } this.eyes.clear(); }
 }

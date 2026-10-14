@@ -46,9 +46,10 @@ const nineRejected = await page.evaluate(() => window.__kfbChoice.isOpen())
 await page.fill('#ui-choice [data-own]', '')
 await page.keyboard.type('I want my cookie back')
 await page.keyboard.press('Enter')
-await page.waitForTimeout(700)
+// auf das Ereignis warten statt fester Zeit (Stempel 420 ms, unter Last länger): Wahl zu und als „own“ gemeldet
+await page.waitForFunction(() => !window.__kfbChoice.isOpen() && window.__kfbChoice.last()?.id === 'own', null, { timeout: 15000, polling: 100 }).catch(() => {})
 const own = await page.evaluate(() => ({ open: window.__kfbChoice.isOpen(), last: window.__kfbChoice.last() }))
-await page.waitForTimeout(300)
+await page.waitForFunction(() => (window.__kfbBubbles?.() || []).some((x) => x.text === 'I want my cookie back'), null, { timeout: 15000, polling: 100 }).catch(() => {})
 const ownBubble = await bubbleTexts()
 await browser.close()
 

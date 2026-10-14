@@ -22,7 +22,7 @@ export const SCHEMA = 'kfb.face-mount/1';
 export const ORIGINAL_NAMES = { eyes: /^FB_Eye_[LR]$/, brows: /^Carl_Brow_[LR]$/, nose: /^Carl_Nose$/, mouth: /^FB_Mouth/ };
 export const PARTS = ['eyes', 'brows', 'nose', 'mouth', 'moustache'];
 /* Vorgaben — aus den Modulen bzw. graft-mount übernommen, nicht erfunden. */
-export const EYE_DEF = { anchor: { dx: 0.345, dy: -0.10, ring: 0.30, track: 0.10 }, pupilStyle: 'matte-cute', pupilSize: 0.4, gloss: 0.85, lidFit: 0.9, inset: 0, converge: 0, splay: 0, socket: 'legacy', turnL: 0, turnR: 0,
+export const EYE_DEF = { anchor: { dx: 0.345, dy: -0.10, ring: 0.30, track: 0.10 }, pupilStyle: 'matte-cute', pupilSize: 0.4, gloss: 0.85, lidFit: 0.9, inset: 0, converge: 0, splay: 0, socket: 'surface', turn: 0, turnFine: { l: 0, r: 0 }, turnL: 0, turnR: 0,
   lashes: { length: 0, density: 6, width: 1 }, oval: { w: 1, h: 1, d: 1, tilt: 0 }, sclera: null, pupil: null };
 const MOUTH_DEF = { size: 0.44, dy: -0.52, sx: 1, dx: 0, tilt: 0, rot: 0, bend: 0, set: 'male', lift: 0.03, wrap: 1, onTop: false };
 const hexInt = (h) => (typeof h === 'number' ? h : parseInt(String(h).replace('#', ''), 16));
@@ -113,6 +113,61 @@ function wrapMouthToSkin(THREE, mouth, figure, skin, api) {
   api.wrapMouth = wrap; wrap();
 }
 
+
+/* FB-MOUTH-FIT-01 (30.09.): the PAINTED mouth card (orig.mouth) is a flat 17×9 grid that floats in front of the head.
+   After every placement (PartRig apply) each vertex is cast along the card normal onto the real skin (+EPS), starting from the
+   pristine rest positions. UVs untouched → front image unchanged. Toggle mouth.conform (default true) · mouth.edge = alpha test. */
+function conformOriginalMouth(THREE, api, figure, skin) {
+  const T = THREE, r = api.orig && api.orig.mouth; if (!r || !Array.isArray(r.items) || !r.items.length || r.__kfbConf) return;
+  r.__kfbConf = true;
+  const EPS = 0.004, ray = new T.Raycaster(), o = new T.Vector3(), d = new T.Vector3(), v = new T.Vector3(), inv = new T.Matrix4(), q = new T.Quaternion(), wc = new T.Vector3(), wv = new T.Vector3();
+  const rest = new Map(); let proxy = null, frame = null, patch = null;
+  const bakeTo = (sm, fr) => { const g = sm.geometry, P = g.attributes.position, out = new Float32Array(P.count * 3), w = new T.Vector3(), finv = new T.Matrix4().copy(fr.matrixWorld).invert(), bt = sm.isSkinnedMesh ? (sm.applyBoneTransform || sm.boneTransform) : null;
+    for (let i = 0; i < P.count; i++) { w.fromBufferAttribute(P, i); if (bt) bt.call(sm, i, w); w.applyMatrix4(sm.matrixWorld).applyMatrix4(finv); out[i * 3] = w.x; out[i * 3 + 1] = w.y; out[i * 3 + 2] = w.z; }
+    const G = new T.BufferGeometry(); G.setAttribute('position', new T.BufferAttribute(out, 3)); if (g.index) G.setIndex(g.index);
+    const pm = new T.Mesh(G, new T.MeshBasicMaterial({ side: T.DoubleSide })); pm.matrixAutoUpdate = false; return pm; };
+  const restore = () => { for (const it of r.items) { const m = it.mesh, R = rest.get(m); if (m && R) { m.geometry.attributes.position.array.set(R); m.geometry.attributes.position.needsUpdate = true; } } };
+  for (const it of r.items) { const m = it.mesh; if (m && m.geometry) rest.set(m, m.geometry.attributes.position.array.slice()); }
+  const on = () => !(api.entry && api.entry.mouth && api.entry.mouth.conform === false);
+  const fit = () => {
+    restore(); const t0 = performance.now(); let hit = 0, n = 0, dmin = 1e9, dmax = -1e9;
+    if (!on() || !skin.length) { api.mouthConform = { on: false }; return; }
+    figure.updateMatrixWorld(true);
+    for (const it of r.items) {
+      const m = it.mesh; if (!m || !rest.get(m)) continue; m.updateWorldMatrix(true, false);
+      const pos = m.geometry.attributes.position, n0 = new T.Vector3(0, 0, 1).applyQuaternion(m.getWorldQuaternion(q)).normalize();
+      const fr = (it.host && it.host.parent) || (m.parent && m.parent.parent) || figure; fr.updateWorldMatrix(true, false);
+      wc.set(0, 0, 0); for (let i = 0; i < pos.count; i++) wc.add(wv.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld)); wc.multiplyScalar(1 / pos.count);
+      if (!proxy || frame !== fr) { ray.far = 1.6; ray.set(o.copy(wc).addScaledVector(n0, 0.6), d.copy(n0).negate()); const c = ray.intersectObjects(skin, false)[0]; proxy = c ? bakeTo(c.object, fr) : null; frame = fr; patch = null; }
+      if (!proxy) continue;
+      proxy.matrixWorld.copy(fr.matrixWorld);
+      let rW = 0; for (let i = 0; i < pos.count; i++) rW = Math.max(rW, wv.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld).distanceTo(wc));
+      const Rr = rW * 1.6 + 0.3;   /* the card floats up to ~0.3 away in front of the skin */
+      const G = proxy.geometry, A = G.attributes.position.array, I = G.index ? G.index.array : null, nT = I ? I.length / 3 : A.length / 9, Mx = proxy.matrixWorld, pv = new T.Vector3(), keep = [];
+      const nV = A.length / 3, near = new Uint8Array(nV), R2 = Rr * Rr;
+      for (let vi = 0; vi < nV; vi++) { pv.set(A[vi * 3], A[vi * 3 + 1], A[vi * 3 + 2]).applyMatrix4(Mx); near[vi] = pv.distanceToSquared(wc) < R2 ? 1 : 0; }
+      for (let t = 0; t < nT; t++) { const a = I ? I[t * 3] : t * 3, b = I ? I[t * 3 + 1] : t * 3 + 1, c2 = I ? I[t * 3 + 2] : t * 3 + 2; if (near[a] || near[b] || near[c2]) keep.push(t); }
+      const out = new Float32Array(keep.length * 9);
+      keep.forEach((t, k) => { for (let j = 0; j < 3; j++) { const vi = I ? I[t * 3 + j] : t * 3 + j; out[k * 9 + j * 3] = A[vi * 3]; out[k * 9 + j * 3 + 1] = A[vi * 3 + 1]; out[k * 9 + j * 3 + 2] = A[vi * 3 + 2]; } });
+      const PG = new T.BufferGeometry(); PG.setAttribute('position', new T.BufferAttribute(out, 3)); const pm = new T.Mesh(PG, proxy.material); pm.matrixAutoUpdate = false; pm.matrixWorld.copy(Mx); pm.matrixWorldAutoUpdate = false;
+      inv.copy(m.matrixWorld).invert(); ray.far = 1.4;
+      for (let i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld); ray.set(o.copy(v).addScaledVector(n0, 0.6), d.copy(n0).negate());
+        const h = ray.intersectObject(pm, false)[0]; n++;
+        if (h) { v.copy(h.point).addScaledVector(n0, EPS).applyMatrix4(inv); pos.setXYZ(i, v.x, v.y, v.z); hit++; const dd = h.distance - 0.6; dmin = Math.min(dmin, dd); dmax = Math.max(dmax, dd); }
+      }
+      pos.needsUpdate = true; m.geometry.computeBoundingBox(); m.geometry.computeBoundingSphere(); PG.dispose();
+      const mats = [].concat(m.material); for (const mt of mats) if (mt) { mt.depthWrite = true; mt.polygonOffset = true; mt.polygonOffsetFactor = -1; mt.polygonOffsetUnits = -1; }
+    }
+    api.mouthConform = { on: true, n, hit, ms: +(performance.now() - t0).toFixed(1), moved: [dmin, dmax] };
+  };
+  const a0 = r.apply.bind(r);
+  r.apply = function () { restore(); const out = a0(); try { fit(); } catch (err) { api.mouthConform = { on: false, error: err.message }; } return out; };
+  api.conformMouth = () => { r.apply(); return api.mouthConform; };
+  api.setMouthEdge = (x) => { const a = Math.max(0, Math.min(0.6, +x || 0)); for (const it of r.items) if (it.mesh) for (const mt of [].concat(it.mesh.material)) if (mt) { mt.alphaTest = a; mt.needsUpdate = true; } };
+  r.apply();
+}
+
 /* PartRig dreht und skaliert um die Mitte der GEOMETRIE im Elternraum. Die v5-Teile tragen einen
    eigenen Knotenversatz (−1,23 in y unter `head`) — ohne Einrechnen läge der Drehpunkt 1,2 Einheiten
    neben dem Teil. Also: Knotentransform in eine GEOMETRIE-KOPIE backen, Knoten auf Identität. Das Bild
@@ -183,6 +238,22 @@ export function skinSignedDistance(THREE, rig, pLocal, mesh) {
   }
   return sgn * Math.sqrt(bd) * (m.userData.__kfbFlip ? -1 : 1);
 }
+/* FB-EYES-LIDS-02 §2.1–2.2 (30.09.): seat 'surface' is the default in EVERY host (EYE_DEF; a saved 'legacy' stays legacy).
+   ONE mirrored turn: eye.turn (°, + outward, both eyes) + eye.turnFine.{l,r} (°, fine per eye). The old eye.turnL / turnR are
+   migrated on load (migrateTurn) and no longer exported. socketEyes still reads turnL / turnR when an eye object has no turn
+   field at all (probes and old callers) — same angles as before. e._kfbTilt = the oval tilt put on the eye group (clay-lids level). */
+export function migrateTurn(eye) {
+  if (!eye || eye.turn != null || (eye.turnL == null && eye.turnR == null)) return null;
+  const L = +eye.turnL || 0, R = +eye.turnR || 0, turn = (L + R) / 2;
+  return { turn, turnFine: { l: L - turn, r: R - turn } };
+}
+const turnOf = (eye, sx) => (eye.turn != null || eye.turnFine
+  ? (+eye.turn || 0) + (+((eye.turnFine || {})[sx < 0 ? 'l' : 'r']) || 0)
+  : (+(sx < 0 ? eye.turnL : eye.turnR) || 0));
+function markTilt(rig, eye, sock) {
+  const t = ((eye && eye.oval && +eye.oval.tilt) || 0) * DEG;
+  for (const e of rig.eyes || []) if (e) e._kfbTilt = sock ? -(e._sx || 1) * t : (e.rotation ? e.rotation.z : 0);
+}
 export function socketEyes(THREE, rig, eye = {}) {
   const body = rig.rig && rig.rig.parent; if (!body || !body.geometry || !rig.eyes) return null;
   const g = body.geometry; if (!g.boundingBox) g.computeBoundingBox();
@@ -198,7 +269,7 @@ export function socketEyes(THREE, rig, eye = {}) {
     const h0 = cast(new V(ex, ey, lc.z + U * 3.5), new V(0, 0, -1)); if (!h0) continue;
     const S0 = h0.p, n0 = areaNormal(THREE, sample(h0.mesh), S0, R * 1.2, new V());
     if (n0.dot(S0.clone().sub(lc)) < 0) { n0.negate(); h0.mesh.userData.__kfbFlip = true; }
-    const ang = (+eye.splay || 0) * Math.PI / 4 + (+(sx < 0 ? eye.turnL : eye.turnR) || 0) * DEG;
+    const ang = (+eye.splay || 0) * Math.PI / 4 + turnOf(eye, sx) * DEG;
     const n = n0.clone(); let S = S0, mesh = h0.mesh;
     if (Math.abs(ang) > 1e-6) {
       n.applyAxisAngle(UP, sx * ang).normalize();
@@ -209,7 +280,7 @@ export function socketEyes(THREE, rig, eye = {}) {
     const Y = n.clone().cross(X).normalize();
     const q = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(X, Y, n));
     const tilt = ((eye.oval && +eye.oval.tilt) || 0) * DEG; q.multiply(new THREE.Quaternion().setFromAxisAngle(new V(0, 0, 1), -sx * tilt));
-    e.quaternion.copy(q); e.position.copy(S).addScaledVector(n, -R * K); e.updateMatrix();
+    e.quaternion.copy(q); e.position.copy(S).addScaledVector(n, -R * K); e.updateMatrix(); e._kfbTilt = -sx * tilt;
     let fr = e._kfbFree; if (!fr && e._pivot) { fr = new THREE.Group(); fr.name = 'kfb-pupil-free'; fr.userData.petOverlay = true; e.add(fr); fr.add(e._pivot); e._kfbFree = fr; }
     if (fr) fr.quaternion.copy(q).invert();
     e._sockMesh = mesh;
@@ -297,6 +368,8 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
   p.eye.anchor = { ...EYE_DEF.anchor, ...((entry && entry.eye && entry.eye.anchor) || {}) };
   p.eye.lashes = { ...EYE_DEF.lashes, ...((entry && entry.eye && entry.eye.lashes) || {}) };
   p.eye.oval = { ...EYE_DEF.oval, ...((entry && entry.eye && entry.eye.oval) || {}) };
+  p.eye.turnFine = { ...EYE_DEF.turnFine, ...((entry && entry.eye && entry.eye.turnFine) || {}) };
+  { const mg = migrateTurn(entry && entry.eye); if (mg) { p.eye.turn = mg.turn; p.eye.turnFine = mg.turnFine; } delete p.eye.turnL; delete p.eye.turnR; }
   p.brow = { ...((M.Brow && M.Brow.DEFAULTS) || {}), ...BROW_XFORM_DEF, ...(p.brow || {}) };
   p.brow.life = { ...BROW_LIFE_DEF, ...((p.brow && p.brow.life) || {}) };
   p.nose = { ...((M.Nose && M.Nose.DEFAULTS) || {}), enabled: true, ...(p.nose || {}) };
@@ -321,7 +394,7 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
       const s = +this.splay || 0, ext = s < 0 || s > 1, sock = p.eye.socket === 'surface'; if (ext || sock) this.splay = 0;
       const r = b0(); this.splay = s;
       if (sock) { try { socketEyes(THREE, this, p.eye); } catch (e) { log('eye socket: ' + e.message); } }
-      else { this.__kfbSocket = null; if (ext) { try { yawEyes(THREE, this, s); } catch (e) { log('eye yaw: ' + e.message); } } }
+      else { this.__kfbSocket = null; if (ext) { try { yawEyes(THREE, this, s); } catch (e) { log('eye yaw: ' + e.message); } } markTilt(this, p.eye, false); }
       return r;
     };
     if ((+rig.splay || 0) < 0 || (+rig.splay || 0) > 1 || p.eye.socket === 'surface') rig.build();
@@ -403,8 +476,8 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
         else if (rest[0] === 'blink') { if (rig.setBlink) rig.setBlink({ [rest[1]]: v }); }
         else if (rest[0] === 'life') { if (rig.setLife) rig.setLife({ [rest[1]]: v }); }
         else if (rest[0] === 'lashes') rig.setLashes({ [rest[1]]: v });
-        else if (rest[0] === 'oval') { if (M.Oval) M.Oval.applyOval(rig, p.eye.oval); if (p.eye.socket === 'surface') socketEyes(THREE, rig, p.eye); }
-        else if (k === 'turnL' || k === 'turnR') { if (p.eye.socket === 'surface') socketEyes(THREE, rig, p.eye); }
+        else if (rest[0] === 'oval') { if (M.Oval) M.Oval.applyOval(rig, p.eye.oval); if (p.eye.socket === 'surface') socketEyes(THREE, rig, p.eye); else markTilt(rig, p.eye, false); }
+        else if (k === 'turn' || rest[0] === 'turnFine' || k === 'turnL' || k === 'turnR') { if (p.eye.socket === 'surface') socketEyes(THREE, rig, p.eye); }
         else if (k === 'socket') rig.build();
         else if (k === 'pupilStyle') rig.setPupilStyle(v);
         else if (k === 'sclera' || k === 'pupil') { if (M.Head) M.Head.paintEyes(rig, { sclera: p.eye.sclera, pupil: p.eye.pupil }); }
@@ -424,6 +497,9 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
         p.moustache[k] = v; const m = api.ensureMoust(); if (!m) return { status: 'UNSUPPORTED', reason: 'moustache module missing' };
         if (k === 'style') { if (m.style) m.style(v); return { status: 'OK' }; }
         return m.set({ [k]: v }) || { status: 'OK' };
+      }
+      if (head === 'mouth' && (k === 'conform' || k === 'edge')) {
+        p.mouth[k] = v; if (k === 'conform' && api.conformMouth) api.conformMouth(); if (k === 'edge' && api.setMouthEdge) api.setMouthEdge(v); return { status: 'OK' };
       }
       if (head === 'mouth') {
         if (!mouth) return { status: 'UNSUPPORTED', reason: 'no mouth owner' };
@@ -564,7 +640,10 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
        plane) while speaking, and any set() during speech re-enabled the model mouth on top of it. Now the decal set drives whichever
        carrier is chosen: source »original« keeps the model patch and gets the rig's current decal while Talk / viseme / lip-sync run;
        at rest it shows its own painted decal again. The rig plane is only visible on source »rig«. Source »off« = no mouth. */
-    const spk = !!(mouth && (mouth.talking || mouth.viseme != null || (api.isSpeaking && api.isSpeaking())));
+    /* 01.10. (Georg: »Laute · 13 shapes« did nothing on the model mouth): a decal shown on purpose (mouth.__kfbHold = its key, set by
+       the ToolBox's Laute row) also counts, as long as it is still the current decal — any other setTex ends the hold by itself. */
+    const hold = !!(mouth && mouth.__kfbHold && mouth.cur === mouth.__kfbHold);
+    const spk = !!(mouth && (mouth.talking || mouth.viseme != null || hold || (api.isSpeaking && api.isSpeaking())));
     const onModel = p.parts.mouth === 'original' && !!orig.mouth, want = p.parts.mouth === 'rig';
     if (mouth && mouth.mesh && mouth.mesh.visible !== want) mouth.mesh.visible = want;
     if (onModel) {
@@ -646,6 +725,7 @@ export function mountFace({ THREE, M, figure, entry = {}, log = () => {} }) {
   if (!(e.eye && e.eye.anchor) && found.eyes.length >= 2) api.fitToOriginal('eyes');
   if (!(e.mouth && e.mouth.dy != null) && orig.mouth) api.fitToOriginal('mouth');
   if (mouth) { try { wrapMouthToSkin(THREE, mouth, figure, skin, api); } catch (err) { log('mouth wrap: ' + err.message); } }
+  if (orig.mouth) { try { conformOriginalMouth(THREE, api, figure, skin); if (api.entry.mouth.edge) api.setMouthEdge(api.entry.mouth.edge); } catch (err) { log('mouth conform: ' + err.message); } }
   api.shadowOff();
   api.status = 'OK';
   return api;

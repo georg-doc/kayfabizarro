@@ -9,10 +9,12 @@ import { createBillboard, billboardLog, fitFace, BB_RES, BIOMES } from './module
 import { createActor } from './actors/actorSlot'
 import { DECKS, cardAt, cardsOfDeck } from './cards'
 import { isCardSafe } from './cardMapping'
-import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5.glb?url'
+import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5b.glb?url'
 import hairUrl from './assets/actors/fb-hair/FrizzleBob_Yellow.gltf?url'
 import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
-import recipe from './data/actors/frizzlebob-v5.recipe.json'
+import recipe from './data/actors/frizzlebob-v5b.recipe.json'
+import georg from './data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json'
+const pet = georg.pets.find((p) => p.id === recipe.entry.pet) // V-240: Georgs Eintrag 1:1
 import earRig from './data/actors/fb-default.ear-rig.json'
 import { expose } from './debug'
 
@@ -28,7 +30,7 @@ const motion = /motion=(\w+)/.exec(hash)?.[1] || 'idle'
 // Biom per Hash (biome=<Name>); Prüfstandard Moos-Insel (Rahmen orange, Pfosten braun, Boden grün = Georgs Referenz 14.10.), die Bühne wählt ihr Biom selbst
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
 const BB = { card: CARD, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -0.6] }
-const ACTOR = (x, yaw, id) => ({ recipe, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, position: [x, 0, 1.6], yaw, anchorId: id })
+const ACTOR = (x, yaw, id) => ({ recipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, position: [x, 0, 1.6], yaw, anchorId: id })
 // Figuren seitlich vor der Tafel, außerhalb der Kartenbreite (W ≤ 7 m): die Karte bleibt zwischen ihnen ganz lesbar (R2 §1)
 const LEFT = ACTOR(-4.2, 0.38, 'stage-left'), RIGHT = ACTOR(4.2, -0.38, 'stage-right')
 let bb = null; const actors = {}

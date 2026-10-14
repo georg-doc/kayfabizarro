@@ -1,7 +1,38 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§16 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§17 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 17 · 14.10. abends · FrizzleBob nach Georgs Export fertig (V-240) · Briefing M1 „Bewegung“ eingegangen · G0 M1 beginnt · gelesen bis V-242
+
+### 17.1 · V-240 umgesetzt (G2)
+- **Eintrag 1:1:** `src/data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json` (aus `replies/actors/`, Blob `aab8eeb0`), 134 Felder angewendet, **0 abgelehnt**. Keine eigenen Werte.
+- **Figur v5b:** `FB_TEMPLATE_LOOK_v5b.glb` @23615cff (Blob 24134a51). Rezept `frizzlebob-v5b.recipe.json`; v5-Teile (GLB, Rezept, P06-Bauteile) entfernt.
+- **Bauteile der P08-Linie** (ToolBox Production-08, Cut 01.10. r1, main @ac9dbaed): face-mount `5424bff3`, clay-lids `d7cea2ae` (aus, `clayLids.on false`), ear-dangle `d7ad94a2`, contact-ao `61e3121f`. Eye-Rig-Lider.
+- **Abnahme-Bildpaar ToolBox P08 | Spiel**, gleiche Kamera, **Bindepose** (A1: ToolBox zeigt sonst Idle_A), Augen- und Brauen-Leben für das Bild aus:
+  - mittlere Abweichung **vorn 1,4 · ¾ 1,3 · Seite 0,8 /255**;
+  - Mund sitzt in ¾ am Kopf (Befund A7 erledigt);
+  - Beleg: `ws1/proofs/2026-10-14-fb-v240/fb_georg_pair_front_q_side.png`, Unterschiedskarten `fb_georg_diffmaps.png`, Lidschlag `fb_georg_blink.png`, Bühne mit D1 `fb_stage_d1.png`.
+- **Brauen/Nase:** Farben aus dem Export (`brow.color`, `nose.color`), `original.brows.lift` 0,242 wie im Export (A5).
+- **Bühne:** `#stage,actors=fb` stellt FrizzleBob in den Darsteller-Slot; D1 läuft unverändert, nur die Rezept-Datei wechselt.
+- **Blinder Prüfer 9: PASS MIT AUFLAGEN**, abgearbeitet:
+  - Ladeweg = `mountFace` mit Georgs Eintrag (wie P08 nach dem Neuladen), nicht der Einmal-Weg `rigImport`; im Bild ohne Unterschied.
+  - Schatten wie P08 Z. 1901–1903: Ohren werfen nicht, Gesicht `shadowOff`, Mund empfängt nicht; Kontaktschatten vor den Haaren angelegt.
+  - `loadReport` erst nach erfolgreichem Laden.
+  - Bühne nimmt nur bekannte `actors`-Werte (unbekannt → keine Figuren).
+  - **Modulstände offengelegt** (`moduleDeviations` im Rezept):
+    - Georgs Export stammt aus einer **neueren** ToolBox als jeder Cut im Repo (Knet-Lid-Felder `mech 'skin'`, `skinFrame`, `flap02` …). Ohne Wirkung, weil die Knet-Lider aus sind.
+    - Der Export nennt ear-dangle @19088b14; gebaut gegen `d7ad94a2` wie P08, das ohne die neuen Felder bit-gleich rechnet.
+    - Kontaktschatten wird in der Bindepose gebacken (P08: in der Pose-Rig-Haltung); sichtbar nur an den Schultern.
+  - Ehrlich: Der vollständige Wortlaut von Prüfer 9 ist beim Sitzungswechsel nicht gesichert worden; die Liste oben ist der umgesetzte Stand.
+- **Tests: alle 14 grün.** `s5c` war unter paralleler Last wackelig (2 von 3 Läufen FAIL beim Warten auf die eigene Wahl). Wartezeit jetzt 15 s mit Polling statt 5 s; 3 von 3 grün. An der Logik ändert sich nichts.
+
+### 17.2 · Briefing M1 „Bewegung mit FrizzleBob v5b“ (Web-Chat, Ausgang Georg)
+- Georg hat das Briefing direkt an WS1 gegeben. Damit er nicht Bote spielen muss (V-213), liegt es jetzt hier: **`ws1/briefs/BRIEF_WS1_M1_BEWEGUNG_R1.md`** (SHA-256 `249858c2…`).
+- **Bitte WS0:** V-Nummer vergeben, ins Register übernehmen und den Auftrag bestätigen bzw. korrigieren.
+- **Vorlagen-Abgleich gegen `DECISIONS.md` (V-214):** Mir ist kein Widerspruch aufgefallen. Das Briefing hält ein: V-194 (kein Hex), V-206 (ein Ladeweg, derselbe Darsteller-Slot), V-216 (KayKit-Barbar `hero.glb` raus), V-210 (Racetrack ruht), V-230 (Amphitheater Browser-Fassung v1), V-240 (Figur), V-228 (Claude Design nur Bild).
+- **WS1 beginnt jetzt mit G0 M1** (nur prüfen, kein Bau): Skelett v5b ↔ LOCO-Clips (Rig_Medium), Fußtest, Flug-Clip, Kinetik. Ergebnis kommt als §18. Ist v5b nicht retargetbar, stoppt WS1 und meldet es hier.
+- Das Bauen (Controller, Welt, Kamera) beginnt erst nach eurer Bestätigung oder, wenn ihr bis dahin nichts einwendet, nach G0 PASS.
 
 ## 16 · 14.10. spät · Amphitheater spieltauglich (V-230) · Bühne · D1 Dialog-Mechanik (FrizzleBob weiter gestoppt)
 

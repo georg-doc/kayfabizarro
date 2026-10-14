@@ -1,0 +1,50 @@
+{
+ "schema": "kfb.actor-recipe/0.2-candidate",
+ "primaryFormat": "kfb.pets/1",
+ "source": {
+  "selectedId": "frizzlebob-earrig-v5",
+  "rigFamily": "Rig_Medium",
+  "label": "FrizzleBob (Georgs Export, Figur v5b, V-240)"
+ },
+ "composition": {
+  "modelRef": {
+   "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb",
+   "revision": "23615cffb515d03d2b6a0164b896dd08e3bc1bed",
+   "blob": "24134a51"
+  },
+  "faceOwners": {
+   "face": "kfb-lib/face-mount.v1.js",
+   "eye": "pet-eye-rig.v6",
+   "lids": "pet-eye-rig.v6 (clayLids.on false)",
+   "mouth": "model FB_Mouth_Smile + pet-mouth.v1 decals + lipsync-text.v1",
+   "ears": "ear-dangle.v1 (P08)"
+  }
+ },
+ "entry": {
+  "file": "src/data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json",
+  "registerPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json (docs/kfb-decisions-register-2026-10-11)",
+  "blob": "aab8eeb0",
+  "sha256": "07a316cbdca5e3cc46c2d6b3eb5ead6bf182236edb4649abfc7e826f7b53b3b2",
+  "pet": "frizzlebob-earrig-v5",
+  "exportedBy": "KFB ToolBox Production-02 · Rigging",
+  "exportedAt": "2026-10-14T16:00:13.844Z",
+  "decision": "V-240: 1:1, keine eigenen Werte"
+ },
+ "donor": "KFB ToolBox Production-08, Session-Cut 2026-10-01 r1 (main @ac9dbaed), Akteur frizzlebob-earrig-v5 (Figur v5b @23615cff), Import wie rigImport",
+ "stage": {
+  "scale": 0.947368,
+  "_source": "P08 CLASS_K = 2.2 / 2.3222826966"
+ },
+ "idle": {
+  "pack": "Rig_Medium_General.glb",
+  "clip": "Idle_A",
+  "_source": "P08 earfb defaultIdle"
+ },
+ "moduleDeviations": [
+  "Georgs Export stammt aus einer neueren Claude-Design-ToolBox als jeder Cut im Repo: clayLids mech 'skin', skinFrame, flap02, fOpenU/fOpenL/fArch/fMelt, skinA…skinA4 kennt P08 (clay-lids d7cea2ae) nicht. Wirkung keine: clayLids.on = false (V-240).",
+  "Export-Kennung 'KFB ToolBox Production-02 · Rigging' schreibt jeder Cut (P08 Z. 3845–3860); welche Fassung Georg nutzt, klärt WS0 (V-241).",
+  "Ohren: Export nennt ear-dangle @19088b14 (PR #214, 6bb4531a); P08 lädt kfb-lib/ear-dangle d7ad94a2 (FLOPPY-01), ohne die neuen Felder bit-gleich (FLOPPY-01 Abnahme 1). Gebaut gegen d7ad94a2 wie P08.",
+  "Ladeweg: mountFace mit dem Eintrag (= P08 nach dem Neuladen, _mountFaceOn(saved)), nicht der Einmal-Weg rigImport; im Bildpaar ohne sichtbaren Unterschied.",
+  "Kontaktschatten in der Bindepose gebacken (P08: Pose-Rig-Haltung, Standard-Eintrag); body-shape, pose-rig nicht übernommen (body = neutral)."
+ ]
+}

@@ -1,17 +1,18 @@
-// Darsteller-Slot (V-227/V-228 §4) + FrizzleBob v5 (V-236) · ein deterministischer Prüfpunkt je zugesagter Eigenschaft.
+// Darsteller-Slot (V-227/V-228 §4) + FrizzleBob nach Georgs Export (V-240, Figur v5b) · ein deterministischer Prüfpunkt je zugesagter Eigenschaft.
 // Teil A (ohne Browser): Darsteller-Vertrag R2 = #355 + Erweiterung. Die #355-Tests laufen unverändert gegen R2, dazu die neuen Fälle.
-// Teil B (#actortest, Bindepose, ToolBox-Licht/-Kamera): FrizzleBob über createActor gegen die Spender-Referenz der ToolBox P06 r1
-// (test/ref/fb_donor_face.*, aufgenommen mit scripts/fb/donor-pair.mjs aus demselben Eintrag).
+// Teil B (#actortest, Bindepose, ToolBox-Licht/-Kamera): FrizzleBob über createActor gegen die Spender-Referenz der ToolBox P08
+// (test/ref/fb08_donor_*, aufgenommen mit scripts/fb/donor-pair-p08.mjs: Georgs Export über P08 rigImport, vorn/¾/Seite).
 import fs from 'fs'
 import { execFileSync } from 'child_process'
 import { createHash } from 'crypto'
 import { openPage, report } from './_page.mjs'
 import { companion } from '../src/actors/face-driver-contract.r2.mjs'
 
-const FREEZE = () => { const R = window.__kfbActor.debugRig(); R.setLife({ on: false }); R._blinkK = -1; R._blinkT = 1e9; R.setGazeFollow(true); R.pointTo(0, 0) } // = scripts/fb/donor-pair.mjs
-const RECIPE = JSON.parse(fs.readFileSync('src/data/actors/frizzlebob-v5.recipe.json', 'utf8'))
+const FREEZE = () => { const R = window.__kfbActor.debugRig(); R.setLife({ on: false }); R._blinkK = -1; R._blinkT = 1e9; R.setGazeFollow(true); R.pointTo(0, 0); window.__kfbActor.debugFace().set('brow.life.on', false) } // Augen + Brauen-Leben aus = scripts/fb/donor-pair-p08.mjs
+const RECIPE = JSON.parse(fs.readFileSync('src/data/actors/frizzlebob-v5b.recipe.json', 'utf8'))
+const EXPORT = JSON.parse(fs.readFileSync('src/data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json', 'utf8')), PET = EXPORT.pets.find((p) => p.id === RECIPE.entry.pet)
 const ROGUE = JSON.parse(fs.readFileSync('src/data/actors/rogue-hooded.recipe.json', 'utf8'))
-const REF = JSON.parse(fs.readFileSync('test/ref/fb_donor_face.report.json', 'utf8'))
+const REF = JSON.parse(fs.readFileSync('test/ref/fb08_donor.report.json', 'utf8'))
 const blob = (f) => { const b = fs.readFileSync(f); return createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex') }
 
 // --- Teil A · Vertrag
@@ -26,7 +27,8 @@ const donor = { sourceId: 'S', sourceRef: 'r', sdkVersion: 'v', proof: 'SOURCE_I
 const mount = { headNodeId: 'head', measured: true, at: [0, 0, 0], rotation: [0, 0, 0], size: 1 }
 const contract = {
   contract355UnchangedOnR2: suite355,
-  singleModelRecipeAccepted: fbPlan.channelOwner === 'KFB_NATIVE' && fbPlan.modelRef?.blob === '131d7c38' && fbPlan.bodyRef === null,
+  singleModelRecipeAccepted: fbPlan.channelOwner === 'KFB_NATIVE' && fbPlan.modelRef?.blob === '24134a51' && fbPlan.bodyRef === null,
+  georgExportPinned: blob('src/data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json').startsWith('aab8eeb0') && PET?.source?.glb?.endsWith('FB_TEMPLATE_LOOK_v5b.glb') && PET.source.commit === RECIPE.composition.modelRef.revision,
   rogueRecipeAccepted: companion(ROGUE).modelRef?.blob === '7063f6cb',
   modelPinRequired: throws(() => companion({ ...RECIPE, composition: { modelRef: { path: 'x', revision: 'y' } } }), /MODEL_RIG_SOURCE_REQUIRED/),
   customRigOnlyWithModel: throws(() => companion({ ...RECIPE, source: { ...RECIPE.source, rigFamily: 'CUSTOM' }, composition: { bodyRef: 'b', headRef: 'h' } }), /BODY_HEAD_RIG_SOURCE_REQUIRED/),
@@ -38,13 +40,14 @@ const contract = {
   wirefaceRejectsEyeRig: throws(() => companion(RECIPE, { mode: 'WIREFACE_MESH', faceSource: donor, mount, activeFaceOwners: ['eye'] }), /DOUBLE_FACE_CHANNEL_OWNER/),
   // eingebundene Spender byte-gleich (Blobs aus SOURCE_ISOLATION_R1 / Pins)
   vendorByteIdentical: [
-    ['src/vendor/composer/wireface-face-driver-contract.mjs', '74d03061'], ['src/vendor/fb/kfb-lib/face-mount.v1.js', '535b592a'], ['src/vendor/fb/kfb-lib/clay-lids.v1.js', '027d5af6'],
+    ['src/vendor/composer/wireface-face-driver-contract.mjs', '74d03061'], ['src/vendor/fb/kfb-lib-p08/face-mount.v1.js', '5424bff3'], ['src/vendor/fb/kfb-lib-p08/clay-lids.v1.js', 'd7cea2ae'],
+    ['src/vendor/fb/kfb-lib-p08/ear-dangle.v1.js', 'd7ad94a2'], ['src/vendor/fb/kfb-lib-p08/contact-ao.v1.js', '61e3121f'],
     ['src/vendor/fb/kfb-lib/lipsync-text.v1.js', '7b981a94'], ['src/vendor/fb/kfb-lib/ear-base.v1.js', 'dc320dfe'], ['src/vendor/fb/kfb-lib/hair-tufts.v1.js', '92d2d44a'],
-    ['src/vendor/fb/ear-rig/ear-dangle.v1.js', '6bb4531a'], ['src/vendor/fb/emb/petstudio-v9/studio-v3/pet-mouth.v1.js', 'd18c95cc'], ['src/vendor/fb/emb/frizzlegraft-v1/eyeoval.v1.js', '397e5174'],
+    ['src/vendor/fb/emb/petstudio-v9/studio-v3/pet-mouth.v1.js', 'd18c95cc'], ['src/vendor/fb/emb/frizzlegraft-v1/eyeoval.v1.js', '397e5174'],
     ['src/vendor/fb/emb/frizzlegraft-v1/headzones.v1.js', 'f373c5e3'], ['src/vendor/fb/emb/lab-v6/partrig.v1.js', '27c6533f'], ['src/vendor/fb/emb/petstudio-v9/studio-v12/brow-rig.v2.js', 'ccc91a7f'],
     ['src/vendor/fb/emb/petstudio-v9/studio-v12/pet-nose.v2.js', '1057af70'], ['src/vendor/fb/emb/petstudio-v9/studio-v12/pet-moustache.v1.js', '1f8b869e'], ['src/vendor/fb/emb/petstudio-v9/kfb-ink-canon.js', 'de9d4776'],
     ['src/vendor/eyes/pet-eye-rig.v6.js', '853bcf5f'], ['src/vendor/eyes/facehost.v1.js', '38ec7770'],
-    ['src/assets/actors/FB_TEMPLATE_LOOK_v5.glb', '131d7c38'], ['src/data/actors/fb-default.ear-rig.json', '5ab5e8bc'], ['src/assets/actors/fb-hair/FrizzleBob_Yellow.gltf', 'e0a757ec'],
+    ['src/assets/actors/FB_TEMPLATE_LOOK_v5b.glb', '24134a51'], ['src/data/actors/fb-default.ear-rig.json', '5ab5e8bc'], ['src/assets/actors/fb-hair/FrizzleBob_Yellow.gltf', 'e0a757ec'],
   ].every(([f, b]) => blob(f).startsWith(b)),
   mouthDecalsPinned: (() => { const want = { Smile: 'bf7f9b1b', Neutral: 'dc12552f', M: 'd747d302', D: '652ca2d6', S: '6e4012be', Ee: 'c65bc3a7', Uh: 'aa87724b', Ah: 'b2ad7596', Oh: '6153869c', R: '264c60d7', F: 'b56eed5f', 'W-oo': '5aabcac3', L: '61f0eb60' }
     const fsz = fs.readdirSync('src/assets/actors/fb-mouth'); return fsz.length === 13 && fsz.every((f) => { const k = f.replace(/^FrizzleBobMouth_01_0000s_0001s_\d{4}_/, '').replace('.png', ''); return want[k] && blob('src/assets/actors/fb-mouth/' + f).startsWith(want[k]) }) })(),
@@ -52,10 +55,11 @@ const contract = {
 
 // --- Teil B · Browser
 const { browser, page, errs } = await openPage('#actortest,debug,view=face', { viewport: { width: 900, height: 900 } })
-await page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status !== 'LOADING', null, { timeout: 120000 })
+await page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status !== 'LOADING' && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig
 await page.waitForTimeout(1500)
 await page.evaluate(FREEZE); await page.waitForTimeout(1500) // Augen eingefroren: Aufnahmen wiederholbar (Prüfer 5, Befund 1)
 const st = await page.evaluate(() => window.__kfbActor.status())
+const ap = await page.evaluate(() => window.__kfbActor.debugApplied())
 const drv = await page.evaluate(() => { const A = window.__kfbActor, f = A.debugFace(), orig = []; A.object3d.traverse((o) => { if (/^FB_Eye_[LR]$/.test(o.name)) orig.push(o.visible) })
   const anchorY = A.bubbleAnchors[0].object3d.getWorldPosition(new f.rig.rig.position.constructor()).y, head = A.object3d.getObjectByName('head').getWorldPosition(new f.rig.rig.position.constructor()).y
   return { owner: A.plan.channelOwner, rigVisible: f.rig.rig.visible, origEyesHidden: orig.length === 2 && orig.every((v) => !v), rigMouthHidden: !!f.mouth?.mesh && f.mouth.mesh.visible === false, anchorAboveHead: anchorY > head + 0.5 } })
@@ -126,20 +130,39 @@ const cmp = await page.evaluate(async ([a, b, o, s]) => {
   const dark = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) { const mx = Math.max(A[i], A[i + 1], A[i + 2]), mn = Math.min(A[i], A[i + 1], A[i + 2]); if (mx < 45 && mx - mn < 10) n++ } return n }
   const [R, S, O, Z] = await Promise.all([load(a), load(b), load(o), load(s)])
   const PO = px(O, 0, 0, O.width, O.height), PZ = px(Z, 0, 0, Z.width, Z.height)
-  return { faceVsDonor: diff(px(R, 200, 100, 500, 480), px(S, 200, 100, 500, 480)), whiteOpen: white(PO), whiteShut: white(PZ), pupilOpen: dark(PO), pupilShut: dark(PZ) }
-}, ['data:image/png;base64,' + full.toString('base64'), 'data:image/png;base64,' + fs.readFileSync('test/ref/fb_donor_face.png').toString('base64'), 'data:image/png;base64,' + open1.toString('base64'), 'data:image/png;base64,' + shut.toString('base64')])
+  const big = (A, B) => { let n = 0; for (let i = 0; i < A.length; i += 4) if (Math.abs(A[i] - B[i]) + Math.abs(A[i + 1] - B[i + 1]) + Math.abs(A[i + 2] - B[i + 2]) > 120) n++; return n }
+  return { faceVsDonor: diff(px(R, 150, 30, 600, 560), px(S, 150, 30, 600, 560)), bigFront: big(px(R, 150, 30, 600, 560), px(S, 150, 30, 600, 560)), whiteOpen: white(PO), whiteShut: white(PZ), pupilOpen: dark(PO), pupilShut: dark(PZ) }
+}, ['data:image/png;base64,' + full.toString('base64'), 'data:image/png;base64,' + fs.readFileSync('test/ref/fb08_donor_face.png').toString('base64'), 'data:image/png;base64,' + open1.toString('base64'), 'data:image/png;base64,' + shut.toString('base64')])
 await browser.close()
+// ¾ und Seite: je eine frische Seite, eingefroren wie die Spender-Aufnahme, Kopfausschnitt gegen test/ref/fb08_donor_{q,side}.png
+const views = {}
+for (const v of ['q', 'side']) {
+  const o = await openPage(`#actortest,debug,view=${v}`, { viewport: { width: 900, height: 900 } })
+  await o.page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status === 'OK' && window.__kfbActor.status().hair && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig eingebacken
+  await o.page.waitForTimeout(1500); await o.page.evaluate(FREEZE); await o.page.waitForTimeout(2000)
+  const shot = await o.page.screenshot(); fs.writeFileSync(`test/out/actors_${v}.png`, shot)
+  views[v] = await o.page.evaluate(async ([a, b]) => { const L = (u) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.src = u }); const [x, y] = await Promise.all([L(a), L(b)])
+    const px = (im) => { const c = document.createElement('canvas'); c.width = 600; c.height = 560; c.getContext('2d').drawImage(im, 150, 30, 600, 560, 0, 0, 600, 560); return c.getContext('2d').getImageData(0, 0, 600, 560).data }
+    const A = px(x), B = px(y); let d = 0, big = 0; for (let i = 0; i < A.length; i += 4) { let e = 0; for (let k = 0; k < 3; k++) e += Math.abs(A[i + k] - B[i + k]); d += e; if (e > 120) big++ } return { mean: d / (A.length / 4 * 3), big } },
+  ['data:image/png;base64,' + shot.toString('base64'), 'data:image/png;base64,' + fs.readFileSync(`test/ref/fb08_donor_${v}.png`).toString('base64')])
+  await o.browser.close()
+}
 
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 const dxL = pL[0][0] - p0[0][0], dxR = pL[1][0] - p0[1][0]
-process.exit(report('actors slot + FrizzleBob v5', {
+process.exit(report('actors slot + FrizzleBob (Georg, v5b)', {
   ...contract,
   mounted: st.status === 'OK',
   oneFaceDriverNative: drv.owner === 'KFB_NATIVE' && drv.rigVisible && drv.origEyesHidden && drv.rigMouthHidden && rep?.parts?.mouth === 'original',
+  contactShadowBaked: st.ao?.baked === true && st.ao.darkened > 500, // P08 _mountAO: Kopf/Hals-Kontakt eingebacken
+  georgEntryAppliedFully: st.load?.rejected?.length === 0 && st.load.applied === 134 && REF.rejected.length === 0, // face-mount.load: 134 Gesichtsfelder, keins abgelehnt (P08-Import zählt + body = 135)
+  hairLidsEarsAsDonor: same(ap.hair, REF.hair) && same(ap.lids, REF.lids) && same(ap.ears, REF.ears),
+  earBaseAsDonor: ap.earBase?.length === 2 && ap.earBase.every((e, i) => e.side === REF.earBase[i].side && e.p.every((v, k) => Math.abs(v - REF.earBase[i].p[k]) < 1e-4) && e.q.every((v, k) => Math.abs(v - REF.earBase[i].q[k]) < 1e-4)),
   bubbleAnchorAboveHead: drv.anchorAboveHead,
-  entryAsRecipe: same(rep?.eye?.anchor, RECIPE.face.eye.anchor) && same(rep.eye.oval, RECIPE.face.eye.oval) && rep.eye.socket === 'surface',
+  entryAsGeorg: same(rep?.eye?.anchor, PET.eye.anchor) && same(rep.eye.oval, PET.eye.oval) && rep.eye.pupilSize === PET.eye.pupilSize && same(rep.eye.life, PET.eye.life) && same(rep.parts, PET.parts) && same(rep.eye, REF.eye),
   eyeFrameEqualDonor: same(rep?.eyeFrame?.left, REF.eyeFrame.left) && same(rep.eyeFrame.right, REF.eyeFrame.right) && rep.eyeFrame.radius === REF.eyeFrame.radius,
-  imageMatchesDonor: cmp.faceVsDonor < 6,
+  imageMatchesDonorFront: cmp.faceVsDonor < 3 && cmp.bigFront < 2500, // Mittel < 3/255 und höchstens 2500 Pixel mit > 40 je Kanal
+  imageMatchesDonorQuarterAndSide: views.q.mean < 3 && views.side.mean < 3 && views.q.big < 2500 && views.side.big < 2500,
   hairAndEars: st.hair === true && same(st.ears, [3, 3]),
   gazeParallel: dxL < -0.003 && dxR < -0.003 && Math.abs(dxL - dxR) < Math.max(Math.abs(dxL), Math.abs(dxR)) * 0.5,
   lidsCoverSclera: cmp.whiteOpen > 400 && cmp.whiteShut < cmp.whiteOpen * 0.05,
@@ -155,4 +178,4 @@ process.exit(report('actors slot + FrizzleBob v5', {
   wirefaceWithoutSdkNoFigure: wf.b[0] === 'SOURCE_MISSING' && wf.b[1] === 0 && wf.b[2] === 'WIREFACE_MESH' && wf.c[0] === 'SOURCE_MISSING' && wf.c[1] === 0,
   localDecalsRequired: /MOUTH_DECALS_REQUIRED/.test(wf.noDecals),
   noPageErrors: errs.length === 0,
-}, { drv, st, eyeFrame: rep?.eyeFrame, cmp, mouth, ears, contract: { before, after, later }, wf, dx: [dxL, dxR], errs }))
+}, { views, drv, st, eyeFrame: rep?.eyeFrame, cmp, mouth, ears, contract: { before, after, later }, wf, dx: [dxL, dxR], errs }))

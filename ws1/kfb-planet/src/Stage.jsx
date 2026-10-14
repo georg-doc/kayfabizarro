@@ -1,7 +1,7 @@
 // Bühne im Amphitheater (Vorbereitung G4) hinter dem URL-Schalter #stage: Amphitheater-Modul (V-230) auf Knet-Gelände, Billboard R2 hinten auf
 // der Bühnenfläche, ruhiger Two-Shot (eine feste Kamera, kein Schnitt). Diese Szene ist Host: Kamera, Licht, Himmel; alles andere sind Module.
-// Figuren per Hash: actors=none (Standard) | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller, V-236).
-// FrizzleBob bleibt gestoppt (WS0 14.10., bis die richtige Quelle geklärt ist). Karte: card=<deck>:<n>, Biom: biome=<Name>.
+// Figuren per Hash: actors=none (Standard) | fb (FrizzleBob nach Georgs Export, V-240; beide Seiten, bis die zweite Besetzung feststeht)
+// | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
 import { useEffect, useMemo } from 'react'
 import { useThree } from '@react-three/fiber'
@@ -21,6 +21,11 @@ import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
 import pick from './data/eyes/rogue-hooded.profile.json'
 import contract from './data/eyes/kfb-pet-graft-driver.v4.json'
 import rogueRecipe from './data/actors/rogue-hooded.recipe.json'
+import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5b.glb?url'
+import hairUrl from './assets/actors/fb-hair/FrizzleBob_Yellow.gltf?url'
+import fbRecipe from './data/actors/frizzlebob-v5b.recipe.json'
+import georg from './data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json'
+import earRig from './data/actors/fb-default.ear-rig.json'
 import { expose } from './debug'
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -30,12 +35,17 @@ const CARD = di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) |
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
 export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] } }
 const cam = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] || STAGE_CAMS.two
-const ACTORS = /actors=(\w+)/.exec(hash)?.[1] || 'none'
+const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
 const AMPH = { biome: BIOME }
 const BB = { card: CARD, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
 const ROGUE = (x, yaw, id) => ({ recipe: rogueRecipe, faceDriver: 'KFB_NATIVE', url: rogueUrl, clipsUrl, motion: 'Idle_A', profile: pick.profile, contract, height: 2.0,
   actor: { id: 'adventurer-rogue-hooded', path: pick.profile.source.path, revision: pick.profile.source.revision }, position: [x, 0, -1.4], yaw, anchorId: id })
-const L = ROGUE(-4.2, 0.35, 'stage-left'), R = ROGUE(4.2, -0.35, 'stage-right')
+const decals = import.meta.glob('./assets/actors/fb-mouth/*.png', { eager: true, query: '?url', import: 'default' })
+const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k.split('/').pop(), v]))
+const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
+const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
+const MK = /actors=fb/.test(hash) ? FB : ROGUE
+const L = MK(-4.2, 0.35, 'stage-left'), R = MK(4.2, -0.35, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
 const mods = {}
@@ -77,8 +87,8 @@ export default function Stage() {
       <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
       <ModuleHost create={makeAmph} options={AMPH} />
       <ModuleHost create={makeBB} options={BB} />
-      {ACTORS === 'rogue' && <ModuleHost create={makeL} options={L} />}
-      {ACTORS === 'rogue' && <ModuleHost create={makeR} options={R} />}
+      {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
+      {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
       {NDIALOG > 0 && <BubbleHost />}
       {NDIALOG > 0 && <ChoiceHost />}

@@ -11,6 +11,16 @@
 //   inertia from the linear acceleration of the chain's parent, lag from its angular velocity,
 //   wind (world vector, m/s) as lean + speed-scaled flutter, optional gravity sag, and impulses (landings).
 // Bone 1 can squash/stretch along the ear ("rubber").
+//
+// FB-EARS-FLOPPY-01 (30.09., additive — every new field defaults to today's behaviour, output bit-identical):
+//   sagFrom  (deg, 0)   dead zone: gravity sag starts only when the head leans more than this.
+//   sagShare [a,b,c]    gravity split root-heavy (sums to 1); unset = today's tip-heavy g = 1, 1.6, 2.2. 4.8 = sum of g -> same total sag.
+//   maxFwd / maxBack / maxRoll  [deg x3]  asymmetric per-bone limits; unset = today's symmetric maxDeg.
+//   bob (deg, tip amplitude, 0) + bobHz (0.6)  gentle idle bob added to each bone's pitch target.
+//   setParams({ sagShare: null, ... }) clears an array again (null is otherwise ignored).
+// WIND CONTRACT: update(dt, { wind }) - wind = air velocity RELATIVE TO THE CHARACTER, world space, m/s
+//   = sceneWind - characterWorldVelocity. A host that moves the character must pass it every tick (a host that does not
+//   pass it gets no wind lean and no flutter).
 import * as THREE from 'three';
 
 export const DANGLE_DEFAULTS = Object.freeze({
@@ -25,7 +35,9 @@ export const DANGLE_DEFAULTS = Object.freeze({
   elastic: 0.6,                 // rubber stretch of bone 1 (0 = off)
   stretchLimits: [0.65, 1.4],
   substep: 1 / 120,
+  sagFrom: 0, sagShare: null, maxFwd: null, maxBack: null, maxRoll: null, bob: 0, bobHz: 0.6,
 });
+const ARR = ['sagShare', 'maxFwd', 'maxBack', 'maxRoll'], D2R = Math.PI / 180, at = (a, i) => a[i] ?? a.at(-1);   // arrays shorter than the chain repeat their last value (as maxDeg does)
 
 const _v = new THREE.Vector3(), _q = new THREE.Quaternion(), _qi = new THREE.Quaternion(), _e = new THREE.Euler();
 const _p = new THREE.Vector3(), _s = new THREE.Vector3();
@@ -56,7 +68,7 @@ export class DangleChain {
     this._kick = new THREE.Vector2(); this._t = Math.random() * 10; this._acc0 = 0;
   }
   setPose(p){ Object.assign(this.pose, defined(p)); }
-  setParams(p){ Object.assign(this.params, defined(p)); }
+  setParams(p){ Object.assign(this.params, defined(p)); for (const k of ARR) if (p && p[k] === null) this.params[k] = null; }
   /** one-off hit, e.g. landing: impulse({pitch: 1}) throws the tips forward/down by ~1 rad/s */
   impulse({ pitch = 0, roll = 0 } = {}){ for (const s of this.state) { s.vx += pitch; s.vz += roll * this.mirror; } }
   reset(){ for (const s of this.state) { s.x = s.z = s.vx = s.vz = 0; } this.stretch = { s: 1, v: 0 }; this._prevPos = null; }
@@ -107,12 +119,25 @@ export class DangleChain {
         tz += -windL.x * P.wind * 0.5 * M;
         const fl = wspeed * P.flutter * (1 + i) * (Math.sin(this._t * (7 + i * 3.1) + i + (M < 0 ? 1.7 : 0)) + 0.5 * Math.sin(this._t * (13.3 + i * 5)));
         tx += fl; tz += fl * 0.6;
-        if (P.gravity) { tx += downL.z * P.gravity * 0.8 * g; tz += -downL.x * P.gravity * 0.8 * M * g; }
+        if (P.gravity) {
+          if (!P.sagFrom && !P.sagShare) { tx += downL.z * P.gravity * 0.8 * g; tz += -downL.x * P.gravity * 0.8 * M * g; }
+          else {
+            const s0 = Math.sin((P.sagFrom || 0) * D2R), dz = v => Math.sign(v) * Math.max(0, Math.abs(v) - s0) / (1 - s0);
+            const gs = P.sagShare ? 4.8 * at(P.sagShare, i) : g;
+            tx += dz(downL.z) * P.gravity * 0.8 * gs; tz += -dz(downL.x) * P.gravity * 0.8 * M * gs;
+          }
+        }
+        if (P.bob) tx += (P.bob / 4.8) * D2R * g * (Math.sin(2 * Math.PI * P.bobHz * this._t + (M < 0 ? 0.9 : 0)) + 0.35 * Math.sin(2 * Math.PI * P.bobHz * 2.37 * this._t + 1.3));
         const k = P.stiffness[i] ?? P.stiffness.at(-1), c = P.damping[i] ?? P.damping.at(-1);
         s.vx += (k * (tx - s.x) - c * s.vx) * h; s.x += s.vx * h;
         s.vz += (k * (tz - s.z) - c * s.vz) * h; s.z += s.vz * h;
-        const lim = (P.maxDeg[i] ?? P.maxDeg.at(-1)) * Math.PI / 180;
-        s.x = THREE.MathUtils.clamp(s.x, -lim, lim); s.z = THREE.MathUtils.clamp(s.z, -lim, lim);
+        if (P.maxFwd) {
+          s.x = THREE.MathUtils.clamp(s.x, -at(P.maxBack || P.maxFwd, i) * D2R, at(P.maxFwd, i) * D2R);
+          s.z = THREE.MathUtils.clamp(s.z, -at(P.maxRoll || P.maxFwd, i) * D2R, at(P.maxRoll || P.maxFwd, i) * D2R);
+        } else {
+          const lim = (P.maxDeg[i] ?? P.maxDeg.at(-1)) * Math.PI / 180;
+          s.x = THREE.MathUtils.clamp(s.x, -lim, lim); s.z = THREE.MathUtils.clamp(s.z, -lim, lim);
+        }
       });
       const st = this.stretch;
       if (!this.enabled || !P.elastic) { st.s = 1; st.v = 0; }
@@ -156,6 +181,7 @@ export function rigEars(root, rigJson){
         damping: DANGLE_DEFAULTS.damping.map(c => c * damp * Math.sqrt(stiff)),
         elastic: e.elastic ?? DANGLE_DEFAULTS.elastic,
         wind: DANGLE_DEFAULTS.wind * (e.wind ?? 1), flutter: DANGLE_DEFAULTS.flutter * (e.wind ?? 1),
+        sagFrom: e.sagFrom, sagShare: e.sagShare, maxFwd: e.maxFwd, maxBack: e.maxBack, maxRoll: e.maxRoll, bob: e.bob, bobHz: e.bobHz,
       },
     });
   };
