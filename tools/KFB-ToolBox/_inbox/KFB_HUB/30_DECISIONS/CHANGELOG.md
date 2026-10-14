@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 nachts · Billboard auf der Bühne
+- V-224: Plain ohne Mini-TV, niedrig gesetzt (Figuren davor), responsive Bildfläche nach Karten-Seitenverhältnis (B3 fit_face), Karte = ganze Viertelseite, randlos. Ersetzt die feste 2:1-Fläche mit Randfarbe aus V-220. BILLBOARD_STANDARD_R1 §2 korrigiert, Hub-Briefing b05 neu, WS1 informiert.
+
 ## 2026-10-14 spät · Opener-Antworten, Plain-Billboard-Referenz
 - V-222: Orts-Szenen je nach Figur; heard-of-Varianten bleiben, nie mehrfach in einem Set (Rotation/Cooldown).
 - V-223: Georgs Plain-Billboard-Screenshot ist die Referenz (integrierte Collage, keine aufgeklebten Bilder, Karte integriert); unfertige Claude-Design-Varianten sind kein Standard; TV-Knopf vorerst nicht nötig.

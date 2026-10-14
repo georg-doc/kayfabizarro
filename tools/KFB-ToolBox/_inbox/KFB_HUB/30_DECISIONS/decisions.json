@@ -2597,6 +2597,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-224",
+   "date": "2026-10-14",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Billboard auf der Bühne (präzisiert V-220/V-223): (1) Plain-Körper ohne TV-Fernseher bzw. Mini-TV und ohne Zusatzteile. (2) Niedrig gesetzt: kurze Pfosten, damit die Figuren davor agieren können; die Karte bleibt über bzw. zwischen ihnen lesbar. (3) Responsiv: Die Bildfläche nimmt das Seitenverhältnis des Inhalts an (contain-fit in die maximale Fläche, Vorlage B3 build_billboard_b3_v2.py fit_face, Branch claude/billboard-b3-exploration-2026-09-26; auch in der 3D-Fassung). (4) Karte = die ganze Querformat-Viertelseite mit Marginalien, nie beschnitten, randlos: kein Füllrand links/rechts, der Rahmen sitzt direkt an der Karte. Die feste 2:1-Fläche mit Randfarbe aus V-220 entfällt.",
+   "values": {},
+   "owner": "Claude Design + WS1",
+   "check": "Bild: Karte randlos im Rahmen, Figuren davor",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Der TV-Knopf und der Füllrand waren wieder drin; das Billboard stand zu hoch für Figuren davor.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2658,7 +2672,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:138",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:141",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

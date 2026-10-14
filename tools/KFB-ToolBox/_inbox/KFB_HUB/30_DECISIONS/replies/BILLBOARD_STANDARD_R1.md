@@ -13,6 +13,8 @@ Dies ist der verbindliche Standard für jedes Billboard und jede Karte auf einem
 - **Für KFB gilt `bodyStyle: "plain"`.** Knet-Körper, keine Tusche-Outline (passend zu V-204).
 
 ## 2 · Karte im Billboard: eingesetzt, nicht aufgeklebt
+
+> **Korrigiert durch V-224 (14.10. nachts):** keine feste 2:1-Fläche und kein Füllrand. Die Bildfläche ist responsiv (Seitenverhältnis der Karte, siehe §6). Die Zeilen unten zu `fit` und Rand gelten nicht mehr.
 - **Bildfläche (face):** 12 × 6 m, Seitenverhältnis 2:1, als CanvasTexture mit 1024 × 512 px, mit runden Innenecken.
 - **Die Karte wird in die Bildfläche gesetzt.**
   - Sie ist Inhalt der CanvasTexture bzw. des Content-Modus, nicht ein zweites Objekt davor.
@@ -43,3 +45,12 @@ Im r2-Quellpaket steht `billboard.embed-spec.v1.json` noch auf `bodyStyle: "high
 - Eine Karte wird genauso integriert, als Teil der Fläche bzw. der Lesefolge.
 - Unfertige Varianten im Claude-Design-Projekt sind **kein** freigegebener Standard.
 - **TV-Knopf:** vorerst nicht nötig, Entscheidung später.
+
+
+## 6 · Bühnen-Billboard (V-224)
+- **Kein TV und kein Mini-TV**, keine Zusatzteile; nur der Plain-Körper.
+- **Niedrig gesetzt:** kurze Pfosten. Die Figuren agieren davor; die Karte bleibt über bzw. zwischen ihnen lesbar.
+- **Responsiv:** Die Bildfläche übernimmt das Seitenverhältnis des Inhalts (contain-fit in die maximale Fläche).
+  - Vorlage: `fit_face` in `tools/KFB-ToolBox/_handover/BILLBOARD_B3_EXPLORATION_2026-09-26/scripts/build_billboard_b3_v2.py` (Branch `claude/billboard-b3-exploration-2026-09-26`).
+  - Gilt auch für die 3D-Fassung: Rahmen und Pfosten folgen der Fläche.
+- **Karte:** die ganze Querformat-Viertelseite mit Marginalien, nie beschnitten, **randlos**; der Rahmen sitzt direkt an der Karte.
