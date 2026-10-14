@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · WS0 / Claude Design / WS1 SSOT-Routing-Audit
+- `replies/WS0_CLAUDE_DESIGN_WS1_SSOT_ROUTING_AUDIT_2026-10-14.md` prüft die aktuellen Register-Entscheidungen V-214–V-220, `BILLBOARD_STANDARD_R1.md`, `WS0_TO_WS1.md`, WS1-Branch/Status und echte Billboard-r2-Quellen. Repair-Handover an **WS0** ohne neue V-Nummer: alte Claude-Design-Briefings blockieren V-219-Stand-ins mit der vorigen EyeRig-3/3-Regel; V-220-r2/plain noch nicht an die Design-Briefings/Paste übergeben; r2-Beispiel-Spec steht weiterhin auf `highway`/`faceCornerM:0`/`kaleido-cuts` statt explizitem empfangendem `plain`-Card-Rezept; Hypernormalisation-Owner meldet Implementierung offen, Zitate ungeprüft; WS1-Status noch vor S5/F1/F2; R1.2-Header nennt historischen Web-Chat als Autor. WS0 muss Quellen/Precedence und Handoffs konsolidieren, nicht der Auditor direkt Runtime ändern. Ein nächstes Gate: WS0-Quellkorrektur, danach WS1-S5a auf gültiger Vorgabe.
+
 ## 2026-10-14 · Billboard-Standard
 - V-220: replies/BILLBOARD_STANDARD_R1.md – Plain-Billboard (World Billboard Clay01 r2), Karte in die Bildfläche eingesetzt, Hypernormalisation-Engine (START_HERE + H13), ein Scheduler. An WS1 (WS0_TO_WS1.md) und für Claude Design.
 
