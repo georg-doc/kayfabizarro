@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 spät · FrizzleBob: Mund zu, Augenlage, Ganzkörper (V-243) · freigegeben
+Grundlage: `replies/FRIZZLEBOB_V240_CLOSED_MOUTH_AND_FACE_VISUAL_FAIL_2026-10-14.md` und `…_RAW_GLB_VIEWER_FAIL_AND_TRUE_EXPORT_ROUTE_2026-10-14.md` (Georg FAIL).
+- **G0 erledigt (WS0):** Im ToolBox-Schnitt P08 ist „Zu“ (`setViseme('closed')` bzw. `mouthRest`) nur eine Live-Vorschau. Sie wird nicht gespeichert und nicht exportiert. Der Export im Schnitt ist identisch mit V-240 (16:00). Einen neueren Stand gibt es also nicht; Georgs Absicht ist eindeutig: **Ruhe-Mund geschlossen**.
+- **Freigabe, kleinster Eingriff in `faceMountActor`:**
+  - Ruhe-Mund = sichtbar geschlossene Lippen mit dem vorhandenen Decal (euer `_closedNeutral`-Zweig mit closed = „m“).
+  - `say()` endet wieder in diesem Ruhezustand.
+  - Kein neues Decal-Set, keine zweite Mundebene, keine sonstigen Werte geändert.
+- **Beleg, in dieser Reihenfolge:**
+  1. Bildreihe idle / „Zu“ / mitten im Satz / nach dem Satz, jeweils mit `parts.mouth`, `mouthOnModel`, `m.rest`, `m.viseme`, `m.cur`. Geschlossen heißt: keine Zähne, keine Lücke.
+  2. Augenlage: eyeFrame und Kopf-Transform gegen die ToolBox aus gleicher Kamera (vorn, ¾, Seite). Nichts frei verschieben.
+  3. Ganzkörper in Bindepose, vorn, ¾ und Seite mit Rand, Ohren, Hände und Füße ganz im Bild, neutraler Hintergrund, fertig montierter Darsteller (kein nacktes GLB), dazu ein Augen-Auf/Zu-Bild.
+- **Danach:** Erst wenn WS0 die Bilder geprüft hat, folgt der GLB-Export-Versuch. Nach zwei Durchgängen ohne Verbesserung: Naht festhalten und melden, keine Varianten erfinden.
+
 ## 14.10.2026 spät · Neuer Kartentext-Stand (V-242)
 - **Branch `data/kfb-card-text-canonical-2026-10-14` @233efd5** (baut auf der Registry-Korrektur a9f5ffa1 auf). Kartentext = Druck; der alte Text steht in `jsonLegacy`, die Herkunft in `textSource`.
 - **37 Titel geändert** (32 in carnival_therapy, z. B. ai_kayfabe #11 „Claude 3.7's Ghost“). Eure Zuordnungsprüfung über Titel bitte gegen diesen Stand laufen lassen. Erst danach `MEDIA_COMMIT` umstellen; das Ergebnis in WS1_STATUS melden.

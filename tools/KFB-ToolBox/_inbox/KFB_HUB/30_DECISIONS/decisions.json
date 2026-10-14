@@ -3102,6 +3102,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-243",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "FrizzleBob-Mund: Ruhezustand = geschlossen (Georg). G0-Befund WS0 am ToolBox-Schnitt P08: Die Wahl „Zu“ (setViseme/mouthRest) ist nur eine Live-Vorschau und wird NICHT gespeichert oder exportiert; der Export (16:00, identisch im Schnitt) kennt nur visemeMap.closed→neutral, und das neutral-Decal zeigt Zähne. Auftrag WS1: im vorhandenen faceMountActor Ruhe-Mund = sichtbar geschlossene Lippen (vorhandenes Decal, wie der bestehende _closedNeutral-Zweig mit closed „m“), nach say() zurück in diesen Ruhezustand; Zustände idle / Zu / mitten im Satz / nach dem Satz einzeln belegen. Augenlage gegen ToolBox aus gleicher Kamera prüfen, nichts frei verschieben. Ganzkörper-Beleg in Bindepose (vorn, ¾, Seite, Ohren und Füße ganz) vor jedem Meshy- oder Export-Schritt. ToolBox-Fix (TB-CUT): Ruhe-Mund speichern und exportieren.",
+   "values": {},
+   "owner": "WS1 · WS0 (ToolBox-Fix)",
+   "check": "Bildreihe der Mundzustände + Ganzkörper vorn/¾/Seite",
+   "source": "Georg 14.10. (via WSA replies/FRIZZLEBOB_V240_CLOSED_MOUTH_…)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hatte den Mund auf „geschlossen“ gestellt, im Spiel zeigte er Zähne; die ToolBox speichert diese Wahl nicht.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3164,7 +3179,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:221",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:236",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · FrizzleBob Mund zu (V-243)
+- G0: ToolBox speichert „Zu“ nicht (nur Vorschau); Export identisch mit V-240. WS1 freigegeben: Ruhe-Mund geschlossen (vorhandenes Decal), Zustände belegen, Augenlage gegen ToolBox, Ganzkörper-Beleg in Bindepose. ToolBox-Fixliste (TB-CUT) ergänzt: Ruhe-Mund speichern/exportieren.
+
 ## 2026-10-14 · FrizzleBob V-240 · geschlossener Mund sichtbar OFFEN · HUMAN FAIL
 - `replies/FRIZZLEBOB_V240_CLOSED_MOUTH_AND_FACE_VISUAL_FAIL_2026-10-14.md`: Georg zeigt im aktuellen Head-Crop sichtbar Zähne/offenen Mund trotz eigener Einstellung **„geschlossen“**; daneben Gesichts-/Augenposition beanstandet, erneut keine komplette Figur. GitHub-Rezept aus 16:00 enthält `parts.mouth=original` und `visemeMap.closed=neutral`; in `face-mount.v1.js` zeigt der Original-Mundträger bei Ruhe seine **eigene Modell-Textur** mit Zähnen, Visem-Steuerung betrifft temporär den Sprechteil. Der aktuelle UI-Zustand ist nicht sicher mit 16:00-Export identisch. WS0 soll **aktuellen** gespeicherten ToolBox-Zustand klären, WS1 vier Mundzustände (still/geschlossen/sprechen/nach Sprechen) am echten Actor getrennt testen und nur den kleinsten belegten Fehler am bestehenden KFB_NATIVE-Owner reparieren; Augen separat per source-true gleichem Kamerawinkel prüfen. Vollkörper mit Ohren, Händen und Füßen und funktionierendem Augen-Rig bleibt vor Meshy Pflicht. Kein positiver Screenshot-PASS, keine neue V-Nummer, keine neuen Render-/Rig-Kopien. Nächstes Gate: `FRIZZLEBOB_V240_CLOSED_REST_MOUTH_SOURCE_TRUTH_AND_FULL_BODY_G3`.
 
