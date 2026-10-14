@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 128" width="256" height="128">
+<!-- KFB mouth set R2 · mbp · M/B/P (Lippen gepresst) · lip=thin teeth=none · anchor 128,64 · lip tint: CSS custom property kfb-lip, see README (default #E4B53C) -->
+<style>
+    .kfb-mouth .lip { fill: var(--kfb-lip, #E4B53C); stroke: var(--kfb-lip, #E4B53C); stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .lipf { fill: var(--kfb-lip, #E4B53C); stroke: none; }
+    .kfb-mouth .ol { fill: none; stroke: #3A2318; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .cr { fill: none; stroke: #3A2318; stroke-width: 5.5; stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .dv { fill: none; stroke: #3A2318; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .kfb-mouth .gv { fill: none; stroke: #4E1A20; stroke-width: 3.4; stroke-linecap: round; }
+    .kfb-mouth .ink2 { fill: #3A2318; stroke: #3A2318; stroke-width: 2; stroke-linejoin: round; }
+    .kfb-mouth .inkf { fill: #3A2318; stroke: none; }
+    .kfb-mouth .ink { fill: #3A2318; stroke: #3A2318; stroke-width: 3; stroke-linejoin: round; }
+</style>
+<g class="kfb-mouth" id="mbp" data-anchor="128,64" data-variant="lip=thin teeth=none">
+  <defs><radialGradient id="kfbm-mbp-in" cx=".5" cy=".92" r=".85"><stop offset="0" stop-color="#74303A"/><stop offset=".55" stop-color="#4E1A20"/><stop offset="1" stop-color="#2A0B10"/></radialGradient><radialGradient id="kfbm-mbp-tg" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#F4A9B1"/><stop offset=".6" stop-color="#E3828C"/><stop offset="1" stop-color="#C65F6C"/></radialGradient><radialGradient id="kfbm-mbp-hl"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".48"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".2"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-mbp-sh"><stop offset="0" stop-color="#3A2318" stop-opacity=".40"/><stop offset=".5" stop-color="#3A2318" stop-opacity=".17"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-mbp-ao"><stop offset="0" stop-color="#3A2318" stop-opacity=".16"/><stop offset=".55" stop-color="#3A2318" stop-opacity=".08"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-mbp-cs"><stop offset="0" stop-color="#3A2318" stop-opacity=".55"/><stop offset=".5" stop-color="#3A2318" stop-opacity=".22"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient></defs>
+  <path class="lipf" d="M53.6,60.2 L56.4,59.7 L59.3,59.2 L62.4,58.7 L65.6,58.3 L68.9,57.9 L72.3,57.5 L75.9,57.2 L79.5,56.9 L83.2,56.6 L87.0,56.3 L90.9,56.0 L94.9,55.8 L98.9,55.6 L102.9,55.4 L107.0,55.2 L111.2,55.0 L115.3,54.9 L119.5,54.8 L123.7,54.7 L127.9,54.6 L132.2,54.6 L136.4,54.6 L140.6,54.6 L144.7,54.6 L148.9,54.6 L153.0,54.7 L157.0,54.8 L161.0,54.9 L165.0,55.0 L168.9,55.2 L172.7,55.4 L176.4,55.6 L180.0,55.8 L183.6,56.0 L187.0,56.3 L190.3,56.6 L193.5,57.0 L196.6,57.3 L199.5,57.7 L202.3,58.2 L201.7,63.6 L198.9,64.2 L196.0,64.5 L192.9,64.7 L189.7,64.9 L186.5,65.1 L183.1,65.2 L179.6,65.4 L176.0,65.5 L172.3,65.6 L168.5,65.8 L164.7,65.9 L160.8,66.0 L156.9,66.1 L152.8,66.2 L148.8,66.3 L144.7,66.3 L140.6,66.4 L136.4,66.5 L132.3,66.6 L128.1,66.6 L123.9,66.7 L119.8,66.7 L115.6,66.8 L111.5,66.8 L107.4,66.8 L103.4,66.8 L99.3,66.8 L95.4,66.9 L91.5,66.9 L87.6,66.8 L83.9,66.8 L80.2,66.8 L76.6,66.8 L73.1,66.7 L69.7,66.6 L66.4,66.6 L63.2,66.5 L60.2,66.3 L57.2,66.1 L54.3,65.6 Z"/>
+  <ellipse cx="128.0" cy="68.6" rx="41.4" ry="6.4" style="fill:url(#kfbm-mbp-sh)"/>
+  <ellipse cx="54.0" cy="64.0" rx="10.2" ry="9.0" style="fill:url(#kfbm-mbp-cs)"/>
+  <ellipse cx="202.0" cy="62.0" rx="10.2" ry="9.0" style="fill:url(#kfbm-mbp-cs)"/>
+  <path class="ink" d="M54,63 C90,58 166,57 202,61 C166,67 92,68 54,63 Z"/>
+  <path class="cr" d="M48.0,56.7 C43.5,60.5 43.5,65.5 48.0,69.3"/>
+  <path class="cr" d="M208.0,54.7 C212.5,58.5 212.5,63.5 208.0,67.3"/>
+  <path class="cr" d="M96,51 C112,46 146,46 162,51"/>
+  <path class="cr" d="M92,76 C112,84 146,84 166,76"/>
+</g>
+</svg>

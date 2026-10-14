@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 128" width="256" height="128">
+<!-- KFB mouth set R2 · fv · F/V (Zähne auf Lippe) · lip=thin teeth=none · anchor 128,64 · lip tint: CSS custom property kfb-lip, see README (default #E4B53C) -->
+<style>
+    .kfb-mouth .lip { fill: var(--kfb-lip, #E4B53C); stroke: var(--kfb-lip, #E4B53C); stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .lipf { fill: var(--kfb-lip, #E4B53C); stroke: none; }
+    .kfb-mouth .ol { fill: none; stroke: #3A2318; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .cr { fill: none; stroke: #3A2318; stroke-width: 5.5; stroke-linejoin: round; stroke-linecap: round; }
+    .kfb-mouth .dv { fill: none; stroke: #3A2318; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .kfb-mouth .gv { fill: none; stroke: #4E1A20; stroke-width: 3.4; stroke-linecap: round; }
+    .kfb-mouth .ink2 { fill: #3A2318; stroke: #3A2318; stroke-width: 2; stroke-linejoin: round; }
+    .kfb-mouth .inkf { fill: #3A2318; stroke: none; }
+    .kfb-mouth .ink { fill: #3A2318; stroke: #3A2318; stroke-width: 3; stroke-linejoin: round; }
+</style>
+<g class="kfb-mouth" id="fv" data-anchor="128,64" data-variant="lip=thin teeth=none">
+  <defs><radialGradient id="kfbm-fv-in" cx=".5" cy=".92" r=".85"><stop offset="0" stop-color="#74303A"/><stop offset=".55" stop-color="#4E1A20"/><stop offset="1" stop-color="#2A0B10"/></radialGradient><radialGradient id="kfbm-fv-tg" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#F4A9B1"/><stop offset=".6" stop-color="#E3828C"/><stop offset="1" stop-color="#C65F6C"/></radialGradient><radialGradient id="kfbm-fv-hl"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".48"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".2"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-fv-sh"><stop offset="0" stop-color="#3A2318" stop-opacity=".40"/><stop offset=".5" stop-color="#3A2318" stop-opacity=".17"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-fv-ao"><stop offset="0" stop-color="#3A2318" stop-opacity=".16"/><stop offset=".55" stop-color="#3A2318" stop-opacity=".08"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient><radialGradient id="kfbm-fv-cs"><stop offset="0" stop-color="#3A2318" stop-opacity=".55"/><stop offset=".5" stop-color="#3A2318" stop-opacity=".22"/><stop offset="1" stop-color="#3A2318" stop-opacity="0"/></radialGradient><linearGradient id="kfbm-fv-th" gradientUnits="userSpaceOnUse" x1="0" y1="41.9" x2="0" y2="56.9"><stop offset="0" stop-color="#BCAA84"/><stop offset="1" stop-color="#F4EBD4"/></linearGradient></defs>
+  <path class="lip" stroke-width="12" d="M70,58 C96,40 160,39 186,56 C172,76 150,82 128,82 C106,82 84,76 70,58 Z"/>
+  <path class="lipf" d="M64,70 C96,64 160,63 192,68 C182,92 154,98 128,98 C102,98 74,92 64,70 Z"/>
+  <ellipse cx="128.0" cy="62.9" rx="93.5" ry="45.1" style="fill:url(#kfbm-fv-ao)"/>
+  <ellipse cx="128.0" cy="100.0" rx="37.1" ry="7.5" style="fill:url(#kfbm-fv-sh)"/>
+  <ellipse cx="128.0" cy="38.4" rx="37.1" ry="5.5" style="fill:url(#kfbm-fv-hl)"/>
+  <ellipse cx="70.0" cy="60.0" rx="12.0" ry="10.8" style="fill:url(#kfbm-fv-cs)"/>
+  <ellipse cx="186.0" cy="58.0" rx="12.0" ry="10.8" style="fill:url(#kfbm-fv-cs)"/>
+  <clipPath id="kfbm-fv-clip"><path d="M70,58 C96,40 160,39 186,56 C172,76 150,82 128,82 C106,82 84,76 70,58 Z"/></clipPath>
+  <mask id="kfbm-fv-llm" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="128"><rect width="256" height="128" fill="#fff"/><path d="M64,70 C96,64 160,63 192,68 C182,92 154,98 128,98 C102,98 74,92 64,70 Z" fill="#000"/></mask><g mask="url(#kfbm-fv-llm)">
+  <path d="M70,58 C96,40 160,39 186,56 C172,76 150,82 128,82 C106,82 84,76 70,58 Z" style="fill:url(#kfbm-fv-in)"/>
+  <g clip-path="url(#kfbm-fv-clip)"><path d="M0,0 H256 V128 H0 Z" style="fill:url(#kfbm-fv-th)"/><path class="dv" d="M104,44 L105,68"/><path class="dv" d="M129,41 L128,68"/><path class="dv" d="M153,43 L152,68"/></g>
+  <path class="ol" d="M70,58 C96,40 160,39 186,56 C172,76 150,82 128,82 C106,82 84,76 70,58 Z"/>
+  <path class="inkf" d="M70.0,58.0 L72.7,56.3 L75.7,54.6 L78.9,53.1 L82.2,51.7 L85.8,50.4 L89.6,49.2 L93.4,48.2 L97.5,47.2 L101.6,46.4 L105.9,45.7 L110.2,45.1 L114.6,44.6 L119.0,44.3 L123.5,44.0 L128.0,43.9 L132.5,43.9 L137.0,44.0 L141.4,44.2 L145.8,44.5 L150.1,45.0 L154.4,45.5 L158.5,46.2 L162.6,47.0 L166.4,48.0 L170.2,49.0 L173.8,50.2 L177.1,51.4 L180.3,52.8 L183.3,54.4 L186.0,56.0 L184.6,58.0 L183.1,59.8 L181.6,61.6 L180.0,63.3 L178.4,64.9 L176.7,66.4 L175.0,67.8 L173.2,69.2 L171.5,70.4 L169.6,71.6 L167.8,72.7 L165.9,73.8 L163.9,74.8 L162.0,75.7 L160.0,76.5 L158.0,77.3 L155.9,78.0 L153.9,78.6 L151.8,79.2 L149.7,79.7 L147.6,80.2 L145.4,80.6 L143.3,80.9 L141.1,81.2 L139.0,81.5 L136.8,81.7 L134.6,81.8 L132.4,81.9 L130.2,82.0 L128.0,82.0 L125.8,82.0 L123.6,81.9 L121.4,81.8 L119.2,81.7 L117.0,81.5 L114.9,81.2 L112.7,80.9 L110.6,80.6 L108.4,80.2 L106.3,79.8 L104.2,79.3 L102.1,78.7 L100.1,78.1 L98.0,77.5 L96.0,76.8 L94.0,76.0 L92.1,75.1 L90.1,74.2 L88.2,73.3 L86.4,72.2 L84.5,71.1 L82.8,70.0 L81.0,68.7 L79.3,67.4 L77.6,66.0 L76.0,64.6 L74.4,63.0 L72.9,61.4 L71.4,59.8 L70.0,58.0 L67.4,60.1 L68.8,62.0 L70.4,63.7 L72.0,65.4 L73.7,67.1 L75.3,68.7 L76.9,70.5 L78.5,72.1 L80.2,73.7 L82.0,75.2 L83.9,76.6 L85.8,77.9 L87.7,79.1 L89.8,80.3 L91.8,81.3 L93.9,82.3 L96.0,83.2 L98.2,84.1 L100.4,84.9 L102.6,85.6 L104.9,86.2 L107.1,86.7 L109.4,87.2 L111.7,87.7 L114.0,88.0 L116.4,88.3 L118.7,88.6 L121.0,88.8 L123.3,88.9 L125.7,89.0 L128.0,89.0 L130.3,89.0 L132.7,88.9 L135.0,88.8 L137.3,88.6 L139.7,88.3 L142.0,88.0 L144.3,87.6 L146.6,87.2 L148.9,86.7 L151.2,86.1 L153.4,85.4 L155.7,84.7 L157.9,83.9 L160.1,83.0 L162.2,82.0 L164.3,80.9 L166.4,79.8 L168.4,78.5 L170.3,77.2 L172.2,75.8 L174.1,74.2 L175.8,72.6 L177.5,70.9 L179.1,69.1 L180.7,67.3 L182.4,65.6 L184.1,63.9 L185.7,62.0 L187.3,60.0 L189.2,54.8 L184.9,51.4 L181.8,49.8 L178.4,48.3 L174.9,47.0 L171.2,45.7 L167.3,44.7 L163.3,43.7 L159.1,42.9 L154.9,42.2 L150.6,41.6 L146.1,41.1 L141.6,40.8 L137.1,40.6 L132.5,40.5 L127.9,40.5 L123.4,40.6 L118.8,40.9 L114.3,41.2 L109.8,41.7 L105.3,42.3 L101.0,43.1 L96.7,43.9 L92.6,44.9 L88.6,46.0 L84.7,47.2 L81.0,48.5 L77.5,50.0 L74.1,51.6 L71.0,53.3 L68.2,55.1 Z"/>
+  </g>
+  <ellipse cx="128.0" cy="80.5" rx="30.0" ry="3.8" style="fill:url(#kfbm-fv-hl)"/>
+  <path class="ol" d="M64,70 C96,64 160,63 192,68"/>
+</g>
+</svg>

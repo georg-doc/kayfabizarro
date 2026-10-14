@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · SVG-Münder R2
+- replies/MOUTHS_SVG_R2/: Schattierung/Wölbung über SVG-Verläufe (ohne Filter), Varianten Lippe thin/full × Zähne row/gap/none, gebackene PNGs 512×256, R1|R2-Montage FrizzleBob. MVP-Fahrplan MVP-0…4 als Vorschlag im Hub-Plan.
+
 ## 2026-10-15 · M1 Bewegung, Host R1.3
 - V-248: Tempi V-020 bleiben, Clip-Abspielrate folgt dem Tempo (Füße stehen); Haltung senkrecht; Host-Vertrag R1.3 (fixedDt, after) freigegeben. SVG-Münder: Georg TUNE „Ansatz gefällt“ → R2 mit Schattierung/Wölbung und Varianten (Lippe, Zähne) läuft.
 
