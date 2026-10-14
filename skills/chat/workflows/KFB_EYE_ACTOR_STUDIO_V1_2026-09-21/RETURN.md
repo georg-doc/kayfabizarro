@@ -1,5 +1,22 @@
 # KFB Eye Actor Studio v1 · RETURN
 
+## CURRENT STATUS · 2026-10-14 · BOTH VIDEO TRANSCRIPTS ANALYZED · CLAUDE DESIGN READY
+
+**Binding intake:** `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md` now contains timecoded source comparisons for both exact videos. Georg's pasted non-timecoded Step 1... text duplicates video A; his attached `Eingefügter Text(5).txt` contains the actual 0:00–18:02 Raymond Gabriel video B transcript. Caption transcription origin remains unknown; no source video-frame inspection claimed.
+
+**Video A evidence:** pre-modeled lids and eye; Track To (-Y / Z); Copy Rotation X; Invert X lower; master L/R blink and gaze. Does *not* teach eyelid mesh construction.
+
+**Video B evidence:** PNG alpha/UV image projection; UV eyeball; nested bone + per-vertex cornea/eyeball weighting; eye IK & cornea Copy Scale; mirror and vertex-group name repair; at **15:46–17:38** lattice-based oval eyeball deformation as alternative to direct scale. **The lattice is shown on eyeballs, not eyelids**. A common deformation frame of EyeRig eyeball + lid pair is our unproven design hypothesis, not video-supported implementation. Blender constraints/modifiers do not automatically become a runtime GLB/Three.js rig.
+
+**Binding prior human result:** thin-clay-lid.v1.mjs remains **HUMAN VISUAL FAIL · NEGATIVE DONOR ONLY**; rejected torn/corrupt crown topology is not a geometry baseline despite 30/30 index checks. No approved KFB profiles overwritten.
+
+**Ready work:** Claude Design existing PR #159 source-isolates intact original lid donors and negative donor in real 3D, constructs ONE clean spherical two-lid mesh with verified topology, then optionally prototypes oval/shared-lattice equivalent after real static clean-mesh proof. WS1 consumer and EyeRig v6 PR #104 are untouched. No new model, Blender run, browser test, Site or Stage verification was executed as part of this transcript intake. Product **NOT PASS**.
+
+**Next single gate:** `CLAUDE_DESIGN_KFB_EYELID_SOURCE_ISOLATION_AND_CLEAN_MESH_PROOF_01`. Required evidence actual rendered shaded/wireframe upper/lower eye at front/3⁄4/side/back plus neutral/half/full blink, with pupil coverage and non-self-intersecting topology. No merge or Live promotion.
+
+---
+
+
 
 ## SOURCE EVIDENCE UPDATE · 2026-10-14 · VIDEO A TRANSCRIPT RECEIVED
 
