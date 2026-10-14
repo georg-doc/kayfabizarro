@@ -32,7 +32,12 @@
       "power": "Keep the catastrophe permanently arriving and never arrived.",
       "lore": "The fear tracks the coverage, not the actual events.",
       "gradeReason": "Action is the card: perpetual arrival, never landing. Crystal performative role.",
-      "artworkPrompt": "Style: propaganda illustration. Subject: disaster eternally approaching horizon but never landing. Mood: frozen dread."
+      "artworkPrompt": "Style: propaganda illustration. Subject: disaster eternally approaching horizon but never landing. Mood: frozen dread.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p2 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 3,
@@ -96,14 +101,11 @@
       "lore": null,
       "gradeReason": "No POWER/LORE text — fully visual card (elephant spraying LIES/FAKE NEWS/CHAOS). Concept clear, instruction absent.",
       "artworkPrompt": "Style: chaotic editorial cartoon. Subject: authority elephant spraying firehose of contradictory lies at overwhelmed snail. Mood: designed disorientation.",
-      "print": {
-        "cardName": "The Firehose",
-        "power": "IS FAKE NEWS SEE MORE LIES U DISTRACTION FLOOD CHAOS",
-        "lore": "",
+      "printTypo": "Karte trägt kein POWER/LORE-Feld; nur Bildschrift (LIES, FAKE NEWS, DISTRACTION …); JSON-Felder bleiben leer",
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p4 TL",
-        "method": "ocr",
-        "confidence": "medium",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -122,7 +124,12 @@
       "power": "Exhaust the sorting mind until the tired sorter accepts the default.",
       "lore": "Repeated decisions degrade the quality of later ones via decision fatigue.",
       "gradeReason": "You ARE the choice-fatiguer. Exhaust until acceptance. Sharp and direct.",
-      "artworkPrompt": "Style: editorial cartoon. Subject: exhausted brain sieve accepting worst option after overload of decisions. Mood: depleted compliance."
+      "artworkPrompt": "Style: editorial cartoon. Subject: exhausted brain sieve accepting worst option after overload of decisions. Mood: depleted compliance.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 12,
@@ -138,16 +145,18 @@
       "cardName": "The Permanent Pundit",
       "grade": 1,
       "power": "Install a voice whose job is to be worried on schedule with camera-ready confidence.",
-      "lore": "Confident, media-friendly forecasters are often the least accurate but best choice.",
+      "lore": "Confident, media-friendly forecasters are often the least accurate but beat chance.",
       "gradeReason": "Character sketch so specific the player inhabits it immediately: worried, scheduled, camera-ready.",
       "artworkPrompt": "Style: ink caricature. Subject: parrot in pundit suit, perpetually alarmed, perpetually booked. Mood: performative expertise.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Permanent Pundit",
         "power": "Install a voice whose job is to be worried on schedule with camera-ready confidence.",
-        "lore": "Confident, media-friendly forecasters are often the least accurate but beat chance.",
+        "lore": "Confident, media-friendly forecasters are often the least accurate but best choice."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p5 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -238,7 +247,12 @@
       "power": "Offer certain defeat as relief; it asks nothing of you.",
       "lore": "Certainty of disaster reduces the discomfort of ambiguity, making fatalism feel restful.",
       "gradeReason": "Offer defeat as comfort. The nihilist's gift-wrapped product. Immediately performable and chillingly real.",
-      "artworkPrompt": "Style: satirical illustration. Subject: certain defeat presented in gift box as cozy relief from ambiguity. Mood: nihilistic comfort."
+      "artworkPrompt": "Style: satirical illustration. Subject: certain defeat presented in gift box as cozy relief from ambiguity. Mood: nihilistic comfort.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 24,
@@ -247,7 +261,12 @@
       "power": "Hand the citizen a permission slip to do nothing, signed by themselves.",
       "lore": "In learned helplessness, the belief in no-exit outlasts the actual trap.",
       "gradeReason": "Permission slip to do nothing, self-signed. The bureaucracy of surrender. Perfect G1.",
-      "artworkPrompt": "Style: legal satire. Subject: citizen signing their own permission slip for inaction, notarized by despair. Mood: learned helplessness."
+      "artworkPrompt": "Style: legal satire. Subject: citizen signing their own permission slip for inaction, notarized by despair. Mood: learned helplessness.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p7 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 25,
@@ -280,17 +299,19 @@
       "cardNumber": 28,
       "cardName": "The Rotating Villain",
       "grade": 1,
-      "power": "When one enemy stops, issue the next; the slot matters, the face does not.",
+      "power": "When one enemy tires, issue the next; the slot matters, the face does not.",
       "lore": "Propaganda systems maintain a job opening for the enemy that is endlessly refilled.",
       "gradeReason": "The slot matters, not the face. Player is the villain-slot manager. Chilling systemic clarity.",
       "artworkPrompt": "Style: WANTED poster parody. Subject: villain slot with question-mark face, endless refill queue behind it. Mood: institutional enemy management.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Rotating Villain",
-        "power": "When one enemy tires, issue the next; the slot matters, the face does not.",
-        "lore": "Propaganda systems maintain a job opening for the enemy that is endlessly refilled.",
+        "power": "When one enemy stops, issue the next; the slot matters, the face does not.",
+        "lore": "Propaganda systems maintain a job opening for the enemy that is endlessly refilled."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p8 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -336,7 +357,12 @@
       "power": "Promote the vivid single case to the status of a pattern.",
       "lore": "A memorable, frightening story outweighs boring statistics even when the stat is the truth.",
       "gradeReason": "Promote the vivid case. You are the pattern-inflater. Immediate editorial operator role.",
-      "artworkPrompt": "Style: editorial cartoon. Subject: single vivid case promoted to full-pattern billboard, base rate invisible. Mood: statistical sleight of hand."
+      "artworkPrompt": "Style: editorial cartoon. Subject: single vivid case promoted to full-pattern billboard, base rate invisible. Mood: statistical sleight of hand.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p10 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 34,
@@ -345,7 +371,12 @@
       "power": "Show the scary number; hide what it is out of.",
       "lore": "People ignore base rates and react to raw counts, making rare events feel common.",
       "gradeReason": "Show number, hide denominator. One of the cleanest dark moves in the deck. Instantly enacted.",
-      "artworkPrompt": "Style: satirical infographic. Subject: giant numerator displayed, denominator hidden behind curtain. Mood: manufactured alarm."
+      "artworkPrompt": "Style: satirical infographic. Subject: giant numerator displayed, denominator hidden behind curtain. Mood: manufactured alarm.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p10 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 35,
@@ -460,16 +491,18 @@
       "cardName": "The Atrophied Will",
       "grade": 2,
       "power": "A faculty that never decides forgets how to decide.",
-      "lore": "Decision follows a use-it-or-lose-it principle; switched off, the habit weakens.",
+      "lore": "Decision-making follows a use-it-or-lose-it principle; handed off, the habit weakens.",
       "gradeReason": "States what happens to the will — diagnostic description rather than direct performance invitation.",
       "artworkPrompt": "Style: anatomical satire. Subject: will-muscle shrunken from disuse, decision-pathway overgrown with weeds. Mood: voluntary atrophy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Atrophied Will",
         "power": "A faculty that never decides forgets how to decide.",
-        "lore": "Decision-making follows a use-it-or-lose-it principle; handed off, the habit weakens.",
+        "lore": "Decision follows a use-it-or-lose-it principle; switched off, the habit weakens."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p13 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -497,23 +530,30 @@
       "power": "Never ask anything of the reader; an absence of an off-ramp is the tell.",
       "lore": "Genuine information equips action; retention-feeds offer no point to act and leave.",
       "gradeReason": "Never give the reader an exit. Absence of off-ramp is the signature. Diagnostic-as-action.",
-      "artworkPrompt": "Style: road sign satire. Subject: all media exits replaced with NO EXIT signs, antelope kept circling. Mood: designed captivity."
+      "artworkPrompt": "Style: road sign satire. Subject: all media exits replaced with NO EXIT signs, antelope kept circling. Mood: designed captivity.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p14 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 51,
       "cardName": "The Unfalsifiable Dread",
       "grade": 1,
-      "power": "Build a fear that no amount of evidence can ever resolve.",
-      "lore": "A dread that survives reassuring fact was never actually about the facts.",
+      "power": "Build a fear that no amount of evidence can ever calm.",
+      "lore": "A dread that survives every reassuring fact was never actually about the facts.",
       "gradeReason": "Build evidence-proof fear. Player is the unfalsifiable-dread architect. Cold precision.",
       "artworkPrompt": "Style: gothic editorial. Subject: dread surviving armored against all reassuring facts, vault of the unfalsifiable. Mood: evidence-proof anxiety.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Unfalsifiable Dread",
-        "power": "Build a fear that no amount of evidence can ever calm.",
-        "lore": "A dread that survives every reassuring fact was never actually about the facts.",
+        "power": "Build a fear that no amount of evidence can ever resolve.",
+        "lore": "A dread that survives reassuring fact was never actually about the facts."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p14 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -521,16 +561,18 @@
       "cardName": "The Loop Test",
       "grade": 1,
       "power": "Watch whether the story ever resolves; if it only renews, you found the mechanism.",
-      "lore": "Tracking if narrative closes is a reliable way to tell reporting from retention.",
+      "lore": "Tracking if a narrative closes is the reliable way to tell reporting from retention.",
       "gradeReason": "Watch for resolution vs. renewal. Player becomes the loop-tester. Counter-intelligence role built in.",
       "artworkPrompt": "Style: analytical illustration. Subject: ouroboros story renewing without resolving, mechanism labeled for inspection. Mood: diagnostic clarity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Loop Test",
         "power": "Watch whether the story ever resolves; if it only renews, you found the mechanism.",
-        "lore": "Tracking if a narrative closes is the reliable way to tell reporting from retention.",
+        "lore": "Tracking if narrative closes is a reliable way to tell reporting from retention."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p14 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -540,7 +582,12 @@
       "power": "Trace who gets paid while you stay still—in attention, power, or deferred reform.",
       "lore": "Following the payout explains structural patterns that individual intentions cannot.",
       "gradeReason": "Trace the payout while you're still. Analyst role activated. Cui bono as a move, not a question.",
-      "artworkPrompt": "Style: investigative editorial. Subject: payout trail mapped from citizen stillness to beneficiary wallets. Mood: structural revelation."
+      "artworkPrompt": "Style: investigative editorial. Subject: payout trail mapped from citizen stillness to beneficiary wallets. Mood: structural revelation.",
+      "textSource": {
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p15 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 54,
@@ -555,17 +602,19 @@
       "cardNumber": 55,
       "cardName": "The Returned Wheel",
       "grade": 2,
-      "power": "Notice that the smallest real action breaks the spell faster than the largest when informed.",
+      "power": "Notice that the smallest real action breaks the spell faster than the largest worry.",
       "lore": "Agency is recovered through physical doing, not through being better informed.",
       "gradeReason": "'Notice' is an observational verb — invites reflection more than immediate embodied performance.",
       "artworkPrompt": "Style: editorial illustration. Subject: tiny real action cracking vast spell, largest informed idea doing nothing. Mood: unexpected agency.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Returned Wheel",
-        "power": "Notice that the smallest real action breaks the spell faster than the largest worry.",
-        "lore": "Agency is recovered through physical doing, not through being better informed.",
+        "power": "Notice that the smallest real action breaks the spell faster than the largest when informed.",
+        "lore": "Agency is recovered through physical doing, not through being better informed."
+      },
+      "textSource": {
         "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p15 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
