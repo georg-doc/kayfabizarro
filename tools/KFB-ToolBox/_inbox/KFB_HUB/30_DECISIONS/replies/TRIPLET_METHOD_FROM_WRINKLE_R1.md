@@ -35,7 +35,15 @@
   - erfundener Erkenntnismoment („until he noticed“).
 - **Abstrakte Meta-Effekte** („remove a Corruption effect“): Sie werden nicht als Regel gesprochen. Sie werden als konkrete Handlung an „you“ gespielt, oder sie entfallen.
 
-## Drei Beispiele nach dieser Methode (für Georgs Urteil)
+## Korrektur Georg: streng mit dem Kartentext
+Nur Wörter der Karte. Erlaubt sind nur Grammatik-Änderungen (Endungen, „you“, Artikel, „and“, Satzzeichen) und Weglassen. Keine neuen Verben, Bilder oder Erzählung. R1-Beispiele = FAIL („scrubs off“, „throws away“, „feels normal“).
+
+## R2-Beispiele (streng)
+1. The Ordinary World cancels any Quest progression; nothing can change, we normalize the abnormal until the extraordinary seems impossible.
+2. Crossing the Threshold discards your hand and draws 3 new cards; the old world is gone, you can't un-take the step.
+3. Jean-Jacques Rousseau's Natural Goodness removes Corruption or Civilization; man is born free, and everywhere he is in chains.
+
+## R1-Beispiele (FAIL, dazuerzählt)
 1. **The Ordinary World:** The Ordinary World cancels your Quest this turn and makes you explain why nothing can change; the abnormal feels normal, the extraordinary impossible.
 2. **Crossing the Threshold:** Crossing the Threshold throws away your whole hand and deals you three new cards; the old world is gone, and you can't un-take the step.
 3. **JEAN-JACQUES ROUSSEAU:** Jean-Jacques Rousseau scrubs off your corruption and your civilization; man is born free, and everywhere he is in chains.
