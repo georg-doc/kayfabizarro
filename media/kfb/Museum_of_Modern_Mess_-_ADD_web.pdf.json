@@ -41,13 +41,10 @@
       "lore": "Put a forensic marker on a dirty plate, and it stops being gross and starts being avant-garde.",
       "gradeReason": "Reframes biohazard as art. The forensic marker line? Instant classic. Canonized.",
       "artworkPrompt": "Style: Watercolor comic. Subject: Pelican curator on pedestal addressing garbage heap. Mood: Pompous grandeur.",
-      "print": {
-        "cardName": null,
-        "power": "() Reframes a flatmate's biohazardous neglect into a self-important, high-art",
-        "lore": "The door is the inside! on a dirty plate, and it stops Put forensic marker being gross and starts being avant-garde.",
+      "textSource": {
         "source": "PDF v05 Museum_of_Modern_Mess - ADD web.pdf p1 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -156,7 +153,12 @@
       "power": "Petrifies organic matter until it becomes part of the permanent geological record.",
       "lore": "If you leave it long enough, you don't have to clean it—you have to excavate it.",
       "gradeReason": "Excavate, not clean. Geological record of a tomato. Deathbed-ready lore.",
-      "artworkPrompt": "Style: Paleontology field sketch. Subject: Armadillo curled beside fossilized tomato in excavation site. Mood: Geological patience."
+      "artworkPrompt": "Style: Paleontology field sketch. Subject: Armadillo curled beside fossilized tomato in excavation site. Mood: Geological patience.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 16,
@@ -165,7 +167,12 @@
       "power": "Crushes handmade paper affections into the dusty floorboards.",
       "lore": "Love dies here, and it gets stepped on in dirty socks.",
       "gradeReason": "Love dies in dirty socks. Most brutal lore in the deck.",
-      "artworkPrompt": "Style: Romantic tragedy. Subject: Mourning dove lying on trampled paper hearts in dusty floor. Mood: Domestic heartbreak."
+      "artworkPrompt": "Style: Romantic tragedy. Subject: Mourning dove lying on trampled paper hearts in dusty floor. Mood: Domestic heartbreak.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p4 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 17,
@@ -255,7 +262,12 @@
       "power": "Links steady personal hygiene routines with higher self-esteem and better sleep (Sleep Foundation).",
       "lore": "Making the bed is the first defense against existential dread.",
       "gradeReason": "Making bed defeats existential dread. The lore rescues a stiff power.",
-      "artworkPrompt": "Style: Cozy watercolor. Subject: Koala sleeping peacefully in fresh white bed with eucalyptus. Mood: Self-earned serenity."
+      "artworkPrompt": "Style: Cozy watercolor. Subject: Koala sleeping peacefully in fresh white bed with eucalyptus. Mood: Self-earned serenity.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p7 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 27,
@@ -288,10 +300,20 @@
       "cardNumber": 30,
       "cardName": "Biohazard 95%",
       "grade": 1,
-      "power": "Cultivates unclassified fungal infections right next to your toothbrush.",
+      "power": "Cultivates unclassified fungal infections right next to your toothpaste.",
       "lore": "Life finds a way, especially when you never wipe down the sink.",
       "gradeReason": "Fungal infections by your toothbrush. Life finds a way. Sinister masterpiece.",
-      "artworkPrompt": "Style: Horror mycology. Subject: Toad covered in mushrooms festering next to toothbrush holder. Mood: Biological inevitability."
+      "artworkPrompt": "Style: Horror mycology. Subject: Toad covered in mushrooms festering next to toothbrush holder. Mood: Biological inevitability.",
+      "jsonLegacy": {
+        "cardName": "Biohazard 95%",
+        "power": "Cultivates unclassified fungal infections right next to your toothbrush.",
+        "lore": "Life finds a way, especially when you never wipe down the sink."
+      },
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p8 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 31,
@@ -309,7 +331,12 @@
       "power": "Permanently scars your brain with smells you can never un-smell.",
       "lore": "You will remember the fossilized tomato on your deathbed.",
       "gradeReason": "Fossilized tomato on your deathbed. The most permanent card in the deck.",
-      "artworkPrompt": "Style: Memory palace. Subject: Elephant recoiling from invisible smell, eyes closed in agony. Mood: Permanent olfactory scarring."
+      "artworkPrompt": "Style: Memory palace. Subject: Elephant recoiling from invisible smell, eyes closed in agony. Mood: Permanent olfactory scarring.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p8 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 33,
@@ -355,13 +382,10 @@
       "lore": "She's just curled up in there, plotting her next masterpiece.",
       "gradeReason": "Plotting next masterpiece in her own trash. Slightly observer-mode but charming.",
       "artworkPrompt": "Style: Camouflage. Subject: Cuttlefish perfectly disguised in trash sculpture landscape. Mood: Conspiratorial stillness.",
-      "print": {
-        "cardName": "The Camouflaged Artist",
-        "power": "Hides effortlessly among her own trash sculptures and fossilized laundry. you'd least",
-        "lore": "She's just curled up in there, plotting her next masterpiece.",
+      "textSource": {
         "source": "PDF v05 Museum_of_Modern_Mess - ADD web.pdf p10 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -398,7 +422,12 @@
       "power": "Declares the flat a Masterpiece of Not Now.",
       "lore": "German efficiency, but make it exclusively about being disorganized.",
       "gradeReason": "Masterpiece of Not Now. German efficiency for disorganization. Wunderbar.",
-      "artworkPrompt": "Style: Stern portraiture. Subject: Poodle in beret with severe expression judging chaotic space. Mood: French critical authority."
+      "artworkPrompt": "Style: Stern portraiture. Subject: Poodle in beret with severe expression judging chaotic space. Mood: French critical authority.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 42,
@@ -443,7 +472,12 @@
       "power": "Hovers over the main photo to reveal the horrifying high-res truth.",
       "lore": "Click the image to zoom. Click outside to close your eyes and pretend it didn't happen.",
       "gradeReason": "Click outside to pretend it didn't happen. UI-aware meta comedy. Genius.",
-      "artworkPrompt": "Style: Scientific equipment. Subject: Tarsier wearing enormous magnifying loupe, horrified by zoom truth. Mood: Unwanted revelation."
+      "artworkPrompt": "Style: Scientific equipment. Subject: Tarsier wearing enormous magnifying loupe, horrified by zoom truth. Mood: Unwanted revelation.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf p12 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 47,
@@ -462,13 +496,10 @@
       "lore": "Treat the mess as material, but treat the surfaces as lava.",
       "gradeReason": "Surfaces are lava. Treat mess as material. Immediate. Perfect protective logic.",
       "artworkPrompt": "Style: Safety equipment. Subject: Frog wearing dripping yellow bio-gloves over contaminated yellow surface. Mood: Minimal protection.",
-      "print": {
-        "cardName": "Bio-Gloves",
-        "power": "! Provides the bare the evidence! your skin and the installation.",
-        "lore": "Treat the mess as material, but treat the surfaces as lava.",
+      "textSource": {
         "source": "PDF v05 Museum_of_Modern_Mess - ADD web.pdf p12 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -514,7 +545,12 @@
       "power": "Bursts across the screen the moment you accept the new terms of living.",
       "lore": "A digital celebration for a basic analog compromise.",
       "gradeReason": "Digital celebration for analog compromise. Conceptually neat. Screen-mechanic dependent.",
-      "artworkPrompt": "Style: Celebration explosion. Subject: Mantis shrimp bursting rainbow confetti across screen. Mood: Digital analog joy."
+      "artworkPrompt": "Style: Celebration explosion. Subject: Mantis shrimp bursting rainbow confetti across screen. Mood: Digital analog joy.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf (lokale Voll-PDF 'Museum_of_Modern_Mess - ADD web.pdf'; Repo-PDF endet bei p13) p14 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 54,
@@ -577,7 +613,12 @@
       "power": "Inherits the living installation, the clipboard, and the dread.",
       "lore": "Good luck. You're going to need a hazmat suit.",
       "gradeReason": "Inherits the dread and clipboard. Good luck, hazmat suit. Perfect closing.",
-      "artworkPrompt": "Style: New curator. Subject: Baby chick in bowtie holding clipboard, inheriting living installation. Mood: Cheerful doom."
+      "artworkPrompt": "Style: New curator. Subject: Baby chick in bowtie holding clipboard, inheriting living installation. Mood: Cheerful doom.",
+      "textSource": {
+        "source": "PDF v05 Museum_of_Modern_Mess - ADD web crop01-13.pdf (lokale Voll-PDF 'Museum_of_Modern_Mess - ADD web.pdf'; Repo-PDF endet bei p13) p15 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 60,
