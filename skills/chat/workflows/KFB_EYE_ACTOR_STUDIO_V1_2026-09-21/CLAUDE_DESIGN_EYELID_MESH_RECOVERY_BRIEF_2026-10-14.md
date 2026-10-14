@@ -1,6 +1,6 @@
 # Claude Design · KFB Clay Eyelids — mesh recovery & tutorial evidence
 Date: 2026-10-14
-Status: RESEARCH / BRIEF PREPARED · VIDEO TRANSCRIPT GATE OPEN · NO DESIGN PASS
+Status: VIDEO TRANSCRIPTS 2/2 ANALYZED · CLAUDE DESIGN INTAKE READY · NO MESH PASS
 Owner: KFB ToolBox / Eye Actor Studio source-donor lane (existing Draft PR #159).
 Receiving 3D runtime/profile owner: KFB ToolBox / EyeRig v6 + Batch PR #104.
 Source repo: georg-doc/kayfabizarro
@@ -13,7 +13,7 @@ Delivery: source-isolated real 3D review in the existing EyeRig/ToolBox workbenc
 `tools/KFB-ToolBox/eye-actor-studio-v1/thin-clay-lid.v1.mjs` (blob 79eb8abe57bd2671422d037a10fcb575640464dd).
 Original accepted EyeRig v6 eye-placement/profile state must stay unchanged; no automatic consumer migration.
 
-## Source-critical YouTube analysis · TRANSCRIPT A RECEIVED / B PENDING
+## Source-critical YouTube analysis · BOTH TRANSCRIPTS RECEIVED / VIDEO FRAMES NOT INSPECTED
 
 ### Video A · Jen Abbott / Olde Tinkerer Studio · DIRECT USER-SUPPLIED TIMECODED TRANSCRIPT
 
@@ -47,17 +47,37 @@ Original accepted EyeRig v6 eye-placement/profile state must stay unchanged; no 
 
 **Video A evidence status:** `TRANSCRIPT_RECEIVED_TIMECODED`; key procedural transcript extraction **complete**, video-frame comparison **not run**; no claim of modelling method proven.
 
-**Video B** — RG3D Animation Studio: "How to make cartoon oval eyes rigging in Blender 2.8+" (2020-04-09).
-Video URL: https://www.youtube.com/watch?v=hTl825DO-Aw
-Verified from original public video description only: step-by-step simple oval cartoon-eye rig, GIMP manipulation of eye texture precedes Blender; jump to Blender at 1:43.
-Critical applicability: ***oval/ellipsoid transfer candidate***. Exact deformation method, bones/weights, lid topology, and eye gaze mechanics are NOT source verified; cannot yet be asserted.
+### Video B · Raymond Gabriel / RG3D Animation Studio · DIRECT USER-UPLOADED TIMECODED TRANSCRIPT
 
-**TRANSCRIPT INPUT GATE (mandatory before labeling a tutorial-based instruction final):**
-- Obtain creator/auto captions or transcripts for BOTH exact video IDs, with language, provenance, timestamps and whether manual or machine transcription.
-- For Video A, check steps/axis orientation and whether lid meshes are pre-modeled. Cross-check against published written tutorial, note any discrepancies.
-- For Video B, inspect workflow from 1:43 onward: how oval geometry is formed, how eyes track, whether lids are used, whether deformation depends on lattice/shapekey/bone, if scaling or transforms are applied, and whether any topology step is actually demonstrated.
-- Extract timecoded **concepts and operational build steps** (summarize rather than reprint full copyrighted transcripts). Maintain VERIFIED / INFERRED / NOT SHOWN flags.
-- If captions are unavailable, report TRANSCRIPT_NOT_AVAILABLE rather than invent them; request transcripts/screen recordings from Georg or source analysis by a video-capable executor. Do not fabricate quotations, timings, or procedural specifics.
+**Source:** https://www.youtube.com/watch?v=hTl825DO-Aw · "How to make cartoon oval eyes rigging in Blender 2.8+".
+**Provenance:** Georg's attachment `Eingefügter Text(5).txt`, text transcript with timestamps from 0:00 through 18:02. Uploaded transcript was inspected, not the video frames. The separately pasted **non-timecoded "Rigging the Eye" Step 1...** message repeats Video A/Jen Abbott's steps and is not used as evidence for RG3D/Video B. Captions' manual/automatic origin unconfirmed. Transcription contains evident recognition errors (e.g. "I K", "corneal", "eick"; contextual interpretations noted below).
+
+| Video time | Transcript-grounded operation | Implication for KFB / qualification |
+|---|---|---|
+| 0:18–1:41 | Download eye-image JPG; add alpha channel in GIMP/Photoshop; remove white with fuzzy selection; save PNG | Optional *texture-eye* donor, not required for existing KFB mesh pupils |
+| 1:47–2:40 | Create UV sphere, rotate about X 90°, front orthographic UV editor, **Project from View** | Iris image placement aligned to a specific view; not a lid-building technique |
+| 2:45–6:03 | Image Texture material, UV scale; change image extension Repeat → Clip; mix image and white shader using alpha | Avoid unintended iris texture repetition; **not** physical eye occlusion |
+| 6:09–7:32 | Armature with visually accessible bone; duplicate nested local bone in Edit Mode and parent it to outer bone | Separate eye/region controls; exact bone orientations must be inspected in Blender before copying |
+| 7:40–8:29 | Edit eyeball in side view; flatten selected front-area vertices along Y then move them backward; smaller bone controls **cornea region**, outer bone controls eyeball motion | Cornea is a weighted *region of the eyeball mesh*, not proof of a separate lid object |
+| 8:36–11:16 | Rename local bones (ASR makes names uncertain), disable deform on target controller; create armature weights, then assign one region exclusively to outer-eye vs cornea bone | Eye movement and local cornea shaping have distinct vertex-group ownership. This is transferable *semantics*, not the existing KFB rig's literal vertex groups |
+| 11:21–12:46 | Pose constraints: outer eye bone targets master via **Inverse Kinematics**; cornea follows controller via **Copy Scale**, with Y scaling locked | Control localized cornea scale while eye is steered; verify constraints and exported behavior before reuse |
+| 12:52–15:46 | Shift/mirror to create L/R eyes, symmetrize bones, rename duplicated eye vertex groups so each follows its correct side, parent both to main eye control | Crucial parity/regression check: L/R bone names and vertex-group IDs must not cross-drive the wrong eye |
+| **15:46–17:38** | Demonstrates direct Z-scaling of eyeballs, warns about undesirable protrusion/animation; **adds Lattice modifier**, surrounds full eye, edits lattice to ovalize in X/Y, copies modifier to other eye. Rig moves while the shaped eye follows | **Core design donor for KFB ellipsoid/oval adaptation.** The transcript demonstrates lattice applied to eyeballs, **NOT to eyelids**; keeping lids conformal with the same deformation is a KFB hypothesis requiring separate 3D proof |
+
+**Critical source boundary:** Video B contains **no construction, weighting or closing of upper/lower eyelid meshes**. Its title "oval eye rigging" does not imply Claymation eyelid topology. It does NOT establish that simply adding a Blender lattice to existing Three.js/KFB lids preserves manifold topology, canthal contact, normals, or pupil occlusion. Blender's active lattice, constraints and IK cannot be assumed to survive GLB export as runtime behavior.
+
+**KFB design inference (UNPROVEN until source-isolated, editable 3D evidence):** Start from an accepted watertight *spherical* eye + two-lid shared source volume. Adapt sphere AND both lid meshes together through **one equivalent eye-local deformation frame** to ellipsoid/oval, or generate all three from the same ellipsoid parametric surface. Consider a Blender lattice as authoring-reference for this common deformation, with baked editable/exported meshes or an explicit existing-owner Three.js deformation adapter, rather than a second live rig. The lid thickness, seam, canthi, pupil depth and blink must be revalidated after deformation. Do not change existing approved EyeRig-v6 profiles.
+
+**Video B evidence status:** `TRANSCRIPT_RECEIVED_TIMECODED`, model/rig procedure **source-grounded**, visual Blender step confirmation **not run**. Blender UI axes and bone names are transcript-derived with ASR uncertainty.
+
+### Comparative evidence verdict — both video transcript sources now accounted for
+
+- **Video A (Jen Abbott):** already-modelled eye + upper/lower lids, gaze Track To (-Y / Z), X-axis Copy Rotation, lower Invert X, shared & per-eye master controls, blink frames 1/25/35/45. **Transferable:** conceptual controller graph. **Not shown:** mesh construction, bevel and lid contact.
+- **Video B (Raymond Gabriel):** textured UV-sphere, local cornea region under separate vertex-group weights, IK / Copy Scale controls, mirrored L/R, **Lattice for oval eyeballs**. **Transferable:** region-specific deformation and oval-eye authoring principle. **Not shown:** eyelid geometry or closure.
+- **KFB itself must solve:** connected and correctly oriented closed-shell topology; non-self-intersecting smooth outer crown; small integrated rounded margin and direct crisp occlusion boundary; measured sphere/ellipsoid auto-fit; full closing including projecting pupils; expressive neutral rest. **Neither tutorial is evidence of this part.**
+- Keep **no speculative bone/controller stack** beyond the existing EyeRig v6, and do not make the tutorial texture/Cornea/Lattice elements mandatory KFB features.
+
+**Transcript gate outcome:** `TUTORIAL_TRANSCRIPTS_RECEIVED_2_OF_2`. Detailed timecoded *source text* is available for both; original Blender file and direct video-frame inspection are optional separate provenance checks, not prerequisites for beginning a bounded real 3D source-isolated clay-lid geometry design. Distinguish text-proven operations from inferred fixes throughout.
 
 ## Preserved KFB source contracts / candidates
 - KFB Eye Actor Studio Geometry Contract: `skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/EYELID_GEOMETRY_CONTRACT.v1.md`, blob `9617ab624ad55b8e298eb6c9a0c0efb773270c5c`. Binding sections 3/5/6/15/16.
@@ -68,16 +88,16 @@ Critical applicability: ***oval/ellipsoid transfer candidate***. Exact deformati
 - Later WS1 F1 evidence: eye white entirely obscured while protruding pupil still visible, so full opaque blink needs *independent pupil* occlusion validation. Do not call full closure PASS from white-pixel count alone.
 - Protect approved per-character eye profiles / FaceHost / source-eye cleanup; no second 3D eye runtime; KFB_NATIVE / WIREFACE_* mutually exclusive full-face owners per V-228.
 
-## Claude Design bounded assignment · AFTER TRANSCRIPT GATE
+## Claude Design bounded assignment · READY FOR SOURCE-ISOLATED MESH DESIGN
 Outcome: one intact, visually convincing compact upper+lower Claymation eyelid system on one exact KFB EyeRig-v6 donor eye, in isolation. The surface MUST remain clean in every view and every animated closure state. Do not start on FrizzleBob, an entire face or a general UI.
 
 **Design build sequence**:
 1. Display original donor `clay-lid.v1.mjs` and `upper-lid-volume.v1.mjs` as actual visible 3D geometry, independently in front / 3⁄4 / side / back, wireframe overlay. Identify which source construction (if any) is worth preserving; preserve donor IDs and code unchanged.
 2. Show failed `thin-clay-lid.v1.mjs` in isolation as negative evidence. Specifically inspect upper/rear surface, silhouette, polygon windings, pole degeneracies, continuity of lat/lon ring order, thickness taper and side/canthus closure. Edge-manifold count alone is not proof against self-intersection or bad normals.
-3. Construct from ONE measured eyeball sphere/ellipsoid and ONE shared enclosing closed skin: coherent ring layout / consistent face winding / matched front/back lid topology, duplicate/split into upper/lower according to the shared seam. No free-floating edges, nonmanifold borders, holes, flipped normals, unsmoothed pinching, self-intersections, disconnected side walls, fake tube rims or billboard cutouts.
+3. Construct from ONE measured eyeball sphere and ONE shared enclosing closed skin: coherent ring layout / consistent face winding / matched front/back lid topology, duplicate/split into upper/lower according to the shared seam. No free-floating edges, nonmanifold borders, holes, flipped normals, unsmoothed pinching, self-intersections, disconnected side walls, fake tube rims or billboard cutouts.
 4. Inner surface tracks measured actual eye ellipsoid at minimal geometric clearance (no z fighting and no visually detached gap). Outer clay surface has compact, low-profile thickness, tapered smoothly and consistently toward canthi. The visible slightly rounded lip is *part of the same volume*, while inner eye-facing contact is visually firm.
-5. First visually solve neutral eye aperture against original KFB eye proportions, without default tired/skeptical face. Preserve eye placement/size; do NOT alter them to conceal the lid defects. Use spherical eye first, then unequal ellipsoid eyes.
-6. Only after clean static geometry, animate matching upper/lower against existing EyeRig closure signals. Compare shared-shell sweep/hybrid and bone/constraint principles from source tutorials; copy only verified useful concepts, not Blender-only mechanics that cannot be exported/used by Three.js.
+5. First visually solve neutral eye aperture against original KFB eye proportions, without default tired/skeptical face. Preserve eye placement/size; do NOT alter them to conceal the lid defects. Use spherical eye FIRST. Only after true topology/shape PASS, examine Video B's Lattice as an authoring donor to produce the *same* eye/lid pair in oval form by a common deformation frame or by rebuilding all parts from one measured ellipsoid. Recheck normals/contact/pupil depth after warp; never deform just the eyeball and leave the lid behind.
+6. Only after clean static geometry, animate matching upper/lower against existing EyeRig-v6 closure signals. Video A's Copy Rotation + Invert X is controller-logic inspiration (not an exportable dependency); Video B's IK/Copy Scale + isolated cornea vertex weighting is optional eye-rig reference, not a second runtime. Compare the existing shared-shell Slide / Sweep / Hybrid donor and preserve the approved EyeRig control API.
 7. Test open, 25%, 50%, 75%, full closure, reopening; independent L/R expression and gaze without lids rotating with pupil. Pupils/irises must be occluded **even at the most protruding allowed pupil depth**; test side and frog yaw as later compatibility checks after single-eye baseline.
 8. Show clean flat clay material in existing KFB palette, identical scale to source host. Material tricks may not hide topology. No outline/tube hacks, no extra browser/stage/UI owner, no replacement KFB style.
 
@@ -91,7 +111,7 @@ Outcome: one intact, visually convincing compact upper+lower Claymation eyelid s
 - Claude Design outputs source cut and 3D evidence plus concise recipient contract to the SAME EyeRig owner. If source/geometry cannot be viewed in real 3D, report BLOCKED; do not claim pass from synthetic illustrations.
 
 ## Execution limits / Return
-Current operation is RESEARCH/BRIEF PREPARED only; no Claude Design run launched; VIDEO A timecoded transcript received from Georg and analyzed; VIDEO B transcript still pending; no new browser tests or runtime claim.
+Current operation is RESEARCH/CLAUDE DESIGN INTAKE READY only; no Claude Design execution launched. Both timecoded video transcripts received from Georg and analyzed. Video-frame/Blender file inspection NOT run; no new mesh, browser test, Stage/Site publication or runtime claim.
 Store eventual result under the existing PR #159 donor branch; receiving EyeRig-v6 PR #104 adopts only following independent 3D visual PASS and export parity.
 Do not merge, change profiles, promote Live, or create Cloudflare Stage.
-Exactly one next gate: `EYELID_VIDEO_TRANSCRIPTS_SOURCE_PIN_AND_CLAUDE_DESIGN_INTAKE`.
+Exactly one next gate: `CLAUDE_DESIGN_KFB_EYELID_SOURCE_ISOLATION_AND_CLEAN_MESH_PROOF_01` — actual original-donor 3D isolation and clean spherical Upper/Lower topology first; oval/Lattice adaptation only after static mesh PASS.
