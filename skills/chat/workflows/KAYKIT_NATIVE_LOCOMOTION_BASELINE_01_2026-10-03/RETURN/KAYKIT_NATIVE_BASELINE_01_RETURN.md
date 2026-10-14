@@ -1,3 +1,11 @@
+## 2026-10-14 · optional Motion2MixamoRig offline acting donor (PARKED)
+
+Source/risks/conditional QA: `skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/RESEARCH/MOTION2MIXAMORIG_OFFLINE_DONOR_INTAKE_2026-10-14.md`.
+
+External upstream: https://github.com/MaxLiu22/Motion2MixamoRig. Optional human-video/photo -> Mixamo body-motion tool; Blender extension; **not** Wireface/lip-sync/EyeRig and **not tested on KayKit**. Apache-2.0 code does not clear SMPL-X/GVHMR weights for commercial use; upstream upper-torso issue #2 remains open. Keep existing accepted KayKit native clips and Motion Library as priority. The future conditional gate is `MOTION2MIXAMORIG_KAYKIT_OFFLINE_DONOR_PROBE_R1` only if a real body-acting gap appears. Current Wireface/Triplet slice is not blocked and no Composer/Voice/Audio/World owner or runtime is changed.
+
+---
+
 # KAYKIT NATIVE LOCOMOTION BASELINE 01 — RETURN (revised brief)
 
 Executor: Coworker (Blender MCP + cloud bpy 5.0.1) · 2026-10-03
