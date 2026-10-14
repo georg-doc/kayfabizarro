@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 mittags · Triplet-Abnahme-UI
+- V-237 (TBD): eigene Triplet-/Voice-Acting-Abnahme-Site später durch WSA work, mit Eye-Rigs und korrekten Karten; Hub zeigt Triplets bis dahin breit (Bild links, Kartentext + Triplet mit Wortmarkierung rechts). Plan-Schritt T-SITE im Hub.
+
 ## 2026-10-14 mittags · Triplet-Closure-Entwurf, Quellen-Befund
 - replies/TRIPLET_CLOSURE_CONTRACT_DRAFT_R1.md: Kanäle Bild / Spielwirkung / Satz / Closure, Fluff-o-lect; 3 Beispiele mit Kartenbild im Hub (c01–c03). Befund: gedruckter Kartentext ≠ Karten-JSON (Monomyth #1, #5) – Abgleich offen.
 

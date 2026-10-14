@@ -3008,6 +3008,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-237",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "TBD",
+   "text": "Triplet-Abnahme braucht ein eigenes UI: später als Site von WSA work, zusammen mit Figuren und Voice Acting – mit echten Eye-Rigs und korrekten Karten (Druck). Bis dahin zeigt der Hub Triplets breit: Kartenbild links, gedruckter Kartentext + Triplet mit Wortmarkierung rechts. Voraussetzungen: Triplet-Methode PASS, Druck-Abgleich fertig, FrizzleBob in R3F (G4).",
+   "values": {},
+   "owner": "WSA work (Bau) · WS0 (Auftrag, Daten)",
+   "check": "Georg",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Drei schmale Spalten im Hub eignen sich nicht für eine Abnahme.",
+   "applies": "später"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3070,7 +3085,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:191",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:200",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
